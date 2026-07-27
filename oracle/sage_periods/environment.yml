@@ -1,0 +1,12 @@
+name: stringbench-v0.3-period-oracle
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - sagemath=10.8
+  - pip
+  - pip:
+      - delaunay-triangulation==1.0.4
+      - lefschetz-family==0.1.21
+# The executable reproduction uses the pinned Docker image and vendored archives
+# in source_manifest.json. This file documents the equivalent logical environment.

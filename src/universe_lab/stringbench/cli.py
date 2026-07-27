@@ -1,4 +1,4 @@
-"""Command-line interface for String-Compiler Bench v0.1 and v0.2."""
+"""Command-line interface for String-Compiler Bench v0.1 through v0.3."""
 
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ from typing import Any
 from universe_lab.stringbench.benchmarks import (
     run_f_heterotic_8d,
     run_narain_period_v0_2,
+    run_stringbench_v0_3,
 )
 from universe_lab.stringbench.iut import (
     FrameIsolationAudit,
@@ -136,6 +137,10 @@ def _v0_2_payload(root: Path) -> dict[str, Any]:
     }
 
 
+def _v0_3_payload(root: Path) -> dict[str, Any]:
+    return run_stringbench_v0_3(root)
+
+
 def _save(payload: dict[str, Any], output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
@@ -145,6 +150,11 @@ def _save(payload: dict[str, Any], output: Path) -> None:
 
 
 def _print_summary(payload: dict[str, Any]) -> None:
+    if payload["suite"].startswith("String-Compiler Bench v0.3"):
+        for name, status in payload["statuses"].items():
+            print(f"{name}: {status}")
+        print(f"overall: {payload['overall_status']}")
+        return
     duality = payload["duality"]
     if payload["suite"].startswith("String-Compiler Bench v0.2"):
         local = duality["local_heterotic_lowering"]
@@ -174,7 +184,11 @@ def _print_summary(payload: dict[str, Any]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="String-Compiler Bench")
-    parser.add_argument("--suite", choices=("all", "v0.2"), help="対象トラックを実行")
+    parser.add_argument(
+        "--suite",
+        choices=("all", "v0.2", "v0.3"),
+        help="対象トラックを実行",
+    )
     parser.add_argument(
         "--output",
         type=Path,
@@ -185,7 +199,7 @@ def main() -> int:
     duality_parser = subparsers.add_parser("duality")
     duality_parser.add_argument(
         "--suite",
-        choices=("f-heterotic-8d", "narain-period-v0.2"),
+        choices=("f-heterotic-8d", "narain-period-v0.2", "special-divisor-v0.3"),
         default="f-heterotic-8d",
     )
     subparsers.add_parser("iut-bridge")
@@ -198,11 +212,12 @@ def main() -> int:
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0 if result["passed"] else 1
     if args.command == "duality":
-        result = (
-            run_narain_period_v0_2()
-            if args.suite == "narain-period-v0.2"
-            else run_f_heterotic_8d()
-        )
+        if args.suite == "narain-period-v0.2":
+            result = run_narain_period_v0_2()
+        elif args.suite == "special-divisor-v0.3":
+            result = run_stringbench_v0_3(root)
+        else:
+            result = run_f_heterotic_8d()
         print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
         # PARTIAL is a scientifically valid completed run, but not a suite PASS.
         return 0
@@ -217,12 +232,20 @@ def main() -> int:
             return 1
         _print_summary(json.loads(output.read_text(encoding="utf-8")))
         return 0
-    if args.suite in {"all", "v0.2"} or args.command is None:
+    if args.suite in {"all", "v0.2", "v0.3"} or args.command is None:
         is_v0_2 = args.suite == "v0.2"
-        payload = _v0_2_payload(root) if is_v0_2 else _full_payload(root)
+        is_v0_3 = args.suite == "v0.3"
+        if is_v0_3:
+            payload = _v0_3_payload(root)
+        elif is_v0_2:
+            payload = _v0_2_payload(root)
+        else:
+            payload = _full_payload(root)
         requested_default = Path("results/stringbench_v0.1.json")
         output_argument = (
-            Path("results/stringbench_v0.2.json")
+            Path("results/stringbench_v0.3.json")
+            if is_v0_3 and args.output == requested_default
+            else Path("results/stringbench_v0.2.json")
             if is_v0_2 and args.output == requested_default
             else args.output
         )
