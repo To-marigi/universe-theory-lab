@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/stringbench/vacuum_ir.schema.json",
+  "title": "VacuumIR",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "charge_lattice",
+    "lattice_pairing",
+    "monodromy",
+    "modular_invariants",
+    "gauge_algebra",
+    "gauge_group_global_data",
+    "mordell_weil_rank",
+    "mordell_weil_torsion",
+    "singular_fibers",
+    "bps_or_protected_data",
+    "anomaly_data",
+    "flux_quantization_data",
+    "source_frames",
+    "uncertainty_budget"
+  ],
+  "properties": {
+    "charge_lattice": {"$ref": "#/$defs/invariant"},
+    "lattice_pairing": {"$ref": "#/$defs/invariant"},
+    "monodromy": {"type": "array", "items": {"$ref": "#/$defs/invariant"}},
+    "modular_invariants": {"type": "array", "items": {"$ref": "#/$defs/invariant"}},
+    "gauge_algebra": {"$ref": "#/$defs/invariant"},
+    "gauge_group_global_data": {
+      "anyOf": [{"$ref": "#/$defs/invariant"}, {"type": "null"}]
+    },
+    "mordell_weil_rank": {
+      "anyOf": [{"$ref": "#/$defs/invariant"}, {"type": "null"}]
+    },
+    "mordell_weil_torsion": {
+      "anyOf": [{"$ref": "#/$defs/invariant"}, {"type": "null"}]
+    },
+    "singular_fibers": {"type": "array", "items": {"$ref": "#/$defs/invariant"}},
+    "bps_or_protected_data": {"type": "array", "items": {"$ref": "#/$defs/invariant"}},
+    "anomaly_data": {"type": "array", "items": {"$ref": "#/$defs/invariant"}},
+    "flux_quantization_data": {"type": "array", "items": {"$ref": "#/$defs/invariant"}},
+    "source_frames": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "uncertainty_budget": {
+      "type": "object",
+      "minProperties": 1
+    }
+  },
+  "$defs": {
+    "invariant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "value",
+        "representation",
+        "source_frame",
+        "transformation_rule",
+        "exactness",
+        "numerical_error",
+        "source_claim"
+      ],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "value": {},
+        "representation": {"type": "string", "minLength": 1},
+        "source_frame": {"type": "string", "minLength": 1},
+        "transformation_rule": {"type": "string", "minLength": 1},
+        "exactness": {"type": "object"},
+        "numerical_error": {"type": ["number", "null"], "minimum": 0},
+        "source_claim": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

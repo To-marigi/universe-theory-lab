@@ -1,0 +1,61 @@
+[
+  {
+    "frame_id": "f-theory:k3:N-polarized",
+    "theory": "F-theory",
+    "spacetime_dimension": 8,
+    "supersymmetry": "D=8 compactification on a K3 total space",
+    "background_geometry": "Jacobian elliptic K3 with H + E7(-1) + E7(-1) polarization",
+    "moduli": ["J2", "J3", "J4", "J5", "J6"],
+    "fluxes": ["branch-dependent B-field datum on the heterotic dual"],
+    "branes": ["seven-brane data encoded by singular fibers"],
+    "charge_lattice": "H + E7(-1) + E7(-1)",
+    "gauge_data": {
+      "derived_from": ["Kodaira fibers", "Mordell-Weil group"],
+      "global_form_requires_extra_data": true
+    },
+    "validity_domain": [
+      "(gamma,delta) != (0,0)",
+      "(epsilon,zeta) != (0,0)",
+      "generic fiber statements exclude listed enhancement loci"
+    ],
+    "approximation_order": "exact algebraic geometry within the stated family",
+    "evidence": {
+      "state": "FORMALLY_DERIVED",
+      "sources": ["arxiv:2205.08100v1"],
+      "scope": "Four Jacobian elliptic fibrations on the stated N-polarized K3 family",
+      "assumptions": ["characteristic zero", "minimal resolution gives a smooth K3"],
+      "limitations": ["does not classify arbitrary elliptic K3 surfaces"]
+    }
+  },
+  {
+    "frame_id": "heterotic:T2:two-wilson-lines",
+    "theory": "heterotic string",
+    "spacetime_dimension": 8,
+    "supersymmetry": "toroidal heterotic compactification",
+    "background_geometry": "T2 in a geometric limit; generally a non-geometric Narain-family description",
+    "moduli": ["complex structure", "Kahler modulus", "two Wilson-line parameters"],
+    "fluxes": ["branch-dependent antisymmetric B-field class"],
+    "branes": ["five-branes may be required for lower-dimensional families"],
+    "charge_lattice": "Lambda^(2,18) = H + H + E8(-1) + E8(-1)",
+    "gauge_data": {
+      "unbroken_roots": "root alpha survives when alpha dot A_i is integral for both cycles",
+      "automatic_branch_vectors_available": false
+    },
+    "validity_domain": [
+      "tau and rho lie in the upper half-plane in a chosen geometric chart",
+      "raw coordinates are not invariant under O(2,18;Z)",
+      "frontend root enumeration currently supports an E8+E8 basis"
+    ],
+    "approximation_order": "exact lattice/root calculation for caller-supplied Wilson vectors",
+    "evidence": {
+      "state": "PARTIAL",
+      "sources": ["arxiv:2205.08100v1"],
+      "scope": "Narain lattice and two-Wilson-line moduli subspace",
+      "assumptions": ["caller supplies Wilson vectors in the frontend basis"],
+      "limitations": [
+        "the primary paper does not tabulate compiler-ready Wilson vectors for every fibration branch",
+        "Spin(32)/Z2 root-basis frontend is not implemented"
+      ]
+    }
+  }
+]

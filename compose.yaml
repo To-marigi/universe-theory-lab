@@ -1,0 +1,21 @@
+name: universe-theory-lab
+
+services:
+  sage:
+    image: sagemath/sagemath:10.9
+    init: true
+    working_dir: /home/sage/work
+    ports:
+      - "127.0.0.1:${SAGE_PORT:-8889}:8888"
+    volumes:
+      - ./:/home/sage/work
+    command:
+      - sage-jupyter
+      - --no-browser
+      - --ServerApp.token=${SAGE_TOKEN:-universe-local}
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      OMP_NUM_THREADS: ${OMP_NUM_THREADS:-8}
+      OPENBLAS_NUM_THREADS: ${OPENBLAS_NUM_THREADS:-8}
+    shm_size: "2gb"
+    restart: unless-stopped

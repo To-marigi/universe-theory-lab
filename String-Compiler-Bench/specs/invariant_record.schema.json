@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/stringbench/invariant_record.schema.json",
+  "title": "InvariantRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "value",
+    "representation",
+    "source_frame",
+    "transformation_rule",
+    "exactness",
+    "numerical_error",
+    "source_claim"
+  ],
+  "properties": {
+    "name": {"type": "string", "minLength": 1},
+    "value": {},
+    "representation": {"type": "string", "minLength": 1},
+    "source_frame": {"type": "string", "minLength": 1},
+    "transformation_rule": {"type": "string", "minLength": 1},
+    "exactness": {"type": "object"},
+    "numerical_error": {"type": ["number", "null"], "minimum": 0},
+    "source_claim": {"type": "string", "minLength": 1}
+  }
+}

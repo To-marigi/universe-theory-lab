@@ -1,0 +1,74 @@
+{
+  "atlas_id": "f-heterotic-8d-two-wilson-lines",
+  "scope": "The four-dimensional subspace D_(2,4)/O+(L^(2,4)) of the D=8 Narain moduli space",
+  "primary_source": {
+    "id": "arxiv:2205.08100v1",
+    "url": "https://arxiv.org/abs/2205.08100v1",
+    "title": "The duality between F-theory and the Heterotic String in D=8 with two Wilson lines"
+  },
+  "lattice_data": {
+    "k3_polarization": "H + E7(-1) + E7(-1)",
+    "rank": 16,
+    "signature": [1, 15],
+    "discriminant_order": 4,
+    "narain_lattice": "H + H + E8(-1) + E8(-1)",
+    "narain_signature": [2, 18],
+    "source_locator": "Sections 2 and 4; Eqs. (1), (39)"
+  },
+  "modular_coordinates": {
+    "weighted_projective_space": "WP(2,3,4,5,6)",
+    "coordinates": ["J2", "J3", "J4", "J5", "J6"],
+    "modular_weights": [4, 6, 8, 10, 12],
+    "open_domain": "(J4,J5,J6) != (0,0,0)",
+    "automorphic_relation": "a^2 = J5^2 - 4*J4*J6",
+    "source_locator": "Theorem 2.1 and Eqs. (25)-(27)"
+  },
+  "fibrations": [
+    {
+      "id": "standard",
+      "formula_status": "EXACT_SYMBOLIC",
+      "generic_singular_fibers": {"III*": 2, "I1": 6},
+      "ade_root_lattice": "E7 + E7",
+      "mordell_weil": {"rank": 0, "torsion": "trivial"},
+      "heterotic_branch": "E8+E8 branch with generic gauge algebra E7+E7",
+      "source_locator": "Eqs. (4)-(7), paragraph after Eq. (7), Proposition 4.2"
+    },
+    {
+      "id": "alternate",
+      "formula_status": "EXACT_SYMBOLIC",
+      "generic_singular_fibers": {"I8*": 1, "I2": 2, "I1": 6},
+      "ade_root_lattice": "D12 + A1 + A1",
+      "mordell_weil": {"rank": 0, "torsion": "Z/2Z"},
+      "heterotic_branch": "Spin(32)/Z2 branch with non-zero B-field flux",
+      "source_locator": "Eqs. (8)-(11), paragraph after Eq. (11), Proposition 4.3"
+    },
+    {
+      "id": "base_fiber_dual",
+      "formula_status": "EXACT_SYMBOLIC",
+      "generic_singular_fibers": {"II*": 1, "I2*": 1, "I1": 6},
+      "ade_root_lattice": "E8 + D6",
+      "mordell_weil": {"rank": 0, "torsion": "trivial"},
+      "heterotic_branch": "E8+E8 branch avoiding pointlike instantons in the stated sense",
+      "source_locator": "Eqs. (12)-(15), paragraph after Eq. (15), Proposition 4.1"
+    },
+    {
+      "id": "maximal",
+      "formula_status": "EXACT_SYMBOLIC",
+      "generic_singular_fibers": {"I10*": 1, "I1": 8},
+      "ade_root_lattice": "D14",
+      "mordell_weil": {"rank": 0, "torsion": "trivial"},
+      "heterotic_branch": "Spin(32)/Z2 branch with generic gauge algebra so(28)",
+      "source_locator": "Eqs. (16)-(18), paragraph after Eq. (18), proposition after Eq. (53)"
+    }
+  ],
+  "compiler_boundaries": {
+    "four_fibration_coefficients": "implemented",
+    "generic_discriminants": "implemented",
+    "explicit_period_integrals": "not implemented",
+    "paper_branch_to_explicit_wilson_vectors": "BLOCKED",
+    "automatic_dynkin_decomposition": "PARTIAL",
+    "global_gauge_group_from_mordell_weil": "PARTIAL",
+    "full_O_2_18_orbit_reduction": "BLOCKED",
+    "physical_round_trip_certificate": "BLOCKED"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/stringbench/universe_tagged.schema.json",
+  "title": "UniverseTagged",
+  "description": "A frame-isolated value. Cross-frame comparison requires a certificate ID present in both allowed_morphisms arrays.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "universe_id",
+    "frame_id",
+    "arithmetic_model_id",
+    "value",
+    "allowed_morphisms"
+  ],
+  "properties": {
+    "universe_id": {"type": "string", "minLength": 1},
+    "frame_id": {"type": "string", "minLength": 1},
+    "arithmetic_model_id": {"type": "string", "minLength": 1},
+    "value": {},
+    "allowed_morphisms": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    }
+  }
+}

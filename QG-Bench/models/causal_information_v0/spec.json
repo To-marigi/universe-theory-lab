@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.1",
+  "model_id": "causal_information_v0",
+  "epistemic_status": "CONJECTURAL",
+  "non_claim": "This specification defines a restricted hypothesis space; it is not a theory of nature.",
+  "kinematics": {
+    "causal_order": {
+      "symbol": "C",
+      "constraints": ["finite", "irreflexive", "transitive", "locally finite", "label invariant"]
+    },
+    "event_spaces": {
+      "symbol": "H_x",
+      "constraint": "finite-dimensional Hilbert spaces in v0"
+    },
+    "channels": {
+      "symbol": "E_{x->y}",
+      "domain": "causal relations only",
+      "constraints": ["completely positive", "trace preserving", "composition-compatible"]
+    },
+    "state": {
+      "symbol": "rho",
+      "constraints": ["positive semidefinite", "trace one"]
+    }
+  },
+  "dynamics": {
+    "partition_sum": "Z(theta)=sum_C integral D(E)D(rho) exp(i[S_BD+S_matter+Phi_info]/hbar)",
+    "status": "ansatz only",
+    "information_action": "Phi_info=sum_i theta_i O_i[C,E,rho]",
+    "sparsity_rule": {
+      "maximum_nonzero_operators": 4,
+      "coefficient_refit_on_holdout": false
+    }
+  },
+  "allowed_operator_basis": [
+    {
+      "id": "O_interval_count",
+      "inputs": ["C"],
+      "definition": "weighted counts of order intervals",
+      "status": "FORMALLY_DERIVED"
+    },
+    {
+      "id": "O_graph_spectrum",
+      "inputs": ["C"],
+      "definition": "fixed spectral summaries of a declared order-derived graph",
+      "status": "HEURISTIC"
+    },
+    {
+      "id": "O_mutual_information",
+      "inputs": ["rho"],
+      "definition": "pairwise or conditional mutual information with declared subsystem factorization",
+      "status": "FORMALLY_DERIVED"
+    },
+    {
+      "id": "O_channel_capacity_proxy",
+      "inputs": ["E"],
+      "definition": "declared finite-dimensional channel-capacity bound or proxy",
+      "status": "HEURISTIC"
+    }
+  ],
+  "geometry_reconstruction": {
+    "toy_oracle": "I(i:j)=I0 exp(-d(i,j)/xi)",
+    "inverse": "d(i,j)=-xi log(I(i:j)/I0)",
+    "status": "HEURISTIC",
+    "warning": "The oracle is supplied, not derived; passing it is only a pipeline test."
+  },
+  "gates": [
+    "label_invariance",
+    "channel_positivity",
+    "ads2_scalar_propagator",
+    "continuum_convergence",
+    "held_out_curvature"
+  ],
+  "kill_conditions": [
+    "negative Choi eigenvalue beyond tolerance",
+    "trace preservation failure",
+    "coefficient refit on held-out data",
+    "propagator error does not decrease with density",
+    "result depends on event labels",
+    "geometry proxy passes while field propagation fails"
+  ]
+}

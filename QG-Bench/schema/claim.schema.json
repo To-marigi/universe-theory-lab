@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://qg-bench.local/schema/claim.schema.json",
+  "title": "QG-Bench Claim v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "claim",
+    "kind",
+    "status",
+    "assumptions",
+    "scope",
+    "sources",
+    "depends_on"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^claim:"},
+    "claim": {"type": "string", "minLength": 1},
+    "kind": {
+      "enum": ["definition", "theorem", "derivation", "numerical_result", "conjecture", "contradiction"]
+    },
+    "status": {
+      "enum": [
+        "PROVEN",
+        "FORMALLY_DERIVED",
+        "NUMERICALLY_SUPPORTED",
+        "HEURISTIC",
+        "CONJECTURAL",
+        "CONTRADICTED"
+      ]
+    },
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "scope": {"type": "string", "minLength": 1},
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "url", "locator"],
+        "properties": {
+          "id": {"type": "string"},
+          "url": {"type": "string", "format": "uri"},
+          "locator": {"type": "string"}
+        }
+      }
+    },
+    "depends_on": {"type": "array", "items": {"type": "string", "pattern": "^claim:"}},
+    "falsifiers": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  }
+}
