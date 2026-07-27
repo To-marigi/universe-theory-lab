@@ -1,0 +1,214 @@
+{
+  "suite": "Final-Theory Bench v0.1 / Emergent Spin-2 Gate",
+  "generated_at": "2026-07-27T16:59:27.240274+00:00",
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.3.5",
+    "gpu_required": false,
+    "gpu_used": false,
+    "gpu_reason": "v0.1 uses small exact-structure and dense linear-algebra controls; GPU acceleration would not improve the evidence."
+  },
+  "inputs": [
+    {
+      "path": "Final-Theory-Program/requirements/final_theory_gates.yaml",
+      "sha256": "8a10c947a9031e5dfe88ca1ad7e7a147ae2aab690f7fc29aa35150d09ec9bdb6"
+    },
+    {
+      "path": "Final-Theory-Program/candidates/candidate_registry.json",
+      "sha256": "732d7e1e8a0b285263c447f2a09630285fc08c8d5cadcbe5fd20769896917506"
+    },
+    {
+      "path": "Final-Theory-Program/models/causal_information_v1/model_spec.json",
+      "sha256": "c15a22edab4919b357d4019577bc96ecda750bcd836ebe0c0e5191cd0b0b35ed"
+    }
+  ],
+  "validation_errors": [],
+  "reference_controls": {
+    "suite": "Emergent Spin-2 Gate reference controls",
+    "controls": [
+      {
+        "name": "barnes_rivers_spin2_projector",
+        "role": "REFERENCE_CONTROL_ONLY",
+        "dimension": 4,
+        "momentum": [
+          1.0,
+          2.0,
+          3.0,
+          4.0
+        ],
+        "checks": {
+          "idempotent": true,
+          "pair_symmetric": true,
+          "exchange_symmetric": true,
+          "transverse": true,
+          "traceless": true,
+          "off_shell_projector_rank_five": true
+        },
+        "passed": true,
+        "claim_boundary": "Rank five is the rank of the off-shell D=4 transverse-traceless projector. It is not the two-helicity on-shell graviton count."
+      },
+      {
+        "name": "massless_spin2_helicity_basis",
+        "role": "REFERENCE_CONTROL_ONLY",
+        "momentum": [
+          1.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "polarizations": [
+          "plus",
+          "cross"
+        ],
+        "checks": {
+          "momentum_is_null": true,
+          "transverse": true,
+          "traceless": true,
+          "orthonormal": true,
+          "two_independent_polarizations": true
+        },
+        "passed": true,
+        "claim_boundary": "This is the known D=4 massless spin-2 kinematic target, not a derivation from any registered microscopic candidate."
+      },
+      {
+        "name": "fierz_pauli_ward_identity",
+        "role": "REFERENCE_CONTROL_ONLY",
+        "checks": {
+          "four_gauge_directions_are_null": true,
+          "linearized_bianchi_identity": true
+        },
+        "max_gauge_error": 0.0,
+        "bianchi_error": 0.0,
+        "passed": true,
+        "claim_boundary": "The oracle starts from the linearized Einstein/Fierz-Pauli operator. Passing it cannot be counted as emergent gravity."
+      }
+    ],
+    "passed": true,
+    "candidate_evidence": false
+  },
+  "candidate_results": [
+    {
+      "candidate_id": "causal_information_v1",
+      "achieved_statuses": [
+        "KINEMATICS_DEFINED",
+        "SPIN2_NOT_FOUND",
+        "FINAL_THEORY_OPEN"
+      ],
+      "kinematics_defined": true,
+      "dynamics_defined": false,
+      "background_independence_passed": false,
+      "spin2_checks": {
+        "derived_two_point_function": false,
+        "massless_k2_pole": false,
+        "spin2_residue": false,
+        "two_physical_helicities": false,
+        "ward_identity": false,
+        "ghost_free": false,
+        "universal_stress_tensor_coupling": false,
+        "coarse_graining_stability": false,
+        "held_out_causal_structure": false
+      },
+      "spin2_gate_passed": false,
+      "rejected": false,
+      "scientific_status": "FINAL_THEORY_OPEN",
+      "claim_boundary": "SPIN2_NOT_FOUND means no qualifying evidence exists in this candidate artifact. It is not a theorem that the family can never produce spin 2."
+    },
+    {
+      "candidate_id": "causal_set_amplitude_family",
+      "achieved_statuses": [
+        "SPIN2_NOT_FOUND",
+        "FINAL_THEORY_OPEN"
+      ],
+      "kinematics_defined": false,
+      "dynamics_defined": false,
+      "background_independence_passed": false,
+      "spin2_checks": {
+        "derived_two_point_function": false,
+        "massless_k2_pole": false,
+        "spin2_residue": false,
+        "two_physical_helicities": false,
+        "ward_identity": false,
+        "ghost_free": false,
+        "universal_stress_tensor_coupling": false,
+        "coarse_graining_stability": false,
+        "held_out_causal_structure": false
+      },
+      "spin2_gate_passed": false,
+      "rejected": false,
+      "scientific_status": "FINAL_THEORY_OPEN",
+      "claim_boundary": "SPIN2_NOT_FOUND means no qualifying evidence exists in this candidate artifact. It is not a theorem that the family can never produce spin 2."
+    },
+    {
+      "candidate_id": "quantum_channel_network_family",
+      "achieved_statuses": [
+        "SPIN2_NOT_FOUND",
+        "FINAL_THEORY_OPEN"
+      ],
+      "kinematics_defined": false,
+      "dynamics_defined": false,
+      "background_independence_passed": false,
+      "spin2_checks": {
+        "derived_two_point_function": false,
+        "massless_k2_pole": false,
+        "spin2_residue": false,
+        "two_physical_helicities": false,
+        "ward_identity": false,
+        "ghost_free": false,
+        "universal_stress_tensor_coupling": false,
+        "coarse_graining_stability": false,
+        "held_out_causal_structure": false
+      },
+      "spin2_gate_passed": false,
+      "rejected": false,
+      "scientific_status": "FINAL_THEORY_OPEN",
+      "claim_boundary": "SPIN2_NOT_FOUND means no qualifying evidence exists in this candidate artifact. It is not a theorem that the family can never produce spin 2."
+    }
+  ],
+  "central_candidate_result": {
+    "candidate_id": "causal_information_v1",
+    "achieved_statuses": [
+      "KINEMATICS_DEFINED",
+      "SPIN2_NOT_FOUND",
+      "FINAL_THEORY_OPEN"
+    ],
+    "kinematics_defined": true,
+    "dynamics_defined": false,
+    "background_independence_passed": false,
+    "spin2_checks": {
+      "derived_two_point_function": false,
+      "massless_k2_pole": false,
+      "spin2_residue": false,
+      "two_physical_helicities": false,
+      "ward_identity": false,
+      "ghost_free": false,
+      "universal_stress_tensor_coupling": false,
+      "coarse_graining_stability": false,
+      "held_out_causal_structure": false
+    },
+    "spin2_gate_passed": false,
+    "rejected": false,
+    "scientific_status": "FINAL_THEORY_OPEN",
+    "claim_boundary": "SPIN2_NOT_FOUND means no qualifying evidence exists in this candidate artifact. It is not a theorem that the family can never produce spin 2."
+  },
+  "benchmark_integrity_passed": true,
+  "spin2_found": false,
+  "final_theory_completed": false,
+  "scientific_status": "FINAL_THEORY_OPEN",
+  "allowed_claims": [
+    "KINEMATICS_DEFINED",
+    "SPIN2_NOT_FOUND",
+    "FINAL_THEORY_OPEN"
+  ],
+  "prohibited_claims": [
+    "DYNAMICS_DEFINED",
+    "BACKGROUND_INDEPENDENCE_PASS",
+    "CONTINUUM_PHASE_SUPPORTED",
+    "SPIN2_CANDIDATE",
+    "SPIN2_GATE_PASS",
+    "UNIVERSAL_COUPLING_PASS",
+    "EINSTEIN_VERTEX_PASS",
+    "FINAL_THEORY_COMPLETED"
+  ],
+  "stopping_reason": "The finite-cutoff kinematics are specified, but the microscopic measure, convergent dynamics, and candidate-derived two-point response are absent. The reference spin-2 controls cannot fill that evidentiary gap."
+}

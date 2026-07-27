@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.1",
+  "program": "Final-Theory Program",
+  "completion_rule": "ALL_GATES_REQUIRED",
+  "scientific_statuses": [
+    "KINEMATICS_DEFINED",
+    "DYNAMICS_DEFINED",
+    "BACKGROUND_INDEPENDENCE_PASS",
+    "CONTINUUM_PHASE_SUPPORTED",
+    "SPIN2_NOT_FOUND",
+    "SPIN2_CANDIDATE",
+    "SPIN2_GATE_PASS",
+    "UNIVERSAL_COUPLING_PASS",
+    "EINSTEIN_VERTEX_PASS",
+    "CANDIDATE_REJECTED",
+    "FINAL_THEORY_OPEN"
+  ],
+  "status_semantics": {
+    "SPIN2_NOT_FOUND": "No qualifying candidate-derived Spin-2 evidence exists in the evaluated artifact. This is not a theorem of impossibility for the whole candidate family.",
+    "SPIN2_CANDIDATE": "A candidate-derived massless pole with Spin-2 residue is present, but one or more full-gate requirements remain.",
+    "FINAL_THEORY_OPEN": "At least one mandatory final-theory gate remains unpassed. This is the only allowed overall v0.1 status."
+  },
+  "gates": [
+    {
+      "id": "microscopic_definition",
+      "question": "Are state space, observables, dynamics, measure and probability interpretation completely defined?",
+      "required_evidence": [
+        "mathematical state space",
+        "observable algebra",
+        "normalized or otherwise rigorously controlled dynamics",
+        "probability interpretation",
+        "cutoff removal or explicit finite-domain claim"
+      ],
+      "kill_conditions": ["undefined measure", "divergent sum without prescription", "label-dependent physics"]
+    },
+    {
+      "id": "background_independence",
+      "question": "Are metric, dimension and external time absent from the microscopic input?",
+      "required_evidence": ["input audit", "relational observables", "gauge or equivalence relation"],
+      "kill_conditions": ["fixed metric hidden in an oracle", "external clock used as fundamental time"]
+    },
+    {
+      "id": "quantum_consistency",
+      "question": "Are positivity, unitarity, causality and ghost freedom established in the stated domain?",
+      "required_evidence": ["positive state rule", "unitary or CPTP evolution rule", "constraint closure", "ghost audit"],
+      "kill_conditions": ["negative norm physical state", "non-CPTP physical channel", "anomalous Ward identity"]
+    },
+    {
+      "id": "continuum_3p1",
+      "question": "Does a stable 3+1-dimensional Lorentzian phase emerge without tuning the answer into the input?",
+      "required_evidence": ["dimension estimator", "Lorentzian signature", "continuum scaling", "held-out phase stability"],
+      "kill_conditions": ["dimension supplied as a background", "only 1+1 or Euclidean phase recovered"]
+    },
+    {
+      "id": "emergent_spin2",
+      "question": "Does the candidate-derived response contain a stable massless Spin-2 mode?",
+      "required_evidence": [
+        "derived two-point response",
+        "1/(k^2+i0) pole",
+        "Spin-2 residue",
+        "two physical helicities in D=4",
+        "Ward identity",
+        "no scalar or vector ghost",
+        "coarse-graining stability",
+        "held-out causal-structure replication"
+      ],
+      "kill_conditions": ["massive pole only", "wrong-sign residue", "extra propagating ghost", "reference oracle substituted for candidate response"]
+    },
+    {
+      "id": "universal_coupling",
+      "question": "Does the same coupling act on every conserved energy-momentum contribution?",
+      "required_evidence": ["conserved stress tensor", "single coupling", "self-energy included"],
+      "kill_conditions": ["species-dependent gravitational charge", "nonconserved source"]
+    },
+    {
+      "id": "einstein_vertex",
+      "question": "Does the candidate three-point vertex match Einstein-Hilbert gravity up to allowed field redefinitions?",
+      "required_evidence": ["candidate-derived three-point function", "gauge-consistent vertex", "explicit field-redefinition map"],
+      "kill_conditions": ["Einstein vertex inserted as an ansatz", "incompatible soft theorem"]
+    },
+    {
+      "id": "black_hole",
+      "question": "Are area entropy, evaporation and unitary information recovery derived from one microscopic state space?",
+      "required_evidence": ["microstate count", "area-law regime", "evaporation dynamics", "Page-curve test"],
+      "kill_conditions": ["thermodynamics and unitarity obtained from unrelated models"]
+    },
+    {
+      "id": "matter",
+      "question": "Do gauge fields, fermions and chirality arise consistently?",
+      "required_evidence": ["gauge sector", "fermionic state space", "chirality", "anomaly cancellation"],
+      "kill_conditions": ["uncancelled gauge anomaly", "matter spectrum inserted by hand without declared effective scope"]
+    },
+    {
+      "id": "prediction",
+      "question": "Does the theory make at least one untuned, falsifiable prediction beyond its calibration set?",
+      "required_evidence": ["frozen parameters", "pre-registered observable", "uncertainty model", "held-out comparison"],
+      "kill_conditions": ["post-hoc parameter fit", "prediction equivalent to an input"]
+    }
+  ],
+  "global_non_claim": "Passing reference controls or a proper subset of gates never constitutes completion of quantum gravity or a final theory."
+}

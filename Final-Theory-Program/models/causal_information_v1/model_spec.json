@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "model_id": "causal_information_v1",
+  "epistemic_status": "CONJECTURAL",
+  "finite_sector": {
+    "status": "DEFINED",
+    "causal_structure": {
+      "object": "finite directed acyclic graph G=(V,E)",
+      "derived_order": "x<y iff a directed path from x to y exists",
+      "equivalence": "directed-graph isomorphism together with unitary edge-space identifications",
+      "forbidden_inputs": ["background metric", "target dimension", "external time coordinate", "Einstein equations"]
+    },
+    "edge_systems": {
+      "assignment": "each directed edge e carries a finite-dimensional complex Hilbert space H_e",
+      "dimension_rule": "2 <= dim(H_e) <= d_max at finite cutoff"
+    },
+    "vertex_processes": {
+      "assignment": "each vertex x carries a CPTP map E_x from density operators on the tensor product of incoming edge spaces to density operators on the tensor product of outgoing edge spaces",
+      "source_vertex_rule": "a source vertex prepares a density operator on its outgoing edge spaces",
+      "sink_vertex_rule": "a sink vertex maps its incoming state to the trivial one-dimensional output",
+      "composition": "contract matching edge input/output systems in any topological order",
+      "composition_certificate": "finite-dimensional CPTP maps remain CPTP under sequential and tensor composition"
+    },
+    "states": {
+      "input": "a positive semidefinite trace-one operator on all declared input-boundary edge spaces",
+      "output": "the density operator produced by composing all vertex processes",
+      "internal_observables": "defined only through a declared quantum instrument inserted at the measured vertex",
+      "boundary_observables": "Hermitian operators or POVMs on declared boundary tensor factors"
+    },
+    "probability_rule": "Born probabilities computed from the composed finite CPTP process and declared POVM",
+    "label_invariance": "all physical outputs are compared after the graph isomorphism and associated unitary edge-space maps"
+  },
+  "variable_structure_dynamics": {
+    "status": "ANSATZ_ONLY",
+    "formal_expression": "Z(theta)=sum_[G] 1/|Aut(G)| integral dmu_G(E,rho) exp(i S_theta[G,E,rho]/hbar)",
+    "operator_action": "S_theta=sum_i theta_i O_i",
+    "sparsity": {
+      "maximum_nonzero_operators": 4,
+      "holdout_refit": false
+    },
+    "undefined_components": [
+      "class of graph isomorphism sectors in the infinite-cutoff limit",
+      "measure dmu_G over channels and states",
+      "oscillatory-sum prescription and normalization",
+      "renormalization/coarse-graining transformation",
+      "physical inner product across graph sectors"
+    ]
+  },
+  "operator_basis": [
+    {
+      "id": "O_interval_vector",
+      "inputs": ["derived causal order"],
+      "definition": "fixed weighted counts of order intervals by cardinality",
+      "status": "EXACT_FINITE"
+    },
+    {
+      "id": "O_discrete_curvature",
+      "inputs": ["derived causal order"],
+      "definition": "a preregistered Benincasa-Dowker-type finite interval combination in a declared dimension estimator",
+      "status": "ORACLE_DEPENDENT",
+      "warning": "The target dimension may not be selected after observing the result."
+    },
+    {
+      "id": "O_graph_spectrum",
+      "inputs": ["declared order-derived graph"],
+      "definition": "fixed low spectral moments normalized by event count",
+      "status": "HEURISTIC"
+    },
+    {
+      "id": "O_mutual_information",
+      "inputs": ["composed finite output state", "declared tensor factors"],
+      "definition": "I(A:B)=S(A)+S(B)-S(AB)",
+      "status": "EXACT_FINITE"
+    },
+    {
+      "id": "O_conditional_mutual_information",
+      "inputs": ["composed finite output state", "declared tensor factors"],
+      "definition": "I(A:C|B)=S(AB)+S(BC)-S(B)-S(ABC)",
+      "status": "EXACT_FINITE"
+    },
+    {
+      "id": "O_channel_information",
+      "inputs": ["declared composed boundary channel"],
+      "definition": "a preregistered finite-dimensional coherent-information bound or explicitly named proxy",
+      "status": "BOUND_OR_PROXY"
+    },
+    {
+      "id": "O_local_causal_defect",
+      "inputs": ["derived causal order"],
+      "definition": "fixed count of preregistered forbidden or suppressed finite suborders",
+      "status": "EXACT_FINITE"
+    }
+  ],
+  "coarse_graining_contract": {
+    "status": "UNDEFINED",
+    "required_interface": [
+      "map from fine graph/process to coarse graph/process",
+      "preservation or controlled violation of CPTP structure",
+      "flow of theta coefficients",
+      "frozen observables for dimension and response",
+      "held-out graph ensemble"
+    ]
+  },
+  "spin2_interface": {
+    "status": "MISSING",
+    "required_output": [
+      "candidate-derived symmetric response h_mn",
+      "momentum- or eigenmode-resolved two-point response",
+      "uncertainty or certified enclosure",
+      "coarse-graining level",
+      "gauge/null-direction certificate",
+      "held-out causal-structure identifier"
+    ]
+  },
+  "claim_boundary": "The finite DAG quantum-process sector is mathematically defined. The sum over causal structures and all claims of emergent spacetime or gravity remain open."
+}

@@ -4,6 +4,19 @@
 オープンソース計算環境です。現時点では「理論そのもの」ではなく、理論を安全に
 組み立てる実験台を提供します。
 
+最上位目標と、QG-Bench・String-Compilerを手段として位置付ける停止規則は
+[`MISSION.md`](MISSION.md) に固定しています。量子時空候補の本流は
+[`Final-Theory-Program/CHARTER.md`](Final-Theory-Program/CHARTER.md) です。
+
+Final-Theory Bench v0.1は次で実行します。
+
+```powershell
+uv run finaltheory
+```
+
+既知Spin-2の陽性対照を候補模型の証拠へ流用せず、候補由来の二点応答がなければ
+`SPIN2_NOT_FOUND / FINAL_THEORY_OPEN` と判定します。
+
 ## すぐ始める
 
 PowerShellで次を実行します。

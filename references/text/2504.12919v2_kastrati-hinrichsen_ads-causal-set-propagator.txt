@@ -1,0 +1,729 @@
+===== PAGE 1 =====
+
+Numerical Evaluation of the Causal Set Propagator in 2D Anti-de Sitter Spacetime
+Arsim Kastrati ∗and Haye Hinrichsen
+Faculty for Physics and Astronomy, Julius Maximilians University W¨ urzburg, Am Hubland, 97074 W¨ urzburg, Germany
+(Dated: March 11, 2026)
+We numerically investigate the application of the path-sum-based causal set scalar propagator
+construction to (1+1)-dimensional Anti-de Sitter (AdS) spacetime. Building upon a generaliza-
+tion of Johnston’s path sum approach, we simulate Poisson-sprinkled causal sets in AdS 1+1 and
+numerically evaluate the retarded scalar propagator, comparing it to the known continuum result.
+Our results confirm that even in curved spacetimes with constant negative curvature, the discrete
+causal set path sum reproduces the continuum propagator without modification of the flat-spacetime
+jump amplitudes, thereby providing further numerical support for former analytical results and the
+applicability of the path sum formalism to curved Lorentzian manifolds.
+I. INTRODUCTION
+Formulating a consistent theory of quantum gravity remains one of the foremost open problems in theoretical
+physics. The challenge arises from the conceptual tension between quantum field theory (QFT), which assumes a
+fixed spacetime background, and general relativity, in which spacetime itself is dynamic and subject to quantum
+fluctuations. Bridging this gap requires a fundamental rethinking of spacetime, particularly at the Planck scale,
+where the smooth manifold structure of general relativity is expected to break down due to quantum effects. This
+breakdown is often signaled by ultraviolet (UV) divergences in quantum field theories of gravity, suggesting the need
+for a microscopic or discrete structure underlying the continuum approximation of spacetime [1, 2].
+Several approaches have been proposed to address this challenge, including Loop Quantum Gravity (LQG) [3],
+Causal Dynamical Triangulations (CDT) [4], String theory [5], and holographic dualities such as the AdS/CFT
+correspondence [6, 7]. LQG and CDT share a fundamentally discrete view of spacetime and introduce a minimal length
+scale directly in their formulation. String theory, though formulated on a smooth manifold, effectively incorporates a
+minimal length through the finite size of strings.
+Following from String theory, the AdS/CFT correspondence offers a duality between a gravitational theory in(d+1)-
+dimensional Anti-de Sitter (AdS) spacetime and a conformal field theory (CFT) living on itsd-dimensional boundary.
+In particular, the AdS/CFT framework does nota prioriassume a discrete structure or a fundamental length scale,
+raising questions about its compatibility with discrete or emergent spacetime models. This motivates the study of
+discrete holography, which seeks to reconcile the AdS/CFT correspondence with theories positing a fundamental
+discreteness of spacetime. Although efforts using isometric lattices and hyperbolic tessellations have demonstrated
+promising techniques for discretizing hyperbolic spaces [8–10], these constructions often lack a dynamical notion
+of time or causal structure. Moreover, such lattices require a high degree of symmetry such as constant negative
+curvature, and thus cannot capture arbitrary configurations of the gravitational field.
+To avoid these difficulties, an alternative approach may come from Causal Set Theory (CST), which postulates
+that the underlying structure of spacetime is a locally finite partially ordered set, where the order reflects the causal
+relations between spacetime events [11–13]. Causal sets provide a framework in which Lorentzian geometry emerges
+from a fundamentally discrete causal structure, bypassing many of the difficulties associated with UV divergences
+in quantum field theory. In CST, a continuum spacetime can be approximated by “sprinkling” points via a Poisson
+process over the manifold and then extracting their causal relations. The causal set itself retains no geometric
+information beyond the order relation, and yet in the continuum limit it can encode key geometric quantities such as
+spacetime volume and curvature [14–16].
+Although much of the research in CST has focused on flat Minkowski spacetime (see, e.g. [17–19]), there have also
+been numerous promising studies in curved embedding spaces [20–25], including de Sitter and Anti-de Sitter [22, 26–
+29]. These play a central role in cosmology and holography, respectively. In particular, AdS 1+1 spacetime serves as a
+minimal yet non-trivial testing ground to explore how causal set dynamics and field propagation behave in negatively
+curved backgrounds.
+∗Contact author: arsim.kastrati@uni-wuerzburg.de
+arXiv:2504.12919v2  [gr-qc]  10 Mar 2026
+
+===== PAGE 2 =====
+
+2
+In this work, we contribute to this line of inquiry by numerically studying the retarded scalar field propagator
+on a causal set approximation of (1+1)-dimensional AdS spacetime. By comparing the discrete propagator with
+its continuum counterpart, we aim to provide additional numerical evidence for the applicability of CST path sum
+constructions in curved backgrounds, supporting analytical results found by Nomaan X et. al. [22]. Our results
+indicate that causal set methods can be meaningfully extended to curved spacetimes, showing that the geometry is
+fully captured by the order relations and the density of causal events.
+We begin by establishing the necessary theoretical background, reviewing the fundamentals of Causal Set Theory
+and the geometry of AdS1+1, including its conformal structure, isometries, and geodesics. We recall how the continuum
+retarded propagator is derived from the Klein-Gordon equation using geodesic distance and eigenfunction expansion
+techniques. On the discrete side, we review Johnston and Shuman’s path sum approach, which also provides a robust
+framework for constructing discrete propagators in curved spacetimes. We then perform numerical simulations of the
+discrete propagator in causal sets sprinkled in AdS 1+1. By comparing the discrete result to the known continuum
+propagator, we demonstrate strong agreement and highlight the effectiveness of the CST approach in capturing scalar
+field dynamics in curved Lorentzian geometries.
+II. THEORETICAL FRAMEWORK
+To construct a scalar-field propagator on a discrete causal set embedded in a Lorentzian manifold such as AdS
+spacetime, we first summarize the essential frameworks and mathematical tools. In this Section we begin with a
+review of the basic definitions of CST as a discrete spacetime model, where causal relations define the fundamental
+structure. Next, we outline the geometry of AdS 1+1, focusing on its conformal structure, isometries, and geodesics.
+For determining the continuum propagator, we then turn to the ordinary Klein-Gordon equation, expressing its
+solutions explicitly in terms of geodesic distances in Minkowski and AdS spacetime. To complete the discussion about
+continuum scalar field theory, we go over the method of eigenfunction expansion, which is a general method to find
+the propagator in eigenspace. Finally, for the discrete case, we recap Johnston’s ”Hop-and-Stop” model [30] and its
+extension by Shuman [19] for constructing discrete propagators in a more general form.
+A. Brief Introduction to Causal Set Theory
+Acausal setCis a locally finite partially ordered set(C,≺). The setCrepresents a set of events in spacetime,
+which is equipped with a binary relation≺such that for all eventsx, y, z∈Cthe following axioms are satisfied:
+(i)Causality (Partial Order Condition):There exists a binary relation≺such that for any two elements
+x, y∈C, ifx≺y, thenxis in the causal past ofy.
+(ii)T ransitivity:Ifx≺yandy≺z, thenx≺z.
+(iii)Antisymmetry:Ifx≺yandy≺x, thenx=y.
+(iv)Local Finiteness (Discrete Spacetime):For any pair of elementsx, y∈C, the set of causally connected
+elements between them, called thecausal interval[x, y]={z∈C∣x≺z≺y}, is finite.
+In a certain sense, a causal set is both Lorentzian [(ii),(iii)] and discrete [(iv)]. Each of the above properties plays a
+fundamental role in defining the structure of spacetime [30].
+To analyze how large causal sets approximate the continuum structure of a Lorentzian manifold, it is essential to
+define the concept of anembedding. Given a causal set(C,≺), an embedding in a Lorentzian manifold(M, g)is a
+mappingf∶C→Mthat preserves causal order, which meansx≺yif and only iff(x)≺f(y). Furthermore, an
+embedding is said to befaithfulif the images of the elements of the causal set underfare uniformly distributed inM
+according to its volume measure √−g. An important conjecture in causal set theory, known as theHauptvermutung,
+asserts that if a causal set admits a faithful embedding into two different spacetimes(M, g)and(M ′, g′), then these
+spacetimes must be approximately isometric [28].
+A faithful embedding into a given Lorentzian manifold can be created by a method known assprinkling. Sprinkling
+refers to randomly placing points in the Lorentzian manifold according to a Poisson distribution. This means that
+the probabilityP(n, V)of findingnpoints within a space-time volumeVis given by
+P(n, V)= (ρV) n
+n! e−ρV,(1)
+
+===== PAGE 3 =====
+
+3
+whereρrepresents the sprinkling density [31]. The Poisson distribution ensures statistical invariance under isometries
+such as Lorentz boosts [32].
+In a causal set, a continuous trajectory is replaced by a discrete sequence of causally connected events. These
+sequences can be classified as follows:
+•Achainin a causal setC=(C,≺)is defined as a totally ordered subset of elements{x 0, x1, ..., xn}⊆Csuch that
+x0 ≺x1 ≺...≺xn. Chains generalize the notion of a causal curve in spacetime and can be thought of as discrete
+analogs of worldlines.
+•Alinkbetween two elementsx, y∈C, denoted asx≺∗y, is a causal relation with no other causally connected
+elements between, i.e., there does not exist another elementz∈Csuch thatx≺z≺y. Two events connected by
+a link may be thought of as causally connected nearest neighbors.
+•Apathbetween two elementsx, y∈Cis a sequence{x 0 =x, x 1, ..., xn =y}of linked elements such that each
+consecutive pair satisfiesx i ≺∗xi+1. The maximal number of elements of all paths naturally provides a way to
+define a distance betweenxandy, analogous to the length of a timelike geodesic line for which the integrated
+proper time is maximal. [33].
+A finite causal set can be conveniently represented using anadjacency matrix. Labeling the events byx 1, . . . , xp, two
+p×pdifferent adjacency matrices are defined, namely, thecausal matrixAand thelink matrixLwith the components
+Aij ∶={1,ifx i ≺xj
+0,otherwise , L ij ∶={1,ifx i ≺∗xj
+0,otherwise .(2)
+Both matrices have zeros along their main diagonal. Furthermore, it is always possible to choose a labeling such that
+both matrices are strictly upper triangular. When such a labeling is used, it is referred to as anatural labeling[34].
+The powers of these matrices have useful properties [35]:
+(An)ij =number of chains of lengthnfromx i tox j,(3)
+(Ln)ij =number of paths of lengthnfromx i tox j.(4)
+These are the most important definitions of CST, for further details, see, e.g., [36].
+B. 2D Anti de-Sitter Spacetime
+In this work, we intend to demonstrate that the CST is ideally suited to approximate arbitrarily curved manifolds
+in a discrete representation. As a simple example, we will consider an Anti-de Sitter spacetime in(1+1)-dimensions
+(AdS1+1), which plays an important role in the study of the AdS/CFT correspondence [37]. In the following, we
+briefly summarize its essential features.
+AdS1+1 is a Riemannian manifold with Lorentzian signature and constant negative Gaussian curvatureK=− 1
+L2 ,
+whereL>0 is the AdS curvature radius. This manifold can be represented in various coordinate systems. In the
+following, we use conformal coordinates
+x=(x 0, x1)=(t, x)witht∈R, x∈(− π
+2 ,+ π
+2).(5)
+In these coordinates, the metric tensor of AdS 1+1 is given by
+gµν(x)= L2
+cos2 x ηµν ,(6)
+whereη µν denotes the Minkowski metric. The corresponding volume element reads
+√−g= L2
+cos2 x .(7)
+Note that in a conformal metric, the causal relation is the same as in Minkowski space, namely,
+x≺y⇔x 0 <y 0 ∧∣x1−y1∣<∣x0−y0∣.(8)
+
+===== PAGE 4 =====
+
+4
+The metric in Eq. (6) and its volume element are preserved under isometries generated by the Killing vector fields
+XT =∂ t
+XS =−sintsinx ∂ t+costcosx ∂ x
+XB =costsinx ∂ t+cosxsint ∂ x ,
+(9)
+corresponding to translations in time (T), the analog of translations in space (S), and boost transformations (B).
+Explicitly, these isometries are given by
+Tτ(t, x)=(t+τ, x)
+Sα(t, x)=(arccot (coshαcott+sinhα sinx
+sint ),arctan (coshαtanx+sinhα cost
+cosx ))
+Bη(t, x)=(arctan (coshηtant+sinhη sinx
+cost ),arctan (coshηtanx+sinhη sint
+cosx )),
+(10)
+whereτ, α, ηare real parameters.
+In AdS1+1 with the metric (6) the geodesic equations are
+¨t+2 tan(x) ˙t˙x=0,¨x+tan(x) ( ˙t2+˙x2) =0.(11)
+Solving these equations leads to an explicit expression for the geodesic line connecting the two pointsx 1 =(t 1, x1)
+andx 2 =(t 2, x2), that is,
+x(t)=arcsin (Asin(t−t0)) for timelike geodesics(∣A∣<1)
+x(t)=±(t−t0)for lightlike geodesics(∣A∣=1)
+t(x)=t 0+arcsin( 1
+A sin(x)) for spacelike geodesics(∣A∣>1)
+(12)
+with the constants
+A2 = sin2 x1+sin 2 x2−2 cos(t2−t1)sinx 1 sinx 2
+sin(t2−t1) (13)
+t0 =arctan( sint 1 sinx 2−sint2 sinx 1
+cost 1 sinx 2−cost2 sinx 1
+).(14)
+The length of a geodesic line in AdS 1+1, known asgeodesic distance, is known to be given by
+d(x1,x 2)=
+⎧⎪⎪⎪⎪⎪⎪⎪⎪⎪⎨⎪⎪⎪⎪⎪⎪⎪⎪⎪⎩
+Larccos( cos(t1−t2)−sinx1 sinx 2
+cosx 1 cosx 2
+)for timelike (causal) connections
+Larccosh( cos(t1−t2)−sinx1 sinx 2
+cosx 1 cosx 2
+)for spacelike connections
+0 for lightlike connections
+undefined if cos(t1−t2)−sinx1 sinx 2
+cosx 1 cosx 2
+<−1
+(15)
+As expected, the geodesic distance turns out to be invariant under the isometries in Eq. (10).
+C. Continuum Scalar Field Theory
+For a CST to be physically meaningful, it must be possible to define appropriately discretized field theories that
+can approximate the known field-theoretical results in the continuum. Here, we will restrict ourselves to a simple
+scalar field theory, for which we briefly summarize the known results in the continuum.
+1. Retarded Propagators in Minkowski and Anti de-Sitter Spacetime
+Let us first consider a scalar fieldϕ(x)with massm≥0 in a Minkowski space in (d+1) dimensions. It evolves
+according to the Klein-Gordon equation (◻−m2)ϕ=0, where◻=∂ µ∂µ =δ−∂ 2
+t is the d’Alembert operator using
+
+===== PAGE 5 =====
+
+5
+the “mostly plus” convention. For the Klein-Gordon equation, the retarded two-point propagator coincides with the
+Green functionG(x,x ′), which obeys the differential equation
+(◻−m2)G(x,x′)=−δ d+1(x−x′).(16)
+Invariance under translations, rotations, and Lorentz boosts implies thatGdepends only on the temporal relativistic
+distanceτ= √−xµxµ =
+√
+t2−⃗x2, turning the above differential equation into
+( 1
+τ d ∂τ τ d∂τ +m 2)G(τ)=G ′′(τ)+ d
+τ G′(τ)+m 2G(τ)= δ(τ)
+Sd−1τ d ,(17)
+whereS d−1=2π d/2/Γ(d/2)is the surface area of a sphere inddimensions. In dimensions (1+1), the solution of this
+differential equation is known to be given by [30]
+G(τ)=θ(t)θ(τ 2) 1
+2 J0(mτ),(18)
+whereJ 0 denotes the Bessel function of the first kind andθ(τ)is the Heaviside step function.
+Turning to AdSd+1, the propagator is determined by the partial differential equation
+(◻g−m2)G(x′,x)=− δd+1(x−x′)√−g .(19)
+where◻g = 1√−g∂µ
+√−g gµν∂ν is now the Laplace-Beltrami operator that generalizes the d’Alembert operator to curved
+spaces. Again, the isometries (10) tell us thatGcan only depend on the causal (that is, temporal) geodesic distance
+τ=d(x ′,x), leading to the differential equation
+( 1
+sind(τ/L)
+∂τ sind(τ/L)∂ τ +m 2)G(τ)=G ′′(τ)+ d
+Ltan(τ/L) G′(τ)+m 2G(τ)= δ(τ)
+Sd−1Ld sind(τ/L)
+.(20)
+Note that in the limitτ→0 this differential equation reduces to Eq. (17). This can be used to fix the normalization
+of the solution. In(1+1)-dimensions(d=1)the solution of Eq. (20) reads
+G(τ)= 1
+2 θ(t)θ(τ 2)Pℓ(cos τ
+L),(21)
+whereP ℓ(z)is the Legendre function andℓ= 1
+2(
+√
+1+4L 2m2 −1). In the massless casem=0 this solution reduces to
+G(τ)= 1
+2 θ(t)θ(τ 2)(22)
+which is constant inside the future light cone.
+2. Expansion in the eigenmodes of the Laplace-Beltrami operator
+When calculating propagators in Minkowski space, the underlying translation invariance is usually exploited by
+Fourier-transforming the differential equation. This allows the problem to be represented in the basis of the eigen-
+functions of◻as a plane-wave expansion. However, as we will see below, the eigenmode decomposition can be useful
+when ordinary translation invariance is absent and even when the eigenmodes are not explicitly known. This situation
+occurs, for example, in Sturm-Liouville problems but also in AdS spaces to be examined below [38–40].
+To outline this approach, let us consider a linear differential operatorL, which governs the equation of motion
+LΦ=0 of a scalar field Φ(x). The corresponding propagatorK(x, y)satisfies
+LK(x, y)=±δ(x−y).(23)
+Solving the eigenvalue equation
+LΦλ(x)=λΦ λ(x),(24)
+
+===== PAGE 6 =====
+
+6
+yields a set of eigenvaluesλwith the corresponding eigenfunctions Φ λ(x). If these eigenfunctions form a complete
+basis, they satisfy the orthogonality relation
+∫ dxΦ λ(x)Φ∗
+λ′(x)={ δ(λ−λ′)for continuousλ
+δλ,λ′ for discreteλ (25)
+and the completeness relation
+⨋ dλΦ λ(x)Φ∗
+λ′(y)=δ(x−y),(26)
+where the symbol ⨋ stands for a sum over discrete or an integral over continuous eigenvalues, respectively. With
+Eqs. (23), (24), and (26) one can easily show that the propagator can be expanded in this basis as
+K(x, y)= ⨋ dλΦ λ(x) ˜K(λ)Φ∗
+λ(y),(27)
+where
+˜K(λ)=± 1
+λ .(28)
+As we will see in the following, this approach will be useful even if we do not know the eigenfunctions Φ λ explicitly.
+D. Construction of Discrete Propagators
+In quantum theory, propagators describe the amplitude for a system to transition between two states or events.
+For a relativistic particle, the Feynman path integral formalism expresses this amplitude as a sum over all possible
+trajectories between two spacetime points, each weighted bye iS[q], whereS[q]is the action along the pathq[41].
+Although not all propagators can be derived in this way, those for free scalar particles coincide with the Green’s
+functions of the Klein-Gordon equation [42].
+In the causal set framework, where spacetime is fundamentally discrete and causal relations are encoded combi-
+natorially, the concept of a path sum is adapted by assigning amplitudes to discrete trajectories. Johnston [30, 43]
+proposed a model in Minkowski space in which each jump in a trajectory contributes ahop amplitudea, and each
+intermediate event contributes astop amplitudeb. Summing over such paths yields a propagator of the form
+K(x, y)= ∑
+n
+anbn−1Pn(x, y),(29)
+whereP n(x, y)is the average number of paths of lengthnbetween the eventsxandyin the causal set. This expression
+can be reformulated using convolution integrals and solved via Fourier transforms to recover continuum results for
+scalar field propagators on average.
+1. Discrete Propagators and Jump Amplitudes
+The approach described above is not unique. Other models, such as in [44], feature non-constant hop amplitudes
+without stop amplitudes. Alternatively, [45–47] define propagators as Green’s functions of a causal set d’Alembertian
+operator, completely bypassing the summation over paths.
+The diversity of constructions that yield correct continuum behavior on average suggests a broader family of viable
+path sum formulations. Shuman’s recent work [19] yields results analogous to those of Johnston, although expressed in
+a more general framework. In particular, the relation between jump amplitudes and scalar field propagators in causal
+sets is formulated so as to recover the continuum behavior after averaging over Poisson sprinklings into Minkowski
+space. In the following, we summarize this approach and note that it remains applicable in broader settings, including
+curved spacetimes.
+As we already know, in a finite causal set, each event can be labeled by an index. Define a matrixT, whereT xy is
+the probability amplitude for a direct jump from eventxto eventy. The total amplitude for all paths fromxtoyis
+denotedσ xy, which includes all sequences of such jumps, see Fig. 1. The propagatorK xy is proportional toσ xy
+Kxy =α σ xy,(30)
+
+===== PAGE 7 =====
+
+7
+FIG. 1. Illustration of the path sum approach. Every trajectory fromxtoyis either a direct transition toy, or it involves an
+intermediate eventz, followed by a path fromztoy. This is captured in the composition rule in Eq. (32).
+Since all trajectories can be built from sequences of jumps, we get the recursion relation
+σxy =T xy+ ∑
+z
+Txzσzy .(31)
+This leads to the matrix equation
+K=αT+T K⇒K=αT(I−T) −1,(32)
+where the matrix inverse(I−T) −1is guaranteed to exist [30, 43]. This provides a well defined formula for computing
+the propagator in terms of the jump amplitude matrixT.
+2. Sprinkling Averages
+To compare causal set propagators with continuum results, one averages over all Poisson sprinklings on the manifold,
+defining averaged functionsT(x, y)andK(x, y)as mean values of the matrix elementsT xy andK xy for all sprinklings
+containing the eventsxandy. These averages should follow a composition law similar to Eq. (31). However, in the
+continuum limit, the sum over discrete eventszbecomes an integral over spacetime. Since each summand contributes
+an average “discreteness volume”V 0 =1/ρ, we can approximate the sum as an integral
+∑
+z
+TxzKzy =ρ ∑
+z
+TxzKzy V0 ≈ρ∫ dz T(x, z)K(z, y).(33)
+Combining this with the averaged version ofK xy, we obtain the continuum relation
+K(x, y)=αT(x, y)+ρ ∫ dz T(x, z)K(z, y).(34)
+In the case of translation invariance (e.g. in Minkowski space), whereT(x, y)=T(y−x)andK(x, y)=K(y−x), this
+integral becomes a convolution
+K(y−x)=αT(y−x)+ρ ∫ dz T(z−x)K(y−z).(35)
+This convolution equation can be conveniently solved in momentum space. Applying a Fourier transform, we get
+˜T(p)=
+˜K(p)
+α+ρ ˜K(p)
+.(36)
+
+===== PAGE 8 =====
+
+8
+This shows how the average propagator relates to the average jump amplitude in momentum space. By Fourier
+transforming back to position space, one obtains the form of the jump amplitudes that, when summed over all paths
+and averaged over sprinklings, reproduce the continuum propagator.
+In curved spacetimes like AdS 1+1, however, translational invariance is replaced by non-commuting isometries and
+hence a standard Fourier decomposition cannot be used. In the following, we show that the method of path sums still
+holds in general, making use of the fact presented in Sec. II C 2, which assumes that every function can be expanded
+in terms of a complete and orthogonal set of eigenfunctions of the respective operator.
+Let us assume that there is a complete set of eigenfunctions Φ λ(x)and thatT(x, y)andK(x, y)can be expanded
+T(x, y)= ⨋ dλΦ λ(x) ˜T(λ)Φ ∗
+λ(y),(37)
+K(x, y)= ⨋ dλΦ λ(x) ˜K(λ)Φ∗
+λ(y).(38)
+Plugging these expansions into Eq. (34), we obtain after some rearrangements
+⨋ dλΦ λ(x) ˜K(λ)Φ∗
+λ(y)=α ⨋ dλΦ λ(x) ˜T(λ)Φ ∗
+λ(y)
++ρ ⨋ dλdλ′Φλ(x) ˜T(λ) ˜K(λ′)Φ∗
+λ′(y) ∫ dzΦλ′(z)Φ∗
+λ(z).
+(39)
+Now we can use the orthogonality relation in Eq. (25) to evaluate the integral overz, leading to
+⨋ dλΦ λ(x) ˜K(λ)Φ∗
+λ(y)=α ⨋ dλΦ λ(x) ˜T(λ)Φ ∗
+λ(y)
++ρ ⨋ dλΦ λ(x) ˜T(λ) ˜K(λ)Φ∗
+λ(y).
+(40)
+Finally, since the eigenfunctions are linearly independent, the above expression must also hold for the coefficients only,
+giving
+˜K(λ)=α ˜T(λ)+ρ ˜T(λ) ˜K(λ)⇒ ˜T(λ)=
+˜K(λ)
+α+ρ ˜K(λ)
+.(41)
+This is almost the same expression for the jump amplitude as in Eq. (36), except that it lives in a more general
+eigenfunction space.
+3. Determining the Jump Amplitude for a given Propagator
+From Sec. II C 2 we know that scalar field propagators (retarded, advanced, and Feynman) in the eigenfunction
+space typically have the form
+˜K(λ)= 1
+f(λ)+m 2 .(42)
+Inserting this into the previous expression for ˜T(λ), we find
+˜T(λ)= 1
+α ⋅ 1
+f(λ)+m 2+ρ/α .(43)
+This resembles a propagator with an effective mass shift
+m2↦m2+ ρ
+α .(44)
+If we introduce a scaling factor
+β=
+√
+1+ ρ
+m2α ,(45)
+
+===== PAGE 9 =====
+
+9
+to write this shift compactly, the final relation for the average jump amplitude, after applying an inverse Fourier
+transformation to Eq. (43), becomes
+T(x, y)= 1
+α K(x, y)∣m→±βm (46)
+The result shows that the implementation of a jump amplitude leads basically to a renormalization of the mass
+parameter. Consequently, a massive propagator can be obtained from a massless one by implementing a jump
+amplitude. Moreover, this formulation enables the construction of entire families of jump amplitudes which, on
+average, reproduce known continuum propagators through a discrete path sum on causal sets. As we will show in the
+next Section, this approach can be used to find a discrete propagator also in AdS 1+1 spacetime.
+III. NUMERICAL EV ALUA TION AND RESUL TS
+In this Chapter, we test whether the discrete causal set propagator matches the known continuum retarded prop-
+agator in AdS 1+1 spacetime. We begin by outlining suitable methods for sprinkling points in this case, taking into
+account the constant curvature and the causal structure. We then derive the appropriate jump amplitude by following
+the procedure presented in Sec. II D 3. With these tools, we numerically calculate the discrete propagator for arbitrary
+curvature radiusLand compare it to the continuum result.
+1. Sprinkling into AdS 1+1
+To generate a sprinkling, one randomly distributesNpoints with uncorrelated positions on the given manifold
+at constant densityρ, which means that the probability density of finding a point is proportional to the volume
+element √−g. The number of points is chosen such thatN=⌊ρV⌋, whereVis the total volume or area in which the
+sprinkling is generated.
+Attempting to create sprinklings on AdS 1+1 throughout the entire range(t, x)∈(−π
+2 , π
+2)×(−π
+2 , π
+2), one encounters
+the problem that the total volume is infinite since√−g= L2
+cos2 x diverges at the conformal boundaryx→±π
+2 . Therefore,
+one is forced to implement a cutoff and to restrict the spatial coordinate to the rangex∈(−π
+2+ϵ, π
+2−ϵ)with 0<ϵ≪1,
+so that the total volume
+V=L 2
+∫
+π/2
+−π/2
+dt ∫
+π/2−ϵ
+−π/2+ϵ
+1
+cos2 xdx= 2πL2
+tanϵ (47)
+is finite. To randomly sprinkle a point, two uniformly distributed random numbersz 1, z2 ∈[−1,1]are generated, and
+one defines its coordinates by
+t∶=πz1 , x∶=arctan ( z2
+tanϵ ) .(48)
+This process is repeated untilN=ρVpoints have been generated. A typical sprinkling is shown in the left panel of
+Fig. 2. Note that the points are distributed according to Poisson statistics, which automatically ensures invariance
+under the isometries of the underlying manifold.
+When numerically calculating a two-point function, it is important to consider only those pairs of points for which
+the implementation of the cutoff has no effect, since otherwise uncontrollable systematic errors may occur. Therefore,
+the numerical evaluation must be limited to pairs of points such that the intersection of the forward light cone of
+the starting point and the backward light cone of the target point does not touch the cutoff. This can be achieved,
+for example, by limiting the calculation to the rhombus-shaped area and discarding all points outside it. However,
+this means that most of the points, namely all those outside the rhombus, are not needed. To avoid creating and
+destroying a large number of points for nothing, we propose an equivalent, improved method which works as follows.
+We generate two uniformly distributed random numbersz 1, z2 ∈(−1,1), setw∶=(sinϵ)∣z1∣, and define the coordinates
+by
+t∶=sign(z1)(arcsin(w)−ϵ) , x∶=arctan(
+√
+1−w2
+w z2).(49)
+Again, this process is repeated untilN=ρV R points have been generated, whereV R =−4L2 ln(sinϵ)is the volume
+of the rhombus. An example of the resulting sprinkling is shown in the right panel of Fig. 2.
+
+===== PAGE 10 =====
+
+10
+FIG. 2. Sprinkled points in AdS 1+1 with densityρ=1000 and cutoffϵ=0.1. Left: Simple method which generates points in
+the entire strip(− π
+2 , π
+2 )×(− π
+2 +ϵ, π
+2 −ϵ). Right: Improved method which generates points exclusively inside a rhombus (red
+line). The cutoff is indicated as a dashed line.
+The improved sprinkling method is significantly faster because it generates fewer points near the conformal bound-
+ary. For a given densityρ, this results in a reduction in execution time by a factor of the order VR
+V =−2
+π ϵlnϵ, which
+is particularly advantageous whenϵis small. For example, forϵ=10 −2, the improved sprinkling method is about 34
+times faster.
+2. Jump Amplitudes in AdS 1+1
+As shown in [19] in more detail, the proportionality constantαintroduced in Eq. (30) can be found by dimensional
+analysis. It depends on the massm, the densityρ, and a free parameterγ:
+α=γ ρ
+m2 ⇒β=
+√
+1+ 1
+γ .(50)
+From Eq. (46) we know that the jump amplitudeT(x, y)should match on average the scalar field propagator in
+AdS1+1 shown in Eq. (21), giving
+T(x, y)= m2
+γρ
+1
+2Θ(t)Θ(s 2)Pℓ(coss)withℓ= 1
+2(−1+
+√
+1+4β 2m2L2),(51)
+wheres= τ
+L is just the rescaled proper time. Sinceγcan be chosen freely, we can setγ=−1 so thatβ=0, thereby
+relating the jump amplitude to the massless causal propagator
+T(x, y)=− m2
+2ρ Θ(t)Θ(s 2),(52)
+which is constant inside the future light cone. Note that this result coincides with the one in the Minkowski case
+in(1+1)-dimensions [19, 30]. This is not surprising, as the AdS 1+1 spacetime is topologically trivial and can be
+described using conformally flat coordinates. Thus, the retarded propagator for a massless field has to be the same
+as in a flat spacetime [22].
+3. Numerical Results
+In order to demonstrate the feasibility of the method numerically, we begin by selecting events in the causal set
+using Poisson sprinkling, as outlined in Sec. III 1, withN=18000 points distributed within a causal diamond in a
+
+===== PAGE 11 =====
+
+11
+(a)
+ (b)
+(c)
+ (d)
+FIG. 3. Numerical evaluation of the retarded causal set propagator in Eq. (54) form=10, obtained from a single sprinkling
+ofn=18000 points. Panels (a)–(d) show results for AdS 1+1 with different curvature radiiL. In each case, the causal set
+propagators are presented as functions of the rescaled manifold proper time and compared with the corresponding continuum
+retarded propagators. In panels (c) and (d), the flat-space continuum propagator with effective massm eff=mLis additionally
+included (dotted curve) for comparison.
+(1+1)-dimensional Anti-de Sitter spacetime. The causal order of the resulting set does not depend on the conformal
+factor of the metric in Eq. (6) and can therefore be determined by using the Minkowski metric (cf. Eq. (8)). With
+that, the causal matrixA xy can be calculated. This causal matrix will then be used to construct a jump amplitude
+matrixT(x, y). Recall thatT(x, y)was defined as the average ofT xy over all sprinklings. Consequently, for the causal
+set propagator to agree with the continuum propagator on average, the ensemble average ofT xy must reproduce the
+continuum solution Eq. (52). By settingα=− m2
+ρ , the jump amplitude matrix is defined as
+Txy =−m2
+2ρ Axy.(53)
+Putting this into Eq. (32), we obtain the propagator on the causal set
+Kxy = 1
+2 Axy(I+ m2
+2ρ Axy)
+−1
+.(54)
+Note that this expression coincides with the one obtained in the(1+1)-dimensional Minkowski spacetime [30] up to
+the fact that the causal matrix is different. This observation confirms that all information about the curvature of the
+embedded spacetime is encoded solely in the causal order and the local density of the events.
+
+===== PAGE 12 =====
+
+12
+To demonstrate that the retarded causal set propagator correctly approximates the continuum behavior, we nu-
+merically calculateK xy for a single sprinkling and a fixed massm=10 for various curvature radiiLand compare the
+results with the corresponding continuum solutions. The results are shown in Figs. 3 and 4. Every dot in the plots
+represents a pair of causally connected sprinkled points, plotting the value of the propagator against their (rescaled)
+proper time difference on the respective manifold.
+As can be seen, the numerical analysis of retarded causal set propagators in AdS 1+1 spacetime reveals excellent
+agreement with the corresponding continuum solutions over a wide range of curvature radiiL. The propagator curves
+obtained from causal set sprinklings closely track their continuum counterparts, supporting the claim that discrete
+causal dynamics can faithfully reproduce continuum field propagation in curved spacetimes.
+One key feature of our analysis is that the number of sprinkled elements was kept fixed while the AdS curvature
+scaleLwas varied. Since the total volume of the spacetime region is proportional toL 2, the sprinkling densityρ
+scales asρ∝1/L 2. As a consequence, smaller values ofLcorrespond to higher densities and thus smaller discrete
+fluctuations. This trend is clearly visible in the data: for smallerL, the discrete propagators adhere more tightly
+to the continuum curve, while at largerL, increased sparsity leads to more pronounced fluctuations. This behavior
+confirms the expected relationship between the sprinkling density and the fidelity of the causal set propagator.
+To provide a benchmark, we also included results from the(1+1)-dimensional Minkowski case in Fig. 4 (a). This
+serves both as a consistency check and a baseline for comparison. As anticipated, the causal set propagator in AdS 1+1
+withL=1 (Fig. 4 (b)) closely matches the flat space result, reflecting the fact that curvature effects are minimal at
+this scale and further confirming the accuracy of the construction in the weakly curved regime.
+To investigate the sensitivity of the causal set propagator to curvature and to test whether it captures the correct
+geometry, we additionally compare it to a flat space propagator with aneffective massterm given bym 2
+eff =m 2L2,
+as shown in Fig. 3 (c)-(d). This serves as an analytic approximation to the AdS propagator for small proper timess,
+where the effects of curvature are approximately encapsulated in an effective mass shift. The comparison reveals that
+this propagator approximates the AdS continuum solution well for smalls, validating its use as a local approximation.
+Our numerical results support previous analytic findings by Nomaan X, Dowker and Surya [22], who showed that
+in two-dimensional AdS spacetime thehop-and-stop constantsof the causal set scalar propagator remain identical
+to their flat space values within aRiemannian Normal Neighborhood (RNN). In such regions, the continuum is
+effectively flat and curvature corrections only enter at higher orders. Our numerical results confirm that, even
+without approximations, the full AdS 1+1 causal set propagators reproduce the expected continuum behavior with the
+same constant amplitudes as in flat space. This provides direct numerical support for the analytic finding that causal
+order, together with the appropriate sprinkling density, suffices to encode the curvature effects of AdS 1+1 spacetime.
+IV. CONCLUSION
+In this work, we have provided additional numerical evidence for the applicability of CST path sum constructions
+in curved backgrounds, focusing specifically on the(1+1)-dimensional Anti-de Sitter spacetime. By implementing a
+suitable Poisson sprinkling procedure and using a path sum approach, we numerically calculated a discrete retarded
+scalar field propagator and compared it with the known continuum counterpart derived from the Klein-Gordon
+equation. Our results exhibit remarkable agreement of the discrete and continuum propagators across a wide range
+of AdS curvature scales, without requiring any modification to the flat-space jump amplitudes, affirming the ability
+of causal sets to faithfully reproduce continuum dynamics, even in the presence of curvature. This agreement not
+only validates the robustness of the CST framework in curved settings, but also illustrates how curvature effects
+are faithfully encoded in the causal order and local sprinkling density alone, confirming the previous analytical result
+found in [22]. This also confirms Johnston’s assumption that the model and the corresponding amplitudes in flat space
+may not have to be changed to correctly reproduce the curvature dependence of the continuum Green’s functions [30].
+Our results presented here open several promising avenues for extension in the direction of quantum field theory and
+possibly toward a deeper understanding of holography in discrete spacetimes. To extend causal networks with classical
+fields to quantum-mechanical degrees of freedom, several promising directions have been taken. The Sorkin–Johnston
+vacuum provides a key step in this direction. It constructs a unique, covariantly defined vacuum state based on the
+retarded and advanced Green’s functions of the d’Alembertian on causal sets. Recent developments have extended
+this construction even to massive fields and de-Sitter spacetime [48, 49]. The formulation of interacting quantum
+field theories on causal sets remains an open frontier. There is emerging work on definingϕ 4 and other interacting
+theories using perturbative expansions and Green’s functions on causal sets [50]. A different strategy is the use of
+algebraic quantum field theory (AQFT) techniques on causal sets, which focus on the algebra of observables avoiding
+to introduce a fixed background metric [51–54].
+
+===== PAGE 13 =====
+
+13
+Another promising frontier is the implementation of discrete holography with CST. The construction of boundary
+theories using techniques such as aperiodic spin chain duals from hyperbolic tilings has already provided discrete
+counterparts to the AdS/CFT correspondence [8]. These developments suggest that holography may not be exclusive
+to smooth manifolds but could emerge from fundamentally discrete structures. It is also worth mentioning that
+new links have been found between AdS/CFT and AQFT [55]. In this context, our demonstration that causal set
+propagators accurately reflect the AdS curvature without altering jump amplitudes reinforces the feasibility of defining
+consistent bulk-boundary maps in a fully discrete setting.
+Nevertheless, the presented approach is not without limitations. Firstly, the method still relies on sprinkling, a
+process that randomly embeds elements into a continuum manifold according to a Poisson distribution. While this
+preserves Lorentz invariance and enables consistent discretization, it also implicitly assumes the existence of the
+underlying continuum geometry. This reliance means that the method still lacks a truly dynamical or background-
+independent notion of spacetime. Various approaches have been proposed to address this issue, such as classical
+sequential growth models and transitive percolation techniques [13], which attempt to generate causal sets intrin-
+sically and dynamically. However, significant challenges remain, particularly in reproducing continuum-like curved
+manifolds from such intrinsically discrete dynamics. Understanding the emergence of geometric properties from purely
+combinatorial growth remains an active and difficult area of research.
+Secondly, although the propagator-based approach is appealing due to its avoidance of traditional differential
+operators, a complete and predictive theory of quantum gravity based on causal sets will inevitably require analogs of
+standard calculus tools. In particular, substantial progress has been made in this direction. Discrete d’Alembertian
+operators have been developed for causal sets [45], enabling the definition of dynamics for scalar fields, including
+massive ones, and incorporating curvature corrections, marking a major step toward defining differential operators in
+a discrete setting [21, 56]. Furthermore, causal set versions of action and variational principles have been proposed
+[31, 57, 58], opening the way to eventually formulate a consistent, background-independent theory of quantum gravity.
+It would be interesting to apply these concepts to higher-dimensional spacetime with constant curvature (e.g.
+AdS2+1), looking forward to a more realistic description of scalar field propagation in non-trivial manifolds. Another
+field of interest would be the construction of a fermionic field propagator on a causal set. The problem is that there
+exists no analogous description of spinors on a causal set. However, as discussed in [30], the goal is not necessarily
+to develop spinor models on a causal set, but rather to construct a model for spin- 1
+2 particles. This might require
+a complete reformulation of the standard continuum-based spinor theory, replacing it with an alternative, equally
+effective framework but capable to generalization on a causal set. One idea would be to investigateFeynman’s
+Checker Model[59], where a particle moves at light speed on a discrete spacetime grid, zigzagging back and forth. By
+performing the sum over all possible paths with appropriate phase factors, the model reproduces the Dirac equation
+in(1+1)dimensions. If and how exactly this can be implemented in a causal set setting is a current field of study.
+ACKNOWLEDGMENTS
+The authors thank J. Erdmenger and R. Meyer for valuable discussions and suggestions.
+
+===== PAGE 14 =====
+
+14
+Appendix A: Supplementary Graphs
+(a)
+ (b)
+FIG. 4. Numerical results for the retarded causal set propagator (54) withm=10 for flat 2D Minkowski (a) and 2D anti
+de-Sitter spacetime with curvature radiusL=1 from a single sprinkling withn=18000, together with the corresponding
+continuum solutions, all plotted over the (rescaled) manifold proper time.
+[1] G. ’t Hooft and M. Veltman, Ann. Inst. Henri Poincar´ e A20, 69 (1974).
+[2] S. Carlip, Reports on Progress in Physics64, 885–942 (2001).
+[3] C. Rovelli,Quantum Gravity, Cambridge Monographs on Mathematical Physics (Cambridge University Press, 2004).
+[4] J. Ambjorn, J. Jurkiewicz, and R. Loll, Contemporary Physics47, 103–117 (2006).
+[5] M. B. Green, J. H. Schwarz, and E. Witten,Superstring Theory: 25th Anniversary Edition, Cambridge Monographs on
+Mathematical Physics (Cambridge University Press, 2012).
+[6] J. Maldacena, Adv. Theor. Math. Phys.2, 231 (1998), hep-th/9711200.
+[7] E. Witten, Adv. Theor. Math. Phys.2, 253 (1998), hep-th/9802150.
+[8] P. Basteiro, G. Di Giulio, J. Erdmenger, J. Karl, R. Meyer, and Z.-Y. Xian, SciPost Physics13, 10.21468/scipost-
+phys.13.5.103 (2022).
+[9] W. Magnus,Noneuclidean Tesselations and Their Groups, Pure and Applied Mathematics; a Series of Monographs and
+Textbooks, Vol. 61 (Academic Press, New York, 1974).
+[10] M. Schrauth, Y. Thurn, F. Goth, J. S. E. Portela, D. Herdt, and F. Dusel, Hypertiling – a high performance python library
+for the generation and visualization of hyperbolic lattices (2024), arXiv:2309.10844 [physics.comp-ph].
+[11] R. D. Sorkin, inLectures on Quantum Gravity(Springer, 2005) gr-qc/0309009.
+[12] L. Bombelli, J. Lee, D. Meyer, and R. D. Sorkin, Physical Review Letters59, 521 (1987).
+[13] D. Rideout and R. D. Sorkin, Physical Review D61, 024002 (1999), gr-qc/9904062.
+[14] F. Dowker, in100 Years of Relativity(World Scientific, 2005) gr-qc/0508109.
+[15] J. Henson, inApproaches to Quantum Gravity(Cambridge University Press, 2009) gr-qc/0601121.
+[16] L. Glaser, Classical and Quantum Gravity31, 095007 (2014), 1311.1701.
+[17] S. Johnston, Classical and Quantum Gravity25, 202001 (2008), 0806.3083.
+[18] F. Dowker and L. Glaser, Classical and Quantum Gravity30, 195016 (2013), 1305.2588.
+[19] S. Shuman, Physical Review D109, 10.1103/physrevd.109.046008 (2024).
+[20] D. M. Benincasa and F. Dowker, Physical review letters104, 181301 (2010).
+[21] A. Belenchia, Classical and Quantum Gravity33, 135011 (2016).
+[22] N. X, F. Dowker, and S. Surya, Classical and Quantum Gravity34, 124002 (2017).
+[23] X. Nomaan,Aspects of quantum fields on causal sets, Ph.D. thesis, PhD thesis, Jawaharlal Nehru University, 5 (2021).
+[24] F. Ashmead and D. D. Reid, inHandbook of Quantum Gravity(Springer, 2023) pp. 1–21.
+[25] V. Homˇ sak and S. Veroni, Physical Review D110, 026015 (2024).
+[26] L. Glaser and S. Surya, Physical Review D88, 124026 (2013), 1309.3403.
+[27] M. Buck, F. Dowker, I. Jubb, and R. D. Sorkin, Classical and Quantum Gravity34, 055002 (2017), 1609.03573.
+[28] S. Surya, Living Reviews in Relativity22, 10.1007/s41114-019-0023-1 (2019).
+
+===== PAGE 15 =====
+
+15
+[29] L. Philpott, F. Dowker, and R. D. Sorkin, Journal of Physics: Conference Series174, 012054 (2009), 0810.5591.
+[30] S. Johnston, Quantum fields on causal sets (2010), arXiv:1010.5514 [hep-th].
+[31] M. Roy, D. Sinha, and S. Surya, Physical Review D87, 10.1103/physrevd.87.044046 (2013).
+[32] F. Dower, J. Henson, and R. D. Sorkin, Modern Physics Letters A19, 1829–1840 (2004).
+[33] R. D. Sorkin, Causal sets: Discrete gravity (notes for the valdivia summer school) (2003), arXiv:gr-qc/0309009 [gr-qc].
+[34] E. Dable-Heath, C. J. Fewster, K. Rejzner, and N. Woods, Phys. Rev. D101, 065013 (2020).
+[35] S. Johnston, Journal of Physics. Conference Series (Online)174, 10.1088/1742-6596/174/1/012046 (2025).
+[36] B. F. Dribus, On the axioms of causal set theory (2013), arXiv:1311.2148 [gr-qc].
+[37] M. Ammon and J. Erdmenger,Gauge/gravity duality: Foundations and applications(Cambridge University Press, 2015).
+[38] V. I. Ritus, Sov. Phys. JETP48, 788 (1978).
+[39] E. Corrˆ ea, M. Lima, and S. Arruda, Contemporary Mathematics , 343 (2022).
+[40] K. Habermann, Asymptotic error in the eigenfunction expansion for the green’s function of a sturm-liouville problem
+(2021), arXiv:2109.10887 [math.CA].
+[41] R. P. Feynman, Rev. Mod. Phys.20, 367 (1948).
+[42] J. J. Halliwell and M. E. Ortiz, Phys. Rev. D48, 748 (1993).
+[43] S. Johnston, Classical and Quantum Gravity25, 202001 (2008).
+[44] J. D. Scargle and S. N. Simi´ c, Photon dispersion in causal sets (2009), arXiv:0912.3839 [astro-ph.IM].
+[45] R. D. Sorkin, Does locality fail at intermediate length-scales (2007), arXiv:gr-qc/0703099 [gr-qc].
+[46] A. Belenchia, D. M. T. Benincasa, and S. Liberati, Journal of High Energy Physics2015, 10.1007/jhep03(2015)036 (2015).
+[47] S. Aslanbeigi, M. Saravani, and R. D. Sorkin, Journal of High Energy Physics2014, 10.1007/jhep06(2014)024 (2014).
+[48] A. Mathur and S. Surya, Physical Review D100, 10.1103/physrevd.100.045007 (2019).
+[49] S. Surya, N. X, and Y. K. Yazdi, Journal of High Energy Physics2019, 10.1007/jhep07(2019)009 (2019).
+[50] E. Albertini,ϕ 4 Interaction in Causal Set Theory, Master’s thesis, Imperial College London, Department of Physics (2021),
+supervised by Prof. Fay Dowker.
+[51] E. Dable-Heath, C. J. Fewster, K. Rejzner, and N. Woods, Physical Review D101, 10.1103/physrevd.101.065013 (2020).
+[52] C. Minz,Algebraic Field Theory on Causal Sets: Local Structures and Quantization Methods, Ph.D. thesis, University of
+York (2021), unpublished.
+[53] C. J. Fewster, E. Hawkins, C. Minz, and K. Rejzner, Physical Review D103, 10.1103/physrevd.103.086020 (2021).
+[54] C. J. Fewster, D. W. Janssen, L. D. Loveridge, K. Rejzner, and J. Waldron, Communications in Mathematical Physics
+406, 10.1007/s00220-024-05180-7 (2024).
+[55] E. Witten, Journal of High Energy Physics2022, 10.1007/jhep10(2022)008 (2022).
+[56] D. M. T. Benincasa and F. Dowker, Physical Review Letters104, 10.1103/physrevlett.104.181301 (2010).
+[57] D. M. T. Benincasa, F. Dowker, and B. Schmitzer, Classical and Quantum Gravity28, 105018 (2011).
+[58] L. Bombelli and B. B. Pilgrim, Classical and Quantum Gravity38, 085014 (2021).
+[59] R. Feynman, A. Hibbs, and D. Styer,Quantum Mechanics and Path Integrals, Dover Books on Physics (Dover, 2010).

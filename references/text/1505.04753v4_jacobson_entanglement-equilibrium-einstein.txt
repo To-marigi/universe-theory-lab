@@ -1,0 +1,860 @@
+===== PAGE 1 =====
+
+Entanglement Equilibrium and the Einstein Equation
+Ted Jacobson∗
+Kavli Institute for Theoretical Physics, University of California, Santa Barbara, CA 93106
+Maryland Center for Fundamental Physics, University of Maryland, College Park, MD 20742
+A link between the semiclassical Einstein equation and a maximal vacuum entanglement hypothesis is estab-
+lished. The hypothesis asserts that entanglement entropy in small geodesic balls is maximized at ﬁxed volume in
+a locally maximally symmetric vacuum state of geometry and quantum ﬁelds. A qualitative argument suggests
+that the Einstein equation implies validity of the hypothesis. A more precise argument shows that, for ﬁrst-order
+variations of the local vacuum state of conformal quantum ﬁelds, the vacuum entanglement is stationary if and
+only if the Einstein equation holds. For nonconformal ﬁelds, the same conclusion follows modulo a conjecture
+about the variation of entanglement entropy.
+I. INTRODUCTION
+When restricted to one side of a spatial partition, the vac-
+uum state of a quantum ﬁeld has entropy because the two sides
+are entangled. The entanglement entropy of the restricted state
+is dominated by the ultraviolet (UV) ﬁeld degrees of freedom
+near the interface, and hence scales with the area. This is sim-
+ilar to the Bekenstein-Hawking black hole entropy, A/4L2
+p,
+where A is the horizon area and Lp = ( ℏG/c3)1/2 is the
+Planck length [1–3]. The similarity of these two “area laws” is
+striking, and has led to the idea that black hole entropy is just a
+special case of vacuum entanglement entropy [4–9]. To match
+the Bekenstein-Hawking entropy, vacuum entanglement en-
+tropy should be cut off at the Planck scale. Considering the
+gravitational backreaction of vacuum ﬂuctuations, such a cut-
+off appears natural [7, 10], but it lies deep in the regime of
+poorly understood quantum gravity effects.
+Bekenstein deﬁned thegeneralized entropy Sgen as the sum
+of the horizon entropy and the ordinary entropy in the exterior.
+If the horizon entropy is indeed entanglement entropy, then
+the (ﬁne-grained) generalized entropy is nothing but the total
+von Neumann entropy of the quantum state outside the hori-
+zon [9, 11, 12]. Bekenstein proposed the generalized second
+law (GSL) stating that Sgen never decreases [2]. The GSL has
+been shown to hold in various regimes [13], the proofs having
+been recently strengthened to apply to rapid changes and arbi-
+trary horizon slices [14, 15]. The validity of the law depends
+on the Einstein equation, which relates the curvature — and
+therefore the focusing of light rays that determines the change
+of horizon area — to the local energy-momentum density of
+matter.
+The GSL thus points to a deep link between vacuum entan-
+glement and the Einstein equation. The aim of this paper is to
+better understand the nature of this link. Motivated by the no-
+tion of vacuum as an equilibrium state, I formulate a maximal
+vacuum entanglement hypothesis (MVEH):
+When the geometry and quantum ﬁelds are si-
+multaneously varied from maximal symmetry, the
+entanglement entropy in a small geodesic ball is
+maximal at ﬁxed volume.
+∗ jacobson@umd.edu
+This is formulated in the context of semiclassical gravity, i.e.
+quantum ﬁelds on a classical spacetime. As such, it is predi-
+cated on the following assumption:
+The area density of vacuum entanglement entropy
+η is ﬁnite and universal.
+This assumption is supported by the evidence that horizon en-
+tropy can indeed be identiﬁed with entanglement entropy (see,
+e.g. [9, 16, 17], and references therein). However, it involves
+UV aspects of quantum gravity that are not currently under-
+stood, so it remains an assumption.
+I will argue that the Einstein equation supports the MVEH
+and, conversely, that the MVEH implies the Einstein equation
+for ﬁrst-order variations of the local vacuum state for confor-
+mal ﬁelds. For nonconformal ﬁelds the result holds modulo a
+conjecture about the variation of entanglement entropy to be
+explained below. It is well known that diffeomorphism invari-
+ance selects the Einstein equation, at second order in deriva-
+tives, as the unique gravitational ﬁeld equation in a metric
+theory. Since the MVEH is formulated in a diffeomorphism-
+invariant fashion, it is therefore not surprising that the Ein-
+stein equation would arise. Nevertheless, entropy maximiza-
+tion is quite different from Hamilton’s principle of stationary
+action, so something new is learned here. Moreover, the New-
+ton constant that appears in the derived Einstein equation—
+which is not ﬁxed by diffeomorphism invariance—has pre-
+cisely the value required in order for η to correspond to the
+Bekenstein-Hawking value, 1/4ℏG. This is a nontrivial and
+essential consistency property of the derivation.
+Two lines of evidence motivated this paper. First, the Ein-
+stein equation can be derived as a thermodynamic equation
+of state of the vacuum outside a local causal horizon [18].
+That derivation assumes that the entropy change of an other-
+wise stationary horizon is given by δQ/T when a local boost
+energy δQ crosses the horizon, T = ℏ/2π being the Unruh
+temperature. Second, recent work invokes AdS/CFT (anti-de
+Sitter/conformal ﬁeld theory) duality, and the thermal nature
+of CFT vacuum entanglement entropy, to derive the linearized
+Einstein equation for perturbations of AdS spacetime [19–21].
+This approach treats the entropy statistically, rather than ther-
+modynamically, and it concerns entropy of a compact region
+in the CFT at one time, rather than following the change of
+horizon entropy. The present work combines the local space-
+time setting of the equation of state approach, with the statisti-
+arXiv:1505.04753v4  [gr-qc]  25 Jun 2016
+
+===== PAGE 2 =====
+
+2
+cal, compact region setting of the holographic analysis, but it
+proceeds directly in spacetime, making no use of holography.
+II. AREA DEFICIT AND GENERAL RELATIVITY
+Einstein’s ﬁeld equation,
+Gab = 8πG Tab, (1)
+relates the Einstein curvature tensor Gab to the energy-
+momentum tensor of matter, Tab. Central to our story is the
+equivalence of (1) to the statement that the surface area deﬁcit
+of any small, spacelike geodesic ball of ﬁxed volume is pro-
+portional to the energy density in the ball. 1 We begin by
+demonstrating this lovely relation.
+At any point o in a spacetime of dimension d, choose an
+arbitrary timelike unit vector ua, and generate a (d− 1)-
+dimensional spacelike ball Σ by sending out geodesics of
+length ℓ from o in all directions orthogonal to ua. The point
+o is the center of the ball, and the boundary ∂Σ is the surface
+(see the grey region of Fig. 1). Choose a Riemann normal co-
+ordinate (RNC) system based ato, launched from an orthonor-
+mal basis formed by ua and d− 1 spacelike vectors tangent
+to Σ. Let the timelike coordinate be x0, and let the spacelike
+ones be{xi}. The signature of the spacetime metric is taken
+here to be (−+++), and units are chosen with c = 1.
+We will assume the radius of the ball is much smaller than
+the local curvature length,
+ℓ≪ Lcurvature (2)
+and work to lowest nontrivial order in their ratio. The volume
+variation at ﬁxed radius, relative to ﬂat space, is then given by
+δV|ℓ =− Ωd−2ℓd+1
+6(d− 1)(d + 1)R, (3)
+whereR = Rikik is the spatial Ricci scalar at o (see Ap-
+pendix A for details), and the area variation of ∂Σ is given by
+dδV /dℓ, i.e.
+δA|ℓ =− Ωd−2ℓd
+6(d− 1)R. (4)
+We will also be interested in the area variation at ﬁxed vol-
+ume, rather than at ﬁxed geodesic radius. When the radius
+of the ball varies, the volume and area variations have the
+additional contributions δrV = ℓd−2∫
+δr dΩ and δrA =
+(d− 2)ℓd−3∫
+δr dΩ. Choosing
+∫
+δr dΩ so that the total vol-
+ume variation vanishes, we obtain the area variation at ﬁxed
+volume,
+δA|V = δA− d− 2
+ℓ δV =− Ωd−2ℓd
+2(d2− 1)R. (5)
+1 See Appendix A for a related statement by Feynman.
+o
+ Σ
+∂Σ
+ζ
+ℓ
+FIG. 1. Causal diamond, in a maximally symmetric spacetime, for
+a geodesic ball Σ of radius ℓ with center o and boundary ∂Σ. The
+dashed curves are ﬂow lines of ζ, the conformal Killing vector ﬁeld,
+whose ﬂow preserves the diamond and which vanishes at the top and
+bottom vertices and on∂Σ. The vectors showζ at four points of Σ.
+This is smaller by the factor 3/(d + 1) than the variation at
+ﬁxed radius (4).
+To connect now with spacetime and the Einstein equation,
+note that the spatial Ricci scalar ato is equal to twice the RNC
+00-component of the spacetime Einstein tensor:
+R = Rik
+ik = R− 2R0
+0 = 2(R00− 1
+2 Rg00) = 2G00. (6)
+The area deﬁcit (5) can thus also be expressed as
+δA|V =−Ωd−2ℓd
+d2− 1 G00. (7)
+Then, using the Einstein equation (1), we see that the area
+deﬁcit is proportional to the energy density,
+δA|V =−8πGΩd−2ℓd
+d2− 1 T00. (8)
+Conversely, this simple geometrical relation contains the full
+content of Einstein’s equation, if it holds at all spacetime
+points and for all timelike unit vectors.
+The evidence that the Einstein equation implies maximal
+vacuum entanglement can now be stated in a qualitative, in-
+tuitive fashion. Suppose the ball has a Bekenstein-Hawking
+entropy A/4ℏG, arising from vacuum entanglement, and we
+try to increase the entropy by placing an entangled qbit in the
+ball. To localize the qbit within a region of size ℓ we must
+give it an energy of at least ℏ/ℓ which, according to (8), will
+contribute an area deﬁcit of orderℏG, hence a surface entropy
+decrease of order unity, offsetting the added qbit. It would
+not help to use a “highly entropic object” with many internal
+states, because the existence of such objects makes its mark in
+the vacuum as well, diluting the entropic effect of adding the
+object to the ball. Indeed, in the context of the Rindler wedge,
+it was argued that δS≤ δE/T , where T is the Unruh temper-
+ature ℏ/2π and δE is the change of boost Killing energy, since
+
+===== PAGE 3 =====
+
+3
+a thermal state maximizes entropy at ﬁxed energy [22, 23]. We
+now proceed to make this link between the Einstein equation
+and maximal vacuum entanglement more precise.
+III. CAUSAL DIAMOND AND CONFORMAL ISOMETRY
+To evaluate the variation of the entanglement entropy in a
+spacelike geodesic ball Σ it is helpful to consider the space-
+time region causally determined by Σ, called the causal di-
+amond D(Σ). In a maximally symmetric spacetime, D(Σ)
+is the intersection of the future of a past vertex and the past
+of a future vertex, and has a conformal isometry and rota-
+tional symmetry in the rest frame deﬁned by these vertices
+(see Fig. 1).
+The Minkowski line element ds2 =−dt2 + dr2 + r2dΩ2
+takes the form ds2 =−du dv + r2dΩ2 with null coordinates
+u = t−r and v = t+r. The Minkowski diamond centered on
+the origin consists of the intersection of the regions u > −ℓ
+and v < ℓ . The unique conformal isometry that preserves the
+diamond, and is spherically symmetric, is generated by the
+conformal Killing vector
+ζ = 1
+2ℓ
+[
+(ℓ2− u2)∂u + (ℓ2− v2)∂v
+]
+(9)
+(for a derivation see Appendix B). Expressed in t and r coor-
+dinates, ζ is given by
+ζ = 1
+2ℓ
+[
+(ℓ2− r2− t2)∂t− 2rt ∂r
+]
+. (10)
+The Lie derivative of the Minkowski metric along ζ is
+Lζηab =−(2t/ℓ) ηab. (11)
+The vector ζ is tangent to the null generators on the past and
+future null boundaries of the diamond, so those boundaries
+are conformal Killing horizons [24]. They meet at the ball
+boundary ∂Σ, where ζ vanishes, so ∂Σ is a bifurcation sur-
+face. The surface gravity κ of a conformal Killing horizon is
+well-deﬁned by the equation∇aζ2 =−2κζa [25], and with
+the normalization of ζ in (9) it is equal to unity.
+IV . ENTANGLEMENT ENTROPY OF A DIAMOND
+The entanglement entropy in a diamond D(Σ) is the same
+as that in Σ. Under a simultaneous variation of the geome-
+try and the state of the quantum ﬁelds, (δgab, δ|ψ⟩), the dia-
+mond entanglement entropy variation will consist of two con-
+tributions, a state-independent UV part δSUV from the area
+change induced by δgab, and a state-dependent IR part δSIR
+from δ|ψ⟩.
+As mentioned above, we are assuming that, as a result of
+the UV physics, the entanglement entropy in a spatial region
+is ﬁnite in any state, with a leading term ηA. Here A is the
+area of the boundary of the region and η is a universal con-
+stant with dimensions [length] 2−d. The scaling with area is
+natural in any theory with a large density of states at short
+distances. The assumption that η is universal is motivated by
+the idea that the UV structure of the vacuum is common to all
+states in the class being considered. 2 Under this assumption,
+when the geometry is varied, the contribution to the entangle-
+ment entropy in Σ from the UV degrees of freedom near the
+boundary ∂Σ changes by an amount
+δSUV = η δA. (12)
+The total entropy variation will thus be given by
+δStot = η δA + δSIR (13)
+If η = 1 /4ℏG, (12) coincides with the variation of Beken-
+stein’s generalized entropy, here interpreted as simply the to-
+tal entropy in the diamond. The MVEH implies that the total
+entropy variation (13) is zero at ﬁrst order , and negative for
+ﬁnite variations, when comparing to a maximally symmetric
+spacetime with the volume of Σ held ﬁxed.
+To motivate this equilibrium condition, we ﬁrst recall
+that, for ordinary thermodynamic systems in equilibrium, the
+Helmholtz free energy F = E− T S is minimized at ﬁxed
+volume. The MVEH is analogous, but with the additional fea-
+ture that the energy vanishes. That the free energy of a di-
+amond has no energy term can be motivated by comparison
+with de Sitter spacetime, and the restriction to ﬁxed volume
+arises from the fact that the diamond has a conformal Killing
+vector rather than a true Killing vector (see Appendices C and
+D).
+Our next step is to evaluate δSIR. The vacuum state of any
+QFT, restricted to the diamond, can be expressed (formally)
+as a thermal density matrix,
+ρ = Z−1 exp(−K/T ), T = ℏ/2π, (14)
+where K is the “modular Hamiltonian”. The temperature
+T = ℏ/2π is factored out here so that K will be the gener-
+ator of Lorentz boosts, i.e. hyperbolic angle shifts, at the edge
+of the diamond. For an inﬁnite diamond that coincides with
+the Rindler wedge in Minkowski space, T is the Unruh tem-
+perature [27, 28].
+Because ρ in (14) has the form of a thermal state, it mini-
+mizes the modular free energy,
+FK =⟨K⟩− T S, (15)
+where the brackets denote quantum expectation value, and
+S =− Trρ ln ρ is the von Neumann entropy. The variation
+δFK must therefore vanish for any small variation δρ of the
+state, i.e.
+δS = 2π
+ℏ δ⟨K⟩. (16)
+2 This involves an implicit choice of “conformal frame” [26] for the metric,
+namely, the one for which η is constant in spacetime. This metric turns
+out to satisfy the Einstein equation, so this frame is the so-called “Einstein
+frame”.
+
+===== PAGE 4 =====
+
+4
+This is just the usual Clausius relation for a “thermal” state
+(14).
+In general K in (14) is not a local operator, and does not
+generate a geometric ﬂow. For a CFT, however, K is equal
+to Hζ, the Hamiltonian generating the ﬂow of the conformal
+boost Killing vector (9) [29]. (This result is conformally re-
+lated to the better-known version that holds for any Poincar ´e
+invariant QFT restricted to the Rindler wedge [30].) That is,
+Hζ is given by the integral
+Hζ =
+∫
+Σ
+Tabζb dΣa. (17)
+If the quantum ﬁeld state is varied away from the vacuum,
+with an excitation length scale much longer than the diamond
+size,
+ℓ≪ Lexcitation, (18)
+then⟨Tab⟩ can be treated as constant, and using the Killing
+ﬁeld (9) we ﬁnd
+δ⟨Hζ⟩ = Ωd−2ℓd
+d2− 1 δ⟨T00⟩. (19)
+If the matter ﬁeld isnot conformal, K is not given by (17),
+and we cannot directly use (D2). However, suppose that the
+matter is described by a QFT with a UV ﬁxed point, so it is
+asymptotically conformal at short distances, and that, in ad-
+dition to (18), the diamond is much smaller than any length
+scale in the QFT,
+ℓ≪ LQFT. (20)
+Then we conjecture—and we shall assume—thatδ⟨K⟩ has the
+form of (D2) with an additional term δX that is a spacetime
+scalar,
+δ⟨K⟩ = Ωd−2ℓd
+d2− 1
+(
+δ⟨T00⟩ + δX
+)
+. (21)
+(The common coefﬁcient is factored out to simplify later ex-
+pressions.) Calculations [31, 32] indicate that for a class of
+theories and states, this is the case, although in general δX
+may carry ℓ dependence and can dominate at small ℓ.3 Note
+that the relation (21) refers only to the expectation value, and
+only to lowest order in the radius of the ball.
+V . EQUILIBRIUM AND THE EINSTEIN EQUATION
+We now postulate that a small diamond is in equilibrium
+if the quantum ﬁelds are in their vacuum state, and the cur-
+vature is that of a maximally symmetric spacetime (MSS)
+(Minkowski or (anti)-de Sitter). Any MSS seems an equally
+3 In a previous draft of this paper, I had conjectured that X =− 1
+d⟨T⟩, so
+that what appeared inδ⟨K⟩ would be just the tracefree part of⟨Tab⟩.
+good candidate, so we will regard the curvature scale of the
+MSS as a local state parameter that is effectively constant in a
+small diamond but may depend on the diamond.
+The Einstein tensor in a MSS is GMSS
+ab =−λgab, with λ
+a curvature scale. When the metric is varied away from the
+MSS, the area variation at ﬁxed volume is obtained to lowest
+order in curvature by replacing G00 in (5) with G00− GMSS
+00 ,
+which yields
+δA|V,λ =−Ωd−2ℓd
+d2− 1 (G00 + λg00). (22)
+The variation of the total diamond entropy (13) away from the
+equilibrium can now be written using (22), (16) , and (21):
+δStot|V,λ = η δA|V,λ + 2π
+ℏ δ⟨K⟩ = Ωd−2ℓd
+d2− 1×
+[
+−η (G00 + λg00) + 2π
+ℏ
+(
+δ⟨T00⟩ + δX
+)]
+. (23)
+The Einstein tensor should presumably be understood here as
+a quantum expectation value⟨Gab⟩, since the entropy that is
+maximized is, by deﬁnition, an expectation value. In using
+(21) for the matter entanglement variation, we are neglecting
+corrections that would come from the curvature of the MSS,
+since those would be of higher order.
+The requirement that the variation (23) vanishes at all
+points and with all timelike unit vectors implies a tensor equa-
+tion,
+Gab + λ gab = 2π
+ℏη
+(
+δ⟨Tab⟩ + δXgab
+)
+. (24)
+The divergence of this equation, together with the Bianchi
+identity and local conservation of energy, ties λ to δX via
+λ = 2π
+ℏη δX + Λ, (25)
+where Λ is a spacetime constant. Had we not allowed for the
+MSS curvature scale λ in the equilibrium state, (25) would
+have implied the unphysical restriction that the scalar term
+δX be constant. Note also that if δX has ℓ-dependence then
+so does λ.
+When (25) is substituted back into (24) we arrive at
+Gab + Λ gab = 2π
+ℏη δ⟨Tab⟩. (26)
+This is Einstein’s equation with an undetermined cosmologi-
+cal constant Λ, which evidently must be independent ofℓ, and
+with Newton’s constant deﬁned by
+G = 1
+4ℏη . (27)
+The area density of entanglement entropy η and Planck’s
+constant thus determine the gravitational coupling strength.
+Stronger vacuum entanglement implies weaker gravity, i.e.
+greater spacetime rigidity. Note the crucial consistency:
+When expressed using G, the surface entropy ηA is the
+Bekenstein-Hawking entropy A/4ℏG. The coefﬁcient would
+have been off by the factor (d + 1)/3 had we used the area
+variation at ﬁxed radius (4) rather than at ﬁxed volume (5).
+
+===== PAGE 5 =====
+
+5
+VI. DISCUSSION
+We have shown, given our assumptions, that the semiclas-
+sical Einstein equation holds, for ﬁrst-order variations of the
+vacuum, if and only if the entropy in small causal diamonds is
+stationary at constant volume, when varied from a maximally
+symmetric vacuum state of geometry and quantum ﬁelds. We
+assumed the diamond size ℓ is much smaller than the local
+curvature length, the wavelength of any excitations of the vac-
+uum, and the scales in the matter ﬁeld theory, but much larger
+than the UV scale at which quantum gravity effects become
+strong. Our entanglement variation assumption for noncon-
+formal matter (21) concerns only standard QFT, and is either
+true or false.
+Strictly speaking the “ﬁrst-order variation” refers to the
+derivative with respect to a parameter labeling the state, evalu-
+ated at the vacuum. To be physically applicable, however, the
+result should apply to ﬁnite but small variations. The example
+of a coherent state reveals a challenge in this regard [33]: Such
+a state can have nonzero energy density while leaving entan-
+glement entropy unchanged [34, 35]. That is, not all energy
+registers as a change of entanglement. This is consistent with
+the hypothesis of maximal vacuum entanglement, although
+the Einstein equation implies that the entropy has decreased
+— relative to vacuum — by more than it needs to in order to
+satisfy the hypothesis. Unless a further consequence of that
+hypothesis is found, or the hypothesis is reﬁned and strength-
+ened in some way, the Einstein equation does not appear to
+follow from it in all generality.
+We close with some questions and remarks concerning the
+derivation and its implications.
+• Do graviton ﬂuctuations contribute to the entanglement
+entropy? The UV part of the entanglement entropy
+S = ηA is inscrutable at this level, and the IR part does
+not include gravitons. Since the diamond is taken much
+smaller than the wavelength of any ambient gravitons,
+they have no gauge-invariant meaning in the diamond.
+In the RNC gauge they are absent at ﬁrst derivative or-
+der. Moreover, the full, nonlinear Einstein tensor al-
+ready appears on the geometric side of the equation, so
+it would be double counting to include any graviton en-
+ergy.
+• Can a gravitational ﬁeld equation with higher curvature
+corrections be derived along these lines? Maybe. We
+neglected terms of order ℓ/Lcurv in the geometry cal-
+culations, whereas a next-higher-curvature correction to
+the ﬁeld equation might be of order(ℓ1/Lcurv)2, where
+ℓ2
+1 is the relative coefﬁcient of the curvature squared
+term in the action. To capture this within our approxi-
+mation would require ℓ/ℓ1 < ℓ1/Lcurv. The right-hand
+side is presumably less than unity, in order for higher-
+curvature terms to not dominate, so the diamond would
+have to be taken smaller than ℓ1. If, say, ℓ1 were the
+string length, would classical geometry and quantum
+ﬁeld theory apply at that scale? Probably not. On the
+other hand, perhaps with improved accuracy of the ge-
+ometric analysis, and the inclusion of subleading UV
+terms in the entanglement entropy, one could consis-
+tently capture higher-curvature corrections using a dia-
+mond larger than ℓ1.
+• A derivation of Einstein’s equation invoking a quan-
+tum limit to measurements of the spacetime geometry
+of small causal diamonds was given in Ref. [36]. How
+are the assumptions used there related to those made
+here?
+• According to our derivation the Einstein equation is a
+property of vacuum equilibrium. Does this suggest how
+to include nonequilibrium effects?
+ACKNOWLEDGMENTS
+I am very grateful to H. Casini, W. Donnelly, C.T. Eling,
+S. Hollands, J. Maldacena, D. Marolf, M. van Raamsdonk,
+V . Rosenhaus, C. Rovelli, A. Satz, A. Speranza, J. Suh, M.
+Varadarajan, and A. Wall for helpful discussions, comments,
+and suggestions, and to anonymous referees for comments
+that led me to improve the presentation. This research was
+supported in part by the National Science Foundation under
+Grants No. PHY-1407744, and No. PHY11-25915.
+Appendix A: Area deﬁcit calculation
+For the Riemann normal coordinate (RNC) system based
+at a point o we let x0 denote the timelike coordinate and let
+{xi = rni} denote the spacelike coordinates, where r is the
+geodesic distance and ni is a unit vector at o, δijninj = 1 .
+The components of the metric at o in this coordinate system
+are g00 =−1, g0i = 0, and gij = δij. The spacelike geodesic
+ball of radius ℓ is denoted Σ. By deﬁnition, Σ lies within the
+x0 = 0 surface in this coordinate system. Using the standard
+result for the RNC metric components, the spatial metric hij
+on Σ takes the form
+hij = δij− 1
+3 r2Rikjl nknl + O(r3) (A1)
+where Rikjl are the spatial components of the spacetime Rie-
+mann tensor evaluated at o. The extrinsic curvature of Σ van-
+ishes at o, since Σ is generated by geodesics from o. The
+components Rikjl are therefore also equal to the components
+of the spatial Riemann tensor.
+To lowest nontrivial order in the ratio ℓ/Lcurvature the vol-
+ume element of Σ is
+dV =
+√
+h dd−1x = (1− 1
+6 r2Rik
+i
+l nknl)rd−2dr dΩ, (A2)
+where dΩ is the area element on the unit (d− 2)-sphere. The
+integral over dΩ yields
+∫
+dΩ nknl = Ωd−2
+d− 1 δkl, (A3)
+
+===== PAGE 6 =====
+
+6
+where Ωd−2 is the area of the unit (d− 2)-sphere. For spheri-
+cally symmetric integrands, the volume element is therefore
+dV = Ωd−2
+(
+1− r2R
+6(d− 1)
+)
+rd−2dr, (A4)
+whereR = Rikik is the spatial Ricci scalar at o. Integrating
+(A4) over r from 0 to ℓ yields the volume variation at ﬁxed
+radius written in the main text,
+δV|ℓ =− Ωd−2ℓd+1
+6(d− 1)(d + 1)R, (A5)
+whereR = Rikik is the spatial Ricci scalar at o.
+In the main text, the relation (A5) is used to ﬁnd the area
+variation at ﬁxed radius and at ﬁxed volume, and the link to
+the Einstein equation is made using the relation R = 2 G00,
+where Gab is the Einstein tensor. The viewpoint here is not
+new. One can ﬁnd the area and volume deﬁcits at ﬁxed radius,
+and the relation to the Einstein tensor, in Section 17 (“Rie-
+mannian coordinates and their applications”) of Pauli’s 1921
+review of relativity [37]. Pauli cites Riemann, as well as con-
+temporary researchers, for the relevant geometrical relations.
+He does not remark that the Einstein equation can be char-
+acterized purely in this manner. Feynman (in Section 11.2 of
+[38] and Section 42-3 of [39]) expressed the Einstein equation
+for d = 4 as the statement that, for all timelike directions, the
+radius excess (equivalently the radius variation at ﬁxed area)
+of a small sphere is given byℓ−
+√
+A/4π = δℓ|A = GM/3c2,
+where M = T00V is the “mass” contained in the sphere. This
+can be derived from the relations above using [Eq. (4), main
+text] together with δA|ℓ/A =−(d− 2)δℓ|A/ℓ.
+Appendix B: Conformal isometry of a ﬂat causal diamond
+The Minkowski line element ds2 =−dt2 + dr2 + r2dΩ2
+takes the form ds2 =−du dv + r2dΩ2 with null coordinates
+u = t− r and v = t + r. The diamond consists of the inter-
+section of the regions u > −ℓ and v < ℓ . To determine the
+conformal isometry that preserves the diamond, and is spher-
+ically symmetric, note that any vector ﬁeld of the form
+ξ = A(u)∂u + B(v)∂v (B1)
+is a conformal isometry of the dudv factor of the metric,
+Lξdudv = [ A′(u) + B′(v)]dudv (hereLξ is the Lie deriva-
+tive along ξ). It will be a conformal isometry of the full
+Minkowski metric providedLξr2 = [A′(u) + B′(v)]r2. Us-
+ing r = (v− u)/2 we ﬁnd that in factLξr2 = (B− A)r, so
+ξ is a conformal Killing ﬁeld if
+[A′(u) + B′(v)](v− u)/2 = B(v)− A(u). (B2)
+At u = v this implies B(v) = A(v), hence at v = 0 this
+condition becomes [A′(u) + A′(0)]u/2 = A(u)− A(0). The
+general solution is
+A(u) = B(u) = a + bu + cu2. (B3)
+The group generated by these vector ﬁelds is SL(2, R). To
+map the diamond onto itself, the ﬂow of ξ must leave invariant
+the boundaries u =−ℓ and v = ℓ. This implies A(±ℓ) =
+0, hence A(u) = a(1− u2/ℓ2). Fixing the constant a by
+requiring that ξ have unit surface gravity, we thus obtain the
+conformal Killing vector ﬁeld
+ζ = 1
+2ℓ
+[
+(ℓ2− u2)∂u + (ℓ2− v2)∂v
+]
+(B4)
+= 1
+2ℓ
+[
+(ℓ2− r2− t2)∂t− 2rt∂r
+]
+. (B5)
+Appendix C: Entropy of de Sitter space
+A small diamond is conformally isometric to a static patch
+of dS. The quantum statistical mechanics of dS was consid-
+ered long ago by Gibbons and Hawking [40]. They examined
+the thermal partition function and argued that, since Euclidean
+dS is closed, the mass, angular momentum, and electric charge
+vanish, so that the only term in the free energy for pure dS
+space is the entropy term, FdS =−T S. The minimization
+of dS free energy is thus equivalent to the maximization of
+entropy.
+This result can also be understood via the “ﬁrst law of
+event horizons” [41]. For a Schwarzschild black hole, this
+law would read δM = (κ/8πG)δA + δEK, where M is the
+mass, κ and A are the surface gravity and horizon area of the
+black hole, and EK is the Killing energy of a matter ﬂuid sur-
+rounding the black hole [42]. For dS, instead the ﬁrst law
+reads
+(κ/8πG)δA + δEK = 0. (C1)
+There is no geometric total energy term since there is no
+asymptotic region. The vanishing of the total entanglement
+entropy variation ηδA|V + δSIR for a causal diamond is anal-
+ogous to the ﬁrst law of horizon mechanics in de Sitter space
+(C1), identifying δEK with δSIR, except for the restriction to
+ﬁxed volume. This discrepancy can be traced to the fact that,
+unlike de Sitter space, a ﬂat causal diamond has a conformal
+Killing vector rather than a true Killing vector. In fact, one can
+derive a classical ﬁrst law of ﬂat causal diamonds which has
+the form (C1), with δA replaced by δA|V , as we now demon-
+strate.
+Appendix D: First law of causal diamond mechanics
+Consider a conformally spherical causal diamond in a con-
+formally ﬂat solution to a diffeomorphism invariant gravity
+theory. There is a conformal Killing vector ζ that preserves
+the diamond, and for which the edge of the diamond is the
+bifurcation surface. We may invoke the variational identity
+δHζ = δ
+∮
+∂Σ
+dQζ, (D1)
+where Hζ is the Hamiltonian generating evolution along the
+ﬂow of ζ (constructed from the symplectic form evaluated
+
+===== PAGE 7 =====
+
+7
+on the Lie derivative of the ﬁelds along ζ), Qζ is the asso-
+ciated Noether charge (d− 2)-form, and the variation is to
+any neighboring solution [43]. The surface integral yields
+−(ℏκ/2π)δS, where S is the Wald entropy associated with
+the edge. (I include the factor ℏ in the prefactor and the im-
+plicit 1/ℏ in the deﬁnition of the entropy, but these cancel in
+this strictly classical relation.) If ζ were a Killing vector, δHζ
+would vanish for all ﬁelds invariant under the Killing ﬂow. For
+matter treated as a ﬂuid, it would not vanish, because the ﬂuid
+potentials do not share the symmetry of the metric [44, 45].
+Thus, for example, if the diamond were the static patch of de
+Sitter space in general relativity, we would recover in this way
+the ﬁrst law of de Sitter horizons, (κ/8πG)δA + δEζ = 0 ,
+where δEζ is the matter Killing energy variation.
+If ζ is only a conformal Killing vector, δHζ does not van-
+ish. In general it receives contributions both from matter
+and from the gravitational ﬁeld. If the theory is general rel-
+ativity, and the background solution is Minkowski spacetime,
+then the gravitational ﬁeld contribution toδHζ turns out to be
+−(d− 2)κδV /8πGℓ (see below). When combined with the
+area variation term −κδA/8πG, this yields −κ/8πG times
+the area variation δA|V at ﬁxed volume, [Eq. (5), main text].
+Moreover, the conformal boost energy of the matter integrated
+over Σ is given by the right hand side of [Eq. (8), main text],
+when T00 is constant. In this way we see that (D1) recovers
+the statement of [Eq. (8), main text], that addition of matter
+energy to the diamond decreases the area of the boundary at
+ﬁxed volume.
+To verify the result for δHζ quoted above, we may use the
+expression for the symplectic form in [46],
+δHζ = 1
+16πG
+∫
+Σ
+wa(g; γ1, γ2)dΣa, (D2)
+with
+wa = Pabcdef(γ2bc∇dγ1ef− γ1bc∇dγ2ef), (D3)
+Pabcdef = gaegfb gcd− 1
+2 gadgbegfc− 1
+2 gabgcdgef
+− 1
+2 gbcgaegfd + 1
+2 gbcgadgef . (D4)
+In the case of interest the background metric gab is the
+Minkowski metric ηab, γ2 is the tangent vectorLζηab to the
+phase space ﬂow generated by Hζ, and γ1 is an arbitrary phase
+space tangent vector, i.e. a linearized solution about the back-
+ground. Now the conformal Killing vector in Minkowski co-
+ordinates is given by (B5), so we have
+γ2ef =Lζηef =−2t
+ℓ ηef . (D5)
+Since this vanishes at t = 0 , only the ∇dγ2ef =− 2
+ℓ δt
+dηef
+term of (D3) contributes if the sliceΣ corresponds to the t = 0
+surface. Then (D3) yields
+wt =− d− 2
+ℓ hbcγ1bc =−2 d− 2
+ℓ
+δ
+√
+h√
+h
+, (D6)
+where hbc = ηbc− ubuc is the metric on the spatial subspace
+orthogonal to ∂t. Inserting this in (D2) then yields
+δHζ =− 1
+8πG
+d− 2
+ℓ δV. (D7)
+The surface gravity is unity for the chosen conformal Killing
+ﬁeld, so this yields the result claimed above.
+[1] J. D. Bekenstein, “Black holes and the second law.” Nuovo Ci-
+mento Lettere 4, 737–740 (1972).
+[2] J. D. Bekenstein, “Black Holes and Entropy,” Phys. Rev. D 7,
+2333–2346 (1973).
+[3] S.W. Hawking, “Particle Creation by Black Holes,” Com-
+mun.Math.Phys. 43, 199–220 (1975).
+[4] Rafael D. Sorkin, “1983 paper on entanglement entropy: ‘On
+the Entropy of the Vacuum outside a Horizon’,” (2014),
+arXiv:1402.3589 [gr-qc].
+[5] Gerard ’t Hooft, “On the Quantum Structure of a Black Hole,”
+Nucl.Phys. B256, 727 (1985).
+[6] Luca Bombelli, Rabinder K. Koul, Joohan Lee, and Rafael D.
+Sorkin, “A Quantum Source of Entropy for Black Holes,”
+Phys.Rev. D34, 373–383 (1986).
+[7] Valeri P. Frolov and Igor Novikov, “Dynamical origin of the
+entropy of a black hole,” Phys.Rev. D48, 4545–4551 (1993),
+arXiv:gr-qc/9309001 [gr-qc].
+[8] Mark Srednicki, “Entropy and area,” Phys.Rev.Lett. 71, 666–
+669 (1993), arXiv:hep-th/9303048 [hep-th].
+[9] Sergey N. Solodukhin, “Entanglement entropy of black holes,”
+Living Rev.Rel. 14, 8 (2011), arXiv:1104.3712 [hep-th].
+[10] Ted Jacobson, “Gravitation and vacuum entanglement entropy,”
+Int.J.Mod.Phys. D21, 1242006 (2012), arXiv:1204.6349 [gr-
+qc].
+[11] Rafael D. Sorkin, “Toward a proof of entropy increase in the
+presence of quantum black holes,” Phys.Rev.Lett. 56, 1885–
+1888 (1986).
+[12] Rafael D. Sorkin, “The statistical mechanics of black hole ther-
+modynamics,” (1997), arXiv:gr-qc/9705006 [gr-qc].
+[13] Aron C. Wall, “Ten Proofs of the Generalized Second Law,”
+JHEP 0906, 021 (2009), arXiv:0901.3865 [gr-qc].
+[14] Aron C. Wall, “A Proof of the generalized second law for
+rapidly-evolving Rindler horizons,” Phys.Rev. D82, 124019
+(2010), arXiv:1007.1493 [gr-qc].
+[15] Aron C. Wall, “A proof of the generalized second law for
+rapidly changing ﬁelds and arbitrary horizon slices,” Phys.Rev.
+D85, 104049 (2012), arXiv:1105.3445 [gr-qc].
+[16] Ted Jacobson and Alejandro Satz, “Black hole entangle-
+ment entropy and the renormalization group,” Phys.Rev. D87,
+084047 (2013), arXiv:1212.6824.
+
+===== PAGE 8 =====
+
+8
+[17] Joshua H. Cooperman and Markus A. Luty, “Renormalization
+of Entanglement Entropy and the Gravitational Effective Ac-
+tion,” JHEP 1412, 045 (2014), arXiv:1302.1878 [hep-th].
+[18] Ted Jacobson, “Thermodynamics of space-time: The Ein-
+stein equation of state,” Phys.Rev.Lett. 75, 1260–1263 (1995),
+arXiv:gr-qc/9504004 [gr-qc].
+[19] Nima Lashkari, Michael B. McDermott, and Mark Van Raams-
+donk, “Gravitational dynamics from entanglement ’thermody-
+namics’,” JHEP 1404, 195 (2014), arXiv:1308.3716 [hep-th].
+[20] Thomas Faulkner, Monica Guica, Thomas Hartman, Robert C.
+Myers, and Mark Van Raamsdonk, “Gravitation from En-
+tanglement in Holographic CFTs,” JHEP 1403, 051 (2014),
+arXiv:1312.7856 [hep-th].
+[21] Brian Swingle and Mark Van Raamsdonk, “Universality of
+Gravity from Entanglement,” (2014), arXiv:1405.2933 [hep-
+th].
+[22] Donald Marolf, Djordje Minic, and Simon F. Ross, “Notes
+on space-time thermodynamics and the observer dependence
+of entropy,” Phys. Rev. D69, 064006 (2004), arXiv:hep-
+th/0310022 [hep-th].
+[23] Donald Marolf, “A Few words on entropy, thermodynamics,
+and horizons,” in General relativity and gravitation. Proceed-
+ings, 17th International Conference, GR17, Dublin, Ireland,
+July 18-23, 2004 (2004) pp. 83–103, arXiv:hep-th/0410168
+[hep-th].
+[24] C. C. Dyer and E. Honig, “Conformal Killing horizons,” Journal
+of Mathematical Physics 20, 409–412 (1979).
+[25] Ted Jacobson and Gungwon Kang, “Conformal invariance of
+black hole temperature,” Class.Quant.Grav. 10, L201–L206
+(1993), arXiv:gr-qc/9307002 [gr-qc].
+[26] Eanna E. Flanagan, “The Conformal frame freedom in theories
+of gravitation,” Class. Quant. Grav. 21, 3817 (2004), arXiv:gr-
+qc/0403063 [gr-qc].
+[27] W.G. Unruh, “Notes on black hole evaporation,” Phys.Rev.
+D14, 870 (1976).
+[28] Geoffrey L. Sewell, “Quantum ﬁelds on manifolds: PCT and
+gravitationally induced thermal states,” Annals Phys.141, 201–
+224 (1982).
+[29] Peter D. Hislop and Roberto Longo, “Modular Structure of the
+Local Algebras Associated With the Free Massless Scalar Field
+Theory,” Commun.Math.Phys. 84, 71 (1982).
+[30] J.J Bisognano and E.H. Wichmann, “On the Duality Condition
+for Quantum Fields,” J.Math.Phys. 17, 303–321 (1976).
+[31] Horacio Casini, Damin A. Galante, and Robert C. Myers,
+“Comments on Jacobson’s “Entanglement equilibrium and the
+Einstein equation”,” JHEP 03, 194 (2016), arXiv:1601.00528
+[hep-th].
+[32] Antony J. Speranza, “Entanglement entropy of excited states in
+conformal perturbation theory and the Einstein equation,” JHEP
+04, 105 (2016), arXiv:1602.01380 [hep-th].
+[33] Madhavan Varadarajan, “A Note on Entanglement Entropy, Co-
+herent States and Gravity,” Gen. Rel. Grav. 48, 35 (2016),
+arXiv:1602.00106 [gr-qc].
+[34] Thomas M. Fiola, John Preskill, Andrew Strominger, and
+Sandip P. Trivedi, “Black hole thermodynamics and infor-
+mation loss in two-dimensions,” Phys. Rev. D50, 3987–4014
+(1994), arXiv:hep-th/9403137 [hep-th].
+[35] Eric Benedict and So-Young Pi, “Entanglement entropy of non-
+trivial states,” Annals Phys. 245, 209–224 (1996), arXiv:hep-
+th/9505121 [hep-th].
+[36] Seth Lloyd, “The quantum geometric limit,” (2012),
+arXiv:1206.6559 [gr-qc].
+[37] W. Pauli, Theory of Relativity (Dover Publications, New York,
+1981).
+[38] R.P. Feynman, Lectures on Gravitation (Westview Press, Boul-
+der, 2002).
+[39] R.P. Feynman, “The Feynman Lectures on Physics, V ol. 2,”
+http://www.feynmanlectures.caltech.edu/.
+[40] G.W. Gibbons and S.W. Hawking, “Action Integrals and Par-
+tition Functions in Quantum Gravity,” Phys.Rev. D15, 2752–
+2756 (1977).
+[41] G.W. Gibbons and S.W. Hawking, “Cosmological Event Hori-
+zons, Thermodynamics, and Particle Creation,” Phys.Rev.D15,
+2738–2751 (1977).
+[42] James M. Bardeen, B. Carter, and S.W. Hawking, “The Four
+laws of black hole mechanics,” Commun.Math.Phys. 31, 161–
+170 (1973).
+[43] Vivek Iyer and Robert M. Wald, “Some properties of Noether
+charge and a proposal for dynamical black hole entropy,”
+Phys.Rev. D50, 846–864 (1994), arXiv:gr-qc/9403028 [gr-qc].
+[44] Vivek Iyer, “Lagrangian perfect ﬂuids and black hole mechan-
+ics,” Phys.Rev. D55, 3411–3426 (1997), arXiv:gr-qc/9610025
+[gr-qc].
+[45] Stephen R. Green, Joshua S. Schiffrin, and Robert M.
+Wald, “Dynamic and Thermodynamic Stability of Relativis-
+tic, Perfect Fluid Stars,” Class.Quant.Grav. 31, 035023 (2014),
+arXiv:1309.0177 [gr-qc].
+[46] Stefan Hollands and Robert M. Wald, “Stability of Black Holes
+and Black Branes,” Commun.Math.Phys.321, 629–680 (2013),
+arXiv:1201.0463 [gr-qc].
