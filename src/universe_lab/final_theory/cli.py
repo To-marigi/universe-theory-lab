@@ -1,4 +1,4 @@
-"""Command-line entry point for Final-Theory Bench v0.1."""
+"""Command-line entry point for frozen v0.1 and additive v0.2 benches."""
 
 from __future__ import annotations
 
@@ -7,19 +7,38 @@ import json
 from pathlib import Path
 
 from universe_lab.final_theory.benchmarks import run_final_theory_bench
+from universe_lab.final_theory.v02 import write_v0_2_artifacts
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--version", choices=("0.1", "0.2"), default="0.1")
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("results/final_theory_bench_v0.1.json"),
+        default=None,
+    )
+    parser.add_argument(
+        "--production-commit",
+        default="UNCOMMITTED_WORKTREE",
+        help="Code commit recorded in v0.2 provenance artifacts.",
     )
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[3]
+    if args.version == "0.2":
+        written = write_v0_2_artifacts(
+            root, production_commit=args.production_commit
+        )
+        print(
+            "FINAL_THEORY_OPEN "
+            "(v0.2 artifacts="
+            + ", ".join(str(path) for path in written.values())
+            + ")"
+        )
+        return 0
+
     result = run_final_theory_bench(root)
-    destination = args.output
+    destination = args.output or Path("results/final_theory_bench_v0.1.json")
     if not destination.is_absolute():
         destination = root / destination
     destination.parent.mkdir(parents=True, exist_ok=True)

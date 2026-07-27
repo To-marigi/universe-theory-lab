@@ -1,0 +1,1760 @@
+===== PAGE 1 =====
+
+arXiv:gr-qc/9904062v3  26 Jun 2004
+A Classical Sequential Growth Dynamics for Causal Sets ∗
+D. P. Rideout † and R. D. Sorkin ‡
+Department of Physics, Syracuse University
+Syracuse, NY, 13244-1130
+November 26, 2024
+Abstract
+Starting from certain causality conditions and a discrete f orm of general covariance,
+we derive a very general family of classically stochastic, s equential growth dynamics for
+causal sets. The resulting theories provide a relatively ac cessible “half way house” to full
+quantum gravity that possibly contains the latter’s classi cal limit (general relativity).
+Because they can be expressed in terms of state models for an a ssembly of Ising spins liv-
+ing on the relations of the causal set, these theories also il lustrate how non-gravitational
+matter can arise dynamically from the causal set without hav ing to be built in at the
+fundamental level. Additionally, our results bring into fo cus some interpretive issues of
+importance for causal set dynamics, and for quantum gravity more generally.
+1 Introduction
+The causal set hypothesis asserts that spacetime, ultimate ly, is discrete and that its underlying
+structure is that of a locally ﬁnite, partially ordered set ( a causal set). The approach to quan-
+tum gravity based on this hypothesis has experienced consid erable progress in its kinematic
+aspects. For example, one possesses natural extensions of t he concepts of proper time and
+spacetime dimensionality to causal sets, and these take us a signiﬁcant way toward an answer
+to the question, “When does a causal set resemble a Lorentzia n manifold?”. The dynamics of
+causal sets (the “equations of motion”), however, has not be en very developed to date. One
+of the primary diﬃculties in formulating a dynamics for caus al sets is the sparseness of the
+fundamental mathematical structure. When all one has to wor k with is a discrete set and a
+partial order, even the notion of what we should mean by a dyna mics is not obvious.
+Traditionally, one prescribes a dynamical law by specifyin g a Hamiltonian to be the gen-
+erator of the time evolution. This practice presupposes the existence of a continuous time
+variable, which we do not have in the case of causal sets. Thus , one must conceive of dynam-
+ics in a more general sense. In this paper, evolution will be e nvisaged as a process of stochastic
+∗Published in Phys. Rev. D 61, 024002 (2000). E-print archive: gr-qc/9904062
+†rideout@physics.syr.edu
+‡sorkin@physics.syr.edu
+1
+
+===== PAGE 2 =====
+
+growth to be described in terms of the probabilities (in the c lassical case, or more generally
+the quantum measures in the quantum case [1]) of forming desi gnated causal sets. That is,
+the dynamical law will be a rule which assigns probabilities to suitable classes of causal sets
+(a causal set being the “history” of the theory in the sense of “sum-over-histories”). One can
+then use this rule – technically a probability measure – to as k physically meaningful questions
+of the theory. For example one could ask “What is the probabil ity that the universe possesses
+the diamond poset as a partial stem?”. (The term ‘stem’ is deﬁ ned below.)
+Why are we interested in a classical dynamics for causal sets , when our ultimate aim is a
+quantum theory of gravity? One obvious reason is that the cla ssical case, being much simpler,
+can help us to get used to a relatively unfamiliar type of dyna mical formulation, bringing out
+the pertinent physical issues and guiding us toward physica lly suitable conditions to place on
+the theory. Is there, for example, an appropriate form of cau sality that we can impose? Should
+we attempt to express the theory directly in terms of gauge in variant (labeling independent)
+quantities, or should we follow precedent by enforcing gaug e invariance only at the end? Some
+of these issues are well illustrated with the theories we con struct herein.
+One of the best reasons to be interested in a classical dynami cs for causal sets is that
+quantum gravity must possess general relativity as a classi cal limit. Thus general relativity
+should be described as some type of eﬀective classical dynam ics for causal sets, and one may
+hope that the relevant dynamical law will be among the family delineated herein. (One can’t
+be certain this will occur, because general relativity, as a continuum theory, seems most likely
+to arise as an eﬀective theory for coarse-grained causal set s, rather than directly as a limit of
+the microscopic discrete theory, and there is no guarantee t hat this eﬀective theory will have
+the same form as the underlying exact one.)
+A question commonly asked of the causal set program is “How co uld nongravitational
+matter arise from only a partial order?”. One obvious answer is that matter can emerge as a
+higher level construct via the Kaluza-Klein mechanism [2], but this possibility has nothing to
+do with causal sets as such. The theory developed herein sugg ests a diﬀerent mechanism. It
+is possible to rewrite the theory in such a way that the dynami cs appears to arise from a kind
+of “eﬀective action” for a ﬁeld of Ising spins living on the re lations of the causal set. A form of
+“Ising matter” is thus implicit in what would seem at ﬁrst sig ht to be a purely “source-free”
+theory.
+In subsequent sections of this paper we: describe our notati on and terminology (some
+new language is required for the detailed derivation of our c ausal set dynamics); introduce
+and brieﬂy discuss the transitive percolation model; prese nt the physical requirements of Bell
+causality and discrete general covariance that we will impo se; derive the (generically) most
+general theory satisfying these requirements (including s olving the inequalities which express
+that all probabilities must fall between 0 and 1); single out a few simple choices of the free
+parameters and exhibit some properties of the resulting “co smologies”; exhibit a pair of state-
+models for the dynamics that illustrate how not only geometr y, but other matter can arise
+implicitly from order.
+2
+
+===== PAGE 3 =====
+
+1.1 Notation/Terminology/Sequential growth
+First we establish our terminology and notation. For a fulle r introduction to causal sets, see
+[3, 4, 5, 6, 7]. (For recent examples of other discrete models incorporating a causal ordering
+see [8, 9, 10].)
+A causal set (or “causet”) is a locally ﬁnite, partially ordered set (or “ poset”). We represent
+the order-relation by ‘ ≺’ and use the irreﬂexive convention that an element does not precede
+itself.
+Let C be a poset. The past of an element x ∈ C is the subset past( x) = {y ∈ C | y ≺ x}.
+The past of a subset of C is the union of the pasts of its elements. An element of C is maximal
+iﬀ it is to the past of no other element. A chain is a linearly ordered subset of C (a subset,
+every two elements of which are related by ≺); an antichain is a totally unordered subset (a
+subset, no two elements of which are related by ≺). A partial stem of C is a ﬁnite subset
+which contains its own past. (A full stem is a partial stem suc h that every element of its
+complement lies to the future of one of its maximal elements. ) An automorphism of C is a
+one-to-one map of C onto itself that preserves ≺.
+A link of a poset is an irreducible relation, that is, one not implie d by other relations via
+transitivity.1 A path in a poset is an increasing sequence of elements, each relate d to the next
+by a link.
+A poset can be represented graphically by a Hasse diagram, wh ich is constructed as follows.
+Draw a dot to represent each element of the poset. Draw a line c onnecting any two elements
+x ≺ y related by a link, such that the preceding element x is drawn below the following
+element y.
+The dynamics which we will derive can be regarded as a process of “cosmological accretion”
+or “growth”. At each step of this process an element of the cau sal set comes into being as the
+“oﬀspring” of a deﬁnite set of the existing elements – the ele ments that form its past. The
+phenomenological passage of time is taken to be a manifestat ion of this continuing growth
+of the causet. Thus, we do not think of the process as happenin g “in time” but rather as
+“constituting time”, which means in a practical sense that t here is no meaningful order of
+birth of the elements other than that implied by the relation ≺.
+In order to deﬁne the dynamics, however, we will treat the bir ths as if they happened in
+a deﬁnite order with respect to some ﬁctitious “external tim e”. In this way, we introduce an
+element of “gauge” into the description of the growth proces s which we will have to compensate
+by imposing appropriate conditions of “gauge invariance”. This ﬁctitious order of birth can
+be represented as a natural labeling of the elements, that is, a labeling by integers 0 , 1, 2 · · ·
+which are compatible with the causal order ≺ in the sense that x ≺ y ⇒ label(x) < label (y).2
+The relevant notion of gauge invariance (which we will call “ discrete general covariance”) is
+then captured by the statement that the labels carry no physi cal meaning. We discuss this
+more extensively later on. 3
+1Links are often called “covering relations” in the mathemat ical literature.
+2A natural labeling of an order P is equivalent to what is called a “linear extension of P ” in the mathematical
+literature.
+3The continuum analog of a natural labeling might be a coordin ate system in which x0 is everywhere
+timelike (and this in turn is almost the same thing as a foliat ion by spacelike slices). One could also consider
+arbitrary labelings, which would be analogous to arbitrary coordinate systems. In that case, there would be
+3
+
+===== PAGE 4 =====
+
+It is helpful to visualize the growth of the causal set in term s of paths in a poset P of ﬁnite
+causal sets. (Thus viewed, the growth process will be a sort o f Markov process taking place
+in P.) Each ﬁnite causet (or rather each isomorphism equivalenc e class of ﬁnite causets) is
+one element of this poset. If a causet can be formed by accreti ng a single element to a second
+causet, then the former (the “child”) follows the latter (th e “parent”) in P and the relation
+between them is a link. Drawing P as a Hasse diagram of Hasse diagrams, we get ﬁgure 1.
+(Of course this is only a portion of the inﬁnite diagram; it in cludes all the causal sets of fewer
+than ﬁve elements and 8 of the 63 ﬁve element causets. The “dec orations” on some of the
+q 3
+q = 1
+0
+2
+2
+3
+3
+q
+q
+q
+q
+q
+q
+q
+3
+3
+3
+2
+1
+2
+q
+4
+2
+2
+2
+2
+3
+Figure 1: The poset of ﬁnite causets
+transitions in ﬁgure 1 are for later use.) Any natural labeli ng of a causet C ∈ P determines
+uniquely a path in P beginning at the empty causet and ending at C. Conversely, any choice
+of upward path through this diagram determines a naturally l abeled causet (or rather a set of
+them, since inequivalent labelings can sometimes give rise to the same path in P.)4 We want
+the physics to be independent of labeling, so diﬀerent paths in P leading to the same causet
+a well-deﬁned gauge group — the group of permutations of the causet elements — and label ing invariance
+would signify invariance under this group, in closer analog y with diﬀeomorphism invariance and ordinary
+gauge invariance. However, we have not found a useful way to d o this, and in this paper only natural labelings
+will ever be considered.
+4We could restore uniqueness by “resolving” each link C1 ≺ C2 of P into the set of distinct embeddings
+i : C1 → C2 that it represents. Here, two embeddings count as distinct i ﬀ no automorphism of the child relates
+them (cf. the discussion of the Markov sum rule below).
+4
+
+===== PAGE 5 =====
+
+should be regarded as representing the same (partial) unive rse, the distinction between them
+being “pure gauge”.
+The causal sets which can be formed by adjoining a single maxi mal element to a given
+causet will be called collectively a family. The causet from which they come is their parent,
+and they are siblings of each other. Each one is a child of the parent. The child formed
+by adjoining an element which is to the future of every elemen t of the parent will be called
+the timid child . The child formed by adjoining an element which is spacelike to every other
+element will be called the gregarious child.
+Each parent-child relationship in P describes a ‘transition’ C → C ′, from one causal set to
+another induced by the birth of a new element. The past of the n ew element (a subset of C)
+will be referred to as the precursor set of the transition (or sometimes just the “precursor of
+the transition”). Normally, this precursor set is uniquely determined up to automorphism of
+the parent by the (isomorphism equivalence class of the) chi ld, but (rather remarkably) this
+is not always the case. The symbol Cn will denote the set of causets with n elements, and the
+set of all transitions from Cn to Cn+1 will be called stage n.
+As just remarked, each parent-child transition correspond s to a choice of partial stem in the
+parent (the precursor of the transition). Since there is a on e-to-one correspondence between
+partial stems and antichains, a choice of child also corresp onds to a choice of (possibly empty)
+antichain in the parent, the antichain in question being the set of maximal elements of the
+past of the new element. Note also that the new element will be linked to each element of
+this antichain.
+1.2 Some examples
+To help clarify the terminology introduced in the previous s ection, we give some examples.
+The 20 element causet of ﬁgure 2 was generated by the stochast ic dynamics described herein,
+with the choice of parameters given by equation (16) below. I n the copy of this causet on the
+left, the past of element a is highlighted. Notice that since we use the irreﬂexive conv ention
+for the order, a is not included in its own past. In the the copy on the right, a p artial stem of
+the causet is highlighted.
+Figure 3 shows r r r
+r r
+   and its children. The timid child is Cb and the gregarious child is Cc.
+The precursor set leading to the transition to Cd is shown in the ellipse. An example of an
+automorphism of Ca is the map a ↔ c, b ↔ d (the other elements remaining unchanged).
+2 Transitive Percolation
+In a sum over histories formulation of causal set theory, one might expect sums like
+∑
+C
+A(C, {q}) (1)
+to be involved, where A is a complex amplitude for the causal set C, possibly depending on
+a set of parameters {q}. Kleitman and Rothschild have shown that the number of poset s of
+cardinality n grows faster than exponentially in n and that asymptotically, almost every poset
+has a certain, almost trivial, “generic” form. (See [11].) S uch a “generic poset” consists of three
+5
+
+===== PAGE 6 =====
+
+Past of element `a' A partial stem
+a
+Figure 2: An example of a (‘typical’ ?) 20 element causal set
+gregarious
+child
+parent
+siblings
+child
+timid child
+precursor
+set
+a c
+C
+C
+C
+C
+C c
+d
+e
+a
+b
+db
+Figure 3: A family
+6
+
+===== PAGE 7 =====
+
+“tiers”, with n/2 elements in the middle tier and n/4 elements in the top and bottom tiers.
+For this reason, one might think that a sum like (1) would be do minated by causets which
+in no way resemble a spacetime, leading to a sort of “entropy c atastrophe”. Nevertheless,
+it is not hard to forestall this catastrophe, and in fact the m ost naive choice of stochastic
+dynamics already does so. (Maybe this is not so diﬀerent from the situation in ordinary
+quantum mechanics, where the smooth paths, which form a set o f measure zero in the space
+of all paths, are the ones which dominate the sum over histori es in the classical limit.)
+The dynamics in question, which we will call “transitive per colation”, is perhaps the most
+obvious model of a randomly growing causet. It is an especial ly simple instance of a sequential
+growth dynamics, in which each new element forges a causal bo nd independently with each
+existing element with probability p, where p ∈ [0, 1] is a ﬁxed parameter of the model. (Any
+causal relation implied by transitivity must then be added i n as well.)
+From a more static perspective, one can also describe transi tive percolation by the following
+algorithm for generating a random poset:
+1. Start with n elements labeled 0 , 1, 2, · · ·, n − 1 ( n = ∞ is not excluded.)
+2. With a ﬁxed probability p, introduce a relation between every pair of points labeled i
+and j, where i < j .
+3. Form the transitive closure of these relations (e.g. if 2 ≺ 5 and 5 ≺ 8 then enforce that
+2 ≺ 8.)
+Expressed in this manner, the model appears as a species of on e dimensional directed perco-
+lation; hence the name we have given it (following D. Meyer).
+From a physical point of view, transitive percolation has so me appealing features, both as a
+model for a relatively small region of spacetime and as a cosm ological model for spacetime as a
+whole. For p ∼ 1/n, there is a percolation transition, where the causet goes qu alitatively from
+a large number of small disconnected universes for p < p crit to a single connected universe
+for p > p crit. Moreover, computer simulations suggest strongly that the model possesses a
+continuum limit and exhibits scaling behavior in that limit with p scaling roughly like c log n/n
+[12, 13]. The “cosmology” of transitive percolation is also suggestive — the universe cycles
+endlessly through phases of expansion, stasis, and contrac tion (via ﬂuctuation) back down to
+a single element [14].
+From all this, it is clear that the causets generated by trans itive percolation do not at
+all resemble the 3-tier, generic causets of Kleitman and Rot hschild, but rather they have the
+potential to reproduce a spacetime or a part of one. Neverthe less, the dynamics of transitive
+percolation is not viable as a theory of quantum gravity. One obvious reason is that it is
+stochastic only in the purely classical sense, lacking quan tum interference. Another reason is
+that the future of any element of the causet is completely ind ependent of anything “spacelike
+related” to that element. Therefore, the only spacetimes wh ich a causal set generated by
+transitive percolation could hope to resemble would be homo geneous, such as the Minkowski
+or de Sitter spacetimes; but neither of these possibilities is compatible with the periodic re-
+collapses alluded to earlier. At best, therefore, one could hope to reproduce a small portion
+of such a homogeneous spacetime.
+7
+
+===== PAGE 8 =====
+
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/0/0
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+/1/1
+"post"
+Figure 4: Transitive percolation cosmology
+On the other hand, in computer simulations of transitive per colation [15], two independent
+(and coarse-graining invariant) dimension estimators have tended to agree with each other, one
+such estimator being that of [16] and the other being a simple “midpoint scaling dimension”.
+(Some other indicators of manifold-like behavior have tend ed to do much more poorly, but
+those are not invariant under coarse graining, whereas one w ould in any case expect to observe
+manifold like behavior only for a suﬃciently coarse grained causal set.) In the pure percolation
+model, however, these dimension indicators vary with time ( i.e. with n) and one must rescale
+p if one wishes to hold the spacetime dimension constant. One m ay ask, then, if the model
+can be generalized by having p vary with n in an appropriate sense. We will see in the next
+section that something rather like this is in fact possible.
+The transitive percolation model, incidentally, has attra cted the interest of both mathe-
+maticians and physicists for reasons having nothing to do wi th quantum gravity. By physicists,
+it has been studied as a problem in the statistical mechanica l ﬁeld of percolation, as we have
+already alluded to. By mathematicians, it has been studied e xtensively as a branch of random
+graph theory (a poset being the same thing as a transitive acy clic directed graph). Some ref-
+erences on transitive percolation (viewed from whatever an gle) are [11, 14, 17, 18, 15, 12, 13].
+3 Physical requirements on the dynamics
+As discussed in the previous section, one can think of transi tive percolation as a sort of
+“birth process”, but as such, it is only one special case draw n from a much larger universe of
+possibilities. As preparation for describing these more ge neral possible dynamical rules, let us
+consider the growth-sequence of a causal set universe.
+First element ‘0’ appears (say with probability one, since the universe exists). Then element
+‘1’ appears, either related to ‘0’ or not. Then element ‘2’ ap pears, either related to ‘0’ or ‘1’,
+or both, or neither. Of course if 1 ≻ 0 and 2 ≻ 1 then 2 ≻ 0 by transitivity. Then element ‘3’
+appears with some consistent set of ancestors, and so on and s o forth. Because of transitivity,
+each new element ends up with a partial stem of the previous ca uset as its precursor set. The
+result of this process, obviously, is a naturally labeled ca uset (ﬁnite if we stop at some ﬁnite
+stage, or inﬁnite if we do not) whose labels record the order o f succession of the individual
+births. For illustration, consider the path in ﬁgure 1 delin eated by the heavy arrows. Along
+8
+
+===== PAGE 9 =====
+
+this path, element ‘0’ appears initially, then element ‘1’ a ppears to the future of element
+‘0’, then element ‘2’ appears to the future of element ‘0’, bu t not to the future of ‘1’, then
+element ‘3’ appears unrelated to any existing element, then element ‘4’ appears to the future
+of elements ‘0’, ‘1’ (say, or ‘2’, it doesn’t matter) and ‘3’, then element ‘5’ appears (not shown
+in the diagram), etc.
+Let us emphasize once more that the labels 0, 1, 2, etc. are not supposed to be physically
+signiﬁcant. Rather, the “external time” that they record is just a way to conceptualize the
+process, and any two birth sequences related to each other by a permutation of their labels
+are to be regarded as physically identical.
+So far, we have been describing the kinematics of sequential growth. In order to deﬁne a
+dynamics for it, we may give, for each n-element causet C, the transition probability from it
+to each of its possible children. Equivalently, we give a tra nsition probability for each partial
+stem within C. We wish to construct a general theory for these transition p robabilities by
+subjecting them to certain natural conditions. In other wor ds, we want to construct the most
+general (classically stochastic) “sequential growth dyna mics” for causal sets. 5 In stating the
+following conditions, we will employ the terminology intro duced in the Introduction.
+The condition of internal temporality
+By this imposing sounding phrase, we mean simply that each el ement is born either to the
+future of, or unrelated to, all existing elements; that is, n o element can arise to the past of an
+existing element.
+We have already assumed this tacitly in describing what we me an by a sequential growth
+dynamics. An equivalent formulation is that the labeling in duced by the order of birth must
+be natural, as deﬁned above. The logic behind the requirement of intern al temporality is that
+all physical time is that of the intrinsic order deﬁning the c ausal set itself. For an element to
+be born to the past of another would be contradictory: it woul d mean that an event occurred
+“before” another which intrinsically preceded it.
+The condition of discrete general covariance
+As we have been emphasizing, the “external time” in which the causal set grows (equivalently
+the induced labeling of the resulting poset) is not meant to c arry any physical information.
+We interpret this in the present context as being the conditi on that the net probability of
+forming any particular n-element causet C is independent of the order of birth we attribute to
+its elements. Thus, if γ is any path through the poset P of ﬁnite causal sets that originates at
+the empty causet and terminates at C, then the product of the transition probabilities along
+the links of γ must be the same as for any other path arriving at C. (So general covariance in
+this setting is a type of path independence). We should recal l here, however, that, as observed
+earlier, a link in P can sometimes represent more than one possible transition. Thus our
+statement of path-independence, to be technically correct , should say that the answer is the
+5By choosing to specify our stochastic process in terms of tra nsition probabilities, we have assumed in
+eﬀect that the process is Markovian. Although this might see m to entail a loss of generality, the loss is only
+apparent, because the condition of discrete general covari ance introduced below would have forced the Markov
+assumption on us, even if we had not already adopted it.
+9
+
+===== PAGE 10 =====
+
+same no matter which transition (partial stem) we select to r epresent the link. Obviously, this
+immediately entails that all such representatives share th e same transition probability.
+We might with justice have required here conditions that are apparently much stronger,
+including the condition that any two paths through P with the same initial and ﬁnal endpoints
+have the same product of transition probabilities. However , it is easy to see that this already
+follows from the condition stated. 6 We therefore do not make it part of our deﬁnition of
+discrete general covariance, although we will be using it cr ucially.
+Finally, it is well to remark here that just because the “arri val probability at C” is inde-
+pendent of path/labeling, that does not necessarily mean th at it carries an invariant meaning.
+On the contrary a statement like “when the causet had 8 elemen ts it was a chain” is itself
+meaningless before a certain birth order is chosen. This, al so, is an aspect of the gauge prob-
+lem, but not one that functions as a constraint on the transit ion probabilities that deﬁne our
+dynamics. Rather it limits the physically meaningful questions that we can ask of the dynam-
+ics. Technically, we expect that our dynamics (like any stoc hastic process) can be interpreted
+as a probability measure on a certain σ-algebra, and the requirement of general covariance
+will then serve to select the subalgebra of sets whose measur es have direct physical meaning.
+The Bell causality condition
+The condition of “internal temporality” may be viewed as a ve ry weak type of causality
+condition. The further causality condition we introduce no w is quite strong, being similar to
+that from which one derives Bell’s inequalities. We believe that such a condition is appropriate
+for a classical theory, and we expect that some analog will be valid in the quantum case as well.
+(On the other hand, we would have to abandon Bell causality if our aim were to reproduce
+quantum eﬀects from a classical stochastic dynamics, as is s ometimes advocated in the context
+of “hidden variable theories”. Given the inherent non-loca lity of causal sets, there is no logical
+reason why such an attempt would have to fail.)
+The physical idea behind our condition is that events occurr ing in some part of a causal
+set C should be inﬂuenced only by the portion of C lying to their past. In this way, the order
+relation constituting C will be causal in the dynamical sense, and not only in name. In terms
+of our sequential growth dynamics, we make this precise as th e requirement that the ratio of
+the transition probabilities leading to two possible child ren of a given causet depend only on
+the triad consisting of the two corresponding precursor set s and their union.
+Thus, let C → C1 designate a transition from C ∈ C n to C1 ∈ C n+1, and similarly for
+C → C2. Then, the Bell causality condition can be expressed as the e quality of two ratios 7:
+prob(C → C1)
+prob(C → C2) = prob(B → B1)
+prob(B → B2) (2)
+where B ∈ C m, m ≤ n, is the union of the precursor set of C → C1 with the precursor set
+of C → C2, B1 ∈ C m+1 is B with an element added in the same manner as in the transition
+6If γ does not start with the empty causet C0, but at Cs, we can extend it to start at C0 by choosing any
+ﬁxed path from C0 to Cs. Then diﬀerent paths from Cs to Ce correspond to diﬀerent paths between C0 and
+Ce, and the equality of net probabilities for the latter implie s the same thing for the former.
+7In writing (2), we assume for simplicity that both numerator s and both denominators are nonzero, this
+being the only case we will have occasion to treat in the prese nt paper.
+10
+
+===== PAGE 11 =====
+
+C → C1, and B2 ∈ C m+1 is B with an element added in the same manner as in the transition
+C → C2.8 (Notice that if the union of the precursor sets is the entire p arent causet, then the
+Bell causality condition reduces to a trivial identity.)
+To clarify the relationships among the causets involved, it may help to characterize the
+latter in yet another way. Let e1 be the element born in the transition C → C1 and let e2
+be the element born in the transition C → C2. Then Ci = C ∪ {ei} (i = 1 , 2), and we have
+B = (past e1) ∪ (past e2) and Bi = B ∪ {ei} (i = 1, 2).
+By its deﬁnition, Bell causality relates ratios of transiti on probabilities belonging to one
+“stage” of the growth process to ratios of transition probab ilities belonging to previous stages.
+For illustration, consider the case depicted in ﬁgure 5. The precursor P1 of the transition
+/0/0
+/0/0
+/0/0
+/1/1
+/1/1
+/1/1
+/0/0
+/0/0
+/0/0
+/1/1
+/1/1
+/1/1
+/0/0
+/0/0
+/0/0
+/1/1
+/1/1
+/1/1
+/0/0
+/0/0
+/0/0
+/1/1
+/1/1
+/1/1
+/0/0
+/0/0
+/1/1
+/1/1
+C 1 C2
+C
+Figure 5: Illustrating Bell causality
+C → C1 contains only the earliest (minimum) element of C, shown in the ﬁgure as a pattern-
+ﬁlled dot. The precursor P2 of C → C2 contains as well the next earliest element, shown as a
+(diﬀerent pattern)-ﬁlled dot. The union of the two precurso rs is thus B = P1 ∪ P2 = P2. The
+elements of C depicted as open dots belong to neither precursor. Such elem ents will be called
+spectators. Bell causality says that the spectators can be deleted with out aﬀecting relative
+probabilities. Thus the ratio of the transition probabilit ies of ﬁgure 5 is equal to that of ﬁgure
+6.
+/0
+/0
+/0
+/1
+/1
+/1
+/0
+/0
+/0
+/1
+/1
+/1
+/0
+/0
+/1
+/1
+/0/0
+/0/0
+/1/1
+/1/1
+/0/0
+/0/0
+/0/0
+/1/1
+/1/1
+/1/1 B
+B 1
+B 2
+Figure 6: Illustrating Bell causality - spectators do not aﬀ ect relative probability
+8Recall that the precursor set of the transition C → C1 is the subposet of C that lies to the past of the
+new element that forms C1.
+11
+
+===== PAGE 12 =====
+
+The Markov sum rule
+As with any Markov process, we must require that the sum of the full set of transition prob-
+abilities issuing from a given causet be unity. However, the set we have to sum over depends
+in a subtle manner on the extent to which we regard causal set e lements as “distinguishable”.
+Heretofore we have identiﬁed distinct transitions with dis tinct precursor sets of the parent. In
+doing so, we have in eﬀect been treating causet elements as di stinguishable (by not identifying
+with each other, precursor sets related by automorphisms of the parent), and this is what we
+shall continue to do. Indeed, this is the counting of childre n used implicitly by transitive
+percolation, so we keep it here for consistency. With respec t to the diagram of ﬁgure 1, this
+method of counting has the eﬀect of introducing coeﬃcients i nto the sum rule, equal to the
+number of partial stems of the parent which could be the precu rsor set of the transition.
+For the transitions depicted there, these coeﬃcients (when not one) are shown next to the
+corresponding arrow. 9
+We remark here that these sum-rule coeﬃcients admit an alter native description in terms
+of embeddings of the parent into the child (as a partial stem) . Instead of saying “the number
+of partial stems of the parent which could be the past of the ne w element”, we could say “the
+number of order preserving injective maps from the parent on to partial stems of the child,
+divided by the number of automorphisms of the child”. (The pr oof of this equivalence will
+appear in [19].)
+4 The general form of the transition probabilities
+We seek to derive a general prescription which gives, consis tent with our requirements, the
+transition probability from an element of Cn to an element of Cn+1. To avoid having to deal
+with special cases, we will assume throughout that no transi tion probability vanishes. Thus
+the solution we ﬁnd may be termed “generic”, but not absolute ly general.
+In this connection, we want to point out that one probably doe s not obtain every possible
+solution of our conditions by taking limits of the generic so lution, and the special theories which
+result from taking certain transition probabilities to van ish must be treated separately. 10 One
+such special theory is the originary percolation model, which is the same as the transitive
+percolation model, but with the added restriction that each element except the original one
+must have at least one ancestor among the previous elements. The net eﬀect is that the
+growing causal set is required to have an “origin” (= unique m inimum element) at all stages.
+(Generalizations are also possible in which a more complex f ull stem of the causet is enforced.)
+The poset of originary causets can be transformed into the po set of all causets (exactly) by
+removing the origin from every originary causet. The transi tion probabilities for originary
+percolation are just those of ordinary transitive percolat ion with an added factor of (1 − qn)
+9One might describe the result of setting these coeﬃcients to unity as the case of “indistinguishable causet
+elements”. It appears that in this case a dynamics with a rich er structure obtains: instead of the transition
+probability depending only on the size of the precursor set a nd the number of its maximal elements, it is
+sensitive to more details of the precursor set’s structure.
+10Indeed, the requirement of Bell causality itself must be giv en an unambiguous interpretation when some
+of the transition probabilities involved are zero.
+12
+
+===== PAGE 13 =====
+
+in the denominator at stage n.
+4.1 Counting the free parameters
+A theory of the sort we are seeking provides a probability for each transition, so without further
+restriction, it would contain a free parameter for every pos sible antichain of every possible
+(ﬁnite) causet. We will see, however, that the requirements described above in Section 3
+drastically limit this freedom.
+Lemma 1 There is at most one free parameter per family.
+Proof: Consider a parent and its children. Every such child, except the timid child, partici-
+pates in a Bell causality equation with the gregarious child . (See the proof of Lemma 5 in the
+Appendix.) Hence (since Bell causality equates ratios), al l these transitions are determined
+up to an overall factor. This leaves two free parameters for t he family. The Markov sum rule
+gives another equation, which exhausts itself in determini ng the probability of the timid child.
+Hence precisely one free parameter per family remains after Bell Causality and the sum rule
+are imposed. ✷
+Lemma 2 The probability to add a completely disconnected element (t he “gregarious child
+transition ”) depends only on the cardinality of the parent c ausal set.
+Proof: Consider an arbitrary causet A, with a maximal element e, as indicated in ﬁgure 7.
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+x
+a b
+w
+D
+B
+E
+A
+e
+e
+f
+f
+f
+f
+f
+C
+G
+y z
+F etc
+Figure 7: Equality of “gregarious child” transitions
+Adjoining a disconnected element to A produces the causet B. Then, removing e from B leads
+to the causet C, which can be looked upon as the gregarious child of the cause t D = A\{e}.
+Adding another disconnected element to C leads to a causet E with (at least) two completely
+disconnected elements. Now, by general covariance,
+ax = bw
+13
+
+===== PAGE 14 =====
+
+and by Bell causality,
+y
+w = b
+a
+(the disconnected element in C acts as the spectator here). Thus
+ax = bw = ay =⇒ x = y
+(Recall that we have assumed that no transition probability vanishes.) Repeating our deduc-
+tions with C in the place of A in the above argument (and a new maximal element f in the
+place of e), we see that y = z, where z is the probability for the transition from F to G as
+shown. Continuing in this way until we reach the antichain An shows ﬁnally that x = qn,
+where we deﬁne qn as the transition probability from the n-antichain to the ( n + 1)-antichain.
+Since our starting causet A was not chosen specially, this completes the proof. ✷
+If our causal sets are regarded as entire universes, then a gr egarious child transition corre-
+sponds to the spawning of a new, completely disconnected uni verse (which is not to say that
+this new universe will not connect up with the existing unive rse in the future). Lemma 2
+proves that the probability for this to occur does not depend on the internal structure of the
+existing universe, but only on its size, which seems eminent ly reasonable. In the sequel, we
+will call this probability qn.
+With Lemmas 1 and 2, we have reduced the number of free paramet ers (since every family
+has a gregarious child) to 1 per stage, or what is the same thin g, to one per causal set
+element. In the next sections we will see that no further redu ction is possible based on our
+stated conditions. Thus, the transition probabilities qn can be identiﬁed as the free parameters
+or “coupling constants” of the theory. They are, however, re stricted further by inequalities
+that we will derive below.
+4.2 The general transition probability in closed form
+Given the qn, the remaining transition probabilities (for the non-greg arious children) are
+determined by Bell causality and the sum rule, as we have seen . Here we derive an expression
+in closed form for an arbitrary transition probability in te rms of causet invariants and the
+parameters qn.
+Mathematical form of transition probabilities
+We use the following notation:
+αn an arbitrary transition probability from Cn to Cn+1
+βn a transition whose precursor set is not the entire parent (‘n on-timid’ transition)
+γn a transition whose precursor set is the entire parent (‘timid’ transition)
+Notice that the subscript n here refers only to the number of elements of the parent cause t; it
+does not exhibit which particular transition of stage n is intended. A more complete notation
+might provide α, β and γ with further indices to specify both the parent causet and th e
+precursor set within the parent.
+We also set q0 ≡ 1 by convention.
+14
+
+===== PAGE 15 =====
+
+Lemma 3 Each transition probability αn of stage n has the form
+qn
+n∑
+i=0
+λi
+1
+qi
+(3)
+where the λi are integers depending on the individual transition in ques tion.
+Proof: This is easily seen to be true for stages 0 and 1. Assume it is tr ue for stage n − 1.
+Consider a non-timid transition probability βn of stage n. Bell causality gives
+βn
+qn
+= αn−1
+qn−1
+where αn−1 is an appropriate transition probability from stage n − 1. So by induction
+βn = αn−1
+qn
+qn−1
+=
+n−1∑
+i=0
+λi
+qn−1
+qi
+qn
+qn−1
+=
+n−1∑
+i=0
+λi
+qn
+qi
+. (4)
+For a timid transition probability γn, we use the Markov sum rule:
+γn = 1 −
+∑
+j
+βnj (5)
+where j labels the possible non-timid transitions (i.e. the set of p roper partial stems of the
+parent).11 But then, substituting (4) yields immediately
+γn = 1 −
+∑
+j
+n−1∑
+i=0
+λji
+qi
+qn = 1 −
+n−1∑
+i=0
+∑
+j λji
+qi
+qn ,
+which we clearly can put into the form (3) by taking λi = −∑
+j λji for i < n and λn = 1. ✷
+Another look at transitive percolation
+The transitive percolation model we described earlier is co nsistent with the four conditions of
+Section 3. To see this, consider an arbitrary causal set Cn of size n. The transition probability
+αn from Cn to a speciﬁed causet Cn+1 of size n + 1 is given by
+αn = pm(1 − p)n−̟ (6)
+where m is the number of maximal elements in the precursor set and ̟ is the size of the entire
+precursor set. (This becomes clear if one recalls how the pre cursor set of a newborn element
+is generated in transitive percolation: ﬁrst a set of ancest ors is selected at random, and then
+the ancestors implied by transitivity are added. From this, it follows immediately that a given
+stem S ⊆ Cn results from the procedure iﬀ (i) every maximal element of S is selected in the
+ﬁrst step, and (ii) no element of Cn\S is selected in the ﬁrst step.) In particular, we see that
+the “gregarious transition” will occur with probability qn = qn, where q = 1 − p.
+11Of course, more than one stem will in general correspond to th e same link in P. If we redeﬁned j to run
+over links in P, then (5) would read γ n = 1 −∑
+j χ jβ nj, where χ j is the “multiplicity” of the jth link.
+15
+
+===== PAGE 16 =====
+
+Now consider our four conditions. Internal temporality was built in from the outset, as we
+know. Discrete general covariance is seen to hold upon writi ng the net probability of a given
+Cn explicitly in terms of causet invariants (writing it in “man ifestly covariant form”) as
+P (Cn) = W pLq(n
+2)−R
+where L is the number of links in Cn, R the number of relations, and W the number of
+(natural) labelings of Cn.
+To see that transitive percolation obeys Bell causality, co nsider an arbitrary parent causet.
+The transition probability to a given child is exhibited in e q. (6). Consider two diﬀerent chil-
+dren, one with ( m, ̟)=(m1,̟1) and the other with ( m, ̟)=(m2,̟2). Bell causality requires
+that the ratio of their transition probabilities be the same as if the parent were reduced to
+the union of the precursor sets of the two transitions, i.e. i t requires
+pm1qn−̟1
+pm2qn−̟2
+= pm1qn′−̟1
+pm2qn′−̟2
+where n′ is the cardinality of the union of the precursor sets of the tw o transitions. Thus, Bell
+causality is satisﬁed by inspection.
+Finally, the Markov sum rule is essentially trivial. At each stage of the growth process,
+a preliminary choice of ancestors is made by a well-deﬁned pr obabilistic procedure, and each
+such choice is mapped uniquely onto a choice of partial stem. Thus the induced probabilities
+of the partial stems sum automatically to unity.
+The general transition probability
+In the previous section we have shown that transitive percol ation produces transition proba-
+bilities (6) consistent with all our conditions. By equatin g the right hand side of (6) to the
+general form (3) of Lemma 3, we can solve for the λi and thus obtain the general solution of
+our conditions:
+αn =
+n∑
+i=0
+λi
+1
+qi
+qn = pm(1 − p)n−̟ = (1 − q)mqn−̟
+Expanding the factor (1 − q)m, and using the fact that qn = qn for transitive percolation, we
+get
+λi = (−)̟−i
+(
+m
+̟ − i
+)
+.
+So an arbitrary transition probability in the general dynam ics is, according to (3)
+αn =
+n∑
+i=0
+(−)̟−i
+(
+m
+̟ − i
+)
+qn
+qi
+.
+Noting that the binomial coeﬃcients are zero for ̟ − i /∈ {0..m}, and rearranging the indices,
+we obtain
+αn =
+m∑
+k=0
+(−)k
+(
+m
+k
+)
+qn
+q̟−k
+. (7)
+16
+
+===== PAGE 17 =====
+
+This form for the transition probability exhibits its causa l nature particularly clearly: ex-
+cept for the overall normalization factor qn, αn depends only on invariants of the associated
+precursor set.
+4.3 Inequalities
+Since the αn are classical probabilities, each must lie between 0 and 1, a nd this in turn restricts
+the possible values of the qn. Here we show that it suﬃces to impose only one inequality per
+stage; all the others (two per child) then follow. More preci sely, what we show is that, if
+qn > 0 for all n, and if αn ≥ 0 for the “timid” transition from the n-antichain, then all the αn
+lie in [0 , 1]. This we establish in the following two “Claims”.
+Claim In order that all the transition probabilities αn fall between 0 and 1, it suﬃces that
+each timid transition probability be ≥ 0.
+Proof: As described in the proofs of lemmas 1 and 5, each non-timid tr ansition (of stage n)
+is given (via Bell causality) by
+αn = αm
+qn
+qm
+where m is some natural number less than n. The q’s are positive. So if the probabilities of
+the previous stages are positive, then the non-timid probab ilities of stage n are also positive.
+It follows by induction that all but the timid transition pro babilities are positive (since α0 =
+q0 = 1 obviously is). But for the timid transition of each family , we have
+γn = 1 −
+∑
+i
+βi (8)
+where each βi is positive. If any of the βi is greater than one, γn will obviously be negative.
+Also (8) plainly cannot be greater than one. Consequently, i f we require that γn be positive,
+then all transition probabilities in the family will be in [0 , 1]. ✷
+In a timid transition, the entire parent is the precursor set , so ̟ = n. The inequalities
+constraining each probability of a given family to be in [0 , 1] therefore reduce to the sole
+condition m∑
+k=0
+(−)k
+(
+m
+k
+)
+1
+qn−k
+≥ 0 . (9)
+Claim The most restrictive inequality of stage n is the one arising from the n-antichain, i.e.
+the one for which m = n. All other inequalities of stage n follow from this inequality and the
+inequalities for smaller n.
+Proof: Assume that we have, for m = n,
+n∑
+k=0
+(−)k
+(
+n
+k
+)
+1
+qn−k
+≥ 0.
+Add to this the inequality from stage n − 1,
+n−1∑
+k=0
+(−)k
+(
+n − 1
+k
+)
+1
+qn−k−1
+=
+n∑
+k=0
+(−)k−1
+(
+n − 1
+k − 1
+)
+1
+qn−k
+≥ 0
+17
+
+===== PAGE 18 =====
+
+to get
+n−1∑
+k=0
+(−)k
+(
+n − 1
+k
+)
+1
+qn−k
+≥ 0.
+This is the inequality of stage n for m = n−1. (We have used the identity
+( n
+k
+)
+=
+( n−1
+k
+)
++
+( n−1
+k−1
+)
+.)
+Adding to it the inequality of stage n − 1 with m = n − 2 yields the inequality of stage n for
+m = n − 2. Repeating this process will give all the inequalities of s tage n. ✷
+It is helpful to introduce the quantities
+tn =
+n∑
+k=0
+(−)n−k
+(
+n
+k
+)
+1
+qk
+(10)
+Obviously, we have t0 = 1 (since q0 = 1), and we have seen that the full set of inequalities
+restricting the qn will be satisﬁed iﬀ tn ≥ 0 for all n. (Recall we are assuming qn > 0, ∀n.)
+Moreover, given the tn, we can recover the qn by inverting (10):
+Lemma 4
+1
+qn
+=
+n∑
+k=0
+(
+n
+k
+)
+tk (11)
+Proof: This follows immediately from the identity
+n∑
+k=0
+(
+n
+k
+)
+(−)n−k
+(
+k
+m
+)
+= δn
+m ✷
+Thus, the tn may be treated as free parameters (subject only to tn ≥ 0 and t0 = 1), and the
+qn can then be derived from (11). If this is done, the remaining t ransition probabilities αn
+can be re-expressed more simply in terms of the tn by inserting (11) into (7) to get
+αn
+qn
+=
+∑
+l
+tl
+∑
+k
+(−)k
+(
+m
+k
+)(
+̟ − k
+l
+)
+=
+∑
+l
+tl
+(
+̟ − m
+̟ − l
+)
+whence
+αn =
+∑ ̟
+l=m
+( ̟−m
+̟−l
+)
+tl
+∑ n
+j=0
+( n
+j
+)
+tj
+(12)
+Here, we have used an identity for binomial coeﬃcients that c an be found on page 63 of [20].
+In this way, we arrive at the general solution of our inequali ties. (Actually, we go slightly
+beyond our “genericity” assumption that αn ̸= 0 if we allow some of the tn to vanish; but no
+harm is done thereby.)
+Let us conclude this section by noting that (11) implies
+q0 ≡ 1 ≥ q1 ≥ q2 ≥ q3 ≥ · · · (13)
+If we think of the qn as the basic parameters or “coupling constants” of our seque ntial growth
+dynamics, then it is as if the universe had a free choice of one parameter at each stage of the
+18
+
+===== PAGE 19 =====
+
+process. We thus get an “evolving dynamical law”, but the evo lution is not absolutely free,
+since the allowable values of qn at every stage are limited by the choices already made. On the
+other hand, if we think of the tn as the basic parameters, then the free choice is unencumbere d
+at each stage. However, unlike the qn, the tn cannot be identiﬁed with any dynamical transition
+probability. Rather, they can be realized as ratios of two su ch probabilities, namely as the
+ratio xn/qn, where xn is the transition probability from an antichain of n elements to the
+timid child of that antichain. (Thus, if we suppose that the e volving causet at the beginning
+of stage n is an antichain, then tn is the probability that the next element will be born to the
+future of every element, divided by the probability that the next element wi ll be born to the
+future of no element.)
+4.4 Proof that this dynamics obeys the physical requirement s
+To complete our derivation, we must show that the sequential growth dynamics given by (7)
+or (12) obeys the four conditions set out in section 3.
+Internal temporality
+This condition is built into our deﬁnition of the growth proc ess.
+Discrete general covariance
+We have to show that the product of the transition probabilit ies αn associated with a labeling
+of a ﬁxed ﬁnite causet C is independent of the labeling. But this follows immediatel y from
+(7) [or (12)] once we notice that what remains after the overa ll product
+|C|−1∏
+j=0
+qj
+is factored out, is a product over all elements x ∈ C of poset invariants depending only on the
+structure of past( x).
+Bell causality
+Bell causality states that the ratio of the transition proba bilities for two siblings depends only
+on the union of their precursors. Looking at (7), consider th e ratio of two such probabilities
+αn1 and αn2. The qn factors will cancel, leading to an expression which depends only on ̟1,
+̟2, m1, and m2. Since these are all determined by the structure of the precu rsor sets, Bell
+causality is satisﬁed.
+Markov sum rule
+The sum rule states that the sum of all transition probabilit ies αn from a given parent C (of
+cardinality |C| = n) is unity. Since a child can be identiﬁed with a partial stem o f the parent,
+19
+
+===== PAGE 20 =====
+
+we can write this condition, in view of (12), as
+∑
+S
+∑
+l
+tl
+(
+|S| − m(S)
+l − m(S)
+)
+=
+∑
+j
+tj
+(
+n
+j
+)
+(14)
+where S ranges over the partial stems of C. This must hold for any tl, since they may be
+chosen freely. Reordering the sums and equating like terms y ields
+∀l,
+∑
+S
+(
+|S| − m(S)
+l − m(S)
+)
+=
+(
+n
+l
+)
+, (15)
+an inﬁnite set of identities which must hold if the sum rule is to be satisﬁed by our dynamics.
+The simplest way to see that (15) is true is to resort to transi tive percolation, for which
+tl = tl, where t = p/q = p/(1 − p). In that case we know that the sum rule is satisﬁed, so by
+inspection of (14), we see that the identity (15) must be true .
+A more intuitive proof is illustrated well by the case of l = 3. Group the terms on the left
+side according to the number of maximal elements:
+∑
+S | m(S)=0
+( |S|−0
+3−0
+)
++ ∑
+S | m(S)=1
+( |S|−1
+3−1
+)
++ ∑
+S | m(S)=2
+( |S|−2
+3−2
+)
++ ∑
+S | m(S)=3
+( |S|−3
+3−3
+)
+=
+( n
+3
+)
+0 +
+∑
+S | m(S)=1
+( |S|−1
+2
+)
++
+∑
+S | m(S)=2
+(|S| − 2) +
+∑
+S | m(S)=3
+1 =
+( n
+3
+)
+The ﬁrst term is zero because the only partial stem with zero m aximal elements is empty (i.e.
+|S| = 0). The second term is a sum over all partial stems with one ma ximal element. This is
+equivalent to a sum over elements, with the element’s inclus ive past forming the partial stem.
+The summand chooses every possible pair of elements to the pa st of the maximal element.
+Thus the second term overall counts the 3-element subcauset s of C with a single maximal
+element. There are two possibilities here, the three-chain rrr
+and the “lambda”
+r
+r r✁✁❆❆ . The third
+term sums over partial stems with two maximal elements, whic h is equivalent to summing over
+2 element antichains, the inclusive past of the antichain be ing the partial stem. The summand
+then counts the number of elements to the past of the two maxim al ones. Thus the third term
+overall counts the number of three element subcausets with p recisely two maximal elements.
+Again there are two possibilities, the “V” r
+r r
+❆❆✁✁ , and the “L”, r r
+r
+. Finally, the fourth term is
+a sum over partial stems with three maximal elements, and thi s can be interpreted as a sum
+over all three element antichains r r r. As this example illustrates, then, the left hand side of
+(15) counts the number of l element subcausets of C, placing them into “bins” according to
+the number of maximal elements of the subcauset. Adding toge ther the bin sizes yields the
+total number of l element subsets of C, which of course equals
+( n
+l
+)
+.
+4.5 Sample cosmologies
+The physical consequences of diﬀering choices of the tn remain to be explored. To get an
+initial feel for this question, we list some simple examples . (Recall our convention that t0 = 1,
+or equivalently, q0 = 1, where q0 is the probability that the universe is born at all. 12)
+12So, is the answer to the old question why something exists rat her than nothing, simply that it is nota-
+tionally more convenient for it to be so?
+20
+
+===== PAGE 21 =====
+
+• “Dust universe”
+t0 = 1, t i = 0, i ≥ 1
+This universe is simply an antichain, since, according to (1 1), qn = 1 for all n.
+• “Forest universe”
+t0 = t1 = 1; ti = 0, i ≥ 2
+This yields a universe consisting wholly of trees, since (se e the next example) t2 = t3 =
+t4 = · · · = 0 implies that no element of the causet can have more than one past link.
+The particular choice of t1 = 1 has in addition the remarkable property that, as follows
+easily from (12), every allowed transition of stage n has the same probability 1 /(n + 1).
+• Case of limited number of past links
+ti = 0, i > n 0
+Referring to expression (12) one sees at once that αn vanishes if m > n 0. Hence, no
+element can be born with more than n0 past links or “parents”. This means in particular
+that any realistic choice of parameters will have tn > 0 for all n, since an element of a
+causal set faithfully embeddable in Minkowski space would h ave an inﬁnite number of
+past links.
+• Transitive percolation
+tn = tn
+We have seen that for transitive percolation, qn = qn, where q = 1 − p. Using the
+binomial theorem, it is easy to learn from (11) or (10) that th is choice of qn corresponds
+to tn = tn with t = p/q. Clearly, t runs from 0 to ∞ as p runs from 0 to 1.
+• A more lifelike choice?
+tn = 1
+n! (16)
+We have seen that transitive percolation with constant p yields causets which could
+reproduce — at best — only limited portions of Minkowski spac e. To do any better, one
+would have to scale p so that it decreased with increasing n [12, 13, 15]. This suggests
+that tn should fall oﬀ faster than in any percolation model, hence (b y the last example)
+faster than exponentially in n. Obviously, there are many possibilities of this sort (e.g.
+tn ∼ e−αn2
+), but one of the simplest is tn ∼ c/n! This would be our candidate of the
+moment for a physically most realistic choice of parameters .
+5 The stochastic growth process as such
+We have seen that, associated with every labeled causet ˜C of size N, is a net “probability
+of formation” P (˜C) which is the product of the transition probabilities αi of the individual
+births described by the labeling:
+P (˜C) =
+N −1∏
+i=0
+αi
+21
+
+===== PAGE 22 =====
+
+where αi = α(i, ̟i, mi) is given by (7) or (12). We have also seen that P is in fact independent
+of the labeling and may be written as P (C) where C is the unlabeled causet corresponding
+to ˜C. To bring this out more clearly, let us deﬁne
+λ(̟, m) =
+̟∑
+k=m
+(
+̟ − m
+̟ − k
+)
+tk (17)
+Then qi = λ(i, 0)−1 and we have
+αi(i, ̟i, mi) = λ(̟i, mi)
+λ(i, 0) ,
+whence P (˜C) =
+N −1∏
+i=0
+λ(̟i, mi)/
+N −1∏
+j=0
+λ(j, 0), or expressed more intrinsically,
+P (C) =
+∏
+x∈C
+λ(̟(x), m(x))
+|C|−1∏
+j=0
+λ(j, 0)
+, (18)
+where ̟(x) = |pastx| and m(x) = |maximal(pastx)|. This expression, as far as it goes, is
+manifestly “causal” and “covariant” in the senses explaine d above. As also explained above,
+however, it has no direct physical meaning. Here we brieﬂy di scuss some probabilities which
+do have a fully covariant meaning and show how, in simple cases, they are related to N → ∞
+limits of probabilities like (18).
+First, let us notice that the net probability of arriving at a particular C ∈ P is not P (C)
+but
+ProbN (C) = W (C) P (C)
+where N = |C| and W (C) is the number of inequivalent 13 labelings of C, or in other words,
+the total number of paths through P that arrive at C, each link being taken with its proper
+multiplicity.
+Now as a rudimentary example of a truly covariant question, l et us take “Does the two-
+chain ever occur as a partial stem of C?”. The answer to this question will be a probability,
+P , which it is natural to identify as
+P = lim
+N →∞
+ProbN (XN ) ,
+where XN is the event that “at stage N”, C possesses a partial stem which is a two-chain. In
+this connection, we conjecture that the questions of the for m “Does P occur as a partial stem
+of C?” furnish a physically complete set, when P ranges over all (isomorphism equivalence
+classes of) ﬁnite causets.
+13Two labelings of C are equivalent iﬀ related by an automorphism of C.
+22
+
+===== PAGE 23 =====
+
+6 Two Ising-like state-models
+In this section, we present two Ising-like state-models fro m which P (C) of equation (18) can
+be obtained. In the main we just indicate the results, leavin g the details to appear elsewhere
+[19]. The two models come from taking (7) or, respectively, ( 12) as the starting point. In
+each case, the idea is to interpret the binomial coeﬃcients w hich occur in these formulas as
+describing a sum over subsets of relations of C. If we work with (7) these will be subsets of
+the set of links of C; if we work with (12) they will be subsets of the set of relatio ns of C that
+are not links.
+Let us take ﬁrst equation (7). Reinterpreting the binomial c oeﬃcients in the manner
+indicated, and proceeding as in the derivation of (18), we ar rive at an expression for P (C)
+in terms of a sum over Z2-valued “spins” σ living on the relations of C. In summing over
+conﬁgurations, however, the spins σ on the non-link relations are set permanently to 1; only
+those on the links vary. With σ = 1 interpreted as “presence” and σ = 0 as “absence”, the
+contribution of a particular spin conﬁguration σ is an overall sign times the product of one
+“vertex factor” for each x ∈ C. The vertex factor is q−1
+r , where r is the number of present
+relations having x as future endpoint, and the sign is ( −)a, where a is the number of absent
+relations. (In addition, there is a constant overall factor in P (C) of ∏ |C|−1
+j=0 qj.)
+In the second state model, we begin with (12), or better (18) i tself, and proceed similarly.
+The result is again a sum over spins σ residing on the relations, this time with all the terms
+being positive (as is required of physical Boltzmann weight s). In this second model, the spins
+on the links are set permanently to 1 while those on the non-li nks vary. The “vertex factor”
+coming from x ∈ C now is tr, where r is again the number of relations present and “pointing
+to x”.
+These two models (and especially the second) show that our se quential growth dynamics
+can be viewed as a form of “induced gravity” obtained by summi ng over (“integrating out”)
+the values of our underlying spin variables σ. This underlying “matter” theory may or may
+not be physically reasonable (Does it obey its own version of Bell causality, for example? Is
+it local in an appropriate sense?), but at a minimum, it serve s to illustrate how a theory of
+non-gravitational matter can be hidden within a theory that one might think to be limited to
+gravity alone. 14 15
+14In this connection, it bears remembering that Ising matter c an produce fermionic as well as bosonic ﬁelds,
+at least in certain circumstances. [21, 22]
+15References [23] and [24] (for which we thank an anonymous ref eree) describe a similar example of “hidden”
+matter ﬁelds in the context of 2-dimensional random surface s (Euclidean signature quantum gravity) and the
+associated matrix models in the continuum limit. Unfortuna tely, the matter ﬁelds used (Ising spins or “hard
+dimers”) were unphysical in the sense that the partition fun ction was a sum of Boltzmann weights which were
+not in general real and positive. This is much like our ﬁrst st ate model described above. To the extent that the
+analogy between these two, rather diﬀerent, situations hol ds good, our results here suggest that there might
+be, in addition to the matter ﬁelds employed in [24], another set of ﬁelds with physical choices of the coupling
+constants, which could reproduce the same eﬀective dynamic s for the random surface.
+23
+
+===== PAGE 24 =====
+
+7 Further Work
+Our dynamics can be simulated; for tn = 1/n! it takes a minute or so to generate a 64 element
+causet on a DEC Alpha 600 workstation. Analytic results, so f ar, are available only for the
+special case of transitive percolation. An important quest ion, of course, is whether some choice
+of the tn can reproduce general relativity, or at least reproduce a Lo rentzian manifold for some
+range of t’s and of n = |C|. Similarly, one can ask whether our “Ising matter” gives ris e to
+an interesting eﬀective ﬁeld theory and what relation it has with the local scalar matter on a
+background causal set studied in [25, 26]?
+Another set of questions concerns the possibility of a more “ manifestly covariant” formu-
+lation of our sequential growth dynamics – or of more general forms of causal set dynamics.
+Can Bell causality be formulated in a gauge invariant manner , without reference to a choice
+of birth sequence? Is our conjecture correct that all meanin gful assertions are logical com-
+binations of assertions about the occurrence of partial ste ms (“past sets”)? (Such questions
+seem likely to arise with special urgency in any attempt to ge neralize our dynamics to the
+quantum case.)
+Also, there are the special cases we left unstudied. There ex ist originary analogs of all of
+our dynamics, for example. Are there other special, non-gen eric cases of interest?
+We might continue multiplying questions, but let’s ﬁnish wi th the question of how to
+discover a quantum generalization of our dynamics. Since ou r theory is formulated as a type
+of Markov process, and since a Markov process mathematicall y is a probability measure on
+a suitable sample space, the natural quantum generalizatio n would seem to be a quantum
+measure[1] (or equivalent “decoherence functional”) on th e same sample space. The question
+then would be whether one could ﬁnd appropriate quantum anal ogs of Bell causality and
+general covariance formulated in terms of such a quantum mea sure. If so, we could hope that,
+just as in the classical case treated herein, these two princ iples would lead us to a relatively
+unique quantum causet dynamics, 16 or rather to a family of them among which a potential
+quantum theory of gravity would be recognizable.
+It is a pleasure to thank Avner Ash for a stimulating discussi on at a critical stage of our
+work. The research reported here was supported in part by NSF grant PHY-9600620 and by
+a grant from the Oﬃce of Research and Computing of Syracuse Un iversity.
+Appendix: Consistency of the conditions
+Our analysis of the conditions of Bell causality et al. unfol ded in the form of several lemmas.
+Here we present some similar lemmas which strictly speaking are not needed in the present
+context, but which further elucidate the relationships amo ng our conditions. We expect these
+lemmas can be useful in any attempt to formulate generalizat ions of our scheme, in particular
+quantal generalizations.
+Lemma 5 The Bell causality equations are mutually consistent.
+16See [27] for a promising ﬁrst step toward such a dynamics.
+24
+
+===== PAGE 25 =====
+
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/0/0/0
+/0/0/0
+/1/1/1
+/1/1/1/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/0/0
+/0/0
+/0/0
+/1/1
+/1/1
+/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/0/0
+/0/0
+/0/0
+/1/1
+/1/1
+/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1/0/0
+/0/0
+/1/1
+/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/0/0
+/0/0
+/0/0
+/1/1
+/1/1
+/1/1
+r r
+r
+2
+s
+s
+s1 3
+2
+1
+3
+C n
+union of precursors
+Figure 8: two families related by Bell causality
+Proof: The top of ﬁgure 8 shows three children of an arbitrary causal set Cn. The shaded
+ellipses represent portions of Cn. The small square indicates the new element whose birth
+transforms Cn into a causal set Cn+1 of the next stage. The smaller ellipse “stacked on top
+of” the larger ellipse represents a subcauset of Cn which does not intersect the precursor set
+of any of the transitions being considered (i.e. none of its e lements lie to the past of any of
+the new elements). This small ellipse thus consists entirel y of “spectators” to the transitions
+under consideration. The bottom part of ﬁgure 8 shows the cor responding parent and children
+when these spectators are removed.
+Notice that one of the three children is the gregarious child . We will show that the
+Bell causality equations between this child and each of the o thers imply all remaining Bell
+causality equations within this family. Since no Bell causa lity equation reaches outside a single
+family (and since, within a family, the Bell causality equat ions that involve the gregarious
+child obviously always possess a solution — in fact they dete rmine all ratios of transition
+probabilities except for that to the timid child), this will prove the lemma.
+In the ﬁgure t1 and t2 represent a general pair of transitions related by a Bell cau sality
+equation, namely
+t1
+t2
+= s1
+s2
+. (19)
+But, as illustrated, each of these is also related by a Bell ca usality equation to the gregarious
+child, to wit:
+t1
+t3
+= s1
+s3
+and t2
+t3
+= s2
+s3
+(20)
+Since (19) follows immediately from (20), no inconsistenci es can arise at stage n, and the
+lemma follows by induction on n. ✷
+Lemma 6 Given Bell causality and the further consequences of genera l covariance that are
+25
+
+===== PAGE 26 =====
+
+embodied in Lemma 2, all the remaining general covariance eq uations reduce to identities, i.e.
+they place no further restriction on the parameters of the th eory.
+Proof: Discrete general covariance states that the probability of forming a causet is indepen-
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/0/0/0/0/0
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+/1/1/1/1/1
+D
+B
+A C
+a
+x
+z
+b
+q n
+q
+q n
+n-1
+Figure 9: consistency of remaining general covariance cond itions
+dent of the order in which the elements arise, i.e. it is indep endent of the corresponding path
+through the poset of ﬁnite causets.
+Now, general covariance relations always can be taken to com e from ‘diamonds’ in the
+poset of causets, for the following reason. As illustrated i n ﬁgure 9, any two parents A, C of
+a causet B will have a common parent D (a “grandparent” of B) obtained by removing two
+suitable elements from B. (By assumption B must contain an element whose removal yields A
+and another element whose removal yields C. Then remove these two elements. For example,
+consider the case where
+r
+r r r✁✁❆❆ is the grandchild and it has the parent r r r (by removing the
+maximal element of the wedge) and the parent
+r
+r r✁✁❆❆ (by removing the disconnected element).
+To ﬁnd the grandparent r r remove both maximal elements from
+r
+r r r✁✁❆❆ .)
+Now, still referring to ﬁgure 9, let |D| = n and suppose inductively that all the general
+covariance relations are satisﬁed up through stage n. A new condition arising at stage n + 1
+says that some path arriving at B via x has the same probability as some other path arriving
+via z. But, by our inductive assumption, each of these paths can be modiﬁed to go through
+D without aﬀecting its probability. Thus, the equality of our two path probabilities reduces
+simply to ax = bz.
+Now by Bell causality and lemma 2,
+x
+qn
+= b
+qn−1
+,
+whence
+ax = ab qn
+qn−1
+.
+But by symmetry, we also have
+bz = ba qn
+qn−1
+;
+therefore ax = bz, as required. ✷
+26
+
+===== PAGE 27 =====
+
+References
+[1] Rafael D. Sorkin. Quantum mechanics as quantum measure t heory. Modern Physics
+Letters A, 9(33):3119–3127, 1994. <e-print archive: gr-qc/9401003 >.
+[2] J.L. Friedman and A. Higuchi. State vectors in higher-di mensional gravity with quantum
+numbers of quarks and leptons. Nuclear Physics B , 339:491–515, 1990.
+[3] Rafael D. Sorkin. Forks in the road, on the way to quantum g ravity. Int. J. Th. Phys. ,
+36:2759–2781, 1997. talk given at the conference entitled “ Directions in General Relativ-
+ity”, held at College Park, Maryland, May, 1993. <e-print archive: gr-qc/9706002 >.
+[4] Rafael D. Sorkin. Spacetime and causal sets. In J. C. D’Ol ivo, E. Nahmad-Achar,
+M. Rosenbaum, M.P. Ryan, L.F. Urrutia, and F. Zertuche, edit ors, Relativity and Grav-
+itation: Classical and Quantum , pages 150–173, Singapore, December 1991. World Sci-
+entiﬁc. (Proceedings of the SILARG VII Conference , held Cocoyoc, Mexico, December,
+1990).
+[5] Luca Bombelli, Joohan Lee, David Meyer, and Rafael D. Sor kin. Space-time as a causal
+set. Physical Review Letters , 59:521–524, 1987.
+[6] David Reid. Introduction to causal sets: an alternative view of spacetime structure.
+preprint, 1999.
+[7] Luca Bombelli. Spacetime as a Causal Set . PhD thesis, Syracuse University, December
+1987.
+[8] F. Markopoulou and L. Smolin, “Causal evolution of spin n etworks”, Nuc. Phys. B508:
+409-430 (1997) ⟨e-print archive: gr-qc/9702025 ⟩
+[9] J. Ambjørn and R. Loll, “Non-perturbative Lorentzian qu antum gravity, causality and
+topology change”, Nuc. Phys. B 536: 407-434 (1999) ⟨e-print archive: hep-th/9805108 ⟩
+[10] J. Ambjørn, K.N. Anagnostopoulos and R. Loll, “A New Per spective on Matter Coupling
+in 2d Quantum Gravity”, ⟨e-print archive: hep-th/9904012 ⟩
+[11] Graham Brightwell. Models of random partial orders. In Keele, editor, Surveys in com-
+binatorics, volume 187 of London Math. Soc. Lecture Note Ser. , pages 53–83. Cambridge
+University Press, Cambridge, 1993.
+[12] David P. Rideout and Rafael D. Sorkin. Continuum limit o f percolated causal sets. (in
+preparation).
+[13] David P. Rideout and Rafael D. Sorkin. Scaling behavior of percolated causal sets. (in
+preparation).
+[14] B´ ela Bollob´ as and Graham Brightwell. The structure o f random graph orders. Siam J.
+Discrete Math, 10(2):318–335, May 1997.
+27
+
+===== PAGE 28 =====
+
+[15] Alan Daughton, Rafael D. Sorkin, and C.R. Stephens. Per colation and causal sets: A toy
+model of quantum gravity. (in preparation).
+[16] David A. Meyer. The Dimension of Causal Sets . PhD thesis, Massachusetts Institute of
+Technology, 1988.
+[17] B´ ela Bollob´ as and Graham Brightwell. Graphs whose every transitive orientation contains
+almost every relation. Israel Journal of Mathematics , 59(1):112–128, 1987.
+[18] C. M. Newman and L. S. Schulman. One-dimensional 1 /|j − i|s percolation models: the
+existence of a transition for s ≤ 2. Comm. Math. Phys. , 104(4):547–571, 1986.
+[19] David P. Rideout. Causal Set Dynamics . PhD thesis, Syracuse University, 1999. (in
+preparation).
+[20] William Feller. An Introduction to Probability Theory and Its Applications , volume I.
+Wiley, 1957.
+[21] Claude Itzykson and Jean-Michel Drouﬀe. Statistical Field Theory, volume 2. Cambridge
+University Press, 1989.
+[22] V. N. Plechko. Anticommuting integrals and fermionic ﬁ eld theories for two-dimensional
+Ising models. August 1997. <e-print archive: hep-th/9607053 >.
+[23] V.A. Kazakov, “The appearance of matter ﬁelds from quan tum ﬂuctuations of 2D-
+gravity”, Mod. Phys. Lett. A 4:: 2125-2139 (1989)
+[24] Matthias Staudacher, “The Yang-Lee edge singularity o n a dynamical planar random
+surface”, Nuc. Phys. B336: 349-362 (1990)
+[25] Alan Daughton. The Recovery of Locality for Causal Sets and Related Topics . PhD thesis,
+Syracuse University, 1993.
+[26] Roberto Salgado. PhD thesis, Syracuse University, 199 9. (in preparation).
+[27] A. Criscuolo and H. Waelbroeck. Causal set dynamics: A t oy model. 1998. <e-print
+archive: gr-qc/9811088 >.
+28

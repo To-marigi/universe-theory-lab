@@ -1,0 +1,27 @@
+{
+  "model_id": "causal_information_v2_sparse_kraus",
+  "role": "CENTRAL_CANDIDATE",
+  "state_space": "direct sum of unlabeled finite-causet history rays",
+  "growth_stage_interpretation": "discrete volume, not physical external time",
+  "formalism": "KRAUS_GROWTH",
+  "action": {
+    "form": "S_theta = sum_i theta_i O_i",
+    "operators": ["link_count", "diamond_count", "precursor_size"],
+    "fugacities": {
+      "link": [2, 3],
+      "diamond": [3, 2],
+      "precursor": [4, 5]
+    },
+    "selection": "simple rational pre-registration; no held-out fit"
+  },
+  "forbidden_inputs": {
+    "einstein_hilbert": false,
+    "fierz_pauli": false,
+    "target_3_plus_1_dimension": false,
+    "spin2_objective": false,
+    "opaque_neural_action": false
+  },
+  "validity_domain": "exact through cardinality five",
+  "status": "DYNAMICS_CANDIDATE_DEFINED",
+  "claim_boundary": "Finite CP and normalization are established. Quantum Bell causality, infinite covariant-event extension, continuum phase, and spin classification are not."
+}

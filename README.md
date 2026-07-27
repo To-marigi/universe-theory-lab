@@ -17,6 +17,17 @@ uv run finaltheory
 既知Spin-2の陽性対照を候補模型の証拠へ流用せず、候補由来の二点応答がなければ
 `SPIN2_NOT_FOUND / FINAL_THEORY_OPEN` と判定します。
 
+追加のv0.2量子力学・連続相ゲートは、v0.1を変更せず次で実行します。
+
+```powershell
+uv run finaltheory --version 0.2
+```
+
+v0.2は有限因果集合のexact列挙、疎なKraus成長候補、QSG代数探索、有限相診断を
+分離して記録します。現在の判定境界は
+`DYNAMICS_CANDIDATE_DEFINED / CONTINUUM_PHASE_RESOURCE_BLOCKED /
+FINAL_THEORY_OPEN` です。
+
 ## すぐ始める
 
 PowerShellで次を実行します。
