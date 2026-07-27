@@ -1,17 +1,21 @@
-"""Command-line interface for String-Compiler Bench v0.1."""
+"""Command-line interface for String-Compiler Bench v0.1 and v0.2."""
 
 from __future__ import annotations
 
 import argparse
 import json
 import platform
+import subprocess
 import sys
 from dataclasses import asdict
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from universe_lab.stringbench.benchmarks import run_f_heterotic_8d
+from universe_lab.stringbench.benchmarks import (
+    run_f_heterotic_8d,
+    run_narain_period_v0_2,
+)
 from universe_lab.stringbench.iut import (
     FrameIsolationAudit,
     evaluate_iut_bridge,
@@ -28,6 +32,7 @@ def _static_audit(root: Path) -> dict[str, Any]:
         "frame_card.schema.json",
         "duality_link.schema.json",
         "vacuum_ir.schema.json",
+        "narain_period_v0.2.schema.json",
     )
     checks: dict[str, bool] = {}
     errors: list[str] = []
@@ -96,6 +101,41 @@ def _full_payload(root: Path) -> dict[str, Any]:
     }
 
 
+def _git_commit(root: Path) -> str:
+    try:
+        return subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=root,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        return "GIT_COMMIT_UNAVAILABLE"
+
+
+def _v0_2_payload(root: Path) -> dict[str, Any]:
+    static = _static_audit(root)
+    duality = run_narain_period_v0_2()
+    return {
+        "suite": "String-Compiler Bench v0.2 Narain-Period Bridge",
+        "generated_at": datetime.now(UTC).isoformat(),
+        "environment": {
+            "python": sys.version,
+            "platform": platform.platform(),
+            "git_commit": _git_commit(root),
+        },
+        "static_audit": static,
+        "duality": duality,
+        "iut": _iut_result(),
+        "engineering_status": duality["engineering_status"],
+        "scientific_status": duality["scientific_status"],
+        "overall_status": duality["overall_status"],
+        "known_8d_duality_reproduced": duality["known_8d_duality_reproduced"],
+        "stopping_reason": duality["stopping_reason"],
+    }
+
+
 def _save(payload: dict[str, Any], output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
@@ -106,6 +146,21 @@ def _save(payload: dict[str, Any], output: Path) -> None:
 
 def _print_summary(payload: dict[str, Any]) -> None:
     duality = payload["duality"]
+    if payload["suite"].startswith("String-Compiler Bench v0.2"):
+        local = duality["local_heterotic_lowering"]
+        bridge = duality["narain_period_bridge"]
+        print(f"static_audit: {'PASS' if payload['static_audit']['passed'] else 'FAIL'}")
+        print(f"local_heterotic_lowering: {local['status']}")
+        print(f"global_narain_orbit: {bridge['global_orbit_status']}")
+        print(f"period_bridge: {bridge['period_status']}")
+        print(
+            "negative_controls: "
+            f"{duality['mutations']['detected']}/{duality['mutations']['required']}"
+        )
+        print(f"engineering: {payload['engineering_status']}")
+        print(f"scientific: {payload['scientific_status']}")
+        print(f"overall: {payload['overall_status']}")
+        return
     print(f"static_audit: {'PASS' if payload['static_audit']['passed'] else 'FAIL'}")
     print(f"f_theory_four_fibrations: {duality['f_theory']['status']}")
     print(f"heterotic_four_branch_lowering: {duality['heterotic']['status']}")
@@ -118,8 +173,8 @@ def _print_summary(payload: dict[str, Any]) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="String-Compiler Bench v0.1")
-    parser.add_argument("--suite", choices=("all",), help="全トラックを実行")
+    parser = argparse.ArgumentParser(description="String-Compiler Bench")
+    parser.add_argument("--suite", choices=("all", "v0.2"), help="対象トラックを実行")
     parser.add_argument(
         "--output",
         type=Path,
@@ -128,7 +183,11 @@ def main() -> int:
     subparsers = parser.add_subparsers(dest="command")
     subparsers.add_parser("audit")
     duality_parser = subparsers.add_parser("duality")
-    duality_parser.add_argument("--suite", default="f-heterotic-8d")
+    duality_parser.add_argument(
+        "--suite",
+        choices=("f-heterotic-8d", "narain-period-v0.2"),
+        default="f-heterotic-8d",
+    )
     subparsers.add_parser("iut-bridge")
     subparsers.add_parser("report")
     args = parser.parse_args()
@@ -139,9 +198,11 @@ def main() -> int:
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0 if result["passed"] else 1
     if args.command == "duality":
-        if args.suite != "f-heterotic-8d":
-            parser.error("only f-heterotic-8d is available")
-        result = run_f_heterotic_8d()
+        result = (
+            run_narain_period_v0_2()
+            if args.suite == "narain-period-v0.2"
+            else run_f_heterotic_8d()
+        )
         print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
         # PARTIAL is a scientifically valid completed run, but not a suite PASS.
         return 0
@@ -156,9 +217,16 @@ def main() -> int:
             return 1
         _print_summary(json.loads(output.read_text(encoding="utf-8")))
         return 0
-    if args.suite == "all" or args.command is None:
-        payload = _full_payload(root)
-        output = root / args.output
+    if args.suite in {"all", "v0.2"} or args.command is None:
+        is_v0_2 = args.suite == "v0.2"
+        payload = _v0_2_payload(root) if is_v0_2 else _full_payload(root)
+        requested_default = Path("results/stringbench_v0.1.json")
+        output_argument = (
+            Path("results/stringbench_v0.2.json")
+            if is_v0_2 and args.output == requested_default
+            else args.output
+        )
+        output = root / output_argument
         _save(payload, output)
         _print_summary(payload)
         print(f"Saved: {output}")

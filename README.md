@@ -93,19 +93,24 @@ uv run qgbench
 詳細な証拠範囲、仮定、未達項目は
 [`QG-Bench/README.md`](QG-Bench/README.md) と `QG-Bench/reports/` にあります。
 
-## String-Compiler Bench v0.1
+## String-Compiler Bench v0.1 / v0.2
 
 F-theory/heterotic双対性を、生の座標比較ではなく型付き中間表現で検査する別トラックを
 `String-Compiler-Bench/` に収録しています。
 
 ```powershell
 uv run stringbench --suite all
+uv run stringbench --suite v0.2
 uv run stringbench iut-bridge
 ```
 
 四つのF-theory K3ファイブレーションは記号計算済みですが、heterotic側の四分岐
 Wilson-line loweringと物理的round tripは `BLOCKED` のため、総合判定は `PARTIAL` です。
 IUTの判定は `IUT_TYPE_SYSTEM_ONLY` で、物理的制約の追加は主張しません。
+
+v0.2では局所heterotic root loweringを四branchについて独立再現した。一方、
+独立K3 period oracleとNarain orbit round-tripは `BLOCKED` のため、科学的総合判定は
+引き続き `PARTIAL` です。
 
 ## 性能を上げるとき
 

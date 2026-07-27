@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://string-compiler-bench.local/specs/narain_period_v0.2.schema.json",
+  "title": "String-Compiler Bench v0.2 Narain-Period types",
+  "type": "object",
+  "oneOf": [
+    {"$ref": "#/$defs/LocalNarainChart"},
+    {"$ref": "#/$defs/NarainOrbit"},
+    {"$ref": "#/$defs/K3PeriodPoint"},
+    {"$ref": "#/$defs/ModularInvariantPoint"},
+    {"$ref": "#/$defs/HeteroticBranchCertificate"}
+  ],
+  "$defs": {
+    "ComplexNumber": {
+      "type": "object",
+      "required": ["real", "imag"],
+      "properties": {
+        "real": {"type": "number"},
+        "imag": {"type": "number"}
+      },
+      "additionalProperties": false
+    },
+    "WilsonLine": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+    },
+    "LocalNarainChart": {
+      "type": "object",
+      "required": [
+        "tau", "rho", "wilson_line_1", "wilson_line_2", "gauge_lattice",
+        "chart_id", "validity_domain", "approximation_status", "source"
+      ],
+      "properties": {
+        "tau": {"$ref": "#/$defs/ComplexNumber"},
+        "rho": {"$ref": "#/$defs/ComplexNumber"},
+        "wilson_line_1": {"$ref": "#/$defs/WilsonLine"},
+        "wilson_line_2": {"$ref": "#/$defs/WilsonLine"},
+        "gauge_lattice": {"enum": ["E8xE8", "Spin32_Z2"]},
+        "chart_id": {"type": "string", "minLength": 1},
+        "validity_domain": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "approximation_status": {"type": "string", "minLength": 1},
+        "source": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "NarainOrbit": {
+      "type": "object",
+      "required": [
+        "lattice", "signature", "period_vector", "arithmetic_group",
+        "orbit_certificate", "local_charts", "monodromy_data", "evidence"
+      ],
+      "properties": {
+        "lattice": {"const": "L^(2,4)"},
+        "signature": {"const": [2, 4]},
+        "period_vector": {
+          "oneOf": [
+            {"type": "null"},
+            {"type": "array", "items": {"$ref": "#/$defs/ComplexNumber"}}
+          ]
+        },
+        "arithmetic_group": {"const": "O+(L^(2,4))"},
+        "orbit_certificate": {"type": "string", "minLength": 1},
+        "local_charts": {"type": "array", "items": {"type": "string"}},
+        "monodromy_data": {"type": "array", "items": {"type": "string"}},
+        "evidence": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "K3PeriodPoint": {
+      "type": "object",
+      "required": [
+        "period_vector", "cycle_basis", "intersection_matrix", "normalization",
+        "numerical_precision", "integration_error", "monodromy_orbit", "evidence"
+      ],
+      "properties": {
+        "period_vector": {
+          "oneOf": [
+            {"type": "null"},
+            {"type": "array", "items": {"$ref": "#/$defs/ComplexNumber"}}
+          ]
+        },
+        "cycle_basis": {"type": "array", "items": {"type": "string"}},
+        "intersection_matrix": {
+          "type": "array",
+          "items": {"type": "array", "items": {"type": "integer"}}
+        },
+        "normalization": {"type": "string", "minLength": 1},
+        "numerical_precision": {"type": ["integer", "null"], "minimum": 1},
+        "integration_error": {"type": ["number", "null"], "minimum": 0},
+        "monodromy_orbit": {"type": "string", "minLength": 1},
+        "evidence": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "ModularInvariantPoint": {
+      "type": "object",
+      "required": [
+        "j2", "j3", "j4", "j5", "j6", "a_squared", "j30",
+        "weighted_projective_scale", "exactness", "error_budget"
+      ],
+      "properties": {
+        "j2": {"type": "string"},
+        "j3": {"type": "string"},
+        "j4": {"type": "string"},
+        "j5": {"type": "string"},
+        "j6": {"type": "string"},
+        "a_squared": {"type": "string"},
+        "j30": {"type": ["string", "null"]},
+        "weighted_projective_scale": {"type": "string", "minLength": 1},
+        "exactness": {"type": "string", "minLength": 1},
+        "error_budget": {"type": "object", "minProperties": 1}
+      },
+      "additionalProperties": false
+    },
+    "HeteroticBranchCertificate": {
+      "type": "object",
+      "required": [
+        "parent_string", "local_wilson_line_representative",
+        "surviving_root_system", "nonabelian_gauge_algebra", "abelian_rank",
+        "gauge_group_global_data", "b_field_flux_class",
+        "pointlike_instanton_behavior", "enhancement_loci",
+        "corresponding_fibration", "validity_domain", "evidence"
+      ],
+      "properties": {
+        "parent_string": {"enum": ["E8xE8", "Spin32_Z2"]},
+        "local_wilson_line_representative": {"type": "object"},
+        "surviving_root_system": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        },
+        "nonabelian_gauge_algebra": {"type": "string", "minLength": 1},
+        "abelian_rank": {"type": "integer", "minimum": 0},
+        "gauge_group_global_data": {"type": "string", "minLength": 1},
+        "b_field_flux_class": {"type": "string", "minLength": 1},
+        "pointlike_instanton_behavior": {"type": "string", "minLength": 1},
+        "enhancement_loci": {"type": "array", "items": {"type": "string"}},
+        "corresponding_fibration": {
+          "enum": ["standard", "base_fiber_dual", "alternate", "maximal"]
+        },
+        "validity_domain": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

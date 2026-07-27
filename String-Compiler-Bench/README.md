@@ -1,4 +1,4 @@
-# String-Compiler Bench v0.1
+# String-Compiler Bench v0.1 / v0.2
 
 既知の八次元 F-theory / heterotic 双対性を、フレーム固有座標を直接比較せず、
 型付き `VacuumIR` と `DualityLinkCertificate` を介して検査する研究用ベンチです。
@@ -13,6 +13,8 @@ uv run stringbench duality --suite f-heterotic-8d
 uv run stringbench iut-bridge
 uv run stringbench report
 uv run stringbench --suite all
+uv run stringbench --suite v0.2
+uv run stringbench duality --suite narain-period-v0.2
 ```
 
 ## v0.1の対象
@@ -41,3 +43,20 @@ Wilson線ベクトルを全四分岐について入力データとして与え�
 
 IUTについては型安全設計と物理bridgeを分離し、明示的なinitial theta dataへの写像が
 なければ `IUT_TYPE_SYSTEM_ONLY` または `IUT_NOT_APPLICABLE` と判定します。
+
+## v0.2 Narain–Period Bridge
+
+v0.2は、局所 `tau,rho,A1,A2` と大域
+`D_(2,4)/O+(L^(2,4))` orbitを別型にした。E8/D16 rootsをexact arithmeticで生成し、
+有界分母探索で四branchの局所root systemを独立に再現する。
+
+現在の判定は次の通り。
+
+- local heterotic lowering: `LOCAL_HETEROTIC_LOWERING_PASS`
+- forward four fibrations: `EXACT_SYMBOLIC`
+- global raw Wilson coordinates: `GLOBAL_WILSON_COORDINATES_NOT_DEFINED`
+- independent K3 period oracle: `PERIOD_ORACLE_BLOCKED`
+- scientific overall: `DUALITY_PARTIAL`
+
+詳細は `reports/local_heterotic_lowering.md`、
+`reports/narain_period_bridge.md`、`reports/scientific_verdict_v0.2.md` に記録する。
