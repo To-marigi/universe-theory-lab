@@ -28,7 +28,13 @@ def _extract_text(pdf_path: Path, text_path: Path) -> tuple[int, str]:
     reader = PdfReader(pdf_path)
     pages = []
     for number, page in enumerate(reader.pages, start=1):
-        pages.append(f"\n\n===== PAGE {number} =====\n\n{page.extract_text() or ''}")
+        raw_text = page.extract_text() or ""
+        printable = "".join(
+            character if character in "\n\t" or ord(character) >= 32 else " "
+            for character in raw_text
+        )
+        cleaned = "\n".join(line.rstrip() for line in printable.splitlines())
+        pages.append(f"\n\n===== PAGE {number} =====\n\n{cleaned}")
     text_path.parent.mkdir(parents=True, exist_ok=True)
     text_path.write_text("".join(pages).lstrip(), encoding="utf-8")
     return len(reader.pages), str(text_path)

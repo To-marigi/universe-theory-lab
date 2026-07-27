@@ -35,8 +35,12 @@
 
 ## IUT
 
-EMS PressのIUT I公式ページで公開されている書誌・abstractから、initial Theta-dataが
-数体上の楕円曲線、素数 `l >= 5`、その他の技術条件を要求することを確認した。
+京都大学数理解析研究所の望月新一氏公式論文ページから、IUT I–IVと主要な解説・関連
+文書6本を取得した。EMS Pressのpublished-version書誌とは別recordとして、KURIMS
+author-hosted PDFのURL、hash、検索テキストを保存する。
+
+IUT Iの本文から、initial Theta-dataが数体上の楕円曲線、素数 `l >= 5`、valuationや
+reductionに関するその他の技術条件を要求することを確認した。
 
 現在のcomplex K3/Narain period dataから、その算術データへの自然で物理的不変な写像は
 見つかっていない。従って `IUT_TYPE_SYSTEM_ONLY` を維持し、IUT固有の物理bridgeとは

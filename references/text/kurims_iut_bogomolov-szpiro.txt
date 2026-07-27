@@ -1,0 +1,1439 @@
+===== PAGE 1 =====
+
+BOGOMOLOV’S PROOF OF THE GEOMETRIC VERSION
+OF THE SZPIRO CONJECTURE FROM THE POINT OF
+VIEW OF INTER-UNIVERSAL TEICHM ¨ULLER THEORY
+Shinichi Mochizuki
+January 2016
+Abstract. The purpose of the present paper is to expose, in substantial detail,
+certain remarkable similarities between inter-universal T eichm¨uller theory
+and the theory surrounding Bogomolov’s proof of the geometric version of the
+Szpiro Conjecture. These similarities are, in some sense, consequences of the fact
+that both theories are closely related to the hyperbolic geometry of the classical
+upper half-plane . We also discuss various diﬀerences between the theories, which
+are closely related to the conspicuous absence in Bogomolov’s proof of Gaussian
+distributions and theta functions, i.e., which play a central role in inter-universal
+Teichm¨uller theory.
+Contents:
+Introduction
+§1. The Geometry Surrounding Bogomolov’s Proof
+§2. Fundamental Groups in Bogomolov’s Proof
+§3. Estimates of Displacements Subject to Indeterminacies
+§4. Similarities Between the Two Theories
+§5. Diﬀerences Between the Two Theories
+Introduction
+Certainaspectsoftheinter-universalTeichm¨ ullertheorydevelopedin[IUTchI],
+[IUTchII], [IUTchIII], [IUTchIV] — namely,
+(IU1) the geometry of Θ±ellNF-Hodge theaters [cf. [IUTchI], Deﬁnition
+6.13; [IUTchI], Remark 6.12.3],
+(IU2) the precise relationship betweenarithmetic degrees— i.e., ofq-pilot
+and Θ-pilot objects — given by the Θ×μ
+LGP-link [cf. [IUTchIII], Deﬁnition
+3.8, (i), (ii); [IUTchIII], Remark 3.10.1, (ii)], and
+(IU3) the estimates of log-volumes of certain subsets oflog-shells that give
+rise todiophantine inequalities[cf. [IUTchIV], §1, §2; [IUTchIII], Re-
+mark 3.10.1, (iii)] such as theSzpiro Conjecture
+—a r esubstantially reminiscent of the theory surrounding Bogomolov’s proof
+of the geometric version of the Szpiro Conjecture, as discussed in [ABKP],
+Typeset by AMS-TEX
+1
+
+===== PAGE 2 =====
+
+2 SHINICHI MOCHIZUKI
+[Zh]. Put another way, these aspects of inter-universal Teichm¨uller theory may
+be thought of asarithmetic analoguesof the geometric theory surrounding Bo-
+gomolov’s proof. Alternatively, Bogomolov’s proof may be thought of as a sort of
+useful elementary guide,o rblueprint[perhaps even a sort ofRosetta stone!],
+for understanding substantial portions of inter-universal Teichm¨uller theory. The
+author would like to express his gratitude toIvan Fesenkofor bringing to his atten-
+tion, via numerous discussions in person, e-mails, and skype conversations between
+December 2014 and January 2015, the possibility of the existence of such fascinating
+connections between Bogomolov’s proof and inter-universal Teichm¨uller theory.
+After reviewing, in§1, §2, §3, the theory surrounding Bogomolov’s proof from
+a point of view that is somewhat closer to inter-universal Teichm¨uller theory than
+the point of view of [ABKP], [Zh], we then proceed, in§4, §5, tocompare,b yh i g h -
+lighting varioussimilarities and diﬀerences, Bogomolov’s proof with inter-universal
+Teichm¨uller theory. In a word, the similarities between the two theories revolve
+around the relationship of both theories to theclassical elementary geometry of
+the upper half-plane, while the diﬀerences between the two theories are closely
+related to theconspicuous absence in Bogomolov’s proof ofGaussian distri-
+butions and theta functions, i.e., which play a central role in inter-universal
+Teichm¨uller theory.
+Section 1: The Geometry Surrounding Bogomolov’s Proof
+First, we begin by reviewing the geometry surrounding Bogomolov’s proof,
+albeit from a point of view that is somewhat more abstract and conceptual than
+that of [ABKP], [Zh].
+We denote by M the complex analytic moduli stack of elliptic curves [i.e.,
+one-dimensional complex tori]. Let
+˜M→M
+be auniversal coveringof M.T h u s ,˜M is noncanonically isomorphic to theupper
+half-plane H. In the following, we shall denote by asubscript ˜M the result of
+restricting to ˜M objects overM that are denoted by a subscriptM.
+Write
+ωM →M
+for the [geometric!] line bundle determined by thecotangent space at the originof
+the tautological family of elliptic curves overM; ω×
+M ⊆ωM for the complement
+of the zero section in ωM; EM for the local system overM determined by the
+ﬁrst singular cohomology modules with coeﬃcients inR of the ﬁbers overM of the
+tautological family of elliptic curves overM; E×
+M ⊆EM for the complement of the
+zero section inEM. Thus, if we think of bundles as geometric spaces/stacks, then
+t h e r ei sanatural embedding
+ωM ↪→E M ⊗R C
+[cf. the inclusion “ω↪→E ” of [IUTchI], Remark 4.3.3, (ii)]. Moreover, this natural
+embedding, together with thenatural symplectic form
+⟨ - , - ⟩E
+
+===== PAGE 3 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 3
+on EM [i.e., determined by thecup producton the singular cohomology of ﬁbers
+over M, together with theorientation that arises from the complex holomorphic
+structure on these ﬁbers], gives rise to anatural metric [cf. the discussion of
+[IUTchI], Remark 4.3.3, (ii)] onωM.W r i t e
+(ωM ⊇ ω×
+M ⊇) ω∡
+M →M
+for theS1-bundle overM determined by the points ofωM of modulus one with
+respect to this natural metric.
+Next, observe that the natural section1
+2 ·tr(−): C → R [i.e., one-half the trace
+map of the Galois extensionC/R] of the natural inclusionR ↪→ C determines a
+section EM ⊗R C →E M of the natural inclusionEM ↪→E M ⊗R C whose restriction
+to ωM determines bijections
+ωM
+∼
+→E M,ω ×
+M
+∼
+→E ×
+M
+[i.e., of geometric bundles over M]. Thus, at the level of ﬁbers, the bijection
+ωM
+∼
+→E M may be thought of as a [noncanonical] copy of the natural bijection
+C
+∼
+→ R2.
+Next, let us writeE for theﬁber [which is noncanonically isomorphic toR2]o f
+the local systemEM relative to somebasepointcorresponding to acusp
+“∞”
+of ˜M, EC
+def
+= E ⊗R C, SL(E) for the group ofR-linear automorphisms ofE that
+preserve the natural symplectic form ⟨ - , - ⟩E
+def
+= ⟨ - , - ⟩E|E on E [so SL(E)
+is noncanonically isomorphic toSL2(R)]. Now since ˜M is contractible,t h el o c a l
+systems E ˜M, E×
+˜M
+over ˜M are trivial. In particular, we obtainnatural projection
+maps
+E ˜M ↠ E, E×
+˜M
+↠ E× ↠ E∠ ↠ E|∠|
+—w h e r ew ew r i t e
+E× def
+= E \{(0,0}, E∠ def
+= E×/R>0
+[so E×, E∠ are noncanonically isomorphic to R2× def
+= R2 \{ (0,0)}, R2∠ def
+=
+R2×/R>0 ∼= S1, respectively] and
+E∠ ↠ E|∠| def
+= E∠/{±1}
+for the ﬁnite ´etale covering of degree 2 determined by forming the quotient by the
+action of±1 ∈SL(E).
+Next, let us observe that over each point˜M, the composite
+ω∡
+˜M ⊆ ω×
+˜M
+∼
+→E ×
+˜M
+↠ E× ↠ E∠
+induces ahomeomorphismbetween the ﬁber ofω∡
+˜M
+[over the given point of˜M]a n d
+E∠. In particular, for each point of˜M, the metric on this ﬁber ofω∡
+˜M
+determines
+a metric on E∠ [i.e., whichdepends on the point of˜M under consideration!]. On
+
+===== PAGE 4 =====
+
+4 SHINICHI MOCHIZUKI
+the other hand, one veriﬁes immediately that such metrics onE∠ always satisfy
+the following property: Let
+D
+∠
+⊆ E∠
+be a fundamental domain for the action of±1o nE∠, i.e., the closure of some
+open subset D∠ ⊆ E∠ such that D∠ maps injectively to E|∠|, while D
+∠
+maps
+surjectively to E|∠|.T h u s ,±D
+∠
+[i.e., the{±1}-orbit ofD
+∠
+]i se q u a lt oE∠.T h e n
+the volume of D
+∠
+relative to metrics onE∠ of the sort just discussed is always
+equal toπ, while thevolume of ±D
+∠
+[i.e., E∠] relative to such a metric is always
+equal to 2π.
+Overeachpointof ˜M, thecompositeω×
+˜M
+∼
+→E ×
+˜M
+↠ E× corresponds[noncanon-
+ically] to a copy of the natural bijectionC× ∼
+→ R2× that arises from thecomplex
+structure on E determined by the point of˜M. Moreover, this assignment of com-
+plex structures, or, alternatively, points of the one-dimensional complex projective
+space P(EC), to points of˜M determines anatural embedding
+˜M ↪→ P(EC)
+— i.e., a copy of the usual embedding of theupper half-plane into the complex
+projective line — hence also natural actions of SL(E)o n ˜M and E ˜M that are
+uniquely determinedby the property that they becompatible, relative to this natural
+embedding and the projection E ˜M ↠ E, with the natural actions ofSL(E)o n
+P(EC)a n dE. One veriﬁes immediately that these natural actions also determine
+compatible natural actions ofSL(E)o n ω∡
+˜M
+⊆ω×
+˜M
+∼
+→E ×
+˜M
+, and that the natural
+action ofSL(E)o nω∡
+˜M
+determines a structure ofSL(E)-torsor on ω∡
+˜M
+.A l s o ,w e
+observe that the natural embedding of the above display allows one to regardE|∠|
+as the“boundary”∂˜M of ˜M, i.e., the boundary of the upper half-plane.
+Let ˜SL(E), (ω∡
+M)∼,( ω×
+M)∼,( E×
+M)∼,( E×)∼,( E∠)∼ be compatible universal
+coverings of SL(E), ω∡
+˜M
+, ω×
+˜M
+, E×
+˜M
+, E×, E∠, respectively. Thus, ˜SL(E)a d m i t s
+a natural Lie group structure, together with a natural surjection of Lie groups
+˜SL(E) ↠ SL(E), whose kernel admits anatural generator
+˜τ∡ ∈ Ker( ˜SL(E) ↠ SL(E))
+determined by the“clockwise orientation”that arises from thecomplex structureon
+the ﬁbers ofω×
+M overM]. This natural generator determines a natural isomorphism
+Z
+∼
+→ Ker( ˜SL(E) ↠ SL(E)).
+Next, observe that the natural actions ofSL(E)o nω∡
+˜M
+, ω×
+˜M
+, E×
+˜M
+, E×, E∠ lift
+uniquely to compatible natural actions of˜SL(E) on the respective universal cover-
+ings (ω∡
+M)∼,( ω×
+M)∼,( E×
+M)∼,( E×)∼,( E∠)∼. In particular, the natural generator
+˜τ∡ of Z =K e r (˜SL(E) ↠ SL(E)) determines a natural generator˜τ∠ of the group
+Aut((E∠)∼/E∠) of covering transformations of (E∠)∼ ↠ E∠ and hence, taking
+into account the composite covering (E∠)∼ ↠ E∠ ↠ E|∠|,a natural Autπ(R)-
+orbit of homeomorphisms [i.e., a “homeomorphism that is well-deﬁned up to
+composition with an element of Autπ(R)”]
+(E∠)∼ ∼
+→ R (↶ Autπ(R))
+
+===== PAGE 5 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 5
+— where we write Autπ(R) for the group of self-homeomorphismsR
+∼
+→ R that
+commute with translation byπ. Here, the group of covering transformations of the
+covering (E∠)∼ ↠ E∠ is generated by the transformation˜τ∠, which corresponds to
+translation by 2π; the group of covering transformations of the composite covering
+(E∠)∼ ↠ E∠ ↠ E|∠| admits a generator˜τ|∠| that satisﬁes the relation
+(˜τ|∠|)2 = ˜τ∠ ∈ Aut((E∠)∼/E∠)
+andcorrespondsto translationbyπ[cf. thetransformation“ z(−)”of[Zh], Lemma
+3.5]. Moreover, ˜τ|∠| arises from an element˜τ|∡| ∈ ˜SL(E)t h a tlifts −1 ∈SL(E)a n d
+satisﬁes the relation (˜τ|∡|)2 = ˜τ∡. The geometry discussed so far is summarized in
+the commutative diagram of Fig. 1 below.
+˜SL(E) ↷
+(
+∼
+→ R)
+{
+(ω∡
+M)∼ ⊆ (ω×
+M)∼ ∼
+→ (E×
+M)∼ ↠ (E×)∼ ↠ (E∠)∼
+}
+SL(E) ↷
+⏐⏐
+↓
+⏐⏐
+↓
+⏐⏐
+↓
+⏐⏐
+↓
+⏐⏐
+↓
+{
+˜M← − ω
+∡
+˜M
+⊆ ω×
+˜M
+∼
+→E ×
+˜M
+↠ E× ↠ E∠
+}
+⏐⏐↓
+⏐⏐↓
+⏐⏐↓
+⏐⏐↓ (∼= R2×)( ∼= R2∠
+M← − ω∡
+M ⊆ ω×
+M
+∼
+→E ×
+M
+∼= S1)
+Fig. 1: The geometry surrounding Bogomolov’s proof
+Section 2: Fundamental Groups in Bogomolov’s Proof
+Next, we discuss the various fundamental groups that appear in Bogo-
+molov’s proof.
+Recall that the 12-th tensor powerω⊗12
+M of the line bundleωM admits a natural
+section, namely, the so-calleddiscriminant modular form,w h i c hi snonzeroover
+M, hence determines a section ofω×⊗12
+M [i.e., the complement of the zero section
+of ω⊗12
+M ]. Thus, by raising sections ofω×
+M to the 12-th power and then applying
+the trivialization determined by the discriminant modular form, we obtainnatural
+holomorphic surjections
+ω×
+M ↠ ω×⊗12
+M ↠ C×
+— where we note that the ﬁrst surjectionω×
+M ↠ ω×⊗12
+M , as well as the pull-back
+ω×
+˜M
+↠ ω×⊗12
+˜M
+of this surjection to ˜M,i si nf a c taﬁnite ´etale coveringof complex
+analytic stacks. Thus, the universal covering (ω×
+M)∼ overω×
+M may be regarded as a
+universal covering (ω×⊗12
+M )∼ def
+=( ω×
+M)∼ of ω×⊗12
+M . In particular, if we regardC as a
+universal covering ofC× via theexponential mapexp :C ↠ C×, then the surjection
+ω×⊗12
+M ↠ C× determined by the discriminant modular form lifts to a surjection
+(ω×
+M)∼ =( ω×⊗12
+M )∼ ↠ C
+
+===== PAGE 6 =====
+
+6 SHINICHI MOCHIZUKI
+of universal coverings that is well-deﬁned up to composition with a covering trans-
+formation of the universal covering exp :C ↠ C×.
+Next, letusrecallthatthe R-vectorspace E isequippedwitha naturalZ-lattice
+EZ ⊆ E
+[i.e., determined by thesingular cohomology with coeﬃcients inZ]. The set of ele-
+ments ofSL(E)t h a tstabilize EZ ⊆E determines a subgroupSL(EZ) ⊆SL(E)[ s o
+SL(EZ) is noncanonically isomorphic toSL2(Z)], hence also a subgroup˜SL(EZ)
+def
+=
+˜SL(E) ×SL(E) SL(EZ). Thus, SL(E) ⊇SL(EZ)a d m i t sanatural actionon ω×
+˜M
+;
+˜SL(E) ⊇ ˜SL(EZ)a d m i t sanatural actionon (ω×
+M)∼. Moreover, one veriﬁes imme-
+diately that the latter natural action determines anatural isomorphism
+˜SL(EZ)
+∼
+→ π1(ω×
+M)
+with thegroup of covering transformationsof (ω×
+M)∼ over ω×
+M, i.e., with thefun-
+damental group[relative to the basepoint corresponding to the universal covering
+(ω×
+M)∼] π1(ω×
+M).
+In particular, if we use thegenerator−2πi∈C to identifyπ1(C×)w i t hZ,t h e n
+one veriﬁes easily [by considering the complex elliptic curves that admit automor-
+phisms of order> 2] that we obtain anatural surjective homomorphism
+χ: ˜SL(EZ)= π1(ω×
+M) ↠ π1(C×)
+∼
+→ Z
+whose restriction toZ
+∼
+→ Ker( ˜SL(EZ) ↠ SL(EZ)) is the homomorphismZ → Z
+given bymultiplication by12, i.e.,
+χ(˜τ∡)=1 2,χ (˜τ|∡|)=6
+[cf. the ﬁnal portion of§1].
+Finally, we recall that in Bogomolov’s proof, one considers afamily of elliptic
+curves [i.e., one-dimensional complex tori]
+X → S (⊆ S)
+over ahyperbolic Riemann surfaceS of ﬁnite type (g,r)[ s o2g−2+ r> 0] that has
+stable bad reductionat everypoint at inﬁnity[i.e., point∈S \S] of some compact
+Riemann surfaceS that compactiﬁesS. Such a family determines aclassifying mor-
+phism S →M . The above discussion is summarized in the commutative diagrams
+and exact sequences of Figs. 2 and 3 below.
+1 −→ Z −→ ˜SL(E) −→ SL(E) −→ 1
+⋃⋃ ⋃
+1 −→ Z −→ ˜SL(EZ) −→ SL(EZ) −→ 1
+⏐⏐
+↓
+⏐⏐
+↓
+χ
+⏐
+⏐
+↓
+1 −→ 12·Z −→ Z −→ Z/12·Z −→ 1
+Fig. 2: Exact sequences related to Bogomolov’s proof
+
+===== PAGE 7 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 7
+Z = Z
+∼
+→ 12·Z
+⋂⋂ ⋂
+˜SL(E) ⊇ ˜SL(EZ) ↷
+χ
+↠ Z ↷
+⏐⏐
+↓
+⏐⏐
+↓ (ω
+×
+M)∼ =( ω×⊗12
+M )∼ ↠ C
+SL(E) ⊇ SL(EZ) ↷
+⏐⏐↓
+⏐⏐↓
+⏐⏐↓exp
+ω×
+˜M
+↠ ω×⊗12
+˜M
+↠ C×
+⏐⏐
+↓
+⏐⏐
+↓ ∥
+X −→ S −→ M ←− ω
+×
+M ↠ ω×⊗12
+M ↠ C×
+Fig. 3: Fundamental groups related to Bogomolov’s proof
+Section 3: Estimates of Displacements Subject to Indeterminacies
+We conclude our review of Bogomolov’s proof by brieﬂy recalling the key points
+of the argument applied in this proof. These key points revolve aroundestimates
+of displacementsthat are subject to certainindeterminacies.
+Write
+Autπ(R≥0)
+for the group ofself-homeomorphisms R≥0
+∼
+→ R≥0 that stabilize and restrict to the
+identity on the subsetπ·N ⊆R≥0 and R|π| for the set of Autπ(R≥0)-orbits of R≥0
+[relative to the natural action of Autπ(R≥0)o nR≥0]. Thus, one veriﬁes easily that
+R|π| =
+( ⋃
+n∈N
+{ [n·π] }
+)
+∪
+( ⋃
+m∈N
+{ [(m·π,(m+1) ·π)] }
+)
+— where we use the notation “[−]” to denote the element inR|π| determined by
+an element or nonempty subset ofR≥0 that lies in a single Autπ(R≥0)-orbit. In
+particular, we observe that the natural order relation onR≥0 induces a natural
+order relationon R|π|.
+For ˜ζ∈ ˜SL(E), write
+δ(˜ζ)
+def
+= { [ |˜ζ(e)−e| ] | e ∈(E∠)∼ }⊆ R|π|
+—w h e r et h e“absolute value of diﬀerences of elements of(E∠)∼”is computed with
+respect to someﬁxed choiceof a homeomorphism (E∠)∼ ∼
+→ R that belongs to the
+natural Autπ(R)-orbit of homeomorphismsdiscussed in§1, and we observe that it
+follows immediately from thedeﬁnition of R|π| that the subset δ(˜ζ) ⊆R|π| is in
+fact independent of this ﬁxed choice of homeomorphism.
+Since [one veriﬁes easily, from theconnectednessof the Lie group˜SL(E), that]
+˜τ|∡| belongs to the center of the group ˜SL(E), it follows immediately [from the
+
+===== PAGE 8 =====
+
+8 SHINICHI MOCHIZUKI
+deﬁnition of R|π|, by consideringtranslates of e ∈(E∠)∼ by iterates of ˜τ|∡|]t h a t
+the setδ(˜ζ)i sﬁnite, hence admits amaximal element
+δsup(˜ζ)
+def
+= sup(δ(˜ζ))
+[cf. the “length”ℓ(−) of the discussion preceding [Zh], Lemma 3.7]. Thus,
+δ((˜τ|∡|)n)= { [ |n|· π] },δ sup((˜τ|∡|)n)=[ |n|· π]
+for n ∈Z [cf. the discussion preceding [Zh], Lemma 3.7]. We shall say that
+˜ζ∈ ˜SL(E)i sminimal if δsup(˜ζ) determines aminimal elementof the set{δsup(˜ζ·
+(˜τ∡)n)}n∈Z.
+Next, observe that thecusp “∞” discussed in§1 may be thought of as achoice
+of some rank one submoduleE∞ ⊆EZ for which there exists a rank one submodule
+E0 ⊆EZ — which may be thought of as acusp “0” — such that the resulting
+natural inclusions determine an isomorphism
+E∞ ⊕E0
+∼
+→ EZ
+of Z-modules. Note that sinceE∞ and E0 are freeZ-modules of rank one, it follows
+[from the fact that the automorphism group of the groupZ is of order two!] that
+there exist natural isomorphismsE⊗2
+∞
+∼
+→ E⊗2
+0
+∼
+→ Z. On the other hand, thenatural
+symplectic form ⟨ - , - ⟩EZ
+def
+= ⟨ - , - ⟩E|EZ on EZ determines an isomorphism of
+E∞ with thedual of E0, hence [by applying the natural isomorphismE⊗2
+0
+∼
+→ Z]a
+natural isomorphismE∞
+∼
+→ E0.
+This natural isomorphismE∞
+∼
+→ E0 determines a nontrivial unipotent auto-
+morphism τ∞ ∈SL(EZ)o fEZ = E∞ ⊕E0 that ﬁxesE∞ ⊆EZ — i.e., which may
+be thought of, relative to natural isomorphismE∞
+∼
+→ E0,a st h em a t r i x
+(11
+01
+)
+—a s
+well as anSL(EZ)-conjugate unipotent automorphismτ0 ∈SL(EZ) — i.e., which
+may be thought of, relative to natural isomorphismE∞
+∼
+→ E0,a st h em a t r i x
+( 10
+−11
+)
+.
+Thus, the product
+τ∞ ·τ0 =
+(11
+01
+)
+·
+( 10
+−11
+)
+=
+( 01
+−11
+)
+∈ SL(EZ)
+lifts, relative to a suitable homeomorphism (E∠)∼ ∼
+→ R that belongs to thenatural
+Autπ(R)-orbit of homeomorphismsdiscussed in§1, to an element˜τθ∈ ˜SL(EZ)t h a t
+induces the automorphism ofR given by translation by θfor some θ∈R such
+that |θ| = 1
+3π.
+The key observationsthat underlie Bogomolov’s proof may be summarized
+as follows [cf. [Zh], Lemmas 3.6 and 3.7]:
+(B1) Every unipotent element τ∈SL(E) lifts uniquelyto an element
+˜τ∈ ˜SL(E)
+thatstabilizesandrestricts to the identityon some (˜τ|∠|)Z-orbitof (E∠)∼.
+Such a ˜τis minimal and satisﬁes
+δsup(˜τ) < [π].
+
+===== PAGE 9 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 9
+(B2) Every commutator [˜α,˜β] ∈ ˜SL(E)o fe l e m e n t s˜α,˜β∈ ˜SL(E) satisﬁes
+δsup([˜α,˜β]) < [2π].
+(B3) Let ˜τ∞, ˜τ0 ∈ ˜SL(EZ) be liftings ofτ∞,τ0 ∈SL(EZ)a si n( B 1 ) .T h e n
+˜τ∞ · ˜τ0 = ˜τθ,a n dθ= 1
+3π>0.
+In particular,
+(˜τ∞ · ˜τ0)3 = ˜τ|∡|, χ(˜τ∞)= χ(˜τ0)=1 , χ(˜τ∡)=2 ·χ(˜τ|∡|) = 12.
+Observation (B1) follows immediately, in light of the various deﬁnitions in-
+volved, together with the fact that˜τ|∡| belongs to thecenter of the group ˜SL(E),
+from the factτﬁxes the [distinct!] images inE∠ of ±v ∈E for somenonzerov ∈E.
+Next, let us write|SL(E)|
+def
+= SL(E)/{±1}. Then observe that since the gen-
+erator ˜τ|∡| of Ker(˜SL(E) ↠ SL(E) ↠ |SL(E)|) belongs to thecenter of ˜SL(E),
+it follows that every commutator [˜α,˜β]a si nobservation (B2)is completely deter-
+mined by the respective images|α|,|β|∈| SL(E)| of ˜α,˜β∈ ˜SL(E). Now recall [cf.
+the proof of [Zh], Lemma 3.5] that it follows immediately from anelementary linear
+algebra argument — i.e., consideration of asolution “x”t ot h ee q u a t i o n
+det
+((ab
+cd
+)
+−
+(1 x
+01
+))
+=0
+associated to an element
+(ab
+cd
+)
+∈SL2(R) such thatc ̸= 0 — that every element
+of SL(E) other than−1 ∈SL(E) may be written as aproduct of two unipotent
+elements of SL(E). In particular, we conclude that every commutator [˜α,˜β]=
+(˜α· ˜β· ˜α−1)· ˜β−1 as in observation (B2) may be written as aproduct
+˜τ1 · ˜τ2 · ˜τ∗
+2 · ˜τ∗
+1
+of four minimal liftings “˜τ”a si n( B 1 )s u c ht h a t˜τ∗
+1, ˜τ∗
+2 are ˜SL(E)-conjugate to
+˜τ−1
+1 , ˜τ−1
+2 , respectively. On the other hand, it follows immediately from the fact
+that the action on E∠ of any nontrivial [i.e., ̸=1 ] unipotent element of SL(E)
+has precisely two ﬁxed points[i.e., precisely one {±1}-orbit of ﬁxed points] that,
+for i =1 ,2, there exists an elementϵi ∈{ ±1} such that, relative to the action of
+˜SL(E)o n(E∠)∼ ∼
+→ R, ˜τϵi
+i maps every elementx ∈R to an elementR ∋ ˜τϵi
+i (x) ≥x.
+[Indeed, consider thecontinuityproperties of the mapR ∋ x ↦→ ˜τi(x)−x ∈R,w h i c h
+is invariant with respect totranslation by πin its domain!] Moreover, since any
+elementof ˜SL(E)inducesaself-homeomorphismof( E∠)∼ ∼
+→Rthatcommuteswith
+the action of ˜τ|∡|, hence is necessarilystrictly monotone increasing, we conclude
+that, fori =1 ,2, (˜τ∗
+i )ϵi maps every elementx ∈R to an elementR ∋ (˜τ∗
+i )ϵi(x) ≤x.
+In particular, any computation of thedisplacements ∈R that occur as the result of
+applying the above product˜τ1 · ˜τ2 · ˜τ∗
+2 · ˜τ∗
+1 to some element of (E∠)∼ ∼
+→ R yields, in
+light of the estimatesδsup(˜τ1)= δsup(˜τ∗
+1) < [π], δsup(˜τ2)= δsup(˜τ∗
+2) < [π]o f( B 1 ) ,
+as u m
+(((a∗
+1 +a∗
+2)+ a2)+ a1)=( a1 +a∗
+1)+( a2 +a∗
+2) ∈ R
+for suitable elements
+a1 ∈ ϵ1 ·[0,π) ⊆ R; a∗
+1 ∈−ϵ1 ·[0,π) ⊆ R;
+a2 ∈ ϵ2 ·[0,π) ⊆ R; a∗
+2 ∈−ϵ2 ·[0,π) ⊆ R.
+
+===== PAGE 10 =====
+
+10 SHINICHI MOCHIZUKI
+Thus, the estimateδsup([˜α,˜β]) < [2π] of observation (B2) follows immediately from
+the estimates|a1 +a∗
+1| <π, |a2 +a∗
+2| <π.
+Next, observethatsince π<2π−1
+3π, itfollowsimmediatelythat {[0],[(0,π)]}∩
+δ(˜τθ· (˜τ∡)n)= ∅for n ̸= 0. On the other hand, (B1) implies that [0]∈δ(˜τ0)
+and δsup(˜τ∞) < [π], and hence that{[0],[(0,π)]}∩ δ(˜τ∞ · ˜τ0) ̸= ∅.T h u s ,t h e
+relation ˜τ∞ · ˜τ0 = ˜τθof observation (B3) follows immediately; the positivity of θ
+follows immediately from theclockwise nature [cf. the deﬁnition “˜τ∡” in the ﬁnal
+portion of§1] of the assignments
+(1
+0
+)
+↦→
+( 0
+−1
+)
+,
+(0
+1
+)
+↦→
+(1
+1
+)
+determined byτ∞ ·τ0.
+Next, recall the well-knownpresentationvia generatorsαS
+1 ,...,α S
+g , βS
+1 ,...,β S
+g ,
+γS
+1 ,...,γ S
+r [where γS
+1 ,...,γ S
+r generate the respectiveinertia groupsat thepoints at
+inﬁnity S \S of S] subject to therelation
+[αS
+1 ,βS
+1 ]·... ·[αS
+g ,βS
+g ]·γS
+1 ·... ·γS
+r =1
+of the fundamental group ΠS of the Riemann surfaceS. These generators map,
+via the outer homomorphism ΠS → ΠM induced by theclassifying morphism of
+the family of elliptic curvesunder consideration, to elementsα1,...,α g, β1,...,β g,
+γ1,...,γ r subject to therelation
+[α1,β1]·... ·[αg,βg]·γ1 ·... ·γr =1
+of the fundamental group ΠM = SL(EZ) [for a suitable choice of basepoint] ofM.
+Next, let us choose liftings ˜α1,..., ˜αg, ˜β1,..., ˜βg, ˜γ1,..., ˜γr of α1,...,α g,
+β1,...,β g, γ1,...,γ r to elements of ˜SL(EZ) such that˜γ1,..., ˜γr are minimal lift-
+ings as in (B1). Thus, we obtain arelation
+[˜α1, ˜β1]·... ·[˜αg, ˜βg]· ˜γ1 ·... · ˜γr =( ˜τ∡)n∡
+=( ˜τ|∡|)2n∡
+in ˜SL(EZ)f o rs o m en∡ ∈Z. The situation under consideration is summarized in
+Fig. 4 below.
+ΠS −→ ΠM
+∥
+˜SL(E) ⊇ ˜SL(EZ) ↠ SL(EZ) ⊆ SL(E)
+↷↷
+(E∠)∼ ↠ E∠
+Fig. 4: The set-up of Bogomolov’s proof
+Now it follows from the various deﬁnitions involved, together with the well-
+known theory ofTate curves, that, fori =1 ,...,r ,
+the elementγi is anSL(EZ)-conjugate of τvi
+∞
+for somevi ∈N. Put another way,vi is theorder of the “q-parameter”of theTate
+curve determined by the given familyX → S at the point at inﬁnity corresponding
+to γS
+i .
+Thus, by applyingχ(−) to the aboverelation, we conclude [cf. the discussion
+preceding [Zh], Lemma 3.7] from theequalitiesin the ﬁnal portion of (B3) [together
+with the evident fact thatcommutators necessarily lie in thekernel of χ(−)] that
+
+===== PAGE 11 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 11
+(B4) The “orders ofq-parameters”v1,...,v r satisfy theequality
+r∑
+i=1
+vi =1 2n∡
+—w h e r en∡ ∈Z is the quantity deﬁned in the above discussion.
+On the other hand, by applyingδsup(−) to the aboverelation, we conclude [cf.
+the discussion following the proof of [Zh], Lemma 3.7] from theestimates of (B1)
+and (B2), theequalityof (B4), and the equalityδsup((˜τ|∡|)n)=[ |n|·π], forn ∈Z,
+that ( r∑
+i=1
+π
+)
++
+( g∑
+j=1
+2π
+)
+> 2π·n∡ = 1
+6 ·π·
+r∑
+i=1
+vi
+— i.e., that
+(B5) The “orders ofq-parameters”v1,...,v r satisfy theestimate
+1
+6 ·
+r∑
+i=1
+vi < 2g +r
+—w h e r e(g,r) is the type of the hyperbolic Riemann surfaceS.
+Finally, we conclude [cf. the discussion following the proof of [Zh], Lemma 3.7] the
+geometric v e r s i o no ft h eSzpiro inequality
+1
+6 ·
+r∑
+i=1
+vi ≤ 2g −2+ r
+by applying (B5) [multiplied by anormalization factor 1
+d] to the families obtained
+from the given familyX → S by base-changing toﬁnite ´etale Galois coveringsof
+S of degreed and passing to the limitd →∞ .
+Section 4: Similarities Between the Two Theories
+We are now in a position toreap the beneﬁtsof the formulation of Bogomolov’s
+proof given above, which ismuch closer “culturally”to inter-universal Teichm¨uller
+theory than the formulation of [ABKP], [Zh].
+We begin by considering the relationship between Bogomolov’s proof and
+(IU1), i.e., the theory of Θ±ellNF-Hodge theaters, as developed in [IUTchI].
+First of all, Bogomolov’s proof clearly centers around thehyperbolic geometry
+of theupper half-plane. This aspect of Bogomolov’s proof is directly reminiscent
+of the detailed analogy discussed in [IUTchI], Remark 6.12.3; [IUTchI], Fig. 6.4,
+between the structure of Θ±ellNF-Hodge theaters and the classical geometry of the
+upper half-plane — cf., e.g., the discussion of thenatural identiﬁcationof E|∠| with
+the boundary∂˜M of ˜M in §1; the discussion of theboundary of the upper half-plane
+in [IUTchI], Remark 6.12.3, (iii). In particular, one may think of
+the additive F⋊±
+l -symmetry portion of a Θ±ellNF-Hodge theater as
+corresponding to theunipotent transformations τ∞, τ0, γi
+that appear in Bogomolov’s proof and of
+
+===== PAGE 12 =====
+
+12 SHINICHI MOCHIZUKI
+the multiplicative F⋇
+l -symmetry p o r t i o no faΘ±ellNF-Hodge theater
+as corresponding to thetoral/“typically non-unipotent”transforma-
+tions τ∞ ·τ0, αi, βi
+that appear in Bogomolov’s proof, i.e., typically asproducts of two non-commuting
+unipotent transformations[cf. the proof of (B2)!]. Here, we recall that the notation
+F⋊±
+l denotes the semi-direct product groupFl⋊{±1} [relative to the natural action
+of {±1} on the underlying additive group ofFl], while the notationF⋇
+l denotes the
+quotient of the multiplicative groupF×
+l by the action of{±1}.
+One central aspect of the theory of Θ±ellNF-Hodge theaters developed in
+[IUTchI] lies in the goal of somehow“simulating”a situation in which the module
+of l-torsion points of the given elliptic curve over a number ﬁeld admits a“global
+multiplicative subspace”[cf. the discussion of [IUTchI],§I1; [IUTchI], Remark
+4.3.1]. One way to understand this sort of “simulated” situation is in terms of
+the one-dimensional additive geometry associated to a nontrivial unipotent
+transformation. That is to say, whereas, from ana priori point of view, the one-
+dimensional additive geometries associated toconjugate, non-commuting unipotent
+transformationsare distinct and incompatible, the “simulation” under consider-
+ation may be understood as consisting of the establishment of some sort ofgeom-
+etry in which these distinct, incompatible one-dimensional additive geometries are
+somehow “identiﬁed”with one another as asingle, uniﬁed one-dimensional
+additive geometry. This fundamental aspect of the theory of Θ±ellNF-Hodge
+theaters in [IUTchI] is thus reminiscent of the
+single, uniﬁed one-dimensional objectsE∠ (
+∼
+→ S1), (E∠)∼ (
+∼
+→ R)
+in Bogomolov’s proof which admit natural actions byconjugate, non-commuting
+unipotent transformations∈SL(E) [i.e., such asτ∞, τ0]a n dt h e i rminimal liftings
+to ˜SL(E) [i.e., such as˜τ∞, ˜τ0 —c f .( B 1 ) ] .
+The issue of simulation of a “global multiplicative subspace” as discussed in
+[IUTchI], Remark 4.3.1, is closely related to the application ofabsolute anabelian
+geometry as developed in [AbsTopIII], i.e., to the issue of establishing global arith-
+metic analogues for number ﬁelds of the classical theories ofanalytic continua-
+tion and K¨ahler metrics, constructed via the use oflogarithms, on hyperbolic
+Riemann surfaces [cf. [IUTchI], Remarks 4.3.2, 4.3.3, 5.1.4]. These aspects of
+inter-universal Teichm¨uller theory are, in turn, closely related [cf. the discussion
+of [IUTchI], Remark 4.3.3] to the application in [IUTchIII] of the theory oflog-
+shells [cf. (IU3)] as developed in [AbsTopIII] to the task of constructingmultira-
+dial mono-analytic containers, as discussed in the Introductions to [IUTchIII],
+[IUTchIV]. These multradial mono-analytic containers play thecrucial roleof fur-
+nishing containers for the various objects of interest — i.e., thetheta valueand
+global number ﬁeldportions of Θ-pilot objects— that, although subject to var-
+ious indeterminacies [cf. the discussion of the indeterminacies (Ind1), (Ind2),
+(Ind3) in the Introduction to [IUTchIII]], allow one to obtain theestimates [cf.
+[IUTchIII], Remark 3.10.1, (iii)] of these objects of interest as discussed in detail
+in [IUTchIV],§1, §2 [cf., especially, the proof of [IUTchIV], Theorem 1.10]. These
+aspects of inter-universal Teichm¨uller theory may be thought of as corresponding to
+the essential use of (E∠)∼ (
+∼
+→ R) in Bogomolov’s proof, i.e., which is reminiscent of
+the log-shells that appear in inter-universal Teichm¨uller theory in many respects:
+
+===== PAGE 13 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 13
+(L1) The object (ω∡
+M)∼ that appears in Bogomolov’s proof may be thought
+of as corresponding to the holomorphic log-shells of inter-universal
+Teichm¨uller theory, i.e., in the sense that it may be thought of as a sort of
+“logarithm”of the“holomorphic family of copies of the group of
+units S1”consituted byω∡
+˜M
+— cf. the discussion of variation ofcomplex
+structure in §1.
+(L2) Each ﬁber over ˜M of the “holomorphic log-shell” (ω∡
+M)∼ maps isomor-
+phically [cf. Fig. 1] to (E∠)∼, an essentiallyreal analyticobject that is
+independent of the varying complex structures discussed in (L1), hence
+may be thought of as corresponding to themono-analytic log-shellsof
+inter-universal Teichm¨uller theory.
+(L3) Just as in the case of the mono-analytic log-shells of inter-universal Te-
+ichm¨uller theory [cf., especially, the proof of [IUTchIV], Theorem 1.10],
+(E∠)∼ serves as acontainer for estimating the various objects of in-
+terest in Bogomolov’s proof, as discussed in (B1), (B2), objects which are
+subject to the indeterminacies constituted by the action of Autπ(R),
+Autπ(R≥0)[cf. theindeterminacies(Ind1), (Ind2), (Ind3)ininter-universal
+Teichm¨uller theory].
+(L4) In the context of the estimates of (L3), the estimates ofunipotent trans-
+formations given in (B1) may be thought of as corresponding to the esti-
+mates involvingtheta valuesin inter-universal Teichm¨uller theory, while
+the estimates of “typically non-unipotent”transformations given in
+(B2) may be thought of as corresponding to the estimates involvingglobal
+number ﬁeld portions of Θ-pilot objects in inter-universal Teichm¨uller
+theory.
+(L5) As discussed in the [IUTchI],§I1, the Kummer theory surrounding the
+theta values is closely related to theadditive symmetry portion of
+aΘ±ellNF-Hodge theater, i.e., in whichglobal synchronization of ±-
+indeterminacies [cf. [IUTchI], Remark 6.12.4, (iii)] plays a fundamental
+role. Moreover, as discussed in [IUTchIII], Remark 2.3.3, (vi), (vii), (viii),
+the essentiallylocal nature of thecyclotomic rigidity isomorphisms
+that appear in the Kummer theory surrounding the theta values renders
+them free of any ±-indeterminacies. These phenomena of rigidity
+with respect to ±-indeterminacies in inter-universal Teichm¨uller theory
+are highly reminiscent of thecrucial estimateof (B1) involving
+the volume πof afundamental domainD
+∠
+for the action of{±1} on E∠ [i.e., as opposed to the volume 2πof the{±1-
+orbit ±D
+∠
+of D
+∠
+!], as well as of theuniqueness of theminimal liftings
+of (B1). In this context, we also recall that theadditive symmetryportion
+of a Θ±ellNF-Hodge theater, which depends, in an essential way, on the
+global synchronizationof ±-indeterminacies [cf. [IUTchI], Remark 6.12.4,
+(iii)], is used in inter-universal Teichm¨uller theory to establishconjugate
+synchronization, which plays an indispensable role in the construction
+of bi-coric mono-analytic log-shells [cf. [IUTchIII], Remark 1.5.1].
+This state of aﬀairs is highly reminiscent of the important role played by
+E∠, as opposed toE|∠| = E∠/{±1}, in Bogomolov’s proof.
+
+===== PAGE 14 =====
+
+14 SHINICHI MOCHIZUKI
+(L6) As discussed in the [IUTchI],§I1, the Kummer theory surrounding the
+number ﬁelds under consideration is closely related to themultiplica-
+tive symmetry portion of a Θ±ellNF-Hodge theater, i.e., in which one
+always works with quotients via the action of ±1. Moreover, as dis-
+cussed in [IUTchIII], Remark 2.3.3, (vi), (vii), (viii) [cf. also [IUTchII],
+Remark 4.7.3, (i)], the essentiallyglobal nature — which necessarily in-
+volves at leasttwo localizations, corresponding to avaluation[say, “0”]
+and the correspondinginverse valuation[i.e., “∞”] of a function ﬁeld
+—o ft h ecyclotomic rigidity isomorphismsthat appear in the Kum-
+mer theory surrounding number ﬁelds causes them to besubject to ±-
+indeterminacies. These ±-indeterminacy phenomena in inter-universal
+Teichm¨ullertheoryarehighlyreminiscentofthe crucial estimateof(B2)—
+which arises from considering products oftwo non-commuting unipo-
+tent transformations, i.e., corresponding to “two distinct localizations”
+— involving
+the volume 2πof the{±1}-orbit ±D
+∠
+of afundamental domainD
+∠
+for the action of{±1} on E∠ [i.e., as opposed to the volumeπof D
+∠
+!].
+(L7) The analytic continuation aspect [say, from “∞” to “0”] of inter-
+universal Teichm¨uller theory — i.e., via the technique ofBelyi cuspidal-
+ization as discussed in [IUTchI], Remarks 4.3.2, 5.1.4 — may be thought
+of as corresponding to the “analytic continuation” inherent in theholo-
+morphic structure of the “holomorphic log-shell (ω∡
+M)∼”, which relates,
+in particular, the localizations at the cusps “∞” and “0”.
+Here, we note in passing that one way to understand certain aspects of the
+phenomena discussed in (L4), (L5), and (L6) is in terms of the following“general
+principle”:L e tk be an algebraically closed ﬁeld. Writek× for the multiplicative
+group of nonzero elements ofk, PGL 2(k)
+def
+= GL2(k)/k×. Thus, by thinking in
+terms of fractional linear transformations, one may regardPGL 2(k) as the group
+of k-automorphisms of the projective lineP
+def
+= P1
+k over k. We shall say that an
+element ofPGL 2(k)i s unipotent if it arises from a unipotent element ofGL2(k).
+Let ξ∈PGL 2(k) be a nontrivial element. WritePξfor the set ofk-rational points
+of P that areﬁxed by ξ. Then observe that
+ξis unipotent ⇐⇒Pξis ofcardinality one;
+ξis non-unipotent ⇐⇒Pξis ofcardinality two.
+That is to say,
+General Principle:
+· A nontrivial unipotent element ξ∈PGL 2(k) may be regarded as
+expressing a local geometry, i.e., the geometry in the neighborhood
+of a single point [namely, the unique ﬁxed point ofξ]. Such a “local
+geometry” — that is to say, more precisely, the setPξof cardinality one
+—d o e snot admit a“reﬂection, or±-, symmetry”.
+
+===== PAGE 15 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 15
+Inter-universal Teichm¨uller Theory Bogomolov’s Proof
+F⋊±
+l -, F⋇
+l -symmetries of unipotent, toral/non-unipotent
+Θ±ellNF-Hodge theaters symmetries of upper half-plane
+simulation of global ˜SL(E) ↷ SL(E) ↷
+multiplicative subspace (R
+∼
+→ )( E∠)∼ ↠ E∠ (
+∼
+→ S1)
+holomorphic log-shells, “holomorphic family”of ﬁbers
+analytic continuation“∞ ⇝ 0” of (ω∡
+M)∼ → ˜M, e.g., at “∞”, “0”
+multiradial mono-analytic real analytic
+containers via log-shells ˜SL(E) ↷ (E∠)∼ (
+∼
+→ R)
+subject to subject to
+indeterminacies indeterminacies via
+(Ind1), (Ind2), (Ind3) actions of Autπ(R), Autπ(R≥0)
+±-rigidity of “local” Kummer estimate (B1) viaπof
+theory, cyclotomic rigidity unique minimalliftings of
+surrounding theta values, unipotent transformations,
+conjugate synchronization E∠ (as opposed toE|∠|!)
+±-indeterminacy of estimate (B2) via 2πof
+“global” Kummer theory, commutators of products
+cyclotomic rigidity of two non-commuting
+surrounding number ﬁelds unipotent transformations
+arithmetic degree computations degree computations via
+via precise Θ×μ
+LGP-link precise homomorphism χ(B4)
+vs. log-shell estimates vs. δsup estimates (B1), (B2)
+Frobenius-like complex holomorphic
+vs. objects such asline bundles
+´etale-like vs. local systems,
+objects fundamental groups
+Fig. 5: Similarities between the two theories
+
+===== PAGE 16 =====
+
+16 SHINICHI MOCHIZUKI
+· By contrast, a nontrivialnon-unipotent element ξ∈PGL 2(k)m a y
+be regarded as expressing aglobal geometry, i.e., the “toral” geometry
+corresponding to apair of points “0” and “∞” [namely, the two ﬁxed
+points ofξ]. Such a “global toral geometry” — that is to say, more pre-
+cisely, the setPξof cardinality two— typicallydoes admit a“reﬂection,
+or ±-, symmetry”[i.e., which permutes the two points ofPξ].
+Next, we recall that the suitability of the multiradial mono-analytic containers
+furnished by log-shells for explicit estimates [cf. [IUTchIII], Remark 3.10.1,
+(iii)] lies in sharp contrast to theprecise, albeit somewhattautological, nature
+of the correspondence [cf. (IU2)] concerning arithmetic degrees of objects of
+interest [i.e., q-pilot and Θ-pilot objects] given by the Θ×μ
+LGP-link [cf. [IUTchIII],
+Deﬁnition 3.8, (i), (ii); [IUTchIII], Remark 3.10.1, (ii)]. This precise correspondence
+is reminiscent of theprecise, but relatively“superﬁcial”[i.e., by comparison to
+the estimates (B1), (B2)], relationships concerning degrees [cf. (B4)] that arise from
+the homomorphismχ[i.e., which is denoted “deg” in [Zh]!]. On the other hand, the
+ﬁnal estimate (B5) requires one to applyboth the precise computation of (B4)and
+the nontrivial estimates of (B1), (B2). This state of aﬀairs is highly reminiscent
+of the discussion surrounding [IUTchIII], Fig. I.8, of two equivalent waysto
+compute log-volumes, i.e., theprecise correspondencefurnished by the Θ×μ
+LGP-link
+and thenontrivial estimatesvia the multiradial mono-analytic containers furnished
+by thelog-shells.
+Finally, we observe that thecomplicated interplaybetween “Frobenius-like”
+and “´etale-like”objects in inter-universal Teichm¨uller theory may be thought of
+as corresponding to the complicated interplay in Bogomolov’s proof between
+complex holomorphicobjects such as theholomorphic line bundle
+ωM and the natural surjectionsω×
+M ↠ ω×⊗12
+M ↠ C× arising from the
+discriminant modular form
+— i.e., which correspond toFrobenius-like objects in inter-universal Teichm¨uller
+theory — and
+the local system EM and the variousfundamental groups[and mor-
+phisms between such fundamental groups such asχ] that appear in Fig.
+3
+— i.e., which correspond to´etale-like objects in inter-universal Teichm¨uller theory.
+The analogies discussed above are summarized in Fig. 5 above.
+Section 5: Diﬀerences Between the Two Theories
+In a word, the most essential diﬀerence between inter-universal Teichm¨uller
+theory and Bogomolov’s proof appears to lie in the
+absence in Bogomolov’s proof of
+Gaussian distributions and theta functions,
+i.e., which play a central role in inter-universal Teichm¨uller theory.
+
+===== PAGE 17 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 17
+In some sense, Bogomolov’s proof may be regarded as arising from thegeom-
+etry surrounding thenatural symplectic form
+⟨ - , - ⟩E
+def
+= ⟨ - , - ⟩E|E
+on thetwo-dimensional R-vector spaceE. The natural arithmetic analogue of
+this symplectic form is theWeil pairingon thetorsion points— i.e., such as the
+l-torsion points that appear in inter-universal Teichm¨uller theory — of an elliptic
+curve over a number ﬁeld.
+On the other hand, one fundamental diﬀerence between this Weil pairing on
+torsion points and the symplectic form⟨ - , - ⟩E is the following:
+Whereas the ﬁeldR over which the symplectic form⟨ - , - ⟩E is deﬁned
+may be regarded as asubﬁeld — i.e.,
+∃R ↪→ C
+— of the ﬁeld of deﬁnitionC of the algebraic schemes [or stacks] under
+consideration, the ﬁeldFl over which the Weil pairing onl-torsion points
+is deﬁnedcannot be regarded as asubﬁeld — i.e.,
+∄F l ↪→ Q
+— of the number ﬁeld over which the [algebraic] elliptic curve under con-
+sideration is deﬁned.
+This phenomenon ofcompatibility/incompatibilityof ﬁelds of deﬁnitionis reminis-
+cent of the“mysterious tensor products”that occur inp-adic Hodge theory,
+i.e., in which the “Zp”t h a ta c t so nap-adic Tate module isidentiﬁed [despite its
+somewhat alien nature!] with the “Zp” that includes as a subring of the structure
+sheaf of the p-adic scheme under consideration [cf. the discussion of [HASurII],
+Remark 3.7; the ﬁnal portion of [EtTh], Remark 2.16.2; [IUTchI], Remarks 4.3.1,
+4.3.2; [IUTchI], Remark 6.12.3, (i), (ii); [IUTchIV], Remark 3.3.2]. Here, we observe
+further that theformer “Zp”, as well as the ﬁelds of deﬁnition of the symplectic
+form ⟨ - , - ⟩E and the Weil pairing on torsion points, are, from the point of view
+of inter-universal Teichm¨uller theory,´etale-like objects, whereas thelatter “Zp”,
+as well as other instances of subrings of the structure sheaf of the scheme under
+consideration, are Frobenius-like objects. That is to say, the point of view of
+inter-universal Teichm¨uller theory may be summarized as follows:
+Certain geometric aspects — i.e., aspects that, in eﬀect, correspond to
+the geometry of the classicalupper half-plane [cf. [IUTchI], Remark
+6.12.3] — of thea priori incompatibility of ﬁelds of deﬁnition in the
+case of elliptic curves over number ﬁelds are, in some sense, over-
+come in inter-universal Teichm¨uller theory by applying variousabsolute
+anabelian algorithms to pass from ´etale-like to Frobenius-like objects,
+as well as variouscyclotomic rigidity algorithmsto pass, viaKum-
+mer theory, from Frobenius-like to ´etale-like objects.
+Indeed, as discussed in [IUTchI], Remarks 4.3.1, 4.3.2, it is precisely this circle of
+ideas that forms thestarting pointfor theconstruction ofΘ±ellNF-Hodge theaters
+given in [IUTchI], by applying theabsolute anabelian geometryof [AbsTopIII].
+
+===== PAGE 18 =====
+
+18 SHINICHI MOCHIZUKI
+One way to understand the gap betweenﬁelds of deﬁnitionof ﬁrst cohomology
+modules or modules of torsion points, on the one hand, and theﬁeld of deﬁnition
+of the given base scheme, on the other, is to think of elements of ﬁelds/rings of
+the former sort as objects that occur asexponents of regular functions on the
+base scheme, i.e., elements of rings that naturally contain ﬁelds/rings of thelatter
+sort. For instance, this sort of situation may be seen at a very explicit level by
+consider the powers of the q-parameter that occur in the theory of Tate curves
+over p-adic ﬁelds [cf. the discussion of the ﬁnal portion of [EtTh], Remark 2.16.2].
+From this point of view, the approach of inter-universal Teichm¨uller theory may be
+summarized as follows:
+Certainfunction-theoreticaspectsofthe a prioriincompatibilityofﬁelds
+of deﬁnition i nt h ec a s eo felliptic curves over number ﬁeldsare, in
+some sense, overcome in inter-universal Teichm¨uller theory by working
+with Gaussian distributionsand theta functions, i.e., which may be
+regarded, in eﬀect, asexponentiations of the symplectic form⟨ - , - ⟩E
+that appears in Bogomolov’s proof.
+Indeed, it is precisely as a result of suchexponentationoperations that one is obliged
+to work, in inter-universal Teichm¨uller theory, with arbitrary iterates of the
+log-link [cf. the theory of [AbsTopIII], [IUTchIII]; the discussion of [IUTchIII],
+Remark 1.2.2] in order to relate and indeedidentify, in eﬀect, thefunction theory
+of exponentiated objectswith thefunction theory of non-exponentiated objects.T h i s
+situation diﬀers somewhat from thesingle application of the logarithmconstituted
+by the covering (E∠)∼ ↠ E∠ in Bogomolov’s proof.
+So far in the present§5, our discussion has centered around
+· the geometry of Θ±ellNF-Hodge theaters [as discussed in [IUTchI],
+§4, §5, §6] and
+· the multiradial representation via mono-analytic log-shells[cf.
+[IUTchIII], Theorem 3.11, (i), (ii)]
+of inter-universal Teichm¨uller theory, which correspond, respectively, to thesym-
+plectic geometry of the upper half-plane[cf. §1] and theδsup estimates [cf.
+(B1), (B2)] of Bogomolov’s proof.
+On the other hand, the degree computations via the homomorphismχ,w h i c h
+arises, in essence, by considering thediscriminant modular form, also play a
+key role [cf. (B4)] in Bogomolov’s proof. One may think of this aspect of Bogo-
+molov’s proof as consisting of the application of the discriminant modular form
+to relate the symplectic geometry discussed in §1 — cf., especially, the natural
+SL(E)-torsor structure on ω∡
+˜M
+—t ot h ec o n v e n t i o n a lalgebraic theory of line
+bundles and divisors on the algebraic stackM. In particular, this aspect of Bo-
+gomolov’s proof is reminiscent of the Θ×μ
+LGP-link, i.e., which serves to relate the
+“Gaussian distributions”[that is to say, “exponentiated symplectic forms”]t h a t
+appear in themultiradial representation via mono-analytic log-shellsto the conven-
+tional theory ofarithmetic line bundleson the number ﬁeld under consideration.
+We remark in passing that this state of aﬀairs is reminiscent of the point of view
+discussed in [HASurI],§1.2, §1.3.2, to the eﬀect that the constructions of scheme-
+theoretic Hodge-Arakelov theory [i.e., which may be regarded as a sort of scheme-
+theoretic precursor of inter-universal Teichm¨uller theory] may be thought of as a
+
+===== PAGE 19 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 19
+sortof function-theoretic vector bundle versionofthe discrimant modular form.T h e
+Θ×μ
+LGP-link isnot compatiblewith the variousring/scheme structures— i.e.,
+the “arithmetic holomorphic structures”— in its domain and codomain. In
+order to surmount this incompatibility, one must avail oneself of the theory ofmul-
+tiradialitydevelopedin[IUTchII],[IUTchIII].Thenon-ring-theoreticnatureofthe
+resulting multiradial representation via mono-analytic log-shells— cf. [IUTchIII],
+Theorem 3.11, (i), (ii); the discussion ofinter-universalityin [IUTchIV], Remark
+3.6.3, (i) — of inter-universal Teichm¨uller theory may then be thought of as cor-
+responding to thereal analytic[i.e., non-holomorphic] nature of thesymplectic
+geometry that appears in Bogomolov’s proof. In this context, we recall that
+(E1) one central featureof Bogomolov’s proof is the followingfundamental
+diﬀerencebetween thecrucial estimate (B1), which arises from the [non-
+holomorphic]symplectic geometryportionofBogomolov’sproof, onthe
+one hand, and the homomorphismχ, on the other: whereas, for integers
+N ≥1, the homomorphismχmaps N-th powersof elements ˜τas in (B1)
+to multiples byN of elements∈Z, the estimateδsup(−) < [π]o f( B 1 )i s
+unaﬀectedwhen one replaces an element˜τby such anN-th powerof ˜τ.
+This central feature of Bogomolov’s proof ishighly reminiscentof the situation in
+inter-universal Teichm¨uller theory in which
+(E2) although themultiradial representationof Θ-pilot objects via mono-
+analytic log-shellsin the domain of the Θ×μ
+LGP-link is related, via the Θ×μ
+LGP-
+link, toq-pilot objects in the codomain of the Θ×μ
+LGP-link, thesame multi-
+radial representation of thesame Θ-pilot objects may related, in precisely
+the same fashion, to arbitrary N-th powers of q-pilot objects, for in-
+tegers N ≥2
+[cf. the discussion of [IUTchIII], Remark 3.12.1, (ii)].
+Thus, in summary, if, relative to the point of view of Bogomolov’s proof, one
+· substitutes Gaussian distributions/theta functions, i.e., in essence,
+exponentiationsofthe natural symplectic form⟨-, -⟩E,f o r⟨-, -⟩E,
+and, moreover,
+· allows forarbitrary iteratesof thelog-link,w h i c h ,i ne ﬀ e c t ,a l l o wo n e
+to “disguise”the eﬀects of suchexponentiation operations,
+then inter-universal Teichm¨uller theory bearsnumerous striking resemblances
+to Bogomolov’s proof. Put another way, thebridge furnished by inter-universal
+Teichm¨uller theory between theanalogy discussed in detail at the beginning of§4
+(A1) between the geometry surrounding E∠ in Bogomolov’s proof and the
+combinatorics involving l-torsion points that underlie the structure of
+Θ±ellNF-Hodge theaters in inter-universal Teichm¨uller theory, on the one
+hand,
+and theanalogy discussed extensively in (L1∼7)
+(A2) between the geometry surrounding E∠ in Bogomolov’s proof and the
+holomorphic/mono-analytic log-shells — i.e., in essence, the local
+unit groups associated to various completions of a number ﬁeld — that
+occur in inter-universal Teichm¨uller theory, on the other
+
+===== PAGE 20 =====
+
+20 SHINICHI MOCHIZUKI
+— i.e., thebridge between l-torsion pointsand log-shells — may be understood as
+consisting of the followingapparatusof inter-universal Teichm¨uller theory:
+(GE) l-torsion points [cf. (A1)] are, as discussed above, closely related to
+exponents of functions, such astheta functionsor algebraic rational
+functions[cf. the discussion of [IUTchIII], Remark 2.3.3, (vi), (vii), (viii);
+[IUTchIII], Figs. 2.5, 2.6, 2.7]; such functions giverise, via the operation of
+Galois evaluation[cf. [IUTchIII], Remark 2.3.3, (i), (ii), (iii)], totheta
+values and elements ofnumber ﬁelds, which one regards as acting on
+log-shells [cf. (A2)] that are constructed in a situation in which one
+considers arbitrary iteratesof the log-link [cf. [IUTchIII], Fig. I.6].
+In the context of the analogies (A1), (A2), it is also of interest to observe that
+the multiradial containers that are ultimately used in inter-universal Teichm¨uller
+theory [cf. [IUTchIII], Fig. I.6; [IUTchIII], Theorem A] consist ofprocessions of
+mono-analytic log-shells, i.e., collections of mono-analytic log shells whoselabels
+essentially correspond to theelements of |Fl| [i.e., the quotient of the setFl by
+the natural action of{±1}]. This observation is especially of interest in light of the
+following aspects of inter-universal Teichm¨uller theory:
+(P1) in inter-universal Teichm¨uller theory, the primel is regarded as beingsuf-
+ﬁciently largethat the ﬁnite ﬁeldFl s e r v e sa sa“good approximation”
+for Z [cf. [IUTchI], Remark 6.12.3, (i)];
+(P2) at eachnonarchimedean primeat which the elliptic curve over a number
+ﬁeld under consideration hasstable bad reduction, the copy of “Z”t h a t
+is approximated byFl may be naturally identiﬁed with thevalue group
+associated to the nonarchimedean prime [cf. [IUTchII], Remark 4.7.3, (i)];
+(P3) at each archimedean primeof the number ﬁeld over which the elliptic
+curve under consideration is deﬁned, a mono-analytic log-shell essentially
+corresponds to a closed ball ofradius π, centered at the origin in a Eu-
+clidean space of dimension two and subject to±-indeterminacies [cf.
+[IUTchIII], Proposition 1.2, (vii); [IUTchIII], Remark 1.2.2, (ii)].
+That is to say, if one thinks in terms of thecorrespondences
+mono-analytic log-shells ←→ E∠ (∼= S1),
+procession labels ∈|Fl| (↞ Fl ≈Z) ←→ Z·π
+∼
+→ Aut((E∠)∼/E|∠|),
+then the collection of data constituted by a “procession of mono-analytic
+log-shells”is substantially reminiscent of the objects (E∠)∼ (∼= R), R|π| —
+i.e., in essence, copies of R, R≥0 that are subject to Autπ(R)-, Autπ(R≥0)-
+indeterminacies — that play a central role in Bogomolov’s proof.
+Before concluding, we observe that, in the context of the above discussion
+of the technique ofGalois evaluation[cf. (GE)], which plays an important role in
+inter-universal Teichm¨uller theory, it is also perhaps of interest to note the following
+further correspondencesbetween the two theories:
+(GE1) The multiradiality apparatus of inter-universal Teichm¨uller theory de-
+pends,i na nessential way, on thesupplementary geometric dimension
+constituted by the“geometric containers”[cf. [IUTchIII], Remark 2.3.3,
+(i), (ii)] furnished by theta functions and algebraic rational functions,
+
+===== PAGE 21 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 21
+which give rise, viaGalois evaluation,t ot h etheta values and elements
+of number ﬁelds that act directly on processions of mono-analytic log-
+shells. That is to say, this multiradiality apparatus wouldcollapse if one
+attempted to work with these theta values and elements of number ﬁelds
+directly. This state of aﬀairs issubstantially reminiscentof the fact that,
+in Bogomolov’s proof, it doesnot suﬃceto work directly with actions of
+[unipotent or toral/non-unipotent] elements ofSL(E)( ∼= SL2(R)) onE∠;
+that is to say, it is of essential importance that one work withliftings to
+˜SL(E) of these elements ofSL(E), i.e., to make use of thesupplementary
+geometric dimensionconstituted by the bundleω×
+M →M .
+(GE2) The fact that the theory of Galois evaluation surroundingtheta val-
+ues plays asomewhat more central, prominentrole in inter-universal Te-
+ichm¨uller theory [cf. [IUTchII],§1, §2, §3; [IUTchIII],§2] than the theory
+of Galois evaluation surroundingnumber ﬁelds is reminiscent of the fact
+that the original exposition of Bogomolov’s proof in [ABKP] essentially
+treats only the case ofgenus zero, i.e., in eﬀect, only thecentral estimate
+of (B1), thus allowing one to ignore theestimates concerning commuta-
+tors of (B2). It is only in the later exposition of [Zh] that one can ﬁnd a
+detailed treatment of the estimates of (B2).
+We conclude by observing that the numerous striking resemblances discussed
+above are perhapsall the more strikingin light of thecomplete independence
+of the development of inter-universal Teichm¨uller theory from developments sur-
+rounding Bogomolov’s proof: That is to say, the author wascompletely ignorant
+of Bogomolov’s proof during the development of inter-universal Teichm¨uller theory.
+Moreover, inter-universal Teichm¨uller theory arosenot as a result of eﬀorts to “gen-
+eralize Bogomolov’s proof by substituting exponentiations of⟨ - , - ⟩E for ⟨ - , - ⟩E”,
+but rather as a result of eﬀorts [cf. the discussion of [HASurI],§1.5.1, §2.1; [EtTh],
+Remarks 1.6.2, 1.6.3] to overcome obstacles to applying scheme-theoretic Hodge-
+Arakelov theory to diophantine geometry by developing some sort ofarithmetic
+analogue of theclassical functional equationof thetheta function.T h a ti s
+to say, despite the fact that thestarting point of such eﬀorts, namely, the classi-
+cal functional equation of the theta function, wasentirely absentfrom the theory
+surroundingBogomolov’sproof, thetheory, namely, inter-universalTeichm¨ullerthe-
+ory, that ultimately arose from such eﬀorts turned out, in hindsight, as discussed
+above, to beremarkably similarin numerous aspects to the theory surrounding
+Bogomolov’s proof.
+The content of the above discussion is summarized in Fig. 6 below. Also,
+certain aspects of our discussion — which, roughly speaking, concern the respective
+“estimation apparatuses”that occur in the two theories — are illustrated in
+Figs. 7 and 8 below. Here, we note that the mathematical content of Fig. 8 is
+essentially identical to the mathematical content of [IUTchIII], Fig. I.6 [cf. also
+[IUTchI], Fig. I1.3].
+
+===== PAGE 22 =====
+
+22 SHINICHI MOCHIZUKI
+Inter-universal Teichm¨uller Theory Bogomolov’s Proof
+Gaussians/theta functions Gaussians/theta functions
+play acentral, entirely
+motivating role absent
+Weil pairingon l-torsion natural symplectic form
+points deﬁned overFl, ⟨ - , - ⟩E deﬁned overR,
+∄F l ↪→ Q ∃R ↪→ C
+subtle passagebetween confusion between
+´etale-like, Frobenius-like ´etale-like, Frobenius-like
+objects viaabsolute anabelian objects via
+algorithms, Kummer theory/ R ↪→ C
+cyclotomic rigidityalgorithms
+geometry of symplectic geometryof
+Θ±ellNF-Hodge theaters classical upper half-plane
+Gaussians/theta functions, i.e., natural symplectic form
+exponentiations of ⟨ - , - ⟩E ⟨ - , - ⟩E
+arbitrary iteratesof single applicationof
+log-link logarithm, i.e., (E∠)∼ ↠ E∠
+Θ×μ
+LGP-link relates discriminant modular form
+multiradial representation via “χ” relatessymplectic geometry
+mono-analytic log-shellsto “SL(E) ↷ ω∡
+˜M
+”t o
+conventional theory of conventional algebraic theory
+arithmetic line bundles of line bundles/divisors
+on number ﬁelds on M
+multiradial non-holomorphic,
+representation, real analyticnature of
+inter-universality symplectic geometry
+Fig. 6: Contrasts between corresponding aspects of the two theories
+
+===== PAGE 23 =====
+
+BOGOMOLOV’S PROOF AND INTER-UNIVERSAL TEICHM¨ULLER THEORY 23
+indeterminacies
+via action of
+Autπ(R), Autπ(R≥0)
+↷
+liftings of
+monodromy at cusps
+˜γ1,..., ˜γr
+↷
+(R ∼=)( ∼= S1)
+(E∠)∼ ↠ E∠ ↶
+liftings of
+commutators
+[˜α1, ˜β1];... ;[ ˜αg, ˜βg]
+⇑⇑
+additive
+unipotent
+symmetries of
+SL(E)( ∼= SL2(R)),
+upper half-plane
+multiplicative
+toral/non-unipotent
+symmetries of
+SL(E)( ∼= SL2(R)),
+upper half-plane
+Fig. 7: The real analytic estimation apparatus of Bogomolov’s proof
+indeterminacies
+(Ind1), (Ind2), (Ind3)
+↷
+Galois evaluation
+of theta functions
+⇝ theta values
+↷
+processions of
+mono-analytic
+log-shells
+↶
+Galois evaluation
+of alg. rat. fns.
+⇝ number ﬁelds
+⇑⇑
+additive
+F⋊±
+l -symmetry of
+Θ±ellNF-Hodge
+theater
+multiplicative
+F⋇
+l -symmetry of
+Θ±ellNF-Hodge
+theater
+Fig. 8: The multiradial estimation apparatus of inter-universal Teichm¨uller theory
+
+===== PAGE 24 =====
+
+24 SHINICHI MOCHIZUKI
+Bibliography
+[ABKP] J. Amor´os, F. Bogomolov, L. Katzarkov, T. Pantev, Symplectic Lefshetz ﬁbra-
+tion with arbitrary fundamental groups,J. Diﬀerential Geom.54 (2000), pp.
+489-545.
+[HASurI] S. Mochizuki, A Survey of the Hodge-Arakelov Theory of Elliptic Curves I,
+Arithmetic Fundamental Groups and Noncommutative Algebra, Proceedings of
+Symposia in Pure Mathematics 70, American Mathematical Society (2002),
+pp. 533-569.
+[HASurII] S. Mochizuki, A Survey of the Hodge-Arakelov Theory of Elliptic Curves II,
+Algebraic Geometry 2000, Azumino, Adv. Stud. Pure Math. 36, Math. Soc.
+Japan (2002), pp. 81-114.
+[EtTh] S. Mochizuki, The´Etale Theta Function and its Frobenioid-theoretic Manifes-
+tations, Publ. Res. Inst. Math. Sci.45 (2009), pp. 227-349.
+[AbsTopIII] S. Mochizuki, Topics in Absolute Anabelian Geometry III: Global Reconstruc-
+tion Algorithms,J. Math. Sci. Univ. Tokyo22 (2015), pp. 939-1156.
+[IUTchI] S. Mochizuki, Inter-universal Teichm¨uller Theory I: Construction of Hodge
+Theaters,p r e p r i n t .
+[IUTchII] S. Mochizuki,Inter-universal Teichm¨uller Theory II: Hodge-Arakelov-theoretic
+Evaluation,p r e p r i n t .
+[IUTchIII] S. Mochizuki, Inter-universal Teichm¨uller Theory III: Canonical Splittings of
+the Log-theta-lattice,p r e p r i n t .
+[IUTchIV] S. Mochizuki, Inter-universal Teichm¨uller Theory IV: Log-volume Computa-
+tions and Set-theoretic Foundations,p r e p r i n t .
+[Zh] S. Zhang, Geometry of algebraic points,First International Congress of Chi-
+nese Mathematicians (Beijing, 1998), AMS/IP Stud. Adv. Math. 20 (2001),
+pp. 185-198.
