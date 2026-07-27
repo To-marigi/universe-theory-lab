@@ -1,0 +1,1215 @@
+===== PAGE 1 =====
+
+arXiv:gr-qc/0003117v4  14 Nov 2000
+Evidence for a continuum limit in causal set dynamics
+D. P. Rideout ∗ and R. D. Sorkin †
+Department of Physics, Syracuse University
+Syracuse, NY, 13244-1130, U.S.A.
+October 31, 2018
+Abstract
+We ﬁnd evidence for a continuum limit of a particular causal set dynam ics which depends on only
+a single “coupling constant” p and is easy to simulate on a computer. The model in question is a
+stochastic process that can also be interpreted as 1-dimensional directed percolation, or in terms of
+random graphs.
+1 Introduction
+In an earlier paper [1] we investigated a type of causal set dy namics that can be described as a (classically)
+stochastic process of growth or “accretion”. In a language n atural to that dynamics, the passage of time
+consists in the continual birth of new elements of the causal set and the history of a sequence of such
+births can be represented as an upward path through a poset of all ﬁnite causal sets. We called such a
+stochastic process a sequential growth dynamics because the elements arise singly, rather than in pairs or
+larger multiplets.
+A sequential description of this sort is advantageous in rep resenting the future as developing out of
+the past, but on the other hand it could seem to rely on an exter nal parameter time (the “time” in
+which the growth occurs), thereby violating the principle t hat physical time is encoded in the intrinsic
+order-relation of the causal set and nothing else. If physic ally real, such a parameter time would yield a
+distinguished labeling of the elements and thereby a notion of “absolute simultaneity”, in contradiction to
+the lessons of both special and general relativity. To avoid such a consequence, we postulated a principle
+of discrete general covariance, according to which no probability of the theory can depend o n — and no
+physically meaningful question can refer to — the imputed or der of births, except insofar as that order
+reﬂects the intrinsic precedence relation of the causal set itself.
+To discrete general covariance, we added two other principl es that we called Bell causality and internal
+temporality. The ﬁrst is a discrete analog of the condition that no inﬂuen ce can propagate faster than
+light, and the second simply requires that no element be born to the past of any existing element. 1 These
+principles led us almost uniquely to a family of dynamical la ws (stochastic processes) parameterized by a
+countable sequence of coupling constants qn. In addition to this generic family, there are some exceptio nal
+families of solutions, but we conjecture that they are all si ngular limits of the generic family. We have
+checked in particular that “originary percolation” (see se ction 2) is such a limit. 2
+∗ rideout@physics.syr.edu
+† sorkin@physics.syr.edu
+1This last condition guarantees that the “parameter time” of our stochastic process is compatible with physical temporality,
+as recorded in the order relation ≺ that gives the causal set its structure. In a broader sense, g eneral covariance itself is also
+an aspect of internal temporality, since it guarantees that the parameter time adds nothing to the relation ≺.
+2In the notation of [1], it is the A → ∞ limit of the dynamics given by t0 = 1, tn = Atn, n = 1,2,3, . . ..
+1
+
+===== PAGE 2 =====
+
+Now among these dynamical laws, the one resulting from the ch oice qn = qn is one of the easiest
+to work with, both conceptually and for purposes of computer simulation. Deﬁned by a single real
+parameter q ∈ [0, 1], it is described in more detail in Section 2 below. In [1], w e referred to it as transitive
+percolation because it can be interpreted in terms of a random “turning on ” of nonlocal bonds (with
+probability p = 1 − q) in a one-dimensional lattice. Another thing making it an at tractive special case to
+work with is the availability in the mathematics literature of a number of results governing the asymptotic
+behavior of posets generated in this manner [2, 3].
+Aside from its convenience, this percolation dynamics, as w e will call it, possesses other distinguishing
+features, including an underlying time-reversal invarian ce and a special relevance to causal set cosmology,
+as we describe brieﬂy below. In this paper, we search for evid ence of a continuum limit of percolation
+dynamics.
+One might question whether a continuum limit is even desirab le in a fundamentally discrete theory,
+but a continuum approximation in a suitable regime is certainly necessary if the theory is t o reproduce
+known physics. Given this, it seems only a small step to a rigo rous continuum limit, and conversely,
+the existence of such a limit would encourage the belief that the theory is capable of yielding continuum
+physics with suﬃcient accuracy.
+Perhaps an analogy with kinetic theory can guide us here. In q uantum gravity, the discreteness scale
+is set, presumably, by the Planck length l = (κ¯h)1/2 (where κ = 8πG), whose vanishing therefore signals
+a continuum limit. In kinetic theory, the discreteness scal es are set by the mean free path λ and the mean
+free time τ, both of which must go to zero for a description by partial diﬀe rential equations to become
+exact. Corresponding to these two independent length and ti me scales are two “coupling constants”:
+the diﬀusion constant D and the speed of sound csound. Just as the value of the gravitational coupling
+constant G¯h reﬂects (presumably) the magnitude of the fundamental spac etime discreteness scale, so the
+values of D and csound reﬂect the magnitudes of the microscopic parameters λ and τ according to the
+relations
+D ∼ λ 2
+τ , c sound ∼ λ
+τ
+or conversely
+λ ∼ D
+csound
+, τ ∼ D
+c2
+sound
+.
+In a continuum limit of kinetic theory, therefore, we must ha ve either D → 0 or csound → ∞. In the former
+case, we can hold csound ﬁxed, but we get a purely mechanical macroscopic world, with out diﬀusion or
+viscosity. In the latter case, we can hold D ﬁxed, but we get a “purely diﬀusive” world with mechanical
+forces propagating at inﬁnite speed. In each case we get a wel l deﬁned — but defective — continuum
+physics, lacking some features of the true, atomistic world .
+If we can trust this analogy, then something very similar mus t hold in quantum gravity. To send l to
+zero, we must make either G or ¯h vanish. In the former case, we would expect to obtain a quantu m world
+with the metric decoupled from non-gravitational matter; t hat is, we would expect to get a theory of
+quantum ﬁeld theory in a purely classical background spacet ime solving the source-free Einstein equations.
+In the latter case, we would expect to obtain classical gener al relativity. Thus, there might be two distinct
+continuum limits of quantum gravity, each physically defective in its own way, but nonetheless well deﬁned.
+For our purposes in this paper, the important point is that, a lthough we would not expect quantum
+gravity to exist as a continuum theory, it could have limits w hich do, and one of these limits might be
+classical general relativity. It is thus sensible to inquir e whether one of the classical causal set dynamics
+we have deﬁned describes classical spacetimes. In the follo wing, we make a beginning on this question
+by asking whether the special case of “percolated causal set s”, as we will call them, admits a continuum
+limit at all.
+Of course, the physical content of any continuum limit we mig ht ﬁnd will depend on what we hold
+ﬁxed in passing to the limit, and this in turn is intimately li nked to how we choose the coarse-graining
+2
+
+===== PAGE 3 =====
+
+procedure that deﬁnes the eﬀective macroscopic theory whose existence the continuum limit signiﬁes.
+Obviously, we will want to send N → ∞ for any continuum limit, but it is less evident how we should
+coarse-grain and what coarse grained parameters we want to h old ﬁxed in taking the limit. Indeed, the
+appropriate choices will depend on whether the macroscopic spacetime region we have in mind is, to take
+some naturally arising examples, ( i) a ﬁxed bounded portion of Minkowski space of some dimension ,
+or ( ii) an entire cycle of a Friedmann universe from initial expans ion to ﬁnal recollapse, or ( iii) an N -
+dependent portion of an unbounded spacetime M that expands to encompass all of M as N → ∞ . In
+the sequel, we will have in mind primarily the ﬁrst of the thre e examples just listed. Without attempting
+an deﬁnitive analysis of the coarse-graining question, we w ill simply adopt the simplest deﬁnitions that
+seem to us to be suited to this example. More speciﬁcally, we w ill coarse-grain by randomly selecting a
+sub-causal-set of a ﬁxed number of elements, and we will choo se to hold ﬁxed some convenient invariants
+of that sub-causal-set, one of which can be interpreted 3 as the dimension of the spacetime region it
+constitutes. As we will see, the resulting scheme has much in common with the kind of coarse-graining
+that goes into the deﬁnition of renormalizability in quantu m ﬁeld theory. For this reason, we believe it
+can serve also as an instructive “laboratory” in which this c oncept, and related concepts like “running
+coupling constant” and “non-trivial ﬁxed point”, can be con sidered from a fresh perspective.
+In the remaining sections of this paper we: deﬁne transitive percolation dynamics more precisely;
+specify the coarse-graining procedure we have used; report on the simulations we have run looking for a
+continuum limit in the sense thereby deﬁned; and oﬀer some con cluding comments.
+1.1 Deﬁnitions used in the sequel
+Causal set theory postulates that spacetime, at its most fun damental level, is discrete, and that its
+macroscopic geometrical properties reﬂect a deep structur e which is purely order theoretic in nature.
+This deep structure is taken to be a partial order and called a causal set (or “causet” for short). For an
+introduction to causal set theory, see [4, 5, 6, 7]. In this se ction, we merely recall some deﬁnitions which
+we will be using in the sequel.
+A (partial) order or poset is a set S endowed with a relation ≺ which is:
+transitive ∀x, y, z ∈ S x ≺ y and y ≺ z ⇒ x ≺ z
+acyclic ∀x, y ∈ S x ≺ y ⇒ y ̸≺x
+irreﬂexive ∀x ∈ S x ̸≺x
+(Irreﬂexivity is merely a convention; with it, acyclicity i s actually redundant.) For example, the events
+of Minkowski space (in any dimension) form a poset whose orde r relation is the usual causal order. In an
+order S, the interval int(x, y ) is deﬁned to be
+int(x, y ) = {z ∈ S|x ≺ z ≺ y} .
+An order is said to be locally ﬁnite if all its intervals are ﬁnite (have ﬁnite cardinality). A causal set is a
+locally ﬁnite order.
+It will be helpful to have names for some small causal sets. Fi gure 1.1 provides such names for the
+causal sets with three or fewer elements.
+2 The dynamics of transitive percolation
+Regarded as a sequential growth dynamics of the sort derived in [1], transitive percolation is described
+by one free parameter q such that qn = qn. This is equivalent (at stage N of the growth process) to using
+the following “percolation” algorithm to generate a random causet.
+3This interpretation is strictly correct only if the causal s et forms an interval or “Alexandrov neighborhood” within the
+spacetime.
+3
+
+===== PAGE 4 =====
+
+1-chain
+2-chain 2-antichain
+3-chain "V" "L" 3-antichainΛ " "
+Figure 1: Names for small causets
+1. Start with N elements labeled 0 , 1, 2, . . . , N − 1.
+2. With a ﬁxed probability p (= 1 − q), introduce a relation i ≺ j between every pair of elements
+labeled i and j, where i ∈ {0 · · · N − 2} and j ∈ {i + 1 · · · N − 1}.
+3. Form the transitive closure of these relations (e.g. if 2 ≺ 5 and 5 ≺ 8 then enforce that 2 ≺ 8.)
+Given the simplicity of this dynamical model, both conceptu ally and from an algorithmic standpoint, it
+oﬀers a “stepping stone” allowing us to look into some general features of causal set dynamics. (The
+name “percolation” comes from thinking of a relation i ≺ j as a “bond” or “channel” between i and j.)
+There exists another model which is very similar to transiti ve percolation, called “originary transitive
+percolation”. The rule for randomly generating a causet is t he same as for transitive percolation, except
+that each new element is required to be related to at least one existing element. Algorithmically, we
+generate potential elements one by one, exactly as for plain percolation, but discard any such element
+which would be unrelated to all previous elements. Causets f ormed with this dynamics always have a
+single minimal element, an “origin”.
+Recent work by Dou [8] suggests that originary percolation m ight have an important role to play in
+cosmology. Notice ﬁrst that, if a given cosmological “cycle ” ends with the causet collapsing down to a
+single element, then the ensuing re-expansion is necessari ly given by an originary causet. Now, in the
+limited context of percolation dynamics, Alon et al. have proved rigorously [3] that such cosmological
+“bounces” (which they call posts) occur with probability 1 (if p > 0), from which it follows that there are
+inﬁnitely many cosmological cycles, each cycle but the ﬁrst having the dynamics of originary percolation.
+For more general choices of the dynamical parameters qn of [1], posts can again occur, but now the qn
+take on new eﬀective values in each cycle, related to the old on es by the action of a sort of “cosmological
+renormalization group”; and Dou [8] has found evidence that originary percolation is a “stable ﬁxed
+point” of this action, meaning that the universe would tend t o evolve toward this behavior, no matter
+what dynamics it began with.
+It would thus be of interest to investigate the continuum lim it of originary percolation as well as plain
+percolation. In the present paper, however, we limit oursel ves to the latter type, which we believe is
+more appropriate (albeit not fully appropriate for reasons discussed in the conclusion) in the context of
+spacetime regions of sub-cosmological scale.
+4
+
+===== PAGE 5 =====
+
+3 The critical point at p = 0, N = ∞
+In the previous section we have introduced a model of random c ausets, which depends on two parameters,
+p ∈ [0, 1] and N ∈ N. For a given p, the model deﬁnes a probability distribution on the set of N -element
+causets.4 For p = 0, the only causet with nonzero probability, obviously, is the N -antichain. Now let
+p > 0. With a little thought, one can convince oneself that for N → ∞ , the causet will look very much
+like a chain. Indeed it has been proved [9] (see also [10]) tha t, as N → ∞ with p ﬁxed at some (arbitrarily
+small) positive number, r → 1 in probability, where
+r ≡ R
+N (N − 1)/ 2 = R
+( N
+2
+) ,
+R being the number of relations in the causet, i.e. the number o f pairs of causet elements x, y such that
+x ≺ y or y ≺ x. Note that the N -chain has the greatest possible number
+( N
+2
+)
+of relations, so r → 1 gives
+a precise meaning to “looking like a chain”. We call r the ordering fraction of the causal set, following
+[11].
+We see that for N → ∞ , there is a change in the qualitative nature of the causet as p varies away
+from zero, and the point p = 0, N = ∞ (or p = 1/N = 0) is in this sense a critical point of the model. It
+is the behavior of the model near this critical point which wi ll concern us in this paper.
+4 Coarse graining
+An advantageous feature of causal sets is that there exists f or them a simple yet precise notion of coarse
+graining. A coarse grained approximation to a causet C can be formed by selecting a sub-causet C ′
+at random, with equal selection probability for each elemen t, and with the causal order of C ′ inherited
+directly from that of C (i.e. x ≺ y in C ′ if and only if x ≺ y in C.)
+For example, let us start with the 20 element causet C shown in Figure 2. (which was percolated
+using p = 0 . 25), and successively coarse grain it down to causets of 10, 5 and 3 elements. We see that,
+at the largest scale shown (i.e. the smallest number of remai ning elements), C has coarse-grained in this
+instance to the 3-element “V” causet. Of course, coarse grai ning itself is a random process, so from a
+single causet of N elements, it gives us in general, not another single causet, but a probability distribution
+on the causets of m < N elements.
+A noteworthy feature of this deﬁnition of coarse graining, w hich in some ways is similar to what is
+often called “decimation” in the context of spin systems, is the random selection of a subset. In the
+absence of any background lattice structure to refer to, no o ther possibility for selecting a sub-causet is
+evident. Random selection is also recommended strongly by c onsiderations of Lorentz invariance [12].
+The fact that a coarse grained causet is automatically anoth er causet will make it easy for us to formulate
+precise notions of continuum limit, running of the coupling constant p, etc. In this respect, we believe
+that this model combines precision with novelty in such a man ner as to furnish an instructive illustration
+of concepts related to renormalizability, independently o f its application to quantum gravity. We remark
+in this connection, that transitive percolation is readily embedded in a “two-temperature” statistical
+mechanics model, and as such, happens also to be exactly solu ble in the sense that the partition function
+can be computed exactly [13, 14].
+4Strictly speaking this distribution has gauge-invariant m eaning only in the limit N → ∞ (p ﬁxed); for it is only insofar
+as the growth process “runs to completion” that generally co variant questions can be asked. Notice that this limit is inh erent
+in causal set dynamics itself, and has nothing to do with the c ontinuum limit we are concerned with herein, which sends p
+to zero as N → ∞.
+5
+
+===== PAGE 6 =====
+
+AGAIN:
+or
+Figure 2: Three successive coarse grainings of a 20-element causet
+5 The large scale eﬀective theory
+In section 2 we described a “microscopic” dynamics for causa l sets (that of transitive percolation) and
+in section 4 we deﬁned a precise notion of coarse graining (th at of random selection of a sub-causal-set).
+On this basis, we can produce an eﬀective “macroscopic” dynam ics by imagining that a causet C is ﬁrst
+percolated with N elements and then coarse-grained down to m < N elements. This two-step process
+constitutes an eﬀective random procedure for generating m element causets depending (in addition to m)
+on the parameters N and p. In causal set theory, number of elements corresponds to spa cetime volume,
+so we can interpret N/m as the factor by which the “observation scale” has been incre ased by the coarse
+graining. If, then, V0 is the macroscopic volume of the spacetime region constitut ed by our causet, and if
+we take V0 to be ﬁxed as N → ∞, then our procedure for generating causets of m elements provides the
+eﬀective dynamics at volume-scale V0/m (i.e. length scale ( V0/m )1/d for a spacetime of dimension d).
+What does it mean for our eﬀective theory to have a continuum li mit in this context? Our stochastic
+microscopic dynamics gives, for each choice of p, a probability distribution on the set of causal sets C
+with N elements, and by choosing m, we determine at which scale we wish to examine the correspon ding
+eﬀective theory. This eﬀective theory is itself just a probabi lity distribution fm on the set of m-element
+causets, and so our dynamics will have a well deﬁned continuu m limit if there exists, as N → ∞ , a
+trajectory p = p(N ) along which the corresponding probability distributions fm on coarse grained causets
+approach ﬁxed limiting distributions f ∞
+m for all m. The limiting theory in this sense is then a sequence of
+eﬀective theories, one for each m, all ﬁtting together consistently. (Thanks to the associat ive (semi-group)
+character of our coarse-graining procedure, the existence of a limiting distribution for any given m implies
+its existence for all smaller m. Thus it suﬃces that a limiting distribution fm exist for m arbitrarily large.)
+In general there will exist not just a single such trajectory p = p(N ), but a one-parameter family of them
+(corresponding to the one real parameter p that characterizes the microscopic dynamics at any ﬁxed N ),
+6
+
+===== PAGE 7 =====
+
+and one may wonder whether all the trajectories will take on t he same asymptotic form as they approach
+the critical point p = 1/N = 0.
+Consider ﬁrst the simplest nontrivial case, m = 2. Since there are only two causal sets of size two,
+the 2-chain and the 2-antichain, the distribution f2 that gives the “large scale physics” in this case is
+described by a single number which we can take to be f2( rr), the probability of obtaining a 2-chain
+rather than a 2-antichain. (The other probability, f2( r r), is of course not independent, since classical
+probabilities must add up to unity.)
+Interestingly enough, the number f2( rr) has a direct physical interpretation in terms of the Myrhei m-
+Meyer dimension of the ﬁne-grained causet C. Indeed, it is easy to see that f2( rr) is nothing but the
+expectation value of what we called above the “ordering frac tion” of C. But the ordering fraction, in turn,
+determines the Myrheim-Meyer dimension d that indicates the dimension of the Minkowski spacetime
+Md (if any) in which C would embed faithfully as an interval [15, 11]. Thus, by coar se graining down to
+two elements, we are eﬀectively measuring a certain kind of sp acetime dimensionality of C. In practice,
+we would not expect C to embed faithfully without some degree of coarse-graining , but the original r
+would still provide a good dimension estimate since it is, on average, coarse-graining invariant.
+As we begin to consider coarse-graining to sizes m > 2, the degree of complication grows rapidly,
+simply because the number of partial orders deﬁned on m elements grows rapidly with m. For m = 3
+there are ﬁve possible causal sets: rrr
+, r
+r r
+❆❆✁✁ , r r
+r
+,
+r
+r r✁✁❆❆ , and r r r. Thus the eﬀective dynamics at this “scale”
+is given by ﬁve probabilities (so four free parameters). For m = 4 there are sixteen probabilities, for
+m = 5 there are sixty three, and for m = 6, 7 and 8, the number of probabilities is respectively 318, 2045
+and 16999.
+6 Evidence from simulations
+In this section, we report on some computer simulations that address directly the question whether
+transitive percolation possesses a continuum limit in the s ense deﬁned above. In a subsequent paper,
+we will report on simulations addressing the subsidiary que stion of a possible scaling behavior in the
+continuum limit.
+In order that a continuum limit exist, it must be possible to c hoose a trajectory for p as a function of
+N so that the resulting coarse-grained probability distribu tions, f1, f2, f3, . . . , have well deﬁned limits as
+N → ∞. To study this question numerically, one can simulate trans itive percolation using the algorithm
+described in Section 2, while choosing p so as to hold constant (say) the m = 2 distribution f2 (f1 being
+trivial). Because of the way transitive percolation is deﬁn ed, it is intuitively obvious that p can be chosen
+to achieve this, and that in doing so, one leaves p with no further freedom. The decisive question then is
+whether, along the trajectory thereby deﬁned, the higher di stribution functions, f3, f4, etc. all approach
+nontrivial limits.
+As we have already mentioned, holding f2 ﬁxed is the same thing as holding ﬁxed the expectation
+value < r > of ordering fraction r = R/
+( N
+2
+)
+. To see in more detail why this is so, consider the coarse-
+graining that takes us from the original causet CN of N elements to a causet C2 of two elements. Since
+coarse-graining is just random selection, the probability f2( rr
+) that C2 turns out to be a 2-chain is just
+the probability that two elements of CN selected at random form a 2-chain rather than a 2-antichain. In
+other words, it is just the probability that two elements of CN selected at random are causally related.
+Plainly, this is the same as the fraction of pairs of elements of CN such that the two members of the pair
+form a relation x ≺ y or y ≺ x. Therefore, the ordering fraction r equals the probability of getting a
+2-chain when coarse graining CN down to two elements; and f2( rr) =< r >, as claimed.
+This reasoning illustrates, in fact, how one can in principl e determine any one of the distributions fm
+by answering the question, “What is the probability of getti ng this particular m-element causet from this
+particular N -element causet if you coarse grain down to m elements?” To compute the answer to such
+7
+
+===== PAGE 8 =====
+
+a question starting with any given causet CN , one examines every possible combination of m elements,
+counts the number of times that the combination forms the par ticular causet being looked for, and divides
+the total by
+( N
+m
+)
+. The ensemble mean of the resulting abundance, as we will refer to it, is then fm(ξ),
+where ξ is the causet being looked for. In practice, of course, we wou ld normally use a more eﬃcient
+counting algorithm than simply examining individually all
+( N
+m
+)
+subsets of CN .
+6.1 Histograms of 2-chain and 4-chain abundances
+number of relations
+0
+75
+150
+225
+300
+375
+450
+525
+
+
+15,260 causets
+6,630,255 6,822,375mean=6,722,782
+skewness=-0.027
+kurtosis=2.993
+Figure 3: Distribution of number of relations for N = 4096, p = 0. 01155
+As explained in the previous subsection, the main computati onal problem, once the random causet
+has been generated, is determining the number of subcausets of diﬀerent sizes and types. To get a feel for
+how some of the resulting “abundances” are distributed, we s tart by presenting a couple of histograms.
+Figure 6.1 shows the number R of relations obtained from a simulation in which 15,260 caus al sets were
+generated by transitive percolation with p = 0 . 01155, N = 4096. Visually, the distribution is Gaussian,
+in agreement with the fact that its “kurtosis”
+(x − x)4
+/
+(x − x)2 2
+of 2.993 is very nearly equal to its Gaussian value of 3 (the ov er-bar denotes sample mean). In these
+simulations, p was chosen so that the number of 3-chains was equal on average to half the total number
+possible, i.e. the “abundance of 3-chains”, (number of 3-ch ains)/
+( N
+3
+)
+, was equal to 1 / 2 on average. The
+picture is qualitatively identical if one counts 4-chains r ather than 2-chains, as exhibited in Fig. 4.
+(One may wonder whether it was to be expected that these distr ibutions would appear to be so
+normal. If the variable in question, here the number of 2-cha ins R or the number of 4-chains ( C4, say),
+8
+
+===== PAGE 9 =====
+
+number of 4-chains
+0
+75
+150
+225
+300
+375
+450
+525
+600
+
+
+15,260 causets
+skewness=0.031
+kurtosis=2.99
+2,476,985,149,915 3,062,430,629,438mean=2,745,459,887,579
+Figure 4: Distribution of number of 4-chains for N = 4096, p = 0. 01155
+can be expressed as a sum of independent random variables, th en the central limit theorem provides an
+explanation. So consider the variables xij which are 1 if i ≺ j and zero otherwise. Then R is easily
+expressed as a sum of these variables:
+R =
+∑
+i<j
+xij
+However, the xij are not independent, due to transitivity. Apparently, this dependence is not large enough
+to interfere much with the normality of their sum. The number of 4-chains C4 can be expressed in a
+similar manner
+C4 =
+∑
+i<j<k<l
+xijxjk xkl .
+and similar remarks apply.)
+Let us mention that for values of p suﬃciently close to 0 or 1, these distributions will appear s kew.
+This occurs simply because the numbers under consideration (e.g. the number of m-chains) are bounded
+between zero and
+( N
+m
+)
+and must deviate from normality if their mean gets too close t o a boundary relative
+to the size of their standard deviation. Whenever we draw an e rror bar in the following, we will ignore
+any deviation from normality in the corresponding distribu tion.
+Notice incidentally that the total number of 4-chains possi ble is
+( 4096
+4
+)
+= 11 , 710, 951, 848, 960. Con-
+sequently, the mean 4-chain abundance 5 in our simulation is only 2,745,459,887,579
+11,710,951,848,960 = 0. 234, a considerably
+smaller value than the 2-chain abundance of r = 6,722,782
+(4096
+2 ) = 0. 802. This was to be expected, considering
+that the 2-chain is one of only two possible causets of its siz e, while the 4-chain is one out 16 possibilities.
+5From this point on we will usually write simply “abundance”, in place of “mean abundance”, assuming the average is
+obvious from context.
+9
+
+===== PAGE 10 =====
+
+(Notice also that 4-chains are necessarily less probable th an 2-chains, because every coarse-graining of a
+4-chain is a 2-chain, whereas the 2-chain can come from every 4-element causet save the 4-antichain.)
+6.2 Trajectories of p versus N
+The question we are exploring is whether there exist, for N → ∞, trajectories p = p(N ) along which the
+mean abundances of all ﬁnite causets tend to deﬁnite limits. To seek such trajectories numerically, we will
+select some ﬁnite “reference causet” and determine, for a ra nge of N , those values of p which maintain
+its abundance at some target value. If a continuum limit does exist, then it should not matter in the end
+which causet we select as our reference, since any other choi ce (together with a matching choice of target
+abundance) should produce the same trajectory asymptotica lly. We would also anticipate that all the
+trajectories would behave similarly for large N , and that, in particular, either all would lead to continuum
+limits or all would not. In principle it could happen that onl y a certain subset led to continuum limits,
+but we know of no reason to expect such an eventuality. In the s imulations reported here, we have chosen
+as our reference causets the 2-, 3- and 5-chains. We have comp uted six trajectories, holding the 2-chain
+abundance ﬁxed at 1/2, 1/3, and 1/10, the 3-chain abundance ﬁ xed at 1/2 and .0814837, and the 5-chain
+abundance ﬁxed at 1/2. For N , we have used as large a range as our computers would allow.
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+0 0.01 0.02 0.03 0.04 0.05 0.06 0.07
+mean ordering fraction = <r>
+p
+
+cpfit = e
+1
+c = 1.348
+g = .001144
+(1-        ) g
+Figure 5: Ordering fractions as a function of p for N = 2048
+Before discussing the trajectories as such, let us have a loo k at how the mean 2-chain abundance < r >
+(i.e. the mean ordering fraction) varies with p for a ﬁxed N of 2048, as exhibited in Figure 5. (Vertical
+error bars are displayed in the ﬁgure but are so small that the y just look like horizontal lines. The plotted
+points were obtained from an exact expression for the ensemb le average < r >, so the errors come only
+from ﬂoating point roundoﬀ. The ﬁtting function used in Figur e 5 will be discussed in a subsequent
+paper [14], where we examine scaling behavior; see also [2]. ) As one can see, < r > starts at 0 for p = 0,
+10
+
+===== PAGE 11 =====
+
+rises rapidly to near 1 and then asymptotes to 1 at p = 1 (not shown). Of course, it was evident a priori
+that < r > would increase monotonically from 0 to 1 as p varied between these same two values, but it is
+perhaps noteworthy that its graph betrays no sign of discont inuity or non-analyticity (no sign of a “phase
+transition”). To this extent, it strengthens the expectati on that the trajectories we ﬁnd will all share the
+same qualitative behavior as N → ∞.
+-16
+-14
+-12
+-10
+-8
+-6
+-4
+-2
+0
+0 5 10 15 20
+log   p
+log   N
+5-chains     1/2
+3-chains     1/2
+3-chains .0815
+2-chains     1/2
+2-chains     1/3
+2-chains   1/10
+2
+2
+Figure 6: Flow of the “coupling constant” p as N → ∞ (six trajectories)
+The six trajectories we have simulated are depicted in Fig. 6 .6 A higher abundance of m-chains
+for ﬁxed m leads to a trajectory with higher p. Also note that, as observed above, the longer chains
+require larger values of p to attain the same mean abundance, hence a choice of mean abun dance = 1/2
+corresponds in each case to a diﬀerent trajectory. The trajec tories with < r > held to lower values are
+“higher dimensional” in the sense that < r > = 1 / 2 corresponds to a Myrheim-Meyer dimension of 2,
+while < r > = 1 / 10 corresponds to a Myrheim-Meyer dimension of 4. Observe th at the plots give the
+impression of becoming straight lines with a common slope at large N . This tends to corroborate the
+expectation that they will exhibit some form of scaling with a common exponent, a behavior reminiscent
+of that found with continuum limits in many other contexts. T his is further suggested by the fact that
+two distinct trajectories ( f2( rr) = 1 / 2 and f3( rrr
+) = . 0814837), obtained by holding diﬀerent abundances
+ﬁxed, seem to converge for large N .
+By taking the abscissa to be 1 /N rather than log 2 N , we can bring the critical point to the origin,
+as in Fig. 7. The lines which pass through the data points ther e are just splines drawn to aid the eye
+in following the trajectories. Note that the curves tend to a symptote to the p-axis, suggesting that p
+falls oﬀ more slowly than 1 /N . This suggestion is corroborated by more detailed analysis of the scaling
+behavior of these trajectories, as will be discussed in [14] .
+6Notice that the error bars are shown rotated in the legend. Th is will be the case for all subsequent legends as well.
+11
+
+===== PAGE 12 =====
+
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 0.5
+p
+1/N
+3-chains .0815
+3-chains     1/2
+2-chains     1/2
+2-chains     1/3
+5-chains     1/2
+2-chains   1/10
+Figure 7: Six trajectories approaching the critical point a t p = 0, N = ∞
+6.3 Flow of the coarse-grained theory along a trajectory
+We come ﬁnally to a direct test of whether the coarse-grained theory converges to a limit as N → ∞ .
+Independently of scaling or any other indicator, this is by d eﬁnition the criterion for a continuum limit to
+exist. We have examined this question by means of simulation s conducted for ﬁve of the six trajectories
+mentioned above. In each simulation we proceeded as follows . For each chosen N , we experimentally
+found a p suﬃciently close to the desired trajectory. Having determi ned p, we then generated a large
+number of causets by the percolation algorithm described in Section 2. (The number generated varied from
+64 to 40,000.) For each such random causet, we computed the ab undances of the diﬀerent m-element
+(sub)causets under consideration (2-chain, 3-chain, 3-an tichain, etc), and we combined the results to
+obtain the mean abundances we have plotted here, together wi th their standard errors. (The errors
+shown do not include any contribution from the slight inaccu racy in the value of p used. Except for the
+3- and 5-chain trajectories these errors are negligibly sma ll.)
+To compute the abundances of the 2-, 3-, and 4-orders for a giv en causet, we randomly sampled its
+four-element subcausets, counting the number of times each of the sixteen possible 4-orders arose, and
+dividing each of these counts by the number of samples taken t o get the corresponding abundance. As an
+aid in identifying to which 4-order a sampled subcauset belo nged we used the following invariant, which
+distinguishes all of the sixteen 4-orders, save two pairs.
+I(S) =
+∏
+x∈S
+(2 + |past(x)|)
+Here, past( x) = {y ∈ S|y ≺ x} is the exclusive past of the element x and |past(x)| is its cardinality.
+Thus, we associate to each element of the causet, a number whi ch is two more than the cardinality of its
+exclusive past, and we form the product of these numbers (fou r, in this case) to get our invariant. (For
+example, this invariant is 90 for the “diamond” poset, rrr r
+✟✟❍❍ .)
+12
+
+===== PAGE 13 =====
+
+The number of samples taken from an N element causet was chosen to be
+√
+2
+( N
+4
+)
+, on the grounds
+that the probability to get the same four element subset twic e becomes appreciable with more than this
+many samples. Numerical tests conﬁrmed that this rule of thu mb tends to minimize the sampling error,
+as seen in Figure 8.
+N
+4( )
+2
+p = 0.1
+abundance = 0.140
+N = 256
+N
+4( )
+( )
+0.0001
+0.001
+0.01
+0.1
+1 10 100 1000 10000 100000 1e+06 1e+07 1e+08 1e+09
+Error in mean abundance of diamonds
+Number of samples
+Figure 8: Reduction of error in estimated diamond abundance with increasing number of samples
+Once one has the abundances of all the 4-orders, the abundanc es of the smaller causets can be found
+by further coarse graining. By explicitly carrying out this coarse graining, one easily deduces the following
+relationships:
+f3( rrr
+) = f4( rrrr
+) + 1
+2
+(
+f4( rrr r✟✟ ) + f4( rrr
+r❍❍ )
+)
++ 1
+4 f4( rrr
+r) + 1
+4
+(
+f4( rrr r✟✟ ) + f4( rrr r❍❍ )
+)
++ 1
+2 f4( rrr r✟✟❍❍ )
+f3( r
+r r
+❆❆✁✁ ) = 1
+2 f4( rrr r✟✟ ) + 1
+2 f4( rrr r✟✟ ) + 1
+4 f4( rrr r✟✟❍❍ ) + 3
+4 f4(
+r r r
+r❆❆✁✁ ) + 1
+4 f4(
+r r
+r r❆❆✁✁ ) + 1
+4 f4( r
+r
+r
+r
+✁✁ ) + 1
+2 f4( r
+r
+r
+r
+  ❅❅ )
+f3( r r
+r
+) = 3
+4 f4( rrr
+r) + 1
+4
+(
+f4( rrr r✟✟ ) + f4( rrr r❍❍ )
+)
++ 1
+2
+(
+f4(
+r r
+r r❆❆✁✁ ) + f4(
+r
+rr r✁✁❆❆ )
+)
++ f4( rr rr) + 1
+2 f4( r r rr ) + 1
+2 f4( r
+r
+r
+r
+✁✁ )
+f3(
+r
+r r✁✁❆❆ ) = 1
+2 f4( rrr
+r❍❍ ) + 1
+2 f4( rrr r❍❍ ) + 1
+4 f4( rrr r✟✟❍❍ ) + 3
+4 f4( r r r
+r
+✁✁❆❆ ) + 1
+4 f4(
+r
+rr r✁✁❆❆ ) + 1
+4 f4( r
+r
+r
+r
+✁✁ ) + 1
+2 f4( r
+r
+r
+r
+  ❅❅ )
+f3( r r r) = 1
+4
+(
+f4(
+r r r
+r❆❆✁✁ ) + f4( r r r
+r
+✁✁❆❆ )
+)
++ 1
+4
+(
+f4(
+r r
+r r❆❆✁✁ ) + f4(
+r
+rr r✁✁❆❆ )
+)
++ 1
+2 f4( r r rr ) + f4( r r r r)
+f2( rr) = f3( rrr
+) + 2
+3
+(
+f3( r
+r r
+❆❆✁✁ ) + f3(
+r
+r r✁✁❆❆ )
+)
++ 1
+3 f3( r r
+r
+)
+f2( r r) = 1 − f2( rr)
+In the ﬁrst six equations, the coeﬃcient before each term on t he right is the fraction of coarse-grainings
+of that causet which yield the causet on the left.
+In Figures 9, 10, and 11, we exhibit how the coarse-grained pr obabilities of all possible 2, 3, and
+4 element causets vary as we follow the trajectory along whic h the coarse-grained 2-chain probability
+f2( rr) = r is held at 1 / 2. By design, the coarse-grained probability for the 2-chai n remains ﬂat at 50%,
+13
+
+===== PAGE 14 =====
+
+0.492
+0.494
+0.496
+0.498
+0.5
+0.502
+0.504
+0.506
+0.508
+0 2 4 6 8 10 12 14 16
+Abundance
+log   N2
+Figure 9: Flow of the coarse-grained probabilities fm for m = 2. The 2-chain probability is held at 1/2.
+2
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+0.4
+0 2 4 6 8 10 12 14 16
+Abundance
+log  N
+Figure 10: Flow of the coarse-grained probabilities fm for m = 3. The 2-chain probability is held at 1/2.
+14
+
+===== PAGE 15 =====
+
+2
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+0.12
+0.14
+0.16
+0.18
+0 2 4 6 8 10 12 14 16
+
+log  N
+Abundance
+Figure 11: Flow of the coarse-grained probabilities fm for m = 4. The 2-chain probability is held at 1/2.
+so Figure 9 simply shows the accuracy with which this was achi eved. (Observe the scale on the vertical
+axis.) Notice that, since f2( rr) and f2( r r) must sum to 1, their error bars are necessarily equal. (The
+standard deviation in the abundances decreases with increa sing N . The “blip” around log 2 N = 9 occurs
+simply because we generated fewer causets at that and larger values of N to reduce computational costs.)
+The crucial question is whether the probabilities for the th ree and four element causets tend to deﬁnite
+limits as N tends to inﬁnity. Several features of the diagrams indicate that this is indeed occurring. Most
+obviously, all the curves, except possibly a couple in Figur e 11, appear to be leveling oﬀ at large N . But
+we can bolster this conclusion by observing in which directi on the curves are moving, and considering
+their interrelationships.
+For the moment let us focus our attention on ﬁgure 10. A priori there are ﬁve coarse-grained proba-
+bilities to be followed. That they must add up to unity reduce s the degrees of freedom to four. This is
+reduced further to three by the observation that, due to the t ime-reversal symmetry of the percolation
+dynamics, we must have f3( r
+r r
+❆❆✁✁ ) = f3(
+r
+r r✁✁❆❆ ), as duly manifested in their graphs. Moreover, all ﬁve of th e
+curves appear to be monotonic, with the curves for
+r
+r r✁✁❆❆ , r
+r r
+❆❆✁✁ and r r r rising, and the curves for rrr
+and r r
+r
+falling. If we accept this indication of monotonicity from t he diagram, then ﬁrst of all, every probability
+f3(ξ) must converge to some limiting value, because monotonic bo unded functions always do; and some
+of these limits must be nonzero, because the probabilities m ust add up to 1. Indeed, since f3( r
+r r
+❆❆✁✁ ) and
+f3(
+r
+r r✁✁❆❆ ) are rising, they must converge to some nonzero value, and th is value must lie below 1/2 in order
+that the total probability not exceed unity. In consequence , the rising curve f3( r r r) must also converge to
+a nontrivial probability (one which is neither 0 nor 1). Take n all in all, then, it looks very much like the
+m = 3 coarse-grained theory has a nontrivial N → ∞ limit, with at least three out of its ﬁve probabilities
+converging to nontrivial values.
+Although the “rearrangement” of the coarse-grained probab ilities appears much more dramatic in
+Figure 11, similar arguments can be made. Excepting initial “transients”, it seems reasonable to conclude
+15
+
+===== PAGE 16 =====
+
+from the data that monotonicity will be maintained. From thi s, it would follow that the probabilities forr r r
+r❆❆✁✁ and r r r
+r
+✁✁❆❆ (which must be equal by time-reversal symmetry) and the othe r rising probabilities, r
+r
+r
+r
+  ❅❅ ,
+r r r r, and rrr r✟✟❍❍ , all approach nontrivial limits. The coarse-graining to 4 e lements, therefore, would also
+admit a continuum limit with a minimum of 4 out of the 11 indepe ndent probabilities being nontrivial.
+To the extent that the m = 2 and m = 3 cases are indicative, then, it is reasonable to conclude t hat
+percolation dynamics admits a continuum limit which is non- trivial at all “scales” m.
+2
+0.3
+0.35
+0.4
+0.45
+0.5
+0.55
+0.6
+0.65
+0.7
+0 2 4 6 8 10 12 14 16
+Abundance
+log   N
+Figure 12: Flow of the coarse-grained probabilities fm for m = 2. The 3-chain probability is held at
+0.0814837.
+The question suggests itself, whether the ﬂow of the coarse- grained probabilities would diﬀer qualita-
+tively if we held ﬁxed some abundance other than that of the 2- chain. In Figures 12, 13, and 14, we display
+results obtained by ﬁxing the 3-chain abundance (its value h aving been chosen to make the abundance of
+2-chains be 1/2 when N = 2 16). Notice in Figure 12 that the abundance of 2-chains varies c onsiderably
+along this trajectory, whilst that of the 3-chain (in ﬁgure 1 3) of course remains constant. Once again,
+the ﬁgures suggest strongly that the trajectory is approach ing a continuum limit with nontrivial values
+for the coarse-grained probabilities of at least the 3-chai n, the “V” and the “Λ” (and in consequence of
+the 2-chain and 2-antichain).
+All the trajectories discussed so far produce causets with a n ordering fraction r close to 1/2 for large
+N . As mentioned earlier, r = 1/ 2 corresponds to a Myrheim-Meyer dimension of two. Figures 1 5 and 16
+show the results of a simulation along the “four dimensional ” trajectory deﬁned by r = 1/ 10. (The value
+r = 1/ 10 corresponds to a Myrheim-Meyer dimension of 4.) Here the a ppearance of the ﬂow is much less
+elaborate, with the curves arrayed simply in order of increa sing ordering fraction, r r r and r r r r being at
+the top and rrr
+and (imperceptibly) rrrr
+at the bottom. As before, all the curves are monotone as far as can
+be seen. Aside from the intrinsic interest of the case d = 4, these results indicate that our conclusions
+drawn for d near 2 will hold good for all larger d as well.
+Figure 17 displays the ﬂow of the coarse-grained probabilit ies from a simulation in the opposite
+situation where the ordering fraction is much greater than 1 /2 (the Myrheim-Meyer dimension is down
+near 1.) Shown are the results of coarse-graining to three el ement causets along the trajectory which
+16
+
+===== PAGE 17 =====
+
+2
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+0.4
+0.45
+0 2 4 6 8 10 12 14 16
+Abundance
+log   N
+Figure 13: Flow of the coarse-grained probabilities fm for m = 3. The 3-chain probability is held at
+0.0814837.
+2
+0
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+0 2 4 6 8 10 12 14 16
+Abundance
+log   N
+Figure 14: Flow of the coarse-grained probabilities fm for m = 4. The 3-chain probability is held at
+0.0814837.
+17
+
+===== PAGE 18 =====
+
+2
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0 2 4 6 8 10 12 14
+Abundance
+log   N
+Figure 15: Flow of the coarse-grained probabilities fm for m = 3. The 2-chain probability is held at 1/10.
+2
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0 2 4 6 8 10 12 14
+Abundance
+log   N
+Figure 16: Flow of the coarse-grained probabilities fm for m = 4. The 2-chain probability is held at 1/10.
+Only those curves lying high enough to be seen distinctly hav e been labeled.
+18
+
+===== PAGE 19 =====
+
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1 2 3 4 5 6 7 8 9 10 11
+2-chain
+3-chain
+V
+Lambda
+L
+3-antichain
+log  N
+
+Abundance
+2
+Figure 17: Flow of the coarse-grained probabilities fm for m = 3. The 3-chain probability is held at 1/2.
+holds the 3-chain probability to 1/2. Also shown is the 2-cha in probability. The behavior is similar to
+that of Figure 15, except that here the coarse-grained proba bility rises with the ordering fraction instead
+of falling. This occurs because constraining f3( rrr
+) to be 1/2 generates rather chain-like causets whose
+Myrheim-Meyer dimension is in the neighborhood of 1.34, as f ollows from the approximate limiting value
+f2( rr) ≈ 0. 8. The slow, monotonic, variation of the probabilities at la rge N , along with the appearance
+of convergence to non-zero values in each case, suggests the presence of a nontrivial continuum limit for
+r near unity as well.
+Figures 18 and 19 present the results of a ﬁnal set of simulati ons, the only ones we have carried out
+which examined the abundances of causets containing more th an four elements. In these simulations, the
+mean 5-chain abundance f5(5-chain) was held at 1/2, producing causets that were even m ore chain-like
+than before (Myrheim-Meyer dimension ≈ 1. 1). In Figure 18, we track the resulting abundances of all
+k-chains for k between 2 and 7, inclusive. (We limited ourselves to chains, because their abundances
+are relatively easy to determine computationally.) As in Fi gure 17, all the coarse-grained probabilities
+appear to be tending monotonically to limits at large N . In fact, they look amazingly constant over the
+whole range of N , from 5 to 2 15. One may also observe that the coarse-grained probability o f a chain
+decreases markedly (and almost linearly over the range exam ined!) with its length, as one might expect.
+It appears also that the k-chain curves for k ̸= 5 are “expanding away” from the 5-chain curve, but only
+very slightly. Figure 19 displays the ﬂow of the probabiliti es for coarse-grainings to four elements. It is
+qualitatively similar to Figures 15–17, with very ﬂat proba bility curves, and here with a strong preference
+for causets having many relations over those having few. Com paring Figures 19 and 16 with Figures 14
+and 11, we observe that trajectories which generate causets that are rather chain-like or antichain-like
+seem to produce distributions that converge more rapidly th an those along which the ordering fraction
+takes values close to 1/2.
+In the way of further simulations, it would be extremely inte resting to look for continuum limits
+19
+
+===== PAGE 20 =====
+
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+2 4 6 8 10 12 14 16
+abundance
+log2 N
+
+2-chain
+3-chain
+4-chain
+5-chain
+6-chain
+7-chain
+Figure 18: Flow of the coarse-grained probabilities fm(m−chain) for m = 2 to 7. The 5-chain probability
+is held at 1/2.
+2
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+2 3 4 5 6 7 8 9 10
+Abundance
+log N
+Figure 19: Flow of the coarse-grained probabilities fm for m = 4. The 5-chain probability is held at 1/2.
+20
+
+===== PAGE 21 =====
+
+of some of the more general dynamical laws discussed in §4.5 of Reference [1]. In doing so, however,
+one would no longer have available (as one does have for trans itive percolation) a very fast (yet easily
+coded) algorithm that generates causets randomly in accord with the underlying dynamical law. Since
+the sequential growth dynamics of [1] is produced by a stocha stic process deﬁned recursively on the causal
+set, it is easily mimicked algorithmically; but the most obv ious algorithms that do so are too slow to
+generate eﬃciently causets of the size we have discussed in t his paper. Hence, one would either have to
+devise better algorithms for generating causets “one oﬀ”, o r one would have to use an entirely diﬀerent
+method to obtain the mean abundances, like Monte Carlo simul ation of the random causet.
+7 Concluding Comments
+Transitive percolation is a discrete dynamical theory char acterized by a single parameter p lying between
+0 and 1. Regarded as a stochastic process, it describes the st eady growth of a causal set by the continual
+birth or “accretion” of new elements. If we limit ourselves t o that portion of the causet comprising the
+elements born between step N0 and step N1 of the stochastic process, we obtain a model of random
+posets containing N = N1 − N0 elements. This is the model we have studied in this paper.
+Because the underlying process is homogeneous, this model d oes not depend on N0 or N1 separately,
+but only on their diﬀerence. It is therefore characterized by just two parameters p and N . One should
+be aware that this truncation to a ﬁnite model is not consiste nt with discrete general covariance, because
+it is the subset of elements with certain labels that has been selected out of the larger causet, rather
+than a subset characterized by any directly physical condit ion. Thus, we have introduced an “element of
+gauge” and we hope that we are justiﬁed in having neglected it . That is, we hope that the random causets
+produced by the model we have actually studied are represent ative of the type of suborder that one would
+obtain by percolating a much larger (eventually inﬁnite) ca uset and then using a label-invariant criterion
+to select a subset of N elements.
+Leaving this question aside for now, let us imagine that our m odel represents an interval (say) in a
+causet C underlying some macroscopic spacetime manifold. With this image in mind, it is natural to
+interpret a continuum limit as one in which N → ∞ while the coarse-grained features of the interval
+in question remain constant. We have made this notion precis e by deﬁning coarse-graining as random
+selection of a suborder whose cardinality m measures the “coarseness” of our approximation. A continuu m
+limit then is deﬁned to be one in which N tends to ∞ such that, for each ﬁnite m, the induced probability
+distribution fm on the set of m-element posets converges to a deﬁnite limit, the physical m eaning being
+that the dynamics at the corresponding length-scale is well deﬁned. Now, how could our model fail to
+admit such a limit?
+In a ﬁeld-theoretic setting, failure of a continuum limit to exist typically means that the coarse-
+grained theory loses parameters as the cutoﬀ length goes to z ero. For example, λφ 4 scalar ﬁeld theory
+in 4 dimensions depends on two parameters, the mass µ and the coupling constant λ. In the continuum
+limit, λ is lost, although one can arrange for µ to survive. (At least this is what most workers believe
+occurs.) Strictly speaking, one should not say that a contin uum limit fails to exist altogether, but only
+that the limiting theory is poorer in coupling constants tha n it was before the limit was taken. Now in
+our case, we have only one parameter to start with, and we have seen that it does survive as N → ∞
+since we can, for example, choose freely the m = 2 coarse-grained probability distribution f2. Hence, we
+need not fear such a loss of parameters in our case.
+What about the opposite possibility? Could the coarse-grai ned theory gain parameters in the N → ∞
+limit, as might occur if the distributions fm were sensitive to the ﬁne details of the trajectory along
+which N and p approached the “critical point” p = 0, N = ∞?7 Our simulations showed no sign of such
+7Such an increase of the parameter set through a limiting proc ess seems logically possible, although we know of no
+example of it from ﬁeld theory or statistical mechanics, unl ess one counts the extra global parameters that come in with
+21
+
+===== PAGE 22 =====
+
+sensitivity, although we did not look for it speciﬁcally. (C ompare, for example, Figure 10 with Figure 13
+and 11 with 14.)
+A third way the continuum limit could fail might perhaps be vi ewed as an extreme form of the
+second. It might happen that, no matter how one chose the traj ectory p = p(N ), some of the coarse-
+grained probabilities fm(ξ) oscillated indeﬁnitely as N → ∞, without ever settling down to ﬁxed values.
+Our simulations leave little room for this kind of breakdown , since they manifest the exact opposite kind
+of behavior, namely monotone variation of all the coarse-gr ained probabilities we “measured”.
+Finally, a continuum limit could exist in the technical sens e, but it still could be eﬀectively trivial
+(once again reminiscent of the λφ 4 case — if you care to regard a free ﬁeld theory as trivial.) Her e
+triviality would mean that all — or almost all — of the coarse- grained probabilities fm(ξ) converged
+either to 0 or to 1. Plainly, we can avoid this for at least some of the fm(ξ). For example, we could
+choose an m and hold either fm(m-chain) or fm(m-antichain) ﬁxed at any desired value. (Proof: as p → 1,
+fm(m-chain) → 1 and fm(m-antichain) → 0; as p → 0, the opposite occurs.) However, in principle, it
+could still happen that all the other fm besides these two went to 0 in the limit. (Clearly, they could not
+go to 1, the other trivial value.) Once again, our simulation s show the opposite behavior. For example,
+we saw that f3( r
+r r
+❆❆✁✁ ) increased monotonically along the trajectory of Figure 10.
+Moreover, even without reference to the simulations, we can make this hypothetical “chain-antichain
+degeneracy” appear very implausible by considering a “typi cal” causet C generated by percolation for
+N ≫ 1 with p on the trajectory that, for some chosen m, holds fm(m-chain) ﬁxed at a value a strictly
+between 0 and 1. Then our degeneracy would insist that fm(m-antichain) = 1 − a and fm(χ ) = 0 for all
+other χ . But this would mean that, in a manner of speaking, “every” co arse-graining of C to m elements
+would be either a chain or an antichain. In particular the cau set r r
+r
+could not occur as a subcauset of C;
+whence, since r r
+r
+is a subcauset of every m-element causet except the chain and the antichain, C itself
+would have to be either an antichain or a chain. But it is absur d that percolation for any parameter
+value p other than 0 and 1 would produce a “bimodal” distribution suc h that C would have to be either
+a chain or an antichain, but nothing in between. (It seems lik ely that similar arguments could be devised
+against the possibility of similar, but slightly less trivi al trivial continuum limits, for example a limit in
+which fm(χ ) would vanish unless χ were a disjoint union of chains and antichains.)
+Putting all this together, we have persuasive evidence that the percolation model does admit a contin-
+uum limit, with the limiting model being nontrivial and desc ribed by a single “renormalized” parameter
+or “coupling constant”. Furthermore, the associated scali ng behavior one might anticipate in such a case
+is also present, as we will discuss further in [14].
+But is the word “continuum” here just a metaphor, or can it be t aken more literally? This depends, of
+course, on the extent to which the causets yielded by percola tion dynamics resemble genuine spacetimes.
+Based on the meager evidence available at the present time, w e can only answer “it is possible”. On one
+hand, we know [1] that any spacetime produced by percolation would have to be homogeneous, like de
+Sitter space or Minkowski space. We also know, from simulati ons in progress, that two very diﬀerent
+dimension estimators seem to agree on percolated causets, w hich one might not expect, were there no
+actual dimensions for them to be estimating. Certain other i ndicators tend to behave poorly, on the
+other hand, but they are just the ones that are not invariant under coarse-graining (they are not “RG
+invariants”), so their poor behavior is consistent with the expectation that the causal set will not be
+manifold-like at the smallest scales (“foam”), but only aft er some degree of coarse-graining.
+Finally, there is the ubiquitous issue of “ﬁne tuning” or “la rge numbers”. In any continuum situation,
+a large number is being manifested (an actual inﬁnity in the c ase of a true continuum) and one may
+wonder where it came from. In our case, the large numbers were p−1 and N . For N , there is no mystery:
+unless the birth process ceases, N is guaranteed to grow as large as desired. But why should p be so
+small? Here, perhaps, we can appeal to the preliminary resul ts of Dou mentioned in the introduction. If
+“spontaneous symmetry breaking”.
+22
+
+===== PAGE 23 =====
+
+— cosmologically considered — the causet that is our univers e has cycled through one or more phases of
+expansion and recollapse, then its dynamics will have been ﬁ ltered through a kind of “temporal coarse-
+graining” or “RG transformation” that tends to drive it towa rd transitive percolation. But what we
+didn’t mention earlier was that the parameter p of this eﬀective dynamics scales like N −1/2
+0 , where N0
+is the number of elements of the causet preceding the most rec ent “bounce”. Since this is sure to be
+an enormous number if one waits long enough, p is sure to become arbitrarily small if suﬃciently many
+cycles occur. The reason for the near ﬂatness of spacetime — o r if you like for the large diameter of the
+contemporary universe — would then be just that the underlyi ng causal set is very old — old enough to
+have accumulated, let us say, 10 480 elements in earlier cycles of expansion, contraction and re -expansion.
+It is a pleasure to thank Alan Daughton, Chris Stephens, Henr i Waelbroeck and Denjoe ´OConnor for
+extensive discussions on the subject of this paper. The rese arch reported here was supported in part by
+NSF grants PHY-9600620 and INT-9908763 and by a grant from th e Oﬃce of Research and Computing
+of Syracuse University.
+References
+[1] D. P. Rideout and R. D. Sorkin, “Classical sequential gro wth dynamics for causal sets,” Physical
+Review D , vol. 61, p. 024002, Jan. 2000. <e-print archive: gr-qc/9904062 >.
+[2] Graham Brightwell “Models of Random Partial Orders” in Surveys in Combinatorics, 1993 , London
+Math. Soc. Lecture Notes Series 187:53–83, ed. Keith Walker (Cambridge Univ. Press 1993)
+B´ ela Bollob´ as and Graham Brightwell, “The structure of random graph orders”, SIAM J. Discrete
+Math.10: 318–335 (1997)
+B´ ela Bollob´ as and Graham Brightwell, “The dimension of random graph orders”, in The Mathemat-
+ics of Paul Erd¨ os II, R.L. Graham and J. Ne˘ set˘ ril, eds. (Springer-Verlag, 1996), pp. 51–69
+B´ ela Bollob´ as and Graham Brightwell, “The width of random graph orders”, Math. Scientist 20:
+69–90 (1995)
+B. Pittel and R. Tungol, “A Phase Transition Phenomenon in a R andom Directed Acyclic Graph”,
+(Ohio State preprint, ?1998)
+D. Crippa, K. Simon and P. Trunz, “Markov Processes Involvin g q-Stirling Numbers”, Combina-
+torics, Probability and Computing 6: 165–178 (1997)
+Klaus Simon, Davide Crippa and Fabian Collenberg, “On the Di stribution of the Transitive Closure
+in a Random Acyclic Digraph”, Lecture Notes in Computer Science 726: 345–356 (1993)
+K. Simon, “Improved Algorithm for Transitive Closure on Acy clic Digraphs”, Theoretical Computer
+Science 58 (1988).
+[3] N. Alon, B. Bollob´ as, G. Brightwell, and S. Janson, “Lin ear extensions of a random partial order,”
+Ann. Applied Prob. , vol. 4, pp. 108–123, 1994.
+[4] L. Bombelli, Spacetime as a Causal Set . PhD thesis, Syracuse University, December 1987.
+[5] L. Bombelli, J. Lee, D. Meyer, and R. D. Sorkin, “Space-ti me as a causal set,” Physical Review
+Letters, vol. 59, pp. 521–524, 1987.
+[6] D. Reid, “Introduction to causal sets: an alternative vi ew of spacetime structure.” <e-print archive:
+gr-qc/9909075>, 1999.
+[7] R. D. Sorkin, “Spacetime and causal sets,” in Relativity and Gravitation: Classical and Quantum
+(J. C. D’Olivo, E. Nahmad-Achar, M. Rosenbaum, M. Ryan, L. Ur rutia, and F. Zertuche, eds.),
+23
+
+===== PAGE 24 =====
+
+(Singapore), pp. 150–173, World Scientiﬁc, December 1991. (Proceedings of the SILARG VII Con-
+ference, held Cocoyoc, Mexico, December, 1990).
+[8] D. Dou, Causal Sets, a Possible Interpretation for the Black Hole Entr opy, and Related Topics . PhD
+thesis, SISSA, Trieste, 1999.
+[9] B. Bollob´ as and G. Brightwell, “Graphs whose every tran sitive orientation contains almost every
+relation,” Israel Journal of Mathematics , vol. 59, no. 1, pp. 112–128, 1987.
+[10] C. M. Newman and L. S. Schulman, “One-dimensional 1 / |j − i|s percolation models: The existence
+of a transition for s ≤ 2,” Commun. Math. Phys. , vol. 104, no. 4, pp. 547–571, 1986.
+[11] J. Myrheim, “Statistical geometry,” CERN preprint TH- 2538 (1978).
+[12] A. Daughton, The Recovery of Locality for Causal Sets and Related Topics . PhD thesis, Syracuse
+University, 1993.
+[13] A. Daughton, R. D. Sorkin, and C. Stephens, “Percolatio n and causal sets: A toy model of quantum
+gravity,” (in preparation).
+[14] D. P. Rideout and R. D. Sorkin, “Evidence for scaling in t he continuum limit of percolated causal
+sets,” (in preparation).
+[15] D. A. Meyer, The Dimension of Causal Sets . PhD thesis, Massachusetts Institute of Technology,
+1988.
+24

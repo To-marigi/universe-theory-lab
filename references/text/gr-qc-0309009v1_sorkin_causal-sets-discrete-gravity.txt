@@ -1,0 +1,1005 @@
+===== PAGE 1 =====
+
+arXiv:gr-qc/0309009v1  1 Sep 2003
+gr-qc/0309009
+SU–GP–03/01–02
+Causal Sets: Discrete Gravity
+Notes for the Valdivia Summer School, Jan. 2002
+Rafael D. Sorkin
+Department of Physics, Syracuse University, Syracuse, NY 1 3244-1130, U.S.A.
+and
+Queen Mary College, University of London, Mile End Road, Lon don E1 4NS
+internet address: sorkin@physics.syr.edu
+These are some notes in lieu of the lectures I was scheduled to give, but had to cancel at the
+last moment. In some places, they are more complete, in other s much less so, regrettably.
+I hope they at least give a feel for the subject and convey some of the excitement felt at the
+moment by those of us working on it.
+An extensive set of references and a glossary of terms can be f ound at the end of the notes.
+For a philosophically oriented discussion of some of the bac kground to the causal set idea,
+see reference [1]. For general background see [2] [3] [4] [5] [6] [7].
+Introduction
+It seems fair to say that causal set theory has reached a stage in which questions of
+phenomenology are beginning to be addressed meaningfully. This welcome development is
+due on one hand to improved astronomical observations which shed light on the magnitude
+of the cosmological constant (in apparent conﬁrmation of a l ong-standing prediction of
+the theory) and on the other hand to theoretical advances whi ch for the ﬁrst time have
+placed on the agenda the development of a quantum dynamical l aw for causal sets (and
+also for a scalar ﬁeld residing on a background causal set). W hat we have so far are:
+(i) an apparently conﬁrmed order of magnitude prediction for t he cosmological constant;
+(ii) a method of counting black hole horizon “states” at the kine matical level; ( iii) the
+beginnings of a framework in which two-dimensional Hawking radiation can be addressed;
+(iv) a classical causal set dynamics which arguably is the most general consi stent with the
+discrete analogs of general covariance and relativistic ca usality; and in consequence of this,
+both ( v) the formulation of a “cosmic renormalization group” which indicates how one
+might in principle solve some of the large number puzzles of c osmology without recourse
+to a post-quantum era of “inﬂation”; and ( vi) a hint of how non-gravitational matter might
+1
+
+===== PAGE 2 =====
+
+arise at the fundamental level from causal sets rather than h aving to be added in by hand
+or derived at a higher level ` a la Kaluza-Klein from an eﬀecti ve spacetime topology arising
+from the fundamental structures via coarse-graining. In ad dition, a good deal of computer
+code has been written for use in causal set simulations, incl uding a library of over 5000
+lines of Lisp code that can be used by anyone with access to the Emacs editor. At present,
+the principal need, in addition to ﬂeshing out the developme nts already outlined, is for
+a quantum analog of the classical dynamics alluded to above. It looks as if a suitable
+quantum version of Bell causality (see below) could lead dir ectly to such a dynamics, that
+is to say, to a theory of quantum spacetime, and in particular to a theory of quantum
+gravity.
+The remainder of these notes rapidly reviews the subject in i ts current state, progress-
+ing broadly from kinematics to dynamics to phenomenology. A lthough this sequence does
+not always reﬂect exactly the chronological development of the theory, it is not far oﬀ, and
+it also ﬁts in well with Taketani’s “3-stages” schema of scie ntiﬁc discovery [8].
+Origins of the causet idea
+The tradition of seeing the causal order of spacetime as its m ost fundamental structure
+is almost as old as the idea of spacetime itself (in its Relati vistic form). In [9], Robb
+presented a set of axioms for Minkowski space analogous to Eu clid’s axioms for plane
+geometry. In so doing, he eﬀectively demonstrated that, up t o an overall conformal factor,
+the geometry of 4-dimensional ﬂat spacetime (which I’ll den ote by M4, taken always with
+a deﬁnite time-orientation) can be recovered from nothing m ore than the underlying point
+set and the order relation ≺ among points (where x ≺ y ⇐ ⇒ the vector from x to
+y is timelike or lightlike and future-pointing). Later, Reic henbach [10] from the side of
+philosophy and Zeeman [11] from the side of mathematics emph asized the same fact, the
+latter in particular by proving the theorem, implicit in [9] , that any order-isomorphism of
+M4 onto itself must — up to an overall scaling — belong to the (is ochronous) Poincar´ e
+group.
+In a certain sense, however, these results appear to say more than they really do.
+Informally, they seem to tell us that M4 can be reconstructed from the relation ≺, but in
+actually carrying out the reconstruction (see below), one n eeds to know that what one is
+trying to recover is a ﬂat spacetime and not just a conformall y ﬂat one. Clearly, there’s
+nothing in the relation ≺ per se which can tell us that. This diﬃculty shows itself, in a
+sense, in the failure of Zeeman’s theorem for M2 and M1 (i.e. 1+1 and 0+1 dimensional
+Minkowski space). But it shows up still more clearly with the curved spacetimes of General
+2
+
+===== PAGE 3 =====
+
+Relativity, where the natural generalization of the ﬂat spa ce theorems is that a Lorentzian
+geometry M can be recovered from its causal order only up to a local conformal factor.
+Notice that when one says that a Lorentzian manifold M is recovered, one is talking
+about all the mathematical structures that go into the deﬁnition of a s pacetime geometry:
+its topology, its diﬀerential structure and its metric. Var ious special results show how to
+recover, say, the topology (see e.g. [12]) but the most compl ete theorems are those of [13]
+and [14], the latter delineating very precisely how close M can come to violating causality
+without the theorem breaking down.
+The upshot of all these reconstruction theorems is that, in t he continuum, something
+is lacking if we possess only the causal order, namely the conformal factor or equivalently
+the “volume element” √−g d4x. On the other hand, if we do give the volume element (say
+in the form of a measure µ on M ) then it is clear that metric gab will be determined in
+full. The causal order alone, however, is — in the continuum — incapable of furnishing
+such a measure.
+This failing is perhaps one reason to question the reality of the continuum, but of
+course it is not the only one. In modern times, doubts show up c learly in Riemann’s
+inaugural lecture (Habilitationsschrift) [15], where he c ontrasts the idea of what he calls a
+discrete manifold with that of a continuous manifold, which latter he takes to b e a relatively
+unfamiliar and unintuitive idea in comparison with the form er! The most evocative quotes
+from this lecture are perhaps the following:
+Gr¨ ossenbegriﬀe sind nur da m¨ oglich, wo sich ein allgemein er Begriﬀ vor-
+ﬁndet, der verschiedene Bestimmungsweisen zul¨ asst. Je na chdem unter
+diesen Bestimmungsweisen von einer zu einer andern ein stet iger ¨Ubergang
+stattﬁndet oder nicht, bilden sie eine stetige oder discret e Mannigfaltigkeit;
+die enzelnen Bestimmungsweisen heissen im ersten Falle Pun kte, im let-
+zten Elemente dieser Mannigfaltigkeit. (p.273)
+or in translation, ⋆
+Concepts of magnitude are only possible where a general conc ept is met
+with that admits of diﬀerent individual instances [Bestimm ungsweisen].
+According as, among these individual instances, a continuo us passage from
+one to another takes place or not, they form a continuous or di screte
+⋆ These translations are not guaranteed, but they’re a lot bet ter than what “Google” did
+(try it for fun!).
+3
+
+===== PAGE 4 =====
+
+manifold; the individual instances are called in the ﬁrst ca se points, in the
+second elements of the manifold;
+Die Frage ¨ uber die G¨ ultigkeit der Voraussetzungen der Geometrie im Un-
+endlichkleinen h¨ angt zusammen mit der Frage nach dem inner n Grunde
+der Massverh¨ altnisse des Raumes. Bei dieser Frage, welche wohl noch zur
+Lehre vom Raume gerechnet werden darf, kommt die obige Bemer kung
+zur Anwendung, dass bei einer discreten Mannigfaltigkeit d as Princip der
+Massverh¨ altnisse schon in dem Begriﬀe dieser Mannigfalti gkeit enthalten
+ist, bei einer stetigen aber anders woher hinzukommen muss. Es muss
+also entweder das dem Raume zu Grunde liegende Wirkliche ein e discrete
+Mannigfaltigkeit bilden, oder der Grund der Massverh¨ altn isse ausserhalb,
+in darauf wirkenden bindenden Kr¨ aften, gesucht werden.
+or in translation,
+The question of the validity of the presuppositions of geome try in the
+inﬁnitely small hangs together with the question of the inne r ground of the
+metric relationships of space. [I almost wrote “spacetime” !] In connection
+with the latter question, which probably [?] can still be rec koned to be
+part of the science of space, the above remark applies, that f or a discrete
+manifold, the principle of its metric relationships is alre ady contained in
+the concept of the manifold itself, whereas for a continuous manifold,
+it must come from somewhere else. Therefore, either the real ity which
+underlies physical space must form a discrete manifold or el se the basis
+of its metric relationships must be sought for outside it, in binding forces
+[bindenden Kr¨ afte] that act on it;
+and ﬁnally,
+Bestimmte, durch ein Merkmal oder eine Grenze unterschiede ne Theile
+einer Mannigfaltigkeit heissen Quanta. Ihre Vergleichung der Quantit¨ at
+nach geschieht bei den discreten Gr¨ ossen durch Z¨ ahlung, bei den stetigen
+durch Messung. (p.274)
+or in translation,
+Deﬁnite portions of a manifold, distinguished by a criterio n [Merkmal] or
+a boundary, are called quanta. Their quantitative comparis on happens
+for discrete magnitudes through counting, for continuous o nes through
+measurement.
+4
+
+===== PAGE 5 =====
+
+With the subsequent development of physics, more compellin g reasons emerged for
+questioning the continuum, including the singularities an d inﬁnities of General Relativity,
+of Quantum Field Theory (including the standard model), and of black hole thermody-
+namics. Einstein, for example, voiced doubts of this sort ve ry early [16]:
+But you have correctly grasped the drawback that the continuum brings. If
+the molecular view of matter is the correct (appropriate) on e, i.e., if a part
+of the universe is to be represented by a ﬁnite number of movin g points,
+then the continuum of the present theory contains too great a manifold of
+possibilities. I also believe that this too great is respons ible for the fact
+that our present means of description miscarry with the quan tum theory.
+The problem seems to me how one can formulate statements abou t a
+discontinuum without calling upon a continuum (space-time) as an aid; the
+latter should be banned from the theory as a supplementary co nstruction
+not justiﬁed by the essence of the problem, which correspond s to nothing
+“real”. But we still lack the mathematical structure unfort unately. How
+much have I already plagued myself in this way!
+and at a later stage stressed the importance of the causal ord er in this connection, writing
+[17] that it would be “especially diﬃcult to derive somethin g like a spatio-temporal quasi-
+order” from a purely algebraic or combinatorial scheme.
+The causal set idea is, in essence, nothing more than an attem pt to combine the
+twin ideas of discreteness and order to produce a structure o n which a theory of quantum
+gravity can be based. That such a step was almost inevitable i s indicated by the fact that
+very similar formulations were put forward independently i n [4], [5] and [2], after having
+been adumbrated in [18]. The insight underlying these propo sals is that, in passing from
+the continuous to the discrete, one actually gains certain information, because “volume”
+can now be assessed (as Riemann said) by counting ; and with both order and volume
+information present, we have enough to recover geometry.
+In this way the topology, the diﬀerential structure and, the metric of continuum
+physics all become uniﬁed with the causal order (much as mass is uniﬁed with energy in
+Special Relativity). Moreover the Lorentzian signature (n amely (−+++) in 4 dimensions)
+is singled out as the only one compatible with a consistent di stinction between past and
+future, hence the only one that can make contact with the idea of causal order.
+To see how these basic ideas work themselves out, we need ﬁrst a more precise state-
+ment of what a causal set is.
+5
+
+===== PAGE 6 =====
+
+What is a causal set?
+As a mathematical structure, a causal set (or causet for short) is simply a locally ﬁnite
+ordered set. In other words, it is a set C endowed with a binary relation ≺ possessing the
+following three properties:
+(i) transitivity: ( ∀x, y, z ∈ C)(x ≺ y ≺ z ⇒ x ≺ z)
+(ii) irreﬂexivity: ( ∀x ∈ C)(x ̸≺x)
+(iii) local ﬁniteness: ( ∀x, z ∈ C) (card {y ∈ C | x ≺ y ≺ z} < ∞)
+where ‘card’ stands for “cardinality”.In the presence of tr ansitivity, irreﬂexivity automat-
+ically implies acyclicity, i.e. the absence of cycles x0 ≺ x1 ≺ x2 ≺ · · · ≺ xn = x0, and this
+is often taken as an axiom in place of ( ii). The condition ( iii) of local ﬁniteness is a formal
+way of saying that a causet is discrete. Thus the real number line, for example does not
+qualify as a causet, although it is a partial order. †
+A structure satisfying the above axioms can be thought of as a graph, and in this sense
+is conveniently represented as a so-called Hasse diagram in which the elements of C appear
+as vertices and the relations appear as edges. (The sense of t he relation is usually shown,
+just as in the spacetime diagrams of Relativity theory, by ma king the line between x and y
+be a rising one when x ≺ y.) Actually, it is not necessary to draw in all the relations, but
+only those not implied by transitivity (the “links”), and th is convention is almost always
+adopted to simplify the appearance of the diagram. A causet c an also be thought of as
+a matrix M (the “causal matrix”) with the rows and columns labeled by th e elements of
+C and with the matrix element Mjk being 1 if j ≺ k and 0 otherwise. Perhaps, however,
+the most suggestive way to think of a causet for the purposes o f quantum gravity is as a
+relation of “descent”, eﬀectively a family tree that indica tes which of the elements C are
+“ancestors” of which others.
+The multiplicity of imagery associated with causets (or par tial orders more generally)
+is part of the richness of the subject and makes it natural to u se a variety of language in
+discussing the structural relationships induced by the bas ic order relation ≺. Thus, the
+† The above deﬁnition utilizes the so called “irreﬂexive conv ention” that no element pre-
+cedes itself. Axioms ( i) and ( ii) deﬁne what is variously called an “order”, a “partial
+order”, a “poset”, an “ordered set” or an “acyclic transitiv e digraph”. Axiom ( iii), which
+expresses the condition of local ﬁniteness, can also be stat ed in the form “every order-
+interval has ﬁnite cardinality”.
+6
+
+===== PAGE 7 =====
+
+relationship x ≺ y itself, is variously described by saying that x precedes y, that x is an
+ancestor of y, that y is a descendant of x, or that x lies to the past of y (or y to the
+future of x). Similarly, if x is an immediate ancestor of y (meaning that there exists no
+intervening z such that x ≺ z ≺ y) then one says that x is a parent of y, or y a child of x,
+or that y covers x, or that x ≺ y is a link. (See the glossary.)
+Still other interpretations of the relation ≺ are possible and can also be useful. For
+example a causet of ﬁnite cardinality is equivalent to a T0 topological space of ﬁnite cardi-
+nality, allowing one to use the language of topology in talki ng about causets (which indeed
+may turn out to have more than just a metaphorical signiﬁcanc e). A causet can also be
+treated as a function by identifying C with the function ‘past’ that associates to each x ∈ C
+the set past( x) of all its ancestors, and this is in fact the representation on which the Lisp
+code of [19] is based.
+For the purposes of quantum gravity, a causal set is, of cours e, meant to be the deep
+structure of spacetime. Or to say this another way, the basic hypothesis is that spacetime
+ceases to exist on suﬃciently small scales and is superseded by an ordered discrete structure
+to which the continuum is only a coarse-grained, macroscopi c approximation.
+Now, at ﬁrst sight, a structure based purely on the concept of order might seem
+to be too impoverished to reproduce the geometrical and topo logical attributes in terms
+of which general relativistic spacetime is normally concei ved. However, if one reﬂects
+that light cones can be deﬁned in causal terms and that (in the continuum) the light
+cones determine the metric up to a conformal rescaling, then it becomes understandable
+that (given minimal regularity conditions like the absence of closed causal curves) the
+causal order of a Lorentzian manifold (say J + in the usual notation) captures fully the
+conformal metric, as well as the topology and the diﬀerentia l structure. The volume
+element √−gdnx cannot be recovered from J +, but in the context of a discrete order,
+it can be obtained in another way — by equating the number of causet elements to the
+volume of the corresponding region of the spacetime continuum that approximates C. As
+discussed above, these observations provide the kinematic al starting point for a theory of
+discrete quantum gravity based on causal sets. The dynamics must then be obtained in
+the form of a “quantum law of motion” for the causet. Let us con sider the kinematics
+further.
+Causal set kinematics in general
+Both the study of the mathematics of causets for its own sake a nd its study for the sake
+of clarifying how the geometrical and topological properti es of a continuous spacetime
+7
+
+===== PAGE 8 =====
+
+translate into order properties of the underlying causet ca n be regarded as aspects of
+causal set kinematics: the study of causets without referen ce to any particular dynamical
+law.
+A large amount is known about causet kinematics as a result of extensive work by
+both physicists and mathematicians. (See for example [20] [ 21] [22] [23] [24] [25] [26] [27].)
+(Some of the mathematicians were directly inﬂuenced by the c ausal set idea, others were
+studying ordered sets for their own reasons.) We know for exa mple, that the length of
+the longest chain ♭ provides a good measure of the proper time (geodesic length) between
+any two causally related elements of a causet that can be appr oximated by a region of
+Minkowski space [28]. And for such a causet, we also possess a t least two or three good
+dimension estimators, one of which is well understood analy tically [29].
+The next few sections are devoted to some of these topics.
+“How big” is a causet element?
+Of course the question is badly worded, because a causet elem ent has no size as such. What
+it’s really asking for is the conversion factor v0 for which N = V /v0. Only if we measure
+length in units such that v0 ≡ 1 can we express the hypothesis that number=volume in the
+form N = V . On dimensional grounds, one naturally expects v0 ∼ (G¯h)2 [where I’ve taken
+c ≡ 1]. But we can do better than just relying on dimensional anal ysis per se. Consider ﬁrst
+the entropy of a black hole horizon, which is given by S = A/4G¯h = 2πA/κ, with κ = 8πG,
+the rationalized gravitational constant. This formula sug gests forcefully that about one bit
+of entropy belongs to each horizon “plaquette” of size κ¯h, and that the eﬀectively ﬁnite size
+of these “plaquettes” reﬂects directly an underlying space time discreteness. Consideration
+of the so called entanglement entropy leads to the same concl usion, namely that there
+exists an eﬀective “ultraviolet cutoﬀ” at around l =
+√
+κ¯h. [30]
+A related but less direct train of thought starts by consider ing the gravitational action-
+integral 1
+2κ
+∫
+RdV . Here the “coupling constant” 1 /2κ is an inverse length 2 and conven-
+tional Renormalization Group wisdom suggests that, barrin g any “ﬁne tuning”, the order
+of magnitude of such a coupling constant will be set by the und erlying “lattice spacing”, or
+in this case, the fundamental discreteness scale, leading t o the same conclusion as before
+that l ≡ (v0)1/4 is around l =
+√
+κ¯h ∼ 10−32cm.
+♭ The term ‘chain’ is deﬁned in the glossary.
+8
+
+===== PAGE 9 =====
+
+A noteworthy implication of the formula l ∼
+√
+κ¯h is that l → 0 if ¯ h → 0 ( κ being
+ﬁxed). That is, the classical limit is necessarily a continu um limit: spacetime discreteness
+is inherently quantal.
+The reconstruction of M4
+In order to get a better feel for how it is that “geometry = orde r + number”, it is useful
+to work through the reconstruction — in the continuum — of M4 from its causal order
+and volume-element. The proof can be given in a quite constru ctive form which I’ll only
+sketch here.
+We start with a copy M of M4 and let ≺ be its causal order. We construct in turn:
+light rays l, null 3-planes, spacelike 2-planes, spacelike lines, arbi trary 2-planes, arbitrary
+lines, parallel lines, parallelograms, vectors. Once we ha ve vector addition (aﬃne structure)
+it is easy to get quadratic forms and in particular the ﬂat met ric ηab. (The normalization
+of ηab uses the volume information.)
+You may enjoy working these constructions out for yourself, so I won’t give them
+all here. At the risk of spoiling your fun however, let me give just the ﬁrst two, which
+perhaps are less straightforward than the rest. We deﬁne a li ght ray l to be a maximal
+chain such that ∀x, y ∈ l, interval(x, y) is also a chain; and from any such l we get then the
+null hyperplane N (l) = l ∪ l♮, where l♮ is the set of all points of M spacelike to l.
+Sprinkling, coarse-graining, and the “Hauptvermutung”
+A basic tenet of causet theory is that spacetime does not exis t at the most fundamental
+level, that it is an “emergent” concept which is relevant onl y to the extent that some
+manifold-with-Lorentzian-metric M furnishes a good approximation to the physical causet
+C. Under what circumstances would we want to say that this occu rred? So far the most
+promising answer to this question is based on the concepts of sprinkling and coarse-graining.
+Given a manifold M with Lorentzian metric gab (which is, say, globally hyperbolic)
+we can obtain a causal set C(M ) by selecting points of M and endowing them with the
+order induced from that of M (where in M , x ≺ y iﬀ there is a future causal curve from x
+to y). In order to realize the equality N = V , the selected points must be distributed with
+unit density in M . One way to accomplish this (and conjecturally the only way!) is to
+generate the points of C(M ) by a Poisson process. (To realize the latter, imagine dividing
+M up into small regions of volume ǫ and independently putting a point into each region
+with probability ǫ. In the limit ǫ → 0 this is the Poisson process of unit intensity in M .)
+9
+
+===== PAGE 10 =====
+
+Let us write M ≈ C for the assertion that M is a good approximation to C. The idea
+then is that M ≈ C if C “might have been produced by a sprinkling of M ” (in a sense to
+be speciﬁed more fully below).
+It’s important here that the elements of C(M ) are selected at random from M . In
+particular, this fact is an ingredient in the heuristic reas oning leading to the prediction
+of a ﬂuctuating cosmological constant (see below). But such a kinematic randomness
+might seem gratuitous. Wouldn’t a suitable regular embedding of points into M yield a
+subset that was equally uniformly distributed, if not more s o? To see what goes wrong,
+consider the “diamond lattice” in M2 consisting of all points with integer values of the
+null coordinates u = t − x and v = t + x. This would seem to be a uniform lattice, but
+under a boost u → λu, v → v/λ it goes into a distribution that looks entirely diﬀerent, wi th
+a very high density of points along the u=constant lines (say) and large empty spaces in
+between. In particular, our diamond lattice is far from Lore ntz invariant, which a truly
+uniform distribution should be — and which C(M ) produced by a Poisson process actually
+is. Examples like this suggest strongly that, in contrast to th e situation for Euclidean
+signature, only a random sprinkling can be uniform for Loren tzian signature.
+I have just argued that the idea of random sprinkling must pla y a role in making the
+correspondence between the causet and the continuum, and fo r purely kinematic reasons.
+A second concept which might be needed as well, depending on h ow the dynamics works
+out, is that of coarse-graining. Indeed, one might expect that, on very small scales, the
+causet representing our universe will no more look like a man ifold than the trajectory
+of a point particle looks microscopically like a smooth curv e in nonrelativistic quantum
+mechanics. Rather, we might recover a manifold only after so me degree of “averaging”
+or “coarse-graining” (assuming also that we keep away from t he big bang and from black
+hole interiors, etc., where we don’t expect a manifold at all ). That is, we might expect
+not C ≈ M but C′ ≈ M ′, where C′ is some coarse-graining of C and M ′ is M with a
+correspondingly rescaled metric. The relevant notion of co arse-graining here seems to be
+an analog of sprinkling applied to C itself: let C′ be obtained from C by selecting a subset
+at random, keeping each element x ∈ C with some ﬁxed probability, say 1 /2 if we want a
+2:1 coarse-graining.
+Implicit in the idea of a manifold approximating a causet is t hat the former is relatively
+unique; for if two very diﬀerent manifolds could approximat e the same C, we’d have no
+objective way to understand why we observe one particular sp acetime and not some very
+diﬀerent one. (On the other hand, considering things like Ad S/CFT duality, who knows...!)
+The conjecture that such ambiguities don’t occur has been ca lled the “Hauptvermutung”.
+In the G¯h → 0 limit, it has already been proven in [31]. Moreover, the fac t that we know
+10
+
+===== PAGE 11 =====
+
+how to obtain dimensional and proper time information in man y situations (see below) is
+strong circumstantial evidence for its truth at ﬁnite G¯h. Nevertheless it would be good to
+prove it in full, in something like the following form.
+Conjecture If M1 ≈ C and M2 ≈ C then M1 ≈ M2
+Here M1 ≈ M2 means that the manifolds M1 and M2 are “approximately isometric”. As
+the quotation marks indicate, it is surprisingly diﬃcult to give this conjecture rigorous
+meaning, due ultimately to the Lorentzian signature of gab (cf. [32]). Here’s a sketch of
+how it might be done: interpret M ≈ C to mean that Prob( C(M ) = C) is relatively
+large (in comparison with Prob( C(M ) = C′)) for most of the other C′; and interpret
+M1 ≈ M2 to mean that the random variables C(M1) and C(M2) share similar probability
+distributions (on the space of causets). These deﬁnitions a lmost make the conjecture look
+tautological, but it isn’t! (cf. [33])
+Dimension and length
+Assuming that — as seems very likely — causal sets do possess a structure rich enough
+to give us back a macroscopically smooth Lorentzian geometr y, it is important to ﬁgure
+out how in practice one can extract geometrical information from an order relation. But
+before we can speak of a geometry we must have a manifold, and t he most basic aspect of
+a manifold’s topology is its dimension. So an obvious ﬁrst qu estion is whether there is a
+good way to recognize the eﬀective continuum dimension of a c ausal set (or more precisely
+of a causal set that is suﬃciently “manifold like” for the not ion of its dimension to be
+meaningful). In fact several workable approaches exist. He re are three of them. All three
+estimators will assign a dimension to an interval I in a causet C and are designed for the
+case where I ≈ A for some interval (“double light cone”) A in Minkowski space Md.
+Myrheim-Meyer dimension [5] [29]. Let N = |I| be the number of elements in I and let R
+be the number of relations in I (i.e. pairs x, y such that x ≺ y). Let f (d) = 3
+2
+( 3d/2
+d
+) −1
+.
+Then f −1(R/
+( N
+2
+)
+) is a good estimate of d when N ≫ (27/16)d.
+Remark The Myrheim-Meyer estimator is coarse-graining invariant on average (as is the
+next)
+Midpoint scaling dimension . Let I = interval( a, b) and let m ∈ I be the (or a) “mid-
+point” deﬁned to maximize N ′ = min{|interval(a, m)|, |interval(m, b)|}. Then log 2(N/N ′)
+estimates d.
+11
+
+===== PAGE 12 =====
+
+A third dimension estimator . Let K be the total number of chains in I. Then ln N/ ln ln K
+estimates d. However, the logarithms mean that good accuracy sets in onl y for exponen-
+tially large N .
+A length estimator
+Again this is for C ≈ Md (or some convex subspace of Md). Let x ≺ y. The most obvious
+way to deﬁne a distance (or better a time-lapse) from x to y is just to count the number
+of elements L in the longest chain joining them, where a joining chain is by deﬁnition a
+succession of elements zi such that x ≺ z1 ≺ z2 ≺ z3 · · · ≺ y. Clearly a maximal path in
+this sense is analogous to a timelike geodesic, which maximi zes the proper-time between
+its endpoints. It is known that this estimator L converges rapidly to a multiple of the
+true proper time T as the latter becomes large. However the coeﬃcient of propor tionality
+depends on the dimension d and is known exactly only for d = 1 and d = 2. For d > 2
+only bounds are known, but they are rather tight.
+Thus, it seems that we have workable tools for recovering inf ormation on both di-
+mensionality and length (in the sense of timelike geodesic d istance). However, these tools
+have been proven so far primarily in a ﬂat context, and it rema ins to be shown that they
+continue to work well in the presence of generic curvature.
+Dynamics
+A priori, one can imagine at least two routes to a “quantum cau set dynamics”. On one
+hand, one could try to mimic the formulation of other theorie s by seeking a causet-invariant
+analogous to the scalar curvature action, and then attempti ng to build from it some discrete
+version of a gravitational “sum-over-histories”. On the ot her hand, one could try to identify
+certain general principles or rules powerful enough to lead , more or less uniquely, to a family
+of dynamical laws suﬃciently constrained that one could the n pick out those members of
+the family that reproduced the Einstein equations in an appr opriate limit or approximation.
+(By way of analogy, one could imagine arriving at general rel ativity either by seeking a spin-
+2 analog of Poisson’s equation or by seeking the most general ﬁeld equations compatible
+with general covariance and locality.)
+The recent progress in dynamics has come from the second type of approach, and with
+the causet’s “time-evolution” conceived as a process of wha t may be termed sequential
+growth. That is, the causet is conceived of as “developing in time”, ⋆ rather than as
+⋆ It might be more accurate to say that the growth of the causet is time .
+12
+
+===== PAGE 13 =====
+
+“existing timelessly” in the manner of a ﬁlm strip. At the sam e time the growth process
+is taken to be random rather than deterministic — classicall y random to start with, but
+ultimately random in the quantum sense familiar from atomic physics and quantum ﬁeld
+theory. (Thus the quantum dynamical law is being viewed as mo re analogous to a classical
+stochastic process like Brownian motion than to a classical deterministic dynamics like
+that of the harmonic oscillator. [34] [35]) Expressed more t echnically, the idea is to seek a
+quantum causet dynamics by ﬁrst formulating the causet’s gr owth as a classical stochastic
+process and then generalizing the formulation to the case of a “quantum measure” [36] or
+“decoherence functional” [37].
+The growth process in question can be viewed as a sequence of “ births” of new causet
+elements and each such birth is a transition from one partial causet to another. A dynamics
+or “law of growth” is then simply an assignment of probabilit ies to each possible sequence
+of transitions. Without further restriction, however, the re would be a virtually limitless set
+of possibilities for these probabilities. The two principl es that have allowed us to narrow
+this ﬁeld of possibilities down to a (hopefully) manageable number are discrete general
+covariance and Bell causality . To understand the ﬁrst of these, notice that taking the
+births to be sequential implicitly introduces a labeling of the causet elements (the ﬁrst-
+born element being labeled 0, the second-born labeled 1, etc ). Discrete general covariance
+is simply the requirement that this labeling be “pure gauge” , that it drop out of the ﬁnal
+probabilities in the same way that the choice of coordinates drops out of the equations of
+general relativity. This requirement has the important sid e eﬀect of rendering the growth
+process Markovian, so that it is fully deﬁnable in terms of transition probabilities obeying
+the Markov sum rule. The requirement of Bell causality is sli ghtly harder to explain, but
+it is meant to capture the intuition that a birth taking place in one region of the causet
+cannot be inﬂuenced by other births that occur in regions spa celike to the ﬁrst region.
+Taken together, these assumptions lead to a set of equations and inequalities that —
+remarkably — can be solved explicitly and in general [38] [39 ]. The resulting probability
+for a transition C → C′ in which the new element is born with ̟ ancestors and m parents
+(immediate ancestors) is given by the ratio
+λ(̟, m)
+λ(n, 0) , (1)
+where n = card( C) is the number of elements before the birth in question and wh ere the
+function λ is deﬁned by the formula
+λ(̟, m) =
+̟∑
+k=m
+( ̟ − m
+k − m
+)
+tk (2)
+13
+
+===== PAGE 14 =====
+
+with tn≥0 and t0 > 0. A particular dynamical law, then, is determined by the seq uence
+of “coupling constants” tn (or more precisely, by their ratios).
+(It turns out that the probabilities resulting from these ru les can be re-expressed in
+terms of an “Ising model” whose spins reside on the relations x≺y of the causet, and whose
+“vertex weights” are governed directly by the parameters tn [38]. In this way, a certain
+form of “Ising matter” emerges indirectly from the dynamica l law, albeit its dynamics is
+rather trivial if one conﬁnes oneself to a ﬁxed background ca uset. This illustrates how one
+might hope to recover in an appropriate limit, not only space time and gravity, but also
+certain forms of non-gravitational matter (here uniﬁed wit h gravity in a way reminiscent
+of earlier proposals for “induced gravity” [40]).)
+With some progress in hand concerning both the kinematics an d dynamics of causets,
+it is possible to start to think about applications, or if you will “phenomenology”. Several
+projects of this nature are under way, with some interesting results already obtained. In
+the remaining sections I will mention some of these results a nd projects.
+Fluctuations in the cosmological constant
+From the most basic notions of causal set theory, there follo ws already an order of magni-
+tude prediction for the value of the cosmological constant Λ . More precisely, one can argue
+that Λ should ﬂuctuate about its “target value”, with the magnitude of the ﬂuctuati ons
+decreasing with time in proportion to N −1/2, where N is the relevant number of ancestors
+(causet elements) at a given cosmological epoch. If one assu mes that (for reasons yet to be
+understood) the target value for Λ is zero, and if one takes fo r the N of today the space-
+time volume of the currently visible universe from the big ba ng until the present, then
+one deduces for Λ a magnitude consistent with the most recent observations, as predicted
+already in [41] (and with reﬁned arguments in [35] and [42]).
+Four basic features of causet theory enter as ingredients in to the reﬁned version of the
+argument: the fundamental discreteness, the relation n = V , the Poisson ﬂuctuations in n
+associated with sprinkling, and the fact that n serves as a parameter time in the dynamics
+of sequential growth.
+From the ﬁrst of these we derive a ﬁnite value of n (at any given cosmic time).
+From the fourth we deduce that, since time is not summed over i n the path-integral
+of non-relativistic quantum mechanics, neither should one expect to sum over n in the
+gravitational path integral that one expects to result as an approximation to the still to be
+formulated quantum dynamics of causets. But holding n ﬁxed means holding spacetime
+14
+
+===== PAGE 15 =====
+
+volume V ﬁxed, a procedure that leads in the continuum to what is calle d “unimodular
+gravity”.
+In the classical limit, this unimodular procedure leads to t he action principle
+δ
+( ∫
+( 1
+2κ R − Λ 0)dV − λV
+)
+= 0
+where Λ 0 is the “bare” cosmological constant, V =
+∫
+dV , κ = 8 πG, and λ is a La-
+grange multiplier implementing the ﬁxation of V . Plainly, the last two terms combine
+into −
+∫
+Λ dV where Λ = Λ 0 + λ, turning the eﬀective cosmological constant Λ into a free
+constant of integration rather than a ﬁxed microscopic para meter of the theory. Moreover,
+the fact that Λ and V enter into the action-integral in the combination −Λ V means that
+they are conjugate in the quantum mechanical sense, leading to the indeterminacy relation
+δΛ δV ∼ ¯h .
+Finally the Poisson ﬂuctuations in n of size δn ∼ √n at ﬁxed V imply that, at ﬁxed n, there
+will be ﬂuctuations in V of the same magnitude: δV ∼ √n ∼
+√
+V , which correspond to
+ﬂuctuations in Λ of magnitude δΛ ∼ ¯h/δV ∼ 1/
+√
+V (taking ¯h = 1). The observed Λ would
+thus be a sort of residual quantum gravity eﬀect, even though one normally associates the
+quantum with the very small, rather than the very big!
+Of course, this prediction of a ﬂuctuating Λ remains at a heur istic level until it can
+be grounded in a complete “quantum causet dynamics”. Nevert heless, given its initial
+success, it seems worthwhile to try to extend it by construct ing a model in which not
+only the instantaneous magnitude of the ﬂuctuations could b e predicted, but also their
+correlations between one time and another. In this way, one c ould assess whether the
+original prediction was consistent with important cosmolo gical constraints such as the
+extent of structure formation and the abundances of the ligh t nuclei. In this respect, it is
+worth noting that current ﬁts of nucleosynthesis models to t he observed abundances favor
+a non-integer number of light neutrinos falling between two and three. If this indication
+holds up, it will require some form of eﬀective negative ener gy density at nucleosynthesis
+time, and a negative ﬂuctuation in the contemporaneous Λ is p erhaps the simplest way to
+realize such an eﬀective density.
+Added note: A concrete model of the sort suggested above has been develop ed in [43].
+Links across the horizon
+An important question on which one can hope to shed light whil e still remaining at the
+level of kinematics is that of identifying the “horizon stat es” that underpin the entropy of
+15
+
+===== PAGE 16 =====
+
+a black hole. Indeed, just as the entropy of a box of gas is, to a ﬁrst approximation, merely
+counting the molecules in the box, one might anticipate that the entropy of a black hole
+is eﬀectively counting suitably deﬁned “molecules” of its h orizon. With this possibility in
+mind, one can ask whether any simply deﬁnable sub-structure s of the causets associated
+with a given geometry could serve as candidates for such “hor izon molecules” in the sense
+that counting them would approximately measure the “inform ation content” of the black
+hole.
+Perhaps the most obvious candidates of this sort are the caus al links crossing the
+horizon in the neighborhood of the hypersurface Σ for which t he entropy is sought. (Recall
+that a link is an irreducible relation of the causet.) Of cour se, the counting of any small
+scale substructures of the causet is prone to produce a resul t proportional to the area of
+the horizon, but there is no reason a priori why the coeﬃcient of proportionality could not
+be divergent or vanishing, or why, if it is ﬁnite, it could not depend on the details of the
+horizon geometry.
+Djamel Dou [44] has investigated this question for two very d iﬀerent black hole ge-
+ometries, one in equilibrium (the 4 dimensional Schwarzsch ild metric) and one very far
+from equilibrium (the conical horizon that represents the e arliest portion of a black hole
+formed from the collapse of a spherical shell of matter). For the Schwarzschild case, he
+made an ad hoc approximation that reduced the problem to 2 dim ensional Schwarzschild
+and found, for a certain deﬁnition of “near horizon link”, th at the number N of such links
+has an expectation value which reduces in the ¯ h → 0 limit to c(π2/6)A, where A is the
+horizon area and c is a constant arising in the dimensional reduction. (By ¯ h → 0 I mean
+equivalently l2/R2 → 0 where l is the fundamental causet scale and R the horizon radius.)
+For the expanding horizon case (again dimensionally reduce d from 4 to 2) he obtained
+exactly the same answer, c(π2/6)A, despite the very diﬀerent geometries. Not only is this
+a nontrivial coincidence, it represents the ﬁrst time, to my knowledge, that something like
+a number of horizon states has been evaluated for any black ho le far from equilibrium. The
+ﬁrst step in solidifying and extending these results would b e to control the dimensional
+reduction from 4 to 2, evaluating in particular the presentl y unknown coeﬃcient c. Second,
+one should check that both null and spacelike hypersurfaces Σ yield the same results. (The
+null case is the best studied to date. Conceptually, it is imp ortant for possible proofs of
+the generalized second law [45].) Also one should assess the sensitivity of the answer to
+changes in the deﬁnition of “near horizon link”, since there exist examples showing that
+the wrong deﬁnition can lead to an answer of either zero or inﬁ nity. And of course one
+should extend the results to other black hole geometries bey ond the two studied so far.
+16
+
+===== PAGE 17 =====
+
+Here is one of the deﬁnitions of “near horizon link” investig ated by Djamel: Let H
+be the horizon of the black hole and Σ, as above, the hypersurf ace for which we seek the
+entropy S. The counting is meant to yield the black hole contribution t o S, corresponding
+to the section H ∩ Σ of the horizon. We count pairs of sprinkled points ( x, y) such that
+(i) x ≺ Σ , H and y ≻ Σ , H.
+(ii) x ≺ y is a link ‡
+(iii) x is maximal ‡ in (past Σ) and y is minimal ‡ in (future Σ) ∩ (future H).
+What are the “observables” of quantum gravity?
+Just as in the continuum the demand of diﬀeomorphism-invari ance makes it harder to
+formulate meaningful statements, † so also for causets the demand of discrete general co-
+variance has the same consequence, bringing with it the risk that, even if we succeeded
+in characterizing the covariant questions in abstract form al terms, we might never know
+what they meant in a physically useful way. I believe that a si milar issue will arise in every
+approach to quantum gravity, discrete or continuous (unles s of course general covariance
+is renounced). ♭
+Within the context of the classical growth models described above, this problem has
+been largely solved [47], the “observables” being generate d by “stem-predicates”. (‘stem’
+is deﬁned in the glossary).
+Added note: The conjecture in [47] has been settled in the aﬃrmative by [4 8].
+‡ see glossary
+† Think, for example, of the statement that light slows down wh en passing near the sun.
+♭ In the context of canonical quantum gravity, this issue is ca lled “the problem of time”.
+There, covariance means commuting with the constraints, an d the problem is how to
+interpret quantities which do so in any recognizable spacet ime language. For an attempt
+in string theory to grapple with similar issues see [46].
+17
+
+===== PAGE 18 =====
+
+How the large numbers of cosmology might be understood: a “T o lman-Boltz-
+mann” cosmology
+Typical large number is ratio r of diameter of universe to wavelength of CMB radiation.
+Idea is cycling of universe renormalizes [49] coupling cons tants such that r automatically
+gets big after many bounces (no ﬁne tuning). Large numbers th us reﬂect large age of
+universe. See [50] and [51].
+Fields on a background causet
+See [52], [53], [54].
+T opology change
+See [55].
+Acknowledgments
+This research was partly supported by NSF grant PHY-0098488 , by a grant from the Oﬃce
+of Research and Computing of Syracuse University, and by an E PSRC Senior Fellowship
+at Queen Mary College, University of London. I would like to e xpress my warm gratitude
+to Goodenough College, London for providing a splendid livi ng and working environment
+which greatly facilitated the preparation of these notes.
+References
+[1] R.D. Sorkin, “A Specimen of Theory Construction from Qua ntum Gravity”, in J. Leplin
+(ed.), The Creation of Ideas in Physics: Studies for a Methodology o f Theory Construc-
+tion (Proceedings of the Thirteenth Annual Symposium in Philoso phy, held Greensboro,
+North Carolina, March, 1989) pp. 167-179 (Number 55 in the Un iversity of Western
+Ontario Series in Philosophy of Science) (Kluwer Academic P ublishers, Dordrecht, 1995)
+⟨gr-qc/9511063⟩
+[2] L. Bombelli, J. Lee, D. Meyer and R.D. Sorkin, “Spacetime as a causal set”, Phys.
+Rev. Lett. 59: 521-524 (1987);
+C. Moore, “Comment on ‘Space-time as a causal set’,” Phys. Rev. Lett. 60: 655
+(1988);
+18
+
+===== PAGE 19 =====
+
+L. Bombelli, J. Lee, D. Meyer and R.D. Sorkin, “Bombelli et al . Reply”, Phys. Rev.
+Lett. 60: 656 (1988).
+[3] L. Bombelli, Space-time as a Causal Set , Ph.D. thesis, Syracuse University (1987)
+[4] G. ’t Hooft, “Quantum gravity: a fundamental problem and some radical ideas”, in Re-
+cent Developments in Gravitation (Proceedings of the 1978 Cargese Summer Institute)
+edited by M. Levy and S. Deser (Plenum, 1979)
+[5] J. Myrheim, “Statistical geometry,” CERN preprint TH-2 538 (1978)
+[6] G. Brightwell and R. Gregory, “The Structure of Random Di screte Spacetime”, Phys.
+Rev. Lett. 66: 260-263 (1991)
+[7] David D. Reid, “Discrete Quantum Gravity and Causal Sets ”, Canadian Journal of
+Physics 79: 1-16 (2001) ⟨gr-qc/9909075⟩
+[8] Mituo Taketani, “On formation of the Newton Mechanics”, Suppl. Prog. Theor. Phys.
+50: 53-64 (1971)
+[9] Alfred Arthur Robb, Geometry of Time and Space (Cambridge University Press, 1936)
+(a revised version of A theory of Time and Space (C.U.P. 1914))
+[10] Hans Reichenbach:
+Physikal. Zeitschr. 22: 683 (1921); and
+Axiomatik der relativistische Raum-Zeit-Lehre , translated into English as Axiomatiza-
+tion of the theory of relativity (Berkeley, University of California Press, 1969).
+[11] E.C. Zeeman, “Causality Implies the Lorentz Group”, J. Math. Phys. 5: 490-493
+(1964)
+[12] Roger Penrose, Techniques of Diﬀerential Topology in Relativity , AMS Colloquium
+Publications (SIAM, Philadelphia, 1972)
+[13] S.W. Hawking, A.R. King and P.J. McCarthy, “A New Topolo gy for Curved Space-
+Time which Incorporates the Causal, Diﬀerential and Confor mal Structures”, J. Math.
+Phys. 17: 174 (1976)
+[14] David Malament, “The class of continuous timelike curv es determines the toplogy of
+space-time”, J. Math. Phys 18: 1399 (1977)
+[15] Bernhard Riemann, “ ¨Uber die Hypothesen, welche der Geometrie zu Grunde liegen” ,
+in The Collected Works of B. Riemann (Dover NY 1953)
+[16] A. Einstein, Letter to Walter D¨ allenbach, Nov. 1916, I tem 9-072 translated and cited
+by Stachel in the following article, page 379.
+[17] A. Einstein, Letter to H.S. Joachim, August 14, 1954, It em 13-453 cited in J. Stachel,
+“Einstein and the Quantum: Fifty Years of Struggle”, in From Quarks to Quasars,
+Philosophical Problems of Modern Physics , edited by R.G. Colodny (U. Pittsburgh
+Press, 1986), pages 380-381.
+19
+
+===== PAGE 20 =====
+
+[18] David Finkelstein, “The space-time code”, Phys. Rev. 184: 1261 (1969)
+[19] R.D. Sorkin, “Lisp Functions for Posets”, http://www. physics.syr.edu/˜ sorkin (ver-
+sion 1.0 1997, version 2.0 2002).
+Another poset package (using Maple) is [56].
+[20] Alan Daughton, “An investigation of the symmetric case of when causal sets can
+embed into manifolds” Class. Quant. Grav. 15: 3427-3434 (1998)
+[21] G. Brightwell and P. Winkler, “Sphere Orders”, Order 6: 235-240 (1989)
+[22] Graham Brightwell, “Models of Random Partial Orders”, in Surveys in Combina-
+torics, 1993 , London Math. Soc. Lecture Notes Series 187: 53-83, ed. Keith Walker
+(Cambridge Univ. Press 1993)
+[23] B. Pittel and R. Tungol, “A Phase Transition Phenomenon in a Random Directed
+Acyclic Graph”, (Ohio State preprint, 1998) (submitted to Combinatorics, Probability
+and Computing )
+[24] Klaus Simon, Davide Crippa and Fabian Collenberg, “On t he Distribution of the
+Transitive Closure in a Random Acyclic Digraph”, Lecture Notes in Computer Science
+726: 345-356 (1993)
+[25] Charles M. Newman, “Chain Lengths in Certain Random Dir ected Graphs”, Random
+Structures and Algorithms 3: 243-253 (1992)
+[26] Jeong Han Kim and Boris Pittel, “On tail distribution of interpost distance” (preprint,
+Ohio State University and Microsoft Corp., 1999)
+[27] Ioannis Raptis, “Algebraic Quantization of Causal Set s” Int. J. Theor. Phys. 39:
+1233-1240 (2000) ⟨gr-qc/9906103⟩
+[28] B. Bollobas and G. Brightwell, “The Height of a Random Pa rtial Order: Concentration
+of Measure”, Annals of Applied Probability 2: 1009-1018 (1992)
+[29] D.A. Meyer:
+“Spherical containment and the Minkowski dimension of part ial orders”, Order 10:
+227-237 (1993); and
+The Dimension of Causal Sets , Ph.D. thesis, M.I.T. (1988).
+[30] R.D. Sorkin, “On the Entropy of the Vacuum Outside a Hori zon”, in B. Bertotti, F.
+de Felice and A. Pascolini (eds.), Tenth International Conference on General Relativity
+and Gravitation (held Padova, 4-9 July, 1983), Contributed Papers, vol. II, pp. 734-736
+(Roma, Consiglio Nazionale Delle Ricerche, 1983);
+G. ’t Hooft, “On the quantum structure of a black hole”, Nuclear Phys. B 256:
+727-745 (1985)
+[31] L. Bombelli and D.A. Meyer, “The origin of Lorentzian ge ometry,” Physics Lett. A
+141: 226-228 (1989)
+20
+
+===== PAGE 21 =====
+
+[32] Johan Noldus, “A new topology on the space of Lorentzian metrics on a ﬁxed mani-
+fold” Class. Quant. Grav 19: 6075-6107 (2002)
+[33] Luca Bombelli, “Statistical Lorentzian geometry and t he closeness of Lorentzian man-
+ifolds”, J. Math. Phys. 41: 6944-6958 (2000) ⟨gr-qc/0002053⟩
+[34] R.D. Sorkin:
+“On the Role of Time in the Sum-over-histories Framework for Gravity”, paper pre-
+sented to the conference on The History of Modern Gauge Theor ies, held Logan, Utah,
+July 1987, published in Int. J. Theor. Phys. 33: 523-534 (1994); and
+“A Modiﬁed Sum-Over-Histories for Gravity”, reported in Proceedings of the Interna-
+tional Conference on Gravitation and Cosmology, Goa, India , 14-19 December, 1987 ,
+edited by B. R. Iyer, Ajit Kembhavi, Jayant V. Narlikar, and C . V. Vishveshwara, see
+pages 184-186 in the article by D. Brill and L. Smolin: “Works hop on quantum gravity
+and new directions”, pp 183-191 (Cambridge University Pres s, Cambridge, 1988)
+[35] R.D. Sorkin, “Forks in the Road, on the Way to Quantum Gra vity”, talk given at the
+conference entitled “Directions in General Relativity”, h eld at College Park, Maryland,
+May, 1993, published in Int. J. Th. Phys. 36: 2759–2781 (1997) ⟨gr-qc/9706002⟩
+[36] R.D. Sorkin, “Quantum Mechanics as Quantum Measure The ory”, Mod. Phys. Lett. A
+9 (No. 33) : 3119-3127 (1994) ⟨gr-qc/9401003⟩
+[37] J.B. Hartle, “Spacetime Quantum Mechanics and the Quan tum Mechanics of Space-
+time”, in B. Julia and J. Zinn-Justin (eds.), Les Houches, session L VII, 1992, Gravita-
+tion and Quantizations (Elsevier Science B.V. 1995)
+[38] David P. Rideout and Rafael D. Sorkin, “A Classical Sequ ential Growth Dynamics
+for Causal Sets”, Phys. Rev. D 61: 024002 (2000) ⟨gr-qc/9904062⟩
+[39] David P. Rideout, Dynamics of Causal Sets , Ph.D. thesis (Syracuse University 2001)
+[40] T. Jacobson, “Black Hole Entropy and Induced Gravity”, ⟨gr-qc/9404039⟩;
+S.L. Adler, “Einstein gravity as a symmetry-breaking eﬀect in quantum ﬁeld theory”,
+Reviews of Modern Physics 54: 729-766 (1982);
+V.A. Kazakov, “The appearance of matter ﬁelds from quantum ﬂ uctuations of 2D-
+gravity”, Mod. Phys. Lett. A 4: 2125-2139 (1989) .
+[41] R.D. Sorkin:
+“First Steps with Causal Sets”, in R. Cianci, R. de Ritis, M. F rancaviglia, G. Marmo, C.
+Rubano, P. Scudellaro (eds.), General Relativity and Gravitational Physics (Proceedings
+of the Ninth Italian Conference of the same name, held Capri, Italy, September, 1990),
+pp. 68-90 (World Scientiﬁc, Singapore, 1991); and
+“Spacetime and Causal Sets”, in J.C. D’Olivo, E. Nahmad-Ach ar, M. Rosenbaum, M.P.
+Ryan, L.F. Urrutia and F. Zertuche (eds.), Relativity and Gravitation: Classical and
+Quantum (Proceedings of the SILARG VII Conference , held Cocoyoc, Mexico, Decem-
+ber, 1990), pages 150-173 (World Scientiﬁc, Singapore, 199 1).
+21
+
+===== PAGE 22 =====
+
+[42] R.D. Sorkin, Two Talks given at the 1997 Santa Fe worksho p: “A Review of the
+Causal Set Approach to Quantum Gravity” and “A Growth Dynami cs for Causal Sets”,
+presented at: “New Directions in Simplicial Quantum Gravit y” July 28 - August 8, 1997.
+The scanned in transparencies may be viewed at
+http://t8web.lanl.gov/people/emil/Slides/sf97talks.html ;
+Y. Jack Ng and H. van Dam, “A small but nonzero cosmological co nstant”, (Int. J.
+Mod. Phys D., to appear) ⟨hep-th/9911102⟩
+[43] Maqbool Ahmed, Scott Dodelson, Patrick Greene and Rafa el D. Sorkin, “Everpresent
+Λ”, ⟨astro-ph/0209274⟩
+[44] Djamel Dou, “Causal Sets, a Possible Interpretation fo r the Black Hole Entropy, and
+Related Topics”, Ph. D. thesis (SISSA, Trieste, 1999) ⟨gr-qc/0106024⟩.
+See also Dj. Dou and R.D. Sorkin, “Black Hole Entropy as Causa l Links”, Foundations
+of Physics (2003, to appear).
+[45] R.D. Sorkin, “Toward an Explanation of Entropy Increas e in the Presence of Quantum
+Black Holes”, Phys. Rev. Lett. 56: 1885-1888 (1986)
+[46] Edward Witten, “Quantum Gravity in De Sitter Space” ⟨hep-th/0106109⟩
+[47] Graham Brightwell, H. Fay Dowker, Raquel S. Garc ´ ıa, Joe Henson and Rafael D. Sork-
+in, “General Covariance and the ‘Problem of Time’ in a Discre te Cosmology”, in
+K.G. Bowden, Ed., Correlations, Proceedings of the ANPA 23 conference, held Au-
+gust 16-21, 2001, Cambridge, England (Alternative Natural Philosophy Association,
+London, 2002), pp 1-17 ⟨gr-qc/0202097⟩
+[48] Graham Brightwell, Fay Dowker, Raquel Garcia, Joe Hens on and Rafael D. Sorkin,
+““Observables” in Causal Set Cosmology”, ⟨gr-qc/0210061⟩
+[49] Xavier Martin, Denjoe O’Connor, David Rideout and Rafa el D. Sorkin, “On the
+“renormalization” transformations induced by cycles of ex pansion and contraction in
+causal set cosmology”, Phys. Rev. D 63: 084026 (2001) ⟨gr-qc/0009063⟩
+[50] Rafael D. Sorkin, “Indications of causal set cosmology ”, Int. J. Theor. Ph. 39 (7):
+1731-1736 (2000) (an issue devoted to the proceedings of the Peyresq IV conference,
+held June-July 1999, Peyresq France) ⟨gr-qc/0003043⟩
+[51] Avner Ash and Patrick McDonald, “Moment problems and th e causal set approach
+to quantum gravity”, ⟨gr-qc/0209020⟩
+[52] A.R. Daughton, The Recovery of Locality for Causal Sets and Related Topics , Ph.D.
+thesis, Syracuse University (1993)
+[53] Roberto Salgado, Ph.D. thesis, Syracuse University (i n preparation)
+[54] Richard F. Blute, Ivan T. Ivanov, Prakash Panangaden, “ Discrete Quantum Causal
+Dynamics”, ⟨gr-qc/0109053⟩
+[55] Fay Dowker, “Topology Change in Quantum Gravity”, ⟨gr-qc/0206020⟩
+22
+
+===== PAGE 23 =====
+
+[56] John R. Stembridge (jrs@math.lsa.umich.edu), A Maple Package for Posets: Version
+2.1, (Ann Arbor 1998-may-10) available at www.math.lsa.umich .edu/˜ jrs
+[57] David P. Rideout and Rafael D. Sorkin, “Evidence for a co ntinuum limit in causal set
+dynamics”, Phys. Rev. D 63: 104011 (2001) ⟨gr-qc/0003117⟩
+[58] F. Markopoulou and L. Smolin, “Causal evolution of spin networks”, Nuc. Phys.
+B508: 409-430 (1997) ⟨gr-qc/9702025⟩
+[59] R.D. Sorkin, “Percolation, Causal Sets and Renormaliz ability”, unpublished talk de-
+livered at the RG2000 conference, held in Taxco, Mexico, Jan uary 1999
+[60] David P. Rideout and Rafael D. Sorkin, “Evidence for a Sc aling Behavior in Causal
+Set Dynamics”, (in preparation)
+[61] L. Smolin, “The fate of black hole singularities and the parameters of the standard
+models of particle physics and cosmology”, ⟨gr-qc/9404011⟩
+[62] Roberto B. Salgado, “Some Identities for the Quantum Me asure and its Generaliza-
+tions”, Mod. Phys. Lett. A17: 711-728 (2002) ⟨gr-qc/9903015⟩
+[63] Fay Dowker and Rafael D. Sorkin, “Toward an Intrinsic De ﬁnition of Relativistic
+Causality” (in preparation)
+[64] A. Criscuolo and H. Waelbroeck, “Causal Set Dynamics: A Toy Model”, Class.
+Quant. Grav. 16: 1817-1832 (1999) ⟨gr-qc/9811088⟩
+[65] Joohan Lee and Rafael D. Sorkin, “Limits of Sequential G rowth Dynamics” (in prepa-
+ration)
+[66] T. Jacobson, “Black-hole evaporation and ultrashort d istances”, Phys. Rev. D 44:
+1731-1739 (1991))
+[67] Curtis Greene et al., A Mathematica Package for Studying Posets (Haverford College,
+1990, 1994) available at www.haverford.edu/math/cgreene .html
+[68] C.D. Broad, Scientiﬁc Thought (Harcourt Brace and Company, 1923)
+23
+
+===== PAGE 24 =====
+
+GLOSSAR Y
+Major deviations from these deﬁnitions are rare in the liter ature but minor ones are com-
+mon. (In this glossary, we use the symbol < rather than ≺.)
+ancestor/descendant
+If x < y then x is an ancestor of y and y is a descendant of x.
+antichain
+a trivial order in which no element is related to any other (cf . ‘chain’)
+causet = causal set = locally ﬁnite order
+chain = linear order
+an order, any two of whose elements are related. In particula r, any linearly
+ordered subset of an order is a chain. n-chain = chain of n elements
+child/parent
+If x < y is a link we can say that x is a parent of y and y a child of x. One also
+says that “ y covers x”.
+comparable
+see ‘related’
+covering relation, covers
+see ‘child’, ‘link’
+descendant
+see ‘ancestor’
+down-set = downward-set = past-set = order-ideal = ancestra l set
+a subset of an order that contains all the ancestors of its mem bers
+full stem
+A partial stem whose complement is the (exclusive) future of its top layer
+future
+see ‘past’
+inf = greatest lower bound (cf. ‘sup’)
+interval
+see ‘order-interval’
+24
+
+===== PAGE 25 =====
+
+level
+In a past-ﬁnite causet the level of an element x is the number of links in the
+longest chain a < b < ... < c < x . Thus, level 0 comprises the minimal elements,
+level 1 is level 0 of the remainder, etc.
+linear extension
+Let S be a set and < an order-relation on S. A linear extension of < is a second
+order-relation ≺ which extends < and makes S into a chain.
+link = covering relation
+An irreducible relation of an order, that is, one not implied by the other relations
+via transitivity. Of course we exclude pairs ( xx) from being links, in the case
+where such pairs are admitted into the order relation at all.
+(There’s no inconsistency here with the notion that a “chain ” ought to be made
+up of “links”: the links in a chain are indeed links relative t o the chain itself,
+even if they aren’t links relative to the enveloping order.)
+locally ﬁnite
+An order is locally ﬁnite iﬀ all its order-intervals are ﬁnit e. (cf. ‘past-ﬁnite’)
+maximal/minimal
+A maximal/minimal element of an order is one without descend ants/ancestors.
+natural labeling
+A natural labeling of a past-ﬁnite order is an assignment to i ts elements of labels
+0 1 2 ... such that x < y ⇒ label(x) < label (y). Thus it is essentially the same
+thing as a locally ﬁnite linear extension.
+order-interval (or just plain interval)
+The interval determined by two elements a and b is the set, interval( a, b) =
+{x|a < x < b }.
+order = ordered set = poset = partially ordered set = partial o rder
+An order is a set of elements carrying a notion of “ancestry” o r “precedence”.
+Perhaps the simplest way to express this concept axiomatica lly is to deﬁne an
+order as a transitive, irreﬂexive relation < . Many other, equivalent deﬁnitions
+are possible. In particular, many authors use the reﬂexive c onvention, in eﬀect
+taking ≤ as the deﬁning relation.
+It is convenient to admit the empty set as a poset.
+order-isomorphic
+isomorphic as posets
+25
+
+===== PAGE 26 =====
+
+origin = minimum element
+a single element which is the ancestor of all others
+originary
+a poset possessing an origin is originary
+parent
+see ‘child’
+partial stem (or just plain stem)
+a past set of ﬁnite cardinality
+partial post
+An element x of which no descendant has an ancestor spacelike to x. The idea
+is x is the progenitor of a “child universe”
+partially ordered set
+see ‘order’
+past/future
+past(x) = {y|y < x } , future( x) = {y|x < y }
+past-ﬁnite
+An order is past-ﬁnite iﬀ all its down-sets are ﬁnite. (cf. ‘l ocally ﬁnite’)
+path = saturated chain
+a chain all of whose links are also links of the enveloping pos et (saturated means
+it might be “extended” but it can’t be “ﬁlled in”)
+poset
+see ‘order’
+post
+An element such that every other element is either its ancest or or its descendant:
+a one-element slice.
+preorder = preposet = acyclic relation = acyclic digraph
+A preorder is a relation whose transitive closure is an order .
+pseudo-order = transitive relation (possibly with cycles)
+related = comparable
+Two elements x and y are ‘related’ (or ‘comparable’) if x < y or y < x .
+slice = maximal antichain
+26
+
+===== PAGE 27 =====
+
+(where maximal means it can’t be enlarged and remain an antic hain)
+equivalently, every x in the causet is either in the slice or comparable to one of
+its elements.
+equivalently, its inclusive past is a full stem
+spacelike = incomparable
+Two elements x and y are spacelike to each other ( x ♮ y) iﬀ they are unrelated
+(ie neither x < y nor y < x ).
+stem
+see ‘partial stem’
+sup = least upper bound (cf. ‘inf’)
+transitively reduced
+The “transitive reduction” of an order is its Hasse digraph, an acyclic relation
+containing only links.
+27
