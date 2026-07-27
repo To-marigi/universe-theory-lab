@@ -1,11 +1,15 @@
 from __future__ import annotations
 
 from fractions import Fraction
+from pathlib import Path
 
 from universe_lab.final_theory.extension_v03 import (
     extension_benchmark,
     finite_path_distributions,
+    verify_extension_certificate,
 )
+
+ROOT = Path(__file__).resolve().parents[2]
 
 
 def test_recorded_path_distributions_are_exact_and_consistent() -> None:
@@ -51,3 +55,14 @@ def test_scalar_extension_does_not_promote_the_full_instrument() -> None:
     assert operator_measure["blocking_defects"]
     assert "cannot" in operator_measure["theorem_not_applied"]
 
+
+def test_checked_in_extension_certificate_verifies() -> None:
+    certificate = (
+        ROOT
+        / "certificates"
+        / "infinite_extension"
+        / "classical_diagonal_extension_v0.3.json"
+    )
+    result = verify_extension_certificate(certificate)
+    assert result["passed"]
+    assert all(result["checks"].values())

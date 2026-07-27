@@ -13,7 +13,9 @@ system needed for an infinite-time instrument-valued measure.
 
 from __future__ import annotations
 
+import json
 from fractions import Fraction
+from pathlib import Path
 from typing import Any
 
 from universe_lab.final_theory.causal_sets import (
@@ -245,3 +247,45 @@ def extension_benchmark(max_n: int = 5) -> dict[str, Any]:
         ],
     }
 
+
+def verify_extension_certificate(path: Path) -> dict[str, Any]:
+    """Verify the checked-in classical/diagonal extension certificate."""
+
+    certificate = json.loads(path.read_text(encoding="utf-8"))
+    max_n = int(certificate["finite_regression"]["max_n"])
+    benchmark = extension_benchmark(max_n)
+    observed_counts = [
+        item["count"]
+        for item in benchmark["finite_sequences"]["stage_path_counts"]
+    ]
+    checks = {
+        "profile_matches": certificate["profile_id"] == benchmark["profile_id"],
+        "path_counts_match": (
+            observed_counts
+            == certificate["finite_regression"]["stage_path_counts"]
+        ),
+        "variations_are_exactly_one": all(
+            item == {"numerator": 1, "denominator": 1}
+            for item in benchmark["finite_sequences"]["total_variation"]
+        ),
+        "classical_verdict_matches": (
+            certificate["classical_outcome_verdict"]
+            == benchmark["classical_outcome_measure"]["verdict"]
+        ),
+        "diagonal_verdict_matches": (
+            certificate["diagonal_decoherence_verdict"]
+            == benchmark["decoherence_functional"]["verdict"]
+        ),
+        "full_instrument_remains_blocked": (
+            certificate["full_instrument_verdict"]
+            == benchmark["operator_valued_instrument_measure"]["verdict"]
+        ),
+        "proof_obligations_declared": all(
+            certificate["proof_obligations"].values()
+        ),
+    }
+    return {
+        "certificate": path.as_posix(),
+        "checks": checks,
+        "passed": all(checks.values()),
+    }

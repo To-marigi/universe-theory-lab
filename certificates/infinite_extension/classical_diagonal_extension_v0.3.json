@@ -1,0 +1,30 @@
+{
+  "schema_version": "final-theory-extension-certificate-v0.3.0",
+  "profile_id": "causal_information_v2_sparse_kraus",
+  "source_commit": "e323fed3c7ab4d82588b4f73d15fa829dc629b03",
+  "theorem": "Ionescu-Tulcea/Kolmogorov extension on countable finite-discrete outcome spaces",
+  "proof_obligations": {
+    "finite_nonempty_outcome_space_at_each_source": true,
+    "strictly_positive_rational_local_weights": true,
+    "exactly_normalized_stochastic_kernel_at_each_source": true,
+    "consistent_recursive_cylinder_probabilities": true,
+    "finite_discrete_spaces_are_standard_borel": true,
+    "diagonal_functional_is_constructed_as_D_A_B_equals_mu_intersection": true
+  },
+  "finite_regression": {
+    "max_n": 5,
+    "stage_path_counts": [1, 1, 2, 6, 28, 195],
+    "total_variation_at_each_stage": [
+      {"numerator": 1, "denominator": 1},
+      {"numerator": 1, "denominator": 1},
+      {"numerator": 1, "denominator": 1},
+      {"numerator": 1, "denominator": 1},
+      {"numerator": 1, "denominator": 1},
+      {"numerator": 1, "denominator": 1}
+    ]
+  },
+  "classical_outcome_verdict": "CLASSICAL_OUTCOME_EXTENSION_PASS",
+  "diagonal_decoherence_verdict": "DECOHERENCE_FUNCTIONAL_EXTENSION_PASS",
+  "full_instrument_verdict": "INFINITE_EXTENSION_BLOCKED",
+  "claim_boundary": "The passing decoherence functional is classical and diagonal; the CP-instrument-valued extension is not certified."
+}
