@@ -1,0 +1,6703 @@
+{
+  "schema_version": "final-theory-cpobc-search-v0.3.0",
+  "suite": "CPOBC v0.3 structured exact representation search",
+  "source": {
+    "paper": "arXiv:2603.25503v1",
+    "necessary_relations": [
+      119,
+      130,
+      163
+    ],
+    "transition_constructions": [
+      140,
+      141,
+      150,
+      151,
+      159,
+      162
+    ]
+  },
+  "manifest": {
+    "scalar_grid": [
+      [
+        2,
+        3,
+        5,
+        7
+      ],
+      [
+        3,
+        5,
+        7,
+        11
+      ]
+    ],
+    "ansatz_classes": {
+      "commuting_diagonal_control_d3": {
+        "dimension": 3,
+        "field": "Q",
+        "role": "pipeline control, excluded from noncommutative hits"
+      },
+      "rational_affine_matrix_units_d3": {
+        "dimension": 3,
+        "field": "Q",
+        "patterns": 2
+      },
+      "reducible_pauli_block_lift_d3": {
+        "dimension": 3,
+        "field": "Q(i)",
+        "patterns": 1
+      },
+      "heisenberg_weyl_d3": {
+        "dimension": 3,
+        "field": "Q(sqrt(-3))",
+        "patterns": 1
+      },
+      "quadratic_field_affine_d3": {
+        "dimension": 3,
+        "field": "Q(sqrt(2))",
+        "patterns": 1
+      },
+      "heisenberg_weyl_d4": {
+        "dimension": 4,
+        "field": "Q(i)",
+        "patterns": 1
+      },
+      "rational_companion_words_d3": {
+        "dimension": 3,
+        "field": "Q",
+        "patterns": 1
+      }
+    },
+    "candidate_count": 14,
+    "exhaustive_within_listed_grid": true,
+    "new_work_dimensions": [
+      3,
+      4
+    ],
+    "new_work_minimum_dimension": 3,
+    "exact_fields": [
+      "Q",
+      "Q(i)",
+      "Q(sqrt(2))",
+      "Q(sqrt(-3))"
+    ],
+    "comparison_with_v0_2": "Adds field-structured Weyl, quadratic-field, block-lift, matrix-unit, and companion-word classes plus exact centralizer, trace, determinant, reducibility, generated-algebra, and Jordan-stratum diagnostics.",
+    "groebner_basis": "NOT_RUN: no giant polynomial-system task is needed for this bounded pointwise exact audit",
+    "randomness": "none",
+    "candidate_generation": "deterministic finite grid",
+    "resource_limits": {
+      "maximum_dimension": 4,
+      "exact_candidate_points": 14,
+      "continuous_parameter_elimination": "not run",
+      "full_compiler_assignment_search": "not run",
+      "large_groebner_basis": "prohibited for this bounded audit"
+    },
+    "requested_ansatz_coverage": {
+      "dense_symbolic": "NOT_RUN_UNBOUNDED_POLYNOMIAL_SYSTEM",
+      "block_diagonal": "REPRESENTATIVE_POINTS_TESTED",
+      "block_upper_triangular": "REPRESENTATIVE_AFFINE_MATRIX_UNIT_POINTS_TESTED",
+      "jordan_companion": "REPRESENTATIVE_COMPANION_AND_AFFINE_POINTS_TESTED",
+      "weighted_shift": "NOT_RUN_AS_SEPARATE_PARAMETRIC_CLASS",
+      "clock_shift_weyl": "REPRESENTATIVE_D3_D4_POINTS_TESTED",
+      "permutation_plus_diagonal": "NOT_RUN_AS_SEPARATE_PARAMETRIC_CLASS",
+      "rank_one_perturbation": "REPRESENTATIVE_AFFINE_MATRIX_UNIT_POINTS_TESTED",
+      "non_normal": "REPRESENTATIVE_POINTS_TESTED",
+      "reducible_but_indecomposable": "NOT_CLASSIFIED_AS_COMPLETE_STRATUM",
+      "algebraic_number_entries": "REPRESENTATIVE_QUADRATIC_FIELD_POINTS_TESTED"
+    }
+  },
+  "ansatz_class_summaries": [
+    {
+      "ansatz_id": "commuting_diagonal_control_d3",
+      "role": "COMMUTING_CONTROL",
+      "dimension": 3,
+      "field": "Q",
+      "candidate_count": 2,
+      "noncommuting_candidate_count": 0,
+      "necessary_relation_survivor_count": 0,
+      "candidate_ids": [
+        "cpobc-candidate-d34ba6e6965fd482d52d",
+        "cpobc-candidate-24956d3181070af16307"
+      ],
+      "exhaustive_within_manifest": true,
+      "result": "CONTROL_PASS",
+      "claim_boundary": "This result quantifies only the finite matrices and parameter values in the manifest."
+    },
+    {
+      "ansatz_id": "heisenberg_weyl_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q(sqrt(-3))",
+      "candidate_count": 2,
+      "noncommuting_candidate_count": 2,
+      "necessary_relation_survivor_count": 0,
+      "candidate_ids": [
+        "cpobc-candidate-7f31c2a6ea688d8cb3f3",
+        "cpobc-candidate-fcffc22b641db2bc6f40"
+      ],
+      "exhaustive_within_manifest": true,
+      "result": "NO_CANDIDATE_IN_DECLARED_EXACT_GRID",
+      "claim_boundary": "This result quantifies only the finite matrices and parameter values in the manifest."
+    },
+    {
+      "ansatz_id": "heisenberg_weyl_d4",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 4,
+      "field": "Q(i)",
+      "candidate_count": 2,
+      "noncommuting_candidate_count": 2,
+      "necessary_relation_survivor_count": 0,
+      "candidate_ids": [
+        "cpobc-candidate-56eebe3cef4f6bd70e12",
+        "cpobc-candidate-f1871a2c760dc3b420ae"
+      ],
+      "exhaustive_within_manifest": true,
+      "result": "NO_CANDIDATE_IN_DECLARED_EXACT_GRID",
+      "claim_boundary": "This result quantifies only the finite matrices and parameter values in the manifest."
+    },
+    {
+      "ansatz_id": "quadratic_field_affine_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q(sqrt(2))",
+      "candidate_count": 2,
+      "noncommuting_candidate_count": 2,
+      "necessary_relation_survivor_count": 0,
+      "candidate_ids": [
+        "cpobc-candidate-c6507fb86ec99920613a",
+        "cpobc-candidate-e1e767175a4bdb1bb9bf"
+      ],
+      "exhaustive_within_manifest": true,
+      "result": "NO_CANDIDATE_IN_DECLARED_EXACT_GRID",
+      "claim_boundary": "This result quantifies only the finite matrices and parameter values in the manifest."
+    },
+    {
+      "ansatz_id": "rational_affine_matrix_units_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q",
+      "candidate_count": 2,
+      "noncommuting_candidate_count": 2,
+      "necessary_relation_survivor_count": 0,
+      "candidate_ids": [
+        "cpobc-candidate-e185e5f60c357dcddb21",
+        "cpobc-candidate-d3ef324a934ea2894586"
+      ],
+      "exhaustive_within_manifest": true,
+      "result": "NO_CANDIDATE_IN_DECLARED_EXACT_GRID",
+      "claim_boundary": "This result quantifies only the finite matrices and parameter values in the manifest."
+    },
+    {
+      "ansatz_id": "rational_companion_words_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q",
+      "candidate_count": 2,
+      "noncommuting_candidate_count": 2,
+      "necessary_relation_survivor_count": 0,
+      "candidate_ids": [
+        "cpobc-candidate-c4ec153c1ec3fe96feb6",
+        "cpobc-candidate-24c108323ed4b9978dfc"
+      ],
+      "exhaustive_within_manifest": true,
+      "result": "NO_CANDIDATE_IN_DECLARED_EXACT_GRID",
+      "claim_boundary": "This result quantifies only the finite matrices and parameter values in the manifest."
+    },
+    {
+      "ansatz_id": "reducible_pauli_block_lift_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q(i)",
+      "candidate_count": 2,
+      "noncommuting_candidate_count": 2,
+      "necessary_relation_survivor_count": 0,
+      "candidate_ids": [
+        "cpobc-candidate-57f55d874ef2e38454a0",
+        "cpobc-candidate-586fcf1c77f109425349"
+      ],
+      "exhaustive_within_manifest": true,
+      "result": "NO_CANDIDATE_IN_DECLARED_EXACT_GRID",
+      "claim_boundary": "This result quantifies only the finite matrices and parameter values in the manifest."
+    }
+  ],
+  "candidate_certificates": [
+    {
+      "id": "cpobc-candidate-d34ba6e6965fd482d52d",
+      "hash": "d34ba6e6965fd482d52d0539f335197dee518624f8dca3a92f7b5d5823ae12e9",
+      "ansatz_id": "commuting_diagonal_control_d3",
+      "role": "COMMUTING_CONTROL",
+      "dimension": 3,
+      "field": "Q",
+      "parameters": {
+        "scalars": [
+          2,
+          3,
+          5,
+          7
+        ]
+      },
+      "generators": [
+        [
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "4"
+          ]
+        ],
+        [
+          [
+            "3",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "5",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "7"
+          ]
+        ],
+        [
+          [
+            "5",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "8",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "11"
+          ]
+        ],
+        [
+          [
+            "7",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "11",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "15"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "24",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "105",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "440",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "1155",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-6",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-105/4",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "12",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "-110",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "352/7",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "-38720/7",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-38720/7",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": false,
+        "joint_centralizer": {
+          "dimension": 3,
+          "scalar_only": false,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 3,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": false
+        },
+        "reducibility": {
+          "status": "EXACT_REDUCIBLE_COORDINATE_SUBSPACE",
+          "coordinate_invariant_subspace": [
+            0
+          ]
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "9",
+            "determinant": "24",
+            "characteristic_polynomial": "(lambda - 4)*(lambda - 3)*(lambda - 2)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 2,
+            "trace": "15",
+            "determinant": "105",
+            "characteristic_polynomial": "(lambda - 7)*(lambda - 5)*(lambda - 3)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 3,
+            "trace": "24",
+            "determinant": "440",
+            "characteristic_polynomial": "(lambda - 11)*(lambda - 8)*(lambda - 5)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 4,
+            "trace": "33",
+            "determinant": "1155",
+            "characteristic_polynomial": "(lambda - 15)*(lambda - 11)*(lambda - 7)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "24",
+          "Q2": "105",
+          "Q3": "440",
+          "Q4": "1155"
+        },
+        "generator_traces": {
+          "Q1": "9",
+          "Q2": "15",
+          "Q3": "24",
+          "Q4": "33"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": true,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": null,
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "COMMUTING_PIPELINE_CONTROL"
+    },
+    {
+      "id": "cpobc-candidate-24956d3181070af16307",
+      "hash": "24956d3181070af1630729a8d9eff383e48c834ae295f6072bdb6b0de0bf511e",
+      "ansatz_id": "commuting_diagonal_control_d3",
+      "role": "COMMUTING_CONTROL",
+      "dimension": 3,
+      "field": "Q",
+      "parameters": {
+        "scalars": [
+          3,
+          5,
+          7,
+          11
+        ]
+      },
+      "generators": [
+        [
+          [
+            "3",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "4",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "5"
+          ]
+        ],
+        [
+          [
+            "5",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "7",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "9"
+          ]
+        ],
+        [
+          [
+            "7",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "10",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "13"
+          ]
+        ],
+        [
+          [
+            "11",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "15",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "19"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "60",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "315",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "910",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "3135",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-24",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-126",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "384/5",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "-364",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "3328/15",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "-1211392/15",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-1211392/15",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": false,
+        "joint_centralizer": {
+          "dimension": 3,
+          "scalar_only": false,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 3,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": false
+        },
+        "reducibility": {
+          "status": "EXACT_REDUCIBLE_COORDINATE_SUBSPACE",
+          "coordinate_invariant_subspace": [
+            0
+          ]
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "12",
+            "determinant": "60",
+            "characteristic_polynomial": "(lambda - 5)*(lambda - 4)*(lambda - 3)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 2,
+            "trace": "21",
+            "determinant": "315",
+            "characteristic_polynomial": "(lambda - 9)*(lambda - 7)*(lambda - 5)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 3,
+            "trace": "30",
+            "determinant": "910",
+            "characteristic_polynomial": "(lambda - 13)*(lambda - 10)*(lambda - 7)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 4,
+            "trace": "45",
+            "determinant": "3135",
+            "characteristic_polynomial": "(lambda - 19)*(lambda - 15)*(lambda - 11)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "60",
+          "Q2": "315",
+          "Q3": "910",
+          "Q4": "3135"
+        },
+        "generator_traces": {
+          "Q1": "12",
+          "Q2": "21",
+          "Q3": "30",
+          "Q4": "45"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": true,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": null,
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "COMMUTING_PIPELINE_CONTROL"
+    },
+    {
+      "id": "cpobc-candidate-e185e5f60c357dcddb21",
+      "hash": "e185e5f60c357dcddb219b225851a3572dad1ea7dc5c60614d144f42c2e03b4d",
+      "ansatz_id": "rational_affine_matrix_units_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q",
+      "parameters": {
+        "pattern": 0,
+        "scalars": [
+          2,
+          3,
+          5,
+          7
+        ]
+      },
+      "generators": [
+        [
+          [
+            "2",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "2"
+          ]
+        ],
+        [
+          [
+            "3",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "1"
+          ],
+          [
+            "0",
+            "0",
+            "3"
+          ]
+        ],
+        [
+          [
+            "5",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "5",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "5"
+          ]
+        ],
+        [
+          [
+            "7",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "7",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "7"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "8",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "27",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "125",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "343",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-1",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-27/8",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "1",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "-125/8",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "125/27",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "-15625/216",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-15625/216",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 1,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": false,
+            "rank": 1,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 1,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 1,
+          "scalar_only": true,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 9,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": true
+        },
+        "reducibility": {
+          "status": "EXACT_FULL_MATRIX_ALGEBRA_IRREDUCIBLE",
+          "coordinate_invariant_subspace": null
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "6",
+            "determinant": "8",
+            "characteristic_polynomial": "(lambda - 2)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          },
+          {
+            "generator": 2,
+            "trace": "9",
+            "determinant": "27",
+            "characteristic_polynomial": "(lambda - 3)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          },
+          {
+            "generator": 3,
+            "trace": "15",
+            "determinant": "125",
+            "characteristic_polynomial": "(lambda - 5)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          },
+          {
+            "generator": 4,
+            "trace": "21",
+            "determinant": "343",
+            "characteristic_polynomial": "(lambda - 7)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "8",
+          "Q2": "27",
+          "Q3": "125",
+          "Q4": "343"
+        },
+        "generator_traces": {
+          "Q1": "6",
+          "Q2": "9",
+          "Q3": "15",
+          "Q4": "21"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "5/4"
+              ],
+              [
+                "1/2",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "3/4",
+                "1/4"
+              ]
+            ],
+            "sha256": "2f90f5afa003665096d6eac9c054014b47bc8da7e4e4aeca568aad8ee19a185a",
+            "zero": false,
+            "rank": 3,
+            "trace": "1/4",
+            "determinant": "15/32"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "7/4"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "52d93df2b7d9a23b1913beb2b586f245f1d0c361a7f6f167c876d0e8a78b37ab",
+            "zero": false,
+            "rank": 1,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-1/2",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "-7/4",
+                "1/2"
+              ]
+            ],
+            "sha256": "f52285e285946e5d54579222480f49b833ff6e8158d79570b0bdbf4fbc44832e",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-1/3",
+                "0",
+                "0"
+              ],
+              [
+                "7/9",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1/3"
+              ]
+            ],
+            "sha256": "def87aece494270350f35ebe75adce290ffecdd13b76e124dc57d41a4d6a5e7a",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-38/1125",
+                "991/9000",
+                "-6481/27000"
+              ],
+              [
+                "0",
+                "0",
+                "-172/3375"
+              ],
+              [
+                "0",
+                "0",
+                "38/1125"
+              ]
+            ],
+            "sha256": "bc0e902083a6f62c7486e46c7873e705b41a225ccee56924470a7c5248d37cfd",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq119_Q2_Q1_Q3",
+        "certificate_hash": "2f90f5afa003665096d6eac9c054014b47bc8da7e4e4aeca568aad8ee19a185a"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-d3ef324a934ea2894586",
+      "hash": "d3ef324a934ea2894586dab5f12b99ec9abba36c693c720c32acd15d0abd4844",
+      "ansatz_id": "rational_affine_matrix_units_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q",
+      "parameters": {
+        "pattern": 1,
+        "scalars": [
+          3,
+          5,
+          7,
+          11
+        ]
+      },
+      "generators": [
+        [
+          [
+            "3",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "3"
+          ]
+        ],
+        [
+          [
+            "5",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "5",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "5"
+          ]
+        ],
+        [
+          [
+            "7",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "7",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "7"
+          ]
+        ],
+        [
+          [
+            "11",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "11",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "11"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "27",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "125",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "343",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "1331",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-8",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-1000/27",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "512/27",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "-2744/27",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "175616/3375",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "-481890304/91125",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-481890304/91125",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 1,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": false,
+            "rank": 1,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 1,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 1,
+          "scalar_only": true,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 9,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": true
+        },
+        "reducibility": {
+          "status": "EXACT_FULL_MATRIX_ALGEBRA_IRREDUCIBLE",
+          "coordinate_invariant_subspace": null
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "9",
+            "determinant": "27",
+            "characteristic_polynomial": "(lambda - 3)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          },
+          {
+            "generator": 2,
+            "trace": "15",
+            "determinant": "125",
+            "characteristic_polynomial": "(lambda - 5)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          },
+          {
+            "generator": 3,
+            "trace": "21",
+            "determinant": "343",
+            "characteristic_polynomial": "(lambda - 7)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          },
+          {
+            "generator": 4,
+            "trace": "33",
+            "determinant": "1331",
+            "characteristic_polynomial": "(lambda - 11)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "27",
+          "Q2": "125",
+          "Q3": "343",
+          "Q4": "1331"
+        },
+        "generator_traces": {
+          "Q1": "9",
+          "Q2": "15",
+          "Q3": "21",
+          "Q4": "33"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "-1/3",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "-5/9"
+              ],
+              [
+                "-7/9",
+                "0",
+                "-1/9"
+              ]
+            ],
+            "sha256": "9f8795c4a5839185abb6d64d38a7e4cf0c65a6ea83b7c9780add84d175205857",
+            "zero": false,
+            "rank": 3,
+            "trace": "-1/9",
+            "determinant": "-35/243"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "-11/9",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "3c31c9b1ea03cec1786856397b5f9d8fe350894f9f101bd1fe63ece002c7eb06",
+            "zero": false,
+            "rank": 1,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "1/3",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "11/9"
+              ],
+              [
+                "0",
+                "0",
+                "-1/3"
+              ]
+            ],
+            "sha256": "895a273a739b5bbb2e489c544b1f79528df817eb695a849ae0de5d44a5610e5c",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "1/5",
+                "-11/25",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "-1/5"
+              ]
+            ],
+            "sha256": "d304240b164a00e925434bbe040884195bc16607f302055f1a80df227e5d5c25",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-70369/138297600",
+                "0",
+                "0"
+              ],
+              [
+                "169/3528",
+                "0",
+                "0"
+              ],
+              [
+                "54959/1646400",
+                "-19733089/691488000",
+                "70369/138297600"
+              ]
+            ],
+            "sha256": "6ba37a15ac35fff8849d8e38eddc5dcda714f6ff4b515653c8eab8484c33fb2d",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq119_Q2_Q1_Q3",
+        "certificate_hash": "9f8795c4a5839185abb6d64d38a7e4cf0c65a6ea83b7c9780add84d175205857"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-57f55d874ef2e38454a0",
+      "hash": "57f55d874ef2e38454a0b41505820455058ba2967cb573404710452eaf96bc51",
+      "ansatz_id": "reducible_pauli_block_lift_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q(i)",
+      "parameters": {
+        "scalars": [
+          2,
+          3,
+          5,
+          7
+        ],
+        "pattern": [
+          "X",
+          "Y",
+          "X",
+          "Y"
+        ]
+      },
+      "generators": [
+        [
+          [
+            "0",
+            "2",
+            "0"
+          ],
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "2"
+          ]
+        ],
+        [
+          [
+            "0",
+            "-3*I",
+            "0"
+          ],
+          [
+            "3*I",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "3"
+          ]
+        ],
+        [
+          [
+            "0",
+            "5",
+            "0"
+          ],
+          [
+            "5",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "5"
+          ]
+        ],
+        [
+          [
+            "0",
+            "-7*I",
+            "0"
+          ],
+          [
+            "7*I",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "7"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "-8",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "-27",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "-125",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "-343",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "3",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "81/8",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "-71",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "375/8",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "-8875/27",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "-1109375/72",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-1109375/72",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 2,
+          "scalar_only": false,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 5,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": false
+        },
+        "reducibility": {
+          "status": "EXACT_REDUCIBLE_COORDINATE_SUBSPACE",
+          "coordinate_invariant_subspace": [
+            0,
+            1
+          ]
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "2",
+            "determinant": "-8",
+            "characteristic_polynomial": "(lambda - 2)**2*(lambda + 2)",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          },
+          {
+            "generator": 2,
+            "trace": "3",
+            "determinant": "-27",
+            "characteristic_polynomial": "(lambda - 3)**2*(lambda + 3)",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          },
+          {
+            "generator": 3,
+            "trace": "5",
+            "determinant": "-125",
+            "characteristic_polynomial": "(lambda - 5)**2*(lambda + 5)",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          },
+          {
+            "generator": 4,
+            "trace": "7",
+            "determinant": "-343",
+            "characteristic_polynomial": "(lambda - 7)**2*(lambda + 7)",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "-8",
+          "Q2": "-27",
+          "Q3": "-125",
+          "Q4": "-343"
+        },
+        "generator_traces": {
+          "Q1": "2",
+          "Q2": "3",
+          "Q3": "5",
+          "Q4": "7"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "12152*I/15123",
+                "26964/5041",
+                "0"
+              ],
+              [
+                "26964/5041",
+                "-12152*I/15123",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "e067e39664de457a46ea140960edc88139b773f068e0a7223efc70fbf56ca0e6",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq163",
+        "certificate_hash": "e067e39664de457a46ea140960edc88139b773f068e0a7223efc70fbf56ca0e6"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-586fcf1c77f109425349",
+      "hash": "586fcf1c77f109425349961fddaf5d4a79033692648e29567294384a45d9c403",
+      "ansatz_id": "reducible_pauli_block_lift_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q(i)",
+      "parameters": {
+        "scalars": [
+          3,
+          5,
+          7,
+          11
+        ],
+        "pattern": [
+          "X",
+          "Y",
+          "X",
+          "Y"
+        ]
+      },
+      "generators": [
+        [
+          [
+            "0",
+            "3",
+            "0"
+          ],
+          [
+            "3",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "3"
+          ]
+        ],
+        [
+          [
+            "0",
+            "-5*I",
+            "0"
+          ],
+          [
+            "5*I",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "5"
+          ]
+        ],
+        [
+          [
+            "0",
+            "7",
+            "0"
+          ],
+          [
+            "7",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "7"
+          ]
+        ],
+        [
+          [
+            "0",
+            "-11*I",
+            "0"
+          ],
+          [
+            "11*I",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "11"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "-27",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "-125",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "-343",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "-1331",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "16",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "2000/27",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "-15328/27",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "5488/27",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "-5257504/3375",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "-28853181952/91125",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-28853181952/91125",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 2,
+          "scalar_only": false,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 5,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": false
+        },
+        "reducibility": {
+          "status": "EXACT_REDUCIBLE_COORDINATE_SUBSPACE",
+          "coordinate_invariant_subspace": [
+            0,
+            1
+          ]
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "3",
+            "determinant": "-27",
+            "characteristic_polynomial": "(lambda - 3)**2*(lambda + 3)",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          },
+          {
+            "generator": 2,
+            "trace": "5",
+            "determinant": "-125",
+            "characteristic_polynomial": "(lambda - 5)**2*(lambda + 5)",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          },
+          {
+            "generator": 3,
+            "trace": "7",
+            "determinant": "-343",
+            "characteristic_polynomial": "(lambda - 7)**2*(lambda + 7)",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          },
+          {
+            "generator": 4,
+            "trace": "11",
+            "determinant": "-1331",
+            "characteristic_polynomial": "(lambda - 11)**2*(lambda + 11)",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "-27",
+          "Q2": "-125",
+          "Q3": "-343",
+          "Q4": "-1331"
+        },
+        "generator_traces": {
+          "Q1": "3",
+          "Q2": "5",
+          "Q3": "7",
+          "Q4": "11"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "214731*I/917764",
+                "610995/229441",
+                "0"
+              ],
+              [
+                "610995/229441",
+                "-214731*I/917764",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "8f734f220c0dcdc58c7cca66735e82022c6069969d1884c8257c315548d3f440",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq163",
+        "certificate_hash": "8f734f220c0dcdc58c7cca66735e82022c6069969d1884c8257c315548d3f440"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-7f31c2a6ea688d8cb3f3",
+      "hash": "7f31c2a6ea688d8cb3f3004f6ade0b825b0e43fadc585485ef428f7ffe03d59b",
+      "ansatz_id": "heisenberg_weyl_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q(sqrt(-3))",
+      "parameters": {
+        "scalars": [
+          2,
+          3,
+          5,
+          7
+        ],
+        "pattern": [
+          "shift",
+          "clock",
+          "shift",
+          "clock"
+        ]
+      },
+      "generators": [
+        [
+          [
+            "0",
+            "0",
+            "2"
+          ],
+          [
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "0"
+          ]
+        ],
+        [
+          [
+            "3",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3*I*(sqrt(3) + I)/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3*(sqrt(3) + I)**2/4"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0",
+            "5"
+          ],
+          [
+            "5",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "5",
+            "0"
+          ]
+        ],
+        [
+          [
+            "7",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "7*I*(sqrt(3) + I)/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-7*(sqrt(3) + I)**2/4"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "8",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "27",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "125",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "343",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-7",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-189/8",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "-I*(243*sqrt(3) + 244*I)",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "-875/8",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "-125*I*(243*sqrt(3) + 244*I)/27",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "109375*(13580279864493*sqrt(3) + 21567228439915*I)/(216*(8142740391*sqrt(3) - 64062174979*I))",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-109375*(sqrt(3) - 973*I)/(216*(sqrt(3) - I))",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 1,
+          "scalar_only": true,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 9,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": true
+        },
+        "reducibility": {
+          "status": "EXACT_FULL_MATRIX_ALGEBRA_IRREDUCIBLE",
+          "coordinate_invariant_subspace": null
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "0",
+            "determinant": "8",
+            "characteristic_polynomial": "(lambda - 2)*(lambda**2 + 2*lambda + 4)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 2,
+            "trace": "0",
+            "determinant": "27",
+            "characteristic_polynomial": "(lambda - 3)*(lambda**2 + 3*lambda + 9)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 3,
+            "trace": "0",
+            "determinant": "125",
+            "characteristic_polynomial": "(lambda - 5)*(lambda**2 + 5*lambda + 25)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 4,
+            "trace": "0",
+            "determinant": "343",
+            "characteristic_polynomial": "(lambda - 7)*(lambda**2 + 7*lambda + 49)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "8",
+          "Q2": "27",
+          "Q3": "125",
+          "Q4": "343"
+        },
+        "generator_traces": {
+          "Q1": "0",
+          "Q2": "0",
+          "Q3": "0",
+          "Q4": "0"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "-3*(4277368791245313*sqrt(3) - 4484757367696055*I)/(747026420429517*sqrt(3) + 6923290048546141*I)",
+                "6*(753938580233439*sqrt(3) + 1679850862491524*I)/(3835158234487829*sqrt(3) + 2341105393628795*I)"
+              ],
+              [
+                "6*(890311726279205*sqrt(3) + 2187749898800516*I)/(3835158234487829*sqrt(3) + 2341105393628795*I)",
+                "0",
+                "-48*(238035932858935*sqrt(3) - 147793009017698*I)/(747026420429517*sqrt(3) + 6923290048546141*I)"
+              ],
+              [
+                "3*(9746534874735*sqrt(3) + 39046484475841*I)/(2*(8786877076102*sqrt(3) - 4793402788391*I))",
+                "3*(7762142136855*sqrt(3) - 18264961378351*I)/(3993474287711*sqrt(3) - 31154034016697*I)",
+                "0"
+              ]
+            ],
+            "sha256": "db4dc26b7b763c0ec51514e1ecc9ef40d4786020c81a992f73744819da470c68",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "-189*(44880541515238527242478235114329921532607791*sqrt(3) + 10167511040062576342476543804020961172881673*I)/(178439892984388353786075255103138075431764987*sqrt(3) - 247200169774011999898058114429109745458223219*I)"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq163",
+        "certificate_hash": "db4dc26b7b763c0ec51514e1ecc9ef40d4786020c81a992f73744819da470c68"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-fcffc22b641db2bc6f40",
+      "hash": "fcffc22b641db2bc6f401c2732ced92cc951d3eea6834c25eb9b0815f609ffdf",
+      "ansatz_id": "heisenberg_weyl_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q(sqrt(-3))",
+      "parameters": {
+        "scalars": [
+          3,
+          5,
+          7,
+          11
+        ],
+        "pattern": [
+          "shift",
+          "clock",
+          "shift",
+          "clock"
+        ]
+      },
+      "generators": [
+        [
+          [
+            "0",
+            "0",
+            "3"
+          ],
+          [
+            "3",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "0"
+          ]
+        ],
+        [
+          [
+            "5",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "5*I*(sqrt(3) + I)/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-5*(sqrt(3) + I)**2/4"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0",
+            "7"
+          ],
+          [
+            "7",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "7",
+            "0"
+          ]
+        ],
+        [
+          [
+            "11",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "11*I*(sqrt(3) + I)/2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-11*(sqrt(3) + I)**2/4"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "27",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "125",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "343",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "1331",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-26",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-3250/27",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "-I*(30375*sqrt(3) + 32777*I)/27",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "-8918/27",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "-343*I*(30375*sqrt(3) + 32777*I)/3375",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "3058874*(309540543389268065695*sqrt(3) + 555639495993372149397*I)/(91125*(1752028885631215*sqrt(3) - 12081211330818186*I))",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-6117748*(1201*sqrt(3) - 61951*I)/(91125*(sqrt(3) - I))",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 1,
+          "scalar_only": true,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 9,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": true
+        },
+        "reducibility": {
+          "status": "EXACT_FULL_MATRIX_ALGEBRA_IRREDUCIBLE",
+          "coordinate_invariant_subspace": null
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "0",
+            "determinant": "27",
+            "characteristic_polynomial": "(lambda - 3)*(lambda**2 + 3*lambda + 9)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 2,
+            "trace": "0",
+            "determinant": "125",
+            "characteristic_polynomial": "(lambda - 5)*(lambda**2 + 5*lambda + 25)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 3,
+            "trace": "0",
+            "determinant": "343",
+            "characteristic_polynomial": "(lambda - 7)*(lambda**2 + 7*lambda + 49)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 4,
+            "trace": "0",
+            "determinant": "1331",
+            "characteristic_polynomial": "(lambda - 11)*(lambda**2 + 11*lambda + 121)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "27",
+          "Q2": "125",
+          "Q3": "343",
+          "Q4": "1331"
+        },
+        "generator_traces": {
+          "Q1": "0",
+          "Q2": "0",
+          "Q3": "0",
+          "Q4": "0"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "-297*(278755240483340386099325*sqrt(3) - 291212107813746698068752*I)/(52*(160880204588211109569770*sqrt(3) + 1547922967312979385810789*I))",
+                "693*(16164384680633327724200*sqrt(3) + 32538276894949934755593*I)/(13*(1708803171901190495380559*sqrt(3) + 1065282353548346057101479*I))"
+              ],
+              [
+                "99*(249248924905832306817604*sqrt(3) + 533183978338954139091579*I)/(26*(1708803171901190495380559*sqrt(3) + 1065282353548346057101479*I))",
+                "0",
+                "-297*(262015622173191855066671*sqrt(3) - 203775088525509496345929*I)/(52*(160880204588211109569770*sqrt(3) + 1547922967312979385810789*I))"
+              ],
+              [
+                "297*(72755111168798179405*sqrt(3) + 261281163932837099169*I)/(104*(216295009845660053773*sqrt(3) - 93245533543608011922*I))",
+                "99*(120863880039449426155*sqrt(3) - 247580976777200363331*I)/(52*(123049476302052041851*sqrt(3) - 742130563080588173241*I))",
+                "0"
+              ]
+            ],
+            "sha256": "3a554c844008e02a6a66d28a6479f3627df3780eb152a63a3bca94b6088ccb1c",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "-35901063*(208555219401996716981240525566554022260207008399163584465972681339*sqrt(3) + 41504070521557919468480435195136066107059299675097297810922523969*I)/(5408*(151673461572146775887482212794374529477396434007582740520030981345771*sqrt(3) - 179788677169886628607816634741122028679018589702015633529532607352034*I))"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq163",
+        "certificate_hash": "3a554c844008e02a6a66d28a6479f3627df3780eb152a63a3bca94b6088ccb1c"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-c6507fb86ec99920613a",
+      "hash": "c6507fb86ec99920613accec4cb189af0055df8eaec976eb3d2b3a7bd50de30b",
+      "ansatz_id": "quadratic_field_affine_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q(sqrt(2))",
+      "parameters": {
+        "scalars": [
+          2,
+          3,
+          5,
+          7
+        ]
+      },
+      "generators": [
+        [
+          [
+            "2",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "sqrt(2)"
+          ],
+          [
+            "0",
+            "0",
+            "2"
+          ]
+        ],
+        [
+          [
+            "3",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "3",
+            "0"
+          ],
+          [
+            "0",
+            "sqrt(2)",
+            "3"
+          ]
+        ],
+        [
+          [
+            "5",
+            "0",
+            "sqrt(2)"
+          ],
+          [
+            "0",
+            "5",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "5"
+          ]
+        ],
+        [
+          [
+            "7",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "7",
+            "0"
+          ],
+          [
+            "0",
+            "sqrt(2)",
+            "7"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "8",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "27",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "-5*(-25 + sqrt(2))",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "343",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-1",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-27/8",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "0",
+          "invertible": false
+        },
+        "A1_3": {
+          "determinant": "5*(-25 + sqrt(2))/8",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "0",
+          "invertible": false
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 1,
+          "scalar_only": true,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 9,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": true
+        },
+        "reducibility": {
+          "status": "EXACT_FULL_MATRIX_ALGEBRA_IRREDUCIBLE",
+          "coordinate_invariant_subspace": null
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "6",
+            "determinant": "8",
+            "characteristic_polynomial": "(lambda - 2)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          },
+          {
+            "generator": 2,
+            "trace": "9",
+            "determinant": "27",
+            "characteristic_polynomial": "(lambda - 3)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          },
+          {
+            "generator": 3,
+            "trace": "15",
+            "determinant": "-5*(-25 + sqrt(2))",
+            "characteristic_polynomial": "(lambda - 5)*(lambda**2 - 10*lambda - sqrt(2) + 25)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 4,
+            "trace": "21",
+            "determinant": "343",
+            "characteristic_polynomial": "(lambda - 7)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "8",
+          "Q2": "27",
+          "Q3": "-5*(-25 + sqrt(2))",
+          "Q4": "343"
+        },
+        "generator_traces": {
+          "Q1": "6",
+          "Q2": "9",
+          "Q3": "15",
+          "Q4": "21"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "(3*sqrt(2) + 10)/8",
+                "-9/4",
+                "0"
+              ],
+              [
+                "-5*sqrt(2)/8",
+                "5/4",
+                "9*sqrt(2)/8"
+              ],
+              [
+                "-1/4",
+                "1/2",
+                "-(3*sqrt(2) + 20)/8"
+              ]
+            ],
+            "sha256": "a1be2e87050afe48efa32976f4a8cd4e60969e325222d2aba60ec5469dbe0879",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "(-58 + 27*sqrt(2))/16"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "7/4",
+                "-(sqrt(2) + 2)/2",
+                "0"
+              ],
+              [
+                "0",
+                "1/2",
+                "(4 + 7*sqrt(2))/8"
+              ],
+              [
+                "-sqrt(2)/2",
+                "0",
+                "-2"
+              ]
+            ],
+            "sha256": "94bae036f0ceedf4fa8525dec67d722916abd98e2841eff3e8c0a33473f0c58f",
+            "zero": false,
+            "rank": 3,
+            "trace": "1/4",
+            "determinant": "(-10 + 11*sqrt(2))/16"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-(4 + 7*sqrt(2))/8",
+                "9/4",
+                "0"
+              ],
+              [
+                "7*sqrt(2)/4",
+                "-5/2",
+                "0"
+              ],
+              [
+                "1/2",
+                "-3/2",
+                "(7*sqrt(2) + 24)/8"
+              ]
+            ],
+            "sha256": "48df91adc8b6675c2bbc745a723dbf4a07b53ae2ff5b33781d7d18d18d754acd",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "-(-22 + 133*sqrt(2))/32"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-5*(-1 + sqrt(2))/27",
+                "(-8 + 5*sqrt(2))/9",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "(-5 + 7*sqrt(2))/9"
+              ],
+              [
+                "5*sqrt(2)/9",
+                "0",
+                "(1 + 5*sqrt(2))/27"
+              ]
+            ],
+            "sha256": "c79b9a55143c44e237a4af5e6d213045a90da25b179039bf4ea3afe093cc4a07",
+            "zero": false,
+            "rank": 3,
+            "trace": "2/9",
+            "determinant": "10*(-81 + 55*sqrt(2))/729"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "1/27",
+                "1/36",
+                "-sqrt(2)/8"
+              ],
+              [
+                "1/54",
+                "-5/54",
+                "5*sqrt(2)/18"
+              ],
+              [
+                "-sqrt(2)/18",
+                "5*sqrt(2)/27",
+                "1/18"
+              ]
+            ],
+            "sha256": "65b5e5447f557a1f65621326726cf98df645a66cb3f04620dddf51520719c754",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "-13/2916"
+          }
+        }
+      ],
+      "construction_status": "REQUIRED_INTERMEDIATE_SINGULAR",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq119_Q2_Q1_Q3",
+        "certificate_hash": "a1be2e87050afe48efa32976f4a8cd4e60969e325222d2aba60ec5469dbe0879"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-e1e767175a4bdb1bb9bf",
+      "hash": "e1e767175a4bdb1bb9bf742f9c0e8a24be8f22d380c04dda50b521d747eae7c5",
+      "ansatz_id": "quadratic_field_affine_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q(sqrt(2))",
+      "parameters": {
+        "scalars": [
+          3,
+          5,
+          7,
+          11
+        ]
+      },
+      "generators": [
+        [
+          [
+            "3",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "sqrt(2)"
+          ],
+          [
+            "0",
+            "0",
+            "3"
+          ]
+        ],
+        [
+          [
+            "5",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "5",
+            "0"
+          ],
+          [
+            "0",
+            "sqrt(2)",
+            "5"
+          ]
+        ],
+        [
+          [
+            "7",
+            "0",
+            "sqrt(2)"
+          ],
+          [
+            "0",
+            "7",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "7"
+          ]
+        ],
+        [
+          [
+            "11",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "11",
+            "0"
+          ],
+          [
+            "0",
+            "sqrt(2)",
+            "11"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "27",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "125",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "-7*(-49 + sqrt(2))",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "1331",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-8",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-1000/27",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "56/3",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "56*(-49 + sqrt(2))/27",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "-392*(-49 + sqrt(2))/375",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "21952*(-2403 + 98*sqrt(2))/10125",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "21952*(-2403 + 98*sqrt(2))/10125",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 1,
+          "scalar_only": true,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 9,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": true
+        },
+        "reducibility": {
+          "status": "EXACT_FULL_MATRIX_ALGEBRA_IRREDUCIBLE",
+          "coordinate_invariant_subspace": null
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "9",
+            "determinant": "27",
+            "characteristic_polynomial": "(lambda - 3)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          },
+          {
+            "generator": 2,
+            "trace": "15",
+            "determinant": "125",
+            "characteristic_polynomial": "(lambda - 5)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          },
+          {
+            "generator": 3,
+            "trace": "21",
+            "determinant": "-7*(-49 + sqrt(2))",
+            "characteristic_polynomial": "(lambda - 7)*(lambda**2 - 14*lambda - sqrt(2) + 49)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 4,
+            "trace": "33",
+            "determinant": "1331",
+            "characteristic_polynomial": "(lambda - 11)**3",
+            "repeated_factor_degree": 2,
+            "diagonalizable_over_algebraic_closure": false,
+            "stratum": "NONTRIVIAL_JORDAN"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "27",
+          "Q2": "125",
+          "Q3": "-7*(-49 + sqrt(2))",
+          "Q4": "1331"
+        },
+        "generator_traces": {
+          "Q1": "9",
+          "Q2": "15",
+          "Q3": "21",
+          "Q4": "33"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "(5*sqrt(2) + 21)/27",
+                "-32/27",
+                "0"
+              ],
+              [
+                "-14*sqrt(2)/27",
+                "7/9",
+                "16*sqrt(2)/27"
+              ],
+              [
+                "-1/9",
+                "13/27",
+                "-(5*sqrt(2) + 42)/27"
+              ]
+            ],
+            "sha256": "f3c535751aea24577b3fa8bd0f09e5e234d7b603f55097d20b3a86e61e7ebab1",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "(-636 + 347*sqrt(2))/729"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "11/9",
+                "-(4 + 3*sqrt(2))/9",
+                "0"
+              ],
+              [
+                "0",
+                "5/27",
+                "(9 + 11*sqrt(2))/27"
+              ],
+              [
+                "-sqrt(2)/3",
+                "0",
+                "-4/3"
+              ]
+            ],
+            "sha256": "e02f0e6cad6bdc203824e04d356e3b9e7ef9668ab252b8cf280e39cceb95bba5",
+            "zero": false,
+            "rank": 3,
+            "trace": "2/27",
+            "determinant": "2*(-13 + 17*sqrt(2))/243"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-(9 + 11*sqrt(2))/27",
+                "32/27",
+                "0"
+              ],
+              [
+                "11*sqrt(2)/9",
+                "-14/9",
+                "0"
+              ],
+              [
+                "2/9",
+                "-31/27",
+                "(11*sqrt(2) + 51)/27"
+              ]
+            ],
+            "sha256": "2ca34d83f807c6fb1711cbcb9c8ebf51f55d07162bc1f0ec41993d2e30f705e2",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "-2*(-115 + 484*sqrt(2))/729"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-(3 + 7*sqrt(2))/125",
+                "(-12 + 7*sqrt(2))/25",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "(-7 + 11*sqrt(2))/25"
+              ],
+              [
+                "7*sqrt(2)/25",
+                "0",
+                "(7*sqrt(2) + 13)/125"
+              ]
+            ],
+            "sha256": "195bd72c1da4117819dc4af8821a26fe540bcacc1457ba01c388ea73cbfd8bd6",
+            "zero": false,
+            "rank": 3,
+            "trace": "2/25",
+            "determinant": "14*(-181 + 119*sqrt(2))/15625"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "26/3375",
+                "2/675",
+                "-sqrt(2)/45"
+              ],
+              [
+                "2/1125",
+                "-56/3375",
+                "47*sqrt(2)/675"
+              ],
+              [
+                "-sqrt(2)/125",
+                "47*sqrt(2)/1125",
+                "2/225"
+              ]
+            ],
+            "sha256": "ae07ce25223e196a2ecf3e152c3960b577b7acb54c92719b297fa8ec9856551a",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "-532/11390625"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-(14641738803672188519768*sqrt(2) + 370150448158573619975313)/5507683506684780750000000",
+                "(15398489114565506271209*sqrt(2) + 29793042196311645651919)/550768350668478075000000",
+                "-(4843053593438354910866*sqrt(2) + 279210623740598923664855)/1101536701336956150000000"
+              ],
+              [
+                "0",
+                "(-38184441477026481919075 + 1402924899594205130204*sqrt(2))/220307340267391230000000",
+                "(-219594133220049451375 + 74129489625298666010898*sqrt(2))/11015367013369561500000000"
+              ],
+              [
+                "(-148258979250597332021796 + 219594133220049451375*sqrt(2))/11015367013369561500000000",
+                "(8973938476213427337169 + 90164028894232536041495*sqrt(2))/550768350668478075000000",
+                "-(-331190371271058916988047 + 5107845921545734933833*sqrt(2))/1376920876671195187500000"
+              ]
+            ],
+            "sha256": "5ae8727c8d6900cc0d290f9418cfaecde41e5339d60cfb720795a719d9fba2d2",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "-(-10191195332506491417188121648346929325641649670 + 113880918471305025114669166437751911726544067*sqrt(2))/2889007391410244125759194635768625000000000000000"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq119_Q2_Q1_Q3",
+        "certificate_hash": "f3c535751aea24577b3fa8bd0f09e5e234d7b603f55097d20b3a86e61e7ebab1"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-56eebe3cef4f6bd70e12",
+      "hash": "56eebe3cef4f6bd70e12eb00ed06bdf56d50939f7823e6625e048bfd20ae52ba",
+      "ansatz_id": "heisenberg_weyl_d4",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 4,
+      "field": "Q(i)",
+      "parameters": {
+        "scalars": [
+          2,
+          3,
+          5,
+          7
+        ],
+        "pattern": [
+          "shift",
+          "clock",
+          "shift",
+          "clock"
+        ]
+      },
+      "generators": [
+        [
+          [
+            "0",
+            "0",
+            "0",
+            "2"
+          ],
+          [
+            "2",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "2",
+            "0"
+          ]
+        ],
+        [
+          [
+            "3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3*I",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-3",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-3*I"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0",
+            "0",
+            "5"
+          ],
+          [
+            "5",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "5",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "5",
+            "0"
+          ]
+        ],
+        [
+          [
+            "7",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "7*I",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-7",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-7*I"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "-16",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "-81",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "-625",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "-2401",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-15",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-1215/16",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "649 + 1944*I",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "-9375/16",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "405625/81 + 15000*I",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "-1267578125/432 - 17578125*I/2",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-1267578125/432 - 17578125*I/2",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 4,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 4,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": false,
+            "rank": 4,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 4,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 4,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 1,
+          "scalar_only": true,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 16,
+          "ambient_dimension": 16,
+          "full_matrix_algebra": true
+        },
+        "reducibility": {
+          "status": "EXACT_FULL_MATRIX_ALGEBRA_IRREDUCIBLE",
+          "coordinate_invariant_subspace": null
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "0",
+            "determinant": "-16",
+            "characteristic_polynomial": "(lambda - 2)*(lambda + 2)*(lambda**2 + 4)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 2,
+            "trace": "0",
+            "determinant": "-81",
+            "characteristic_polynomial": "(lambda - 3)*(lambda + 3)*(lambda**2 + 9)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 3,
+            "trace": "0",
+            "determinant": "-625",
+            "characteristic_polynomial": "(lambda - 5)*(lambda + 5)*(lambda**2 + 25)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 4,
+            "trace": "0",
+            "determinant": "-2401",
+            "characteristic_polynomial": "(lambda - 7)*(lambda + 7)*(lambda**2 + 49)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "-16",
+          "Q2": "-81",
+          "Q3": "-625",
+          "Q4": "-2401"
+        },
+        "generator_traces": {
+          "Q1": "0",
+          "Q2": "0",
+          "Q3": "0",
+          "Q4": "0"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "9ca2bc3848798695a453b0aaeae79465391a07660e72105b93c4caab60c30f70",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "9ca2bc3848798695a453b0aaeae79465391a07660e72105b93c4caab60c30f70",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "9ca2bc3848798695a453b0aaeae79465391a07660e72105b93c4caab60c30f70",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "9ca2bc3848798695a453b0aaeae79465391a07660e72105b93c4caab60c30f70",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "9ca2bc3848798695a453b0aaeae79465391a07660e72105b93c4caab60c30f70",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "-55127296/63005055 + 50330728*I/21001685",
+                "21295624/63005055 + 136455676*I/63005055",
+                "1909376/4200337 + 48038774*I/63005055"
+              ],
+              [
+                "30888088/63005055 + 17997322*I/21001685",
+                "0",
+                "-15518944/21001685 + 27963544*I/12601011",
+                "409892/63005055 + 133778428*I/63005055"
+              ],
+              [
+                "346724/63005055 + 152632928*I/63005055",
+                "12304432/21001685 + 52978534*I/63005055",
+                "0",
+                "-64772876/63005055 + 8839124*I/4200337"
+              ],
+              [
+                "-21363748/21001685 + 149754052*I/63005055",
+                "16877224/63005055 + 31061632*I/12601011",
+                "7151032/12601011 + 15312346*I/21001685",
+                "0"
+              ]
+            ],
+            "sha256": "d89cdfd138f50de3b1caab2282d893e9a263265cc5a11a0b38e83f6f8be016e9",
+            "zero": false,
+            "rank": 4,
+            "trace": "0",
+            "determinant": "-742953826934229313822155518096/70035633595076839908371496225 - 240958392102155477228092879104*I/7781737066119648878707944025"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq163",
+        "certificate_hash": "d89cdfd138f50de3b1caab2282d893e9a263265cc5a11a0b38e83f6f8be016e9"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-f1871a2c760dc3b420ae",
+      "hash": "f1871a2c760dc3b420aef731188a1a8ad0c8fadcd48f98e1ced791b7cd1ebab8",
+      "ansatz_id": "heisenberg_weyl_d4",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 4,
+      "field": "Q(i)",
+      "parameters": {
+        "scalars": [
+          3,
+          5,
+          7,
+          11
+        ],
+        "pattern": [
+          "shift",
+          "clock",
+          "shift",
+          "clock"
+        ]
+      },
+      "generators": [
+        [
+          [
+            "0",
+            "0",
+            "0",
+            "3"
+          ],
+          [
+            "3",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "3",
+            "0"
+          ]
+        ],
+        [
+          [
+            "5",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "5*I",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-5",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-5*I"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0",
+            "0",
+            "7"
+          ],
+          [
+            "7",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "7",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "7",
+            "0"
+          ]
+        ],
+        [
+          [
+            "11",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "11*I",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-11",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-11*I"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "-81",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "-625",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "-2401",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "-14641",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-80",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-50000/81",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "364456/81 + 15000*I",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "-192080/81",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "875058856/50625 + 57624*I",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "-33616261012096/820125 - 3689472640*I/27",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-33616261012096/820125 - 3689472640*I/27",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 4,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 4,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": false,
+            "rank": 4,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 4,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 4,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 1,
+          "scalar_only": true,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 16,
+          "ambient_dimension": 16,
+          "full_matrix_algebra": true
+        },
+        "reducibility": {
+          "status": "EXACT_FULL_MATRIX_ALGEBRA_IRREDUCIBLE",
+          "coordinate_invariant_subspace": null
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "0",
+            "determinant": "-81",
+            "characteristic_polynomial": "(lambda - 3)*(lambda + 3)*(lambda**2 + 9)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 2,
+            "trace": "0",
+            "determinant": "-625",
+            "characteristic_polynomial": "(lambda - 5)*(lambda + 5)*(lambda**2 + 25)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 3,
+            "trace": "0",
+            "determinant": "-2401",
+            "characteristic_polynomial": "(lambda - 7)*(lambda + 7)*(lambda**2 + 49)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 4,
+            "trace": "0",
+            "determinant": "-14641",
+            "characteristic_polynomial": "(lambda - 11)*(lambda + 11)*(lambda**2 + 121)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "-81",
+          "Q2": "-625",
+          "Q3": "-2401",
+          "Q4": "-14641"
+        },
+        "generator_traces": {
+          "Q1": "0",
+          "Q2": "0",
+          "Q3": "0",
+          "Q4": "0"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "9ca2bc3848798695a453b0aaeae79465391a07660e72105b93c4caab60c30f70",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "9ca2bc3848798695a453b0aaeae79465391a07660e72105b93c4caab60c30f70",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "9ca2bc3848798695a453b0aaeae79465391a07660e72105b93c4caab60c30f70",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "9ca2bc3848798695a453b0aaeae79465391a07660e72105b93c4caab60c30f70",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "sha256": "9ca2bc3848798695a453b0aaeae79465391a07660e72105b93c4caab60c30f70",
+            "zero": true,
+            "rank": 0,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "0",
+                "-837673333101/2011316469920 + 585888415893*I/402263293984",
+                "305547092433/2011316469920 + 1785306678903*I/2011316469920",
+                "55693128447/402263293984 + 410971929621*I/2011316469920"
+              ],
+              [
+                "289610229249/2011316469920 + 22120649661*I/100565823496",
+                "0",
+                "-155249103141/402263293984 + 695649581451*I/502829117480",
+                "74881320921/1005658234960 + 110849951223*I/125707279370"
+              ],
+              [
+                "149015712087/2011316469920 + 1919396743407*I/2011316469920",
+                "64258997517/402263293984 + 434881422789*I/2011316469920",
+                "0",
+                "-974311718589/2011316469920 + 546687329463*I/402263293984"
+              ],
+              [
+                "-48429864549/100565823496 + 2920332676041*I/2011316469920",
+                "71176317597/502829117480 + 965856903561*I/1005658234960",
+                "78349487139/502829117480 + 79997921949*I/402263293984",
+                "0"
+              ]
+            ],
+            "sha256": "191827006accbd2f4cb14dacd986d691e416ab19665e36e75612ab85656d6f6d",
+            "zero": false,
+            "rank": 4,
+            "trace": "0",
+            "determinant": "-2430379027192462919451212168811331366068473757/1278532199012302116346375618668733178314803200 - 110375450806314926632717488886067065229156475*I/25570643980246042326927512373374663566296064"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq163",
+        "certificate_hash": "191827006accbd2f4cb14dacd986d691e416ab19665e36e75612ab85656d6f6d"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-c4ec153c1ec3fe96feb6",
+      "hash": "c4ec153c1ec3fe96feb695e26d04cf069fb98574712a5845bd08d0bcee01d6af",
+      "ansatz_id": "rational_companion_words_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q",
+      "parameters": {
+        "scalars": [
+          2,
+          3,
+          5,
+          7
+        ]
+      },
+      "generators": [
+        [
+          [
+            "2",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "2",
+            "-1"
+          ],
+          [
+            "0",
+            "1",
+            "3"
+          ]
+        ],
+        [
+          [
+            "3",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "3",
+            "1"
+          ],
+          [
+            "1",
+            "-1",
+            "4"
+          ]
+        ],
+        [
+          [
+            "5",
+            "1",
+            "1"
+          ],
+          [
+            "0",
+            "4",
+            "0"
+          ],
+          [
+            "1",
+            "1",
+            "5"
+          ]
+        ],
+        [
+          [
+            "7",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "6",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "7"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "15",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "40",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "96",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "288",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-4",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-32/3",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "7",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "-128/5",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "84/5",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "-10752/25",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-10752/25",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 1,
+          "scalar_only": true,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 9,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": true
+        },
+        "reducibility": {
+          "status": "EXACT_FULL_MATRIX_ALGEBRA_IRREDUCIBLE",
+          "coordinate_invariant_subspace": null
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "7",
+            "determinant": "15",
+            "characteristic_polynomial": "(lambda - 3)*(lambda**2 - 4*lambda + 5)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 2,
+            "trace": "10",
+            "determinant": "40",
+            "characteristic_polynomial": "(lambda - 4)*(lambda**2 - 6*lambda + 10)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 3,
+            "trace": "14",
+            "determinant": "96",
+            "characteristic_polynomial": "(lambda - 6)*(lambda - 4)**2",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          },
+          {
+            "generator": 4,
+            "trace": "20",
+            "determinant": "288",
+            "characteristic_polynomial": "(lambda - 8)*(lambda - 6)**2",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "15",
+          "Q2": "40",
+          "Q3": "96",
+          "Q4": "288"
+        },
+        "generator_traces": {
+          "Q1": "7",
+          "Q2": "10",
+          "Q3": "14",
+          "Q4": "20"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-3/5",
+                "-4/5",
+                "2/5"
+              ],
+              [
+                "-1/5",
+                "7/5",
+                "-1"
+              ],
+              [
+                "11/5",
+                "-2/5",
+                "-4/5"
+              ]
+            ],
+            "sha256": "2ada221e8e4f20c90c2d1b479d57dd0f5a3e0f76d2ae2671f49146dbe51dbce4",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "8/5"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-8/15",
+                "-7/5",
+                "41/15"
+              ],
+              [
+                "-17/15",
+                "7/5",
+                "-16/15"
+              ],
+              [
+                "28/15",
+                "-9/5",
+                "-13/15"
+              ]
+            ],
+            "sha256": "5363b2e5f3ef70c058ad8e5efb7229f6cc22a240fc955f32a512e1001234f3bb",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "64/15"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-1/5",
+                "-2/5",
+                "7/5"
+              ],
+              [
+                "-6/5",
+                "-2/5",
+                "2/5"
+              ],
+              [
+                "-1",
+                "-2/5",
+                "3/5"
+              ]
+            ],
+            "sha256": "8bed16c5d29e252b919a3487672e6df168c176dc4b39307d01c69852863fd0bc",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-1/5",
+                "-4/5",
+                "-4/5"
+              ],
+              [
+                "-1/5",
+                "-1/5",
+                "-1/5"
+              ],
+              [
+                "1",
+                "2/5",
+                "2/5"
+              ]
+            ],
+            "sha256": "5268309ea835fcc50d0ff8ceeee86cd3871b849030e2f37a11495cef75ffa890",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-57/200",
+                "181/600",
+                "2/25"
+              ],
+              [
+                "107/300",
+                "-19/100",
+                "-29/75"
+              ],
+              [
+                "-1/40",
+                "-47/150",
+                "19/40"
+              ]
+            ],
+            "sha256": "853243835ccdb1141584dc2269e393beea7feb3bc92648acacb70994d4c9da6c",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "493/180000"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "2297935361/1612800000",
+                "-91073/2800000",
+                "1899347137/1612800000"
+              ],
+              [
+                "328948661/1612800000",
+                "-91073/2800000",
+                "-9948509/230400000"
+              ],
+              [
+                "-1846889089/1612800000",
+                "-91073/2800000",
+                "-2245477313/1612800000"
+              ]
+            ],
+            "sha256": "af51bee32e8800eb6c7e58562887bfcc2b37d60a9a5da37255670d3d4af11f66",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq119_Q2_Q1_Q3",
+        "certificate_hash": "2ada221e8e4f20c90c2d1b479d57dd0f5a3e0f76d2ae2671f49146dbe51dbce4"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    },
+    {
+      "id": "cpobc-candidate-24c108323ed4b9978dfc",
+      "hash": "24c108323ed4b9978dfc063ae310e8a5e32522f3edcdce6d7c3de61abf975ace",
+      "ansatz_id": "rational_companion_words_d3",
+      "role": "NEW_D_GE_3_SEARCH",
+      "dimension": 3,
+      "field": "Q",
+      "parameters": {
+        "scalars": [
+          3,
+          5,
+          7,
+          11
+        ]
+      },
+      "generators": [
+        [
+          [
+            "3",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "3",
+            "-1"
+          ],
+          [
+            "0",
+            "1",
+            "4"
+          ]
+        ],
+        [
+          [
+            "5",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "5",
+            "1"
+          ],
+          [
+            "1",
+            "-1",
+            "6"
+          ]
+        ],
+        [
+          [
+            "7",
+            "1",
+            "1"
+          ],
+          [
+            "0",
+            "6",
+            "0"
+          ],
+          [
+            "1",
+            "1",
+            "7"
+          ]
+        ],
+        [
+          [
+            "11",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "10",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "11"
+          ]
+        ]
+      ],
+      "exact_invertibility": {
+        "Q1": {
+          "determinant": "40",
+          "invertible": true
+        },
+        "Q2": {
+          "determinant": "156",
+          "invertible": true
+        },
+        "Q3": {
+          "determinant": "288",
+          "invertible": true
+        },
+        "Q4": {
+          "determinant": "1200",
+          "invertible": true
+        },
+        "I_minus_Q1": {
+          "determinant": "-15",
+          "invertible": true
+        },
+        "A1_2": {
+          "determinant": "-117/2",
+          "invertible": true
+        },
+        "A2_2": {
+          "determinant": "75/2",
+          "invertible": true
+        },
+        "A1_3": {
+          "determinant": "-108",
+          "invertible": true
+        },
+        "A2_3": {
+          "determinant": "900/13",
+          "invertible": true
+        },
+        "S1": {
+          "determinant": "-97200/13",
+          "invertible": true
+        },
+        "S2": {
+          "determinant": "-97200/13",
+          "invertible": true
+        }
+      },
+      "structural_analysis": {
+        "dimension": 3,
+        "pairwise_commutators": [
+          {
+            "pair": [
+              1,
+              2
+            ],
+            "zero": false,
+            "rank": 3,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              3
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              1,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              2,
+              4
+            ],
+            "zero": true,
+            "rank": 0,
+            "trace": "0"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "zero": false,
+            "rank": 2,
+            "trace": "0"
+          }
+        ],
+        "noncommuting": true,
+        "joint_centralizer": {
+          "dimension": 1,
+          "scalar_only": true,
+          "claim_boundary": "A scalar joint centralizer is necessary but not by itself used as an irreducibility proof."
+        },
+        "generated_algebra_span": {
+          "dimension": 9,
+          "ambient_dimension": 9,
+          "full_matrix_algebra": true
+        },
+        "reducibility": {
+          "status": "EXACT_FULL_MATRIX_ALGEBRA_IRREDUCIBLE",
+          "coordinate_invariant_subspace": null
+        },
+        "jordan_strata": [
+          {
+            "generator": 1,
+            "trace": "10",
+            "determinant": "40",
+            "characteristic_polynomial": "(lambda - 4)*(lambda**2 - 6*lambda + 10)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 2,
+            "trace": "16",
+            "determinant": "156",
+            "characteristic_polynomial": "(lambda - 6)*(lambda**2 - 10*lambda + 26)",
+            "repeated_factor_degree": 0,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "SIMPLE_SPECTRUM"
+          },
+          {
+            "generator": 3,
+            "trace": "20",
+            "determinant": "288",
+            "characteristic_polynomial": "(lambda - 8)*(lambda - 6)**2",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          },
+          {
+            "generator": 4,
+            "trace": "32",
+            "determinant": "1200",
+            "characteristic_polynomial": "(lambda - 12)*(lambda - 10)**2",
+            "repeated_factor_degree": 1,
+            "diagonalizable_over_algebraic_closure": true,
+            "stratum": "REPEATED_SEMISIMPLE"
+          }
+        ],
+        "generator_determinants": {
+          "Q1": "40",
+          "Q2": "156",
+          "Q3": "288",
+          "Q4": "1200"
+        },
+        "generator_traces": {
+          "Q1": "10",
+          "Q2": "16",
+          "Q3": "20",
+          "Q4": "32"
+        }
+      },
+      "relation_certificates": [
+        {
+          "relation_id": "eq119_Q2_Q1_Q3",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-2/5",
+                "-3/5",
+                "2/5"
+              ],
+              [
+                "-1/5",
+                "1",
+                "-4/5"
+              ],
+              [
+                "8/5",
+                "-2/5",
+                "-3/5"
+              ]
+            ],
+            "sha256": "011450b84d80330efd6861b6842dc2d3b301b62db239bc435b5d1770ad163de3",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "3/5"
+          }
+        },
+        {
+          "relation_id": "eq119_Q2_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-19/40",
+                "-19/20",
+                "93/40"
+              ],
+              [
+                "-39/40",
+                "13/10",
+                "-37/40"
+              ],
+              [
+                "11/8",
+                "-29/20",
+                "-33/40"
+              ]
+            ],
+            "sha256": "9613ca172474fccd9529671a206418762d248844ac20297b1e3226e5dd061d04",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "9/4"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q1_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-1/5",
+                "-1/5",
+                "1"
+              ],
+              [
+                "-4/5",
+                "-1/5",
+                "2/5"
+              ],
+              [
+                "-4/5",
+                "-1/5",
+                "2/5"
+              ]
+            ],
+            "sha256": "6c658e7addca6a84da32d031a378936066a62e0d01d337c141eefb911b0d5104",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq119_Q3_Q2_Q4",
+          "source_equation": 119,
+          "route": "gregarious three-generator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-2/13",
+                "-6/13",
+                "-7/13"
+              ],
+              [
+                "-1/13",
+                "-1/13",
+                "-1/13"
+              ],
+              [
+                "8/13",
+                "4/13",
+                "3/13"
+              ]
+            ],
+            "sha256": "5d46902a059e757ff8cb6f38e0d5cd7d70c74655e3f68325d814510f8370b005",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        },
+        {
+          "relation_id": "eq130",
+          "source_equation": 130,
+          "route": "Q1/Q2 commutator necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "-93/1040",
+                "151/1560",
+                "33/1040"
+              ],
+              [
+                "43/390",
+                "-7/104",
+                "-197/1560"
+              ],
+              [
+                "-1/80",
+                "-71/780",
+                "163/1040"
+              ]
+            ],
+            "sha256": "e233460572ccb7e0e5e509458287076c145cbaffdd455661b6f62c85a1e30168",
+            "zero": false,
+            "rank": 3,
+            "trace": "0",
+            "determinant": "517/4867200"
+          }
+        },
+        {
+          "relation_id": "eq163",
+          "source_equation": 163,
+          "route": "S1/S2 two-atomisation necessary relation",
+          "residual": {
+            "matrix": [
+              [
+                "1057256603513/4555699200000",
+                "-1560140059/21091200000",
+                "628062197057/4555699200000"
+              ],
+              [
+                "221723301991/911139840000",
+                "-1560140059/21091200000",
+                "679422103499/4555699200000"
+              ],
+              [
+                "-291071944313/4555699200000",
+                "-1560140059/21091200000",
+                "-720266350769/4555699200000"
+              ]
+            ],
+            "sha256": "7ae117c1691d60211ad7b2169076e494c7a599cfbad4ca5da3069d83821f5373",
+            "zero": false,
+            "rank": 2,
+            "trace": "0",
+            "determinant": "0"
+          }
+        }
+      ],
+      "construction_status": "S1_S2_EQ163_EVALUATED",
+      "tested_necessary_relations_pass": false,
+      "noncommuting_necessary_relation_survivor": false,
+      "first_failure": {
+        "kind": "RELATION_RESIDUAL",
+        "relation_id": "eq119_Q2_Q1_Q3",
+        "certificate_hash": "011450b84d80330efd6861b6842dc2d3b301b62db239bc435b5d1770ad163de3"
+      },
+      "full_compiled_relation_assignment_checked": false,
+      "candidate_status": "REJECTED_WITHIN_EXACT_ANSATZ_POINT"
+    }
+  ],
+  "summary": {
+    "candidate_count": 14,
+    "commuting_control_count": 2,
+    "commuting_controls_pass": true,
+    "noncommuting_necessary_relation_survivor_count": 0,
+    "full_compiled_relation_certificate_count": 0,
+    "noncommutative_representation_found": false
+  },
+  "search_digest_sha256": "619f971ff5459c183ef5333419a6b929ed36b73eba91cab6432aa3f79ad6dde1",
+  "status": "CPOBC_REPRESENTATION_SEARCH_INCONCLUSIVE",
+  "cpobc_representation_status": "CPOBC_SEARCH_INCONCLUSIVE",
+  "completeness_scope": "14 exact matrix points in d=3,4 over four declared fields; necessary relations 119, 130, and 163 only",
+  "resource_limits": [
+    "no dense symbolic Groebner or component decomposition",
+    "no continuous parameter stratum is exhausted",
+    "no full assignment of the 641 compiled transition relations"
+  ],
+  "unresolved_items": [
+    "continuous parameter coverage for every requested ansatz stratum",
+    "simultaneous-similarity quotient across all Jordan strata",
+    "full generated relation assignment and exact residual certificate",
+    "a representation or a no-go theorem under mathematically complete assumptions"
+  ],
+  "prohibited_inference": "No finite-grid failure is an ansatz-class or dimension-wide no-go theorem. NO_CANDIDATE_IN_DECLARED_EXACT_GRID means only the exact matrices and parameter points in the manifest; a necessary-relation survivor is not a representation until every compiled relation has an operator assignment and exact certificate.",
+  "claim_boundary": "The search is exact but finite. It supplies structural and relation certificates, not a general representation theorem.",
+  "passed": true,
+  "source_commit": "e323fed3c7ab4d82588b4f73d15fa829dc629b03",
+  "code_commit": "f05d3b12c26f027e83de0bb4a1c354a058dc4581",
+  "input_hashes": [
+    {
+      "path": "results/dynamics_v0.2.json",
+      "sha256": "cc30b7b4fb40bbb35c910e92a027a2f1632fe6df56c6dee0fd877143b54152e4"
+    },
+    {
+      "path": "results/final_theory_bench_v0.2.json",
+      "sha256": "cf86c7aeeaf3ea2b578e1bdbdbeaa3618047d856fe340142b2f9edebe787181b"
+    },
+    {
+      "path": "results/gap_register_v0.2.json",
+      "sha256": "d2f36f4cc2df0e37867da50c70b968cbf1d3e5f7a8f18c9be88b685539763bae"
+    },
+    {
+      "path": "results/phase_scan_v0.2.json",
+      "sha256": "f8756da795368b40cd9331e6e9295b27fbcda2132af73f64bb83634acaadd8c4"
+    },
+    {
+      "path": "results/qsg_algebra_v0.2.json",
+      "sha256": "04c3e38cd97e4ac1a31507838214d14cc002c49a39a06ee6a9bacdf483326530"
+    },
+    {
+      "path": "results/reproduction_manifest_final_v0.2.json",
+      "sha256": "cdbfc501fadcc5826080374107154508154e9f2b2efa77bce46957bebaf041e7"
+    },
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "references/papers/2003.11311v1_surya-zalel_covariance-complex-sequential-growth.pdf",
+      "sha256": "0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272"
+    },
+    {
+      "path": "references/papers/gr-qc-9904062v3_rideout-sorkin_classical-sequential-growth.pdf",
+      "sha256": "6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    }
+  ],
+  "source_paper_versions": [
+    {
+      "id": "arXiv:2603.25503v1",
+      "version": "v1, 2026-03-26",
+      "sha256": "sha256:545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "id": "arXiv:2003.11311v1",
+      "version": "v1, 2020-03-25",
+      "sha256": "sha256:0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272"
+    },
+    {
+      "id": "arXiv:gr-qc/9904062v3",
+      "version": "v3, 2004-06-26",
+      "sha256": "sha256:6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    }
+  ],
+  "assumptions": [
+    "v0.2 artifact freeze is immutable",
+    "Track A invertible CPOBC and Track B Kraus channels are distinct",
+    "only exact or explicitly bounded results can pass a scientific gate"
+  ],
+  "exact_numeric_distinction": {
+    "exact": "Fraction, integer combinatorics, and SymPy algebra",
+    "numeric": "no numeric residual is accepted as an exact certificate"
+  },
+  "solver_and_version": {
+    "python": "3.12.10",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5",
+    "python_flint": "0.8.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "random_seeds": {
+    "used": false,
+    "values": [],
+    "policy": "deterministic production"
+  },
+  "generated_artifact_hashes": [],
+  "verdict": "CPOBC_SEARCH_INCONCLUSIVE"
+}

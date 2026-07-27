@@ -1,0 +1,181 @@
+{
+  "schema_version": "final-theory-repository-inventory-v0.3.0",
+  "baseline": "e323fed3c7ab4d82588b4f73d15fa829dc629b03",
+  "files_and_directories_inspected": [
+    "src/universe_lab/final_theory/causal_sets.py",
+    "src/universe_lab/final_theory/dynamics_v02.py",
+    "src/universe_lab/final_theory/qsg_algebra.py",
+    "src/universe_lab/final_theory/phase_v02.py",
+    "src/universe_lab/final_theory/v02.py",
+    "tests/final_theory",
+    "Final-Theory-Program/reports",
+    "results/reproduction_manifest_final_v0.2.json"
+  ],
+  "all_inspected_paths_exist": true,
+  "capabilities": [
+    {
+      "capability": "unlabeled finite-causet enumeration",
+      "implementation": "final_theory/causal_sets.py:enumerate_unlabeled_posets",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "known counts n<=5; independent relation-mask oracle n<=4"
+    },
+    {
+      "capability": "canonicalisation and automorphism orbits",
+      "implementation": "final_theory/causal_sets.py",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "brute-force exact permutation methods, declared n<=5"
+    },
+    {
+      "capability": "unlabeled transition graph",
+      "implementation": "final_theory/causal_sets.py:growth_moves",
+      "classification": "IMPLEMENTED_BUT_UNCERTIFIED",
+      "scope": "exact move orbits; no pre-v0.3 Bell-family compiler"
+    },
+    {
+      "capability": "labelled growth tree",
+      "implementation": null,
+      "classification": "ABSENT",
+      "scope": "natural-label multiplicities exist, but labelled histories are not nodes"
+    },
+    {
+      "capability": "sparse Kraus outcome instrument",
+      "implementation": "final_theory/dynamics_v02.py:transition_instrument",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "exact rank-one schema, CP/normalization/label-orbit checks n<=5"
+    },
+    {
+      "capability": "initial state",
+      "implementation": "implicit root history basis ray",
+      "classification": "PARTIAL",
+      "scope": "fixed one-dimensional root; no configurable density operator"
+    },
+    {
+      "capability": "decoherence functional",
+      "implementation": "final_theory/dynamics_v02.py:decoherence_certificate",
+      "classification": "IMPLEMENTED_BUT_UNCERTIFIED",
+      "scope": "finite final-state diagonal matrix, not pre-v0.3 path semantics"
+    },
+    {
+      "capability": "channel-level Bell reduction",
+      "implementation": null,
+      "classification": "ABSENT",
+      "scope": "v0.2 explicitly reports quantum Bell causality not established"
+    },
+    {
+      "capability": "QSG paper regression",
+      "implementation": "final_theory/qsg_algebra.py",
+      "classification": "PARTIAL",
+      "scope": "selected TOBC/NTOBC/CPOBC identities and Pauli fixtures"
+    },
+    {
+      "capability": "higher-dimensional QSG search",
+      "implementation": "final_theory/qsg_algebra.py:bounded_representation_search",
+      "classification": "IMPLEMENTED_BUT_UNCERTIFIED",
+      "scope": "six-matrix rational library in d=3,4; correctly inconclusive"
+    },
+    {
+      "capability": "infinite classical outcome measure",
+      "implementation": null,
+      "classification": "ABSENT",
+      "scope": "v0.2 stops at finite cylinders"
+    },
+    {
+      "capability": "infinite CP-instrument measure",
+      "implementation": null,
+      "classification": "ABSENT",
+      "scope": "no common output algebra or inductive maps"
+    },
+    {
+      "capability": "large-N sampler",
+      "implementation": null,
+      "classification": "ABSENT",
+      "scope": "explicitly deferred to v0.4"
+    }
+  ],
+  "duplicate_framework_created": false,
+  "verdict": "REPOSITORY_NOVELTY_BOUNDARY_AUDITED",
+  "source_commit": "e323fed3c7ab4d82588b4f73d15fa829dc629b03",
+  "code_commit": "f05d3b12c26f027e83de0bb4a1c354a058dc4581",
+  "input_hashes": [
+    {
+      "path": "results/dynamics_v0.2.json",
+      "sha256": "cc30b7b4fb40bbb35c910e92a027a2f1632fe6df56c6dee0fd877143b54152e4"
+    },
+    {
+      "path": "results/final_theory_bench_v0.2.json",
+      "sha256": "cf86c7aeeaf3ea2b578e1bdbdbeaa3618047d856fe340142b2f9edebe787181b"
+    },
+    {
+      "path": "results/gap_register_v0.2.json",
+      "sha256": "d2f36f4cc2df0e37867da50c70b968cbf1d3e5f7a8f18c9be88b685539763bae"
+    },
+    {
+      "path": "results/phase_scan_v0.2.json",
+      "sha256": "f8756da795368b40cd9331e6e9295b27fbcda2132af73f64bb83634acaadd8c4"
+    },
+    {
+      "path": "results/qsg_algebra_v0.2.json",
+      "sha256": "04c3e38cd97e4ac1a31507838214d14cc002c49a39a06ee6a9bacdf483326530"
+    },
+    {
+      "path": "results/reproduction_manifest_final_v0.2.json",
+      "sha256": "cdbfc501fadcc5826080374107154508154e9f2b2efa77bce46957bebaf041e7"
+    },
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "references/papers/2003.11311v1_surya-zalel_covariance-complex-sequential-growth.pdf",
+      "sha256": "0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272"
+    },
+    {
+      "path": "references/papers/gr-qc-9904062v3_rideout-sorkin_classical-sequential-growth.pdf",
+      "sha256": "6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    }
+  ],
+  "source_paper_versions": [
+    {
+      "id": "arXiv:2603.25503v1",
+      "version": "v1, 2026-03-26",
+      "sha256": "sha256:545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "id": "arXiv:2003.11311v1",
+      "version": "v1, 2020-03-25",
+      "sha256": "sha256:0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272"
+    },
+    {
+      "id": "arXiv:gr-qc/9904062v3",
+      "version": "v3, 2004-06-26",
+      "sha256": "sha256:6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    }
+  ],
+  "assumptions": [
+    "v0.2 artifact freeze is immutable",
+    "Track A invertible CPOBC and Track B Kraus channels are distinct",
+    "only exact or explicitly bounded results can pass a scientific gate"
+  ],
+  "exact_numeric_distinction": {
+    "exact": "Fraction, integer combinatorics, and SymPy algebra",
+    "numeric": "no numeric residual is accepted as an exact certificate"
+  },
+  "solver_and_version": {
+    "python": "3.12.10",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5",
+    "python_flint": "0.8.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "random_seeds": {
+    "used": false,
+    "values": [],
+    "policy": "deterministic production"
+  },
+  "completeness_scope": "declared by the nested benchmark record",
+  "resource_limits": [
+    "see nested benchmark boundary"
+  ],
+  "generated_artifact_hashes": [],
+  "unresolved_items": []
+}

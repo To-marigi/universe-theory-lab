@@ -9,6 +9,7 @@ from universe_lab.final_theory.v03 import (
     REQUIRED_PROVENANCE_FIELDS,
     RESULT_NAMES,
     build_v0_3_payloads,
+    verify_v0_3_artifacts,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -70,3 +71,9 @@ def test_v02_baseline_is_still_hash_locked(
     assert baseline["passed"]
     assert baseline["v02_files_modified_by_v03"] is False
     assert all(record["unchanged"] for record in baseline["frozen_artifacts"])
+
+
+def test_checked_in_artifact_manifest_verifies() -> None:
+    result = verify_v0_3_artifacts(ROOT)
+    assert result["passed"]
+    assert all(result["checks"].values())

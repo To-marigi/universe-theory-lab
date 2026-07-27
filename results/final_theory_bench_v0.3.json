@@ -1,0 +1,663 @@
+{
+  "suite": "Final-Theory Bench v0.3 / Novelty-First Quantum-Geometry Certification",
+  "generated_at": "2026-07-27T22:14:38.701156+00:00",
+  "baseline": {
+    "schema_version": "final-theory-baseline-v0.3.0",
+    "production_commit": "ceed6223fa8022d6affc809c70b8ebdca035888b",
+    "artifact_freeze": "e323fed3c7ab4d82588b4f73d15fa829dc629b03",
+    "tag": "final-theory-bench-v0.2-dynamics-final-theory-open",
+    "commit_checks": {
+      "production_commit": {
+        "object": "ceed6223fa8022d6affc809c70b8ebdca035888b",
+        "exists": true,
+        "type": "commit"
+      },
+      "artifact_freeze": {
+        "object": "e323fed3c7ab4d82588b4f73d15fa829dc629b03",
+        "exists": true,
+        "type": "commit"
+      }
+    },
+    "production_is_ancestor_of_freeze": true,
+    "tag_target": "e323fed3c7ab4d82588b4f73d15fa829dc629b03",
+    "tag_targets_freeze": true,
+    "frozen_artifacts": [
+      {
+        "path": "results/dynamics_v0.2.json",
+        "expected_sha256": "cc30b7b4fb40bbb35c910e92a027a2f1632fe6df56c6dee0fd877143b54152e4",
+        "actual_sha256": "cc30b7b4fb40bbb35c910e92a027a2f1632fe6df56c6dee0fd877143b54152e4",
+        "unchanged": true
+      },
+      {
+        "path": "results/final_theory_bench_v0.2.json",
+        "expected_sha256": "cf86c7aeeaf3ea2b578e1bdbdbeaa3618047d856fe340142b2f9edebe787181b",
+        "actual_sha256": "cf86c7aeeaf3ea2b578e1bdbdbeaa3618047d856fe340142b2f9edebe787181b",
+        "unchanged": true
+      },
+      {
+        "path": "results/gap_register_v0.2.json",
+        "expected_sha256": "d2f36f4cc2df0e37867da50c70b968cbf1d3e5f7a8f18c9be88b685539763bae",
+        "actual_sha256": "d2f36f4cc2df0e37867da50c70b968cbf1d3e5f7a8f18c9be88b685539763bae",
+        "unchanged": true
+      },
+      {
+        "path": "results/phase_scan_v0.2.json",
+        "expected_sha256": "f8756da795368b40cd9331e6e9295b27fbcda2132af73f64bb83634acaadd8c4",
+        "actual_sha256": "f8756da795368b40cd9331e6e9295b27fbcda2132af73f64bb83634acaadd8c4",
+        "unchanged": true
+      },
+      {
+        "path": "results/qsg_algebra_v0.2.json",
+        "expected_sha256": "04c3e38cd97e4ac1a31507838214d14cc002c49a39a06ee6a9bacdf483326530",
+        "actual_sha256": "04c3e38cd97e4ac1a31507838214d14cc002c49a39a06ee6a9bacdf483326530",
+        "unchanged": true
+      },
+      {
+        "path": "results/reproduction_manifest_final_v0.2.json",
+        "expected_sha256": "cdbfc501fadcc5826080374107154508154e9f2b2efa77bce46957bebaf041e7",
+        "actual_sha256": "cdbfc501fadcc5826080374107154508154e9f2b2efa77bce46957bebaf041e7",
+        "unchanged": true
+      }
+    ],
+    "v02_files_modified_by_v03": false,
+    "passed": true,
+    "verdict": "BASELINE_LOCK_PASS"
+  },
+  "statuses": {
+    "ENGINEERING_STATUS": "ENGINEERING_PASS",
+    "LITERATURE_BOUNDARY_STATUS": "LITERATURE_BOUNDARY_LOCKED",
+    "PAPER_REGRESSION_STATUS": "PAPER_REGRESSION_PASS",
+    "GEOMETRY_QUANTUMNESS_STATUS": "CLASSICAL_GEOMETRY_WITH_QUANTUM_MEMORY",
+    "KRAUS_BELL_STATUS": "KRAUS_BELL_CAUSALITY_UNDEFINED",
+    "CPOBC_RELATION_STATUS": "CPOBC_RELATION_COMPILER_PARTIAL",
+    "CPOBC_REPRESENTATION_STATUS": "CPOBC_SEARCH_INCONCLUSIVE",
+    "INFINITE_EXTENSION_STATUS": "INFINITE_EXTENSION_BLOCKED",
+    "SCIENTIFIC_STATUS": "FINAL_THEORY_OPEN"
+  },
+  "question_answers": {
+    "Q1_geometry_interference": "CLASSICAL_GEOMETRY_WITH_QUANTUM_MEMORY",
+    "Q2_kraus_channel_bell": "KRAUS_BELL_CAUSALITY_UNDEFINED",
+    "Q3_high_dimensional_cpobc": "CPOBC_SEARCH_INCONCLUSIVE",
+    "Q4_infinite_extension": "INFINITE_EXTENSION_BLOCKED"
+  },
+  "paper_regression": "PAPER_REGRESSION_PASS",
+  "relation_compiler": "CPOBC_RELATION_COMPILER_PARTIAL",
+  "held_out": {
+    "schema_version": "final-theory-held-out-v0.3.0",
+    "partitions": [
+      {
+        "partition": "unused Bell family/source size",
+        "held_out": "source n=5 diagnostics beyond the n<=4 CPOBC compiler",
+        "status": "DIAGNOSTIC_PASS_BELL_DEFINITION_UNDEFINED",
+        "evidence": {
+          "families": 865,
+          "n5_configurations": 2659
+        }
+      },
+      {
+        "partition": "causet size",
+        "held_out": "n=5 geometry histories",
+        "status": "PASS_EXACT",
+        "evidence": 195
+      },
+      {
+        "partition": "operator dimension",
+        "held_out": "d=4 exact Weyl points after d=3 controls",
+        "status": "PASS_NO_CANDIDATE",
+        "evidence": 2
+      },
+      {
+        "partition": "Jordan stratum",
+        "held_out": "strata recorded pointwise rather than fitted",
+        "status": "DIAGNOSTIC_ONLY_NOT_STRATUM_COMPLETE",
+        "evidence": [
+          "NONTRIVIAL_JORDAN",
+          "REPEATED_SEMISIMPLE",
+          "SIMPLE_SPECTRUM"
+        ]
+      },
+      {
+        "partition": "ansatz class",
+        "held_out": "companion-word exact points",
+        "status": "PASS_NO_CANDIDATE",
+        "evidence": 2
+      },
+      {
+        "partition": "initial state",
+        "held_out": "non-root density operator",
+        "status": "BLOCKED_BY_ONE_DIMENSIONAL_ROOT_SCHEMA",
+        "evidence": {
+          "state": "|p0-0><p0-0|",
+          "description": "the unique empty-causet ray with unit weight",
+          "basis_dimension": 1,
+          "arbitrary_initial_superpositions_certified": false,
+          "arbitrary_initial_mixed_states_certified": false
+        }
+      },
+      {
+        "partition": "covariant event",
+        "held_out": "all final-causet pairs beyond the first witness",
+        "status": "PASS_EXACT",
+        "evidence": 1953
+      },
+      {
+        "partition": "Kraus representation",
+        "held_out": "exact 3-4-5 rotation of a dephasing control",
+        "status": "PASS_EXACT",
+        "evidence": true
+      }
+    ],
+    "retuned_after_held_out": false,
+    "passed_partitions": 6,
+    "total_partitions": 8,
+    "status": "HELD_OUT_PROTOCOL_PARTIAL",
+    "claim_boundary": "The initial-state partition and complete Jordan/ansatz strata are not available; held-out diagnostics do not repair an undefined Bell map."
+  },
+  "mutations": {
+    "schema_version": "final-theory-mutations-v0.3.0",
+    "suite": "Final-Theory Bench v0.3 critical mutations",
+    "mutations": [
+      {
+        "mutation_id": "M01_CPOBC_PRODUCT_ORDER_REVERSED",
+        "description": "reverse a noncommutative product in the paper fixture",
+        "killed": true,
+        "detector": "minimal paper regression",
+        "evidence": {
+          "matrix": [
+            [
+              "-1/2",
+              "-1/2"
+            ],
+            [
+              "-1/2",
+              "1/2"
+            ]
+          ],
+          "sha256": "6af76a3358b1c01c5c16f99393f9f646a4ec076ea02d763ea85a31b877145be5",
+          "zero": false,
+          "rank": 2,
+          "trace": "0",
+          "determinant": "-1/2"
+        }
+      },
+      {
+        "mutation_id": "M02_PRECURSOR_COMPARISON_REVERSED",
+        "description": "reverse the precursor-cardinality ordering",
+        "killed": true,
+        "detector": "compiled relation operator-order metadata",
+        "evidence": {
+          "unequal": 570,
+          "equal": 71
+        }
+      },
+      {
+        "mutation_id": "M03_EQUAL_SIZE_RELATION_DELETED",
+        "description": "delete the second equal-size orientation or Eq. 104",
+        "killed": true,
+        "detector": "equal-size denominator-cleared word gate",
+        "evidence": {
+          "equal_relations_checked": 71
+        }
+      },
+      {
+        "mutation_id": "M04_INVERTIBILITY_ASSUMPTION_DELETED",
+        "description": "erase the inverse assumptions from solved CPOBC forms",
+        "killed": true,
+        "detector": "solved-form versus denominator-cleared assumption gate",
+        "evidence": {
+          "relations_checked": 641
+        }
+      },
+      {
+        "mutation_id": "M05_AUTOMORPHISM_FACTOR_OMITTED",
+        "description": "replace orbit-weighted outcomes by one unweighted representative",
+        "killed": true,
+        "detector": "exact instrument Choi/superoperator comparison",
+        "evidence": {
+          "source_history": "p2-0",
+          "source_size": 2,
+          "automorphism_group_order": 2,
+          "outcome_basis": [
+            "p2-0->p3-000@precursor-0",
+            "p2-0->p3-002@precursor-1",
+            "p2-0->p3-024@precursor-3"
+          ],
+          "correct_orbit_probability_vector": [
+            {
+              "numerator": 225,
+              "denominator": 529
+            },
+            {
+              "numerator": 240,
+              "denominator": 529
+            },
+            {
+              "numerator": 64,
+              "denominator": 529
+            }
+          ],
+          "omitted_factor_probability_vector": [
+            {
+              "numerator": 225,
+              "denominator": 409
+            },
+            {
+              "numerator": 120,
+              "denominator": 409
+            },
+            {
+              "numerator": 64,
+              "denominator": 409
+            }
+          ],
+          "correct_map": {
+            "basis": [
+              "p2-0->p3-000@precursor-0",
+              "p2-0->p3-002@precursor-1",
+              "p2-0->p3-024@precursor-3"
+            ],
+            "probability_vector": [
+              {
+                "numerator": 225,
+                "denominator": 529
+              },
+              {
+                "numerator": 240,
+                "denominator": 529
+              },
+              {
+                "numerator": 64,
+                "denominator": 529
+              }
+            ],
+            "choi": {
+              "shape": [
+                3,
+                3
+              ],
+              "representation": "exact diagonal",
+              "diagonal": [
+                {
+                  "numerator": 225,
+                  "denominator": 529
+                },
+                {
+                  "numerator": 240,
+                  "denominator": 529
+                },
+                {
+                  "numerator": 64,
+                  "denominator": 529
+                }
+              ]
+            },
+            "superoperator": {
+              "shape": [
+                9,
+                1
+              ],
+              "vectorization": "column-major",
+              "nonzero_entries": [
+                {
+                  "row": 0,
+                  "column": 0,
+                  "value": {
+                    "numerator": 225,
+                    "denominator": 529
+                  }
+                },
+                {
+                  "row": 4,
+                  "column": 0,
+                  "value": {
+                    "numerator": 240,
+                    "denominator": 529
+                  }
+                },
+                {
+                  "row": 8,
+                  "column": 0,
+                  "value": {
+                    "numerator": 64,
+                    "denominator": 529
+                  }
+                }
+              ]
+            }
+          },
+          "omitted_map": {
+            "basis": [
+              "p2-0->p3-000@precursor-0",
+              "p2-0->p3-002@precursor-1",
+              "p2-0->p3-024@precursor-3"
+            ],
+            "probability_vector": [
+              {
+                "numerator": 225,
+                "denominator": 409
+              },
+              {
+                "numerator": 120,
+                "denominator": 409
+              },
+              {
+                "numerator": 64,
+                "denominator": 409
+              }
+            ],
+            "choi": {
+              "shape": [
+                3,
+                3
+              ],
+              "representation": "exact diagonal",
+              "diagonal": [
+                {
+                  "numerator": 225,
+                  "denominator": 409
+                },
+                {
+                  "numerator": 120,
+                  "denominator": 409
+                },
+                {
+                  "numerator": 64,
+                  "denominator": 409
+                }
+              ]
+            },
+            "superoperator": {
+              "shape": [
+                9,
+                1
+              ],
+              "vectorization": "column-major",
+              "nonzero_entries": [
+                {
+                  "row": 0,
+                  "column": 0,
+                  "value": {
+                    "numerator": 225,
+                    "denominator": 409
+                  }
+                },
+                {
+                  "row": 4,
+                  "column": 0,
+                  "value": {
+                    "numerator": 120,
+                    "denominator": 409
+                  }
+                },
+                {
+                  "row": 8,
+                  "column": 0,
+                  "value": {
+                    "numerator": 64,
+                    "denominator": 409
+                  }
+                }
+              ]
+            }
+          },
+          "probability_vectors_equal": false,
+          "choi_matrices_equal": false,
+          "superoperators_equal": false
+        }
+      },
+      {
+        "mutation_id": "M06_LABELLED_UNLABELLED_HISTORIES_CONFLATED",
+        "description": "identify birth-labelled, outcome-orbit, and endpoint histories",
+        "killed": true,
+        "detector": "geometry quotient-fibre oracle",
+        "evidence": {
+          "killed": true,
+          "growth_stage": 5,
+          "kraus_orbit_path_count": 195,
+          "expanded_birth_labelled_history_count": 357,
+          "final_unlabeled_causet_count": 63,
+          "reason": "Instrument-outcome paths, raw birth-labelled histories, and endpoint unlabeled causets are separate quotient levels."
+        }
+      },
+      {
+        "mutation_id": "M07_KRAUS_BASIS_DEPENDENT_BELL_TEST",
+        "description": "compare Kraus lists instead of channel maps",
+        "killed": true,
+        "detector": "exact rotated-Kraus Choi and superoperator control",
+        "evidence": {
+          "kraus_lists_equal": false,
+          "choi_equal": true,
+          "superoperator_equal": true
+        }
+      },
+      {
+        "mutation_id": "M08_INCOHERENT_SUM_AS_COHERENT",
+        "description": "drop the orthogonal outcome record and coherently sum branches",
+        "killed": true,
+        "detector": "same-endpoint recorded-history witness",
+        "evidence": {
+          "killed": true,
+          "witness_histories": [
+            "h03-0001",
+            "h03-0003"
+          ],
+          "shared_final_unlabeled_causet": "p3-002",
+          "actual_recorded_D": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "coherent_sum_mutant_I2": {
+            "kind": "positive_exact_radical",
+            "coefficient": 2,
+            "square_root_radicand": {
+              "numerator": 720000,
+              "denominator": 13712209
+            }
+          },
+          "reason": "The mutant deletes the orthogonal outcome-record factor and coherently adds fixed-instrument Kraus alternatives."
+        }
+      },
+      {
+        "mutation_id": "M09_OFF_DIAGONAL_FORCED_ZERO",
+        "description": "return zero without evaluating system and record overlaps",
+        "killed": true,
+        "detector": "coincident-record nonzero control",
+        "evidence": {
+          "killed": true,
+          "coincident_ray_and_record_control": {
+            "numerator": 1,
+            "denominator": 2
+          },
+          "orthogonal_record_control": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "reason": "zero is derived from an overlap factor, not forced generically"
+        }
+      },
+      {
+        "mutation_id": "M10_ARBITRARY_KRAUS_DECOMPOSITION_INTERFERENCE",
+        "description": "promote arbitrary rotated Kraus indices to physical histories",
+        "killed": true,
+        "detector": "fixed-instrument semantics gate",
+        "evidence": {
+          "killed": true,
+          "arbitrary_rotated_kraus_labels_accepted_as_same_histories": false,
+          "channel_equivalence_implies_instrument_event_equivalence": false,
+          "reason": "Unitary Kraus mixing can preserve the channel but changes the fixed outcome instrument and its environment-record projectors."
+        }
+      },
+      {
+        "mutation_id": "M11_CHANNEL_ONLY_DECOHERENCE_FABRICATION",
+        "description": "construct a canonical history functional from channel data alone",
+        "killed": true,
+        "detector": "instrument/channel semantic typing gate",
+        "evidence": {
+          "fixed_instrument": true,
+          "bell_status": "KRAUS_BELL_CAUSALITY_UNDEFINED"
+        }
+      },
+      {
+        "mutation_id": "M12_FINITE_N_BOUNDEDNESS_AS_EXTENSION",
+        "description": "promote the finite variation sequence to an infinite theorem",
+        "killed": true,
+        "detector": "all-stage kernel theorem gate",
+        "evidence": {
+          "finite_discrete_stage_spaces": true,
+          "nonnegative_kernels": true,
+          "normalized_kernels": true,
+          "all_stage_definition": true,
+          "cylinder_consistency_exact_through_n5": true
+        }
+      },
+      {
+        "mutation_id": "M13_ANSATZ_FAILURE_AS_DIMENSION_NO_GO",
+        "description": "promote a finite point-grid rejection to a dimension-wide no-go",
+        "killed": true,
+        "detector": "representation claim-scope gate",
+        "evidence": "No finite-grid failure is an ansatz-class or dimension-wide no-go theorem. NO_CANDIDATE_IN_DECLARED_EXACT_GRID means only the exact matrices and parameter points in the manifest; a necessary-relation survivor is not a representation until every compiled relation has an operator assignment and exact certificate."
+      },
+      {
+        "mutation_id": "M14_NUMERICAL_RESIDUAL_AS_EXACT_SOLUTION",
+        "description": "accept a floating residual as an exact representation certificate",
+        "killed": true,
+        "detector": "exact SymPy residual and full-certificate gate",
+        "evidence": {
+          "candidate_count": 14,
+          "full_relation_certificates": 0,
+          "representation_found": false
+        }
+      }
+    ],
+    "killed": 14,
+    "total": 14,
+    "passed": true,
+    "verdict": "CRITICAL_MUTATIONS_PASS"
+  },
+  "benchmark_integrity_passed": true,
+  "allowed_claims": [
+    "CLASSICAL_GEOMETRY_WITH_QUANTUM_MEMORY",
+    "CPOBC_RELATION_COMPILER_PARTIAL",
+    "CPOBC_SEARCH_INCONCLUSIVE",
+    "ENGINEERING_PASS",
+    "FINAL_THEORY_OPEN",
+    "INFINITE_EXTENSION_BLOCKED",
+    "KRAUS_BELL_CAUSALITY_UNDEFINED",
+    "LITERATURE_BOUNDARY_LOCKED",
+    "PAPER_REGRESSION_PASS"
+  ],
+  "prohibited_claims": [
+    "CONTINUUM_PHASE_CANDIDATE",
+    "EMERGENT_LORENTZ_SYMMETRY",
+    "SPIN2_CANDIDATE",
+    "SPIN2_GATE_PASS",
+    "GRAVITON_FOUND",
+    "EINSTEIN_DYNAMICS_RECOVERED",
+    "FINAL_THEORY_COMPLETED",
+    "QUANTUM_GEOMETRY_CANDIDATE",
+    "KRAUS_BELL_CAUSALITY_PASS",
+    "CPOBC_NONCOMMUTATIVE_REPRESENTATION_FOUND",
+    "CPOBC_NO_REPRESENTATION_UNDER_ASSUMPTIONS",
+    "OPERATOR_MEASURE_EXTENSION_PASS"
+  ],
+  "deferred_to_v0.4": [
+    "large-N production sampler",
+    "continuum scan and finite-size scaling",
+    "dimension and correlation-length estimators",
+    "coarse-graining and held-out symmetry reconstruction",
+    "two-point, tensor, Spin, graviton, and Einstein gates"
+  ],
+  "verdict": "FINAL_THEORY_OPEN",
+  "unresolved_items": [
+    "nonzero Kraus-invariant geometric interference",
+    "canonical spectator reduction if absent from the current Hilbert schema",
+    "full finite-dimensional noncommutative CPOBC representation",
+    "common-output infinite CP-instrument measure"
+  ],
+  "completeness_scope": "exact finite causal-set work through n<=5; relation compilation n<=4; bounded structured d>=3 representation search",
+  "resource_limits": [
+    "brute-force causet canonicalisation is capped at n<=5",
+    "no unbounded Groebner/component decomposition was attempted",
+    "no continuum or large-N computation belongs to v0.3"
+  ],
+  "schema_version": "final-theory-final_v0.3-v0.3.0",
+  "source_commit": "e323fed3c7ab4d82588b4f73d15fa829dc629b03",
+  "code_commit": "f05d3b12c26f027e83de0bb4a1c354a058dc4581",
+  "input_hashes": [
+    {
+      "path": "results/dynamics_v0.2.json",
+      "sha256": "cc30b7b4fb40bbb35c910e92a027a2f1632fe6df56c6dee0fd877143b54152e4"
+    },
+    {
+      "path": "results/final_theory_bench_v0.2.json",
+      "sha256": "cf86c7aeeaf3ea2b578e1bdbdbeaa3618047d856fe340142b2f9edebe787181b"
+    },
+    {
+      "path": "results/gap_register_v0.2.json",
+      "sha256": "d2f36f4cc2df0e37867da50c70b968cbf1d3e5f7a8f18c9be88b685539763bae"
+    },
+    {
+      "path": "results/phase_scan_v0.2.json",
+      "sha256": "f8756da795368b40cd9331e6e9295b27fbcda2132af73f64bb83634acaadd8c4"
+    },
+    {
+      "path": "results/qsg_algebra_v0.2.json",
+      "sha256": "04c3e38cd97e4ac1a31507838214d14cc002c49a39a06ee6a9bacdf483326530"
+    },
+    {
+      "path": "results/reproduction_manifest_final_v0.2.json",
+      "sha256": "cdbfc501fadcc5826080374107154508154e9f2b2efa77bce46957bebaf041e7"
+    },
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "references/papers/2003.11311v1_surya-zalel_covariance-complex-sequential-growth.pdf",
+      "sha256": "0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272"
+    },
+    {
+      "path": "references/papers/gr-qc-9904062v3_rideout-sorkin_classical-sequential-growth.pdf",
+      "sha256": "6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    }
+  ],
+  "source_paper_versions": [
+    {
+      "id": "arXiv:2603.25503v1",
+      "version": "v1, 2026-03-26",
+      "sha256": "sha256:545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "id": "arXiv:2003.11311v1",
+      "version": "v1, 2020-03-25",
+      "sha256": "sha256:0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272"
+    },
+    {
+      "id": "arXiv:gr-qc/9904062v3",
+      "version": "v3, 2004-06-26",
+      "sha256": "sha256:6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    }
+  ],
+  "assumptions": [
+    "v0.2 artifact freeze is immutable",
+    "Track A invertible CPOBC and Track B Kraus channels are distinct",
+    "only exact or explicitly bounded results can pass a scientific gate"
+  ],
+  "exact_numeric_distinction": {
+    "exact": "Fraction, integer combinatorics, and SymPy algebra",
+    "numeric": "no numeric residual is accepted as an exact certificate"
+  },
+  "solver_and_version": {
+    "python": "3.12.10",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5",
+    "python_flint": "0.8.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "random_seeds": {
+    "used": false,
+    "values": [],
+    "policy": "deterministic production"
+  },
+  "generated_artifact_hashes": []
+}
