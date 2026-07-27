@@ -1,0 +1,92 @@
+{
+  "suite": "Final-Theory Bench v0.2 reproduction manifest",
+  "generated_at": "2026-07-27T21:06:53.204714+00:00",
+  "baseline_commit": "f542c6fa9be226f97364efe7718ddd9b9b4d0fb1",
+  "production_commit": "ceed6223fa8022d6affc809c70b8ebdca035888b",
+  "dependency_lock": {
+    "path": "uv.lock",
+    "sha256": "25f4d380be075132f2ee669792c5d703fd6de5ffff817023fd7b85712b980591"
+  },
+  "source_papers": [
+    {
+      "id": "arXiv:gr-qc/0411023v3",
+      "local_file": "papers/gr-qc-0411023v3_deser_self-interaction-gauge-invariance.pdf",
+      "sha256": "sha256:2b665d21441603c882e38ce8d8ae0462e960c804ecc820a73d1b2dea01cddbaf",
+      "version": "v3"
+    },
+    {
+      "id": "arXiv:gr-qc/9904062v3",
+      "local_file": "papers/gr-qc-9904062v3_rideout-sorkin_classical-sequential-growth.pdf",
+      "sha256": "sha256:6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b",
+      "version": "v3, 2004-06-26"
+    },
+    {
+      "id": "arXiv:2003.11311v1",
+      "local_file": "papers/2003.11311v1_surya-zalel_covariance-complex-sequential-growth.pdf",
+      "sha256": "sha256:0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272",
+      "version": "v1, 2020-03-25"
+    },
+    {
+      "id": "arXiv:2603.25503v1",
+      "local_file": "papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "sha256:545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa",
+      "version": "v1, 2026-03-26"
+    },
+    {
+      "id": "arXiv:1001.2725v4",
+      "local_file": "papers/1001.2725v4_benincasa-dowker_scalar-curvature-causal-set.pdf",
+      "sha256": "sha256:e28322cb797a1506406d890a0f2c6bc888f6322c1b1dfd4e3d376dae3fddaa2e",
+      "version": "v4, 2011-11-01"
+    },
+    {
+      "id": "DOI:10.1016/0370-2693(80)90212-9",
+      "local_file": "papers/weinberg-witten_1980_limits-massless-particles.pdf",
+      "sha256": "sha256:4d1bb3764cea38778b5cb279439493193c77edd86d1c74021525fa951da9f8d2",
+      "version": "Physics Letters B 96 (1980) 59-62"
+    },
+    {
+      "id": "DOI:10.1103/PhysRev.135.B1049",
+      "local_file": "papers/weinberg_1964_photons-gravitons-s-matrix.pdf",
+      "sha256": "sha256:855c5ea25269533b2f0a59c3092c99238cc76af897c50ff2a306f09681f66b5d",
+      "version": "Physical Review 135 (1964) B1049-B1056"
+    }
+  ],
+  "seed_policy": {
+    "randomness_used": false,
+    "description": "all v0.2 production checks are exhaustive or deterministic"
+  },
+  "hardware": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.3.5",
+    "sympy": "1.14.0",
+    "gpu_available_for_declared_work": false,
+    "gpu_used": false,
+    "gpu_reason": "The executed domain is exact combinatorics and symbolic/rational algebra. No certified large-ensemble GPU kernel was available."
+  },
+  "exact_numerical_boundary": {
+    "exact": "poset enumeration, automorphisms, move multiplicities, instrument normalization, finite probabilities",
+    "symbolic": "square-root Kraus coefficients stored as exact radicands",
+    "numerical": "none in the dynamics consistency gate",
+    "resource_limit": "brute-force permutation canonicalization declared only through n=5"
+  },
+  "scientific_status": "FINAL_THEORY_OPEN",
+  "artifact_hashes": [
+    {
+      "path": "results/qsg_algebra_v0.2.json",
+      "sha256": "04c3e38cd97e4ac1a31507838214d14cc002c49a39a06ee6a9bacdf483326530"
+    },
+    {
+      "path": "results/dynamics_v0.2.json",
+      "sha256": "cc30b7b4fb40bbb35c910e92a027a2f1632fe6df56c6dee0fd877143b54152e4"
+    },
+    {
+      "path": "results/phase_scan_v0.2.json",
+      "sha256": "f8756da795368b40cd9331e6e9295b27fbcda2132af73f64bb83634acaadd8c4"
+    },
+    {
+      "path": "results/final_theory_bench_v0.2.json",
+      "sha256": "cf86c7aeeaf3ea2b578e1bdbdbeaa3618047d856fe340142b2f9edebe787181b"
+    }
+  ]
+}

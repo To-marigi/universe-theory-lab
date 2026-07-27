@@ -1,0 +1,210 @@
+{
+  "suite": "Final-Theory Bench v0.2 / Quantum Dynamics and Continuum-Phase Gate",
+  "generated_at": "2026-07-27T21:06:53.029590+00:00",
+  "baseline": {
+    "commit": "f542c6fa9be226f97364efe7718ddd9b9b4d0fb1",
+    "annotated_tag": "final-theory-bench-v0.1-open",
+    "files": [
+      {
+        "path": "results/final_theory_bench_v0.1.json",
+        "expected_sha256": "57bfd93cde571b39d43f870d305cbe59f042f8de2efa1affbc1784483b3407ce",
+        "actual_sha256": "57bfd93cde571b39d43f870d305cbe59f042f8de2efa1affbc1784483b3407ce",
+        "unchanged": true
+      },
+      {
+        "path": "Final-Theory-Program/requirements/final_theory_gates.yaml",
+        "expected_sha256": "8a10c947a9031e5dfe88ca1ad7e7a147ae2aab690f7fc29aa35150d09ec9bdb6",
+        "actual_sha256": "8a10c947a9031e5dfe88ca1ad7e7a147ae2aab690f7fc29aa35150d09ec9bdb6",
+        "unchanged": true
+      },
+      {
+        "path": "Final-Theory-Program/candidates/candidate_registry.json",
+        "expected_sha256": "732d7e1e8a0b285263c447f2a09630285fc08c8d5cadcbe5fd20769896917506",
+        "actual_sha256": "732d7e1e8a0b285263c447f2a09630285fc08c8d5cadcbe5fd20769896917506",
+        "unchanged": true
+      },
+      {
+        "path": "Final-Theory-Program/models/causal_information_v1/model_spec.json",
+        "expected_sha256": "c15a22edab4919b357d4019577bc96ecda750bcd836ebe0c0e5191cd0b0b35ed",
+        "actual_sha256": "c15a22edab4919b357d4019577bc96ecda750bcd836ebe0c0e5191cd0b0b35ed",
+        "unchanged": true
+      }
+    ],
+    "passed": true
+  },
+  "production_commit": "ceed6223fa8022d6affc809c70b8ebdca035888b",
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.3.5",
+    "sympy": "1.14.0",
+    "gpu_available_for_declared_work": false,
+    "gpu_used": false,
+    "gpu_reason": "The executed domain is exact combinatorics and symbolic/rational algebra. No certified large-ensemble GPU kernel was available."
+  },
+  "finite_causet_engine": {
+    "max_n": 5,
+    "counts": {
+      "0": 1,
+      "1": 1,
+      "2": 2,
+      "3": 5,
+      "4": 16,
+      "5": 63
+    },
+    "known_count_certificate": true,
+    "independent_oracle": {
+      "0": {
+        "production_count": 1,
+        "oracle_count": 1,
+        "exact_set_match": true
+      },
+      "1": {
+        "production_count": 1,
+        "oracle_count": 1,
+        "exact_set_match": true
+      },
+      "2": {
+        "production_count": 2,
+        "oracle_count": 2,
+        "exact_set_match": true
+      },
+      "3": {
+        "production_count": 5,
+        "oracle_count": 5,
+        "exact_set_match": true
+      },
+      "4": {
+        "production_count": 16,
+        "oracle_count": 16,
+        "exact_set_match": true
+      }
+    },
+    "transition_orbit_count": 132,
+    "deterministic_ordering": true,
+    "arithmetic": "exact integer and Fraction",
+    "resource_status": "EXACT_COMPLETE_WITHIN_DECLARED_DOMAIN",
+    "passed": true
+  },
+  "dynamics_summary": {
+    "status": "DYNAMICS_CANDIDATE_DEFINED",
+    "profile_id": "causal_information_v2_sparse_kraus",
+    "quantum_consistency_status": "PARTIAL",
+    "covariance_status": "COVARIANT_MEASURE_PARTIAL",
+    "background_independence_status": "DYNAMICAL_BACKGROUND_INDEPENDENCE_CANDIDATE"
+  },
+  "qsg_summary": {
+    "reference_reproduction": "PARTIAL_EXACT_REPRODUCTION",
+    "search_status": "QSG_SEARCH_INCONCLUSIVE",
+    "representation_found": false
+  },
+  "phase_summary": {
+    "classification": "FINITE_SIZE_ARTIFACT_UNRESOLVED",
+    "continuum_status": "CONTINUUM_PHASE_RESOURCE_BLOCKED"
+  },
+  "symmetry_pre_gate": {
+    "checks": {
+      "translation_like_homogeneity": "UNDEFINED",
+      "rotation_like_isotropy": "UNDEFINED",
+      "boost_lorentz_like_dispersion": "UNDEFINED",
+      "long_wavelength_mode_stability": "UNDEFINED",
+      "approximate_light_cone": "UNDEFINED",
+      "scale_dependent_symmetry_violation": "UNDEFINED",
+      "preferred_frame_observables": "UNDEFINED",
+      "causal_distance_reconstruction": "NOT_IMPLEMENTED",
+      "interval_statistics": "FINITE_N5_ONLY",
+      "propagator_response": "NOT_DEFINED_FOR_CANDIDATE",
+      "spectral_diagnostics": "NOT_DEFINED_FOR_CANDIDATE",
+      "embedded_control_comparison": "NOT_USED_AS_CANDIDATE_EVIDENCE"
+    },
+    "readiness_conditions": {
+      "stable_effective_dimension": false,
+      "isotropy_violation_decreases": false,
+      "stable_long_wavelength_dispersion": false,
+      "coarse_graining_fixed_symmetry": false,
+      "held_out_ensemble_replication": false
+    },
+    "symmetry_status": "SPIN_CLASSIFICATION_NOT_YET_DEFINED",
+    "spin_gate_status": "SPIN2_GATE_BLOCKED_BY_CONTINUUM",
+    "claim_boundary": "No background was fitted and no spin representation is defined. The v0.1 reference Spin-2 controls are excluded from this evidence."
+  },
+  "held_out": {
+    "held_out_partitions": {
+      "causal_set_size": 5,
+      "coupling_region": "sign-reversed link fugacity (not evaluated)",
+      "initial_history": "two-element chain",
+      "growth_branch": "TIMID",
+      "qsg_representation_dimension": 4,
+      "manifoldlike_control_geometry": "finite chain family",
+      "non_manifoldlike_family": "finite antichain family"
+    },
+    "frozen_items": [
+      "theta_i / rational fugacities",
+      "normalization rule",
+      "operator ordering",
+      "exact equality tolerance",
+      "no classifier threshold exists"
+    ],
+    "retuned_after_held_out": false,
+    "status": "HELD_OUT_PROTOCOL_PASS",
+    "scientific_result": "The held-out protocol protects the negative conclusion; it does not turn the n=5 check into continuum evidence."
+  },
+  "mutations": {
+    "suite": "Final-Theory Bench v0.2 mutations",
+    "checks": {
+      "transitive_closure_missing": true,
+      "acyclicity_violation": true,
+      "isomorphic_duplicates": true,
+      "automorphism_factor_missing": true,
+      "natural_labeling_as_physical_state": true,
+      "spectator_set_misidentified": true,
+      "precursor_set_misidentified": true,
+      "growth_order_as_physical_time": true
+    },
+    "killed": 8,
+    "total": 8,
+    "passed": true
+  },
+  "statuses": {
+    "ENGINEERING_STATUS": "ENGINEERING_PASS",
+    "KINEMATICS_STATUS": "KINEMATICS_DEFINED",
+    "DYNAMICS_STATUS": "DYNAMICS_CANDIDATE_DEFINED",
+    "COVARIANCE_STATUS": "COVARIANT_MEASURE_PARTIAL",
+    "QUANTUM_MEASURE_STATUS": "COVARIANT_MEASURE_PARTIAL",
+    "BACKGROUND_INDEPENDENCE_STATUS": "DYNAMICAL_BACKGROUND_INDEPENDENCE_CANDIDATE",
+    "QSG_ALGEBRA_STATUS": "QSG_SEARCH_INCONCLUSIVE",
+    "PHASE_STATUS": "CONTINUUM_PHASE_RESOURCE_BLOCKED",
+    "CONTINUUM_STATUS": "CONTINUUM_PHASE_RESOURCE_BLOCKED",
+    "SYMMETRY_STATUS": "SPIN_CLASSIFICATION_NOT_YET_DEFINED",
+    "SPIN_GATE_STATUS": "SPIN2_GATE_BLOCKED_BY_CONTINUUM",
+    "SCIENTIFIC_STATUS": "FINAL_THEORY_OPEN"
+  },
+  "benchmark_integrity_passed": true,
+  "allowed_claims": [
+    "KINEMATICS_DEFINED",
+    "DYNAMICS_CANDIDATE_DEFINED",
+    "COVARIANT_MEASURE_PARTIAL",
+    "DYNAMICAL_BACKGROUND_INDEPENDENCE_CANDIDATE",
+    "QSG_SEARCH_INCONCLUSIVE",
+    "CONTINUUM_PHASE_RESOURCE_BLOCKED",
+    "SPIN_CLASSIFICATION_NOT_YET_DEFINED",
+    "SPIN2_GATE_BLOCKED_BY_CONTINUUM",
+    "FINAL_THEORY_OPEN"
+  ],
+  "prohibited_claims": [
+    "DYNAMICS_CONSISTENCY_PASS",
+    "DYNAMICAL_BACKGROUND_INDEPENDENCE_PASS",
+    "QSG_REFERENCE_RESULTS_REPRODUCED",
+    "QSG_NONCOMMUTATIVE_REPRESENTATION_FOUND",
+    "QSG_NO_REPRESENTATION_UP_TO_D",
+    "CONTINUUM_PHASE_CANDIDATE",
+    "SPIN_CLASSIFICATION_READY",
+    "SPIN2_GATE_READY",
+    "SPIN2_CANDIDATE",
+    "SPIN2_GATE_PASS",
+    "UNIVERSAL_COUPLING_PASS",
+    "EINSTEIN_VERTEX_PASS",
+    "FINAL_THEORY_COMPLETED"
+  ],
+  "stopping_reason": "An explicit finite-cutoff Kraus growth candidate is defined and passes exact normalization, positivity, and label-covariance checks. Quantum Bell causality, covariant-event extension, scalable phase sampling, continuum diagnostics, and emergent symmetry remain open."
+}

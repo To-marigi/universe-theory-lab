@@ -1,0 +1,419 @@
+{
+  "suite": "QSG algebra v0.2",
+  "source": "arXiv:2603.25503v1",
+  "reference_reproduction": {
+    "time_ordered": {
+      "ordering": "TOBC",
+      "source_equations": [
+        49,
+        64,
+        65,
+        69,
+        70
+      ],
+      "verified_identity": "Q1*R*Q1 = -[Q1,Qn]",
+      "identity_residual": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "identity_exact": true,
+      "noncommuting_probe_rejected": true,
+      "result_boundary": "This verifies the invertible-matrix implication used by the induction; the paper's all-stage combinatorial induction is tracked as a source theorem rather than re-proved by enumeration."
+    },
+    "non_time_ordered": {
+      "ordering": "NTOBC",
+      "source_equations": [
+        71,
+        83,
+        91,
+        92,
+        93,
+        95,
+        98
+      ],
+      "noncommuting_probe_relation_91_residual": [
+        [
+          "1/210",
+          "1/105"
+        ],
+        [
+          "1/210",
+          "-1/210"
+        ]
+      ],
+      "noncommuting_probe_rejected": true,
+      "commuting_probe_passes": true,
+      "result_boundary": "The exact n=2 forcing relation is reproduced. The paper's subsequent induction is recorded separately as a source result."
+    },
+    "causal_past_ordered": {
+      "ordering": "CPOBC",
+      "source_equations": [
+        114,
+        119,
+        137,
+        140,
+        141,
+        150,
+        151,
+        159,
+        162,
+        163,
+        164
+      ],
+      "three_distinct_pauli": {
+        "lhs": [
+          [
+            "-I",
+            "0"
+          ],
+          [
+            "0",
+            "-I"
+          ]
+        ],
+        "rhs": [
+          [
+            "I",
+            "0"
+          ],
+          [
+            "0",
+            "I"
+          ]
+        ],
+        "residual": [
+          [
+            "-2*I",
+            "0"
+          ],
+          [
+            "0",
+            "-2*I"
+          ]
+        ],
+        "necessary_relation_violated": true
+      },
+      "two_pauli_path_probe": {
+        "scalars": [
+          2,
+          3,
+          5,
+          7
+        ],
+        "pattern": [
+          "sigma_x",
+          "sigma_y",
+          "sigma_x",
+          "sigma_y"
+        ],
+        "invertibility": {
+          "Q1": true,
+          "Q2": true,
+          "Q3": true,
+          "Q4": true,
+          "I-Q1": true,
+          "A1_2": true,
+          "A2_2": true,
+          "S1": true,
+          "S2": true
+        },
+        "equation_163_residual": [
+          [
+            "12152*I/15123",
+            "26964/5041"
+          ],
+          [
+            "26964/5041",
+            "-12152*I/15123"
+          ]
+        ],
+        "rejected_exactly": true
+      },
+      "reproduction_status": "PARTIAL_EXACT_REPRODUCTION",
+      "unreproduced_reference_scope": "A continuous-parameter elimination for every two-Pauli assignment listed in the appendix has not been independently completed."
+    },
+    "core_checks_passed": true,
+    "status": "PARTIAL_EXACT_REPRODUCTION"
+  },
+  "new_search": {
+    "dimensions": [
+      {
+        "dimension": 3,
+        "ansatz": "ordered four-tuples from six exact rational matrices: two diagonal, upper/lower Jordan, shifted cycle, shifted reversal",
+        "tuple_count": 1296,
+        "noncommuting_tuple_count": 1276,
+        "core_relation_survivor_count": 84,
+        "core_relation_survivor_sample": [
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            3
+          ],
+          [
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            4
+          ],
+          [
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            5,
+            5
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            5
+          ],
+          [
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            3,
+            3
+          ]
+        ],
+        "full_relation_certificate_count": 0,
+        "exact_arithmetic": true,
+        "search_result": "CORE_RELATION_CANDIDATES_REQUIRE_FULL_RELATION_AUDIT",
+        "claim_boundary": "This finite library is not complete in dimension 3; absence of a survivor is not a no-go theorem."
+      },
+      {
+        "dimension": 4,
+        "ansatz": "ordered four-tuples from six exact rational matrices: two diagonal, upper/lower Jordan, shifted cycle, shifted reversal",
+        "tuple_count": 1296,
+        "noncommuting_tuple_count": 1276,
+        "core_relation_survivor_count": 84,
+        "core_relation_survivor_sample": [
+          [
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            0,
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            0,
+            3,
+            3
+          ],
+          [
+            0,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            4
+          ],
+          [
+            0,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            5,
+            5
+          ],
+          [
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            1,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            4
+          ],
+          [
+            1,
+            1,
+            1,
+            5
+          ],
+          [
+            1,
+            1,
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            2,
+            2
+          ],
+          [
+            1,
+            1,
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            3,
+            3
+          ]
+        ],
+        "full_relation_certificate_count": 0,
+        "exact_arithmetic": true,
+        "search_result": "CORE_RELATION_CANDIDATES_REQUIRE_FULL_RELATION_AUDIT",
+        "claim_boundary": "This finite library is not complete in dimension 4; absence of a survivor is not a no-go theorem."
+      }
+    ],
+    "core_relation_candidates_found": true,
+    "noncommutative_representation_found": false,
+    "status": "QSG_SEARCH_INCONCLUSIVE"
+  },
+  "qsg_algebra_status": "QSG_SEARCH_INCONCLUSIVE",
+  "prohibited_inference": "The search does not justify QSG_NO_REPRESENTATION_UP_TO_D."
+}
