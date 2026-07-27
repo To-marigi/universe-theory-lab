@@ -1,0 +1,1499 @@
+===== PAGE 1 =====
+
+arXiv:hep-th/9209101v1  25 Sep 1992
+MS-TPI-92-20
+Critical Wilson Lines in Toroidal
+Compactiﬁcations of Heterotic Strings ∗
+Thomas Mohaupt
+Institut f¨ ur Theoretische Physik I, Universit¨ at M¨ unster
+Wilhelm-Klemm-Str. 9, D-4400 M¨ unster, Germany
+July 16, 1992
+Abstract
+Critical values of Wilson lines and general background ﬁeld s for
+toroidal compactiﬁcations of heterotic string theories ar e constructed
+systematically using Dynkin diagrams.
+∗ This work is part of a Ph.D. thesis in preparation at the science facult y of the university
+of M¨ unster.
+1
+
+===== PAGE 2 =====
+
+1 Introduction
+Toroidal compactiﬁcations [13], [21], [20] oﬀer the simplest way to con struct
+heterotic string theories in four space–time dimensions. Although t hey do
+not have a realistic spectrum they can be used as a starting point fo r the
+construction of other theories like toroidal orbifolds [5], [6], [22] or c ovariant
+lattice models [18], and some typical features of string compactiﬁca tions can
+be studied easily because the inner or compactiﬁed degrees of free dom of
+the string can still be represented by a free conformal ﬁeld theor y. String
+compactiﬁcations and more generally non–minimal conformal ﬁeld th eories
+depend on continuous parameters, called moduli, which have been th e ob-
+ject of many studies (see for example:[20], [7],[3],[4]). One is interested in the
+global geometry of moduli spaces and especially in its discrete symme tries
+under duality (or target space modular) transformations which in t he string
+interpretation are probably connected to the existence of a minima l length
+scale [24], [10]. Another point of interest is the behaviour of the spec trum
+and symmetry group under continuous deformations and the exist ence of
+critical values with extended symmetry. This has been studied syst emati-
+cally for those moduli of toroidal compactiﬁcations which already ap pear in
+the bosonic case [8], [20], namely the metric Gij and the so called axionic
+background ﬁeld Bij. For the background gauge ﬁeld (the so called Wilson
+lines) only particular examples [8] of critical values have been mention ed
+so far. The purpose of this paper is to study systematically Wilson line s
+and general background ﬁelds in toroidal compactiﬁcations. This is a ﬁrst
+step to a better understanding of continuous background ﬁelds, especially
+Wilson lines, in more general situations. After reviewing the relevant facts
+about toroidal compactiﬁcations and Lie algebras I show in detail ho w the
+Lie algebra that is present in a toroidal compactiﬁcation without Wilso n lines
+and Bij–ﬁeld can be broken to any maximal regular subalgebra by a suit-
+able choice of one Wilson line. This is done by implementing the extended
+Dynkin diagram formalism, which makes the procedure very transpa rent.
+The results are then generalized in two steps to general regular su balgebras
+of maximal and nonmaximal rank. If the rank of the semisimple part o f
+the Lie algebra is reduced, the method characterizes critical hype rsurfaces
+instead of critical points. Then I investigate how the rank of the se misimple
+part of the gauge Lie algebra can be enlarged beyond 16. The gener alization
+to general background ﬁelds does not only combine the old results a bout the
+2
+
+===== PAGE 3 =====
+
+Bij–ﬁeld (which are reproduced) with the new results about Wilson lines b ut
+also shows how the eﬀects of the diﬀerent background ﬁelds can “in terfere”.
+Finally the construction is translated into the language of shift vect ors for
+rational background ﬁelds. In the last section I propose further applications
+to more general compactiﬁcations.
+2 Toroidal Compactiﬁcations with Background
+Fields
+The simplest way to get a four-dimensional (or more generally a D-dim ensional,
+D < 10) theory from the ten-dimensional heterotic string is the compa ctiﬁ-
+cation of six (or d) space dimensions on a torus [13]:
+R10 − → RD × T d, (1)
+where
+T d = Rd
+2πΛ, d = 10 − D, (2)
+and Λ is a d-dimensional lattice with basis {ei}. Since this can also be in-
+terpreted as a compactiﬁcation on the torus Rd/Zd in the presence of a con-
+stant background gravitational ﬁeld, it is natural to admit nonzer o constant
+vacuum expectation values for those ﬁelds, which are massless spa ce-time
+scalars from the D-dimensional point of view. This leads to the Narain model
+[21],[20], a continuous family of string vacua parametrized by the vacu um ex-
+pectation values of the symmetric and antisymmetric tensor ﬁeld an d of the
+gauge ﬁelds in the internal dimensions. A state of the compactiﬁed t heory is
+not only labeled by its continuous space-time momentum pµ, µ = 1 , . . . , D,
+its oscillation state, and its gauge quantum numbers pI, I = 1 , . . . ,16, but
+also by its winding vector
+w = wiei ∈ Λ, (3)
+describing how the string wraps around the internal dimensions, an d by its
+discrete internal momentum
+p = pie∗i ∈ Λ∗. (4)
+{e∗i} is the standard basis of the dual lattice Λ ∗ of Λ. The metrics of the
+two lattices are
+Gij = e∗i ·e∗j and Gij = ei ·ej, where GijGjk = e∗i ·ek = δi
+k (5)
+3
+
+===== PAGE 4 =====
+
+The vectors which consist of the gauge quantum numbers pI of the ten di-
+mensional theory are constrained to form a sixteen dimensional ev en selfdual
+euclidean lattice Γ 16 [13]. There are (up to isometries) only to two such lat-
+tices: the root lattice of the Lie algebra E8 ⊕ E8 and the sublattice D(0)(s)
+16
+of the weight lattice of the Lie algebra D16 that is generated by the roots
+and the spinor weights [2]. The corresponding gauge groups (of the ten di-
+mensional theory) are E8 ⊗ E8 and Spin(32)/Z2. All the internal quantum
+numbers of the D–dimensional theory can be combined into the left– and
+right–moving momenta, which form the momentum lattice Γ ≡ Γ16+d;d:
+(pL; pR) =
+(
+pI
+LeI + pi
+Lei; pi
+Rei
+)
+∈ Γ16+d;d, (6)
+where {eI} is a basis of Γ 16, and [8]
+pI
+L = pI + AI
+i wi, (7)
+pi
+L = 1
+2pi − Bi
+kwk − 1
+2 pJ AJ i − 1
+4 AKiAK
+j wj + wi (8)
+pi
+R = 1
+2pi − Bi
+kwk − 1
+2 pJ AJ i − 1
+4 AKiAK
+j wj − wi (9)
+In these formulas Bij are the components of the antisymmetric tensor ﬁeld
+and AI
+i are the components of the background gauge ﬁeld: There is one
+nontrivial gauge ﬁeld conﬁguration (called Wilson line) Ai = AI
+i eI for each
+generator of the fundamental group of the torus and all those ﬁ elds must take
+values in a Cartan subalgebra (i.e. they all commute), that is in R16 [13],[20].
+The dependence of Γ on the lattice Λ is implicit in the component notatio n
+in that the i, j, . . . indices are raised and lowered by the metric Gij = ei ·ej of
+the lattice Λ. The momentum lattice is, by construction, selfdual an d even
+with respect to the signature (+) 16+d(− )d; this is, as shown by Narain [21],
+equivalent to modular invariance of the theory. Gij, Bij and AI
+i parametrize
+all SO(16 + d; d)– boosts of Γ modulo proper rotations and, because there
+exists up to isometries only one self dual even lattice for each signat ure 8 n,
+n = 1, 2, . . ., one gets all models by varying these parameters 1 [20].
+The vectors of the momentum lattice contain the gauge quantum nu mbers
+of the states. To each vector of the form
+(pL; 0) ∈ Γ16+d;d, p2
+L = 2, (10)
+1Rotations are symmetries of the space of theories, and there are further, discrete
+identiﬁcations of theories due to duality [20].
+4
+
+===== PAGE 5 =====
+
+called a root 2 of Γ, corresponds a charged, massless spin 1 state, that means
+a charged gauge boson. These states combine with 16 + d uncharged gauge
+bosons, which are present for all choices of Γ, to form the adjoint represen-
+tation of the gauge group of the model under consideration, which is of the
+form
+G = G(l) ⊗ U(1)16+d− l, (11)
+where G(l) is a simply laced, semisimple Lie group of rank l and l, 0 ≤ l ≤
+16 + d is the number of linear independent roots. If one sets Bij = 0 and
+AI
+i = 0 (“compactiﬁcation without background ﬁelds”) the gauge grou ps are,
+according to the choice of the ten dimensional theory
+G = E8 ⊗ E8 ⊗ U(1)d or G = Spin(32)/Z2 ⊗ U(1)d. (12)
+Before we can study the eﬀects of nonvanishing background ﬁelds on the
+gauge group systematically, we must recall some elements of Dynkin s theory
+of subalgebras of semisimple Lie algebras.
+3 Mathematical preliminaries
+A semisimple Lie algebra 3 g of rank l can be decomposed into a Cartan sub-
+algebra h and the one dimensional root spaces gα, which are the eigenspaces
+with respect to the adjoint action of h on g:
+g = h ⊕
+⨁
+α∈ Σ
+gα (13)
+The root spaces are labeled by a ﬁnite set Σ of l–dimensional vectors , whose
+components are the eigenvalues of the Cartan generators in the c orresponding
+root space. From Σ one can choose a set Π = {αi : i = 1 , . . . , l} of simple
+roots, from which all roots and the Lie algebra itself can be reconst ructed4.
+2This useful terminology was introduced in the context of the covar iant lattice con-
+struction [18].
+3The material presented here can be found in the book by Cahn [1], as far as semisimple
+Lie algebras are concerned. A good reference for general Lie alge bras is [14]. A useful
+collection of data of simple Lie algebras is given in appendix F of the book [2].
+4The same amount of information is encoded also in the Cartan matrix a nd in the
+Dynkin diagram.
+5
+
+===== PAGE 6 =====
+
+A subalgebra g′ of g is called regular, if it respects this decomposition
+in the sense that its decomposition fulﬁlls h′ ⊂ h and Σ ′ ⊂ Σ. Non regular
+subalgebras will be ignored in the following, because the method that I will
+describe in the next section works by reducing the set of roots and so only
+gives regular subalgebras. As the rank of the gauge group is ﬁxed ( to be
+16 + d) in toroidal compactiﬁcations we can restrict ourselves to regular sub-
+algebras of maximal rank. In order to construct subalgebras in a s ystematic
+way, one deﬁnes g′ to be a maximal subalgebra of g, if
+g′ ⊂ ˜g ⊂ g =⇒ ˜g = g′ or ˜g = g (14)
+for all subalgebras ˜g. This notion needs further reﬁnement because a max-
+imal subalgebra of a semisimple Lie algebra is not necessarily semisimple.
+A “maximal semisimple subalgebra” is thus a subalgebra which is maximal
+among the semisimple subalgebras. The only non semisimple subalgebra s
+that will appear in the following are of the form semisimple ⊕ abelian, be-
+cause other types of subalgebras cannot be realized 5.
+Dynkin has given a (not entirely correct, see below) rule to constru ct all
+maximal semisimple subalgebras of a simple Lie algebra. (This extends t o
+semisimple Lie algebras because they are direct sums of simple ones.) T he
+rule can be stated diagrammatically by saying that one has to remove, in all
+possible ways, one dot from the extended Dynkin diagram of th e simple Lie
+algebra g. This means, in algebraic terms, that one chooses a system of simple
+roots (which can be represented by a Dynkin diagram), then exten ds this by
+the lowest root (thus extending the Dynkin diagram) and ﬁnally delet es one
+root. The resulting set is the system of simple roots of a maximal ran k,
+maximal semisimple regular subalgebra of g. (There are ﬁve exceptional
+cases in which the subalgebra constructed this way is not maximal. Se e
+(52)) This subalgebra does not need to be proper, but one gets all maximal
+semisimple regular subalgebras and by iteration of the procedure all maximal
+rank, regular semisimple subalgebras 6.
+5These other types of subalgebras have root systems which do not contain the negatives
+of some roots, so they have an nilpotent part. A representation o f such an algebra cannot
+be constructed by the lattice technique used in toroidal compactiﬁ cations, because the neg-
+ative of a lattice vector is always a lattice vector itself, and also violat es CPT-Invariance,
+because some antiparticles are missing.
+6It can also happen that one gets diﬀerent but conjugated subalge bras while generating
+all these algebras. The uniqueness problem will be discussed later.
+6
+
+===== PAGE 7 =====
+
+In order to get the regular semisimple subalgebras of non maximal ra nk,
+one has to combine this rule with a second one [1], [19]: Removing k dots,
+0 < k < l from the Dynkin diagram of a simple Lie algebra of rank l gives
+the Dynkin diagram of a regular semisimple subalgebra of ran k l − k, and all
+regular semisimple subalgebras of this rank can be construc ted by removing,
+in all possible ways, k dots from all rank l regular semisimple subalgebras 7.
+In our application to the Narain model the total rank of the gauge g roup
+is ﬁxed, as explained above. So we will only be able to reduce the rank o f
+the semisimple part by removing roots, while the Cartan subalgebra is ﬁxed,
+thus giving regular subalgebras of the type semisimple ⊕ abelian.
+4 Breaking to maximal Subalgebras by one
+Wilson line
+4.1 Formulation of the symmetry breaking problem
+The discussion of symmetry breaking by Wilson lines starts naturally w ith a
+compactiﬁcation on a lattice Λ with “no background ﬁelds” 8 , that is with
+Bij = 0 and AI
+i = 0. The momentum lattice Γ is then of the form
+Γ16+6;6 = Γ 16 ⊕ Γ6;6, (15)
+where Γ 16 is one of the two sixteen-dimensional euclidean even selfdual lat-
+tices mentioned above and Γ 6;6 is a twelve-dimensional lorentzian even self-
+dual lattice with zero signature, which is orthogonal to Γ 16. The momentum
+lattice has a natural basis [8] that is given by the basis of Λ, Λ ∗ and Γ 16:
+ki =
+(
+0, 1
+2 e∗i; 1
+2 e∗i
+)
+ki = (0, ei; − ei) (16)
+lA = (eA, 0; 0)
+7Isomorphic subalgebras need not be conjugated, if the Lie algebra has outer automor-
+phisms [19].
+8Remind that the speciﬁcation of the background metric Gij is equivalent to the spec-
+iﬁcation of the lattice Λ.
+7
+
+===== PAGE 8 =====
+
+The nonvanishing (lorentzian) scalar products between these bas is vectors
+are:
+kikj = δi
+j, lAlB = g(16)
+AB (17)
+where g(16)
+AB is the metric of Γ 16. The choice of this parametrization is very
+useful, because the switching on of background ﬁelds correspond s to an isom-
+etry of the momentum lattice and thus preserves the relations (17 ). What
+changes is the relation between the momentum lattice and the other lattices9
+[8]:
+k′i =
+(
+0, 1
+2e∗i; 1
+2 e∗i
+)
+k
+′
+i =
+(
+Ai, − Bjie∗j − 1
+4(Aj ·Ai)e∗j + ei; − Bjie∗j − 1
+4 (Aj ·Ai)e∗j − ei
+)
+(18)
+lA =
+(
+eA, − 1
+2 (eA ·Ai)e∗i; − 1
+2 (eA ·Ai)e∗i
+)
+The vectors Ai =AI
+i eI are called Wilson lines. In order to learn about the
+patterns of symmetry breaking it is useful to study the eﬀect of o ne single
+Wilson line by setting Bij = 0, Ai = 0, i ̸= 1,and taking the one direction of
+Λ, to which the Wilson line is assigned, to be orthogonal to the others . The
+momentum lattice is then in general of the form Γ 17;1 ⊕ Γ5;5. We can now
+analyze how the gauge group depends on the sixteen parameters AI
+1. If also
+AI
+1 = 0, the roots of the momentum lattice are given by the basis vector s
+lA = ( eA, 0; 0) , A = 1 , . . . ,16: When Γ 16 is the E8 ⊕ E8 root lattice, the
+basis vectors eA are automatically a set of simple roots Π = {αA = eA} of
+the corresponding Lie algebra and their integer linear combinations o f norm
+squared 2 are the roots. When Γ 16 = D(o)(s)
+16 the basis consists of all but one
+of the simple roots of D16 plus one spinor weight vector, and the missing
+simple root is given by an integer linear combination [2]:
+e1 = 1
+2
+8∑
+A=1
+α2A− 1, eA = αA, A = 2, . . . ,16 (19)
+α1 = 2e1 −
+7∑
+A=1
+e2A+1 (20)
+9In canonical operator quantization a shift of background ﬁelds ind uces a shift of the
+canonical momentum relative to the kinetic momentum [20].
+8
+
+===== PAGE 9 =====
+
+As we are at the moment only interested in the gauge group, but not in
+the complete spectrum, we will only consider the sublattice generat ed by the
+simple roots. So we ﬁnd that in both cases there is a set of vectors
+ˆαA = (αA, 0; 0) (21)
+which may be called simple roots of Γ because they are a generating se t
+for the roots of Γ (which, remember, correspondent precisely to the charged
+gauge bosons). If we now switch on our Wilson line A1 these roots are
+mapped to
+ˆα′
+A =
+(
+αA, − 1
+2 (αA ·A1)e∗1; − 1
+2 (αA ·A1)e∗1
+)
+= ˆαA − (αA ·A1)k1 (22)
+Since k1 ≡ k′1 and the momentum lattice is selfdual for all values of the
+background ﬁelds, we deduce that ˆαA is in the new momentum lattice Γ′ if
+and only if αA ·A1 is an integer 10. Combining this observation with Dynkins
+theorem on maximal regular semisimple maximal rank subalgebras we c an
+formulate the conditions the Wilson line A1 must obey in order to break the
+Lie algebra g of the gauge group to such an subalgebra: Obviously we must
+project out one of the simple roots, while keeping the others and the lowest
+root − αh. We can now state the symmetry breaking problem:
+If the Wilson line A1 shall break the gauge Lie algebra to the maximal
+subalgebra that is deﬁned by removing the I-th dot from the ex tended Dynkin
+diagram, then it must fulﬁll :
+αI ·A1 ̸∈ Z (23)
+αA ·A1 ∈ Z, (A ̸= I) (24)
+αh ·A1 ∈ Z (25)
+4.2 The standard solution of the symmetry breaking
+problem
+The next step is to show, that these conditions can be fulﬁlled for ar bitrary
+I. This is somewhat trivial, because the equations above mean nothin g but
+10Note that all vectors in Γ ′ must have mutual integer scalar products and that ˆαA and
+ˆα′
+A cannot be in the same selfdual lattice, if this condition is not fulﬁlled.
+9
+
+===== PAGE 10 =====
+
+A1 being a weight vector of the subalgebra but not of the algebra, but it
+is instructive and useful to construct an explicit solution. The symm etry
+breaking problem (23) - (25) will be solved for an arbitrary simple Lie a lgebra
+of arbitrary rank l. This extends trivially to the semisimple case. It is not
+necessary to specify the Lie algebra, and the technique used here will be
+useful in the following.
+Let g be a simple simply laced Lie algebra of rank l and with simple
+roots {α1, . . . , αl} and lowest root − αh and let g′ be the regular maximal
+rank semisimple subalgebra with simple roots
+{β1, . . . , βl} = {α1, . . . , αI− 1, − αh, αI+1, . . . , αl} (26)
+The equations (24) and (25) imply that A1 is a weight vector of g′ and thus
+is an integer linear combination of the fundamental weight vectors β∗
+A of g′:
+A1 =
+l∑
+A=1
+aAβ∗
+A, a A ∈ Z (27)
+The highest root αh of g is a (known, see [2]) integer linear combination of
+the simple roots of g:
+αh =
+l∑
+A=1
+kAαA, k A ∈ Z, kA ≥ 0 (28)
+These equations can be used to express the simple roots of g as rational
+linear combinations of the simple roots of g′:
+αI = 1
+kI
+
+ αh −
+∑
+A̸=I
+kAαA
+
+ = 1
+kI
+
+ βI −
+∑
+A̸=I
+kAβA
+
+ (29)
+αA = βA, for A ̸= I (30)
+If kI = 1, αI is a root of g′ and the subalgebra is not a proper one: g′ = g.
+This corresponds to those cases in Dynkins method where by remov ing a dot
+from the extended Dynkin diagram one gets the original Dynkin diagr am. If
+kI > 1 the equations (24) and (25) are identically satisﬁed and it remains t o
+check equation (23). Since by deﬁnition β∗
+A ·βB = δAB we get by substituting
+(27) into (23):
+αI ·A1 = − 1
+kI aI −
+∑
+A̸=I
+kAaA
+kI (31)
+10
+
+===== PAGE 11 =====
+
+Choosing simply A1 = β∗
+I , i.e. aA = δAI we get
+αI ·AI = − 1
+kI ̸∈ Z (32)
+because kI > 1. This solution is the most natural one because A1 is chosen
+to be the only fundamental weight vector of the subalgebra that is not a
+weight of g. Therefore
+A1 = β∗
+I (33)
+will be called the standard solution of the symmetry breaking problem. The
+considerations of this section have shown that Dynkins formalism ca n be
+implemented in the Narain model in a simple and natural way.
+4.3 All solutions of the symmetry breaking problem
+The next question to be investigated is how many other solutions of t he equa-
+tions (23) – (25) exist. As these equations are equivalent to the st atement,
+that A1 is a weight vector of g′ but not of g, the general solution can be
+parametrized in the following way:
+A1 = β∗
+I + v, where v ∈ ΓW (g′) (34)
+Let now Γ ′ be the lattice corresponding to the standard choice v = 0 of the
+Wilson line, whereas Γ ′′ is some other solution of the symmetry breaking
+problem with v ̸= 0. These lattices can be compared most easily by looking
+at there basis vectors. In the E8 ⊕ E8 case basis for Γ ′ and Γ ′′are given by
+k
+′
+1 =
+(
+β∗
+I , − 1
+2 (β∗
+I )2 1
+2e∗1 + e1; − 1
+2 (β∗
+I )2 1
+2 e∗1 − e1
+)
+(35)
+k
+′′
+1 =
+(
+β∗
+I + v, − 1
+2 ((β∗
+I + v)2) 1
+2 e∗1 + e1; − 1
+2 ((β∗
+I + v)2) 1
+2 e∗1 − e1
+)
+(36)
+ˆα′
+I =
+(
+αI, − (αI ·β∗
+I ) 1
+2 e∗1; − (αI ·β∗
+I ) 1
+2e∗1
+)
+(37)
+ˆα′′
+I =
+(
+αI, − (αI ·β∗
+I + αI ·v) 1
+2e∗1; − (αI ·β∗
+I + αI ·v) 1
+2 e∗1
+)
+(38)
+ˆαA = ˆα′
+A = ˆα′′
+A = (αA, 0; 0), for A ̸= I (39)
+11
+
+===== PAGE 12 =====
+
+k′′i = k′i = ki for all i, k
+′′
+i =
+k
+′
+i =
+ki for i ̸= 1. (40)
+(The unprimed vectors are the standard basis (16) of the lattice w ithout
+background ﬁelds, Γ.) We also need the images of the highest root ˆαh of Γ
+in Γ ′ and Γ ′′:
+ˆα′
+h = ˆαh + (− αh ·β∗
+I )k1 = ˆαh + k1 (41)
+ˆα′′
+h = ˆαh + (1 − αh ·v)k1, where − αh ·v ∈ Z (42)
+In the D16 case there is one basis vector l′′
+1 (see (19)) in the 16–dimensional
+sector that is not a root, but constructed from a spinor weight. B ut I will
+analyze the E8 ⊕ E8 case, where the basis of the lattices Γ ′ and Γ ′′only diﬀer
+by two vectors k
+′′
+1 and ˆα′′
+I . The arguments given below can be extended to
+the more complicated case by treating l′′
+1 the same way as ˆα′′
+I will be dealt
+with below.
+In order to make the analysis as simple as possible, let us assume for t he
+moment that v is a weight vector of g, which implies αI ·v ∈ Z. Then ˆα′′
+I
+and ˆα′
+I are in Γ ′ ∩ Γ′′ and we must only care about
+k
+′′
+1. If v is even in the
+root lattice of g′ we can expand it
+ˆv ≡ (v, 0; 0) =
+l∑
+A=1
+vA(βA, 0; 0) ≡
+l∑
+A=1
+vA ˆβA, where vA ∈ Z, (43)
+implying ˆv ∈ Γ′′. As v is in the root lattice and β∗
+I is a weight vector of g′
+it follows v2 ∈ 2Z, v ·β∗
+I ∈ Z and
+k
+′′
+1 −
+k
+′
+1 = ˆv − (β∗
+I ·v + 1
+2 v2)k1 (44)
+This diﬀerence being in Γ ′′implies k
+′
+1 ∈ Γ′′. As all basis vectors of Γ ′′are in
+Γ′ and vice versa both lattices are equal. If we want to construct a ph ysically
+diﬀerent solution of the symmetry breaking problem, we must choos e v ̸∈
+ΓR(g′) and solutions diﬀering by elements of Γ R(g′) are identical. As v must
+be in the weight lattice of g′ we can conclude: If v is a weight vector of g, then
+the inequivalent solutions of the symmetry breaking proble m are parametrized
+by the elements of the ﬁnite factor group
+ΓW (g′)/ΓR(g′) (45)
+12
+
+===== PAGE 13 =====
+
+This group is well known in the theory of Lie groups and Lie algebras be cause
+it is (isomorphic to) the group of conjugacy classes of representa tions of g′
+and the center of the universal linear group exp( g′) of g′ [11],[2], [18].
+Let us now have a look on ˆα′′
+I and relax the condition on αI ·v. Since
+ˆα′′
+I = ˆα − (αI ·β∗
+I + αI ·v)k1 = ˆα′
+I − (αI ·v)k1, (46)
+αI ·v ̸∈ Z, which is equivalent to v̸∈ ΓW (g), implies ˆα′′
+I ̸∈ Γ′ and Γ ′′ ̸= Γ ′.
+But as always v ∈ ΓW (g′) and ((29), no summation of I)
+kIαI = − βI −
+∑
+A̸=I
+kAβA ∈ ΓR(g′), (47)
+we have
+αI ·v = m
+kI mod Z, ∃m ∈ { 1, . . . , kI} (48)
+As both αI and v are weights of g′ their scalar product modulo integers
+is characterized by their conjugacy classes [18]. Combining this with t he
+previous result on the dependence of Γ ′′on k
+′′
+1 we conclude: The inequivalent
+solutions of the symmetry breaking problem are parametrize d by the elements
+of the ﬁnite factor group
+ΓW (g′)/ΓR(g′) (49)
+A further interesting observation, which will be useful later, is tha t the
+case m = 1 in equation (48) is special. We then have:
+αI ·v = 1
+kI ⇒ αI ·β∗
+I + αI ·v = 0 ⇒ ˆαI ∈ Γ′′ (50)
+That means that all roots of g are in Γ′′and the algebra of symmetries realized
+is in fact g. The condition (23), which makes sure that αI is projected out, is
+not fulﬁlled, because A1=β∗
+I + v ∈ ΓW (g). If A1∈ ΓR(g) the basis vectors of
+Γ′′are all in Γ implying Γ ′′= Γ. If not, the lattices have the same roots but
+are diﬀerent, that means they describe theories with identical gau ge group
+but diﬀerent spectra. A necessary condition to break g to g′ is
+A1 ∈ ΓW (g′) − ΓW (g) (51)
+As g′ is a maximal subalgebra and this choice deﬁnes a proper subalgebra o f
+g that contains g′, it is also suﬃcient.
+13
+
+===== PAGE 14 =====
+
+We have also to remember that there are cases where Dynkins rule d oes
+not give a maximal subalgebras. But there are only the ﬁve following e x-
+ceptions [12], [1] where the algebra on the left is the would–be–maxima l
+subalgebra11:
+A3 ⊕ A3 ⊕ A1 ⊂ D6 ⊕ A1 ⊂ E7
+A3 ⊕ D5 ⊂ D8 ⊂ E8
+A1 ⊕ A2 ⊕ A5 ⊂ A2 ⊕ E6 ⊂ E8
+A1 ⊕ A7 ⊂ A1 ⊕ E7 ⊂ E8
+A3 ⊕ A1 ⊂ B4 ⊂ F4
+(52)
+The ﬁfth case is concerned with non simply laced Lie algebras and cann ot
+appear in our context. The other cases are relevant to the break ing of E8.
+They will be discussed in the next section where we will analyze how to b reak
+the gauge algebra to a general semisimple maximal rank subalgebra.
+5 Maximal rank semisimple subalgebras
+Every maximal rank semisimple subalgebra of g will appear in a chain of
+maximal semisimple maximal rank subalgebras:
+g ⊃ g(1) ⊃ g(2) ⊃ · · · (53)
+As the root and weight lattices of simply laced Lie algebras satisfy
+ΓR ⊂ ΓW = Γ ∗
+R (54)
+each chain (53) of maximal subalgebras induces a chain of lattices:
+· · ·ΓR(g(2)) ⊂ ΓR(g(1)) ⊂ ΓR(g) ⊂ ΓW (g) ⊂ ΓW (g(1)) ⊂ ΓW (g(2)) · · ·(55)
+Then every choice
+A1 ∈ ΓW (g(n)) − ΓW (g(n− 1)) (56)
+of the Wilson line will break g precisely to the subalgebra g(n), if we assume
+for the moment that g(n) only appears in one such chain. To prove this note
+ﬁrst that for all roots α of g(n)
+A1 ·α ∈ Z =⇒ ˆα ∈ Γ = Γ 17;1 ⊕ Γ5;5 (57)
+11 Note that there is an apparent misprint in the book [1].
+14
+
+===== PAGE 15 =====
+
+because a vector is in the selfdual momentum lattice if and only if it has
+integer scalar products with all basis vectors. This implies that all ro ots of
+g(n) are roots of the momentum lattice and g(n) is contained in the gauge
+Lie algebra. If on the other hand β is a root of g(n− 1) that is not a root
+of g(n), assume A1 · β ∈ Z, such that ˆβ ∈ Γ. By linearity Γ then contains
+the root system of a Lie algebra that is bigger than g(n) and a subalgebra
+of g(n− 1). By maximality this Lie algebra must be g(n− 1) itself, but this is
+an contradiction because A1 must by construction have a non integer scalar
+product with at least one root of g(n− 1). Therefore we can conclude
+A1 ·β ̸∈ Z =⇒ ˆβ ̸∈ Γ (58)
+This shows how to realize an arbitrary maximal rank subalgebra, as lo ng as
+it does not belong simultaneously to two diﬀerent chains of maximal su bal-
+gebras. If some subalgebra is maximal in more than two subalgebras of g one
+has to exclude all their weight lattices in (56). The cases in which Dynk ins
+rule fails are similar in that one must check whether the Wilson line break s
+g to the would–be–maximal subalgebra or to the maximal subalgebra. But
+this is most easily understood by an example, which may also be useful to
+illustrate other aspects of the formalism.
+Example: Let us take the E8 ⊕ E8 model as our example and ignore the
+second E8. The vectors ˆαA, A = 1 , . . . ,8, where αA are the simple roots 12
+of E8, are basis vectors of the momentum lattice. Looking at the extend ed
+Dynkin diagram, we ﬁnd that the lowest root is − α∗
+7. It can be expanded in
+the simple root basis using the inverse of the Cartan matrix C(E8) of E8:
+− α∗
+7 = −
+8∑
+A=1
+kAαA = −
+8∑
+A=1
+C(E8)− 1
+7AαA (59)
+= − 2α1 − 4α2 − 6α3 − 5α4 − 4α5 − 3α6 − 2α7 − 3α8
+In order to break E8 to the subalgebra E7 ⊕ A1, we have to remove α7. To
+choose the Wilson line we write down the simple roots of the subalgebra :
+E7 : βA = αA, A = 1, . . . ,6, β7 = α8, A 1 : β = − α∗
+7 (60)
+12The conventions for roots used here are the same as in the book by Cornwell.
+15
+
+===== PAGE 16 =====
+
+The standard choice (33) for the Wilson line is then the dual of the ne w
+simple root β, where “dual” refers to the subalgebra E7 ⊕ A1:
+A1 = β∗ = β
+β ·β (61)
+Working out the scalar products between the simple roots and this W ilson
+line shows that in fact only
+β∗ ·α7 = − α∗
+7 ·α7
+α∗
+7 ·α∗
+7
+= − 1
+2 (62)
+is non–integer. When we now look at the extended Dynkin diagram of E7 we
+ﬁnd that the lowest root is − β∗
+1 and that we can break E7 ⊕ A1 to A7 ⊕ A1
+by removing the seventh root of E7. The basis vectors of the subalgebra are:
+A7 : γ1 = − β∗
+1 =
+7∑
+A=1
+C(E7)− 1
+1AβA, γ A = βA− 1, A = 2, . . . ,7, A 1 : β (63)
+and the standard Wilson line is therefore
+A1 = β∗ + γ∗
+1, γ ∗
+1 =
+7∑
+A=1
+C(A7)− 1
+1AγA (64)
+This subalgebra is one of the exceptions to Dynkins rule because it is n ot
+maximal in E8 but can be constructed directly from the extended Dynkin
+diagram of E8 by removing the second root 13 [1],[12]. Applying the procedure
+to this case we choose a basis
+A7 : γ′
+1 = α8, γ′
+A = αA+1, A = 2, . . . ,6, γ′
+7 = − α∗
+7, A 1 : β′ = α1 (65)
+and the standard Wilson line
+A1 = (γ′
+7)∗ =
+7∑
+A=1
+C(A7)− 1
+7Aγ′
+A (66)
+But since A7 ⊕ A1 is not maximal in E8 we do not know whether some extra
+roots survive the projection and extend the root system to the o ne of E7 ⊕ A1.
+These extra roots must then come from the weight − (γ′
+4)∗ of E7 that extends
+13 These two subalgebras are isomorphic and conjugated by an inner a utomorphism [12].
+16
+
+===== PAGE 17 =====
+
+the Dynkin diagram of A7 to the extended Dynkin diagram of E714. The
+vector ( ˆγ′
+4)∗ is in the momentum lattice if and only if ( γ′
+4)∗ has integer scalar
+product with α2 (in order to be compatible with ˆα′
+2) and with the Wilson
+line A1. As
+(γ′
+4)∗ ·α2 =
+7∑
+A=1
+C(A7)− 1
+4A(γ′
+A ·α2) = C(A7)− 1
+42 (− 1) = 8
+8(− 1) = − 1 ∈ Z, (67)
+it depends only on the choice of the Wilson line. The standard choice ( γ′
+7)∗
+gives
+A1 ·(γ′
+4)∗ = (γ′
+7)∗ ·(γ′
+4)∗ = C(A7)− 1
+74 = 4
+8 ̸∈ Z (68)
+and the symmetry algebra is only A7 ⊕ A1.
+An example of symmetry enhancement is provided by the choice A1 =
+2(γ′
+7)∗. This projects out the second root of E8, because
+2(γ′
+7)∗ ·α2 = 2C(A7)− 1
+72 (− 1) = 2 2
+8 = 1
+2 ̸∈ Z. (69)
+but is compatible with the extra root − (γ′
+4)∗:
+2(γ′
+7)∗ ·(γ′
+4)∗ = 2 4
+8 = 1 ∈ Z (70)
+In this case the gauge Lie algebra is E7 ⊕ A1.
+6 One parameter families
+By now we know a discrete set of critical values of the Wilson line, corr e-
+sponding to maximal rank semisimple subalgebras of g. In order to study
+the behaviour between these special points in the moduli space con sider the
+one parameter families of Wilson lines deﬁned by
+A1 = pβ∗
+I , p ∈ R (71)
+which interpolate between the model without background ﬁelds and the mod-
+els with the standard Wilson lines β∗
+I corresponding to the removal of the
+14This means that − (γ′
+4)∗ , γ′
+2, . . ., γ′
+7 are a system of simple roots of E7.
+17
+
+===== PAGE 18 =====
+
+I-th dot from the extended Dynkin diagram of g. The basis vectors of the
+lattice Γ( p) corresponding to this choice of Wilson line are
+k
+′
+1 =
+(
+pβ∗
+I , − 1
+2 p2(β∗
+I ·β∗
+I ) 1
+2e∗1 + e1; − 1
+2 p2(β∗
+I ·β∗
+I ) 1
+2 e∗1 − e1
+)
+(72)
+ˆα′
+I =
+(
+αI, p
+kI
+1
+2 e∗1; p
+kI
+1
+2 e∗1
+)
+= ˆαI + p
+kI k1 (73)
+ˆα′
+A = (αA, 0; 0) = ˆαA, A ̸= I (74)
+ˆα′
+h =
+(
+αh, p1
+2 e∗1; p 1
+2 e∗1
+)
+= ˆαh + pk1 (75)
+We can now analyze the root system of this lattice for diﬀerent value s of p,
+using the methods introduced in the last sections.
+For p ̸∈ Z, neither ˆαI nor ˆαh are in Γ( p) and the gauge algebra is broken
+to
+g(p) = g(15)
+I ⊕ u(1) (76)
+where g(15)
+I is the rank 15 semisimple Lie algebra constructed by removing
+the I-th dot from the Dynkin diagram of g and u(1) is the one dimensional
+abelian Lie algebra. (These Wilson lines solve (23) and (24), but not (2 5.)
+The case p = 1 corresponds to the standard solution (33) and the gauge
+algebra is the rank 16 semisimple Lie algebra g(16)
+I constructed by removing
+the I-th dot from the extended Dynkin diagram of g:
+g(1) = g(16)
+I (77)
+If p = kI, both ˆαI and ˆαh are in Γ( p):
+g(kI) = g (78)
+This also applies to all integer multiples of kI. The lattices Γ = Γ(0) and
+Γ(kI) are equal if and only if α∗
+I∈ ΓR(g). Since α∗
+I = − kIβ∗
+I ∈ ΓW (g)15, there
+must be some integer M ∈ Z such that M α∗
+I ∈ ΓR(g):
+g(nkI) = g, (∀n ∈ Z), Γ(M kI) = Γ , (∃M ∈ Z+) (79)
+15By construction β∗
+I · αI = − 1
+kI and β∗
+I · αJ = 0, for all J ̸= I, implying β∗
+I = − 1
+kI α∗
+I .
+18
+
+===== PAGE 19 =====
+
+For all integer values of p, that are not multiples of kI the gauge Lie algebra
+is g(16)
+I . Whether Γ( p) equals Γ(1) or not depends on β∗
+I ·β∗
+I being integer or
+not.
+For all non integer values of p the rank of the semisimple part is reduced
+by one. We could now study the 15–dimensional sublattice and add a d iscrete
+piece to the Wilson line to break g(15) to its maximal rank subalgebras, then
+again reduce the rank and so on. The reduction of the rank will of ca use
+increase the number of continuous parameters accordingly. By re moving in
+all possible ways simple roots from all maximal rank semisimple subalgeb ras
+of g, we can realize all subalgebras of the type semisimple ⊕ abelian.
+We could also study one parameter families interpolating between g and
+its diverse subalgebras, investigate multiparameter families and so o n. One
+example of a two parameter family will be discussed later after gener alizing
+to general background ﬁelds. All these considerations give some in formation
+about the Narain moduli space that can be made more and more prec ise by
+investing time and eﬀort.
+7 Enhancement of symmetry by one Wilson
+line
+By a “critical” or “multicritical” Wilson line people usually mean values of
+the Wilson line that (in the Narain model) extend the rank of the semisim -
+ple part of the gauge algebra beyond 16. This has not yet been analy zed
+systematically but there is the example of Ginsparg [8] that shows ho w D16
+can be enlarged to D17 (or more generally to D16+d, if ≥ d dimensions are
+compactiﬁed) by a suitable choice of Wilson line(s). I will now discuss a
+more general problem but restrict the analysis for the moment to la ttices of
+the type Γ 17;1 ⊕ Γ5;5 that means to the case of one nonvanishing Wilson line.
+Suppose that the Wilson line is chosen such that the lattice contains
+l ≤ 16 roots. We can then look for a vector of the form
+ˆαl+1 = (v, w; 0) (80)
+which extends the root system. Then the l + 1 simple root vectors must fulﬁll
+ˆαA · ˆαB = C (l+1)
+AB , A, B = 1, . . . , l+ 1, (81)
+19
+
+===== PAGE 20 =====
+
+where C (l+1)
+AB is the Cartan matrix of a rank l + 1 semisimple Lie algebra. By
+inspection of the basis, the most general ansatz for ˆαl+1 is
+ˆαl+1 = k1 + mk1, m ∈ Z (82)
+=
+(
+A1, − 1
+2 (A1 ·A1) 1
+2 e∗1 + e1; − 1
+2 (A1 ·A1) 1
+2 e∗1 − e1
+)
++ m
+(
+0, 1
+2 e∗1; 1
+2 e∗1
+)
+Since our space–time torus is Rd/2πΛ, the square root of e1 ·e1 is the “ra-
+dius”16 R of the 1-direction, which we have chosen to be orthogonal to the
+others. This implies:
+e1 ·e1 = R2, e∗1 ·e∗1 = 1
+R2 , e1 = R2e∗1 (83)
+It is very useful to rewrite k
+′
+1:
+k
+′
+1 =
+(
+A1, 2e1 + D 1
+2 e∗1; D 1
+2 e∗1
+)
+, D = 2
+(
+− R2 − 1
+4 (A1 ·A1)
+)
+(84)
+This shows that ˆαl+1 can be in Γ ′ only if
+D = − m ∈ Z (85)
+The extra root has the form
+ˆαl+1 = (A1, 2e1; 0) (86)
+ˆαl+1 being a root vector also implies:
+ˆαl+1 · ˆαl+1 = A1 ·A1 + 4e1 ·e1 = 2 (87)
+(85) and (87) imply two conditions:
+2R2 + 1
+2A1 ·A1 = m ∈ Z (88)
+4R2 + A1 ·A1 = 2 (89)
+16The geometric interpretation is ambiguous due to duality transform ations which map
+R tp 1
+2R , but leave the physics of the model invariant [9], [10].
+20
+
+===== PAGE 21 =====
+
+Combinig them ﬁxes m = 1 and gives a relation between the radius of the
+1–direction of the torus and the norm of the Wilson line:
+R2 = 1
+2 − 1
+4A1 ·A1 (90)
+This shows that the enhancement of symmetry takes only place for special
+values of the radius. Since R2 > 0 and A1 ·A1 ≥ 0 we have the following
+bounds on the radius and the norm of the Wilson line:
+0 < R ≤ 1
+2
+√
+2, 0 ≤ A1 ·A1 ≤ 2 (91)
+The restriction on the radius–parameter is aﬄicted by the ambiguity of ge-
+ometrical interpretation due to duality (or target space modular) transfor-
+mations [10], [9]. As the radius of the transformed model is 1 /2R we cannot
+distinguish between very small and very large radii and the inequality above
+only excludes copies.
+In order to analyze the condition (81) we assume that the extra ro ot
+extends the rank l algebra such that it has a nonvanishing scalar product
+with only one of the l simple roots, let us say with the I–th one:
+ˆαl+1 · ˆαA = A1 ·αA = − δAI ⇒ A1 = − α∗
+I + v (92)
+where v is in the orthogonal complement (with respect to R16) of the linear
+hull of α1,. . . ,αl. If the extra root has vanishing scalar product with all
+other roots, A1 lies completely in this complement and the gauge algebra
+is extended by a A1 algebra. For A1 = 0 we have R = 1/
+√
+2. This is well
+known from one dimensional compactiﬁcations [13] and ( c = 1)–CFT [9]. If
+A1 shall have a nonvanishing scalar product with more than one other r oot
+it must be an appropriate linear combination of fundamental weights plus an
+arbitrary orthogonal piece.
+Finally note that we now have found examples of special values for all
+the 17 continuous parameters (moduli) of Γ 17;1, the Wilson line A1 and the
+radius R.
+8 Symmetry breaking and enhancement by
+more then one Wilson line
+In this section we return to the general case by allowing arbritray b ackground
+ﬁelds. In this case all the 6+6 dimensions of the momentum lattice tha t come
+21
+
+===== PAGE 22 =====
+
+from compactiﬁcation (the compactiﬁcation sector) can be mixed w ith the
+16 dimensions coming from the gauge sector of the ten–dimensional theory.
+The most obvious generalization of the previous results is to split the role
+of the single Wilson line used above among the up to six Wilson lines. As
+it was possible to construct arbitrary subalgebras by one Wilson line t his
+cannot lead to new symmetry algebras but only to diﬀerent spectra . Instead
+of studying this pure reﬁnement of the old pattern we will investigat e the
+new patterns of symmetry breaking and enhancement that are no w available:
+As a ﬁrst step we will show that extra roots can be constructed fo r special
+domains of values of the Wilson lines. The eﬀect on the gauge algebra c oming
+from the 16–dimensional sector will be investigated in a second step . The
+following parametrization of the basis vectors of the momentum latt ice makes
+the appearance of extra roots very transparent:
+k′i =
+(
+0, 1
+2e∗i; 1
+2e∗i
+)
+= ki (93)
+k
+′
+i =
+(
+Ai, 2ei + Dij
+1
+2 e∗j; Dij
+1
+2 e∗j
+)
+(94)
+l′
+A =
+(
+eA, − (eA ·Ak) 1
+2e∗k; − (eA ·Ak) 1
+2 e∗k
+)
+(95)
+where
+Dij = 2
+(
+Bij − Gij − 1
+4 (Ai ·Aj)
+)
+(96)
+By inspection the only way to construct root vectors out of the k′i and the
+k
+′
+i is to take as candidates for simple roots the linear combinations
+ˆα16+i ≡
+k
+′
+i − Dijk′j = (Ai, 2ei; 0) (97)
+and these are in the momentum lattice Γ ′ if and only if
+Dij ∈ Z. (98)
+Note that this condition only ﬁxes a combination of the Wilson lines and t he
+six–dimensional lattice metric Gij which is the symmetric part of Dij and
+leaves us free to vary one of these objects if we vary the other ac cordingly.
+The extra roots form the system of simple roots of a semisimple Lie alg ebra
+of rank ≤ 6, if
+ˆα16+i · ˆα16+j = Ai ·Aj + 4Gij = Cij (99)
+22
+
+===== PAGE 23 =====
+
+where Cij is the Cartan matrix of such an algebra. In this equation the ma-
+trices in the middle are subject to constraints: Gij must be positive deﬁnite
+because it is a metric and Ai ·Aj must be positive semideﬁnite because it is a
+matrix of scalar products of vectors. This implies for example that t here are
+no admissible solutions to equation (99) when one of the Wilson lines has a
+norm squared ≥ 2 because then Gij would have a zero or negative eigenvalue.
+We have also to ensure that Dij is an integer because this is necessary and
+suﬃcient for the extra roots being vectors in Γ ′. But combining (96) and
+(99) this is equivalent to
+Bij = Gij + 1
+4Ai ·Aj = 1
+4Cij modulo 1
+2 (100)
+This condition on Bij can always be fulﬁlled although Bij is antisymmetric:
+The Cartan matrices Cij of simply laced Lie algebras have entries 2 on the
+diagonal and 0 and − 1 oﬀ diagonal and they are symmetric so that they
+are also antisymmetric modulo 2. If one sets all Wilson lines to zero one
+recovers the old results [8] about symmetry enhancement by the Bij ﬁeld.
+On the other hand we can set Bij to zero and analyze the possibility to
+construct extra roots through the Wilson lines and the lattice metr ic alone.
+But if we want to have (99) and Dij ∈ Z the Cartan matrix cannot have
+− 1’s as oﬀdiagonal entries and the extra roots are restricted to fo rm a Lie
+algebra that is simply a direct sum of A1-algebras. Combining nonvanishing
+background ﬁelds of all kinds we can have symmetry breaking by Wilso n
+lines and symmetry enhancement by the Bij-ﬁeld and by Wilson lines. If
+we construct extra roots (97) with nonvanishing Wilson lines then th ey can
+have integer scalar products with some roots from the 16–dimensio nal sector,
+resulting in a simple summand of the total gauge algebra that is made o f roots
+coming from both sectors.
+Each choice of Wilson lines will break the gauge algebra g(16) of the sixteen
+dimensional sector to a subalgebra. In fact a root of Γ of the form
+ˆα = (α, 0; 0) (101)
+is in the new lattice if and only if
+α ·Ai ∈ Z (i = 1, . . . ,6) (102)
+because the momentum lattice is selfdual. Of course the Wilson lines th at
+produce extra roots in the six–dimensional sector need not to fulﬁ ll the crite-
+rion for breaking g(16) to a maximal rank subalgebra and thus will generically
+23
+
+===== PAGE 24 =====
+
+reduce the rank of g(16). Let us analyze the situation by an example that is
+typical for all models with 2 nonvanishing Wilson lines:
+Example: We start with g(16) = D16 and take two nonvanishing Wilson
+lines, A1 and A2. The metric Gij is chosen to be blockdiagonal, such that
+the two directions to which the nonvanishing Wilson lines are assigned a re
+orthogonal to the other four directions that can therefore be ig nored. We can
+then construct the two simply laced semisimple Lie algebras A1 ⊕ A1 and A2
+by setting Bij to its critical value (100) and solving (99) for
+C (A1⊕ A1)
+ij =
+(
+2 0
+0 2
+)
+or C (A2)
+ij =
+(
+2 − 1
+− 1 2
+)
+(103)
+Both cases can be treated simultaneously. Next we try to use our f reedom
+in choosing A1 and A2 to break D16 to the subalgebra A3 ⊕ A3 ⊕ D10. This
+subalgebra is constructed by removing ﬁrst the third root from th e extended
+Dynkin diagram of D16, resulting in the maximal subalgebra A3 ⊕ D13 and
+then removing the third root from the extended Dynkin diagram of t he D13.
+If we denote by γ1, . . . , γ3,γ4, . . . , γ6, γ 7, . . . , γ16 the simple roots of the A3 ⊕
+A3 ⊕ D10 subalgebra then one solution of this symmetry breaking problem is
+given by
+A1 = γ∗
+3, A2 = γ∗
+6 (104)
+Substituting the scalar products
+A1 ·A1 = γ∗
+3 ·γ∗
+3 = 3
+4 (105)
+A2 ·A2 = γ∗
+6 ·γ∗
+6 = 3
+4 (106)
+and
+A1 ·A2 = γ∗
+3 ·γ∗
+6 = 0 (107)
+into equation (99) we ﬁnd that we have to choose
+(Gij)2
+i,j=1 = 1
+16
+(
+5 0
+0 5
+)
+(108)
+and
+(Gij)2
+i,j=1 = 1
+16
+(
+5 − 4
+− 4 5
+)
+. (109)
+24
+
+===== PAGE 25 =====
+
+Both solution are positive deﬁnite and therefore admissible. Calculat ing the
+scalar products between the extra simple roots
+ˆγ17 = − (γ∗
+3, 2e1; 0) (110)
+ˆγ18 = − (γ∗
+6, 2e2; 0) (111)
+and the simple roots ˆγA, A = 1, . . . ,16 of A3 ⊕ A3 ⊕ D10
+ˆγA ·ˆγ17 = − γA ·γ∗
+3 = − δA3 (112)
+ˆγA ·ˆγ18 = − γA ·γ∗
+6 = − δA6 (113)
+we ﬁnd that these roots are linked together such that the total s ymmetry
+algebra is A4 ⊕ A4 ⊕ D10 in the ﬁrst and A8 ⊕ D10 in the second case. This
+example shows how symmetry breaking and symmetry enhancement can in-
+terfere. Note that the semisimple part of the new Lie algebra that h as a
+bigger rank then the one we started with although we did not simply ex tend
+the original algebra by simple roots. We have also shown that one can con-
+struct “big” simple pieces, like A4 and A8 by combining roots from the gauge
+sector and the compactiﬁcation sector.
+We can now study two parameter families of theories by setting
+A1 = p1γ∗
+3, A2 = p2γ∗
+6 (114)
+and varying the pi. If both pi ̸∈ Z the roots γ3 and γ6 are projected out and
+the symmetry is reduced to
+A2 ⊕ A2 ⊕ D10 ⊕
+{
+A1 ⊕ A1
+A2
+(115)
+respectively, that is we get critical surfaces of rank 16 models in th e Narain
+moduli space. If we restrict one pi to be an integer we get critical lines of rank
+17 models within these surfaces. These lines intersect each other in critical
+points representing rank 18 models when both pi are integers. We can try to
+learn about the global geometry of this surface by analyzing the co nstraint
+that the metric Gij must be positive deﬁnite. This ﬁxes the domain of the
+parameters to be
+0 < p 2
+i < 8
+3 , i = 1, 2. (116)
+25
+
+===== PAGE 26 =====
+
+in the A1 ⊕ A1 case and to be
+0 < p 2
+1 < 8
+3 and
+(
+2 − 3
+4p2
+1
+) (
+2 − 3
+4 p2
+2
+)
+− 1 > 0 (117)
+in the A2 case.
+Although we analyzed a speciﬁc example it is clear that the pattern fo und
+here is generic for models with more then one Wilson line. One interestin g
+generalization of this example is to take the space–time torus to be a product
+of three two–dimensional tori, where each of these is proportiona l to the max-
+imal torus of SU (3) and six Wilson lines. This region of the Narain moduli
+space is the natural starting point for the construction of Z3–orbifolds with
+continuous Wilson lines. (Of course the background ﬁelds must be fu rther
+constraint, so that the orbifold twist is an automorphism of the mom entum
+lattice. This and related questions are under investigation.)
+The example suggests the question whether it is possible to combine e very
+symmetry breaking by Wilson lines with every system of extra roots g ener-
+ated by the Bij ﬁeld. To give a counterexample, it is suﬃcient to study the
+simplest nontrivial case: Assume that there is one nonvanishing Wilso n line
+A1 and that the extra root ( A1, 2e1; 0) has a nonvanishing scalar product
+with precisely one of the other extra roots ( 0, 2ei; 0), i = 2, . . . , l ≤ 6. Then
+the only nontrivial constraint is that the matrix
+Gij = 1
+4 (Cij − Ai ·Aj) = 1
+4
+
+
+
+
+
+
+2 − a2 − 1 0 · · ·
+− 1 2 ∗
+.
+.
+. ∗ . . .
+2
+
+
+
+
+
+
+(118)
+must be positive deﬁnite, where a2 = A1· A1 > 0. The matrix that we get
+by removing the ﬁrst row and the ﬁrst column is the Cartan matrix of a
+Lie algebra and therefore positive deﬁnite. So we have only to look fo r the
+determinant of Gij and this can be done case by case: The Lie algebra g(6)
+formed by the extra roots must be one of the Lie algebras
+Al ⊕ X6− l, 1 ≤ l ≤ 6, D l ⊕ X6− l, 4 ≤ l ≤ 6, E 6 (119)
+where the ideal X6− l is orthogonal to the ideal to which the ﬁrst root belongs.
+The determinant of Gij can be expanded and expressed as a function of a2
+26
+
+===== PAGE 27 =====
+
+and the determinants of the Cartan matrices of the subalgebras o f g(6). The
+result is an upper bound on a2
+det(Gij) > 0 ⇔ a2 <
+
+
+
+
+
+l+1
+l , g(6) = Al ⊕ X6− l
+1, g(6) = Dl ⊕ X6− l
+13
+4 , g(6) = E6
+(120)
+These bounds must be compared to the minimum length that the Wilson line
+needs in order to break g(16) to a given subalgebra. For all subalgebras that
+can be constructed by removing one dot from the extended Dynkin diagram
+this length can be calculated very simply by looking at the simple ideal of
+the subalgebra to which the highest root of g(16) belongs. The standard
+Wilson line is then the dual of this vector with respect to the subalgeb ra
+and its length can be read oﬀ the inverse Cartan matrix of the subalg ebra.
+The highest root can be part of a A-type Lie algebra or of a D-type L ie
+algebra. In the ﬁrst case it is the ﬁrst or last root of this Lie algebra and
+has a norm < 1: Equation (120) can then be fulﬁlled for arbitrary g(6). In
+the second case the highest root of g(16) is always the last or (equivalently)
+the next to last root of the D–type subalgebra. Then a2 ≥ 1 if the the rank
+of the summand is ≥ 4. One can then look for nonstandard solutions of the
+symmetry breaking problem. For example the diﬀerence of the last a nd ﬁrst
+to last root is such a solution with norm squared 1. As the shortest w eight
+vectors of Dn Lie algebras have length 1 shorter solutions cannot exist. We
+conclude that this case of symmetry breaking is incompatible with an g(6) of
+the type Dl ⊕ X6− l. This shows that even in the case of one single Wilson
+line incompatible patterns of extended and broken symmetry do exis t.
+9 The shift vector realization
+The shift vector method [23], [18] is, like our construction of critical Wilson
+lines a procedure that starting from one model produces a discret e set of
+models and makes it possible to project out or bring in some states. T herefore
+it is natural to ask for the relation between the two methods. Altho ugh the
+shift vector method was mostly used in covariant lattice theories we can use
+it in our context because all Narain lattices can be embedded in covar iant
+lattices and if we restrict the shift vector to operate only on the Na rain part
+we can stay inside the Narain model. The analysis will be done for critica l
+27
+
+===== PAGE 28 =====
+
+Wilson lines that only exchange two basis vectors; this includes all bre akings
+to maximal subalgebras.
+The essentials of the shift vector method are the following: We star t with
+some given even selfdual lorentzian lattice Γ ≡ Γp;q and choose some vector
+s ̸∈ Γ, such that Ns ∈ Γ, for some minimal positive integer N. s deﬁnes the
+“invariant sublattice”
+Γ0 = {v ∈ Γ|v ·s ∈ Z}. (121)
+If s2 = 2m/N, for some m ∈ Z, the lattice
+˜Γ =
+N − 1∑
+k=0
+(Γ0 + ks) (122)
+is even selfdual if and only if Γ is. Shift vectors can be applied success ively
+in order to project out unwanted or to bring in wanted states (mor e prop-
+erly: conjugacy classes of lattice vectors modulo the underlying ro ot lattice).
+Successive shift vectors are compatible, that is the ordering is irre levant, if
+and only if their scalar product is an integer. All compatible shift vect ors
+are then elements of the new lattice.
+Comparing this prescription to the relation between the two basis (1 6)
+and (18) connected by the switching on of background ﬁelds it is nat ural
+to assume that the new basis vectors (those basis vectors of Γ ′ that are not
+in Γ) can be interpreted as successive shift vectors. Of course all new basis
+vectors must be rational linear combinations of the old ones so that some
+multiple of each new basis vector is in the old lattice. This can be achieve d
+by allowing only rational values for the background ﬁelds. Then the n ew basis
+vectors are admissible and compatible shift vectors because they a ll have even
+norm squared and mutual integer scalar product by construction (see (17)).
+What must be proven is that the lattices ˜Γ, constructed by the successive
+application of the new basis vectors as shift vectors and Γ ′, generated by (18)
+are identical. All basis vectors of Γ ′ are in ˜Γ because they are either shift
+vectors or invariant vectors of the old lattice Γ, implying:
+Γ′ ⊂ ˜Γ. (123)
+Dualizing this equation gives
+(Γ′)∗ ⊃ (˜Γ)∗ (124)
+28
+
+===== PAGE 29 =====
+
+But both lattices are are selfdual and so we have the other inclusion and thus
+equality.
+This result shows how one can keep the information about continuou s
+parameters when working with shift vectors. If one is only interest ed in the
+gauge group it is preferable to work with a basis instead of the comple te
+list of conjugacy classes as is usually done when applying shift vector s [18].
+The full information can be restored, if needed, by adding the basis vectors
+modulo the root lattice of the underlying Lie algebra, until the full gr oup of
+conjugacy classes of the lattice [18] is generated.
+10 Further applications
+The results and techniques established here do not only enlarge the knowledge
+about toroidal compactiﬁcations but will also be helpful in more gene ral
+situations. One future application is the construction of toroidal o rbifolds
+with continuous Wilson lines, which is possible when the twist is realized as a
+rotation both in the compactiﬁcation and in the gauge sector [17], [15 ]. Using
+the parametrization of general background ﬁelds introduced her e I have been
+able until now to bring the compatibility condition between a symmetric
+twist and general background ﬁelds in a simple form and to calculate t he
+number of untwisted moduli. Combining the shift vector realization of critical
+background ﬁelds with the results of [23] one should be able to reinte rpret
+covariant lattice models as orbifolds with certain critical backgroun d ﬁelds.
+The usual formalism for orbifolds in which the twist is realized as a shift
+[15] in the gauge sector allows only for discrete Wilson lines and can be
+interpreted as a hybrid construction because it uses both rotatio ns and shift
+vectors. Some of them may therefore also be critical points ( or hy persurfaces
+) in the moduli space of the bigger class of orbifolds with continuous W ilson
+lines. I hope that the methods developed here will help to analyze the se
+questions further.
+References
+[1] R. N. Cahn, Semi Simple Lie Algebras and Their Representa-
+tions. Benjamin and Cummings (1984).
+29
+
+===== PAGE 30 =====
+
+[2] J. F. Cornwell, Group Theory in Physics . Academic Press (1984).
+[3] R. Dijkgraaf, E. Verlinde, and H. Verlinde, c = 1 Conformal Field
+Theory on Riemann Surfaces . Comm. Math. Phys. 115 (1988) 649.
+[4] L. Dixon, P. Ginsparg, and J. Harvey, ˆ c = 1 Superconformal Field
+Theory. Nucl. Phys. B 306 (1988) 470.
+[5] L. Dixon, J. Harvey, C. Vafa, and E. Witten, Strings on Orbifolds .
+Nucl. Phys. B 261 (1985) 678.
+[6] L. Dixon, J. Harvey, C. Vafa, and E. Witten, Strings on Orbifolds
+(II). Nucl. Phys. B 274 (1986) 285.
+[7] S. Ferrara, and S. Theisen, Moduli Spaces, Eﬀective Actions
+and Duality Symmetry in String Compactiﬁcations . CERN-
+TH.5652/90.
+[8] P. Ginsparg, On toroidal compactiﬁcation of heterotic super-
+strings. Phys. Rev. D 38 (1987) 648.
+[9] P. Ginsparg, Applied Conformal Field Theory . HUTP–88/AO54.
+[10] A. Giveon, E. Rabinovici, and G. Veneziano, Duality in String Back-
+ground Spaces. Nucl. Phys. B 322 (1989) 167.
+[11] P. Goddard and D. Olive, Kac–Moody and Virasoro Algebras in
+Relation to Quantum Physics . Int. J. Mod. Phys. A1 (1986) 303.
+[12] M. Golubitsky and B. Rothschild, Primitive Subalgebras of Excep-
+tional Lie Algebras . Bull. Amer. Math .Soc. 77 (1971) 983.
+[13] M. Green, J. Schwarz and E. Witten, Superstring Theory . (2 vol-
+umes). Cambridge University Press (1987).
+[14] J. E. Humphreys, Introduction to Lie Algebras and Representa-
+tion Theory . Springer (1972).
+[15] L. E. Ibanez, J. Mas, H. P. Nilles and F. Quevedo, Heterotic Strings in
+Symmetric and Asymmetric Orbifold Backgrounds . Nucl.Phys.
+B 301 (1988) 157.
+30
+
+===== PAGE 31 =====
+
+[16] L. E. Ibanez, The Search for a Standard Model SU (3) × SU (2)
+× U(1) Superstring. CERN-Th.4769/87.
+[17] L. E. Ibanez, H. P. Nilles and F. Quevedo, Reducing the Rank of
+the Gauge Group in Orbifold Compactiﬁcations of heterotic
+string. Phys. Lett. B192 (1987) 332.
+[18] W. Lerche, A. N. Schellekens and N. P. Warner, Lattices and Strings .
+Phys. Rep. 177 (1989) 1.
+[19] M. Lorente and B. Gruber, Classiﬁcation of Semisimple Subalge-
+bras of Simple Lie Algebras . J. Math. Phys. 13 (1972) 1639.
+[20] K. Narain, M. Sarmadi and E. Witten, A Note on Toroidal Com-
+pactiﬁcation of Heterotic String Theory . Nucl. Phys. B 279 (1987)
+369.
+[21] K. Narain, New heterotic string theories in uncompactiﬁed di-
+mensions < 10. Phys. Lett. 169 b (1986) 41.
+[22] K. Narain, M. Sarmadi and C. Vafa, Asymmetric Orbifolds . Nucl.
+Phys. B 288 (1987) 551.
+[23] A. N. Schellekens and N. P. Warner, Weyl–Groups, Supercurrents
+and Covariant Lattices Nucl. Phys. B 308 (1988) 397.
+[24] A. Shapere and F. Wilczek, Self Dual Models with Theta Terms .
+Nucl. Phys. B 320 (1989) 669.
+31

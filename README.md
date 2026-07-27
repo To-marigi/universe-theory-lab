@@ -66,6 +66,19 @@ uv.lock             Python依存関係の厳密な固定
 `results/environment.json` には実際に使ったPython・OS・各バックエンドの版と
 検算結果が保存されます。
 
+## ローカル研究資料
+
+実装判断に使った論文は `references/` に版指定PDF、検索用テキスト、書誌、SHA-256、
+用途、主張境界とともに保存します。
+
+```powershell
+rg -n -i "period|Wilson line|Mordell.Weil" references/text references/notes
+python scripts/archive_references.py
+```
+
+新しいネット調査を始める前に `references/sources.json` と `references/notes/` を検索し、
+追加で参照した一次資料も同じ形式で保存します。購読制限や認証は迂回しません。
+
 ## 理論開発の入口
 
 最初の理論モデルは次の順で定義すると比較可能になります。

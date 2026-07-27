@@ -1,0 +1,4302 @@
+===== PAGE 1 =====
+
+LMU-ASC 13/17
+TUM-HEP 1080/17
+T-duality orbifolds of heterotic Narain compactiﬁcations
+Stefan Groot Nibbelink a,1, Patrick K.S. Vaudrevangeb,c,2,
+a School of Engineering and Applied Sciences, Rotterdam University of Applied Sciences,
+G.J. de Jonghweg 4 - 6, 3015 GG Rotterdam, Netherlands
+b Arnold Sommerfeld Center for Theoretical Physics,
+Ludwig-Maximilians-Universit¨ at M¨ unchen, Theresienstraße 37, 80333 M¨ unchen, Germany
+c Physik Department T30, Technische Universit¨ at M¨ unchen,
+James–Franck–Straße, 85748 Garching, Germany
+Abstract
+To obtain a uniﬁed framework for symmetric and asymmetric heterotic orbifold constructions we
+provide a systematic study of Narain compactiﬁcations orbifolded by ﬁnite order T -duality subgroups.
+We review the generalized vielbein that parametrizes the Narain moduli space (i.e. the metric, the
+B-ﬁeld and the Wilson lines) and introduce a convenient basis of generators of the heterotic T -duality
+group. Using this we generalize the space group description of orbifolds to Narain orbifolds. This
+yields a uniﬁed, crystallographic description of the orbifold twists, shifts as well as Narain moduli.
+In particular, we derive a character formula that counts the number of unﬁxed Narain moduli after
+orbifolding. Moreover, we develop new machinery that may ultimately open up the possibility for a
+full classiﬁcation of Narain orbifolds. This is done by generalizing the geometrical concepts of Q -, Z -
+and aﬃne classes from the theory of crystallography to the Narain case. Finally, we give a variety of
+examples illustrating various aspects of Narain orbifolds, including novel T -folds.
+1 E-mail: groos@hr.nl
+2 E-mail: patrick.vaudrevange@tum.de
+arXiv:1703.05323v2  [hep-th]  24 Apr 2017
+
+===== PAGE 2 =====
+
+Contents
+1 Introduction and conclusions 2
+2 Heterotic Narain torus compactiﬁcations 6
+2.1 Worldsheet ﬁeld content of the heterotic string . . . . . . . . . . . . . . . . . . . . . . 6
+2.2 Torus partition functions as Narain lattice sums . . . . . . . . . . . . . . . . . . . . . . 7
+2.3 Narain lattices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+2.4 The Narain moduli space . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+2.5 Coordinate ﬁelds and momenta . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+3 The T -duality group 15
+3.1 Decomposition of the generalized vielbein . . . . . . . . . . . . . . . . . . . . . . . . . 15
+3.2 Coset decomposition the T -duality group . . . . . . . . . . . . . . . . . . . . . . . . . 15
+3.3 Transformation of Narain moduli . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+3.4 Speciﬁc elements of the T -duality group . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+3.4.1 The geometric subgroup . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+3.4.2 Non-geometric elements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+3.5 The maximal compact subgroup of O ˆη(D, D + 16; R ) . . . . . . . . . . . . . . . . . . . 23
+4 Generalized space groups of Narain orbifolds 24
+4.1 Heterotic Narain orbifolds . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+4.2 Generalized space group . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+4.3 Conditions on the twists Θ α . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+4.4 Orbifold projections of I Γ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+4.5 Quantization of the generalized shifts Vα . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+4.6 Preserving at least N = 1 target-space supersymmetry . . . . . . . . . . . . . . . . . . 28
+5 Moduli stabilization in Narain orbifolds 29
+5.1 Narain orbifolds in the lattice basis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+5.2 On the existence of Narain orbifolds for a given point group . . . . . . . . . . . . . . . 31
+5.3 Mapping from the lattice basis to the coordinate basis . . . . . . . . . . . . . . . . . . 32
+5.4 Dimensionality of the Narain orbifold moduli space . . . . . . . . . . . . . . . . . . . . 33
+5.5 A T -fold constructed as an asymmetric Z 2 Narain orbifold . . . . . . . . . . . . . . . . 34
+6 Towards a classiﬁcation of Narain orbifolds 35
+6.1 Narain Q - and Z -classes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+6.2 Interpretation of Narain Q - and Z -classes . . . . . . . . . . . . . . . . . . . . . . . . . 36
+6.3 Narain Poincar´ e-classes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+6.4 Interpretation of Narain Poincar´ e-classes . . . . . . . . . . . . . . . . . . . . . . . . . . 38
+7 Symmetric orbifolds as Narain orbifolds 39
+7.1 Symmetric Z K orbifolds . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 39
+7.2 Moduli stabilization in symmetric Z K orbifolds . . . . . . . . . . . . . . . . . . . . . . 40
+1
+
+===== PAGE 3 =====
+
+8 Two-dimensional Abelian Narain orbifolds 42
+8.1 ( D, D)-Narain orbifold formalism . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 42
+8.2 Q - and Z -classes of two-dimensional Z K Narain orbifolds . . . . . . . . . . . . . . . . 43
+8.3 Two equivalent asymmetric Z 12 Narain orbifolds . . . . . . . . . . . . . . . . . . . . . 44
+8.4 Exposing a seemingly asymmetric Z 3 Narain orbifold . . . . . . . . . . . . . . . . . . . 47
+8.5 Symmetric Z 2 Narain orbifolds from inequivalent Z -classes . . . . . . . . . . . . . . . 50
+A Moduli deformations and the generalized metric 52
+A.1 T -duality transformations that leave a generalized metric invariant . . . . . . . . . . . 52
+A.2 Inﬁnitesimal moduli deformations of the Narain lattice . . . . . . . . . . . . . . . . . . 52
+A.3 ˆH-invariant inﬁnitesimal moduli deformations . . . . . . . . . . . . . . . . . . . . . . . 53
+A.4 The number of ˆH-invariant Narain moduli . . . . . . . . . . . . . . . . . . . . . . . . . 54
+1 Introduction and conclusions
+Since the early days of superstring theory, the heterotic string [1–3] has served as a promising candidate
+theory for a uniﬁed quantum description of particle physics as well as gravity, see e.g. [4] for a textbook
+introduction to string phenomenology. One of the main obstacles lies in the fact that the heterotic
+string is conventionally deﬁned in a ten-dimensional space-time. Hence, six spatial dimensions have
+to be compactiﬁed in order to make contact to the observable four-dimensional world.
+One possibility is to compactify on a six-dimensional (symmetric) toroidal orbifold [5,6] which is the
+quotient of a six-torus T 6 by some of its discrete isometries, see [7] for a full classiﬁcation with N≥ 1
+supersymmetry in four dimensions. For example, one can use an Abelian rotational symmetry Z K and
+deﬁne the orbifold geometrically as the quotient space T 6/Z K. Especially, in the presence of discrete
+Wilson lines [8] orbifold compactiﬁcations have been used to construct (minimal) supersymmetric
+extensions of the Standard Model (MSSM) from the heterotic string [9–26] 1. These constructions
+can be considered to be promising directions to connect string theory to particle physics: Beside
+reproducing MSSM-like models, they oﬀer an appealing geometrical interpretation, in which many
+properties of the elementary particles depend on their localization in extra dimensions [14, 33–35].
+Unfortunately, these constructions generically leave a number of moduli, like the compactiﬁcation
+radius R, unﬁxed.
+A possibility to stabilize moduli is to generalize the construction of symmetric orbifolds to asym-
+metric ones: In this case one quotients the compactiﬁcation space not only geometrically, but also by
+a genuine stringy symmetry [36]. The most famous example of such a symmetry of string theory is T -
+duality: In its simplest form, T -duality is a Z 2 transformation that identiﬁes a string compactiﬁcation
+on a circle with small radius R with another compactiﬁcation on a circle with large radius 1 /R. This
+is a full quantum duality on the string worldsheet as this can be described as ﬁeld redeﬁnitions in a
+path integral approach [37–39]. Now, in order to be able to perform the quotient by this T -duality
+transformation the radius R can no longer be a free parameter, but it has to be ﬁxed at the so-called
+self-dual value R = 1 (in string units). This promotes the T -duality transformation R↦→ 1/R to a
+symmetry of the theory. On the left- and right-moving coordinate ﬁelds Xl and Xr this T -duality
+transformation is realized by Xl ↦→ +Xl and Xr ↦→− Xr. Hence, in general, such T -dualities act
+diﬀerently on the left- and right-moving degrees of freedom of the string and the resulting quotient
+1For related MSSM model-building using compactiﬁcations of the heterotic string on Calabi-Yaus see e.g. [27–32].
+2
+
+===== PAGE 4 =====
+
+spaces are often called asymmetric orbifolds [40]. Asymmetric orbifolds provide speciﬁc examples
+of non-geometric string backgrounds [41–43] or so-called T -folds [44, 45]. More recently double ﬁeld
+theory [46–48] was introduced as an attempt to obtain a setting with doubled geometry to describe
+such T -folds using geometrical tools inspired by a string ﬁeld-theoretical description of the left- and
+right-moving string coordinates. Hence, asymmetric string constructions are of increasing interest in
+the connection to non-geometric ﬂux backgrounds [49, 50]. Various aspects of asymmetric orbifolds
+have been studied in the past [51–59] and with recent renewed interest [60, 61] and in particular also
+in the context on non-supersymmetric constructions [62–64].
+In contrast to symmetric orbifolds the phenomenological prospects of heterotic asymmetric orb-
+ifolds are far less studied. The main asymmetric activities in this direction concentrated up to now on
+the free fermionic construction of the heterotic string [65, 66]. These free fermionic models naturally
+incorporate both, asymmetric as well as symmetric Z 2 twists [67] and successful MSSM model-building
+has been carried out [68–71]. Furthermore, there has been some recent activities on model-building
+using asymmetric Z 3 orbifolds [72–74]. Finally, asymmetric string constructions can be further gener-
+alized in the covariant lattice approach [75] which generalizes the Narain lattice [76], in phenomeno-
+logically promising Gepner models [77–81] and further with asymmetric CFTs [82–84].
+Main results
+In this work we develop a generalized space group description of Narain orbifolds and utilize this
+formalism throughout this work to study various aspects of symmetric and asymmetric orbifolds in a
+uniﬁed fashion. To deﬁne the generalized space group, we ﬁrst perform a concise investigation of the
+heterotic T -duality group: We decompose its generators into geometrical and non-geometric ones and
+use them to parametrize the maximal compact subgroup of the T -duality group. This is important, as
+the maximal compact subgroup contains the ﬁnite subgroups that can be used to build (a-)symmetric
+orbifolds. Hence, the generalized space group provides a uniﬁed framework to study symmetric and
+asymmetric orbifolds in a systematic manner.
+We apply our understanding of the T -duality group to derive conditions for the stabilization of
+Narain moduli by orbifolding. This leads us to a closed character formula to count the number of
+unstabilized Narain moduli. In particular, this formula shows that all Narain moduli are ﬁxed, if
+the left- and right-moving twists do not have any irreducible representations of the point group in
+common. We use our ﬁndings on moduli stabilization to formulate suﬃcient conditions for a Narain
+orbifold to exist crystallographically by reducing this question to the question whether certain Riccati
+equations admit solutions. Hence, using our generalized space group description one can check that
+a Narain orbifold exists at least crystallographically and one can identify the associated Narain torus
+that is compatible with the orbifold action.
+Moreover, in this paper we lay the foundation for a classiﬁcation of Narain orbifolds. Even though
+asymmetric orbifolds have been studied essentially since the birth of superstring theory, they have been
+analyzed so far essentially on a case-by-case basis. Based on our deﬁnition of the generalized space
+group we identify equivalence relations for Narain orbifolds. These equivalences extend the notations
+of Q -, Z - and aﬃne-equivalences from theory of crystallography to the Narain case leading to the
+notions of Narain Q -, Z - and Poincar´ e-classes. This can be seen as a ﬁrst step towards a classiﬁcation
+of symmetric as well as asymmetric Narain orbifolds, which includes – besides the information on the
+six-dimensional compactiﬁcation space – also the anti-symmetric Kalb-Ramond B-ﬁeld, the (discrete)
+Wilson lines and the orbifold shift-vectors in a uniﬁed fashion.
+3
+
+===== PAGE 5 =====
+
+Finally, we construct a non-trivial set of (two-dimensional and more general) Narain orbifolds by
+specifying their generalized space groups. We use these examples to illustrate many aspects of our
+study, like the stabilization of Narain moduli and the equivalence classes for Narain orbifolds.
+Outlook
+In this work we investigated necessary conditions for a Narain orbifold to exist. However, we ignored
+possible extra conditions coming from modular invariance, as they have been studied in the past,
+see e.g. [53]. However, it would be advantageous to check for full modular invariance on the level of
+the generalized space group and, ultimately, to incorporate modular invariance in the deﬁnition of
+generalized space groups such that generalized space groups yield modular invariant Narain orbifolds
+by construction.
+Moreover, we can imagine various applications of our work: The space group formulation of Narain
+orbifolds allows for a systematic construction of large sets of examples in various dimensions and in
+both, the ( D, D) case as well as the heterotic ( D, D + 16) case. In addition, using our deﬁnitions of
+Narain Q -, Z - and Poincar´ e classes one can unambiguously decide whether two Narain orbifold models
+are physically identical or not. This might proof to be very useful for systematic investigations and
+classiﬁcations for various reasons:
+First of all, in the traditional approach two (symmetric) orbifold models are often said to be
+equivalent if their massless matter spectra agree. However, this is neither necessary nor suﬃcient:
+For example, two diﬀerent string constructions might possess identical massless spectra but diﬀerent
+couplings, or the massless spectrum of a given toroidal orbifold compactiﬁcation can be enhanced at
+speciﬁc points in its moduli space. Precisely here the Narain Poincar´ e classes would come to the rescue
+and decide for (in-)equivalence. However, our new deﬁnition of equivalence might be computationally
+very intensive and, hence, further studies might be necessary in order to apply it practically for large
+computer scans.
+Second, having an unambiguous criterion for two Narain orbifolds to be inequivalent, our work
+can be used to classify Narain orbifolds, both symmetric and asymmetric ones. Such a classiﬁcation
+would automatically include the orbifold twists and shifts as well as the background ﬁelds, i.e. the
+torus metric, the B-ﬁeld and (discrete) Wilson lines.
+Finally, one can use our deﬁnitions of Narain Q -, Z - and Poincar´ e classes to decide whether a
+Narain orbifold is genuine asymmetric or only seemingly. Hence, our approach might be also very
+helpful in the study of non-geometrical backgrounds for string theory in general, since it has been
+proven to be quite diﬃcult to obtain concrete, yet true, examples of such backgrounds.
+Paper outline
+In Section 2 we recall the basics of the Narain description of heterotic torus compactiﬁcations with
+continuous Wilson lines A, the anti-symmetric Kalb-Ramond B-ﬁeld and the metric G. In this section
+we exploit the fact that the moduli space of Narain compactiﬁcations is concisely described as the
+coset of the continuous T -duality group over its maximal compact subgroup and the discrete T -duality
+group O ˆη(D, D + 16; Z ).
+Given this prominent roles of continuous and discrete T -duality groups, we reserve Section 3 to
+study their properties. In particular, we list a complete set of generators of O ˆη(D, D + 16; R ), which
+are chosen such that they parametrize the discrete T -duality group if their parameters are restricted
+4
+
+===== PAGE 6 =====
+
+to speciﬁc, quantized values. In addition, we give the non-linear transformations of the moduli G, B, A
+under arbitrary T -duality group elements.
+After these preparations, Section 4 sets up a generalized space group description of Narain orbifolds
+involving combined shift- and twist-elements. In this section various properties of Narain orbifolds
+are uncovered. In particular, we show that the shifts of the generalized space group are quantized in
+the directions in which the twists act trivially. Moreover, we emphasize that the amount of preserved
+target-space supersymmetry is solely decided by the twists θα r that acts on the right-moving sector.
+Section 5 investigates two related questions: i) under what conditions does a Narain orbifold exist
+and ii) how many Narain moduli, G, B, A, are ﬁxed. To facilitate this discussion the lattice basis
+is introduced in which the twists are represented by integral matrices ˆρα∈ Oˆη(D, D + 16; Z ). Some
+properties of these twists in the lattice basis can concisely be characterized using the generalized metric
+H and the associated Z 2-gradingZ. By exploiting the coset structure of the Narain moduli space,
+we show that a Narain orbifold exists provided that certain Ricatti equations, i.e. coupled matrix
+equations, have a solution. Deformations of such a solution correspond to the unconstrained moduli
+of a Narain orbifold. Using some results collected in Appendix A we derive a character formula to
+count their number.
+All these results are used in Section 6 to lay the foundations for a classiﬁcation of Narain orbifolds.
+Given that the concepts of Q -, Z - and aﬃne-classes proved to be very useful for the classiﬁcation of
+symmetric orbifolds, we extend these concepts to Narain orbifolds.
+To illustrate the power of the generalized space group description of Narain orbifolds we study
+symmetric orbifolds in Section 7 in this language. Even though the main interest of Narain orbifolds
+lies in the construction of asymmetric orbifolds (or T -folds), we show in this section that the language
+of Narain orbifolds gives a convenient, uniﬁed description of the geometry and the (discrete) Wilson
+lines.
+Finally, in Section 8 we employ the Narain Q - and Z -classes to study two-dimensional Abelian
+Z K Narain orbifolds. We provide a large table with many examples of previously unknown two-
+dimensional Narain orbifolds. By an explicit construction we show that it is possible to have a Z 12
+two-dimensional Narain orbifold, while it is well-known that the largest order of EuclideanZ K twists is
+K = 6 in two dimensions. Moreover, Q - and Z -classes are particularly useful to distinguish seemingly
+asymmetric from truly asymmetric orbifolds as we illustrate by various examples.
+Acknowledgments
+This work was partially supported by the DFG cluster of excellence “Origin and Structure of the
+Universe” (www.universe-cluster.de) and by the Deutsche Forschungsgemeinschaft (SFB1258).
+5
+
+===== PAGE 7 =====
+
+2 Heterotic Narain torus compactiﬁcations
+This section reviews the Narain formulation of heterotic torus compactiﬁcations [76] and sets the
+notation used throughout this work. The moduli space can be described using the generalized vielbein
+E, which is parametrized by continuous Wilson lines A, the anti-symmetric Kalb-Ramond B-ﬁeld and
+the metric G. This vielbein characterizes coordinate ﬁeld boundary conditions as well as the momenta
+that appear in the representation of the Narain torus partition function as a lattice sum.
+2.1 Worldsheet ﬁeld content of the heterotic string
+We parametrize the two-dimensional string worldsheet by (real) coordinates σ and ¯σ, deﬁned by
+σ = σ1 + σ0 , ¯σ = σ1− σ0 , (2.1)
+where σ0 and σ1 denote the worldsheet time and space coordinate, respectively. Worldsheet ﬁelds
+that solely depend on σ or ¯σ are called left-moving or right-moving ﬁelds, respectively. They are
+correspondingly labelled by a subscript l or r (or in capital letters L/R). The heterotic string is closed
+because of the identiﬁcation ( σ0, σ1)∼ (σ0, σ1 + 1). Hence, ( σ0, σ1) are coordinates on a worldsheet
+cylinder for the freely propagating string.
+The heterotic string [1–3] is described by a conformal ﬁeld theory on the worldsheet with 26
+left-moving real bosonic ﬁelds and ten right-moving real bosonic and fermionic ﬁelds.
+The easiest approach to connect this theory to particle physics in d dimensions (for example d = 4)
+is to perform a stepwise compactiﬁcation: In the ﬁrst step one compactiﬁes the 16 surplus left-moving
+bosonic ﬁelds on a 16-dimensional torus in order to match the number of left- and right-moving bosonic
+ﬁelds to ten. The resulting theory corresponds to a ten-dimensional theory with a gauge group dictated
+by modular invariance of the string partition function. For example, in the case of ten-dimensional
+N = 1 supersymmetry the gauge group is ﬁxed to either E 8× E8 or SO(32). Then, in a second step
+one compactiﬁes on a D-dimensional space, for example on a Calabi-Yau or an orbifold. As a result
+one obtains a d-dimensional theory, where d + D = 10, e.g. 4 + 6 = 10. An alternative approach,
+which we use in this paper, is the so-called Narain construction, where the two-step compactiﬁcation
+described above is performed in a single step compactiﬁcation of the heterotic string directly to d
+dimensions, see Section 2.2.
+In light-cone gauge two left- and right-moving uncompactiﬁed dimensions are gauge-ﬁxed and,
+hence, eliminated. Thus, the heterotic string in light-cone gauge can be described by the following
+worldsheet ﬁelds:
+• As left-moving ﬁelds, there are 8+16=24 real bosonic ﬁelds. They are denoted by xµ
+l (σ) with
+µ = 2, . . . , d− 1 (µ = 0, 1 are chosen to be ﬁxed in light-cone gauge) for the uncompactiﬁed and
+YL(σ) for the compactiﬁed dimensions, respectively. Furthermore, we set
+YL(σ) =
+(
+yl(σ)
+yL(σ)
+)
+, (2.2)
+where yl(σ) =
+(
+yi
+l(σ)
+)
+for i = 1 , . . . , D live on the D-dimensional compactiﬁcation space. In
+addition, yL(σ) =
+(
+yI
+L(σ)
+)
+for I = 1, . . . ,16 are often referred to as the gauge degrees of freedom.
+6
+
+===== PAGE 8 =====
+
+• As right-moving ﬁelds, there are eight real bosonic ﬁelds plus their real fermionic superpartners.
+They are denoted by (xµ
+r (¯σ), yi
+r(¯σ)) and ψR(¯σ) = (ψµ
+R(¯σ), ψi
+R(¯σ)), respectively, withµ = 2, . . . , d−
+1 and i = 1, . . . , D.
+Left- and right-moving bosonic ﬁelds can be combined to coordinate ﬁelds xµ(σ, ¯σ) and X i(σ, ¯σ)
+which parametrize the d uncompactiﬁed and D compactiﬁed dimensions, respectively, i.e.
+xµ(σ, ¯σ) = 1√
+2
+(
+xµ
+r (¯σ) + xµ
+l (σ)
+)
+and X i(σ, ¯σ) = 1√
+2
+(
+yi
+r(¯σ) + yi
+l(σ)
+)
+. (2.3)
+Their classical equations of motion read
+∂σ∂¯σxµ(σ, ¯σ) = 0 and ∂σ∂¯σX i(σ, ¯σ) = 0 , (2.4)
+which is solved by the general ansatz (2.3).
+Hence, collectively, we have 2D+16 compactiﬁed bosonic worldsheet ﬁelds Y nested in the following
+fashions:
+Y (σ, ¯σ) =
+
+
+yr(¯σ)
+yl(σ)
+yL(σ)
+
+ , y (σ, ¯σ) =
+(
+yr(¯σ)
+yl(σ)
+)
+, Y L(σ) =
+(
+yl(σ)
+yL(σ)
+)
+. (2.5)
+We deﬁne the following dimensions: Dr = Dl = D and DL = Dl + 16 = D + 16. We will use the same
+notation as in eqn. (2.5) for other types of vectors.
+The separation (2.3) of the coordinate ﬁelds X i(σ, ¯σ) into left- and right-moving coordinates yi
+l(σ)
+and yi
+r(¯σ) is unique up to a constant shift of the zero modes ξi, i.e.
+Y (σ, ¯σ) ∼ Y (σ, ¯σ) + Ξ , Ξ = ( ξ,−ξ, 0) : yi
+r(¯σ) ∼ yi
+r(¯σ) + ξi , y i
+l(σ) ∼ yi
+l(σ)− ξi , (2.6)
+with ξ∈ R D. This has important consequences for the number of worldsheet degrees of freedom: If
+one counts left- and right-movers y(σ, ¯σ)∈ R 2D independently there seems to be a doubling of degrees
+of freedom on the worldsheet compared to the coordinate ﬁeldsX(σ, ¯σ)∈ R D, see eqn. (2.3). However,
+due to eqn. (2.6) there are only D independent zero-modes of y(σ, ¯σ) that specify the position of the
+string and the numbers of worldsheet degrees of freedom are equal for X(σ, ¯σ) and y(σ, ¯σ).
+2.2 Torus partition functions as Narain lattice sums
+We consider torus compactiﬁcations T 2D+16
+I Γ = R 2D+16/I Γ of the 2D + 16 bosonic worldsheet ﬁelds Y .
+I Γ is a so-called 2D + 16-dimensional Narain lattice, which we will analyze in this section in detail.
+This will be of use when we discuss the more general case of Narain orbifolds later in Section 4.
+In the case of a Narain torus, the closed string boundary conditions of the worldsheet ﬁelds are
+given by
+x(σ + 1, ¯σ + 1) = x(σ, ¯σ) , ψ R(¯σ + 1) = ( −)s ψR(¯σ) , Y (σ + 1, ¯σ + 1) = Y (σ, ¯σ) + L , (2.7)
+where s = 0, 1 parametrizes the diﬀerent spin structures of the right-moving fermions ψR, i.e. s = 0
+yields the so-called Ramond sector and s = 1 the Neveu-Schwarz sector. Furthermore, L∈ I Γ denotes
+a lattice vector of I Γ.
+7
+
+===== PAGE 9 =====
+
+At one-loop the partition function Zfull(τ, ¯τ) is given by the string vacuum-to-vacuum amplitude
+which corresponds to a worldsheet torus. This torus is deﬁned by two periodicities of worldsheet ﬁelds:
+(σ0, σ1)∼ (σ0, σ1 + 1) and (σ0, σ1)∼ (σ0 + τ2, σ1 + τ1) for the string to close in the worldsheet-spatial
+and worldsheet-time directions, respectively. Here, τ = τ1 + i τ2 is the so-called modular parameter
+of the torus. Then, the full partition function Zfull(τ, ¯τ) of the one-loop worldsheet torus can be
+factorized as follows
+Zfull(τ, ¯τ) = Zx(τ, ¯τ) Zψ(¯τ) ZY (τ, ¯τ) . (2.8)
+The individual partition functions are given by
+Zx(τ, ¯τ) = 1
+τ d/2−1
+2
+⏐⏐⏐⏐
+1
+η(d−2)(τ)
+⏐⏐⏐⏐
+2
+, (2.9a)
+Zψ(¯τ) = 1
+2
+1
+¯η4(¯τ)
+1∑
+s,s′=0
+eπi(s+s′+s′s)¯θ
+[ s
+2 e4
+s′
+2 e4
+]
+, (2.9b)
+ZY (τ, ¯τ) = 1
+¯ηDr(¯τ)ηDL(τ)
+∑
+P∈I Γ∗
+q
+1
+2 P 2
+L ¯q
+1
+2 p2
+r , (2.9c)
+where q = e2πi τ , ¯q = e−2πi ¯τ and ed = (1, . . . ,1) denotes the d-dimensional vector with all entries equal
+to one. Here and in the following we often omit the dependencies on τ and ¯τ for notational ease. In
+addition, η(τ) denotes the Dedekind function and θ the theta-function. The vectors P are from the
+dual lattice I Γ∗ which is deﬁned as P∈ I Γ∗ if
+P T η L ∈ Z , (2.10)
+for any L∈ I Γ. Here, we have introduced the Lorentzian inner product of lattice vectors as
+P T η P′ = − pT
+r p′
+r + P T
+L P′
+L , using P =
+(pr
+PL
+)
+and η =
+
+
+−1 D 0
+0 1 16+D
+
+ . (2.11)
+The metric η should not be confused with the Dedekind function η(τ) that appears in partition
+functions; we assume that the reader understands from the context which is meant.
+The partition function Zψ for the right-moving fermions can also be presented as a lattice sum,
+i.e. from (2.9b) we get
+Zψ(¯τ) = 1
+¯η4(¯τ)
+∑
+pR∈Γψ
+¯q
+1
+2 p2
+R(−1)F , (2.12)
+where the lattice Γ ψ = Γ vec⊕ Γspin consists of the vectorial and spinorial weight lattices, given by
+Γvec ={pR∈ Z 4| pT
+Re4 = odd} and Γspin ={pR + 1
+2 e4| pR∈ Z 4 and pT
+Re4 = even}. Furthermore, F
+is the target-space fermion number, i.e. F = 0 for pR∈ Γvec and F = 1 for pR∈ Γspin.
+Eqn. (2.12) can also be obtained as follows: the eight real worldsheet fermions ψR = (ψµ
+R, ψi
+R) can
+be grouped in four complex fermions ψR = (ψm
+R , ψa
+R), where m = 1, . . . , d/2− 1 and a = 1, . . . , D/2
+8
+
+===== PAGE 10 =====
+
+correspond to the uncompactiﬁed and compactiﬁed dimensions, respectively. Then, one can bosonize
+the complex fermions. Consequently, the bosonized fermions carry momentum pR = ( pm
+R , pa
+R) and
+the associated partition function coincides with eqn. (2.12). The momentum pm
+R has an important
+target-space interpretation: A string state with pm
+R being integer or half-integer signals a target-space
+boson or fermion in d dimensions, respectively.
+Modular invariance
+The full partition function is required to be modular invariant: At one-loop the worldsheet has the
+topology of a torus with modular parameter τ. Not all τ∈ C with Im(τ) > 0 parametrize inequivalent
+worldsheet tori. Because of conformal symmetry tori related by the modular transformations
+T : τ → τ + 1 , S : τ → −1/τ , (2.13)
+give the same physics. T and S generate the modular group PSL(2 , Z ). Invariance of the partition
+function (2.8) under T and S transformations requires that
+∀ P ∈ I Γ : 1
+2 P T η P ≡ 0 and I Γ ∗ = I Γ , (2.14)
+where a≡ b means that a and b are equal up to some integer. These conditions tell us that I Γ is an
+even self-dual lattice with signature (D, D +16); the so-called Narain lattice. Note that vectors P∈ I Γ
+can be redeﬁned as
+P → U P (2.15)
+for U∈ O(D; R )× O(D + 16; R ) without changing the partition function (2.8).
+2.3 Narain lattices
+We analyse the conditions (2.14) in more detail. To do so, we may parametrize a general lattice vector
+P∈ I Γ as
+P = E N , N =
+
+
+m
+n
+q
+
+ ∈ Z 2D+16 , (2.16)
+in terms of an invertible matrix E. This matrix E is called the generalized vielbein of the Narain
+lattice I Γ as its columns correspond to 2D + 16 basis vectors of the lattice I Γ. The components of the
+vector N can be interpreted as winding numbers m∈ Z D, Kaluza-Klein numbers n∈ Z D and gauge
+lattice numbers q∈ Z 16. From the vielbein E we can deﬁne the Narain metric ˆη as
+ˆη = ET η E . (2.17)
+Then, the scalar product of two vectors Pi = E Ni∈ I Γ fori = 1, 2 is given by
+P T
+1 η P2 = N T
+1
+(
+ET η E
+)
+N2 = N T
+1 ˆη N2 . (2.18)
+Hence, the lattice I Γ is even if
+P T η P = N T ˆη N ∈ 2Z . (2.19)
+9
+
+===== PAGE 11 =====
+
+Note that an even lattice is automatically integral, i.e. P T η P′ = N T ˆηN′∈ Z . Therefore, the Narain
+metric ˆη is a symmetric, integer matrix with even entries on the diagonal and signature ( D, D + 16).
+The dual lattice I Γ∗ is spanned by the dual vielbein E∗ which is deﬁned as
+(E∗)T η E = 1 2D+16 , (2.20)
+so that for a given P = E∗N∈ I Γ∗ we have P T ηP′≡ 0 for all P′ = E N′∈ I Γ. By comparing this
+equation with (2.17) one infers that the dual basis is given by
+E∗ = E ˆη−1 . (2.21)
+Two lattices are identical if their vielbeins are related by a GL(2 D + 16;Z ) transformation. Hence, I Γ
+is self-dual, I Γ∗ = I Γ, if the Narain metric in eqn. (2.21) satisﬁes
+ˆη ∈ GL(2D + 16; Z ) . (2.22)
+Consequently, det ˆη =±1 and we see from eqn. (2.17) that the volume of the unit cell spanned by the
+vielbein E is given by vol(I Γ) =± det E = 1.
+It is often convenient to choose a special representation of the Narain metric. If not stated otherwise
+we will use
+ˆη =
+
+
+0 1 D 0
+1 D 0 0
+0 0 g
+
+ , (2.23)
+where g is the metric of an even, self-dual 16-dimensional lattice. (Throughout this paper we use a
+hatted notation to refer to objects that are naturally deﬁned in the lattice basis.) We choose it to be
+the Cartan matrix of E 8× E8 and write g = αT
+g αg where the columns of αg are the 16 simple root
+vectors of E8× E8. The explicit expression for αg is given by
+αg =
+(
+α(E8) 0
+0 α(E8)
+)
+. (2.24)
+The columns of α(E8) represent the eight simple roots αI(E8), I = 1 , . . . ,8, of the exceptional Lie
+algebra E8. They can be chosen as follows
+α(E8) =
+
+
+1 0 0 0 0 0 0 - 1
+2
+-1 1 0 0 0 0 0 - 1
+2
+0 -1 1 0 0 0 0 - 1
+2
+0 0 -1 1 0 0 0 - 1
+2
+0 0 0 -1 1 0 0 - 1
+2
+0 0 0 0 -1 1 1 - 1
+2
+0 0 0 0 0 -1 1 - 1
+2
+0 0 0 0 0 0 0 - 1
+2
+
+
+. (2.25)
+10
+
+===== PAGE 12 =====
+
+2.4 The Narain moduli space
+Given the choice of a Narain metric ˆη in eqn. (2.23) it is natural to look for a corresponding generalized
+vielbein E, which yields this Narain metric ET η E = ˆη. We see that a particular solution R to
+equation (2.17) is given by
+R =
+
+
+1√
+2 1 D −1√
+2 1 D 0
+1√
+2 1 D 1√
+2 1 D 0
+0 0 αg
+
+ with RT η R = ˆη . (2.26)
+The general solution to (2.17) can be written in terms of this particular solution as
+E = U R ˆE , (2.27)
+so that consequently,
+ET η E = ˆET ˆη ˆE = ˆη , (2.28)
+if U∈ Oη(D, D + 16; R ) and ˆE∈ Oˆη(D, D + 16; R ), i.e. if U T η U = η and ˆET ˆη ˆE = ˆη.
+In the following we want to identify which transformations U and ˆE in eqn. (2.27) map between
+physically inequivalent theories and which do not. Therefore, we will identify the moduli space of
+heterotic Narain constructions. To do so, we deﬁne 2
+ˆU = R−1 U R (2.29)
+and note that ˆU∈ Oˆη(D, D+16; R ) if U∈ Oη(D, D+16; R ). Now, take a general vielbein E = U R ˆE.
+Then, one can absorb U into a redeﬁnition of ˆE by deﬁning ˆE′ as
+ˆE′ = ˆU ˆE =
+(
+R−1 U R
+) ˆE ∈ Oˆη(D, D + 16; R ) hence E = R ˆE′ . (2.30)
+However, it is not useful to absorb allU transformations in eqn. (2.27) into a redeﬁnition ofˆE: Consider
+U∈ O(D; R )×O(D+16; R )⊂ Oη(D, D+16). As the partition function (2.8) depends only on P 2
+L and
+p2
+r such transformations leave the partition function invariant. Thus, U∈ O(D; R )× O(D + 16;R ) in
+eqn. (2.27) maps physically equivalent theories to each other. On the other hand, ˆE transformations in
+eqn. (2.27) change the partition function (2.8) in general. Therefore, ˆE contains the parameters (i.e. the
+moduli) that continuously deform the Narain lattice with vielbein R to Narain lattices with vielbeins
+R ˆE, which are in general physically inequivalent but share the same Narain metric ˆη. However, not
+all vielbeins ˆE are physically inequivalent: Consider two vielbeins E, E′ for two Narain lattices I Γ, I Γ′
+satisfying (2.17). Under what condition(s) do these backgrounds describe the same Narain lattice
+I Γ′ = I Γ? This happens when for each point P∈ I Γ there is a unique point P′∈ I Γ′ which is identical
+to it: In the parametrization (2.16) this amounts to
+U E N = U P = P′ = E′ N′ , (2.31)
+such that the integer vectors N and N′ are mapped to each other one-to-one, i.e. N = ˆM N′ with
+ˆM =
+(
+E−1 U T E′)
+. Note that we added in eqn. (2.31) a rotation matrix U∈ O(D; R )× O(D + 16;R ),
+2In the remainder of this paper we will use this conjugation with R to switch between O η and O ˆη group elements.
+11
+
+===== PAGE 13 =====
+
+which is unphysical as discussed above. Hence, the Narain lattices I Γ and I Γ ′ are the same if there
+exists a rotation matrix U such that ˆM∈ GL(2D + 16; Z ). Moreover, we assumed that both E and
+E′ give the same Narain metric ˆη, see (2.17). This implies that the matrix ˆM is actually an element
+of the so-called T -duality group O ˆη(D, D + 16; Z ), i.e.
+ˆM T ˆη ˆM = ˆη . (2.32)
+(More details on the T -duality group O ˆη(D, D + 16; Z ) are given in Section 3.) Therefore, Narain
+compactiﬁcations based on the vielbeins E = R ˆE and E′ = U E ˆM are physically equivalent, i.e.
+E = R ˆE ∼ E′ = U R ˆE ˆM , (2.33)
+if U∈ O(D; R )× O(D + 16; R ) and ˆM∈ Oˆη(D, D + 16; Z ). In terms of ˆE this equivalence relation
+reads
+ˆE ∼ ˆU ˆE ˆM , (2.34)
+where ˆU = R−1U R. This equivalence relation can be used to deﬁne a quotient space. Consequently,
+the moduli space of Narain compactiﬁcations is uniquely parametrized by an element ˆE in the coset
+M = O( D; R )×O(D + 16; R )\Oˆη(D, D + 16; R )/Oˆη(D, D + 16; Z ) . (2.35)
+Here, it is understood that the ﬁrst two factors in the denominator act from the left (via ˆU) while the
+last factor acts from the right (via ˆM), see eqn. (2.34). The T -duality transformations ˆM are said to
+change the duality frame.
+An explicit parametrization of the matrix U∈ O(D; R )× O(D + 16; R ), satisfying
+U T U = 1 , U T η U = η , (2.36)
+is given by
+U =
+
+
+ur 0 0
+0 ul ulL
+0 uLl uL
+
+ , (2.37)
+provided that the constraints uT
+r ur = uT
+l ul + uT
+LluLl = 1 D, uT
+lLulL + uT
+L uL = 1 16 and uT
+l ulL + uT
+LluL = 0
+are fulﬁlled. As we have already seen above, often the closely related matrix
+ˆU = R−1U R =
+
+
+u+ u− 1√
+2 ulLαg
+u− u+ 1√
+2 ulLαg
+1√
+2 α−1
+g uLl 1√
+2 α−1
+g uLl α−1
+g uLαg
+
+ , where u± = 1
+2 (ul± ur) , (2.38)
+is more convenient.
+Modulo the transformations ˆU and ˆM, the general solution to eqn. (2.28) can be represented as
+ˆE =
+
+
+e 0 0
+−e−T CT e−T −e−T AT αg
+α−1
+g A 0 1 16
+
+ , C = B + 1
+2 AT A . (2.39)
+12
+
+===== PAGE 14 =====
+
+Hence, ˆE = ˆE(e, B, A) is parametrized by the Narain moduli e, B and A, where e is the D-dimensional
+vielbein of the D-torus with metric G = eT e. A is a 16× D matrix, whose i-th column contains the
+Wilson line which is associated to the i-th basis vector in e and, ﬁnally, B denotes the anti-symmetric
+Kalb-Ramond B-ﬁeld.
+In summary, we can specify the most general form of the generalized vielbein E with Narain metric
+ˆη = ET η E as given in eqn. (2.23). It reads
+E = U R ˆE ˆM , (2.40)
+with U∈ O(D; R )× O(D + 16; R ) and ˆM∈ Oˆη(D, D + 16; Z ). The matrix R is given in eqn. (2.26)
+and the moduli dependent part ˆE = ˆE(e, B, A) is speciﬁed in eqn. (2.39). In fact, we may take ˆM = 1
+without loss of generality as we show in Section 3.2.
+Equivalent Narain metrics
+One may encounter diﬀerent Narain metrics, say ˆη and ˆη′ from GL(2D + 16; Z ), such that
+ET η E = ˆη , E ′T η E′ = ˆη′ . (2.41)
+In this case one cannot immediately compare the moduli in E and E′, because their hatted versions
+ˆE and ˆE′ lie in two diﬀerent moduli spaces. Since we are talking about two representations of the
+same Narain lattice we have
+E N = E′ N′ , with N = ˆM N′ , (2.42)
+where ˆM∈ GL(2D + 16; Z ). Consequently, E′ = E ˆM so that
+ˆM T ˆη ˆM = ˆη′ . (2.43)
+Obviously, only those ˆM̸∈ Oˆη(D, D + 16; Z ) can change the form of the Narain metric. Importantly,
+all Narain metrics can be reached fromˆη given in eqn. (2.23) by transformations ˆM̸∈ Oˆη(D, D+16; Z ).
+Hence, we assume in the following that the Narain metric ˆη is given by eqn. (2.23).
+2.5 Coordinate ﬁelds and momenta
+Consider the generalized vielbein in its most general form, i.e. E = U R ˆE ˆM, and choose U = 1 and
+ˆM = 1 , see eqn. (2.40). Then, a Narain lattice vector P is represented as
+P =
+(pr
+PL
+)
+= EN =
+
+
+1√
+2 e−T (
+(G + CT ) m− n + AT αg q
+)
+1√
+2 e−T (
+(G− CT ) m + n− AT αg q
+)
+αg q + A m
+
+ . (2.44)
+It can be thought of to describe both: On the one hand, L ∈ I Γ deﬁnes the periodicity for the
+compactiﬁcation on a Narain lattice, see eqn. (2.7). On the other hand, P∈ I Γ gives the conjugate
+momentum, see eqn. (2.10).
+13
+
+===== PAGE 15 =====
+
+The matrix R induces the change of right- and left-moving coordinate ﬁelds, yr, yl and yL, to D
+mixed ﬁelds X, ˜X and the remaining 16 left-moving gauge coordinates Xg
+ˆY = R−1 Y =
+
+
+1√
+2 1 D 1√
+2 1 D 0
+−1√
+2 1 D 1√
+2 1 D 0
+0 0 α−1
+g
+
+
+
+
+yr
+yl
+yL
+
+ =
+
+
+X
+˜X
+Xg
+
+ , (2.45)
+see eqn. (2.3). This relation thus deﬁnes which combination of right- and left-moving degrees of
+freedom are interpreted as the physical coordinates X and which as the dual coordinates ˜X. The
+torus periodicities,
+Y ∼ Y + E N , (2.46)
+read in terms of the coordinates X, their duals ˜X and gauge coordinates Xg
+
+
+X
+˜X
+Xg
+
+ ∼
+
+
+X
+˜X
+Xg
+
+ + ˆE N ∼
+
+
+X
+˜X
+Xg
+
+ +
+
+
+e m
+e−T (
+n− CT m− AT αg q
+)
+q + α−1
+g A m
+
+ . (2.47)
+On-shell the right- and left-moving coordinate ﬁelds, yr, yl, have anti-holomorphic and holomorphic
+mode expansions for a string with boundary condition (2.46) given by
+yr(¯σ) = yr0 + pr ¯σ +
+∑
+n̸=0
+¯αn e2πi n¯σ , Y L(σ) = YL0 + PL σ +
+∑
+n̸=0
+αn e2πi nσ , (2.48)
+respectively. Using the change of coordinate ﬁeld basis (2.45), we see that the conventional coordinate
+ﬁeld X and its dual ˜X have the expansions
+X(σ, ¯σ) = 1√
+2 (yl0 + yr0) + 1√
+2 (pl + pr) σ1 + 1√
+2 (pl− pr) σ0 + oscillators , (2.49a)
+˜X(σ, ¯σ) = 1√
+2 (yl0− yr0) + 1√
+2 (pl− pr) σ1 + 1√
+2 (pl + pr) σ0 + oscillators . (2.49b)
+The term linear in the worldsheet space variable σ1 of X gives the D-dimensional winding modes, i.e.
+1√
+2 (pl + pr) = e m . (2.50)
+The term linear in the worldsheet time variable σ0 of X corresponds to the D-dimensional momentum
+which is given by
+1√
+2 (pl− pr) = e−T (
+n− CT m− AT αg q
+)
+. (2.51)
+As expected, for the dual coordinate ˜X the roles of momentum and winding are interchanged.
+14
+
+===== PAGE 16 =====
+
+3 The T -duality group
+This section is devoted to exhibit a number of properties of the T -duality group. In particular,
+we develop a convenient basis for this group and parametrize its maximal compact subgroup. In
+addition, we show that the non-linear transformations of the Narain moduli is a consequence of the
+coset structure in which the generalized vielbein ˆE lives.
+3.1 Decomposition of the generalized vielbein
+A general T -duality transformation is described by an element ˆM∈ Oˆη(D, D + 16; Z ). In addition,
+in eqn. (2.39) we parametrized the Narain moduli by the generalized vielbein ˆE∈ Oˆη(D, D + 16; R ).
+Therefore, it is very convenient to describe the properties of matrices ˆM∈ Oˆη(D, D + 16; R ) ﬁrst in
+general, based on the ﬁeld of real numbers R . To do so we deﬁne a number of speciﬁc matrix elements
+of this group in Table 1. These matrices are chosen such that if we restrict the parameters to be from
+Z rather than R , these matrices have only integral entries.
+As a ﬁrst application of the matrices of Table 1, we decompose the generalized vielbein (2.39) as
+a product
+ˆE = ˆE(e, B, A) = ˆMe(e) ˆMB(B) ˆMA(A) , (3.1)
+of basis matrices ˆMi∈ Oˆη(D, D + 16; R ) as given in Table 1. Here, the index i = e, B, A labels the
+matrix ˆMi and each matrix ˆMi depends on the corresponding kind of Narain moduli e, B and A. This
+parametrization will turn out to be very useful throughout this paper.
+3.2 Coset decomposition of the T -duality group
+In Section 2.4 we recalled that the moduli space of Narain compactiﬁcations can be described geomet-
+rically as a coset space (2.35). This already shows the central role that the coset space plays in our
+discussion and therefore we expand on this property in some detail here.
+The generalized vielbein ˆE is an element of the coset
+O(D; R )×O(D + 16; R )\Oˆη(D, D + 16; R ) . (3.2)
+This means that any element ˆH∈ Oˆη(D, D + 16; R ) can be decomposed as
+ˆH = ˆU ˆE , (3.3)
+where the speciﬁc standard form (2.39) of the generalized vielbein ˆE lies inside the coset (3.2) and
+ˆU = R−1 U R with U∈ O(D; R )×O(D + 16; R ) is given in eqns. (2.37) and (2.38).
+As this applies to any element of the T -duality group, it applies in particular to ˆE ˆM with ˆM∈
+Oˆη(D, D + 16; R ), i.e.
+ˆU ˆM
+ˆE(e′, B′, A′) = ˆE(e, B, A) ˆM . (3.4)
+The subscript ˆM of ˆU ˆM emphasizes that the O( D; R )×O(D + 16; R ) group element on the left hand
+side depends on the T -duality group element ˆM under consideration. Both ˆE(e, B, A) and ˆE(e′, B′, A′)
+are given here in the standard form (2.39). This equation (3.4) will be used frequently throughout
+this paper, for example, when we discuss T -duality transformations of Narain moduli in Section 3.3
+and when we analyze the stabilization of Narain moduli in generalized orbifolds in Section 5.
+15
+
+===== PAGE 17 =====
+
+Parametrizations of subgroups of O ˆη(D,D + 16; R )
+geometric
+ˆMe(∆K) =
+
+
+∆K 0 0
+0 ∆ K−T 0
+0 0 1 16
+
+ ˆMW (∆W ) =
+
+
+1 D 0 0
+0 1 D 0
+0 0 α−1
+g ∆W αg
+
+
+where ∆K∈ GL(D; R ) where ∆W∈ O(16; R )
+ˆMB(∆B) =
+
+
+1 D 0 0
+∆B 1 D 0
+0 0 1 16
+
+ ˆMA(∆A) =
+
+
+1 D 0 0
+− 1
+2∆AT ∆A 1 D −∆AT αg
+α−1
+g ∆A 0 1 16
+
+
+where ∆BT =−∆B∈ MD×D(R ) ∆A∈ M16×D(R )
+non-geometric
+ˆI(±i) =
+
+
+1 D− ϵiϵT
+i ∓ϵiϵT
+i 0
+∓ϵiϵT
+i 1 D− ϵiϵT
+i 0
+0 0 1 16
+
+ ˆI = R−1η R =
+
+
+0 1 D 0
+1 D 0 0
+0 0 1 16
+
+
+ˆMβ(∆β) =
+
+
+1 D ∆β 0
+0 1 D 0
+0 0 1 16
+
+ ˆMα(∆α) =
+
+
+1 D − 1
+2∆αT ∆α −∆αT αg
+0 1 D 0
+0 α−1
+g ∆α 1 16
+
+
+where ∆βT =−∆β∈ MD×D(R ) ∆α∈ M16×D(R )
+Table 1: This table lists various subgroup elements of the duality group O ˆη(D, D + 16;R ). They are
+normalized such that if the parameters are taken out ofZ they represent subgroups of Oˆη(D, D+16; Z )
+(with the additional requirement that 1
+2∆AT ∆A and 1
+2∆αT ∆α are integer matrices). The elements
+listed in the ﬁrst two rows generate the geometric subgroup Ggeom of the duality group. The elements
+on the third row correspond to true T -duality elements that invert one or all radii. Note the diﬀerence
+between αg and ∆α: αg contains the simple roots of E8×E8 and is used in the deﬁnitions of ˆMW (∆W ),
+ˆMA(∆A) and ˆMα(∆α), while ∆ α is the parameter of ˆMα(∆α).
+16
+
+===== PAGE 18 =====
+
+Multiplication table of duality subgroup elements
+ˆMe(∆K′) ˆMe(∆K) = ˆMe(∆K′∆K) ˆMe(∆K−T) = ˆI ˆMe(∆K) ˆI
+ˆMW(∆W′) ˆMW(∆W) = ˆMW(∆W′∆W) ˆMW(∆W) = ˆI ˆMW(∆W) ˆI
+ˆMB(∆B′) ˆMB(∆B) = ˆMB(∆B′ + ∆B) ˆMβ(∆β) = ˆI ˆMB(∆β) ˆI = ˆMB(−∆β)T
+ˆMA(∆A′) ˆMA(∆A) = ˆMB(∆BA) ˆMA(∆A′ + ∆A) ˆMα(∆α) = ˆI ˆMA(∆α) ˆI = (RT R)−1 ˆMA(−∆α)T RT R
+with ∆ BA = 1
+2
+(∆AT∆A′− ∆A′T∆A)
+ˆMW(∆W) ˆMe(∆K) = ˆMe(∆K) ˆMW(∆W) ˆMW(∆W) ˆMB(∆B) = ˆMB(∆B) ˆMW(∆W)
+ˆMB(∆B) ˆMe(∆K) = ˆMe(∆K) ˆMB(∆KT∆B ∆K) ˆMW(∆W) ˆMA(∆A) = ˆMA(∆W∆A) ˆMW(∆W)
+ˆMA(∆A) ˆMe(∆K) = ˆMe(∆K) ˆMA(∆A∆K) ˆMA(∆A) ˆMB(∆B) = ˆMB(∆B) ˆMA(∆A)
+Table 2: Multiplication table for the generators of the duality group O ˆη(D, D + 16; R ).
+Simpliﬁed standard form of the generalized vielbein
+Eqn. (3.4) can be used to further simplify the generalized vielbein (2.40): For any discrete T -duality
+element ˆM∈ Oˆη(D, D + 16; Z )⊂ Oˆη(D, D + 16; R ) there is a matrix U ˆM∈ O(D; R )× O(D + 16; R )
+such that eqn. (3.4) holds. Consequently, we ﬁnd
+E = U R ˆE(e, B, A) ˆM =
+(
+U U ˆM
+)
+R ˆE(e′, B′, A′) = U′ R ˆE(e′, B′, A′) , (3.5)
+where U′ = U U ˆM ∈ O(D; R )× O(D + 16; R ) is arbitrary since U is arbitrary. Relabelling our
+expression by removing the primes we obtain the most general from of the generalized vielbein as
+E = U R ˆE(e, B, A) , (3.6)
+where ˆE(e, B, A) is given in eqns. (2.39) and (3.1) and U∈ O(D; R )× O(D + 16; R ) may be chosen
+freely.
+Compact subgroup in the coset decomposition
+In what follows, we consider eqn. (3.4) and ﬁrst compute the explicit matrix expression of U ˆM ∈
+O(D; R )× O(D + 16; R ), and determine the transformed moduli, e′, B′, A′, in terms of ˆM and the
+initial moduli e, B and A.
+To do so, we decompose ˆM into its 3× 3-block structure, i.e.
+ˆM =
+
+
+ˆM11 ˆM12 ˆM13
+ˆM21 ˆM22 ˆM23
+ˆM31 ˆM32 ˆM33
+
+ , (3.7)
+17
+
+===== PAGE 19 =====
+
+where ˆM11, ˆM12, ˆM21 and ˆM22 are D× D-matrices, ˆM13 as well as ˆM23 are D× 16-matrices, ˆM31 as
+well as ˆM32 are 16× D-matrices, while ˆM33 is a 16× 16-matrix, respectively. Furthermore, in order
+to avoid lengthy formulae, we introduce short-hand notations
+ˆM1 = − ˆM21 + (G + CT ) ˆM11 + AT αg ˆM31 , (3.8a)
+ˆM2 = − ˆM22 + (G + CT ) ˆM12 + AT αg ˆM32 , (3.8b)
+ˆM3 = − ˆM23 + (G + CT ) ˆM13 + AT αg ˆM33 , (3.8c)
+which will recur frequently throughout the rest of this work. Next, we compute the products of
+matrices contained in eqn. (3.4), i.e.
+ˆE(e, B, A) ˆM and ˆU ˆM
+ˆE(e′, B′, A′) , (3.9)
+where each matrix is given in its 3 × 3-block structure, e.g. ˆU ˆM is given in eqn. (2.38). The result is
+set equal which yields 3 × 3 = 9 equations from eqn. (3.4). By doing so, we can solve for the blocks
+of U ˆM = R ˆU ˆM R−1 as deﬁned in eqn. (2.38) and obtain
+ul =
+(
+1 D− 2 e ˆM12 ˆM−1
+2 eT
+)
+ur , (3.10a)
+ulL =
+√
+2 e
+(
+ˆM13− ˆM12 ˆM−1
+2 ˆM3
+)
+α−1
+g , (3.10b)
+uLl = −
+√
+2
+(
+αg ˆM32 + A ˆM12
+)
+ˆM−1
+2 eT ur , (3.10c)
+uL = A ˆM13 α−1
+g + αg ˆM33 α−1
+g −
+(
+A ˆM12 + αg ˆM32
+)
+ˆM−1
+2 ˆM3 α−1
+g , (3.10d)
+for arbitrary ur∈ O(D; R ). We have checked explicitly that these equations give a matrix U such
+that the conditions (2.36) are satisﬁed. Let us remark one observations from eqn. (3.10a): ˆM12̸= 0 is
+a necessary condition for ur̸= ul. In other words, if ˆM12 = 0 then ur = ul. In addition, let us stress
+that these equations (3.10) will become very important later in the context of Narain orbifolds where
+U becomes the orbifold twist Θ, for example in Section 5.2. Furthermore, we identify the following
+three expressions
+ˆM T
+2 = −
+(
+e′−1u−1
+r e
+)
+, G ′ + C′T =
+(
+e′−1u−1
+r e
+)−T ˆM1 , A ′ (
+e′−1u−1
+r e
+)
+= α−T
+g ˆM T
+3 , (3.11)
+from eqn. (3.4), which we use in the following discussion.
+3.3 Transformation of Narain moduli
+Using the coset decomposition discussed above, we can derive the transformation properties of the
+Narain moduli G, B and A under general T -duality transformations ˆM∈ Oˆη(D, D + 16; R ). Using
+the results of Section 2.4 we see that the generalized vielbein (3.1) transforms under ˆM as
+ˆE(e, B, A) ↦→ ˆE(e′, B′, A′) = ˆU−1
+ˆM
+ˆE(e, B, A) ˆM , (3.12)
+18
+
+===== PAGE 20 =====
+
+where ˆU ˆM = R−1 U ˆM R and U ˆM∈ O(D; R )× O(D + 16; R ). In other words, assume we have given
+a T -duality transformation ˆM ∈ Oˆη(D, D + 16; R ). Then, there exists a matrix U ˆM as given in
+eqn. (3.10) such that ˆE(e′, B′, A′) is in the standard form (3.1).
+Hence, we are able to identify the transformation properties of e, G + CT and A under general
+T -duality transformations from eqn. (3.2). We ﬁnd
+e′ = − u−1
+r e ˆM−T
+2 , G ′ + C′T = − ˆM−1
+2 ˆM1 and A′ = − α−T
+g ˆM T
+3 ˆM−T
+2 , (3.13)
+where uT
+r ur = 1 D. These transformations can be expanded out (by taking the anti-symmetric part of
+G′ + C′T to solve for B′) and we obtain the transformations of the moduli G, B, A, i.e.
+G↦→ G′ = ˆM−1
+2 G ˆM−T
+2 , B ↦→ B′ = 1
+2
+(
+ˆM−1
+2 ˆM1− ˆM T
+1 ˆM−T
+2
+)
+, A ↦→ A′ =−α−T
+g ˆM T
+3 ˆM−T
+2 , (3.14)
+using the short-hands deﬁned in eqn. (3.8). This generalizes the results for O( D, D) (see e.g. [85]) to
+the heterotic case [86]. As a cross-check, using ˆM ˆη−1 ˆM T = ˆη−1 one can show that eqn. (3.14) yields
+G′ + C′T =− ˆM−1
+2 ˆM1 as given in eqn. (3.13).
+3.4 Speciﬁc elements of the T -duality group
+Next, we discuss various elements and subgroups of the group O ˆη(D, D + 16;R ) in detail and analyze
+their actions on the Narain moduli G, B, A. The parametrizations of these subgroups can be found in
+Table 1 and their most important products are given in Table 2.
+3.4.1 The geometric subgroup
+The elements ˆMe, ˆMW , ˆMA and ˆMB as listed in Table 1 generate a subgroup of Oˆη(D, D+16; R ) which
+we denote byGgeom(R ). This is the largest T -duality subgroup, that still admits a standard geometrical
+interpretation, hence the name: geometric subgroup. In more detail, all elements ˆMgeom∈ Ggeom(R )
+can be cast to the form
+ˆMgeom = ˆMW (∆W ) ˆMe(∆K) ˆMB(∆B) ˆMA(∆A) . (3.15)
+Then, using the results of Section 2.4 we see that the generalized vielbein (3.1) transforms under
+ˆMgeom as
+ˆE(e, B, A) ↦→ ˆE(e′, B′, A′) = ˆU−1
+geom ˆE(e, B, A) ˆMgeom , (3.16a)
+where
+e′ = ( ugeom
+r )−1 e ∆K , (3.16b)
+B′ = ∆ KT B ∆K + ∆B + 1
+2
+(
+∆AT ∆W T A ∆K− ∆KT AT ∆W ∆A
+)
+, (3.16c)
+A′ = ∆ W T A ∆K + ∆A . (3.16d)
+Here ˆUgeom = R−1 Ugeom R and Ugeom∈ O(D; R )×O(D+16; R ) must be chosen such that ˆE(e′, B′, A′)
+is given in the standard form (3.1). Furthermore, in eqn. (3.16) we have used various group multi-
+plication properties as given in Table 2 to compute the product ˆE(e, B, A) ˆMgeom (analogously, one
+19
+
+===== PAGE 21 =====
+
+could have used the general transformations (3.13) and (3.14) for ˆM = ˆMgeom to derive eqn. (3.16)).
+Notice that under a ˆMW (∆W )-transformation the form of the generalized vielbein is not strictly
+preserved. Nevertheless, it is of the correct form such that it can be absorbed by the choice of
+ˆUgeom = ˆMW (∆W ) ˆMe(ugeom
+r ), i.e.
+Ugeom = R ˆMW (∆W ) ˆMe(ugeom
+r ) R−1 =
+
+
+ugeom
+r
+ugeom
+r
+∆W
+
+ , (3.17)
+since Ugeom is an element of O( D; R )× O(D + 16; R ) because ∆ W∈ O(16; R ) and ugeom
+r ∈ O(D; R ).
+In the following, we give details for various elements of the T -duality group. We start with the
+four generators ˆMe, ˆMW , ˆMA and ˆMB of the geometric subgroup Ggeom(R ) and use eqns. (3.16) in
+order to compute the transformation of moduli.
+Change of geometrical basis ˆMe(∆K)
+Changes of the geometrical basis e are given by ˆMe(∆K) with ∆ K∈ GL(D; R ). The unit element
+ˆMe(∆K) = 1 has ∆K = 1 D. From eqns. (3.16) we identify the transform of the background ﬁelds G,
+B and A: ˆMe(∆K) leads to a change of basis of the D-dimensional torus, e↦→ e′ = (ugeom
+r )−1e ∆K,
+and
+G ↦→ G′ = ∆ KT G ∆K , B ↦→ B′ = ∆ KT B ∆K , A ↦→ A′ = A ∆K . (3.18)
+Change of basis in the gauge degrees of freedom ˆMW (∆W )
+In addition, we may change the basis in the gauge degrees of freedom by ˆMW (∆W ) with ∆ W ∈
+O(16; R ). The unit element ˆMW (∆W ) = 1 has ∆W = 1 16. ˆMW (∆W ) induces a transformation
+A ↦→ A′ = ∆ W T A (3.19)
+of the Wilson lines, while G and B remain invariant.
+In the case of the discrete T -duality group we deﬁne ρW = α−1
+g ∆W αg. Then, ˆMW (∆W )∈
+Oˆη(D, D + 16;Z ) if ρW∈ Og(16; Z ), i.e. ρT
+W g ρW = g using g = αT
+g αg. Hence, ρW is an automorphism
+of the E 8× E8 root lattice spanned by αg.
+B-ﬁeld shifts ˆMB(∆B)
+Matrices of the form ˆMB(∆B) with ∆ BT =−∆B∈ MD×D(R ) leave G and A invariant and only
+induce B-ﬁeld shifts, i.e
+B ↦→ B′ = B + ∆B . (3.20)
+B-ﬁeld shifts generate a subgroup GB(R )⊂ Oˆη(D, D + 16; R ). The unit element ˆMB(∆B) = 1 is
+given by ∆B = 0.
+20
+
+===== PAGE 22 =====
+
+Wilson line shifts ˆMA(∆A)
+Wilson line shifts are generated by ˆMA(∆A) with α−1
+g ∆A∈ M16×D(R ). Indeed, we obtain
+A ↦→ A′ = A + ∆A , B ↦→ B′ = B + 1
+2
+(
+∆AT A− AT ∆A
+)
+. (3.21)
+Hence, transformations of the Wilson lines A are accompanied by a B-ﬁeld transformation, while the
+metric G is kept invariant. Furthermore, we ﬁnd
+ˆMA(∆A′) ˆMA(∆A) = ˆMB(∆BA) ˆMA(∆A′ + ∆A) , (3.22)
+with ∆ BA = 1
+2
+(
+∆AT ∆A′− ∆A′T ∆A
+)
+, where we remark that Wilson line shifts and B-ﬁeld shifts
+commute, see Table 2.
+Due to eqn. (3.22), Wilson line shifts do not generate a subgroup of O ˆη(D, D + 16; R ) on their
+own, but only when combined with B-ﬁeld shifts ˆMB(∆B). We denote this subgroup by GWL(R ).
+The subgroup GB(R ) of B-ﬁeld shifts and the subgroup GWL(R ) of combined Wilson line and B-ﬁeld
+shifts are both normal subgroups of the geometric subgroup Ggeom(R ). In particular, it follows that
+Ggeom/GWL = GL(D; R )× O(16; R ) . (3.23)
+Note that ˆMB(∆B) ˆMA(∆A) with ∆B̸∈ MD×D(Z ) can be an element of the discrete T -duality group,
+i.e. ˆMB(∆B) ˆMA(∆A)∈ Oˆη(D, D + 16; Z ), if α−1
+g ∆A∈ M16×D(Z ) and
+−1
+2∆AT ∆A + ∆B ∈ MD×D(Z ) . (3.24)
+3.4.2 Non-geometric elements
+In the following, we give details for non-geometric elements of theT -duality group. We use eqns. (3.14)
+in order to compute the transformation of moduli.
+T -duality inversions
+We can deﬁne Z 2 involutions
+ˆI(±i) =
+
+
+1 D− ϵiϵT
+i ∓ϵiϵT
+i 0
+∓ϵiϵT
+i 1 D− ϵiϵT
+i 0
+0 0 1 16
+
+ for i = 1, . . . , D , (3.25)
+where ϵi denotes the standard basis vector in the i-th torus direction. The element ˆI(±i) can be written
+as conjugation of a reﬂection in the i-th left- or right-moving direction as ˆI(±i) = R−1I(±i)R using
+I(+i) =
+
+
+1 D 0 0
+0 1 D− 2 ϵiϵT
+i 0
+0 0 1 16
+
+ , I (−i) =
+
+
+1 D− 2 ϵiϵT
+i 0 0
+0 1 D 0
+0 0 1 16
+
+ . (3.26)
+21
+
+===== PAGE 23 =====
+
+Therefore, all the elements ˆI(±i) can be obtained from ˆI(±1) by conjugation with an appropriate change
+of basis element ˆMe(∆K).
+The element ˆI(−i) induces a T -duality inversion along the i-th torus direction. We can preform the
+T -duality inversion in all torus directions simultaneously by
+ˆI = ˆI(−1)····· ˆI(−D) , (3.27)
+as given in Table 1. Using the general results (3.14) we ﬁnd for this element
+G ↦→ G′ = ˆM−1
+2 G ˆM−T
+2 , B ↦→ B′ = − ˆM−1
+2 B ˆM−T
+2 , A ↦→ A′ = − A ˆM−T
+2 , (3.28)
+where ˆM2 = G + CT . For A = 0 we get ˆM2 = G− B. Hence, eqn. (3.28) yields the famous
+transformation (G + B)↦→ (G + B)−1.
+Maximal subgroup of O ˆη(D,D + 16; R ) connected to the identity
+As an application of the special duality elements ˆI(±i) we discuss the maximal non-compact subgroup
+SO+
+ˆη (D, D + 16; R ) of the T -duality group O ˆη(D, D + 16; R ) that is connected to the identity. The
+quotient group
+Oˆη(D, D + 16; R )/SO+
+ˆη (D, D + 16; R ) ∼= Z 2× Z 2 (3.29)
+is of order four and, hence, corresponds to four disconnected components of Oˆη(D, D + 16; R ): One
+can choose the two Z 2-generators as the elements ˆI(−1) and ˆI(+1). The matrix representations of the
+four disconnected components are obtained by multiplying 1 , ˆI(−1), ˆI(+1) or ˆI(−1) ˆI(+1) by arbitrary
+matrices of SO +
+ˆη (D, D + 16; R ).
+InvertedB-ﬁeld shifts ˆMβ(∆β)
+Even though the following two elements ˆMβ(∆β) and ˆMα(∆α) can be obtained by combining the B-
+and A-shifts with the inversion element ˆI, we list them explicitly as they are important in the context
+of non-geometry.
+Inverted B-ﬁeld shifts, often referred to as β-transformations, are generated by
+ˆMβ(∆β) = ˆI ˆMB(∆β) ˆI , (3.30)
+with ∆βT =−∆β∈ MD×D(R ). The β-transformations of the metric, B-ﬁeld and gauge backgrounds
+take the form
+G ↦→ G′ = ˆM−1
+2 G ˆM−T
+2 , A ↦→ A′ = − A ˆM−T
+2 , (3.31a)
+B ↦→ B′ = ˆM−1
+2
+(
+B− (G + CT )∆β(G + C)
+)
+ˆM−T
+2 , (3.31b)
+using ˆM2 =−1 D + (G + CT )∆β in eqn. (3.14).
+22
+
+===== PAGE 24 =====
+
+Inverted Wilson line shifts ˆMα(∆α)
+Finally, by inverting the Wilson line shifts ˆMA we obtain
+ˆMα(∆α) = ˆI ˆMA(∆α) ˆI , (3.32)
+with α−1
+g ∆α∈ M16×D(R ).
+The inversion of changes of bases, i.e. ˆI ˆMe(∆K)ˆI and ˆI ˆMW (∆W )ˆI, just become changes of
+bases again. Hence, they do not give us novel transformations. For completeness we nevertheless list
+them in Table 2. Indeed, counting the number of generators shows that this list contains all possible
+Oˆη(D, D + 16, R ) transformations.
+3.5 The maximal compact subgroup of O ˆη(D,D + 16; R )
+Next, we discuss the maximal compact subgroup of O ˆη(D, D + 16; R ). To do so, we note that the
+maximal compact subgroup of Oη(D, D+16; R ) is O(D; R )×O(D+16; R ). By conjugation with R one
+maps elements U∈ Oη(D, D + 16;R ) one-to-one to elements ˆU∈ Oˆη(D, D + 16;R ), i.e. ˆU = R−1U R.
+Thus, the maximal compact subgroup of O ˆη(D, D + 16; R ) is also O( D; R )× O(D + 16; R ). An
+explicit parametrization of this subgroup is given by ˆU in eqn. (2.38). Note that, as discussed in
+Section 2.4, elements U ∈ O(D; R )× O(D + 16; R )⊂ Oη(D, D + 16; R ) map physically identical
+Narain conﬁgurations to each other.
+Using the generators of the O ˆη(D, D + 16; R ) listed in Table 1 an element U from the identity
+component of O( D; R )× O(D + 16; R ) deﬁned by eqn. (2.36) can be expressed as follows
+U = R ˆU R−1 ; ˆU = ˆMe(∆θ) ˆMW (∆W ) ˆMα(∆A) ˆMβ(∆B) ˆMe(∆K) ˆMA(∆A) ˆMB(∆B) , (3.33)
+if u+ is invertible, see eqn. (2.38), and we deﬁned
+∆K = 1 D + ∆C , ∆C = ∆ B + 1
+2∆AT ∆A , ∆BT = − ∆B , (3.34a)
+∆θT ∆θ = 1 D and ∆ W T ∆W = 1 16 . (3.34b)
+The ﬁrst two factors ˆMe(∆θ) ˆMW (∆W ) in eqn. (3.33) deﬁne the subgroup O( D; R )× O(16; R ), where
+the O(D; R )-factor lies diagonally in both the left- and right-moving directions. This can be seen from
+eqn. (3.33) by using the expressions for the duality group elements given in Table 1 and the matrix R
+deﬁned in eqn. (2.26). Then, we obtain
+U =
+
+
+∆θ 0 0
+0 ∆ θ 0
+0 0 ∆ W
+
+
+
+
+1 D 0 0
+0 ( 1 D− ∆C)T (
+1 D + ∆C
+)−T −
+√
+2
+(
+1 D + ∆C
+)−T ∆AT
+0
+√
+2∆A
+(
+1 D + ∆C
+)−T 1 16− ∆A
+(
+1 D + ∆C
+)−T ∆AT
+
+ . (3.35)
+By comparing this with eqn. (2.37) one can read oﬀ the expressions for the submatrices
+ul = ∆θ
+(
+1 D− ∆C
+)T (
+1 D + ∆C
+)−T , u lL =−
+√
+2∆θ
+(
+1 D + ∆C
+)−T ∆AT ,
+uLl =
+√
+2∆W ∆A
+(
+1 D + ∆C
+)−T , u L = ∆W
+(
+1 16− ∆A
+(
+1 D + ∆C
+)−T ∆AT
+) (3.36)
+23
+
+===== PAGE 25 =====
+
+and ur = ∆θ. One can verify that these expressions satisfy the constraints (2.36).
+In addition, for a given element U∈ O(D; R )×O(D +16; R ) one can use eqn. (3.36) to decompose
+ˆU = R−1U R according to eqn. (3.33), i.e.
+∆θ = ur , ∆C = − uT
+− u−T
++ ,
+∆A = − 1√
+2 uT
+lL u−T
++ , ∆W = uL
+(
+1 16− 1
+2 uT
+lL u−T
++ u−1
+r ulL
+)−1
+,
+(3.37)
+where we assumed that u+ is invertible.
+4 Generalized space groups of Narain orbifolds
+In this section we introduce the generalized space group for heterotic Narain orbifolds and discuss some
+of its properties. In particular, we deﬁne orbifold projections to characterize quantization conditions
+of the generalized shift vectors and state the conditions to preserve N = 1 supersymmetry.
+4.1 Heterotic Narain orbifolds
+Next, we consider orbifolds of the heterotic Narain lattice construction denoted by
+T 2D+16
+I Γ /P . (4.1)
+Here, the 2D+16-dimensional torus T 2D+16
+I Γ is speciﬁed by a Narain lattice I Γ. In addition, the Narain
+point group P is deﬁned as a (sub-)group of the rotational symmetries of I Γ, as we will see later in
+eqn. (4.13). Hence, the Narain point group P is ﬁnite. The generators of P are (2D + 16)× (2D + 16)
+matrices and they are denoted by Θ α, for α = 1, . . . , NP. Kα is the order of Θ α. In more detail, for
+each generator Θα, the order Kα is the smallest non-negative integer such that Θ Kα
+α = 1 . Elements of
+P are often called twists. In the following, a generic twist will be denoted by Θ and K gives its order.
+To deﬁne the compactiﬁcation of the heterotic string on a Narain orbifold [40, 53], the main idea
+is to generalize the boundary conditions (2.7) of the 2 D + 16-dimensional right- and left-moving
+coordinate-vector Y to
+Y (σ + 1, ¯σ + 1) = Θ Y (σ, ¯σ) + VΘ + L , (4.2)
+for all elements Θ ∈ P and L∈ I Γ. In general, for each twist Θ there is a so-called generalized shift
+VΘ associated to it, which will be discussed in detail later. Importantly, the twists Θ are not allowed
+to mix right- and left-moving ﬁelds in eqn. (4.2). Hence, for all Θ ∈ P we demand
+Θ =
+(θr 0
+0 Θ L
+)
+∈ O(D; R )× O(D + 16; R ) . (4.3)
+Consequently, we ﬁnd the conditions
+ΘT
+αΘα = 1 , ΘT
+α η Θα = η and Θ Kα
+α = 0 , (4.4)
+for all generators Θ α of the Narain point group.
+24
+
+===== PAGE 26 =====
+
+Furthermore, we call a Narain orbifold symmetric [5,6], if there is a basis such that all generators
+Θα∈ P are simultaneously of the form
+Θα =
+
+
+θα 0 0
+0 θα 0
+0 0 1 16
+
+ ∈ O(D; R ) ⊂ O(D; R )× O(D + 16; R ) . (4.5)
+If such a basis does not exist, then the corresponding Narain orbifold is asymmetric. Even though this
+deﬁnition of symmetric orbifolds involves a choice of basis, this property is in fact basis independent.
+Nevertheless, in a given basis it might be diﬃcult to see whether a Narain orbifold is symmetric
+or asymmetric: One can bring a symmetric twist Θ sym into a seemingly asymmetric twist Θ asym =
+U−1 Θsym U by the choice of U ∈ O(D; R )× O(D + 16; R ), see also the example in Section 8.3.
+However, the conjugation with U can neither change the orders of θr and ΘL, nor the two ﬁnite groups
+which are generated by either θα r or Θα L.
+4.2 Generalized space group
+It has been proven to be very convenient to employ a space group formulation of the heterotic string
+on symmetric orbifolds, especially in the context of classiﬁcations [7]. This language can be extended
+to Narain orbifolds naturally. The generalized space group S associated to a Narain orbifold is deﬁned
+as being generated by the elements
+(
+1 , L
+)
+and
+(
+Θα, Vα
+)
+for all L∈ I Γ and Θ α∈ P , (4.6)
+where Vα, a vector with 2 D + 16 components, is the so-called generalized shift which is associated
+to the twist Θ α. Conversely, we demand that for all space group elements of the form ( 1 , L′)∈ S it
+follows that L′∈ I Γ. So, the Narain lattice I Γ is the subgroup ofS that contains all pure translations of
+S. Note that a generator (Θ α, Vα) is a generalized roto-translation if Vα̸= 0, see [7]. These generators
+build the so-called Narain orbifold group O, which is deﬁned modulo lattice translations. Hence, just
+as P, the Narain orbifold group O is a ﬁnite group.
+A general space group element g = (Θ, λ)∈ S is deﬁned to act on Y as
+Y ↦→ g[Y ] =
+(
+Θ, λ
+)
+[Y ] = Θ Y + λ . (4.7)
+Consequently, the unit element of S is given by
+(
+1 , 0
+)
+∈ S . (4.8)
+The inverse element g−1 of g = (Θ, λ)∈ S reads
+g−1 =
+(
+Θ−1,−Θ−1λ
+)
+∈ S . (4.9)
+Furthermore, two elements g = (Θ, λ) and g′ = (Θ′, λ′) are multiplied as
+g g′ =
+(
+Θ, λ
+) (
+Θ′, λ′)
+=
+(
+Θ Θ′, Θ λ′ + λ
+)
+∈ S . (4.10)
+Hence, the generalized space group S is in general non-Abelian even if the Narain point group P is
+Abelian.
+25
+
+===== PAGE 27 =====
+
+For orbifolds, each sector of string states is characterized by a boundary condition (4.2) and, thus,
+by the so-called constructing element g = (Θ , λ)∈ S, where λ = VΘ + L and L∈ I Γ. Only those
+elements g′∈ S that commute with the constructing element g yield projections and, hence, give rise
+to non-vanishing contributions to the twisted sector partition function. This only happens when
+ΘΘ′ = Θ′Θ and ( 1 − Θ)λ′ = ( 1 − Θ′)λ . (4.11)
+4.3 Conditions on the twists Θ α
+Furthermore, we choose L∈ I Γ and consider
+(
+Θα, Vα
+) (
+1 , L
+) (
+Θα, Vα
+)−1 =
+(
+1 , ΘαL
+) !
+∈ S ⇒ ΘαL
+!
+∈ I Γ. (4.12)
+Thus, the lattice I Γ is a normal subgroup of S and the Narain point group P has to consist of
+automorphisms of the Narain lattice, i.e.
+Θα I Γ = I Γ . (4.13)
+In addition, we have to impose eqn. (4.4) on the twist generators Θ α.
+It is is interesting to pause here and reﬂect on the possible orders of twists for a given number of
+dimensions DΓ for general orbifolds associated to a lattice Γ. As is well-known [87], if the order K
+satisﬁes
+φ(K) ≤ DΓ , (4.14)
+then there exists at least one lattice Γ with rotational symmetry of order K. Here, φ(K) is the Euler
+φ-function and this bound does not take into account that one can build point groups as direct sums
+of lower dimensional cases. However, in the current paper we are not working with a general lattice
+Γ in DΓ dimensions, but with Narain lattices Γ = I Γ with DI Γ= 2 D + 16. Hence, contrary to the
+Euclidean case, it is not guaranteed that there exists a Narain lattice for each order K satisfying the
+bound (4.14).
+4.4 Orbifold projections of I Γ
+In general, a twist Θ ∈ P of order K acts as the identity in some directions of Y while it acts as a
+Z K twist on others. To identify these directions, we deﬁne projection operators for each twist Θ ∈ P:
+The projection operatorsPΘ
+∥ andPΘ
+⊥ project a vector onto the directions in which Θ acts trivially and
+non-trivially, respectively. In detail, we deﬁne the projectors
+PΘ
+∥ = 1
+K
+K−1∑
+j=0
+Θj and PΘ
+⊥ = 1 −P Θ
+∥ , (4.15)
+with the properties
+(
+PΘ
+∥
+)2 =PΘ
+∥ ,
+(
+PΘ
+⊥
+)2 =PΘ
+⊥ , ΘPΘ
+∥ =PΘ
+∥ , PΘ
+⊥PΘ
+∥ =PΘ
+∥PΘ
+⊥ = 0 . (4.16)
+Then, any vector λ∈ R 2D+16 can be decomposed into two vectors λΘ
+∥ and λΘ
+⊥ according to
+λΘ
+∥ = PΘ
+∥ λ , λ Θ
+⊥ = PΘ
+⊥ λ so that λ = λΘ
+∥ + λΘ
+⊥ , (4.17)
+26
+
+===== PAGE 28 =====
+
+and Θ λΘ
+∥ = λΘ
+∥ . The ﬁnal relation clariﬁes the use of the subscript ∥: It deﬁnes the directions which
+are left invariant by Θ.
+Moreover, it is important to realize that the projected Narain lattice I Γ Θ
+∥ =PΘ
+∥ I Γ is in general not
+Narain. In detail, even if I Γ and Θ I Γ are Narain lattices, see eqn. (4.13), the normalisation 1 /K in
+the projection operator PΘ
+∥ in eqn. (4.15) can make I Γ Θ
+∥ non-Narain. A Narain lattice is said to be
+factorized w.r.t. the orbifold twists when
+I ΓΘ
+∥ ⊂ I Γ (4.18)
+for all twists Θ∈ P. In this case, obviously, all projected Narain lattices are themselves Narain again.
+4.5 Quantization of the generalized shifts Vα
+For each Narain point group generator Θ α of order Kα we consider the generator (Θ α, Vα) of the
+generalized space group S. Then, its Kα-th power reads
+(
+Θα, Vα
+)Kα
+=
+(
+ΘKα,
+Kα−1∑
+j=0
+Θj
+α Vα
+)
+=
+(
+1 , KαP α
+∥ Vα
+) !
+∈ S , (4.19)
+(whereP α
+∥ =PΘα
+∥ ) without summation over α. Consequently, we have to demand the condition
+KαVα∥ = KαP α
+∥ Vα =
+Kα−1∑
+j=0
+Θj
+α Vα = Lα
+!
+∈ I Γ. (4.20)
+That is, the shift Vα needs to be quantized in units of Kα in the directions where Θ α acts trivially,
+i.e. Vα is given by
+Vα = Lα
+Kα
++ λα with Θ α Lα = Lα , P α
+∥ λα = 0 and Lα ∈ I Γ. (4.21)
+The same procedure can be applied to some arbitrary element Θ ∈ P of order K with associated
+element (Θ, VΘ)∈ S. This yields
+VΘ = LΘ
+K + λΘ with Θ LΘ = LΘ , PΘ
+∥ λΘ = 0 and LΘ∈ I Γ. (4.22)
+As a remark, for example in the case when Θ k
+α has a ﬁxed torus for 0 < k < K α (i.e. when Θ k
+α has
+more invariant directions than Θ α) eqn. (4.22) gives stronger quantization conditions on the shift Vα
+than eqn. (4.21).
+Various choices for Vα correspond to the same Narain orbifold. Indeed, one can shift the origin,
+i.e.
+Y (σ, ¯σ) ↦→ Y (σ, ¯σ) + Y0 , (4.23)
+and hence transform the generalized shifts VΘ↦→ VΘ− (1 − Θ) Y0 for Y0∈ R 2D+16. (In light of the
+equivalence (2.6), only the (lower) D + 16 components of Y0 actually modify the description.) By
+doing so, one can set the components of λΘ either to zero or to some quantized value for each element
+(Θ, VΘ∥ + λΘ) of the Narain orbifold group O. Especially, if the Narain point group is isomorphic
+to Z K (with one generator Θ of order K) the generalized shift can be chosen as VΘ = LΘ/K with
+ΘLΘ = LΘ∈ I Γ without loss of generality.
+27
+
+===== PAGE 29 =====
+
+4.6 Preserving at least N = 1 target-space supersymmetry
+To enable the discussion on target-space supersymmetry we ﬁrst need to recall a few facts about
+supersymmetry on the worldsheet. By construction the heterotic string has (1 , 0) worldsheet super-
+symmetry. Hence, we can identify the worldsheet supercurrent
+TF = ψµ
+R ¯∂xµ + ψT
+R uRr ¯∂yr , (4.24)
+where ψR = ( ψi
+R) are the real worldsheet fermions of the D compactiﬁed dimensions and uRr is a
+D× D matrix. For each twist Θ α, the space group action (4.7) is deﬁned to be accompanied by a
+transformation of ψR as
+ψR ↦→ g[ψR] = θα R ψR , (4.25)
+where θα R∈ O(D; R ). Since the ﬁrst term ψµ
+R ¯∂xµ in eqn. (4.24) is orbifold invariant the worldsheet
+supercurrent TF has to be orbifold invariant as well. Consequently, we need to require that the twists on
+the right-moving coordinates yr and on the right-moving fermionsψR are identiﬁed: θα R = uRr θα r u−1
+Rr .
+Given that the properties of target-space fermions are determined by the right-moving momen-
+tum pR associated to these right-moving fermions, as given eqn. (2.12), the question of target-space
+supersymmetry is only aﬀected by the transformations generated by θα R in the right-moving sector.
+In particular, target-space supersymmetry is independent of the choice one makes for Θ α L. Only if
+one restricts oneself to symmetric orbifolds, for which θα L = θα l⊕ 1 16 and θα l = θα r = θα R with
+uRr = 1 D, see eqn. (4.5), this connection is made.
+Consequently, in order to preserve at least N = 1 supersymmetry in the d-dimensional target-
+space, the generators θα R∈ SO(D; R ) have to lie inside the appropriate special holonomy subgroup
+of SO( D; R ). For D = 4, 6, 7, 8 these subgroups are SU(2), SU(3), G 2 and Spin(7), respectively, see
+e.g. [88]. For example, assume D = 6 and an Abelian Narain point group, i.e.
+P ∼= Z K1× . . . Z KNP
+. (4.26)
+Then, the four-dimensional eﬀective low energy theory possesses at least N = 1 supersymmetry if
+φm
+α R = 0 , K α φa
+α R≡ 0 , 1
+2
+∑
+a
+φa
+α R = 0 . (4.27)
+Here, we introduced the so-called twist vectorφα R = (φm
+α R, φa
+α R) as the vector of phases corresponding
+to θα R, such that θα R acts as
+ψm
+R ↦→ e2πi φm
+α R ψm
+R , ψ a
+R ↦→ e2πi φa
+α R ψa
+R , (4.28)
+using the complex indices deﬁned below eqn. (2.12). In fact, the last condition of eqn. (4.27) only
+needs to be imposed mod integers (i.e. ≡) and this speciﬁc choice ﬁxes the unbroken supercharges for
+d = 4 and φa
+α R̸= 0 to be represented as ±( 1
+2 , 1
+2 , 1
+2 , 1
+2).
+28
+
+===== PAGE 30 =====
+
+5 Moduli stabilization in Narain orbifolds
+As we have seen in the previous section, the space group description of Narain orbifolds is naturally
+formulated using the twist Θ and the generalized vielbein E. On the other hand, the question about
+moduli stabilization and classiﬁcation, in particular, are more conveniently discussed in the so-called
+lattice basis in which the twist is encoded by an integral matrix ˆρ. Therefore, we begin this section
+with a discussion of Narain orbifolds in the lattice basis. Beside the integral twist matrices ˆρ, we
+introduce the generalized metric H and a closely related Z 2-gradingZ. After that we investigate
+under which conditions Narain orbifolds exist and derive restrictions on the Narain moduli that have
+to be imposed in order to be compatible with the orbifold action. In particular, we derive a character
+formula that counts the dimension of the orbifold Narain moduli space.
+5.1 Narain orbifolds in the lattice basis
+Twists and shifts in the lattice basis
+We have seen in eqn. (4.13) that each point group generator Θ α has to map a Narain vector E N to
+another Narain vector E N′ = Θα E N, see eqn. (2.16). It follows that N′ = ˆραN, where we deﬁne ˆρα
+as
+ˆρα = E−1Θα E = ˆE−1 ˆΘα ˆE ∈ GL(2D + 16; Z ) . (5.1)
+Here, we used E = U R ˆE and we absorbed U in the deﬁnition of ˆΘα = R−1 U−1 Θα U R.
+The matrices ˆρα represent the generating twists Θ α in the so-called lattice basis. They have to be
+invertible over the integers (i.e. ˆρα∈ GL(2D + 16; Z )) because each ˆρα has to map an integer vector
+N one-to-one to another integer vector N′. Furthermore, they inherit the following conditions
+ˆρ T
+α ˆη ˆρα = ˆη and ˆρ Kα
+α = 1 , (5.2)
+since the generating twists Θ α are elements of O η(D, D + 16; R ) of ﬁnite order Kα. The integral
+matrices ˆρα generate the so-called Narain point group in the lattice basis ˆP⊂ Oˆη(D, D + 16; Z ),
+while twists Θ α∈ P are given in the so-called coordinate basis. The lattice basis will be of special
+importance for the classiﬁcation of Narain orbifolds later in Section 6.1. Moreover, the space group
+generators (Θα, Vα) and ( 1 , L)∈ S can be represented in the lattice basis as
+(ˆρα, 1
+Kα
+Nα) ∈ ˆS and ( 1 , N) ∈ ˆS , (5.3)
+where Vα = 1
+Kα E Nα and L = E N for N, Nα∈ Z 2D+16.
+Generalized metric
+Eqn. (5.2) represents two out of the three properties (4.4) of the generators Θ α in the lattice basis.
+The remaining one, Θ T
+αΘα = 1 , can be cast in the form
+ˆρT
+αH ˆρα = H , (5.4)
+where we have introduced the so-called generalized metric H deﬁned as
+H = ET E = ˆET (e, B, A) RT R ˆE(e, B, A) . (5.5)
+29
+
+===== PAGE 31 =====
+
+In other words, condition (5.4) states that the generators ˆρα and the generalized metricH have to be
+compatible.
+The generalized metric is given explicitly by
+H(G, B, A) =
+
+
+G + AT A + CG−1CT −CG−1 (1 D + CG−1)AT αg
+−G−1CT G−1 −G−1AT αg
+αT
+g A(1 D + G−1CT ) −αT
+g AG−1 αT
+g
+(
+1 16 + AG−1AT )
+αg
+
+ , (5.6)
+using eqns. (2.26) and (2.39). It is an interesting object in its own right: Assume one is given a
+generic Narain lattice (with moduli-independent Narain metric ˆη = ET η E as given in eqn. (2.23))
+by specifying the generalized vielbein E, then it might be rather awkward to determine the matrix U
+from E = U R ˆE such that we can read oﬀ the moduli contained in the matrix ˆE. As the generalized
+metricH is independent of U, it can be used to read oﬀ the metric G of the D-dimensional torus, the
+B-ﬁeld and the Wilson line matrix A. As the explicit expression of the generalized metric (5.6) shows,
+not all its components are independent, i.e. H is not a generic (2 D + 16)× (2D + 16) matrix. Indeed,
+H satisﬁes the constraints
+H ˆη−1H = ˆη and HT =H , (5.7)
+as follows from its deﬁnition (5.5) .
+A Z 2 grading
+The compatibility condition (5.4) of the orbifold twists in the lattice basis can also be represented as
+Z ˆρα = ˆραZ , (5.8)
+where we have deﬁned
+Z = ˆη−1H = E−1ηE = ˆE(e, B, A)−1 ˆI ˆE(e, B, A) ∈ Oˆη(D, D + 16, R ) . (5.9)
+The second expression in this equation is obtained using ˆI = R−1η R, as given in Table 1, and the
+relation RT R = ˆη ˆI. Explicitly,Z is given by
+Z(G, B, A) =
+
+
+−G−1CT G−1 −G−1AT αg
+G + AT A + CG−1CT −CG−1 (1 D + CG−1)AT αg
+α−1
+g A(1 D + G−1CT ) −α−1
+g AG−1 α−1
+g
+(
+1 16 + AG−1AT )
+αg
+
+ . (5.10)
+The constraints (5.7), which the generalized metric satisﬁes, translate to the following conditions on
+Z:
+Z T ˆηZ = ˆη and Z2 = 1 . (5.11)
+This can be conﬁrmed by using eqn. (5.7) and the fact that ˆI 2 = 1 . Given its deﬁnition (5.9), the
+matrixZ has signature (D, D + 16), just as η (and ˆI). This leads to a grading of the Narain lattice: It
+characterizes the distinction between D right- and D + 16 left-moving directions of the Narain lattice.
+30
+
+===== PAGE 32 =====
+
+5.2 On the existence of Narain orbifolds for a given point group
+Assume a given ﬁnite point group ˆP⊂ Oˆη(D, D + 16; Z ) with generators ˆρα in the lattice basis. We
+want to understand these generators ˆρα as the crucial ingredient in the deﬁnition of a Narain orbifold.
+Therefore, we have to address the following question: Under which condition does a corresponding
+Narain orbifold exist? In terms of the terminology introduced in Section 4 this can be phrased as
+follows: When does a Narain lattice exist, such that all generators Θ α of the corresponding group P
+in the coordinate basis satisfy (4.4) and are symmetries of this lattice (4.13)?
+In the following, we will answer this question in the lattice basis. Then, the conditions on Θ α
+translate to conditions (5.2) and (5.4) on ˆρα ∈ ˆP. In fact, eqn. (5.2) is fulﬁlled by assumption
+(i.e ˆP⊂ Oˆη(D, D + 16; Z ) and ﬁnite). Thus, it remains to show that eqn. (5.4) is fulﬁlled, i.e. we
+have to ﬁnd a generalized metric that is compatible with all generators ˆρα. Consequently, a Narain
+orbifold with given point group ˆP exists if one ﬁnds Narain moduli G, B and A that are invariant
+under ˆρα∈ ˆP.
+If such a generalized vielbein exists, then generically, not all the moduli of the Narain torus
+compactiﬁcation are still free; some Narain moduli are stabilized. Thus, we can use our discussion on
+the transformation properties of Narain moduli under general T -duality transformations in Section 3.3
+in order to derive conditions for moduli stabilization.
+To address these questions, we study the existence of both a twist Θ α∈ O(D; R )× O(D + 16; R )
+for each ˆρα and a compatible generalized vielbein ˆE(e, B, A), i.e.
+Θα R ˆE(e, B, A) = R ˆE(e, B, A) ˆρα , (5.12)
+which is equivalent to eqn. (5.1) by absorbing U in the deﬁnition of Θ α. Eqn. (5.12) constitutes
+nine coupled matrix equations for the D(D + 16) Narain moduli G, B, A and the D(D− 1)/2 and
+(D + 16)(D + 15)/2 parameters inside each of the generators Θ α.
+Instead of trying to solve all nine coupled matrix equations, we ﬁrst focus on a subset of only three
+matrix equations
+W ˆρα = θα r W with W =
+√
+2 (R ˆE)r = e−T (
+G + CT , −1 D, A T αg
+)
+, (5.13)
+(where θα r is the ur part of the matrix Θα as deﬁned in eqn. (2.38)) that determine the Narain moduli
+uniquely already. Expanding out eqn. (5.13), we obtain
+−(ˆρα)21 + (G + CT )(ˆρα)11 + AT αg (ˆρα)31 = ρ−T
+α r (G + CT ) , (5.14a)
+−(ˆρα)22 + (G + CT )(ˆρα)12 + AT αg (ˆρα)32 = −ρ−T
+α r , (5.14b)
+−(ˆρα)23 + (G + CT )(ˆρα)13 + AT αg (ˆρα)33 = ρ−T
+α r AT αg , (5.14c)
+where ρα r := e−1θα r e. (Note that there is a redundancy between e and θα r, which reﬂects the fact
+that the vielbein e is not uniquely determined by the metric G.)
+It is suﬃcient to solve only these three matrix equations (5.14) in order to ﬁnd a solution of all
+nine equations (5.12) because of the coset decomposition (3.4): Indeed, we can alternatively obtain
+the set of coupled equations (5.14) by comparing eqn. (5.12) to eqn. (3.4). They are identical if we
+determine each twist Θα from eqn. (3.10) using U ˆM = Θα (hence, in particular ur = θα r) and ˆM = ˆρα.
+Furthermore, we have to set G′ = G, B′ = B and A′ = A, where the primed objects are determined
+31
+
+===== PAGE 33 =====
+
+by the transformation of the generalized metric
+H(G′, B′, A′) = ˆρT
+αH(G, B, A) ˆρα
+!= H(G, B, A) , (5.15)
+using eqn. (5.5). Therefore, using eqn. (3.2) the moduli of the Narain lattice are constrained according
+to
+ˆM T
+α 1ρα r = G + C , ˆM T
+α 2ρα r = − 1 and ˆM T
+α 3ρα r = αT
+g A , (5.16)
+for each generator of the point group ˆρα. Inserting the moduli-dependent short-hands ˆMα i from
+eqn. (3.8) the resulting equations are again eqns. (5.14). In summary, for a given ﬁnite group ˆP⊂
+Oˆη(D, D + 16;Z ) there exists a Narain lattice such that ˆP is a point group of this lattice if the Narain
+moduli can be chosen such that they are invariant under the orbifold action, i.e. G′ = G, B′ = B and
+A′ = A, see Section 5.
+Eqn. (5.14b) can be used to constrain ρα r. Inserting this in the other two equations of eqns. (5.14)
+leads to two coupled quadratic matrix equations
+(G + CT )ˆρ12(G + CT ) + AT αg(ˆρ32(G + CT ) + ˆρ31)− ˆρ22(G + CT ) + (G + CT )ˆρ11 = ˆρ21 , (5.17a)
+AT αg ˆρ32AT αg + (G + CT )(ˆρ13 + ˆρ12AT αg)− ˆρ22AT αg + AT αg ˆρ33 = ˆρ23 . (5.17b)
+for each generator ˆρ = ˆρα of the point group ˆP. These conditions can be thought of as algebraic
+Riccati equations (see e.g. [89]) which constrain some and sometimes even all the moduli G, B and
+A. Hence we have reduced the existence question of Narain orbifolds to the question whether these
+Riccati equations admit real solutions.
+5.3 Mapping from the lattice basis to the coordinate basis
+Assume we are given a ﬁnite point group ˆP⊂ Oˆη(D, D + 16;Z ) with generators ˆρα in the lattice basis
+and we want to know a compatible Narain lattice as well as the twists Θ α in the coordinate basis.
+To obtain this data we can perform the following steps: First, we ﬁnd a solution to eqns. (5.17), i.e.
+ﬁnd orbifold invariant moduli G, B and A. After that we make a choice for a geometrical vielbein e
+such that eT e = G. By doing so, we have obtained a generalized vielbein E = R ˆE(e, B, A), which
+is compatible with ˆP in the sense of eqn. (5.12). Finally, we compute the twists in the lattice basis:
+Using the geometrical vielbein e we can determine the right-moving twists θα r = e ρα r e−1, where ρα r
+is given by eqn. (5.14b). Consequently, we can compute the blocks of Θ α from eqn. (3.10), i.e.
+θα l =
+(
+1 D− 2 e (ˆρα)12 ˆM−1
+α 2 eT
+)
+θα r , (5.18a)
+θα lL =
+√
+2 e
+(
+(ˆρα)13− (ˆρα)12 ˆM−1
+α 2 ˆMα 3
+)
+α−1
+g , (5.18b)
+θα Ll = −
+√
+2
+(
+αg (ˆρα)32 + A (ˆρα)12
+)
+ˆM−1
+α 2 eT θα r , (5.18c)
+θα L = A (ˆρα)13 α−1
+g + αg (ˆρα)33 α−1
+g −
+(
+A (ˆρα)12 + αg (ˆρα)32
+)
+ˆM−1
+α 2 ˆMα 3 α−1
+g , (5.18d)
+where ˆMα i for i = 1, 2, 3 are deﬁned in eqn. (3.8) setting ˆM = ˆρα. This method we will be exempliﬁed
+in Section 8 where we discuss a number of two-dimensional Narain orbifolds.
+32
+
+===== PAGE 34 =====
+
+An important characterization of heterotic Narain orbifolds is whether they are symmetric or
+asymmetric. In Section 4.1 we deﬁned a Narain orbifold to be symmetric if there is a coordinate basis
+such that eqn. (4.5) holds. In the lattice basis, a suﬃcient but not necessary condition for a Narain
+orbifold to be symmetric is ( ˆρα)12 = 0: First of all notice that ( ˆρα)12 = 0 implies ( ˆρα)13 = 0 and
+(ˆρα)32 = 0 since ˆρT
+α ˆη ˆρα = ˆη. Consequently, the conditions (5.17) become linear in the moduli and,
+hence, not all Narain moduli are frozen. Furthermore, using eqns. (5.18) we obtain
+θα l = θα r , θ α lL = θα Ll = 0 , θ α L = αg (ˆρα)33 α−1
+g . (5.19)
+Hence, any generator ˆρα∈ ˆP with ( ˆρα)12 = 0 and ( ˆρα)33 = 1 16 corresponds to a symmetric twist.
+However, the converse is in general not true. In Section 8 we provide examples for both cases: In
+Section 8.2 we list several Narain orbifolds that are necessarily symmetric because ( ˆρα)12 = 0 and in
+Section 8.4 we give one Narain orbifold that is symmetric even though ( ˆρα)12̸= 0.
+5.4 Dimensionality of the Narain orbifold moduli space
+Assuming that a Narain orbifold exists, i.e. assuming that we have found a generalized vielbein ˆE0
+that satisﬁes eqn. (5.12), we want to determine the number of unconstrained Narain moduli. In other
+words, we want to count the number of moduli perturbations δH that can deform the associated
+generalized metricH0 such thatH0 + δH remains invariant under the Narain orbifold action.
+To address this question, we make use of the results from Appendix A and set ˆH = ˆP. Then, the
+tangent space to the orbifold-invariant moduli space is given by
+M ˆP =
+{
+δm ˆP = P ˆP δm
+}
+, (5.20)
+where the projection operator P ˆP is deﬁned in eqn. (A.11). The moduli deformations δH, can be
+parametrized as follows
+δH = ET
+0 δh E0 , δ h =
+( 0 δm
+δmT 0
+)
+δm =
+(
+e−T
+0 (δG− δB′) e−1
+0 ,
+√
+2 e−T
+0 δAT )
+, (5.21)
+where δB′ = δB + 1
+2 δAT A0− 1
+2 AT
+0 δA, δG = δeT e0 + eT
+0 δe.
+According to eqn. (A.13) the dimension of the orbifold-invariant Narain moduli space, i.e. the
+number of moduli, is determined by
+dim(M ˆP) = ⟨χr, χL⟩ = 1
+|P|
+∑
+Θ∈P
+χr(Θ) χL(Θ)∗ , (5.22)
+where we have introduce the right- and left-characters
+χr(Θ) = tr[ θr] = tr
+[ 1 − η
+2 Θ
+]
+, χ L(Θ) = tr[Θ L] = tr
+[ 1 + η
+2 Θ
+]
+, (5.23)
+respectively. Because of this character formula (5.22), the number of moduli dim( M ˆP) for Narain
+orbifolds only depends on the representations ofθr and ΘL of the point groupP, but not on conjugation
+of Θ with U∈ O(D; R )× O(D + 16; R ).
+The number of ﬁxed moduli is given by D(D + 16)− dim(M ˆP). In particular, all Narain moduli
+are frozen if dim(M ˆP) = 0. In this case, the Narain orbifold moduli space M ˆP is a point (or a set of
+33
+
+===== PAGE 35 =====
+
+disjoint points). This happens when the right- and left-characters (5.23) are orthogonal. In light of
+this, we can use the property that characters of irreducible representations form an orthonormal basis
+to analyze eqn. (5.22). In detail, for two (complex) irreducible representations µ andν of the ﬁnite
+point group P we have
+⟨χµ, χν⟩ =
+{ 1 if µ =ν
+0 else
+. (5.24)
+This can be used to construct some situations with all moduli ﬁxed, i.e. dim( M ˆH) = 0:
+• If the matrix representations of θr and ΘL are both irreducible, they have to be diﬀerent, since
+the former is D-dimensional while the latter is (D +16)-dimensional, and hence, their characters
+are orthogonal.
+• If the representations of θr and ΘL are reducible, one can decompose them into irreducible ones
+as
+θr =
+⨁
+µ
+θrµ , ΘL =
+⨁
+ν
+ΘLν , ⇒ χr =
+∑
+µ
+χrµ , χ L =
+∑
+ν
+χrν , (5.25)
+where the irreducible representations θrµ and ΘLν are in general complex. Hence, if and only
+if θr and ΘL do not contain any irreducible representation in common, again the characters χr
+and χL are orthogonal. An particular example of this is obtained, when Θ L = 1 and θr does not
+contain any trivial one-dimensional representations of P.
+5.5 A T -fold constructed as an asymmetric Z 2 Narain orbifold
+To illustrate the various results, we conclude this section by considering a simple but instructive
+construction of a T -fold: We deﬁne an asymmetric Z 2 Narain orbifold by choosing
+ˆρ = ˆI =
+
+
+0 1 D 0
+1 D 0 0
+0 0 1 16
+
+ , (5.26)
+see Table 1. First, we identify a speciﬁc example of a compatible Narain lattice using theZ 2 gradingZ.
+Then, we will use the discussion from Section 5.2 to see that this is actually the most general solution.
+Finally, we conﬁrm this by counting the number of unstabilized Narain moduli using Section 5.4.
+To ﬁnd a compatible Narain lattice, we notice thatZ = ˆI is a valid Z 2 grading satisfying eqn. (5.8).
+Hence, we can easily read oﬀ
+e = G = 1 D , B = 0 and A = 0 . (5.27)
+from eqn. (5.10) as a possible choice for the Narain moduli. Alternatively, we can study the solutions
+of eqns. (5.17). In this case these equations read:
+(G + CT )(G + C) = 1 D , A T αg = 0 . (5.28)
+Again, it is not diﬃcult to conﬁrm that eqns. (5.27) constitute a solution.
+34
+
+===== PAGE 36 =====
+
+Consequently, we ﬁnd ˆE(e, B, A) = 1 and we obtain the twist Θ in the coordinate basis from
+eqn. (5.12) as
+Θ = R ˆE(e, B, A) ˆρ ˆE(e, B, A)−1 R−1 = R ˆI R−1 = η =
+
+
+−1 D 0 0
+0 1 D 0
+0 0 1 16
+
+ , (5.29)
+i.e. θr =−1 D, θl = 1 D and θL = 1 16.
+In fact, all Narain moduli are stabilized in this case as we are going to show next. We use eqn. (3.8)
+with ˆM = ˆI, which yields
+ˆM1 = − 1 D , ˆM2 = G + CT and ˆM3 = AT αg . (5.30)
+Then, the Narain moduli are subject to the constraints (5.16). In this example, they read
+1 D = G + C and A = − A . (5.31)
+using ρr = e−1θr e =−1 D. Consequently, all Narain moduli are stabilized and their values are given
+by eqns. (5.27).
+The fact that all Narain moduli are stabilized in this example is also easy to understand using
+the number of unstabilized Narain moduli dim( M ˆP), see eqn. (5.22): θr consists of D non-trivial
+irreducible representations of the Z 2 point group, while Θ L consists of D + 16 trivial irreducible
+representations. As the characters of diﬀerent irreducible representations are orthogonal, we easily
+ﬁnd dim(M ˆP) = 0.
+6 Towards a classiﬁcation of Narain orbifolds
+In this section we would like to lay the foundations for a classiﬁcation of inequivalent Narain orbifolds.
+In general, the key to a classiﬁcation of any structure is to identify those transformations that relate (or
+even deﬁne) equivalent structures. These transformations can be used to deﬁne equivalence relations
+that consequently give rise to equivalence classes. For the classiﬁcation ofD-dimensional – geometrical
+– orbifolds the structure turns out to be the space group and the equivalence relations are based on
+the notions of Q -, Z - and aﬃne-classes [7]. In this section we show that extending these notions to
+generalized space groups is the key for a classiﬁcation of Narain orbifolds.
+In more detail, for the classiﬁcation of Narain orbifolds we identify three main structures: (i) the
+integral Narain point group ˆP of ﬁnite lattice automorphisms, (ii) an associated Narain lattice I Γ
+(given by a geometrical torus with metric G, a B-ﬁeld and Wilson lines A) that is compatible with
+the point group and, ﬁnally, (iii) the full generalized space group S, which fully speciﬁes a Narain
+orbifold as we have seen in Section 4. The main purposes of this section are to deﬁne equivalences for
+these three structures, namely Narain Q -, Z - and Poincar´ e-equivalences, together with their associated
+equivalence-classes and to analyze their interpretations.
+6.1 Narain Q - and Z -classes
+For the deﬁnition of Narain Q - and Z -classes we need to describe the Narain point group in the lattice
+basis, where ˆP⊂ Oˆη(D, D + 16; Z ), see Section 5.1. Then, one only has to consider integral ﬁnite
+35
+
+===== PAGE 37 =====
+
+order elements ˆρα∈ ˆP. Since Narain Q - and Z -classes are analogously deﬁned, we take the ﬁeld F to
+be either Q - and Z and begin with the deﬁnition of F -equivalence: Two matrices ˆρ∈ Oˆη(D, D+16; Z )
+and ˆρ′∈ Oˆη′(D, D +16; Z ) are deﬁned to be F -equivalent if there exists a matrix ˆM∈ GL(2D +16; F )
+such that
+ˆρ′ = ˆM−1 ˆρ ˆM and ˆη′ = ˆM T ˆη ˆM . (6.1)
+Two Narain points groups ˆP⊂ Oˆη(D, D + 16; Z ) and ˆP′ ⊂ Oˆη′(D, D + 16; Z ) are said to be
+F -equivalent if there exists a single matrix ˆM∈ GL(2D + 16; F ) such that
+ˆP′ = ˆM−1 ˆP ˆM and ˆη′ = ˆM T ˆη ˆM . (6.2)
+Note that if two point groups are from the same Z -class they are also from the same Q -class, because
+if ˆM∈ GL(2D + 16;Z ) then ˆM∈ GL(2D + 16;Q ). But the converse is not true, i.e. two point groups
+from the same Q -class can be in inequivalent Z -classes.
+6.2 Interpretation of Narain Q - and Z -classes
+To prepare the interpretation of the Narain Q - and Z -classes, let us assume that two Narain point
+groups ˆP and ˆP′ are from the same F -class, where the ﬁeld F is either Q or Z . Then, there exists a
+matrix ˆM∈ GL(2D + 16; F ) such that for each generator ˆρα∈ ˆP there is a generator ˆρ′
+α∈ ˆP′ with
+ˆρ′
+α = ˆM−1 ˆρα ˆM . (6.3)
+Now, consider a Narain lattice spanned by a generalized vielbein E, such that E is compatible with
+all generators ˆρα and insert eqn. (6.3), i.e.
+Θα E = E ˆρα = E ˆM ˆρ′
+α ˆM−1 . (6.4)
+Consequently, we ﬁnd
+Θα E′ = E′ ˆρ′
+α where E′ = E ˆM . (6.5)
+Hence, we can interpret eqn. (6.5) as follows:
+If ˆP is a symmetry of a Narain lattice with generalized vielbein E and Narain metric ˆη then ˆP′ is
+a symmetry of a Narain lattice with generalized vielbein E′ = E ˆM and Narain metric ˆη′ = ˆM T ˆη ˆM.
+Furthermore, we notice that both point groups have the same geometrical action Θα which corresponds
+to both ˆρα and ˆρ′
+α. In other words, the corresponding point groups P and P′ in the coordinate basis
+are identical (up to a trivial basis change) for point groups from the same F -class. Consequently,
+the question of symmetric or asymmetric orbifolds, the number of unbroken supersymmetries in d
+uncompactiﬁed dimensions and the number of invariant Narain moduli eqn. (5.22) are also equal.
+This is independent of the choice for the ﬁeld F to be Q or Z .
+Next, we have to distinguish between these two Narain classes: Let us ﬁrst consider the case
+F = Q . The Narain lattices spanned by E and E′ = E ˆM, are in general physically inequivalent,
+because if ˆM∈ GL(2D + 16; Q ) then in general ˆM̸∈ GL(2D + 16; Z ). A representation of a Q -class
+only gives one example of a compatible Narain lattice. To characterize all inequivalent lattices for
+36
+
+===== PAGE 38 =====
+
+a given Q -class one needs to consider Z -classes. That is, if F = Z the generalized vielbeins E and
+E′ = E ˆM span identical Narain lattices.
+Finally, if ˆM additionally preserves the Narain metric ˆη, i.e. if
+ˆM ∈ Oˆη(D, D + 16; F ) ⊂ GL(2D + 16; F ) , (6.6)
+which means that ˆM is a T -duality transformation, we can analyze the consequences of eqn. (6.5) for
+the Narain moduli G, B and A. In this case, we take the most general vielbein E = U R ˆE(e, B, A)
+from eqn. (3.6) and use eqn. (3.4) in order to transferˆM into U ˆM for the generalized vielbein E′ = E ˆM.
+Consequently, one can show that E′ is given by
+E′ =
+(
+U R ˆE(e, B, A)
+)
+ˆM = UB U R ˆE(e′, B′, A′) where UB = U U ˆM U−1 , (6.7)
+and the ˆM-transformed Narain moduli are given in eqn. (3.14). Hence, if two Narain point groups
+ˆP and ˆP′ are F -equivalent and deﬁned with respect to the same Narain metric ˆη then the lattice
+E = U R ˆE(e, B, A) of ˆP corresponds to the lattice E′ of ˆP′ as given in eqn. (6.7). This change
+of lattices from E to E′ involves a transformation of moduli from G, B and A to G′, B′ and A′
+using the T -duality transformation ˆM and, in addition, a rotation in the coordinate basis with UB∈
+O(D; R )× O(D + 16; R ). Moreover, from eqns. (6.4) and (6.5) we obtain
+Θα
+(
+U R ˆE(e, B, A)
+)
+=
+(
+U R ˆE(e, B, A)
+)
+ˆρα , (6.8a)
+(
+U−1
+B Θα UB
+)(
+U R ˆE(e′, B′, A′)
+)
+=
+(
+U R ˆE(e′, B′, A′)
+)
+ˆρ′
+α . (6.8b)
+That is, even though we have seen in eqns. (6.4) and (6.5) that the Narain point groups P and P′ are
+identical in the same F -class, their generators Θα and Θ′
+α = U−1
+B Θα UB can look diﬀerent, for example,
+one is symmetric and the other looks asymmetric. This is the case if one chooses the corresponding
+Narain lattices as diﬀerent points, speciﬁed by ( e, B, A) and (e′, B′, A′), in the same representation of
+the Narain moduli space, i.e. with the same U in eqn. (6.8). As an example for eqn. (6.8), we will
+discus two F -equivalent Z 3 point groups ˆP(1) and ˆP(2) in Section 8.4, where the point group ˆP(1) is
+symmetric while ˆP(2) looks asymmetric due to a non-trivial transformation UB.
+6.3 Narain Poincar´ e-classes
+As ﬁnal type of equivalence transformations, we want to generalize aﬃne transformations ( F, λ) of
+Euclidean D-dimensional orbifolds (with linear mapping F∈ GL(D; R ) and translation λ∈ R D) to
+the Narain case. Importantly, the (2 D + 16)-dimensional Narain lattice is equipped with a metric η
+with signature (D, D +16), which has to be preserved by any transformation. Hence, it is essential for
+the Narain case to restrict aﬃne transformations in 2 D + 16 dimensions to Poincar´ e transformations
+(F, λ) of the Narain lattice, where F ∈ Oη(D, D + 16; R ) and λ∈ R 2D+16. Therefore, we need to
+introduce Poincar´ e-classes instead of aﬃne classes in order to describe Narain orbifolds.
+This might give the impression that Poincar´ e transformations of Narain orbifolds are more re-
+strictive than aﬃne transformations of ordinary Euclidean orbifolds. This is not the case since
+Oη(D, D + 16; R ) transformations contain GL( D; R ) transformations. This can be made explicit
+by the parametrization E ˆMe(∆K)E−1∈ Oη(D, D + 16; R ), where ˆMe(∆K) is is given in Table 1
+37
+
+===== PAGE 39 =====
+
+with ∆K∈ GL(D; R ). Consequently, Poincar´ e-classes generalize the notion of aﬃne classes to Narain
+orbifolds.
+In light of this, we deﬁne the following equivalence relation: Consider two Narain orbifolds, i.e. two
+space groups S(1) and S(2) with point groups in the same Z -class. Two such Narain space groups are
+deﬁned to be equivalent if there exists a Poincar´ e transformation ( F, λ) with F∈ Oη(D, D + 16; R )
+and λ∈ R 2D+16 such that
+S(2) = (F, λ)−1 S(1) (F, λ) . (6.9)
+More explicitly, in terms of the generators (Θ (κ)α, V(κ)α) and ( 1 , L(κ)) of the space groups S(κ) for
+κ = 1, 2 this reads
+L(2) = F−1 L(1) , Θ(2)α = F−1 Θ(1)α F , V (2)α = F−1(
+V(1)α− (1 − Θ(1)α)λ
+)
+, (6.10)
+see eqn. (4.6). Notice that Narain Q - and Z -classes involve transformations in the lattice basis,
+while Narain Poincar´ e classes involve transformations in the coordinate basis. Since Narain Poincar´ e
+transformations act on all deﬁning quantities of the space group, see eqn. (6.10), their interpretation
+is more involved.
+6.4 Interpretation of Narain Poincar´ e-classes
+First of all, we show that two generalized space groups from the same aﬃne class correspond to
+the same Narain orbifold but possibly at diﬀerent points in the moduli space. To see this, let us
+denote the generalized vielbeins that specify the Narain lattices from the respective generalized space
+groups S(κ) by E(κ) = U(κ) R ˆE(e(κ), B(κ), A(κ)) for κ = 1, 2, where U(κ)∈ O(D; R )×O(D +16; R ) and
+ˆE(e(κ), B(κ), A(κ)) is given in eqn. (3.1). Since L(κ) = E(κ)N(κ) are related by the transformation (6.10),
+a Poincar´ e transformation (F, λ) of the corresponding generalized vielbeins E(1) and E(2) is given by
+U(2) R ˆE(e(2), B(2), A(2)) = E(2) = F−1 E(1) = F−1 U(1) R ˆE(e(1), B(1), A(1)) , (6.11)
+where we assume without loss of generality that we do not perform a discreteT -duality transformation
+(i.e. N(2) = N(1)). This can be rewritten as
+ˆU(2) ˆE(e(2), B(2), A(2)) = ˆE(e(1), B(1), A(1)) ˆMF , (6.12)
+where
+ˆU(2) = R−1 U(2) R and ˆMF = E−1
+(1) U(1) F−1 E(1) ∈ Oˆη(D, D + 16, R ) . (6.13)
+Since ˆMF parametrizes a general T -duality transformation, we can make use of eqn. (3.4) to determine
+the transformation of the moduli by setting ˆM = ˆMF , i.e.
+ˆU ˆMF
+ˆE(e′
+(1), B′
+(1), A′
+(1)) = ˆE(e(1), B(1), A(1)) ˆMF . (6.14)
+Since the generalized vielbein is uniquely deﬁned up to O( D; R )× O(D + 16; R ) transformations, we
+conclude that
+e(2) = e′
+(1) , B (2) = B′
+(1) , A (2) = A′
+(1) , (6.15)
+38
+
+===== PAGE 40 =====
+
+where the prime denotes the resulting moduli under the T -duality transformation ˆMF . This tells us
+that two generalized space groups from the same Poincar´ e-class can correspond to the same Narain orb-
+ifold but at diﬀerent points in the moduli space. In fact only if F∈ O(D; R )×O(D+16; R )\Oη(D, D+
+16; R ) we get a proper moduli transformation. Indeed, if F∈ O(D; R )× O(D + 16; R ) we ﬁnd that
+U(2) = F−1 U(1) as well as e(2) = e(1), B(2) = B(1) and A(2) = A(1). In this case, also the left- and
+right-moving mass formulae of the heterotic string stay the same.
+So far we only gave an interpretation of the ﬁrst equivalence relation in eqns. (6.10). The second re-
+lation tells us that the orbifold twists can take various guises by conjugation withF∈ Oη(D, D+16; R ).
+The third equivalence relation in eqns. (6.10) can be interpreted by resorting to the decomposition
+mentioned in Section 4.5.
+7 Symmetric orbifolds as Narain orbifolds
+The main objective of our study in this paper is to set up a framework to investigate asymmet-
+ric orbifolds. Nevertheless, it is very instructive to apply the Narain formalism also to symmetric
+orbifolds [5, 6]: It provides us with a uniﬁed view on both, geometric moduli and Wilson lines [8].
+Moreover, this case can be used to illustrate the power of the T -duality group approach in the in-
+vestigation of moduli stabilization. For concreteness and simplicity, we only consider symmetric Z K
+orbifolds in this section. Extending the discussion is straightforward, yet beyond the scope of the
+present paper.
+7.1 Symmetric Z K orbifolds
+The Narain point group of a symmetric Z K orbifold is generated by a single twist Θ of order K and
+the associated generator of the generalized space group is given by (Θ , V ). For the orbifold to be
+symmetric, we choose the twist Θ to be of the form given in eqn. (4.5). Thus, we obtain for Θ k,
+k = 1, . . . , K,
+ˆΘk = R−1Θk R =
+
+
+θk 0 0
+0 θk 0
+0 0 1 16
+
+ = ˆMe(θk) , (7.1)
+see Table 1 and usingθT θ = 1 D. Using the deﬁnition (5.1) of the integral matrix ˆρ we can subsequently
+obtain an expression for ˆρ k, which can be further evaluated with the help of the multiplication Table 2
+for T -duality group elements. This yields
+ˆρk = ˆE(e, B, A)−1 ˆΘk ˆE(e, B, A) = ˆMe(ˆθk) ˆMB(∆Bk) ˆMA(∆Ak) , (7.2)
+where we deﬁned
+ˆθ = e−1θ e (7.3a)
+∆Bk = B− ˆθkT B ˆθk + 1
+2
+(
+ˆθkT AT A− AT A ˆθk
+)
+with ∆ BT
+k =−∆Bk (7.3b)
+∆Ak = A
+(
+1 D− ˆθk
+)
+. (7.3c)
+39
+
+===== PAGE 41 =====
+
+Since ˆρ is an integral matrix, ˆθ, ∆ Bk and ∆ Ak all have to be constant, i.e. moduli-independent,
+matrices. As a cross-check, let us conﬁrm that for k = K we obtain ˆρ K = 1 : Indeed, in this case we
+get ˆθK = 1 D, ∆AK = 0 and ∆BK = 0 and consequently, ˆρK = ˆMe(1 D) = 1 , as required. Furthermore,
+we ﬁnd from eqn. (7.2) that ˆρ is an element of the discrete geometric subgroup Ggeom(Z )⊂ Oˆη(D, D+
+16; Z ), see eqn. (3.15) with ∆ W = 1 16.
+The twist Θ is in general accompanied by a shift V T = (V T
+r , V T
+l , V T
+L ), see eqn. (4.6). As we have
+seen in Section 4.5, the shift is quantized, i.e. KV Θ
+∥ = E NV ∈ I Γ. It is instructive to analyze this in
+more detail for the case that θ rotates in all D compact dimensions. Then, the projection operator
+eqn. (4.15) reads
+PΘ
+∥ =
+
+
+0 0 0
+0 0 0
+0 0 1 16
+
+ , (7.4)
+and we obtain the condition
+KV Θ
+∥ =
+
+
+0
+0
+K VL
+
+ != E NV ∈ I Γ with NV =
+
+
+mV
+nV
+qV
+
+ ∈ Z 2D+16 . (7.5)
+This is solved by
+K VL = αg qV ∈ ΛE8×E8 , KA T VL = nV∈ Z 6 and mV = 0 , (7.6)
+where Λ E8×E8 denotes the root lattice of E 8× E8 and we used eqn. (2.44). Hence, VL is the gauge
+shift vector of order K known to the symmetric orbifold literature, e.g. [13,52]. Furthermore, we can
+set Vr = Vl = 0 by shifting the origin using the transformation (4.23).
+7.2 Moduli stabilization in symmetric Z K orbifolds
+The fact that even for symmetric Z K orbifolds a certain number of moduli, G, B and A, become
+constrained, can be inferred in two ways: First of all, the conditions (7.3) can be obtained from
+eqns. (7.2), as shown above by using the fact that for symmetric orbifolds the twist ˆρ is an element of
+the geometric subgroup Ggeom(Z )⊂ Oˆη(D, D + 16;Z ). A second derivation of eqn. (7.3) follows from
+the general discussion in Section 5.2, which is valid for both, symmetric and asymmetric orbifolds: To
+see this, we use
+ˆρ = ˆMe(ˆθ) ˆMB(∆B1) ˆMA(∆A1) = ˆE(ˆθ, ∆B1, ∆A1) , (7.7)
+see eqn. (7.2) and eqn. (3.1). Then, we set ˆM = ˆρ in eqn. (3.8) and obtain
+ˆM1 = ˆθ−T
+(
+−∆B1 + 1
+2∆AT
+1 ∆A1
+)
++ (G + CT )ˆθ + AT ∆A1 , (7.8a)
+ˆM2 = −ˆθ−T , ˆM3 =
+(
+∆A1 ˆθ−1 + A
+)T
+αg , (7.8b)
+and in addition we have ρr = e−1θr e = ˆθ. Consequently, the Narain moduli are constrained by
+eqns. (5.16), which are equivalent to eqns. (7.3). Thus, we found two equivalent ways to derive the
+conditions (7.3) for Narain moduli stabilization in the case of symmetric orbifolds.
+40
+
+===== PAGE 42 =====
+
+Let us now discuss the consequences of eqns. (7.3) for Narain moduli stabilization. Since ˆρ in
+eqn. (7.7) has to be an integer matrix, i.e. ˆρ∈ Oˆη(D, D + 16; Z ), we have to demand that
+ˆθ ∈ GL(D; Z ) , α −1
+g ∆Ak ∈ M16×D(Z ) , −1
+2∆AT
+k ∆Ak + ∆Bk ∈ MD×D(Z ) , (7.9)
+as can be inferred from eqns. (2.39) and (3.24).
+We start with ﬁxing moduli in the metric G. From eqn. (7.3a) and Θ T Θ = 1 we obtain the
+condition
+ˆθT G ˆθ != G ⇔ ˆθ ∈ OG(D; Z ) , (7.10)
+which ﬁxes some of the moduli, as is well-known. The general solution to eqn. (7.10) for a given ˆθ can
+be parametrized as
+G = 1
+K
+K−1∑
+k=0
+ˆθkT G0 ˆθk , (7.11)
+where G0 is some symmetric positive deﬁnite matrix, for example G0 = 1 D. Now, it is easy to
+demonstrate that some metric moduli remain unconstrained for symmetric orbifolds: at least we can
+scale G0 with an arbitrary positive factor, while eqn.(7.10) stays fulﬁlled.
+Next, we consider the Wilson lines. If θ rotates in all D compact dimensions (1 D− ˆθ) is invertible,
+i.e.
+(1 D− ˆθ)−1 = − 1
+K
+K−1∑
+n=1
+nˆθn , (7.12)
+and the Wilson lines are uniquely determined from ∆ Ak in eqn. (7.3c), e.g. from k = 1
+A != − 1
+K
+K−1∑
+n=1
+n ∆A1 ˆθn . (7.13)
+Consequently, the Wilson lines A are completely frozen as they have to be discrete, i.e. quantized in
+units of 1 /K in the directions where θ acts non-trivially. As a further consequence of eqn. (7.3c) we
+see that two Wilson lines (i.e. two columns of A) have to be identical up to some trivial ∆ Ak if the
+corresponding columns in the geometrical vielbein e are mapped to each other by ˆθk.
+Finally, the B-ﬁeld is constrained by the condition (7.3b)
+B− ˆθ T B ˆθ != ∆ B = ∆ B1− 1
+2
+(
+ˆθT AT A− AT A ˆθ
+)
+, (7.14)
+combined with eqn. (7.9). In analogy to eqn. (7.11) the general solution of this equation can written
+as
+B = 1
+K
+K−1∑
+k=0
+ˆθkT B0 ˆθk + BP , (7.15)
+41
+
+===== PAGE 43 =====
+
+where B0 is an arbitrary anti-symmetric matrix (for example, B0 = 0) and BP is a particular solution
+to eqn. (7.14). For example, in D = 2 the anti-symmetric 2× 2 matrix B contains a single modulus.
+It is subject to eqn. (7.14), i.e.
+B− ˆθT B ˆθ = (1 − det(ˆθ)) B != ∆ B , (7.16)
+where det( ˆθ) =±1. Thus, for det( ˆθ) = 1 we obtain ∆ B != 0 and the single B-ﬁeld modulus in B is
+unconstrained and BP = 0. On the other hand, B is stabilized at BP = 1
+2∆B if det( ˆθ) =−1.
+Number of moduli in symmetric Z K orbifolds
+We can compute the number of (real) unstabilized moduli for symmetric Z K orbifolds for general K
+using the results of Section 5.4. To do so, we assume for simplicity D = 6 and K̸= 2. Furthermore,
+we choose a Z K twist vector φR = (0, φ1
+R, φ2
+R,−φ1
+R− φ2
+R) such thatN = 1 supersymmetry survives in
+four dimensions, see Section 4.6. Hence, K = 3, 4, 6, 7, 8 or 12. Then, eqn. (5.22) yields
+dim(MZ K) = 6 + 2
+(
+δφ1
+R, 1
+2
++ δφ2
+R, 1
+2
++ δφ1
+R+φ2
+R, 1
+2
+)
++ 4
+(
+δφ1
+R,φ2
+R
++ δφ1
+R,−φ2
+R
++ δφ1
+R,−2φ2
+R
++ δ2φ1
+R,−φ2
+R
+)
+, (7.17)
+where δa,b = 1 if a≡ b and δa,b = 0 otherwise. For example, for Z 3 we take φ1
+R = φ2
+R = 1
+3 and obtain
+dim(MZ 3) = 6 + 2× 0 + 4× (1 + 0 + 1 + 1) = 18. As is well-known, these 18 (real) moduli correspond
+to 9 complex structure moduli, see e.g. [90].
+8 Two-dimensional Abelian Narain orbifolds
+In this section, we study examples of generalized space groups of Narain orbifolds with Abelian Narain
+point groups Z K in two dimensions. Many of them correspond to previously unknown two-dimensional
+Narain orbifolds. We collect them in a comprehensive table. Furthermore, to illustrate various aspects
+of the theory developed in previous sections, we describe some of these two-dimensional Z K Narain
+orbifolds in more detail. For example, by an explicit construction we show that it is possible to have
+Z 12 two-dimensional Narain orbifolds, while it is well-known that for Euclidean orbifolds in D = 2 the
+largest order of a twist is K = 6. Moreover, the Q - and Z -classes are used to distinguish seemingly
+asymmetric from truly asymmetric orbifolds.
+8.1 ( D,D )-Narain orbifold formalism
+To prepare the discussion of various illustrative examples of two-dimensional Narain orbifolds, we
+brieﬂy restrict the Narain orbifold formalism to the case where η has signature ( D, D):
+ˆη = RT η R =
+( 0 1 D
+1 D 0
+)
+with R = 1√
+2
+(1 D −1 D
+1 D 1 D
+)
+. (8.1)
+The generalized vielbein ˆE is an element from O ˆη(D, D; R ),
+ˆE(e, B) =
+(
+e 0
+e−T B e −T
+)
+. (8.2)
+42
+
+===== PAGE 44 =====
+
+Analogously to the discussion in Section 3.3, for each element
+ˆM =
+( ˆM11 ˆM12
+ˆM21 ˆM22
+)
+∈ Oˆη(D, D; R ) , (8.3)
+there exist a choice for a matrix U ˆM∈ O(D; R )× O(D; R ) and transformed moduli e′ and B′, such
+that
+ˆU ˆM
+ˆE(e′, B′) = ˆE(e, B) ˆM , U ˆM = R ˆU ˆM R−1 =
+(
+ur 0
+0 ul
+)
+. (8.4)
+In detail, deﬁning
+ˆM1 = − ˆM21 + (G− B) ˆM11 and ˆM2 = − ˆM22 + (G− B) ˆM12 , (8.5)
+in accordance with eqn. (3.8), we obtain
+ul =
+(
+1 D− 2 e ˆM12 ˆM−1
+2 eT
+)
+ur ∈ O(D; R ) (8.6)
+for arbitrary ur∈ O(D; R ). This shows that ˆM12̸= 0 is a necessary condition forur̸= ul. Furthermore,
+the Narain moduli transform as
+e′ = − u−1
+r e ˆM−T
+2 , G ′ = ˆM−1
+2 G ˆM−T
+2 , B ′ = 1
+2
+(
+ˆM−1
+2 ˆM1− ˆM T
+1 ˆM−T
+2
+)
+. (8.7)
+By restricting ˆM to lie either inside O ˆη(D, D; Q ) or O ˆη(D, D; Z ), we obtain the transformations that
+map diﬀerent representations within the same Q - or Z -class to each other.
+Next, we discuss Narain orbifolds with Abelian Z K point groups ˆP ⊂ Oˆη(D, D; Z ). We use
+eqn. (8.5) and set ˆM = ˆρ, where ˆρ is the generator of ˆP. Then, we ﬁnd invariant moduli G′ = G and
+B′ = B from the latter two transformations in eqns. (8.7). Moreover, we obtain the right-moving twist
+θr = ur from the ﬁrst relation in eqn. (8.7) by choosing a vielbein e′ = e, which is in agreement with
+G′ = G. By identifying the full twist ˆΘ = ˆUˆρ from eqn. (8.6) the Narain orbifold condition follows
+from eqn. (8.4), i.e.
+ˆΘ ˆE(e, B) = ˆE(e, B) ˆρ . (8.8)
+Then, in analogy to Section 5.2 we know that the Z K Narain orbifold exists.
+If the matrix-block ˆρ12 is zero the orbifold is symmetric (i.e. θr = θl) and a necessary (but not
+suﬃcient) condition for the orbifold to be asymmetric is ˆρ12̸= 0, as can be seen from eqn. (8.6).
+8.2 Q - and Z -classes of two-dimensional Z K Narain orbifolds
+Following the discussion of the last section we focus on two-dimensional Narain orbifolds with point
+groups ˆP⊂ Oˆη(2, 2; Z ), generated by a single twist ˆρ of order K.
+To initiate this investigation, we give a brief discussion on the possible orders following Section 4.3:
+For Narain orbifolds with D = 2 we have to set DΓ = 2D = 4. Then, eqn. (4.14) yields the following
+list of possible orders
+K ∈ {1, 2, 3, 4, 5, 6, 8, 10, 12} . (8.9)
+43
+
+===== PAGE 45 =====
+
+In contrast, for two-dimensional symmetric orbifolds we have DΓ = D = 2 which yields only K∈
+{1, 2, 3, 4, 6}. Indeed, as we discuss in the following, we found examples for K = 12. They are genuine
+asymmetric because twists of order 12 are not possible for DΓ = 2. On the other hand, we did not
+ﬁnd any examples for K = 5, 8 and 10 in the scan of two-dimensional Narain orbifold we performed
+for this paper.
+In Table 3 we list a number of Abelian Z K Narain orbifolds of order K, which we constructed
+explicitly in our scan. For each Narain point group ˆP⊂ Oˆη(2, 2; Z ) this table displays the following
+data in the various columns:
+1. column labels the inequivalent orbifolds and characterizes the orbifold as symmetric or asym-
+metric;
+2. column gives a representation of the generating twist ˆρ of order K in the lattice basis;
+3. column displays the corresponding right-twist θr;
+4. column displays the corresponding left-twist θl;
+5. column indicates the relation between these twists;
+6. column gives a choice of the geometrical vielbein e;
+7. column gives to resulting metric as G = eT e;
+8. column gives the anti-symmetric B-ﬁeld.
+A couple of further comments about the conventions of this table are in order: Our labelling con-
+ventions for inequivalent Narain orbifolds are as follows. The inequivalent Q -classes of a given order
+K are enumerated by a Roman number R=I,II, . . . as Z K-R. Furthermore, when we give inequiva-
+lent Z -classes within a given Q -class, we enumerate them with n = 1, 2, 3 as Z K-R-n. In fact, only
+the Q -class Z 2-II is subdivided into three inequivalent Z -classes. Furthermore, the given right- and
+left-twists depend on our choice for the geometrical vielbein e and on the Narain moduli G and B.
+To describe all these two dimensional Narain orbifolds in detail would lead to a lengthy discussion.
+Therefore, we focus in the following subsections on a number of striking features of some of these
+orbifolds instead. Before, doing so we make a couple of observations: First of all, we see that the
+number of asymmetric orbifolds greatly outweighs the number of symmetric orbifolds. This might
+imply that there exist many more asymmetric Narain orbifolds than symmetric ones. Most of the
+asymmetric orbifolds constructed in the past have twists that are trivial for either the left- or the right-
+moving sectors, like the Z 3-II and Z 3-III orbifolds. In our scan we also encountered such examples,
+but again it seems that the majority of asymmetric orbifolds are not of this type: Most of them
+have non-trivial left- and right-moving twists simultaneously. In fact, there are even cases where the
+orders of the left- and right-moving twists are co-prime: the Z 6-IV and Z 6-VII Narain orbifolds. Since
+their orders are coprime, all their characters are orthogonal. Using the results of Section 5.4 this
+immediately implies that all moduli are stabilized for these orbifolds.
+8.3 Two equivalent asymmetric Z 12 Narain orbifolds
+With our ﬁrst two examples we want to illustrate that we are able to construct genuine asymmetric
+orbifolds using the formalism for Narain orbifolds exposed in this paper. Concretely, we deﬁne two Z 12
+44
+
+===== PAGE 46 =====
+
+label twist ˆρ twistθr twistθl relation vielbein e metric G B-ﬁeld
+Z 2-I
+sym.
+
+
+−1 0 0 0
+0 −1 0 0
+0 0 −1 0
+0 0 0 −1
+
+ −1 2 −1 2 θr = θl
+(
+R1 R2 cos α
+0 R2 sin α
+) (
+R2
+1 w
+w R 2
+2
+)
+w = R1R2 cos α
+(
+0 b
+−b 0
+)
+Z 2-II-1
+sym.
+
+
+1 0 0 0
+0 −1 0 0
+0 0 1 0
+0 0 0 −1
+
+
+(
+1 0
+0 −1
+) (
+1 0
+0 −1
+)
+θr = θl
+(
+R1 0
+0 R2
+) (
+R2
+1 0
+0 R2
+2
+) (
+0 0
+0 0
+)
+Z 2-II-2
+sym.
+
+
+0 1 0 0
+1 0 0 0
+0 0 0 1
+0 0 1 0
+
+
+(
+1 0
+0 −1
+) (
+1 0
+0 −1
+)
+θr = θl
+(
+R1 R1
+−R2 R2
+) (
+R2
+1 + R2
+2 R2
+1− R2
+2
+R2
+1− R2
+2 R2
+1 + R2
+2
+) (
+0 0
+0 0
+)
+Z 2-II-3
+sym.
+
+
+0 1 0 0
+1 0 0 0
+−1 0 0 1
+0 1 1 0
+
+
+(
+1 0
+0 −1
+) (
+1 0
+0 −1
+)
+θr = θl
+(
+R1 R1
+−R2 R2
+) (
+R2
+1 + R2
+2 R2
+1− R2
+2
+R2
+1− R2
+2 R2
+1 + R2
+2
+) (
+0 1
+2
+− 1
+2 0
+)
+Z 3-I
+sym.
+
+
+0 −1 0 0
+1 −1 0 0
+0 0 −1 −1
+0 0 1 0
+
+
+
+− 1
+2 −
+√
+3
+2√
+3
+2 − 1
+2
+
+
+
+− 1
+2 −
+√
+3
+2√
+3
+2 − 1
+2
+
+ θr = θl R
+
+
+√
+2 − 1√
+2
+0
+√
+3
+2
+
+ R2
+(
+2 −1
+−1 2
+) (
+0 b
+−b 0
+)
+Z 3-II
+asym.
+
+
+0 0 1 1
+0 0 0 1
+1 0 0 −1
+−1 1 1 1
+
+
+
+− 1
+2 −
+√
+3
+2√
+3
+2 − 1
+2
+
+ 1 2
+θ3
+r = 1 2
+θl = 1 2
+(1 − 1
+2
+0
+√
+3
+2
+) (
+1 − 1
+2
+− 1
+2 1
+) (
+0 1
+2
+− 1
+2 0
+)
+Z 3-III
+asym.
+
+
+0 0 −1 0
+0 0 −1 −1
+−1 1 1 1
+0 −1 −1 0
+
+ 1 2
+
+− 1
+2 −
+√
+3
+2√
+3
+2 − 1
+2
+
+ θr = 1 2
+θ3
+l = 1 2
+(1 − 1
+2
+0 −
+√
+3
+2
+) (
+1 − 1
+2
+− 1
+2 1
+) (
+0 1
+2
+− 1
+2 0
+)
+Z 4-I
+sym.
+
+
+0 −1 0 0
+1 0 0 0
+0 0 0 −1
+0 0 1 0
+
+
+(
+0 −1
+1 0
+) (
+0 −1
+1 0
+)
+θr = θl
+(
+R 0
+0 R
+) (
+R2 0
+0 R2
+) (
+0 b
+−b 0
+)
+Z 4-II
+asym.
+
+
+−1 −1 −1 1
+0 0 −1 1
+0 0 0 −1
+−1 0 0 1
+
+
+(
+0 −1
+1 0
+) (
+−1 0
+0 1
+)
+θ4
+r = 1 2
+θ2
+l = 1 2
+( 1√
+2 0
+0 1√
+2
+) ( 1
+2 0
+0 1
+2
+) (
+0 1
+2
+− 1
+2 0
+)
+Z 4-III
+asym.
+
+
+−1 1 1 1
+0 0 −1 −1
+0 0 0 1
+−1 0 0 1
+
+
+(
+−1 0
+0 1
+) (
+0 −1
+1 0
+)
+θ2
+r = 1 2
+θ4
+l = 1 2
+( 1√
+2 0
+0 − 1√
+2
+) ( 1
+2 0
+0 1
+2
+) (
+0 1
+2
+− 1
+2 0
+)
+Z 6-I
+sym.
+
+
+1 −1 0 0
+1 0 0 0
+0 0 0 −1
+0 0 1 1
+
+
+
+
+1
+2 −
+√
+3
+2√
+3
+2
+1
+2
+
+
+
+
+1
+2 −
+√
+3
+2√
+3
+2
+1
+2
+
+ θr = θl R
+
+
+√
+2 − 1√
+2
+0
+√
+3
+2
+
+ R2
+(
+2 −1
+−1 2
+) (
+0 b
+−b 0
+)
+Z 6-II
+asym.
+
+
+0 0 −1 −1
+0 0 0 −1
+−1 0 0 1
+1 −1 −1 −1
+
+
+
+
+1
+2 −
+√
+3
+2√
+3
+2
+1
+2
+
+ −1 2
+θ6
+r = 1 2
+θ2
+l = 1 2
+(1 − 1
+2
+0 −
+√
+3
+2
+) (
+1 − 1
+2
+− 1
+2 1
+) (
+0 1
+2
+− 1
+2 0
+)
+Z 6-III
+asym.
+
+
+1 −1 0 0
+1 −1 −1 −1
+0 1 1 0
+0 −1 0 0
+
+
+
+
+1
+2 −
+√
+3
+2√
+3
+2
+1
+2
+
+
+(
+1 0
+0 −1
+)
+θ6
+r = 1 2
+θ2
+l = 1 2
+(1 − 1
+2
+0
+√
+3
+2
+) (
+1 − 1
+2
+− 1
+2 1
+) (
+0 1
+2
+− 1
+2 0
+)
+Z 6-IV
+asym.
+
+
+−1 0 0 1
+0 0 0 1
+0 0 −1 −1
+−1 1 1 1
+
+
+
+− 1
+2 −
+√
+3
+2√
+3
+2 − 1
+2
+
+
+(
+−1 0
+0 1
+)
+θ3
+r = 1 2
+θ2
+l = 1 2
+(1 − 1
+2
+0
+√
+3
+2
+) (
+1 − 1
+2
+− 1
+2 1
+) (
+0 1
+2
+− 1
+2 0
+)
+Z 6-V
+asym.
+
+
+−1 1 1 1
+−1 0 0 1
+1 0 0 0
+−1 1 0 0
+
+ −1 2
+
+
+1
+2 −
+√
+3
+2√
+3
+2
+1
+2
+
+ θ2
+r = 1 2
+θ6
+l = 1 2
+(1 − 1
+2
+0 −
+√
+3
+2
+) (
+1 − 1
+2
+− 1
+2 1
+) (
+0 1
+2
+− 1
+2 0
+)
+continued . . .
+45
+
+===== PAGE 47 =====
+
+label twist ˆρ twistθr twistθl relation vielbein e metric G B-ﬁeld
+Z 6-VI
+asym.
+
+
+0 0 0 1
+−1 0 0 1
+0 1 1 0
+0 0 −1 0
+
+
+(
+1 0
+0 −1
+) 
+
+1
+2 −
+√
+3
+2√
+3
+2
+1
+2
+
+ θ2
+r = 1 2
+θ6
+l = 1 2
+(1 − 1
+2
+0 −
+√
+3
+2
+) (
+1 − 1
+2
+− 1
+2 1
+) (
+0 1
+2
+− 1
+2 0
+)
+Z 6-VII
+asym.
+
+
+−1 1 0 0
+0 0 −1 −1
+0 0 0 1
+−1 0 0 0
+
+
+(
+−1 0
+0 1
+) 
+− 1
+2 −
+√
+3
+2√
+3
+2 − 1
+2
+
+ θ2
+r = 1 2
+θ3
+l = 1 2
+(1 − 1
+2
+0 −
+√
+3
+2
+) (
+1 − 1
+2
+− 1
+2 1
+) (
+0 1
+2
+− 1
+2 0
+)
+Z 12-I
+asym.
+
+
+0 0 1 0
+0 0 0 1
+1 0 0 1
+0 1 −1 0
+
+
+
+−
+√
+3
+2
+1
+2
+− 1
+2 −
+√
+3
+2
+
+
+
+
+√
+3
+2
+1
+2
+− 1
+2
+√
+3
+2
+
+ θl = θ5
+r
+
+
+3
+1
+4√
+2 0
+0 3
+1
+4√
+2
+
+
+
+
+√
+3
+2 0
+0
+√
+3
+2
+
+
+(
+0 − 1
+2
+1
+2 0
+)
+Table 3: This table presents a large number of examples for Z K Narain orbifolds in two dimensions.
+For each inequivalent orbifold it gives important data that characterizes Narain orbifolds, like the
+twists in both, the lattice and the coordinate basis and the values of the (frozen) moduli.
+Narain point groups ˆP(1) and ˆP(1) in D = 2, each being generated by an element ˆρ(1), ˆρ(2)∈ Oˆη(2, 2; Z )
+of order 12. In each case, we determine the corresponding Narain lattice and the twist Θ which is
+given by its action on right- and left-movers, θr and θl, respectively. As there is no symmetric Z 12
+orbifold in D = 2 (i.e. there is no two-dimensional lattice with rotational symmetry of order 12), these
+orbifolds must be genuine asymmetric3. Moreover, to emphasize that the use of Z -classes is extremely
+powerful to investigate whether two orbifolds are distinct, we show that these two Z 12 point groups
+are in fact equivalent by giving an explicit Oˆη(D, D; Z ) matrix that relates the two twists in the lattice
+basis.
+The ﬁrst asymmetric Z 12 orbifold example has a non-vanish B-ﬁeld B(1)̸= 0: We choose
+ˆρ(1) =
+(
+0 1 2
+1 2 ϵ
+)
+∈ Oˆη(2, 2; Z ) where ϵ =
+( 0 1
+−1 0
+)
+(8.10)
+and obtain
+ˆM(1)1 = − 1 2 , ˆM(1)2 = G(1)− B(1)− ϵ , (8.11)
+from eqn. (8.5). Then we follow the procedure outlined in Section 5.3 to ﬁnd that all Narain moduli
+are stabilized and take the form
+e(1) = 3
+1
+4
+√
+2 1 2 and B(1) = − 1
+2 ϵ , (8.12)
+while the twist Θ (1) is given by
+θ(1)r =
+(
+−
+√
+3
+2
+1
+2
+− 1
+2 −
+√
+3
+2
+)
+and θ(1)l = θ5
+(1)r . (8.13)
+This precisely corresponds to the data given for the Z 12-I orbifold in Table 3.
+3Such asymmetric Z 12 orbifolds were studied in the past [51,91].
+46
+
+===== PAGE 48 =====
+
+An equivalent description of this asymmetric Z 12-I orbifold has no B-ﬁeld at all ( B(2) = 0). For
+this case we take
+ˆρ(2) =
+
+
+0 0 1 1
+0 0 0 1
+1 0 0 0
+−1 1 0 0
+
+ ∈ Oˆη(2, 2; Z ) . (8.14)
+The stabilized Narain moduli are now given by
+e(2) =
+
+
+√
+2
+3
+1
+4
+− 1√
+2 3
+1
+4
+0 − 3
+1
+4√
+2
+
+ and B(2) = 0 , (8.15)
+with the twist Θ (2) is given by
+θ(2)r =
+(
+−
+√
+3
+2
+1
+2
+− 1
+2 −
+√
+3
+2
+)
+and θ(2)l = θ7
+r = − θr . (8.16)
+To show explicitly that these twoZ 12 orbifolds are Z -equivalent (and consequently alsoQ -equivalent),
+we observe that we can relate the two Z 12 generators,
+ˆM ˆρ(2) = ˆρ(1) ˆM , (8.17)
+using the matrix
+ˆM =
+
+
+−1 0 0 0
+0 0 0 −1
+0 0 −1 −1
+1 −1 0 0
+
+ ∈ Oˆη(2, 2; Z ) . (8.18)
+Here, we used that both generators ˆρ(1) and ˆρ(2) are deﬁned with respect to the same Narain metric
+ˆη. Hence, the corresponding Narain point groups ˆP(1) and ˆP(2) are identical up to the discrete T -
+duality transformation with ˆM, i.e. these point groups lie in the same Z -class. In other words, we
+have described the same asymmetric Z 12 orbifold in two diﬀerent duality frames, once with and once
+without B-ﬁeld.
+8.4 Exposing a seemingly asymmetric Z 3 Narain orbifold
+It might happen that one uses a description, i.e. choice of duality frame, in which a given Narain
+orbifold appears to be asymmetric. Consider for example a two-dimensional Z 3 Narain orbifold deﬁned
+by the twist
+ˆρ(a) =
+(0 ϵ
+ϵ −1 2
+)
+∈ Oˆη(2, 2; Z ) , (8.19)
+47
+
+===== PAGE 49 =====
+
+in the lattice basis. We use the subscript (a) to refer to this seemingly asymmetric orbifold: It is
+not obviously a symmetric orbifold, as it does not meet the suﬃcient condition ( ˆρ)12 = 0 for being a
+symmetric Narain orbifold formulated in Section 5.3. Since in this case, eqns. (8.5) reduce to
+ˆM(a)1 = − ϵ , ˆM(a)2 = 1 2 + (G(a)− B(a))ϵ , (8.20)
+the Narain moduli are given by
+e(a) =
+
+
+R(a) w(a)
+0 −
+√
+3
+2R(a)
+
+ and B(a) = − 1
+2 ϵ , (8.21)
+where parameters R(a) and w(a) are unconstrained. Furthermore, the twist Θ (a) is speciﬁed by
+θ(a)r =
+(
+− 1
+2
+√
+3
+2
+−
+√
+3
+2 − 1
+2
+)
+and θ(a)l = θ2
+(a)r . (8.22)
+Since θ(a)r̸= θ(a)l, this seems to indicate that this an asymmetric Narain orbifold. However, it is
+equivalent to the symmetric orbifold Z 3-I of Table 3:
+To see this, we describe this symmetric Z 3-I orbifold (labelled with a subscript (s)) in some detail:
+The deﬁning twist in the lattice basis is given by
+ˆρ(s) =
+
+
+0 −1 0 0
+1 −1 0 0
+0 0 −1 −1
+0 0 1 0
+
+ ∈ Oˆη(2, 2; Z ) , (8.23)
+from which we obtain
+ˆM(s)1 = ( G(s)− B(s))ρ(s)r , ˆM(s)2 = −
+(
+ρ(s)r
+)−T , (8.24a)
+ρ(s)r = e−1
+(s) θ(s)r e(s) =
+(
+ˆρ(s)
+)
+11 =
+(0 −1
+1 −1
+)
+. (8.24b)
+In this case, ρ(s)r acts cryptographically on e, i.e. the ﬁrst column e1 of e is mapped to the second
+column e2 and e2 is mapped to−e1− e2. Furthermore, the Narain moduli are given by
+e(s) = R(s)
+
+
+√
+2 − 1√
+2
+0
+√
+3
+2
+
+ ⇒ G(s) = R2
+(s)
+(
+2 −1
+−1 2
+)
+and B(s) = b(s)
+(
+0 1
+−1 0
+)
+, (8.25)
+where R(s) and b(s) are unconstrained. Thus, the vielbein e(s) spans the root lattice of SU(3) multiplied
+by an arbitrary radius R(s). Furthermore, the twist Θ (s) is speciﬁed by
+θ(s)r = θ(s)l =
+(
+− 1
+2 −
+√
+3
+2√
+3
+2 − 1
+2
+)
+. (8.26)
+Clearly, these two descriptions look very diﬀerent: The parametrization of the moduli does not
+seem to be alike, since, for example, in case (a) the B-ﬁeld is ﬁxed while in case (s) it is a modulus.
+48
+
+===== PAGE 50 =====
+
+Moreover, the twist seems to be asymmetric for case (a) but symmetric for case (s). However, their
+Narain point groups ˆP(s) and ˆP(a) belong to the same Z -class (and consequently also to the same
+Q -class); they are equivalent up to a discrete T -duality transformation.
+Explicitly, the discrete T -duality transformation that relates ˆP(s) and ˆP(a) reads
+ˆM =
+
+
+−1 −1 0 0
+0 0 −1 1
+0 0 −1 0
+0 1 0 0
+
+ ∈ Oˆη(2, 2; Z ) with ˆM ˆρ(a) = ˆρ(s) ˆM , (8.27)
+where we used that ˆρ(s) and ˆρ(a) are both deﬁned with respect to the same Narain metric ˆη. This
+implies that also the moduli ( R(s), b(s)) and ( R(a), w(a)) can be mapped explicitly by exploiting the
+transformation formula (8.7): We Use
+ˆU ˆM
+ˆE(e(a), B(a)) = ˆE(e(s), B(s)) ˆM (8.28)
+with ˆM given in eqn. (8.27) to relate the moduli in both descriptions as
+G(a) = 1
+2R2
+(s)
+
+
+b2
+(s) + 3R4
+(s) b(s) + b2
+(s) + 3R4
+(s)
+b(s) + b2
+(s) + 3R4
+(s) (1 + b(s))2 + 3R4
+(s)
+
+ , (8.29a)
+B(a) = −1
+2 ϵ . (8.29b)
+This results in
+w(a) = 1√
+2R(s)
+b(s) + b2
+(s) + 3R4
+(s)√
+b2
+(s) + 3R4
+(s)
+and R(a) = 1√
+2R(s)
+√
+b2
+(s) + 3R4
+(s) . (8.30)
+In addition, we compute ur and ul from eqns. (8.6) and (8.7) to obtain
+ul =
+( 1
+2
+√
+3
+2√
+3
+2 − 1
+2
+)
+ur ; ur = 1
+2
+√
+b2
+(s) + 3R4
+(s)
+( b(s)− 3R2
+(s) −
+√
+3(b(s) + R2
+(s))
+−
+√
+3(b(s) + R2
+(s)) −b(s) + 3R2
+(s)
+)
+. (8.31)
+Note that det( ul) = +1 but det( ur) =−1. This corresponds to the matrix UB from eqn. (6.8) that
+maps the symmetric twist from point group P(s) to the seemingly asymmetric twist from point group
+P(a).
+Let us close this subsection with the comment that for Narain orbifolds of order 3, we were able
+to distinguish between three Q -classes, where each Q -class contains only a single Z -class. In the
+nomenclature of Table 3 the two-dimensional Narain orbifold Z 3-I is a symmetric orbifold, while the
+other two, Z 3-II and Z 3-II, are asymmetric. In fact, they are each others mirrors in the sense that
+their θl and θr are interchanged.
+49
+
+===== PAGE 51 =====
+
+8.5 Symmetric Z 2 Narain orbifolds from inequivalent Z -classes
+For the examples considered so far, we found that each Narain Q -class contains just a single Narain
+Z -class. This might convey the impression that the notion of Z -classes for Narain orbifolds is obsolete.
+To emphasize that this is not the case, we consider two symmetric Z 2 Narain point groups in D = 2
+next. Both correspond geometrically to the M¨ obius strip, where theB-ﬁeld is either turned on or oﬀ.
+We will show that even though these two Narain point groups belong to the same Narain Q -class,
+they live in diﬀerent Narain Z -classes, hence they are physically inequivalent.
+Consider the symmetric Z 2-II-2 Narain orbifold of Table 3 without a B-ﬁeld: In detail, we choose
+ˆρ(1) =
+
+
+0 1 0 0
+1 0 0 0
+0 0 0 1
+0 0 1 0
+
+ ∈ Oˆη(2, 2; Z ) (8.32)
+and obtain
+ˆM(1)1 = ( G(1)− B(1))
+(0 1
+1 0
+)
+and ˆM(1)2 = −
+(0 1
+1 0
+)
+. (8.33)
+In this case, the Narain moduli are given by
+e(1) =
+(
+R1 R1
+−R2 R2
+)
+⇒ G(1) =
+(
+R2
+1 + R2
+2 R2
+1− R2
+2
+R2
+1− R2
+2 R2
+1 + R2
+2
+)
+and B(1) =
+(
+0 0
+0 0
+)
+, (8.34)
+for R1R2̸= 0. Furthermore, the twist Θ is speciﬁed by
+θr = θl =
+(
+1 0
+0 −1
+)
+. (8.35)
+This orbifold geometrically corresponds to the M¨ obius strip, see Figure 1.
+Another symmetric Z 2 orbifold has a non-vanishing B-ﬁeld: For this Z 2-II-3 Narain orbifold in
+Table 3 we choose
+ˆρ(2) =
+
+
+0 1 0 0
+1 0 0 0
+−1 0 0 1
+0 1 1 0
+
+ = ˆMB(∆B)−1 ˆρ(1) ˆMB(∆B) ∈ Oˆη(2, 2; Z ) , (8.36)
+where ˆρ(1) is the twist from the Z 2 orbifold discussed just above and ˆMB(∆B) is a fractional B-ﬁeld
+shift given by
+ˆMB(∆B) =
+( 1 2 0
+∆B 1 2
+)
+for ∆ B = 1
+2 ϵ . (8.37)
+Now, we obtain
+ˆM(2)1 =
+(1 0
+0 −1
+)
++ (G− B)
+(0 1
+1 0
+)
+and ˆM(2)2 = −
+(0 1
+1 0
+)
+. (8.38)
+50
+
+===== PAGE 52 =====
+
+Figure 1: Two–dimensional M¨ obius strip asZ 2 orbifold: The underlying two-torus lattice is spanned by
+e1 and e2. The upper and lower yellow regions combined give a convenient choice for the fundamental
+domain of the resulting two-torus. The symmetric twist θr = θl gives a reﬂection at the horizontal
+axis. Consequently, we may take the lower yellow region to represent a fundamental domain of the
+resulting Z 2 orbifold. In this picture the 3+3 dashed arrows illustrate how the left and right side of
+the lower yellow region get glued together, hence this orbifold corresponds to the M¨ obius strip.
+In this case, the Narain moduli are given by
+e(2) =
+(
+R1 R1
+−R2 R2
+)
+⇒ G(2) =
+(
+R2
+1 + R2
+2 R2
+1− R2
+2
+R2
+1− R2
+2 R2
+1 + R2
+2
+)
+and B(2) =
+(
+0 1
+2
+− 1
+2 0
+)
+, (8.39)
+for R1R2̸= 0. Furthermore, the twist Θ remains unchanged, i.e.
+θr = θl =
+(
+1 0
+0 −1
+)
+. (8.40)
+Note, that the metric G(2) is identical to G(1) from the case above; the only diﬀerence is that we now
+have a non-vanishing B-ﬁeld.
+The conjugation of the generator ˆρ(1) with ˆMB(∆B) in eqn. (8.36) tells us that these two Narain
+point groups belong to the same Q -class. However, it turns out that they are from diﬀerent Z -
+classes: There is no ˆM∈ Oˆη(D, D; Z ) that can relate ˆρ(1) to ˆρ(2). Since the transformation (8.36) is
+a conjugation with a discrete fractional B-ﬁeld transformation, the Z -classes under investigation can
+be used to parametrize the inequivalent choices for the B-ﬁeld for the given geometrical setting. As
+can be inferred from Table 3 we identiﬁed three inequivalent Z -classes for the Q -class Z 2-II, where
+Z 2-II-1 and Z 2-II-2 both have vanishing B-ﬁeld but are based on inequivalent lattices.
+51
+
+===== PAGE 53 =====
+
+A Moduli deformations and the generalized metric
+Choose a speciﬁc generalized metricH0. Next, consider the ﬁnite group of all discrete T -duality trans-
+formations that leaves this generalized metric invariant and choose a subgroup ˆH thereof. Then, the
+general question, which we are addressing in this section, reads: What inﬁnitesimal moduli deforma-
+tions are allowed such that the deformed generalized metric stays invariant under all transformations
+from ˆH? We will answer this question in three steps. First, we deﬁne the group ˆH in Appendix A.1.
+Second, we parametrize all inﬁnitesimal moduli deformations in Appendix A.2. Third, in Appendix A.3
+we restrict them to the ones which are compatible with the action of ˆH. In addition, in Appendix A.4
+we derive a closed expression which counts the number of moduli that are compatible with the action
+of ˆH. We use the results form this appendix in Section 5.4, where we set ˆH = ˆP, i.e. equal to the
+point group in the lattice basis. By doing so, we identify the moduli in Narain orbifolds.
+A.1 T -duality transformations that leave a generalized metric invariant
+Consider a subgroup ˆH of the group of all O ˆη(D, D + 16; Z ) transformations which leave a speciﬁc
+generalized metricH0 = ET
+0 E0 invariant, i.e.
+ˆH ⊆
+{
+ˆM ∈ Oˆη(D, D + 16; Z )
+⏐⏐⏐ ˆM TH0 ˆM =H0
+}
+. (A.1)
+The following discussion is independent of whether ˆH is Abelian or non-Abelian. Since the elements
+ˆM∈ ˆH preserve both ˆη andH0 we ﬁnd that the corresponding element Θ( ˆM) as a function of ˆM is
+given by
+Θ( ˆM) = E0 ˆM E−1
+0 with Θ( ˆM)T Θ( ˆM) = 1 , Θ( ˆM)T η Θ( ˆM) = η . (A.2)
+Hence,
+Θ( ˆM) =
+(
+θr( ˆM) 0
+0 Θ L( ˆM)
+)
+⊂ O(D; R )× O(D + 16; R ) , (A.3)
+and Θ( ˆM) is a group homomorphism from ˆH to a ﬁnite subgroup of O( D; R )× O(D + 16; R ).
+A.2 Inﬁnitesimal moduli deformations of the Narain lattice
+We want to determine which parametersδE in the generalized vielbein can be deformed inﬁnitesimally,
+i.e. E0→ E0 + δE to ﬁrst order in the perturbations. Since the generalized vielbein with (2 D + 16)2
+components is parametrized in terms of D(D + 16) parameters (i.e. the vielbein e, the B-ﬁeld and the
+Wilson lines A), not all components of δE are independent. To characterize the inﬁnitesimal moduli
+perturbations without choosing a particular parametrization, we expand the constraint ET
+0 η E0 = ˆη
+from eqn. (2.17) to ﬁrst order in δE and obtain
+δE T η E0 + ET
+0 η δE = 0 . (A.4)
+This can be cast into the form
+δeT η + η δe = 0 , (A.5)
+52
+
+===== PAGE 54 =====
+
+where we have deﬁned δe = δE E−1
+0 . The general solution reads
+δe = δE E−1
+0 = 1
+2
+(δuD δm
+δmT δuD+16
+)
+, (A.6)
+with δm∈ MD×(D+16)(R ). Furthermore, δuT
+D =−δuD and δuT
+D+16 =−δuD+16 generate O(D; R ) and
+O(D+16; R ), respectively. These orthogonal groups correspond to the U transformation in eqn. (2.40).
+Next, we consider the perturbations of the generalized metric δH = δE T E0 + ET
+0 δE to ﬁrst order.
+Using eqn. (A.4) one can see that the constraint (ˆ η−1(H0 + δH))2 = 1 from eqn. (5.7) is fulﬁlled. In
+fact, we may write δh = δeT + δe, where δe = 1
+2 δh + 1
+2 δu with
+δu = − δuT =
+(δuD 0
+0 δuD+16
+)
+. (A.7)
+Hence, the inﬁnitesimal moduli are uniquely identiﬁed by δm, i.e. δm encodes the deformations of
+the metric δG, the B-ﬁeld δB and the Wilson lines δA. This can be stated explicitly as follows. We
+can determine δe by using eqn. (A.6) with E0 = R ˆE and the expression for ˆE given in eqn. (2.39).
+Thereby we directly conﬁrm that δuD and δuD+16 are anti-symmetric and we derive that δm is given
+at linear order in the moduli perturbations δG, δB and δA as given in eqn. (5.21), using (e0 + δe)−1≈
+e−1− e−1
+0 δe e−1
+0 .
+A.3 ˆH-invariant inﬁnitesimal moduli deformations
+In order to determine which of the Narain moduli are compatible with the action of ˆH we consider
+the ﬁrst order perturbation of eqn. (A.1) and obtain
+ˆM T δH ˆM = δH ⇔ Θ( ˆM)T δh Θ( ˆM) = δh . (A.8)
+This reads on the level of the moduli deformations
+θT
+r ( ˆM) δm ΘL( ˆM) = δm , (A.9)
+for each ˆM∈ ˆH. Eqn. (A.9) can be written as
+(
+θr( ˆM)⊗ ΘL( ˆM)
+)
+δm = δm . (A.10)
+Here, we interpret δm as a vector with D(D + 16) components using the standard tensor product
+notation⊗. To solve this condition we introduce the projection operator P ˆH that projects the moduli
+perturbations on their ˆH-invariant subspace, i.e.
+P ˆH = 1
+| ˆH|
+∑
+ˆM∈ ˆH
+θr( ˆM)⊗ ΘL( ˆM) with
+(
+θr( ˆM)⊗ ΘL( ˆM)
+)
+P ˆH = P ˆH . (A.11)
+Using that Θ( ˆM) deﬁnes a group homomorphism, it is not diﬃcult to show that this indeed deﬁnes a
+projection operator, i.e. P2
+ˆH =P ˆH. Thus, the ˆH-invariant moduli space is given by
+M ˆH =
+{
+δm ˆH = P ˆHδm
+}
+. (A.12)
+53
+
+===== PAGE 55 =====
+
+A.4 The number of ˆH-invariant Narain moduli
+The dimension of the ˆH-invariant Narain moduli space is determined by the trace of the projection
+operatorP ˆH, i.e.
+dim(M ˆH) = tr( P ˆH) = 1
+| ˆH|
+∑
+ˆM∈ ˆH
+χ
+(
+θr( ˆM)
+)
+χ
+(
+ΘL( ˆM)
+)∗
+= 1
+|H|
+∑
+Θ∈H
+χr(Θ) χL(Θ)∗ . (A.13)
+Here, we have used the linearity of the trace, tr( A⊗ B) = tr( A)tr(B) and we have used the deﬁni-
+tion (5.7). In addition, we have included a complex conjugate in eqn. (A.13) for later use. Furthermore,
+we have introduced the group characters
+χr(Θ) = χ
+(
+θr( ˆM)
+)
+= tr( θr( ˆM)) = tr
+[ 1 −Z
+2
+ˆM
+]
+, (A.14a)
+χL(Θ) = χ
+(
+ΘL( ˆM)
+)
+= tr(Θ L( ˆM)) = tr
+[ 1 +Z
+2
+ˆM
+]
+, (A.14b)
+which are real for the real representations θr( ˆM) and Θ L( ˆM), respectively.
+References
+[1] D. J. Gross, J. A. Harvey, E. J. Martinec, and R. Rohm “The heterotic string” Phys. Rev. Lett.
+54 (1985) 502–505.
+[2] D. J. Gross, J. A. Harvey, E. J. Martinec, and R. Rohm “Heterotic string theory. 1. The free
+heterotic string” Nucl. Phys. B256 (1985) 253.
+[3] D. J. Gross, J. A. Harvey, E. J. Martinec, and R. Rohm “Heterotic string theory. 2. The
+interacting heterotic string” Nucl. Phys. B267 (1986) 75–124.
+[4] L. E. Ib´ a˜ nez and A. M. UrangaString theory and particle physics: An introduction to string
+phenomenology. Cambridge University Press 2012.
+[5] L. J. Dixon, J. A. Harvey, C. Vafa, and E. Witten “Strings on orbifolds” Nucl. Phys. B261
+(1985) 678–686.
+[6] L. J. Dixon, J. A. Harvey, C. Vafa, and E. Witten “Strings on orbifolds. 2.” Nucl. Phys. B274
+(1986) 285–314.
+[7] M. Fischer, M. Ratz, J. Torrado, and P. K. S. Vaudrevange “Classiﬁcation of symmetric toroidal
+orbifolds” JHEP 01 (2013) 084 [ arXiv:1209.3906].
+[8] L. E. Ib´ a˜ nez, H. P. Nilles, and F. Quevedo “Orbifolds and Wilson lines”Phys. Lett. B187
+(1987) 25–32.
+[9] L. E. Ib´ a˜ nez, J. E. Kim, H. P. Nilles, and F. Quevedo “Orbifold Compactiﬁcations with Three
+Families of SU(3) x SU(2) x U(1) n” Phys. Lett. B191 (1987) 282–286.
+54
+
+===== PAGE 56 =====
+
+[10] J. A. Casas and C. Mu˜ noz “Three generation SU(3)× SU(2)× U(1)Y models from orbifolds”
+Phys. Lett. B214 (1988) 63–69.
+[11] J. A. Casas, E. K. Katehou, and C. Mu˜ noz “U(1) Charges in Orbifolds: Anomaly Cancellation
+and Phenomenological Consequences” Nucl. Phys. B317 (1989) 171–186.
+[12] A. Font, L. E. Ib´ a˜ nez, F. Quevedo, and A. Sierra “The construction of ’realistic’
+four-dimensional strings through orbifolds” Nucl. Phys. B331 (1990) 421–474.
+[13] D. Bailin and A. Love “Orbifold compactiﬁcations of string theory” Phys. Rept. 315 (1999)
+285–408.
+[14] S. F¨ orste, H. P. Nilles, P. K. S. Vaudrevange, and A. Wingerter “Heterotic brane world” Phys.
+Rev. D70 (2004) 106008 [ arXiv:hep-th/0406208].
+[15] T. Kobayashi, S. Raby, and R.-J. Zhang “Searching for realistic 4d string models with a
+Pati-Salam symmetry: Orbifold grand uniﬁed theories from heterotic string compactiﬁcation on
+a Z 6 orbifold” Nucl. Phys. B704 (2005) 3–55 [ arXiv:hep-ph/0409098].
+[16] W. Buchm¨ uller, K. Hamaguchi, O. Lebedev, and M. Ratz “Supersymmetric standard model
+from the heterotic string” Phys. Rev. Lett. 96 (2006) 121602 [ arXiv:hep-ph/0511035].
+[17] W. Buchm¨ uller, K. Hamaguchi, O. Lebedev, and M. Ratz “Supersymmetric standard model
+from the heterotic string (II)” Nucl. Phys. B785 (2007) 149–209 [ arXiv:hep-th/0606187].
+[18] J. E. Kim and B. Kyae “Flipped SU(5) from Z 12-I orbifold with Wilson line” Nucl. Phys. B770
+(2007) 47–82 [ arXiv:hep-th/0608086].
+[19] O. Lebedev, H. P. Nilles, S. Raby, S. Ramos-S´ anchez, M. Ratz, P. K. S. Vaudrevange, and
+A. Wingerter “A Mini-landscape of exact MSSM spectra in heterotic orbifolds” Phys. Lett.
+B645 (2007) 88–94 [ arXiv:hep-th/0611095].
+[20] J. E. Kim, J.-H. Kim, and B. Kyae “Superstring standard model from Z 12-I orbifold
+compactiﬁcation with and without exotics, and eﬀective R-parity” JHEP 06 (2007) 034
+[arXiv:hep-ph/0702278].
+[21] O. Lebedev, H. P. Nilles, S. Raby, S. Ramos-S´ anchez, M. Ratz, P. K. S. Vaudrevange, and
+A. Wingerter “The Heterotic Road to the MSSM with R parity” Phys. Rev. D77 (2008) 046013
+[arXiv:0708.2691].
+[22] O. Lebedev, H. P. Nilles, S. Ramos-S´ anchez, M. Ratz, and P. K. S. Vaudrevange “Heterotic
+mini-landscape. (II). Completing the search for MSSM vacua in a Z 6 orbifold” Phys. Lett. B668
+(2008) 331–335 [ arXiv:0807.4384].
+[23] M. Blaszczyk, S. Groot Nibbelink, M. Ratz, F. Ruehle, M. Trapletti, and P. K. S. Vaudrevange
+“A Z 2× Z 2 standard model” Phys. Lett. B683 (2010) 340–348 [ arXiv:0911.4905].
+[24] D. K. Mayorga Pena, H. P. Nilles, and P.-K. Oehlmann “A zip-code for quarks, leptons and
+higgs bosons” JHEP 12 (2012) 024 [ arXiv:1209.6041].
+55
+
+===== PAGE 57 =====
+
+[25] S. Groot Nibbelink and O. Loukas “MSSM-like models on Z 8 toroidal orbifolds” JHEP 12
+(2013) 044 [ arXiv:1308.5145].
+[26] B. Carballo-P´ erez, E. Peinado, and S. Ramos-S´ anchez “∆(54) ﬂavor phenomenology and
+strings” JHEP 12 (2016) 131 [ arXiv:1607.06812].
+[27] V. Braun, Y.-H. He, B. A. Ovrut, and T. Pantev “A Heterotic standard model” Phys. Lett.
+B618 (2005) 252–258 [ arXiv:hep-th/0501070].
+[28] V. Braun, Y.-H. He, B. A. Ovrut, and T. Pantev “A Standard model from the E 8× E8 heterotic
+superstring” JHEP 06 (2005) 039 [ arXiv:hep-th/0502155].
+[29] R. Blumenhagen, G. Honecker, and T. Weigand “Loop-corrected compactiﬁcations of the
+heterotic string with line bundles” JHEP 06 (2005) 020 [ arXiv:hep-th/0504232].
+[30] L. B. Anderson, J. Gray, A. Lukas, and E. Palti “Heterotic line bundle standard models” JHEP
+06 (2012) 113 [ arXiv:1202.1757].
+[31] L. B. Anderson, A. Constantin, J. Gray, A. Lukas, and E. Palti “A comprehensive scan for
+heterotic SU(5) GUT models” JHEP 01 (2014) 047 [ arXiv:1307.4787].
+[32] S. Groot Nibbelink, O. Loukas, and F. Ruehle “(MS)SM-like models on smooth Calabi-Yau
+manifolds from all three heterotic string theories” Fortsch. Phys. 63 (2015) 609–632
+[arXiv:1507.07559].
+[33] W. Buchm¨ uller, K. Hamaguchi, O. Lebedev, and M. Ratz “Local grand uniﬁcation” in CP
+Violation and the Flavour Puzzle: Symposium in Honour of Gustavo C. Branco. GustavoFest
+2005, Lisbon, Portugal, July 2005 pp. 143–156. 2005. [ arXiv:hep-ph/0512326].
+[34] T. Kobayashi, H. P. Nilles, F. Ploger, S. Raby, and M. Ratz “Stringy origin of non-Abelian
+discrete ﬂavor symmetries” Nucl. Phys. B768 (2007) 135–156 [ arXiv:hep-ph/0611020].
+[35] H. P. Nilles and P. K. S. Vaudrevange “Geography of ﬁelds in extra dimensions: String theory
+lessons for particle physics” Mod. Phys. Lett. A30 (2015) no. 10, 1530008 [ arXiv:1403.1597].
+[36] M. T. Mueller and E. Witten “Twisting toroidally compactiﬁed heterotic strings with enlarged
+symmetry groups” Phys. Lett. B182 (1986) 28.
+[37] T. H. Buscher “A symmetry of the string background ﬁeld equations” Phys. Lett. B194 (1987)
+59–62.
+[38] A. A. Tseytlin “Duality Symmetric Formulation of String World Sheet Dynamics” Phys. Lett.
+B242 (1990) 163–174.
+[39] W. Siegel “Superspace duality in low-energy superstrings” Phys. Rev. D48 (1993) 2826–2837
+[arXiv:hep-th/9305073].
+[40] K. S. Narain, M. H. Sarmadi, and C. Vafa “Asymmetric orbifolds” Nucl. Phys. B288 (1987)
+551.
+56
+
+===== PAGE 58 =====
+
+[41] S. Hellerman, J. McGreevy, and B. Williams “Geometric constructions of nongeometric string
+theories” JHEP 01 (2004) 024 [ arXiv:hep-th/0208174].
+[42] A. Dabholkar and C. Hull “Duality twists, orbifolds, and ﬂuxes” JHEP 09 (2003) 054
+[arXiv:hep-th/0210209].
+[43] J. Shelton, W. Taylor, and B. Wecht “Nongeometric ﬂux compactiﬁcations” JHEP 10 (2005)
+085 [arXiv:hep-th/0508133].
+[44] C. M. Hull “A Geometry for non-geometric string backgrounds” JHEP 10 (2005) 065
+[arXiv:hep-th/0406102].
+[45] C. M. Hull “Doubled geometry and T-folds” JHEP 07 (2007) 080 [ arXiv:hep-th/0605149].
+[46] C. Hull and B. Zwiebach “Double ﬁeld theory” JHEP 09 (2009) 099 [ arXiv:0904.4664].
+[47] O. Hohm, C. Hull, and B. Zwiebach “Background independent action for double ﬁeld theory”
+JHEP 07 (2010) 016 [ arXiv:1003.5027].
+[48] G. Aldazabal, D. Marqu´ es, and C. N´ u˜ nez “Double ﬁeld theory: A pedagogical review”Class.
+Quant. Grav. 30 (2013) 163001 [ arXiv:1305.1907].
+[49] D. L¨ ust “T-duality and closed string non-commutative (doubled) geometry” JHEP 12 (2010)
+084 [arXiv:1010.1361].
+[50] C. Condeescu, I. Florakis, and D. L¨ ust “Asymmetric orbifolds, non-geometric ﬂuxes and
+non-commutativity in closed string theory” JHEP 04 (2012) 121 [ arXiv:1202.6366].
+[51] J. A. Harvey, G. W. Moore, and C. Vafa “Quasicrystalline Compactiﬁcation” Nucl. Phys. B304
+(1988) 269–290.
+[52] L. E. Ib´ a˜ nez, J. Mas, H.-P. Nilles, and F. Quevedo “Heterotic strings in symmetric and
+asymmetric orbifold backgrounds” Nucl. Phys. B301 (1988) 157–196.
+[53] K. S. Narain, M. H. Sarmadi, and C. Vafa “Asymmetric orbifolds: Path integral and operator
+formulations” Nucl. Phys. B356 (1991) 163–207.
+[54] Y. Imamura, M. Sakamoto, T. Sasada, and M. Tabuse “Symmetries between untwisted and
+twisted strings on asymmetric orbifolds” Nucl. Phys. B390 (1993) 291–318
+[arXiv:hep-th/9206042].
+[55] Y. Imamura, M. Sakamoto, T. Sasada, and M. Tabuse “String theories on the asymmetric
+orbifolds with twist - untwist intertwining currents” Prog. Theor. Phys. Suppl. 110 (1992)
+261–276 [arXiv:hep-th/9202009].
+[56] T. Sasada “Fermion currents on asymmetric orbifolds” Phys. Lett. B343 (1995) 128–132
+[arXiv:hep-th/9312066].
+[57] T. Sasada “Space-time supersymmetry in asymmetric orbifold models”
+[arXiv:hep-th/9403037].
+57
+
+===== PAGE 59 =====
+
+[58] J. Erler “Asymmetric orbifolds and higher level models” Nucl. Phys. B475 (1996) 597–626
+[arXiv:hep-th/9602032].
+[59] K. Aoki, E. D’Hoker, and D. H. Phong “On the construction of asymmetric orbifold models”
+Nucl. Phys. B695 (2004) 132–168 [ arXiv:hep-th/0402134].
+[60] H. S. Tan “T-duality twists and asymmetric orbifolds” JHEP 11 (2015) 141
+[arXiv:1508.04807].
+[61] Y. Satoh and Y. Sugawara “Lie algebra lattices and strings on T-folds” JHEP 02 (2017) 024
+[arXiv:1611.08076].
+[62] T. R. Taylor “Model building on asymmetric Z 3 orbifolds: nonsupersymmetric models” Nucl.
+Phys. B303 (1988) 543–556.
+[63] Y. Satoh, Y. Sugawara, and T. Wada “Non-supersymmetric asymmetric orbifolds with
+vanishing cosmological constant” JHEP 02 (2016) 184 [ arXiv:1512.05155].
+[64] Y. Sugawara and T. Wada “More on non-supersymmetric asymmetric orbifolds with vanishing
+cosmological constant” JHEP 08 (2016) 028 [ arXiv:1605.07021].
+[65] H. Kawai, D. C. Lewellen, and S. H. H. Tye “Construction of fermionic string models in
+four-dimensions” Nucl. Phys. B288 (1987) 1.
+[66] I. Antoniadis, C. P. Bachas, and C. Kounnas “Four-dimensional superstrings” Nucl. Phys.
+B289 (1987) 87.
+[67] P. Athanasopoulos, A. E. Faraggi, S. Groot Nibbelink, and V. M. Mehta “Heterotic free
+fermionic and symmetric toroidal orbifold models” JHEP 04 (2016) 038 [ arXiv:1602.03082].
+[68] A. E. Faraggi, D. V. Nanopoulos, and K.-J. Yuan “A standard like model in the 4D free
+fermionic string formulation” Nucl. Phys. B335 (1990) 347–362.
+[69] G. B. Cleaver, A. E. Faraggi, and D. V. Nanopoulos “String derived MSSM and M theory
+uniﬁcation” Phys. Lett. B455 (1999) 135–146 [ arXiv:hep-ph/9811427].
+[70] A. E. Faraggi “A New standard - like model in the four-dimensional free fermionic string
+formulation” Phys. Lett. B278 (1992) 131–139.
+[71] A. E. Faraggi “Construction of realistic standard - like models in the free fermionic superstring
+formulation” Nucl. Phys. B387 (1992) 239–262 [ arXiv:hep-th/9208024].
+[72] F. Beye, T. Kobayashi, and S. Kuwakino “Gauge symmetries in heterotic asymmetric orbifolds”
+Nucl. Phys. B875 (2013) 599–620 [ arXiv:1304.5621].
+[73] F. Beye, T. Kobayashi, and S. Kuwakino “Three-generation asymmetric orbifold models from
+heterotic string theory” JHEP 01 (2014) 013 [ arXiv:1311.4687].
+[74] F. Beye, T. Kobayashi, and S. Kuwakino “Dilaton stabilization in three-generation heterotic
+string model” Phys. Lett. B760 (2016) 63–68 [ arXiv:1603.08313].
+58
+
+===== PAGE 60 =====
+
+[75] W. Lerche, D. L¨ ust, and A. N. Schellekens “Chiral four-dimensional heterotic strings from
+selfdual lattices” Nucl. Phys. B287 (1987) 477.
+[76] K. S. Narain “New Heterotic String Theories in Uncompactiﬁed Dimensions < 10” Phys. Lett.
+B169 (1986) 41–46.
+[77] D. Gepner “Space-time supersymmetry in compactiﬁed string theory and superconformal
+models” Nucl. Phys. B296 (1988) 757.
+[78] D. Gepner “Exactly solvable string compactiﬁcations on manifolds of SU(N) holonomy” Phys.
+Lett. B199 (1987) 380–388.
+[79] B. Gato-Rivera and A. N. Schellekens “Asymmetric Gepner models: Revisited” Nucl. Phys.
+B841 (2010) 100–129 [ arXiv:1003.6075].
+[80] B. Gato-Rivera and A. N. Schellekens “Asymmetric Gepner models II. Heterotic weight lifting”
+Nucl. Phys. B846 (2011) 429–468 [ arXiv:1009.1320].
+[81] A. N. Schellekens “Big numbers in string theory” [ arXiv:1601.02462].
+[82] D. Isra¨ el and V. Thi´ ery “Asymmetric Gepner models in type II”JHEP 02 (2014) 011
+[arXiv:1310.4116].
+[83] D. Isra¨ el “Nongeometric Calabi-Yau compactiﬁcations and fractional mirror symmetry” Phys.
+Rev. D91 (2015) 066005 [ arXiv:1503.01552]. [Erratum: Phys. Rev.D91,no.12,129902(2015)].
+[84] R. Blumenhagen, M. Fuchs, and E. Plauschinn “The Asymmetric CFT Landscape in D=4,6,8
+with Extended Supersymmetry” Fortsch. Phys. 65 (2017) no. 3-4, 1700006 [ arXiv:1611.04617].
+[85] R. Blumenhagen, A. Deser, E. Plauschinn, F. Rennecke, and C. Schmid “The Intriguing
+Structure of Non-geometric Frames in String Theory” Fortsch.Phys. 61 (2013) 893–925
+[arXiv:1304.2784].
+[86] R. Blumenhagen and R. Sun “T-duality, non-geometry and Lie algebroids in heterotic double
+ﬁeld theory” JHEP 02 (2015) 097 [ arXiv:1411.3167].
+[87] R. Vaidyanathaswamy “Integer-roots of the unit matrix” J. London Math. Soc. 3 (1928) no. 12,
+121–124.
+[88] J. Polchinski String theory. Vol. 2: Superstring theory and beyond . Cambridge University Press
+2007.
+[89] S. Bittanti, A. J. Laub, and J. C. Willems The Riccati equation. Springer Science & Business
+Media 2012.
+[90] M. Cvetiˇ c, J. Louis, and B. A. Ovrut “A string calculation of the Kahler potentials for moduli
+of Z N orbifolds” Phys. Lett. B206 (1988) 227–233.
+[91] A. Dabholkar and J. A. Harvey “String islands” JHEP 02 (1999) 006 [ arXiv:hep-th/9809122].
+59

@@ -1,0 +1,1112 @@
+===== PAGE 1 =====
+
+arXiv:2205.08100v1  [math.AG]  17 May 2022
+THE DUALITY BETWEEN F-THEORY AND THE HETEROTIC
+STRING IN D = 8 WITH TWO WILSON LINES
+ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+Abstract. We construct non-geometric string compactiﬁcations by using the F-
+theory dual of the heterotic string compactiﬁed on a two-torus w ith two Wilson line
+parameters, together with a close connection between modular fo rms and the equa-
+tions for certain K3 surfaces of Picard rank 16. We construct exp licit Weierstrass
+models for all inequivalent Jacobian elliptic ﬁbrations supported on th is family of K3
+surfaces and express their parameters in terms of modular forms generalizing Siegel
+modular forms. In this way, we ﬁnd a complete list of all dual non-geo metric com-
+pactiﬁcations obtained by the partial higgsing of the heterotic str ing gauge algebra
+using two Wilson line parameters.
+1. Introduction
+In a standard compactiﬁcation of the type IIB string theory, the axio-dilaton ﬁeld
+τ is constant and no D7-branes are present. Vafa’s idea in proposing F-theory [ 51]
+was to simultaneously allow a variable axio-dilaton ﬁeld τ and D7-brane sources,
+deﬁning at a new class of models in which the string coupling is never wea k. These
+compactiﬁcations of the type IIB string in which the axio-dilaton ﬁeld varies over a
+base are referred to as F-theory models. They depend on the following key ingredients:
+an SL 2( Z) symmetry of the physical theory, a complex scalar ﬁeld τ with positive
+imaginary part on which SL 2( Z) acts by fractional linear transformations, and D7-
+branes serving as the source for the multi-valuedness of τ. In this way, F-theory
+models correspond geometrically to torus ﬁbrations over some com pact base manifold.
+A well-known duality in string theory asserts that compactifying M-t heory on a
+torus T2 with complex structure parameter τ and area A is dual to the type IIB
+string compactiﬁed on a circle of radius A−3/sl⊗sh.left4 with axio-dilaton ﬁeld τ [1, 50, 54].
+This gives a connection between F-theory models and geometric com pactiﬁcations
+of M-theory: after compactifying an F-theory model further on S1 without breaking
+supersymmetry, one obtains a model that is dual to M-theory com pactiﬁed on the
+total space of the torus ﬁbration. The geometric M-theory mode l preserves super-
+symmetry exactly when the total space of the family is a Calabi-Yau m anifold. In
+2020 Mathematics Subject Classiﬁcation. 14J28, 14J81, 81T30.
+Key words and phrases. F-theory, string duality, K3 surfaces, Jacobian elliptic ﬁbrations.
+A.C. acknowledges support from a UMSL Mid-Career Research Gran t.
+T.H. acknowledges the support from the Oﬃce of Graduate Studies at Utah State University.
+A.M. acknowledges support from the Simons Foundation through gr ant no. 202367.
+1
+
+===== PAGE 2 =====
+
+2 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+this way, we recover the familiar condition for supersymmetric F-th eory models in
+eight dimensions or D = 8: the total space of the ﬁbration has to be a K3 surface.
+In this article, we will focus on F-theory models associated with eight -dimensional
+compactiﬁcations that correspond to genus-one ﬁbrations with a section, or Jacobian
+elliptic ﬁbrations, on algebraic K3 surfaces. As pointed out by Witten [
+55], this
+subclass of models is in fact physically easier to treat since the existe nce of a section
+also implies the absence of NS-NS and R-R ﬂuxes in F-theory. Geomet rically, the
+restriction to Jacobian elliptic ﬁbrations facilitates model building with various non-
+Abelian gauge symmetries using the Tate algorithm [ 22, 26, 36] where insertions of
+seven-branes in an F-theory model correspond to singular ﬁbers in the M-theory
+model. Through work of Kodaira [ 25] and N´ eron [42], all possible singular ﬁbers
+in one-parameter families of elliptic curves have been classiﬁed. The c atalog and
+its physical interpretation are by now well-known; see [ 31]. As we shall see, our
+investigation of F-theory/heterotic string duality will be greatly aid ed by the existence
+of a ﬁbration with section: it will allows us to utilize the mathematical cla ssiﬁcation
+of elliptic ﬁbrations with section obtained by the authors in [ 12] and construct the
+dual non-geometric heterotic vacua in D = 8 with two Wilson line parameters.
+Our construction of F-theory models relies on the concrete relatio nship between
+modular forms on the moduli space of certain K3 surfaces of Picard rank 16 and the
+equations of those K3 surfaces which have also been studied in [ 9, 12, 19, 32]. The
+K3 surfaces in question have a large collection of algebraic curve clas ses on them,
+generating a lattice known as H ⊕E7(−1) ⊕ E7(−1) . The presence of these classes
+restricts the form of moduli space, which turns out to be a space a dmitting modular
+forms. The K3 surfaces turn out to be closely related to the family of double sextic
+surfaces, i.e., K3 surfaces obtained as double cover of the projec tive plane branched
+on a reducible sextic. The modular forms are therefore generalizat ions of the Siegel
+modular forms of genus two and can be constructed explicitly using t he exceptional
+analytic equivalence between the bounded symmetric domains of typ e IV 4 and of
+type I2,2. In fact, generators for the ring of modular forms were constru cted by two
+of the authors in [ 9]. In this article we construct explicit Weierstrass model for all
+inequivalent Jacobian elliptic ﬁbrations supported on the family of K3 s urfaces with
+H ⊕E7(−1) ⊕ E7(−1) lattice polarization and express their parameters in terms of
+such modular forms.
+This article is structured as follows: in Section 2 we introduce the fundamental
+mathematical object that is later used to describe (the dual of) t he non-geometric
+heterotic string vacua inD = 8 with two Wilson lines, namely the family of K3 surfaces
+with canonical H ⊕E7(−1) ⊕ E7(−1) polarization. We will show that this family
+admits exactly four inequivalent Jacobian elliptic ﬁbrations. For each ﬁbration we
+will construct a Weierstrass model whose parameters are modular forms generalizing
+well-known Siegel modular forms. In Section 3 we present possible conﬂuences of the
+singular ﬁbers that can occur in the four Jacobian elliptic ﬁbrations. Establishing
+these conﬂuences turns out to be critical for matching the backg rounds in D = 8 with
+
+===== PAGE 3 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 3
+the backgrounds dual to the heterotic string with an unbroken ga uge algebra e8 ⊕e8
+or so( 32) as we turn oﬀ the Wilson line parameters. In Section 4 we classify all
+non-geometric heterotic models obtained by the partial Higgsing (u sing two Wilson
+lines) of the heterotic gauge algebra g = e8 ⊕e8 or g = so( 32) for the associated low
+energy eﬀective eight-dimensional supergravity theory, dual to the K3 surfaces from
+Section 2. There we ﬁnd a surprise: as opposed to the Higgsing of the hetero tic gauge
+algebra using only one Wilson line, the Higgsing with two Wilson lines produc es two
+diﬀerent branches for each type of heterotic string. We conclude the paper with a
+discussion of this surprise and its implications.
+2. A special family of K3 surfaces
+Let X be a smooth complex algebraic K3 surface. The group of divisors (mo dulo
+algebraic equivalence) is called the Ner´ on-Severi lattice ofX , denoted by NS (X ) . It is
+well known that NS (X ) is an even lattice of signature ( 1,p X ) , where pX is the Picard
+rank of X with 1 ≤pX ≤20. Following [ 15,43–46], for a ﬁxed even lattice N fo signature
+( 1,r ) , with 0 ≤r ≤19, we say that X is polarized by the lattice N, if ı∶N →NS(X ) is a
+primitive embedding of lattice for which ı( N) contains a pseudo-ample divisor class.
+We call (X ,ı ) an N-polarized K3 surface. Two N-polarized K3 surfaces (X ,ı ) and
+(X ′,ı ′) are said to be isomorphic, if there exists an analytic isomorphism α ∶ X→X ′
+such that α ∗○ı′= ı where α ∗is the appropriate morphism at cohomology level.
+This article aims to describe certain backgrounds for the heterotic string using a
+special class of such objects, namely, K3 surfaces which are polar ized by the rank
+sixteen lattice
+(2.1) N = H ⊕E7(−1) ⊕ E7(−1) ,
+whereH is the standard hyperbolic lattice of rank two (hyperbolic plane), an dE7( −1)
+is the negative deﬁnite even lattice associated with the E7 root system. K3 surfaces of
+this type are explicitly constructible: let ( α,β,γ,δ,ε,ζ ) ∈ C6 be a set of parameters,
+consider the projective quartic surface Q ( α,β,γ,δ,ε,ζ ) in P3( X, Y, Z, W) deﬁned by
+the homogeneous equation:
+(2.2) Y2ZW −4X3Z + 3α XZW2 + β ZW3 + γXZ2W −1
+2 /parenleft.alt1 δZ2W2 + ζW4/parenright.alt1 + εXW3 = 0.
+The family in Equation ( 2.2) was ﬁrst introduced by Clingher and Doran in [ 11]
+as a generalization of the Inose quartic in [ 21]. Assuming that ( γ,δ ) ≠ ( 0, 0) and
+( ε,ζ ) ≠ ( 0, 0) , it was proved in [ 9] that the surface X ( α,β,γ,δ,ε,ζ ) obtained as the
+minimal resolution of ( 2. 2) is a K3 surface endowed with a canonical N polarization.
+All N-polarized K3 surfaces, up to isomorphism, are in fact realized in this way.
+Moreover, one can tell precisely when two members of the above fa mily are isomorphic.
+Let G be the subgroup of Aut ( C6) generated by the set of transformations given
+below:
+( α,β,γ,δ,ε,ζ ) /leftrightline → ( t2α, t 3β, t 5γ, t 6δ, t−1ε, ζ) , with t ∈C∗
+(2.3) ( α,β,γ,δ,ε,ζ ) /leftrightline → ( α,β,ε,ζ,γ,δ ) .
+
+===== PAGE 4 =====
+
+4 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+It then follows that two K3 surfaces in the above family are isomorph ic if and only if
+their six-parameter coeﬃcient sets belong to the same orbit of C6 under G; see [
+9] .
+2.1. Jacobian elliptic ﬁbrations on X . Recall that a Jacobian elliptic ﬁbration
+on X is a pair ( π,σ ) consisting of a proper map of analytic spaces π ∶X → P1,
+whose generic ﬁber is a smooth genus one curve, and a section σ ∶P1 → X in the
+elliptic ﬁbration π. If σ ′is another section of the Jacobian ﬁbration ( π,σ ) then there
+exists an automorphism of X that preserves π and maps σ to σ ′. By identifying the
+set of sections of π and the group of automorphisms of X preserving π, the set of
+all sections form a group, known as the Mordell-Weil group of the Ja cobian elliptic
+ﬁbration, denoted by MW ( π,σ ) .
+Classifying Jacobian elliptic ﬁbrations on X corresponds to classifying primitive
+lattice embeddings H ↪ NS(X ) since isomorphism classes of Jacobian elliptic ﬁbra-
+tions on X are in one-to-one correspondence with isomorphism classes of prim itive
+lattice embeddings H ↪NS(X ) [10, Lemma 3.8]. A lattice theoretic analysis by the
+authors revealed that there are exactly four such (non-isomorp hic) primitive lattice
+embeddings [ 12, Prop. 2.3]. Consequently, it was shown that an N-polarized K3 sur-
+face carries four Jacobian elliptic ﬁbrations, up to automorphisms [ 12, Thm. 3.6].
+In Sections 2.1.1-2.1.4 we will brieﬂy review the construction of Weierstrass models
+for these ﬁbrations obtained in [ 12, Thm. 3.6]. We use the Kodaira classiﬁcation of
+singular ﬁbers to describe the four Jacobian elliptic ﬁbrations [ 25], which we call the
+standard, alternate, base-ﬁber dual, and maximal ﬁbration.
+2.1.1. The standard ﬁbration. Substituting
+(2.4) X = uvx, Y = y, Z = 4u4v2z, W = 4u3v3z,
+in Equation (
+2.2) yields the Jacobian elliptic ﬁbration πstd ∶X →P1 with ﬁber X[ u∶v] ,
+given by the Weierstrass equation
+(2.5) X[ u∶v] ∶ y2z = x3 + f ( u,v ) xz2 + g( u,v ) z3,
+equipped with the section σstd ∶[ x ∶y ∶z] = [ 0 ∶1 ∶0] , and with a discriminant
+(2.6) ∆ ( u,v ) = 4f 3 + 27g2 = 64u9v9p( u,v ) ,
+where
+(2.7) f ( u,v ) = − 4u3v3/parenleft.alt2 γu2 + 3αuv + εv2/parenright.alt2 , g ( u,v ) = 8u5v5/parenleft.alt2 δu2 −2βuv + ζv2/parenright.alt2 ,
+and p( u,v ) = 4γ3u6 + ⋅ ⋅ ⋅ +4ε3v6 is an irreducible homogeneous polynomial of degree
+six.
+Equation (
+2.5) deﬁnes a Jacobian elliptic ﬁbration with six singular ﬁbers of Ko-
+daira type I1, two singular ﬁbers of Kodaira type III ∗(ADE type E7), and a trivial
+Mordell-Weil group of sections MW ( πstd,σ std) = { I} .
+
+===== PAGE 5 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 5
+2.1.2. The alternate ﬁbration. Substituting
+(2.8) X = 2uvx, Y = y, Z = 4v5(−2εu + ζv) z, W = 2v2x,
+into Equation ( 2.2), determines the Jacobian elliptic ﬁbration πalt ∶X →P1 with ﬁber
+X[ u∶v] , given by the equation
+(2.9) X[ u∶v] ∶ y2z = x/parenleft.alt2 x2 + A( u,v ) xz + B( u,v ) z2/parenright.alt2 ,
+equipped with the section σalt ∶[ x ∶y ∶z] = [ 0 ∶1 ∶0] , the two-torsion section
+[ x ∶y ∶z] = [ 0 ∶0 ∶1] , and with a discriminant
+(2.10) ∆ ( u,v ) = B( u,v ) 2 /parenleft.alt2 A( u,v ) 2 −4B( u,v )/parenright.alt2 ,
+where
+A( u,v ) = 4v( 4u3 −3αuv 2 −βv 3) , B ( u,v ) = 4v6( 2γu −δv)( 2εu −ζv) .(2.11)
+Equation ( 2.9) deﬁnes a Jacobian elliptic ﬁbration with six singular ﬁbers of Ko-
+daira type I1, two singular ﬁbers of Kodaira type I2 (ADE type A1), and a singular
+ﬁber of Kodaira type I ∗
+8 (ADE type D12), and a Mordell-Weil group of sections
+MW( πalt,σ alt) = Z/slash.l⟩ft2Z.
+2.1.3. The base-ﬁber-dual ﬁbration. Substituting
+(2.12) X = 3uv( x + 6γεuv3z) , Y = y,
+Z = 6v2( εx −6γε2uv3z −18ζu2v2z) , W = 108u3v3z,
+into Equation ( 2.2) determines a Jacobian elliptic ﬁbration πbfd ∶X → P1 with ﬁber
+X[ u∶v] , given by the equation
+(2.13) X[ u∶v] ∶ y2z = x3 + F ( u,v ) xz2 + G( u,v ) z3,
+admitting the section σbfd ∶[ x ∶y ∶z] = [ 0 ∶1 ∶0] , and with a discriminant
+(2.14) ∆ ( u,v ) = 4F 3 + 27G2 = − 26312u8v10P ( u,v ) ,
+where
+F ( u,v ) = − 108u2v4/parenleft.alt2 9αu 2 −3( γζ + δε) uv + γ2ε2v2/parenright.alt2 ,
+G( u,v ) = − 216u3v5/parenleft.alt2 27u4 + 54βu 3v + 27( αγε + δζ) u2v2
+−9γε( γζ + δε) uv3 + 2γ3ε3v4/parenright.alt2 ,
+(2.15)
+and P ( u,v ) = γ2ε2( γζ −δε) 2v6 + O( u) is an irreducible homogeneous polynomial of
+degree six.
+Equation (
+2.13) deﬁnes a Jacobian elliptic ﬁbration with six singular ﬁbers of Ko-
+daira type I1, one singular ﬁbre of Kodaira type I ∗
+2 (ADE type D6), and a singular
+ﬁber of Kodaira type II ∗ (ADE type E8), and a Mordell-Weil group of sections
+MW( πbfd,σ bfd) = { I} .
+
+===== PAGE 6 =====
+
+6 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+2.1.4. The maximal ﬁbration. The maximal ﬁbration is induced by intersecting the
+quartic Q ( α,β,γ,δ,ε,ζ ) with the pencil of quadric surfaces
+C3( u,v ) = v/parenleft.alt2 2γ2δεζXZ + ( 6αγδεζ + 4βγδε 2 + 4βγ 2εζ + 2δ2ζ2) XW −γδ2εζZW
++ 2γδεζY2 − (8βγ 2ε2 + 4δ2εζ + 4γδζ2) X2/parenright.alt2 + u( 2γX −δW)( 2εX −ζW) = 0,
+(2.16)
+with [ u ∶v] ∈P1. Making the substitutions
+X = δζv/parenleft.alt1 ( 2βγεv −u) x −2γδ5εζ5v5z/parenright.alt1 , Y = y, W = 2δ2ζ2v2x,(2.17)
+and Z = Z( x,y,z,u,v ) , obtained by solving Equation (
+2.16) for Z, determines a
+Jacobian elliptic ﬁbration πmax ∶X →P1 with ﬁber X[ u∶v] , given by the equation
+(2.18) X[ u∶v] ∶ y2z = x3 + a( u,v ) x2z + b( u,v ) xz2 + c( u,v ) z3,
+admitting the section σmax ∶[ x ∶y ∶z] = [ 0 ∶1 ∶0] , and with the discriminant
+∆( u,v ) = b2/parenleft.alt1 a2 −4b/parenright.alt1 −2ac/parenleft.alt1 2a2 −9b/parenright.alt1 −27c2 = 64δ16ζ16v16d( u,v ) ,(2.19)
+where
+a( u,v ) = − 2δζv/parenleft.alt2 u3 −6βγεu 2v + 3( 4β 2γ2ε2 −αδ 2ζ2) uv2
+−2β ( 4β 2γ3ε3 −3αγδ 2εζ2 −δ3ζ3) v3/parenright.alt2 ,
+b( u,v ) = − 4δ6ζ6v6/parenleft.alt2 2γεu2 − (8βγ 2ε2 + γδζ2 + δ2εζ) uv
++ ( 8β 2γ3ε3 −3αγδ 2εζ2 + 2βγ 2δεζ2 + 2βγδ 2ε2ζ −δ3ζ3) v2/parenright.alt2 ,
+c( u,v ) = − 8γδ11εζ11v11/parenleft.alt2 γεu − (2βγ 2ε2 + γδζ2 + δ2εζ) v/parenright.alt2 ,
+(2.20)
+andd( u,v ) = ( γζ −δε) 2u8 + O( v) is an irreducible homogeneous polynomial of degree
+eight.
+Equation (
+2.18) deﬁnes a Jacobian elliptic ﬁbration with eight singular ﬁbers of
+Kodaira type I1, one singular ﬁber of Kodaira type I ∗
+10 (ADE type D14), and a
+Mordell-Weil group of sections MW ( πmax,σ max) = { I} .
+2.2. Modular Description. The parameters of the deﬁning equations for the Weier-
+strass models in Sections 2.1.1-2.1.4 can be interpreted as modular forms, established
+by two of the authors and Shaska in [ 9].
+Let L2,4 be the orthogonal complement N ⊥ ⊂ΛK3 in the K3 lattice Λ K3 = H ⊕3 ⊕
+E8( −1) ⊕E8( −1) with orthogonal transformations O( L2,4) . Let D2,4 be the Hermitian
+symmetric space, speciﬁcally the bounded symmetric domain of type IV 4, given as
+(2.21) D2,4 = O+ ( 2, 4)/slash.left /parenleft.alt1 SO( 2) ×O( 4) /parenright.alt1 ,
+where O+ ( 2, 4) denotes the subgroup of index two of the pseudo-orthogonal gr oup
+O( 2, 4) consisting of the elements whose upper left minor of order two is pos itive. Let
+O+ ( 2, 4; Z) = O( L2,4) ∩O+ ( 2, 4) be the arithmetic lattice of O+ ( 2, 4) , i.e., the discrete
+coﬁnite group of holomorphic automorphisms on the bounded Hermit ian symmetric
+
+===== PAGE 7 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 7
+domain D2,4. We also set SO + ( 2, 4) = O+ ( 2, 4) ∩SO( 2, 4) andSO + ( 2, 4; Z) = O( L2,4) ∩
+SO + ( 2, 4) .
+An appropriate version of the Torelli theorem [ 14] gives rise to an analytic isomor-
+phism between the moduli space of N-polarized K3 surfaces and the quasi-projective
+four-dimensional algebraic variety D2,4/slash.l⟩ftO+ ( 2, 4; Z) . We consider the normal, ﬁnitely
+generated algebra A( D2,4, G) = ⊕k≥0A( D2,4, G) k of automorphic forms on D2,4 relative
+to a discrete subgroup G of ﬁnite covolume in O+ ( 2, 4) , graded by the weight k of the
+automorphic forms. For G = O+ ( 2, 4; Z) , the algebra A( D2,4, G) is freely generated by
+forms Jk of weight 2 k with k = 2, 3, 4, 5, 6; this is a special case of a general result
+proven by Vinberg in [ 52, 53]. A subtle point here is that one has to obtain A( D2,4, G)
+as the even part
+(2.22) A(D 2,4, G) = /bracketleft.alt2 A(D2,4, G0)/bracketright.alt2
+even
+of the ring of automorphic forms with respect to subgroup G0 = SO + ( 2, 4; Z) of index
+two.
+Based on the exceptional analytic equivalence between the bounde d symmetric
+domains of type IV 4 and of type I2,2, an explicit description of the generators { Jk} 6
+k=2
+can be derived. To start, we remark that D2,4 ≅H2,2, where
+(2.23) H2,2 = /braceleft.alt4/parenleft.alt4 τ1 z1
+z2 τ2
+/parenright.alt4 ∈Mat(2, 2; C) /divides.alt2 Im (τ1) ⋅Im (τ2) > 1
+4 /divides.alt0z1 −¯z2/divides.alt0 2, Imτ1 > 0/braceright.alt4 .
+The domain H2,2 is a generalization of the Siegel upper-half space H2 in the sense
+that
+(2.24) H2 = /braceleft.alt1 ̟ ∈H2,2 /divides.alt1 ̟ t = ̟ /braceright.alt1 .
+A subgroup Γ ⊂U( 2, 2) , given by
+(2.25) Γ = /braceleft.alt4 G ∈GL /parenleft.alt1 4, Z[ i] /parenright.alt1 /divides.alt2 G† ⋅/parenleft.alt4 0 I2
+−I2 0 /parenright.alt4 ⋅G = /parenleft.alt4 0 I2
+−I2 0 /parenright.alt4/braceright.alt4 ,
+acts on ̟ ∈H2,2 by
+(2.26) ∀G = /parenleft.alt4 A B
+C D /parenright.alt4 ∈Γ ∶ G ⋅̟ = ( C ⋅̟ + D) −1( A ⋅̟ + B) .
+There is an involution T acting on H2,2 by transposition, i.e., ̟ ↦T ⋅̟ = ̟ t, yielding
+an extended group as the semi-direct product Γ T = Γ ⋊⟨T ⟩. Moreover, the group Γ T
+has the index-two subgroup given by
+Γ+
+T = /braceleft.alt2 g = GT n ∈ΓT /divides.alt2 n ∈{ 0, 1} , ( −1) n detG = 1/braceright.alt2 .(2.27)
+The identiﬁcation D2,4 ≅H2,2 gives rise to an homomorphism U ( 2, 2) →SO + ( 2, 4)
+which also identiﬁes G0 ≅Γ+
+T [
+52].
+In the above context, the ﬁve modular forms { Jk} 6
+k=2 can be computed in terms
+of theta functions on H2,2 introduced by Matsumoto [
+32]. The result is that the
+generators of the graded ring of even modular forms relative to th e group Γ +
+T can be
+determined explicitly:
+
+===== PAGE 8 =====
+
+8 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+Theorem 2.1 ([
+9]). The invariants J2,J 3,J 4,J 5,J 6 are modular forms of respective
+weights 4, 6, 8, 10, and 12, relative to the group Γ+
+T .
+We remark that there also is an automorphic form a with nontrivial automorphic
+factor of weight 10 satisfying a2 = J 2
+5 −4J4J6; for its precise deﬁnition we refer to [
+9].
+The fact that two K3 surfaces in the family in Equation ( 2.2) are isomorphic if and
+only if their six-parameter coeﬃcient sets belong to the same orbit o f C6 under G in
+Equation (2) allows to identify the modular forms Jk relative to the action of Γ T with
+the following set of invariants associated to the K3 surfaces in the f amily:
+(2.28) J2 = α, J 3 = β, J 4 = γ ⋅ε, J 5 = γ ⋅ζ + δ ⋅ε, J 6 = δ ⋅ζ,
+which then allows one to prove:
+Theorem 2.2 ([
+9]). The four-dimensional open analytic space
+(2.29) MN = /braceleft.alt2 ⃗J = [ J2, J 3, J 4, J 5, J 6 ] ∈WP( 2, 3, 4, 5, 6) /divides.alt0 ( J4, J5, J6) ≠( 0, 0, 0) /braceright.alt2
+forms a coarse moduli space for N-polarized K3 surfaces.
+Under the restriction of H2,2/slash.l⟩ftΓ+
+T to H2/slash.l⟩ftSp4( Z) induced by Equation (
+2.24) we
+obtain
+(2.30)
+[ J2( ̟ ) ∶J3( ̟ ) ∶J4( ̟ ) ∶J5( ̟ ) ∶J6( ̟ )] = [ ψ 4( τ) ∶ψ 6( τ) ∶0 ∶21235χ 10( τ) ∶21236χ 12( τ)] ,
+where ψ 4,ψ 6,χ 10, and χ 12 are the Siegel modular forms of respective weights 4 , 6, 10
+and 12 introduced and deﬁned by Igusa in [
+20].
+For the four inequivalent Jacobian elliptic ﬁbrations on the family of N- polarized K3
+surfaces X obtained in Section 2.1, we will now construct Weierstrass models with
+coeﬃcients in Q[ J2,J 3,J 4,J 5,J 6] or Q[ J2,J 3, a,J 5,J 6] in the case of the standard
+ﬁbration.
+2.2.1. The standard ﬁbration. Assuming J6 ≠0 we denote the two solutions of the
+equation a2 = J 2
+5 −4J4J6 by ±a. The elliptic ﬁbration πstd∶X →P1 in Section
+2.1.1 can
+be written in a suitable aﬃne coordinate chart as
+(2.31) Y 2 = X 3 + f± ( t) X + g( t) ,
+with
+(2.32) f± ( t) = −t3J 3
+6 /parenleft.alt4 J5 ∓a
+2 t2 + 3J2J6t + ( J5 ±a) J6
+2 /parenright.alt4 , g ( t) = J 5
+6t5/parenleft.alt2 t2 −2J3t + J6/parenright.alt2 ,
+and a discriminant ∆ = J 9
+6t9p± ( t) where
+(2.33) p± ( t) = 2/parenleft.alt2 J 2
+5 ( J5 ±a) −J4J6( 3J5 ±a)/parenright.alt2 t6 + ⋅ ⋅ ⋅ +2J 3
+6 /parenleft.alt2 J 2
+5 ( J5 ∓a) −J4J6( 3J5 ∓a)/parenright.alt2 .
+Notice that we have f−( J6/slash.l⟩ftt) = J 4
+6f+ ( t)/slash.l⟩ftt8 and g( J6/slash.l⟩ftt) = J 6
+6g( t)/slash.l⟩ftt12. Since the map
+(2.34) ( t,X,Y ) ↦( t′,X ′,Y ′) = ( J6/slash.left t ,J 2
+6X/slash.left t4 , −J 3
+6Y /slash.left t6) ,
+maps the K3 surfaces in Equation ( 2.31) with f−( t) to one with f+ ( t) and the holo-
+morphic two form dt ∧dX/slash.l⟩ftY to dt′∧dX ′/slash.l⟩ftY ′, it provides a holomorphic, symplectic
+morphism between the two K3 surfaces.
+
+===== PAGE 9 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 9
+For J6 = 0, we have δ = 0 or ζ = 0, and the elliptic ﬁbration πstd∶X → P1 in
+Section 2.1.1 can be written as either
+(2.35) Y 2 = X 3 −t3/parenleft.alt2 t2 + 3J2t + J4/parenright.alt2 X + t5/parenleft.alt2 J5 −2J3t/parenright.alt2 ,
+or
+(2.36) Y 2 = X 3 −t3/parenleft.alt2 J4t2 + 3J2t + 1/parenright.alt2 X + t5/parenleft.alt2 −2J3t + J5t2/parenright.alt2 .
+The ﬁbrations are related by the birational morphism
+(2.37) ( t,X,Y ) ↦( t′,X ′,Y ′) = ( 1/slash.left t ,X /slash.left t4 , −Y /slash.left t6) ,
+which also maps the holomorphic two-form dt ∧dX/slash.l⟩ftY to dt′∧dX ′/slash.l⟩ftY ′.
+2.2.2. The alternate ﬁbration. The Jacobian elliptic ﬁbration πalt ∶X → P1 in Sec-
+tion
+2.1.2 is written in a suitable aﬃne coordinate chart as
+(2.38) Y 2 = X/parenleft.alt2 X 2 + A( t) X + B( t)/parenright.alt2 ,
+with
+(2.39) A( t) = t3 −3J2t −2J3, B ( t) = J4t2 −J5t + J6,
+and a discriminant ∆ = E( t) 2D( t) where E( t) = J4t2 −J5t + J6 and
+(2.40) D( t) = t6 −6J2t4 −4J3t3 + ( 9J 2
+2 −4J4) t2 + ( 12J2J3 + 4J5) t + 4( J 2
+3 −J6) .
+2.2.3. The base-ﬁber-dual ﬁbration. The Jacobian elliptic ﬁbration πbfd ∶X → P1 in
+Section
+2.1.3 is written in a suitable aﬃne coordinate chart as
+(2.41) Y 2 = X 3 + F ( t) X + G( t) ,
+with
+F ( t) = t2/parenleft.alt2 −3J2t2 −J5t −1
+3J 2
+4 /parenright.alt2 ,
+G( t) = t3/parenleft.alt2 t4 −2J3t3 + ( J2J4 + J6) t2 + 1
+3J4J5t + 2
+27J 3
+4 /parenright.alt2 ,
+(2.42)
+and a discriminant ∆ = t8P ( t) where P ( t) = −27t6 + 108J3t5 + ⋅ ⋅ ⋅ +a2J 2
+4 .
+2.2.4. The maximal ﬁbration. The Jacobian elliptic ﬁbration πmax ∶X → P1 in Sec-
+tion
+2.1.4 is written in a suitable aﬃne coordinate chart as
+(2.43) Y 2 = X 3 + a( t) X 2 + b( t) X + c( t) ,
+with
+a( t) = J6/parenleft.alt2 t3 + 6J3J4t2 + 3( 4J 2
+3J 2
+4 −J2J 2
+6 ) t −2J3( 3J2J4J 2
+6 −4J 2
+3J 3
+4 + J 3
+6 )/parenright.alt2 ,
+b( t) = −J 6
+6 /parenleft.alt2 2J4t2 + ( 8J3J 2
+4 + J5J6) t + ( 8J 2
+3J 3
+4 −3J2J4J 2
+6 + 2J3J4J5J6 −J 3
+6 )/parenright.alt2 ,
+c( t) = J4J 11
+6 /parenleft.alt2 J4t + ( 2J3J 2
+4 + J5J6)/parenright.alt2 ,
+
+===== PAGE 10 =====
+
+10 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+and a discriminant ∆ = J 16
+6 d( t) whered( t) = a2t8 + ... is an irreducible polynomial of
+degree eight. By an appropriate change of coordinates, one can w rite the ﬁbration in
+Equation (
+2.43) in Weierstrass normal form
+y2 = x3 + α ( t) x + β ( t)
+where α ( t) = t6 + ... and β ( t) = t9 −... are irreducible polynomials of degree six and
+nine respectively.
+A simple computation shows that the various discriminants (denoted by Disct) and
+resultants (denoted by Res t) with respect to the variable t are related to a modular
+form J30 of weight 60 which is a polynomial in { Jk} 6
+k=2 and given by
+(2.44) J30 = DisctD = Disctd = 24
+318J 30
+6
+Disctp
+Res3
+t ( t−3f,t −5g) = −J 9
+2
+321
+DisctP
+Res3
+t ( t−2F,t −3G) .
+3. Confluences of Singular Fibers
+In this section we describe some conﬂuences of the singular ﬁbers t hat are possible
+for the ﬁbrations constructed in Sections
+2.1.1 -2.1.4. The results are summarized in
+Table 1. In the table, D( Λ) denotes the discriminant group of a lattice Λ which is
+an important group theoretic invariant of the lattice used in Nikulin’s c lassiﬁcation
+theory [ 45, 47].
+ForJ4 = 0 the base-ﬁber-dual ﬁbration in Equation ( 2.41) specializes to
+(3.1) Y 2 = X 3 −t3/parenleft.alt2 3J2t + J5/parenright.alt2 X + t5/parenleft.alt2 t2 −2J3t + J6/parenright.alt2 .
+ForJ4 = 0, J6 /slash.l⟩ft= 0, we have a = ±J5: the standard ﬁbration in Equation ( 2.31) then
+simpliﬁes, after rescaling, to either Equation ( 3.1) or
+(3.2) Y 2 = X 3 −t4/parenleft.alt2 J5t + 3J2t/parenright.alt2 X + t5/parenleft.alt2 J6t2 −2J3t + 1/parenright.alt2 .
+The two ﬁbrations are related by the birational morphism
+(3.3) ( t,X,Y ) ↦( t′,X ′,Y ′) = ( 1/slash.left t ,X /slash.left t4 , −Y /slash.left t6) ,
+which also maps the holomorphic two-form dt ∧dX/slash.l⟩ftY to dt′∧dX ′/slash.l⟩ftY ′. Thus, the
+standard and the base-ﬁber-dual ﬁbration specialize to the same elliptic ﬁbration in
+Picard rank 17 ( J4 = 0) and Picard rank 18 ( J4 = J5 = 0), marked in color-coded rows
+(blue) in Table
+1. These are precisely the equations derived in [ 31] for the F-theory
+dual of a non-geometric heterotic theory with gauge algebra g = e8 ⊕e7 and g = e8 ⊕e8
+one non-vanishing Wilson line parameter. We will explain the physical re levance of
+this observation in Section 4.
+ForJ4 = 0 the alternate ﬁbration in Equation ( 2.38) specializes to
+(3.4) Y 2 = X 3 + /parenleft.alt2 t3 −3J2t −2J3/parenright.alt2 X 2 −/parenleft.alt2 J5t −J6/parenright.alt2 .
+Similarly, for J4 = 0, J6 /slash.l⟩ft= 0 the maximal ﬁbration in Equation ( 2.43) simpliﬁes, after
+rescaling, to Equation ( 3.4). Thus, the alternate and the maximal ﬁbration specialize
+to the same ﬁbration in Picard rank 17 ( J4 = 0) and Picard rank 18 ( J4 = J5 = 0),
+marked in color-coded rows (red) in Table 1. This is precisely the equation derived
+
+===== PAGE 11 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 11
+in [ 31] for the F-theory dual of a non-geometric heterotic theory with gauge algebra
+g = e8 ⊕e7 and one non-vanishing Wilson line parameter. We will explain the physica l
+relevance of this observation in Section 4.
+Moreover, Table 1 gives the conﬂuences of singular ﬁbers that occur along the
+vanishing loci of a = 0 (with a2 = J 2
+5 −4J4J6) and J30 = 0 (where J30 is deﬁned
+in Equation ( 2.44)). We also determined the possible conﬂuences 2 I1 →II and
+I2 + I1 →III that can occur within the four elliptic ﬁbrations (the polynomials f,g ,
+D,E , F,G , and α,β are deﬁned in Sections 2.1.1 -2.1.4).
+4. Classification of non-geometric heterotic models
+An eight-dimensional eﬀective theory for the heterotic string com pactiﬁed on T2
+has a complex scalar ﬁeld which takes its values in the Narain space [ 40]
+(4.1) D2,18/slash.left O( Λ2,18) ,
+where Dp,q is the symmetric space for O( p,q ) , i.e.,
+(4.2) Dp,q = ( O( p) ×O( q))/slash.right O( p,q ) .
+The Narain space is the quotient of the symmetric space for O( 2, 18) by the auto-
+morphism group O( Λ2,18) of the unique integral even unimodular lattice of signature
+( 2, 18) , i.e.,
+(4.3) Λ 2,18 = H ⊕H ⊕E8( −1) ⊕E8( −1) .
+In an appropriate limit, the Narain space decomposes as a product o f spaces param-
+eterizing the K¨ ahler and complex structures on T2 as well as sixteen Wilson line
+expectation values around the two generators of π1( T2) ; see [ 41] for details. How-
+ever, the decomposition is not preserved when the moduli vary arb itrarily. Families
+of heterotic models employing the full O( Λ2,18) symmetry are therefore considered
+non-geometric compactiﬁcations, because the K¨ ahler and complex structures o n T2,
+and the Wilson line values, are not distinguished under the O( Λ2,18) -equivalences but
+instead are mingled together.
+If we restrict ourselves to a certain index-two sub-group O+ ( Λ2,18) ⊂O( Λ2,18) in
+the construction above, the non-geometric models can be describ ed by holomorphic
+modular forms. This is because the group O+ ( Λ2,18) is the maximal sub-group whose
+action preserves the complex structure on the symmetric space, and thus is the max-
+imal sub-group for which modular forms are holomorphic. The state ment of the
+F-theory/heterotic string duality in eight dimensions [ 51] is the statement that the
+quotient space
+(4.4) D2,18/slash.left O+ ( Λ2,18)
+coincides with the parameter space of elliptically ﬁbered K3 surfaces with a section,
+i.e, the moduli space of F-theory models. This statement has been k nown in the
+mathematics literature as well; see, for example, [
+17]. However, to construct the
+duality map between F-theory models and heterotic sting vacua exp licitly, one has
+to know the ring of modular forms relative to O+ ( Λ2,18) and their connection to the
+
+===== PAGE 12 =====
+
+12 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+Fibration ( 2.31) pX Singular Fibers MW ( πstd,σ std) Lattice Polarization Λ D( Λ)
+generic 16 2 III ∗+ 6I1 { I} H ⊕E7( −1) ⊕E7( −1) Z2
+2
+Rest( t−3f,t −5g) = 0 16 2 III ∗+ II + 4I1 { I} H ⊕E7( −1) ⊕E7( −1) Z2
+2
+J30 = 0 17 2 III ∗+ I2 + 4I1 { I} H ⊕E7( −1) ⊕E7( −1) ⊕A1( −1) Z3
+2
+J4 = 0 17 II ∗+ III ∗+ 5I1 { I} H ⊕E8( −1) ⊕E7( −1) Z2
+J4 = J5 = 0 18 2II ∗+ 4I1 { I} H ⊕E8( −1) ⊕E8( −1) 0
+(a) Extensions of lattice polarizations for the standard ﬁbration
+Fibration ( 2.38) pX Singular Fibers MW ( πalt,σ alt) Lattice Polarization Λ D( Λ)
+generic 16 I ∗
+8 + 2I2 + 6I1 Z/slash.l⟩ft2Z H ⊕E7( −1) ⊕E7( −1) Z2
+2
+Rest( D,E ) = 0 16 I ∗
+8 + III + I2 + 5I1 Z/slash.l⟩ft2Z H ⊕E7( −1) ⊕E7( −1) Z2
+2
+a = 0 17 I ∗
+8 + I4 + 6I1 Z/slash.l⟩ft2Z H ⊕E8( −1) ⊕D7( −1) Z4
+J30 = 0 17 I ∗
+8 + 3I2 + 4I1 Z/slash.l⟩ft2Z H ⊕E7( −1) ⊕E7( −1) ⊕A1( −1) Z3
+2
+J4 = 0 17 I ∗
+10 + I2 + 6I1 Z/slash.l⟩ft2Z H ⊕E8( −1) ⊕E7( −1) Z2
+J4 = J5 = 0 18 I ∗
+12 + 6I1 Z/slash.l⟩ft2Z H ⊕E8( −1) ⊕E8( −1) 0
+(b) Extensions of lattice polarizations for the alternate ﬁbration
+Fibration ( 2.41) pX Singular Fibers MW ( πbfd,σ bfd) Lattice Polarization Λ D( Λ)
+generic 16 II ∗+ I ∗
+2 + 6I1 { I} H ⊕E8( −1) ⊕D6( −1) Z2
+2
+Rest( t−2F,t −3G) = 0 16 II ∗+ I ∗
+2 + II + 4I1 { I} H ⊕E8( −1) ⊕D6( −1) Z2
+2
+a = 0 17 II ∗+ I ∗
+3 + 5I1 { I} H ⊕E8( −1) ⊕D7( −1) Z4
+J30 = 0 17 II ∗+ I ∗
+2 + I2 + 4I1 { I} H ⊕E8( −1) ⊕D6( −1) ⊕A1( −1) Z3
+2
+J4 = 0 17 II ∗+ III ∗+ 5I1 { I} H ⊕E8( −1) ⊕E7( −1) Z2
+J4 = J5 = 0 18 2II ∗+ 4I1 { I} H ⊕E8( −1) ⊕E8( −1) 0
+(c) Extensions of lattice polarizations for the base-ﬁber dual ﬁbration
+Fibration ( 2.43) pX Singular Fibers MW ( πmax,σ max) Lattice Polarization Λ D( Λ)
+generic 16 I ∗
+10 + 8I1 { I} H ⊕D14( −1) Z2
+2
+Rest( α,β ) = 0, 16 I ∗
+10 + II + 6I1 { I} H ⊕D14( −1) Z2
+2
+a = 0 17 I ∗
+11 + 7I1 { I} H ⊕D15( −1) Z4
+J30 = 0 17 I ∗
+10 + I2 + 6I1 { I} H ⊕D14( −1) ⊕A1( −1) Z3
+2
+J4 = 0 17 I ∗
+10 + I2 + 6I1 Z/slash.l⟩ft2Z H ⊕E8( −1) ⊕E7( −1) Z2
+J4 = J5 = 0 18 I ∗
+12 + 6I1 Z/slash.l⟩ft2Z H ⊕E8( −1) ⊕E8( −1) 0
+(d) Extensions of lattice polarizations for the maximal ﬁbration
+Figure 1. Extensions of lattice polarization
+corresponding elliptically ﬁbered K3 surfaces. However, this ring of modular forms
+is not known in general. We consider the restriction to a natural fou r-dimensional
+sub-space D2,4/slash.l⟩ftO+ ( 2, 4; Z) of the space in Equation ( 4.4). Due to Theorem 2.1 the
+corresponding ring of modular forms is known.
+Let L2,4 be the lattice of signature ( 2, 4) which is the orthogonal complement of
+E7( −1) ⊕E7( −1) in Λ2,18. By insisting that the Wilson lines associated to the E7( −1) ⊕
+
+===== PAGE 13 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 13
+E7( −1) sub-lattice are trivial, we restrict to heterotic vacua parameteriz ed by the sub-
+space
+(4.5) D2,4/slash.left O( L2,4) .
+The corresponding degree-two cover is precisely the quotient spa ce discussed above,
+namely
+(4.6) D2,4/slash.left O+ ( L2,4) .
+For this natural four-dimensional sub-space in the full eighteen d imensional moduli
+space we will determine the duality map (and thus the quantum-exac t eﬀective inter-
+actions) between a dual F-theory/heterotic string pair in eight sp ace-time dimensions.
+As we will show, the restriction to this sub-space describes the par tial Higgsing of the
+corresponding heterotic gauge algebra g = e8 ⊕e8 or g = so( 32) for the associated low
+energy supergravity theory.
+The Jacobian elliptic ﬁbrations in Section
+2.1 provide the possible F-theories for D =
+8 compactiﬁcations over the four-dimensional sub-space in ( 4.6) of the full eighteen
+dimensional moduli space. We now consider families of such non-geom etric heterotic
+compactiﬁcations that naturally lead to compactiﬁcations for D < 8. To start with,
+an inspection of our results from Section 2.1 shows that for the dual F-theory models
+there are no Jacobian elliptic ﬁbrations on the sub-space ( 4.6) with a Mordell-Weil
+group of positive rank. Non-torsion sections in a Weierstrass mode l are known to
+describe the charged matter ﬁelds of the corresponding F-theor y model [ 13, 34]. Thus,
+we have the following:
+Corollary 4.1. For generic families of non-geometric heterotic compactiﬁ cations
+sampling the moduli space D2,4/slash.l⟩ftO+ ( L2,4) there cannot be any charged matter ﬁelds.
+4.1. The e8 ⊕e8-string. As we have seen in Section
+2.2, the space in Equation ( 4.6)
+parameterizes pseudo-ample K3 surfaces with H ⊕E7( −1) ⊕E7( −1) lattice polar-
+ization. Section 2.1.3 shows that these K3 surfaces admit an elliptic ﬁbration with
+section, one ﬁber of Kodaira type I ∗
+2 or worse, and another ﬁber of type precisely II ∗.
+Here, we have used the lattice isomorphism
+(4.7) H ⊕E7( −1) ⊕E7( −1) ≅H ⊕E8( −1) ⊕D6( −1) .
+Because of the presence of a II ∗ ﬁber, the Mordell-Weil group is always trivial,
+including all cases with gauge symmetry enhancement. From a physic s point of view
+as was argued in [
+31], assuming that one ﬁber is ﬁxed and of Kodaira type II ∗ will
+avoid “pointlike instantons” on the heterotic dual after further c ompactiﬁcation to
+dimension six or below, at least for general moduli.
+The key geometric fact for the construction of F-theory models is that Equa-
+tion ( 2.41) deﬁnes an elliptically ﬁbered K3 surface X with section whose periods
+determine a point ̟ ∈H2,2 up to the action of Γ +
+T , and with the coeﬃcients in the
+deﬁning equation being modular forms relative to Γ +
+T of even characteristic. The
+explicit form of the F-theory/heterotic string duality on the moduli space in Equa-
+tion (
+4.6) then has two parts: starting from ̟ ∈H2,2 we always obtain a Jacobian
+
+===== PAGE 14 =====
+
+14 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+elliptic ﬁbration on the K3 surface X from Equation (
+2.41). Conversely, we can start
+with any Jacobian elliptic ﬁbration given by the general equation
+Y 2 = X 3 + at 2X + bt 3 + ct 3X + cdt 4 + et 4X + ( de + f ) t5 + gt 6 + t7.(4.8)
+We then determine a point in ̟ ∈H2,2 (up to the action of Γ +
+T ) by calculating the
+periods of the holomorphic two-form ω X = dt ∧dX/slash.l⟩ftY over a basis of the lattice
+H ⊕E7( −1) ⊕E7( −1) inH 2( X, Z) . It follows that for some non-vanishing scale factor
+λ we have
+c = −λ 10J5( ̟ ) , d = −λ 8
+3 J4( ̟ ) , e = −3λ 4J2( ̟ ) , f = λ 12J6( ̟ ) , g = −2λ 6J3( ̟ ) ,(4.9)
+anda = −3d2, b = −2d3. Under the restriction of H2,2 to the Siegel upper half-plane
+H2, we have d = 0 and
+(4.10)
+[ J2( ̟ ) ∶J3( ̟ ) ∶J4( ̟ ) ∶J5( ̟ ) ∶J6( ̟ )] = [ ψ 4( τ) ∶ψ 6( τ) ∶0 ∶21235χ 10( τ) ∶21236χ 12( τ)] ,
+as points in the four dimensional weighted projective space WP( 2, 3, 4, 5, 6) , where
+ψ 4,ψ 6,χ 10, and χ 12 are Siegel modular forms of respective weights 4 , 6, 10 and 12
+introduced by Igusa in [
+20]. Moreover, a simple rescaling reduces Equation ( 2.41) to
+(4.11) Y 2 = X 3 −t3/parenleft.alt2 1
+48ψ 4( τ) t + 4χ 10( τ)/parenright.alt2 X + t5/parenleft.alt2 t2 − 1
+864ψ 6( τ) t + χ 12( τ)/parenright.alt2 ,
+which is precisely the equation derived in [ 31] for the F-theory dual of a non-geometric
+heterotic theory with gauge algebra g = e8 ⊕e7 and one non-vanishing Wilson line
+parameter. We have proved the following:
+Proposition 4.2. Equation (
+4.8) deﬁnes the F-theory dual of a non-geometric het-
+erotic theory with gauge algebra g = e8 ⊕so( 12) .
+4.2. Condition for ﬁve-branes and supersymmetry. The strategy for construct-
+ing families of non-geometric heterotic compactiﬁcations is the following: star t with
+a compact manifold Z as parameter space and a line bundle Λ →Z. Choose sections
+c( z) ,d( z) ,e( z) ,f ( z) , and g( z) of the bundles Λ ⊗10, Λ ⊗8, Λ ⊗4, Λ ⊗12, and Λ ⊗6, respec-
+tively; then, for each point z ∈Z, there is a non-geometric heterotic compactiﬁcation
+given by Equation ( 4.8) with c = c( z) , d = d( z) , etc., and a = −3d( z) 2, b = −2d( z) 3
+and moduli ̟ ∈H2,2 and O+ ( L2,4) symmetry such that Equations ( 4.9) hold.
+Appropriate ﬁve-branes must still be inserted on Z as dictated by the geometry
+of the corresponding family of K3 surfaces. The change in the singu larities and the
+lattice polarization for the ﬁbration ( 2.41) occur along three loci of co-dimension one,
+namely, a = 0, J30 = 0, and J4 = 0; see Section 3. Each locus is the ﬁxed locus of
+elements in Γ T /slash.right Γ+
+T . It is trivial to write down the reﬂections in O+ ( L2,4)/slash.right SO + ( L2,4)
+corresponding to a = 0, J30 = 0, and J4 = 0, respectively; see [
+9].
+From the point of view of K3 geometry, given as a reﬂection in a lattice element
+δ of square −2 we have the following: if the periods are preserved by the reﬂectio n
+in δ, then δ must belong to the N´ eron-Severi lattice of the K3 surface. That is, the
+N´ eron-Severi lattice is enlarged by adjoiningδ. We already showed in Section 3 that
+
+===== PAGE 15 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 15
+there are three ways an enlargement can happen: the lattice H ⊕E7( −1) ⊕E7( −1) of
+rank sixteen can be extended to H ⊕E7( −1) ⊕E7( −1) ⊕⟨−2⟩, H ⊕E8( −1) ⊕E7( −1) ,
+or H ⊕E8( −1) ⊕D7( −1) , each of rank seventeen.
+On the heterotic side these ﬁve-brane solitons are easy to see – we derived the
+corresponding conﬂuences of singular ﬁbers in Section 3: when J30 = 0, we have a
+gauge symmetry enhancement from e8 ⊕so( 12) to include an additional su( 2) , and
+the parameters of the theory include a Coulomb branch for that ga uge theory on
+which the Weyl group Wsu( 2) = Z2 acts. Thus, there is a ﬁve-brane solution in which
+the ﬁeld has a Z2 ambiguity encircling the location in the moduli space of enhanced
+gauge symmetry. When J4 = 0, we have an enhancement to e8 ⊕e7 gauge symmetry,
+and, when a = 0 an enhancement to e8 ⊕so( 14) . Further enhancement to e8 ⊕e8 gauge
+symmetry occurs along J4 = J5 = 0.
+To understand when such families of compactiﬁcations are supersy mmetric, we
+adapt the discussion in [ 31]: a heterotic compactiﬁcation on T2 with parameters
+given by ̟ ∈H2,2 is dual to the F-theory compactiﬁcation on the elliptically ﬁbered
+K3 surface X ( ̟ ) . For sections c( z) , d( z) , e( z) , f ( z) , and g( z) of line bundles
+over Z, we have a criterion for when F-theory compactiﬁed on the elliptically ﬁbered
+manifold (4.8) is supersymmetric: this is the case if and only if the total space deﬁ ned
+by Equation ( 4.8) – now considered as an elliptic ﬁbration over a base space locally
+given by variables t and z – is itself a Calabi–Yau manifold. The base space of the
+elliptic ﬁbration is a P1-bundleπ ∶W →Z which takes the form W = P( O ⊕M) where
+M → Z is the normal bundle of Σ 0 ∶= { t = 0} in W. Monomials of the form tn are
+then considered sections of the line bundles M⊗n. We also set Σ ∞ ∶= { t = ∞} such
+that −KW = Σ0 + Σ∞ + π −1( −KZ) .
+When the elliptic ﬁbration ( 4.8) is written in Weierstrass form, the coeﬃcients of
+X 1 and X 0 must again be sections of L⊗4 and L⊗6, respectively, for a line bundle
+L → W. The condition for supersymmetry of the total space is L = O W( −KW) .
+Restricting the various terms in Equation ( 4.8) to Σ 0, we ﬁnd relations
+( L/divides.alt0 Σ0) ⊗4 = Λ⊗4 ⊗M⊗4 = Λ⊗10 ⊗M⊗3 = Λ⊗16 ⊗M⊗2,
+( L/divides.alt0 Σ0) ⊗6 = M ⊗7 = Λ⊗6 ⊗M⊗6
+= Λ⊗12 ⊗M⊗5 = Λ⊗18 ⊗M⊗4 = Λ⊗24 ⊗M⊗3.
+(4.12)
+Thus, it follows that M = Λ⊗6 and L/divid⟩s.alt0Σ0 = Λ⊗7 (up to torsion) and the P1-bundle
+takes the form W = P( O ⊕Λ⊗6) . Since Σ 0 and Σ ∞ are disjoint, the condition for
+supersymmetry is equivalent to Λ = O Z( −KZ) . We have proved the following:
+Proposition 4.3. Equation (
+4.8) deﬁnes a supersymmetric family of non-geometric
+heterotic vacua with gauge algebra e8 ⊕so( 12) over a compact parameter space Z
+equipped with the line bundle Λ = O Z( −KZ) →Z ifc( z) , d( z) , e( z) , f ( z) , and g( z) in
+Equation (4.9) are sections of the bundles Λ⊗10, Λ⊗8, Λ⊗4, Λ⊗12, and Λ⊗6, respectively.
+4.3. Double covers and pointlike instantons. To a reader familiar with elliptic
+ﬁbrations, it might come as a surprise that the Weierstrass model w e considered in
+
+===== PAGE 16 =====
+
+16 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+Equation (
+4.8) did not simply have two ﬁbers of Kodaira type III ∗ and a trivial
+Mordell-Weil group. On each K3 surface endowed with a H ⊕E7( −1) ⊕E7( −1) lattice
+polarization such a ﬁbration exists, and we constructed it in Equatio n ( 2.31). How-
+ever, it is not guaranteed that the ﬁbration extends across any p arameter space, and
+there might be anomalies present.
+Starting from ̟ ∈H2,2 we always obtain a pair of Jacobian elliptic ﬁbrations on
+the K3 surface X from Equation ( 2.31). The indeterminacy of the sign ±a forces us
+to consider a pair of ﬁbrations related by a holomorphic, symplectic is omorphism.
+Conversely, we can start with the general Jacobian elliptic ﬁbration , normalized with
+δ = 1 and given by the general equation
+Y 2 = X 3 −εt3X −3αt 4X + ζt5 −γt 5X −2βt 6 + t7.(4.13)
+If we then determine a point in ̟ ∈H2,2 by calculating the periods of the holomorphic
+two-formω X = dt ∧dX/slash.l⟩ftY over a basis of the lattice H ⊕E7( −1) ⊕E7( −1) inH 2( X, Z) ,
+we must have J6 /slash.l⟩ft= 0 since otherwise the terms t7 and ζt5 could not both be present.
+It follows that for some non-vanishing scale factor λ we have
+α = λ 4J2( ̟ ) , β = λ 6J3( ̟ ) , ζ = λ 12J6( ̟ ) ,
+ǫ = λ 10 ( J5 ∓a)( ̟ )
+2 , γ = λ −2 ( J5 ±a)( ̟ )
+2J6( ̟ ) ,
+(4.14)
+such that γǫ = λ 8J4( ̟ ) and γζ + ǫ = λ 10J5( ̟ ) .
+In order to construct families of non-geometric compactiﬁcations, we vary the het-
+erotic vacua over a parameter space Z as in Section
+4.2, the functions α,β,γε,ζ are
+again sections of line bundles Λ ⊗2k → Z for k = 2, 3, 4, 6. The condition for super-
+symmetry already established in Section 4.2 yields Λ = O Z( −KZ) . We want to take
+the square root of the line bundle Λ ⊗20 = Λ⊗8 ⊗Λ⊗12, that is, construct a line bundle
+N →Z with N ⊗2 = Λ⊗20 such that a becomes a section of the new line bundle N .
+If the line bundle N is eﬀective, i.e., N ≅ OZ( D) for some smooth, eﬀective divisor
+D in Z – which is satisﬁed if dim H 0( Z, N ) > 0 – then a double cover ϕ ∶Y →Z can
+be constructed that is ramiﬁed over D. The double cover ϕ ∶Y → Z is deﬁned in
+terms of the line bundle N →Z and a non-trivial section σ of N ⊗2 as follows: (1) Z
+is embedded in the total space of N ⊗2 and given locally by an equation of the form
+z = σ, (2) Y is embedded in the total space of N and given locally by the equation
+y2 = σ, (3) the double cover ϕ is the restriction of the square map N →N ⊗2, (4) the
+branch locus is given by { σ = 0} ⊂Z. In turn, it is known that if H1( Z) = 0 then the
+double cover ϕ ∶Y → Z is uniquely determined by its branch locus; see [ 6]. In our
+situation, we set σ = a2 = J 2
+5 −4J4J6.
+Thus, Equation ( 4.13) can deﬁne a supersymmetric family of non-geometric het-
+erotic vacua with gauge algebra e7 ⊕e7 over a compact parameter space Y, if Y is
+obtained as the double cover of Z in Section 4.2 branched along a = 0. We showed
+in Section 3 that for J4 = 0 we have J 2
+5 = a2 and the choice of square root a = ±J5
+determines which of the two ﬁbers of type III ∗ is extended to a ﬁber of type II ∗;
+
+===== PAGE 17 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 17
+Equation ( 2.31) then reduces to Equation ( 4.11) which is precisely the equation de-
+rived in [ 31] for the F-theory dual of a heterotic theory with gauge algebra g = e8 ⊕e7
+and one non-vanishing Wilson line parameter.
+However, the underlying K3 surface in Equation ( 2.31) acquires a singularity when-
+everJ6 →0. For the coeﬃcient of t5X in Equation ( 2.31) to remain well deﬁned, we
+may require J6 /slash.l⟩ft= 0 over Z which implies that J6 is a trivializing section for the bundle
+Λ⊗12; in particular, we have Λ ⊗12 ≅ OZ. Then, the conditions derived for supersym-
+metry and the existence of the double cover are similar to the condit ions governing
+global and local anomaly cancellation in [ 29, 30]. On the other hand, if a general fam-
+ily of non-geometric compactiﬁcations in Equation ( 4.13) intersects the locus J6 = 0,
+the K3 surface in Equation ( 2.31) becomes singular while at the same time the cur-
+vature of the bundle Λ also gets concentrated in an inﬁnitesimal reg ion of the base
+space because of Equation ( 4.14). In [ 2] the authors identiﬁed these points as point-
+like instantons in the heterotic string, which correspond to the curvature acquir ing
+singularities at singular points on the (blow-down of the) K3 surface .
+4.4. The so( 32) -string. In Section 2 we showed that a K3 surface X with lattice
+polarization H ⊕E7( −1) ⊕E7( −1) also admits two additional ﬁbrations, which we
+called the alternate and the maximal Jacobian elliptic ﬁbration. These turn out to
+be related to the so( 32) heterotic string.
+We will now establish the explicit form of the F-theory/heterotic str ing duality
+on the moduli space ( 4.6) for this case. The intrinsic property of the elliptically
+ﬁbered K3 surfaces which lead to the corresponding F-theory bac kgrounds is the
+requirement that there is one singular ﬁber in the ﬁbration of type I ∗
+n for some n ≥8
+and a two-torsion element in the Mordell-Weil group. Then, a slight mo diﬁcation of
+the argument in [ 2, Sec. 4] or [ 35, App. A.] shows that the corresponding Weierstrass
+equation takes the form
+(4.15) Y 2 = X 3 + /parenleft.alt2 t3 + et + g/parenright.alt2 X 2 + /parenleft.alt2 −3dt 2 + ct + f /parenright.alt2 X.
+In the language of string theory, we obtain an F-theory model on a K3 surface,
+elliptically ﬁbered over P1, with non-zero ﬂux of an antisymmetric two-form B through
+the sphere. Such F-theory compactiﬁcations were ﬁrst analyzed by Witten in [
+57] in
+the limiting locus when the elliptic ﬁbration becomes isotrivial and also dis cussed in
+[8, 49]. The picture was later extended to general F-theory elliptic ﬁbrat ions in [ 7].
+Only the cohomology class of the antisymmetric two-form B has a physical meaning.
+Accordingly, the value of the ﬂux is quantized and it is ﬁxed to be equa l to ω /slash.l⟩ft2 where
+ω denotes the K¨ ahler class of the sphere. In terms of the Jacobian elliptic ﬁbration,
+the non-zero ﬂux is generated by the non-trivial two-torsion elem ent ( X,Y ) = ( 0, 0)
+of the Mordell-Weil group.
+The explicit form of the F-theory/heterotic string duality on the mo duli space in
+Equation ( 4.6) for the so( 32) heterotic string then has two parts: starting from a
+period point ̟ ∈H2,2 and the action of Γ +
+T , we always obtain a Jacobian elliptic
+ﬁbration with non-trivial two-torsion element in the Mordell–Weil gro up on the K3
+
+===== PAGE 18 =====
+
+18 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+surface X from Equation (
+2.41). Conversely, we can start with any Jacobian elliptic
+ﬁbration in Equation ( 4.15). We then determine a point in D2,4 by calculating the
+periods of the holomorphic two-form ω X over a basis of the period lattice H ⊕E7( −1) ⊕
+E7( −1) in H 2( X, Z) , such that a change of marking corresponds to the action of a
+modular transformation in Γ +
+T . As before, it follows that for some non-vanishing scale
+factorλ Equations (
+4.9) must hold. The gauge algebra is enhanced to so( 24) ⊕su( 2) ⊕2.
+It follows as in [ 4, 5] that the gauge group of this model is ( Spin( 24) ×SU ( 2) ×
+SU ( 2))/slash.l⟩ft Z2. Thus, we have proved:
+Proposition 4.4. Equation (4.15) deﬁnes the F-theory on an elliptic K3 surface with
+non-zero ﬂux of an antisymmetric two-form B through the sphere that is dual to a
+non-geometric heterotic theory with gauge algebra g = so( 24) ⊕su( 2) ⊕2.
+The condition for ﬁve-branes and supersymmetry for families of no n-geometric het-
+erotic compactiﬁcations is completely analogous to Section 4.2, and their construction
+is easily carried out as Equation ( 2.38) establishes the connection between the pa-
+rameters and the modular forms relative to Γ +
+T . In particular, for J30 = 0, we ﬁnd a
+gauge symmetry enhancement to include an additional su( 2) ; when a = 0 the gauge
+algebra is enhanced to so( 24) ⊕su( 4) . This follows from the results in Section
+3.
+In the mathematical classiﬁcation of all distinct Jacobian elliptic ﬁbra tions sup-
+ported on the family of K3 surfaces X in Equation ( 2.2) for Picard rank 16 there is a
+fundamental diﬀerence compared to the classiﬁcation in Picard ran k 17 and 18. Here,
+the family of K3 surfaces X in Equation ( 2.2) admits the additional Jacobian elliptic
+ﬁbration given in Equation ( 2.43) which we called the maximal ﬁbration. In fact, the
+general elliptic ﬁbration that has a singular ﬁber of Kodaira type I ∗
+8 overt = ∞ is of
+the form
+(4.16) Y 2 = X 3 + /parenleft.alt2 a′t3 + b′t2 + c′t + d′/parenright.alt2 X 2 + /parenleft.alt2 e′t2 + f ′t + g′/parenright.alt2 X + /parenleft.alt2 h′t + k′/parenright.alt2 .
+The F-theory model determined by Equation (
+4.16) does not admit a two-torsion
+element in the Mordell-Weil group and is polarized by the lattice H ⊕E7( −1) ⊕E7( −1) .
+However, for J4 = 0, the two cases in Equation ( 4.15) and ( 4.16) coincide. That
+is, after using Equation ( 2.30) and a simple rescaling, both Equation ( 2.38) and
+Equation ( 2.43) restrict to
+(4.17) Y 2 = X 3 + /parenleft.alt2 t3 − 1
+48ψ 4( τ) t − 1
+864ψ 6( τ)/parenright.alt2 X 2 −/parenleft.alt2 4χ 10( τ) t −χ 12( τ)/parenright.alt2 X,
+which is precisely the equation derived in [ 31] for the F-theory dual of a heterotic
+theory with gauge algebra g = so( 28) ⊕su( 2) and one non-vanishing Wilson line
+parameter. In the limit J4 → 0, two nodes in Equation ( 4.16) coalesce and form a
+ﬁber of Kodaira type I2 that generates the su( 2) -gauge enhancement. At the same
+time, when the coeﬃcients h′,k ′→ 0 vanish, a non-trivial two-torsion element is
+generated in the Mordell-Weil group. We have proved the following:
+Proposition 4.5. Equation (
+2.43) deﬁnes the F-theory on an elliptic K3 surface dual
+to a non-geometric heterotic theory with gauge algebra g = so( 28) .
+
+===== PAGE 19 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 19
+The condition for ﬁve-branes and supersymmetry for families of no n-geometric
+heterotic compactiﬁcations in this second case is again completely an alogous to Sec-
+tion 4.2, and their construction is easily carried out since Equation ( 2.43) establishes
+the connection between the parameters and the modular forms re lative to Γ +
+T . In
+particular, it was shown in Section
+3 that for a = 0, we have a gauge symmetry en-
+hancement to so( 30) , and for J4 = J5 = 0 the gauge group is further enhanced to
+Spin( 32)/slash.l⟩ftZ2.
+5. Discussion and Outlook
+We classiﬁed all non-geometric heterotic models obtained by the par tial Higgsing
+using two Wilson lines of the heterotic gauge algebra g = e8 ⊕e8 or so( 32) for the
+associated low energy eﬀective eight-dimensional supergravity th eory. The surpris-
+ing result: as opposed to the Higgsing of the heterotic gauge algebr a using only one
+Wilson lines, the Higgsing with two Wilson lines produces two diﬀerent bra nches for
+each type of heterotic string theory. We interpreted the dual F- theory models as
+Jacobian elliptic ﬁbrations supported on the family of K3 surfaces wit h canonical
+H ⊕E7( −1) ⊕E7( −1) polarization. The inequivalent Jacobian elliptic ﬁbrations were
+classiﬁed, and we found the deﬁning equations for Weierstrass mod els whose param-
+eters are modular forms generalizing well-known Siegel modular form s. Two of these
+ﬁbrations correspond to the Higgsing of heterotic gauge algebra g = e8 ⊕e8 to either
+e8 ⊕so( 12) or e7 ⊕e7, the other two are related to the Higgsing of g = so( 32) to either
+so( 24) ⊕su( 2) ⊕2 or so( 28) . In the former case, the two ﬁbrations are diﬀerentiated
+by avoiding or supporting “pointlike instantons” on the heterotic du al after further
+compactiﬁcation to dimension six. In the latter case, the two ﬁbrat ions are distin-
+guished by trivial or non-trivial ﬂux of an antisymmetric two-form B through the
+base of the elliptic ﬁbration. We demonstrated how the ﬁbrations ca n be used to con-
+struct families of non-geometric heterotic compactiﬁcations. The necessary co ndition
+for ﬁve-branes and supersymmetry were determined explicitly. Th erefore, our results
+provide a signiﬁcant generalization of existing results in [ 18, 28, 31, 35].
+As a result, this article provides a complete description of the F-the ory/heterotic
+string duality in D = 8 with two Wilson lines. For no or one non-trivial Wilson line
+parameters, an analogous approach has been proven to also prov ide a quantum-exact
+eﬀective description of non-geometric heterotic models [ 18, 31, 35]. We expect that
+the analysis carries over in our case. Since there is no microscopic de scription of the
+dual F-theory, the explicit form of the F-theory/heterotic strin g duality in this article
+also provides new insights into the physics of F-theory compactiﬁca tions. One of
+the conclusion of the work in [ 31] was that taking a heterotic compactiﬁcation even
+a “small distance” from the large radius limit destroys the traditiona l semiclassical
+interpretation and no longer allows us to discuss the compactiﬁcatio n as being that
+of a manifold with a bundle. We point out that this is not unlike what happ ens in
+type II compactiﬁcations, where the analysis of Π-stability [ 3, 16] shows that going
+any distance away from large radius limit, no matter how small, necess arily changes
+
+===== PAGE 20 =====
+
+20 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+the stability conditions on some D-brane classes and so destroys th e semiclassical
+interpretation of the theory. Thus, we expect that our results m ight be of importance
+for a better understanding of non-perturbative aspects of the heterotic string, for
+example, as it relates to NS5-branes states and small instantons [
+48, 56].
+Moreover, we expect that the close connection between modular f orms and equa-
+tions presented in this article will enable us to use a well known F-theo ry construction
+and build interesting classes of non-geometric heterotic compactiﬁ cations which have
+duals described in terms of K3-ﬁbered Calabi-Yau manifolds. The sta rting point is
+the heterotic string compactiﬁed on a torus, and utilizes the non-p erturbative du-
+ality symmetries which this theory possesses. The construction wa s explained in
+considerable detail in [ 31, 35] and was then used to obtain many examples realizing
+families of non-geometric heterotic compactiﬁcations with one Wilson line parameter
+[23, 27, 33] using the classiﬁcation of pencils of genus-two curves by Namikawa and
+Ueno [ 37–39]. In [ 24] our classiﬁcation result was already used to construct certain
+examples of families of non-geometric heterotic string vacua with tw o Wilson line
+parameters and corresponding Calabi-Yau threefolds. It is intere sting to ask whether
+a systematic program can be carried out, classifying all resulting co mpactiﬁcations in
+six dimensions. We leave this question for future work.
+References
+[1] Paul S. Aspinwall, Some relationships between dualities in string theory , 1996, pp. 30–38. S-
+duality and mirror symmetry (Trieste, 1995). MR 1411455
+[2] , Point-like instantons and the Spin( 32)/slash.left Z2 heterotic string, Nuclear Phys. B 496 (1997),
+no. 1-2, 149–176. MR 1457988
+[3] Paul S. Aspinwall and Michael R. Douglas, D-brane stability and monodromy , J. High Energy
+Phys. 5 (2002), no. 31, 35. MR 1915365
+[4] Paul S. Aspinwall and Mark Gross, The SO( 32) heterotic string on a K3 surface, Phys. Lett.
+B 387 (1996), no. 4, 735–742. MR 1416960
+[5] Paul S. Aspinwall and David R. Morrison, Non-simply-connected gauge groups and rational
+points on elliptic curves , J. High Energy Phys. 7 (1998), Paper 12, 16. MR 1643100
+[6] Wolf P. Barth, Klaus Hulek, Chris A. M. Peters, and Antonius Van d e Ven, Compact complex
+surfaces, Second, Ergebnisse der Mathematik und ihrer Grenzgebiete. 3. F olge. A Series of
+Modern Surveys in Mathematics [Results in Mathematics and Related A reas. 3rd Series. A
+Series of Modern Surveys in Mathematics], vol. 4, Springer-Verlag, Berlin, 2004. MR 2030225
+[7] Michael Bershadsky, Tony Pantev, and Vladimir Sadov, F-theory with quantized ﬂuxes , Adv.
+Theor. Math. Phys. 3 (1999), no. 3, 727–773. MR 1797021
+[8] Massimo Bianchi, A note on toroidal compactiﬁcations of the type I superstrin g and other super-
+string vacuum conﬁgurations with 16 supercharges, Nuclear Phys. B 528 (1998), no. 1-2, 73–94.
+MR1658283
+[9] A. Clingher, A. Malmendier, and T. Shaska, Six line conﬁgurations and string dualities , Comm.
+Math. Phys. 371 (2019), no. 1, 159–196. MR 4015343
+[10] Adrian Clingher and Charles F. Doran, Modular invariants for lattice polarized K3 surfaces,
+Michigan Math. J. 55 (2007), no. 2, 355–393. MR 2369941
+[11] , Note on a geometric isogeny of K3 surfaces , Int. Math. Res. Not. IMRN 16 (2011),
+3657–3687. MR 2824841
+
+===== PAGE 21 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 21
+[12] Adrian Clingher, Thomas Hill, and Andreas Malmendier, Jacobian elliptic ﬁbrations on a special
+family of K3 surfaces of picard rank sixteen , arXiv:1908.09578 [math.AG] (2019).
+[13] Mirjam Cvetiˇ c, Denis Klevers, and Hernan Piragua, F-theory compactiﬁcations with multiple
+U( 1) -factors: constructing elliptic ﬁbrations with rational s ections, J. High Energy Phys. 6
+(2013), 067, front matter+53. MR 3083343
+[14] I. V. Dolgachev, Mirror symmetry for lattice polarized K3 surfaces, 1996, pp. 2599–2630. Alge-
+braic geometry, 4. MR 1420220
+[15] Igor Dolgachev, Integral quadratic forms: applications to algebraic geome try (after V. Nikulin) ,
+Bourbaki seminar, Vol. 1982/83, 1983, pp. 251–278. MR 728992
+[16] Michael R. Douglas, D-branes, categories and N = 1 supersymmetry, 2001, pp. 2818–2843.
+Strings, branes, and M-theory. MR 1840318
+[17] V. A. Gritsenko, K. Hulek, and G. K. Sankaran, The Kodaira dimension of the moduli of K3
+surfaces, Invent. Math. 169 (2007), no. 3, 519–567. MR 2336040
+[18] Jie Gu and Hans Jockers, Nongeometric F -theory–heterotic duality , Phys. Rev. D 91 (2015),
+no. 8, 086007, 10. MR 3417046
+[19] Shinobu Hosono, Bong H Lian, and Shing-Tung Yau, K3 surfaces from conﬁgurations of six
+lines in P2 and mirror symmetry , International Mathematics Research Notices (2019Nov).
+[20] Jun-Ichi Igusa, On Siegel modular forms of genus two , Amer. J. Math. 84 (1962), 175–200.
+MR0141643
+[21] Hiroshi Inose, Deﬁning equations of singular K3 surfaces and a notion of isogeny , Proceedings
+of the International Symposium on Algebraic Geometry (Kyoto Univ ., Kyoto, 1977), 1978,
+pp. 495–502. MR 578868
+[22] Sheldon Katz, David R. Morrison, Sakura Sch¨ afer-Nameki, an d James Sully, Tate’s algorithm
+and F-theory, J. High Energy Phys. 8 (2011), 094, 28. MR 2876044
+[23] Yusuke Kimura, Nongeometric heterotic strings and dual F-theory with enha nced gauge groups ,
+J. High Energy Phys. 2 (2019), 036, front matter+38. MR 3933163
+[24] , Unbroken e7 ×e7 nongeometric heterotic strings, stable degenerations and enhanced
+gauge groups in f-theory duals , arXiv: High Energy Physics - Theory (2019).
+[25] K. Kodaira, On compact analytic surfaces. II, III , Ann. of Math. (2) 77 (1963), 563–626; ibid.
+78 (1963), 1–40. MR 0184257 (32 #1730)
+[26] Craig Lawrie and Sakura Sch¨ afer-Nameki, The Tate form on steroids: resolution and higher
+codimension ﬁbers, J. High Energy Phys. 4 (2013), 061, front matter+65. MR 3065908
+[27] Dieter L¨ ust, Stefano Massai, and Valent ´ ı Vall Camell,The monodromy of T -folds and T -fects,
+J. High Energy Phys. 9 (2016), 127, front matter+53. MR 3562156
+[28] A. Malmendier and T. Shaska, The Satake sextic in F-theory , J. Geom. Phys. 120 (2017), 290–
+305. MR 3712162
+[29] Andreas Malmendier, The signature of the Seiberg-Witten surface , Surveys in diﬀerential geom-
+etry. Volume XV. Perspectives in mathematics and physics, 2011, p p. 255–277. MR 2815730
+[30] , Kummer surfaces associated with Seiberg-Witten curves , J. Geom. Phys. 62 (2012),
+no. 1, 107–123. MR 2854198
+[31] Andreas Malmendier and David R. Morrison, K3 surfaces, modular forms, and non-geometric
+heterotic compactiﬁcations, Lett. Math. Phys. 105 (2015), no. 8, 1085–1118. MR 3366121
+[32] Keiji Matsumoto, Theta functions on the bounded symmetric domain of type I2,2 and the pe-
+riod map of a 4-parameter family of K3 surfaces, Math. Ann. 295 (1993), no. 3, 383–409.
+MR1204828
+[33] Christoph Mayrhofer, Anamaria Font, Inaki Garcia-Etxebar ria, Dieter L¨ ust, and Stefano
+Massai, Non-geometric heterotic backgrounds and 6d scfts , Proceedings of Corfu Summer
+Institute 2016 “School and Workshops on Elementary Particle Phy sics and Gravity” —
+PoS(CORFU2016) (2017Oct).
+
+===== PAGE 22 =====
+
+22 ADRIAN CLINGHER, THOMAS HILL, AND ANDREAS MALMENDIER
+[34] Christoph Mayrhofer, David R. Morrison, Oskar Till, and Timo Weig and, Mordell-Weil torsion
+and the global structure of gauge groups in F-theory , J. High Energy Phys. 10 (2014), 016, front
+matter+46. MR
+3270382
+[35] Jock McOrist, David R. Morrison, and Savdeep Sethi, Geometries, non-geometries, and ﬂuxes ,
+Adv. Theor. Math. Phys. 14 (2010), no. 5, 1515–1583. MR 2826187
+[36] David R. Morrison and Cumrun Vafa, Compactiﬁcations of F -theory on Calabi-Yau threefolds.
+II, Nuclear Phys. B 476 (1996), no. 3, 437–469. MR 1412112
+[37] Yukihiko Namikawa and Kenji Ueno, On geometrical classiﬁcation of ﬁbers in pencils of curves
+of genus two , Proc. Japan Acad. 48 (1972), 373–376. MR 0319996
+[38] , The complete classiﬁcation of ﬁbres in pencils of curves of g enus two , Manuscripta
+Math. 9 (1973), 143–186. MR 0369362
+[39] , On ﬁbres in families of curves of genus two. I. Singular ﬁbres of elliptic type (1973),
+297–371. MR 0384794
+[40] K. S. Narain, New heterotic string theories in uncompactiﬁed dimensions < 10, Phys. Lett. B
+169 (1986), no. 1, 41–46. MR 834338
+[41] K. S. Narain, M. H. Sarmadi, and E. Witten, A note on toroidal compactiﬁcation of heterotic
+string theory, Nuclear Phys. B 279 (1987), no. 3-4, 369–379. MR 867240
+[42] Andr´ e N´ eron,Mod` eles minimaux des vari´ et´ es ab´ eliennes sur les corpslocaux et globaux , Inst.
+Hautes ´Etudes Sci. Publ. Math. 21 (1964), 128. MR 179172
+[43] V. V. Nikulin, An analogue of the Torelli theorem for Kummer surfaces of Jac obians, Izv. Akad.
+Nauk SSSR Ser. Mat. 38 (1974), 22–41. MR 0357410 (50 #9878)
+[44] , Kummer surfaces , Izv. Akad. Nauk SSSR Ser. Mat. 39 (1975), no. 2, 278–293, 471.
+MR0429917
+[45] , Finite groups of automorphisms of K¨ ahlerian K3 surfaces, Trudy Moskov. Mat. Ob-
+shch. 38 (1979), 75–137. MR 544937
+[46] , Integer symmetric bilinear forms and some of their geometri c applications, Izv. Akad.
+Nauk SSSR Ser. Mat. 43 (1979), no. 1, 111–177, 238. MR 525944
+[47] , Quotient-groups of groups of automorphisms of hyperbolic f orms by subgroups generated
+by 2-reﬂections. Algebro-geometric applications , Current problems in mathematics, Vol. 18,
+1981, pp. 3–114. MR 633160
+[48] Burt A. Ovrut, Tony Pantev, and Jaemo Park, Small instanton transitions in heterotic M-
+theory, J. High Energy Phys. 5 (2000), Paper 45, 37. MR 1769478
+[49] Jaemo Park, Orientifold and F-theory duals of CHL strings , Phys. Lett. B 418 (1998), no. 1-2,
+91–97. MR 1614531
+[50] John H. Schwarz, An SL( 2, Z) multiplet of type IIB superstrings , Phys. Lett. B 360 (1995),
+no. 1-2, 13–18. MR 1359982
+[51] Cumrun Vafa, Evidence for F -theory, Nuclear Phys. B 469 (1996), no. 3, 403–415. MR 1403744
+[52] E. B. Vinberg, On automorphic forms on symmetric domains of type IV , Uspekhi Mat. Nauk
+65 (2010), no. 3(393), 193–194. MR 2682724
+[53] , On the algebra of Siegel modular forms of genus 2 , Trans. Moscow Math. Soc. (2013),
+1–13. MR 3235787
+[54] Edward Witten, String theory dynamics in various dimensions , Nuclear Phys. B 443 (1995),
+no. 1-2, 85–126. MR 1334520
+[55] , Non-perturbative superpotentials in string theory , Nuclear Phys. B 474 (1996), no. 2,
+343–360. MR 1408164
+[56] , Small instantons in string theory , Nuclear Phys. B 460 (1996), no. 3, 541–559.
+MR1381611
+[57] , Toroidal compactiﬁcation without vector structure , J. High Energy Phys. 2 (1998),
+Paper 6, 43. MR 1615617
+
+===== PAGE 23 =====
+
+F-THEORY/HETEROTIC STRING DUALITY WITH TWO WILSON LINES 23
+Dept. of Mathematics & Statistics, University of Missouri - St. Louis, St. Louis,
+MO 63121
+Email address : clinghera@umsl.edu
+Dept. of Mathematics, University of Connecticut, Storrs, C onnecticut 06269,
+Dept. of Mathematics & Statistics, Utah State University, L ogan, UT 84322
+Email address : andreas.malmendier@usu.edu
