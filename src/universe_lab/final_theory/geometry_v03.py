@@ -20,10 +20,12 @@ from __future__ import annotations
 
 import hashlib
 import itertools
+import json
 import math
 from collections import defaultdict
 from dataclasses import dataclass
 from fractions import Fraction
+from pathlib import Path
 from typing import Any
 
 from universe_lab.final_theory.causal_sets import (
@@ -947,4 +949,44 @@ def geometry_interference_benchmark(max_n: int = 5) -> dict[str, Any]:
             else "FAIL_WITHIN_DECLARED_DOMAIN"
         ),
         "passed": core_passed,
+    }
+
+
+def verify_geometry_certificate(path: Path) -> dict[str, Any]:
+    """Verify the checked-in exhaustive diagonal-history certificate."""
+
+    certificate = json.loads(path.read_text(encoding="utf-8"))
+    benchmark = geometry_interference_benchmark(certificate["max_n"])
+    matrix = benchmark["decoherence_functional"]["sparse_exact_matrix"]
+    completeness = benchmark["completeness"]
+    checks = {
+        "profile_matches": certificate["profile_id"] == benchmark["profile_id"],
+        "path_count_matches": (
+            certificate["fine_history_count"]
+            == completeness["final_decoherence_basis_size"]
+        ),
+        "event_count_matches": (
+            certificate["covariant_event_count"]
+            == completeness["final_covariant_event_count"]
+        ),
+        "off_diagonal_count_matches": (
+            certificate["ordered_off_diagonal_count"]
+            == matrix["ordered_off_diagonal_entry_count"]
+        ),
+        "off_diagonal_digest_matches": (
+            certificate["ordered_pair_coverage_sha256"]
+            == matrix["ordered_pair_coverage_sha256"]
+        ),
+        "all_off_diagonals_zero": not matrix["nonzero_off_diagonal_entries"],
+        "all_I2_zero": benchmark["interference_I2"]["all_exact_I2_zero"],
+        "grade2_passes": benchmark["grade2_sum_rule"]["passed_exactly"],
+        "verdict_matches": (
+            certificate["verdict"]
+            == benchmark["geometry_quantumness_status"]
+        ),
+    }
+    return {
+        "certificate": path.as_posix(),
+        "checks": checks,
+        "passed": all(checks.values()),
     }

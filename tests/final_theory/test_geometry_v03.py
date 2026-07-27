@@ -2,12 +2,18 @@ from __future__ import annotations
 
 import json
 from fractions import Fraction
+from pathlib import Path
 from typing import Any
 
 import pytest
 
 from universe_lab.final_theory.dynamics_v02 import propagate_distribution
-from universe_lab.final_theory.geometry_v03 import geometry_interference_benchmark
+from universe_lab.final_theory.geometry_v03 import (
+    geometry_interference_benchmark,
+    verify_geometry_certificate,
+)
+
+ROOT = Path(__file__).resolve().parents[2]
 
 
 def _fraction(record: dict[str, int]) -> Fraction:
@@ -165,3 +171,15 @@ def test_conservative_classification_and_scope_are_explicit(
 def test_resource_boundary_rejects_out_of_domain_cardinality(bad_max_n: int) -> None:
     with pytest.raises(ValueError, match="0 <= max_n <= 5"):
         geometry_interference_benchmark(bad_max_n)
+
+
+def test_checked_in_geometry_certificate_verifies() -> None:
+    certificate = (
+        ROOT
+        / "certificates"
+        / "geometry_interference"
+        / "diagonal_history_functional_v0.3.json"
+    )
+    result = verify_geometry_certificate(certificate)
+    assert result["passed"]
+    assert all(result["checks"].values())
