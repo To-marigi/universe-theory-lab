@@ -233,7 +233,9 @@ def audit_period_oracle(result_root: Path) -> dict[str, Any]:
             payloads[(case, precision)] = _load(path)
             files.append(
                 {
-                    "path": path.as_posix(),
+                    "path": (
+                        Path(result_root.parent.name) / result_root.name / path.name
+                    ).as_posix(),
                     "sha256": _sha256(path),
                     "bytes": path.stat().st_size,
                 }

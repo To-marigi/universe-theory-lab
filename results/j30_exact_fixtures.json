@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "generated_after_production_implementation": true,
+  "generator": "oracle/j30_fixture_generator.sage",
+  "generator_sha256": "9075e24aa5d2f792075b82f82e3be3a9e94ae6cc9746649559a2f521b2f5dcad",
+  "fixtures": [
+    {
+      "name": "j30-training-001",
+      "role": "training",
+      "j2": "1",
+      "j3": "2",
+      "j4": "3",
+      "j5": "6",
+      "j6": "12",
+      "double_root": "1"
+    },
+    {
+      "name": "j30-validation-001",
+      "role": "validation",
+      "j2": "1",
+      "j3": "-1",
+      "j4": "4",
+      "j5": "-2",
+      "j6": "-16",
+      "double_root": "2"
+    },
+    {
+      "name": "j30-held-out-001",
+      "role": "held_out",
+      "j2": "3",
+      "j3": "1",
+      "j4": "2",
+      "j5": "-20",
+      "j6": "48",
+      "double_root": "-2"
+    }
+  ],
+  "negative_fixtures": [
+    {
+      "name": "simple-root",
+      "role": "negative",
+      "j2": "1",
+      "j3": "2",
+      "j4": "3",
+      "j5": "6",
+      "j6": "13",
+      "double_root": "1"
+    },
+    {
+      "name": "triple-root",
+      "role": "negative",
+      "j2": "1",
+      "j3": "2",
+      "j4": "-9",
+      "j5": "-18",
+      "j6": "0",
+      "double_root": "1"
+    },
+    {
+      "name": "resultant-intersection",
+      "role": "negative",
+      "j2": "1",
+      "j3": "-1",
+      "j4": "-1",
+      "j5": "2",
+      "j6": "3",
+      "double_root": "-1"
+    },
+    {
+      "name": "a-intersection",
+      "role": "negative",
+      "j2": "-1",
+      "j3": "-2",
+      "j4": "-2",
+      "j5": "4",
+      "j6": "-2",
+      "double_root": "-1"
+    },
+    {
+      "name": "j4-intersection",
+      "role": "negative",
+      "j2": "1",
+      "j3": "2",
+      "j4": "0",
+      "j5": "0",
+      "j6": "9",
+      "double_root": "1"
+    },
+    {
+      "name": "j6-zero",
+      "role": "negative",
+      "j2": "1",
+      "j3": "2",
+      "j4": "3",
+      "j5": "6",
+      "j6": "0",
+      "double_root": "1"
+    }
+  ]
+}

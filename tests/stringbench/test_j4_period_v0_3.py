@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from universe_lab.stringbench.j4_period import (
+    audit_period_oracle,
     find_integral_period_marking,
     j4_symbolic_certificate,
 )
@@ -35,3 +36,11 @@ def test_alternate_maximal_integral_period_marking_at_256_bits() -> None:
     certificate = find_integral_period_marking(source, target)
     assert certificate["passed"]
     assert abs(certificate["determinant"]) == 1
+
+
+def test_period_audit_records_portable_raw_paths() -> None:
+    audit = audit_period_oracle(RAW)
+    paths = [item["path"] for item in audit["raw_files"]]
+    assert paths
+    assert all(path.startswith("results/period_oracle_raw/") for path in paths)
+    assert all("C:/" not in path for path in paths)

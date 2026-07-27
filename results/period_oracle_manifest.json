@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "production_commit": "afb7a4025e55e667421d7635b9302946a86d525e",
+  "oracle_status": "PERIOD_ORACLE_VALIDATED",
+  "validation": {
+    "128": {
+      "H2_rank_22": true,
+      "intersection_signature_3_19": true,
+      "intersection_unimodular": true,
+      "period_shape_1_22": true,
+      "period_orthogonal_to_known_NS": true,
+      "omega_square_zero": true,
+      "omega_conjugate_positive": true,
+      "heuristic_NS_not_used": true,
+      "known_example_trivial_rank_10": true
+    },
+    "256": {
+      "H2_rank_22": true,
+      "intersection_signature_3_19": true,
+      "intersection_unimodular": true,
+      "period_shape_1_22": true,
+      "period_orthogonal_to_known_NS": true,
+      "omega_square_zero": true,
+      "omega_conjugate_positive": true,
+      "heuristic_NS_not_used": true,
+      "known_example_trivial_rank_10": true
+    }
+  },
+  "source_manifest": {
+    "schema_version": "1.0",
+    "retrieved_on": "2026-07-28",
+    "container": {
+      "image": "sagemath/sagemath:10.8",
+      "digest": "sha256:e2e4747b0e1ea8753a9cb5a399314a8b2c25fcefaf69ba85b22ee075829d09ea"
+    },
+    "sources": [
+      {
+        "name": "lefschetz-family",
+        "version": "0.1.21",
+        "repository": "https://github.com/ericpipha/lefschetz-family",
+        "repository_commit_at_retrieval": "baefe08ded77dbb9ab05fb1a74dc31a99f9ced1a",
+        "archive": "vendor/lefschetz_family-0.1.21-py3-none-any.whl",
+        "sha256": "047656c5b3c0303f338ea67c3251c26346cfff4fbc148202d10529c98a8aba28"
+      },
+      {
+        "name": "ore_algebra",
+        "version": "0.5-dev",
+        "repository": "https://github.com/mkauers/ore_algebra",
+        "commit": "d234e3d8ae1d451e734218b02aa5f05a3ffda2d9",
+        "archive": "vendor/ore_algebra-d234e3d8ae1d451e734218b02aa5f05a3ffda2d9.tar.gz",
+        "sha256": "ca65d191d509cdfaf58a2f4e1d66b37a3fdad856cd7000780749f63455f10297"
+      },
+      {
+        "name": "SageMath development PXD overlay",
+        "version": "10.8",
+        "repository": "https://github.com/sagemath/sage",
+        "commit": "981d7d71a2738778c9e3fb4fdf67a0fd3ce0c19c",
+        "archive": "vendor/sage-10.8-pxd-981d7d71a2738778c9e3fb4fdf67a0fd3ce0c19c.tar.gz",
+        "sha256": "9f066114128168645dd1979cb5fd9667e89d7ae927beef1d582f584e680af6d0"
+      },
+      {
+        "name": "period algorithm paper",
+        "version": "arXiv:2401.05131v2",
+        "archive": "../../references/papers/2401.05131v2_pichon-pharabod_elliptic-surface-periods.pdf",
+        "sha256": "dc80a432377792259ce05de7bc22cfc796709982e36fb8c7230882aedd67d4c6"
+      }
+    ]
+  },
+  "raw_files": [
+    {
+      "path": "results/period_oracle_raw/j4-standard-128.json",
+      "sha256": "223b9943d590bde92f888b3bf81a615e21433261f40cbe9e52254706a4247265",
+      "bytes": 35814
+    },
+    {
+      "path": "results/period_oracle_raw/j4-standard-256.json",
+      "sha256": "dbcf03999ffb55b41f3ecaf7c5ea23f31b3433d6ee41e1124ff4425f7cb83f07",
+      "bytes": 40942
+    },
+    {
+      "path": "results/period_oracle_raw/j4-standard-512.json",
+      "sha256": "fe0beab039bb6f4d7ae962e9a057a4d19176b0d88b8f050202bf8f0e2501ed29",
+      "bytes": 50552
+    },
+    {
+      "path": "results/period_oracle_raw/j4-standard-1024.json",
+      "sha256": "7265e19eb1c483310b54f1b83e7038daf37db8504748a9f8de24617e6d2e8fbd",
+      "bytes": 71408
+    },
+    {
+      "path": "results/period_oracle_raw/j4-bfd-128.json",
+      "sha256": "168a34edb41067fa27b451ee85389b6b1a8b5f30c3033b97b01f12ba8ffbbebf",
+      "bytes": 35372
+    },
+    {
+      "path": "results/period_oracle_raw/j4-bfd-256.json",
+      "sha256": "bf35457e936367bf4c4be521ee3a97bd0606678b35316fbd985d32b35647848f",
+      "bytes": 40524
+    },
+    {
+      "path": "results/period_oracle_raw/j4-bfd-512.json",
+      "sha256": "34e0dd317598d7437ca336b9102a6ec24bfc4074cbba505f93e337a5a1437b4a",
+      "bytes": 50802
+    },
+    {
+      "path": "results/period_oracle_raw/j4-bfd-1024.json",
+      "sha256": "6a0f5404d78bc3c3b853ce787ec447da5979914319d3ff3cd70a77ae276b9379",
+      "bytes": 70957
+    },
+    {
+      "path": "results/period_oracle_raw/j4-alternate-128.json",
+      "sha256": "19dea8d79db8fabe3450a98c7c0eccec131673ac84b6d4a129faff264f870b2e",
+      "bytes": 35080
+    },
+    {
+      "path": "results/period_oracle_raw/j4-alternate-256.json",
+      "sha256": "f0c5480d7feb02f83b16f80313e0c9941c0fc1772fc4939dd47126eb73fee93a",
+      "bytes": 39385
+    },
+    {
+      "path": "results/period_oracle_raw/j4-alternate-512.json",
+      "sha256": "79f86d6b0bd2b15c40be77094257d57d0f11366125d625f6c956acecb47a8491",
+      "bytes": 48647
+    },
+    {
+      "path": "results/period_oracle_raw/j4-alternate-1024.json",
+      "sha256": "b31c289b7e536442a3e9c055652b46bb3d76a68a195bbfd81dd84ba5fa12a5b9",
+      "bytes": 66170
+    },
+    {
+      "path": "results/period_oracle_raw/j4-maximal-128.json",
+      "sha256": "50af3fbdc00e8b694531ae9132b14b70489c0a00e1dcce386576beab18078a8d",
+      "bytes": 31693
+    },
+    {
+      "path": "results/period_oracle_raw/j4-maximal-256.json",
+      "sha256": "cf045d3e508003ab6b4c27015cc80a957f80ed72a4110c23d8f79c546aa89e63",
+      "bytes": 39412
+    },
+    {
+      "path": "results/period_oracle_raw/j4-maximal-512.json",
+      "sha256": "0757459bfc2b5b986d025644ba665cff29297134c5553f82994eef3f770a9c83",
+      "bytes": 48401
+    },
+    {
+      "path": "results/period_oracle_raw/j4-maximal-1024.json",
+      "sha256": "788828b3353956c0703766694b6f7f9dedf2ccd93174d40819237b5e94b27dc4",
+      "bytes": 66520
+    }
+  ]
+}

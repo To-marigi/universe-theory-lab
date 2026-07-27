@@ -1,0 +1,1884 @@
+{
+  "suite": "String-Compiler Bench v0.3 Special Divisor and Period Oracle Closure",
+  "j30": {
+    "suite": "J30 exact locus v0.3",
+    "primary_source": "arXiv:2205.08100v1, Eqs. (2.40), (2.43), (2.44), Table 1",
+    "fixtures": [
+      {
+        "point": {
+          "name": "j30-training-001",
+          "role": "training",
+          "j2": "1",
+          "j3": "2",
+          "j4": "3",
+          "j5": "6",
+          "j6": "12",
+          "double_root": "1"
+        },
+        "oracle_a": {
+          "definition": "Disc_t D(t)",
+          "D": "(t - 1)**2*(t**4 + 2*t**3 - 3*t**2 - 16*t - 32)",
+          "discriminant": "0",
+          "gcd": "t - 1"
+        },
+        "oracle_b": {
+          "definition": "Disc_t d(t) from maximal cubic / J6^16",
+          "d": "-108*(t - 12)**2*(t + 36)*(t**5 + 72*t**4 + 1188*t**3 - 27216*t**2 - 419904*t + 17356032)",
+          "discriminant": "0",
+          "gcd": "t - 12"
+        },
+        "separation": {
+          "a_squared": "-108",
+          "Res_D_E": "46294416",
+          "other_resultants": {
+            "standard": "122880",
+            "base_fiber_dual": "7772129990182032113664",
+            "maximal": "-1249413291544194225436390451146445758680970987283381824664437216587120946725051371010576025632654174594722168832"
+          }
+        },
+        "checks": {
+          "oracle_a_disc_D_zero": true,
+          "oracle_b_disc_d_zero": true,
+          "D_at_r_zero": true,
+          "D_prime_at_r_zero": true,
+          "D_second_at_r_nonzero": true,
+          "D_gcd_degree_one": true,
+          "d_gcd_degree_one": true,
+          "D_residual_quartic_squarefree": true,
+          "d_residual_sextic_squarefree": true,
+          "a_squared_nonzero": true,
+          "J4_nonzero": true,
+          "J6_nonzero": true,
+          "coarse_moduli_open": true,
+          "Res_D_E_nonzero": true,
+          "other_resultants_nonzero": true
+        },
+        "four_fibrations": [
+          {
+            "fibration": "standard",
+            "zero_orders": [
+              3,
+              5,
+              9
+            ],
+            "infinity_orders": [
+              3,
+              5,
+              9
+            ],
+            "residual_degree": 6,
+            "root_multiplicity_counts": {
+              "1": 4,
+              "2": 1
+            },
+            "fibers": [
+              "III*",
+              "III*",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "E7",
+              "E7",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "trivial",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + E7(-1) + E7(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          },
+          {
+            "fibration": "alternate",
+            "zero_orders": [
+              0,
+              0,
+              0
+            ],
+            "infinity_orders": [
+              2,
+              3,
+              14
+            ],
+            "residual_degree": 10,
+            "root_multiplicity_counts": {
+              "1": 4,
+              "2": 3
+            },
+            "fibers": [
+              "I8*",
+              "I2",
+              "I2",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "D12",
+              "A1",
+              "A1",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "Z/2Z",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + E7(-1) + E7(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          },
+          {
+            "fibration": "base_fiber_dual",
+            "zero_orders": [
+              2,
+              3,
+              8
+            ],
+            "infinity_orders": [
+              4,
+              5,
+              10
+            ],
+            "residual_degree": 6,
+            "root_multiplicity_counts": {
+              "1": 4,
+              "2": 1
+            },
+            "fibers": [
+              "I2*",
+              "II*",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "D6",
+              "E8",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "trivial",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + E8(-1) + D6(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          },
+          {
+            "fibration": "maximal",
+            "zero_orders": [
+              0,
+              0,
+              0
+            ],
+            "infinity_orders": [
+              2,
+              3,
+              16
+            ],
+            "residual_degree": 8,
+            "root_multiplicity_counts": {
+              "1": 6,
+              "2": 1
+            },
+            "fibers": [
+              "I10*",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "D14",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "trivial",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + D14(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          }
+        ],
+        "confluence_checks": {
+          "standard": true,
+          "alternate": true,
+          "base_fiber_dual": true,
+          "maximal": true
+        },
+        "minimal_k3_certificate": true,
+        "status": "J30_EXACT_LOCUS_PASS",
+        "passed": true
+      },
+      {
+        "point": {
+          "name": "j30-validation-001",
+          "role": "validation",
+          "j2": "1",
+          "j3": "-1",
+          "j4": "4",
+          "j5": "-2",
+          "j6": "-16",
+          "double_root": "2"
+        },
+        "oracle_a": {
+          "definition": "Disc_t D(t)",
+          "D": "(t - 2)**2*(t**4 + 4*t**3 + 6*t**2 + 12*t + 17)",
+          "discriminant": "0",
+          "gcd": "t - 2"
+        },
+        "oracle_b": {
+          "definition": "Disc_t d(t) from maximal cubic / J6^16",
+          "d": "4*(t - 8)**2*(65*t**6 - 2160*t**5 - 87104*t**4 + 768000*t**3 + 183103488*t**2 + 1259929600*t + 8552448000)",
+          "discriminant": "0",
+          "gcd": "t - 8"
+        },
+        "separation": {
+          "a_squared": "260",
+          "Res_D_E": "160000",
+          "other_resultants": {
+            "standard": "147456",
+            "base_fiber_dual": "25321909871990720692224",
+            "maximal": "-1372653976479428215714569707852455799318870585139714664897158726857685094338397554788688916251198870165437978504062155503168514949120/387420489"
+          }
+        },
+        "checks": {
+          "oracle_a_disc_D_zero": true,
+          "oracle_b_disc_d_zero": true,
+          "D_at_r_zero": true,
+          "D_prime_at_r_zero": true,
+          "D_second_at_r_nonzero": true,
+          "D_gcd_degree_one": true,
+          "d_gcd_degree_one": true,
+          "D_residual_quartic_squarefree": true,
+          "d_residual_sextic_squarefree": true,
+          "a_squared_nonzero": true,
+          "J4_nonzero": true,
+          "J6_nonzero": true,
+          "coarse_moduli_open": true,
+          "Res_D_E_nonzero": true,
+          "other_resultants_nonzero": true
+        },
+        "four_fibrations": [
+          {
+            "fibration": "standard",
+            "zero_orders": [
+              3,
+              5,
+              9
+            ],
+            "infinity_orders": [
+              3,
+              5,
+              9
+            ],
+            "residual_degree": 6,
+            "root_multiplicity_counts": {
+              "1": 4,
+              "2": 1
+            },
+            "fibers": [
+              "III*",
+              "III*",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "E7",
+              "E7",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "trivial",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + E7(-1) + E7(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          },
+          {
+            "fibration": "alternate",
+            "zero_orders": [
+              0,
+              0,
+              0
+            ],
+            "infinity_orders": [
+              2,
+              3,
+              14
+            ],
+            "residual_degree": 10,
+            "root_multiplicity_counts": {
+              "1": 4,
+              "2": 3
+            },
+            "fibers": [
+              "I8*",
+              "I2",
+              "I2",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "D12",
+              "A1",
+              "A1",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "Z/2Z",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + E7(-1) + E7(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          },
+          {
+            "fibration": "base_fiber_dual",
+            "zero_orders": [
+              2,
+              3,
+              8
+            ],
+            "infinity_orders": [
+              4,
+              5,
+              10
+            ],
+            "residual_degree": 6,
+            "root_multiplicity_counts": {
+              "1": 4,
+              "2": 1
+            },
+            "fibers": [
+              "I2*",
+              "II*",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "D6",
+              "E8",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "trivial",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + E8(-1) + D6(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          },
+          {
+            "fibration": "maximal",
+            "zero_orders": [
+              0,
+              0,
+              0
+            ],
+            "infinity_orders": [
+              2,
+              3,
+              16
+            ],
+            "residual_degree": 8,
+            "root_multiplicity_counts": {
+              "1": 6,
+              "2": 1
+            },
+            "fibers": [
+              "I10*",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "D14",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "trivial",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + D14(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          }
+        ],
+        "confluence_checks": {
+          "standard": true,
+          "alternate": true,
+          "base_fiber_dual": true,
+          "maximal": true
+        },
+        "minimal_k3_certificate": true,
+        "status": "J30_EXACT_LOCUS_PASS",
+        "passed": true
+      },
+      {
+        "point": {
+          "name": "j30-held-out-001",
+          "role": "held_out",
+          "j2": "3",
+          "j3": "1",
+          "j4": "2",
+          "j5": "-20",
+          "j6": "48",
+          "double_root": "-2"
+        },
+        "oracle_a": {
+          "definition": "Disc_t D(t)",
+          "D": "(t + 2)**2*(t**4 - 4*t**3 - 6*t**2 + 36*t - 47)",
+          "discriminant": "0",
+          "gcd": "t + 2"
+        },
+        "oracle_b": {
+          "definition": "Disc_t d(t) from maximal cubic / J6^16",
+          "d": "16*(t + 124)**2*(t**6 + 3480*t**5 - 239376*t**4 - 130460416*t**3 + 7680397056*t**2 + 1153104451584*t - 127853741993984)",
+          "discriminant": "0",
+          "gcd": "t + 124"
+        },
+        "separation": {
+          "a_squared": "16",
+          "Res_D_E": "1549209600",
+          "other_resultants": {
+            "standard": "3637248",
+            "base_fiber_dual": "-38387700263578934181888",
+            "maximal": "-4896436756584233755879447696895665217275737714019722540751261662327453385576491009123714663688900036052253195810221002740454438238456407651425162250976107757923240771584"
+          }
+        },
+        "checks": {
+          "oracle_a_disc_D_zero": true,
+          "oracle_b_disc_d_zero": true,
+          "D_at_r_zero": true,
+          "D_prime_at_r_zero": true,
+          "D_second_at_r_nonzero": true,
+          "D_gcd_degree_one": true,
+          "d_gcd_degree_one": true,
+          "D_residual_quartic_squarefree": true,
+          "d_residual_sextic_squarefree": true,
+          "a_squared_nonzero": true,
+          "J4_nonzero": true,
+          "J6_nonzero": true,
+          "coarse_moduli_open": true,
+          "Res_D_E_nonzero": true,
+          "other_resultants_nonzero": true
+        },
+        "four_fibrations": [
+          {
+            "fibration": "standard",
+            "zero_orders": [
+              3,
+              5,
+              9
+            ],
+            "infinity_orders": [
+              3,
+              5,
+              9
+            ],
+            "residual_degree": 6,
+            "root_multiplicity_counts": {
+              "1": 4,
+              "2": 1
+            },
+            "fibers": [
+              "III*",
+              "III*",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "E7",
+              "E7",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "trivial",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + E7(-1) + E7(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          },
+          {
+            "fibration": "alternate",
+            "zero_orders": [
+              0,
+              0,
+              0
+            ],
+            "infinity_orders": [
+              2,
+              3,
+              14
+            ],
+            "residual_degree": 10,
+            "root_multiplicity_counts": {
+              "1": 4,
+              "2": 3
+            },
+            "fibers": [
+              "I8*",
+              "I2",
+              "I2",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "D12",
+              "A1",
+              "A1",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "Z/2Z",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + E7(-1) + E7(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          },
+          {
+            "fibration": "base_fiber_dual",
+            "zero_orders": [
+              2,
+              3,
+              8
+            ],
+            "infinity_orders": [
+              4,
+              5,
+              10
+            ],
+            "residual_degree": 6,
+            "root_multiplicity_counts": {
+              "1": 4,
+              "2": 1
+            },
+            "fibers": [
+              "I2*",
+              "II*",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "D6",
+              "E8",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "trivial",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + E8(-1) + D6(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          },
+          {
+            "fibration": "maximal",
+            "zero_orders": [
+              0,
+              0,
+              0
+            ],
+            "infinity_orders": [
+              2,
+              3,
+              16
+            ],
+            "residual_degree": 8,
+            "root_multiplicity_counts": {
+              "1": 6,
+              "2": 1
+            },
+            "fibers": [
+              "I10*",
+              "I2",
+              "I1",
+              "I1",
+              "I1",
+              "I1",
+              "I1",
+              "I1"
+            ],
+            "ade_components": [
+              "D14",
+              "A1"
+            ],
+            "euler_number": 24,
+            "mordell_weil_rank": 0,
+            "mordell_weil_torsion": "trivial",
+            "shioda_tate_picard_rank": 17,
+            "lattice_polarization": "H + D14(-1) + A1(-1)",
+            "discriminant_group": "(Z/2Z)^3",
+            "factorization_evidence": "INDEPENDENTLY_DERIVED",
+            "mw_and_lattice_evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+          }
+        ],
+        "confluence_checks": {
+          "standard": true,
+          "alternate": true,
+          "base_fiber_dual": true,
+          "maximal": true
+        },
+        "minimal_k3_certificate": true,
+        "status": "J30_EXACT_LOCUS_PASS",
+        "passed": true
+      }
+    ],
+    "negative_fixtures": [
+      {
+        "point": {
+          "name": "simple-root",
+          "role": "negative",
+          "j2": "1",
+          "j3": "2",
+          "j4": "3",
+          "j5": "6",
+          "j6": "13",
+          "double_root": "1"
+        },
+        "oracle_a": {
+          "definition": "Disc_t D(t)",
+          "D": "t**6 - 6*t**4 - 8*t**3 - 3*t**2 + 48*t - 36",
+          "discriminant": "8401077927936",
+          "gcd": "1"
+        },
+        "oracle_b": {
+          "definition": "Disc_t d(t) from maximal cubic / J6^16",
+          "d": "-120*t**8 - 10272*t**7 - 145112*t**6 + 9134124*t**5 + 161484984*t**4 - 7074211964*t**3 - 54858311787*t**2 + 3020570782500*t - 24098470357068",
+          "discriminant": "-19563008160778829168091596267167192232671658120251911553670692967268450159250276384220733215626083467526144000000",
+          "gcd": "1"
+        },
+        "separation": {
+          "a_squared": "-120",
+          "Res_D_E": "62599744",
+          "other_resultants": {
+            "standard": "119808",
+            "base_fiber_dual": "8774006121728934690816",
+            "maximal": "-724979016915589272097629978178037434893366586917022157618603069389322591359989228972285093903587206245903501787373817036800/387420489"
+          }
+        },
+        "checks": {
+          "oracle_a_disc_D_zero": false,
+          "oracle_b_disc_d_zero": false,
+          "D_at_r_zero": false,
+          "D_prime_at_r_zero": true,
+          "D_second_at_r_nonzero": true,
+          "D_gcd_degree_one": false,
+          "d_gcd_degree_one": false,
+          "D_residual_quartic_squarefree": false,
+          "d_residual_sextic_squarefree": false,
+          "a_squared_nonzero": true,
+          "J4_nonzero": true,
+          "J6_nonzero": true,
+          "coarse_moduli_open": true,
+          "Res_D_E_nonzero": true,
+          "other_resultants_nonzero": true
+        },
+        "four_fibrations": [],
+        "confluence_checks": {},
+        "minimal_k3_certificate": false,
+        "status": "J30_FAIL",
+        "passed": false
+      },
+      {
+        "point": {
+          "name": "triple-root",
+          "role": "negative",
+          "j2": "1",
+          "j3": "2",
+          "j4": "-9",
+          "j5": "-18",
+          "j6": "0",
+          "double_root": "1"
+        },
+        "oracle_a": {
+          "definition": "Disc_t D(t)",
+          "D": "(t - 1)**3*(t**3 + 3*t**2 - 16)",
+          "discriminant": "0",
+          "gcd": "t**2 - 2*t + 1"
+        },
+        "oracle_b": {
+          "definition": "Disc_t d(t) from maximal cubic / J6^16",
+          "d": null,
+          "discriminant": null,
+          "gcd": null
+        },
+        "separation": {
+          "a_squared": "324",
+          "Res_D_E": "34012224",
+          "other_resultants": {}
+        },
+        "checks": {
+          "oracle_a_disc_D_zero": true,
+          "oracle_b_disc_d_zero": false,
+          "D_at_r_zero": true,
+          "D_prime_at_r_zero": true,
+          "D_second_at_r_nonzero": false,
+          "D_gcd_degree_one": false,
+          "d_gcd_degree_one": false,
+          "D_residual_quartic_squarefree": true,
+          "d_residual_sextic_squarefree": false,
+          "a_squared_nonzero": true,
+          "J4_nonzero": true,
+          "J6_nonzero": false,
+          "coarse_moduli_open": true,
+          "Res_D_E_nonzero": true,
+          "other_resultants_nonzero": false
+        },
+        "four_fibrations": [],
+        "confluence_checks": {},
+        "minimal_k3_certificate": false,
+        "status": "J30_FAIL",
+        "passed": false
+      },
+      {
+        "point": {
+          "name": "resultant-intersection",
+          "role": "negative",
+          "j2": "1",
+          "j3": "-1",
+          "j4": "-1",
+          "j5": "2",
+          "j6": "3",
+          "double_root": "-1"
+        },
+        "oracle_a": {
+          "definition": "Disc_t D(t)",
+          "D": "(t - 1)*(t + 1)**2*(t**3 - t**2 - 4*t + 8)",
+          "discriminant": "0",
+          "gcd": "t + 1"
+        },
+        "oracle_b": {
+          "definition": "Disc_t d(t) from maximal cubic / J6^16",
+          "d": "(t - 4)*(2*t + 7)**2*(4*t**5 + 28*t**4 - 80*t**3 + 248*t**2 - 955*t + 1484)",
+          "discriminant": "0",
+          "gcd": "t + 7/2"
+        },
+        "separation": {
+          "a_squared": "16",
+          "Res_D_E": "0",
+          "other_resultants": {
+            "standard": "27648",
+            "base_fiber_dual": "2892078453565440000",
+            "maximal": "5562881305014962412864595325519294143624508728147968"
+          }
+        },
+        "checks": {
+          "oracle_a_disc_D_zero": true,
+          "oracle_b_disc_d_zero": true,
+          "D_at_r_zero": true,
+          "D_prime_at_r_zero": true,
+          "D_second_at_r_nonzero": true,
+          "D_gcd_degree_one": true,
+          "d_gcd_degree_one": true,
+          "D_residual_quartic_squarefree": true,
+          "d_residual_sextic_squarefree": true,
+          "a_squared_nonzero": true,
+          "J4_nonzero": true,
+          "J6_nonzero": true,
+          "coarse_moduli_open": true,
+          "Res_D_E_nonzero": false,
+          "other_resultants_nonzero": true
+        },
+        "four_fibrations": [],
+        "confluence_checks": {},
+        "minimal_k3_certificate": false,
+        "status": "J30_FAIL",
+        "passed": false
+      },
+      {
+        "point": {
+          "name": "a-intersection",
+          "role": "negative",
+          "j2": "-1",
+          "j3": "-2",
+          "j4": "-2",
+          "j5": "4",
+          "j6": "-2",
+          "double_root": "-1"
+        },
+        "oracle_a": {
+          "definition": "Disc_t D(t)",
+          "D": "(t + 1)**2*(t**4 - 2*t**3 + 9*t**2 - 8*t + 24)",
+          "discriminant": "0",
+          "gcd": "t + 1"
+        },
+        "oracle_b": {
+          "definition": "Disc_t d(t) from maximal cubic / J6^16",
+          "d": "64*(11*t**6 + 540*t**5 + 11304*t**4 + 128304*t**3 + 825984*t**2 + 2820096*t + 3891456)",
+          "discriminant": "188887396678920781926023290126040207489438620581888",
+          "gcd": "1"
+        },
+        "separation": {
+          "a_squared": "0",
+          "Res_D_E": "0",
+          "other_resultants": {}
+        },
+        "checks": {
+          "oracle_a_disc_D_zero": true,
+          "oracle_b_disc_d_zero": false,
+          "D_at_r_zero": true,
+          "D_prime_at_r_zero": true,
+          "D_second_at_r_nonzero": true,
+          "D_gcd_degree_one": true,
+          "d_gcd_degree_one": false,
+          "D_residual_quartic_squarefree": true,
+          "d_residual_sextic_squarefree": false,
+          "a_squared_nonzero": false,
+          "J4_nonzero": true,
+          "J6_nonzero": true,
+          "coarse_moduli_open": true,
+          "Res_D_E_nonzero": false,
+          "other_resultants_nonzero": false
+        },
+        "four_fibrations": [],
+        "confluence_checks": {},
+        "minimal_k3_certificate": false,
+        "status": "J30_FAIL",
+        "passed": false
+      },
+      {
+        "point": {
+          "name": "j4-intersection",
+          "role": "negative",
+          "j2": "1",
+          "j3": "2",
+          "j4": "0",
+          "j5": "0",
+          "j6": "9",
+          "double_root": "1"
+        },
+        "oracle_a": {
+          "definition": "Disc_t D(t)",
+          "D": "(t - 1)**2*(t + 2)*(t**3 - 3*t - 10)",
+          "discriminant": "0",
+          "gcd": "t - 1"
+        },
+        "oracle_b": {
+          "definition": "Disc_t d(t) from maximal cubic / J6^16",
+          "d": "6561*(t - 9)**2*(t + 18)*(t**3 - 243*t - 7290)",
+          "discriminant": "0",
+          "gcd": "t - 9"
+        },
+        "separation": {
+          "a_squared": "0",
+          "Res_D_E": "531441",
+          "other_resultants": {}
+        },
+        "checks": {
+          "oracle_a_disc_D_zero": true,
+          "oracle_b_disc_d_zero": true,
+          "D_at_r_zero": true,
+          "D_prime_at_r_zero": true,
+          "D_second_at_r_nonzero": true,
+          "D_gcd_degree_one": true,
+          "d_gcd_degree_one": true,
+          "D_residual_quartic_squarefree": true,
+          "d_residual_sextic_squarefree": false,
+          "a_squared_nonzero": false,
+          "J4_nonzero": false,
+          "J6_nonzero": true,
+          "coarse_moduli_open": true,
+          "Res_D_E_nonzero": true,
+          "other_resultants_nonzero": false
+        },
+        "four_fibrations": [],
+        "confluence_checks": {},
+        "minimal_k3_certificate": false,
+        "status": "J30_FAIL",
+        "passed": false
+      },
+      {
+        "point": {
+          "name": "j6-zero",
+          "role": "negative",
+          "j2": "1",
+          "j3": "2",
+          "j4": "3",
+          "j5": "6",
+          "j6": "0",
+          "double_root": "1"
+        },
+        "oracle_a": {
+          "definition": "Disc_t D(t)",
+          "D": "t**6 - 6*t**4 - 8*t**3 - 3*t**2 + 48*t + 16",
+          "discriminant": "-2045566255104",
+          "gcd": "1"
+        },
+        "oracle_b": {
+          "definition": "Disc_t d(t) from maximal cubic / J6^16",
+          "d": null,
+          "discriminant": null,
+          "gcd": null
+        },
+        "separation": {
+          "a_squared": "36",
+          "Res_D_E": "46656",
+          "other_resultants": {}
+        },
+        "checks": {
+          "oracle_a_disc_D_zero": false,
+          "oracle_b_disc_d_zero": false,
+          "D_at_r_zero": false,
+          "D_prime_at_r_zero": true,
+          "D_second_at_r_nonzero": true,
+          "D_gcd_degree_one": false,
+          "d_gcd_degree_one": false,
+          "D_residual_quartic_squarefree": false,
+          "d_residual_sextic_squarefree": false,
+          "a_squared_nonzero": true,
+          "J4_nonzero": true,
+          "J6_nonzero": false,
+          "coarse_moduli_open": true,
+          "Res_D_E_nonzero": true,
+          "other_resultants_nonzero": false
+        },
+        "four_fibrations": [],
+        "confluence_checks": {},
+        "minimal_k3_certificate": false,
+        "status": "J30_FAIL",
+        "passed": false
+      }
+    ],
+    "weighted_scale_check": {
+      "point": {
+        "name": "j30-held-out-001:scaled-2",
+        "role": "held_out",
+        "j2": "12",
+        "j3": "8",
+        "j4": "32",
+        "j5": "-640",
+        "j6": "3072",
+        "double_root": "-4"
+      },
+      "oracle_a": {
+        "definition": "Disc_t D(t)",
+        "D": "(t + 4)**2*(t**4 - 8*t**3 - 24*t**2 + 288*t - 752)",
+        "discriminant": "0",
+        "gcd": "t + 4"
+      },
+      "oracle_b": {
+        "definition": "Disc_t d(t) from maximal cubic / J6^16",
+        "d": "16384*(t + 15872)**2*(t**6 + 445440*t**5 - 3921936384*t**4 - 273595322335232*t**3 + 2061690885988417536*t**2 + 39620367267402363174912*t - 562306703908232303357198336)",
+        "discriminant": "0",
+        "gcd": "t + 15872"
+      },
+      "separation": {
+        "a_squared": "16384",
+        "Res_D_E": "106460873066387865600",
+        "other_resultants": {
+          "standard": "3724541952",
+          "base_fiber_dual": "-164873917200722102225745475534848",
+          "maximal": "-317466258648241105901951914381346841743425550161580607761431972460174316006448026547169429437028388059755833031383291696493708826221306772267716993916397528142711083118944112848647479898546623836074003512231990055761848966292909148635837101474328468953763942624780592032097106645394807205384166188080342342978917140885377959718452960300669710893056"
+        }
+      },
+      "checks": {
+        "oracle_a_disc_D_zero": true,
+        "oracle_b_disc_d_zero": true,
+        "D_at_r_zero": true,
+        "D_prime_at_r_zero": true,
+        "D_second_at_r_nonzero": true,
+        "D_gcd_degree_one": true,
+        "d_gcd_degree_one": true,
+        "D_residual_quartic_squarefree": true,
+        "d_residual_sextic_squarefree": true,
+        "a_squared_nonzero": true,
+        "J4_nonzero": true,
+        "J6_nonzero": true,
+        "coarse_moduli_open": true,
+        "Res_D_E_nonzero": true,
+        "other_resultants_nonzero": true
+      },
+      "four_fibrations": [],
+      "confluence_checks": {},
+      "minimal_k3_certificate": false,
+      "status": "J30_EXACT_LOCUS_PASS",
+      "passed": true
+    },
+    "mutations": {
+      "simple_root_rejected": true,
+      "triple_root_rejected": true,
+      "Res_D_E_intersection_rejected": true,
+      "a_zero_intersection_rejected": true,
+      "J4_zero_intersection_rejected": true,
+      "J6_zero_normalization_rejected": true,
+      "oracle_b_required": true,
+      "normalization_J6_power_checked": true,
+      "standard_I2_derived": true,
+      "alternate_extra_I2_derived": true,
+      "maximal_residual_degree_eight": true,
+      "weighted_projective_scale_invariant": true
+    },
+    "mutation_detected": 12,
+    "mutation_required": 12,
+    "status": "J30_EXACT_LOCUS_PASS",
+    "passed": true,
+    "classification_boundary": "Four known confluences are reproduced. Completeness of the four-fibration classification remains theorem-dependent."
+  },
+  "period": {
+    "oracle_status": "PERIOD_ORACLE_VALIDATED",
+    "period_slice_status": "PERIOD_J4_SLICE_PASS",
+    "period_generic_status": "PERIOD_GENERIC_BLOCKED",
+    "validation": {
+      "128": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true,
+        "known_example_trivial_rank_10": true
+      },
+      "256": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true,
+        "known_example_trivial_rank_10": true
+      }
+    },
+    "basic_checks": {
+      "j4-standard-128": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-standard-256": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-standard-512": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-standard-1024": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-bfd-128": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-bfd-256": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-bfd-512": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-bfd-1024": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-alternate-128": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-alternate-256": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-alternate-512": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-alternate-1024": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-maximal-256": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-maximal-512": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      },
+      "j4-maximal-1024": {
+        "H2_rank_22": true,
+        "intersection_signature_3_19": true,
+        "intersection_unimodular": true,
+        "period_shape_1_22": true,
+        "known_NS_rank_17": true,
+        "transcendental_rank_5": true,
+        "period_orthogonal_to_known_NS": true,
+        "omega_square_zero": true,
+        "omega_conjugate_positive": true,
+        "heuristic_NS_not_used": true
+      }
+    },
+    "symbolic": {
+      "weighted_moduli_point": {
+        "j2": "1",
+        "j3": "2",
+        "j4": "0",
+        "j5": "3",
+        "j6": "5",
+        "a_squared": "9",
+        "j30": "285537705984"
+      },
+      "standard_equation_3_2": "-t**5*(5*t**2 - 4*t + 1) + t**4*x*(3*t + 3) - x**3 + y**2",
+      "base_fiber_dual_equation_3_1": "-t**5*(t**2 - 4*t + 5) + t**3*x*(3*t + 3) - x**3 + y**2",
+      "alternate_maximal_equation_3_4": "-x**3 - x**2*(t**3 - 3*t - 4) - x*(5 - 3*t) + y**2",
+      "map": "(t,X,Y) -> (1/t, X/t^4, -Y/t^6)",
+      "two_form_scale": "1",
+      "checks": {
+        "J4_zero": true,
+        "J5_nonzero": true,
+        "J6_nonzero": true,
+        "a_squared_nonzero": true,
+        "J30_nonzero": true,
+        "J4_J5_not_both_zero": true,
+        "standard_maps_to_bfd": true,
+        "bfd_maps_to_standard": true,
+        "map_is_involutive": true,
+        "holomorphic_two_form_preserved": true,
+        "alternate_equals_specialized_maximal": true,
+        "two_torsion_section_specializes": true
+      },
+      "passed": true,
+      "evidence": "SOURCE_FORMULA_SYMBOLICALLY_VERIFIED"
+    },
+    "input_checks": {
+      "alternate_maximal_same_specialized_equation": true,
+      "standard_bfd_distinct_presentations": true
+    },
+    "standard_bfd_markings": [
+      {
+        "source_case": "j4-standard",
+        "target_case": "j4-bfd",
+        "nbits": 128,
+        "candidate_counts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          [
+            "0",
+            "0",
+            "-1",
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "1"
+          ],
+          [
+            "1",
+            "-1",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "determinant": 1,
+        "gram_isometry_exact": true,
+        "certified_period_balls_overlap": true,
+        "passed": true
+      },
+      {
+        "source_case": "j4-standard",
+        "target_case": "j4-bfd",
+        "nbits": 256,
+        "candidate_counts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          [
+            "0",
+            "0",
+            "-1",
+            "0",
+            "-1"
+          ],
+          [
+            "1",
+            "-1",
+            "0",
+            "0",
+            "-1"
+          ],
+          [
+            "0",
+            "-1",
+            "-1",
+            "1",
+            "-1"
+          ],
+          [
+            "-1",
+            "1",
+            "0",
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "determinant": 1,
+        "gram_isometry_exact": true,
+        "certified_period_balls_overlap": true,
+        "passed": true
+      },
+      {
+        "source_case": "j4-standard",
+        "target_case": "j4-bfd",
+        "nbits": 512,
+        "candidate_counts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          [
+            "0",
+            "0",
+            "-1",
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "-1",
+            "-1",
+            "1"
+          ],
+          [
+            "1",
+            "-1",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "determinant": -1,
+        "gram_isometry_exact": true,
+        "certified_period_balls_overlap": true,
+        "passed": true
+      },
+      {
+        "source_case": "j4-standard",
+        "target_case": "j4-bfd",
+        "nbits": 1024,
+        "candidate_counts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          [
+            "0",
+            "0",
+            "-1",
+            "0",
+            "-1"
+          ],
+          [
+            "1",
+            "-1",
+            "0",
+            "0",
+            "-1"
+          ],
+          [
+            "0",
+            "-1",
+            "-1",
+            "1",
+            "-1"
+          ],
+          [
+            "-1",
+            "1",
+            "0",
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "determinant": 1,
+        "gram_isometry_exact": true,
+        "certified_period_balls_overlap": true,
+        "passed": true
+      }
+    ],
+    "alternate_maximal_markings": [
+      {
+        "source_case": "j4-alternate",
+        "target_case": "j4-maximal",
+        "nbits": 256,
+        "candidate_counts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "determinant": -1,
+        "gram_isometry_exact": true,
+        "certified_period_balls_overlap": true,
+        "passed": true
+      },
+      {
+        "source_case": "j4-alternate",
+        "target_case": "j4-maximal",
+        "nbits": 512,
+        "candidate_counts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "determinant": 1,
+        "gram_isometry_exact": true,
+        "certified_period_balls_overlap": true,
+        "passed": true
+      },
+      {
+        "source_case": "j4-alternate",
+        "target_case": "j4-maximal",
+        "nbits": 1024,
+        "candidate_counts": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "matrix": [
+          [
+            "-1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "determinant": -1,
+        "gram_isometry_exact": true,
+        "certified_period_balls_overlap": true,
+        "passed": true
+      }
+    ],
+    "precision_stability": {
+      "j4-standard": [
+        {
+          "low_bits": 128,
+          "high_bits": 256,
+          "certified_balls_overlap": true
+        },
+        {
+          "low_bits": 256,
+          "high_bits": 512,
+          "certified_balls_overlap": true
+        },
+        {
+          "low_bits": 512,
+          "high_bits": 1024,
+          "certified_balls_overlap": true
+        }
+      ],
+      "j4-bfd": [
+        {
+          "low_bits": 128,
+          "high_bits": 256,
+          "certified_balls_overlap": true
+        },
+        {
+          "low_bits": 256,
+          "high_bits": 512,
+          "certified_balls_overlap": true
+        },
+        {
+          "low_bits": 512,
+          "high_bits": 1024,
+          "certified_balls_overlap": true
+        }
+      ],
+      "j4-alternate": [
+        {
+          "low_bits": 128,
+          "high_bits": 256,
+          "certified_balls_overlap": true
+        },
+        {
+          "low_bits": 256,
+          "high_bits": 512,
+          "certified_balls_overlap": true
+        },
+        {
+          "low_bits": 512,
+          "high_bits": 1024,
+          "certified_balls_overlap": true
+        }
+      ],
+      "j4-maximal": [
+        {
+          "low_bits": 128,
+          "high_bits": 256,
+          "certified_balls_overlap": true
+        },
+        {
+          "low_bits": 256,
+          "high_bits": 512,
+          "certified_balls_overlap": true
+        },
+        {
+          "low_bits": 512,
+          "high_bits": 1024,
+          "certified_balls_overlap": true
+        }
+      ]
+    },
+    "raw_files": [
+      {
+        "path": "results/period_oracle_raw/j4-standard-128.json",
+        "sha256": "223b9943d590bde92f888b3bf81a615e21433261f40cbe9e52254706a4247265",
+        "bytes": 35814
+      },
+      {
+        "path": "results/period_oracle_raw/j4-standard-256.json",
+        "sha256": "dbcf03999ffb55b41f3ecaf7c5ea23f31b3433d6ee41e1124ff4425f7cb83f07",
+        "bytes": 40942
+      },
+      {
+        "path": "results/period_oracle_raw/j4-standard-512.json",
+        "sha256": "fe0beab039bb6f4d7ae962e9a057a4d19176b0d88b8f050202bf8f0e2501ed29",
+        "bytes": 50552
+      },
+      {
+        "path": "results/period_oracle_raw/j4-standard-1024.json",
+        "sha256": "7265e19eb1c483310b54f1b83e7038daf37db8504748a9f8de24617e6d2e8fbd",
+        "bytes": 71408
+      },
+      {
+        "path": "results/period_oracle_raw/j4-bfd-128.json",
+        "sha256": "168a34edb41067fa27b451ee85389b6b1a8b5f30c3033b97b01f12ba8ffbbebf",
+        "bytes": 35372
+      },
+      {
+        "path": "results/period_oracle_raw/j4-bfd-256.json",
+        "sha256": "bf35457e936367bf4c4be521ee3a97bd0606678b35316fbd985d32b35647848f",
+        "bytes": 40524
+      },
+      {
+        "path": "results/period_oracle_raw/j4-bfd-512.json",
+        "sha256": "34e0dd317598d7437ca336b9102a6ec24bfc4074cbba505f93e337a5a1437b4a",
+        "bytes": 50802
+      },
+      {
+        "path": "results/period_oracle_raw/j4-bfd-1024.json",
+        "sha256": "6a0f5404d78bc3c3b853ce787ec447da5979914319d3ff3cd70a77ae276b9379",
+        "bytes": 70957
+      },
+      {
+        "path": "results/period_oracle_raw/j4-alternate-128.json",
+        "sha256": "19dea8d79db8fabe3450a98c7c0eccec131673ac84b6d4a129faff264f870b2e",
+        "bytes": 35080
+      },
+      {
+        "path": "results/period_oracle_raw/j4-alternate-256.json",
+        "sha256": "f0c5480d7feb02f83b16f80313e0c9941c0fc1772fc4939dd47126eb73fee93a",
+        "bytes": 39385
+      },
+      {
+        "path": "results/period_oracle_raw/j4-alternate-512.json",
+        "sha256": "79f86d6b0bd2b15c40be77094257d57d0f11366125d625f6c956acecb47a8491",
+        "bytes": 48647
+      },
+      {
+        "path": "results/period_oracle_raw/j4-alternate-1024.json",
+        "sha256": "b31c289b7e536442a3e9c055652b46bb3d76a68a195bbfd81dd84ba5fa12a5b9",
+        "bytes": 66170
+      },
+      {
+        "path": "results/period_oracle_raw/j4-maximal-128.json",
+        "sha256": "50af3fbdc00e8b694531ae9132b14b70489c0a00e1dcce386576beab18078a8d",
+        "bytes": 31693
+      },
+      {
+        "path": "results/period_oracle_raw/j4-maximal-256.json",
+        "sha256": "cf045d3e508003ab6b4c27015cc80a957f80ed72a4110c23d8f79c546aa89e63",
+        "bytes": 39412
+      },
+      {
+        "path": "results/period_oracle_raw/j4-maximal-512.json",
+        "sha256": "0757459bfc2b5b986d025644ba665cff29297134c5553f82994eef3f770a9c83",
+        "bytes": 48401
+      },
+      {
+        "path": "results/period_oracle_raw/j4-maximal-1024.json",
+        "sha256": "788828b3353956c0703766694b6f7f9dedf2ccd93174d40819237b5e94b27dc4",
+        "bytes": 66520
+      }
+    ],
+    "mutations": {
+      "raw_period_vector_direct_comparison_rejected": true,
+      "intersection_form_required": true,
+      "cycle_orientation_handled_by_integral_marking": true,
+      "precision_128_instability_not_promoted": true,
+      "heuristic_NS_not_exact": true,
+      "production_does_not_import_oracle": true
+    },
+    "mutation_passed": true,
+    "passed": true,
+    "claim_boundary": "The J4=0 period lines are matched on explicit rank-five integral transcendental-lattice markings. No generic H_(2,2) inversion or global Narain-orbit reconstruction is claimed."
+  },
+  "statuses": {
+    "ENGINEERING_STATUS": "ENGINEERING_PASS",
+    "J30_STATUS": "J30_EXACT_LOCUS_PASS",
+    "PERIOD_ORACLE_STATUS": "PERIOD_ORACLE_VALIDATED",
+    "PERIOD_SLICE_STATUS": "PERIOD_J4_SLICE_PASS",
+    "PERIOD_GENERIC_STATUS": "PERIOD_GENERIC_BLOCKED",
+    "NARAIN_ORBIT_STATUS": "GLOBAL_WILSON_COORDINATE_OBSTRUCTION_CONFIRMED",
+    "SCIENTIFIC_STATUS": "DUALITY_PARTIAL_STRONGER"
+  },
+  "known_8d_duality_reproduced": false,
+  "duality_round_trip_pass": false,
+  "narain_period_bridge_complete": false,
+  "allowed_claims": [
+    "J30_EXACT_LOCUS_PASS",
+    "PERIOD_ORACLE_VALIDATED",
+    "PERIOD_J4_SLICE_PASS",
+    "PERIOD_GENERIC_BLOCKED",
+    "GLOBAL_WILSON_COORDINATE_OBSTRUCTION_CONFIRMED",
+    "DUALITY_PARTIAL_STRONGER"
+  ],
+  "prohibited_claims": [
+    "KNOWN_8D_DUALITY_REPRODUCED",
+    "DUALITY_ROUND_TRIP_PASS",
+    "STRING_THEORY_COMPLETED",
+    "NARAIN_PERIOD_BRIDGE_COMPLETE"
+  ],
+  "overall_status": "DUALITY_PARTIAL_STRONGER",
+  "passed": true,
+  "stopping_reason": "The exact J30 held-out and the marked J4=0 period slice close. Generic H_(2,2) period inversion and the global Narain-orbit reverse map remain outside v0.3 and blocked.",
+  "generated_at": "2026-07-27T16:45:04.177712+00:00",
+  "production_commit": "afb7a4025e55e667421d7635b9302946a86d525e"
+}

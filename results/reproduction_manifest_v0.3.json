@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-27T16:45:04.177712+00:00",
+  "production_commit": "afb7a4025e55e667421d7635b9302946a86d525e",
+  "branch": "codex/stringbench-v0.3",
+  "baseline_commit": "a1646cb0fb01465a620946db5166567b6be03f48",
+  "uv_lock_sha256": "25f4d380be075132f2ee669792c5d703fd6de5ffff817023fd7b85712b980591",
+  "environment_yml_sha256": "439ee5d4a8b1b4408a7db884ba24c850d6d442c895f0a1fcb5026b209b61bc05",
+  "oracle_source_manifest_sha256": "907e853b793df4d51ad68a4d146a3ebf5aeb756d6f6c4fa3440a32523f49278b",
+  "fixture_sha256": "8b7b3a2fa1decf4c1f3e1f2b33cadb3b00a75c915b47bfd860579ff51c74103e",
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD",
+    "sage": "10.8",
+    "container_image_digest": "sha256:e2e4747b0e1ea8753a9cb5a399314a8b2c25fcefaf69ba85b22ee075829d09ea"
+  },
+  "verification": {
+    "pytest": "70 passed",
+    "ruff": "PASS",
+    "mypy": "PASS",
+    "external_oracle_smoke": "PASS"
+  },
+  "artifacts": [
+    {
+      "path": "results/j30_exact_fixtures.json",
+      "sha256": "8b7b3a2fa1decf4c1f3e1f2b33cadb3b00a75c915b47bfd860579ff51c74103e",
+      "bytes": 2030
+    },
+    {
+      "path": "results/j30_v0.3.json",
+      "sha256": "9c978ba459c0515e8cb69e3ab5d7ea9bbaba29f7a7908f9306cfdf3c393fc393",
+      "bytes": 31314
+    },
+    {
+      "path": "results/period_oracle_manifest.json",
+      "sha256": "b0d7f6da7602a8253fb781e1d03a1ea19d78eca476906dbf9232e0645d1e14a3",
+      "bytes": 5676
+    },
+    {
+      "path": "results/period_j4_v0.3.json",
+      "sha256": "2cdbac8512f038b51371f3c5990335774f5aaf61e928d1a282f3c7a4994205e8",
+      "bytes": 19587
+    },
+    {
+      "path": "results/stringbench_v0.3.json",
+      "sha256": "58a0e0d0adc6f64684ca259510c0039b8ca608d6f22bc8a5dc5dd703d27be1bb",
+      "bytes": 56029
+    },
+    {
+      "path": "results/gap_register_v0.2.json",
+      "sha256": "d2f36f4cc2df0e37867da50c70b968cbf1d3e5f7a8f18c9be88b685539763bae",
+      "bytes": 344
+    }
+  ],
+  "scientific_status": "DUALITY_PARTIAL_STRONGER"
+}
