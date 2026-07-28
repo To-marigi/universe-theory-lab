@@ -1,0 +1,423 @@
+{
+  "semantic_profiles": {
+    "REACHABLE_STATE_PROFILE": {
+      "GC": "GC_FIXED_VECTOR",
+      "MSR": "MSR_REACHABLE_STATE",
+      "operator_ideal_relations_emitted": false
+    },
+    "PAPER_STRONG_OPERATOR_PROFILE": {
+      "GC": "GC_STRONG_OPERATOR",
+      "MSR": "MSR_STRONG_OPERATOR",
+      "operator_ideal_relations_emitted": true,
+      "status": "explicit project profile using additional axioms"
+    }
+  },
+  "implication_diagram": {
+    "GC": [
+      {
+        "from": "GC_STRONG_OPERATOR",
+        "to": "GC_ALL_INITIAL_VECTORS",
+        "valid": true
+      },
+      {
+        "from": "GC_ALL_INITIAL_VECTORS",
+        "to": "GC_STRONG_OPERATOR",
+        "valid": true,
+        "reason": "linear maps agreeing on every vector are equal"
+      },
+      {
+        "from": "GC_ALL_INITIAL_VECTORS",
+        "to": "GC_FIXED_VECTOR",
+        "valid": true
+      },
+      {
+        "from": "GC_FIXED_VECTOR",
+        "to": "GC_STRONG_OPERATOR",
+        "valid": false,
+        "counterexample": "gc_fixed_vector_counterexample"
+      }
+    ],
+    "MSR": [
+      {
+        "from": "MSR_STRONG_OPERATOR",
+        "to": "MSR_REACHABLE_STATE",
+        "valid": true
+      },
+      {
+        "from": "MSR_REACHABLE_STATE",
+        "to": "MSR_STRONG_OPERATOR",
+        "valid": false,
+        "counterexample": "msr_reachable_state_counterexample"
+      }
+    ]
+  },
+  "exact_counterexamples": {
+    "gc_fixed_vector_counterexample": {
+      "field": "Z embedded in every characteristic-zero field",
+      "Omega": [
+        1,
+        0
+      ],
+      "X": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "Y": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "X_Omega": [
+        1,
+        0
+      ],
+      "Y_Omega": [
+        1,
+        0
+      ],
+      "det_X": 1,
+      "det_Y": 1,
+      "X_equals_Y": false,
+      "fixed_vector_equality": true,
+      "both_operators_invertible": true,
+      "certifies": "GC_FIXED_VECTOR_DOES_NOT_IMPLY_GC_STRONG_OPERATOR"
+    },
+    "msr_reachable_state_counterexample": {
+      "field": "Z embedded in every characteristic-zero field",
+      "reachable_state": [
+        1,
+        0
+      ],
+      "A_1": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "A_2": [
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "sum_A": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "sum_A_minus_I": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "residual_on_reachable_state": [
+        0,
+        0
+      ],
+      "det_A_1": 4,
+      "det_A_2": 1,
+      "all_transition_summands_invertible": true,
+      "reachable_state_MSR": true,
+      "strong_operator_MSR": false,
+      "certifies": "MSR_REACHABLE_STATE_DOES_NOT_IMPLY_MSR_STRONG_OPERATOR"
+    }
+  },
+  "possible_equivalence_assumptions": [
+    {
+      "assumption": "equality is postulated for every initial vector",
+      "sufficient": true,
+      "necessary": true,
+      "qualification": "necessary and sufficient when both sides are linear maps on the same full space",
+      "paper_explicit": false,
+      "project_policy": "available only in PAPER_STRONG_OPERATOR_PROFILE",
+      "finite_n4_mechanically_checkable": true
+    },
+    {
+      "assumption": "reachable vectors span H",
+      "sufficient": true,
+      "necessary": false,
+      "qualification": "equality on a spanning reachable set fixes a linear map",
+      "paper_explicit": false,
+      "project_policy": "not assumed",
+      "finite_n4_mechanically_checkable": "only after a concrete representation and its reachable vectors are supplied"
+    },
+    {
+      "assumption": "Omega is separating for the relevant operator algebra",
+      "sufficient": true,
+      "necessary": false,
+      "qualification": "requires X-Y to lie in the algebra for which Omega is separating",
+      "paper_explicit": false,
+      "project_policy": "not assumed",
+      "finite_n4_mechanically_checkable": "only after a concrete algebra representation is supplied"
+    },
+    {
+      "assumption": "Omega is cyclic plus X-Y belongs to the appropriate commutant",
+      "sufficient": true,
+      "necessary": false,
+      "qualification": "cyclicity alone is insufficient; the commutant condition is essential",
+      "paper_explicit": false,
+      "project_policy": "not assumed",
+      "finite_n4_mechanically_checkable": "only after a concrete representation is supplied"
+    },
+    {
+      "assumption": "transition operators act only on source-state subspaces",
+      "sufficient": false,
+      "necessary": false,
+      "qualification": "defines equality of restrictions, not equality of global operators, unless the source subspaces span and the restrictions are compatible",
+      "paper_explicit": false,
+      "project_policy": "kept in REACHABLE_STATE_PROFILE",
+      "finite_n4_mechanically_checkable": "source restrictions are checkable; global lifting is not automatic"
+    },
+    {
+      "assumption": "operators are quotiented by equality on reachable states",
+      "sufficient": true,
+      "necessary": false,
+      "qualification": "makes equality true in a quotient algebra by definition and changes the presentation; it does not prove equality in the original operator algebra",
+      "paper_explicit": false,
+      "project_policy": "not identified with the strong profile",
+      "finite_n4_mechanically_checkable": true
+    },
+    {
+      "assumption": "faithful representation of the transition algebra",
+      "sufficient": false,
+      "necessary": false,
+      "qualification": "faithfulness transfers an algebra equality to operators but does not turn equality on one vector into an algebra equality",
+      "paper_explicit": false,
+      "project_policy": "not assumed",
+      "finite_n4_mechanically_checkable": "only after an algebra and concrete representation are supplied"
+    }
+  ],
+  "source_observations": {
+    "eq31_pdf_page": 15,
+    "eq32_pdf_page": 15,
+    "eq33_pdf_page": 15,
+    "GC_definition_pdf_page": 15,
+    "eq33_written_strength": "MSR_STRONG_OPERATOR",
+    "eq33_preceding_premise_strength": "MSR_REACHABLE_STATE",
+    "GC_written_strength": "GC_FIXED_VECTOR",
+    "paper_intent_not_inferred": true
+  },
+  "GC_verdict": "STRONG_OPERATOR_GC_ADDITIONAL_AXIOM",
+  "MSR_verdict": "STRONG_OPERATOR_MSR_ADDITIONAL_AXIOM",
+  "assumptions": [
+    "all maps in the exact counterexamples are linear over characteristic zero",
+    "the paper's later operator equalities are evaluated in a separate strong profile",
+    "no cyclicity, separating-vector, spanning, or faithfulness premise is inferred"
+  ],
+  "unresolved_components": [
+    "whether the authors intended GC/MSR as global operator axioms",
+    "whether a future representation supplies a separating or spanning condition"
+  ],
+  "passed": true,
+  "semantic_digest_sha256": "9489f99b15432cf68a06b7a3e4444be1a19b7faeb283d8939494a071fc27a4d1",
+  "schema_version": "final-theory-gc-msr-semantics-v0.3.3",
+  "branch": "codex/final-theory-v0.3.3-gc-atomisation-presentation-20260728",
+  "source_commit": "b61a4db76f87db9d371ef8538b6c359c100f2595",
+  "code_commit": "47e5a97d81677eb9bd574c5792b6e1524a39992a",
+  "artifact_freeze_commit": "RESOLVE_VIA_ANNOTATED_TAG(final-theory-bench-v0.3.3-gc-atomisation-open)",
+  "paper_version": {
+    "id": "arXiv:2603.25503v1",
+    "version": "v1",
+    "date": "2026-03-26",
+    "local_file": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+    "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+  },
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
+    },
+    {
+      "path": "results/v0.3.1_d3_strata_manifest.json",
+      "sha256": "3729a701f6f909cecb6d6889d72bcb7cd5b4d03cc9822d39c56329432e9297c5"
+    },
+    {
+      "path": "results/v0.3.2_cpobc_generator_reduction.json",
+      "sha256": "e0550fe5fd654f8c377b491d5c6fc3b34981da79a9120d2a5392f8a70bbf7e51"
+    },
+    {
+      "path": "results/v0.3.2_cpobc_d2_classification.json",
+      "sha256": "8c74488496e9924fec8a817f930a50676f19021ef6f72fd8ea8b71665cf16797"
+    },
+    {
+      "path": "references/papers/gr-qc-9904062v3_rideout-sorkin_classical-sequential-growth.pdf",
+      "sha256": "6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    },
+    {
+      "path": "references/papers/gr-qc-0504066v3_varadarajan-rideout_general-classical-sequential-growth.pdf",
+      "sha256": "8a3b8ceac4f90dda2454ce749a1b7b60ceec81c97ee7d58fd970bb430d58e829"
+    }
+  ],
+  "literature_classification": [
+    {
+      "topic": "arXiv:2603.25503 current source record",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "official arXiv record remains v1 dated 2026-03-26; no journal reference, DOI, erratum, or later source version was found in the bounded search",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    },
+    {
+      "topic": "paper Eq. (31)--(33) and GC definition",
+      "classification": "SOURCE_AMBIGUITY",
+      "finding": "GC is written on A_gamma|Omega>; Eq. (33) promotes an on-state MSR premise to a global operator equality without a stated lifting assumption",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    },
+    {
+      "topic": "paper atomisation and decimation definition",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "non-gregarious maximal elements are reinserted gregariously",
+      "sources": [
+        "arXiv:2603.25503v1",
+        "arXiv:gr-qc/9904062v3"
+      ]
+    },
+    {
+      "topic": "paper CPOBC Eqs. (103)--(114)",
+      "classification": "SOURCE_AMBIGUITY",
+      "finding": "Eq. (113) prints Q_(n+1), while Eq. (112) directly yields Q_n",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    },
+    {
+      "topic": "classical discrete general covariance and path independence",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "classical same-endpoint products are path independent",
+      "sources": [
+        "arXiv:gr-qc/9904062v3"
+      ]
+    },
+    {
+      "topic": "classical solution with vanishing transitions",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "the extended classical axioms and completely general tower-of-turtles solution are available in the versioned primary source",
+      "sources": [
+        "arXiv:gr-qc/0504066v3"
+      ]
+    },
+    {
+      "topic": "operator-valued GC/path-independence follow-up",
+      "classification": "FORMULATION_MISMATCH",
+      "finding": "bounded searches found QSGP, quantum-causal-history, and on-state operator formalisms, but no source resolving this CPOBC operator-GC lifting",
+      "sources": [
+        "arXiv:1204.5767v1",
+        "arXiv:1303.0433v1",
+        "arXiv:quant-ph/9902008v3"
+      ]
+    },
+    {
+      "topic": "general CPOBC d=2 representation and atomisation compiler follow-up",
+      "classification": "OPEN_TARGET",
+      "finding": "no resolving primary source was found by exact-title, author, terminology, arXiv concept, and citation-route searches; this is search-bounded, not a global nonexistence claim",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    }
+  ],
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "completeness_scope": "v0.3.3 gc-msr-semantics finite audit",
+  "exact_numeric_distinction": {
+    "exact": "finite integer combinatorics, operator words, and canonical SHA-256 digests",
+    "numeric": "none accepted as certificate"
+  },
+  "relation_counts": {
+    "CPOBC_compiled_relations": 641,
+    "CPOBC_word_equations": 783,
+    "CPOBC_residuals": 700,
+    "strong_MSR_constraints": 24,
+    "strong_MSR_residuals": 21,
+    "local_GC_basis": 320,
+    "local_GC_residuals": 255,
+    "path_consistency_per_branch": 25
+  },
+  "generator_counts": {
+    "original_occurrences": 165,
+    "v032_gregarious_generators": 24,
+    "Q_generators": 4,
+    "non_antichain_G_forward_reduced": 20,
+    "B_inverse_auxiliaries": 22
+  },
+  "path_counts": {
+    "labelled_paths": {
+      "1": 1,
+      "2": 2,
+      "3": 7,
+      "4": 40,
+      "5": 357
+    },
+    "unlabelled_endpoints": {
+      "1": 1,
+      "2": 2,
+      "3": 5,
+      "4": 16,
+      "5": 63
+    },
+    "same_endpoint_pairs": 1529,
+    "atomisation_paths": 34,
+    "atomisation_steps": 76
+  },
+  "source_index_branch": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+  "certificate_hashes": [
+    {
+      "path": "certificates/atomisation_paths/path_completeness.json",
+      "sha256": "e13b82e4549fad948d6e95a1496e55a81df080e5a6e6c543f4a8694bbcc6bdd0"
+    },
+    {
+      "path": "certificates/eq112_reduction/dependency_dag.json",
+      "sha256": "fb349d71b298c1ab871d31f657c51e75614514a8b129b839bb63de272bbe1e79"
+    },
+    {
+      "path": "certificates/gc_msr_semantics/exact_counterexamples.json",
+      "sha256": "e09fca7d82bd34a89e1312073b7dba226d231fd50dfe5ceab8e5a0a4067f30d4"
+    },
+    {
+      "path": "certificates/independent_oracle/oracle_result.json",
+      "sha256": "3c74ef4ad037ef59c54dcf3005d2114cb1fc7240961bfb9c87dc2cfa82d6993c"
+    },
+    {
+      "path": "certificates/local_operator_gc/basis_connectivity.json",
+      "sha256": "afe442a6c26d8e97f106df004b340139f819a10dea3d0a7c3a6d2ee680eed0f0"
+    },
+    {
+      "path": "certificates/q_only_presentation/relation_digest_ledger.json",
+      "sha256": "97e3c03fc84212d92cc6a3f57f84395ca6448091a47eac733d37afcf3374d53a"
+    }
+  ],
+  "verdict": "STRONG_OPERATOR_GC_ADDITIONAL_AXIOM"
+}

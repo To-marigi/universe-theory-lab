@@ -1,0 +1,842 @@
+{
+  "counts": {
+    "non_antichain_causets": 20,
+    "non_antichain_causets_by_stage": {
+      "1": 0,
+      "2": 1,
+      "3": 4,
+      "4": 15
+    },
+    "complete_atomisation_paths": 34,
+    "atomisation_steps": 76,
+    "distinct_B_occurrences": 22
+  },
+  "ranking_function": {
+    "name": "number of strict order relations",
+    "formula": "sum(row.bit_count() for row in relation)",
+    "strict_decrease_every_step": true,
+    "lower_bound": 0,
+    "termination_proved": true
+  },
+  "paths": [
+    {
+      "causet_id": "p2-2",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-08b55cb0e27a0ad71d35",
+          "selected_elements": [
+            1
+          ],
+          "S_word": [
+            "B_1_692d8de209a59f16"
+          ],
+          "S_inverse_word": [
+            "B_1_692d8de209a59f16^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p3-002",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-16b8d139c19559efe9c4",
+          "selected_elements": [
+            1
+          ],
+          "S_word": [
+            "B_2_847dbbdcf2b8502a"
+          ],
+          "S_inverse_word": [
+            "B_2_847dbbdcf2b8502a^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p3-006",
+      "complete_path_count": 2,
+      "paths": [
+        {
+          "path_id": "atomisation-174e6268e71f15a6f207",
+          "selected_elements": [
+            2,
+            1
+          ],
+          "S_word": [
+            "B_2_de00eadcbff77bc4",
+            "B_2_847dbbdcf2b8502a"
+          ],
+          "S_inverse_word": [
+            "B_2_847dbbdcf2b8502a^-1",
+            "B_2_de00eadcbff77bc4^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-8daea88f920d7da45caf",
+          "selected_elements": [
+            1,
+            2
+          ],
+          "S_word": [
+            "B_2_de00eadcbff77bc4",
+            "B_2_847dbbdcf2b8502a"
+          ],
+          "S_inverse_word": [
+            "B_2_847dbbdcf2b8502a^-1",
+            "B_2_de00eadcbff77bc4^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p3-024",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-569b32bfa2a2cd663567",
+          "selected_elements": [
+            2
+          ],
+          "S_word": [
+            "B_2_2585179d7faa71e1"
+          ],
+          "S_inverse_word": [
+            "B_2_2585179d7faa71e1^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p3-026",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-7a698e0d5a278b9589c9",
+          "selected_elements": [
+            2,
+            1
+          ],
+          "S_word": [
+            "B_2_85c25c2c6160291f",
+            "B_2_847dbbdcf2b8502a"
+          ],
+          "S_inverse_word": [
+            "B_2_847dbbdcf2b8502a^-1",
+            "B_2_85c25c2c6160291f^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-0002",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-8baed4284cc6eb2d134b",
+          "selected_elements": [
+            1
+          ],
+          "S_word": [
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-0006",
+      "complete_path_count": 2,
+      "paths": [
+        {
+          "path_id": "atomisation-859870768a68676b8955",
+          "selected_elements": [
+            1,
+            2
+          ],
+          "S_word": [
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-85c069bdc3424cb4d4e0",
+          "selected_elements": [
+            2,
+            1
+          ],
+          "S_word": [
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-000e",
+      "complete_path_count": 6,
+      "paths": [
+        {
+          "path_id": "atomisation-438b5da888f9dcfe146f",
+          "selected_elements": [
+            2,
+            1,
+            3
+          ],
+          "S_word": [
+            "B_3_7e94818ba9336b97",
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1",
+            "B_3_7e94818ba9336b97^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-67c4b19b11fb0a5e1bce",
+          "selected_elements": [
+            1,
+            2,
+            3
+          ],
+          "S_word": [
+            "B_3_7e94818ba9336b97",
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1",
+            "B_3_7e94818ba9336b97^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-7ff2e15eadb7d2532b9d",
+          "selected_elements": [
+            2,
+            3,
+            1
+          ],
+          "S_word": [
+            "B_3_7e94818ba9336b97",
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1",
+            "B_3_7e94818ba9336b97^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-8f36c31b29178f776600",
+          "selected_elements": [
+            1,
+            3,
+            2
+          ],
+          "S_word": [
+            "B_3_7e94818ba9336b97",
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1",
+            "B_3_7e94818ba9336b97^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-c3f41a2c3522fa8d0041",
+          "selected_elements": [
+            3,
+            2,
+            1
+          ],
+          "S_word": [
+            "B_3_7e94818ba9336b97",
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1",
+            "B_3_7e94818ba9336b97^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-d9ce01d4b7c5ff6341ba",
+          "selected_elements": [
+            3,
+            1,
+            2
+          ],
+          "S_word": [
+            "B_3_7e94818ba9336b97",
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1",
+            "B_3_7e94818ba9336b97^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-0044",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-ac3603a4adc1bac42053",
+          "selected_elements": [
+            2
+          ],
+          "S_word": [
+            "B_3_f600fac3a5b643dc"
+          ],
+          "S_inverse_word": [
+            "B_3_f600fac3a5b643dc^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-0046",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-1fdc2dd2c0467b90d645",
+          "selected_elements": [
+            2,
+            1
+          ],
+          "S_word": [
+            "B_3_3fb6fea277cafa17",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_3fb6fea277cafa17^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-0048",
+      "complete_path_count": 2,
+      "paths": [
+        {
+          "path_id": "atomisation-684debf66062f5eae5a2",
+          "selected_elements": [
+            3,
+            2
+          ],
+          "S_word": [
+            "B_3_ec0dbfda1621829d",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_ec0dbfda1621829d^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-9439102a1ed5ce6440f1",
+          "selected_elements": [
+            2,
+            3
+          ],
+          "S_word": [
+            "B_3_ec0dbfda1621829d",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_ec0dbfda1621829d^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-004c",
+      "complete_path_count": 2,
+      "paths": [
+        {
+          "path_id": "atomisation-ef398678cb35b8fc0e77",
+          "selected_elements": [
+            3,
+            2
+          ],
+          "S_word": [
+            "B_3_8c590d8434dfac73",
+            "B_3_f600fac3a5b643dc"
+          ],
+          "S_inverse_word": [
+            "B_3_f600fac3a5b643dc^-1",
+            "B_3_8c590d8434dfac73^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-f59d33b081d012089d29",
+          "selected_elements": [
+            2,
+            3
+          ],
+          "S_word": [
+            "B_3_bf813c76675b2ab6",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_bf813c76675b2ab6^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-004e",
+      "complete_path_count": 3,
+      "paths": [
+        {
+          "path_id": "atomisation-1b7bd908ea6c539085a3",
+          "selected_elements": [
+            2,
+            1,
+            3
+          ],
+          "S_word": [
+            "B_3_46c06c49c94fa54c",
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1",
+            "B_3_46c06c49c94fa54c^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-afeaf3b8d10cf6044164",
+          "selected_elements": [
+            3,
+            2,
+            1
+          ],
+          "S_word": [
+            "B_3_f8681a08b3ee5ca8",
+            "B_3_3fb6fea277cafa17",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_3fb6fea277cafa17^-1",
+            "B_3_f8681a08b3ee5ca8^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-c7d14d22a11faf7c18ce",
+          "selected_elements": [
+            2,
+            3,
+            1
+          ],
+          "S_word": [
+            "B_3_46c06c49c94fa54c",
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1",
+            "B_3_46c06c49c94fa54c^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-00cc",
+      "complete_path_count": 2,
+      "paths": [
+        {
+          "path_id": "atomisation-28fbd205d5a2ede57c55",
+          "selected_elements": [
+            3,
+            2
+          ],
+          "S_word": [
+            "B_3_8d58c867ecd4716f",
+            "B_3_f600fac3a5b643dc"
+          ],
+          "S_inverse_word": [
+            "B_3_f600fac3a5b643dc^-1",
+            "B_3_8d58c867ecd4716f^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-787b23efecb05d3ffa0b",
+          "selected_elements": [
+            2,
+            3
+          ],
+          "S_word": [
+            "B_3_8d58c867ecd4716f",
+            "B_3_f600fac3a5b643dc"
+          ],
+          "S_inverse_word": [
+            "B_3_f600fac3a5b643dc^-1",
+            "B_3_8d58c867ecd4716f^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-00ce",
+      "complete_path_count": 2,
+      "paths": [
+        {
+          "path_id": "atomisation-8b0816e91a2d377d1fc6",
+          "selected_elements": [
+            3,
+            2,
+            1
+          ],
+          "S_word": [
+            "B_3_84f08784bb1a0b0a",
+            "B_3_3fb6fea277cafa17",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_3fb6fea277cafa17^-1",
+            "B_3_84f08784bb1a0b0a^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-f7b49de8c42c35ec7dd8",
+          "selected_elements": [
+            2,
+            3,
+            1
+          ],
+          "S_word": [
+            "B_3_84f08784bb1a0b0a",
+            "B_3_3fb6fea277cafa17",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_3fb6fea277cafa17^-1",
+            "B_3_84f08784bb1a0b0a^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-0888",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-ee720cffb5e6a41450f4",
+          "selected_elements": [
+            3
+          ],
+          "S_word": [
+            "B_3_28b53b35f4893544"
+          ],
+          "S_inverse_word": [
+            "B_3_28b53b35f4893544^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-088a",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-a47dd76944fa0a13ac87",
+          "selected_elements": [
+            3,
+            1
+          ],
+          "S_word": [
+            "B_3_cd0a8b417d842853",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_cd0a8b417d842853^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-088e",
+      "complete_path_count": 2,
+      "paths": [
+        {
+          "path_id": "atomisation-018e0f2ccc073415d76d",
+          "selected_elements": [
+            3,
+            2,
+            1
+          ],
+          "S_word": [
+            "B_3_a5389a2374ed9d51",
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1",
+            "B_3_a5389a2374ed9d51^-1"
+          ]
+        },
+        {
+          "path_id": "atomisation-a289b1804d8cdee51e00",
+          "selected_elements": [
+            3,
+            1,
+            2
+          ],
+          "S_word": [
+            "B_3_a5389a2374ed9d51",
+            "B_3_a12f7f5a3d66988a",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_a12f7f5a3d66988a^-1",
+            "B_3_a5389a2374ed9d51^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-08cc",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-0b06f7510744ea538134",
+          "selected_elements": [
+            3,
+            2
+          ],
+          "S_word": [
+            "B_3_7e6fded4e223b52a",
+            "B_3_f600fac3a5b643dc"
+          ],
+          "S_inverse_word": [
+            "B_3_f600fac3a5b643dc^-1",
+            "B_3_7e6fded4e223b52a^-1"
+          ]
+        }
+      ]
+    },
+    {
+      "causet_id": "p4-08ce",
+      "complete_path_count": 1,
+      "paths": [
+        {
+          "path_id": "atomisation-347c8e2f8f739279b9dc",
+          "selected_elements": [
+            3,
+            2,
+            1
+          ],
+          "S_word": [
+            "B_3_c5d39f135eb87a66",
+            "B_3_3fb6fea277cafa17",
+            "B_3_d42aa1d6a669aa71"
+          ],
+          "S_inverse_word": [
+            "B_3_d42aa1d6a669aa71^-1",
+            "B_3_3fb6fea277cafa17^-1",
+            "B_3_c5d39f135eb87a66^-1"
+          ]
+        }
+      ]
+    }
+  ],
+  "proof_obligations": {
+    "all_eligible_choices_recursed": true,
+    "all_terminals_antichains": true,
+    "ranking_strictly_decreases": true,
+    "B_and_gregarious_targets_reconstructed": true,
+    "automorphism_equivalent_paths_quotiented": false,
+    "operator_relations_lost_by_quotient": false
+  },
+  "semantic_digest_sha256": "46611db9c4c7333907993ea700f4ca8f66f2b20cb3b13921f7e1b2d72595f729",
+  "assumptions": [
+    "input representatives are canonical unlabelled causets",
+    "vertex identities are retained throughout each full choice enumeration",
+    "no automorphism quotient is used to delete an operator path",
+    "the paper's atomisation definition is treated as a locked specification"
+  ],
+  "unresolved_components": [
+    "strong-operator status of the GC equality used in Eq. (109)",
+    "reverse reconstruction of arbitrary Q assignments"
+  ],
+  "passed": true,
+  "schema_version": "final-theory-path-completeness-v0.3.3",
+  "branch": "codex/final-theory-v0.3.3-gc-atomisation-presentation-20260728",
+  "source_commit": "b61a4db76f87db9d371ef8538b6c359c100f2595",
+  "code_commit": "47e5a97d81677eb9bd574c5792b6e1524a39992a",
+  "artifact_freeze_commit": "RESOLVE_VIA_ANNOTATED_TAG(final-theory-bench-v0.3.3-gc-atomisation-open)",
+  "paper_version": {
+    "id": "arXiv:2603.25503v1",
+    "version": "v1",
+    "date": "2026-03-26",
+    "local_file": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+    "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+  },
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
+    },
+    {
+      "path": "results/v0.3.1_d3_strata_manifest.json",
+      "sha256": "3729a701f6f909cecb6d6889d72bcb7cd5b4d03cc9822d39c56329432e9297c5"
+    },
+    {
+      "path": "results/v0.3.2_cpobc_generator_reduction.json",
+      "sha256": "e0550fe5fd654f8c377b491d5c6fc3b34981da79a9120d2a5392f8a70bbf7e51"
+    },
+    {
+      "path": "results/v0.3.2_cpobc_d2_classification.json",
+      "sha256": "8c74488496e9924fec8a817f930a50676f19021ef6f72fd8ea8b71665cf16797"
+    },
+    {
+      "path": "references/papers/gr-qc-9904062v3_rideout-sorkin_classical-sequential-growth.pdf",
+      "sha256": "6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    },
+    {
+      "path": "references/papers/gr-qc-0504066v3_varadarajan-rideout_general-classical-sequential-growth.pdf",
+      "sha256": "8a3b8ceac4f90dda2454ce749a1b7b60ceec81c97ee7d58fd970bb430d58e829"
+    }
+  ],
+  "literature_classification": [
+    {
+      "topic": "arXiv:2603.25503 current source record",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "official arXiv record remains v1 dated 2026-03-26; no journal reference, DOI, erratum, or later source version was found in the bounded search",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    },
+    {
+      "topic": "paper Eq. (31)--(33) and GC definition",
+      "classification": "SOURCE_AMBIGUITY",
+      "finding": "GC is written on A_gamma|Omega>; Eq. (33) promotes an on-state MSR premise to a global operator equality without a stated lifting assumption",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    },
+    {
+      "topic": "paper atomisation and decimation definition",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "non-gregarious maximal elements are reinserted gregariously",
+      "sources": [
+        "arXiv:2603.25503v1",
+        "arXiv:gr-qc/9904062v3"
+      ]
+    },
+    {
+      "topic": "paper CPOBC Eqs. (103)--(114)",
+      "classification": "SOURCE_AMBIGUITY",
+      "finding": "Eq. (113) prints Q_(n+1), while Eq. (112) directly yields Q_n",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    },
+    {
+      "topic": "classical discrete general covariance and path independence",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "classical same-endpoint products are path independent",
+      "sources": [
+        "arXiv:gr-qc/9904062v3"
+      ]
+    },
+    {
+      "topic": "classical solution with vanishing transitions",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "the extended classical axioms and completely general tower-of-turtles solution are available in the versioned primary source",
+      "sources": [
+        "arXiv:gr-qc/0504066v3"
+      ]
+    },
+    {
+      "topic": "operator-valued GC/path-independence follow-up",
+      "classification": "FORMULATION_MISMATCH",
+      "finding": "bounded searches found QSGP, quantum-causal-history, and on-state operator formalisms, but no source resolving this CPOBC operator-GC lifting",
+      "sources": [
+        "arXiv:1204.5767v1",
+        "arXiv:1303.0433v1",
+        "arXiv:quant-ph/9902008v3"
+      ]
+    },
+    {
+      "topic": "general CPOBC d=2 representation and atomisation compiler follow-up",
+      "classification": "OPEN_TARGET",
+      "finding": "no resolving primary source was found by exact-title, author, terminology, arXiv concept, and citation-route searches; this is search-bounded, not a global nonexistence claim",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    }
+  ],
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "completeness_scope": "v0.3.3 path-completeness finite audit",
+  "exact_numeric_distinction": {
+    "exact": "finite integer combinatorics, operator words, and canonical SHA-256 digests",
+    "numeric": "none accepted as certificate"
+  },
+  "relation_counts": {
+    "non_antichain_causets": 20,
+    "non_antichain_causets_by_stage": {
+      "1": 0,
+      "2": 1,
+      "3": 4,
+      "4": 15
+    },
+    "complete_atomisation_paths": 34,
+    "atomisation_steps": 76,
+    "distinct_B_occurrences": 22
+  },
+  "generator_counts": {},
+  "path_counts": {
+    "non_antichain_causets": 20,
+    "non_antichain_causets_by_stage": {
+      "1": 0,
+      "2": 1,
+      "3": 4,
+      "4": 15
+    },
+    "complete_atomisation_paths": 34,
+    "atomisation_steps": 76,
+    "distinct_B_occurrences": 22
+  },
+  "source_index_branch": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+  "certificate_hashes": [],
+  "verdict": "CERTIFICATE_PASS"
+}

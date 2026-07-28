@@ -1,0 +1,3059 @@
+{
+  "dependency_DAG": {
+    "nodes": [
+      {
+        "node_id": "BDEF:2585179d7faa71e1f634",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 2,
+        "transition_signature": {
+          "stage": 2,
+          "source_relation_code": 0,
+          "precursor_code": 3
+        },
+        "v032_occurrence_id": "cpobc-transition-235714cb17afd87b31f6",
+        "v032_reduced_expression_sha256": "96c9b98451f5cc07aeb361a234f957e1c40dacb3c455575221c270b4f414328a",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [],
+            "v032_word": []
+          },
+          {
+            "coefficient": 2,
+            "word_nodes": [
+              "Q_1",
+              "Q_2",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "Q_2",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_2"
+            ],
+            "v032_word": [
+              "Q_2"
+            ]
+          },
+          {
+            "coefficient": -2,
+            "word_nodes": [
+              "Q_2",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "Q_1",
+          "Q_1^-1",
+          "Q_2"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:28b53b35f489354487d7",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 0,
+          "precursor_code": 7
+        },
+        "v032_occurrence_id": "cpobc-transition-2068b03cf64c25cdb276",
+        "v032_reduced_expression_sha256": "30566b6d95dc1605b61172d9f9a318470e3887a76a4984299740372fda1c8cc6",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [],
+            "v032_word": []
+          },
+          {
+            "coefficient": -3,
+            "word_nodes": [
+              "Q_1",
+              "Q_3",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "Q_3",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": 3,
+            "word_nodes": [
+              "Q_2",
+              "Q_3",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "Q_3",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_3"
+            ],
+            "v032_word": [
+              "Q_3"
+            ]
+          },
+          {
+            "coefficient": 3,
+            "word_nodes": [
+              "Q_3",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_3",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": -3,
+            "word_nodes": [
+              "Q_3",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_3",
+              "Q_2^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "Q_1",
+          "Q_1^-1",
+          "Q_2",
+          "Q_2^-1",
+          "Q_3"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:3fb6fea277cafa17b935",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 2,
+          "precursor_code": 3
+        },
+        "v032_occurrence_id": "cpobc-transition-7864a0ec11a64c208661",
+        "v032_reduced_expression_sha256": "3e11b8f0ce43189613c5db342acd72a159e05507a6002564fefdc59e7546a0d2",
+        "terms": [
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p2-2",
+              "G:p3-002",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "G_p3-002",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p2-2",
+              "Q_1^-1",
+              "G:p3-002",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "Q_1^-1",
+              "G_p3-002",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-002",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p3-002",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "Q_1",
+              "G:p2-2",
+              "Q_1^-1",
+              "G:p3-002",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p2-2",
+              "Q_1^-1",
+              "G_p3-002",
+              "G_p2-2^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p2-2",
+          "G:p2-2:INV",
+          "G:p3-002",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:46c06c49c94fa54c1b81",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 6,
+          "precursor_code": 3
+        },
+        "v032_occurrence_id": "cpobc-transition-be34c613cf0d91d4728f",
+        "v032_reduced_expression_sha256": "39afe60361f01b50d7d4683c7a1fbef39d7bd3e626a15376f2c3c360f31faec4",
+        "terms": [
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p2-2",
+              "G:p3-006",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "G_p3-006",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p2-2",
+              "Q_1^-1",
+              "G:p3-006",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "Q_1^-1",
+              "G_p3-006",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-006",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p3-006",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "Q_1",
+              "G:p2-2",
+              "Q_1^-1",
+              "G:p3-006",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p2-2",
+              "Q_1^-1",
+              "G_p3-006",
+              "G_p2-2^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p2-2",
+          "G:p2-2:INV",
+          "G:p3-006",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:692d8de209a59f16bf3e",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 1,
+        "transition_signature": {
+          "stage": 1,
+          "source_relation_code": 0,
+          "precursor_code": 1
+        },
+        "v032_occurrence_id": "cpobc-transition-f5898ff572639d996985",
+        "v032_reduced_expression_sha256": "1df702fb2793dfa9f03f2446a34fb2f3209e06d2b4921d8fcfbe3371a993d921",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [],
+            "v032_word": []
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1"
+            ],
+            "v032_word": [
+              "Q_1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "Q_1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:7e6fded4e223b52a2d78",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 36,
+          "precursor_code": 7
+        },
+        "v032_occurrence_id": "cpobc-transition-b965bc2d44eeace88a0c",
+        "v032_reduced_expression_sha256": "1964e886d62ce681984df0cee0568e2b6777dcbd89ad781604b6e4a8f9923bc9",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [],
+            "v032_word": []
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p3-024"
+            ],
+            "v032_word": [
+              "G_p3-024"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p3-024",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "G_p3-024",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "Q_2",
+              "G:p3-024",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "G_p3-024",
+              "Q_2^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p3-024",
+          "Q_2",
+          "Q_2^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:7e94818ba9336b97ecd9",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 6,
+          "precursor_code": 1
+        },
+        "v032_occurrence_id": "cpobc-transition-69d9e4ab736858a2b6b0",
+        "v032_reduced_expression_sha256": "49796a8df4dc0c5fa528c12342d6afad88b71ac5db98abae686fb3deda0ce479",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-006",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "G_p3-006",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1",
+              "G:p3-006",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p3-006",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p3-006",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:847dbbdcf2b8502a5bfb",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 2,
+        "transition_signature": {
+          "stage": 2,
+          "source_relation_code": 0,
+          "precursor_code": 1
+        },
+        "v032_occurrence_id": "cpobc-transition-215e4445d39351ce683c",
+        "v032_reduced_expression_sha256": "b4d3694a0151d6c4ad03a25c6065a9a48dfc325dbdbe1638d479f2e76e056a43",
+        "terms": [
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1",
+              "Q_2",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "Q_2",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "Q_2",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "Q_1",
+          "Q_1^-1",
+          "Q_2"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:84f08784bb1a0b0a03f9",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 38,
+          "precursor_code": 3
+        },
+        "v032_occurrence_id": "cpobc-transition-e23d81e7af680ccc8b08",
+        "v032_reduced_expression_sha256": "2192f481a5454268555d727835b3b430b22d2b5e69f87992ee6f6429de86fb58",
+        "terms": [
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p2-2",
+              "G:p3-026",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "G_p3-026",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p2-2",
+              "Q_1^-1",
+              "G:p3-026",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "Q_1^-1",
+              "G_p3-026",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-026",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p3-026",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "Q_1",
+              "G:p2-2",
+              "Q_1^-1",
+              "G:p3-026",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p2-2",
+              "Q_1^-1",
+              "G_p3-026",
+              "G_p2-2^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p2-2",
+          "G:p2-2:INV",
+          "G:p3-026",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:85c25c2c6160291f296b",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 2,
+        "transition_signature": {
+          "stage": 2,
+          "source_relation_code": 2,
+          "precursor_code": 3
+        },
+        "v032_occurrence_id": "cpobc-transition-c1d174ed4ea92f9a2c85",
+        "v032_reduced_expression_sha256": "bc1d85fcf6defd786badab8d5896786af6f91b987a79ae71c59f9d76670ccbce",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [],
+            "v032_word": []
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p2-2"
+            ],
+            "v032_word": [
+              "G_p2-2"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p2-2",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "Q_1",
+              "G:p2-2",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p2-2",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p2-2",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:8c590d8434dfac73736e",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 36,
+          "precursor_code": 1
+        },
+        "v032_occurrence_id": "cpobc-transition-84c2204df6315d870780",
+        "v032_reduced_expression_sha256": "e713fad6f16fb9edd59d55db6baa0485f40557323316f5d9c22bebba66f49608",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-024",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "G_p3-024",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1",
+              "G:p3-024",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p3-024",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p3-024",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:8d58c867ecd4716f441e",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 36,
+          "precursor_code": 3
+        },
+        "v032_occurrence_id": "cpobc-transition-021d2237dd131678b8b1",
+        "v032_reduced_expression_sha256": "355a706406706ed662c2e11ac0d1f7a8321e7e2d109f0d517308c81e93edabb7",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-024",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "G_p3-024",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": 2,
+            "word_nodes": [
+              "Q_1",
+              "Q_2",
+              "Q_1^-1",
+              "G:p3-024",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "Q_2",
+              "Q_1^-1",
+              "G_p3-024",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_2",
+              "G:p3-024",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "G_p3-024",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": -2,
+            "word_nodes": [
+              "Q_2",
+              "Q_1^-1",
+              "G:p3-024",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "Q_1^-1",
+              "G_p3-024",
+              "Q_2^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p3-024",
+          "Q_1",
+          "Q_1^-1",
+          "Q_2",
+          "Q_2^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:a12f7f5a3d66988ae8cd",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 2,
+          "precursor_code": 1
+        },
+        "v032_occurrence_id": "cpobc-transition-fe9bd2d32ecee2e6dc27",
+        "v032_reduced_expression_sha256": "d5b7f834215484ffb969ddefb750f54420e6968eca075a18da73c7b403f4cf6b",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-002",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "G_p3-002",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1",
+              "G:p3-002",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p3-002",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p3-002",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:a5389a2374ed9d511a2a",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 6,
+          "precursor_code": 7
+        },
+        "v032_occurrence_id": "cpobc-transition-4da70d95744abb102a44",
+        "v032_reduced_expression_sha256": "7c92c5623c823b5f7288da2408b41a46e84d6b4401907141ec7c2c3702b47eb5",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [],
+            "v032_word": []
+          },
+          {
+            "coefficient": 2,
+            "word_nodes": [
+              "G:p2-2",
+              "G:p3-006",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "G_p3-006",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p3-006"
+            ],
+            "v032_word": [
+              "G_p3-006"
+            ]
+          },
+          {
+            "coefficient": -2,
+            "word_nodes": [
+              "G:p3-006",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p3-006",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-006",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "G_p3-006",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1",
+              "G:p3-006",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p3-006",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p2-2",
+          "G:p2-2:INV",
+          "G:p3-006",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:bf813c76675b2ab69ac4",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 2,
+          "precursor_code": 5
+        },
+        "v032_occurrence_id": "cpobc-transition-2c6f91ea54ac8f14f7a9",
+        "v032_reduced_expression_sha256": "18102dd0c08559ff84b6b250823631dd86133b1db31038218aa0d8d42cf8c306",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-002",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "G_p3-002",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": 2,
+            "word_nodes": [
+              "Q_1",
+              "Q_2",
+              "Q_1^-1",
+              "G:p3-002",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "Q_2",
+              "Q_1^-1",
+              "G_p3-002",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_2",
+              "G:p3-002",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "G_p3-002",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": -2,
+            "word_nodes": [
+              "Q_2",
+              "Q_1^-1",
+              "G:p3-002",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "Q_1^-1",
+              "G_p3-002",
+              "Q_2^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p3-002",
+          "Q_1",
+          "Q_1^-1",
+          "Q_2",
+          "Q_2^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:c5d39f135eb87a66ba0e",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 38,
+          "precursor_code": 7
+        },
+        "v032_occurrence_id": "cpobc-transition-dc9c34594a31e60bac4b",
+        "v032_reduced_expression_sha256": "c6dde1bbaf671eac0e7d23829ba26c56014c6042f1761cfd202997123a29fb3c",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [],
+            "v032_word": []
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p2-2",
+              "G:p3-026",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "G_p3-026",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p3-026"
+            ],
+            "v032_word": [
+              "G_p3-026"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p3-026",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p3-026",
+              "G_p2-2^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p2-2",
+          "G:p2-2:INV",
+          "G:p3-026"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:cd0a8b417d842853139f",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 2,
+          "precursor_code": 7
+        },
+        "v032_occurrence_id": "cpobc-transition-019cdd3c62d8959a94f4",
+        "v032_reduced_expression_sha256": "88f14176ea42afbca21bc2a9ee7c559d2614414364d38abf38f142cae6d7a6c0",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [],
+            "v032_word": []
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p2-2",
+              "G:p3-002",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "G_p3-002",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p3-002"
+            ],
+            "v032_word": [
+              "G_p3-002"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p3-002",
+              "G:p2-2:INV"
+            ],
+            "v032_word": [
+              "G_p3-002",
+              "G_p2-2^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-002",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "G_p3-002",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "G:p3-002",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "G_p3-002",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1",
+              "G:p3-002",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p3-002",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "Q_2",
+              "G:p3-002",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "G_p3-002",
+              "Q_2^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p2-2",
+          "G:p2-2:INV",
+          "G:p3-002",
+          "Q_1",
+          "Q_1^-1",
+          "Q_2",
+          "Q_2^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:d42aa1d6a669aa7198cf",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 0,
+          "precursor_code": 1
+        },
+        "v032_occurrence_id": "cpobc-transition-6571c27cf5f89bf244dd",
+        "v032_reduced_expression_sha256": "e6235b8a93ed89a518229b9b6e7591e243b8c378bc8791cf1ae7b1f74ae0b5ea",
+        "terms": [
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1",
+              "Q_3",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "Q_3",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "Q_3",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_3",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "Q_1",
+          "Q_1^-1",
+          "Q_3"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:de00eadcbff77bc4940e",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 2,
+        "transition_signature": {
+          "stage": 2,
+          "source_relation_code": 2,
+          "precursor_code": 1
+        },
+        "v032_occurrence_id": "cpobc-transition-ff252a39269d0ebabe63",
+        "v032_reduced_expression_sha256": "9a2b603659c3226064a4f64cb53979777243349f83f4495ac04ab6d17ed69fd7",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p2-2",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "G_p2-2",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1",
+              "G:p2-2",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p2-2",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p2-2",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:ec0dbfda1621829d5211",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 2,
+          "precursor_code": 4
+        },
+        "v032_occurrence_id": "cpobc-transition-2f5493b1bef7f6ad889f",
+        "v032_reduced_expression_sha256": "d5b7f834215484ffb969ddefb750f54420e6968eca075a18da73c7b403f4cf6b",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-002",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "G_p3-002",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1",
+              "G:p3-002",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p3-002",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p3-002",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:f600fac3a5b643dcebbb",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 0,
+          "precursor_code": 3
+        },
+        "v032_occurrence_id": "cpobc-transition-a6d9f9b9dffa34abdddb",
+        "v032_reduced_expression_sha256": "25db6f9702ea839b7a1a066745d2a9d8f5df3807abd5f0b94fd50e220d9a010d",
+        "terms": [
+          {
+            "coefficient": 2,
+            "word_nodes": [
+              "Q_1",
+              "Q_2",
+              "Q_1^-1",
+              "Q_3",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "Q_2",
+              "Q_1^-1",
+              "Q_3",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": -2,
+            "word_nodes": [
+              "Q_2",
+              "Q_1^-1",
+              "Q_3",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "Q_1^-1",
+              "Q_3",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_2",
+              "Q_3",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_2",
+              "Q_3",
+              "Q_2^-1"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "Q_3",
+              "Q_2^-1"
+            ],
+            "v032_word": [
+              "Q_3",
+              "Q_2^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "Q_1",
+          "Q_1^-1",
+          "Q_2",
+          "Q_2^-1",
+          "Q_3"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BDEF:f8681a08b3ee5ca87007",
+        "kind": "EQ107_EQ108_LINEAR_EXPRESSION",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 38,
+          "precursor_code": 1
+        },
+        "v032_occurrence_id": "cpobc-transition-0532509eecfc7b91933e",
+        "v032_reduced_expression_sha256": "cff830ba3229f79730e25c0df9297b08e34f90b67244894104aca6040495dd9f",
+        "terms": [
+          {
+            "coefficient": 1,
+            "word_nodes": [
+              "G:p3-026",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "G_p3-026",
+              "Q_1^-1"
+            ]
+          },
+          {
+            "coefficient": -1,
+            "word_nodes": [
+              "Q_1",
+              "G:p3-026",
+              "Q_1^-1"
+            ],
+            "v032_word": [
+              "Q_1",
+              "G_p3-026",
+              "Q_1^-1"
+            ]
+          }
+        ],
+        "dependencies": [
+          "G:p3-026",
+          "Q_1",
+          "Q_1^-1"
+        ],
+        "terminal_generator": false
+      },
+      {
+        "node_id": "BINV:2585179d7faa71e1f634",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 2,
+        "transition_signature": {
+          "stage": 2,
+          "source_relation_code": 0,
+          "precursor_code": 3
+        },
+        "auxiliary_generator": "U_B_2585179d7faa71e1",
+        "inverse_of_node": "BDEF:2585179d7faa71e1f634",
+        "dependencies": [
+          "BDEF:2585179d7faa71e1f634"
+        ],
+        "inverse_predicates": [
+          "U_B_2585179d7faa71e1 * BDEF:2585179d7faa71e1f634 = I",
+          "BDEF:2585179d7faa71e1f634 * U_B_2585179d7faa71e1 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:28b53b35f489354487d7",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 0,
+          "precursor_code": 7
+        },
+        "auxiliary_generator": "U_B_28b53b35f4893544",
+        "inverse_of_node": "BDEF:28b53b35f489354487d7",
+        "dependencies": [
+          "BDEF:28b53b35f489354487d7"
+        ],
+        "inverse_predicates": [
+          "U_B_28b53b35f4893544 * BDEF:28b53b35f489354487d7 = I",
+          "BDEF:28b53b35f489354487d7 * U_B_28b53b35f4893544 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:3fb6fea277cafa17b935",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 2,
+          "precursor_code": 3
+        },
+        "auxiliary_generator": "U_B_3fb6fea277cafa17",
+        "inverse_of_node": "BDEF:3fb6fea277cafa17b935",
+        "dependencies": [
+          "BDEF:3fb6fea277cafa17b935"
+        ],
+        "inverse_predicates": [
+          "U_B_3fb6fea277cafa17 * BDEF:3fb6fea277cafa17b935 = I",
+          "BDEF:3fb6fea277cafa17b935 * U_B_3fb6fea277cafa17 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:46c06c49c94fa54c1b81",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 6,
+          "precursor_code": 3
+        },
+        "auxiliary_generator": "U_B_46c06c49c94fa54c",
+        "inverse_of_node": "BDEF:46c06c49c94fa54c1b81",
+        "dependencies": [
+          "BDEF:46c06c49c94fa54c1b81"
+        ],
+        "inverse_predicates": [
+          "U_B_46c06c49c94fa54c * BDEF:46c06c49c94fa54c1b81 = I",
+          "BDEF:46c06c49c94fa54c1b81 * U_B_46c06c49c94fa54c = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:692d8de209a59f16bf3e",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 1,
+        "transition_signature": {
+          "stage": 1,
+          "source_relation_code": 0,
+          "precursor_code": 1
+        },
+        "auxiliary_generator": "U_B_692d8de209a59f16",
+        "inverse_of_node": "BDEF:692d8de209a59f16bf3e",
+        "dependencies": [
+          "BDEF:692d8de209a59f16bf3e"
+        ],
+        "inverse_predicates": [
+          "U_B_692d8de209a59f16 * BDEF:692d8de209a59f16bf3e = I",
+          "BDEF:692d8de209a59f16bf3e * U_B_692d8de209a59f16 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:7e6fded4e223b52a2d78",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 36,
+          "precursor_code": 7
+        },
+        "auxiliary_generator": "U_B_7e6fded4e223b52a",
+        "inverse_of_node": "BDEF:7e6fded4e223b52a2d78",
+        "dependencies": [
+          "BDEF:7e6fded4e223b52a2d78"
+        ],
+        "inverse_predicates": [
+          "U_B_7e6fded4e223b52a * BDEF:7e6fded4e223b52a2d78 = I",
+          "BDEF:7e6fded4e223b52a2d78 * U_B_7e6fded4e223b52a = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:7e94818ba9336b97ecd9",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 6,
+          "precursor_code": 1
+        },
+        "auxiliary_generator": "U_B_7e94818ba9336b97",
+        "inverse_of_node": "BDEF:7e94818ba9336b97ecd9",
+        "dependencies": [
+          "BDEF:7e94818ba9336b97ecd9"
+        ],
+        "inverse_predicates": [
+          "U_B_7e94818ba9336b97 * BDEF:7e94818ba9336b97ecd9 = I",
+          "BDEF:7e94818ba9336b97ecd9 * U_B_7e94818ba9336b97 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:847dbbdcf2b8502a5bfb",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 2,
+        "transition_signature": {
+          "stage": 2,
+          "source_relation_code": 0,
+          "precursor_code": 1
+        },
+        "auxiliary_generator": "U_B_847dbbdcf2b8502a",
+        "inverse_of_node": "BDEF:847dbbdcf2b8502a5bfb",
+        "dependencies": [
+          "BDEF:847dbbdcf2b8502a5bfb"
+        ],
+        "inverse_predicates": [
+          "U_B_847dbbdcf2b8502a * BDEF:847dbbdcf2b8502a5bfb = I",
+          "BDEF:847dbbdcf2b8502a5bfb * U_B_847dbbdcf2b8502a = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:84f08784bb1a0b0a03f9",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 38,
+          "precursor_code": 3
+        },
+        "auxiliary_generator": "U_B_84f08784bb1a0b0a",
+        "inverse_of_node": "BDEF:84f08784bb1a0b0a03f9",
+        "dependencies": [
+          "BDEF:84f08784bb1a0b0a03f9"
+        ],
+        "inverse_predicates": [
+          "U_B_84f08784bb1a0b0a * BDEF:84f08784bb1a0b0a03f9 = I",
+          "BDEF:84f08784bb1a0b0a03f9 * U_B_84f08784bb1a0b0a = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:85c25c2c6160291f296b",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 2,
+        "transition_signature": {
+          "stage": 2,
+          "source_relation_code": 2,
+          "precursor_code": 3
+        },
+        "auxiliary_generator": "U_B_85c25c2c6160291f",
+        "inverse_of_node": "BDEF:85c25c2c6160291f296b",
+        "dependencies": [
+          "BDEF:85c25c2c6160291f296b"
+        ],
+        "inverse_predicates": [
+          "U_B_85c25c2c6160291f * BDEF:85c25c2c6160291f296b = I",
+          "BDEF:85c25c2c6160291f296b * U_B_85c25c2c6160291f = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:8c590d8434dfac73736e",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 36,
+          "precursor_code": 1
+        },
+        "auxiliary_generator": "U_B_8c590d8434dfac73",
+        "inverse_of_node": "BDEF:8c590d8434dfac73736e",
+        "dependencies": [
+          "BDEF:8c590d8434dfac73736e"
+        ],
+        "inverse_predicates": [
+          "U_B_8c590d8434dfac73 * BDEF:8c590d8434dfac73736e = I",
+          "BDEF:8c590d8434dfac73736e * U_B_8c590d8434dfac73 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:8d58c867ecd4716f441e",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 36,
+          "precursor_code": 3
+        },
+        "auxiliary_generator": "U_B_8d58c867ecd4716f",
+        "inverse_of_node": "BDEF:8d58c867ecd4716f441e",
+        "dependencies": [
+          "BDEF:8d58c867ecd4716f441e"
+        ],
+        "inverse_predicates": [
+          "U_B_8d58c867ecd4716f * BDEF:8d58c867ecd4716f441e = I",
+          "BDEF:8d58c867ecd4716f441e * U_B_8d58c867ecd4716f = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:a12f7f5a3d66988ae8cd",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 2,
+          "precursor_code": 1
+        },
+        "auxiliary_generator": "U_B_a12f7f5a3d66988a",
+        "inverse_of_node": "BDEF:a12f7f5a3d66988ae8cd",
+        "dependencies": [
+          "BDEF:a12f7f5a3d66988ae8cd"
+        ],
+        "inverse_predicates": [
+          "U_B_a12f7f5a3d66988a * BDEF:a12f7f5a3d66988ae8cd = I",
+          "BDEF:a12f7f5a3d66988ae8cd * U_B_a12f7f5a3d66988a = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:a5389a2374ed9d511a2a",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 6,
+          "precursor_code": 7
+        },
+        "auxiliary_generator": "U_B_a5389a2374ed9d51",
+        "inverse_of_node": "BDEF:a5389a2374ed9d511a2a",
+        "dependencies": [
+          "BDEF:a5389a2374ed9d511a2a"
+        ],
+        "inverse_predicates": [
+          "U_B_a5389a2374ed9d51 * BDEF:a5389a2374ed9d511a2a = I",
+          "BDEF:a5389a2374ed9d511a2a * U_B_a5389a2374ed9d51 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:bf813c76675b2ab69ac4",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 2,
+          "precursor_code": 5
+        },
+        "auxiliary_generator": "U_B_bf813c76675b2ab6",
+        "inverse_of_node": "BDEF:bf813c76675b2ab69ac4",
+        "dependencies": [
+          "BDEF:bf813c76675b2ab69ac4"
+        ],
+        "inverse_predicates": [
+          "U_B_bf813c76675b2ab6 * BDEF:bf813c76675b2ab69ac4 = I",
+          "BDEF:bf813c76675b2ab69ac4 * U_B_bf813c76675b2ab6 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:c5d39f135eb87a66ba0e",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 38,
+          "precursor_code": 7
+        },
+        "auxiliary_generator": "U_B_c5d39f135eb87a66",
+        "inverse_of_node": "BDEF:c5d39f135eb87a66ba0e",
+        "dependencies": [
+          "BDEF:c5d39f135eb87a66ba0e"
+        ],
+        "inverse_predicates": [
+          "U_B_c5d39f135eb87a66 * BDEF:c5d39f135eb87a66ba0e = I",
+          "BDEF:c5d39f135eb87a66ba0e * U_B_c5d39f135eb87a66 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:cd0a8b417d842853139f",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 2,
+          "precursor_code": 7
+        },
+        "auxiliary_generator": "U_B_cd0a8b417d842853",
+        "inverse_of_node": "BDEF:cd0a8b417d842853139f",
+        "dependencies": [
+          "BDEF:cd0a8b417d842853139f"
+        ],
+        "inverse_predicates": [
+          "U_B_cd0a8b417d842853 * BDEF:cd0a8b417d842853139f = I",
+          "BDEF:cd0a8b417d842853139f * U_B_cd0a8b417d842853 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:d42aa1d6a669aa7198cf",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 0,
+          "precursor_code": 1
+        },
+        "auxiliary_generator": "U_B_d42aa1d6a669aa71",
+        "inverse_of_node": "BDEF:d42aa1d6a669aa7198cf",
+        "dependencies": [
+          "BDEF:d42aa1d6a669aa7198cf"
+        ],
+        "inverse_predicates": [
+          "U_B_d42aa1d6a669aa71 * BDEF:d42aa1d6a669aa7198cf = I",
+          "BDEF:d42aa1d6a669aa7198cf * U_B_d42aa1d6a669aa71 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:de00eadcbff77bc4940e",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 2,
+        "transition_signature": {
+          "stage": 2,
+          "source_relation_code": 2,
+          "precursor_code": 1
+        },
+        "auxiliary_generator": "U_B_de00eadcbff77bc4",
+        "inverse_of_node": "BDEF:de00eadcbff77bc4940e",
+        "dependencies": [
+          "BDEF:de00eadcbff77bc4940e"
+        ],
+        "inverse_predicates": [
+          "U_B_de00eadcbff77bc4 * BDEF:de00eadcbff77bc4940e = I",
+          "BDEF:de00eadcbff77bc4940e * U_B_de00eadcbff77bc4 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:ec0dbfda1621829d5211",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 2,
+          "precursor_code": 4
+        },
+        "auxiliary_generator": "U_B_ec0dbfda1621829d",
+        "inverse_of_node": "BDEF:ec0dbfda1621829d5211",
+        "dependencies": [
+          "BDEF:ec0dbfda1621829d5211"
+        ],
+        "inverse_predicates": [
+          "U_B_ec0dbfda1621829d * BDEF:ec0dbfda1621829d5211 = I",
+          "BDEF:ec0dbfda1621829d5211 * U_B_ec0dbfda1621829d = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:f600fac3a5b643dcebbb",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 0,
+          "precursor_code": 3
+        },
+        "auxiliary_generator": "U_B_f600fac3a5b643dc",
+        "inverse_of_node": "BDEF:f600fac3a5b643dcebbb",
+        "dependencies": [
+          "BDEF:f600fac3a5b643dcebbb"
+        ],
+        "inverse_predicates": [
+          "U_B_f600fac3a5b643dc * BDEF:f600fac3a5b643dcebbb = I",
+          "BDEF:f600fac3a5b643dcebbb * U_B_f600fac3a5b643dc = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "BINV:f8681a08b3ee5ca87007",
+        "kind": "FORMAL_TWO_SIDED_INVERSE_AUXILIARY",
+        "stage": 3,
+        "transition_signature": {
+          "stage": 3,
+          "source_relation_code": 38,
+          "precursor_code": 1
+        },
+        "auxiliary_generator": "U_B_f8681a08b3ee5ca8",
+        "inverse_of_node": "BDEF:f8681a08b3ee5ca87007",
+        "dependencies": [
+          "BDEF:f8681a08b3ee5ca87007"
+        ],
+        "inverse_predicates": [
+          "U_B_f8681a08b3ee5ca8 * BDEF:f8681a08b3ee5ca87007 = I",
+          "BDEF:f8681a08b3ee5ca87007 * U_B_f8681a08b3ee5ca8 = I"
+        ],
+        "reason": "Eq. (107)/(108) gives a noncommutative linear combination; its inverse is not a Laurent word without an auxiliary",
+        "terminal_generator": true
+      },
+      {
+        "node_id": "G:p2-2",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 2,
+        "causet_id": "p2-2",
+        "canonical_atomisation_path_id": "atomisation-08b55cb0e27a0ad71d35",
+        "ordered_word": [
+          "BDEF:692d8de209a59f16bf3e",
+          "Q_2",
+          "BINV:692d8de209a59f16bf3e"
+        ],
+        "dependencies": [
+          "BDEF:692d8de209a59f16bf3e",
+          "Q_2",
+          "BINV:692d8de209a59f16bf3e"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p2-2:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 2,
+        "causet_id": "p2-2",
+        "canonical_atomisation_path_id": "atomisation-08b55cb0e27a0ad71d35",
+        "ordered_word": [
+          "BDEF:692d8de209a59f16bf3e",
+          "Q_2^-1",
+          "BINV:692d8de209a59f16bf3e"
+        ],
+        "dependencies": [
+          "BDEF:692d8de209a59f16bf3e",
+          "Q_2^-1",
+          "BINV:692d8de209a59f16bf3e"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p3-002",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 3,
+        "causet_id": "p3-002",
+        "canonical_atomisation_path_id": "atomisation-16b8d139c19559efe9c4",
+        "ordered_word": [
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3",
+          "BINV:847dbbdcf2b8502a5bfb"
+        ],
+        "dependencies": [
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3",
+          "BINV:847dbbdcf2b8502a5bfb"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p3-002:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 3,
+        "causet_id": "p3-002",
+        "canonical_atomisation_path_id": "atomisation-16b8d139c19559efe9c4",
+        "ordered_word": [
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3^-1",
+          "BINV:847dbbdcf2b8502a5bfb"
+        ],
+        "dependencies": [
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3^-1",
+          "BINV:847dbbdcf2b8502a5bfb"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p3-006",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 3,
+        "causet_id": "p3-006",
+        "canonical_atomisation_path_id": "atomisation-174e6268e71f15a6f207",
+        "ordered_word": [
+          "BDEF:de00eadcbff77bc4940e",
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3",
+          "BINV:847dbbdcf2b8502a5bfb",
+          "BINV:de00eadcbff77bc4940e"
+        ],
+        "dependencies": [
+          "BDEF:de00eadcbff77bc4940e",
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3",
+          "BINV:847dbbdcf2b8502a5bfb",
+          "BINV:de00eadcbff77bc4940e"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p3-006:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 3,
+        "causet_id": "p3-006",
+        "canonical_atomisation_path_id": "atomisation-174e6268e71f15a6f207",
+        "ordered_word": [
+          "BDEF:de00eadcbff77bc4940e",
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3^-1",
+          "BINV:847dbbdcf2b8502a5bfb",
+          "BINV:de00eadcbff77bc4940e"
+        ],
+        "dependencies": [
+          "BDEF:de00eadcbff77bc4940e",
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3^-1",
+          "BINV:847dbbdcf2b8502a5bfb",
+          "BINV:de00eadcbff77bc4940e"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p3-024",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 3,
+        "causet_id": "p3-024",
+        "canonical_atomisation_path_id": "atomisation-569b32bfa2a2cd663567",
+        "ordered_word": [
+          "BDEF:2585179d7faa71e1f634",
+          "Q_3",
+          "BINV:2585179d7faa71e1f634"
+        ],
+        "dependencies": [
+          "BDEF:2585179d7faa71e1f634",
+          "Q_3",
+          "BINV:2585179d7faa71e1f634"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p3-024:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 3,
+        "causet_id": "p3-024",
+        "canonical_atomisation_path_id": "atomisation-569b32bfa2a2cd663567",
+        "ordered_word": [
+          "BDEF:2585179d7faa71e1f634",
+          "Q_3^-1",
+          "BINV:2585179d7faa71e1f634"
+        ],
+        "dependencies": [
+          "BDEF:2585179d7faa71e1f634",
+          "Q_3^-1",
+          "BINV:2585179d7faa71e1f634"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p3-026",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 3,
+        "causet_id": "p3-026",
+        "canonical_atomisation_path_id": "atomisation-7a698e0d5a278b9589c9",
+        "ordered_word": [
+          "BDEF:85c25c2c6160291f296b",
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3",
+          "BINV:847dbbdcf2b8502a5bfb",
+          "BINV:85c25c2c6160291f296b"
+        ],
+        "dependencies": [
+          "BDEF:85c25c2c6160291f296b",
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3",
+          "BINV:847dbbdcf2b8502a5bfb",
+          "BINV:85c25c2c6160291f296b"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p3-026:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 3,
+        "causet_id": "p3-026",
+        "canonical_atomisation_path_id": "atomisation-7a698e0d5a278b9589c9",
+        "ordered_word": [
+          "BDEF:85c25c2c6160291f296b",
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3^-1",
+          "BINV:847dbbdcf2b8502a5bfb",
+          "BINV:85c25c2c6160291f296b"
+        ],
+        "dependencies": [
+          "BDEF:85c25c2c6160291f296b",
+          "BDEF:847dbbdcf2b8502a5bfb",
+          "Q_3^-1",
+          "BINV:847dbbdcf2b8502a5bfb",
+          "BINV:85c25c2c6160291f296b"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0002",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-0002",
+        "canonical_atomisation_path_id": "atomisation-8baed4284cc6eb2d134b",
+        "ordered_word": [
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf"
+        ],
+        "dependencies": [
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0002:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-0002",
+        "canonical_atomisation_path_id": "atomisation-8baed4284cc6eb2d134b",
+        "ordered_word": [
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf"
+        ],
+        "dependencies": [
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0006",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-0006",
+        "canonical_atomisation_path_id": "atomisation-859870768a68676b8955",
+        "ordered_word": [
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd"
+        ],
+        "dependencies": [
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0006:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-0006",
+        "canonical_atomisation_path_id": "atomisation-859870768a68676b8955",
+        "ordered_word": [
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd"
+        ],
+        "dependencies": [
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-000e",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-000e",
+        "canonical_atomisation_path_id": "atomisation-438b5da888f9dcfe146f",
+        "ordered_word": [
+          "BDEF:7e94818ba9336b97ecd9",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:7e94818ba9336b97ecd9"
+        ],
+        "dependencies": [
+          "BDEF:7e94818ba9336b97ecd9",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:7e94818ba9336b97ecd9"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-000e:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-000e",
+        "canonical_atomisation_path_id": "atomisation-438b5da888f9dcfe146f",
+        "ordered_word": [
+          "BDEF:7e94818ba9336b97ecd9",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:7e94818ba9336b97ecd9"
+        ],
+        "dependencies": [
+          "BDEF:7e94818ba9336b97ecd9",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:7e94818ba9336b97ecd9"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0044",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-0044",
+        "canonical_atomisation_path_id": "atomisation-ac3603a4adc1bac42053",
+        "ordered_word": [
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4",
+          "BINV:f600fac3a5b643dcebbb"
+        ],
+        "dependencies": [
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4",
+          "BINV:f600fac3a5b643dcebbb"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0044:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-0044",
+        "canonical_atomisation_path_id": "atomisation-ac3603a4adc1bac42053",
+        "ordered_word": [
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4^-1",
+          "BINV:f600fac3a5b643dcebbb"
+        ],
+        "dependencies": [
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4^-1",
+          "BINV:f600fac3a5b643dcebbb"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0046",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-0046",
+        "canonical_atomisation_path_id": "atomisation-1fdc2dd2c0467b90d645",
+        "ordered_word": [
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935"
+        ],
+        "dependencies": [
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0046:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-0046",
+        "canonical_atomisation_path_id": "atomisation-1fdc2dd2c0467b90d645",
+        "ordered_word": [
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935"
+        ],
+        "dependencies": [
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0048",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-0048",
+        "canonical_atomisation_path_id": "atomisation-684debf66062f5eae5a2",
+        "ordered_word": [
+          "BDEF:ec0dbfda1621829d5211",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:ec0dbfda1621829d5211"
+        ],
+        "dependencies": [
+          "BDEF:ec0dbfda1621829d5211",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:ec0dbfda1621829d5211"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0048:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-0048",
+        "canonical_atomisation_path_id": "atomisation-684debf66062f5eae5a2",
+        "ordered_word": [
+          "BDEF:ec0dbfda1621829d5211",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:ec0dbfda1621829d5211"
+        ],
+        "dependencies": [
+          "BDEF:ec0dbfda1621829d5211",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:ec0dbfda1621829d5211"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-004c",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-004c",
+        "canonical_atomisation_path_id": "atomisation-ef398678cb35b8fc0e77",
+        "ordered_word": [
+          "BDEF:8c590d8434dfac73736e",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:8c590d8434dfac73736e"
+        ],
+        "dependencies": [
+          "BDEF:8c590d8434dfac73736e",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:8c590d8434dfac73736e"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-004c:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-004c",
+        "canonical_atomisation_path_id": "atomisation-ef398678cb35b8fc0e77",
+        "ordered_word": [
+          "BDEF:8c590d8434dfac73736e",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4^-1",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:8c590d8434dfac73736e"
+        ],
+        "dependencies": [
+          "BDEF:8c590d8434dfac73736e",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4^-1",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:8c590d8434dfac73736e"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-004e",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-004e",
+        "canonical_atomisation_path_id": "atomisation-1b7bd908ea6c539085a3",
+        "ordered_word": [
+          "BDEF:46c06c49c94fa54c1b81",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:46c06c49c94fa54c1b81"
+        ],
+        "dependencies": [
+          "BDEF:46c06c49c94fa54c1b81",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:46c06c49c94fa54c1b81"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-004e:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-004e",
+        "canonical_atomisation_path_id": "atomisation-1b7bd908ea6c539085a3",
+        "ordered_word": [
+          "BDEF:46c06c49c94fa54c1b81",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:46c06c49c94fa54c1b81"
+        ],
+        "dependencies": [
+          "BDEF:46c06c49c94fa54c1b81",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:46c06c49c94fa54c1b81"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-00cc",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-00cc",
+        "canonical_atomisation_path_id": "atomisation-28fbd205d5a2ede57c55",
+        "ordered_word": [
+          "BDEF:8d58c867ecd4716f441e",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:8d58c867ecd4716f441e"
+        ],
+        "dependencies": [
+          "BDEF:8d58c867ecd4716f441e",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:8d58c867ecd4716f441e"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-00cc:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-00cc",
+        "canonical_atomisation_path_id": "atomisation-28fbd205d5a2ede57c55",
+        "ordered_word": [
+          "BDEF:8d58c867ecd4716f441e",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4^-1",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:8d58c867ecd4716f441e"
+        ],
+        "dependencies": [
+          "BDEF:8d58c867ecd4716f441e",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4^-1",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:8d58c867ecd4716f441e"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-00ce",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-00ce",
+        "canonical_atomisation_path_id": "atomisation-8b0816e91a2d377d1fc6",
+        "ordered_word": [
+          "BDEF:84f08784bb1a0b0a03f9",
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935",
+          "BINV:84f08784bb1a0b0a03f9"
+        ],
+        "dependencies": [
+          "BDEF:84f08784bb1a0b0a03f9",
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935",
+          "BINV:84f08784bb1a0b0a03f9"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-00ce:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-00ce",
+        "canonical_atomisation_path_id": "atomisation-8b0816e91a2d377d1fc6",
+        "ordered_word": [
+          "BDEF:84f08784bb1a0b0a03f9",
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935",
+          "BINV:84f08784bb1a0b0a03f9"
+        ],
+        "dependencies": [
+          "BDEF:84f08784bb1a0b0a03f9",
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935",
+          "BINV:84f08784bb1a0b0a03f9"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0888",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-0888",
+        "canonical_atomisation_path_id": "atomisation-ee720cffb5e6a41450f4",
+        "ordered_word": [
+          "BDEF:28b53b35f489354487d7",
+          "Q_4",
+          "BINV:28b53b35f489354487d7"
+        ],
+        "dependencies": [
+          "BDEF:28b53b35f489354487d7",
+          "Q_4",
+          "BINV:28b53b35f489354487d7"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-0888:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-0888",
+        "canonical_atomisation_path_id": "atomisation-ee720cffb5e6a41450f4",
+        "ordered_word": [
+          "BDEF:28b53b35f489354487d7",
+          "Q_4^-1",
+          "BINV:28b53b35f489354487d7"
+        ],
+        "dependencies": [
+          "BDEF:28b53b35f489354487d7",
+          "Q_4^-1",
+          "BINV:28b53b35f489354487d7"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-088a",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-088a",
+        "canonical_atomisation_path_id": "atomisation-a47dd76944fa0a13ac87",
+        "ordered_word": [
+          "BDEF:cd0a8b417d842853139f",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:cd0a8b417d842853139f"
+        ],
+        "dependencies": [
+          "BDEF:cd0a8b417d842853139f",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:cd0a8b417d842853139f"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-088a:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-088a",
+        "canonical_atomisation_path_id": "atomisation-a47dd76944fa0a13ac87",
+        "ordered_word": [
+          "BDEF:cd0a8b417d842853139f",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:cd0a8b417d842853139f"
+        ],
+        "dependencies": [
+          "BDEF:cd0a8b417d842853139f",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:cd0a8b417d842853139f"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-088e",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-088e",
+        "canonical_atomisation_path_id": "atomisation-018e0f2ccc073415d76d",
+        "ordered_word": [
+          "BDEF:a5389a2374ed9d511a2a",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:a5389a2374ed9d511a2a"
+        ],
+        "dependencies": [
+          "BDEF:a5389a2374ed9d511a2a",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:a5389a2374ed9d511a2a"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-088e:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-088e",
+        "canonical_atomisation_path_id": "atomisation-018e0f2ccc073415d76d",
+        "ordered_word": [
+          "BDEF:a5389a2374ed9d511a2a",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:a5389a2374ed9d511a2a"
+        ],
+        "dependencies": [
+          "BDEF:a5389a2374ed9d511a2a",
+          "BDEF:a12f7f5a3d66988ae8cd",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:a12f7f5a3d66988ae8cd",
+          "BINV:a5389a2374ed9d511a2a"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-08cc",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-08cc",
+        "canonical_atomisation_path_id": "atomisation-0b06f7510744ea538134",
+        "ordered_word": [
+          "BDEF:7e6fded4e223b52a2d78",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:7e6fded4e223b52a2d78"
+        ],
+        "dependencies": [
+          "BDEF:7e6fded4e223b52a2d78",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:7e6fded4e223b52a2d78"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-08cc:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-08cc",
+        "canonical_atomisation_path_id": "atomisation-0b06f7510744ea538134",
+        "ordered_word": [
+          "BDEF:7e6fded4e223b52a2d78",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4^-1",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:7e6fded4e223b52a2d78"
+        ],
+        "dependencies": [
+          "BDEF:7e6fded4e223b52a2d78",
+          "BDEF:f600fac3a5b643dcebbb",
+          "Q_4^-1",
+          "BINV:f600fac3a5b643dcebbb",
+          "BINV:7e6fded4e223b52a2d78"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-08ce",
+        "kind": "EQ112_CONJUGATE",
+        "stage": 4,
+        "causet_id": "p4-08ce",
+        "canonical_atomisation_path_id": "atomisation-347c8e2f8f739279b9dc",
+        "ordered_word": [
+          "BDEF:c5d39f135eb87a66ba0e",
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935",
+          "BINV:c5d39f135eb87a66ba0e"
+        ],
+        "dependencies": [
+          "BDEF:c5d39f135eb87a66ba0e",
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935",
+          "BINV:c5d39f135eb87a66ba0e"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "G:p4-08ce:INV",
+        "kind": "EQ112_CONJUGATE_INVERSE",
+        "stage": 4,
+        "causet_id": "p4-08ce",
+        "canonical_atomisation_path_id": "atomisation-347c8e2f8f739279b9dc",
+        "ordered_word": [
+          "BDEF:c5d39f135eb87a66ba0e",
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935",
+          "BINV:c5d39f135eb87a66ba0e"
+        ],
+        "dependencies": [
+          "BDEF:c5d39f135eb87a66ba0e",
+          "BDEF:3fb6fea277cafa17b935",
+          "BDEF:d42aa1d6a669aa7198cf",
+          "Q_4^-1",
+          "BINV:d42aa1d6a669aa7198cf",
+          "BINV:3fb6fea277cafa17b935",
+          "BINV:c5d39f135eb87a66ba0e"
+        ],
+        "derivation": "paper Eq. (112) under PAPER_STRONG_OPERATOR_PROFILE",
+        "terminal_generator": false
+      },
+      {
+        "node_id": "Q_1",
+        "kind": "Q_GENERATOR",
+        "stage": 1,
+        "dependencies": [],
+        "terminal_generator": true
+      },
+      {
+        "node_id": "Q_1^-1",
+        "kind": "Q_GENERATOR_INVERSE",
+        "stage": 1,
+        "dependencies": [],
+        "terminal_generator": true
+      },
+      {
+        "node_id": "Q_2",
+        "kind": "Q_GENERATOR",
+        "stage": 2,
+        "dependencies": [],
+        "terminal_generator": true
+      },
+      {
+        "node_id": "Q_2^-1",
+        "kind": "Q_GENERATOR_INVERSE",
+        "stage": 2,
+        "dependencies": [],
+        "terminal_generator": true
+      },
+      {
+        "node_id": "Q_3",
+        "kind": "Q_GENERATOR",
+        "stage": 3,
+        "dependencies": [],
+        "terminal_generator": true
+      },
+      {
+        "node_id": "Q_3^-1",
+        "kind": "Q_GENERATOR_INVERSE",
+        "stage": 3,
+        "dependencies": [],
+        "terminal_generator": true
+      },
+      {
+        "node_id": "Q_4",
+        "kind": "Q_GENERATOR",
+        "stage": 4,
+        "dependencies": [],
+        "terminal_generator": true
+      },
+      {
+        "node_id": "Q_4^-1",
+        "kind": "Q_GENERATOR_INVERSE",
+        "stage": 4,
+        "dependencies": [],
+        "terminal_generator": true
+      }
+    ],
+    "root_nodes": [
+      "G:p2-2",
+      "G:p3-002",
+      "G:p3-006",
+      "G:p3-024",
+      "G:p3-026",
+      "G:p4-0002",
+      "G:p4-0006",
+      "G:p4-000e",
+      "G:p4-0044",
+      "G:p4-0046",
+      "G:p4-0048",
+      "G:p4-004c",
+      "G:p4-004e",
+      "G:p4-00cc",
+      "G:p4-00ce",
+      "G:p4-0888",
+      "G:p4-088a",
+      "G:p4-088e",
+      "G:p4-08cc",
+      "G:p4-08ce"
+    ],
+    "inverse_root_nodes": [
+      "G:p2-2:INV",
+      "G:p3-002:INV",
+      "G:p3-006:INV",
+      "G:p3-024:INV",
+      "G:p3-026:INV",
+      "G:p4-0002:INV",
+      "G:p4-0006:INV",
+      "G:p4-000e:INV",
+      "G:p4-0044:INV",
+      "G:p4-0046:INV",
+      "G:p4-0048:INV",
+      "G:p4-004c:INV",
+      "G:p4-004e:INV",
+      "G:p4-00cc:INV",
+      "G:p4-00ce:INV",
+      "G:p4-0888:INV",
+      "G:p4-088a:INV",
+      "G:p4-088e:INV",
+      "G:p4-08cc:INV",
+      "G:p4-08ce:INV"
+    ],
+    "node_kind_counts": {
+      "EQ107_EQ108_LINEAR_EXPRESSION": 22,
+      "EQ112_CONJUGATE": 20,
+      "EQ112_CONJUGATE_INVERSE": 20,
+      "FORMAL_TWO_SIDED_INVERSE_AUXILIARY": 22,
+      "Q_GENERATOR": 4,
+      "Q_GENERATOR_INVERSE": 4
+    },
+    "cycles": [],
+    "cycle_free": true,
+    "construction_time_cycle_observations": []
+  },
+  "counts": {
+    "non_antichain_G_generators": 20,
+    "atomisation_paths": 34,
+    "atomisation_square_instances": 76,
+    "distinct_B_forward_definitions": 22,
+    "formal_B_inverse_auxiliaries": 22,
+    "Q_terminal_nodes_including_inverses": 8,
+    "dependency_nodes": 92,
+    "path_consistency_relations_per_branch": {
+      "EQ113_QN_BRANCH": 25,
+      "EQ113_QN_PLUS_1_BRANCH": 25
+    },
+    "literal_Qn_plus_1_relations_requiring_Q5": 24
+  },
+  "equivalence_obligations": {
+    "forward": {
+      "status": "PROVED_WITHIN_PAPER_STRONG_OPERATOR_PROFILE_N4",
+      "passed": true,
+      "dependencies": [
+        "LOCAL_OPERATOR_GC_COMPILER_COMPLETE_N4",
+        "ATOMISATION_PATH_COMPILER_COMPLETE_N4",
+        "paper Eqs. (107), (108), (111), and (112)"
+      ]
+    },
+    "reverse": {
+      "status": "UNPROVED",
+      "passed": false,
+      "missing": [
+        "arbitrary Q and inverse-auxiliary assignments need not satisfy all 700 Bell residuals",
+        "all 21 nontrivial strong-MSR residuals are not reconstructed",
+        "invertibility of every reconstructed transition is not derived",
+        "Eq. (113) source index remains unresolved",
+        "strong GC is an additional profile axiom rather than a stated-paper derivation"
+      ]
+    },
+    "presentation_status": "ONE_WAY_NECESSARY_REDUCTION"
+  },
+  "source_index_audit": {
+    "verdict": "SOURCE_INDEXING_DISCREPANCY_CANDIDATE",
+    "expected_verdict": "SOURCE_INDEXING_DISCREPANCY_CANDIDATE",
+    "branches_kept_separate": true
+  },
+  "semantic_digest_sha256": "1b253368f1198ab289e0cd42fb6c928e2b11b17068c3a3cce779f571302aa47f",
+  "assumptions": [
+    "PAPER_STRONG_OPERATOR_PROFILE is selected explicitly",
+    "all transition operators used in inverses are nonsingular",
+    "operator order follows the printed Eq. (112)",
+    "each B inverse has both left and right inverse predicates",
+    "the two Eq. (113) index branches are never mixed"
+  ],
+  "unresolved_components": [
+    "reverse presentation equivalence",
+    "elimination of formal B inverse auxiliaries",
+    "authorial resolution of the Eq. (113) Q_n versus Q_(n+1) index",
+    "literal branch introduces Q_5 for 24 stage-4 path relations"
+  ],
+  "passed": true,
+  "schema_version": "final-theory-dependency-dag-v0.3.3",
+  "branch": "codex/final-theory-v0.3.3-gc-atomisation-presentation-20260728",
+  "source_commit": "b61a4db76f87db9d371ef8538b6c359c100f2595",
+  "code_commit": "47e5a97d81677eb9bd574c5792b6e1524a39992a",
+  "artifact_freeze_commit": "RESOLVE_VIA_ANNOTATED_TAG(final-theory-bench-v0.3.3-gc-atomisation-open)",
+  "paper_version": {
+    "id": "arXiv:2603.25503v1",
+    "version": "v1",
+    "date": "2026-03-26",
+    "local_file": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+    "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+  },
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
+    },
+    {
+      "path": "results/v0.3.1_d3_strata_manifest.json",
+      "sha256": "3729a701f6f909cecb6d6889d72bcb7cd5b4d03cc9822d39c56329432e9297c5"
+    },
+    {
+      "path": "results/v0.3.2_cpobc_generator_reduction.json",
+      "sha256": "e0550fe5fd654f8c377b491d5c6fc3b34981da79a9120d2a5392f8a70bbf7e51"
+    },
+    {
+      "path": "results/v0.3.2_cpobc_d2_classification.json",
+      "sha256": "8c74488496e9924fec8a817f930a50676f19021ef6f72fd8ea8b71665cf16797"
+    },
+    {
+      "path": "references/papers/gr-qc-9904062v3_rideout-sorkin_classical-sequential-growth.pdf",
+      "sha256": "6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    },
+    {
+      "path": "references/papers/gr-qc-0504066v3_varadarajan-rideout_general-classical-sequential-growth.pdf",
+      "sha256": "8a3b8ceac4f90dda2454ce749a1b7b60ceec81c97ee7d58fd970bb430d58e829"
+    }
+  ],
+  "literature_classification": [
+    {
+      "topic": "arXiv:2603.25503 current source record",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "official arXiv record remains v1 dated 2026-03-26; no journal reference, DOI, erratum, or later source version was found in the bounded search",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    },
+    {
+      "topic": "paper Eq. (31)--(33) and GC definition",
+      "classification": "SOURCE_AMBIGUITY",
+      "finding": "GC is written on A_gamma|Omega>; Eq. (33) promotes an on-state MSR premise to a global operator equality without a stated lifting assumption",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    },
+    {
+      "topic": "paper atomisation and decimation definition",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "non-gregarious maximal elements are reinserted gregariously",
+      "sources": [
+        "arXiv:2603.25503v1",
+        "arXiv:gr-qc/9904062v3"
+      ]
+    },
+    {
+      "topic": "paper CPOBC Eqs. (103)--(114)",
+      "classification": "SOURCE_AMBIGUITY",
+      "finding": "Eq. (113) prints Q_(n+1), while Eq. (112) directly yields Q_n",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    },
+    {
+      "topic": "classical discrete general covariance and path independence",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "classical same-endpoint products are path independent",
+      "sources": [
+        "arXiv:gr-qc/9904062v3"
+      ]
+    },
+    {
+      "topic": "classical solution with vanishing transitions",
+      "classification": "LITERATURE_LOCKED",
+      "finding": "the extended classical axioms and completely general tower-of-turtles solution are available in the versioned primary source",
+      "sources": [
+        "arXiv:gr-qc/0504066v3"
+      ]
+    },
+    {
+      "topic": "operator-valued GC/path-independence follow-up",
+      "classification": "FORMULATION_MISMATCH",
+      "finding": "bounded searches found QSGP, quantum-causal-history, and on-state operator formalisms, but no source resolving this CPOBC operator-GC lifting",
+      "sources": [
+        "arXiv:1204.5767v1",
+        "arXiv:1303.0433v1",
+        "arXiv:quant-ph/9902008v3"
+      ]
+    },
+    {
+      "topic": "general CPOBC d=2 representation and atomisation compiler follow-up",
+      "classification": "OPEN_TARGET",
+      "finding": "no resolving primary source was found by exact-title, author, terminology, arXiv concept, and citation-route searches; this is search-bounded, not a global nonexistence claim",
+      "sources": [
+        "arXiv:2603.25503v1"
+      ]
+    }
+  ],
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "completeness_scope": "v0.3.3 dependency-dag finite audit",
+  "exact_numeric_distinction": {
+    "exact": "finite integer combinatorics, operator words, and canonical SHA-256 digests",
+    "numeric": "none accepted as certificate"
+  },
+  "relation_counts": {
+    "non_antichain_G_generators": 20,
+    "atomisation_paths": 34,
+    "atomisation_square_instances": 76,
+    "distinct_B_forward_definitions": 22,
+    "formal_B_inverse_auxiliaries": 22,
+    "Q_terminal_nodes_including_inverses": 8,
+    "dependency_nodes": 92,
+    "path_consistency_relations_per_branch": {
+      "EQ113_QN_BRANCH": 25,
+      "EQ113_QN_PLUS_1_BRANCH": 25
+    },
+    "literal_Qn_plus_1_relations_requiring_Q5": 24
+  },
+  "generator_counts": {},
+  "path_counts": {
+    "non_antichain_G_generators": 20,
+    "atomisation_paths": 34,
+    "atomisation_square_instances": 76,
+    "distinct_B_forward_definitions": 22,
+    "formal_B_inverse_auxiliaries": 22,
+    "Q_terminal_nodes_including_inverses": 8,
+    "dependency_nodes": 92,
+    "path_consistency_relations_per_branch": {
+      "EQ113_QN_BRANCH": 25,
+      "EQ113_QN_PLUS_1_BRANCH": 25
+    },
+    "literal_Qn_plus_1_relations_requiring_Q5": 24
+  },
+  "source_index_branch": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+  "certificate_hashes": [],
+  "verdict": "CERTIFICATE_PASS"
+}
