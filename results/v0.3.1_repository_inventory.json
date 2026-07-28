@@ -1,26 +1,126 @@
 {
-  "checks": {
-    "CPOBC_product_order_reversal": true,
-    "precursor_comparison_reversal": true,
-    "equal_size_auxiliary_deletion": true,
-    "incorrect_inverse_cancellation": true,
-    "invertibility_constraint_deletion": true,
-    "GC_dependency_deletion": true,
-    "MSR_dependency_deletion": true,
-    "automorphism_multiplicity_deletion": true,
-    "labelled_unlabelled_confusion": true,
-    "commutative_word_normalisation": true,
-    "similarity_equivalent_solution_duplicate": true,
-    "finite_grid_no_go_overclaim": true,
-    "numerical_zero_as_exact": true,
-    "singular_as_nonsingular": true,
-    "omit_eq145_false_survivor": true,
-    "paper_result_reported_as_new": true
-  },
-  "detected_count": 16,
-  "critical_mutation_count": 16,
-  "passed": true,
-  "schema_version": "final-theory-v0.3.1_compiler_mutations-v0.3.1",
+  "schema_version": "final-theory-repository-inventory-v0.3.1",
+  "baseline": "3ccbc66cc2cf868bf2a33ab96d4dd46e729d5f09",
+  "files_and_directories_inspected": [
+    "src/universe_lab/final_theory/causal_sets.py",
+    "src/universe_lab/final_theory/cpobc_v03.py",
+    "src/universe_lab/final_theory/geometry_v03.py",
+    "src/universe_lab/final_theory/kraus_bell_v03.py",
+    "src/universe_lab/final_theory/extension_v03.py",
+    "tests/final_theory",
+    "Final-Theory-Program/reports/v0.3_cpobc_relation_compiler.md",
+    "results/final_theory_bench_v0.3.json",
+    "results/reproduction_manifest_final_v0.3.json"
+  ],
+  "all_inspected_paths_exist": true,
+  "capabilities": [
+    {
+      "capability": "causet generation",
+      "implementation": "src/universe_lab/final_theory/causal_sets.py",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "all unlabeled finite posets through n<=5"
+    },
+    {
+      "capability": "labelled / unlabelled canonicalisation",
+      "implementation": "src/universe_lab/final_theory/causal_sets.py",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "exact permutation canonicalisation and quotient metadata"
+    },
+    {
+      "capability": "automorphism handling",
+      "implementation": "src/universe_lab/final_theory/causal_sets.py",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "exact finite automorphism orbits and multiplicities"
+    },
+    {
+      "capability": "transition graph",
+      "implementation": "src/universe_lab/final_theory/cpobc_v03.py",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "131 transition orbits through source n<=4"
+    },
+    {
+      "capability": "Bell partners, pairs, and families",
+      "implementation": "src/universe_lab/final_theory/cpobc_v03.py",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "373 Bell-pair orbits and 146 families through source n<=4"
+    },
+    {
+      "capability": "precursor / spectator extraction",
+      "implementation": "src/universe_lab/final_theory/cpobc_v03.py",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "exact orbit-level precursor and common-spectator metadata"
+    },
+    {
+      "capability": "CPOBC equation generation",
+      "implementation": "src/universe_lab/final_theory/cpobc_v03.py",
+      "classification": "IMPLEMENTED_BUT_PARTIAL",
+      "scope": "641 cross-stage instances; paper operator compilation only Eqs. 103-106"
+    },
+    {
+      "capability": "noncommutative word representation",
+      "implementation": "src/universe_lab/final_theory/cpobc_v03.py",
+      "classification": "IMPLEMENTED_BUT_PARTIAL",
+      "scope": "ordered word lists and free inverse cancellation; no full dependency ideal"
+    },
+    {
+      "capability": "matrix substitution and inverse handling",
+      "implementation": "src/universe_lab/final_theory/cpobc_v03.py",
+      "classification": "IMPLEMENTED_BUT_PARTIAL",
+      "scope": "exact SymPy for finite fixtures and necessary relations"
+    },
+    {
+      "capability": "exact arithmetic",
+      "implementation": "src/universe_lab/final_theory",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "integers, Fraction, exact SymPy algebra"
+    },
+    {
+      "capability": "d=3 / d=4 search",
+      "implementation": "src/universe_lab/final_theory/cpobc_v03.py",
+      "classification": "IMPLEMENTED_BUT_SCIENTIFICALLY_MISLABELLED",
+      "scope": "14 exact matrix points are valid diagnostics, but not a Jordan-stratum search or full compiled-relation representation search"
+    },
+    {
+      "capability": "Kraus profile",
+      "implementation": "src/universe_lab/final_theory/kraus_bell_v03.py",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "FORMULATION_MISMATCH retained as a separate track"
+    },
+    {
+      "capability": "decoherence functional",
+      "implementation": "src/universe_lab/final_theory/geometry_v03.py",
+      "classification": "IMPLEMENTED_AND_CERTIFIED",
+      "scope": "orthogonal-record diagonal history functional only"
+    },
+    {
+      "capability": "extendible commutative CSG positive control",
+      "implementation": null,
+      "classification": "ABSENT",
+      "scope": "required by v0.3.1 as literature-locked regression"
+    },
+    {
+      "capability": "full n<=4 operator/dependency compiler",
+      "implementation": null,
+      "classification": "ABSENT",
+      "scope": "v0.3 explicitly records GC/MSR/dependency gaps"
+    },
+    {
+      "capability": "complete d=3 Jordan-stratum solver",
+      "implementation": null,
+      "classification": "ABSENT",
+      "scope": "no complete component decomposition or saturation"
+    }
+  ],
+  "classification_vocabulary": [
+    "IMPLEMENTED_AND_CERTIFIED",
+    "IMPLEMENTED_BUT_PARTIAL",
+    "IMPLEMENTED_BUT_SCIENTIFICALLY_MISLABELLED",
+    "DUPLICATED",
+    "STUB",
+    "ABSENT"
+  ],
+  "duplicate_framework_created": false,
+  "verdict": "V0_3_1_REPOSITORY_BOUNDARY_AUDITED",
   "branch": "codex/final-theory-v0.3.1-literature-locked-qsg-lift-20260728",
   "source_commit": "3ccbc66cc2cf868bf2a33ab96d4dd46e729d5f09",
   "code_commit": "d3628f1985c061d6439e39b1c839b5ebf1165e5f",
@@ -181,16 +281,16 @@
       "sha256": "92d2c83f8b61cbba7a2bca9aa0b2d5db3d2625f1f6742c414422d7162f550717"
     }
   ],
-  "literature_classification": "OPEN_TARGET",
+  "literature_classification": "REPOSITORY_AUDIT",
   "assumptions": [
     "the v0.3 artifact freeze is immutable",
     "only exact certificates may pass scientific gates"
   ],
-  "dimension": 3,
-  "field": "Q(t)",
-  "jordan_stratum": "NOT_APPLICABLE_COMPILER",
+  "dimension": null,
+  "field": "NOT_APPLICABLE",
+  "jordan_stratum": "NOT_APPLICABLE",
   "ansatz": "NONE",
-  "relation_count": 641,
+  "relation_count": 0,
   "solver": "deterministic exact Python",
   "solver_version": {
     "python": "3.12.10",
@@ -208,10 +308,9 @@
     "exact": "integer, Fraction, and symbolic algebra",
     "numeric": "no floating residual is accepted as a certificate"
   },
-  "completeness_scope": "scope is declared by the nested benchmark record",
+  "completeness_scope": "the v0.3 frozen repository capabilities",
   "time_limit": "no external timeout",
   "memory_limit": "host available memory",
   "unresolved_components": [],
-  "certificate_hashes": [],
-  "verdict": "INCONCLUSIVE"
+  "certificate_hashes": []
 }

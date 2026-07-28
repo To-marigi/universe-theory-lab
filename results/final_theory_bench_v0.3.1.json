@@ -1,0 +1,2715 @@
+{
+  "schema_version": "final-theory-bench-v0.3.1",
+  "suite": "Literature-Locked Noncommutative QSG Lift",
+  "research_date": "2026-07-28",
+  "baseline": {
+    "schema_version": "final-theory-baseline-v0.3.1",
+    "production_commit": "f05d3b12c26f027e83de0bb4a1c354a058dc4581",
+    "artifact_freeze": "3ccbc66cc2cf868bf2a33ab96d4dd46e729d5f09",
+    "tag": "final-theory-bench-v0.3-novelty-first-open",
+    "frozen_branch": "codex/final-theory-v0.3-novelty-first-20260728",
+    "working_branch": "codex/final-theory-v0.3.1-literature-locked-qsg-lift-20260728",
+    "commit_checks": {
+      "production_commit": {
+        "object": "f05d3b12c26f027e83de0bb4a1c354a058dc4581",
+        "exists": true,
+        "type": "commit"
+      },
+      "artifact_freeze": {
+        "object": "3ccbc66cc2cf868bf2a33ab96d4dd46e729d5f09",
+        "exists": true,
+        "type": "commit"
+      }
+    },
+    "production_is_ancestor_of_freeze": true,
+    "tag_target": "3ccbc66cc2cf868bf2a33ab96d4dd46e729d5f09",
+    "tag_targets_freeze": true,
+    "frozen_branch_target": "3ccbc66cc2cf868bf2a33ab96d4dd46e729d5f09",
+    "frozen_branch_targets_freeze": true,
+    "frozen_artifacts": [
+      {
+        "path": "results/v0.3_source_manifest.json",
+        "expected_sha256": "70790ee24392dfb8a642bf18e2bf37ab9c146ca07d5fca9e1e272a1b0e68966f",
+        "actual_sha256": "70790ee24392dfb8a642bf18e2bf37ab9c146ca07d5fca9e1e272a1b0e68966f",
+        "unchanged": true
+      },
+      {
+        "path": "results/v0.3_repository_inventory.json",
+        "expected_sha256": "8c07ca7234cf272d101c1e84771b3f5c69a782152b273c400476b555240d05a8",
+        "actual_sha256": "8c07ca7234cf272d101c1e84771b3f5c69a782152b273c400476b555240d05a8",
+        "unchanged": true
+      },
+      {
+        "path": "results/v0.3_paper_regression.json",
+        "expected_sha256": "62641debd58a3aff0467e291c0cad7619f7eec009deb36f25adb1636c48f5605",
+        "actual_sha256": "62641debd58a3aff0467e291c0cad7619f7eec009deb36f25adb1636c48f5605",
+        "unchanged": true
+      },
+      {
+        "path": "results/v0.3_geometry_interference.json",
+        "expected_sha256": "6798775761305776401b34f215b951295db55f316bd3439fda629ad8d49a93d1",
+        "actual_sha256": "6798775761305776401b34f215b951295db55f316bd3439fda629ad8d49a93d1",
+        "unchanged": true
+      },
+      {
+        "path": "results/v0.3_kraus_bell.json",
+        "expected_sha256": "986c20af591464ee667d246b05086b281a737c749c8a729a0c71ba5df482e23f",
+        "actual_sha256": "986c20af591464ee667d246b05086b281a737c749c8a729a0c71ba5df482e23f",
+        "unchanged": true
+      },
+      {
+        "path": "results/v0.3_cpobc_relations.json",
+        "expected_sha256": "486daad731347fa946d48ce47b74ee8dcc762cb6135b140d92d9b26e69eee8cb",
+        "actual_sha256": "486daad731347fa946d48ce47b74ee8dcc762cb6135b140d92d9b26e69eee8cb",
+        "unchanged": true
+      },
+      {
+        "path": "results/v0.3_cpobc_search.json",
+        "expected_sha256": "fa87db4b5156d7411d05fcc587e8fc043673ebae46c896b09fa5b64ce499be85",
+        "actual_sha256": "fa87db4b5156d7411d05fcc587e8fc043673ebae46c896b09fa5b64ce499be85",
+        "unchanged": true
+      },
+      {
+        "path": "results/v0.3_extension.json",
+        "expected_sha256": "13143e5509d65eb8d7fa88e2dfdff19809a5afb1abb5ff030740e1479a18e328",
+        "actual_sha256": "13143e5509d65eb8d7fa88e2dfdff19809a5afb1abb5ff030740e1479a18e328",
+        "unchanged": true
+      },
+      {
+        "path": "results/final_theory_bench_v0.3.json",
+        "expected_sha256": "8cb90dc2863b62ed0c79fe60554feb9d8675794464ef453cb98b70e17a2d9e5c",
+        "actual_sha256": "8cb90dc2863b62ed0c79fe60554feb9d8675794464ef453cb98b70e17a2d9e5c",
+        "unchanged": true
+      },
+      {
+        "path": "results/reproduction_manifest_final_v0.3.json",
+        "expected_sha256": "0fa49ac39af5404fb85859086398267f1460873668c605a1f3c59e5ce843137b",
+        "actual_sha256": "0fa49ac39af5404fb85859086398267f1460873668c605a1f3c59e5ce843137b",
+        "unchanged": true
+      }
+    ],
+    "v03_artifacts_unchanged": true,
+    "working_tree_clean_at_audit": true,
+    "working_tree_porcelain": [],
+    "remote": {
+      "checked": false,
+      "remote": "universe",
+      "branch": null,
+      "tag_object": null,
+      "tag_target": null,
+      "passed": null
+    },
+    "passed": true,
+    "verdict": "V0_3_BASELINE_LOCK_PASS",
+    "working_tree_scope": "initial audit on 2026-07-28 before v0.3.1 implementation"
+  },
+  "statuses": {
+    "ENGINEERING_STATUS": "ENGINEERING_PASS",
+    "LITERATURE_FRONTIER_STATUS": "FRONTIER_CONFIRMED_OPEN",
+    "COMMUTATIVE_REFERENCE_STATUS": "COMMUTATIVE_CSG_REFERENCE_PASS",
+    "CPOBC_COMPILER_STATUS": "CPOBC_COMPILER_COMPLETE_N4",
+    "CPOBC_D3_STATUS": "CPOBC_D3_SEARCH_INCONCLUSIVE",
+    "CPOBC_D4_STATUS": "CPOBC_HIGHER_DIMENSION_NOT_EXECUTED",
+    "NONCOMMUTATIVE_QSG_STATUS": "NOT_EXECUTED_NO_REPRESENTATION",
+    "GEOMETRY_INTERFERENCE_STATUS": "NOT_ASSESSED_NO_REPRESENTATION",
+    "EXTENSION_BOUNDARY_STATUS": "NONCOMMUTATIVE_EXTENSION_NOT_ASSESSED",
+    "SCIENTIFIC_STATUS": "FINAL_THEORY_OPEN"
+  },
+  "literature_fork": {
+    "external_result_supersedes_task": false,
+    "frontier_search": {
+      "target": "higher-dimensional nonsingular noncommutative CPOBC representations, complete classifications, or general no-go theorems following arXiv:2603.25503",
+      "routes": [
+        {
+          "route": "exact_id_and_title",
+          "queries": [
+            "arXiv:2603.25503",
+            "\"Implementing Bell causality in Quantum Sequential Growth\""
+          ],
+          "result": "Official arXiv record only; latest version v1, 2026-03-26; no journal reference or non-arXiv DOI."
+        },
+        {
+          "route": "authors",
+          "queries": [
+            "au:\"Ritesh_Srivastava\"",
+            "au:\"Sumati_Surya\""
+          ],
+          "result": "The exact Ritesh Srivastava arXiv route returned only arXiv:2603.25503. Sumati Surya's later/nearby arXiv records contained no separate CPOBC representation or no-go follow-up."
+        },
+        {
+          "route": "concept_synonyms",
+          "queries": [
+            "\"quantum Bell causality\"",
+            "\"non-commuting transition operators\"",
+            "\"non-commutative realisation of QSG\"",
+            "\"quantum sequential growth\"",
+            "CPOBC",
+            "\"operator-valued sequential growth\"",
+            "\"Bell-causal quantum measure\""
+          ],
+          "result": "The first three arXiv metadata queries returned only arXiv:2603.25503; the broader quantum-sequential-growth query returned 11 records, none a higher-dimensional CPOBC solution. Acronym/narrow synonym routes produced no independent record."
+        },
+        {
+          "route": "citation_tracking",
+          "queries": [
+            "INSPIRE record 3136377",
+            "OpenAlex exact-title search",
+            "Semantic Scholar ARXIV:2603.25503",
+            "Crossref exact-title search"
+          ],
+          "result": "INSPIRE reported 0 citations and no journal/DOI; OpenAlex had no indexed exact-title work; Crossref had no matching publication; Semantic Scholar returned HTTP 429."
+        }
+      ],
+      "superseding_result_found": false,
+      "claim_boundary": "The search is sufficient for the repository's mandatory gate but does not establish a theorem that no unindexed or future result exists.",
+      "verdict": "FRONTIER_CONFIRMED_OPEN"
+    },
+    "verdict": "FRONTIER_CONFIRMED_OPEN"
+  },
+  "commutative_positive_control": {
+    "classification": "REGRESSION_ONLY",
+    "verdict": "COMMUTATIVE_CSG_REFERENCE_PASS",
+    "max_n": 5,
+    "physical_interference_witness": {
+      "stage": 3,
+      "events_are_exclusive": true,
+      "events_are_physically_distinct_unlabeled_geometries": true,
+      "not_a_natural_labelling_multiplicity_witness": true,
+      "event_A": {
+        "event_id": "E[p3-000]",
+        "predicate": "final_unlabeled_causet == p3-000",
+        "stage": 3,
+        "canonical_relation_rows": [
+          0,
+          0,
+          0
+        ],
+        "comparable_pair_count": 0,
+        "height": 1,
+        "width": 3,
+        "distinct_natural_birth_labelings": 1,
+        "quotient_path_count": 1,
+        "amplitude": {
+          "real": {
+            "numerator": 2,
+            "denominator": 5
+          },
+          "imaginary": {
+            "numerator": -1,
+            "denominator": 5
+          },
+          "expression": "2/5 - 1/5*i"
+        },
+        "quantum_measure": {
+          "numerator": 1,
+          "denominator": 5
+        },
+        "vertex_relabeling_invariant": true,
+        "exclusive_from_other_singleton_final_causet_events": true
+      },
+      "event_B": {
+        "event_id": "E[p3-024]",
+        "predicate": "final_unlabeled_causet == p3-024",
+        "stage": 3,
+        "canonical_relation_rows": [
+          4,
+          4,
+          0
+        ],
+        "comparable_pair_count": 2,
+        "height": 2,
+        "width": 2,
+        "distinct_natural_birth_labelings": 1,
+        "quotient_path_count": 1,
+        "amplitude": {
+          "real": {
+            "numerator": 3,
+            "denominator": 5
+          },
+          "imaginary": {
+            "numerator": 1,
+            "denominator": 5
+          },
+          "expression": "3/5 + 1/5*i"
+        },
+        "quantum_measure": {
+          "numerator": 2,
+          "denominator": 5
+        },
+        "vertex_relabeling_invariant": true,
+        "exclusive_from_other_singleton_final_causet_events": true
+      },
+      "D_A_B": {
+        "real": {
+          "numerator": 1,
+          "denominator": 5
+        },
+        "imaginary": {
+          "numerator": 1,
+          "denominator": 5
+        },
+        "expression": "1/5 + 1/5*i"
+      },
+      "D_B_A": {
+        "real": {
+          "numerator": 1,
+          "denominator": 5
+        },
+        "imaginary": {
+          "numerator": -1,
+          "denominator": 5
+        },
+        "expression": "1/5 - 1/5*i"
+      },
+      "mu_A_union_B": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "I2_A_B": {
+        "numerator": 2,
+        "denominator": 5
+      },
+      "nonzero_off_diagonal_D": true,
+      "nonzero_I2": true
+    }
+  },
+  "compiler": {
+    "verdict": "CPOBC_COMPILER_COMPLETE_N4",
+    "counts": {
+      "transition_orbits": 131,
+      "bell_pair_orbits": 373,
+      "bell_families": 146,
+      "compiled_cross_stage_relations": 641,
+      "equal_size_relations": 71,
+      "unequal_size_relations": 570,
+      "stage_bell_pair_orbits": {
+        "1": 1,
+        "2": 7,
+        "3": 44,
+        "4": 321
+      },
+      "denominator_cleared_word_equations": 783,
+      "d3_matrix_entry_polynomial_equations": 7047,
+      "d3_inverse_entry_polynomial_constraints": 11538,
+      "transition_occurrence_variables": 165,
+      "canonical_word_classes": 2,
+      "branch_counts": {
+        "EQUAL": 71,
+        "GREATER": 570
+      },
+      "MSR_operator_constraints": 24,
+      "d3_MSR_entry_polynomial_equations": 216
+    },
+    "independent_oracle": {
+      "production_counts": {
+        "transition_orbits": 131,
+        "bell_pair_orbits": 373,
+        "bell_families": 146,
+        "compiled_cross_stage_relations": 641,
+        "equal_size_relations": 71,
+        "unequal_size_relations": 570,
+        "stage_bell_pair_orbits": {
+          "1": 1,
+          "2": 7,
+          "3": 44,
+          "4": 321
+        }
+      },
+      "oracle": {
+        "method": "independent forward-relation-mask enumeration with set-based downsets and explicit permutation orbits",
+        "shared_production_code_paths": [],
+        "max_source_stage": 4,
+        "poset_counts": {
+          "1": 1,
+          "2": 2,
+          "3": 5,
+          "4": 16
+        },
+        "transition_orbits": 131,
+        "bell_pair_orbits": 373,
+        "bell_families": 146,
+        "compiled_cross_stage_relations": 641,
+        "equal_size_relations": 71,
+        "unequal_size_relations": 570,
+        "stage_bell_pair_orbits": {
+          "1": 1,
+          "2": 7,
+          "3": 44,
+          "4": 321
+        },
+        "semantic_descriptor_sha256": "9c97fe86470f0da307d3418e192f55e3ca1f05e7cbd0d18f053a20f28d593bab",
+        "semantic_descriptor_count": 641,
+        "family_stage_descriptor_sha256": "116938986449f9c801b184e44c8b0d6520b3915a7a6ba0b0735848981029f1c8",
+        "family_stage_descriptors": [
+          {
+            "family_key": [
+              1,
+              0,
+              1,
+              0
+            ],
+            "stage_member_counts": {
+              "1": 1,
+              "2": 2,
+              "3": 6,
+              "4": 22
+            }
+          },
+          {
+            "family_key": [
+              2,
+              0,
+              1,
+              2
+            ],
+            "stage_member_counts": {
+              "2": 1,
+              "3": 3,
+              "4": 13
+            }
+          },
+          {
+            "family_key": [
+              2,
+              0,
+              3,
+              0
+            ],
+            "stage_member_counts": {
+              "2": 1,
+              "3": 3,
+              "4": 13
+            }
+          },
+          {
+            "family_key": [
+              2,
+              0,
+              3,
+              1
+            ],
+            "stage_member_counts": {
+              "2": 1,
+              "3": 4,
+              "4": 19
+            }
+          },
+          {
+            "family_key": [
+              2,
+              2,
+              3,
+              0
+            ],
+            "stage_member_counts": {
+              "2": 1,
+              "3": 3,
+              "4": 12
+            }
+          },
+          {
+            "family_key": [
+              2,
+              2,
+              3,
+              1
+            ],
+            "stage_member_counts": {
+              "2": 1,
+              "3": 3,
+              "4": 12
+            }
+          },
+          {
+            "family_key": [
+              3,
+              0,
+              3,
+              4
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              0,
+              3,
+              5
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              0,
+              7,
+              0
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 4
+            }
+          },
+          {
+            "family_key": [
+              3,
+              0,
+              7,
+              1
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              0,
+              7,
+              3
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              2,
+              3,
+              4
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              2,
+              3,
+              5
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              2,
+              7,
+              0
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              2,
+              7,
+              1
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              2,
+              7,
+              3
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              2,
+              7,
+              4
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              2,
+              7,
+              5
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 6
+            }
+          },
+          {
+            "family_key": [
+              3,
+              6,
+              3,
+              5
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 4
+            }
+          },
+          {
+            "family_key": [
+              3,
+              6,
+              7,
+              0
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 4
+            }
+          },
+          {
+            "family_key": [
+              3,
+              6,
+              7,
+              1
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 4
+            }
+          },
+          {
+            "family_key": [
+              3,
+              6,
+              7,
+              3
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 5
+            }
+          },
+          {
+            "family_key": [
+              3,
+              36,
+              7,
+              0
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 4
+            }
+          },
+          {
+            "family_key": [
+              3,
+              36,
+              7,
+              1
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 5
+            }
+          },
+          {
+            "family_key": [
+              3,
+              36,
+              7,
+              3
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 4
+            }
+          },
+          {
+            "family_key": [
+              3,
+              38,
+              7,
+              0
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 4
+            }
+          },
+          {
+            "family_key": [
+              3,
+              38,
+              7,
+              1
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 4
+            }
+          },
+          {
+            "family_key": [
+              3,
+              38,
+              7,
+              3
+            ],
+            "stage_member_counts": {
+              "3": 1,
+              "4": 4
+            }
+          },
+          {
+            "family_key": [
+              4,
+              0,
+              3,
+              12
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              0,
+              7,
+              8
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              0,
+              7,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              0,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              0,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              0,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              0,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              0,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              3,
+              12
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              7,
+              8
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              7,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              7,
+              12
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              7,
+              13
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              13,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              15,
+              4
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              15,
+              5
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              15,
+              12
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2,
+              15,
+              13
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              7,
+              8
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              7,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              11,
+              5
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              11,
+              13
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              15,
+              8
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              15,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              6,
+              15,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              14,
+              7,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              14,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              14,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              14,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              14,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              14,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              68,
+              7,
+              8
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              68,
+              7,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              68,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              68,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              68,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              68,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              68,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              68,
+              15,
+              8
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              68,
+              15,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              68,
+              15,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              70,
+              7,
+              8
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              70,
+              7,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              70,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              70,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              70,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              70,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              70,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              70,
+              15,
+              8
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              70,
+              15,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              70,
+              15,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              72,
+              6,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              72,
+              7,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              72,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              72,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              72,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              72,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              72,
+              15,
+              6
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              72,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              76,
+              7,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              76,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              76,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              76,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              76,
+              15,
+              2
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              76,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              76,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              76,
+              15,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              76,
+              15,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              78,
+              7,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              78,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              78,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              78,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              78,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              78,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              78,
+              15,
+              9
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              78,
+              15,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              204,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              204,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              204,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              204,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              204,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              206,
+              7,
+              11
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              206,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              206,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              206,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              206,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2184,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2184,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2184,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2184,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2186,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2186,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2186,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2186,
+              15,
+              4
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2186,
+              15,
+              5
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2186,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2190,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2190,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2190,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2190,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2252,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2252,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2252,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2252,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2254,
+              15,
+              0
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2254,
+              15,
+              1
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2254,
+              15,
+              3
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          },
+          {
+            "family_key": [
+              4,
+              2254,
+              15,
+              7
+            ],
+            "stage_member_counts": {
+              "4": 1
+            }
+          }
+        ],
+        "exact": true
+      },
+      "production_semantic_descriptor_sha256": "9c97fe86470f0da307d3418e192f55e3ca1f05e7cbd0d18f053a20f28d593bab",
+      "production_family_stage_descriptor_sha256": "116938986449f9c801b184e44c8b0d6520b3915a7a6ba0b0735848981029f1c8",
+      "route_representative_digest_match": true,
+      "exact_match": true
+    }
+  },
+  "structural_algebra": {
+    "verdict": "D3_STRATA_DECLARED_SEARCH_PARTIAL",
+    "coverage": {
+      "required_strata": 7,
+      "declared_strata": 7,
+      "fully_solved_strata": 0,
+      "partially_searched_strata": 2,
+      "overlap_note": "Jordan spectral strata and reducibility strata overlap; the manifest does not incorrectly present them as a disjoint partition."
+    }
+  },
+  "representation_search": {
+    "global_verdict": "CPOBC_D3_SEARCH_INCONCLUSIVE",
+    "bounded_ansatz_verdict": "CPOBC_D3_NO_GO_UNDER_ASSUMPTIONS",
+    "d4_verdict": "CPOBC_HIGHER_DIMENSION_NOT_EXECUTED",
+    "summary": {
+      "dimensions_searched": [
+        3
+      ],
+      "fields": [
+        "Q(t)"
+      ],
+      "Jordan_strata_touched": [
+        "D3_JORDAN_3",
+        "D3_JORDAN_2_PLUS_1_BOUNDARY",
+        "D3_REDUCIBLE_INDECOMPOSABLE"
+      ],
+      "ansatz_classes": 1,
+      "free_parameters": 1,
+      "compiled_relation_count_available": 641,
+      "compiled_relation_assignment_count": 0,
+      "paper_necessary_relation_matrices_checked": 7,
+      "groebner_branch_count": 1,
+      "bounded_no_go_certificates": 1,
+      "exact_representation_count": 0
+    },
+    "claim_boundary": "The unit ideal applies only after imposing the displayed ansatz. It is not a no-go for D3_JORDAN_3, reducible-indecomposable d=3, or dimension three as a whole."
+  },
+  "physical_certification": {
+    "schema_version": "final-theory-noncommutative-qsg-v0.3.1",
+    "phase": "PHASE_F_PHYSICAL_QSG_CERTIFICATION",
+    "precondition": {
+      "exact_finite_dimensional_representation_found": false,
+      "full_n4_compiled_relation_certificate": false,
+      "passed": false
+    },
+    "execution": "NOT_EXECUTED",
+    "vector_measure_constructed": false,
+    "decoherence_functional_constructed": false,
+    "kraus_channel_conversion_attempted": false,
+    "finite_additivity": "NOT_ASSESSED",
+    "MSR": "NOT_ASSESSED",
+    "GC": "NOT_ASSESSED",
+    "CPOBC": "NOT_ASSESSED",
+    "normalization": "NOT_ASSESSED",
+    "hermiticity": "NOT_ASSESSED",
+    "strong_positivity": "NOT_ASSESSED",
+    "label_covariance": "NOT_ASSESSED",
+    "quotient_consistency": "NOT_ASSESSED",
+    "path_consistency": "NOT_ASSESSED",
+    "initial_vector_dependence": "NOT_ASSESSED",
+    "scalar_commutative_limit": "NOT_ASSESSED",
+    "off_diagonal_geometry_interference": "NOT_ASSESSED",
+    "geometry_interference_status": "NOT_ASSESSED_NO_REPRESENTATION",
+    "status": "NOT_EXECUTED_NO_REPRESENTATION",
+    "verdict": "NOT_EXECUTED_NO_REPRESENTATION",
+    "claim_boundary": "Exact survivors of selected necessary relations, finite grids, or bounded ansatz diagnostics are not representations of the full CPOBC/MSR/GC system.",
+    "unresolved_items": [
+      "full exact operator assignment for every compiled n<=4 relation",
+      "MSR and GC certificates for that assignment",
+      "finite-stage vector measure and covariant-event interference"
+    ]
+  },
+  "extension_boundary": {
+    "schema_version": "final-theory-extension-boundary-v0.3.1",
+    "commutative_csg_extension": {
+      "classification": "LITERATURE_LOCKED",
+      "source": "arXiv:2003.11311v1",
+      "statement": "Bounded variation is the paper criterion for extension of the complex scalar CSG measure; the selected positive control is a regression fixture."
+    },
+    "noncommutative_vector_measure": {
+      "representation_available": false,
+      "associated_vector_pre_measure": "NOT_CONSTRUCTED",
+      "total_variation": "NOT_ASSESSED",
+      "semivariation": "NOT_ASSESSED",
+      "weak_scalarisations": "NOT_ASSESSED",
+      "cylinder_consistency": "NOT_ASSESSED",
+      "applicable_theorem": "NOT_IDENTIFIED",
+      "missing_assumptions": [
+        "exact noncommutative CPOBC representation",
+        "associated finite vector pre-measure"
+      ]
+    },
+    "finite_n_boundedness_is_infinite_proof": false,
+    "status": "NONCOMMUTATIVE_EXTENSION_NOT_ASSESSED",
+    "verdict": "NONCOMMUTATIVE_EXTENSION_NOT_ASSESSED",
+    "prohibited_verdict": "INFINITE_EXTENSION_PASS",
+    "claim_boundary": "No scalar bounded-variation theorem is transferred to an operator-valued vector measure without its codomain and hypotheses.",
+    "unresolved_items": [
+      "exact noncommutative CPOBC representation",
+      "associated finite vector pre-measure"
+    ]
+  },
+  "kraus_channel_track": {
+    "schema_version": "final-theory-kraus-boundary-v0.3.1",
+    "v0_3_baseline_preserved": true,
+    "classification": "FORMULATION_MISMATCH",
+    "distinct_notions": [
+      "Quantum Causal Histories causality",
+      "semicausal/no-signalling quantum channels",
+      "Rideout-Sorkin Bell causality",
+      "CPOBC for nonsingular transition operators"
+    ],
+    "equivalence_theorem_found": false,
+    "new_channel_bell_definition_introduced": false,
+    "deferred_target": "Kraus-channel spectator reduction on a separate branch and version",
+    "verdict": "FORMULATION_MISMATCH"
+  },
+  "mutations": {
+    "schema_version": "final-theory-mutations-v0.3.1",
+    "suite": "Final-Theory Bench v0.3.1 critical scientific mutations",
+    "mandatory_mutation_count": 17,
+    "additional_mutation_count": 1,
+    "mutations": [
+      {
+        "mutation_id": "M01_CPOBC_PRODUCT_ORDER_REVERSED",
+        "description": "reverse the CPOBC noncommutative product order",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "CPOBC_product_order_reversal",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M02_PRECURSOR_COMPARISON_REVERSED",
+        "description": "reverse greater/equal precursor-cardinality selection",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "precursor_comparison_reversal",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M03_EQUAL_SIZE_AUXILIARY_DELETED",
+        "description": "delete the equal-size second orientation and auxiliary relation",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "equal_size_auxiliary_deletion",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M04_INVERSE_CANCELLATION_MISAPPLIED",
+        "description": "cancel non-adjacent inverse tokens in a free noncommutative word",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "incorrect_inverse_cancellation",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M05_INVERTIBILITY_CONSTRAINT_DELETED",
+        "description": "drop the two-sided inverse-variable equations",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "invertibility_constraint_deletion",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M06_GC_RELATION_DELETED",
+        "description": "erase general-covariance path dependencies",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "GC_dependency_deletion",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M07_MSR_RELATION_DELETED",
+        "description": "erase Markov-sum-rule dependencies",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "MSR_dependency_deletion",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M08_AUTOMORPHISM_MULTIPLICITY_OMITTED",
+        "description": "replace exact transition orbit multiplicities by one",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "automorphism_multiplicity_deletion",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M09_LABELLED_UNLABELLED_CONFLATED",
+        "description": "identify labelled occurrences with unlabeled transition orbits",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "labelled_unlabelled_confusion",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M10_COMMUTATIVE_WORD_NORMALISATION",
+        "description": "sort a genuinely noncommutative operator word",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "commutative_word_normalisation",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M11_SIMILARITY_SOLUTION_DUPLICATED",
+        "description": "count a simultaneously similar representation twice",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "similarity_equivalent_solution_duplicate",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M12_FINITE_GRID_AS_D3_NO_GO",
+        "description": "promote bounded search failure to a dimension-wide theorem",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "finite_grid_no_go_overclaim",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M13_NUMERICAL_RESIDUAL_AS_EXACT_ZERO",
+        "description": "accept a floating residual as an exact solution",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "numerical_zero_as_exact",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M14_SINGULAR_AS_NONSINGULAR",
+        "description": "accept a singular transition matrix under nonsingular CPOBC",
+        "killed": true,
+        "detector": "v0.3.1 exact CPOBC compiler/search scientific gate",
+        "evidence": {
+          "guard": "singular_as_nonsingular",
+          "detected": true
+        }
+      },
+      {
+        "mutation_id": "M15_CSG_OFF_DIAGONAL_FORCED_ZERO",
+        "description": "force the commutative CSG off-diagonal decoherence entry to zero",
+        "killed": true,
+        "detector": "exact physically distinct covariant-event witness",
+        "evidence": {
+          "stage": 3,
+          "events_are_exclusive": true,
+          "events_are_physically_distinct_unlabeled_geometries": true,
+          "not_a_natural_labelling_multiplicity_witness": true,
+          "event_A": {
+            "event_id": "E[p3-000]",
+            "predicate": "final_unlabeled_causet == p3-000",
+            "stage": 3,
+            "canonical_relation_rows": [
+              0,
+              0,
+              0
+            ],
+            "comparable_pair_count": 0,
+            "height": 1,
+            "width": 3,
+            "distinct_natural_birth_labelings": 1,
+            "quotient_path_count": 1,
+            "amplitude": {
+              "real": {
+                "numerator": 2,
+                "denominator": 5
+              },
+              "imaginary": {
+                "numerator": -1,
+                "denominator": 5
+              },
+              "expression": "2/5 - 1/5*i"
+            },
+            "quantum_measure": {
+              "numerator": 1,
+              "denominator": 5
+            },
+            "vertex_relabeling_invariant": true,
+            "exclusive_from_other_singleton_final_causet_events": true
+          },
+          "event_B": {
+            "event_id": "E[p3-024]",
+            "predicate": "final_unlabeled_causet == p3-024",
+            "stage": 3,
+            "canonical_relation_rows": [
+              4,
+              4,
+              0
+            ],
+            "comparable_pair_count": 2,
+            "height": 2,
+            "width": 2,
+            "distinct_natural_birth_labelings": 1,
+            "quotient_path_count": 1,
+            "amplitude": {
+              "real": {
+                "numerator": 3,
+                "denominator": 5
+              },
+              "imaginary": {
+                "numerator": 1,
+                "denominator": 5
+              },
+              "expression": "3/5 + 1/5*i"
+            },
+            "quantum_measure": {
+              "numerator": 2,
+              "denominator": 5
+            },
+            "vertex_relabeling_invariant": true,
+            "exclusive_from_other_singleton_final_causet_events": true
+          },
+          "D_A_B": {
+            "real": {
+              "numerator": 1,
+              "denominator": 5
+            },
+            "imaginary": {
+              "numerator": 1,
+              "denominator": 5
+            },
+            "expression": "1/5 + 1/5*i"
+          },
+          "D_B_A": {
+            "real": {
+              "numerator": 1,
+              "denominator": 5
+            },
+            "imaginary": {
+              "numerator": -1,
+              "denominator": 5
+            },
+            "expression": "1/5 - 1/5*i"
+          },
+          "mu_A_union_B": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "I2_A_B": {
+            "numerator": 2,
+            "denominator": 5
+          },
+          "nonzero_off_diagonal_D": true,
+          "nonzero_I2": true
+        }
+      },
+      {
+        "mutation_id": "M16_ORTHOGONAL_RECORD_BASELINE_CALLED_COHERENT",
+        "description": "misreport the v0.3 orthogonal-record diagonal baseline as coherent",
+        "killed": true,
+        "detector": "commutative-CSG versus orthogonal-record semantic comparison",
+        "evidence": {
+          "baseline_profile_id": "causal_information_v2_sparse_kraus",
+          "baseline_status": "CLASSICAL_GEOMETRY_WITH_QUANTUM_MEMORY",
+          "same_finite_causet_enumerator": true,
+          "comparison": [
+            {
+              "item": "history state space",
+              "COMMUTATIVE_CSG_REFERENCE": "H is isomorphic to C; labelled cylinder alternatives are encoded by one scalar amplitude",
+              "ORTHOGONAL_RECORD_CLASSICAL_BASELINE": "195 fixed instrument-outcome paths at n=5"
+            },
+            {
+              "item": "outcome semantics",
+              "COMMUTATIVE_CSG_REFERENCE": "exclusive labelled growth cylinders add coherently",
+              "ORTHOGONAL_RECORD_CLASSICAL_BASELINE": "fixed aggregate-Kraus outcomes are retained as records"
+            },
+            {
+              "item": "environment record",
+              "COMMUTATIVE_CSG_REFERENCE": "none",
+              "ORTHOGONAL_RECORD_CLASSICAL_BASELINE": "orthogonal record of the complete outcome sequence"
+            },
+            {
+              "item": "interference",
+              "COMMUTATIVE_CSG_REFERENCE": "exact nonzero off-diagonal D and nonzero geometry I2",
+              "ORTHOGONAL_RECORD_CLASSICAL_BASELINE": "37830 ordered off-diagonals checked; all zero"
+            },
+            {
+              "item": "Bell causality",
+              "COMMUTATIVE_CSG_REFERENCE": "scalar Eq. (7) product rule exact",
+              "ORTHOGONAL_RECORD_CLASSICAL_BASELINE": "KRAUS_BELL_CAUSALITY_UNDEFINED"
+            },
+            {
+              "item": "covariance",
+              "COMMUTATIVE_CSG_REFERENCE": "GC/path independence and labelled-to-unlabelled quotient exact",
+              "ORTHOGONAL_RECORD_CLASSICAL_BASELINE": "finite vertex-relabeling covariance on the canonical unlabeled quotient"
+            },
+            {
+              "item": "extension",
+              "COMMUTATIVE_CSG_REFERENCE": "bounded variation by Claim 3.8 and unique scalar extension by Theorem 2.1",
+              "ORTHOGONAL_RECORD_CLASSICAL_BASELINE": "classical outcomes: CLASSICAL_OUTCOME_EXTENSION_PASS; operator instrument: INFINITE_EXTENSION_BLOCKED"
+            },
+            {
+              "item": "computational complexity",
+              "COMMUTATIVE_CSG_REFERENCE": "O(E^2) dense event-pair materialization; rank-one Gram form permits O(E) storage",
+              "ORTHOGONAL_RECORD_CLASSICAL_BASELINE": "O(H) sparse diagonal storage after O(H^2) zero audit"
+            }
+          ],
+          "baseline_artifacts_unchanged_by_this_module": true,
+          "baseline_all_off_diagonals_zero": true,
+          "baseline_all_I2_zero": true,
+          "comparison_passed": true
+        }
+      },
+      {
+        "mutation_id": "M17_PAPER_RESULT_REPORTED_AS_NEW",
+        "description": "count a literature-locked scalar CSG result as project novelty",
+        "killed": true,
+        "detector": "literature-classification and novelty gate",
+        "evidence": {
+          "csg_classification": "REGRESSION_ONLY",
+          "compiler_guard": true
+        }
+      },
+      {
+        "mutation_id": "M18_EQ145_OMITTED_FALSE_SURVIVOR",
+        "description": "promote the scaled-Heisenberg necessary-relation survivor after omitting Eq.145",
+        "killed": true,
+        "detector": "exact Eq.145 saturation/Groebner certificate",
+        "evidence": {
+          "guard": "omit_eq145_false_survivor",
+          "detected": true
+        }
+      }
+    ],
+    "killed": 18,
+    "total": 18,
+    "passed": true,
+    "verdict": "CRITICAL_MUTATIONS_PASS"
+  },
+  "benchmark_integrity_passed": true,
+  "allowed_claims": [
+    "COMMUTATIVE_CSG_REFERENCE_PASS",
+    "CPOBC_COMPILER_COMPLETE_N4",
+    "CPOBC_D3_SEARCH_INCONCLUSIVE",
+    "CPOBC_HIGHER_DIMENSION_NOT_EXECUTED",
+    "ENGINEERING_PASS",
+    "FINAL_THEORY_OPEN",
+    "FRONTIER_CONFIRMED_OPEN",
+    "NONCOMMUTATIVE_EXTENSION_NOT_ASSESSED",
+    "NOT_ASSESSED_NO_REPRESENTATION",
+    "NOT_EXECUTED_NO_REPRESENTATION"
+  ],
+  "prohibited_claims": [
+    "CONTINUUM_PHASE_CANDIDATE",
+    "EMERGENT_LORENTZ_SYMMETRY",
+    "SPIN2_CANDIDATE",
+    "SPIN2_GATE_PASS",
+    "GRAVITON_FOUND",
+    "EINSTEIN_DYNAMICS_RECOVERED",
+    "FINAL_THEORY_COMPLETED",
+    "INFINITE_EXTENSION_PASS"
+  ],
+  "completeness_scope": "17-source literature gate; exact scalar CSG through n<=5; all Bell-family axiom instances through n<=4; one exact d=3 one-parameter ansatz no-go; no complete d=3 stratum",
+  "resource_limits": {
+    "compiler": "source stage n<=4",
+    "commutative_control": "exact finite audit n<=5 plus paper theorem",
+    "d3": "one Q(t) structured ansatz; one Groebner saturation branch",
+    "d4": "not executed",
+    "dense_full_system_groebner": "not executed"
+  },
+  "unresolved_components": [
+    "a full exact assignment of all 165 d=3 transition occurrences",
+    "all unrestricted d=3 Jordan/reducibility components",
+    "full MSR, GC, and all 641 CPOBC relations under one representation",
+    "noncommutative covariant geometry-event interference",
+    "noncommutative vector-measure infinite extension",
+    "Kraus-channel spectator reduction on its separate formulation track"
+  ],
+  "verdict": "FINAL_THEORY_OPEN",
+  "branch": "codex/final-theory-v0.3.1-literature-locked-qsg-lift-20260728",
+  "source_commit": "3ccbc66cc2cf868bf2a33ab96d4dd46e729d5f09",
+  "code_commit": "d3628f1985c061d6439e39b1c839b5ebf1165e5f",
+  "paper_versions": [
+    {
+      "id": "arXiv:2603.25503v1",
+      "version": "v1",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "id": "arXiv:2003.11311v1",
+      "version": "v1",
+      "sha256": "0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272"
+    },
+    {
+      "id": "arXiv:1007.2725v1",
+      "version": "v1",
+      "sha256": "994d1e7e3834f3437cc1cffaf2ae038f6c35293c10775dfde6bddd94793e906f"
+    },
+    {
+      "id": "arXiv:gr-qc/9904062v3",
+      "version": "v3",
+      "sha256": "6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    },
+    {
+      "id": "arXiv:1204.5767v1",
+      "version": "v1",
+      "sha256": "97e62aef3daa02806b2aa0ef117eb60d4cfca506fd435e66faf887c27371fe35"
+    },
+    {
+      "id": "arXiv:1303.0433v1",
+      "version": "v1",
+      "sha256": "7862d679622de63a6b5e4a222bd82cd31d620cbfe3b2579874977caad7d0e680"
+    },
+    {
+      "id": "arXiv:quant-ph/9902008v3",
+      "version": "v3",
+      "sha256": "730ce6dcbb5c3a9916b5afc52b66d3a817eed39b6c9d91dba3c8d50ee9cd19a1"
+    },
+    {
+      "id": "arXiv:gr-qc/9509054v4",
+      "version": "v4",
+      "sha256": "71dfb38b68ee9a4785d6aa67b4edc6d4cae9b3a13a4af1f66a01b40868a61844"
+    },
+    {
+      "id": "arXiv:hep-th/9904009v5",
+      "version": "v5",
+      "sha256": "44af394842af41a5406aac7f91cbfd197deffdbf88a222c9a714e98875029d22"
+    },
+    {
+      "id": "arXiv:hep-th/0302111v3",
+      "version": "v3",
+      "sha256": "fc75c7b5cbf99e383e50fee1eec0c35ddec61f4d9365204782d6232257a61efa"
+    },
+    {
+      "id": "arXiv:quant-ph/0102043v2",
+      "version": "v2",
+      "sha256": "b0632dd392b98972a5bf9d637e4cf56e81a00e0cb2648117e87f9dc7d0f06830"
+    },
+    {
+      "id": "arXiv:quant-ph/0104027v1",
+      "version": "v1",
+      "sha256": "00e1419705ab87b2dfb57c5513d95f6fa355ce1adfadb4f368ffbfca8076e9d8"
+    },
+    {
+      "id": "arXiv:0904.4483v2",
+      "version": "v2",
+      "sha256": "18f8af26f5da951f44ec971038c5bbbfd06773f9ad009dce8d654f54e760f558"
+    },
+    {
+      "id": "arXiv:1512.02240v3",
+      "version": "v3",
+      "sha256": "a3bb1358b222c3476455790f388c41dcb30581bc0206f26694b9eba7d3a74ca5"
+    },
+    {
+      "id": "arXiv:1910.07292v2",
+      "version": "v2",
+      "sha256": "cb4ddb73abd296d91c693c7e985ba146454811612f8f6c778ab6523ce744446a"
+    },
+    {
+      "id": "arXiv:2008.02607v1",
+      "version": "v1",
+      "sha256": "4fa65d96b266e04f710e1168dfd900128d6d995987e6f5b86f690a507c379fc7"
+    },
+    {
+      "id": "arXiv:1906.10726v2",
+      "version": "v2",
+      "sha256": "92d2c83f8b61cbba7a2bca9aa0b2d5db3d2625f1f6742c414422d7162f550717"
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "references/papers/2003.11311v1_surya-zalel_covariance-complex-sequential-growth.pdf",
+      "sha256": "0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272"
+    },
+    {
+      "path": "references/papers/1007.2725v1_dowker-johnston-surya_extending-quantum-measure.pdf",
+      "sha256": "994d1e7e3834f3437cc1cffaf2ae038f6c35293c10775dfde6bddd94793e906f"
+    },
+    {
+      "path": "references/papers/gr-qc-9904062v3_rideout-sorkin_classical-sequential-growth.pdf",
+      "sha256": "6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    },
+    {
+      "path": "references/papers/1204.5767v1_gudder_causal-set-discrete-quantum-gravity.pdf",
+      "sha256": "97e62aef3daa02806b2aa0ef117eb60d4cfca506fd435e66faf887c27371fe35"
+    },
+    {
+      "path": "references/papers/1303.0433v1_gudder_dynamics-discrete-quantum-gravity.pdf",
+      "sha256": "7862d679622de63a6b5e4a222bd82cd31d620cbfe3b2579874977caad7d0e680"
+    },
+    {
+      "path": "references/papers/quant-ph-9902008v3_halliwell_information-histories-decohere.pdf",
+      "sha256": "730ce6dcbb5c3a9916b5afc52b66d3a817eed39b6c9d91dba3c8d50ee9cd19a1"
+    },
+    {
+      "path": "references/papers/gr-qc-9509054v4_gell-mann-hartle_strong-decoherence.pdf",
+      "sha256": "71dfb38b68ee9a4785d6aa67b4edc6d4cae9b3a13a4af1f66a01b40868a61844"
+    },
+    {
+      "path": "references/papers/hep-th-9904009v5_markopoulou_quantum-causal-histories.pdf",
+      "sha256": "44af394842af41a5406aac7f91cbfd197deffdbf88a222c9a714e98875029d22"
+    },
+    {
+      "path": "references/papers/hep-th-0302111v3_hawkins-markopoulou-sahlmann_evolution-qch.pdf",
+      "sha256": "fc75c7b5cbf99e383e50fee1eec0c35ddec61f4d9365204782d6232257a61efa"
+    },
+    {
+      "path": "references/papers/quant-ph-0102043v2_beckman-gottesman-nielsen-preskill_causal-localizable-operations.pdf",
+      "sha256": "b0632dd392b98972a5bf9d637e4cf56e81a00e0cb2648117e87f9dc7d0f06830"
+    },
+    {
+      "path": "references/papers/quant-ph-0104027v1_eggeling-schlingemann-werner_semicausal-semilocalizable.pdf",
+      "sha256": "00e1419705ab87b2dfb57c5513d95f6fa355ce1adfadb4f368ffbfca8076e9d8"
+    },
+    {
+      "path": "references/papers/0904.4483v2_chiribella-dariano-perinotti_quantum-networks.pdf",
+      "sha256": "18f8af26f5da951f44ec971038c5bbbfd06773f9ad009dce8d654f54e760f558"
+    },
+    {
+      "path": "references/papers/1512.02240v3_portmann-et-al_causal-boxes.pdf",
+      "sha256": "a3bb1358b222c3476455790f388c41dcb30581bc0206f26694b9eba7d3a74ca5"
+    },
+    {
+      "path": "references/papers/1910.07292v2_dowker-et-al_manifestly-covariant-causet-dynamics.pdf",
+      "sha256": "cb4ddb73abd296d91c693c7e985ba146454811612f8f6c778ab6523ce744446a"
+    },
+    {
+      "path": "references/papers/2008.02607v1_zalel_covtree-structure.pdf",
+      "sha256": "4fa65d96b266e04f710e1168dfd900128d6d995987e6f5b86f690a507c379fc7"
+    },
+    {
+      "path": "references/papers/1906.10726v2_barrett-lorenz-oreshkov_quantum-causal-models.pdf",
+      "sha256": "92d2c83f8b61cbba7a2bca9aa0b2d5db3d2625f1f6742c414422d7162f550717"
+    }
+  ],
+  "literature_classification": "OPEN_TARGET",
+  "assumptions": [
+    "the v0.3 artifact freeze is immutable",
+    "only exact certificates may pass scientific gates"
+  ],
+  "dimension": 3,
+  "field": "Q(t) exact bounded ansatz; no full representation",
+  "jordan_stratum": "ALL_REQUIRED_D3_STRATA_DECLARED_PARTIAL_SEARCH",
+  "ansatz": "D3_SCALED_HEISENBERG_AFFINE_LINE_Q_2_3_5_7",
+  "relation_count": 641,
+  "solver": "deterministic exact Python",
+  "solver_version": {
+    "python": "3.12.10",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5",
+    "python_flint": "0.8.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "random_seed": {
+    "used": false,
+    "value": null,
+    "policy": "deterministic"
+  },
+  "exact_numeric_distinction": {
+    "exact": "integer, Fraction, and symbolic algebra",
+    "numeric": "no floating residual is accepted as a certificate"
+  },
+  "time_limit": "no external timeout",
+  "memory_limit": "host available memory",
+  "certificate_hashes": [
+    {
+      "path": "certificates/commutative_csg_reference/exact_finite_audit_v0.3.1.json",
+      "sha256": "29b0e86069b09493b2b7e5bd1e97a0776c8fa0f82bf0f4863a826c2b5d3d621b"
+    },
+    {
+      "path": "certificates/commutative_csg_reference/parameter_and_theorem_v0.3.1.json",
+      "sha256": "2d13c5983fcc2971ad0da1e1da094120e9139506192a73086520e3a6325fe598"
+    },
+    {
+      "path": "certificates/commutative_csg_reference/physical_interference_witness_v0.3.1.json",
+      "sha256": "a7787b2018afbc6d6523c5e5dd2b2c53af03ad25817dd3ace9691dfbd421d4d9"
+    },
+    {
+      "path": "certificates/cpobc_no_go/v0.3.1_scaled_heisenberg_no_go.json",
+      "sha256": "50dd87fc07998b643c13a9072d4fe3d784b98b0d7e195be7c9770935804c6890"
+    },
+    {
+      "path": "certificates/cpobc_relation_dependencies/v0.3.1_dependency_summary.json",
+      "sha256": "9dafab0fab95094d3b346de5dda969fc3778220e38f528a1c0f2beacfd65e08f"
+    },
+    {
+      "path": "certificates/cpobc_relation_generation/v0.3.1_compiler_mutations.json",
+      "sha256": "fcd9874e0b76c14cac4d709b4d84c7ccb473f54fc786bb9b7a8274a9c0da77f6"
+    },
+    {
+      "path": "certificates/cpobc_relation_generation/v0.3.1_independent_bell_oracle.json",
+      "sha256": "bc06677aee0f90dabf62a126a5ec130e86acd47c056e0ba63ea7741df42158e2"
+    },
+    {
+      "path": "certificates/cpobc_representation/v0.3.1_scaled_heisenberg_exact_substitution.json",
+      "sha256": "397febd91a4d7fb93dd9099cb27e55ce16216c1525d3f6f2d25743e1ad46e4a3"
+    },
+    {
+      "path": "certificates/noncommutative_qsg/v0.3.1_precondition_boundary.json",
+      "sha256": "4c879ab9e9b80146566c454d371165bcad78864ec6e512519e5b5cfe61798a6d"
+    }
+  ]
+}

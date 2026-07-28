@@ -1,26 +1,83 @@
 {
-  "checks": {
-    "CPOBC_product_order_reversal": true,
-    "precursor_comparison_reversal": true,
-    "equal_size_auxiliary_deletion": true,
-    "incorrect_inverse_cancellation": true,
-    "invertibility_constraint_deletion": true,
-    "GC_dependency_deletion": true,
-    "MSR_dependency_deletion": true,
-    "automorphism_multiplicity_deletion": true,
-    "labelled_unlabelled_confusion": true,
-    "commutative_word_normalisation": true,
-    "similarity_equivalent_solution_duplicate": true,
-    "finite_grid_no_go_overclaim": true,
-    "numerical_zero_as_exact": true,
-    "singular_as_nonsingular": true,
-    "omit_eq145_false_survivor": true,
-    "paper_result_reported_as_new": true
+  "schema_version": "final-theory-noncommutative-qsg-v0.3.1",
+  "phase": "PHASE_F_PHYSICAL_QSG_CERTIFICATION",
+  "precondition": {
+    "exact_finite_dimensional_representation_found": false,
+    "full_n4_compiled_relation_certificate": false,
+    "passed": false
   },
-  "detected_count": 16,
-  "critical_mutation_count": 16,
-  "passed": true,
-  "schema_version": "final-theory-v0.3.1_compiler_mutations-v0.3.1",
+  "execution": "NOT_EXECUTED",
+  "vector_measure_constructed": false,
+  "decoherence_functional_constructed": false,
+  "kraus_channel_conversion_attempted": false,
+  "finite_additivity": "NOT_ASSESSED",
+  "MSR": "NOT_ASSESSED",
+  "GC": "NOT_ASSESSED",
+  "CPOBC": "NOT_ASSESSED",
+  "normalization": "NOT_ASSESSED",
+  "hermiticity": "NOT_ASSESSED",
+  "strong_positivity": "NOT_ASSESSED",
+  "label_covariance": "NOT_ASSESSED",
+  "quotient_consistency": "NOT_ASSESSED",
+  "path_consistency": "NOT_ASSESSED",
+  "initial_vector_dependence": "NOT_ASSESSED",
+  "scalar_commutative_limit": "NOT_ASSESSED",
+  "off_diagonal_geometry_interference": "NOT_ASSESSED",
+  "geometry_interference_status": "NOT_ASSESSED_NO_REPRESENTATION",
+  "status": "NOT_EXECUTED_NO_REPRESENTATION",
+  "verdict": "NOT_EXECUTED_NO_REPRESENTATION",
+  "claim_boundary": "Exact survivors of selected necessary relations, finite grids, or bounded ansatz diagnostics are not representations of the full CPOBC/MSR/GC system.",
+  "unresolved_items": [
+    "full exact operator assignment for every compiled n<=4 relation",
+    "MSR and GC certificates for that assignment",
+    "finite-stage vector measure and covariant-event interference"
+  ],
+  "commutative_positive_control_status": "COMMUTATIVE_CSG_REFERENCE_PASS",
+  "extension_boundary": {
+    "schema_version": "final-theory-extension-boundary-v0.3.1",
+    "commutative_csg_extension": {
+      "classification": "LITERATURE_LOCKED",
+      "source": "arXiv:2003.11311v1",
+      "statement": "Bounded variation is the paper criterion for extension of the complex scalar CSG measure; the selected positive control is a regression fixture."
+    },
+    "noncommutative_vector_measure": {
+      "representation_available": false,
+      "associated_vector_pre_measure": "NOT_CONSTRUCTED",
+      "total_variation": "NOT_ASSESSED",
+      "semivariation": "NOT_ASSESSED",
+      "weak_scalarisations": "NOT_ASSESSED",
+      "cylinder_consistency": "NOT_ASSESSED",
+      "applicable_theorem": "NOT_IDENTIFIED",
+      "missing_assumptions": [
+        "exact noncommutative CPOBC representation",
+        "associated finite vector pre-measure"
+      ]
+    },
+    "finite_n_boundedness_is_infinite_proof": false,
+    "status": "NONCOMMUTATIVE_EXTENSION_NOT_ASSESSED",
+    "verdict": "NONCOMMUTATIVE_EXTENSION_NOT_ASSESSED",
+    "prohibited_verdict": "INFINITE_EXTENSION_PASS",
+    "claim_boundary": "No scalar bounded-variation theorem is transferred to an operator-valued vector measure without its codomain and hypotheses.",
+    "unresolved_items": [
+      "exact noncommutative CPOBC representation",
+      "associated finite vector pre-measure"
+    ]
+  },
+  "kraus_channel_track": {
+    "schema_version": "final-theory-kraus-boundary-v0.3.1",
+    "v0_3_baseline_preserved": true,
+    "classification": "FORMULATION_MISMATCH",
+    "distinct_notions": [
+      "Quantum Causal Histories causality",
+      "semicausal/no-signalling quantum channels",
+      "Rideout-Sorkin Bell causality",
+      "CPOBC for nonsingular transition operators"
+    ],
+    "equivalence_theorem_found": false,
+    "new_channel_bell_definition_introduced": false,
+    "deferred_target": "Kraus-channel spectator reduction on a separate branch and version",
+    "verdict": "FORMULATION_MISMATCH"
+  },
   "branch": "codex/final-theory-v0.3.1-literature-locked-qsg-lift-20260728",
   "source_commit": "3ccbc66cc2cf868bf2a33ab96d4dd46e729d5f09",
   "code_commit": "d3628f1985c061d6439e39b1c839b5ebf1165e5f",
@@ -187,8 +244,8 @@
     "only exact certificates may pass scientific gates"
   ],
   "dimension": 3,
-  "field": "Q(t)",
-  "jordan_stratum": "NOT_APPLICABLE_COMPILER",
+  "field": "NOT_CONSTRUCTED",
+  "jordan_stratum": "NOT_APPLICABLE_NO_REPRESENTATION",
   "ansatz": "NONE",
   "relation_count": 641,
   "solver": "deterministic exact Python",
@@ -208,10 +265,13 @@
     "exact": "integer, Fraction, and symbolic algebra",
     "numeric": "no floating residual is accepted as a certificate"
   },
-  "completeness_scope": "scope is declared by the nested benchmark record",
+  "completeness_scope": "physical certification precondition only; no representation exists",
   "time_limit": "no external timeout",
   "memory_limit": "host available memory",
-  "unresolved_components": [],
-  "certificate_hashes": [],
-  "verdict": "INCONCLUSIVE"
+  "unresolved_components": [
+    "full exact operator assignment for every compiled n<=4 relation",
+    "MSR and GC certificates for that assignment",
+    "finite-stage vector measure and covariant-event interference"
+  ],
+  "certificate_hashes": []
 }

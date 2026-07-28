@@ -1,248 +1,439 @@
 {
-  "bell_coverage_sha256": "fd7aacadbc4b2d1ca5c6dd530df80e960d62d3a1abf94ba481686b6fdc014c43",
+  "schema_version": "commutative-csg-finite-certificate-v0.3.1",
+  "profile_id": "COMMUTATIVE_CSG_REFERENCE_T2_1_PLUS_I",
+  "max_n": 5,
+  "field": "Q(i) exact specialization embedded in C",
+  "transition_orbit_count": 131,
+  "raw_labelled_transition_count": 172,
+  "raw_transition_coverage_sha256": "26022b417f072c03b9d7e80412f0a896ea326d9caab316c01c8be3965fc4b637",
   "bell_pair_count": 489,
+  "bell_coverage_sha256": "fd7aacadbc4b2d1ca5c6dd530df80e960d62d3a1abf94ba481686b6fdc014c43",
+  "stage_path_certificates": [
+    {
+      "stage": 1,
+      "unlabeled_causet_count": 1,
+      "quotient_path_count": 1,
+      "expanded_labelled_history_count": 1,
+      "omega_amplitude": {
+        "real": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "imaginary": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "expression": "1"
+      },
+      "path_pushforward_omega_amplitude": {
+        "real": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "imaginary": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "expression": "1"
+      },
+      "normalized_exactly": true,
+      "endpoint_coverage_sha256": "9b19da482043dff843a7e6f718555b35be18e19e94478f98912eb120be64d076"
+    },
+    {
+      "stage": 2,
+      "unlabeled_causet_count": 2,
+      "quotient_path_count": 2,
+      "expanded_labelled_history_count": 2,
+      "omega_amplitude": {
+        "real": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "imaginary": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "expression": "1"
+      },
+      "path_pushforward_omega_amplitude": {
+        "real": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "imaginary": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "expression": "1"
+      },
+      "normalized_exactly": true,
+      "endpoint_coverage_sha256": "0cfbffb5c1672a9ed04570ba9043777566e9a1d68fe6b0aec80b7980c91a2e74"
+    },
+    {
+      "stage": 3,
+      "unlabeled_causet_count": 5,
+      "quotient_path_count": 6,
+      "expanded_labelled_history_count": 7,
+      "omega_amplitude": {
+        "real": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "imaginary": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "expression": "1"
+      },
+      "path_pushforward_omega_amplitude": {
+        "real": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "imaginary": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "expression": "1"
+      },
+      "normalized_exactly": true,
+      "endpoint_coverage_sha256": "7dbfc133a086c7cc3281df6e5f172ead3460fa4d19adc31b73cd4dca88f97367"
+    },
+    {
+      "stage": 4,
+      "unlabeled_causet_count": 16,
+      "quotient_path_count": 28,
+      "expanded_labelled_history_count": 40,
+      "omega_amplitude": {
+        "real": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "imaginary": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "expression": "1"
+      },
+      "path_pushforward_omega_amplitude": {
+        "real": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "imaginary": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "expression": "1"
+      },
+      "normalized_exactly": true,
+      "endpoint_coverage_sha256": "aa6779649a19443967f34661cf03d90824ec573f6fc5e575bae93da4639d073e"
+    },
+    {
+      "stage": 5,
+      "unlabeled_causet_count": 63,
+      "quotient_path_count": 195,
+      "expanded_labelled_history_count": 357,
+      "omega_amplitude": {
+        "real": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "imaginary": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "expression": "1"
+      },
+      "path_pushforward_omega_amplitude": {
+        "real": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "imaginary": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "expression": "1"
+      },
+      "normalized_exactly": true,
+      "endpoint_coverage_sha256": "ffbe2d39a87f9582a5274cbde736fb9cbef77905d10125baa1902b0e54de8917"
+    }
+  ],
   "decoherence_stage_certificates": [
     {
-      "Hermiticity_exact": true,
+      "stage": 1,
       "covariant_singleton_event_count": 1,
-      "grade2_exact": true,
-      "nonzero_I2_pair_count": 0,
+      "unordered_event_pairs_checked": 0,
       "nonzero_off_diagonal_D_pair_count": 0,
-      "normalization_exact": true,
+      "nonzero_I2_pair_count": 0,
       "pair_coverage_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "pairwise_disjoint_event_triples_checked": 0,
-      "stage": 1,
-      "strong_positivity_exact": true,
       "triple_coverage_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-      "unordered_event_pairs_checked": 0
+      "Hermiticity_exact": true,
+      "normalization_exact": true,
+      "strong_positivity_exact": true,
+      "grade2_exact": true
     },
     {
-      "Hermiticity_exact": true,
+      "stage": 2,
       "covariant_singleton_event_count": 2,
-      "grade2_exact": true,
-      "nonzero_I2_pair_count": 0,
+      "unordered_event_pairs_checked": 1,
       "nonzero_off_diagonal_D_pair_count": 0,
-      "normalization_exact": true,
+      "nonzero_I2_pair_count": 0,
       "pair_coverage_sha256": "15d733c273d91fadf927b74c63c5069ca0053d5e731f8f52e6ad926ec54f9697",
       "pairwise_disjoint_event_triples_checked": 0,
-      "stage": 2,
-      "strong_positivity_exact": true,
       "triple_coverage_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-      "unordered_event_pairs_checked": 1
+      "Hermiticity_exact": true,
+      "normalization_exact": true,
+      "strong_positivity_exact": true,
+      "grade2_exact": true
     },
     {
-      "Hermiticity_exact": true,
+      "stage": 3,
       "covariant_singleton_event_count": 5,
-      "grade2_exact": true,
-      "nonzero_I2_pair_count": 1,
+      "unordered_event_pairs_checked": 10,
       "nonzero_off_diagonal_D_pair_count": 1,
-      "normalization_exact": true,
+      "nonzero_I2_pair_count": 1,
       "pair_coverage_sha256": "e3430ee3d103b8ae95ed608862a4a46fc1f461da6ec052cc3f8a1293f12964c2",
       "pairwise_disjoint_event_triples_checked": 10,
-      "stage": 3,
-      "strong_positivity_exact": true,
       "triple_coverage_sha256": "10510370b0b6d0502e42b1dc62eba32cff7a433df8eea610cfc55e7768470e4b",
-      "unordered_event_pairs_checked": 10
+      "Hermiticity_exact": true,
+      "normalization_exact": true,
+      "strong_positivity_exact": true,
+      "grade2_exact": true
     },
     {
-      "Hermiticity_exact": true,
+      "stage": 4,
       "covariant_singleton_event_count": 16,
-      "grade2_exact": true,
-      "nonzero_I2_pair_count": 4,
+      "unordered_event_pairs_checked": 120,
       "nonzero_off_diagonal_D_pair_count": 6,
-      "normalization_exact": true,
+      "nonzero_I2_pair_count": 4,
       "pair_coverage_sha256": "0886ca8a0a036d113af9fde5843c3bb0168f06b53d0b3f653307bc93a50aee5f",
       "pairwise_disjoint_event_triples_checked": 560,
-      "stage": 4,
-      "strong_positivity_exact": true,
       "triple_coverage_sha256": "5e7e33cd7f67152ad11c5fd703fd1e021b6085b752c6ac1ecdfbca70b489d482",
-      "unordered_event_pairs_checked": 120
+      "Hermiticity_exact": true,
+      "normalization_exact": true,
+      "strong_positivity_exact": true,
+      "grade2_exact": true
     },
     {
-      "Hermiticity_exact": true,
+      "stage": 5,
       "covariant_singleton_event_count": 63,
-      "grade2_exact": true,
-      "nonzero_I2_pair_count": 46,
+      "unordered_event_pairs_checked": 1953,
       "nonzero_off_diagonal_D_pair_count": 55,
-      "normalization_exact": true,
+      "nonzero_I2_pair_count": 46,
       "pair_coverage_sha256": "0ccdd1c7bdc87767d53f771e777c7a171458609046665b89bcd4259b5fe6ed21",
       "pairwise_disjoint_event_triples_checked": 39711,
-      "stage": 5,
-      "strong_positivity_exact": true,
       "triple_coverage_sha256": "57dc939005f0f595907eb0cd0c23a927cacab4b5b616867f90d2b2ee1265d5a5",
-      "unordered_event_pairs_checked": 1953
+      "Hermiticity_exact": true,
+      "normalization_exact": true,
+      "strong_positivity_exact": true,
+      "grade2_exact": true
     }
   ],
   "exact_claims": {
-    "Hermiticity": true,
+    "transition_denominators_nonzero": true,
     "MSR": true,
     "general_covariance": true,
-    "grade2": true,
-    "label_quotient": true,
-    "normalization": true,
-    "path_independence": true,
     "scalar_Bell_causality": true,
+    "path_independence": true,
+    "normalization": true,
+    "Hermiticity": true,
     "strong_positivity": true,
-    "transition_denominators_nonzero": true
+    "grade2": true,
+    "label_quotient": true
   },
-  "field": "Q(i) exact specialization embedded in C",
-  "max_n": 5,
-  "profile_id": "COMMUTATIVE_CSG_REFERENCE_T2_1_PLUS_I",
-  "raw_labelled_transition_count": 172,
-  "raw_transition_coverage_sha256": "26022b417f072c03b9d7e80412f0a896ea326d9caab316c01c8be3965fc4b637",
-  "schema_version": "commutative-csg-finite-certificate-v0.3.1",
-  "stage_path_certificates": [
+  "verdict": "COMMUTATIVE_CSG_REFERENCE_PASS",
+  "branch": "codex/final-theory-v0.3.1-literature-locked-qsg-lift-20260728",
+  "source_commit": "3ccbc66cc2cf868bf2a33ab96d4dd46e729d5f09",
+  "code_commit": "d3628f1985c061d6439e39b1c839b5ebf1165e5f",
+  "paper_versions": [
     {
-      "endpoint_coverage_sha256": "9b19da482043dff843a7e6f718555b35be18e19e94478f98912eb120be64d076",
-      "expanded_labelled_history_count": 1,
-      "normalized_exactly": true,
-      "omega_amplitude": {
-        "expression": "1",
-        "imaginary": {
-          "denominator": 1,
-          "numerator": 0
-        },
-        "real": {
-          "denominator": 1,
-          "numerator": 1
-        }
-      },
-      "path_pushforward_omega_amplitude": {
-        "expression": "1",
-        "imaginary": {
-          "denominator": 1,
-          "numerator": 0
-        },
-        "real": {
-          "denominator": 1,
-          "numerator": 1
-        }
-      },
-      "quotient_path_count": 1,
-      "stage": 1,
-      "unlabeled_causet_count": 1
+      "id": "arXiv:2603.25503v1",
+      "version": "v1",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
     },
     {
-      "endpoint_coverage_sha256": "0cfbffb5c1672a9ed04570ba9043777566e9a1d68fe6b0aec80b7980c91a2e74",
-      "expanded_labelled_history_count": 2,
-      "normalized_exactly": true,
-      "omega_amplitude": {
-        "expression": "1",
-        "imaginary": {
-          "denominator": 1,
-          "numerator": 0
-        },
-        "real": {
-          "denominator": 1,
-          "numerator": 1
-        }
-      },
-      "path_pushforward_omega_amplitude": {
-        "expression": "1",
-        "imaginary": {
-          "denominator": 1,
-          "numerator": 0
-        },
-        "real": {
-          "denominator": 1,
-          "numerator": 1
-        }
-      },
-      "quotient_path_count": 2,
-      "stage": 2,
-      "unlabeled_causet_count": 2
+      "id": "arXiv:2003.11311v1",
+      "version": "v1",
+      "sha256": "0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272"
     },
     {
-      "endpoint_coverage_sha256": "7dbfc133a086c7cc3281df6e5f172ead3460fa4d19adc31b73cd4dca88f97367",
-      "expanded_labelled_history_count": 7,
-      "normalized_exactly": true,
-      "omega_amplitude": {
-        "expression": "1",
-        "imaginary": {
-          "denominator": 1,
-          "numerator": 0
-        },
-        "real": {
-          "denominator": 1,
-          "numerator": 1
-        }
-      },
-      "path_pushforward_omega_amplitude": {
-        "expression": "1",
-        "imaginary": {
-          "denominator": 1,
-          "numerator": 0
-        },
-        "real": {
-          "denominator": 1,
-          "numerator": 1
-        }
-      },
-      "quotient_path_count": 6,
-      "stage": 3,
-      "unlabeled_causet_count": 5
+      "id": "arXiv:1007.2725v1",
+      "version": "v1",
+      "sha256": "994d1e7e3834f3437cc1cffaf2ae038f6c35293c10775dfde6bddd94793e906f"
     },
     {
-      "endpoint_coverage_sha256": "aa6779649a19443967f34661cf03d90824ec573f6fc5e575bae93da4639d073e",
-      "expanded_labelled_history_count": 40,
-      "normalized_exactly": true,
-      "omega_amplitude": {
-        "expression": "1",
-        "imaginary": {
-          "denominator": 1,
-          "numerator": 0
-        },
-        "real": {
-          "denominator": 1,
-          "numerator": 1
-        }
-      },
-      "path_pushforward_omega_amplitude": {
-        "expression": "1",
-        "imaginary": {
-          "denominator": 1,
-          "numerator": 0
-        },
-        "real": {
-          "denominator": 1,
-          "numerator": 1
-        }
-      },
-      "quotient_path_count": 28,
-      "stage": 4,
-      "unlabeled_causet_count": 16
+      "id": "arXiv:gr-qc/9904062v3",
+      "version": "v3",
+      "sha256": "6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
     },
     {
-      "endpoint_coverage_sha256": "ffbe2d39a87f9582a5274cbde736fb9cbef77905d10125baa1902b0e54de8917",
-      "expanded_labelled_history_count": 357,
-      "normalized_exactly": true,
-      "omega_amplitude": {
-        "expression": "1",
-        "imaginary": {
-          "denominator": 1,
-          "numerator": 0
-        },
-        "real": {
-          "denominator": 1,
-          "numerator": 1
-        }
-      },
-      "path_pushforward_omega_amplitude": {
-        "expression": "1",
-        "imaginary": {
-          "denominator": 1,
-          "numerator": 0
-        },
-        "real": {
-          "denominator": 1,
-          "numerator": 1
-        }
-      },
-      "quotient_path_count": 195,
-      "stage": 5,
-      "unlabeled_causet_count": 63
+      "id": "arXiv:1204.5767v1",
+      "version": "v1",
+      "sha256": "97e62aef3daa02806b2aa0ef117eb60d4cfca506fd435e66faf887c27371fe35"
+    },
+    {
+      "id": "arXiv:1303.0433v1",
+      "version": "v1",
+      "sha256": "7862d679622de63a6b5e4a222bd82cd31d620cbfe3b2579874977caad7d0e680"
+    },
+    {
+      "id": "arXiv:quant-ph/9902008v3",
+      "version": "v3",
+      "sha256": "730ce6dcbb5c3a9916b5afc52b66d3a817eed39b6c9d91dba3c8d50ee9cd19a1"
+    },
+    {
+      "id": "arXiv:gr-qc/9509054v4",
+      "version": "v4",
+      "sha256": "71dfb38b68ee9a4785d6aa67b4edc6d4cae9b3a13a4af1f66a01b40868a61844"
+    },
+    {
+      "id": "arXiv:hep-th/9904009v5",
+      "version": "v5",
+      "sha256": "44af394842af41a5406aac7f91cbfd197deffdbf88a222c9a714e98875029d22"
+    },
+    {
+      "id": "arXiv:hep-th/0302111v3",
+      "version": "v3",
+      "sha256": "fc75c7b5cbf99e383e50fee1eec0c35ddec61f4d9365204782d6232257a61efa"
+    },
+    {
+      "id": "arXiv:quant-ph/0102043v2",
+      "version": "v2",
+      "sha256": "b0632dd392b98972a5bf9d637e4cf56e81a00e0cb2648117e87f9dc7d0f06830"
+    },
+    {
+      "id": "arXiv:quant-ph/0104027v1",
+      "version": "v1",
+      "sha256": "00e1419705ab87b2dfb57c5513d95f6fa355ce1adfadb4f368ffbfca8076e9d8"
+    },
+    {
+      "id": "arXiv:0904.4483v2",
+      "version": "v2",
+      "sha256": "18f8af26f5da951f44ec971038c5bbbfd06773f9ad009dce8d654f54e760f558"
+    },
+    {
+      "id": "arXiv:1512.02240v3",
+      "version": "v3",
+      "sha256": "a3bb1358b222c3476455790f388c41dcb30581bc0206f26694b9eba7d3a74ca5"
+    },
+    {
+      "id": "arXiv:1910.07292v2",
+      "version": "v2",
+      "sha256": "cb4ddb73abd296d91c693c7e985ba146454811612f8f6c778ab6523ce744446a"
+    },
+    {
+      "id": "arXiv:2008.02607v1",
+      "version": "v1",
+      "sha256": "4fa65d96b266e04f710e1168dfd900128d6d995987e6f5b86f690a507c379fc7"
+    },
+    {
+      "id": "arXiv:1906.10726v2",
+      "version": "v2",
+      "sha256": "92d2c83f8b61cbba7a2bca9aa0b2d5db3d2625f1f6742c414422d7162f550717"
     }
   ],
-  "transition_orbit_count": 131,
-  "verdict": "COMMUTATIVE_CSG_REFERENCE_PASS"
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "references/papers/2003.11311v1_surya-zalel_covariance-complex-sequential-growth.pdf",
+      "sha256": "0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272"
+    },
+    {
+      "path": "references/papers/1007.2725v1_dowker-johnston-surya_extending-quantum-measure.pdf",
+      "sha256": "994d1e7e3834f3437cc1cffaf2ae038f6c35293c10775dfde6bddd94793e906f"
+    },
+    {
+      "path": "references/papers/gr-qc-9904062v3_rideout-sorkin_classical-sequential-growth.pdf",
+      "sha256": "6fca540e9b035f25e58b10217115c26cb9d0bb7211cf95618e61e8c6aad2322b"
+    },
+    {
+      "path": "references/papers/1204.5767v1_gudder_causal-set-discrete-quantum-gravity.pdf",
+      "sha256": "97e62aef3daa02806b2aa0ef117eb60d4cfca506fd435e66faf887c27371fe35"
+    },
+    {
+      "path": "references/papers/1303.0433v1_gudder_dynamics-discrete-quantum-gravity.pdf",
+      "sha256": "7862d679622de63a6b5e4a222bd82cd31d620cbfe3b2579874977caad7d0e680"
+    },
+    {
+      "path": "references/papers/quant-ph-9902008v3_halliwell_information-histories-decohere.pdf",
+      "sha256": "730ce6dcbb5c3a9916b5afc52b66d3a817eed39b6c9d91dba3c8d50ee9cd19a1"
+    },
+    {
+      "path": "references/papers/gr-qc-9509054v4_gell-mann-hartle_strong-decoherence.pdf",
+      "sha256": "71dfb38b68ee9a4785d6aa67b4edc6d4cae9b3a13a4af1f66a01b40868a61844"
+    },
+    {
+      "path": "references/papers/hep-th-9904009v5_markopoulou_quantum-causal-histories.pdf",
+      "sha256": "44af394842af41a5406aac7f91cbfd197deffdbf88a222c9a714e98875029d22"
+    },
+    {
+      "path": "references/papers/hep-th-0302111v3_hawkins-markopoulou-sahlmann_evolution-qch.pdf",
+      "sha256": "fc75c7b5cbf99e383e50fee1eec0c35ddec61f4d9365204782d6232257a61efa"
+    },
+    {
+      "path": "references/papers/quant-ph-0102043v2_beckman-gottesman-nielsen-preskill_causal-localizable-operations.pdf",
+      "sha256": "b0632dd392b98972a5bf9d637e4cf56e81a00e0cb2648117e87f9dc7d0f06830"
+    },
+    {
+      "path": "references/papers/quant-ph-0104027v1_eggeling-schlingemann-werner_semicausal-semilocalizable.pdf",
+      "sha256": "00e1419705ab87b2dfb57c5513d95f6fa355ce1adfadb4f368ffbfca8076e9d8"
+    },
+    {
+      "path": "references/papers/0904.4483v2_chiribella-dariano-perinotti_quantum-networks.pdf",
+      "sha256": "18f8af26f5da951f44ec971038c5bbbfd06773f9ad009dce8d654f54e760f558"
+    },
+    {
+      "path": "references/papers/1512.02240v3_portmann-et-al_causal-boxes.pdf",
+      "sha256": "a3bb1358b222c3476455790f388c41dcb30581bc0206f26694b9eba7d3a74ca5"
+    },
+    {
+      "path": "references/papers/1910.07292v2_dowker-et-al_manifestly-covariant-causet-dynamics.pdf",
+      "sha256": "cb4ddb73abd296d91c693c7e985ba146454811612f8f6c778ab6523ce744446a"
+    },
+    {
+      "path": "references/papers/2008.02607v1_zalel_covtree-structure.pdf",
+      "sha256": "4fa65d96b266e04f710e1168dfd900128d6d995987e6f5b86f690a507c379fc7"
+    },
+    {
+      "path": "references/papers/1906.10726v2_barrett-lorenz-oreshkov_quantum-causal-models.pdf",
+      "sha256": "92d2c83f8b61cbba7a2bca9aa0b2d5db3d2625f1f6742c414422d7162f550717"
+    }
+  ],
+  "literature_classification": "REGRESSION_ONLY",
+  "assumptions": [
+    "the v0.3 artifact freeze is immutable",
+    "only exact certificates may pass scientific gates"
+  ],
+  "dimension": 1,
+  "jordan_stratum": "NOT_APPLICABLE_SCALAR",
+  "ansatz": "NONE",
+  "relation_count": 0,
+  "solver": "deterministic exact Python",
+  "solver_version": {
+    "python": "3.12.10",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5",
+    "python_flint": "0.8.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "random_seed": {
+    "used": false,
+    "value": null,
+    "policy": "deterministic"
+  },
+  "exact_numeric_distinction": {
+    "exact": "integer, Fraction, and symbolic algebra",
+    "numeric": "no floating residual is accepted as a certificate"
+  },
+  "completeness_scope": "scope is declared by the nested benchmark record",
+  "time_limit": "no external timeout",
+  "memory_limit": "host available memory",
+  "unresolved_components": [],
+  "certificate_hashes": []
 }
