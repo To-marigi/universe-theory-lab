@@ -1,0 +1,5112 @@
+{
+  "schema_version": "final-theory-d2-B-auxiliary-audit-v0.3.4",
+  "certificate_kind": "D2_B_AUXILIARY_CLASSIFICATION",
+  "source_inventory_semantic_digest_sha256": "301c55fbc542fa8874a1db15a29d49aaa6b414a57e0161859c9e1ac10eabd0a8",
+  "counts": {
+    "B_inverse_auxiliaries": 22,
+    "classifications": {
+      "AMBIGUOUS_AUXILIARY": 0,
+      "BRANCH_DEPENDENT_AUXILIARY": 0,
+      "DEFINITIONAL_RATIONAL_AUXILIARY": 22,
+      "GENUINE_FREE_AUXILIARY": 0
+    },
+    "transition_types": {
+      "PROPER_NON_GREGARIOUS_TRANSITION": 14,
+      "TIMID_TRANSITION": 8
+    },
+    "v033_abstract_d2_matrix_entries": 104,
+    "rationally_eliminated_B_inverse_matrix_entries": 88,
+    "genuine_free_B_auxiliary_matrix_entries": 0,
+    "branch_dependent_B_auxiliary_matrix_entries": 0,
+    "ambiguous_B_auxiliary_matrix_entries": 0,
+    "remaining_Q_matrix_entry_coordinates_before_saturation": 16,
+    "local_B_determinant_nonzero_conditions": 22
+  },
+  "classification_policy": {
+    "allowed_classifications": [
+      "AMBIGUOUS_AUXILIARY",
+      "BRANCH_DEPENDENT_AUXILIARY",
+      "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "GENUINE_FREE_AUXILIARY"
+    ],
+    "inverse_name_is_not_definition_evidence": true,
+    "definitional_requirements": [
+      "one exact forward B definition",
+      "one matching inverse node",
+      "both left and right inverse predicates",
+      "matching d=2 determinant-nonzero transition predicate",
+      "resolved acyclic dependency closure",
+      "complete atomisation-path transition provenance",
+      "same definition in both Eq. (113) source-index branches"
+    ],
+    "genuine_free_requires_positive_free_generator_evidence": true,
+    "fallback_classification": "AMBIGUOUS_AUXILIARY"
+  },
+  "auxiliaries": [
+    {
+      "auxiliary_id": "U_B_2585179d7faa71e1",
+      "B_id": "B_2_2585179d7faa71e1",
+      "B_occurrence_id": "B-occurrence-2585179d7faa71e1f634",
+      "v032_transition_occurrence_id": "cpobc-transition-235714cb17afd87b31f6",
+      "stage": 2,
+      "transition_type": "TIMID_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_2585179d7faa71e1_00",
+            "b_2585179d7faa71e1_01"
+          ],
+          [
+            "b_2585179d7faa71e1_10",
+            "b_2585179d7faa71e1_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_2585179d7faa71e1_00",
+            "U_B_2585179d7faa71e1_01"
+          ],
+          [
+            "U_B_2585179d7faa71e1_10",
+            "U_B_2585179d7faa71e1_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_2585179d7faa71e1_11",
+              "-b_2585179d7faa71e1_01"
+            ],
+            [
+              "-b_2585179d7faa71e1_10",
+              "b_2585179d7faa71e1_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_2585179d7faa71e1",
+          "formula": "b_2585179d7faa71e1_00*b_2585179d7faa71e1_11 - b_2585179d7faa71e1_01*b_2585179d7faa71e1_10",
+          "inherited_denominator_symbols": [],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_2585179d7faa71e1 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-235714cb17afd87b31f6",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_2585179d7faa71e1_11/Delta_2585179d7faa71e1",
+            "-b_2585179d7faa71e1_01/Delta_2585179d7faa71e1"
+          ],
+          [
+            "-b_2585179d7faa71e1_10/Delta_2585179d7faa71e1",
+            "b_2585179d7faa71e1_00/Delta_2585179d7faa71e1"
+          ]
+        ],
+        "matrix_definition": "U_B_2585179d7faa71e1 := adj(B)/Delta_2585179d7faa71e1",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_2585179d7faa71e1",
+        "formula": "b_2585179d7faa71e1_00*b_2585179d7faa71e1_11 - b_2585179d7faa71e1_01*b_2585179d7faa71e1_10",
+        "inherited_denominator_symbols": [],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_2585179d7faa71e1 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-235714cb17afd87b31f6",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-2585179d7faa71e1f634",
+          "B_operator_symbol": "B_2_2585179d7faa71e1",
+          "B_transition_signature": {
+            "stage": 2,
+            "source_relation_code": 0,
+            "precursor_code": 3
+          },
+          "source_relation_rows": [
+            0,
+            0
+          ],
+          "source_causet_id": "p2-0",
+          "precursor_code": 3,
+          "precursor_vertices_in_source": [
+            0,
+            1
+          ],
+          "B_target_relation_rows": [
+            4,
+            4,
+            0
+          ],
+          "B_target_causet_id": "p3-024",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-ea80031adb92b4341e6b",
+          "gregarious_companion_operator_symbol": "GCOMP_2_ea80031adb92b434",
+          "gregarious_companion_signature": {
+            "stage": 2,
+            "source_relation_code": 0,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p3-000",
+          "source_target_types": {
+            "source": "2-element decimation source",
+            "B_target": "3-element pre-atomised causet",
+            "gregarious_target": "3-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-2585179d7faa71e1f634",
+            "B_operator_symbol": "B_2_2585179d7faa71e1",
+            "B_transition_signature": {
+              "stage": 2,
+              "source_relation_code": 0,
+              "precursor_code": 3
+            },
+            "source_relation_rows": [
+              0,
+              0
+            ],
+            "source_causet_id": "p2-0",
+            "precursor_code": 3,
+            "precursor_vertices_in_source": [
+              0,
+              1
+            ],
+            "B_target_relation_rows": [
+              4,
+              4,
+              0
+            ],
+            "B_target_causet_id": "p3-024",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-ea80031adb92b4341e6b",
+            "gregarious_companion_operator_symbol": "GCOMP_2_ea80031adb92b434",
+            "gregarious_companion_signature": {
+              "stage": 2,
+              "source_relation_code": 0,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p3-000",
+            "source_target_types": {
+              "source": "2-element decimation source",
+              "B_target": "3-element pre-atomised causet",
+              "gregarious_target": "3-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 1,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "EQ113_QN_PLUS_1_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_28b53b35f4893544",
+      "B_id": "B_3_28b53b35f4893544",
+      "B_occurrence_id": "B-occurrence-28b53b35f489354487d7",
+      "v032_transition_occurrence_id": "cpobc-transition-2068b03cf64c25cdb276",
+      "stage": 3,
+      "transition_type": "TIMID_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_28b53b35f4893544_00",
+            "b_28b53b35f4893544_01"
+          ],
+          [
+            "b_28b53b35f4893544_10",
+            "b_28b53b35f4893544_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_28b53b35f4893544_00",
+            "U_B_28b53b35f4893544_01"
+          ],
+          [
+            "U_B_28b53b35f4893544_10",
+            "U_B_28b53b35f4893544_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_28b53b35f4893544_11",
+              "-b_28b53b35f4893544_01"
+            ],
+            [
+              "-b_28b53b35f4893544_10",
+              "b_28b53b35f4893544_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_28b53b35f4893544",
+          "formula": "b_28b53b35f4893544_00*b_28b53b35f4893544_11 - b_28b53b35f4893544_01*b_28b53b35f4893544_10",
+          "inherited_denominator_symbols": [],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_28b53b35f4893544 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-2068b03cf64c25cdb276",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_28b53b35f4893544_11/Delta_28b53b35f4893544",
+            "-b_28b53b35f4893544_01/Delta_28b53b35f4893544"
+          ],
+          [
+            "-b_28b53b35f4893544_10/Delta_28b53b35f4893544",
+            "b_28b53b35f4893544_00/Delta_28b53b35f4893544"
+          ]
+        ],
+        "matrix_definition": "U_B_28b53b35f4893544 := adj(B)/Delta_28b53b35f4893544",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_28b53b35f4893544",
+        "formula": "b_28b53b35f4893544_00*b_28b53b35f4893544_11 - b_28b53b35f4893544_01*b_28b53b35f4893544_10",
+        "inherited_denominator_symbols": [],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_28b53b35f4893544 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-2068b03cf64c25cdb276",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-28b53b35f489354487d7",
+          "B_operator_symbol": "B_3_28b53b35f4893544",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 0,
+            "precursor_code": 7
+          },
+          "source_relation_rows": [
+            0,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-000",
+          "precursor_code": 7,
+          "precursor_vertices_in_source": [
+            0,
+            1,
+            2
+          ],
+          "B_target_relation_rows": [
+            8,
+            8,
+            8,
+            0
+          ],
+          "B_target_causet_id": "p4-0888",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-e84a203612950986af35",
+          "gregarious_companion_operator_symbol": "GCOMP_3_e84a203612950986",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 0,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0000",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-28b53b35f489354487d7",
+            "B_operator_symbol": "B_3_28b53b35f4893544",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 0,
+              "precursor_code": 7
+            },
+            "source_relation_rows": [
+              0,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-000",
+            "precursor_code": 7,
+            "precursor_vertices_in_source": [
+              0,
+              1,
+              2
+            ],
+            "B_target_relation_rows": [
+              8,
+              8,
+              8,
+              0
+            ],
+            "B_target_causet_id": "p4-0888",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-e84a203612950986af35",
+            "gregarious_companion_operator_symbol": "GCOMP_3_e84a203612950986",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 0,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0000",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 1,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "EQ113_QN_PLUS_1_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_3fb6fea277cafa17",
+      "B_id": "B_3_3fb6fea277cafa17",
+      "B_occurrence_id": "B-occurrence-3fb6fea277cafa17b935",
+      "v032_transition_occurrence_id": "cpobc-transition-7864a0ec11a64c208661",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_3fb6fea277cafa17_00",
+            "b_3fb6fea277cafa17_01"
+          ],
+          [
+            "b_3fb6fea277cafa17_10",
+            "b_3fb6fea277cafa17_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_3fb6fea277cafa17_00",
+            "U_B_3fb6fea277cafa17_01"
+          ],
+          [
+            "U_B_3fb6fea277cafa17_10",
+            "U_B_3fb6fea277cafa17_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_3fb6fea277cafa17_11",
+              "-b_3fb6fea277cafa17_01"
+            ],
+            [
+              "-b_3fb6fea277cafa17_10",
+              "b_3fb6fea277cafa17_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_3fb6fea277cafa17",
+          "formula": "b_3fb6fea277cafa17_00*b_3fb6fea277cafa17_11 - b_3fb6fea277cafa17_01*b_3fb6fea277cafa17_10",
+          "inherited_denominator_symbols": [
+            "Delta_692d8de209a59f16",
+            "Delta_847dbbdcf2b8502a"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_3fb6fea277cafa17 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-7864a0ec11a64c208661",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_3fb6fea277cafa17_11/Delta_3fb6fea277cafa17",
+            "-b_3fb6fea277cafa17_01/Delta_3fb6fea277cafa17"
+          ],
+          [
+            "-b_3fb6fea277cafa17_10/Delta_3fb6fea277cafa17",
+            "b_3fb6fea277cafa17_00/Delta_3fb6fea277cafa17"
+          ]
+        ],
+        "matrix_definition": "U_B_3fb6fea277cafa17 := adj(B)/Delta_3fb6fea277cafa17",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_3fb6fea277cafa17",
+        "formula": "b_3fb6fea277cafa17_00*b_3fb6fea277cafa17_11 - b_3fb6fea277cafa17_01*b_3fb6fea277cafa17_10",
+        "inherited_denominator_symbols": [
+          "Delta_692d8de209a59f16",
+          "Delta_847dbbdcf2b8502a"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_3fb6fea277cafa17 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-7864a0ec11a64c208661",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-3fb6fea277cafa17b935",
+          "B_operator_symbol": "B_3_3fb6fea277cafa17",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 2,
+            "precursor_code": 3
+          },
+          "source_relation_rows": [
+            2,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-002",
+          "precursor_code": 3,
+          "precursor_vertices_in_source": [
+            0,
+            1
+          ],
+          "B_target_relation_rows": [
+            10,
+            8,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-0046",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+          "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 2,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0002",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-3fb6fea277cafa17b935",
+            "B_operator_symbol": "B_3_3fb6fea277cafa17",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 3
+            },
+            "source_relation_rows": [
+              2,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-002",
+            "precursor_code": 3,
+            "precursor_vertices_in_source": [
+              0,
+              1
+            ],
+            "B_target_relation_rows": [
+              10,
+              8,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-0046",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+            "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0002",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 5,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "2c91f7ff29f7ddb310c7d0d2a0f4854540cd6ec55b0476fdad10fcc3f58091a3",
+          "EQ113_QN_PLUS_1_BRANCH": "2c91f7ff29f7ddb310c7d0d2a0f4854540cd6ec55b0476fdad10fcc3f58091a3"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_46c06c49c94fa54c",
+      "B_id": "B_3_46c06c49c94fa54c",
+      "B_occurrence_id": "B-occurrence-46c06c49c94fa54c1b81",
+      "v032_transition_occurrence_id": "cpobc-transition-be34c613cf0d91d4728f",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_46c06c49c94fa54c_00",
+            "b_46c06c49c94fa54c_01"
+          ],
+          [
+            "b_46c06c49c94fa54c_10",
+            "b_46c06c49c94fa54c_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_46c06c49c94fa54c_00",
+            "U_B_46c06c49c94fa54c_01"
+          ],
+          [
+            "U_B_46c06c49c94fa54c_10",
+            "U_B_46c06c49c94fa54c_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_46c06c49c94fa54c_11",
+              "-b_46c06c49c94fa54c_01"
+            ],
+            [
+              "-b_46c06c49c94fa54c_10",
+              "b_46c06c49c94fa54c_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_46c06c49c94fa54c",
+          "formula": "b_46c06c49c94fa54c_00*b_46c06c49c94fa54c_11 - b_46c06c49c94fa54c_01*b_46c06c49c94fa54c_10",
+          "inherited_denominator_symbols": [
+            "Delta_692d8de209a59f16",
+            "Delta_847dbbdcf2b8502a",
+            "Delta_de00eadcbff77bc4"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_46c06c49c94fa54c != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-be34c613cf0d91d4728f",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_46c06c49c94fa54c_11/Delta_46c06c49c94fa54c",
+            "-b_46c06c49c94fa54c_01/Delta_46c06c49c94fa54c"
+          ],
+          [
+            "-b_46c06c49c94fa54c_10/Delta_46c06c49c94fa54c",
+            "b_46c06c49c94fa54c_00/Delta_46c06c49c94fa54c"
+          ]
+        ],
+        "matrix_definition": "U_B_46c06c49c94fa54c := adj(B)/Delta_46c06c49c94fa54c",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_46c06c49c94fa54c",
+        "formula": "b_46c06c49c94fa54c_00*b_46c06c49c94fa54c_11 - b_46c06c49c94fa54c_01*b_46c06c49c94fa54c_10",
+        "inherited_denominator_symbols": [
+          "Delta_692d8de209a59f16",
+          "Delta_847dbbdcf2b8502a",
+          "Delta_de00eadcbff77bc4"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_46c06c49c94fa54c != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-be34c613cf0d91d4728f",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-46c06c49c94fa54c1b81",
+          "B_operator_symbol": "B_3_46c06c49c94fa54c",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 6,
+            "precursor_code": 3
+          },
+          "source_relation_rows": [
+            6,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-006",
+          "precursor_code": 3,
+          "precursor_vertices_in_source": [
+            0,
+            1
+          ],
+          "B_target_relation_rows": [
+            14,
+            8,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-004e",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-3322f55128824afea596",
+          "gregarious_companion_operator_symbol": "GCOMP_3_3322f55128824afe",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 6,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            6,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0006",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-46c06c49c94fa54c1b81",
+            "B_operator_symbol": "B_3_46c06c49c94fa54c",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 6,
+              "precursor_code": 3
+            },
+            "source_relation_rows": [
+              6,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-006",
+            "precursor_code": 3,
+            "precursor_vertices_in_source": [
+              0,
+              1
+            ],
+            "B_target_relation_rows": [
+              14,
+              8,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-004e",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-3322f55128824afea596",
+            "gregarious_companion_operator_symbol": "GCOMP_3_3322f55128824afe",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 6,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              6,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0006",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 2,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "1efe083cc32a65aea8ceb6e77ca4021c92c46d1582e8a8c5a4d1aa998f69d4b3",
+          "EQ113_QN_PLUS_1_BRANCH": "1efe083cc32a65aea8ceb6e77ca4021c92c46d1582e8a8c5a4d1aa998f69d4b3"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_692d8de209a59f16",
+      "B_id": "B_1_692d8de209a59f16",
+      "B_occurrence_id": "B-occurrence-692d8de209a59f16bf3e",
+      "v032_transition_occurrence_id": "cpobc-transition-f5898ff572639d996985",
+      "stage": 1,
+      "transition_type": "TIMID_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_692d8de209a59f16_00",
+            "b_692d8de209a59f16_01"
+          ],
+          [
+            "b_692d8de209a59f16_10",
+            "b_692d8de209a59f16_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_692d8de209a59f16_00",
+            "U_B_692d8de209a59f16_01"
+          ],
+          [
+            "U_B_692d8de209a59f16_10",
+            "U_B_692d8de209a59f16_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_692d8de209a59f16_11",
+              "-b_692d8de209a59f16_01"
+            ],
+            [
+              "-b_692d8de209a59f16_10",
+              "b_692d8de209a59f16_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_692d8de209a59f16",
+          "formula": "b_692d8de209a59f16_00*b_692d8de209a59f16_11 - b_692d8de209a59f16_01*b_692d8de209a59f16_10",
+          "inherited_denominator_symbols": [],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_692d8de209a59f16 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-f5898ff572639d996985",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_692d8de209a59f16_11/Delta_692d8de209a59f16",
+            "-b_692d8de209a59f16_01/Delta_692d8de209a59f16"
+          ],
+          [
+            "-b_692d8de209a59f16_10/Delta_692d8de209a59f16",
+            "b_692d8de209a59f16_00/Delta_692d8de209a59f16"
+          ]
+        ],
+        "matrix_definition": "U_B_692d8de209a59f16 := adj(B)/Delta_692d8de209a59f16",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_692d8de209a59f16",
+        "formula": "b_692d8de209a59f16_00*b_692d8de209a59f16_11 - b_692d8de209a59f16_01*b_692d8de209a59f16_10",
+        "inherited_denominator_symbols": [],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_692d8de209a59f16 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-f5898ff572639d996985",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-692d8de209a59f16bf3e",
+          "B_operator_symbol": "B_1_692d8de209a59f16",
+          "B_transition_signature": {
+            "stage": 1,
+            "source_relation_code": 0,
+            "precursor_code": 1
+          },
+          "source_relation_rows": [
+            0
+          ],
+          "source_causet_id": "p1-0",
+          "precursor_code": 1,
+          "precursor_vertices_in_source": [
+            0
+          ],
+          "B_target_relation_rows": [
+            2,
+            0
+          ],
+          "B_target_causet_id": "p2-2",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-b4d22dae39a07df0341b",
+          "gregarious_companion_operator_symbol": "GCOMP_1_b4d22dae39a07df0",
+          "gregarious_companion_signature": {
+            "stage": 1,
+            "source_relation_code": 0,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p2-0",
+          "source_target_types": {
+            "source": "1-element decimation source",
+            "B_target": "2-element pre-atomised causet",
+            "gregarious_target": "2-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-692d8de209a59f16bf3e",
+            "B_operator_symbol": "B_1_692d8de209a59f16",
+            "B_transition_signature": {
+              "stage": 1,
+              "source_relation_code": 0,
+              "precursor_code": 1
+            },
+            "source_relation_rows": [
+              0
+            ],
+            "source_causet_id": "p1-0",
+            "precursor_code": 1,
+            "precursor_vertices_in_source": [
+              0
+            ],
+            "B_target_relation_rows": [
+              2,
+              0
+            ],
+            "B_target_causet_id": "p2-2",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-b4d22dae39a07df0341b",
+            "gregarious_companion_operator_symbol": "GCOMP_1_b4d22dae39a07df0",
+            "gregarious_companion_signature": {
+              "stage": 1,
+              "source_relation_code": 0,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p2-0",
+            "source_target_types": {
+              "source": "1-element decimation source",
+              "B_target": "2-element pre-atomised causet",
+              "gregarious_target": "2-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 1,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "EQ113_QN_PLUS_1_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_7e6fded4e223b52a",
+      "B_id": "B_3_7e6fded4e223b52a",
+      "B_occurrence_id": "B-occurrence-7e6fded4e223b52a2d78",
+      "v032_transition_occurrence_id": "cpobc-transition-b965bc2d44eeace88a0c",
+      "stage": 3,
+      "transition_type": "TIMID_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_7e6fded4e223b52a_00",
+            "b_7e6fded4e223b52a_01"
+          ],
+          [
+            "b_7e6fded4e223b52a_10",
+            "b_7e6fded4e223b52a_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_7e6fded4e223b52a_00",
+            "U_B_7e6fded4e223b52a_01"
+          ],
+          [
+            "U_B_7e6fded4e223b52a_10",
+            "U_B_7e6fded4e223b52a_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_7e6fded4e223b52a_11",
+              "-b_7e6fded4e223b52a_01"
+            ],
+            [
+              "-b_7e6fded4e223b52a_10",
+              "b_7e6fded4e223b52a_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_7e6fded4e223b52a",
+          "formula": "b_7e6fded4e223b52a_00*b_7e6fded4e223b52a_11 - b_7e6fded4e223b52a_01*b_7e6fded4e223b52a_10",
+          "inherited_denominator_symbols": [
+            "Delta_2585179d7faa71e1"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_7e6fded4e223b52a != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-b965bc2d44eeace88a0c",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_7e6fded4e223b52a_11/Delta_7e6fded4e223b52a",
+            "-b_7e6fded4e223b52a_01/Delta_7e6fded4e223b52a"
+          ],
+          [
+            "-b_7e6fded4e223b52a_10/Delta_7e6fded4e223b52a",
+            "b_7e6fded4e223b52a_00/Delta_7e6fded4e223b52a"
+          ]
+        ],
+        "matrix_definition": "U_B_7e6fded4e223b52a := adj(B)/Delta_7e6fded4e223b52a",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_7e6fded4e223b52a",
+        "formula": "b_7e6fded4e223b52a_00*b_7e6fded4e223b52a_11 - b_7e6fded4e223b52a_01*b_7e6fded4e223b52a_10",
+        "inherited_denominator_symbols": [
+          "Delta_2585179d7faa71e1"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_7e6fded4e223b52a != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-b965bc2d44eeace88a0c",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-7e6fded4e223b52a2d78",
+          "B_operator_symbol": "B_3_7e6fded4e223b52a",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 36,
+            "precursor_code": 7
+          },
+          "source_relation_rows": [
+            4,
+            4,
+            0
+          ],
+          "source_causet_id": "p3-024",
+          "precursor_code": 7,
+          "precursor_vertices_in_source": [
+            0,
+            1,
+            2
+          ],
+          "B_target_relation_rows": [
+            12,
+            12,
+            8,
+            0
+          ],
+          "B_target_causet_id": "p4-08cc",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-b9aae16f7c5f9cc14730",
+          "gregarious_companion_operator_symbol": "GCOMP_3_b9aae16f7c5f9cc1",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 36,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            4,
+            4,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0044",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-7e6fded4e223b52a2d78",
+            "B_operator_symbol": "B_3_7e6fded4e223b52a",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 36,
+              "precursor_code": 7
+            },
+            "source_relation_rows": [
+              4,
+              4,
+              0
+            ],
+            "source_causet_id": "p3-024",
+            "precursor_code": 7,
+            "precursor_vertices_in_source": [
+              0,
+              1,
+              2
+            ],
+            "B_target_relation_rows": [
+              12,
+              12,
+              8,
+              0
+            ],
+            "B_target_causet_id": "p4-08cc",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-b9aae16f7c5f9cc14730",
+            "gregarious_companion_operator_symbol": "GCOMP_3_b9aae16f7c5f9cc1",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 36,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              4,
+              4,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0044",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 1,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "EQ113_QN_PLUS_1_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_7e94818ba9336b97",
+      "B_id": "B_3_7e94818ba9336b97",
+      "B_occurrence_id": "B-occurrence-7e94818ba9336b97ecd9",
+      "v032_transition_occurrence_id": "cpobc-transition-69d9e4ab736858a2b6b0",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_7e94818ba9336b97_00",
+            "b_7e94818ba9336b97_01"
+          ],
+          [
+            "b_7e94818ba9336b97_10",
+            "b_7e94818ba9336b97_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_7e94818ba9336b97_00",
+            "U_B_7e94818ba9336b97_01"
+          ],
+          [
+            "U_B_7e94818ba9336b97_10",
+            "U_B_7e94818ba9336b97_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_7e94818ba9336b97_11",
+              "-b_7e94818ba9336b97_01"
+            ],
+            [
+              "-b_7e94818ba9336b97_10",
+              "b_7e94818ba9336b97_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_7e94818ba9336b97",
+          "formula": "b_7e94818ba9336b97_00*b_7e94818ba9336b97_11 - b_7e94818ba9336b97_01*b_7e94818ba9336b97_10",
+          "inherited_denominator_symbols": [
+            "Delta_692d8de209a59f16",
+            "Delta_847dbbdcf2b8502a",
+            "Delta_de00eadcbff77bc4"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_7e94818ba9336b97 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-69d9e4ab736858a2b6b0",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_7e94818ba9336b97_11/Delta_7e94818ba9336b97",
+            "-b_7e94818ba9336b97_01/Delta_7e94818ba9336b97"
+          ],
+          [
+            "-b_7e94818ba9336b97_10/Delta_7e94818ba9336b97",
+            "b_7e94818ba9336b97_00/Delta_7e94818ba9336b97"
+          ]
+        ],
+        "matrix_definition": "U_B_7e94818ba9336b97 := adj(B)/Delta_7e94818ba9336b97",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_7e94818ba9336b97",
+        "formula": "b_7e94818ba9336b97_00*b_7e94818ba9336b97_11 - b_7e94818ba9336b97_01*b_7e94818ba9336b97_10",
+        "inherited_denominator_symbols": [
+          "Delta_692d8de209a59f16",
+          "Delta_847dbbdcf2b8502a",
+          "Delta_de00eadcbff77bc4"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_7e94818ba9336b97 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-69d9e4ab736858a2b6b0",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-7e94818ba9336b97ecd9",
+          "B_operator_symbol": "B_3_7e94818ba9336b97",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 6,
+            "precursor_code": 1
+          },
+          "source_relation_rows": [
+            6,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-006",
+          "precursor_code": 1,
+          "precursor_vertices_in_source": [
+            0
+          ],
+          "B_target_relation_rows": [
+            14,
+            0,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-000e",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-3322f55128824afea596",
+          "gregarious_companion_operator_symbol": "GCOMP_3_3322f55128824afe",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 6,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            6,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0006",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-7e94818ba9336b97ecd9",
+            "B_operator_symbol": "B_3_7e94818ba9336b97",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 6,
+              "precursor_code": 1
+            },
+            "source_relation_rows": [
+              6,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-006",
+            "precursor_code": 1,
+            "precursor_vertices_in_source": [
+              0
+            ],
+            "B_target_relation_rows": [
+              14,
+              0,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-000e",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-3322f55128824afea596",
+            "gregarious_companion_operator_symbol": "GCOMP_3_3322f55128824afe",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 6,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              6,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0006",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 6,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "db7b69b7fd3614326441882cc3f980549d1ec4f43c7fce461712fba52ada29b7",
+          "EQ113_QN_PLUS_1_BRANCH": "db7b69b7fd3614326441882cc3f980549d1ec4f43c7fce461712fba52ada29b7"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_847dbbdcf2b8502a",
+      "B_id": "B_2_847dbbdcf2b8502a",
+      "B_occurrence_id": "B-occurrence-847dbbdcf2b8502a5bfb",
+      "v032_transition_occurrence_id": "cpobc-transition-215e4445d39351ce683c",
+      "stage": 2,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_847dbbdcf2b8502a_00",
+            "b_847dbbdcf2b8502a_01"
+          ],
+          [
+            "b_847dbbdcf2b8502a_10",
+            "b_847dbbdcf2b8502a_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_847dbbdcf2b8502a_00",
+            "U_B_847dbbdcf2b8502a_01"
+          ],
+          [
+            "U_B_847dbbdcf2b8502a_10",
+            "U_B_847dbbdcf2b8502a_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_847dbbdcf2b8502a_11",
+              "-b_847dbbdcf2b8502a_01"
+            ],
+            [
+              "-b_847dbbdcf2b8502a_10",
+              "b_847dbbdcf2b8502a_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_847dbbdcf2b8502a",
+          "formula": "b_847dbbdcf2b8502a_00*b_847dbbdcf2b8502a_11 - b_847dbbdcf2b8502a_01*b_847dbbdcf2b8502a_10",
+          "inherited_denominator_symbols": [],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_847dbbdcf2b8502a != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-215e4445d39351ce683c",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_847dbbdcf2b8502a_11/Delta_847dbbdcf2b8502a",
+            "-b_847dbbdcf2b8502a_01/Delta_847dbbdcf2b8502a"
+          ],
+          [
+            "-b_847dbbdcf2b8502a_10/Delta_847dbbdcf2b8502a",
+            "b_847dbbdcf2b8502a_00/Delta_847dbbdcf2b8502a"
+          ]
+        ],
+        "matrix_definition": "U_B_847dbbdcf2b8502a := adj(B)/Delta_847dbbdcf2b8502a",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_847dbbdcf2b8502a",
+        "formula": "b_847dbbdcf2b8502a_00*b_847dbbdcf2b8502a_11 - b_847dbbdcf2b8502a_01*b_847dbbdcf2b8502a_10",
+        "inherited_denominator_symbols": [],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_847dbbdcf2b8502a != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-215e4445d39351ce683c",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-847dbbdcf2b8502a5bfb",
+          "B_operator_symbol": "B_2_847dbbdcf2b8502a",
+          "B_transition_signature": {
+            "stage": 2,
+            "source_relation_code": 0,
+            "precursor_code": 1
+          },
+          "source_relation_rows": [
+            0,
+            0
+          ],
+          "source_causet_id": "p2-0",
+          "precursor_code": 1,
+          "precursor_vertices_in_source": [
+            0
+          ],
+          "B_target_relation_rows": [
+            4,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p3-002",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-ea80031adb92b4341e6b",
+          "gregarious_companion_operator_symbol": "GCOMP_2_ea80031adb92b434",
+          "gregarious_companion_signature": {
+            "stage": 2,
+            "source_relation_code": 0,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p3-000",
+          "source_target_types": {
+            "source": "2-element decimation source",
+            "B_target": "3-element pre-atomised causet",
+            "gregarious_target": "3-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-847dbbdcf2b8502a5bfb",
+            "B_operator_symbol": "B_2_847dbbdcf2b8502a",
+            "B_transition_signature": {
+              "stage": 2,
+              "source_relation_code": 0,
+              "precursor_code": 1
+            },
+            "source_relation_rows": [
+              0,
+              0
+            ],
+            "source_causet_id": "p2-0",
+            "precursor_code": 1,
+            "precursor_vertices_in_source": [
+              0
+            ],
+            "B_target_relation_rows": [
+              4,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p3-002",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-ea80031adb92b4341e6b",
+            "gregarious_companion_operator_symbol": "GCOMP_2_ea80031adb92b434",
+            "gregarious_companion_signature": {
+              "stage": 2,
+              "source_relation_code": 0,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p3-000",
+            "source_target_types": {
+              "source": "2-element decimation source",
+              "B_target": "3-element pre-atomised causet",
+              "gregarious_target": "3-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 4,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "86301496309bde9a3dc37d0e3e26aa74554d37bece622bdf982b3a277ce59d43",
+          "EQ113_QN_PLUS_1_BRANCH": "86301496309bde9a3dc37d0e3e26aa74554d37bece622bdf982b3a277ce59d43"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_84f08784bb1a0b0a",
+      "B_id": "B_3_84f08784bb1a0b0a",
+      "B_occurrence_id": "B-occurrence-84f08784bb1a0b0a03f9",
+      "v032_transition_occurrence_id": "cpobc-transition-e23d81e7af680ccc8b08",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_84f08784bb1a0b0a_00",
+            "b_84f08784bb1a0b0a_01"
+          ],
+          [
+            "b_84f08784bb1a0b0a_10",
+            "b_84f08784bb1a0b0a_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_84f08784bb1a0b0a_00",
+            "U_B_84f08784bb1a0b0a_01"
+          ],
+          [
+            "U_B_84f08784bb1a0b0a_10",
+            "U_B_84f08784bb1a0b0a_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_84f08784bb1a0b0a_11",
+              "-b_84f08784bb1a0b0a_01"
+            ],
+            [
+              "-b_84f08784bb1a0b0a_10",
+              "b_84f08784bb1a0b0a_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_84f08784bb1a0b0a",
+          "formula": "b_84f08784bb1a0b0a_00*b_84f08784bb1a0b0a_11 - b_84f08784bb1a0b0a_01*b_84f08784bb1a0b0a_10",
+          "inherited_denominator_symbols": [
+            "Delta_692d8de209a59f16",
+            "Delta_847dbbdcf2b8502a",
+            "Delta_85c25c2c6160291f"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_84f08784bb1a0b0a != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-e23d81e7af680ccc8b08",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_84f08784bb1a0b0a_11/Delta_84f08784bb1a0b0a",
+            "-b_84f08784bb1a0b0a_01/Delta_84f08784bb1a0b0a"
+          ],
+          [
+            "-b_84f08784bb1a0b0a_10/Delta_84f08784bb1a0b0a",
+            "b_84f08784bb1a0b0a_00/Delta_84f08784bb1a0b0a"
+          ]
+        ],
+        "matrix_definition": "U_B_84f08784bb1a0b0a := adj(B)/Delta_84f08784bb1a0b0a",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_84f08784bb1a0b0a",
+        "formula": "b_84f08784bb1a0b0a_00*b_84f08784bb1a0b0a_11 - b_84f08784bb1a0b0a_01*b_84f08784bb1a0b0a_10",
+        "inherited_denominator_symbols": [
+          "Delta_692d8de209a59f16",
+          "Delta_847dbbdcf2b8502a",
+          "Delta_85c25c2c6160291f"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_84f08784bb1a0b0a != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-e23d81e7af680ccc8b08",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-84f08784bb1a0b0a03f9",
+          "B_operator_symbol": "B_3_84f08784bb1a0b0a",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 38,
+            "precursor_code": 3
+          },
+          "source_relation_rows": [
+            6,
+            4,
+            0
+          ],
+          "source_causet_id": "p3-026",
+          "precursor_code": 3,
+          "precursor_vertices_in_source": [
+            0,
+            1
+          ],
+          "B_target_relation_rows": [
+            14,
+            12,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-00ce",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-c2ae1ee91d6a4e204c0d",
+          "gregarious_companion_operator_symbol": "GCOMP_3_c2ae1ee91d6a4e20",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 38,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            6,
+            4,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0046",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-84f08784bb1a0b0a03f9",
+            "B_operator_symbol": "B_3_84f08784bb1a0b0a",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 38,
+              "precursor_code": 3
+            },
+            "source_relation_rows": [
+              6,
+              4,
+              0
+            ],
+            "source_causet_id": "p3-026",
+            "precursor_code": 3,
+            "precursor_vertices_in_source": [
+              0,
+              1
+            ],
+            "B_target_relation_rows": [
+              14,
+              12,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-00ce",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-c2ae1ee91d6a4e204c0d",
+            "gregarious_companion_operator_symbol": "GCOMP_3_c2ae1ee91d6a4e20",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 38,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              6,
+              4,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0046",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 2,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "9b71716c09dfc71ecad846c8fc3a3f3f9fdb56885de14080790f04b12d54259f",
+          "EQ113_QN_PLUS_1_BRANCH": "9b71716c09dfc71ecad846c8fc3a3f3f9fdb56885de14080790f04b12d54259f"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_85c25c2c6160291f",
+      "B_id": "B_2_85c25c2c6160291f",
+      "B_occurrence_id": "B-occurrence-85c25c2c6160291f296b",
+      "v032_transition_occurrence_id": "cpobc-transition-c1d174ed4ea92f9a2c85",
+      "stage": 2,
+      "transition_type": "TIMID_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_85c25c2c6160291f_00",
+            "b_85c25c2c6160291f_01"
+          ],
+          [
+            "b_85c25c2c6160291f_10",
+            "b_85c25c2c6160291f_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_85c25c2c6160291f_00",
+            "U_B_85c25c2c6160291f_01"
+          ],
+          [
+            "U_B_85c25c2c6160291f_10",
+            "U_B_85c25c2c6160291f_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_85c25c2c6160291f_11",
+              "-b_85c25c2c6160291f_01"
+            ],
+            [
+              "-b_85c25c2c6160291f_10",
+              "b_85c25c2c6160291f_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_85c25c2c6160291f",
+          "formula": "b_85c25c2c6160291f_00*b_85c25c2c6160291f_11 - b_85c25c2c6160291f_01*b_85c25c2c6160291f_10",
+          "inherited_denominator_symbols": [
+            "Delta_692d8de209a59f16"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_85c25c2c6160291f != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-c1d174ed4ea92f9a2c85",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_85c25c2c6160291f_11/Delta_85c25c2c6160291f",
+            "-b_85c25c2c6160291f_01/Delta_85c25c2c6160291f"
+          ],
+          [
+            "-b_85c25c2c6160291f_10/Delta_85c25c2c6160291f",
+            "b_85c25c2c6160291f_00/Delta_85c25c2c6160291f"
+          ]
+        ],
+        "matrix_definition": "U_B_85c25c2c6160291f := adj(B)/Delta_85c25c2c6160291f",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_85c25c2c6160291f",
+        "formula": "b_85c25c2c6160291f_00*b_85c25c2c6160291f_11 - b_85c25c2c6160291f_01*b_85c25c2c6160291f_10",
+        "inherited_denominator_symbols": [
+          "Delta_692d8de209a59f16"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_85c25c2c6160291f != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-c1d174ed4ea92f9a2c85",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-85c25c2c6160291f296b",
+          "B_operator_symbol": "B_2_85c25c2c6160291f",
+          "B_transition_signature": {
+            "stage": 2,
+            "source_relation_code": 2,
+            "precursor_code": 3
+          },
+          "source_relation_rows": [
+            2,
+            0
+          ],
+          "source_causet_id": "p2-2",
+          "precursor_code": 3,
+          "precursor_vertices_in_source": [
+            0,
+            1
+          ],
+          "B_target_relation_rows": [
+            6,
+            4,
+            0
+          ],
+          "B_target_causet_id": "p3-026",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-fcbd68d8cc79716b67d8",
+          "gregarious_companion_operator_symbol": "GCOMP_2_fcbd68d8cc79716b",
+          "gregarious_companion_signature": {
+            "stage": 2,
+            "source_relation_code": 2,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            2,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p3-002",
+          "source_target_types": {
+            "source": "2-element decimation source",
+            "B_target": "3-element pre-atomised causet",
+            "gregarious_target": "3-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-85c25c2c6160291f296b",
+            "B_operator_symbol": "B_2_85c25c2c6160291f",
+            "B_transition_signature": {
+              "stage": 2,
+              "source_relation_code": 2,
+              "precursor_code": 3
+            },
+            "source_relation_rows": [
+              2,
+              0
+            ],
+            "source_causet_id": "p2-2",
+            "precursor_code": 3,
+            "precursor_vertices_in_source": [
+              0,
+              1
+            ],
+            "B_target_relation_rows": [
+              6,
+              4,
+              0
+            ],
+            "B_target_causet_id": "p3-026",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-fcbd68d8cc79716b67d8",
+            "gregarious_companion_operator_symbol": "GCOMP_2_fcbd68d8cc79716b",
+            "gregarious_companion_signature": {
+              "stage": 2,
+              "source_relation_code": 2,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              2,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p3-002",
+            "source_target_types": {
+              "source": "2-element decimation source",
+              "B_target": "3-element pre-atomised causet",
+              "gregarious_target": "3-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 1,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "EQ113_QN_PLUS_1_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_8c590d8434dfac73",
+      "B_id": "B_3_8c590d8434dfac73",
+      "B_occurrence_id": "B-occurrence-8c590d8434dfac73736e",
+      "v032_transition_occurrence_id": "cpobc-transition-84c2204df6315d870780",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_8c590d8434dfac73_00",
+            "b_8c590d8434dfac73_01"
+          ],
+          [
+            "b_8c590d8434dfac73_10",
+            "b_8c590d8434dfac73_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_8c590d8434dfac73_00",
+            "U_B_8c590d8434dfac73_01"
+          ],
+          [
+            "U_B_8c590d8434dfac73_10",
+            "U_B_8c590d8434dfac73_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_8c590d8434dfac73_11",
+              "-b_8c590d8434dfac73_01"
+            ],
+            [
+              "-b_8c590d8434dfac73_10",
+              "b_8c590d8434dfac73_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_8c590d8434dfac73",
+          "formula": "b_8c590d8434dfac73_00*b_8c590d8434dfac73_11 - b_8c590d8434dfac73_01*b_8c590d8434dfac73_10",
+          "inherited_denominator_symbols": [
+            "Delta_2585179d7faa71e1"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_8c590d8434dfac73 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-84c2204df6315d870780",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_8c590d8434dfac73_11/Delta_8c590d8434dfac73",
+            "-b_8c590d8434dfac73_01/Delta_8c590d8434dfac73"
+          ],
+          [
+            "-b_8c590d8434dfac73_10/Delta_8c590d8434dfac73",
+            "b_8c590d8434dfac73_00/Delta_8c590d8434dfac73"
+          ]
+        ],
+        "matrix_definition": "U_B_8c590d8434dfac73 := adj(B)/Delta_8c590d8434dfac73",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_8c590d8434dfac73",
+        "formula": "b_8c590d8434dfac73_00*b_8c590d8434dfac73_11 - b_8c590d8434dfac73_01*b_8c590d8434dfac73_10",
+        "inherited_denominator_symbols": [
+          "Delta_2585179d7faa71e1"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_8c590d8434dfac73 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-84c2204df6315d870780",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-8c590d8434dfac73736e",
+          "B_operator_symbol": "B_3_8c590d8434dfac73",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 36,
+            "precursor_code": 1
+          },
+          "source_relation_rows": [
+            4,
+            4,
+            0
+          ],
+          "source_causet_id": "p3-024",
+          "precursor_code": 1,
+          "precursor_vertices_in_source": [
+            0
+          ],
+          "B_target_relation_rows": [
+            12,
+            4,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-004c",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-b9aae16f7c5f9cc14730",
+          "gregarious_companion_operator_symbol": "GCOMP_3_b9aae16f7c5f9cc1",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 36,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            4,
+            4,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0044",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-8c590d8434dfac73736e",
+            "B_operator_symbol": "B_3_8c590d8434dfac73",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 36,
+              "precursor_code": 1
+            },
+            "source_relation_rows": [
+              4,
+              4,
+              0
+            ],
+            "source_causet_id": "p3-024",
+            "precursor_code": 1,
+            "precursor_vertices_in_source": [
+              0
+            ],
+            "B_target_relation_rows": [
+              12,
+              4,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-004c",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-b9aae16f7c5f9cc14730",
+            "gregarious_companion_operator_symbol": "GCOMP_3_b9aae16f7c5f9cc1",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 36,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              4,
+              4,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0044",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 1,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "048b2769bccb372b4943a30b5fd111860718afc47ca25463b76da32f6808c733",
+          "EQ113_QN_PLUS_1_BRANCH": "048b2769bccb372b4943a30b5fd111860718afc47ca25463b76da32f6808c733"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_8d58c867ecd4716f",
+      "B_id": "B_3_8d58c867ecd4716f",
+      "B_occurrence_id": "B-occurrence-8d58c867ecd4716f441e",
+      "v032_transition_occurrence_id": "cpobc-transition-021d2237dd131678b8b1",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_8d58c867ecd4716f_00",
+            "b_8d58c867ecd4716f_01"
+          ],
+          [
+            "b_8d58c867ecd4716f_10",
+            "b_8d58c867ecd4716f_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_8d58c867ecd4716f_00",
+            "U_B_8d58c867ecd4716f_01"
+          ],
+          [
+            "U_B_8d58c867ecd4716f_10",
+            "U_B_8d58c867ecd4716f_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_8d58c867ecd4716f_11",
+              "-b_8d58c867ecd4716f_01"
+            ],
+            [
+              "-b_8d58c867ecd4716f_10",
+              "b_8d58c867ecd4716f_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_8d58c867ecd4716f",
+          "formula": "b_8d58c867ecd4716f_00*b_8d58c867ecd4716f_11 - b_8d58c867ecd4716f_01*b_8d58c867ecd4716f_10",
+          "inherited_denominator_symbols": [
+            "Delta_2585179d7faa71e1"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_8d58c867ecd4716f != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-021d2237dd131678b8b1",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_8d58c867ecd4716f_11/Delta_8d58c867ecd4716f",
+            "-b_8d58c867ecd4716f_01/Delta_8d58c867ecd4716f"
+          ],
+          [
+            "-b_8d58c867ecd4716f_10/Delta_8d58c867ecd4716f",
+            "b_8d58c867ecd4716f_00/Delta_8d58c867ecd4716f"
+          ]
+        ],
+        "matrix_definition": "U_B_8d58c867ecd4716f := adj(B)/Delta_8d58c867ecd4716f",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_8d58c867ecd4716f",
+        "formula": "b_8d58c867ecd4716f_00*b_8d58c867ecd4716f_11 - b_8d58c867ecd4716f_01*b_8d58c867ecd4716f_10",
+        "inherited_denominator_symbols": [
+          "Delta_2585179d7faa71e1"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_8d58c867ecd4716f != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-021d2237dd131678b8b1",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-8d58c867ecd4716f441e",
+          "B_operator_symbol": "B_3_8d58c867ecd4716f",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 36,
+            "precursor_code": 3
+          },
+          "source_relation_rows": [
+            4,
+            4,
+            0
+          ],
+          "source_causet_id": "p3-024",
+          "precursor_code": 3,
+          "precursor_vertices_in_source": [
+            0,
+            1
+          ],
+          "B_target_relation_rows": [
+            12,
+            12,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-00cc",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-b9aae16f7c5f9cc14730",
+          "gregarious_companion_operator_symbol": "GCOMP_3_b9aae16f7c5f9cc1",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 36,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            4,
+            4,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0044",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-8d58c867ecd4716f441e",
+            "B_operator_symbol": "B_3_8d58c867ecd4716f",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 36,
+              "precursor_code": 3
+            },
+            "source_relation_rows": [
+              4,
+              4,
+              0
+            ],
+            "source_causet_id": "p3-024",
+            "precursor_code": 3,
+            "precursor_vertices_in_source": [
+              0,
+              1
+            ],
+            "B_target_relation_rows": [
+              12,
+              12,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-00cc",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-b9aae16f7c5f9cc14730",
+            "gregarious_companion_operator_symbol": "GCOMP_3_b9aae16f7c5f9cc1",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 36,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              4,
+              4,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0044",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 2,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "a169e293818d7d73be9a1cbcdc8cc4d2feb285ca528883f12d2f1617cc0d308c",
+          "EQ113_QN_PLUS_1_BRANCH": "a169e293818d7d73be9a1cbcdc8cc4d2feb285ca528883f12d2f1617cc0d308c"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_a12f7f5a3d66988a",
+      "B_id": "B_3_a12f7f5a3d66988a",
+      "B_occurrence_id": "B-occurrence-a12f7f5a3d66988ae8cd",
+      "v032_transition_occurrence_id": "cpobc-transition-fe9bd2d32ecee2e6dc27",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_a12f7f5a3d66988a_00",
+            "b_a12f7f5a3d66988a_01"
+          ],
+          [
+            "b_a12f7f5a3d66988a_10",
+            "b_a12f7f5a3d66988a_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_a12f7f5a3d66988a_00",
+            "U_B_a12f7f5a3d66988a_01"
+          ],
+          [
+            "U_B_a12f7f5a3d66988a_10",
+            "U_B_a12f7f5a3d66988a_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_a12f7f5a3d66988a_11",
+              "-b_a12f7f5a3d66988a_01"
+            ],
+            [
+              "-b_a12f7f5a3d66988a_10",
+              "b_a12f7f5a3d66988a_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_a12f7f5a3d66988a",
+          "formula": "b_a12f7f5a3d66988a_00*b_a12f7f5a3d66988a_11 - b_a12f7f5a3d66988a_01*b_a12f7f5a3d66988a_10",
+          "inherited_denominator_symbols": [
+            "Delta_847dbbdcf2b8502a"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_a12f7f5a3d66988a != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-fe9bd2d32ecee2e6dc27",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_a12f7f5a3d66988a_11/Delta_a12f7f5a3d66988a",
+            "-b_a12f7f5a3d66988a_01/Delta_a12f7f5a3d66988a"
+          ],
+          [
+            "-b_a12f7f5a3d66988a_10/Delta_a12f7f5a3d66988a",
+            "b_a12f7f5a3d66988a_00/Delta_a12f7f5a3d66988a"
+          ]
+        ],
+        "matrix_definition": "U_B_a12f7f5a3d66988a := adj(B)/Delta_a12f7f5a3d66988a",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_a12f7f5a3d66988a",
+        "formula": "b_a12f7f5a3d66988a_00*b_a12f7f5a3d66988a_11 - b_a12f7f5a3d66988a_01*b_a12f7f5a3d66988a_10",
+        "inherited_denominator_symbols": [
+          "Delta_847dbbdcf2b8502a"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_a12f7f5a3d66988a != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-fe9bd2d32ecee2e6dc27",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-a12f7f5a3d66988ae8cd",
+          "B_operator_symbol": "B_3_a12f7f5a3d66988a",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 2,
+            "precursor_code": 1
+          },
+          "source_relation_rows": [
+            2,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-002",
+          "precursor_code": 1,
+          "precursor_vertices_in_source": [
+            0
+          ],
+          "B_target_relation_rows": [
+            10,
+            0,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-0006",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+          "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 2,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0002",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-a12f7f5a3d66988ae8cd",
+            "B_operator_symbol": "B_3_a12f7f5a3d66988a",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 1
+            },
+            "source_relation_rows": [
+              2,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-002",
+            "precursor_code": 1,
+            "precursor_vertices_in_source": [
+              0
+            ],
+            "B_target_relation_rows": [
+              10,
+              0,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-0006",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+            "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0002",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          },
+          {
+            "B_occurrence_id": "B-occurrence-a12f7f5a3d66988ae8cd",
+            "B_operator_symbol": "B_3_a12f7f5a3d66988a",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 1
+            },
+            "source_relation_rows": [
+              4,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-002",
+            "precursor_code": 1,
+            "precursor_vertices_in_source": [
+              0
+            ],
+            "B_target_relation_rows": [
+              12,
+              0,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-0006",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+            "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              4,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0002",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 2,
+        "path_factor_instance_count": 12,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "90105514f666eebeed625edad7f55eddb836f24e954a5907c2c05e4df8025c71",
+          "EQ113_QN_PLUS_1_BRANCH": "90105514f666eebeed625edad7f55eddb836f24e954a5907c2c05e4df8025c71"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_a5389a2374ed9d51",
+      "B_id": "B_3_a5389a2374ed9d51",
+      "B_occurrence_id": "B-occurrence-a5389a2374ed9d511a2a",
+      "v032_transition_occurrence_id": "cpobc-transition-4da70d95744abb102a44",
+      "stage": 3,
+      "transition_type": "TIMID_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_a5389a2374ed9d51_00",
+            "b_a5389a2374ed9d51_01"
+          ],
+          [
+            "b_a5389a2374ed9d51_10",
+            "b_a5389a2374ed9d51_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_a5389a2374ed9d51_00",
+            "U_B_a5389a2374ed9d51_01"
+          ],
+          [
+            "U_B_a5389a2374ed9d51_10",
+            "U_B_a5389a2374ed9d51_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_a5389a2374ed9d51_11",
+              "-b_a5389a2374ed9d51_01"
+            ],
+            [
+              "-b_a5389a2374ed9d51_10",
+              "b_a5389a2374ed9d51_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_a5389a2374ed9d51",
+          "formula": "b_a5389a2374ed9d51_00*b_a5389a2374ed9d51_11 - b_a5389a2374ed9d51_01*b_a5389a2374ed9d51_10",
+          "inherited_denominator_symbols": [
+            "Delta_692d8de209a59f16",
+            "Delta_847dbbdcf2b8502a",
+            "Delta_de00eadcbff77bc4"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_a5389a2374ed9d51 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-4da70d95744abb102a44",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_a5389a2374ed9d51_11/Delta_a5389a2374ed9d51",
+            "-b_a5389a2374ed9d51_01/Delta_a5389a2374ed9d51"
+          ],
+          [
+            "-b_a5389a2374ed9d51_10/Delta_a5389a2374ed9d51",
+            "b_a5389a2374ed9d51_00/Delta_a5389a2374ed9d51"
+          ]
+        ],
+        "matrix_definition": "U_B_a5389a2374ed9d51 := adj(B)/Delta_a5389a2374ed9d51",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_a5389a2374ed9d51",
+        "formula": "b_a5389a2374ed9d51_00*b_a5389a2374ed9d51_11 - b_a5389a2374ed9d51_01*b_a5389a2374ed9d51_10",
+        "inherited_denominator_symbols": [
+          "Delta_692d8de209a59f16",
+          "Delta_847dbbdcf2b8502a",
+          "Delta_de00eadcbff77bc4"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_a5389a2374ed9d51 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-4da70d95744abb102a44",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-a5389a2374ed9d511a2a",
+          "B_operator_symbol": "B_3_a5389a2374ed9d51",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 6,
+            "precursor_code": 7
+          },
+          "source_relation_rows": [
+            6,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-006",
+          "precursor_code": 7,
+          "precursor_vertices_in_source": [
+            0,
+            1,
+            2
+          ],
+          "B_target_relation_rows": [
+            14,
+            8,
+            8,
+            0
+          ],
+          "B_target_causet_id": "p4-088e",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-3322f55128824afea596",
+          "gregarious_companion_operator_symbol": "GCOMP_3_3322f55128824afe",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 6,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            6,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0006",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-a5389a2374ed9d511a2a",
+            "B_operator_symbol": "B_3_a5389a2374ed9d51",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 6,
+              "precursor_code": 7
+            },
+            "source_relation_rows": [
+              6,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-006",
+            "precursor_code": 7,
+            "precursor_vertices_in_source": [
+              0,
+              1,
+              2
+            ],
+            "B_target_relation_rows": [
+              14,
+              8,
+              8,
+              0
+            ],
+            "B_target_causet_id": "p4-088e",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-3322f55128824afea596",
+            "gregarious_companion_operator_symbol": "GCOMP_3_3322f55128824afe",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 6,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              6,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0006",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 2,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "34102c57b3c1726d20d8e95ab5b08c16eb9ca3956ff19ef46a1f92df427c30e8",
+          "EQ113_QN_PLUS_1_BRANCH": "34102c57b3c1726d20d8e95ab5b08c16eb9ca3956ff19ef46a1f92df427c30e8"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_bf813c76675b2ab6",
+      "B_id": "B_3_bf813c76675b2ab6",
+      "B_occurrence_id": "B-occurrence-bf813c76675b2ab69ac4",
+      "v032_transition_occurrence_id": "cpobc-transition-2c6f91ea54ac8f14f7a9",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_bf813c76675b2ab6_00",
+            "b_bf813c76675b2ab6_01"
+          ],
+          [
+            "b_bf813c76675b2ab6_10",
+            "b_bf813c76675b2ab6_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_bf813c76675b2ab6_00",
+            "U_B_bf813c76675b2ab6_01"
+          ],
+          [
+            "U_B_bf813c76675b2ab6_10",
+            "U_B_bf813c76675b2ab6_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_bf813c76675b2ab6_11",
+              "-b_bf813c76675b2ab6_01"
+            ],
+            [
+              "-b_bf813c76675b2ab6_10",
+              "b_bf813c76675b2ab6_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_bf813c76675b2ab6",
+          "formula": "b_bf813c76675b2ab6_00*b_bf813c76675b2ab6_11 - b_bf813c76675b2ab6_01*b_bf813c76675b2ab6_10",
+          "inherited_denominator_symbols": [
+            "Delta_847dbbdcf2b8502a"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_bf813c76675b2ab6 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-2c6f91ea54ac8f14f7a9",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_bf813c76675b2ab6_11/Delta_bf813c76675b2ab6",
+            "-b_bf813c76675b2ab6_01/Delta_bf813c76675b2ab6"
+          ],
+          [
+            "-b_bf813c76675b2ab6_10/Delta_bf813c76675b2ab6",
+            "b_bf813c76675b2ab6_00/Delta_bf813c76675b2ab6"
+          ]
+        ],
+        "matrix_definition": "U_B_bf813c76675b2ab6 := adj(B)/Delta_bf813c76675b2ab6",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_bf813c76675b2ab6",
+        "formula": "b_bf813c76675b2ab6_00*b_bf813c76675b2ab6_11 - b_bf813c76675b2ab6_01*b_bf813c76675b2ab6_10",
+        "inherited_denominator_symbols": [
+          "Delta_847dbbdcf2b8502a"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_bf813c76675b2ab6 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-2c6f91ea54ac8f14f7a9",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-bf813c76675b2ab69ac4",
+          "B_operator_symbol": "B_3_bf813c76675b2ab6",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 2,
+            "precursor_code": 5
+          },
+          "source_relation_rows": [
+            4,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-002",
+          "precursor_code": 3,
+          "precursor_vertices_in_source": [
+            0,
+            1
+          ],
+          "B_target_relation_rows": [
+            12,
+            8,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-004c",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+          "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 2,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            4,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0002",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-bf813c76675b2ab69ac4",
+            "B_operator_symbol": "B_3_bf813c76675b2ab6",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 5
+            },
+            "source_relation_rows": [
+              4,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-002",
+            "precursor_code": 3,
+            "precursor_vertices_in_source": [
+              0,
+              1
+            ],
+            "B_target_relation_rows": [
+              12,
+              8,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-004c",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+            "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              4,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0002",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 1,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "EQ113_QN_PLUS_1_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_c5d39f135eb87a66",
+      "B_id": "B_3_c5d39f135eb87a66",
+      "B_occurrence_id": "B-occurrence-c5d39f135eb87a66ba0e",
+      "v032_transition_occurrence_id": "cpobc-transition-dc9c34594a31e60bac4b",
+      "stage": 3,
+      "transition_type": "TIMID_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_c5d39f135eb87a66_00",
+            "b_c5d39f135eb87a66_01"
+          ],
+          [
+            "b_c5d39f135eb87a66_10",
+            "b_c5d39f135eb87a66_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_c5d39f135eb87a66_00",
+            "U_B_c5d39f135eb87a66_01"
+          ],
+          [
+            "U_B_c5d39f135eb87a66_10",
+            "U_B_c5d39f135eb87a66_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_c5d39f135eb87a66_11",
+              "-b_c5d39f135eb87a66_01"
+            ],
+            [
+              "-b_c5d39f135eb87a66_10",
+              "b_c5d39f135eb87a66_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_c5d39f135eb87a66",
+          "formula": "b_c5d39f135eb87a66_00*b_c5d39f135eb87a66_11 - b_c5d39f135eb87a66_01*b_c5d39f135eb87a66_10",
+          "inherited_denominator_symbols": [
+            "Delta_692d8de209a59f16",
+            "Delta_847dbbdcf2b8502a",
+            "Delta_85c25c2c6160291f"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_c5d39f135eb87a66 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-dc9c34594a31e60bac4b",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_c5d39f135eb87a66_11/Delta_c5d39f135eb87a66",
+            "-b_c5d39f135eb87a66_01/Delta_c5d39f135eb87a66"
+          ],
+          [
+            "-b_c5d39f135eb87a66_10/Delta_c5d39f135eb87a66",
+            "b_c5d39f135eb87a66_00/Delta_c5d39f135eb87a66"
+          ]
+        ],
+        "matrix_definition": "U_B_c5d39f135eb87a66 := adj(B)/Delta_c5d39f135eb87a66",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_c5d39f135eb87a66",
+        "formula": "b_c5d39f135eb87a66_00*b_c5d39f135eb87a66_11 - b_c5d39f135eb87a66_01*b_c5d39f135eb87a66_10",
+        "inherited_denominator_symbols": [
+          "Delta_692d8de209a59f16",
+          "Delta_847dbbdcf2b8502a",
+          "Delta_85c25c2c6160291f"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_c5d39f135eb87a66 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-dc9c34594a31e60bac4b",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-c5d39f135eb87a66ba0e",
+          "B_operator_symbol": "B_3_c5d39f135eb87a66",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 38,
+            "precursor_code": 7
+          },
+          "source_relation_rows": [
+            6,
+            4,
+            0
+          ],
+          "source_causet_id": "p3-026",
+          "precursor_code": 7,
+          "precursor_vertices_in_source": [
+            0,
+            1,
+            2
+          ],
+          "B_target_relation_rows": [
+            14,
+            12,
+            8,
+            0
+          ],
+          "B_target_causet_id": "p4-08ce",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-c2ae1ee91d6a4e204c0d",
+          "gregarious_companion_operator_symbol": "GCOMP_3_c2ae1ee91d6a4e20",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 38,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            6,
+            4,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0046",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-c5d39f135eb87a66ba0e",
+            "B_operator_symbol": "B_3_c5d39f135eb87a66",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 38,
+              "precursor_code": 7
+            },
+            "source_relation_rows": [
+              6,
+              4,
+              0
+            ],
+            "source_causet_id": "p3-026",
+            "precursor_code": 7,
+            "precursor_vertices_in_source": [
+              0,
+              1,
+              2
+            ],
+            "B_target_relation_rows": [
+              14,
+              12,
+              8,
+              0
+            ],
+            "B_target_causet_id": "p4-08ce",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-c2ae1ee91d6a4e204c0d",
+            "gregarious_companion_operator_symbol": "GCOMP_3_c2ae1ee91d6a4e20",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 38,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              6,
+              4,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0046",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 1,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "EQ113_QN_PLUS_1_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_cd0a8b417d842853",
+      "B_id": "B_3_cd0a8b417d842853",
+      "B_occurrence_id": "B-occurrence-cd0a8b417d842853139f",
+      "v032_transition_occurrence_id": "cpobc-transition-019cdd3c62d8959a94f4",
+      "stage": 3,
+      "transition_type": "TIMID_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_cd0a8b417d842853_00",
+            "b_cd0a8b417d842853_01"
+          ],
+          [
+            "b_cd0a8b417d842853_10",
+            "b_cd0a8b417d842853_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_cd0a8b417d842853_00",
+            "U_B_cd0a8b417d842853_01"
+          ],
+          [
+            "U_B_cd0a8b417d842853_10",
+            "U_B_cd0a8b417d842853_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_cd0a8b417d842853_11",
+              "-b_cd0a8b417d842853_01"
+            ],
+            [
+              "-b_cd0a8b417d842853_10",
+              "b_cd0a8b417d842853_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_cd0a8b417d842853",
+          "formula": "b_cd0a8b417d842853_00*b_cd0a8b417d842853_11 - b_cd0a8b417d842853_01*b_cd0a8b417d842853_10",
+          "inherited_denominator_symbols": [
+            "Delta_692d8de209a59f16",
+            "Delta_847dbbdcf2b8502a"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_cd0a8b417d842853 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-019cdd3c62d8959a94f4",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_cd0a8b417d842853_11/Delta_cd0a8b417d842853",
+            "-b_cd0a8b417d842853_01/Delta_cd0a8b417d842853"
+          ],
+          [
+            "-b_cd0a8b417d842853_10/Delta_cd0a8b417d842853",
+            "b_cd0a8b417d842853_00/Delta_cd0a8b417d842853"
+          ]
+        ],
+        "matrix_definition": "U_B_cd0a8b417d842853 := adj(B)/Delta_cd0a8b417d842853",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_cd0a8b417d842853",
+        "formula": "b_cd0a8b417d842853_00*b_cd0a8b417d842853_11 - b_cd0a8b417d842853_01*b_cd0a8b417d842853_10",
+        "inherited_denominator_symbols": [
+          "Delta_692d8de209a59f16",
+          "Delta_847dbbdcf2b8502a"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_cd0a8b417d842853 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-019cdd3c62d8959a94f4",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-cd0a8b417d842853139f",
+          "B_operator_symbol": "B_3_cd0a8b417d842853",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 2,
+            "precursor_code": 7
+          },
+          "source_relation_rows": [
+            2,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-002",
+          "precursor_code": 7,
+          "precursor_vertices_in_source": [
+            0,
+            1,
+            2
+          ],
+          "B_target_relation_rows": [
+            10,
+            8,
+            8,
+            0
+          ],
+          "B_target_causet_id": "p4-088a",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+          "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 2,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            2,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0002",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-cd0a8b417d842853139f",
+            "B_operator_symbol": "B_3_cd0a8b417d842853",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 7
+            },
+            "source_relation_rows": [
+              2,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-002",
+            "precursor_code": 7,
+            "precursor_vertices_in_source": [
+              0,
+              1,
+              2
+            ],
+            "B_target_relation_rows": [
+              10,
+              8,
+              8,
+              0
+            ],
+            "B_target_causet_id": "p4-088a",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+            "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0002",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 1,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "EQ113_QN_PLUS_1_BRANCH": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_d42aa1d6a669aa71",
+      "B_id": "B_3_d42aa1d6a669aa71",
+      "B_occurrence_id": "B-occurrence-d42aa1d6a669aa7198cf",
+      "v032_transition_occurrence_id": "cpobc-transition-6571c27cf5f89bf244dd",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_d42aa1d6a669aa71_00",
+            "b_d42aa1d6a669aa71_01"
+          ],
+          [
+            "b_d42aa1d6a669aa71_10",
+            "b_d42aa1d6a669aa71_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_d42aa1d6a669aa71_00",
+            "U_B_d42aa1d6a669aa71_01"
+          ],
+          [
+            "U_B_d42aa1d6a669aa71_10",
+            "U_B_d42aa1d6a669aa71_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_d42aa1d6a669aa71_11",
+              "-b_d42aa1d6a669aa71_01"
+            ],
+            [
+              "-b_d42aa1d6a669aa71_10",
+              "b_d42aa1d6a669aa71_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_d42aa1d6a669aa71",
+          "formula": "b_d42aa1d6a669aa71_00*b_d42aa1d6a669aa71_11 - b_d42aa1d6a669aa71_01*b_d42aa1d6a669aa71_10",
+          "inherited_denominator_symbols": [],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_d42aa1d6a669aa71 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-6571c27cf5f89bf244dd",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_d42aa1d6a669aa71_11/Delta_d42aa1d6a669aa71",
+            "-b_d42aa1d6a669aa71_01/Delta_d42aa1d6a669aa71"
+          ],
+          [
+            "-b_d42aa1d6a669aa71_10/Delta_d42aa1d6a669aa71",
+            "b_d42aa1d6a669aa71_00/Delta_d42aa1d6a669aa71"
+          ]
+        ],
+        "matrix_definition": "U_B_d42aa1d6a669aa71 := adj(B)/Delta_d42aa1d6a669aa71",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_d42aa1d6a669aa71",
+        "formula": "b_d42aa1d6a669aa71_00*b_d42aa1d6a669aa71_11 - b_d42aa1d6a669aa71_01*b_d42aa1d6a669aa71_10",
+        "inherited_denominator_symbols": [],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_d42aa1d6a669aa71 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-6571c27cf5f89bf244dd",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-d42aa1d6a669aa7198cf",
+          "B_operator_symbol": "B_3_d42aa1d6a669aa71",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 0,
+            "precursor_code": 1
+          },
+          "source_relation_rows": [
+            0,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-000",
+          "precursor_code": 1,
+          "precursor_vertices_in_source": [
+            0
+          ],
+          "B_target_relation_rows": [
+            8,
+            0,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-0002",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-e84a203612950986af35",
+          "gregarious_companion_operator_symbol": "GCOMP_3_e84a203612950986",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 0,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0000",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-d42aa1d6a669aa7198cf",
+            "B_operator_symbol": "B_3_d42aa1d6a669aa71",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 0,
+              "precursor_code": 1
+            },
+            "source_relation_rows": [
+              0,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-000",
+            "precursor_code": 1,
+            "precursor_vertices_in_source": [
+              0
+            ],
+            "B_target_relation_rows": [
+              8,
+              0,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-0002",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-e84a203612950986af35",
+            "gregarious_companion_operator_symbol": "GCOMP_3_e84a203612950986",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 0,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0000",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          },
+          {
+            "B_occurrence_id": "B-occurrence-d42aa1d6a669aa7198cf",
+            "B_operator_symbol": "B_3_d42aa1d6a669aa71",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 0,
+              "precursor_code": 1
+            },
+            "source_relation_rows": [
+              0,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-000",
+            "precursor_code": 2,
+            "precursor_vertices_in_source": [
+              1
+            ],
+            "B_target_relation_rows": [
+              0,
+              8,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-0002",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-e84a203612950986af35",
+            "gregarious_companion_operator_symbol": "GCOMP_3_e84a203612950986",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 0,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0000",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 2,
+        "path_factor_instance_count": 22,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "30fa07d9d3f4384169feee124e8ed3f88e4812d5c3c6e9b9a0ef0aeb97f8658b",
+          "EQ113_QN_PLUS_1_BRANCH": "30fa07d9d3f4384169feee124e8ed3f88e4812d5c3c6e9b9a0ef0aeb97f8658b"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_de00eadcbff77bc4",
+      "B_id": "B_2_de00eadcbff77bc4",
+      "B_occurrence_id": "B-occurrence-de00eadcbff77bc4940e",
+      "v032_transition_occurrence_id": "cpobc-transition-ff252a39269d0ebabe63",
+      "stage": 2,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_de00eadcbff77bc4_00",
+            "b_de00eadcbff77bc4_01"
+          ],
+          [
+            "b_de00eadcbff77bc4_10",
+            "b_de00eadcbff77bc4_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_de00eadcbff77bc4_00",
+            "U_B_de00eadcbff77bc4_01"
+          ],
+          [
+            "U_B_de00eadcbff77bc4_10",
+            "U_B_de00eadcbff77bc4_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_de00eadcbff77bc4_11",
+              "-b_de00eadcbff77bc4_01"
+            ],
+            [
+              "-b_de00eadcbff77bc4_10",
+              "b_de00eadcbff77bc4_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_de00eadcbff77bc4",
+          "formula": "b_de00eadcbff77bc4_00*b_de00eadcbff77bc4_11 - b_de00eadcbff77bc4_01*b_de00eadcbff77bc4_10",
+          "inherited_denominator_symbols": [
+            "Delta_692d8de209a59f16"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_de00eadcbff77bc4 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-ff252a39269d0ebabe63",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_de00eadcbff77bc4_11/Delta_de00eadcbff77bc4",
+            "-b_de00eadcbff77bc4_01/Delta_de00eadcbff77bc4"
+          ],
+          [
+            "-b_de00eadcbff77bc4_10/Delta_de00eadcbff77bc4",
+            "b_de00eadcbff77bc4_00/Delta_de00eadcbff77bc4"
+          ]
+        ],
+        "matrix_definition": "U_B_de00eadcbff77bc4 := adj(B)/Delta_de00eadcbff77bc4",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_de00eadcbff77bc4",
+        "formula": "b_de00eadcbff77bc4_00*b_de00eadcbff77bc4_11 - b_de00eadcbff77bc4_01*b_de00eadcbff77bc4_10",
+        "inherited_denominator_symbols": [
+          "Delta_692d8de209a59f16"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_de00eadcbff77bc4 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-ff252a39269d0ebabe63",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-de00eadcbff77bc4940e",
+          "B_operator_symbol": "B_2_de00eadcbff77bc4",
+          "B_transition_signature": {
+            "stage": 2,
+            "source_relation_code": 2,
+            "precursor_code": 1
+          },
+          "source_relation_rows": [
+            2,
+            0
+          ],
+          "source_causet_id": "p2-2",
+          "precursor_code": 1,
+          "precursor_vertices_in_source": [
+            0
+          ],
+          "B_target_relation_rows": [
+            6,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p3-006",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-fcbd68d8cc79716b67d8",
+          "gregarious_companion_operator_symbol": "GCOMP_2_fcbd68d8cc79716b",
+          "gregarious_companion_signature": {
+            "stage": 2,
+            "source_relation_code": 2,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            2,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p3-002",
+          "source_target_types": {
+            "source": "2-element decimation source",
+            "B_target": "3-element pre-atomised causet",
+            "gregarious_target": "3-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-de00eadcbff77bc4940e",
+            "B_operator_symbol": "B_2_de00eadcbff77bc4",
+            "B_transition_signature": {
+              "stage": 2,
+              "source_relation_code": 2,
+              "precursor_code": 1
+            },
+            "source_relation_rows": [
+              2,
+              0
+            ],
+            "source_causet_id": "p2-2",
+            "precursor_code": 1,
+            "precursor_vertices_in_source": [
+              0
+            ],
+            "B_target_relation_rows": [
+              6,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p3-006",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-fcbd68d8cc79716b67d8",
+            "gregarious_companion_operator_symbol": "GCOMP_2_fcbd68d8cc79716b",
+            "gregarious_companion_signature": {
+              "stage": 2,
+              "source_relation_code": 2,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              2,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p3-002",
+            "source_target_types": {
+              "source": "2-element decimation source",
+              "B_target": "3-element pre-atomised causet",
+              "gregarious_target": "3-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 2,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "c9448e2c4b5442915e532dae62ba2014346c7e91fd143f3c00e39948fee984f2",
+          "EQ113_QN_PLUS_1_BRANCH": "c9448e2c4b5442915e532dae62ba2014346c7e91fd143f3c00e39948fee984f2"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_ec0dbfda1621829d",
+      "B_id": "B_3_ec0dbfda1621829d",
+      "B_occurrence_id": "B-occurrence-ec0dbfda1621829d5211",
+      "v032_transition_occurrence_id": "cpobc-transition-2f5493b1bef7f6ad889f",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_ec0dbfda1621829d_00",
+            "b_ec0dbfda1621829d_01"
+          ],
+          [
+            "b_ec0dbfda1621829d_10",
+            "b_ec0dbfda1621829d_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_ec0dbfda1621829d_00",
+            "U_B_ec0dbfda1621829d_01"
+          ],
+          [
+            "U_B_ec0dbfda1621829d_10",
+            "U_B_ec0dbfda1621829d_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_ec0dbfda1621829d_11",
+              "-b_ec0dbfda1621829d_01"
+            ],
+            [
+              "-b_ec0dbfda1621829d_10",
+              "b_ec0dbfda1621829d_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_ec0dbfda1621829d",
+          "formula": "b_ec0dbfda1621829d_00*b_ec0dbfda1621829d_11 - b_ec0dbfda1621829d_01*b_ec0dbfda1621829d_10",
+          "inherited_denominator_symbols": [
+            "Delta_847dbbdcf2b8502a"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_ec0dbfda1621829d != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-2f5493b1bef7f6ad889f",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_ec0dbfda1621829d_11/Delta_ec0dbfda1621829d",
+            "-b_ec0dbfda1621829d_01/Delta_ec0dbfda1621829d"
+          ],
+          [
+            "-b_ec0dbfda1621829d_10/Delta_ec0dbfda1621829d",
+            "b_ec0dbfda1621829d_00/Delta_ec0dbfda1621829d"
+          ]
+        ],
+        "matrix_definition": "U_B_ec0dbfda1621829d := adj(B)/Delta_ec0dbfda1621829d",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_ec0dbfda1621829d",
+        "formula": "b_ec0dbfda1621829d_00*b_ec0dbfda1621829d_11 - b_ec0dbfda1621829d_01*b_ec0dbfda1621829d_10",
+        "inherited_denominator_symbols": [
+          "Delta_847dbbdcf2b8502a"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_ec0dbfda1621829d != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-2f5493b1bef7f6ad889f",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-ec0dbfda1621829d5211",
+          "B_operator_symbol": "B_3_ec0dbfda1621829d",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 2,
+            "precursor_code": 4
+          },
+          "source_relation_rows": [
+            4,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-002",
+          "precursor_code": 2,
+          "precursor_vertices_in_source": [
+            1
+          ],
+          "B_target_relation_rows": [
+            4,
+            8,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-0048",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+          "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 2,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            4,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0002",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-ec0dbfda1621829d5211",
+            "B_operator_symbol": "B_3_ec0dbfda1621829d",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 4
+            },
+            "source_relation_rows": [
+              4,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-002",
+            "precursor_code": 2,
+            "precursor_vertices_in_source": [
+              1
+            ],
+            "B_target_relation_rows": [
+              4,
+              8,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-0048",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+            "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              4,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0002",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          },
+          {
+            "B_occurrence_id": "B-occurrence-ec0dbfda1621829d5211",
+            "B_operator_symbol": "B_3_ec0dbfda1621829d",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 4
+            },
+            "source_relation_rows": [
+              0,
+              4,
+              0
+            ],
+            "source_causet_id": "p3-002",
+            "precursor_code": 1,
+            "precursor_vertices_in_source": [
+              0
+            ],
+            "B_target_relation_rows": [
+              8,
+              4,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-0048",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-3a0ba9d9e93e2a9bf524",
+            "gregarious_companion_operator_symbol": "GCOMP_3_3a0ba9d9e93e2a9b",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 2,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              0,
+              4,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0002",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 2,
+        "path_factor_instance_count": 2,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "255d4db1cf387d135b29f504edd26d1b55323f2cde6f43dd11af0d5a942ee1a1",
+          "EQ113_QN_PLUS_1_BRANCH": "255d4db1cf387d135b29f504edd26d1b55323f2cde6f43dd11af0d5a942ee1a1"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_f600fac3a5b643dc",
+      "B_id": "B_3_f600fac3a5b643dc",
+      "B_occurrence_id": "B-occurrence-f600fac3a5b643dcebbb",
+      "v032_transition_occurrence_id": "cpobc-transition-a6d9f9b9dffa34abdddb",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_f600fac3a5b643dc_00",
+            "b_f600fac3a5b643dc_01"
+          ],
+          [
+            "b_f600fac3a5b643dc_10",
+            "b_f600fac3a5b643dc_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_f600fac3a5b643dc_00",
+            "U_B_f600fac3a5b643dc_01"
+          ],
+          [
+            "U_B_f600fac3a5b643dc_10",
+            "U_B_f600fac3a5b643dc_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_f600fac3a5b643dc_11",
+              "-b_f600fac3a5b643dc_01"
+            ],
+            [
+              "-b_f600fac3a5b643dc_10",
+              "b_f600fac3a5b643dc_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_f600fac3a5b643dc",
+          "formula": "b_f600fac3a5b643dc_00*b_f600fac3a5b643dc_11 - b_f600fac3a5b643dc_01*b_f600fac3a5b643dc_10",
+          "inherited_denominator_symbols": [],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_f600fac3a5b643dc != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-a6d9f9b9dffa34abdddb",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_f600fac3a5b643dc_11/Delta_f600fac3a5b643dc",
+            "-b_f600fac3a5b643dc_01/Delta_f600fac3a5b643dc"
+          ],
+          [
+            "-b_f600fac3a5b643dc_10/Delta_f600fac3a5b643dc",
+            "b_f600fac3a5b643dc_00/Delta_f600fac3a5b643dc"
+          ]
+        ],
+        "matrix_definition": "U_B_f600fac3a5b643dc := adj(B)/Delta_f600fac3a5b643dc",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_f600fac3a5b643dc",
+        "formula": "b_f600fac3a5b643dc_00*b_f600fac3a5b643dc_11 - b_f600fac3a5b643dc_01*b_f600fac3a5b643dc_10",
+        "inherited_denominator_symbols": [],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_f600fac3a5b643dc != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-a6d9f9b9dffa34abdddb",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-f600fac3a5b643dcebbb",
+          "B_operator_symbol": "B_3_f600fac3a5b643dc",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 0,
+            "precursor_code": 3
+          },
+          "source_relation_rows": [
+            0,
+            0,
+            0
+          ],
+          "source_causet_id": "p3-000",
+          "precursor_code": 3,
+          "precursor_vertices_in_source": [
+            0,
+            1
+          ],
+          "B_target_relation_rows": [
+            8,
+            8,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-0044",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-e84a203612950986af35",
+          "gregarious_companion_operator_symbol": "GCOMP_3_e84a203612950986",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 0,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0000",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-f600fac3a5b643dcebbb",
+            "B_operator_symbol": "B_3_f600fac3a5b643dc",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 0,
+              "precursor_code": 3
+            },
+            "source_relation_rows": [
+              0,
+              0,
+              0
+            ],
+            "source_causet_id": "p3-000",
+            "precursor_code": 3,
+            "precursor_vertices_in_source": [
+              0,
+              1
+            ],
+            "B_target_relation_rows": [
+              8,
+              8,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-0044",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-e84a203612950986af35",
+            "gregarious_companion_operator_symbol": "GCOMP_3_e84a203612950986",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 0,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0000",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 5,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "0603ab682d7c49b6ff4cc45e33ac8e0338f68016f16ef583020b08b7eb2072e9",
+          "EQ113_QN_PLUS_1_BRANCH": "0603ab682d7c49b6ff4cc45e33ac8e0338f68016f16ef583020b08b7eb2072e9"
+        },
+        "usage_projection_exact_match": true
+      }
+    },
+    {
+      "auxiliary_id": "U_B_f8681a08b3ee5ca8",
+      "B_id": "B_3_f8681a08b3ee5ca8",
+      "B_occurrence_id": "B-occurrence-f8681a08b3ee5ca87007",
+      "v032_transition_occurrence_id": "cpobc-transition-0532509eecfc7b91933e",
+      "stage": 3,
+      "transition_type": "PROPER_NON_GREGARIOUS_TRANSITION",
+      "classification": "DEFINITIONAL_RATIONAL_AUXILIARY",
+      "classification_evidence": {
+        "unique_forward_definition": true,
+        "forward_definition_matches_transition_predicate": true,
+        "unique_matching_inverse_node": true,
+        "exact_two_sided_inverse_predicates": true,
+        "d2_determinant_nonzero_predicate": true,
+        "transition_nonsingularity_assumption": true,
+        "acyclic_resolved_dependency_closure": true,
+        "transition_provenance_complete": true,
+        "path_use_sites_verified": true,
+        "strong_profile_only": true,
+        "branch_definition_invariant": true,
+        "branch_definition_differs": false,
+        "branch_membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "explicitly_declared_free": false,
+        "inverse_label_used_as_classification_evidence": false
+      },
+      "rational_d2_elimination": {
+        "dimension": 2,
+        "B_entry_coordinates": [
+          [
+            "b_f8681a08b3ee5ca8_00",
+            "b_f8681a08b3ee5ca8_01"
+          ],
+          [
+            "b_f8681a08b3ee5ca8_10",
+            "b_f8681a08b3ee5ca8_11"
+          ]
+        ],
+        "auxiliary_entry_coordinates": [
+          [
+            "U_B_f8681a08b3ee5ca8_00",
+            "U_B_f8681a08b3ee5ca8_01"
+          ],
+          [
+            "U_B_f8681a08b3ee5ca8_10",
+            "U_B_f8681a08b3ee5ca8_11"
+          ]
+        ],
+        "numerator": {
+          "kind": "ADJUGATE_2X2",
+          "matrix": [
+            [
+              "b_f8681a08b3ee5ca8_11",
+              "-b_f8681a08b3ee5ca8_01"
+            ],
+            [
+              "-b_f8681a08b3ee5ca8_10",
+              "b_f8681a08b3ee5ca8_00"
+            ]
+          ]
+        },
+        "denominator": {
+          "symbol": "Delta_f8681a08b3ee5ca8",
+          "formula": "b_f8681a08b3ee5ca8_00*b_f8681a08b3ee5ca8_11 - b_f8681a08b3ee5ca8_01*b_f8681a08b3ee5ca8_10",
+          "inherited_denominator_symbols": [
+            "Delta_692d8de209a59f16",
+            "Delta_847dbbdcf2b8502a",
+            "Delta_85c25c2c6160291f"
+          ],
+          "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+          "local_nonzero_condition": "Delta_f8681a08b3ee5ca8 != 0",
+          "condition_source": {
+            "occurrence_id": "cpobc-transition-0532509eecfc7b91933e",
+            "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+            "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+          }
+        },
+        "entrywise_definition": [
+          [
+            "b_f8681a08b3ee5ca8_11/Delta_f8681a08b3ee5ca8",
+            "-b_f8681a08b3ee5ca8_01/Delta_f8681a08b3ee5ca8"
+          ],
+          [
+            "-b_f8681a08b3ee5ca8_10/Delta_f8681a08b3ee5ca8",
+            "b_f8681a08b3ee5ca8_00/Delta_f8681a08b3ee5ca8"
+          ]
+        ],
+        "matrix_definition": "U_B_f8681a08b3ee5ca8 := adj(B)/Delta_f8681a08b3ee5ca8",
+        "identity": "B*adj(B) = adj(B)*B = det(B)*I_2"
+      },
+      "determinant_condition": {
+        "symbol": "Delta_f8681a08b3ee5ca8",
+        "formula": "b_f8681a08b3ee5ca8_00*b_f8681a08b3ee5ca8_11 - b_f8681a08b3ee5ca8_01*b_f8681a08b3ee5ca8_10",
+        "inherited_denominator_symbols": [
+          "Delta_692d8de209a59f16",
+          "Delta_847dbbdcf2b8502a",
+          "Delta_85c25c2c6160291f"
+        ],
+        "fully_substituted_polynomial_status": "NOT_EXPANDED_OR_NORMALISED",
+        "local_nonzero_condition": "Delta_f8681a08b3ee5ca8 != 0",
+        "condition_source": {
+          "occurrence_id": "cpobc-transition-0532509eecfc7b91933e",
+          "v0.3.3_predicate": "det(reconstructed_2x2_expression) != 0",
+          "status": "ASSUMED_BY_TRANSITION_NONSINGULARITY_NOT_INDEPENDENTLY_DERIVED"
+        }
+      },
+      "transition_provenance": {
+        "canonical_representative": {
+          "B_occurrence_id": "B-occurrence-f8681a08b3ee5ca87007",
+          "B_operator_symbol": "B_3_f8681a08b3ee5ca8",
+          "B_transition_signature": {
+            "stage": 3,
+            "source_relation_code": 38,
+            "precursor_code": 1
+          },
+          "source_relation_rows": [
+            6,
+            4,
+            0
+          ],
+          "source_causet_id": "p3-026",
+          "precursor_code": 1,
+          "precursor_vertices_in_source": [
+            0
+          ],
+          "B_target_relation_rows": [
+            14,
+            4,
+            0,
+            0
+          ],
+          "B_target_causet_id": "p4-004e",
+          "gregarious_companion_occurrence_id": "GCOMP-occurrence-c2ae1ee91d6a4e204c0d",
+          "gregarious_companion_operator_symbol": "GCOMP_3_c2ae1ee91d6a4e20",
+          "gregarious_companion_signature": {
+            "stage": 3,
+            "source_relation_code": 38,
+            "precursor_code": 0
+          },
+          "gregarious_target_relation_rows": [
+            6,
+            4,
+            0,
+            0
+          ],
+          "gregarious_target_causet_id": "p4-0046",
+          "source_target_types": {
+            "source": "3-element decimation source",
+            "B_target": "4-element pre-atomised causet",
+            "gregarious_target": "4-element next atomised causet"
+          },
+          "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+        },
+        "labelled_variants": [
+          {
+            "B_occurrence_id": "B-occurrence-f8681a08b3ee5ca87007",
+            "B_operator_symbol": "B_3_f8681a08b3ee5ca8",
+            "B_transition_signature": {
+              "stage": 3,
+              "source_relation_code": 38,
+              "precursor_code": 1
+            },
+            "source_relation_rows": [
+              6,
+              4,
+              0
+            ],
+            "source_causet_id": "p3-026",
+            "precursor_code": 1,
+            "precursor_vertices_in_source": [
+              0
+            ],
+            "B_target_relation_rows": [
+              14,
+              4,
+              0,
+              0
+            ],
+            "B_target_causet_id": "p4-004e",
+            "gregarious_companion_occurrence_id": "GCOMP-occurrence-c2ae1ee91d6a4e204c0d",
+            "gregarious_companion_operator_symbol": "GCOMP_3_c2ae1ee91d6a4e20",
+            "gregarious_companion_signature": {
+              "stage": 3,
+              "source_relation_code": 38,
+              "precursor_code": 0
+            },
+            "gregarious_target_relation_rows": [
+              6,
+              4,
+              0,
+              0
+            ],
+            "gregarious_target_causet_id": "p4-0046",
+            "source_target_types": {
+              "source": "3-element decimation source",
+              "B_target": "4-element pre-atomised causet",
+              "gregarious_target": "4-element next atomised causet"
+            },
+            "transition_provenance": "paper Section 2.3 and Eq. (111): the same (n-1)-source adds the selected maximal element with its old past (B) or with empty past (G)"
+          }
+        ],
+        "labelled_variant_count": 1,
+        "path_factor_instance_count": 1,
+        "all_variants_share_decorated_signature": true,
+        "interpretation": "Raw relation rows may differ by labelling while the decorated transition signature and B occurrence remain the same; all such provenance variants are retained."
+      },
+      "profile": {
+        "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+        "reachable_state_profile": "NOT_EMITTED",
+        "profile_status": "CONDITIONAL_ADDITIONAL_AXIOM_PROFILE"
+      },
+      "source_index_branch": {
+        "policy": "BOTH_BRANCHES_PRESERVED_NOT_MIXED",
+        "membership": {
+          "EQ113_QN_BRANCH": true,
+          "EQ113_QN_PLUS_1_BRANCH": true
+        },
+        "definition_status": "BRANCH_INVARIANT",
+        "usage_projection_sha256": {
+          "EQ113_QN_BRANCH": "57464064865f496f78e3a56122cf16f0dbe57c72a0eb67a9284c17a24054cdf4",
+          "EQ113_QN_PLUS_1_BRANCH": "57464064865f496f78e3a56122cf16f0dbe57c72a0eb67a9284c17a24054cdf4"
+        },
+        "usage_projection_exact_match": true
+      }
+    }
+  ],
+  "assumptions": [
+    "PAPER_STRONG_OPERATOR_PROFILE is selected explicitly",
+    "all transition operators represented by the 22 B factors are nonsingular",
+    "d=2 matrix entries lie in a commutative characteristic-zero scalar field",
+    "both Eq. (113) source-index branches remain separate",
+    "frozen v0.3.3 results and certificates are the audited inputs"
+  ],
+  "unresolved_components": [
+    "expand and normalise all recursively substituted Q-entry rational functions",
+    "compile determinant saturation for the full scalar polynomial system",
+    "test algebraic dependence or redundancy among determinant conditions",
+    "prove reverse equivalence of the full Q presentation",
+    "resolve the paper's Eq. (113) Q_n versus Q_(n+1) source index"
+  ],
+  "verdict": "D2_B_INVERSE_AUXILIARIES_DEFINITIONAL_RATIONAL",
+  "passed": true,
+  "certificate_semantic_digest_sha256": "54bae468f5dceb36e4eb951ebf2931401c32ed7c9d583e3fab8c9b42b32ee68e"
+}
