@@ -1,0 +1,871 @@
+===== PAGE 1 =====
+
+arXiv:gr-qc/0504066v3  8 Feb 2006
+gr-qc/0504066
+A general solution for classical sequential growth dynamic s of
+Causal Sets
+Madhavan Varadarajan 1, ∗ and David Rideout 2, †
+1Raman Research Institute, Bangalore 560 080, India
+2Blackett Laboratory, Imperial College, London SW7 2AZ, UK
+Abstract
+A classical precursor to a full quantum dynamics for causal s ets has been formulated in terms of
+a stochastic sequential growth process in which the element s of the causal set arise in a sort of ac-
+cretion process. The transition probabilities of the Marko v growth process satisfy certain physical
+requirements of causality and general covariance, and the g eneric solution with all transition prob-
+abilities non-zero has been found. Here we remove the assump tion of non-zero probabilities, deﬁne
+a reasonable extension of the physical requirements to cove r the case of vanishing probabilities, and
+ﬁnd the completely general solution to these physical condi tions. The resulting family of growth
+processes has an interesting structure reminiscent of an “i nﬁnite tower of turtles” cosmology.
+∗Electronic address: madhavan@rri.res.in
+†Electronic address: d.rideout@imperial.ac.uk
+1
+
+===== PAGE 2 =====
+
+I. INTRODUCTION
+The causal set approach to quantum gravity posits that the deep structure of spacetime
+is a locally ﬁnite partially ordered set [1]. One of the key open questions is a formulation
+of a quantum dynamics for causal sets. As a preliminary step towar ds such a formulation,
+one can deﬁne a classical stochastic dynamics for causal sets in terms of a sequential grow th
+process in discrete stages, each of which involves the addition of a n ew element to a causal
+set obtained from the previous stage. In this context, the dynam ical law is an assignation
+of probabilities to each such transition from every ﬁnite causal set to its possible ‘children’
+in accordance with certain physical principles inspired by the continu um notions of general
+covariance and causality [2]. 1 Ref. [2] ﬁnds the most general solution for the transition
+probabilities subject to these principles and the additional assumption that none of the
+transition probabilities vanish. Thus the solution is generic but not th e most general one.
+The causal sets which arise from the generic classical sequential g rowth models are rea-
+sonably well understood. For example, there is signiﬁcant evidence indicating that they
+do not produce ‘manifoldlike’ causal sets [4]. It is of interest to know whether the picture
+changes signiﬁcantly if we allow vanishing transition probabilities. The q uantum theory of
+causal sets is expected to arise from a decoherence functional ( or quantum measure) deﬁned
+on sets of histories (causal sets). In some appropriate limit (say a fter coarse graining to
+achieve decoherence), one expects to get probabilities which obey a Kolmogorov sum rule,
+and there is no reason to expect that none of these will vanish. Thu s it is important to know
+if there is any drastic eﬀect which arises from the case of vanishing p robabilities.
+In this work we extend the considerations of ref. [2] to the gener al case in which the
+transition probabilities are required merely to be non-negative rath er than positive. We will
+see that the general dynamics which results can be regarded as a s equence of diﬀerent copies
+of the generic dynamics described in ref. [2], each being a ‘turtle’ in a n inﬁnite (temporal)
+tower of turtles 2 . This has been investigated earlier by Joohan Lee [5]. In our treatme nt
+1 The dynamics is classical in that no allowance is made for quantum inter ference between possible distinct
+transitions from any causal set to its children. A quantum dynamics would be expressed in terms of a
+quantum measure, or decoherence functional, which generalizes the notion of probability measure to allow
+for interference of distinct possibilities. [3]
+2 This is in reference to a popular legend about and old woman who, at th e end of a lecture by a famous
+2
+
+===== PAGE 3 =====
+
+we assume some familiarity with the terminology and proofs of ref. [2].
+The outline of the paper is as follows. We extend the physical principle s of discrete
+general covariance and Bell causality to the case of vanishing tran sition probabilities in
+section II. These principles, in conjunction with the Markovian and in ternally temporal
+nature of the growth process [2], restrict the dynamical law in cert ain important ways. We
+derive these restrictions in section III. In section IV we show that these restrictions taken
+together allow an explicit characterization of the most general clas sical dynamics describing
+a growth process consistent with the physical principles mentioned above. Section V contains
+our conclusions, and a few useful lemmas are proved in the Appendix .
+II. PHYSICAL REQUIREMENTS ON THE DYNAMICS
+As in ref. [2], consider P, the poset of all (isomorphism equivalence classes of) ﬁnite causal
+sets (causets) wherein if a causet can be formed by accreting a sin gle element to a second
+causet, then the former (the ‘child’) follows the latter (the ‘parent ’) in P and the relation
+between the causets is a link (a relation not implied by transitivity). A s equential growth
+process corresponds to a path (i.e. a series of transitions from on e causet to another) in P,
+starting from the empty causet. Recall that a link may correspond to more than one distinct
+transition (the number of distinct transitions are the number of ine quivalent embeddings of
+the parent as a partial stem of the child, where two embeddings are equivalent if related by
+an automorphism of the child; a partial stem is a sub-causet which co ntains its own past). A
+dynamical law is deﬁned to be an assignation of transition probabilities (i.e. real num bers in
+[0,1]) to each such distinct transition for every link of P. We shall require that the dynamical
+law be consistent with the principles of general covariance and Bell c ausality as well as the
+Markov sum rule deﬁned below in sections A–C. As noted in ref. [2], the dynamics, by virtue
+of its formulation as a sequential growth process, automatically inc orporates the property
+of internal temporality (which simply means that no new element can b e born to the past
+of an existing element of any parent).
+As in ref. [2], we set the probability q0 of forming the single element causet (a 1-chain)
+scientist, attempts to argue that the Earth is really ﬂat and rests on the back of an inﬁnite tower of
+turtles.
+3
+
+===== PAGE 4 =====
+
+to unity.
+A. General Covariance
+A dynamical law is deﬁned to be generally covariant iﬀ,
+(i) The transition probabilities for distinct transitions associated wit h the same link in P
+are identical.
+(ii) If γ is any path through P which originates at the empty set and terminates at a causet
+C, the product of transition probabilities along its links is the same as fo r any other path
+from the empty set to C.
+For any generally covariant dynamics, we shall refer to the produc t of transition prob-
+abilities along the links of a path connecting the empty set to a causet C as the speciﬁc
+probability of formation of C. 3
+For any assignation of transition probabilities consistent with gener al covariance, we
+deﬁne a virtual causet as one whose speciﬁc probability of formation vanishes. Thus any
+path from the empty set to a virtual causet contains at least one lin k with zero transition
+probability. All causets which are not virtual are called real. Virtual causets (and hence, their
+descendants) are never formed in the growth process. This is the reason that our deﬁnitions
+of Bell causality and the Markov sum rule below pertain only to real pa rents. Since only
+speciﬁc probabilities of formation are of interest, two dynamical law s which generate the
+same set of speciﬁc probabilities of formation will be referred to as equivalent. We restrict
+our considerations in the remainder of this section to generally cova riant dynamics.
+B. The Markov Sum Rule
+We impose the same requirement as in ref. [2], except that we demand it only of real
+parents. Thus, we require that the sum of the full set of transitio ns issuing from a given real
+3 This is contrast to the total probability of formation of C deﬁned in ref. [2]. The latter is obtained
+by multiplying the speciﬁc probability by the number of inequivalent nat ural labellings of C [2]. Note
+that even the total probability of formation lacks covariant meanin g, in that it refers to the probability
+of forming a particular ﬁnite causet after a speciﬁc stage of the gr owth process. Physically meaningful
+probabilities can be extracted from the sequential growth dynamic s by the measure it assigns to cylinder
+sets of unlabeled causets, as described in ref. [7].
+4
+
+===== PAGE 5 =====
+
+causet is unity. (The full set of transitions constitutes one for ea ch choice of partial stem
+of the parent. The coeﬃcients in the sum rule of ref. [2] arise when multiple partial stems
+result in the same child causet.)
+C. Bell Causality
+As mentioned above, Bell causality is only deﬁned for real parents. Let C be a real parent
+and C1 and C2 be two of its children. Let B be the union of the precursor sets for the two
+transitions. (Recall that a precursor set is the past of the new ele ment whose introduction
+forms the child causet C1 or C2.) Clearly there is a path in P starting from the empty set,
+ending at C and passing through B. Since C is real so is B.
+Let B1 and B2 be the causets deﬁned by adding an element to the future of the co rre-
+sponding precursor sets in B and let P (C → Ci), P (B → Bi) be the transition probabilities
+for the transitions C → Ci, B → Bi, i = 1, 2. In ref. [2], Bell causality was formulated as
+P (C → C1)
+P (C → C2) = P (B → B1)
+P (B → B2). (2.1)
+This equation was meant to capture the idea that events occurring in some part of a causet
+should be inﬂuenced only by the portion of the causal set lying to the ir past. Equation (2.1)
+is only sensible when all transition probabilities are non-vanishing as in r ef. [2]. We seek
+a generalization of this equation to the case of vanishing transition p robabilities (i.e. when
+one or more of the children in (2.1) are virtual).
+Let P (C → C ′) = 0 for some transition from a real parent C to its child C ′. Then a
+natural condition inspired by the idea alluded to just after equation (2.1) would be to forbid
+all transitions from real parents which involve the same (isomorphism c lass of) precursor set
+as in C → C ′. Since the transition from the empty set to the 1-chain has probab ility q0 = 1,
+it would follow from such a condition that no antichain to antichain tran sition could be
+virtual. As we shall see in 6(b) of the proof of Lemma 2 in section III, the general solution
+to such a dynamics is that of ref. [2] in which the tk can be zero.
+Our aim is to provide as general a dynamical law as possible, following th e spirit of the
+conditions imposed in ref. [2]. In particular, we would like to allow for the vanishing of
+any of the transition probabilities, including those of the antichain to antichain transitions.
+5
+
+===== PAGE 6 =====
+
+A natural set of conditions which allows this and serves as a reasona ble generalization of
+equation (2.1) may be arrived at by the following qualitative discussion .
+The formulation of (2.1) may be thought to involve two distinct ingred ients:
+(a) The idea that there is a propensity for a transition to occur dep ending solely on the
+nature of the transition, i.e. the precursor set involved. This is inco rporated in (2.1) by
+requiring that the transitions C → Ci, B → Bi have the same precursor sets for each of
+i = 1, 2.
+(b) The implication of the Markov sum rule that the net probability of f ormation of all
+possible children from a real parent is ﬁxed and equal to unity. This f orces (2.1) to be an
+equality of ratios of probabilities rather than probabilities themselves.
+Viewed in terms of (a) and (b), a transition probability could vanish du e to two distinct
+reasons: (1) the transition is intrinsically forbidden so that all tran sitions involving the same
+precursor set are also virtual or (2) there are so many competing siblings that they “take
+away the entire available probability” and drive the transition probab ility for the transition
+in question to zero. The consequences of this viewpoint are as follow s. Consider, as before,
+the real causet C and its ancestor B. Every precursor set in B is also a precursor set in C.
+Hence for every birth in B there is a birth in C, but since C is larger than B, it has more
+children than B. Clearly, if P (B → B1) = 0 then C1 must also be virtual since C1 has even
+more competing siblings than B1. On the other hand, if P (C → C1) ̸= 0, then B1 must also
+be real, since B1 has even fewer siblings than C1. The relative propensity of the birth of C2
+with respect to that of C1 is then well deﬁned as the ratio of the two transition probabilities,
+and may be taken to quantify the relative propensity of the birth B2 with respect to that
+of B1. In the case that both C1 and C2 are virtual, the relative propensity of their births is
+ill deﬁned. The vanishing of P (C → Ci), i = 1, 2 may be because C1 and C2 have too many
+competing siblings. The corresponding children B1, B 2 of B have fewer competing siblings
+and hence it is possible that either or both these children are real.
+As a result of this qualitative discussion, we formulate the Bell causa lity condition in terms
+of C, C i, B, B i, i = 1, 2 (which have been deﬁned just before equation (2.1)) as follows:
+(i) If all four transition probabilities are non-vanishing, Bell causalit y is deﬁned by (2.1).
+(ii) If P (B → B1) = 0, then P (C → C1) = 0. If P (B → B2) = 0 then P (C → C2) = 0.
+6
+
+===== PAGE 7 =====
+
+(iii) If P (C → C1) = 0, P (C → C2) ̸= 0, then P (B → B1) = 0, P (B → B2) ̸= 0
+(iv) If P (C → C1) = 0 and P (C → C2) = 0 then nothing can be inferred about P (B → B1)
+and P (B → B2).
+Note that if the transition probabilities vanished only because the tr ansition in question
+was intrinsically forbidden, we would obtain that P (C → Ci) = 0 iﬀ P (B → Bi) = 0 , i =
+1, 2 which would in turn imply (i)–(iii) above and a stronger condition than (iv). In the
+remainder of this work we use (i)–(iv) as our deﬁnition of Bell causalit y. In addition we freely
+make use of the fact that the Bell causality conditions (i)–(iv) hold w hen B is replaced by any
+subcauset of C which contains the union of the precursors of the two transitions a s a partial
+stem. That this is so can easily be veriﬁed for any assignment of tran sition probabilities
+consistent with general covariance as deﬁned above.
+III. SOME IMPLICA TIONS OF THE PHYSICAL REQUIREMENTS
+A few key consequences on sequential growth dynamics, of gener al covariance, Bell causal-
+ity and the Markov sum rule, are derived in this section.
+Lemma 1 : Let the j-antichain to j + 1-antichain transition probability qj be such that
+qj > 0 for j = 1 ..n . Then for J ≤ n, the gregarious transition from any real parent of
+cardinality J has probability qJ . (Recall the gregarious transition is that in which the new
+element arises unrelated to any of the elements of the parent caus et.)
+Proof: Clearly, we need consider parents which are not antichains. Let su ch a real parent
+be A0 with cardinality J. Refer to Fig. 1. The causets Bj are the gregarious children
+of the Aj. The Dj are parents of the Aj, as shown schematically in the diagram. The
+transition probabilities between various pairs of causets are as labe led. Since A0 is real,
+general covariance (referred to henceforth as g.c.) implies that a0 ̸= 0. Suppose x0 ̸= 0. Then
+B0 is real and g.c. implies that b0, w 0 ̸= 0. Now employ Bell causality (henceforth referred to
+as b.c.) to compare the transition probabilities w0 and x1 with a0 and b0 respectively, where
+a disconnected element of A1 acts as a spectator. (Recall a spectator is an element of the
+parent causet which does not lie in the precursor set of either of th e transitions in question.)
+Since both a0 and b0 are non-vanishing, along with w0, b.c. (iii) forces x1 to be non-zero as
+7
+
+===== PAGE 8 =====
+
+D1
+1A
+B
+D
+x
+w
+A
+b
+B
+x
+a
+B
+w
+A
+b
+A
+B
+x
+b
+a
+D
+A
+x
+i
+i+1
+i+1
+i+1
+i
+i
+2
+2
+1
+2
+1
+1
+1
+1
+0
+0
+0
+0
+0a0
+0 i
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/0/0/0
+/0/0/0
+/0/0/0
+/0/0/0
+/1/1/1
+/1/1/1
+/1/1/1
+/1/1/1
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/0/0/0/0
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/1/1/1/1
+/0/0/0
+/0/0/0
+/0/0/0
+/0/0/0
+/0/0/0
+/1/1/1
+/1/1/1
+/1/1/1
+/1/1/1
+/1/1/1
+/0/0/0
+/0/0/0
+/0/0/0
+/0/0/0
+/0/0/0
+/1/1/1
+/1/1/1
+/1/1/1
+/1/1/1
+/1/1/1
+/0/0/0
+/0/0/0
+/0/0/0
+/0/0/0
+/1/1/1
+/1/1/1
+/1/1/1
+/1/1/1
+/0/0/0
+/0/0/0
+/0/0/0
+/0/0/0
+/0/0/0
+/1/1/1
+/1/1/1
+/1/1/1
+/1/1/1
+/1/1/1
+/0/0/0
+/0/0/0
+/0/0/0
+/0/0/0
+/0/0/0
+/1/1/1
+/1/1/1
+/1/1/1
+/1/1/1
+/1/1/1
+FIG. 1: All “gregarious child” transitions have probabilit y qJ
+well. Thus we may use b.c. (i) to prove that x0 = x1 as in ref. [2] (simply consider the b.c.
+(i) condition b0
+a0
+= x1
+w0
+along with the g.c. condition a0x0 = b0w0). This means that B1 is
+real. Since D1 and A1 must be real, and a1 ̸= 0, we can repeat the argument with A1 in the
+place of A0, and proceed rightwards across the ﬁgure.
+Clearly, as in ref. [2], the process terminates for i such that: Ai has only one maximal
+element with non empty past, Ai+1 is the J antichain, Bi+1 is the J + 1 antichain and Di is
+the J − 1 antichain. Then b.c. and g.c. imply that x0 = qJ .
+Above we assumed that x0 ̸= 0. To complete the proof, we show by contradiction that
+this is so. Thus suppose x0 = 0. Then
+(a) Suppose A1 is real. ⇒ b0 ̸= 0. Then g.c. implies that w0 = 0. Then b.c. (iii) implies
+that x1 = 0. (Again, the disconnected element of A1 acts as the spectator. Since w0 = 0,
+only x1 = 0 is consistent with b.c. (iii).) Further since A1 is real, a1 ̸= 0 and we can repeat
+the argument with A1 as the new A0, asking now if A2, which is the new A1, is real. In this
+manner we can progress rightwards across the ﬁgure (assuming t he Aj are real, c.f. case (b)
+below)
+(b) Suppose A1 is virtual. Since A0 is real, we have that D0 is real and hence b0 = 0. Then
+we can not proceed rightwards across the ﬁgure since b.c. does no t apply for virtual parents.
+But since D0 is real we can choose D0 to be our new A0, with b0 = 0 now taking the role
+of x0 = 0, and repeat the argument (by asking again if the new A1 is real). Note that
+this recursive argument must eventually end with case (a). As a ‘wor st case’, this recursion
+8
+
+===== PAGE 9 =====
+
+will eventually arrive at the 2-chain for A0, whose only corresponding A1 is the 2-antichain,
+which we know is real even for n = 1 (since q1 > 0).
+This procedure will terminate with some ﬁnal choice of real A0 with cardinality K,
+2 ≤ K ≤ J, such that A0 has only one maximal element with a nonempty past, D0 is the
+K − 1 antichain, A1 is the K antichain, and B1 is the K + 1 antichain. Then x1 will be qK,
+K ≤ J ≤ n, which is non-zero. But from (a) above x1 = 0, which is a contradiction. This
+completes the proof of the Lemma.
+Lemma 2 : Let the antichain to antichain transition probabilities q1, .., q n all be > 0. Then
+the most general sequential growth dynamics to stage n furnishes probabilities of formation
+of causets of cardinality ≤ n + 1 in accordance with equation (12) of ref. [2],
+α n =
+∑̟
+l=m
+( ̟ − m
+̟ − l
+)
+tl
+∑n
+j=0
+( n
+j
+)
+tj
+in which the coupling constants tk, k = 1 ..n are such that tk ≥ 0, or equivalently in accor-
+dance with equation (7) of ref. [2],
+α n =
+m∑
+k=0
+(− )k
+( m
+k
+) qn
+q̟ − k
+with
+n∑
+l=0
+(− )n− l
+( n
+l
+) 1
+ql
+≥ 0 .
+Proof: Consider a sequential growth dynamics consistent with b.c., g.c. an d the Markov
+sum rule. It is straightforward to repeat the considerations of se ction IV of ref. [2] for
+real parents. Here we brieﬂy repeat the arguments, taking into account the po ssibility of
+vanishing transition probabilities.
+(1) Lemma 1 holds so that any gregarious transition from a J element real parent has
+transition probability qJ , J ≤ n. (Lemma 1 is the analog of Lemma 2 in ref. [2]).
+(2) Claim: The analog of Lemma 3 in ref. [2] holds for real parents. Thus each transition
+probability α m of stage m ≤ n from a real parent has the form
+α m = qm
+m∑
+i=0
+λ i
+qi
+(3.1)
+9
+
+===== PAGE 10 =====
+
+where λ i are integers only depending on the transition in question.
+Proof by induction : Equation (3.1) is easily veriﬁed for stages 0 and 1. In particular sta ge 1
+always has one real parent and the above form for the α 1 holds. Assume (3.1) holds for stage
+k − 1 < n . Consider a bold transition probability βk of stage k from some real parent C.
+(Recall the timid transition is the one in which the new element arises to the future of the
+entire parent causet. A bold transition is any save the timid transitio n.) For any such causet,
+there exists a real parent B at stage k − 1 such that the bold and gregarious transitions from
+C are in b.c. with appropriate ones from B. B can be constructed by removing from C a
+maximal element which is not in the precursor set for the bold transit ion. It is easy to see that
+g.c. implies that B is real if C is real. Then b.c. (i & iii) gives β k
+qk
+= α k−1
+qk−1
+=⇒ βk = qk
+∑k− 1
+i=0
+λ i
+qi
+irrespective of whether the bold child of C is virtual or not. The Markov sum rule ensures
+that the timid child transition probability, γk is given by γk = 1− ∑
+j βkj = 1− qk
+∑k− 1
+i=0
+∑
+j
+λ ij
+qi
+where j labels the possible bold transitions. As in ref. [2] this expression can b e put in the
+form (3.1) by setting λ i = − ∑
+j λ ij, i < k and λ k = 1.
+(3) In transitive percolation all causets are real, save the special cases when p = 0 or p = 1.
+From ref. [2] we know that, for transitive percolation, qn = qn, where q = 1 − p. The case
+of p = 1 is disallowed by assumption, because in that case all q’s vanish. The case p = 0
+makes all qn = 1, yielding an inﬁnite antichain with probability 1. In the general case {λ i}
+for any transition from a real parent can be obtained from a compa rison of α k = qk
+∑k
+i=0
+λ i
+qi
+(k ≤ n) with α k for transitive percolation just as in ref. [2] and we get the same ans wers as
+in ref. [2] namely
+α k =
+m∑
+i=0
+(− )i
+( m
+i
+) qk
+q̟ − i
+(3.2)
+where ̟ is the cardinality of the precursor set for the transition and m is the number of its
+maximal elements. (Note that this formula also gives probabilities con sistent with transitive
+percolation when p = 0, namely that α k = 1 when m = 0, and 0 otherwise.)
+(4) Claim: In order that for all transitions from real parents the transitio n probabilities
+α k ∈ [0, 1], it suﬃces that each timid transition probability for every real par ent is ≥ 0,
+which is in turn guaranteed if the timid transition probability from the k-antichain is ≥ 0
+10
+
+===== PAGE 11 =====
+
+for all k ≤ n. 4
+Proof: The proof of this statement is identical to that of ref. [2] restric ted to real parents,
+save that each reference to a non-gregarious transition probab ility being positive is replaced
+by the statement that it is non-negative. In order to use our deﬁn ition of b.c. in the proof,
+it suﬃces to note (as in (2) above) that for every bold transition fr om a real parent C at
+stage k (2 ≤ k ≤ n), there is a real parent B of C which contains the precursor set for
+the transition. Since qk and qk+1 are both non-zero, our b.c. (i–iii) is equivalent to the b.c.
+formula used in the proof, where now the α can vanish.
+(5) From (4) it follows, in an identical manner to the considerations o f ref. [2], that the
+transition probabilities α k, k ≤ n from real parents of size k are of the form
+α k = qk
+̟∑
+l=m
+( ̟ − m
+̟ − l
+)
+tl (3.3)
+with qk expressible in terms of tk as
+1
+qk
+=
+k∑
+l=0
+( k
+l
+)
+tl. (3.4)
+As in ref. [2] the ‘coupling constants’ ti can be freely chosen subject to the conditions
+t0 = 1, t i ≥ 0, 1 ≤ i ≤ n.
+(6) Claim: The transition probabilities for transitions from real parents give n by the formula
+(3.3)–(3.4) with tj ≥ 0, n ≥ j ≥ 1, t 0 = 1, satisfy the physical requirements.
+Proof: The proof is obtained simply by restricting the proof of section IV D of ref. [2] to
+real parents. We brieﬂy describe how the results of ref. [2] apply here.
+(a) General Covariance: Assign transition probabilities to all links (till stage n) in P accord-
+ing to the formula (3.2) or (3.3). 5 It is easily veriﬁed that for any path from the empty set
+to a causet C of cardinality |C| ≤ n + 1, the product of transition probabilities, apart from
+the overall factor ∏|C|− 1
+j=0 qj, is a product of factors which are in one to one correspondence
+with elements of C such that the factor corresponding to the element x only depends on the
+4 Note that the k-antichain, k ≤ n + 1 is real since there is a path from the empty set to the k-antichain
+comprising only of antichains and the transition probability for the ith link is qi > 0.
+5 Note that these transition probabilities are non-negative and ident ical for all transitions corresponding to
+the same link in P. Hence such an assignation is consistent and deﬁnes a dynamical law .
+11
+
+===== PAGE 12 =====
+
+past of x in C. Hence this product is path independent. If this product ̸= 0, then C is real,
+otherwise it is virtual.
+(b) Bell Causality: Restrict equation (3.2) to real parents. Then t he transition probability
+for any birth depends, apart from a factor of qk, only on the precursor set for the transition.
+As in ref. [2], this implies that b.c. (i) holds. It also implies that if any tran sition probability
+vanishes all births involving the same precursor set are virtual. Thus the dynam ics satisﬁes
+a stronger version of b.c. than we require (see the comment at the end of section II). In this
+regard, note that b.c. (iv) did not come in to our derivation of the ge neral dynamical law.
+Thus b.c. (i–iii), in the presence of general covariance and the Mark ov sum rule, implies a
+stronger causality condition that that expressed in b.c. (iv). (Tho ugh the situation changes
+when we allow the gregarious transition probabilities to vanish, and ou r weaker notion of
+b.c. becomes important in that context.)
+(c) Markov Sum Rule: The proof in ref. [2] goes through without any change. The proof
+applies to any parents and we can simply restrict the proof to real parents.
+Lemma 3 : Let n be the smallest number for which the n-antichain to n + 1-antichain
+transition probability qn vanishes. Then: (a) There are no real gregarious children at stag e
+j, j ≥ n. (b) At stage n the only real children are timid children.
+Proof:
+(a) Again consider Fig. 1. Let A0 be a real parent of cardinality ≥ n and assume that B0 is
+its real gregarious child. Hence a0, x 0 ̸= 0. As in the proof of Lemma 1, using g.c. and b.c.
+(iii), it is easy to see that all the causets of Fig. 1 must be real. But th ese causets include
+the j + 1 antichain, j ≥ n. Since qn = 0, there is a path (solely consisting of antichains)
+from the empty causet to the j + 1 antichain which has speciﬁc probability = 0. Hence the
+j + 1 antichain is virtual. This yields the desired contradiction. Hence B0 cannot be real.
+(b) Let C be a real parent (of cardinality n) at stage n. Consider the b.c. relation involving
+any bold child Cb of C and the gregarious child Cg of C. Let the precursor of C → Cb be
+C pre and the relevant (timid and gregarious) children of C pre be C pre
+t , C pre
+g .
+Clearly, there is a path in P from the empty set through C pre to C. Hence, since C is
+real, so is C pre. Let us further assume that Cb is real. The same reasoning implies that C pre
+t
+is real. Then we have that
+12
+
+===== PAGE 13 =====
+
+P (C pre → C pre
+t ) ̸= 0, P (C → Cb) ̸= 0.
+Let the cardinality of C pre be K (K < n since Cb is bold). Then Lemma 1 implies that
+P (C pre → C pre
+g ) = qK ̸= 0. Also (a) above together with the fact that C is real, implies that
+P (C → Cg) = 0.
+But this assignment of transition probabilities is in contradiction with b .c. (iii). Hence
+Cb cannot be real. (Note that with Cb virtual, b.c. (iv) is satisﬁed.) Hence the only real
+children produced at stage n are timid children.
+Implications of Lemma 3 : To describe the implications of Lemma 3 and for our subsequent
+considerations, it is useful to deﬁne the notion of a C-timid causet as follows. We shall say
+that a causet C ′ is timid with respect to a causet C, or that C ′ is C-timid, if C ′ ⊃ C and
+every element in C ′ \ C is to the future of every element of C.
+Now, let n be the minimum stage at which qn = 0 and let there be P real (non-isomorphic)
+parents at stage n formed as a result of sequential growth. Denote these as Cj,n , j = 1, .., P .
+By Lemma 3, only the timid transition is allowed at stage n. This means that at any
+subsequent stage the new element added must be to the future of the entirety of Cj,n . If
+not, a real growth process could be envisaged such that the child a t the nth stage was not
+timid. Thus, every real causet formed as a result of growth after sta ge n is Cj,n -timid for
+some unique j (the uniqueness follows from Lemma A3 in the Appendix).
+IV. THE GENERAL SOLUTION
+In this section we derive the most general solution to the dynamics w hich satisﬁes the
+physical requirements of section II. The derivation uses the resu lts of section III and Lemmas
+A1, A2 and A3 proved in the Appendix. We shall present our derivatio n in the form of two
+Lemmas 4A and 4B and a Remark. Their import is as follows.
+Let PCj,n be the subposet of P which contains Cj,n and all Cj,n -timid causets for a ﬁxed
+j (we have deﬁned Cj,n at the end of the previous section above). We deﬁne a dynamical
+law relative to PCj,n to be an assignation of probabilities to links in PCj,n. Such a dynamical
+law will be said to satisfy the physical conditions of section II relative to PCj,n iﬀ
+(a) the transition probabilities for distinct transitions associated w ith the same link in PCj,n
+are identical and the product of transition probabilities along any pa th in PCj,n starting
+13
+
+===== PAGE 14 =====
+
+from Cj,n to a causet C in PCj,n depends only on C.
+(b) b.c. as deﬁned in section II holds among causets in PCj,n.
+(c) the sum of transition probabilities for all Cj,n -timid children of any real parent in PCj,n
+is unity, where reality is deﬁned with respect to paths in PCj,n starting from Cj,n .
+Lemmas 4A and 4B show that in order to ﬁnd the most general dynam ical law consistent
+with the conditions of section II, it suﬃces to ﬁnd the most general dynamical law relative to
+PCj,n which satisﬁes the physical principles of section II relative to PCj,n, for each j separately.
+Remark 1 shows that the latter assignation of transition probabilitie s is in correspondence
+with a growth process from the empty set. As we shall see, by apply ing Lemmas 4A, 4B
+and Remark 1 iteratively, we shall be able to derive the general solut ion to the dynamics in
+P.
+Let Sn be a dynamical law for causets till stage n (i.e. the maximum size of children
+is n + 1) which is speciﬁed as follows. Let the transition probabilities till sta ge n − 1 be
+assigned in accordance with (3.2) or (3.3). As in the last paragraph o f the previous section,
+let qn = 0 and let Cj,n , j = 1 ..P be the real non-isomorphic parents of size n. Further, let
+the timid transition from each Cj,n occur with unit probability and every other transition
+at stage n with probability zero.
+Lemma 4A : Let S be a dynamical law whose restriction up to stage n is Sn. If S is
+consistent with g.c., the Markov sum rule and b.c. then an equivalent d ynamical law 6
+exists such that
+(a) at stage r ≥ n transition probabilities for all transitions to causets which are not t imid
+with respect to any Cj,n vanish.
+(b) g.c., the Markov sum rule and b.c. as deﬁned in section II hold.
+Proof: Since the causets described in (a) are virtual by Lemma 3, Lemma A 1 ensures that
+we may deﬁne an equivalent dynamical law S ′ by setting the transition probabilities of (a)
+to zero. (b) is trivially true for S ′ from Lemma A1.
+Lemma 4B : Let S be an assignment of transition probabilities (i.e. numbers in [0,1]) to
+6 See IIA for a deﬁnition of equivalent dynamical laws.
+14
+
+===== PAGE 15 =====
+
+links in P such that
+(a) S coincides with Sn to stage n.
+Beyond stage n:
+(b) transition probabilities for all transitions to causets which are n ot timid with respect to
+any Cj,n vanish.
+(c) S restricted to each PCj,n provides a dynamical law relative to PCj,n which satisﬁes the
+principles of section II relative to PCj,n for each j separately.
+Then S is completely speciﬁed by (a)–(c) (i.e. (a)–(c) ensure that every lin k in P is
+assigned a unique number in [0 , 1]) and is consistent with the physical principles of section II.
+Proof:
+Claim 1 : S is completely speciﬁed by (a)–(c).
+Proof: Transition probabilities from any causet of size ≤ n are speciﬁed by Sn. Any causet
+of size > n is either Cj,n -timid for some j or not timid with respect to any Cj,n .
+If the latter then Lemma A2 shows that its only oﬀspring are non-tim id with respect to
+any of the Cj,n and (b) speciﬁes the transition probabilities. If the former, then L emma A2
+ensures that it is not Ck,n -timid for any k ̸= j. Its children are either Cj,n -timid in which
+case (c) speciﬁes the transition probabilities or, using Lemma A2, no n-timid with respect to
+any Ck,n , k = 1..P in which case (b) speciﬁes the transition probabilities.
+Claim 2 : If (a)–(c) hold, S is generally covariant.
+Proof: From Lemma A2 and the consistency of the dynamics of Eqns. (3.2) and (3.3) with
+g.c., Sn is clearly consistent with g.c. Hence g.c. needs to be checked only for causets of size
+> n + 1. If the causet is not timid with respect to any Cj,n , then by (b) every path to it has
+at least one link with zero transition probability. Hence such paths sa tisfy g.c. If the causet
+is Cj,n -timid, Lemma A2 shows that every path to it is such that
+(i) it passes through Cj,n .
+(ii) it does not pass through any causets of cardinality > n which are not timid with respect
+to any Ck,n , k = 1..P , nor through any Ck,n -timid causets, k ̸= j thus implying that it must
+pass through only Cj,n -timid causets after stage n.
+Since Sn is consistent with g.c., (i) and (ii) in conjunction with (c) show that pat hs to
+15
+
+===== PAGE 16 =====
+
+Cj,n -timid causets are consistent with g.c.
+Claim 3 : If (a)–(c) hold, S is consistent with the Markov sum rule.
+Proof: It is easy to see that Sn is consistent with the Markov sum rule. Hence we only need
+to check it for real parents of size ≥ n + 1. Such parents must be Cj,n -timid for some j. As
+discussed before, Lemma A2 implies that its children are either Cj,n -timid or not timid with
+respect to any Ck,n , k = 1..P . (b) ensures that the latter do not contribute to the sum rule
+and hence (c) ensures that the Markov sum rule is obeyed.
+Claim 4 : If (a)–(c) hold, S satisﬁes Bell causality.
+Proof: Clearly Sn to stage n − 1 is consistent with b.c. since it is just the dynamical law of
+eqns (3.2) or (3.3). So we need to check b.c. with regard to real par ents of size ≥ n.
+Case A) Real parents of size n: The only such causets are Cj,n , each of which has a single
+real child. Let C1 and C2 be children of Cj,n for some j. There are 2 cases:
+(i) C1 is timid and C2 is virtual: Clearly there is no b.c. with oﬀspring of any smaller causet
+D ⊂ Cj,n . Let D ⊃ Cj,n be some real parent with children D1 and D2 such that D1, D 2
+enjoy a b.c. relation with C1, C 2 (our notation is such that D1 has Cj,n as its precursor set).
+Since C2 is an ancestor of D2, Claim 2 ensures that D2 is virtual. As can be checked, this
+fact ensures that b.c. is satisﬁed.
+(ii) C1 and C2 are virtual: b.c. is only non-trivial for oﬀspring of D ⊃ Cj,n . Since C1, C 2 are
+ancestors of D1, D 2 respectively, Claim 2 ensures that D1, D 2 are virtual and b.c. is satisﬁed.
+Case B) Real parents of size > n : The only real parents of size > n are Cj,n -timid. Fix j
+and let C be a real Cj,n -timid parent with children C1 and C2. There are 3 cases:
+(i) C1 is Cj,n -timid, and C2 is not Cj,n -timid: Note that C2 cannot be Ck,n -timid for any
+k = 1..P by Lemma A2. Hence C2 is virtual. Obviously the union of precursor sets is either
+Cj,n itself or is Cj,n -timid. In the former case it is easy to check that (a) ensures that b.c.
+is satisﬁed. In the latter case C1 and C2 are in a b.c. relation with appropriate children D1
+and D2 of some real causet D which contains Cj,n as a partial stem. From Lemma A3, since
+D is real, D1 is Cj,n -timid and D2 is not Cj,n -timid and hence virtual. For D ⊂ C, g.c. (i.e.
+Claim 2) ensures D1 is real if C1 is real and hence b.c. is satisﬁed. (If C1 is virtual then b.c.
+(iv) is an empty condition.) If D ⊃ C, then D2 is virtual (as argued above). Further, since
+16
+
+===== PAGE 17 =====
+
+C1 is an ancestor of D1 in our deﬁnition of b.c. , Claim 2 ensures that D1 is virtual if C1 is
+virtual and that C1 is real if D1 is real. Thus b.c. holds.
+(ii) C1 and C2 are not Cj,n -timid: Thus C1 and C2 are virtual and b.c. says nothing about
+transitions from D ⊂ C. For D ⊃ C, D1 ⊃ C1 and D2 ⊃ C2 so that g.c. (i.e. Claim 2)
+ensures that D1, D 2 are virtual and hence b.c. holds.
+(iii) C1 and C2 are Cj,n -timid: b.c. is with children of D which contain a Cj,n -timid precursor
+set as a partial stem. Lemma A3 implies that D and its children D1, D 2 are also Cj,n -timid.7
+Note that Lemma A2 implies that if a causet is Cj,n -timid it cannot be Ck,n -timid for k ̸= j.
+Thus b.c. holds by (c).
+From the above it follows that if (a)–(c) hold then S is consistent with b.c. This completes
+the proof of Lemma 4B.
+Remark 1: Any dynamical law relative to PC for some causet C, which satisﬁes the physical
+principles of section II relative to PC is in correspondence with a growth process satisfying
+b.c., g.c. and the Markov rule and which starts from the empty cause t. The correspondence
+is that every causet C ′ of the latter deﬁnes the causet C ′′= C ∪ C ′ of the former, with every
+element of C ′ being to the future of C in C ′′. This remark is easily veriﬁed by inspection.
+The Final Picture : An iteration of Lemma 4 and Remark 1 yields the following pic-
+ture. The formation of any real causet is through a series of grow th phases, each of whose
+transition probabilities are given by eqns. (3.2) or (3.3). A real caus et formed at the end
+of such a growth stage will be called a branch point causet . Such a causet heralds a new
+phase of growth, with new values of the coupling constants. The tr ansition probabilities
+in this new stage are given by the same formulas (3.2) or (3.3), with a c ompletely new set
+of coupling constants qn or tn (these can be freely chosen; for example, we could choose
+them to depend on the previous branch point causet in some way), a nd the ̟ and m
+are interpreted ignoring the presence of the previous branch poin t causet. Every branch
+point causet C{(jk,n k), (jk−1,n k−1).. (j1,n 1)} is labeled by a set of ordered pairs of natural numbers
+{(jk, n k), (jk− 1, n k− 1).. (j1, n 1)}.
+7 In the degenerate case where D1 = D2 are the timid child of Cj,n, and D is Cj,n itself, the conclusion
+remains, since these are all in PCj,n.
+17
+
+===== PAGE 18 =====
+
+The notation signiﬁes that C{(jk,n k), (jk−1,n k−1).. (j1,n 1)} grew from the empty causet as a
+result of k phases of independent growth. Call the causets which arise from e ach phase of
+independent sequential growth as turtles. (i.e. a turtle is the diﬀerence between adjacent
+branch point causets.) The ﬁrst stage of growth, characterized by q0 = 1, q i > 0, i = 1..n 1− 1,
+resulted in a set of real turtles C(j1,n 1) each of size n1. Next, qn1 vanished. Choosing a ﬁxed
+j1, the growth of the second set of turtles commenced, each new po int being to the future
+of the entirety of C(j1,n 1), and hence in correspondence with a sequential growth in which
+C(j1,n 1) is replaced by the empty set. The second set of turtles were fully fo rmed when
+the eﬀective n2 antichain to n2 + 1-antichain transition probability, q(j1,n 1)
+n2 , vanished. The
+third set of turtles’ growth commenced from the parent C{(j2,n 2), (j1,n 1)} such that every new
+element was added to the future of C{(j2,n 2), (j1,n 1)} and so on. Thus any real causet formed
+in the growth process consists of turtles stacked one on top of an other (see footnote 2).
+V. CONCLUSIONS
+The generic class of classical sequential growth dynamics derived in ref. [2] excluded the
+possibility that any of the transition probabilities vanished. It is of int erest to know if the
+picture changes drastically when zero transition probabilities are allo wed. In this work we
+generalized the considerations of ref. [2] to the case where the tr ansition probabilities could
+vanish, deriving the most general dynamical law which satisﬁed our g eneralizations of the
+physical principles of ref. [2]. We found that this dynamics is similar to t hat of ref [2]. The
+transition probabilities are given by the same equations, except tha t the free parameters
+which deﬁne the dynamics are now allowed to vanish. A unique feature emerges, however,
+when certain of these free parameters vanish. In this case the de velopment of the universe
+can abruptly change over to one with completely new values for thes e parameters, such that
+each element of the newly growing universe is born to the future of t he entirety of the old
+universe. In more technical terms, we found that our dynamics diﬀ ers from that of ref. [2] in
+two ways. One minor diﬀerence is that the coupling constants tn are allowed to vanish, with
+the corresponding implications on the transition probabilities. The mo re major diﬀerence
+arises from the vanishing of the ‘gregarious’ transition probabilities qn. Each such vanishing
+heralds the onset of a new era, dubbed a ‘turtle’, in which a completely new collection of
+18
+
+===== PAGE 19 =====
+
+coupling constants tn may be used to describe the subsequent sequential growth, and t he
+added condition that each new element that arises is to the future o f the entirety of all the
+previous turtles.
+It is interesting to note that, in spite of the fact that a turtle must ﬁnish its development
+at a particular stage in the growth process, it is still compatible with c ovariance. This is
+reminiscent of the situation with cosmic renormalization and the form ation of posts [6], in
+that the existence of a post also implies a C-timid future evolution (where C is a causet with
+a unique maximal element). A key diﬀerence however is that cosmic re normalization occurs
+‘within a single turtle’, with a single set of coupling constants. One can s how that originary
+dynamics (e.g. that which occurs after a post) can be identiﬁed with a turtle dynamics in
+which the ‘origin element’ is a turtle followed by an inﬁnite second turtle .8 When we consider
+something like a ‘double post’, in which C has multiple maximal elements, it is important
+to note that only the restriction to C-timid causets is compatible with g.c. Causets which
+attempt to generalize originary dynamics by enforcing a causet with more than one maximal
+element as a full stem (as suggested in ref. [2]) will violate covariance .
+As emphasized in the main body of the paper, the relevant output of any physically
+satisfactory dynamical law is the speciﬁc probability of formation of any causet rather than
+the transition probabilities of individual transitions. In the case of e xclusively non-vanishing
+transition probabilities, one can be derived from the other, but in th e case of possibly van-
+ishing transition probabilities, two dynamical laws diﬀering in their assig nations (consistent
+with the physical principles discussed in section II) of transition pro babilities to links ema-
+nating from virtual causets still yield the same speciﬁc probabilities o f formation. Though
+indeed even the speciﬁc probabilities of formation themselves are no t physically relevant
+since they pertain to ﬁnite causets formed at a particular stage of the growth process. What
+is of physical relevance is the resulting probability measure on a suita ble space of completed,
+unlabeled causets [7], or rather sets of such causets to which can b e attached a physical mean-
+ing. The relevant analysis for the dynamics of ref. [2], showing that indeed such a measure
+can be deﬁned and characterized in terms of answers to physical q uestions, has been done
+8 One recovers the originary dynamics described in ref. [6] by choosin g the coupling constants of the second
+turtle ˜tn in terms of those of the originary evolution tn by ˜t0 = 1, ˜tn = tn+tn+1
+t1
+.
+19
+
+===== PAGE 20 =====
+
+in ref. [7]. The corresponding analysis for the dynamics described in t his paper has recently
+been completed by Dowker and Surya [8]. The key open issue is of cou rse the formulation
+of the quantum dynamics. It is hoped that our understanding of th e most general classical
+dynamics, in conjunction with the work of ref. [8], may be of some use in the formulation of
+the quantum dynamics and in investigating aspects of its (semi)class ical limit.
+Acknowledgments: MV would like to thank Rafael Sorkin for suggesting this problem and
+for his warm hospitality and time. MV would also like to thank Rafael Sor kin and Graham
+Brightwell for their generosity with regard to authorship issues an d Graham Brightwell
+specially for sharing his insights.
+DR would like to thank the Williams Watrous Couper Fund for generous t ravel support,
+the Raman Research Institute for kind hospitality wherein this work was started, and S.
+Varadarajan for crucial assistance.
+Appendix
+Lemma A1 : Given any dynamical law consistent with the physical principles of se ction
+II, we may set the transition probabilities to zero for any links emana ting from any virtual
+causet. The new dynamical law thus deﬁned is also consistent with th e principles of section
+II and is equivalent to the original one in that it provides the same spe ciﬁc probabilities of
+formation.
+Proof: The proof is trivial since (a) b.c. and the Markov sum rule apply only t o real parents,
+(b) virtual/real causets of the original growth remain virtual/rea l in the new one, and (c)
+transition probabilities for links along paths leading from the empty ca uset to any real causet
+are unchanged.
+Lemma A2 : Let C be a causet of cardinality n. Then every path from the empty set to
+any C-timid causet must pass through C at stage n.
+Proof (by contradiction): Suppose there is a path from the empty set to a C-timid causet
+passing through C ′ at stage n, with C ′ not isomorphic to C. Since the ﬁnal causet is C-
+timid, C must form at some stage p > n . But then there will be p − n elements not in C
+which are not to the future of every maximal element of C. Hence no such path can exist.
+From Lemma A2 it immediately follows that:
+20
+
+===== PAGE 21 =====
+
+(i) No path exists from a C-timid causet to a C ′-timid causet where C and C ′ are non-
+isomorphic causets of cardinality n.
+(ii) No path exists from a causet which is not timid with respect to C and which has
+cardinality > n to a C-timid causet since, as can easily be veriﬁed, the former can be
+formed along a path not passing through C at stage n.
+Lemma A3 : If a causet C is C ′-timid and has partial stem C ′′with C ′ and C ′′both of size
+n, then C ′ = C ′′.
+Proof (by contradiction): Suppose C ′ ̸= C ′′ in C. Then there exists x ∈ C \ C ′ such that
+x ∈ C ′′. Since C is C ′-timid, past( x) ⊇ C ′. Since C ′′ is a partial stem, past( x) ⊆ C ′′.
+This implies that C ′′ ⊇ C ′ which in turn implies that C ′′ = C ′ since they are of the same
+cardinality.
+[1] L. Bombelli, J. Lee, D. Meyer, R.D. Sorkin, Phys.Rev.Lett.59 521 (1987).
+[2] D.P. Rideout and R.D. Sorkin, Phys.Rev.D61, 024002 (2000).
+[3] R.D. Sorkin, Mod.Phys.Lett.A9 3119 (1994).
+[4] N. Georgiou, Random Structures & Algorithms 27, pp 520–552 (2005).
+[5] J. Lee, Limits of Sequential Growth Dynamics , unpublished manuscript from talk given at the
+ﬁrst Causal Sets Workshop in Syracuse, NY, Dec. 2000.
+[6] X. Martin, D. O’Connor, D. Rideout, R. Sorkin, Phys.Rev.D63, 084026 (2001).
+[7] G. Brightwell, H. F. Dowker, R. S. Garcia, J. Henson and R. D. Sorkin, Phys.Rev.D67, 084031
+(2003).
+G. Brightwell, H. F. Dowker, R. S. Garcia, J. Henson and R. D. S orkin,
+<e-print arXiv: gr-qc/0202097 >.
+[8] Fay Dowker and Sumati Surya, “Observables in Extended Pe rcolation Models of Causal Set
+Cosmology”, <e-print arXiv: gr-qc/0504069 >.
+21
