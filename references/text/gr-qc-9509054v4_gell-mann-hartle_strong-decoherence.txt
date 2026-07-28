@@ -1,0 +1,1463 @@
+===== PAGE 1 =====
+
+arXiv:gr-qc/9509054v4  23 Nov 1995
+UCSBTH-95-28
+Strong Decoherence ∗
+Murray Gell-Mann
+Santa Fe Institute, 1399 Hyde Park Rd
+Santa Fe, NM 87501
+Los Alamos National Laboratory, MS-B210
+Los Alamos, NM 87545
+Department of Physics & Astronomy, University of New Mexico
+Albuquerque, NM 87131
+and
+James B. Hartle †
+Department of Physics, University of California
+Santa Barbara, CA 93106-9530
+(November 26, 2024)
+Abstract
+We introduce a condition for the strong decoherence of a set o f al-
+ternative histories of a closed quantum-mechanical system such as the
+universe. The condition applies, for a pure initial state, t o sets of ho-
+mogeneous histories that are chains of projections, genera lly branch-
+dependent. Strong decoherence implies the consistency of p robability
+sum rules but not every set of consistent or even medium decoh erent
+histories is strongly decoherent. Two conditions characte rize a strongly
+decoherent set of histories: (1) At any time the operators th at eﬀectively
+commute with generalized records of history up to that momen t provide
+the pool from which — with suitable adjustment for elapsed ti me — the
+chains of projections extending history to the future may be drawn. (2)
+Under the adjustment process, generalized record operator s acting on
+∗Contribution to the Proceedings of the 4th Drexel Symposium on Quantum Non-Inte grability —
+The Quantum-Classical Correspondence , Drexel University, September 8-11, 1994
+†e-mail address: hartle@cosmic.physics.ucsb.edu
+0
+
+===== PAGE 2 =====
+
+the initial state of the universe are approximately unchang ed. This ex-
+presses the permanence of generalized records. The strong d ecoherence
+conditions (1) and (2) guarantee what we call “permanence of the past”
+— in particular the continued decoherence of past alternati ves as the
+chains of projections are extended into the future. Strong d ecoherence
+is an idealization capturing in a general way this and other a spects of
+realistic physical mechanisms that destroy interference, as we illustrate
+in a simple model. We discuss the connection between the redu ced den-
+sity matrices that have often been used to characterize mech anisms of
+decoherence and the more general notion of strong decoheren ce. The re-
+lation between strong decoherence and a measure of classica lity is brieﬂy
+described.
+1
+
+===== PAGE 3 =====
+
+I. INTRODUCTION
+In this article we continue our eﬀorts to explore the quantum mechanics of closed systems,
+most generally and realistically the universe as a whole, an d within that framework to
+understand the signiﬁcance of the quasiclassical realm ∗ that includes familiar experience.
+We introduce a strong realistic principle of decoherence fo r sets of alternative coarse-
+grained histories of a closed system and discuss the relatio nships between this and other
+principles that have been put forward. We also examine the co ncept of classicality, including
+the role played by the realistic principle of decoherence in characterizing it.
+The most general predictions of quantum mechanics are the pr obabilities of individual
+members of a set of alternative coarse-grained histories of the universe. † A set of coarse-
+grained histories is a partition of one of the sets of ﬁne-gra ined histories (which are the
+most reﬁned possible descriptions of the closed system) int o mutually exclusive classes. The
+classes are the individual coarse-grained histories, whic h are thus “bundles” of ﬁne-grained
+histories.
+The absence of quantum-mechanical interference between th e individual histories in a
+set is necessary, at the very least, for quantum theory to ass ign consistent probabilities to
+the alternative possibilities. Such sets of histories for w hich interference is absent are said
+to decohere. Except for pathological cases, coarse-graining is necess ary for decoherence.
+Various conditions for the decoherence of sets of histories have been proposed. Some
+authors have tried to weaken the condition as much as possibl e to get the minimum condition
+necessary for probabilities to be deﬁned. Our point of view h as always been to try and
+describe a realistic principle of decoherence that charact erizes in a general way the physical
+processes by which the dissipation of interference occurs. We have therefore been led to
+investigate conditions of decoherence that are as strong as possible compatible with the
+physical mechanisms that destroy interference. We shall in vestigate such a strong condition
+for decoherence in this paper.
+Implementing a strong form of decoherence is part of a progra m to understand how the
+quasiclassical realm that includes everyday experience ar ises in quantum mechanics from the
+Hamiltonian of the elementary particles and the initial con dition of the universe [1]. By a
+quasiclassical realm we mean an exhaustive set of mutually e xclusive coarse-grained alterna-
+tive histories that obey a realistic principle of decoheren ce, that consist largely of similar but
+branch-dependent alternatives at a succession of times, wi th individual histories exhibiting
+patterns of correlations implied by eﬀective classical equ ations of motion subject to frequent
+small ﬂuctuations and occasional major ones, the whole set b eing maximally reﬁned given
+these properties. The theory may exhibit essentially inequ ivalent quasiclassical realms, but
+there is certainly at least one that includes familiar exper ience. This is the usual quasiclas-
+∗ In previous work we called a decoherent set of alternative co arse-grained histories a “domain”.
+However, that term can be confusing because of its other uses in physics. We do not want to call
+such a set a “world” because that word connotes a single histo ry and not a set of alternative ones.
+Hence, we now call a decoherent set of alternative coarse-gr ained histories a “realm”.
+† These are a priori probabilities. They can also be thought of as the statistica l probabilities for
+an ensemble of universes, but in that case we have access only to one member of this ensemble.
+2
+
+===== PAGE 4 =====
+
+sical realm, described, at least in part, by alternative val ues of hydrodynamic operators that
+are integrals, over suitable volumes, of densities of conse rved or nearly conserved quantities.
+Examples are densities of energy, momentum, baryon number, and, in late epochs of the
+universe, of nuclei and even chemical species. The sizes of t he volumes and the spacing of
+the alternatives in time are limited above by maximality. Th e size and spacing are limited
+below by decoherence and the requirement that the volumes ha ve suﬃcient “inertia” to en-
+able them to resist deviations from predictability caused b y quantum spreading and by the
+noise that typical mechanisms of decoherence produce [1,2] .
+A key property of the usual quasiclassical realm is the persi stence of the past. Histories of
+quasiclassical alternatives up to a given time can be extend ed into the future to give further
+such histories without endangering the decoherence of the p ast alternatives. This persistence
+of the past is not guaranteed by quantum mechanics alone. Ext ending a set of histories into
+the future is a kind of ﬁne graining and this carries the risk o f losing decoherence. ‡ However,
+the persistence of the past is critical to the utility of the q uasiclassical realm. It is the
+reason that we do not need to do an elaborate calculation veri fying the preservation of past
+decoherence on every occasion when we want to predict the pro bability of a quasiclassical
+alternative in the future conditioned on our experience of t he past. We proceed, secure in
+the understanding that in a quasiclassical realm the past (i ncluding the decoherence of past
+alternatives) will continue to persist.
+In this article we discuss a strong form of decoherence that g uarantees the persistence of
+the past. The idea is closely related to the notion of “genera lized ” records that we treated
+in our earlier work [4]. The physical picture is that, at ever y branching of the coarse-
+grained histories of the universe, each of the exhaustive an d mutually exclusive possibilities
+is correlated with a diﬀerent state of something like a photo n or neutrino going oﬀ to inﬁnity
+and unaﬀected by subsequent alternatives. The orthogonali ty of those states is the realistic
+mechanism underlying decoherence. For each of the alternat ive coarse-grained histories up
+to some time, a projection operator R describes the information of that kind that has been
+stored up. The projections constitute the “generalized rec ords” associated with the diﬀerent
+histories. They are all orthogonal to one another and that or thogonality gives rise to the
+decoherence of histories.
+The present work assumes a pure state for the universe, that i s, a density matrix ρ of
+the form |Ψ⟩⟨Ψ|. In some earlier articles [4] we allowed ρ to be more general. We then
+deﬁned another kind of “strong decoherence” which was equiv alent, for a pure state, to
+medium decoherence. We now suggest restricting the term “st rong decoherence” to what
+we are discussing here and abandoning it as a name for the earl ier concept, which may be
+too restrictive when the state is not pure and is redundant ot herwise [2]. For the rest of the
+article we assume that ρ = |Ψ⟩⟨Ψ|.
+The present strong decoherence condition is stronger than o ur earlier “medium deco-
+herence”, which in turn is stronger than our “weak decoheren ce” condition. Other authors
+have discussed still weaker conditions, for example, the “c onsistent histories” condition of
+Griﬃths [5] and Omn` es [6] and the linearly positive histori es of Goldstein and Page [7]. A
+‡Indeed, Dowker and Kent [3] have given examples with special ﬁnal conditions where a quasi-
+classical realm cannot be extended at all.
+3
+
+===== PAGE 5 =====
+
+simple and instructive case of the present strong decoheren ce was discussed in an insightful
+paper by Finkelstein [8], who called it “PT-decoherence” an d showed how it is related to the
+“decoherence of density matrices” that has been discussed b y many ( e.g. [9–12]). We shall
+consider this relationship in a more general context and sho w how a variety of reduced den-
+sity matrices can be constructed for individual histories u p to a given time that are diagonal
+in appropriate alternatives at the next time as a consequenc e of strong decoherence.
+In Section II we shall review the various decoherence condit ions after introducing some
+necessary notation. Section III introduces strong decoher ence and describes the connection
+with reduced density matrices. Section IV explores these id eas in simpliﬁed models in which
+the coarse grainings are restricted to those that follow one set of fundamental co¨ ordinates
+while ignoring all others. In Section V we review our program to provide a measure of
+classicality and discuss the role that strong decoherence m ight play in such a program.
+II. V ARIETIES OF DECOHERENCE
+The ideas of the quantum mechanics of closed systems, includ ing the (medium) decoher-
+ence of sets of alternative coarse-grained histories, can b e formulated in perfect generality
+for quantum ﬁeld theory. One can include the eﬀects of a quant ized spacetime metric, as in a
+ﬁeld theory (Lagrangian) version of superstring theory, by using the principles of generalized
+quantum theory [13–15]. However, it is convenient, as well a s an excellent approximation for
+many accessible coarse grainings, to consider a ﬁxed spacet ime geometry with well deﬁned
+timelike directions. In the following brief review of the qu antum mechanism of closed systems
+we shall adopt this approximation, using a time variable t and the associated Hamiltonian
+H.
+One way of specifying a set of alternative histories is to giv e sets of alternative projection
+operators as a sequence of times t1 < t 2 · · ·< t n. At each time tk, we have a set of
+Heisenberg picture projection operators {P k
+α kα k− 1···α 1(tk; tk− 1, · · ·, t 1)} where α k = 1 , 2, 3 · · ·
+denotes the particular alternative in the set. The notation is designed to indicate the branch
+dependence that is characteristic of useful sets of alterna tive coarse-grained histories of the
+universe [2]. The diﬀerent alternatives in the set at time tk correspond to diﬀerent α k.
+However, in a branch-dependent set of histories, the set of a lternatives at a given time will
+depend on previous history. Useful sets of alternative hist ories of the universe (such as those
+constituting a quasiclassical realm) will be branch-depen dent because the eﬃcacy of physical
+mechanisms of decoherence depends on particular present ci rcumstances and past history.
+Branch dependence is indicated explicitly by the extended s ubscript α kα k− 1 · · ·α 1 and the
+dependence on previous times tk− 1 · · ·t1. The projection operators are mutually exclusive
+and exhaustive as expressed by the relations:
+P k
+α kα k− 1···α 1P k
+α ′
+kα k− 1···α 1 = δ α kα ′
+k
+P k
+α kα k− 1···α 1 , Σα k P k
+α kα k− 1···α 1 = I , (2.1)
+where, as will often be convenient, we have suppressed the ti me labels for the sake of com-
+pactness. The same physical set of alternatives can be expre ssed at later times t > t k by
+way of the Heisenberg equations of motion
+P k
+α kα k− 1···α 1(t; tk− 1 · · ·t1) = eiH(t− tk )P k
+α kα k− 1···α 1(tk; tk− 1 · · ·t1)e− iH(t− tk ) . (2.2)
+4
+
+===== PAGE 6 =====
+
+(Here, and throughout, we use units such that ¯ h = 1.)
+Each history is then a particular sequence of alternatives α = (α 1, · · ·, α k) and is repre-
+sented by the corresponding chain of projections: §
+Hα k···α 1 = P k
+α k···α 1(tk; tk− 1, · · ·, t 1)P k− 1
+α k− 1···α 1(tk− 1; tk− 2, · · ·, t 1) · · ·P 1
+α 1(t1) . (2.3)
+As mentioned above, we shall not always indicate the various times. Indeed, since any time
+label may be altered (preserving the order) by reexpressing the corresponding projections
+in terms of ﬁeld operators at another time using the equation s of motion, we shall generally
+suppress these labels.
+Sets of histories consisting of chains of projections like ( 2.3) are not the only sets po-
+tentially assigned probabilities by quantum mechanics. As we have mentioned, the general
+notion of coarse-graining is a partition of a ﬁne-grained se t into classes cβ , β = 1, 2, · · ·. Such
+histories may consist of sums of chains
+Cβ =
+∑
+(α 1, ···,α k)∈ β
+Hα k···α 1 . (2.4)
+Evidently,
+∑
+β
+Cβ = I . (2.5)
+Various authors have discussed diﬀerent conditions for whe n a set of histories {cβ } de-
+coheres and can be assigned probabilities p(β ) in quantum theory. Below we list them in
+increasing order of strength — ﬁrst for an initial condition described by a density matrix ρ
+and then for the special case that ρ is pure, ρ = |Ψ⟩⟨Ψ|.
+• The “linearly positive” condition of Goldstein and Page [7] :
+p(α ) = Re T r (Cα ρ ) ≥ 0 , (2.6a)
+p(α ) = Re⟨Ψ|Cα |Ψ⟩ ≥ 0 . (2.6b)
+• The “consistent histories” condition of Griﬃths [5] and Omn ` es [6] for sets of histories
+that are chains of the form (2.3) (homogeneous sets):
+Re T r (Cα ′ρC †
+α ) = δ α ′α p(α ) , (2.7a)
+Re ⟨Ψ|C †
+α Cα ′|Ψ⟩ = δ α ′α p(α ) , (2.7b)
+provided Cα + C ′
+α is a chain as well.
+§These are called homogeneous histories by Isham [15]. We used a slightly diﬀerent notatio n in
+[2] with P k
+α k (tk; αk− 1, tk− 1, · · ·α1) instead of P k
+α k···α 1(tk; tk− 1 · · ·t1).
+5
+
+===== PAGE 7 =====
+
+• Weak decoherence:
+Re T r(Cα ′ρ C †
+α ) = δ α ′α p(α ) , (2.8a)
+Re ⟨Ψ|C †
+α Cα ′|Ψ⟩ = δ α ′α p(α ) , (2.8b)
+with no restriction to chains or on the sums of C ′s.
+• Medium decoherence:
+T r(Cα ′ρ C †
+α ) = δ α ′α p(α ) , (2.9a)
+⟨Ψ|C †
+α Cα ′|Ψ⟩ = δ α ′α p(α ) , (2.9b)
+again with no restrictions on the C ′s.
+In this paper we shall discuss a yet stronger condition of dec oherence, which for a pure
+state has the form
+⟨Ψ|C †
+α M †M ′Cα ′|Ψ⟩ = 0, α ̸= α ′ , (2.10)
+for any operators M included in a set {M}α and M ′ included in a set {M}α ′, both sets
+including the identity, I. We shall write this as
+⟨Ψ|C †
+α {M †}α {M ′}α ′Cα ′|Ψ⟩ = 0 α ′ ̸= α . (2.11)
+where the occurrence of {M} in an equation means that it holds for each M ∈ {M}. The
+probabilities for a set satisfying this condition are
+p(α ) = ⟨Ψ|C †
+α Cα |Ψ⟩ . (2.12)
+The properties of the sets {M}α that make this a condition of strong decoherence are
+discussed in the next section.
+III. STRONG DECOHERENCE
+We shall now introduce a notion of strong decoherence applyi ng to a set of histories that
+are chains of projections. This strong decoherence is a spec ial form of medium decoherence
+and thus permits the assignment of probabilities to any set o f histories that is a coarse
+graining of the set of chains, whether or not the sums of chain s involved are themselves
+chains. Such coarse grainings can also be considered to be st rongly decoherent.
+The deﬁnition of strong decoherence is connected with the pr operties of generalized
+records of histories that we have described in earlier work. When a set of histories obeys
+medium decoherence and the initial condition is a pure state |Ψ⟩, then the branch states
+Cα |Ψ⟩ corresponding to the individual histories are mutually ort hogonal. There is, therefore,
+a set of orthogonal projection operators {Rα } on the branches. Indeed, unless the branches
+constitute a basis in Hilbert space (a full set of histories) , there will be many diﬀerent
+possible choices of the {Rα }. Thus, medium decoherence implies
+6
+
+===== PAGE 8 =====
+
+Cα |Ψ⟩ = Rα |Ψ⟩ (3.1)
+for various sets of projections satisfying
+Rα Rα ′ = δ αα ′Rα . (3.2)
+The Rα are generalized records of the histories Cα . We call them “generalized” records
+because it does not follow from this deﬁnition alone that the se operators have any of the
+further properties that might normally be required of recor ds — being quasiclassical opera-
+tors, persisting over a period of time, being accessible to a n observer, etc.
+Medium decoherence and a pure initial state imply the existe nce of the generalized
+records as we have just described, but conversely the existe nce of generalized records yields
+medium decoherence. To see this, merely note that eqs. (3.1) and (3.2) imply the orthog-
+onality of the branches Cα |Ψ⟩ and that is what medium decoherence means. In this paper
+we are going to discuss generalized records of a special kind .
+We are going to introduce at any stage in history a pool of oper ators from which future
+history may be drawn so as to ensure the permanence of the past . This pool will contain some
+operators that are very diﬀerent from the record operators, as in the realistic mechanisms
+we have described, but correlated with those record operato rs through the state |Ψ⟩. In
+general, the histories will consist of chains of projection s that have this character (or sums
+of such chains). To that end, it is useful, for a given choice o f generalized records, to consider
+the set of operators M that commute with the Rα when acting on the branch state vector,
+that is
+[M, R α ]Cα |Ψ⟩ = 0, (3.3a)
+or
+[M, R α ]Rα |Ψ⟩ = 0 . (3.3b)
+We denote this linear space of operators by {M}α . Writing out (3.3) and using ( Rα )2 = Rα ,
+one ﬁnds the equivalent condition
+Rα M Rα |Ψ⟩ = M Rα |Ψ⟩. (3.4)
+This says that M Rα |Ψ⟩ lies in the subspace designated by Rα . Thus for M ∈ {M}α and
+M ′ ∈ {M}α ′, we have that M Rα |Ψ⟩ is orthogonal to M ′Rα ′|Ψ⟩, or, what is the same thing,
+M Cα |Ψ⟩ is orthogonal to M ′Cα ′|Ψ⟩.
+The sets {M}α that eﬀectively commute with the generalized records Rα are thus oper-
+ators for which
+⟨Ψ|C †
+α {M †}α {M ′}α ′Cα ′|Ψ⟩ = 0, α ′ ̸= α , (3.5)
+as advertised in (2.11).
+Each Rα can be expressed in terms of the operators in {M}α and the branch states
+Cα |Ψ⟩. In fact,
+Rα = Proj ({M}α Cα |Ψ⟩). (3.6)
+7
+
+===== PAGE 9 =====
+
+by which we mean that Rα projects onto the subspace spanned by the vectors of the form
+M Cα |Ψ⟩ for M ∈ {M}α . In the future we shall use the notation Rα both for the operator
+and the subspace onto which it projects. To derive (3.6), one simply has to note that, if
+|v⟩ is a vector in Rα , then it necessarily has the form M Rα |Ψ⟩ for some operator M that
+eﬀective commutes with Rα as in (3.3). (The operator M = |v⟩⟨Ψ|Rα is a simple example.)
+Eq. (3.6) then follows.
+The existence of generalized records of some kind and their c oncomitant M’s follows
+from medium decoherence and the assumption of a pure state. T he decoherence condition
+(3.5) is therefore no stronger than medium decoherence unle ss the generalized records or
+the concomitant M’s are restricted in some way. We shall shortly deﬁne strong d ecoherence
+by conditions on the records that guarantee the permanence o f the past. Before doing so,
+however, it is useful to spell out how the above discussion wo uld go if the M’s were speciﬁed
+ﬁrst rather than the R’s.
+Suppose we are given sets {M}α that satisfy (3.5). We require all the sets {M}α to
+contain I, and so such decoherent sets of histories will be medium deco herent and generalized
+records satisfying (3.1) will exist. There are many choices for these records, but an attractive
+one is (3.6). These R’s are orthogonal [cf. (3.2)] as a consequence of (3.5). They are
+generalized records satisfying (3.1) because, with M = I contained in {M}α , the branch
+state vector Cα |Ψ⟩ is in the subspace Rα . Thus
+Rα Cβ |Ψ⟩ = δ αβ Cβ |Ψ⟩. (3.7)
+Summing over β gives (3.1). It is then an easy computation to show that, as in (3.3), the
+M’s eﬀectively commute with the R’s deﬁned by (3.6). Eq. (3.6) is not the most general
+identiﬁcation of records with this commutation property. O ne could add to the {Rα } any
+mutually orthogonal projectors Vα that are also orthogonal to all the Rα given by (3.6). If
+that is done with non-vanishing Vα , then the class of operators eﬀectively commuting with
+Rα is wider than the {M}α , containing also all operators leading from Cα |Ψ⟩ to the space
+Vα .
+From now on, we shall adopt the point of view that the V ’s are zero and (3.6) holds.
+That way either the R’s or the M’s could be regarded as primary. We shall also deal with
+explicitly decoherent sets of histories composed of chains of projectors, bearing in mind that
+we could also treat any coarse grainings of such sets.
+We are now in a position to deﬁne a notion of strong decoherenc e that will provide
+a systematic, step by step procedure for extending sets of hi stories into the future so as
+to guarantee the permanence of the past. We restrict attenti on to sets of homogeneous
+histories represented by branch-dependent chains of the fo rm (2.3) at n times t1, · · ·, t n.
+Partial histories up to time tℓ are represented by chains
+H ℓ
+α ℓ ···α 1 = P ℓ
+α ℓ ···α 1P ℓ − 1
+α ℓ − 1···α 1 · · ·P 1
+α 1 , (3.8)
+where we have introduced a superscript ℓ on H ℓ
+α ℓ ···α 1 to indicate that it refers to the ﬁrst ℓ
+times. The deﬁnition of a strongly decoherent set of histori es concerns the relation between
+the histories at a time tℓ and those for all future times up to tn, for each tℓ .
+Strong decoherence is a special case of medium decoherence, so that all the sets
+{H ℓ
+α ℓ ···α 1} , ℓ = 1 , · · ·, n satisfy the condition (2.9). For each ℓ there is a set of general-
+ized records {Rℓ
+α ℓ ···α 1}. From these, the sets of operators {M}ℓ
+α ℓ ···α 1 that eﬀectively commute
+with the Rℓ
+α ℓ ···α 1 [cf. (3.3)] may be constructed.
+8
+
+===== PAGE 10 =====
+
+Two conditions deﬁne a strongly decoherent set. The ﬁrst is t hat at each ℓ and for each
+history α ℓ · · ·α 1, the set of operators {M}ℓ
+α ℓ ···α 1, suitably adjusted for evolution, forms the
+pool from which future histories are drawn. Speciﬁcally, we assume for each ℓ < k ≤ n
+I. P k
+α k···α ℓ ···α 1 · · ·P ℓ +1
+α ℓ +1α ℓ ···α 1 ∈ Ukℓ {M}ℓ
+α ℓ ···α 1 , (3.9)
+where Ukℓ is a unitary operator that adjusts the M’s in the set {M}ℓ
+α ℓ ···α 1 to those appropriate
+to a later time. The range of possibilities for the Ukℓ , as well as the need for this kind of
+adjustment, will become clearer when we discuss particular models in the next section. We
+note that if histories are extended by choosing the future al ternatives from among the present
+M’s by (3.9), the extended set will continue to be medium decoh erent. That follows from
+(3.5) and the unitary character of the U’s. The permanence of the past is thus guaranteed
+in these extensions to the future. In particular, if we const ruct strongly decoherent sets
+step by step by choosing the P ’s at the next time from the pool of M’s at this time, the
+permanence of the past is assured.
+Note that the condition (3.9) incorporates branch dependen ce. The pool of operators
+for extending each history depends on that history. Note als o, that the condition (3.9)
+is already more restrictive than just medium decoherence. W e showed that the operators
+that eﬀectively commute with Rk
+α k···α 1 satisfy (3.5), but we did not show that every possible
+medium decoherent extension commutes with the Rk
+α k···α 1.
+To enforce the condition (3.9) for each pair of times ℓ and k such that ℓ < k ≤ n requires
+a consistency condition between the sets of M’s at diﬀerent times, relations between the
+adjustment operators U, and restrictions on the concomitant records. The consiste ncy
+condition for the U’s is the the elementary requirement of composition:
+Ukℓ Uℓj = Ukj. (3.10)
+To discuss the requirements on the M’s, it is useful to introduce the following notation for
+ℓ < k ≤ n:
+{M}k
+α ℓ ···α 1 ≡ Ukℓ {M}ℓ
+α ℓ ···α 1 , (3.11)
+{R}k
+α ℓ ···α 1 ≡ Ukℓ {R}ℓ
+α ℓ ···α 1U †
+kℓ . (3.12)
+The deﬁning condition (3.9) may then be restated
+P k
+α k···α ℓ ···α 1 · · ·P ℓ +1
+α ℓ +1α ℓ ···α 1 ∈ {M}k
+α ℓ ···α 1 . (3.13)
+Consistency requires that not only the future histories be d rawn from the pool of M’s, but
+also the future M’s as well. At the weakest this requires that
+Proj
+[
+{M}k
+α k···α ℓ ···α 1P k
+α k···α ℓ ···α 1 · · ·P ℓ +1
+α ℓ +1···α 1H ℓ
+α ℓ ···α 1|Ψ⟩
+]
+⊆ Proj
+[
+{M}k
+α ℓ ···α 1H ℓ
+α ℓ ···α 1|Ψ⟩
+]
+.
+(3.14)
+According to (3.6) the record operators Rk
+α k···α 1 are the projections onto the subspaces
+spanned by the vectors {M}k
+α k···α 1H k
+α k···α 1|Ψ⟩. A consequence of the consistency condition
+(3.13) is therefore
+9
+
+===== PAGE 11 =====
+
+Rk
+α k···α 1 ⊆ Rk
+α ℓ ···α 1 , ℓ < k ≤ n . (3.15)
+Thus the records nest. Eq. (3.15) means that, up to unitary ad justment, the subspaces
+corresponding to the records narrow with each extension int o the future. In this sense the
+records of the earlier parts of history are preserved in reco rds of the later parts.
+Nesting of records (3.15) implies the operator form of the co nsistency relation (3.14).
+To see this suppose that M ∈ {M}k
+α k···α 1. This means that M eﬀectively commutes with
+Rk
+α k···α 1, or explicitly [cf. (3.4)]
+Rk
+α k···α 1M H k
+α k···α 1|Ψ⟩ = M H k
+α k···α 1|Ψ⟩ . (3.16)
+This can be rewritten
+Rk
+α k···α 1
+(
+M P k
+α k···α 1 · · ·P ℓ +1
+α ℓ +1···α 1
+)
+H ℓ
+α ℓ ···α 1|Ψ⟩ =
+(
+M P k
+α k···α 1 · · ·P ℓ +1
+α ℓ +1···α 1
+)
+H ℓ
+α ℓ ···α 1|Ψ⟩ . (3.17)
+But, since Rk
+α k···α 1 is contained within Rk
+α ℓ ···α 1, this means that M P k
+α k · · ·P ℓ +1
+α ℓ +1 must eﬀec-
+tively commute with Rℓ
+α k···α 1. Thus, M P k
+α k···· · ·P ℓ +1
+α ℓ +1 ∈ { M}k
+α ℓ ···α 1. This is the operator
+form of the consistency relation (3.14)
+{M}k
+α k···α 1P k
+α k···α 1 · · ·P ℓ +1
+α ℓ +1···α 1 ∈ {M}k
+α ℓ ···α 1 . (3.18)
+Eﬀective consistency (3.14) thus implies the necessary ope rator form (3.18).
+The nesting of generalized records (3.15) can be regarded as a modern form of a very old
+idea. If the generalized records were to consist of genuinel y independent “registrations” in
+commuting variables (“memory slots”), then we would have
+Rk
+α k···α 1 =
+k∏
+j=1
+A(j)
+α j , (3.19)
+where the {A(j)
+α j } are a set of orthogonal projection operators for each j, all the operators
+in each set commuting with all those in other sets with diﬀere nt j. In that case proceeding
+to the next time would result in the registration of a new reco rd in a further exhaustive set
+of alternatives {A(k+1)
+α k+1 } commuting with all the previous ones. The nesting condition (3.15)
+would then follow immediately. In the jargon of the early exp onents of quantum mechanics,
+the A’s, and hence the R’s, could be regarded as “ c-numbers”. The non-commuting operators
+P k
+α k···α 1 · · ·P 1
+α 1 (“q-numbers”) are registered in commuting “ c-numbers” just as in the old
+theory of measurement ∗∗ (See, e.g. [16]).
+The nesting inclusion relation (3.15) implies
+∑
+α k···α ℓ +1
+Rk
+α k···α ℓ ···α 1 ⊆ Rk
+α ℓ ···α 1 , (3.20)
+∗∗By means of generalized records the universe could be said to be measuring itself. However, we
+do not recommend this terminology because, as we have stress ed before, these records need not be
+quasiclassical operators or accessible to an observer as th ey were in some formulations of the old
+theory of measurement.
+10
+
+===== PAGE 12 =====
+
+since the R’s are a set of orthogonal projection operators. It is implau sible that in realistic
+situations this inclusion relation becomes an equality. Eq uality in the simpliﬁed model just
+described would require that the {A(j)
+α j } be an exhaustive set of projections summing to
+unity. But there is no particular reason that the alternativ e conﬁgurations of the “memory
+slots” that record history should exhaust all possible conﬁ gurations.
+However, eﬀective equality is plausible. That is because it follows, by summing both
+sides of (3.1), that
+∑
+α k···α ℓ +1
+Rk
+α k···α ℓ ···α 1|Ψ⟩ = Rℓ
+α ℓ ···α 1|Ψ⟩. (3.21)
+The eﬀective equality corresponding to the inclusion relat ion (3.20) would thus mean
+II. R ℓ
+α ℓ ···α 1|Ψ⟩ ≈ Rk
+α ℓ ···α 1|Ψ⟩ , k > ℓ . (3.22)
+This relation expresses the permanence of the record of the h istory ( α 1, · · ·, α ℓ) that we
+expect in physically realistic mechanisms of decoherence. We take it to be the second
+deﬁning property of strong decoherence.
+Eq. (3.22) cannot be exactly satisﬁed because it holds only f or times tk later than tℓ .
+The vanishing of the diﬀerence between left and right hand si des of (3.22) just for tk > t ℓ
+cannot be strictly true in quantum mechanics, where evoluti on is continuous and amplitudes
+analytic, but it can be true to an excellent approximation, w hich improves rapidly as the
+interval increases. †† Indeed, physically one cannot expect it to hold until a time a fter tℓ
+when the record is created.
+Many authors have investigated the properties of reduced de nsity matrices in connection
+with models of the mechanisms of decoherence ( e.g. [9–12]). In the framework we have been
+discussing, a variety of “reduced” density matrices can be c onstructed for each history up
+to a given time. They are generalizations of the kinds consid ered in those works. Strong
+decoherence guarantees that these “reduced” density matri ces are diagonal with respect to
+the alternatives at the next time in the history. A very usefu l example of such a construction
+is as follows:
+To be deﬁnite, ﬁx attention on the history ( α 1, α 2) and consider the sets {M}3
+α 3α 2α 1
+for the various possible values of α 3. ( These are the sets of operators from which the
+alternatives in the chains of histories at time t3 are drawn.) Take any common subset of all
+these sets that is closed under Hermitian conjugation and mu ltiplication as well as addition
+and multiplication by complex numbers. More succinctly, ta ke a common subset that is an
+algebra closed under Hermitian conjugation. Denote this algebra by {F }3
+α 2α 1 and let {Aα 2α 1
+i }
+be a Hermitian operator basis for it conveniently normalize d by T r(Aα 2α 1
+i Aα 2α 1
+j ) = δ ij. A
+reduced density matrix may be speciﬁed by applying the Jayne s construction to the coarse-
+graining deﬁned by the operators {F }3
+α 2α 1. That is, we deﬁne ˜ ρ α 2α 1 as the density matrix
+††We have previously discussed how the creation of permanent r ecords of alternative histories
+for subsystems can produce decoherence in connection with i deal measurement models. (See [13],
+Section II.10). These models show how the usual “Copenhagen ” quantum mechanics of measured
+subsystems is an approximation to the more general quantum m echanics of closed systems under
+discussion here. To the extent that these idealized models r eﬂect typical experimental situations,
+strong decoherence may be said to be assumed in the “Copenhag en” approximation.
+11
+
+===== PAGE 13 =====
+
+that maximizes the entropy functional − T r(˜ρ log ˜ρ ) subject to the constraint of reproducing
+the correct expectation values of the F ’s. Speciﬁcally, ˜ρ α 2α 1 maximizes entropy subject to
+the constraints
+T r(Aα 2α 1
+i ˜ρ ) = ⟨Ψ2
+α 2α 1|Aα 2α 1
+i |Ψ2
+α 2α 1⟩ . (3.23)
+Here |Ψ2
+α 2α 1⟩ is the normalized branch state vector corresponding to the h istory ( α 1, α 2):
+|Ψ2
+α 2α 1⟩ ∝ H 2
+α 2α 1|Ψ⟩ = R2
+α 2α 1|Ψ⟩ . (3.24)
+Since the set {F }3
+α 2α 1 is closed under multiplication, ˜ρ α 2α 1 may be computed explicitly (see,
+e.g [22]), and comes out
+˜ρ α 2α 1 =
+∑
+i
+⟨Ψα 2α 1|Aα 2α 1
+i |Ψα 2α 1⟩Aα 2α 1
+i . (3.25)
+Strong decoherence implies that the density matrix deﬁned b y eq. (3.25) is diagonal in
+the next alternatives in the chain — those labeled by α 3. To see this note that because
+{F }3
+α 2α 1 is a subset of {M}3
+α 3α 2α 1 for any α 3,
+⟨Ψ3
+α ′
+3α 2α 1|{F }3
+α 2α 1|Ψ3
+α 3α 2α 1⟩ = 0, α ′
+3 ̸= α 3 . (3.26)
+The {Aα 2α 1
+i } are contained in the {F }3
+α 2α 1, so that
+⟨Ψ3
+α ′
+3α 2α 1|˜ρ α 2α 1|Ψ3
+α 3α 2α 1⟩ = 0, α ′
+3 ̸= α 3 . (3.27)
+Thus, the reduced density matrix deﬁned by (3.25) is diagona l in α 3. We shall make the
+connection with the usual construction of reduced density m atrices more concrete in the
+context of the the model discussed in the next Section.
+The important observation in the above argument is the vanis hing of the matrix elements
+(3.26). We could replace the whole notion of a reduced densit y matrix by eq.(3.26). Indeed,
+because {F }3
+α 2α 1 is closed under multiplication, a much stronger relation ho lds
+⟨Ψ3
+α ′
+3α 2α 1|{F }3
+α 2α 1{F }3
+α 2α 1{F }3
+α 2α 1|Ψ3
+α 3α 2α 1⟩ = 0, α ′
+3 ̸= α 3 . (3.28)
+Thus, for any two diﬀerent values of α 3, the matrix elements of the F ’s do not simply vanish
+between two branch states |Ψ3
+α ′
+3α 2α 1⟩, and |Ψ3
+α 3α 2α 1⟩ for distinct α ′
+3 and α 3, but between any
+vectors in the two subspaces {F }3
+α 2α 1|Ψ3
+α ′
+3α 2α 1⟩ and {F }3
+α 2α 1|Ψ3
+α 3α 2α 1⟩. Such sets of operators
+{F }3
+α 3α 2 are not diﬃcult to ﬁnd. One example is the set of operators com muting with the
+R3
+α 3α 2α 1 for all values of α 3. As the R’s in physically interesting examples are typically very
+large subspaces, there are many subalgebras that also give p ossible sets of F ’s. We will
+illustrate all this in the context of a concrete model in the n ext Section.
+The closure of the set of F ’s under Hermitian conjugation and multiplication gives th e
+relation (3.28), an elegant connection with the method of Ja ynes, and, as we shall see, a close
+connection with the models frequently discussed. But these assumptions are not necessary
+if all we want is to deﬁne a reduced density matrix for the hist ory ( α 1, α 2). Consider,
+for instance, products of the form M ′†M for M ∈ { M}3
+α 3α 2α 1 and M ′ ∈ { M}3
+α ′
+3α 2α 1 for
+various values of α ′
+3 and α 3. Suppose all these sets have in common a closed linear set of
+12
+
+===== PAGE 14 =====
+
+operators (depending on ( α 1, α 2)) but not necessarily closed under Hermitian conjugation
+and multiplication. There is still an operator basis and, if we denote that basis by {Aα 2α 1
+i },
+the construction (3.25) still yields a reduced density matr ix and it is still diagonal in α 3.
+The construction with the F ’s is a special case of this. Other examples of “reduced” dens ity
+matrices could be deﬁned by using diﬀerent linear subsets of the set of M ′†M’s.
+Strong decoherence is an idealization and generalization o f the ideas emerging from simple
+models that posit coarse grainings following one set of fund amental co¨ ordinates (the “sys-
+tem”) while ignoring the “environment” consisting of the re maining co¨ ordinates. In those
+models the decoherence of histories of alternatives of the “ system” is eﬀected by the cre-
+ation of approximately correlated, approximately permane nt records in the “environment”.
+The generality aﬀorded by the notion of strong decoherence i s important because the coarse
+grainings characterizing the realistic quasiclassical do main (using values of hydrodynamic
+variables, for instance) do not correspond to a distinction between two kinds of co¨ ordinates.
+In the following, however, we shall make more explicit conta ct with these earlier ideas by
+investigating simple models.
+IV. A SIMPLIFIED MODEL
+As we mentioned in the last Section, strong decoherence is a g eneralization and idealiza-
+tion of the idea that a physical mechanism for decoherence is the correlation of the strings of
+non-commuting operators constituting alternative histor ies with commuting operators that
+are records of those histories. In this Section we shall make this concrete and explicit in a
+simple model. The model is a specialization of a class that we have already discussed ( [2],
+Section IV) and we shall rely on that discussion here.
+The kind of model we have in mind divides the fundamental co¨ ordinates into two groups,
+the x’s and Q’s, with a corresponding factorization of the Hilbert space H = Hx ⊗ H Q1
+⊗
+HQ2
+⊗ · · ·. We assume that the total Hamiltonian describing this syste m can be written
+H = Hx(x, p ) + H0(Q, P ) + HI(x, Q ) , (4.1)
+where Hx acts on the x’s alone, H0 is a sum of terms each acting on independently on
+the Hilbert space HQi
+of a single co¨ ordinate Qi, and HI is the interaction between all the
+co¨ ordinates.
+The coarse grainings studied consist of chains of projectio ns at times t1, t 2, · · ·that in
+the Schr¨ odinger picture act only on Hx and represent partitions of some complete set of
+states in Hx at each time. We denote the wave functions of these complete o rthogonal sets
+by {φ 1
+r1(x)} at time t1, {φ 2
+r2(x)} at time t2, etc., later augmenting this notation to indicate
+the branch dependence of the possible sets. If, for instance , the set {φ 1
+r1(x)} is partitioned
+into classes α 1, α 2, · · ·, the Schr¨ odinger picture projection operator onto the clas s α k is
+⟨x′′|ˆP 1
+α k|x′⟩ =
+∑
+r1∈ α k
+φ 1
+r1(x′′)φ 1∗
+r1 (x′) (4.2)
+We use a hat to distinguish Schr¨ odinger picture operators f rom their Heisenberg counter-
+parts. The coarse grainings therefore refer only to alterna tives in Hx which, in the usual
+terminology, is the “system” while the Hilbert space of the Q’s is the “environment”.
+13
+
+===== PAGE 15 =====
+
+The basic assumptions of the model are most easily stated in t he Schr¨ odinger picture.
+We assume a pure wave function Ψ( x, Q, t 0) at the initial time and prescribe its evolution
+to later times. The idea is that alternatives in x become correlated with record slots in
+successive co¨ ordinatesQ1, Q 2, · · ·at times t1, t 2, · · ·. Speciﬁcally, we assume that, at these
+times the wave function has the form
+Ψ(x, Q, t 1) =
+∑
+α 1
+χ 1α 1(Q1)
+∑
+r1∈ α 1
+φ 1
+r1(x) ˜χ 1
+r1
+(
+Q2, Q 3 · · ·
+)
+(4.3a)
+Ψ(x, Q, t 2) =
+∑
+α 2α 1
+χ 2α 1(Q1)χ 2α 2α 1(Q2)
+∑
+r2∈ α 2
+φ 2α 1
+r2 (x) ˜χ 2α 1
+r2
+(
+Q3, Q 4, · · ·
+)
+(4.3b)
+Ψ(x, Q, t 3) =
+∑
+α 3α 2α 1
+χ 3α 1(Q1)χ 3α 2α 1(Q2)χ 3α 3α 2α 1(Q3)
+∑
+r3∈ α 3
+φ 3α 2α 1
+r3 (x) ˜χ 3α 2α 1
+r3
+(
+Q4, Q 5, · · ·
+)
+, (4.3c)
+etc. (We are endeavoring here and elsewhere to avoid a d´ ebauche d’indicesby quoting speciﬁc
+forms rather than the general case, the form of which should b e immediately apparent). Here
+the χ kα j···α 1(Qj) are orthogonal functions of a the single co¨ ordinate Qj for time k, that is
+(
+χ kα ′
+jα j− 1···α 1 , χ kα j α j− 1···α 1
+)
+Hj = δ α ′
+j α j . (4.4)
+The evolution described above is assumed to hold for each bra nch. That is, the individual
+terms in the sum over α 1 in (4.3a) evolve into the corresponding individual terms in the
+sums over α 1, in (4.3b) and (4.3c) and similarly for the sum over α 2 in (4.3b).
+The orthogonal functions χ kα 3α 2α 1(Q3) represent the memory slots in which the alter-
+natives represented by the collection {φ 3α 2α 1
+r3 }, r3 ∈ α 3 are stored at times k ≥ 3. The
+central assumption of the model is that once this registrati on is accomplished the variable
+Q3 eﬀectively no longer interacts with the rest of the system. S peciﬁcally, we assume that as
+factors of the complete wave function (4.3), the χ kα j ···evolve independently after the time
+of registration, viz.
+χ kα j ···α 1(Qj) = e− iH0(tk− tℓ )χ ℓα j ···α 1(Qj), k ≥ ℓ . (4.5)
+Were H0 eﬀectively zero when acting on these states, we could say tha t the alternatives α j
+were registered in unchanging marks. However, more general ly, the marks themselves will
+evolve according to the Hamiltonian H0.
+This model is close in spirit to that used by Finkelstein [8] i n his discussion of “ P T-
+decoherence”. Finkelstein also used special coarse graini ngs that distinguished “system”
+from “environment”. The assumption (4.5) for the evolution of the records accomplishes
+the same purpose as his more drastic assumption that the inte raction Hamiltonian vanishes
+between co¨ ordinateQj and the rest for times tk > t j.
+The alert reader will not have failed to see that the above mod el is a souped-up version
+of the usual ideal measurement model expressed in the langua ge of the quantum mechanics
+of closed systems. ‡‡ The co¨ ordinatesx are those of the “measured subsystem” while the
+co¨ ordinatesQ include the apparatus. Our model is therefore subject to all the caveats
+‡‡See, e.g., [16], or almost any current text in quantum mechan ics. For an exposition from the
+point of view of the quantum mechanics of closed systems see ( [13], Section II.10).
+14
+
+===== PAGE 16 =====
+
+associated with the ideal measurement model. In particular , as was shown by Wigner [17]
+and Araki and Yanase [18], there are no realistic Hamiltonia ns H that will eﬀect the evolution
+(4.3) exactly.§§ It also follows from analyticity that a relation (4.5) canno t hold exactly after
+one time and not before it. The evolution (4.3) and (4.5) must therefore be understood as
+holding approximately.
+The history operators corresponding to alternatives deﬁne d by the successive collections
+of φ ’s are, in the Schr¨ odinger picture,
+ˆH ℓ
+α ℓ ···α 1 = ˆPα ℓ ···α 1e− iH(tℓ − tℓ − 1) ˆPα ℓ − 1···α 1 · · ·e− iH(t2− t1) ˆPα 1, (4.6)
+where we have augmented the notation of (4.2) to include the b ranch dependence of the
+φ ’s. Acting with ˆHα ℓ ···α 1 on Ψ( x, Q, t 0) just gives the branch wave function for the history
+(α ℓ , · · ·, α 1) at time tℓ , e.g.
+ˆH 2
+α 2α 1Ψ(x, Q, t 0) = Ψ α 2α 1(x, Q, t 2)
+≡ χ 2α 1(Q1)χ 2α 2α 1(Q2)
+∑
+r2∈ α 2
+φ 2α 1
+r2 (x) ˜χ α 1
+r2 (Q3, · · ·) (4.7)
+and similarly for other chains.
+From the evolution prescribed in (4.3) it is easy to identify candidate record operators of
+these histories as projections on the χ functions that are correlated with them. Speciﬁcally,
+ˆR1
+α 1 = Proj
+(
+χ 1α 1(Q1)
+)
+, (4.8a)
+ˆR2
+α 2α 1 = Proj
+(
+χ 2α 1(Q1)χ 2α 2α 1(Q2)
+)
+, (4.8b)
+ˆR3
+α 3α 2α 1 = Proj
+(
+χ 3α 1(Q1)χ 3α 2α 1(Q2)χ 3α 3α 2α 1(Q3)
+)
+, (4.8c)
+etc. Evidently we have
+ˆH ℓ
+α ℓ ···α 1Ψ(x, Q, t 0) = ˆRℓ
+α ℓ ···α 1Ψ(x, Q, t ℓ ) , (4.9)
+which is the Schr¨ odinger picture representative of the rel ation (3.1) deﬁning records.
+Taking the evolution of the individual χ ’s given by (4.5) into account, we can deﬁne
+ˆRk
+α ℓ ···α 1 = ˆUkℓ ˆRℓ
+α ℓ ···α 1
+ˆU †
+kℓ , (4.10)
+where
+ˆUkℓ = exp [− iH0(tk − tℓ )] . (4.11)
+Because of the standard relation between Schr¨ odinger and H eisenberg pictures
+O = eiHt ˆO e− iHt , (4.12)
+§§See [19] for a discussion of this and other limitations in the context of the quantum mechanics
+of closed systems.
+15
+
+===== PAGE 17 =====
+
+eq. (4.10) is immediately seen to be the Schr¨ odinger pictur e representative of the deﬁnition
+(3.12) with
+Ukℓ = eiHtk e− iH0(tk − tℓ )e− iHtℓ . (4.13)
+Thus we identify the Ukℓ entering into the deﬁnition of strong decoherence for this c hoice of
+records.
+The following nesting is immediate from the deﬁnition (4.8)
+ˆRk
+α k···α 1 ⊆ ˆRk
+α ℓ ···α 1 , ℓ < k . (4.14)
+From (4.12) and (4.13) this is easily seen to be the Schr¨ odin ger picture representative of
+the general nesting relation (3.15). From (4.8) we also see t hat the nesting relation is not
+generally an equality because the functions χ kα j···α 1(Qj), α j = 1 , 2, · · ·are not generally a
+complete basis in Hj.
+However, the equality in (4.14) can be seen to be satisﬁed eﬀe ctively, i.e. when the
+operator relation is acting on the state. That is a simple con sequence of the fact that the
+evolution prescribed in (4.3) was assumed to hold for each br anch. Therefore projecting on
+a branch ( α ℓ , · · ·, α 1) at time tℓ and evolving to time tk is the same as evolving to time tk
+and projecting on the branch. At time tk the projection on the branch ( α ℓ , · · ·, α 1) is the
+projection on the evolved functions χ , e.g.
+ˆRk
+α 2α 1 ≡ e− iH0(tk− t2) ˆR2
+α 2α 1eiH0(tk− t2) (4.15a)
+= Proj
+(
+χ kα 1(Q1)χ kα 2α 1(Q2)
+)
+. (4.15b)
+Speciﬁcally, therefore, from the form of (4.8) and (4.10) we have
+II. ˆRk
+α ℓ ···α 1Ψ(x, Q, t k) = e− iH(tk− tℓ ) ˆRℓ
+α ℓ ···α 1Ψ(x, Q, t ℓ ). (4.16)
+This relation expresses the permanence of the records of the history ( α ℓ · · ·α 1) in the
+independently-evolving functions χ kα 1χ kα 2α 1, · · ·at times later than tℓ . Translating to the
+Heisenberg picture, we see that (4.16) is the general relati on (3.22). Thus one of the two
+deﬁning conditions of strong decoherence is satisﬁed in thi s particular model. In the discus-
+sion of (3.22) we mentioned that it could only be expected to b e satisﬁed approximately,
+while here it is satisﬁed exactly as a consequence (4.8). How ever, as we also mentioned
+above the evolution, (4.3) can be expected to hold only appro ximately, so there is in fact no
+conﬂict with the result (4.16).
+To complete the demonstration that the idealized model unde r discussion in this Section
+provides an example of strong decoherence, it remains only t o show that the ﬁrst of the
+two deﬁning conditions is satisﬁed, namely, the condition ( 3.9) or (3.13) that at time tk
+future extensions of history to time tk are contained in the set of operators M eﬀectively
+commuting with the records at tk. Speciﬁcally, we seek to show
+I.
+[
+U †
+kℓ H (k,ℓ +1)
+α k···α 1 , R ℓ
+α ℓ ···α 1
+]
+Rℓ
+α ℓ ···α 1|Ψ⟩ = 0 , (4.17)
+where the Rℓ
+α ℓ ···α 1 are speciﬁed in the Schr¨ odinger picture by (4.8), Ukℓ is given by (4.13),
+and we have introduced a convenient notation for the extensi ons of histories:
+16
+
+===== PAGE 18 =====
+
+H (k,ℓ +1)
+α k···α 1 ≡ P k
+α k···α 1P k− 1
+α k− 1···α 1 · · ·P ℓ +1
+α ℓ +1···α 1 (4.18a)
+= eiHtk ˆPα k···α 1e− iH(tk− tk− 1) ˆP k− 1
+α k− 1···α 1 · · ·ˆP ℓ +1
+α ℓ +1···α 1e− iHtℓ +1 (4.18b)
+≡ eiHtk ˆH (k,ℓ +1)
+α k···α 1 e− iHtℓ +1 . (4.18c)
+With a little care, (4.17) may be transformed back to the Schr ¨ odinger picture where it
+becomes the condition
+ˆRℓ
+α ℓ ···α 1eiH0(tk− tℓ ) ˆH (k,ℓ )
+α k···α 1Ψα ℓ ···α 1(x, Q, t ℓ ) = eiH0(tk− tℓ ) ˆH (k,ℓ )
+α k···α 1Ψα ℓ ···α 1(x, Q, t ℓ ) , (4.19)
+where Ψ α ℓ ···α 1(x, Q, ) is the branch wave function corresponding to history ( α ℓ , · · ·α 1). Ex-
+plicitly [ cf. (3.24],
+Ψα ℓ ···α 1(x, Q, t ℓ ) = ˆRℓ
+α ℓ ···α 1Ψ(x, Q, t ℓ ) = ˆH ℓ
+α ℓ ···α 1Ψ(x, Q, t 0) (4.20)
+as illustrated in (4.7). (These branch wave functions are no t normalized as were those in
+(3.24). ) The operator ˆH (k,ℓ +1)
+α k···α ℓ +1 simply extends the branch forward to yield the following
+condition:
+ˆRℓ
+α ℓ ···α 1eiH0(tk − tℓ )Ψα k···α 1(x, Q, t k) = Ψ α k···α 1(x, Q, t k). (4.21)
+This can be seen to be satisﬁed as follows: We have ﬁrst
+Ψα k···α 1(x, Q, t k) = χ kα 1(Q1)χ kα 2α 1(Q2) · · ·χ kα ℓ ···α 1(Qℓ ) ×
+(
+functions of x and
+Qℓ +1 · · ·Qn
+)
+. (4.22)
+The crucial point is that the Hamiltonian H0 was assumed to act independently on all the
+co¨ ordinates and the co¨ ordinatesQ1 · · ·Qℓ were assumed to eﬀectively decouple from the rest
+after time tℓ . Thus the operator exp( iH0(tk − tℓ )) acts to evolve the individual χ ’s back to
+time tℓ , viz.
+eiH0(tk− tℓ )Ψα k···α 1(x, Q, t k) = χ ℓα 1(Q1)χ ℓα 2α 1(Q2) · · ·χ ℓα ℓ ···α 1(Q1) ×
+(
+functions of x and
+Qℓ +1 · · ·Qn
+)
+.
+(4.23)
+With this result, it is immediate that (4.21) is satisﬁed and therefore also (4.17). Thus both
+conditions for strong decoherence are satisﬁed in this mode l.
+A consistency condition (3.18) is implicit in the assumptio n that future histories could
+be drawn from the pool {M}ℓ
+α ℓ ···α 1 of operators that eﬀectively commute with the records at
+time tℓ . That does not have to be checked separately because we showe d in the discussion
+following (3.15) that the condition of nesting of records im plies the necessary consistency
+condition, and nesting of the records was veriﬁed explicitl y for this model in eq. (4.14).
+The extensions of histories ˆH (k,ℓ )
+α k···α 1 do not exhaust the set of operators { ˆM }ℓ
+α ℓ ···α 1 that
+eﬀectively commute with ˆRℓ
+α ℓ ···α 1. The ˆRℓ
+α ′
+ℓ ···α ′
+1
+for any ( α ′
+ℓ , · · ·, α ′
+1) provide a simple example
+of a diﬀerent operator. More generally, it is not diﬃcult to s ee that the set { ˆM}ℓ
+α ℓ ···α 1
+includes any operator acting on Hx ⊗ ˆRℓ ⊥
+α ℓ ···α 1 ⊗ H Qℓ +1 ⊗ · · · ⊗ HQℓ +1, where ˆRℓ ⊥
+α ℓ ···α 1 is the
+subspace of HQ1 ⊗ · · · ⊗ HQℓ orthogonal to the subspace deﬁned by ˆRℓ
+α ℓ ···α 1. There may be
+other operators belonging to the set { ˆM }ℓ
+α ℓ ···α 1.
+17
+
+===== PAGE 19 =====
+
+This model provides a concrete illustration of the connecti on, described in the previous
+Section, that can be made between the notion of strong decohe rence and the work of many
+authors who investigate the evolution of a reduced density m atrix for a system in the presence
+of an environment (e.g. [9–12]). We discussed this kind of connection in the context of similar
+models in ( [2], Section IV) and related ideas were discussed by Finkelstein [8] in connection
+with his “PT-decoherence”.
+Consider for deﬁniteness the history ( α 1, α 2). Among the operators of { ˆM }3
+α 3α 2α 1 for any
+value of α 3 are those that act Only on the Hilbert space Hx. These form a linear set closed
+under Hermitian conjugation and multiplication. The const ruction of a “reduced” matrix
+(3.25) may therefore be applied, with {ˆF }3
+α 2α 1 being the set of all operators of the form
+ˆOx ⊗ I Q, where ˆOx is any operator in Hx. The ˆAα 2α 1
+i are of the form ˆAx
+i ⊗ I Q where ˆAx
+i is an
+operator basis in Hx (e.g. |x′⟩⟨x|). The “reduced” density matrix so deﬁned is thus nothing
+more than the usual reduced density matrix for the “system” d escribed by the x’s. It is
+constructed by tracing out the Q’s from the full density matrix. For example, assuming the
+evolution described by eq. (4.3), the reduced density matri x for the branch corresponding
+to the history ( α 1, α 2) is
+˜ρ α 2α 1(x′, x ) =
+(
+χ 3α 1(Q1), χ 3α 1(Q1)
+) (
+χ 3α 2α 1(Q2), χ 3α 2α 1(Q2)
+)
+(4.24)
+×
+(
+χ 3α ′
+3α 2α 1(Q3), χ 3α 3α 2α 1(Q3)
+) ∑
+α ′
+3
+∑
+α 3
+∑
+r′
+3∈ α ′
+3
+∑
+r3∈ α 3
+φ 3α 2α 1
+r′
+3
+(x′)φ 3α 2α 1∗
+r3 (x)
+(
+˜χ 3α 2α 1
+r′
+3
+(Q4, Q 5, · · ·), ˜χ 3α 2α 1
+r3 (Q4, Q 5, · · ·)
+)
+.
+(A hat should properly be on the ˜ ρ but is omitted for typographical reasons.) This reduced
+density matrix is easily seen to be diagonal in α 3 because of the orthogonality of the record
+states χ 3α 3α 2α 1(Q3) in α 3 [cf.(4.4)]. Thus orthogonality of generalized records guarant ees the
+diagonality of the reduced density matrix in the quantities correlated with those records.
+The operators of Hx are not the only possible sets of F ’s in this model. They could
+be augmented by including, for example, operators acting on HQ4
+⊗ H Q5
+⊗ · · ·or on the
+subspace of HQ1
+orthogonal to χ 3α 1(Q1) and similarly for the other record states. These will
+result in diﬀerent, less “reduced”, density matrices, but s trong decoherence guarantees the
+diagonality of them all in α 3.
+The orthogonality of the record states implies much more tha n just the diagonality of
+the reduced density matrices that we have constructed. For e xample, we have
+∫
+dQΨ3
+α ′
+3α 2α 1(x′, Q )Ψ∗3
+α 3α 2α 1(x, Q ) = 0 , α ′
+3 ̸= α 3 , (4.25)
+and many other relations besides. Eq.(4.25) is the general r elation (3.28) that follows in this
+model because operators on Hx are closed under multiplication. The general content of the
+diagonalization of the “reduced” density matrices that can be constructed is perhaps best
+exhibited by relations such as this.
+Thus strong decoherence implies the diagonalization of a va riety of reduced density ma-
+trices in this model but generalizes that idea to more realis tic cases where the assumptions
+of the model do not apply.
+The model we have been discussing expresses concretely the i dea of a physical mechanism
+of decoherence in which phases are dispersed irretrievably into an “environment”, as in the
+18
+
+===== PAGE 20 =====
+
+picture elaborated with increasing precision by the pionee rs of this subject (e.g. [20], [21],
+[9], [10]). However, this model is too restrictive for reali stic application. First, it is highly
+idealized, as we have pointed out in several places in the dis cussion. More importantly,
+the realistic hydrodynamic variables that characterize th e coarse grainings of the usual
+quasiclassical realm do not correspond to a distinction bet ween system co¨ ordinates and
+environmental co¨ ordinates. The general notion of strong d ecoherence described in Section
+III is an idealization that captures the physical ideas with out such strong and unrealistic
+assumptions as are made in this model. In the next Section we s hall discuss the role that
+strong decoherence can play in deﬁning classicality.
+V. CLASSICALITY
+Quantum mechanics, along with the correct theory of the elem entary particles (repre-
+sented by the Hamiltonian H) and the correct initial condition in the universe (represe nted
+by the state vector |Ψ⟩), presumably exhibits a great many essentially diﬀerent st rongly
+decohering realms, but only some of those are quasiclassica l. For the quasiclassical realms
+to be viewed as an emergent feature of H, |Ψ⟩, and quantum mechanics, a good technical
+deﬁnition of classicality is required. (One can then go on to investigate whether the the-
+ory exhibits many essentially inequivalent quasiclassica l realms or whether the usual one is
+nearly unique.)
+In earlier papers, [1,2,4] we have made a number of suggestio ns about the deﬁnition of
+classicality and it is appropriate to continue that discuss ion here. It is clear that from those
+earlier discussions that classicality must be related in so me way to a kind of entropy for
+alternative coarse-grained histories. We must therefore b egin with an abstract characteri-
+zation of entropy and then investigate the application to hi stories. An entropy S is always
+associated with a coarse graining, since a perfectly ﬁne-gr ained version of entropy in sta-
+tistical mechanics would be conserved instead of tending to increase with time. Classically,
+if all ﬁne-grained alternatives are designated by {r}, with probabilities pr summing to one,
+that ﬁne-grained version of entropy would be
+Sf − g = −
+∑
+r
+pr log pr , (5.1)
+where log means log 2 and where, for convenience, we have put Boltzmann’s constan t k times
+loge2 equal to unity. A true, coarse-grained entropy has the form
+S ≡ −
+∑
+r
+˜pr log ˜pr , (5.2)
+where the probabilities ˜pr are coarse-grained averages of the {pr}. A coarse graining pr → ˜pr
+must have certain properties (see [22,23] for more details) :
+1) the {˜pr} are probabilities , (5.3a)
+2) ˜˜pr = ˜pr , (5.3b)
+3) −
+∑
+r
+pr log ˜pr = −
+∑
+r
+˜pr log ˜pr . (5.3c)
+19
+
+===== PAGE 21 =====
+
+These properties are not surprising for an averaging proced ure. The signiﬁcance of the last
+one is easily seen if we make use of the well known fact that for any two sets of probabilities
+{pr} and {p′
+r} we have
+−
+∑
+r
+pr log pr ≤ −
+∑
+r
+pr log p′
+r . (5.4)
+Putting p′
+r = ˜pr for each r and using (5.1), (5.2), (5.3), and (5.4), we obtain
+Sf − g = −
+∑
+r
+pr log pr ≤ −
+∑
+r
+pr log ˜pr = −
+∑
+r
+˜pr log ˜pr = S , (5.5)
+so that Sf − g provides a lower bound for the entropy S. If the initial condition and the coarse
+graining are related in such away that S is initially near its lower bound, then it will tend
+to increase for a period of time. That is the way the second law of thermodynamics comes
+to hold.
+In order to know what nearness to the lower bound means, we sho uld examine the
+upper bound on S. That upper bound is achieved when all ﬁne-grained alternat ives have
+equal coarse-grained probabilities ˜ pr, corresponding in statistical mechanics to something
+like “equilibrium” or inﬁnite temperature. Each ˜ pr is then equal to N − 1, where N (assumed
+ﬁnite) is the number of ﬁne-grained alternatives, and the ma ximum entropy is thus
+Smax = log N . (5.6)
+The simplest example of coarse graining utilizes a grouping of the ﬁne-grained alterna-
+tives {r} into exhaustive and mutually exclusive classes {α }, where a class α contains Nα
+elements and has lumped probability
+pα ≡
+∑
+r∈ α
+pr . (5.7)
+Of course we have
+∑
+α
+Nα = N,
+∑
+α
+pα = 1 . (5.8)
+The coarse-grained probabilities ˜pr in this example are the class averages
+˜pr = pα /N α , r ∈ α , (5.9)
+and they clearly have the properties (5.3). The entropy come s out
+S = −
+∑
+α
+pα log pα +
+∑
+α
+pα log Nα , (5.10)
+where the second term contains the familiar logarithm of the number of ﬁne-grained alter-
+natives (or microstates) in a coarse-grained alternative ( or macrostate), averaged over all
+the coarse-grained alternatives.
+Besides entropy, it is useful to introduce the concept of alg orithmic information content
+(AIC) as deﬁned some thirty years ago by Kolmogorov, Chaitin , and Solomonoﬀ (all working
+20
+
+===== PAGE 22 =====
+
+independently).∗∗∗ For a string of bits s and a particular universal computer U, the AIC of
+the string, written KU (s), is the length of the shortest program that will cause U to print
+out the string and then halt. The string can be used as the desc ription of some entity e,
+down to a given level of detail, in a given language, assuming a given amount of knowledge
+and understanding of the world, encoded in a given way into bi ts [25]. The AIC of the string
+can then be regarded as KU (e), the AIC of the entity so described.
+We now discuss a way of approaching classicality that utiliz es AIC as well as entropy.
+Some authors have tried to identify AIC in a straightforward way with complexity, and in
+fact AIC is often called algorithmic complexity. However, A IC is greatest for a “random”
+string of bits with no regularity and that hardly correspond s to what is usually meant
+by complexity in ordinary parlance or in scientiﬁc discours e. To illustrate the connections
+among AIC, entropy or information, and an eﬀective notion of complexity, take the ensemble
+˜E consisting of a set of ﬁne-grained alternatives {r} together with their coarse-grained
+probabilities ˜pr. We can then consider both KU ( ˜E), the AIC of the ensemble, and KU (r|˜E),
+which is the AIC of a particular alternative r given the ensemble. For the latter we have
+the well known inequality (see, for example [26]):
+∑
+r
+˜prKU (r|˜E) ≥ −
+∑
+r
+˜pr log ˜pr = S . (5.11)
+Moreover, it has been shown by R. Schack [27] that, for any U, a slight modiﬁcation U → U ′
+permits KU ′(r|˜E) to be bounded on both sides as follows:
+S + 1 ≥
+∑
+r
+˜prKU ′(r|˜E) ≥ S, (5.12)
+so that we have
+∑
+r
+˜prKU ′(r|˜E) ≈ S. (5.13)
+(Previous upper bounds had O(1) in place of 1, but there was nothing to prevent O(1) from
+being millions or trillions of bits!)
+Looking at the entropy S as a close approximation to ∑
+r ˜prKU ′(r|˜E), we see that it is
+natural to complete it by adding to it the quantity KU ′( ˜E) — the AIC of the ensemble with
+respect to the same universal computer U ′. This last quantity can be connected with the
+idea of eﬀective complexity — the length of the most concise d escription of the perceived
+regularities of an entity e. Any particular set of regularities can be expressed by desc ribing
+e as a member of an ensemble ˜E of possible entities sharing those regularities. Then KU ′( ˜E)
+may be identiﬁed with the eﬀective complexity of e or of the ensemble ˜E [23,25]. Adding
+this eﬀective complexity to S, we have:
+Σ ≡ KU ′( ˜E) + S . (5.14)
+This sum of the the eﬀective complexity and the entropy (or Sh annon information) may
+be labeled either “augmented entropy” or “total informatio n”. If the coarse graining is the
+∗∗∗For a discussion of the original papers see [24].
+21
+
+===== PAGE 23 =====
+
+simple one obtained by partitioning the set of ﬁne-grained a lternatives {r} into classes {α }
+with cardinal numbers Nα , then the total information becomes
+Σ = KU ′( ˜E) −
+∑
+α
+pα log pα +
+∑
+α
+pα log Nα . (5.15)
+In (5.14), the ﬁrst term becomes smaller as the set of perceiv ed regularities becomes
+simpler, while the second term becomes smaller as the spread of possible entities sharing
+those regularities is reduced. Minimizing Σ corresponds to optimizing the choice of regular-
+ities and the resulting eﬀective complexity thereby become s less subjective. Thus, the total
+information or augmented entropy is useful in a wide variety of contexts [23,25]. We apply
+it here to sets of alternative decohering coarse-grained hi stories in quantum mechanics.
+The general idea of augmenting entropy with a term referring to algorithmic information
+content was proposed in a diﬀerent context by Zurek [28]. How ever, as far as we know, the
+emphasis on the utility of the quantity Σ in (5.14) and (5.15) is new. We discussed the
+general idea of an entropy for histories in [1]. Earlier, Llo yd and Pagels [29] introduced a
+quantity they called thermodynamic depth, applicable to al ternative coarse-grained classical
+histories α . They deﬁned it as
+D =
+∑
+α
+pα log(pα /q α ) , (5.16)
+where qα is an “equilibrium probability”, which in our notation woul d be Nα /N for the
+simple coarse graining we have discussed. We clearly have
+D = log N +
+∑
+α
+pα log pα −
+∑
+α
+pα log Nα (5.17)
+or
+D = Smax − S (5.18)
+for the set of alternative coarse-grained histories. We see that thermodynamic depth is
+intimately related to the notion of an entropy for histories .
+In applying augmented entropy to sets of coarse-grained his tories in quantum mechan-
+ics, one must take into account that there are inﬁnitely many diﬀerent sets of ﬁne-grained
+histories and that these sets do not generally have probabil ities because they fail to deco-
+here. The quantities Nα may therefore conceivably depart from their obvious deﬁnit ion as
+the numbers of ﬁne-grained histories in the coarse-grained classes {α }. In fact, there may
+be some latitude in the precise deﬁnition of the complexity a nd entropy terms in the total
+information (5.14). For example, one could consider instea d of ˜E an ensemble ˆE consisting
+of the coarse-grained histories α = (α 1, α 2, · · ·, α n), their probabilities pα , and the numbers
+Nα . A more general deﬁnition of the entropy S of histories may help to deﬁne these numbers.
+The generalized Jaynes construction for coarse-grained hi stories provides one framework for
+doing this [1]. In the most general situation, such a constru ction deﬁnes the entropy S as
+the maximum of − T r(˜ρ log ˜ρ ) over all density matrices ˜ρ that preserve the decoherence and
+probabilities of a given ensemble E of coarse-grained histories. Other Jaynes-like construc-
+tions may also be useful, for example ones that deﬁne entropy by proceeding step by step
+through the histories. We are investigating these various p ossibilities.
+22
+
+===== PAGE 24 =====
+
+In any case, our augmented entropy (5.15) for coarse-graine d decohering histories in
+quantum mechanics is a negative measure of classicality: th e smaller the quantity, the closer
+the set of alternative histories is to a quasiclassical real m. Reducing the ﬁrst term in (5.15)
+favors making the description of the sequences of projectio ns simple in terms of the ﬁeld
+variables of the theory and the Hamiltonian H. It favors sets of projections at diﬀerent times
+that are related to one another by time translations, as are m any sequences of projections
+on quasiclassical alternatives at diﬀerent times in the usu al quasiclassical realm.
+Reducing the second term favors more nearly deterministic s ituations in which the spread
+of probabilities is small. Approximate determinism is, of c ourse, a property of a quasiclas-
+sical realm. Reducing the last term corresponds roughly to a pproaching “maximality”,
+allowing the ﬁnest graining that still permits decoherence and nearly classical behavior. A
+quasiclassical realm must be maximal in order for it to be a fe ature exhibited by the initial
+condition and Hamiltonian and not a matter of choice by an obs erver.
+Any proposed measure of closeness to a quasiclassical realm must be tested by search-
+ing for pathological cases of alternative decohering histo ries that make the quantity small
+without resembling quasiclassical realm of everyday exper ience. The worst pathology occurs
+for a set of histories in which the P ’s at every time are projections on |Ψ⟩ and on states
+orthogonal to |Ψ⟩. We see that in this pathological case the description of the histories and
+their probabilities is simple because the description of th e initial state is simple, so that
+KU ′( ˜E) is small. The term − ∑
+α pα logpα is zero and the third term is also zero since the
+only α with pα ̸= 0 corresponds to projecting onto the pure state |Ψ⟩, so that Nα is one and
+logNα vanishes.
+Evidently the smallness of Σ is not by itself a suﬃcient crite rion for characterizing a
+quasiclassical realm. Further criteria can be introduced i f we require that quasiclassical
+realms be strongly decohering with suitable restrictions o n the sets {M}α of operators from
+which the future histories are constructed. Requiring stro ng decoherence ensures a physical
+mechanism of decoherence and guarantees the permanence of t he past. The sets {M}α must
+be restricted so as to rule out pathologies such as discussed above. Presumably they must
+all belong to a huge set with certain straightforward proper ties. Those properties might
+be connected with locality, since quantum ﬁeld theory is per fectly local. (Even superstring
+theory is local — although the string is an extended object, i nteraction among strings is
+always local in spacetime.) It would be in this way that stron g decoherence enters a deﬁnition
+of classicality.
+A quasiclassical realm would then be characterized in quant um mechanics as a strongly
+decoherent set of histories, with suitable restrictions on the sets {M}α , that minimizes the
+augmented entropy given by (5.15). Quasiclassical realms s o deﬁned would be an emergent
+feature of H, |Ψ⟩, and quantum mechanics — a feature of the universe independe nt of human
+choice. In principle, given H and |Ψ⟩, we could compute the quasiclassical realm that these
+theories exhibit. We could then investigate the important q uestion of whether the usual
+quasiclassical realm is essentially unique or whether the q uantum mechanics of the universe
+exhibits essentially inequivalent quasiclassical realms . Either conclusion would be of central
+importance for understanding quantum mechanics.
+We are continuing our eﬀorts to complete, reﬁne, and investi gate the consequences of
+this deﬁnition of classicality.
+23
+
+===== PAGE 25 =====
+
+ACKNOWLEDGMENTS
+Much of this work was done at the Aspen Center for Physics over several summers. The
+work of M. Gell-Mann was supported in part by grants to the San ta Fe Institute by Jeﬀrey
+Epstein, David Schiﬀ, and Gideon Gartner. That of J.B. Hartl e was supported in part by
+the NSF grant PHY90-08502.
+24
+
+===== PAGE 26 =====
+
+REFERENCES
+[1] M. Gell-Mann and J.B. Hartle, Quantum Mechanics in the Light of Quantum Cos-
+mology, in Complexity, Entropy, and the Physics of Information, SFI St udies in the
+Sciences of Complexity , Vol. VIII, ed. by W. Zurek, Addison Wesley, Reading, MA or
+in Proceedings of the 3rd International Symposium on the Found ations of Quantum Me-
+chanics in the Light of New Technology ed. by S. Kobayashi, H. Ezawa, Y. Murayama,
+and S. Nomura, Physical Society of Japan, Tokyo (1990).
+[2] M. Gell-Mann and J.B. Hartle, Phys. Rev. D , 47, 3345 (1993).
+[3] H.F. Dowker and A. Kent On the Consistent Histories Approach to Quantum Mechanics ,
+gr-qc/9412067.
+[4] M. Gell-Mann and J.B. Hartle, Alternative Decohering Histories in Quantum Mechan-
+ics, in the Proceedings of the 25th International Conference on High En ergy Physics,
+Singapore, August, 2-8, 1990 , ed. by K.K. Phua and Y. Yamaguchi (South East Asia
+Theoretical Physics Association and Physical Society of Ja pan) distributed by World
+Scientiﬁc, Singapore (1990).
+[5] R. Griﬃths, J. Stat. Phys. , 36, 219 (1984).
+[6] R. Omn` es, J. Stat. Phys. , 53, 893, (1988); ibid, 53, 933 (1988); ibid, 53, 957 (1988);
+ibid, 57, 357 (1989); Rev. Mod. Phys. , 64, 339 (1992); Interpretation of Quantum
+Mechanics, Princeton University Press, Princeton, (1994).
+[7] S. Goldstein and D. Page, Phys. Rev. Lett. , 74, 3715, 1995.
+[8] J. Finkelstein, Phys. Rev. D , 47, 5430 (1993).
+[9] H.D. Zeh, Found. Phys., 1, 69 (1971).
+[10] W. Zurek, Phys. Rev. D , 24, 1516 (1981), ibid. 26, 1862 (1982).
+[11] W. Unruh and W. Zurek, Phys. Rev. D , 40, 1071 (1989).
+[12] J.P. Paz and W. Zurek, Phys. Rev. D , 48 , 2728, 1993.
+[13] J.B. Hartle, The Quantum Mechanics of Cosmology , in Quantum Cosmology and Baby
+Universes: Proceedings of the 1989 Jerusalem Winter School for Theoretical Physics ,
+ed. by S. Coleman, J.B. Hartle, T. Piran, and S. Weinberg, Wor ld Scientiﬁc, Singapore
+(1991) pp. 65-157.
+[14] J.B. Hartle, Spacetime Quantum Mechanics and the Quantum Mechanics of Sp acetime
+in Gravitation and Quantizations , in the Proceedings of the 1992 Les Houches Sum-
+mer School, edited by B. Julia and J. Zinn-Justin, Les Houche s Summer School Pro-
+ceedings Vol. L VII (North Holland, Amsterdam, 1995). Prepr int # UCSBTH92-21,
+gr-qc/9304006.
+[15] C.J. Isham, J. Math. Phys. , 35, 2157 (1994).
+[16] E. Wigner, Am. J. Phys. , 31, 6 (1963).
+[17] E.P. Wigner, Zeit. f. Phys. , 131, 101 (1952).
+[18] H. Araki and M. Yanase, Phys. Rev., 120, 622 (1960).
+[19] J.B. Hartle, The Reduction of the State Vector and Limitations on Measure ment in the
+Quantum Mechanics of Closed Systems , in Directions in General Relativity, Volume 2: A
+Collection of Essays in honor of Professor Dieter Brill’s 60 th Birthday, ed. by B.-L. Hu
+and T.A. Jacobson, Cambridge University Press, Cambridge ( 1993), gr-qc/9301011.
+[20] W. Heisenberg, Physical Principles of the Quantum Theory , University of Chicago Press
+(1930), p. 60f.
+[21] N. Bohr, The Quantum Postulate and the Recent Development of Atomic T heory (1927),
+25
+
+===== PAGE 27 =====
+
+reprinted in Atomic Theory and the Description of Nature , Cambridge University Press
+(1934), p. 68.
+[22] M. Gell-Mann and J.B. Hartle, (to be published).
+[23] M. Gell-Mann and S. Lloyd (to be published).
+[24] M. Li and P. Vit´ anyi, Introduction to Kolmogorov Complexity and Its Application s,
+Springer, New York (1993).
+[25] M. Gell-Mann, Complexity, 1, No. 1, 16 (1995).
+[26] C.H. Bennett, Int. J. Theor. Phys. , 21, 905-940 (1982).
+[27] R. Schack, Algorithmic Information and Simplicity in Statistical Phy sics (submitted to
+Phys. Rev. E ).
+[28] W. Zurek, Phys. Rev. A , 40, 4731 (1989).
+[29] S. Lloyd and H. Pagels, Annals of Physics , 188, 186, 1988.
+26

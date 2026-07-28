@@ -1,0 +1,2725 @@
+===== PAGE 1 =====
+
+arXiv:0904.4483v2  [quant-ph]  21 Dec 2009
+A theoretical framework for quantum networks
+Giulio Chiribella, ∗ Giacomo Mauro D’Ariano, † and Paolo Perinotti ‡
+QUIT Group , Dipartimento di Fisica “A. Volta” and INFM, via Bassi 6, 271 00 Pavia, Italy §
+(Dated: November 26, 2024)
+We present a framework to treat quantum networks and all poss ible transformations thereof,
+including as special cases all possible manipulations of qu antum states, measurements, and channels,
+such as e.g. cloning, discrimination, estimation, and tomo graphy. Our framework is based on the
+concepts of quantum comb —which describes all transformations achievable by a given quantum
+network—and link product—the operation of connecting two quantum networks. Quantum networks
+are treated both from a constructive point of view—based on c onnections of elementary circuits—
+and from an axiomatic one—based on a hierarchy of admissible quantum maps. In the axiomatic
+context a fundamental property is shown, which we call universality of quantum memory channels :
+any admissible transformation of quantum networks can be re alized by a suitable sequence of memory
+channels. The open problem whether this property fails for s ome non-quantum theory, e.g. for no-
+signaling boxes, is posed.
+PACS numbers: 03.67.-a, 03.67.Ac, 03.65.Ta
+I. INTRODUCTION
+In the last decade the general description of quan-
+tum states, measurements, and transformations in terms
+of density matrices, POVMs, and channels [1, 2, 3],
+has been widely exploited in quantum information, with
+many applications in high-precision measurements, quan-
+tum cryptography, optimal cloning, quantum communi-
+cation, and many others. The success of such general
+description comes from the fact that it allows one to op-
+timize the design of quantum devices over all possibil-
+ities admitted by quantum mechanics, thus ﬁnding the
+ultimate performances in the realization of desired tasks.
+Although a quantum channel can be always thought of
+as the result of a unitary interaction of the system with
+an environment [4, 5], and a POVM as a joint von Neu-
+mann measurement on system and environment [6], the
+neat advantage of using channels and POVMs is that
+they simplify optimization, by getting rid of all those de-
+tails that pertain speciﬁc realizations but are irrelevant
+for the ﬁnal purpose.
+Channels and POVMs provide an eﬃcient description
+of elementary circuits that transform or measure quan-
+tum states. When elementary circuits are combined in
+a larger quantum network, however, the variety of pos-
+sible tasks one can perform grows exponentially. For
+example, a quantum computing network can be used
+as a programmable machine, which implements diﬀerent
+transformations on input data depending on the quan-
+tum state of the program. In some cases the program
+itself can be a quantum channel, rather than a state:
+during computation, for instance, the network can call
+∗Electronic address: chiribella@ﬁsicavolta.unipv.it
+†Electronic address: dariano@unipv.it
+‡Electronic address: perinotti@ﬁsicavolta.unipv.it
+§URL: http://www.qubit.it
+a variable channel as a subroutine, so that the overall
+transformation of the input data is programmed by it.
+Even more generally, the action of the network can be
+programmed by a sequence of variable states and chan-
+nels that are called at diﬀerent times, that is, at diﬀerent
+steps of the computation. A similar situation arises in
+multiple-rounds quantum games [7], where the overall
+outcome of the game is determined by the sequence of
+moves (state-preparations, measurements, and channels)
+performed by diﬀerent players. For example, in a two-
+party game Alice’s strategy can be seen as a particular
+quantum network in which Bob’s moves act as variable
+subroutines. Of course, the subroutines corresponding to
+Bob’s moves are in turn parts of Bob’s network, so that
+the whole protocol can be seen as the interlinking of two
+networks corresponding to Alice’s and Bob’s strategies.
+A quantum network can be used in a number of dif-
+ferent ways, each way corresponding to a diﬀerent kind
+of transformation achievable with it, e.g. transforma-
+tions from states to channels, from channels to channels,
+and from sequences of states/channels to channels, as
+discussed above. In fact, if we consider networks of arbi-
+trary size, there is an inﬁnite number of diﬀerent trans-
+formations that we can implement. This fact suggests to
+ﬁnd new notions that generalize those of channels and
+POVMs in the case of quantum networks: apparently
+one would have to introduce a new mathematical ob-
+ject for any possible transformation. In addition, since
+a quantum network can contain random circuits per-
+forming measurements and quantum operations, for any
+transformation one would have to take into account also
+its probabilistic version. Clearly, deﬁning a new kind of
+quantum map for any possible use of a network is not a
+viable approach. On the other hand, using the current
+framework based solely on states as inputs and outputs
+to describe a quantum network one is presently forced to
+specify all elementary channels and measuring devices in
+it, and if one needs to optimize the network for some de-
+sired task, then one has to face cumbersome optimization
+
+===== PAGE 2 =====
+
+2
+of all its elements. Optimizing a quantum network with-
+out suitable tools is indeed comparable to treating tasks
+such as quantum error correction and quantum state es-
+timation without the notions of channel and POVM.
+Luckily enough, an eﬃcient treatment of quantum net-
+works is possible, despite the inﬁnity of diﬀerent transfor -
+mations associated to them. In this paper we will provide
+a complete toolbox for the description and the optimiza-
+tion of quantum networks by answering the following two
+questions: i) Which are the possible tasks that a given
+network can accomplish?, and ii) Which are the transfor-
+mations that a given network can undergo? Both ques-
+tions will be tackled in Sections III and IV from two dif-
+ferent, complementary points of view. On the one hand,
+in Section III we will consider quantum states, POVMs,
+and channels, as elementary building blocks to construct
+quantum networks. The main focus will be the descrip-
+tion of actual networks by means of Choi-Jamio/suppress lkowski
+operators, and the description of connections among net-
+works by means of a suitably deﬁned composition of
+Choi-Jamio/suppress lkowski operators. On the other hand, in
+Section IV we will derive quantum networks and their
+transformations on a purely axiomatic basis, by deﬁning
+a hierarchy of admissible quantum maps. The physical
+realizability of these general transformations is proved, in
+a way that is similar to the unitary realization of quan-
+tum channels: we will prove that any deterministic ad-
+missible map can be physically obtained by a suitable
+sequence of memory channels. We call this property uni-
+versality of memory channels , as it implies that, under
+mild assumptions, any deterministic transformation that
+is conceivable in quantum mechanics can be always real-
+ized by some sequence of memory channels. The case of
+probabilistic transformations is also considered, showin g
+that any probabilistic transformation can be realized by
+a sequence of memory channels followed by a von Neu-
+mann measurement on some output subsystem.
+II. PRELIMINARIES AND NOTATION
+In this Section we list a set of elementary facts about
+linear maps and Choi-Jamio/suppress lkowski operators. The prod-
+uct of Choi-Jamio/suppress lkowski operators induced by the com-
+position of the corresponding linear maps is deﬁned and
+analyzed.
+A. Linear operators and linear maps
+In the following we denote with L(H) the set of lin-
+ear operators on the ﬁnite dimensional Hilbert space H.
+The set of linear operators from H0 to H1 is denoted by
+L(H0, H1). Operators X in L(H0, H1) are in one-to-one
+correspondence with vectors |X⟩ ⟩in H1 ⊗ H 0 as follows
+|X⟩ ⟩= (X ⊗ IH0 )|IH0 ⟩ ⟩
+= (IH1 ⊗ X T )|IH1 ⟩ ⟩, (1)
+where IH is the identity operator in H, |IH⟩ ⟩ ∈ H ⊗ 2
+is the maximally entangled vector |IH⟩ ⟩ = ∑
+n |n⟩|n⟩
+(with {|n⟩} a ﬁxed orthonormal basis for H), and X T ∈
+L(H1, H0) is the transpose of A with respect to the two
+ﬁxed bases chosen in H0 and H1.
+The set of linear maps from L(H0) to L(H1) is
+denoted by L(L(H0), L(H1)). Linear maps M in
+L(L(H0), L(H1)) are in one to one correspondence with
+linear operators on L(H1 ⊗ H 0) as follows
+M = C(M ) := M ⊗ IL(H0)(|IH0 ⟩ ⟩⟨ ⟨IH0 |), (2)
+where IL(H0) is the identity map on L(H0). The inverse
+map C− 1 transforms M ∈ L (H1 ⊗ H 0) into a map in
+L(L(H0), L(H1)) that acts on an operator X ∈ L(H0) as
+follows
+[C− 1(M )](X) = TrH0 [(IH1 ⊗ X T )M ], (3)
+TrH denoting the partial trace over H.
+Deﬁnition 1 (Choi-Jamio/suppress lkowski isomorphism.)
+The bijective correspondence C : M → M deﬁned
+through Eq. (2) is called Choi-Jamio/suppress lkowski isomor-
+phism. Its inverse C− 1 : M → M is deﬁned through
+Eq. (3).
+For conciseness, we will use the notation M for C(M )
+throughout the paper. The operator M corresponding to
+the map M is called Choi-Jamio/suppress lkowski operator ofM .
+Lemma 1 A linear map M is trace-preserving if and
+only if its Choi-Jamio/suppress lkowski operator enjoys the follow-
+ing property
+TrH1 [M ] = IH0 . (4)
+Proof. The trace-preserving condition writes
+Tr[M (X)] = Tr[X]. Since
+Tr[M (X)] = Tr[(IH1 ⊗ X T )M ] = Tr H0[X T TrH1 [M ]],
+(5)
+and Tr[X] = Tr[ X T ], the condition is satisﬁed for arbi-
+trary X if and only if Tr H1 [M ] = IH0 . ■
+Lemma 2 A linear map M is Hermitian preserving if
+and only if its Choi-Jamio/suppress lkowski operatorM is Hermi-
+tian.
+Proof. A map M is Hermitian preserving if M (H)† =
+M (H) for any Hermitian operator H, or equivalently, if
+M (X)† = M (X †) for any operator X. The adjoint of
+M (X) is expressed as
+M (X)† = TrH0 [(IH1 ⊗ X ∗)M †] = TrH0 [(IH1 ⊗ X †T )M †].
+(6)
+Clearly, if M † = M one has M (X)† = M (X †). On the
+other hand, if
+TrH0[(IH1 ⊗ X †T )M †] = TrH0[(IH1 ⊗ X †T )M ] (7)
+for all X, then M † = M , due to the Choi-Jamio/suppress lkowski
+isomorphism. ■
+
+===== PAGE 3 =====
+
+3
+Lemma 3 A linear map M is completely positive (CP)
+if and only if its Choi-Jamio/suppress lkowski operatorM is posi-
+tive semideﬁnite.
+Proof. Clearly, if M is CP, by Eq. (2) M ≥ 0. On the
+other hand, if M ≥ 0, it can be diagonalized as follows
+M =
+∑
+j
+|Kj⟩ ⟩⟨ ⟨Kj |, (8)
+and consequently, exploiting Eqs. (3) and (1), we can
+write its action in the Kraus form [1]
+M (X) =
+∑
+j
+KjXK †
+j . (9)
+The Kraus form coming from diagonalization of M is
+called canonical. On the other hand, since the same rea-
+soning holds for any decomposition M = ∑
+k |Fk⟩ ⟩⟨ ⟨Fk|,
+there exist inﬁnitely many possible Kraus forms. The
+Kraus form implies complete positivity: indeed, the ex-
+tended map M ⊗ IL(HA) transforms any positive opera-
+tor P ∈ L(H0 ⊗ H A) into a positive operator, as follows
+M ⊗ IL(HA)(P ) =
+∑
+j
+(Kj⊗ IHA )P (K †
+j ⊗ IHA ) ≥ 0. (10)
+■
+B. The link product
+The Choi-Jamio/suppress lkowski isomorphism poses the natu-
+ral question on how the composition of linear maps is
+translated to a corresponding composition between the
+respective Choi-Jamio/suppress lkowski operators.
+Consider two linear maps M ∈ L (L(H0), L(H1)) and
+N ∈ L (L(H1), L(H2)) with Choi-Jamio/suppress lkowski opera-
+tors M ∈ L (H1 ⊗ H 0) and N ∈ L (H2 ⊗ H 1), respec-
+tively. The two maps are composed to give the linear map
+C = N ◦M ∈ L(L(H0), L(H2)). This can be easily ob-
+tained upon considering the action of C on an operator
+X ∈ L (H0) written in terms of the Choi-Jamio/suppress lkowski
+operators of the composing maps
+C (X) = TrH1[(IH2 ⊗ TrH0[(IH1 ⊗ X T )M ]T )N ]
+= TrH1,H0 [(IH2 ⊗ IH1 ⊗ X T )(IH2 ⊗ M T1 )(N ⊗ IH0 )].
+(11)
+Upon comparing the above identity with the Eq. (3) for
+the map C , namely C (X) = Tr H0[(IH2 ⊗ X T )C], one
+obtains
+C = TrH1 [(IH2 ⊗ M T1 )(N ⊗ IH0 )], (12)
+where M Ti denotes the partial transpose of M on the
+space Hi. The above result can be expressed in a com-
+pendious way by introducing the notation
+N ∗M := TrH1 [(IH2 ⊗ M T1 )(N ⊗ IH0 )], (13)
+which we call link product of the operators M ∈ L(H1 ⊗
+H0) and N ∈ L (H2 ⊗ H 1). The above result can be
+synthesized in the following statement.
+Theorem 1 (Composition rules) Consider two lin-
+ear maps M ∈ L (L(H0), L(H1)) and N ∈
+L(L(H1), L(H2)) with Choi-Jamio/suppress lkowski operatorsM ∈
+L(H1 ⊗ H 0) and N ∈ L (H2 ⊗ H 1), respectively. Then,
+the Choi-Jamio/suppress lkowski operatorM ∈ L(H2 ⊗ H 0) of the
+composition C = N ◦ M ∈ L (L(H0), L(H2)) is given
+by the link product of the Choi-Jamio/suppress lkowski operators
+C = N ∗M .
+In the following we will consider more generally maps
+with input and output spaces that are tensor products of
+Hilbert spaces, and which will be composed only through
+some of these spaces, e. g.for quantum circuits which
+are composed only through some wires. For describing
+these compositions of maps we will need a more gen-
+eral deﬁnition of link product. For such purpose, con-
+sider now a couple of operators M ∈ L (⨂
+m∈M Hm)
+and N ∈ L (⨂
+n∈N Hn), where M and N describe set
+of indices for the Hilbert spaces, which generally have
+nonempty intersection [8].
+The general deﬁnition of link product then reads:
+Deﬁnition 2 (General link product) The link prod-
+uct of two operators M ∈ L (⨂
+m∈M Hm) and N ∈
+L(⨂
+n∈N Hn) is the operator M ∗N ∈ L(HN \M⊗H M\N)
+given by
+N ∗M := TrM∩N [(IN \M⊗ M TM∩N )(N ⊗ IM\N)], (14)
+where the set-subscript X is a shorthand for ⨂
+i∈X Hi,
+and A\B := {i ∈ A, i ̸∈ B} for two sets A and B.
+Examples. For M ∩ N = ∅, e. g.for two operators
+M and N acting on diﬀerent Hilbert spaces H1 and H0,
+respectively, their link product is the tensor product:
+N ∗M = N ⊗ M ∈ L(H1 ⊗ H 0). (15)
+For N = M, i. e.when the two operators M and N act
+on the same Hilbert space, the link product becomes the
+trace
+A ∗B = Tr[AT B]. (16)
+Theorem 2 (Properties of the link product) The
+operation of link product has the following properties:
+1. M ∗N = E(N ∗M )E, where E is the unitary swap
+on HN \M ⊗ H M\N.
+2. If M1, M2, M3 act on Hilbert spaces labeled by the
+sets I1, I2, I3, respectively, and I1 ∩ I2 ∩ I3 = ∅,
+then M1 ∗(M2 ∗M3) = ( M1 ∗M2) ∗M3.
+3. If M and N are Hermitian, then M ∗N is Hermi-
+tian.
+4. If M and N are positive semideﬁnite, then M ∗N
+is positive semideﬁnite.
+
+===== PAGE 4 =====
+
+4
+Proof. Properties 1, 2, and 3 are immediate
+from the deﬁnition. For property 4, consider the
+two maps M ∈ L (L(HM\N), L(HM∩N )) and N ∈
+L(L(HM∩N ), L(HN \M)), associated to M and N by
+equation Eq. (3). Due to Lemma 3, the maps M , N
+are both CP. Moreover, due to Theorem 1 the link prod-
+uct C = N ∗ M is the Choi-Jamio/suppress lkowski operator of
+the composition C = N ◦ M . Since the composition
+of two CP maps is CP, the Choi-Jamio/suppress lkowski operator
+C = N ∗M must be positive semideﬁnite. ■
+Remark. As it should be clear to the reader, the ad-
+vantage in using multipartite operators instead of maps
+is that we can associate many diﬀerent kinds of maps to
+the same operator M ∈ L (⨂
+i∈I Hi), depending on how
+we group the Hilbert spaces in the tensor product. In-
+deed, any partition of the set I into two disjoint sets I0
+and I1 deﬁnes a diﬀerent linear map from L(⨂
+i∈I0 Hi)
+to L(⨂
+i∈I1 Hi) via Eq. (3). We will see in the next
+section that dealing with operators and link products al-
+lows one to eﬃciently treat all possible maps associated
+to quantum networks.
+III. QUANTUM NETWORKS: CONSTRUCTIVE
+APPROACH
+A. Channels and states: deterministic
+Choi-Jamio/suppress lkowski operators
+In the general description of quantum mechanics,
+quantum states are density matrices on Hilbert space
+H of the system, i.e. positive semideﬁnite operators
+ρ ∈ L(H) with Tr[ ρ] = 1. Deterministic transformations
+of quantum states are the so-called quantum channels, a
+quantum channel C from states on H0 to states on H1 be-
+ing a trace-preserving completely positive map. Accord-
+ing to Lemmas 1, 2, 3, the Choi-Jamio/suppress lkowski operator
+corresponding to C is a positive semideﬁnite operator
+C ∈ L(H1 ⊗ H 0) satisfying Tr H1[C] = IH0 .
+It is immediate to see that a density matrix is a par-
+ticular case of Choi-Jamio/suppress lkowski operator of a chan-
+nel, namely a Choi-Jamio/suppress lkowski operator with one-
+dimensional input space H0: in this case the condition
+TrH1[C] = IH0 becomes indeed Tr[ C] = 1. This reﬂects
+the fact that having a quantum state is equivalent to
+having at disposal one use of a suitable preparation de-
+vice. The application of the channel C to the state ρ
+is equivalent to the composition of two channels, and is
+indeed given by the link product of the corresponding
+Choi-Jamio/suppress lkowski operators
+C (ρ) = C ∗ρ, (17)
+which agrees both with Eq. (3) and Theorem 1.
+The opposite example is the completely demolishing
+“trace channel” T (ρ) = Tr[ ρ], which transforms quan-
+tum states into their probabilities (of course, normal-
+ized density matrices give unit probabilities): this chan-
+nel has one-dimensional output space H1, and, accord-
+ingly its Choi-Jamio/suppress lkowski operator isT = IH0 . Notice
+that the normalization of the Choi-Jamio/suppress lkowski opera-
+tor C ∈ L(H1 ⊗ H 0) of a channel C can be also written
+in terms of concatenation with the trace channel as
+C ∗IH1 = IH0 . (18)
+B. Instruments, random sources, and POVMs:
+probabilistic Choi-Jamio/suppress lkowski operators
+In addition to the Choi-Jamio/suppress lkowski operators of de-
+terministic quantum devices, one can consider their prob-
+abilistic versions. A complete family of probabilistic
+transformations from states on H0 to states on H1,
+known as quantum instrument , is a set of CP maps
+{Ci |i ∈ I} summing up to a trace-preserving CP map
+C = ∑
+i∈I Ci. The corresponding Choi-Jamio/suppress lkowski op-
+erators {Ci |i ∈ I} are positive semideﬁnite operators
+summing up to a deterministic Choi-Jamio/suppress lkowski oper-
+ator C = ∑
+i∈I Ci with C ∗ IH1 = IH0 . For families
+of probabilistic transformations, the index i has always
+to be intended as a classical outcome, that is known to
+the experimenter, and heralds the occurrence of diﬀerent
+random transformations.
+For one-dimensional input space H0, a complete family
+of probabilistic Choi-Jamio/suppress lkowski operators{ρi |i ∈ I}
+with ∑
+i ρi = ρ, Tr[ρ] = 1 describes a random source of
+quantum states . Applying the trace channel T after the
+source gives the probability of the source emitting the
+i-th state: pi = Tr[ρi] = ρi ∗IH1 (of course pi ≥ 0 and∑
+i pi = 1).
+For one-dimensional output space H1, a complete fam-
+ily of probabilistic Choi-Jamio/suppress lkowski operators is in-
+stead a POVM {Pi |i ∈ I}, ∑
+i Pi = IH1 . Measuring
+the POVM on the state ρ is equivalent to applying the
+random device described by {Pi} after the preparation
+device for state ρ, producing as the outcome the proba-
+bilities
+p(i|ρ) = ρ ∗Pi = Tr[ρP T
+i ]. (19)
+Apart from the transpose, which can be absorbed in the
+deﬁnition of the POVM, this is nothing but the Born rule
+for probabilities, obtained here from the composition of a
+preparation channel with a random transformation with
+one-dimensional output space.
+In conclusion, states, channels, random sources, instru-
+ments, and POVMs can be treated on the same footing
+as deterministic and probabilistic transformations, whic h
+in turn can be described using only Choi-Jamio/suppress lkowski
+operators and link product.
+C. Quantum networks and memory channels
+In the previous Subsections we have shown that all
+elementary quantum circuits can be described in terms
+of Choi-Jamio/suppress lkowski operators and their link products.
+
+===== PAGE 5 =====
+
+5
+Here this approach is exploited to describe quantum net-
+works, as a result of the composition of such elementary
+circuits. This is the approach outlined in Ref [9].
+1. Topology, causal ordering, and sequential ordering
+A quantum network is obtained by assembling a num-
+ber of elementary circuits, each of them represented by
+its Choi-Jamio/suppress lkowski operator. In the remainder of the
+paper we adopt the following convention, which appears
+to be very convenient for the description of quantum net-
+works: if an elementary circuit is run more than once, i.e.
+at diﬀerent steps of the computation, we attach to each
+diﬀerent use a diﬀerent label, so that diﬀerent uses of the
+same circuit are actually considered as diﬀerent circuits.
+To build up a particular quantum network one needs
+to have at disposal the whole list of elementary circuits
+and a list of instructions about how to connect them. In
+connecting circuits there are clearly two restrictions: i)
+one can only connect the output of a circuit with the
+input of another circuit, and ii) there cannot be cycles
+[10]. These restrictions ensure causality, namely the fact
+that quantum information in the network ﬂows from in-
+put to output without loops. This implies that the con-
+nections in the quantum network can be represented in
+a directed acyclic graph (DAG), where each vertex rep-
+resents a quantum circuit, and each arrow represents a
+quantum system traveling from one circuit to another,
+as in Fig. 1a. Notice that such a graph represents only
+the internal connections of the networks, while to have
+a complete graphical representation one should also ap-
+pend to the vertices a number of free incoming and out-
+going arrows representing quantum systems that enter
+or exit the network. In other words, the graphical rep-
+resentation of a quantum network is provided by a DAG
+where some sources (vertices without incoming arrows)
+and some sinks (vertices without outgoing arrows) have
+been removed, as in Fig. 1b. The free arrows remaining
+after removing a source represent input systems entering
+the network, while the free arrows remaining after remov-
+ing a sink represent output systems exiting the network.
+The ﬂow of quantum information along the arrows of
+the graph induces a partial ordering of the vertices: we
+say that the circuit in vertex v1 causally precedes the
+circuit in vertex v2 (v1 ⪯ v2) if there is a directed path
+from v1 to v2. A well known theorem in graph theory
+states that for a directed acyclic graph there always exists
+a way to extend the partial ordering ⪯ to a total ordering
+≤ of the vertices. Intuitively speaking, the relation ≤
+ﬁxes a schedule for the order in which the circuits in the
+network can be run, compatibly with the causal ordering
+of input-output relations. In general, the total ordering
+≤ is not uniquely determined by the partial ordering ⪯:
+the same quantum network can be used in diﬀerent ways,
+corresponding to diﬀerent orders in which the elementary
+circuits are run.
+A quantum network with a given sequential ordering
+FIG. 1: a) Graphical representation of internal connection s
+in a quantum network: vertices represent quantum opera-
+tions, incoming and outgoing arrows represent input and out -
+put systems. The resulting diagram is a direct acyclic graph .
+b) Graphical representation of a quantum network: free in-
+coming (outgoing) arrows have been added to the diagram in
+a) in order to represent input (output) systems entering (ex it-
+ing) the network. c) Totally ordered quantum network. The
+vertices in diagram b) have been ordered from left to right
+according to a sequential ordering compatible with the caus al
+ordering ﬁxed by input/output relations.
+of the vertices becomes a compound quantum circuit,
+in which diﬀerent operations are performed according to
+a precise schedule. Totally ordered quantum networks
+have a large number of applications in quantum infor-
+mation, and, accordingly, they have been given diﬀerent
+names, depending on the context. For example, they are
+referred to as quantum strategies in quantum game the-
+oretical and cryptographic applications [7]. Moreover, a
+totally ordered quantum network is equivalent to a se-
+quence of channels with memory, as illustrated in Fig. 2
+
+===== PAGE 6 =====
+
+6
+a. Currently, the most studied case in the literature on
+memory channels is that in which all channels of the se-
+quence are identical, as represented in Fig. 2 b): here the
+memory must be ﬁrst initialized in some ﬁxed state |0⟩,
+and eventually traced out. Clearly, the network in Fig. 2
+b) is the particular case of that in Fig. 2 a) correspond-
+ing to C0(ρ) = C (ρ ⊗ |0⟩⟨0|), C2 = C3 = CN − 2 = C , and
+CN − 1(ρ) = Tr M [C (ρ)], TrM being the partial trace over
+the memory system.
+FIG. 2: a) Equivalence between an arbitrary sequence of
+memory channels and a totally ordered quantum network: a
+sequence of quantum memory channels from Alice (left side)
+to Bob (right side) is equivalent modulo stretching and resh uf-
+ﬂing of the quantum wires to an array of channels connected
+by internal ancillae, i.e. a totally ordered quantum networ k.
+b) A sequence consisting of identical memory channels, with
+the memory initialized in state |0⟩ before the ﬁrst use, and
+traced out after the last use.
+In the following we will be always interested in quan-
+tum networks equipped with a total ordering of the ver-
+texes, and, accordingly, the expressions “quantum net-
+work”, “quantum strategy”, and “sequence of memory
+channels” will be used as synonymous.
+2. Deterministic quantum networks
+We start here by considering deterministic quantum
+networks, i.e. networks which do not produce random
+transformations. A deterministic quantum network is
+composed by deterministic quantum circuits, i.e. quan-
+tum channels. Let {Cj |j ∈ V } be the channels corre-
+sponding to the vertices of the graph, and {Cj |j ∈ V }
+their Choi-Jamio/suppress lkowski operators.
+Let us consider a network with a ﬁnite number of ver-
+tices N = |V |< ∞ , and let us label the vertices with
+numbers from 0 to N − 1, according to the sequential or-
+dering of the network. The Hilbert spaces of each Choi-
+Jamio/suppress lkowski operatorCj are labeled by indices in the
+sets A−
+j (A+
+j ) of incoming (outgoing) arrows at vertex j,
+the elements in A−
+j (A+
+j ) corresponding to input (output)
+systems of the quantum channel Cj. Let Aj = A−
+j ∪ A+
+j
+be the set of all arrows at vertex j, and let HA−
+j
+, HA+
+j
+,
+and HAj be the tensor products of all Hilbert spaces as-
+sociated to the sets A−
+j , A+
+j , and Aj , respectively. Then,
+the normalization of the channel Cj reads
+IA+
+j
+∗Cj = IA−
+j
+, (20)
+which comes from Eq. (18).
+Since Ai ∩ Aj ∩ Ak = ∅ for any i, j, k = 0 , 1, . . . , N,
+we can always deﬁne the link product Ci ∗Cj ∗Ck (the
+link product is associative due to Theorem 2). Accord-
+ingly, we can deﬁne the Choi-Jamio/suppress lkowski operator of
+the network as
+R(N ) = C0 ∗C1 ∗ · · · ∗CN − 1 = ∗
+j∈V
+Cj. (21)
+Let us denote by H2j and H2j+1 the Hilbert spaces of
+all free (i.e. not connected) input and output systems
+at vertex j, respectively. Since the Hilbert spaces of the
+connected systems are traced out in the link product, it
+is immediate to see that the Choi-Jamio/suppress lkowski operator
+of the network is an operator R(N ) on ⨂2N − 1
+j=0 Hj.
+The normalization of the Choi-Jamio/suppress lkowski operator
+of the network is given by the following condition:
+Lemma 4 (Normalization condition) Let R(N +1) ∈
+L(⨂2N +1
+j=0 Hj) be the Choi-Jamio/suppress lkowski operator of a de-
+terministic quantum network with N +1 vertices , ordered
+from 0 to N . Then, R(N +1) is positive semideﬁnite and
+satisﬁes the relation
+I2N +1 ∗R(N +1) = I2N ∗R(N ), (22)
+where R(N ) ∈ L (⨂2N − 1
+j=0 Hj) is the Choi-Jamio/suppress lkowski
+operator of a network with N vertices ordered from 0 to
+N − 1.
+Notice that in terms of partial traces and tensor prod-
+ucts the normalization of the Choi-Jamio/suppress lkowski operator
+R(N +1) can be equivalently written in the (less symmet-
+ric) form
+Tr2N +1
+[
+R(N +1)
+]
+= I2N ⊗ R(N ). (23)
+Proof. Denote by H
+2N the Hilbert spaces of all incom-
+ing internal connections at vertex N , so that HA−
+N
+=
+H2N ⊗ H
+2N . We have I2N +1 ∗ R(N ) = C0 ∗ · · · ∗
+CN − 1 ∗ (I2N +1 ∗ CN ). Since N is the last vertex, all
+outgoing arrows are free, i.e. HA+
+N
+= H2N +1. There-
+fore the normalization of the channel CN (Eq. (20))
+gives I2N +1 ∗ CN = IA−
+N
+= I2N ⊗ I
+2N = I2N ∗ I2N
+(see Eq. (15) for the last equality). We then obtain
+I2N +1 ∗ R(N ) = I2N ∗ C0 ∗ · · · ∗CN − 2 ∗ C′
+N − 1, where
+C′
+N − 1 = I
+2N ∗CN − 1 is the Choi-Jamio/suppress lkowski operator
+of the channel CN − 1 followed by the partial trace over the
+space H2N . Clearly, R(N − 1) = C1 ∗ · · · ∗CN − 2 ∗ C′
+N − 1
+is the Choi-Jamio/suppress lkowski operator of a network withN
+vertices. ■
+Iterating the above result we then have the following:
+
+===== PAGE 7 =====
+
+7
+Corollary 1 Let R(N ) ∈ L (⨂2N − 1
+j=0 Hj) be the Choi-
+Jamio/suppress lkowski operator of a quantum network withN ver-
+tices. Then, R(N ) ≥ 0 and the following relations hold
+Tr2j− 1[R(j)] = I2j− 2 ⊗ R(j− 1), 2 ≤ j ≤ N
+Tr1[R(1)] = I0,
+(24)
+each R(j) being a suitable positive operator on ⨂2j− 1
+k=0 Hk.
+We conclude the paragraph by noting that also the con-
+verse of Lemma 4 can be proved. The proof is essentially
+based on the same argument as in Ref. [11] (uniqueness
+of the minimal Stinespring dilation).
+FIG. 3: Quantum network resulting from a concatenation
+of N (generally diﬀerent) isometric channels Vj (ρ) := VjρV †
+j ,
+with the last channel followed by partial trace over the anci l-
+lary degrees of freedom. Any positive operator satisfying E q.
+(25) is the Choi-Jamio/suppress lkowski operator of a network of this
+form.
+Theorem 3 Let R(N ) ∈ L(⨂2N − 1
+j=0 Hj) be a positive op-
+erator satisfying the relations
+Tr2j− 1[R(j)] = I2j− 2 ⊗ R(j− 1), 2 ≤ j ≤ N
+Tr1[R(1)] = I0.
+(25)
+where R(j), 1 ≤ j ≤ n − 1 are suitable positive opera-
+tors. Then R(N ) is the Choi-Jamio/suppress lkowski operator of a
+quantum network.
+Proof. First, notice that each R(j) is the Choi-
+Jamio/suppress lkowski operator of a channelR(j) from states on
+the even Hilbert spaces ⨂j− 1
+k=0 H2k to states on the odd
+Hilbert spaces ⨂j− 1
+k=0 H2k+1. Indeed, Eq. (25) implies
+that
+Tr1,3,...,2j− 1[R(j)] = I0,2,...,2j− 2, (26)
+whence R(j) is trace preserving due to Lemma (1). The
+problem is then to show that the multipartite chan-
+nel R(N ) arises from the concatenation of N channels
+as in Fig. 3. In particular, we show that R(N ) can
+be obtained as a concatenation of N isometries. The
+proof is by induction. For N = 1 the statement is
+equivalent to Stinespring’s dilation of channels [4]: the
+Kraus operators of the channel R(1) deﬁne an isometry
+W (1) = ∑
+i |i⟩A ⊗ K (1)
+i , where {|i⟩A} are orthonormal
+states for an ancilla A. As the induction hypothesis, we
+suppose now that the isometry W (N ) := ∑
+i |i⟩A ⊗ K (N )
+i ,
+deﬁned by the canonical Kraus operators of R(N ), arises
+from the concatenation of N isometries, as in Fig. 3.
+Using such hypothesis, we then prove that also the isom-
+etry W (N +1) = ∑
+i |i⟩B ⊗ K (N +1)
+i is the concatenation of
+N + 1 isometries as in Fig. 3. Indeed, using Eq. (3), it
+is immediate to see that the condition
+Tr2N +1[R(N +1)] = I2N ⊗ R(N ), (27)
+implies that
+Tr2N +1[R(N +1)(ρ)] = R(N ) (Tr2N [ρ]) , (28)
+for any state ρ on ⨂N
+j=0 H2j. Therefore {⟨m|K (N +1)
+i }
+and {K (N )
+j ⊗ ⟨ n|}are two Kraus representations of
+the same channel, the latter being canonical, as
+Tr
+[
+K (N )†
+i K (N )
+i′ ⊗ |n⟩⟨n′|
+]
+= δnn′δii′. Since any Kraus
+representation is connected to the canonical one by the
+matrix elements of an isometry, we have
+⟨m|K (N +1)
+i =
+∑
+nj
+Vmi,nj K (N )
+j ⊗ ⟨ n|, (29)
+or, equivalently
+K (N +1)
+i = B⟨i|(V ⊗ I2N +1,...,1)(I2N ⊗ W (N )), (30)
+where V = ∑
+mi,nj Vmi,nj |m⟩⟨n|⊗B|i⟩⟨j|A is an isometry
+from H2N ⊗ H A to H2N +1 ⊗ H B. Therefore we have
+W (N +1) =
+∑
+i
+|i⟩B ⊗ K (N +1)
+i
+= (V ⊗ I2N +1,...,1)(I2N ⊗ W (N ))
+(31)
+Accordingly, the map R(N +1) can be expressed as
+R(N +1)(ρ) = Tr B[(V ⊗ I)(I⊗ W (N ))ρ(I⊗ W (N )†)(V †⊗ I)],
+(32)
+where V maps the (2 N )-th system and ancilla A to the
+(2N + 1)-th system and ancilla B. Along with the induc-
+tion hypothesis, this proves the theorem. ■
+3. Network complexity
+In theorem 3 we proved that quantum networks are in
+one to one correspondence with Choi-Jamio/suppress lkowski oper-
+ators satisfying the conditions in Eq. (25). In particular,
+the proof involves the minimal Stinespring isometry of
+the channel R(N ) from states on Hin := ⨂j− 1
+k=0 H2k to
+states on Hout := ⨂j− 1
+k=0 H2k+1. In Ref [15], the expres-
+sion of the minimal Stinespring isometry in terms of the
+Choi-Jamio/suppress lkowski operator was derived
+W (N ) =
+(
+I ⊗
+√
+R(N )∗
+)
+|I⟩ ⟩out,out ⊗ Iin, (33)
+Where the ancillary Hilbert space is isomorphic to a sub-
+space of Hout ⊗ H in with dimension equal to the rank
+of the Choi-Jamio/suppress lkowski operatorR(N ). Repeating the
+same argument for each R(j) with 1 ≤ j ≤ N − 1, one
+obtains an isometric extension of the channel R(N ) with
+
+===== PAGE 8 =====
+
+8
+N ancillae, each one appearing at a vertex j − 1 and dis-
+appearing at the subsequent vertex j (apart from the last
+one, appearing at vertex N − 1 and purifying the output
+system). The maximum dmax := max 1≤ j≤ N rank(R(j))
+denotes the maximum dimension of the ancilla required
+by the network described by R(N ). Moreover, if one de-
+ﬁnes rj := rank( R(j)) max{d2j+1, d2j+2}, for 0 ≤ j ≤
+N − 2, and rN − 1 := rank(R(N ))d2N − 1, the number
+r(R(N )) := max
+0≤ j≤ N − 1
+rj (34)
+is the maximal dimension that must be coherently con-
+trolled in order to implement the network. We can say
+that the quantity dmax describes the complexity of the
+network corresponding to the Choi operator R(N ) in
+terms of quantum memory needed, while r(R(N )) de-
+scribes the complexity of the network in terms of coherent
+control. However, dmax and r(R(N )) provide only up-
+per bounds on the actual memory and coherence control
+complexity. Indeed, in the Stinespring isometric exten-
+sion coherence of ancillary systems is preserved up to the
+last step. However, it can often happen that some ancil-
+lary subsystem interacts with the systems only at vertex
+j. In this case, one could trace out such subsystem just
+after the interaction at vertex j.
+On the other hand, the analysis of complexity in terms
+of number of elementary gates needed requires a detailed
+description of all the unitaries that one must use to im-
+plement the isometries W (j).
+4. Probabilistic quantum networks
+A probabilistic quantum network is a network in which
+the channels {Cn | n ∈ V } are replaced by quantum
+instruments {Cn,in |n ∈ V }, where in is the label of
+the random transformation taking place at vertex n (in
+practical terms, the outcome of the n-th measurement).
+Deﬁning the set I of poly-indices i = (i0, i1, . . . , iN ) cor-
+responding to measurement outcomes, we have a family
+{R(N )
+i }of Choi-Jamio/suppress lkowski operators of the probabilis-
+tic network, given by
+R(N )
+i = C0,i0 ∗ · · · ∗CN,iN , i ∈ I (35)
+Clearly, the sum of the operators R(N )
+i over i gives the
+Choi-Jamio/suppress lkowski operator of a deterministic quantum
+network. Moreover, also the converse statement is true:
+Theorem 4 Let {R(N )
+i ∈ L(⨂2N − 1
+j=0 Hj) |i = 1, . . . , k }
+be a collection of operators with the properties i) R(N )
+i ≥
+0 and ∑k
+i=1 R(N )
+i = R(N ), with R(N ) satisfying the re-
+lations of Eq. (22). Then, each R(N )
+i is the Choi-
+Jamio/suppress lkowski operator of the probabilistic quantum net-
+work, consisting of N isometric interactions, followed by
+a von Neumann measurement on a k-dimensional ancilla
+giving outcome i, as in Fig. 4.
+FIG. 4: Quantum network resulting from a concatenation
+of N isometric channels, with the last channel followed by
+a von Neumann measurement {Mi} over the ancillary de-
+grees of freedom. Any collection of positive operators {R(N)
+i }
+summing up the the Choi-Jamio/suppress lkowski operator of a deter-
+ministic quantum network describes a probabilistic quantu m
+network of this form.
+Proof. Let us consider the following Choi-Jamio/suppress lkowski
+operator
+˜R(N ) :=
+∑
+i∈I
+R(N )
+i ⊗ |i⟩⟨i|A, (36)
+where |i⟩A, i = 1 , . . . , k is an orthonormal basis for an
+ancillary Hilbert space HA. Using Eq. (22) and The-
+orem 3, it is immediate to see that R(N ) is the Choi-
+Jamio/suppress lkowski operator of a deterministic quantum net-
+work with N vertices, the last vertex having the output
+space ˜H2N − 1 := H2N − 1 ⊗ H A. In particular, we know
+that R(N ) can be realized by a sequence of isometric chan-
+nels. Now apply the von Neumann measurement given
+by {Mi = |i⟩⟨i|}on the ancilla HA. Conditionally to out-
+come i, the Choi-Jamio/suppress lkowski operator of the network
+will be ˜R(N ) ∗Mi = ⟨i|˜R(N )|i⟩A = R(N )
+i , where we used
+Eq. (16) . ■
+5. Transformations achievable with a given quantum
+network
+Given a network of quantum circuits, we can perform
+a number of diﬀerent tasks. We can use the network as
+a programmable device, by feeding into it some quan-
+tum systems acting as the program, or we can connect
+some outputs with some inputs through a set of exter-
+nal circuits. Alternatively, we can make measurements
+on some outputs and decide accordingly which states to
+send to the next inputs, or we simply can use the net-
+work as a single multipartite channel. Any diﬀerent use
+of a quantum network, however, will be always equivalent
+to the connection of the network with another quantum
+network, as in Fig. 5.
+Connecting two networks with vertices V and W , re-
+spectively, means composing the corresponding graphs
+by joining some of the free outgoing arrows of a network
+with the free incoming arrows of the other, in such a way
+that the new graph is still a directed acyclic graph, with
+vertices U = V ∪ W . Again, the requirement that the
+graph of connections in the composite network is acyclic
+is crucial in order to have a network where quantum in-
+formation ﬂows from input to outputs without loops. We
+adopt the convention that if two vertices v ∈ V and
+
+===== PAGE 9 =====
+
+9
+w ∈ W are connected by joining two arrows, the two
+quantum systems corresponding to such arrows are iden-
+tiﬁed (see Fig. 5).
+FIG. 5: The scheme represents the connection of two net-
+works, in which junction of two arrows means identiﬁcation
+of the corresponding quantum systems. The ﬁnal network
+is still a direct acyclic graph, with the set of vertices coin -
+ciding with the union of sets of vertices of the component
+sub-networks, and with some free input and output arrows.
+Let us proceed to determine the Choi-Jamio/suppress lkowski op-
+erator resulting from the composition of two networks,
+with |V |= N and |W |= M vertices respectively, and
+with a given ordering of the vertices. Notice that, al-
+though the order of vertices within each network is ﬁxed,
+a priori there is no relative ordering between vertices of
+one network and vertices in the other. However, once we
+ﬁx a legitimate way of connecting the two networks we
+can also deﬁne a total ordering of the vertices which is
+compatible with the causal ﬂow of quantum information
+in the composite network. In other words, we can order
+the vertices U = V ∪ W of the composite network by
+labeling them with numbers from 0 to N + M − 1. With
+this labeling, V and W become two disjoint partitions of
+the set {0, 1, . . . , N+ M − 1}. We then have the following
+Corollary 2 Let R and S be the Choi-Jamio/suppress lkowski
+operators of two quantum networks. The Choi-
+Jamio/suppress lkowski operator of the network resulting from their
+composition (output of R fed into the input of S) is given
+by
+T = S ∗R (37)
+Proof. The proof is an immediate consequence of asso-
+ciativity of the link product. ■
+A possible way of transforming a given network is to
+connect it with another network containing state prepa-
+rations and measurements, so that the resulting network
+has neither incoming nor outgoing quantum systems. In
+this case, any measurement outcome corresponds to a
+probabilistic transformation, which turns the input net-
+work into a probability. Corollary 2 shows that the prob-
+abilities in such an experiment will be given by the gen-
+eralized Born rule
+p(i|R) = R ∗Si = Tr[RS T
+i ]. (38)
+This means that two networks with the same Choi-
+Jamio/suppress lkowski operatorR are experimentally indistin-
+guishable. More precisely, as long as one is not inter-
+ested in the internal functioning of the network and is
+only concerned only with its input/output relations, two
+networks with the same Choi-Jamio/suppress lkowski operator are
+indistinguishable.
+In conclusion, the action of a quantum network can be
+completely identiﬁed by its Choi-Jamio/suppress lkowski operator.
+Notice that, moreover, the Choi-Jamio/suppress lkowski operator
+provides a much simpler description of a quantum net-
+work than the list of all channels and all connections
+among them. Indeed, the operator R acts only on the
+Hilbert spaces of the quantum systems that actually en-
+ter and exit the network, and not of the quantum systems
+that are internal to the network.
+As we will see in the following section, the Choi-
+Jamio/suppress lkowski operator of a quantum network coincides
+with the quantum comb, an abstract object that can be
+derived on a purely axiomatic basis.
+IV. AXIOMATIC APPROACH: THE
+HIERARCHY OF ADMISSIBLE QUANTUM
+MAPS
+While in the previous Section we focused on the de-
+scription of transformations that can be achieved by as-
+sembling elementary circuits into networks and by con-
+necting networks with each other, in the following we take
+an axiomatic point of view, aimed to classify the trans-
+formations that are admissible in principle according to
+quantum mechanics. With “admissible transformations”
+we mean here general input/output transformations that
+i) are compatible with the probabilistic structure of the
+theory, and ii) produce a legitimate output when applied
+locally on one side of a bipartite input. Such transfor-
+mations are deﬁned recursively, by starting from channels
+and quantum operations, and progressively generating an
+inﬁnite hierarchy of quantum maps. Despite the hierar-
+chy of transformations is unbounded, we will show that
+a dramatic simpliﬁcation arises in quantum mechanics:
+the inputs and outputs of every admissible transforma-
+tion will turn out to be a concatenation of memory chan-
+nels, and every admissible transformation will be itself
+realized by a suitable concatenation of memory channels.
+Notice that in this approach memory channels are not
+assumed from the beginning, but are derived on the ba-
+sis of purely a priori considerations on the admissiblity
+of quantum maps.
+
+===== PAGE 10 =====
+
+10
+A. Quantum combs and admissible N -maps
+Quantum channels and operations are the most gen-
+eral transformations of quantum states that satisfy the
+two minimal requirements of linearity and complete pos-
+itivity (see e.g. [16]). Linearity is required by the prob-
+abilistic structure of quantum mechanics. Indeed, if we
+apply the transformation C to the state ρ = ∑
+i piρi—
+corresponding to a random choice of the states {ρi} with
+probabilities {pi}—then the output state must be a ran-
+dom choice of the states {C (ρi)} with the same proba-
+bilities, i.e. C (ρ) = ∑
+i piC (ρi). For the same reason, we
+should also have C (pρ) = pC (ρ) for any 0 ≤ p ≤ 1. These
+two conditions together imply that C can be extended
+without loss of generality to a linear map on L(HS), HS
+being the system’s Hilbert space. On the other hand,
+complete positivity is required if we want the transfor-
+mation C to produce a legitimate output C ⊗ IA(ρSA)
+when acting locally on a bipartite input state ρSA on
+HS ⊗ H A: in this case, this means that we want the out-
+put C ⊗ IA(ρSA) to be a positive matrix for any positive
+input ρSA. We now raise the level from states to chan-
+nels, and ask which are the admissible transformations
+of channels. Again, the minimal requirements for an ad-
+missible transformation will be linearity and complete
+positivity. Linearity is motivated in the very same way
+as for transformations of states. Likewise, complete posi-
+tivity is needed to ensure that the transformation can be
+applied locally on a bipartite channel. This investigation
+has been carried out in Ref. [17].
+Let us consider maps ˜S from linear maps T :
+L(H1) → L (H2) to linear maps T ′ : L(H0) → L (H3).
+We say that ˜S is admissible if i) it is linear and if ii) it
+preserves complete positivity, also when it is applied lo-
+cally on a bipartite map R. More explicitly, condition ii)
+requires that if R from L(H1)⊗L (HA) to L(H2)⊗L (HB)
+is CP, then also R′= ( ˜S ⊗ ˜I )(R) from L(H0) ⊗ L(HA)
+to L(H3) ⊗ L (HB) is CP. The admissibility properties
+can be mathematically characterized if we consider the
+conjugate map S of ˜S , deﬁned as follows
+S := C ◦ ˜S ◦C− 1, (39)
+that transforms the Choi-Jamio/suppress lkowski operatorT of T
+into the Choi-Jamio/suppress lkowski operatorT ′ of the map T ′
+(see Fig. 6). Linearity of ˜S is equivalent to linearity
+of S , while the second property for ˜S is equivalent to
+complete positivity of S . Since S is in one-to-one corre-
+spondence with ˜S , we associate the Choi-Jamio/suppress lkowski
+operator S of S to both of them. In the present Sec-
+tion we will systematically use the map S instead of ˜S
+for simplicity, however the whole construction that fol-
+lows must be intended as dealing with transformations
+of transformations rather than with transformations of
+operators, thus generating an inﬁnite hierarchy of higher–
+rank quantum maps.
+To tackle the characterization of all admissible quan-
+tum maps, we start by deﬁning a particular family of
+FIG. 6: The commutative diagram shows the relation be-
+tween a transformation ˜S from linear maps T to linear maps
+T ′ and its conjugate S := C ◦ ˜S ◦ C− 1 through the Choi-
+Jamio/suppress lkowski isomorphism, transforming Choi-Jamio/suppress lkowski
+operators T to Choi-Jamio/suppress lkowski operatorsT ′.
+maps along with their Choi-Jamio/suppress lkowski operators:
+Deﬁnition 3 A quantum 1-comb on (H0, H1) is the
+Choi-Jamio/suppress lkowski operator of a linear CP map from
+L(H0) to L(H1). For N ≥ 2 a quantum N -comb on
+(H0, . . . ,H2N − 1) is the Choi-Jamio/suppress lkowski operator of an
+admissible N -map, i.e. a linear completely positive map
+transforming (N − 1)-combs on (H1, . . . ,H2N − 2) into 1-
+combs on (H0, H2N − 1).
+Deﬁnition 4 A deterministic 1-comb is the Choi-
+Jamio/suppress lkowski operator of a channel. Adeterministic
+N -comb S(N ) is the Choi-Jamio/suppress lkowski operator of a
+deterministic N -map, i.e. a map S (N ) that trans-
+forms deterministic (N − 1)-combs into deterministic
+1-combs. A probabilistic N -comb on (H0, . . . ,H2N − 1)
+is a positive operator R(N ) ∈ L (⨂2N − 1
+k=0 Hk) such that
+R(N ) ≤ S(N ) for some deterministic N -comb S(N ) on
+(H0, . . . ,H2N − 1).
+Deﬁnition 3 generates recursively an inﬁnite family of
+maps. However, N -maps do not cover all possible maps
+one can deﬁne in quantum mechanics. Indeed, one might
+also consider maps from N -combs to M -combs, take their
+Choi-Jamio/suppress lkowski operators, deﬁne maps thereof, and so
+on, with an exponential growth of the tree of admissible
+quantum maps. However, we will prove in subsection
+IV C that all admissible quantum maps can be reduced
+to N -maps.
+Remark (labeling of Hilbert spaces). A quan-
+tum comb is deﬁned as an operator acting on an ordered
+sequence of Hilbert spaces. Precisely, an N -comb is as-
+sociated to an ordered sequence of 2 N Hilbert spaces,
+which in Deﬁnition 3 are generically labeled as Hk,
+0 ≤ k ≤ 2N − 1 (in the following we will need to relabel
+spaces also with 1 ≤ k ≤ 2N ); we will then denote the
+set of deterministic N -combs on such N -tuple of spaces
+by comb(H0, . . . ,H2N − 1) (or by comb( H1, . . . ,H2N )).
+The assignment of labels can be easily done by exploit-
+ing an intuitive diagrammatic representation of quantum
+combs. In Fig. 7 an N -comb is denoted by a comb-
+like diagram with N teeth labeled by an ordered se-
+quence of integers from left to right. Quantum systems
+are denoted by lines, and quantum operations (1-combs)
+by boxes. Each tooth j (0 ≤ j ≤ N − 1) has an in-
+put (left) and output (right) system, that, apart from
+
+===== PAGE 11 =====
+
+11
+cases that will be speciﬁed, are canonically labeled 2 j
+and 2 j + 1, respectively. To describe the action of an
+0
+0 1 2 3 4 5 6 7
+0 1 0 1 2
+1 2 0 30 1 2
+FIG. 7: In the ﬁrst row we illustrate the diagrammatic rep-
+resentation of combs. A quantum system is represented by a
+line, a quantum operation (1-comb) by a box, a 2-comb by
+a diagram with 2 teeth, and a 3-comb by a diagram with 3
+teeth. In the second row we represent the map correspond-
+ing to a 4-comb, transforming the input 3-comb in an output
+1-comb.
+N -comb on an ( N − 1)-comb, the Hilbert spaces of the
+N -comb are labeled canonically as Hk, 0 ≤ k ≤ 2N − 1,
+while the spaces of the input ( N − 1)-comb are labeled
+as Hk, 1 ≤ k ≤ 2N − 2. The output is an element of
+comb(H0, H2N − 1), as in Deﬁnition 3.
+In the following we characterize the convex set of quan-
+tum N -combs:
+Theorem 5 A positive operator S(N ) on ⨂2N − 1
+k=0 Hk is a
+deterministic N -comb if and only if the following identity
+holds:
+Tr2j− 1[S(j)] = I2j− 2 ⊗ S(j− 1), 2 ≤ j ≤ N
+Tr1[S(1)] = I0,
+(40)
+where S(j), 1 ≤ j ≤ N − 1 are deterministic j-combs.
+Before proving the theorem, we introduce two lemmas
+that will make the proof simpler.
+Lemma 5 The set of positive operators R(N ) such that
+R(N ) ≤ S(N ) for some S(N ) satisfying Eq. (40) generates
+the positive cone in L(⨂2N − 1
+k=0 Hk).
+Proof. The operator J (N ) := I/(d2 . . . d2k . . . d2N ),
+where dk = dim Hk, clearly satisﬁes Eq. (40). On the
+other hand, any positive operator T (N ) on ⨂2N
+k=1 Hk,
+suitably rescaled, is smaller than J (N ), whence it is
+proportional by a positive factor to a positive operator
+R(N ) ≤ J (N ). ■
+Lemma 6 Consider two positive operators RN
+i , i = 1, 2,
+such that R(N )
+i ≤ S(N )
+i for some S(N )
+i satisfying Eq. (40).
+If
+Tr2N − 1[R(N )
+1 ] = Tr2N − 1[R(N )
+2 ], (41)
+then there exists T (N ) ≥ 0 such that O(N )
+i := R(N )
+i +T (N )
+satisfy Eq. (40) for i = 1, 2.
+Proof. Since R(N )
+1 ≤ S(N )
+1 there exists T (N ) ≥ 0 such
+that O(N )
+1 := S(N )
+1 = R(N )
+1 + T (N ). Due to Eqs. (40)
+and (41) also the operator O(N )
+2 := R(N )
+2 + T (N ) satisﬁes
+Eq. (40). ■
+Proof of theorem 5. The proof proceeds by in-
+duction. For N = 1 the thesis is trivial: an opera-
+tor S(1) ∈ L (H0 ⊗ H 1) is the Choi-Jamio/suppress lkowski oper-
+ator of a channel from L(H0) to L(H1), if and only if
+Tr1[S(1)] = I0 (see Eq. (4)). We now suppose the theo-
+rem holds for 1 ≤ M ≤ N , and show that it must hold
+also for N + 1.
+Suﬃcient condition. If S(N +1) is positive and sat-
+isﬁes Eq.(40), then it is a deterministic ( N + 1)-comb.
+Indeed, it is the Choi-Jamio/suppress lkowski operator of the CP
+map S (N +1), from L(⨂2N
+k=1 Hk) to L(H2N +1 ⊗ H 0), de-
+ﬁned by
+S (N +1)
+(
+R(N )
+)
+= Tr2N,...,1
+[
+(I2N +1 ⊗ R(N )T ⊗ I0)S(N +1)
+]
+.
+(42)
+For deterministic R(N ) the operator S (N +1) (
+R(N ))
+is
+the Choi-Jamio/suppress lkowski operator of a channel, because
+S (N +1) (
+R(N ))
+≥ 0 and
+TrH2N +1[S (N +1)
+(
+R(N )
+)
+] =
+Tr2N +1,...,1
+[
+(I2N +1 ⊗ R(N )T ⊗ I0)S(N +1)
+]
+=
+Tr2N,...,1
+[
+(R(N )T ⊗ I0)(I2N ⊗ S(N ))
+]
+=
+Tr2N − 1,...,1
+[
+(I2N − 1 ⊗ R(N − 1)T ⊗ I0)S(N )
+]
+= I0.
+(43)
+The ﬁnal equality is obtained considering that by the
+induction hypothesis R(N − 1) is a deterministic N − 1-
+comb, and by hypothesis S(N ) is a deterministic N -comb.
+Necessary condition. Let S(N +1) be an
+(N + 1)-comb and S (N +1) be the correspond-
+ing map, which transforms a deterministic N -comb
+O(N ) ∈ comb(H1, . . . ,H2N ) into a deterministic 1-comb
+S (N +1)(O(N )) ∈ comb(H0, H2N +1). Then, consider a
+couple of probabilistic N -combs R(N )
+1 , R(N )
+2 on ⨂2N
+k=1 Hk,
+such that
+Tr2N
+[
+R(N )
+1
+]
+= Tr2N
+[
+R(N )
+2
+]
+. (44)
+Since R(N )
+i is probabilistic, by Def. 4 there exists a de-
+terministic N -comb Q(N )
+i such that R(N )
+i ≤ Q(N )
+i . By
+lemma 6 there exists T (N ) such that O(N )
+i := R(N )
+i +T (N )
+is deterministic for some i = 1, 2. Then we have
+Tr2N +1
+[
+S (N +1)
+(
+O(N )
+1
+)]
+= I0
+= Tr2N +1
+[
+S (N +1)
+(
+O(N )
+2
+)]
+,
+(45)
+and consequently
+Tr2N +1
+[
+S (N +1)
+(
+R(N )
+1
+)]
+= Tr2N +1
+[
+S (N +1)
+(
+R(N )
+2
+)]
+.
+(46)
+
+===== PAGE 12 =====
+
+12
+In particular, by taking R(N )
+2 = σ ⊗ Tr2N [R(N )
+1 ] for some
+state σ on H2N , and using Eq. (3) one has
+Tr2N,...,1
+[
+(R(N )T
+1 ⊗ I0) Tr2N +1
+[
+S(N +1)
+]]
+(47)
+= Tr2N,...,1
+[
+(R(N )T
+1 ⊗ I0) ( I2N ⊗ S(N ))
+]
+, (48)
+where we deﬁned
+S(N ) := Tr2N +1,2N [(I2N +1⊗ σT ⊗ I2N − 1⊗· · ·⊗I0)S(N +1)].
+Comparing Eq. (47) with Eq. (48), and using the fact
+that probabilistic combs generate the cone of positive
+operators, we then obtain
+Tr2N +1[S(N +1)] = I2N ⊗ S(N ). (49)
+To conclude the proof, we need to prove that S(N ) is a
+deterministic N -comb. To this purpose, deﬁne the CP
+map S (N ) from operators on ⨂2N − 2
+k=1 Hk to operators on
+H0 ⊗ H 2N − 1 as
+S (N )(R(N − 1))
+:= Tr2N − 2,...,1[(I2N − 1 ⊗ R(N − 1)T ⊗ I0)S(N )].
+(50)
+The map sends deterministic N − 1-combs in determin-
+istic 1-combs. Indeed, for any deterministic N − 1-comb
+R(N − 1) we have
+Tr2N − 1[S (N )(R(N − 1))] =
+= Tr2N − 1,...,1[(I2N − 1 ⊗ R(N − 1)T ⊗ I0)S(N )]
+= Tr2N +1,...,1[(I2N +1 ⊗ σT ⊗ I2N − 1 ⊗ R(N − 1)T ⊗ I0)
+S(N +1)]
+= Tr2N +1[S (N +1)(σ ⊗ I2N − 1 ⊗ R(N − 1))] (51)
+for any state σ on H2N . Using the induction hypothesis,
+we know that σ ⊗ I2N − 1 ⊗ R(N − 1) is a deterministic N -
+comb. Then the map S (N ) is deterministic, since
+Tr2N − 1[S (N )(R(N − 1))]
+= Tr2N +1[S (N +1)(σ ⊗ I2N − 1 ⊗ R(N ))] = I0.
+(52)
+This completes the proof. ■
+The deterministic N -combs S(N ) ∈
+comb(H0, . . . ,H2N − 1) form a convex set KN which
+is the intersection of the cone of positive operators with
+the hyperplanes deﬁned by Eq. (40). If we consider also
+the probabilistic combs, we have then the following:
+Remark. The cone generated by probabilistic N -
+combs in L(⨂2N − 1
+k=0 Hk) is the whole cone of positive op-
+erators.
+Essentially, the above result implies that the only rel-
+evant cone in quantum mechanics is the cone of positive
+operators. Another important consequence of Theorem 5
+is the isomorphism between deterministic N -combs and
+Choi-Jamio/suppress lkowski operators ofN -partite channels with
+memory:
+Corollary 3 A deterministic N -comb is also the Choi-
+Jamio/suppress lkowski operator of anN -partite memory channel.
+Proof. Immediate from Theorems 3 and 5. ■
+The following theorem ﬁnally proves that any deter-
+ministic map in the hierarchy has a physical realization
+provided by a quantum memory channel. Notice that,
+as we mentioned at the beginning of the present section,
+the realization theorem regards the maps ˜S (N ) acting on
+N − 1-maps ˜T (N +1).
+Theorem 6 (Realization of admissible N -maps)
+For all N , any deterministic N -map ˜S (N ) can
+be achieved by a physical scheme tallying with the
+memory channel corresponding to its deterministic
+N -comb S(N ). Let T (N − 1) be any (N − 1)-comb in
+comb(H1, . . . ,H2N − 2). The transformation
+˜S (N ) : ˜T (N − 1) ↦→ ˜T ′(1) = ˜S (N )
+(
+˜T (N − 1)
+)
+(53)
+can be achieved by connecting the two memory channels
+represented by S(N ) and T (N − 1) as in Fig. 9.
+Proof. The statement is trivial for a deterministic 1-
+comb, which is a quantum channel. Now, by induction,
+suppose that the transformation ˜T (N − 1) corresponding
+to a deterministic N − 1 comb T (N − 1) is realized by the
+N − 1-partite memory channel having Choi-Jamio/suppress lkowski
+operator T (N − 1), as in Fig. 8. Let W0, i = 1 , . . . , N − 2
+be the Choi-Jamio/suppress lkowski operators of then interactions
+occurring in the memory channel, then T (N − 1) can be
+expressed as
+T (N − 1) = ¯WN − 2 ∗WN − 1 ∗ · · · ∗W0, (54)
+where the Choi-Jamio/suppress lkowski operator¯X denotes the in-
+teraction described by X with the ﬁnal ancilla traced out.
+By Corollary 3 also S(N ) is the Choi-Jamio/suppress lkowski oper-
+ator of a memory channel, then S(N ) can be expressed
+as
+S(N ) = ¯VN − 1 ∗VN − 2 ∗ · · · ∗V0, (55)
+for suitable isometries Vi, where the link connects all the
+spaces representing ancillae. The application of S (N ) =
+C ◦ ˜S (N ) ◦C− 1 to T (N − 1) = C( ˜T (N − 1)) provides
+S (N )
+(
+T (N − 1)
+)
+= S(N ) ∗T (N − 1)
+= ¯VN − 1 ∗ ¯WN − 2 ∗VN − 2 ∗ · · · ∗W0 ∗V0,
+(56)
+This proves that also the N -map ˜S (N ) can be physically
+realized by a scheme as in Fig. 8. Clearly, Eq. (56) pre-
+scribes that the action of ˜S (N ) on ˜T (N − 1) corresponds
+to connecting the two memory channels associated to
+S(N ) and T (N − 1) as in Fig. 9. ■
+Remark (axiomatic approach to memory chan-
+nels). It is worth noticing that in the present setting
+N -partite memory channels are derived from the recur-
+sive construction of admissible maps, rather than being
+
+===== PAGE 13 =====
+
+13
+FIG. 8: Identiﬁcation of a quantum N -comb with the Choi-
+Jamio/suppress lkowski operator of anN -partite memory channel. The
+teeth of the comb correspond to the isometries {V0, . . . ,VN− 1}
+in the memory channel.
+FIG. 9: Realization of admissible N -maps by connection
+of memory channels. The input of the map is an ( N − 1)-
+comb, corresponding to a sequence of N − 1 isometric channels
+{W0, . . . ,WN− 2}. The Choi-Jamio/suppress lkowski operator of the map
+is an N -comb, corresponding to a sequence of N isometric
+channels {V0, . . . ,VN− 1}. The output of the map is obtained
+by connecting the free wires of the two memory channels.
+assumed as a particular type of channels with additional
+causal structure. In this respect our approach diﬀers
+with the axiomatization put forward by Kretschamnn
+and Werner in Ref. [11], where memory channels are de-
+rived by starting from the axiomatic deﬁnition of causal
+automata, i.e. multipartite quantum channels with the
+properties that i) the output systems at former times are
+not inﬂuenced by input systems at later times, and ii)
+the action of the channel is invariant under time trans-
+lations. In the present approach, instead, the quantum
+memory channel emerges in the Russian-dolls construc-
+tion of maps on maps and the causal structure is gener-
+ated by the map-recursion.
+In this respect, we would like to stress the interpreta-
+tion of Eq. (25) as the mathematical translation of causal
+ordering. In technical terms, this equation reﬂects the
+semicausality property [12] for transformations occurrin g
+at teeth j and i, with j < i . This property is the mathe-
+matical translation of independence of the j-th transfor-
+mation from the i-th transformation for j < i , namely the
+fact that information can be transmitted from systems j
+to system i > j , while the converse is impossible.
+B. Tensor product combs and separable combs
+As deﬁned in subsection IV A, a quantum N -
+comb is a positive operator over a tensor product
+of Hilbert spaces labeled by elements of a totally
+ordered set. We now show how to combine two
+combs, say S(N ) ∈ comb(K0, . . . ,K2N − 1) and T (M) ∈
+comb(K′0, . . . ,K′2M− 1), in such a way to obtain a new
+comb whose teeth are the teeth of both S(N ) and T (M),
+e. g. putting them in series, or in parallel, or in any
+other way as in Fig. 10a. This corresponds to take the
+tensor product of the operators S(N ) and T (M) and suit-
+ably reorder the Hilbert spaces of their teeth. Instead
+of counting the swap operators corresponding to such re-
+ordering, we will explicitly show how to construct the re-
+sulting comb space. We need to consider also situations
+as in Fig. 10b, where two teeth, one from each comb, are
+identiﬁed in a single tooth. It follows that the general
+rule for the tensor product of combs is the following.
+Let S(N ) ∈ comb(K0, . . . ,K2N − 1) and T (M) ∈
+comb(K′0, . . . ,K′2M− 1) be two quantum combs. Con-
+sider the following procedure
+1. Merge the sets of teeth of both combs in a single
+ordered set, preserving the relative ordering of each
+subset.
+2. Consider the set C of all couples of neighboring
+teeth containing a tooth from each comb, and select
+a subset S ⊆ C of pairwise disjoint couples, whose
+cardinality is denoted by S := |S|.
+3. Identify each couple in S in a single tooth (namely,
+the ﬁnal tooth has input space given by the ten-
+sor product of the input spaces of the teeth in the
+couple, and similarly for the output space).
+As a result, we obtain an ordered sequence of Hilbert
+spaces ( H0, . . . ,H2L− 1), with L := ( N + M − S), which
+are the input and output spaces of the teeth deﬁned and
+ordered trough the previous procedure.
+Deﬁnition 5 (T ensor product combs) A tensor
+product comb of S(N ) and T (M) is the element of
+comb(H0, . . . ,H2L− 1) corresponding to the operator
+S(N ) ⊗ T (M) with (H0, . . . ,H2L− 1) deﬁned through the
+previous procedure.
+As a consequence, the tensor product of S(N ) and T (M)
+is not unique, depending on the merging of teeth and on
+the choice of the set S of identiﬁed couples. As an exam-
+ple, in Fig. 10 we represent all possible tensor products
+of two combs in the case N = M = 2.
+Remark. We could have enclosed a more general
+situation in the deﬁnition of the tensor product of two
+combs, as follows. After dividing the couples in the set
+S into two sets E and I, proceed as in step 3 of the
+procedure with S replaced by E. As regards the remain-
+ing couples in I, consider them to be independent. In
+this way, the ﬁnal operator S(N ) ⊗ T (N ) is considered
+as an element of a subset SI ⊆ comb(H0, . . . ,H2L− 1),
+such that if one swaps couples in I the resulting opera-
+tor is in comb( H′0, . . . ,H′2L− 1) where ( H′0, . . . ,H′2L− 1)
+is the corresponding reordering of ( H0, . . . ,H2L− 1). If
+(i, j) ∈ I , then any comb in SI satisﬁes the following
+identities
+Tr2j+1[R(j+1)] = I2j ⊗ R′(j),
+Tr2i+1[R(j+1)] = I2i ⊗ R′′(j).
+(57)
+A very simple example of 2-comb in SI with I = {(0, 1)}
+is the comb of any convex combination of tensor product
+
+===== PAGE 14 =====
+
+14
+S
+0 1 0 1
+1 0 0 1
+0 1 0 1
+T
+S
+S
+T
+0 1 0 1
+S
+T
+1 0 0 1
+T
+S
+S
+T
+0 1 0 1
+T
+(a)
+0
+0 1
+T
+S
+1
+0
+S
+1
+0 1
+T
+1
+S
+0
+1 0
+T
+1
+1
+T
+S
+0
+0
+0
+0
+T
+S
+1
+1
+(b)
+FIG. 10: Diagrammatic representation of all diﬀerent quan-
+tum combs arising from the tensor product of a 2-comb S(2)
+with a 2-comb T (2).
+channels R := ∑
+i piC(i)
+32 ⊗ D(i)
+10 , where pi are probabil-
+ities, Tr 3[C(i)] = I2 and Tr 1[D(i)] = I0 for all i. An-
+other important example of 2-comb in SI with the same
+I as in the previous case is the following. Consider two
+channels, with input spaces H0 ⊗ H A and H2 ⊗ H B,
+respectively. The output spaces are H1 and H3, re-
+spectively. If the channels are applied to a ﬁxed state
+|Ψ ⟩ ⟩AB ∈ H A ⊗ H B, then the resulting bipartite channel
+from H0 ⊗ H 2 to H1 ⊗ H 3 can be viewed as a 2-comb in
+both comb( H0, H1, H2, H3) and comb( H2, H3, H0, H1).
+One might think that all combs in SI, with I = {(0, 1)},
+are achievable by two local channels—one from H0 ⊗ HA
+to H1 and one from H2 ⊗ H B to H3—applied to a bi-
+partite, possibly entangled ancillary state on HA ⊗ H B.
+However, there exist counterexamples to this conjecture,
+introduced in Refs. [13, 14]. In particular, the ex-
+plicit counterexample of Ref. [14] corresponds to the
+following comb in comb( H0, H1, H2, H3) with Hi ≃ C2,
+that for sake of simplicity we write as an operator on
+H1 ⊗ H 3 ⊗ H 0 ⊗ H 2,
+R := 1
+2 |I⟩ ⟩⟨ ⟨I|13 ⊗ (I − P )02 + 1
+2 |σx⟩ ⟩⟨ ⟨σx|13 ⊗ P02, (58)
+where P = |1⟩⟨1| ⊗ |1⟩⟨1|. One can verify that R ∈
+SI. However, any conceivable scheme for achieving the
+corresponding map requires at least one round of classical
+information, in addition to a shared entangled state.
+C. Admissible (N, M )-maps and higher order
+quantum maps
+In this paragraph we give a deﬁnition of admissi-
+ble quantum maps ˜S (N,M ) from N -maps ˜T (N ) to M -
+maps ˜T ′(M), showing that the corresponding Choi-
+Jamio/suppress lkowski operators are quantum combs themselves.
+This will allow us to prove that the whole hierarchy of
+admissible quantum maps deﬁned axiomatically can be
+realized in terms of quantum memory channels. While
+a reasonable deﬁnition of a map from N -maps to M -
+maps might seem to require only linearity and complete
+positivity, such a deﬁnition turns out to be inadequate.
+As we will see in the following, a consistent deﬁnition of
+admissible map involves an additional requirement, that
+is compatibility with remote connections . To introduce
+this requirement, and the correct deﬁnition, we ﬁrst start
+from the deﬁnition involving only linearity and complete
+positivity, and show the need of this additional property.
+As in the previous subsection, we will focus attention on
+the conjugate maps S (N,M ) := C ◦ ˜S (N,M ) ◦C− 1, trans-
+forming N -combs into M -combs.
+Deﬁnition 6 An (N, M )-map S (N,M ) is a linear com-
+pletely positive map transforming comb(K0, . . . ,K2N − 1)
+into comb(K′0, . . . ,K′2M− 1).
+Deﬁnition 7 An (N, M )-map S (N,M ) is deterministic
+if it sends deterministic N -combs to deterministic M -
+combs. An (N, M )-map R(N,M ) is probabilistic if its
+Choi-Jamio/suppress lkowski operatorR(N,M ) satisﬁes R(N,M ) ≤
+S(N,M ) with S(N,M ) the Choi-Jamio/suppress lkowski operator of
+some deterministic map S (N,M ).
+We have then the following equivalence:
+Lemma 7 Let S (N,M ) be a deterministic (N, M )-map.
+Then S (N,M ) is in one-to-one correspondence with a CP-
+map S (N × M) that transforms tensor product operators
+R(N ) ⊗ O(M− 1) of deterministic N - and (M − 1)-combs
+into deterministic 1-combs.
+Notice that the above statement does not involve ten-
+sor product combs, but only tensor product operators: in
+other words, there is no ﬁxed total ordering of the Hilbert
+spaces on which the operator R(N ) ⊗ O(M− 1) acts.
+Proof. Suppose that S (N,M ) maps an N -comb R(N ) ∈
+comb(K0, . . . ,K2N − 1) to R′(M) = S (N,M )(R(N )) ∈
+
+===== PAGE 15 =====
+
+15
+comb(K′0, . . . ,K′2M− 1). In terms of Choi-Jamio/suppress lkowski
+operators, we have R′(M) = S(N,M ) ∗R(N ), where S(N,M )
+is the Choi-Jamio/suppress lkowski operator ofS (N,M ). By def-
+inition, the output comb R′(M) will be in turn the
+Choi-Jamio/suppress lkowski operator of a mapR′(M) that trans-
+forms comb( K′1, . . . ,K′2M− 2) into comb( K′
+0, K′
+2M− 1) as
+follows:
+R′(M)(O(M− 1)) = R′(M) ∗O(M− 1)
+= S(N,M ) ∗R(N ) ∗O(M− 1)
+= S(N,M ) ∗(R(N ) ⊗ O(M− 1)), (59)
+where the last equality exploits Eq. (15). Therefore, the
+map S (N,M ) induces a map sending tensor product op-
+erators R(N ) ⊗ O(M− 1) to 1-combs.
+S (N × M)(R(N ) ⊗ O(M− 1)) := S(N,M ) ∗(R(N ) ⊗ O(M− 1)).
+(60)
+Clearly, if R(N ) and O(M− 1) are deterministic then
+S (N × M)(R(N ) ⊗ O(M− 1)) is deterministic. Viceversa,
+given a CP-map S (N × M) with Choi-Jamio/suppress lkowski op-
+erator S(N × M), we can deﬁne the map S (N,M ) as
+S (N,M )(R(N )) = S(N × M)∗R(N ). If S (N × M) sends prod-
+ucts of deterministic combs into channels, then S (N,M )
+is deterministic. ■
+The ( N, M )-maps deﬁned in Defs. 6 and 7 are then
+identiﬁed with maps that transform tensor products of
+N - and ( M − 1)-combs into 1-combs. In other words,
+this means that if we have at disposal a device imple-
+menting an (N, M )-map ˜S (N,M ) = C− 1◦S (N,M )◦C from
+transformations ˜R(N ) to transformations ˜R′(M), we can
+use it to transform a pair of independent transformations
+˜R(N ) ⊗ ˜O (M− 1) into a channel as follows
+˜S (N × M)( ˜R(N ) ⊗ ˜O (M− 1)) := [ ˜S (N,M )( ˜R(N ))]( ˜O (M− 1))
+(61)
+However, we want to be able to use this device also lo-
+cally on transformations ˜T (N ) ⊗ ˜T ′(M− 1) with multi-
+partite input and output spaces, still producing a legiti-
+mate output. If the map ˜S (N × M) can act locally on two
+multipartite maps, the conjugate map S (N × M) acts lo-
+cally on the tensor product of two multipartite quantum
+combs T (N ) ⊗ T ′(M− 1). Since the physical implementa-
+tion of T (N ) and T ′(M− 1) is provided by two memory
+channels, we must also admit that the two input net-
+works can be remotely connected among themselves by
+some quantum memory. Deciding which remote connec-
+tions we assume to be possible is equivalent to ﬁxing a
+prescription for the causal ordering of the Hilbert spaces
+in the tensor product, thus turning the tensor product op-
+erator R(N ) ⊗ O(M− 1) into a tensor product comb, in the
+sense of Deﬁnition 5. Moreover, the possibility of remote
+connections entails the need of replacing the tensor prod-
+uct comb R(N ) ⊗ O(M− 1)—representing two independent
+quantum networks—with a general ( N +M − S − 1)-comb
+R(N +M− S− 1)—representing the compound network ob-
+tained by remote connections. Therefore, in order for
+the map S (N,M ) to represent a legitimate determinis-
+tic quantum device, it should induce a transformation
+of deterministic ( N + M − S − 1)-combs into channels.
+In other words, S (N × M) must be an admissible map on
+(N + M − S − 1)-combs deﬁned through the tensor prod-
+uct. This crucial property, however, is not guaranteed by
+Deﬁnitions 6 and 7.
+As a consequence of the choice of one deﬁnition of
+tensor product, the map S (N × M) is then an admissi-
+ble N + M − S-map S N +M− S in the sense of Deﬁnition
+3, with respect to the total ordering of the Hilbert spaces
+in the tensor product. The above discussion motivates
+the following deﬁnition
+Deﬁnition 8 (Admissible (N, M )-maps) Let
+(H1, . . .H2L) be a reordering of spaces (K0, . . . ,K2N − 1)
+and (K′
+0, . . . ,K′
+2M− 3) as in deﬁnition 5, with
+L = M + N − S − 1. An (N, M )-map S (N,M )
+from comb(K0, . . . ,K2N − 1) to comb(K′0, . . . ,K′2M− 1) is
+admissible if the associated map S (L) is an admissible L-
+map, sending comb(H1, . . . ,H2L) to comb(H0, H2L+1).
+Deﬁnition 9 An admissible (N, M )-map is determinis-
+tic (probabilistic) if the corresponding map S (N +M− S) is
+deterministic (probabilistic).
+As an immediate consequence of the deﬁnition, we then
+have the following identiﬁcation:
+Theorem 7 The Choi-Jamio/suppress lkowski operator of an ad-
+missible (N, M )-map is a quantum (N +M − S − 1)-comb.
+The comb is deterministic if and only if the map is de-
+terministic.
+Proof. By deﬁnition the map S (N,M ) has the same
+Choi-Jamio/suppress lkowski operator asS (N +M− S− 1). The
+Choi-Jamio/suppress lkowski operatorS(N,M ) is then the Choi-
+Jamio/suppress lkowski operator of an admissible (N +M − S)-map,
+i.e. it is an ( N + M − S)-comb. ■
+One might continue now the recursive generation of
+quantum maps by deﬁning admissible maps that trans-
+form admissible ( N, M )-maps into admissible ( K, L)-
+maps. However, it is now clear that—as long as indepen-
+dent teeth are excluded—such maps are in correspon-
+dence with N + M + K + L-combs. Similarly, further
+levels in the hierarchy of admissible maps are always ad-
+missible maps on combs, and hence combs themselves. In
+other words, the whole hierarchy of admissible quantum
+maps eventually collapses on N -maps ˜S (N ), correspond-
+ing to quantum combs S(N ). The conclusion of the whole
+construction is the following property of universality of
+memory channels, holding if one neglects the possibility
+of tensor product combs with independent teeth
+Theorem 8 (Universality of quantum memory
+channels) The Choi-Jamio/suppress lkowski operator of every de-
+terministic admissible quantum map is a quantum comb
+S(N +M), and coincides with the Choi-Jamio/suppress lkowski op-
+erator of a suitable sequence of memory channels. Any
+deterministic admissible quantum map is realized by in-
+terconnection of the input sequence of memory channels,
+corresponding to the input comb T (N ), with the sequence
+corresponding to S(N +M).
+
+===== PAGE 16 =====
+
+16
+As an example, we show all possible schemes for ad-
+missible (2 , 2)-maps in Fig. 11.
+FIG. 11: The ﬁve possible realization schemes for admissibl e
+(2, 2) maps, that transform a 2-comb in a 2-comb.
+Remark. If we allow for independent teeth, the
+(N, M )-map as a map on the tensor product S(N ) ⊗
+T (M− 1) must be admissible in a new sense, which is
+less restrictive than deﬁnition 8. Indeed, it must only
+map the set SI to the set of channels. Such maps
+are diﬃcult to characterize and in general they are not
+combs, as one can understand by the following exam-
+ple. We will analyze the most elementary case, namely
+SI ⊆ comb(H1, . . . ,H4), with I = {(0, 1)},
+Tr4[R] = I3 ⊗ C21, Tr2[C] = I1, (62)
+Tr2[R] = I1 ⊗ D43, Tr4[D] = I3. (63)
+These combs can be interpreted both as combs on H4 ⊗
+H3 ⊗ H 2 ⊗ H 1 and on H2 ⊗ H 1 ⊗ H 4 ⊗ H 3, and the set
+of most general admissible maps transforming them into
+channels contains both 3-combs A on H5⊗H 4⊗H 3⊗H 2⊗
+H1 ⊗ H0 and B on H5 ⊗ H2 ⊗ H1 ⊗ H4 ⊗ H3 ⊗ H0. Thus,
+the most general admissible maps on SI include convex
+combinations of the kind C = pA + (1 − p)B, which
+are not combs in any conceivable way, only satisfying
+Tr135[C] = I024. Moreover, not all channels with the
+property Tr135[C] = I024 do actually represent admissible
+maps on SI . We conclude the present paragraph with the
+following open questions
+1. What is the most general realization scheme for
+elements of SI ?
+2. How can we characterize and realize admissible
+maps on SI?
+D. Generalized quantum instruments
+Here we consider an analogue of quantum instruments
+that is suitable to treat a generalized measurement pro-
+cess where the measured object is a quantum network
+(described by its Choi-Jamio/suppress lkowski operator), rather
+than a quantum system (described by its state). Such
+a generalized instrument will associate to each measure-
+ment outcome the conditional Choi-Jamio/suppress lkowski opera-
+tor of the quantum network. Notice that the number of
+input/output systems in the network can change in this
+generalized measurement process, so that in principle we
+should consider probabilistic transformations from net-
+works with N inputs/outputs (described by N -combs)
+to arbitrary networks with M inputs/outputs (described
+by M -combs). However, since we proved in the previ-
+ous paragraph that any admissible map from N -combs
+to M -combs is equivalent to an admissible map from
+(N + M − 1)-combs to 1-combs, we can reduce with-
+out loss of generality the analysis of instruments to this
+simpler case.
+Deﬁnition 10 (Generalized N -instrument) . An
+N -instrument I is a set of probabilistic N -combs {S(N )
+i }
+such that ∑
+i S(N )
+i is a deterministic N -comb.
+For simplicity we have conﬁned here our attention to
+the case of instruments with ﬁnite number of outcomes.
+The extension to the case of measurements with arbitrary
+outcome space Ω is obtained by deﬁning the instrument
+as a Choi-Jamio/suppress lkowski-operator valued measureS(N )(B)
+[15], which associates to any event B ⊆ Ω a probabilistic
+quantum N -comb S(N )(B). The normalization of the
+measure amounts to the requirement that S(N )(Ω) is a
+deterministic N -comb.
+Theorem 9 For any probabilistic N -comb R(N ) there
+exists an N -instrument I such that R(N ) ∈ I .
+Proof. By deﬁnition, there exists a deterministic N -
+comb S(N ) such that S(N ) ≥ R(N ). Then, ˜R(N ) :=
+S(N ) − R(N ) ≥ 0 and S(N ) ≥ ˜R(N ), then ˜R(N ) is a prob-
+abilistic N -comb, and I := {R(N ), ˜R(N )} is a generalized
+N -instrument ■
+A quantum N -instrument {S(N )
+i } can be used to de-
+ﬁne a family of probabilistic maps {S (N )
+i } from (N − 1)-
+combs R(N − 1) to Choi-Jamio/suppress lkowski operators of quan-
+tum operations {Q(1)
+i }, by means of
+Q(1)
+i = S (N )
+i (R(N − 1)) = S(N )
+i ∗R(N − 1). (64)
+This means that the quantum network with Choi-
+Jamio/suppress lkowski operatorR(N − 1) is randomly trans-
+
+===== PAGE 17 =====
+
+17
+FIG. 12: Realization of an N -instrument as a sequence of
+N isometric channels {V0, . . . ,VN− 1} followed by a von Neu-
+mann measurement on the ancillary degrees of freedom. The
+input of the instrument is an ( N − 1)-comb, corresponding to
+a sequence of isometric channels {W0, . . . ,WN− 2}. Condition-
+ally to outcome i, the output of the instrument is a quantum
+operation, which represents the input-output transformat ion
+of the whole composite network.
+formed in one of the quantum operations with Choi-
+Jamio/suppress lkowski operators{Q(1)
+i }. The realization of any
+generalized instrument is given by the following
+Theorem 10 (Realization of N-instruments) Let
+I = {S(N )
+i | i = 1 , . . . , k} be an N -instrument, and
+let R(N − 1) be an (N − 1)-comb. The probabilistic
+transformations {S (N )
+i } given by
+S (N )
+i : R(N − 1) ↦→ S (N )
+i
+(
+R(N − 1)
+)
+= S(N )
+i ∗R(N − 1)
+(65)
+can be achieved by a physical scheme as in Fig. 12, in-
+volving isometric interactions of systems with quantum
+memories and a ﬁnal von Neumann measurement on an
+ancilla with Hilbert space HA of dimension dim HA = k.
+Proof. Consequence of Theorems 6 and 4.
+E. Quantum testers and the generalized Born rule
+Here we consider the particular case of admissible
+transformations of quantum networks in which input is
+a quantum N -comb and the output is just a probability.
+Such transformations are the analog of the customary
+POVMs describing measurements on quantum systems.
+Deﬁnition 11 (Quantum tester) . An N -tester is a
+set of positive operators {Pi |i = 1, . . . , k} such that the
+quantities
+p(i|R) := Tr[P T
+i R] (66)
+are probabilities for all deterministic N -combs R, i.e.
+p(i|R) ≥ 0 and ∑
+i p(i|R) = 1 .
+Lemma 8 A set {Pi} is an N -tester if and only if
+I = {Pi} is an (N + 1) -instrument with dim H0 =
+dim H2N +1 = 1.
+Proof. The operator T := ∑
+i Pi is a deterministic
+(N + 1)-comb because it transforms any deterministic N -
+comb R to the c-number 1, which—regarded as a Choi-
+Jamio/suppress lkowski operator—represents the only determinis-
+tic channel in a 1-dimensional Hilbert space ■
+Since the tester is a particular case of generalized in-
+strument, the normalization condition for the tester is
+given by Eq. (25), which in terms of T becomes
+T = I2N +2 ⊗ Θ (N )
+Tr2j+1[Θ (j)] = I2j ⊗ Θ (j− 1), 1 ≤ j ≤ n
+Tr1[Θ (0)] = 1
+(67)
+The following corollary comes immediately from theo-
+rems 10 and 8.
+Theorem 11 (Realization of testers) Any N -tester
+{Pi |i = 1 , . . . , k} can be realized by an (N + 1)-comb
+with dim H0 = 1 and dim H2N +1 = k and by a von Neu-
+mann measurement on H2N +1.
+Proof. The scheme is the same as in Theorem 10, except
+the fact that the ancillary Hilbert space HA is now named
+H2N +1. Since the space H0 is one-dimensional, the ﬁrst
+isometry V1 is simply the preparation of an entangled
+state |Ψ ⟩ ⟩. ■
+Notice that the probabilities p(i|R) in the generalized
+Born rule (66) arise as probabilities of outcomes in an
+experiment as in Figure 13, where a pure entangled state
+|Ψ ⟩ ⟩is prepared, and is evolved through a sequence of
+interactions until the ﬁnal measurement on H2N +1.
+We now provide an alternative proof for the realization
+of testers that will be useful for later applications:
+Theorem 12 (Realization scheme for testers)
+Let {Pi} be an N -tester with ∑
+i Pi = T . The tester
+can be split into a coherent part (state preparation and
+isometries) and a POVM, as in Fig. 13. The coherent
+part is described by a map S sending N -combs to
+quantum states according to
+S (R) =
+√
+T
+T
+R
+√
+T
+T
+. (68)
+The POVM {˜Pi} is given by
+˜Pi =
+√
+T ‡Pi
+√
+T ‡+ Qi, (69)
+where T ‡ is the Moore-Penrose generalized inverse of T —
+i.e. T ‡T = T T ‡ = Π , with Π the projector on the support
+of T —and {Qi} is any set of positive operators such that∑
+i Qi = I − Π . The probabilities p(i|R) = Tr[ PiR] are
+given by
+p(i|R) = Tr[ ˜P T
+i S (R)]. (70)
+Proof. Clearly, the set {
+√
+T ‡Pi
+√
+T ‡} is a POVM on
+the support of T , namely ∑
+i
+√
+T ‡Pi
+√
+T ‡ = Π. One can
+consider a POVM {Qi} on the kernel of T with the same
+cardinality as {Pi}. It is now clear that the operators
+˜Pi :=
+√
+T ‡Pi
+√
+T ‡+ Qi (71)
+
+===== PAGE 18 =====
+
+18
+deﬁne a POVM. Notice that by deﬁnition of generalized
+inverse one has Pi =
+√
+T ˜Pi
+√
+T . The probabilities in the
+generalized Born rule Eq. (66) are then obtained as fol-
+lows
+p(i|R) = Tr[
+√
+T
+T ˜P T
+i
+√
+T
+T
+R] (72)
+= Tr[ ˜P T
+i
+√
+T
+T
+R
+√
+T
+T
+] (73)
+= Tr[ ˜P T
+i S (R)]. (74)
+Notice now that ρ :=
+√
+T
+T
+R
+√
+T
+T
+is a state, since
+Tr[ρ] = Tr[ T T R] = 1 due to Eq. (67). The map
+S (R) =
+√
+T
+T
+R
+√
+T
+T
+is clearly completely positive, and
+transforms deterministic ( N − 1)-combs in states, which
+are Choi-Jamio/suppress lkowski operators of channels with one-
+dimensional input space H0. Hence S is an N -comb
+and can be realized by a sequence of isometries accord-
+ing to Theorem 6. The ﬁrst isometry is necessarily a
+state preparation since H0 is one-dimensional. ■
+FIG. 13: Realization of a quantum N -tester as a proba-
+bilistic quantum network consisting of preparation of a pur e
+input state |Ψ ⟩ ⟩, isometric channels {V1, . . . ,VN }, and a ﬁnal
+measurement with POVM { ˜Pi}. The memory channel corre-
+sponding to the sequence of isometric channels {W0, . . . ,WN }
+is tested by connecting its wires with the wires of the tester
+and by running the resulting quantum circuit.
+The special case of N -testers with N = 1, correspond-
+ing to measurements on single channels, has been in-
+dependently considered in Ref. [18], under the name
+process-POVM. In this case, the realization scheme of
+the previous Theorem can be specialized to the following
+Corollary 4 (Realization scheme for 1-testers)
+Let {Pi} be a 1-tester and C be the Choi-Jamio/suppress lkowski
+operator of a channel. The normalization condition of
+the 1-tester is
+∑
+i
+Pi = I ⊗ σ, (75)
+where σ is a state. The probabilities p(i|C) = Tr[ P T
+i C]
+can be obtained by preparing a puriﬁcation of the state
+σ, evolving it through the channel C ⊗ I , and ﬁnally
+performing a measurement with POVM {˜Pi = ( I ⊗√
+σ‡)Pi(I ⊗
+√
+σ‡) + Qi}, with Qi as in Theorem 12.
+Proof. The normalization T = I ⊗ σ follows immediately
+from Eq. (67). According to Theorem 12, the tester
+can be split in a coherent part and a POVM, with the
+coherent part producing the state ρ given by
+ρ = S (C)
+=
+√
+T
+T
+C
+√
+T
+T
+= (I ⊗ √ σ
+T
+)C ⊗ I (|I⟩ ⟩⟨ ⟨I|)(I ⊗ √ σ
+T
+)
+= C ⊗ I (|√ σ⟩ ⟩⟨ ⟨√ σ|).
+(76)
+The last expression represents exactly the action of the
+channel C ⊗ I on the puriﬁcation |√
+σ⟩ ⟩. ■
+In is worth noting the peculiarity of the case of 1-
+testers, where the coherent part is simply achieved by
+preparing an entangled state on which the variable chan-
+nel C is applied. Typically, this is not the case for N > 1,
+as the general realization scheme given by Fig. 13 also
+contains the isometries {Vi i + 1, . . . , N− 1}. Such isome-
+tries generally play a crucial role, as they allow to ex-
+ploit memory eﬀects that are extremely relevant when
+the measured channel C is an N -partite memory chan-
+nel [19]. As we will see in the following, N -testers are
+the proper tool to treat the discrimination of two mem-
+ory channels, and to introduce a notion of distance be-
+tween memory channels that is related to statistical dis-
+tinguishability.
+V. APPLICATION TO DISCRIMINATION AND
+TOMOGRAPHY OF QUANTUM NETWORKS
+A. Distance and distinguishability
+According to the generalized Born rule (38), two quan-
+tum networks with the same quantum comb are experi-
+mentally indistinguishable. More generally, we are now
+in position to give a notion of distance that captures the
+distinguishability of quantum transformations.
+Consider the problem of discriminating two N -partite
+memory channels, described by the quantum N -combs
+R0 and R1, respectively. In view of the discussion of
+the previous paragraphs, this is enough to study the dis-
+crimination of all admissible transformations in quantum
+mechanics. For simplicity, we discuss here the problem
+of minimum error discrimination, in which the two mem-
+ory channels are given with prior probabilities π0 and
+π1. Since the most general transformation sending an N -
+comb in a set of classical probabilities is given by an N -
+tester, any discrimination experiment will be described
+by an N -tester {P0, P1} with P0 + P1 = T as in Eq. (67).
+The average probability of error is then given by
+pe = π0 Tr[P T
+1 R0] + π1 Tr[P T
+0 R1] (77)
+= π0 Tr[ ˜P T
+1 S (R0)] + π1 Tr[ ˜P T
+0 S (R1)] (78)
+= π0 − Tr[(π0S (R0) − π1S (R1)) ˜P T
+0 ]. (79)
+where the map S and the POVM {˜P0, ˜P1}are as in The-
+orem 12. The discrimination of the two memory channels
+R0 and R1 is then reduced to the discrimination of the
+
+===== PAGE 19 =====
+
+19
+states S (R0) and S (R1). Using Helstrom optimal mea-
+surement [20] we get the bound
+pe ≥ 1 − ∥ π0S (R0) − π1S (R1)∥1
+2 , (80)
+where ∥A∥1 := Tr |A|is the usual trace-norm. Recalling
+that S (R) =
+√
+T
+T
+R
+√
+T
+T
+, and optimizing over T ﬁnally
+gives following bound
+pe ≥ 1 − maxT ∥
+√
+T
+T
+(π0R0 − π1R1)
+√
+T
+T
+∥1
+2 , (81)
+where the maximum is taken over all operators T ≥ 0 sat-
+isfying the constraints in Eq. (67). The bound is achiev-
+able, namely once we have the optimal operator Topt, and
+the Helstrom POVM {˜P0, ˜P1}for the minimum error dis-
+crimination of the states ρi = √
+Topt
+T
+Ri
+√Topt
+T
+we can
+deﬁne the optimal tester {Pi} by Pi =
+√
+Topt ˜Pi
+√
+Topt.
+Theorem 12 then ensures that there is a suitable scheme
+realizing the optimal tester.
+The above discussion motivates the following deﬁni-
+tion:
+Deﬁnition 12 (Distance between quantum combs)
+Let R0 and R1 be two N -combs. The distance between
+R0 and R1 is given by
+d(R0, R1) = 1
+2 max
+T
+
+
+
+√
+T
+T
+(R0 − R1)
+√
+T
+T 
+
+
+1
+, (82)
+where T is a positive semideﬁnite operator that satisﬁes
+Eq. (67)
+This deﬁnition provides the suitable notion of distance
+between two memory channels. This distance generalizes
+the notion of distance based on the cb-norm [21] (alter-
+natively called diamond norm [22]), that is typically used
+for quantum channels and quantum operations. The cb-
+norm distance of two quantum operations O0 and O1
+from states on H to states on H is given by
+dcb(O0, O1) = 1
+2 sup
+n
+sup
+ρ
+∥[(O0 − O1) ⊗ In](ρ)∥1 , (83)
+where In is the identity map on L(Cn), and σ is a state
+on the extended Hilbert space H ⊗ Cn. Using convexity
+of the trace distance and the ﬁnite dimensionality of the
+input space H, the above expression can be rewritten as
+[23]
+dcb(O0, O1) = 1
+2 max
+σ
+
+
+(IH ⊗ √
+σ
+T
+)∆( IH ⊗ √ σ
+T
+)
+
+
+
+1
+,
+(84)
+where σ is a state on H, ∆ := O0 − O1, and O0, O1
+are the Choi-Jamio/suppress lkowski operators of the quantum op-
+erations O0, O1, respectively. Recalling that the Choi-
+Jamio/suppress lkowski operator of a quantum operation is a quan-
+tum comb with N = 1, and that for N = 1 Eq. (67) gives
+T = I ⊗ σ, we obtain
+dcb(O0, O1) = d(O0, O1) for N = 1, (85)
+namely for N = 1 the cb-norm distance is a special case
+of distance between two quantum combs.
+Note that for N -partite memory channels C0 and C1
+with Choi-Jamio/suppress lkowski operatorsC0 and C1, respec-
+tively, the operational distance introduced here is typ-
+ically larger than the cb-norm distance, i.e.
+d(C0, C1) ≥ dcb(C0, C1). (86)
+Indeed, Eq. (82) involves maximization over all opera-
+tors T ≥ 0 satisfying the constraints (67), while Eq. (84)
+involves maximization over operators of the special form
+T = IH ⊗ σ, where now H = ⨂N − 1
+k=0 H2k and σ is a state
+on H = ⨂N − 1
+k=0 H2k+1. The fact that for nN 1 our dis-
+tance can be strictly larger than the cb-norm distance
+is due to the fact that the cb-norm distance is related
+to discrimination in parallel schemes where the unknown
+channel is applied to a large entangled state on H⊗ 2 and
+a collective measurement is ﬁnally performed on the re-
+sulting state on H ⊗ H , while the distinguishability of
+two memory channels can be enhanced by using sequen-
+tial schemes as in Fig. 13.
+B. Informationally complete testers
+In the present section we introduce informationally
+complete testers, namely testers {Pi} such that the prob-
+abilities p(i|R) := Tr[ P T
+i R] is suﬃcient to completely
+characterize the (generally probabilistic) quantum comb
+R on ⨂2n
+k=1 Hk. These testers are particularly important
+for network tomography, in the very same way as in-
+formationally complete POVMs describe possible tomo-
+graphic experiments for quantum states [24]. Exploit-
+ing such testers in Ref. [25] tomography of quantum
+channels and operations has been optimized. More pre-
+cisely, the probabilities p(i|R) is suﬃcient for the recon-
+struction of R, if p(i|R) allows to evaluate Tr[ T R] for all
+T ∈ L(⨂2n
+k=1 Hk) as follows
+Tr[T R] =
+∑
+i
+ti Tr[P T
+i R] =
+∑
+i
+tip(i|R). (87)
+From this condition the following deﬁnition comes
+straightforwardly.
+Deﬁnition 13 (Informationally complete tester)
+The tester {Pi} is informationally complete if and only
+if for all T ∈ L(⨂2N
+k=1 Hk) there exist coeﬃcients ti such
+that T = ∑
+i tiP T
+i .
+It is clear that this deﬁnition is an equivalent restate-
+ment of the condition in Eq. (87). With the following
+theorem we prove that informationally complete testers
+actually exist.
+Theorem 13 For {˜Pi} informationally complete
+POVM, the tester with elements Pi = 1
+d1...d2n−1
+˜Pi is
+informationally complete.
+
+===== PAGE 20 =====
+
+20
+Proof. If the POVM {˜Pi} is informationally complete,
+then for all operators T ∈ L(⨂2n
+k=1 Hk) one has
+T =
+∑
+i
+ti ˜P T
+i . (88)
+It is straightforward to verify that the coeﬃcients ˜ti :=
+d1 . . . d2n− 1ti expand T on Pi. Moreover, {Pi}is a tester,
+since
+∑
+i
+Pi = I
+d1 . . . d2n− 1
+, (89)
+which clearly satisﬁes the conditions in Eq. (67). ■
+In the following we will prove some theorems that will
+help characterizing informationally complete testers.
+Theorem 14 The operator Θ (N ) in Eq. (67) providing
+the normalization of an informationally complete tester
+is invertible.
+Proof. Suppose that Θ (N ) is not invertible. Then the
+support of Pi is contained in the support of I ⊗ Θ (N ).
+It is then impossible that {P T
+i } spans operators on the
+kernel of I ⊗ Θ (N ). ■
+Theorem 15 A tester {Pi} is informationally complete
+iﬀ it can be written as Pi = (I ⊗
+√
+Θ (N )) ˜Pi(I ⊗
+√
+Θ (N )),
+with {˜Pi} informationally complete POVM and Θ (N ) in-
+vertible and satisfying identities (67).
+Proof. Let us ﬁrst suppose that {Pi} is informationally
+complete. Then ∑
+i Pi = I ⊗ Θ (N ) is invertible, and since
+for all T one has T = ∑
+i tiP T
+i one also has
+(
+I ⊗
+√
+Θ (N )
+T )
+T
+(
+I ⊗
+√
+Θ (N )
+T )
+=
+∑
+i
+˜tiP T
+i . (90)
+If we now consider the POVM ˜Pi := (I ⊗
+√
+Θ (N )− 1
+)Pi(I ⊗√
+Θ (N )− 1
+), we have clearly
+T =
+∑
+i
+˜ti ˜P T
+i , (91)
+where the coeﬃcients ˜ti are the ones in Eq. (90). The
+set {Pi} is then an informationally complete POVM. On
+the other hand, if Θ (N ) is invertible and satisﬁes Eq. (67)
+and {˜Pi} is an informationally complete POVM, clearly
+˜Pi := (I ⊗
+√
+Θ (N ))Pi(I ⊗
+√
+Θ (N )) is a tester. We can easily
+prove that it is informationally complete by considering
+that since ( I ⊗
+√
+Θ (N )− 1T
+)T (I ⊗
+√
+Θ (N )− 1T
+) = ∑
+i tiP T
+i
+for all T , one has also T = ∑
+i ti ˜P T
+i . ■
+In a completely analogous way, we can deﬁne informa-
+tionally complete testers for deterministic combs, which
+instead of separating the whole L(⨂2n
+k=1 Hk) separate
+only the subspace D spanned by deterministic combs.
+Notice that the set D is given by D = {X|Tr2N − 1[X] =
+I ⊗ Y }. The deﬁnition is then the following
+Deﬁnition 14 The tester {Pi} is informationally com-
+plete for deterministic testers if and only if for all T ∈ D
+there exist coeﬃcients ti such that T = ∑
+i tiP T
+i .
+Notice that this deﬁnition requires that the linear
+span of {Pi} contains D as a subspace. The existence
+theorem—analogous of Theorem 13—is trivial since any
+informationally complete tester is also informationally
+complete for deterministic combs. On the other hand,
+characterization theorems can be stated, but they are
+beyond the scope of the present paper.
+VI. MUL TIPLE-TIME STATES AND
+MEASUREMENTS
+In this section we want to show that quantum combs
+and generalized instruments allow to treat in a uniﬁed
+and simple framework the objects introduced in Ref. [26]
+under the deﬁnitions of mltiple-time states and multiple-
+time measurements . Multiple time states correspond to
+preparation of a state |Ψ 0⟩ at time t0 and subsequent
+post-selection by measurements containing the Kraus op-
+erators |Ψ i⟩⟨Φ i|at times ti, with i = 1 , . . . , N − 1, and
+ﬁnally post-selection by a bra ⟨Φ N |at time tN . The cor-
+responding probabilistic quantum comb is the following
+S =
+N⨂
+j=0
+Sj,
+SN = |Φ ∗
+N ⟩⟨Φ ∗
+N |, S 0 = |Ψ 0⟩⟨Ψ 0|,
+Si = |Ψ i⟩⟨Ψ i| ⊗ |Φ ∗
+i ⟩⟨Φ ∗
+i |, 1 ≤ i ≤ N − 1.
+(92)
+A multiple-time measurement is just a quantum opera-
+tion with multipartite Kraus operators K (i)
+j for outcome
+i, such that the probability of occurrence of the outcome
+i for a multiple-time state is provided by the expression
+p(i|S) =
+∑
+j
+⏐
+⏐
+⏐⟨Φ 1|. . . ⟨Φ N |K (i)
+j |Ψ 0⟩ . . . |Ψ N − 1⟩
+⏐
+⏐
+⏐
+2
+∑
+lj
+⏐
+⏐
+⏐⟨Φ 1|. . . ⟨Φ N |K (l)
+j |Ψ 0⟩ . . . |Ψ N − 1⟩
+⏐
+⏐
+⏐
+2 . (93)
+In our formalism, a multiple-time measurement is de-
+scribed by a generalized instrument {Ri}, with Ri =∑
+j |Kj⟩⟨Kj|, providing probabilities for diﬀerent out-
+comes on multiple-time states by the generalized Born
+rule
+p(i|S) = Tr[SR T
+i ]
+∑
+j Tr[SR T
+j ] . (94)
+What the authors call an history is the outcome i of the
+generalized instrument. We want to stress that the ap-
+proach to multiple time states and measurements based
+on quantum combs provides a simple answer to the fol-
+lowing three fundamental questions left open by Ref.
+[26].
+1. Given a Kraus operator, can we always ﬁnd some
+multi-time measurement such that this operator
+
+===== PAGE 21 =====
+
+21
+represents a particular outcome of the measure-
+ment? The answer is clearly yes, since by Corol-
+lary IV A, any positive operator, and in particular
+a rank one |K⟩ ⟩⟨ ⟨K|, suitably rescaled by a posi-
+tive factor, provides a probabilistic comb, which in
+turn by Theorem 9 can be included in a generalized
+instrument.
+2. What are the conditions that a set of ”histories”
+must satisfy in order to describe a measurement?
+The answer is directly provided by the condition
+in Deﬁnition 10, representing the normalization of
+an admissible generalized instrument. More pre-
+cisely, the Choi-Jamio/suppress lkowski operatorsRi of the
+histories must add to a deterministic comb, with
+the normalization conditions given by Eq. (25).
+3. Is it possible that there are cases of sets of Kraus
+operators that do not lead to causality violations
+but still there is no actual way to implement them
+in quantum mechanics? In this case the answer is
+negative. We provided indeed the causal interpre-
+tation of conditions (25). Any multi-time measure-
+ment that does not violate causality satisﬁes the
+latter condition, and by Theorem 10 this implies
+that the measurement is feasible as in Fig 12.
+As an example we consider the same multi-time mea-
+surement as the authors provide, implementing the mea-
+surement of the diﬀerence of the values of the operator
+σx at times t1 and t2 on a qubit, σx denoting the Pauli
+matrix. The measurement can be summarized by the
+following generalized instrument
+P+2 = |−⟩⟨−|t2 ⊗ |−⟩⟨−| ⊗ |+⟩⟨+|t1 ⊗ |+⟩⟨+|
+P− 2 = |+⟩⟨+|t2 ⊗ |+⟩⟨+| ⊗ |−⟩⟨−|t1 ⊗ |−⟩⟨−|
+P0 = |+⟩⟨+|t2 ⊗ |+⟩⟨+| ⊗ |+⟩⟨+|t1 ⊗ |+⟩⟨+|
++ |−⟩⟨−|t2 ⊗ |−⟩⟨−| ⊗ |−⟩⟨−|t1 ⊗ |−⟩⟨−|
++ |−⟩⟨+|t2 ⊗ |+⟩⟨−| ⊗ |−⟩⟨+|t1 ⊗ |+⟩⟨−|
++ |+⟩⟨−|t2 ⊗ |−⟩⟨+| ⊗ |+⟩⟨−|t1 ⊗ |−⟩⟨+|
+(95)
+where σx|±⟩ = ±|±⟩. Clearly, the measurement out-
+comes ± 2 correspond to σx(t1) − σx(t2) = ± 2, while P0
+corresponds to σx(t1) − σx(t2) = 0.
+VII. OTHER APPLICATIONS
+The general theory of quantum combs is useful for
+many applications, ranging in diﬀerent branches of quan-
+tum mechanics, like Quantum Information theory, quan-
+tum game theory and cryptography, quantum metrology,
+and ﬁnally foundations of physics.
+In Quantum Information combs provide an eﬃcient
+and immediate description of networks, which is the most
+suitable for optimization purposes. For example, quan-
+tum algorithms can be thought of as testers on chains
+of unitaries, representing successive calls of quantum or-
+acles. The optimization of the tester for discrimination
+of oracle classes would provide the scaling of the per-
+formances of the optimal algorithm with respect to the
+number of oracle calls, allowing for a deﬁnite classiﬁca-
+tion of the quantum complexity class for a wide class
+of problems. An example of application in quantum in-
+formation is optimal cloning of unitary gates, that was
+studied in Ref. [27], where combs were used to ﬁnd the
+optimal physical device allowing to emulate two uses of
+the same unknown unitary gate by actually running it
+only once.
+In quantum game theory or quantum cryptogra-
+phy, quantum combs describe all conceivable strate-
+gies/protocols of players/users. This has been already
+noticed in Ref. [7] for protocols in which only quan-
+tum systems are exchanged, without classical (i. e.openly
+known) communication. The use of quantum combs
+provides a great simpliﬁcation in the analysis of cryp-
+tographic protocols, where one can use the operational
+deﬁnition of distance between strategies of Eq. (82) for
+search of equilibria and analysis of cheating startegies.
+Moreover, quantum combs provide the tool for the anal-
+ysis of all those protocols that involve quantum and clas-
+sical communication in more than one direction, e. g.for
+the evaluation of two-way channel capacity. In order to
+include classical communication parallel to the quantum
+one needs to consider sets of non superimposable orthog-
+onal states, which can be easily taken into account using
+a C ∗-algebraic version of quantum combs, as it is done
+for channels [28].
+In quantum estimation theory and quantum metrol-
+ogy, quantum combs provide the appropriate framework
+for parameter estimation, since in the actual situation
+it is a unitary transformation that carries the parame-
+ter to be estimated. In this case the old approach of
+Helstrom [20] and Holevo [3] optimizes the POVM for
+a given class of input states, then optimizes the state
+within the class, and ﬁnally optimizes the class itself. In-
+stead, the quantum tester provides the optimization with
+a uniﬁed procedure, including the case of multiple uses,
+and even optimizing over all possible dispositions of the
+uses. Moreover, as proved in Ref. [19], memory eﬀects
+turn out to be crucial in the discrimination of memory
+channels.
+Regarding the feasibility of quantum combs, all the
+possible implementations of qubits and their quantum
+gates already largely explored for quantum computa-
+tion are eligible also for the implementation of quan-
+tum combs. A very promising scalable implementation
+of quantum combs is provided by optical qubits in silicon
+waveguides [29].
+Finally, we would like to mention one possible devel-
+opment of combs for foundations of physics, in particular
+for the formulation of a Quantum Theory of causally un-
+determined spacetime structures. This suggestion comes
+from a striking analogy between quantum combs and a
+quantum realization of the causaloid of Hardy [30, 31] a
+
+===== PAGE 22 =====
+
+22
+promising tool for the formulation of quantum gravity.
+A. Admissible maps in general operational settings
+In sec. IV we proved that the whole hierarchy of lin-
+ear transformations of any order in Quantum Mechanics
+reduces to one level, corresponding to memory channels.
+Any admissible transformation is physically achievable
+by a memory channel, namely a channel exploiting an-
+cillary systems as quantum memories that correlate suc-
+cessive uses. We proved this feature for the classical and
+quantum combs. However, our proof exploits the detailed
+features of the theory, and it may not hold more gener-
+ally for any probabilistic theory [32]. More precisely, we
+proved that: 1) all admissible N -maps are realized by
+memory channels; 2) any admissible map (i. e.( K, L)-
+map) is indeed an N -map. One may wonder whether
+such features are generic for any probabilistic theory, or
+if they are true only for the quantum-classical case.
+VIII. CONCLUSION
+In conclusion, we introduced a mathematical descrip-
+tion of quantum networks in terms of Choi-Jamio/suppress lkowski
+operators, from two complementary points of view. The
+constructive approach is based on the composition of
+Choi-Jamio/suppress lkowski operators. Within this approach, it is
+possible to characterize the properties of composite net-
+works by the uniﬁed necessary and suﬃcient condition in
+Eq. (22).
+The axiomatic approach starts from a completely dif-
+ferent perspective, and deﬁnes admissible maps on quan-
+tum objects in a recursive manner, starting from states
+and quantum operations and rising the level to trans-
+formations of transformations, describing them through
+their Choi-Jamio/suppress lkowski operator. We proved that under
+minimal requirements such transformations correspond
+to memory channels, and their admissibility implies fea-
+sibility.
+All details of the theory of quantum networks are
+explored and thoroughly proved, including properties
+of generalized instruments, testers and informationally
+complete testers, along with discriminability criteria an d
+operational distances between networks.
+A comprehensive outline of applications and possible
+implementations of the theoretical objects introduced
+in the paper is provided, including the description of
+multiple-time states and multiple-time measurements. In
+particular, application of quantum combs to the descrip-
+tion of multi-time states and measurements shows the
+power of this approach, enabling us to answer three im-
+portant questions left open in Ref. [26].
+Finally, we introduce the problem of classiﬁcation of
+operational probabilistic theories in terms of the struc-
+ture of the hierarchy of admissible transformations, which
+could in principle elucidate the peculiarity of Quantum
+Mechanics with respect to other theories.
+Acknowledgments
+This work has been supported by EU FP7 program
+through the STREP project CORNER.
+[1] K. Kraus, States, Eﬀects, and Operations (Springer,
+Berlin, 1983).
+[2] E. B. Davies, Quantum Theory of Open Systems (Aca-
+demic Press, New York, 1973).
+[3] A. S. Holevo, Probabilistic and Statistical Aspects of
+Quantum Theory (North-Holland, Amsterdam, 1982).
+[4] W. F. Stinespring, Proc. Amer. Math. Soc. 6, 211 (1955).
+[5] M. Ozawa, J. Math. Phys. 25, 79 (1984).
+[6] M. A. Naimark, Iza. Akad. Nauk USSR, Ser. Mat. 4, 277
+(1940).
+[7] G. Gutoski and J. Watrous, in Proceedings of the Thir-
+tyineth Annual ACM Symposium on Theory of Compu-
+tation (STOC) , pag. 565-574 (2007).
+[8] Labelling Hilbert spaces in this way make us able to de-
+ﬁne the operator analog of the saturated-index pairs for
+multiplying tensors in general relativity. When multiply-
+ing only two operators only on some pairs of isomorphic
+tensor factors we will use the same name for the two
+Hilbert spaces, whereas we use diﬀerent names for all
+other Hilbert spaces
+[9] G. Chiribella, G. M. D’Ariano, and P. Perinotti, Phys.
+Rev. Lett. 101, 060401 (2008).
+[10] Both restrictions are due to the convention that diﬀere nt
+uses of the same circuit are considered here as diﬀer-
+ent circuits. Notice that the situation in which a quan-
+tum system undergoes the evolution C 2 by passing twice
+through the gate C does not correspond to a loop, since
+the two successive uses of channel C are represented as
+the cascade of two diﬀerent channels.
+[11] D. Kretschmann and R. F. Werner, Phys. Rev. A. 72,
+062323 (2005).
+[12] T. Eggeling, D. Schlingemann and R. F. Werner, Euro-
+phys. Lett. 57, 782-788 (2002).
+[13] D. Beckman, D. Gottesman, M. A. Nielsen, and J.
+Preskill, Phys. Rev. A 64, 052309 (2001).
+[14] M. Piani, M. Horodecki, P. Horodecki, and R. Horodecki,
+Phys. Rev. A 74, 012305 (2006).
+[15] G. Chiribella, G. M. D’Ariano, and P. Perinotti, J. Math .
+Phys. 50, 042101 (2009).
+[16] I. L. Chuang and M. A. Nielsen, Quantum Informa-
+tion and Quantum Computation (Cambridge University
+Press, Cambridge, 2000).
+[17] G. Chiribella, G. M. D’Ariano, and P. Perinotti, Euro-
+phys. Lett. 83, 30004 (2008).
+[18] M. Ziman, Phys. Rev. A 77, 062112 (2008).
+[19] G. Chiribella, G. M. D’Ariano, and P. Perinotti, Phys.
+
+===== PAGE 23 =====
+
+23
+Rev. Lett. 101 180501 (2008).
+[20] C. W. Helstrom, Quantum detection and estimation the-
+ory (Academic Press, New York, 1976).
+[21] V. I. Paulsen, Completely Bounded Maps and Operator
+Algebras, Pitman Research Notes in Math. 146. (Long-
+man Scientiﬁc & Technical, Harlow, 1996).
+[22] D. Aharonov, A. Kitaev, and N. Nsan, in Proceedings
+of the Thirtieth Annual ACM Symposium on Theory of
+Computation (STOC) , pag. 20-30, (1997).
+[23] M. F. Sacchi, Phys. Rev. A 71, 062340 (2005).
+[24] E. Prugoveˇ cki, Int. J. Theor. Phys. 16, 321 (1977).
+[25] A. Bisio, G. Chiribella, G. M. D’Ariano, S. Facchini, an d
+P. Perinotti, Phys. Rev. Lett. 102, 010404 (2009).
+[26] Y. Aharonov, S. Popescu, J. Tollaksen, L. Vaidm,
+arXiv:0712.0320.
+[27] G. Chiribella, G. M. D’Ariano, and P. Perinotti, Phys.
+Rev. Lett. 101, 180504 (2008).
+[28] G. M. D’Ariano, D. Kretschmann, D. M. Schlingemann,
+and R. F. Werner, Phys. Rev. A 76, 032328 (2007).
+[29] A. Politi, M. J. Cryan, J. G. Rarity, S. Yu, J. L. O’Brien,
+Science 320, 646 (2008).
+[30] L. Hardy, arXiv:gr-qc/0608043.
+[31] L. Hardy, arXiv:0804.0054.
+[32] H. Barnum, J. Barrett, M. Leifer, and A. Wilce, Phys.
+Rev. Lett. 99 240501 (2007).
+[33] S. Popescu and D. Rohrlich, Phys Rev A 56, R3319
+(1997).
+[34] M. Piani, M. Horodecki, P. Horodecki, and R. Horodecki,
+Phys. Rev. A 74, 012305 (2006).

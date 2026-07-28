@@ -1,0 +1,798 @@
+===== PAGE 1 =====
+
+arXiv:hep-th/0302111v3  4 Aug 2003
+hep-th/0302111
+SISSA 16/2003/MP
+CGPG-03/5-5
+Evolution in Quantum Causal Histories
+Eli Hawkins∗
+Scuola Internazionale Superiore di Studi Avanzati,
+Via Beirut 4, I-34014, Trieste, Italy
+Fotini Markopoulou†
+Perimeter Institute for Theoretical Physics,
+35 King Street North, Waterloo, Ontario N2J 2W9, Canada, and
+Department of Physics, University of Waterloo,
+Waterloo, Ontario N2L 3G1, Canada
+Hanno Sahlmann‡
+Center for Gravitational Physics and Geometry ,
+The Pennsylvania State University ,
+University Park, PA 16802-6300, USA
+Abstract
+We provide a precise deﬁnition and analysis of quantum causal histories
+(QCH’s). A QCH consists of a discrete, locally ﬁnite, causal p re-spacetime
+with matrix algebras encoding the quantum structure at each event. The evo-
+lution of quantum states and observables is described by com pletely positive
+maps between the algebras at causally related events. We sho w that this local
+description of evolution is sufﬁcient and that unitary evolu tion can be recov-
+ered wherever it should actually be expected. This formalis m may describe a
+quantum cosmology without an assumption of global hyperbol icity; it is thus
+more general than the Wheeler-De Witt approach. The structu re of a QCH
+is also closely related to quantum information theory and al gebraic quantum
+ﬁeld theory on a causal set.
+∗Email address: hawkins@sissa.it
+†Email address: fotini@perimeterinstitute.ca
+‡Email address: hanno@gravity .psu.edu
+1
+
+===== PAGE 2 =====
+
+1 Introduction
+The quest for a quantum theory of gravity is now several decad es old and has
+been studied with approaches ranging from string theory and non-commutative
+geometry to loop quantum gravity , spin foams, and discrete m odels of Planck-
+scale spacetime. Most of these take different interpretati ons of what a quantum
+theory of gravity should achieve, but with one thing in commo n: that it should be
+some merger of general relativity and quantum theory . The ﬁn al goal has not yet
+been achieved, but all these approaches have brought to us ne w understandings
+of the problem.
+We come to the motivation for this paper by putting together a consistent list of
+features, selectively chosen from among the various indications of what a quantum
+theory of gravity may be. Such a list is by no means unique, but we will ﬁnd that it
+is fruitful; it leads to a new notion of quantum cosmology and a new formulation
+of evolution in a Planck-scale theory .
+Our list is the following: 1) At energies close to the Planck s cale, the description
+of spacetime as a continuous, 3 + 1-dimensional manifold breaks down; this is the
+usual idea for regularization of quantum ﬁeld theory . 2) Causality is still present in
+Planck-scale geometry . 3) Quantum theory is valid in Planck -scale physics. 4) In a
+fundamental theory of the universe, there should be a ﬁnite n umber of degrees of
+freedom in any ﬁnite region of the universe; this is supported by black hole entropy
+calculations from both string theory and loop quantum gravi ty , and Bekenstein’s
+physical arguments. 5) The theory should be background inde pendent.
+Quantum causal histories (QCH) were introduced in [14] as a f ormalism for
+quantum cosmology that realizes most of the above assumptio ns. The idea is to
+use a causal set (locally ﬁnite, partially ordered set) as th e description of the causal
+structure of the universe. Quantum theory is present throug h the assignment of
+ﬁnite-dimensional Hilbert spaces to these events. They can be regarded as repre-
+senting the fundamental building blocks of the universe at t he Planck scale. The
+composite Hilbert space for two spacelike separated events is the tensor product
+of the individual Hilbert spaces. Evolution is implemented by unitary operators
+between complete pairs, special cases of sets of spacelike s eparated events which
+can be understood as isolated Planck-scale systems, or the d iscrete equivalent of
+successive Cauchy surfaces of an isolated component of spac etime.
+Clearly , this implements the ﬁrst four properties above. Th e ﬁfth is more difﬁ-
+cult (and will not be resolved here). Because it involves a ﬁx ed causal structure, a
+QCH is not a completely background independent description . Nevertheless, all
+other degrees of freedom are quantum, and with the algebraic treatment presented
+here this may be a step toward a truly background independent model.
+Quantum causal histories can also describe causal spin foam models (see the
+review [19]). These are pre-spacetime models; that is, grav ity and the familiar
+spacetime manifold are meant to be derived as the low-energy continuum approx-
+2
+
+===== PAGE 3 =====
+
+imation of such models. A particular example of a QCH is a caus al spin network
+[13, 16] and this was a principal motivation for the introduc tion of QCH’s. A vari-
+ation on the idea of a QCH was applied to a spin foam model in [11 ].
+However, as was already discussed in [14], the deﬁnition of Q CH there does
+not adequately take into account the causal structure of the underlying causal set.
+In particular, the unitary evolution operators in that deﬁn ition are indifferent to
+the individual relations interpolating between the ingoin g and outgoing events.
+The same unitary evolution is admitted regardless of these i ndividual relations.
+This means that the quantum evolution does not respect the un derlying causal
+structure. Further, given two related events, there might n ot be a complete pair
+containing them, in which case we cannot say anything about t he relation between
+states at the two events. These issues are discussed in detai l in the next section.
+In this paper we address all of the above issues by giving a rev ised deﬁnition
+for a quantum causal history in which the causal structure is faithfully reﬂected
+in the quantum causal history . We ﬁnd that doing so requires w orking with alge-
+bras of operators, instead of Hilbert spaces, on the events. Following the above
+idea of local ﬁniteness at the fundamental level, these alge bras are simple matrix
+C∗-algebras. We ﬁnd that a causal relation in the causal set cor responds to a com-
+pletely positive map in the QCH. This is not surprising, sinc e this is the most gen-
+eral kind of physical transformation allowed by quantum the ory . We also show
+that these maps can be regarded as fundamental and the unitar y operators of the
+original deﬁnition can be reconstructed from them with no lo ss of information.
+As a quantum cosmology , a QCH is most naturally interpreted as describing the
+universe as a very large collection of open quantum mechanic al building blocks.
+Unitary evolution arises only where there is a complete pair , which is the discrete
+analogue of an isolated system. This is much more general tha n a Wheeler-De Witt
+type of quantum cosmology . That “canonical” approach to qua ntum gravity is
+strongly dependent on global hyperbolicity and Cauchy surf aces. In contrast,
+QCH’s allow that hyperbolicity may dissolve in the quantum f oam. This seems
+more likely to describe the apparent non-unitarity of black hole evaporation than
+does the more traditional approach. A QCH is also especially suited for describ-
+ing the evolution of localized quantities without having to refer to a path integral
+or Hamiltonian constraint for the entire universe. Aside fr om cosmology , we see
+with hindsight that there are several further ways of interp reting a QCH; we dis-
+cuss these in Section 6 and the conclusions.
+Concretely , the present paper is an in-depth analysis of QCH ’s and opens up
+several new possibilities for the concrete implementation of models of that type.
+For example, it is interesting, and potentially practical, that evolution in a QCH
+is almost identical to the quantum information theoretic de scription of quantum
+noise. Also, the continuous time analogue of the completely positive evolution in
+a QCH, is a master equation, already extensively used in quan tum cosmology . We
+comment on these connections in the conclusions.
+3
+
+===== PAGE 4 =====
+
+The outline of this paper is as follows. In Section 2, we revie w the original
+deﬁnition of quantum causal histories given in [14], as well as the deﬁnitions of
+the basic structures in a causal set that are needed for the re st of the paper. One
+of our main results is that the relations in a causal set corre spond to completely
+positive maps in the QCH. In order to give the reader some intu ition about these
+maps before they have to face the precise deﬁnition of a QCH an d the following
+proof that unitary evolution can be reconstructed from them, we give in Section 3 a
+basic introduction to completely positive maps and a simple example. Section 5 is
+the revised, complete deﬁnition of a QCH. Although this was n ot a motivation for
+this work, this deﬁnition can be understood as an algebraic q uantum ﬁeld theory
+on a causal set, with the operator algebras being simple matr ix C ∗-algebras. We
+explain this in Section 6. In Section 7, we show that nothing is lost in going from the
+unitary operators of the original deﬁnition to the complete ly positive maps, since
+the former can be reconstructed from the latter, up to irrele vant phase factors. We
+discuss the interpretation of our results and future direct ions in the conclusions.
+2 Review of Quantum Causal Histories
+In this section we review quantum causal histories. They wer e deﬁned in [14] as a
+general formalism for causal spin foams in quantum gravity [ 16, 13, 8] 1.
+An important and distinguishing feature of the geometry of s pacetime (as op-
+posed to space) is causal structure. If a spacetime is time-o rientable and has no
+closed timelike curves, then its causal structure can be com pletely described as a
+partial order relation on the events (points) of the spaceti me. The deﬁnition of the
+relation is that x ≤ y (“x precedes y”) if there exists a future-directed non-spacelike
+curve from x to y. This relation is transitive, i.e., if x ≤ y and y ≤ z then x ≤ z,
+because future-directed curves can be concatenated. The as sumption that there ex-
+ist no closed timelike curves means precisely that x ≤ y and y ≤ x if and only if
+x = y. These are the deﬁning properties of a partial order relation.
+We are concerned here with a discrete analogue of a smooth spacetime. A causal
+set C is a locally ﬁnite, partially ordered set. That is, for any tw o events x, y ∈ C,
+there exist (at most) ﬁnitely many events z ∈ C such that x ≤ z ≤ y.
+If either x ≤ y or y ≤ x, then we say that the events x and y are related. If two
+events are not related, then we say that they are spacelike separated and write x ∼ y.
+An acausal set is a subset ξ ⊂ C such that all events in ξ are spacelike separated
+to one another, i.e., x, y ∈ ξ =⇒ x ∼ y. Acausal sets play the role of spacelike
+hypersurfaces in causal sets.
+A causal set can usefully represented by the (directed) grap h of elementary
+relations (Fig. 1). The set of vertices is simply C. There is an edge x → y if x ≤ y
+1W e will not discuss speciﬁc spin foam models in the present article. For reviews and discussion
+of spin foams, see [1, 18, 15].
+4
+
+===== PAGE 5 =====
+
+but there does not exist any z ∈ C such that x ≤ z ≤ y. There is a simple analogue
+of a future-directed non-spacelike curve in a causal set. A future-directed path is
+a directed path through the graph, that is, a sequence of even ts such that there
+exists an edge from each event to the next. A future-directed path is future (past)
+inextendible if there exists no event in C which is in the future (past) of the entire
+path. Note that this graph generates the partial ordering: x ≤ y if and only if there
+exists a future directed path from x to y.
+From this, we can deﬁne complete future and past 2. An acausal set ξ is a com-
+plete future of an event x if ξ intersects any future-inextendible future-directed path
+that starts at x. Similarly , an acausal set ξ is a complete past of an event x if ξ inter-
+sects any past-inextendible future-directed path that end s at x.
+In order to describe a local quantum structure on our causal s et, we would like
+a (ﬁnite-dimensional) Hilbert space H(x) for every event x ∈ C. For two spacelike
+separated events x ∼ y ∈ C, the composite state space for {x, y} is H({x, y}) =
+H(x) ⊗ H(y). More generally , for any acausal set ξ ⊆ C, H(ξ) = ⨂
+x∈ ξ H(x).
+In quantum mechanics, time evolution is unitary evolution between the Hilbert
+spaces at different times. When should we expect unitary maps between the Hilbert
+spaces for different acausal sets ξ, ζ ∈ C? Unitarity can be interpreted as meaning
+that no information is lost or added. We can only expect that n o information is
+lost in evolving from ξ to ζ if ζ is a complete future of ξ; otherwise, information
+coming from ξ might “miss” ζ. Likewise, we can only expect a state at ζ to be
+completely determined by one at ξ if ξ is a complete past of ζ. When both of these
+conditions are satisﬁed — ξ is a complete past of ζ and ζ is a complete future of ξ
+— we call ξ and ζ a complete pair and write ξ ⪯ ζ. We should expect a unitary
+map H(ξ) → H(ζ) if and only if ξ ⪯ ζ. One can think of a complete pair as suc-
+cessive Cauchy surfaces of an isolated component of spaceti me, or of all spacetime
+(see Fig. 1).
+This leads to the deﬁnition of a quantum causal history given in [14]. It consists
+of a causal set C, a ﬁnite-dimensional Hilbert space H(x) for every x ∈ C, and a
+unitary map u(ξ, ζ) : H(ξ) → H(ζ) for any complete pair ξ ⪯ ζ, such that for
+ξ ⪯ υ ⪯ ζ,
+u(υ, ζ)u(ξ, υ) = u(ξ, ζ).
+With this deﬁnition, the unitary maps on the complete pairs t ell us very little
+about the causal relations between the two acausal sets. The re can be many con-
+ﬁgurations of the interpolating causal relations in a compl ete pair, for example:
+2These deﬁnitions are more restrictive than those given in pr evious papers.
+5
+
+===== PAGE 6 =====
+
+Figure 1: Two examples of complete pairs in a causal set.
+The rules of a quantum causal history tell us that there is a un itary map u(ξ, ζ) :
+H(ξ) → H(ζ), but not how it should depend on the interpolating causal rel ations.
+This is insufﬁcient. Consider for example the complete pair :
+If we start with an unentangled pure state |Ψx ⊗ Ψy⟩ ∈ H(ξ) = H(x) ⊗ H(y), then
+this will evolve to |Ψ ′⟩ := u(ξ, ζ)|Ψx ⊗ Ψy⟩ ∈ H(ζ). The state at z is described by a
+density matrix, ρz = trw |Ψ ′⟩⟨Ψ ′|. With this causal structure, the state at z should be
+completely determined by that at y. In other words ρz should be independent of
+|Ψx⟩. However, with the above deﬁnition of a quantum causal histo ry , there is no
+restriction on u(ξ, ζ) that would prevent ρz from depending upon |Ψx⟩.
+Another problem with this deﬁnition is the reliance on compl ete pairs. Given
+two related events x ≤ y, there may not exist a complete pair containing these
+events. If so, with this deﬁnition of a quantum causal histor y , we do not know
+anything about the relation between states at x and y. There should be some rela-
+tion, and the concept of quantum causal history must be reﬁne d to provide this.
+In this paper we address all of the above issues by giving a rev ised deﬁnition of
+a quantum causal history in which the causal structure of C is faithfully reﬂected
+in the quantum causal history . We will deﬁne the QCH as an assi gnment of com-
+pletely positive maps to pairs of causally related events. T hese maps relate the
+local observables at the causally related events. In the nex t section we introduce
+6
+
+===== PAGE 7 =====
+
+E
+Figure 2: A system in a mixed state ρ is coupled to some environment, ρE . The joint
+system undergoes unitary evolution U. From the output, ϕ(ρ) is extracted, a sys-
+tem in a new mixed state which may or may not have the same dimen sionality as
+the original system. The transformation ϕ is a linear, trace-preserving, completely
+positive map.
+the deﬁnition of a completely positive map on open quantum me chanical systems,
+in order to provide some intuition for the evolution in QCH be fore giving the new
+deﬁnition and results in Sections 5 and 7.
+3 Completely Positive Maps
+An ordinary quantum mechanical system may be isolated, or it may be coupled
+to some environment. The states of the system can be describe d with density ma-
+trices and the most general evolution that quantum mechanic s allows for such a
+system is a linear, trace-preserving, completely positive (CP) map. In this section
+we deﬁne CP maps and discuss their physical interpretation.
+Consider a system S in some mixed state given by ρ, a density matrix on its
+Hilbert space. Let S interact with an environment E, also in a mixed state ρE . The
+evolution of the joint system is given by a unitary operator U. The process could
+be such that it is not feasible to extract the system S again, but instead we extract
+S ′, which has a density matrix ρ ′. See Fig.2. The transformation from ρ to ρ ′ is
+given by a map
+ϕ : ρ → ρ ′
+of the form
+ϕ(ρ) = trenv [U(ρ ⊗ ρE )U∗] .
+Such generic transformations from a quantum system to another are maps from
+the set of density matrices on S to the set of density matrices on S ′ that satisfy the
+following conditions:
+Linear on the set of density matrices: a probabilistic mixture of inputs leads to a
+probabilistic mixture of outputs, i.e., for probabilities {pi},
+ϕ
+( ∑
+i
+piρi
+)
+=
+∑
+i
+piϕ(ρi).
+7
+
+===== PAGE 8 =====
+
+T race-preserving: tr(ϕ(ρ)) = tr(ρ) = 1. This simply means that the normal-
+ization is preserved for any density matrix. The total proba bility for anything to
+happen is, and remains, 1.
+Positive: Probabilities are never negative, and so a density matrix ha s to be a
+positive operator (i.e., self-adjoint with only non-negat ive eigenvalues) in order to
+describe a physical system. This is preserved by ϕ: if ρ is positive, then ϕ(ρ) is
+also positive. Note that this implies that ϕ(a∗) = ϕ(a)∗ for any matrix a.
+Completely positive: It turns out that positivity is not enough for ϕ to describe a
+physical process. Suppose that we couple the system S to another system E that has
+trivial dynamics, 1E . For all such trivial extensions, 1E ⊗ ϕ should also be positive.
+This is the condition of complete positivity . Complete posi tivity ensures that the
+evolution of S is extendible in a trivial way to a physical evolution in a lar ger
+system E ∪ S. It is useful because it covers the case where S is initially entangled
+with some distant isolated system 3.
+A completely positive map on density matrices is equivalent to a completely
+positive map of observable operators in the opposite direct ion (in this case, back-
+wards in time). A trace-preserving CP map of density matrice s is dual to a unital 4
+CP map of observables. The most general setting for complete ly positive maps is
+between C∗-algebras (see [10]). In that context, there are many import ant tools for
+working with CP maps. In particular, the Stinespring constr uction shows that any
+unital CP map from a C ∗-algebra to the algebra of bounded operators on a Hilbert
+space can be written in a universal form, as a representation of the C ∗-algebra on a
+larger Hilbert space, composed with the projection onto the smaller Hilbert space.
+4 From Unitary to Completely Positive Maps
+A quantum causal history can be reexpressed in terms of matri x algebras. Nothing
+is lost but trivial phase factors.
+To any event x ∈ C, we associate the algebra,
+A(x) := L[H(x)],
+of matrices acting on H(x). Likewise, for any acausal ξ ⊂ C there is the algebra,
+A(ξ) := L[H(ξ)] =
+⨂
+x∈ ξ
+A(x).
+The inner products on the Hilbert spaces lead to involutions on the algebras. In
+this way , they can be regarded as C∗-algebras.
+3A standard example of an operation that is positive but not co mpletely positive, and also not a
+physical operation on a system is taking the transpose of the density matrix. See [17], p.369.
+4Unital means that 1 ↦→ 1.
+8
+
+===== PAGE 9 =====
+
+Figure 3: a) Unitary evolution for the complete pair ξ ⪯ ζ gives a ∗-isomorphism
+ϕ(ξ, ζ) between the corresponding algebras. b) The acausal set ξ is a complete
+past of z. ϕ(ξ, z) is a ∗-homomorphism. c) In this case, ϕ(x, z) is only a completely
+positive map.
+What do the unitary maps u give us? For a complete pair ξ ⪯ ζ, u determines
+a ∗-isomorphism,
+ϕ(ξ, ζ) : A(ζ) ˜− → A(ξ), a ↦→ u∗(ξ, ζ) a u(ξ, ζ).
+If we are only interested in states (and not phase-factors), then ϕ does not lose any
+important information from u.
+Note that the maps ϕ are directed backward in time. This is because we are
+regarding the matrix algebras as consisting of observable o perators acting on the
+Hilbert spaces of local states. This is equivalent to a map of states (density matri-
+ces) in the other direction. Indeed, states should evolve in to the future. However,
+because the unitary maps we are starting with are invertible , everything that we
+are doing can be expressed equivalently with time reversed.
+What does u give us more locally? If z ∈ ζ, then A(z) can be naturally thought
+of as a unital subalgebra of A(ζ). Thus, when ξ ⪯ ζ and z ∈ ζ, there is a unital
+∗-homomorphism, ϕ(ξ, z) : A(z) → A(ξ), given by restricting ϕ(ξ, ζ) to A(z).
+However, this is as far as homomorphisms will go. For x ∈ ξ and z ∈ ζ the
+naturally induced map A(z) → A(x) is not a homomorphism; it is only completely
+positive. See ﬁg.3.
+Before describing the construction, we should note some pro perties of the alge-
+bras that we are working with. They are simple, ﬁnite-dimensional matrix algebras
+deﬁned on Hilbert spaces. As such, they can be viewed in sever al ways and have
+convenient structures that are not available with most inﬁn ite-dimensional alge-
+bras. We have already noted that they are C∗-algebras. They are also von Neumann
+algebras, and because they are simple, they are (type I) von N eumann factors. We
+will make use of the trace on such an algebra; however, we will take advantage of
+the ﬁniteness and use the normalized trace, given by the form ula,
+τ(a) := tr a/ tr 1.
+9
+
+===== PAGE 10 =====
+
+The advantage of this will be to maintain the time-reversal s ymmetry of the for-
+malism as explicitly as possible; the disadvantage is a slig htly unorthodox normal-
+ization for density matrices ( ρ = 1 is correctly normalized).
+Using the trace and the involution, we can construct an inner product on a
+matrix algebra,
+⟨a|b⟩ := τ(a∗b),
+Making the algebra into a Hilbert space as well. Since our alg ebras are Hilbert
+spaces, the linear maps among them have adjoints. In particu lar, if v : A → B is
+a linear map respecting the involution ∗, the deﬁnition of its adjoint, v† reduces to
+the property that for any a ∈ A and b ∈ B, τA [a v†(b)] = τB[v(a)b]. We denote the
+adjoint of a map with a dagger to avoid confusion with the C ∗-algebra involution
+a ↦→ a∗.
+The adjoint of a homomorphism will not generally be a homomor phism, how-
+ever, it will be a completely positive (CP) map. The adjoint o f any CP map is CP . If
+v : A → B is CP , andA ′ ⊆ A and B ′ ⊆ B are subalgebras, then deﬁne the reduction
+of v to A ′ → B ′ to be the CP map i†
+B ◦ v ◦ iA , where iA : A ′֒→A and iB : B ′֒→B are
+the inclusions.
+A ′ iA
+− − −→ A
+
+↓v
+B ′ iB
+− − −→ B
+5 Quantum Causal Histories Redeﬁned
+A quantum causal history thus leads to CP maps for pairs of eve nts. Speciﬁcally ,
+if ξ ⪯ ζ, x ∈ ξ, and z ∈ ζ, then ϕ(x, z) : A(z) → A(x) is the reduction of ϕ(ξ, ζ).
+Maps for pairs of related events give a more local descriptio n of a quantum causal
+history than maps for complete pairs of acausal sets. In a loc al description, we
+should regard the maps ϕ(x, z) as fundamental, and specify consistency conditions
+on them. This leads to two questions, do local consistency co nditions exist, and is
+any information lost in going from global homomorphisms to l ocal CP maps? The
+answers, we will show, are yes and no.
+There is one circumstance in which the adjoint of a homomorph ism is another
+homomorphism.
+Theorem 1. If v : A ˜− → B is an isomorphism, then v† : B → A is its inverse (also an
+isomorphism).
+Proof. Homomorphisms in this category are trace-preserving. So, f or a ∈ A and
+b ∈ B,
+τB[v(a)b] = τB
+[
+v(a v−1(b))
+]
+= τA [a v−1(b)].
+Thus v−1 = v†.
+10
+
+===== PAGE 11 =====
+
+Figure 4: A quantum causal history associates algebras to ev ents and completely
+positive maps to causal relations.
+So, for ξ ⪯ ζ, ϕ(ξ, ζ) and ϕ†(ξ, ζ) are both isomorphisms. There is thus a time-
+reversal covariance; this should be reﬂected in our axioms.
+States on matrix algebras are all given by density matrices. Speciﬁcally , a den-
+sity matrix is a positive matrix ρ with τ(ρ) = 1; the expectation value of a matrix
+a is τ(aρ). The map of algebras ϕ(x, y) : A(y) → A(x) induces a pullback map
+from states at x to states at y. This is simply the adjoint ϕ†(x, y) applied to density
+matrices. When the map of algebras is a homomorphism, the map of states will
+take pure states to pure states.
+Suppose that ξ and ζ are acausal sets, not necessarily a complete pair, but that
+ζ is a complete future of ξ. In this case, no information should be lost in going
+from ξ to ζ, and pure states should map to pure states. Thus, there shoul d be
+a homomorphism ϕ(ξ, ζ) : A(ζ) → A(ξ). Conversely , if instead ξ is a complete
+past of ζ, then there should exist ϕ(ξ, ζ) : A(ζ) → A(ξ) such that ϕ†(ξ, ζ) is a
+homomorphism.
+Suppose that y ∼ z and that ξ is a complete past of both. The homomorphisms
+ϕ(ξ, y) and ϕ(ξ, z) are restrictions of ϕ(ξ, {y, z}). So, for a ∈ A(y) and b ∈ A(z),
+ϕ(ξ, y)(a) ·ϕ(ξ, z)(b) = ϕ(ξ, {y, z})(a ⊗ b) = ϕ(ξ, z)(b) ·ϕ(ξ, y)(a).
+Thus the images of ϕ(ξ, y) and ϕ(ξ, z) must commute.
+If such ϕ’s exist, and the ϕ(x, y)’s are reductions of them, then they will satisfy
+the following properties.
+Deﬁnition. A quantum causal history consists of a simple matrix C ∗-algebra A(x)
+for every event x ∈ C and a completely positive map ϕ(x, y) : A(y) → A(x) for
+every pair of related events x ≤ y, satisfying the following axioms.
+Axiom 1: (Extension) For any y ∈ C and ξ ⊂ C a complete past of y, there exists
+a homomorphism
+ϕP(ξ, y) : A(y) → A(ξ),
+11
+
+===== PAGE 12 =====
+
+P F
+Figure 5: Extension. On the left-hand side, the reduction of ϕP(ξ, y) to A(x) is
+ϕ(x, y). On the right-hand side, the reduction of ϕF(y, ζ) to A(ζ) is ϕ(y, z).
+P P
+F F
+Figure 6: Spacelike commutativity . One the left-hand side, the images of ϕP(ξ, z)
+and ϕP(ξ, y) (in A(ξ)) commute. On the right, the images of ϕ†
+F(x, ζ) and ϕ†
+F(y, ζ)
+commute.
+such that for each x ∈ ξ, the reduction of ϕP(ξ, y) to A(x) ⊂ A(ξ) is ϕ(x, y). Like-
+wise, for any ζ ⊂ C a complete future of y, there exists a map
+ϕF(y, ζ) : A(ζ) → A(y),
+such that ϕ†
+F(y, ζ) is a homomorphism and for any z ∈ ζ, the reduction (restriction)
+of ϕF(y, ζ) to A(z) → A(y) is ϕ(y, z). See Fig.5
+Axiom 2: (Spacelike Commutativity) If y ∼ z ∈ C and ξ ⊂ C is a complete past
+of y and z, then the images of ϕP(ξ, z) and ϕP(ξ, y) (in A(ξ)) commute. Likewise,
+if ζ ⊂ C is a complete future of {x, y}, then the images of ϕ†
+F(x, ζ) and ϕ†
+F(y, ζ)
+commute. See Fig.6.
+Axiom 3: (Composition) If ζ is a complete future of x and a complete past of y,
+then ϕ(x, y) = ϕF(x, ζ) ◦ ϕP(ζ, y).
+6 Quantum Fields on Causal Sets
+This notion of quantum causal history can also be motivated from the ideas of alge-
+braic quantum ﬁeld theory . Algebraic quantum ﬁeld theory (see [5, 9]) is a general
+12
+
+===== PAGE 13 =====
+
+approach to quantum ﬁeld theory based on algebras of local ob servables, the rela-
+tions among them, and their representations. The correct ch oice of axioms is still a
+matter of research, but for our purposes, these subtleties a re largely irrelevant.
+An algebraic quantum ﬁeld theory associates a von Neumann al gebra to each
+causally complete region of spacetime. This generalizes ea sily to causal sets. The
+following deﬁnitions are exactly the same as for continuous spacetime. For any
+subset X ⊂ C, deﬁne the causal complement as
+X ′ := {y ∈ C | ∀x ∈ X : x ∼ y}
+the set of events which are spacelike to all of X. The causal completion of X is X ′′, and
+X is causally complete if X = X ′′. A causal complement is always causally complete
+(i.e., X ′′′= X ′).
+In the most restrictive axiomatic formulation of algebraic quantum ﬁeld theory
+there is a von Neumann algebra A(X) for every causally complete region; These all
+share a common Hilbert space. Whenever X ⊆ Y, A(X) ⊆ A(Y). For any causally
+complete region X, A(X ′) is A(X) ′, the commutant of A(X). The algebra associated
+to the causal completion of X ∪ Y is generated by A(X) and A(Y).
+Some of the standard arguments about the properties of the local von Neumann
+algebras are valid for causal sets; some are not. The algebra s should all be simple
+(i.e., von Neumann factors) because the theory would otherw ise have local super-
+selection sectors. For continuous spacetime it is believed that the local algebras
+should be type III 1 hyperﬁnite factors; however, the reasoning involves the as -
+sumption that there exists a good ultraviolet scaling limit . This does not apply
+here; the small-scale structure of a causal set is discrete a nd not self similar at all.
+Instead, it seems reasonable (following property 4 in the in troduction) that
+only a ﬁnite amount of structure should be entrusted to each e vent. In other
+words, each von Neumann algebra should be a ﬁnite-dimension al matrix algebra.
+In von Neumann algebra terms, these are ﬁnite type I factors.
+Consider the causal completion ξ ′′ of a ﬁnite acausal set ξ; A(ξ ′′) should be
+generated by the algebras A(x) for x ∈ ξ. In fact, these algebras should commute,
+and therefore
+A(ξ ′′) = A(ξ) =
+⨂
+x∈ ξ
+A(x).
+Evolution by homomorphisms is sometimes possible. If ξ and ζ are acausal sets
+such that ζ ⊂ ξ ′′, then ζ ′′⊆ ξ ′′and so A(ζ) ⊆ A(ξ). This inclusion is the evolution
+homomorphism when ξ is a complete past of ζ.
+Not surprisingly , simple matrix algebras are much easier to work with than
+type III von Neumann factors. Using the (unique) normalized trace, any state is
+given by a density matrix. Recall that the adjoint maps ϕ†(x, y) in a quantum
+causal history are the induced maps on density matrices.
+Suppose that ρ ∈ A(x) is a density matrix at x. The density matrix ϕ†(x, y)(ρ) ∈
+A(y) is the best approximation to ρ among density matrices at y, in the sense that
+13
+
+===== PAGE 14 =====
+
+it minimizes the trace norm of the difference. The trace norm metric on density
+matrices is equal to the metric on states induced by the opera tor norm on observ-
+ables.
+So, we see that the obvious notion of an algebraic quantum ﬁel d theory on a
+causal set, with the physically reasonable assumption of ﬁn ite algebras on events,
+gives the structure of a QCH. The two concepts intersect, but are not equivalent.
+One could ignore the arguments about entropy et cetera and consider a ﬁeld
+theory with inﬁnite algebras on events; however, depending upon the choice of
+algebras, even this might be described by some suitable gene ralization of a QCH.
+Likewise, a given QCH cannot necessarily be derived from an a lgebraic quantum
+ﬁeld theory .
+This does mean that the structure of a QCH encompasses a reaso nable notion
+of a quantum ﬁeld theory , and hence is capable of describing m atter degrees of
+freedom. It also indicates how quantum ﬁelds on curved space time might be ob-
+tained as a limit of some quantum gravity model based on QCH’s . Finally , this
+gives the skeptical reader another possible motivation for considering quantum
+causal histories.
+7 Unitary Maps from CP Maps
+In this section we show that, if we start with the CP maps on the causal relations
+as the fundamental evolution operators, we can recover the u nitary operators be-
+tween the complete pairs.
+The main result is that the axioms in the deﬁnition of a quantu m causal history
+imply the following theorem:
+Theorem 2. For any acausal sets ξ, ζ ⊂ C, if ζ is a complete future of ξ or ξ is a complete
+past of ζ then there exists a unique map
+ϕ(ξ, ζ) : A(ζ) → A(ξ)
+such that
+1. For any x ∈ ξ and z ∈ ζ, the reduction of ϕ(ξ, ζ) to A(z) → A(x) is ϕ(x, z).
+2. If ξ is a complete past of ζ, then ϕ(ξ, ζ) is a homomorphism.
+3. If ζ is a complete future of ξ, then ϕ†(ξ, ζ) is a homomorphism.
+4. If ξ ⪯ ζ is a complete pair, then ϕ(ξ, ζ) is an isomorphism.
+5. If ξ ⪯ υ ⪯ ζ, then ϕ(ξ, υ) ◦ ϕ(υ, ζ) = ϕ(ξ, ζ).
+14
+
+===== PAGE 15 =====
+
+In order to prove this, we ﬁrst need to prove the uniqueness aspect. Let A, B1, B2,
+et cetera be (ﬁnitely many) simple, ﬁnite-dimensional, matrix algeb ras. Let B =⨂
+k Bk. Any unital homomorphism A → B has a reduction A → Bk for each k. We
+need to show that two distinct homomorphisms will have disti nct reductions.
+Let ι : A → B be some unital homomorphism. Any other unital homomor-
+phism can be obtained from this by composing it with an automo rphism of B. All
+homomorphisms in this category are injective, so to simplif y notation, regard A as
+a subalgebra of B and ι as the natural inclusion. First we prove the result at the Lie
+algebra level.
+Denote the canonical inclusions by jk : Bk → B. The reductions of ι are simply
+j†
+k ◦ ι. For any β ∈ B, deﬁne ad β : B → B by adβ(a) = [ β, a]−.
+Lemma 3. For any β ∈ B, if j†
+k ◦ adβ ◦ι = 0 for all k, then adβ ◦ι = 0.
+Proof. Let C ⊂ B be the subspace spanned by the Bk’s. By the hypothesis, for any
+a ∈ A, [β, a]− must be orthogonal5 to every Bk, and thus to C. Hence for any c ∈ C,
+0 = τ(c[β, a]−) = τ(β[a, c]−).
+So β ∈ [A, C]⊥ . We need to show that [A, C]⊥ ⊆ A ′ (the commutant of A). The
+orthogonal complement of A ′ is [A, A], so we simply need to prove that [A, A] ⊆
+[A, C].
+C is closed as a Lie algebra and acts unitarily on B by ad. C generates B as an
+algebra, therefore the only part of B commuting with C is the center, C ⊂ B. This
+is thus the only trivial C-subrepresentation in B, and so [B, C] = [ B, B]. [A, C] =
+adC (A) is the sum of the nontrivial irreducible C-representations which intersect
+with A. Thus indeed [A, A] ⊆ [A, C], and the claim is proven.
+Lemma 4. Any homomorphism distinct from ι will have reductions distinct from those of
+ι.
+Proof. Let H := {h ∈ Aut B | j†
+k ◦ h ◦ ι = j†
+k ◦ ι ∀k} be the subgroup that leaves the
+reductions of ι invariant and BH the subalgebra of H-invariant elements. Aut A ′ ⊂
+Aut B leaves ι invariant, so Aut A ′ ⊆ H and BH ⊆ BAut A ′
+= A. H is compact, so
+we can construct the orthogonal projection p : B → → BH ⊂ B by averaging over H.
+Each map j†
+k ◦ ι factors through p,
+j†
+k ◦ ι = j†
+k ◦ p ◦ ι.
+Let β ∈ A be any element commuting with BH . For any a ∈ A and b ∈ BH ,
+τ(b[β, a]−) = τ(a[b, β]−) = 0,
+5W e are using the structure of B as a Hilbert space.
+15
+
+===== PAGE 16 =====
+
+so p ◦ adβ = 0. Thus
+j†
+k ◦ adβ ◦ι = j†
+k ◦ ι ◦ adβ = j†
+k ◦ p ◦ ι ◦ adβ = j†
+k ◦ p ◦ adβ ◦ι = 0.
+Therefore β ∈ A ∩ A ′ = C. This implies that BH = A.
+Any other homomorphism can be written as α ◦ ι with α ∈ Aut B. If this is
+distinct from ι then α ̸∈ Aut A, but if α ◦ ι has the same reductions as ι then α ∈ H.
+We would then have H larger than just Aut A ′ and thus BH would have to be a
+proper subalgebra of A.
+Proof of Theorem 2. Lemma 4 implies the uniqueness of the ϕP(ξ, y) in Axiom 1. If ξ
+is a complete past of ζ, then if a homomorphism ϕP(ξ, ζ) : A(ζ) → A(ξ) exists with
+the ϕP(ξ, z)’s (for z ∈ ζ) as its reductions, it can be reconstructed by multiplying
+the ϕP(ξ, z)’s together, so ϕP(ξ, ζ) is unique. Conversely , because of Axiom 2, we
+can multiply together the ϕP(ξ, z)’s to deﬁne ϕP(ξ, ζ).
+Analogously , forζ a complete future of ξ, a unique map ϕF(ξ, ζ) exists, satisfy-
+ing the requirements of Property 3.
+Suppose that both of these are true. That is, ξ ⪯ ζ is a complete pair. We need
+to show that ϕP(ξ, ζ) = ϕF(ξ, ζ) and is an isomorphism.
+Because all homomorphisms in this category are injective, t he existence of ho-
+momorphisms in both directions between A(ξ) and A(ζ) shows that they are of
+equal dimension and therefore isomorphic. These homomorph isms must there-
+fore be isomorphisms.
+So, ϕ†
+F(ξ, ζ) is an isomorphism, and by Theorem 1, ϕF(ξ, ζ) is its inverse. The
+reductions of ϕF(ξ, ζ) are the same as for ϕP(ξ, ζ) and as it is a homomorphism,
+the above uniqueness implies ϕP(ξ, ζ) = ϕF(ξ, ζ).
+Now suppose that ξ ⪯ υ ⪯ ζ. Let x ∈ ξ and y ∈ ζ. By what we have proven so
+far, ϕF(x, υ) is a reduction of ϕ(ξ, υ). By Axiom 3, ϕ(x, y) = ϕF(x, υ) ◦ ϕP(υ, y). So,
+ϕ(x, y) is a reduction of ϕ(ξ, υ) ◦ ϕP(υ, y). By Lemma 4, since the reductions are
+the same, we must have that ϕP(ξ, y) = ϕ(ξ, υ) ◦ ϕP(υ, y). Using Lemma 4 again,
+this shows that ϕ(ξ, υ) ◦ ϕ(υ, ζ) = ϕ(ξ, ζ).
+We have then shown that the system of isomorphisms associate d to complete
+pairs can be reconstructed from the local information of CP m aps associated to
+pairs of events. Because C is assumed to be locally ﬁnite, there is no problem in
+going from these isomorphisms of algebras to a system of unit ary maps satisfying
+the original deﬁnition of a quantum causal history; the only arbitrariness is a choice
+of irrelevant phase factors.
+On the other hand, the local formulation is restrictive. Not every choice of
+unitary maps for complete pairs can be expressed in terms of C P maps in this way .
+This formulation enforces local causality .
+16
+
+===== PAGE 17 =====
+
+8 Conclusions
+In this paper, we have provided a complete deﬁnition of a quan tum causal history ,
+a pre-spacetime framework for a quantum theory of gravity in which there is a
+simple matrix algebra of operators for every event in the universe (represented by a
+causal set) and a completely positive evolution map for ever y causally related pair
+of events. These represent the transfer of quantum informat ion between events in
+the quantum spacetime. We showed that the axioms in the deﬁni tion allow us to
+reconstruct the unitary evolution between complete pairs, a necessary step since
+complete pairs correspond to isolated systems.
+In the picture of the universe as a QCH, it can be thought of as a very large
+collection of quantum-mechanical building blocks. Everyt hing is (locally) ﬁnite,
+both the dimensionality of these systems as well as the causa l set. We regard this
+as a simple way to model the idea that there is a ﬁnite number of fundamental
+degrees of freedom in a ﬁnite region of the universe. Althoug h there is certainly
+no hard evidence for this, such ideas are supported by Bekens tein’s arguments,
+by the black hole entropy calculations from both string theo ry and loop quantum
+gravity , and is related to holographic ideas and the argumen ts for a many-Hilbert
+space M-theory in [4]. Even independent of such motivations , ﬁniteness allows
+signiﬁcant simpliﬁcations which we have been able to exploi t in this paper.
+It may be possible to generalize a QCH to use some inﬁnite-dim ensional alge-
+bras. Theorem 2 may extend to type II 1 von Neumann factors, which have ﬁnite
+traces. However, we have not investigated this possibility in detail because the
+physical motivations for using matrix algebras are much str onger.
+It is interesting to note the multiple ways that quantum caus al histories can be
+motivated, including:
+1. The original deﬁnition considering them as the general fo rmalism for causal
+spin networks [14].
+2. As an algebraic quantum ﬁeld theory on a causal set (Sectio n 6).
+3. As an alternative to the usual quantum cosmology of a wavef unction of the
+universe evolving according to the Wheeler-De Witt equatio n. A QCH is a
+framework for quantum cosmology that is not restricted to gl obally hyper-
+bolic spacetimes, as is the case with a WDW-type quantum cosm ology . This
+is discussed in more detail in [15].
+4. The local evolution in a QCH is well-suited for addressing the important
+problem of identifying localized propagating degrees of fr eedom in a spin
+foam, without having to use the entire partition function.
+5. Precisely the same objects that we used (matrix algebras a nd CP maps) are
+basic tools in quantum information theory . Conceptually , t his suggests that
+17
+
+===== PAGE 18 =====
+
+the universe modeled as a QCH is nothing but a background-ind ependent
+quantum computer. More practically , the analogue of the muc h sought-after
+propagating “particle” in a spin foam, in quantum informati on theoretic lan-
+guage, is a quantum channel. Tools such as the operator-sum r epresentation
+of CP maps, and even ideas from the theory of error-correctio n in quantum
+computation, might be used to identify such objects.
+There is an important clariﬁcation we should make. If quantu m causal histories
+are motivated via 2 above, then this is not gravity , but a kind of quantum ﬁeld
+theory on a peculiar background. This is related to the issue of the given causal
+set that a QCH is built on. If the procedure is simply “given a c ausal set C, a
+QCH is constructed via the procedure of Section 5,” then this cannot have much
+to do with a dynamical theory of space-time. Unless, somehow , all the gravitation
+degrees of freedom are in the algebras and C is some auxiliary background, but we
+are not aware of such a scheme. In the quantum causal historie s motivated from
+spin foams in quantum gravity (4 above), there is an further s tep. The partition
+function for a (causal) spin foam model includes a sum over al l causal sets. This
+is the usual path integral formulation of quantum gravity , w ith each term in the
+path integral being a QCH. It would be very interesting to und erstand if there is a
+way for a QCH to be a dynamical quantum space-time without the summation of a
+path integral. For this, one would need the causal set and the algebras to “interact”
+with each other.
+The reason why there are so many ways to understand quantum ca usal his-
+tories is partly the general nature of a CP map. It is, after al l, the most general
+physical transformation allowed by quantum theory . Comple tely positive maps
+already appear in several places in quantum cosmology and we close this paper
+by referring to a few examples.
+In the context of continuous time evolution, master equatio ns are the famil-
+iar tools used to describe quantum noise, for example in quan tum optics. These
+are differential equations, governing the non-unitary evo lution of the density ma-
+trices of dissipative quantum systems (e.g., [12, 6]). When a master equation is
+integrated, the evolution of the density matrix for a ﬁnite t ime-step is given by a
+completely positive map.
+Another interesting comparison is between our CP maps and de coherence. The
+term decoherence is used in the literature both to describe q uantum noise, and
+the more speciﬁc process of phase damping that is believed to play a role in the
+emergence of classicality (see, for example, [22]). Using d ecoherence to mean the
+second, we note that it is possible to incorporate processes of that type in a quan-
+tum causal history . In [2, 3], an interesting scheme for desc ribing decoherence was
+proposed that is closely related to quantum causal historie s.
+In this new formulation, with the completely positive maps a s the fundamen-
+tal evolution operators, we obtain a quantum cosmology in wh ich the universe
+is simply a very large collection of ﬁnite quantum systems. T he information gets
+18
+
+===== PAGE 19 =====
+
+shufﬂed around, according to the causal structure. Local ob servers can lose infor-
+mation simply because, by causality , it is not available to t hem. This is much like
+information loss due to the presence of a horizon.
+Finally , we note that there are several tools that can be used for the practical
+implementation of CP maps in a speciﬁc model. These include t he operator-sum
+representation that is frequently used in quantum informat ion theory (see [17],
+chapter 8 and [20] for excellent reviews, and, for example, [ 21, 7] for the case of
+dimensionality change from input to output), and the Stines pring construction in
+operator algebras [10].
+Acknowledgments
+We are very grateful to the Jesse Phillips Foundation for pro viding the funds that
+brought us together in Berlin. FM would like to thank Barbara Terhal for very use-
+ful pointers to the relevant literature in quantum informat ion theory , Mike Mosca
+and David Poulin for discussions on this subject, Lee Smolin and Olaf Dreyer for
+their comments on this work, and the Albert Einstein Institu te, Golm, where part
+of this work was carried out. Part of this work was supported b y NSF grant PHY-
+0090091.
+References
+[1] J. Baez, “An Introduction to Spin Foam Models of Quantum Gr avity and BF Theory”,
+Lect. Notes Phys. 543 (2000) 25–94 (gr-qc/9905087).
+[2] R. Blute, I.T. Ivanov , P . Panangaden, “Discrete Quantum Causal Dynamics”,
+gr-qc/0109053.
+[3] R. Blute, I.T. Ivanov , P . Panangaden, “Decoherent histo ries on graphs”,
+gr-qc/0111020.
+[4] T. Banks and W. Fischler, “M-theory observables for cosmo logical space-times”,
+hep-th/0102077.
+[5] D. Buchholz, “Algebraic Quantum Field Theory: A Status R eport”, XIII International
+Congress on Mathematical Physics (London, 2000) , 31–45, Int. Press, Boston, MA, 2001
+(math-ph/0011044).
+[6] A.O. Caldeira, A.J. Leggett, “Quantum tunnelling in a di ssipative system”, Ann.
+Phys., 149(2) (1983) 374.
+[7] M.-D. Choi, “Completely positive linear maps on complex m atrices”, Lin. Algebra
+and Its Appl. 10, 285 (1975).
+19
+
+===== PAGE 20 =====
+
+[8] S. Gupta, “Causality in spin foam models”, Phys. Rev . D61 (2000) 064014
+(gr-qc/9908018).
+[9] R. Haag, Local Quantum Physics (Springer V erlag, Berlin) 1992.
+[10] E.C. Lance, Hilbert C ∗-modules. A toolkit for operator algebraists . C.U.P . (Cam-
+bridge:1995).
+[11] E.R. Livine, D. Oriti, “Implementing causality in the s pin foam quantum geometry”,
+gr-qc/0210064.
+[12] G. Lindblad, “On the generators of quantum mechanical s emigroups”, Commun.
+Math. Phys. 48 (1976) 119–130.
+[13] F. Markopoulou, “Dual formulation of spin network evolu tion”, gr-qc/9704013.
+[14] F. Markopoulou, “Quantum causal histories”, Class. Qua ntum Grav .17 (2000) 2059–
+2072 (hep-th/9904009).
+[15] F. Markopoulou, “Planck-scale models of the Universe”, Science & Ultimate Real-
+ity: Quantum Theory, Cosmology and Compexity , J.D. Barrow, P .C.W. Davies and C.L.
+Harper, eds, C.U.P . (Cambridge: 2003) (gr-qc/0210086).
+[16] F. Markopoulou and L. Smolin, “Causal evolution of spin n etworks”, Nucl. Phys.
+B508 (1997) 409–430 (gr-qc/9702025).
+[17] M.A. Nielsen and I.L. Chuang, Quantum Computation and Quantum Information, C.U.P .
+(Cambridge:2000)
+[18] D. Oriti, “Spacetime geometry from algebra: spin foam m odels for non-perturbative
+quantum gravity”, Rept. Prog. Phys. 64 (2001) 1489–1544 (gr -qc/0106091).
+[19] A. Perez, “Spin Foam Models for Quantum Gravity”, Class. Quant. Grav . 20 (2003)
+R43 (gr-qc/0301113).
+[20] B. Schumacher, “Sending quantum entanglement through noisy channels”, Phys.
+Rev . A, 54 (1996) 2614 (quant-ph/9604023).
+[21] B.M. Terhal, I.L. Chuang, D.P . DiVincenzo, M. Grassl, J.A . Smolin, “Simulat-
+ing quantum operations with mixed environments”, Phys. Rev . A60 (1999) 881
+(quant-ph/9806095).
+[22] W.H. Zurek, “Decoherence and the transition from quant um to classical”, Physics
+T oday44, 10 (October 1991) 36–44.
+20

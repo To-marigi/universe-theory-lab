@@ -1,0 +1,1949 @@
+===== PAGE 1 =====
+
+arXiv:quant-ph/9902008v3  26 Jul 1999
+Somewhere in the Universe:
+Where is the Information Stored When Histories Decohere?
+J.J.Halliwell
+Theory Group
+Blackett Laboratory
+Imperial College
+London SW7 2BZ
+UK
+Preprint Imperial/TP/98-99/29, quant-ph/9902008
+Second Revised version. July 26, 1999.
+Submitted to Physical Review D
+PACS numbers: 03.65.-w, 03.65.Bz, 98.80.Hw
+ABSTRACT: In the context of the decoherent histories approa ch to quantum the-
+ory, we investigate the idea that decoherence is connected w ith the storage of information
+about the decohering system somewhere in the universe. The k nown connection between
+decoherence and the existence of records is extended from th e case of pure initial states to
+mixed states, where it is shown that records may still exist b ut are necessarily imperfect.
+We formulate an information-theoretic conjecture about de coherence due to an environ-
+ment: the number of bits required to describe a set of decoher ent histories is approximately
+equal to the number of bits of information thrown away to the e nvironment in the coarse-
+graining process. This idea is veriﬁed in a simple model cons isting of a particle coupled
+to an environment that can store only one bit of information. We explore the decoherence
+and information storage in the quantum Brownian motion mode l, in which a particle tra-
+jectory is decohered as a result of coupling to an environmen t of harmonic oscillators in a
+thermal state. It is shown that the variables that the enviro nment naturally measures and
+stores information about are non-local functions of time wh ich are essentially the Fourier
+components of the function x(t) (describing the particle trajectory). In particular, the
+records storing the information about the Fourier modes are the positions and momenta
+of the environmental oscillators at the ﬁnal time. We show th at it is possible to achieve
+decoherence even if there is only one oscillator in the envir onment. The information count
+of the histories and records in the environment add up accord ing to our conjecture. These
+results give quantitative content to the idea that decohere nce is related to “information
+lost”. Some implications of these ideas for quantum cosmolo gy is discussed.
+
+===== PAGE 2 =====
+
+1. INTRODUCTION
+The notion of decoherence plays an important role in discuss ions of the foundations
+of quantum theory, particularly in investigations of the em ergence of classical behaviour
+[1,2,3,4]. Decoherence typically arises as a result of a coa rse-graining scheme – dividing the
+system into subsystem and environment, for example, and the n tracing out the environ-
+ment. Decoherence is then often regarded as a kind of general ized measurement process:
+the environment producing the decoherence “measures” the d ecohering subsystem, and
+“stores information” about it. Indeed, it can be argued that the physical signiﬁcance of
+decoherence is that it ensures the storage of information ab out the decohering system’s
+properties somewhere in the universe [2,5].
+These appealing ideas are frequently mentioned in the liter ature, and some general
+theorems supporting them exist [2,5]. However, it is probab ly fair to say that, despite the
+concrete mathematical grip we now have on the notion of infor mation, there is still consid-
+erable scope for their development and implementation in ph ysically interesting models.
+This paper will focus on precisely these issues, through two particular questions. First,
+when a system decoheres as a result of coupling to an environm ent, how, in practice, can
+the system’s history be reconstructed by examining the envi ronment? That is, which prop-
+erties of the environment carry the information about the de cohered system? Second, how
+is the amount of information stored by the environment related to the natu re or degree of
+decoherence of the system?
+We will address these issues in the context of the decoherent histories approach to
+quantum theory [6,2,7,8,9,10]. (Other approaches to decoh erence, such as Zurek’s “einse-
+lection” approach [11,4], related density matrix approach es [3] or quantum state diﬀusion
+[12,13], may be equally useful for analyzing these issues, b ut will not be explored here.) In
+2
+
+===== PAGE 3 =====
+
+the decoherent histories approach, probabilities are assi gned to histories via the formula,
+p(α 1,α 2, · · ·) = Tr
+(
+CαρC†
+α
+)
+(1. 1)
+where Cα denotes a time-ordered string of projectors interspersed w ith unitary evolution,
+Cα =Pα ne− i
+¯hH(tn−tn− 1)Pα n− 1e− i
+¯hH(t2−t1) · · ·Pα 1 (1. 2)
+and α denotes the string α 1,α 2, · · ·αn. Of particular interest are sets of histories which
+satisfy the condition of decoherence, which is that decoher ence functional
+D(α,α ′) = Tr
+(
+CαρC†
+α ′
+)
+(1. 3)
+is zero when α ̸= α ′. Decoherence implies the weaker condition that Re D(α,α ′) = 0 for
+α ̸= α ′, and this is equivalent to the requirement that the above pro babilities satisfy the
+probability sum rules.
+But for us stronger condition of decoherence is the more inte resting one since it is
+related to the existence of records. In particular, if the in itial state is pure, there exist
+a set of records at the ﬁnal time tn which are perfectly correlated with the alternatives
+α 1 · · ·αn at times t1 · · ·tn [2]. This follows because, with a pure initial state |Ψ⟩, the
+decoherence condition implies that the states Cα |Ψ⟩ are an orthogonal set. It is therefore
+possible to introduce a projection operator Rβ (which is generally not unique) such that
+RβCα |Ψ⟩ =δαβCα |Ψ⟩ (1. 4)
+It follows that the extended histories characterized by the chainRβCα |Ψ⟩ are decoherent,
+and one can assign a probability to the histories α and the records β , given by
+p(α 1,α 2, · · ·αn;β1,β 2 · · ·βn) = Tr
+(
+Rβ1β2···βnCαρC†
+α
+)
+(1. 5)
+3
+
+===== PAGE 4 =====
+
+This probability is then zero unless αk =βk for allk, in which case it is equal to the original
+probability p(α 1, · · ·αn). Hence either the α ’s or the β ’s can be completely summed out
+of Eq.(1.5) without changing the probability, so the probab ility for the histories can be
+entirely replaced by the probability for the records at a ﬁxe d moment of time at the end
+of the history:
+p(α ) = Tr
+(
+Rαρ(tn)
+)
+= Tr
+(
+CαρC†
+α
+)
+(1. 6)
+Conversely, the existence of records β1, · · ·βn at some ﬁnal time perfectly correlated with
+earlier alternatives α 1, · · ·αn att1, · · ·tn implies decoherence of the histories. This may be
+seen from the relation
+D(α,α ′) =
+∑
+β1···βn
+Tr
+(
+Rβ1···βnCαρC†
+α ′
+)
+(1. 7)
+Since each βk is perfectly correlated with a unique alternative αk at time tk, the summand
+on the right-hand side is zero unless αk =α ′
+k (although note that, as we shall see later, a
+perfect correlation of this type is generally possible only for a pure initial state).
+There is, therefore, a very general connection between deco herence and the existence of
+records. From this point of view, the decoherent histories a pproach is very much concerned
+with reconstructing possible past histories of the univers e from records at the present
+time, and then using these reconstructed pasts to understan d the correlations amongst the
+present records [14].
+The above results on the existence of records are very genera l, but they do not give
+any idea as to how one can actually identify the records in a gi ven physical situation. How,
+for example, can one identify the records in the much-studie d quantum Brownian motion
+model, in which a large bath of oscillators in a thermal state decohere a sequence of particle
+positions? In that model, the environment in some sense “mea sures” the particle, so we
+expect the records to be stored in the environment. Is it in pr actice possible to examine the
+4
+
+===== PAGE 5 =====
+
+environment at the ﬁnal time and explicitly reconstruct the past history of the particle?
+Little clue as to how one should do this is provided by the form al results above. One main
+aim of this paper, as indicated at the beginning of this Secti on, is therefore to show how
+to actually ﬁnd the records in the quantum Brownian motion mo del.
+The second issue we will address, again as indicated, concer ns the amount of informa-
+tion stored in the records. Since the environment is thought of as measuring and storing
+information about the system, we expect there to be a quantit ative connection between the
+amount of information stored and the degree or nature of the d ecoherence of the decohered
+system. What is the relevant measure of the degree or “amount ” of decoherence and how
+is it related to the amount of information stored about the hi stories?
+Thinking of decoherence via an environment as a generalized measurement process, it
+is not diﬃcult to see that the relevant measure of the amount o f decoherence is, loosely
+speaking, the precision or width to within which the decoher ent histories are deﬁned, or
+equivalently, the number of histories in the decoherent set . (This issue, is, incidently,
+distinct from the question of the degree of approximate decoherence, discussed below and
+elsewhere [15,16]). To be more precise, a given set of histor ies requires a certain number
+of bits of information to describe it. In the general account of histories and records given
+above, suppose that the alternatives αk run over A values. These could for example, be
+projections onto ranges of position that partition the x-axis intoA diﬀerent bins. Since k =
+1, · · ·n, there are therefore An diﬀerent histories, requiring log 2An bits of information to
+describe them. Clearly if these histories are decoherent, t he records they are correlated with
+must be able to store at least log 2An bits. For many practical instances of decoherence,
+most of this information is stored in the decohering environ ment, hence the environment
+Hilbert space must have an information storage capacity lar ge enough to accommodate
+the information.
+5
+
+===== PAGE 6 =====
+
+However, not all of this information needs to be stored in the environment. This is
+because there can be a certain amount of decoherence of histo ries even without coupling to
+an environment. For example, the decoherence functional (1 .3) is automatically diagonal
+in the ﬁnal alternatives αn (because of the cyclic property of the trace and the exclusiv e
+property of the projectors). These alternatives don’t requ ire records since they exist at the
+ﬁnal time. More generally, for a system Hilbert space of dime nsion Ds, since decoherence
+requires that the states Cα |Ψ⟩ must be orthogonal, there can in principle be a decoherent
+set of as many as Ds histories, without having to appeal to an environment. (To r each this
+upper limit, however, requires that the operators projecte d onto at each time are carefully
+chosen and possibly not physically interesting). Hence, mo st generally, the records consist
+of ﬁnal projections onto both the distinguished system and t he environment. Furthermore,
+it is then clear that what the environment stores informatio n about is the enhancement in
+the number of histories in a decoherent set when the system is coupled to an environment.
+To be precise, return to the set of An histories descibed above. Since, as stated there
+is automatic decoherence of the A ﬁnal alternatives, it is the An− 1 alternatives at the
+n − 1 earlier times that typically don’t decohere without an env ironment, and thus it is
+the records of these An− 1 alternatives that is stored in the environment. If the label s of
+the records living in the environment β run over a total of B values, we expect that a
+necessary condition for decoherence is
+B ≥ An− 1 (1. 8)
+This eﬀectively mean that there must be at least one register for each distinct history.
+If B < An− 1, each history cannot be uniquely correlated with a record la bel βk, since
+there are not enough records, hence there will be no decohere nce (in the pure state case).
+Therefore, the amount of information stored in the environm ent places an upper limit on
+6
+
+===== PAGE 7 =====
+
+the number of histories in the decoherent set. Diﬀerently pu t, the environmental informa-
+tion storage capacity limits the permissible amount of ﬁne- graining of the system histories
+consistent with decoherence.
+The notion of the information of histories used here is clear ly the simplest one imagin-
+able, but is actually suﬃcient for present purposes. The gen eral question of the assignment
+of information (or entropy) to histories, and its relation t o information storage in the envi-
+ronment, is a very interesting one [17,18,19], but we will no t go into it here. The possible
+diﬃculty is that a Shannon-like information measure requir es probabilities for histories,
+but here we would like to discuss the logically prior issue of decoherence, hence the ex-
+istence of probabilities for histories cannot be assumed. I n any reasonable assignment of
+information to histories, however, the value log 2An will typically arise as the maximum
+information, when the probabilities for the histories are a ll equal, so here we are covering
+the worst possible case. This is actually appropriate to man y of the system–environment
+models studied in the literature, such as the quantum Browni an motion model, where de-
+coherence typically arises for a ﬁxed environment initial s tate with a wide class of system
+initial states. Decoherence is due in these models to the joi nt system–environment dynam-
+ics and to the environmental initial state. It does not depen d very much on the system
+initial state, hence it is appropriate to consider decohere nce and information storage for a
+variety of initial states.
+Some comments on the nomenclature “information lost” and “r ecords” are in order.
+If the environment starts out in a pure state, and its Hilbert space has dimension De,
+then its maximum information storage capacity is log 2De bits. Hence we would say that
+the “information lost” to the environment is log 2De bits, and we would also say that the
+records have De diﬀerent possible states ( i.e., B = De, in the notation used above). If,
+on the other hand, the environment is in a mixed state, the “in formation lost” to the
+7
+
+===== PAGE 8 =====
+
+environment can be greater than log 2De, since it also includes pre-exisiting uncertainty
+(or “information loss”) in the environment state. But the re cords accessible by projections
+onto the environment still have De diﬀerent possible states, and in fact the number of
+distinguishable environment states is often diminished in the presence of a m ixed state.
+This will be discussed in more detail later in the paper, but t o be clear, the conjecture we
+will explore is that in the case of both pure and mixed states, the amount of decoherence
+is related to the “information lost” to the environment, whe ther or not that information
+is accessoble through projections onto the environment.
+Note also that the above observation about the connection be tween the information
+of histories and the size of the environment also ignores the usual requirement of eﬀective
+irreversibility of practical information storage. To stor e one bit in an eﬀectively irreversible
+fashion typically requires far more than one bit. Hence we ar e not particularly concerned
+with practical information storage (although that is ultim ately in interesting issue to pur-
+sue), rather the more fundamental question of the connectio n between decoherence and
+maximum information storage.
+The above arguments imply that in a system-environment situ ation, if we throw away
+N bits of information by tracing out an environment of dimensi on 2N , we could, in princi-
+ple, ﬁnd an enhancement in the number of histories in a decohe rent set by up to 2 N . This
+means, for example, that if we throw away just one bit, by coup ling to a two-state system
+and then tracing it out, we could increase the number of decoh erent histories by a factor
+of 2. We will indeed produce such an example. Crudely speakin g, tracing out anything
+ought to decohere something.
+Another striking example is in the quantum Brownian motion m odel [20]. Conventional
+wisdom dictates that an environment of a large number of osci llators is required to decohere
+histories of position of a single point particle [3]. We will show, however, that even with an
+8
+
+===== PAGE 9 =====
+
+environment of just one oscillator, decoherence of certain variables describing t he particle
+may be obtained. The variables in question are deﬁned non-lo cally in time, and are
+essentially the Fourier modes of the particle’s trajectory . This result then points the way
+towards showing how the system’s history may be recovered fr om the oscillator states of a
+many-oscillator environment. This simple example also she ds some light on the question
+of recurrences and how it aﬀects decoherence.
+In addition to the issues of explicitly identifying the reco rds, and of ﬁnding a concrete
+connection between decoherence and information storage, a third issue of relevance is the
+question of approximate versus exact decoherence. In most r ealistic situations, decoherence
+is only approximate. A reasonable conjecture is that an appr oximately decoherent set
+of histories is in some sense close to an exactly decoherent s et, although it is generally
+diﬃcult ﬁnd such exactly decoherent sets explicitly [21]. S ince decoherence is related to
+the existence of records, one can imagine that the nature of e xact versus approximate
+decoherence could be better understood by examining the nat ure of the records. To be
+more precise, since records exist at a ﬁxed moment of time at t he end of the histories, they
+are described by projections at just one time and they are the refore trivially decoherent. It
+these records are exactly correlated with a set of alternati ves in the past, those alternatives
+would then be exactly decoherent. The extent to which these a lternatives are then “close”
+to a certain approximately decoherent set of interest could then be assessed. Approximate
+decoherence, may, for example, be approximate correlation of past alternatives with an
+exactly decoherent set of records. We will have somewhat les s to say about this issue than
+the other two, but some comments can be made on the basis of the models examined, and
+it will be taken up in more detail elsewhere.
+In assessing the extent to which an environment “measures” o r stores information
+about a system it is interacting with, two diﬀerent approach es suggest themselves.
+9
+
+===== PAGE 10 =====
+
+The ﬁrst, and simpler, approach is to examine explicit model s of the measurement pro-
+cess, in which the system of interest is coupled to a measurin g device speciﬁcally designed
+to become correlated with the system in a particular way. In t his way one can explicitly
+see the information transfer from system to apparatus. Howe ver, one can then also regard
+the apparatus as an environment for the system. The apparatu s states can then be traced
+out to produce decoherence of certain system alternatives. One can then investigate the
+connection between the decoherence of the system, and the ex tent to which information
+about it is stored elsewhere.
+The second approach is to do things the other way round. That i s, to start with a
+system coupled to an environment in a more general way, which produces decoherence but
+less obviously corresponds to a particular type of measurem ent. We can then ask whether,
+when decoherence occurs, information about the system is in some sense stored in the
+environment. In this paper, we will address these issues in t wo models.
+We begin in Section 2 with a general discussion of records in t he case, not previously
+covered, in which the initial state is mixed. It is argued tha t record-like projectors still
+exist, but their correlation with past alternatives is nece ssarily imperfect. Records in the
+case of decoherence by conservation are also discussed.
+Section 3 concerns a model corresponding to the measurement process which can also
+be used as an environment. It is a model for position measurem ents which determine
+whether a particle has passed through a series of spatial reg ions R1,R 2, · · ·at a series of
+timest1,t 2, · · ·. The measuring device consists of a series of 2-state system s localized to the
+regionsR1,R 2, · · ·, with delta-functions in time, so the detectors are only on m omentarily.
+The coupling causes the 2-state system to ﬂip from one state t o the other. Hence at the
+end of the history, one can discover whether the particle was inR1 att1, in R2 att2 etc., by
+examining the state of the two-state systems. We thus obtain a very simple model of the
+10
+
+===== PAGE 11 =====
+
+measurement process. We then trace out the measuring device s and look for decoherence
+of the system alone. Histories in which the position is speci ﬁed to be in or not in R1, R2
+etc, at times t1,t 2 are found to be exactly decoherent. We thus ﬁnd veriﬁcation o f our
+conjecture: the number of bits required to describe a decohe rent set of histories is equal
+to the number of bits of information about the system stored i n the environment.
+In Section 4 we consider the quantum Brownian motion model in detail. It is ﬁrst ob-
+served that classically, the response of each environmenta l oscillator in interacting with the
+particle trajectory is to shift its ﬁnal position and moment um by an amount proportional
+to the Fourier modes of the trajectory. Essentially the same story is shown to persist in
+the quantum case – the shifted position and momentum of the os cillators are the records
+storing information about the Fourier modes. The informati on storage is essentially per-
+fect for a pure initial state for the environment, but imperf ect in the case of a mixed state.
+It is also seen that the set of Fourier modes, in contrast to th e particle trajectories, are
+in some sense the natural variables in which to discuss decoh erence. An elementary way
+of counting the number of histories in a decoherent set is int roduced, and this number is
+shown to approximately coincide with the number of diﬀerent possible record states in the
+environment, in agreement with the conjecture.
+Section 5 contains a discussion, including the implication s of some of these ideas for
+quantum cosmology.
+This paper is builds very much on the connection between deco herence and records
+in the decoherent histories approach, especially as put for ward by Gell-Mann and Hartle
+[2,5], although as stated above, it is likely that other appr oaches to decoherence may be
+amenable to a similar analysis. It is also partly inspired by some of the “It from Bit”
+ideas initiated by Wheeler [22] and explored in detail by Cav es [23], Wooters [24], Zurek
+[4,25,26] and others [27]. One particular motivation is the recent remark by Zurek [27], that
+11
+
+===== PAGE 12 =====
+
+information-theoretic ideas have not been exploited to the degree that they might. Indeed,
+before the advent of the decoherent histories approach, it w as Zurek who ﬁrst spelled out
+the connection between decoherence and information storag e in the environment [25,28].
+Some recent papers on the assigment of information to histor ies by Hartle and Brun [19],
+Gell-Mann and Hartle [5], and Isham and Linden [17] have also been inﬂuential. Finally, is
+should be noted that there has recently been a surge of intere st in the subject of quantum
+information but these interesting developments are not ver y closely related to the present
+work, since we are interested in the case in which the informa tion stored by the environment
+is essentially classical.
+2. RECORDS IN THE CASE OF MIXED INITIAL ST A TES
+The connection between decoherence and records has been dem onstrated only in the
+case of a pure initial state [2]. Yet many situations in which decoherence is studied, such
+as the quantum Brownian motion model, involve a thermal stat e for the environment
+[20,15], hence the overall initial state is mixed. In this si tuation, the connection between
+decoherence and records needs to be examined more carefully . There are two issues. First
+of all, to determine whether records still exist in this case , that is, whether it is still possible
+to add a record projector at the end of the chain and preserve d ecoherence. Secondly, to
+work out the degree of correlation between the records and th e histories.
+2(A). Mixed Initial States
+We start from the observation that a mixed state can always be regarded as the reduced
+density operator of a pure state deﬁned on an enlarged Hilber t space. Take, for example,
+12
+
+===== PAGE 13 =====
+
+a mixed density operator of the form,
+ρ =
+∑
+n
+pn |n⟩⟨n| (2. 1)
+Suppose we enlarge the original Hilbert space H to H ⊗ ˜H, where ˜H is an exact copy of
+H. Now on H ⊗ ˜H, we may deﬁne the pure state,
+|Ψ⟩ =
+∑
+n
+p
+1
+2
+n |n⟩ ⊗ ˜|n⟩ (2. 2)
+and it is readily seen that
+ρ = Tr ˜H (|Ψ⟩⟨Ψ|) (2 . 3)
+Of course, there are many diﬀerent ways of regarding ﬁnding a pure state which reduces
+to a given mixed state in this way, but this way is suﬃcient for illustrative purposes.
+On the enlarged Hilbert space, the decoherence functional m ay be written,
+D(α,α ′) = Tr
+(
+Cα ⊗ 1 1|Ψ⟩⟨Ψ|C†
+α ′ ⊗ 1 1
+)
+(2. 4)
+where the trace is over H ⊗ ˜H. When there is decoherence, the argument showing the
+existence of records may now be repeated: there exist record s at the ﬁnal time perfectly
+correlated with the alternatives α . The records exist, however, on the enlarged Hilbert
+space. The probability of both the records and the histories is
+p(α,β ) = Tr
+(
+˜Rβ Cα ⊗ 1 1|Ψ⟩⟨Ψ|C†
+α ⊗ 1 1
+)
+(2. 5)
+where ˜Rβ is deﬁned on H ⊗ ˜H. It will generally not be possible to express this joint
+probability in terms of states and projections on H alone. The projector on the enlarged
+Hilbert space will generally be a sum of projectors of the for mR ⊗ Q, where R acts on H
+and Q acts on ˜H, and part of records will be contained in the projector Q on ˜H.
+Nevertheless, the existence of this joint probability dist ribution, in which the addition
+of the records projector ˜Rβ does not disturb the decoherence of the histories, permits u s to
+13
+
+===== PAGE 14 =====
+
+deduce the existence of an analagous formula on H. For suppose we coarse grain the record
+projector in such a way that all components Q acting on ˜H are replaced by the identity.
+The decoherence of the histories is preserved since coarse g raining preserves decoherence.
+This implies that we may write down a joint probability distr ibution of the form
+p(α,β ) = Tr
+(
+RβCαρC†
+α
+)
+(2. 6)
+where everything is now deﬁned on the original Hilbert space H, and Rβ is a projection
+operator. Hence, given decoherence in the case of a mixed ini tial state, we can always add
+an extra projector Rβ at the end of the chain without aﬀecting decoherence.
+A less general, but perhaps more explicit discussion can be g iven by appeal to the
+particular situations in which decoherence occurs. In most physically interesting situations,
+the type of variables that decohere, and that are correlated with records, is primarily
+determined by the underlying Hamiltonian, and not by the ini tial state. The initial state
+aﬀects only the degree of decoherence and correlation. Supp ose we ﬁrst take as an initial
+state one of the pure states in which the mixed initial state o f interest is diagonal ( i.e.,
+one of the states |n⟩⟨n|in the notation (2.1)). Because the variables that decohere depend
+only on the Hamiltonian we expect there to be some degree of decoherence for this state,
+and record projectors may therefore be added at the end of the histories, without aﬀecting
+decoherence. Now suppose we go from this pure initial state t o the mixed state. Since this
+is a coarse graining, the extended histories including the r ecords continue to be decoherent .
+This implies that a formula of the type (2.6) will exist and sa tisfy the probability sum
+rules.
+The interpretation of the extra projector in (2.6) as an exac t record makes sense only on
+the enlarged Hilbert space. On coarse graining to the origin al Hilbert space, the correlation
+between α and the reduced set of records β will generally be imperfect because we have
+14
+
+===== PAGE 15 =====
+
+thrown away some of the information. This can be explicitly s hown as follows. Consider
+the conditional probability of the records β given the past alternatives α . This is given by
+p(β |α ) = p(α,β )
+p(α )
+= Tr
+(
+Rβ ρeff (α )
+)
+(2. 7)
+where
+ρeff (α ) = CαρC†
+α
+Tr
+(
+CαρC†
+α
+) (2. 8)
+A perfect correlation between the records and the past alter natives is assured only if
+p(β |α ) = 1, which is possible only if ρeff (α ) is pure. If ρeff (α ) is mixed, p(β |α )< 1, and
+the correlation is imperfect.
+To see when ρeff (α ) is pure, insert the diagonal form for ρ in (2.8):
+CαρC†
+α =
+∑
+n
+pn Cα |n⟩⟨n|C†
+α (2. 9)
+ρeff (α ) is therefore pure if and only if just one of the terms in the su m on the right-hand
+side is non-zero. This can only come about if each α picks out a single value of n, so that
+for ﬁxed α ,
+Cα |n⟩ = 0 (2 . 10)
+except for just one value of n corresponding to α . (The converse need not be true, i.e.,
+the value of n for which Cα |n⟩ is non-zero may correspond to many values of α ). The
+interesting case, however, is that in which the fact that the initial state is mixed is essential
+for decoherence, i.e., there is no decoherence for the constituent pure initial st ates. In this
+case the states Cα |n⟩ are generally not orthogonal,
+⟨n|C†
+α ′Cα |n⟩ ̸= 0 (2 . 11)
+15
+
+===== PAGE 16 =====
+
+for α ′ ̸= α . This is incompatabile with (2.10). Hence, ρeff (α ) can only be pure when
+there is decoherence for every constituent pure component o f the mixed initial state, and
+in addition, the (rather special) condition (2.10) is satis ﬁed.
+We therefore conclude the following: when decoherence relies on the impurity of the
+initial state, there are no records that are perfectly corre lated with the past alternatives .
+When there is decoherence for the constituent pure componen ts of the initial state, it will
+generally still be true that there are no perfect records, ex cept for the special types of
+histories for which the condition (2.10) is satisﬁed.
+Physically, the decay in quality of the records is no surpris e. We assign a mixed state
+when the system is subject to ﬂuctuations which are genuinel y beyond our control so
+we average over them. For example, all systems are subject to scattering by microwave
+background radiation, and the scattered photons may subseq uently disappear beyond the
+horizon so are truly lost. This means that the records themse lves are in a mixed state, so
+suﬀer inescapable ﬂuctuations, and can therefore not be per fectly correlated with anything.
+However, although exact records are impossible, we might re asonably expect to ﬁnd ﬁnal
+alternatives which are correlated with past alternative to a good approximation. Indeed,
+we will ﬁnd this to be the case in the particular models we inve stigate.
+The above arguments also illustrate why mixed initial state s tend to give better de-
+coherence than pure ones ( e.g., in the quantum Brownian motion model the decoherence
+improves with increasing temperature of the thermal state o f the environment). By better
+decoherence, we mean that more histories decohere, or equiv alently, that the histories may
+be described more ﬁnely without encountering interference eﬀects. Earlier we put forward
+the idea that the amount of decoherence is related to the amou nt of information about
+the histories stored somewhere in the universe. The more inf ormation stored the better
+the decoherence. Since a mixed state may be regarded as the re duced density operator of
+16
+
+===== PAGE 17 =====
+
+a pure state on an enlarged Hilbert space, it clearly represe nts, compared to a pure state,
+an enhanced ability to store information, since there is qui te simply more Hilbert space
+available. Some of that information is inaccessible from th e original Hilbert space, but
+that does not matter for the purposes of decoherence, which d epends only on the storage
+of information somewhere.
+2(B). Records in the Case of Decoherence by Conservation
+So far we have discussed decoherence arising from interacti on with an environment,
+and the associated information storage. However, decohere nce of histories seemingly of
+a rather diﬀerent nature comes about when the alternatives c haracterizing the histories
+are exactly conserved [29]. This is an elementary property o f the decoherence functional
+– the projectors commute with the unitary evolution operato rs, so may all be moved up
+to the ﬁnal time, where the Pα k’s act on the Pα ′
+k
+’s, and thus give diagonality of the de-
+coherence functional. A more general notion which also give s decoherence is determinism
+in the quantum theory. An example is histories of projection s onto large cells of phase
+space. These projections have the property that under unita ry evolution they evolve (ap-
+proximately) into another projection of identical type, ex cept that the centre of the phase
+space cell is shifted according to the classical equations o f motion [8]. This approximate
+determinism also guarantees (approximate) decoherence, f or similar reasons to the case of
+exact conservation. These mechanisms are important in show ing the emergent classicality
+of hydrodynamic variables [30,31,32,33].
+In these cases it is natural to again ask for the connection wi th the existence of records,
+but the answer is almost trivial. Records do not need to exist in a separate environment.
+The existence of records is essentially the question of whet her there exist alternatives at
+17
+
+===== PAGE 18 =====
+
+the ﬁnal moment of time which are perfectly correlated with t he alternatives describing
+the histories at earlier times. Clearly the answer is yes in t his case: histories of exactly
+conserved quantities may always be expressed as projection s at the ﬁnal moment of time,
+since the projectors may quite simply be moved to the ﬁnal tim e without changing any-
+thing. Each alternative at each time is, in a sense, its own re cord. A similar story obtains
+in the case of approximate determinism.
+3. A TWO-ST A TE ENVIRONMENT
+In the Introduction, it was argued that decoherence is relat ed to information storage
+in the environment, and that the number of histories in the de coherent set is related to
+the amount of information about the histories stored in the e nvironment. Taken to the
+extreme, this means that even an environment consisting of a two-state system could
+potentially lead to decoherence of certain system alternat ives. In this Section, we will
+consider exactly such an environment, and show that it provi des an instructive model of
+decoherence and information storage with exactly the expec ted properties.
+The system in question is taken to be a point particle coupled to a two-state system
+environment via a coupling localized to a region of space and which, for simplicity, acts
+only at a single moment of time, t = t1. The two-state system has states |0⟩, |1⟩, with
+associated raising and lowering operators, a,a†, where
+a|0⟩ = 0, a |1⟩ = |0⟩, a †|0⟩ = |1⟩, a †|1⟩ = 0 (3 . 1)
+The Hamiltonian is
+H(t) = H0 +λ δ(t − t1) (a +a†) Υ(x) (3 . 2)
+18
+
+===== PAGE 19 =====
+
+where H0 =p2/ 2m. Here, Υ( x) is a window function equal to 1 in the interval [ a,b ] and
+zero outside it. Therefore, although we regard the two-stat e system as an environment,
+it is also a very simple model of the measurement of position. If the two-state system is
+started out in the state |0⟩, it will ﬂip to |1⟩ if the particle is in [ a,b ] at time t1, and remain
+in |0⟩ otherwise. Hence by examining the state of the environment a t any time after t1,
+we may recover one bit of information about the particle at ti me t1.
+We assume that the initial state of the composite system is
+|Ψ0⟩ = |ψ ⟩ ⊗ |0⟩ (3. 3)
+It is convenient to introduce the eigenstates of a +a†, which are
+|±⟩ = 1√
+2 (|0⟩ ± |1⟩) (3 . 4)
+These we write as |s⟩, where s = ± 1, and we also have
+|0⟩ = 1√
+2
+∑
+s
+|s⟩, |1⟩ = 1√
+2
+∑
+s
+s|s⟩, (3. 5)
+The initial state may now be written
+|Ψ0⟩ = 1√
+2
+∑
+s
+|ψ ⟩ ⊗ |s⟩ (3. 6)
+Now consider unitary evolution from 0 to t, where 0 <t 1 <t . Since the product form
+(3.3) is preserved up to t1, there is no loss of generality in letting t1 → 0, and
+|Ψ⟩ =T exp
+(
+− i
+¯h
+∫ t
+0
+dt′H(t′)
+)
+|Ψ0⟩
+= 1√
+2
+∑
+s
+exp
+(
+− i
+¯hHt
+)
+exp
+(
+− i
+¯hsλΥ(ˆx)
+)
+|ψ ⟩ ⊗ |s⟩ (3. 7)
+(where T denotes time ordering). The probability that the environme nt is then found in
+the state |1⟩ is given by
+⟨Ψ| (1 1S ⊗ |1⟩⟨1|) |Ψ⟩ =
+∫ b
+a
+dx sin2
+( λ
+¯h
+)
+|ψ (x)|2 (3. 8)
+19
+
+===== PAGE 20 =====
+
+This is the correct result of standard quantum measurement t heory if we choose the cou-
+pling λ to be λ = π ¯h/ 2, so we now adopt this value. With this value of λ, the second
+exponential in (3.7) may be written,
+exp
+(
+− i
+2πs Υ(ˆx)
+)
+= (1 − Υ(ˆx)) − isΥ(ˆx) (3 . 9)
+since Υ is a window function, and therefore Υ 2 = Υ. It follows that Υ(ˆx) is also a projection
+operator onto the region [ a,b ], which we will denote by Py, and we will denote its negation
+1 − Υ(ˆx) by Pn.
+Now consider a history in which the system is hit by a projecto r Pα 1 at the initial
+time, and then a second projector Pα 2, at time t, both of these projectors acting only on
+the particle, not the environment. Both will be projections onto ranges of position, about
+which more below. The decoherence functional may be written ,
+D(α 1,α 2|α ′
+1,α 2) = ⟨Ψα ′
+1α 2|Ψα 1α 2⟩ (3. 10)
+where
+|Ψα 1α 2⟩ =Pα 2 ⊗ 1 1E T exp
+(
+− i
+¯h
+∫ t
+0
+dt′H(t′)
+)
+Pα 1 ⊗ 1 1E |ψ ⟩ ⊗ |0⟩
+= 1√
+2
+∑
+s
+Pα 2 ⊗ 1 1E e− i
+¯hHt (
+Pn − isPy
+)
+Pα 1|ψ ⟩ ⊗ |s⟩ (3. 11)
+where the second line follows from (3.7) and (3.9). Summing o ver s and using (3.5), we
+obtain,
+|Ψα 1α 2⟩ =
+(
+Pα 2e− i
+¯hHtPnPα 1|ψ ⟩
+)
+⊗ |0⟩
+− i
+(
+Pα 2e− i
+¯hHtPyPα 1|ψ ⟩
+)
+⊗ |1⟩ (3. 12)
+In this expression the projectors Py and Pn have come entirely from the dynamics of the
+environment. It is therefore reasonably clear that exact de coherence and a perfect system–
+environment correlation is obtained if we choose the system projectorsPα 1 to coincide with
+20
+
+===== PAGE 21 =====
+
+Py and Pn. We have PnPα 1 = 0, unless α 1 =n, and PyPα 1 = 0 unless α 1 =y. Therefore,
+|Ψα 1α 2⟩ =
+
+
+
+(
+Pα 2e− i
+¯hHtPn|ψ ⟩
+)
+⊗ |0⟩, if α 1 =n;
+−i
+(
+Pα 2e− i
+¯hHtPy|ψ ⟩
+)
+⊗ |1⟩ if α 1 =y.
+(3. 13)
+from which the decoherence is easily seen. In these expressi ons the projector Pα 2 can be
+onto anything, since decoherence in the ﬁnal alternatives i s always automatic.
+An interesting alternative form of the decoherence functio nal is its path integral form,
+derived directly from (3.7), which is
+D(α,α ′) =
+∑
+s
+∫
+α
+Dx exp
+( i
+¯hS[x(t)] + πi
+2 sΥ(x(t1))
+)
+ψ (x0)
+×
+∫
+α ′
+Dy exp
+(
+− i
+¯hS[y(t)] − πi
+2sΥ(y(t1))
+)
+ψ ∗(y0)
+=
+∫
+α
+Dx
+∫
+α ′
+Dy exp
+( i
+¯hS[x(t)] − i
+¯hS[y(t)]
+)
+× cos
+( π
+2 [Υ(x(t1)) − Υ(y(t1))]
+)
+ψ (x0)ψ ∗(y0) (3 . 14)
+The cosine term plays the role of an inﬂuence functional, in t hat it summarizes the eﬀect of
+the environment. It may be seen that it destroys interferenc e between histories partitioned
+according to whether they are in the region [ a,b ] at time t1, since it is equal to 1 if x(t1)
+and y(t1) are both either inside or outside the region [ a,b ], and is zero if one is inside and
+the other outside.
+Since the initial state of the whole system is pure, the exist ence of exact decoherence
+means that there must exist records at the ﬁnal time. That is, we can add another
+projectorRβ at the ﬁnal time and construct the probability p(α 1,α 2,β ) whereβ is perfectly
+correlated with α 1. It is trivial to identify the records – they are clearly the s tates |0⟩, |1⟩
+of the environment. The record projectors Rβ are
+R0 = 1 1S ⊗ |0⟩⟨0|, R 1 = 1 1S ⊗ |1⟩⟨1| (3. 15)
+21
+
+===== PAGE 22 =====
+
+From (3.13) it is clear that
+Rβ |Ψα 1α 2⟩ = |Ψα 1α 2⟩
+when α 1 = y and β = 1, or α 1 = n and β = 0, with Rβ |Ψα 1α 2⟩ = 0 otherwise. There is
+therefore a perfect correlation between the records and the past alternativesα 1. Essentially
+the same conclusions holds with diﬀerent choices of pure ini tial state. The main diﬀerence
+is that the form of the record projectors change.
+Turn now to the case in which the environment is in a mixed init ial state. First, we
+introduce a convenient notation in which (3.12) is written
+|Ψα 1α 2⟩ = |¯ψα 1α 2⟩ ⊗ | 0⟩ + |ψα 1α 2⟩ ⊗ | 1⟩ (3. 16)
+The joint probability of the histories and the records may be written,
+p(α 1,α 2,β ) = Tr
+(
+Rβ |Ψα 1α 2⟩⟨Ψα 1α 2|
+)
+(3. 17)
+where
+|Ψα 1α 2⟩⟨Ψα 1α 2|= |¯ψα 1α 2⟩⟨ ¯ψα 1α 2| ⊗ |0⟩⟨0|+ |ψα 1α 2⟩⟨ψα 1α 2| ⊗ |1⟩⟨1|
++ oﬀ − diagonal terms (3 . 18)
+The oﬀ-diagonal terms are irrevelant to both the discussion of correlations and decoherence,
+since they make no contribution. Eq.(3.18) is the case in whi ch the environment initial state
+is the pure state |0⟩, and it shows very clearly the perfect correlation that exis ts between
+the system histories and the environment states. In particu lar, diﬀerent system histories
+can be completely distinguished by projecting onto the two o rthogonal environment states.
+If the initial state instead were |1⟩, then the result would be similar to (3.18), but with the
+|0⟩’s and |1⟩’s interchanged. It follows that if we take the environment i nitial state to be
+the mixed state
+ρ1 =a|0⟩⟨0|+b|1⟩⟨1| (3. 19)
+22
+
+===== PAGE 23 =====
+
+then the joint probability of the histories and the records i s
+p(α 1,α 2,β ) = Tr
+(
+Rβ
+(
+|¯ψα 1α 2⟩⟨ ¯ψα 1α 2| ⊗ρ1 + |ψα 1α 2⟩⟨ψα 1α 2| ⊗ρ2
+))
+(3. 20)
+where
+ρ2 =b|0⟩⟨0|+a|1⟩⟨1| (3. 21)
+As described in Section 2, in the mixed state case the joint pr obability (3.20) must
+necessarily indicate less than perfect correlations betwe en the records and the alternatives
+α 1 in the past. We can now see this in a diﬀerent way. The point is t hat the record projector
+needs to be able to unambiguously distinguish between the di ﬀerent environment states
+the past alternatives are perfectly correlated with. This i s possible in the pure state case,
+where the alternatives α 1 are perfectly correlated with the pair of orthogonal pure st ates
+|0⟩, |1⟩, and orthogonal pure states are completely distinguishabl e. In the mixed state case,
+the alternatives α 1 become correlated with the two mixed states ρ1, ρ2. These two states
+are not perfectly distinguishable. There is no projection operato r that can unambiguously
+decide whether the environment is in state ρ1 or ρ2.
+The model therefore illustrates the generally expected fea tures. We can look at the
+environment and explicitly ﬁnd the records. An environment consisting of a two-state
+system leads to a decoherent set of system histories enlarge d by a factor of 2 compared to
+the set that decoherence without this environment. Clearly if we attempted to consider
+more than two alternatives α 1, we would not expect decoherence. Decoherence is preserved
+as we go to a mixed state (since there is decoherence for each c onsituent pure state), and
+we see that the reason the records are imperfectly correlate d with past alternatives is due
+to the impossibility of completely distinguishing between the mixed environment states
+the system alternatives are correlated with.
+23
+
+===== PAGE 24 =====
+
+This model can clearly be extended to more elaborate histori es involving an arbitrary
+number of alternatives at each moment of time, and to an arbit rary number of times, but
+the essential ideas have been established in this simple mod el. It is also perhaps of interest
+to consider a slightly more realistic model of position samp lings involving a genuinely
+irreversible detector model that does not involve a delta-f unction in time. This has been
+considered in Ref.[34].
+4. DECOHERENCE AND INFORMA TION STORAGE
+IN THE QUANTUM BROWNIAN MOTION MODEL
+In this Section we consider the question of how decoherence i s related to storage of
+information by the environment in the quantum Brownian moti on model. We begin with
+a brief review of the model. Although standard material [20, 35,36,15,2], it is presented
+at some length in parts since it will be necessary to consider a modiﬁed version of the
+standard account later on in this Section.
+4(A). The Quantum Brownian Motion Model
+We are concerned with the class of quantum Brownian models co nsisting of a particle
+of large mass M moving in a potential V (x) and linearly coupled to a bath of harmonic
+oscillators. The total system is therefore described by the action,
+ST [x(t),q n(t)] =
+∫
+dt
+[ 1
+2M ˙x2 − V (x)
+]
++
+∑
+n
+∫
+dt
+[ 1
+2mn ˙q2n − 1
+2mnω 2nq2n − cnqnx
+]
+(4. 1)
+24
+
+===== PAGE 25 =====
+
+The decoherence functional has the form
+D(α,α ′) =
+∫
+α
+Dx
+∫
+α ′
+Dy
+∫
+DqnDrn exp
+( i
+¯hST [x(t),q n(t)] − i
+¯hST [y(t),r n(t)]
+)
+×ρ0(x(0),y (0))ρenv
+0 (qn(0),r n(0)) (4 . 2)
+where we have assumed a factored initial state. We will make t he standard assumption
+that the enviroment initial state is thermal
+ρenv
+0 (qn,r n) =
+∏
+n
+exp
+(
+−A(q2n +r2n) +Bqnrn
+)
+(4. 3)
+where
+A = mnωn
+2¯h coth (¯hωnβ ), B = mnωn
+¯h sinh (¯hωnβ ) (4. 4)
+and β = 1/kT . If the coarse graining α , α ′ does not involve the environment, it may be
+integrated out, with the result
+D(α,α ′) =
+∫
+α
+Dx
+∫
+α ′
+Dy exp
+( i
+¯hS[x] − i
+¯hS[y]
+)
+F [x(t),y (t)]ρ(x0,y 0) (4 . 5)
+where
+S[x] =
+∫
+dt
+[ 1
+2M ˙x2 − V (x)
+]
+(4. 6)
+and F [x(t),y (t)] is the Feynman-Vernon inﬂuence functional,
+F [x(t),y (t)] =
+∏
+n
+∫
+DqnDrn ρenv
+0 (qn(0),r n(0))
+× exp
+( i
+¯h
+∫
+dt
+[ 1
+2mn ˙q2n − 1
+2mnω 2nq2n − cnqnx
+])
+× exp
+(
+− i
+¯h
+∫
+dt
+[ 1
+2mn ˙r2n − 1
+2mnω 2nr2n − cnrny
+])
+(4. 7)
+The sum is over all paths for which meet, qn =rn, at the ﬁnal time and then there is an
+integral over qn.
+25
+
+===== PAGE 26 =====
+
+This expression may be evaluated by ﬁrst using the standard p ath integral for the
+propagator of a harmonic oscillator in an external ﬁeld,
+g(q′′n,τ |q′n, 0) =
+∫
+Dqn exp
+( i
+¯h
+∫
+dt
+[ 1
+2mn ˙q2n − 1
+2mnω 2nq2n − cnqnx
+])
+(4. 8)
+where the sum is over all paths qn(t) from qn(0) = q′n to qn(τ) = q′′n. The result is,
+g(q′′n,τ |q′n, 0) = exp
+( i
+¯h
+[
+aq′′n
+2 +aq′n
+2 +bq′′q′− c[x]q′′− d[x]q′n − f [x]
+])
+(4. 9)
+where
+a = mωn cosωnτ
+2 sinωnτ (4. 10)
+b = − mωn
+sinωnτ (4. 11)
+c[x(t)] = cn
+sinωnτ
+∫ τ
+0
+dt x(t) sin ωnt (4. 12)
+d[x(t)] = cn
+sinωnτ
+∫ τ
+0
+dt x(t) sin ωn(τ − t) (4 . 13)
+f [x(t)] = c2
+n
+mnωn sinωnτ
+∫ τ
+0
+dt
+∫ t
+0
+ds x(t)x(s) sinωn(τ − t) sin ωns (4. 14)
+Using these expressions, the initial state is folded in, the ﬁnal values of qn = rn traced
+over, and the inﬂuence functional obtained is then normally written in the form
+F [x(t),y (t)] = exp
+( i
+¯hW [x(t),y (t)]
+)
+(4. 15)
+where, W [x(t),y (t)] is inﬂuence functional phase, and has the form,
+W [x(t),y (t)] = −
+∫ t
+0
+ds
+∫ s
+0
+ds′[x(s) − y(s)]η(s − s′) [x(s′) +y(s′)]
++ i
+2
+∫ t
+0
+ds
+∫ t
+0
+ds′[x(s) − y(s)] ν(s − s′) [x(s′) − y(s′)] (4 . 16)
+(In the imaginary part, the symmetry of ν(s − s′) has been used to write the two integrals
+over the same range, [0 ,t ], and this will be exploited below). The kernels η(s) and ν(s)
+are deﬁned by
+η(s) = −
+∑
+n
+c2
+n
+2mnωn
+sinωns (4. 17)
+26
+
+===== PAGE 27 =====
+
+and
+ν(s) =
+∑
+n
+c2
+n
+2mnωn
+coth( 1
+2¯hωnβ ) cosωns (4. 18)
+They are commonly rewritten,
+ν(s) =
+∫ ∞
+0
+dω
+π I(ω ) coth
+( ¯hω
+2kT
+)
+cosωs (4. 19)
+η(s) = d
+dsγ(s) (4. 20)
+where
+γ(s) =
+∫ ∞
+0
+dω
+π
+I(ω )
+ω cosωs (4. 21)
+and I(ω ) is the spectral density
+I(ω ) =
+∑
+n
+δ(ω − ωn) πc 2
+n
+2mnωn
+(4. 22)
+Typically, the spectral density is chosen to have the ohmic f orm
+I(ω ) = Mγω exp
+(
+− ω 2
+Λ2
+)
+(4. 23)
+Here, Λ is a cut-oﬀ, which will generally be taken to be very la rge. We then ﬁnd that
+γ(s) = Mγ Λ
+2π
+1
+2
+exp
+(
+− 1
+4 Λ2s2
+)
+(4. 24)
+and thus when Λ is very large,
+γ(s) ≈ Mγδ (s) (4 . 25)
+The noise kernel η(s) is non-local for large Λ, except in the so-called Fokker-Pl anck limit,
+kT >> ¯hΛ, in which case one has
+ν(s) = 2MγkT
+¯h δ(s) (4 . 26)
+Decoherence of histories of positions typically arises whe n there is essentially a contin-
+uum of oscillators at high temperatures. For in this case,
+|F[x(t),y (t)]|= exp
+(
+− 2MγkT
+¯h2
+∫
+dt(x − y)2
+)
+(4. 27)
+27
+
+===== PAGE 28 =====
+
+in the decoherence functional (4.5), hence the contributio n from widely diﬀering paths
+x(t), y(t) is strongly supppressed. It will be useful for what follows to spell out in more
+detail what this means. Suppose that the coarse graining of t he position histories is chosen
+so that the histories are speciﬁed at each moment of time up to a width σ . This means
+that for pairs of histories to be “distinct” in (4.27), x and y must diﬀer by at least σ .
+The decoherence condition, that (4.27) be very small, is the n a lower limit on the value
+of σ . If the time scale of the entire history is τ, the condition is σ 2 >> ¯h2/ (2MγkTτ )
+Hence, decoherence supplies a lower limit on the precision t o within which the histories of
+positions may be used in an essentially classical way, witho ut suﬀering interference eﬀects.
+We can discuss the number of decoherent histories in the set b y conﬁning the particle’s
+motion to a region of size L. Formally, this is of course achieved by putting the system i n
+a box, with the accompanying complications. However, it is s uﬃcient for our purposes to
+restrict the particle’s motion in a more approximate way, by supposing that the potential
+V (x) becomes very large outside the region, or by restricting to particle initial states that
+have negligible support outside the region during the time i nterval of interest. We can then
+say that for decoherence to order σ satisfying the above condition, the number of histories
+in the decoherent set is of order L/σ .
+Under more general conditions, the oscillatory and non-loc al nature of the noise kernel
+η(s) in W makes decoherence of positions at a series of times less obvi ous. This is not
+unrelated to the presence of recurrences in the master equat ion. Take, for example, the
+case of zero temperature and and a ﬁnite number of oscillator s. An arbitrary initial
+density operator might initially tend towards diagonality in position, but over long periods
+of time, the correlations “lost” to the environment will eve ntually come back, and the
+density matrix will become oﬀ-diagonal. In terms of the deco herence functional, a set of
+decoherent histories deﬁned in terms of projections onto po sition at a sequence of times
+28
+
+===== PAGE 29 =====
+
+might lose decoherence if the projections are spread out ove r a time-scale comparable to
+the recurrence time. This is why it is necessary, at least for decoherence of position, to
+take an essentially inﬁnite environment. We will see below, however, how this conclusion
+may be modiﬁed.
+4(B). Decoherence of the F ourier Modes
+According to the general discussion in the Introduction, th e decoherence of histories
+of positions in the quantum Brownian motion model means that there ought to exist
+records about the trajectories x(t) somewhere in the environment. We will now show how
+this comes about. Important clues can be found from studying the classical equations of
+motion of the environment of oscillators. These are,
+mn ¨qn +mnω 2nqn = −cnx(t) (4 . 28)
+The solution to this equation, with ﬁxed pn(0), qn(0) is
+qn(τ) = qn(0) cosωnτ + pn(0)
+mnωn
+sinωnτ
+− cn
+mnωn
+∫ τ
+0
+dt x(t) sin ωn(τ − t) (4 . 29)
+pn(τ) = pn(0) cosωnτ − mnωnqn(0) sinωnτ
+− cn
+∫ τ
+0
+dt x(t) cos ωn(τ − t) (4 . 30)
+where pn = m ˙qn. From this solution, one can see that at the ﬁnal time τ, the positions
+and momenta of the environment of oscillators depend on the p article’s trajectory x(t) via
+the temporally non-local quantities
+Xsn =
+∫ τ
+0
+dt x(t) sin ωn(τ − t) (4 . 31)
+Xcn =
+∫ τ
+0
+dt x(t) cos ωn(τ − t) (4 . 32)
+29
+
+===== PAGE 30 =====
+
+Hence, classically, the ﬁnal values of pn and qn are correlated with the variables Xsn and
+Xcn – for given initial data for the environment, measurement of the ﬁnal data permits the
+determination of Xsn and Xcn.
+It now follows that, classically, the entire trajectory x(t) for all t may be recovered
+by using an inﬁnite number of oscillators, and by choosing th e frequencies ωn appropri-
+ately, since Xsn and Xcn are essentially the Fourier components of the function x(t) in its
+expansion on the range [0 ,τ ]. This is the key observation about how the environment
+stores information about the system: each oscillator measu res a Fourier component of the
+trajectory. We will demonstrate that essentially the same s tory persists in the quantum
+theory.
+First, however, since we expect the non-local functions Xsn, Xcn to play a key role, let
+us explore their decoherence properties. This is readily do ne in the decoherent histories
+approach: the path integral form of the decoherence functio nal above comfortably accom-
+modates coarse grainings involving variables deﬁned non-l ocally in time. We calculate the
+decoherence functional by summing over paths in which the fu nctionals Xsn, Xcn of x(t)
+are each constrained to lie in small widths, ∆ n. This can be achieved by inserting window
+functions, Υ ∆, which are 1 inside a region of width ∆ n and zero outside. Explicitly, the
+decoherence function has the form,
+D(α,α ′) =
+∫
+Dx
+∫
+Dy exp
+( i
+¯hS[x(t)] − i
+¯hS[y(t)] + i
+¯hW [x(t),y (t)]
+)
+ρ0(x(0),y (0))
+×
+∏
+n
+Υ∆n(Xsn − ¯Xsn) Υ ∆n(Xcn − ¯Xcn) Υ ∆n(Ysn − ¯Ysn ) Υ ∆n(Ycn − ¯Ycn ) (4 . 33)
+where Ysn and Ycn are deﬁned in terms of y(s) exactly as in (4.31), (4.32), and α now
+denotes the ¯Xsn and ¯Xcn. To see how well the variables Xsn, Xcn decohere, we rewrite the
+inﬂuence functional in terms of them. Inserting the explici t form for ν(s), Eq. (4.18), and
+30
+
+===== PAGE 31 =====
+
+expanding the factor cos ωn(s − s′), it is readily shown that
+ImW =
+∑
+n
+c2
+n
+4mnωn
+coth
+( ¯hωn
+2kT
+) [
+(Xsn − Ysn )2 + (Xcn − Ycn )2
+]
+(4. 34)
+Since the part of decoherence the functional governing deco herence goes like exp (− ImW/ ¯h)
+there is clearly decoherence of the Fourier variables, prov ided that the widths of their coarse
+graining are suﬃciently large,
+∆2
+n
+c2
+n
+mn¯hωn
+coth
+( ¯hωn
+2kT
+)
+>> 1 (4 . 35)
+Again this may be regarded as a lower limit on the precision to within which the histories
+may be deﬁned.
+An interesting feature of these expressions is that the osci llatory functions of time
+are no longer present, since they have been absorbed into the new non-local variables. It
+is therefore not necessary to take an inﬁnity of oscillators in the environment to obtain
+decoherence, nor to take high temperatures. In particular, there is a degree of decoherence,
+at any temperature, and even if there is only one oscillator in the environment .
+This last result is perhaps surprising, but it is in keeping w ith the idea put forward in
+the Introduction, which loosely speaking is that tracing ou t anything coupled to the system
+ought to produce decoherence of something. The variables that decohere are non-local in
+time, and this is how they get round the old problem of recurre nces. Furthemore, the
+uncomplicated nature of the decoherence of the Fourier mode s, provides a useful alternative
+view on decoherence of histories of positions in the case of l ow temperatures, or ﬁnite
+environments, where the oscillatory and non-local charact er of the noise kernels makes
+it diﬃcult to get a clear picture of the decoherence of positi on histories. That is, we
+regard the Fourier modes as in some sense more fundamental, a nd then approximately
+reconstruct histories of positions from them. From now on we will work entirely with
+particle trajectories characterized by ﬁxed values of the F ourier modes.
+31
+
+===== PAGE 32 =====
+
+4(C). System-Environment Correlations
+We turn now to the question of establishing the correlations between the environment
+and system in the quantum case, and the consequent decoheren ce. We have shown that,
+classically, the ﬁnal values of qn and pn are correlated with the Fourier components of
+the particle’s trajectory. This can be established in the qu antum theory by considering a
+probability in which, in addition to projecting onto the par ticle’s trajectory at a series of
+times, we also consider projections onto the ﬁnal state of th e environment. In the quantum
+theory, one has to make a choice between projecting onto ﬁnal values of qn or pn, or onto
+both using phase space quasi-projectors. We ﬁrst consider ﬁ nal states of the environment
+characterized by ﬁxed ﬁnal values of qn, denoted q′′n. The general question is, given the
+probabilityp(α ) for a decoherent set of histories, under what conditions ca n one introduce
+a record projector Rβ onto ranges of oscillator positions at the end of the history , so that
+the probabilities for histories are essentially undisturb ed when the labels β are suitably
+chosen?
+We have shown that histories of the Fourier modes decohere as long as they are coarse
+grained to a width ∆, deﬁned above. The probability for a set o f histories plus records
+consisting of a projection Rβ onto ranges σ of value of q′′n is,
+p(α,β ) =
+∏
+n
+∫
+dq′′n Υσ (q′′n − ¯qn)
+∫
+α
+Dx
+∫
+α
+Dy exp
+( i
+¯hS[x] − i
+¯hS[y]
+)
+× F [x(t),y (t); {q′′n}] ρ(x0,y 0) (4 . 36)
+where {qn} denotes the set of all oscillator coordinates. Υ σ is again a window function
+of width σ which implements the projection onto a range of q′′n, centred around ¯qn (which
+correspond to record labels β ).. α denotes the paths of the particle in conﬁguration space
+speciﬁed by ﬁxed values of the Fourier modes, as in (4.33). Th e object F [x(t),y (t); {q′′n}]
+32
+
+===== PAGE 33 =====
+
+is a generalized inﬂuence functional, given by the same path integral expression, (4.7), but
+with the diﬀerent boundary conditions that the ﬁnal values o f qn and rn are set to the
+valueq′′n (rather than summed over). Hence integrating F [x(t),y (t); {q′′n}] over all the q′′n’s,
+which is equivalent to letting σ → ∞ in Υσ , yields the usual inﬂuence functional, and
+hence the original probability p(α ). The question is therefore to determine the smallest
+value of σ for which the probability p(α,β ) is the same as p(α ), that is, the smallest value
+for which the integral of q′′n over the range σ is essentially equivalent to integrating over
+an inﬁnite range.
+F [x(t),y (t); {q′′n}] may be written in terms of the propagator (4.9):
+F [x(t),y (t); {q′′n}] =
+∏
+n
+∫
+dq′ndr′n ρenv
+0 (qn,r n)
+× g(q′′n,τ |q′n, 0) g∗(q′′n,τ |r′n, 0) (4 . 37)
+The integrals are Gaussians, and at some length, one obtains the result,
+F[x(t),y (t); {q′′n}] =
+∏
+n
+exp
+(
+−A
+(
+q′′n − d[x]
+b
+) 2
+− A
+(
+q′′n − d[y]
+b
+) 2
++B
+(
+q′′n − d[x]
+b
+) (
+q′′n − d[y]
+b
+) )
+× exp
+(
+− i
+¯hq′′n (c[x] − c[y] + cosωnτ (d[x] − d[y]))
+)
+× exp
+(
+− i
+2¯hmnωn
+sinωnτ cosωnτ
+(
+d2[x] − d2[y]
+)
+− i
+¯h (f [x] − f [y])
+)
+(4. 38)
+where the coeﬃcients A, B are given by (4.4), and b, c[x] and d[x] are given by (4.10)–
+(4.14). From these, and comparing with (4.31), we see that
+d[x]
+b = − cn
+mnωn
+Xsn ≡ − ˜Xsn (4. 39)
+Similarly, we also see that
+c[x] + cosωnτd[x] = cnXcn (4. 40)
+33
+
+===== PAGE 34 =====
+
+Hence Eq.(4.38) may be rewritten
+F[x(t),y (t); {q′′n}] =
+∏
+n
+exp
+(
+−A
+(
+q′′n + ˜Xsn
+) 2
+− A
+(
+q′′n + ˜Ysn
+) 2
++B
+(
+q′′n + ˜Xsn
+) (
+q′′n + ˜Ysn
+) )
+× exp
+(
+− i
+¯hq′′ncn (Xcn − Ycn )
+)
+× exp
+(
+− i
+2¯hmnωn
+sinωnτ cosωnτ
+(
+d2[x] − d2[y]
+)
+− i
+¯h (f [x] − f [y])
+)
+(4. 41)
+As expected from the classical analysis, the ﬁrst exponenti al in Eq.(4.37) indicates that
+the oscillator coordinates q′′n are approximately correlated with the Fourier modes − ˜Xsn.
+To see more precisely the nature of the correlation, note tha t the Gaussian in (4.41)
+may be rewritten,
+exp
+(
+− (2A − B)
+(
+q′′n + 1
+2 ( ˜Xsn + ˜Ysn )
+) 2
+− 1
+4 (2A +B)
+(
+˜Xsn − ˜Ysn
+) 2
+)
+(4. 42)
+Clearly the second term in this exponential gives the decohe rence of the Fourier modes
+˜Xsn (since this corresponds exactly to the usual imaginary part of the inﬂuence functional
+phase (4.16) when the oscillator coordinates are integrate d out). The decoherence width,
+˜∆ of these modes is
+˜∆ ≡ cn
+mnωn
+∆ = (2A +B)− 1
+2
+=
+(
+tanh
+( ¯hωn
+2kT
+)) − 1
+2
+(4. 43)
+(in agreement with the earlier analysis, (4.35)). Hence a pr ojection onto a range of q′′n of
+any width σ can be added at the end of the histories without aﬀecting deco herence. In
+order to preserve the original probabilities for the histor ies as much as possible, however,
+the width σ of the record projection needs to satisfy
+σ >(2A − B)− 1
+2 =
+(
+coth
+( ¯hωn
+2kT
+)) − 1
+2
+(4. 44)
+34
+
+===== PAGE 35 =====
+
+for the integral to be equivalent to an integral over an inﬁni te range.
+Generally the width σ of the records q′′n will be greater than the width ˜∆ of the
+decoherent histories of Fourier modes, ˜Xsn. The correlation between them must necessarily
+be imperfect, therefore, since the records alternatives, b eing more coarsely deﬁned, will not
+be able to completely distinguish between diﬀerent past his tory alternatives. Diﬀerently,
+ﬁxing a record alternative does not uniquely ﬁx a past histor y alternative, hence the
+conditional probability of the histories given the records is less than one. Yet another
+way of putting it is to say that, in a suitably chosen counting technique (as we did after
+Eq.(4.27), for example), the number of records will be less than the number of decoherent
+histories. The imperfection of the records in the mixed stat e case can in fact be understood
+already at a classical level. For even classically, the amou nt of correlation between the phase
+space data of the environment and the Fourier modes will be re duced if the environment
+is subject to thermal ﬂuctuations.
+In the case of a pure initial state for the environment, B = 0, and therefore σ ∼ ˜∆, and
+in this case we will have a near-perfect correlation between the records and the histories
+(as perfect as the degree of approximate decoherence, which is generally extremely good).
+General expectations are therefore conﬁrmed: records exis t in the case of a pure initial
+state, with an almost perfect correlation between the histo ry alternatives and the records.
+In the mixed state case, records continue to exist but with an imperfect correlation.
+So far we have seen how projections onto ranges of the environ mental coordinates q′′n
+are correlated with the Fourier modes Xsn describing the histories. This is, however, only
+a partial description of the histories, since the variables Xcn, which are in some sense com-
+plementary to Xsn, also decohere. We expect these to be correlated with the env ironmental
+momenta.
+35
+
+===== PAGE 36 =====
+
+To investigate projections onto more general types of recor ds, such as this, at the ﬁnal
+time, we need to consider a more general type of inﬂuence func tional in which the paths
+summed over to obtain the inﬂuence functional (4.37) are not constrained to meet at q′′n,
+but may take diﬀerent values. This allows arbitrary states t o be attached at the ﬁnal time.
+It is straightforward to show that this more general inﬂuenc e functional is given by,
+F [x(t),y (t); {q′′n}, {r′′n}] =
+∏
+n
+exp
+(
+−A
+(
+q′′n + ˜Xsn
+) 2
+− A
+(
+r′′n + ˜Ysn
+) 2
++B
+(
+q′′n + ˜Xsn
+) (
+r′′n + ˜Ysn
+) )
+× exp
+(
+− i
+¯hcn
+(
+q′′nXcn − r′′nYcn
+) )
+× exp
+(
+− i
+2¯hmnωn
+sinωnτ cosωnτ
+(
+d2[x] − d2[y]
+)
+− i
+¯h (f [x] − f [y])
+)
+(4. 45)
+This object is, in fact, essentially just the thermal initia l state, unitarily shifted in positions
+and momenta by the classical equations of motion (4.29), (4. 30) with vanishing initial
+positions and momenta:
+F [x(t),y (t); {q′′n}, {r′′n}] = ⟨q′′n|U (− ˜Xsn, −cnXcn) ρenv
+0 U †(− ˜Ysn, −cnYcn ) |r′′n⟩ (4. 46)
+(up to a possible phase). Here, U (q,p ) represents the unitary displacement operator in
+positions and momenta. This result is not surprising for a li near system.
+Projections onto ﬁnal momenta may be considered by Fourier t ransforming with respect
+to both q′′n andr′′n. In the zero temperature case, for which B = 0, it is clear to see what is
+going on. F has the form of the pure state density operator for a coherent state of spatial
+widthA− 1
+2 . Fourier transform therefore leads to a state which has exac tly the same form;
+thus the discussion of decoherence and records is the same as the previous case. The mixed
+state case will be similar.
+Perhaps more useful and general is to combined the above two c ases and consider
+quasi-projectors onto the ﬁnal values of the environmental phase space data. Using (4.46),
+36
+
+===== PAGE 37 =====
+
+the explicit decoherence functional for the situation invo lving any projection Rβ onto
+environment states at the ﬁnal time is
+D(α,α ′,β ) =
+∫
+α
+Dx
+∫
+α ′
+Dy exp
+( i
+¯hS[x] − i
+¯hS[y]
+)
+ρ0(x0,y 0)
+× Tr
+(
+Rβ U (− ˜Xsn, −cnXcn) ρenv
+0 U †(− ˜Ysn, −cnYcn )
+)
+(4. 47)
+where the trace is over the environment Hilbert space. It is c lear that decoherence and the
+probabilities for histories are not disturbed if the record s projectors Rβ
+are taken to be
+phase space quasi-projectors onto suitable large regions o f phase space, and the discussion
+is again very similar, so need not be spelled out in detail.
+To summarize, the classical analysis shows that the Fourier modes of the particle
+trajectories are correlated with the ﬁnal values of the phas e space data of the environment
+at the ﬁnal time. We have shown that essentially the same stor y persists in the quantum
+theory. For the zero temperature case, the record projector s need to be wide enough to
+beat quantum ﬂuctuations. For ﬁnite temperature, they need in addition to beat the
+thermal ﬂuctuations, and the correlation between the recor ds and the history alternatives
+is then less than perfect, in accordance with general expect ations.
+It is also worth noting that the discovered correlation of th e ﬁnal phase space data with
+the Fourier modes of the environment means that the environm ent eﬀectively performs a
+so-called spectral measurement of the particle’s trajecto ry. Measurements of this type have
+previously been investigated by Mensky in the context of the path integral approach to
+continuous quantum measurement [37].
+4(D). Information Count
+We may now check that, as asserted at the beginning of the pape r, the amount of
+37
+
+===== PAGE 38 =====
+
+decoherence is related to the amount of information thrown a way. That is, the number of
+histories in the decoherent set is approximately the same as the number of states thrown
+away to the environment. We will consider the most general ca se considered above, in
+which the system histories are characterized by Xsn, Xcn, and the records are phase space
+projectors onto the environmental oscillators.
+Consider ﬁrst the case of zero temperature. Since the variab les we are dealing with
+are continuous and the Hilbert spaces inﬁnite dimensional, we need to make some artiﬁcial
+restrictions in order to do any counting. Hence, as earlier i n this section, lets us restrict the
+dynamics of the distinguished particle to a spatial region o f size L. The Fourier variables
+(4.31), (4.32), are therefore restricted to a region of size of order Lτ.
+For decoherence, the widths ∆ n of the Fourier variables must satisfy the inequality
+(4.35), which for T = 0 reads ∆ 2
+n >m n¯hωn/c 2
+n. The histories of the two types of Fourier
+variables,Xsn andXcn are therefore each deﬁned up to order ∆ n, satisfying this restriction,
+and there are of order Lτ/ ∆n decoherent histories of the variables Xsn and the same
+number of the variables Xcn. Hence, for each mode n, the total number of histories Nd in
+the decoherent set is
+Nd =
+( Lτ
+∆n
+) 2
+< c2
+nL2τ2
+m¯hωn
+(4. 48)
+Now consider the environment states for each mode n. Each environment mode starts
+out centred around qn = 0 = pn, and as a result of interacting with the system, is displaced
+inqn andpn by the amounts (4.29), (4.30). (A partially classical analy sis suﬃces since the
+system is linear). Since x(t) is assumed to be restricted to a region of size L,qn will range
+over a region with size of order cnLτ/m nωn, and pn will range over a region of size cnLτ.
+qn and pn therefore range over a phase space volume of size c2
+nL2τ2/m nωn. The number
+of distinct environment states, for each mode n, corresponding to this phase space volume
+38
+
+===== PAGE 39 =====
+
+is therefore given by
+Nǫ = c2
+nL2τ2
+mn¯hωn
+(4. 49)
+which coincides with (4.48). This is therefore the desired r esult: the number of distinct
+states of the environment thrown away in the coarse graining process is equal to the upper
+limit on the number of histories in the decoherent set of hist ories. Diﬀerently put, the
+record of each individual history of the Fourier variables i s stored in a single phase space
+cell of an environment oscillator.
+In the case of a thermal environment with T ̸= 0, decoherence is improved so that,
+from (4.35), the number of histories in the decoherent set ha s a larger upper limit:
+Nd =
+( Lτ
+∆n
+) 2
+< c2
+nL2τ2
+m¯hωn
+coth
+( ¯hωn
+2kT
+)
+(4. 50)
+The eﬀect of thermal ﬂuctuations on the environment states i s, from one point of view,
+to reduce the number of distinguishable states, since the el ementary phase space cells are
+eﬀectively increased in size from ¯ h to ¯h coth(¯hωn/ 2kT ) in a thermal state. That is, the
+number of distinct accessible records in the environment is reduced. However, as discusse d
+in Section 2, a mixed environment state can be regarded as a pu re state on an enlarged
+environment Hilbert space, much of which is inaccessible, a nd it is from the perspective
+of this enlarged environment Hilbert space that we expect to understand the connection
+between decoherence and information loss.
+There are then a number of ways of understanding how much info rmation is stored in
+the enlarged Hilbert space. For example, we can regard the sm earing of the environment
+phase space cells from ¯h to ¯h coth(¯hωm/ 2kT ) as meaning that the environment is actually
+in one of a number coth(¯hωn/ 2kT ) of ¯h-sized phase space cells, but the information as to
+exactly which of those cells it occupies is stored in the inac cessible part of the enlarged
+Hilbert space. This indicates that the mixed state case, reg arded as a pure state on
+39
+
+===== PAGE 40 =====
+
+an enlarged Hilbert space, has its information storage capa city enhanced by a factor of
+coth(¯hωn/ 2kT ) compared to the T = 0 case. Hence Eq.(4.49), the information storage
+capacity of one mode of the environment in the T = 0 case, is multiplied by the factor,
+coth(¯hωn/ 2kT ), and we obtain agreement with Eq.(4.50). That is, in the mix ed initial
+state case also, the number of histories in the decoherent se t is approximately the same as
+the maximum number of states storing information about the h istories.
+Another way of understanding the increased information sto rage in the mixed state
+case is to consider the von Neumann entropy S = − Tr (ρ lnρ) of the environment. Loosely
+speaking, in going from a pure to a mixed state, the number of s tates available for informa-
+tion storage is increased by eS . It is well-known that the entropy of a harmonic oscillator
+in a thermal state is of order ln( kT/ ¯hω ), hence the information storage enhancement factor
+is of order kT/ ¯hωn, for large T . This agrees with the coth(¯hωn/ 2kT ) factor deduced above
+in the limit of high temperatures. It does not generally agre e at lower temperatures, al-
+though this is not surprising since measures of uncertainty or information loss in quantum
+theory are dependent on the particular dynamical variables of interest. (Since a thermal
+state is diagonal in energy, the von Neumann entropy may be re garded as a measure of
+uncertainty in energy, which will generally not be the same a s the phase space uncertainty
+used above). Nevertheless, these two arguments are suﬃcien t for it to be seen that the
+degree of decoherence (4.50) may be related to information l ost to the environment in the
+mixed state case.
+4(E). Exact and Approximate Decoherence
+Finally, we may make some elementary remarks about approxim ate decoherence. In-
+serting (4.46) in the expression for the joint probability o f the histories and the records,
+40
+
+===== PAGE 41 =====
+
+we obtain the particularly simple expression,
+p(α,β ) =
+∫
+α
+Dx
+∫
+α
+Dy exp
+( i
+¯hS[x] − i
+¯hS[y]
+)
+ρ0(x0,y 0)
+× Tr
+(
+Rβ U (− ˜Xsn, −cnXcn) ρenv
+0 U †(− ˜Ysn, −cnYcn )
+)
+(4. 51)
+where the trace is over the environment Hilbert space. For si mplicitly take the environment
+initial state to be pure, so it is the ground state of the harmo nic oscillator |0⟩. The unitary
+displacement operators then turn it into standard coherent states.
+The issue of exact decoherence or exact correlation of the re cords with the histories,
+is then the question of ﬁnding a coarse graining of the Fourie r modes, Xsn and Xcn which
+eﬀectively brings the coherent states
+U (− ˜Xsn, −cnXcn)|0⟩
+into an orthogonal set of states. It is well-known that given the coherent states |p,q, ⟩,
+which are overcomplete, a complete set of states may be found by restrictingp,q to discrete
+values lying on a regular lattice, and this is clearly implem entable by suitable coarse
+graining of the Fourier modes [38]. The resulting states, ho wever, are not orthogonal. The
+orthogonalization process may not be straightforward to ca rry out. More signﬁcantly, it
+is by no means clear that a coarse graining of the Fourier mode s is possible which puts
+this orthogonalization process into eﬀect. The issue of ﬁnd ing an exactly decoherent set
+of histories which is close to the approximately decoherent sets discussed in this section
+therefore remains open.
+5. SUMMAR Y AND DISCUSSION
+We have obtained a number of results concerning the connecti on between decoherence,
+information loss and the existence of records. The existing basic result that we have very
+41
+
+===== PAGE 42 =====
+
+much built on is the fact that decoherence with a pure initial state implies the existence
+of records [2], i.e., alternatives that may be added to the end of the histories th at are
+perfectly correlated with the past alternatives. Our main a im was to explore the connection
+between decoherence and physical information storage in the case of decoherence due to
+an environment. The main results may broadly be summarized a s follows.
+1. The discussion of records in the decoherent histories appro ach has been extended to
+the case of mixed initial states, both in the general results of Section 2, and the explicit
+models of Sections 3 and 4.
+2. In the quantum Brownian motion model the records carrying in formation about the
+distinguished particle’s trajectory have been explicitly identiﬁed.
+3. We have formulated a concrete conjecture concerning the amo unt of decoherence and
+the information lost to the environment, and proved it in som e important speciﬁc cases.
+This gives substance to the old idea that decoherence is rela ted to information loss.
+This last result also indicates how decoherence conditions in practical models can be
+interpreted. The commonly used decoherence condition,
+exp
+(
+− ImW [x(t),y (t)]
+¯h
+)
+<< 1 (5 . 1)
+(where W is the inﬂuence functional), is normally physically interp reted as meaning that
+interference between trajectories x(t), y(t) is very small, and therefore that probabilities
+may be assigned to these histories. That is, the condition (5 .1) puts a lower limit on the
+degree to which the histories may be ﬁne-grained without int erference eﬀects becoming
+signiﬁcant.
+To assign probabilities, one requires only the condition of consistency, ReD(α,α ′) = 0
+for α ̸=α ′, whereas the condition (5.1) corresponds to the stronger co ndition of (approxi-
+mate) decoherence, D(α,α ′) ≈ 0 for α ̸=α ′, which surely merits a stronger interpretation.
+42
+
+===== PAGE 43 =====
+
+The physical meaning of decoherence is that it implies the ex istence of records, as dis-
+cussed in Sections 1 and 2 (and in Ref.[2]). Consistency alon e does not guarantee this.
+The decoherence condition (5.1) should therefore be though t of in terms of the records,
+rather than just in terms of interference and the assignment of probabilities. In this paper
+we have eﬀectively shown that the decoherence condition is a reﬂection of the information
+storage capacity of the environment. That is, it is a lower limit on the degree to which the
+histories may be ﬁne-grained without the information stora ge capacity of the environment
+being exceeded.
+Some of the issues considered in this paper shed some light on an old problem with
+decoherence in the context of quantum cosmology, which is ho w to choose the division of
+the universe into “system” and “environment”. On perusing t he literature on decoherence
+via tracing out an environment, one can ﬁnd papers in which a m atter ﬁeld is traced
+out to produce decoherence of the gravitational ﬁeld in quan tum cosmology [39]. On
+the other hand, one can ﬁnd other papers in which the gravitat ional ﬁeld is regarded as
+a decohering environment for matter, since it is clearly the universal environment [40].
+Which is correct? One man’s system is another man’s environm ent, at least, from the
+point of view of published papers on the subject,
+The case of decohering the gravitational ﬁeld is an interest ing one, since the gravi-
+tational ﬁeld is undeniably classical in all physical situa tions that can be checked obser-
+vationally, so there is a strong incentive to discover the me chanism by which it becomes
+classical from the assumed underlying quantum gravity theo ry. On the other hand, in a
+certain sense we never actually measure the gravitational ﬁeld itself. What we act ually
+measure are the changes of motion of matter that we interpret as being due to an under-
+lying gravitational ﬁeld. From that point of view, nothing i s really lost by tracing out the
+gravitational ﬁeld since it is never really actually observ ed.
+43
+
+===== PAGE 44 =====
+
+The ideas discussed in this paper perhaps oﬀer some resoluti on to the dilemma over
+the choice of “system” and “environment”. As we have seen in a number of situations,
+decoherence is intimately connected with the existence of r ecords at the ﬁnal moment
+of time that are correlated with alternatives in the past. Fu rthermore, as we saw in
+the analysis of the quantum Brownian motion model, the recor ds can be stored in the
+decohering environment, and by inspecting them at the ﬁnal t ime we can recover the
+past history of the system. What the decoherence of the quant um Brownian particle
+by a thermal environment means, therefore, is that the histo ry of the Brownian particle
+may be recovered by examining the thermal environment. Simi larly, the decoherence of
+a gravitational ﬁeld by a decohering matter ﬁeld environmen t means that we can recover
+the history of the gravitational ﬁeld by examining the matte r ﬁeld at late times, which is
+indeed exactly what is done in cosmology. From a practical po int of view therefore, the
+signiﬁcance of decoherence is that it ensures a correlation between present records and
+past events.
+ACKNOWLEDGEMENTS
+I am very grateful to Todd Brun, Jim Hartle, Jason Twamley and Wojtek Zurek for
+useful conversations. Todd Brun is particularly thanked fo r pointing out a number of
+errors in the original manuscript.
+REFERENCES
+1. J.B.Hartle, in, Proceedings of the Cornelius Lanczos International Centen ary Con-
+44
+
+===== PAGE 45 =====
+
+fererence, edited by J.D.Brown, M.T.Chu, D.C.Ellison and R.J.Plemmo ns (SIAM,
+Philadelphia, 1994)
+2. M.Gell-Mann and J.B.Hartle, Phys.Rev. D47, 3345 (1993).
+3. E.Joos and H.D.Zeh, Z.Phys. B59, 223 (1985).
+4. W.Zurek, Phil.Trans.R.Soc.Lond.A 356, 1793 (1998).
+5. M.Gell-Mann and J.B.Hartle, in Quantum Classical Correspondence: Proceedings of
+the 4th Drexel Symposium on Quantum Nonintegrability , edited by D.H.Feng and
+B.L.Hu (International Press, 1997).
+6. M.Gell-Mann and J.B.Hartle, in Complexity, Entropy and the Physics of Information,
+SFI Studies in the Sciences of Complexity , Vol. VIII, W. Zurek (ed.) (Addison Wesley,
+Reading, 1990); and in Proceedings of the Third International Symposium on the
+Foundations of Quantum Mechanics in the Light of New Technol ogy, S. Kobayashi,
+H. Ezawa, Y. Murayama and S. Nomura (eds.) (Physical Society of Japan, Tokyo,
+1990).
+7. R.B.Griﬃths, J.Stat.Phys. 36, 219 (1984); Phys.Rev.Lett. 70, 2201 (1993).
+8. R. Omn` es, J.Stat.Phys. 53, 893 (1988); 53, 933 (1988); 53, 957 (1988); 57, 357
+(1989); Ann.Phys. 201, 354 (1990); Rev.Mod.Phys. 64, 339 (1992).
+9. J.B.Hartle, in Proceedings of the 1992 Les Houches Summer School, Gravitat ion et
+Quantiﬁcations, edited by B.Julia and J.Zinn-Justin (Elsevier Science B.V ., 1995).
+10. J.J.Halliwell, in Fundamental Problems in Quantum Theory , edited by D.Greenberger
+and A.Zeilinger, Annals of the New York Academy of Sciences, Vol 775, 726 (1994).
+11. See for example, J.P.Paz and W.H.Zurek, Phys.Rev.D48, 2728 (1993); W.Zurek, in
+45
+
+===== PAGE 46 =====
+
+Physical Origins of Time Asymmetry , edited by J.J.Halliwell, J.Perez-Mercader and
+W.Zurek (Cambridge University Press, Cambridge, 1994). Zu rek’s contributions to
+the subject are extensive and the above is only a suggestive s election.
+12. N.Gisin and I.C. Percival, J.Phys. A25, 5677 (1992); A26, 2233 (1993); A26, 2245
+(1993); Phys. Lett. A167, 315 (1992).
+13. J.J.Halliwell and A.Zoupas, Phys.Rev. D52, 7294 (1995); D55, 4697 (1997).
+14. J.B.Hartle, “Quantum Pasts and the Utility of Histories ”, preprint gr-qc/9712001.
+15. H. F. Dowker and J. J. Halliwell, Phys. Rev. D46, 1580 (1992).
+16. J.N.McElwaine, Phys.Rev. A53, 2021 (1996).
+17. C.Isham and N.Linden, Phys.Rev.A55, 4030 (1997).
+18. J.B.Hartle, Phys.Rev. D51, 1800 (1995).
+19. T.A.Brun and J. B. Hartle, Phys.Rev. E59, 6370 (1999).
+20. G.S.Agarwal, Phys.Rev.A3, 828 (1971); Phys.Rev.A4, 739 (1971); H.Dekker, Phys.Rev.A16,
+2116 (1977); Phys.Rep. 80, 1 (1991); G.W.Ford, M.Kac and P.Mazur, J.Math.Phys.6,
+504 (1965); H.Grabert, P.Schramm, G-L. Ingold, Phys.Rep. 168, 115 (1988); V.Hakim
+and V.Ambegaokar, Phys.Rev.A32, 423 (1985); J.Schwinger, J.Math.Phys.2, 407
+(1961); I.R.Senitzky, Phys.Rev.119, 670 (1960).
+21. See, for example, H.F.Dowker and A.Kent, J.Stat.Phys. 82, 1575 (1996). These au-
+thors actually made the weaker conjecture that an approxima tely consistent set of
+histories ( i.e., ReD(α,α ′) ≈ 0 for α ̸= α ′) are close to an exactly consistent set.
+R.Omn` es (private communication) has pointed out that this is easily proved in some
+models: the real part of the decoherence functional is typic ally highly oscillatory as
+46
+
+===== PAGE 47 =====
+
+a function of the times of the projections, hence if it is clos e to zero, it can be made
+exactly zero by a small change in the times. The stronger conj ecture involving deco-
+herence (rather than just consistency) is very plausible bu t yet unproven in general.
+22. J.A.Wheeler, in, Complexity, Entropy and the Physics of Information , edited by
+W.Zurek (Addison–Wesley, Redwood City, CA, 1990).
+23. C.Caves and C.A.Fuchs, quant-ph/9601025; C.Caves, in Physical Origins of Time
+Asymmetry, edited by J.J.Halliwell, J.Perez-Mercader and W.Zurek (C ambridge Uni-
+versity Press, Cambridge, 1994).
+24. W.Wootters, “The Aquisition of Information from Quantu m Measurements”, Uni-
+versity of Texas PhD thesis (1980).
+25. W.Zurek, Phys.Rev.D24, 1516 (1981).
+26. W.Zurek, Phys.Rev.D26, 1861 (1982).
+27. An interesting collection of article on many aspects of t he physics of information may
+be found in, Complexity, Entropy and the Physics of Information , edited by W.Zurek
+(Addison–Wesley, Redwood City, CA, 1990).
+28. W.Zurek, in Quantum Optics, Experimental Gravitation and Measurement Theory
+(page 87), edited by P.Meystre and M.O.Scully (NATO ASI Seri es, Plenum, New
+York, 1983).
+29. J. B. Hartle, R. Laﬂamme and D. Marolf, Phys.Rev.D51, 7007 (1995).
+30. C.Anastopoulos, “Hydrodynamic equations from quantum ﬁeld theory”, preprint gr-
+qc/9805074 (1998).
+31. T.Brun and J.J.Halliwell, Phys.Rev. 54, 2899 (1996).
+47
+
+===== PAGE 48 =====
+
+32. T.Brun and J.B.Hartle, “Hydrodynamic Equations from De coherent Histories”, Santa
+Barbara preprint (in preparation).
+33. J.J.Halliwell, Phys.Rev. D58, 105015 (1998); quant-ph/9905094.
+34. J.J.Halliwell, “Arrival Times in Quantum Theory from an Irreversible Detector Model”,
+quant-ph/9805057, Imperial College preprint TP/97-98/49 .
+35. A.Caldeira and A.Leggett, Physica 121A, 587 (1983).
+36. R.P.Feynman and F.L.Vernon, Ann. Phys. 24, 118 (1963).
+37. M.Mensky, Sov. Phys. JETP , 50, 667 (1979); Theor. Math. Phys. 75, 357 (1988);
+Continuous Quantum Measurements and Path Integrals , (IOP Publishing, Bristol and
+Philadelphia, 1993).
+38. See, for example, H.Bacry, A.Grossman and J.Zak, Phys.Rev.B12, 1118 (1975).
+39. J.J.Halliwell, Phys.Rev.D39, 2912, 1989; T.Padmanabhan, Phys.Rev., D39, 2924
+(1989); C.Kiefer, Class.Quant.Grav. 6, 561 (1989).
+40. C.Anastopoulos, Phys.Rev. D54, 1600 (1996); B.Kay, Class.Quant.Grav. 15, L89
+(1998).
+48

@@ -1,0 +1,1334 @@
+{
+  "schema_version": "final-theory-cpobc-d2-oracle-v0.3.2",
+  "implementation_role": "INDEPENDENT_PHASE2_AND_LIMITED_G1_ORACLE",
+  "strata_certificate": {
+    "scope": {
+      "family": [
+        "R_2",
+        "R_3",
+        "R_4"
+      ],
+      "dimension": 2,
+      "base_field": "algebraically closed, characteristic != 2 (the project target is C)",
+      "assumptions": [
+        "Q_1 is invertible",
+        "the relevant Eq.(120) k=1 instances hold",
+        "R_n=Q_1^-1*Q_n"
+      ],
+      "method": "generic symbolic polynomial identities and explicit ideal-membership witnesses; no finite matrix sampling"
+    },
+    "eq120_to_pairwise_commutation": {
+      "identity": "numerator([Q_1^-1*Q_n,Q_1^-1*Q_m]) = adj(Q_1)*cleared_residual(Eq.120,k=1)",
+      "det_Q1": "q11*q22 - q12*q21",
+      "assumption": "det(Q_1) != 0",
+      "cleared_eq120_residual": [
+        [
+          "-m11*n12*q21 + m11*n21*q12 + m12*n11*q21 - m12*n21*q11 - m21*n11*q12 + m21*n12*q11",
+          "-m11*n12*q22 + m11*n22*q12 + m12*n11*q22 - m12*n22*q11 - m22*n11*q12 + m22*n12*q11"
+        ],
+        [
+          "m11*n21*q22 - m11*n22*q21 - m21*n11*q22 + m21*n22*q11 + m22*n11*q21 - m22*n21*q11",
+          "m12*n21*q22 - m12*n22*q21 - m21*n12*q22 + m21*n22*q12 + m22*n12*q21 - m22*n21*q12"
+        ]
+      ],
+      "r_commutator_numerator": [
+        [
+          "-m11*n12*q21*q22 + m11*n22*q12*q21 + m12*n11*q21*q22 - m12*n21*q11*q22 + m21*n12*q11*q22 - m21*n22*q11*q12 - m22*n11*q12*q21 + m22*n21*q11*q12",
+          "-m11*n12*q22**2 + m11*n22*q12*q22 + m12*n11*q22**2 - m12*n21*q12*q22 - m12*n22*q11*q22 + m12*n22*q12*q21 + m21*n12*q12*q22 - m21*n22*q12**2 - m22*n11*q12*q22 + m22*n12*q11*q22 - m22*n12*q12*q21 + m22*n21*q12**2"
+        ],
+        [
+          "m11*n12*q21**2 + m11*n21*q11*q22 - m11*n21*q12*q21 - m11*n22*q11*q21 - m12*n11*q21**2 + m12*n21*q11*q21 - m21*n11*q11*q22 + m21*n11*q12*q21 - m21*n12*q11*q21 + m21*n22*q11**2 + m22*n11*q11*q21 - m22*n21*q11**2",
+          "m11*n12*q21*q22 - m11*n22*q12*q21 - m12*n11*q21*q22 + m12*n21*q11*q22 - m21*n12*q11*q22 + m21*n22*q11*q12 + m22*n11*q12*q21 - m22*n21*q11*q12"
+        ]
+      ],
+      "certificate_residual": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "identity_verified": true,
+      "consequence": "For each distinct m,n in {2,3,4}, Eq.(120) with k=1 implies [R_n,R_m]=0.",
+      "scope_boundary": "This checks the algebraic implication from Eq.(120); it does not derive Eq.(120) from the full compiled transition system."
+    },
+    "single_matrix_dichotomy": {
+      "generic_matrix": [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "c",
+          "d"
+        ]
+      ],
+      "trace": "a + d",
+      "determinant": "a*d - b*c",
+      "characteristic_discriminant": "a**2 - 2*a*d + 4*b*c + d**2",
+      "repeated_eigenvalue": "(a + d)/2",
+      "nilpotent_part": [
+        [
+          "(a - d)/2",
+          "b"
+        ],
+        [
+          "c",
+          "-(a - d)/2"
+        ]
+      ],
+      "identity": "(A-tr(A)/2*I)^2 = discriminant(A)/4*I",
+      "certificate_residual": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "identity_verified": true,
+      "consequences": [
+        "discriminant != 0 gives two distinct eigenvalues over the base field",
+        "discriminant = 0 gives a square-zero nilpotent part",
+        "the square-zero part is zero exactly when A is scalar"
+      ]
+    },
+    "S1_distinct_eigenvalue_pivot": {
+      "pivot_normal_form": [
+        [
+          "alpha",
+          "0"
+        ],
+        [
+          "0",
+          "beta"
+        ]
+      ],
+      "generic_centralizer_candidate": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "z",
+          "w"
+        ]
+      ],
+      "commutator": [
+        [
+          "0",
+          "y*(alpha - beta)"
+        ],
+        [
+          "-z*(alpha - beta)",
+          "0"
+        ]
+      ],
+      "open_chart_relation": "alpha*inverse_gap - beta*inverse_gap - 1",
+      "ideal_membership_residuals": {
+        "off_diagonal_0_1": "0",
+        "off_diagonal_1_0": "0"
+      },
+      "membership_verified": true,
+      "centralizer_normal_form": [
+        [
+          "x",
+          "0"
+        ],
+        [
+          "0",
+          "w"
+        ]
+      ],
+      "centralizer_form_commutes": true,
+      "family_consequence": "A commuting family containing a distinct-eigenvalue pivot is simultaneously diagonal in an eigenbasis of that pivot.",
+      "residual_gauge_group": "invertible diagonal matrices; include the basis swap when the two eigenline labels are not ordered"
+    },
+    "S2_common_nilpotent_direction": {
+      "common_nilpotent_normal_form": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "generic_centralizer_candidate": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "z",
+          "w"
+        ]
+      ],
+      "commutator": [
+        [
+          "z",
+          "w - x"
+        ],
+        [
+          "0",
+          "-z"
+        ]
+      ],
+      "centralizer_normal_form": [
+        [
+          "x",
+          "y"
+        ],
+        [
+          "0",
+          "x"
+        ]
+      ],
+      "reconstruction_certificate_residual": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "reconstruction_verified": true,
+      "normal_form_commutes": true,
+      "normal_form_discriminant": "0",
+      "family_consequence": "If all family members have repeated eigenvalues and one is nonscalar, choose its nonzero square-zero part N. Every commuting member is lambda_i*I+mu_i*N in the same basis.",
+      "residual_gauge_group": {
+        "form": [
+          [
+            "stabilizer_alpha",
+            "stabilizer_beta"
+          ],
+          [
+            "0",
+            "stabilizer_alpha"
+          ]
+        ],
+        "determinant": "stabilizer_alpha**2",
+        "invertibility_condition": "stabilizer_alpha != 0"
+      },
+      "jordan_basis_certificate": {
+        "trace_zero_nilpotent_candidate": [
+          [
+            "p",
+            "q"
+          ],
+          [
+            "r",
+            "-p"
+          ]
+        ],
+        "nilpotence_polynomial": "p**2 + q*r",
+        "candidate_basis_P": [
+          [
+            "p*u + q*v",
+            "u"
+          ],
+          [
+            "-p*v + r*u",
+            "v"
+          ]
+        ],
+        "jordan_N": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "identity": "N*P-P*J = [(p^2+q*r)*v, 0]",
+        "certificate_residual": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "identity_verified": true,
+        "basis_determinant": "2*p*u*v + q*v**2 - r*u**2",
+        "logical_side_condition": "For nonzero square-zero N choose v with N*v != 0. Then columns (N*v,v) are independent, so det(P) != 0."
+      }
+    },
+    "S3_all_scalar": {
+      "normal_form": [
+        [
+          "scalar",
+          "0"
+        ],
+        [
+          "0",
+          "scalar"
+        ]
+      ],
+      "commutator_with_generic_matrix": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "centralizer_is_full_M2": true,
+      "residual_gauge_group": "GL(2)",
+      "family_consequence": "If every R_n is scalar, R_n=lambda_n*I and therefore Q_n=lambda_n*Q_1.",
+      "scope_boundary": "This proves antichain Q-commutativity only. It does not show that all transition operators in a CPOBC representation commute."
+    },
+    "logical_partition": {
+      "truth_table": [
+        {
+          "exists_distinct_eigenvalue_member": true,
+          "exists_nonscalar_member": true,
+          "stratum": "S1",
+          "valid": true
+        },
+        {
+          "exists_distinct_eigenvalue_member": true,
+          "exists_nonscalar_member": false,
+          "stratum": null,
+          "valid": false,
+          "reason": "a distinct-eigenvalue matrix cannot be scalar"
+        },
+        {
+          "exists_distinct_eigenvalue_member": false,
+          "exists_nonscalar_member": true,
+          "stratum": "S2",
+          "valid": true
+        },
+        {
+          "exists_distinct_eigenvalue_member": false,
+          "exists_nonscalar_member": false,
+          "stratum": "S3",
+          "valid": true
+        }
+      ],
+      "valid_rows_are_unique": true,
+      "exhaustive_predicate": "D or ((not D) and N) or ((not D) and (not N))",
+      "definitions": {
+        "D": "some R_n has nonzero characteristic discriminant",
+        "N": "some R_n is nonscalar"
+      }
+    },
+    "all_symbolic_identities_verified": true,
+    "certificate_kind": "SYMBOLIC_IDENTITY_NOT_FINITE_SAMPLE",
+    "unproved_or_external_steps": [
+      "Standard 2x2 linear algebra over an algebraically closed field: nonzero discriminant implies diagonalizability.",
+      "For a nonzero linear map N there exists v with N*v != 0; for square-zero N, (N*v,v) is then a basis. The returned intertwining identity checks the resulting Jordan form.",
+      "No claim here establishes that the full 641-relation compiled CPOBC system, MSR, GC, or every transition invertibility condition reduces to these antichain lemmas."
+    ]
+  },
+  "monomial_family_certificate": {
+    "family": {
+      "Q_1": "q1*sigma_x",
+      "Q_n": "sigma_x*diag(a_n,b_n), n=2,3,4",
+      "matrices": {
+        "1": [
+          [
+            "0",
+            "q1"
+          ],
+          [
+            "q1",
+            "0"
+          ]
+        ],
+        "2": [
+          [
+            "0",
+            "b2"
+          ],
+          [
+            "a2",
+            "0"
+          ]
+        ],
+        "3": [
+          [
+            "0",
+            "b3"
+          ],
+          [
+            "a3",
+            "0"
+          ]
+        ],
+        "4": [
+          [
+            "0",
+            "b4"
+          ],
+          [
+            "a4",
+            "0"
+          ]
+        ]
+      },
+      "nonzero_parameter_assumptions": [
+        "a2",
+        "a3",
+        "a4",
+        "b2",
+        "b3",
+        "b4",
+        "q1"
+      ],
+      "field": "Q(q1,a2,b2,a3,b3,a4,b4)"
+    },
+    "inverse_certificates": {
+      "1": {
+        "left": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "right": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "verified": true
+      },
+      "2": {
+        "left": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "right": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "verified": true
+      },
+      "3": {
+        "left": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "right": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "verified": true
+      },
+      "4": {
+        "left": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "right": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "verified": true
+      }
+    },
+    "equation_120": {
+      "index_tuple_order": [
+        "n",
+        "k",
+        "m"
+      ],
+      "admissibility": "m != n and k < min(m,n)",
+      "expected_count": 8,
+      "residuals": [
+        {
+          "indices": [
+            2,
+            1,
+            3
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            2,
+            1,
+            4
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            3,
+            1,
+            2
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            3,
+            1,
+            4
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            3,
+            2,
+            4
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            4,
+            1,
+            2
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            4,
+            1,
+            3
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            4,
+            2,
+            3
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        }
+      ],
+      "all_zero": true
+    },
+    "equation_129": {
+      "index_tuple_order": [
+        "m",
+        "n",
+        "ell",
+        "k"
+      ],
+      "admissibility": "m,n,ell,k pairwise distinct in {1,2,3,4}",
+      "expected_count": 24,
+      "residuals": [
+        {
+          "indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            1,
+            2,
+            4,
+            3
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            1,
+            3,
+            2,
+            4
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            1,
+            3,
+            4,
+            2
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            1,
+            4,
+            2,
+            3
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            1,
+            4,
+            3,
+            2
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            2,
+            1,
+            3,
+            4
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            2,
+            1,
+            4,
+            3
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            2,
+            3,
+            4,
+            1
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            2,
+            4,
+            1,
+            3
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            2,
+            4,
+            3,
+            1
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            3,
+            1,
+            2,
+            4
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            3,
+            1,
+            4,
+            2
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            3,
+            2,
+            1,
+            4
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            3,
+            2,
+            4,
+            1
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            3,
+            4,
+            1,
+            2
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            3,
+            4,
+            2,
+            1
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            4,
+            1,
+            2,
+            3
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            4,
+            1,
+            3,
+            2
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            4,
+            2,
+            1,
+            3
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            4,
+            2,
+            3,
+            1
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            4,
+            3,
+            1,
+            2
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        },
+        {
+          "indices": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "residual": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "is_zero": true
+        }
+      ],
+      "all_zero": true
+    },
+    "equation_130": {
+      "indices": [
+        1,
+        2
+      ],
+      "residual": {
+        "indices": [
+          1,
+          2
+        ],
+        "residual": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "is_zero": true
+      },
+      "all_zero": true
+    },
+    "noncommutativity_witnesses": {
+      "[Q_1,Q_2]": {
+        "matrix": [
+          [
+            "q1*(a2 - b2)",
+            "0"
+          ],
+          [
+            "0",
+            "-q1*(a2 - b2)"
+          ]
+        ],
+        "nonzero_condition": "q1*(a2-b2) != 0"
+      },
+      "[Q_2,Q_3]": {
+        "matrix": [
+          [
+            "-a2*b3 + a3*b2",
+            "0"
+          ],
+          [
+            "0",
+            "a2*b3 - a3*b2"
+          ]
+        ],
+        "nonzero_condition": "a3*b2-a2*b3 != 0"
+      }
+    },
+    "all_index_residuals_zero": true,
+    "certificate_kind": "SYMBOLIC_RATIONAL_FUNCTION_IDENTITIES_NOT_PARAMETER_SAMPLES",
+    "scope_boundary": [
+      "The certificate covers every admissible n<=4 index tuple of paper Eqs. (120), (129), and (130) for this family.",
+      "It does not check the 641 compiled CPOBC relations, the 24 MSR constraints, GC, or construct a vector measure.",
+      "It is therefore a necessary-relation witness, not a CPOBC representation certificate."
+    ]
+  },
+  "independent_s3_digest_certificate": {
+    "semantic_descriptor": {
+      "stratum": "S3_SCALAR",
+      "substitution": {
+        "Q_2": "lambda_2*Q_1",
+        "Q_3": "lambda_3*Q_1",
+        "Q_4": "lambda_4*Q_1"
+      },
+      "checked_claim": "ANTICHAIN_Q_COMMUTATORS_ZERO_ONLY",
+      "commutator_pairs": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "full_transition_system_status": "UNASSESSED_GENERATOR_REDUCTION_INCOMPLETE"
+    },
+    "semantic_descriptor_sha256": "e8fc9944d049b0544a5e938e489033511db3f8925ce9fff975668077aa7013c2",
+    "symbolic_commutator_residuals": [
+      {
+        "indices": [
+          1,
+          2
+        ],
+        "residual": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "is_zero": true
+      },
+      {
+        "indices": [
+          1,
+          3
+        ],
+        "residual": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "is_zero": true
+      },
+      {
+        "indices": [
+          1,
+          4
+        ],
+        "residual": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "is_zero": true
+      },
+      {
+        "indices": [
+          2,
+          3
+        ],
+        "residual": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "is_zero": true
+      },
+      {
+        "indices": [
+          2,
+          4
+        ],
+        "residual": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "is_zero": true
+      },
+      {
+        "indices": [
+          3,
+          4
+        ],
+        "residual": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "is_zero": true
+      }
+    ],
+    "all_checked_commutators_zero": true,
+    "method": "standalone generic 2x2 SymPy substitution followed by a local canonical-JSON SHA-256 implementation",
+    "shared_production_code_paths": [],
+    "comparison_scope": "S3_ANTICHAIN_Q_COMMUTATORS_ONLY",
+    "g1_status": "LIMITED_DIGEST_ROUTE_NOT_FULL_PHASE1_REPRODUCTION",
+    "unresolved_components": [
+      "production Phase-1 occurrence-variable reduction",
+      "641 compiled CPOBC relations",
+      "24 MSR constraints",
+      "GC constraints",
+      "two-sided transition invertibility",
+      "non-antichain transition operators"
+    ]
+  },
+  "passed": true,
+  "verdict_boundary": "Passing this oracle does not imply existence or nonexistence of a full d=2 CPOBC representation.",
+  "code_commit": "0341af59a1e1318957a82ba35080c10659716051",
+  "artifact_freeze_commit": "artifact set is the child freeze commit of code_commit; the annotated release tag records both hashes"
+}

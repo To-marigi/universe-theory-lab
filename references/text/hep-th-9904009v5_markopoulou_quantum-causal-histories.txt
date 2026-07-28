@@ -1,0 +1,596 @@
+===== PAGE 1 =====
+
+arXiv:hep-th/9904009v5  28 Jan 2000
+CGPG-99/3-4
+Quantum causal histories
+Fotini Markopoulou∗
+Center for Gravitational Physics and Geometry
+Department of Physics
+The Pennsylvania State University
+University Park, PA, USA 16802
+March 25, 1999
+Abstract
+Quantum causal histories are deﬁned to be causal sets with Hi lbert spaces attached
+to each event and local unitary evolution operators. The reﬂ exivity, antisymmetry, and
+transitivity properties of a causal set are preserved in the quantum history as conditions
+on the evolution operators. A quantum causal history in whic h transitivity holds can be
+treated as “directed” topological quantum ﬁeld theory. Two examples of such histories
+are described.
+∗fotini@phys.psu.edu
+1
+
+===== PAGE 2 =====
+
+1 Introduction
+In general relativity, with compact rather than asymptotic ally ﬂat boundary conditions,
+physical observations are made inside the system that they d escribe. In quantum theory,
+the observable quantities are meaningful outside the syste m that they refer to. It is very
+likely that quantum gravity must be a “quantum mechanical re lativistic theory”. That is,
+a theory where the observables can be given as self-adjoint o perators on a Hilbert space but
+which are meaningful inside the system that they describe.
+A rough description of what such a theory involves is the foll owing. Observations made
+inside the system are closely related to causality in the sen se that an inside observer nec-
+essarily splits the history of the system into the part that i s in the future, the part that
+is in the past, and — assuming ﬁnite speed of propagation of in formation — elsewhere.
+We may call such observables “internal observables”, chara cterised by the requirement that
+they refer to information that an observer at a point, or a con nected region of spacetime,
+may be able to gain about their causal past. In a previous pape r [11], we found that
+these observables can be described by functors from the part ially ordered set of events in
+the spacetime to the category of sets. Such a functor codes th e relationship between the
+causal structure and the information available to an observ er inside the spacetime. This
+has non-trivial consequences and, in particular, the obser vables algebra is modiﬁed even at
+the classical level. Internal observables satisfy a Heytin g algebra, which is a weak version of
+the Boolean algebra of ordinary observables. This is still a distributional algebra. Namely,
+for propositions P, Q and R, if P ∨ Q denotes “P or Q”, and P ∧ Q means “P and Q”, then
+P ∨ (Q ∧ R) = ( P ∨ Q) ∧ (P ∨ R).
+On the other hand, quantum mechanics is linear, and as a resul t of the superposition
+principle, quantum mechanical propositions are not distri butive. If P, Q and R are projec-
+tion operators, P ∨(Q∧R) is not equal to ( P ∨Q)∧(P ∨R). Having both quantum mechanics
+and internal observables in the same theory requires ﬁnding propositions that have a non-
+distributive quantum mechanical aspect and a distributive causal aspect. The aim of the
+present paper is to deﬁne the histories in which such observa bles may be encountered.
+We will, therefore, deﬁne quantum causal histories, which a re histories that are both
+quantum mechanical and causal. Assuming that a discrete cau sal ordering (a causal set) is a
+suﬃcient description of the fundamental past/future order ing needed to qualify observations
+as being inside the system, we ﬁnd that a quantum causal histo ry can be constructed by
+attaching ﬁnite-dimensional Hilbert spaces to the events o f the causal set. It is then natural
+to consider tensor products of the Hilbert spaces on events t hat are spacelike separated. We
+deﬁne quantum histories with local unitary evolution maps b etween such sets of spacelike
+separated events. The conditions of reﬂexivity, antisymme try and transitivity that hold for
+the causal set have analogs in the quantum history which are c onditions on the evolution
+operators. We ﬁnd that transitivity is a strong physical con dition on the evolution operators
+and, if imposed, implies that the quantum causal histories a re invariant under directed
+coarse graining.
+If the the causal set represents the universe, quantum causa l histories constitute a quan-
+tum cosmological theory. Its main notable feature is that th ere is a Hilbert space for each
+event but not one for the entire universe. Hence, no wavefunc tion of the universe arises.
+A consistent intepretation of quantum causal histories and observatons inside the quantum
+2
+
+===== PAGE 3 =====
+
+universe can be provided and will appear in a forthcoming pap er [14].
+In more detail, the outline of this paper is the following. In section 2 we review causal set
+histories and provide a list of deﬁnitions of structures tha t can be found in a causal history
+and which are used in the quantum causal histories. In partic ular, we concentrate on acausal
+sets, sets of causally unrelated events. In section 3, we int roduce the poset of acausal sets,
+equipped with the appropriate ordering relation. The deﬁni tion of quantum causal histories
+is based on this poset and is given in section 4. The propertie s of the resulting histories
+are discussed in section 5. The ordering of a causal set is reﬂ exive, antisymmetric and
+transitive, conditions which are also imposed on the quantu m histories. The consequences
+of these properties are analyzed in section 6. In particular , we ﬁnd that transitivity leads
+to directed coarse-graining invariance. Two classes of qua ntum causal histories are given
+as examples in section 7. Up to this point, the causal histori es require a choice of a causal
+set. In section 8, we remove this restriction and provide a su m-over-histories version of
+quantum causal evolution. The quantum causal histories pre sented here are consistent, but
+not all physically meaningful questions can be asked. There are several possibilities for
+generalisations, some of which we outline in the Conclusion s.
+2 Causal set histories
+A (discrete) causal history is a causal set of events that car ry extra structure. For example,
+the causal histories that were examined in [12, 10, 13] had as events vector spaces spanned
+by SUq(2) intertwiners. In two dimensions, an exact model of such a causal history has been
+proposed by Ambjorn and Loll [1] and its continuum limit prop erties have been investigated
+in [1, 2]. The dynamics of a 3-dimensional causal spin networ k history model is addressed
+by Borissov and Gupta in [4] 1.
+In this section, we review the deﬁnition of a causal set and pr ovide several derivative
+deﬁnitions which will be used in the rest of this paper.
+A causal set C is a partially ordered set whose elements are interpeted as t he events in
+a history (see [3, 16, 15]). We denote the events by p, q, r, . . .. If, say, p precedes q, we write
+p ≤ q. The equal option is used when p coincides with q. We write pRq when either p ≤ q
+or p ≥ q holds.
+The causal relation is reﬂexive, i.e. p ≤ p for any event p. It is also transitive, i.e. if
+p ≤ q and q ≤ r, then p ≤ r. To ensure that C has no closed timelike loops, we make the
+causal relation antisymmetric, that is, if p ≤ q and q ≤ p, then p = q. Finally, we limit
+ourselves to histories with a ﬁnite number of events.
+Given a causal set, there are several secondary structures t hat we can construct from it
+and which come in useful in this paper. We therefore list them here (see Figures 1 and 2):
+• The causal past of some event p is the set of all events r ∈ C with r ≤ p. We denote
+the causal past of p by P (p).
+• The causal future of p is the set of all events q ∈ C with p ≤ q. We denote it by F (p).
+1 For pure causal set theories (with no extra structure on the e vents), we may note recent work by
+Rideout and Sorkin who derived a family of stochastic sequen tial growth dynamics for a causal set, with
+very interesting consequences about the classical limit of pure causal sets [5]. Further, the dynamics of a
+toy model causal set using a suitable quantum measure was pro posed by Criscuolo and Waelbroek in [6].
+3
+
+===== PAGE 4 =====
+
+• An acausal set, denoted a, b, c, . . ., is a set of events in C that are all causally unrelated
+to each other.
+• The acausal set a is a complete past of the event p when every event in the causal
+past P (p) of p is related to some event in a. It is not possible to add an event from
+(P (p) − a) to a and produce a new acausal set.
+• Similarly, an acausal set b is a complete future of p when every event in the causal
+future F (p) of p is related to some event in b.
+• A maximal antichain in the causal set C is an acausal set A such that every event in
+(C − A) is causally related to some event in A.
+Similar deﬁnitions as the above of past, future, complete pa st, and complete future for
+a single event can be given for acausal sets:
+• The causal past of a is P (a) = ⋃
+i P (qi) for all qi ∈ a. Similarly, the causal future of
+a is F (a) = ⋃
+i F (qi) for all qi ∈ a.
+• An acausal set a is a complete past of the acausal set b if every event in P (b) is related
+to some event in a.
+• An acausal set c is a complete future of b if every event in F (b) is related to some
+event in c.
+Furthermore,
+• Two acausal sets a and b are a complete pair when a is a complete past of b and b is
+a complete future of a.
+• Two acausal sets a and b are a full pair when they are a complete pair and every event
+in a is related to every event in b.
+• Two acausal sets a and b cross when some of the events in a are in the future of b and
+some are in its past.
+3 The poset of acausal sets
+The set of acausal sets within a given causal set C is a partially ordered set if we deﬁne
+the relation a ⪯ b to mean that a is a complete past of b and b is a complete future of a.
+Reﬂecting the properties of the underlying causal set, the r elation ⪯ is reﬂexive, transitive
+and antisymmetric. Let us call this poset A.
+It is on this poset of acausal sets that we will base the quantu m version of the causal
+histories. Its properties, therefore, are important const raints on the corresponding quantum
+history. The main property of A that characterises the kind of quantum theory we will
+obtain in this paper is that, given acausal sets a, b and c, the following holds ( R means
+either ⪯ or ⪰):
+If aRc, bRc, and a, b do not cross, then aRb. (1)
+4
+
+===== PAGE 5 =====
+
+a
+b
+p
+F(p)
+P(p)
+Figure 1: This is a very small causal history. P (p) is the causal past of the event p while
+F (p) is its causal future. The acausal set a is a complete past for p, and b is a complete
+future.
+a
+b
+Figure 2: The acausal sets a and b are a complete pair.
+5
+
+===== PAGE 6 =====
+
+That is, given some acausal set c ∈ A, all the acausal sets that are related to c are also
+related to each other — except if they happen to cross. If a and b are “too close” to each
+other they may cross and then cannot be related by ⪯. This means that for the chosen c
+there is not a unique complete pair sequence. In selecting on e of the possible sequences we
+need to make repeated choices of which of two crossing acausa l sets to keep.
+4 Quantum causal histories
+We will now construct the quantum version, QA, of the poset A. We will regard an event
+q in the causal set as a Planck-scale quantum “event” with a Hil bert space H(q) that stores
+its possible states. We require that H(q) is ﬁnite-dimensional, which is consistent with the
+requirement that our causal sets be ﬁnite.
+Choose an acausal set a = {q1, q2, . . . , qn} in A. Since all qi ∈ a are causally unrelated
+to each other, standard quantum mechanics dictates that the Hilbert space of a is
+H(a) =
+n⨂
+i=1
+H(qi). (2)
+That is, we have a tensor product Hilbert space in QA for each acausal set in A.
+When two acausal sets are related, a ⪯ b, there needs to be an evolution operator
+between the corresponding Hilbert spaces:
+Eab : H(a) − → H(b). (3)
+We will impose one more condition on the causal histories tha t will make their present
+treatment simpler. We will only consider posets A with the following property:
+If a ⪯ b, dim H(a) = dim H(b). (4)
+This restriction is particularly convenient since it allow s us to simply regard H(a) and H(b)
+as isomorphic and require that Eab is a unitary evolution operator.
+The poset of acausal sets A is reﬂexive, transitive and antisymmetric. We would like
+to maintain these properties of the causal ordering in the qu antum theory as analogous
+conditions on the evolution operators. (In other words, we w ant the quantum causal history
+to be a functor from the poset A to the category of Hilbert spaces.) The analogue of
+reﬂexivity is the existence of an operator Eaa = 1a : H(a) → H(a) for every acausal set a.
+Eaa has to be the identity because any other operator from H(a) to itself would have to be
+a new event. Transitivity in A implies that
+EbcEab = Eac (5)
+in QA. We will return to transitivity and its implications for A and QA in section 6.
+At each event q, there is an algebra of observables, the operators on H(q). An observable
+ˆOa at a becomes an observable ˆOb at b by
+ˆOb = Eab ˆOaE†
+ab. (6)
+6
+
+===== PAGE 7 =====
+
+This completes the deﬁnition of the causal quantum historie s we are concerned with.
+In the next section we discuss the evolution of states which i s allowed in such histories.
+Then, in section 6, we will come back to the imposition of tran sitivity on the evolution
+operators, a strong condition that dictates the form of the r esulting histories and their
+quantum cosmology interpretation.
+5 Quantum evolution in QA
+In this section we discuss the consequences of the deﬁnition s of quantum histories given
+above.
+5.1 Products of complete pair sequences
+Evolution maps between complete pairs that are themselves c ausally unrelated to each other
+may be composed in the standard way, like tensors. That is, co nsider complete pairs a ⪯ b
+and c ⪯ d, with a and b unrelated to c or d. Then construct the acausal sets a ∪ c and
+b ∪ d, which form a new complete pair: ( a ∪ c) ⪯ (b ∪ d). The evolution operator on the
+composites,
+E(a∪ c)(b∪ d) : H(a) ⊗ H(c) − → H(b) ⊗ H(d), (7)
+is the product of the operators on the two pairs,
+E(a∪ c)(b∪ d) = Eab ⊗ Ecd. (8)
+5.2 Projection operators
+The causal structure of A means that a projection operator on H(a) propagates to the
+future of a in the following way. A projection operator
+Pa : H(a) → V (a) (9)
+that reduces H(a) to a subspace V (a), can be extended to a larger acausal set a ∪ c. On
+H(a) ⊗ H(c), it is the new projection operator
+Pa∪ c = Pa ⊗ 1c : H(a) ⊗ H(c) − → V (a) ⊗ H(c). (10)
+By using the evolution operator E(a∪ c)(b∪ d) = Eab ⊗ Ecd on the enlarged projection operator
+we obtain a projection operator Pb ⊗ 1d on the future acausal set b ∪ d.
+5.3 Evolution in A can be independent of C
+Consider a complete pair a ⪯ b in which a = a1 ∪ a2 and b = b1 ∪ b2. The corresponding
+Hilbert spaces are
+H(a) = H(a1) ⊗ H(a2) and H(b) = H(b1) ⊗ H(b2), (11)
+and Eab is the evolution operator that corresponds to the causal rel ation a ⪯ b.
+7
+
+===== PAGE 8 =====
+
+Choose some state |ψ⟩ ∈ H(a1) by acting on H(a1) with the projection operator |ψ⟩⟨ψ|.
+This implies that, in H(a), we have chosen the state |ψ⟩ ⊗ |ψa2 ⟩, for some |ψa2 ⟩ ∈ H(a2),
+using the projection operator ( |ψ⟩⟨ψ|) ⊗ 1a2 . We can use Eab on this state to obtain the
+state
+|ψb⟩ = Eab (|ψ⟩ ⊗ |ψa2⟩) (12)
+in H(b).
+If, for any reason, we need to restrict our attention to b2, we can trace over b1 to ﬁnd
+that the original state |ψ⟩ ∈ H(a2) gives rise to the density matrix:
+ρψ(b2) = Tr b1|ψb⟩⟨ψb∥ (13)
+= Tr b1
+[
+Eab (|ψ⟩⟨ψ| ⊗1a2) E†
+ab
+]
+. (14)
+At this point, the following question arises. What if a1 is not in the causal past of b2 and,
+for example, we have these causal relations:
+aa
+b
+1 2
+1 2b
+(15)
+Does the evolution we deﬁned on QA violate causality in the underlying causal set C?
+This question illuminates several features of the quantum c ausal histories. The very ﬁrst
+thing to note is that we get the same acausal poset A for many diﬀerent causal sets. The
+operator Eab refers to A and does not distiguish the diﬀerent possible underlying ca usal
+sets.
+There is a simple solution to the above apparent embarassmen t. Instead of promoting
+the events of the causal set to Hilbert spaces, we may attach t he Hilbert spaces to the edges,
+and the evolution operators to the events. An event in the cau sal set, then, becomes an
+evolution operator from the tensor product of the Hilbert sp aces on the edges ingoing to
+that event, to the tensor product of the outgoing ones. Since the set of ingoing and the set
+of outgoing edges to the same event are a full pair (i.e. a comp lete pair in which all events
+in the past acausal set are related to all the events in the fut ure one), the above problem
+will not arise. Conceptually, this solution agrees with the intuition that events in the causal
+set represent change, and, therefore, in the quantum case th ey should be represented as
+operators. In section 7.2, we discuss the example of quantum causal histories with the
+Hilbert spaces on the edges for trivalent causal sets.
+5.4 Propagation by a density matrix requires a complete pair
+According to (14), given a state |ψ⟩ ∈ H(a), we can obtain the density matrix ρψ(b2) for
+the acausal set b2 in the future of a. This uses the fact that b2 is a subset of an acausal set
+b that forms a complete pair with a.
+8
+
+===== PAGE 9 =====
+
+Consider this conﬁguration:
+21
+p
+ppp
+p
+4
+3p
+5
+a
+w
+76
+p
+(16)
+The initial acausal set is a = {p1, p2}. The acausal set w = {p3, p4} is in the future of a.
+Given |ψ⟩ ∈ H(a), can we obtain a density matrix on H(w)? The answer is no, since there
+is no acausal set that contains w and is maximal in the future of a. (The problem is the
+p2 ≤ p7 relation.)
+There are, therefore, acausal sets in the future of a which cannot be reached by the
+evolution map E.
+6 Directed coarse-graining
+The main idea in this paper is that the quantum version of some causal history is a collection
+of Hilbert spaces connected by evolution operators that res pect the structure of the poset
+A we started with. For this reason, in section 4, we imposed reﬂ exivity, transitivity and
+antisymmetry to the operators Eab.
+Transitivity is a strong condition on the quantum history. O ne should keep in mind that
+it was ﬁrst imposed on causal sets because it holds for the cau sal structure of Lorentzian
+spacetimes. Signiﬁcantly, it does not just encode properti es of the ordering of events but
+also the fact that a Lorentzian manifold is a point set . In general relativity, an event is a
+point and this has been imported in the causal set approach.
+To analyse this a little further, let us introduce a notation that indicates when two
+events p and q are related by a shortest causal relation, i.e., no other eve nt occurs after p
+and before q. This is the covering relation:
+• The event q covers p if p ≤ q and there is no other event r with p ≤ r ≤ q.
+We denote this by p → q.
+The following are worth noting. For a ﬁnite causal set, trans itivity means that the order
+relation determines, and is determined by, the covering rel ation, since p ≤ q is equivalent to
+a ﬁnite sequence of covering relations p = p1 → p2 . . . → pn = q. On the other hand, in the
+continuum (for example the real line R) there are no pairs p, q such that p → q [7]. Hence,
+in a continuum spacetime, it is simply not meaningful to cons ider an ordering that is not
+transitive. Non-transitive ordering requires distinguis hing between the covering relations
+and the resulting transitive ones. This distinction is not p ossible in the continuum case.
+In short, for events that are points, it is sensible to expect that if p leads to q and q to r,
+then r is in the future of p. If, however, the events were (for example) spacetime regio ns of
+some ﬁnite volume, with overlaps, then it is unclear whether transitivity would hold. (See
+9
+
+===== PAGE 10 =====
+
+also section 2.4 in [8].) In the causal histories we consider here, an event is a Hilbert space.
+It is, therefore, an open question whether it is sensible to i mpose reﬂexivity, transitivity
+and antisymmetry on the ordering of the Hilbert spaces. We ch oose to ﬁrst impose them,
+then ﬁnd what the implications are, and if they are unphysica l, go back and check which of
+the three conditions should not be maintained in a quantum ca usal ordering.
+On the positive side, there is a very interesting advantage t o maintaining transitivity.
+Using (5), we have the beneﬁt of a directed coarse-graining invariance of the quantum
+history. For example, if we are handed
+p
+ppp
+p p
+pp
+1
+6 7
+8 9
+2
+3 4 5
+p
+(17)
+and need to go from H(p1) ⊗ H(p2) to H(p3) ⊗ H(p4) ⊗ H(p5), we can reduce it to
+p p p
+p
+5
+21
+3 4
+p
+. (18)
+Clearly, several initial graphs will give the same coarse-g rained graph. We return to this in
+section 8.
+It is very interesting to note that the coarse-graining impl ied by transitivity can be used
+to improve the propagation of density matrices that we discu ssed in section 5.4. We can
+coarse-grain the causal set depicted in (16) by considering the events p3, p4, p5, p6, p7 to be
+the acausal set ¯w. This is a coarse-graining in the sense that we ignore any cau sal relations
+between these events. We then obtain:
+p
+5p
+a 21p
+6
+w 3p 4
+p7
+w p
+p
+. (19)
+In this causal set, a and ¯w are a complete pair. It is then possible to use an evolution
+operator Ea ¯w to take the state |ψ⟩ ∈ H(a) to a state in H( ¯w) and then trace over ( ¯w − w)
+to obtain a density matrix on H(w).
+10
+
+===== PAGE 11 =====
+
+7 Examples
+In this section, we provide two examples of the quantum causa l histories we deﬁned in
+section 4.
+7.1 Discrete Newtonian evolution
+A discrete Newtonian history is a universe with a preferred t ime and foliation. It is repre-
+sented by a poset A which is a single complete pair sequence:
+. . . an − → an+1 − → an+2 . . . . (20)
+The corresponding quantum history is then
+. . . Hn − → Hn+1 − → Hn+2 . . . . (21)
+with all the Hilbert spaces isomorphic to each other.
+We can denote by E the evolution operator from Hn to Hn+1. Evolution from Hn to
+Hm is then given by
+Enm = Em− n. (22)
+We may compare this universe to the standard one in quantum th eory. There, there is
+a single Hilbert space for the entire universe and evolution is given by the unitary operator
+eiHδt . In the above, there is a sequence of identical and ﬁnite-dim ensional Hilbert spaces.
+Since evolution is by discrete steps, we may set δt = 1. Then E = eiH , for some hermitian
+operator H and Enm = ei(m− n)H .
+7.2 A planar trivalent graph with Hilbert spaces on the edges
+This example is a history with multiﬁngered time [10]. It is a planar trivalent graph with
+ﬁnite-dimensional Hilbert spaces living on its edges. Trivalent means either two ingoing and
+one outgoing edges at a node, or two outgoing and one ingoing. We exclude nodes with no
+ingoing or no outgoing edges.
+From a given planar trivalent causal set C, we can obtain what we will call its edge-set,
+EC . This is a new graph which has the covering relations of C (the edges, not including
+any transitive ones) as its nodes. The covering relations in C are also ordered and these
+relations are the edges in EC . Figure 3 shows an example of a causal set and its edge-set.
+We now take the poset A of EC and construct a quantum history from it by assigning
+Hilbert spaces to the nodes of EC . The very interesting property of EC is that it can be
+decomposed into pieces, generating evolution moves that ta ke two events to one, or split
+one event into two. That is, EC can be decomposed to these two full pairs:
+H(e ) H(e ) H(e )
+H(e )
+2
+541
+63
+H(e ) H(e )
+. (23)
+11
+
+===== PAGE 12 =====
+
+(This is generally the case, not only for trivalent graphs.) Such a decomposition is not
+possible in some general C and therefore, in view of the problem we encountered in 5.3
+above, EC provides an advantage over C.
+To be able to employ unitary evolution operators, we need dim H(e1) = dim H(e2) +
+dim H(e3) and dim H(e4) + dim H(e5) = dim H(e6). One can check that this can be done
+consistently for all the events in the causal set.
+Although C is trivalent, the nodes of EC have valence 2,3, or 4. The list of possible edges
+in C and the corresponding nodes in EC is:
+(24)
+There is a substantial interpretational diﬀerence between Hilbert spaces on the (cover-
+ing) causal relations and on the events. A state space on the e dge p ≤ q is most naturally
+interpeted as “the state space of p as seen by q”. If there are two edges coming out of p,
+to q and r, then there are two Hilbert spaces in EC , interpeted as the Hilbert space of p
+as seen by q and the Hilbert space of p as seen by r. On the other hand, a Hilbert space
+placed on the event p is absolute, in the sense that is independent of who is observ ing it.
+12
+
+===== PAGE 13 =====
+
+Figure 3: A causal set and its edge-set.
+8 Summing over histories
+The quantum causal histories we discussed in this paper requ ire a ﬁxed poset A. This is
+also necessary in the treatment of observers in a classical c ausal set universe in [11]. Since
+there is no physical reason that some causal set should be pre ferred over all others, this
+restriction is unappealing. In this section we outline a “su m-over-histories” version of the
+evolution in section 4, which also applies to [11] and can be u sed in any further work on
+quantum observers inside the universe.
+An acausal set is a set of points. We have considered causal se ts where all events have
+at least one ingoing and one outgoing edge. Then, that a, b are a complete pair a ⪯ b means
+that there is a directed graph with the set a as its domain and the set b as its codomain.
+Let us denote this graph by γ(a, b). A graph with b as its codomain and one with b as its
+domain may be composed.
+When A is given, there is one known graph γ(a, b) connecting a and b. If A is not ﬁxed,
+we can sum over all graphs that we can ﬁt between a and b (that have a ﬁnite number of
+nodes). This leads to a sum-over-histories version of the ev olution in section 4.
+Let us call Eγ
+ab the evolution operator (as in equation (3)) when the underly ing graph is
+γ(a, b). The transition amplitude from a state |ψa⟩ ∈ H(a) to a state |ψb⟩ ∈ H(b) for this
+particular graph is
+Aγ = ⟨ψb|Eγ
+ab|ψa⟩. (25)
+If the graph is not ﬁxed, we may sum over all the possible ones:
+Aab =
+∑
+γ
+⟨ψb|Eγ
+ab|ψa⟩. (26)
+Now note that transitivity deﬁnes equivalence classes of gr aphs between given acausal
+sets. Here is an example of a series of graphs that, by transit ivity, have the same causal
+relations as far as a and b are concerned. Speciﬁcally, p1, p2, p3 ≤ p4 and p3 ≤ p4, p5 in all
+13
+
+===== PAGE 14 =====
+
+of these graphs:
+pp
+p p1
+54
+3 2p
+... (27)
+All of the above correspond to the same evolution operator in (26).
+It is intriguing to compare this to the triangulation invari ance of topological quantum
+ﬁeld theory. Transitivity can be intepreted as a directed triangulation invariance. We will
+return to this in future work.
+9 Conclusions
+We saw that it is possible to promote a causal set to a quantum o ne by taking the events to
+be ﬁnite-dimensional Hilbert spaces. It is natural to consi der tensor products of the Hilbert
+spaces on events that are spacelike separated. This led us to replace the causal set by the
+poset of acausal sets A. We deﬁned quantum histories with local unitary evolution m aps
+between complete pairs in A.2
+We explored several of the features of these causal historie s. A property of A is that
+it splits into distinct sequences of complete pairs. Conseq uently, this places restrictions
+on which Hilbert spaces can be reached from a given one. The co nditions of reﬂexivity,
+antisymmetry and transitivity that hold for A were imposed on the quantum history as
+conditions on the evolution operators. The most interestin g consequences were from tran-
+sitivity, which gave rise to invariance under directed coar se-graining. This needs further
+investigation, since the physical assumption behind trans itivity is pointlike events. It will
+be interesting to consider events which are extended object s and ﬁnd what ordering is
+suitable in this case.
+We were able to tensor together the Hilbert spaces for two aca usal sets when they are
+spacelike separated and have no events in common. However, i t is natural to consider cases
+where an acausal set is a subset of a larger one. It appears tha t, if we need to use acausal
+sets, we should enrich A with the inclusion relation, that is, use a poset with two ordering
+relations, causal ordering and spacelike inclusion. While this is straightforward in the plain
+causal set case, it becomes tricky in the quantum histories. For example, we may start from
+the acausal sets a = {q1, q2} and a′ = {q1, q2, q3}. In the poset A we have a ⊂ a′. In QA, the
+corresponding state spaces are H(a) = H(q1) ⊗ H(q2) and H(a′) = H(q1) ⊗ H(q2) ⊗ H(q3).
+However, there is no natural way in which H(a) is a subspace of H(a′). That is, the set
+inclusion relation is not directly preserved in the quantum theory.
+In the quantum histories we discussed, we restricted the pas t and future Hilbert spaces
+to have the same dimension. This is the simplest case and need s to be generalised. A
+related issue is the properties of the individual Hilbert sp aces. For example, if we employ
+2Discrete evolution by unitary operators is also considered by P. Zizzi, in work to appear.
+14
+
+===== PAGE 15 =====
+
+the causal spin network models of [13], the evolution operat ors should respect the SU (2)
+invariance of the state spaces. More generally, a discrete q uantum ﬁeld theory toy model
+can be constructed by inserting matter ﬁeld algebras on the e vents. This will be addressed
+in future work.
+Finally, we set up QA having in mind a functor from a poset to Hilbert spaces, takin g
+the elements and arrows of the poset into Hilbert spaces and o perators which preserve the
+properties of the original poset, i.e. reﬂexivity, antisym metry and transitivity. It is also
+possible to use graphs between sets of events (rather than a ﬁ xed causal set), as outlined
+in section 8. In this case, the quantum causal histories beco me similar to topological
+quantum ﬁeld theory except, importantly, they are directed graphs (or triangulations).
+The coarse-graining invariance relations can be calculate d for given ﬁxed valence of the
+covering relations.
+On the interpretational side, the main thing to note is that t he causal history is a
+collection of Hilbert spaces which itself is not a Hilbert sp ace. According to quantum
+theory, we can take tensor products of events that are not cau sally related. We cannot, for
+example, take the tensor product of all the Hilbert spaces in the history to be the Hilbert
+space of the entire history. 3 As a result, the causal quantum cosmology is not described in
+terms of a wavefunction of the universe. Individual events ( or observers on the events) can
+have states and wavefunctions but the entire universe does n ot. Further discussion of the
+interpretation of the quantum causal histories will appear in [14].
+Acknowledgment
+I am grateful to Chris Isham for his comments on transitivity and the pointlike structure of
+spacetime. This paper has beneﬁted from discussions with Le e Smolin on quantum theory
+and the interpetation of such histories as quantum cosmolog ies. I am also grateful to Sameer
+Gupta and Eli Hawkins for discussions on causal histories.
+This work was supported by NSF grants PHY/9514240 and PHY/94 23950 to the Penn-
+sylvania State University and a gift from the Jesse Phillips Foundation.
+3Taking tensor products of all Hilbert spaces in the history i s, however, exactly what is done in the
+consistent histories approach of Isham [9].
+15
+
+===== PAGE 16 =====
+
+References
+[1] Ambjorn J and Loll R, 1998, “Non-perturbative Lorentzia n Quantum Gravity, Causality and
+Topology Change” Nucl Phys B536 407.
+[2] Ambjorn J, Nielsen JL, Rolf J and Loll R, 1998, “Euclidean and Lorentzian Quantum Gravity
+- Lessons from Two Dimensions”, Chaos Solitons Fractals 10, 177 (hep-th/9806241).
+[3] Bombelli L, Lee J, Meyer D and R, 1987, “Space-time as a cau sal set”, Phys Rev Lett 59 521.
+[4] Borissov R and Gupta S, 1998, “Propagating spin modes in c anonical quantum gravity”,
+Phys.Rev. D60, 024002 (gr-qc/9810024).
+[5] D P Rideout and R D Sorkin, 1999, “A Classical Sequential G rowth Dynamics for Causal Sets”,
+gr-qc/9904062.
+[6] Criscuolo A and Waelbroeck H, 1998, “Causal Set Dynamics : A Toy Model”, Class.Quant.Grav.
+16, 1817 (gr-qc/9811088).
+[7] B.A. Davey and H.A. Priestley, “Introduction to Lattice s and Order”, Cambridge University
+Press, Cambridge, 1992.
+[8] Isham C J, 1994, “ Quantum Logic and the Histories Approac h to Quantum Theory”, J Math
+Phys 35 2157.
+[9] Isham C J, 1997, “Topos Theory and Consistent Histories: The Internal Logic of the Set of all
+Consistent Sets”, Int J Theor Phys 36 785.
+[10] Markopoulou F, 1997, “Dual formulation of spin network evolution”, gr-qc/9704013.
+[11] Markopoulou F, 1998, “The internal logic of causal sets : What the universe looks like from the
+inside”, Commun.Math.Phys, to appear.
+[12] Markopoulou F and Smolin L, 1997, “Causal evolution of s pin networks”, Nucl Phys B508
+409.
+[13] Markopoulou F and Smolin L, 1998, “Quantum geometry wit h intrinsic local causality”, Phys
+Rev D 58, 084032.
+[14] Markopoulou F and Smolin L, 1999, “Causal quantum cosmo logy”, to appear.
+[15] Meyer D A, 1988, The Dimension of Causal Sets , PhD Thesis, Massachussets Institute of
+Technology.
+[16] Sorkin R, 1990, “Space-time and causal sets” in Proc. of SILARG VII Conf., Cocoyoc, Mexico.
+16

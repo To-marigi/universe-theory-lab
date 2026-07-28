@@ -1,0 +1,4255 @@
+===== PAGE 1 =====
+
+arXiv:1512.02240v3  [quant-ph]  21 Mar 2017
+Causal Boxes: Quantum Information-Processing
+Systems Closed under Composition
+Christopher Portmann ∗ 1, Christian Matt †2, Ueli Maurer ‡2,
+Renato Renner §1, and Bj¨ orn Tackmann¶ 3
+1Institute for Theoretical Physics, ETH Zurich, 8093 Z¨ urich, Swit zerland.
+2Department of Computer Science, ETH Zurich, 8092 Z¨ urich, Switz erland.
+3IBM Research – Zurich, 8803 R¨ uschlikon, Switzerland.
+March 22, 2017
+Abstract
+Complex information-processing systems, for example quantum cir -
+cuits, cryptographic protocols, or multi-player games, are natur ally
+described as networks composed of more basic information-proce ssing
+systems. A modular analysis of such systems requires a mathematic al
+model of systems that is closed under composition, i.e., a network of
+these objects is again an object of the same type. We propose suc h a
+model and call the corresponding systems causal boxes.
+Causal boxes capture superpositions of causal structures, e.g ., mes-
+sages sent by a causal box A can be in a superposition of diﬀerent
+orders or in a superposition of being sent to box B and box C. Fur-
+thermore, causal boxes can model systems whose behavior depe nds
+on time. By instantiating the Abstract Cryptography framework w ith
+causal boxes, we obtain the ﬁrst composable security framework that
+can handle arbitrary quantum protocols and relativistic protocols.
+∗ chportma@ethz.ch
+† mattc@inf.ethz.ch
+‡ maurer@inf.ethz.ch
+§ renner@ethz.ch
+¶ bta@zurich.ibm.com
+1
+
+===== PAGE 2 =====
+
+Contents
+1 Introduction
+3
+1.1 Ordering messages . . 3
+1.2 Superpositions of orders 4
+1.3 Causal boxes . . . . . 6
+1.4 Applications . . . . . . 8
+1.5 Related work . . . . . 10
+1.6 Structure of this paper 11
+2 A theory of systems 12
+3 The space of partially or-
+dered messages 13
+3.1 Ordering messages . . 13
+3.2 Single message space . 15
+3.3 Wires . . . . . . . . . 15
+4 Deﬁning causal boxes 17
+4.1 A set of maps . . . . . 17
+4.2 Cuts . . . . . . . . . . 18
+4.3 Causality . . . . . . . 19
+4.4 The deﬁnition of
+causal boxes . . . . . . 21
+4.5 Subnormalized boxes . 22
+5 Alternative representa-
+tions of causal boxes 22
+5.1 Stinespring and Choi-
+Jamio/suppress lkowski . . . . .22
+5.2 A sequence of operators 26
+6 Composing causal boxes 28
+6.1 Parallel composition . 28
+6.2 Loops . . . . . . . . . 29
+6.3 The composition oper-
+ation . . . . . . . . . . 34
+7 Distance 36
+8 Example: the quantum
+switch 39
+9 Concluding remarks 41
+Acknowledgments 44
+Appendices 45
+A F ock space 45
+B Inﬁnite dimensional rep-
+resentations of quantum
+operators
+46
+B.1 The Choi-Jamio/suppress lkowski
+representation . . . . . 46
+B.2 The natural represen-
+tation . . . . . . . . . 48
+C Finite causal boxes 49
+D Causality for total orders 50
+E Loops 52
+F Alternative distinguish-
+ers 57
+F.1 Subnormalized distin-
+guishers . . . . . . . . 57
+F.2 The distinguishing limit 59
+G T echnical lemmas 61
+References 62
+2
+
+===== PAGE 3 =====
+
+1 Introduction
+In this work we are concerned with modeling quantum informat ion-pro-
+cessing systems, i.e., interactive systems that receive an d send quantum
+messages. Similar formalisms for modeling such systems wer e developed
+by Gutoski and Watrous [
+1, 2], Chiribella, D’Ariano and Perinotti [ 3], and
+Hardy [ 4–6] (see also Hardy [ 7, 8]), to which we refer in the following using
+the term from [ 3], namely quantum combs . Quantum combs are a general-
+ization of random systems [9, 10] to quantum information theory. A comb
+is a system with internal memory that processes messages one at a time as
+they are received. An example is depicted in Figure 1 , where the dashed
+lines capture the comb structure.
+Figure 1 – A single information-processing system modeled as a comb. The
+nodes represent an operation and the arrows capture a quantum state. Each
+tooth of the comb corresponds to a pair of an input and an output m essage.
+The quantum comb framework [ 1–6] provides rules for representing these
+objects independently from their internal state and compos ing them when
+the order of messages is predeﬁned. It also deﬁnes a notion of distance be-
+tween combs. This has found applications in modeling two pla yer games [ 1]
+and two player cryptographic protocols [ 11].
+1.1 Ordering messages
+The composition of systems described as combs is however not always well-
+deﬁned. Consider the example drawn in Figure 2 : two players, Alice and
+Bob, each send a message to a third player, Charlie, who outpu ts the ﬁrst
+message he receives and ignores the second. Each of the syste ms is a well-
+deﬁned comb. Alice and Bob just output a single message. When Charlie
+receives the ﬁrst message, m = (v,p ) — value v from player p — he outputs
+v and ignores all further inputs. But the composition of all th ree systems
+(depicted as a dashed box in Figure 2 ) is not deﬁned: it is a system with no
+input and one output, but this output is undetermined.
+The composition of these three systems is undeﬁned, because Alice’s
+and Bob’s messages are unordered, yet the output of Charlie d epends on this
+order. However, if one considers physical systems, e.g., an implementation of
+Figure 2 , the composition is a new well-deﬁned physical system. Mess ages
+are output at a certain time, which results in a well-deﬁned o rder. This
+ordering information was ignored in the descriptions of the systems given
+3
+
+===== PAGE 4 =====
+
+Alice
+Bob
+Charlie
+Alice!
+Bob!
+Alice
+or Bob?
+Figure 2 – Alice and Bob both send messages to Charlie, who outputs the
+ﬁrst message he receives. Although each system can be described by a comb,
+the composition of the three, depicted as the dashed box, is undeﬁ ned.
+above, and results in the ill-deﬁned composition. Combs are well-suited
+for analysing systems that have a predeﬁned causal structur e, e.g., ordered
+networks [3], some simple two player games [ 1] and two player cryptographic
+protocols [ 11]. But Chiribella et al. [ 12] prove that their framework is ill-
+suited for modeling settings where the causal structure is n ot predeﬁned,
+e.g., when it is determined by an input or a coin toss. 1
+1.2 Superpositions of orders
+In a quantum framework it is not suﬃcient to have all messages (dynami-
+cally) ordered, it must also be possible to have messages in s uperpositions
+of diﬀerent orders. For example, a player might choose to send a message
+|ψ⟩, she might choose to send “nothing” — which we denote by a vacu um
+state|Ω⟩ — or she might send a superposition of the two, i.e., she prepa res
+and sends the state
+α|ψ⟩ +β|Ω⟩. (1)
+A message could also be in a superposition of sent to Alice and sent to Bob,
+i.e.,
+α|ψ⟩A⊗| Ω⟩B +β|Ω⟩A⊗|ψ⟩B. (2)
+This results in a player receiving superpositions of diﬀeren t numbers of mes-
+sages in diﬀerent orders. Since the value of a message can only be inﬂuenced
+by a message that is ordered before, a superposition of diﬀere nt orders of
+messages corresponds to a superposition of the causal struc ture between
+these messages.
+Such superpositions are not only a possibility oﬀered by quan tum me-
+chanics, but are also necessary to perform certain quantum i nformation-
+processing tasks. Consider the problem of designing a circu it that performs
+a controlled unitary for an unknown U given only a single black-box access
+to U , which we illustrate in
+Figure 3a . It has been proven in [ 13, 14] that
+1To solve this, Chiribella et al. [ 12] propose a non-causal model of quantum information-
+processing systems, which we discuss brieﬂy in Section 1.5 .
+4
+
+===== PAGE 5 =====
+
+|0⟩
+A
+U
+B
+Construction:
+|0⟩ WU
+U
+Goal:
+(a) Impossibility of a ctrl-U : there do not exist any operators A and B
+such that for all U the circuit on the left is equivalent to the circuit on the
+right [ 13, 14].
+|Ω⟩
+U
+=
+|Ω⟩
+U
+(b) Implementation of a ctrl-U : the circuit on the left performs a controlled
+switch between the top and bottom wires before and after the unit aryU , which
+is equivalent to the controlled unitary depicted on the right [ 14–16]. When
+nothing — i.e., the vacuum state |Ω⟩ — is input to U , nothing is output either.
+Figure 3 – (Im)Possibility of implementing a ctrl-U . In the circuits in (a) a
+wire — depicted as a line — corresponds to the space on which U acts. In the
+circuits in (b) a wire — depicted as an arrow — can also transmit a vacuum
+state,|Ω⟩.
+this task is impossible. And yet, adding control to an unknow n unitary can
+easily be implemented in practice, and has been done in [ 15]. As pointed out
+in [ 14, 16], the discrepancy between the two results stems from the ass ump-
+tion made in the impossibility proofs [ 13, 14] that a wire in a circuit models
+a (non-vacuum) state, whereas in a physical model one has the freedom of
+not inputing anything to the black box — i.e., one does not use the input
+wire — in which case no output is produced either. The solutio n from [ 15]
+consists in sending a vacuum state on one of the wires and perf orming a con-
+trolled switch between the vacuum state and the input. This i s illustrated
+in Figure 3b , where the wires are depicted as arrows to emphasize that the y
+have a diﬀerent meaning from the wires in Figure 3a . We refer to [ 14, 16]
+for a further discussion of this.
+Another example is given by the quantum switch [12]: using only a
+single black-box access to each of two systems implementing some unknown
+unitariesU andV , the quantum switch applies these gates in (a controlled)
+superposition of the two possible orders, i.e., on input
+(α|0⟩ +β|1⟩)⊗|ϕ⟩, (3)
+5
+
+===== PAGE 6 =====
+
+α|0⟩ + β|1⟩
+|ϕ⟩
+α|0⟩⊗ UV|ϕ⟩
++β|1⟩⊗ VU|ϕ⟩QS
+U V
+Figure 4 – The quantum switch, QS, queries ﬁrst U then V or ﬁrst V then U
+depending on the control qubit.
+it outputs
+α|0⟩⊗ UV|ϕ⟩ +β|1⟩⊗ VU|ϕ⟩, (4)
+as illustrated in Figure 4 . This particular system — which can be physically
+implemented [ 16–18], but cannot be expressed using a classical ordering
+of gates [ 12] — has been proven to be useful in reducing the complexity of
+computational tasks [17,19] and increasing the success probability of discrim-
+inating between quantum states and channels [ 20, 21]. As an illustration of
+our framework we show in Section 8 how to describe the quantum switch
+using the language of causal boxes that we develop in this wor k.
+It is thus essential that a framework for modeling quantum in formation
+processes can capture superpositions of diﬀerent numbers of messages ar-
+riving in superpositions of diﬀerent orders. To the best of ou r knowledge,
+no existing causal framework has such a feature. Physical sy stems such as
+those from Figure 3b and Figure 4 , and constructions from [ 14–21] cannot be
+modeled in existing frameworks. Furthermore, impossibili ty results proven
+for combs [ 12] or a restricted circuit model [ 13, 14] do not hold anymore
+when we consider the larger class of systems allowed by quant um mechan-
+ics. Similarly, existing quantum composable security fram eworks [ 22, 23]
+can only make security statements for a limited class of quan tum informa-
+tion-processing systems. They include an artiﬁcial classi cal scheduler that
+systematically measures states such as (1) and (2) to determine who is the
+recipient of the next message, and can thus only model a class ical ordering
+of messages. 2
+1.3 Causal boxes
+The main contribution of this work is to introduce causal boxes as an ab-
+stract model for discrete quantum information-processing systems. Causal
+boxes include quantum combs [ 1–6] and the models from composable secu-
+rity frameworks [22–24] as special cases. Crucially, they have the property of
+2The composable security framework from [ 24] has an additional restriction on the
+quantum systems that can be modeled in the framework: they mu st correspond to a
+set of ordered gates, which is essentially equivalent to an o rdered network captured by a
+quantum comb [ 1–6].
+6
+
+===== PAGE 7 =====
+
+Φ
+(a) An abstract depiction of a causal
+box with a ﬂat interface. Messages
+may arrive in any order — or super-
+positions thereof — on the wires.
+Φ
+Ψ
+Γ
+(b) The two causal boxes Φ and Ψ
+are connected by their wires. This
+results in a new box Γ.
+Figure 5 – The input wires of causal boxes are unordered. Instead, the me s-
+sages traveling on the wires are ordered and processed according to this order,
+regardless of the wire. An output generated in position t can depend on any
+input that arrived strictly before t. Cycles are permitted in a network of boxes,
+since a connection between two systems can capture a physical link between
+an output and input port.
+being closed under composition. Naturally, composing two p hysical systems
+results in a new physical system. The main challenge when mod eling an
+abstraction of physical systems is to identify the minimal c haracterization
+that preserves this closure property without excluding any systems.
+In a quantum comb [
+1–6], the teeth of the comb capture the predeﬁned
+causal structure of the system. Any input on a wire at one of th e teeth
+can inﬂuence only outputs on teeth that are further to the rig ht in Figure 1 .
+Since we are interested in systems which do not have such a pre deﬁned
+order, causal boxes have a ﬂat (unordered) interface, depic ted in Figure 5a .
+Instead, the messages themselves are ordered, each one cons isting of a pair
+(v,t ) of a value v and a global order t∈ T from some partially ordered
+setT . The parameter t captures the order of the message with respect to
+other messages, i.e., its position within T . A causal box processes inputs
+according to this order: an output in position t can only depend on inputs
+arriving strictly before t — that is, the box must satisfy causality. Having
+all messages assigned some order t∈T allows protocols that involve time
+to be naturally modeled by interpreting t as the time at which a message is
+sent or received. A partial order on T may also be used to model space-time
+in a relativistic setting. These applications are discusse d further in Sections
+1.4 and 9.
+We provide a characterization of causal boxes which is indep endent of
+their internal state. For example, a box which accepts only c lassical inputs
+and produces only classical outputs would have a classical d escription, re-
+gardless of whether it internally performs quantum computa tion. We show
+how to compose two boxes, i.e., how to deﬁne the new box result ing from
+connecting two boxes by their wires. This is illustrated in Figure 5b . A
+7
+
+===== PAGE 8 =====
+
+connection between two boxes can be thought of as a physical c onnection —
+a wire literally plugs one box into another. Unlike for order ed networks
+modeled by combs [ 1–6], we allow cycles in networks of causal boxes. In
+particular, if for a single causal box Φ an input on a wire A generates an
+output on a wire B, it is perfectly legal to put a loop from B to A. This
+does not create any causality conﬂicts since messages are or dered and an
+output can only depend on inputs that arrived before.
+A wire — depicted by an arrow in Figure 5 — does not necessarily repre-
+sent a single message. It is possible to send no message, mult iple messages,
+or any superposition thereof on a single wire, e.g., states s uch as those of
+Eqs. (1) and (2) can be generated by a causal box. A message can then also
+be in a superposition of arriving in position t1 and position t2, and a causal
+box can process this without breaking the superposition.
+We also deﬁne a notion of distance between causal boxes as the proba-
+bility that a distinguisher 3 can correctly guess to which of two boxes it is
+connected. Considering diﬀerent classes of distinguishers results in diﬀerent
+distance measures. For example, computationally bounded o r unbounded
+distinguishers allow for diﬀerent notions of security to be c aptured in cryp-
+tographic applications.
+1.4 Applications
+Distributed systems. Causal boxes allow arbitrary distributed systems
+to be modeled, e.g., where multiple messages are sent simult aneously to
+diﬀerent subsystems and the order of their arrival determine s the outcome.
+The analysis of simple two player protocols can be performed with quantum
+combs [
+1,11] as they have a predeﬁned order — ﬁrst player A sends a message,
+then player B, then A, etc. But if the protocol involves more parties or if
+these players access some external ressource, the order of t he messages is not
+predetermined and causal boxes need to be used to model these systems.
+No-go theorems which are proven using a restricted computat ional model
+that cannot capture every quantum information-processing system — such
+as those of [ 12–14] — merely prove that the model is inadequate to accom-
+plish the desired task. To show that a (quantum) information -theoretic task
+is impossible, a general framework such as the one we propose must be em-
+ployed.4 For example, the authors of [ 16] suggest that if the provider of a
+black-box unitary wishes to enforce that its system is not us ed to implement
+a controlled unitary, 5 this may be achieved by including a photon number
+3For simplicity, a distinguisher can be thought of as another causal box. Though the
+exact deﬁnition is slightly more powerful, see Section 7 .
+4Since our framework is causal, an impossibility proof would naturally only be mean-
+ingful if non-causal systems are unphysical; see the discus sion in Section 9 .
+5This can be essential in a cryptographic context: the unitar y could contain sensitive
+information in the global phase, which can be accessed if it i s used as a controlled unitary.
+8
+
+===== PAGE 9 =====
+
+counter in the box that breaks the superpositions between th e vacuum and
+a photon. Causal boxes can be used to prove whether such a cons truction
+does indeed forbid using a black-box unitary in a controlled way.
+Computation with superposition of causal orders. Although in most
+distributed protocols one might expect the players to measu re whether they
+receive a message or not — and thus break any superposition be tween the
+causal order of events — certain distributed systems cannot be implemented
+without preserving such a superposition. A system which tra nsforms any
+unitary into a controlled unitary — which was discussed in Section 1.2 — is
+one such example. Furthermore, as shown in [ 17, 19–21], there is a compu-
+tational advantage in implementing systems that preserve s uch a superpo-
+sition of causal orders. In those works, the quantum switch ( introduced in
+Section 1.2 ) was used to illustrate this advantage. It is rather straigh tfor-
+ward to describe the eﬀect of plugging the quantum switch into the systems U
+and V — this corresponds to the dashed box from Figure 4 with input-output
+behavior given by Eqs. (3) and (4). However, the quantum switch itself, i.e.,
+the box QS in Figure 4 , cannot be described as a circuit or comb [ 12]. Pos-
+sible implementations of the quantum switch using linear op tics have been
+suggested [ 16, 17] and an experimental realization has been performed [ 18],
+which eﬀectively provide an implementation dependent descr iption of the
+switch. Non-causal descriptions of the quantum switch have also been pro-
+posed [12,25,26], but as shown by the implementations [ 16–18], the quantum
+switch is a causal system, and a non-causal description is th us quite unsat-
+isfactory. To illustrate our framework, we provide in Section 8 an abstract,
+but mathematical, (implementation independent) descript ion of the quan-
+tum switch as a causal box.
+Cryptography . Traditional quantum composable security frameworks [
+22–
+24] can model only a classical ordering of messages. The compos ition the-
+orems of these frameworks are de facto limited to this restri cted class of
+systems. The Abstract Cryptography (AC) framework [ 27] (see [ 28] for an
+introduction to quantum AC) models cryptography as a resour ce theory:
+a protocol constructs a resource (e.g., a secure channel) fr om another re-
+source (e.g., a secret key). The AC framework treats resourc es as abstract
+objects, i.e., it only demands that they have certain proper ties, but does not
+prescribe a speciﬁc model for them. By instantiating the res ources and pro-
+tocols with causal boxes, one immediately gets a fully quant um composable
+security framework that can handle superpositions of order s of messages.
+To model protocols that involve time, the ordered set T may be inter-
+preted as the time at which a message is sent or received. Play ers can then
+be synchronized by clocks and use timeouts: a player aborts o r behaves dif-
+ferently if a message has not been received by time t. This has been used,
+9
+
+===== PAGE 10 =====
+
+for example, in authentication protocols to reduce the secr et key consump-
+tion [29,30]. Relativistic cryptography uses the fact that informatio n cannot
+be transmitted faster than the speed of light to implement ta sks such as bit
+commitment [ 31–35] and position veriﬁcation [ 36, 37]. However, due to the
+lack of cryptography frameworks that can handle time, these works use ad
+hoc security deﬁnitions. 6 A partial order on T captures relativistic space-
+time in a natural way. This allows relativistic protocols to be modeled in our
+framework. AC instantiated with causal boxes then provides composable se-
+curity deﬁnitions that are applicable to relativistic cryp tography. This is
+discussed further in Section 9 .
+If a distributed system does not provide information about t he order
+in which messages are received, it can be modeled as a family o f systems,
+where each element in the family corresponds to one possible behavior of
+this system — which, ultimately, determines the ordering of the messages
+(this is discussed further in Section 9 ). Security then has to hold for every
+element in the family. Explicitly modeling the set of possib le behaviors of a
+system removes the artiﬁcial concept of a scheduler that is p resent in other
+frameworks [22, 23]. Requiring that a protocol be secure for all behaviors of
+the underlying systems is equivalent to considering the wor st case scheduling
+and has the advantage of being sound in a model with multiple a dversaries.7
+Scenarios involving mutually distrustful dishonest playe rs can be captured
+this way [ 27, 38, 39].
+1.5 Related work
+As already mentioned in this introduction, the quantum comb framework [1–
+6] can model any quantum information-processing system in wh ich the order
+of the messages is classical and predeﬁned, e.g., a quantum c ircuit and many
+two-player games. The systems models from quantum composab le security
+frameworks [ 22, 23] allow a dynamical (but still classical) ordering of mes-
+sages. This is essential for modeling cryptographic protoc ols, where it might
+be decided at runtime (depending on an input or coin ﬂip) if a m essage is
+sent.
+The need for physical models that are not restricted to class ical orderings
+of messages was — to the best of our knowledge — ﬁrst noticed by Hardy,
+who developed a framework for probability theories with ind eﬁnite causal
+structures [7,8,40,41]. This motivated Oreshkov, Costa and Brukner [ 42,43]
+to propose a process matrix formalism for modeling quantum s ystems with
+6A framework that models circuits that are located in space-t ime is proposed in [ 37],
+but it only deﬁnes security for position-based veriﬁcation and authentication. The issue of
+deﬁning a generic (composable) security framework in space -time is not adressed in that
+work.
+7The scheduler is typically controlled by the adversary [ 22, 23], but if multiple (non-
+cooperating) adversaries are present, this type of schedul ing is ill-deﬁned.
+10
+
+===== PAGE 11 =====
+
+indeﬁnite causal structures: quantum theory is assumed to b e valid in local
+laboratories, but no reference is made to any global causal r elations between
+the operations in the diﬀerent laboratories. Various aspect s of the process
+matrix formalism have been developed further in subsequent works, e.g., the
+multi-party setting [ 25, 26], extensible causality [ 25], witnesses for causal
+non-separability [ 26, 44], violations of causal inequalities [ 45–48], classical
+systems with indeﬁnite causal structures [ 49,50], and non-causal circuits [ 51].
+Chiribella et al. [ 12] develop an equivalent framework in which systems are
+modeled as higher-order quantum transformations. Oreshko v and Cerf [ 52]
+consider an even more general framework: they introduce a mo del with no
+predeﬁned time, even within the individual laboratories. T his encompasses
+previous work as special cases.
+On one hand, this process matrix formalism and its derivativ es are more
+general than the current work, because they do not only captu re superpo-
+sitions of causal structures, but also non-causal structur es, e.g., where a
+message going from A to B is both (causally) before and after a message
+from B to A. However, this added generality makes it unsuited for model -
+ing real world applications, e.g., the behavior of players i n a cryptographic
+protocol, since one might be assigning them unphysical beha viors. On the
+other hand, these models are more restricted than ours, as th ey do not allow
+messages to be dynamically ordered, which is essential for m any applications.
+This is discussed further in Section 9 .
+Concurrently to this work, the same authors developed a theo ry of de-
+terministic systems [ 53], which exploits certain properties speciﬁc to the
+classical case. This allows for a framework that is both simp ler and more
+general than what one obtains by restricting the current wor k to determinis-
+tic systems. In particular, the notion of causality from [ 53] is less restrictive
+and includes systems that can execute an inﬁnite number of ca usal steps
+in a ﬁnite amount of time (see Section 4.3 for a discussion of the causality
+deﬁnitions).
+1.6 Structure of this paper
+In
+Section 2 we give an overview of an abstract theory of systems. The
+main body of this work consists in formalizing systems which capture quan-
+tum information processes and satisfy this abstract theory — namely causal
+boxes. In Section 3 we model the state space of a wire. This constitutes the
+input and output spaces of causal boxes. Then in Section 4 we deﬁne causal
+boxes as maps from the input wires to the output wires. In Section 5 we
+prove some lemmas on the Stinespring and Choi-Jamio/suppress lkowski representa-
+tions of causal boxes, which serve as a general toolbox in the next sections.
+We then treat the composition of causal boxes in Section 6 , where we de-
+ﬁne operations for connecting boxes by their wires. In Section 7 we show
+how to deﬁne a notion of distance on the space of causal boxes u sing dis-
+11
+
+===== PAGE 12 =====
+
+tinguishers. In Section 8 we illustrate our framework by using it to model
+the quantum switch. We conclude in Section 9 with some ﬁnal remarks and
+open questions. An overview of the appendices is given on page 45 .
+2 A theory of systems
+Our goal is to model discrete quantum information-processi ng systems, such
+that a network of these systems is itself a valid system. In th e following we
+provide a precise formulation of this desideratum. For this we describe a
+theory of systems which captures the required properties on an abstract
+level. It serves as a guideline for the main technical contri bution of this
+paper (Sections
+3 to 7), which can be understood as instantiating the theory
+with causal boxes. In this, we follow the top-down paradigm o f Maurer and
+Renner [ 27], which consists in modeling objects at the highest possibl e level
+of abstraction, and then proceeding downwards, introducin g in each new
+lower level only the minimal necessary specializations. An alternative and
+more detailed formulation of this abstract theory of system s can be found
+in [ 53]. A very similar approach has been used by Hardy [ 54] to model
+composition of abstract physical objects. Many of the axiom s stated in this
+section and in [ 53] can also be found in Hardy’s work [ 54], e.g., composition
+order independence.
+On an abstract level an information-processing system is an object that
+reads inputs and produces outputs. To every such object Φ we a ssign a set
+of ports, ports(Φ), through which messages are sent and received. Let S
+be the set of all information-processing systems of interes t. Two systems
+can be composed by connecting some of their ports. Let Φ , Ψ ∈ S and let
+P ⊆ ports(Φ) × ports(Ψ) be a set of pairs of compatible ports, i.e., they
+have the same dimensions, consist of one in- and one out-port and each port
+appears at most once in P . The composition operation, which we write
+Φ P← →Ψ, must satisfy certain properties.
+Closure. The ﬁrst property needed is closure under composition , namely,
+for any Φ , Ψ ∈ S and compatible pairs of ports P⊆ ports(Φ)× ports(Ψ),
+Φ P← →Ψ ∈ S.
+In Theorem 6.7 we prove that this holds for causal boxes.
+Composition order independence. When drawing systems one typi-
+cally produces ﬁgures as in Figure 6 : boxes connected by wires. Such a
+picture illustrates the fact that the order in which the syst ems are con-
+nected should not matter. This property is called composition order in-
+dependence: for any Φ 1, Φ 2, Φ 3∈ S and compatible pairs of ports Pij ⊆
+12
+
+===== PAGE 13 =====
+
+Φ 1
+Φ 2
+Φ 3
+P12
+P13
+P23
+Figure 6 – Systems Φ 1 and Φ 2 are connected by the pairs of ports P12, Φ 1 and
+Φ 3 are connected by P13, and Φ 2 and Φ 3 are connected by P23. The resulting
+system must be independent of the order of the connections.
+ports(Φ i)× ports(Φ j),
+(
+Φ 1
+P12
+← − →Φ 2
+) P13∪ P23
+←−−−−→ Φ 3 = Φ 1
+P12∪ P13
+←−−−−→
+(
+Φ 2
+P23
+← − →Φ 3
+)
+. (5)
+In Theorem 6.11 we prove that Eq. (5) is satisﬁed by the composition
+operation on causal boxes.
+Pseudo-metric. It is often useful for a theory of systems to provide a
+pseudo-metric on the space of systems S, namely a function d : S× S→ R+
+such that for any Φ , Ψ, Γ∈ S,
+d(Φ, Φ) = 0 ,
+d(Φ, Ψ) = d(Ψ, Φ) ,
+d(Φ, Ψ) ≤ d(Φ, Γ) + d(Γ, Ψ) .
+If additionally d(Φ, Ψ) = 0 = ⇒ Φ = Ψ, then d is a metric.
+In
+Section 7 we deﬁne a pseudo-metric on the space of causal systems:
+the distinguishing advantage. This is deﬁned in terms of the probability that
+a distinguisher, 8 connected to one of two causal boxes Φ or Ψ, can success-
+fully guess with which causal box it is interacting. We prove in Theorem 7.3
+that this is indeed a pseudo-metric — and if the set of all poss ible distin-
+guishers is considered, the distinguishing advantage is ac tually a metric.
+3 The space of partially ordered messages
+3.1 Ordering messages
+In a network of information-processing devices, messages a re received and
+sent at a certain time. What is actually received (or sent) by a system can
+be thought of as a pair ( v,t ), where v is the message and t the time at
+which it arrives (or the time at which it is sent). All message s are then natu-
+rally ordered. If the input-output behavior of a system is de scribed without
+8Formally, a distinguisher is another causal box that may add itional put loops on the
+system to which it is plugged and outputs a bit corresponding to its guess.
+13
+
+===== PAGE 14 =====
+
+any ordering information, one obtains situations as in Figure 2 , where the
+output of a composed system is undeﬁned. However, time captu res more
+information than what is necessary to deﬁne an ordering. For information-
+processing systems to be closed under composition, it is suﬃ cient for every
+messagev to be assigned a position in a partially ordered set. We do thi s by
+modeling inputs and outputs of a system as pairs ( v,t ), where v is a message
+and t is an element of some countable, 9 partially ordered set T , denoting
+the position 10 of v with respect to other messages.
+To compose a system Φ in an arbitrary environment, where some part
+of the environment might run before, after or between any eve nts occurring
+in the system Φ, one would need to choose T such that for any t,t ′∈T
+with t < t′, there exist t1,t 2,t 3 ∈ T with t1 < t < t2 < t′ < t3, e.g.,
+T = Q. This could be needed for example in a cryptographic setting . For
+modeling synchronized systems which are divided in rounds, T = N might
+be suﬃcient. For deﬁning the quantum switch depicted in Figure 4 , if we
+are not modeling composition with any other systems, then it is enough
+to choose T ={1,..., 6}, since exactly 6 messages are produced by these
+systems (see Section 8 for details, where the quantum switch is modeled as
+a causal box). In this framework we do not specify the set T any further
+than by its countable and partially ordered properties. It i s up to each
+application to deﬁne what is needed.
+To model quantum messages, we simply deﬁne a Hilbert space wi th
+a basis given by {(v,t )}v,t. This is done in Section 3.2 . As explained in
+Section 1.2 , the space of a wire should also contain an element represent -
+ing no message, multiple messages or any superposition ther eof. In the
+classical case this corresponds to the space of all multiset s of pairs ( v,t ),
+i.e., a wire might transmit nothing {}, one message {(v,t )}, two messages
+{(v1,t 1), (v2,t 2)}, etc. In the quantum case, this corresponds to the bosonic
+Fock space. We deﬁne the exact space of a wire and its main prop erties in
+Section 3.3 .
+Remark 3.1 (Terminology: wires and systems) . It is standard in quantum
+information theory for the word “system” to refer to the labe l of a Hilbert
+space, e.g., a (bipartite) system AB is in a state ρAB. Since in this work
+the objects of study are not quantum states but objects that r eceive and
+send quantum states, we denote these interactive objects as (information-
+processing) systems. We use the terms wire and sub-wire to label the input
+and output Hilbert spaces of a system, e.g., a causal box Φ mig ht be a
+9Since we consider discrete information-processing system s, it is natural that the input
+and output spaces also be discrete. T can be seen as an abstraction of some larger
+(physical) space, that contains extra (possibly uncountab ly many) points that are not
+relevant to the discrete systems modeled, since they are nev er used.
+10In the following we use “position” to emphasize the relative meaning of the partial
+order deﬁned on T , though conceptually it may be simpler to think of t ∈ T as the time
+at which a message is sent or received.
+14
+
+===== PAGE 15 =====
+
+system that maps states from a (bipartite) input wire AB to a (bipartite)
+output wire CD .
+3.2 Single message space
+As introduced in Section 3.1 , an input to a system is a pair of a message
+v∈V and a position t∈T . The corresponding quantum state is an element
+of a Hilbert space with an orthonormal basis given by {|v,t⟩}v∈V ,t∈ T . For a
+ﬁniteV and inﬁnite T , this Hilbert space corresponds to
+C|V |⊗ ℓ2(T ), (6)
+where ℓ2(T ) = {(xt)t∈T : xt ∈ C,∥x∥ <∞} is the sequence space with
+bounded 2-norm with ∥x∥ =
+√
+⟨x|x⟩ and11
+⟨x|y⟩ =
+∑
+t∈T
+xtyt. (7)
+In the following we refer to a state |ψ⟩∈ Cd⊗ ℓ2(T ) as a qudit with position
+information. The orthonormal basis {|v,t⟩}v∈V ,t∈T is given by|v,t⟩ =|v⟩⊗
+|t⟩, where {|v⟩}v∈V is an orthonormal basis of C|V |and|t⟩ is the sequence
+with a 1 in position t∈T and all other elements of the sequence are 0.
+In the following we write |vt⟩ instead of|v,t⟩ for the message|v⟩ arriving
+in position t. For example, the state α|0x⟩ +β|1x⟩ corresponds to a mes-
+sage in a superposition of |0⟩ and|1⟩ arriving in position x. And the state
+α|0x⟩ +β|0y⟩ corresponds to the message |0⟩ in a superposition of arriving
+in positions x and y.
+3.3 Wires
+To capture multiple qudits being sent on the same wire to some system, we
+deﬁne the Hilbert space of a wire as a Fock space. For a Hilbert spaceH,
+the corresponding bosonic Fock space is given by
+F(H) :=
+∞⨁
+n=0
+∨ nH,
+where∨ nH denotes the symmetric subspace of H⊗ n, and H⊗ 0 is the one
+dimensional space containing the vacuum state |Ω⟩. This is explained in
+more detail in Appendix A . Applying this to the Hilbert space of a qudit
+with position information from Eq. (6) , we get
+F
+(
+Cd⊗ ℓ2(T )
+)
+=
+∞⨁
+n=0
+∨ n
+(
+Cd⊗ ℓ2(T )
+)
+. (8)
+11For the scalar product ⟨x|y⟩ to be deﬁned for arbitrary sequences ( xt)t∈T and (yt)t∈T ,
+one would need to specify the order of the summation in Eq. (7) . But for the set of
+sequences with bounded 2-norm that deﬁne the Hilbert space ℓ2(T ), all orders result in
+the same scalar product, so we omit it.
+15
+
+===== PAGE 16 =====
+
+The orthogonal subspaces ∨ n(
+Cd⊗ ℓ2(T )
+)
+for n∈ N0 capture n messages
+being sent on a wire. The restriction to the symmetric space g uarantees
+that there is no order amongst the qudits other than what migh t be deﬁned
+from their state, e.g., their position in T . For example, if a wire contains
+two copies of a state |0⟩ in position t, it would be in the state |0t⟩⊗| 0t⟩. If it
+contains two copies of |0⟩ at diﬀerent positions t1 and t2, it would be in the
+state 1√
+2 (|0t1⟩⊗| 0t2⟩ +|0t2⟩⊗| 0t1⟩). When modeling concrete systems, one
+may always restrict the model by adding constraints, e.g., o ne may consider
+only systems that produce at most one message or never produc e multiple
+messages at the same position t∈T .
+LetA denote a wire that carries dA-dimensional messages. We write F T
+A
+for the corresponding state space, namely
+F T
+A :=F
+(
+CdA⊗ ℓ2(T )
+)
+.
+The subscript allows the spaces of diﬀerent wires to be distin guished, e.g.,
+two wiresA andB have joint spaceF T
+A⊗F T
+B , which we also write F T
+AB. For
+any Hilbert spaces HA andHB,
+F(HA)⊗F (HB)∼
+=F(HA⊕H B), (9)
+where the isomorphism preserves the meaning associated wit h the bases of
+the Fock spaces, i.e., a tensor product of two vacuum states o n the left in
+Eq. (9) is mapped to a vacuum state on the right, a tensor product of a
+vacuum state and one message on the left is mapped to a single m essage
+with the same value and position on the right, etc. (see Remark A.1 in
+Appendix A for the exact isomorphism). From Eq. (9) and the fact that
+(
+CdA⊗ ℓ2(T )
+)
+⊕
+(
+CdB⊗ ℓ2(T )
+)
+∼
+=
+(
+CdA⊕ CdB
+)
+⊗ ℓ2(T ),
+one can see that F T
+AB also satisﬁes
+Eq. (8) , i.e., it can be interpreted as the
+state space of a single wire carrying messages of dimension dA +dB. The
+converse also holds: any wire A of messages of dimension dA can be split in
+two sub-wires A1 and A2 of messages of dimensions dA1 +dA2 = dA. We
+then have
+F T
+A∼
+=F T
+A1⊗F T
+A2. (10)
+Thus, a (sub-)wire A1 — or more precisely, the corresponding message sub-
+space CdA1 — may be regarded as a way of labeling a subspace of CdA,
+which is useful to specify how causal boxes are connected wit h each other
+(e.g., messages in the sub-wire corresponding to CdA1 are connected to one
+causal box and those in CdA2 are connected to another, see
+Section 6 ). In
+the following we refer to the dimension of the messages of a wi re as the
+dimension of the wire, e.g., if we say that the wire A has dimension dA, then
+F T
+A =F(CdA⊗ ℓ2(T )).
+16
+
+===== PAGE 17 =====
+
+For any subsetP⊆T , we write
+F P
+A :=F
+(
+CdA⊗ ℓ2(P)
+)
+(11)
+for the space of all states occurring at some position in P, e.g.,
+F ≤ t
+A =F
+(
+CdA⊗ ℓ2(
+T ≤ t))
+,
+whereT ≤ t :={s∈T :s≤ t}. From Eq. (9) and
+CdA⊗ ℓ2(T )∼
+=
+(
+CdA⊗ ℓ2(P)
+)
+⊕
+(
+CdA⊗ ℓ2
+(
+˜P
+))
+,
+where ˜P :=T\P , we have
+F T
+A∼
+=F P
+A⊗F
+˜P
+A . (12)
+This can be interpreted as splitting a wire A into two sub-wires carrying the
+messages that are in positions in P and ˜P, respectively.
+A natural embedding of F P
+A inF T
+A is obtained by appending “nothing”
+toF P
+A , i.e.,
+F P
+A∼
+=F P
+A⊗| Ω⟩
+˜P
+A⊆F T
+A , (13)
+where|Ω⟩
+˜P
+A denotes the one dimensional subspace of F ˜P
+A that contains the
+vacuum state. Throughout this work we use F P
+A to denote both the space
+deﬁned in
+Eq. (11) as well as its embedding in F T
+A given on the right-hand
+side of Eq. (13) .
+4 Deﬁning causal boxes
+Intuitively, a causal box is a transformation from an input m essage space
+to an output message space that satisﬁes causality. We intro duce these two
+aspects — the transformation and notion of causality — separ ately. First, in
+Section 4.1 we formalize the notion of a transformation from the input to
+the output space as a set of maps. In Section 4.2 we deﬁne terminology that
+provides us with a more convenient representation of these m aps. Then
+in Section 4.3 we introduce the notion of causality that these maps must
+satisfy in order to be a valid causal box. We put these two aspe cts together
+in Section 4.4 , where we give the formal deﬁnition of a causal box. Finally,
+in Section 4.5 we deﬁne subnormalized causal boxes.
+4.1 A set of maps
+LetF T
+X andF T
+Y denote the Hilbert spaces of an input wire X and output
+wire Y . And let T(F T
+X ) and T(F T
+Y ) be the corresponding sets of trace class
+17
+
+===== PAGE 18 =====
+
+operators.12 A causal box with these input and output wires can be thought
+of as a transformation from the message space of X to the message space of
+Y . But instead of deﬁning it as a map Φ : T(F T
+X )→ T(F T
+Y ), a causal box is
+given by a set of mutually consistent 13 maps
+Φ =
+{
+Φ ≤ t : T
+(
+F T
+X
+)
+→ T
+(
+F ≤ t
+Y
+)}
+t∈T
+, (14)
+whereF ≤ t
+Y is the subspace of F T
+Y that contains only messages in positions
+T ≤ t ={p∈T :p≤ t}. This allows systems to be included that produce an
+unbounded number of messages on the entire set T . For example, let T = N
+and consider a beacon system that outputs a state |0⟩ at every point t∈ N.
+This is well-deﬁned on every subset {1,...,t }, but the limit behavior is not,
+as it would consist in a box that outputs an “inﬁnite tensor pr oduct” of|0⟩.
+Remark 4.1 (Finite causal boxes) . In Appendix C we show how to deﬁne the
+subset of causal boxes that can be represented by a single map Φ : T(F T
+X )→
+T(F T
+Y ) and which is closed under composition. This roughly corres ponds to
+the set of systems that stop processing inputs after some poi nttmax∈T —
+or after some set of unordered points Tmax⊆T in the case of a partial order
+onT .
+4.2 Cuts
+A map Φ ≤ t from Eq. (14) produces outputs on the subset of positions T ≤ t⊆
+T , which contains all points p ≤ t. This subset allows the behavior of
+a system up to a certain position t to be deﬁned. More generally, we are
+interested in describing the behavior of systems on subsets of positionsC⊆T
+that are not (necessarily) upper bounded by a single point t, but by a set
+P, e.g., C =∪ p∈PT ≤ p. We refer to such a subset of T as a cut, which we
+illustrate in Figure 7 .
+Deﬁnition 4.2 (Cut). LetT be a partially ordered set. We deﬁne a cut of
+T as any subset C⊆T such that
+C =
+⋃
+t∈C
+T ≤ t,
+whereT ≤ t ={p∈T :p≤ t}. We say that a cut C is bounded if there exists
+a point t∈T such thatC⊆T ≤ t. We denote the set of all cuts of T as C(T )
+and the set of all bounded cuts as C(T ).
+12V ∈ T(H) if ∥V ∥tr = ∑
+i ⟨i|
+√
+V †V |i⟩ < ∞ , where {|i⟩} is an orthonormal basis of
+H. For example, a density operator on a wire A is a non-negative self-adjoint operator
+ρ ∈ T(F T
+A ) with tr ρ = 1.
+13Mutually consistent means that any two maps Φ ≤ t and Φ ≤ u witht ≤ u must produce
+the same output on T ≤ t, i.e., Φ ≤ t = tr ≰t ◦Φ ≤ u, where tr ≰t traces out messages in positions
+T ≤ u \ T ≤ t. This is introduced formally in Section 4.4 .
+18
+
+===== PAGE 19 =====
+
+C D
+T
+Figure 7 – A partially ordered set T with two cuts C⊆D⊆T containing 6
+and 8 points, respectively.
+Although it is suﬃcient to describe a causal box by a set of map s as in
+Eq. (14) , we will actually deﬁne it as a set of (mutually consistent) m aps
+(that respect causality),
+Φ =
+{
+Φ C : T
+(
+F T
+X
+)
+→ T
+(
+F C
+Y
+)}
+C∈ C(T ).
+These can be derived from Eq. (14) by setting Φ C := tr ˜C◦ Φ ≤ t, where t is
+any point such that C⊆T ≤ t, ˜C :=T ≤ t\C and tr ˜C trace out all messages in
+positions in ˜C.
+4.3 Causality
+To be valid, an information-processing system must respect causality: an
+output can only depend on past inputs. For a totally ordered s etT one can
+formalize this by requiring that for every causal box there e xist a monotone
+function χ :T →T such that the output up to position t can be computed
+from the input up to position χ (t) < t. In the case of a partially ordered
+T , there might be many unordered points p<t that are needed to compute
+the output up to position t. We thus deﬁne the causality function on cuts,
+χ : C(T )→ C(T ), and require that an output on C∈ C(T ) can be computed
+from the input on χ (C) ⊊C.
+To be consistent, if the output on C can be computed from χ (C) and
+the output on D computed from χ (D), then the output on C∪D can be
+computed from χ (C)∪ χ (D). So we require χ (C∪D ) = χ (C)∪ χ (D).14
+Furthermore, we also expect that if C⊆D , then χ (C)⊆ χ (D), because if
+χ (C) is needed to compute the output on C, then certainly it is needed for
+the output on D⊇C .
+These conditions are however not suﬃcient to guarantee that we have
+well-deﬁned systems. Consider for example a system with T = Q+, that for
+14This follows immediately if one deﬁnes a function ˆ χ : T → C(T ) such that the output
+on T ≤ t can be computed from ˆχ (t) and one sets χ (C) := ⋃
+t∈C ˆχ (t).
+19
+
+===== PAGE 20 =====
+
+every input received in position 1 − t, for 0 <t ≤ 1, produces an output in
+position 1− t/ 2, i.e., χ ([0, 1− t/ 2]) = [0 , 1− t]. Furthermore, this system
+initially outputs a message in position 0. If now the message s output are
+looped back to the input, this system should produce message s at points
+{0, 1/ 2, 3/ 4, 7/ 8, 15/ 16,... }. It would eﬀectively output an inﬁnite number
+of messages before position t = 1, which is ill-deﬁned. The problem here
+is that the gap between every input and correlated output get s smaller and
+smaller as t→ 1, and this system executes an inﬁnite number of (causal)
+steps before reaching t = 1. We thus additionally need that every point
+t′∈T may be reached from any point t≤ t′ in a ﬁnite number of causal
+steps. By deﬁnition, an output on T ≤ t′
+may be directly computed from an
+input on χ (T ≤ t′
+). Given an input on χ 2(T ≤ t′
+) on may compute the output
+onT ≤ t′
+in two steps: one ﬁrst obtains the output on χ (T ≤ t′
+), then given
+the input on χ (T ≤ t′
+) one gets the output on T ≤ t′
+. In this sense, a point t′
+is reached from t in a ﬁnite number of steps of there exists an n such that
+t /∈ χ n(T ≤ t′
+), which is captured in Deﬁnition 4.3 by Eq. (18) .
+Deﬁnition 4.3 (Causality function) . A function χ : C(T )→ C(T ) is a
+causality function if it satisﬁes the following conditions.
+∀C,D∈ C(T ), χ (C∪D ) = χ (C)∪ χ (D), (15)
+∀C,D∈ C(T ), C⊆D =⇒ χ (C)⊆ χ (D), (16)
+∀C∈ C(T )\{∅}, χ (C) ⊊C, (17)
+∀C∈ C(T ),∀t∈C ,∃n∈ N, t /∈ χ n(C), (18)
+where χ n denotes n compositions of χ with itself, χ n =χ◦···◦ χ .
+For example, if T = Q, a minimum delay δ between every input and
+correlated output is suﬃcient to satisfy Deﬁnition 4.3 . Our deﬁnition is thus
+a generalization of delta-causality [55], which requires exactly such a delay
+δ. Our deﬁnition is however more restrictive than the notion o f causality
+used in [ 53], which simply requires every output to depend only on input s
+received strictly earlier, thus allowing an inﬁnite number of outputs to be
+produced in a ﬁnite amount of time. 15
+Remark 4.4 (Causality in totally ordered systems) . In the case of a totally
+orderedT , instead of Eq. (18) one may alternatively require that for χ :
+T →T the strict inequality χ (t) < tmust also hold in the limit as t→ t0,
+i.e., inf t>t0χ (t)< inft>t0t and sup t<t0χ (t)< supt<t0t. This is discussed in
+Appendix D , where we prove that it implies Eq. (18) .
+15This is achieved by restricting the systems considered to cl assical deterministic sys-
+tems, for which an inﬁnite string of bits is well-deﬁned (as o pposed to an inﬁnite tensor
+product of qubits, which is not).
+20
+
+===== PAGE 21 =====
+
+4.4 The deﬁnition of causal boxes
+We can now formally deﬁne a causal box.
+Deﬁnition 4.5 (Causal box) . A (dX,d Y )-causal box Φ is a system with
+input wire X and output wire Y of dimension dX and dY , deﬁned by a set
+of mutually consistent, completely positive, trace-prese rving (CPTP) maps
+Φ =
+{
+Φ C : T
+(
+F T
+X
+)
+→ T
+(
+F C
+Y
+)}
+C∈ C(T ),
+i.e., for all C,D∈ C(T ) withC⊆D ,
+Φ C = tr D\C ◦ Φ D, (19)
+where tr D\C traces out the messages occurring at positions in D\C .16 Fur-
+thermore, these maps must respect causality: there must exi st a function
+χ : C(T )→ C(T ) satisfying Deﬁnition 4.3 such that for all C∈ C(T ),17
+Φ C = Φ C◦ trT \ χ (C) . (20)
+Eq. (20) says that the output on positions in C can be computed from the
+input on positions χ (C) ⊊C, i.e., the output on C can only depend on inputs
+that are before, namely χ (C). This equation may be alternatively expressed
+as requiring that Φ C = ˆΦ C⊗ tr, where ˆΦ C is some map T(F χ (C)
+X )→ T(F C
+Y )
+and tr acts on the space F T \ χ (C)
+X . Using this, Deﬁnition 4.5 can be written
+more compactly as a set of CPTP maps
+Φ =
+{
+Φ C : T
+(
+F χ (C)
+X
+)
+→ T
+(
+F C
+Y
+)}
+C∈ C(T )
+,
+such that for all C,D∈ C(T ),C⊆D ,
+trD\C ◦ Φ D = Φ C◦ trT \ χ (C) . (21)
+In the following we will often use this form.
+Remark 4.6 (Ports) . From Eq. (10) we know that a wire can be split into a
+tensor product of sub-wires. It is thus suﬃcient to deﬁne cau sal boxes with
+one index X (Y ) for the input (output) wires, as these can be subdivided as
+needed. For example, Y could consist of two sub-wires Y1 andY2, which are
+then connected to diﬀerent systems Ψ and Γ. The ports of an info rmation-
+processing system, ports(Φ), introduced in Section 2 to deﬁne composition
+of systems, correspond to a predeﬁned partition of the input and output
+wires in sub-wires.
+16As noted in Eq. (12) , F D
+Y ∼
+= F C
+Y ⊗ F D\C
+Y .
+17
+Eq. (20) uses the embedding of F χ(C)
+X in F T
+X so that the output space of tr T \ χ(C)
+matches the input space of Φ C.
+21
+
+===== PAGE 22 =====
+
+4.5 Subnormalized boxes
+Deﬁnition 4.5 only considers trace-preserving causal boxes. In Deﬁnition 4.7
+we generalize this to include trace-decreasing maps. This c an be used to
+model, for example, the subnormalized box resulting from po st-selecting
+states on some measurement outcome.
+Deﬁnition 4.7 (Subnormalized causal box) . A set of completely positive
+(CP) maps,
+Φ =
+{
+Φ C : T
+(
+F T
+X
+)
+→ T
+(
+F C
+Y
+)}
+C∈
+C(T )
+deﬁnes a ( dX,d Y )-subnormalized causal box if there exists a normalized
+causal box
+ˆΦ =
+{
+ˆΦ C : T
+(
+F T
+X
+)
+→ T
+(
+F C
+RY
+)}
+C∈ C(T )
+such that for all C∈ C(T ),
+Φ C =P Ω
+R◦ ˆΦ C,
+whereP Ω
+R : T(F T
+RY )→ T(F T
+Y ) projects the R sub-wire on the vacuum state,
+namely
+P Ω
+R (ρ) := (⟨Ω|R⊗ IY )ρ(|Ω⟩R⊗ IY ).
+5 Alternative representations of causal boxes
+In this section we provide some alternative characterizati ons of causal boxes
+using the Stinespring
+18 and Choi-Jamio/suppress lkowski19 representations. These
+are then used as technical tools in the proofs of the main theo rems in the
+following sections.
+5.1 Stinespring and Choi-Jamio/suppress lkowski
+In
+Section 4.4 causal boxes are deﬁned as a set of maps
+{
+Φ C}
+C∈ C(T ) subject
+to a causality constraint. In this section we show how to repr esent causal
+boxes using the Stinespring and Choi-Jamio/suppress lkowski representations. The
+Stinespring representation of a causal box can easily be dra wn as a circuit,
+which we do in Figure 8 — Corollary 5.2 here below states that Figure 8 is
+indeed equivalent to Eq. (21) .
+18For a detailed treatment of the Stinespring representation of quantum operators on
+inﬁnite dimensional spaces, we refer to the textbook [ 56]. A more accessible introduction
+to the ﬁnite dimensional case — which shares many of the essen tial properties with the
+inﬁnite dimensional setting — can be found in [ 57].
+19Since the Choi-Jamio/suppress lkowski representation of inﬁnite dimensional operators diﬀers
+signiﬁcantly from the ﬁnite dimensional case, we have summa rized the most important
+points in Appendix B.1 and refer the interested reader to [ 58].
+22
+
+===== PAGE 23 =====
+
+F χ(C)
+X
+F χ(D)\χ(C)
+X
+F C
+Y
+F D\C
+Y
+HR
+U C
+Φ
+V
+U D
+Φ
+HQ
+Figure 8 – For anyC,D∈ C(T ) withC⊆D , a map Φ D : T(F χ(D)
+X )→ T(F D
+Y )
+of a causal box — with Stinespring representation U D
+Φ — can be decomposed
+into a sequence of two isometries U C
+Φ and V , where U C
+Φ is a Stinespring repre-
+sentation of Φ C : T(F χ(C)
+X )→ T(F C
+Y ).
+Lemma 5.1. Let Φ : T(HAB)→ T(HCD ) be a CPTP map for which the
+output on C does not depend on the input to B, i.e., there exists a CPTP
+map Ψ : T(HA)→ T(HC) such that
+trD◦ Φ = Ψ ◦ trB . (22)
+The following two conditions are equivalent to Eq. (22) .
+1. For any states ψ A,ϕ A∈H A, ψ B,ϕ B∈H B, ψ C,ϕ C∈H C, and any
+basis{|j⟩}j ofHD,
+∑
+j
+RΦ(ψ C⊗ jD⊗ ψ A⊗ ψ B;ϕ C⊗ jD⊗ ϕ A⊗ ϕ B)
+=RΨ(ψ C⊗ ψ A;ϕ C⊗ ϕ A)⟨ψ B|ϕ B⟩, (23)
+where the sesquilinear forms 20
+RΦ : (HCD×H AB)× (HCD×H AB)→ C
+and RΨ : (HC×H A)× (HC×H A)→ C
+are the Choi-Jamio/suppress lkowski representations of the mapsΦ and Ψ (see
+Appendix B.1 ).
+2. There exists an isometry V :HQB→H DR such that
+UΦ = (IC⊗ V )(UΨ⊗ IB), (24)
+where UΦ :HAB→H CDR and UΨ :HA→H CQ are minimal Stine-
+spring representations of Φ and Ψ .
+20R(·; ·) is a sesquilinear form if it is antilinear in the ﬁrst argume nt and linear in the
+second, see Appendix B.1 .
+23
+
+===== PAGE 24 =====
+
+SettingHA =F χ (C)
+X ,HB =F
+˜χ (C)
+X ,HC =F C
+Y andHD =F ˜C
+Y in this
+lemma, where ˜χ (C) :=χ (D)\χ (C) and ˜C :=D\C , we get the following corol-
+lary, which gives an alternative characterization of Eq. (21) and is illustrated
+in Figure 8 .
+Corollary 5.2. Let{Φ C : T(F χ (C)
+X )→ T(F C
+Y )}C∈ C(T ) be a set of CPTP
+maps. For any C,D∈ C(T ) withC⊆D , the following three conditions are
+equivalent:
+1. These maps satisfy Eq. (21) , namely
+tr ˜C◦ Φ D = Φ C◦ tr ˜χ (C) . (25)
+2. For any states ψ χ (C)
+X ,ϕ χ (C)
+X ∈F χ (C)
+X , ψ
+˜χ (C)
+X ,ϕ
+˜χ (C)
+X ∈F
+˜χ (C)
+X , ψ C
+Y,ϕ C
+Y ∈
+F C
+Y , and any basis {|j⟩}j ofF ˜C
+Y , where F χ (D)
+X ∼
+=F χ (C)
+X ⊗F
+˜χ (C)
+X and
+F D
+Y ∼
+=F C
+Y⊗F ˜C
+Y ,
+∑
+j
+RD
+Φ
+(
+ψ C
+Y⊗ j⊗ ψ χ (C)
+X ⊗ ψ
+˜χ (C)
+X ;ϕ C
+Y⊗ j⊗ ϕ χ (C)
+X ⊗ ϕ
+˜χ (C)
+X
+)
+=RC
+Φ
+(
+ψ C
+Y⊗ ψ χ (C)
+X ;ϕ C
+Y⊗ ϕ χ (C)
+X
+)⟨
+ψ
+˜χ (C)
+X
+⏐
+⏐
+⏐
+⏐ϕ
+˜χ (C)
+X
+⟩
+, (26)
+where RD
+Φ and RC
+Φ are the Choi-Jamio/suppress lkowski representations ofΦ D
+and Φ C.
+3. There exists an isometry V :HQ⊗F
+˜χ (C)
+X →F ˜C
+Y⊗H R such that
+U D
+Φ =
+(
+I C
+Y⊗ V
+)(
+U C
+Φ⊗ I
+˜χ (C)
+X
+)
+, (27)
+whereU D
+Φ :F χ (D)
+X →F D
+Y⊗H R andU C
+Φ :F χ (C)
+X →F C
+Y⊗H Q are minimal
+Stinespring representations of Φ D and Φ C.
+Since the three conditions are equivalent, this corollary n ot only states
+that a causal box can be described by the Choi-Jamio/suppress lkowskirepresentation
+of the maps Φ C, but also that any set of positive semi-deﬁnite sesquilinea r
+forms satisfying
+Eq. (26) is a valid causal box.
+We now provide a proof of Lemma 5.1 . As visual aid, we draw the
+corresponding system in Figure 9 , which is a copy of Figure 8 with diﬀerent
+labels.
+Proof of
+Lemma 5.1 . We ﬁrst show that (22) ⇐⇒ (23). Note that Eq. (22)
+is equivalent to requiring that for all states ψ A,ψ B,ψ C,ϕ A,ϕ B,ϕ C ,
+⟨ψ C|trD
+(
+Φ
+(⏐
+⏐ ¯ψ A, ¯ψ B
+⟩
+⟨ ¯ϕ A, ¯ϕ B|
+))
+|ϕ C⟩ =⟨ψ C|Ψ
+(
+trB
+(⏐
+⏐ ¯ψ A, ¯ψ B
+⟩
+⟨ ¯ϕ A, ¯ϕ B|
+))
+|ϕ C⟩.
+(28)
+24
+
+===== PAGE 25 =====
+
+HA
+HB
+HC
+HD
+HR
+UΨ
+V
+UΦ
+HQ
+Figure 9 – The Stinespring representation from Lemma 5.1 drawn as a circuit.
+The left-hand side of Eq. (28) is equal to
+∑
+j
+⟨ψ C,j D|Φ
+(⏐
+⏐ ¯ψ A, ¯ψ B
+⟩
+⟨ ¯ϕ A, ¯ϕ B|
+)
+|ϕ C,j D⟩,
+which, when rewritten with the Choi-Jamio/suppress lkowski representation, corre-
+sponds to the left-hand side of
+Eq. (23) . And since
+trB
+(⏐
+⏐ ¯ψ A, ¯ψ B
+⟩
+⟨ ¯ϕ A, ¯ϕ B|
+)
+=
+⏐
+⏐ ¯ψ A
+⟩
+⟨ ¯ϕ A|⟨ψ B|ϕ B⟩,
+the right-hand side of
+Eq. (28) is equal to the right-hand side of Eq. (23) .
+Next we show that (24) =⇒ (22). From the deﬁnition of the Stinespring
+representation and Eq. (24) we have for any ρAB∈ T(HAB),
+trD(Φ(ρAB)) = tr DR
+(
+(IC⊗ V )(UΨ⊗ IB)ρAB(U †
+Ψ⊗ IB)(IC⊗ V †)
+)
+= tr QB
+(
+(UΨ⊗ IB)ρAB(U †
+Ψ⊗ IB)
+)
+= tr Q
+(
+UΨ trB(ρAB)U †
+Ψ
+)
+= Ψ(tr B(ρAB)),
+where to obtain the second line we used that since V :HQB→H DR maps
+QB to DR and the registers DR are traced out, V and V † have no eﬀect
+on the outcome (see Figure 9 for an illustration of this case).
+Finally, we show that (22) =⇒ (24). To prove this, we need to ﬁnd
+the isometry V which satisﬁes Eq. (24) . Consider the map Φ ′ := tr D◦ Φ.
+Since Φ ′(ρAB) = tr DR(UΦρABU †
+Φ), the operator UΦ — which by construction
+is a Stinespring representation of Φ — is also a Stinespring r epresentation of
+Φ ′ with ancilla registers DR. From Eq. (22) we have Φ ′ = Ψ ◦ trB, hence
+Φ ′(ρAB) = tr QB((UΨ⊗ IB)ρAB(U †
+Ψ⊗ IB)), and UΨ⊗ IB is also a Stinespring
+representation of Φ ′, with ancilla QB. Furthermore, since UΨ is a minimal
+representation of Ψ, UΨ⊗ IB is a minimal representation of Φ ′. And because
+any Stinespring representation is related to a minimal one b y an isometry on
+the ancilla [56], there must exist V :HQB→H DR that satisﬁes Eq. (24) .
+25
+
+===== PAGE 26 =====
+
+F Cn+1
+X
+F Tn
+X
+F T2
+X
+F Cn
+Y
+F Tn− 1
+Y
+F T1
+Y
+HQ1
+. . .
+Vn+1
+Vn
+Vn− 1
+V1
+U Cn
+Φ
+U C
+Φ
+HQn
+HQn− 1
+HQ2
+Figure 10 – A map Φ C is decomposed into a sequence of isometries Vi.
+5.2 A sequence of operators
+If we apply
+Lemma 5.1 recursively, we can decompose any map Φ C into a
+(ﬁnite) sequence of isometries, e.g.,
+{
+Vi :HQi+1⊗F χ (Ci)\ χ (Ci+1)
+X →F Ci\C i+1
+Y ⊗H Qi
+}n
+i=1
+,
+for any sequence of cuts ∅ = Cn+1 ⊆ Cn ⊆ ··· ⊆ C2 ⊆ C1 = C. Here,
+HQi+1 can be thought of as the Hilbert space of the internal memory o f the
+system before unitary Vi has been applied, and each Vi processes this internal
+memory as well as the input on the wire X in positions χ (Ci)\χ (Ci+1) to
+produce an output on the wire Y in positionsCi\Ci+1 and the new updated
+internal memoryHQi.
+In this section we show that we can do this an inﬁnite number of times
+in such a way that the input and output sets of positions of the unitariesVi
+are disjoint, i.e., ( χ (Ci)\χ (Ci+1))∩ (Ci\Ci+1) =∅. We call this a sequence
+representation and illustrate it in
+Figure 10 .
+Deﬁnition 5.3 (Sequence representation) . Let···⊆C i⊆···⊆C 1 =C be
+an inﬁnite sequence of cuts such that ⋂∞
+i=1Ci =∅, and let Ti :=Ci\Ci+1. A
+sequence representation of a map Φ C : T(F χ (C)
+X )→ T(F C
+Y ) is given by such
+a set of cuts {Ci}∞
+i=1 along with a set of operators
+{
+Vi :HQi+1⊗F Ti+1
+X →F Ti
+Y ⊗H Qi
+}∞
+i=1
+,
+26
+
+===== PAGE 27 =====
+
+such that for all n≥ 2,
+U C1
+Φ =
+(n− 1∏
+i=1
+I Ci+1
+Y ⊗ Vi⊗ I C2\C i+1
+X
+)(
+U Cn
+Φ ⊗ I C2\C n+1
+X
+)
+, (29)
+where U Ci
+Φ is a minimal Stinespring representation of Φ Ci.
+A sequence representation for any map Φ C can be obtained by deﬁning
+Ci :=χ i− 1(C). We then immediately have that the set of input positions to
+the operator Vi has an empty intersection with the output positions, since
+χ (Ci)\χ (Ci+1) =Ti+1 andTi+1∩T i =∅.
+Proposition 5.4. For every causal box Φ =
+{
+Φ C}
+C∈ C(T ) and every C ∈
+C(T ), there exists a sequence representation of Φ C.
+Proof. We ﬁx Φ and C, and deﬁne Ci := χ i− 1(C) and Ti :=Ci\C i+1. Note
+thatC1 =C,Ti∩T j =∅ for i̸=j, and from Eq. (18) we have ⋂∞
+i=1Ci =∅.
+Since by construction of the cuts, χ (Cn) =Cn+1, the output at all positions
+t∈C n can be computed from the input in positions Cn+1, i.e., Φ Cn is a map
+Φ Cn : T
+(
+F Cn+1
+X
+)
+→ T
+(
+F Cn
+Y
+)
+.
+Plugging Φ C1 and Φ C2 in
+Lemma 5.1 , i.e, HA =F C3
+X ,HB =F T2
+X ,HC =
+F C2
+Y andHD =F T1
+Y , we obtain
+U C1
+Φ =
+(
+I C2
+Y ⊗ V1
+)(
+U C2
+Φ ⊗ I T2
+X
+)
+.
+Repeating this recursively fori going from 2 ton results in the decomposition
+on the right-hand side of Eq. (29) .
+This proposition can easily be extended to subnormalized ca usal boxes
+by appending to every isometry Vi a projector on the vacuum state |Ω⟩ of
+the additional wire R. This is illustrated in Figure 11 .
+Corollary 5.5. For every subnormalized causal box Φ =
+{
+Φ C}
+C∈ C(T ) and
+everyC∈ C(T ), there exists a sequence representation of Φ C.
+Proof. Let ˆΦ = { ˆΦ C : T(HX)→ T(HRY )}C∈ C(T ) be the corresponding nor-
+malized box, and let { ˆVi}∞
+i=1 be the sequence representation for ˆΦ C.
+Eq. (29)
+is satisﬁed for
+Vi =
+(
+⟨Ω|Ti
+R⊗ I Ti
+Y ⊗ IQi
+)
+ˆUi.
+27
+
+===== PAGE 28 =====
+
+F Cn+1
+X
+F Tn
+X
+F T2
+X
+|Ω⟩Cn
+R
+F Cn
+Y
+|Ω⟩Tn−1
+R
+F Tn−1
+Y
+|Ω⟩T1
+R
+F T1
+Y
+HQ1
+ˆU Cn
+ˆΦ
+ˆVn−1
+ˆV1
+P Ω
+R≥n
+P Ω
+Rn−1
+P Ω
+R1
+U C
+Φ
+HQn
+HQn−1
+HQ2
+F Cn
+R
+F Tn−1
+R
+F T1
+R
+Figure 11 – A trace-decreasing map Φ C is decomposed into a sequence of
+isometries ˆVi followed by a projection P Ω
+Ri on the vacuum state of the wire R
+in the subset Ti.
+6 Composing causal boxes
+Two causal boxes can be combined by “plugging” output wires i nto input
+wires, resulting in a new causal box. Unlike for ordered netw orks captured
+by combs [ 1–6], where cycles are forbidden, here two systems Φ and Ψ can
+be connected with wires going both from Φ to Ψ and Ψ to Φ, as illu strated
+in Figure 5b .
+Connecting systems can be decomposed in two steps. First Φ an d Ψ
+are composed in parallel, resulting in a new system Γ = Φ ∥Ψ, whose input
+and output ports are the union of the ports from Φ and Ψ. Then lo ops are
+applied to Γ, connecting its own output and input ports. Thes e two steps
+are deﬁned in Sections 6.1 and 6.2, respectively.
+In Section 6.3 we combine these two steps to deﬁne the composition of
+two systems, Φ P← →Ψ, introduced in Section 2 . We then prove in Theorem 6.7
+and Theorem 6.11 that it satisﬁes closure and composition order indepen-
+dence.
+6.1 Parallel composition
+We ﬁrst deﬁne parallel composition in
+Deﬁnition 6.1 . Then we prove in
+Proposition 6.2 that the resulting system is still a valid causal box.
+Deﬁnition 6.1 (Parallel composition) . Let Φ =
+{
+Φ C}
+C∈ C(T ) and Ψ ={
+Ψ C}
+C∈ C(T ) be (possibly subnormalized) (dA,d C )- and (dB,d D)-causal boxes.
+28
+
+===== PAGE 29 =====
+
+The parallel composition of the two is deﬁned as the ( dA +dB,d C +dD)-
+causal box 21
+Γ :=
+{
+Φ C⊗ Ψ C}
+C∈ C(T ),
+which we denote Γ = Φ ∥Ψ.
+Proposition 6.2. If Φ = {Φ C : T(F T
+A )→ T(F C
+C)}C∈ C(T ) and Ψ = {Ψ C :
+T(F T
+B )→ T(F C
+D)}C∈ C(T ) are two (sub)normalized causal boxes, then so is
+Γ = Φ ∥Ψ .
+Proof. We ﬁrst consider normalized causal boxes. To prove that Φ ∥Ψ is a
+valid causal box, we need to ﬁnd a causality function χ Γ : C(T )→ C(T )
+such that
+Φ C⊗ Ψ C =
+(
+Φ C⊗ Ψ C)
+◦ trT \ χ Γ(C) .
+We prove in Lemma G.1 that the function χ Γ(C) :=χ Φ(C)∪ χ Ψ(C) satisﬁes
+the requirements of a causality function given in Deﬁnition 4.3 . And we
+have
+(
+Φ C⊗ Ψ C)
+◦ trT \ χ Γ(C) =
+(
+Φ C◦ trAT \ χΓ(C)
+)
+⊗
+(
+Ψ C◦ trBT \ χΓ(C)
+)
+=
+(
+Φ C◦ trAT \ χΦ(C)
+)
+⊗
+(
+Ψ C◦ trBT \ χΨ(C)
+)
+= Φ C⊗ Ψ C,
+where tr AT \ χΓ(C) and tr BT \ χΓ(C) trace out the inputs in positions T \χ Γ(C)
+on the A and B wires, respectively.
+For subnormalized boxes Φ and Ψ, let ˆΦ =
+{
+ˆΦ C : T(F T
+A )→ T(F C
+RC )
+}
+and ˆΨ =
+{
+ˆΨ C : T(F T
+B )→ T(F C
+SD )
+}
+be their normalized counterparts. Then
+P Ω
+RS◦
+(
+ˆΦ C⊗ ˆΨ C
+)
+=
+(
+P Ω
+R◦ ˆΦ C
+)
+⊗
+(
+P Ω
+S◦ ˆΨ C
+)
+= Φ C⊗ Ψ C,
+where P Ω
+R projects the wire R on the vacuum state |Ω⟩.
+6.2 Loops
+In this section we ﬁrst give an intuitive explanation of what it means to put
+a loop from an output wire to an input wire of a causal box and sh ow how
+to capture this mathematically. We then provide the formal d eﬁnition in
+Deﬁnition 6.3 . In Proposition 6.5 we prove that the resulting system after
+the loop has been applied is a new valid causal box.
+21Recall that the dimension of a wire dA is the dimension of the messages on the wire,
+not the dimension of the wire Hilbert space (which is inﬁnite ). By Eq. (9) the dimension
+of the tensor product of two wires is the sum of their dimensions.
+29
+
+===== PAGE 30 =====
+
+HA
+HB
+HC
+HD
+HR
+UΨ
+V
+UΦ
+HQ HA HD
+HR
+UΨ V
+UΦ′
+HC
+HQ
+Figure 12 – Connecting C to B in the system depicted on the left results in
+the system depicted on the right.
+Before considering the case of a loop on an arbitrary causal b ox, we ﬁrst
+look at the simpler case of a map Φ : T(HAB)→ T(HCD ) for which the
+output on C does not depend on the input on B. A Stinespring representa-
+tion of such a system is illustrated on the left in Figure 12 . Here, it is clear
+what happens when C is looped back to B: ﬁrst UΨ is applied to the input
+on wire A to obtain the output on C, then V is applied to both C and the
+internal state of the system to produce the output on D, as depicted on the
+right in Figure 12 .
+For the more general case, we make use of Proposition 5.4 , which shows
+that all causal boxes admit a sequence representation, i.e. , every map Φ C
+can be decomposed into an inﬁnite sequence of isometries who se input and
+output positions are disjoint. In Figure 13a we reproduce Figure 10 , but
+with two input and output wires. Here, the isometries Vi for i≥ n have
+been grouped together as one operator U Cn
+Φ so that U C
+Φ consists of a ﬁnite
+sequence of operators. We apply the same reasoning as above t o this system,
+i.e., we connect the output on wire C in positionsTi fori≤ n to the input on
+wire B of Vi− 1. This results in a map Ψ C
+n, which corresponds to the system
+Φ C with all outputs on wire C in positions ⋃n
+i=2Ti looped back to wire B,
+and has the Stinespring representation drawn in
+Figure 13b .
+The causal box Ψ = Φ (֒→B), resulting from looping all of C to B, can
+be deﬁned as the limit of these maps when n→∞ , i.e., Ψ :=
+{
+Ψ C}
+C∈ C(T )
+where
+Ψ C := lim
+n→∞
+Ψ C
+n. (30)
+This is however a rather inconvenient deﬁnition with which t o work. Instead,
+we provide a closed formula for the maps {Ψ C}C in
+Deﬁnition 6.3 , Eq. (31) .
+We prove in Appendix E that this deﬁnition is equivalent to Eq. (30) .
+In the case of a classical causal box given by a set of conditio nal proba-
+bility distributions{P C
+CD |AB}C, this closed formula for a loop reduces to
+QC
+D|A(d|a) =
+∑
+c
+P C
+CD |AB(c,d|a,c ),
+30
+
+===== PAGE 31 =====
+
+F Cn+1
+A
+F Cn+1
+B
+F Tn
+A
+F Tn
+B
+F T3
+A
+F T3
+B
+F T2
+A
+F T2
+B
+F Cn
+C
+F Cn
+D
+F Tn−1
+C
+F Tn−1
+D
+F T2
+C
+F T2
+D
+F T1
+C
+F T1
+D
+HQ1
+U Cn
+Φ
+Vn−1
+V2
+V1
+U C
+Φ
+HQn
+HQn−1
+HQ3
+HQ2
+(a) By Proposition 5.4 any map Φ C : T(F T
+AB)→ T(F C
+CD ) can be decomposed
+into a sequence of isometries Vi with disjoint input and output positions, as
+depicted here.
+F Cn+1
+A
+F Cn+1
+B
+F Tn
+A
+F T3
+A
+F T2
+A
+F Cn+1
+C
+F Cn
+D
+F Tn−1
+D
+F T2
+D
+F T1
+D
+HQ1
+F T1
+C
+U Cn
+Φ
+Vn− 1
+V2
+V1
+U C
+Ψn
+HQn
+F Tn
+C HQn−1
+F Tn−1
+C HQ3
+F T3
+C HQ2
+F T2
+C
+(b) To (partially) connect C to B, the output from Vi in positions Ti on wire
+C is input to Vi+1.
+Figure 13 – Putting a loop from the output wire C to the input wire B in
+positions ⋃n
+i=1Ti in the system depicted in
+Figure 13a results in the system
+drawn in Figure 13b . Looping all of C back to B corresponds to taking the
+limit as n→∞ .
+31
+
+===== PAGE 32 =====
+
+i.e., the new system with conditional probability distribu tions{QC
+D|A}C is
+obtained from the old system by inputing on wire B the value c that is
+output on wire C.
+Eq. (31) is a generalization of this to the quantum case,
+which uses the Choi-Jamio/suppress lkowski representation.22 In Remark 6.4 we give
+an equivalent formulation of a loop as a partial trace using t he natural
+representation.23
+Deﬁnition 6.3 (Loop). Let Φ = {Φ C : T(F T
+AB)→ T(F C
+CD )}C∈ C(T ) be a
+(dA +dB,d C +dD)-causal box with dB =dC. Let RC
+Φ(·;·) be the Choi-Jami-
+o/suppress lkowski representation of ΦC. Let {|kC⟩}h and{|ℓC⟩}h be any orthonormal
+bases ofF C
+C and let{|kB⟩}k and{|ℓB⟩}ℓ denote the corresponding bases of
+F C
+B, i.e., for all k and ℓ,|kC⟩∼
+=|kB⟩ and|ℓC⟩∼
+=|ℓB⟩. The new system
+resulting from putting a loop from the output wire C to the input wire B,
+Ψ = Φ (֒→B), is given by the set of maps
+{
+Ψ C : T
+(
+F T
+A
+)
+→ T
+(
+F C
+D
+)}
+C∈
+C(T )
+that have Choi-Jamio/suppress lkowski representation
+RC
+Ψ(ψ D⊗ ψ A;ϕ D⊗ ϕ A)
+=
+∑
+k,ℓ
+RC
+Φ(kC⊗ ψ D⊗ ψ A⊗ ¯kB;ℓC⊗ ϕ D⊗ ϕ A⊗ ¯ℓB), (31)
+where|¯kB⟩ = ∑∞
+i=1|i⟩
+⟨i|k⟩ for the basis {|iB⟩}i ofF T
+B used in the Choi-
+Jamio/suppress lkowski representation of ΦC.
+Remark 6.4 (The natural representation of a loop) . In Appendix B.2 we
+deﬁne the natural representation of a map Φ : T(HAB)→ T(HDC ) as a
+linear operator KΦ : HA ¯AB ¯B → HD ¯DC ¯C. Relabelling B and ¯B with C
+and ¯C according to the isomorphism between the spaces used to deﬁn e the
+loop, we can write KΦ as an operator KΦ :HA ¯AC ¯C→H D ¯DC ¯C. We show
+in Lemma B.1 that a map with Choi-Jamio/suppress lkowski representation given by
+Eq. (31) may equivalently be deﬁned by its natural representation
+KΨ = tr C ¯C(KΦ).
+Since the partial trace is basis independent, the choice of b ases in Eq. (31) ,
+Deﬁnition 6.3 , is not relevant.
+It follows from Proposition E.2 that if Φ C is CPTP, then so is the map
+Ψ C with Choi-Jamio/suppress lkowski representation given byEq. (31) . We still need
+to show that the resulting set {Ψ C}C∈ C(T ) is a valid causal box.
+22The terms in Eq. (31) are absolutely convergent (as proven in Appendix E ). The
+order of the summation is thus not relevant and hence not spec iﬁed.
+23We deﬁne the natural representation of a map in Appendix B.2 .
+32
+
+===== PAGE 33 =====
+
+Proposition 6.5. If Φ = {Φ C : T(F T
+AB)→ T(F C
+CD )} is a (sub)normalized
+(dA +dB,d C +dD)-causal box with dB =dC , then Ψ = Φ (֒→B) is a (sub)-
+normalized (dA,d D)-causal box.
+Proof. We need to show that the maps {Ψ C}C∈ C(T ) satisfy the consistency
+(Eq. (19) ) and causality ( Eq. (20) ) conditions. We only need to prove this
+for normalized boxes, since putting a loop on a subnormalize d box is equiv-
+alent to putting the loop on the underlying normalized box th en projecting
+the ancilla wire R on the vacuum state|Ω⟩R, which results in a valid subnor-
+malized box if putting the loop on the underlying normalized box is valid.
+To prove this, we use the Choi-Jamio/suppress lkowski representation of these con-
+ditions, given in Eq. (26) . What we need to prove is that there exists a
+causality function χ such that for any C,D∈ C(T ) withC⊆D , and any ψ C
+D,
+ψ χ (C)
+A , ψ
+˜χ (C)
+A , ϕ C
+D, ϕ χ (C)
+A , ϕ
+˜χ (C)
+A ,
+∑
+j
+RD
+Ψ
+(
+ψ C
+D⊗ j
+˜C
+D⊗ ψ χ (C)
+A ⊗ ψ
+˜χ (C)
+A ;ϕ C
+D⊗ j
+˜C
+D⊗ ϕ χ (C)
+A ⊗ ϕ
+˜χ (C)
+A
+)
+=RC
+Ψ
+(
+ψ C
+D⊗ ψ χ (C)
+A ;ϕ C
+D⊗ ϕ χ (C)
+A
+)⟨
+ψ
+˜χ (C)
+A
+⏐
+⏐
+⏐
+⏐ϕ
+˜χ (C)
+A
+⟩
+, (32)
+where RD
+Ψ and RC
+Ψ are the Choi-Jamio/suppress lkowski representations of the maps
+Ψ D : T(F χ (D)
+A )→ T(F D
+D ) and Ψ C : T(F χ (C)
+A )→ T(F C
+D), respectively. We
+prove this for the same function χ for which Φ satisﬁes causality.
+We denote ˆΨ C := tr ˜C◦ Ψ D. The left-hand side of
+Eq. (32) corresponds to
+the Choi-Jamio/suppress lkowski representation ofˆΨ C. Using the loop formula from
+Eq. (31) , we get
+RC
+ˆΨ
+(
+ψ C
+D⊗ ψ χ (D)
+A ;ϕ C
+D⊗ ϕ χ (D)
+A
+)
+=
+∑
+j
+RD
+Ψ
+(
+ψ C
+D⊗ j
+˜C
+D⊗ ψ χ (D)
+A ;ϕ C
+D⊗ j
+˜C
+D⊗ ϕ χ (D)
+A
+)
+=
+∑
+j,k,ℓ
+RD
+Φ
+(
+kC⊗ ψ C
+D⊗ j
+˜C
+D⊗ ψ χ (D)
+A ⊗ ¯kB;ℓC⊗ ϕ C
+D⊗ j
+˜C
+D⊗ ϕ χ (D)
+A ⊗ ¯ℓB
+)
+,
+where RD
+Φ is the Choi-Jamio/suppress lkowski representation of ΦD : T(F T
+AB) →
+T(F D
+CD ). Since Φ satisﬁes causality, the state of the wire B in positions
+D\C cannot modify the output on the wire D in positions C. Hence there
+is no need to loop all states on C back to B, one could transmit only the
+states in positions C and trace out the others without changing the output,
+33
+
+===== PAGE 34 =====
+
+i.e.,
+RC
+ˆΨ
+(
+ψ C
+D⊗ ψ χ (D)
+A ;ϕ C
+D⊗ ϕ χ (D)
+A
+)
+=
+∑
+i,j,k,ℓ
+RD
+Φ
+(
+kC
+C⊗ i
+˜C
+C⊗ ψ C
+D⊗ j
+˜C
+D⊗ ψ χ (D)
+A ⊗ ¯kC
+B;
+ℓC
+C⊗ i
+˜C
+C⊗ ϕ C
+D⊗ j
+˜C
+D⊗ ϕ χ (D)
+A ⊗ ¯ℓC
+B
+)
+.
+Applying
+Eq. (26) we get
+RC
+ˆΨ
+(
+ψ C
+D⊗ ψ χ (D)
+A ;ϕ C
+D⊗ ϕ χ (D)
+A
+)
+=
+∑
+i,k,ℓ
+RC
+Φ
+(
+kC
+C⊗ ψ C
+D⊗ ψ χ (C)
+A ⊗ ¯kχ (C)
+B ;ℓC
+C⊗ ϕ C
+D⊗ ϕ χ (C)
+A ⊗ ¯ℓχ (C)
+B
+)
+⟨
+ψ
+˜χ (C)
+A ⊗ ¯kC\ χ (C)
+B
+⏐
+⏐
+⏐
+⏐ϕ
+˜χ (C)
+A ⊗ ¯ℓC\ χ (C)
+B
+⟩
+,
+where RC
+Φ is the Choi-Jamio/suppress lkowski representation of ΦC : T(F χ (C)
+AB ) →
+T(F C
+CD ). Let ˆΦ C := Φ C⊗ tr for a trace operator tr acting on F C\ χ (C)
+B . Then
+the previous equation may be written
+RC
+ˆΨ
+(
+ψ C
+D⊗ ψ χ (D)
+A ;ϕ C
+D⊗ ϕ χ (D)
+A
+)
+=
+∑
+k,ℓ
+RC
+ˆΦ
+(
+kC
+C⊗ ψ C
+D⊗ ψ χ (C)
+A ⊗ ¯kC
+B;ℓC
+C⊗ ϕ C
+D⊗ ϕ χ (C)
+A ⊗ ¯ℓC
+B
+)⟨
+ψ
+˜χ (C)
+A
+⏐
+⏐
+⏐
+⏐ϕ
+˜χ (C)
+A
+⟩
+.
+Finally, using
+Eq. (31) , we get
+RC
+ˆΨ
+(
+ψ C
+D⊗ ψ χ (D)
+A ;ϕ C
+D⊗ ϕ χ (D)
+A
+)
+=
+RC
+Ψ
+(
+ψ C
+D⊗ ψ χ (C)
+A ;ϕ C
+D⊗ ϕ χ (C)
+A
+)⟨
+ψ
+˜χ (C)
+A
+⏐
+⏐
+⏐
+⏐ϕ
+˜χ (C)
+A
+⟩
+.
+6.3 The composition operation
+Now that we have deﬁned parallel composition and loops, we ca n instantiate
+the operation for composing two causal boxes by their wires, as introduced
+in
+Section 2 .
+Deﬁnition 6.6 (Composition operation) . Let Φ and Ψ be two (sub)nor-
+malized causal boxes, let ports(Φ) and ports(Ψ) consist of a partition of
+the input and output wires into sub-wires (see Remark 4.6 ), and let the set
+P ={(AΦ
+1,A Ψ
+1 ),..., (AΦ
+n,A Ψ
+n )} consist of pairs of ports of Φ and Ψ, such that
+each pair consists of an output and input sub-wire of the same dimension,
+and each sub-wire appears at most once. Then
+Φ P← →Ψ := (Φ∥Ψ) (AΦ/Ψ
+1֒→AΨ/Φ
+1 )···(AΦ/Ψ
+n֒→AΨ/Φ
+n ),
+34
+
+===== PAGE 35 =====
+
+where AΦ/ Ψ
+i֒→AΨ/ Φ
+i denotes either AΦ
+i֒→AΨ
+i or AΨ
+i֒→AΦ
+i depending on
+which is an output and input wire.
+Theorem 6.7. Let S be the set of all (sub)normalized causal boxes. For
+any Φ, Ψ ∈ S and any set of valid sub-wires P ,
+Φ P← →Ψ ∈ S.
+Proof. Immediate from
+Proposition 6.2 and Proposition 6.5 .
+The next step is to prove that Deﬁnition 6.6 satisﬁes composition order
+independence. To do this, we will prove some lemmas on the com mutativity
+and associativity of parallel composition and loops.
+Lemma 6.8. For any Φ, Ψ, Γ∈ S,
+(Φ∥Ψ)∥Γ = Φ ∥(Ψ∥Γ).
+Proof. This follows from the associativity of the tensor product, n amely,
+(Φ C⊗ Ψ C)⊗ Γ C = Φ C⊗ (Ψ C⊗ Γ C).
+Lemma 6.9. For any Φ, Ψ ∈ S and any pair (B,C )∈ ports(Ψ) × ports(Ψ)
+of in- and out-ports of the same dimension,
+Ψ (֒→B)∥Φ = (Ψ ∥Φ) (֒→B),
+Φ∥Ψ (֒→B) = (Φ∥Ψ) (֒→B).
+Proof. The Choi-Jamio/suppress lkowski representation of a product of mapsis given
+by
+RΦ⊗ Ψ(ψ Y⊗ ψ D⊗ ψ X⊗ ψ A;ϕ Y⊗ ϕ D⊗ ϕ X⊗ ϕ A) =
+RΦ(ψ Y⊗ ψ X ;ϕ Y⊗ ϕ X )RΨ(ψ D⊗ ψ A;ϕ D⊗ ϕ A).
+Hence for Φ C : T(F T
+X ) → T(F C
+Y ) and Ψ C : T(F T
+AB) → T(F C
+CD ), both
+Φ∥Ψ (֒→B) and (Φ∥Ψ) (֒→B) have Choi-Jamio/suppress lkowski representation
+RC
+Γ(ψ Y⊗ ψ D⊗ ψ X⊗ ψ A;ϕ Y⊗ ϕ D⊗ ϕ X⊗ ϕ A) =
+RC
+Φ(ψ Y⊗ ψ X ;ϕ Y⊗ ϕ X )
+∑
+k,ℓ
+RC
+Ψ(kC⊗ ψ D⊗ ψ A⊗ ¯kB;ℓC⊗ ϕ D⊗ ϕ A⊗ ¯ℓB).
+The proof for Ψ (֒→B)∥Φ is identical.
+Lemma 6.10. For any Φ ∈ S and any pairs (A,D ), (B,C )∈ ports(Φ)×
+ports(Φ) of in- and out-ports of the same dimension,
+(
+Φ (֒→B)
+)(֒→A)
+=
+(
+Φ (֒→A)
+)(֒→B)
+. (33)
+35
+
+===== PAGE 36 =====
+
+Proof. Let Φ C : T(F T
+ABX )→ T(F C
+CDY ). The Choi-Jamio/suppress lkowski representa-
+tion of the left-hand side of Eq. (33) is
+RC
+Ψ(ψ Y⊗ ψ X ;ϕ Y⊗ ϕ X ) =
+∑
+e,h
+∑
+k,ℓ
+RC
+Φ(kC⊗ eD⊗ ψ Y⊗ ¯eA⊗ ¯kB⊗ ψ X ;ℓC⊗ hD⊗ ϕ Y⊗ ¯hA⊗ ¯ℓB⊗ ϕ X ).
+Whereas for the right-hand side we get
+RC
+Ψ(ψ Y⊗ ψ X ;ϕ Y⊗ ϕ X ) =
+∑
+k,ℓ
+∑
+e,h
+RC
+Φ(kC⊗ eD⊗ ψ Y⊗ ¯eA⊗ ¯kB⊗ ψ X ;ℓC⊗ hD⊗ ϕ Y⊗ ¯hA⊗ ¯ℓB⊗ ϕ X ).
+The two are equal if the limits implicit in the sums commute. T his is the
+case, because a third expression obtained by ﬁrst merging th e wires A with
+B and C with D then looping CD to AB results in a valid map
+∑
+e,h,k,ℓ
+RC
+Φ(kC⊗ eD⊗ ψ Y⊗ ¯eA⊗ ¯kB⊗ ψ X;ℓC⊗ hD⊗ ϕ Y⊗ ¯hA⊗ ¯ℓB⊗ ϕ X ),
+and from Lemma G.2 we know that if all three expressions converge, then
+they must converge to the same value. This can also be seen fro m the partial
+trace representation of a loop, namely
+K C
+Ψ = tr D ¯D trC ¯C
+(
+K C
+Φ
+)
+= tr C ¯CD ¯D
+(
+K C
+Φ
+)
+= tr C ¯C trD ¯D
+(
+K C
+Φ
+)
+.
+These three lemmas allow the order in which systems are put in parallel
+and wires are connected to be changed, which results in compo sition order
+independence.
+Theorem 6.11. For any causal boxes Φ 1, Φ 2, Φ 3∈ S and compatible pairs
+of sub-wires Pij⊆ ports(Φ i)× ports(Φ j),
+(
+Φ 1
+P12
+← − →Φ 2
+) P13∪ P23
+←−−−−→ Φ 3 = Φ 1
+P12∪ P13
+←−−−−→
+(
+Φ 2
+P23
+← − →Φ 3
+)
+.
+Proof. Immediate by combining Lemmas 6.8, 6.9 and 6.10.
+7 Distance
+In practical applications it is often useful to deﬁne a notio n of distance
+between systems, e.g., to measure how close a real system con structed from
+a noisy channel and an error correcting code is from an ideal c hannel that
+has no noise. In this section we introduce a pseudo-metric on the set of
+causal boxes, the distinguishing advantage . This is deﬁned with the help
+of a distinguisher: another system D that, when connected to one of two
+36
+
+===== PAGE 37 =====
+
+Φ
+ˆD
+0, 1
+Figure 14 – A distinguisher plugged into a causal box Φ can loop some of the
+outputs back to the inputs as well as process other outputs befo re providing
+them as inputs to Φ. It then outputs a bit corresponding to its decis ion.
+causal boxes, Φ or Ψ, outputs a bit corresponding to its best g uess of the
+system to which it is connected. A distance between these cau sal boxes is
+then deﬁned as the statistical distance between the disting uisher’s outputs.
+Although one could deﬁne a distinguisher to be another causa l box, we
+consider a slightly more general deﬁnition in this work: a di stinguisher may
+also put loops on the system being tested, i.e., from an outpu t of Φ back
+to an input of Φ — this is more powerful, because a loop “takes n o time”,
+but plugging in a causal box would incur a delay since the iden tity is not
+a causal operation. Such a distinguisher is illustrated in Figure 14 . Since
+it only makes sense to compare two systems Φ and Ψ that have inp uts and
+outputs of the same dimensions, we also parametrize the dist inguishers by
+these input and output dimensions.
+Although one traditionally depicts distinguishers as outp utting a bit 0 or
+1, we formally model a distinguisher as having a 1-dimension al output wire,
+i.e., it outputs a state ρ∈ T(F T ). We then deﬁne the distinguisher’s decision
+to be 0 if it outputs a vacuum state, and 1 otherwise. Accordin g to our
+deﬁnition of causal boxes, an output only needs to be deﬁned o n all bounded
+cutsC⊆T , it is not necessarily deﬁned on all of T . If the set T were totally
+ordered, one could deﬁne the output value of the distinguish er to be the limit
+of the output value on T ≤ t ast→ +∞ . However, for a partially ordered set,
+it is no clear how to take such a limit. Instead, we deﬁne the ou tput of a
+distinguisher D to correspond to the value produced on a bounded cut T ≤ tD,
+for some ﬁxed tD∈T . By considering a set of distinguishers D ={Di}i that
+have diﬀerent bounds tDi∈T and taking the supremum of the distances for
+each Di∈ D, we get a notion of distinguishability that covers all of T .
+In Appendix F we discuss some alternative distinguisher deﬁnitions. We
+rewrite the deﬁnitions from this section using subnormaliz ed boxes, which
+simpliﬁes them considerably. Then we consider distinguish ers that are not
+constrained to producing an output within a ﬁxed cut T ≤ tD, and show that
+this results in an equivalent notion of distance.
+37
+
+===== PAGE 38 =====
+
+Deﬁnition 7.1 (Distinguisher). A (m,n )-distinguisher D ={idC⊗ ˆDC}C∈ C(T )
+consists of a (ˆn, ˆm)-causal box ˆD ={ ˆDC}C∈ C(T ) with m + 1− ˆm = n− ˆn,
+a termination time tD∈T , and a speciﬁcation of how the distinguisher is
+connected to an ( m,n )-dimensional system — i.e., which input and output
+sub-wires are connected to ˆD and which are directly connected by a loop.
+We refer to the additional output sub-wire of dimension 1 of t he distinguisher
+that is never connected to any other system as the distinguis her’s output
+wire. For an ( m,n )-distinguisher D and an ( m,n )-causal box Φ, let DΦ
+denote the causal box with no input wire and a 1-dimensional o utput wire
+resulting from connecting the systems as speciﬁed. We deﬁne D[Φ] to be
+the binary random variable on {0, 1} obtained by projecting the output of
+DΦ within T ≤ tD on P ≤ tD
+0 =|Ω⟩⟨Ω|≤ tD and P ≤ tD
+1 =I ≤ tD−| Ω⟩⟨Ω|≤ tD .
+Deﬁnition 7.2 (Distance). Given a set of ( m,n )-distinguishers D, the dis-
+tance between two (m,n )-causal boxes Φ and Ψ is deﬁned as
+dD(Φ, Ψ) := sup
+D∈ D
+δ(D[Φ], D[Ψ]) ,
+where δ(·,·) is the statistical or total variation distance, i.e.,
+δ(X1,X 2) = 1
+2
+∑
+x∈{0,1}
+|Pr[X1 =x]− Pr[X2 =x]|.
+We now show that the the function dD : S× S→ [0, 1] deﬁned above
+is a pseudo-metric for arbitrary D and a metric if D is the set of all distin-
+guishers.
+Theorem 7.3. The distance measure given in Deﬁnition 7.2 is a pseudo-
+metric. Furthermore, if D is the set of all distinguishers, then this distance
+is a metric.
+Proof. We need to show that the three conditions given in Section 2 hold,
+namely, for any Φ , Ψ, Γ∈ S,
+dD(Φ, Φ) = 0 ,
+dD(Φ, Ψ) = d(Ψ, Φ) ,
+dD(Φ, Ψ) ≤ d(Φ, Γ) + d(Γ, Ψ) .
+The ﬁrst two conditions are immediate because the statistic al distance is
+a metric, hence δ(D[Φ], D[Φ]) = 0 and δ(D[Φ], D[Ψ]) = δ(D[Ψ], D[Φ]). The
+38
+
+===== PAGE 39 =====
+
+α|0⟩A + β|1⟩A
+|ϕ⟩B
+α|0⟩G⊗ UV|ϕ⟩H
++β|1⟩G⊗ VU|ϕ⟩H
+QS
+U V
+A
+B
+CE
+D F
+G
+H
+Figure 15 – The quantum switch, QS, queries ﬁrst U then V or ﬁrst V then U
+depending on the control qubit.
+last one follows from
+dD(Φ, Ψ) = sup
+D∈ D
+δ(D[Φ], D[Ψ])
+≤ sup
+D∈ D
+(δ(D[Φ], D[Γ]) + δ(D[Γ], D[Ψ]))
+≤ sup
+D∈ D
+δ(D[Φ], D[Γ]) + sup
+D′∈ D
+δ(D′[Γ], D′[Ψ])
+=dD(Φ, Γ) + dD(Γ, Ψ) .
+Finally to show that dD is a metric if D is the set of all distinguishers,
+we need to prove that
+Φ ̸= Ψ = ⇒ ∃ D∈ D s.t. δ(D[Φ], D[Ψ]) > 0.
+Since Φ ̸= Ψ there must exist a C∈ C(T ) for which Φ C̸= Ψ C, i.e., there
+exists a ρ∈ T(F Cin
+X ) such that Φ C(ρ)̸= Ψ C(ρ), where Cin = χ Φ(C)∪ χ Ψ(C).
+A distinguisher D that distinguishes Φ from Ψ can be constructed as the
+parallel composition of two systems. The ﬁrst prepares the s tate ρ and
+sends it to the system (Φ or Ψ). The second gathers the output o f the
+system until some position t such that C ⊆ T≤ t. Then it performs an
+optimal measurement to distinguish Φ C(ρ) from Ψ C(ρ). The result of this
+measurement is output in a position tD≥ t.
+8 Example: the quantum switch
+The quantum switch — which was introduced in Section 1.2 — is a system
+that, given black-box access to two unitaries U and V , applies them in
+a controlled superposition of diﬀerent orders. We reproduce in Figure 15 a
+ﬁgure illustrating the quantum switch with some extra label s for the diﬀerent
+wires.
+As shown in [ 17,19–21] the quantum switch can decrease the complexity
+of computational tasks and increase the distinguishabilit y of quantum states
+and channels. Although it is rather straightforward to desc ribe the eﬀect of
+plugging the quantum switch into the systems U and V — this corresponds
+39
+
+===== PAGE 40 =====
+
+to the dashed box from Figure 15 — the quantum switch itself, i.e., the box
+QS in Figure 15 , cannot be described using combs or circuits [ 12]. In this
+section we use our framework to provide a description of the s ystem QS as a
+causal box.
+The total system consists of 3 boxes, U, V and QS. We ﬁrst model these
+3 sub-systems, then prove that the composition of the 3 resul ts in a causal
+box which applies either UV orVU to an input state according to a control
+qubit. The entire system can be executed in 6 steps, so it is su ﬃcient to
+chooseT ={1,..., 6}. The system can easily be extended by adding more
+points toT and deﬁning the behavior of the boxes on these points.
+The sub-system U applies the corresponding unitary to the input it re-
+ceives, and outputs the result a step later. For simplicity w e assume that if
+multiple messages are received simultaneously, U is applied to every one of
+them. We also provide the box with an (internal) counter, tha t keeps track
+of the number of times that U is applied. Let |ψ n
+t⟩∈∨ n(Cd⊗| t⟩) be an
+element of the symmetric subspace of n qudits all arriving in position t, for
+n≥ 1. Then
+U|Ω⟩C⊗|i⟩U =|Ω⟩D⊗|i⟩U,
+U|ψ n
+t⟩C⊗|i⟩U =
+⏐
+⏐
+⏐
+(
+U ⊗ nψ n)
+t+1
+⟩
+D
+⊗|i +n⟩U,
+where the register C contains the input to U, D contains the output, and
+the register denoted U is the internal counter of the system. The box V is
+deﬁned similarly.
+As can be seen in
+Figure 15 , the box QS has 8 wires. To provide a
+complete description of QS we need to deﬁne how inputs on the entire Fock
+space of each input wire are mapped to the output space for all points in
+T . However, many of these inputs are “invalid”, e.g., the init ial input is
+expected to be received in step 1, and QS is plugged into systems U and V
+that behave as described above. Hence, we describe the behav ior of QS on
+valid inputs only, and assume that any state orthogonal to th ese are simply
+ignored by QS.
+In the ﬁrst step, upon receiving the input
+(α|0⟩A +β|1⟩A)⊗|ψ⟩B,
+QS moves the control qubit to its internal register and queries either U or V
+conditioned on this state. Let QS1 denote this operation; it is deﬁned as
+QS1|0⟩A⊗|ψ⟩B =|0⟩QS⊗| Ω⟩C⊗|ψ⟩E,
+QS1|1⟩A⊗|ψ⟩B =|1⟩QS⊗|ψ⟩C⊗| Ω⟩E.
+When t = 3, QS forwards what it received from U to V and from V to U, i.e.
+QS3|ψ⟩D⊗|ϕ⟩F =|ϕ⟩C⊗|ψ⟩E.
+40
+
+===== PAGE 41 =====
+
+And ﬁnally, in the last step, conditioned on the value of the c ontrol qubit,
+QS outputs either the message from U or from V along with the control qubit.
+QS5|0⟩QS⊗|ψ⟩D⊗| Ω⟩F =|0⟩G⊗|ψ⟩H,
+QS5|1⟩QS⊗| Ω⟩D⊗|ψ⟩F =|1⟩G⊗|ψ⟩H.
+Lemma 8.1. The composition of QS, U and V results in a system which
+performs a controlled switch between the orders of U and V . Furthermore,
+the boxes U and V are queried only once each.
+Proof. To prove this we put together all the steps described above. T he
+wires that do not appear in the equations contain a vacuum sta te in the
+corresponding step.
+t = 1 ( α|0⟩A +β|1⟩A)|ψ⟩B|0⟩U|0⟩V,
+t = 2
+(
+α|0⟩QS|Ω⟩C|ψ⟩E +β|1⟩QS|ψ⟩C|Ω⟩E
+)
+|0⟩U|0⟩V,
+t = 3 α|0⟩QS|Ω⟩D|Vψ⟩F|0⟩U|1⟩V +β|1⟩QS|Uψ⟩D|Ω⟩F|1⟩U|0⟩V,
+t = 4 α|0⟩QS|Vψ⟩C|Ω⟩E|0⟩U|1⟩V +β|1⟩QS|Ω⟩C|Uψ⟩E|1⟩U|0⟩V,
+t = 5
+(
+α|0⟩QS|UVψ ⟩D|Ω⟩F +β|1⟩QS|Ω⟩D|VUψ ⟩F
+)
+|1⟩U|1⟩V,
+t = 6 ( α|0⟩G|UVψ ⟩H +β|1⟩G|VUψ ⟩H)|1⟩U|1⟩V.
+In the ﬁnal step, the wires G and H contain the desired output, and the
+counters of U and V are set to 1.
+Remark 8.2 (Alternative quantum switch) . The quantum switch deﬁned in
+this section stores the control qubit in its internal memory . The number of
+inputs it may treat simultaneously is thus limited by this me mory. An alter-
+native construction was proposed independently in [ 16] and [ 17] that does
+not involve any memory: the quantum switch sends the control qubit along
+with the target qubit to the systems U and V. This allows an unbounded
+number of switches to be performed simultaneously (and even do them in
+superposition), but it only works if one can assume that the s ystems U and
+V perform their operation on a subspace of the input received a nd identity
+on the remaining input.
+9 Concluding remarks
+Many fundamental notions used to deﬁne quantum computation are derived
+by generalizing classical notions, e.g., quantum Turing ma chines [
+59–62],
+quantum circuits [61,63], or the machine model used in quantum composable
+security [22,23]. This can result in some classical concepts being hard-cod ed
+in the quantum model, e.g., quantum composable security [ 22, 23] can only
+41
+
+===== PAGE 42 =====
+
+model a classical scheduling of messages and quantum circui ts [ 61, 63] do
+not consider states in a superposition of being on one wire or another.24
+In this work we propose a model of quantum systems that is not d erived
+from a classical model, but uses a genuine quantum approach i n which the
+space of quantum messages is a Fock space. The general approa ch follows the
+top-down paradigm [ 27], which consists in starting at the highest possible
+level of abstraction, and proceeds downwards, introducing in each new lower
+level only the minimal necessary specializations. The theo ry of systems
+introduced in Section 2 does not make any assumptions about the nature
+of the underlying systems — it applies equally to a classical or quantum
+model of systems. We instantiate these with causal boxes, wh ich are deﬁned
+as black boxes. Only the input-output behavior of the system is relevant,
+the internals — e.g., the memory or model of computation — are not needed
+and thus not speciﬁed. This work leaves open a multitude of qu estions
+on modeling discrete quantum systems, some of which we discu ss in the
+following paragraphs.
+Quantum complexity . One of the most fundamental open questions is
+how to evaluate the complexity of a quantum circuit. A straig htforward
+adaptation of the classical concept of counting gates in a ci rcuit does not
+seem to be meaningful if two circuits are run in superpositio n, or if a circuit
+consists of many gates used in superposition. If one does not distinguish
+between a gate being used or not (see
+Footnote 24), then the complexity of
+the circuit would correspond to counting all the gates neede d to draw the
+entire circuit. In the case of the quantum switch from Section 8 , one would
+ﬁnd that either U or V has to be queried at least twice [ 12], even though one
+of the queries is the vacuum state. The gap between the number of gates
+needed to draw a circuit and the number of gates actually used can be quite
+large: Ara´ ujo et al. [17] found a problem that cannot be solved with a circuit
+containing less than Ω( n2) gates, but only superpositions of O(n) subsets of
+these gates are ever used. Note that to implement the algorit hm of Ara´ ujo
+et al., it is suﬃcient to construct O(n) gates, since the circuit contains only
+O(n) diﬀerent gates and the quantum switch can be used to swap the order
+of these gates [ 17]. However, such a coherent counting method cannot be
+applied in general, since this could result in a measurement of whether the
+gate is used or not, which could change the outcome of the comp utation.
+24If one interprets the circuit model as forbidding the presen ce of vacuum states on
+a wire, then one can prove impossibility results for certain systems which are physically
+valid [12–14]. However, if one adopts the view introduced in this work tha t a vacuum state
+should be modeled explicitly, then one can argue that a messa ge in a superposition between
+two wires is just an entangled state between two wires, α |ψ ⟩A ⊗ |Ω ⟩B +β |Ω ⟩A ⊗ |ψ ⟩B, and
+that this is captured by the circuit model. And in this sense, the circuit model is (still) a
+universal model of quantum computation. Nonetheless, the d istinction between vacuum
+and non-vacuum state is vital for computation and query comp lexity, since if one sends
+nothing to an oracle, this oracle has not been queried.
+42
+
+===== PAGE 43 =====
+
+We would thus evaluate the complexity of a diﬀerent circuit al together.25 A
+more physical approach to measuring complexity may be neede d, e.g., by
+evaluating the time or energy needed to perform a computatio n [ 64, 65].
+Indeﬁnite causal structures. Our framework models messages in su-
+perpositions of diﬀerent orders by explicitly deﬁning a set o f positions T
+and assigning diﬀerent positions (or superpositions of posi tions) to diﬀerent
+messages. This allows superpositions of diﬀerent causal str uctures to be
+captured by the framework. A diﬀerent line of research, inspi red by Hardy’s
+work on probability theories with indeﬁnite causal structu res [ 7, 8, 40, 41],
+has developed a process matrix formalism to model indeﬁnite causal struc-
+tures [ 25, 26, 42–50]. As already mentioned in Section 1.5 , the process ma-
+trix framework does not only capture superpositions of caus al structures,
+but also unphysical causal structures. In fact, it is curren tly still unclear
+what systems modeled by the process matrix framework are phy sically im-
+plementable. Additionally, the various players connected to the process ma-
+trix are restricted to processing inputs and producing outp uts exactly once,
+preventing any dynamical behavior of the parties, e.g., the y cannot change
+at runtime the number of messages they read or send. This fram ework is
+thus not suited for modeling the possible behaviors of playe rs in a multi-
+player game or cryptographic protocol.
+It is nonetheless interesting to compare what systems can be modeled by
+either framework. A system that allows a causal inequality t o be violated
+cannot be captured by causal boxes, since a global notion of o rder is hard-
+coded in our framework. Hence causal boxes can only model pro cess matrices
+that are extensibly causal — those that cannot be used to violate a causal
+inequality [ 25]. However, no violation of a causal inequality has ever been
+physically realized. In fact, to date, realizable physical experiments have a
+global notion of order, and thus causal boxes might well capt ure the subset
+of process matrices that can be implemented. It remains open whether this
+corresponds to extensibly causal processes, or whether the re are examples
+of such processes that cannot be physically realized [ 66].
+Relativistic cryptography . An immediate application of our causal boxes
+framework is in modeling cryptographic protocols that invo lve time, e.g., rel-
+ativistic protocols [ 31–37]. Here, (honest) parties are positioned in precise
+locations, and the time taken by messages to travel form one l ocation to an-
+other is used to ensure that a dishonest party cannot cheat. T o model such
+a setting one can take T to be a countable subset of space-time. Two points
+25The example of Ara´ ujo et al. [ 17] is constructed so that coherently counting which
+gates are used does not change the computation. This is possi ble when the counter factors
+out at the end of the computation. This is also the case in the e xample of the quantum
+switch from Section 8 , where the internal counters of U and V are in a superposition of |0⟩
+and |1⟩ in the middle of the protocol, but factor out at the end.
+43
+
+===== PAGE 44 =====
+
+t and t′ are ordered, t≤ t′, if t′ is in the future light cone of t. All messages
+are then assigned some point t∈T corresponding to their location.
+Non-deterministic systems. Our framework may also be used to model
+protocols that do not involve time explicitly. In many setti ngs, a player
+executes a set of instructions, but the time it takes to do so i s not determined
+by the player. One can think of such a system as being non-deterministic.
+It does not correspond to one system, but to a set of systems, e ach one
+capturing one possible behavior. For example, a simple iden tity channel
+could be a set of systems which forward the message received w ith a delay
+δ, where the set is taken over all possible δ, e.g., id = {idδ}δ∈ Q+ . The
+composition of two such non-deterministic systems, Π = {πx}x and Ψ =
+{ψ y}y, is deﬁned as the set resulting from composing all pairs of el ements
+from each system, Π P← →Ψ = {πx
+P← →ψ y}x,y. Since any possible element
+π∈ Π could occur if a protocol Π is executed, we require security to hold
+for all elements π∈ Π. A main challenge in modeling systems this way is to
+determine what set of behaviors correspond to a simple and in tuitive, but
+incomplete, description of a system as, e.g., a protocol giv en by pseudo-code
+or a random system [ 9,10]. Furthermore, for such non-deterministic systems
+to be usable, one would need to develop formalism that allows them to be
+described compactly and which satisﬁes the axioms from Section 2 .
+Acknowledgments
+CP is grateful to Gus Gutoski for discussions on quantum comb s and how
+to model composable security with them, to Vedran Dunjko for the exam-
+ple of the controlled black-box unitary used in the introduc tion as well as
+proofreading a preliminary version, and to Mateus Ara´ ujo, ˇCaslav Brukner,
+Lucien Hardy and Ognyan Oreshkov for providing valuable com ments. He
+is particularly indebted to Volkher Scholz for having sugge sted the Hilbert
+space used to capture orders of messages, provided invaluab le advice on
+modeling physical systems, walked him through the mathemat ics of inﬁnite-
+dimensional Hilbert spaces, and patiently answered his ﬂow of questions and
+problems.
+CP and RR are supported by the European Commission FP7 Projec t
+RAQUEL (grant No. 323970), US Air Force Oﬃce of Scientiﬁc Res earch
+(AFOSR) via grant F A9550-16-1-0245, the Swiss National Sci ence Founda-
+tion (via the National Centre of Competence in Research ‘Qua ntum Sci-
+ence and Technology’) and the European Research Council – ER C (grant
+No. 258932). UM was supported by the Swiss National Science F oundation
+(SNF), project No. 200020-132794. BT was supported by the Sw iss National
+Science Foundation (SNF) via Fellowship No. P2EZP2
+155566 and in part
+by the NSF grants CNS-1228890 and CNS-1116800.
+44
+
+===== PAGE 45 =====
+
+Appendices
+In Appendix A we deﬁne a Fock space in more detail. In Appendix B
+we give a brief overview of representations of quantum opera tors on inﬁ-
+nite dimensional systems. We discuss the Choi-Jamio/suppress lkowski representa-
+tion in Appendix B.1 and the natural representation in Appendix B.2 . In
+Appendix C we deﬁne the subset of causal boxes that can be represented
+as a single map and which is closed under composition. In Appendix D we
+discuss the special case of the causality function for syste ms with a totally
+ordered setT . We prove that in this case, for the composition of two system s
+to be well-deﬁned, it is suﬃcient to require that the systems are not arbitrar-
+ily fast around any point. In Appendix E we prove some additional results
+about the loop operation. We show that the alternative deﬁni tion of a loop
+from Section 6.2 is equivalent to Deﬁnition 6.3 . This simultaneously proves
+that Deﬁnition 6.3 always yields normalized maps. In Appendix F we give
+some alternative distinguisher deﬁnitions, and show that t hey result in the
+same pseudo-metric as in Section 7 . In particular, we show how this distance
+can be deﬁned with subnormalized distinguishers. Finally, Appendix G con-
+tains technical lemmas.
+A Fock space
+As introduced in
+Section 3.3 , for a Hilbert space H, the corresponding
+bosonic Fock space is given by
+F(H) :=
+∞⨁
+n=0
+∨ nH, (34)
+where∨ nH denotes the symmetric subspace of H⊗ n, and H⊗ 0 is the one
+dimensional space containing the vacuum state |Ω⟩. Let {|i⟩ :i∈B} denote
+a basis of H, whereB is a strict totally ordered set. For
+B∨ n :={(i1,...,i n) : ij∈B ,j <k =⇒ ij≤ ik}, (35)
+a basis of ∨ nH is then given by {|(i1,...,i n)⟩ : (i1,...,i n)∈B ∨ n} where
+|(i1,...,i n)⟩ denotes the superposition over all diﬀerent states obtained by
+permuting the positions in the vector: for ( i1,...,i n)∈B ∨ n, let
+B× n
+(i1,...,i n) :=
+⋃
+π ∈ Sn
+{(iπ (1),...,i π (n))}
+denote the subset of B× n obtained by permuting the elements of ( i1,...,i n),
+then
+|(i1,...,i n)⟩ := 1√⏐
+⏐
+⏐B× n
+(i1,...,i n)
+⏐
+⏐
+⏐
+∑
+(j1,...,j n)∈B × n
+(i1,...,in)
+|j1,...,j n⟩. (36)
+45
+
+===== PAGE 46 =====
+
+And a basis of F(H) is given by
+{
+|x⟩ :x∈
+∞⋃
+n=0
+B∨ n
+}
+.
+For a wire A with Hilbert spaceF T
+A =F(CdA⊗ ℓ2(T )), a state|Ψ⟩∈F T
+A
+can thus be in a superposition consisting of any number of qud its, e.g.,
+|Ψ⟩ =
+∞∑
+n=0
+α n|Ψ n⟩,
+where|Ψ n⟩∈∨ n(
+CdA⊗ ℓ2(T )
+)
+is ann-qudit (symmetric) state with position
+information (where |Ψ 0⟩ =|Ω⟩). An orthonormal basis of F T
+A is given by
+the union of a basis for each ∨ n(
+CdA⊗ ℓ2(T )
+)
+, and an orthonormal basis
+for∨ n(
+CdA⊗ ℓ2(T )
+)
+is given by all multisets
+26 of cardinality n of elements
+from{|vt⟩ :v∈V ,t∈T} .
+Remark A.1. Throughout this paper we use Eq. (9) to split a wire into the
+tensor product of two wires, or to merge the tensor product of two wires
+into one. Here we explicitly provide the isomorphism used in Eq. (9) .
+Let {|x⟩ : x ∈ A∨ n} and {|x⟩ : x ∈ B∨ n} denote bases of ∨ nHA
+and ∨ nHB, respectively, as deﬁned in Eqs. (35) and (36). A basis of
+∨ n(HA⊕H B) is given by {|x⟩ :x∈ (A⊕B )∨ n} for
+(A⊕B )∨ n ={(i1,...,i n1,j 1,...,j n2 ) : n1 +n2 =n,i k∈A ,j k∈B ,
+k<ℓ =⇒ ik≤ iℓ and jk≤ jℓ}.
+We deﬁne the isomorphism between F(HA)⊗F (HB) andF(HA⊕H B) by
+setting
+|(i1,...,i n1)⟩⊗| (j1,...,j n2 )⟩∼
+=|(i1,...,i n1,j 1,...,j n2)⟩.
+B Inﬁnite dimensional representations of quantum
+operators
+B.1 The Choi-Jamio/suppress lkowski representation
+LetHA andHB be ﬁnite dimensional Hilbert spaces, and let Φ : L(HA)→
+L(HB) be a CPTP map, where L(H) is the set of linear operators on H.
+The Choi-Jamio/suppress lkowski representation of Φ is given by the operator RΦ∈
+L(HBA) — the Choi operator — deﬁned as
+RΦ =
+∑
+i,j
+Φ(|i⟩⟨j|)⊗|i⟩⟨j|. (37)
+26Due to the restriction to a symmetric subspace, only sets wit h repetition (multisets)
+not sequences of basis elements of CdA ⊗ ℓ2(T ) are relevant.
+46
+
+===== PAGE 47 =====
+
+One can think of RΦ as capturing the image of a basis of L(HA), namely
+{|i⟩⟨j|}i,j. RΦ is positive semi-deﬁnite and satisﬁes
+trBRΦ =IA. (38)
+In fact, any positive semi-deﬁnite operator satisfying Eq. (38) is the Choi-
+Jamio/suppress lkowski representation of some CPTP map [57].
+For inﬁnite dimensional spaces HA andHB, the Choi operator of a map
+Φ : T(HA)→ T(HB) can be unbounded. Instead, the Choi-Jamio/suppress lkowski
+representation is deﬁned as the sesquilinear positive semi -deﬁnite form 27RΦ
+on
+HB×H A = span{ψ B⊗ ψ A :ψ B∈H B,ψ A∈H A},
+satisfying
+RΦ(ψ B⊗ ψ A;ϕ B⊗ ϕ A) :=⟨ψ B|Φ
+(⏐
+⏐ ¯ψ A
+⟩
+⟨ ¯ϕ A|
+)
+|ϕ B⟩, (39)
+where|¯ψ⟩ = ∑∞
+i=1|i⟩
+⟨i|ψ⟩ for some ﬁxed basis {|i⟩}i ofHA [58].
+If the domain of the sesquilinear form RΦ is the whole of HB⊗H A, then
+the corresponding operator is bounded 28 (as in the case of ﬁnite spaces),
+and can be recovered as the operator ˆRΦ∈ B(HBA) satisfying
+⟨ψ B|⊗⟨ ψ A|ˆRΦ|ϕ B⟩⊗| ϕ A⟩ =RΦ(ψ B⊗ ψ A;ϕ B⊗ ϕ A). (40)
+Eq. (38) can be rewritten as
+∑
+j
+RΦ(jB⊗ ψ A;jB⊗ ϕ A) =⟨ψ A|ϕ A⟩ (41)
+for any basis{|j⟩}j ofHB, and holds in the inﬁnite dimensional case as well.
+The converse also holds in the inﬁnite dimensional case: any positive semi-
+deﬁnite sesquilinear form satisfying Eq. (41) uniquely deﬁnes a CPTP map
+Φ : T(HA)→ T(HB) [ 58].
+If the map Φ : T(HA)→ T(HB) is completely positive, but not trace-
+preserving, then the Choi-Jamio/suppress lkowski representation of Φ is still deﬁned
+as the sesquilinear positive semi-deﬁnite from RΦ given by Eq. (39) . But
+this form does not satisfy Eq. (41) . Similarly, in the ﬁnite case the Choi
+operator of a non-trace-preserving map is still given by the positive operator
+from Eq. (37) , but it does not satisfy Eq. (38) .
+27R(·; ·) is a sesquilinear form if it is antilinear in the ﬁrst argume nt and linear in the
+second.
+28We denote the set of bounded operators on H by B(H). U ∈ B(H) if there exists
+some c> 0 such that for all ψ ∈ H , ∥Uψ ∥/ ∥ψ ∥<c .
+47
+
+===== PAGE 48 =====
+
+B.2 The natural representation
+LetHA andHB be ﬁnite dimensional Hilbert spaces. A linear map Φ :
+L(HA)→L (HB) can be represented as a linear map KΦ :HA⊗H ¯A→
+HB⊗H ¯B deﬁned by
+KΦ|i⟩|j⟩ =
+∑
+k,ℓ
+α kℓ|k⟩|ℓ⟩ :⇐⇒ Φ(|i⟩⟨j|) =
+∑
+k,ℓ
+α kℓ|k⟩⟨ℓ| (42)
+for some bases {|iA⟩}i and{|kB⟩}k ofHA andHB. The transformation
+Φ ↦→ KΦ is a bijection, and is referred to as the natural representation [
+57].
+In the inﬁnite dimensional case, one may deﬁne the natural re presenta-
+tion of a map Φ : T(HA)→ T(HB) in the same way. Note however that
+Eq. (42) is not well-deﬁned on the entire space of linear maps Φ : B(HA)→
+B(HB). The inner product on HA⊗H ¯A is isomorphic to the Hilbert-Schmidt
+inner product 29 of operators on HA. The transformation Φ ↦→ KΦ given by
+Eq. (42) is thus a bijection between the set of maps S(HA)→ S(HB) and
+the set of maps HA⊗H ¯A→H B⊗H ¯B, where S(H) is the space of all op-
+erators on H with a bounded Hilbert-Schmidt norm. Since T(H)⊆ S(H),
+this representation is in particular well-deﬁned for linea r transformations
+between trace class operators, Φ : T(HA)→ T(HB).
+The natural and Choi-Jamio/suppress lkowski representations are related as fol-
+lows.
+⟨ψ B|⟨ϕ ¯B|KΦ|ψ A⟩|ϕ ¯A⟩ =⟨ψ B|Φ(|ψ A⟩⟨¯ϕ A|)|¯ϕ B⟩
+=RΦ(ψ B⊗ ¯ψ A; ¯ϕ B⊗ ϕ A), (43)
+where, as previously, |¯ψ⟩ = ∑∞
+i=1|i⟩
+⟨i|ψ⟩ for some ﬁxed basis {|i⟩}i.
+We now prove that the formula for a loop from Eq. (31) may be equiva-
+lently written using the natural representation, as noted i n Remark 6.4 .
+Lemma B.1. Let Φ : T(HAC) → T(HBC ) be a linear map. Let Ψ :
+T(HA)→ T(HB) be another linear map such that for some bases {kC}k
+and{ℓC}ℓ ofHC,
+RΨ(ψ B⊗ ψ A;ϕ B⊗ ϕ A) =
+∑
+k,ℓ
+RΦ(ψ B⊗ kC⊗ ψ A⊗ ¯kC ;ϕ B⊗ ℓC⊗ ϕ A⊗ ¯ℓC).
+Then
+KΨ = tr C ¯C(KΦ).
+Proof. From Eq. (43) we have
+RΨ(ψ B⊗ ψ A;ϕ B⊗ ϕ A) =⟨ψ B|⟨¯ϕ ¯B|KΨ
+⏐
+⏐ ¯ψ A
+⟩
+|ϕ ¯A⟩.
+29The Hilbert-Schmidt inner product is deﬁned as ⟨A,B ⟩ := tr(A†B).
+48
+
+===== PAGE 49 =====
+
+And
+∑
+k,ℓ
+RΦ(ψ B⊗ kC⊗ ψ A⊗ ¯kC;ϕ B⊗ ℓC⊗ ϕ A⊗ ¯ℓC)
+=
+∑
+k,ℓ
+⟨ψ B|⟨¯ϕ ¯B|⟨kC|
+⟨¯ℓ ¯C
+⏐
+⏐KΦ
+⏐
+⏐ ¯ψ A
+⟩
+|ϕ ¯A⟩|kC⟩
+⏐
+⏐¯ℓ ¯C
+⟩
+=⟨ψ B|⟨¯ϕ ¯B|trC ¯C(KΦ)
+⏐
+⏐ ¯ψ A
+⟩
+|ϕ ¯A⟩.
+C Finite causal boxes
+In this work causal boxes are deﬁned by a set of maps. As explai ned in
+Section 4.1 , this allows systems to be included which produce an unbound ed
+number of messages and are thus not well-deﬁned as a single ma p on the
+entire setT , but only on all subsets T ≤ t for any t∈T . In this section we
+deﬁne the subset of causal boxes that are deﬁned on the entire setT and
+which are closed under composition. We call these ﬁnite causal boxes.
+It is not suﬃcient to deﬁne ﬁnite causal boxes as those system s that are
+captured by a map Φ : T(F T
+X )→ T(F T
+Y ) since this set is not closed under
+composition. For example, consider a system with T = N0, one input wire
+and two output wires, which, for every qubit received in posi tion t∈ N0,
+outputs a qubit on each wire in position t + 1. Furthermore, this system
+outputs a qubit on each wire at position t = 0. The system can be described
+by a map Φ : T(F T
+X )→ T(F T
+Y ) which outputs two sequences of n + 1 qubits
+for every sequence of n qubits it receives at positions shifted by 1. If we now
+put a loop from one of the output wires to the input wire, we get a system
+with one output wire that produces a qubit at every position t∈ N0. This
+new system outputs an inﬁnite sequence of qubits, which is we ll-deﬁned for
+everyt∈T , but not on the entire set T .
+The causality function ( Deﬁnition 4.3 ) associated with each causal box
+guarantees that every point t′∈T may be reached from any other point t≤
+t′ in a ﬁnite number of causal steps. To obtain closure under com position for
+ﬁnite causal boxes, it is necessary to limit causal boxes to a ﬁnite behavior,
+i.e., that all of T may be reached in a ﬁnite number of causal steps from any
+t∈T . The set of points T \χ (T ) are not needed to generate outputs, so
+one can think of causal boxes as terminating — at least, not re ading further
+inputs — when a point in T\ χ (T ) has been reached.
+Deﬁnition C.1 (Finite causality function). A causality functionχ : C(T )→
+C(T ) is a ﬁnite causality function if for every t∈T there exists an n∈ N
+such that
+t /∈ χ n(T ). (44)
+We can now deﬁne a ﬁnite causal box.
+49
+
+===== PAGE 50 =====
+
+Deﬁnition C.2 (Finite causal box) . A (dX,d Y )-ﬁnite causal box Φ is a
+system with input wire X and output wire Y of dimension dX and dY ,
+deﬁned by a completely positive, trace-preserving (CPTP) m ap
+Φ : T
+(
+F T
+X
+)
+→ T
+(
+F T
+Y
+)
+satisfying the following causality constraint: there must exist a function
+χ : C(T )→ C(T ) satisfying Deﬁnition C.1 such that for all C∈ C(T ),
+Φ C = Φ C◦ trT \ χ (C), (45)
+where Φ C := tr T \C ◦ Φ.
+Eq. (45) may be rewritten as
+trT \C ◦ Φ = Φ C◦ trT \ χ (C), (46)
+which is an exact replica of Eq. (21) withD =T andC∈ C(T ) instead ofC∈
+C(T ). The Stinespring and Choi-Jamio/suppress lkowski representations developed in
+Section 5 for Eq. (21) also apply to Eq. (46) . In particular, the map Φ of
+a ﬁnite causal box has a sequence representation ( Deﬁnition 5.3 ). It then
+follows that the proofs of closure for causal boxes from Section 6 are also
+proofs of closure for ﬁnite causal boxes.
+The proof of composition order indepence from Section 6 and the pseudo-
+metric deﬁnition from Section 7 are valid for all causal boxes and thus in par-
+ticular for ﬁnite causal boxes. Note that the causal boxes us ed to construct
+the distinguishers from Deﬁnition 7.1 are actually ﬁnite causal boxes.
+D Causality for total orders
+In
+Deﬁnition 4.3 a causality function is deﬁned to guarantee that every point
+t′∈T can be reached from any point t≤ t′ in a ﬁnite number of causal
+steps. We show in this section that in the special case where T is totally
+ordered, this condition can be reduced to requiring that the system is not
+arbitrarily fast around any point.
+More precisely, for a system Φ, let χ :T →T ∪{⊥} be a monotone
+function such that the output up to position t can be computed from the
+input up to position χ (t) < t, where χ (t) = ⊥ means that the output
+up to position t can be computed without any inputs. 30 As illustrated in
+Section 4.3 , the condition χ (t)<t is not suﬃcient to guarantee that systems
+are closed under composition: an example was given in which a n inﬁnite
+number of causal steps were performed before reaching the po int t = 1.
+We exclude such systems by additionally requiring that χ (t) < tmust also
+30By deﬁning ˆχ : C(T ) → C(T ) as ˆχ (C) := ⋃
+t∈C T ≤ χ(t) one gets a function that trivially
+satisﬁes all requirements of Deﬁnition 4.3 except Eq. (18) .
+50
+
+===== PAGE 51 =====
+
+hold in the limit as t→ t0, i.e., inf t>t0χ (t) < inft>t0t and sup t<t0χ (t) <
+supt<t0t.31
+In the example discussed in Section 4.3 , the sequence of output positions
+{0, 1/ 2, 3/ 4, 7/ 8, 15/ 16,... } converges to 1, which is a point in T = Q+.
+One could however give an example in which the sequence conve rges to a
+point which is not in T , e.g.,
+√
+2. Hence we require that the systems are not
+arbitrarily fast around all points t0 in the completion ofT (see Deﬁnition D.1
+here below and [ 67] for the deﬁnition of a completion of an ordered set). The
+condition with the supremum is actually redundant, so we omi t it from the
+following deﬁnition.
+Deﬁnition D.1 (Causality function for totally ordered sets
+32). LetT be
+a totally ordered countable set. Let Z(T )⊇T be its smallest completion
+such that for every subset P⊆T , infP∈ Z(T ) and supP∈ Z(T ).33 IfT
+does not have a minimum (maximum), we remove the inﬁmum (supr emum)
+from Z(T ), i.e., for p∈{ infT, supT} we deﬁne
+Z(T ) :=
+{
+Z(T )\{p} if p /∈T ,
+Z(T ) if p∈T .
+Finally, let ⊥ be a point deﬁned such that ⊥ < t0 for all t0 ∈ Z(T ). A
+montone function χ :T →T∪{⊥} is a causality function for totally ordered
+sets if
+∀t∈T , χ (t)<t,
+∀t0∈ Z(T ), inf
+t>t0
+χ (t)< inf
+t>t0
+t.
+With the causality function deﬁned as χ : T → T ∪{⊥} instead of
+χ : C(T )→ C(T ), Eq. (18) from Deﬁnition 4.3 can be rewritten as
+∀t,t ′∈T ,∃n∈ N, χ n(t′)<t. (47)
+We prove in Lemma D.2 that Deﬁnition D.1 implies that Eq. (47) is satisﬁed.
+Lemma D.2. Letχ :T →T∪{⊥} be a function satisfying Deﬁnition D.1 .
+Then for all t,t ′∈T there exists an n∈ N such that χ n(t′)≤ t.
+Proof. By contradiction, assume that this is not the case for some t,t ′∈T
+and consider the set P ={χ n(t′)}n∈ N. By the construction of Z(T ), the
+completion ofT , infP∈ Z(T ). Let t0 := infP. Because χ is monotone and
+31In general there might not be any distance measure on T , so these criteria are deﬁned
+using inﬁmum and supremum instead of a limit.
+32In the case where T ⊆ R, Deﬁnition D.1 is equivalent to requiring that for every
+u ∈ T there exists a δu > 0 such that for all t ≤ u, t − χ (t)>δ u.
+33This is called the Dedekind-MacNeille completion [ 67]. For example, Z(N) = N ∪
+{+∞} and Z(Q) = R ∪ {−∞ , +∞} .
+51
+
+===== PAGE 52 =====
+
+χ (p) < p, we must have that for all p > t0, χ (p) > t0. On the other hand,
+the condition inf p>t0χ (p) < inf p>t0t implies that there exists p > t0 such
+that χ (p)≤ t0.
+We now strengthen the causality deﬁnition from Deﬁnition D.1 so that it
+captures suﬃcient conditions to deﬁne ﬁnite causal boxes on totally ordered
+sets. As in Appendix C we have to exclude unbounded behavior as t gets
+larger. We achieve this by requiring that the systems may not be arbitrarily
+fast around the supremum of T .
+Deﬁnition D.3 (Finite causality function for totally ordered sets) . Let
+χ :T →T ∪{⊥} be a function satisfying Deﬁnition D.1 . We say that it is
+a ﬁnite causality function for totally ordered sets if additionally,
+sup
+t<t0
+χ (t)< sup
+t<t0
+t
+for t0 := supT .
+With causality functions deﬁned as χ :T →T ∪{⊥} , the condition for
+ﬁnite causal boxes from Eq. (44) in Deﬁnition C.1 becomes
+∀t∈T ,∃n∈ N,∀t′∈T , χ n(t′)<t. (48)
+We now prove that this is satisﬁed by Deﬁnition D.3 .
+Lemma D.4. Letχ :T →T∪{⊥} be a function satisfying Deﬁnition D.3 .
+Then for every t∈T there exists an n∈ N such that for all t′∈T , χ n(t′)<
+t.
+Proof. IfT has a maximum tmax, the lemma follows trivially, because by
+Lemma D.2 for all t there exists an n such that χ n(tmax) < t, and for all
+t′, χ n(t′) ≤ χ n(tmax). In the case where T does not have a maximum,
+let tsup = supT and let p = sup t<tsupχ (t). From Deﬁnition D.3 we have
+p < tsup, so there must exist t0∈T such that t0≥ p. Furthermore, for all
+t≥ t0,χ (t)≤ p≤ t0. Finally, by Lemma D.2 for all t there exists an n such
+that χ n(t0)<t , hence for all t′∈T , χ n+1(t′)<t .
+E Loops
+In
+Section 6.2 we proposed an alternative, constructive deﬁntion for a loo p
+(Eq. (30) ) as the limit of a sequence of maps. Each element in this seque nce
+loops a bit more of the output back to the input, and the limit d eﬁnes the
+complete loop. For a sequence of operators, the limit is deﬁn ed as follows.
+52
+
+===== PAGE 53 =====
+
+Deﬁnition E.1 (Operator convergence) . Let{Ui :HX → HY}∞
+i=1 be a
+sequence of linear operators. We say that Ui converges to U (in the strong
+operator topology) if and only if
+∀ψ∈H X,∀ε> 0,∃i0,∀i≥ i0, ∥Uiψ− Uψ∥<ε,
+where∥·∥ is the 2-norm.
+Let Φ C1 : T(F C2
+AB)→ T(F C1
+CD ) be a map with sequence representation
+U C1
+Φ =
+(n− 1∏
+i=1
+I Ci+1
+CD ⊗ Vi⊗ I C2\C i+1
+AB
+)(
+U Cn
+Φ ⊗ I C2\C n+1
+AB
+)
+, (49)
+which is illustrated in
+Figure 13a . We deﬁne the linear operator
+U C1
+Ψn
+:=
+(
+⟨Ω|Cn+1
+C ⊗ I C1
+D⊗ IQ1⊗ I T1
+C
+)(n− 1∏
+i=1
+I Ci+1
+D ⊗ Vi⊗ I C2\C i+1
+A
+)
+(
+U Cn
+Φ ⊗ I C2\C n+1
+A
+)(
+|Ω⟩Cn+1
+B ⊗ I C2
+A
+)
+, (50)
+which is obtained from Eq. (49) by looping the output on F Ti
+C to the input
+onF Ti
+B for i≤ n, inputting the vacuum state |Ω⟩ on the sub-wire F Cn+1
+B
+and projecting the sub-wire F Cn+1
+C on the vacuum state — the input |Ω⟩Cn+1
+B
+and projection on|Ω⟩Cn+1
+C ensure that all operators {U C1
+Ψn}∞
+n=1 have the same
+input and output Hilbert spaces. This is depicted in
+Figure 16 , which is a
+reproduction of Figure 13b along with the extra projections on |Ω⟩Cn+1
+C and
+vacuum inputs |Ω⟩Cn+1
+B , that had been omitted for simplicity. Let U C1
+Ψ be
+the limit operator as more of the wire C is looped back to the input B, i.e.,
+U C1
+Ψ := lim
+n→∞
+U C1
+Ψn.
+And deﬁne the map Ψ C1 : T(F C2
+A )→ T(F C1
+D ) by
+Ψ C1(ρ) := tr Q1C1
+(
+U C1
+Ψ ρ
+(
+U C1
+Ψ
+)†)
+, (51)
+where tr Q1C1 traces out the ancilla register Q1 as well as the sub-wire with
+Hilbert space F T1
+C . The main proposition that we prove in this section is
+that the map Ψ C1 deﬁned above is the map one obtains by applying the
+deﬁnition of a loop ( Deﬁnition 6.3 ) to Φ C1.
+Proposition E.2. The Choi-Jamio/suppress lkowski representation of the mapΨ C1
+from Eq. (51) is given by Eq. (31) . Furthermore, the terms in Eq. (31) are
+absolutely convergent, and if Φ C1 is CPTP, then so is Ψ C1.
+53
+
+===== PAGE 54 =====
+
+|Ω⟩Cn+1
+B
+F Cn+1
+A
+F Tn
+A
+F T3
+A
+F T2
+A
+|Ω⟩Cn+1
+C
+F Cn
+D
+F Tn−1
+D
+F T2
+D
+F T1
+D
+HQ1
+F T1
+C
+U Cn
+Φ
+P Ω
+C
+Vn− 1
+V2
+V1
+U C
+Ψn
+HQn
+F Tn
+C HQn−1
+F Tn−1
+C HQ3
+F T3
+C HQ2
+F T2
+C
+F Cn+1
+C
+Figure 16 – The outputs on C in positions Ti for i≤ n are looped back to
+the inputs on B. The outputs on C for i > nare projected on the vacuum
+state — P Ω
+C denotes this projector — and a vacuum state is input on B in the
+corresponding positions.
+We prove this proposition with the help of two lemmas. The ﬁrs t simply
+states that the operators U C1
+Ψn converge.
+Lemma E.3. Let the operators U C1
+Ψn be deﬁned as above. Then the limit
+operator U C1
+Ψ = lim n→∞ U C1
+Ψn exists. Furthermore, if U C1
+Φ is an isometry,
+then so is U C1
+Ψ .
+Proof. We prove the case in which U C1
+Φ is an isometry. The case of a linear
+operator U C1
+Φ that is not an isometry follows by writing it as an isometry
+followed by a projection.
+Let{bj
+i}i be a basis of F Tj
+C and let Ω n be shorthand for the vacuum state
+|Ω⟩Cn
+C . We build a basis for F C1
+C consisting of states that have a vacuum as
+preﬁx, i.e., all states of the form ci = Ω n⊗ ⨂n− 1
+j=1bj
+ij , wherebj
+ij is a basis state
+ofF Tj
+C and n∈ N. Any state ϕ∈F C1
+C can thus be written as ϕ = ∑
+iα ici
+for some coeﬃcients α i∈ C. For a normalized state ϕ∈F C1
+C and any ε> 0
+one can always ﬁnd a ﬁnite set of basis states indexed by i∈S such that∑
+i∈S|α i|2≥ 1− ε. Let n0 be such that for all i∈S , ci = Ω ni⊗ c′
+i with
+ni≤ n0. This means that ϕ = Ω n0⊗ ϕ n0− 1 +ϕ ′, where ϕ n0− 1∈ ⨂n0− 1
+j=1 F Tj
+C
+and∥ϕ ′∥2≤ ε.
+We ﬁx ε >0 and ψ ∈F C2
+A . To prove that the operators U C1
+Ψn converge,
+we will show that there exists an n0 such that for any n,m≥ n0,
+
+
+U C1
+Ψnψ− U C1
+Ψmψ
+
+
+≤ √
+ε.
+54
+
+===== PAGE 55 =====
+
+Let ϕ := U C1
+Φ (ψ A⊗| Ω⟩C2
+B )∈F C1
+CD and let n0∈ N be such that ϕ = Ω n0⊗
+ϕ n0− 1 +ϕ ′, where ϕ n0− 1∈ ⨂n0− 1
+j=1 F Tj
+C ⊗F C1
+D and∥ϕ ′∥2≤ ε. Let n≥ m≥
+n0. The decompositions of U C1
+Ψn and U C1
+Ψm into sequences of operators as in
+Figure 16 both start withU Cn
+Φ and ﬁnish with the sequence Vm− 1 toV1. They
+diﬀer only in their behavior on the positions Cm\C n. Here, U C1
+Ψn consists
+in the sequence Vn− 1 to Vm that are applied to the values on the A and C
+wires as well as the internal memory with Hilbert spaces HQi, whereas the
+sequence decomposition of the operator U C1
+Ψm additionally contains projectors
+on the vacuum state and the operators Vi,i∈{ m,...,n − 1}, are only applied
+to input states that have a vacuum on the B wire. Because these are linear
+operators we have U C1
+Ψmψ = Ω m+1⊗ ϕ m andU C1
+Ψnψ = Ω m+1⊗ ϕ m +ϕ ′. And
+because m≥ n0, ϕ m must have weight ∥ϕ m∥2≥ 1− ε, hence ∥ϕ ′∥2≤ ε.
+Putting this together we get
+
+
+U C1
+Ψnψ− U C1
+Ψmψ
+
+
+ =
+
+Ω m+1⊗ ϕ m +ϕ ′− Ω m+1⊗ ϕ m
+
+
+=
+
+ϕ ′
+≤ √
+ε.
+It is immediate that the limit operator U C1
+Ψ is an isometry, since for
+any ψ with∥ψ∥ = 1 and any ε there exists n0 such that for any n≥ n0,
+∥U C1
+Ψnψ∥≥ 1− ε.
+We now need to relate the maps Ψ C1
+n which have the Stinespring repre-
+sentationsU C1
+Ψn to their Choi-Jamio/suppress lkowski representations. In the following
+lemma we do this ﬁrst for a map Φ : T(HAB)→ T(HCD ) for which the
+output on C does not depend on the input on B. This special case was
+illustrated in Figure 12 , where UΦ is depicted on the left and the resulting
+system after connecting C to B is drawn on the right.
+Lemma E.4. Let Φ : T(HAB)→ T(HCD ) be a CP map with a Stinespring
+representation given by
+UΦ = (IC⊗ V )(UΨ⊗ IB),
+where UΨ : T(HA)→ T(HCQ) and V : T(HQB)→ T(HDR). Let {|kC⟩}k
+and{|ℓC⟩}ℓ be any orthonormal bases of HC and let {|kB⟩}k and{|ℓB⟩}ℓ
+denote the corresponding bases of HB, i.e., for all k and ℓ,|kC⟩∼
+=|kB⟩ and
+|ℓC⟩∼
+=|ℓB⟩. The map Φ ′ : T(HA)→ T(HD) obtained by plugging C into B
+has Choi-Jamio/suppress lkowski representation
+RΦ′(ψ D⊗ ψ A;ϕ D⊗ ϕ A) =
+∑
+k,ℓ
+RΦ(kC⊗ ψ D⊗ ψ A⊗ ¯kB;ℓC⊗ ϕ D⊗ ϕ A⊗ ¯ℓB), (52)
+where|¯kB⟩ = ∑∞
+i=1|i⟩
+⟨i|k⟩ for the basis {|iB⟩}i ofHB used in the Choi-
+Jamio/suppress lkowski representation ofΦ . Furthermore, the terms in this sum are
+absolutely convergent.
+55
+
+===== PAGE 56 =====
+
+Proof. Deﬁne ¯Ψ : T(HAB)→ T(HCQB ) and ¯Γ : T(HCQB )→ T(HCD ) as
+¯Ψ(ρ) = (UΨ⊗ IB)ρ
+(
+U †
+Ψ⊗ IB
+)
+,
+¯Γ(ρ) = tr R
+[
+(IC⊗ V )ρ
+(
+IC⊗ V †
+)]
+,
+and ¯Ψ ′ : T(HA)→ T(HCQ ) and ¯Γ ′ : T(HQB)→ T(HD) as
+¯Ψ ′(ρ) = UΨρU †
+Ψ,
+¯Γ ′(ρ) = tr R
+(
+VρV †
+)
+.
+Then Φ = ¯Γ◦ ¯Ψ and Φ ′ = ¯Γ ′◦ ¯Ψ ′. Writing up the Choi-Jamio/suppress lkowski
+representations of these two maps we get for any basis {|iQ⟩}i of Q,
+RΦ(kC⊗ ψ D⊗ ψ A⊗ ¯kB;ℓC⊗ ϕ D⊗ ϕ A⊗ ¯ℓB)
+=⟨kC,ψ D|¯Γ
+(¯Ψ
+(⏐
+⏐ ¯ψ A,k B
+⟩
+⟨ ¯ϕ A,ℓ B|
+))
+|ℓC,ϕ D⟩
+=
+∑
+e,h,i,j,m,n
+⟨kC,ψ D|¯Γ(|eC,i Q,m B⟩⟨hC,j Q,n B|)|ℓC,ϕ D⟩
+⟨eC,i Q,m B|¯Ψ
+(⏐
+⏐ ¯ψ A,k B
+⟩
+⟨ ¯ϕ A,ℓ B|
+)
+|hC,j Q,n B⟩
+=
+∑
+i,j
+⟨kC,ψ D|¯Γ(|kC,i Q,k B⟩⟨ℓC,j Q,ℓ B|)|ℓC,ϕ D⟩
+⟨kC,i Q,k B|¯Ψ
+(⏐
+⏐ ¯ψ A,k B
+⟩
+⟨ ¯ϕ A,ℓ B|
+)
+|ℓC,j Q,k B⟩
+=
+∑
+i,j
+⟨ψ D|¯Γ ′(|iQ,k B⟩⟨jQ,ℓ B|)|ϕ D⟩⟨kC,i Q|¯Ψ ′(⏐
+⏐ ¯ψ A
+⟩
+⟨ ¯ϕ A|
+)
+|ℓC,j Q⟩,
+where we have used that ¯Ψ and ¯Γ perform identity on B andC, respectively.
+And for Φ ′ we obtain.
+RΦ′(ψ D⊗ ψ A;ϕ D⊗ ϕ A)
+=⟨ψ D|¯Γ ′(¯Ψ ′(⏐
+⏐ ¯ψ A
+⟩
+⟨ ¯ϕ A|
+))
+|ϕ D⟩
+=
+∑
+i,j,k,ℓ
+⟨ψ D|¯Γ ′(|iQ,k B⟩⟨jQ,ℓ B|)|ϕ D⟩⟨kC,i Q|¯Ψ ′(⏐
+⏐ ¯ψ A
+⟩
+⟨ ¯ϕ A|
+)
+|ℓC,j Q⟩
+=
+∑
+k,ℓ
+RΦ(kC⊗ ψ D⊗ ψ A⊗ ¯kB;ℓC⊗ ϕ D⊗ ϕ A⊗ ¯ℓB).
+Note that this holds for any orthonormal bases {|kC⟩}k and{|ℓC⟩}ℓ of
+HC. Hence the order in the sum is irrelevant and the terms are abs olutely
+convergent.
+With these two lemmas, we can now prove Proposition E.2 . We ﬁrst
+use Lemma E.4 to show that the Choi-Jamio/suppress lkowski representation of the
+system after the loop, namely Ψ C, is given by Eq. (31) . Since in Lemma E.3
+we prove that the limit operator U C
+Ψ is an isometry, then Ψ C must be CPTP.
+56
+
+===== PAGE 57 =====
+
+Proof of Proposition E.2. Let RC1
+Φ (·;·) be the Choi-Jamio/suppress lkowski represen-
+tation of Φ C1. We derive the Choi-Jamio/suppress lkowski representation of ΨC1
+n by
+repeating n times the proof from Lemma E.4 , i.e., connecting F T1
+C toF T1
+B ,
+F T2
+C toF T2
+B , etc. This yields
+RC1
+Ψn(ψ D⊗ ψ A;ϕ D⊗ ϕ A) =
+=
+∑
+k,ℓ
+RC1
+Φ
+(
+Ω Cn+1
+C ⊗ kC⊗ ψ D⊗ ψ A⊗ ¯Ω Cn+1
+B ⊗ ¯kB;
+Ω Cn+1
+C ⊗ ℓC⊗ ϕ D⊗ ϕ A⊗ ¯Ω Cn+1
+B ⊗ ¯ℓB
+)
+,
+where{kC}k and{ℓC}ℓ are bases of ⨂n
+i=1F Ti
+C =F C1\C n+1
+C . As in
+Lemma E.4 ,
+the order of the summation is not relevant and so the terms are absolutely
+convergent. Using the fact that ⋃∞
+i=1Ti =C1, we immediately get the limit-
+ing case,
+RC1
+Ψ (ψ D⊗ ψ A;ϕ D⊗ ϕ A)
+= lim
+n→∞
+RC1
+Ψn(ψ D⊗ ψ A;ϕ D⊗ ϕ A)
+=
+∑
+k,ℓ
+RC1
+Φ
+(
+kC⊗ ψ D⊗ ψ A⊗ ¯kB;ℓC⊗ ϕ D⊗ ϕ A⊗ ¯ℓB
+)
+,
+where{kC}k and{ℓC}k are bases of F C1
+C , and as above, the terms are abso-
+lutely convergent. Finally, from
+Lemma E.3 we know thatU C1
+Ψ is an isometry
+if U C1
+Φ is an isometry, hence Ψ C1 is CPTP if Φ C1 is CPTP.
+F Alternative distinguishers
+In this section we consider two changes that could be made to t he notion of
+distinguishers and the corresponding pseudo-metric intro duced in
+Section 7 .
+In Appendix F.1 we deﬁne distinguishers as subnormalized causal boxes: in-
+stead of a normalized system which outputs either 0 or 1, we co nsider the
+subnormalized system resulting from conditioning the outp ut on 0. This re-
+sults in a simpliﬁcation of the pseudo-metric deﬁnition. Th e second change
+discussed in Appendix F.2 consists in removing the constraint that a distin-
+guisher D terminates at a ﬁxed point tD. Instead we consider a possibly
+inﬁnite sequence of bounded cuts C1 ⊆ C2 ⊆ ···, and deﬁne the distin-
+guisher’s output to be the limit value of the output on Ci as i→∞ . We
+then prove that the resulting pseudo-metric is equivalent t o the one from
+Section 7 .
+F.1 Subnormalized distinguishers
+Let ˆD ={ ˆD} be a set of distinguishers. Since by construction we deﬁne
+the output value of a distinguisher ˆD to be computed at some point t ˆD, the
+57
+
+===== PAGE 58 =====
+
+behavior of ˆD on all points p ≰t ˆD is irrelevant, and one can assume that ˆD
+is entirely described by the map ˆD≤ t ˆD . For any C∈ C(T ) one can take
+ˆDC(ρ) := tr T \C
+(
+ˆD≤ t ˆD (ρ)⊗| Ω⟩⟨Ω|T \T ≤ t ˆD
+)
+. (53)
+Given such a set ˆD ={ ˆDi}i, we deﬁne a set of subnormalized distin-
+guishers D ={Di}i by projecting the output of the distinguisher ˆDi on the
+vacuum state |Ω⟩. Like for ˆDi, each Di is entirely described by a subnor-
+malized map D≤ tD
+i , where tD = t ˆD. Using the construction from Eq. (53) ,
+any subnormalized map D≤ tD = id ≤ tD⊗ (D′)≤ tD such that ( D′)≤ tD satisﬁes
+causality is a valid subnormalized distinguisher.
+Connecting a subnormalized ( m,n )-distinguisher D to an (m,n )-causal
+boxes Φ results in a system DΦ = {DCΦ C}C∈ C(T ) that has no output or input
+wires. It is thus a set of numbers, where D≤ tD Φ ≤ tD∈ [0, 1] corresponds to
+the probability of ˆD outputting a vacuum state, i.e.,
+D≤ tD Φ ≤ tD = Pr
+[
+ˆD[Φ] = 0
+]
+.
+Using the natural representation introduced in Remark 6.4 , this probability
+may be written as a trace, namely
+D≤ tD Φ ≤ tD = tr
+(
+K ≤ tD
+DΦ
+)
+,
+where K ≤ tD
+DΦ is the natural representation of SW AP DΦ◦
+(
+D≤ tD⊗ Φ ≤ tD
+)
+,
+where SW APDΦ permutes the output wires so that they are aligned with
+the corresponding input wires and get connected by the trace operator tr.
+The statistical distance between binary random variables m ay be written
+in terms of one of the outcomes:
+1
+2
+∑
+x∈{0,1}
+⏐
+⏐
+⏐Pr
+[
+ˆD[Φ] = x
+]
+− Pr
+[
+ˆD[Ψ] = x
+]⏐
+⏐
+⏐
+=
+⏐
+⏐
+⏐Pr
+[
+ˆD[Φ] = 0
+]
+− Pr
+[
+ˆD[Ψ] = 0
+]⏐
+⏐
+⏐.
+Hence the distinguisher pseudo-metric from
+Deﬁnition 7.2 may equivalently
+be written as
+dD(Φ, Ψ) = sup
+D∈ D
+⏐
+⏐
+⏐tr
+(
+K ≤ tD
+DΦ
+)
+− tr
+(
+K ≤ tD
+DΨ
+)⏐
+⏐
+⏐,
+where tD is the position at which the output value of D is computed.
+Putting this together we get an alternative deﬁnition of the distance
+between causal boxes which is equivalent to
+Deﬁnition 7.2 .
+Deﬁnition F.1 (Distance). Let D ={D} be a set of subnormalized distin-
+guishers as described above. Let Φ and Ψ be two ( m,n )-causal boxes. The
+distance between Φ and Ψ with respect to D is given by
+dD(Φ, Ψ) := sup
+D∈ D
+⏐
+⏐
+⏐tr
+(
+K ≤ tD
+DΦ
+)
+− tr
+(
+K ≤ tD
+DΨ
+)⏐
+⏐
+⏐.
+58
+
+===== PAGE 59 =====
+
+F.2 The distinguishing limit
+In
+Section 7 we only consider the output of a distinguisher D up to some
+point tD ∈ T. In this section we consider an alternative deﬁnition of a
+distinguisher that is not constrained in such a way. Instead , we consider
+the output on a totally ordered (possibly inﬁnite) sequence of bounded cuts
+{Ci}i∈I . The output of the distinguisher is then taken to be the limit value
+as the sequence progresses. For example, if the set T is totally ordered, then
+one can choose I =T andCi =T ≤ i.
+Deﬁnition F.2 (Limit distinguisher) . LetI be a totally ordered set with
+∞ := supI and let {Ci}i∈I be a sequence of bounded cuts such that i≤
+j =⇒ Ci⊆C j. A ( m,n )-limit distinguisher D ={idC⊗ ˆDC}C∈ C(T ) consists
+of a (ˆn, ˆm)-causal box ˆD ={ ˆDC}C∈ C(T ) withm+1− ˆm =n− ˆn, a sequence of
+bounded cuts{Ci}i∈I as described above, and a speciﬁcation of how the dis-
+tinguisher is connected to an ( m,n )-dimensional system — i.e., which input
+and output sub-wires are connected to ˆD and which are directly connected
+by a loop. For an ( m,n )-distinguisher D and an (m,n )-causal box Φ, let DΦ
+denote the causal box with no input wire and a 1-dimensional o utput wire
+resulting from connecting the systems as speciﬁed. We deﬁne DC[Φ C] to be
+the binary random variable on {0, 1} obtained by projecting the output of
+DΦ within C on P C
+0 =|Ω⟩⟨Ω|C and P C
+1 =I C−| Ω⟩⟨Ω|C. D[Φ] is then deﬁned
+as the limit over {Ci} as i→∞ , namely
+Pr[D[Φ] = x] := lim
+i→∞
+Pr
+[
+DCi[Φ Ci] = x
+]
+,
+which we also write D[Φ] = lim i→∞ DCi[Φ Ci].
+Note that this limit is always well-deﬁned, because for any i<j ,
+Pr
+[
+DCi [Φ Ci] = 0
+]
+≥ Pr
+[
+DCj [Φ Cj ] = 0
+]
+and
+Pr
+[
+DCi [Φ Ci] = 1
+]
+≤ Pr
+[
+DCj [Φ Cj ] = 1
+]
+,
+but both are bounded, by 0 and 1, respectively.
+The sequence of bounded cuts {Ci}i∈I is essential in Deﬁnition F.2 . An
+output at two points t and t′ that have no common future — i.e., ∄t0 such
+that t0 ≥ t and t0 ≥ t′— is not necessarily well-deﬁned on both points
+simultaneously. This sequence then tells us which is the rel evant point.
+Since diﬀerent distinguishers might use diﬀerent cuts {Ci}i∈I , the entire set
+T is still covered by considering the supremum over sets of dis tinguishers.
+Deﬁnition F.3 (Limit distance) . Given a set of ( m,n )-limit distinguishers
+D, the limit distance between two ( m,n )-causal boxes Φ and Ψ is deﬁned as
+dD(Φ, Ψ) := sup
+D∈ D
+δ(D[Φ], D[Ψ]),
+59
+
+===== PAGE 60 =====
+
+where δ(·,·) is the statistical or total variation distance.
+As in Section 7 one can show that this distance is a pseudo-metric. It is
+also a metric if D is the set of all distinguishers. One can also rewrite the
+deﬁnition using subnormalized boxes as in Appendix F.1 . We do not write
+up these proofs, since they are nearly identical to the case o f distinguishers
+from Deﬁnition 7.1 .
+Since a distinguisher D that takes a decision before some point tD is a spe-
+cial case of a limit distinguisher with a single cut C1 =T ≤ tD, Deﬁnition F.3
+is more general than Deﬁnition 7.2 . We now show that the converse also
+holds: we prove that for any set of limit distinguishers D we can ﬁnd a
+set of distinguishers E that is at least as good at distinguishing any pair of
+boxes. For i∈I and a limit distinguisher D (satisfying Deﬁnition F.2 ), we
+deﬁne a distinguisher Di (satisfying Deﬁnition 7.1 ) as follows. Di behaves
+identically to D withinCi, but ignores all inputs and produces no outputs
+out of Ci, i.e., Di is deﬁned by the map DCi. The output of Di is then
+computed onT ≤ ti for any ti∈T such thatCi⊆T ≤ ti.
+Let D be any set of distinguishers, and let
+E ={Di : D∈ D,i∈I}
+be the set obtained as described above. We now prove that E is at least as
+good as D at distinguishing causal boxes.
+Lemma F.4. Let D and E be deﬁned as above. Then for any Φ and Ψ ,
+dD(Φ, Ψ) ≤ dE(Φ, Ψ).
+Proof. For any D∈ D one has
+δ(D[Φ], D[Ψ]) = lim
+i→∞
+δ(DCi [Φ Ci], DCi [Ψ Ci])
+≤ sup
+i
+δ(DCi [Φ Ci], DCi [Ψ Ci])
+= sup
+i
+δ(Di[Φ], Di[Ψ]) ,
+and therefore
+dD(Φ, Ψ) = sup
+D
+δ(D[Φ], D[Ψ])
+≤ sup
+D,i
+δ(Di[Φ], Di[Ψ])
+=dE(Φ, Ψ) .
+Remark F.5. We get equality in Lemma F.4 if E⊆ D, i.e., if for every D∈ D,
+the same distinguisher truncated at Ci is also in D.
+60
+
+===== PAGE 61 =====
+
+G Technical lemmas
+Parallel composition of causality functions. In
+Proposition 6.2 we
+prove that the parallel composition of two causal boxes is a n ew valid box.
+To do this, we deﬁne the causality function for the new box as t he union of
+the causality functions of both components. We prove in Lemma G.1 that
+this results in a valid causality function.
+Lemma G.1. Let χ 1 and χ 2 be two causality functions for some partially
+ordered setT . Then the function deﬁned as χ new(C) :=χ 1(C)∪χ 2(C) is also
+a causality function.
+Proof. We need to prove that the four conditions from
+Deﬁnition 4.3 hold.
+Eq. (15) follows because
+χ new(C∪D ) = χ 1(C∪D )∪ χ 2(C∪D )
+=χ 1(C)∪ χ 1(D)∪ χ 2(C)∪ χ 2(D)
+=χ new(C)∪ χ new(D).
+Eq. (16) is satisﬁed because if C⊆D , then
+χ new(C) = χ 1(C)∪ χ 2(C)
+⊆ χ 1(D)∪ χ 2(D)
+=χ new(D).
+Since χ 1(C) ⊊C and χ 2(C) ⊊C, we have that χ new(C)⊆C . To prove
+that Eq. (17) is satisﬁed, it remains to show that χ new(C)̸=C. This follows
+immediately if Eq. (18) holds for χ new, since otherwise for all n,χ n
+new(C) =C
+and we therefore have t∈ χ n
+new(C) for all n.
+Hence it remains to prove that
+Eq. (18) is satisﬁed, i.e., we need to
+show that for every C∈ C(T ) and t∈C , there exists an n∈ N such that
+t /∈ χ n
+new(C). Since χ 1 and χ 2 are valid causality functions, we know that
+there exists an n1 such that t /∈ χ n1
+1 (C) and an n2 such that t /∈ χ n2
+2 (C).
+We now prove that t /∈ χ n1+n2
+new (C). For s ∈ {1, 2}n we deﬁne χ s(C) :=
+χ s1◦···◦ χ sn(C). From
+Eq. (15) it follows that χ n
+new(C) = ⋃
+s∈{1,2}nχ s(C).
+Furthermore, combining Eqs.
+(16) and (17) we ﬁnd that χ ′◦χ◦χ ′(C)⊆
+χ◦χ ′(C)⊆ χ (C). Thus, if at least k bits of s take the value 1 (2), then
+χ s(C)⊆ χ k
+1(C) (χ s(C)⊆ χ k
+1(C)). So t /∈ χ n1+n2
+new (C).
+Commuting limits. Swapping the order in which two loops are applied
+to a quantum box corresponds to swapping the order of the limi ts implicit
+in Eq. (31) . We give here a simple condition that allows the order of the
+limits to be swapped, which is suﬃcient to prove in Lemma 6.10 that loops
+commute. We deﬁne the double limit as
+lim
+m,n→∞
+amn =L :⇐⇒ ∀ ε> 0,∃N∈ N,∀m,n≥ N, |amn− L|<ε.
+61
+
+===== PAGE 62 =====
+
+Lemma G.2. Letamn be a sequence of complex numbers indexed by m,n∈
+N. If
+lim
+m→∞
+lim
+n→∞
+amn and lim
+m,n→∞
+amn
+both exist, then they converge to the same value.
+Proof. Let lim m,n→∞ amn = L and lim n→∞ amn = Lm. We want to prove
+that lim m→∞ Lm = L. Fix ε > 0 and let M be such that ∀m,n ≥ M ,
+|amn− L|<ε . For any m≥ M , pick Nm≥ M such that|amNm− Lm|<ε .
+Hence, there exists M such that for any m≥ M
+|Lm− L|≤| Lm− amNm|+|amNm− L|< 2ε.
+References
+[1] Gus Gutoski and John Watrous. Toward a general theory of q uantum
+games. In Proceedings of the 39th Symposium on Theory of Computing,
+STOC ’07, pages 565–574. ACM, 2007. [ doi:10.1145/1250790.1250873,
+arXiv:quant-ph/0611234].
+[2] Gus Gutoski. On a measure of distance for quantum strateg ies. Journal
+of Mathematical Physics , 53(3):032202, 2012. [ doi:10.1063/1.3693621,
+arXiv:1008.4636].
+[3] Giulio Chiribella, Giacomo Mauro D’Ariano, and Paolo Pe rinotti. Theo-
+retical framework for quantum networks. Physical Review A, 80:022339,
+August 2009. [ doi:10.1103/PhysRevA.80.022339, arXiv:0904.4483].
+[4] Lucien Hardy. Reformulating and reconstructing quantu m theory.
+eprint, 2011. [ arXiv:1104.2066].
+[5] Lucien Hardy. The operator tensor formulation of quantu m theory.
+Philosophical Transactions of the Royal Society of London A : Mathe-
+matical, Physical and Engineering Sciences , 370(1971):3385–3417, 2012.
+[doi:10.1098/rsta.2011.0326, arXiv:1201.4390].
+[6] Lucien Hardy. Quantum theory with bold operator tensors .
+Philosophical Transactions of the Royal Society of London A :
+Mathematical, Physical and Engineering Sciences , 373(2047), 2015.
+[doi:10.1098/rsta.2014.0239].
+[7] Lucien Hardy. Probability theories with dynamic causal struc-
+ture: A new framework for quantum gravity. eprint, 2005.
+[
+arXiv:gr-qc/0509120].
+62
+
+===== PAGE 63 =====
+
+[8] Lucien Hardy. Towards quantum gravity: a framework for
+probabilistic theories with non-ﬁxed causal structure. Journal
+of Physics A: Mathematical and Theoretical , 40(12):3081, 2007.
+[doi:10.1088/1751-8113/40/12/S12, arXiv:gr-qc/0608043].
+[9] Ueli Maurer. Indistinguishability of random systems. I n Ad-
+vances in Cryptology – EUROCRYPT 2002 , volume 2332 of Lec-
+ture Notes in Computer Science , pages 110–132. Springer, 2002.
+[doi:10.1007/3-540-46035-7 8].
+[10] Ueli Maurer, Krzysztof Pietrzak, and Renato Renner. In distinguishabil-
+ity ampliﬁcation. In Advances in Cryptology – CRYPTO 2007 , volume
+4622 of Lecture Notes in Computer Science , pages 130–149. Springer,
+2007. [ doi:10.1007/978-3-540-74143-5 8].
+[11] Vedran Dunjko, Joseph Fitzsimons, Christopher Portma nn, and Re-
+nato Renner. Composable security of delegated quantum comp utation.
+In Advances in Cryptology – ASIACRYPT 2014, Proceedings, Part II ,
+volume 8874 of Lecture Notes in Computer Science , pages 406–425.
+Springer, 2014. [ doi:10.1007/978-3-662-45608-8 22, arXiv:1301.3662].
+[12] Giulio Chiribella, Giacomo Mauro D’Ariano, Paolo Peri notti,
+and Benoit Valiron. Quantum computations without deﬁnite
+causal structure. Physical Review A , 88:022318, August 2013.
+[
+doi:10.1103/PhysRevA.88.022318, arXiv:0912.0195].
+[13] Jayne Thompson, Mile Gu, and Kavan Modi amnd Vlatko Ve-
+dral. Quantum computing with black-box subroutines. eprin t, 2013.
+[arXiv:1310.2927].
+[14] Mateus Ara´ ujo, Adrien Feix, Fabio Costa, and ˇCaslav Brukner. Quan-
+tum circuits cannot control unknown operations. New Journal of
+Physics, 16(9):093026, 2014. [ doi:10.1088/1367-2630/16/9/093026,
+arXiv:1309.7976].
+[15] Xiao-Qi Zhou, Timothy C. Ralph, Pruet Kalasuwan, Mian Z hang, Al-
+berto Peruzzo, Benjamin P. Lanyon, and Jeremy L. O’Brien. Ad ding
+control to arbitrary unknown quantum operations. Nature Communica-
+tions, 2:413, August 2011. [ doi:10.1038/ncomms1392, arXiv:1006.2670].
+[16] Nicolai Friis, Vedran Dunjko, Wolfgang D¨ ur, and Hans J . Briegel. Im-
+plementing quantum control for unknown subroutines. Physical Re-
+view A , 89:030303, March 2014. [ doi:10.1103/PhysRevA.89.030303,
+arXiv:1401.8128].
+[17] Mateus Ara´ ujo, Fabio Costa, and ˇCaslav Brukner. Com-
+putational advantage from quantum-controlled ordering of
+63
+
+===== PAGE 64 =====
+
+gates. Physical Review Letters , 113:250402, December 2014.
+[doi:10.1103/PhysRevLett.113.250402, arXiv:1401.8127].
+[18] Lorenzo M. Procopio, Amir Moqanaki, Mateus Ara´ ujo, Fa bio Costa,
+Irati Alonso Calafell, Emma G. Dowd, Deny R. Hamel, Lee A. Roz ema,
+ˇCaslav Brukner, and Philip Walther. Experimental superpos ition of
+orders of quantum gates. Nature Communications, 6:7913, August 2015.
+[doi:10.1038/ncomms8913, arXiv:1412.4006].
+[19] Timoteo Colnaghi, Giacomo Mauro D’Ariano, Stefano Fac chini, and
+Paolo Perinotti. Quantum computation with programmable co nnec-
+tions between gates. Physics Letters A , 376(45):2940 – 2943, 2012.
+[doi:10.1016/j.physleta.2012.08.028, arXiv:1109.5987].
+[20] Giulio Chiribella. Perfect discrimination of no-sign alling chan-
+nels via quantum superposition of causal structures. Physical Re-
+view A , 86:040301, October 2012. [ doi:10.1103/PhysRevA.86.040301,
+arXiv:1109.5154].
+[21] Adrien Feix, Mateus Ara´ ujo, and ˇCaslav Brukner. Quantum superposi-
+tion of the order of parties as a communication resource. Physical Re-
+view A , 92:052326, November 2015. [ doi:10.1103/PhysRevA.92.052326,
+arXiv:1508.07840].
+[22] Dominique Unruh. Simulatable security for quantum pro tocols. eprint,
+2004. [ arXiv:quant-ph/0409125].
+[23] Dominique Unruh. Universally composable quantum mult i-party com-
+putation. In Advances in Cryptology – EUROCRYPT 2010 , volume
+6110 of Lecture Notes in Computer Science , pages 486–505. Springer,
+2010. [ doi:10.1007/978-3-642-13190-5 25, arXiv:0910.2912].
+[24] Michael Ben-Or and Dominic Mayers. General security de ﬁnition
+and composability for quantum & classical protocols. eprin t, 2004.
+[arXiv:quant-ph/0409062].
+[25] Ognyan Oreshkov and Christina Giarmatzi. Causal and ca usally
+separable processes. New Journal of Physics , 18(9):093020, 2016.
+[doi:10.1088/1367-2630/18/9/093020, arXiv:1506.05449].
+[26] Mateus Ara´ ujo, Cyril Branciard, Fabio Costa, Adrien F eix,
+Christina Giarmatzi, and ˇCaslav Brukner. Witnessing causal
+nonseparability. New Journal of Physics , 17(10):102001, 2015.
+[doi:10.1088/1367-2630/17/10/102001, arXiv:1506.03776].
+[27] Ueli Maurer and Renato Renner. Abstract cryptography. In Proceedings
+of Innovations in Computer Science, ICS 2011 , pages 1–21. Tsinghua
+University Press, 2011.
+64
+
+===== PAGE 65 =====
+
+[28] Christopher Portmann and Renato Renner. Cryptographi c security of
+quantum key distribution. eprint, 2014. [ arXiv:1409.3525].
+[29] Ueli Maurer. Authentication ampliﬁcation by synchron ization.
+In Proceedings of the 2013 IEEE International Symposium on
+Information Theory, ISIT 2013 , pages 2711–2714. IEEE, 2013.
+[doi:10.1109/ISIT.2013.6620719].
+[30] Christopher Portmann. Key recycling in authenticatio n. IEEE
+Transactions on Information Theory , 60(7):4383–4396, July 2014.
+[doi:10.1109/TIT.2014.2317312, arXiv:1202.1229].
+[31] Adrian Kent. Unconditionally secure bit commitment. Physical Review
+Letters, 83:1447–1450, August 1999. [ doi:10.1103/PhysRevLett.83.1447,
+arXiv:quant-ph/9810068].
+[32] Adrian Kent. Unconditionally secure bit commitment by transmitting
+measurement outcomes. Physical Review Letters , 109:130501, Septem-
+ber 2012. [ doi:10.1103/PhysRevLett.109.130501, arXiv:1108.2879].
+[33] J¸ edrzej Kaniewski, Marco Tomamichel, Esther H¨ anggi, and Stephanie
+Wehner. Secure bit commitment from relativistic constrain ts. IEEE
+Transactions on Information Theory , 59(7):4687–4699, July 2013.
+[doi:10.1109/TIT.2013.2247463, arXiv:1206.1740].
+[34] T. Lunghi, J. Kaniewski, F. Bussi` eres, R. Houlmann, M. Tomamichel,
+S. Wehner, and H. Zbinden. Practical relativistic bit com-
+mitment. Physical Review Letters , 115:030502, July 2015.
+[
+doi:10.1103/PhysRevLett.115.030502, arXiv:1411.4917].
+[35] Emily Adlam and Adrian Kent. Deterministic relativist ic quan-
+tum bit commitment. International Journal of Quantum In-
+formation, 13(05):1550029, 2015. [ doi:10.1142/S021974991550029X,
+arXiv:1504.00943].
+[36] Harry Buhrman, Nishanth Chandran, Serge Fehr, Ran Gell es,
+Vipul Goyal, Rafail Ostrovsky, and Christian Schaﬀner. Posi tion-
+based quantum cryptography: Impossibility and construc-
+tions. In Advances in Cryptology – CRYPTO 2011 , volume
+6841 of Lecture Notes in Computer Science , pages 429–446.
+Springer, 2011. [
+doi:10.1007/978-3-642-22792-9 24, arXiv:1009.2490,
+IACR e-print: 2010/275 ].
+[37] Dominique Unruh. Quantum position veriﬁcation in the r andom or-
+acle model. In Advances in Cryptology – CRYPTO 2014 , volume
+8617 of Lecture Notes in Computer Science , pages 1–18. Springer, 2014.
+[doi:10.1007/978-3-662-44381-1 1, IACR e-print: 2014/118 ].
+65
+
+===== PAGE 66 =====
+
+[38] Dominique Unruh and J¨ orn M¨ uller-Quade. Universallycomposable in-
+coercibility. In Advances in Cryptology – CRYPTO 2010 , volume 6223
+of Lecture Notes in Computer Science , pages 411–428. Springer, 2010.
+[doi:10.1007/978-3-642-14623-7 22, IACR e-print: 2009/520 ].
+[39] Christian Matt and Ueli Maurer. The one-time pad revis-
+ited. In Proceedings of the 2013 IEEE International Symposium
+on Information Theory, ISIT 2013 , pages 2706–2710. IEEE, 2013.
+[doi:10.1109/ISIT.2013.6620718].
+[40] Lucien Hardy. Quantum gravity computers: On the theory of com-
+putation with indeﬁnite causal structure. In Wayne C. Myrvo ld and
+Joy Christian, editors, Quantum Reality, Relativistic Causality, and
+Closing the Epistemic Circle: Essays in Honour of Abner Shimon y,
+pages 379–401. Springer, 2009. [ doi:10.1007/978-1-4020-9107-0 21,
+arXiv:quant-ph/0701019].
+[41] Lucien Hardy. Formalism locality in quantum theory and quantum
+gravity. In Alisa Bokulich and Gregg Jaeger, editors, Philosophy of
+Quantum Information and Entanglement , pages 44–62. Cambridge Uni-
+versity Press, 2010. [ arXiv:0804.0054].
+[42] Ognyan Oreshkov, Fabio Costa, and ˇCaslav Brukner. Quantum corre-
+lations with no causal order. Nature Communications, 3:1092, October
+2012. [ doi:10.1038/ncomms2076, arXiv:1105.4464].
+[43] ˇCaslav Brukner. Quantum causality. Nature Physics , 10(4):259–263,
+April 2014. [ doi:10.1038/nphys2930].
+[44] Cyril Branciard. Witnesses of causal nonseparability : an introduc-
+tion and a few case studies. Scientiﬁc Reports , 6:26018, May 2016.
+[doi:10.1038/srep26018, arXiv:1603.00043].
+[45] ¨Amin Baumeler and Stefan Wolf. Perfect signaling among thre e parties
+violating predeﬁned causal order. In Proceedings of the 2014 IEEE In-
+ternational Symposium on Information Theory, ISIT 2014 , pages 526–
+530. IEEE, 2014. [ doi:10.1109/ISIT.2014.6874888, arXiv:1312.5916].
+[46] ˇCaslav Brukner. Bounding quantum correlations with indeﬁ-
+nite causal order. New Journal of Physics , 17(8):083034, 2015.
+[
+doi:10.1088/1367-2630/17/8/083034, arXiv:1404.0721].
+[47] Cyril Branciard, Mateus Ara´ ujo, Adrien Feix, Fabio Co sta,
+and ˇCaslav Brukner. The simplest causal inequalities and
+their violation. New Journal of Physics , 18(1):013008, 2016.
+[doi:10.1088/1367-2630/18/1/013008, arXiv:1508.01704].
+66
+
+===== PAGE 67 =====
+
+[48] ¨Amin Baumeler and Stefan Wolf. Device-independent test of c ausal or-
+der and relations to ﬁxed-points. New Journal of Physics , 18(3):035014,
+2016. [ doi:10.1088/1367-2630/18/3/035014, arXiv:1511.05444].
+[49] ¨Amin Baumeler, Adrien Feix, and Stefan Wolf. Maximal incom-
+patibility of locally classical behavior and global causal order in
+multiparty scenarios. Physical Review A , 90:042106, October 2014.
+[
+doi:10.1103/PhysRevA.90.042106, arXiv:1403.7333].
+[50] ¨Amin Baumeler and Stefan Wolf. The space of logically con-
+sistent classical processes without causal order. New Journal of
+Physics, 18(1):013036, 2016. [
+doi:10.1088/1367-2630/18/1/013036,
+arXiv:1507.01714].
+[51] ¨Amin Baumeler and Stefan Wolf. Non-causal computation avoi d-
+ing the grandfather and information antinomies. eprint, 20 16.
+[arXiv:1601.06522].
+[52] Ognyan Oreshkov and Nicolas J. Cerf. Operational quant um theory
+without predeﬁned time. New Journal of Physics , 18(7):073037, 2016.
+[doi:10.1088/1367-2630/18/7/073037, arXiv:1406.3829].
+[53] Christian Matt, Ueli Maurer, Christopher Portmann, Re nato Renner,
+and Bj¨ orn Tackmann. Toward an algebraic theory of systems. eprint,
+2016. [ arXiv:1609.04293].
+[54] Lucien Hardy. On the theory of composition in physics. I n Bob
+Coecke, Luke Ong, and Prakash Panangaden, editors, Computa-
+tion, Logic, Games, and Quantum Foundations. The Many Facets
+of Samson Abramsky: Essays Dedicated to Samson Abramsky on
+the Occasion of His 60th Birthday , pages 83–106. Springer, 2013.
+[
+doi:10.1007/978-3-642-38164-5 7, arXiv:1303.1537].
+[55] Edward A. Lee and Alberto Sangiovanni-Vincentelli. A f ramework for
+comparing models of computation. IEEE Transactions on Computer-
+Aided Design of Integrated Circuits and Systems , 17(12):1217–1229, De-
+cember 1998. [ doi:10.1109/43.736561].
+[56] Vern Paulsen. Completely Bounded Maps and Operator Algebras . Num-
+ber 78 in Cambridge Studies in Advanced Mathematics. Cambri dge
+University Press, 2003. [ doi:10.1017/CBO9780511546631].
+[57] John Watrous. Theory of quantum information, 2016. Boo k draft,
+https://cs.uwaterloo.ca/~watrous/TQI/.
+[58] Alexander S. Holevo. The Choi-Jamio/suppress lkowski forms of quantum Gaus-
+sian channels. Journal of Mathematical Physics , 52(4):042202, 2011.
+[doi:10.1063/1.3581879, arXiv:1004.0196].
+67
+
+===== PAGE 68 =====
+
+[59] Paul Benioﬀ. The computer as a physical system: A microsc opic quan-
+tum mechanical hamiltonian model of computers as represent ed by
+turing machines. Journal of Statistical Physics , 22(5):563–591, 1980.
+[doi:10.1007/BF01011339].
+[60] David Deutsch. Quantum theory, the church-turing prin ciple and the
+universal quantum computer. Proceedings of the Royal Society of Lon-
+don A: Mathematical, Physical and Engineering Sciences , 400(1818):97–
+117, 1985. [ doi:10.1098/rspa.1985.0070].
+[61] Andrew Chi-Chih Yao. Quantum circuit complexity. In Proceedings of
+the 34st Symposium on Foundations of Computer Science, FOCS ’9 3,
+pages 352–361. IEEE, 1993. [ doi:10.1109/SFCS.1993.366852].
+[62] Ethan Bernstein and Umesh Vazirani. Quantum complexit y the-
+ory. SIAM Journal on Computing , 26(5):1411–1473, October 1997.
+[doi:10.1137/S0097539796300921].
+[63] David Deutsch. Quantum computational networks. Proceedings of the
+Royal Society of London A: Mathematical, Physical and Engin eering
+Sciences, 425(1868):73–90, 1989. [ doi:10.1098/rspa.1989.0099].
+[64] John Goold, Marcus Huber, Arnau Riera, L ´ ıdia del Rio, a nd Paul
+Skrzypczyk. The role of quantum information in thermodynam ics—
+a topical review. Journal of Physics A: Mathematical and The-
+oretical, 49(14):143001, 2016. [ doi:10.1088/1751-8113/49/14/143001,
+arXiv:1505.07835].
+[65] Philippe Faist. Quantum Coarse-Graining: An Information-Theoretic
+Approach to Thermodynamics . PhD thesis, Swiss Federal Institute of
+Technology (ETH) Zurich, 2016. [ arXiv:1607.03104].
+[66] Adrien Feix, Mateus Ara´ ujo, and ˇCaslav Brukner. Causally non-
+separable processes admitting a causal model. New Journal of
+Physics, 18(8):083040, 2016. [ doi:10.1088/1367-2630/18/8/083040,
+arXiv:1604.03391].
+[67] Bernd S. W. Schr¨ oder. Ordered Sets: An Introduction . Birkh¨ auser
+Boston, 2003. [ doi:10.1007/978-1-4612-0053-6].
+68

@@ -1,0 +1,170 @@
+{
+  "schema_version": "final-theory-cpobc-d2-phase0-v0.3.2",
+  "paper": {
+    "id": "arXiv:2603.25503v1",
+    "local_file": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+    "expected_sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa",
+    "observed_sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa",
+    "hash_match": true
+  },
+  "pdf_visual_verification": {
+    "method": "Poppler 140 dpi page render followed by visual inspection; extracted text used only to locate pages",
+    "pages_inspected": [
+      16,
+      26,
+      27,
+      28,
+      29,
+      31,
+      35
+    ],
+    "equations": {
+      "107": {
+        "pdf_page": 27,
+        "content": "A_n = T_m G_n G_m^-1 for a non-timid transition"
+      },
+      "108": {
+        "pdf_page": 27,
+        "content": "timid transition inclusion-exclusion in gregarious operators"
+      },
+      "112": {
+        "pdf_page": 27,
+        "content": "G_n^(0) = S_alpha Q_n S_alpha^-1"
+      },
+      "114": {
+        "pdf_page": 27,
+        "content": "G_n G_k^-1 G_m = G_m G_k^-1 G_n"
+      },
+      "120": {
+        "pdf_page": 28,
+        "content": "Q_n Q_k^-1 Q_m = Q_m Q_k^-1 Q_n"
+      },
+      "129": {
+        "pdf_page": 29,
+        "content": "[Q_m Q_n^-1, Q_l Q_k^-1] = 0"
+      },
+      "130": {
+        "pdf_page": 29,
+        "content": "[Q_1 Q_2^-1, Q_1^-1 Q_2] = 0"
+      },
+      "165": {
+        "pdf_page": 35,
+        "content": "Q_1=a_1 sigma_1, Q_2=a_2 sigma_2, Q_3=a_3 sigma_1, Q_4=a_4 sigma_2"
+      }
+    },
+    "inspection_status": "VISUALLY_CONFIRMED_THIS_RELEASE",
+    "claim_boundary": "The PDF confirms the displayed relations and Pauli ansatz scope; it does not prove the new project reductions."
+  },
+  "frozen_artifacts": {
+    "results/v0.3.1_cpobc_relations_n4.json": {
+      "expected_sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3",
+      "observed_sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3",
+      "hash_match": true
+    },
+    "results/v0.3.1_d3_strata_manifest.json": {
+      "expected_sha256": "3729a701f6f909cecb6d6889d72bcb7cd5b4d03cc9822d39c56329432e9297c5",
+      "observed_sha256": "3729a701f6f909cecb6d6889d72bcb7cd5b4d03cc9822d39c56329432e9297c5",
+      "hash_match": true,
+      "required_status": "UNRESOLVED strata frozen from v0.3.1"
+    }
+  },
+  "F1_counts": {
+    "expected": {
+      "compiled_cross_stage_relations": 641,
+      "denominator_cleared_word_equations": 783,
+      "transition_occurrence_variables": 165,
+      "MSR_operator_constraints": 24,
+      "bell_families": 146,
+      "transition_orbits": 131
+    },
+    "observed": {
+      "compiled_cross_stage_relations": 641,
+      "denominator_cleared_word_equations": 783,
+      "transition_occurrence_variables": 165,
+      "MSR_operator_constraints": 24,
+      "bell_families": 146,
+      "transition_orbits": 131
+    },
+    "exact_match": true
+  },
+  "F4_R_commutation": {
+    "identity": "numerator([Q_1^-1 Q_n,Q_1^-1 Q_m]) = adj(Q_1)*cleared_Eq120(k=1)",
+    "assumption": "det(Q_1) != 0",
+    "certificate_residual": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "verified": true
+  },
+  "F4_monomial_family": {
+    "definition": {
+      "Q_1": "q1*sigma_x",
+      "Q_n": "sigma_x*diag(a_n,b_n), n=2,3,4"
+    },
+    "eq120": {
+      "admissible_index_count": 8,
+      "all_residuals_zero": true
+    },
+    "eq129": {
+      "admissible_index_count": 24,
+      "all_residuals_zero": true
+    },
+    "eq130": {
+      "all_residuals_zero": true
+    },
+    "noncommutativity_witnesses": {
+      "[Q_1,Q_2]": [
+        [
+          "q1*(a2 - b2)",
+          "0"
+        ],
+        [
+          "0",
+          "-q1*(a2 - b2)"
+        ]
+      ],
+      "[Q_2,Q_3]": [
+        [
+          "-a2*b3 + a3*b2",
+          "0"
+        ],
+        [
+          "0",
+          "a2*b3 - a3*b2"
+        ]
+      ]
+    },
+    "full_641_relation_status": "UNASSESSED_NOT_A_REPRESENTATION"
+  },
+  "restriction_lemma": {
+    "statement": "If an infinite CPOBC representation satisfies CPOBC, MSR, GC, and two-sided nonsingularity at every finite stage, its operators on sources of cardinality <=4 satisfy every corresponding finite axiom instance.",
+    "mechanical_checks": {
+      "all_compiled_relation_stages_at_most_4": true,
+      "compiled_relation_count": 641,
+      "MSR_source_count": 24,
+      "relation_dependencies_record_nonsingularity": true
+    },
+    "assumptions": [
+      "the infinite representation uses the same finite-stage CPOBC semantics",
+      "all transition operators needed by the restriction are nonsingular",
+      "MSR and operator-level GC hold before restriction",
+      "the compiled 641 records are finite instances, not a presentation of GC"
+    ],
+    "logical_status": "CONDITIONAL_UNIVERSAL_INSTANTIATION_FOR_COMPILED_AXIOMS",
+    "no_go_lifting_status": "NOT_AVAILABLE: no finite d=2 no-go was obtained and operator GC was not compiled"
+  },
+  "source_classification": {
+    "primary_literature": "paper equations and the Pauli-proportional ansatz boundary",
+    "independent_project_derivation": "R-family commutation identity and monomial necessary-relation witness",
+    "unresolved": "full finite d=2 representation and any infinite-system no-go"
+  },
+  "passed": true,
+  "code_commit": "0341af59a1e1318957a82ba35080c10659716051",
+  "artifact_freeze_commit": "artifact set is the child freeze commit of code_commit; the annotated release tag records both hashes"
+}

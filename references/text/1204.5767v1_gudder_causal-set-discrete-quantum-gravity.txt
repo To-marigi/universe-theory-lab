@@ -1,0 +1,849 @@
+===== PAGE 1 =====
+
+CAUSAL SET APPROACH TO
+DISCRETE QUANTUM GRA VITY
+S. Gudder
+Department of Mathematics
+University of Denver
+Denver, Colorado 80208, U.S.A.
+sgudder@du.edu
+Abstract
+We begin by describing a sequential growth model in which the uni-
+verse grows one element at a time in discrete time steps. At each step,
+the process has the form of a causal set and the “completed” universe
+is given by a path consisting of a discretely growing chain of causal
+sets. We then introduce a quantum dynamics to obtain a quantum se-
+quential growth process (QSGP) which may lead to a viable model for
+discrete quantum gravity. A discrete version of Einstein’s ﬁeld equa-
+tion is derived and a deﬁnition for discrete geodesics is proposed. A
+type of QSGP called an amplitude process is introduced. An example
+of an amplitude process called a complex percolation process is stud-
+ied. This process conforms with general principles of causality and
+covariance. We end with some detailed quantum measure calculations
+for a speciﬁc percolation constant.
+1 Introduction
+The causal set approach to discrete quantum gravity is an attempt to unify
+general relativity and quantum mechanics [1, 8, 9]. These two theories are
+quite diﬀerent and it is not at all clear how such a uniﬁcation is possible.
+This question has been investigated for about 80 years and is probably the
+greatest unsolved problem in theoretical physics. Brieﬂy speaking, quantum
+theory is based on the study of self-adjoint and unitary operators on a
+complex Hilbert space, while general relativity is based on the study of
+smooth curves and tensors on a 4-dimensional, real, diﬀerentiable manifold
+M with a Lorentzian metric tensor gµν.
+1
+arXiv:1204.5767v1  [gr-qc]  25 Apr 2012
+
+===== PAGE 2 =====
+
+We ﬁrst examineM more closely. For eacha∈M there is a forward light
+coneC+
+a ⊆M consisting of points in the future ofa thata can communicate
+with via a light signal. Ifb∈C+
+a we say thatb is in the causal future ofa and
+write a < b. Then ( M,< ) becomes a partially ordered set (poset); that is,
+a̸<a (irreﬂexivity) anda<b ,b<c imply thata<c (transitivity). We call
+(M,< ) the causal structure on M. To remind us that we are dealing with
+causal structures, we call an arbitrary ﬁnite poset a causal set (or causet).
+Investigators have shown that the causal structure completely determines
+M [8, 9]. That is, < determines the topology, diﬀerential structure, smooth
+functions, dimension, line and volume elements and tensor gµν for M. We
+can therefore forget about the diﬀerential structure of M and only consider
+the poset (M,< ) which is clearly a great simpliﬁcation.
+In comparing quantum mechanics (especially quantum ﬁeld theory) and
+general relativity, we notice one important similarity. They both contain
+many singularities and the theories break down at small distances. This
+indicates that quantum mechanics should be based upon a ﬁnite-dimensional
+complex Hilbert space and that general relativity should be discrete with a
+minimum distance which we take to be a Planck lengthℓp≈ 1.6×10−33 cm.
+and a minimum time which we take to be a Planck instant tp≈ 5.4× 10−44
+sec.
+Beside discreteness, a second motivating feature of the causal set ap-
+proach is that the universe is expanding both in size and in matter creation.
+These features suggest that we should consider a discrete sequential growth
+model. In such a model, the universe grows one element at a time in discrete
+steps given by Planck instants. At each step, the universe has the form of
+a causet and the “completed” universe is given by a path consisting of a
+discretely growing chain of causets. We then introduce a quantum dynam-
+icsρn,n = 1, 2,... , to obtain a quantum sequential growth process (QSGP)
+which may lead to a viable model for discrete quantum gravity. The dynam-
+ics ρn is given by a positive operator on the Hilbert space of causet paths
+of length n. The operators ρn are required to satisfy certain normalization
+and consistency conditions.
+At this stage of development, the precise form of ρn is not known. How-
+ever, a discrete version of Einstein’s ﬁeld equation is derived and it is possible
+thatρn can be speciﬁed by determining whether this discrete equation is ap-
+proximated by the classical Einstein equation. We also propose a deﬁnition
+for discrete geodesics.
+Although various constructions of a QSGPρn are known [2, 3, 4], we now
+introduce a particularly simple type called an amplitude process. An exam-
+ple of an amplitude process called a complex percolation process is studied.
+2
+
+===== PAGE 3 =====
+
+This process conforms with general principles of causality and covariance.
+Some detailed quantum measure calculations for a speciﬁc percolation con-
+stant are performed and some geodesics are brieﬂy examined.
+2 Sequential Growth Model
+LetPn be the collection of all causets of cardinality n, n = 1, 2,... , and let
+P =∪Pn. Two isomorphic causets are considered to be identical. If x∈P
+and a,b ∈ x, we say that a is an ancestor of b and b is a successor of a if
+a<b . We say that a is a parent ofb andb is a child ofa ifa<b and there
+is no c∈ x with a < c < b. We call a maximal in x if there is no b∈ x
+with a < b. If x∈P n, y∈P n+1, then x produces y (and y is a product
+of x) if y is obtained from x by adjoining a single element a to x that is
+maximal in y. Thus, a is not in the causal past of any element of y. If x
+produces y, we write x→ y. The transitive closure of   makesP into a
+poset and we call (P,  ) a sequential growth model. A path inP is a string
+(sequence) ω = ω1ω2··· , ωi∈P i and ωi→ ωi+1, i = 1, 2,... . An n-path
+is a ﬁnite string ω = ω1ω2··· ωn, where again ωi∈P i and ωi→ ωi+1. We
+denote the set of paths by Ω and the set of n-paths by Ωn. If x produces y
+in r isomorphic ways, we say that the multiplicity of x→ y is r and write
+m(x→y) =r. For example, in Figure 1, m(x3→x6) = 2 and multiplicities
+greater than 1 are designated. To be precise, the diﬀerent isomorphic ways
+requires a labeling of the causets. This is the only place we need to mention
+labeled causets and we otherwise only consider unlabeled causets.
+We think of a path ω ∈ Ω as a possible universe (universe history)
+[2, 3, 4]. For ω =ω1ω2··· , ωi∈P i represents a universe at Planck instant
+i. This gives a growth model for the universe [6, 9, 10]. The vertices of
+the causet ωi represent a space-time framework (scaﬀolding) at step i (in-
+stant i). A vertex may or may not be occupied by a point mass or energy.
+Figure 1 gives the ﬁrst four steps of the sequential growth model represent-
+ing possible universes. The vertical rectangles represent antimatter causets,
+the horizontal rectangles represent matter causets and the circles represent
+mixed causets. For a discussion of these types, we refer the reader to [4].
+3
+
+===== PAGE 4 =====
+
+x24x23
+x22
+x21
+x2
+x1
+x3
+x7x6x4 x5
+x20
+x19x18
+x17x16x15x14
+x13x12x11x10x9
+x8
+2
+3
+3
+2
+2
+Figure 1
+4
+
+===== PAGE 5 =====
+
+We use the notationAn for the power set 2 Ωn, n = 1, 2,... . For x∈P i
+we use the notation
+x   ={y∈P i+1 : x→y}
+and for ω =ω1ω2··· ωn∈ Ωn we write
+ω   ={ω1ω2··· ωnωn+1 : ωn→ωn+1}∈A n+1
+Finally, forA∈A n we deﬁne
+A   =
+⋃
+ω∈A
+(ω   )∈A n+1
+The set of paths beginning with ω =ω1··· ωn∈ Ωn is called an elementary
+cylinder set and is denoted cyl(ω). If A∈A n, then the cylinder set cyl(A)
+is deﬁned by
+cyl(A) =
+⋃
+ω∈A
+cyl(ω)
+Using the notation
+C(Ωn) ={cyl(A): A∈A n}
+notice that if A∈ C(Ωn), then A = cyl(A1) for some A1 ∈ An so A =
+cyl(A1   )∈C (Ωn+1). We conclude that
+C(Ω1)⊆C (Ω2)⊆···
+is an increasing sequence of subalgebras of the cylinder algebra C(Ω) =
+∪C(Ωn). For A∈ 2Ω we deﬁne the set An∈A n by
+An ={ω1ω2··· ωn∈ Ωn : ω1ω2··· ωnωn+1···∈ A}
+We think ofAn as the step-n approximation toA. Notice that An is the set
+of n-paths whose continuations are in A.
+3 Quantum Sequential Growth Processes
+Denoting the cardinality of a set A by|A|, we deﬁne the |Ωn|-dimensional
+complex Hilbert space Hn =L2(Ωn,An,νn) where νn is the counting mea-
+sure on Ωn. Of course, Hn is isomorphic to C|Ωn|. Let χA denote the char-
+acteristic function of a set A∈A n and let 1n = χΩn. A positive operator
+ρn onHn satisfying⟨ρn1n, 1n⟩ = 1 is called a q-probability operator and the
+set of q-probability operators on Hn is denoted Q(Hn). Corresponding to
+5
+
+===== PAGE 6 =====
+
+ρn∈Q (Hn) we have an n-decoherence functional Dn :An×An→ C given
+by
+Dn(A,B ) =⟨ρnχB,χA⟩
+which gives a measure of the interference between A and B. It is easy to
+show thatDn has the usual properties of a decoherence functional. That is,
+Dn(ΩnΩn) = 1,Dn(A,B ) =Dn(B,A ),A↦→Dn(A,B ) is a complex measure
+onAn for any B∈A n and if A1,...,A m∈A n then Dn(Ai,Aj) are the
+components of a positive semideﬁnitem×m matrix. The map µn :An→ R+
+given byµn(A) =Dn(A,A ) is called the q-measure corresponding to ρn [7].
+We interpret µn(A) as the propensity of the event A when the system is
+described byρn [2, 3]. Notice that µn(Ωn) = 1. Although µn is not additive,
+it does satisfy the grade-2 additivity condition: if A,B,C ∈A n are mutually
+disjoint, then
+µn(A∪B∪C) =µn(A∪B)+µn(A∪C)+µn(B∪C)−µn(A)−µn(B)−µn(C)
+We say that a sequence ρn ∈ Q(Hn), n = 1, 2,... , is consistent if
+Dn+1(A  ,B   ) = Dn(A,B ) for all A,B ∈ An. Of course, it follows
+thatµn+1(A   ) =µn(A) for all A∈A n. A consistent sequence ρn∈Q (Hn)
+provides a quantum dynamics for the growth model (P,  ) and we call ρn a
+quantum sequential growth process (QSGP) [2, 3, 4]. At this stage of devel-
+opment we do not know the speciﬁc form ofρn that would describe quantum
+gravity. It is hoped that further theoretical properties or experimental data
+will determine ρn. One possible approach is considered in Section 4.
+Let ρn∈Q (Hn) be a QSGP. Although we have a q-measure µn onAn,
+n = 1, 2,... , it is important to extend µn to physically relevant subsets of
+Ω in a systematic way. We say that a set A⊆ Ω is beneﬁcial if limµn(An)
+exists and is ﬁnite in which case we deﬁneµ(A) to be this limit. We denoted
+the collection of beneﬁcial sets by B(ρn). If A∈C (Ω) is a cylinder set, then
+A∈C (Ωi) for some i∈ N. In this case A = cyl(A1) for some A1∈A i. Now
+Ai =A1, Ai+1 =A1   , Ai+2 = (A1   )   ,··· . Hence,
+limµn(An) =µi(Ai) =µi(A1)
+so A is beneﬁcial and µ(A) = µi(A1). We conclude that C(Ω)⊆B (ρn) and
+if A∈C (Ω) then µ(A) = µn(An) for n suﬃciently large. Simple examples
+are∅, Ω∈B (ρn) with µ(∅) = 0, µ(Ω) = 1. Of course, there are physically
+relevant subsets of Ω that are not cylinder sets. For example, if ω∈ Ω then
+{ω} /∈C (Ω). Whether {ω}∈B (ρn) depends on ρn and we shall consider
+some examples in Section 6.
+6
+
+===== PAGE 7 =====
+
+4 Discrete Einstein Equation
+Let Qn =∪n
+i=1Pi and let Kn be the Hilbert space CQn with the standard
+inner product
+⟨f,g⟩ =
+∑
+x∈QN
+f(x)g(x)
+Let Ln = Kn⊗Kn which we identify with CQn×Qn. Let ρn∈Q (Hn) be a
+QSGP with corresponding decoherence matrices
+Dn(ω,ω′) =Dn
+(
+{ω},
+{
+ω′})
+, ω,ω ′∈ Ωn
+If ω = ω1ω2··· ωn∈ Ωn and ωi = x for some i, then ω contains x. For
+x,y∈Qn we deﬁne
+Dn(x,y ) =
+∑{
+Dn(ω,ω′): ω containsx,ω′ containsy
+}
+Due to the consistency of ρn, Dn(x,y ) is independent of n if n≥| x|,|y|
+where|x| is the cardinality of x∈ Qn. Also Dn(x,y ), x,y ∈ Qn, are the
+components of a positive semi-deﬁnite matrix.
+We think ofQn as an analogue of a diﬀerentiable manifold and Dn(x,y )
+as an analogue of a metric tensor. If y∈Qn andx→y we think of the pair
+(x,y ) as a tangent vector at y. Thus, there are as many tangent vectors at
+y as there are producers of y. Finally, the elements of Kn are analogous to
+smooth functions on the manifold.
+If ω = ω1ω2··· ωn∈ Ωn and ωi = x, then i =|x| and ω contains x if
+and only if ω|x| =x. An n-pathω containingx determines a tangent vector
+(ω|x|−1,x ) atx (assuming|x|≥ 2). For ω∈ Ωn deﬁne the diﬀerence operator
+△n
+ω on Kn by
+△n
+ωf(x) =
+[
+f(x)−f(ω|x|−1)
+]
+δx,ω|x|
+whereδx,ω|x| is the Kronecker delta. It is easy to check that △n
+ω satisﬁes the
+discrete Leibnitz rule :
+△n
+ωfg (x) =f(x)△n
+ωg(x) +g(ω|x|−1)△n
+ωf(x)
+Given a functionf∈ CQn×Qn =Ln of two variables we have the function
+˜f ∈ Kn of one variable ˜f(x) = f(x,x ) and given a function g∈ Kn we
+have the functions of two variables g1,g 2∈ Ln where g1(x,y ) = g(x) and
+g2(x,y ) = g(y) for all x,y ∈Qn. For ω,ω′∈ Ωn, we want△n
+ω,ω′ : Ln→Ln
+that extends△n
+ω and satisﬁes Leibnitz’s rule. That is,
+△n
+ω,ω′g1(x,y ) =△n
+ωg(x)δy,ω′
+|y|
+,△n
+ω,ω′g2(x,y ) =△n
+ω′g(y)δx,ω|x| (4.1)
+7
+
+===== PAGE 8 =====
+
+and
+△n
+ω,ω′fg (x,y ) =f(x,y )△ω,ω′g(x,y ) +g(ω|x|−1,ω′
+|x|−1)△n
+ω,ω′f(x,y ) (4.2)
+The next two theorems are proved in [5]
+Theorem 4.1. A linear operator△n
+ω,ω′ : Ln→Ln satisﬁes (4.1) and (4.2)
+if and only if it has the form
+△n
+ω,ω′f(x,y ) =
+[
+f(x,y )−f(ω|x|−1,ω′
+|y|−1)
+]
+δx,ω|x|δy,ω′|y| (4.3)
+The result (4.3) is not surprising because it is the natural extension of
+△n
+ω from Kn to Ln. Also, △n
+ω,ω′ extends△n
+ω in the sense that
+△n
+ω,ωf(x,y ) =△n
+ω˜f(x)
+Theorem 4.2. (a) A linear operator Tω : Kn→ Kn satisﬁes the Leibnitz
+rule and Tωf(x) = 0 when ω|x|̸= x if and only if there exists a function
+βω : Qn→ C such that Tω =βω△n
+ω. (b) A linear operator Tω,ω′ : Ln→Ln
+satisﬁes the Leibnitz rule and Tω,ω′f(x,y ) = 0 when ω|x|̸=x or ω′
+|y|̸=y if
+and only if there exists a function βω,ω′ : Qn×Qn→ C such that Tω,ω′ =
+βω,ω′△n
+ω,ω′.
+It is clear thatµn(x) =Dn(x,x ) is not stationary. That is,△n
+ωµn(x)̸= 0
+for all x∈ Qn in general. It is shown in [5] that the simplest nontrivial
+combination▽n
+ω = βω△ω +αω satisfying▽n
+ωµn(x) = 0 for all x∈ Qn is
+given by
+▽n
+ωf(x) =
+[
+µn(ω|x|−1)f(x)−µn(x)f(ω|x|−1)
+]
+δx,ω|x|
+We call▽n
+ω the covariant diﬀerence operator.
+Again,△n
+ω,ω′Dn(x,y )̸= 0 for all x,y ∈ Qn. It is shown in [5] that the
+simplest nontrivial combination
+▽n
+ω,ω′ =βω,ω′△n
+ω,ω′ +αω,ω′
+satisfying▽n
+ω,ω′Dn(x,y ) = 0 for all x,y∈Qn is given by
+▽n
+ω,ω′f(x,y ) =
+[
+Dn(ω|x|−1,ω′
+|y|−1)f(x,y )−Dn(x,y )f(ω|x|−1,ω′
+|y|−1)
+]
+δx,ω|x|δy,ω′
+|y|
+We call▽n
+ω,ω′ the covariant bidiﬀerence operator.
+8
+
+===== PAGE 9 =====
+
+The curvature operator is deﬁned as
+Rn
+ω,ω′ =▽n
+ω,ω′−▽n
+ω′,ω
+We deﬁne the metric operatorDn
+ω,ω′ on Ln by
+Dn
+ω,ω′f(x,y ) =Dn(x,y )
+[
+f(ω′
+|x|−1,ω|y|−1)δx,ω′
+|x|
+δy,ω|y|
+−f(ω|x|−1,ω′
+|y|−1)δx,ω|x|δy,ω′
+|y|
+]
+and the mass-energy operatorT n
+ω,ω′ on Ln by
+T n
+ω,ω′f(x,y ) =
+[
+Dn(ω|x|−1,ω′
+|y|−1)δx,ω|x|δy,ω′
+|y|
+− Dn(ω′
+|x|−1,ω|y|−1)δx,ω′
+|x|
+δy,ω|y|
+]
+f(x,y )
+It is shown in [5] that
+Rn
+ω,ω′ =Dn
+ω,ω′ +T n
+ω,ω′ (4.4)
+We call (4.4) the discrete Einstein equation [5, 11]. In this sense, Einstein’s
+equation always holds in this framework no matter what we have for the
+quantum dynamics ρn. One might argue that we obtained (4.4) just by
+deﬁnition. However, our derivation shows that Rn
+ω,ω′ is a reasonable coun-
+terpart of the classical curvature tensor and Dn
+ω,ω′ is a discrete counterpart
+of the metric tensor.
+Equation (4.4) does not give information about Dn(x,y ) and Dn(ω,ω′)
+(which after all, are what we wanted to ﬁnd), but it may give useful indi-
+rect information. If we can ﬁnd Dn(ω,ω′) such that the classical Einstein
+equation is an approximation to (4.4), then this gives information about
+Dn(ω,ω′). Moreover, an important problem in discrete quantum gravity
+theory is how to test whether general relativity is a close approximation to
+the theory. Whether Einstein’s equation is an approximation to (4.4) would
+provide such a test. In order to consider approximations by Einstein’s equa-
+tion, it will be necessary to let n→∞ in (4.4). However, the convergence
+of the operators depends on Dn and will be left for later investigations.
+We now propose a deﬁnition for discrete geodesics. For A⊆ Qn we
+deﬁne the q-measure
+µn(A) =µn
+({
+ω∈ Ωn : ω|x| =x for some x∈A
+})
+and for x,y∈Qn let
+µn(x∩y) =µn
+({
+ω∈ Ωn : ω|x| =x and ω|y| =y
+})
+9
+
+===== PAGE 10 =====
+
+Forx,y∈Qn it is natural to deﬁne the conditional q-measure
+µn(x|y) = µn(x∩y)
+µn(y) if µn(y)̸= 0
+and µn(x|y)=0 if µn(y) = 0. For ω∈ Ωn deﬁne the function ˆω : Qn→ R+
+by
+ˆω(x) =µn(x|ω|x|−1)δx,ω|x| (4.5)
+Of course, ˆω∈Kn. We say that ω∈ Ωn is a discrete geodesic if there is an
+a∈ R such that△n
+ωˆω =aˆω; that is ˆω is an eigenvector of△n
+ω.
+Theorem 4.3. Ann-pathω∈ Ωn is a discrete geodesic if and only if there
+exists a c∈ R such that whenever ω|x| =x for|x|≥ 3 we have
+µn(x|ω|x|−1) =cµn(ω|x|−1|ω|x|−2) (4.6)
+Proof. By deﬁnition, ω is a discrete geodesic if and only if there is an a∈ R
+such that for all x∈Qn we have
+aˆω(x) =△n
+ωˆω(x) =
+[
+ˆω(x)−ˆω(ω|x|−1)
+]
+δx,ω|x|
+Letting c = 1−a this last statement is equivalent to
+ˆω(x) =cˆω(ω|x|−1)δx,ω|x|
+Applying (4.5) we conclude that
+µn(x|ω|x|−1)δx,ω|x| =cµn(ω|x|−1|ω|x|−2)δx,ω|x|
+If ω|x| ̸= x, both sides of this equation vanish so the equation holds. If
+ω|x| =x we obtain (4.6).
+This deﬁnition of a discrete geodesic is very restrictive and it seems
+desirable to have a more general concept. If ω =ωjωj+1··· ωn withωi∈P i,
+ωi→ωi+1,i =j,...,n −1, we callω ann-path starting atωj. Motivated by
+Theorem 4.3, we say that ω = ωjωj+1··· ωn is a discrete geodesic starting
+at ωj if ω is a maximal n-path starting at ωj satisfying
+µn(ωk|ωk+1) =cµn(ωk−1|ωk−2), k =j + 2,...,n
+for some c∈ R.
+10
+
+===== PAGE 11 =====
+
+5 Amplitude Processes
+Various constructions of a QSGP have been investigated [2, 3, 4]. In this
+section we introduce a simple type of QSGP that we call an amplitude
+process. If nothing else, this might serve as a toy model for discrete quantum
+gravity.
+Forx∈P n, y∈P n+1 with x→y, let a(x→y)∈ C satisfy
+∑
+{a(x→y): y∈x  } = 1 (5.1)
+We call a(x→ y) a transition amplitude from x to y. By convention we
+deﬁne a(x→ y) = 0 if x̸→ y. For ω = ω1ω2··· ωn∈ Ωn we deﬁne the
+amplitude of ω by
+an(ω) =a(ω1→ω2)a(ω2→ω3)··· a(ωn−1→ωn)
+and we call the vector an∈Hn an amplitude vector. For ω,ω′∈ Ωn deﬁne
+the decoherence matrix as
+Dn(ω,ω′) =an(ω)an(ω′)
+Let ρn be the operator on Hn given by the matrix Dn(ω,ω′). We call the
+sequence of operators ρn, n = 1, 2,... , an amplitude process (AP).
+Theorem 5.1. An AP ρn is a QSGP.
+Proof. It is clear that ρn is a positive operator on Hn. Moreover, we have
+⟨ρn1n, 1n⟩ =
+⟨ ∑
+ω′∈Ωn
+Dn(ω,ω′), 1n
+⟩
+=
+∑
+ω,ω′∈Ωn
+Dn(ω,ω′)
+=
+∑
+ω,ω′∈Ωn
+an(ω)an(ω′) =
+⏐⏐⏐⏐⏐
+∑
+ω∈Ωn
+an(ω)
+⏐⏐⏐⏐⏐
+2
+(5.2)
+Applying (5.1) we obtain
+∑
+ω∈Ωn
+an(ω) =
+∑
+a(ω1→ω2)a(ω2→ω3)··· a(ωn−1→ωn)
+=
+∑
+a(ω1→ω2)··· a(ωn−2→ωn−1)
+∑
+ωn−1
+a(ωn−1→ωn)
+=
+∑
+a(ω1→ω2)··· a(ωn−2→ωn−1)
+...
+=
+∑
+ω1
+a(ω1→ω2) = 1 (5.3)
+11
+
+===== PAGE 12 =====
+
+By (5.2) and (5.3) we conclude that ⟨ρn1n, 1n⟩ = 1. To show that ρn is a
+consistent sequence, let ω,ω′∈ Ωn with ω = ω1ω2··· ωn, ω′ = ω′
+1ω′
+2··· ω′
+n.
+By (5.1) we have
+Dn+1(ω  ,ω′   ) =⟨ρn+1χω′ ,χω ⟩
+=
+∑{
+an(ω)a(ωn→x)an(ω′)a(ω′n→y): ωn→x,ω′
+n→y
+}
+=an(ω)an(ω′)
+∑
+{a(ωn→x): ωn→x}
+∑{
+a(ω′n→y): ω′
+n→y
+}
+=an(ω)an(ω′) =Dn(ω,ω′) (5.4)
+ForA,B∈A n, by (5.4) we have
+Dn+1(A  ,B   ) =
+∑{
+Dn+1(ω  ,ω′   ): ω∈A,ω′∈B
+}
+=
+∑{
+Dn(ω,ω′): ω∈A,ω′∈B
+}
+=Dn(A,B )
+Since the operator ρn onHn has the form ρn =|an⟩⟨an| we not only see
+that ρn is a positive operator but that it has rank 1 with norm
+∥ρn∥ =∥|an⟩⟨an|∥ =∥an∥2 =
+∑
+|an(ω)|2 = tr(ρn)
+The decoherence functional corresponding to ρn becomes
+Dn(A,B ) =⟨ρnχB,χA⟩ =⟨|an⟩⟨an|χB,χA⟩
+=⟨an,χA⟩⟨χB,an⟩ =
+∑
+ω∈A
+an(ω)
+∑
+ω′∈B
+an(ω)
+=
+∑{
+Dn(ω,ω′): ω∈A,ω′∈B
+}
+for all A,B∈A n which is what we expect. The corresponding q-measure is
+given by
+µn(A) =Dn(A,A ) =|⟨an,χA⟩|2 =
+⏐⏐⏐⏐⏐
+∑
+ω∈A
+an(ω)
+⏐⏐⏐⏐⏐
+2
+(5.5)
+for all A∈A n. In particular, for ω∈ Ωn we have µn ({ω}) =|an(ω)|2. We
+conclude that A∈B (ρn) if and only if
+limµn(An) = lim
+⏐⏐⏐⏐⏐
+∑
+ω∈An
+an(ω)
+⏐⏐⏐⏐⏐
+2
+exists and is ﬁnite in which case µ(A) is the limit.
+12
+
+===== PAGE 13 =====
+
+6 Complex Percolation Process
+This section introduces a particular type of AP that still has physical rele-
+vance. We use the notation y =x  a if x→y and y is obtained from x by
+adjoining the maximal elementa tox. Let r∈ C withr̸= 0, 1. For x,y∈P
+with y =x  a deﬁne
+a(x→y) =m(x→y)rp(1−r)u (6.1)
+wherep is the number of parents ofa andu is the number of unrelated (non
+ancestors, not equal to a) elements of a.
+Theorem 6.1. If a(x→y) is given by (6.1), then a(x→y) satisﬁes (5.1)
+and hence is a transition amplitude.
+Proof. We prove the result by strong induction on |x|. If |x| = 1, then
+x =x1 and (x   ) ={x2,x 3} in Figure 1. Hence,
+∑
+x1
+a(x→y) =a(x1→x2) +a(x1→x3) =r + (1−r) = 1
+If|x| = 2, then x = x2 or x = x3 and (x2   ) = {x4,x 5,x 6}, (x3   ) =
+{x6,x 7,x 8} in Figure 1. Hence,
+∑
+x2
+a(x2→y) =r +r(1−r) + (1−r)2 = 1
+∑
+x3
+a(x3→y) = 2r(1−r) +r2 + (1−r)2 = 1
+Now assume the result holds for |x|≤ n and suppose that |x| =n + 1≥ 3.
+We have that x = x′   a for some x′∈P n and if z∈ x   , then z = x   b.
+Let
+A ={z∈x   : b̸>a}
+B ={z∈x   : b>a }
+v ={c∈x: c̸≤a}∈P
+We then have
+∑
+{a(x→z): z∈A} = (1−r)
+∑
+x′
+a(x′→y′) = 1−r
+∑
+{a(x→z): z∈B} =r
+∑
+v
+a(v→v′) =r
+13
+
+===== PAGE 14 =====
+
+Hence, ∑
+x
+a(x→y) = (1−r) +r = 1
+This completes the induction proof.
+It follows from Theorems 5.1 and 6.1 that if a(x→y) is given by (6.1),
+then the operator ρn corresponding to the matrix Dn(ω,ω′) = an(ω)a(ω′)
+forms an AP and hence a QSGP. We then call ρn n = 1, 2,... , a complex
+percolation process (CPP) with percolation constant r. The form of (6.1)
+was chosen because it conforms with general principles of causality and
+covariance [6, 10].
+As an illustration of a CPP suppose the percolation constant is
+r = 1√
+2 eiπ/4 = 1
+2 + i
+2
+This example may have physical relevance because r is the unique complex
+number satisfying|r|2 =|1−r|2 = 1/2. Notice that 1 −r =r and we have
+a(x→y) =m(x→y)rpru = m(x→y)
+2(p+u)/2 ei(p−u)π/4
+Forn = 2, lettingγ1 =x1x2,γ2 =x1x3 from Figure 1, the amplitude vector
+becomes
+a2 = 1√
+2 (eiπ/4,e−iπ/4)
+and the decoherence matrix is
+D2 = 1
+2
+[
+1 i
+−i 1
+]
+We then have that∥ρ2∥ = tr(ρ2) = 1.
+For further computations, it is useful to list the transition amplitudes
+for the causets of Figure 1.
+(i,j ) (1, 2) (1, 3) (2, 4) (2, 5) (2, 6) (3, 7) (3, 8)
+a(xi→xj) r 1−r r r(1−r) 2r(1−r) r2 (1−r)2
+(4, 9) (4, 10) (4, 11) (4, 14) (5, 11) (5, 12) (5, 13) (5, 15)
+r r(1−r)2 r(1−r)2 (1−r)3 2r(1−r) r(1−r)2 r2 (1−r)3
+14
+
+===== PAGE 15 =====
+
+(6, 14) (6, 15) (6, 16) (6, 17) (6, 18) (6, 19) (7, 18)
+r(1−r) r(1−r)2 r(1−r)2 r2 r2(1−r) (1−r)3 2r(1−r)2
+(7, 20) (7, 21) (7, 22) (8, 19) (8, 22) (8, 23) (8, 24)
+r r2(1−r) (1−r)3 3r(1−r)2 3r2(1−r) r3 (1−r)3
+T able 1
+Letting γ1 = x1x2x4, γ2 = x1x2x5, γ3 = x1x2x6, γ4 = x1x3x6, γ5 =
+x1x3x7, γ6 = x1x3x8 in Figure 1, we have that Ω 6 = {γ1,...,γ 6} with
+amplitude vector
+a3 = 2−3/2(
+√
+2i,eiπ/4,e−iπ/4, 2e−iπ/4,eiπ/4e−i3π/4)
+We conclude that ∥ρ3∥ = tr(ρ3) = 5 /4. The decoherence matrix can be
+computed from
+D3(ω,ω′) =
+[
+a3(ω)a3(ω′)
+]
+the following table gives an ordering of the paths γj∈ Ω4.
+j 1 2 3 4 5 6 7
+γj x1x2x4x9 x1x2x4x10 x1x2x4x11 x1x2x4x14 x1x2x5x11 x1x2x5x12 x1x2x5x13
+—
+8 9 10 11 12 13 14
+x1x2x5x15 x1x2x6x14 x1x2x6x15 x1x2x6x16 x1x2x6x17 x1x2x6x18 x1x2x6x19
+15 16 17 18 19 20 21
+x1x3x6x14 x1x3x6x15 x1x3x6x16 x1x3x6x17 x1x3x6x18 x1x3x6x19 x1x3x7x18
+22 23 24 25 26 27 28
+x1x3x7x20 x1x3x7x21 x1x3x7x22 x1x3x8x19 x1x3x8x22 x1x3x8x23 x1x3x8x24
+T able 2
+15
+
+===== PAGE 16 =====
+
+Then Ω4 ={γ1,γ 2,...,γ 28} with amplitude vector
+a4 = 1
+8(23/2ei3π/4, 2i,
+√
+2eiπ/4,
+√
+2e−iπ/4, 23/2eiπ/4, 1, 2i,−i,
+√
+2e−iπ/4,
+−i,−i,
+√
+2eiπ/4, 1,−1, 23/2e−iπ/4,−2i,−2i, 23/2eiπ/4,
+2,−2, 2, 2i,i,−i,−3,−3i, 1,i )
+We then have∥ρ4∥ = tr(ρ4) = 25/16. Although we have not been able to
+show this, we conjecture that in general ∥ρn∥ = (5/4)n−2.
+We now compute some q-measures. For Ω 2 ={γ1,γ 2} we haveµ2(γ1) =
+µ2(γ2) = 1/2,µ2(Ω2) = 1. Also, µ2(x2) =µ2(x3) = 1/2,µ2(P2) = 1. In this
+case there is no interference and µ2 is a measure.
+For Ω3 ={γ1,...,γ 6} we have
+µ3(γ1) = 1/4, µ 3(γ2) =µ3(γ3) =µ(γ5) =µ3(γ6) = 1/8
+µ3(γ4) = 1/2, µ 3(Ω3) = 1
+Moreover, by (5.5) we have
+µ3 ({γ1,γ 2}) =µ3(γ1) +µ3(γ2) + 2Rea3(γ1)a3(γ2)
+1
+4 + 1
+8 + 1
+4Re
+(√
+2ie−iπ/4
+)
+= 5
+8
+The q-measures of the other doubleton sets are computed in a similar way.
+These are summarized in Table 3.
+(j,k ) (1, 3) (1, 4) (1, 5) (1, 6) (2, 3) (2, 4) (2, 5)
+µ3 ({γj,γk}) 1/8 1/4 5/8 1/8 1/4 5/8 1/2
+(2, 6) (3, 4) (3, 5) (3, 6) (4, 5) (4, 6) (5, 6)
+0 9/8 1/4 1/4 5/8 5/8 0
+T able 3
+The other q-measure for Ω3 can be found using our previous results and
+grade-2 additivity. For example,
+µ3 ({γ2,γ 5,γ 6}) =µ3 ({γ2,γ 5}) +µ3 ({γ2,γ 6}) +µ3 ({γ5,γ 6})
+−µ3(γ2)−µ3(γ5)−µ3(γ6) = 1/8
+16
+
+===== PAGE 17 =====
+
+In a similar way we obtain
+µ3 ({γ1,γ 2,γ 3}) = 1/2, µ 3 ({γ1,γ 2,γ 6}) = 1/4
+µ3 ({γ1,γ 2,γ 4}) = 5/8, µ 3 ({γ2,γ 3,γ 4}) = 5/4
+An example of a 4-element set is given by
+µ3 ({γ1,γ 2,γ 3,γ 4}) =µ3 ({γ1,γ 2}) +µ3 ({γ1,γ 3}) +µ3 ({γ1,γ 4})
++µ3 ({γ2,γ 3}) +µ3 ({γ2,γ 4}) +µ3 ({γ3,γ 4})
+− 2 [µ3(γ1) +µ3(γ2) +µ3(γ3) +µ3(γ4)] = 1
+The q-measure of paths in Ω 4 ={γ1,...,γ 28} are given in Table 4.
+j 1 2 3 4 5 6 7 8 9 10
+µ4(γj) 1/8 1/16 1/32 1/32 1/8 1/64 1/16 1/64 1/32 1/64
+—
+11 12 13 14 15 16 17 18 19 20
+1/64 1/32 1/64 1/64 1/8 1/16 1/16 1/8 1/16 1/16
+21 22 23 24 25 26 27 28
+1/16 1/16 1/64 1/64 9/64 9/64 1/64 1/64
+T able 4
+Instead of ﬁnding µ4(A) for arbitrary A∈A 4, we compute µ4(x), x∈P 4
+which are given in Table 5.
+j 9 10 11 12 13 14 15 16 17 18
+µ4(xj) 1/8 1/16 9/32 1/16 1/16 1/4 1/4 9/64 9/32 25/64
+T able 5
+We now brieﬂy consider the q-measure of some sets in B(ρn) ∖C(Ω). If
+ω = ω1ω2···∈ Ω, then {ω} /∈C (Ω) and{ω}n ={ω1ω2··· ωn}. We deﬁne
+17
+
+===== PAGE 18 =====
+
+the multiplicity m(ω) by
+m(ω) =
+∞∏
+j=1
+m(ωj→ωj+1
+As suggested by Figure 1, most ω ∈ Ω have ﬁnite multiplicity, although
+there are a few with m(ω) =∞. If m(ω)<∞ then it is easy to verify that
+{ω}∈B (ρn) and
+µ ({ω}) = lim
+n→∞
+|an(ω1ω2··· ωn)|2 = 0
+Moreover, it follows by (5.1) that if m(ω)<∞, then{ω}′∈B (ρn) and
+µ
+(
+{ω}′)
+= lim
+n→∞
+|1−an(ω1ω2··· ωn)|2 = 1
+It would be interesting to investigate whether there existω∈ Ω withm(ω) =
+∞ and ω∈B (ρn).
+Finally, we brieﬂy discuss discrete geodesics. Let ρn be an AP. If x→y
+with x∈P n, then
+µn(x∩y) =µn ({ω : ω =ω1ω2··· xy}) =µn(x)|a(x→y)|2
+It follows that µn(y|x) =|a(x→y)|2. We conclude that ω =ωjωj+1··· ωn
+is a discrete geodesic starting withωj if and only ifω is maximal and satisﬁes
+|a(ωk−1→ωk)| =c|a(ωk−2→ωk−1| (6.2)
+k = j + 2,...,n , for some c ∈ R. In particular, suppose ρn is a CPP
+with percolation constant r. Letting n = 4 and employing the notation
+of Figure 1, the only discrete geodesics starting at x1 are x1x2x4x9 and
+x1x3x8x24. The constant c in (6.2) for x1x2x4x9 is 1 and for x1x2x8x24
+is|1−r|. A generic causet is contained in at least two discrete geodesics
+with c = 1 or c =|1−r|. However, there are exceptional causets that are
+contained in only one discrete geodesic. It would be interesting to classify
+causets according to their geodesic structure.
+References
+[1] L. Bombelli, J. Lee, D. Meyer and R. Sorkin, Spacetime as a casual set,
+Phys. Rev. Lett. 59 (1987), 521–524.
+[2] S. Gudder, Discrete quantum gravity, arXiv: gr-qc 1108.2296 (2011).
+18
+
+===== PAGE 19 =====
+
+[3] S. Gudder, Models for discrete quantum gravity, arXiv: gr-qc 1108.6036
+(2011).
+[4] S. Gudder, A matter of matter and antimatter, arXiv: gr-qc 1204.3346
+(2012).
+[5] S. Gudder, An Einstein equation for discrete quantum gravity, arXiv:
+gr-qc 1204.4506 (2012).
+[6] D. Rideout and R. Sorkin, A classical sequential growth dynamics for
+causal sets, Phys. Rev. D 61 (2000), 024002.
+[7] R. Sorkin, Quantum mechanics as quantum measure theory,Mod. Phys.
+Letts. A 9 (1994), 3119–3127.
+[8] R. Sorkin, Causal sets: discrete gravity, arXiv: gr-qc 0309009 (2003).
+[9] S. Surya, Directions in causal set quantum gravity, arXiv: gr-qc
+1103.6272 (2011).
+[10] M. Varadarajan and D. Rideout, A general solution for classical sequen-
+tial growth dynamics of causal sets, Phys. Rev. D 73 (2006), 104021.
+[11] R. Wald, General Relativity, University of Chicago Press, Chicago 1984.
+19

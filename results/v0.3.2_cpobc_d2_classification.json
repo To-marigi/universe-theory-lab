@@ -1,0 +1,539 @@
+{
+  "schema_version": "final-theory-cpobc-d2-classification-v0.3.2",
+  "branch": "codex/final-theory-v0.3.2-cpobc-d2-classification-20260728",
+  "source_commit": "3ee453c574ad2e98132d6bb1965836529809ea49",
+  "code_commit": "0341af59a1e1318957a82ba35080c10659716051",
+  "paper_versions": [
+    {
+      "id": "arXiv:2603.25503v1",
+      "version": "v1",
+      "local_file": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "source_hash_sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
+    },
+    {
+      "path": "results/v0.3.1_d3_strata_manifest.json",
+      "sha256": "3729a701f6f909cecb6d6889d72bcb7cd5b4d03cc9822d39c56329432e9297c5"
+    }
+  ],
+  "literature_classification": {
+    "paper_equations_107_130": "LITERATURE_LOCKED",
+    "paper_d2_Pauli_proportional_ansatz": "LITERATURE_LOCKED_BOUNDARY",
+    "general_d2_CPOBC_classification": "OPEN_TARGET"
+  },
+  "assumptions": [
+    "finite maximal-element sequential growth",
+    "CPOBC transition operators are nonsingular",
+    "noncommutative multiplication order is preserved",
+    "all exact claims use characteristic zero",
+    "S1/S2/S3 spectral cover is stated over an algebraically closed field"
+  ],
+  "dimension": 2,
+  "field": "C / characteristic-zero symbolic extension",
+  "Jordan_stratum": "S1_S2_S3_DECLARED_EXHAUSTIVE_NOT_ELIMINATED",
+  "jordan_stratum": "S1_S2_S3_DECLARED_EXHAUSTIVE_NOT_ELIMINATED",
+  "ansatz": "GENERAL_Q1_RESERVED; FULL_TRANSITION_SYSTEM_NOT_REDUCED",
+  "relation_count": 641,
+  "solver": "deterministic finite-causet reduction and SymPy exact identities; no dense full-system Groebner elimination",
+  "solver_version": {
+    "python": "3.12.10",
+    "sympy": "1.14.0",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "random_seed": null,
+  "exact_numeric_distinction": {
+    "exact": "integer word algebra, rational-function matrix identities, SHA-256 artifact and semantic digests",
+    "numeric": "none accepted as proof"
+  },
+  "completeness_scope": "Phase 0, Eq.(107)/(108) occurrence reduction, and S1/S2/S3 coverage are exact; Eq.(112), operator GC, and every Phase-3 stratum elimination remain incomplete",
+  "time_limit": {
+    "finite_reduction": "deterministic n<=4 cardinality cap",
+    "symbolic_elimination": "not launched after the explicit >40-variable strategy gate"
+  },
+  "memory_limit": {
+    "policy": "word-digest inventory only; no dense 96-entry full ideal",
+    "os_enforced": false
+  },
+  "phase0": {
+    "schema_version": "final-theory-cpobc-d2-phase0-v0.3.2",
+    "paper": {
+      "id": "arXiv:2603.25503v1",
+      "local_file": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "expected_sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa",
+      "observed_sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa",
+      "hash_match": true
+    },
+    "pdf_visual_verification": {
+      "method": "Poppler 140 dpi page render followed by visual inspection; extracted text used only to locate pages",
+      "pages_inspected": [
+        16,
+        26,
+        27,
+        28,
+        29,
+        31,
+        35
+      ],
+      "equations": {
+        "107": {
+          "pdf_page": 27,
+          "content": "A_n = T_m G_n G_m^-1 for a non-timid transition"
+        },
+        "108": {
+          "pdf_page": 27,
+          "content": "timid transition inclusion-exclusion in gregarious operators"
+        },
+        "112": {
+          "pdf_page": 27,
+          "content": "G_n^(0) = S_alpha Q_n S_alpha^-1"
+        },
+        "114": {
+          "pdf_page": 27,
+          "content": "G_n G_k^-1 G_m = G_m G_k^-1 G_n"
+        },
+        "120": {
+          "pdf_page": 28,
+          "content": "Q_n Q_k^-1 Q_m = Q_m Q_k^-1 Q_n"
+        },
+        "129": {
+          "pdf_page": 29,
+          "content": "[Q_m Q_n^-1, Q_l Q_k^-1] = 0"
+        },
+        "130": {
+          "pdf_page": 29,
+          "content": "[Q_1 Q_2^-1, Q_1^-1 Q_2] = 0"
+        },
+        "165": {
+          "pdf_page": 35,
+          "content": "Q_1=a_1 sigma_1, Q_2=a_2 sigma_2, Q_3=a_3 sigma_1, Q_4=a_4 sigma_2"
+        }
+      },
+      "inspection_status": "VISUALLY_CONFIRMED_THIS_RELEASE",
+      "claim_boundary": "The PDF confirms the displayed relations and Pauli ansatz scope; it does not prove the new project reductions."
+    },
+    "frozen_artifacts": {
+      "results/v0.3.1_cpobc_relations_n4.json": {
+        "expected_sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3",
+        "observed_sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3",
+        "hash_match": true
+      },
+      "results/v0.3.1_d3_strata_manifest.json": {
+        "expected_sha256": "3729a701f6f909cecb6d6889d72bcb7cd5b4d03cc9822d39c56329432e9297c5",
+        "observed_sha256": "3729a701f6f909cecb6d6889d72bcb7cd5b4d03cc9822d39c56329432e9297c5",
+        "hash_match": true,
+        "required_status": "UNRESOLVED strata frozen from v0.3.1"
+      }
+    },
+    "F1_counts": {
+      "expected": {
+        "compiled_cross_stage_relations": 641,
+        "denominator_cleared_word_equations": 783,
+        "transition_occurrence_variables": 165,
+        "MSR_operator_constraints": 24,
+        "bell_families": 146,
+        "transition_orbits": 131
+      },
+      "observed": {
+        "compiled_cross_stage_relations": 641,
+        "denominator_cleared_word_equations": 783,
+        "transition_occurrence_variables": 165,
+        "MSR_operator_constraints": 24,
+        "bell_families": 146,
+        "transition_orbits": 131
+      },
+      "exact_match": true
+    },
+    "F4_R_commutation": {
+      "identity": "numerator([Q_1^-1 Q_n,Q_1^-1 Q_m]) = adj(Q_1)*cleared_Eq120(k=1)",
+      "assumption": "det(Q_1) != 0",
+      "certificate_residual": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "verified": true
+    },
+    "F4_monomial_family": {
+      "definition": {
+        "Q_1": "q1*sigma_x",
+        "Q_n": "sigma_x*diag(a_n,b_n), n=2,3,4"
+      },
+      "eq120": {
+        "admissible_index_count": 8,
+        "all_residuals_zero": true
+      },
+      "eq129": {
+        "admissible_index_count": 24,
+        "all_residuals_zero": true
+      },
+      "eq130": {
+        "all_residuals_zero": true
+      },
+      "noncommutativity_witnesses": {
+        "[Q_1,Q_2]": [
+          [
+            "q1*(a2 - b2)",
+            "0"
+          ],
+          [
+            "0",
+            "-q1*(a2 - b2)"
+          ]
+        ],
+        "[Q_2,Q_3]": [
+          [
+            "-a2*b3 + a3*b2",
+            "0"
+          ],
+          [
+            "0",
+            "a2*b3 - a3*b2"
+          ]
+        ]
+      },
+      "full_641_relation_status": "UNASSESSED_NOT_A_REPRESENTATION"
+    },
+    "restriction_lemma": {
+      "statement": "If an infinite CPOBC representation satisfies CPOBC, MSR, GC, and two-sided nonsingularity at every finite stage, its operators on sources of cardinality <=4 satisfy every corresponding finite axiom instance.",
+      "mechanical_checks": {
+        "all_compiled_relation_stages_at_most_4": true,
+        "compiled_relation_count": 641,
+        "MSR_source_count": 24,
+        "relation_dependencies_record_nonsingularity": true
+      },
+      "assumptions": [
+        "the infinite representation uses the same finite-stage CPOBC semantics",
+        "all transition operators needed by the restriction are nonsingular",
+        "MSR and operator-level GC hold before restriction",
+        "the compiled 641 records are finite instances, not a presentation of GC"
+      ],
+      "logical_status": "CONDITIONAL_UNIVERSAL_INSTANTIATION_FOR_COMPILED_AXIOMS",
+      "no_go_lifting_status": "NOT_AVAILABLE: no finite d=2 no-go was obtained and operator GC was not compiled"
+    },
+    "source_classification": {
+      "primary_literature": "paper equations and the Pauli-proportional ansatz boundary",
+      "independent_project_derivation": "R-family commutation identity and monomial necessary-relation witness",
+      "unresolved": "full finite d=2 representation and any infinite-system no-go"
+    },
+    "passed": true,
+    "code_commit": "0341af59a1e1318957a82ba35080c10659716051",
+    "artifact_freeze_commit": "artifact set is the child freeze commit of code_commit; the annotated release tag records both hashes"
+  },
+  "generator_reduction_summary": {
+    "counts": {
+      "occurrence_variables": 165,
+      "transition_kind_counts": {
+        "GREGARIOUS": 24,
+        "NON_TIMID": 117,
+        "TIMID": 24
+      },
+      "independent_matrix_generators_after_eq107_eq108": 24,
+      "antichain_Q_generators": 4,
+      "eq112_unreduced_gregarious_generators": 20,
+      "d2_scalar_unknowns_before_inverse_saturation_and_gauge": 96,
+      "rewritten_word_equations": 783,
+      "Bell_free_word_identities_after_reduction": 83,
+      "Bell_residual_constraints_after_reduction": 700,
+      "rewritten_MSR_constraints": 24,
+      "MSR_free_word_identities_after_reduction": 3,
+      "MSR_residual_constraints_after_reduction": 21
+    },
+    "equivalence_obligations": {
+      "all_occurrences_mapped": true,
+      "all_denominator_cleared_relations_rewritten": true,
+      "all_MSR_constraints_rewritten": true,
+      "all_MSR_constraints_reduce_to_word_identities": false,
+      "MSR_reduction_interpretation": "An MSR residual need not vanish in the free word algebra; nonzero residuals remain exact constraints among the reduced gregarious generators and may vanish modulo Bell/GC ideals.",
+      "forward_direction": "Any nonsingular CPOBC assignment obeying the paper hypotheses satisfies the Eq.(107)/(108) occurrence substitutions.",
+      "reverse_direction": "A generator assignment defines all occurrences by the map, but is a finite CPOBC assignment only after every rewritten Bell relation, MSR, GC, and invertibility predicate is checked.",
+      "full_equivalence_status": "PARTIAL_EQ107_EQ108_ONLY; EQ112_ATOMISATION_AND_GC_UNPROVED"
+    },
+    "phase3_strategy_gate": {
+      "threshold_d2_scalar_unknowns": 40,
+      "observed_d2_scalar_unknowns": 96,
+      "inverse_encoding_if_executed": "adjugate plus determinant saturation, retaining 96 matrix entries; explicit inverse matrices would add 96 entries",
+      "threshold_exceeded": true,
+      "decision": "DO_NOT_RUN_DENSE_FULL_SYSTEM_GROEBNER; first compile Eq.(112) atomisation paths and operator GC, then reassess per stratum"
+    },
+    "verdict": "CPOBC_D2_PARTIAL"
+  },
+  "d2_strata": {
+    "schema_version": "final-theory-cpobc-d2-strata-v0.3.2",
+    "field": "algebraically closed characteristic-zero field (target C)",
+    "family": [
+      "R_2",
+      "R_3",
+      "R_4"
+    ],
+    "assumptions": [
+      "Q_1 is invertible",
+      "R_n=Q_1^-1 Q_n",
+      "the k=1 Eq.(120) instances imply pairwise commutation"
+    ],
+    "exhaustiveness_proof": {
+      "predicate_partition": "some discriminant is nonzero (S1); otherwise some R is nonscalar (S2); otherwise all R are scalar (S3)",
+      "single_matrix_identity": "(A-tr(A)/2 I)^2=(tr(A)^2-4 det(A))/4 I",
+      "commuting_nilpotents_proportional_in_d2": "after a nonzero nilpotent is conjugated to E12, its centralizer consists of xI+yE12",
+      "strata_are_exhaustive": true,
+      "strata_are_disjoint_by_predicate": true
+    },
+    "strata": [
+      {
+        "stratum": "S1_DISTINCT_EIGENVALUE",
+        "cover_condition": "some R_n has nonzero characteristic discriminant",
+        "normal_form": "all R_n diagonal in an eigenbasis of the pivot",
+        "symbolic_centralizer_commutator": [
+          [
+            "0",
+            "y*(alpha - beta)"
+          ],
+          [
+            "-z*(alpha - beta)",
+            "0"
+          ]
+        ],
+        "proof_obligation_status": "PASS_ON_OPEN_CHART_alpha_minus_beta_NONZERO",
+        "residual_gauge_group": "invertible diagonal torus, with eigenline swap if unordered",
+        "gauge_completeness": "follows from the two one-dimensional pivot eigenspaces; no Phase-3 gauge fixing was executed",
+        "elimination_status": "NOT_EXECUTED_PHASE1_EQ112_GC_BLOCKED"
+      },
+      {
+        "stratum": "S2_COMMON_NILPOTENT",
+        "cover_condition": "all R_n have repeated eigenvalue and at least one is nonscalar",
+        "normal_form": "R_n=lambda_n*I+mu_n*N, N=E12, N^2=0",
+        "symbolic_centralizer_commutator": [
+          [
+            "z",
+            "w - x"
+          ],
+          [
+            "0",
+            "-z"
+          ]
+        ],
+        "centralizer_solution": [
+          [
+            "x",
+            "y"
+          ],
+          [
+            "0",
+            "x"
+          ]
+        ],
+        "proof_obligation_status": "PASS_EXACT_2X2_CENTRALIZER",
+        "residual_gauge_group": "N stabilizer {a*I+b*N | a != 0}",
+        "gauge_completeness": "a nonzero square-zero 2x2 map has one Jordan block; no Phase-3 gauge fixing was executed",
+        "elimination_status": "NOT_EXECUTED_PHASE1_EQ112_GC_BLOCKED"
+      },
+      {
+        "stratum": "S3_SCALAR",
+        "cover_condition": "every R_n is scalar",
+        "normal_form": "R_n=lambda_n*I and Q_n=lambda_n*Q_1",
+        "antichain_commutators_zero": true,
+        "semantic_descriptor": {
+          "stratum": "S3_SCALAR",
+          "substitution": {
+            "Q_2": "lambda_2*Q_1",
+            "Q_3": "lambda_3*Q_1",
+            "Q_4": "lambda_4*Q_1"
+          },
+          "checked_claim": "ANTICHAIN_Q_COMMUTATORS_ZERO_ONLY",
+          "commutator_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "full_transition_system_status": "UNASSESSED_GENERATOR_REDUCTION_INCOMPLETE"
+        },
+        "semantic_descriptor_sha256": "e8fc9944d049b0544a5e938e489033511db3f8925ce9fff975668077aa7013c2",
+        "proof_obligation_status": "PASS_FOR_ANTICHAIN_Q_COMMUTATORS_ONLY",
+        "residual_gauge_group": "GL(2)",
+        "gauge_completeness": "scalar ratios are similarity-invariant; no Phase-3 gauge fixing was executed",
+        "full_transition_commutativity": "UNRESOLVED_OTHER_TRANSITIONS_MAY_BE_NONCOMMUTATIVE",
+        "elimination_status": "NOT_EXECUTED_PHASE1_EQ112_GC_BLOCKED"
+      }
+    ],
+    "coverage": {
+      "declared_strata": 3,
+      "exhaustiveness_lemma_passed": true,
+      "fully_eliminated_strata": 0,
+      "representation_witness_strata": 0
+    },
+    "unresolved_components": [
+      "full transition-system noncommutativity in S3",
+      "S1 polynomial elimination",
+      "S2 polynomial elimination",
+      "S3 full-transition elimination",
+      "similarity deduplication of any future solutions"
+    ],
+    "verdict": "CPOBC_D2_PARTIAL"
+  },
+  "phase3_elimination": {
+    "strata": [
+      {
+        "stratum": "S1_DISTINCT_EIGENVALUE",
+        "status": "NOT_EXECUTED_PHASE1_EQ112_GC_BLOCKED",
+        "solution_found": false,
+        "no_go_certificate": false,
+        "timeout": false,
+        "reason": "20 Eq.(112) generator reductions and operator-level GC identities remain unavailable"
+      },
+      {
+        "stratum": "S2_COMMON_NILPOTENT",
+        "status": "NOT_EXECUTED_PHASE1_EQ112_GC_BLOCKED",
+        "solution_found": false,
+        "no_go_certificate": false,
+        "timeout": false,
+        "reason": "20 Eq.(112) generator reductions and operator-level GC identities remain unavailable"
+      },
+      {
+        "stratum": "S3_SCALAR",
+        "status": "NOT_EXECUTED_PHASE1_EQ112_GC_BLOCKED",
+        "solution_found": false,
+        "no_go_certificate": false,
+        "timeout": false,
+        "reason": "20 Eq.(112) generator reductions and operator-level GC identities remain unavailable"
+      }
+    ],
+    "full_polynomial_inventory": {
+      "Bell_word_equations": 783,
+      "d2_Bell_entry_equations_before_reduction": 3132,
+      "Bell_operator_residuals_after_reduction": 700,
+      "d2_Bell_entry_residuals_after_reduction": 2800,
+      "MSR_operator_constraints": 24,
+      "d2_MSR_entry_equations": 96,
+      "generator_matrix_count_after_eq107_eq108": 24,
+      "generator_scalar_entry_count_d2": 96,
+      "inverse_matrix_entry_variables": "0 planned under adjugate/determinant saturation; 96 additional if explicit inverses are introduced",
+      "determinant_saturation_status": "NOT_CONSTRUCTED",
+      "GC_operator_equations": "NOT_COMPILED",
+      "transition_determinant_predicates": 165
+    },
+    "groebner_or_primary_decomposition_runs": 0,
+    "numerical_candidate_runs": 0,
+    "reason": "The declared strategy gate requires redesign above 40 d=2 scalar unknowns, and the GC/Eq.(112) system is incomplete."
+  },
+  "independent_oracle_gate": {
+    "oracle_role": "INDEPENDENT_PHASE2_AND_LIMITED_G1_ORACLE",
+    "oracle_passed_within_scope": true,
+    "production_s3_semantic_digest": "e8fc9944d049b0544a5e938e489033511db3f8925ce9fff975668077aa7013c2",
+    "oracle_s3_semantic_digest": "e8fc9944d049b0544a5e938e489033511db3f8925ce9fff975668077aa7013c2",
+    "limited_digest_match": true,
+    "G1_status": "PARTIAL_ONLY: S3 antichain-Q digest reproduced; no full Phase-3 decision exists to reproduce"
+  },
+  "verdict_requirements": {
+    "CPOBC_D2_NONCOMMUTATIVE_REPRESENTATION_FOUND": {
+      "641_relations_exact": false,
+      "all_required_transitions_invertible": false,
+      "exact_noncommutativity": false,
+      "similarity_nonduplicate": false,
+      "outside_Pauli_proportional_ansatz": false,
+      "n_le_4_vector_measure_constructible": false
+    },
+    "CPOBC_D2_COMPLETE_NO_GO": {
+      "general_invertible_2x2_cover": false,
+      "S1_S2_S3_all_processed": false,
+      "similarity_gauge_complete": false,
+      "exact_elimination_certificate_each_stratum": false,
+      "not_Pauli_limited": true,
+      "conditional_infinite_restriction_lemma_available": true,
+      "finite_no_go_available_for_lifting": false
+    },
+    "CPOBC_D2_PARTIAL": {
+      "triggered": true,
+      "reason": "At least one mandatory Phase-4 condition is unmet; in fact the full Phase-3 eliminations were not executed."
+    }
+  },
+  "frozen_v031_d3": {
+    "path": "results/v0.3.1_d3_strata_manifest.json",
+    "sha256": "3729a701f6f909cecb6d6889d72bcb7cd5b4d03cc9822d39c56329432e9297c5",
+    "status": "FROZEN_UNRESOLVED_NOT_MODIFIED"
+  },
+  "claim_separation": {
+    "primary_literature_known": [
+      "paper Eqs.(107),(108),(112),(114),(120),(129),(130)",
+      "paper Eq.(165) is a Pauli-proportional d=2 ansatz"
+    ],
+    "independent_project_derivations": [
+      "exact F4 monomial necessary-relation witness",
+      "165-to-24 Eq.(107)/(108) occurrence reduction",
+      "all 783 Bell words and 24 MSR constraints rewritten",
+      "S1/S2/S3 antichain-ratio cover"
+    ],
+    "unresolved": [
+      "20 non-antichain gregarious generators lack Eq.(112) path certificates",
+      "operator-level GC constraints are not compiled",
+      "96 d=2 scalar generator entries exceed the declared 40-variable redesign gate",
+      "S1, S2, and S3 full polynomial eliminations were not executed",
+      "determinant saturation for every reduced transition expression",
+      "exact noncommutativity branches for the full transition assignment",
+      "full independent Phase-3 oracle (only an S3 antichain digest was matched)",
+      "n<=4 vector measure construction",
+      "any infinite-system representation or no-go"
+    ]
+  },
+  "unresolved_components": [
+    "20 non-antichain gregarious generators lack Eq.(112) path certificates",
+    "operator-level GC constraints are not compiled",
+    "96 d=2 scalar generator entries exceed the declared 40-variable redesign gate",
+    "S1, S2, and S3 full polynomial eliminations were not executed",
+    "determinant saturation for every reduced transition expression",
+    "exact noncommutativity branches for the full transition assignment",
+    "full independent Phase-3 oracle (only an S3 antichain digest was matched)",
+    "n<=4 vector measure construction",
+    "any infinite-system representation or no-go"
+  ],
+  "certificate_hashes": [
+    {
+      "path": "certificates/cpobc_d2/v0.3.2_phase0_exact.json",
+      "sha256": "7a1d1eba145974c3ec104cb4500b3ae735f5a13a612d3c0742acf3dd02c79311"
+    },
+    {
+      "path": "certificates/cpobc_d2/v0.3.2_independent_oracle.json",
+      "sha256": "792bd9472516cc45e2f2578629f5376eea4bd2dbe24b035397c61876fd6c5cbe"
+    },
+    {
+      "path": "certificates/cpobc_d2/v0.3.2_limited_s3_digest.json",
+      "sha256": "50967399200920d78d1b7e9c75aa1a90f1d463380649c6fe29089e52bdf8b98e"
+    }
+  ],
+  "verdict": "CPOBC_D2_PARTIAL",
+  "passed": true,
+  "artifact_freeze_commit": "artifact set is the child freeze commit of code_commit; the annotated release tag records both hashes"
+}

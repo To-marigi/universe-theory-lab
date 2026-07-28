@@ -1,0 +1,384 @@
+===== PAGE 1 =====
+
+arXiv:quant-ph/0104027v1  5 Apr 2001
+Semicausal operations are semilocalizable
+T. Eggeling ∗, D. Schlingemann † and R.F. Werner ‡
+Institut f¨ ur Mathematische Physik, TU Braunschweig,
+Mendelssohnstr.3, 38106 Braunschweig, Germany.
+We prove a conjecture by DiVincenzo, which in the termi-
+nology of Preskill et al. [quant-ph/0102043] states that “s em-
+icausal operations are semilocalizable”. That is, we show
+that any operation on the combined system of Alice and Bob,
+which does not allow Bob to send messages to Alice, can be
+represented as an operation by Alice, transmitting a quantu m
+particle to Bob, and a local operation by Bob. The proof is
+based on the uniqueness of the Stinespring representation f or
+a completely positive map. We sketch some of the problems
+in transferring these concepts to the context of relativist ic
+quantum ﬁeld theory.
+I. INTRODUCTION
+In a recent paper [1] Preskill et al. focus on the con-
+straints that quantum operations must fulﬁll in order to
+be compatible with relativistic quantum theory. They
+introduce the notions of causal, localizable, semicausal
+and semilocalizable quantum operations for bipartite sys-
+tems. The preﬁx semi refers to “directed” properties,
+which are not invariant under exchanging Alice’s and
+Bob’s system.
+An operation on a bipartite system is called semilocal-
+izable for Alice, if it can be decomposed into two local
+operations with one way quantum communication from
+Alice to Bob as illustrated by Figure 1: First Alice per-
+forms a local operation G on her system and sends quan-
+tum information (via C) to Bob. Then Bob performs a
+local operation F on his system, depending on the infor-
+mation he got from Alice.
+A
+G∗
+A
+C
+B
+F∗
+B
+FIG. 1.
+∗Electronic Mail: T.Eggeling@tu-bs.de
+†Electronic Mail: D.Schlingemann@tu-bs.de
+‡Electronic Mail: R.Werner@tu-bs.de
+An obvious consequence of this setup is that Bob can-
+not send messages to Alice: the only possible carrier
+of information (quantum or classical) is the system C,
+which goes from Alice to Bob. Operations with this prop-
+erty will be called “ semicausal ”. In other words, if we
+consider only measurements on Alice’s output of a sem-
+icausal operation, expectations do not depend on Bob’s
+initial preparation. That is, as far as Alice is concerned,
+the device can be described by an operation on her sys-
+tem alone.
+The main result of this paper is the proof of the con-
+verse of the above remark: if a device allows no signalling
+from Bob to Alice (semicausality) we can represent it ex-
+plicitly as a device involving possibly a particle sent from
+Alice to Bob but none in the other direction.
+Causality and localizablility are deﬁned as the analo-
+gous symmetric properties. From this it would seem that
+these are also equivalent (just use the proof twice, with
+an exchange of the roles of Alice and Bob). However, full
+localizability is deﬁned to be stronger than the two semi-
+localizabilities: the latter would mean only that there are
+two representations, each involving only one-way commu-
+nication, whereas localizability means the absence of all
+communication. Indeed, in [1] an example for a causal
+operation which is not localizable has been given.
+Thus all proven implications between causal, semi-
+causal, localizable and semilocalizable operations (in-
+cluding the results of this paper) can be visualized in
+the following diagram:
+localizable = ⇒ causal
+⇓ ⇓
+semilocalizable ⇐ ⇒ semicausal
+(1)
+As in [1], the concepts introduced so far only require
+the standard setup of quantum information theory, in
+which “localization” is phrased entirely in terms of the
+Hilbert space tensor product of Alice’s and Bob’s respec-
+tive Hilbert space. This kind of localization is a priori
+unrelated to relativistic locality, and it turns out that
+for building a fully relativistic quantum theory it is too
+narrow. Detailed knowledge about the relativistic local-
+ization structures has been accumulated during the last
+three decades in a research programme known variously
+as “algebraic quantum ﬁeld theory” or “local quantum
+physics” [2–4]. Quantum information theoretical aspects
+have also been studied within this framework (See e.g.
+[5–7] and references cited therein). Technically, the main
+change is related to the fact that one has to deal with in-
+ﬁnitely many degrees of freedom, and occurs in a similar
+1
+
+===== PAGE 2 =====
+
+way when discussing statistical mechanics in the ther-
+modynamic limit [8]: the observable algebra of a local
+subsystem can no longer be taken as the operators of the
+form A ⊗ 1 with respect to some tensor product decom-
+position of the underlying Hilbert space. Instead, more
+general von Neumann algebras must appear as observ-
+able algebras. We will brieﬂy comment on the changes
+this introduces in the concepts of localized operations in
+the last section.
+II. DEFINITION OF LOCALIZATION
+PROPER TIES
+As is well known, physical operations can be described
+either in the Schr¨ odinger picture, by a map acting on
+states or density matrices or, equivalently, in the Heisen-
+berg picture, by an operator acting on observables. In
+spite of this equivalence, however, some things and espe-
+cially localization properties and the Stinespring dilation
+are stated more easily in the Heisenberg picture. There-
+fore we will work in the Heisenberg picture.
+We recall some basic notions and notations. In the
+Heisenberg picture an operation [9] taking systems with
+Hilbert space Hin to systems with Hilbert space Hout
+is a completely positive operator E: B(Hout) → B(Hin)
+satisfying E(1) ≤ 1. The corresponding map E∗ in the
+Schr¨ odinger picture acts on a density matrix ρ on Hin
+such that
+tr(E∗ (ρ) A) = tr( ρ E (A)) ∀A ∈ B(Hout) . (2)
+The conditions on E are equivalent to E∗ being like-
+wise completely positive, and satisfying the normaliza-
+tion condition tr(E∗ (ρ)) ≤ 1 for all density operators ρ. If
+E∗ is even trace preserving (equivalently: E(1) = 1), we
+call the operation non-selective, or a channel [10]. As the
+name suggests, selective operations typically occur, when
+part of the operation is a selection of a sub-ensemble ac-
+cording to measuring results obtained by the device.
+The four properties in diagram (1) all refer to an op-
+eration E with Hin = Hout = HAB ≡ H A ⊗ H B.
+Deﬁnition: A completely positive map (not necessarily
+a channel) E: B(HAB) → B(HAB) is called
+1. semicausal if it can be written as
+E(a ⊗ 1B) = T (a) ⊗ 1B (3)
+for all a ∈ B(HA) and for some completely positive
+map T : B(HA) → B(HA).
+2. causal if it semicausal in both directions, i.e. if
+E(a ⊗ 1B) = T (a) ⊗ 1B and (4)
+E(1A ⊗ b) = 1A ⊗ T ′(b) (5)
+for all a ∈ B(HA), b ∈ B(HB) and for some com-
+pletely positive maps T : B(HA) → B(HA) and
+T ′: B(HB) → B(HB).
+3. localizable if it can be decomposed into
+E = G ⊗ F (6)
+where F : B(HB) → B(HB) is a channel and
+G: B(HA) → B(HA) a completely positive map.
+4. semilocalizable if it can be decomposed into
+E = (G ⊗ idB) ◦ (idA ⊗ F ) (7)
+where F : B(HB) → B(HCB ) is a channel,
+G: B(HAC ) → B(HA) a completely positive map
+and HC a ﬁnite dimensional Hilbert space.
+III. SEMICAUSAL OPERATIONS ARE
+SEMILOCAL
+We are now prepared to give the proof of the conjec-
+ture by DiVincenzo, of which the special case of complete
+measurements was treated in [1].
+Theorem: A completely positive map (not necessarily a
+channel) is semilocal if and only if it is semicausal.
+Before going into the proof, we point out some salient
+facts about the Stinespring representation of a com-
+pletely positive map [11].
+a. The Stinespring representation: The Stinespring
+representation theorem, as adapted to maps between ﬁ-
+nite dimensional quantum systems, states that any com-
+pletely positive map E: B(Hout) → B(Hin) can be writ-
+ten as
+E(a) = V ∗ (a ⊗ 1K)V (8)
+with a linear operator V : Hin → H out ⊗ K , where K is a
+ﬁnite dimensional Hilbert space, called the dilation space.
+The representation (8) is called minimal if (and only if)
+the set of vectors
+(a ⊗ 1K)V ϕ (9)
+with a ∈ B(Hout) and ϕ ∈ H in spans Hout ⊗ K .
+b. Uniqueness: The main step of the proof will be
+to get a factorization of the given operation into two op-
+erations with suitable localization properties. It turns
+out that such a factorization is provided precisely by the
+uniqueness statement for the Stinespring dilation. We
+therefore explain this uniqueness in more detail.
+Suppose that E has a minimal Stinespring represen-
+tation (8) as well as a further (not necessarily minimal)
+one
+2
+
+===== PAGE 3 =====
+
+E(a) = V ∗
+1 (a ⊗ 1K1)V1 (10)
+with another linear map V1: H → H ⊗ K 1. Since rep-
+resentation (8) is taken to be minimal, we conclude
+dim(K) ≤ dim(K1) and the prescription
+˜U (a ⊗ 1K)V ψ := (a ⊗ 1K1)V1ψ (11)
+yields a well deﬁned isometry ˜U : H ⊗ K → H ⊗ K 1. This
+can be easily veriﬁed by observing that all scalar products
+between vectors such as the ones on the right hand side
+of (11) are ﬁxed by the relation (10). From this deﬁnition
+of ˜U we ﬁnd that the intertwining relation
+˜U (a ⊗ 1K) = ( a ⊗ 1K1) ˜U (12)
+holds for each a ∈ B(H). Hence ˜U must be decomposable
+into
+˜U = 1H ⊗ U (13)
+with an isometry U : K → K 1. If both representations
+(8) and (10) are minimal the dimensions of the dilation
+spaces coincide and U must be a unitary operator. The
+minimal Stinespring representation is thus unique up to
+a unitary transformation.
+c. Kraus operators: In most of the current litera-
+ture the Stinespring dilation is used only in the form
+of a corollary, called the Kraus representation of a com-
+pletely positive map. If we introduce an orthonormal
+basis ( ε1, · · ·, εk) of the dilation space K and deﬁne the
+“Kraus operators” Kα: Hin → H out by
+V ψ =
+∑
+α
+(Kαψ) ⊗ εα ∀ψ ∈ H in, (14)
+we can write the dilation formula (8) as E(a) =∑k
+α=1 K ∗
+αaKα for all a ∈ B(Hout). Of course, every-
+thing we do in this paper could be formulated in terms
+of Kraus operators. We found this less practical, how-
+ever, because the above uniqueness statement becomes
+more involved: The choice of the basis εα always intro-
+duces some arbitrariness, so even in the minimal case
+the collection of Kraus operators is only unique up to a
+unitary transformation acting on the index α.
+Proof of Theorem: As noted in the introduction the
+implication “semilocalizable= ⇒ semilocal” is trivial. In
+the notation of Section II it becomes
+E(a ⊗ 1B) = G(a ⊗ 1C ) ⊗ 1B
+so (3) follows with T (a) := G(a ⊗ 1C).
+For the reverse implication, let E: B(HAB) →
+B(HAB) be a semicausal operation, i.e. an operation ful-
+ﬁlling (3) for some completely positive map T : B(HA) →
+B(HA). The Stinespring representation of E gives us
+a dilation space HD and a linear operator V : HAB →
+HABD , HABD ≡ H AB ⊗ H D, such that
+E(a ⊗ b) = V ∗ (a ⊗ b ⊗ 1D)V (15)
+for each a ∈ B(HA) and b ∈ B(HB). Analogously we get
+a dilation space HC and a linear operator W : HA → H AC
+from the minimal Stinespring representation of T :
+T (a) = W ∗ (a ⊗ 1C)W (16)
+for all a ∈ B(HA). According to the relation (3) we
+obtain
+V ∗ (a ⊗ 1BD )V = (W ∗ ⊗ 1B)(a ⊗ 1CB )(W ⊗ 1B) (17)
+for all a ∈ B(HA) [12]. The uniqueness of the minimal
+Stinespring representation now implies the existence of
+an isometry U : HCB → H BD (see Eq. (13)) such that
+(a ⊗ 1BD )V = (1A ⊗ U )(a ⊗ 1CB )(W ⊗ 1B) (18)
+and therefore
+V = (1A ⊗ U )(W ⊗ 1B) . (19)
+From this we obtain a completely positive unital map
+F : B(HB) → B(HCB ) by taking
+F (b) := U ∗ (b ⊗ 1D)U (20)
+for every b ∈ B(HB) and a completely positive (not nec-
+essarily unital) map G: B(HAC ) → B(HA):
+G(a ⊗ c) := W ∗ (a ⊗ c)W (21)
+for every a ∈ B(HA) and c ∈ B(HC ). Thus we conclude
+from (15) and (19) that the identity (7) holds. In other
+words, E is semilocalizable. ✷
+IV. OUTLOOK
+As already indicated in the introduction, quantum ﬁeld
+theory requires a more general setup than the one used
+in this note and in [1]. Relativistic localization is then
+expressed by assigning to every spacetime region the alge-
+bra of observables, which can be measured in that region,
+typically a von Neumann algebra. Signal causality then
+means that whenever two regions are spacelike separated
+(no causal signals can be exchanged) the corresponding
+algebras commute elementwise. One might try replac-
+ing this by an assignment of “local Hilbert spaces” to
+spacetime regions, such that the union of spacelike sep-
+arated regions corresponds to the Hilbert space tensor
+product. This is not possible, however, because space-
+time regions can be split into ﬁner and ﬁner pieces, and
+this would create diﬃculties for the tensor products, es-
+pecially when the overall Hilbert space is required to be
+3
+
+===== PAGE 4 =====
+
+separable (to have a countable orthonormal basis), and
+relativistic invariance is imposed.
+Surprisingly the von Neumann algebras of local regions
+are all isomorphic under mild axiomatic assumptions.
+More speciﬁcally they are all isomorphic to the unique
+hyperﬁnite type III 1-factor (see [14] for an explanation
+of these terms, and the proof). Nevertheless the localiza-
+tion structure is far from trivial, and resides in the way
+these algebras are nested into each other. Already for
+the inclusion of two such algebras an amazing variety is
+possible.
+As might be expected from the heuristic argument at
+the beginning of this section, the small distance local-
+ization structure in quantum ﬁeld theory deviates dra-
+matically from what would be expected from Hilbert
+space tensor products. Suppose Alice and Bob operate
+in spacelike separated regions, and A and B are the local
+von Neumann algebras assigned to these regions. Then
+when the regions are very close together, no physical [13]
+product states exist, hence there are no separable states
+at all. In fact, all physical states violate the CHSH-Bell
+inequality maximally [6].
+On the other hand, if the regions are a ﬁnite distance
+apart, the so-called split property holds, which is equiva-
+lent to the existence of many separable states, or to the
+possibility for Bob to prepare any state of his subsystem
+locally without disturbing Alice’s [5]. Algebraically this
+means that the von Neumann algebra generated by A
+and B is isomorphic to the von Neumann algebra tensor
+product A
+⊗ B [15].
+The notion of semicausality is easy to express in this
+context: that E maps operators of the form a ⊗ 1 to op-
+erators of the same form just means that Alice’s algebra
+is invariant in the sense that a ∈ A =⇒ E(a) ∈ A, or
+brieﬂy E(A) ⊂ A.
+It is not so clear what should be understood by semilo-
+cality. The reason is that one has to decide what degree
+of independence should be postulated for the intermedi-
+ate system C, sent from Alice to Bob in Figure 1. If we
+require the kind of independence valid for widely sepa-
+rated regions (split property), as suggested by the image
+of a system being “sent”, the Theorem is probably false.
+Although the Stinespring decomposition for semicausal
+maps is well understood, it is not clear what factoriza-
+tions would be meaningful interpretations of Figure 1.
+ACKNOWLEDGEMENTS
+Funding by the European Union project EQUIP (con-
+tract IST-1999-11053) and ﬁnancial support from the
+DFG (Bonn) are gratefully acknowledged.
+[1] D. Beckman, D. Gottesman, M. A. Nielsen and John
+Preskill, quant-ph/0102043 (2001).
+[2] H. Araki, Mathematical theory of quantum ﬁelds, Oxford
+University Press, (1999)
+[3] H.-J. Borchers, Translation group and particle represe n-
+tations in quantum ﬁeld theory, Lecture Notes in Physics
+(Springer Verlag, Berlin), 1996.
+[4] R. Haag, Local quantum physics, Springer-Verlag, Berli n
+1992. (A second edition was released in 1996.)
+[5] R.F. Werner, Local preparability of states and the split
+property in quantum ﬁeld theory, Lett. Math. Phys. 13
+(1987) 325-329.
+[6] S.J. Summers, R.F. Werner, Maximal violation of Bell’s
+inequalities for algebras of observables in tangent space-
+time regions, Ann. Inst. H. Poincar´ e, A 49 (1988) 215-
+243.
+[7] R. Clifton, H. Halvorson, Entanglement and open
+systems in algebraic quantum ﬁeld theory, quant-
+ph/0001107.
+[8] O. Bratteli and D.W. Robinson, Operator algebras and
+quantum statistical mechanics, two volumes, (Springer
+Verlag, New York) 1979 and 1981.
+[9] E. B. Davies, Quantum Theory of Open Systems, Aca-
+demic Press 1976.
+[10] In [1] the term superoperator is used for (the dual map
+of) a channel.
+[11] W. F. Stinespring, Proc. Amer. Math. Soc. 6, 211-216
+(1955).
+[12] Note that if W is a minimal dilation of T then so is
+W ⊗ 1B for E.
+[13] Here “physical state” technically means a “normal” sta te,
+i.e., a state which can be represented by a density opera-
+tor on the Hilbert space of the global system, as opposed
+to “singular” states. For the purposes of this discussion
+it is suﬃcient to require “local normality”, i.e., that the
+restriction to bounded spacetime regions can be repre-
+sented in this way. Roughly speaking this requires that
+no inﬁnite amount of energy needs to be invested in a
+ﬁnite region to prepare the state. This property allows
+also temperature states of ﬁnite density, which are glob-
+ally diﬀerent (singular) from the vacuum, but not locally.
+[14] H. Baumg¨ artel and M. Wollenberg, Causal nets of oper-
+ator algebras, Akademie Verlag Berlin, 1992.
+[15] S. Sakai, C*-algebras and W*-algebras, Classics in Mat h-
+ematics, Springer-Verlag Berlin Heidelberg New York,
+1971.
+4

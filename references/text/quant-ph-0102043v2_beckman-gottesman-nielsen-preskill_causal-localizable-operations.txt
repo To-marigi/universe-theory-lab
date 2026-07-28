@@ -1,0 +1,2779 @@
+===== PAGE 1 =====
+
+arXiv:quant-ph/0102043v2  14 Jun 2001
+Causal and localizable quantum operations ∗
+David Beckman (1)† Daniel Gottesman, (2,3)‡, M. A. Nielsen, (4,1)§ and John Preskill (1)∗∗
+(1)Institute for Quantum Information, California Institute o f Technology, Pasadena, CA 91125, USA
+(2)Microsoft Corporation, One Microsoft Way, Redmond, WA 9805 2, USA
+(3)Computer Science Division, EECS, University of California , Berkeley, CA 94720, USA
+(4)Center for Quantum Computer Technology, University of Quee nsland 4072, Australia
+We examine constraints on quantum operations imposed
+by relativistic causality. A bipartite superoperator is sa id to
+be localizable if it can be implemented by two parties (Alice
+and Bob) who share entanglement but do not communicate;
+it is causal if the superoperator does not convey information
+from Alice to Bob or from Bob to Alice. We characterize the
+general structure of causal complete measurement superope r-
+ators, and exhibit examples that are causal but not localiz-
+able. We construct another class of causal bipartite super-
+operators that are not localizable by invoking bounds on the
+strength of correlations among the parts of a quantum sys-
+tem. A bipartite superoperator is said to be semilocalizable
+if it can be implemented with one-way quantum communi-
+cation from Alice to Bob, and it is semicausal if it conveys
+no information from Bob to Alice. We show that all semi-
+causal complete measurement superoperators are semilocal -
+izable, and we establish a general criterion for semicausal ity.
+In the multipartite case, we observe that a measurement su-
+peroperator that projects onto the eigenspaces of a stabili zer
+code is localizable.
+I. INTRODUCTION
+What are the observables of a relativistic quantum the-
+ory? Standard wisdom holds that any self-adjoint op-
+erator that can be deﬁned on a spacelike slice through
+spacetime is measurable in principle. But in fact, mea-
+suring a typical such operator is forbidden by relativistic
+causality, and hence impossible.
+More generally, it is often stated that the possible
+ways that the state of a quantum system can change are
+described by quantum operations – completely positive
+trace non-increasing linear maps of density operators to
+density operators [1,2]. But in a relativistic quantum
+theory, typical operations would allow superluminal sig-
+naling, and are therefore unphysical.
+Relativistic quantum ﬁeld theory allows us to iden-
+tify an algebra of observables that is compatible with the
+∗ CALT-68-2309
+†beckman@theory.caltech.edu
+‡gottesma@eecs.berkeley.edu
+§nielsen@physics.uq.edu.au
+∗∗ preskill@theory.caltech.edu
+causal structure of spacetime [3]. Despite this marvelous
+achievement, puzzles and open questions remain. Our
+objective in this paper is to understand better the re-
+strictions on operations that are imposed by special rela-
+tivity. Mostly, we will consider a simpliﬁed version of the
+problem in which the physical system is divided into two
+separated parts: part A, which is controlled by a party
+that we will call Alice, and part B, which is controlled by
+Bob. Initially, Alice and Bob share a joint quantum state
+whose density operator ρAB is not known, and they wish
+to transform the state to E(ρAB), where E is a speciﬁed
+operation.
+If Alice and Bob were able to communicate by sending
+quantum information back and forth, then they would be
+able to apply any operation EAB to their state. We want
+to determine what operations they can implement if no
+communication (quantum or classical) is permitted. In a
+relativistic setting, these are the operations that can be
+realized if Alice’s action and Bob’s action are spacelike-
+separated events. We will, though, permit Alice and Bob
+to make use of a shared entangled ancilla state that might
+have been prepared earlier and distributed to them.
+While Alice and Bob are permitted to perform mea-
+surements, Bob cannot know the outcome of Alice’s mea-
+surement, and Alice cannot know the outcome of Bob’s.
+Therefore, we will largely restrict our attention to trace-
+preserving quantum operations, also known as superoper-
+ators, where no postselection of the quantum state based
+on the measurement outcome is allowed. We say that
+a bipartite superoperator is localizable if it can be im-
+plemented by Alice and Bob acting locally on the shared
+state and the shared ancilla, without any communication
+from Alice to Bob or Bob to Alice.
+Another important concept is that of a causal opera-
+tion. We say that an operation is causal if it does not
+allow either party to send a signal to the other. More
+precisely, imagine that Bob applies a local superoperator
+B to his half of the state he shares with Alice just before
+the global operation E acts on the joint system, and that
+Alice makes a local measurement on her half just after E
+acts. If Alice’s measurement can acquire any information
+about what operation was applied by Bob, then we say
+that Bob can signal Alice. The operation is causal if no
+such signaling is possible in either direction.
+Entanglement shared by Alice and Bob cannot be used
+to send a superluminal signal from Alice to Bob or from
+Bob to Alice. Therefore, any localizable superoperator is
+1
+
+===== PAGE 2 =====
+
+surely a causal superoperator. What about the converse?
+It might seem reasonable to expect that any operation, if
+it respects the principle that information cannot propa-
+gate outside the forward light cone, should be physically
+realizable in principle. However, we will show otherwise
+by exhibiting some examples of superoperators that are
+causal but not localizable.
+We obtain weaker notions of localizability and causal-
+ity by considering communication in just one direction.
+We say that a superoperator is semilocalizable if it is pos-
+sible to implement it with one-way quantum communi-
+cation from Alice to Bob. Such operations are physically
+realizable if Bob’s action takes place in the future light
+cone of Alice’s action. Similarly, we say that an opera-
+tion is semicausal if it does not allow Bob to send a sig-
+nal to Alice. Obviously, a semilocalizable superoperator
+is semicausal – communication from Alice to Bob cannot
+help Bob to send a message to Alice. What about the
+converse? If one believes that causality is a very spe-
+cial property of operations that is not likely to hold “by
+accident,” then it is natural to formulate the following
+conjecture, suggested to us by DiVincenzo [4]:
+Conjecture Every semicausal superoperator is semilo-
+calizable.
+We will prove this conjecture for the special case of com-
+plete orthogonal measurement superoperators. Whether
+it holds in general remains an open question.
+The problem of characterizing what measurements are
+possible was raised by Dirac [5], and interesting examples
+of impossible measurements were pointed out in [6–8].
+That relativistic causality may restrict the operators that
+can be measured in a ﬁeld theory was ﬁrst emphasized by
+Landau and Peierls [9] (though their particular concerns
+were well answered by Bohr and Rosenfeld [10]). More
+recently, these restrictions have been noted by a variety
+of authors [11–16]. In [17], we have addressed some par-
+ticular causality issues that arise in non-Abelian gauge
+theories.
+To apply our notion of localizability to quantum ﬁeld
+theory, we must adopt the convenient ﬁction that the en-
+tangled ancilla is an external probe not itself described by
+the ﬁeld theory, and that its local coupling to the ﬁelds is
+completely adjustable. This idealization is highly ques-
+tionable in a quantum theory of gravity, and even for
+quantum ﬁeld theory on ﬂat spacetime it is open to crit-
+icism. In particular, ﬁeld variables in spatially adjacent
+regions are inevitably entangled [3], so that no strict sep-
+aration between ﬁeld and ancilla variables is really possi-
+ble. On the other hand, if the probe variables are “heavy”
+with rapidly decaying correlations and the ﬁeld variables
+are “light,” then our idealization is credible and worthy
+of study.
+Should the conjecture that semicausality implies
+semilocalizability prove to be true, then we will have a
+general and powerful criterion for deciding if a superoper-
+ator can be executed with one-way communication. Even
+so, we will lack a fully satisfactory way of characterizing
+the observables of a relativistic quantum theory, as no
+communication is possible if an operation is carried out
+on a spacelike slice. The existence of causal quantum op-
+erations that are not localizable establishes a perplexing
+gap between what is causal and what is local.
+In §II, we formulate precise deﬁnitions of causal, semi-
+causal, localizable, and semilocalizable, and we point out
+a large class of localizable superoperators characterized
+by local stabilizer groups. We describe the general struc-
+ture of semicausal and causal complete measurement su-
+peroperators in §III, show that semicausal complete mea-
+surement superoperators are semilocalizable in §IV, and
+exhibit some causal complete measurement superopera-
+tors that are not localizable in §V. In §VI, we exploit
+bounds on the strength of quantum correlations to con-
+struct another class of causal superoperators that are not
+localizable, and we note a connection between localizabil-
+ity and quantum communication complexity. We prove
+in §VII that a semicausal unitary transformation must be
+a tensor product. Some further criteria for semicausality
+are developed in §VIII, and §IX contains some concluding
+comments. Proofs of two of our theorems are included as
+appendices.
+II. CAUSALITY AND LOCALIZABILITY
+In this section, we formally deﬁne the properties of
+quantum operations that we wish to explore – causality,
+semicausality, localizability, and semilocalizability – and
+we discuss some examples that illustrate these concepts.
+A. Causality
+Any permissible way in which the state of a quantum
+system can change is described by a quantum operation,
+a completely positive trace-nonincreasing linear map of
+density operators to density operators. An important
+special case is a trace-preserving map, or superoperator.
+A superoperator E can be interpreted as a generalized
+measurement with an unknown outcome; its action on a
+density operator ρ has an operator-sum representation
+E(ρ) =
+∑
+µ
+MµρM †
+µ , (1)
+where the operation elements Mµ obey the normalization
+condition
+∑
+µ
+M †
+µMµ = I . (2)
+2
+
+===== PAGE 3 =====
+
+An operation is a generalized measurement in which a
+particular outcome has been selected, but the density
+operator has not been renormalized. It too can be repre-
+sented as in eq. (1), but where the sum over µ is restricted
+to a subset of a set of operators obeying eq. (2) – that
+is, the eigenvalues of ∑
+µ M †
+µMµ are no greater than 1.
+For a general operation, tr E(ρ) can be interpreted as the
+probability of the observed outcome.
+Every superoperator has a unitary representation. To
+implement the superoperator ES acting on Hilbert space
+HS, we can introduce an ancilla with Hilbert space HR,
+prepare a pure state |ψ⟩ ∈ H R of the ancilla, perform a
+unitary transformation U on HS ⊗ H R, and then discard
+the ancilla:
+ES(ρS) = tr R
+[
+U (ρS ⊗ |ψ⟩RR ⟨ψ|) U †]
+. (3)
+A general operation has a similar representation, except
+that after U is applied, a (not necessarily complete) or-
+thogonal measurement is carried out on the ancilla and
+a particular result is selected (without renormalizing the
+density operator).
+But what quantum operations are physically possible?
+The general answer is not known, but it is known that
+many operations of the form eq. (1) are unphysical be-
+cause they run afoul of relativistic causality [11–16]. Con-
+sider, as in Fig. 1, two parties Alice and Bob who perform
+spacelike-separated actions. Just prior to the implemen-
+tation of the operation E, Bob performs a local operation
+on the degrees of freedom in his vicinity, and just after
+the implementation of E, Alice performs a local measure-
+ment of the degrees of freedom in her vicinity. If Alice is
+able to acquire any information about what local opera-
+tion Bob chose to apply, then Bob has successfully sent
+a superluminal signal to Alice.
+Alice
+Boboperation
+space
+time
+light
+cone
+FIG. 1. An operation on a time slice. If the operation al-
+lows spacelike-separated Alice and Bob to communicate, the n
+it is not causal and hence not physically implementable.
+If a bipartite operation E does not enable such super-
+luminal signaling from Bob to Alice, then we will say
+that E is semicausal. If E does not allow signaling in
+either direction, we will say that E is causal. (In our
+discussions of semicausality, we will normally adopt the
+convention that Bob is the party attempting to send the
+signal and Alice is the party attempting to receive it.
+This somewhat perverse convention is chosen in order to
+be consistent with the deﬁnition of semilocalizable that is
+introduced below.) An operation that is not semicausal
+is said to be acausal. A causal operation will sometimes
+be called fully causal , when we wish to emphasize the
+contrast with semicausality.
+Alice’s part of the bipartite system will be called “sys-
+tem A”, with Hilbert space HA, and Bob’s half is “system
+B” with Hilbert space HB. We consider a quantum oper-
+ation E that acts on states in HA ⊗ H B. Alice might have
+under her control not only A, but also an ancilla system
+R with Hilbert space HR, and Bob might control an an-
+cilla system S with Hilbert space HS. Suppose that Bob
+wants to attempt to exploit the operation E to send a
+signal to Alice. Alice and Bob could share an initial den-
+sity operator ρRABS living in HR ⊗ H A ⊗ H B ⊗ H S, and
+Bob could apply a superoperator BBS to his half of the
+state. (Bob is restricted to a superoperator, rather than
+a trace-decreasing operation, because Alice is unaware
+of the outcome of any measurement performed by Bob.)
+Then after the operation E is applied, we obtain Alice’s
+ﬁnal density operator by tracing over Bob’s system and
+ancilla
+ρRA = tr BS
+[
+EAB
+(
+(IRA ⊗ B BS (ρRABS )
+)]
+. (4)
+Here by EAB we mean the operation IR ⊗ E AB ⊗ IS that
+acts trivially on the ancillas. Note that if E is not trace
+preserving, then ρRA might not be normalized, in which
+case Alice’s ﬁnal state is the normalized density operator
+ρRA/tr ρRA. Finally, Alice performs a measurement of
+this state.
+If Alice’s state depends at all on the superoperator
+B that Bob applies, then the mutual information of
+Bob’s superoperator and Alice’s measurement is nonzero.
+Hence Bob can transmit classical information to Alice
+over a noisy channel with nonzero capacity; that is, Bob
+can signal Alice. We arrive then, at this
+Deﬁnition A bipartite operation E is semicausal if and
+only if (ρRA/tr ρRA) is independent of Bob’s superoper-
+ator B for all possible choices of the shared initial state
+ρRABS .
+(Excluded from consideration is the case ρRA = 0, cor-
+responding to an outcome that occurs with probability
+zero.)
+This criterion for semicausality is rather unwieldy; for-
+tunately it can be simpliﬁed. One useful observation is
+that, while in our deﬁnition of semicausality we allowed
+the initial state ρRABS shared by Alice and Bob to be en-
+tangled, we could without loss of generality restrict their
+initial state to be a product state.
+3
+
+===== PAGE 4 =====
+
+Suppose that a superoperator E is not semicausal.
+Then there is an initial state ρRABS shared by Alice and
+Bob, and a superoperator B that can be applied by Bob,
+such that
+trBS
+[
+EAB(ρRABS )
+]
+̸= tr BS
+[
+EAB
+(
+IRA ⊗ B BS (ρRABS )
+)]
+. (5)
+Now any bipartite density operator can be expanded as
+ρRABS =
+∑
+µ
+λµρµ ⊗ σµ , (6)
+where ρµ and σµ are density operators of Alice’s and
+Bob’s systems (including ancillas), respectively, and the
+λµ’s are nonvanishing real numbers. Of course, if the
+λµ’s were all positive, then ρRABS would be a separable
+state. But if we allow the λµ’s to be negative, then such
+an expansion exists for any state.
+Since the superoperator E is linear, we may rewrite
+eq. (5) as
+∑
+µ
+λµ trBS
+[
+E
+(
+ρµ ⊗ σµ
+)]
+̸=
+∑
+µ
+λµ trBS
+[
+E
+(
+ρµ ⊗ B (σµ)
+)]
+, (7)
+which can be satisﬁed only if
+trBS
+[
+E
+(
+ρµ ⊗ σµ
+)]
+̸= tr BS
+[
+E
+(
+ρµ ⊗ B (σµ)
+)]
+, (8)
+for at least one µ. Therefore, if Alice and Bob prepare
+the appropriate product state ρµ ⊗ σµ, E allows Bob to
+signal Alice. Furthermore, since each of ρµ and σµ and
+B(σµ) can be realized as an ensemble of pure states, there
+is a signaling protocol in which Alice’s and Bob’s initial
+states are pure.
+Once we recognize that there is a signaling protocol
+such that the initial state is a product state, we can see
+that the ancillas are superﬂuous. Bob sends his signal by
+choosing one of the two pure states |ψ⟩BS , |ψ′⟩BS ; since
+tracing over S commutes with E, we can just as well say
+that Bob starts with a mixed state ρB or ρ′
+B of system B
+alone. Furthermore, if Bob can signal Alice by preparing
+one of ρB, ρ′
+B, then he must be able to do it by preparing
+pure states that arise in the ensemble realizations of these
+density operators.
+Finally, if signaling is possible, then Alice can receive
+the signal by preparing an initial pure state |ϕ⟩RA. Bob’s
+action, together with E, subjects system A to one of two
+possible operations, resulting in two distinguishable ﬁnal
+states. But for these ﬁnal states of RA to be distinguish-
+able, the two operations must produce diﬀerent outcomes
+acting on at least one of the pure states of A appearing
+in the Schmidt decomposition of |ϕ⟩RA. Therefore, Alice
+could just as well dispense with R, and prepare an initial
+pure state |ϕ⟩A of A alone.
+Thus we have proved
+Theorem 1 If the bipartite superoperator E is not sem-
+icausal, then signaling is possible with pure initial state s
+and without ancillas: there are pure states |ψ⟩B, |ψ′⟩B ∈
+HB and |ϕ⟩A ∈ H A such that
+trB
+[
+E
+(
+(|ϕ⟩⟨ϕ|)A ⊗ (|ψ⟩⟨ψ|)B
+)]
+̸= tr B
+[
+E
+(
+(|ϕ⟩⟨ϕ|)A ⊗ (|ψ′⟩⟨ψ′|)B
+)]
+. (9)
+We note that semicausal superoperators form a con-
+vex set. If each Ea is a superoperator, then so is the
+combination
+E =
+∑
+a
+paEa , (10)
+where the pa’s are nonnegative and sum to 1. It follows
+from the linearity of the Ea’s and the deﬁnition of semi-
+causality that E is semicausal if each Ea is.
+A somewhat less obvious property is that the semi-
+causal superoperators form a semigroup – a composition
+of semicausal operations is semicausal. This follows from
+Theorem 2 Suppose that E is a semicausal bipartite su-
+peroperator, and that the two bipartite density operators
+ρ and σ satisfy trBρ = tr Bσ. Then trBE(ρ) = tr BE(σ).
+Proof: First we note that it is possible to choose a ba-
+sis of linearly independent operators acting on a Hilbert
+space H, such that each element of the basis is a one-
+dimensional projector. Let {Pµ} denote such a basis for
+Alice’s Hilbert space HA and let {Qµ} denote such a ba-
+sis for Bob’s Hilbert space HB. Then we may expand the
+bipartite density operators ρ and σ as
+ρ =
+∑
+µν
+αµν Pµ ⊗ Qν ,
+σ =
+∑
+µν
+α′
+µν Pµ ⊗ Qν . (11)
+Since tr Qν = 1, the property tr Bρ = tr Bσ can be rewrit-
+ten as ∑
+µν αµν Pµ = ∑
+µν α′
+µν Pµ, which implies, since
+the Pµ’s are a basis, that
+∑
+ν
+αµν =
+∑
+ν
+α′
+µν , (12)
+for each µ.
+Applying the superoperator E, we ﬁnd that
+E(ρ) =
+∑
+µν
+αµν E(Pµ ⊗ Qν) ,
+E(σ) =
+∑
+µν
+α′
+µν E(Pµ ⊗ Qν) . (13)
+4
+
+===== PAGE 5 =====
+
+Furthermore, since each Qν is a pure state, a unitary
+transformation applied by Bob can transform any one of
+the Qν’s to any other; therefore the semicausality of E
+implies that the operator tr BE(Pµ ⊗ Qν) is independent
+of ν. Denoting this operator by Rµ, we have
+trBE(ρ) =
+∑
+µν
+αµν Rµ ,
+trBE(σ) =
+∑
+µν
+α′
+µν Rµ ; (14)
+eq. (12) then implies that tr BE(ρ) = tr BE(σ). This com-
+pletes the proof of Theorem 2.
+The semigroup property of semicausal superoperators
+is a simple
+Corollary If E1 and E2 are semicausal bipartite superop-
+erators, then their composition E2 ◦ E1 is also semicausal.
+Proof: Suppose that the bipartite density operator ρ
+can be transformed to σ by a superoperator applied
+by Bob. Then the semicausality of E1 implies that
+trBE1(ρ) = tr BE1(σ), and Theorem 2 applied to E2 im-
+plies that tr BE2(E1(ρ)) = tr BE2(E1(σ)); therefore E2 ◦ E1
+is semicausal.
+B. Localizability
+Physics is local. If a physical system has many parts
+that are remote from one another, then the evolution of
+the system is governed by local “parties” that act on the
+diﬀerent parts of the system separately. In particular,
+since communication outside the light cone is impossible,
+the operations that can be applied to a physical system
+at a ﬁxed time are those that require no communication
+among the local parties. We call an operation of this type
+localizable.
+Although they are not permitted to communicate, the
+parties are free to exploit any resources that might have
+been prepared in advance. In particular, they are permit-
+ted to have a shared ancilla that might be in an entangled
+quantum state, and to consume their shared entangle-
+ment in the course of executing their operation.
+In the case of a system with two parts, one controlled
+by Alice, the other by Bob, these considerations motivate
+this
+Deﬁnition A bipartite superoperator E is localizable if
+and only if
+E(ρAB) = tr RS
+[
+ARA ⊗ B BS (ρAB ⊗ ρRS)
+]
+(15)
+for some shared ancilla state ρRS and local superoperators
+ARA, BBS .
+In fact, by extending the ancilla, the state ρRS can be
+“puriﬁed” and the local superoperators can be replaced
+by unitary transformations; thus without loss of general-
+ity we may use instead the
+Deﬁnition A bipartite superoperator E is localizable if
+and only if
+E(ρAB)
+= tr RS
+[
+URA ⊗ VBS (ρAB ⊗ ρRS) U †
+RA ⊗ V †
+BS
+]
+(16)
+for some shared ancilla pure state ρRS and local unitary
+transformations URA and VBS .
+Localizable superoperators form a convex set. To see
+this, we note that with shared entanglement, Alice and
+Bob can simulate shared randomness (a weaker resource).
+For example, suppose they share an ancilla prepared in
+the state
+|Φ⟩RS =
+∑
+a
+√
+pa |a⟩R ⊗ |a⟩S , (17)
+where {|a⟩R} is an orthonormal basis for Alice’s Hilbert
+space HR, {|a⟩S} is an orthonormal basis for Bob’s
+Hilbert space HS, and the pa’s are nonnegative real num-
+bers that sum to one. Then if Alice and Bob both per-
+form measurements that project onto these bases, each
+obtains the outcome |a⟩ with probability pa. Now let
+{Ea} be a set of localizable operations. Alice and Bob
+can consult their shared randomness, and then carry out
+a local protocol that applies the operation Ea with prob-
+ability pa, thus achieving a local implementation of the
+convex sum ∑
+a paEa.
+Of course, a superoperator is surely localizable if it is
+a tensor product of superoperators applied by Alice and
+by Bob, E = EA ⊗ E B. By convexity, any superoperator
+of the form
+E =
+∑
+a
+paEA,a ⊗ E B,a (18)
+is also localizable. There are some less obvious examples
+of localizable operations, as we will soon see.
+We are also interested in bipartite operations that can
+be implemented with communication in just one direc-
+tion. We call such operations semilocalizable. In our
+discussions of semilocalizability, we will normally adopt
+the convention that Alice is permitted to send quantum
+information to Bob, but Bob cannot send anything to
+Alice. A semilocalizable operation is one that can be
+performed in principle if Bob’s action is in the forward
+light cone of Alice’s action.
+We could, equivalently, provide Alice and Bob with
+prior shared entanglement, and restrict them to classical
+communication. These two notions of semilocalizability
+are equivalent because prior entanglement and classical
+communication from Alice to Bob enable Alice to tele-
+port quantum information to Bob. Conversely, if Alice
+5
+
+===== PAGE 6 =====
+
+can send qubits to Bob, she can establish shared entan-
+glement with him, and she can send him classical mes-
+sages.
+An operation that is not semilocalizable is said to be
+unlocalizable. A localizable operation will sometimes be
+called fully localizable , when we wish to emphasize the
+contrast with semilocalizability.
+If Alice can send quantum information to Bob, then
+Alice and Bob both have access to the same ancilla: Alice
+performs a local operation on the ancilla and her half of
+the shared state, she sends the ancilla to Bob, and then
+Bob performs a local operation on the ancilla and his half
+of the state. Thus we arrive at this
+Deﬁnition A bipartite operation E is semilocalizable
+if and only if
+E(ρAB) = tr R
+[(
+BBR ◦ ARA
+)
+(ρAB ⊗ ρR)
+]
+(19)
+for some ancilla state ρR, where ARA is an operation and
+BBR is a superoperator.
+Note that the product BBR ◦ ARA is a composition of op-
+erations (with Alice’s operation acting ﬁrst), not a tensor
+product; the operations do not commute because they
+act on the same ancilla. We have allowed Alice to ap-
+ply an operation that is not necessarily trace preserving,
+since Alice can perform a measurement whose outcome
+is known to both Alice and Bob, but Bob is restricted to
+a superoperator because the outcome of a measurement
+that he performs is not known by Alice. If the operation
+E is a superoperator, then so must be ARA, and in fact
+we can take BBR and ARA to be unitary transformations
+without loss of generality.
+An obvious consequence of this deﬁnition is that
+semilocalizable (or localizable) superoperators form a
+semigroup: E2 ◦ E 1 is semilocalizable if E1 and E2 are
+both semilocalizable.
+C. Orthogonal measurement superoperators
+One of our goals is to characterize the observables of a
+relativistic quantum theory: what self-adjoint operators
+are really measurable?
+When we speak of a “measurement” of an observable
+whose support is on a time slice, we need not require that
+the measurement outcome be instantaneously known by
+anyone. We might imagine instead that many parties
+distributed over the slice perform simultaneous local op-
+erations. Later the data collected by the parties can be
+assembled and processed at a central location to deter-
+mine the measurement result.
+Then we may say that the operation performed on
+the slice is a measurement with an unknown outcome.
+If {Ea} is the set of orthogonal projectors onto the
+eigenspaces of the observable, the eﬀect of this operation
+on a density operator ρ is
+ρ → E (ρ) =
+∑
+a
+EaρEa . (20)
+We will call a (trace-preserving) operation of this form
+an orthogonal measurement superoperator . In the spe-
+cial case where each projector Ea is one-dimensional, it
+is a complete orthogonal measurement superoperator , or
+just a complete measurement superoperator. The causal-
+ity and localizability properties of complete measurement
+superoperators will be extensively discussed in the next
+few sections.
+First, let’s clarify the concept of semicausality by
+pointing out an example, noted by Sorkin [14], of an
+incomplete measurement superoperator that is not semi-
+causal. It is a two-outcome incomplete Bell measurement
+performed on a pair of qubits. The orthogonal projectors
+corresponding to the two outcomes are
+E1 = |φ+⟩⟨φ+| ,
+E2 = I − |φ+⟩⟨φ+| , (21)
+where |φ+⟩ = ( |00⟩ + |11⟩)/
+√
+2. Suppose that the ini-
+tial pure state shared by Alice and Bob is |01⟩AB. This
+state is orthogonal to |φ+⟩, so that outcome 2 occurs with
+probability one, and the state is unmodiﬁed by the su-
+peroperator. Afterwards Alice still has a density operator
+ρA = |0⟩⟨0|.
+But what if, before the superoperator acts, Bob per-
+forms a unitary that rotates the state to |00⟩AB? Since
+this state is an equally weighted superposition of |φ+⟩
+and |φ− ⟩ = ( |00⟩ − | 11⟩)/
+√
+2, the two outcomes occur
+equiprobably, and in either case the ﬁnal state is max-
+imally entangled, so that Alice’s density operator after-
+wards is ρA = I/2, where I denotes the identity. Alice
+can make a measurement that has a good chance of dis-
+tinguishing the density operators |0⟩⟨0| and I/2, so that
+she can decipher a message sent by Bob. By a similar
+method, Alice can send a signal to Bob. The measure-
+ment superoperator is acausal.
+On the other hand, some orthogonal measurement su-
+peroperators are causal. For example, measurement of
+a tensor product observable A ⊗ B is obviously causal.
+– Alice and Bob can induce decoherence in the basis of
+eigenstates of a tensor product through only local actions.
+But there are other examples of causal measurement su-
+peroperators that are a bit less obvious. One is complete
+Bell measurement, i.e. decoherence in the Bell basis
+|φ± ⟩ = 1
+√
+2
+(|00⟩ ± |11⟩) ,
+|ψ± ⟩ = 1√
+2
+(|01⟩ ± |10⟩) . (22)
+6
+
+===== PAGE 7 =====
+
+No matter what Bob does, the shared state after Bell
+measurement is maximally entangled, so that Alice al-
+ways has ρB = I/2, and she can’t extract any informa-
+tion about Bob’s activities.
+Though Bell measurement is a causal operation, it is
+not something that Alice and Bob can achieve locally
+without additional resources. But the Bell measurement
+superoperator is localizable – Alice and Bob can imple-
+ment it if they share an entangled ancilla. In fact, shared
+randomness, a weaker resource than entanglement, is suf-
+ﬁcient for this purpose [18]. Suppose that Alice and Bob
+share a pair of qubits, and also share a string of random
+bits. At a particular time, they both consult two bits
+of the random string; depending on whether they read
+00, 01, 10, or 11, they both apply the unitary operator
+I, X, Z, or Y , where I is the identity, and {X, Y, Z} are
+the 2 × 2 Pauli matrices
+X =
+(
+0 1
+1 0
+)
+, Y =
+(
+0 − i
+i 0
+)
+, Z =
+(
+1 0
+0 − 1
+)
+.
+(23)
+Together, then, Alice and Bob apply the superoperator
+E(ρ) = 1
+4 [(I ⊗ I)ρ(I ⊗ I) + (X ⊗ X)ρ(X ⊗ X)
++ (Y ⊗ Y )ρ(Y ⊗ Y ) + (Z ⊗ Z)ρ(Z ⊗ Z)] . (24)
+The four Bell states are simultaneous eigenstates of X⊗ X
+and Z ⊗ Z (and therefore also Y ⊗ Y = − (X ⊗ X) ·(Z ⊗
+Z)) with eigenvalues ± 1: Z ⊗ Z speciﬁes a parity bit
+that distinguishes φ from ψ and X ⊗ X speciﬁes a phase
+bit that distinguishes + from − . Hence we easily verify
+that E preserves each of the four Bell basis states, and
+annihilates all the terms in ρ that are oﬀ the diagonal in
+the Bell basis.
+The Bell measurement superoperator can be viewed
+as a reﬁnement, or “completion,” of the acausal incom-
+plete measurement superoperator of eq. (21) – that is,
+Bell measurement is obtained by resolving the three-
+dimensional projector E2 of eq. (21) into a sum of three
+mutually orthogonal one-dimensional projectors. Thus,
+this example illustrates that a completion of an acausal
+measurement superoperator can sometimes be causal.
+On the other hand, there are other ways of reﬁning
+the superoperator of eq. (21) that yield acausal com-
+plete measurement superoperators. For example, the
+two-qubit superoperator with projectors
+E1 = |φ+⟩⟨φ+| ,
+E2 = |φ− ⟩⟨φ− | ,
+E3 = |01⟩⟨01| ,
+E4 = |10⟩⟨10| , (25)
+is easily seen to be acausal by applying the criterion of
+Theorem 3 below. In fact, it is a general feature that if
+an orthogonal measurement superoperator E allows Bob
+to signal Alice, then there exists a completion of E that
+also allows signaling, with the same signal states |ψ⟩B
+and |ψ′⟩B. This result is proved in [16].
+Since the Bell measurement superoperator can be im-
+plemented with shared randomness, one may wonder
+whether shared randomness is suﬃcient for the imple-
+mentation of arbitrary localizable superoperators. But it
+is easy to think of localizable superoperators for which
+shared randomness does not suﬃce – shared entangle-
+ment is necessary. For example, Alice and Bob can locally
+perform a two-qubit operation in which they throw their
+qubits away, and replace them with a |φ+⟩ drawn from
+their shared ancilla. This operation can turn a product
+state into an entangled state, which would be impossible
+with local operations and shared randomness alone. We
+will discuss another example of a localizable superopera-
+tor that cannot be implemented with shared randomness
+in §VI.
+We note in passing that if Alice and Bob have ancilla
+pairs prepared in the state |φ+⟩RS (where R denotes Al-
+ice’s ancilla qubit, and S denotes Bob’s), then they can
+implement the Bell measurement superoperator by exe-
+cuting the quantum circuits shown in Fig. 2, and discard-
+ing their ancilla qubits. The circuit in Fig. 2a ﬂips the
+ancilla pair from |φ+⟩ to |ψ+⟩ if the parity bit of the AB
+state is ZA ⊗ ZB = − 1, and the circuit in Fig. 2b ﬂips the
+ancilla pair from |φ+⟩ to |φ− ⟩ if the phase bit of the AB
+state is XA ⊗ XB = − 1. Thus, the values of the parity
+and phase bits of the AB pair, and only this information,
+become imprinted on the ancilla pairs. Tracing over the
+ancilla pairs in the Bell basis, then, induces decoherence
+in the AB Bell basis.
+(a) ( b)
+|φ+⟩
+S
+R
+B
+A
+✉
+✐
+✉
+✐ |φ+⟩
+S′
+R′
+B
+A
+✉
+✐
+✉
+✐
+FIG. 2. Local implementation of the Bell measurement su-
+peroperator using shared entanglement. In ( a), the two con-
+trolled-NOT gates imprint the parity bit of AB onto the an-
+cilla RS. In ( b), the two controlled-NOT gates imprint the
+phase bit of AB onto the ancilla R′S′. Tracing over the an-
+cillas in the Bell basis, we ﬁnd that the AB pair decoheres in
+the Bell basis.
+In fact, if Alice and Bob share entanglement and per-
+form the circuits of Fig. 2, they can execute Bell measure-
+ment, including postselection, on the AB pair by mea-
+suring their ancilla qubits and broadcasting their results
+7
+
+===== PAGE 8 =====
+
+classically. After executing circuit Fig. 2a, Alice mea-
+sures ZR and Bob measures ZS. Then the parity bit of
+the AB pair is the parity of these measurement outcomes.
+After executing circuit Fig. 2b, Alice measures XR′ and
+Bob measures XS′. Then the phase bit of the AB pair is
+the parity of the measurement outcomes. This example
+is instructive, as it reminds us again that entanglement
+is a more powerful resource than shared randomness. If
+Alice and Bob were limited to shared randomness and
+classical communication, they would be unable to create
+entanglement, and so would lack the capability of do-
+ing Bell measurement with postselection on their shared
+qubit pair.
+(a) ( b)
+|0⟩S
+|0⟩R
+B
+A
+✉
+✐
+✉
+✐
+Bell
+Meas.
+|+⟩S′
+|+⟩R′
+B
+A
+✉
+✐
+✉
+✐
+Bell
+Meas.
+FIG. 3. Bell measurement through entanglement swap-
+ping. Alice performs local controlled-NOT gates on her qubi t
+A and the ancilla qubits RR′. Bob performs local con-
+trolled-NOT gates on his qubit B and the ancilla qubits SS ′.
+Later, the ancilla qubits are collected, and Bell measureme nt
+is performed on the pairs RS and R′S′. The Bell measure-
+ments on the ancilla realize Bell measurement on AB, by
+“swapping” entanglement of AR, AR′, BS , BS ′ for entangle-
+ment of AB, RR′ and SS ′.
+If Alice and Bob did not have entanglement to start
+with, they would still be able to perform Bell measure-
+ment with postselection on their shared pair if they could
+send ancilla qubits to a central laboratory for later quan-
+tum processing, as illustrated in Fig. 3. Here Alice entan-
+gles her qubit A ﬁrst with ancilla qubit R and then with
+R′, while Bob entangles his qubit B ﬁrst with ancilla
+qubit S and then with S′. The ancilla qubits are col-
+lected, and a Bell measurement is performed on RR′ and
+SS ′. The RR′ measurement yields the correct parity bit
+of the AB pair, and a random phase bit; if the measured
+RR′ phase bit is − 1, then the phase bit of the AB state
+is ﬂipped. The SS ′ measurement yields the “correct”
+phase bit (possibly ﬂipped by the RR′ measurement),
+and a random parity bit; if the measured RR′ parity
+bit is − 1, then the parity bit of the AB state is ﬂipped.
+Taken together, the two Bell measurements on the ancilla
+qubits act as a projective measurement of HAB onto the
+Bell basis, followed by one of the transformations I ⊗ I,
+X ⊗ X, Y ⊗ Y , or Z ⊗ Z; which of the four transforma-
+tions has been applied, as well as the identity of the AB
+Bell state resulting from the projection, can be inferred
+from outcomes of the RR′ and SS ′ measurements. If the
+AB state is initially a product state, Bell measurement
+of the ancilla qubits establishes entanglement of A with
+B by “swapping” AR and BS entanglement for AB and
+RS entanglement [19].
+This example is also instructive. It reminds us that
+decoherence induced on a time slice can sometimes be re-
+versed later through the operation of a “quantum eraser”
+[20]. If we were to trace out the ancilla qubits right after
+applying the controlled-NOT’s of Fig. 3 (before the Bell
+measurement), then Fig 3a would induce decoherence,
+not in an entangled basis, but rather in the product basis
+{|00⟩, |01⟩, |10⟩, |11⟩}; similarly Fig 3b would induce deco-
+herence in the product basis {|++⟩, |+−⟩ , |− +⟩, |−−⟩} ,
+where
+|±⟩ = 1
+√
+2 (|0⟩ ± |1⟩) . (26)
+As one would expect, without entanglement or shared
+randomness, Alice and Bob are unable to implement de-
+coherence in the Bell basis with their local operations
+alone. But a later measurement including postselection
+can “undo” the decoherence in the product basis and es-
+tablish decoherence in the Bell basis instead.
+D. Local stabilizers
+The observation that shared randomness is suﬃcient to
+induce decoherence in the Bell basis can be substantially
+generalized. Consider a superoperator E that acts on a
+density operator ρ as
+E(ρ) = 1
+|G|
+∑
+g∈ G
+U (g) ρ U (g)† , (27)
+where the U (g)’s provide a (not necessarily irreducible)
+unitary representation of the group G, and |G| denotes
+the order of G. The Hilbert space H in which ρ resides
+can be decomposed into spaces that transform irreducibly
+under the group G. Let us choose an orthonormal basis
+{|R, a, i⟩} ; (28)
+here R labels the irreducible representations of G, a la-
+bels the sectors of H that transform as the irreducible
+representation R (a particular irreducible representation
+might occur multiple times), i = 1, 2, . . . , nR labels states
+of a basis for the vector space on which R acts, and nR
+is the dimension of R. Expressed in this basis, the rep-
+resentation U (g) is
+U (g) =
+∑
+R,a,i,j
+|R, a, i⟩ D(R)(g)ij ⟨R, a, j| , (29)
+where D(R)(g)ij is a matrix element of the irreducible
+representation R. These matrix elements obey the or-
+thogonality relations
+8
+
+===== PAGE 9 =====
+
+1
+|G|
+∑
+g∈ G
+D(R)(g)ijD(R′)(g)∗
+kl = 1
+nR
+δRR′
+δikδjl . (30)
+Substituting eq. (29) into eq. (27) and applying the or-
+thogonality relations, we ﬁnd
+⟨R, a, i|E(ρ)|R′, b, j⟩
+= δRR′
+· 1
+nR
+δij ·
+nR∑
+k=1
+⟨R, a, k|ρ|R, b, k⟩ . (31)
+Thus we see that the superoperator E destroys the co-
+herence of a superposition of states that transform as
+distinct irreducible representations of G. Within a given
+irreducible representation, it randomizes the state, re-
+placing the density operator by a multiple of the iden-
+tity. Some oﬀ-diagonal terms in the density operator can
+survive, if a given irreducible representation occurs in H
+more than once.
+Now suppose that the Hilbert space H is shared by n
+parties; it has a tensor product decomposition
+H = ⊗ n
+α=1Hα . (32)
+And suppose that each element U (g) of the representa-
+tion of G is a tensor product
+U (g) = ⊗ n
+α=1U (g)α . (33)
+Then the n parties can perform the operation E by con-
+sulting their shared randomness – if they are instructed
+to apply the group element g ∈ G, the party α applies
+U (g)α to her portion of the state.
+In the Bell measurement case discussed above, the
+four-dimensional Hilbert space of two qubits transforms
+as the representation
+{I ⊗ I, X ⊗ X, − Y ⊗ Y, Z ⊗ Z} . (34)
+of the group G = Z2 × Z2. The group G is Abelian, and
+the four Bell states transform as distinct one-dimensional
+irreducible representations of G. Therefore, the superop-
+erator E induces decoherence in the Bell basis.
+The same ideas apply to any stabilizer code [21,22,1,2].
+Consider, for example, an Abelian group G acting on n
+qubits, generated by n − k operators, where each gener-
+ator is a tensor product of single-qubit Pauli operators.
+If each qubit is entrusted to a distinct party, then by
+consulting shared randomness, the n parties can apply a
+random element of the group G to their density operator.
+The superoperator they implement acts trivially on each
+2k-dimensional code space – an eigenspace of the gen-
+erators with speciﬁed eigenvalues. But it destroys the
+coherence of a superposition of eigenspaces with diﬀer-
+ent eigenvalues. In the notation of eq. (31), the index
+R labels the stabilizer eigenvalues, and the indices a, b
+label the basis states in a code space with a speciﬁed
+value of R. Because the group is Abelian, all of the irre-
+ducible representations are one-dimensional, and eq. (31)
+becomes
+E(ρ) = 1
+|G|
+∑
+g∈ G
+U (g) ρ U (g)†
+=
+∑
+R,a,b
+|R, a⟩⟨R, a|ρ|R, b⟩⟨R, b|=
+∑
+R
+ERρER , (35)
+where ER projects onto the subspace with speciﬁed sta-
+bilizer eigenvalues.
+The observation that Bell measurement (including
+postselection) can be achieved with shared entanglement,
+local operations, and broadcasting of classical data can
+be generalized to any CSS stabilizer code; i.e., any code
+of the class constructed by Calderbank and Shor [23],
+and Steane [24]. An n-qubit stabilizer code is of the CSS
+type if the stabilizer generators can be chosen so that
+each generator is either a tensor product of Z’s and I’s
+or a tensor product of X’s and I’s. Imagine that each of
+the n qubits is in the custody of a separate party. Steane
+[25] has observed that the measurement of the stabilizer
+generators can always be achieved by carrying out these
+steps: (1) preparation of a suitable entangled ancilla that
+is distributed to the n parties, (2) local quantum gates
+applied by each party, acting on her qubit and her part of
+the ancilla, (3) local measurements by each party, and (4)
+classical post-processing of the measurement outcomes.
+In the case of Bell measurement on a pair of qubits, the
+stabilizer generators are X ⊗ X, Z ⊗ Z, and the entangled
+ancilla state is |φ+⟩.
+An example of a superoperator associated with a non-
+Abelian group is the “twirling” operation that trans-
+forms a two-qubit state into a Werner state [18]. In that
+case, the group is A4, the order-12 subgroup of the rota-
+tion group that preserves a tetrahedron. Under A4, the
+state |ψ− ⟩ transforms trivially, while the other three Bell
+states |φ+⟩, |ψ+⟩, |φ− ⟩ transform as a three-dimensional
+irreducible representation. Two parties Alice and Bob
+consult their shared randomness and apply a random el-
+ement of A4; according to eq. (31), this operation trans-
+forms any initial density operator into a state of the
+Werner form
+ρ(F ) = F |ψ− ⟩⟨ψ− |
++ 1 − F
+3
+(
+|φ+⟩⟨φ+|+ |φ− ⟩⟨φ− |+ |ψ+⟩⟨ψ+|
+)
+, (36)
+while preserving the ﬁdelity F = ⟨ψ− |ρ|ψ− ⟩. Note that
+unlike the acausal operation deﬁned by eq. (21), this lo-
+calizable operation transforms any initial state into an
+incoherent mixture of Bell states; hence Alice’s ﬁnal den-
+sity operator is always I/2, and Alice is unable to receive
+a signal from Bob.
+9
+
+===== PAGE 10 =====
+
+III. CAUSAL AND SEMICAUSAL COMPLETE
+MEASUREMENT SUPEROPERATORS
+In the next three sections, we will investigate the
+causality and localizability properties of measurement su-
+peroperators that project onto a complete orthonormal
+basis. We will show that semicausal operations of this
+class are semilocalizable, and that fully causal operations
+of this class are not necessarily fully localizable.
+Suppose that the Hilbert spaces HA and HB have
+dimensions NA and NB respectively, and let {Ea =
+|a⟩⟨a|, a = 1 , 2, . . . , NANB} denote a complete set of or-
+thogonal one-dimensional projectors on HA ⊗ H B. By
+tracing over HB, we obtain from these projectors NANB
+positive operators acting on HA, each with unit trace,
+deﬁned by
+σa
+A = tr B (Ea
+AB) . (37)
+Since the Ea
+AB’s are complete, these operators satisfy
+∑
+a
+σa
+A = tr B IAB = NB IA ; (38)
+that is, {NB
+− 1 σa
+A} is a positive operator-valued measure
+(POVM) on HA with NANB outcomes.
+The semicausal complete orthogonal measurement su-
+peroperators (those that do not allow Bob to signal Alice)
+can be simply characterized by a property of the σa
+A’s,
+thanks to the following theorem:
+Theorem 3 A complete orthogonal measurement super-
+operator is semicausal if and only if it has the follow-
+ing property: For each pair of operators {σa
+A, σb
+A}, either
+σa
+A = σb
+A or σa
+Aσb
+A = 0 = σb
+Aσa
+A.
+That is, any pair of σa
+A’s must be either identical or or-
+thogonal, if and only if the superoperator is semicausal.
+Theorem 3 is proved in Appendix A, but one can read-
+ily see that the result is plausible. If Ea = |a⟩⟨a|, then,
+in order to signal Alice, Bob by acting locally needs to
+induce a transition from the state |a⟩ to the state |b⟩ for
+some a and b; furthermore, Alice must be able to detect
+the diﬀerence between |a⟩ and |b⟩. But if σa
+A and σb
+A are
+orthogonal, then Bob is unable to induce the transition,
+and if σa
+A = σb
+A, then Alice can’t tell the diﬀerence. On
+the other hand, if σa
+Aσb
+A ̸= 0 and σa
+A ̸= σb
+A, then Bob
+can induce the transition and Alice can distinguish the
+states; hence a signaling protocol can be devised.
+Applying Theorem 3, we can see that all semicausal
+complete measurements have a simple structure. Sup-
+pose that {Ea} is a semicausal complete measurement.
+For any one of the σa
+A, let Ha
+A denote the subspace of HA
+on which σa
+A has its support ( σa
+A is strictly positive on
+this subspace and vanishes on the orthogonal subspace).
+According to Theorem 3, the support Hb
+A of each σb
+A ei-
+ther coincides with Ha
+A or is orthogonal to Ha
+A, and in
+the former case we have σa
+A = σb
+A.
+Thus each σb
+A with support on Ha
+A must equal σa
+A, and
+furthermore, the sum of the operators with support on
+this subspace, according to eq. (38), must be NB ·I a
+A,
+where I a
+A denotes the projector onto Ha
+A. Therefore each
+σa
+A with support on Ha
+A is proportional to I a
+A, and since
+we also know that tr σa
+A = 1, must be
+σa
+A = 1
+da
+A
+·I a
+A , (39)
+where da
+A is the dimension of Ha
+A. We also conclude that
+the number of σb
+A’s with support on Ha
+A is NB ·da
+A.
+We see that the state |a⟩ is a maximally entangled state
+of the form
+|a⟩ = 1
+√
+da
+A
+da
+A∑
+i=1
+|i⟩A ⊗ |i′⟩B , (40)
+where here {|i⟩A} denotes an orthonormal basis for Ha
+A,
+and the |i′⟩B’s are mutually orthogonal states of HB. The
+general structure of a semicausal complete measurement
+operation, then, is as illustrated in Fig 4. Alice’s Hilbert
+space can be decomposed into mutually orthogonal sub-
+spaces
+HA = ⊕ αHα
+A , (41)
+where Hα
+A has dimension dα
+A. Of the NA ·NB states com-
+prising the basis {|a⟩}, NB ·dα
+A, all maximally entangled,
+have support on Hα
+A.
+Bob
+Alice
+1 × 6
+2 × 6
+3 × 6
+FIG. 4. A semicausal complete orthogonal measurement
+in 6 × 6 dimensions. Alice’s Hilbert space is decomposed
+into three mutually orthogonal subspaces, of dimensions 3,
+2, and 1. The measurement projects onto an orthonormal ba-
+sis, where each element of the basis is a maximally entangled
+state of one of Alice’s three subspaces with Bob’s space.
+A fully causal complete measurement is more highly
+constrained. Since the measurement is semicausal in
+both directions, both the σa
+A’s and the σa
+B’s obey the con-
+ditions speciﬁed in Theorem 3. If we choose one particu-
+lar Hα
+A, there are NB ·dα
+A elements of the basis with sup-
+port on this space, and associated with these are NB ·dα
+A
+10
+
+===== PAGE 11 =====
+
+σa
+B’s, all of rank dα
+A, and any two of which must either
+coincide or be orthogonal. Therefore, the σa
+B’s partition
+HB into mutually orthogonal subspaces, all of dimension
+dα
+A; it follows that dα
+A must divide NB, that the number
+of orthogonal subspaces is NB/dα
+A, and that ( dα
+A)2 σa
+B’s
+have support on each space.
+Applying the same argument again, but with HA and
+HB interchanged, we see that the σa
+A’s also partition HA
+into mutually orthogonal subspaces, all of dimension dα
+A.
+We conclude that a causal complete measurement has
+the structure illustrated in Fig. 5. Alice’s space can be
+decomposed into rA subspaces Hα
+A, each of dimension d
+(so that NA = rA·d), and Bob’s space can be decomposed
+into rB subspaces Hβ
+B, each of dimension d (with NB =
+rB ·d). The measurement projects onto an orthonormal
+basis, where each element of the basis is a maximally
+entangled state of some Hα
+A with some Hβ
+B. There are rA·
+rB ways to choose α and β, and there are d2 maximally
+entangled states for each pair of subspaces.
+Bob
+Alice
+2 × 2 2 × 2 2 × 2
+2 × 2 2 × 2 2 × 2
+2 × 2 2 × 2 2 × 2
+FIG. 5. A causal complete orthogonal measurement in 6 ×6
+dimensions. Alice’s 6-dimensional Hilbert space is partit ioned
+into 3 mutually orthogonal subspaces, each of dimension 2,
+and Bob’s Hilbert space is similarly partitioned. The mea-
+surement projects onto an orthonormal basis, where each el-
+ement of the basis is a maximally entangled state of one of
+Alice’s subspaces with one of Bob’s subspaces.
+The extreme cases are d = 1, for which we have a prod-
+uct basis {|α, β⟩AB}, and d = NA = NB, for which the
+measurement is a projection onto a maximally entangled
+basis of HAB.
+Comparing Fig. 4 and Fig. 5 makes it clear that a semi-
+causal measurement need not be fully causal. Indeed, this
+feature is quite obvious, since transmission of information
+from Alice to Bob can allow Alice to signal Bob but does
+not enable Bob to signal Alice. To make this point more
+explicit, consider the 2 × 2 example illustrated in Fig. 6.
+The measurement projects onto the orthonormal basis
+|0⟩A ⊗ |0⟩B , |0⟩A ⊗ |1⟩B ,
+|1⟩A ⊗ |+⟩B , |1⟩A ⊗ |−⟩ B , (42)
+where
+|±⟩ = 1
+√
+2 (|0⟩ ± |1⟩) . (43)
+Tracing over Bob’s system we obtain Alice’s projectors
+σ00
+A = σ01
+A = |0⟩⟨0| ,
+σ1+
+A = σ1−
+A = |1⟩⟨1| , (44)
+which satisfy the criterion of Theorem 3; hence Bob can-
+not signal Alice. Tracing over Alice’s system we obtain
+Bob’s projectors
+σ00
+B = |0⟩⟨0| , σ 01
+B = |1⟩⟨1| ,
+σ1+
+B = |+⟩⟨+| , σ 1−
+B = |−⟩⟨−| , (45)
+which violate the criterion of Theorem 3; hence Alice can
+signal Bob.
+Bob
+Alice
+|0⟩ ⊗ | 0⟩ | 0⟩ ⊗ | 1⟩
+|1⟩ ⊗ |±⟩
+FIG. 6. A semicausal complete orthogonal measurement in
+2 × 2 dimensions. The orthonormal basis shown partitions
+Alice’s space into mutually orthogonal one-dimensional su b-
+spaces; hence Bob cannot signal Alice. But since Bob’s space
+is not so partitioned, Alice can signal Bob.
+A particular protocol that allows Alice to signal Bob
+works as follows: Bob prepares his qubit in the state |0⟩
+and Alice prepares hers in one of the states |0⟩, |1⟩. After
+the operation E is applied, Bob’s density operator is
+ρ0
+B = |0⟩⟨0| , (46)
+if Alice prepared |0⟩, and his density operator is
+ρ1
+B = I/2 , (47)
+if Alice prepared |1⟩. Since ρ0
+B ̸= ρ1
+B, we conclude that E
+is not causal.
+Note that the measurement that projects onto the ba-
+sis eq. (42) is obviously semilocalizable; in fact it can
+be executed with one-way classical communication from
+Alice to Bob. Alice measures in the basis {|0⟩A, |1⟩A},
+and sends her measurement outcome to Bob. Then Bob
+measures in the basis {|0⟩B, |1⟩B} if Alice’s outcome was
+|0⟩A, and in the basis {|+⟩B, |−⟩B} if Alice’s outcome
+was |1⟩A.
+11
+
+===== PAGE 12 =====
+
+IV. SEMICAUSAL COMPLETE MEASUREMENT
+SUPEROPERATORS ARE SEMILOCALIZABLE
+We now have learned enough about the structure of
+semicausal complete measurements to see that any sem-
+icausal complete measurement superoperator is semilo-
+calizable. Suppose that Alice and Bob share a quantum
+state, and wish to perform a measurement that projects
+onto the basis {|a⟩}, where each |a⟩ is a maximally en-
+tangled state of a subspace of HA with a subspace of HB.
+Alice can perform a partial measurement that identiﬁes
+the subspace Hα
+A of HA, and then send her half of the
+state to Bob, who can ﬁnish the measurement and iden-
+tify |a⟩. To complete the procedure, they simply replace
+their original state by a state identical to |a⟩ that can be
+drawn from their shared ancilla. Since Bob can convert
+any maximally entangled state of Hα
+A and HB into |a⟩ by
+performing a unitary transformation on HB, he and Alice
+can replace the original state by |a⟩ without any further
+communication. From these observations we obtain:
+Theorem 4 A semicausal complete orthogonal measure-
+ment superoperator is semilocalizable .
+Proof: Suppose that Alice and Bob share the state ρAB
+in their joint Hilbert space HA ⊗ H B. In addition, an
+ancillary Hilbert space HR ⊗ H S, isomorphic to HA ⊗
+HB, is initially under Alice’s control. To implement the
+semicausal operation
+EAB(ρAB) =
+∑
+a
+Ea
+AB (ρAB) Ea
+AB (48)
+with one-way quantum communication from Alice to
+Bob, they proceed as follows: First, Alice performs a
+partial measurement that projects ρAB onto her mutu-
+ally orthogonal subspaces Hα
+A, obtaining the outcome
+ρα
+AB = Eα
+A (ρAB) Eα
+A
+tr (Eα
+AρAB) (49)
+with probability
+pα = tr (Eα
+AρAB) , (50)
+where Eα
+A is the projector onto Hα
+A. If Alice’s mea-
+surement outcome is α, she prepares an ancilla state
+|Φ⟩RS ∈ H R ⊗ H S, and a dimension dα
+A × dα
+A maximally
+entangled state of Hα
+R with HS, where Hα
+R is isomorphic
+to Hα
+A. Next, Alice swaps the Hilbert spaces HA and
+HR, obtaining ρα
+RB and |Φ⟩AS . She sends ρα
+RB to Bob,
+along with the S half of the entangled state |Φ⟩AS .
+Upon receipt, Bob swaps the Hilbert spaces HB and
+HS, so that Alice and Bob now share |Φ⟩AB, while ρα
+RS is
+entirely in Bob’s hands. On the state ρα
+RS, Bob performs
+an orthogonal measurement with projectors Ea
+RS that are
+isomorphic to the Ea
+AB’s, obtaining the outcome |a⟩RS
+with probability pa|α, where
+pa,α = pa|α ·pα = tr (Ea
+RSEα
+RρRSEα
+REa
+RS) . (51)
+Since Bob’s measurement is just a completion of Alice’s
+partial measurement, we have
+Ea
+RSEα
+R = Eα
+REa
+RS = δa,α ·Ea
+RS , (52)
+where δa,α is 1 if σa
+R has support on Hα
+R and 0 otherwise.
+Therefore, the probability that Bob obtains outcome a
+can be expressed as
+pa =
+∑
+α
+pa,α = tr RS (Ea
+RSρRS)
+= tr AB (Ea
+ABρAB) . (53)
+(Bob’s measurement commutes with Alice’s, so it is
+just as though Bob measured ﬁrst, and Alice has been
+provided with incomplete information about what Bob
+found.)
+Now, since the state |a⟩RS prepared by Bob’s measure-
+ment is a dα
+A × dα
+A maximally entangled state of Hα
+R with
+HS, Bob can apply a suitable unitary transformation to
+his half of the state |Φ⟩AB that he now shares with Alice,
+rotating it to the state |a⟩AB. Thus, Alice and Bob have
+converted their initial state ρAB to |a⟩AB with proba-
+bility pa = ⟨a|ρAB|a⟩. Finally, Bob discards the ancilla
+RS, and Alice and Bob discard the record of their mea-
+surement outcomes. We have described a protocol with
+one-way quantum communication that executes the sem-
+icausal complete measurement superoperator EAB. This
+proves Theorem 4.
+Note that if we dispense with the last step, in which
+Alice and Bob discard their records, then we see that
+not just the measurement superoperator, but also the
+measurement operation with postselection, is semilocal-
+izable: with one way quantum communication from Al-
+ice to Bob, the state is projected onto the basis, and the
+measurement outcome is known by Bob (though not by
+Alice).
+V. CAUSAL COMPLETE MEASUREMENT
+SUPEROPERATORS NEED NOT BE
+LOCALIZABLE
+Now that the general structure of causal complete mea-
+surements is known, we can address whether causal com-
+plete measurements are localizable. In fact, we will be
+able to construct examples of causal measurements that
+are provably not localizable. To accomplish this task, we
+will identify a property satisﬁed by localizable operations,
+and exhibit causal measurements that don’t possess this
+property.
+We say that a (not necessarily normalized) pure state
+|ψ⟩ is an eigenstate of a superoperator E if
+12
+
+===== PAGE 13 =====
+
+E(|ψ⟩⟨ψ|) = |ψ⟩⟨ψ| . (54)
+The key property of localizable superoperators that we
+will exploit is:
+Theorem 5 If E is a localizable superoperator on HA ⊗
+HB, and |ψ⟩, A⊗ I|ψ⟩, and I ⊗ B|ψ⟩ are all eigenstates of
+E (where A and B are invertible operators), then A⊗ B|ψ⟩
+is also an eigenstate of E.
+The proof of Theorem 5 is in Appendix B. Clearly the
+claim is plausible. By hypothesis, the eigenstate |ψ⟩ of
+E is mapped to a new eigenstate if Alice applies A and
+Bob does nothing, or if Bob applies B and Alice does
+nothing. Since E is localizable, Alice and Bob should be
+able to decide independently whether to apply A and B,
+and still obtain an eigenstate of E.
+A. A twisted partition
+Having identiﬁed in Theorem 5 a necessary condition
+for localizability, we proceed to describe causal measure-
+ments for which this condition is violated. An exam-
+ple in 4 × 4 dimensions is illustrated in Fig. 7. Al-
+ice’s four-dimensional space is partitioned into two two-
+dimensional subspaces, H01
+A spanned by {|0⟩A, |1⟩A},
+and H23
+A spanned by {|2⟩A, |3⟩A}. Bob’s space is sim-
+ilarly partitioned. Let’s ﬁrst consider the case where
+the measurement projects onto the standard Bell basis
+{|φ± ⟩, |ψ± ⟩} in each of the four subspaces Hα
+A ⊗H β
+B; that
+is, the orthonormal basis is
+|φ±
+00⟩, |ψ±
+00⟩, |φ±
+02⟩, |ψ±
+02⟩ ,
+|φ±
+20⟩, |ψ±
+20⟩, |φ±
+22⟩, |ψ±
+22⟩ , (55)
+where we use the notation
+|φ±
+ij⟩ = 1
+√
+2 (|i, j⟩ ± | i + 1, j + 1⟩) ,
+|ψ±
+ij⟩ = 1√
+2 (|i, j + 1⟩ ± | i + 1, j⟩) . (56)
+The superoperator that induces decoherence in this ba-
+sis is localizable, and in fact it can be implemented with
+shared randomness – no entanglement is required. Al-
+ice and Bob can each perform a partial measurement to
+identify whether the state occupies the subspace H01 or
+H23. Then they can proceed to implement decoherence
+in the 2 × 2 Bell basis as described in §IIC. Finally, Alice
+and Bob discard the record of the partial measurement
+to complete the implementation of the measurement su-
+peroperator.
+But now consider a “twisted” basis in which the basis
+elements in the H23
+A ⊗ H 23
+B quadrant of the Hilbert space
+are rotated by applying a unitary transformation UB to
+Bob’s half of the state, becoming
+IA ⊗ UB|φ±
+22⟩ , I A ⊗ UB|ψ±
+22⟩ , (57)
+where UB maps H23
+B to H23
+B . Since this new basis still
+meets the criterion of Theorem 3 in both HA and HB,
+the corresponding measurement superoperator E is still
+causal. But because E does not satisfy the criterion of
+Theorem 5 (except in the case were UB merely permutes
+the Bell basis), it is no longer localizable. The eigenstates
+of E include, for example,
+|φ±
+00⟩ ,
+|φ±
+20⟩ = X 2 ⊗ I|φ±
+00⟩ ,
+|φ±
+02⟩ = I ⊗ X 2|φ±
+00⟩ , (58)
+where X 2 is the four-dimensional Pauli operator that acts
+on the basis {|0⟩, |1⟩, |2⟩, |3⟩} according to
+X 2 : |i⟩ → | i + 2 (mod 4) ⟩ . (59)
+If E is localizable, Theorem 5 requires that
+|φ±
+22⟩ = X 2 ⊗ X 2|φ± ⟩ (60)
+also be an eigenstate – i.e., that |φ22⟩ is also an element
+of the orthonormal basis. This isn’t so unless UB is one
+of the Pauli matrices, up to a phase. Therefore, E is not
+localizable.
+Bob
+Alice
+01 23
+23
+01
+|φ± ⟩, |ψ± ⟩
+|φ± ⟩, |ψ± ⟩
+|φ± ⟩, |ψ± ⟩
+UB|φ± ⟩, UB|ψ± ⟩
+FIG. 7. A causal complete orthogonal measurement that
+is not localizable, in 4 × 4 dimensions. The Hilbert space is
+divided into four 2 × 2 quadrants, and the elements of the or-
+thonormal basis are maximally entangled Bell states in each
+quadrant. Because the Bell basis in the bottom right quad-
+rant has been twisted by applying the unitary transformatio n
+I ⊗ UB, the corresponding measurement superoperator can-
+not be implemented without communication between Alice
+and Bob.
+The method that worked for the untwisted basis ( UB =
+I) fails for the twisted basis. Alice’s partial measure-
+ment identiﬁes what row the state occupies, and Bob’s
+measurement identiﬁes the column, but neither one has
+enough information to determine whether or not the state
+lies in the bottom right quadrant where the basis is
+twisted. Without this information, they can’t complete
+the protocol successfully.
+If Bob did have this information, then the protocol
+could be completed. Hence, not only is E semilocalizable
+13
+
+===== PAGE 14 =====
+
+(like any causal complete measurement superoperator);
+furthermore it can actually be implemented with one-
+way classical communication. Alice performs the partial
+measurement that projects onto H01
+A or H23
+A , and sends
+her measurement outcome to Bob. She also sends to
+Bob a copy of a table of random numbers that she has
+generated. Then Bob, after performing his partial mea-
+surement, has enough information to determine whether
+the state occupies the bottom right quadrant, where the
+stabilizer generators are
+X ⊗ UBXU − 1
+B , Z ⊗ UBZU − 1
+B , (61)
+or one of the other three quadrants, where the stabilizer
+generators are
+X ⊗ X , Z ⊗ Z . (62)
+(Here X and Z denote 2 × 2 Pauli operators.) When
+Alice and Bob consult their shared randomness and Alice
+is directed to apply σ ∈ { I, X, Y, Z } to her half of the
+state, Bob applies UBσU − 1
+B in the former case, and σ
+in the latter case, to induce decoherence in the proper
+stabilizer eigenstate basis.
+Note that, for this protocol to work, the classical com-
+munication must be in the proper direction – it must be
+Bob, not Alice, who chooses from two alternative oper-
+ations. This statement sounds surprising at ﬁrst, as we
+know that a unitary transformation applied by Bob to
+any maximally entangled state is equivalent to a suitable
+unitary transformation applied by Alice. However, uni-
+tary transformations applied by Alice and by Bob do not
+have equivalent eﬀects when applied to all the elements
+of a maximally entangled basis. Correspondingly, it must
+be Bob, not Alice, who applies the rotation to transform
+the stabilizer generators of eq. (62) to those of eq. (61).
+B. A twisted Bell basis
+We saw that the general causal complete measure-
+ment superoperator projects onto a basis that partitions
+HA ⊗ H B into d × d subspaces. Of course, if d = 1, the
+basis is a product basis and the superoperator is trivially
+localizable. What about the other limiting case, in which
+d = NA = NB, so that the basis is maximally entangled?
+We will give an example of a 4 × 4 maximally entangled
+basis, such that the corresponding measurement super-
+operator is not localizable.
+In the d × d case, any maximally entangled state can
+be expressed as U ⊗ I|Φ+⟩, where
+|Φ+⟩ = 1
+√
+d
+d∑
+i=1
+|i⟩ ⊗ | i⟩ (63)
+and U is unitary. The elements of a d × d maximally
+entangled basis, then, can be expressed as
+|Φa⟩ = Ua ⊗ I|Φ+⟩ ; (64)
+the requirement that the states are orthogonal becomes
+tr
+(
+U †
+aUb
+)
+= d δab . (65)
+For the standard d × d Bell basis, these unitary transfor-
+mations can be chosen as
+Ua,b = X aZ b , a, b = 0, 1, . . . , d− 1 , (66)
+where X and Z are the d-dimensional Pauli operators
+that act on a basis {|0⟩, |1⟩, . . . ,|d − 1⟩} as
+X|i⟩ = |i + 1 (mod d) ⟩ ,
+Z|i⟩ = ωi|i⟩ , ω = e2πi/d . (67)
+Any measurement superoperator that projects onto a
+maximally entangled basis satisﬁes the criterion of Theo-
+rem 3 (in both directions) and is therefore causal. But if
+the superoperator is localizable, Theorem 5 requires the
+unitary transformations {Ua} satisfying eq. (65) to obey
+further restrictions. Note that if Alice and Bob both
+adopt the Schmidt basis of |Φ0⟩ as their computational
+bases, then |Φ0⟩ = |Φ+⟩ and U0 = I. Then a useful
+characterization of the Ua’s is provided by:
+Theorem 6 Let U be a set of d2 d × d unitary matri-
+ces satisfying eq. (65), and let EU be the measurement
+superoperator that projects onto the orthonormal basis
+{Ua ⊗ I|Φ+⟩, Ua ∈ U } . Suppose that EU is localizable.
+Then if I, U , and V are all contained in U, so must be
+eiφU V , for some phase eiφ.
+That is, U is a projective group.
+Proof: Theorem 6 follows easily from Theorem 5. First
+note that
+M ⊗ I|Φ+⟩ = I ⊗ M T |Φ+⟩ , (68)
+where M is any operator, and the transpose is taken in
+the computational basis. Then by hypothesis, all of
+|Φ+⟩ , U ⊗ I|Φ+⟩ , I ⊗ V T |Φ+⟩ , (69)
+are eigenstates of EU . Theorem 5 then implies that
+U ⊗ V T |Φ+⟩ = U V ⊗ I|Φ+⟩ (70)
+is also an eigenstate, and hence an element of the or-
+thonormal basis, up to a phase. This proves the theorem.
+Now to exhibit a causal measurement superoperator
+that is not localizable, it suﬃces to construct unitary
+operators that don’t satisfy the projective group property
+14
+
+===== PAGE 15 =====
+
+speciﬁed in Theorem 6. Consider, in the 4 × 4 case, the
+16 unitary operators
+U =
+
+
+
+
+
+I, Z, Z 2, Z 3,
+X, XZ, XZ 2, XZ 3,
+X 2, X 2Z, X 2Z 2, X 2Z 3,
+X 3, X 3 ˜Z, X 3Z 2, X 3 ˜ZZ 2
+
+
+
+
+
+, (71)
+where ˜Z and Z 2 are the diagonal 4 × 4 matrices
+˜Z = diag(1, 1, − 1, − 1) .
+Z 2 = diag(1, − 1, 1, − 1) . (72)
+We can readily check that these operators obey the or-
+thogonality condition eq. (65), as I, ˜Z, Z 2, and
+˜ZZ 2 = diag(1, − 1, − 1, 1) (73)
+are all mutually orthogonal. (They are the characters of
+the four unitary irreducible representations of the group
+Z2 × Z2.) However, due to the mismatch of the fourth
+row of eq. (71) with the ﬁrst three rows, U does not have
+the projective group property required by Theorem 6.
+For example, X and X 2Z are contained in U, but their
+product X 3Z is not proportional to any element of U.
+Therefore EU is not localizable.
+As with any causal complete measurement superoper-
+ator, EU is semilocalizable. But in contrast to the preced-
+ing example, classical communication is not suﬃcient –
+quantum communication (or equivalently, classical com-
+munication and shared entanglement) are needed to im-
+plement the operation. To prove this we can appeal to a
+result of [16]: If a superoperator can be implemented with
+1-way classical communication, and has a maximally en-
+tangled state as an eigenstate, then it is localizable. Since
+the superoperator that projects onto the twisted Bell ba-
+sis has a maximally entangled state as an eigenstate, and
+is not localizable, we know that it can’t be done with
+1-way classical communication.
+Further examples of twisted Bell bases are presented
+and discussed in [16].
+VI. QUANTUM CORRELATIONS AND
+LOCALIZABILITY
+In this section, we will use a diﬀerent method to ex-
+hibit another class of causal superoperators that are not
+localizable. The construction exploits fundamental limi-
+tations on the strength of correlations among the parts of
+a quantum system, limitations embodied by the Cirel’son
+inequality. An operation that produces correlations that
+are too strong cannot be implemented without commu-
+nication among the parts.
+A related observation is that correlations arising from
+quantum entanglement are stronger than can be achieved
+with shared randomness – this is the content of Bell’s the-
+orem. We use this idea to construct examples of superop-
+erators that can be locally implemented with prior quan-
+tum entanglement, but cannot be locally implemented
+with shared randomness.
+A. The CHSH and Cirel’son inequalities
+Suppose that Alice receives a classical input bit x ∈
+{0, 1} and is to produce a classical output bit a, while
+Bob receives input bit y and is to produce output bit b.
+Their goal is to generate output bits that are related to
+the input bits according to
+a ⊕ b = x ∧ y , (74)
+where ⊕ denotes the sum modulo 2 (the XOR gate) and
+∧ denotes the product (the AND gate).
+If Alice and Bob are unable to communicate with one
+another, so that Alice does not know Bob’s input and
+Bob does not know Alice’s, then they will not be able to
+achieve their goal for all possible values of the input bits.
+Let a0, a1 denote the value of Alice’s output if her input
+is x = 0, 1 and let b0, b1 denote Bob’s output if his input
+is y = 0, 1. They would like their output bits to satisfy
+a0 ⊕ b0 = 0 ,
+a0 ⊕ b1 = 0 ,
+a1 ⊕ b0 = 0 ,
+a1 ⊕ b1 = 1 ; (75)
+this is impossible, since by summing the four equations
+we obtain 0=1.
+If Alice and Bob always choose the output a = b = 0,
+then they will achieve their goal with probability 3 /4, if
+all possible values of the input bits are equally proba-
+ble. The CHSH inequality says that, even if Alice and
+Bob share a table of random numbers, no higher success
+probability is attainable. To make the connection with
+the CHSH inequality as it is usually formulated [26], de-
+ﬁne random variables with values ± 1 as
+A = (− 1)a0 , A ′ = (− 1)a1 ,
+B = (− 1)b0 , B ′ = (− 1)b1 . (76)
+Then the CHSH inequality says that for any joint prob-
+ability distribution governing A, A′, B, B′ ∈ {± 1}, the
+expectation values satisfy
+⟨AB⟩ + ⟨AB′⟩ + ⟨A′B⟩ − ⟨ A′B′⟩ ≤ 2 . (77)
+Furthermore, if we denote by pxy the probability that
+eq. (75) is satisﬁed when the input bits are ( x, y), then
+15
+
+===== PAGE 16 =====
+
+⟨AB⟩ = 2p00 − 1 ,
+⟨AB′⟩ = 2p01 − 1 ,
+⟨A′B⟩ = 2p10 − 1 ,
+⟨A′B′⟩ = 1 − 2p11 , (78)
+so that eq. (77) becomes [27]
+1
+4 (p00 + p01 + p10 + p11) ≤ 3
+4 . (79)
+If Alice and Bob share quantum entanglement, they
+still can’t satisfy eq. (75) for all inputs, but they can
+achieve an improved success probability compared to the
+case where they share only randomness. If we suppose
+that A, A′, B, B′ are all Hermitian operators with eigen-
+values ± 1, and that Alice’s operators A and A′ commute
+with Bob’s operators B and B′, then the quantum me-
+chanical expectation values obey the Cirel’son inequality
+[26]
+⟨AB⟩ + ⟨AB′⟩ + ⟨A′B⟩ − ⟨ A′B′⟩ ≤ 2
+√
+2 ; (80)
+the success probability then satisﬁes
+1
+4 (p00 + p01 + p10 + p11) ≤ 1
+2 + 1
+2
+√
+2 ≈ .853 . (81)
+Furthermore, the inequality can be saturated if the ob-
+servables A, A′, B, B′ are chosen appropriately.
+B. A causal operation that is not localizable
+Our observations concerning the Cirel’son inequality
+quickly lead us to a construction of a causal operation
+that is not localizable.
+For a two-qubit state shared by Alice and Bob, con-
+sider a superoperator, denoted E∧ , that can be imple-
+mented in two steps. The ﬁrst step is a complete orthog-
+onal measurement that projects onto the product basis
+{|00⟩, |01⟩, |10⟩, |11⟩}. Then in the second step the prod-
+uct state is transformed according to
+|00⟩
+|01⟩
+|10⟩
+}
+→ 1
+2 (|00⟩⟨00|+ |11⟩⟨11|) ,
+|11⟩ → 1
+2 (|01⟩⟨01|+ |10⟩⟨10|) . (82)
+This operation is obviously trace preserving, and since
+it has an evident operator-sum representation, it is also
+completely positive. Furthermore, it is causal. Whatever
+the initial state that Alice and Bob share, each has the
+ﬁnal density operator ρ = I/2; therefore, neither can
+receive a signal from the other.
+Though causal, E∧ is not localizable – it cannot be
+implemented by Alice and Bob without communication,
+even if they share an entangled ancilla. If it were localiz-
+able, then Alice and Bob would be able to implement E∧
+by applying a local unitary transformation UA ⊗ UB to
+the composite system consisting of the input qubits and
+ancilla, and then throwing some qubits away. Let the
+input state shared by Alice and Bob be one of the prod-
+ucts states {|00⟩, |01⟩, |10⟩, |11⟩}, let them apply their lo-
+cal unitary transformation to implement E∧ , and suppose
+that each measures her or his output qubit in the basis
+{|0⟩, |1⟩} after E∧ is performed. In eﬀect then, Alice sub-
+jects the initial state to a measurement of the observable
+U − 1
+A ZA,outUA, and Bob measures U − 1
+B ZB,outUB, where
+Z·,out denotes a Pauli operator acting on an output qubit.
+Both observables have eigenvalues ± 1.
+Now, the Cirel’son inequality applies to a situation
+where Alice measures either of two observables in a speci-
+ﬁed state, and Bob does likewise. Here we are considering
+a case in which Alice and Bob measure ﬁxed observables,
+and the initial state can be any of four possible states.
+But either scheme can be easily related to the other. For
+example, instead of providing Alice with an input qubit
+that can be |0⟩ or |1⟩, we can give her the input |0⟩ and
+instruct her to apply X, or not, before she performs her
+measurement. In this scenario, Alice receives a classical
+input bit that instructs her to measure one of the two
+observables
+A = U − 1
+A ZA,outUA ,
+A′ = XA,inU − 1
+A ZA,outUAXA,in , (83)
+and similarly for Bob.
+In this case, then, the Cirel’son inequality constrains
+how Alice’s measurement outcome |a⟩ is correlated with
+Bob’s measurement outcome |b⟩. But if they have really
+succeeded in implementing the operation E∧ , then the
+outcomes are related to the classical input bits x, y by
+a ⊕ b = x ∧ y with probability 1, a violation of the bound
+eq. (81). We conclude that no local protocol implement-
+ing E∧ is possible.
+However, it is also clear that E∧ is semilocalizable –
+it can be implemented with one-way classical communi-
+cation from Alice to Bob (or from Bob to Alice). Alice
+measures her qubit in the basis {|0⟩, |1⟩}, and she tosses
+a coin to decide whether to ﬂip her qubit or not. Then
+she sends her measurement result and the outcome of
+her coin toss to Bob. Bob measures his qubit in the basis
+{|0⟩, |1⟩}, and after reading the data sent by Alice, either
+ﬂips it or not. Bob arranges that his qubit have the same
+value as Alice’s unless they both measure |1⟩, in which
+case he arranges for his qubit and Alice’s to have opposite
+values. This procedure implements E∧ .
+How much communication is necessary? As pointed
+out to us by Cleve [28], we can obtain a lower bound on
+the amount of communication needed to implement E∧
+16
+
+===== PAGE 17 =====
+
+from known lower bounds on the quantum communica-
+tion complexity of the inner product function [29].
+Suppose that Alice has an n-bit classical input string
+x = ( x1, x2, . . . , xn), not known to Bob, and Bob has
+an n-bit classical input string y = ( y1, y2, . . . , yn), not
+known to Alice. Their goal is to compute the mod 2
+inner product of their strings,
+IP(x, y) = x1y1 ⊕ x2y2 ⊕ · · · ⊕xnyn . (84)
+It is known [29] that even if Alice and Bob share
+pre-existing entanglement, neither party can evaluate
+IP(x, y) with zero probability of error unless at least n/2
+qubits are transmitted between the parties. For n even,
+n/2 qubits of communication are also suﬃcient: Alice
+can use superdense coding to send x to Bob, and Bob
+can then evaluate IP( x, y).
+But if Alice and Bob were able to implement E∧ “for
+free,” they could use it to evaluate IP( x, y) at a smaller
+communication cost. Alice prepares the n-qubit state
+|x⟩ and Bob the n-qubit state |y⟩. Then E∧ is applied
+to |xi, yi⟩ for each i = 1 , 2, . . . , n, and Alice and Bob
+measure their qubits to obtain outputs ai, bi for each i.
+Since ai ⊕ bi = xiyi, we see that
+IP(x, y) = ( a1 ⊕ b1) ⊕ (a2 ⊕ b2) ⊕ · · · ⊕(an ⊕ bn)
+= (a1 ⊕ a2 ⊕ · · · ⊕an) ⊕ (b1 ⊕ b2 ⊕ · · · ⊕bn) . (85)
+Therefore, Alice can evaluate the sum (mod 2) of her n
+measurement outcomes, and send the one-bit result to
+Bob. Bob adds Alice’s result to the sum of his own mea-
+surement outcomes, and so obtains the value of IP( x, y).
+Just one bit of communication is required.
+Suppose that Alice and Bob have a protocol that al-
+lows them to implement E∧ with, on average, Qav qubits
+of quantum communication. (Alice’s decision whether to
+send a qubit could be conditioned on the outcome of a
+local measurement; therefore the amount of communica-
+tion required can ﬂuctuate about this average.) Now, if
+Alice and Bob can implement E∧ n times with Qn qubits
+of communication, then since just one additional bit is
+needed to complete the evaluation of the inner product
+function, we know that
+Qn + 1 ≥ n/2 . (86)
+For large n, Qn converges to nQav, and we conclude that
+Qav ≥ 1/2 . (87)
+This argument illustrates a general approach to prov-
+ing that a quantum operation is unlocalizable: if imple-
+menting the operation would allow us to reduce the com-
+munication complexity of a function below established
+lower bounds, then no local implementation is possible.
+C. Entanglement is stronger than shared
+randomness
+The separation between the CHSH and Cirel’son in-
+equalities allows us to construct a class of operations that
+can be implemented locally with shared entanglement,
+but cannot be implemented locally with shared random-
+ness. (The existence of operations with this property was
+already pointed out in §IIC.)
+Suppose that Alice and Bob have a shared maximally
+entangled pair of qubits (qubits 3 and 4), as well as two
+input qubits (1 and 2) on which the operation is to act.
+Alice measures qubit 1 and Bob measures qubit 2 in the
+basis {|0⟩, |1⟩}. Then Alice measures her half of the en-
+tangled pair, qubit 3, choosing to measure the observable
+A if the measured input was |0⟩1 or A′ if the measured
+input was |1⟩1. Similarly, Bob measures qubit 4, choos-
+ing to measure either B or B′ depending on the outcome
+of his measurement of the input qubit 2.
+After measuring A (or A′), Alice rotates qubit 3 to the
+state |0⟩3 if she found A = 1 (or A′ = 1), and rotates it
+to |1⟩3 if she found A = − 1 (or A′ = − 1). Bob does the
+same to qubit 4. Finally Alice and Bob throw away the
+input qubits 1 and 2, retaining qubits 3 and 4.
+Alice and Bob, then, using their shared entanglement,
+have locally implemented an operation that acts on a
+product-state input and produces a product-state out-
+put, according to
+|x, y⟩ → | a, b⟩ . (88)
+Averaged over the four possible product state inputs, the
+output of the operation satisﬁes a⊕ b = xy with a success
+probability that we’ll call p. If the observables A, A′, B,
+B′ are chosen to saturate the Cirel’son inequality, then
+p = cos2(π/8) ≈ .853.
+As is well known [26], probability distributions for
+quantum measurements of a single qubit can be correctly
+accounted for by a “hidden variable theory” (while mea-
+surements of entangled qubits cannot be). Therefore,
+measurements performed by Alice and Bob on a prod-
+uct input state can be perfectly simulated by a classi-
+cal probability distribution, so that the measurement re-
+sults must respect the CHSH inequality, which requires
+that the success probability p satisfy p ≤ 3/4. For
+3/4 < p ≤ cos2(π/8), the operation can be implemented
+locally with shared entanglement, but not with shared
+randomness.
+VII. UNITARITY AND CAUSALITY
+An important special case of an operation is a unitary
+transformation. In this case, our classiﬁcation collapses –
+17
+
+===== PAGE 18 =====
+
+the classes of causal, localizable, semicausal, and semilo-
+calizable unitary transformations all coincide, according
+to
+Theorem 7 A bipartite unitary transformation UAB is
+semicausal if and only if it is a tensor product, UAB =
+UA ⊗ UB.
+Proof: It’s obvious that a tensor product transformation
+is causal. The nontrivial content of the theorem is that if
+UAB is not a tensor product, then we can devise protocols
+whereby Alice can signal Bob and Bob can signal Alice;
+hence UAB is not semicausal.
+To prove this, we ﬁrst recall that since linear operators
+are a vector space with a Hilbert-Schmidt inner prod-
+uct, a bipartite operator (whether unitary or not) can be
+Schmidt decomposed [30]. We may write
+UAB =
+∑
+µ
+λµAµ ⊗ Bµ , (89)
+where the λµ’s are nonnegative real numbers, and the
+operator bases {Aµ} and {Bµ} are orthogonal:
+tr(A†
+µAν ) = NAδµν , tr(B†
+µBν ) = NBδµν ; (90)
+NA is the dimension of HA and NB is the dimension of
+HB – we’ve chosen this normalization so that unitary
+operators are properly normalized.
+If UAB is not a tensor product, than more than one λµ
+is strictly positive. We will show that if this is true, then
+UAB allows Bob to signal Alice. (A similar argument
+shows that Alice can signal Bob.) Suppose that Alice
+introduces a reference system HR and that she prepares
+a maximally entangled state of HR ⊗ H A
+|Φ⟩RA =
+∑
+i
+|i⟩R ⊗ |i⟩A . (91)
+(Because it will be convenient later on, we have chosen an
+unconventional normalization of the state |Φ⟩RA.) Mean-
+while, Bob prepares a pure state |ψ⟩B. When UAB acts,
+the density operator becomes
+ρRAB =
+∑
+µν
+λµλν (I ⊗ Aµ)|Φ⟩⟨Φ|(I ⊗ A†
+ν)
+⊗ Bµ|ψ⟩⟨ψ|B†
+ν . (92)
+After tracing out Bob’s system, the density operator of
+Alice’s system becomes
+ρRA =
+∑
+µν
+λµλν (I ⊗ Aµ)|Φ⟩⟨Φ|(I ⊗ A†
+ν )
+· ⟨ψ|B†
+ν Bµ|ψ⟩ . (93)
+Bob can signal Alice if the density operator ρRA de-
+pends on Bob’s initial state |ψ⟩. It follows from eq. (90)
+that the states {(I ⊗ Aµ)|Φ⟩} are mutually orthogonal;
+therefore signaling is possible if there exist two states |ψ⟩
+and |ψ′⟩ such that
+⟨ψ|B†
+νBµ|ψ⟩ ̸= ⟨ψ′|B†
+νBµ|ψ′⟩ . (94)
+for some µ and ν.
+Now we distinguish two cases:
+1. Suppose that for some µ, Bµ is not unitary. Then,
+in order to satisfy the normalization condition
+eq. (90), B†
+µBµ must have (at least) two distinct
+eigenvalues. Choose |ψ⟩ and |ψ′⟩ to be the corre-
+sponding eigenvectors. Then eq. (94) is satisﬁed for
+ν = µ.
+2. Suppose that Bµ and Bν are both unitary for
+µ ̸= ν. Then B†
+νBµ is nonzero and (according to
+eq. (90)) has vanishing trace; therefore it has (at
+least) two distinct eigenvalues. Thus eq. (94) is
+satisﬁed, where |ψ⟩ and |ψ′⟩ are the corresponding
+eigenvectors.
+In either case, Alice’s density operator depends on how
+Bob’s initial state is chosen; hence Bob can signal Al-
+ice. A similar argument shows that Alice can signal Bob.
+Therefore UAB is not semicausal. This completes the
+proof of Theorem 7.
+It follows immediately from Theorem 7 that if a bi-
+partite unitary transformation is semicausal, it is also
+localizable, and therefore fully causal.
+VIII. GENERAL OPERATIONS: CRITERIA FOR
+SEMICAUSALITY
+To show that an operation E is not fully causal, it suf-
+ﬁces to exhibit a protocol whereby the operation can be
+used to send a signal in one direction, and to show that
+it is not semicausal, it suﬃces to exhibit protocols for
+signaling in both directions. On the other hand, to show
+that it is fully causal (or semicausal), we must prove that
+no such signaling protocols exist. To settle whether a
+particular operation is causal, it is very helpful to have a
+simpler criterion that can be checked with a straightfor-
+ward calculation. We will now develop such a criterion
+for semicausal superoperators.
+First, we recall that, although in our deﬁnition of sem-
+icausality we allowed the initial state shared by Alice and
+Bob to be entangled, we could without loss of generality
+restrict their initial state to be a product state (Theorem
+1). Next, we note that a helpful tool in our analysis of
+the causality properties of unitary transformations, en-
+tanglement with a reference system, can also be fruitfully
+applied to the general case. To give a useful restatement
+18
+
+===== PAGE 19 =====
+
+of the criterion for semicausality, suppose again that Al-
+ice prepares the maximally entangled state |Φ⟩RA of her
+reference system HR with her system HA. Then for each
+state |ϕ⟩A ∈ H A, there is a corresponding “relative state”
+|ϕ∗ ⟩R ∈ H R, chosen so that
+R⟨ϕ∗ |Φ⟩RA = |ϕ⟩A . (95)
+We can easily see that an operation E is semicausal (Bob
+is unable to signal Alice) if and only if
+trB
+(
+E(|Φ⟩⟨Φ| ⊗ |ψ⟩⟨ψ|)
+)
+(96)
+is independent of Bob’s state |ψ⟩. (Here of course E really
+denotes the operation IR ⊗ E AB acting on the RAB sys-
+tem.) If the expression in eq. (96) depends on |ψ⟩, then
+obviously Bob can signal Alice. Conversely, if Bob can
+signal Alice, then there is a signaling protocol in which
+the initial state is a product of pure states; there are
+states |ϕ⟩, |ψ⟩, and |ψ′⟩, such that
+R⟨ϕ∗ |trB
+(
+E(|Φ⟩⟨Φ| ⊗ |ψ⟩⟨ψ|)
+)
+|ϕ∗ ⟩R
+= tr B
+(
+E(|ϕ⟩⟨ϕ| ⊗ |ψ⟩⟨ψ|)
+)
+̸= tr B
+(
+E(|ϕ⟩⟨ϕ| ⊗ |ψ′⟩⟨ψ′|)
+)
+= R⟨ϕ∗ |trB
+(
+E(|Φ⟩⟨Φ| ⊗ |ψ′⟩⟨ψ′|)
+)
+|ϕ∗ ⟩R . (97)
+Since we have found a particular matrix element of
+trB
+(
+E(|Φ⟩⟨Φ| ⊗ |ψ⟩⟨ψ|)
+)
+that depends on |ψ⟩, evidently
+so does tr B
+(
+E(|Φ⟩⟨Φ| ⊗ |ψ⟩⟨ψ|)
+)
+itself.
+Now, let’s provide Bob with a reference system S, and
+suppose that he prepares a maximally entangled state of
+HB ⊗ H S
+|Φ′⟩BS =
+∑
+i
+|i⟩B ⊗ |i⟩S (98)
+(again we have chosen an unconventional normalization
+for convenience). We are ready to state and prove our
+new criterion for semicausality:
+Theorem 8 Let |Φ⟩RA be a maximally entangled state of
+system A with the reference system R, and let |Φ′⟩BS be
+a maximally entangled state of system B with reference
+system S. Then the bipartite superoperator E acting on
+AB is semicausal (Bob cannot signal Alice) if and only
+if
+trB
+(
+(EAB ⊗ IRS)
+(
+(|Φ⟩⟨Φ|)RA ⊗ (|Φ′⟩⟨Φ′|)BS
+))
+(99)
+is proportional to the product ρRA ⊗ IS , where IS denotes
+the identity on S.
+Proof: If tr B(E(|Φ⟩⟨Φ| ⊗ |Φ′⟩⟨Φ′|)) is proportional to
+ρRA ⊗ IS, then by evaluating the matrix element between
+relative states |ψ∗ ⟩S, we see that tr B
+(
+E(|Φ⟩⟨Φ| ⊗ |ψ⟩⟨ψ|)
+)
+is independent of |ψ⟩. Therefore Bob cannot signal Alice.
+Conversely, suppose that Bob cannot signal Alice. Then
+trB
+(
+E(|Φ⟩⟨Φ| ⊗ |ψ⟩⟨ψ|)
+)
+= S⟨ψ∗ |trB
+(
+E
+(
+|Φ⟩⟨Φ| ⊗ |Φ′⟩⟨Φ′|
+))
+|ψ∗ ⟩S (100)
+is independent of |ψ∗ ⟩. It follows that tr B(E(|Φ⟩⟨Φ| ⊗
+|Φ′⟩⟨Φ′|)) is proportional to IS. This proves Theorem 8.
+IX. CONCLUSIONS
+We have studied the constraints on quantum opera-
+tions that are imposed by relativistic causality. In the
+bipartite setting where no classical communication is per-
+mitted, we ﬁnd a hierarchy of operations:
+(1) operations that can be implemented with no shared
+resources,
+(2) operations that can be implemented with shared ran-
+domness,
+(3) operations that can be implemented with shared en-
+tanglement (localizable operations),
+(4) causal operations,
+(5) acausal operations.
+Our central observation is that the classes (3) and (4) do
+not coincide: there are operations that respect causal-
+ity, but are nonetheless forbidden by the rules of local
+quantum physics.
+Our work can be regarded as a useful step toward the
+broader goal of characterizing the physically realizable
+operations in relativistic quantum ﬁeld theory. However,
+as noted in the Sec. I, to apply our results to ﬁeld the-
+ory one must accept the idealization that the resources
+shared by the parties are external probes not themselves
+described by the ﬁeld theory.
+In a separate paper, we have also discussed causality
+constraints that apply to non-Abelian gauge theories [17];
+we have shown that the nondemolition measurement of
+a spacelike Wilson loop operator is an acausal operation
+(conﬁrming a speculation of Sorkin [14]), and is therefore
+surely not localizable. On the other hand, a destructive
+measurement of a Wilson loop is possible — spacelike
+separated parties can perform a POVM from which the
+value of the Wilson loop can be inferred, but this POVM
+will damage Wilson loop eigenstates.
+The compatibility of quantum mechanics with special
+relativity is highly nontrivial; in fact, it is something of a
+miracle. Because relativistic quantum ﬁeld theories are
+so highly constrained, it is tempting to speculate that
+19
+
+===== PAGE 20 =====
+
+“quantum mechanics is the way it is because any small
+changes in quantum mechanics would lead to absurdities”
+[31].
+From this perspective, the existence of causal opera-
+tions that are not localizable comes as a surprise. We
+seem to have the freedom to relax the rules of quantum
+theory by allowing more general operations, without en-
+countering unacceptable physical consequences. Nontriv-
+ial support for this notion is provided by the semigroup
+property of the causal operations. It is reasonable to in-
+sist that the operations allowed at a given time ought not
+to depend on the previous history of the system; since the
+composition of two causal operations is causal, a theory
+that admits more general causal operations than those
+allowed in local quantum theory could adhere to this pro-
+viso.
+One wonders whether there are further principles, be-
+yond relativistic causality, that will restrict the class of
+allowed operations to those and only those that are truly
+realizable in Nature. If so, these principles might lead us
+to an understanding of why quantum mechanics has to
+be the way it is. What might these principles be?
+We don’t know. But the discussion in §VI invites us
+to contemplate the fundamental limitations on the cor-
+relations among the parts of a physical system. Exper-
+imentally conﬁrmed violations of the CHSH inequality
+demonstrate that the correlations are stronger than those
+allowed by any local hidden variable theory. Operations
+that are causal but not localizable produce correlations
+that are stronger still, and violate the Cirel’son inequal-
+ity. What criteria point toward a description of Nature
+that incorporates violation of the CHSH inequality, but
+not violation of the Cirel’son inequality?
+Or could it be that Nature really does allow more gen-
+eral operations, and that the conventional framework of
+local quantum physics needs revision? Ultimately, only
+experiment can decide.
+Note added: After this paper appeared, a proof of the
+conjecture that semicausal superoperators are semilocal-
+izable was found by Eggeling, Schlingemann, and Werner
+[32].
+ACKNOWLEDGMENTS
+We thank Harry Buhrman, Richard Cleve, and David
+DiVincenzo for helpful discussions, Jennifer Dodd for
+comments on the manuscript, and Reinhard Werner and
+Rainer Verch for instructive correspondence. This work
+has been supported in part by the Department of Energy
+under Grant No. DE-FG03-92-ER40701, by the National
+Science Foundation, and by an IBM Faculty Partnership
+Award. Some of this work was done at the Aspen Cen-
+ter for Physics. This research was partially conducted
+during the period that D.G. served as a Clay Long-Term
+CMI Prize Fellow.
+APPENDIX A: PROOF OF THEOREM 3
+Theorem 3 Consider a bipartite complete orthogonal
+measurement superoperator of the form
+E(ρ) =
+∑
+a
+|a⟩⟨a|ρ|a⟩⟨a| , (A1)
+where {|a⟩} is an orthonormal basis for HA ⊗ H B, and
+let σa
+A = tr B(|a⟩⟨a|). Then E is semicausal if and only if
+the following property holds: For each pair of operators
+{σa
+A, σb
+A}, either σa
+A = σb
+A or σa
+Aσb
+A = 0.
+Proof: We begin by observing that if σa
+Aσb
+A = 0, then
+⟨a|IA ⊗ UB|b⟩ = 0 (A2)
+for any unitary UB. To show this, we Schmidt decompose
+the states |a⟩ and |b⟩:
+|a⟩ =
+∑
+i
+√
+λa,i|a, i⟩A ⊗ |a, i⟩B ,
+|b⟩ =
+∑
+i
+√
+λb,i|b, i⟩A ⊗ |b, i⟩B , (A3)
+where {|a, i⟩A}, {|b, i⟩A} are orthonormal bases of HA,
+{|a, i⟩B}, {|b, i⟩B} are orthonormal bases of HB, and the
+λa,i’s, λb,i’s are all nonnegative. In terms of these bases,
+we ﬁnd
+σa
+A =
+∑
+i
+λa,i|a, i⟩AA⟨a, i| ,
+σb
+A =
+∑
+i
+λb,i|b, i⟩AA⟨b, i| ; (A4)
+therefore σa
+Aσb
+A = 0 iﬀ A⟨a, i|b, j⟩A = 0 for each i and j
+with λa,iλb,j ̸= 0. Eq. (A2) follows immediately.
+Now suppose that for each a and b, either σa
+A = σb
+A or
+σa
+Aσb
+A = 0. Let |ψ⟩ be an arbitrary pure state in HA⊗H B.
+We will show that
+trB E(|ψ⟩⟨ψ|)
+= tr B E
+(
+(IA ⊗ UB)|ψ⟩⟨ψ|(IA ⊗ U †
+B)
+)
+(A5)
+for any unitary UB, which according to Theorem 1 suf-
+ﬁces to show that E is semicausal. To prove eq. (A5), we
+expand the state |ψ⟩ in the basis {|b⟩} as
+|ψ⟩ =
+∑
+b
+αb|b⟩ , (A6)
+and so obtain
+20
+
+===== PAGE 21 =====
+
+trB E
+(
+(IA ⊗ UB)|ψ⟩⟨ψ|(IA ⊗ U †
+B)
+)
+=
+∑
+a,b,c
+αbα∗
+c ⟨a|IA ⊗ UB|b⟩⟨c|IA ⊗ U †
+B|a⟩ ·σa
+A . (A7)
+Now we use the property that either σa
+A = σb
+A or σa
+Aσb
+A =
+0 for each a and b: because σa
+Aσb
+A = 0 implies that ⟨a|IA⊗
+UB|b⟩ = 0, we can replace σa
+A by σb
+A in eq. (A7) without
+altering the sum. After this replacement, we use the
+property ∑
+a |a⟩⟨a|= I and the unitarity of UB to ﬁnd
+trB E
+(
+(IA ⊗ UB)|ψ⟩⟨ψ|(IA ⊗ U †
+B)
+)
+=
+∑
+b
+|αb|2 ·σb
+A , (A8)
+which is independent of UB, proving eq. (A5) and hence
+the “if” part of Theorem 3.
+To prove the “only if” part of Theorem 3, we suppose
+that for some a and b, σa
+Aσb
+A ̸= 0 and σa
+A ̸= σb
+A; we must
+show that Bob can signal Alice. It suﬃces to show that
+a basis element |b⟩ and a unitary transformation UB can
+be chosen so that
+trBE
+(
+(IA ⊗ UB)|b⟩⟨b|(IA ⊗ U †
+B)
+)
+=
+∑
+a
+|⟨a|IA ⊗ UB|b⟩|2 ·σa
+A
+̸= σb
+A = tr BE(|b⟩⟨b|) . (A9)
+If eq. (A9) holds, then Bob can signal Alice by the fol-
+lowing protocol: Alice and Bob prepare in advance the
+shared state |b⟩. Just before E acts, Bob either applies
+UB to the state or he does nothing. Eq. (A9) says that
+Alice’s density operator after E acts depends on the ac-
+tion chosen by Bob; therefore, Bob can signal Alice.
+We will prove in two steps that UB and |b⟩ exist such
+that eq. (A9) is satisﬁed. The ﬁrst step is to show that
+for σa
+Aσb
+A ̸= 0, there is a unitary UB such that
+⟨b|IA ⊗ UB|a⟩ ̸= 0 . (A10)
+In terms of the Schmidt bases deﬁned in eq. (A3), what
+is to be shown can be rewritten as
+∑
+i,j
+√
+λb,jλa,i A ⟨b, j|a, i⟩A ·B⟨b, j|UB|a, i⟩B ̸= 0 . (A11)
+Now recall that σa
+Aσb
+A ̸= 0 implies that A⟨b, j|a, i⟩A ̸= 0
+for some i and j. By labeling the Schmidt bases appro-
+priately we can ensure that A⟨b, 1|a, 1⟩A ̸= 0. By adopt-
+ing suitable phase conventions, we can ensure that each
+A⟨b, i|a, i⟩A is real and nonnegative, and we can choose
+UB so that B⟨b, j|UB|a, i⟩B = δij. Thus
+∑
+i,j
+√
+λb,jλa,i A ⟨b, j|a, i⟩A ·B⟨b, j|UB|a, i⟩B
+=
+∑
+i
+√
+λb,iλa,i A ⟨b, i|a, i⟩A (A12)
+is a sum of nonnegative terms, at least one of which
+is nonzero; therefore the sum is surely nonzero, as we
+wished to show.
+Now we have seen that UB and |b⟩ can be chosen so
+that the sum in eq. (A9) contains a term other than σb
+A.
+The second step of the argument will establish that we
+can, in fact, choose UB and |b⟩ such that the sum is not
+equal to σb
+A.
+For this purpose, consider the set Sb containing all σa
+A
+such that σa
+Aσb
+A ̸= 0. Suppose that Sb contains at least
+two elements, and that σb
+A is an extremal element of Sb
+– that is σb
+A cannot be expressed as a nontrivial convex
+combination of other elements of Sb. Then since the sum
+in eq. (A9) is a convex combination of elements of Sb, and
+since we can choose UB so that the sum contains some
+σa
+A ̸= σb
+A with a nonvanishing coeﬃcient, the inequality
+in eq. (A9) follows from the extremality of σb
+A in Sb.
+Finally, it only remains to show that |b⟩ can be chosen
+so that σb
+A is extremal in Sb. For this purpose, of all σb
+A
+such that Sb contains two or more elements, choose one
+with maximal Hilbert-Schmidt norm ( i.e., with maximal
+tr
+[
+(σb
+A)2]
+). We claim that this σb
+A must be extremal in
+Sb.
+To see that σb
+A is extremal in Sb, we appeal to the
+following property: Let {vi} be a ﬁnite set of vectors,
+and let ∥ v ∥max be the maximum value of ∥ vi ∥. Then
+the strict inequality
+∥
+∑
+i
+pivi ∥ < ∥ v ∥max (A13)
+holds for any nontrivial convex combination of the vi’s
+(one with two or more nonvanishing pi’s). Applying
+eq. (A13) to Sb, the Hilbert-Schmidt norm of our selected
+σb
+A is on the right-hand side, which is strictly greater than
+the left-hand side, the norm of any nontrivial convex com-
+bination of elements of Sb. Therefore σb
+A is extremal in
+Sb.
+This completes the proof of Theorem 3.
+APPENDIX B: PROOF OF THEOREM 5
+Theorem 5 If E is a localizable superoperator on HA ⊗
+HB, and |ψ⟩, A⊗ I|ψ⟩, and I ⊗ B|ψ⟩ are all eigenstates of
+E (where A and B are invertible operators), then A⊗ B|ψ⟩
+is also an eigenstate of E.
+Proof: If the superoperator E is localizable, its action
+on a pure state |η⟩AB can be realized by a tensor product
+unitary transformation URA ⊗ VBS acting on |η⟩AB|ϕ⟩RS,
+where |ϕ⟩RS is a suitable ancilla state shared by Alice and
+Bob. By hypothesis, this unitary transformation acting
+on |ψ⟩AB|ϕ⟩RS preserves |ψ⟩AB and rotates only the an-
+cilla state:
+21
+
+===== PAGE 22 =====
+
+URA ⊗ VBS |ψ⟩AB|ϕ⟩RS = |ψ⟩AB|ϕ0⟩RS , (B1)
+for some state of the ancilla |ϕ0⟩RS. Similarly, by hy-
+pothesis, we have
+URA ⊗ VBS (AA ⊗ IB)|ψ⟩AB|ϕ⟩RS
+= (AA ⊗ IB)|ψ⟩AB|ϕA⟩RS ,
+URA ⊗ VBS (IA ⊗ BB)|ψ⟩AB|ϕ⟩RS
+= (IA ⊗ BB)|ψ⟩AB|ϕB⟩RS , (B2)
+for states of the ancilla |ϕA⟩RS, |ϕB⟩RS.
+Now consider the transformation ∆ RA = U AU− 1A− 1.
+By construction, ∆ RA acts only on Alice’s system RA.
+In fact, we can show that when acting on the state
+(AA ⊗ IB)|ψ⟩AB|ϕ0⟩RS, ∆ RA acts trivially on A and non-
+trivially only on Alice’s ancilla R; we observe that
+(AA ⊗ IB)|ψ⟩AB|ϕA⟩RS
+= (URA ⊗ VBS )(AA ⊗ IB)|ψ⟩AB|ϕ⟩RS
+= (∆RA ⊗ IB)(AA ⊗ IB)(URA ⊗ VBS )|ψ⟩AB|ϕ⟩RS
+= (∆RA ⊗ IB)(AA ⊗ IB)|ψ⟩AB|ϕ0⟩RS . (B3)
+Therefore, acting on ( AA ⊗ IB)|ψ⟩AB|ϕ0⟩RS, we may re-
+place ∆ RA ⊗ IB by RR ⊗ IB, where RR is a (unitary)
+transformation acting on R alone that rotates |ϕ0⟩RS to
+|ϕA⟩RS. We then have
+(URAAA ⊗ VBS )|ψ⟩AB|ϕ⟩RS
+= (∆RA ⊗ IB)(AAURA ⊗ VBS )|ψ⟩AB|ϕ⟩RS
+= (∆RA ⊗ IB)(AA ⊗ IB)|ψ⟩AB|ϕ0⟩RS
+= (RR ⊗ IB)(AA ⊗ IB)|ψ⟩AB|ϕ0⟩RS
+= (RR ⊗ IB)(AAURA ⊗ VBS )|ψ⟩AB|ϕ⟩RS , (B4)
+and multiplying both sides by IA ⊗ V − 1
+BS gives
+(URAAA ⊗ IB)|ψ⟩AB|ϕ⟩RS
+= (RR ⊗ IB)(AAURA ⊗ IB)|ψ⟩AB|ϕ⟩RS ; (B5)
+that is, acting on the state |ψ⟩AB|ϕ⟩RS, we may replace
+URAAA by RRAAURA. A similar argument shows that
+(IA ⊗ VBS BS)|ψ⟩AB|ϕ⟩RS
+= (IA ⊗ SS)(IA ⊗ BSVBS )|ψ⟩AB|ϕ⟩RS , (B6)
+where SS is a unitary transformation acting on Bob’s
+ancilla.
+Now we can use the commutation properties
+eq. (B5),(B6) to determine how the superoperator E acts
+on ( A ⊗ B)|ψ⟩AB:
+(URA ⊗ VBS )(AA ⊗ BB)|ψ⟩AB|ϕ⟩RS
+= (IA ⊗ VBS BS)(URAAA ⊗ IB)|ψ⟩AB|ϕ⟩RS
+= (RR ⊗ IB)(IA ⊗ VBS BS)(AAURA ⊗ IB)|ψ⟩AB|ϕ⟩RS
+= (RR ⊗ IB)(AAURA ⊗ IB)(IA ⊗ VBS BS)|ψ⟩AB|ϕ⟩RS
+= (RR ⊗ SS)(AAURA ⊗ IB)(IA ⊗ BSVBS )|ψ⟩AB|ϕ⟩RS
+= (RR ⊗ SS)(AA ⊗ BB)(URA ⊗ VBS )|ψ⟩AB|ϕ⟩RS
+= (RR ⊗ SS)(AA ⊗ BB)|ψ⟩AB|ϕ0⟩RS
+= [(AA ⊗ BB)|ψ⟩AB] [(RR ⊗ SS)|ϕ0⟩RS] . (B7)
+We have shown that ( AA ⊗ BB)|ψ⟩AB is an eigenstate of
+E, which completes the proof of Theorem 5.
+[1] M. A. Nielsen and I. L Chuang, Quantum Computation
+and Quantum Information (Cambridge, Cambridge Uni-
+versity Press, 2000).
+[2] J. Preskill, Lecture Notes for Physics 229: Quantum In-
+formation and Computation , http://www.theory.caltech.
+edu/people/preskill/ph229 (1998).
+[3] R. Haag, Local Quantum Physics: Fields, Particles, Al-
+gebras (Berlin, Springer-Verlag, 1992).
+[4] D. DiVincenzo, private communication.
+[5] P. A. M. Dirac, The Principles of Quantum Mechanics
+(Oxford, Oxford University Press, 1958).
+[6] E. P. Wigner, “Die Messung quantenmechanischer Oper-
+atoren (The measurement of quantum-mechanical oper-
+ators),” Z. Phys 133, 101 (1952).
+[7] H. Araki and M. M. Yanase, “Measurement of quantum
+mechanical operators,” Phys. Rev. 120, 622 (1960).
+[8] M. A. Nielsen, “Computable functions, quantum mea-
+surements, and quantum dynamics,” Phys. Rev. Lett.
+79, 2915-2918 (1997), quant-ph/9706006.
+[9] L. Landau and R. Peierls, “Erweiterung des Unbes-
+timmtheitsprinzip f¨ ur die relativische Quantuntheorie
+(Extension of the uncertainty principle to relativistic
+quantum theory),” Z. Phys. 69, 56 (1931).
+[10] N. Bohr and L. Rosenfeld, “Zur Frage der Messbarkheit
+der electromagnetischen Feldgr¨ ossen (On the question of
+the measurability of electromagnetic ﬁeld quantities),”
+Mat.-fys. Medd. Dan. Vid. Selsk. 12, no. 8 (1933).
+[11] Y. Aharonov, D. Z. Albert, and L. Vaidman, “Measure-
+ment process in relativistic quantum theory,” Phys. Rev.
+D 34, 1805-1813 (1986).
+[12] Y. Aharonov and D. Z. Albert, “States and observables
+in relativistic quantum ﬁeld theories,” Phys. Rev. D 21,
+3316-3324 (1980).
+[13] Y. Aharonov and D. Z. Albert, “Can we make sense out
+of the measurement process in relativistic quantum me-
+chanics,” Phys. Rev. D 24, 359-370 (1981).
+[14] R. D. Sorkin, “Impossible measurements on quantum
+ﬁelds,” in Directions in General Relativity, Vol. 2 , B. L.
+Hu and T. A. Jacobson (eds.), (Cambridge, Cambridge
+University Press, 1993), gr-qc/9302018.
+[15] S. Popescu and L. Vaidman, “Causality constraints on
+nonlocal quantum measurements,” Phys. Rev. A 49,
+4331-4338 (1994).
+[16] D. Beckman, Caltech Ph.D. thesis, unpublished (2001).
+[17] D. Beckman, D. Gottesman, A. Kitaev, and J. Preskill,
+22
+
+===== PAGE 23 =====
+
+“Measurability of Wilson loop operators,” in preparation
+(2001).
+[18] C. H. Bennett, D. P. DiVincenzo, J. A. Smolin and W.
+K. Wootters, “Mixed state entanglement and quantum
+error correction,” Phys. Rev. A 54, 3824 (1996), quant-
+ph/9604024.
+[19] M. Zukowski, A. Zeilinger, M. A. Horne, and A. K. Ekert,
+“ ‘Event-ready-detectors’ Bell experiment via entangle-
+ment swapping,” Phys. Rev. Lett. 71, 4287-4290 (1993).
+[20] M. O. Scully and K. Dr¨ uhl, “Quantum eraser: a pro-
+posed photon correlation experiment concerning observa-
+tion and ‘delayed choice’ in quantum mechanics,” Phys.
+Rev. A 25, 2208-2213 (1982).
+[21] D. Gottesman, “A class of quantum error-correcting
+codes saturating the quantum Hamming bound,” Phys.
+Rev. A 54, 1862 (1996), quant-ph/9604038.
+[22] A. R. Calderbank, E. M. Rains, P. W. Shor, and
+N. J. A. Sloane, “Quantum error correction and orthog-
+onal geometry,” Phys. Rev. Lett. 78, 405 (1997), quant-
+ph/9605005.
+[23] A. R. Calderbank and P. W. Shor, “Good quantum error-
+correcting codes exist,” Phys. Rev. A 54, 1098 (1996),
+quant-ph/9512032.
+[24] A. Steane, “Multiple particle interference and quantu m
+error correction,” Proc. Roy. Soc. London, Ser. A 452,
+2551 (1996), quant-ph/9601029.
+[25] A. Steane, “Active stabilization, quantum computatio n,
+and quantum state synthesis,” Phys. Rev. Lett. 78, 2252
+(1997), quant-ph/9611027.
+[26] A. Peres, Quantum Theory: Concepts and Methods (Lon-
+don, Kluwer, 1993).
+[27] H. Buhrman, R. Cleve, and W. van Dam, “Quantum en-
+tanglement and communication complexity,” SIAM Jour.
+Comp. 30, 1829-1841 (2001), quant-ph/9705033.
+[28] R. Cleve, private communication.
+[29] R. Cleve, W. van Dam, M. Nielsen, and A. Tapp, “Quan-
+tum entanglement and communication complexity of the
+inner product function,” Lecture Notes Comp. Sci. 1509,
+61-74 (1999), quant-ph/9708019.
+[30] M.A. Nielsen, “Quantum information theory,” Universi ty
+of New Mexico Ph.D. Thesis, quant-ph/0011036 (1998).
+[31] S. Weinberg, Dreams of a ﬁnal theory (New York, Vin-
+tage, 1994).
+[32] T. Eggeling, D. Schlingemann, and R. F. Werner,
+“Semicausal operations are semilocalizable,” quant-
+ph/0104027 (2001).
+23

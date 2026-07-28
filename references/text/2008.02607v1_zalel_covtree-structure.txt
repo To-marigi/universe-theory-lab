@@ -1,0 +1,1097 @@
+===== PAGE 1 =====
+
+The structure of covtree: searching for manifestly
+covariant causal set dynamics
+Stav Zalel
+Blackett Laboratory, Imperial College London, SW7 2AZ, U.K.
+August 7, 2020
+Abstract
+Covtree - a partial order on certain sets of ﬁnite, unlabeled causal sets - is a
+manifestly covariant framework for causal set dynamics. Here, as a ﬁrst step in
+picking out a class of physically well-motivated covtree dynamics, we study the
+structure of covtree and the relationship between its paths and their corresponding
+inﬁnite unlabeled causal sets. We identify the paths which correspond to posts and
+breaks, prove that covtree has a self-similar structure, and write down a transfor-
+mation between covtree dynamics akin to the cosmic renormalisation of Rideout
+and Sorkin’s Classical Sequential Growth models. We identify the paths which cor-
+respond to causal sets which have a unique natural labeling, thereby solving for the
+class of dynamics which give rise to these causal sets with unit probability.
+1
+arXiv:2008.02607v1  [gr-qc]  6 Aug 2020
+
+===== PAGE 2 =====
+
+Contents
+1 Introduction 3
+2 Terminology and notation 5
+2.1 Labeled causets, orders and stems . . . . . . . . . . . . . . . . . . . 5
+2.2 Labeled poscau and CSG dynamics . . . . . . . . . . . . . . . . . . . 6
+2.3 Covtree . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+3 Covtree and causal set cosmology 8
+3.1 Certiﬁcates with posts and breaks . . . . . . . . . . . . . . . . . . . 10
+3.2 Covtree self-similarity . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.3 Covariant cosmic renormalisation . . . . . . . . . . . . . . . . . . . . 16
+4 Further structure of covtree 22
+4.1 Nodes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+4.2 Paths . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+5 Discussion 30
+A Table of sets deﬁned in the text 32
+2
+
+===== PAGE 3 =====
+
+1 Introduction
+What is the role of general covariance in quantum gravity? In causal set theory
+(CST), where the quantum dynamics is still unknown, clues to this question come
+from studying the role of general covariance at the level of classical stochastic toy
+models. In CST, general covariance takes the form of label-independence: two
+causal sets are physically equivalent if they are order-isomorphic. This has a clear
+consequence for the observables in CST, namely that they cannot pertain to any
+labeling of the causal set or to the identity of the causal set elements.
+But could general covariance also have direct consequences for the dynamics?
+This is indeed the case in the Classical Sequential Growth (CSG) models [1, 2]
+which satisfy the so-called Discrete General Covariance (DGC) condition. In these
+models a causal set (causet) grows probabilistically through a sequential birth of
+elements, and the order of births induces a labeling of the elements by the natural
+numbers. The DGC condition constrains the dynamics such that, if ˜Cn and ˜C′
+n
+are order-isomorphic causets of cardinality n, then ˜Cn and ˜C′
+n are equally likely to
+have been grown after the birth of the ﬁrst n elements.
+In CSG models general covariance enters via the choice of observables and via
+the choice of dynamics, but general covariance is implicit because the history space
+is the space of inﬁnite labeled causets 1 and so each realisation is a labeled causet
+(and therefore not covariant). In contrast, in a manifestly covariant approach the
+history space would be the space of inﬁnite orders, denoted by Ω. In this case
+general covariance need no longer be imposed at the level of the observables because
+each realisation is covariant, but whether general covariance plays an additional
+role at the level of the dynamics is still unknown. Additionally, it is hoped that a
+manifestly covariant approach would be more amenable to quantisation.
+A ﬁrst proposal for such a manifestly covariant framework for classical causet
+dynamics is covtree [3]. Covtree is a directed tree, each of whose nodes Γ n at leveln
+is a set ofn-orders. For each inﬁnite directed path from the origin,P ={Γ1, Γ2,...},
+there exists at least one inﬁnite order C whose set of n-stems, for every n >0, is
+Γn∈P . We call C a certiﬁcate ofP. Via the correspondence between paths and
+their certiﬁcates, any set of Markovian transition probabilities on covtree deﬁnes
+1See section 2 for terminology.
+3
+
+===== PAGE 4 =====
+
+a causet dynamics with the space of inﬁnite orders, Ω, acting as the history space
+(i.e. a manifestly covariant dynamics).
+But not every set of Markovian transition probabilities on covtree deﬁnes a
+physically interesting dynamics. Identifying a subset of interesting dynamics is the
+motivation for this current work. One challenge lies in the translation of physically
+desirable conditions (e.g. that manifold-like2 orders are preferred by the dynamics)
+into conditions on covtree transition probabilities. Doing so requires an under-
+standing of the relationship between paths and their certiﬁcates ( e.g. which paths
+have manifold-like certiﬁcates). Closely related challenges include formulating a
+causality condition on covtree and understanding what additional constraints gen-
+eral covariance may impose on the transition probabilities (cf. the DGC condition
+in CSG models).
+In addition to the relationship between paths and their certiﬁcates, an under-
+standing of the structure of covtree is also important for constraining the dynamics.
+For example, any dynamics should satisfy the Markov sum rule: the sum of the
+transition probabilities from a node Γ n to each of its children must equal 1. But
+with no knowledge of the number of children or the relation they bear to Γ n, this
+constraint is intractable. (In contrast, in the case of the CSG models, enough
+structural information is known to solve the Markov sum rule.)
+In addressing these challenges, one might be tempted to construct covtree ex-
+plicitly. Indeed, the ﬁrst three levels of covtree are given in [3], but brute force
+methods come up short in going to higher levels as the number of candidate nodes
+at level n increases rapidly as 2 |Ω(n)|− 1, where |Ω(3)| = 5,|Ω(5)| = 63 and
+|Ω(16)| = 4483130665195087 [4]. In this work we make progress by focusing on
+structural properties which are independent of level.
+The rest of this paper is structured as follows. Section 2 is dedicated to a
+presentation of terminology and notation. In section 3, led by the ideas of causal
+set cosmology, we identify the covtree paths whose certiﬁcates contain posts and
+breaks, prove that covtree has a self-similar structure and ﬁnd the covariant ana-
+logue of the cosmic renormalisation transformation of CSG models. In section 4
+2We say an order C is manifold-like if a representative of C can be faithfully embedded into a four-
+dimensional Lorentzian manifold.
+4
+
+===== PAGE 5 =====
+
+we present additional structural features of covtree, as well as a toy example of
+how this structure can be used to constrain the dynamics. We conclude with a
+discussion in section 5.
+2 Terminology and notation
+Here we present a brief review of terminology and notation used in the paper. For
+further discussion and examples, we refer the reader to [3] and references therein.
+For a recent review of causal set theory, see [5].
+2.1 Labeled causets, orders and stems
+For any natural number n, let [n] denote the set {0, 1,...,n}.
+A labeled causet is a locally ﬁnite partial order on ground set [ n] or N such
+that x≺ y =⇒ x < y. A labeled causet of cardinality n is called an n-causet.
+We denote labeled causets and their subcausets by capital Roman letters with a
+tilde, e.g. ˜C.
+Ifx≺y in ˜C we say thaty is a descendant ofx or thaty is abovex. If x≺y
+and there is no z∈ ˜C such that x≺z≺y we say that y is a direct descendant
+of x or that y is directly above x or that y is a child of x. The valency of x is
+the number of direct descendants of x.
+An element x∈ ˜C is in level L in ˜C if the longest chain of which x is the
+maximal element has cardinality L, e.g. level 1 comprises the minimal elements.
+For any x∈ ˜C, L(x) is an integer which denotes the level of x, e.g. L(x) = 1 if x
+is minimal.
+If causets ˜C and ˜D are order-isomorphic we write ˜C∼= ˜D.
+An order is an order-isomorphism class of labeled causets. An n-order is an
+order-isomorphism class of n-causets. We denote orders by capital Roman letters
+without a tilde, e.g. C. The cardinality of an n-order is deﬁned to be n. We
+denote the cardinality of an order C by|C|.
+We often (but not always) use a subscript to denote the cardinality of an n-
+causet or n-order, e.g. ˜Cn or Cn.
+A stem in a labeled causet ˜C is a ﬁnite subcauset ˜S in ˜C such that if y∈ ˜S
+5
+
+===== PAGE 6 =====
+
+and x≺y in ˜C then x∈ ˜S. We say a ﬁnite order, S, is a stem in order C if there
+exists a representative ofS which is a stem in a representative ofC. We say a ﬁnite
+order,S, is a stem in labeled causet ˜C if the order S is a stem in the order [ ˜C]. So
+the meaning of stem depends on context. If a stem has cardinality n we say it is
+an n-stem.
+An inﬁnite order C is a rogue if there exists an inﬁnite order D such that
+D̸=C and the two orders have the same stems.
+2.2 Labeled poscau and CSG dynamics
+Let ˜Ω(N) and ˜Ω denote the set of all ﬁnite and inﬁnite labeled causets, respectively.
+Labeled poscau is the partial order ( ˜Ω(N),≺), where ˜S≺ ˜R if and only if ˜S
+is a stem in ˜R.3
+A poscau dynamics is a complete set of Markovian transition probabilities
+on labeled poscau. We denote the probability of transition from ˜Cn to one of its
+children ˜Cn+1 by P( ˜Cn→ ˜Cn+1). We denote the probability of a directed random
+walk to pass through ˜Cn by P( ˜Cn).
+Classical Sequential Growth (CSG) models are a family of poscau dy-
+namics which satisfy the so-called Bell Causality and Discrete General Covariance
+conditions of [1]. Each model in the family is speciﬁed by an inﬁnite set of real
+positive coupling constants,{tk}k∈N, witht0> 0. The CSG transition probabilities
+take the form:
+P( ˜Cn→ ˜Cn+1) = λ(ϖ,m )
+λ(n, 0) , (1)
+where ϖ and m are positive integers which depend on ˜Cn and ˜Cn+1, and
+λ(k,p ) :=
+k−p∑
+i=0
+(k−p
+i
+)
+tp+i. (2)
+Originary CSG models are a family of poscau dynamics which diﬀer from
+CSG models only by the requirement that t0 = 0.
+Each poscau dynamics is equivalent to a measure space ( ˜Ω, ˜R, ˜µ), where ˜Ω is
+the set of inﬁnite labeled causets, ˜R is the sigma-algebra generated by the cylinder
+3We use the symbol ≺ to denote the relation for several diﬀerent partial orders in this work. The
+meaning of≺ in each case is to be inferred from the context.
+6
+
+===== PAGE 7 =====
+
+sets,
+cyl( ˜Cn) :={ ˜C∈ ˜Ω| ˜Cn is a stem in ˜C}, (3)
+and the measure ˜µ is deﬁned via µ(cyl( ˜Cn)) = P( ˜Cn) for every ˜Cn. The covariant
+sigma-algebra,R, is a sub-algebra of ˜R deﬁned by
+R :={E∈ ˜R| ˜C∈E and ˜C∼= ˜D =⇒ ˜D∈E} . (4)
+2.3 Covtree
+Let Ω denote the set of inﬁnite orders. Let Ω( n) denote the set of all n-orders for
+somen∈ N+, and let Γ n denote a non-empty subset of Ω(n), i.e. a set of n-orders.
+An order C is a certiﬁcate of Γ n if Γ n is the set of all n-stems in C. If C is
+a certiﬁcate of Γ n and there exists no stem D̸= C in C which is a certiﬁcate of
+Γn, then we say that C is a minimal certiﬁcate of Γ n. A labeled causet ˜C is a
+labeled certiﬁcate of Γn if it is a representative of a certiﬁcate C of Γn.
+For any n and any Γ n, the map O− takes Γ n to the set of ( n− 1)-stems of
+elements of Γ n:
+O−(Γn) :={B∈ Ω(n− 1)|∃ A∈ Γn s.t. Bis a stem in A}. (5)
+Let Λ denote the collection of sets of n-orders, for all n, which have certiﬁcates:
+Λ :=
+⋃
+n∈N+
+{Γn⊆ Ω(n)|∃ a certiﬁcate for Γ n}. (6)
+Covtree is the partial order (Λ ,≺), where Γ n≺ Γm if and only if n < mand
+O−m−n(Γm) = Γn.
+If Γn∈ Λ, we say that Γn is a node in covtree. If Γ n is a node in covtree and Γn
+contains a single n-order, we say that Γ n is a singleton. If Γ n is a node in covtree
+and Γn contains exactly two n-orders, we say that Γ n is a doublet.
+LetP ={Γ1, Γ2, Γ3,...} be a path in covtree. An inﬁnite orderC is a certiﬁcate
+of path P if Γ n∈P is the set of n-stems in C, for every n. Every path has at
+least one certiﬁcate, and every inﬁnite order is a certiﬁcate of exactly one path.
+A covtree dynamics is a complete set of Markovian transition probabilities
+on covtree. We denote the probability of transition from Γ n to one of its children
+Γn+1 by P(Γn→ Γn+1). We denote the probability of a directed random walk to
+pass through Γ n by P(Γn). We denote a covtree dynamics by {P}.
+7
+
+===== PAGE 8 =====
+
+The certiﬁcate set,cert(Γn), of some node Γn is the set of inﬁnite orders which
+are certiﬁcates of cert(Γn):
+cert(Γn) ={C∈ Ω|C is a certiﬁcate of Γ n}. (7)
+Each covtree dynamics, {P}, is equivalent to a measure space (Ω ,R(S),µ ),
+where Ω is the set of inﬁnite orders, R(S) is the sigma-algebra generated by the
+certiﬁcate sets4 and µ is a measure deﬁned via µ(cert(Γn)) = P(Γn) for all Γ n.
+Equivalently, we can conceive of each certiﬁcate set as a set of labeled causets:
+cert(Γn) :={ ˜C∈ ˜Ω| ˜C is a labeled certiﬁcate of Γ n}. (8)
+In this formulation, R(S) is a set of subsets of ˜Ω. In fact, R(S)⊂R⊂ ˜R and
+therefore every poscau dynamics induces a covtree dynamics via a restriction of the
+measure ˜µ from ˜R toR(S) . We say that a covtree dynamics is a CSG dynamics
+if it is the restriction of a CSG dynamics.
+3 Covtree and causal set cosmology
+In the heuristic causal set cosmology paradigm proposed in [7], the cosmos emerges
+from the quantum gravity era suﬃciently ﬂat, homogeneous and isotropic to explain
+present-day observations (without the need for a period of inﬂation). Within the
+context of CSG models, the ﬁne-tuning problem is that of choosing a CSG dynamics
+which displays this behavior almost surely. The need for ﬁne-tuning is overcome
+by a “cosmic renormalisation” associated with cycles of expansion and collapse,
+punctuated by Big-Crunch–Big-Bang singularities.
+At least heuristically, posts and breaks are the causal set structures which un-
+derlie Big-Crunch–Big-Bang singularities [8,9]. Let ˜C be a labeled causet. A post
+is an element x∈ ˜C which is related to every other element in ˜C. A break in ˜C is
+an ordered pair, ( ˜A, ˜B), of nonempty subsets of ˜C such that
+(i) a∈ ˜A,b∈ ˜B =⇒ a≺b, and
+(ii) { ˜A, ˜B} is a partition of ˜C.
+4In the literature ( e.g. [6])R(S) denotes the sigma-algebra generated by the stem sets. It is a result
+of [3] that the sigma-algebras generated by the stem sets and the certiﬁcate sets are equal.
+8
+
+===== PAGE 9 =====
+
+We call ˜A and ˜B the past and future of the break, respectively. If ˜C contains a
+break with past ˜A we say that ˜C contains an ˜A-break. If ˜C contains a post x with
+past(x) = ˜A we say that ˜C contains an ˜A-post5. An illustration of a post and a
+break is shown in ﬁgure 1.
+Figure 1: Illustration of a post (left) and a break (right). On the left, the post lies
+between the dashed lines. On the right, the dashed lines illustrate the partition between
+the past and the future.
+In causal set theory nothing can be smaller than a single spacetime atom, there-
+fore our intuition points us towards a post as the underlying structure of a singu-
+larity caused by collapse. Meanwhile, the break is a generalisation of the post
+which retains the key feature we require of Big-Crunch–Big-Bang singularities: the
+partitioning of the set into two, a past and a future.
+Associated with each post and break is a cosmic renormalisation transformation
+which acts on the CSG couplings. The renormalised couplings deﬁne an eﬀective
+dynamics which governs the growth of the future, echoing proposals by Wheeler,
+Smolin and others that the parameters of nature are modiﬁed as the universe is
+“squeezed through” a singularity [10–13].
+In this cosmological paradigm the ﬁne-tuning problem is resolved by an evolu-
+tionary mechanism. It rests on the hypothesis that there exist stationary points
+of the renormalisation transformation which give rise to the desired cosmological
+features, and that the basin of attraction of these stationary points is large and
+contains an abundance of dynamics each of which gives rise to an inﬁnite sequence
+of Big-Crunch–Big-Bang singularities with unit probability [8, 14–17]. Given this,
+no ﬁne-tuning is required for our universe to be governed by a dynamics in the
+basin of attraction which gives rise to an inﬁnite sequence of singularities. At each
+5We are using the non-inclusive past convention, so x /∈past(x).
+9
+
+===== PAGE 10 =====
+
+singularity the couplings undergo a renormalisation, and in this way a ﬂow towards
+the stationary point is generated in the space of couplings. It is then only a matter
+of time until our universe displays the desired behaviour.
+This narrative acts as guidance as to which covtree dynamics we should be
+seeking, namely:
+(a) dynamics in which an inﬁnite sequence of posts or breaks happens almost
+surely,
+(b) dynamics which are stationary points of the renormalisation transformation,
+(c) dynamics which ﬂow to a stationary point under the renormalisation trans-
+formation.
+We begin section 3.1 by recasting the deﬁnitions of post and break in covariant
+form6. We identify which covtree paths correspond to orders with posts and breaks
+and write down the deﬁning feature of covtree walks which belong to family ( a).
+In section 3.2 we show that covtree has a self-similar structure. In section 3.3 we
+use covtree’s self-similarity to solve for the covtree walks which belong to family
+(b). We conclude with a discussion of open questions, including a proposal for a
+causality condition for covtree dynamics.
+3.1 Certiﬁcates with posts and breaks
+In solving for the covtree walks which belong to family (a), a question arises: which
+paths correspond to orders with posts and breaks? To pose this question more
+precisely, let us extend the deﬁnitions of posts and breaks to orders. Let ˜C and ˜A
+be representatives of ordersC andA, respectively. We say that an orderC contains
+a break (post) with past A if ˜C contains a break (post) with past ˜A. If order C
+contains a break (post) with past A we say that C contains an A-break (A-post).
+Our question then becomes: which paths have certiﬁcates with posts and breaks?
+To answer this question we introduce the concept of the covering causet. If
+˜C is a labeled causet of cardinality n then its covering causet is the labeled causet
+of cardinality n + 1 which is formed by putting the element n above every element
+6The deﬁnitions of post and break given above are not covariant because they pertain to labeled
+causets, not orders.
+10
+
+===== PAGE 11 =====
+
+of ˜C, and we denote it by putting a hat on: ˆ˜C. If ˜C and ˆ˜C are representatives of
+orders C and ˆC, respectively, then we say that ˆC is the covering order ofC. An
+example is shown in ﬁgure 2.
+We will show that:
+Theorem 3.1. Let order C be a certiﬁcate of a path P ={Γ1, Γ2,...}.
+1. C contains an A-break if and only if {ˆA} is a node in P.
+2. C contains anA-post if and only if{ ˆˆA} is a node inP (where ˆˆA is the covering
+order of the covering order of A).
+To prove theorem 3.1 we will need the following lemma about labeled causets
+which contain breaks:
+Lemma 3.2. Let ˜C and ˜A be labeled causets. The following statements are equiv-
+alent:
+(i) ˜C contains an ˜A-break,
+(ii) every (| ˜A| + 1)-stem in ˜C is isomorphic to ˆ˜A,
+(iii) ˜A is the unique | ˜A|-stem in ˜C.
+Proof. Let ˜A be a stem in ˜C. Let x denote a minimal element in ˜C\ ˜A. Let a
+denote an element in ˜A.
+(i) =⇒ (ii) It follows from the deﬁnition of an ˜A-break that every (| ˜A| + 1)-stem in ˜C is
+of the form ˜A∪{x} and that each such stem is isomorphic to ˆ˜A.
+(ii) =⇒ (iii) Suppose for contradiction that ˜D is an| ˜A|-stem in ˜C, and ˜D̸= ˜A. Let y be
+minimal in ˜D\ ˜A. Then ˜A∪{y} is an (| ˜A| + 1)-stem in ˜C. By assumption
+(ii), y≻ a for all a in ˜A, and therefore (by deﬁnition of stem) ˜A∪{y}⊆ ˜D
+which in turn implies that | ˜D|>| ˜A|. Contradiction.
+(iii) =⇒ (i) By assumption ( iii),x≻a for all x anda, and hence (by deﬁnition of break)
+˜C contains an ˜A-break.
+The following covariant statement is a corollary:
+Corollary 3.3. An order C contains an A-break if and only if ˆA is its unique
+(|A| + 1)-stem.
+11
+
+===== PAGE 12 =====
+
+We can now prove theorem 3.1:
+Proof of theorem 3.1. Let C be a certiﬁcate of path P ={Γ1, Γ2,...}. Recall that,
+by deﬁnition, the set of n-stems of C is the node Γ n inP.
+To prove part 1, suppose C contains anA-break. Then by corollary 3.3, the set
+of (|A|+1)-stems ofC is{ˆA}. By deﬁnition of certiﬁcate,{ˆA} is inP. Now suppose
+{ˆA} is inP. Then by deﬁnition of certiﬁcate, {ˆA} is the set of (|A| + 1)-stems of
+C. By corollary 3.3, C contains an A-break.
+Part 2 follows from the fact that C contains anA-post if and only if C contains
+an ˆA-break.
+We have successfully identiﬁed which paths correspond to posts and breaks, and
+we can now characterise the covtree walks which belong to family (a):
+A covtree dynamics in which an inﬁnite sequence of breaks happens with unit
+probability is one which, with unit probability, passes through inﬁnitely many
+nodes of the form {ˆA}, i.e. singletons which contain a covering order.
+A covtree dynamics in which an inﬁnite sequence of posts happens with unit
+probability is one which, with unit probability, passes through inﬁnitely many
+nodes of the form {ˆˆA}, i.e. singeltons which contain a covering order of a
+covering order.
+An illusration is shown in ﬁgure 3.
+3.2 Covtree self-similarity
+To identify covtree dynamics which fall into families (b) and (c) we must ﬁrst
+understand how the renormalisation transformation is manifest on covtree. This
+turns out to be inextricably linked to covtree’s self-similar structure. In this section
+we identify this self-similarity.
+Let us begin by deﬁning what we mean by a self-similar structure of a partial
+order. Let Π and Ψ be partial orders. We say that Ψ contains a copy of Π if there
+exists a convex sub-order Π ′⊆ Ψ which is order-isomorphic to Π. If Ψ contains
+inﬁnitely many copies of itself we say that Ψ is self-similar.
+12
+
+===== PAGE 13 =====
+
+Figure 2: The horizonatal arrows illustrate the relationship between a causet (order) and
+its covering causet (order), as indicated by the hat. The vertical arrows illustrate the
+relationship between an order and its representative.
+Figure 3: Illustration of a path whose certiﬁcate contains breaks and posts. The ﬁrst
+six nodes of a covtree path P are shown. The nodes at level 2, 5 and 6 are singletons
+which contain a covering order. A certiﬁcate C ofP contains a break whose past is
+the 1-order (corresponding to the node at level 2) and a post whose past is the 4-order
+q
+q
+q
+A
+q
+(corresponding to the node at level 6). That C contains this post implies that C also
+contains a break whose past is the 4-order q
+q
+q
+A
+q
+(corresponding to the node at level 5).
+13
+
+===== PAGE 14 =====
+
+Let us denote the covtree partial order by Λ. For any ﬁnite order A, let ΛA⊂ Λ
+be the convex sub-order of covtree which contains the singleton{ˆA} and everything
+above it. We will show that:
+Lemma 3.4. For any ﬁnite order A, ΛA is a copy of covtree.
+The following theorem is a corollary:
+Theorem 3.5. Covtree is self-similar.
+We will need the following deﬁnition:
+Deﬁnition 3.6. Given a ﬁnite order A and a set of orders Υ, the mapGA takes Υ
+toGA(Υ), the set of orders which contain a break with past A and futureB∈ Υ, i.e.
+GA(Υ) :={C|C is an order which contains a break with past A and future B∈ Υ}.
+Examples are shown in ﬁgure 4. Note that Υ may contain ﬁnite orders, inﬁnite
+orders, or both.
+Figure 4: Illustration of the operation GA.
+Proof of lemma 3.4: We will show that, for any ﬁnite order A,
+(i) GA(Λ) = ΛA, and
+(ii) the map GA : Λ→ ΛA is an order-isomorphism,
+and the result follows. Note that, by deﬁnition 3.6, Λ is a strict subset of the
+domain ofGA. Here we use GA to denote the restriction of the map to Λ. The use
+ofGA should be clear from the context.
+To prove part (i), we ﬁrst show that GA(Λ)⊆ ΛA. Let Γ n∈ Λ and let the m-
+orderCm be a certiﬁcate of Γ n. Let Dk denote the order of cardinality k =m +|A|
+which contains a break with past A and future Cm. Then Dk is a certiﬁcate of
+14
+
+===== PAGE 15 =====
+
+GA(Γn), and therefore GA(Γn)∈ Λ. Next, note that ˆA is the unique |ˆA|-stem in
+every order inGA(Γn), for any Γ n. Therefore GA(Λ)⊆ ΛA.
+Second, we show that Λ A⊆G A(Λ). Let Γ n∈ ΛA and let the p-order Ep be
+a certiﬁcate of Γ n. Necessarily, Ep contains a break with past A and some future
+B. Let Γ l denote the set of l-stems of B, where l = n−|A|. Then Γ l∈ Λ and
+GA(Γl) = Γn.
+Therefore,GA(Λ) = ΛA.
+To prove part (ii), we use the commutativity of the operations O− andGA to
+show thatGA : Λ→ ΛA is order-preserving. Suppose Γ n≺ Γn+1, then by deﬁnition
+of covtree we have that Γ n =O−(Γn+1), and therefore
+GA(Γn) =GA(O−(Γn+1)) =O−(GA(Γn+1)) =⇒ GA(Γn)≺G A(Γn+1).
+Now supposeGA(Γn)≺G A(Γn+1). Then
+GA(Γn) =O−(GA(Γn+1)) =GA(O−(Γn+1)) =⇒ Γn≺ Γn+1. (9)
+Covtree contains countably many copies of itself, each with ground set Λ A and
+root{ˆA} (where we can think of Λ itself as Λ∅). An illustration is shown in ﬁgure 5.
+Figure 5: The self-similar structure of covtree. The ﬁgure displays the ﬁrst two levels
+of covtree in full and selected nodes from levels 3 and 4. The arrows indicate additional
+nodes not shown in the ﬁgure. The dashed lines indicate where a new copy of covtree
+begins. The ground set of each copy is indicated next to each dashed line.
+15
+
+===== PAGE 16 =====
+
+3.3 Covariant cosmic renormalisation
+In this section we give a brief review of cosmic renormalisation in CSG models,
+present its covariant counterpart and conclude with a discussion of open questions.
+The labeled break condition: In CSG models, cosmic renormalisation comes
+about as a result of a conditioning. One conditions on an ˜A-break, where ˜A is some
+labeled causet of choice. The transition probabilities which are not consistent with
+the break condition are set to zero, while the remaining transition probabilties are
+normalised to satisfy the Markov sum rule.
+The break condition ﬁxes the past but leaves the future unconstrained and
+dynamical. Consequently, one can conceive of the growth of the future as a new
+poscau walk with a new poscau dynamics – the eﬀective dynamics, derived from
+the original dynamics via the break condition.
+Remarkably, the eﬀective dynamics is itself a CSG model and one can think of
+the coupling constants as undergoing a renormalisation:
+Qm,r :{tk}→{ t(m,r)
+k }
+t(m,r)
+0 =
+m−r∑
+l=0
+(m−r
+l
+)
+tr+l
+t(m,r)
+k =
+m∑
+l=0
+(m
+l
+)
+tk+l∀ k> 0,
+(10)
+where{t(m,r)
+k } is the set of renormalised couplings, m =| ˜A| and r is the num-
+ber of maximal elements of ˜A. The composite label m,r on the renormalisation
+transformation, Qm,r, and on the renormalised couplings, t(m,r)
+k , signiﬁes that the
+transformation depends on ˜A only via these two quantities. This is an attractive
+feature of CSG models: the causal structure of the past is “forgotten” by the ef-
+fective dynamics, providing still further motivation for regarding the past and the
+future of the break as separated. A derivation of transformation 10 can be found
+in [9].
+A sequence of breaks corresponds to a sequence of applications of the transfor-
+mationQm,r with the values of m andr varied appropriately. In this way a ﬂow is
+generated in the space of couplings.
+A stationary point is a dynamics which is mapped onto itself. The unique family
+of stationary points ofQm,r is given byt0 = (1+t)−rtr andtk =tk fork> 0, where
+16
+
+===== PAGE 17 =====
+
+t is any positive real number (or equivalently,t0 = 1 andtk = (1+t)rtk−r fork> 0).
+Since the stationary points depend on r but not on m, a pair of transformations,
+Qm,r and Qn,s, have either no stationary points in common (if s̸= r) or have
+exactly the same set of stationary points (if s =r).
+The covariant break condition: What form does cosmic renormalisation
+take on covtree? First, one conditions on an A-break — this is the covariant
+break condition. By theorem 3.1, the condition constrains the covtree walk to pass
+through the node {ˆA} but leaves the walk unconstrained thereafter. Since we do
+not (yet) know how to encode a covtree dynamics as a set of couplings, there are no
+couplings to undergo a renormalisation. Nevertheless, there is an eﬀective covtree
+dynamics which governs the growth of the future, and the associated transforma-
+tion acts on the transition probabilities directly. A covtree dynamics {P} and its
+corresponding eﬀective dynamics{PA} are related via the transformation RA:
+RA :{P}→{ PA}
+PA(Γn→ Γn+1) = P(GA(Γn)→G A(Γn+1)),
+(11)
+whereGA is the mapping introduced in deﬁnition 3.6. For a generic covtree dynam-
+ics, the functional relationship between {P} and{PA} can depend on any feature
+of A, and this is signiﬁed by the label A on the transformation, RA, and on the
+eﬀective transition probabilities,{PA}.
+Let us sketch the derivation of transformation 11. Recall that every covtree
+dynamics{P} is equivalent to a measure space (Ω ,R(S),µ ), where µ(cert(Γm)) =
+P(Γm). Let (Ω ,R(S),µ A) denote the measure space equivalent to the eﬀective
+dynamics{PA}. Then the eﬀective dynamics is deﬁned by:
+µA(E) := µ(GA(E))
+µ(cert({ˆA}))
+∀E∈R (S). (12)
+Now, chooseE = cert(Γn) for some node Γ n. This sets GA(E) =GA(cert(Γn)) =
+cert(GA(Γn)). Then, use the relations µ(cert(Γm)) = P(Γm) and µA(cert(Γm)) =
+PA(Γm) to rewrite condition 12 in terms of probabilities. Finally, we can use in-
+duction to reach transformation 11.
+The transformation RA acts directly on transition probabilities, not on a set
+of couplings. To emphasis this, we call RA a similarity transformation rather
+17
+
+===== PAGE 18 =====
+
+than a renormalisation transformation. If (as one hopes) in future we are able to
+characterise a covtree dynamics by a set of couplings, it may be possible to write
+the similarity transformation as a renormalisation transformation which acts on the
+couplings directly.
+Similarly, we reserve the term stationary point for a set of couplings which is
+mapped onto itself by the renormalisation transformation. If a covtree dynamics is
+mapped onto itself by a similarity transformation RA, we say that it is self-similar
+with respect to RA. A covtree dynamics {P} is self-similar with respect to RA if
+and only if it satisﬁes the condition
+P(Γn→ Γn+1) = P(GA(Γn)→G A(Γn+1)) (13)
+for everyn and every transition Γn→ Γn+1. Constructing a self-similar dynamics is
+simple: assign any set of transition probabilities to the transitions which lie outside
+ΛA, and then use equality 13 to set the transition probabilities in Λ A.
+It is possible to use this procedure to ﬁx the transition probabilities in Λ A for
+every A simultaneously, thus constructing a dynamics which is self-similar with
+respect to RA for all A. We call such dynamics maximally self-similar.
+A dynamics cannot be self-similar with respect to a unique transformation RA.
+If a dynamics is self-similar with respect to some transformation RA then it is
+also self-similar with respect to ( RA)n, for any positive integer n. But ( RA)n is
+itself a similarity transformation: ( RA)n = RAn, where we deﬁne An to be the
+order of cardinality n|A| which is a stack of n copies of A separated by breaks.
+Therefore there exists no dynamics which is self-similar with respect to a unique
+transformation. We say that a dynamics {P} is minimally self-similar if there
+exists a unique order A such that{P} is only self-similar with respect to (RA)n for
+all n.
+Some self-similar dynamics are neither minimally nor maximally self-similar.
+Consider a (ﬁnite or inﬁnite) collection {ˆA},{ˆB},... of covtree nodes. Does there
+exist a dynamics which is only self-similar with repsect to RA,R B,... and their
+respective powers? If every pair of nodes are unrelated in covtree then the answer
+is yes. On the other hand, suppose that {ˆA}≺{ ˆB}. Then B contains an A-break,
+and let us denote the future of the break by D. ThenGB =GAGD, and a dynamics
+is self-similar with respect to RA and RB if and only if it is self-similar also with
+18
+
+===== PAGE 19 =====
+
+respect to RD.
+The post condition: So far we have discussed the renormalisation associated
+with breaks. A similar story applies to posts. One conditions on an ˜A-post in the
+labeled case, or an A-post in the covariant case. Since a post condition is a spe-
+cial case of a break condition, the past is ﬁxed and the future remains dynamical,
+allowing for a description in terms of an eﬀective dynamics. In the labeled case,
+the ˜A-post condition is equivalent to the ˆ˜A-break condition. Therefore the corre-
+sponding renormalisation transformation is obtained from transformation 10 via the
+replacementsr→ 1 (since ˆ˜A has a single maximal element) andm→|ˆ˜A| =| ˜A|+1,
+i.e. Q| ˆ˜A|,1. In the covariant case, the A-post condition is equivalent to the ˆA-break
+condition, and the eﬀective dynamics is given by transformationR ˆA, obtained from
+transformation 11 via A→ ˆA.
+There is an alternative formulation of the eﬀective dynamics after a post [8]. In
+this alternative formulation, the post is considered a part of the future rather than
+the past. The future is therefore constrained to have a unique minimal element
+(the post itself) but is otherwise dynamical. The eﬀective dynamics is not a CSG
+model. Instead it is an originary CSG model, ensuring that every new element is
+born above the post. The coupling constants renormalise as:
+Sm :{tk}→{ t(m)
+k }
+t(m)
+0 = 0
+t(m)
+k =
+m∑
+l=0
+(m
+l
+)
+tk+l∀ k> 0,
+(14)
+where m =| ˜A|. The renormalisation transformation depends on ˜A only via its
+cardinality, as signiﬁed by the label m on the transformation, Sm, and on the
+renormalised couplings,t(m)
+k . A derivation of transformation 14 can be found in [8].
+The stationary points of Sm, for any m, are the Originary Transitive Percolation
+(OTP) models:
+t0 = 0
+tk =tk∀ k> 0,
+(15)
+where t is any positive real number.
+19
+
+===== PAGE 20 =====
+
+An originary formulation exists also in the covariant case. We say that a covtree
+dynamics{P} is originary if P(Γ1→{ q
+q
+}) = 1. In the originary viewpoint of the
+A-post condition, a (generic) covtree dynamics {P} is mapped onto an originary
+covtree dynamics{P′
+A} via the transformation 7:
+TA :{P}→{ P′
+A}
+P′
+A(Γ1→ {q
+q
+} ) = 1
+P′
+A(Γn→ Γn+1) = P(GA(Γn)→G A(Γn+1))∀ Γn⪰ {q
+q
+}
+P′
+A(Γn→ Γn+1) = 0 otherwise.
+(16)
+Covariant cosmology and physical dynamics: We have seen that the
+covariant counterpart of cosmic renormalisation takes the form of a family of trans-
+formations, each of which maps a given covtree dynamics into another. A summary
+of the covariant and the labeled transformations is shown in table 1.
+While our success in adapting the cosmic renormalisation to the covtree frame-
+work bodes well for a covariant causal set cosmology, our results will remain purely
+formal until we are able to identify a class of covtree dynamics to work with. Hav-
+ing said that, these results could be used to advance the search for physical covtree
+dynamics. In the remainder of this section, we present directions for further study.
+The cosmic transformations can be used to study the relationship between cov-
+tree dynamics and CSG dynamics:
+1. We have seen that the labeled break transformation Qm,r (i.e. transforma-
+tion 10) depends on the past of the break only via its cardinality and num-
+ber of maximal elements. Is the condition on a covtree dynamics {P} that
+{PA} ={PB} if and only if A andB have the same cardinality and number of
+maximal elements necessary for{P} to be a CSG dynamics? Is it suﬃcient?
+2. The action of Qm,r on the couplings tk with k > 0 can be factorised as
+Qm,r = M m(tk), where M(tk) = tk +tk+1. Does this property bear any
+relation to the constraint on a covtree dynamics{P} that, for any ﬁnite order
+A, the renormalisation transformation can be factorised as RA = R|A| for
+some transformation R?
+7The apostrophe on the transition probabilities {P′
+A} is used to distinguish between the images of
+{P} under RA and TA.
+20
+
+===== PAGE 21 =====
+
+A comparison of stationary points (in the labeled case) and self-similar dynamics
+(in the covariant case) also has the potential to shed light on the covariant form of
+CSG models:
+3. If a CSG model {tk} is a stationary point of a labeled transformation, is its
+corresponding covtree dynamics self-similar?
+4. We have seen that a CSG dynamics is a stationary point of both Qm,r and
+Qn,s if and only if r = s. Is the condition on a covtree dynamics {P} that
+{P} ={PA} ={PB} only if A and B have the same number r of maximal
+elements necessary for {P} to be a CSG dynamics? Is it suﬃcient? Such a
+dynamics is neither maximally nor minimally self-similar, and it follows from
+our previous analysis that for any r >0 there exists a family of self-similar
+dynamics which satisfy this condition. Are these CSG dynamics, or is the
+relationship between the labeled and covariant formulations more complex?
+Covtree dynamics which ﬂow to a self-similar dynamics (cf. family ( c)) are also
+of interest:
+5. Let us consider the post condition in the originary formulation. A covtree
+dynamics{P} ﬂows to a self-similar dynamics under TA if
+(TA)k[P(Γn→ Γn+1)]→ (TA)k+1[P(Γn→ Γn+1)] as k→∞. (17)
+If{P} arrives at a self-similar dynamics after N applications of TA, expres-
+sion 17 simpliﬁes to:
+(TA)k[P(Γn→ Γn+1)] = (TA)k+1[P(Γn→ Γn+1)]∀ k≥N
+=⇒ P(Gk
+A(Γn)→G k
+A(Γn+1)) = P(Gk+1
+A (Γn)→G k+1
+A (Γn+1))∀ k≥N.
+(18)
+The N = 1 case is of special interest to us. The Transitive Percolation (TP)
+models are a 1-parameter family of CSG models, deﬁned by t0 = 1, tk = tk,
+t∈ R+. It is easy to show that, under an application of Sm, a TP model
+with parameter t is maped onto the OTP model with the same t value. Does
+this mean that for a covtree dynamics {P} to be a TP model it must satisfy
+condition 18 with N = 1?
+Finally, covtree is an opportunity to uncover new dynamics with physical fea-
+tures such as:
+21
+
+===== PAGE 22 =====
+
+6. Inﬁnitely many breaks or posts: it is known that OTP gives rise to inﬁnitely
+many posts with unit probability [18]. Is this property related to that the fact
+that it is a stationary point? Do self-similar covtree dynamics give rise to an
+inﬁnite sequence of posts or breaks? Could this be a feature of the maximally
+self-similar dynamics?
+7. Causality: when the transformation RA factorises as RA =R|A|, the eﬀective
+dynamics is independent of the causal structure of the past. Therefore, could
+the condition that RA factorises be interpreted as a causality condition on
+covtree dynamics?
+break post
+non-originary originary
+labeled Qm,r Qm+1,1 Sm
+covariant RA R ˆA TA
+Table 1: Summary of transformations. The ﬁrst row lists the renormalisation transfor-
+mations which act on CSG couplings. Qm,r is the ˜A-break transformation, where m =| ˜A|
+and r is the number of maximal elements of ˜A. Qm+1,1 and Sm are the ˜A-post transforma-
+tions in the non-originary and originary formulations, respectively. The second row lists
+the similarity transformations which act on covtree transition probabilities. RA is the
+A-break transformation. R ˆA and TA are the A-post transformations in the non-originary
+and originary formulations, respectively.
+4 Further structure of covtree
+A pair of challenges on the path to physical covtree dynamics are understanding
+the structure of covtree and understanding the relationship between paths and
+their certiﬁcates. In this section we present further properties of covtree and its
+certiﬁcates, and illustrate with a toy example how an understanding of the structure
+of covtree could be a useful tool for constraining covtree dynamics.
+22
+
+===== PAGE 23 =====
+
+4.1 Nodes
+In this section we list properties which pertain to nodes, including criteria for a set
+of n-orders to be a node, properties of minimal certiﬁcates and a study of direct
+descendants and valency.
+We start with the simple property:
+Property 1. For any ﬁnite order C there is a singleton node {C} in covtree, and
+C is the unique minimal certiﬁcate of {C}.
+Recall that Γm≻ Γn in covtree if and only if every certiﬁcate of Γm is a certiﬁcate
+of Γ n. Therefore {C}≻ Γn in covtree if and only if C is a certiﬁcate of Γ n. Since
+every node in covtree has countably many ﬁnite certiﬁcates, we ﬁnd that:
+Property 2. Every node in covtree has countably many singleton descendants.
+Next we note that, since C is the only |C|-stem in the covering order ˆC, the
+node{ˆC} is directly above{C} in covtree and therefore:
+Property 3. Every singleton has at least one direct descendant which is a singleton.
+Moreover,
+Property 4. If{ˆC} is the only singleton directly above {C} then{ˆC} is the only
+node directly above{C}.
+To see this, assume for contradiction that there exists some node {A1,...,A k}
+which is directly above{C}, where k≥ 2 . It follows from the deﬁnition of covtree
+that C is the unique|C|-stem in every Ai∈{A1,...,A k} and therefore each of the
+nodes{A1},...,{Ak} are singletons directly above{C}, which is a contradiction.
+Every singleton with valency greater than one has at least one direct descendant
+which is a doublet since:
+Property 5. If{Dn+1}≻{ Cn} and Dn+1̸=ˆCn then{ˆCn,D n+1}≻{ Cn}.
+A corollary of properties 4 and 5 is:
+Property 6. No singleton has a valency of 2.
+Singletons which possess property 4 are the only nodes in covtree which have
+exactly one direct descendant since:
+23
+
+===== PAGE 24 =====
+
+Property 7. Only singletons can have exactly one direct descendant in covtree.
+To prove this, consider the node Γ n ={A1,...,A k} with k≥ 2, and assume for
+contradiction that Γ n+1 is the only direct descendant of Γ n.
+First, we show that Γ n+1 contains the covering order ˆAi of every Ai ∈ Γn.
+Suppose for contradiction that Γn+1 does not contain the covering orderˆAi of some
+Ai∈ Γn. Let Cm be an m-order that is a certiﬁcate of Γ n+1. Then there exists an
+(m + 1)-orderDm+1 which containsCm andˆAi as stems (a representative of Dm+1
+can be constructed by taking a representative of Cm and adding an element above
+the stem which is isomorphic to a representative of Ai). Dm+1 is a certiﬁcate of
+Γ′
+n+1 = Γn+1∪{ˆAi}, and Γ′
+n+1≻ Γn. This contradicts the assumption that Γ n+1
+is the only direct descendant of Γ n . Hence Γ n+1 contains the covering orderˆAi for
+all Ai∈ Γn.
+Now we show that, since Γ n+1 contains the covering order ˆAi of some Ai∈ Γn,
+it cannot be the only direct descendant of Γ n. Let the p-order Ep be a minimal
+certiﬁcate of Γn. Therefore Γ n≺ Γn+1≺{Ep} and henceEp is a certiﬁcate of Γn+1.
+Then there exists a (p− 1)-orderFp−1 such thatFp−1 is a stem in Ep and ˆAi is not
+a stem in Fp−1 (a causet isomorphic to a representative of Fp−1 can be constructed
+by taking a representative ofEp and removing the element which is maximal in the
+stem isomorphic to a representative of Ai). Then Fp−1 is a certiﬁcate of Γ n, which
+contradicts the assumption that Ep is a minimal certiﬁcate of Γ n. Therefore, only
+singletons can have exactly one direct descendant in covtree.
+Additionally,
+Property 8. For any k≥ 1 there is a singleton {C} in covtree with k singletons
+directly above it.
+An immediate corollary is that the valency of singletons is unbounded. (Note
+that k is not the valency of {C}, for if k ≥ 2 then {C} has additional direct
+descendants which are not singletons, cf. property 5.)
+An example of a singleton node with 1 singleton directly above it is Γ 4 =
+{ q
+q
+q
+q
+}. To show that the statement is true for k > 1, we construct a countable
+sequence of singletons{Cn2},{Cn3},...,{Cnk},... such that{Cnk} has k singletons
+directly above it. Figure 6 shows the ﬁrst three singletons in the sequence and their
+respective singleton descendants.
+24
+
+===== PAGE 25 =====
+
+Figure 6: Illustration of property 8. The elements circled by a dotted line are identiﬁed
+with each other.
+Figure 7: Illustration of property 9. The elements circled by a dotted line are identiﬁed
+with each other.
+25
+
+===== PAGE 26 =====
+
+Let us explain the pattern shown in ﬁgure 6. Each order Cnk has cardinality
+nk = 4k− 1. A representative ˜Cnk of Cnk, contains nk−1
+2 elements in level 1, nk−1
+2
+elements in level 2, and a single element in level 3. Each element in level 1 is below
+two elements in level 2. Each element in level 2 is above two elements in level 1.
+The element in level 3 is above all but one of the elements in level 2.
+We construct the singleton descendants of {Cnk} as follows. Consruct a new
+causet from ˜Cnk by adding a new element directly above all but one of the level
+2 elements subject to the constraint that no level 2 element is maximal in the
+resulting causet. There are 2k− 2 ways to do this, leading to a collection of 2 k− 2
+causets. One can show that each of these causets is order-isomorphic to exactly
+one other in the collection, and taking the corresponding orders gives k− 1 distinct
+(nk + 1)-orders whose only nk-stem is Cnk. A singleton containing each of these
+orders is directly above{Cnk}. The additional singleton descendant is {ˆCnk}.
+Similarly,
+Property 9. For any integer k≥ 1 there exists a doublet in covtree with k single-
+tons directly above it.
+One can construct an inﬁnite sequence of doublets,{Cm1,D m1},{Cm2,D m2},...,
+{Cmk,D mk},... , such that the kth doublet in the sequence has k singletons directly
+above it. Figure 7 shows the ﬁrst three doublets in the sequence and their direct
+singleton descendants.
+A representative ˜Cmk of Cmk has cardinality mk = 4k + 5 and partial ordering
+as described below property 8 (with nk replaced by mk). A representative of Dmk
+has these same properties, except that the element in level 3 is above all but two of
+the elements in level 2. The two elements missed out must have a common element
+in their pasts.
+We construct the singleton descendants of {Cmk,D mk} as follows. Consruct a
+new causet from ˜Cmk by adding a new element directly above all but two of the
+level 2 elements subject to the constraints that no level 2 element is maximal in the
+resulting causet and that the two elements which are missed out have a common
+element in their pasts. In this way, one generates a collection of 2k causets. One can
+show that each of these causets is isomorphic to exactly one other in the collection,
+and taking the corresponding orders gives k distinct (mk + 1)-orders whose set of
+26
+
+===== PAGE 27 =====
+
+mk-stems is{Cmk,D mk}. This proves property 9.
+A key hurdle in the construction of covtree is understanding which sets of n-
+orders are covtree nodes. The following property gives a necessary condition in the
+case of doublets:
+Property 10.{An,B n} is a doublet in covtree only if there exists an (n− 1)-order
+S which is a stem in both An and Bn.
+To prove property 10, let ˜E be a labeled minimal certiﬁcate of {An,B n}. Let
+˜An and ˜Bn be stems in ˜E which are isomorphic to representatives of An and Bn,
+respectively. Deﬁne ˜S := ˜An∩ ˜Bn. We will show that | ˜S| =n− 1 and property 10
+follows.
+Note that ˜E = ˜An∪ ˜Bn, for otherwise ˜E would not be minimal. Deﬁne
+k := n−| ˜S| and suppose for contradiction that 1 < k≤ n. Let ˜An\ ˜Bn =
+{v1,v 2,...,v k} and ˜Bn\ ˜An = {w1,w 2,...,w k}. Without loss of generality, let
+˜F = ˜S∪{v1,v 2,...,v k−1,w 1} be an n-stem in ˜E. Then either ˜F∼= ˜An or ˜F∼= ˜Bn.
+Suppose ˜F∼= ˜An. Then ˜E\{vk} is isomorphic to a labeled certiﬁcate of {An,B n}
+and is a stem in ˜E, which contradicts the assumption that ˜E is minimal. Sup-
+pose ˜F∼= ˜Bn. Then ˜E\{w2,w 3,...,w k} is isomorphic to a labeled a certiﬁcate of
+{An,B n} and is a stem in ˜E, which is again a contradiction. Hence | ˜S| = n− 1,
+which completes the proof.
+Property 11 is a corollary:
+Property 11. If Γn is a doublet in covtree then all minimal certiﬁcates of Γn are
+(n + 1)-orders.
+Therefore, if Γn is a doublet in covtree and Γ n≺ Γn+1 then Γn+1 contains some
+minimal certiﬁcate of Γn. It is a corollary of properties 9 and 11 that for any integer
+k≥ 1 there exists a doublet in covtree with k minimal certiﬁcates.
+4.2 Paths
+In this section, we present properties of certain covtree paths and their certiﬁcates.
+Property 12. In covtree, there are inﬁnite upward-going paths from the origin in
+which every node is a singleton.
+27
+
+===== PAGE 28 =====
+
+We call the subset of covtree which contains exactly all these paths singtree –
+a tree of singletons. Figure 8 shows the ﬁrst three levels of singtree.
+Figure 8: The ﬁrst three levels of singtree.
+To discuss singtree we will need the concept of the Newtonian order. A Newto-
+nian causet is a causet in which every element in level k is above every element in
+levelk−1. A Newtonian order is an order whose representatives are Newtonian.
+In a Newtonian causet, every pair of elements which are unrelated have the
+same past and the same future, alluding to a notion of a Newtonian global time,
+hence its name8. A Newtonian causet is a “stack of antichains”, and for any natural
+numberN, the union of the ﬁrst N levels is a past of a break. The local ﬁniteness
+condition implies that every level whose elements are not maximal must be ﬁnite.
+To characterise the nodes of singtree and the certiﬁcates of singtree paths we
+will need the following lemma about Newtonian orders:
+Lemma 4.1. The following properties of a ﬁnite or inﬁnite order,C, are equivalent:
+(i) C has a unique representative,
+(ii) for every natural number n≤| C| there is a unique n-order which is a stem
+in C,
+(iii) C is Newtonian.
+Proof. Let ˜C denote a representative of C. Recall that L(x) denotes the level of
+elementx.
+8A Newtonian order is not a good approximation of continuum Euclidean space.
+28
+
+===== PAGE 29 =====
+
+(i) =⇒ (ii) Suppose for contradiction that C has twon-stems,Cn̸=C′
+n, for somen≤|C|.
+Then there is a representative of C whose restriction to the interval [n− 1] =
+{0, 1,...,n − 1} is a representative of Cn, and similarly for C′
+n. Hence C has
+at least two representatives. Contradiction.
+(ii) =⇒ (iii) Suppose for contradiction that C is not Newtonian, i.e. there exist some
+x,y ∈ ˜C such that L(x) > L(y) and x ̸≻ y. Let ˜S be the union of the
+inclusive past of x with levels 1, 2,...,L (y). Note that ˜S⊂ ˜C is a stem in ˜C.
+Then ˜S\{x} and ˜S\{y} are non-isomorphic stems in ˜C. (To see that they are
+non-isomorphic, note that ˜S\{x} containsL(x)−1 levels and ˜S\{y} contains
+L(x) levels.) Hence C has at least two n-orders as stems, where n =| ˜S|− 1.
+Contradiction.
+(iii) =⇒ (i) Let f : ˜C→ ˜C′ be an order-isomorphism between two representatives of C.
+The Newtonian condition restricts the action of f on each level in ˜C to be
+a permutation, and therefore f must be the identity map. Hence C has a
+unique representative.
+The equivalence of statements (ii) and (iii) in lemma 4.1 implies that:
+Property 13. A singleton{Cn} is in singtree if and only if Cn is Newtonian.
+If{Cn} is a node in singtree then it has exactly two direct descendants in
+singtree: {ˆCn} and{Dn+1}, where ˜Dn+1 is the Newtonian order whose represen-
+tative is constructed from a representative of Cn by adding a new element to its
+maximal level. If {Cn} is a node in singtree then it has exactly three direct de-
+scendants in covtree: its singtree descendants, {ˆCn} and{Dn+1}, and the doublet
+{ˆCn,D n+1}.
+A second corollary of lemma 4.1 is:
+Property 14. An inﬁnite order C is Newtonian if and only if it is a certiﬁcate of
+a singtree path.
+Given property 14, it is now a simple matter to solve for the family of covtree
+dynamics in which the set of non-Newtonian orders is null: it is the set of covtree
+29
+
+===== PAGE 30 =====
+
+walks in which the walker stays in singtree with probability 1, i.e.
+P(Γn) = 0∀ Γn not in singtree. (19)
+While this family of dynamics is not physically interesting, it acts as a proof of
+principle, illustrating how an understanding of covtree could allow one to solve for
+a dynamics with particular features.
+5 Discussion
+Taking our cue from [3], in this work we studied the structure of covtree and its
+certiﬁcates as a ﬁrst step to constructing physically well-motivated covtree dynam-
+ics.
+We made progress on the cosmological front. We identiﬁed covtree’s self-similar
+structure as well as which nodes correspond to posts and breaks. This allowed us
+to write down a similarity transformation between covtree dynamics, akin to the
+cosmic renormalisation of CSG models. As well as being a starting point for a
+paradigm of covariant causal set cosmology, these developments provide us with a
+concrete arena in which to investigate which covtree dynamics are the physically
+interesting ones, e.g. by allowing us to propose a causality condition on covtree
+transition probabilities.
+We also presented a glimpse of covtree’s intricate structure. For example, we
+saw that there is no upper bound on the valency of covtree nodes, even in the
+simplest case of singletons. After a study of singtree and its certiﬁcates, we solved
+for the class of dynamics in which the set of Newtonian orders has measure 1,
+thereby providing a toy example of how an understanding of the structure of covtree
+could be utilised in writing down dynamics with desired features. But, since these
+Newtonian dynamics are not physically interesting, this is very much a case of
+“looking under the lamp-post”.
+Where are we to look if not under the lamp-post? One avenue for exploration
+is to ask: what role, if any, do rogues play in the physics of covtree walks?
+Since in CSG models the set of rogues is null [6], identifying covtree dynamics
+which possess this property is a step towards understanding what form CSG dy-
+namics take on covtree. Moreover, if following [6] we are to choose R to be our
+30
+
+===== PAGE 31 =====
+
+sigma-algebra of observables then — unless the covtree measure on R(S) has a
+unique extension toR — one is faced with ambiguities both in interpretation and
+calculation. It is suﬃcient that the set of rogues be null for there to exist a unique
+extention, and therefore rogue-free dynamics are compatible with this approach.
+Finally, rogue-free dynamics are cosmologically interesting. A rogue causet con-
+tains an inﬁnite level and as a result cannot contain an inﬁnite sequence of posts
+or breaks. Therefore, that the dynamics is rogue-free is a necessary condition for
+the dynamics to be relevant for our cosmological paradigm.
+One can draw an analogy between the condition that the set of rogues is null
+and the condition that the set of non-Newtonian orders is null: the former is the
+condition that the set of paths with more than one certiﬁcate is null, the latter
+the condition that the set of paths with more than one labeled certiﬁcate is null.
+However, while we were able to solve for the latter, solving for the former poses a
+new challenge because it is a limiting condition: at no ﬁnite stage of the covtree
+walk can the claim that the growing order is a rogue be verﬁed or falsiﬁed. This is
+because for every node in covtree there exist both an inﬁnite certiﬁcate which is a
+rogue and an inﬁnite certiﬁcate which is not a rogue.
+This means that there is no rogue analogue to singtree. Instead, we must look for
+other ways to obtain rogue-free dynamics. Pursuing the strictly stronger condition
+that the dynamics gives rise to inﬁnitely many posts or breaks with unit probability
+is a promising route. We already know the deﬁning feature of these covtree walks:
+that, with unit probability, they pass through inﬁnitely many nodes of the form
+{ˆA}. The challenge ahead is to formulate this feature in terms of covtree transition
+probabilities.
+Acknowledgments: Parts of this work are a result of collaboration with Fay
+Dowker, Amelia Owens and Nazireen Imambaccus and have previously appeared
+in [19, 20]. The author thanks the Perimeter Institute and the Raman Research
+Institute for hospitality while this work was being completed. The author is par-
+tially supported by the Beit Fellowship for Scientiﬁc Research and by the Kenneth
+Lindsay Scholarship Trust.
+31
+
+===== PAGE 32 =====
+
+A Table of sets deﬁned in the text
+˜Ω(N) The set of ﬁnite labeled causets
+˜Ω The set of inﬁnite labeled causets
+Ω(n) The set of n-orders for some n∈ N+
+Γn A subset of Ω( n)
+Ω The set of inﬁnite orders
+cyl( ˜A) cyl( ˜A) ={ ˜C∈ ˜Ω| ˜A is a stem in ˜C}
+cert(Γn) cert(Γn) ={C∈ Ω| C is a certiﬁcate of Γ n}
+˜R The sigma-algebra generated by the cylinder sets
+R R :={E∈ ˜R| ˜C∈E and ˜C∼= ˜D =⇒ ˜D∈E}
+R(S) The sigma-algebra generated by the certiﬁcates sets
+Λ Λ = ⋃
+n∈N+
+{Γn⊆ Ω(n)|∃ a certiﬁcate for Γ n}
+ΛA ΛA ={Γn∈ Λ|Γn⪰{ ˆA}}
+Table 2: Table of sets deﬁned in the text.
+References
+[1] D. P. Rideout and R. D. Sorkin. A Classical sequential growth dynamics for
+causal sets. Phys. Rev., D61:024002, 2000.
+[2] Madhavan Varadarajan and David Rideout. A General solution for classical
+sequential growth dynamics of causal sets. Phys. Rev. D , 73:104021, 2006.
+[3] Fay Dowker, Nazireen Imambaccus, Amelia Owens, Rafael Sorkin, and Stav
+Zalel. A manifestly covariant framework for causal set dynamics.Class. Quant.
+Grav., 37(8):085003, 2020.
+[4] A000112 Number of partially ordered sets (“posets”) with n unlabeled ele-
+ments. The On-Line Encyclopedia of Integer Sequences. oeis.org/A000112.
+[5] Sumati Surya. The causal set approach to quantum gravity. Living Rev. Rel.,
+22(1):5, 2019.
+32
+
+===== PAGE 33 =====
+
+[6] Graham Brightwell, H. Fay Dowker, Raquel S. Garcia, Joe Henson, and
+Rafael D. Sorkin. ’Observables’ in causal set cosmology. Phys. Rev. ,
+D67:084031, 2003.
+[7] Rafael D. Sorkin. Indications of causal set cosmology. Int. J. Theor. Phys. ,
+39:1731–1736, 2000.
+[8] Xavier Martin, Denjoe O’Connor, David P. Rideout, and Rafael D. Sorkin.
+On the ’renormalization’ transformations induced by cycles of expansion and
+contraction in causal set cosmology. Phys. Rev., D63:084026, 2001.
+[9] Fay Dowker and Stav Zalel. Evolution of Universes in Causal Set Cosmology.
+Comptes Rendus Physique , 18:246–253, 2017.
+[10] Martin Rees, Remo Fuﬃni, and John Archibald Wheeler. Black Holes, Gravi-
+tational Waves and Cosmology: An introduction to current research, volume 10
+of Topics in Astrophysics and Space Physics. Gordon and Breach, Cambridge,
+1974.
+[11] Jiˇ r´ ı Biˇ c´ ak. The art of science: interview with Professor John Archibald
+Wheeler. General Relativity and Gravitation , 41(4):679–689, April 2009.
+[12] Lee Smolin. Did the universe evolve? Class. Quantum Grav. , 9(1):173–191,
+1992.
+[13] Lee Smolin. The status of cosmological natural selection. 2008. arXiv:hep-th/
+0612185.
+[14] A. Ash and P. McDonald. Random partial orders, posts, and the causal set
+approach to discrete quantum gravity. J. Math. Phys. , 46:062502, 2005.
+[15] Avner Ash and Patrick McDonald. Moment problems and the causal set ap-
+proach to quantum gravity. J. Math. Phys. , 44:1666–1678, 2003.
+[16] Djamel Dou. Causal sets, a possible interpretation for the black hole entropy
+and related topics. PhD thesis, SISSA, Trieste, 1999.
+[17] Graham Brightwell and Malwina Luczak. The mathematics of causal sets. In
+Recent Trends in Combinatorics, volume 159 of The IMA Volumes in Mathe-
+matics and its Applications . Springer, Cham, 2016.
+33
+
+===== PAGE 34 =====
+
+[18] Noga Alon, B´ ela Bollob´ as, Graham Brightwell, and Svante Janson. Linear ex-
+tensions of a random partial order.Ann. Applied Prob., 4(1):108–123, February
+1994.
+[19] Nazireen Immambaccus. A generally covariant approach to causal set quantum
+gravity. Master’s thesis, Imperial College London, 2018.
+[20] Amelia Owens. A generally covariant approach to causal set quantum gravity.
+Master’s thesis, Imperial College London, 2018.
+34

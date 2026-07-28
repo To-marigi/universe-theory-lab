@@ -87,16 +87,16 @@ First we establish our terminology and notation. For a fulle r introduction to c
 [3, 4, 5, 6, 7]. (For recent examples of other discrete models incorporating a causal ordering
 see [8, 9, 10].)
 A causal set (or “causet”) is a locally ﬁnite, partially ordered set (or “ poset”). We represent
-the order-relation by ‘ ≺’ and use the irreﬂexive convention that an element does not precede
+the order-relation by ‘ ≺ ’ and use the irreﬂexive convention that an element does not precede
 itself.
-Let C be a poset. The past of an element x ∈ C is the subset past( x) = {y ∈ C | y ≺ x}.
+Let C be a poset. The past of an element x ∈ C is the subset past( x) = {y ∈ C |y ≺ x}.
 The past of a subset of C is the union of the pasts of its elements. An element of C is maximal
 iﬀ it is to the past of no other element. A chain is a linearly ordered subset of C (a subset,
-every two elements of which are related by ≺); an antichain is a totally unordered subset (a
-subset, no two elements of which are related by ≺). A partial stem of C is a ﬁnite subset
+every two elements of which are related by ≺ ); an antichain is a totally unordered subset (a
+subset, no two elements of which are related by ≺ ). A partial stem of C is a ﬁnite subset
 which contains its own past. (A full stem is a partial stem suc h that every element of its
 complement lies to the future of one of its maximal elements. ) An automorphism of C is a
-one-to-one map of C onto itself that preserves ≺.
+one-to-one map of C onto itself that preserves ≺ .
 A link of a poset is an irreducible relation, that is, one not implie d by other relations via
 transitivity.1 A path in a poset is an increasing sequence of elements, each relate d to the next
 by a link.
@@ -110,7 +110,7 @@ or “growth”. At each step of this process an element of the cau sal set come
 phenomenological passage of time is taken to be a manifestat ion of this continuing growth
 of the causet. Thus, we do not think of the process as happenin g “in time” but rather as
 “constituting time”, which means in a practical sense that t here is no meaningful order of
-birth of the elements other than that implied by the relation ≺.
+birth of the elements other than that implied by the relation ≺ .
 In order to deﬁne the dynamics, however, we will treat the bir ths as if they happened in
 a deﬁnite order with respect to some ﬁctitious “external tim e”. In this way, we introduce an
 element of “gauge” into the description of the growth proces s which we will have to compensate
@@ -255,7 +255,7 @@ Figure 3: A family
 
 ===== PAGE 7 =====
 
-“tiers”, with n/2 elements in the middle tier and n/4 elements in the top and bottom tiers.
+“tiers”, with n/ 2 elements in the middle tier and n/ 4 elements in the top and bottom tiers.
 For this reason, one might think that a sum like (1) would be do minated by causets which
 in no way resemble a spacetime, leading to a sort of “entropy c atastrophe”. Nevertheless,
 it is not hard to forestall this catastrophe, and in fact the m ost naive choice of stochastic
@@ -278,7 +278,7 @@ Expressed in this manner, the model appears as a species of on e dimensional dir
 lation; hence the name we have given it (following D. Meyer).
 From a physical point of view, transitive percolation has so me appealing features, both as a
 model for a relatively small region of spacetime and as a cosm ological model for spacetime as a
-whole. For p ∼ 1/n, there is a percolation transition, where the causet goes qu alitatively from
+whole. For p ∼ 1/n , there is a percolation transition, where the causet goes qu alitatively from
 a large number of small disconnected universes for p < p crit to a single connected universe
 for p > p crit. Moreover, computer simulations suggest strongly that the model possesses a
 continuum limit and exhibits scaling behavior in that limit with p scaling roughly like c log n/n
@@ -387,7 +387,7 @@ As discussed in the previous section, one can think of transi tive percolation a
 “birth process”, but as such, it is only one special case draw n from a much larger universe of
 possibilities. As preparation for describing these more ge neral possible dynamical rules, let us
 consider the growth-sequence of a causal set universe.
-First element ‘0’ appears (say with probability one, since the universe exists). Then element
+First element ‘0’ appears (say with probability one, since t he universe exists). Then element
 ‘1’ appears, either related to ‘0’ or not. Then element ‘2’ ap pears, either related to ‘0’ or ‘1’,
 or both, or neither. Of course if 1 ≻ 0 and 2 ≻ 1 then 2 ≻ 0 by transitivity. Then element ‘3’
 appears with some consistent set of ancestors, and so on and s o forth. Because of transitivity,
@@ -458,7 +458,7 @@ meaningless before a certain birth order is chosen. This, al so, is an aspect of
 lem, but not one that functions as a constraint on the transit ion probabilities that deﬁne our
 dynamics. Rather it limits the physically meaningful questions that we can ask of the dynam-
 ics. Technically, we expect that our dynamics (like any stoc hastic process) can be interpreted
-as a probability measure on a certain σ-algebra, and the requirement of general covariance
+as a probability measure on a certain σ -algebra, and the requirement of general covariance
 will then serve to select the subalgebra of sets whose measur es have direct physical meaning.
 The Bell causality condition
 The condition of “internal temporality” may be viewed as a ve ry weak type of causality
@@ -722,7 +722,7 @@ y z
 F etc
 Figure 7: Equality of “gregarious child” transitions
 Adjoining a disconnected element to A produces the causet B. Then, removing e from B leads
-to the causet C, which can be looked upon as the gregarious child of the cause t D = A\{e}.
+to the causet C, which can be looked upon as the gregarious child of the cause t D = A\{ e}.
 Adding another disconnected element to C leads to a causet E with (at least) two completely
 disconnected elements. Now, by general covariance,
 ax = bw
@@ -761,90 +761,90 @@ in closed form for an arbitrary transition probability in te rms of causet invar
 parameters qn.
 Mathematical form of transition probabilities
 We use the following notation:
-αn an arbitrary transition probability from Cn to Cn+1
-βn a transition whose precursor set is not the entire parent (‘n on-timid’ transition)
-γn a transition whose precursor set is the entire parent (‘timid’ transition)
+α n an arbitrary transition probability from Cn to Cn+1
+β n a transition whose precursor set is not the entire parent (‘n on-timid’ transition)
+γ n a transition whose precursor set is the entire parent (‘timid’ transition)
 Notice that the subscript n here refers only to the number of elements of the parent cause t; it
 does not exhibit which particular transition of stage n is intended. A more complete notation
-might provide α, β and γ with further indices to specify both the parent causet and th e
+might provide α , β and γ with further indices to specify both the parent causet and th e
 precursor set within the parent.
 We also set q0 ≡ 1 by convention.
 14
 
 ===== PAGE 15 =====
 
-Lemma 3 Each transition probability αn of stage n has the form
+Lemma 3 Each transition probability α n of stage n has the form
 qn
 n∑
 i=0
-λi
+λ i
 1
 qi
 (3)
-where the λi are integers depending on the individual transition in ques tion.
+where the λ i are integers depending on the individual transition in ques tion.
 Proof: This is easily seen to be true for stages 0 and 1. Assume it is tr ue for stage n − 1.
-Consider a non-timid transition probability βn of stage n. Bell causality gives
-βn
+Consider a non-timid transition probability β n of stage n. Bell causality gives
+β n
 qn
-= αn−1
-qn−1
-where αn−1 is an appropriate transition probability from stage n − 1. So by induction
-βn = αn−1
+= α n− 1
+qn− 1
+where α n− 1 is an appropriate transition probability from stage n − 1. So by induction
+β n = α n− 1
 qn
-qn−1
+qn− 1
 =
-n−1∑
+n− 1∑
 i=0
-λi
-qn−1
+λ i
+qn− 1
 qi
 qn
-qn−1
+qn− 1
 =
-n−1∑
+n− 1∑
 i=0
-λi
+λ i
 qn
 qi
 . (4)
-For a timid transition probability γn, we use the Markov sum rule:
-γn = 1 −
+For a timid transition probability γ n, we use the Markov sum rule:
+γ n = 1 −
 ∑
 j
-βnj (5)
+β nj (5)
 where j labels the possible non-timid transitions (i.e. the set of p roper partial stems of the
 parent).11 But then, substituting (4) yields immediately
-γn = 1 −
+γ n = 1 −
 ∑
 j
-n−1∑
+n− 1∑
 i=0
-λji
+λ ji
 qi
 qn = 1 −
-n−1∑
+n− 1∑
 i=0
 ∑
-j λji
+j λ ji
 qi
 qn ,
-which we clearly can put into the form (3) by taking λi = −∑
-j λji for i < n and λn = 1. ✷
+which we clearly can put into the form (3) by taking λ i = − ∑
+j λ ji for i < n and λ n = 1. ✷
 Another look at transitive percolation
 The transitive percolation model we described earlier is co nsistent with the four conditions of
 Section 3. To see this, consider an arbitrary causal set Cn of size n. The transition probability
-αn from Cn to a speciﬁed causet Cn+1 of size n + 1 is given by
-αn = pm(1 − p)n−̟ (6)
+α n from Cn to a speciﬁed causet Cn+1 of size n + 1 is given by
+α n = pm(1 − p)n− ̟ (6)
 where m is the number of maximal elements in the precursor set and ̟ is the size of the entire
 precursor set. (This becomes clear if one recalls how the pre cursor set of a newborn element
 is generated in transitive percolation: ﬁrst a set of ancest ors is selected at random, and then
 the ancestors implied by transitivity are added. From this, it follows immediately that a given
 stem S ⊆ Cn results from the procedure iﬀ (i) every maximal element of S is selected in the
-ﬁrst step, and (ii) no element of Cn\S is selected in the ﬁrst step.) In particular, we see that
+ﬁrst step, and (ii) no element of Cn\ S is selected in the ﬁrst step.) In particular, we see that
 the “gregarious transition” will occur with probability qn = qn, where q = 1 − p.
 11Of course, more than one stem will in general correspond to th e same link in P. If we redeﬁned j to run
-over links in P, then (5) would read γ n = 1 −∑
-j χ jβ nj, where χ j is the “multiplicity” of the jth link.
+over links in P, then (5) would read γn = 1 − ∑
+j χjβnj, where χj is the “multiplicity” of the jth link.
 15
 
 ===== PAGE 16 =====
@@ -853,19 +853,19 @@ Now consider our four conditions. Internal temporality was built in from the out
 know. Discrete general covariance is seen to hold upon writi ng the net probability of a given
 Cn explicitly in terms of causet invariants (writing it in “man ifestly covariant form”) as
 P (Cn) = W pLq(n
-2)−R
+2)− R
 where L is the number of links in Cn, R the number of relations, and W the number of
 (natural) labelings of Cn.
 To see that transitive percolation obeys Bell causality, co nsider an arbitrary parent causet.
 The transition probability to a given child is exhibited in e q. (6). Consider two diﬀerent chil-
-dren, one with ( m, ̟)=(m1,̟1) and the other with ( m, ̟)=(m2,̟2). Bell causality requires
+dren, one with ( m, ̟ )=(m1,̟ 1) and the other with ( m, ̟ )=(m2,̟ 2). Bell causality requires
 that the ratio of their transition probabilities be the same as if the parent were reduced to
 the union of the precursor sets of the two transitions, i.e. i t requires
-pm1qn−̟1
-pm2qn−̟2
-= pm1qn′−̟1
-pm2qn′−̟2
-where n′ is the cardinality of the union of the precursor sets of the tw o transitions. Thus, Bell
+pm1qn− ̟ 1
+pm2qn− ̟ 2
+= pm1qn′− ̟ 1
+pm2qn′− ̟ 2
+where n′is the cardinality of the union of the precursor sets of the tw o transitions. Thus, Bell
 causality is satisﬁed by inspection.
 Finally, the Markov sum rule is essentially trivial. At each stage of the growth process,
 a preliminary choice of ancestors is made by a well-deﬁned pr obabilistic procedure, and each
@@ -874,28 +874,28 @@ of the partial stems sum automatically to unity.
 The general transition probability
 In the previous section we have shown that transitive percol ation produces transition proba-
 bilities (6) consistent with all our conditions. By equatin g the right hand side of (6) to the
-general form (3) of Lemma 3, we can solve for the λi and thus obtain the general solution of
+general form (3) of Lemma 3, we can solve for the λ i and thus obtain the general solution of
 our conditions:
-αn =
+α n =
 n∑
 i=0
-λi
+λ i
 1
 qi
-qn = pm(1 − p)n−̟ = (1 − q)mqn−̟
+qn = pm(1 − p)n− ̟ = (1 − q)mqn− ̟
 Expanding the factor (1 − q)m, and using the fact that qn = qn for transitive percolation, we
 get
-λi = (−)̟−i
+λ i = (− )̟ − i
 (
 m
 ̟ − i
 )
 .
 So an arbitrary transition probability in the general dynam ics is, according to (3)
-αn =
+α n =
 n∑
 i=0
-(−)̟−i
+(− )̟ − i
 (
 m
 ̟ − i
@@ -903,61 +903,61 @@ m
 qn
 qi
 .
-Noting that the binomial coeﬃcients are zero for ̟ − i /∈ {0..m}, and rearranging the indices,
+Noting that the binomial coeﬃcients are zero for ̟ − i /∈ {0..m }, and rearranging the indices,
 we obtain
-αn =
+α n =
 m∑
 k=0
-(−)k
+(− )k
 (
 m
 k
 )
 qn
-q̟−k
+q̟ − k
 . (7)
 16
 
 ===== PAGE 17 =====
 
 This form for the transition probability exhibits its causa l nature particularly clearly: ex-
-cept for the overall normalization factor qn, αn depends only on invariants of the associated
+cept for the overall normalization factor qn, α n depends only on invariants of the associated
 precursor set.
 4.3 Inequalities
-Since the αn are classical probabilities, each must lie between 0 and 1, a nd this in turn restricts
+Since the α n are classical probabilities, each must lie between 0 and 1, a nd this in turn restricts
 the possible values of the qn. Here we show that it suﬃces to impose only one inequality per
 stage; all the others (two per child) then follow. More preci sely, what we show is that, if
-qn > 0 for all n, and if αn ≥ 0 for the “timid” transition from the n-antichain, then all the αn
+qn > 0 for all n, and if α n ≥ 0 for the “timid” transition from the n-antichain, then all the α n
 lie in [0 , 1]. This we establish in the following two “Claims”.
-Claim In order that all the transition probabilities αn fall between 0 and 1, it suﬃces that
+Claim In order that all the transition probabilities α n fall between 0 and 1, it suﬃces that
 each timid transition probability be ≥ 0.
 Proof: As described in the proofs of lemmas 1 and 5, each non-timid tr ansition (of stage n)
 is given (via Bell causality) by
-αn = αm
+α n = α m
 qn
 qm
 where m is some natural number less than n. The q’s are positive. So if the probabilities of
 the previous stages are positive, then the non-timid probab ilities of stage n are also positive.
-It follows by induction that all but the timid transition pro babilities are positive (since α0 =
+It follows by induction that all but the timid transition pro babilities are positive (since α 0 =
 q0 = 1 obviously is). But for the timid transition of each family , we have
-γn = 1 −
+γ n = 1 −
 ∑
 i
-βi (8)
-where each βi is positive. If any of the βi is greater than one, γn will obviously be negative.
-Also (8) plainly cannot be greater than one. Consequently, i f we require that γn be positive,
+β i (8)
+where each β i is positive. If any of the β i is greater than one, γ n will obviously be negative.
+Also (8) plainly cannot be greater than one. Consequently, i f we require that γ n be positive,
 then all transition probabilities in the family will be in [0 , 1]. ✷
 In a timid transition, the entire parent is the precursor set , so ̟ = n. The inequalities
 constraining each probability of a given family to be in [0 , 1] therefore reduce to the sole
 condition m∑
 k=0
-(−)k
+(− )k
 (
 m
 k
 )
 1
-qn−k
+qn− k
 ≥ 0 . (9)
 Claim The most restrictive inequality of stage n is the one arising from the n-antichain, i.e.
 the one for which m = n. All other inequalities of stage n follow from this inequality and the
@@ -965,61 +965,61 @@ inequalities for smaller n.
 Proof: Assume that we have, for m = n,
 n∑
 k=0
-(−)k
+(− )k
 (
 n
 k
 )
 1
-qn−k
+qn− k
 ≥ 0.
 Add to this the inequality from stage n − 1,
-n−1∑
+n− 1∑
 k=0
-(−)k
+(− )k
 (
 n − 1
 k
 )
 1
-qn−k−1
+qn− k− 1
 =
 n∑
 k=0
-(−)k−1
+(− )k− 1
 (
 n − 1
 k − 1
 )
 1
-qn−k
+qn− k
 ≥ 0
 17
 
 ===== PAGE 18 =====
 
 to get
-n−1∑
+n− 1∑
 k=0
-(−)k
+(− )k
 (
 n − 1
 k
 )
 1
-qn−k
+qn− k
 ≥ 0.
-This is the inequality of stage n for m = n−1. (We have used the identity
+This is the inequality of stage n for m = n− 1. (We have used the identity
 ( n
 k
 )
 =
-( n−1
+( n− 1
 k
 )
 +
-( n−1
-k−1
+( n− 1
+k− 1
 )
 .)
 Adding to it the inequality of stage n − 1 with m = n − 2 yields the inequality of stage n for
@@ -1028,7 +1028,7 @@ It is helpful to introduce the quantities
 tn =
 n∑
 k=0
-(−)n−k
+(− )n− k
 (
 n
 k
@@ -1057,17 +1057,17 @@ k=0
 n
 k
 )
-(−)n−k
+(− )n− k
 (
 k
 m
 )
-= δn
+= δ n
 m ✷
 Thus, the tn may be treated as free parameters (subject only to tn ≥ 0 and t0 = 1), and the
-qn can then be derived from (11). If this is done, the remaining t ransition probabilities αn
+qn can then be derived from (11). If this is done, the remaining t ransition probabilities α n
 can be re-expressed more simply in terms of the tn by inserting (11) into (7) to get
-αn
+α n
 qn
 =
 ∑
@@ -1075,7 +1075,7 @@ l
 tl
 ∑
 k
-(−)k
+(− )k
 (
 m
 k
@@ -1092,14 +1092,14 @@ tl
 ̟ − l
 )
 whence
-αn =
-∑ ̟
+α n =
+∑̟
 l=m
-( ̟−m
-̟−l
+( ̟ − m
+̟ − l
 )
 tl
-∑ n
+∑n
 j=0
 ( n
 j
@@ -1108,7 +1108,7 @@ tj
 (12)
 Here, we have used an identity for binomial coeﬃcients that c an be found on page 63 of [20].
 In this way, we arrive at the general solution of our inequali ties. (Actually, we go slightly
-beyond our “genericity” assumption that αn ̸= 0 if we allow some of the tn to vanish; but no
+beyond our “genericity” assumption that α n ̸= 0 if we allow some of the tn to vanish; but no
 harm is done thereby.)
 Let us conclude this section by noting that (11) implies
 q0 ≡ 1 ≥ q1 ≥ q2 ≥ q3 ≥ · · · (13)
@@ -1123,7 +1123,7 @@ since the allowable values of qn at every stage are limited by the choices alrea
 other hand, if we think of the tn as the basic parameters, then the free choice is unencumbere d
 at each stage. However, unlike the qn, the tn cannot be identiﬁed with any dynamical transition
 probability. Rather, they can be realized as ratios of two su ch probabilities, namely as the
-ratio xn/qn, where xn is the transition probability from an antichain of n elements to the
+ratio xn/q n, where xn is the transition probability from an antichain of n elements to the
 timid child of that antichain. (Thus, if we suppose that the e volving causet at the beginning
 of stage n is an antichain, then tn is the probability that the next element will be born to the
 future of every element, divided by the probability that the next element wi ll be born to the
@@ -1134,7 +1134,7 @@ or (12) obeys the four conditions set out in section 3.
 Internal temporality
 This condition is built into our deﬁnition of the growth proc ess.
 Discrete general covariance
-We have to show that the product of the transition probabilit ies αn associated with a labeling
+We have to show that the product of the transition probabilit ies α n associated with a labeling
 of a ﬁxed ﬁnite causet C is independent of the labeling. But this follows immediatel y from
 (7) [or (12)] once we notice that what remains after the overa ll product
 |C|−1∏
@@ -1145,12 +1145,12 @@ structure of past( x).
 Bell causality
 Bell causality states that the ratio of the transition proba bilities for two siblings depends only
 on the union of their precursors. Looking at (7), consider th e ratio of two such probabilities
-αn1 and αn2. The qn factors will cancel, leading to an expression which depends only on ̟1,
-̟2, m1, and m2. Since these are all determined by the structure of the precu rsor sets, Bell
+α n1 and α n2. The qn factors will cancel, leading to an expression which depends only on ̟ 1,
+̟ 2, m1, and m2. Since these are all determined by the structure of the precu rsor sets, Bell
 causality is satisﬁed.
 Markov sum rule
-The sum rule states that the sum of all transition probabilit ies αn from a given parent C (of
-cardinality |C| = n) is unity. Since a child can be identiﬁed with a partial stem o f the parent,
+The sum rule states that the sum of all transition probabilit ies α n from a given parent C (of
+cardinality |C|= n) is unity. Since a child can be identiﬁed with a partial stem o f the parent,
 19
 
 ===== PAGE 20 =====
@@ -1162,7 +1162,7 @@ S
 l
 tl
 (
-|S| − m(S)
+|S| −m(S)
 l − m(S)
 )
 =
@@ -1180,7 +1180,7 @@ chosen freely. Reordering the sums and equating like terms y ields
 ∑
 S
 (
-|S| − m(S)
+|S| −m(S)
 l − m(S)
 )
 =
@@ -1191,29 +1191,29 @@ l
 , (15)
 an inﬁnite set of identities which must hold if the sum rule is to be satisﬁed by our dynamics.
 The simplest way to see that (15) is true is to resort to transi tive percolation, for which
-tl = tl, where t = p/q = p/(1 − p). In that case we know that the sum rule is satisﬁed, so by
+tl = tl, where t = p/q = p/ (1 − p). In that case we know that the sum rule is satisﬁed, so by
 inspection of (14), we see that the identity (15) must be true .
 A more intuitive proof is illustrated well by the case of l = 3. Group the terms on the left
 side according to the number of maximal elements:
 ∑
-S | m(S)=0
+S |m(S)=0
 ( |S|−0
-3−0
+3− 0
 )
 + ∑
-S | m(S)=1
+S |m(S)=1
 ( |S|−1
-3−1
+3− 1
 )
 + ∑
-S | m(S)=2
+S |m(S)=2
 ( |S|−2
-3−2
+3− 2
 )
 + ∑
-S | m(S)=3
+S |m(S)=3
 ( |S|−3
-3−3
+3− 3
 )
 =
 ( n
@@ -1221,36 +1221,36 @@ S | m(S)=3
 )
 0 +
 ∑
-S | m(S)=1
+S |m(S)=1
 ( |S|−1
 2
 )
 +
 ∑
-S | m(S)=2
-(|S| − 2) +
+S |m(S)=2
+(|S| −2) +
 ∑
-S | m(S)=3
+S |m(S)=3
 1 =
 ( n
 3
 )
 The ﬁrst term is zero because the only partial stem with zero m aximal elements is empty (i.e.
-|S| = 0). The second term is a sum over all partial stems with one ma ximal element. This is
+|S|= 0). The second term is a sum over all partial stems with one ma ximal element. This is
 equivalent to a sum over elements, with the element’s inclus ive past forming the partial stem.
 The summand chooses every possible pair of elements to the pa st of the maximal element.
 Thus the second term overall counts the 3-element subcauset s of C with a single maximal
 element. There are two possibilities here, the three-chain rrr
 and the “lambda”
 r
-r r✁✁❆❆ . The third
+r r✁✁ ❆❆ . The third
 term sums over partial stems with two maximal elements, whic h is equivalent to summing over
 2 element antichains, the inclusive past of the antichain be ing the partial stem. The summand
 then counts the number of elements to the past of the two maxim al ones. Thus the third term
 overall counts the number of three element subcausets with p recisely two maximal elements.
 Again there are two possibilities, the “V” r
 r r
-❆❆✁✁ , and the “L”, r r
+❆❆ ✁✁ , and the “L”, r r
 r
 . Finally, the fourth term is
 a sum over partial stems with three maximal elements, and thi s can be interpreted as a sum
@@ -1278,12 +1278,12 @@ This universe is simply an antichain, since, according to (1 1), qn = 1 for all 
 • “Forest universe”
 t0 = t1 = 1; ti = 0, i ≥ 2
 This yields a universe consisting wholly of trees, since (se e the next example) t2 = t3 =
-t4 = · · · = 0 implies that no element of the causet can have more than one past link.
+t4 = · · ·= 0 implies that no element of the causet can have more than one past link.
 The particular choice of t1 = 1 has in addition the remarkable property that, as follows
-easily from (12), every allowed transition of stage n has the same probability 1 /(n + 1).
+easily from (12), every allowed transition of stage n has the same probability 1 / (n + 1).
 • Case of limited number of past links
 ti = 0, i > n 0
-Referring to expression (12) one sees at once that αn vanishes if m > n 0. Hence, no
+Referring to expression (12) one sees at once that α n vanishes if m > n 0. Hence, no
 element can be born with more than n0 past links or “parents”. This means in particular
 that any realistic choice of parameters will have tn > 0 for all n, since an element of a
 causal set faithfully embeddable in Minkowski space would h ave an inﬁnite number of
@@ -1292,7 +1292,7 @@ past links.
 tn = tn
 We have seen that for transitive percolation, qn = qn, where q = 1 − p. Using the
 binomial theorem, it is easy to learn from (11) or (10) that th is choice of qn corresponds
-to tn = tn with t = p/q. Clearly, t runs from 0 to ∞ as p runs from 0 to 1.
+to tn = tn with t = p/q . Clearly, t runs from 0 to ∞ as p runs from 0 to 1.
 • A more lifelike choice?
 tn = 1
 n! (16)
@@ -1301,25 +1301,25 @@ reproduce — at best — only limited portions of Minkowski spac e. To do any b
 would have to scale p so that it decreased with increasing n [12, 13, 15]. This suggests
 that tn should fall oﬀ faster than in any percolation model, hence (b y the last example)
 faster than exponentially in n. Obviously, there are many possibilities of this sort (e.g.
-tn ∼ e−αn2
-), but one of the simplest is tn ∼ c/n! This would be our candidate of the
+tn ∼ e− αn 2
+), but one of the simplest is tn ∼ c/n ! This would be our candidate of the
 moment for a physically most realistic choice of parameters .
 5 The stochastic growth process as such
 We have seen that, associated with every labeled causet ˜C of size N, is a net “probability
-of formation” P (˜C) which is the product of the transition probabilities αi of the individual
+of formation” P ( ˜C) which is the product of the transition probabilities α i of the individual
 births described by the labeling:
-P (˜C) =
-N −1∏
+P ( ˜C) =
+N − 1∏
 i=0
-αi
+α i
 21
 
 ===== PAGE 22 =====
 
-where αi = α(i, ̟i, mi) is given by (7) or (12). We have also seen that P is in fact independent
+where α i = α (i, ̟ i, m i) is given by (7) or (12). We have also seen that P is in fact independent
 of the labeling and may be written as P (C) where C is the unlabeled causet corresponding
 to ˜C. To bring this out more clearly, let us deﬁne
-λ(̟, m) =
+λ (̟, m ) =
 ̟∑
 k=m
 (
@@ -1327,25 +1327,25 @@ k=m
 ̟ − k
 )
 tk (17)
-Then qi = λ(i, 0)−1 and we have
-αi(i, ̟i, mi) = λ(̟i, mi)
-λ(i, 0) ,
-whence P (˜C) =
-N −1∏
+Then qi = λ (i, 0)− 1 and we have
+α i(i, ̟ i, m i) = λ (̟ i, m i)
+λ (i, 0) ,
+whence P ( ˜C) =
+N − 1∏
 i=0
-λ(̟i, mi)/
-N −1∏
+λ (̟ i, m i)/
+N − 1∏
 j=0
-λ(j, 0), or expressed more intrinsically,
+λ (j, 0), or expressed more intrinsically,
 P (C) =
 ∏
 x∈C
-λ(̟(x), m(x))
+λ (̟ (x), m (x))
 |C|−1∏
 j=0
-λ(j, 0)
+λ (j, 0)
 , (18)
-where ̟(x) = |pastx| and m(x) = |maximal(pastx)|. This expression, as far as it goes, is
+where ̟ (x) = |pastx|and m(x) = |maximal(pastx)|. This expression, as far as it goes, is
 manifestly “causal” and “covariant” in the senses explaine d above. As also explained above,
 however, it has no direct physical meaning. Here we brieﬂy di scuss some probabilities which
 do have a fully covariant meaning and show how, in simple cases, they are related to N → ∞
@@ -1353,7 +1353,7 @@ limits of probabilities like (18).
 First, let us notice that the net probability of arriving at a particular C ∈ P is not P (C)
 but
 ProbN (C) = W (C) P (C)
-where N = |C| and W (C) is the number of inequivalent 13 labelings of C, or in other words,
+where N = |C|and W (C) is the number of inequivalent 13 labelings of C, or in other words,
 the total number of paths through P that arrive at C, each link being taken with its proper
 multiplicity.
 Now as a rudimentary example of a truly covariant question, l et us take “Does the two-
@@ -1385,10 +1385,10 @@ in terms of a sum over Z2-valued “spins” σ living on the relations of C. In
 conﬁgurations, however, the spins σ on the non-link relations are set permanently to 1; only
 those on the links vary. With σ = 1 interpreted as “presence” and σ = 0 as “absence”, the
 contribution of a particular spin conﬁguration σ is an overall sign times the product of one
-“vertex factor” for each x ∈ C. The vertex factor is q−1
+“vertex factor” for each x ∈ C. The vertex factor is q− 1
 r , where r is the number of present
-relations having x as future endpoint, and the sign is ( −)a, where a is the number of absent
-relations. (In addition, there is a constant overall factor in P (C) of ∏ |C|−1
+relations having x as future endpoint, and the sign is ( − )a, where a is the number of absent
+relations. (In addition, there is a constant overall factor in P (C) of ∏|C|−1
 j=0 qj.)
 In the second state model, we begin with (12), or better (18) i tself, and proceed similarly.
 The result is again a sum over spins σ residing on the relations, this time with all the terms
@@ -1398,7 +1398,7 @@ coming from x ∈ C now is tr, where r is again the number of relations present 
 to x”.
 These two models (and especially the second) show that our se quential growth dynamics
 can be viewed as a form of “induced gravity” obtained by summi ng over (“integrating out”)
-the values of our underlying spin variables σ. This underlying “matter” theory may or may
+the values of our underlying spin variables σ . This underlying “matter” theory may or may
 not be physically reasonable (Does it obey its own version of Bell causality, for example? Is
 it local in an appropriate sense?), but at a minimum, it serve s to illustrate how a theory of
 non-gravitational matter can be hidden within a theory that one might think to be limited to
@@ -1418,7 +1418,7 @@ constants, which could reproduce the same eﬀective dynamic s for the random su
 ===== PAGE 24 =====
 
 7 Further Work
-Our dynamics can be simulated; for tn = 1/n! it takes a minute or so to generate a 64 element
+Our dynamics can be simulated; for tn = 1/n ! it takes a minute or so to generate a 64 element
 causet on a DEC Alpha 600 workstation. Analytic results, so f ar, are available only for the
 special case of transitive percolation. An important quest ion, of course, is whether some choice
 of the tn can reproduce general relativity, or at least reproduce a Lo rentzian manifold for some
@@ -1662,14 +1662,14 @@ suitable elements from B. (By assumption B must contain an element whose removal
 and another element whose removal yields C. Then remove these two elements. For example,
 consider the case where
 r
-r r r✁✁❆❆ is the grandchild and it has the parent r r r (by removing the
+r r r✁✁ ❆❆ is the grandchild and it has the parent r r r (by removing the
 maximal element of the wedge) and the parent
 r
-r r✁✁❆❆ (by removing the disconnected element).
+r r✁✁ ❆❆ (by removing the disconnected element).
 To ﬁnd the grandparent r r remove both maximal elements from
 r
-r r r✁✁❆❆ .)
-Now, still referring to ﬁgure 9, let |D| = n and suppose inductively that all the general
+r r r✁✁ ❆❆ .)
+Now, still referring to ﬁgure 9, let |D|= n and suppose inductively that all the general
 covariance relations are satisﬁed up through stage n. A new condition arising at stage n + 1
 says that some path arriving at B via x has the same probability as some other path arriving
 via z. But, by our inductive assumption, each of these paths can be modiﬁed to go through
@@ -1679,15 +1679,15 @@ Now by Bell causality and lemma 2,
 x
 qn
 = b
-qn−1
+qn− 1
 ,
 whence
 ax = ab qn
-qn−1
+qn− 1
 .
 But by symmetry, we also have
 bz = ba qn
-qn−1
+qn− 1
 ;
 therefore ax = bz, as required. ✷
 26
@@ -1726,7 +1726,7 @@ University Press, Cambridge, 1993.
 preparation).
 [13] David P. Rideout and Rafael D. Sorkin. Scaling behavior of percolated causal sets. (in
 preparation).
-[14] B´ ela Bollob´ as and Graham Brightwell. The structure o f random graph orders. Siam J.
+[14] B´ ela Bollob´ as and Graham Brightwell. The structure of random graph orders. Siam J.
 Discrete Math, 10(2):318–335, May 1997.
 27
 
@@ -1738,7 +1738,7 @@ model of quantum gravity. (in preparation).
 Technology, 1988.
 [17] B´ ela Bollob´ as and Graham Brightwell. Graphs whose every transitive orientation contains
 almost every relation. Israel Journal of Mathematics , 59(1):112–128, 1987.
-[18] C. M. Newman and L. S. Schulman. One-dimensional 1 /|j − i|s percolation models: the
+[18] C. M. Newman and L. S. Schulman. One-dimensional 1 / |j − i|s percolation models: the
 existence of a transition for s ≤ 2. Comm. Math. Phys. , 104(4):547–571, 1986.
 [19] David P. Rideout. Causal Set Dynamics . PhD thesis, Syracuse University, 1999. (in
 preparation).

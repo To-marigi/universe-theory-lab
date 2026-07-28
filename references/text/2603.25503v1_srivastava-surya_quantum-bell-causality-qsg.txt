@@ -119,10 +119,10 @@ Pauli matrix algebra.
 2 The Sequential Growth Paradigm
 2.1 Preliminaries
 Acausal setcis a locally finite partially ordered set, i.e., a set with the partial order≺which
-∀e, e′, e′′ ∈csatisfies
+∀e, e ′, e′′ ∈csatisfies
 1. Acyclicity : Ife≺e ′ ⇒e ′ ⊀e
 2. Transitivity:e≺e ′ ande ′ ≺e ′′ ⇒e≺e ′′,
-3. Local finiteness:|I(e, e ′)|<∞whereI(e, e ′)≡ {e′′ ∈c:e≺e ′′ ≺e ′}
+3. Local finiteness:|I(e, e ′)|<∞whereI(e, e ′)≡ {e ′′ ∈c:e≺e ′′ ≺e ′}
 In this work we will concern ourselves with finiten-element causal sets, which we denote byc n.
 3
 
@@ -199,7 +199,7 @@ ordered as shown in Fig 3.
 T4T3 T5
 Figure 3: Ordering of transitions
 As in [18] it is useful to kinematically deconstruct a transitionT n :c n →c n+1 using the ordering
-3We will soon drop the tildes˜Xfor ease of notation. See the note at the end of this Section and just before the
+3We will soon drop the tildes ˜Xfor ease of notation. See the note at the end of this Section and just before the
 start of Section 2.2.
 5
 
@@ -248,21 +248,21 @@ n0+1) =∅. If one started off withn 0, then one can only add common
 spectators, to get another relatedn-element Bell pair i.e.,n > n 0. Note that every non-gregarious
 transition can be Bell paired with a gregarious transition.
 Figure 4 shows the two related Bell pairs (T 3,T ′
-3 ) and (T 5,T ′
-5 ), where the transitionsT 3 andT 5
+3) and (T 5,T ′
+5), where the transitionsT 3 andT 5
 have the same precursor set as do the transitionsT ′
 3 andT ′
-5 . Moreover, the pair (T 5,T ′
-5 ) has a
+5. Moreover, the pair (T 5,T ′
+5) has a
 non-empty common spectator set, while that for (T 3,T ′
-3 ) is empty, and hencen 0 = 3.
+3) is empty, and hencen 0 = 3.
 While each node inPis a finite element causal set, it also represents acylinder subsetcyl(c n) in
 Ω containing all countable labelled causal sets whose firstn-elements arec n. This is similar to a
 finite timeTpathγ T in the discrete random walk representing a subset of infinite time walks whose
 firstTsteps areγ T . Because of the tree structure ofP, the cyl(c n) possess a nesting structure: if
 cyl(cn)∩cyl(c m)̸=∅and wlogn≥m, then cyl(c n)⊂cyl(c m). Consider the set{c i
 n}of all the
-n-element nodes inP, wherei∈ I(n)≡ {1,2, . . . ,|Ωn|}. The setZ n ofn-element cylinder sets
+n-element nodes inP, wherei∈ I(n)≡ {1,2, . . . ,|Ω n|}. The setZ n ofn-element cylinder sets
 6
 
 ===== PAGE 7 =====
@@ -278,7 +278,7 @@ cyl(cj
 n+1),(2)
 i.e., each cylinder set at stagencan be expressed as a disjoint union of the cylinder sets formed
 from its children cyl(cj
-n+1)∈ Zn+1. Each in turn can be partitioned into cylinder sets inZ n+2, and
+n+1)∈ Z n+1. Each in turn can be partitioned into cylinder sets inZ n+2, and
 so on, and hence in general, for anym,
 cyl(ci
 n) =
@@ -314,8 +314,8 @@ emk ∈Sp(c i
 n+1).
 Let Γk be the set of children ofc n for which the maximal elemente mk is in the spectator set (but
 possibly not the only one)
-Γk ≡ {cyl(cj(k)
-n+1)|j(k)∈ J(cn), emk ⊀e j(k)
+Γk ≡ {cyl(c j(k)
+n+1)|j(k)∈ J(c n), emk ⊀e j(k)
 n+1}, emk ∈M(c n).(5)
 Define the sets
 ζk ≡
@@ -358,14 +358,14 @@ The sample space Ω and the event algebraAform the first two elements of the cl
 measure triples we will construct, for a “generalised measure” which we define below.
 Definition.LetΩbe a sample space with event algebraA. We define a (finitely additive)gen-
 eralised measureas a mapµ g :A→ R, whereRis an abelian group with identity0such that
-µg(⊔iαi) = P
+µg(⊔iαi) =P
 i µg(αi)for any finite disjoint set{α i ∈A}and (ii)µ g(∅) =I.
 A sequential growth dynamics is an assignment of a generalised measureµ g onA, such that every
 transitionT n :c n →c n+1 is associated with atransition mapT n :R → Rsuch that
 µg(cyl(cn+1)) =T n(cn+1)◦µ g(cyl(cn))⇒µ g(cyl(cn+1)) =T(γ(c n+1))◦µ g(Ω) (8)
 whereγ n+1 denotes thepathfromc 1 toc i
 n+1 inPand
-T(γ(c n+1))≡T n(cn+1)◦T n−1(cn). . .◦T1(c2)◦T 0(c1) (9)
+T(γ(c n+1))≡T n(cn+1)◦T n−1(cn). . .◦T 1(c2)◦T 0(c1) (9)
 denotes the composition transitions fromc 1 along a pathγ(c n+1) inP. Eqn. (8) implies that
 µg(cyl(cn)) can be obtained purely from the transition maps associated withγ(c n), givenµ g(Ω).
 For CSG,R= [0,1] and theT i
@@ -376,7 +376,7 @@ or quantum, as long as the generalised measure satisfies some basic constraints.
 Forµ g a generalised finitely additive measureµ g :c n → R(Def. 2.2) we note that the following
 general features follow from the kinematical structure ofPwith minimal physical assumptions as
 stated:
-1. Since cyl(c n) = F
+1. Since cyl(c n) =F
 j cyl(cj
 n+1) wherej∈ J(c n),
 µg(cyl(cn)) =
@@ -409,15 +409,15 @@ without imposing these conditions at the sequential level, but we will not consi
 here.
 We have used the finite additivity ofµ g for the disjoint partition of a cylinder sets into its cylinder
 sets of its children, Eqn. (10), but we can also apply it to the non-disjoint partition{ζ k},k∈
-{1, . . . ,m}. For every pairζk1, ζk2
+{1, . . . ,m}. For every pairζ k1, ζk2
 ζk1
 [
 ζk2 =
 
 ζk1 \ζ k2
-  G
+ G
 ζk2 \ζ k1
-  G
+ G
 ζk1
 \
 ζk2
@@ -475,30 +475,30 @@ k1<k2
 \
 ζk2
 
-+· · ·+ (−1)m−1µg
++· · ·+ (−1) m−1µg
   m\
 k=1
 ζk
 
 .(13)
-Next, note that the setζ k1 ∩. . .∩ζkℓ can also be expressed as the disjoint union of cylinder sets
+Next, note that the setζ k1 ∩. . .∩ζ kℓ can also be expressed as the disjoint union of cylinder sets
 cyl(cj(k1,...kℓ)
 n+1 ) which contain{e mk1
 , . . . , emkℓ
 }in their spectator sets, i.e.,
-ζk1 ∩. . .∩ζkℓ =
+ζk1 ∩. . .∩ζ kℓ =
 G
 j
 cyl(cj(k1,...kℓ)
 n+1 ) (14)
 and hence
-µg(ζk1 ∩. . .∩ζkℓ) =
+µg(ζk1 ∩. . .∩ζ kℓ) =
 X
 j
 µg(cyl(cj(k1,...kℓ)
 n+1 )).(15)
 Thus, Eqn. (13) can be expressed entirely in terms of the generalised measureµ g of cylinder sets.
-Since Sm
+SinceSm
 k=1 ζk is the union of cylinder sets of non-timid children, using MSR
 µg(cyl(cT
 n+1)) =µ g(cyl(cn))−µ g(
@@ -542,7 +542,7 @@ n−2
 Figure 5: Atomisation takesc n toa n, along an atomisation pathS(c n) while decimation takesc n
 back toa k, along the related decimation path Γ(c n) wherekis the number of minimal elements in
 an. WhileS(c n) is not unique for a givenc n, it determines Γ(c n).
-For anyc (0)
+For anyc(0)
 n ≁a n, pick a non-gregarious maximal elementeg1 ∈M(c (0)
 n ), and definec (1)
 n ≡c (0)
@@ -564,7 +564,7 @@ n recursively, until some finitek(c (0)
 n ) for whichc (k)
 n ≃a n. Clearly, thisatomisation
 path,S (α)(c(0)
-n )≡ {c(0)
+n )≡ {c (0)
 n , c(1)
 n . . . an}is not unique.
 Fig 5 also shows the various transition operators. The gregarious transitionG (0)
@@ -595,7 +595,7 @@ seta 1. Denote the set of elements that lead to the atomisation ofc (0)
 n via the path Γ (α)(c(0)
 n ) by
 G(α)(c(0)
-n )≡ {eg1, . . . egk }. Definec (0)
+n )≡ {e g1, . . . egk }. Definec (0)
 n−1 ≡c (0)
 n \eg1. It is clear that the gregarious transition from
 c(0)
@@ -617,7 +617,7 @@ n−k ≡c (k)
 n \{eg1, . . . , egk }=a n−k. Finally, we can remove
 the elements one by one froma n−k to get the single element causal set. Thus we have a path
 γ(α)(c(0)
-n )≡ {a1, a2, . . . an−k, c(0)
+n )≡ {a 1, a2, . . . an−k, c(0)
 n−k+1, . . . c(0)
 n−1, c(0)
 n }inP ′.
@@ -628,7 +628,7 @@ n−i+1, and letG (0)
 n−i be the gregarious transition fromc (0)
 n−i. Comparing with
 the transitionB (i)
-n , for which{e g1, . . . egi} ⊂Sp(B(i)
+n , for which{e g1, . . . egi} ⊂Sp(B (i)
 n ), we find the Bell related pairs{B (i)
 n ,G (i)
 n }and
@@ -656,11 +656,11 @@ n−1 →c (1)
 n thus adds in the elementeg2. Generalising,
 we can sequentially definec (i)
 n−1 =c (i−1)
-n−1 \egi+1 ∪g egi+1i for alli= 1, . . . k−1, sincec(k−1)
+n−1 \egi+1 ∪g egi+1i for alli= 1, . . . k−1, sincec (k−1)
 n−1 =a n−1.
 Similarly,c (i)
 n−j =c (i−1)
-n−j \egi+j ∪g egi+j for alli= 1, . . . k−j, withc(k−j)
+n−j \egi+j ∪g egi+j for alli= 1, . . . k−j, withc (k−j)
 n−j =a n−j.
 2.4 Classical Sequential Growth (CSG) Models
 The CSG dynamics of Rideout-Sorkin is based on the measure triple (Ω,A, µ) whereµ:A→[0,1]
@@ -787,8 +787,8 @@ Let Ω be a sample space of histories andAan associated event algebra.
 Definition.Adecoherence functionalD:A×A→Csatisfies
 1. Hermiticity: forα, β∈AD(α, β) =D(β, α) ∗
 2. Finite Biadditivity: forα i, βj ∈A,D( F
-i αi, F
-j βj) = P
+i αi,F
+j βj) =P
 i,j D(αi, βj), whereiandjrun over
 finite number of values and F denotes disjoint union.
 3. Normalisation:D(Ω,Ω) = 1
@@ -829,7 +829,7 @@ which is the quantum measure. Taking the equivalence class of vectors inFrelated
 zero norm, and taking the Cauchy completion, gives us the Histories Hilbert spaceH[30].
 DefinitionThe quantum vector measure is a map|·⟩:A→ Hsuch that
 1. Forα∈A,⟨α|α⟩=µ(α), whereµis the quantum measure on(Ω,A)
-2. For any finite collectionα i ∈A,i= 1, . . . n <∞such thatαi ∩α j =∅ ∀i̸=j
+2. For any finite collectionα i ∈A,i= 1, . . . n <∞such thatα i ∩α j =∅ ∀i̸=j
 |
 nG
 i
@@ -863,7 +863,7 @@ generic transition operator.
 As in the case of the CSG, we wish to impose appropriate version of the MSR, GC and BC,
 thus constraining the transition operators ˆAn. Any|c n⟩can be expressed as a string of transition
 operators acting on|Ω⟩
-|cn⟩= ˆAn−1 . . .ˆA1|Ω⟩ ≡ˆAγ(cn)|Ω⟩.(31)
+|cn⟩= ˆAn−1 . . . ˆA1|Ω⟩ ≡ ˆAγ(cn)|Ω⟩.(31)
 whereγ(c n) denotes the path inPfrom the single element causal set toc n.
 Markov Sum Rule (MSR):
 As we have already seen, additivity of the measure ensures the MSR. Explicitly,A
@@ -871,12 +871,12 @@ cyl(cn) =
 G
 i∈I(cn)
 ci
-n+1 ⇒ |cn⟩=
+n+1 ⇒ |c n⟩=
 X
 j∈J(c n)
 |cj
 n+1⟩,(32)
-where we use the convention|c n⟩ ≡ |cyl(cn)⟩. This implies that
+where we use the convention|c n⟩ ≡ |cyl(c n)⟩. This implies that
 |cn⟩=
 X
 j∈J(c n)
@@ -950,7 +950,7 @@ inductively one sees that the earlier stage transition operator ˆAm in turn dep
 on. This implies the following:
 Lemma 3.1.Letγ(c n) ={c 1, c2(cn). . . cn}denote the unique labelled path inPtoc n. Then
 using GC, any transition operator ˆAn can be constructed entirely from the gregarious operators
-ˆGm :|c m(cn)⟩ → |cg
+ˆGm :|c m(cn)⟩ → |c g
 m+1(cn)⟩, wherem≤n.
 We now show that the timid transitions in particular take on a useful form.
 Lemma 3.2.Letc n be annelement causal set withM(c n) ={e m1, em2, . . . emm}the set of its
@@ -969,7 +969,7 @@ n−ℓ )
 − ˆGn,(38)
 where ˆG(k1,...kℓ)
 n−ℓ denotes the gregarious transition operator from then−ℓelement causal setc n \
-{mk1,· · ·, mkℓ}.
+{mk1,· · ·, m kℓ}.
 Proof.Let bTn denote the timid transition operator fromc n and let ˆAj
 n denote a non-timid operator,
 withj∈ ¯J(c n), the index setJ(c n) without the timid transition. Using the MSR
@@ -1010,7 +1010,7 @@ mX
 k1<k2
 |ζk1
 \
-ζk2⟩+· · ·+ (−1)m−1|
+ζk2⟩+· · ·+ (−1) m−1|
 m\
 k=1
 ζk⟩
@@ -1026,14 +1026,14 @@ k1<k2,...kℓ
 ζkℓ⟩(41)
 Now the set
 
-ζk1 ∩. . .∩ζkℓ
+ζk1 ∩. . .∩ζ kℓ
 
 is also the (disjoint) union of all the cylinder sets of the children of
 cn for which the subset of maximal elements,{e mk1
 , . . . , emkℓ
 }is in the spectator set. Using Eqn.
 (15)
-|ζk1 ∩. . .∩ζkℓ⟩=
+|ζk1 ∩. . .∩ζ kℓ⟩=
 X
 j∈J (k1,...kℓ)
 |cj
@@ -1077,7 +1077,7 @@ n−ℓ , ˆG(k1···kℓ)
 n−ℓ ).(43)
 Inserting into Eqn. (42) after separating out the gregarious transition operator and using the
 property Eqn. (36)
-|ζk1 ∩. . .∩ζkℓ⟩=
+|ζk1 ∩. . .∩ζ kℓ⟩=
   X
 j∈ ¯J (k1,...kℓ)
 ˆAj
@@ -1110,7 +1110,7 @@ j∈ ¯J (k1,...kℓ)
 n−ℓ =I−G (k1,...kℓ)
 n−ℓ ,(45)
 i.e.,
-|ζk1 ∩. . .∩ζkℓ⟩=
+|ζk1 ∩. . .∩ζ kℓ⟩=
 
 eF( ˆGn,I−G (k1,...kℓ)
 n−ℓ , ˆG(k1···kℓ)
@@ -1181,8 +1181,8 @@ P ′n
 = Pm
 P ′m
 for
-non-vanishing transition probabilitiesP n, P′
-n, Pm, P′
+non-vanishing transition probabilitiesP n, P ′
+n, Pm, P ′
 m, or more generally as the product Bell causal-
 ity (PBC) [23]P nP ′
 m =P ′
@@ -1289,16 +1289,16 @@ version of Lemma 2.2 of [18]:
 Lemma 3.3.Every gregarious transition operator ˆGn = ˆQn.
 We now focus on the transitions from the antichaina n. In particular, consider the transition
 operator ˆA(1)
-n :|a n⟩ → |bn+1⟩where the new elemente n+1 inb n+1 has a single element to its past.
+n :|a n⟩ → |b n+1⟩where the new elemente n+1 inb n+1 has a single element to its past.
 For any 1≤m < n, ˆA(1)
 n has a Bell partner ˆA(1)
-m :|a m⟩ → |bm+1⟩. In particular, form= 1,
+m :|a m⟩ → |b m+1⟩. In particular, form= 1,
 19
 
 ===== PAGE 20 =====
 
 ˆA(1)
-1 :|a 1⟩ → |c2⟩, wherec 2 is the 2-element chain and ˆA(1)
+1 :|a 1⟩ → |c 2⟩, wherec 2 is the 2-element chain and ˆA(1)
 1 =I− ˆQ1. Using the related Bell pairs
 ( ˆA(1)
 n , ˆQn) and ( ˆA(1)
@@ -1445,14 +1445,14 @@ k ˆQn −k ˆQk ˆQk−1 ˆQ−1
 k ˆQn + k(k−1)
 2
 ˆQk ˆQk−2 ˆQ−1
-k ˆQn . . .(−1)k−1k ˆQk ˆQ1 ˆQ−1
+k ˆQn . . .(−1) k−1k ˆQk ˆQ1 ˆQ−1
 k ˆQn + (−1)k ˆQn
 = ˆQn ˆQ−1
 k ˆQn −k ˆQk ˆQk−1 ˆQ−1
 k + k(k−1)
 2
 ˆQn ˆQk ˆQk−2 ˆQ−1
-k . . .(−1)k−1k ˆQn ˆQk ˆQ1 ˆQ−1
+k . . .(−1) k−1k ˆQn ˆQk ˆQ1 ˆQ−1
 k + (−1)k ˆQn.(67)
 Since for allj < k
 ˆQk ˆQk−j ˆQ−1
@@ -1526,15 +1526,15 @@ n ( ˆB(1)
 n )−1 (75)
 i.e., these gregarious transition operators are related by conjugation. Proceeding this way, we see
 that if the operators ˆB(1)
-n , . . .ˆB(k)
+n , . . . ˆB(k)
 n lead to atomisation (see Fig 6), then ˆG(0)
 n is related to ˆQn by the
 conjugation
 ˆG(0)
 n = ˆB(1)
-n . . .ˆB(k)
+n . . . ˆB(k)
 n ˆQn( ˆB(k)
-n )−1 . . .(ˆB(1)
+n )−1 . . .( ˆB(1)
 n )−1 ≡ ˆS(α)
 n ˆQn( ˆS(α)
 n )−1.(76)
@@ -1568,7 +1568,7 @@ n = ˆ˜S(α) ˆQn
 n−1( ˆG(0)
 n−1)−1 ˆB(1)
 n−1( ˆG(1)
-n−1)−1 . . .ˆB(k)
+n−1)−1 . . . ˆB(k)
 n−1( ˆG(k)
 n−1)−1.(79)
 In turn, using NTOBC,
@@ -1581,7 +1581,7 @@ n−i−1)−1
 n−1( ˆG(0)
 n−1)−1 ˆB(0)
 n−2( ˆG(0)
-n−2)−1 . . .ˆB(0)
+n−2)−1 . . . ˆB(0)
 n−k−1( ˆG(0)
 n−k−1)−1.(80)
 22
@@ -1591,8 +1591,8 @@ n−k−1)−1.(80)
 Thus,
 |cn⟩= ˆB(0)
 n−1 ˆB(0)
-n−2 . . .ˆB(0)
-n−k−1 ˆQn−k . . .ˆQ1|Ω⟩= ˆΓα|Ω⟩(81)
+n−2 . . . ˆB(0)
+n−k−1 ˆQn−k . . . ˆQ1|Ω⟩= ˆΓα|Ω⟩(81)
 The pathαtherefore also determines the operator ˆΓα.
 As in the case of TOBC, we consider the transition from then-antichaina n to its childa (k,i)
 n+1, where
@@ -1982,9 +1982,9 @@ Using an atomisation pathα, therefore
 ˆG(0)
 n = ˆB(0)
 n−1 ˆB(1)
-n−1 . . .ˆB(k)
+n−1 . . . ˆB(k)
 n−1 ˆQn( ˆB(k)
-n−1)−1 . . .(ˆB(1)
+n−1)−1 . . .( ˆB(1)
 n−1)−1ˆ(B(0)
 n−1)−1 ≡ ˆSα ˆQn( ˆSα)−1.(112)
 Since the atomisation path is non-unique, for distinct pathsα,βwe have the commutation relation
@@ -2317,8 +2317,8 @@ the transition operators, this choice of ˆQi’s does not generate the CPOBC al
 The decoherence functional for two cylinder sets is given by
 D(cyl(cn),cyl(c m)) =⟨Ω| ˆA∗
 1 ˆA∗
-2 . . .ˆA∗
-n−1 ˆBm−1 . . .ˆB2 ˆB1|Ω⟩ ≡ ⟨Ω|ˆD(γ(c n), γ(cm))|Ω⟩(149)
+2 . . . ˆA∗
+n−1 ˆBm−1 . . . ˆB2 ˆB1|Ω⟩ ≡ ⟨Ω| ˆD(γ(c n), γ(cm))|Ω⟩(149)
 whereγ(c n) denotes the path inPfromc 1 toc n. In unitary quantum mechanics, the operators
 ˆAk are projection operators ˆAk =|x k⟩⟨xk|, and hence for two pathsγ 1, γ2, at the final time step,
 T=n−1,A ∗T BT =⟨γ 1(T)|γ 2(T)⟩=δ(γ 1(T)−γ 2(T)). If we are to mimic such a behaviour in
@@ -2655,7 +2655,7 @@ Next, using
 1 −4a 2
 2
  2
-+ 2ia1a2σ3
++2ia1a2σ3
 
 63a6
 1a2
@@ -2676,7 +2676,7 @@ Next, using
 1 −4a 2
 2
  2
-− 2a1σ1
+−2a1σ1
 
 162a6
 1a4

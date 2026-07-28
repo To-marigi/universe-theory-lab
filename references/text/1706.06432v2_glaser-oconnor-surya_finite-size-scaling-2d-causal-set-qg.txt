@@ -13,10 +13,10 @@ We study theN-dependent behaviour of2dcausal set quantum gravity. This theory
 is known to exhibit a phase transition as the analytic continuation parameterβ, akin to
 an inverse temperature, is varied. Using a scaling analysis we ﬁnd that the asymptotic
 regime is reached at relatively small values ofN. Focussing on the2d causal set action
-S, we ﬁnd thatβ⟨S⟩scales likeNνwhere the scaling exponentνtakes diﬀerent values
-on either side of the phase transition. Forβ >βc we ﬁnd thatν= 2 which is consistent
-with our analytic predictions for a non-continuum phase in the largeβregime. For
-β < βc we ﬁnd thatν= 0, consistent with a continuum phase of constant negative
+S, we ﬁnd thatβ⟨S⟩ scales likeNν where the scaling exponentν takes diﬀerent values
+on either side of the phase transition. Forβ >βc we ﬁnd thatν = 2 which is consistent
+with our analytic predictions for a non-continuum phase in the largeβ regime. For
+β < βc we ﬁnd thatν = 0, consistent with a continuum phase of constant negative
 curvature thus suggesting a dynamically generated cosmological constant. Moreover,
 we ﬁnd strong evidence that the phase transition is ﬁrst order. Our results strongly
 suggest that the asymptotic regime is reached in2d causal set quantum gravity for
@@ -62,7 +62,7 @@ version of the Einstein-Hilbert action — the Benincasa-Dowker (BD) actionS, wh
 corporates this non-locality. The quantum partition function or sum-over-histories over the
 space of ﬁnite element causal sets can thus be constructed, with each causal set weighted by
 the quantum measureexp(iS/ℏ). This deﬁnes a theory of quantum gravity [2].
-By introducing a parameterβakin to the inverse temperature this quantum partition
+By introducing a parameterβ akin to the inverse temperature this quantum partition
 function can be rendered into a Gibbs ensemble of ﬁnite element causal sets weighted by
 the BD action [8, 2]. This makes the theory amenable to numerical analysis and has yielded
 interesting results [2, 3, 4]. However, computational constraints arise when working with
@@ -83,9 +83,9 @@ CST by examining theN dependence of various physically relevant quantities1. Ext
 ing to largeN helps in acertaining macroscopic properties of the asymptotic regime, which
 can be relevant for the continuum approximation as well as for phenomenology.
 Using MCMC methods it was shown in [2] that 2d CST exhibits two distinct phases as
-one varies overβ∈R+. The high temperature phase is a continuum-like phase which we
-refer to as theΠ + phase and the other is a crystalline or non-continuum like phase, we label
-Π−which occurs at low temperatures. The continuum like behaviour is consistent with the
+one varies overβ∈ R+. The high temperature phase is a continuum-like phase which we
+refer to as theΠ+ phase and the other is a crystalline or non-continuum like phase, we label
+Π− which occurs at low temperatures. The continuum like behaviour is consistent with the
 inﬁnite temperature limit in which the system is known to be dominated by causal sets that
 are approximated by 2d Minkowski spacetime [9, 10]. The low temperature behaviour on the
 other hand is a new phase characterised by causal sets with very high graph connectivity,
@@ -98,19 +98,19 @@ this paper to ﬁll in this gap by doing a ﬁnite size scaling analysis and obt
 the process we are able to extract interesting physical information about the detailed nature
 of the phases and ﬁnd strong evidence that the transition is ﬁrst order.
 Our principal results are
-•For a ﬁxed non-locality parameterϵ, the phase transition is shown to occur at a critical
-value ¯βc of the rescaled inverse temperature¯β=βN, where ¯βc varies withϵas ¯βc∼1
+• For a ﬁxed non-locality parameterϵ, the phase transition is shown to occur at a critical
+value ¯βc of the rescaled inverse temperature¯β =βN, where ¯βc varies withϵ as ¯βc∼ 1
 ϵ2
 in the largeN limit.
-•We ﬁnd that for high, but ﬁnite, temperature the continuum phase is characterised by
-⟨S⟩∝N and corresponds to a constant negative curvature in the continuum approxi-
+• We ﬁnd that for high, but ﬁnite, temperature the continuum phase is characterised by
+⟨S⟩∝ N and corresponds to a constant negative curvature in the continuum approxi-
 mation. We interpret this phase as an emergent anti-de Sitter space, which at inﬁnite
 temperature becomes Minkowski space.
-•In the small temperature phase we ﬁnd that⟨S⟩∝N 2, which is consistent with our
+• In the small temperature phase we ﬁnd that⟨S⟩∝ N 2, which is consistent with our
 analysis that the zero temperature limit should be dominated by non-manifoldlike
 bilayered posets.
-•We estabilish that the two phases are separated by aﬁrst orderphase transition.
-•The system enters the asymptotic regime for2d CST forN∼65.
+• We estabilish that the two phases are separated by aﬁrst orderphase transition.
+• The system enters the asymptotic regime for2d CST forN∼ 65.
 1Since discreteness is fundamental in CST, however, the attitude to ﬁnite size eﬀects diﬀers from theories
 in which discretisation is used as an ultraviolet regulator. Rather, the situation is similar to condensed
 matter physics where a ﬁnite value ofN, however small, isnot unphysical.
@@ -120,15 +120,15 @@ matter physics where a ﬁnite value ofN, however small, isnot unphysical.
 
 Our paper is organised as follows. In Section 2 we describe2d CST in some detail and
 review the results of [2]. In Section 3 we deﬁne the largeN asymptotic scaling exponents
-for⟨S⟩on either side of the phase transition. We give analytic arguments for what the
+for⟨S⟩ on either side of the phase transition. We give analytic arguments for what the
 exponent should be in the limit of largeβ, based on the analysis of the action. In Section
 4 we present the main results of this paper. We have generated an extensive data set using
-MCMC simulations forN ranging from20 to 90 and forϵranging from0.1 to 0.5, as shown
+MCMC simulations forN ranging from20 to 90 and forϵ ranging from0.1 to 0.5, as shown
 in Table 1. This allows us to perform a detailed study and obtain not only the largeN
-scaling of⟨S⟩before and after the transition, but also an estimate for the function⟨S⟩itself.
+scaling of⟨S⟩ before and after the transition, but also an estimate for the function⟨S⟩ itself.
 We ﬁrst show that the estimated critical inverse temperatureβc scales likeN−1. Using the
-rescaled inverse temperature¯β=βN, we ﬁnd that for the partition functionZ, lnZ =−βF
-scales as−¯β¯FN ν± (Eqn 10) with the scaling exponentsν+ = 1, andν−= 0 on either side of
+rescaled inverse temperature¯β =βN, we ﬁnd that for the partition functionZ, lnZ =−βF
+scales as− ¯β ¯FN ν± (Eqn 10) with the scaling exponentsν+ = 1, andν− = 0 on either side of
 the phase transition. Hence we ﬁnd thatlnZ is scale invariant before the phase transition
 and is extensive, i.e., scales withN, after the phase transition. Finally we demonstrate that
 the transition is of ﬁrst order. In Section 5 we discuss some open questions.
@@ -136,60 +136,60 @@ the transition is of ﬁrst order. In Section 5 we discuss some open questions.
 2.1 Mathematical Preliminaries
 WeremindthereaderofsomekeydeﬁnitionsinCSTandreferthemtothereviews[11,12,13]
 for more details. Acausal set C is a locally ﬁnite partially ordered set. ThusC is a set with
-a relation⪯which is (i) reﬂexive:x⪯x, (ii) transitive:x⪯y and y⪯z implies x⪯z (iii)
-acyclic: x,y∈Cand x⪯y⪯x⇒x =y (iv) locally ﬁnite:|Fut(x)∩Past(y)|<∞, where
-Fut(x)≡{z|x≺z}and Past(x)≡{z|z≺x}.
+a relation⪯ which is (i) reﬂexive:x⪯x, (ii) transitive:x⪯y and y⪯z implies x⪯z (iii)
+acyclic: x,y∈C and x⪯y⪯x⇒ x =y (iv) locally ﬁnite:|Fut(x)∩ Past(y)|<∞, where
+Fut(x)≡{z|x≺z} and Past(x)≡{z|z≺x}.
 The causal set hypothesis assumes that continuum spacetime is replaced by a discrete
 substratum, the causal set. A causal set C is said to have a continuum approximation
 to a spacetime (M,g ) if C can be obtained from a Poisson sprinkling into(M,g ) where
 Pv(n) = 1
-n!(ρV)ne−ρVis the probability of sprinklingn elements into a spacetime volumeV.
+n!(ρV )ne−ρV is the probability of sprinklingn elements into a spacetime volumeV.
 Importantly, the assumption of a fundamental discreteness implies that the continuum
 limit itself is unphysical; it is only the continuum approximation that is physically relevant.
 Since discreteness is not used as a regulator for the continuum, ﬁnite size causal sets are
 not unphysical. The largeN or asymptotic regime is phenomenologically interesting but not
 equivalent to the continuum regime.
 We now write down some useful deﬁnitions.x,y ∈C are said to belinked if x≺y and
-∄ z∈C such thatx≺z≺y. A link is therefore an irreducible relation which cannot be
+∄ z∈ C such thatx≺ z≺ y. A link is therefore an irreducible relation which cannot be
 obtained by transitive closure. A setA with no relations between the elements is called an
-antichain while a setB≡{e1,...,eN}which is totally ordered,e1≺e2≺···≺eN is called
+antichain while a setB≡{e1,...,e N} which is totally ordered,e1≺e2≺···≺ eN is called
 a chain.
-An intervalI(x,y )≡{z|x≺z≺y}is said to be ann-element interval if|I(x,y )|= n.
+An intervalI(x,y )≡{ z|x≺ z≺ y} is said to be ann-element interval if|I(x,y )| = n.
 4
 
 ===== PAGE 5 =====
 
-Thus if x≺y is a link, thenI(x,y ) is a zero interval. The abundance Nn of n-element
+Thus if x≺ y is a link, thenI(x,y ) is a zero interval. The abundance Nn of n-element
 intervals inC is the number of such intervals inC. Nn is therefore an important covariant,
 or label independent, observable inC.
 2.2 2d CST
 The 2d BD action is
-S(C,ϵ) = 4ϵ(N−2ϵ
+S(C,ϵ ) = 4ϵ(N− 2ϵ
 N−2∑
 n=0
-Nnf(n,ϵ)). (1)
+Nnf(n,ϵ )). (1)
 where Nn is the number ofn element intervals and
-f(n,ϵ) = (1−ϵ)n
+f(n,ϵ ) = (1−ϵ)n
 (
-1−2ϵn
-(1−ϵ) + ϵ2n(n−1)
+1− 2ϵn
+(1−ϵ) + ϵ2n(n− 1)
 2(1−ϵ)2
 )
 . (2)
-This action depends on a non-locality scalel > lp, the Planck scale, and whereϵ= l2
+This action depends on a non-locality scalel > lp, the Planck scale, and whereϵ = l2
 p/l2∈
-(0, 1]. This introducesϵas a new free parameter or “coupling” that suppresses the ﬂuctua-
+(0, 1]. This introducesϵ as a new free parameter or “coupling” that suppresses the ﬂuctua-
 tions in the BD action in the continuum approximation.
 In [14, 2] a two dimensional restriction of CST was deﬁned by limiting the set of all causal
 sets to the setΩ(N), ofN element “2d-orders”. These are causal sets that can be embedded
 into a causal diamond or Alexandrov interval inM2, via an order preserving map. Since
 the map need not be obtained from a Poisson sprinkling, not all causal sets inΩ(N) have a
 continuum approximation.
-Letusdeﬁneourconﬁgurationsmoreprecisely. Beginningwitha“baseset” S = (1,...,N)
-let U = (u1,u 2,...,uN) and V = (v1,v 2,...,vN), such thatui,vi∈S, withui = uj⇒i = j,
-and vi = vj⇒i = j. U and V are therefore “totally ordered” by the integers, since every
-element is related to every other element. The2d order C≡U∩V, withei≡(ui,vi)∈C
-where ei≺ej in C iﬀui <u j and vi <v j [9, 10, 14].
+Letusdeﬁneourconﬁgurationsmoreprecisely. Beginningwitha“baseset” S = (1,...,N )
+let U = (u1,u 2,...,u N) and V = (v1,v 2,...,v N), such thatui,vi∈ S, withui = uj⇒ i = j,
+and vi = vj⇒ i = j. U and V are therefore “totally ordered” by the integers, since every
+element is related to every other element. The2d order C≡U∩V, withei≡ (ui,vi)∈C
+where ei≺ej in C iﬀ ui <u j and vi <v j [9, 10, 14].
 Every 2d order embeds via an order preserving map intoM2 since theU,V orders pro-
 vide a set of lightcone coordinates(ui,vi) for each elementei. Conversely, every causal set
 obtained from a Poisson sprinkling into a topologically trivial interval in a2d spacetime
@@ -211,15 +211,15 @@ i
 
 ===== PAGE 6 =====
 
-where S(C,ϵ) is the 2d BD action (Eqn 1) with non-locality parameterϵ. Introducing an
-analytic continuation parameterβakin to the inverse temperature, we deﬁne a complex
+where S(C,ϵ ) is the 2d BD action (Eqn 1) with non-locality parameterϵ. Introducing an
+analytic continuation parameterβ akin to the inverse temperature, we deﬁne a complex
 parameter family of partition functions
-Z(β,N)≡
+Z(β,N )≡
 ∑
 C∈Ω
 e−β
 ℏS(C,ϵ). (4)
-Hereβ=−iis the quantum partition function whileβ∈R+ is a statistical partition function
+Hereβ =−iis the quantum partition function whileβ∈ R+ is a statistical partition function
 (and a Gibbs ensemble of causal sets), which is amenable to numerical analysis. Note that
 the transition from the quantum to the statistical occurs without changing the sample space
 of causal sets, and hence the intrinsically Lorentzian character of conﬁgurations. This marks
@@ -227,7 +227,7 @@ an important contrast with Euclidean methods and the usual Wick rotation procedu
 renders the signature Euclidean, thus removing all trace of causality.
 The equilibrium expectation value for any observableO in the Gibbs ensemble (Equation
 3) is given by
-⟨O⟩β= 1
+⟨O⟩β = 1
 Z
 ∑
 C∈Ω
@@ -235,7 +235,7 @@ O(C) e−β
 ℏS(C,ϵ) (5)
 and can be numerically obtained using Markov Chain Monte Carlo methods. In [2] the
 Markov Chain was generated via the following exchange move. Starting with any2d order
-C =U∩V with U = (u1,u 2,...,uN),V = (v1,v 2,...,vN), a pair of distinct elements(i,j )∈
+C =U∩V with U = (u1,u 2,...,u N),V = (v1,v 2,...,v N), a pair of distinct elements(i,j )∈
 S×S,i̸=j are picked at random. Then pickingU orV again at random, eitherui anduj or
 vi andvj are exchanged (doing both will give back the original conﬁguration). For example,
 starting with the 4-element chainU = (1, 2, 3, 4),V = (1, 2, 3, 4), ifi = 2,j = 3 are picked
@@ -247,16 +247,16 @@ the action, the abundance of intervalsNn, the number of maximal and minimal elem
 as well as the ordering fraction, whose inverse gives the Myrheim-Meyer estimate of the
 continuum spacetime dimension.⟨O⟩β=0 for all these observables gave values consistent with
 the random2d orders that dominate in the asymptotic limit [9, 10], which are approximated
-by 2d Minkowski spacetime. Asβis increased, this continuum-like phase gives way, after a
+by 2d Minkowski spacetime. Asβ is increased, this continuum-like phase gives way, after a
 critical valueβc, to a non-manifold like phase characterised by “layered” causal sets shown in
 Figure 1. The phases are strikingly similar to what one might expect in an Ising model: at
 low temperatures (β >βc) the dominant phase is very regular, or crystalline, which resembles
 the ordered phase, while at high temperatures (β < βc) it is random, which resembles the
 disordered phase.
-In Figure 2 we show results from new simulations, which plot⟨S⟩as a function ofβfor
+In Figure 2 we show results from new simulations, which plot⟨S⟩ as a function ofβ for
 various values ofN andϵ. The phase transition is clearly visible even atN = 30. For a ﬁxed
 ϵ, as one varies overN the curves show a “sharpening” of the transition asN increases.
-In [2] while several values ofN andϵwere explored, the most extensive simulations were
+In [2] while several values ofN andϵ were explored, the most extensive simulations were
 6
 
 ===== PAGE 7 =====
@@ -281,18 +281,18 @@ u
 50
 60
 70v
-Figure 1: Examples of causal sets before (β= 0.008) and after (β= 0.751) the phase
-transition forN = 70 ϵ= 0.2.
+Figure 1: Examples of causal sets before (β = 0.008) and after (β = 0.751) the phase
+transition forN = 70 ϵ = 0.2.
 done only for a few values ofN and ϵ. The existing data was insuﬃcient to deduce scaling
 behaviour with any conﬁdence. In order to do so, we have for this work generated a far
 more extensive and comprehensive data set, which we have analysed along with the existing
-data. We ﬁnd that plotting⟨S⟩vs βN(see Figure 11) collapses the transition and the high
-temperature curve of⟨S⟩, while plotting⟨S⟩/N2 vsβNcollapses the transition and the low
+data. We ﬁnd that plotting⟨S⟩ vs βN (see Figure 11) collapses the transition and the high
+temperature curve of⟨S⟩, while plotting⟨S⟩/N2 vsβN collapses the transition and the low
 temperature curve of⟨S⟩. These prescriptions in general give excellent collapse on either
 side of the phase transition. Focusing on the high temperature continuum phase, we ﬁnd
 that continuum phase does not correspond to ﬂat spacetime, but instead has a non-zero,
 negative cosmological constant which decreases linearly withβ, from the random2d order
-at β= 0, up to the phase transition.
+at β = 0, up to the phase transition.
 7
 
 ===== PAGE 8 =====
@@ -326,8 +326,8 @@ at β= 0, up to the phase transition.
 -200
 -100
 〈S〉
-Figure 2: The ﬁrst ﬁgure shows⟨S⟩v/s βfor variousN values, for ﬁxedϵ= 0.21. The
-second ﬁgure shows the same for variousϵvalues for ﬁxedN = 70. The error bars on these
+Figure 2: The ﬁrst ﬁgure shows ⟨S⟩ v/s β for variousN values, for ﬁxedϵ = 0.21. The
+second ﬁgure shows the same for variousϵ values for ﬁxedN = 70. The error bars on these
 graphs are very small, and hence appear as horizontal lines.
 8
 
@@ -335,44 +335,44 @@ graphs are very small, and hence appear as horizontal lines.
 
 3 Scaling
 Before embarking on analysing the data, we ﬁrst lay the ground for our scaling analysis. We
-are interested in the scaling behaviour of the observable⟨S⟩from which we can glean the
-scaling of the speciﬁc heatC. In terms of the free energyβF=−lnZ
-β⟨S⟩=β∂(βF)
-∂β, C =β2(⟨S−⟨S⟩⟩)2 =−β2∂2(βF)
-∂β2 . (6)
-3.1 Scaling in the small and large βlimit: an analytic argument
-Atβ= 0,⟨S⟩isdominatedbytheensembleof2drandomorders[9,10]where ⟨S⟩∼4[16,17].
-Hence there is no scaling withN at β= 0. Assuming continuity of the partition function
-for small enoughβthe density of states will still dominate over the action. Indeed, Figure
-2 indicates that⟨S⟩is in fact a continuous function ofβ, suggesting that the deviation from
+are interested in the scaling behaviour of the observable⟨S⟩ from which we can glean the
+scaling of the speciﬁc heatC. In terms of the free energyβF =− lnZ
+β⟨S⟩ =β∂(βF )
+∂β , C =β2(⟨S−⟨S⟩⟩)2 =−β2∂2(βF )
+∂β 2 . (6)
+3.1 Scaling in the small and large β limit: an analytic argument
+Atβ = 0,⟨S⟩isdominatedbytheensembleof2drandomorders[9,10]where ⟨S⟩∼ 4[16,17].
+Hence there is no scaling withN at β = 0. Assuming continuity of the partition function
+for small enoughβ the density of states will still dominate over the action. Indeed, Figure
+2 indicates that⟨S⟩ is in fact a continuous function ofβ, suggesting that the deviation from
 ﬂat spacetime and the continuum, if any, should occur continuously. If the deviation from
 ﬂatness is approximately uniform for small enoughβ, with spatial variations in the curvature
 being picked up only at largerβ, then one could expectS−4∝N. This comes from a direct
 comparison with the continuum action for a constant curvature spacetime1
 16πGRV, where
 R is the scalar curvature, andV the spacetime volume. In this case we would expect that
-for small enoughβthe scaling exponent is either0 or 1. Indeed, no other scaling exponent
+for small enoughβ the scaling exponent is either0 or 1. Indeed, no other scaling exponent
 has an obvious continuum or geometric interpretation.
-In the opposite limit of largeβon the other hand, the action dominates the density of
+In the opposite limit of largeβ on the other hand, the action dominates the density of
 states, and the dominant conﬁguration is the one with the smallest energy. Now, the BD
 action (1) is not positive deﬁnite and its sign depends on the details of the causal set. The
-function f(n,ϵ) (Eqn (2)) crosses over from being positive at smalln, to negative for an
+function f(n,ϵ ) (Eqn (2)) crosses over from being positive at smalln, to negative for an
 intermediate range of values ofn and then goes back to being positive. The precise location
-of the cross-over depends onϵas shown in Figure 3. In particular,f(n,ϵ) is positive and
+of the cross-over depends onϵ as shown in Figure 3. In particular,f(n,ϵ ) is positive and
 takes on its largest value whenn = 0, i.e., for the links. This implies that the lowest energy
 causal sets have the the largest number of links. However, this energetic component has to
 compete with the density of states at ﬁniteβ. At smallβ, the density of caual sets dominates
 the action. Indeed, the2d random orders do not have the largest number of linksN0 for a
-givenN, and neither does the ensemble at small but non-zeroβ[2].
+givenN, and neither does the ensemble at small but non-zeroβ [2].
 The class of2d orders with the largest number of links for a givenN are bilayer posets,
 i.e., those withN
 2 elements in each of the two layers, and such that every element in a layer
 is linked to all the elements in the other layer, as illustrated in Figure 4. For such posets,
 N0 = N 2
-4 , with Nn = 0 for alln > 0. The action has the simple formS = 4ϵN−2ϵ2N 2
+4 , withNn = 0 for alln > 0. The action has the simple formS = 4ϵN− 2ϵ2N 2
 which scales like∼N 2 in the largeN limit.
 We can now compare the contribution to the partition function from the random orders
-Zr(β,N,ϵ) to that from these maximally connected bilayer posetsZb(β,N,ϵ). Ifρr,b(β,N,ϵ)
+Zr(β,N,ϵ ) to that from these maximally connected bilayer posetsZb(β,N,ϵ ). Ifρr,b(β,N,ϵ )
 9
 
 ===== PAGE 10 =====
@@ -385,9 +385,9 @@ n
 0.5
 1.0
 f(n,ϵ)
-Figure 3: The function f(n,ϵ) smears the
+Figure 3: The function f(n,ϵ ) smears the
 contribution to the action from diﬀerent
-n-element intervals. Larger ϵmeans less
+n-element intervals. Larger ϵ means less
 smearing.
 u v
 Figure 4: A bilayer causet with each element
@@ -395,24 +395,24 @@ in the ﬁrst layer linked to each elements in
 the second layer has the maximal possible
 number of links.
 denote the respective density of states
-Zr(β,N,ϵ) ≡ρr(β,N,ϵ)∼N! (7)
-Zb(β,N,ϵ) ≡ρb(β,N,ϵ)e+2βϵ2N 2
+Zr(β,N,ϵ ) ≡ ρr(β,N,ϵ )∼N! (7)
+Zb(β,N,ϵ ) ≡ ρb(β,N,ϵ )e+2βϵ2N 2
 (8)
-where we have used the results of [9, 10] forρr(β= 0,N ) and normalised by the common
+where we have used the results of [9, 10] forρr(β = 0,N ) and normalised by the common
 factor e−4β. Forβϵ2 large enough,Zb will clearly dominateZr for largeN irrespective ofρb.
 This analysis suggests strongly that the dominant contribution to the partition function
-in the largeβlimit comes from bilayer posets and therefore that⟨S⟩∼N 2 for largeβ.
+in the largeβ limit comes from bilayer posets and therefore that⟨S⟩∼ N 2 for largeβ.
 3.2 Consistency
-The scaling of⟨S⟩and C must be consistent with the fact that they are both derived from
-the free energyF (Eqn (6)). In particular, away from the phase transition,β⟨S⟩andC must
+The scaling of⟨S⟩ and C must be consistent with the fact that they are both derived from
+the free energyF (Eqn (6)). In particular, away from the phase transition,β⟨S⟩ andC must
 have the same scaling exponents asβF.
 To begin with, given thatβc seems to change withN in Figure 2, let us assume an
-N-dependence ofβand deﬁne our ﬁrst scaling exponent
-¯β=βNλ, (9)
-where ¯βis scale independent to leading order in N. Then to leading order the scaling
+N-dependence ofβ and deﬁne our ﬁrst scaling exponent
+¯β =βNλ, (9)
+where ¯β is scale independent to leading order in N. Then to leading order the scaling
 exponent for the free energy is given by
-βF∼¯β¯FN ν, (10)
-where ¯F is independent ofN. νis therefore also the scaling exponent forβ⟨S⟩and C.
+βF∼ ¯β ¯FN ν, (10)
+where ¯F is independent ofN. ν is therefore also the scaling exponent forβ⟨S⟩ and C.
 10
 
 ===== PAGE 11 =====
@@ -429,14 +429,14 @@ where ¯F is independent ofN. νis therefore also the scaling exponent forβ⟨S
 2000
 C
 Figure 5: AsN increases the peak in the speciﬁc heatC grows larger and sharper. The plot
-is forϵ= 0.21.
-The scaling of the critical temperatureβc(N,ϵ) withN should giveλ, and the scaling of
-β⟨S⟩, ν. In general, we should expect a diﬀerent scaling forβ⟨S⟩(or βF) on either side of
-the phase transition. Let Π±refer to the phasesβ <(>)βc, andν±the respective critical
+is forϵ = 0.21.
+The scaling of the critical temperatureβc(N,ϵ ) withN should giveλ, and the scaling of
+β⟨S⟩, ν. In general, we should expect a diﬀerent scaling forβ⟨S⟩ (or βF) on either side of
+the phase transition. Let Π± refer to the phasesβ <(>)βc, andν± the respective critical
 exponents.
-While the scaling exponents ofC are alsoν±away from the phase transition,at the phase
+While the scaling exponents ofC are alsoν± away from the phase transition,at the phase
 transition the scaling depends on whether the transition is continuous or discontinuous.
-For a ﬁrst order phase transition the ﬁrst derivative of the free energy and hence⟨S⟩is
+For a ﬁrst order phase transition the ﬁrst derivative of the free energy and hence⟨S⟩ is
 discontinuous. Figures 2 suggests this is a fair guess for our system since asN increases
 the transition becomes sharper, and C develops a singularity at the transition, which is
 consistent with Figure 5. Moreover we detect phase coexistence in a small region around the
@@ -451,8 +451,8 @@ for a second order phase transition the two begin to merge. Indeed, this is what
 shows as we will demonstrate in Section 4.
 The nature of the phase transition aﬀects the scaling ofC withN at the phase transition.
 For a second order phase transition, since the distribution goes over to a single Gaussian, the
-scaling ofC is the same as that ofβ⟨S⟩in this regime. This also means that the scaling of
-β⟨S⟩must be the same across the transition. However, this is not true for a ﬁrst order phase
+scaling ofC is the same as that ofβ⟨S⟩ in this regime. This also means that the scaling of
+β⟨S⟩ must be the same across the transition. However, this is not true for a ﬁrst order phase
 11
 
 ===== PAGE 12 =====
@@ -471,67 +471,67 @@ S
 20
 45
 70
-Figure 6: The coexistence of diﬀerent phases at the phase transition for ﬁxedϵ= 0.2,
+Figure 6: The coexistence of diﬀerent phases at the phase transition for ﬁxed ϵ = 0.2,
 N = 20, 45, 70 with the Markov chain jumping between the two phases. With largerN the
 diﬀerence in action of the regions becomes larger and jumps become less frequent, but more
 pronounced.
 transition, where the coexistence of phases is characterised by two well separated Gaussians,
 each with a given mean and variance. The probability distribution for any observablex at
-a givenβis therefore
-P (x) =p+(β)PG(x,µ+,σ+,β) +p−(β)PG(x,µ−,σ−,β), (11)
-where PG(x,µ±,σ±,β) are themselves Gaussians with meanµ±and standard deviationσ±.
-p±(β) are the relative frequency conﬁgurations inπ±in the ensemble, at a givenβ. For
+a givenβ is therefore
+P (x) =p+(β)PG(x,µ +,σ +,β ) +p−(β)PG(x,µ−,σ−,β ), (11)
+where PG(x,µ±,σ±,β ) are themselves Gaussians with meanµ± and standard deviationσ±.
+p±(β) are the relative frequency conﬁgurations inπ± in the ensemble, at a givenβ. For
 β < βc away from the transition,p−(β) goes to zero, and simiarly forβ > βc, again away
 from the transition,p+(β) goes to zero so that away from the phase transition, Gaussianity
 is restored.
 At (and near) a ﬁrst order phase transition the deviation from Gaussianity, Eqn (11)
 aﬀects the scaling behaviour. For the actionS,
-⟨S⟩=p+⟨S+⟩+p−⟨S−⟩, (12)
+⟨S⟩ =p+⟨S+⟩ +p−⟨S−⟩, (12)
 while the speciﬁc heat
-C =p+p−(β⟨S+⟩−β⟨S−⟩)2 +p+βC+ +p−βC−. (13)
-where⟨S±⟩andC±are the averageS andC in Π±, respectively. Given the scaling on either
+C =p+p−(β⟨S+⟩− β⟨S−⟩)2 +p+βC+ +p−βC−. (13)
+where⟨S±⟩ andC± are the averageS andC in Π±, respectively. Given the scaling on either
 side of the phase transition
-β⟨S±⟩∼β⟨¯S±⟩Nν± (14)
+β⟨S±⟩∼ β⟨ ¯S±⟩Nν± (14)
 we expect
-C±(β,N,ϵ)∼¯C±( ¯β,ϵ)Nν±. (15)
+C±(β,N,ϵ )∼ ¯C±( ¯β,ϵ )Nν±. (15)
 12
 
 ===== PAGE 13 =====
 
 On the other hand, Eqn (13) implies that
-C(β,N,ϵ)∼¯C( ¯β,ϵ)N 2ν. (16)
-where νdenotes the larger ofν±.
+C(β,N,ϵ )∼ ¯C( ¯β,ϵ )N 2ν. (16)
+where ν denotes the larger ofν±.
 4 Results
-Our MCMC code was used to generate⟨S⟩for the values ofN and ϵgiven in Table 1. For
-each N,ϵthere were at a minimum,35 values ofβthat were explored, so that the total
+Our MCMC code was used to generate⟨S⟩ for the values ofN and ϵ given in Table 1. For
+each N,ϵ there were at a minimum,35 values ofβ that were explored, so that the total
 number of data points generated was over6000. Moreover, for each data point there were
-20, 000 sweeps, each sweep havingN(N−1)/2 attempted MCMC moves. These simulations
+20, 000 sweeps, each sweep havingN(N− 1)/2 attempted MCMC moves. These simulations
 were done on the HPC at the Raman Research Institute.
-The ﬁrst set of simulations were done overβvalues evenly spread out fromβ= 0 to
+The ﬁrst set of simulations were done overβ values evenly spread out fromβ = 0 to
 the maximum possibleβ >βc, this being determined by thermalisation times. The next set
-of simulations was focused on the critical region. For someN,ϵvalues we even did a third
+of simulations was focused on the critical region. For someN,ϵ values we even did a third
 reﬁnement. Each set of simulations took several weeks on the RRI HPC cluster. The aim
 was to span the parameter space rather than focus on ﬁxedN and ϵ.
-Importantly, our data shows that thequalitative behaviour is unchanged asN and ϵare
-varied with the appearance of a phase transition from one distinct phase into another asβis
-varied. Figure 2 uses this new data giving⟨S⟩as a function ofβfor both a ﬁxedϵ(= 0.21)
+Importantly, our data shows that thequalitative behaviour is unchanged asN and ϵ are
+varied with the appearance of a phase transition from one distinct phase into another asβ is
+varied. Figure 2 uses this new data giving⟨S⟩ as a function ofβ for both a ﬁxedϵ(= 0.21)
 and varyingN, and also for ﬁxedN(= 70) and varyingϵ. From these it is apparent that
-for ﬁxedϵthe critical inverse temperatureβc decreases withN, and similarly for ﬁxedN,
+for ﬁxedϵ the critical inverse temperatureβc decreases withN, and similarly for ﬁxedN,
 it decreases withϵ. These graphs show a strong hint of scaling, but it is clear that this is
 non-trivial. A seeming worry is that asN increases,βc goes to0, so that the phase transition
 appears to vanish in the asymptotic regime. However, we now show that when rescaled as
-¯β=βN, the rescaled ¯βc rapidly converges to a ﬁxed value withN.
+¯β =βN, the rescaled ¯βc rapidly converges to a ﬁxed value withN.
 We note that in order for the BD action to yield the right continuum approximation,
-ϵmust be large enough for a givenN, otherwise the non-locality scalelp/√ϵwill exceed
+ϵ must be large enough for a givenN, otherwise the non-locality scalelp/√ϵ will exceed
 the IR cut oﬀ. In this case, the BD action will not yield the Einstein Hilbert action in the
 continuum approximation and hence is not quantum gravity as we have deﬁned it. Thus
-there exists a smallestϵ0 for everyN. The expectation is thatϵ0(N)∼N−c for c >0, so
-that ϵ0(N)→0 as N→∞. In analysing our data this cut-oﬀ was taken into account.
+there exists a smallestϵ0 for everyN. The expectation is thatϵ0(N)∼ N−c for c >0, so
+that ϵ0(N)→ 0 as N→∞ . In analysing our data this cut-oﬀ was taken into account.
 13
 
 ===== PAGE 14 =====
 
-Table 1: Values ofN and ϵused in our analysis
+Table 1: Values ofN and ϵ used in our analysis
 N ϵ
 30 0.1 0.11 0.12 0.13 0.14 0.15 0.16 0.17 0.18 0.19
 0.2 0.21 0.22 0.23 0.24 0.25 0.3 0.35 0.4 0.5
@@ -560,12 +560,12 @@ N ϵ
 
 4.1 Scaling of β
 We estimateβc as the location of the maxima of the (simulated) value of the speciﬁc heat
-C. Clearly, the real maximum could lie at a value ofβwhich we did not simulate and hence
-it is important to assess the error∆βc. We take this to be the largest interval on theβaxis
+C. Clearly, the real maximum could lie at a value ofβ which we did not simulate and hence
+it is important to assess the error∆βc. We take this to be the largest interval on theβ axis
 which containsβc, such that the errors inC of the end point values of the interval overlap
 with the errors inC at βc. We illustrate this in 7.
-Our data suggests a scalingβc∼1
-Nϵ2 as shown in Figure 8. Assuming
+Our data suggests a scalingβc∼ 1
+Nϵ 2 as shown in Figure 8. Assuming
 βc = b(ϵ)
 N + c(ϵ)
 N 2 +O( 1
@@ -573,13 +573,13 @@ N 3 ), (17)
 we ﬁnd ﬁts forb(ϵ) and c(ϵ) as shown in Figs 9,
 b(ϵ) = 1.66(±0.03)
 ϵ2 , c (ϵ) = 4.09(±0.50)
-ϵ3 −27.77(±2.45)
+ϵ3 − 27.77(±2.45)
 ϵ2 (18)
 Using these estimates forb(ϵ) and c(ϵ), we ﬁnd very good ﬁt with the data as shown in
-Figure 10. Thus, to leading order, we can deﬁne the scale invariant temperature¯β∼βN.
-Replotting⟨S⟩v/s ¯βwe ﬁnd a strong convergence to¯βc as N increases as shown in Figure
+Figure 10. Thus, to leading order, we can deﬁne the scale invariant temperature¯β∼ βN.
+Replotting⟨S⟩ v/s ¯β we ﬁnd a strong convergence to¯βc as N increases as shown in Figure
 11.
-This yields the ﬁrst exponentλ=−1.
+This yields the ﬁrst exponentλ =−1.
 Δβc
 0.78 0.80 0.82 0.84 0.86 0.88 0.90
 β0
@@ -590,7 +590,7 @@ This yields the ﬁrst exponentλ=−1.
 C
 Figure 7: We take the pseudocritical pointβc to be the location of the maxima ofC. To
 estimate the error∆βc we compare the error inCmax atβc with that of neighbouring points.
-The twoβvalues on either side ofβc which are furthest away from it and such that their
+The twoβ values on either side ofβc which are furthest away from it and such that their
 errors inC overlap with that atCmax then determine ∆βc.
 15
 
@@ -623,7 +623,7 @@ Nϵ 2
 3
 4
 βc
-Figure 8: We show βc against Nϵ2, and see that the data collapses very well for all values
+Figure 8: We show βc against Nϵ 2, and see that the data collapses very well for all values
 of N,ϵ.
 0.1 0.2 0.3 0.4 0.5
 ϵ1.50
@@ -690,7 +690,7 @@ equation (17), and the shaded region shows the99% conﬁdence interval.
 -100
 -50
 〈S〉
-Figure 11: This ﬁgure shows how forϵ= 0.15 the rescaled critical temperature ¯β= βN
+Figure 11: This ﬁgure shows how for ϵ = 0.15 the rescaled critical temperature ¯β = βN
 converges for largerN. Again, the error bars are very small, and show up as lines in the
 graph.
 17
@@ -698,52 +698,52 @@ graph.
 ===== PAGE 18 =====
 
 4.2 Scaling of ⟨S⟩
-We now examine the scaling of⟨S⟩in the phasesΠ±to estimate the scaling exponentsν±.
-In the continuum phaseΠ−region we see that rather than staying constant as one might
+We now examine the scaling of⟨S⟩ in the phasesΠ± to estimate the scaling exponentsν±.
+In the continuum phaseΠ− region we see that rather than staying constant as one might
 expect for the2d random order,⟨S⟩, drops away from0 with a linear dependence on¯β, as
 shown in Figure 12. To leading order we guess that
-⟨S⟩−4 =b−(N,ϵ) ¯β, (19)
+⟨S⟩− 4 =b−(N,ϵ ) ¯β, (19)
 with
-b−(N,ϵ) =b−
+b−(N,ϵ ) =b−
 1 (ϵ)N +b−
 0 (ϵ) (20)
 In Figures 13 we ﬁnd ﬁts forb−
 0 (ϵ) and b−
 1 (ϵ) and ﬁnd that
-b1(ϵ) = −0.20(±0.06)ϵ3−2.04(±0.18)ϵ4
-b0(ϵ) = 2 .09(±0.55) (ϵ−0.07(±0.01))2−190.50(±15.46) (ϵ−0.07(±0.01))4 . (21)
+b1(ϵ) = −0.20(±0.06)ϵ3− 2.04(±0.18)ϵ4
+b0(ϵ) = 2 .09(±0.55) (ϵ− 0.07(±0.01))2− 190.50(±15.46) (ϵ− 0.07(±0.01))4 . (21)
 The plots also show the99% conﬁdence interval for the ﬁts. In Fig 20 we divide the average
 action by the best ﬁt function to show the goodness of the ﬁt.
-To leading order, then,⟨S⟩∼N. This is interesting since for the 2d random orders,
+To leading order, then,⟨S⟩∼ N. This is interesting since for the 2d random orders,
 the action does not scale withN, i.e.,⟨S⟩ ∼4 for all N. Therefore, it is evident that
 the “continuum” phase isnot dominated by ﬂat spacetime for¯β >0. As we will discuss in
 Section 5 this scaling is consistent with a constant curvature spacetime of negative curvature,
 i.e., adS2. We show further support for this, which suggests that2d CST has a dynamical
 mechanism for generating a cosmological constant.
-Since βitself scales asN−1, this means thatβ⟨S⟩∼N 0, or thatν−= 0 as is clear from
+Since β itself scales asN−1, this means thatβ⟨S⟩∼ N 0, or thatν− = 0 as is clear from
 the convergence of the larger values ofN shown in Figure 15. We can do more in this case.
 To leading order since
-−¯β∂
-∂¯βlnZ∼b−
+− ¯β ∂
+∂ ¯β lnZ∼b−
 1 (ϵ) ¯β2 (22)
-we see that the free energyβFis scale invariant and hence non-extensive. This expression
+we see that the free energyβF is scale invariant and hence non-extensive. This expression
 is in fact so simple, we can integrate it to ﬁnd the partition function
 ln Z
 Z0
 ∼−
-∫¯β
+∫ ¯β
 0
 b−
-1 (ϵ) ¯β′d ¯β′=−1
+1 (ϵ) ¯β′d ¯β′ =−1
 2b−
 1 (ϵ) ¯β2. (23)
-Here, Z0 is the partition function atβ= 0 which to leading order inN, is given by the
+Here, Z0 is the partition function atβ = 0 which to leading order inN, is given by the
 density of statesN! for the 2d random orders (Eqn 7).
-At the other end, forβ >βc,⟨S⟩changes withN, becoming more and more negative as
-N increases as shown in Figure 16(a). In Figure 16(b) we plotβ⟨S⟩/N with ¯βand ﬁnd a
-linear behaviour with¯βwhich converges with increasingN. Modelling the linear behaviour
+At the other end, forβ >βc,⟨S⟩ changes withN, becoming more and more negative as
+N increases as shown in Figure 16(a). In Figure 16(b) we plotβ⟨S⟩/N with ¯β and ﬁnd a
+linear behaviour with¯β which converges with increasingN. Modelling the linear behaviour
 as
-β⟨S⟩=a+(N,ϵ) +b+(N,ϵ) ¯β, (24)
+β⟨S⟩ =a+(N,ϵ ) +b+(N,ϵ ) ¯β, (24)
 18
 
 ===== PAGE 19 =====
@@ -765,8 +765,8 @@ as
 3
 4
 〈S〉
-Figure 12: ⟨S⟩as a function of ¯βbefore the phase transition and the linear best ﬁts for
-ϵ= 0.21.
+Figure 12: ⟨S⟩ as a function of ¯β before the phase transition and the linear best ﬁts for
+ϵ = 0.21.
 0.2 0.3 0.4 0.5
 ϵ
 -0.15
@@ -799,7 +799,7 @@ b0
 0.010
 b0
 Figure 13: Best ﬁts and conﬁdence regions forb1(ϵ),b 0(ϵ). The inlays show a zoom for the
-small ϵregion.
+small ϵ region.
 19
 
 ===== PAGE 20 =====
@@ -815,7 +815,7 @@ small ϵregion.
 _
 Figure 14: Dividing the average action by the best ﬁt function for the region before the
 phase transition (19) shows a very good ﬁt for all ranges ofN,ϵ. The color shows the value
-ofϵ(withϵdecreasing from left to right), while the brightness indicatesN, with darker dots
+ofϵ (withϵ decreasing from left to right), while the brightness indicatesN, with darker dots
 indicating largerN values.
 40
 45
@@ -832,7 +832,7 @@ indicating largerN values.
 0.2
 0.4
 β〈S〉
-Figure 15: In the phase Π−, β⟨S⟩shows a convergence for largeN.
+Figure 15: In the phase Π−, β⟨S⟩ shows a convergence for largeN.
 20
 
 ===== PAGE 21 =====
@@ -873,7 +873,7 @@ Figure 15: In the phase Π−, β⟨S⟩shows a convergence for largeN.
 -1
 β 〈S〉
 N
-Figure 16: In the phase Π +, we seeβ⟨S⟩behaves linearly with ¯βin the ﬁgure on the left.
+Figure 16: In the phase Π+, we seeβ⟨S⟩ behaves linearly with ¯β in the ﬁgure on the left.
 On the right we show it rescaled asβ⟨S⟩/N which shows convergence for largeN.
 0.1 0.2 0.3 0.4 0.5
 ϵ
@@ -892,19 +892,19 @@ a0
 3
 4
 a1
-Figure 17: Best ﬁts fora0 and a1 as functions ofϵand 99 % conﬁdence intervals.
+Figure 17: Best ﬁts fora0 and a1 as functions ofϵ and 99 % conﬁdence intervals.
 we let
-a+(N,ϵ) =a+
+a+(N,ϵ ) =a+
 0 (ϵ) +a+
-1 (ϵ)N, b +(N,ϵ) =b+
+1 (ϵ)N, b +(N,ϵ ) =b+
 0 (ϵ) +b+
 1 (ϵ)N. (25)
 In Figures 17,18 we show the best ﬁts for these functions and ﬁnd that
-a+(N,ϵ) =−25.21(±8.16) + 1.53(±0.21)N, (26)
-b+(N,ϵ) = 0.4(±0.24) + 17.63(±4.76)ϵ2−2.48(±0.09)ϵ2N . (27)
+a+(N,ϵ ) =−25.21(±8.16) + 1.53(±0.21)N, (26)
+b+(N,ϵ ) = 0.4(±0.24) + 17.63(±4.76)ϵ2− 2.48(±0.09)ϵ2N . (27)
 We plot Equation (24) with these ﬁts in Fig 19 and ﬁnd them to be in good agreement with
 the data.
-We conclude thatν+ = 1, which implies that the free energyβFscales asN in this phase
+We conclude thatν+ = 1, which implies that the free energyβF scales asN in this phase
 and is hence extensive. Notice that this is consistent with our expectations in the largeβ
 limit, whereS for the bilayer poset scales asN 2.
 21
@@ -941,7 +941,7 @@ Figure 18: Best ﬁts forb0 and b1 as functions ofϵ.
 -50
 β〈S〉
 Figure 19: Plotting the ﬁt using equation (26) against the data we see good agreement with
-the data, shown here forϵ= 0.21. We plot a few values ofN to avoid too much overlap in
+the data, shown here forϵ = 0.21. We plot a few values ofN to avoid too much overlap in
 the 99% uncertainty region.
 22
 
@@ -956,26 +956,26 @@ the 99% uncertainty region.
 β 〈S〉
 a+ (N,ϵ) +b + (N,ϵ)β
 _
-Figure 20: Dividing the average action timesβby the best ﬁt function for the phaseΠ + (24)
-shows a very good ﬁt for all ranges ofN,ϵ. The color shows the value ofϵ(withϵdecreasing
+Figure 20: Dividing the average action timesβ by the best ﬁt function for the phaseΠ+ (24)
+shows a very good ﬁt for all ranges ofN,ϵ. The color shows the value ofϵ (withϵ decreasing
 from left to right), while the brightness indicatesN, with darker dots corresponding to larger
 N.
 We note that this behaviour is reminiscent of the two phases in the dimer model of [19]
-where againβFis scale invariant in one phase and extensive in the other phase.
+where againβF is scale invariant in one phase and extensive in the other phase.
 We now look at the speciﬁc heat plots to check the consistency of our analysis. Given
 that
 C =−β2∂⟨S⟩
-∂β=−
+∂β =−
 ¯β2
 N
 ∂⟨S⟩
-∂¯β (28)
+∂ ¯β (28)
 we see that to leading order inN
-C−=−b−
+C− =−b−
 1 (ϵ) ¯β2, C + =a+
 1 (ϵ)N (29)
-The unscaled plots in the two regions are given in Figure 21. In theΠ−region a collapse is
-fairly clear, without the need for scaling. On the other hand, theΠ + region collapses when
+The unscaled plots in the two regions are given in Figure 21. In theΠ− region a collapse is
+fairly clear, without the need for scaling. On the other hand, theΠ+ region collapses when
 one scales byN as shown in Figure 22. The largest values ofN show the convergence for
 the respective scalings in the two regions.
 Plotting the ﬁt lines from eqn (29) doesn not lead to convincing plots. This is presumably
@@ -1019,7 +1019,7 @@ C
 400
 500
 C
-Figure 21: The speciﬁc heatC plotted against ¯βfor ϵ= 0.21 on either side of the phase
+Figure 21: The speciﬁc heat C plotted against ¯β for ϵ = 0.21 on either side of the phase
 transition.
 24
 
@@ -1042,15 +1042,15 @@ C
 N
 Figure 22: Recaling C byN leads to a very good collapse of the values for allN.
 4.3 First Order Phase Transition
-In Figure 23 we focus onβ⟨S⟩around the phase transition. We ﬁnd that asN increases the
+In Figure 23 we focus onβ⟨S⟩ around the phase transition. We ﬁnd that asN increases the
 transition becomes sharper withN suggesting a discontinuous or ﬁrst order transition.
 Examining the raw data, we are able to extract the double Gaussians that characterise
-ﬁrst order phase transitions, as shown in Figure 24 at the estimatedβc for ϵ= 0.21. How-
+ﬁrst order phase transitions, as shown in Figure 24 at the estimatedβc for ϵ = 0.21. How-
 ever, as pointed out in [18], for ﬁniteN these features alone are not suﬃcient to establish
 conclusively that the transition is ﬁrst order. This isonly established once we look at the
 double Gaussians as a function ofN. Figure 24 shows the separation between the peaks
 increasing withN, which we ﬁnd is the strongest evidence for a ﬁrst order phase transition.
-We also analyse the scaling of the peaks of the speciﬁc heatC. Since ν+ = 1 >ν−= 0,
+We also analyse the scaling of the peaks of the speciﬁc heatC. Since ν+ = 1 >ν− = 0,
 we expect the scaling at the ﬁrst order transition to go as2ν+ = 2. As shown in Figure 25
 this is indeed the case.
 Another marker to explore the order of a phase transition is the so called Binder cumu-
@@ -1058,11 +1058,11 @@ lant2
 B = 1
 3
 (
-1−⟨S4⟩
+1− ⟨S4⟩
 ⟨S2⟩2
 )
 . (30)
-At ﬁxedN,ϵthis quantity has a minimum at the pseudocritical point, and as shown in
+At ﬁxed N,ϵ this quantity has a minimum at the pseudocritical point, and as shown in
 [18] it takes on a non-zero negative value at ﬁrst order transitions, and is zero for second
 2This is shifted by 2/3 from the standard deﬁnition.
 25
@@ -1083,8 +1083,8 @@ At ﬁxedN,ϵthis quantity has a minimum at the pseudocritical point, and as sho
 -1.0
 -0.5
 β〈S〉
-Figure 23: In the region of the phase transition, it is clear that asN increases,⟨S⟩becomes
-more and more discontinuous. Here we have plotted the ﬁt functions for⟨S⟩before and after
+Figure 23: In the region of the phase transition, it is clear that asN increases,⟨S⟩ becomes
+more and more discontinuous. Here we have plotted the ﬁt functions for⟨S⟩ before and after
 the phase transition to demonstrate the discontinuity.
 □300 □250 □200 □150 □100 □50 0 50
 S
@@ -1119,26 +1119,26 @@ splits into two peaks which wander further away from each other asN increases.
 C
 N2
 Figure 25: We show the rescaling of the peak values ofC byN 2 to converge for largerN.
-Here ϵ= 0.21.
+Here ϵ = 0.21.
 order transitions. While in ﬁnite size systems some deviation from0 is expected, this can
 be determined by observing the trend asN is increased.
-The double Gaussian Eqn (11) predicts forN→∞and p+ = t,p−= 1−t, asumming
-that µ+ > µ−that B = 1
-3−t+(1−t)x4
-3(t+(1−t)x2)2, wherex≡µ−
+The double Gaussian Eqn (11) predicts forN→∞ and p+ = t,p− = 1−t, asumming
+that µ+ > µ− that B = 1
+3− t+(1−t)x4
+3(t+(1−t)x2)2, wherex≡ µ−
 µ+
 . When the Gaussians are equally
 weighted (t = 1
-2), B lies between 0 and−1
+2), B lies between0 and− 1
 3.
 To be able to determine the minimum value of the Binder coeﬃcient with reasonable
 precision, we used a reweighting procedure, as explained in [20] to approximate the value of
 B in the region where we expected the pseudocritical point. We plot this observable agains
 the inverse system size in ﬁgure 26, and can clearly see that it tends to a non-zero value.
-Taking µ+ =⟨S+⟩∼N 2,µ−=⟨S−⟩∼N gives B∼1
-3−1
+Taking µ+ =⟨S+⟩∼ N 2,µ− =⟨S−⟩∼ N gives B∼ 1
+3− 1
 3t for large N. For larger N,
-we see thatt∼0.04, which suggests that we have not sampled the immediate vicinity of
+we see thatt∼ 0.04, which suggests that we have not sampled the immediate vicinity of
 the critical point with suﬃcient precision. Alternatively it may be due to the asymmetry
 of scaling on either side of the phase transition. In either case, Fig 26 provides additional
 supporting evidence for a ﬁrst order phase transition.
@@ -1159,19 +1159,19 @@ N
 □1
 0
 B
-ϵ= 0.16
+ϵ = 0.16
 Figure 26: The Binder coeﬃcient moves further away from0 as N becomes larger, thus
 indicating a ﬁrst order phase transition.
 5 Conclusions and Open Questions
 The most unexpected and physically interesting outcome of our analysis is the possible
 generation, of a negative non-zero cosmological constant Λ associated with the constant
-curvature spacetime adS2. The scale of Λ, moreover, is simply set byϵand ¯β, via the
+curvature spacetime adS2. The scale of Λ, moreover, is simply set byϵ and ¯β, via the
 relation
-Λ = κ2b−
+Λ =κ2b−
 1 (ϵ) ¯β, (31)
 where κ2∼l−2
 p . While there is nonatural Planck scale in2d, given a scale,Λ can be made
-as small as desired by choosing¯βto be small enough.
+as small as desired by choosing¯β to be small enough.
 Apart from the extensivity of the action, there are other indications that a typical causal
 set in this phase is approximated by a causal patch ofadS2. The Myrheim-Myer (MM) ﬂat
 spacetime dimension is given by the inverse of the ordering fractionfr = r/
@@ -1181,13 +1181,13 @@ spacetime dimension is given by the inverse of the ordering fractionfr = r/
 where r
 denotes the number of relations [21, 22]. In our simulations we have generated this ordering
 fraction alongside the action. We ﬁnd that in the continuum phase, our data shows that
-f2∼0.5 resulting in an MM ﬂat spacetime dimension of∼2, which lends support to this
+f2∼ 0.5 resulting in an MM ﬂat spacetime dimension of∼ 2, which lends support to this
 being a continuum phase.
 Additionally, in our simulations we have generated and saved actual conﬁgurations, which
 allows us to extract other observables of interest, like the abundance of intervals⟨Nn⟩. We
 ﬁnd that up until the phase transition they satisfy the expected continuum behaviour ([23])
-as seen in Fig 27(a)-(c). For very smallβin Fig 27(a) the abundance curve simply tracks
-that of ﬂat spacetime. However, asβincreases, β < βc, the abundance curve dips below
+as seen in Fig 27(a)-(c). For very smallβ in Fig 27(a) the abundance curve simply tracks
+that of ﬂat spacetime. However, asβ increases, β < βc, the abundance curve dips below
 that of ﬂat spacetime as shown in Figure 27(b). While we do not at present have an exact
 comparisons with sprinklings into adS spacetime, we note that Figure 12 of [23] shows that
 for positiveΛ, i.e., de Sitter spacetime, the curve rises above the ﬂat spacetime curve, while
@@ -1232,8 +1232,8 @@ n
 all
 average
 ﬂat spacetime (c)
-Figure 27: For the smallest values of¯βthe abundance of intervals is indistinguishable from
-ﬂat spacetime (a), but begins to deviate as¯βis increased (b). After the phase transition(c),
+Figure 27: For the smallest values of¯β the abundance of intervals is indistinguishable from
+ﬂat spacetime (a), but begins to deviate as¯β is increased (b). After the phase transition(c),
 the deviation is very pronounced and corresponds to the crystalline phase
 the curves of matter and radiation dominated FRW dip below this curve. Thought of as a
 postive pressure, the negativeΛ therefore seems compatible with the latter.
@@ -1248,16 +1248,16 @@ amount of information contained in anN element simplex grows like3N∼O(N). It i
 by increasing this (local)information that one can hope to ﬁnd continuum-like behaviour.
 On the other hand non-locality implies that that the information in a causal set can be
 very much larger than theO(N) suggested by its cardinality. The information in a causal
-set approximated by ﬂat spacetime is contained in the abundance proﬁle⟨Nn⟩v/sn, where
-⟨Nn⟩∼N lnN in the asymptotic limit for2d spacetimes, with orderN corrections [23]. The
+set approximated by ﬂat spacetime is contained in the abundance proﬁle⟨Nn⟩ v/sn, where
+⟨Nn⟩∼ N lnN in the asymptotic limit for2d spacetimes, with orderN corrections [23]. The
 simultaneous imposition of this form on eachn grows at aminimum as N lnN. An exact
 estimation of this is out of the scope of the present paper.
-Finally we note that our discussion of the largeβlimit generalises to the BD action in
-any dimension, which has a function similar tof(n,ϵ) with a maximum atn = 0. Hence
+Finally we note that our discussion of the largeβ limit generalises to the BD action in
+any dimension, which has a function similar tof(n,ϵ ) with a maximum atn = 0. Hence
 conﬁgurations with the maximum number of links will have the smallest action and hence
 the lowest energy. If we consider the full sample space ofN element causal sets, there is
 an entropic dominance of so-called Kleitman-Rothschild(KR) posets which have three layers
-and hence are non-manifold like. Their density of states goes as∼2
+and hence are non-manifold like. Their density of states goes as∼ 2
 N 2
 4 for largeN [15]. On
 the other hand, the number of links in each KR posetN0∼N 2/8 with the next signiﬁcant
@@ -1266,13 +1266,13 @@ abundance being for n = N/4, whose contribution to the action is highly suppress
 
 ===== PAGE 30 =====
 
-f(n,ϵ) for large enoughϵ. Thus the contribution of the KR posets∼2
+f(n,ϵ ) for large enoughϵ. Thus the contribution of the KR posets∼ 2
 N 2
 4 e+βϵ2N 2
 which for
-large enoughβis subdominant to the contribution from the bilayer posetsρb(β,N,ϵ)e+2βϵ2N 2
+large enoughβ is subdominant to the contribution from the bilayer posetsρb(β,N,ϵ )e+2βϵ2N 2
 ,
-Equation(7). Hencewepredictthatthelarge βphasewillbedominatedbythebilayerposets
+Equation(7). Hencewepredictthatthelarge β phasewillbedominatedbythebilayerposets
 for the class of statistical partition functions deﬁned by the BD action in any dimension.
 6 Acknowledgements
 We thank David Rideout for help with Cactus. The simulations were performed using the
@@ -1323,7 +1323,7 @@ ings, School of Quantum Gravity, Valdivia, Chile, January 4-14, 2002, pages 305�
 tum gravity: the emergence of the continuum. Classical and Quantum Gravity,
 25(10):105025, May 2008.
 [15] D. J. Kleitman and B. L. Rothschild. Asymptotic enumeration of partial orders on a
-ﬁnite set.Transactions of the American Mathematical Society, 205:205–220, 1975.
+ﬁnite set. Transactions of the American Mathematical Society, 205:205–220, 1975.
 [16] Dionigi M.T. Benincasa, Fay Dowker, and Bernhard Schmitzer. The Random Discrete
 Action for 2-Dimensional Spacetime.Class.Quant.Grav., 28:105018, 2011.
 [17] Michel Buck, Fay Dowker, Ian Jubb, and Sumati Surya. Boundary Terms for Causal
@@ -1344,7 +1344,7 @@ Massachusetts Institute of Technology, Dept. of Mathematics, 1989.
 [23] Lisa Glaser and Sumati Surya. Towards a Deﬁnition of Locality in a Manifoldlike Causal
 Set. Phys.Rev., D88:124026, 2013.
 [24] T. Goodale, G. Allen, G. Lanfermann, J. Massó, T. Radke, E. Seidel, and J. Shalf.
-The Cactus framework and toolkit: Design and applications. In Vector and Parallel
+The Cactus framework and toolkit: Design and applications. InVector and Parallel
 Processing — VECPAR 2002, 5th International Conference, pages 197–227, Berlin,
 2003. Springer.
 [25] G. Allen, T. Goodale, F. Löﬄer, D. Rideout, E. Schnetter, and E. L. Seidel. Component
