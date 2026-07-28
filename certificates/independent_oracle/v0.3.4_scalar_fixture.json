@@ -1,0 +1,172 @@
+{
+  "Eq113_path_consistency_branches": {
+    "EQ113_QN_BRANCH": {
+      "Q_5_assignment_available": false,
+      "Q_5_word_relation_count": 0,
+      "nonzero_residual_count": 0,
+      "relation_count": 25,
+      "residual_digest_sha256": "4c3d4ae50d038ced8d3f60e7734e9025465082defa6196cb0856c665f655e8a5",
+      "zero_residual_count": 25
+    },
+    "EQ113_QN_PLUS_1_BRANCH": {
+      "Q_5_assignment_available": true,
+      "Q_5_word_relation_count": 24,
+      "nonzero_residual_count": 0,
+      "relation_count": 25,
+      "residual_digest_sha256": "4c3d4ae50d038ced8d3f60e7734e9025465082defa6196cb0856c665f655e8a5",
+      "zero_residual_count": 25
+    }
+  },
+  "Q_assignment": {
+    "literal_branch_only": {
+      "Q_5": "11"
+    },
+    "shared_n_le_4": {
+      "Q_1": "2",
+      "Q_2": "3",
+      "Q_3": "5",
+      "Q_4": "7"
+    }
+  },
+  "atomisation": {
+    "G_node_zero_residual_count": 34,
+    "Q_stage_zero_residual_count": 34,
+    "path_count": 34,
+    "path_identifier_sets_match": true,
+    "residual_digest_sha256": "232b436f9ac58b4426e1713aaa82fc5306f76a196f36186a408f1dd1a56dbb05"
+  },
+  "checks": {
+    "Q5_used_only_in_literal_branch": true,
+    "QN_branch_has_25_zero_words": true,
+    "all_1529_same_endpoint_path_pairs_zero": true,
+    "all_165_transition_reconstructions_nonzero": true,
+    "all_24_strong_MSR_constraints_zero": true,
+    "all_26_inverse_bases_nonzero": true,
+    "all_26_inverse_values_nonzero": true,
+    "all_26_two_sided_inverse_products_one": true,
+    "all_320_original_local_GC_basis_words_zero": true,
+    "all_34_atomisation_reductions_match_G_nodes": true,
+    "all_34_scalar_atomisation_reductions_equal_Q_stage": true,
+    "all_783_original_CPOBC_word_equations_zero": true,
+    "all_dependency_nodes_evaluated": true,
+    "all_path_pairs_have_matching_endpoints": true,
+    "all_path_pairs_marked_derivable": true,
+    "atomisation_path_count_34": true,
+    "atomisation_path_identifier_sets_match": true,
+    "dependency_DAG_cycle_free": true,
+    "explicit_inverse_base_identifier_sets_match": true,
+    "frozen_schema_versions_match": true,
+    "inverse_node_count_26": true,
+    "literal_branch_has_25_zero_words": true,
+    "local_GC_basis_count_320": true,
+    "original_CPOBC_word_equation_count_783": true,
+    "same_endpoint_path_pair_count_1529": true,
+    "strong_MSR_count_24": true,
+    "transition_reconstruction_count_165": true,
+    "v031_v033_CPOBC_identifier_sets_match": true,
+    "v031_v033_MSR_identifier_sets_match": true,
+    "v033_GC_identifier_sets_match": true
+  },
+  "classification_boundary": "This exact scalar witness validates consistency and inventory reconstruction only; it does not classify general noncommutative d=2 solutions.",
+  "dependency_DAG": {
+    "all_node_values_nonzero": true,
+    "node_count": 92,
+    "node_kind_counts": {
+      "EQ107_EQ108_LINEAR_EXPRESSION": 22,
+      "EQ112_CONJUGATE": 20,
+      "EQ112_CONJUGATE_INVERSE": 20,
+      "FORMAL_TWO_SIDED_INVERSE_AUXILIARY": 22,
+      "Q_GENERATOR": 4,
+      "Q_GENERATOR_INVERSE": 4
+    },
+    "value_digest_sha256": "3108f9f56491abb06c838e1e831489b27257739da2d8a69d956030317f42de30"
+  },
+  "fixture_id": "V034_EXACT_SCALAR_Q_2_3_5_7_LITERAL_11",
+  "frozen_inputs": [
+    {
+      "name": "v031_cpobc",
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "schema_version": "final-theory-cpobc-relations-v0.3.1",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
+    },
+    {
+      "name": "v033_atomisation",
+      "path": "results/v0.3.3_atomisation_paths_n4.json",
+      "schema_version": "final-theory-atomisation-paths-n4-v0.3.3",
+      "sha256": "561f97361abcdd7c25c876dab51f485e1bb319ff986c4eb979c4ef5f987e5ddd"
+    },
+    {
+      "name": "v033_eq112",
+      "path": "results/v0.3.3_eq112_reduction_n4.json",
+      "schema_version": "final-theory-eq112-reduction-n4-v0.3.3",
+      "sha256": "2ad178275f829fcdf1f46de42ac69a688b1356ae07a058d1edf81c05623a4850"
+    },
+    {
+      "name": "v033_local_gc",
+      "path": "results/v0.3.3_local_operator_gc_n4.json",
+      "schema_version": "final-theory-local-operator-gc-n4-v0.3.3",
+      "sha256": "00e9b526b8d780441e6aec98a0225d70731551edeeba51f9cd372f71cba831b5"
+    },
+    {
+      "name": "v033_q_presentation",
+      "path": "results/v0.3.3_q_only_presentation_n4.json",
+      "schema_version": "final-theory-q-only-presentation-n4-v0.3.3",
+      "sha256": "0c5cbb1e70be51c27feba60189b5c5922e83f7eba1366994ee2e50c5f0639781"
+    }
+  ],
+  "implementation_boundary": "standalone stdlib Fraction/frozen-JSON parser plus independent word evaluation; no production v0.3.4 imports",
+  "inverse_nodes": {
+    "base_nonzero_count": 26,
+    "count": 26,
+    "inverse_value_nonzero_count": 26,
+    "residual_digest_sha256": "e8e613d97ece8988debe84611e9585cb90a89cc38faa0238a8f8a4ac23b8c31f",
+    "two_sided_product_one_count": 26
+  },
+  "local_operator_GC": {
+    "all_pair_residual_digest_sha256": "5b071ab579db8f198a1fdc68efdad35f12e9e010d3fcd3f518bdf49b66f8db42",
+    "basis_relation_count": 320,
+    "basis_residual_digest_sha256": "46e08b00962e9f32f5432de21b6ca733ab3cb54c46f826e7565d71d6f53fc889",
+    "basis_zero_residual_count": 320,
+    "path_operator_alias_count": 131,
+    "same_endpoint_pair_zero_residual_count": 1529,
+    "same_endpoint_path_pair_count": 1529,
+    "transition_signature_count_from_v031": 153
+  },
+  "matrix_interpretation": "each scalar s denotes s*I_2",
+  "original_CPOBC_word_equations": {
+    "compiled_relation_record_count": 641,
+    "equation_kind_counts": {
+      "eq103": 641,
+      "eq104": 71,
+      "equal_second_orientation": 71
+    },
+    "nonzero_residual_count": 0,
+    "residual_digest_sha256": "95bbd76e57a2ed043bcf14c244b3c85cc97e53ab14ea303e08555374af95f155",
+    "word_equation_count": 783,
+    "zero_residual_count": 783
+  },
+  "passed": true,
+  "schema_checks": {
+    "v031_cpobc": true,
+    "v033_atomisation": true,
+    "v033_eq112": true,
+    "v033_local_gc": true,
+    "v033_q_presentation": true
+  },
+  "schema_version": "final-theory-independent-scalar-v0.3.4",
+  "semantic_digest_sha256": "6c852125c0ec0b8ade2bf1a7ba2f87674c189a9597cbc5f99f3b929f848b5c35",
+  "strong_MSR": {
+    "constraint_count": 24,
+    "nonzero_residual_count": 0,
+    "residual_digest_sha256": "f4f43a2095c1431b364bc6e4ca25dc19504b244ba72f46509d8f0b4f2daac7e3",
+    "zero_residual_count": 24
+  },
+  "transition_reconstructions": {
+    "count": 165,
+    "distinct_scalar_values": 23,
+    "nonzero_count": 165,
+    "value_digest_sha256": "2d6f7ddb45d0cdb0e21c092c0506426375c55183824ad882b5cd762c6ef00410",
+    "zero_count": 0
+  },
+  "verdict": "INDEPENDENT_ORACLE_PARTIAL"
+}
