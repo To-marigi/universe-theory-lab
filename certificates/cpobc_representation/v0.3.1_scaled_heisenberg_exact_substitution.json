@@ -1,0 +1,766 @@
+{
+  "ansatz_id": "D3_SCALED_HEISENBERG_AFFINE_LINE_Q_2_3_5_7",
+  "field": "Q(t), characteristic zero",
+  "dimension": 3,
+  "definition": "Q_j=q_j*[[1,j*t,0],[0,1,1],[0,0,1]], j in {1,2,3,4}, (q1,q2,q3,q4)=(2,3,5,7)",
+  "parameters": [
+    "t"
+  ],
+  "generators": {
+    "Q1": [
+      [
+        "2",
+        "2*t",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "2"
+      ],
+      [
+        "0",
+        "0",
+        "2"
+      ]
+    ],
+    "Q2": [
+      [
+        "3",
+        "6*t",
+        "0"
+      ],
+      [
+        "0",
+        "3",
+        "3"
+      ],
+      [
+        "0",
+        "0",
+        "3"
+      ]
+    ],
+    "Q3": [
+      [
+        "5",
+        "15*t",
+        "0"
+      ],
+      [
+        "0",
+        "5",
+        "5"
+      ],
+      [
+        "0",
+        "0",
+        "5"
+      ]
+    ],
+    "Q4": [
+      [
+        "7",
+        "28*t",
+        "0"
+      ],
+      [
+        "0",
+        "7",
+        "7"
+      ],
+      [
+        "0",
+        "0",
+        "7"
+      ]
+    ]
+  },
+  "Jordan_stratum": {
+    "t_nonzero": "D3_JORDAN_3 for every Q_i",
+    "t_zero": "D3_JORDAN_2_PLUS_1 commutative boundary"
+  },
+  "reducibility": {
+    "common_flag": [
+      [
+        "e1"
+      ],
+      [
+        "e1",
+        "e2"
+      ],
+      [
+        "e1",
+        "e2",
+        "e3"
+      ]
+    ],
+    "generic_Q_of_t_joint_centralizer_basis": [
+      [
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ]
+      ]
+    ],
+    "joint_centralizer_dimension": 2,
+    "idempotent_equations": [
+      "alpha*(2*beta - 1)",
+      "beta*(beta - 1)"
+    ],
+    "idempotent_solutions": [
+      {
+        "alpha": "0",
+        "beta": "0"
+      },
+      {
+        "alpha": "0",
+        "beta": "1"
+      }
+    ],
+    "nontrivial_idempotent_present": false,
+    "centralizer_domain": "Q(t), hence t is generically nonzero",
+    "classification_at_t_nonzero": "D3_REDUCIBLE_INDECOMPOSABLE"
+  },
+  "exact_invertibility": {
+    "determinants": {
+      "Q1": "8",
+      "Q2": "27",
+      "Q3": "125",
+      "Q4": "343",
+      "I_minus_Q1": "-1",
+      "A1_2": "-27/8",
+      "A2_2": "1",
+      "A1_3": "-125/8",
+      "A2_3": "125/27",
+      "S1": "-15625/216",
+      "S2": "-15625/216"
+    },
+    "all_determinants_nonzero_polynomials": true,
+    "two_sided_inverse_checks": {
+      "Q1": {
+        "inverse": [
+          [
+            "1/2",
+            "-t/2",
+            "t/2"
+          ],
+          [
+            "0",
+            "1/2",
+            "-1/2"
+          ],
+          [
+            "0",
+            "0",
+            "1/2"
+          ]
+        ],
+        "left_residual_zero": true,
+        "right_residual_zero": true
+      },
+      "Q2": {
+        "inverse": [
+          [
+            "1/3",
+            "-2*t/3",
+            "2*t/3"
+          ],
+          [
+            "0",
+            "1/3",
+            "-1/3"
+          ],
+          [
+            "0",
+            "0",
+            "1/3"
+          ]
+        ],
+        "left_residual_zero": true,
+        "right_residual_zero": true
+      },
+      "Q3": {
+        "inverse": [
+          [
+            "1/5",
+            "-3*t/5",
+            "3*t/5"
+          ],
+          [
+            "0",
+            "1/5",
+            "-1/5"
+          ],
+          [
+            "0",
+            "0",
+            "1/5"
+          ]
+        ],
+        "left_residual_zero": true,
+        "right_residual_zero": true
+      },
+      "Q4": {
+        "inverse": [
+          [
+            "1/7",
+            "-4*t/7",
+            "4*t/7"
+          ],
+          [
+            "0",
+            "1/7",
+            "-1/7"
+          ],
+          [
+            "0",
+            "0",
+            "1/7"
+          ]
+        ],
+        "left_residual_zero": true,
+        "right_residual_zero": true
+      },
+      "I_minus_Q1": {
+        "inverse": [
+          [
+            "-1",
+            "2*t",
+            "-4*t"
+          ],
+          [
+            "0",
+            "-1",
+            "2"
+          ],
+          [
+            "0",
+            "0",
+            "-1"
+          ]
+        ],
+        "left_residual_zero": true,
+        "right_residual_zero": true
+      },
+      "A1_2": {
+        "inverse": [
+          [
+            "-2/3",
+            "2*t",
+            "-14*t/3"
+          ],
+          [
+            "0",
+            "-2/3",
+            "4/3"
+          ],
+          [
+            "0",
+            "0",
+            "-2/3"
+          ]
+        ],
+        "left_residual_zero": true,
+        "right_residual_zero": true
+      },
+      "A2_2": {
+        "inverse": [
+          [
+            "1",
+            "-3*t",
+            "12*t"
+          ],
+          [
+            "0",
+            "1",
+            "-3"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "left_residual_zero": true,
+        "right_residual_zero": true
+      },
+      "S1": {
+        "inverse": [
+          [
+            "-6/25",
+            "48*t/25",
+            "-48*t/5"
+          ],
+          [
+            "0",
+            "-6/25",
+            "6/5"
+          ],
+          [
+            "0",
+            "0",
+            "-6/25"
+          ]
+        ],
+        "left_residual_zero": true,
+        "right_residual_zero": true
+      },
+      "S2": {
+        "inverse": [
+          [
+            "-6/25",
+            "48*t/25",
+            "-246*t/25"
+          ],
+          [
+            "0",
+            "-6/25",
+            "6/5"
+          ],
+          [
+            "0",
+            "0",
+            "-6/25"
+          ]
+        ],
+        "left_residual_zero": true,
+        "right_residual_zero": true
+      }
+    },
+    "encoding": "METHOD_A_EXACT_TWO_SIDED_INVERSES"
+  },
+  "necessary_relation_family": {
+    "eq119": {
+      "Q2_Q1_Q3": {
+        "matrix": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "rank": 0,
+        "trace": "0",
+        "determinant": "0",
+        "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+      },
+      "Q2_Q1_Q4": {
+        "matrix": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "rank": 0,
+        "trace": "0",
+        "determinant": "0",
+        "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+      },
+      "Q3_Q1_Q4": {
+        "matrix": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "rank": 0,
+        "trace": "0",
+        "determinant": "0",
+        "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+      },
+      "Q3_Q2_Q4": {
+        "matrix": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "rank": 0,
+        "trace": "0",
+        "determinant": "0",
+        "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+      }
+    },
+    "eq130": {
+      "matrix": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "zero": true,
+      "rank": 0,
+      "trace": "0",
+      "determinant": "0",
+      "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+    },
+    "eq145_generated_from_eq139": {
+      "matrix": [
+        [
+          "0",
+          "0",
+          "-5*t/2"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "zero": false,
+      "rank": 1,
+      "trace": "0",
+      "determinant": "0",
+      "sha256": "61df03c591956555f744afe82802fd8d6fc49884bd9c5f9f1297942a55e05128"
+    },
+    "eq163": {
+      "matrix": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "zero": true,
+      "rank": 0,
+      "trace": "0",
+      "determinant": "0",
+      "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+    },
+    "paper_classification": "KNOWN_PAPER_RELATION"
+  },
+  "noncommutativity": {
+    "commutator_Q1_Q2": {
+      "matrix": [
+        [
+          "0",
+          "0",
+          "-6*t"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "zero": false,
+      "rank": 1,
+      "trace": "0",
+      "determinant": "0",
+      "sha256": "876ce4a4bbf8630bb79fe9e2bbf768b515fa710777b516543db9a9a2f16666dd"
+    },
+    "witness_entry": [
+      0,
+      2
+    ],
+    "witness_polynomial": "-6*t",
+    "saturation_equation": "w*(-6*t) - 1 = 0",
+    "numeric_norm_used": false
+  },
+  "bounded_no_go": {
+    "eq145_witness_entry": [
+      0,
+      2
+    ],
+    "eq145_polynomial": "-5*t/2",
+    "groebner_variables": [
+      "t",
+      "w"
+    ],
+    "groebner_order": "lex",
+    "groebner_basis": [
+      "1"
+    ],
+    "unit_ideal": true,
+    "conclusion": "Eq.145 forces t=0 while exact noncommutativity requires t!=0.",
+    "scope": "only this one-parameter q=(2,3,5,7) scaled-Heisenberg ansatz"
+  },
+  "t_equals_1_mutation_witness": {
+    "purpose": "shows that checking only Eqs.119,130,163 would produce a false necessary-relation survivor",
+    "relation_residuals": {
+      "eq119": {
+        "Q2_Q1_Q3": {
+          "matrix": [
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "zero": true,
+          "rank": 0,
+          "trace": "0",
+          "determinant": "0",
+          "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+        },
+        "Q2_Q1_Q4": {
+          "matrix": [
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "zero": true,
+          "rank": 0,
+          "trace": "0",
+          "determinant": "0",
+          "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+        },
+        "Q3_Q1_Q4": {
+          "matrix": [
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "zero": true,
+          "rank": 0,
+          "trace": "0",
+          "determinant": "0",
+          "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+        },
+        "Q3_Q2_Q4": {
+          "matrix": [
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "zero": true,
+          "rank": 0,
+          "trace": "0",
+          "determinant": "0",
+          "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+        }
+      },
+      "eq130": {
+        "matrix": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "rank": 0,
+        "trace": "0",
+        "determinant": "0",
+        "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+      },
+      "eq145": {
+        "matrix": [
+          [
+            "0",
+            "0",
+            "-5/2"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "zero": false,
+        "rank": 1,
+        "trace": "0",
+        "determinant": "0",
+        "sha256": "3841ff3ccb839016e9ee74e3406d101a63ea25ccbd077177f10a3a44b708c961"
+      },
+      "eq163": {
+        "matrix": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "rank": 0,
+        "trace": "0",
+        "determinant": "0",
+        "sha256": "06cab8dd52911a193126c39c00c5fcceee603e00c1e0f28c7ccbb79eac02b309"
+      }
+    },
+    "detected_by_eq145": true
+  },
+  "full_compiled_relation_assignment_checked": false,
+  "MSR_checked": false,
+  "GC_checked": false,
+  "CPOBC_representation_found": false,
+  "status": "CPOBC_D3_NO_GO_UNDER_ASSUMPTIONS"
+}

@@ -1,0 +1,55 @@
+{
+  "ansatz_id": "D3_SCALED_HEISENBERG_AFFINE_LINE_Q_2_3_5_7",
+  "bounded_no_go": {
+    "eq145_witness_entry": [
+      0,
+      2
+    ],
+    "eq145_polynomial": "-5*t/2",
+    "groebner_variables": [
+      "t",
+      "w"
+    ],
+    "groebner_order": "lex",
+    "groebner_basis": [
+      "1"
+    ],
+    "unit_ideal": true,
+    "conclusion": "Eq.145 forces t=0 while exact noncommutativity requires t!=0.",
+    "scope": "only this one-parameter q=(2,3,5,7) scaled-Heisenberg ansatz"
+  },
+  "noncommutativity": {
+    "commutator_Q1_Q2": {
+      "matrix": [
+        [
+          "0",
+          "0",
+          "-6*t"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "zero": false,
+      "rank": 1,
+      "trace": "0",
+      "determinant": "0",
+      "sha256": "876ce4a4bbf8630bb79fe9e2bbf768b515fa710777b516543db9a9a2f16666dd"
+    },
+    "witness_entry": [
+      0,
+      2
+    ],
+    "witness_polynomial": "-6*t",
+    "saturation_equation": "w*(-6*t) - 1 = 0",
+    "numeric_norm_used": false
+  },
+  "claim_boundary": "The unit ideal applies only after imposing the displayed ansatz. It is not a no-go for D3_JORDAN_3, reducible-indecomposable d=3, or dimension three as a whole."
+}
