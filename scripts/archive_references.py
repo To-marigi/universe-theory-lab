@@ -40,11 +40,30 @@ def _extract_text(pdf_path: Path, text_path: Path) -> tuple[int, str]:
     return len(reader.pages), str(text_path)
 
 
+def _page_count_from_extracted_text(text_path: Path) -> int | None:
+    count = sum(
+        line.startswith("===== PAGE ")
+        for line in text_path.read_text(encoding="utf-8", errors="replace").splitlines()
+    )
+    return count or None
+
+
 def build_archive(root: Path, *, skip_text: bool) -> dict[str, Any]:
     references = root / "references"
     source_catalog = json.loads(
         (references / "sources.json").read_text(encoding="utf-8")
     )
+    previous_manifest_path = references / "manifest.json"
+    previous_by_id: dict[str, dict[str, Any]] = {}
+    if previous_manifest_path.exists():
+        previous_manifest = json.loads(
+            previous_manifest_path.read_text(encoding="utf-8")
+        )
+        previous_by_id = {
+            str(record["id"]): record
+            for record in previous_manifest.get("records", [])
+            if isinstance(record, dict) and "id" in record
+        }
     records = []
     for source in source_catalog["sources"]:
         record = dict(source)
@@ -67,15 +86,23 @@ def build_archive(root: Path, *, skip_text: bool) -> dict[str, Any]:
         if pdf_path.read_bytes()[:4] != b"%PDF":
             raise ValueError(f"not a PDF: {pdf_path}")
         text_path = references / "text" / f"{pdf_path.stem}.txt"
+        pdf_hash = f"sha256:{_sha256(pdf_path)}"
         pages = None
         extracted = None
         if not skip_text:
             pages, extracted_path = _extract_text(pdf_path, text_path)
             extracted = str(Path(extracted_path).relative_to(references)).replace("\\", "/")
+        elif text_path.exists():
+            extracted = str(text_path.relative_to(references)).replace("\\", "/")
+            previous = previous_by_id.get(str(source.get("id")))
+            if previous is not None and previous.get("sha256") == pdf_hash:
+                pages = previous.get("pages")
+            if pages is None:
+                pages = _page_count_from_extracted_text(text_path)
         record.update(
             {
                 "archive_status": "PDF_AND_TEXT" if extracted else "PDF_ONLY",
-                "sha256": f"sha256:{_sha256(pdf_path)}",
+                "sha256": pdf_hash,
                 "bytes": pdf_path.stat().st_size,
                 "pages": pages,
                 "text_file": extracted,
