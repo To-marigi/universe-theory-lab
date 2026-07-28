@@ -1,0 +1,159 @@
+{
+  "claim_boundary": [
+    "The infinite extension is certified by the cited theorem and its hypothesis mapping, not by finite n<=5 enumeration.",
+    "No operator-valued or noncommutative extension theorem is inferred.",
+    "The paper result and the exact specialization are not novel results."
+  ],
+  "exact_specialization": {
+    "implicit_tail": "t_k = 0 for every unlisted k",
+    "nonzero_couplings": {
+      "0": {
+        "expression": "1",
+        "imaginary": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "real": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "2": {
+        "expression": "1 + i",
+        "imaginary": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "real": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      }
+    },
+    "paper_polar_notation": {
+      "k1": 2,
+      "m_number_of_positive_index_nonzero_couplings": 1,
+      "phi": "pi/4",
+      "s": "sqrt(2)",
+      "t_k1": "sqrt(2)*exp(i*pi/4) = 1 + i"
+    }
+  },
+  "extension_applicability": {
+    "all_covariant_events_measurable": "PASS_WITHIN_THE_PAPER_SCALAR_CSG_SCOPE",
+    "bounded_variation": "PASS_BY_CLAIM_3_8_ITEM_2",
+    "finite_n_extrapolation_used": false,
+    "unique_sigma_algebra_extension": "PASS_BY_THEOREM_2_1",
+    "verdict": "COMMUTATIVE_CSG_EXTENSION_THEOREM_APPLICABLE"
+  },
+  "hypothesis_mapping": {
+    "k1_equals_two": true,
+    "k1_greater_than_one": true,
+    "m_equals_one": true,
+    "only_one_nonzero_positive_index_coupling": true,
+    "selected_t2_is_complex": true,
+    "t0_equals_one": true
+  },
+  "paper": {
+    "local_pdf": "references/papers/2003.11311v1_surya-zalel_covariance-complex-sequential-growth.pdf",
+    "paper": "arXiv:2003.11311v1",
+    "sha256": "0db0461c144e36215eccfc5b51c52720da4575878876f18c4a796041a639f272",
+    "title": "A Criterion for Covariance in Complex Sequential Growth Models",
+    "verified_pdf_pages": [
+      8,
+      10,
+      17,
+      18
+    ],
+    "version": "v1, 2020-03-25"
+  },
+  "profile_id": "COMMUTATIVE_CSG_REFERENCE_T2_1_PLUS_I",
+  "schema_version": "commutative-csg-theorem-certificate-v0.3.1",
+  "verdict": "COMMUTATIVE_CSG_REFERENCE_PASS",
+  "well_definedness": {
+    "all_stage_symbolic_nonzero_reason": "its real part is 1+binomial(n,2), which is strictly positive",
+    "finite_regression_checks": [
+      {
+        "equals_1_plus_binomial_n_2_times_1_plus_i": true,
+        "lambda_n_0": {
+          "expression": "1",
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        "nonzero": true,
+        "stage": 1
+      },
+      {
+        "equals_1_plus_binomial_n_2_times_1_plus_i": true,
+        "lambda_n_0": {
+          "expression": "2 + i",
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 2
+          }
+        },
+        "nonzero": true,
+        "stage": 2
+      },
+      {
+        "equals_1_plus_binomial_n_2_times_1_plus_i": true,
+        "lambda_n_0": {
+          "expression": "4 + 3*i",
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 4
+          }
+        },
+        "nonzero": true,
+        "stage": 3
+      },
+      {
+        "equals_1_plus_binomial_n_2_times_1_plus_i": true,
+        "lambda_n_0": {
+          "expression": "7 + 6*i",
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 6
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 7
+          }
+        },
+        "nonzero": true,
+        "stage": 4
+      },
+      {
+        "equals_1_plus_binomial_n_2_times_1_plus_i": true,
+        "lambda_n_0": {
+          "expression": "11 + 10*i",
+          "imaginary": {
+            "denominator": 1,
+            "numerator": 10
+          },
+          "real": {
+            "denominator": 1,
+            "numerator": 11
+          }
+        },
+        "nonzero": true,
+        "stage": 5
+      }
+    ],
+    "formula": "lambda(n,0)=1+binomial(n,2)*(1+i)",
+    "not_the_extension_proof": true
+  }
+}

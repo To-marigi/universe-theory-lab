@@ -1,0 +1,140 @@
+{
+  "orthogonal_record_control": {
+    "all_I2_zero": true,
+    "all_off_diagonals_zero": true,
+    "profile_id": "causal_information_v2_sparse_kraus"
+  },
+  "paper_transition_equation": 15,
+  "parameters": {
+    "implicit_tail": "t_k = 0 for every unlisted k",
+    "nonzero_couplings": {
+      "0": {
+        "expression": "1",
+        "imaginary": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "real": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      "2": {
+        "expression": "1 + i",
+        "imaginary": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "real": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      }
+    }
+  },
+  "profile_id": "COMMUTATIVE_CSG_REFERENCE_T2_1_PLUS_I",
+  "schema_version": "commutative-csg-witness-certificate-v0.3.1",
+  "verdict": "COMMUTATIVE_CSG_REFERENCE_PASS",
+  "witness": {
+    "D_A_B": {
+      "expression": "1/5 + 1/5*i",
+      "imaginary": {
+        "denominator": 5,
+        "numerator": 1
+      },
+      "real": {
+        "denominator": 5,
+        "numerator": 1
+      }
+    },
+    "D_B_A": {
+      "expression": "1/5 - 1/5*i",
+      "imaginary": {
+        "denominator": 5,
+        "numerator": -1
+      },
+      "real": {
+        "denominator": 5,
+        "numerator": 1
+      }
+    },
+    "I2_A_B": {
+      "denominator": 5,
+      "numerator": 2
+    },
+    "event_A": {
+      "amplitude": {
+        "expression": "2/5 - 1/5*i",
+        "imaginary": {
+          "denominator": 5,
+          "numerator": -1
+        },
+        "real": {
+          "denominator": 5,
+          "numerator": 2
+        }
+      },
+      "canonical_relation_rows": [
+        0,
+        0,
+        0
+      ],
+      "comparable_pair_count": 0,
+      "distinct_natural_birth_labelings": 1,
+      "event_id": "E[p3-000]",
+      "exclusive_from_other_singleton_final_causet_events": true,
+      "height": 1,
+      "predicate": "final_unlabeled_causet == p3-000",
+      "quantum_measure": {
+        "denominator": 5,
+        "numerator": 1
+      },
+      "quotient_path_count": 1,
+      "stage": 3,
+      "vertex_relabeling_invariant": true,
+      "width": 3
+    },
+    "event_B": {
+      "amplitude": {
+        "expression": "3/5 + 1/5*i",
+        "imaginary": {
+          "denominator": 5,
+          "numerator": 1
+        },
+        "real": {
+          "denominator": 5,
+          "numerator": 3
+        }
+      },
+      "canonical_relation_rows": [
+        4,
+        4,
+        0
+      ],
+      "comparable_pair_count": 2,
+      "distinct_natural_birth_labelings": 1,
+      "event_id": "E[p3-024]",
+      "exclusive_from_other_singleton_final_causet_events": true,
+      "height": 2,
+      "predicate": "final_unlabeled_causet == p3-024",
+      "quantum_measure": {
+        "denominator": 5,
+        "numerator": 2
+      },
+      "quotient_path_count": 1,
+      "stage": 3,
+      "vertex_relabeling_invariant": true,
+      "width": 2
+    },
+    "events_are_exclusive": true,
+    "events_are_physically_distinct_unlabeled_geometries": true,
+    "mu_A_union_B": {
+      "denominator": 1,
+      "numerator": 1
+    },
+    "nonzero_I2": true,
+    "nonzero_off_diagonal_D": true,
+    "not_a_natural_labelling_multiplicity_witness": true,
+    "stage": 3
+  }
+}
