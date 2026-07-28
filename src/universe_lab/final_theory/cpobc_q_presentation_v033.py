@@ -1887,11 +1887,12 @@ def write_v033_artifacts(
         oracle_result=oracle_result,
     )
     for filename, text in reports.items():
-        relative_path = f"Final-Theory-Program/reports/{filename}"
-        output = root / relative_path
-        output.parent.mkdir(parents=True, exist_ok=True)
-        output.write_text(text.rstrip() + "\n", encoding="utf-8")
-        output_paths[relative_path] = output
+        for report_directory in ("reports", "Final-Theory-Program/reports"):
+            relative_path = f"{report_directory}/{filename}"
+            output = root / relative_path
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_text(text.rstrip() + "\n", encoding="utf-8")
+            output_paths[relative_path] = output
 
     note_relative = (
         "references/notes/"
