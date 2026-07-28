@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from universe_lab.final_theory.artifacts_v034 import (
+    _is_v034_certificate,
     _reproduction_artifact_paths,
 )
 
@@ -34,3 +35,25 @@ def test_reproduction_collector_accepts_both_version_spellings(
     assert result.resolve() in observed
     assert certificate.resolve() in observed
     assert manifest.resolve() not in observed
+
+
+def test_v034_certificate_filter_preserves_unversioned_legacy_file(
+    tmp_path: Path,
+) -> None:
+    generated = _touch(
+        tmp_path,
+        "certificates/d2_S1/chart_campaign.json",
+    )
+    versioned = _touch(
+        tmp_path,
+        "certificates/independent_oracle/v0.3.4_scalar_fixture.json",
+    )
+    legacy = _touch(
+        tmp_path,
+        "certificates/independent_oracle/oracle_result.json",
+    )
+    generated_paths = {generated.resolve()}
+
+    assert _is_v034_certificate(generated, generated_paths)
+    assert _is_v034_certificate(versioned, generated_paths)
+    assert not _is_v034_certificate(legacy, generated_paths)

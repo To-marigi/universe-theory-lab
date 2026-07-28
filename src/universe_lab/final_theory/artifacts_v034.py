@@ -513,6 +513,16 @@ def _reproduction_artifact_paths(
     )
 
 
+def _is_v034_certificate(
+    path: Path,
+    generated_paths: set[Path],
+) -> bool:
+    return (
+        path.resolve() in generated_paths
+        or "v0.3.4" in path.name
+    )
+
+
 def _stratum_result(
     *,
     production_commit: str,
@@ -763,6 +773,9 @@ def write_v034_artifacts(
     )
     for path, payload in certificate_payloads.items():
         _write_json(path, payload)
+    generated_certificate_paths = {
+        path.resolve() for path in certificate_payloads
+    }
 
     # Normalise every v0.3.4 certificate emitted by the auxiliary/oracle paths.
     certificate_dirs = [
@@ -781,6 +794,8 @@ def write_v034_artifacts(
         if not directory.is_dir():
             continue
         for path in directory.glob("*.json"):
+            if not _is_v034_certificate(path, generated_certificate_paths):
+                continue
             payload = json.loads(path.read_text(encoding="utf-8"))
             verdict = str(payload.get("verdict", "CERTIFICATE_RECORDED"))
             normalised = _normalise(
@@ -820,6 +835,7 @@ def write_v034_artifacts(
         for directory in certificate_dirs
         if directory.is_dir()
         for path in directory.glob("*.json")
+        if _is_v034_certificate(path, generated_certificate_paths)
     )
     certificate_hashes = _certificate_hash_records(
         certificate_paths,
