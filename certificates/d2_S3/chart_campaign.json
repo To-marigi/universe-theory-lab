@@ -1,0 +1,337 @@
+{
+  "runs": [
+    {
+      "branch_assumptions": {
+        "Q_indices": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "chart": "DERIVED_APPENDIX_QN_BRANCH:S3_SCALAR:GENERAL_Q1",
+        "cover_provenance": [
+          "all commuting ratios are scalar",
+          "Q_n=lambda_n Q_1 with every lambda_n nonzero"
+        ],
+        "nonzero_conditions": [
+          "a*d - b*c",
+          "l2",
+          "l3",
+          "l4"
+        ],
+        "pivot": null,
+        "residual_gauge": "GL(2) simultaneous similarity retained",
+        "scalar_unknown_count": 7,
+        "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+        "stratum": "S3_SCALAR",
+        "substitutions": {
+          "q1_11": "a",
+          "q1_12": "b",
+          "q1_21": "c",
+          "q1_22": "d",
+          "q2_11": "a*l2",
+          "q2_12": "b*l2",
+          "q2_21": "c*l2",
+          "q2_22": "d*l2",
+          "q3_11": "a*l3",
+          "q3_12": "b*l3",
+          "q3_21": "c*l3",
+          "q3_22": "d*l3",
+          "q4_11": "a*l4",
+          "q4_12": "b*l4",
+          "q4_21": "c*l4",
+          "q4_22": "d*l4"
+        },
+        "variables": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "l2",
+          "l3",
+          "l4"
+        ],
+        "zero_conditions": []
+      },
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S3_SCALAR:GENERAL_Q1",
+      "constant_contradiction": null,
+      "denominator_factors": [
+        {
+          "branch": "DERIVED_APPENDIX_QN_BRANCH",
+          "factor": "a*d - a - b*c - d + 1",
+          "factor_id": "chart-factor-d7614be03924a912eac2",
+          "factor_srepr": "Add(Mul(Symbol('a'), Symbol('d')), Mul(Integer(-1), Symbol('a')), Mul(Integer(-1), Symbol('b'), Symbol('c')), Mul(Integer(-1), Symbol('d')), Integer(1))",
+          "multiplicity": 1,
+          "origin": "det(BINV:692d8de209a59f16bf3e)",
+          "required_by": [
+            "BINV:692d8de209a59f16bf3e"
+          ],
+          "saturation_status": "REQUIRED",
+          "square_free_form": "a*d - a - b*c - d + 1",
+          "stage": 1
+        }
+      ],
+      "equations": [],
+      "exact_numeric_distinction": "EXACT",
+      "exact_unsatisfiable_subset": false,
+      "exit_status": "COMPLETED",
+      "full_chart_processed": true,
+      "groebner_basis": [],
+      "groebner_order": "grevlex",
+      "groebner_status": "NOT_RUN_NO_POLYNOMIALS",
+      "maximum_source_stage": 2,
+      "memory_limit_bytes": null,
+      "prime_moduli": [],
+      "resource_usage": {
+        "CPU_time_seconds": 12.171875,
+        "current_tracemalloc_bytes": 7862642,
+        "denominator_factor_count": 1,
+        "groebner_input_count": 0,
+        "input_polynomial_count": 0,
+        "input_relation_count": 1,
+        "maximum_total_degree": 0,
+        "monomial_count": 0,
+        "peak_tracemalloc_bytes": 70288520,
+        "processed_relation_count": 1,
+        "variable_count": 7,
+        "wall_time_seconds": 12.29022189998068
+      },
+      "saturation_method": "NOT_EXECUTED_IN_NUMERATOR_SCOUT",
+      "schema_version": "final-theory-d2-chart-scout-v0.3.4",
+      "solver": "SymPy exact Groebner scout",
+      "solver_version": "1.14.0",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "stratum": "S3_SCALAR",
+      "time_limit_seconds": 30,
+      "unresolved_component": "SCOUT_SUBSET_NONUNIT_OR_INCOMPLETE; NO SATURATED CONCLUSION",
+      "variables": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "l2",
+        "l3",
+        "l4"
+      ],
+      "verdict": "EXACT_SCOUT_PARTIAL"
+    },
+    {
+      "branch_assumptions": {
+        "Q_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S3_SCALAR:GENERAL_Q1",
+        "cover_provenance": [
+          "all commuting ratios are scalar",
+          "Q_n=lambda_n Q_1 with every lambda_n nonzero"
+        ],
+        "nonzero_conditions": [
+          "a*d - b*c",
+          "l2",
+          "l3",
+          "l4",
+          "l5"
+        ],
+        "pivot": null,
+        "residual_gauge": "GL(2) simultaneous similarity retained",
+        "scalar_unknown_count": 8,
+        "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+        "stratum": "S3_SCALAR",
+        "substitutions": {
+          "q1_11": "a",
+          "q1_12": "b",
+          "q1_21": "c",
+          "q1_22": "d",
+          "q2_11": "a*l2",
+          "q2_12": "b*l2",
+          "q2_21": "c*l2",
+          "q2_22": "d*l2",
+          "q3_11": "a*l3",
+          "q3_12": "b*l3",
+          "q3_21": "c*l3",
+          "q3_22": "d*l3",
+          "q4_11": "a*l4",
+          "q4_12": "b*l4",
+          "q4_21": "c*l4",
+          "q4_22": "d*l4",
+          "q5_11": "a*l5",
+          "q5_12": "b*l5",
+          "q5_21": "c*l5",
+          "q5_22": "d*l5"
+        },
+        "variables": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "l2",
+          "l3",
+          "l4",
+          "l5"
+        ],
+        "zero_conditions": []
+      },
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S3_SCALAR:GENERAL_Q1",
+      "constant_contradiction": null,
+      "denominator_factors": [
+        {
+          "branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+          "factor": "a*d - a - b*c - d + 1",
+          "factor_id": "chart-factor-3fea528e84605cbb365a",
+          "factor_srepr": "Add(Mul(Symbol('a'), Symbol('d')), Mul(Integer(-1), Symbol('a')), Mul(Integer(-1), Symbol('b'), Symbol('c')), Mul(Integer(-1), Symbol('d')), Integer(1))",
+          "multiplicity": 1,
+          "origin": "det(BINV:692d8de209a59f16bf3e)",
+          "required_by": [
+            "BINV:692d8de209a59f16bf3e"
+          ],
+          "saturation_status": "REQUIRED",
+          "square_free_form": "a*d - a - b*c - d + 1",
+          "stage": 1
+        }
+      ],
+      "equations": [],
+      "exact_numeric_distinction": "EXACT",
+      "exact_unsatisfiable_subset": false,
+      "exit_status": "COMPLETED",
+      "full_chart_processed": true,
+      "groebner_basis": [],
+      "groebner_order": "grevlex",
+      "groebner_status": "NOT_RUN_NO_POLYNOMIALS",
+      "maximum_source_stage": 2,
+      "memory_limit_bytes": null,
+      "prime_moduli": [],
+      "resource_usage": {
+        "CPU_time_seconds": 12.109375,
+        "current_tracemalloc_bytes": 7852930,
+        "denominator_factor_count": 1,
+        "groebner_input_count": 0,
+        "input_polynomial_count": 0,
+        "input_relation_count": 1,
+        "maximum_total_degree": 0,
+        "monomial_count": 0,
+        "peak_tracemalloc_bytes": 70306578,
+        "processed_relation_count": 1,
+        "variable_count": 8,
+        "wall_time_seconds": 12.228281300049275
+      },
+      "saturation_method": "NOT_EXECUTED_IN_NUMERATOR_SCOUT",
+      "schema_version": "final-theory-d2-chart-scout-v0.3.4",
+      "solver": "SymPy exact Groebner scout",
+      "solver_version": "1.14.0",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "stratum": "S3_SCALAR",
+      "time_limit_seconds": 30,
+      "unresolved_component": "SCOUT_SUBSET_NONUNIT_OR_INCOMPLETE; NO SATURATED CONCLUSION",
+      "variables": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "l2",
+        "l3",
+        "l4",
+        "l5"
+      ],
+      "verdict": "EXACT_SCOUT_PARTIAL"
+    }
+  ],
+  "schema_version": "final-theory-common-metadata-v0.3.4",
+  "branch": "codex/final-theory-v0.3.4-d2-rational-elimination-20260728",
+  "source_commit": "7105bac9ee95fbbf23099b9945e6e0d69b149498",
+  "production_commit": "2bb4b1092a88ca2342d05aae310c821bdcedb962",
+  "artifact_freeze_pointer": {
+    "tag_name": "final-theory-bench-v0.3.4-d2-rational-elimination-open",
+    "annotated_tag_object_hash": "RESOLVE_VIA_GIT_REF(refs/tags/final-theory-bench-v0.3.4-d2-rational-elimination-open)",
+    "dereferenced_commit_hash": "RESOLVE_VIA_GIT_REF(refs/tags/final-theory-bench-v0.3.4-d2-rational-elimination-open^{})",
+    "self_reference_note": "A commit cannot embed the hash of a tag object that targets that same not-yet-created commit. The annotated tag stores the exact freeze commit; both hashes are reported after tag creation."
+  },
+  "annotated_tag_object_hash": "RESOLVE_VIA_GIT_REF(refs/tags/final-theory-bench-v0.3.4-d2-rational-elimination-open)",
+  "paper_versions": [
+    "arXiv:2603.25503v1",
+    "arXiv:0809.3032v1",
+    "arXiv:math/0603049v1",
+    "arXiv:1505.07472v2",
+    "arXiv:1905.11304v2",
+    "arXiv:1504.01648v1",
+    "arXiv:2202.13387v2",
+    "Stacks Project Algebra snapshot 2026-07-28"
+  ],
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "references/papers/0809.3032v1_florentino_simultaneous-similarity-triangularization-2x2.pdf",
+      "sha256": "f30cc5ad16c9dd79026ed8534b7aeac14d6f47f7c21e4ff4a507d36750956626"
+    },
+    {
+      "path": "references/papers/math-0603049v1_florentino_invariants-2x2-matrices.pdf",
+      "sha256": "4b9062b317b050f6d779a87c294a9c8f48f866e34c3f123e1bb27fefdf2ce278"
+    },
+    {
+      "path": "references/papers/1505.07472v2_volcic_matrix-coefficient-realization-nc-rational.pdf",
+      "sha256": "711dc7ab2238aef3f3b24cecd84d769fc00ea76e1791d78f5c836ae1245793f8"
+    },
+    {
+      "path": "references/papers/1905.11304v2_porat-vinnikov_nc-rational-matrix-centre-i.pdf",
+      "sha256": "80140fac555d1501ef72fc681bb24dd3bb21d1a1d27376ca8825f84233a9cdd1"
+    },
+    {
+      "path": "references/papers/1504.01648v1_marais-ren_localizations-prime-ideals.pdf",
+      "sha256": "6666a9d430fe729264d77210e156d6c30ae13562979691e299672a4fb4ec9f39"
+    },
+    {
+      "path": "references/papers/2202.13387v2_berthomieu-eder-safey-el-din_saturation-ideals.pdf",
+      "sha256": "ccc46859817847d174dcc5c9ff6e9e943eb1a75f72be0395281c4a7274108a77"
+    },
+    {
+      "path": "references/papers/stacks-project_algebra_2026-07-28.pdf",
+      "sha256": "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+    },
+    {
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
+    },
+    {
+      "path": "results/v0.3.3_eq112_reduction_n4.json",
+      "sha256": "2ad178275f829fcdf1f46de42ac69a688b1356ae07a058d1edf81c05623a4850"
+    }
+  ],
+  "literature_classification": {
+    "general_2x2_theory": "LITERATURE_LOCKED",
+    "fixed_d2_CPOBC_reconstruction": "OPEN_TARGET",
+    "Eq113_indexing": "SOURCE_AMBIGUITY"
+  },
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "source_index_branch": [
+    "DERIVED_APPENDIX_QN_BRANCH",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH"
+  ],
+  "dimension": 2,
+  "field": "characteristic-zero algebraically closed field",
+  "stratum": "S3_SCALAR",
+  "chart": "GENERAL_Q1_AND_SCALAR_FIXTURE",
+  "variables": [],
+  "equations": [],
+  "denominator_factors": [],
+  "saturation_method": "NOT_APPLICABLE",
+  "solver": "SymPy exact subprocess scouts",
+  "solver_version": {
+    "python": "3.12.10",
+    "sympy": "1.14.0"
+  },
+  "time_limit": null,
+  "memory_limit": null,
+  "exact_numeric_distinction": "EXACT_UNLESS_RUN_MARKED_TIMEOUT",
+  "completeness_scope": "v0.3.4 declared finite scope",
+  "unresolved_components": [
+    "general S3 solution locus not eliminated"
+  ],
+  "certificate_hashes": [],
+  "verdict": "CPOBC_D2_S3_PARTIAL_N4"
+}

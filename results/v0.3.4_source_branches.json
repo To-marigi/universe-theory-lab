@@ -1,0 +1,209 @@
+{
+  "schema_version": "final-theory-d2-source-branches-v0.3.4",
+  "branch": "codex/final-theory-v0.3.4-d2-rational-elimination-20260728",
+  "source_commit": "7105bac9ee95fbbf23099b9945e6e0d69b149498",
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "source_index_branch": [
+    "DERIVED_APPENDIX_QN_BRANCH",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH"
+  ],
+  "source_index_audit": "SOURCE_INDEXING_DISCREPANCY_CANDIDATE",
+  "branches": {
+    "DERIVED_APPENDIX_QN_BRANCH": {
+      "generator_inventory": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_4"
+      ],
+      "maximum_Q_index": 4,
+      "relation_count": 25,
+      "literal_source_basis": [
+        "direct comparison of Eq.(112)",
+        "Appendix Eq.(163)"
+      ],
+      "finite_classification_scope": "n<=4 Q1..Q4",
+      "scalar_fixture_passed": true,
+      "verdict": "DERIVED_APPENDIX_QN_BRANCH_PARTIAL"
+    },
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH": {
+      "generator_inventory": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_4",
+        "Q_5"
+      ],
+      "maximum_Q_index": 5,
+      "relation_count": 25,
+      "relations_requiring_Q5": 24,
+      "literal_source_basis": [
+        "printed PDF/HTML Eq.(113)"
+      ],
+      "finite_classification_scope": "n<=4 source-stage core plus independent Q5 path constraints",
+      "Q5_identified_with_Q4": false,
+      "scalar_fixture_passed": true,
+      "verdict": "LITERAL_PRINTED_QN_PLUS_1_BRANCH_PARTIAL"
+    }
+  },
+  "branches_mixed": false,
+  "author_confirmed_typo": false,
+  "unresolved_components": [
+    "authorial resolution of Q_n versus Q_(n+1)",
+    "full exact classification in each branch"
+  ],
+  "verdict": "SOURCE_INDEXING_DISCREPANCY_CANDIDATE",
+  "production_commit": "2bb4b1092a88ca2342d05aae310c821bdcedb962",
+  "artifact_freeze_pointer": {
+    "tag_name": "final-theory-bench-v0.3.4-d2-rational-elimination-open",
+    "annotated_tag_object_hash": "RESOLVE_VIA_GIT_REF(refs/tags/final-theory-bench-v0.3.4-d2-rational-elimination-open)",
+    "dereferenced_commit_hash": "RESOLVE_VIA_GIT_REF(refs/tags/final-theory-bench-v0.3.4-d2-rational-elimination-open^{})",
+    "self_reference_note": "A commit cannot embed the hash of a tag object that targets that same not-yet-created commit. The annotated tag stores the exact freeze commit; both hashes are reported after tag creation."
+  },
+  "annotated_tag_object_hash": "RESOLVE_VIA_GIT_REF(refs/tags/final-theory-bench-v0.3.4-d2-rational-elimination-open)",
+  "paper_versions": [
+    "arXiv:2603.25503v1",
+    "arXiv:0809.3032v1",
+    "arXiv:math/0603049v1",
+    "arXiv:1505.07472v2",
+    "arXiv:1905.11304v2",
+    "arXiv:1504.01648v1",
+    "arXiv:2202.13387v2",
+    "Stacks Project Algebra snapshot 2026-07-28"
+  ],
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "references/papers/0809.3032v1_florentino_simultaneous-similarity-triangularization-2x2.pdf",
+      "sha256": "f30cc5ad16c9dd79026ed8534b7aeac14d6f47f7c21e4ff4a507d36750956626"
+    },
+    {
+      "path": "references/papers/math-0603049v1_florentino_invariants-2x2-matrices.pdf",
+      "sha256": "4b9062b317b050f6d779a87c294a9c8f48f866e34c3f123e1bb27fefdf2ce278"
+    },
+    {
+      "path": "references/papers/1505.07472v2_volcic_matrix-coefficient-realization-nc-rational.pdf",
+      "sha256": "711dc7ab2238aef3f3b24cecd84d769fc00ea76e1791d78f5c836ae1245793f8"
+    },
+    {
+      "path": "references/papers/1905.11304v2_porat-vinnikov_nc-rational-matrix-centre-i.pdf",
+      "sha256": "80140fac555d1501ef72fc681bb24dd3bb21d1a1d27376ca8825f84233a9cdd1"
+    },
+    {
+      "path": "references/papers/1504.01648v1_marais-ren_localizations-prime-ideals.pdf",
+      "sha256": "6666a9d430fe729264d77210e156d6c30ae13562979691e299672a4fb4ec9f39"
+    },
+    {
+      "path": "references/papers/2202.13387v2_berthomieu-eder-safey-el-din_saturation-ideals.pdf",
+      "sha256": "ccc46859817847d174dcc5c9ff6e9e943eb1a75f72be0395281c4a7274108a77"
+    },
+    {
+      "path": "references/papers/stacks-project_algebra_2026-07-28.pdf",
+      "sha256": "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+    },
+    {
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
+    },
+    {
+      "path": "results/v0.3.3_eq112_reduction_n4.json",
+      "sha256": "2ad178275f829fcdf1f46de42ac69a688b1356ae07a058d1edf81c05623a4850"
+    }
+  ],
+  "literature_classification": {
+    "general_2x2_theory": "LITERATURE_LOCKED",
+    "fixed_d2_CPOBC_reconstruction": "OPEN_TARGET",
+    "Eq113_indexing": "SOURCE_AMBIGUITY"
+  },
+  "dimension": 2,
+  "field": "characteristic-zero algebraically closed field",
+  "stratum": "ALL",
+  "chart": "ALL",
+  "variables": {
+    "DERIVED_APPENDIX_QN_BRANCH": [
+      "Q_1",
+      "Q_2",
+      "Q_3",
+      "Q_4"
+    ],
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH": [
+      "Q_1",
+      "Q_2",
+      "Q_3",
+      "Q_4",
+      "Q_5"
+    ]
+  },
+  "equations": {
+    "DERIVED_APPENDIX_QN_BRANCH": 25,
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH": 25
+  },
+  "denominator_factors": [],
+  "saturation_method": "NOT_APPLICABLE",
+  "solver": "structural exact compiler",
+  "solver_version": {
+    "python": "3.12.10",
+    "sympy": "1.14.0"
+  },
+  "time_limit": null,
+  "memory_limit": null,
+  "exact_numeric_distinction": "EXACT_UNLESS_RUN_MARKED_TIMEOUT",
+  "completeness_scope": "branch-separated Eq.(113) systems",
+  "certificate_hashes": [
+    {
+      "path": "certificates/d2_auxiliary_audit/v0.3.4_classification.json",
+      "sha256": "b8641173508742d95a2777a8c996192bab785d939fb2750cccc6b4c64f17a598"
+    },
+    {
+      "path": "certificates/d2_auxiliary_audit/v0.3.4_dependency_dag.json",
+      "sha256": "9024cd839753a307573485e710d1406391e9f757249a94275d2b68114c807860"
+    },
+    {
+      "path": "certificates/d2_localisation/denominator_ledger.json",
+      "sha256": "1b4855ccaa195037207dd935f54c8cf0849ab235b3f328f48d6e8ceb86f51346"
+    },
+    {
+      "path": "certificates/d2_no_go/not_issued.json",
+      "sha256": "07ed7891b5b84e2c8b2bfce022a684fcc7817f0cd7d95190f5484aca73f1eebf"
+    },
+    {
+      "path": "certificates/d2_rational_dag/operator_inventory.json",
+      "sha256": "f06c541c2bc07186f036ca0ca046d5411173a9c442f8efde2406eb3ef338e107"
+    },
+    {
+      "path": "certificates/d2_rational_dag/scalar_expression_arena.json",
+      "sha256": "8c7e2779e396346b4cc9cc92c261711b3325e954918d62dfe4c8ec9389ff8d46"
+    },
+    {
+      "path": "certificates/d2_reconstruction_equivalence/obligations.json",
+      "sha256": "fd9f89bb36efc3cc33a351b6321eece5985ce1ac3fc2914f1555263a4ec7c87b"
+    },
+    {
+      "path": "certificates/d2_representation/exact_scalar_fixture.json",
+      "sha256": "6cb8bc6c754d52c3f089dcb37e698f1370b5ee4ef12ac4699bbd5758d27f539a"
+    },
+    {
+      "path": "certificates/d2_S1/chart_campaign.json",
+      "sha256": "465f945c87b4379c45825cd5b88fbabf5ac21a164b85243e273dc0df2e6367d5"
+    },
+    {
+      "path": "certificates/d2_S2/chart_campaign.json",
+      "sha256": "887598eaa85598e3e3634faaa79f1c391bcc5056e942916f05bd1592b7ac8559"
+    },
+    {
+      "path": "certificates/d2_S3/chart_campaign.json",
+      "sha256": "8339947a064a570463cfe193f4eb50c6cfbcfe98fb6915c252eba675a009c643"
+    },
+    {
+      "path": "certificates/d2_S3/scalar_representation.json",
+      "sha256": "cd2e8b0c644bc766fcb2d012904448b65cfe7b3023c8b08b4849b5297492e89c"
+    },
+    {
+      "path": "certificates/independent_oracle/v0.3.4_scalar_fixture.json",
+      "sha256": "b5457f2980ed255cc3434f2116d5ce811debdad52950d028935bbb0edbea436c"
+    }
+  ]
+}

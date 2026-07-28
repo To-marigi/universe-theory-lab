@@ -1,17 +1,15 @@
 {
-  "schema_version": "final-theory-source-manifest-v0.3.4",
+  "schema_version": "final-theory-common-metadata-v0.3.4",
   "retrieval_date": "2026-07-28",
   "branch": "codex/final-theory-v0.3.4-d2-rational-elimination-20260728",
   "source_commit": "7105bac9ee95fbbf23099b9945e6e0d69b149498",
-  "production_commit": null,
+  "production_commit": "2bb4b1092a88ca2342d05aae310c821bdcedb962",
   "production_commit_status": "PENDING_V0.3.4_PRODUCTION_COMMIT",
   "artifact_freeze_pointer": {
-    "version": "v0.3.3",
-    "tag_name": "final-theory-bench-v0.3.3-gc-atomisation-open",
-    "annotated_tag_object_hash": "2c23b88b7f21b0fc1223bda59257cdd04ac7d15c",
-    "dereferenced_commit_hash": "7105bac9ee95fbbf23099b9945e6e0d69b149498",
-    "production_commit_hash": "47e5a97d81677eb9bd574c5792b6e1524a39992a",
-    "production_is_ancestor_of_freeze": true
+    "tag_name": "final-theory-bench-v0.3.4-d2-rational-elimination-open",
+    "annotated_tag_object_hash": "RESOLVE_VIA_GIT_REF(refs/tags/final-theory-bench-v0.3.4-d2-rational-elimination-open)",
+    "dereferenced_commit_hash": "RESOLVE_VIA_GIT_REF(refs/tags/final-theory-bench-v0.3.4-d2-rational-elimination-open^{})",
+    "self_reference_note": "A commit cannot embed the hash of a tag object that targets that same not-yet-created commit. The annotated tag stores the exact freeze commit; both hashes are reported after tag creation."
   },
   "v0_3_4_artifact_freeze": {
     "status": "PENDING",
@@ -74,109 +72,14 @@
     }
   },
   "paper_versions": [
-    {
-      "id": "arXiv:2603.25503v1",
-      "title": "Implementing Bell causality in Quantum Sequential Growth",
-      "version": "v1",
-      "version_date": "2026-03-26",
-      "journal_publication": null,
-      "doi": null,
-      "url": "https://arxiv.org/abs/2603.25503v1",
-      "local_file": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
-      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa",
-      "bytes": 1328089,
-      "pages": 38
-    },
-    {
-      "id": "arXiv:0809.3032v1",
-      "title": "Simultaneous similarity and triangularization of sets of 2 by 2 matrices",
-      "version": "v1",
-      "version_date": "2008-09-17",
-      "journal_publication": "Linear Algebra and its Applications 431 (2009), no. 9, 1652-1674",
-      "doi": "10.1016/j.laa.2009.05.037",
-      "url": "https://arxiv.org/abs/0809.3032v1",
-      "local_file": "references/papers/0809.3032v1_florentino_simultaneous-similarity-triangularization-2x2.pdf",
-      "sha256": "f30cc5ad16c9dd79026ed8534b7aeac14d6f47f7c21e4ff4a507d36750956626",
-      "bytes": 305252,
-      "pages": 22
-    },
-    {
-      "id": "arXiv:math/0603049v1",
-      "title": "Invariants of 2 by 2 matrices, irreducible SL(2,C) characters and the Magnus trace map",
-      "version": "v1",
-      "version_date": "2006-03-02",
-      "journal_publication": "Geometriae Dedicata 121 (2006), 167-186",
-      "doi": "10.1007/s10711-006-9097-5",
-      "url": "https://arxiv.org/abs/math/0603049v1",
-      "local_file": "references/papers/math-0603049v1_florentino_invariants-2x2-matrices.pdf",
-      "sha256": "4b9062b317b050f6d779a87c294a9c8f48f866e34c3f123e1bb27fefdf2ce278",
-      "bytes": 309834,
-      "pages": 15
-    },
-    {
-      "id": "arXiv:1505.07472v2",
-      "title": "Matrix coefficient realization theory of noncommutative rational functions",
-      "version": "v2",
-      "version_date": "2018-04-21",
-      "journal_publication": "Journal of Algebra 499 (2018), 397-437",
-      "doi": "10.1016/j.jalgebra.2017.12.009",
-      "url": "https://arxiv.org/abs/1505.07472v2",
-      "local_file": "references/papers/1505.07472v2_volcic_matrix-coefficient-realization-nc-rational.pdf",
-      "sha256": "711dc7ab2238aef3f3b24cecd84d769fc00ea76e1791d78f5c836ae1245793f8",
-      "bytes": 452082,
-      "pages": 33
-    },
-    {
-      "id": "arXiv:1905.11304v2",
-      "title": "Realizations of non-commutative rational functions around a matrix centre, I",
-      "version": "v2",
-      "version_date": "2021-03-25",
-      "journal_publication": "Journal of the London Mathematical Society 104 (2021), no. 3, 1250-1299",
-      "doi": "10.1112/jlms.12459",
-      "url": "https://arxiv.org/abs/1905.11304v2",
-      "local_file": "references/papers/1905.11304v2_porat-vinnikov_nc-rational-matrix-centre-i.pdf",
-      "sha256": "80140fac555d1501ef72fc681bb24dd3bb21d1a1d27376ca8825f84233a9cdd1",
-      "bytes": 588909,
-      "pages": 51
-    },
-    {
-      "id": "arXiv:1504.01648v1",
-      "title": "Mora's holy grail: Algorithms for computing in localizations at prime ideals",
-      "version": "v1",
-      "version_date": "2015-04-07",
-      "journal_publication": "International Journal of Algebra and Computation 25 (2015), no. 7, 1125-1143",
-      "doi": "10.1142/S0218196715500332",
-      "url": "https://arxiv.org/abs/1504.01648v1",
-      "local_file": "references/papers/1504.01648v1_marais-ren_localizations-prime-ideals.pdf",
-      "sha256": "6666a9d430fe729264d77210e156d6c30ae13562979691e299672a4fb4ec9f39",
-      "bytes": 268953,
-      "pages": 18
-    },
-    {
-      "id": "arXiv:2202.13387v2",
-      "title": "New efficient algorithms for computing Groebner bases of saturation ideals and colon ideals",
-      "version": "v2",
-      "version_date": "2023-07-27",
-      "journal_publication": null,
-      "doi": null,
-      "url": "https://arxiv.org/abs/2202.13387v2",
-      "local_file": "references/papers/2202.13387v2_berthomieu-eder-safey-el-din_saturation-ideals.pdf",
-      "sha256": "ccc46859817847d174dcc5c9ff6e9e943eb1a75f72be0395281c4a7274108a77",
-      "bytes": 518516,
-      "pages": 43
-    },
-    {
-      "id": "Stacks:Algebra-2026-07-28",
-      "title": "The Stacks Project: Commutative Algebra",
-      "version": "retrieved 2026-07-28; stable tags 00DX, 00CM, 00DR",
-      "journal_publication": null,
-      "doi": null,
-      "url": "https://stacks.math.columbia.edu/download/algebra.pdf",
-      "local_file": "references/papers/stacks-project_algebra_2026-07-28.pdf",
-      "sha256": "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947",
-      "bytes": 2828052,
-      "pages": 469
-    }
+    "arXiv:2603.25503v1",
+    "arXiv:0809.3032v1",
+    "arXiv:math/0603049v1",
+    "arXiv:1505.07472v2",
+    "arXiv:1905.11304v2",
+    "arXiv:1504.01648v1",
+    "arXiv:2202.13387v2",
+    "Stacks Project Algebra snapshot 2026-07-28"
   ],
   "follow_up_audit": {
     "routes": [
@@ -199,25 +102,34 @@
     "method": "Rendered archived PDF pages with Poppler and inspected page images.",
     "items": [
       {
-        "pdf_pages": [26, 27],
+        "pdf_pages": [
+          26,
+          27
+        ],
         "source_items": "Eqs. (103)-(114)",
         "result": "VISUALLY_VERIFIED",
         "key_boundary": "Eq. (112) uses Q_n while literal Eq. (113) prints Q_(n+1)."
       },
       {
-        "pdf_pages": [31],
+        "pdf_pages": [
+          31
+        ],
         "source_items": "Lemma 3.10",
         "result": "VISUALLY_VERIFIED",
         "key_boundary": "The hypothesis quantifies over every Q_n in the full family, not only Q_1 through Q_4."
       },
       {
-        "pdf_pages": [35],
+        "pdf_pages": [
+          35
+        ],
         "source_items": "Eqs. (163) and (165)",
         "result": "VISUALLY_VERIFIED",
         "key_boundary": "Eq. (163) uses Q_4; Eq. (165) is a Pauli-proportional ansatz, not a general 2 by 2 tuple."
       },
       {
-        "pdf_pages": [19],
+        "pdf_pages": [
+          19
+        ],
         "source_items": "invertibility discussion",
         "result": "VISUALLY_VERIFIED_SOURCE_PROSE_INCONSISTENCY",
         "key_boundary": "One sentence conflicts with the surrounding nonsingular and inverse-based setup; singular transitions are not admitted into the audited profile."
@@ -259,46 +171,18 @@
       "sha256": "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
     },
     {
-      "path": "results/reproduction_manifest_final_v0.3.3.json",
-      "sha256": "aa35da0b6142d9efdde04d606fc0d173c15bae68d6fd74374be6a28307eda943"
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
     },
     {
-      "path": "results/v0.3.1_d3_strata_manifest.json",
-      "sha256": "3729a701f6f909cecb6d6889d72bcb7cd5b4d03cc9822d39c56329432e9297c5"
+      "path": "results/v0.3.3_eq112_reduction_n4.json",
+      "sha256": "2ad178275f829fcdf1f46de42ac69a688b1356ae07a058d1edf81c05623a4850"
     }
   ],
   "literature_classification": {
-    "LITERATURE_LOCKED": [
-      "fixed-2-by-2 Cayley-Hamilton, adjugate, and inverse identities",
-      "simultaneous similarity and triangularisation tools",
-      "trace, determinant, and word-trace invariants within their hypotheses",
-      "general noncommutative rational realization theory",
-      "target-paper Eqs. (103)-(114), Lemma 3.10, and restricted Pauli inconsistency",
-      "classical atomisation definitions"
-    ],
-    "REGRESSION_ONLY": [
-      "adjugate inverse implementation check",
-      "similarity-invariant and canonical-form deduplication checks",
-      "localisation and saturation implementation checks",
-      "target Pauli-ansatz reproduction"
-    ],
-    "OPEN_TARGET": [
-      "fixed-d=2 rational reconstruction of the finite v0.3.3 CPOBC DAG",
-      "forward and reverse equivalence",
-      "branch-specific Eq. (113) finite systems",
-      "complete exact S1/S2/S3 elimination for n<=4",
-      "exact finite representation or finite no-go at the declared scope"
-    ],
-    "FORMULATION_MISMATCH": [
-      "general free-skew-field realizations versus a fixed-d=2 commutative-coordinate rational scheme",
-      "matrix-centred minimal realizations versus project-specific B-auxiliary reconstruction"
-    ],
-    "SOURCE_AMBIGUITY": [
-      "Eq. (113) Q_n versus Q_(n+1)",
-      "page-19 invertibility prose inconsistency",
-      "reachable-state versus strong-operator GC/MSR"
-    ],
-    "EXTERNAL_RESULT_SUPERSEDES_TASK": false
+    "general_2x2_theory": "LITERATURE_LOCKED",
+    "fixed_d2_CPOBC_reconstruction": "OPEN_TARGET",
+    "Eq113_indexing": "SOURCE_AMBIGUITY"
   },
   "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
   "assumptions": [
@@ -314,30 +198,24 @@
     "reason": "Fixed-initial-state or reachable-subspace GC/MSR is not silently promoted to strong operator equality."
   },
   "source_index_branch": [
-    {
-      "name": "DERIVED_APPENDIX_QN_BRANCH",
-      "source_basis": ["Eq. (112) direct comparison", "Appendix Eq. (163)"],
-      "finite_generator_requirement": "Q_1 through Q_4 for the declared n<=4 instance",
-      "status": "OPEN_TARGET"
-    },
-    {
-      "name": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
-      "source_basis": ["literal PDF/HTML Eq. (113)"],
-      "finite_generator_requirement": "includes Q_5 when the n=4 relation is instantiated",
-      "status": "OPEN_TARGET",
-      "boundary": "Q_5 is neither identified with Q_4 nor silently removed."
-    }
+    "DERIVED_APPENDIX_QN_BRANCH",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH"
   ],
   "dimension": 2,
-  "field": "characteristic-zero commutative coordinate ring; exact base field and algebraic extensions are downstream solver metadata",
-  "stratum": "S1_S2_S3_NOT_YET_ELIMINATED_AT_SOURCE_GATE",
-  "chart": null,
+  "field": "characteristic-zero algebraically closed field",
+  "stratum": "ALL",
+  "chart": "ALL",
   "variables": {
     "status": "NOT_ENUMERATED_AT_PHASE_0_1",
     "scope": "downstream branch/stratum-specific systems"
   },
   "equations": {
-    "source_items_visually_audited": ["Eq. (103)-(114)", "Lemma 3.10", "Eq. (163)", "Eq. (165)"],
+    "source_items_visually_audited": [
+      "Eq. (103)-(114)",
+      "Lemma 3.10",
+      "Eq. (163)",
+      "Eq. (165)"
+    ],
     "project_polynomial_count": null,
     "status": "NOT_CONSTRUCTED_BY_SOURCE_GATE"
   },
@@ -346,15 +224,15 @@
     "status": "NOT_ENUMERATED_BY_SOURCE_GATE",
     "discipline": "Every inverse-derived determinant factor must retain provenance and an explicit nonzero predicate."
   },
-  "saturation_method": {
-    "status": "NOT_RUN_BY_SOURCE_GATE",
-    "required_boundary": "No cleared-denominator system may be equated with the nonsingular locus without exact localization or saturation evidence."
+  "saturation_method": "{'status': 'NOT_RUN_BY_SOURCE_GATE', 'required_boundary': 'No cleared-denominator system may be equated with the nonsingular locus without exact localization or saturation evidence.'}",
+  "solver": "structural exact compiler",
+  "solver_version": {
+    "python": "3.12.10",
+    "sympy": "1.14.0"
   },
-  "solver": null,
-  "solver_version": null,
   "time_limit": null,
   "memory_limit": null,
-  "exact_numeric_distinction": "This artifact records exact source metadata and hashes only. It contains no numerical existence or no-go evidence.",
+  "exact_numeric_distinction": "EXACT_UNLESS_RUN_MARKED_TIMEOUT",
   "completeness_scope": "Phase 0/1 baseline, mandatory-literature, source-version, follow-up, and specified-PDF visual audit.",
   "unresolved_components": [
     "22 B-inverse auxiliary classification",
@@ -366,8 +244,62 @@
     "all d=3 unresolved strata carried from v0.3.1",
     "v0.3.4 production commit, artifact freeze, tag, and remote publication"
   ],
-  "certificate_hashes": [],
+  "certificate_hashes": [
+    {
+      "path": "certificates/d2_auxiliary_audit/v0.3.4_classification.json",
+      "sha256": "b8641173508742d95a2777a8c996192bab785d939fb2750cccc6b4c64f17a598"
+    },
+    {
+      "path": "certificates/d2_auxiliary_audit/v0.3.4_dependency_dag.json",
+      "sha256": "9024cd839753a307573485e710d1406391e9f757249a94275d2b68114c807860"
+    },
+    {
+      "path": "certificates/d2_localisation/denominator_ledger.json",
+      "sha256": "1b4855ccaa195037207dd935f54c8cf0849ab235b3f328f48d6e8ceb86f51346"
+    },
+    {
+      "path": "certificates/d2_no_go/not_issued.json",
+      "sha256": "07ed7891b5b84e2c8b2bfce022a684fcc7817f0cd7d95190f5484aca73f1eebf"
+    },
+    {
+      "path": "certificates/d2_rational_dag/operator_inventory.json",
+      "sha256": "f06c541c2bc07186f036ca0ca046d5411173a9c442f8efde2406eb3ef338e107"
+    },
+    {
+      "path": "certificates/d2_rational_dag/scalar_expression_arena.json",
+      "sha256": "8c7e2779e396346b4cc9cc92c261711b3325e954918d62dfe4c8ec9389ff8d46"
+    },
+    {
+      "path": "certificates/d2_reconstruction_equivalence/obligations.json",
+      "sha256": "fd9f89bb36efc3cc33a351b6321eece5985ce1ac3fc2914f1555263a4ec7c87b"
+    },
+    {
+      "path": "certificates/d2_representation/exact_scalar_fixture.json",
+      "sha256": "6cb8bc6c754d52c3f089dcb37e698f1370b5ee4ef12ac4699bbd5758d27f539a"
+    },
+    {
+      "path": "certificates/d2_S1/chart_campaign.json",
+      "sha256": "465f945c87b4379c45825cd5b88fbabf5ac21a164b85243e273dc0df2e6367d5"
+    },
+    {
+      "path": "certificates/d2_S2/chart_campaign.json",
+      "sha256": "887598eaa85598e3e3634faaa79f1c391bcc5056e942916f05bd1592b7ac8559"
+    },
+    {
+      "path": "certificates/d2_S3/chart_campaign.json",
+      "sha256": "8339947a064a570463cfe193f4eb50c6cfbcfe98fb6915c252eba675a009c643"
+    },
+    {
+      "path": "certificates/d2_S3/scalar_representation.json",
+      "sha256": "cd2e8b0c644bc766fcb2d012904448b65cfe7b3023c8b08b4849b5297492e89c"
+    },
+    {
+      "path": "certificates/independent_oracle/v0.3.4_scalar_fixture.json",
+      "sha256": "b5457f2980ed255cc3434f2116d5ce811debdad52950d028935bbb0edbea436c"
+    }
+  ],
   "passed": true,
   "verdict": "V034_SOURCE_GATE_PASS_WITH_REMOTE_PUBLICATION_GAP",
-  "overall_verdict": "FINAL_THEORY_OPEN"
+  "overall_verdict": "FINAL_THEORY_OPEN",
+  "annotated_tag_object_hash": "RESOLVE_VIA_GIT_REF(refs/tags/final-theory-bench-v0.3.4-d2-rational-elimination-open)"
 }
