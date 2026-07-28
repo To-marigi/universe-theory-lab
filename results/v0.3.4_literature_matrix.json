@@ -1,0 +1,250 @@
+{
+  "schema_version": "final-theory-literature-matrix-v0.3.4",
+  "search_date": "2026-07-28",
+  "branch": "codex/final-theory-v0.3.4-d2-rational-elimination-20260728",
+  "source_commit": "7105bac9ee95fbbf23099b9945e6e0d69b149498",
+  "production_commit": null,
+  "production_commit_status": "PENDING_V0.3.4_PRODUCTION_COMMIT",
+  "artifact_freeze_pointer": {
+    "baseline_version": "v0.3.3",
+    "tag_name": "final-theory-bench-v0.3.3-gc-atomisation-open",
+    "annotated_tag_object_hash": "2c23b88b7f21b0fc1223bda59257cdd04ac7d15c",
+    "dereferenced_commit_hash": "7105bac9ee95fbbf23099b9945e6e0d69b149498"
+  },
+  "search_routes": [
+    "official arXiv record and current version",
+    "official arXiv author searches",
+    "INSPIRE record and citation metadata",
+    "Crossref exact-title and DOI search",
+    "exact title and arXiv ID",
+    "CPOBC, operator GC, d=2 representation, correction, erratum, and follow-up terminology",
+    "mandatory primary-source bibliography and journal metadata",
+    "local references/sources.json, references/manifest.json, references/text, and references/notes before online search"
+  ],
+  "search_boundary": "Absence findings are limited to the documented routes and the 2026-07-28 snapshot; they are not proofs of worldwide nonexistence.",
+  "target_source_status": {
+    "id": "arXiv:2603.25503v1",
+    "current_version": "v1",
+    "submitted": "2026-03-26T14:41:23Z",
+    "journal_reference": null,
+    "doi": null,
+    "erratum_or_correction_found": false,
+    "author_follow_up_resolving_general_d2_found": false,
+    "citation_follow_up_resolving_general_d2_found": false,
+    "inspire_record": "https://inspirehep.net/literature/3136377",
+    "inspire_citation_count_at_snapshot": 0,
+    "local_file": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+    "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+  },
+  "entries": [
+    {
+      "topic": "target-paper Eqs. (103)-(114)",
+      "classification": ["LITERATURE_LOCKED", "SOURCE_AMBIGUITY"],
+      "sources": ["arXiv:2603.25503v1"],
+      "finding": "The inverse-based CPOBC and atomisation equations are visually verified. Eq. (112) uses Q_n, while literal Eq. (113) prints Q_(n+1).",
+      "claim_boundary": "Keep derived/appendix and literal source branches separate; do not assert an author-confirmed typo."
+    },
+    {
+      "topic": "target-paper Lemma 3.10",
+      "classification": ["LITERATURE_LOCKED"],
+      "sources": ["arXiv:2603.25503v1"],
+      "finding": "One Q_k is assumed to commute with every Q_n in the full family, implying commutativity of Q and A.",
+      "claim_boundary": "The lemma is not automatically triggered by a finite Q_1 through Q_4 calculation."
+    },
+    {
+      "topic": "target-paper d=2 inconsistency",
+      "classification": ["LITERATURE_LOCKED", "REGRESSION_ONLY"],
+      "sources": ["arXiv:2603.25503v1"],
+      "finding": "Appendix Eq. (165) starts from a Pauli-proportional four-generator family and obtains inconsistency under the paper's invertibility assumptions.",
+      "claim_boundary": "This is not a classification of arbitrary invertible 2 by 2 tuples."
+    },
+    {
+      "topic": "target-paper invertibility semantics",
+      "classification": ["SOURCE_AMBIGUITY"],
+      "sources": ["arXiv:2603.25503v1"],
+      "finding": "Page 19 contains an isolated sentence that transition operators may not themselves be invertible, despite the surrounding nonsingular condition and later explicit inverse formulas.",
+      "claim_boundary": "The v0.3.4 paper-strong profile retains nonsingularity and records the sentence as a source-prose inconsistency."
+    },
+    {
+      "topic": "fixed-2-by-2 Cayley-Hamilton and inverse formula",
+      "classification": ["LITERATURE_LOCKED", "REGRESSION_ONLY"],
+      "sources": ["Stacks:Algebra-2026-07-28"],
+      "finding": "For a 2 by 2 matrix X over a commutative coefficient ring, adj(X)=tr(X)I-X and X^-1=adj(X)/det(X) where det(X) is invertible.",
+      "claim_boundary": "The identity does not prove any project-specific determinant factor is nonzero and does not justify deleting a singular locus."
+    },
+    {
+      "topic": "simultaneous triangularisation of 2 by 2 tuples",
+      "classification": ["LITERATURE_LOCKED", "REGRESSION_ONLY"],
+      "sources": ["arXiv:0809.3032v1"],
+      "finding": "Known criteria, invariants, and canonical-form methods can audit reducibility and deduplicate project solutions.",
+      "claim_boundary": "They do not impose GC, MSR, or CPOBC and do not decide the project-specific existence problem."
+    },
+    {
+      "topic": "trace invariants and generic 2 by 2 tuple reconstruction",
+      "classification": ["LITERATURE_LOCKED", "REGRESSION_ONLY"],
+      "sources": ["arXiv:math/0603049v1"],
+      "finding": "Trace-word invariants and irreducible-character reconstruction are prior art.",
+      "claim_boundary": "Generic or stable-point reconstruction does not classify all degenerate and non-semisimple GL(2) tuples."
+    },
+    {
+      "topic": "matrix-coefficient realizations of noncommutative rational functions",
+      "classification": ["LITERATURE_LOCKED", "FORMULATION_MISMATCH"],
+      "sources": ["arXiv:1505.07472v2"],
+      "finding": "General noncommutative rational matrix-evaluation and minimal-realization theory is established.",
+      "claim_boundary": "A free-skew-field realization is not the same as the fixed-d=2 rational matrix DAG over the project's commutative coordinate ring."
+    },
+    {
+      "topic": "noncommutative rational realizations around a matrix centre",
+      "classification": ["LITERATURE_LOCKED", "FORMULATION_MISMATCH"],
+      "sources": ["arXiv:1905.11304v2", "arXiv:2009.08527v2"],
+      "finding": "Matrix-centred realization theory and its related continuation are established prior art.",
+      "claim_boundary": "They do not identify the 22 project-specific B-inverse auxiliaries or prove forward/reverse finite-CPOBC equivalence."
+    },
+    {
+      "topic": "localization at determinant-nonzero charts",
+      "classification": ["LITERATURE_LOCKED", "REGRESSION_ONLY"],
+      "sources": ["Stacks:Algebra-2026-07-28", "arXiv:1504.01648v1"],
+      "finding": "Localization and standard-basis computation in localized rings are standard exact methods.",
+      "claim_boundary": "Method availability is not a certificate for a v0.3.4 denominator inventory or chart."
+    },
+    {
+      "topic": "saturation and colon-ideal algorithms",
+      "classification": ["LITERATURE_LOCKED", "REGRESSION_ONLY"],
+      "sources": ["arXiv:2202.13387v2"],
+      "finding": "Exact Groebner algorithms for saturation and colon ideals are prior art.",
+      "claim_boundary": "Their existence does not validate an unrecorded saturation predicate, unit-ideal certificate, or completeness claim."
+    },
+    {
+      "topic": "fixed-d=2 rational reconstruction of the finite v0.3.3 CPOBC DAG",
+      "classification": ["OPEN_TARGET"],
+      "sources": ["arXiv:2603.25503v1"],
+      "finding": "No audited primary source supplies this project-specific reconstruction.",
+      "claim_boundary": "Both construction and proof obligations remain project work."
+    },
+    {
+      "topic": "forward and reverse reconstruction equivalence",
+      "classification": ["OPEN_TARGET"],
+      "sources": ["arXiv:2603.25503v1", "arXiv:1505.07472v2", "arXiv:1905.11304v2"],
+      "finding": "No audited source proves equivalence between full finite operator assignments and the proposed fixed-d=2 rational scheme.",
+      "claim_boundary": "A forward reduction alone licenses only a necessary condition; a reverse reconstruction alone licenses only sufficiency."
+    },
+    {
+      "topic": "branch-specific Eq. (113) finite systems",
+      "classification": ["OPEN_TARGET", "SOURCE_AMBIGUITY"],
+      "sources": ["arXiv:2603.25503v1"],
+      "finding": "The Q_n and literal Q_(n+1) branches must be compiled independently; the literal n=4 instance introduces Q_5.",
+      "claim_boundary": "Q_5 may not be silently equated with Q_4 or deleted."
+    },
+    {
+      "topic": "complete exact S1/S2/S3 elimination for n<=4",
+      "classification": ["OPEN_TARGET"],
+      "sources": ["arXiv:0809.3032v1", "arXiv:math/0603049v1", "arXiv:2202.13387v2"],
+      "finding": "The literature provides tools but no project-specific complete elimination.",
+      "claim_boundary": "Every stratum, residual-gauge chart, denominator predicate, and unresolved component must be recorded."
+    },
+    {
+      "topic": "external result superseding v0.3.4",
+      "classification": ["EXTERNAL_RESULT_SUPERSEDES_TASK"],
+      "sources": [],
+      "finding": false,
+      "claim_boundary": "No audited external result resolves the declared finite CPOBC target."
+    }
+  ],
+  "classification_summary": {
+    "LITERATURE_LOCKED": [
+      "Cayley-Hamilton and fixed-2-by-2 inverse identities",
+      "simultaneous similarity and triangularisation",
+      "trace/determinant/word-trace invariants",
+      "general noncommutative rational realizations",
+      "target Eqs. (103)-(114), Lemma 3.10, and Pauli-proportional inconsistency",
+      "classical atomisation definitions"
+    ],
+    "REGRESSION_ONLY": [
+      "inverse-formula regression",
+      "similarity and triangularisability regression",
+      "localisation and saturation plumbing regression",
+      "Pauli-ansatz reproduction"
+    ],
+    "OPEN_TARGET": [
+      "finite v0.3.3 DAG fixed-d=2 rational reconstruction",
+      "bidirectional equivalence",
+      "two Eq. (113) branch systems",
+      "S1/S2/S3 exact finite elimination",
+      "exact finite representation or finite no-go at declared scope"
+    ],
+    "FORMULATION_MISMATCH": [
+      "general free rational functions versus fixed-size commutative coordinate schemes",
+      "general matrix-centred realizations versus project-specific auxiliary reconstruction"
+    ],
+    "SOURCE_AMBIGUITY": [
+      "Q_n versus Q_(n+1) in Eq. (113)",
+      "page-19 invertibility prose",
+      "reachable-state versus strong-operator GC/MSR"
+    ],
+    "EXTERNAL_RESULT_SUPERSEDES_TASK": false
+  },
+  "source_index_branch": [
+    {
+      "name": "DERIVED_APPENDIX_QN_BRANCH",
+      "basis": ["Eq. (112)", "Eq. (163)"],
+      "maximum_Q_index_for_n4": 4,
+      "classification": "OPEN_TARGET"
+    },
+    {
+      "name": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "basis": ["literal Eq. (113)"],
+      "maximum_Q_index_for_n4": 5,
+      "classification": "OPEN_TARGET"
+    }
+  ],
+  "paper_versions": [
+    {"id": "arXiv:2603.25503v1", "version": "v1", "date": "2026-03-26"},
+    {"id": "arXiv:0809.3032v1", "version": "v1", "date": "2008-09-17"},
+    {"id": "arXiv:math/0603049v1", "version": "v1", "date": "2006-03-02"},
+    {"id": "arXiv:1505.07472v2", "version": "v2", "date": "2018-04-21"},
+    {"id": "arXiv:1905.11304v2", "version": "v2", "date": "2021-03-25"},
+    {"id": "arXiv:1504.01648v1", "version": "v1", "date": "2015-04-07"},
+    {"id": "arXiv:2202.13387v2", "version": "v2", "date": "2023-07-27"},
+    {"id": "Stacks:Algebra-2026-07-28", "version": "snapshot", "date": "2026-07-28"}
+  ],
+  "source_hashes": [
+    {"path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf", "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"},
+    {"path": "references/papers/0809.3032v1_florentino_simultaneous-similarity-triangularization-2x2.pdf", "sha256": "f30cc5ad16c9dd79026ed8534b7aeac14d6f47f7c21e4ff4a507d36750956626"},
+    {"path": "references/papers/math-0603049v1_florentino_invariants-2x2-matrices.pdf", "sha256": "4b9062b317b050f6d779a87c294a9c8f48f866e34c3f123e1bb27fefdf2ce278"},
+    {"path": "references/papers/1505.07472v2_volcic_matrix-coefficient-realization-nc-rational.pdf", "sha256": "711dc7ab2238aef3f3b24cecd84d769fc00ea76e1791d78f5c836ae1245793f8"},
+    {"path": "references/papers/1905.11304v2_porat-vinnikov_nc-rational-matrix-centre-i.pdf", "sha256": "80140fac555d1501ef72fc681bb24dd3bb21d1a1d27376ca8825f84233a9cdd1"},
+    {"path": "references/papers/1504.01648v1_marais-ren_localizations-prime-ideals.pdf", "sha256": "6666a9d430fe729264d77210e156d6c30ae13562979691e299672a4fb4ec9f39"},
+    {"path": "references/papers/2202.13387v2_berthomieu-eder-safey-el-din_saturation-ideals.pdf", "sha256": "ccc46859817847d174dcc5c9ff6e9e943eb1a75f72be0395281c4a7274108a77"},
+    {"path": "references/papers/stacks-project_algebra_2026-07-28.pdf", "sha256": "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"}
+  ],
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "dimension": 2,
+  "field": "characteristic zero",
+  "stratum": "S1_S2_S3_OPEN",
+  "chart": null,
+  "variables": null,
+  "equations": {
+    "literature_source_items": ["Eq. (103)-(114)", "Lemma 3.10", "Eq. (163)", "Eq. (165)"],
+    "project_system_status": "NOT_CONSTRUCTED_BY_LITERATURE_GATE"
+  },
+  "denominator_factors": null,
+  "saturation_method": "NOT_RUN_BY_LITERATURE_GATE",
+  "solver": null,
+  "solver_version": null,
+  "time_limit": null,
+  "memory_limit": null,
+  "exact_numeric_distinction": "Exact bibliographic versions, local PDF hashes, and visual source readings only; no numerical solver evidence is included.",
+  "completeness_scope": "Mandatory literature gate, current-version/journal/erratum/follow-up audit, and specified target-PDF visual audit.",
+  "unresolved_components": [
+    "fixed-d=2 rational reconstruction",
+    "bidirectional reconstruction equivalence",
+    "branch-specific finite systems",
+    "complete S1/S2/S3 elimination",
+    "finite d=2 representation or no-go",
+    "infinite-stage extension"
+  ],
+  "certificate_hashes": [],
+  "passed": true,
+  "verdict": "LITERATURE_FRONTIER_OPEN",
+  "overall_verdict": "FINAL_THEORY_OPEN"
+}

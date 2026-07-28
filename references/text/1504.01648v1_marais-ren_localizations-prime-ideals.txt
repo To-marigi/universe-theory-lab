@@ -1,0 +1,1113 @@
+===== PAGE 1 =====
+
+arXiv:1504.01648v1  [math.AC]  7 Apr 2015
+MORA’S HOL Y GRAIL 1: ALGORITHMS FOR COMPUTING
+IN LOCALIZA TIONS A T PRIME IDEALS
+MAGDALEEN S. MARAIS AND YUE REN
+Abstract. This article discusses a computational treatment of the lo-
+calization AL of an aﬃne coordinate ring A at a prime ideal L and its
+associated graded ring Gra(AL) with the means of standard basis tech-
+niques. Building on Mora’s work [6], we present alternative proofs on
+two of the central statements and expand on the applications mentioned
+by Mora: resolutions of ideals, systems of parameters and Hi lbert poly-
+nomials, as well as dimension and regularity of AL. All algorithms are
+implemented in the library graal.lib for the computer algebra system
+Singular.
+0. Introduction
+Computer algebra systems like Macaulay2 and Singular have become
+a staple in studying aﬃne or projective varieties globally, by examining their
+coordinate rings or homogeneous coordinate rings.
+The behaviour of an aﬃne variety X⊆ kn around a single point p∈ X
+is described by the localization A(X)mp of its coordinate ring A(X) at the
+corresponding maximal ideal mp. This local ring is commonly realized by
+applying an aﬃne coordinate transformation ϕ : kn ∼−→ kn, shifting the
+point p into the origin 0. The respective localization A(ϕ(X))m0 can then be
+simulated by working with a local monomial ordering. This te chnique has
+been applied in the study of isolated singularities to great success.
+In this article, we discuss a related approach for the realiz ation of the lo-
+calization AL of an aﬃne coordinate ring A at a prime ideal L, see Lemma 1.
+Introduced by Mora in [6], it uses a local ordering on a speciﬁ c ring to mimic
+the local structure of AL. From it, one can also deduce a corresponding
+representation of its associated graded ring Gra(AL), a ⊴ AL denoting its
+maximal ideal, see Lemma 3. In Section 1, we discuss the afore mentioned
+Lemmata, giving alternative proofs than in [6].
+Because a graded ring Gra(AL) is computationally easier to handle than
+a local ring AL, we show in Section 2 how to exploit the a-adic topology on
+AL, allowing us to work over Gra(AL) instead. Albeit not viable for every
+2010 Mathematics Subject Classiﬁcation. Primary 13H99; Secondary 13P10, 14Q99.
+Key words and phrases. local ring, associated graded ring, localization, resolut ion.
+This research was supported by the African Institute for Mat hematical Sciences, the
+Department of Mathematics and Applied Mathematics of the Un iversity of Pretoria and
+a grant awarded by Wolfram Decker. We are thankful to all of th em.
+1see [6].
+1
+
+===== PAGE 2 =====
+
+2 MAGDALEEN S. MARAIS AND YUE REN
+problem, a lot of information about AL can be found preserved in Gra(AL).
+The problems covered are the Hilbert polynomials of ideals i n AL, a system
+of parameters for AL as well as the regularity and dimension of AL. In
+particular, as stated in [6], we present an algorithm for lif ting a resolution
+of an initial ideal ina(I) ⊴ Gra(AL) to a resolution of the ideal I ⊴ AL.
+All algorithms and examples in this article have been implem ented in
+the Singular library graal.lib [5], which also showcases some of the new
+object-oriented features of Singular. The library will be available in the
+next Singular distribution.
+1. An Algorithm for the Associated Graded Ring Gra(AL)
+In this article, let Q = k[X] be a multivariate polynomial ring over a
+ground ﬁeld k, and H⊆ J ⊴ Q two prime ideals. Let A := Q/H be the
+aﬃne coordinate ring of the variety deﬁned by H, and let L := J·A ⊴ A be
+a prime ideal describing an irreducible subvariety.
+Let U⊆ X be a maximal independent set of variables with respect to J,
+and let V := X\U denote the remaining variables, so that J·k(U )[V ] ⊴
+k(U )[V ] becomes a maximal ideal. Set Q0 := k(U )[V ], H 0 = H·Q0 and
+J 0 = J·Q0.
+Next, ﬁx a system of generators J =⟨f1, . . . , fs⟩, and consider the polyno-
+mial ring Q[Y ] := Q[Y1, . . . , Ys]. Set I :=⟨f1− Y1, . . . , fs− Ys⟩+ H 0 ⊴ Q0[Y ].
+Let a := L·AL denote the maximal ideal of AL, K := AL/a its residue ﬁeld.
+Q := k[X] Q0 := k(U )[V ] a ⊴ AL
+A := Q/H
+⊴J
+⟨f1, . . . , fs⟩
+=
+⊆H
+⊴L := J·A
+X \ U=
+maximal independent set
+with respect to J K
+maximal ideal
+Throughout the entire article, we will be abbreviating (Y1, . . . , Ys) with
+Y , (f1, . . . , fs) with f and also, for α = (α1, . . . , αs)∈ Ns, Y α1
+1 ···Y αs
+s with
+Y α, f α1
+1 ···f αs
+s with f α.
+Set w∈ R|V|× R|Y| to be the weight vector which weights the variables
+V with 0 and the variables Y with− 1. In particular, for a polynomial
+f∈ Q0[Y ],− degw(f ) will then be the lowest degree in Y occurring in it.
+Let > be a weighted ordering on Mon(V, Y ) with weight vector w and any
+global ordering >′ on Mon(V ) as tiebreaker, i.e.
+V β·Y α > V δ·Y γ :⇐⇒
+(
+|α|<|γ|
+)
+or
+(
+|α|=|γ| and V β >′ V δ)
+with V β >′ 1 for all β∈ N|V|.
+Let Q0[Y ]> denote the localization of Q0[Y ] at the monomial ordering >,
+Q0[Y ]> :=
+{f
+u
+⏐
+⏐
+⏐
+⏐ f, u∈ Q0[Y ] and LM>(u) = 1
+}
+.
+
+===== PAGE 3 =====
+
+ALGORITHMS FOR COMPUTING IN LOCALIZATIONS AT PRIME IDEALS 3
+The notions of leading monomials then extend naturally from Q0[Y ] to
+Q0[Y ]>.
+Lemma 1 (corresponding to Lemma 6.3 in [6]) . The map Q[Y ]→ A, Y α↦→
+f α extends naturally to a map φ : Q0[Y ]>→ AL, inducing an exact sequence
+of ﬁltered rings
+0 −→ I· Q0[Y ]> −→ Q0[Y ]>
+φ
+−→ AL −→ 0.
+⟨Y⟩d·Q0[Y ]> ↦−→ ad·AL
+Y α ↦−→ f α
+⊆
+⊆
+⟨f1 − Y1, . . . , fs − Ys⟩ + H 0
+=
+Proof. Before we show exactness, note that the map φ is well-deﬁned because
+the residues of the algebraically independent variables U in A are naturally
+not contained in L, making them invertible in AL. Moreover, any polynomial
+g∈ Q0[Y ] with LM>(g) = 1 has to be of the form g = c+p for some c∈ k(U ),
+p∈⟨ Y⟩, and hence it is also mapped to something invertible in AL.
+It is clear that I·Q0[Y ]> is the kernel of φ. In order to show that φ is
+surjective, it suﬃces to ﬁnd elements mapping to p− 1 for p /∈ L.
+Let p /∈ L and let g = ∑
+α cα·Y α∈ Q0[Y ]>, with cα∈ Q0, be a preimage
+of p. Clearly, c0̸= 0 since Y is mapped into L. We will now show that
+c0 is invertible modulo I, which implies that g is invertible modulo I and
+hence completes the proof. Because J 0 ⊴ Q0 is maximal, there exist a /∈ J 0
+and b ∈ J 0 such that a·c0 = 1 + b. And since J 0 = ⟨f1, . . . , fs⟩ and
+I⊇⟨ f1− Y1, . . . , fs− Ys⟩, a·c0 = 1 + pb mod I, for some pb∈⟨ Y1, . . . , Ys⟩.
+Due to the ordering >, 1 + pb is invertible. □
+Deﬁnition 2. We deﬁne the associated graded ring of AL with respect to a
+to be
+Gra(AL) :=
+∞⨁
+n=0
+an/an+1 = AL/a⊕ a/a2⊕ . . . .
+Given c∈ AL\{0}, the valuation νa(c) of c with respect to a is the unique
+n∈ N such that c∈ (an·AL)\(an+1·AL), and the initial form ina(c) of c
+with respect to a is its residue class c∈ (an·AL)/(an+1·AL)⊆ Gra(AL).
+For an ideal I ⊴ AL, the initial form of I with respect to a is
+ina(I) =⟨ina(c)|c∈ I⟩.
+For our weight vector w ∈ R|V|+|Y| and any g = ∑
+α,β cα,β·V βY α ∈
+Q0[Y ], we deﬁne the initial form of g with respect to w to be inw(g) =∑
+w·(β,α) max cα,β·V βY α∈ Q0[Y ]. Naturally, for an ideal J ⊴ Q0[Y ], the
+initial form of J with respect to w is
+inw(J) =⟨inw(g)|g∈ J⟩.
+The map inw : Q0[Y ] → Q0[Y ] naturally induces a map Q0[Y ]> →
+(Q0/ J0)[Y ] = K[Y ], as LM>(p) = 1 implies inw(p)∈ Q0 whose image then
+lies in K and therefore is invertible. We will denote this map with ()in:
+
+===== PAGE 4 =====
+
+4 MAGDALEEN S. MARAIS AND YUE REN
+Q0[Y ]> K[Y ]
+Q0[Y ] Q0[Y ]
+()in
+inw
+⊆
+Abusing the notation by abbreviating the ideal I·Q0[Y ] with I, we then
+get:
+Lemma 3 (Lemma 6.6 in [6]) . We have an exact sequence of graded rings
+0 −→ Iin· K[Y ] −→ K[Y ] λ−→ Gra(AL) −→ 0.
+K[Y ]d −→ ad/ad+1
+Y α ↦−→
+f α
+⊆
+⊆
+Proof. It is clear that λ is surjective, so remains to show that ker(λ) = Iin.
+Suppose ∑
+|α|=d aαY α∈ ker(λ) for some aα∈ AL. Then ∑
+|α|=d aαf α∈
+ad+1, say ∑
+|α|=d aαf α = ∑
+|β|=d+1 bβf β for suitable bβ ∈ AL. Recall the
+exact sequence in Lemma 1. Pick aα,0, bβ,0∈ Q0 such that φ(aα,0) = aα and
+φ(bβ,0) = bβ for all α, β. Then ∑
+|α|=d aα,0Y α− ∑
+|β|=d+1 bβ,0Y β∈ ker(φ) =
+I. Thus
+( ∑
+|α|=d
+aα,0Y α−
+∑
+|β|=d+1
+bβ,0Y β
+)
+in
+=
+( ∑
+|α|=d
+aα,0Y α
+)
+in
+=
+∑
+|α|=d
+aαY α∈ Iin.
+Conversely, suppose gin∈ Iin for some g∈ I. Writing g = h + r, where h
+is the sum over the terms of lowest degree in Y , we have
+φ(g) = φ(h)
+∈ ad
++ φ(r)
+∈ ad+1
+= 0, where d =− degw(g) is the degree in Y of g .
+This implies that λ(gin) = λ(hin) = 0∈ ad/ad+1. □
+Proposition 4. The previous two Lemmas yield a diagram
+0 −→ I· Q0[Y ]> −→ Q0[Y ]>
+φ
+−→ AL −→ 0
+0 −→ Iin· K[Y ] −→ K[Y ] λ−→ Gra(AL) −→ 0.
+()in ()in ina()
+For any f∈ Q0[Y ]> we can calculate the initial form of its image in AL by
+ina(φ(f )) = λ(NF(f, GI)in) with νa(φ(f )) =− degw(NF(f, GI)).
+In particular, if LM>(f ) /∈ LM>(GI), then
+ina(φ(f )) = λ(fin) and νa(φ(f )) =− degw(f ).
+Proof. The diagram is merely a concatenation of the sequences in Lem ma 1
+and 3.
+
+===== PAGE 5 =====
+
+ALGORITHMS FOR COMPUTING IN LOCALIZATIONS AT PRIME IDEALS 5
+The formula for the initial form and valuation follow immedi ately from a =
+⟨φ(f1),
+. . . , φ(fk)⟩, I =⟨f1− Y1, . . . , fk− Yk⟩ and our chosen ordering >. □
+Remark 5. Note that if G is a standard basis for I ⊴ Q0[Y1, . . . , Ys]> with
+respect to our chosen weighted ordering >, then so is {inw(g)| g∈ G} for
+inw(I). This implies that a standard basis of I yields a Gröbner basis of Iin.
+Remark 6. For practical reasons, it is recommended to compute the min-
+imal polynomial of K over k(U ), as we have a natural isomorphism K∼
+=
+Q0/J 0 = k(U )[V ]/J 0. This can be done by applying a generic coordinate
+transformation
+ϕ : Q0 = k(U )[V1, . . . , Vn]→ k(U )[T1, . . . , Tn− 1, T ]
+to push it into general position with respect to a lexicograp hical ordering
+(see [3], Proposition 4.2.2). Depending on the lexicograph ical ordering,
+ϕ(J 0) has a Gröbner basis of the form ⟨T1− g1, . . . , Tn− 1− gn− 1, g⟩, where
+g1, . . . , gn− 1, g∈ k(U )[T ]. We then obtain
+K∼
+= Q0/J 0∼
+= k(U )[T1, . . . , Tn− 1, T ]/ϕ(J 0)∼
+= k(U )[T ]/⟨g⟩,
+where the last isomorphism is deﬁned by Vi↦→ gi, for i = 1, . . . , n− 1.
+2. Applications
+In this section we demonstrate how to exploit of the a-adic topology in
+several calculations on AL. We give some exemplary questions which allow
+us to compute in Gra(AL) and lift the result back to AL.
+2.1. Dimension. It is well known that the dimension of a local Noetherian
+local ring coincides with that of its associated graded ring (see [3] Theorem
+5.6.2),
+dim(AL) = dim(Gr a(AL)).
+Therefore, we can determine the dimension of AL by computing the dimen-
+sion of Gra(AL).
+2.2. Regularity. As we have mentioned in the introduction, localization
+of aﬃne coordinate rings at the origin is an established tool in the study
+of singularities. In the nature of these studies, the object of interest are
+localizations which are not regular.
+Deﬁnition 7. AL is a regular local ring if
+dimK(a/a2) = dim AL.
+Geometrically, this means that the irreducible subvariety deﬁned by L is
+not contained in the singular locus of the aﬃne variety given by A. The
+representation of Gra(AL) in Lemma 3 implies following criterion for the
+regularity of AL:
+
+===== PAGE 6 =====
+
+6 MAGDALEEN S. MARAIS AND YUE REN
+Proposition 8. We have
+AL regular ⇐⇒ Gra(AL) isomorphic to a polynomial ring
+⇐⇒ Iin generated by linear elements.
+Proof. Let H :={h1, . . . , hn} be a reduced Gröbner basis of Iin, therefore H
+contains only homogeneous elements. Let dimK(a/a2) = d and without loss
+of generality suppose{Y1, . . . , Yd} is an independent set of variables over Iin.
+Then Gra(AL)∼
+= K[Y1, . . . , Yd]/I′
+in, where I′
+in is generated by appropriate
+linear transformations of all the nonlinear elements of H. If I′
+in =⟨0⟩, it is
+clear that dim(Gra(AL)) = d and thus AL is regular.
+Conversely, suppose I′
+in̸=⟨0⟩, i.e. Gra(AL) is not a polynomial ring, and
+suppose without loss of generality that Yd is a divisor of one of the terms of
+one of the elements of I′
+in. Then, since K[Y1, . . . , Yd]/I′
+in is a ﬁnitely gener-
+ated K algebra, dim(Gra(AL)) = dim (K[ Y1, . . . , Yd]/I′
+in)/⟨Y1, . . . , Yd− 1⟩) +
+height⟨Y1, . . . Yd− 1⟩≤ 0 + d− 1. Hence AL is not regular. □
+Example 9. Consider the aﬃne surface X deﬁned by y2 + x3− x2z2 ∈
+Q[x, y, z]. Intersecting X with aﬃne planes z− t yield nodal curves with
+singular point (0, 0, t) for t̸= 0 , which degenerate into a cuspidal curve for
+t = 0.
+⟨x, y⟩
+⟨x− z2, y⟩
+z < 0 z = 0 z > 0
+Figure 1. V (y2 + x3− x2z2)
+Consequently, the singular locus of X is the line given by
+L :=⟨x, y⟩ ⊴ A := Q[x, y, z]/⟨y2 + x3− x2z2⟩.
+Indeed, setting f1 := x and f2 := y we see that
+z2·f 2
+1 + f 2
+2 = f 3
+1∈ A⊆ AL,
+which means in the isomorphism induced by Lemma 3 that z2·Y 2
+1 + Y 2
+2 =
+0∈ Gra(AL). By Proposition 8, AL is then not regular.
+On the other hand for
+L′ :=⟨x− z2, y⟩ ⊴ A := Q[x, y, z]/⟨y2 + x3− x2z2⟩.
+we can compute that Gra(AL) = K[Y1, Y2], where K = Q[T ]/T 2 and Y1, Y2
+represent the generators x− z2, y. Therefore, AL′ is regular.
+
+===== PAGE 7 =====
+
+ALGORITHMS FOR COMPUTING IN LOCALIZATIONS AT PRIME IDEALS 7
+2.3. System of parameters. A system of parameters can be thought of as
+a local coordinate system, which determines the points arou nd the subvariety
+up to ﬁnite ambiguity.
+Deﬁnition 10. Let d := dim( AL). Then {a1, . . . , ad} is called a system of
+parameters of AL, if ⟨a1, . . . , ad⟩ is a-primary. If ⟨a1, . . . , ad⟩ = a then it is
+called a regular system of parameters.
+Note that if a1, . . . , ad∈ AL is such that the radical of⟨ina(a1), . . . ,ina(ad)⟩⊴
+Gra(AL) is⟨Y1, . . . , Ys⟩/Iin, then for I :=⟨a1, . . . , ad⟩, we have (
+√
+I∩ ai)/ai+1 =
+ai/ai+1 for all i. But, since ∩ iai = 0, this implies that
+√
+I = a.
+Hence, knowing that an ideal in AL or Gra(AL) is primary if its radical is
+maximal, ﬁnding a system of parameters for AL boils down to ﬁnding a set
+of homogeneous elements {λ1, . . . , λd}⊂ K[Y1, . . . , Ys] such that the radical
+of H =⟨λ1, . . . , λd⟩ + Iin is⟨Y1, . . . , Ys⟩.
+Now, it follows from linear algebra that for a generic choice of cij∈ Q0,
+λi = ∑cijYj satisﬁes the above condition (which can be tested by computi ng
+the dimension of H). Choosing ai as ∑cijfi, where⟨f1, . . . , fs⟩ = L⊆ A⊆
+AL, we have that ina(ai) = λi and we are done.
+A regular system of parameters only exists when AL is regular, which can
+be checked using the method described in Section 2.2. In such a case, a regu-
+lar system of parameters can be determined in the same way, ex cept checking
+whether H equals⟨Y1, . . . , Ys⟩ instead of checking whether the radical of H
+equals⟨Y1, . . . , Ys⟩.
+Example 11. For AL as in Example 9, a simple possible system of param-
+eters is{y}. It means that if we look alongside the line given by L ⊴ A, the
+function y∈ A distinguishes the points of A in the near vicinity of L up to
+ﬁnite ambiguity as in Figure 2.
+V (L)
+X(A)
+y = ε for some ε < 0
+Figure 2. V (y2 + x3− x2z2) around V (x, y)
+2.4. Hilbert-Samuel function and Hilbert-Samuel polynomial. For a
+homogeneous ideal I ⊴Gra(AL), i.e. an ideal with an homogeneous preimage,
+we denote the Hilbert function of I by
+HGra(AL)(I, n) = dim K(Gra(AL)/I)n.
+
+===== PAGE 8 =====
+
+8 MAGDALEEN S. MARAIS AND YUE REN
+Since the the Hilbert-Samuel function of an ideal J⊴AL, denoted by HSAL(J),
+evaluated at n equals dim(J/(an·J)) by deﬁnition, it follows that
+HSAL(J, n) =
+n∑
+i=1
+HGra AL(ina(J), i− 1).
+Suppose the Hilbert polynomial of ina(J) ⊴ Gra(AL) is of the form
+(1) PGra(AL)(ina(J), x) =
+s− 1∑
+ν=0
+aν
+(x
+ν
+)
+,
+for aν ∈ Z, so that PGra(AL)(ina(J), n) = H Gra(AL)(ina(J), n) for n suﬃ-
+ciently large. Then the Hilbert Samuel polynomial is given b y
+(2) HSPAL(J, x) :=
+s∑
+ν=1
+aν− 1
+(x
+ν
+)
++ c,
+where c = dim(J/(al·J))− ∑s
+ν=1 aν− 1
+(l
+ν
+)
+, for any suﬃciently large l, so that
+HSPAL(J, n) = HS AL(J, n). And, by Corollaries 5.1.5 and 5.5.5 in [3], any
+l≥ d is suﬃciently large, where d is the degree of the second Hilbert series
+of ina(J).
+Taking the relationship between (1) and (2) into account it s uﬃces to
+compute PGra(AL)(ina(J)) to determine HSPAL(J). Since Gra(AL)/ ina(J)∼
+=
+K[Y ]/(Iin + in a(J)) it follows that HGra(AL)(Jin) = H K[Y ](Iin + in a J) =
+HK[Y ](L(Iin + ina J)), where L(I), denotes the leading ideal of I.
+Remark 12. This algorithm is still subject to ongoing work, because alg e-
+braic ﬁeld extensions over transcendental ﬁeld extensions are not available
+in Singualr yet.
+2.5. Syzygies and Resolutions. For this section, ﬁx an ideal I ⊴ AL and
+consider an AL-free resolution
+0←− AL/I←− AL←− M1←− M2←−··· ,
+where, for sake of simplicity, all Mi are free AL modules of ﬁnite rank, and
+all maps are compatible with the ﬁltrations. That means for e xample that
+the ﬁrst two maps are of the form
+gi,0 ←− /mapsfromcharei,1
+AL ←− M1
+M1 ←− M2
+gi,1 ←− /mapsfromcharei,2
+= ⨁k1
+i=1 AL(− νa(gi,0)),
+= ⨁k2
+i=1 AL(− ord(gi,1)),
+where ei,1, ei,2 refer to the canonical basis elements of M1 and M2, and
+gi,0, gi,1 refer to their images respectively. Moreover, ord denotes the order
+function of the ﬁltration on M1, which has been twisted so that ord(1·ei,1) =
+0+ νa(gi,0), hence the map takes the n-th ﬁltration module of M1 to the n-th
+ﬁltration module of AL for any n∈ N.
+
+===== PAGE 9 =====
+
+ALGORITHMS FOR COMPUTING IN LOCALIZATIONS AT PRIME IDEALS 9
+Deﬁnition 13. Let M be an AL-module as above, say M =⊕ k
+i=1AL(− di).
+Then its associated graded module is the free graded Gra(AL)-module given
+by
+Gra(M ) :=
+k⨁
+i=1
+Gra(AL)(− di),
+so that for any d∈ N its degree d component is given by
+Gra(M )d :=
+k⨁
+i=1
+Gra(AL)d+di =
+k⨁
+i=1
+ad+di /ad+di+1.
+For any g = ∑k
+i=1 gi·ei∈ M , say ord(g) = n, the initial form of g is
+deﬁned to be
+ina(g) :=
+k∑
+i=1
+gi·ei∈ Gra(M )n⊆ Gra(M ),
+so that gi·ei = 0∈ Gra(M )n for all ord(gi·ei) > ord(g). The initial module of
+a submodule M′⊆ M is naturally deﬁned to be in(M′) :=⟨in(g)|g∈ M′⟩.
+It is straightforward to see how our AL-free resolution of I yields a graded,
+Gra(AL)-free resolution of in a(I) due to the functorial nature of taking initial
+forms:
+0 ←− AL/I ←− AL ←− M1 ←− M2 ←− ···
+0 ←− Gra(AL)/ ina(I) ←− Gra(AL) ←− N1 ←− N2 ←− ··· .
+ina ina ina ina
+Given the notation from the very beginning, the ﬁrst two maps of our
+resolution would be of the form
+ina(gi,0) ←− /mapsfromcharei,1
+Gra(AL) ←− N1
+N1 ←− N2
+ina(gi,1) ←− /mapsfromcharei,2
+= ⨁k1
+i=1 Gra(AL)(− νa(gi,0)),
+= ⨁k2
+i=1 Gra(AL)(− ord(gi,1)),
+where, for sake of simplicity, we abuse notation and use ei,1 respectively ei,2
+to refer to the canonical basis elements of both M1 and N1 respectively M2
+and N2.
+The goal of this section is to establish an inverse process, i n which we
+will lift a graded Gra(AL)-free resolution of ina(I) to an AL-free resolution
+of I. For that, ﬁx a graded Gra(AL)-free resolution for the remainder of the
+chapter
+0←− Gra(I)/ ina(I)←− Gra(AL)←− N1←− N2←−··· .
+
+===== PAGE 10 =====
+
+10 MAGDALEEN S. MARAIS AND YUE REN
+Roughly speaking, the lift of the whole resolution consists of repeated lifts
+of syzygies over Gra(AL) to syzygies over AL, i.e. for any free Gra(AL)-
+module N = Nj in our resolution and two sets Θ = {θ1, . . . , θk} ⊆ N
+and ∆ = {δ1, . . . , δk}⊆ M := Mj with ina(δi) = θi, compute for a given
+η∈ syz(Θ) a γ∈ syz(∆) with ina(γ) = η. In our setting, both Θ and ∆ will
+typically be systems of generators of previous syzygy modul es, while η is the
+image of a canonical basis element in the resolution over Gra(AL) and γ will
+then be the image of a canonical basis element in the resoluti on over AL.
+. . . ←− M ←− ⨁k
+i=1 AL(− ord(δi))
+. . . ←− N ←− ⨁k
+i=1 Gra(AL)(− deg(θi)) ←− . . .
+∆
+Θ ⊆⊆
+ina ina
+γ
+η ∈∈
+ei←− /mapsfromchar
+ﬁnd such that ina(γ) = η
+( so that here
+γ← /mapsfromcharei
+)
+Suppose N = ⊕ i Gra(AL)(− di) and M := ⊕ iAL(− di). Then Lemma
+3 immediately induces a surjective morphism λ from the free K[Y ]-module
+ˆN =⊕ iK[Y ](− di) onto N with kernel ker(λ) = Iin· ˆN and Lemma 1 induces
+a surjective morphism φ from a free Q0[Y ]>-module ˆM =⊕ iQ0[Y ]>(− di)
+onto M with kernel ker(φ) = I·ˆM . Note that ˆN and ˆM are shifted similarly
+to their images so that λ remains a graded map of degree 0 and φ remains
+compatible with the ﬁltrations.
+Moreover, if we consider a weight on the module variables and an ordering
+on the module monomials of ˆM that are compatible with the ﬁltration,
+Proposition 4 immediately carries over to our module settin g. For that, we
+extend our existing weight vector w to weight the canonical basis elements ei
+with weight di. Note that our lifted resolution will induce a sequence on th e
+free Q0[Y ]>-modules ˆM . Extend > to the Schreyer ordering on the module
+monomials on ˆM .
+Note that a Gröbner basis of ker(λ) = Iin·ˆN and a standard basis ker(φ) =
+I·ˆM are not hard to obtain, as they can be easily derived from the G röbner
+basis of Iin and the standard basis of I respectively.
+0 −→ I· ˆM −→ ˆM
+φ
+−→ M −→ 0
+0 −→ Iin· ˆN −→ ˆN λ−→ N −→ 0.
+()in ()in ina()
+⨁
+i AL(− di)
+⨁
+i Gra(AL)(− di)
+=
+=
+⨁
+i K[Y ](− di)
+=
+⨁
+i Q0[Y ]>(− di)
+=
+Now let {δ1, . . . , δk} be a generating set of a submodule M′≤ M such
+that{θ1, . . . , θk}, where θi := in a(δi), generates N′ := in a(M′)≤ N . To
+lift syzygies of (θ1, . . . , θk) to syzygies of (δ1, . . . , δk) will require a standard
+
+===== PAGE 11 =====
+
+ALGORITHMS FOR COMPUTING IN LOCALIZATIONS AT PRIME IDEALS 1 1
+basis of φ− 1(M′)≤ ˆM as well as a representation of the basis elements via
+suitable preimages of δi.
+Since our utmost goal is to avoid complicated computations o ver AL,
+it stands out of question to compute this standard basis of φ− 1(M′) from
+scratch. However, this is not needed since Gröbner bases of φ− 1N′ can be
+naturally lifted to standard bases of φ− 1(M′).
+0 −→ I· ˆM −→ ˆM
+φ
+−→ M −→ 0
+0 −→ Iin· ˆN −→ ˆN λ−→ N −→ 0.
+()in ()in ina()
+M′⊇{ δ1, . . . , δk}
+N′⊇{ θ1, . . . , θk}
+≤≤
+λ− 1N′{h1, . . . , hk}⊆
+φ− 1M′{g1, . . . , gk}⊆
+≤ ≤
+{h′
+1, . . . , h′
+l, h′
+l+1, . . .}
+⊆
+standard basis with
+h′
+j = ∑k
+i=1 qji·hi + sj
+For that, consider preimages g1, . . . , gk of δ1, . . . , δk with LM>(gi) /∈ LM>(I·
+ˆM ), so that h1, . . . , hk, where hi := gi,in, are homogeneous preimages of
+θ1, . . . , θk with LM>(hi) /∈ LM>(Iin· ˆN ). Consider a homogeneous Gröb-
+ner basis {h′
+1, . . . , h′
+l, h′
+l+1, . . .} of λ− 1N′ with LM>(h′
+i) /∈ LM>(Iin· ˆN ) for
+1 ≤ i ≤ l and LM>(h′
+i) ∈ LM>(Iin· ˆN ) otherwise. Then there exists
+qji∈ Q0[Y ] such that
+h′
+j =
+k∑
+i=1
+qji·hi + sj for some si∈ Iin for all i = 1, . . . , l.
+Since all h′
+j and hi are homogeneous (with variables Y ), we may assume
+that all qji are weighted homogeneous with− degw(qji) = deg( h′
+i)− deg(hj),
+unless qji = 0. Moreover, we may assume that LM>(qji) /∈ I unless qji = 0,
+as this can always be achieved by modifying si, which in particular implies
+that νa(φ(qji)) =− degw(qji).
+With this, we have everything necessary to formulate our alg orithm for
+lifting Gröbner bases.
+Algorithm 1 lifting Gröbner bases
+Input: Given two submodules M′≤ M and N′≤ N with ina(M′) = N′,
+(1) a standard basis G0 of I· ˆM ,
+(2) G ={g1, . . . , gk}⊆ ˆM with LM>(gi) /∈ LM>(I· ˆM ),
+(3){h′
+1, . . . , h′
+l, h′
+l+1, . . .} a Gröbner basis of λ− 1N′ with LM>(h′
+i) /∈
+LM>(Iin· ˆN ) for 1≤ i≤ l and LM>(h′
+i)∈ LM>(Iin· ˆN ) other-
+wise,
+
+===== PAGE 12 =====
+
+12 MAGDALEEN S. MARAIS AND YUE REN
+Input: (continued)
+(4) qji ∈ Q0[Y ] homogeneous with respect to weight vector w and
+LM>(qji) /∈ I unless qji = 0 such that
+h′
+j =
+k∑
+i=1
+qji·hi + rj for all j = 1, . . . , l,
+where hi := gi,in for i = 1, . . . , k.
+Output: G′ ={g′
+1, . . . , g′
+l}⊆ ˆM and q′
+ji∈ Q0[Y ] such that
+(1) G′∪ G0 is a standard basis of φ− 1M′,
+(2) g′
+j = ∑k
+i=1 q′
+ji·gi + rj for some rj∈ I,
+(3) ord(φ(g′
+j )) = ord( φ(q′
+ji·gi)) unless q′
+ji·gi = 0.
+1: for j = 1, . . . , l do
+2: Compute
+g′
+j := NF
+( k∑
+i=1
+qji·gi, G0
+)
+∈ Q0[Y ].
+3: if LM>(g′
+j) = sj·Y α for some sj∈ Q0, sj̸= 1 then
+4: Find aj∈ Q0 such that
+aj·sj = 1∈ K = Q0/J 0.
+5: Redeﬁne
+g′
+j := NF(aj·g′
+j, G0).
+6: else
+7: Set aj := 1∈ Q0.
+8: end if
+9: end for
+10: return{g′
+1, . . . , g′
+l} and (ai·qji).
+Proof. In order to show that G′∪ G0 is a standard basis of φ− 1M′, we need
+show that LM>(g′
+j,in) = LM >(h′
+j ) for all j = 1, . . . , l ﬁrst. For sake of clarity,
+rename g′
+j as it appears in Steps 2 to 5 to g′′
+j , and set
+rj,1 :=
+k∑
+i=1
+qji·gi− NF
+( k∑
+i=1
+qji·gi, G0
+)
+as in Step 2 ,
+rj,2 :=
+{
+aj·g′′
+j− NF(aj·g′′
+j , G0) as in Step 5 if sj̸= 1,
+0 otherwise,
+so that g′′
+j = ∑k
+i=1 qji·gi− rj,1 and g′
+j = aj·g′′
+j− rj,2, or rather
+g′
+j = aj·
+k∑
+i=1
+qji·gi− aj·rj,1− rj,2.
+
+===== PAGE 13 =====
+
+ALGORITHMS FOR COMPUTING IN LOCALIZATIONS AT PRIME IDEALS 1 3
+By deﬁnition of > and unless rj,1 = 0 or rj,2 = 0, we have
+degw(rj,1)≤ degw
+( k∑
+i=1
+qji·gi
+)
+,
+degw(rj,2)≤ degw(aj·g′′
+j )≤ degw
+(
+aj·
+k∑
+i=1
+qji·gi
+)
+.
+Setting c1 and c2 to be either 1 or 0 depending on the disparity of weighted
+degree, together, this yields
+(*) g′
+j,in =
+(
+aj·
+k∑
+i=1
+qji·gi
+)
+in
+
+ 
+=aj·h′
+j by (4)
+− c1·(aj·rj,1)in
+ 
+∈ Iin
+− c2·(rj,2)in  
+∈ Iin
+.
+Because LM>(g′
+j ) /∈ LM>(I· ˆM ) due to the normal form computations, we
+hence must have LM>(g′
+j,in) /∈ LM>(Iin· ˆN ), which leaves LM>(g′
+j,in) =
+LM>(aj·h′
+j) = LM >(h′
+j ) as the only possibility.
+To show that G′∪ G0 is a standard basis of φ− 1M′, consider an element
+f∈ φ− 1M′. If LM>(f )∈ LM>(I· ˆM ), then by assumption (1) there exists
+an element of G0 with leading monomial dividing LM>(f ).
+If LM>(f ) /∈ LM>(I·ˆM ), then in particular LM>(fin) /∈ LM>(Iin·ˆN ), and
+by assumption (3) there exists an j = 1, . . . , lsuch that LM>(h′
+j)|LM>(fin).
+Suppose si̸= 1 during Step 3 in the j-th iteration of the for loop. In Step
+4 we then ﬁnd an aj∈ Q0 such that aj·sj = r + 1 for some r∈ J 0. By
+construction of I and the choice of our monomial ordering >, we therefore
+have LM>(g′
+i) = 1·Y α after the normal form computation in Step 5. Either
+way, before the end of our for loop iteration in Step 6, we have
+LM>(g′
+i) = Y α = LM >(g′
+i,in) = LM >(h′
+i)|LM>(fin).
+And since LM>(fin) = LM >(f )|V =1 it follows that LM>(g′
+i)|LM>(f ).
+Moreover, our previous considerations imply for all j = 1, . . . , l
+g′
+j = aj·
+k∑
+i=1
+qji·gi− aj·rj,1− rj,2 =
+k∑
+i=1
+q′
+ji·gi− aj·rj,1− rj,2
+ 
+∈ I·ˆM
+,
+showing the second condition of our output.
+For the last condition note that we have
+
+===== PAGE 14 =====
+
+14 MAGDALEEN S. MARAIS AND YUE REN
+ord(φ(g′
+j )) = deg(λ(aj·h′
+j))
+− degw(h′
+i)
+=
+=− degw(qji)− degw(hi) =− degw(qji)− degw(gi)
+ord(φ(qji)) + ord(φ(gi))
+=
+LM>(g′
+j) /∈ LM>(I· ˆM )
+and (*)
+degw(qji ) = deg w(h′
+j )− degw(hi)
+gi,in = hi
+in which we also use that LM>(h′
+i) /∈ Iin· ˆN , LM>(qji) /∈ I and LM>(gi) /∈
+I·ˆM for the correlation between degree resp. order and weighted degree. □
+Now that we have this algorithm for lifting standard bases of preimages
+in ˆN to the corresponding preimage in ˆM , we can write down our algorithm
+for lifting syzygies over Gra(AL) to syzygies over AL.
+··· N ⨁k
+i=1 Gra(AL)(− deg θi)
+··· M ⨁k
+i=1 AL(− νa(δi))
+··· ˆN
+⨁k
+i=1 K[Y ](− deg θi)
+··· ˆM
+⨁k
+i=1 Q0[Y ]>(− νa(δi))
+λ λ
+φ φ
+∆ = {δi}k
+i=1
+⊂
+Θ = {θi}k
+i=1
+⊂
+syz(∆) ∋ γ
+⊂
+syz(Θ) ∋ η
+⊂
+{gi}k
+i=1 ⊆ G′
+⊂ g∈
+{hi}k
+i=1 ⊆ H ′
+⊂
+h∈
+Algorithm 2 lifting syzygies
+Input: η∈ syz(θ1, . . . , θk)⊆ ⨁k
+i=1 Gra(AL)(− deg θi) homogeneous and
+(1) gi∈ ˆM with LM>(gi) /∈ LM>(I· ˆM ) such that ina(φ(gi)) = θi.
+(2) a standard basis G0 of I· ˆM ,
+(3) a set G′ ={g′
+1, . . . , g′
+l}⊆ ˆM such that G′∪ G0 is a standard ba-
+sis of φ− 1M′, where M′ =⟨θ1, . . . , θk⟩ and qji ∈ Q0[Y ] weighted
+homogeneous with LM>(qji) /∈ LM>(I· ˆM ),
+g′
+j =
+k∑
+i=1
+qji·gi + rj∈ ˆM for some rj∈ I· ˆM ,
+and ord(φ(g′
+j )) = ord( φ(q′
+ji·gi)) unless q′
+ji·gi = 0, as in the output
+of Algorithm 1.
+Output: γ∈ syz(∆)⊆ ⨁k
+i=1 AL(− ord(δi)) such that in a(γ) = η.
+
+===== PAGE 15 =====
+
+ALGORITHMS FOR COMPUTING IN LOCALIZATIONS AT PRIME IDEALS 1 5
+1: Pick a homogeneous representative h of η, say
+h =
+k∑
+i=1
+ci,in·ei∈
+k⨁
+i=1
+K[Y ](− deg θi)
+with ci∈ Q0[Y ] and LM>(ci) /∈ LM>(I).
+2: Compute a normal form
+r := NF
+( k∑
+i=1
+ci·gi, G0
+)
+∈ ˆM .
+3: Compute a standard representation
+r =
+l∑
+j=1
+dj·g′
+j∈ ˆM .
+4: Set
+g :=
+k∑
+i=1
+(
+ci−
+l∑
+j=1
+qj,i·dj
+)
+·ei∈
+k⨁
+i=1
+Q0[Y ]>(− ord(δi)).
+5: return γ := φ(g)∈ ⨁k
+i=1 AL(− ord(δi))Proof. To show that γ lies in syz(∆), it suﬃces to show that the image of g
+in ˆM lies in ker(φ) = I· ˆM . That image is given by
+∑k
+i=1(ci− ∑l
+j=1 qj,i·dj)·gi = ∑k
+i=1 ci·gi− ∑k
+i=1
+∑l
+j=1 qj,i·dj·gi
+= ∑k
+i=1 ci·gi− ∑l
+j=1 dj·∑k
+i=1 qj,i·gi
+= ∑k
+i=1 ci·gi− ∑l
+j=1 dj·(g′
+j− rj)
+= ∑k
+i=1 ci·gi− r
+ 
+∈ I·ˆM
+− ∑l
+j=1 dj·rj
+ 
+∈ I·ˆM
+,
+as r = NF(∑k
+i=1 ci·gi, G0) and rj∈ I· ˆM for j = 1, . . . , l.
+It remains to show that η = ina(γ). Note that we have for any j = 1, . . . , l
+ord(φ(r)) = − degw(r) ≤ − degw(dj·g′
+j) ≤ ord(φ(dj·g′
+j)).
+Step 2 and
+Prop. 4
+Step 3 and
+deﬁnition of >
+always as
+φ : Y↦→ f
+Furthermore, observe that η∈ syz(Θ) implies that ∑k
+i=1 λ(ci,in·hi) = 0 .
+Using Proposition 4, our choice of gi∈ ˆM and ci∈ Q0[Y ] therefore yields
+
+===== PAGE 16 =====
+
+16 MAGDALEEN S. MARAIS AND YUE REN
+∑k
+i=1 ina(φ(ci·gi)) = ∑k
+i=1 ina(φ(ci))·ina(φ(gi))
+∑k
+i=1 λ(ci,in) · λ(gi,in) = ∑k
+i=1 λ(ci,in·hi) = 0 ,
+=
+=
+LM>(gi) /∈ LM>(I· ˆM )LM>(ci) /∈ LM>(I· ˆM )
+gi,in = hi
+which implies that ord(∑k
+i=1 φ(ci·gi)) > ord(φ(cs·gs)) for any s = 1, . . . , k.
+Together, we get for all i = 1, . . . , k and all j = 1, . . . , l
+ord(φ(dj·g′
+j))≥ ord(φ(r)) > ord(φ(ci·gi)).
+Recall that by assumption (4) ord(φ(g′
+j)) = ord( φ(qji·gi)) = νa(φ(qji)) +
+ord(gi), which implies
+ord(ei) = ord( φ(g′
+j))− νa(φ(qji)).
+Therefore
+ord(φ(qji·dj·ei)) = νa(φ(dj )) + ord(φ(qji·ei))
+= νa(φ(dj )) + ord(φ(qji·gi))
+= νa(φ(dj )) + ord(φ(g′
+j ))
+= ord(φ(dj·g′
+j))
+> ord(φ(ci·gi)) = ord( φ(ci·ei))
+so that
+ina(γ) = in a
+
+ φ
+( k∑
+i=1
+(
+ci−
+l∑
+j=1
+qj,i·dj
+)
+·ei
+)
+
+ = in a
+(
+φ
+( k∑
+i=1
+ci·ei
+) )
+= η.
+□
+Now that we are able to lift syzygies with Algorithm 2, we obta in as an
+immediate consequence:
+Corollary 14. Let I ⊴ AL be an ideal. For any graded, Gra(AL)-free reso-
+lution C• there exist a graded, AL-free resolution D• such that the following
+diagram commutes:
+C• : 0 ←− AL/I ←− AL ←− M1 ←− M2 ←− ···
+D• : 0 ←− Gra(AL)/ ina(I) ←− Gra(AL) ←− N1 ←− N2 ←− ··· ,
+ina ina ina ina
+where if Nk = ⨁
+j∈ Z Gra(AL)(− j)bj− k,k we have Mk = ⨁
+j∈ Z AL(− j)bj− k,k .
+In particular, if AL is regular, there always exists a ﬁnite AL-free resolu-
+tion of I.
+
+===== PAGE 17 =====
+
+ALGORITHMS FOR COMPUTING IN LOCALIZATIONS AT PRIME IDEALS 1 7
+Proof. Suppose η1, . . . , ηk ∈ Ni are the images of the canonical basis ele-
+ments of Ni+1, so that they generate the syzygy module of the images of the
+canonical basis elements of Ni.
+We can then apply Algorithm 1 to lift them to θ1, . . . , θk ∈ Mi, which
+we will set as the images of the canonical basis elements of Mi+1. By our
+algorithm, they are mapped to 0 so that our resulting sequence C• of AL
+modules is a complex.
+However, we also know that the initial forms of η1, . . . , ηk generate the
+initial of the syzygy module, hence the ηi must generate the syzygy module
+and our complex is exact, giving us a AL-free resolution D• of AL/I.
+Clearly ﬁnite graded Gra(AL)-free resolutions of ina(I) lifts to ﬁnite AL-
+free resolutions. If Gra(AL) is isomorphic to a polynomial ring, i.e. Gra(AL)
+is regular by Proposition 8, it follows from Hilbert’s Syzyg y Theorem that a
+ﬁnite free-resolution of ina(I) exists. □
+Example 15. Consider the union of a circle on a hyperplane and the inter-
+section of a twisted cubic with that hyperplane
+I :=⟨(x− 1)2 + y2− 3, z⟩∩⟨ xz− y2, yw− z2, xw− yz, z⟩ ⊴ A := Q[x, y, z, w].
+The twisted cubic makes the resolution of I more complicated, a minimal
+resolution would be of the form
+0←− A/I←− A←− A4←− A5←− A2←− 0.
+However if we localize at a subvariety outside the twisted cu bic, say on two
+conjugate points on the circle,
+L := I +⟨x− 1⟩ =⟨z, x− y, y2w− 3w, y4− 3y2⟩ ⊴ A,
+the local ring will be of the form
+AL = Q(w)[Y1, . . . , Ys, x, y, z]
+/
+⟨f1− Y1, . . . , f4− Y4, 3wY3− w2Y4 + Y 2
+3⟩ ,
+where f1, . . . , f4 are the four generators of L stated above.
+The associated graded ring of AL is then isomorphic to
+Gra(AL) = K[Y1, Y2, Y3, Y4]/⟨3·Y3− w·Y4⟩,
+where
+K = Quot(A/L)∼
+= Q(w)[t]/(t2− 4t− 71),
+x, y, z = 0↦→ 1, 3− t
+5 , 0,
+and the initial ideal of I has the simple form of
+ina(I) =⟨w2Y4, Y1⟩ ⊴ Gra(AL).
+It is easy to see that ina(I) allows for a Koszul resolution
+0←− Gra(AL)/ ina(I)←− Gra(AL)
+( w2Y4
+Y1
+)
+←− Gra(AL)2 (− Y1 w2Y4 )
+←− Gra(AL)←− 0,
+
+===== PAGE 18 =====
+
+18 MAGDALEEN S. MARAIS AND YUE REN
+which then lifts to an equally simple resolution
+0←− AL/I←− AL
+M1
+←− A2
+L
+M2
+←− AL←− 0,
+but with more complicated matrices
+M1 =
+(
+w2Y4 + 3w2xY 2
+2 + 3wY2Y3− Y 2
+3 Y1
+)
+and
+M2 =
+
+ − Y1
+w2Y4 + 3w2Y 2
+2 + w2Y2Y4− w2
+9 Y 2
+4 + 3w2Y 3
+2− Y2Y 2
+3 + 1
+3w Y 3
+3 + 1
+9 Y 2
+3 Y4
+
+ .
+3. acknowledgements
+We would like to thank Janko Boehm for insightful converstati ons and
+Theo Mora for clariﬁcations of the current state of research .
+References
+[1] W. Decker, G.-M. Greuel, G. Pﬁster, H. Schönemann, Singular 4-0-
+1 – A computer algebra system for polynomial computations (2 014).
+http://www.singular.uni-kl.de.
+[2] D. Eisenbud, Commutative Algebra. A view towards algebraic geometry , Graduate
+Texts in Mathematics, 150. Springer-Verlag, New York (1995 ).
+[3] G.-M. Greuel, G. Pﬁster, A Singular Introduction to Commutative Algebra , second
+ed. Springer, Berlin (2008).
+[4] C.A. Jung. Die Entmystiﬁzierung des heiligen GR(AL)s, Master’s thesis, Universität
+des Saarlandes (1997).
+[5] M.S. Marais, Y. Ren, graal.lib. A Singular library for localizations
+at prome ideals (2015). A vailable in the latest version of Si ngular at
+http://www.mathematik.uni-kl.de/fileadmin/AGs/agag/ren/Software/graal.lib.
+[6] T. Mora, La queste del Saint Gra(AL): A computational approach to local algebra ,
+Discrete Appl. Math. 33 (1991), 161-190.
+Magdaleen S. Marais, African Institute for Ma thema tical Sc iences and
+University of Pretoria, Depar tment of Ma thema tics and Appl ied Ma thema t-
+ics, 0002 Pretoria, South Africa
+E-mail address : magdaleen@aims.ac.za
+Yue Ren, Depar tment of Ma thema tics, University of Kaiserslautern, Er win-
+Schrödinger-Str., 67663 Kaiserslautern, Germany
+E-mail address : ren@mathematik.uni-kl.de

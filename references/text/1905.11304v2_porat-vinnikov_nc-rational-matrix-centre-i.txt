@@ -1,0 +1,5281 @@
+===== PAGE 1 =====
+
+arXiv:1905.11304v2  [math.FA]  25 Mar 2021
+REALIZA TIONS OF NON-COMMUT A TIVE RA TIONAL
+FUNCTIONS AROUND A MA TRIX CENTRE, I: SYNTHESIS,
+MINIMAL REALIZA TIONS AND EV ALUA TION ON ST ABL Y
+FINITE ALGEBRAS
+MOTKE PORAT AND VICTOR VINNIKOV
+Abstract. In this paper we generalize classical results regarding min imal
+realizations of non-commutative (nc) rational functions u sing nc Fornasini–
+Marchesini realizations which are centred at an arbitrary m atrix point. W e
+prove the existence and uniqueness of a minimal realization for every nc ratio-
+nal function, centred at an arbitrary matrix point in its dom ain of regularity.
+Moreover, we show that using this realization we can evaluat e the function
+on all of its domain (of matrices of all sizes) and also w.r.t any stably ﬁnite
+algebra. As a corollary we obtain a new proof of the theorem by Cohn and
+Amitsur, that equivalence of two rational expressions over matrices implies the
+expressions are equivalent over all stably ﬁnite algebras. Applications to the
+matrix valued and the symmetric cases are presented as well.
+Contents
+Introduction 2
+1. Preliminaries 5
+1.1. NC rational functions 6
+1.2. Evaluations over algebras 7
+2. Realizations of NC Rational Expressions 8
+2.1. Existence 9
+2.2. Controllability and observability 14
+2.3. Minimal realizations 18
+2.4. Kalman decomposition 23
+2.5. Example 28
+2.6. Cohn’s theorem 30
+2.7. The McMillan degree 31
+3. Realizations of NC Rational Functions 34
+4. Realizations of Matrix Valued NC Rational Functions 37
+5. Realizations of Hermitian NC Rational Functions 41
+References 48
+The research of both authors was partially supported by the U S–Israel Binational Science Foun-
+dation (BSF) Grant No. 2010432, Deutsche Forschungsgemein schaft (DFG) Grant No. SCHW
+1723/1-1, and Israel Science Foundation (ISF) Grant No. 212 3/17.
+1
+
+===== PAGE 2 =====
+
+2 M. PORAT AND V. VINNIKOV
+Introduction
+Noncommutative (nc, for short) rational functions are a skew ﬁe ld of fractions
+— more precisely, the universal skew ﬁeld of fractions — of the ring o f nc poly-
+nomials, i.e., polynomials in noncommuting indeterminates (the free ass ociative
+algebra). Essentially, they are obtained by starting with nc polynom ials and ap-
+plying successive arithmetic operations; a considerable amount of t echnical details
+is necessary here since in contrast to the commutative case there is no canonical
+coprime fraction representation for a nc rational function. NC ra tional functions
+originated from several sources: the general theory of free rin gs and of skew ﬁelds
+(see [20, 45, 21, 22, 52, 54, 53], [23, 24, 26, 25] for comprehensiv e expositions, and
+[65, 55] for good surveys); the theory of rings with rational ident ities (see [6], also
+[17] and [66, Chapter 8]); and rational former power series in the th eory of for-
+mal languages and ﬁnite automata (see [51, 72, 73, 30, 31, 32] and [18] for a good
+survey).
+Much like in the case of rational functions of a single variable [13, 50] (and unlike
+the case of several commuting variables [35, 46]), nc rational fun ctions that are reg-
+ular at 0 admit a good state space realization theory, see in particular Theor em 1
+below. This was ﬁrst established in the context of ﬁnite automata an d recognizable
+power series, and more recently reformulated, with additional det ails, in the con-
+text of transfer functions of multidimensional systems with evolut ion along the free
+monoid (see [12, 8, 9, 10, 4, 11]). State space realizations of nc rat ional functions
+have ﬁgured prominently in work on robust control of linear system s subjected to
+structured possibly time-varying uncertainty (see [14, 15, 56]). A nother important
+application of nc rational functions appears in the area of Linear Ma trix Inequalities
+(LMIs, see, e.g., [59, 58, 67]). Most optimization problems of system theory and
+control are dimensionless in the sense that the natural variables a re matrices, and
+the problem involves nc rational expressions in these matrix variable s which have
+therefore the same form independent of matrix sizes (see [19, 36, 37]). State space
+realizations are exactly what is needed to convert (numerically unma nageable) ra-
+tional matrix inequalities into (highly manageable) linear matrix inequalit ies (see
+[43]).
+Coming from a diﬀerent direction, the method of state space realiza tions, also
+known as the linearization trick, found important recent application s in free prob-
+ability, see [16, 41, 74, 75]. Here it is crucial to evaluate nc rational e xpressions on
+a general algebra — which is stably ﬁnite in many important cases — rat her than
+on matrices of all sizes. Stably ﬁnite algebras appeared in this conte xt in the work
+of Cohn [26] and they play an important and not surprising role in our a nalysis.
+Here is a full characterization of nc rational functions which are re gular at 0 and
+their (matrix) domains of regularity, in terms of their minimal realizat ions (for the
+proofs, see [8, 9, 30, 31, 32, 48, 49, 72, 73]).
+Theorem 1. If R is a nc rational function of x1, . . . , x d and R is regular at 0
+,
+then R admits a unique (up to unique similarity) minimal nc Fornasi ni–Marchesini
+realization
+R(x1, . . . , x d) = D + C
+(
+IL −
+d∑
+k=1
+Akxk
+) − 1 d∑
+k=1
+Bkxk,
+where A1, . . . , A d ∈ KL× L, B 1, . . . , B d ∈ KL× 1, C ∈ K1× L, D = R(0
+) ∈ K and
+L ∈ N. Moreover, for all m ∈ N : ( X1, . . . , X d) ∈ (Km× m)d is in the domain of
+
+===== PAGE 3 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 3
+regularity of R if and only if det (ILm − X1 ⊗ A1 − . . . − Xd ⊗ Ad) ̸= 0; in that case
+R(X1, . . . , X d) = Im ⊗ D + (Im ⊗ C)
+(
+ILm −
+d∑
+k=1
+Xk ⊗ Ak
+) − 1 d∑
+k=1
+Xk ⊗ Bk.
+Here a realization is called minimal if the state space dimension L is as small as
+possible; equivalently, the realization is observable, i.e.,
+⋂
+0≤ k
+⋂
+1≤ i1,...,i k≤ d
+ker(CAi1 · · ·Aik ) = {0
+},
+and controllable, i.e.,
+⋁
+0≤ k
+⋁
+1≤ i1,...,i k,j ≤ d,
+Ai1 · · ·Aik Bj = KL.
+Theorem 1 is strongly related to expansions of nc rational function s which are
+regular at 0 into formal nc power series around 0 ; that is why it is not applicable
+for all nc rational functions. For example, the nc rational expres sion R(x1, x 2) =
+(x1x2 − x2x1)− 1 is not deﬁned at 0 , nor at any pair ( y1, y 2) ∈ K2, therefore one
+can not consider realizations of R which are centred at 0 as in Theorem 1, nor
+at any scalar point (a tuple of scalars). A realization theory for suc h expressions
+(and hence functions) is required in particular for all of the applicat ions mentioned
+above. Such a theory is presented here, using the ideas of the gen eral theory of nc
+functions.
+The theory of nc functions has its roots in the works by Taylor [76, 77] on non-
+commutative spectral theory. It was further developed by Voicu lescu [80, 78, 79]
+and Kalyuzhnyi-Verbovetskyi–Vinnikov [47], including a detailed discus sion on nc
+diﬀerence-diﬀerential calculus. The main underlying idea is that a fun ction of d non-
+commuting variables is a function of d− tuples of square matrices of all sizes that
+respects direct sums and simultaneous similarities. See also the work of Helton–
+Klep–McCullough [38, 39], of Popescu [61, 62], of Muhly–Solel [57], and o f Agler–
+McCarthy [1, 2, 3]. A crucial fact [47, Chapters 4-7] is that nc func tions admit
+power series expansions, called Taylor–Taylor series in honor of Bro ok Taylor and
+of Joseph L. Taylor, around an arbitrary matrix point in their domain . This moti-
+vates us to generalize realizations as in Theorem 1 to the case where the centre is
+a d− tuple of matrices rather than 0 or a d− tuple of scalars.
+This is the ﬁrst in a series of papers with the goal of generalizing the t heory
+of (Fornasini–Marchesini) realizations centred at 0 (or at a scalar point), to the
+case of (Fornasini–Marchesini) realizations centred at an arbitrar y matrix point
+in the domain of regularity of a nc rational function. In particular, w e present
+a generalization of Theorem 1 (see Theorem 2 below) namely the exist ence and
+uniqueness of a minimal realization, together with the inclusion of the domain of
+the nc rational function in the domain of any of its minimal realizations . (The other
+inclusion and hence the equality of the two domains is presented in a fo llow-up paper
+[63])
+Other types of realizations of nc rational functions that are not n ecessary reg-
+ular at 0 have been considered in [27, 28] and in [82], see also the recent paper s
+[68, 69, 70, 71]. We will consider further the relation between our re presentations
+and those of [27, 28] in our follow-up paper [63].
+
+===== PAGE 4 =====
+
+4 M. PORAT AND V. VINNIKOV
+Here is an outline of the paper: In Section 1 we give some preliminaries on nc
+rational functions and evaluations over general algebras.
+In Section 2 we present the setting of nc Fornasini–Marchesini rea lizations cen-
+tred at a matrix point Y ∈ (Ks× s)d and generalize classical results which are well
+known in the scalar case ( s = 1) to the case where s ≥ 1. We prove, using synthesis,
+the existence of such realizations for any nc rational expression (Theorem 2.4),
+and introduce the terms of observability and controllability (Subsec tion 2.2) anal-
+ogously to the scalar case as in [50]. The uniqueness of minimal realiza tions, up to
+unique similarity, is then proved (Theorems 2.13 and 2.16), followed by a Kalman
+decomposition argument (Theorem 2.15). An example of an explicit co nstruction
+of a minimal realization is presented in Subsection 2.5 for the nc ration al expression
+(x1x2 − x2x2)− 1. During the whole section we carry on the results also in a more
+generalized settings of evaluations w.r.t arbitrary unital stably ﬁnit e K− algebra;
+as a corollary we obtain a new proof of a theorem of Cohn that equiva lence of two
+rational expressions over matrices implies their equivalence over all stably ﬁnite al-
+gebras (Theorem 2.19). Finally, in Subsection 2.7 we deﬁne the McMillan degree of
+a nc rational expression using minimal Fornasini–Marchesini realizat ions and show
+that it does not depend on the centre of the realization.
+Section 3 contains the main result of the paper, that is a partial gen eralization
+of Theorem 1 for nc rational functions not necessary regular at a scalar point:
+Theorem 2 (Theorem 3.3, Corollary 2.18) . If R is a nc rational function of
+x1, . . . , x d over K, then for every Y = (Y1, . . . , Y d) ∈ doms(R) there exists a unique
+(up to unique similarity) minimal (observable and controll able) nc Fornasini–Marchesini
+realization
+RF M(X1, . . . , X d) = D + C
+(
+IL −
+d∑
+k=1
+Ak(Xk − Yk)
+) − 1 d∑
+k=1
+Bk(Xk − Yk)
+centred at Y
+, such that for every m ∈ N and (X1, . . . , X d) ∈ domsm(R):
+R(X1, . . . , X d) = Im⊗ D+(Im⊗ C)
+(
+ILm−
+d∑
+k=1
+(Xk− Im⊗ Yk)Ak
+) − 1 d∑
+k=1
+(Xk− Im⊗ Yk)Bk.
+Moreover, using the realization RF M we can evaluate R on every matrix point in
+the domain of regularity of R as well as w.r.t any unital stably ﬁnite K− algebra.
+The strength of Theorem 3.3 is that we can evaluate any nc rational function
+on all of its domain and also w.r.t any unital stably ﬁnite K− algebra, by using
+a minimal realization of any nc rational expression which represents the function,
+that is centred at any point from its domain. As a corollary (Corollary 3.4) we
+provide a proof of Theorem 1 which— unlike the original proof in [49]— do es not
+make any use of the diﬀerence-diﬀerential calculus of nc functions , but only the
+results from Sections 2 and 3.
+Generalizations of the main results from Sections 2 and 3 to the matr ix valued
+nc rational functions are brieﬂy summarized in Section 4.
+Finally, in Section 5 we provide a full and precise parameterization ((5 .3) in Theo-
+rem 5.2) of hermitian nc rational functions in terms of their minimal nc Fornasini–
+Marchesini realizations centred at a matrix point. A short discussio n and some
+parameterizations are given for descriptor realizations as well.
+
+===== PAGE 5 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 5
+One of the diﬃculties which arises when moving from a scalar to a matrix cen-
+tre, is that a minimal nc Fornasini–Marchesini realization RF M of a nc rational
+expression is no longer a nc rational expression by itself (cf. Remar k 2.2). How-
+ever, in the sequel paper [63], we show that under some constrain ts (called the
+linearized lost abbey conditions) on the coeﬃcients of the realization — which fol-
+low immediately when RF M is a minimal nc Fornasini–Marchesini realization of
+a nc rational expression— RF M is actually the restriction of a nc rational func-
+tion R with DOMs(RF M) = doms(R). This will imply the opposite inclusion of
+the domains in Theorem 2 and thereby complete the proof that the d omain of a
+nc rational function coincides with the domain of any of its minimal rea lizations,
+centred at an arbitrary matrix point. As a corollary, also in [63], we will prove that
+the domain of a nc rational function is equal to its stable extended d omain. In a
+slightly diﬀerent direction, we will use the the theory of realizations w ith a matrix
+centre developed in this paper, together with the results from [63], to present an
+explicit construction of the free skew ﬁeld K (<x )>, with a self-contained proof that
+it is the universal skew ﬁeld of fractions of the ring of nc polynomials. Moreover,
+we will construct a functional model and use it to provide a diﬀerent one step proof
+for the existence of a realization formula for nc rational functions , without using
+synthesis. Furthermore, we will establish a generalization of the Kr onecker–Fliess
+theorem, which gives a full characterization of nc rational functio ns in terms of
+their formal nc generalized power series expansions around a matr ix point. These
+results will appear in [64].
+Finally, we point out that instead of working with Fornasini–Marchesin i realizations
+(for the settings in the commutative original version see [33, 34]) on e can consider
+structured realizations as in [8] and obtain similar results. This is true also for
+descriptor realizations; for more details see Remark 5.5.
+Acknowledgments. The authors would like to thank Joseph Ball, Bill Helton,
+Dmitry Kalyuzhnyi-Verbovetskyi, Roland Speicher and Juri Volˇ ciˇ c for their helpful
+comments and discussions. The authors would also like to thank the r eferees for
+their valuable comments which helped to improve the paper.
+1. Preliminaries
+Notations: d will stand for the number of non-commuting variables, which will
+be usually denoted by x1, . . . , x d, we often abbreviate non-commuting by nc. For
+a positive integer d, we denote by Gd the free monoid generated by d generators
+g1, . . . , g d, we say that a word ω = gi1 . . . g iℓ ∈ G d is of length |ω | = ℓ if ℓ ≥ 1
+and ω = ∅ is of length 0. For a ﬁeld K and n ∈ N, let Kn× n be the vector
+space of n × n matrices over K, let {e
+1, . . . , e n} be the standard basis of Kn and
+let En =
+{
+Eij = eieT
+j : 1 ≤ i, j ≤ n
+}
+be the standard basis of Kn× n. The tensor
+(Kronecker) product of two matrices P ∈ Kn1× n2 and Q ∈ Kn3× n4 is the n1n3× n2n4
+block matrix P ⊗ Q =
+[pijQ]
+1≤ i≤ n1, 1≤ j≤ n2
+. The range of a matrix P , that is the
+span of all of its columns, denoted by Im( P ).
+We denote operators on matrices by bold letters such as A, B, and the action
+of A on X by A(X). If A is deﬁned on s × s matrices we extend A to act on
+sm × sm matrices for any m ∈ N, by viewing an sm × sm matrix X as an m × m
+matrix with s × s blocks and by evaluating A on the s × s blocks; In that case we
+
+===== PAGE 6 =====
+
+6 M. PORAT AND V. VINNIKOV
+denote the evaluation by ( X)A. If C is a constant matrix and A is an operator,
+then C ·A and A ·C are two operators, deﬁned by ( C ·A)(X) := CA(X) and
+(A ·C)(X) := A(X)C. For every n1, n 2 ∈ N, we deﬁne the permutation matrix
+E(n1, n 2) =
+[ET
+ij
+]
+1≤ i≤ n1, 1≤ j≤ n2
+∈ Kn1n2× n1n2
+and use these matrices to change the order of factors in the Kron ecker product of
+two matrices by the following rule
+P ⊗ Q = E(n1, n 3)(Q ⊗ P )E(n2, n 4)T ,(1.1)
+for all n1, n 2, n 3, n 4 ∈ N, Q ∈ Kn1× n2 and P ∈ Kn3× n4 ; for more details see [44, pp.
+259–261]. If P =
+[
+Pij
+]
+1≤ i,j ≤ m ∈ (Ks× s)m× m and Q =
+[
+Qij
+]
+1≤ i,j ≤ m ∈ (Ks× s)m× m,
+then we use the notation
+P ⊙ s Q :=
+[∑m
+k=1 Pik ⊗ Qkj
+]
+1≤ i,j ≤ m
+for the so-called faux product of P and Q, viewed as m× m matrices over the tensor
+algebra of Ks× s, where Pik ⊗ Qkj denotes the element of Ks× s ⊗ Ks× s, rather than
+the Kronecker product of the matrices; see [60, page 241] for th e exact deﬁnition
+and [29] for its origins in operator spaces. If X
+= ( X1, . . . , X d) ∈ (Ksm× sm)d and
+ω = gi1 . . . g iℓ , then
+X ⊙ sω := Xi1 ⊙ s · · · ⊙s Xiℓ .(1.2)
+We use R, R, R and r for nc rational function, nc Fornasini–Marchesini realiza-
+tion, nc rational expression and matrix valued nc rational function , respectively.
+Likewise, we use a to denote elements in an algebra A and A to denote matrices
+over A. Throughout the paper, we use underline to denote vectors or d− tuples.
+1.1. NC rational functions. If V is a vector space over a ﬁeld K, then Vnc, the
+nc space over V, consists of all square matrices over V, i.e.,
+Vnc =
+∞∐
+n=1
+V n× n.
+For every Ω ⊆ V nc and n ∈ N we use the notation Ω n := Ω ∩ V n× n. A subset
+Ω ⊆ V nc is called a nc set if it is closed under direct sums, i.e., if X ∈ Ωn, Y ∈ Ωm
+then X ⊕ Y :=
+[X 0
+0 Y
+]
+∈ Ωn+m, ∀m, n ∈ N. In the special case where V = Kd, we
+have the identiﬁcation
+(
+Kd)
+nc =
+∞∐
+n=1
+(Kd)n× n ∼
+=
+∞∐
+n=1
+(Kn× n)d,
+that is the nc space of all d− tuples of square matrices over K. Let V, W be vector
+spaces over a ﬁeld K and Ω ⊆ V nc be an nc set, then f : Ω → W nc is called a nc
+function if f is graded, i.e., if n ∈ N and X ∈ Ωn, then f (X) ∈ W n× n, and
+1. f respects direct sums, i.e., if X, Y ∈ Ω, then f (X ⊕ Y ) = f (X) ⊕ f (Y );
+2. f respects similarities, i.e., if n ∈ N, X ∈ Ωn and T ∈ Kn× n is invertible
+such that T ·X ·T − 1 ∈ Ω, then f (T ·X ·T − 1) = T ·f (X) ·T − 1.
+Notice that if X ∈ Ωn and T ∈ Kn× n, by the products T ·X and X ·T we mean
+the standard matrix multiplication and we use the action of K on V. In particular,
+if V = Kd, X
+= (X1, . . . , X d) ∈ (Kn× n)d and T ∈ Kn× n, the products are given by
+T ·X := (T X1, . . . , T X d) and X ·T := (X1T, . . . , X dT ).
+
+===== PAGE 7 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 7
+An important and central example of nc functions are nc rational expressions .
+We denote by K⟨x1, . . . , x d⟩ the K− algebra of nc polynomials in the d nc variables
+x1, . . . , x d over K. We obtain nc rational expressions by applying successive arith-
+metic operations (addition, multiplication and taking inverse) on K⟨x1, . . . , x d⟩.
+For a nc rational expression R and n ∈ N, let domn(R) be the set of all d− tuples
+of n × n matrices over K for which all the inverses in R exist; the domain of
+regularity of R is then deﬁned by
+dom(R) :=
+∞∐
+n=1
+domn(R).
+A nc rational expression R is called non-degenerate if dom(R) ̸= ∅. For example,
+R(x) =
+(
+x2 + (1 − x1)− 1(x− 1
+3 x1 − x2)
+)
+x1 is a nc rational expression in x1, x 2, x 3,
+while its domain of regularity is given by
+dom(R) =
+∞∐
+n=1
+{
+(X1, X 2, X 3) ∈
+(
+Kn× n) 3
+: det(In − X1), det(X3) ̸= 0
+}
+.
+Every nc rational expression R is a nc function from dom(R) ⊆ (Kd)nc to Knc. For
+a detailed discussion of nc rational expressions and their domains of regularity, see
+[47].
+What comes now is the deﬁnition of a nc rational function. Let R1 and R2
+be nc rational expressions in x1, . . . , x d over K. We say that R1 and R2 are
+(Kd)nc− evaluation equivalent, if R1(X) = R2(X) for every X ∈ dom(R1)∩ dom(R2).
+A nc rational function is an equivalence class of non-degenerate nc rational ex-
+pressions. For every nc rational function R, deﬁne its domain of regularity
+dom(R) :=
+⋃
+R∈ R
+dom(R).(1.3)
+The K− algebra of all nc rational functions of x1, . . . , x d over K is denoted by
+K (<x1, . . . , x d )> and it is a skew ﬁeld, called the free skew ﬁeld. Moreover, K (<x1, . . . , x d )>
+is the universal skew ﬁeld of fractions of K⟨x1, . . . , x d⟩. See [6, 17, 21, 22, 66] for the
+original proofs and [26] for a more modern reference, while a proof of the equivalence
+with the evaluations over matrices is presented in [48, 49].
+1.2. Evaluations over algebras. Let A be a unital K− algebra. If a
+= (a1, . . . , ad) ∈
+Ad and ω = gi1 . . . g iℓ ∈ G d, then we use the notations aω := ai1 · · ·aiℓ and a∅ = 1 A,
+where 1 A is the unit element in A. We recall the deﬁnitions of evaluation and
+domain of nc rational expressions over A. For more details see [41].
+Deﬁnition 1.1 (A− Domains and Evaluations) . For any nc rational expression R
+in x1, . . . , x d over K, its A− domain domA(R) ⊆ A d and its evaluation RA(a) at
+any a = (a1, . . . , ad) ∈ domA(R) are deﬁned by:
+1. If R = ∑
+ω ∈G d
+rω xω is a nc polynomial ( rω ∈ K), then
+domA(R) = Ad and RA(a) =
+∑
+ω ∈G d
+rω aω .
+2. If R = R1R2 where R1 and R2 are nc rational expressions, then
+domA(R) = domA(R1) ∩ domA(R2) and RA(a) = RA
+1 (a)RA
+2 (a).
+
+===== PAGE 8 =====
+
+8 M. PORAT AND V. VINNIKOV
+3. If R = R1 + R2 where R1 and R2 are nc rational expressions, then
+domA(R) = domA(R1) ∩ domA(R2) and RA(a) = RA
+1 (a) + RA
+2 (a).
+4. If R = R− 1
+1 where R1 is a nc rational expression, then
+domA(R) =
+{
+a ∈ domA(R1) : RA
+1 (a) invertible in A
+}
+and RA(a) =
+(
+RA
+1 (a)
+) − 1
+.
+Remark 1.2. Let n ∈ N and consider the K− algebra An = Kn× n. Then, it is easily
+seen that domAn (R) = domn(R) and R(A) = RAn(A) for every A ∈ domn(R).
+As it will be pointed out later (cf. Theorem 2.15), we are interested in a certain
+family of algebras, called stably ﬁnite algebras. A unital K− algebra A is called
+stably ﬁnite if for every m ∈ N and A, B ∈ A m× m, we have
+AB = Im ⊗ 1A ⇐ ⇒ BA = Im ⊗ 1A.
+If A is a unital C∗ − algebra with a faithful trace, then A is stably ﬁnite. The
+following is a characterization of stably ﬁnite algebras that we ﬁnd us eful in a later
+stage of the paper; see [41, Lemma 5.2] for its proof.
+Lemma 1.3. Let A be a unital K− algebra. The following are equivalent:
+1. A is stably ﬁnite.
+2. For every n ∈ N, m 1, . . . , m n ∈ N and Ai,j ∈ A mi× mj , i, j = 1 , . . . , n , if
+the upper (or lower) triangular block matrix
+
+
+
+
+
+A11 ∗ ∗ ∗
+0 A22 ∗ ∗
+.
+.
+. . . . . . . ∗
+0 . . . 0 Ann
+
+
+
+
+
+is invertible, then the matrices A11, . . . , Ann are invertible.
+2. Realizations of NC Rational Expressions
+Non-commutative Fornasini–Marchesini realizations, see [8, 49] a nd [33, 34] for
+the original commutative version, apply to nc rational expressions which are regular
+at 0
+. By translation, the point 0 can be replaced by any scalar point. In this section
+we develop analogous realization formulas for nc rational expressio ns, centred at an
+arbitrary matrix point in the domain of regularity of the expression.
+Deﬁnition 2.1. Let s, L ∈ N, Y = (Y1, . . . , Y d) ∈ (Ks× s)d,
+A1, . . . , Ad : Ks× s → KL× L and B1, . . . , Bd : Ks× s → KL× s
+be linear mappings, C ∈ Ks× L and D ∈ Ks× s. Then
+(2.1) R(X1, . . . , X d) = D + C
+(
+IL −
+d∑
+k=1
+Ak(Xk − Yk)
+) − 1 d∑
+k=1
+Bk(Xk − Yk)
+is called a nc Fornasini–Marchesini realization centred at Y
+and it is deﬁned
+for every X = (X1, . . . , X d) ∈ DOMs(R), where
+DOMs(R) :=
+{
+X ∈ (Ks× s)d : det
+(
+IL −
+d∑
+k=1
+Ak(Xk − Yk)
+)
+̸= 0
+}
+.
+In that case we say that the realization R is described by the tuple (L, D, C, A
+, B).
+
+===== PAGE 9 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 9
+Remark 2.2. If s = 1, then R is a 1 × 1 matrix valued nc rational expression (see
+Remark 4.4 for details) and DOMs(R) = doms(R). However, this is not the case
+for s > 1 and that is why we use the notation DOMs(R) instead of doms(R).
+Let s1, s 2, s 3, s 4 ∈ N. If T : Ks1× s2 → Ks3× s4 is a linear mapping and m ∈ N,
+then T can be naturally extended to a linear mapping T : Ks1m× s2m → Ks3m× s4m,
+by the following rule:
+X =
+[Xij
+]
+1≤ i,j ≤ m ∈ Ks1m× s2m =⇒ (X)T =
+[T(Xij)]
+1≤ i,j ≤ m ,
+i.e., ( X)T is an m × m block matrix with entries in Ks3× s4 . Therefore, we can
+extend the realization (2.1) to act on d− tuples of sm × sm matrices: for every
+X = (X1, . . . , X d) in
+DOMsm(R) :=
+{
+X ∈ (Ksm× sm)d : det
+(
+ILm −
+d∑
+k=1
+(Xk − Im ⊗ Yk)Ak
+)
+̸= 0
+}
+,
+deﬁne
+R(X
+) := Im ⊗ D + (Im ⊗ C)
+(
+ILm −
+d∑
+k=1
+(Xk − Im ⊗ Yk)Ak
+) − 1 d∑
+k=1
+(Xk − Im ⊗ Yk)Bk.
+In addition, if A is a unital K− algebra, a linear mapping T : Ks1× s2 → Ks3× s4
+can be also naturally extended to a linear mapping TA : As1× s2 → A s3× s4 by the
+following rule:
+A =
+s1∑
+i=1
+s2∑
+j=1
+Eij ⊗ aij ∈ A s1× s2 =⇒ (A)TA =
+s1∑
+i=1
+s2∑
+j=1
+T(Eij) ⊗ aij ∈ A s3× s4,
+where Eij = e
+ieT
+j ∈ Ks1× s2 and aij ∈ A . If R is a nc Fornasini–Marchesini
+realization centred at Y
+, as in (2.1), deﬁne its A− domain to be the subset of
+(As× s)d given by
+DOM A(R) :=
+{
+A ∈ (As× s)d :
+(
+IL⊗ 1A−
+d∑
+k=1
+(Ak− Yk⊗ 1A)AA
+k
+)
+is invertible in AL× L
+}
+and for every A
+= (A1, . . . , Ad) ∈ DOM A(R) deﬁne the evaluation of R at A by
+RA(A) := D ⊗ 1A + (C ⊗ 1A)
+(
+IL ⊗ 1A −
+d∑
+k=1
+[
+(Ak)AA
+k − Ak(Yk) ⊗ 1A
+]) − 1
+d∑
+k=1
+[
+(Ak)BA
+k − Bk(Yk) ⊗ 1A
+]
+.
+2.1. Existence. The way we deﬁne what is a realization of a nc rational expression
+is diﬀerent than the usual deﬁnition. In the usual case, the expre ssion and the
+realization coincide whenever they are both deﬁned, while in our deﬁn ition we
+include the fact that the domain of the expression is contained in the domain of
+the realization. We begin with the deﬁnition of a nc rational expressio n admitting
+a realization, both in the usual way (over matrices) and in the case o f evaluations
+w.r.t an algebra.
+
+===== PAGE 10 =====
+
+10 M. PORAT AND V. VINNIKOV
+Deﬁnition 2.3. Let R be a nc rational expression in x1, . . . , x d over K, Y =
+(Y1, . . . , Y d) ∈ doms(R), R be a nc Fornasini–Marchesini realization centred at
+Y and A be a unital K− algebra. We say that:
+1. R admits the realization R, or that R is a realization of R, if
+domsm(R) ⊆ DOMsm(R) and R(X) = R(X), ∀X ∈ domsm(R)
+for every m ∈ N.
+2. R admits the realization R with respect to (w.r.t) A, or that R is a
+realization of R w.r.t A, if for every a = (a1, . . . , ad) ∈ domA(R):
+Is ⊗ a := (Is ⊗ a1, . . . , I s ⊗ ad) ∈ DOM A(R)
+and Is ⊗ RA(a) = RA(Is ⊗ a).
+We begin by showing the existence of a nc Fornasini–Marchesini realiz ation for
+every nc rational expression R, centred at any Y ∈ doms(R), that is also a realiza-
+tion of R w.r.t any unital K− algebra.
+Theorem 2.4. Let R be a nc rational expression in x1, . . . , x d over K and let
+Y = ( Y1, . . . , Y d) ∈ doms(R). There exists a nc Fornasini–Marchesini realization
+R of R centred at Y , such that R is a realization of R w.r.t any unital K− algebra.
+The proof is done by synthesis, which is going back to ideas from auto mata
+theory [18, 72, 73] and system theory [27, 28]. We also use the follo wing technical
+fact: let X = (X1, . . . , X d) ∈ (Ksm× sm)d and write
+Xk =
+m∑
+i,j =1
+Eij ⊗ X (k)
+ij , with Eij ∈ Km× m, X (k)
+ij ∈ Ks× s, 1 ≤ k ≤ d(2.2)
+then ( Xk − Im ⊗ Yk)Ak = ∑m
+i,j =1 Eij ⊗ Ak(X (k)
+ij ) − Im ⊗ Ak(Yk) and hence
+(Xk − Im ⊗ Yk)Ak = P2
+( m∑
+i,j =1
+Ak(X (k)
+ij ) ⊗ Eij − Ak(Yk) ⊗ Im
+)
+P − 1
+2
+and similarly
+(Xk − Im ⊗ Yk)Bk = P2
+( m∑
+i,j =1
+Bk(X (k)
+ij ) ⊗ Eij − Bk(Yk) ⊗ Im
+)
+P − 1
+1 ,
+where P1 = E(m, s ) and P2 = E(m, L ) are the shuﬄe matrices deﬁned in (1.1).
+Therefore for every X
+∈ DOMsm(R) we have
+(2.3)
+P − 1
+1 R(X)P1 = D⊗ Im+P − 1
+1 (Im⊗ C)P2
+(
+ILm−
+d∑
+k=1
+[ m∑
+i,j =1
+Ak(X (k)
+ij )⊗ Eij− Ak(Yk)⊗ Im
+]) − 1
+d∑
+k=1
+[ m∑
+i,j =1
+Bk(X (k)
+ij ) ⊗ Eij − Bk(Yk) ⊗ Im
+]
+= D ⊗ Im + (C ⊗ Im)
+(
+ILm −
+d∑
+k=1
+[ m∑
+i,j =1
+Ak(X (k)
+ij ) ⊗ Eij − Ak(Yk) ⊗ Im
+]) − 1 d∑
+k=1
+[ m∑
+i,j =1
+Bk(X (k)
+ij ) ⊗ Eij − Bk(Yk) ⊗ Im
+]
+.
+
+===== PAGE 11 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 11
+Proof. We ﬁrst show that the theorem is true for all monomials x1, . . . , x d and
+constants, then we show that if it is true for two rational express ions, so it is also
+true for their summation, multiplication and their inversion, when the y exist.
+1. Constants: Let R0(x) = K ∈ K. If a ∈ domA(R0) = Ad, then Is ⊗ a ∈
+DOM A(R0) = ( As× s)d, where the realization R0 is centred at Y ∈ doms(R0) =
+(Ks× s)d and described by
+(2.4) L = 1, D = Is ⊗ K, C = 0, A1 = . . . = Ad = 0, B1 = . . . = Bd = 0
+and Is ⊗ RA
+0 (a) = Is ⊗ (K ⊗ 1A) = D ⊗ 1A = RA
+0 (Is ⊗ a
+). Moreover,
+domsm(R0) = ( Ksm× sm)d = DOMsm(R0)
+and for every X ∈ domsm(R0) we have R0(X) = Ism ⊗ K = Im ⊗ D = R0(X).
+2. Monomials: Let Rj(x) = xj for 1 ≤ j ≤ d. If a ∈ domA(Rj) = Ad,
+then Is ⊗ a ∈ DOM A(Rj ) = ( As× s)d, where the realization Rj is centred at
+Y ∈ doms(Rj) = ( Ks× s)d and described by
+(2.5) L = s, D = Yj, C = Is, A1 = . . . = Ad = 0, Bj = Id, Bk = 0 (∀k ̸= j)
+and
+Is ⊗ RA
+j (a) = Is ⊗ aj = Yj ⊗ 1A + (Is ⊗ aj − Yj ⊗ 1A)BA
+j = RA
+j (Is ⊗ a
+).
+Moreover, domsm(Rj ) = ( Ksm× sm)d = DOMsm(Rj ) and for every X ∈ domsm(Rj)
+we have R(X) = Xj = Im ⊗ Yj + (Xj − Im ⊗ Yj)Bj = Rj (X).
+3. Addition: Suppose R1 and R2 are two nc rational expressions admitting real-
+izations R1 and R2 both centred at Y , described by the tuples ( L1, D 1, C 1, A1, B1)
+and ( L2, D 2, C 2, A2, B2), respectively, and also w.r.t any unital K− algebra A.
+Thus, a ∈ domA(R1 + R2) = domA(R1) ∩ domA(R2) implies that Is ⊗ a ∈
+DOM A(R1) ∩ DOM A(R2),
+Is ⊗ (R1 + R2)A(a) = RA
+1 (Is ⊗ a
+) +RA
+2 (Is ⊗ a
+) = ( RA
+1 + RA
+2 )(Is ⊗ a
+) = Dpar ⊗ 1A
++(Cpar ⊗ 1A)
+(
+IL ⊗ 1A −
+d∑
+k=1
+[
+Apar
+k (Is)⊗ ak − Apar
+k (Yk)⊗ 1A
+]) − 1 d∑
+k=1
+[
+Bpar
+k (Is)⊗ ak−
+Bpar
+k (Yk) ⊗ 1A
+]
+:= (Rpar)A (Is ⊗ a
+)
+and Is ⊗ a ∈ DOM A(Rpar), when Rpar is the nc Fornasini–Marchesini realization
+centred at Y described by
+(2.6) L = L1 + L2, D par = D1 + D2, C par =
+[C1 C2]
+, Apar
+k =
+[A1
+k 0
+0 A2
+k
+]
+and Bpar
+k =
+[
+B1
+k
+B2
+k
+]
+, k = 1, . . . , d
+Also, for every m ∈ N, X
+∈ domsm(R1 + R2) = domsm(R1)∩ domsm(R2) implies
+X ∈ DOMsm(Ri) and Ri(X) = Ri(X) for i = 1 , 2 and hence ( R1 + R2)(X) =
+R1(X) + R2(X). Write X = ( X1, . . . , X d) ∈ (Ksm× sm)d and use (2.3) to obtain
+
+===== PAGE 12 =====
+
+12 M. PORAT AND V. VINNIKOV
+that
+P − 1
+1 (R1(X) + R2(X)) P1 = Dpar ⊗ Im +(Cpar ⊗ Im)
+(
+ILm −
+d∑
+k=1
+[ m∑
+i,j =1
+Apar
+k (X (k)
+ij )
+⊗ Eij − Apar
+k (Yk)⊗ Im
+]) − 1 d∑
+k=1
+[ m∑
+i,j =1
+Bpar
+k (X (k)
+ij )⊗ Eij − Bpar
+k (Yk)⊗ Im
+]
+= Dpar ⊗ Im
++(Cpar⊗ Im)P − 1
+2
+(
+ILm−
+d∑
+k=1
+[ m∑
+i,j =1
+Eij⊗ Apar
+k (X (k)
+ij )− Im⊗ Apar
+k (Yk)
+]) − 1
+P2P − 1
+2
+( d∑
+k=1
+[ m∑
+i,j =1
+Eij ⊗ Bpar
+k (X (k)
+ij ) − Im ⊗ Bpar
+k (Yk)
+])
+P1 = P − 1
+1 Rpar(X
+)P1,
+i.e., R1(X) + R2(X) = Rpar(X) while it is easily seen that X ∈ DOMsm (Rpar).
+4. Multiplication: Suppose R1 and R2 are two nc rational expressions admit-
+ting realizations R1 and R2 both centred at Y , described by the tuples ( L1, D 1, C 1, A1, B1)
+and ( L2, D 2, C 2, A2, B2), respectively, and also w.r.t any unital K− algebra A.
+Thus, a ∈ domA(R1R2) = domA(R1)∩ domA(R2) implies that Is⊗ a ∈ DOM A(R1)∩
+DOM A(R2),
+Is⊗ (R1R2)A(a) = RA
+1 (Is⊗ a
+)RA
+2 (Is⊗ a
+) = ( R1R2)A(Is⊗ a) = Dser⊗ 1A+(Cser⊗ 1A)
+(
+IL ⊗ 1A −
+d∑
+k=1
+[
+Aser
+k (Is)⊗ ak − Aser
+k (Yk)⊗ 1A
+]) − 1 d∑
+k=1
+[
+Bser
+k (Is)⊗ ak − Bser
+k (Yk)⊗ 1A
+]
+:= (Rser)A (Is ⊗ a
+)
+and Is ⊗ a ∈ DOM A(Rser), when Rser is the nc Fornasini–Marchesini realization
+centred at Y described by
+(2.7) L = L1 + L2, D ser = D1D2, C ser =
+[C1 D1C2]
+, Aser
+k =
+[A1
+k B1
+k ·C2
+0 A2
+k
+]
+and Bser
+k =
+[
+B1
+k ·D2
+B2
+k
+]
+, k = 1, . . . , d.
+Also, for every m ∈ N, X
+∈ domsm(R1R2) = domsm(R1) ∩ domsm(R2) im-
+plies that X ∈ DOMsm(Ri) and Ri(X) = Ri(X) for i = 1 , 2 and ( R1R2)(X) =
+R1(X)R2(X). Now, let X = (X1, . . . , X d) ∈ (Ksm× sm)d as in (2.2), so similar com-
+putation shows that X ∈ DOMsm(R) and ( R1R2)(X) = R1(X)R2(X) = Rser(X).
+5. Inverses: Suppose R is a nc rational expression admitting a realization R
+centred at Y , described by the tuple ( L, D, C, A, B), also w.r.t any unital K− algebra
+A and R(Y ) = D is invertible.
+Thus, a ∈ domA(R− 1) implies that a ∈ domA(R), I s ⊗ a ∈ DOM A(R), R A(a)
+is invertible and RA(Is ⊗ a) = Is ⊗ RA(a), so
+Is ⊗ (R− 1)A(a) = ( Is ⊗ RA(a))− 1 = (RA(Is ⊗ a))− 1 = (Rinv)A(Is ⊗ a)
+
+===== PAGE 13 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 13
+and Is ⊗ a ∈ DOM A(Rinv), when Rinv is the nc Fornasini–Marchesini realization
+centred at Y described by
+(2.8) Dinv = D− 1, C inv = D− 1C, Ainv
+k = Ak − Bk ·(D− 1C) and
+Binv
+k = − Bk ·D− 1, k = 1, . . . , d.
+Moreover, if X
+∈ domsm(R− 1), then X ∈ domsm(R) and R(X) is invertible, so
+X ∈ DOMsm(R) and R(X) = R(X) is invertible, therefore the matrices M and
+Im ⊗ D + (Im ⊗ C)M − 1N are invertible, where
+M := ILm −
+d∑
+k=1
+(Xk − Im ⊗ Yk)Ak and N :=
+d∑
+k=1
+(Xk − Im ⊗ Yk)Bk.
+Consider the matrix
+E :=
+[ − M N
+Im ⊗ C I m ⊗ D
+]
+∈ K(L+s)m× (L+s)m
+together with its two Schur complements decompositions
+E =
+[
+ILm 0
+− (Im ⊗ C)M − 1 Ism
+] [
+− M 0
+0 Im ⊗ D + (Im ⊗ C)M − 1N
+] [
+ILm − M − 1N
+0 Ism
+]
+=
+[ILm N (Im ⊗ D)− 1
+0 Ism
+] [− M − N (Im ⊗ D− 1C) 0
+0 Im ⊗ D
+] [ ILm 0
+Im ⊗ (D− 1C) Ism
+]
+.
+As M and Im ⊗ D + (Im ⊗ C)M − 1N are invertible, it follows that E is invertible
+and hence
+M + N (Im ⊗ (D− 1C)) = ILm −
+d∑
+k=1
+(Xk − Im ⊗ Yk)Ainv
+k
+is invertible, i.e., X
+∈ DOMsm(Rinv). Thus domsm(R− 1) ⊆ DOMsm(Rinv) and
+for every X ∈ domsm(R− 1), we have R− 1(X) = R(X)− 1 = Rinv(X). □
+We ﬁnish this subsection by comparing the two parts of Deﬁnition 2.3 f or the
+K− algebra An = Kn× n (cf. Remark 1.2). This will imply (see Corollary 2.6)
+that for every nc rational expression R, the realization that we have constructed in
+Theorem 2.4— centred at a d− tuple of s × s matrices— allows us to evaluate R at
+every point in its domain of regularity and not only at the points whose dimension
+is a multiple of s. An alternative way to evaluate a nc rational expression on all of
+its domain of regularity, will be given later in Theorem 3.3. We deﬁne P1 = E(n, s )
+and P2 = E(n, L ), correspondingly to (1 . 1).
+Proposition 2.5. Let n ≥ 1, An = Kn× n, R be a nc Fornasini–Marchesini real-
+ization centred at Y ∈ (Ks× s)d and X ∈ (Ksn× sn)d. Then
+X ∈ DOM An (R) ⇐ ⇒ P1 ·X ·P − 1
+1 ∈ DOMsn(R)(2.9)
+and RAn (X
+) = P − 1
+1 R(P1 ·X ·P − 1
+1 )P1, whenever (2. 9) holds.
+
+===== PAGE 14 =====
+
+14 M. PORAT AND V. VINNIKOV
+Proof. Let X = ( X1, . . . , X d) ∈ (Ksn× sn)d and consider the decomposition (2.2),
+where X (k)
+ij ∈ Kn× n = An for 1 ≤ i, j ≤ s and 1 ≤ k ≤ d. As
+IL⊗ 1A−
+d∑
+k=1
+(Xk− Yk⊗ 1A)AAn
+k = ILn−
+d∑
+k=1
+[ s∑
+i,j =1
+Ak(Eij)⊗ X (k)
+ij − Ak(Yk)⊗ In
+]
+=
+P − 1
+2
+(
+ILn −
+d∑
+k=1
+[ s∑
+i,j =1
+X (k)
+ij ⊗ Ak(Eij)− In ⊗ Ak(Yk)
+])
+P2 = P − 1
+2
+(
+In ⊗ IL −
+d∑
+k=1
+[ s∑
+i,j =1
+(X (k)
+ij ⊗ Eij)Ak− (In⊗ Yk)Ak
+])
+P2 = P − 1
+2
+(
+In⊗ IL−
+d∑
+k=1
+(P1XkP − 1
+1 − In⊗ Yk)Ak
+)
+P2,
+we have X
+∈ DOM An (R) if and only if P1 ·X ·P − 1
+1 ∈ DOMsn(R).
+Similar computation shows that
+(Xk)BAn
+k − Bk(Yk)⊗ In =
+s∑
+i,j =1
+Bk(Eij)⊗ X (k)
+ij − Bk(Yk)⊗ In = P − 1
+2
+( s∑
+i,j =1
+X (k)
+ij ⊗ Bk(Eij)
+− In ⊗ Bk(Yk)
+)
+P1 = P − 1
+2 (P1XkP − 1
+1 − In ⊗ Yk)BkP1
+and hence X ∈ DOM An (R) implies
+RAn (X) = D⊗ In+(C⊗ In)
+(
+ILn−
+d∑
+k=1
+[
+(Xk)AAn
+k − Ak(Yk)⊗ In
+]) − 1 d∑
+k=1
+[
+(Xk)BAn
+k −
+Bk(Yk)⊗ In
+]
+= D⊗ In+(C⊗ In)P − 1
+2
+(
+In⊗ IL−
+d∑
+k=1
+(P1XkP − 1
+1 − In⊗ Yk)Ak
+) − 1 d∑
+k=1
+(P1XkP − 1
+1
+− In ⊗ Yk)BkP1 = P − 1
+1 R(P1 ·X
+·P − 1
+1 )P1.
+□
+Corollary 2.6. If n ∈ N and R is a nc Fornasini–Marchesini realization of a nc
+rational expression R w.r.t An = Kn× n, then for every X ∈ domn(R) we have
+X ⊗ Is ∈ DOMsn(R) and R(X) ⊗ Is = R(X ⊗ Is).
+Proof. Let X ∈ domn(R), thus X ∈ domAn (R) and that implies by Deﬁnition 2.3
+that Is ⊗ X ∈ DOM An (R) and RAn (Is ⊗ X) = Is ⊗ RAn (X). Using Proposition
+2.5, we get
+X ⊗ Is = P1 ·(Is ⊗ X) ·P − 1
+1 ∈ DOMsn(R)
+and
+P − 1
+1 R(X ⊗ Is)P1 = RAn (Is ⊗ X) = Is ⊗ R(X)
+which implies that R(X ⊗ Is) = R(X) ⊗ Is. □
+2.2. Controllability and observability . To consider the notion of minimal re-
+alizations as in the classical realization theory, we ﬁrst introduce th e deﬁnitions of
+controllability and observability in the case of nc Fornasini–Marchesin i realizations
+centred at a matrix point, which are generalizations of the deﬁnition s in the case
+of nc Fornasini–Marchesini realizations centred at a scalar point. F or a reference of
+the later ones see [8].
+
+===== PAGE 15 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 15
+Given the linear mappings A1, . . . , Ad : Ks× s → KL× L, Bk : Ks× s → KL× s
+and a word ω = gi1 . . . g iℓ ∈ G d of length |ω | = ℓ, deﬁne the multilinear mapping
+Aω : (Ks× s)ℓ → KL× L by
+Aω (X1, . . . , X ℓ) := Ai1 (X1) · · ·Aiℓ (Xℓ)
+and the multilinear mapping Aω ·Bk : (Ks× s)ℓ+1 → KL× s by
+(Aω ·Bk)(X1, . . . , X ℓ+1) := Aω (X1, . . . , X ℓ)Bk(Xℓ+1).
+Deﬁnition 2.7. Let A1, . . . , Ad : Ks× s → KL× L and B1, . . . , Bd : Ks× s → KL× s
+be linear mappings, and C ∈ Ks× L.
+1. The controllable subspace CA, B is deﬁned by
+⋁
+ω ∈G d, X 1,...,X |ω |+1∈ Ks× s, 1≤ k≤ d
+Im
+(
+Aω (X1, . . . , X |ω |)Bk(X|ω |+1)
+)
+.
+If CA, B = KL, then the tuple (A, B) is called controllable.
+2. The un-observable subspace N OC, A is deﬁned by
+⋂
+ω ∈G d, X 1,...,X |ω |∈ Ks× s
+ker
+(
+CAω (
+X1, . . . , X |ω |
+))
+.
+If N OC, A = {0}, the tuple (C, A) is called observable.
+The multilinear mapping Aω can be viewed as a linear mapping from ( Ks× s)ℓ
+to KL× L. Then one can use the faux product, as introduced in (1.2), to deﬁ ne
+controllability and observability not only on the level of s × s matrices, but also on
+the levels of sm × sm matrices, for every m ∈ N, using the subspaces
+C(m)
+A, B =
+⋁
+ω ∈G d, X 1,...,X |ω |+1∈ Ksm× sm, 1≤ k≤ d
+Im
+(
+(X1 ⊙ s · · · ⊙s X|ω |)Aω (X|ω |+1)Bk
+)
+and
+N O(m)
+C, A =
+⋂
+ω ∈G d, X 1,...,X |ω |∈ Ksm× sm
+ker
+(
+(Im ⊗ C)(X1 ⊙ s · · · ⊙s X|ω |)Aω )
+.
+Proposition 2.8. If m ∈ N, then C(m)
+A, B = C(1)
+A, B ⊗ Km and N O(m)
+C, A = N O(1)
+C, A ⊗ Km.
+Proof. Let m ∈ N.
+• If u ∈ C (m)
+A, B, then u is a linear combination of vectors of the form
+(X1)Ai1 · · ·(Xk)Aik (Xk+1)Bik+1 ui,
+where 1 ≤ i1, . . . , i k+1 ≤ d, X 1, . . . , X k+1 ∈ Ksm× sm and ui ∈ Ksm. As the
+mappings Ai, Bi(1 ≤ i ≤ d) act on sm × sm matrices by acting on their s × s
+blocks, we get that ( X1)Ai1 · · ·(Xk)Aik (Xk+1)Bik+1 ui ∈ C (1)
+A, B ⊗ Km and as a
+linear combination of such vectors, we get that u ∈ C (1)
+A, B ⊗ Km.
+
+===== PAGE 16 =====
+
+16 M. PORAT AND V. VINNIKOV
+• On the other hand, let u ∈ C (1)
+A, B ⊗ Km and write u =
+[uT
+1 . . . u
+T
+m
+]T
+where
+u
+1, . . . , u m ∈ C (1)
+A, B. Thus
+u =
+m∑
+i=1
+ui⊗ ei =
+m∑
+i=1
+( ki∑
+j=1
+Aω j,i
+(
+X (i)
+j, 1, . . . , X (i)
+j, |ω j,i |
+)
+Bℓi,j
+( ˜X (i)
+j
+)
+wj,i
+)
+⊗ ei =
+m∑
+i=1
+ki∑
+j=1
+[
+Im ⊗
+(
+Aω j,i
+(
+X (i)
+j, 1, . . . , X (i)
+j, |ω j,i |
+)
+Bℓi,j
+( ˜X (i)
+j
+)
+wj,i
+)]
+ei =
+m∑
+i=1
+ki∑
+j=1
+(
+(Im ⊗ X (i)
+j, 1) ⊙ s · · ·
+⊙ s (Im ⊗ X (i)
+j, |ω j,i |)
+)
+Aω j,i
+(
+Im ⊗ ˜X (i)
+j
+)
+Bℓi,j (Im ⊗ wj,i )ei ∈ C (m)
+A, B,
+where e1, . . . , e m is the standard basis of Km, k i ∈ N, ω j,i ∈ G d, 1 ≤ ℓi,j ≤ d and
+X (i)
+j, 1, . . . , X (i)
+j, |ω j,i |, ˜X (i)
+j ∈ Ks× s for 1 ≤ j ≤ ki and 1 ≤ i ≤ m.
+• Next, let
+u =
+[
+uT
+1 . . . u
+T
+m
+]T
+∈ N O (m)
+C, A
+,
+then for all ω ∈ G d, 1 ≤ j ≤ m and X1, . . . , X |ω | ∈ Ks× s, we have
+0 = (Im ⊗ C)
+(
+(Ejj ⊗ X1) ⊙ s · · · ⊙s (Ejj ⊗ X|ω |)
+)
+Aω u
+= (Im ⊗ C)
+(
+Ejj ⊗ Aω (X1, . . . , X |ω |)
+)
+u = CAω (X1, . . . , X |ω |)uj,
+i.e., uj ∈ N O (1)
+C, A and hence u ∈ N O (1)
+C, A ⊗ Km.
+• On the other hand, let
+u =
+[uT
+1 . . . u
+T
+m
+]T
+∈ N O (1)
+C, A
+⊗ Km,
+then for every ω = gi1 . . . g ik ∈ G d and Z1, . . . , Z k ∈ Ksm× sm we have
+(Im ⊗ C)(Z1 ⊙ s · · · ⊙s Z|ω |)Aω u = (Im ⊗ C)(Z1)Ai1 · · ·(Zk)Aik u =
+(Im ⊗ C)
+[
+Ai1
+(
+Z (1)
+p,q
+) ]
+1≤ p,q ≤ m
+· · ·
+[
+Aik
+(
+Z (k)
+p,q
+) ]
+1≤ p,q ≤ m
+
+
+
+u
+1
+.
+.
+.
+u
+m
+
+
+ = 0
+as u1, . . . , u m ∈ N O (1)
+C, A and each of the entries in the product is a linear combina-
+tion of vectors of the form CAi1
+(
+Z (1)
+p1,q 1
+)
+· · ·Aik
+(
+Z (k)
+pk,q k
+)
+ui where 1 ≤ i ≤ m, which
+are all 0 . □
+Two immediate consequences of Proposition 2.8 are the following. If ( A, B)
+is controllable, then C(m)
+A, B = KLm for all m ∈ N; whereas if C(m)
+A, B = KLm for
+some m ∈ N, then ( A, B) is controllable. Similarly, if ( C, A) is observable, then
+N O(m)
+C, A = {0} for all m ∈ N; whereas if N O(m)
+C, A = {0} for some m ∈ N, then ( C, A)
+is observable
+Next, we show how the original deﬁnitions of controllability and obser vability
+may be reformulated using the standard basis Es of Ks× s.
+Proposition 2.9. Let A1, . . . , Ad : Ks× s → KL× L and B1, . . . , Bd : Ks× s → KL× s
+be linear mappings, and C ∈ Ks× L. Then
+
+===== PAGE 17 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 17
+1. ( A, B) is controllable if and only if
+⋁
+ω ∈G d, X 1,...,X |ω |+1∈E s, 1≤ k≤ d
+Im
+(
+Aω (X1, . . . , X |ω |)Bk(X|ω |+1)
+)
+= KL.
+2. ( C, A) is observable if and only if
+⋂
+ω ∈G d, X 1,...,X |ω |∈E s
+ker
+(
+CAω (X1, . . . , X |ω |)
+)
+= {0}.
+Proof. Since Es ⊆ Ks× s the direction ⇐ = of part 1 is trivial. To prove the
+other direction, suppose ( A, B) is controllable, let X1, . . . , X ℓ+1 ∈ Ks× s and ω =
+gj1 . . . g jℓ ∈ G d. Thus, one can write Xt = ∑s
+p,q =1 Epq ⊗ x(t)
+pq for 1 ≤ t ≤ ℓ + 1 and
+by linearity of Ak, Bk we get
+A
+ω (X1, . . . , X ℓ)Bk(Xℓ+1) =
+( ℓ∏
+t=1
+s∑
+pt,q t=1
+x(t)
+pt,q t Ajt (Eptqt )
+) s∑
+p,q =1
+x(t+1)
+p,q Bk(Epq)
+∈
+⋁
+ν ∈G d, Z 1,...,Z ℓ +1∈E s, 1≤ k≤ d
+Im
+(
+Aν (Z1, . . . , Z ℓ)Bk(Zℓ+1)
+)
+.
+Therefore CA, B ⊆ ⋁
+ν ∈G d, Z 1,...,Z ℓ +1∈E s, 1≤ k≤ d Im
+(
+Aν (Z1, . . . , Z ℓ)Bk(Zℓ+1)
+)
+whereas
+CA, B = KL implies the wanted equality. Similar proof holds for part 2. □
+The last part of this subsection discusses observability and contro llability matri-
+ces. The inﬁnite block matrix
+CA, B := row
+[
+C(ω,k )
+A, B
+]
+(ω,k )∈G d×{ 1,...,d }
+(2.10)
+is called the controllability matrix associated with the tuple ( A
+, B), where
+C(ω,k )
+A, B ∈ KL× s3(|ω |+1) is given by C(ω,k )
+A, B := row
+[(Aω ·Bk)(Z)]
+Z∈E |ω |+1
+s
+for each ( ω, k ) ∈ G d × { 1, . . . , d } and the inﬁnite block matrix
+OC, A := col
+[
+O(ω )
+C, A
+]
+ω ∈G d
+(2.11)
+is called the observability matrix associated to the tuple ( C, A
+), where
+O(ω )
+C, A ∈ Ks3|ω |× L is given by O(ω )
+C, A := col
+[C ·Aω (Z)]
+Z∈E |ω |
+s
+for each ω ∈ G d. The following is a characterization of controllability and observ-
+ability using the controllability and observability matrices. Most of the arguments
+in the proof are taken from linear algebra.
+Proposition 2.10. Let A1, . . . , Ad : Ks× s → KL× L and B1, . . . , Bd : Ks× s →
+KL× s be linear mappings, and C ∈ Ks× L. The following are equivalent:
+1. ( A
+, B) is controllable [resp., (C, A) is observable ].
+2. The matrix CA, B
+[
+resp., OC, A
+]
+is right [resp., left ] invertible.
+3. The ﬁnite block matrix row
+[
+C(ω,k )
+A, B
+]
+|ω |≤ ℓ, 1≤ k≤ d
+[
+resp., col
+[
+O(ω )
+C, A
+]
+|ω |≤ ℓ
+]
+is
+right [resp., left ] invertible for some ℓ ∈ N.
+In that case, we can choose ℓ ≤ L − 1.
+
+===== PAGE 18 =====
+
+18 M. PORAT AND V. VINNIKOV
+Proof. 1 =⇒ 2: If ( A, B) is controllable, then ej ∈ KL can be written as
+ej =
+kj∑
+i=1
+Aω j,i
+(
+X (j)
+i, 1 , . . . , X (j)
+i, |ω j,i |
+)
+Bℓj,i
+(
+X (j)
+i, |ω j,i |+1
+)
+uj,i ,
+where kj ∈ N, ω j,i ∈ G d, X (j)
+i, 1 , . . . , X (j)
+i, |ω j,i |+1 ∈ Ks× s and 1 ≤ ℓj,i ≤ d, for every
+1 ≤ i ≤ kj and 1 ≤ j ≤ L. Thus e1, . . . , e L belong to the column span of the matrix
+CA, B and hence CA, B is right invertible.
+2 =⇒ 3: If the inﬁnite matrix CA, B is right invertible, it means that its column
+span is equal to KL, however this span of inﬁnitely many vectors of length L must
+coincide with a span of ﬁnitely many of the columns, which easily implies pa rt 3.
+3 =⇒ 1: If 3 holds then the column span of CA, B contains e1, . . . , e L and thus
+is equal to KL, i.e., CA, B = KL and the tuple ( A, B) is controllable.
+• Suppose next that ( A, B) is controllable, and deﬁne
+Cℓ :=
+⋁
+|ω |≤ ℓ, 1≤ k≤ d
+Im
+(
+C(ω,k )
+A, B
+)
+=
+⋁
+|ω |≤ ℓ, 1≤ k≤ d
+Im(Aω ·Bk)
+for ℓ ≥ 0. Then C0 ⊆ C 1 ⊆ . . . ⊆ C ℓ ⊆ C ℓ+1 ⊆ . . . are all subspaces of KL, whereas
+the controllability of ( A, B) implies that ⋃∞
+ℓ=0 Cℓ = KL and C0 ̸= {0}. Moreover,
+it is easily seen that if Cℓ0 = Cℓ0+1 for some ℓ0 ≥ 0, then Cℓ0+k = Cℓ0 for all k ≥ 0
+and hence
+KL =
+∞⋃
+ℓ=0
+Cℓ = C0 ∪ . . . ∪ C ℓ0 = Cℓ0 .
+Therefore, the sequence 1 ≤ dim(C0) ≤ dim(C1) ≤ . . . ≤ dim(CL) ≤ . . . ≤ L must
+coincide after at most L − 1 inequalities, i.e., dim( CL− 1) = L which means that
+KL = CA
+, B = CL− 1.
+• As for observability, to prove that 1 =⇒ 2 =⇒ 3 =⇒ 1 we use the same
+arguments as above; so we only show how to get the bound on the siz e of the
+matrix. Suppose that ( C, A) is observable and deﬁne
+N Oℓ :=
+⋂
+|ω |≤ ℓ, X ∈ (Ks× s)|ω |
+ker
+(
+CAω (X)
+)
+for ℓ ≥ 0. Then N O0 ⊇ N O 1 ⊇ . . . ⊇ N O ℓ ⊇ N O ℓ+1 ⊇ . . . are all subspaces of KL,
+whereas the observability of ( C, A) implies that ⋂
+ℓ≥ 0 N Oℓ = {0} and N O0 ̸= KL.
+It is easily seen that if N Oℓ0 = N Oℓ0+1 for some ℓ0 ≥ 0, then N Oℓ0+k = N Oℓ0
+for all k ≥ 0 and hence
+{0} =
+⋂
+ℓ≥ 0
+N Oℓ = N Oℓ0.
+Therefore the sequence L > dim(N O0) ≥ dim(N O1) ≥ . . . ≥ dim(N OL) ≥ . . .
+must coincide after at most L − 1 inequalities, i.e., N OL− 1 = {0}. □
+2.3. Minimal realizations. A nc Fornasini–Marchesini realization of the form
+(2.1) is said to be
+• controllable if the tuple ( A, B) is controllable;
+• observable if the tuple ( C, A) is observable.
+If R is a nc Fornasini–Marchesini realization of a nc rational expression R centred
+at Y , then it is said to be
+
+===== PAGE 19 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 19
+• minimal if the dimension L is the smallest integer for which R admits
+such a realization, i.e., if R′ is a nc Fornasini–Marchesini realization of R
+centred at Y of dimension L′, then L ≤ L′.
+Remark 2.11. In fact, the minimality of a realization R is w.r.t rational functions,
+meaning that if R is a minimal nc Fornasini–Marchesini realization of R centred at
+Y , then it is also a minimal nc Fornasini–Marchesini realizat ion of any nc rational
+expression ˜R which is (Kd)nc− evaluation equivalent to R (cf. Lemma 3.1).
+We proceed by showing that every two controllable and observable n c Fornasini–
+Marchesini realizations centred at Y of ( Kd)nc− evaluation equivalent nc rational
+expressions must be similar, where most of the ideas of the proof ar e taken from
+[7, 13]. We will also use the following facts, see [49, Theorem 4.8] and [ 47]:
+• If R is a nc rational expression and Y ∈ doms(R), then
+N ilp(Y ; sm) :=
+{
+X ∈ (Ksm× sm)d : X − Im ⊗ Y is jointly nilpotent
+}
+⊆ domsm(R)
+for every m ∈ N, where a tuple Z = ( Z1, . . . , Z d) ∈ (Ksm× sm)d is called jointly
+nilpotent if there exists κ ∈ N such that Z⊙ sω = 0 for all ω ∈ G d satisfying |ω | ≥ κ.
+• R |N ilp(Y ) is a nc function on the nilpotent ball around Y , that is
+N ilp(Y ) :=
+∞∐
+m=1
+N ilp(Y ; sm).
+• Every nc function on N ilp(Y ) has a power series expansion around Y of the
+form
+∑
+ω ∈G d
+(X − Im ⊗ Y )⊙ sω Rω , X ∈ (Ksm× sm)d
+where Rω are |ω |−linear mappings from ( Ks× s)|ω | to Ks× s, called the Taylor–Taylor
+coeﬃcients and are uniquely determined, see [47, Theorem 5.9]; notic e that the sum
+is actually ﬁnite.
+Lemma 2.12. If R is a nc rational expression in x1, . . . , x d over K and R is a nc
+Fornasini–Marchesini realization of R centred at Y
+∈ doms(R), of the form (2. 1),
+then the Taylor–Taylor coeﬃcients of R are given by R∅ := D and the multilinear
+mappings Rωg k := C ·Aω ·Bk : (Ks× s)ℓ+1 → Ks× s which act as
+Rωg k (Z1, . . . , Z ℓ+1) = CAi1 (Z1) · · ·Aiℓ (Zℓ)Bk(Zℓ+1)(2.12)
+for Z1, . . . , Z ℓ+1 ∈ Ks× s, ω = gi1 . . . g iℓ ∈ G d and 1 ≤ k ≤ d. Moreover, if
+Z1, . . . , Z ℓ+1 ∈ Ksm× sm, then
+(Z1 ⊙ s · · · ⊙s Zℓ+1)Rωg k = (Im ⊗ C)(Z1)Ai1 · · ·(Zℓ)Aℓ(Zℓ+1)Bk.
+Proof. Let X
+∈ N ilp(Y ; sm), then we use the Neumann series w.r.t nilpotent el-
+ements in
+(
+T(Ks× s)
+) m× m
+— where T(Ks× s) is the tensor algebra of Ks× s— to
+obtain that
+(
+ILm −
+d∑
+k=1
+(Xk − Im ⊗ Yk)Ak
+) ∑
+ω ∈G d
+(X
+− Im ⊗ Y )⊙ sω Aω = ILm,
+
+===== PAGE 20 =====
+
+20 M. PORAT AND V. VINNIKOV
+where the second multiplicative term is actually a ﬁnite sum. As Y ∈ doms(R) it
+follows that N ilp(Y ; sm) ⊆ domsm(R), thus X ∈ domsm(R) ⊆ DOMsm(R) and
+R(X) = R(X) = ( Im⊗ D)+(Im⊗ C)
+( ∑
+ω ∈G d
+(X− Im⊗ Y )⊙ sω Aω
+) d∑
+k=1
+(Xk− Im⊗ Yk)Bk
+= Im ⊗ D +
+∑
+ω ∈G d, 1≤ k≤ d
+(X
+− Im ⊗ Y )⊙ s(ωg k)Rωg k =
+∑
+ν ∈G d
+(X − Im ⊗ Y )⊙ sν Rν , ,
+where the multilinear mappings ( Rωg k ) are given by (2.12). However, R |N ilp(Y ) is
+a nc function on N ilp(Y ) and so it has a unique Taylor–Taylor expansion, given by
+the coeﬃcients ( Rν )ν ∈G d . □
+Theorem 2.13 (Similarity of minimal realizations) . Let R1 and R2 be two nc
+rational expressions in x1, . . . , x d over K, which admit nc Fornasini–Marchesini
+realizations
+R1(X) = D1 + C1
+(
+IL1 −
+d∑
+k=1
+A1
+k(Xk − Yk)
+) − 1 d∑
+k=1
+B1
+k(Xk − Yk)
+and
+R2(X
+) = D2 + C2
+(
+IL2 −
+d∑
+k=1
+A2
+k(Xk − Yk)
+) − 1 d∑
+k=1
+B2
+k(Xk − Yk),
+respectively, both centred at Y
+∈ (Ks× s)d. Assume both R1 and R2 are controllable
+and observable.
+If R1 and R2 are (Kd)nc− evaluation equivalent, then R1 and R2 are uniquely
+similar, i.e., L1 = L2, D 1 = D2 and there exists a unique invertible matrix T ∈
+KL1× L1 such that
+C2 = C1T − 1, B2
+k = T ·B1
+k and A2
+k = T ·A1
+k ·T − 1, 1 ≤ k ≤ d.(2.13)
+Moreover,
+DOMsm(R1) = DOMsm(R2) and R1(X
+) = R2(X), ∀X ∈ DOMsm(R1)
+for every m ∈ N, and for any unital K− algebra A:
+DOM A(R1) = DOM A(R2) and RA
+1 (A
+) = RA
+2 (A
+), ∀A ∈ DOM A(R1).
+Proof. From Lemma 2.12, the Taylor–Taylor coeﬃcients of the nc rational e xpres-
+sions R1 and R2 (w.r.t the centre Y ) are
+R(1)
+ωg k = C1 ·
+(
+A
+1) ω
+·B1
+k and R(2)
+ωg k = C2 ·
+(
+A
+2) ω
+·B2
+k,
+respectively. Since R1 and R2 are ( Kd)nc− evaluation equivalent, their restrictions
+to N ilp(Y
+) produce the same nc function and therefore, by the uniqueness of the
+Taylor–Taylor coeﬃcients, R(1)
+∅ = R(2)
+∅ and R(1)
+ωg k = R(2)
+ωg k as multilinear mappings
+for every ω ∈ G d and 1 ≤ k ≤ d, i.e., D1 = D2 and
+C1 ·
+(
+A
+1) ω
+·B1
+k = C2 ·
+(
+A
+2) ω
+·B2
+k.(2.14)
+Deﬁne a mapping T in the following way: for every ω ∈ G d, 1 ≤ k ≤ d, X
+=
+(X1, . . . , X |ω |) ∈ (Ks× s)d, X |ω |+1 ∈ Ks× s and u ∈ Ks, let
+T
+(
+(A1)ω (X)B1
+k(X|ω |+1)u
+)
+:= (A2)ω (X)B2
+k(X|ω |+1)u
+(2.15)
+and extend it by linearity. We proceed by showing some properties of T .
+
+===== PAGE 21 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 21
+• The domain of T is KL1: The domain of T consists of all the vectors in KL1
+which are in ⋁
+ω ∈G d, X ∈ (Ks× s)|ω |, X |ω |+1∈ Ks× s, 1≤ k≤ d, u ∈ Ks
+(
+A1) ω (
+X
+)
+B1
+k
+(
+X|ω |+1
+)
+uand that is exactly CA, B = KL1, by the controllability of R1 and hence of ( A1, B1).
+• T is well-deﬁned: Let w1, w 2 ∈ KL1, then they can be written as
+w1 =
+p1∑
+j=1
+(
+A1) ω 1,j (
+X (1)
+j, 1 . . . , X (1)
+j, |ω 1,j |
+)
+B1
+k1,j
+(
+X (1)
+j, |ω 1,j |+1
+)
+u
+1,j
+and
+w2 =
+p2∑
+i=1
+(
+A1) ω 2,i (
+X (2)
+i, 1 , . . . , X (2)
+i, |ω 2,i |
+)
+B1
+k2,i
+(
+X (2)
+i, |ω 2,i |+1
+)
+u
+2,i ,
+where p1, p 2 ∈ N, ω 1,j , ω 2,i ∈ G d, 1 ≤ k1,j , k 2,i ≤ d, u 1,j , u 2,i ∈ Ks and X (1)
+j,α , X (2)
+i,β ∈
+Ks× s, for every 1 ≤ α ≤ | ω 1,j |, 1 ≤ β ≤ | ω 2,i |, 1 ≤ j ≤ p1 and 1 ≤ i ≤ p2. Apply
+(2.14), so for every ω ∈ G d,
+C1 ·
+(
+A1) ω
+·
+(
+A1) ω 1,j
+·B1
+k1,j = C2 ·
+(
+A
+2) ω
+·
+(
+A2) ω 1,j
+·B2
+k1,j
+and
+C1 ·
+(
+A
+1) ω
+·
+(
+A1) ω 2,i
+·B1
+k2,i = C2 ·
+(
+A
+2) ω
+·
+(
+A2) ω 2,i
+·B2
+k2,i ,
+which imply that for every X
+∈ (Ks× s)|ω |,
+C2(
+A2) ω
+(X)
+[ p1∑
+j=1
+(
+A2) ω 1,j (
+X (1)
+j, 1 , . . . , X (1)
+j, |ω 1,j |
+)
+B2
+k1,j
+(
+X (1)
+j, |ω 1,j |+1
+)
+u
+1,j
+]
+− C2(
+A2) ω
+(X)
+[ p2∑
+i=1
+(
+A2) ω 2,i (
+X (2)
+i, 1 , . . . , X (2)
+i, |ω 2,i |
+)
+B2
+k2,i
+(
+X (2)
+i, |ω 2,i |+1
+)
+u
+2,i
+]
+= C1(
+A1) ω
+(X)
+[ p1∑
+j=1
+(
+A1) ω 1,j
+(
+X (1)
+j, 1 , . . . , X (1)
+j, |ω 1,j |
+)
+B1
+k1,j
+(
+X (1)
+j, |ω 1,j |+1
+)
+u
+1,j
+]
+− C1 (
+A1) ω
+(X)
+[ p2∑
+i=1
+(
+A1) ω 2,i (
+X (2)
+i, 1 , . . . ,
+X (2)
+i, |ω 2,i |
+)
+B1
+k2,i
+(
+X (2)
+i, |ω 2,i |+1
+)
+u
+2,i
+]
+,
+i.e.,
+C2(
+A2) ω
+(X)
+(
+T (w1) − T (w2)
+)
+= C1(
+A1) ω
+(X)(w1 − w2).(2.16)
+Finally, if w
+1 = w2, then C2(
+A2) ω
+(X)(T (w1) − T (w2)) = 0 for all ω ∈ G d and
+X ∈ (Ks× s)|ω |, whereas the observability of R2 and hence of ( C2, A2) guarantees
+that T (w1) = T (w2).
+• T is 1 − 1: If w1, w 2 ∈ KL1 such that T (w1) = T (w2), it follows from (2.16)
+that C1(
+A1) ω
+(X)(w1 − w2) = 0 for every ω ∈ G d and X ∈ (Ks× s)|ω |, whereas the
+observability of R1 and hence of ( C1, A1) guarantees that w1 = w2.
+• T is onto KL2: The tuple ( A2, B2) is controllable and hence every e ∈ KL2
+can be written as
+e =
+p∑
+j=1
+(
+A2) νj (
+X (j))
+B2
+kj
+(
+Xj+1
+)
+v
+j = T
+( p∑
+j=1
+(
+A1) νj (
+X (j))
+B1
+kj
+(
+Xj+1
+)
+v
+j
+)
+,
+
+===== PAGE 22 =====
+
+22 M. PORAT AND V. VINNIKOV
+where p ∈ N, ν j ∈ G d, X (j) ∈ (Ks× s)|νj |, X j+1 ∈ Ks× s, 1 ≤ kj ≤ d and vj ∈ Ks for
+every 1 ≤ j ≤ p, i.e., KL2 ⊆ Im(T ) and hence T is onto KL2.
+Therefore, T : KL1 → KL2 is an isomorphism, L1 = L2 := L, the representative
+matrix T := [T ]EL ∈ KL× L is invertible and T (w) = T w for all w ∈ KL.
+• The realizations R1 and R2 are similar: If w1 = 0 and ω = ∅, then (2.16)
+implies
+C2T w2 = C1w2, ∀w2 ∈ KL =⇒ C1 = C2T,
+while applying (2.16) again with w1 = 0 and using the observability of ( C2, A2),
+lead to
+A1
+k(X) = T − 1A2
+k(X)T, ∀X ∈ Ks× s, 1 ≤ k ≤ d.
+From the deﬁnition of T we have
+T B1
+k(X)u
+= T
+(
+B1
+k(X)u
+)
+= B2
+k(X)u
+, ∀u ∈ KL =⇒ B1
+k(X) = T − 1B2
+k(X)
+for every X ∈ Ks× s and 1 ≤ k ≤ d. Thus, we proved the realizations are similar.
+•
+T is uniquely determined: Let T2 ∈ KL× L be such that B1
+k = T − 1
+2 ·B2
+k and
+A1
+k = T − 1
+2 ·A2
+k ·T2 for every 1 ≤ k ≤ d, then it is easily seen that T2 satisﬁes the
+relation in (2.15) and thus the controllability of ( A
+2, B2) implies that T2 = T .
+• Moreover,
+ILm −
+d∑
+k=1
+(Xk − Im ⊗ Yk)A2
+k = ILm −
+d∑
+k=1
+[
+(Im ⊗ T )(Xk − Im ⊗ Yk)A1
+k(Im ⊗ T − 1)
+]
+= (Im ⊗ T )
+(
+ILm −
+d∑
+k=1
+(Xk − Im ⊗ Yk)A1
+k
+)
+(Im ⊗ T )− 1
+for every m ∈ N, which implies that X
+∈ DOMsm(R2) ⇐ ⇒ X ∈ DOMsm(R1),
+i.e., that DOMsm(R1) = DOMsm(R2). It is easily seen that using the relations in
+(2.13), we have R1(X) = R2(X) for every X ∈ DOMsm(R1).
+• Finally, the relations in (2.13) also imply that C2 ⊗ 1A = (C1 ⊗ 1A)(T − 1 ⊗ 1A)
+and that for every A = (A1, . . . , Ad) ∈ (As× s)d, we have
+(Ak)(B2
+k)A = (T ⊗ 1A)(Ak)(B1
+k)A and ( Ak)(A2
+k)A = (T ⊗ 1A)(Ak)(A1
+k)A(T − 1 ⊗ 1A)
+for every 1 ≤ k ≤ d. Therefore,
+IL ⊗ 1A −
+d∑
+k=1
+(Ak − Yk ⊗ 1A)(A2
+k)A = IL ⊗ 1A −
+d∑
+k=1
+[
+(T ⊗ 1A)(Ak − Yk ⊗ 1A)(A1
+k)A
+(T − 1 ⊗ 1A)
+]
+= (T ⊗ 1A)
+(
+IL ⊗ 1A −
+d∑
+k=1
+(Ak − Yk ⊗ 1A)(A1
+k)A
+)
+(T ⊗ 1A)− 1,
+which implies that DOM A(R1) = DOM A(R2) and that RA
+1 (A
+) = RA
+2 (A
+) for
+every A ∈ DOM A(R1). □
+Remark 2.14. One can obtain the equality in (2.14) and hence prove Theorem
+2.13 without using Lemma 2.12, by evaluating nc rational exp ressions on generic
+matrices and then considering power series in commuting var iables (the entries of
+the generic matrices).
+
+===== PAGE 23 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 23
+2.4. Kalman decomposition. We proceed next to obtain a Kalman decomposi-
+tion for nc Fornasini–Marchesini realizations centred at a matrix po int Y ∈ (Ks× s)d,
+which generalizes the Kalman decomposition for nc Fornasini–Marche sini realiza-
+tions centred at a scalar point (as in [8]), where the later decomposit ion is a gener-
+alization of the classical Kalman decomposition (see [13, 50]).
+This is the ﬁrst place in our analysis where A is no longer an arbitrary unital
+K− algebra, but has to be stably ﬁnite. The stably ﬁniteness is used to d educe the
+invertibility of one of the blocks in a block upper triangular matrix that is invertible
+(cf. Lemma 1.3).
+Theorem 2.15 (Kalman Decomposition) . Let
+R(X
+) = D + C
+(
+IL −
+d∑
+k=1
+Ak(Xk − Yk)
+) − 1 d∑
+k=1
+Bk(Xk − Yk)
+be a nc Fornasini–Marchesini realization centred at Y ∈ (Ks× s)d. There exists a nc
+Fornasini–Marchesini realization ˜R centred at Y , that is controllable and observ-
+able, of dimension ˜L = dim(CA, B) − dim(CA, B ∩ N O C, A), such that
+DOMsm(R) ⊆ DOMsm( ˜R) and R(X) = ˜R(X), ∀X ∈ DOMsm(R)
+for every m ∈ N, and for any unital stably ﬁnite K− algebra A,
+DOM A(R) ⊆ DOM A( ˜R) and RA(A) = ˜RA(A), ∀A ∈ DOM A(R).
+As the proof shows (see (2.19) below), ˜R is obtained from R analogously to
+the classical case, by restricting to a joint invariant subspace of t he operators
+A1, . . . , Ad and then compressing to a co-invariant subspace.
+Proof. Using the controllability and un-observability subspaces of KL, which cor-
+respond to ( A, B) and ( C, A), deﬁne C := CA, B, N O := N OC, A,
+H1 := N O ∩ C ,(2.17)
+H2 a complementary subspace of H1 in C and H3 a complementary subspace of H1
+in N O, thus
+C = H2 ∔ H1 and N O = H1 ∔ H3.(2.18)
+If h1 + h2 + h3 = 0 where h1 ∈ H 1, h 2 ∈ H 2 and h3 ∈ H 3, then h1 + h2 = − h3 ∈
+C ∩ N O ∩ H 3 = H1 ∩ H 3 = {0
+}, which implies that h1 + h2 = − h3 = 0 and hence
+h1 = h2 = h3 = 0 . Therefore, the sum H1 + H2 + H3 is a direct sum; let H4 be a
+complementary subspace of H1 + H2 + H3 in KL, thus
+KL = H2 ∔ H1 ∔ H4 ∔ H3.(2.19)
+Notice that we are interested in H2 as it is a subspace of a controllable (invariant)
+subspace and a complementary subspace of an un-observable sub space. Deﬁne the
+dimensions Lj := dim( Hj ) for 1 ≤ j ≤ 4, so L = L1 + . . . + L4. From Proposition
+2.8 we have N O(m) = N O ⊗ Km and C(m) = C ⊗ Km for every m ∈ N, hence
+H(m)
+1 := N O(m) ∩ C (m) = (N O ⊗ Km) ∩ (C ⊗ Km) = H1 ⊗ Km.
+Deﬁne H(m)
+2 := H2 ⊗ Km, H(m)
+3 := H3 ⊗ Km and H(m)
+4 := H4 ⊗ Km, thus
+H(m)
+2 ∔ H(m)
+1 = C(m), H(m)
+1 ∔ H(m)
+3 = N O(m)
+
+===== PAGE 24 =====
+
+24 M. PORAT AND V. VINNIKOV
+and
+KLm = H(m)
+2 ∔ H(m)
+1 ∔ H(m)
+4 ∔ H(m)
+3 .(2.20)
+• With respect to the decomposition (2.19) of KL, there exists P ∈ KL× L in-
+vertible such that for every X ∈ Ksm× sm and 1 ≤ k ≤ d, the matrices ( X)Ak ∈
+KLm× Lm, (X)Bk ∈ KLm× sm and Im ⊗ C ∈ Ksm× Lm can be decomposed, w.r.t
+(2.20), as
+(
+P (m)) − 1
+(X)AkP (m) = (X)
+
+
+
+
+A1, 1
+k A1, 2
+k A1, 3
+k A1, 4
+k
+A2, 1
+k A2, 2
+k A2, 3
+k A2, 4
+k
+A3, 1
+k A3, 2
+k A3, 3
+k A3, 4
+k
+A4, 1
+k A4, 2
+k A4, 3
+k A4, 4
+k
+
+
+
+ ,
+(
+P (m)) − 1
+(X)Bk = (X)
+
+
+
+
+B1
+k
+B2
+k
+B3
+k
+B4
+k
+
+
+
+
+and ( Im ⊗ C)P (m) =
+[C1 C2 C3 C4]
+,
+where P (m) := Im ⊗ P . If u
+1 ∈ H (m)
+1 , u 2 ∈ H (m)
+2 , u 3 ∈ H (m)
+3 and v ∈ Ksm, then
+(X)Aku1 ∈ N O (m) ∩ C (m) = H(m)
+1 , (X)Aku2 ∈ C (m), (X)Aku3 ∈ N O (m),
+(X)Bkv ∈ C (m) and ( Im ⊗ C)u1 = 0,
+which imply that
+(X)A1, 2
+k , (X)A3, 2
+k , (X)A4, 2
+k , (X)A3, 1
+k , (X)A4, 1
+k , (X)A1, 4
+k , (X)A3, 4
+k , (X)B3
+k, (X)B4
+k, C 2, C 4
+all vanish. Therefore, we get
+(
+P (m)) − 1
+(X)AkP (m) = (X)
+
+
+
+
+A1, 1
+k 0 A1, 3
+k 0
+A2, 1
+k A2, 2
+k A2, 3
+k A2, 4
+k
+0 0 A3, 3
+k 0
+0 0 A4, 3
+k A4, 4
+k
+
+
+
+ ,
+(
+P (m)) − 1
+(X)Bk = (X)
+
+
+
+
+B1
+k
+B2
+k
+0
+0
+
+
+
+
+and ( Im ⊗ C)P (m) =
+[C1 0 C3 0]
+,
+hence for every X
+∈ DOMsm(R),
+R(X) = Im ⊗ D +(Im ⊗ C)P (m)
+(
+ILm −
+d∑
+k=1
+[(
+P (m)) − 1
+(Xk − Im ⊗ Yk)AkP (m)]) − 1
+d∑
+k=1
+[(
+P (m)) − 1
+(Xk− Im⊗ Yk)Bk
+]
+= Im⊗ D+
+[C1 0 C3 0]
+
+
+
+
+λ 1, 1 0 λ 1, 3 0
+λ 2, 1 λ 2, 2 λ 2, 3 λ 2, 4
+0 0 λ 3, 3 0
+0 0 λ 4, 3 λ 4, 4
+
+
+
+
+− 1
+d∑
+k=1
+(Xk − Im ⊗ Yk)
+
+
+
+
+B1
+k
+B2
+k
+0
+0
+
+
+
+ ,
+where
+ΛX :=
+
+
+
+
+λ 11 0 λ 13 0
+λ 21 λ 22 λ 23 λ 24
+0 0 λ 33 0
+0 0 λ 43 λ 44
+
+
+
+ = ILm−
+d∑
+k=1
+(Xk− Im⊗ Yk)
+
+
+
+
+A1, 1
+k 0 A1, 3
+k 0
+A2, 1
+k A2, 2
+k A2, 3
+k A2, 4
+k
+0 0 A3, 3
+k 0
+0 0 A4, 3
+k A4, 4
+k
+
+
+
+
+
+===== PAGE 25 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 25
+is invertible. Thus
+det(λ 11) = det
+(
+I˜Lm −
+d∑
+k=1
+(Xk − Im ⊗ Yk)A1, 1
+k
+)
+̸= 0,(2.21)
+where ˜L = L2 = dim(C) − dim(N O ∩ C ) and the inverse of Λ X is given by
+Λ− 1
+X =
+
+
+
+
+λ − 1
+11 0 − λ − 1
+11 λ 13λ − 1
+33 0
+− λ − 1
+22 λ 21λ − 1
+11 λ − 1
+22 λ − 1
+22 (λ 24λ − 1
+44 λ 43 − λ 23 + λ 21λ − 1
+11 λ 13)λ − 1
+33 − λ − 1
+22 λ 24λ − 1
+44
+0 0 λ − 1
+33 0
+0 0 − λ − 1
+44 λ 43λ − 1
+33 λ − 1
+44
+
+
+
+ .
+Therefore, for every X
+∈ DOMsm(R), we have
+R(X) = ˜R(X) := Im⊗ D+(Im⊗ C1)
+(
+Im ˜L−
+d∑
+k=1
+(Xk− Im⊗ Yk)A1, 1
+k
+) − 1 d∑
+k=1
+(Xk− Im⊗ Yk)B1
+k
+where ˜R is the nc Fornasini–Marchesini realization described by
+( ˜L, D, C 1, A
+1, 1, B1)
+and centred at Y , and (2.21) implies that X ∈ DOMsm( ˜R).
+• Next, let A = (A1, . . . , Ad) ∈ (As× s)d and write Ak = ∑s
+i,j =1 Eij ⊗ a(k)
+ij , where
+Eij ∈ E s and a(k)
+ij ∈ A , then
+IL⊗ 1A−
+d∑
+k=1
+(Ak − Yk⊗ 1A)AA
+k = IL⊗ 1A−
+d∑
+k=1
+[ s∑
+i,j =1
+Ak(Eij)⊗ a(k)
+ij − Ak(Yk)⊗ 1A
+]
+= IL ⊗ 1A −
+d∑
+k=1
+s∑
+i,j =1
+[
+P
+
+
+
+
+A1, 1
+k 0 A1, 3
+k 0
+A2, 1
+k A2, 2
+k A2, 3
+k A2, 4
+k
+0 0 A3, 3
+k 0
+0 0 A4, 3
+k A4, 4
+k
+
+
+
+ (Eij)P − 1
+]
+⊗ a(k)
+ij −
+d∑
+k=1
+[
+P
+
+
+
+
+A1, 1
+k 0 A1, 3
+k 0
+A2, 1
+k A2, 2
+k A2, 3
+k A2, 4
+k
+0 0 A3, 3
+k 0
+0 0 A4, 3
+k A4, 4
+k
+
+
+
+ (Yk)P − 1
+]
+⊗ 1A = (P ⊗ 1A)
+
+
+
+
+λ 1, A 0 ∗ 0
+∗ ∗ ∗ ∗
+0 0 ∗ 0
+0 0 ∗ ∗
+
+
+
+ (P ⊗ 1A)− 1,
+where
+λ 1, A := I˜L ⊗ 1A −
+d∑
+k=1
+[ s∑
+i,j =1
+A1, 1
+k (Eij) ⊗ a(k)
+ij − A1, 1
+k (Yk) ⊗ 1A
+]
+.
+Therefore, if A
+∈ DOM A(R), then
+(P ⊗ 1A)− 1
+(
+IL ⊗ 1A −
+d∑
+k=1
+(Ak − Yk ⊗ 1A)AA
+k
+)
+(P ⊗ 1A) =
+
+
+
+
+λ 1, A 0 ∗ 0
+∗ ∗ ∗ ∗
+0 0 ∗ 0
+0 0 ∗ ∗
+
+
+
+
+is invertible in AL× L, while applying Lemma 1.3 to obtain that
+λ 1, A = I˜L ⊗ 1A −
+d∑
+k=1
+(Ak − Yk ⊗ 1A)
+(
+A1, 1
+k
+) A
+
+===== PAGE 26 =====
+
+26 M. PORAT AND V. VINNIKOV
+is invertible in A˜L× ˜L, i.e., that A ∈ DOM A( ˜R). Moreover, a careful similar com-
+putation shows that if A ∈ DOM A(R), then RA(A) = ˜RA(A).
+• For every u ∈ Ks, 1 ≤ k ≤ d, a word ω = gi1 . . . g iℓ ∈ G d of length ℓ ∈ N and
+X1, . . . , X ℓ+1 ∈ Ks× s, we have
+Aω (X1, . . . , X ℓ)Bk(Xℓ+1)u = P (P − 1Ai1 (X)P ) · · ·(P − 1Aiℓ (Xℓ)P )P − 1Bk(Xℓ+1)u
+= P
+
+
+
+
+(
+A
+1, 1) ω
+(X1, . . . , X ℓ)B1
+k(Xℓ+1)u
+∗
+0
+0
+
+
+
+ .
+Thus, for every v
+∈ C , we have P − 1v ∈ ˜C ⊕ KL1 ⊕ { 0} ⊕ { 0} ⊆ KL and hence
+dim(C) ≤ dim( ˜C) + L1. As dim( C) = L1 + L2, we get that L2 ≤ dim( ˜C), while
+˜C ⊆ KL2 yields that ˜C = KL2 = K ˜L, i.e., the realization ˜R is controllable.
+• For every w1 ∈ KL1, w 2 ∈ KL2, w 3 ∈ KL3, a word ω = gi1 . . . g iℓ ∈ G d of length
+ℓ ∈ N and X1, . . . , X ℓ ∈ Ks× s, we have
+CAω (X1, . . . , X ℓ)P
+[wT
+2 w
+T
+1 0 w
+T
+3
+]T
+= CP (P − 1Ai1 (X1)P ) · · ·(P − 1Aiℓ (Xℓ)P )
+[w
+T
+2 w
+T
+1 0 w
+T
+3
+]T
+= CP
+
+
+
+
+A1, 1
+i1 (X1) · · ·A1, 1
+iℓ (Xℓ)w
+2
+∗
+0
+∗
+
+
+
+ = C1(A
+1, 1)ω (X1, . . . , X ℓ)w2,
+therefore w2 ∈ ˜N O := N OC 1, A1, 1 implies that P
+[
+wT
+2 w
+T
+1 0 w
+T
+3
+]T
+∈ N O . As
+P is invertible, dim( N O) ≥ dim( ˜N O) + L1 + L3 = dim( ˜N O) + dim( N O) which
+guarantees that ˜N O = {0
+}, i.e., that ˜R is observable. □
+As a corollary we get that a nc Fornasini–Marchesini realization (of a nc rational
+expression) is minimal if and only if it is both controllable and observable :
+Theorem 2.16. Let R be a nc rational expression in x1, . . . , x d over K and R be
+a nc Fornasini–Marchesini realization of R centred at Y ∈ (Ks× s)d. Then R is
+minimal if and only if R is controllable and observable.
+Proof. If R is minimal, then using Theorem 2.15 we must have
+L ≤ ˜L = dim(C(1)) − dim(C(1) ∩ N O (1)) ≤ L,
+which implies that ˜L = L, dim(C(1)) = L and dim( N O(1)) = 0, i.e., that R is
+controllable and observable.
+On the other hand, let R be both controllable and observable, and suppose R′ is
+a minimal nc Fornasini–Marchesini realization of R centred at Y of dimension L′.
+Thus, by the ﬁrst part of the theorem, R′ is controllable and observable, as well as
+R, so Theorem 2.13 implies that L = L′ and hence R is minimal. □
+Minimal nc Fornasini–Marchesini realizations are playing a central ro le in the
+analysis of the domains; one of the reasons is that they admit the ma ximal domain
+among all nc Fornasini–Marchesini realizations— of a given nc rationa l expression—
+which are centred at the same point:
+
+===== PAGE 27 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 27
+Lemma 2.17. Let R1, R2 be two nc Fornasini–Marchesini realizations of a nc
+rational expression R, both centred at Y ∈ (Ks× s)d. If R2 is minimal, then
+DOMsm(R1) ⊆ DOMsm(R2) and R1(X) = R2(X), ∀X ∈ DOMsm(R1)(2.22)
+for every m ∈ N, and for any unital stably ﬁnite K− algebra A:
+DOM A(R1) ⊆ DOM A(R2) and RA
+1 (A
+) = RA
+2 (A
+), ∀A ∈ DOM A(R1).
+Proof. Applying Theorem 2.15 for the nc Fornasini–Marchesini realization R1,
+there exists a minimal nc Fornasini–Marchesini realization ˜R1 centred at Y for
+which
+DOMsm(R1) ⊆ DOMsm( ˜R1) and R1(X) = ˜R1(X), ∀X ∈ DOMsm(R1)
+for every m ∈ N, and for any unital stably ﬁnite K− algebra A:
+DOM A(R1) ⊆ DOM A( ˜R1) and RA
+1 (A
+) = ˜R1
+A
+(A), ∀A ∈ DOM A(R1).
+In particular ˜R1 is a nc Fornasini–Marchesini realization of R. As both R2 and ˜R1
+are minimal nc Fornasini–Marchesini realizations of R, both centred at Y , Theorem
+2.13 implies that
+DOMsm( ˜R1) = DOMsm(R2) and ˜R1(X) = R2(X), ∀X ∈ DOMsm( ˜R1)
+and
+DOM A( ˜R1) = DOM A(R2) and ˜R1
+A
+(A) = RA
+2 (A
+), ∀A ∈ DOM A( ˜R1).
+Therefore, DOMsm(R1) ⊆ DOMsm( ˜R1) = DOMsm(R2) and R1(X) = ˜R1(X) =
+R2(X) for every X ∈ DOMsm(R1). Moreover, DOM A(R1) ⊆ DOM A( ˜R1) =
+DOM A(R2) and RA
+1 (A
+) = ˜R1
+A
+(A) = RA
+2 (A
+) for every A ∈ DOM A(R1). □
+The following is a summary of all of the main results in this subsection.
+Corollary 2.18. If R is a nc rational expression in x1, . . . , x d over K and Y ∈
+doms(R) ⊆ (Ks× s)d, then R admits a unique (up to unique similarity) minimal nc
+Fornasini–Marchesini realization centred at Y that is also a realization of R w.r.t
+any unital stably ﬁnite K− algebra.
+Moreover, any minimal nc Fornasini–Marchesini realizatio n of R centred at Y
+is a realization of R w.r.t any unital stably ﬁnite K− algebra.
+Proof. From Theorem 2.4, R admits a nc Fornasini–Marchesini realization R cen-
+tred at Y that is also a nc Fornasini–Marchesini realization of R w.r.t any unital
+stably ﬁnite K− algebra A, while Theorem 2.15 guarantees the existence of a mini-
+mal nc Fornasini–Marchesini realization ˜R centred at Y , for which
+DOMsm(R) ⊆ DOMsm( ˜R) and R(X) = ˜R(X), ∀X ∈ DOMsm(R)
+for every m ∈ N, and
+DOM A(R) ⊆ DOM A( ˜R) and RA(A) = ˜RA(A), ∀A ∈ DOM A(R).
+Therefore, for every m ∈ N,
+domsm(R) ⊆ DOMsm( ˜R) and R(X) = ˜R(X), ∀X ∈ domsm(R),
+i.e., ˜R is a realization of R, while the uniqueness of ˜R follows from Theorem 2.13.
+• Moreover, if a ∈ domA(R), then Is ⊗ a ∈ DOM A( ˜R) and Is ⊗ RA(a) =
+RA(Is ⊗ a) = ˜RA(Is ⊗ a), i.e., ˜R is a realization of R w.r.t A.
+
+===== PAGE 28 =====
+
+28 M. PORAT AND V. VINNIKOV
+• Furthermore, if ˇR is a minimal nc Fornasini–Marchesini realization of R centred
+at Y , then ˜R and ˇR are both minimal nc Fornasini–Marchesini realizations of R
+centred at Y , hence by Lemma 2.13, DOM A( ˇR) = DOM A( ˜R) and ˇRA(A) =
+˜RA(A), for every A ∈ DOM A( ˇR). Therefore, for every a ∈ domA(R) we have
+Is ⊗ a ∈ DOM A( ˜R) = DOM A( ˇR) and Is ⊗ RA(a) = ˜RA(Is ⊗ a) = ˇRA(Is ⊗ a),
+i.e., ˇR is a nc Fornasini–Marchesini realization of R w.r.t A. □
+2.5. Example. Consider the nc rational expression R(x1, x 2) = ( x1x2 − x2x1)− 1,
+with K = C, s = 2 and Y = (Y1, Y 2) =
+(( 0 1
+1 0
+)
+,
+( 1 0
+0 − 1
+))
+∈ dom2(R). We use
+synthesis and follow the proof of Theorem 2.4, to ﬁnd a nc Fornasini– Marchesini
+realization of R centred at Y
+:
+• R1(x) = x1 admits a nc Fornasini–Marchesini realization centred at Y (see (2.5)),
+described by
+L1 = 2, D 1 =
+( 0 1
+1 0
+)
+, C 1 = I2, A1
+1 = A1
+2 = 0 2, B1
+1 = Id 2, B1
+2 = 0 2.
+• R2(x
+) = x2 admits a nc Fornasini–Marchesini realization centred at Y (see (2.5)),
+described by
+L2 = 2, D 2 =
+(
+1 0
+0 − 1
+)
+, C 2 = I2, A2
+1 = A2
+2 = 0 2, B2
+1 = 0 2, B2
+2 = Id 2.
+• R3(x
+) = R1(x)R2(x) = x1x2 admits a nc Fornasini–Marchesini realization centred
+at Y (see (2.7)), described by
+L3 = 4, D 3 =
+(
+0 − 1
+1 0
+)
+, C 3 =
+(
+1 0 0 1
+0 1 1 0
+)
+, A3
+1(X) = ( I2 ⊗ X)
+[
+02 I2
+02 02
+]
+,
+A3
+2(X) = 0 4, B3
+1(X) = ( I2 ⊗ X)
+
+
+( 1 0
+0 − 1
+)
+02
+
+ , B3
+2(X) = ( I2 ⊗ X)
+[02
+I2
+]
+.
+• R4(x
+) = − R2(x)R1(x) = − x2x1 admits a nc Fornasini–Marchesini realization
+centred at Y (see (2.7)),described by
+L4 = 4, D 4 =
+( 0 − 1
+1 0
+)
+, C 4 =
+( − 1 0 − 1 0
+0 − 1 0 1
+)
+, A4
+1(X) = 0 4,
+A4
+2(X) = ( I2⊗ X)
+[02 I2
+02 02
+]
+, B4
+1(X) = ( I2⊗ X)
+[02
+I2
+]
+, B4
+2(X) = ( I2⊗ X)
+
+
+( 0 1
+1 0
+)
+02
+
+ .
+
+===== PAGE 29 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 29
+• R5(x) = R3(x) + R4(x) = x1x2 − x2x1 admits a nc Fornasini–Marchesini realiza-
+tion centred at Y (see (2.6)), described by
+L5 = 8, D 5 =
+( 0 − 2
+2 0
+)
+, C 5 =
+( 1 0 0 1 − 1 0 − 1 0
+0 1 1 0 0 − 1 0 1
+)
+,
+A5
+1(X) = ( I4 ⊗ X)
+
+
+
+
+02 I2 02 02
+02 02 02 02
+02 02 02 02
+02 02 02 02
+
+
+
+ , A2(X) = ( I4 ⊗ X)
+
+
+
+
+02 02 02 02
+02 02 02 02
+02 02 02 I2
+02 02 02 02
+
+
+
+ ,
+B1(X) = ( I4 ⊗ X)
+
+
+
+
+
+
+( 1 0
+0 − 1
+)
+02
+02
+I2
+
+
+
+
+
+
+, B2(X) = ( I4 ⊗ X)
+
+
+
+
+
+
+02
+I2(
+0 1
+1 0
+)
+02
+
+
+
+
+
+
+.
+• R(x
+) = R5(x)− 1 = (x1x2 − x2x1)− 1 admits a nc Fornasini–Marchesini realization
+R centred at Y (see (2.8)), described by
+L = 8, D = 1
+2
+( 0 1
+− 1 0
+)
+, C = 1
+2
+( 0 1 1 0 0 − 1 0 1
+− 1 0 0 − 1 1 0 1 0
+)
+,
+A1(X) = 1
+2 (I4 ⊗ X)
+
+
+
+
+
+
+
+
+(
+0 − 1
+− 1 0
+)
+I2
+(
+0 1
+1 0
+) (
+0 − 1
+1 0
+)
+02 02 02 02
+02 02 02 02( 0 − 1
+1 0
+) ( − 1 0
+0 1
+) ( 0 1
+− 1 0
+) ( 0 − 1
+− 1 0
+)
+
+
+
+
+
+
+
+
+,
+A2(X) = 1
+2 (I4 ⊗ X)
+
+
+
+
+
+
+
+
+02 02 02 02(
+0 − 1
+1 0
+) (
+− 1 0
+0 1
+) (
+0 1
+− 1 0
+) (
+0 − 1
+− 1 0
+)
+( 1 0
+0 − 1
+) ( 0 1
+− 1 0
+) ( − 1 0
+0 1
+)
+I2
+02 02 02 02
+
+
+
+
+
+
+
+
+,
+B1(X) = 1
+2 (I4 ⊗ X)
+
+
+
+
+
+
+
+
+(
+0 − 1
+− 1 0
+)
+02
+02( 0 − 1
+1 0
+)
+
+
+
+
+
+
+
+
+, B2(X) = 1
+2 (I4 ⊗ X)
+
+
+
+
+
+
+
+
+02( 0 − 1
+1 0
+)
+(
+1 0
+0 − 1
+)
+02
+
+
+
+
+
+
+
+
+.
+The nc Fornasini–Marchesini realization R is controllable, however R is not ob-
+servable, as
+N OC, A
+=
+⋂
+ω ∈G 2, Z 1,...,Z ℓ ∈ C2× 2
+ker
+(
+CAω (Z1, . . . , Z ℓ)
+)
+= span{e1 + e5, e 2 + e6},
+hence R is not minimal. By the Kalman decomposition (see Theorem 2.15) argu-
+ment, we obtain a minimal nc Fornasini–Marchesini realization of R centred at Y
+
+===== PAGE 30 =====
+
+30 M. PORAT AND V. VINNIKOV
+of dimension ˜L = dim(CA, B) − dim(N OC, A ∩ C A, B) = 6, that is
+˜R(X1, X 2) = ˜D + ˜C
+(
+I6 − ˜A1(X1 − Y1) − ˜A2(X2 − Y2)
+) − 1( ˜B1(X1 − Y1) + ˜B2(X2 − Y2)
+)
+,
+with
+˜D = 1
+2
+(
+0 1
+− 1 0
+)
+, ˜C = 1
+2
+(
+1 0 0 1 0 2
+0 − 1 1 0 − 2 0
+)
+,
+˜A1(X) = 1
+2 (I3 ⊗ X)
+
+
+
+
+
+
+02 02 02(
+− 1 0
+0 1
+) (
+0 − 1
+− 1 0
+) (
+0 − 2
+2 0
+)
+( 1
+2 0
+0 1
+2
+) ( 0 − 1
+21
+2 0
+) ( 0 − 1
+− 1 0
+)
+
+
+
+
+
+
+,
+˜A2(X) = 1
+2 (I3 ⊗ X)
+
+
+
+
+
+
+( − 1 0
+0 1
+) ( 0 − 1
+− 1 0
+) ( 0 − 2
+2 0
+)
+02 02 02( 0 − 1
+21
+2 0
+) ( − 1
+2 0
+0 − 1
+2
+) ( − 1 0
+0 1
+)
+
+
+
+
+
+
+,
+˜B1(X) = 1
+2 (I3 ⊗ X)
+
+
+
+
+
+
+02( 0 − 1
+1 0
+)
+(
+0 − 1
+2
+− 1
+2 0
+)
+
+
+
+
+
+
+, ˜B2(X) = 1
+2 (I3 ⊗ X)
+
+
+
+
+
+
+( 0 − 1
+1 0
+)
+02(
+− 1
+2 0
+0 1
+2
+)
+
+
+
+
+
+
+.
+In this example it is easy to check directly that
+det
+(
+I6m −
+2∑
+k=1
+(Xk − Im ⊗ Yk) ˜Ak
+)
+̸= 0 ⇐ ⇒ det(X1X2 − X2X1) ̸= 0
+for X
+= ( X1, X 2) ∈ (C2m× 2m)2, i.e., that dom2m(R) = DOM2m( ˜R) and also
+that R(X) = ˜R(X). Furthermore, for any unital stably ﬁnite C− algebra A and
+a = (a1, a2) ∈ A 2, the element a1a2 − a2a1 is invertible in A if and only if the matrix
+(
+I6 ⊗ 1A −
+2∑
+k=1
+˜Ak(I2) ⊗ ak − ˜Ak(Yk) ⊗ 1A
+)
+is invertible in A6× 6
+i.e., domA(R) = DOM A( ˜R) and also I2 ⊗ RA(a
+) = RA(I2 ⊗ a).
+2.6. Cohn’s theorem. As a corollary of the results in Subsection 2.4, we get a new
+proof of a theorem of Cohn, stating that if two nc rational expres sions represents the
+same nc rational function, then they are A− evaluation equivalent for any unital
+stably ﬁnite K− algebra A. Cohn’s Theorem was proved originally in [24] and
+afterwards in his book [25, Theorem 7.3.2]. In [41], the authors prove d a weaker
+version of the theorem, applicable only for nc rational expressions which are regular
+at the origin, using their theory of realizations for nc regular ration al functions. We
+omit their assumption on regularity at the origin and prove the theor em in its full
+version.
+Theorem 2.19 (Cohn’s Theorem) . Let R and ˜R be (Kd)nc− evaluation equiv-
+alent nc rational expressions in x1, . . . , x d over K, i.e., R(X
+) = ˜R(X) for all
+
+===== PAGE 31 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 31
+X ∈ dom(R) ∩ dom( ˜R). Then R and ˜R are A− evaluation equivalent for any unital
+stably ﬁnite K− algebra A , i.e.,
+RA(a) = ˜RA(a), ∀a ∈ domA(R) ∩ domA( ˜R).
+Proof. Assume R and ˜R are non-degenerate nc rational expressions, so there exists
+s ∈ N such that doms(R), dom s( ˜R) ̸= ∅. As doms(R), dom s( ˜R) are Zariski open
+sets in Ks× s, there exists ℓ ∈ N such that domsℓ(R) ∩ domsℓ( ˜R) ̸= ∅. The reasoning
+for that is clear when K is inﬁnite (with ℓ = 1), while if K is ﬁnite we use a similar
+argument as in [48, Remark 2.6]. Let
+Y = (Y1, . . . , Y d) ∈ domsℓ(R) ∩ domsℓ( ˜R).
+From Corollary 2.18, R and ˜R admit minimal nc Fornasini–Marchesini realizations
+R and ˜R, respectively, both centred at Y with the special properties:
+a ∈ domA(R) =⇒ Isℓ ⊗ a ∈ DOM A(R) and Isℓ ⊗ RA(a) = RA(Isℓ ⊗ a),
+a ∈ domA( ˜R) =⇒ Isℓ ⊗ a ∈ DOM A( ˜R) and Isℓ ⊗ ˜RA(a) = ˜RA(Isℓ ⊗ a).
+Moreover, Theorem 2.13 implies that
+DOM A(R) = DOM A( ˜R) and RA(A) = ˜RA(A), ∀A ∈ DOM A(R).
+Finally, if
+a ∈ domA(R) ∩ domA( ˜R),
+then Isℓ ⊗ a ∈ DOM A(R) = DOM A( ˜R) and Isℓ ⊗ RA(a) = RA(Isℓ ⊗ a) =
+˜RA(Isℓ ⊗ a) = Isℓ ⊗ ˜RA(a), therefore RA(a) = ˜RA(a). □
+Remark 2.20. Theorem 2.19 implies that one can evaluate any nc rational fu nc-
+tion by evaluating a minimal realization of the function. Th is proves that K (<x )> is
+the universal skew ﬁeld of fractions of K⟨x⟩, see [21, 66] for the original proofs and
+[48] for a modern proof. We postpone a detailed discussion and an a pplication to
+an explicit construction of K (<x )> to [64].
+2.7. The McMillan degree. For a nc rational expression R in x1, . . . , x d over K
+and Y ∈ dom(R), we deﬁne by LR(Y ) the dimension of a minimal nc Fornasini–
+Marchesini realization of R centred at Y . The ﬁrst part of the next theorem is an
+analog of [82, Theorem 5.10].
+Theorem 2.21. Let R be a non-degenerate nc rational expression in x1, . . . , x d
+over K and let Y
+∈ doms(R).
+1. If ˜Y ∈ doms(R), then LR(Y ) = LR( ˜Y ).
+2. If n ∈ N, then In ⊗ Y ∈ domsn(R) and LR(In ⊗ Y ) = nLR(Y ).
+3. If s′ ∈ N and Y ′ ∈ doms′(R), then s′LR(Y ) = sLR(Y ′).
+Proof. Applying Corollary 2.18, the expression R admits a minimal nc Fornasini–
+Marchesini realization R centred at Y , described by a tuple ( L, D, C, A, B). Let
+T1 := IL −
+d∑
+k=1
+Ak(˜Yk − Yk) and T2 :=
+d∑
+k=1
+Bk(Yk − ˜Yk),
+
+===== PAGE 32 =====
+
+32 M. PORAT AND V. VINNIKOV
+as ˜Y = ( ˜Y1, . . . , ˜Yd) ∈ doms(R) ⊆ DOMs(R), the matrix T1 is invertible. There-
+fore, for every X ∈ DOMsm(R) and m ∈ N:
+R(X) = Im⊗ D+(Im⊗ C)
+(
+ILm−
+d∑
+k=1
+(Xk− Im⊗ ˜Yk)Ak−
+d∑
+k=1
+(
+Im⊗ (˜Yk− Yk)
+)
+Ak
+) − 1( d∑
+k=1
+(Xk− Im⊗ ˜Yk)Bk−
+d∑
+k=1
+(Im⊗ (Yk− ˜Yk))Bk
+)
+= Im⊗ D+(Im⊗ CT − 1
+1 )
+(
+ILm−
+d∑
+k=1
+(Xk− Im⊗ ˜Yk) ˜Ak
+) − 1
+d∑
+k=1
+(Xk − Im ⊗ ˜Yk)Bk − (Im ⊗ CT − 1
+1 )
+(
+ILm −
+d∑
+k=1
+(Xk − Im ⊗ ˜Yk) ˜Ak
+) − 1
+(Im ⊗ T2),
+where ˜Ak = Ak ·T − 1
+1 , and since
+(
+ILm−
+d∑
+k=1
+(Xk− Im⊗ ˜Yk) ˜Ak
+) − 1
+(Im⊗ T2) = Im⊗ T2+
+(
+ILm−
+d∑
+k=1
+(Xk− Im⊗ ˜Yk) ˜Ak
+) − 1
+d∑
+k=1
+(Xk − Im ⊗ ˜Yk) ˆBk,
+where ˆBk = ˜Ak ·T2, we conclude that
+R(X
+) = Im ⊗ D − Im ⊗ (CT − 1
+1 T2)+ (Im ⊗ CT − 1
+1 )
+(
+ILm −
+d∑
+k=1
+(Xk − Im ⊗ ˜Yk) ˜Ak
+) − 1
+d∑
+k=1
+(Xk− Im⊗ ˜Yk)Bk− (Im⊗ CT − 1
+1 )
+(
+ILm−
+d∑
+k=1
+(Xk− Im⊗ ˜Yk) ˜Ak
+) − 1 d∑
+k=1
+(Xk− Im⊗ ˜Yk) ˆBk
+i.e., that R(X
+) = ˜R(X) where ˜R is a nc Fornasini–Marchesini realization of R,
+centred at ˜Y , described by
+(2.23) ˜D = D − CT − 1
+1 T2, ˜C = CT − 1
+1 , ˜Ak = Ak ·T − 1
+1 , ˜Bk = Bk − Ak ·(T − 1
+1 T2).
+Thus, LR( ˜Y ) ≤ L = LR(Y ) and by symmetry we get that LR( ˜Y ) = LR(Y ), hence
+˜R is a minimal nc Fornasini–Marchesini realization of R centred at ˜Y .
+• Suppose next that n ∈ N. As dom(R) is closed under direct sums it follows
+that In ⊗ Y ∈ domsn(R), while for every p ∈ N letting m = np yields for every
+X ∈ domsnp(R):
+R(X) = Inp⊗ D+(Inp⊗ C)
+(
+ILnp−
+d∑
+k=1
+(Xk − Inp⊗ Yk)Ak
+) − 1 d∑
+k=1
+(Xk − Inp⊗ Yk)Bk
+= Ip⊗ D(n)+(Ip⊗ C(n))
+(
+IL(n)p−
+d∑
+k=1
+(Xk− Ip⊗ Y (n)
+k )Ak
+) − 1 d∑
+k=1
+(Xk− Ip⊗ Y (n)
+k )Bk
+where
+L(n) = Ln, D (n) = In ⊗ D, C (n) = In ⊗ C and Y (n)
+k = In ⊗ Yk.(2.24)
+We obtained a nc Fornasini–Marchesini realization R(n)— described by the tuple
+(L(n), D (n), C (n), A
+, B)— of R that is centred at Y (n) := In ⊗ Y and it is easily
+
+===== PAGE 33 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 33
+seen that controllability and observability of R imply the controllability and ob-
+servability of R(n) as well, thus R(n) is minimal and hence LR(In ⊗ Y ) = nLR(Y ).
+• Finally, let Y ′ ∈ doms′(R), then part 2 implies that Is′⊗ Y , I s⊗ Y ′ ∈ domss′(R),
+LR(Is′ ⊗ Y ) = s′LR(Y ) and LR(Is ⊗ Y ′) = sLR(Y ′), while from part 1, LR(Is′ ⊗
+Y ) = LR(Is ⊗ Y ′), therefore s′LR(Y ) = sLR(Y ′). □
+Remark 2.22. In the proof of Theorem 2.21 we built explicit minimal nc Forn asini–
+Marchesini realizations ˜R and R(n) of R, centred at ˜Y and In ⊗ Y , respectively,
+using a minimal realization R of R centred at Y . From Corollary 2.18 it follows
+right away that ˜R and R(n) are also nc Fornasini–Marchesini realizations of R
+w.r.t any unital stably ﬁnite K− algebra A. Moreover, direct computations— which
+are omitted— easily show that
+DOM A(R) = DOM A( ˜R) and RA(A) = ˜RA(A), ∀A ∈ DOM A(R)
+and
+A
+∈ DOM A(R) ⇐ ⇒ In ⊗ A ∈ DOM A(
+R(n))
+and In ⊗ R A(A) =
+(
+R(n)) A
+(In ⊗ A).
+The ﬁrst part of Theorem 2.21 guarantees that the value LR(Y ) does not depend
+on Y but only on s, so it will be denoted LR(s) := LR(Y ), while from the third
+part of the theorem it follows that there exists m(R) > 0 such that
+LR(s) = m(R)s, ∀s ≥ 1(2.25)
+where m(R) depends only on R; We deﬁne m(R) as the McMillan degree of R.
+In the next lemma we actually show that m(R) ∈ N. This is a direct corollary
+and yet separated from the arguments of Theorem 2.21, as it requ ires a non-trivial
+tool from PI-ring theory, that is if R is a non-degenerate nc rational expression,
+then there exists n ∈ N such that domk(R) ̸= ∅ for every k ≥ n; see [66, Chapter
+8] and [49, Remarks 2.15 and 2.16] for a more detailed discussion.
+Lemma 2.23. If R is a non-degenerate nc rational expression in x1, . . . , x d over
+K and doms(R) ̸= ∅, then s |LR(s) and hence m(R) ∈ N.
+Proof. As doms(R) ̸= ∅, let Y
+∈ doms(R) and according to Corollary 2.18, let R
+be a minimal nc Fornasini–Marchesini realization of R, centred at Y . Since R is
+non-degenerate, there exists n ∈ N such that domk(R) ̸= ∅ for all k ≥ n. Consider
+the sequence ( kj )j≥ 1 given by kj = sj + 1, clearly for j large enough we get kj ≥ n
+and hence domkj (R) ̸= ∅. Let W ∈ domkj (R) and apply Theorem 2.21 for W
+and Y ; we obtain that kjLR(Y ) = sLR(W ), but it is easily seen that s and kj are
+co-prime integers, thus s |LR(Y ) and hence m(R) ∈ N. □
+Remark 2.24. If R is a nc rational expression in x1, . . . , x d over K, Y 1 ∈ doms1 (R)
+and Y 2 ∈ doms2 (R), then Y 1 ⊕ Y 2 ∈ doms1+s2 (R) and (2.25) implies that
+LR(s1 + s2) = ( s1 + s2)m(R) = s1m(R) + s2m(R) = LR(s1) + LR(s2).
+If R admits two minimal nc Fornasini–Marchesini realizations R1 and R2, centred
+at Y 1 and Y 2, respectively, which are described by the tuples (L1, D 1, C 1, A1, B1)
+and (L2, D 2, C 2, A2, B2), it is very tempting to consider R to be a nc Fornasini–
+Marchesini realization of R centred at Y 1 ⊕ Y 2, where R is described by
+D = D1 ⊕ D2, C = C1 ⊕ C2, Ak =
+[A1
+k 0
+0 A2
+k
+]
+and Bk =
+[B1
+k
+B2
+k
+]
+, 1 ≤ k ≤ d
+
+===== PAGE 34 =====
+
+34 M. PORAT AND V. VINNIKOV
+but we only know that R(X) = R(X) whenever X ∈ doms1+s2 (R) is of the form
+X = X (1) ⊕ X (2), with X (1) ∈ doms1 (R1) and X (2) ∈ doms2 (R2).
+3. Realizations of NC Rational Functions
+From the previous section (cf. Theorem 2.13) we know that— given a nc ra-
+tional function— all of its minimal nc Fornasini–Marchesini realization s which are
+centred at the same point , must have the same domain (and A− domain) and
+same evaluation (w.r.t A as well; here A is a unital stably ﬁnite K− algebra).
+In this section we continue to establish connections between all minimal nc
+Fornasini–Marchesini realizations (with centres of all possible sizes ) of a given nc
+rational function. Using Lemma 2.21 and Remark 2.22, the general c ase— where
+the two centres of minimal realizations of a rational function are diﬀ erent— is
+considered and solved, which then will lead us to the main conclusion, t hat is
+Theorem 3.3.
+Lemma 3.1. Let R1 and R2 be nc rational expressions in x1, . . . , x d over K, with
+Y
+1 ∈ doms1 (R1) and Y 2 ∈ doms2 (R2), where s1, s 2 ∈ N. Suppose R1 and R2 are
+minimal nc Fornasini–Marchesini realizations of R1 and R2, centred at Y 1 and Y 2,
+respectively. If R1 and R2 are (Kd)nc− evaluation equivalent, then
+DOMpm(R1) = DOMpm(R2) and R1(X) = R2(X)(3.1)
+for every m ∈ N and X
+∈ DOMpm(R1), where p = l.c.m (s1, s 2). Moreover, for
+any unital stably ﬁnite K− algebra A and a ∈ A d:
+Is1 ⊗ a ∈ DOM A(R1) ⇐ ⇒ Is2 ⊗ a ∈ DOM A(R2)
+and for every such a, we have
+Is2 ⊗ R A
+1 (Is1 ⊗ a
+) = Is1 ⊗ R A
+2 (Is2 ⊗ a
+).
+Proof. We know that doms1 (R1), dom s2 (R2) ̸= ∅, hence domp(R1), dom p(R2) ̸= ∅
+and as they are both open Zariski sets in ( Kp× p)d, there exists ℓ ∈ N such that
+domℓp(R1) ∩ domℓp(R2) ̸= ∅, so let us ﬁx
+˜Y ∈ domℓp(R1) ∩ domℓp(R2) ⊆ DOMℓp(R1) ∩ DOMℓp(R2).
+Once again (as in the proof of Theorem 2.19), the reasoning for tha t is clear when
+K is inﬁnite (with ℓ = 1), while if K is ﬁnite we use a similar argument as in [48,
+Remark 2.6].
+• Let n1 and n2 be the integers for which pℓ = s1n1 = s2n2. From Remark 2.22,
+there exist minimal nc Fornasini–Marchesini realizations R(nk) of Rk, centred at
+Ink ⊗ Y k, such that
+DOMpℓm(Rk) = DOMpℓm
+(
+R(nk))
+and R(nk)(X) = Rk(X), ∀X ∈ DOMpℓm(Rk)
+for every m ∈ N, A ∈ DOM A(Rk) ⇐ ⇒ Ink ⊗ A ∈ DOM A(
+R(nk))
+and
+(
+R(nk)) A
+(Ink ⊗ A) = Ink ⊗ R A
+k (A
+), ∀A ∈ DOM A(Rk),
+for k = 1 , 2. In addition, there exist minimal nc Fornasini–Marchesini realizatio ns
+˜Rk of Rk, centred at ˜Y , such that
+DOMpℓm
+(
+R(nk))
+= DOMpℓm
+( ˜Rk
+)
+and R(nk)(X) = ˜Rk(X), ∀X ∈ DOMpℓm
+( ˜Rk
+)
+
+===== PAGE 35 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 35
+for every m ∈ N, DOM A(
+R(nk))
+= DOM A( ˜Rk
+)
+and
+(
+R(nk)) A
+(A) = ˜Rk
+A
+(A), ∀A ∈ DOM A(
+R(nk))
+,
+for k = 1, 2. Therefore ˜R1 and ˜R2 are minimal nc Fornasini–Marchesini realizations,
+both centred at ˜Y , of R1 and R2— which are ( Kd)nc− evaluation equivalent— hence
+Theorem 2.13 implies
+DOMpℓm
+( ˜R1
+)
+= DOMpℓm
+( ˜R2
+)
+and ˜R1(X) = ˜R2(X), ∀X ∈ DOMpℓm
+( ˜R1
+)
+for every m ∈ N and
+DOM A( ˜R1
+)
+= DOM A( ˜R2
+)
+and ˜R1
+A
+(A) = ˜R2
+A
+(A), ∀A ∈ DOM A( ˜R1
+)
+,
+which yield that
+DOMpℓm(R1) = DOMpℓm
+( ˜R1
+)
+= DOMpℓm
+( ˜R2
+)
+= DOMpℓm(R2)(3.2)
+for every m ∈ N and
+R1(X
+) = ˜R1(X) = ˜R2(X) = R2(X), ∀X ∈ DOMpℓm(R1).(3.3)
+It is easily seen that X
+∈ DOMpm(Rk) ⇐ ⇒ Iℓ ⊗ X ∈ DOMpℓm(Rk) and in that
+case Rk(Iℓ ⊗ X) = Iℓ ⊗ R k(X), where k = 1 or k = 2 and thus, from (3.2) and
+(3.3) one can get (3.1).
+• Moreover,
+DOM A(
+R(n1))
+= DOM A( ˜R1
+)
+= DOM A( ˜R2
+)
+= DOM A(
+R(n2))
+implies that for every a ∈ A d,
+Is1 ⊗ a ∈ DOM A(R1) ⇐ ⇒ In1 ⊗ (Is1 ⊗ a) ∈ DOM A(
+R(n1))
+⇐ ⇒
+In2 ⊗ (Is2 ⊗ a) ∈ DOM A(
+R(n2))
+⇐ ⇒ Is2 ⊗ a ∈ DOM A(R2)
+and for every such a:
+In1 ⊗ R A
+1 (Is1 ⊗ a
+) =
+(
+R(n1)) A
+(Ipℓ ⊗ a) = ˜R1
+A
+(Ipℓ ⊗ a)
+= ˜R2
+A
+(Ipℓ ⊗ a) =
+(
+R(n2)) A
+(Ipℓ ⊗ a) = In2 ⊗ R A
+2 (Is2 ⊗ a
+),
+which then, as s1n1 = s2n2, implies Is2 ⊗ R A
+1 (Is1 ⊗ a
+) = Is1 ⊗ R A
+2 (Is2 ⊗ a
+). □
+Remark 3.2. If R1 and R2 are (Kd)nc− evaluation equivalent nc (non-degenerate)
+rational expressions in x1, . . . , x d over K, as explained in the beginning of the proof,
+there exists ˜Y ∈ domℓp(R1)∩ domℓp(R2) for some ℓ ∈ N, thus Theorem 2.13 implies
+that LR1(ℓp) = LR2(ℓp) and hence
+m(R1) = LR1(ℓp)
+ℓp = LR2(ℓp)
+ℓp = m(R2).
+Therefore, we deﬁne the McMillan degree of a nc rational function R to be
+m(R) := m(R) for every R ∈ R.
+Recall that a nc rational function R is an equivalence class of the form
+R = {R : R is a non-degenerate representative of R}
+
+===== PAGE 36 =====
+
+36 M. PORAT AND V. VINNIKOV
+whose elements are (Kd)nc− evaluation equivalent nc rational expressions in x1, . . . , x d
+over K, whereas the domain and A− domain of regularity of R are given by
+dom(R) =
+⋃
+R∈ R
+dom(R) and domA(R) =
+⋃
+R∈ R
+domA(R),
+respectively. We now use Corollary 2.18 and Lemma 3.1, to show that t he domain
+of regularity of a nc rational function R at the level of n × n matrices, i.e.,
+domn(R) =
+⋃
+R∈ R
+domn(R),
+lives inside the domain of any minimal nc Fornasini–Marchesini realization of a
+representative in R, up to a tensor product with the identity matrix.
+Theorem 3.3. Let R ∈ K (<x1, . . . , x d )> be a nc rational function. For every nc ra-
+tional expression R ∈ R, integer s ∈ N, point Y ∈ doms(R), minimal nc Fornasini–
+Marchesini realization R centred at Y of R, and unital stably ﬁnite K− algebra A,
+we have the following properties:
+1. If Z ∈ domn(R), then Is ⊗ Z ∈ DOMsn(R) and Is ⊗ R(Z) = R(Is ⊗ Z).
+2. If s | n, then domn(R) ⊆ DOMn(R) and R(Z) = R(Z) for every Z ∈
+domn(R).
+3. If a ∈ domA(R), then Is ⊗ a ∈ DOM A(R) and Is ⊗ RA(a) = RA(Is ⊗ a).
+Proof. Let Z ∈ domn(R), so there exists a nc rational expression ˜R ∈ R such that
+Z ∈ domn( ˜R), while Corollary 2.18 implies the existence of a minimal nc Fornasini–
+Marchesini realization ˜R of ˜R, centred at Z. Then R and ˜R are minimal nc
+Fornasini–Marchesini realizations of R and ˜R, with centres in ( Ks× s)d and (Kn× n)d,
+respectively. Since R, ˜R ∈ R, it follows that R and ˜R are ( Kd)nc− evaluation
+equivalent, therefore Lemma 3.1 guarantees that
+DOMpm
+( ˜R
+)
+= DOMpm(R) and ˜R(X) = R(X), ∀X ∈ DOMpm(R)(3.4)
+for every m ∈ N, where p = l.c.m (s, n ). Thus, p |sn implies that
+Z
+∈ domn
+( ˜R
+)
+=⇒ Is ⊗ Z ∈ domsn
+( ˜R
+)
+⊆ DOMsn
+( ˜R
+)
+= DOMsn(R)
+and hence
+Is ⊗ R(Z) = Is ⊗ ˜R(Z) = ˜R(Is ⊗ Z) = ˜R(Is ⊗ Z) = R(Is ⊗ Z),
+which ends the proof of part 1.
+• Suppose next that s | n; in that case we have p = l.c.m (s, n ) = n. Thus, in
+view of (3.4) with m = 1, if Z ∈ domn
+( ˜R
+)
+, then
+Z ∈ DOMn
+( ˜R
+)
+= DOMn(R) and R(Z) = ˜R(Z) = ˜R(Z) = R(Z),
+which ends the proof of part 2.
+• Finally, let a ∈ domA(R), then there exists a non-degenerate nc rational
+expression ˆR ∈ R such that a ∈ domA( ˆR
+)
+. As ˆR is non-degenerate, there exists
+t ∈ N such that domt
+( ˆR
+)
+̸= ∅. Let ˆY ∈ domt( ˆR) and apply Corollary 2.18: so there
+exists a minimal realization ˆR of ˆR, centred at ˆY , such that
+a ∈ domA( ˆR
+)
+=⇒ It ⊗ a ∈ DOM A( ˆR
+)
+and ˆRA(It ⊗ a) = It ⊗ ˆRA(a).
+
+===== PAGE 37 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 37
+As R and ˆR are minimal nc Fornasini–Marchesini realizations of R ∈ R and ˆR ∈ R,
+respectively, Lemma 3.1 guarantees that
+It ⊗ a ∈ DOM A( ˆR
+)
+=⇒ Is ⊗ a ∈ DOM A(R)
+and also that
+It ⊗ R A(Is ⊗ a) = Is ⊗ ˆRA(It ⊗ a) = Is ⊗
+(
+It ⊗ ˆRA(a)
+)
+,
+thus RA(Is ⊗ a) = Is ⊗ ˆRA(a) = Is ⊗ RA(a). □
+What we proved is that
+domsm(R) ⊆ DOMsm(R), ∀m ∈ N
+however in the case where s = 1 and Y = (0 , . . . , 0), the nc Fornasini-Marchesini
+realization R is actually a 1 × 1 matrix valued nc rational expression (not a priori
+possible if s > 1); by viewing R as a 1 × 1 matrix valued nc rational function
+(cf. Remark 4.1), it follows that the nc Fornasini–Marchesini realiza tion R is a
+representative of R and therefore
+domm(R) ⊇ DOMm(R), ∀m ∈ N.
+In other words, by applying Theorem 3.3 we actually obtain a proof fo r Theorem
+1 from the introduction which— unlike the original proof in [49]— does no t make
+any use of the diﬀerence-diﬀerential calculus of nc functions.
+Corollary 3.4. If R is a nc rational function of x1, . . . , x d over K and R is regular
+at 0
+, then R admits a unique (up to unique similarity) minimal (observab le and
+controllable) nc Fornasini–Marchesini realization
+R(x1, . . . , x d) = D + C
+(
+IL −
+d∑
+k=1
+Akxk
+) − 1 d∑
+k=1
+Bkxk,
+where A1, . . . , A d ∈ KL× L, B 1, . . . , B d ∈ KL× 1, C ∈ K1× L, D = R(0
+) and L ∈ N,
+domm(R) =
+{
+(X1, . . . , X d) ∈ (Km× m)d : det (ILm − X1 ⊗ A1 − . . . − Xd ⊗ Ad) ̸= 0
+}
+for every m ∈ N and
+R(X1, . . . , X d) = Im ⊗ D + (Im ⊗ C)
+(
+ImL −
+d∑
+k=1
+Xk ⊗ Ak
+) − 1 d∑
+k=1
+Xk ⊗ Bk
+for every (X1, . . . , X d) ∈ domm(R).
+4. Realizations of Matrix V alued NC Rational Functions
+All of the analysis and results up to now can be generalized to the set tings
+of matrix valued nc rational functions. In this section we describe t he relevant
+deﬁnitions and main results in the matrix valued case.
+If α, β ∈ N, we say that r is a α × β matrix valued nc rational function if r
+is a α × β matrix of nc rational functions, i.e., if
+r =
+[Rij
+]
+1≤ i≤ α, 1≤ j≤ β
+
+===== PAGE 38 =====
+
+38 M. PORAT AND V. VINNIKOV
+where Rij are nc rational functions. The domain of regularity of r is then deﬁned
+by
+dom(r) :=
+⋂
+1≤ i≤ α, 1≤ j≤ β
+dom(Rij)(4.1)
+and for every X
+∈ domn(r) the evaluation r(X) is given by
+r(X) := E(n, α )
+[
+Rij(X)
+]
+1≤ i≤ α, 1≤ j≤ β E(n, β )T ,
+where E(ℓ1, ℓ 2) ∈ Kℓ1ℓ2× ℓ1ℓ2 deﬁned in (1.1). The need for the correction terms,
+which are shuﬄe matrices, is coming simply because otherwise evaluat ing r term
+by term does not yield a nc function (it does not preserve direct sum s), see e.g. [48,
+pp. 17–18]. If A is a unital K− algebra, then the A− domain of r is deﬁned by
+domA(r) :=
+⋂
+1≤ i≤ α, 1≤ j≤ β
+domA(Rij)
+and for every a ∈ domA(r) the evaluation rA(a) is given by
+rA(a) :=
+[RA
+ij(a
+)]
+1≤ i≤ α, 1≤ j≤ β .
+Remark 4.1. In [49] the authors deﬁne matrix valued nc rational functions and
+their domains of regularity using equivalence classes of ma trix valued nc rational
+expressions. However, it follows from [81, Lemma 3.9] that one can also deﬁne
+matrix valued nc rational functions as a matrix of nc rationa l functions, and the
+domains of regularity in both cases are equal.
+Theorem 4.2. For every α × β matrix valued nc rational function
+r =
+[Rij
+]
+1≤ i≤ α, 1≤ j≤ β and Y
+= (Y1, . . . , Y d) ∈ doms(r),
+there exist unique (up to unique similarity) L ∈ N, D ∈ Kαs × βs , C ∈ Kαs × L, linear
+mappings A1, . . . , Ad : Ks× s → KL× L and B1, . . . , Bd : Ks× s → KL× βs such that
+(A, B) is controllable and (C, A) is observable, for which
+domsm(r) ⊆
+{
+X ∈ (Ksm× sm)d : det
+(
+ILm −
+d∑
+k=1
+(Xk − Im ⊗ Yk)Ak
+)
+̸= 0
+}
+(4.2)
+for every m ∈ N and r(X
+) = R(X) for every X ∈ domsm(r), where
+R(X) = Im ⊗ D + (Im ⊗ C)
+(
+ILm −
+d∑
+k=1
+(Xk − Im ⊗ Yk)Ak
+) − 1 d∑
+k=1
+(Xk − Im ⊗ Yk)Bk.
+Moreover,
+domn(r) ⊆
+{
+X ∈ (Kn× n)d : det
+(
+InL −
+d∑
+k=1
+(Is ⊗ Xk − In ⊗ Yk)Ak
+)
+̸= 0
+}
+for every n ∈ N and Is ⊗ r(X
+) = R(Is ⊗ X) for every X ∈ domn(r). Furthermore,
+for any unital stably ﬁnite K− algebra A:
+domA(r) ⊆
+{
+a ∈ A d :
+(
+IL ⊗ 1A −
+d∑
+k=1
+(Is ⊗ ak − Yk ⊗ 1A)AA
+k
+)
+is invertible in AL× L
+}
+
+===== PAGE 39 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 39
+and Is ⊗ rA(a) = RA(Is ⊗ a) for every a ∈ domA(r), i.e.,
+Is⊗ rA(a) = D⊗ 1A+(C⊗ 1A)
+(
+IL⊗ 1A−
+d∑
+k=1
+(Is⊗ ak− Yk⊗ 1A)AA
+k
+) − 1 d∑
+k=1
+(Is⊗ ak− Yk⊗ 1A)BA
+k .
+Similarity of nc Fornasini–Marchesini realizations of matrix valued nc r ational
+functions is deﬁned analogously to the case of (scalar) nc rational functions (cf.
+Theorem 2.13), as well as controllability and observability, which are d eﬁned via
+the controllability and un-observability subspaces of KL (cf. Deﬁnition 2.7 and
+notice that the only diﬀerence is that the operators A
+ω ·Bk and C ·Aω return
+matrices in KL× βs and Kαs × L, respectively).
+Proof. Suppose r =
+[
+Rij
+]
+1≤ i≤ α, 1≤ j≤ β is a α × β matrix valued nc rational func-
+tion and let Y ∈ doms(r). For every 1 ≤ i ≤ α and 1 ≤ j ≤ β we have
+Y ∈ doms(Rij), while applying Theorem 3.3, the nc rational function Rij ad-
+mits a minimal nc Fornasini–Marchesini realization Rij centred at Y , described by
+a tuple ( Lij, D ij, C ij, Aij, Bij), which is also a realization of Rij w.r.t A.
+• Let X ∈ domsm(r), then X ∈ domsm(Rij) and hence X ∈ DOMsm(Rij) and
+Rij(X) = R(X) for any 1 ≤ i ≤ α and 1 ≤ j ≤ β . Therefore
+r(X) = E(sm, α )
+
+
+
+R11 . . . R1β
+.
+.
+. .
+.
+.
+Rα 1 . . . Rαβ
+
+
+ (X
+)E(sm, β )T = E(sm, α )
+
+
+
+R11 . . . R1β
+.
+.
+. .
+.
+.
+Rα 1 . . . Rαβ
+
+
+ (X
+)
+E(sm, β )T = Im⊗ D+(Im⊗ C)
+(
+ILm−
+d∑
+k=1
+(Xk− Im⊗ Yk)Ak
+) − 1 d∑
+k=1
+(Xk− Im⊗ Yk)Bk = R(X
+),
+where the nc Fornasini–Marchesini realization R is described by
+L =
+α∑
+i=1
+β∑
+j=1
+Lij, D = E(s, α )
+
+
+
+D11 . . . D 1β
+.
+.
+. .
+.
+.
+Dα 1 . . . D αβ
+
+
+ E(s, β )T ∈ Kαs × βs ,
+C = E(s, α )
+
+
+
+
+
+C11 . . . C 1β 0 . . . . . . . . . . . . 0
+0 . . . 0 C21 . . . C 2β 0 . . . 0
+.
+.
+. .
+.
+. . . . . . . . . . .
+.
+. .
+.
+.
+0 . . . . . . . . . . . . 0 Cα 1 . . . C αβ
+
+
+
+
+ ∈ Kαs × L,
+
+===== PAGE 40 =====
+
+40 M. PORAT AND V. VINNIKOV
+with the linear mappings
+Ak =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A11
+k . . . 0 . . . . . . . . . 0
+.
+.
+. . . . .
+.
+.
+0 A1β
+k
+.
+.
+.
+.
+.
+. . . . .
+.
+.
+.
+.
+. Aα 1
+k 0
+.
+.
+. . . . .
+.
+.
+0 . . . . . . . . . 0 . . . Aαβ
+k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+, Bk =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+B11
+k . . . 0
+.
+.
+. . . . .
+.
+.
+0 . . . B1β
+k
+B21
+k . . . 0
+.
+.
+. . . . .
+.
+.
+0 . . . B2β
+k
+.
+.
+. .
+.
+. .
+.
+.
+.
+.
+. .
+.
+. .
+.
+.
+Bα 1
+k . . . 0
+.
+.
+. . . . .
+.
+.
+0 . . . Bαβ
+k
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E(s, β )T .
+It is easily seen, by the diagonal structure of Ak, that
+domsm(r) ⊆
+⋂
+1≤ i≤ α, 1≤ j≤ β
+DOMsm(Rij ) = DOMsm(R).
+• Moreover, if X
+∈ domn(r), then Is ⊗ X ∈ domsn(r) and r(Is ⊗ X) = Is ⊗ r(X),
+while by the ﬁrst part of the theorem we know that Is ⊗ X ∈ domsn(R) and
+Is ⊗ r(X) = r(Is ⊗ X) = R(Is ⊗ X).
+• Furthermore, let a ∈ domA(r), thus a ∈ domA(Rij) and therefore Is ⊗ a ∈
+DOM A(Rij) and RA
+ij(Is ⊗ a
+) = Is ⊗ RA
+ij(a
+), for every 1 ≤ i ≤ α and 1 ≤ j ≤ β . A
+direct and careful computation— which is omitted— shows that
+RA(Is ⊗ a) = ( E(s, α ) ⊗ 1A)
+[RA
+ij(Is ⊗ a
+)]
+1≤ i≤ α, 1≤ j≤ β (E(s, β ) ⊗ 1A)
+= (E(s, α ) ⊗ 1A)
+[Is ⊗ RA
+ij(a
+)]
+1≤ i≤ α, 1≤ j≤ β (E(s, β ) ⊗ 1A) = Is ⊗ rA(a).
+• This proves the existence of a nc Fornasini–Marchesini realization f or r, centred
+at Y , that is also a realization of r w.r.t A. To obtain a minimal nc Fornasini–
+Marchesini realization, we use the Kalman decomposition same as in Le mma 2.13,
+corresponding to the controllability and un-observability subspace s of KL, whereas
+the uniqueness (up to unique similarity) of such a minimal realization is p roved with
+the same ingredients as in the proof of Theorem 2.13. The details of t he proofs of
+the Kalman decomposition and the uniqueness are omitted. □
+Remark 4.3. It is not hard to see that the nc Fornasini–Marchesini realiz ation built
+in the proof is not necessarily minimal, even if Rij are all minimal nc Fornasini–
+Marchesini realizations. However, the opposite is true, i. e., if R is a minimal nc
+Fornasini–Marchesini realization, then all of the nc Forna sini–Marchesini realiza-
+tions Rij must be minimal as well.
+Remark 4.4. (cf. Remark 4.1) The proof of the existence part in Theorem 4. 2
+can be done using matrix valued nc rational expressions and t he usual process of
+synthesis, yielding (4.2) for the a priori bigger domain of r, which uses matrix
+valued nc rational expressions and once again by [81, Lemma 3.9] is equal to the
+domain in the sense of (4.1).
+
+===== PAGE 41 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 41
+Remark 4.5 (McMillan degree of a matrix valued nc rational function) . One can
+prove analogous versions of Theorem 2.21 and Remark 3.2, for matrix valued nc
+rational expressions and functions, thereby there exists a n integer m(r) such that
+for any Y ∈ doms(r), we have
+Lr(Y ) = s ·m(r);
+here Lr(Y ) is the dimension of a minimal nc Fornasini–Marchesini reali zation of r,
+centred at Y . We call m(r) the McMillan degree of r. It follows from Theorem
+4.2 that
+m(r) = Lr(Y )
+s ≤
+∑α
+i=1
+∑β
+j=1 Lij
+s =
+α∑
+i=1
+β∑
+j=1
+m(Rij).
+5. Realizations of Hermitian NC Rational Functions
+In the case where K = R or K = C, one often considers symmetric or hermitian
+nc rational expressions, specially with applications to free probabilit y [16, 41, 75]
+and in optimization theory [5, 40, 42, 43]. Unlike the case of descripto r realiza-
+tions (see [41, 47]), the expression for RF M(X ∗ )∗ does not have the form of a nc
+Fornasini–Marchesini realization, for a nc Fornasini–Marchesini re alization RF M.
+Nevertheless, we can use our methods to obtain an analogue of Cor ollary 2.18 in
+the case where the function R is hermitian, i.e., when
+R∗ (X) := R(X ∗ )∗ = R(X) for all X ∈ dom(R),
+with the matrix pencil to be inverted having hermitian coeﬃcients . We also get
+explicit (necessary and suﬃcient) conditions on the coeﬃcients of t he realization
+for the nc rational function to be hermitian.
+Remark 5.1. One can deﬁne hermitian nc rational functions more precisel y. First,
+one needs to deﬁne— using synthesis— a nc rational expressio n R∗ , for any nc
+rational expression R. Then, one can show that R∗
+1 ∼ R∗
+2, whenever R1 ∼ R2
+(i.e., whenever R1 and R2 are (Kd)nc− evaluation equivalent). Finally, for every
+nc rational function R, let R∗ = {R∗ : R ∈ R} and deﬁne R to be hermitian if
+R∗ = R, as equivalence classes.
+We use the following notions: if T is a linear mapping on matrices, then T∗ is the
+linear mapping given by T∗ (X) := T(X ∗ )∗ and T is called hermitian if T∗ = T. If
+J is a square matrix of the form
+J =
+
+
+Ip 0 0
+0 − Iq 0
+0 0 0 t
+
+ , with p, q, t ≥ 0,
+then we say that J is a semi-signature matrix; notice that if t = 0, then J is a
+signature matrix.
+Theorem 5.2. Let R be an hermitian nc rational function of x1, . . . , x d over K,
+Y
+∗ = Y ∈ doms(R) and
+RF M(X) = D + C
+(
+IL −
+d∑
+k=1
+Ak(Xk − Yk)
+) − 1 d∑
+k=1
+Bk(Xk − Yk)
+be a minimal nc Fornasini–Marchesini realization of R, centred at Y .
+
+===== PAGE 42 =====
+
+42 M. PORAT AND V. VINNIKOV
+1. There exists a unique S = S∗ ∈ KL× L such that
+D∗ = D, A∗
+k ·S = S ·Ak, B∗
+k ·S = C ·Ak and C ·Bk = (C ·Bk)∗ , 1 ≤ k ≤ d.
+(5.1)
+2. Once the relations in (5.1) hold, we have
+ker(S) =
+⋂
+1≤ k≤ d, X ∈ Ks× s
+ker
+(
+Ak(X)
+)
+, Im(S) =
+⋁
+1≤ k≤ d, X ∈ Ks× s
+Im (A∗
+k(X))(5.2)
+and
+ker(C∗ ) =
+⋂
+1≤ k≤ d, X ∈ Ks× s
+ker
+(
+Bk(X)
+)
+.
+3. Symmetry of the minimal nc Fornasini–Marchesini realizatio n:
+There exist ˇC ∈ Ks× L, a semi-signature matrix J ∈ KL× L and hermitian
+linear mappings ˇA1, . . . , ˇAd : Ks× s → KL× L, such that
+RF M(X
+) = D + ˇC
+(
+IL −
+d∑
+k=1
+ˇAk(Xk − Yk)J
+) − 1 d∑
+k=1
+ˇAk(Xk − Yk) ˇC∗ ,(5.3)
+with ( ˇA ·J, ˇA · ˇC∗ ) controllable and ( ˇC, ˇA ·J) observable. Conversely, if R
+admits a realization of the form (5.3) with the controllabil ity and observ-
+ability conditions, then R is an hermitian nc rational function.
+4. Hermitian nc descriptor realization: There exist DD = D∗
+D ∈ Ks× s, C D ∈
+Ks× (L+s), a signature matrix JD ∈ K(L+s)× (L+s) and hermitian linear map-
+pings A1, D, . . . , Ad, D : Ks× s → K(L+s)× (L+s), such that
+RF M(X) = RD(X) := DD + CD
+(
+JD −
+d∑
+k=1
+Ak, D(Xk − Yk)
+) − 1
+C∗
+D(5.4)
+and
+DOMs(RF M) = DOMs(RD) :=
+{
+X
+∈ (Ks× s)d : det
+(
+JD−
+d∑
+k=1
+Ak, D(Xk− Yk)
+)
+̸= 0
+}
+.
+Moreover, similarly to Theorem 3.3, this also applies— afte r a suitable
+tensoring— to domains and evaluations on n × n matrices for all n ∈ N
+and w.r.t any unital stably ﬁnite K− algebra A.
+5. The matrix S is invertible ⇐ ⇒ ⋂
+1≤ k≤ d, X ∈ Ks× s ker (Ak(X)) = {0
+} ⇐ ⇒
+there exists Q ∈ KL× s such that
+Bk = Ak ·Q, ∀1 ≤ k ≤ d.(5.5)
+In that case, J ∈ KL× L is invertible,
+RF M(X) = D + ˇCJ
+(
+J −
+d∑
+k=1
+ˇAk(Xk − Yk)
+) − 1 d∑
+k=1
+ˇAk(Xk − Yk) ˇC∗ ,(5.6)
+and
+RF M(X
+) = ˜D + ˇC
+(
+J −
+d∑
+k=1
+˜Ak(Xk − Yk)
+) − 1
+ˇC∗ ,(5.7)
+where ˜Ak = J ˇAkJ and ˜D = D − ˇCJ ˇC∗ .
+
+===== PAGE 43 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 43
+Proof. 1. The proof of the ﬁrst part of the theorem follows the same ideas as the
+proof of Theorem 2.13. As R∗ = R we obtain that R∗
+F M = RF M and then compare
+the coeﬃcients in the Taylor–Taylor power series expansions
+RF M(X
+) =
+∑
+ν ∈G d
+(X − Im ⊗ Y )⊙ sν Rν
+and
+RF M(X)∗ =
+∑
+ν ∈G d
+(X − Im ⊗ Y )⊙ sν Rν, ∗ ,
+we obtain that Rν (Z1, . . . , Z ℓ) = Rν, ∗ (Z1, . . . , Z ℓ) for every ν = gi1 . . . g iℓ ∈ G d and
+Z1, . . . , Z ℓ ∈ Ks× s, where
+Rν (Z1, . . . , Z ℓ) =
+
+
+
+
+
+D : if ℓ = 0
+CBi1 (Z1) : if ℓ = 1
+CAi1 (Z1) · · ·Aiℓ − 1 (Zℓ− 1)Biℓ (Zℓ) : if ℓ > 1
+and
+Rν, ∗ (Z1, . . . , Z ℓ) =
+
+
+
+
+
+D∗ : if ℓ = 0
+B∗
+i1 (Z1)C∗ : if ℓ = 1
+B∗
+i1 (Z1)A∗
+i2 (Z2) · · ·A∗
+iℓ (Zℓ)C∗ : if ℓ > 1.
+For ν = ∅ we get that D = D∗ . Next, deﬁne a linear mapping
+S
+(
+A
+ω (W1, . . . , W k)Bj(Z)u
+)
+= (A∗ )ω (W1, . . . , W k)A∗
+j (Z)C∗ u
+(5.8)
+for every ω ∈ G d of length k ≥ 0, 1 ≤ j ≤ d, W 1, . . . , W k, Z j ∈ Ks× s and u
+∈ Ks,
+then we extend S by linearity.
+• It is easily seen, from the controllability of ( A, B) that S : KL → KL is well
+deﬁned: suppose
+w1 =
+∑
+l∈ IL
+Aω l(W )Bjl (Zl)ul =
+∑
+t∈ IT
+Aη t (Q)Bit (Pt)vt = w2,
+for ω l, η t ∈ G d, W = (W (l)
+1 , . . . , W (l)
+kl
+) ∈ (Ks× s)kl, Q = (Q(t)
+1 , . . . , Q (t)
+mt) ∈ (Ks× s)mt , Z l, P t ∈
+Ks× s, 1 ≤ jl, i t ≤ d and ul, v t ∈ Ks for every l ∈ IL and t ∈ IT . Thus for every
+1 ≤ n ≤ d, α ∈ G d, ˜X ∈ Ks× s and X = (X1, . . . , X |α |) ∈ (Ks× s)|α |:
+∑
+l∈ IL
+Rgnαω lgjl , ∗
+( ˜X, X , W , Z l
+)
+ul =
+∑
+l∈ IL
+Rgnαω lgjl
+( ˜X, X , W , Z l
+)
+ul = CAn( ˜X)Aα (X)w1
+= CAn( ˜X)Aα (X)w2 =
+∑
+t∈ IT
+Rgnαη tgit
+( ˜X, X , Q , P t
+)
+vt =
+∑
+t∈ IT
+Rgnαη tgit , ∗
+( ˜X, X , Q , P t
+)
+vt,
+which implies that
+B∗
+n( ˜X)(A
+∗ )α (X)
+∑
+l∈ IL
+(A∗ )ω l
+(
+W
+)
+A∗
+jl (Zl)C∗ u
+l = B∗
+n( ˜X)(A
+∗ )α (X)
+∑
+t∈ IT
+(A∗ )η t
+(
+Q
+)
+A∗
+it (Pt)C∗ v
+t,
+whereas the controllability of ( A, B) implies that S(w1) = S(w2).
+• Let S ∈ KL× L be the matrix such that S(u) = Su for every u ∈ KL. We show
+that S is self-adjoint: for every u, v ∈ KL we use the controllability of ( A, B) to
+write them as
+u =
+∑
+l∈ IL
+Aω l
+(
+W
+)
+Bjl (Zl)ul and v =
+∑
+t∈ IT
+Aη t
+(
+Q
+)
+Bit (Pt)vt,
+
+===== PAGE 44 =====
+
+44 M. PORAT AND V. VINNIKOV
+thus, using the notation Q# :=
+(
+Q(t)
+mt, . . . , Q (t)
+1
+)
+,
+⟨Su, v ⟩ =
+∑
+l∈ IL
+∑
+t∈ IT
+⟨
+SAω l
+(
+W
+)
+Bjl(Zl)ul, Aη t
+(
+Q
+)
+Bit (Pt)vt
+⟩
+=
+∑
+l∈ IL
+∑
+t∈ IT
+⟨(A∗ )ω l
+(
+W
+)
+A∗
+jl (Zl)
+C∗ u
+l, Aη t
+(
+Q
+)
+Bit (Pt)vt⟩ =
+∑
+l∈ IL
+∑
+t∈ IT
+v∗
+t B∗
+it (Pt)(A
+∗ )η T
+t
+(
+Q#)
+(A∗ )ω l
+(
+W
+)
+A∗
+jl (Zl)C∗ u
+l
+=
+∑
+l∈ IL
+∑
+t∈ IT
+v∗
+t Rgit η T
+t ω lgjl , ∗
+(
+Pt, Q
+#, W , Z l
+)
+ul =
+∑
+l∈ IL
+∑
+t∈ IT
+v∗
+t Rgit η T
+t ω lgjl
+(
+Pt, Q
+#, W , Z l
+)
+ul
+=
+∑
+l∈ IL
+∑
+t∈ IT
+v∗
+t CAit (Pt)A
+η T
+t
+(
+Q#)
+Aω l
+(
+W
+)
+Bjl(Zl)ul =
+∑
+l∈ IL
+∑
+t∈ IT
+⟨Aω l
+(
+W
+)
+Bjl(Zl)ul, (A∗ )η t
+(
+Q
+)
+A∗
+it (Pt)C∗ v
+t⟩ =
+∑
+l∈ IL
+∑
+t∈ IT
+⟨Aω l
+(
+W
+)
+Bjl (Zl)ul, S Aη t
+(
+Q
+)
+Bit (Pt)vt⟩ = ⟨u, Sv ⟩,
+i.e., S = S∗ .
+• From (5.8) it follows that
+SBk(Z) = A∗
+k(Z)C∗ , ∀1 ≤ k ≤ d, Z ∈ Ks× s(5.9)
+and for every w
+1 = ∑
+l∈ IL Aω l
+(
+W
+)
+Bjl (Zl)ul ∈ KL:
+SAk(Z)w1 =
+∑
+l∈ IL
+SAk(Z)Aω l
+(
+W
+)
+Bjl (Zl)ul =
+∑
+l∈ IL
+A∗
+k(Z)(A
+∗ )ω l
+(
+W
+)
+A∗
+jl (Zl)C∗ u
+l
+= A∗
+k(Z)
+∑
+l∈ IL
+SA
+ω l
+(
+W
+)
+Bjl (Zl)ul = A∗
+k(Z)Sw
+1.
+Once again, from the controllability of ( A, B) we have
+SAk(Z) = A∗
+k(Z)S, ∀1 ≤ k ≤ d, Z ∈ Ks× s.(5.10)
+• It is easily seen that every self-adjoint matrix S which satisﬁes the relations in
+(5.1), must satisﬁes (5.8) too. This implies the uniqueness of the mat rix S.
+2. Suppose all the relations in (5.1) hold.
+• Let v
+∈ ker(S), thus (5.10) implies that u := Ak(Z)v ∈ ker(S) while (5.9)
+implies that u ∈ ker(C). So u ∈ ker(S) implies that Aω (X1, . . . , X |ω |)u ∈ ker(C),
+but ( C, A) is observable, hence u = 0 and v ∈ ker Ak(Z) for all 1 ≤ k ≤ d and
+Z ∈ Ks× s.
+• On the other hand, if Ak(Z)v = 0 for all 1 ≤ k ≤ d and Z ∈ Ks× s, then
+A∗
+k(Z)Sv
+= 0 and also Bk(Z)Sv = 0, whereas the controllability of ( A, B) implies
+that Sv = 0.
+• If Bk(Z)v = 0 for all 1 ≤ k ≤ d and Z ∈ Ks× s, then A∗
+k(Z)C∗ v
+= 0 and also
+B∗
+k(Z)C∗ v
+= 0, which implies that C∗ v = 0.
+• On the other hand, if v ∈ ker(C∗ ), then Bk(Z)v ∈ ker(C) and SBk(Z)v = 0 ,
+i.e., Bk(Z)v ∈ ker(S). As S is normal it implies that also Bk(Z)v ∈ ker(S) and
+thus Bk(Z)v ∈ ker(Aj( ˜Z)) for every 1 ≤ j ≤ d and ˜Z ∈ Ks× s, thus Bk(Z)v = 0.
+3. The matrix
+[ S
+C
+]
+is left invertible, as if u ∈ ker
+[ S
+C
+]
+, then u ∈ ker C and
+u ∈ ker(S) =
+⋂
+1≤ k≤ d, X ∈ Ks× s
+ker(Ak(X)),
+
+===== PAGE 45 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 45
+which implies u = 0, since ( C, A) is observable.
+• Let K ∈ KL× (L+s) be a left inverse of
+[
+S
+C
+]
+and ˆAk := K ·
+[
+A∗
+k
+B∗
+k
+]
+, thus
+Ak = K ·
+[ S
+C
+]
+·Ak = ˆAk ·S, Bk = K ·
+[ S
+C
+]
+·Bk = ˆAk ·C∗(5.11)
+and
+[
+S
+C
+]
+· ˆAk ·
+[
+S C ∗ ]
+=
+[
+S · ˆAk ·S S · ˆAk ·C∗
+C · ˆAk ·S C · ˆAk ·C∗
+]
+=
+[
+S ·Ak S ·Bk
+C ·Ak C ·Bk
+]
+=
+[(S ·Ak)∗ (C ·Ak)∗
+(S ·Bk)∗ (C ·Bk)∗
+]
+=
+[
+S · ˆAk
+∗
+·S S · ˆAk
+∗
+·C∗
+C · ˆAk
+∗
+·S C · ˆAk
+∗
+·C∗
+]
+=
+[ S
+C
+]
+·ˆAk
+∗
+·
+[S C ∗ ]
+,
+which implies that ˆAk = ˆAk
+∗
+. Moreover, ˆAk is independent of the choice of the
+left inverse K: if K ′ is another left inverse of
+[ S
+C
+]
+, then
+(K − K ′) ·
+[
+A∗
+k
+B∗
+k
+]
+·
+[S C ∗ ]
+=
+[Ak − Ak Bk − Bk
+]
+=
+[0 0 ]
+and the right invertibility of
+[S C ∗ ]
+implies that K ·
+[A∗
+k
+B∗
+k
+]
+= K ′ ·
+[A∗
+k
+B∗
+k
+]
+. Notice
+that from the controllability of ( A
+, B) we get
+⋂
+1≤ k≤ d, X ∈ Ks× s
+ker
+( ˆAk(X)
+)
+= {0}.
+• Next, as S = S∗, one can write S = T J T∗, where T ∈ KL× L is invertible and
+J ∈ KL× L is a semi-signature matrix. Thus, using the relations in (5.11), we obt ain
+RF M(X) = D + C
+(
+IL −
+d∑
+k=1
+ˆAk(Xk − Yk)S
+) − 1 d∑
+k=1
+ˆAk(Xk − Yk)C∗
+= D + ˇC
+(
+IL −
+d∑
+k=1
+ˇAk(Xk − Yk)J
+) − 1 d∑
+k=1
+ˇAk(Xk − Yk) ˇC∗ ,
+where ˇC = C(T ∗ )− 1 and ˇAk = T ∗ ·ˆAk ·T are hermitian, for 1 ≤ k ≤ d. Moreover, it
+is easily seen that the controllability of ( A
+, B) and the observability of ( C, A) imply
+the controllability of ( ˇA ·J, ˇA · ˇC∗ ) and the observability of ( ˇC, ˇA ·J), respectively.
+4. Deﬁne E := F + ˇCJ ˇC∗ . The matrix
+˜S =
+[
+J ˇC∗
+ˇC E
+]
+∈ K(L+s)× (L+s)
+is hermitian and invertible, whenever F ≻ 0 or F ≺ 0: it is easily seen that ˜S∗ = ˜S;
+let
+[u
+v
+]
+∈ ker( ˜S), thus J u + ˇC∗ v = 0 and ˇCu + Ev = 0 , therefore ˇC∗ v = − J u
+and when we plug it in to the other equation we get F v = ˇC(J 2 − IL)u. Thus,
+− J u = ˇC∗ F − 1 ˇC(J 2 − IL)u and multiplying both sides by u∗ (J 2 − IL) on the left,
+to get
+u∗ (J 2 − IL) ˇC∗ F − 1 ˇC(J 2 − IL)u = − u∗ (J 2 − IL)J u = − u∗ (J 3 − J)u = 0.
+
+===== PAGE 46 =====
+
+46 M. PORAT AND V. VINNIKOV
+Then v = ˇC(J 2 − IL)u = 0 , which implies that J u = 0 and ˇCu = 0 , i.e., that[ J
+ˇC
+]
+u = 0 . Recall that
+[
+S
+C
+]
+=
+[T J T∗
+ˇCT ∗
+]
+=
+[
+T 0
+0 Is
+] [ J
+ˇC
+]
+T ∗ is left invertible and
+hence
+[ J
+ˇC
+]
+is left invertible and hence u = 0.
+• As ˜S is hermitian and invertible, there exist an invertible matrix ˜T ∈ K(L+s)× (L+s)
+and a signature matrix JD ∈ K(L+s)× (L+s) such that ˜S− 1 = ˜T JD ˜T ∗, therefore
+RF M(X) = D − E +
+[ ˇC E
+] (
+IL+s −
+d∑
+k=1
+[ ˇAkJ ˇAk ˇC∗
+0 0
+]
+(Xk − Yk)
+) − 1 [
+0
+Is
+]
+= D
+− E +
+[0 Is
+] ˜S
+(
+IL+s −
+d∑
+k=1
+[ ˇAk 0
+0 0
+]
+(Xk − Yk) ˜S
+) − 1 [
+0
+Is
+]
+= D − E +
+[0 Is
+]
+(
+˜S− 1−
+d∑
+k=1
+[ ˇAk 0
+0 0
+]
+(Xk− Yk)
+) − 1 [
+0
+Is
+]
+= DD+CD
+(
+JD−
+d∑
+k=1
+Ak, D(Xk− Yk)
+) − 1
+C∗
+D = RD(X
+),
+for every X ∈ DOMs(RF M), where
+DD := D − F − ˇCJ ˇC∗ , C D :=
+[
+0 Is
+] ˜T −∗ and Ak, D := ˜T − 1
+[ ˇAk 0
+0 0
+]
+˜T −∗ ,
+for every 1 ≤ k ≤ d. We showed that RF M(X) = RD(X) and it is easily seen from
+the last computation that
+X ∈ DOMs(RF M) ⇐ ⇒ det
+(
+JD −
+d∑
+k=1
+Ak, D(Xk − Yk)
+)
+̸= 0,
+i.e., that DOMs(RD) = DOMs(RF M).
+• Furthermore, straight forward computations show that for eve ry m ≥ 1:
+X
+∈ DOMsm(RF M) ⇐ ⇒ det
+(
+Im ⊗ JD −
+d∑
+k=1
+(Xk − Im ⊗ Yk)Ak, D
+)
+̸= 0,
+i.e., that DOMsm(RF M) = DOMsm(RD) and also that RF M(X) = RD(X), as
+well as that DOM A(RF M) = DOM A(RD) for any unital stably ﬁnite K− algebra
+A, i.e., for every A ∈ (As× s)d:
+A ∈ DOM A(RF M) ⇐ ⇒
+(
+JD⊗ 1A−
+d∑
+k=1
+(Ak− Yk⊗ 1A)AA
+k, D
+)
+is invertible in A(L+s)× (L+s)
+and for such A
+we have RA
+F M(A
+) = RA
+D(A
+).
+5. If S is invertible, then B∗
+k·S = C·Ak implies that Bk = S− 1·A∗
+k·C∗ = Ak·S− 1C∗
+so we can choose Q = S− 1C∗ to get (5.5).
+• On the other hand, suppose there exists Q ∈ KL× s such that Bk = Ak ·Q
+for all 1 ≤ k ≤ d. Thus, C ·Ak = B∗
+k ·S = Q∗ ·A∗
+k ·S = Q∗ S ·Ak and also
+C ·Bk = C ·Ak ·Q = Q∗S ·Ak ·Q = Q∗ S ·Bk, but the controllability of ( A
+, B)
+implies that C = Q∗ S. Therefore, ker( S) ⊆ ker(C) but as
+ker(S) =
+⋂
+1≤ k≤ d, X ∈ Ks× s
+ker (Ak(X)) ,
+
+===== PAGE 47 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 47
+it follows from the observability of (C, A) that ker(S) = {0}, i.e., that S is invertible.
+• If S is invertible, then J is invertible and the realization (5.6) is obtained from
+the realization (5.3) immediately.
+• Finally, from (5.6) we get
+RF M(X) = D + ˇCJ
+(
+J −
+d∑
+k=1
+ˇAk(Xk − Yk)
+) − 1( d∑
+k=1
+ˇAk(Xk − Yk) − J + J
+)
+ˇC∗
+= D − ˇCJ ˇC∗ + ˇC
+(
+J −
+d∑
+k=1
+˜Ak(Xk − Yk)
+) − 1
+ˇC∗ ,
+that is the realization in (5.7) □
+Remark 5.3. If R is an hermitian nc rational function, there exists Y
+∈ dom(R)
+such that Y ∗ = Y ; for a proof see [82, pp. 28–29] .
+Remark 5.4. We leave it to a future work, to describe connections between prop-
+erties of the (semi-)signature matrices, J and JD, appear in Theorem 5.2 and
+properties of the function R, such as perhaps (matrix) convexity (cf. [43]).
+Remark 5.5. We say that a nc rational function R admits a descriptor realization
+RD(X) = CD
+(
+ILD −
+d∑
+k=1
+Ak, D(Xk − Yk)
+) − 1
+BD
+centred at Y ∈ (Ks× s)d, if domsm(R) ⊆ DOMsm(RD) and R(X) = RD(X) for
+every X ∈ domsm(R), cf. Deﬁnition 2.3. We present some relations between
+Fornasini–Marchesini realizations and descriptor realiz ations (not necessarily in
+the symmetric case), without precise deﬁnitions of control lability and observability,
+as well as the McMillan degree (denoted by Degs, D(R)), of descriptor realization:
+• If R admits a descriptor realization centred at Y , described by (LD, C D, AD, B D),
+then it admits a nc Fornasini–Marchesini realization descr ibed by
+LF M = LD, D F M = CDBD, C F M = CD, Ak, F M = Ak, D and Bk, F M = Ak, DBD,
+for 1 ≤ k ≤ d, RD is observable if and only if RF M is observable, and if RF M is
+controllable then RD is controllable. Therefore we have the relation
+m(R)s ≤ Degs, D(R).(5.12)
+• If R admits a nc Fornasini–Marchesini realization centred at Y ∈ (Ks× s)d, de-
+scribed by (LF M, D F M, C F M, AF M, BF M), then R admits a descriptor realization
+described by
+LD = LF M + s, C D =
+[CF M DF M
+]
+, Ak, D =
+[Ak, F M Bk, F M
+0 0 s× s
+]
+and BD =
+[0LF M× s
+Is
+]
+,
+for 1 ≤ k ≤ d, RF M is controllable if and only if RD is controllable, and if RD is
+observable then RF M is observable. Therefore we have the relation
+Degs, D(R) ≤ (m(R) + 1)s.(5.13)
+• The inequalities (5.12) and (5.13) imply that
+m(R)s ≤ Degs, D(R) ≤ (m(R) + 1)s,
+
+===== PAGE 48 =====
+
+48 M. PORAT AND V. VINNIKOV
+whereas an analogue of Lemma 2.23 for descriptor realizatio ns guarantees that s |
+Degs, D(R), then which then imply that
+Degs, D(R) = m(R)s or Degs, D(R) = ( m(R) + 1)s.
+References
+[1] J. Agler and J. E. McCarthy. Global holomorphic function s in several non-commuting vari-
+ables. Canadian Journal of Mathematics 67(2): pp. 241–285, 2015.
+[2] J. Agler and J. E. McCarthy. Pick interpolation for free h olomorphic functions. American
+Journal of Mathematics 137(6): pp. 1685–1701, 2015.
+[3] J. Agler and J. E. McCarthy. Aspects of non-commutative f unction theory. Concrete Opera-
+tors 3(1): pp. 15–24, 2016.
+[4] D. Alpay and D. S. Kaliuzhnyi-Verbovetskyi. On the inter section of null spaces for matrix
+substitutions in a non-commutative rational formal power s eries. Comptes Rendus Mathema-
+tique 339(8): pp. 533–538, 2004.
+[5] D. Alpay and D. S. Kaliuzhnyi-Verbovetzkyi. Matrix J-unitary noncommutative rational
+formal power series. The state space method generalizations and applications , vol. 161 of
+Operator Theory: Advances and Applications , Birkh¨ auser–Verlag, Basel, pp. 49–113, 2005.
+[6] S. A. Amitsur. Rational identities and applications to a lgebra and geometry. Journal of
+Algebra 3(3): pp. 304–359, 1966.
+[7] J. A. Ball and N. Cohen. De Branges–Rovnyak operator mode ls and systems theory: a
+survey. Topics in Matrix and Operator Theory , vol. 50 of Operator Theory: Advances and
+Applications, Birkh¨ auser–Verlag, Boston, pp. 93–136, 1991.
+[8] J. A. Ball, G. Groenewald and T. Malakorn. Structured non commutative multidimensional
+linear systems. SIAM journal on control and optimization 44(4): pp. 1474–1528, 2005.
+[9] J. A. Ball, G. Groenewald and T. Malakorn. Conservative s tructured noncommutative mul-
+tidimensional linear systems. The state space method generalizations and applications , vol.
+161 of Operator Theory: Advances and Applications , Birkh¨ auser, Basel, pp. 179–223, 2006.
+[10] J. A. Ball, G. Groenewald, and T. Malakorn. Bounded real lemma for structured noncom-
+mutative multidimensional linear systems and robust contr ol. Multidimensional Systems and
+Signal Processing 17(2-3): pp. 119–150, 2006.
+[11] J. A. Ball and D. S. Kaliuzhnyi-Verbovetskyi. Conserva tive dilations of dissipative multi-
+dimensional systems: The commutative and non-commutative settings. Multidimensional
+Systems and Signal Processing 19(1): pp. 79–122, 2008.
+[12] J. A. Ball and V. Vinnikov. Lax–Phillips scattering and conservative linear systems: a Cuntz-
+algebra multidimensional setting . Memoirs of the American Mathematical Society, 178(837),
+2005.
+[13] H. Bart, I. Gohberg and M. A. Kaashoek. Minimal factorization of matrix and operator
+functions. Operator Theory: Advances and Applications, Birkh¨ auser –Verlag, Basel, 1979.
+[14] C. Beck. On formal power series representations for unc ertain systems. IEEE Transactions
+on Automatic Control 46(2): pp. 314–319, 2001.
+[15] C. L. Beck, J. Doyle, and K. Glover. Model reduction of mu ltidimensional and uncertain
+systems. IEEE Transactions on Automatic Control 41(10): pp. 1466–1477, 1996.
+[16] S. T. Belinschi, T. Mai and R. Speicher. Analytic subord ination theory of operator-valued
+free additive convolution and the solution of a general rand om matrix problem. Journal f¨ ur
+die reine und angewandte Mathematik (Crelles Journal) 732: pp. 21–53, 2017.
+[17] G. M. Bergman. Skew ﬁelds of noncommutative rational fu nctions, after Amitsur. Seminaire
+Sch¨ utzenberger–Lentin–Nivat, Ann´ ee16, Paris, 1969/70
+[18] J. Berstel and C. Reutenauer. Rational series and their languages . EATCS Monographs on
+Theoretical Computer Science 12, Springer–Verlag, Berlin , 1988.
+[19] J. F. Camino, J. W. Helton, R. E. Skelton and J. Ye. Matrix inequalities: a symbolic procedure
+to determine convexity automatically. Integral Equations and Operator Theory 46(4): pp.
+399–454, 2003.
+[20] P. M. Cohn. On the embedding of rings in skew ﬁelds. Proceedings of the London Mathematical
+Society 3(1): pp. 511–530, 1961.
+[21] P. M. Cohn. The embedding of ﬁrs in skew ﬁelds. Proceedings of the London Mathematical
+Society 3(2): pp. 193–213, 1971.
+
+===== PAGE 49 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 49
+[22] P. M. Cohn. Universal skew ﬁelds of fractions. Symposia Mathematica 8: pp. 135–148, 1972.
+[23] P. M. Cohn. Free rings and their relations . London Mathematical Society Monographs 2.
+Academic Press, London, 1971.
+[24] P. M. Cohn. The universal ﬁeld of fractions of a semiﬁr I. Numerators and denominators.
+Proceedings of the London Mathematical Society 3(1): pp. 1–32, 1982.
+[25] P. M. Cohn. Skew ﬁelds. Theory of general division rings . Encyclopedia of Mathematics and
+its Applications 57, Cambridge University Press, Cambridg e, 1995.
+[26] P. M. Cohn. Free ideal rings and localization in general rings . New Mathematical Monographs
+3, Cambridge University Press, Cambridge, 2006.
+[27] P. M. Cohn and C. Reutenauer. A normal form in free ﬁelds. Canadian Journal of Mathe-
+matics 46(3): pp. 517–531, 1994.
+[28] P. M. Cohn and C. Reutenauer. On the construction of the f ree ﬁeld. International Journal
+of Algebra and Computation 9(3-4): pp. 307–323, 1999.
+[29] E. G. Eﬀros. Advances in quantized functional analysis . Proceedings of the International
+Congress of Mathematicians , Berkeley, pp. 906–916, 1986.
+[30] M. Fliess. Sur le plongement de l’alg` ebre des s´ eries r ationnelles non commutatives dans un
+corps gauche. Comptes Rendus de l’Acad´ emie des Sciences Ser. A 271, pp. 926–927, 1970.
+[31] M. Fliess. Matrices de Hankel. Journal de Math´ ematiques Pures et Appliqu´ ees 53(9): pp.
+197–222, 1974.
+[32] M. Fliess. Sur divers produits de series formelles. Bulletin de la Soci´ et´ e Math´ ematique de
+France 102: pp. 181–191, 1974.
+[33] E. Fornasini and G. Marchesini. Doubly-indexed dynami cal systems: state-space models and
+structural properties. Mathematical systems theory 12(1): pp. 59–72, 1978–1979.
+[34] E. Fornasini and G. Marchesini. A critical review of rec ent results on 2-D system theory. Con-
+trol Science and Technology for the Progress of Society 1 (Kyoto, 1981), IF AC, Laxenburg,
+pp. 255–261, 1982.
+[35] K. Galkowski. Minimal state-space realization for a cl ass of linear, discrete, nD, SISO systems.
+International Journal of Control 74(13): pp. 1279–1294, 2001.
+[36] J. W. Helton. ”Positive” noncommutative polynomials a re sums of squares. Annals of Math-
+ematics 156(2): pp. 675–694, 2002.
+[37] J. W. Helton. Manipulating matrix inequalities automa tically. Mathematical systems theory
+in biology, communications, computation, and ﬁnance , Springer, New York, pp. 237–256,
+2003.
+[38] J. W. Helton, I. Klep and S. McCullough. Analytic mappin gs between noncommutative pencil
+balls. Journal of Mathematical Analysis and Applications 376(2): pp. 407–428, 2011.
+[39] J. W. Helton, I. Klep and S. McCullough. Proper Analytic Free Maps. Journal of Functional
+Analysis 260(5): pp. 1476–1490, 2011.
+[40] J. W. Helton, I. Klep, S. McCullough and J. Volˇ ciˇ c. Noncommutative polynomials describing
+convex sets. ArXiv preprint, https://arxiv.org/abs/1808.06669, 2018.
+[41] J. W. Helton, T. Mai and R. Speicher. Applications of rea lizations (aka linearizations) to free
+probability. Journal of Functional Analysis 274(1): pp. 1–79, 2018.
+[42] J. W. Helton and S. McCullough. Every convex free basic s emi-algebraic set has an LMI
+representation. Annals of Mathematics 176(2): pp. 979–1013, 2012.
+[43] J. W. Helton, S. McCullough and V. Vinnikov. Noncommuta tive convexity arises from linear
+matrix inequalities. Journal of Functional Analysis 240(1): pp. 105–191, 2006.
+[44] R. A. Horn and C. R. Johnson. Topics in matrix analysis . Corrected reprint of the 1991
+original, Cambridge University Press, 1994.
+[45] I. Hughes. Division rings of fractions for group rings. Communications on Pure and Applied
+Mathematics 23(2): pp. 181–188, 1970.
+[46] T. Kaczorek. Two dimensional linear systems . Lecture Notes in Control and Information
+Sciences 68, Springer-Verlag, Berlin, 1985.
+[47] D. S. Kaliuzhnyi-Verbovetskyi and V. Vinnikov. Foundations of free noncommutative func-
+tion theory . Mathematical Surveys and Monographs 199, American Mathem atical Society,
+Providence, RI, 2014.
+[48] D. S. Kaliuzhnyi-Verbovetskyi and V. Vinnikov. Noncom mutative rational functions, their
+diﬀerence-diﬀerential calculus and realizations. Multidimensional Systems and Signal Pro-
+cessing 23(1–2): pp. 49–77, 2012.
+
+===== PAGE 50 =====
+
+50 M. PORAT AND V. VINNIKOV
+[49] D. S. Kaliuzhnyi-Verbovetskyi and V. Vinnikov. Singul arities of rational functions and min-
+imal factorizations: the noncommutative and the commutati ve settings. Linear Algebra and
+its Applications 430(4): pp. 869–889, 2009.
+[50] R. E. Kalman, M. A. Arbib and P. L. Falb. Topics in mathematical systems theory . New
+York, NY, USA: McGraw Hill, 1969.
+[51] S. C. Kleene. Representation of events in nerve nets and ﬁnite automata. Automata Studies,
+Annals of Mathematics Studies 34: pp. 3–41, Princeton University Press, Princeton, N.J.,
+1956.
+[52] J. Lewin. Fields of fractions for group algebras of free groups. Transactions of the American
+Mathematical Society 192: pp. 339–346, 1974.
+[53] A. I. Lichtman. On universal ﬁelds of fractions for free algebras. Journal of Algebra 231(2):
+pp. 652–676, 2000.
+[54] P. A. Linnell. Division rings and group von Neumann alge bras. Forum Mathematicum 5(5):
+pp. 561–576, 1993.
+[55] P. A. Linnell. Noncommutative localization in group ri ngs. Non-commutative localization in
+algebra and topology, vol. 330 of London Mathematical Society Lecture Note Series , pp. 40–59,
+Cambridg University Press, Cambridge, 2006.
+[56] W. M. Lu, K. Zhou and J. C. Doyle. Stabilization of uncert ain linear systems: an LFT
+approach. IEEE Transactions on Automatic Control 41(1): pp. 50–65, 1996.
+[57] P. S. Muhly and B. Solel. Progress in noncommutative fun ction theory. Science China Math-
+ematics 54(11): pp. 2275–2294, 2011.
+[58] A. Nemirovskii. Advances in convex optimization: coni c programming. Plenary Lecture, In-
+ternational Congress of Mathematicians 1: pp. 413–444, Madrid, Spain, 2006.
+[59] Y. Nesterov and A. Nemirovskii. Interior-point polynomial algorithms in convex program-
+ming. Studies in Applied Mathematics 13, Philadelphia, PA, 1994.
+[60] V. Paulsen. Completely bounded maps and operator algebras. Cambridge Studies in Advanced
+Mathematics 78, Cambridge University Press, Cambridge, 2002.
+[61] G. Popescu. Free holomorphic functions on the unit ball of B(H)n. Journal of Functional
+Analysis 241(1): pp. 268–333, 2006.
+[62] G. Popescu. Free holomorphic automorphisms of the unit ball of B(H)n. Journal fr die reine
+und angewandte Mathematik (Crelles Journal) 638: pp. 119–168, 2010.
+[63] M. Porat and V. Vinnikov. Realizations of non-commutat ive rational functions around a
+matrix centre, II: The lost-abbey conditions. to appear.
+[64] M. Porat and V. Vinnikov. Realizations of non-commutat ive rational functions around a
+matrix centre, III: Functional models, Kronecker–Fliess t heorem and the free skew ﬁeld. to
+appear.
+[65] C. Reutenauer. Malcev–Neumann series and the free ﬁeld . Expositiones Mathematicae 17(5):
+pp. 469–478, 1999.
+[66] L. H. Rowen. Polynomial identities in ring theory . Pure and Applied Mathematics 84, Aca-
+demic Press, New York–London, 1980.
+[67] R. E. Skelton, T. Iwasaki and K. M. Grigoriadis. A Uniﬁed Algebraic Approach to Linear
+Control Design . Taylor & Francis, 1997.
+[68] K. Schrempf. A standard form in (some) free ﬁelds: How to construct minimal linear repre-
+sentations. ArXiv preprint , https://arxiv.org/abs/1803.10627, 2018.
+[69] K. Schrempf. Free fractions: An invitation to (applied ) free ﬁelds. ArXiv preprint ,
+https://arxiv.org/abs/1809.05425, 2018.
+[70] K. Schrempf. Linearizing the word problem in (some) fre e ﬁelds. International Journal of
+Algebra and Computation 28(7): pp. 1209–1230, 2018.
+[71] K. Schrempf. On the factorization of non-commutative p olynomials (in free associative alge-
+bras). Journal of Symbolic Computation 94: pp. 126–148, 2019.
+[72] M. P. Sch¨ utzenberger. On the deﬁnition of a family of au tomata. Information and control
+4(2-3): pp. 245–270, 1961.
+[73] M. P. Sch¨ utzenberger. Certain elementary families ofautomata. Proceedings of the Symposium
+on Mathematical Theory of Automata (New York, 1962), pp. 139–153, Polytechnic Press of
+Polytechnic Institute of Brooklyn, Brooklyn, New York, 1963.
+[74] R. Speicher. Polynomials in asymptotically free rando m matrices. Acta Physica Polonica B
+46(9): pp. 1611–1624, 2015.
+
+===== PAGE 51 =====
+
+REALIZATIONS OF NC RATIONAL FUNCTIONS AROUND A MATRIX CENTR E, I 51
+[75] R. Speicher. Free probability theory. The Oxford handbook of random matrix theory , pp.
+452–470, Oxford University Press, Oxford, 2011.
+[76] J. L. Taylor. A general framework for a multi-operator f unctional calculus. Advances in
+Mathematics 9: pp. 183–252, 1972.
+[77] J. L. Taylor. Functions of several noncommuting variab les. Bulletin of the American Mathe-
+matical Society 79(1): pp. 1–34, 1973.
+[78] D. V. Voiculescu. Free analysis questions I: Duality tr ansform for the coalgebra of ∂X:B.
+International Mathematics Research Notices 16: pp. 793–822, 2004.
+[79] D. V. Voiculescu. Free analysis questions II: The Grass mannian completion and the series
+expansion at the origin. Journal f¨ ur die reine und angewandte Mathematik (Crelles J ournal)
+645: pp. 155–236, 2010.
+[80] D. V. Voiculescu, K. J. Dykema and A. Nica. Free random variables. A noncommutative
+probability approach to free products with applications to random matrices, operator algebras
+and harmonic analysis on free groups . CRM Monograph Series 1, American Mathematical
+Society, Providence, RI, 1992.
+[81] J. Volˇ ciˇ c. On domains of noncommutative rational functions. Linear Algebra and its Appli-
+cations 516: pp. 69–81, 2017.
+[82] J. Volˇ ciˇ c. Matrix coeﬃcient realization theory of noncommutative rational functions. Journal
+of Algebra 499: pp. 397–437, 2018.
+(MP) Department of Mathematics, Ben-Gurion University of th e Negev, P.O. Box
+653, Beer-Sheva 84105, Israel
+Email address : motpor@gmail.com
+(VV) Department of Mathematics, Ben-Gurion University of the Ne gev, P.O. Box
+653, Beer-Sheva 84105, Israel
+Email address : vinnikov@math.bgu.ac.il

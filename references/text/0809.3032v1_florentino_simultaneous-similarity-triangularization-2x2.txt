@@ -1,0 +1,1594 @@
+===== PAGE 1 =====
+
+arXiv:0809.3032v1  [math.RA]  17 Sep 2008
+SIMUL T ANEOUS SIMILARITY AND TRIANGULARIZA TION
+OF SETS OF 2 BY 2 MA TRICES
+CARLOS A. A. FLORENTINO
+Abstract. Let A = ( A1, ..., An, ...) be a ﬁnite or inﬁnite sequence of 2 × 2 matrices
+with entries in an integral domain. We show that, except for a very special case, A is
+(simultaneously) triangularizable if and only if all pairs (Aj, Ak) are triangularizable, for
+1 ≤ j, k ≤ ∞ . We also provide a simple numerical criterion for triangula rization.
+Using constructive methods in invariant theory, we deﬁne a m ap (with the mini-
+mal number of invariants) that distinguishes simultaneous similarity classes for non-
+commutative sequences over a ﬁeld of characteristic ̸= 2. We also describe canonical
+forms for sequences of 2 × 2 matrices over algebraically closed ﬁelds, and give a metho d
+for ﬁnding sequences with a given set of invariants.
+1. Introduction
+1.1. Motivation. The properties of a set of square matrices which are invarian t under
+simultaneous conjugation have been the subject of many inve stigations. In the case of
+a pair of matrices many problems have been solved including ﬁ nding criteria for simul-
+taneous similarity, simultaneous triangularization, exi stence of common eigenvectors, etc.
+Analogous problems have been solved for subalgebras, subgr oups or sub-semigroups of
+square matrices (see, for example, [Fr, L, RR] and reference s therein).
+Here, we mainly concentrate on the problems of simultaneous similarity, simultaneous
+triangularization and canonical forms of countable sets of 2 × 2 matrices with entries in an
+arbitrary ﬁeld, with the focus on eﬀectively computable solu tions (the triangularization
+results will hold over integral domains).
+Even though we are concerned with 2 × 2 matrices, it is convenient to describe the setup
+more generally as follows. Fix integers m ≥ 1, n ≥ 1 and let Vm,n be the vector space
+of n-tuples of m × m matrices with entries in a ﬁeld F. The group of invertible matrices
+G :=GLm(F) acts on Vm,n by simultaneous conjugation on every component:
+(1.1) g · A:= (gA1g− 1,...,gA ng− 1),
+where g ∈ G and A = (A1,...,A n) ∈ Vm,n. By analogy with the case n = 1, the orbit
+G · A := {g · A : g ∈ G} ⊂ Vm,n will be called the conjugacy class of A, and can be
+viewed as an element [ A] ∈ Vm,n/G of the quotient space. One can consider the following
+problems.
+(i) Identify one element for each conjugacy class in a natura l way, i.e, list all possible
+‘canonical forms’;
+(ii) Construct invariants that distinguish all conjugacy c lasses.
+Naturally, these problems are related. In general, a soluti on to (i) will lead to a solution
+of (ii); however, the answer obtained in this way might be unn atural, and the description
+in terms of invariants is often useful.
+These are diﬃcult questions in general. Here, we will be conc erned with the description
+and classiﬁcation of conjugacy classes in the case m = 2. As we will see, in this case
+the questions above admit simple and complete answers, give n by explicitly computable
+numerical criteria. In order to state our results in concise terms (see Deﬁnition 1.4) we
+will adopt the following terminology for (ordered) sets of m atrices.
+Key words and phrases. Simultaneous similarity, Simultaneous triangularizatio n, Invariants of 2 by 2
+matrices.
+1
+
+===== PAGE 2 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 2
+Deﬁnition 1.1. An element A = (A1,...,A n) ∈ Vm,n will be called a matrix sequence
+of size m × m and length n, or just a matrix sequence when the integers m and n are
+assumed, and the matrices A1,...,A n will be called the components or terms of A. We say
+that two matrix sequences A = (A1,...,A n) and B = (B1,...,B n) in Vm,n are similar and
+write A ∼ B if they lie in the same conjugacy class (or G orbit) i.e, if there is an element
+g ∈ G such that B =g · A (equivalently,Bj =gAjg− 1 for all j = 1,...,n ).
+We will also allow sequences A = (A1,...,A n,... ) ∈ Vm,∞ with a countable inﬁnite
+number of terms.
+It turns out that a concrete answer to the above problems requ ires the separation of
+all matrix sequences (of ﬁxed size and length) into G-invariant subclasses with distinct
+algebraic and/or geometric properties. For instance, for t he class of matrices that pairwise
+commute some of these questions are easier. This case can be r educed to the case of a
+single matrix (n = 1) which is classically solved with the Jordan decompositi on theorem
+(at least when F is algebraically closed and some term is nonderogatory).
+One property that is often relevant is that of simultaneous t riangularization (or block
+triangularization); it generalizes commutativity and has a natural geometric interpreta-
+tion. To be precise, let us consider the following standard n otions. Note that a sequence
+A ∈ Vm,n can be viewed either as an ordered set of m × m matrices, as in the deﬁnition
+above, or alternatively, as a single m × m matrix whose entries are n-dimensional vectors.
+(1.2) A =
+
+
+
+a11 · · · a1m
+.
+.
+. . . . .
+.
+.
+am1 · · · amm
+
+
+ , a jk ∈ Fn.
+Deﬁnition 1.2. Let A be a matrix sequence. A will be called commutative if all its terms
+pairwise commute (and non-commutative otherwise). We will say that A is an upper
+triangular matrix sequence if all the vectors below the main diagonal are zero ( ajk = 0
+for all j > kin equation (1.2)), and that A is triangularizable if it is similar to an upper
+triangular matrix sequence.
+In geometric terms, A is triangularizable if and only if there is a full ﬂag of vecto r
+subspaces of Fm which is invariant under every term Aj of A (for the standard action of
+G on Fm). Observe also that upper and lower triangularization are e quivalent (over any
+ring). For the reasons mentioned, we will add the following triangularization problem to
+the previous list.
+(iii) Give an eﬀective numerical criterion for a matrix seque nce to be triangularizable.
+Problem (iii) was solved eﬀectively by the following reﬁneme nt of McCoy’s Theorem ([Mc]).
+Let [A,B ] = AB − BA denote the commutator of two matrices.
+Theorem 1.3. [McCoy, see [Mc],[L]] Let F be algebraically closed. A m × m matrix
+sequence A of length n is triangularizable if and only if
+p(A1,...,A n)[A,A ′]
+is nilpotent for all monomials p(x) (in non-commuting indeterminants x1,...,x n) of total
+degree not greater than m2 and all terms A,A ′ of A.
+Using results of Paz [Paz] and Pappacena [Pap], the bound on t he degree d of the
+monomials p(x) in Theorem 1.3 can be improved to d ≤ m2
+3 + 1 and d ≤ m
+√
+2m2
+m− 1 + 1
+4 +
+m
+2 − 1, respectively, each one being more eﬃcient for smaller (re sp. larger) values of m.
+To discuss simultaneous similarity, consider the notion of subsequence.
+Deﬁnition 1.4. A subsequence of a matrix sequence A = (A1,...,A n) ∈ Vm,n is a matrix
+sequence of the form
+AJ = (Aj1,...,A jl ) ∈ Vm,l
+
+===== PAGE 3 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 3
+obtained from A by deleting some of its terms (here J = (j1,...,j l) ∈ { 1,...,n }l for some
+natural number l ≤ n, and the indices are strictly increasing: 1 ≤ j1 <...<j l ≤ n).
+Let A = F[A1,...,A n] be the algebra generated over F by the terms of A (of dimension
+≤ m2). Suppose we rearrange the terms of A such that A is in fact generated by just the
+ﬁrst k ≤ m2 elements. Then, for all j > k, Aj = pj(A1,...,A k) for some polynomial pj
+with coeﬃcients in F. From this one can easily obtain a similarity test.
+F act 1.5. Let A, B be two m × m matrix sequences of the same ﬁnite or inﬁnite length n.
+Then A and B are similar if and only if all corresponding subsequences of length ≤ m2
+are similar (that is, AJ ∼ B J for all J = (j1,...,j l) with 1 ≤ j1 <...<j l ≤ n andl ≤ m2).
+One can improve this statement if we restrict to a big class of matrix sequences. The
+Dubnov-Ivanov-Nagata-Higman [DINH] theorem states that, givenm ∈ N, there is a nat-
+ural numberN (m) with the following property: every associative algebra ov er F satisfying
+the identity xm = 0 is nilpotent of degree N (m) (i.e, any product x1 · · ·xk of k elements
+x1,...,x k of the algebra is zero, for k ≥ N (m)). It is known that m(m+1)
+2 ≤ N (m) ≤
+min
+{
+2m − 1,m 2}
+[Ra], and it was conjectured that N (m) = m(m+1)
+2 . This was veriﬁed to
+be true for m = 2, 3, 4.
+The following remarkable result of Procesi ([Pr]) relates i nvariants of matrices and
+nilpotency degrees of associative nil-algebras. It provid es explicit generators for the
+algebra of G-invariant regular (i.e, polynomial) functions on Vm,n. For a multiindex
+J = (j1,...,j k) ∈ { 1,...,n }k of length |J| = k, deﬁne the G-invariant regular function
+tJ :Vn(F) → F as the trace of the word in the terms of A ∈ Vn(F) dictated by J, that is
+(1.3) tJ (A) := tr(Aj1...A jk ).
+Theorem 1.6. [Procesi, [Pr]] Let F have characteristic 0, and let f : Vm,n → F be a
+G-invariant polynomial function. Then f is a polynomial in the set of functions
+{tJ : |J| ≤ N (m)}
+where |J| denotes the length of the multiindex J.
+Let us say that a matrix sequence A is semisimple if its G orbit is Zariski closed in
+Vm,n. Semisimple sequences form a dense subset of Vm,n. Noting that N (2) = 3, Procesi’s
+theorem has the following corollary.
+Corollary 1.7. Let A, B be two 2 × 2 semisimple matrix sequences of the same ﬁnite or
+inﬁnite length. Then A ∼ B if and only if all corresponding subsequences of length ≤ 3
+are similar (that is, AJ ∼ B J for all J with length ≤ 3).
+This corollary gives a numerical criterion for simultaneou s similarity of semisimple se-
+quences. In the case m = 2, the number of generators can be further reduced, and
+moreover, Drensky described all relations in terms of a gene rating set ([D]). He states his
+main theorem for traceless matrices, but an easy modiﬁcatio n yields:
+Theorem 1.8. [Drensky, [D]] The generators of the algebra (over F of characteristic 0)
+of G-invariant polynomial functions on V2,n are given by:
+tj, tjj, ujk, sjkl 1 ≤ j <k<l ≤ n,
+where ujk := 2tjk − tjtk, sjkl := tjkl − tlkj and tj,t jk,t jkl are as in (1.3). A full set of
+relations is
+(1.4) sabcsdef + 1
+4
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+uad uae uaf
+ubd ube ubf
+ucd uce ucf
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+= 0, u easbcd − uebsacd +uecsabd − uedsabc = 0,
+for all appropriate indices.
+
+===== PAGE 4 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 4
+In this article, we show that these same generators can be use d to get even more explicit
+solutions to problems (i)-(iii) in the case m = 2. Our methods are mostly elementary and
+their generalization to higher m seems possible, although computationally very involved.
+1.2. Statement of the main results. From now on, we restrict to the space Vn =V2,n
+of sequences of 2 × 2 matrices of length n ∈ N ∪ {∞} , i.e, the case m = 2, except where
+explicitly stated.
+The article can be roughly divided into two parts. In the ﬁrst part, Section 2, we work
+with the space Vn(R) of 2 × 2 matrix sequences with coeﬃcients in an integral domain
+R, on which the group G = GL2(R) of invertible matrices over R acts by conjugation.
+Here, we deﬁne and study reduced sequences, consider the tri angularization problem, and
+prove Theorems 1.11 to 1.13, stated below. They provide an eﬃ cient numerical criterion
+for triangularization of matrix sequences in Vn(R).
+The casem = 2 is simple enough that some easy arguments already improve some of the
+statements above, even in the more general case of 2 × 2 matrices over integral domains.
+Proposition 1.9. A ∈ Vn(R) is triangularizable if and only if every subsequence of leng th
+≤ 3 is triangularizable.
+For simultaneous similarity, a simple argument generalize s and improves Corollary 1.7,
+in the case m = 2, to account for all matrix sequences (not necessarily sem isimple).
+Proposition 1.10. Over an integral domain A ∼ B if and only if AJ ∼ B J for all J of
+length ≤ 3. Moreover, under the generic condition [A1,A 2] ̸= 0 , A is similar to B if and
+only if (A1,A 2,A j) ∼ (B1,B 2,B j), for all j = 3,...,n .
+In other words, the conjugation action of GL2(R) on 2 × 2 matrix sequences of any
+length is completely determined by the same action on triple s of 2 × 2 matrices. These
+two propositions seem to be standard, and I thank R. Guralnic k for furnishing simple
+arguments leading to their proofs, included below for conve nience and completeness.
+The statement of Proposition 1.9 is the best possible in this generality, as there are 2 × 2
+matrix sequences of length 3 (therefore, a fortiori for every size m × m, m ≥ 2 and every
+lengthn ≥ 3) that are not triangularizable but are pairwise triangula rizable (see Example
+2.11 below). See however Theorem 1.12 below.
+Let us now consider the problem of ﬁnding a numerical criteri on for triangularization
+of general 2 × 2 sequences. By Proposition 1.9, we just need to consider triples of 2 × 2
+matrices. Using only the G-invariant functions given by the trace and the determinant ,
+the following is a simple numerical criterion.
+Theorem 1.11. A 2 × 2 matrix sequence A (overR) of length n is triangularizable if and
+only if all its terms are triangularizable and
+(1.5) det(AB − BA) = tr(ABC − CBA ) = 0
+for all terms A,B,C of A. In particular, a pair (A,B ) ∈ V2(R) is triangularizable if and
+only if both A and B are triangularizable and det(AB − BA) = 0 .
+Remark. Over an algebraically closed ﬁeld ¯F, every single matrix is triangularizable. Sup-
+pose A is a 2 × 2 matrix sequence over ¯F with [A,B ] and C[A,B ] nilpotent for all terms
+A,B,C of A. Then, Equation (1.5) holds and Theorem 1.11 shows that all m entioned
+bounds in Theorem 1.3 can be improved for m = 2, as the condition that p is a monomial
+of degree ≤ 1 is already suﬃcient (and necessary) for triangularizatio n.
+Theorem 1.11 generalizes a result proved in [Fl] for algebra ically closed ﬁelds. Observe
+that the case n = 2 of this theorem is a direct generalization to integral dom ains of a well-
+known criteria, obtained in [Fr], for a pair of 2 × 2 matrices over ¯F to be triangularizable.
+
+===== PAGE 5 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 5
+As a consequence of our study of invariants, we can improve Pr oposition 1.9 under a
+simple non-degeneracy condition on A. Let us deﬁne a reduced sequence to be one with
+no commuting pairs among its terms.
+Theorem 1.12. A 2 × 2 reduced matrix sequence A of length ≥ 4 is triangularizable (over
+R) if and only if all subsequences of A of length ≤ 2 are triangularizable (over R).
+With a little more care we get a test, computationally much mo re eﬃcient, whose
+complexity grows only linearly with the number n of matrices in A. Let us deﬁne the
+reduced length of a sequence A to be the biggest length of a reduced subsequence B ⊂ A .
+Theorem 1.13. Let A = (A1,...,A n) ∈ Vn have reduced length l ≤ n and rearrange its
+terms so that A′ = (A1,...,A l) is reduced. Then
+(i) In the case l ≤ 3, A is triangularizable if and only if A′ is triangularizable.
+(ii) In the case l ≥ 4, A is triangularizable if and only if A1,...,A l are triangularizable
+and det([Aj,A k]) = 0 for all j = 1, 2, 3 and all j <k ≤ l.
+In the second part of the article, we work mainly over a ﬁeld F. Section 3 deals with si-
+multaneous similarity for 2 × 2 matrix sequences. Using standard invariant theory, one se es
+that the values of the Drensky generators are enough to disti nguish semisimple conjugacy
+classes. But these classes should depend on 4 n − 3 parameters only, the “dimension” of
+the quotient space Vn/G (Vn has dimension 4n, and G acts as SL2(F), a three dimensional
+group) which is much less than the number, 2n+
+( n
+2
+)
++
+( n
+3
+)
+, of Drensky generators. After de-
+scribing rational invariants that distinguish general tri angularizable sequences, we obtain
+a solution, with the minimal number of invariants, to proble m (ii) for non-commutative
+sequences as follows.
+Let S ′ (resp. U ′) denote the subsets of Vn =Vn(F) of semisimple (resp. triangularizable)
+sequences such that A1 is diagonalizable and [A1,A 2] ̸= 0. Using the G-invariant functions
+tJ : Vn → F in (1.3) deﬁne the maps Φ ′ : S ′/G → F4n− 3 and Ψ ′ : U ′/G → F2n × Pn− 2,
+where Pk denotes the projective space over F of dimension k, by the formulae
+Φ′([A]) = ( t1,t 11,t 2,t 22,t 12,...,t k,t 1k,t 2k,s 12k,...,t n,t 1n,t 2n,s 12n),(1.6)
+Ψ′([A]) =
+(
+t1,t 11,t 2,t 12,...,t k,t 1k,...,t n,t 1n; ψ ′)
+,(1.7)
+where ψ ′ is deﬁned later in Section 4, and [ A] denotes the conjugacy class of A.
+Theorem 1.14. Let F be a ﬁeld of characteristic ̸= 2 . The map Φ′ : S ′/G → F4n− 3 is
+injective and the map Ψ′ : U ′/G → F2n × Pn− 2 is two-to-one.
+The last section (Section 4) concerns the classiﬁcation of c anonical forms for sets of
+2 × 2 matrices over ¯F and proposes a solution for problem (i). The main result is Th eorem
+4.3, where ﬁve types of canonical forms are obtained for sequ ences with at least one non-
+commuting pair. It shows that, for non-commutative sequenc es, the restriction to S ′ and
+U ′ in Theorem 1.14 is only apparent (see also Remark 4.6). We als o describe a simple
+method for ﬁnding a sequence in canonical form with a given va lue of Φ ′ or Ψ ′.
+Appendix A contains results on the triangularization a sing le 2 × 2 matrix over R which
+are crucial for Theorem 1.11, and Appendix B, for completene ss, describes the well-known
+canonical forms of commuting matrices over ¯F.
+Acknowledgement. I would like to thank J. Dias da Silva whose interesting quest ions were
+at the genesis of this article, and R. Guralnick for calling m y attention to related work in
+the literature and for providing simpliﬁed proofs of some st atements in a previous version.
+I thank also my colleagues J. Mour˜ ao, J. P. Nunes and S. Lawto n for many interesting
+and motivating conversations on this and related topics. Wo rk partially supported by
+the CAMGSD, IST, Technical Univ. of Lisbon, and “Funda¸ c˜ ao para a Ciˆ encia e a Tec-
+nologia” through the programs Praxis XXI, POCI/MAT/58549/ 2004 and FEDER. Some
+computations performed using CoCoA; document typeset usin g LYX.
+
+===== PAGE 6 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 6
+2. Simultaneous Triangularization
+Throughout the article, R will stand for an integral domain, F for a ﬁeld and ¯F for an
+algebraically closed ﬁeld. Vn (resp. G) will denote the space of matrix sequences of length
+n ∈ N ∪ {∞} (resp. the group of invertible 2 × 2 matrices) over the appropriate ring or
+ﬁeld. When the coeﬃcients need to be explicitly mentioned, w e will use the notations
+Vn(R), G(R), etc. Sequences of length 1 , 2, 3 and 4 will be called singlets, pairs, triples
+and quadruples, respectively.
+2.1. Simultaneous triangularization and subtriples; reduced sequences. We start
+by ﬁxing notation and recalling some well known facts about m atrices over F andR. After
+this, we deﬁne reduced sequences, a notion which will be fundamental in the sequel.
+For a given A ∈ Vn(R), a matrix sequence of length n ∈ N, we will use the notation
+A = (A1,...,A n) =
+(
+a b
+c d
+)
+, a,b,c,d ∈ Rn,
+Aj =
+(
+aj bj
+cj dj
+)
+,
+and we let e = (e1,...,e n) denote the n-tuple a − d ∈ Rn. To avoid the most trivial case,
+we consider only matrix sequences with at least one non-scal ar term.
+The commutator of 2 matrices A1 and A2 is given by
+(2.1) [ A1,A 2] =
+(
+b1c2 − c1b2 e1b2 − b1e2
+c1e2 − e1c2 c1b2 − b1c2
+)
+.
+For later use, record the following straightforward but use ful lemma.
+Lemma 2.1. Let A = (A1,A 2) ∈ V2(R) and A1 be a non-scalar matrix. If A1 is upper
+triangular, then [A1,A 2] = 0 if and only if A2 is also upper triangular and
+(2.2) b1e2 − e1b2 = 0.
+Similarly, let A1 be diagonal non-scalar. Then [A1,A 2] = 0 if and only if A2 is also
+diagonal.
+Proof. Suppose [A1,A 2] = 0 with c1 = 0. Then we have b1e2 − e1b2 = b1c2 = e1c2 = 0,
+using (2.1). Since A1 is non-scalar either e1 or b1 is non-zero. In an integral domain, this
+implies b1e2 − e1b2 =c2 = 0. The other statement is similar. □
+This implies the following well known result. Note that a 2 × 2 matrix is non-scalar if
+and only if it is nonderogatory.
+Proposition 2.2. Let A be a commutative matrix sequence (i.e, all terms pairwise co m-
+mute) of ﬁnite or inﬁnite length over an integral domain R. Then A is triangularizable if
+and only if one of its non-scalar terms is triangularizable. Similarly, A is diagonalizable
+if and only if one of its non-scalar terms is diagonalizable. □
+As a consequence, the proof of Proposition 1.9 is complete af ter the following. Let us
+denote by A the algebra generated over F, the ﬁeld of fractions of R, by the terms of A.
+A well known result is that A is commutative if and only if the dimension of A is ≤ 2.
+Proposition 2.3. Letn ≥ 2 and A ∈ Vn(R) be a non-commutative matrix sequence. Then
+A is triangularizable if and only if all subsequences of A of length ≤ 3 are triangularizable.
+Proof. If A is triangularizable, it is clear that all subsequences of A are also triangulariz-
+able. Conversely, since A is non-commutative, we can assume without loss of generalit y,
+that [A1,A 2] ̸= 0, and that, after a suitable conjugation, both A1 and A2 are upper
+triangular. By hypothesis, all triples of the form ( A1,A 2,A k), k = 3,...,n are triangular-
+izable. Then, the algebra Ak generated by Ak = (A1,A 2,A k) equals the one generated by
+
+===== PAGE 7 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 7
+(A1,A 2), since one is a subset of the other but both are three dimensi onal over F. Indeed,
+if Ak was of dimension ≤ 2, Ak would be commutative, and if Ak was four dimensional,
+Ak would not be triangularizable. Therefore, for all j = 3,...,n , Aj =pj(A1,A 2) for some
+polynomial pj with coeﬃcients in F and thus, Aj is also upper triangular, for all j. □
+Recall also the following.
+Lemma 2.4. Let A = (A1,A 2) ∈ V2(F) be commutative and A1 be a non-scalar matrix.
+Then A2 =p(A1) for some degree 1 polynomial p(x) ∈ F[x].
+Proof. From Equation (2.1), the conditions [ A1,A 2] = 0 can be written as Mu = 0, where
+(2.3) M =
+
+
+0 c1 −e1
+−c1 0 b1
+e1 −b1 0
+
+ , u = (b2,e 2,c 2).
+Note that M has rank exactly 2, since A1 is non-scalar. So, the vector u = (b2,e 2,c 2) is
+in the nullspace of M , which is generated by ( b1,e 1,c 1) ̸= 0. Thus, there is an α ∈ F such
+that (b2,e 2,c 2) = α (b1,e 1,c 1). Then, A2 = (d2 − αd 1)I +αA 1 is, explicitly, the required
+polynomial (I denotes the identity 2 × 2 matrix). □
+It is clear that a single matrix is triangularizable over an a lgebraically closed ﬁeld, but
+not necessarily so over a general integral domain or ﬁeld. In Appendix A we include a
+short account of the conditions for triangularization of a s ingle matrix in V1(R). The
+following notion will play a central role. If A is a subsequence of B, we will write A ⊆ B .
+Deﬁnition 2.5. A matrix sequence with at least one non-scalar term A = (A1,... ) ∈ Vn(R)
+is called reduced if there are no commuting pairs among its terms, that is, [ Aj,A k] ̸= 0,
+for all 1 ≤ j < k≤ n. We say that A is a reduction of B if A is reduced and is obtained
+from B by deleting some of its terms. Finally, we say that A is a maximal reduction of B,
+and that l is its reduced length, if A is a reduction of B of length l, and any subsequence
+A′ ⊆ B with length >l is not reduced.
+Over a ﬁeld, by Lemma 2.4, a reduced sequence A is one where no term is a polynomial
+function of another (so all terms generate an algebra of dime nsion 2, and no two terms
+generate the same subalgebra of the full matrix algebra). It is clear that any two maximal
+reductions have the same length. Note also that any subseque nce of a reduced sequence
+is also reduced. The following facts show that important pro perties like existence of a
+triangularization are captured by any maximal reduction of a matrix sequence.
+Proposition 2.6. Let A = (A1,...,A n) ∈ Vn(R) and let An+1 commute with at least one
+non-scalar term of A. Then A is triangularizable if and only if A′ := (A1,...,A n,A n+1)
+is triangularizable.
+Proof. Naturally if A′ is triangularizable, A is also. For the converse, without loss of
+generality assume [ A1,A n+1] = 0 with A1 non-scalar and A in upper triangular form.
+Then, by Lemma 2.1, An+1 is also upper triangular, so that A′ is triangularizable. □
+Corollary 2.7. If A and A′ are arbitrary sequences with a common maximal reduction
+(of length ≥ 1), then either they are both triangularizable or both not tri angularizable.
+Proof. Let B be such a common maximal reduction. Then A and A′ are obtained from B
+by adding scalar matrices or matrices that commute with some of the non-scalar terms of
+B. So, if B is triangularizable, both A and A′ are triangularizable by repeatedly applying
+Proposition 2.6. The case when B is not triangularizable is analogous. □
+
+===== PAGE 8 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 8
+2.2. Necessary conditions for triangularization via invariants. We continue to
+work over an integral domain R. Deﬁne the following important GL2(R)-invariant func-
+tions. For a matrix A ∈ V1, let δA denote the discriminant of its characteristic polynomial,
+that is δA = tr2A − 4detA.
+Deﬁnition 2.8. Let τ,σ :V2(R) → R and ∆ : V3(R) → R be deﬁned by
+τ(A,B ) := 2 tr(AB) − tr(A)tr(B),
+σ (A,B ) := det(AB − BA)
+∆(A,B,C ) := ( tr(ABC − CBA ))2.
+When a matrix sequence is written as A = (A1,...,A n) ∈ Vn(R) we will also use
+τjk = τjk (A) = τ(Aj,A k)
+σjk = σjk (A) = σ (Aj,A k)
+∆jkl = ∆ jkl (A) = ∆(Aj,A k,A l),
+for any indices j,k,l ∈ { 1,...,n }. By simple computations , we can express these functions
+in terms of bj,c j,e j as follows.
+τjk = ejek + 2bjck + 2cjbk
+σjk = ( bjek − ejbk) (cjek − ejck) − (bjck − cjbk)2(2.4)
+∆jkl =
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+bj bk bl
+ej ek el
+cj ck cl
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+2
+.(2.5)
+Note that τ,σ and ∆ are symmetric under permutation of any matrices/indic es, but
+σ and ∆ vanish when 2 matrices/indices coincide. Since the abo ve expressions do not
+depend explicitly on the variables aj or dj but only on the diﬀerence ej = aj − dj, the
+functions τ,σ and ∆ are invariant under translation of any argument by a sca lar matrix,
+that is, for any matrices A,B and scalar matrices λ,µ , we have τ(A +λ,B +µ ) = τ(A,B )
+and similarly for σ and ∆.
+Remark 2.9. Note that these are essentially the same functions used in Dr ensky’s theorem
+1.8 [D]. They also coincide with the functions used in [Fl], u p to a constant factor. There
+are some interesting relations between these invariants wh ich are obtained from simple
+calculations. In particular, we have
+τ(A,A ) = δA = tr2A − 4detA
+σ (A,B ) = tr(A[A,B ]B) = 1
+4
+(
+τ(A,A )τ(B,B ) − τ(A,B )2)
+(2.6)
+∆(A,B,C ) = − 1
+4
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+τ(A,A ) τ(A,B ) τ(A,C )
+τ(B,A ) τ(B,B ) τ(B,C )
+τ(C,A ) τ(C,B ) τ(C,C )
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+,
+for all matrices A,B,C overR, in agreement with Equation (1.4).
+The following is a simple necessary condition for triangula rization.
+Proposition 2.10. Let A ∈ Vn be a triangularizable sequence. Then σ (A,B ) and ∆(A,B,C )
+vanish for all terms A,B,C of A.
+Proof. Sinceσ and ∆ are G invariant, we can assume that A is upper triangular. By direct
+computation, σ (A,B ) = det([A,B ]) = 0, and ∆( A,B,C ) = ( tr(ABC − CBA ))2 = 0. □
+Note that the vanishing of all σjk =σ (Aj,A k) is not suﬃcient for A to be triangular-
+izable, as the following important example shows. We adopt t he usual convention that
+blank matrix entries stand for zero entries (in this case 0 ∈ R).
+
+===== PAGE 9 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 9
+Example 2.11. Let A = (A1,A 2,A 3) ∈ V3 have the form
+A1 =
+(
+a1
+d1
+)
+, A 2 =
+(
+a2 b2
+d2
+)
+, A 3 =
+(
+a3
+c3 d3
+)
+,
+for some a1,...,d 3 ∈ R. Then σ12 = σ13 = 0 and σ23 = −b2c3(e2e3 +b2c3). Assume
+that e2e3 +b2c3 = 0 and that e1b2c3 ̸= 0, so that all σjk vanish, neither A2 or A3 are
+diagonal, and (since these assumptions imply e2e3 ̸= 0) all three matrices have distinct
+eigenvalues. So, in this case, all subsequences of length ≤ 2 are triangularizable, but the
+next Proposition will show that A is not triangularizable.
+Proposition 2.12. As in Example 2.11, let A = (A1,A 2,A 3) ∈ V3 be a triple of the form
+(2.7) A1 =
+(
+a1
+d1
+)
+, A 2 =
+(
+a2 b2
+d2
+)
+, A 3 =
+(
+a3
+c3 d3
+)
+,
+with e2e3 ̸= 0. Then, the following are equivalent.
+(i) A is reduced (ii) A is not triangularizable, (iii) ∆123 ̸= 0 (i.e, e1b2c3 ̸= 0).
+Proof. (i) or (ii) imply (iii): If e1b2c3 = 0 at least one of the factors is zero. In each
+case, A1 is a scalar, A is lower triangular, or A is upper triangular, respectively, so A
+is triangularizable and is not reduced, since A1 commutes with one or both of the other
+terms. (iii) implies (ii) and (i): Suppose that e1b2c3 ̸= 0. Then, none of the three numbers
+is zero. Let g be the SL2(R) matrix with columns ( x,y ) and (z,w ). Then
+gA1g− 1 =
+(
+∗ − xze1
+ywe1 ∗
+)
+gA2g− 1 =
+(
+∗ x(xb2 − ze2)
+y(we2 − yb2) ∗
+)
+(2.8)
+gA3g− 1 =
+(
+∗ − z(xe3 +zc3)
+w(ye3 +wc3) ∗
+)
+,
+from which it follows that there is no g ∈ G that will make g · Aupper or lower triangular,
+so A is not triangularizable. Also, by Lemma 2.1, none of the 3 com mutators between the
+pairs will vanish, so A is reduced. □
+2.3. Numerical criteria for triangularization. A simple necessary and suﬃcient nu-
+merical condition for triangularization of a pair of 2 × 2 matrices over an algebraically
+closed ﬁeld was given in the article [Fr], which also describ es the similarity classes of pairs
+of m × m matrices in great generality.
+Proposition 2.13. [Fr] A pair (A1,A 2) ∈ V2(¯F) is triangularizable if and only if σ12 =
+det[A1,A 2] = 0 .
+Note that Friedland writes the condition σ12 = 0 in a diﬀerent, but equivalent form (see
+Equation (2.6) in Remark 2.9). The generalization to integr al domains is as follows.
+Theorem 2.14. A pair A = (A1,A 2) ∈ V2(R) is triangularizable if and only if both A1
+and A2 are triangularizable and σ12 = det[A1,A 2] = 0 .
+Proof. The conditions are clearly necessary. For the converse, let us suppose that both
+A1 and A2 are triangularizable and det[A1,A 2] = 0. Then, as the determinant is GL2(R)
+invariant, we can assume A1 upper triangular ( c1 = 0). If [ A1,A 2] = 0 the pair ( A1,A 2)
+is triangularizable by Corollary 2.2, so we can assume that [ A1,A 2] ̸= 0. Equation (2.1)
+shows that
+(2.9) 0 = det[A1,A 2] = −b2
+1c2
+2 +e1c2(e1b2 − b1e2) = −c2(b2
+1c2 +e1b1e2 − e2
+1b2).
+If c2 = 0, A is triangularizable. If not, c2 ̸= 0 and we distinguish 4 cases. (i) If e1 = 0,
+then b1 ̸= 0 (as A1 is non-scalar) which makes equation (2.9) impossible to sol ve. (ii) If
+
+===== PAGE 10 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 10
+b1 = 0, then e1 ̸= 0, and equation (2.9) implies b2 = 0 and A is lower triangular. (iii)
+Suppose now e1b2 =b1e2. Then 0 = det[A1,A 2] = −c2
+2b2
+1 and so b1 = 0 which reduces to
+the previous case.
+Finally, consider the general case (iv) with δ12 = b1e2 − e1b2 ̸= 0 and non-zero b1
+and e1. So, we are assuming c2e2b2 ̸= 0. From equation (2.9), the quadratic equation
+Q2(x,y ) ≡ c2x2 − e2xy − b2y2 = 0 associated to A2 (see Appendix A) has a non-trivial
+solution: (b1, −e1) ∈ R2. Suppose that A2 is nondegenerate ( δA ̸= 0). Then, by Lemma
+A.2, there are z′,w ′ in F, the ﬁeld of fractions of R, such that w′b1 +z′e1 ̸= 0 and the
+eigenvectors of A2 are multiples of ( b1, −e1) and of ( z′,w ′). So, we choose an eigenvector
+of A2 of the form ( z′′,w ′′) ∈ R2 colinear with ( z′,w ′) ∈ F2. Moreover, by Proposition
+A.1, there are α,β ∈ F∗ = F \ {0} so that the eigenvectors ( x,y ) = α (b1, −e1) and
+(z,w ) = β (z′′,w ′′) verify either xR +yR = R or zR +wR = R. If the ﬁrst alternative
+holds, let xq − yp = 1 for some p,q ∈ R, (note that ( p,q ) is not necessarily an eigenvector
+of A2) and put:
+g =
+(
+x p
+y q
+)
+.
+Then, conjugating by g− 1 gives
+g− 1A1g =
+(
+∗ ∗
+−e1yx − b1y2 ∗
+)
+=
+(
+∗ ∗
+α (y2x − xy2) ∗
+)
+=
+(
+∗ ∗
+0 ∗
+)
+g− 1A2g =
+(
+∗ ∗
+c2x2 − e2xy − b2y2 ∗
+)
+=
+(
+∗ ∗
+α 2Q2(b1, −e1) ∗
+)
+=
+(
+∗ ∗
+0 ∗
+)
+,
+so A is again triangularizable. If the second alternative holds , we do the same interchanging
+the roles of (x,y ) and (z,w ). Finally, suppose that A2 is degenerate (δA = 0). Then, there
+is only one eigenvector of A2 and the solutions to Q2(x,y ) = 0 form a single line through
+the origin in F2, so all solutions ( x,y ) ∈ R2 are multiples of ( b1, −e1) ∈ R2. Since A2 is
+triangularizable, by Proposition A.1, we can choose ( x,y ) so that xR +yR = R and we
+proceed as before. □
+Example 2.15. Over the integral domain R = C[u,v ], consider the pair
+A1 =
+(
+−v u
+0 0
+)
+, A 2 =
+(
+uv u 2
+2v2 0
+)
+.
+Then we have A1 upper triangular and σ12 = 0 as can be checked, but A2 is not triangu-
+larizable over C[u,v ], as no eigenvector ( x,y ) ∈ R2 satisﬁes xR +yR = R. So, σ12 = 0
+and A1 is triangularizable but not the pair ( A1,A 2).
+We ﬁnally arrive to Theorem 1.11, which is a converse to Propo sition 2.10.
+Theorem 2.16. A sequence A = (A1,...,A n) ∈ Vn(R) is triangularizable if and only if
+eachAj is triangularizable and σjk = ∆ jkl = 0 for all 1 ≤ j,k,l ≤ n.
+Proof. Consider A = (A1,...,A n) reduced with σjk = ∆ jkl = 0 for all 1 ≤ j,k,l ≤ n. By
+Theorem 2.14 the conditions σjk = 0 and Aj triangularizable mean that all subsequences
+of A of length ≤ 2 are triangularizable. So, after a similarity that puts A1 andA2 in upper
+triangular form, we can assume ( A1,A 2,A 3) to be in the form
+A1 =
+(
+a1 b1
+d1
+)
+, A 2 =
+(
+a2 b2
+d2
+)
+, A 3 =
+(
+a3 b3
+c3 d3
+)
+.
+Since A is reduced, by hypothesis δ12 =b1e2 − e1b2 ̸= 0. From Equation (2.5), we see that
+0 = ∆ 123 = (b1e2 − e1b2)2c2
+3, so c3 = 0 which means that ( A1,A 2,A 3) is triangularizable.
+Repeating the argument for all triples ( Aj,A k,A l) we see that all subsequences of A of
+length ≤ 3 are triangularizable. So A is triangularizable by Proposition 1.9. Finally, if A
+is not reduced, we consider the above argument for any maxima l reduction B, triangularize
+B, and apply Corollary 2.7. □
+
+===== PAGE 11 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 11
+2.4. Improved criterion for triangularization. We now prove an inductive property
+of reduced sequences that allow us to improve the criterion o f Theorem 2.16.
+Theorem 2.17. Let n ≥ 4 and A = (A1,...,A n− 1) ∈ Vn− 1 be a reduced triangularizable
+sequence. If σ (Aj,A n) = 0 for some matrix An, and all j = 1,...,n − 1 then (A1,...,A n)
+is also triangularizable.
+Proof. We can suppose that ( A1,...,A n− 1) has been conjugated so that it is already an
+upper triangular matrix sequence. So all the σjk vanish, for indices j,k between 1 and
+n − 1 (by Proposition 2.10). To reach a contradiction, assume th at A′ = (A1,...,A n) is
+not triangularizable so that
+An =
+(
+an bn
+cn dn
+)
+is non-scalar with cn ̸= 0. Since A is reduced, none of the Aj can be scalar. We can also
+assume that An does not commute with some Aj otherwise A′ would be triangularizable
+by Proposition 2.6. This means that δjn :=bjen − ejbn ̸= 0, for j = 1,...,n − 1, by Lemma
+2.1. Using Formula (2.4), the n − 1 conditions σjn = 0, j = 1,...,n − 1 can be written as
+(because cn ̸= 0)
+b2
+jcn +bjejen − e2
+jbn = 0, for j = 1,...,n − 1.
+Since An is non-scalar, we are looking for a non-zero solution u = (bn,e n,c n) ∈ R3 to the
+matrix equation Bu = 0 where
+B =
+
+
+
+−e2
+1 e1b1 b2
+1
+.
+.
+. .
+.
+. .
+.
+.
+−e2
+n− 1 en− 1bn− 1 b2
+n− 1
+
+
+ .
+A simple computation shows that every 3 × 3 minor of B is of the form ±δjkδklδlj . Since
+all these minors are non-zero by hypothesis, there is no non- zero solution u ∈ R3, and we
+have a contradiction. Hence cn = 0 and A′ is triangularizable. □
+From two ﬁnite matrix sequences A = (A1,...,A n1 ) and B = (B1,...,B n2 ) one can form
+their concatenation A ∪ B := (A1,...,A n1,B 1,...,B n2 ). The following corollary may be
+called the concatenation principle for triangularizable sequences.
+Corollary 2.18. If A ∈ Vn1 and B ∈ Vn2 are triangularizable matrix sequences and they
+have a common reduction of length ≥ 3, then their concatenation A ∪ B ∈ Vn1+n2 is also
+triangularizable.
+Proof. Let C be such a common reduction, which we can assume to have length 3. C =
+(C1,C 2,C 3) is obviously triangularizable and σ (Cj,A k) = σ (Cj,B k) = 0 for all possible
+indices, since both A and B are triangularizable. So the Proposition above applies. □
+To prove Theorems 1.12 and 1.13, we will need the following ea sy fact.
+Lemma 2.19. Letn ≥ 2. A reduced triangularizable sequence of length n as at least n − 1
+diagonalizable terms.
+Proof. We can assume that A is already is upper triangular form, and let A1 and A2 be
+two non diagonalizable terms of A. Then, they are of the form
+A1 =
+(
+a1 b1
+a1
+)
+A2 =
+(
+a2 b2
+a2
+)
+,
+for some a1,a 2,b 1,b 2 ∈ R. Thus, they commute, so A is not reduced. □
+Proposition 2.20. Let A = (A1,A 2,A 3,A 4) be a reduced quadruple whose terms Aj
+are all triangularizable. Then A is triangularizable if and only if σjk = 0 for all j,k ∈
+{1, 2, 3, 4}.
+
+===== PAGE 12 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 12
+Proof. One direction is a consequence of Proposition 2.10. Convers ely, let A be reduced
+with σjk = 0. By Theorem 2.14 we may assume that A1 and A2 are upper triangular,
+so that c1 = c2 = 0. From Lemma 2.19, we can also assume that A1 is diagonalizable
+so that b1 = 0 and e1 ̸= 0. Then, reducibility implies that b2 ̸= 0. In order to obtain a
+contradiction, suppose that c3c4 ̸= 0. Then we have
+0 = σ13 =e2
+1b3c3
+0 = σ14 =e2
+1b4c4
+0 = σ23 = −b2c3(b2c3 +e2e3)
+0 = σ24 = −c4(b2
+2c4 +b2e2e4 − e2
+2b4)
+0 = σ34 = −b4(c2
+3b4 +c3e3e4 − e2
+3c4)
+This implies b3 = 0, b4 = 0, b2c3 +e2e3 = 0 and b2c4 +e2e4 = 0. The last two equations
+imply that (e2,b 2) is a nontrivial solution of the matrix equation
+(
+e3 −c3
+e4 −c4
+) (
+x
+y
+)
+=
+(
+0
+0
+)
+.
+This implies e3c4 − c3e4 = 0, which together with b3 =b4 = 0 contradict the reducibility of
+A. So, c3c4 = 0 and either ∆ 123 = 0 or ∆ 124 = 0, by Equation (2.5). Assuming, without
+loss of generality, that ∆ 123 = 0, ( A1,A 2,A 3) is triangularizable by Theorem 2.16, and
+the result follows from Proposition 2.12. □
+Now, we are ready to prove Theorems 1.12 and 1.13.
+Proof of Theorem 1.12: Suppose A is reduced of length l ≥ 4 and assume all subsequences
+of A of length ≤ 2 are triangularizable. Then, by Proposition 2.20 all quadr uples of A are
+triangularizable, so that A is triangularizable by Proposition 1.9. □
+Proof of Theorem 1.13: Let A = (A1,...,A n) be a matrix sequence with maximal reduction
+A′ = (A1,...,A l) of length l. Then A is triangularizable if and only A′ is, by Corollary
+2.7, showing (i) for l ≤ 3. If l = 4, (A1,A 2,A 3,A 4) is triangularizable by Proposition 2.20.
+Then, we are in the hypothesis of Theorem 2.17, which shows th at we can apply induction
+to conclude that A′ is triangularizable for all l ≥ 4. □
+Remark 2.21. To summarize and relate our results with McCoy’s Theorem, we have shown
+that over an algebraically closed ﬁeld and under the simple c ondition that A has reduced
+length ̸= 3, A is triangularizable if and only if the commutators [ Aj,A k] are nilpotent, for
+j = 1, 2, 3 and k > j. In particular, the monomials p(x) in Theorem 1.3 are unnecessary
+(for reduced length ̸= 3).
+3. Simultaneous Similarity
+3.1. Similarity and subtriples. Again, let G = GL2(R). We now prove Proposition
+1.10 with the help of the following easy lemma.
+Lemma 3.1. Let [A1,A 2] ̸= 0 and g ∈ G. If g ·(A1,A 2) = (A1,A 2) then g is a scalar.
+Proof. Let g have columns ( x,y ) and ( z,w ) with xw − yz invertible. The conditions
+Ajg =gAj, for j = 1, 2 can be written as Mju = 0, where
+Mj =
+
+
+0 cj −ej
+−cj 0 bj
+ej −bj 0
+
+ , u = (z,x − w,y ), j = 1, 2.
+So, the vector ( z,x − w,y ) ∈ R3 lies in the intersection of the nullspace of the Mj, each
+being generated by the non-zero vector ( bj,e j,c j), j = 1, 2, (each Mj has rank exactly 2,
+asA1 andA2 are non-scalars). So, ( z,x − w,y ) is zero unless ( b1,e 1,c 1) and (b2,e 2,c 2) are
+colinear. But this is not the case by Equation (2.1) since [ A1,A 2] ̸= 0. Thus, z =y = 0
+and x =w, so that g is scalar as wanted. □
+
+===== PAGE 13 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 13
+Proof of Proposition 1.10: If A and B are similar, then AJ ∼ B J for any index set
+J = (j1,...,j l) with l ≤ n and 1 ≤ j1 < ... < jl ≤ n. Conversely, let AJ ∼ B J for index
+sets J of cardinality ≤ 3. We divide the proof into three cases. (i) Suppose A is scalar.
+Since scalar matrices are invariant under conjugation, Aj ∼ Bj implies that Aj =Bj, so
+A = B. (ii) Suppose now that A is non-scalar, but commutative. Then some term of
+A, say A1 is non-scalar. Since A1 ∼ B1, B1 is also non-scalar, and after a conjugation,
+we can assume that B1 = A1. Moreover, ( Aj,A k) ∼ (Bj,B k) and [ Aj,A k] = 0 implies
+that [Bj,B k] = 0. As a consequence, B is also commutative and non-scalar. Since A1 is
+a non-scalar 2 × 2 matrix, it is a nonderogatory matrix, so that every matrix c ommuting
+withA1 is a polynomial in A1 with coeﬃcients in F, the ﬁeld of fractions of R. Therefore
+A = (A1,p 2(A1),...,p n(A1)) for some polynomials pj(x), j = 2,...,n . Since pairs are
+similar, let gj ∈ G, j = 2,...,n , be such that ( B1,B j) = (A1,B j) = (gjA1g− 1
+j ,g jAjg− 1
+j ).
+Then Bj = gjAjg− 1
+j = gj pj(A1)g− 1
+j = pj(gjA1g− 1
+j ) = pj(A1), for all j = 2,...,n . So
+B = (B1,...,B n) = (A1,p 2(A1),...,p n(A1)) = A. (iii) Finally, let A be non-commutative.
+Then, some pair does not commute, say [ A1,A 2] ̸= 0. Since all pairs are similar we
+may, after a suitable conjugation, assume that ( A1,A 2) = (B1,B 2). Since all triples are
+similar, let gj ∈ G, j = 3,...,n , be such that gj ·(A1,A 2,A j ) = ( A1,A 2,B j). Then,
+since gj ·(A1,A 2) = ( A1,A 2) Lemma 3.1 implies that gj is scalar for all j = 3,...,n , so
+Bj =gj ·Aj =Aj and B = A. □
+3.2. Similarity for semisimple sequences. We now work over a ﬁeld F. Recall the
+following deﬁnition.
+Deﬁnition 3.2. It is called semisimple if its G-orbit (for the conjugation action (1.1)) is
+Zariski closed in Vn.
+This notion of semisimplicity generalizes that of a single m atrix. In the context of
+geometric invariant theory, semisimplicity can be transla ted into more algebraic terms as
+follows. Recall that, in the general situation of a general a ﬃne (algebraic) reductive group
+K acting on an aﬃne variety V (both over F) one deﬁnes the aﬃne quotient variety V/ /K
+as the maximal spectrum of the ring of invariant functions on V , Spm
+(
+F[V ]K)
+, which
+comes equipped with a projection
+q :V → V/ /K
+induced from the canonical inclusion of algebras F[V ]K ⊂ F[V ] (see, for example, [MFK]
+or [Mu]). The set of closed orbits is in bijective correspond ence with geometric points of
+the quotientV/ /K . Recall also that a vector x ∈ V is said to be stable if the corresponding
+‘orbit map’
+ψ x :K → V, g ↦→ g ·x
+is proper. It is easy to see that x ∈ V is stable if and only if the K-orbit of x is closed
+and its stabilizer Kx is ﬁnite. Another useful criterion for stability is the Hilbert-Mumford
+numerical criterion , which is stated in terms of nontrivial homomorphisms φ : F∗ → K,
+called one parameter subgroups (1PS) of K (F∗ := F \ {0}). To any such φ and to a point
+x ∈ V one associates the composition φ x :=ψ x ◦φ : F∗ → V . If φ x can be extended to a
+morphism
+φ x : F → V , we say that lim λ→ 0φ x(λ) exists and equals φ x(0).
+Theorem 3.3. (Hilbert-Mumford, see [MFK]) A point x ∈ V is not stable if and only if
+there is a one parameter subgroup φ of K, such that φ x(0) exists.
+Let us return to our example of the conjugation action (1.1) o f G = GL2(F) on Vn =
+Vn(F), and let S ⊂ Vn = Vn(F) denote the subset of semisimple sequences. Then S/G ,
+being the set of closed orbits, is in bijection with Vn/ /G = Spm
+(
+F[Vn]G)
+. As described in
+
+===== PAGE 14 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 14
+the introduction, Drensky’s theorem (Theorem 1.8) realize d the algebra of invariants as a
+quotient F[Vn]G = F[x]/I where
+x = (t1,...,t n,t 11,...,t nn,u 12,...,u n− 1,n,s 123,...,s n− 2,n− 1,n) ∈ FN
+is the list of generators ( N = 2n +
+( n
+2
+)
++
+( n
+3
+)
+) and I the ideal of relations. Dualizing the
+sequence
+F[x] → F[x]/I = F[Vn]G ⊂ F[Vn]
+we obtain:
+Vn → Vn/ /G = S/G ⊂ FN.
+By standard arguments, the last inclusion is precisely the m ap Φ([ A]) = x, that sends a
+G orbit to its values on the generators, so we conclude the foll owing.
+Proposition 3.4. For a ﬁeld of characteristic zero, the map Φ : S/G → FN is injective.
+To obtain an analogous map for non-semisimple sequences, we ﬁrst characterize these
+ones as triangularizable but not diagonalizable sequences .
+Note that, for the action of G onVn there are no stable points, since the scalar nonzero
+matrices stabilize any sequence A ∈ Vn. This is not a problem, since the same orbit
+space is obtained with the conjugation action of the aﬃne red uctive group G1 =SL2(F)
+(determinant one matrices in GL2(F)) on Vn which has generically Z2 stabilizers:
+Vn/ /G =Vn/ /G1.
+Note that any diagonal matrix sequence A ∈ D := {A ∈ Vn :b =c = 0} has the subgroup
+(3.1) H =
+(
+λ 0
+0 λ − 1
+)
+⊂ G1, λ ∈ F∗
+contained in its stabilizer.
+Proposition 3.5. A 2 × 2 matrix sequence is stable (for the SL2(F) conjugation action)
+if and only if it is not triangularizable. A 2 × 2 matrix sequence is semisimple if and only
+if it is either stable or diagonalizable.
+Proof. This follows from general results (see Artin, [A]). For comp leteness, we include a
+proof of this particular case, using the Hilbert-Mumford cr iterion (Theorem 3.3). For the
+ﬁrst statement, we can assume that A is upper triangular. Then, a simple computation
+shows that the closure of the orbit of A under the subgroup H ⊂ G1 =SL2(F) (Equation
+3.1) intersects D. So, either A is in D (and it is commutative and semisimple) and its
+stabilizer contains D, or A is not commutative, A /∈ D so G · A = G1 · A is not closed.
+In either case, A is not stable. Conversely, let A be not stable for the action of G1. By
+elementary representation theory, any one parameter subgr oup of G1 is conjugated to
+λ ↦→ φ n(λ) =
+(
+λ n 0
+0 λ − n
+)
+, n ∈ { 1, 2,... }.
+In other words, any 1PS can be written as φ =g− 1φ ng, for some g ∈ G1 and some φ n so,
+(3.2) lim
+λ→ 0
+φ A(λ) = lim
+λ→ 0
+φ(λ) · A=g− 1 lim
+λ→ 0
+φ n(λ) ·(g · A).
+Writingg · A as
+g · A=
+(
+a(g) b(g)
+c(g) d(g)
+)
+,
+we obtain
+φ n(λ) ·(g · A) =
+(
+a(g) b(g)λ 2n
+c(g)λ − 2n d(g)
+)
+.
+By the Hilbert-Mumford criterion, the limit (3.2) exists fo r some 1PS, so we must have
+c(g) = 0, for some g ∈ G1. This means that g ·A is upper triangular, hence not irreducible.
+The second statement is analogous. □
+
+===== PAGE 15 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 15
+3.3. Similarity for non-commutative triangularizable sequences. To obtain a nu-
+merical similarity criterion for non-semisimple sequence s, we are reduced, by Proposition
+3.5, to the case of triangularizable sequences. Here, we con sider the non-commutative
+triangularizable case.
+Let U ⊂ Vn be the aﬃne variety of upper triangular matrix sequences and let K ⊂ U be
+the subset of commutative sequences. For n ≥ 2 and A ∈ U, let PA denote the following
+2 × n matrix, and δjk =δjk (A) the corresponding 2 × 2 minors
+PA =
+(
+e1 · · · en
+b1 · · · bn
+)
+, δ jk =bjek − ejbk, j,k ∈ { 1,...,n }.
+According to Lemma 2.1, K is characterized as consisting of sequences A such that the
+rank of PA is ≤ 1 (it is 0 when all terms in A are scalars). Hence, when A ∈ U \K, PA
+has rank 2 and deﬁnes an element πA of the Grassmanian G(2,n ) of 2-planes in Fn. It is
+easy to see that the action of G =GL2(F), restricted to U \K, preserves the plane πA:
+Lemma 3.6. Letg ∈ G. If A and A′ =g · Aare both in U \K, then e =e′ and πA =πA′.
+Proof. We can assume that A′ =g · A for some g ∈ SL2(F) and compute, for A ∈ U \K,
+g · A=
+(
+x z
+y w
+) (
+a b
+0 d
+) (
+w −z
+−y x
+)
+=
+(
+∗ ∗
+y(ew − by) ∗
+)
+.
+SincePA has rank 2, ew ̸=by as vectors in Fn. Thus, in order that g · Abe again in U \K,
+we need y = 0, which simpliﬁes the formula above to
+(3.3) g · A=
+(
+x z
+0 w
+) (
+a b
+0 d
+) (
+w −z
+0 x
+)
+=
+(
+a x (bx − ez)
+0 d
+)
+,
+because xw = detg = 1. Then, e = e′ = a − d. Moreover, the upper right entry is
+b′ =x(bx − ez) = x2b − xze, a linear combination of b ande. So πA =πA′, as asserted. □
+The correspondence A ↦→ πA is therefore well deﬁned on theG-orbits of non-commutative
+triangularizable sequences. To make this more precise, con sider the following algebraic
+subvarieties of Vn. Let U = G ·U be the variety of triangularizable matrix sequences
+and let K ⊂ U be the subvariety of commutative sequences. Note that U is indeed irre-
+ducible, as the image in Vn of the (irreducible) algebraic variety G× U under the morphism
+(g, A) ↦→ g · A. The irreducibility of K was ﬁrst noted in [Ge] (see [Gu] for a proof).
+By the previous lemma, given a sequence A ∈ U \ K , we can deﬁne πA :=πB using any
+matrix sequence B ∈ G· A ∩U, that is, B is upper triangular and similar to A (even though
+the matrix PA is not deﬁned). So, we can deﬁne a map ψ : U \K → PN − 1, where PN − 1
+denotes the projective space over F of dimension N − 1 =
+( n
+2
+)
+− 1, as the composition
+U \K
+π ↓ ց ψ
+G(2,n )֒→PN − 1
+where the bottom inclusion is the Pl¨ ucker embedding of the Grassmanian G(2,n ). In more
+concrete terms we have.
+Lemma 3.7. Let A ∈ U \K. Then ψ (A) = [δ12 :δ13 : · · ·:δn− 1,n], where δjk =δjk (B), for
+any B ∈ G · A ∩ U.
+Proof. The formula follows from the deﬁnition of the Pl¨ ucker embedding. We just need to
+show that the map is well deﬁned. The point [ δ12 :δ13 : · · ·:δn− 1,n] is in projective space
+since at least a pair of terms, say Aj andAk do not commute, so that δjk (B) = bjek − ejbk
+is nonzero, by Lemma 2.1. On the other hand for a diﬀerent seque nce B′ ∈ G · A ∩ U,
+Equation (3.3) and e =e′ (Lemma 3.6) imply
+δjk (B′) = b′
+je′
+k − e′
+jb′
+k =x(bjx − ejz)ek − ejx(bkx − ekz) = x2δjk (B),
+
+===== PAGE 16 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 16
+so the point ψ (A) ∈ PN − 1 is indeed independent of the choice of B ∈ G · A ∩ U. □
+By Lemma 3.7, the quotients δjk/δ lm (forj ̸=k andl ̸=m) are well deﬁned rational G-
+invariant functions on U \ K(deﬁned on the open dense complement of δ− 1
+lm (0) ⊂ U \ K ), so
+they descend to the quotient space ( U \ K)/G . Note, however, that these are not quotients
+of regular (polynomial) invariants.
+Deﬁne now the map Ψ : ( U \ K)/G → Fn × FN +n × PN − 1, N =
+( n
+2
+)
+, by
+Ψ([A]) = ( {tj}j=1,...,n, {tjk }j,k=1,...,n, ψ),
+where [ A] denotes the conjugacy class of A, tj = tr(Aj), tjk = tr(AjAk), and ψ was given
+by Lemma 3.7. The main result of this subsection is the follow ing. For the proof, we use a
+standard consequence of the Noether-Deuring theorem; name ly, if A and A′ are elements
+inVm,n(F) and g ∈ GLm(¯F) veriﬁes g · A= A′ (i.e, similarity over ¯F) then they are similar
+over F (see eg. [CR] p. 200).
+Theorem 3.8. Letn ≥ 2. The map Ψ is two-to-one. More precisely, the rational invari-
+antsδjk/δ lm, together with the regular invariants tj and tjk, distinguish G-orbits in U \ K,
+except for the identiﬁcation e ↔ − e, when written in triangular form.
+Proof. Let both sequences A and A′ be triangularizable and non-commutative, so there
+exist B ∈ G · A ∩ (U \K) and B′ ∈ G · A′ ∩ (U \K). Let us write tj = tr(Bj) = tr(Aj)
+etc, as before, and use primed letters to denote correspondi ng quantities for A′ or B′. To
+prove injectivity, suppose Ψ([A]) = Ψ([ A′]) so that tj =t′
+j andtjk =t′
+jk for all appropriate
+indices. Then,
+ejek = 2tjk − tjtk = 2t′
+jk − t′
+jt′
+k =e′
+je′
+k.
+Since any triple ( x2,xy,y 2) ∈ F3 determines (x,y ) up to sign, the equation above implies
+that e′ = ±e, as vectors in Fn. Suppose e′ =e. The hypothesis Ψ([ A]) = Ψ([ A′]) means
+also that ψ (B) = ψ (B′). Thus πB =πB′ as planes in G(2,n ) due to the injectivity of the
+Pl¨ ucker map. Thereforeb′ = αb +βe for some complex numbers α,β , α ̸= 0. So, using
+the invertible
+g =
+( √
+α −β/ √ α√ α − 1
+)
+,
+where √α is any square root of α in ¯F, it is easy to see that g · B = B′, so that A and A′
+are similar over ¯F. So, A and A′ are also similar over F. Finally, with e′ = −e (notee ̸= 0
+by hypothesis), one can see that B′ is not similar to B, hence the result. □
+In view of Proposition 3.5, Theorem 3.8 and Proposition 3.4 g ive a solution to the
+invariants problem (ii) for non-commutative sequences. Th eorem 1.14 provides a more
+eﬃcient solution (and works for any characteristic ̸= 2), and its proof will be given after
+exploring the canonical forms described in the next section .
+Remark 3.9. Finding an analogous map in the commutative case is more invo lved! See
+Friedland, [Fr] for a discussion of the case of a commuting pa ir of 2 × 2 matrices. However,
+testing similarity of commutative 2 × 2 matrix sequences is a trivial task after reduction
+to triangular form, as recalled in Appendix B.
+We end this section with the following conjecture on the gene ralization of Proposition
+1.10 to m × m matrices. Since an irreducible sequence is a generic sequen ce and the
+conjugacy classes of triangularizable or block-triangula rizable sequences seem to depend
+on less data (i.e, less regular or rational invariants) than the irreducible case, we propose
+the following problem. Deﬁne the “semisimple similarity nu mber” S(m) as
+S(m) = min {k ∈ N : ∀n ∈ N, ∀A, B ∈ S n,m, A ∼ B ⇔ A J ∼ B J ∀J with |J| ≤ k},
+where Sn,m ⊂ Vn,m is the subset of semisimple sequences.
+
+===== PAGE 17 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 17
+Conjecture. For arbitrary m × m sequences (not necessarily semisimple) A ∼ B if and
+only if AJ ∼ B J for all index vectors J with length ≤ S(m).
+Note that, by Procesi’s Theorem, S(m) ≤ N (m). This conjecture is true for m = 2, by
+Proposition 1.10, since Proposition 2.12 gives S(2) = 3.
+4. Canonical Forms and Reconstruction of Sequences
+4.1. Canonical forms. We now describe canonical forms for 2 × 2 matrix sequences over
+an algebraically closed ﬁeld ¯F. Informally, this means the indication, for each given matr ix
+sequence A ∈ Vn, of an element in its conjugacy class which has a simple form, and this
+same simple form should be used for the biggest possible set o f sequences, hence the term
+‘canonical’. We will assume n ≥ 2 since such canonical forms for n = 1 are provided by
+the well known Jordan decomposition. Also, for commutative sequences, the canonical
+forms are the same as for n = 1. This is recalled in Appendix B. For non-commutative
+sequences, it turns out that canonical forms can be divided i nto 5 cases.
+By the preceding results, it is no surprise that we need to con sider distinct canonical
+forms for the stable and for the reducible cases. We make the f ollowing choices.
+Deﬁnition 4.1. We say that a stable (i.e, irreducible) matrix sequence A = (A1,A 2,... )
+is in (stable) canonical form if A1 is in Jordan canonical form and b2 = 1. We say that a
+triangularizable sequence A is in (triangular) canonical form if A is upper triangular, A1
+is diagonal and b2 = 1.
+Recall that, by Proposition 2.19 a triangularizable sequen ce of length n ≥ 2 has at least
+n − 1 semisimple (or diagonalizable) terms. By contrast, a stab le sequence can have all
+terms which are non-diagonalizable. To see this, just consi der the family of matrices of
+the form (
+−αβ α 2
+−β 2 αβ
+)
+,
+for some parameters α and β not both zero. Then, all these matrices are similar to the
+2 × 2 Jordan block with zero diagonal (i.e, α = 1, β = 0), but the σ of two of these is zero
+only when the vectors ( α,β ) are colinear. We have, however, the following fact.
+Proposition 4.2. Let A have reduced length n = 2 or n ≥ 4. Then A is stable if and
+only if some σjk ̸= 0.
+Proof. If A is not stable, then it is triangularizable, by Proposition 3 .5, so that all σ = 0,
+by Proposition 2.10. Conversely, suppose A is stable with reduced length n = 2. Then
+σ12 ̸= 0 because of Friedland’s result (or Theorem 1.11). Finally , if n ≥ 4, Proposition
+2.20 implies that at least one σjk ̸= 0. On the other hand, Example 2.11 shows that the
+statement is not true for n = 3. □
+Theorem 4.3. All non-commutative matrix sequences can be put in canonica l form. More
+precisely, after rearranging terms, any sequence is simila r to a sequence with A1,A 2 and
+A3 as described by the following table.
+stable case
+1.a σ12 ̸= 0, δ1 ̸= 0 A1 diagonal, b2 = 1
+1.b σ12 ̸= 0, δ1 =δ2 = 0 A1 Jordan block, b2 = 1
+1.c σ12 =σ13 =σ23 = 0, ∆ 123 ̸= 0 A1 diagonal, b2 = 1
+triangularizable case 2.a all diagonalizable A1 diagonal, b2 = 1
+2.b 1 non-diagonalizable (A2) A1 diag., A2 Jordan bl.
+Proof. Let us show that only the ﬁve possibilities above occur, and m ay be put in the
+given forms, starting when A is stable. If n ≥ 4 or n = 2, Proposition 4.2 implies that
+there is some σ ̸= 0, so we can rearrange the terms of A so that we have σ12 ̸= 0 (in
+particular, [A1,A 2] ̸= 0). If A1 or A2 is diagonalizable, we have possibility 1.a. Assuming
+
+===== PAGE 18 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 18
+A1 diagonalizable, we may suppose that A1 is already in diagonal form. Since A1 is
+nonscalar δ1 ̸= 0, and the stabilizer of A1 are the diagonal invertible matrices H ⊂ G.
+Then σ12 =e2
+1b2c2 ̸= 0 implies that both b2 and c2 are nonzero. Let g = diag(x,x − 1) for
+somex ∈ ¯F∗. A simple computation shows that g− 1A1g is diagonal and A′
+2 =g− 1A2g has
+b′
+2 =x− 2b2. So, we can solve for x in order to have b′
+2 = 1, as claimed. If A1 and A2 are
+both not diagonalizable, we have case 1.b. In this case, we ma y suppose A1 is already in
+Jordan form. Conjugating A2 with a matrix of the form
+g =
+(
+1 z
+1
+)
+,
+a simple computation shows that we can solve for z in order to obtain b2 = 1. If n = 3 and
+some σ12 ̸= 0, we return to cases 1.a or 1.b. So it remains the case n = 3 and all σ = 0,
+which is 1.c. From Example 2.11 we see that necessarily ∆ 123 ̸= 0 (after an eventual
+rearrangement of terms), and a diagonal conjugation will ac hieve b2 = 1. Finally, when
+A is triangularizable, so by Proposition 2.19 either none or o ne of the terms of A are
+non-semisimple, cases 2.a and 2.b respectively. The forms m entioned will be obtained by
+conjugation with a diagonal invertible matrix. □
+In the above table we have [ A1,A 2] ̸= 0 in all cases, so if g stabilizes (A1,A 2), then g is
+scalar, by Lemma 3.1. Therefore, we have a uniqueness statem ent.
+Proposition 4.4. Let A, B be two sequences in canonical form with [A1,A 2] ̸= 0. Assume
+that (B1,B 2) = (A1,A 2). Then, A ∼ B if and only if A = B.
+4.2. Reconstruction of sequences from invariants. We continue to work over an
+algebraically closed ﬁeld ¯F, and here we restrict to characteristic ̸= 2. Let S ′(¯F) denote
+the subset ofVn(¯F) of semisimple sequences such that A1 is diagonalizable and [A1,A 2] ̸= 0.
+Then S ′(F) consists of irreducible (stable) sequences that can be put in the form 1.a. Let
+¯Φ : S ′(¯F)/G (¯F) → ¯F4n− 3 denote the map
+(4.1) ¯Φ([A]) := (t1,t 11,t 2,t 22,t 12,...,t k,t 1k,t 2k,s 12k...,t n,t 1n,t 2n,s 12n).
+We now describe a process of (re)constructing a sequence fro m its values under the map
+¯Φ. Let v ∈ ¯F4n− 3 be given. We want to ﬁnd A ∈ S ′(¯F) such that ¯Φ([A]) = v.
+Leta1 andd1 (in ¯F) be the roots of the polynomial λ 2−t1λ+ t2
+1− t11
+2 = 0 (the characteristic
+polynomial of a diagonal matrix whose trace is t1 and the trace of its square is t11). If they
+are equal, there is no solution to our problem simply because an A satisfying ¯Φ([A]) = v
+will have either A1 non-diagonalizable or [ A1,A 2] = 0. So, with e1 = a1 − b1 ̸= 0, put
+b1 =c1 = 0, b2 = 1 and
+c2 = t22 − a2
+2 − d2
+2
+2 = 1
+4e2
+1
+⏐
+⏐
+⏐
+⏐
+τ11 τ12
+τ21 τ22
+⏐
+⏐
+⏐
+⏐ ̸= 0,
+(
+a2
+d2
+)
+=
+(
+1 1
+a1 d1
+) − 1 (
+t2
+t12
+)
+.(4.2)
+Then, one easily checks that the pair ( A1,A 2) ∈ V2(¯F) whose entries are a,b,c,d ∈ ¯F2 is in
+canonical form 1.a and satisﬁes ¯Φ([A]) = (t1,t 11,t 2,t 22,t 12). Moreover, this pair is unique
+except for the choice of assigning to a1 or d1 one or the other root of the characteristic
+polynomial. The two possible choices are:
+((
+a1
+d1
+)
+,
+(
+a2 1
+c2 d2
+))
+,
+((
+d1
+a1
+)
+,
+(
+d2 1
+c2 a2
+))
+,
+These pairs are similar (for e1 and c2 both non-zero), with similarity matrix
+(4.3) g =
+(
+1/x
+−x
+)
+, x = √
+−c2.
+
+===== PAGE 19 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 19
+Moreover, up to a non-zero scalar multiple, this is the uniqu e matrix sending one pair to
+the other. Let A∨ :=g · Adenote the sequence obtained by acting with this matrix. Not e
+that [ A] = [ A∨ ] and if A is in canonical form, then so is A∨ . Now, let
+(4.4)
+
+
+
+
+ak
+bk
+ck
+dk
+
+
+
+ =
+
+
+
+
+1 0 0 1
+a1 0 0 d1
+a2 c2 1 d2
+0 −c2e1 e1 0
+
+
+
+
+− 1 
+
+
+
+tk
+t1k
+t2k
+s12k
+
+
+
+ , k = 3,...,n.
+The determinant of this matrix is − 2e2
+1c2, so our hypothesis imply that it is indeed invert-
+ible. Hence the transformation above provides an isomorphi sm of vector spaces, from the
+variables (ak,b k,c k,d k) to the variables ( tk,t 1k,t 2k,s 12k), k = 3,...,n .
+Now, consider the reconstruction of triangularizable sequ ences. Let U ′(¯F) denote the
+subset of Vn(¯F) of triangularizable sequences such that A1 is diagonalizable and [A1,A 2] ̸=
+0 (so that U ′(¯F) ⊂ U \ K ). Deﬁne the map ¯Ψ : U ′(¯F)/G → ¯F2n × Pn− 2, where Pk denotes
+the projective space over ¯F of dimension k, by the formula
+¯Ψ([A]) =
+(
+t1,t 11,...,t k,t 1k,...,t n,t 1n; ψ ′)
+,
+where ψ ′([A]) = [1 : δ13 : · · ·: δ1n] ∈ Pn− 2, δjk := bjek − ejbk assuming A is in upper
+triangular form. Let w ∈ ¯F2n × Pn− 2 be given. Again, let a1 andd1 be the (distinct) roots
+of the characteristic polynomial λ 2 − t1λ + t2
+1− t11
+2 = 0. Then, with e1 =a1 − d1 ̸= 0, put
+b1 = 0, b2 = 1, cj = 0, j = 1,...,n , and
+(
+ak
+dk
+)
+=
+(
+1 1
+a1 d1
+) − 1 (
+tk
+t1k
+)
+,
+bk = − δ1k
+e1
+, k = 3,...,n.
+Then the matrix sequence A with the entries a,b,c,d ∈ ¯F is in triangular canonical form
+(2.a or 2.b) and satisﬁes ¯Ψ([A]) = w, with ψ ′(A) = [1 : δ13 : · · ·:δ1n] ∈ Pn− 2. The other
+solution A′ is obtained by changing e to −e (that is, exchanging a with d). We have.
+Proposition 4.5. The map ¯Φ : S ′(¯F)/G (¯F) → ¯F4n− 3 is injective, and ¯Ψ : U ′(¯F)/G (¯F) →
+¯F2n × Pn− 2 is two-to-one.
+Proof. Let Ac = (A1,A 2,... ) and Bc = (B1,B 2,... ) be canonical forms associated to A, B ∈
+S ′(¯F) respectively. If ¯Φ([Ac]) = ¯Φ([Bc]) then either ( A1,A 2) = ( B1,B 2) or ( A1,A 2) =
+(B1,B 2)∨ . If the ﬁrst situation holds, then Ac = Bc by the isomorphism given by Equation
+(4.4). Hence, Proposition 4.4 shows that A ∼ B . In the second alternative, just replace
+Bc with B∨
+c (usingg in Equation (4.3)) and the conclusion is the same, showing th at ¯Φ is
+injective. The case of ¯Ψ is analogous, although in this case the two possibilities f or a pair
+in triangular canonical form with given values of ( t1,t 11,t 2,t 22) are:
+((
+a1
+d1
+)
+,
+(
+a2 1
+d2
+))
+,
+((
+d1
+a1
+)
+,
+(
+d2 1
+a2
+))
+.
+These pairs are not similar (note e1 ̸= 0), by Lemma 3.6, resulting in ¯Ψ being 2-1. □
+Now, the proof of Theorem 1.14 is easy.
+Proof of Theorem 1.14: Let F be a ﬁeld of characteristic ̸= 2 and ¯F its algebraic closure. We
+have shown that ¯Φ : S ′(¯F)/G (¯F) → ¯F4n− 3 is injective. Then, the map Φ ′ : S ′(F)/G (F) →
+F4n− 3 deﬁned in Equation (1.6), having the same form of ¯Φ, is just its restriction to
+S ′(F)/G (F), being therefore injective as well. The inclusion S ′(F)/G (F) ⊂ S ′(¯F)/G (¯F)
+reﬂects the fact that two sequences in S ′(F), similar over G(¯F), are also similar over G(F),
+by the Noether-Deuring theorem (see eg. [CR] p. 200). The cas e of ¯Ψ is analogous. □
+
+===== PAGE 20 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 20
+Remark 4.6. Finally, we argue that the other cases of semisimple non-com mutative se-
+quences in the table of Theorem 4.3 can also be reconstructed by a simple modiﬁcation
+of the above procedure. In the case 1.b, we substitute the pai r (A1,A 2) by the pair
+(A1 − A2,A 1 +A2), and in the case 1.c (assuming, without loss of generality, that A1 is
+diagonal non-scalar), we perform the substitution ( A1,A 2,A 3) ↦→ (A1,A 2 +A3,A 2 − A3).
+In both cases we end up with a matrix in S ′, that is, the ﬁrst matrix is diagonalizable
+non-scalar and the ﬁrst pair does not commute.
+In conclusion, the only conjugacy classes that the maps Φ ′ and Ψ ′ fail to distinguish
+(not counting the involution e ↔ − e in the Ψ ′ case, and after the reduction to S ′ described
+above) are the following types:
+(
+a b
+a
+)
+,
+(
+a
+a
+)
+, a,b ∈ Fn.
+which have the same value under Φ ′ (note that these are not in the domain of Ψ ′, as they
+are commutative), regardless of b ∈ Fn.
+Appendix A. Triangularization of singlets over R
+In this Appendix, we treat the triangularization problem fo r a single 2 × 2 matrix over
+an integral domain R. We do not claim originality of Proposition A.1 and Lemma A.2
+below, although the author was unable to ﬁnd a suitable refer ence. Their exposition is
+mainly intended to provide self-contained proofs of Theore ms 1.11 and Theorem 2.14.
+When is a single matrix with entries in R triangularizable? Let us write
+(A.1) A =
+(
+a b
+c d
+)
+∈ V1(R), g =
+(
+x z
+y w
+)
+∈ GL2(R).
+Since g is invertible, so is detg =xw − yz, and conjugation of A byg− 1 gives:
+(A.2) g− 1 ·A =g− 1 A g= 1
+xw − yz
+(
+∗ bw2 +ezw − cz2
+cx2 − exy − by2 ∗
+)
+.
+So, triangularizing A amounts to ﬁnding a solution (x,y,z,w ) ∈ R4 to one of the equations
+cx2 − exy − by2 = 0 or bw2 +ezw − cz2 = 0, such that xw − yz is invertible in R. Note
+that both equations are given by the same quadratic form
+Q(x,y ) := cx2 − exy − by2 = 1
+2 (x,y )QA(x,y )T
+associated to matrix
+QA =
+(
+2c −e
+−e − 2b
+)
+.
+The discriminant of Q isδQ := − detQA =e2 + 4bc = tr2A − 4detA, and coincides precisely
+with the discriminant δA of the characteristic polynomial of A.
+Equation (A.2) provides a necessary condition for triangul arization: If A is triangulariz-
+able over R, then its eigenvalues lie in R. Indeed, if g− 1Ag =T for some g ∈ GL2(R) and
+some upper triangular matrix T , δA =δT = (λ 1 − λ 2)2 is a square in R, where λ 1,λ 2 ∈ R
+are the diagonal elements of T , which are also the eigenvalues of A.
+A necessary and suﬃcient condition is the following.
+Proposition A.1. Let A ∈ V1(R) be a 2 × 2 matrix over an integral domain R. A is
+triangularizable if and only if it has an eigenvector of the form (x,y ) ∈ R2, such that
+xR +yR =R (in particular, the ideal (x,y ) is principal).
+Proof. The equation Ag = gT , for some invertible g ∈ G(R) and upper triangular T ,
+means that the ﬁrst column of g is an eigenvector ( x,y ) of A, so that x,y ∈ R and there
+exist w,z ∈ R (forming the second column of g) so that xw − yz is a unit. In particular,
+
+===== PAGE 21 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 21
+xR +yR =R. Conversely, let A be as in (A.1), with an eigenvector ( x,y ) ∈ R2 verifying
+xR +yR =R. From simple computations the eigenvalues of A (both in R) are λ 1 = a+d+r
+2
+andλ 2 = a+d− r
+2 , where r is a square root of δA =e2 − 4bc, and the respective eigenvectors
+are v1 = (λ 1 − d,c ) and v2 = (λ 2 − d,c ) (both in R2). So, without loss of generality, let
+(x,y ) be in the eigenspace of v1: ( x,y ) = α (λ 1 − d,c ) = α ( e+r
+2 ,c ), for some nonzero α
+in the ﬁeld of fractions of R. By hypothesis, there exist z,w ∈ R verifying xw − yz = 1.
+Thus, using the invertible matrix g with columns ( x,y ) and ( z,w ), we have that g− 1Ag
+is upper triangular (with λ 1 and λ 2 in the main diagonal). Indeed, by Equation (A.2) its
+lower left entry is cx2 − exy + −by2 = α2
+4 c(r2 − e2 − 4bc) = 0. □
+The following fact is used in the proof of Theorem 2.14.
+Lemma A.2. Fix nonzero elements x,y in a ﬁeld F. If A ∈ V1(F) is nondegenerate (δA ̸=
+0) and veriﬁes cx2 − exy − by2 = 0 , then A is diagonalizable and one of its eigenvectors
+is (x,y ). In particular, there is another eigenvector (z,w ) ∈ F2 with wx − yz ̸= 0.
+Proof. To satisfy cx2 − exy − by2 = 0, the triple ( b,e,c ) must be a linear combination of
+the vectors ( −x,y, 0) and (0,x,y ). So, the matrix A is given (uniquely up to the addition
+of a scalar) by the triple ( b,e,c ) = ( −zx,zy +wx,wy ), for some z,w ∈ F. Then, a simple
+computation shows that the discriminant of A is a square in F: δA = (wx − zy)2. So A
+is triangularizable over F. Moreover, its eigenvalues are easily checked to be λ 1 =wx and
+λ 2 =yz. Since, by hypothesis δA ̸= 0, the eigenvalues are distinct, so A is diagonalizable
+over F. Also, the eigenvectors are multiples of ( x,y ) and (z,w ), respectively. □
+Appendix B. Canonical Forms and Similarity of Commuting Sequences
+For completeness, we include the following well known descr iption of all canonical forms
+of commuting sequences over an algebraically closed ﬁeld ¯F.
+Theorem B.1. A matrix sequence of length n with coeﬃcients in ¯F is commutative if and
+only if it is similar to a matrix sequence in one of the forms (c alled diagonal or triangular
+forms, respectively (both forms include the scalar sequenc es)):
+A =
+(
+a
+d
+)
+, B =
+(
+a b
+a
+)
+, a,d,b ∈ ¯Fn.
+Proof. The suﬃciency is clear by Lemma 2.1 (condition (2.2) is satis ﬁed because b = 0
+(resp. e = 0) in the ﬁrst (resp. second) case). Conversely, since A is commutative it
+is triangularizable, by Corollary 2.2. Let k ≥ 1 be the smallest integer such that Ak is
+non-scalar. By an appropriate conjugation, one can assume t hat either Ak is diagonal or it
+is written as a single Jordan block (here we are using the assu mption on ¯F). Then lemma
+2.1 implies that A is either in diagonal or in triangular form, as wanted. □
+The following consequence is clear.
+Corollary B.2. Let A and A′ be commutative, both of the same form as described in the
+Theorem above. If A is in diagonal form, then A ∼ A ′ if and only if a =a′ and d =d′ or
+a =d′ and d =a′. If B is in triangular form then B ∼ B ′ if and only if a =a′ and b =λb ′
+for some λ ∈ ¯F \ {0}.
+References
+[A] M. Artin, On Azumaya algebras and ﬁnite dimensional representations of rings , J. Algebra 11
+(1969) 532–563.
+[CR] C. W. Curtis and I. Reiner, Representation Theory of Fin ite Groups and Associative Algebras,
+Pure and Applied Math. XI, John Wiley & Sons, 1962.
+[D] V. Drensky, Deﬁning relations for the algebra of invariants of 2 × 2 matrices, Algebr. Represent.
+Theory 6 (2003), 193-214.
+
+===== PAGE 22 =====
+
+Simultaneous similarity and triangularization of 2 × 2 matrices 22
+[DINH] J. Dubnov, V. Ivanov, Sur l’abaissement du degr´ e des polinˆ omes en aﬃneurs , C. R. (Doklady)
+Acad. Sci. URSS (N.S.) 41 (1943). 95–98. G. Higman, On a conjecture of Nagata , Proc. Cambridge
+Philos. Soc. 52 (1956), 1–4.
+[Fl] C. Florentino, Invariants of 2 × 2 matrices, irreducible SL(2, C) characters and the Magnus trace
+map, Geom. Dedicata 121 (2007) 167-186.
+[Fr] S. Friedland, Simultaneous similarity of matrices , Adv. in Math. 50 (1983) 189-265.
+[Ge] M. Gerstenhaber, On Dominance and Varieties of Commuting Matrices , Ann. Math. 73 (1961)
+324–348.
+[Gu] R. Guralnick, A note on commuting pairs of matrices , Linear and Multilinear Algebra 31 (1992),
+71–75.
+[L] T. Laﬀey, Simultaneous reduction of sets of matrices under similarit y, Linear Algebra Appl. 84
+(1986) 123-138.
+[Mc] N. McCoy, On the characteristic roots of matric polynomials , Bull. Amer. Math. Soc. 42 (1936)
+592-600.
+[Mu] S. Mukai, An introduction to invariants and moduli, Cam bridge U. P. 2003.
+[MFK] D. Mumford, J. Fogarty and F. Kirwan, Geometric Invariant Theory, 3rd Edition, Springer Verlag,
+1994.
+[Paz] A. Paz, An application of the Cayley-Hamilton theorem to matrix pol ynomials in several variables ,
+Linear and Multilinear Algebra 15 (1984) 161-170.
+[Pap] C. J. Pappacena, An upper bound for the length of a ﬁnite-dimensional algebra , J. Algebra 197
+(1997) 535–545.
+[Pr] C. Procesi, The Invariant theory of n × n matrices, Advances in Math. 19 (1976) 306-381.
+[Ra] Yu. Razmyslov, Identities with trace in full matrix algebras over a ﬁeld of c haracteristic zero, Izv.
+Akad. Nauk SSSR Ser. Mat. 38 (1974), 723–756.
+[RR] H. Radjavi and P. Rosenthal, Simultaneous triangulari zation. Universitext. Springer-Verlag, 2000.

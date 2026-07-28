@@ -1,0 +1,2467 @@
+===== PAGE 1 =====
+
+arXiv:1505.07472v2  [math.RA]  21 Apr 2018
+MATRIX COEFFICIENT REALIZATION THEORY OF
+NONCOMMUTATIVE RATIONAL FUNCTIONS
+JURIJ VOL ˇCI ˇC⋆
+Abstract. Noncommutative rational functions, i.e., elements of the universal skew
+ﬁeld of fractions of a free algebra, can be deﬁned through evaluat ions of noncommutative
+rational expressions on tuples of matrices. This interpretation ex tends their traditionally
+important role in the theory of division rings and gives rise to their app lications in
+other areas, from free real algebraic geometry to systems and c ontrol theory. If a
+noncommutative rational function is regular at the origin, it can be d escribed by a linear
+object, called a realization. In this article we present an extension of the realization
+theory that is applicable to arbitrary noncommutative rationas functions and is well-
+adapted for studying matrix evaluations.
+Of special interest are the minimal realizations, which compensate t he absence of a
+canonical form for noncommutative rational functions. The non- minimality of a real-
+ization is assessed by obstruction modules associated with it; they e nable us to devise
+an eﬃcient method for obtaining minimal realizations. With them we des cribe the
+stable extended domain of a noncommutative rational function and deﬁne a numeri-
+cal invariant that measures its complexity. Using these results we d etermine concrete
+size bounds for rational identity testing, construct minimal symme tric realizations and
+prove an eﬀective local-global principle for linear dependence of non commutative ratio-
+nal functions.
+1. Introduction
+As the universal skew ﬁeld of fractions of a free algebra, noncomm utative rational
+functions naturally play a prominent role in the theory of division rings and in noncom-
+mutative algebra in general [ Ami66, Co95, Le74, Li00]. On the other hand, they also arise
+in other areas, such as free real algebraic geometry [ HMV06, OHMP09, HKM13], alge-
+braic combinatorics [ GGR W05, GKLLRT95], systems theory [ BGM05, BGM06, AM07],
+automata theory [ Sch61, Fl74, BR11] and free analysis [ KVV12, KVV14].
+One of the main diﬃculties about working with noncommutative rationa l functions
+is that they lack a canonical form. For noncommutative rational fu nctions analytic at
+0 this can be resolved by introducing linear representations or realizations, as they are
+called in automata theory and control theory, respectively: if /D6 is a noncommutative
+rational function in g arguments with coeﬃcients in a ﬁeld F and deﬁned at (0 ,..., 0),
+then there exist n ∈ N, c ∈ F1× n, b ∈ Fn× 1, and Aj ∈ Fn× n for 1 ≤ j ≤ g, such that
+/D6 (z1,...,z g) = c
+(
+In −
+g∑
+j=1
+Ajzj
+)− 1
+b.
+Date: August 11, 2021.
+2010 Mathematics Subject Classiﬁcation. Primary 16S85, 47A56; Secondary 16R50, 93B20.
+Key words and phrases. Noncommutative rational function, universal skew ﬁeld, division rin g, realiza-
+tion, generalized series, minimization, rational identity, extended d omain, symmetric noncommutative
+rational function.
+⋆ Research supported by The University of Auckland Doctoral Scho larship.
+1
+
+===== PAGE 2 =====
+
+2 J. VOL ˇCI ˇC
+In general, /D6 admits various realizations; however, those with minimal n are similar up
+to conjugation (see Deﬁnition 3.4) and thus unique in some sense. Throughout the paper
+we address these results as the classical representation or realization theory and refer
+to [ BGM05, BR11] as the main sources. Applications of such realizations also appear
+outside control and automata theory, for example in free probab ility [And13, BMS15]. Of
+course, this approach leaves out noncommutative rational funct ions that are not deﬁned
+at any scalar point, e.g. ( z1z2 − z2z1)− 1.
+One way of adapting to the general case is to consider realizations o f noncommutative
+rational functions over an inﬁnite-dimensional division ring as in [ Co06, Section 7.6] or
+[CR94]. The latter paper considers generalized series over an inﬁnite-dime nsional division
+ring and corresponding realization theory. However, in the aforem entioned setting of
+systems theory, free (real) algebraic geometry and free analysis , noncommutative rational
+functions are applied to tuples of matrices or operators on ﬁnite-d imensional spaces.
+Hence the need for a representation of noncommutative rational functions that is adapted
+to the matrix setting.
+The aim of this paper is to develop a comprehensive realization theory that is ap-
+plicable to arbitrary noncommutative rational functions and is base d on matrix-valued
+evaluations. The basic idea is to expand a noncommutative rational f unction in a gener-
+alized power series about some matrix point in its domain. Analogously t o the classical
+setting, we consider linear representations of rational generalize d series; we reserve the
+term “realization” for a representation corresponding to an expa nsion as above. If a
+noncommutative rational function /D6 is deﬁned at p = (p1,...,p g) ∈ Mm(F)g, then there
+exist n ∈ N, c ∈ Mm(F)1× n, b ∈ Mm(F)n× 1, and Cjk,B jk ∈ Mm(F)n× n (ﬁnite number of
+them) such that
+(1.1)
+/D6 (z1,...,z g) = c
+(
+In −
+g∑
+j=1
+∑
+k
+Cjk(zj − pj)Bjk
+)− 1
+b
+holds under the appropriate interpretation (see Subsection 5.1 for more precise state-
+ment). Such a description is called a Sylvester realization of /D6 about p of dimension
+n. Of particular interest are the Sylvester realizations of /D6 with the smallest possible
+dimension.
+1.1. Main results and reader’s guide. In Section
+2 we introduce noncommutative
+rational functions as equivalence classes of noncommutative ratio nal expressions with
+respect to their evaluations on tuples of matrices.
+In Section 3 we deﬁne generalized series and linear representations. By Theore m
+3.8, rational generalized series are precisely those that admit a linear r epresentation; a
+concrete construction is given in Subsection 3.3. Evaluations of rational generalized series
+over a matrix ring are discussed in Subsection 3.4.
+Section 4 is concerned with the properties of reduced, minimal, and totally red uced
+representations. Proposition 4.7 gives us an algorithm to produce reduced represen-
+tations, while Theorem 4.13 implies that they are not far away from being minimal.
+Subsection 4.3 oﬀers a module theoretic replacement for the classical Hankel mat rix.
+Our main results regarding noncommutative rational functions are given in Section 5.
+After deﬁning the realization of a noncommutative rational functio n about a matrix point
+in its domain, we prove in Theorem 5.5 that we obtain totally reduced realizations about
+“almost every” point using the reduction algorithm from Section 4. By Theorem 5.10,
+the dimensions of minimal realizations are independent of the choice o f the expansion
+
+===== PAGE 3 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 3
+point. Thus we can deﬁne the Sylvester degree of a noncommutative rational function /D6
+as the dimension of its minimal realization, which in some sense measure s /D6 ’s complexity.
+Furthermore, Corollary 5.9 describes the stable extended domain of a noncommutative
+rational function using its totally reduced realization.
+Applications of the derived theory are given in Section 6. In Subsection 6.1 we ad-
+dress rational identities and provide explicit size bounds for the rat ional identity testing
+problem that can be stated without the notion of realization. Next w e obtain an alge-
+braic proof of the local-global principle for linear dependence of non commutative rational
+functions [ CHSY03]. In contrast with previous proofs, we obtain concrete size bound s
+for testing linear dependence; see Theorem 6.5. Lastly, Subsection 6.3 is devoted to
+symmetric realizations whose existence and properties are gather ed in Theorem 6.8.
+1.2. Diﬀerences with the classical theory. The cornerstone of this paper are rec-
+ognizable generalized series and their linear representations, which can also be of in-
+dependent interest. It is thus understandable that there is some resemblance with the
+classical theory. However, there are several obstacles arising f rom working with matrix
+rings instead of ﬁelds which do not appear in the classical theory [ BR11, BGM05].
+The notions and results from Section 3 on noncommutative generalized series over an
+arbitrary algebra are a natural generalization of the correspond ing results for noncommu-
+tative power series over a ﬁeld as presented e.g. in [ BR11, Chapter 1]. The biggest change
+required is in the deﬁnitions of shift operators and stable modules sin ce the variables and
+coeﬃcients do not commute in our setting.
+The process of minimization, which is treated in Section 4, demands much more care
+when dealing with the coeﬃcients belonging to a matrix ring. We have to operate with
+modules, not vector spaces as in the classical case. While the latter always have bases,
+this is not true for modules over matrix rings, so instead we have to w ork with minimal
+generating sets and maximal linearly independent sets. This has ser ious consequences.
+For example, reduced representations (also called controllable and observable realizations
+[BGM05, Sections 5 and 6] in control theory) and minimal representations coincide in
+the classical theory, whence we have a method of producing minimal representations. In
+our setting, controllability and observability are replaced by conditio ns on obstruction
+modules: a realization is reduced if its obstruction modules are torsion module s, and is
+totally reduced if its obstruction modules are trivial; see Deﬁnition 4.2. Totally reduced
+representations are minimal, and the latter are reduced. However , in general these fam-
+ilies of linear representations are distinct. Furthermore, while we ca n use an eﬃcient
+algorithm to produce reduced representation, this in general doe s not hold for minimal
+ones. On the other hand, all totally reduced representations are similar and this fails for
+arbitrary minimal representations. We refer to Subsection 4.2 for precise statements and
+examples.
+Acknowledgment. The author would like to thank his supervisor Igor Klep for many
+long discussions and his fruitful suggestions.
+2. Preliminaries
+We begin by establishing the general notation and terminology regar ding noncom-
+mutative rational functions. We deﬁne them through the evaluatio ns of noncommutative
+rational expressions on matrices, following [
+KVV12, Section 2] (also cf. [ HMV06, Appen-
+dix A]), where a more detailed analysis can be found. For other classic al approaches, see
+
+===== PAGE 4 =====
+
+4 J. VOL ˇCI ˇC
+[Row80, Co95]; alternative constructions of the skew ﬁeld of noncommutative ra tional
+functions employ a free group [ Le74] or a free Lie algebra [ Li00].
+Throughout the paper let F be a ﬁeld of characteristic 0. This assumption is su-
+perﬂuous to some extent; the reader can observe that the resu lts of Section 4 hold for
+any ﬁeld F, and that most of the results of Section 4 hold even if F is only a unital
+commutative ring.
+A ﬁnite set z = {z1,...,z g} is called an alphabet with letters zj. Let ⟨z⟩ be the
+free monoid generated by z. An element w ∈ ⟨ z⟩ is called a word over z and |w| ∈
+N ∪ { 0} denotes its length. Let F⟨z⟩ be the free associative F-algebra generated by z; its
+elements are (nc) polynomials . Later on, we also consider alphabets with letters xj or
+yj. A syntactically valid combination of nc polynomials with coeﬃcients in F, arithmetic
+operations +, ·, − 1 and parentheses (, ) is called a (nc) rational expression . The set of
+all rational expressions is denoted RF(z). For example, (1 + z− 1
+3 z2)− 1 + 1,z1 + (−z1) and
+0− 1 are elements of RF(z).
+Let m ∈ N. Every polynomial p ∈ F⟨z⟩ can be naturally evaluated at a point a =
+(a1,...,a g) ∈ Mm(F)g by replacing zj withaj and 1 with Im; the result is p(a) ∈ Mm(F).
+Moreover, we can naturally extend the evaluations of polynomials to the evaluations of
+rational expressions. Given r ∈ R F(z), then r(a) is deﬁned in the obvious way if all
+inverses appearing in r exist at a. The set of all such a ∈ Mm(F)g is denoted dom mr and
+called the domain of r overMm(F). Observe that dom mr is an open set in the Zariski
+topology on Mm(F)g. If dom mr ̸= ∅ for some m ∈ N, then dom kmr ̸= ∅ for all k ∈ N.
+To acquire the notion of a generic evaluation, we require few concep ts from the theory
+of polynomial identities for matrix rings. Let
+F[t] = F
+[
+t(k)
+ij : 1 ≤ i,j ≤ m, 1 ≤ k ≤ g
+]
+be the ring of polynomials in gm2 commutative indeterminates and let F(t) be its ﬁeld
+of fractions. The distinguished matrices
+Tk =
+(
+t(k)
+ij
+)
+ij
+∈ Mm (F[t])
+are called the generic m × m matrices and the unital k-subalgebra in Mn(F[t]) generated
+by T1,...,T g is called the ring of generic matrices of size m [Pro76, Fo84]. Its central
+closure in Mn(F(t)) is a division algebra, denoted UD m;g and called the generic division
+algebra of degree m; we refer to [ Row80, Section 3.2] or [ Sa99, Chapter 14] for a good
+exposition.
+Let r be a nc rational expression; as before, we can attempt to evaluat e it on the
+tuple T = (T1,...,T g). If r(T ) ∈ Mm (F(t)) exists, then obviously r(T ) ∈ UDm;g; we say
+that this matrix is the generic evaluation of r of size m. The intersection of the domains
+of the entries in r(T ) is the extended domain of r overMm(F) and is denoted edom mr.
+Let
+domr =
+⋃
+m∈ N
+dommr, edomr =
+⋃
+m∈ N
+edommr.
+While domr is closed under direct sums, that is,
+a′, a′′∈ domr ⇒ a′ ⊕ a′′=
+(
+a′ 0
+0 a′′
+)
+∈ domr,
+this does not hold for edom r. Hence it is more convenient to work with the stable
+extended domain of r
+edomstr =
+⋃
+m∈ N
+edomst
+mr,
+
+===== PAGE 5 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 5
+where
+edomst
+mr =
+
+
+
+a ∈ edommr :
+k
+  
+a ⊕ · · · ⊕a ∈ edomkmr for all k ∈ N
+
+
+ .
+By [
+Vol+, Proposition 3.3], every stable domain is closed under direct sums. Cle arly we
+have domr ⊆ edomstr ⊆ edomr for every r ∈ R F(z).
+A rational expression is degenerate if dom r = ∅ and nondegenerate otherwise. On
+the set of nondegenerate rational expressions we deﬁne a relatio n r1 ∼ r2 if and only if
+r1(a) = r2(a) for all a ∈ domr1 ∩ domr2. Since F is inﬁnite, previous remarks imply
+that ∼ is an equivalence relation. If r is a nondegenerate rational expression and r ∼ 0,
+then we say that r is a rational identity . Observe that since UD m;g is a division ring,
+r ∈ R F(z) is degenerate or a rational identity if and only if r− 1 is degenerate.
+Finally, we deﬁne (nc) rational functions as the equivalence classes of nondegenerate
+rational expressions. By [ KVV12, Proposition 2.1], they form a division ring, denoted
+F (<z )>. The latter plays an important role in the theory of division rings since it is the
+universal skew ﬁeld of the free algebra F⟨z⟩ by [ KVV12, Proposition 2.2]; we refer to
+[Co95, Chapter 4]) for details about noncommutative localizations. For ev ery /D6 ∈ F (<z )>
+let dom m
+/D6 be the union of dom mr over all representatives r ∈ R F(z) of /D6 . In a similar
+fashion we deﬁne edom st
+m
+/D6 , dom /D6 and edom st
+/D6 .
+3. Linear representations
+In this section we introduce generalized series and linear represent ations. The main
+result is Theorem 3.8, which shows that the classes of rational and recognizable series
+coincide. In Subsection 3.4 we discuss evaluations of rational series.
+3.1. Generalized series. We start with basic and quite general concepts that are re-
+quired throughout the paper. Let A be a central unital F-algebra and let x = {x1,...,x g}
+be a ﬁnite alphabet, i.e., a set of freely noncommuting letters.
+Deﬁnition 3.1. The free product of unital F-algebras A⟨
+x⟩ = A ∗ F F⟨x⟩ is called the
+algebra of generalized polynomials over A. The algebra of generalized (power) series over
+A, denoted by A⟨ ⟨x⟩ ⟩, is deﬁned as the completion of A⟨x⟩ with respect to the ( x)-adic
+topology. Comparing with the notation in [ Co95, Co06] we have A⟨x⟩ = AF⟨x⟩ and
+A⟨ ⟨x⟩ ⟩= AF⟨ ⟨x⟩ ⟩.
+If S ∈ A⟨ ⟨x⟩ ⟩is written as
+(3.1) S =
+∑
+w∈⟨ x⟩
+nw∑
+i=1
+a(0)
+w,iw1a(1)
+w,iw2 · · ·w|w|a(|w|)
+w,i ,
+then let
+[S,w ] =
+∑
+i
+a(0)
+w,iw1a(1)
+w,iw2 · · ·w|w|a(|w|)
+w,i .
+This is a well-deﬁned element of A⟨
+x⟩ even though the expansion ( 3.1) is not uniquely
+determined. The support of S is supp S = {w : [S,w ] ̸= 0 }. A series is a polynomial if
+and only if its support is ﬁnite. It is easy to check that a series S is invertible in A⟨ ⟨x⟩ ⟩
+if and only if the constant term [ S, 1] is invertible in A. In particular, if [ T, 1] = 0 for
+T ∈ A⟨ ⟨x⟩ ⟩, then
+(1 − T )− 1 =
+∑
+k≥ 0
+T k.
+
+===== PAGE 6 =====
+
+6 J. VOL ˇCI ˇC
+Deﬁnition 3.2. Rational operations in A⟨ ⟨x⟩ ⟩are the sum, the product and the inverse.
+A series is rational if it belongs to the rational closure of A⟨x⟩ in A⟨ ⟨x⟩ ⟩.
+Forx ∈ x let Ax denote the A-bimodule generated by x, i.e., the set of homogeneous
+linear generalized polynomials in x over A. More generally, let Aw = Aw1 · · · Aw|w| for
+w ∈ ⟨x⟩ (here we set A1 = A).
+Remark 3.3. For future reference we note that Aw and A⊗| w| are isomorphic as A-
+bimodules; in particular, as a A-bimodule, Aw does not depend on the letters in w,
+but only on the length of w.
+Deﬁnition 3.4. A series S is recognizable if for some n ∈ N there exist c ∈ A 1× n,
+b ∈ A n× 1 and Ax ∈ (Ax)n× n for x ∈ x such that [S,w ] = cAwb for all w ∈ ⟨x⟩, where
+the notation
+Aw =Aw1 · · ·Aw|w| ∈ A w
+is used. In this case ( c,A, b) is called a (linear) representation of dimension n of S.
+Two representations ( c1,A 1, b1) and ( c2,A 2, b2) of dimension n are similar if there
+exists an invertible matrix P ∈ A n× n (called a transition matrix ) such that
+c2 = c1P − 1, A 2 =PA 1P − 1, b2 =P b1.
+The only series with a zero-dimensional representation is the zero s eries 0.
+3.2. Rationality equals recognizability. In this subsection we prove that rational
+and recognizable series coincide using the notion of a stable module.
+Let L : ⟨x⟩ → EndA−A (A⟨ ⟨x⟩ ⟩) be the map deﬁned by
+(3.2) LvS =
+∑
+w∈⟨ x⟩
+[S,vw ].
+We observe that Luu′S =Luu′(LuS) and Luu′(TS ) = TL u′S for u,u ′ ∈ ⟨x⟩ and T ∈ A u.
+It is also easy to check that the map Lx for x ∈ x has derivative-like properties
+(3.3) Lx(ST ) = (LxS)T + [S, 1]LxT, L xU − 1 = − [U, 1]− 1(LxU)U − 1
+for S,T,U ∈ A⟨ ⟨x⟩ ⟩and U invertible.
+Deﬁnition 3.5. A left A-submodule M ⊆ A⟨ ⟨ x⟩ ⟩is stable if LxS ∈ A xM for every
+x ∈ x and S ∈ M .
+Proposition 3.6. A series S ∈ A⟨ ⟨x⟩ ⟩is recognizable if and only if it is contained in a
+stable ﬁnitely generated left A-submodule of A⟨ ⟨x⟩ ⟩.
+Proof. (⇒ ) Let S be a recognizable series and ( c,A, b) its linear representation. For
+i = 1,...,n deﬁne Si ∈ A⟨ ⟨x⟩ ⟩by [Si,w ] = (Awb)i and let M be the left A-submodule
+generated by the Si. Then obviously S ∈ M . Since
+[LxSi,xw ] = [Si,xw ] = (Axwb)i = (AxAwb)i =
+∑
+j
+Ax
+ij[Sj,w ]
+for every w, we have
+LxSi =
+∑
+j
+Ax
+i,jSj.
+Therefore M is stable.
+(⇐ ) Let M be a stable A-submodule generated by ﬁnitely many elements Si, and
+containingS. Then
+S =
+∑
+biSi
+
+===== PAGE 7 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 7
+for some bi ∈ A . Furthermore, for every x ∈ x there exists Ax ∈ (Ax)n× n such that
+LxSi =
+∑
+j
+Ax
+ijSj.
+By induction, it is easily proved that
+LvSi =
+∑
+j
+Av
+ijSj
+holds for every v. Lastly, set ci = [Si, 1]. Then
+[Si,w ] = [LwSi,w ] =
+∑
+j
+Aw
+ij[Sj, 1] = (Awb)i
+and so [S,w ] = cAwb. □
+A this point, Proposition
+3.6 is just an intermediate step towards Theorem 3.8;
+however, we shall return to it again in Subsection 4.3.
+Lemma 3.7. LetM ∈ (A⟨ ⟨x⟩ ⟩)n× n and suppose that the constant terms of all its entries
+are 0. Then I − M is invertible and the entries of (I − M)− 1 lie in the rational closure
+of F and the entries of M.
+Proof. We prove the statement by induction on n. The the case n = 1 holds by charac-
+terization of invertible elements in A⟨ ⟨x⟩ ⟩. Assume the lemma holds for all matrices of
+this kind and whose size is less than n. We decompose M into four blocks
+M =
+(
+A B
+C D
+)
+with square matrices A andD. By induction hypothesis I − A andI − D are invertible.
+Moreover, the entries of matrices
+A +B(I − D)− 1C, D +C(I − A)− 1B
+also have zero constant terms, so
+(I − A) − B(I − D)− 1C, (I − D) − C(I − A)− 1B
+are also invertible. By a known result about the inverse of a block mat rix, see e.g. [ HJ85,
+Subsection 0.7.3], I − M is invertible and its inverse equals
+(
+((I − A) − B(I − D)− 1C)− 1 (I − A)− 1B(C(I − A)− 1B − (I − D))− 1
+(C(I − A)− 1B − (I − D))− 1CA − 1 ((I − D) − C(I − A)− 1B)− 1
+)
+.
+Now it is also clear that the entries of this matrix lie in the rational closu re of F and the
+entries of M. □
+Theorem 3.8. A series is rational if and only if it is recognizable.
+Proof. (⇒ ) For P ∈ A⟨x⟩ and w ∈ suppP choose a(j)
+w,i ∈ A such that
+[P,w ] =
+nw∑
+i=1
+a(0)
+w,iw1a(1)
+w,iw2 · · ·w|w|a(|w|)
+w,i .
+Then
+{wja(j+1)
+w,i wj+1 · · ·w|w|a(|w|)
+w,i : w ∈ suppP, 1 ≤ i ≤ nw, j ≥ 1}
+is a stable ﬁnite set. Let M be the left A-module generated by it; then M is stable and
+P ∈ M . Thus P is recognizable by Proposition
+3.6.
+
+===== PAGE 8 =====
+
+8 J. VOL ˇCI ˇC
+Let S and T be recognizable series; by Proposition 3.6 they belong to some stable
+ﬁnitely generated left A-modules M and N . Left A-module M + N is obviously stable
+and ﬁnitely generated. Also the left A-module MT + N is ﬁnitely generated and stable
+by ( 3.3). Since S +T ∈ M + N and ST ∈ M T + N , the series S +T and ST are
+recognizable by Proposition 3.6.
+Assume S is invertible and let M be as in previous paragraph. The left A-module
+AS− 1 + MS− 1 is ﬁnitely generated and stable, because LxS− 1 = − [S, 1]− 1(LxS)S− 1 and
+Lx(S′S− 1) = (LxS′ − [S′, 1][S, 1]− 1LxS)S− 1
+for S′ ∈ M by ( 3.3). Also S− 1 ∈ A S− 1 + MS− 1, so the series S− 1 is recognizable by
+Proposition 3.6.
+Therefore any rational series is recognizable by Deﬁnition 3.2.
+(⇐ ) Let S be a recognizable series with representation ( c,A, b) of dimension n and
+consider
+M =
+∑
+x∈ x
+Ax ∈ (A⟨x⟩)n× n.
+This matrix satisﬁes the assumptions of Lemma 3.7, so I − M is invertible and its entries
+are rational series. Therefore
+S =
+∑
+w
+cAwb = c
+(∑
+w
+Aw
+)
+b = c
+(∑
+k≥ 0
+M k
+)
+b = c (I − M)− 1 b
+is a rational series. □
+Remark 3.9. If A = F, then our terminology and results compare with classical repre-
+sentation theory of series as presented in [ BR11, Chapter 1]. For example, our notation
+and the notation in [ BR11, Chapter 1] are related via [ S,w ] = (S,w )w, and the role of
+Lv is taken by v− 1S := ∑
+w(S,vw )w. Proposition 3.6 and Theorem 3.8 and their proofs
+are natural analogs of [ BR11, Proposition 1.5.1 and Theorem 1.7.1].
+3.3. Arithmetics of representations. As already seen in the previous subsection, ev-
+ery recognizable series is rational by Theorem 3.8. In this subsection we start with some
+observations about elementary polynomials and then present conc rete representations
+corresponding to the rational operations in Theorem 3.10 following the ideas in [ BGM05,
+Section 4].
+The constant 1 has the representation (1 , 0, 1) of dimension 1. Let a ∈ A ; then xi +a
+has the representation
+(3.4)
+((1 a)
+,
+(
+0 δijxj
+0 0
+)
+,
+(
+0
+1
+))
+of dimension 2, where δij is the Kronecker’s delta. If S has the representation ( c,A, b),
+then aS and Sa have representations (ac,A, b) and ( c,A, ba), respectively.
+Theorem 3.10. Fori ∈ { 1, 2} letSi be a recognizable series with representation (ci,A i, bi)
+of dimension ni andS be an invertible recognizable series with representation (c,A, b) of
+dimension n. Then:
+(1) S1 +S2 is recognizable with a representation
+(3.5)
+((c1 c2
+)
+,
+(
+A1 0
+0 A2
+)
+,
+(
+b1
+b2
+))
+of dimension n1 +n2;
+
+===== PAGE 9 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 9
+(2) S1S2 is recognizable with a representation
+(3.6)
+((c1 c1b1c2
+)
+,
+(
+A1 A1b1c2
+0 A2
+)
+,
+(
+0
+b2
+))
+of dimension n1 +n2;
+(3) S− 1 is recognizable with a representation
+(3.7)
+((−a− 1c a− 1)
+,
+(
+A(I − ba− 1c) Aba− 1
+0 0
+)
+,
+(
+0
+1
+))
+of dimension n + 1, where a = [S, 1].
+Proof. (1) This is clear since
+[S1 +S2,w ] = [S1,w ] + [S2,w ] = c1Aw
+1 b1 + c2Aw
+2 b2 =
+(c1 c2
+)
+·
+(
+Aw
+1 0
+0 Aw
+2
+)
+·
+(
+b1
+b2
+)
+.
+(2) If w =w1 · · ·wℓ, let Mj =A
+wj
+1 , Nj =A
+wj
+2 and Q = b1c2. Since
+[S1S2,w ] =
+∑
+uv=w
+[S1,u ][S2,w ] = c1b1c2Aw
+2 b2 + c1
+
+ ∑
+uv=w, |u|>0
+Au
+1b1c2Av
+2
+
+ b2
+= (c1Q)N1 · · ·Nℓc2 + c1
+( ℓ∑
+k=1
+M1 · · ·MkQNN +1 · · ·Nℓ
+)
+b2,
+it is enough to prove the equality
+ℓ∏
+j=1
+(
+Mj MjQ
+0 Nj
+)
+=
+(∏ℓ
+j=1Mj
+∑ℓ
+k=1
+(∏k
+j=1Mj
+)
+Q
+(∏ℓ
+j=k+1Nj
+)
+0 ∏ℓ
+j=1Nj
+)
+and this can be easily done by induction on ℓ.
+(3) If w = w1 · · ·wℓ, let Mj = Awj and Q = ba− 1c. The statement is proved by
+induction on ℓ. It obviously holds for ℓ = 0, so let ℓ ≥ 1. Note that representation (
+3.7)
+yields a series T with
+[T,w ] = −a− 1cAw1(I − ba− 1c) · · ·Awℓ− 1(I − ba− 1c)Awℓba− 1.
+By the inductive step we have
+[S− 1,w ] = −
+∑
+uv=w,u ̸=1
+a− 1[S,u ][S− 1,v ]
+= −
+∑
+uv=w,u ̸=1
+a− 1[S,u ][T,v ]
+= −a− 1c
+(
+M1 · · ·Mℓ −
+l− 1∑
+i=1
+M1 · · ·MiQMi+1(I − Q) · · ·Mℓ− 1(I − Q)Mℓ
+)
+ba− 1
+= −a− 1cM1(I − Q) · · ·Mℓ− 1(I − Q)Mℓba− 1
+= [T,w ]
+and thus the statement holds. □
+
+===== PAGE 10 =====
+
+10 J. VOL ˇCI ˇC
+3.4. Evaluations of rational series. In this subsection let A = Mm(F). A combi-
+nation of rational operations and generalized polynomials that repr esents an element of
+Mm(F)⟨ ⟨x⟩ ⟩is called a generalized rational expression over Mm(F) or shortly a gr expres-
+sion. Therefore each gr expression is a rational series, but a ratio nal series can be written
+as a gr expression in diﬀerent ways. For example, x− 1 for x ∈ x is not a gr expression
+since x ∈ Mm(F)⟨ ⟨x⟩ ⟩is not invertible in Mm(F)⟨ ⟨x⟩ ⟩; on the other hand, (1 − x)− 1 and
+1 + (1 − x)− 1 − 1 are diﬀerent gr expressions but yield the same rational series, na mely∑
+k≥ 0xk.
+Let s ∈ N and consider the inclusion
+(3.8) ι :Mm(F) → Mms(F), a ↦→ Is ⊗ a,
+where ⊗ is the Kronecker product. We can now evaluate generalized polynom ials over
+Mm(F) in Mms(F) using ι in a natural way. Of course, one could choose a diﬀerent
+inclusionMm(F) → Mms(F) to deﬁne these evaluations. However, all such inclusions are
+conjugate by the Skolem-Noether theorem [ Row80, Theorem 3.1.2] and the corresponding
+evaluations thus exhibit the same behavior. Therefore we establish the convention to
+always use ι.
+Furthermore, we can inductively deﬁne the domain dom msS ⊆ Mms(F)g and the
+evaluation S(q) at q ∈ dommsS for any gr expression S, similarly as in Section 2. By
+the deﬁnition, every gr expression S is deﬁned in 0 and S(0) = [S, 1]. We also deﬁne
+domS = ∪ s∈ N dommsS.
+Since
+∑
+w
+cAwb = c
+(
+I −
+∑
+x
+Ax
+)− 1
+b
+by the proof of Theorem 3.8, we can also consider an evaluation of the linear representa-
+tion by evaluating the entries of matrix I − ∑
+xAx at the points in Mms(F)g where the
+resulting matrix is invertible. Of course, each linear representation yields at least one gr
+expression because the entries of the inverse of I − ∑
+xAx can be calculated as in the
+proof of Lemma 3.7. This gr expression might have a smaller domain, but where deﬁned,
+its evaluation equals the evaluation of the linear representation.
+For 1 ≤ k ≤ g let Tk be the generic ms × ms matrices. If a gr expression S is
+evaluated at (T1,...,T g), we get an element of Mms(F(t(k)
+ij )). But S can be also evaluated
+at (T1,...,T g) as a series resulting in an element of Mm(F⟨ ⟨t(k)
+ij ⟩ ⟩). If we expand the
+commutative rational functions of the former matrix in a formal co mmutative power
+series about 0, we get the latter matrix.
+Since F is inﬁnite, a commutative rational function deﬁned at 0 evaluates to 0 wher-
+ever deﬁned if and only if its formal power series about 0 is the zero s eries. Thus the
+previous discussion implies that the evaluation of a gr expression S at the generic tuple
+depends only on S as the series. Therefore all gr expressions and linear representa tions
+of a given rational series yield the same evaluations wherever deﬁne d.
+Deﬁnition 3.11. Let S be a rational series. The matrix S(T1,...,T g) ∈ Mms(F(t(k)
+ij ))
+is called the generic evaluation of a series S at the generic matrices of size ms, and the
+intersection of the domains of its entries is denoted edom msS ⊆ Mms(F)g. Let
+edomst
+msS =
+
+
+
+q ∈ edommsS :
+k
+  
+q ⊕ · · · ⊕q ∈ edomkmsS for all k ∈ N
+
+
+ ;
+
+===== PAGE 11 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 11
+the set
+edomstS =
+⋃
+s∈ N
+edomst
+msS
+is called the stable extended domain of S.
+Although not addressed here, one can consider convergence of a generalized series
+with respect to norm topology if F ∈ { R, C}; from this analytical point of view, eval-
+uations of generalized series can be studied in a much wider sense. Fo r an elaborate
+exposition we refer to [
+KVV14, Chapter 8] or [ Voi04, Voi10].
+We continue with a short review of the connection between nc polyno mials over F
+and generalized polynomials over Mm(F). Following [ Co95, Section 1.7], a m × m matrix
+ring is a ring R with m2 elementsEij ∈ R, called the matrix units, satisfying
+EijEkl =δjkEil,
+m∑
+i=1
+Eii = 1,
+and a homomorphism of m × m matrix rings is a homomorphism of rings that preserves
+the matrix units. For example, Mm(F)⟨x⟩ and Mms(F) are m × m matrix rings with
+the matrix units eij andeij ⊗ Is, respectively, where eij are the standard matrix units in
+Mm(F). Moreover, we have
+HomMm(Mm(F)⟨x⟩,M ms(F)) ∼= HomMm(Mm(Wm(F⟨x⟩)),M m(Ms(F)))
+∼= Hom(Wm(F⟨x⟩),M s(F)),(3.9)
+where Wm denotes the matrix reduction functor (see [
+Co95, Section 1.7]). For a free
+algebra we have
+Wm(F⟨x⟩) = F⟨x⟩,
+where
+x = {x(k)
+ij : 1 ≤ i,j ≤ m, 1 ≤ k ≤ g}
+is an alphabet. The ﬁrst isomorphism in ( 3.9) follows from the isomorphism
+(3.10) ψ :Mm(F)⟨x⟩ → Mm(F⟨x⟩), e iıxkej ↦→ x(k)
+ıeij.
+The second isomorphism in ( 3.9) is a consequence of the equivalence between the category
+of rings and the category of m × m matrix rings [ Co95, Theorem 1.7.1].
+Proposition 3.12. If f ∈ Mm(F)⟨x⟩ is of degree h and vanishes on matrices of size
+m⌈h+1
+2 ⌉, then f = 0.
+Proof. Set s = ⌈h+1
+2 ⌉ and write
+f =
+∑
+|w|≤ h
+∑
+i
+a(0)
+w,iw1a(1)
+w,iw2 · · ·w|w|a(|w|)
+w,i
+for a(ℓ)
+w,i ∈ Mm(F). Then
+∑
+|w|≤ h
+∑
+i
+(
+Is ⊗ a(0)
+w,i
+)
+pw1
+(
+Is ⊗ a(1)
+w,i
+)
+pw2 · · ·pw|w|
+(
+Is ⊗ a(|w|)
+w,i
+)
+= 0
+for all p ∈ Mms(F)g by the assumption. By the Skolem-Noether theorem [
+Row80, Theo-
+rem 3.1.2], there exists q0 ∈ Mms(F) such that Is ⊗ a =q0(a⊗ Is)q− 1
+0 for everya ∈ Mm(F).
+Therefore ∑
+|w|≤ h
+∑
+i
+(
+a(0)
+w,i ⊗ Is
+)
+pw1
+(
+a(1)
+w,i ⊗ Is
+)
+pw2 · · ·pw|w|
+(
+a(|w|)
+w,i ⊗ Is
+)
+= 0
+
+===== PAGE 12 =====
+
+12 J. VOL ˇCI ˇC
+for all p ∈ Mms(F)g. Hence Φ( f ) = 0 for every Φ ∈ HomMm(Mm(F)⟨x⟩,M ms(F)) and
+thus Ψ(ψ (f )) = 0 for every Ψ ∈ Hom(Wm(F⟨x⟩),M s(F)). Since isomorphism ψ preserves
+polynomial degree and there are no nonzero polynomial identities on Ms(F) of degree less
+than 2s ≥ h (see e.g. [ Row80, Lemma 1.4.3]), we have ψ (f ) = 0 and ﬁnally f = 0. □
+Proposition 3.13. If a gr expression S over Mm(F) vanishes on its domain, then S is
+the zero series.
+Proof. Let s ∈ N be arbitrary and let
+T = (T1,...,T g) be the tuple of generic ms × ms
+matrices. Then S(T ) is a matrix of commutative rational functions and the matrix of
+their expansions about p is
+M(T ) =
+∑
+w
+[S,w ](T ).
+The formal diﬀerentiation of commutative power series yields
+(3.11) d
+dthM
+(
+tT
+)⏐
+⏐
+⏐
+t=0
+=h!
+∑
+|w|=h
+[S,w ](
+T ).
+As S vanishes on dom msS, we have M(T ) = 0; therefore the left-hand side of ( 3.11)
+equals 0 for every h, hence the same holds for the right-hand side of ( 3.11). Since∑
+|w|=h[S,w ] is a generalized polynomial of degree h ands is arbitrary, we have [S,w ] = 0
+for all w ∈ ⟨x⟩ by Proposition 3.12. □
+Aside from [ KVV14, Chapter 8], comparable analytic versions of Proposition 3.13
+can also be found in [ Voi10, Section 13] and [ KˇS14, Section 4].
+4. Minimization
+Up until now the algebra A was quite general (except in Subsection 3.4). Since
+our motivation comes from studying nc rational functions, which ar e most often studied
+through their evaluations on division rings or matrices, we will restric t A to being a
+simple Artinian F-algebra. Thus the ﬁrst subsection revises some of the propertie s of
+these rings.
+Later on, we deﬁne three special types of representations: red ucible, minimal and
+totally reducible representations, which have parallels in the classica l theory (compare
+with controllability, observability and minimality in [ BGM05, Sections 5, 6, 9], [ HMV06,
+Subsection 4.1.1] or [ BR11, Section 2.2]). The main results are Proposition 4.7, which
+provide us with a method of ﬁnding reduced representations, and T heorem 4.13, which
+asserts that reduced representations are not far away from min imal and that totally
+reduced representations are unique up to similarity.
+Finally, we relate the dimension of minimal representations to the ran k of the Hankel
+module, which is a natural substitute for the notion of a Hankel mat rix.
+For the rest of the paper the standard matrix units in Mm(F) are denoted by eij.
+4.1. Tools from the Artin-Wedderburn theory. Let A be a simple Artinian ring
+with center F. We state some well-known facts about A and its left (right) modules
+that can be found in [ Lam91, Sections 1.2 and 1.3] and are part of the classical Artin-
+Wedderburn theory.
+(1) A ∼=Mm(D) for a unique m ∈ N and up-to-isomorphism unique central division
+F-algebra D.
+(2) Every submodule of a left (right) A-module is a direct summand in it.
+
+===== PAGE 13 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 13
+(3) Every ﬁnitely generated left (right) A-module is up to an isomorphism of A-
+modules uniquely determined by its dimension over D, which is divisible by m.
+(4) In particular, a ﬁnitely generated left (right) A-module is free if and only if its
+dimension over D is divisible by m2, and is torsion if and only if its dimension
+overD is less than m2.
+(5) Every left (right) A-linearly independent subset S of An can be extended to a
+left (right) A-basis of An.
+By a torsion module we mean a left (right) A-module M such that for every v ∈ M
+there exists a ∈ A \ { 0} satisfying av = 0 ( va = 0).
+Let y = {yk : k ∈ N ∪ { 0}} be an inﬁnite alphabet. The following result can also be
+found in [ Row80, Corollary 7.2.13]. For the sake of self-containment we provide a sho rt
+proof.
+Lemma 4.1. If f ∈ A y0 · · · Ayk vanishes on A, then f = 0.
+Proof. We prove the claim by induction on k.
+For the induction basis let k = 0. Assume f ∈ A y0 vanishes on A and consider the
+homomorphism of F-algebras
+(4.1) A ⊗ F Aop → EndF(A), a ⊗ b ↦→ LaRb,
+where La and Rb are multiplications by a on the left and by b on the right, respectively.
+It is a classical result (e.g. [
+Lam91, Theorem 3.1]) that the F-algebra A ⊗ F Aop is simple.
+Therefore the map ( 4.1) is injective. As noted in Remark 3.3, A ⊗ F Aop ∼= Ay0, so f = 0.
+For the induction step assume that the claim is established for k − 1. Suppose
+f ∈ A y0 · · · Ayk vanishes on A. We can write it in the form
+f =
+∑
+i
+aiy0fi,
+where ai ∈ A are F-linearly independent and fi ∈ A y1 · · · Ayk. Let b1,...b k ∈ A be
+arbitrary and ˜f = f (y0,b 1,...,b k). By the basis of induction we have ˜f = 0. Since ai
+are F-linearly independent, we have fi(b1,...,b k) = 0 for all i. Since bj were arbitrary,
+we have fi = 0 by the induction hypothesis and therefore f = 0. □
+We will frequently apply Lemma 4.1 to Aw for w ∈ ⟨ x⟩ using the isomorphism
+Aw ∼= Ay1 · · · Ay|w| from Remark 3.3. For notational simplicity we establish the follow-
+ing convention: if f ∈ A w, then f (a1,...,a g) denotes the usual evaluation of f at a
+tuple (a1,...,a g) ∈ A g, and f [a1,...,a |w|] denotes the evaluation of f as an element of
+Ay1 · · · Ay|w| at a tuple ( a1,...,a |w|) ∈ A |w|.
+4.2. Reduced, minimal and totally reduced representations. In this subsection
+we consider special kinds of representations that diﬀer in availability and utility.
+Let S be a recognizable series with a linear representation ( c,A, b) of dimension n.
+ForN ∈ N ∪ { 0} let
+U L
+N = {u ∈ A 1× n : uAwb = 0 ∀|w| ≤ N}, U R
+N = {v ∈ A n× 1 : cAwv = 0 ∀|w| ≤ N}.
+Then U L
+N is left A-module, U R
+N is right A-module, U L
+N ⊇ U L
+N +1 and U R
+N ⊇ U R
+N +1. The
+modules
+U L
+∞ =
+⋂
+N ∈ N
+U L
+N and U R
+∞ =
+⋂
+N ∈ N
+U R
+N
+are called the left and right obstruction module of ( c,A, b), respectively.
+
+===== PAGE 14 =====
+
+14 J. VOL ˇCI ˇC
+Deﬁnition 4.2. The representation ( c,A, b) of S is:
+(a) reduced if its obstruction modules are torsion A-modules;
+(b) minimal if its dimension is minimal among all the representations of S.
+(c) totally reduced if its obstruction modules are trivial.
+By deﬁnition, every totally reduced representation is reduced. In classical representa-
+tion/realization theory, both notions are equivalent to minimality; mo reover, all minimal
+representations of a given series are similar ([ BGM05, Theorem 9.1 and Theorem 8.2] or
+[BR11, Proposition 2.2.1 and Theorem 2.2.4]). However, this is not true in our setting.
+Later we prove ( c) ⇒ (b) ⇒ (a) (Corollary 4.14). The following examples show that
+these implications cannot be reversed.
+Example 4.3. Minimal representations are in general neither pairwise similar nor to -
+tally reduced. If A = M2(F), then the series ∑
+i≥ 0e11(xe11)i has non-similar minimal
+representations, e.g. (1 ,e 11x,e 11) and (e11,e 11xe11, 1).
+Example 4.4. A reduced representation is not necessarily minimal. Again let A =
+M2(F). Previously we speciﬁed that the zero series has a representatio n of dimension
+0, but it also has a reduced representation of dimension 1, namely ( e11,e 22x,e 22). For a
+less contrived example, one can consider the series S = ∑
+i≥ 0(e11x)i. It has a minimal
+realization (1,e 11x, 1) of dimension 1, but it also has a reduced representation
+((e11 1)
+,
+(
+e22x 0
+0 e11x
+)
+,
+(
+e22
+1
+))
+of dimension 2: indeed, elements in U L
+1 and U R
+1 are of the form
+(αe 11 +βe 21 0)
+and
+(
+αe 21 +βe 22
+0
+)
+,
+respectively.
+From here on A is a central simple Artinian F-algebra that is isomorphic to Mm(D),
+where D is a division ring. We start with some observations about the obstruc tion
+modules U L
+N ; appropriate right-hand versions hold for U R
+N .
+Lemma 4.5. If U L
+N = U L
+N +1, then U L
+N +1 = U L
+N +2.
+Proof. If u /∈ U L
+N +2, then uAxwb ̸= 0 for some x ∈
+x and |w|=k ≤ N + 1. Let f ∈ A xw
+be the nonzero entry of uAxwb. By Remark 3.3, f [y0,...,y k] ̸= 0. By Lemma 4.1, there
+existsb ∈ A such thatf [b,y 1,...,y k] ̸= 0. Again by Remark 3.3,f [b,w 1,...,w k] ̸= 0 and
+so uAx(b)Awb ̸= 0. Therefore uAx(b) /∈ U L
+N +1 = U L
+N , hence uAx(b)Aw′
+b ̸= 0 for some
+|w′| = k′ ≤ N. Let h ∈ A y0w′
+be such entry of uAx(y0)Aw′
+b that h[b,w ′
+1,...,w ′
+k′] ̸= 0.
+Thus h ̸= 0 and also h[x,w ′
+1,...,w ′
+k′] ̸= 0 by Remark 3.3. Therefore uAxAw′
+b ̸= 0 and
+u /∈ U L
+N +1. □
+Lemma 4.6. If A ∼
+=Mm(D) and the dimension of (c,A, b) is n, then U L
+∞ = U L
+mn− 1.
+Proof. The statement trivially holds for b = 0, so we assume b ̸= 0. As stated in
+Subsection
+4.1, the dimension of every left A-module as a vector space over D is divisible
+by m. Since the dimension of the vector space A1× n over D is m2n and b ̸= 0, the
+descending chain of left A-modules {U L
+N }N ∈ N stops by Lemma 4.5 and
+An ⊇ U L
+0 ⊇ U L
+1 ⊇ · · · ⊇ U L
+mn− 1 = U L
+mn = · · ·. □
+Proposition 4.7. Every recognizable series has a reduced representation.
+
+===== PAGE 15 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 15
+Proof. Fix some representation ( c,A, b) of a series S. We will describe how to obtain a
+reduced representation of S from ( c,A, b).
+Let {uk+1,..., un} ⊂ U L
+∞ be a maximal left A-linearly independent set. As stated in
+Subsection 4.1, it can be extended to a basis {u1,..., un} of A1× n. Let U be a matrix
+with rows ui. Then ( cU − 1,UAU − 1,U b) is a similar representation of S corresponding
+to the basis change from the standard basis of A1× n to {u1,..., un}. Let
+cU − 1 =
+(c1 c2
+)
+, UAU − 1 =
+(
+A11 A12
+A21 A22
+)
+, U b =
+(
+b1
+b2
+)
+be the block decompositions with regard to {u1,..., uk} ∪ {uk+1,..., un}. We claim that
+(4.2)
+(v1 v2
+)(
+A11 A12
+A21 A22
+)w (
+b1
+b2
+)
+=
+(v1 0)(
+A11 0
+0 0
+)w (
+b1
+0
+)
+for all v ∈ A 1× n and w ∈ ⟨x⟩. Indeed, because {uk+1,..., un} ⊂ U L
+∞ , we have
+(v1 v2
+)(
+b1
+b2
+)
+=
+(v1 0)(
+b1
+0
+)
+and then
+(v1 v2
+)(
+A11 A12
+A21 A22
+)xw (
+b1
+b2
+)
+=
+(v1 0)(
+A11 A12
+A21 A22
+)xw (
+b1
+b2
+)
+=
+(v1Ax
+11 v1Ax
+12
+)(
+A11 A12
+A21 A22
+)w (
+b1
+b2
+)
+ind
+=
+(v1Ax
+11 0)(
+A11 0
+0 0
+)w (
+b1
+0
+)
+=
+(v1 0)(
+A11 0
+0 0
+)xw (
+b1
+0
+)
+by induction on |w|. Setting c′ = c1, A′ = A11 and b′ = b1, we get a representa-
+tion ( c′,A ′, b′) of S by (
+4.2). The A-module U ′L
+∞ is torsion by construction since it is
+isomorphic to U L
+∞ modulo a maximal free submodule.
+Next, we apply the right version of the upper procedure: we pick a m aximal right
+linearly independent set in U ′R
+∞ , extend it to a basis of An× 1, transform ( c′,A ′, b′) with
+respect to the new basis, and get a representation ( c′′,A ′′, b′′) of S with torsion module
+U ′′R
+∞ by taking the suitable blocks.
+Because we have no information about U ′′L
+∞ , we repeat the cycle of previous two
+steps. We continue until one of the steps does not change the dime nsion of the represen-
+tation; therefore our procedure ﬁnishes after at most n steps, where n is the dimension
+of the starting representation. It is clear that U L
+∞ and U R
+∞ corresponding to the ﬁnal
+representation are torsion modules. □
+Remark 4.8. The proof of Proposition 4.7 can serve as an algorithm for reducing rep-
+resentations. If A = Mm(F), it can be implemented in a purely linear-algebraic way
+without any other ring-theoretical traits. The implementation is mo stly straightforward,
+although a few notes are in order.
+• It is convenient to treat the polynomials from Aw as elements of A⊗| w| ∼=Mm|w|(F),
+because the use of tensors makes it easier to apply linear algebra fo r computing
+the modules U L
+N .
+• Determining the obstruction modules is computationally expensive. W e start by
+computing the modules U L
+0 , U L
+1 , etc., and we stop according to Lemmata 4.5 and
+4.6.
+
+===== PAGE 16 =====
+
+16 J. VOL ˇCI ˇC
+• A maximal A-linearly independent subset of U L
+∞ can be found using [ CIK97,
+Lemma 8].
+Example 4.9. As mentioned in the proof of Proposition 4.7, in general there is no
+guarantee that the reduction on one side of the representation w ill not tarnish the other
+side. For example, consider the representation
+
+ (e11 e21 0)
+,
+
+
+xe22 xe22 0
+0 e22xe22 e11x
+0 0 x
+
+ ,
+
+
+0
+0
+e11
+
+
+
+
+overM2(F). One can check that U R
+∞ = 0 and U L
+∞ has a maximal free submodule of rank
+1 generated by (1, 0, 0). After the left-hand side reduction with respect to this vector we
+get a nontrivial U ′R
+∞ .
+Lemma 4.10. Let (c,A, b) be a representation and assume U L
+∞ is a free module. Then
+U ′R
+∞ from the ﬁrst step of algorithm in Proposition
+4.7 embeds into U R
+∞ .
+Proof. Assume the notation of the proof of Proposition 4.7. Note that {uk+1,..., un} is
+now a basis for U L
+∞ ; thus we have A21 = 0.
+Now we can prove a reﬁned version of ( 4.2), namely
+(4.3)
+(v1 v2
+)(
+A11 A12
+0 A22
+)w (
+v3
+b2
+)
+=
+(v1 0)(
+A11 0
+0 0
+)w (
+v3
+0
+)
+for all v1 ∈ A 1× k, v2 ∈ A 1× (n− k), v3 ∈ A k× 1 and w ∈ ⟨x⟩. We have
+(v1 v2
+)(
+v3
+b2
+)
+= v1v3 +
+(0 v2
+)(
+b1
+b2
+)
+=
+(v1 0)(
+v3
+0
+)
+and then
+(v1 v2
+)(
+A11 A12
+0 A22
+)xw (
+v3
+b2
+)
+=
+(v1Ax
+11 v1Ax
+12 + v2Ax
+22
+)(
+A11 A12
+0 A22
+)w (
+v3
+b2
+)
+ind
+=
+(v1Ax
+11 0)(
+A11 0
+0 0
+)w (
+v3
+0
+)
+=
+(v1 0)(
+A11 0
+0 0
+)xw (
+v3
+0
+)
+by induction. Setting v1 = c1 and v2 = c2 we get b2 ∈ UU R
+∞ for v3 = 0 and then
+v3 ∈ U ′R
+∞ ⇐ ⇒
+(
+v3
+0
+)
+∈ UU R
+∞ . □
+Corollary 4.11. If U L
+∞ and U ′R
+∞ are free modules, then the algorithm of Proposition
+4.7
+yields a totally reduced representation after the ﬁrst cycl e.
+Our next goal is to show that reduced representations are not fa r from minimal ones.
+First we need the following lemma.
+Lemma 4.12. Let (b,A,c ) be a representation of dimension n and deﬁne left A-modules
+(4.4) W0 = Span A{cAw[a1,...,a |w|] :w ∈ ⟨
+x⟩, a i ∈ A}, W = W0/ (W0 ∩ U L
+∞ ).
+Then the dimension of W0 as a left vector space over D is m2n − dimD U R
+∞ and the
+dimension of W as a left vector space over D is at least m2n − (dimD U R
+∞ + dimD U L
+∞ ).
+
+===== PAGE 17 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 17
+Proof. First we claim that
+(4.5) U R
+∞ = {u ∈ A n× 1 : vu = 0 ∀v ∈ W 0}.
+Indeed, the inclusion ⊆ is obvious and ⊇ follows from Lemma 4.1.
+It is enough to prove the ﬁrst part of the lemma since the second pa rt then follows
+from dim D W ≥ dimD W0 − dimD U L
+∞ .
+Let dim D W0 = m2i +mj for j < m. By Subsection 4.1, we can choose a basis of
+A1× n in such way that W0 equals A1× i × I × 01× (n− i− 1), where I ⊂ A is the right ideal
+of matrices whose ﬁrst m − j rows are zero. By ( 4.5), U R
+∞ equals 0 i× 1 × J × A (n− i− 1)× 1,
+where J ⊂ A is the left ideal of matrices whose last j columns are zero. Therefore
+dimD U R
+∞ =m2(n − i − 1) +m(m − j). □
+Theorem 4.13. LetS be a recognizable series.
+(1) The diﬀerence in dimensions of two reduced representati ons of S is at most 1.
+(2) A representation is minimal if δ := dim D U L
+∞ + dimD U R
+∞ <m 2.
+(3) Totally reduced representations are similar via a uniqu e transition matrix.
+Proof. Let ( c,A, b) and ( c′,A ′, b′) be two representations for S of dimensions n and n′,
+and let W and W ′ be the corresponding left A-modules as in ( 4.4) from Lemma 4.12.
+We want to show that the rule
+(4.6) cAw[a1,...,a |w|] ↦→ c′A′w[a1,...,a |w|]
+deﬁnes a bijective linear map φ : W → W ′. Let us ﬁrst verify that we have a well-deﬁned
+map. Assume ∑
+j
+fjcAwj [a1j,...,a |wj|j] ∈ U L
+∞ ;
+then (∑
+j
+fjcAwj [a1j,...,a |wj|j]
+)
+Aw0b = 0
+for all w0 ∈ ⟨
+x⟩. Since our representations determine the same series, we have cAwb =
+c′A′wb′ for every w ∈ ⟨x⟩, so
+(∑
+j
+fjc′A′wj [a1j,...,a |wj|j]
+)
+A′w0b′ = 0
+and thus ∑
+j
+fjc′A′wj [a1j,...,a |wj|j] ∈ U ′L
+∞ .
+Therefore the rule ( 4.6) indeed deﬁnes a map; by symmetry, we can reverse these im-
+plications, so φ is injective; it is also linear and surjective by deﬁnition. Hence the left
+modules W and W ′ are isomorphic, so the intervals [ m2n − δ,m 2n] and [m2n′− δ′,m 2n′]
+overlap by Lemma 4.12. Therefore we have
+(4.7) n ≤ n′ ⇒ m2(n′ − n) ≤ δ′ and n′ ≤ n ⇒ m2(n − n′) ≤ δ.
+(1) If both representations are reduced, then δ andδ′ are less than 2m2 since torsion
+A-module has dimension less than m2; hence ( 4.7) implies |n − n′| ∈ { 0, 1} and so (1)
+holds.
+(2) Assume n ≥ n′; if δ < m2, then ( 4.7) implies n = n′, so the ﬁrst representation
+is minimal.
+
+===== PAGE 18 =====
+
+18 J. VOL ˇCI ˇC
+(3) In this case we have W = A1× n = W ′, so the map φ yields invertible P ∈ A n× n
+such that
+(4.8) cAw[a1,...,a |w|]P − 1 = c′A′w[a1,...,a |w|].
+Forw = 1 we get cP − 1 = c′. Since
+cAw[a1,...,a |w|]P − 1(PA x(b)P − 1 − A′x(b)) = 0
+for all ai,b ∈ A implies
+cAw[a1,...,a |w|]P − 1(PA xP − 1 − A′x) = 0
+by Lemma
+4.1 and W = A1× n, we get PA xP − 1 =A′x. Finally, since
+cAw[a1,...,a |w|]P − 1(Pc − c′) = 0
+for all ai ∈ A , we get Pc =c′.
+Uniqueness follows from the fact that any transition matrix satisﬁe s ( 4.8). □
+Corollary 4.14. Every minimal representation is reduced. Every totally red uced repre-
+sentation is minimal.
+Proof. The ﬁrst part holds by Proposition
+4.7, and the second part is true by Theorem
+4.13(2). □
+We end this subsection by observing that totally reduced represen tations are pre-
+served if the algebra A is ampliated.
+Lemma 4.15. Let A be a simple Artinian algebra and A ⊆ B . If (c,A, b) is a totally
+reduced representation over A, then it is also totally reduced over B.
+Proof. Since ( c,A, b) is totally reduced, the sets
+(4.9) {cAw[a1,...,a |w|] :w ∈ ⟨x⟩, a i ∈ A}, {Aw[a1,...,a |w|]b : w ∈ ⟨x⟩, a i ∈ A}
+generate A1× n and An× 1, respectively, by Lemma 4.12. In particular, the A-linear spans
+of sets ( 4.9) contain the standard bases of F1× n and Fn× 1, respectively. But then the
+right and left obstruction module of ( c,A, b) as a representation over B are trivial. □
+4.3. Hankel module. In this subsection let A =Mm(F).
+In the classical realization theory, i.e., m = 1, to each formal series S one can assign
+the Hankel matrix HS ([BR11, Section 2.1] or [ BGM05, Section 10]). Namely, HS is the
+inﬁnite matrix over F with rows and columns indexed by words over x, whose (u,v )-entry
+equals the coeﬃcient of the word uv in S for every u,v ∈ ⟨ ⟨x⟩ ⟩. The important result is
+that S is rational if and only if HS has ﬁnite row rank, see e.g. [ BR11, Theorem 2.6.1].
+By the deﬁnition of a stable module in [ BR11, Section 1.5], we see that the rows of HS
+are generators of the smallest stable module containing S, so the rank of HS equals the
+minimal cardinality of a generating set of the smallest stable module co ntainingS.
+Now let m ∈ N be arbitrary. From our deﬁnition of stability it is not a priori evident
+that the smallest stable left A-submodule containing S even exists; namely, it is not clear
+whether the intersection of stable submodules is again stable.
+Recall the map L : ⟨x⟩ → EndA−A (A⟨ ⟨x⟩ ⟩) deﬁned by ( 3.2). For x ∈ x anda ∈ A we
+now deﬁne closely related operators
+(4.10) Lx,aS = a(LxS),
+where aT means that we replace the ﬁrst letter with a in every term of the series T .
+
+===== PAGE 19 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 19
+Lemma 4.16. Let x ∈ x, S ∈ A⟨ ⟨x⟩ ⟩ and M be a left A-submodule in A⟨ ⟨x⟩ ⟩. If
+Lx,e ijS ∈ M for all 1 ≤ i,j ≤ m, then LxS ∈ A xM.
+Proof. Let
+S′ =
+m∑
+i,j =1
+m∑
+k=1
+ekixejkLx,e ijS.
+By assumption, S′ ∈ A xM. By the way we deﬁned this series, we have eij (LxS − S′) = 0
+for all 1 ≤ i,j ≤ m. Therefore a[LxS − S′,w ] = 0 for all a ∈ A and w ∈ ⟨ x⟩, so
+[LxS − S′,w ] = 0 by Lemma 4.1. □
+Corollary 4.17. For every S ∈ A⟨ ⟨x⟩ ⟩there exists the smallest stable left A-submodule
+containingS. It is generated by the series
+Lxi1 ,e i1j1
+· · ·Lxiℓ ,e iℓ jℓ
+S,
+whereℓ ∈ N ∪ { 0} and 1 ≤ iℓ,j ℓ ≤ m.
+Proof. The proposed submodule is obviously contained in every stable submo dule M
+containingS. On the other hand, it is stable by Lemma 4.16. □
+The module of Corollary 4.17 is called the Hankel module of the series S and is
+denoted HS, following the analogy with Hankel matrices described in the ﬁrst par agraph.
+Theorem 4.18. Let S ∈ A⟨ ⟨x⟩ ⟩and let HS be its Hankel module. Then HS is ﬁnitely
+generated as a left A-module if and only if S is recognizable.
+If this is the case, then the minimal cardinality of a generat or set of HS equals the
+dimension of a minimal representation of S.
+Proof. (⇒ ) Since HS is stable, this is a special case of Proposition 3.6; from its proof it
+can be also deduced that if HS is generated by n elements, then S has a representation
+of dimension n.
+(⇐ ) Let n be the dimension of a representation ( c,A, b) of S. By the description of
+A-modules in Subsection 4.1, the submodule W0 ⊆ A 1× n as in ( 4.4) from Lemma 4.12
+can be generated by n elements. Comparing the deﬁnition of W0 with the generators of
+HS in 4.17 it can be observed that
+HS = W0
+(
+In −
+∑
+x
+Ax
+)− 1
+b,
+which ﬁnishes the proof. □
+5. Realizations of noncommutative rational functions
+In this section we apply the theory of linear representations from p revious sections
+to nc rational functions with coeﬃcients in F.
+First we introduce realizations about points (Corollary 5.1) and prove the existence
+of totally reduced realizations (Theorem 5.5). Similarly to [ KVV09], we describe the
+domain of a rational function using its totally reduced realization and furthermore show
+that the dimension of a minimal realization about a point is an invariant o f the rational
+function, i.e., it is independent of the choice of the point of expansion . We call it the
+Sylvester degree of a rational function.
+
+===== PAGE 20 =====
+
+20 J. VOL ˇCI ˇC
+5.1. Deﬁnition of realization. We are now in position to explain the meaning of ( 1.1)
+from the introduction. If r ∈ R F(z) is deﬁned at p ∈ A g, then S =r(x1 +p1,...,x g +pg)
+is a generalized rational expression as in Subsection 3.4 and therefore also a rational
+series in A⟨ ⟨x⟩ ⟩. We call it the expansion of r about p. By Theorem 3.8, S has linear
+representation. Its entries belong to the rational closure of {p1,...,p d} and F in A.
+Corollary 5.1. Let r ∈ R F(z) and p ∈ dommr. If A ⊆ Mm(F) is the unital F-algebra
+generated by p1,...,p g, then there exist n ∈ N, c ∈ A 1× n, b ∈ A n× 1 and Axj ∈ (Axj)n× n
+such that
+(5.1) r(
+x +p) = c
+(
+In −
+g∑
+j=1
+Axj
+)− 1
+b.
+If ( 5.1) holds, we say that the linear representation ( c,A, b) is a realization of r of
+dimension n about a point p ∈ Mm(F)g.
+Remark 5.2. Suppose we are given r ∈ R F(z). Then the content of Subsection 3.3 yields
+a realization of r about any point in dom r and thus an upper bound on the minimal
+dimension of a realization for r, even if we do not know any elements of dom r. We say
+that this representation is obtained by standard construction . Moreover, we can easily
+calculate this particular upper bound, denoted κ(r), just by counting the occurrences of
+symbols in the string determining r:
+κ(r) = #constant terms + 2 ·#letters + #inversions.
+Equality ( 5.1) implies that for every s ∈ N and q ∈ domsmr we have
+r(q) = ι(c)
+(
+Ismn −
+g∑
+j=1
+ι(Axj )(qj − ι(pj))
+)− 1
+ι(b),
+whereι is the entry-wise applied embedding Mm(F) → Msm(F) given by a ↦→ Is ⊗ a. For
+this reason we usually write
+(5.2) r = c
+(
+In −
+g∑
+j=1
+Axj (zj − pj)
+)− 1
+b
+instead of (
+5.1). Also, since Ax can be written as a ﬁnite sum of terms of the form CxB
+for C,B ∈ Mm(F)n× n (more precisely, dim FMm(F)n× n = (mn)2 terms suﬃce), we can
+rewrite ( 5.2) as
+r = c
+(
+In −
+g∑
+j=1
+∑
+k
+Cjk(zj − pj)Bjk
+)− 1
+b
+with inner sums being ﬁnite and Cjk,B jk ∈ Mm(F)n× n, which is the Sylvester realization
+(1.1) mentioned in the introduction.
+Example 5.3. Considerr = (z1z2 − z2z1)− 1. Let (p1,p 2) be an arbitrary pair of elements
+from some simple Artinian ring, whose commutator p1p2 − p2p1 is invertible, and set
+q =r(p1,p 2). If xi =zi − pi, then
+r(z1,z 2) = q(1 − (p2x1 − x1p2)q − (x2p1 − p1x2)q − (x2x1 − x1x2)q)− 1.
+It is easy to verify that
+(5.3) r = c
+(
+I3 − C1(z1 − p1)B1 − C2(z2 − p2)B2
+)− 1
+b,
+
+===== PAGE 21 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 21
+where
+c =
+(q 0 0 )
+, C 1 =
+
+
+− 1 p2 0
+0 0 0
+0 − 1 0
+
+ , B 1 =
+
+
+p2q − 1 0
+q 0 0
+0 0 0
+
+ ,
+C2 =
+
+
+1 0 −p1
+0 0 − 1
+0 0 0
+
+ , B 2 =
+
+
+p1q 0 − 1
+0 0 0
+q 0 0
+
+ , b =
+
+
+1
+0
+0
+
+ .
+Thereforer has a realization of dimension 3. On the other hand, Remark
+5.2 guarantees
+only a realization of dimension κ(r) = 9.
+Moreover, the realization ( 5.3) is totally reduced (and therefore also minimal) since
+{c, cC1B1, cC2B2} and {b,C 1B1b,C 2B2b}
+are bases for A1× 3 and A3× 1, respectively.
+Letr1,r 2 ∈ R F(z) determine the same rational function and let p ∈ domr1 ∩ domr2.
+If Si is the expansion of ri about p for i ∈ { 1, 2}, then S1 = S2 by Proposition 3.13.
+Therefore we can deﬁne a realization of a nc rational function /D6 ∈ F (<z )> about a point
+p ∈ dom /D6 as the realization of r ∈ R F(z) about p, where r is an arbitrary rational
+expression representing /D6 that is deﬁned at p.
+In the following subsections we concentrate on matrix-valued evalu ations of nc ra-
+tional functions. Therefore set A =Mm(F) for the rest of the section.
+5.2. Existence of totally reduced realizations. In this subsection we prove the exis-
+tence of totally reduced realizations of a nc rational function abou t “almost every” point
+from in domain; in fact, it is shown that we already have the means of p roducing these
+realizations.
+Recall the generic m × m matrices Tk and the generic division algebra UD m;g ⊂
+Mm(F(t)) generated by them from Section 2.
+Lemma 5.4. Assume v1,..., vk ∈ Mm(F(t))1× n are left Mm(F(t))-linearly independent.
+Then there exists a nonempty Zariski open set O ⊆ A g such that for ξ ∈ O , the rows
+v1(ξ),..., vk(ξ) ∈ Mm(F)1× n are left Mm(F)-linearly independent.
+Proof. The set {v1,..., vk} can be extended to a basis, so there exists an invertible
+matrix V ∈ Mn(Mm(F(t))) whose rows belong to this basis. Considering this matrix as
+an element of Mnm(F(t)), it is clear that for every tuple ξ over F, such that V and V − 1
+are deﬁned at ξ, the matrix V (ξ) ∈ Mnm(F) is also invertible. Note that the set of such
+tuples is Zariski open and nonempty since F is inﬁnite. Finally, considering V (ξ) as an
+element of Mn(Mm(F)) ﬁnishes the proof. □
+Theorem 5.5. Assume r ∈ R F(z) is deﬁned at some point in Ag. Then there exists a
+nonempty Zariski open set O ⊆ dommr such that for every p ∈ O , the formal expansion
+S of r aboutp admits a totally reduced representation.
+Furthermore, this representation can be obtained by applyi ng the proof of Proposition
+4.7 to the standard construction of a representation of S.
+Proof. By assumption, r is also deﬁned at the tuple T = (T1,...,T g) of m × m generic
+matrices over F. Let ( c,A, b) be the standard construction of realization of S about T ;
+then the standard construction of realization of S about arbitrary p ∈ dommr ∩ A g is
+just the evaluation of ( c,A, b) at p, which we denote ( ˜c, ˜A, ˜b).
+
+===== PAGE 22 =====
+
+22 J. VOL ˇCI ˇC
+Since UDm;g is a division algebra, all modules over UD m;g are free, hence the reduction
+of (c,A, b) ends after two steps. Let n′ and U ′R
+∞ be the dimension and the right obstruction
+module of representation after the ﬁrst step of reduction proce ss, respectively. Set
+V = {v ∈ A n× 1 : uv = 0 ∀u ∈ U L
+∞ },
+V ′ = {v ∈ A 1× n′
+: vu = 0 ∀u ∈ U ′R
+∞ }.
+LetB(1),B (2),B (3),B (4) be some bases of free UD m;g-modules U L
+∞ , U ′R
+∞ , V, V ′, respectively.
+Note that
+(5.4) |B(1)|+ |B(3)|=n, |B(2)|+ |B(4)|=n′.
+Let Oi ⊆ dommr ∩ A g be the set of all tuples at which the set B(i) evaluates to a linearly
+independent set B(i)(
+p) as in Lemma 5.4. Set O = O1 ∩ O 2 ∩ O 3 ∩ O 4. For each p ∈ O ,
+we have
+B(1)(p) ⊂ ˜U L
+∞ , B (2)(p) ⊂ ˜U ′R
+∞ , B (3)(p) ⊂ ˜V, B (4)(p) ⊂ ˜V ′.
+By equalities ( 5.4) the A-modules ˜U L
+∞ and ˜U ′R
+∞ are free. Therefore ( ˜c, ˜A, ˜b) reduces to
+totally reduced representation by Corollary 4.11. □
+5.3. Stable extended domain and Sylvester degree of a nc rational function.
+The aim of this subsection is to describe the stable extended domain o f a nc rational
+function using totally reduced realizations and to show that the dime nsion of its minimal
+realizations about a point is actually independent of the chosen point . The latter makes
+it possible to deﬁne the Sylvester degree of a nc rational function.
+We start by introducing the right-hand version of the map L deﬁned by ( 3.2) and
+the operators Lx,a deﬁned by ( 4.10). That is, we deﬁne R : ⟨x⟩ → EndA−A (A⟨ ⟨x⟩ ⟩) by
+RvS =
+∑
+w∈⟨ x⟩
+[S,wv ]
+and
+Rx,aS = (RxS)a
+for a ∈ A , where Ta means that we replace the last letter in every term of series T with
+a. By ( 3.3) and its right-hand analog we get
+Lx,a (ST ) = (Lx,aS)T + [S, 1]Lx,aT, L x,aU − 1 = − [U, 1]− 1(Lx,aU)U − 1,
+Rx,a (ST ) = (Rx,aS)[T, 1] +SRx,aT, R x,aU − 1 = −U − 1(Rx,aU)[U, 1]− 1.(5.5)
+The linearity of Lx,a andRx,a and the equalities ( 5.5) imply the following: if S is a gr
+expression (as deﬁned is Subsection 3.4), thenLx,aS andRx,aS are also gr expressions and
+their domains include the domain of S. Moreover, if ( c,A, b) is a representation of S, then
+(cAx(a),A, b) and ( c,A,A x(a)b) are representations of Lx,aS and Rx,aS, respectively.
+Lemma 5.6, Corollary 5.7 and Theorem 5.8 and their proofs closely follow [ KVV09,
+Theorem 2.19, Corollary 2.20, Theorem 3.1] and [ Vol+, Lemma 3.4, Theorem 3.5].
+Lemma 5.6. Let S be a gr expression, p ∈ A g a point in its domain and q ∈ A g an
+arbitrary point. Then
+(5.6) S
+([
+p 0
+q 0
+])
+=
+[ S(p) 0∑g
+i=1(Lxi,q iS)(
+p) S(0)
+]
+.
+
+===== PAGE 23 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 23
+Proof. We proceed inductively using ( 5.5). The claim obviously holds if S is a constant
+or a letter. If the claim holds for S1 and S2, it also holds for any linear combination of
+S1 and S2 by linearity of the operators Lx,a . Moreover, it holds for their product:
+(S1S2)
+([p 0
+q 0
+])
+=S1
+([p 0
+q 0
+])
+S2
+([p 0
+q 0
+])
+=
+[ S1(p) 0∑d
+i=1(Lxi,q iS1)(
+p) S1(0)
+] [ S2(p) 0∑d
+i=1(Lxi,q iS2)(
+p) S2(0)
+]
+=
+[ S1(p)S2(p) 0∑g
+i=1
+(
+(Lxi,q iS1)(
+p)S2(p) +S1(0)(Lxi,q iS2)(p)
+)
+S1(0)S2(0)
+]
+=
+[ (S1S2)(p) 0∑g
+i=1(Lxi,q i(S1S2))(
+p) ( S1S2)(0)
+]
+.
+If the claim holds for an invertible series S, then
+S− 1
+([p 0
+q 0
+])
+=S
+([p 0
+q 0
+])− 1
+=
+[ S(p)− 1 0
+−S(0)− 1 (∑g
+i=1(Lxi,q iS)(
+p)
+)
+S(p)− 1 S(0)− 1
+]
+=
+[ S− 1(p) 0∑g
+i=1(Lxi,q iS− 1)(
+p) S(0)− 1
+]
+. □
+Corollary 5.7. The stable extended domain of a rational series S is included in the
+stable extended domain of Lx,aS and Rx,aS for every x ∈ x and a ∈ A .
+Proof. By the deﬁnition of the stable extended domain it suﬃces to prove ed omstS ⊆
+edomLx,aS. Assume p ∈ edomst
+msS. Since edom stS is closed under direct sums, we have
+p ⊕ 0 ∈ edomst
+2msS. If
+q ∈ A g be arbitrary, then the properties of arithmetic operations
+on block lower triangular matrices imply
+[p 0
+q 0
+]
+∈ edom2msS.
+Evaluation of ( 5.6) on a tuple of generic m × m matrices T = (T1,...,T g) yields
+(5.7) S
+([T 0
+q 0
+])
+=
+[
+S(T ) 0∑g
+i=1(Lxi,q iS)(
+T ) S(0)
+]
+.
+Both sides of ( 5.7) are 2ms × 2ms matrices of rational functions in g(ms)2 commuting
+variables. Since the left-hand side is deﬁned in p, the same holds for the right-hand side.
+Let j ∈ { 1,...,g } and a ∈ A be arbitrary; then considering q = (0,...,a,..., 0) with a
+on position j implies that p ∈ edommsLxi,aS.
+Statement for Rx,aS is proved analogously using the right-hand version of Lemma
+5.6. □
+Theorem 5.8. Let S be a rational series and assume it admits a totally reduced re pre-
+sentation (c,A, b) of dimension n. Then
+edomst
+mS =
+{
+p ∈ A g : det
+(
+Imn −
+g∑
+j=1
+Axj (pj)
+)
+̸= 0
+}
+.
+
+===== PAGE 24 =====
+
+24 J. VOL ˇCI ˇC
+Proof. The inclusion ⊇ is obvious. Conversely, assume p ∈ edomst
+mS. By Corollary
+5.7,
+it also belongs to the stable extended domain of Lxil ,a l · · ·Lxi1 ,a 1S for all combinations of
+letters and elements of A. Note that this series can be written as
+cAxi1 (a1) · · ·Axil (al)
+(
+In −
+g∑
+j=1
+Axj
+)− 1
+b.
+Since U R
+∞ = 0, the rows cAxi1 (a1) · · ·Axil (al) generate left A-module A1× n by Lemma
+4.12. Therefore p belongs to the stable extended domains of the entries in the column
+(
+In −
+g∑
+j=1
+Axj
+)− 1
+b.
+Now we apply Rx,a simultaneously on the entries of this column; by the same reasoning
+as above, p lies in the stable extended domains of the entries in the matrix
+(
+In −
+g∑
+j=1
+Axj
+)− 1
+.
+LetQ =
+(
+In − ∑g
+j=1Axj (Tj)
+)− 1
+; since
+p is a regular point for every entry in Q, it is also
+a regular point for det Q. Since
+detQ det
+(
+Imn −
+g∑
+j=1
+Axj (Tj)
+)
+= 1
+and p is a regular point for both sides of this equation, we can apply it to p and obtain
+det
+(
+Imn −
+g∑
+j=1
+Axj (pj)
+)
+̸= 0. □
+Corollary 5.9. Let /D6 ∈ F (<z )>, p ∈ domm
+/D6 and (c,A, b) its totally reduced realization
+aboutp. Then
+edomst
+ms
+/D6 =
+{
+q ∈ Mms(F)g : det
+(
+Imsn −
+g∑
+j=1
+ι(Axj )(qj − ι(pj))
+)
+̸= 0
+}
+for all s ∈ N, where ι :Mm(F) → Mms(F) is the embedding a ↦→ Is ⊗ a.
+Proof. Let r ∈ R F(z) a rational expression corresponding to /D6 and deﬁned in p. First
+observe that if S is the expansion of r about p, then edom st
+mr =
+p + edomst
+mS. The case
+s = 1 is therefore a direct consequence of Theorem
+5.8. For arbitrary s ∈ N, we consider
+p and (c,A, b) as a point and a realization over Mms(F) using inclusion ι and then apply
+Lemma 4.15 and Theorem 5.8. □
+Theorem 5.10. Let /D6 ∈ F (<z )>. Then the dimension of its minimal realization does not
+depend on the choice of the expansion point p ∈ dom /D6 .
+Proof. It is enough to prove the statement for r ∈ R F(z) because the domains of any two
+elements of RF(z) have nonempty intersection.
+We ﬁrst consider points that admit totally reduced realizations of r. For i ∈ { 1, 2},
+let pi ∈ dommir and ( ci,A i, bi) a totally reduced realization of r about pi of dimension
+
+===== PAGE 25 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 25
+ni. We need to prove n1 =n2. Using Lemma 4.15 and working over Mm1m2(F), we can
+assume m1 =m2 =:m. By Theorem 5.8, the matrix
+Q =Imn1 −
+g∑
+j=1
+A
+xj
+1 (p2j − p1j)
+is invertible. Then
+c1
+(
+Imn1 −
+g∑
+j=1
+A
+xj
+1 (zj − p1j)
+)− 1
+b1 = c1
+(
+Imn1 −
+g∑
+j=1
+A
+xj
+1 (zj − p2j +p2j − p1j)
+)− 1
+b1
+= c1
+(
+Q −
+g∑
+j=1
+A
+xj
+1 (zj − p2j)
+)− 1
+b1
+= c1
+(
+Imn1 −
+g∑
+j=1
+(Q− 1A
+xj
+1 )(zj − p2j)
+)− 1
+(Q− 1b1)
+and the latter is a realization about p2. Therefore n1 ≥ n2. By symmetry we get n2 ≥ n1.
+Now let p ∈ dommr be arbitrary with corresponding minimal realization ( c,A, b)
+of dimension n. Let O be the nonempty Zariski open set from Theorem 5.5 and n′ the
+dimension of totally reduced realizations of r about points from O. Choose arbitrary
+p0 ∈ O ; using the same reasoning as before we can use a totally reduced re alization of r
+about p0 to produce a realization of r about p; therefore n ≤ n′. On the other hand, the
+set {
+p′ ∈ Mm(F)g : det
+(
+Imn −
+g∑
+j=1
+Axj (p′
+j − pj)
+)
+̸= 0
+}
+is Zariski open and nonempty, so its intersection with O is nontrivial. Therefore there
+exists a point
+p′ admitting totally reduced realization of r such that the matrix
+Q =Imn −
+g∑
+j=1
+Axj (p′
+j − pj)
+is invertible. Hence we can get a realization about p′ of dimensionn by the same reasoning
+as at the beginning of the proof, which implies n ≥ n′ because every totally reduced
+realization is minimal by Corollary
+4.14. □
+Theorem 5.10 justiﬁes the following deﬁnition.
+Deﬁnition 5.11. The Sylvester degree of /D6 ∈ F (<z )> is the dimension of some minimal
+realization of /D6 about an arbitrary point in its domain.
+A systems theory equivalent is called McMillan degree [ AM07, Section 8.3]. There
+are also other integer invariants that describe the complexity of a n c rational function,
+such as depth [ Co06, Section 7.7] or inversion height [ Re96]. However, we would like to
+emphasize the fact that the Sylvester degree can be eﬀectively ca lculated since we obtain
+a reduced realization through the algorithm of Proposition 4.7.
+Remark 5.12. Let D be a division ring that is inﬁnite dimensional over its center. In
+[CR94] the authors deﬁne the rank of a nc rational function /D6 as the dimension of its
+minimal realization about a point in Dg. We give a sketch of the proof that the rank and
+the Sylvester degree coincide (in particular, the rank does not dep end onD). By Theorem
+5.5, the Sylvester degree of /D6 is equal to the dimension on the minimal realization of /D6
+about the tuple of generic m × m matrices; since UD m;g is the relatively free skew ﬁeld
+
+===== PAGE 26 =====
+
+26 J. VOL ˇCI ˇC
+of degree m [Co95, Section 7.5], the Sylvester degree of /D6 coincides with the minimal
+dimension of a realization of /D6 over any division ring of degree m. Recall that totally
+reduced realizations are preserved under inclusion by Lemma 4.15 and that minimal
+realizations over division rings are totally reduced; since there exist s a division ring
+containing both D and some division ring of degree m [Ami66, Lemma 15], the Sylvester
+degree and the rank coincide by [ CR94, Theorem 4.3].
+6. Applications
+We conclude the paper with some applications of our results. In Coro llary 6.2 we
+provide size bounds for rational identity test that do not rely on th e information about
+realizations. Next we prove the local-global principle for the linear de pendence of nc
+rational functions and obtain size bounds for testing linear depend ence; see Theorem 6.5.
+Finally, we consider symmetric rational expressions and symmetric r ealizations, following
+[HMV06].
+6.1. Rational identity testing. An important aspect of the noncommutative rational
+expressions is recognizing the rational identities [ Ami66, Be76(1), Be76(2)]. As already
+mentioned in the proof of Proposition 3.12, it is well known that there are no nonzero
+polynomial identities on Ms(F) of polynomial degree less than 2 s. In this section, we
+derive a result of the same type for rational expressions.
+Theorem 6.1. Assume r ∈ R F(
+z) admits a realization of dimension n about a point in
+Mm(F)g. If r vanishes on domNr for N =m⌈mn
+2 ⌉, then r is a rational identity.
+Proof. We reﬁne the proof of Proposition 3.13. Let ( c,A, b) be a realization of r about
+p ∈ Mm(F)g of dimension n and let T = (T1,...,T g) be the tuple of generic N × N
+matrices. Then r(T ) is a matrix of commutative rational functions and the matrix of
+their expansions about p is
+M(T ) =
+∑
+w
+c
+(
+Aw(T − p)
+)
+b.
+The formal diﬀerentiation of commutative power series yields
+(6.1) d
+dthM
+(
+p +t(T − p)
+)⏐
+⏐
+⏐
+t=0
+=h!
+∑
+|w|=h
+c
+(
+Aw(
+T − p)
+)
+b.
+Asr vanishes on dom Nr, we have r(T ) = 0 and hence M(T ) = 0; therefore the left-hand
+side of ( 6.1) equals 0 for every h and so the same holds for the right-hand side of ( 6.1).
+Since ∑
+|w|=h c(Aw(z − p))b is a generalized polynomial of degree h, we have cAwb = 0
+for all |w|<mn by Proposition 3.12. Therefore c belongs to the left obstruction module
+of (c,A, b) by Lemma 4.6, so ( c,A, b) represents the zero series and hence r is a rational
+identity. □
+As an example of an application of Theorem 6.1 we refer to the size bounds for
+testing whether a polynomial belongs to a rationally resolvable ideal [ KVV15, Section 3].
+The next corollary gives us explicit size bounds for testing whether a given rational
+expression is a rational identity, which are independent of the realiz ation terminology.
+Corollary 6.2. Letr ∈ R F(z) and assume dommr ̸= ∅. Then r is a rational identity if
+and only if r vanishes on domNr, where
+N =m
+⌈ m
+2 κ(r)
+⌉
+,
+and κ is as in Remark 5.2.
+
+===== PAGE 27 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 27
+Proof. Direct consequence of Theorem 6.1 and Remark 5.2. □
+If we have no information about the domain of a nc rational express ion r and we
+want to know if it represents a nonzero nc rational function, then we ﬁrst have to check
+whether s represents a nonzero nc rational function for every s ∈ R F(z) such that s− 1
+is a sub-expression in r. In this case it might be preferable to apply rational identity
+testing results of [ HW15, DM17].
+The following reﬁnement of Theorem 6.1 supports the intuition that a nonzero ra-
+tional function, which vanishes on all matrices of a given size, has to be suﬃciently
+complicated.
+Corollary 6.3. Let
+/D6 ∈ F (<z )> \ {0} and assume domm
+/D6 ̸= ∅. If /D6 vanishes on domkm
+/D6 ,
+then the Sylvester degree of /D6 is at least 2k + 1.
+Proof. Let r be a representative of /D6 with dom mr ̸= ∅ and let ( c,A, b) be its totally
+reduced realization about a tuple of generic matrices T ∈ UDg
+m;g. By the proof of
+Theorem
+5.5, the size of ( c,A, b) equals the Sylvester degree of /D6 . Let T ′ be a tuple of
+km × km generic matrices whose entries are independent of variables in T . As in the
+proof of Theorem 6.1 we conclude that
+∑
+|w|=h
+c
+(
+Aw(T ′ − T )
+)
+b = 0
+for every h. Note that c,A j, b are matrices of commutative rational functions; let O ⊆
+Mm(F)g be the intersection of their domains. For every p ∈ O andh ∈ N, the generalized
+polynomial ∑
+|w|=h c(p)(A(p)w(z − p))b(p) vanishes onkm× km matrices. By Proposition
+3.12 we thus have c(p)A(p)wb(p) = 0 for all |w| ≤ 2k − 1. Consequently cAwb = 0 for all
+|w| ≤ 2k − 1 because O is Zariski dense in Mm(F)g. If the size of ( c,A, b) were at most
+2k, then c would belong to the left obstruction module of ( c,A, b) by Lemma 4.6 (note
+that ( c,A, b) is a realization over a division algebra), which would contradict /D6 ̸= 0.
+Hence the Sylvester degree of /D6 is at least 2 k + 1. □
+6.2. Local and global linear dependence. As another application of Theorem 6.1 we
+give an algebraic proof of local-global principle for the linear depende nce of nc rational
+functions: if all matrix-valued evaluations of some nc rational func tions are linearly
+dependent over F, then these nc rational functions are linearly dependent over F as
+elements in F (<z )>. This result ﬁrst appeared in [ CHSY03]; later it was applied to
+questions arising in free real algebraic geometry [ HKM13, OHMP09, HMV06].
+The original proof, which is nicely elaborated in [ HKM13, Section 5.2], is analytic and
+it does not provide any bounds on the size of matrices for which the lin ear dependence
+has to be checked. For nc polynomials, the algebraic version with bou nds is given in
+[BK13]. Using our results, the same technique can be applied to nc rational functions.
+The polynomial
+cℓ(z1,...,z ℓ;z′
+1,...,z ′
+ℓ− 1) =
+∑
+π ∈ Sℓ
+sign(π)zπ (1)z′
+1zπ (2)z′
+2 · · ·zπ (ℓ− 1)z′
+ℓ− 1zπ (ℓ)
+in 2ℓ− 1 freely noncommutative variables is known as the ℓ-th Capelli polynomial . It can
+also be deﬁned recursively by c1(z1) = z1 and
+(6.2)
+cℓ(z1,...,z ℓ;z′
+1,...,z ′
+ℓ− 1) =
+ℓ∑
+j=1
+(− 1)j− 1zjz′
+1cℓ− 1(z1,...,z i− 1,z i+1,...,z ℓ;z′
+2,...,z ′
+ℓ− 1).
+
+===== PAGE 28 =====
+
+28 J. VOL ˇCI ˇC
+The Capelli polynomial plays an important role in the theory of polynom ial identities;
+we refer to [ Row80, Theorem 7.6.16] for the following result.
+Theorem 6.4. Let A be a unital simple ring. Then a1...,a ℓ ∈ A are linearly de-
+pendent over the center of A if and only if cℓ(a1,...,a ℓ;b1,...,b ℓ− 1) = 0 for arbitrary
+b1,...,b ℓ− 1 ∈ A .
+We can now give a new proof of the local-global principle, together wit h concrete
+size bounds, which makes the statement even more “local”.
+Theorem 6.5. Let
+/D6
+1,..., /D6
+ℓ ∈ F (<z )> and assume that the Sylvester degree of /D6
+j is at
+most d and domm
+/D6
+j ̸= ∅, for all 1 ≤ j ≤ ℓ. If /D6
+1(a),..., /D6
+ℓ(a) are F-linearly dependent
+for all a ∈ ⋂
+j domN
+/D6
+j, where
+N = 1
+2m2ℓ!(3d + 4),
+then /D6
+1,..., /D6
+ℓ are F-linearly dependent.
+Proof. By the assumption on the Sylvester degrees, Theorem 3.10(1,2) and relations (6.2),
+the nc rational function
+/D6 =cℓ( /D6
+1,..., /D6
+ℓ;z′
+1,...,z ′
+ℓ− 1)
+in g +ℓ − 1 variables is of Sylvester degree at most
+ℓ(d + 2) +ℓ(ℓ − 1)(d + 2) + · · ·+ℓ(ℓ − 1) · · ·2(d + 2) +ℓ!d
+=ℓ!(d + 2)
+ℓ− 1∑
+i=1
+1
+i! +ℓ!d< 2ℓ!(d + 2) +ℓ!d =ℓ!(3d + 4).
+Since dom m
+/D6
+j is a nonempty Zariski open set for every 1 ≤ j ≤ ℓ, we also have dom m
+/D6 ̸=
+∅. By Theorem 6.4 and the assumption about linear dependence we have
+/D6 (a;b) = 0 ∀(a, b) ∈
+⋂
+j
+domN
+/D6
+j × MN (F)ℓ− 1,
+so /D6 = 0 by Theorem 6.1 since /D6 vanishes on a Zariski dense set in MN (F)g+ℓ− 1. Therefore
+cℓ( /D6
+1,..., /D6
+ℓ; /D7
+1,..., /D7
+ℓ− 1) = 0 ∀ /D7
+1,..., /D7
+ℓ− 1 ∈ F (<z )>
+holds, so /D6
+1,..., /D6
+ℓ are F-linearly dependent by Theorem 6.4 applied to A = F (<z )>. □
+Remark 6.6. Analogously to [ BK13, Theorem 3.7] and its proof, one can also derive
+explicit size bounds for testing directional linear dependence.
+6.3. Symmetric realizations. In this subsection we deal with the symmetric version of
+a realization. We restrict ourselves to F ∈ { R, C}. Let a∗ denote the conjugate transpose
+of a ∈ Mm(F) = A. We extend this involution on A to an involution on A⟨ ⟨
+x⟩ ⟩by
+setting x∗ = x for x ∈ x. We say that a generalized series S is symmetric if S∗ = S.
+Furthermore, if A = (aij)ij is a matrix over A⟨ ⟨x⟩ ⟩, then A∗ := (a∗
+ji)ij.
+We say that
+p ∈ A g is a Hermitian tuple if all its entries are Hermitian matrices.
+A rational function /D6 ∈ F (<z )> is symmetric if /D6 (p) = /D6 (p)∗ for all Hermitian tuples
+p ∈ dom /D6 .
+Remark 6.7. For every r ∈ R F(z) there exists a Hermitian tuple p ∈ domr. Also,
+r represents a symmetric rational function if and only if its expansion about p is a
+symmetric generalized series.
+
+===== PAGE 29 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 29
+Sketch of proof. Let z⊺ = {z⊺
+1,...,z ⊺
+g } be an alphabet. A rational expression s ∈ R F(z ∪
+z⊺) is called a ∗-rational identity if it vanishes on
+doms ∩
+⋃
+n∈ N
+{(a, a∗) :a ∈ Mn(F)g}.
+For more information about ∗-rational identities we refer to [ DM80, Ro84]. We claim the
+following:
+(1) if r1 ∈ R F(z ∪ z⊺) is ∗-rational identity, then r1 is a rational identity;
+(2) if r2 ∈ R F(z) vanishes on all Hermitian tuples p ∈ domr2, then r2 is a rational
+identity.
+Claim (2) implies the ﬁrst part of Remark 6.7 by considering the sub-expressions of r
+and the second part of Remark 6.7 by Proposition 3.13. Claim (1) implies claim (2) by
+considering r1 = r2(z1 +z⊺
+1,...,z g +z⊺
+g ). Therefore we are left with the proof of claim
+(1).
+It is well-known that a rational expression is a rational identity if and only if it
+is a rational identity on some inﬁnite-dimensional division ring, in which c ase it is a
+rational identity on all inﬁnite-dimensional division rings; see e.g. [ Ami66, Theorem 16]
+or [ Row80, Corollary 8.2.16], where this is proved using ultraproducts. On the o ther
+hand, ∗-rational identities and rational identities coincide for every inﬁnite -dimensional
+division ring with involution by [ DM80, Theorem 1]. Therefore the only missing link is
+that a ∗-rational identity is a ∗-rational identity on some inﬁnite-dimensional division
+ring with involution; this is not hard to prove using the ultraproduct c onstruction, cf.
+[Row80, Corollary 8.2.16]. □
+Let r ∈ R F(z) and let p ∈ dommr be a Hermitian tuple. We say that r has a
+symmetric realization (J; c,A ) aboutp if
+r = c
+(
+J −
+g∑
+j=1
+Axj (zj − pj)
+)− 1
+c∗
+where c ∈ A 1× n, Axj = (Axj )∗ ∈ (Axj )n× n and J ∈ A n× n is a signature matrix (J ∗ =J
+and J 2 =I). In this case r obviously represents a symmetric rational function.
+Every symmetric realization (J; c,A ) yields a realization ( c,JA,J c∗). Therefore the
+dimension of a symmetric realization of a rational function is at least t he Sylvester degree
+of the rational function.
+Theorem 6.8. Let
+/D6 ∈ F (<z )> be symmetric and let p ∈ domm
+/D6 be a Hermitian tuple
+such that /D6 admits a totally reduced realization (c,A, b) aboutp. Then:
+(1) /D6 admits a symmetric realization (J; c′,A ′) aboutp;
+(2) its dimension equals the Sylvester degree of /D6 , its domain equals the stable extended
+domain of /D6 , and the signature of J does not depend on the choice of a totally
+reduced representation;
+(3) every point in the connected component of the domain of /D6 containing p has a
+symmetric realization of minimal dimension with signature matrix J.
+Proof. (1) We follow the proof of [ HMV06, Lemma 4.1(3)]. Since /D6 is a symmetric
+expression and p is a Hermitian tuple, ( b∗,A ∗, c∗) is also a totally reduced realization of
+/D6 about p. By Theorem 4.13, they are similar via a unique transition matrix S:
+Sb = c∗, SA xS− 1 = (Ax)∗
+
+===== PAGE 30 =====
+
+30 J. VOL ˇCI ˇC
+for x ∈ x. Transposing these equations we see that the realizations ( c,A, b) and
+(b∗,A ∗, c∗) are also similar via the transition matrix S∗. By uniqueness we have S =S∗.
+We decompose S =RJR ∗, where J is a signature matrix and R is invertible, and set
+c′ = c(R∗)− 1, A ′x =JR ∗Ax(R∗)− 1
+forx ∈ x. A short calculation shows that ( J; c′,A ′) is a symmetric realization of /D6 about
+p.
+(2) The statement about the the stable extended domain follows fr om Corollary
+5.9. The signature of J equals the signature of S from the proof of (1), which is
+unique with respect to ( c,A, b). Every other totally reduced realization is of the form
+(cU − 1,UAU − 1,U b) by Theorem 4.13 and it is easy to verify that the corresponding
+Hermitian matrix is ( U − 1)∗SU − 1, which has the same signature as S.
+(3) Let γ : [0, 1] → dom /D6 be an arbitrary path in the space of Hermitian tuples
+starting at p. Let
+M(t) = I −
+g∑
+j=1
+A′
+j(γ(t)j − pj);
+we claim that the signature of M(1) equals the signature of J. If this were not the
+case, then the continuity of eigenvalues would imply the existence of t ∈ (0, 1) such that
+M(t) is singular. However, this contradicts the part of (2) about the d omain. Therefore
+M(1) = R1JR ∗
+1 and it can be veriﬁed that ( J;R− 1
+1 A′(R− 1
+1 )∗, c′(R∗
+1)− 1) is a symmetric
+realization of
+/D6 about γ(1). □
+Corollary 6.9. If a symmetric rational function /D6 admits a totally reduced realization
+about a Hermitian tuple p and the signature matrix of the corresponding symmetric rea l-
+ization is the identity matrix, then /D6 is positive on the connected component of its domain
+containingp.
+Example 6.10. The rational function (1 + z2)− 1 is positive on the whole domain and
+its symmetric realization about 0 is
+((
+− 1 0
+0 1
+)
+;
+(
+0 −z
+−z 0
+)
+,
+(
+0
+1
+))
+,
+so there is no obvious converse of Corollary
+6.9.
+References
+[And13] G. W. Anderson: Convergence of the largest singular value of a polynomial in independent
+Wigner matrices, Ann. Probab. 41 (2013) 2103–2181. 2
+[AM07] P. J. Antsaklis, A. N. Michel: A linear systems primer , Birkh¨ auser Boston, Boston, Inc.,
+Boston, 2007. 1, 25
+[Ami66] S. A. Amitsur: Rational identities and applications to algebra a nd geometry, J. Algebra 3
+(1966) 304–359. 1, 26, 29
+[Be76(1)] G. M. Bergman: Rational relations and rational identities in division rings. I, J. Algebra 43
+(1976) 252–266. 26
+[Be76(2)] G. M. Bergman: Rational relations and rational identities in division rings. II, J. Algebra 43
+(1976) 267-297. 26
+[BGM05] J. A. Ball, G. Groenewald, T. Malakorn: Structured noncom mutative multidimensional linear
+systems, SIAM J. Control Optim. 44 (2005) 1474–1528. 1, 2, 3, 8, 12, 14, 18
+[BGM06] J. A. Ball, G. Groenewald, T. Malakorn: Conservative struc tured noncommutative multidi-
+mensional linear systems, in The state space method generalizations and applications , 179–223,
+Oper. Theory Adv. Appl. 161, Birkh¨ auser, Basel, 2006.1
+[BK13] M. Breˇ sar, I. Klep: A local-global principle for linear depende nce of noncommutative polyno-
+mials, Israel J. Math. 193 (2013) 71–82. 27, 28
+
+===== PAGE 31 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 31
+[BMS15] S. T. Belinschi, T. Mai, R. Speicher: Analytic subordination th eory of operator-valued free
+additive convolution and the solution of a general random matrix pro blem, Preprint, 2013,
+arXiv:1303.3196v3, to appear in J. Reine Angew. Math. 2
+[BR11] J. Berstel, C. Reutenauer: Noncommutative rational series with applications , Encyclopedia of
+Mathematics and its Applications, 137, Cambridge University Press, Cambridge, 2011. 1, 2,
+3, 8, 12, 14, 18
+[CHSY03] J. F. Camino, J. W. Helton, R. E. Skelton, J. Ye: Matrix ineq ualities: a symbolic procedure
+to determine convexity automatically, Integral Equations Operator Theory 46 (2003) 399–454.
+3, 27
+[CIK97] A. L. Chistov, G. Ivanyos, M. Karpinski: Polynomial time algo rithms for modules over ﬁnite
+dimensional algebras, in Proceedings of the 1997 International Symposium on Symboli c and
+Algebraic Computation (Kihei, HI) , 68–74, ACM, New York, 1997. 16
+[Co95] P. M. Cohn: Skew ﬁelds. Theory of general division rings , Encyclopedia of Mathematics and
+its Applications 57, Cambridge University Press, Cambridge, 1995. 1, 4, 5, 11, 26
+[Co06] P.M. Cohn: Free ideal rings and localization in general rings , New Mathematical Monographs
+3. Cambridge University Press, 2006. 2, 5, 25
+[CR94] P. M. Cohn, C. Reutenauer: A normal form in free ﬁelds, Canad. J. Math. 46 (1994) 517–531.
+2, 25, 26
+[DM17] H. Derksen, V. Makam: Polynomial degree bounds for matrix semi-invariants, Adv. Math. 310
+(2017) 44–63. 27
+[DM80] P. C. Desmarais, W. S. Martindale: Generalized rational ident ities and rings with involution,
+Israel J. Math. 36 (1980) 187–192. 29
+[Fl74] M. Fliess: Matrices de Hankel, J. Math. Pures Appl. (9) 53 (1974) 197–222. 1
+[Fo84] E. Formanek: Invariants and the ring of generic matrices, J. Algebra 89 (1984) 178–223. 4
+[GKLLRT95] I. M. Gelfand, D. Krob, A. Lascoux, B. Leclerc, V. S. R etakh, J.-Y. Thibon: Noncommu-
+tative symmetric functions, Adv. Math. 112 (1995) 218–348. 1
+[GGR W05] I. M. Gelfand, S. Gelfand, V. Retakh, R. L. Wilson: Quaside terminants, Adv. Math. 193
+(2005) 56–141. 1
+[HKM13] J. W. Helton, I. Klep, S. McCullough: Free convex algebraic g eometry, in Semideﬁnite
+optimization and convex algebraic geometry , 341–405, MOS-SIAM Ser. Optim., 13 , SIAM,
+Philadelphia, PA, 2013. 1, 27
+[HMV06] J. W. Helton, S. McCullough, V. Vinnikov: Noncommutative co nvexity arises from linear
+matrix inequalities, J. Funct. Anal. 240 (2006) 105–191. 1, 3, 12, 26, 27, 29
+[HJ85] R. A. Horn, C. R. Johnson: Matrix analysis , Cambridge University Press, 1985. 7
+[HW15] P. Hrubeˇ s, A. Wigderson: Non-commutative arithmetic circ uits with division, Theory Comput.
+11 (2015) 357–393. 27
+[KVV09] D. S. Kalyuzhnyi-Verbovetski ˘ ı, V. Vinnikov: Singularities o f rational functions and minimal
+factorizations: the noncommutative and the commutative setting , Linear Algebra Appl. 430
+(2009) 869–889. 19, 22
+[KVV12] D. S. Kalyuzhnyi-Verbovetski ˘ ı, V. Vinnikov: Noncommuta tive rational functions, their
+diﬀerence-diﬀerential calculus and realizations, Multidimens. Syst. Signal Process. 23 (2012)
+49–77. 1, 3, 5
+[KVV14] D. S. Kalyuzhnyi-Verbovetski ˘ ı, V. Vinnikov: Foundations of free noncommutative function
+theory, Mathematical Surveys and Monographs, 199, American Mathema tical Society, 2014.
+1, 11, 12
+[KˇS14] I. Klep, ˇS. ˇSpenko: Free function theory through matrix invariants, arXiv:1407.7551. 12
+[KVV15] I. Klep, V. Vinnikov, J. Volˇ ciˇ c: Null- and Positivstellens¨ atze for rationally resolvable ideals,
+arXiv:1504.08004. 26
+[Lam91] T. Y. Lam: A ﬁrst course in noncommutative rings , Graduate Texts in Mathematics, 131,
+Springer-Verlag, New York, 1991. 12, 13
+[Le74] J. Lewin: Fields of fractions for group algebras of free grou ps, Trans. Amer. Math. Soc. 192
+(1974) 339–346. 1, 4
+[Li00] A. I. Lichtman: On universal ﬁelds of fractions for free algeb ras, J. Algebra 231 (2000) 652–676.
+1, 4
+[OHMP09] M. C. de Oliveira, J. W. Helton, S. A. McCullough, M. Putinar: Engineering systems and
+free semi-algebraic geometry, in Emerging applications of algebraic geometry , 17–61, IMA Vol.
+Math. Appl., 149 , Springer, New York, 2009. 1, 27
+[Pro76] C. Procesi: The invariant theory of n × n matrices, Adv. Math. 19 (1976) 306–381. 4
+
+===== PAGE 32 =====
+
+32 J. VOL ˇCI ˇC
+[Re96] C. Reutenauer: Inversion height in free ﬁelds, Selecta Math. (N.S.) 2 (2010) 93–109. 25
+[Ro84] J. D. Rosen: Generalized rational identities and rings with invo lution, J. Algebra 89 (1984)
+416–436. 29
+[Row80] L. H. Rowen: Polynomial identities in ring theory , Pure and Applied Mathematics, 84, Aca-
+demic Press, Inc., New York-London, 1980. 4, 10, 11, 12, 13, 28, 29
+[Sch61] M. P. Sch¨ utzenberger: On the deﬁnition of a family of auto mata, Information and Control 4
+(1961) 245–270. 1
+[Sa99] D. J. Saltman: Lectures on division algebras , CBMS Regional Conference Series in Mathemat-
+ics, 94, American Mathematical Society, Providence, RI, 1999. 4
+[Voi04] D.-V. Voiculescu: Free analysis questions I: Duality transfor m for the coalgebra of ∂X:B, Int.
+Math. Res. Not. 16 (2004) 793–822. 11
+[Voi10] D.-V. Voiculescu: Free analysis questions II: The Grassmann ian completion and the series
+expansions at the origin, J. reine angew. Math. 645 (2010) 155–236. 11, 12
+[Vol+] J. Volˇ ciˇ c: On domains of noncommutative rational functio ns, arXiv:1608.02594. 5, 22
+Jurij Vol ˇciˇc, The University of Auckland, Department of Mathematics
+E-mail address : jurij.volcic@auckland.ac.nz
+
+===== PAGE 33 =====
+
+MATRIX COEFFICIENT REALIZATION THEORY 33
+NOT FOR PUBLICATION
+Contents
+1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . . . . 1
+1.1. Main results and reader’s guide . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . 2
+1.2. Diﬀerences with the classical theory . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . 3
+Acknowledgment. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . 3
+2. Preliminaries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . . 3
+3. Linear representations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.1. Generalized series . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . 5
+3.2. Rationality equals recognizability. . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . 6
+3.3. Arithmetics of representations . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . 8
+3.4. Evaluations of rational series. . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . 10
+4. Minimization. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . 12
+4.1. Tools from the Artin-Wedderburn theory . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+4.2. Reduced, minimal and totally reduced representations . . . . . . . . . . . . . . . 13
+4.3. Hankel module . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . 18
+5. Realizations of noncommutative rational functions . . . . . . . . . . . . . . . . . . . . . . . . . 19
+5.1. Deﬁnition of realization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . 20
+5.2. Existence of totally reduced realizations. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+5.3. Stable extended domain and Sylvester degree of a nc rational f unction 22
+6. Applications . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . . 26
+6.1. Rational identity testing . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . 26
+6.2. Local and global linear dependence . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . 27
+6.3. Symmetric realizations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . 28
+References . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .30
