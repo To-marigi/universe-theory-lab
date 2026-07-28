@@ -1238,7 +1238,7 @@ def _source_manifest_data(
         (root / FROZEN_D3_PATH).read_text(encoding="utf-8")
     )
     d3_unresolved = (
-        d3_manifest["counts"]["fully_solved_strata"] == 0
+        d3_manifest["coverage"]["fully_solved_strata"] == 0
         and any(
             stratum.get("status") == "UNRESOLVED"
             for stratum in d3_manifest["strata"]
