@@ -2,6 +2,7 @@ from pathlib import Path
 
 from universe_lab.final_theory.artifacts_v034 import (
     _is_v034_certificate,
+    _normalise,
     _reproduction_artifact_paths,
 )
 
@@ -57,3 +58,24 @@ def test_v034_certificate_filter_preserves_unversioned_legacy_file(
     assert _is_v034_certificate(generated, generated_paths)
     assert _is_v034_certificate(versioned, generated_paths)
     assert not _is_v034_certificate(legacy, generated_paths)
+
+
+def test_normalise_preserves_domain_fields_and_updates_provenance() -> None:
+    observed = _normalise(
+        {
+            "schema_version": "domain-v1",
+            "source_index_branch": "DOMAIN_BRANCH",
+            "production_commit": "old",
+        },
+        metadata={
+            "schema_version": "common-v1",
+            "source_index_branch": ["COMMON_BRANCH"],
+            "production_commit": "new",
+            "artifact_freeze_pointer": {"tag_name": "tag"},
+        },
+    )
+
+    assert observed["schema_version"] == "domain-v1"
+    assert observed["source_index_branch"] == "DOMAIN_BRANCH"
+    assert observed["production_commit"] == "new"
+    assert observed["artifact_freeze_pointer"] == {"tag_name": "tag"}

@@ -241,8 +241,19 @@ def _normalise(
     metadata: dict[str, Any],
 ) -> dict[str, Any]:
     result = dict(payload)
+    provenance_keys = {
+        "branch",
+        "source_commit",
+        "production_commit",
+        "artifact_freeze_pointer",
+        "annotated_tag_object_hash",
+        "paper_versions",
+        "source_hashes",
+        "certificate_hashes",
+    }
     for key, value in metadata.items():
-        result[key] = value
+        if key in provenance_keys or key not in result:
+            result[key] = value
     return result
 
 

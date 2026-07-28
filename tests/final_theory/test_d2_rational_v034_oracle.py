@@ -212,7 +212,15 @@ def test_exact_scalar_fixture_rechecks_every_frozen_inventory() -> None:
     frozen_certificate = json.loads(
         SCALAR_CERTIFICATE_PATH.read_text(encoding="utf-8")
     )
-    assert frozen_certificate == certificate
+    assert all(
+        frozen_certificate.get(key) == value
+        for key, value in certificate.items()
+    )
+    assert frozen_certificate["production_commit"]
+    assert frozen_certificate["artifact_freeze_pointer"]["tag_name"].startswith(
+        "final-theory-bench-v0.3.4"
+    )
+    assert frozen_certificate["source_hashes"]
 
 
 def test_denominator_inventory_is_explicit_and_conditionally_exact() -> None:

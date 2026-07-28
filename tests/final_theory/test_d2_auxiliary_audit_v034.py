@@ -185,7 +185,12 @@ def test_frozen_result_and_certificates_match_the_live_audit(
             encoding="utf-8"
         )
     )
-    assert frozen == audit
+    assert all(frozen.get(key) == value for key, value in audit.items())
+    assert frozen["production_commit"]
+    assert frozen["artifact_freeze_pointer"]["tag_name"].startswith(
+        "final-theory-bench-v0.3.4"
+    )
+    assert frozen["certificate_hashes"]
     classification_certificate = json.loads(
         (
             root
