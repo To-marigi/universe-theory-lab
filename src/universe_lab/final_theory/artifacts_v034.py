@@ -14,6 +14,7 @@ import sympy as sp
 
 from universe_lab.final_theory.d2_auxiliary_audit_v034 import (
     audit_b_auxiliaries_v034,
+    write_d2_auxiliary_audit_v034,
 )
 from universe_lab.final_theory.d2_claim_scope_v034 import (
     OVERALL,
@@ -152,6 +153,32 @@ def _source_hashes(root: Path) -> list[dict[str, str]]:
         {"path": relative, "sha256": _sha256_file(root / relative)}
         for relative in paths
     ]
+
+
+def _write_raw_independent_oracle_scalar_certificate(root: Path) -> None:
+    completed = subprocess.run(
+        [
+            sys.executable,
+            str(root / "oracle/d2_rational_v034_oracle.py"),
+            "--repo-root",
+            str(root),
+            "--scalar-output",
+            str(
+                root
+                / "certificates/independent_oracle/v0.3.4_scalar_fixture.json"
+            ),
+        ],
+        cwd=root,
+        check=False,
+        capture_output=True,
+        text=True,
+        timeout=120,
+    )
+    if completed.returncode != 0:
+        raise RuntimeError(
+            "independent v0.3.4 oracle failed before artifact normalisation: "
+            f"{completed.stderr[-2000:]}"
+        )
 
 
 def _freeze_pointer() -> dict[str, Any]:
@@ -755,6 +782,8 @@ def write_v034_artifacts(
         root,
         timeout_seconds_per_chart=30,
     )
+    write_d2_auxiliary_audit_v034(root)
+    _write_raw_independent_oracle_scalar_certificate(root)
     rational_dag = compile_d2_rational_dag_v034()
     equivalence = compile_reconstruction_equivalence_v034()
     localisation = compile_localised_polynomial_systems_v034()
