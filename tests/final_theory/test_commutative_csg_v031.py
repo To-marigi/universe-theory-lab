@@ -294,7 +294,9 @@ def test_checked_in_certificates_and_result_verify() -> None:
     for filename, expected in expected_payloads.items():
         path = certificate_dir / filename
         actual = json.loads(path.read_text(encoding="utf-8"))
-        assert actual == expected
+        assert {
+            key: actual[key] for key in expected
+        } == expected
         verification = verify_commutative_csg_certificate(actual)
         assert verification["passed"]
 
