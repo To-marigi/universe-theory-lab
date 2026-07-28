@@ -480,6 +480,39 @@ def _certificate_hash_records(
     ]
 
 
+def _reproduction_artifact_paths(
+    root: Path,
+    certificate_paths: list[Path],
+) -> list[Path]:
+    candidates = [
+        path
+        for base in (
+            root / "src/universe_lab/final_theory",
+            root / "oracle",
+            root / "tests/final_theory",
+            root / "reports",
+            root / "results",
+        )
+        for pattern in ("*v034*", "*v0.3.4*")
+        for path in base.glob(pattern)
+        if path.is_file()
+    ]
+    candidates.extend(
+        [
+            root / "results/final_theory_bench_v0.3.4.json",
+            *certificate_paths,
+        ]
+    )
+    return sorted(
+        {
+            path.resolve()
+            for path in candidates
+            if path.is_file()
+            and path.name != "reproduction_manifest_final_v0.3.4.json"
+        }
+    )
+
+
 def _stratum_result(
     *,
     production_commit: str,
@@ -709,6 +742,13 @@ def write_v034_artifacts(
     scalar_witness = scalar_s3_representation_certificate_v034()
     claim_scope = compile_claim_scope_v034(solver_campaign)
     similarity = similarity_policy_v034()
+    campaign_time_limit = max(
+        (
+            run.get("time_limit_seconds", 0) or 0
+            for run in solver_campaign["runs"]
+        ),
+        default=0,
+    )
 
     certificate_payloads = _certificate_payloads(
         root,
@@ -984,7 +1024,7 @@ def write_v034_artifacts(
             saturation_method=localisation["saturation_method"],
             solver="bounded SymPy scouts plus exact scalar substitution",
             solver_version=solver_campaign["CAS_inventory"],
-            time_limit=30,
+            time_limit=campaign_time_limit,
             completeness_scope="finite n<=4 fixed-d2 classification",
             unresolved_components=claim_scope["unresolved_components"],
         ),
@@ -1031,7 +1071,7 @@ def write_v034_artifacts(
             saturation_method=localisation["saturation_method"],
             solver="bounded exact campaign",
             solver_version=solver_campaign["CAS_inventory"],
-            time_limit=30,
+            time_limit=campaign_time_limit,
             completeness_scope="Final-Theory Bench v0.3.4 finite algebraic scope",
             unresolved_components=claim_scope["unresolved_components"],
         ),
@@ -1053,31 +1093,9 @@ def write_v034_artifacts(
     for filename, text in report_payloads.items():
         _write_text(root / "reports" / filename, text)
 
-    artifact_paths = [
-        path
-        for base in (
-            root / "src/universe_lab/final_theory",
-            root / "oracle",
-            root / "tests/final_theory",
-            root / "reports",
-            root / "results",
-        )
-        for path in base.glob("*v034*")
-        if path.is_file()
-    ]
-    artifact_paths.extend(
-        [
-            root / "results/final_theory_bench_v0.3.4.json",
-            *certificate_paths,
-        ]
-    )
-    artifact_paths = sorted(
-        {
-            path.resolve()
-            for path in artifact_paths
-            if path.is_file()
-            and path.name != "reproduction_manifest_final_v0.3.4.json"
-        }
+    artifact_paths = _reproduction_artifact_paths(
+        root,
+        certificate_paths,
     )
     reproduction_artifacts = [
         {
