@@ -1571,6 +1571,79 @@ def _upper_unipotent(a: sp.Expr, b: sp.Expr, c: sp.Expr) -> sp.Matrix:
     return sp.Matrix([[1, a, c], [0, 1, b], [0, 0, 1]])
 
 
+TriangularCoordinates = tuple[sp.Expr, sp.Expr, sp.Expr, sp.Expr]
+
+
+def _tri_add(
+    left: TriangularCoordinates,
+    right: TriangularCoordinates,
+) -> TriangularCoordinates:
+    return tuple(sp.factor(left[index] + right[index]) for index in range(4))
+
+
+def _tri_scale(
+    scalar: sp.Expr | int,
+    value: TriangularCoordinates,
+) -> TriangularCoordinates:
+    return tuple(sp.factor(sp.sympify(scalar) * entry) for entry in value)
+
+
+def _tri_multiply(
+    left: TriangularCoordinates,
+    right: TriangularCoordinates,
+) -> TriangularCoordinates:
+    left_scalar, left_12, left_23, left_13 = left
+    right_scalar, right_12, right_23, right_13 = right
+    return (
+        sp.factor(left_scalar * right_scalar),
+        sp.factor(left_scalar * right_12 + left_12 * right_scalar),
+        sp.factor(left_scalar * right_23 + left_23 * right_scalar),
+        sp.factor(
+            left_scalar * right_13
+            + left_12 * right_23
+            + left_13 * right_scalar
+        ),
+    )
+
+
+def _tri_inverse(value: TriangularCoordinates) -> TriangularCoordinates:
+    scalar, entry_12, entry_23, entry_13 = value
+    return (
+        sp.factor(1 / scalar),
+        sp.factor(-entry_12 / scalar**2),
+        sp.factor(-entry_23 / scalar**2),
+        sp.factor(entry_12 * entry_23 / scalar**3 - entry_13 / scalar**2),
+    )
+
+
+def _tri_product(*values: TriangularCoordinates) -> TriangularCoordinates:
+    result: TriangularCoordinates = (sp.Integer(1),) + (sp.Integer(0),) * 3
+    for value in values:
+        result = _tri_multiply(result, value)
+    return result
+
+
+def _tri_residual(
+    left: TriangularCoordinates,
+    right: TriangularCoordinates,
+) -> TriangularCoordinates:
+    return _tri_add(left, _tri_scale(-1, right))
+
+
+def _tri_from_matrix(matrix: sp.MatrixBase) -> TriangularCoordinates:
+    if not (
+        matrix[0, 0] == matrix[1, 1] == matrix[2, 2]
+        and matrix[1, 0] == matrix[2, 0] == matrix[2, 1] == 0
+    ):
+        raise ValueError("matrix is outside the equal-diagonal upper-triangular algebra")
+    return (
+        sp.factor(matrix[0, 0]),
+        sp.factor(matrix[0, 1]),
+        sp.factor(matrix[1, 2]),
+        sp.factor(matrix[0, 2]),
+    )
+
+
 def _matrix_certificate(matrix: sp.MatrixBase) -> dict[str, Any]:
     simplified = sp.Matrix(matrix).applyfunc(lambda value: sp.factor(sp.cancel(value)))
     record = _matrix_record(simplified)
@@ -1746,6 +1819,62 @@ def _scaled_heisenberg_ansatz() -> dict[str, Any]:
         "eq145": _matrix_certificate(eq145.subs(t, 1)),
         "eq163": _matrix_certificate(eq163.subs(t, 1)),
     }
+    tri_identity: TriangularCoordinates = (
+        sp.Integer(1),
+        sp.Integer(0),
+        sp.Integer(0),
+        sp.Integer(0),
+    )
+    tri_q1, tri_q2, tri_q3, _tri_q4 = (
+        _tri_from_matrix(generator) for generator in generators
+    )
+    tri_a1 = _tri_product(
+        _tri_residual(tri_identity, tri_q1),
+        tri_q2,
+        _tri_inverse(tri_q1),
+    )
+    tri_a2 = _tri_add(
+        _tri_residual(tri_identity, tri_q2),
+        _tri_scale(-2, tri_a1),
+    )
+    tri_eq145 = _tri_residual(
+        _tri_product(
+            tri_a1,
+            tri_a2,
+            tri_q3,
+            _tri_inverse(tri_a2),
+            _tri_inverse(tri_q2),
+            tri_a2,
+        ),
+        _tri_product(
+            tri_a2,
+            tri_a1,
+            tri_q3,
+            _tri_inverse(tri_a1),
+            _tri_inverse(tri_q2),
+            tri_a1,
+        ),
+    )
+    tri_commutator = _tri_residual(
+        _tri_product(tri_q1, tri_q2),
+        _tri_product(tri_q2, tri_q1),
+    )
+    coordinate_oracle = {
+        "method": (
+            "independent four-coordinate equal-diagonal upper-triangular "
+            "multiplication/inverse algebra"
+        ),
+        "eq145_coordinates": [_exact(value) for value in tri_eq145],
+        "commutator_Q1_Q2_coordinates": [
+            _exact(value) for value in tri_commutator
+        ],
+        "eq145_matches_matrix_route": (
+            tri_eq145 == _tri_from_matrix(eq145)
+        ),
+        "commutator_matches_matrix_route": (
+            tri_commutator == _tri_from_matrix(commutator)
+        ),
+    }
     return {
         "ansatz_id": "D3_SCALED_HEISENBERG_AFFINE_LINE_Q_2_3_5_7",
         "field": "Q(t), characteristic zero",
@@ -1815,6 +1944,7 @@ def _scaled_heisenberg_ansatz() -> dict[str, Any]:
                 "only this one-parameter q=(2,3,5,7) scaled-Heisenberg ansatz"
             ),
         },
+        "independent_coordinate_verification": coordinate_oracle,
         "t_equals_1_mutation_witness": {
             "purpose": (
                 "shows that checking only Eqs.119,130,163 would produce a "
