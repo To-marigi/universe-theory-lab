@@ -1,0 +1,36 @@
+{
+  "schema_version": "final-theory-d2-S3-commutativity-v0.3.5",
+  "branch": "codex/final-theory-v0.3.5-d2-saturated-elimination-20260729",
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "source_index_branch": [
+    "DERIVED_APPENDIX_QN_BRANCH",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH"
+  ],
+  "dimension": 2,
+  "finite_scope": "n<=4",
+  "proof": {
+    "algebra": "K(parameters)(Q_1) inside Mat_2",
+    "closure_rules": [
+      "Q_n=lambda_n*Q_1",
+      "ordered products preserve the one-generator subalgebra",
+      "finite sums preserve the subalgebra",
+      "inverse of an invertible member stays in its rational function field"
+    ],
+    "dependency_nodes_checked": 92,
+    "transition_occurrences_checked": 165,
+    "failed_nodes": [],
+    "failed_occurrences": [],
+    "all_reconstructed_transition_pairs_commute": true,
+    "verdict": "FINITE_N4_S3_TRANSITION_ALGEBRA_COMMUTATIVE"
+  },
+  "lemma": "Every element of the rational subalgebra K(parameters)(Q_1) is a rational function of one matrix; any two such elements commute wherever their denominators are nonzero.",
+  "general_S3_solution_locus_classified": false,
+  "exact_numeric_distinction": "EXACT_SYMBOLIC_DEPENDENCY_PROOF",
+  "completeness_scope": "noncommutativity exclusion in the finite S3 stratum only",
+  "unresolved_components": [
+    "general S3 solution-locus description"
+  ],
+  "passed": true,
+  "verdict": "S3_NO_NONCOMMUTATIVE_REPRESENTATION_N4",
+  "semantic_digest_sha256": "3b10fab2ba78c7961c5430a760bb4f281d57a0a71c1579c5e0ad7d4c89e53f3a"
+}

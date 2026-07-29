@@ -1,0 +1,4056 @@
+{
+  "backend": "Sage fraction field / embedded Singular ideals",
+  "backend_versions": {
+    "python": "3.12.3",
+    "sage": "10.9",
+    "singular": "Singular for x86_64-Linux version 4.4.1 (44100, 64 bit) Jan 2025"
+  },
+  "cached_q_word_product_count": 49,
+  "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M2:C_NONZERO",
+  "chart_verdict": "EXACT_EMPTY_CHART",
+  "coefficient_field": "GF(32003)",
+  "coefficient_modulus": 32003,
+  "commutator_component_count": 18,
+  "dependency_nodes_evaluated": 22,
+  "effective_saturation_factor_count": 10,
+  "equation_complexity_inventory": [],
+  "equation_provenance_digest_sha256": "b0aff19cd716ba2e9aa69b78751fe7ca170f4f61421959ad7645325d2697821e",
+  "equations_covered_by_initial_basis": 106,
+  "evaluated_relation_ids_sha256": "35d2820fe2ab8294749f69dd334f97734a09eea95d1d0c301ed7aa4ac2709693",
+  "exit_status": "COMPLETED",
+  "expression_source": "DIRECT_REDUCED_OPERATOR_WORDS",
+  "factor_reduction_equivalence": {
+    "all_source_factorisations_reconstructed_exactly": true,
+    "deduplication_preserves_saturation": true,
+    "justification": "Over a field, saturation by a nonzero scalar unit, repeated irreducible factors, and duplicate factors is unchanged; every source polynomial was reconstructed exactly from its recorded unit, irreducible factors, and multiplicities.",
+    "source_factorisations": [
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 0,
+        "source_polynomial_sha256": "10194c416fc51a1cb4e4351341892bfc2c2b2626e48cfca518ffb4218212148e"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 1,
+        "source_polynomial_sha256": "0214864f04be6639b34067f928bd75a23479723a98c8e0ecf3346b19eb0f271a"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 2,
+        "source_polynomial_sha256": "b3627effe2184e7bad3c943da6007cbd027831e446ea0ec70e1dc8df6eb8a30c"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 3,
+        "source_polynomial_sha256": "61186dd963c352e628e8e3f0675adadfa6e04b1dbde875a7c967dd684dd95b96"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 4,
+        "source_polynomial_sha256": "61186dd963c352e628e8e3f0675adadfa6e04b1dbde875a7c967dd684dd95b96"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 5,
+        "source_polynomial_sha256": "3ebb6f370f5c5d649aba5303a248673086bf9a8d24922e4378dfd57a09a5373b"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 6,
+        "source_polynomial_sha256": "3ebb6f370f5c5d649aba5303a248673086bf9a8d24922e4378dfd57a09a5373b"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 7,
+        "source_polynomial_sha256": "3ebb6f370f5c5d649aba5303a248673086bf9a8d24922e4378dfd57a09a5373b"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 8,
+        "source_polynomial_sha256": "3ebb6f370f5c5d649aba5303a248673086bf9a8d24922e4378dfd57a09a5373b"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 9,
+        "source_polynomial_sha256": "cd9c65f2fbb9749089c47077db0cf152e4f6d1e314ec4052354b265a03694634"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 10,
+        "source_polynomial_sha256": "c5fb25c38f8ed54a12455a9873d8cc9f42247b3ca9048b28e1d0771c8c58b50d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 11,
+        "source_polynomial_sha256": "c5fb25c38f8ed54a12455a9873d8cc9f42247b3ca9048b28e1d0771c8c58b50d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 12,
+        "source_polynomial_sha256": "c5fb25c38f8ed54a12455a9873d8cc9f42247b3ca9048b28e1d0771c8c58b50d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 13,
+        "source_polynomial_sha256": "c5fb25c38f8ed54a12455a9873d8cc9f42247b3ca9048b28e1d0771c8c58b50d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          }
+        ],
+        "source_factor_index": 14,
+        "source_polynomial_sha256": "40601b787b7d9a648aa9212513ac206fbe55a31ec7d7a527f38369d70aa37f65"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 3,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 15,
+        "source_polynomial_sha256": "b6fee847df0338b8c16acf184a926e6774ec3ea8d9a073ba134e7cd00da1539c"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 3,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 16,
+        "source_polynomial_sha256": "b6fee847df0338b8c16acf184a926e6774ec3ea8d9a073ba134e7cd00da1539c"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 3,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 17,
+        "source_polynomial_sha256": "b6fee847df0338b8c16acf184a926e6774ec3ea8d9a073ba134e7cd00da1539c"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 3,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 18,
+        "source_polynomial_sha256": "b6fee847df0338b8c16acf184a926e6774ec3ea8d9a073ba134e7cd00da1539c"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 19,
+        "source_polynomial_sha256": "97076622129b1f0d12ace1a12a665108eb66ec4e20f6179b3c8d7f2ff32a8df1"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 20,
+        "source_polynomial_sha256": "97076622129b1f0d12ace1a12a665108eb66ec4e20f6179b3c8d7f2ff32a8df1"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 21,
+        "source_polynomial_sha256": "97076622129b1f0d12ace1a12a665108eb66ec4e20f6179b3c8d7f2ff32a8df1"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 22,
+        "source_polynomial_sha256": "97076622129b1f0d12ace1a12a665108eb66ec4e20f6179b3c8d7f2ff32a8df1"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 23,
+        "source_polynomial_sha256": "5220ea8e4c44daeb0f454e0e45ea7528aaa36083de301304aa6620e9fb055c26"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 24,
+        "source_polynomial_sha256": "044d5f40bfd911fa3d424e20fc4f541bbbe5a69ba1b84d15963be361b5b7e8be"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 25,
+        "source_polynomial_sha256": "5220ea8e4c44daeb0f454e0e45ea7528aaa36083de301304aa6620e9fb055c26"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 26,
+        "source_polynomial_sha256": "044d5f40bfd911fa3d424e20fc4f541bbbe5a69ba1b84d15963be361b5b7e8be"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 3,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 27,
+        "source_polynomial_sha256": "f1a87bd2417570017bcbabfb66312fd675bf09f8648eed0621f6309c80a7e039"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 28,
+        "source_polynomial_sha256": "8da363cd4695f0f1e997b142a4e025241a20f7cfe85ab954cda4ebc29686e3d8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 3,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 29,
+        "source_polynomial_sha256": "f1a87bd2417570017bcbabfb66312fd675bf09f8648eed0621f6309c80a7e039"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 30,
+        "source_polynomial_sha256": "8da363cd4695f0f1e997b142a4e025241a20f7cfe85ab954cda4ebc29686e3d8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 31,
+        "source_polynomial_sha256": "8610436a4cd8f3c542547002cc8f3a75b02d7fbe2c8685bb9bf9287e8af6707d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 32,
+        "source_polynomial_sha256": "8610436a4cd8f3c542547002cc8f3a75b02d7fbe2c8685bb9bf9287e8af6707d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 33,
+        "source_polynomial_sha256": "8610436a4cd8f3c542547002cc8f3a75b02d7fbe2c8685bb9bf9287e8af6707d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 34,
+        "source_polynomial_sha256": "8610436a4cd8f3c542547002cc8f3a75b02d7fbe2c8685bb9bf9287e8af6707d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 35,
+        "source_polynomial_sha256": "faa5085a0b94cd79b4f54114450992ae7678e216c68f870de4119158842d5f9f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 36,
+        "source_polynomial_sha256": "faa5085a0b94cd79b4f54114450992ae7678e216c68f870de4119158842d5f9f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 37,
+        "source_polynomial_sha256": "faa5085a0b94cd79b4f54114450992ae7678e216c68f870de4119158842d5f9f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 38,
+        "source_polynomial_sha256": "faa5085a0b94cd79b4f54114450992ae7678e216c68f870de4119158842d5f9f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 39,
+        "source_polynomial_sha256": "e5548aef491c33e1adecd7132dcbe16dd12a217d989342f2a79581bddfe30187"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 40,
+        "source_polynomial_sha256": "e5548aef491c33e1adecd7132dcbe16dd12a217d989342f2a79581bddfe30187"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 41,
+        "source_polynomial_sha256": "e5548aef491c33e1adecd7132dcbe16dd12a217d989342f2a79581bddfe30187"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 42,
+        "source_polynomial_sha256": "e5548aef491c33e1adecd7132dcbe16dd12a217d989342f2a79581bddfe30187"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          }
+        ],
+        "source_factor_index": 43,
+        "source_polynomial_sha256": "7f9d80c2a6b0fc9c3ed4800b4b7f0e268218ecfa8606c594c1a180053209c081"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          }
+        ],
+        "source_factor_index": 44,
+        "source_polynomial_sha256": "7f9d80c2a6b0fc9c3ed4800b4b7f0e268218ecfa8606c594c1a180053209c081"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          }
+        ],
+        "source_factor_index": 45,
+        "source_polynomial_sha256": "7f9d80c2a6b0fc9c3ed4800b4b7f0e268218ecfa8606c594c1a180053209c081"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          }
+        ],
+        "source_factor_index": 46,
+        "source_polynomial_sha256": "7f9d80c2a6b0fc9c3ed4800b4b7f0e268218ecfa8606c594c1a180053209c081"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 47,
+        "source_polynomial_sha256": "57b671b73f8062df1e7f305d44c32b785565bb4775483a0dcd5b9a2bd4e84e80"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 48,
+        "source_polynomial_sha256": "57b671b73f8062df1e7f305d44c32b785565bb4775483a0dcd5b9a2bd4e84e80"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 49,
+        "source_polynomial_sha256": "57b671b73f8062df1e7f305d44c32b785565bb4775483a0dcd5b9a2bd4e84e80"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 50,
+        "source_polynomial_sha256": "57b671b73f8062df1e7f305d44c32b785565bb4775483a0dcd5b9a2bd4e84e80"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 51,
+        "source_polynomial_sha256": "b1aa4f9d661d7b267083f64a7f1f5a46de95bfd561b742d0c14ed8f0edc2034f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 52,
+        "source_polynomial_sha256": "b1aa4f9d661d7b267083f64a7f1f5a46de95bfd561b742d0c14ed8f0edc2034f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 53,
+        "source_polynomial_sha256": "b1aa4f9d661d7b267083f64a7f1f5a46de95bfd561b742d0c14ed8f0edc2034f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 54,
+        "source_polynomial_sha256": "b1aa4f9d661d7b267083f64a7f1f5a46de95bfd561b742d0c14ed8f0edc2034f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          }
+        ],
+        "source_factor_index": 55,
+        "source_polynomial_sha256": "7f9d80c2a6b0fc9c3ed4800b4b7f0e268218ecfa8606c594c1a180053209c081"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          }
+        ],
+        "source_factor_index": 56,
+        "source_polynomial_sha256": "7f9d80c2a6b0fc9c3ed4800b4b7f0e268218ecfa8606c594c1a180053209c081"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          }
+        ],
+        "source_factor_index": 57,
+        "source_polynomial_sha256": "7f9d80c2a6b0fc9c3ed4800b4b7f0e268218ecfa8606c594c1a180053209c081"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          }
+        ],
+        "source_factor_index": 58,
+        "source_polynomial_sha256": "7f9d80c2a6b0fc9c3ed4800b4b7f0e268218ecfa8606c594c1a180053209c081"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 59,
+        "source_polynomial_sha256": "faa5085a0b94cd79b4f54114450992ae7678e216c68f870de4119158842d5f9f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 60,
+        "source_polynomial_sha256": "faa5085a0b94cd79b4f54114450992ae7678e216c68f870de4119158842d5f9f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 61,
+        "source_polynomial_sha256": "faa5085a0b94cd79b4f54114450992ae7678e216c68f870de4119158842d5f9f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 62,
+        "source_polynomial_sha256": "faa5085a0b94cd79b4f54114450992ae7678e216c68f870de4119158842d5f9f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 63,
+        "source_polynomial_sha256": "6572c58b3c34040ba277caee34404d86bb135583abecb0048475a5cb510ce957"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 64,
+        "source_polynomial_sha256": "6572c58b3c34040ba277caee34404d86bb135583abecb0048475a5cb510ce957"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 65,
+        "source_polynomial_sha256": "6572c58b3c34040ba277caee34404d86bb135583abecb0048475a5cb510ce957"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 66,
+        "source_polynomial_sha256": "6572c58b3c34040ba277caee34404d86bb135583abecb0048475a5cb510ce957"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 67,
+        "source_polynomial_sha256": "6572c58b3c34040ba277caee34404d86bb135583abecb0048475a5cb510ce957"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 68,
+        "source_polynomial_sha256": "6572c58b3c34040ba277caee34404d86bb135583abecb0048475a5cb510ce957"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 69,
+        "source_polynomial_sha256": "6572c58b3c34040ba277caee34404d86bb135583abecb0048475a5cb510ce957"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_index": 70,
+        "source_polynomial_sha256": "6572c58b3c34040ba277caee34404d86bb135583abecb0048475a5cb510ce957"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 71,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 72,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 73,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 74,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 75,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 76,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 77,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 78,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 79,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 80,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 81,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 82,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 83,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 84,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 85,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 86,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 87,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 88,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 89,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 90,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 91,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 92,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 93,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 94,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 95,
+        "source_polynomial_sha256": "1f9f28b7ba46a7305a6db6a19e1cfa07f0191ecf080656ad5d1fc55a17a77333"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 96,
+        "source_polynomial_sha256": "1f9f28b7ba46a7305a6db6a19e1cfa07f0191ecf080656ad5d1fc55a17a77333"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 97,
+        "source_polynomial_sha256": "1f9f28b7ba46a7305a6db6a19e1cfa07f0191ecf080656ad5d1fc55a17a77333"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 98,
+        "source_polynomial_sha256": "1f9f28b7ba46a7305a6db6a19e1cfa07f0191ecf080656ad5d1fc55a17a77333"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 99,
+        "source_polynomial_sha256": "1f9f28b7ba46a7305a6db6a19e1cfa07f0191ecf080656ad5d1fc55a17a77333"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 100,
+        "source_polynomial_sha256": "1f9f28b7ba46a7305a6db6a19e1cfa07f0191ecf080656ad5d1fc55a17a77333"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 101,
+        "source_polynomial_sha256": "1f9f28b7ba46a7305a6db6a19e1cfa07f0191ecf080656ad5d1fc55a17a77333"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 102,
+        "source_polynomial_sha256": "1f9f28b7ba46a7305a6db6a19e1cfa07f0191ecf080656ad5d1fc55a17a77333"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 103,
+        "source_polynomial_sha256": "3ebb6f370f5c5d649aba5303a248673086bf9a8d24922e4378dfd57a09a5373b"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 104,
+        "source_polynomial_sha256": "3ebb6f370f5c5d649aba5303a248673086bf9a8d24922e4378dfd57a09a5373b"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 105,
+        "source_polynomial_sha256": "3ebb6f370f5c5d649aba5303a248673086bf9a8d24922e4378dfd57a09a5373b"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 106,
+        "source_polynomial_sha256": "3ebb6f370f5c5d649aba5303a248673086bf9a8d24922e4378dfd57a09a5373b"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 107,
+        "source_polynomial_sha256": "8610436a4cd8f3c542547002cc8f3a75b02d7fbe2c8685bb9bf9287e8af6707d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 108,
+        "source_polynomial_sha256": "8610436a4cd8f3c542547002cc8f3a75b02d7fbe2c8685bb9bf9287e8af6707d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 109,
+        "source_polynomial_sha256": "8610436a4cd8f3c542547002cc8f3a75b02d7fbe2c8685bb9bf9287e8af6707d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 110,
+        "source_polynomial_sha256": "8610436a4cd8f3c542547002cc8f3a75b02d7fbe2c8685bb9bf9287e8af6707d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 111,
+        "source_polynomial_sha256": "c5fb25c38f8ed54a12455a9873d8cc9f42247b3ca9048b28e1d0771c8c58b50d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 112,
+        "source_polynomial_sha256": "c5fb25c38f8ed54a12455a9873d8cc9f42247b3ca9048b28e1d0771c8c58b50d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 113,
+        "source_polynomial_sha256": "c5fb25c38f8ed54a12455a9873d8cc9f42247b3ca9048b28e1d0771c8c58b50d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 114,
+        "source_polynomial_sha256": "c5fb25c38f8ed54a12455a9873d8cc9f42247b3ca9048b28e1d0771c8c58b50d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 115,
+        "source_polynomial_sha256": "044d5f40bfd911fa3d424e20fc4f541bbbe5a69ba1b84d15963be361b5b7e8be"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 116,
+        "source_polynomial_sha256": "044d5f40bfd911fa3d424e20fc4f541bbbe5a69ba1b84d15963be361b5b7e8be"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 117,
+        "source_polynomial_sha256": "044d5f40bfd911fa3d424e20fc4f541bbbe5a69ba1b84d15963be361b5b7e8be"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 118,
+        "source_polynomial_sha256": "044d5f40bfd911fa3d424e20fc4f541bbbe5a69ba1b84d15963be361b5b7e8be"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 119,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 120,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 121,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 122,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 123,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 124,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 125,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 126,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 127,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 128,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 129,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "2",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_index": 130,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_index": 131,
+        "source_polynomial_sha256": "0214864f04be6639b34067f928bd75a23479723a98c8e0ecf3346b19eb0f271a"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "l2"
+          }
+        ],
+        "source_factor_index": 132,
+        "source_polynomial_sha256": "e523f9d32d200d4c898117c977ff5109e2a298ef92341cd3f9d2c18ac99d493a"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "l3"
+          }
+        ],
+        "source_factor_index": 133,
+        "source_polynomial_sha256": "a34a826c7491ae2119e005ec45b2269c7ab25b82286d3587a9261449f9b7dd9e"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "l4"
+          }
+        ],
+        "source_factor_index": 134,
+        "source_polynomial_sha256": "c717ad029e35cb00d4271cc7b85922048c248a080c7fad10ecd65ef4ecd4823a"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "m2"
+          }
+        ],
+        "source_factor_index": 135,
+        "source_polynomial_sha256": "5a669488ee2070800f4b7c22ac37d09b913cf9201806773ef0a8d86b614f8d8c"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c"
+          }
+        ],
+        "source_factor_index": 136,
+        "source_polynomial_sha256": "879923da020d1533f4d8e921ea7bac61e8ba41d3c89d17a4d14e3a89c6780d5d"
+      }
+    ],
+    "zero_required_factor": false
+  },
+  "factor_reduction_records": [
+    {
+      "factor": "b*c - a*d",
+      "source_occurrence_count": 123,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 1
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 2
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 5
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 6
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 7
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 8
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 10
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 11
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 12
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 13
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 15
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 16
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 17
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 18
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 19
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 20
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 21
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 22
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 23
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 24
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 25
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 26
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 27
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 28
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 29
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 30
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 31
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 32
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 33
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 34
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 35
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 36
+        }
+      ],
+      "source_occurrences_preview_truncated": true,
+      "source_occurrences_sha256": "082dbb35d829090fa88f5036ad1ca2c9199bfde4a25cddb89876d6d6c1f4f554"
+    },
+    {
+      "factor": "b*c - a*d + a + d - 1",
+      "source_occurrence_count": 83,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 0
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 3
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 4
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 5
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 6
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 7
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 8
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 15
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 16
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 17
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 18
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 19
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 20
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 21
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 22
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 27
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 28
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 29
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 30
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 31
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 32
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 33
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 34
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 35
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 36
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 37
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 38
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 43
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 44
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 45
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 46
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 47
+        }
+      ],
+      "source_occurrences_preview_truncated": true,
+      "source_occurrences_sha256": "60be121b6bb7ed6fe312d81642d4f6c95619011df6f6ffdd10b9176b216d476e"
+    },
+    {
+      "factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1",
+      "source_occurrence_count": 33,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 9
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 10
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 11
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 12
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 13
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 27
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 28
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 29
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 30
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 39
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 40
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 41
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 42
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 51
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 52
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 53
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 54
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 87
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 88
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 89
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 90
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 91
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 92
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 93
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 94
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 111
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 112
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 113
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 114
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 127
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 128
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 129
+        }
+      ],
+      "source_occurrences_preview_truncated": true,
+      "source_occurrences_sha256": "79334d6b96dba21701e14f757935df1d453bfaa75a87b5fdfe20892bf7e3a532"
+    },
+    {
+      "factor": "c",
+      "source_occurrence_count": 1,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 136
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "fcd9bbd2e63fe5af5ee01fe899d14e2cb8d20f38aa01dd30f35f77ee501e3550"
+    },
+    {
+      "factor": "c*m2 + l2 - 1",
+      "source_occurrence_count": 21,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 14
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 15
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 16
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 17
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 18
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 31
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 32
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 33
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 34
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 43
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 44
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 45
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 46
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 55
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 56
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 57
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 58
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 107
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 108
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 109
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 110
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "a322a28bb66d3d541dcf8e34cd6d6149bb51f0ba99ed5bbee89bcb1decb3a6e8"
+    },
+    {
+      "factor": "c*m2 - l2 + 1",
+      "source_occurrence_count": 21,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 14
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 15
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 16
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 17
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 18
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 31
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 32
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 33
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 34
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 43
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 44
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 45
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 46
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 55
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 56
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 57
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 58
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 107
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 108
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 109
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 110
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "a322a28bb66d3d541dcf8e34cd6d6149bb51f0ba99ed5bbee89bcb1decb3a6e8"
+    },
+    {
+      "factor": "l2",
+      "source_occurrence_count": 92,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 2,
+          "source_factor_index": 2
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 3
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 4
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 5
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 6
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 7
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 8
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 10
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 11
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 12
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 13
+        },
+        {
+          "multiplicity": 3,
+          "source_factor_index": 15
+        },
+        {
+          "multiplicity": 3,
+          "source_factor_index": 16
+        },
+        {
+          "multiplicity": 3,
+          "source_factor_index": 17
+        },
+        {
+          "multiplicity": 3,
+          "source_factor_index": 18
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 19
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 20
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 21
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 22
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 23
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 24
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 25
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 26
+        },
+        {
+          "multiplicity": 3,
+          "source_factor_index": 27
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 28
+        },
+        {
+          "multiplicity": 3,
+          "source_factor_index": 29
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 30
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 31
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 32
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 33
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 34
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 35
+        }
+      ],
+      "source_occurrences_preview_truncated": true,
+      "source_occurrences_sha256": "508895c0cd44f8345e03d856437e8df21c3213789b37ae194a62ae2e5842b418"
+    },
+    {
+      "factor": "l3",
+      "source_occurrence_count": 1,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 133
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "b46d29ac1e43870939c14a69a2854fdaa00b7bf026389094136037f77fd5302d"
+    },
+    {
+      "factor": "l4",
+      "source_occurrence_count": 1,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 134
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "605235fd9ccbda52f068f45c2d16b2f9839ede0d1ed3a0ea203448467618cdcc"
+    },
+    {
+      "factor": "m2",
+      "source_occurrence_count": 1,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 135
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "d0fa0227a462e09bec50e6e4939b82bccede960de9bb003b50aa0f0c63961d5c"
+    }
+  ],
+  "groebner_algorithm": "libsingular:slimgb",
+  "groebner_strategy": "progressive",
+  "initial_groebner_basis": {
+    "is_unit_basis": false,
+    "polynomial_character_counts": [
+      10099,
+      11599,
+      4960,
+      1867,
+      7096,
+      2763,
+      7765,
+      8151,
+      7619,
+      9047,
+      9158,
+      6095,
+      3443,
+      4044,
+      3252,
+      1407,
+      5861,
+      4517,
+      2015,
+      6909,
+      5126,
+      2484,
+      2507,
+      2813,
+      4728,
+      4779,
+      3048,
+      1361,
+      2214,
+      3670,
+      1987,
+      2435,
+      3976,
+      2106,
+      2507,
+      1949,
+      1659,
+      2596,
+      2378,
+      2213,
+      1631,
+      1860,
+      1489,
+      1433,
+      812,
+      1422,
+      1287,
+      1229,
+      1350,
+      885,
+      1007,
+      847,
+      755,
+      1357,
+      1047,
+      905,
+      1301,
+      447,
+      361,
+      415,
+      739,
+      489,
+      453,
+      201,
+      173,
+      302,
+      436,
+      161,
+      73,
+      241,
+      484,
+      149,
+      141,
+      193,
+      232,
+      343,
+      113,
+      266,
+      225,
+      214,
+      99,
+      222,
+      242,
+      151,
+      169,
+      157,
+      49,
+      43,
+      47,
+      98,
+      113,
+      52,
+      86,
+      101,
+      182,
+      154,
+      107,
+      107,
+      201,
+      149,
+      177,
+      103,
+      93,
+      37,
+      91
+    ],
+    "polynomial_count": 105,
+    "preview": [
+      "a*b^2*c^2*d^3*l2^7*m3 - 2*a^2*b*c*d^4*l2^7*m3 - b^2*c^2*d^4*l2^7*m3 + a^3*d^5*l2^7*m3 + 2*a*b*c*d^5*l2^7*m3 - a^2*d^6*l2^7*m3 + 16001*a*b^2*c^2*d^3*l2^6*m3 + a^2*b*c*d^4*l2^6*m3 - 16001*b^2*c^2*d^4*l2^6*m3 + 16001*a^3*d^5*l2^6*m3 - a*b*c*d^5*l2^6*m3 - 16001*a^2*d^6*l2^6*m3 + 2*a^4*d^3*l2^7*m3 + 8*a^2*b*c*d^3*l2^7*m3 + 4*b^2*c^2*d^3*l2^7*m3 - 4*a^3*d^4*l2^7*m3 - 4*a*b*c*d^4*l2^7*m3 + 2*a^2*d^5*l2^7*m3 - 15998*b^4*c^4*d*l2^4*m3 - 7*a*b^3*c^3*d^2*l2^4*m3 + 8004*a^6*d^3*l2^4*m3 + 17*a^4*b*c*d^3*l2^4*m3 - 7978*a^2*b^2*c^2*d^3*l2^4*m3 - 16000*b^3*c^3*d^3*l2^4*m3 - 4*a^5*d^4*l2^4*m3 + 2*a^3*b*c*d^4*l2^4*m3 - 15985*a*b^2*c^2*d^4*l2^4*m3 + 7999*a^4*d^5*l2^4*m3 + 15994*a^2*b*c*d^5*l2^4*m3 + 8004*b^2*c^2*d^5*l2^4*m3 - 15999*a^3*d^6*l2^4*m3 - 3994*a^2*b^2*c^2*d^2*l2^5*m3 - 3994*b^3*c^3*d^2*l2^5*m3 + 7987*a^3*b*c*d^3*l2^5*m3 + 11980*a*b^2*c^2*d^3*l2^5*m3 - 3993*a^4*d^4*l2^5*m3 - 11979*a^2*b*c*d^4*l2^5*m3 + 3993*a^3*d^5*l2^5*m3 - 6*b^3*c^3*d*l2^6*m3 - 36*a^5*d^2*l2^6*m3 - 171*a^3*b*c*d^2*l2^6*m3 - 156*a*b^2*c^2*d^2*l2^6*m3 + 54*a^4*d^3*l2^6*m3 + 51*a^2*b*c*d^3*l2^6*m3 - 48*b^2*c^2*d^3*l2^6*m3 - 15*a^3*d^4*l2^6*m3 + 6*a*b*c*d^4*l2^6*m3 - 3*a^2*d^5*l2^6*m3 + 7965*a^4*b*c*l2^7*m3 + 4195*b^3*c^3*l2^7*m3 - 7965*a^5*d*l2^7*m3 - 7824*a^3*b*c*d*l2^7*m3 - 3914*a*b^2*c^2*d*l2^7*m3 - 4056*a^4*d^2*l2^7*m3 - 4060*a^2*b*c*d^2*l2^7*m3 - 11881*b^2*c^2*d^2*l2^7*m3 + 12020*a^3*d^3*l2^7*m3 - 2*a*b*c*d^3*l2^7*m3 + a^2*d^4*l2^7*m3 + a^4*b^3*c^3*l2^2*m3 + 5*a^2*b^4*c^4*l2^2*m3 + 4*b^5*c^5*l2^2*m3 + 16000*a^5*b^2*c^2*d*l2^2*m3 - 9*a^3*b^3*c^3*d*l2^2*m3 - 6*a*b^4*c^4*d*l2^2*m3 - 16000*a^4*b^2*c^2*d^2*l2^2*m3 - 3*a^2*b^3*c^3*d^2*l2^2*m3 + b^4*c^4*d^2*l2^2*m3 - 16001*a^7*d^3*l2^2*m3 + 4*a^5*b*c*d^3*l2^2*m3 - 15992*a^3*b^2*c^2*d^3*l2^2*m3 - a*b^3*c^3*d^3*l2^2*m3 + 16000*a^6*d^4*l2^2*m3 - 6*a^4*b*c*d^4*l2^2*m3 + 16000*a^2*b^2*c^2*d^4*l2^2*m3 - 16000*a^5*d^5*l2^2*m3 + 2*a^3*b*c*d^5*l2^2*m3 + 16001*a^4*d^6*l2^2*m3 - 8009*a^3*b^3*c^3*l2^3*m3 + 7975*a*b^4*c^4*l2^3*m3 - 7979*a^4*b^2*c^2*d*l2^3*m3 + 8082*a^2*b^3*",
+      "a^4*d^4*l2^7*m3 + 4*a^2*b*c*d^4*l2^7*m3 + 2*b^2*c^2*d^4*l2^7*m3 - 2*a^3*d^5*l2^7*m3 - 2*a*b*c*d^5*l2^7*m3 + a^2*d^6*l2^7*m3 + 8000*b^4*c^4*d^2*l2^4*m3 - 16000*a*b^3*c^3*d^3*l2^4*m3 + 1333*a^6*d^4*l2^4*m3 + 7998*a^4*b*c*d^4*l2^4*m3 - 12006*a^2*b^2*c^2*d^4*l2^4*m3 + 2666*b^3*c^3*d^4*l2^4*m3 - 2666*a^5*d^5*l2^4*m3 - 5332*a^3*b*c*d^5*l2^4*m3 + 2666*a*b^2*c^2*d^5*l2^4*m3 + 1333*a^4*d^6*l2^4*m3 + 1333*b^2*c^2*d^6*l2^4*m3 + 10668*a^3*b*c*d^4*l2^5*m3 - 10667*a*b^2*c^2*d^4*l2^5*m3 - 10668*a^4*d^5*l2^5*m3 - a^2*b*c*d^5*l2^5*m3 + 10668*a^3*d^6*l2^5*m3 + 10667*a*b^2*c^2*d^3*l2^6*m3 - 5335*a^4*d^4*l2^6*m3 - 10671*a^2*b*c*d^4*l2^6*m3 + 10666*b^2*c^2*d^4*l2^6*m3 - 10666*a^3*d^5*l2^6*m3 + a*b*c*d^5*l2^6*m3 + 16001*a^2*d^6*l2^6*m3 - a*b^2*c^2*d^2*l2^7*m3 + 10663*a^4*d^3*l2^7*m3 + 10651*a^2*b*c*d^3*l2^7*m3 - 10676*b^2*c^2*d^3*l2^7*m3 + 10675*a^3*d^4*l2^7*m3 + 10673*a*b*c*d^4*l2^7*m3 + 10665*a^2*d^5*l2^7*m3 + 1333*a^4*b^2*c^2*d^2*l2^3*m3 + 5332*a^2*b^3*c^3*d^2*l2^3*m3 - 5334*b^4*c^4*d^2*l2^3*m3 - 2666*a^5*b*c*d^3*l2^3*m3 - 13330*a^3*b^2*c^2*d^3*l2^3*m3 + 8002*a*b^3*c^3*d^3*l2^3*m3 + 2666*a^4*b*c*d^4*l2^3*m3 - 10666*a^2*b^2*c^2*d^4*l2^3*m3 - 2666*b^3*c^3*d^4*l2^3*m3 - 2666*a*b^2*c^2*d^5*l2^3*m3 - 1333*b^2*c^2*d^6*l2^3*m3 + 5329*b^4*c^4*d*l2^4*m3 - 14667*a^3*b^2*c^2*d^2*l2^4*m3 + 4013*a*b^3*c^3*d^2*l2^4*m3 + 7108*a^6*d^3*l2^4*m3 - 10689*a^4*b*c*d^3*l2^4*m3 - 10701*a^2*b^2*c^2*d^3*l2^4*m3 - 13781*b^3*c^3*d^3*l2^4*m3 - 11551*a^5*d^4*l2^4*m3 - 3108*a^3*b*c*d^4*l2^4*m3 - 7129*a*b^2*c^2*d^4*l2^4*m3 + 11113*a^4*d^5*l2^4*m3 - 11993*a^2*b*c*d^5*l2^4*m3 + 5775*b^2*c^2*d^5*l2^4*m3 - 6670*a^3*d^6*l2^4*m3 + 2657*a^2*b^2*c^2*d^2*l2^5*m3 - 11*b^3*c^3*d^2*l2^5*m3 - 7091*a^3*b*c*d^3*l2^5*m3 + 1811*a*b^2*c^2*d^3*l2^5*m3 - 8901*a^4*d^4*l2^5*m3 - 5368*a^2*b*c*d^4*l2^5*m3 - 13335*b^2*c^2*d^4*l2^5*m3 + 8901*a^3*d^5*l2^5*m3 + 14230*b^3*c^3*d*l2^6*m3 - 10640*a^5*d^2*l2^6*m3 - 15864*a^3*b*c*d^2*l2^6*m3 - 8755*a*b^2*c^2*d^2*l2^6*m3 - 1817*a^4*d^3*l2^6*m3 - 5368*a^2*b*c*d^3*l2^6*m3 - 12398*b^2*c^2*d^3*l2^6*m3 + ",
+      "a^3*d^4*l2^7*m2*m3 + 2*a*b*c*d^4*l2^7*m2*m3 - a^2*d^5*l2^7*m2*m3 + 16001*a^3*d^4*l2^6*m2*m3 - a*b*c*d^4*l2^6*m2*m3 - 16001*a^2*d^5*l2^6*m2*m3 - 6*a^5*d*l2^7*m2*m3 + 11*a^4*d^2*l2^7*m2*m3 - 7*a^3*d^3*l2^7*m2*m3 - 27*a*b*c*d^3*l2^7*m2*m3 + 2*a^2*d^4*l2^7*m2*m3 - 3*a^6*d^2*l2^4*m2*m3 - 15993*a^5*d^3*l2^4*m2*m3 - 8*a^4*d^4*l2^4*m2*m3 + 22*b^2*c^2*d^4*l2^4*m2*m3 - 15999*a^3*d^5*l2^4*m2*m3 - a^4*d^3*l2^5*m2*m3 + a^3*d^4*l2^5*m2*m3 + 2*a*b*c*d^4*l2^5*m2*m3 - 3*a^4*d^2*l2^6*m2*m3 + 6*a^3*d^3*l2^6*m2*m3 - 15989*a*b*c*d^3*l2^6*m2*m3 - 3*a^2*d^4*l2^6*m2*m3 + 3*a^5*l2^7*m2*m3 - 2*a^4*d*l2^7*m2*m3 - 2*a^3*d^2*l2^7*m2*m3 + 49*a*b*c*d^2*l2^7*m2*m3 + a^2*d^3*l2^7*m2*m3 - 16001*a^7*d^2*l2^2*m2*m3 + 16000*a^6*d^3*l2^2*m2*m3 - 16000*a^5*d^4*l2^2*m2*m3 + 16001*a^4*d^5*l2^2*m2*m3 + 4*b^2*c^2*d^5*l2^2*m2*m3 + 2*a^6*d^2*l2^3*m2*m3 - 6*a^5*d^3*l2^3*m2*m3 + 6*a^4*d^4*l2^3*m2*m3 - 16*b^2*c^2*d^4*l2^3*m2*m3 - 2*a^3*d^5*l2^3*m2*m3 + 2*a^6*d*l2^4*m2*m3 + 16001*a^5*d^2*l2^4*m2*m3 - 4*a^4*d^3*l2^4*m2*m3 + 15961*b^2*c^2*d^3*l2^4*m2*m3 - 15999*a^3*d^4*l2^4*m2*m3 + 15990*a*b*c*d^4*l2^4*m2*m3 + 6*a^5*d*l2^5*m2*m3 - 7*a^4*d^2*l2^5*m2*m3 + 9*a*b*c*d^3*l2^5*m2*m3 + a^2*d^4*l2^5*m2*m3 + 5*a^4*d*l2^6*m2*m3 + 15995*a^3*d^2*l2^6*m2*m3 - 25*a*b*c*d^2*l2^6*m2*m3 - 16000*a^2*d^3*l2^6*m2*m3 - 3*a^4*l2^7*m2*m3 + 40*a^2*b*c*l2^7*m2*m3 + 46*b^2*c^2*l2^7*m2*m3 + 5*a^3*d*l2^7*m2*m3 - 36*a*b*c*d*l2^7*m2*m3 - 2*a^2*d^2*l2^7*m2*m3 - 7*b*c^2*d^3*l2^4*m2^2*m3 + 7*a*c*d^4*l2^4*m2^2*m3 - a^7*d*l2^2*m2*m3 + 2*a^6*d^2*l2^2*m2*m3 + 16001*a^5*d^3*l2^2*m2*m3 - a^4*d^4*l2^2*m2*m3 - 16*b^2*c^2*d^4*l2^2*m2*m3 - 16001*a^3*d^5*l2^2*m2*m3 - 2*a^5*d^2*l2^3*m2*m3 + 4*a^4*d^3*l2^3*m2*m3 + 24*b^2*c^2*d^3*l2^3*m2*m3 - 2*a^3*d^4*l2^3*m2*m3 + 8*a*b*c*d^4*l2^3*m2*m3 - 5*a^6*l2^4*m2*m3 - 15992*a^5*d*l2^4*m2*m3 - 7*a^4*d^2*l2^4*m2*m3 - 15986*b^2*c^2*d^2*l2^4*m2*m3 - 15999*a^3*d^3*l2^4*m2*m3 + 59*a*b*c*d^3*l2^4*m2*m3 - 3*a^5*l2^5*m2*m3 - 3*a^4*d*l2^5*m2*m3 + 8*a^3*d^2*l2^5*m2*m3 - 21*a*b*c*d^2*l2^5*m2*m3 - 2*a^2*d^3*l2^5*m2*m3 - 2*a^4*l2^6*m2*m"
+    ],
+    "preview_truncated": true,
+    "sha256": "52fdc31bee7c800274ae18c664736444fcabff0ff0cfb5d145b1404310528778",
+    "total_character_count": 204701
+  },
+  "initial_groebner_seconds": 2.774563485996623,
+  "initial_groebner_trace": [
+    {
+      "batch_index": 0,
+      "families": [
+        "CPOBC",
+        "EQ112_PATH_CONSISTENCY",
+        "LOCAL_OPERATOR_GC",
+        "STRONG_OPERATOR_MSR"
+      ],
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          10099,
+          11599,
+          4960,
+          1867,
+          7096,
+          2763,
+          7765,
+          8151,
+          7619,
+          9047,
+          9158,
+          6095,
+          3443,
+          4044,
+          3252,
+          1407,
+          5861,
+          4517,
+          2015,
+          6909,
+          5126,
+          2484,
+          2507,
+          2813,
+          4728,
+          4779,
+          3048,
+          1361,
+          2214,
+          3670,
+          1987,
+          2435,
+          3976,
+          2106,
+          2507,
+          1949,
+          1659,
+          2596,
+          2378,
+          2213,
+          1631,
+          1860,
+          1489,
+          1433,
+          812,
+          1422,
+          1287,
+          1229,
+          1350,
+          885,
+          1007,
+          847,
+          755,
+          1357,
+          1047,
+          905,
+          1301,
+          447,
+          361,
+          415,
+          739,
+          489,
+          453,
+          201,
+          173,
+          302,
+          436,
+          161,
+          73,
+          241,
+          484,
+          149,
+          141,
+          193,
+          232,
+          343,
+          113,
+          266,
+          225,
+          214,
+          99,
+          222,
+          242,
+          151,
+          169,
+          157,
+          49,
+          43,
+          47,
+          98,
+          113,
+          52,
+          86,
+          101,
+          182,
+          154,
+          107,
+          107,
+          201,
+          149,
+          177,
+          103,
+          93,
+          37,
+          91
+        ],
+        "polynomial_count": 105,
+        "preview": [
+          "a*b^2*c^2*d^3*l2^7*m3 - 2*a^2*b*c*d^4*l2^7*m3 - b^2*c^2*d^4*l2^7*m3 + a^3*d^5*l2^7*m3 + 2*a*b*c*d^5*l2^7*m3 - a^2*d^6*l2^7*m3 + 16001*a*b^2*c^2*d^3*l2^6*m3 + a^2*b*c*d^4*l2^6*m3 - 16001*b^2*c^2*d^4*l2^6*m3 + 16001*a^3*d^5*l2^6*m3 - a*b*c*d^5*l2^6*m3 - 16001*a^2*d^6*l2^6*m3 + 2*a^4*d^3*l2^7*m3 + 8*a^2*b*c*d^3*l2^7*m3 + 4*b^2*c^2*d^3*l2^7*m3 - 4*a^3*d^4*l2^7*m3 - 4*a*b*c*d^4*l2^7*m3 + 2*a^2*d^5*l2^7*m3 - 15998*b^4*c^4*d*l2^4*m3 - 7*a*b^3*c^3*d^2*l2^4*m3 + 8004*a^6*d^3*l2^4*m3 + 17*a^4*b*c*d^3*l2^4*m3 - 7978*a^2*b^2*c^2*d^3*l2^4*m3 - 16000*b^3*c^3*d^3*l2^4*m3 - 4*a^5*d^4*l2^4*m3 + 2*a^3*b*c*d^4*l2^4*m3 - 15985*a*b^2*c^2*d^4*l2^4*m3 + 7999*a^4*d^5*l2^4*m3 + 15994*a^2*b*c*d^5*l2^4*m3 + 8004*b^2*c^2*d^5*l2^4*m3 - 15999*a^3*d^6*l2^4*m3 - 3994*a^2*b^2*c^2*d^2*l2^5*m3 - 3994*b^3*c^3*d^2*l2^5*m3 + 7987*a^3*b*c*d^3*l2^5*m3 + 11980*a*b^2*c^2*d^3*l2^5*m3 - 3993*a^4*d^4*l2^5*m3 - 11979*a^2*b*c*d^4*l2^5*m3 + 3993*a^3*d^5*l2^5*m3 - 6*b^3*c^3*d*l2^6*m3 - 36*a^5*d^2*l2^6*m3 - 171*a^3*b*c*d^2*l2^6*m3 - 156*a*b^2*c^2*d^2*l2^6*m3 + 54*a^4*d^3*l2^6*m3 + 51*a^2*b*c*d^3*l2^6*m3 - 48*b^2*c^2*d^3*l2^6*m3 - 15*a^3*d^4*l2^6*m3 + 6*a*b*c*d^4*l2^6*m3 - 3*a^2*d^5*l2^6*m3 + 7965*a^4*b*c*l2^7*m3 + 4195*b^3*c^3*l2^7*m3 - 7965*a^5*d*l2^7*m3 - 7824*a^3*b*c*d*l2^7*m3 - 3914*a*b^2*c^2*d*l2^7*m3 - 4056*a^4*d^2*l2^7*m3 - 4060*a^2*b*c*d^2*l2^7*m3 - 11881*b^2*c^2*d^2*l2^7*m3 + 12020*a^3*d^3*l2^7*m3 - 2*a*b*c*d^3*l2^7*m3 + a^2*d^4*l2^7*m3 + a^4*b^3*c^3*l2^2*m3 + 5*a^2*b^4*c^4*l2^2*m3 + 4*b^5*c^5*l2^2*m3 + 16000*a^5*b^2*c^2*d*l2^2*m3 - 9*a^3*b^3*c^3*d*l2^2*m3 - 6*a*b^4*c^4*d*l2^2*m3 - 16000*a^4*b^2*c^2*d^2*l2^2*m3 - 3*a^2*b^3*c^3*d^2*l2^2*m3 + b^4*c^4*d^2*l2^2*m3 - 16001*a^7*d^3*l2^2*m3 + 4*a^5*b*c*d^3*l2^2*m3 - 15992*a^3*b^2*c^2*d^3*l2^2*m3 - a*b^3*c^3*d^3*l2^2*m3 + 16000*a^6*d^4*l2^2*m3 - 6*a^4*b*c*d^4*l2^2*m3 + 16000*a^2*b^2*c^2*d^4*l2^2*m3 - 16000*a^5*d^5*l2^2*m3 + 2*a^3*b*c*d^5*l2^2*m3 + 16001*a^4*d^6*l2^2*m3 - 8009*a^3*b^3*c^3*l2^3*m3 + 7975*a*b^4*c^4*l2^3*m3 - 7979*a^4*b^2*c^2*d*l2^3*m3 + 8082*a^2*b^3*",
+          "a^4*d^4*l2^7*m3 + 4*a^2*b*c*d^4*l2^7*m3 + 2*b^2*c^2*d^4*l2^7*m3 - 2*a^3*d^5*l2^7*m3 - 2*a*b*c*d^5*l2^7*m3 + a^2*d^6*l2^7*m3 + 8000*b^4*c^4*d^2*l2^4*m3 - 16000*a*b^3*c^3*d^3*l2^4*m3 + 1333*a^6*d^4*l2^4*m3 + 7998*a^4*b*c*d^4*l2^4*m3 - 12006*a^2*b^2*c^2*d^4*l2^4*m3 + 2666*b^3*c^3*d^4*l2^4*m3 - 2666*a^5*d^5*l2^4*m3 - 5332*a^3*b*c*d^5*l2^4*m3 + 2666*a*b^2*c^2*d^5*l2^4*m3 + 1333*a^4*d^6*l2^4*m3 + 1333*b^2*c^2*d^6*l2^4*m3 + 10668*a^3*b*c*d^4*l2^5*m3 - 10667*a*b^2*c^2*d^4*l2^5*m3 - 10668*a^4*d^5*l2^5*m3 - a^2*b*c*d^5*l2^5*m3 + 10668*a^3*d^6*l2^5*m3 + 10667*a*b^2*c^2*d^3*l2^6*m3 - 5335*a^4*d^4*l2^6*m3 - 10671*a^2*b*c*d^4*l2^6*m3 + 10666*b^2*c^2*d^4*l2^6*m3 - 10666*a^3*d^5*l2^6*m3 + a*b*c*d^5*l2^6*m3 + 16001*a^2*d^6*l2^6*m3 - a*b^2*c^2*d^2*l2^7*m3 + 10663*a^4*d^3*l2^7*m3 + 10651*a^2*b*c*d^3*l2^7*m3 - 10676*b^2*c^2*d^3*l2^7*m3 + 10675*a^3*d^4*l2^7*m3 + 10673*a*b*c*d^4*l2^7*m3 + 10665*a^2*d^5*l2^7*m3 + 1333*a^4*b^2*c^2*d^2*l2^3*m3 + 5332*a^2*b^3*c^3*d^2*l2^3*m3 - 5334*b^4*c^4*d^2*l2^3*m3 - 2666*a^5*b*c*d^3*l2^3*m3 - 13330*a^3*b^2*c^2*d^3*l2^3*m3 + 8002*a*b^3*c^3*d^3*l2^3*m3 + 2666*a^4*b*c*d^4*l2^3*m3 - 10666*a^2*b^2*c^2*d^4*l2^3*m3 - 2666*b^3*c^3*d^4*l2^3*m3 - 2666*a*b^2*c^2*d^5*l2^3*m3 - 1333*b^2*c^2*d^6*l2^3*m3 + 5329*b^4*c^4*d*l2^4*m3 - 14667*a^3*b^2*c^2*d^2*l2^4*m3 + 4013*a*b^3*c^3*d^2*l2^4*m3 + 7108*a^6*d^3*l2^4*m3 - 10689*a^4*b*c*d^3*l2^4*m3 - 10701*a^2*b^2*c^2*d^3*l2^4*m3 - 13781*b^3*c^3*d^3*l2^4*m3 - 11551*a^5*d^4*l2^4*m3 - 3108*a^3*b*c*d^4*l2^4*m3 - 7129*a*b^2*c^2*d^4*l2^4*m3 + 11113*a^4*d^5*l2^4*m3 - 11993*a^2*b*c*d^5*l2^4*m3 + 5775*b^2*c^2*d^5*l2^4*m3 - 6670*a^3*d^6*l2^4*m3 + 2657*a^2*b^2*c^2*d^2*l2^5*m3 - 11*b^3*c^3*d^2*l2^5*m3 - 7091*a^3*b*c*d^3*l2^5*m3 + 1811*a*b^2*c^2*d^3*l2^5*m3 - 8901*a^4*d^4*l2^5*m3 - 5368*a^2*b*c*d^4*l2^5*m3 - 13335*b^2*c^2*d^4*l2^5*m3 + 8901*a^3*d^5*l2^5*m3 + 14230*b^3*c^3*d*l2^6*m3 - 10640*a^5*d^2*l2^6*m3 - 15864*a^3*b*c*d^2*l2^6*m3 - 8755*a*b^2*c^2*d^2*l2^6*m3 - 1817*a^4*d^3*l2^6*m3 - 5368*a^2*b*c*d^3*l2^6*m3 - 12398*b^2*c^2*d^3*l2^6*m3 + ",
+          "a^3*d^4*l2^7*m2*m3 + 2*a*b*c*d^4*l2^7*m2*m3 - a^2*d^5*l2^7*m2*m3 + 16001*a^3*d^4*l2^6*m2*m3 - a*b*c*d^4*l2^6*m2*m3 - 16001*a^2*d^5*l2^6*m2*m3 - 6*a^5*d*l2^7*m2*m3 + 11*a^4*d^2*l2^7*m2*m3 - 7*a^3*d^3*l2^7*m2*m3 - 27*a*b*c*d^3*l2^7*m2*m3 + 2*a^2*d^4*l2^7*m2*m3 - 3*a^6*d^2*l2^4*m2*m3 - 15993*a^5*d^3*l2^4*m2*m3 - 8*a^4*d^4*l2^4*m2*m3 + 22*b^2*c^2*d^4*l2^4*m2*m3 - 15999*a^3*d^5*l2^4*m2*m3 - a^4*d^3*l2^5*m2*m3 + a^3*d^4*l2^5*m2*m3 + 2*a*b*c*d^4*l2^5*m2*m3 - 3*a^4*d^2*l2^6*m2*m3 + 6*a^3*d^3*l2^6*m2*m3 - 15989*a*b*c*d^3*l2^6*m2*m3 - 3*a^2*d^4*l2^6*m2*m3 + 3*a^5*l2^7*m2*m3 - 2*a^4*d*l2^7*m2*m3 - 2*a^3*d^2*l2^7*m2*m3 + 49*a*b*c*d^2*l2^7*m2*m3 + a^2*d^3*l2^7*m2*m3 - 16001*a^7*d^2*l2^2*m2*m3 + 16000*a^6*d^3*l2^2*m2*m3 - 16000*a^5*d^4*l2^2*m2*m3 + 16001*a^4*d^5*l2^2*m2*m3 + 4*b^2*c^2*d^5*l2^2*m2*m3 + 2*a^6*d^2*l2^3*m2*m3 - 6*a^5*d^3*l2^3*m2*m3 + 6*a^4*d^4*l2^3*m2*m3 - 16*b^2*c^2*d^4*l2^3*m2*m3 - 2*a^3*d^5*l2^3*m2*m3 + 2*a^6*d*l2^4*m2*m3 + 16001*a^5*d^2*l2^4*m2*m3 - 4*a^4*d^3*l2^4*m2*m3 + 15961*b^2*c^2*d^3*l2^4*m2*m3 - 15999*a^3*d^4*l2^4*m2*m3 + 15990*a*b*c*d^4*l2^4*m2*m3 + 6*a^5*d*l2^5*m2*m3 - 7*a^4*d^2*l2^5*m2*m3 + 9*a*b*c*d^3*l2^5*m2*m3 + a^2*d^4*l2^5*m2*m3 + 5*a^4*d*l2^6*m2*m3 + 15995*a^3*d^2*l2^6*m2*m3 - 25*a*b*c*d^2*l2^6*m2*m3 - 16000*a^2*d^3*l2^6*m2*m3 - 3*a^4*l2^7*m2*m3 + 40*a^2*b*c*l2^7*m2*m3 + 46*b^2*c^2*l2^7*m2*m3 + 5*a^3*d*l2^7*m2*m3 - 36*a*b*c*d*l2^7*m2*m3 - 2*a^2*d^2*l2^7*m2*m3 - 7*b*c^2*d^3*l2^4*m2^2*m3 + 7*a*c*d^4*l2^4*m2^2*m3 - a^7*d*l2^2*m2*m3 + 2*a^6*d^2*l2^2*m2*m3 + 16001*a^5*d^3*l2^2*m2*m3 - a^4*d^4*l2^2*m2*m3 - 16*b^2*c^2*d^4*l2^2*m2*m3 - 16001*a^3*d^5*l2^2*m2*m3 - 2*a^5*d^2*l2^3*m2*m3 + 4*a^4*d^3*l2^3*m2*m3 + 24*b^2*c^2*d^3*l2^3*m2*m3 - 2*a^3*d^4*l2^3*m2*m3 + 8*a*b*c*d^4*l2^3*m2*m3 - 5*a^6*l2^4*m2*m3 - 15992*a^5*d*l2^4*m2*m3 - 7*a^4*d^2*l2^4*m2*m3 - 15986*b^2*c^2*d^2*l2^4*m2*m3 - 15999*a^3*d^3*l2^4*m2*m3 + 59*a*b*c*d^3*l2^4*m2*m3 - 3*a^5*l2^5*m2*m3 - 3*a^4*d*l2^5*m2*m3 + 8*a^3*d^2*l2^5*m2*m3 - 21*a*b*c*d^2*l2^5*m2*m3 - 2*a^2*d^3*l2^5*m2*m3 - 2*a^4*l2^6*m2*m"
+        ],
+        "preview_truncated": true,
+        "sha256": "52fdc31bee7c800274ae18c664736444fcabff0ff0cfb5d145b1404310528778",
+        "total_character_count": 204701
+      },
+      "maximum_source_stage": 3,
+      "minimum_source_stage": 2,
+      "new_equations_added": 106,
+      "relations_added": 51,
+      "strategy": "STREAMING_PROGRESSIVE",
+      "total_equations_covered": 106,
+      "total_relations_evaluated": 51,
+      "unit_ideal": false,
+      "wall_time_seconds": 2.765235525999742
+    }
+  ],
+  "initial_unit_ideal": false,
+  "inverse_factor_records": [
+    {
+      "factor": "-b*c + a*d - a - d + 1",
+      "kind": "INVERSE_SITE",
+      "origin": "det(BINV:692d8de209a59f16bf3e)"
+    },
+    {
+      "factor": "-b*c + a*d",
+      "kind": "INVERSE_SITE",
+      "origin": "det(Q_1^-1)"
+    },
+    {
+      "factor": "-b*c*l2^2 + a*d*l2^2",
+      "kind": "INVERSE_SITE",
+      "origin": "det(Q_2^-1)"
+    },
+    {
+      "factor": "-b*c*l2^2 + a*d*l2^2 - a*l2^2 - d*l2^2 + l2^2",
+      "kind": "INVERSE_SITE",
+      "origin": "det(BINV:847dbbdcf2b8502a5bfb)"
+    },
+    {
+      "factor": "-b*c*l2^2 + a*d*l2^2 - a*l2^2 - d*l2^2 + l2^2",
+      "kind": "INVERSE_SITE",
+      "origin": "det(BINV:de00eadcbff77bc4940e)"
+    },
+    {
+      "factor": "-b*c*l2^2 + a*d*l2^2 - 2*c^2*m2^2 - 2*a*l2^2 - 2*d*l2^2 + a*l2 + d*l2 + 4*l2^2 + c*m2 - 4*l2 + 1",
+      "kind": "INVERSE_SITE",
+      "origin": "det(BINV:2585179d7faa71e1f634)"
+    },
+    {
+      "factor": "-c^2*m2^2 + l2^2 - 2*l2 + 1",
+      "kind": "INVERSE_SITE",
+      "origin": "det(BINV:85c25c2c6160291f296b)"
+    }
+  ],
+  "linear_expressions_evaluated": 42,
+  "maximum_source_stage": 3,
+  "noncommutativity_checks": [],
+  "nonzero_specialised_equation_count": 106,
+  "operation": "solve",
+  "path_residuals_evaluated": 1,
+  "progressive_batch_size": 1,
+  "proof_eligible": false,
+  "raw_required_factor_count": 137,
+  "reconstructed_transition_predicates_vacuous_due_to_unit_numerator": false,
+  "reconstructed_transitions_checked": 0,
+  "relations_evaluated_count": 51,
+  "resource_usage": {
+    "peak_rss_bytes": 310411264,
+    "wall_time_seconds": 3.2366933379962575
+  },
+  "saturated_unit_ideal": true,
+  "saturation_method": "SEQUENTIAL_SAGE_NATIVE_IDEAL_SATURATION",
+  "saturation_requested": true,
+  "saturation_trace": [
+    {
+      "factor": "b*c - a*d",
+      "factor_index": 0,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          543,
+          513,
+          3406,
+          669,
+          1379,
+          653,
+          1572,
+          609,
+          1512,
+          585,
+          3075,
+          2055,
+          555,
+          739,
+          187,
+          474,
+          1217,
+          505,
+          682,
+          572,
+          552,
+          361,
+          267,
+          648,
+          207,
+          550,
+          223,
+          270,
+          85,
+          97,
+          91,
+          471,
+          332,
+          244,
+          681,
+          341,
+          213,
+          157,
+          93,
+          41,
+          15,
+          57,
+          29,
+          14,
+          57,
+          29,
+          63,
+          27,
+          11,
+          27,
+          126,
+          49,
+          55,
+          23,
+          9,
+          23,
+          109,
+          41,
+          21
+        ],
+        "polynomial_count": 59,
+        "preview": [
+          "a*d^2*l2^8*m2*m3 - d^3*l2^8*m2*m3 - 4*a*d^2*l2^7*m2*m3 + 4*d^3*l2^7*m2*m3 - 2*a*d*l2^8*m2*m3 + 2*d^2*l2^8*m2*m3 + 6*a*d^2*l2^6*m2*m3 - 6*d^3*l2^6*m2*m3 + 8*a*d*l2^7*m2*m3 - 8*d^2*l2^7*m2*m3 + a*l2^8*m2*m3 - d*l2^8*m2*m3 - 4*a*d^2*l2^5*m2*m3 + 4*d^3*l2^5*m2*m3 - 12*a*d*l2^6*m2*m3 + 12*d^2*l2^6*m2*m3 - 4*a*l2^7*m2*m3 + 4*d*l2^7*m2*m3 + a*d^2*l2^4*m2*m3 - d^3*l2^4*m2*m3 + 8*a*d*l2^5*m2*m3 - 8*d^2*l2^5*m2*m3 + 6*a*l2^6*m2*m3 - 6*d*l2^6*m2*m3 - 2*a*d*l2^4*m2*m3 + 2*d^2*l2^4*m2*m3 - 4*a*l2^5*m2*m3 + 4*d*l2^5*m2*m3 + a*l2^4*m2*m3 - d*l2^4*m2*m3",
+          "a*d^2*l2^8*m3^2 - d^3*l2^8*m3^2 - 4*a*d^2*l2^7*m3^2 + 4*d^3*l2^7*m3^2 - 2*a*d*l2^8*m3^2 + 2*d^2*l2^8*m3^2 + 6*a*d^2*l2^6*m3^2 - 6*d^3*l2^6*m3^2 + 8*a*d*l2^7*m3^2 - 8*d^2*l2^7*m3^2 + a*l2^8*m3^2 - d*l2^8*m3^2 - 4*a*d^2*l2^5*m3^2 + 4*d^3*l2^5*m3^2 - 12*a*d*l2^6*m3^2 + 12*d^2*l2^6*m3^2 - 4*a*l2^7*m3^2 + 4*d*l2^7*m3^2 + a*d^2*l2^4*m3^2 - d^3*l2^4*m3^2 + 8*a*d*l2^5*m3^2 - 8*d^2*l2^5*m3^2 + 6*a*l2^6*m3^2 - 6*d*l2^6*m3^2 - 2*a*d*l2^4*m3^2 + 2*d^2*l2^4*m3^2 - 4*a*l2^5*m3^2 + 4*d*l2^5*m3^2 + a*l2^4*m3^2 - d*l2^4*m3^2",
+          "a*d^5*l2^5*m3 - d^6*l2^5*m3 + c*d^5*l2^4*m2*m3 - 2*b^2*c^2*d^2*l2^4*m3 + a*b*c*d^3*l2^4*m3 + a^2*d^4*l2^4*m3 + b*c*d^4*l2^4*m3 - 3*a*d^5*l2^4*m3 + 2*d^6*l2^4*m3 + 7997*a*d^4*l2^5*m3 - 7997*d^5*l2^5*m3 - 10666*a*d^3*l2^6*m3 + 10666*d^4*l2^6*m3 + 15995*b*c*d*l2^7*m3 + 8004*a*d^2*l2^7*m3 - 8004*d^3*l2^7*m3 + 7997*c*d^4*l2^4*m2*m3 + 2*a*b^2*c^2*d*l2^3*m3 - 3*a^2*b*c*d^2*l2^3*m3 - 2*b^2*c^2*d^2*l2^3*m3 + a^3*d^3*l2^3*m3 + 5*a*b*c*d^3*l2^3*m3 - 3*a^2*d^4*l2^3*m3 - 2*b*c*d^4*l2^3*m3 + 3*a*d^5*l2^3*m3 - d^6*l2^3*m3 + 15997*a^2*b*c*d*l2^4*m3 + 15997*b^2*c^2*d*l2^4*m3 - 8001*a^3*d^2*l2^4*m3 - 8004*a^2*d^3*l2^4*m3 + 15997*b*c*d^3*l2^4*m3 + 10*a*d^4*l2^4*m3 + 15995*d^5*l2^4*m3 - 11*b*c*d^2*l2^5*m3 - 10664*a*d^3*l2^5*m3 + 10664*d^4*l2^5*m3 - 15980*b*c*d*l2^6*m3 + 7985*a*d^2*l2^6*m3 - 7985*d^3*l2^6*m3 - 15995*b*c*l2^7*m3 + 15995*a*d*l2^7*m3 - 15995*d^2*l2^7*m3 - c*d^5*l2^2*m2*m3 + 10678*c*d^3*l2^4*m2*m3 + a^2*b^2*c^2*l2^2*m3 + 2*b^3*c^3*l2^2*m3 - 2*a^3*b*c*d*l2^2*m3 - 8*a*b^2*c^2*d*l2^2*m3 + a^4*d^2*l2^2*m3 + 9*a^2*b*c*d^2*l2^2*m3 + 5*b^2*c^2*d^2*l2^2*m3 - 3*a^3*d^3*l2^2*m3 - 8*a*b*c*d^3*l2^2*m3 + 3*a^2*d^4*l2^2*m3 + b*c*d^4*l2^2*m3 - a*d^5*l2^2*m3 - 2*a*b^2*c^2*l2^3*m3 - 15991*a^2*b*c*d*l2^3*m3 - 15993*b^2*c^2*d*l2^3*m3 + 7998*a^3*d^2*l2^3*m3 - 9*a*b*c*d^2*l2^3*m3 + 8008*a^2*d^3*l2^3*m3 - 16000*b*c*d^3*l2^3*m3 - 8007*a*d^4*l2^3*m3 - 7999*d^5*l2^3*m3 + 8012*a^2*b*c*l2^4*m3 + 22*b^2*c^2*l2^4*m3 - 8002*a^3*d*l2^4*m3 - 10*a*b*c*d*l2^4*m3 + 10*a^2*d^2*l2^4*m3 + 8031*b*c*d^2*l2^4*m3 + 13317*a*d^3*l2^4*m3 - 5325*d^4*l2^4*m3 + 5*a^2*d*l2^5*m3 - 15993*b*c*d*l2^5*m3 + 8004*a*d^2*l2^5*m3 - 8009*d^3*l2^5*m3 + 15980*b*c*l2^6*m3 - 15975*a*d*l2^6*m3 + 15975*d^2*l2^6*m3 + 8004*a*l2^7*m3 - 8004*d*l2^7*m3 - 7997*c*d^4*l2^2*m2*m3 - 10671*c*d^3*l2^3*m2*m3 + 15976*c*d^2*l2^4*m2*m3 + 2*a^3*b*c*l2^2*m3 + 5*a*b^2*c^2*l2^2*m3 - 2*a^4*d*l2^2*m3 - 10*a^2*b*c*d*l2^2*m3 + b^2*c^2*d*l2^2*m3 + 4*a^3*d^2*l2^2*m3 + a*b*c*d^2*l2^2*m3 - a^2*d^3*l2^2*m3 + 5*b*c*d^3*l2^2*m3 - 2*a*d^4*l2^2*m3 + d^5*l2^2*m3 - 8015*a^"
+        ],
+        "preview_truncated": true,
+        "sha256": "790a19749ba5e246b14a8222aced6c21ee89c931d9e92700e5abf3a5b4e44832",
+        "total_character_count": 28211
+      },
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.22366730800422374
+    },
+    {
+      "factor": "b*c - a*d + a + d - 1",
+      "factor_index": 1,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          81,
+          45,
+          21,
+          157,
+          75,
+          37,
+          11,
+          9,
+          37,
+          17,
+          7
+        ],
+        "polynomial_count": 11,
+        "preview": [
+          "a^2*l2^4*m3 + 2*b*c*l2^4*m3 - 2*a*d*l2^4*m3 + d^2*l2^4*m3 - a*l2^4*m3 + d*l2^4*m3",
+          "a*l2^5*m3 - d*l2^5*m3 - a*l2^4*m3 + d*l2^4*m3",
+          "c*l2^5*m3 - c*l2^4*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "ec38277a7f653383049a85706b6aa2ea7a348380e0c76317abe6c50e6487978f",
+        "total_character_count": 497
+      },
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.007825147004041355
+    },
+    {
+      "factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1",
+      "factor_index": 2,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          81,
+          45,
+          21,
+          157,
+          75,
+          37,
+          11,
+          9,
+          37,
+          17,
+          7
+        ],
+        "polynomial_count": 11,
+        "preview": [
+          "a^2*l2^4*m3 + 2*b*c*l2^4*m3 - 2*a*d*l2^4*m3 + d^2*l2^4*m3 - a*l2^4*m3 + d*l2^4*m3",
+          "a*l2^5*m3 - d*l2^5*m3 - a*l2^4*m3 + d*l2^4*m3",
+          "c*l2^5*m3 - c*l2^4*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "ec38277a7f653383049a85706b6aa2ea7a348380e0c76317abe6c50e6487978f",
+        "total_character_count": 497
+      },
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.0028217670042067766
+    },
+    {
+      "factor": "c",
+      "factor_index": 3,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          7,
+          7,
+          13,
+          5
+        ],
+        "polynomial_count": 4,
+        "preview": [
+          "l2^2*m3",
+          "l2*m3^2",
+          "l3*m2 - l2*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "7ccbecee58f976c5cf4e3cb59b698e681cc95d2273a3b7210abd25caacf007ae",
+        "total_character_count": 32
+      },
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.0008526379970135167
+    },
+    {
+      "factor": "c*m2 + l2 - 1",
+      "factor_index": 4,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          7,
+          7,
+          13,
+          5
+        ],
+        "polynomial_count": 4,
+        "preview": [
+          "l2^2*m3",
+          "l2*m3^2",
+          "l3*m2 - l2*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "7ccbecee58f976c5cf4e3cb59b698e681cc95d2273a3b7210abd25caacf007ae",
+        "total_character_count": 32
+      },
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.0004921360014122911
+    },
+    {
+      "factor": "c*m2 - l2 + 1",
+      "factor_index": 5,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          7,
+          7,
+          13,
+          5
+        ],
+        "polynomial_count": 4,
+        "preview": [
+          "l2^2*m3",
+          "l2*m3^2",
+          "l3*m2 - l2*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "7ccbecee58f976c5cf4e3cb59b698e681cc95d2273a3b7210abd25caacf007ae",
+        "total_character_count": 32
+      },
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.0002809979996527545
+    },
+    {
+      "factor": "l2",
+      "factor_index": 6,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          5,
+          2
+        ],
+        "polynomial_count": 2,
+        "preview": [
+          "l3*m2",
+          "m3"
+        ],
+        "preview_truncated": false,
+        "sha256": "8050fea29aae5406f20caf178151fc39e16fcf5d95385b58d91560b79a9cf7dc",
+        "total_character_count": 7
+      },
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.00023755800066282973
+    },
+    {
+      "factor": "l3",
+      "factor_index": 7,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          2,
+          2
+        ],
+        "polynomial_count": 2,
+        "preview": [
+          "m2",
+          "m3"
+        ],
+        "preview_truncated": false,
+        "sha256": "cf7ab094a3045d063ec018d93dd06a19af66eebfd8c0cd078e8e244cc9a43ba7",
+        "total_character_count": 4
+      },
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.00031750799826113507
+    },
+    {
+      "factor": "l4",
+      "factor_index": 8,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          2,
+          2
+        ],
+        "polynomial_count": 2,
+        "preview": [
+          "m2",
+          "m3"
+        ],
+        "preview_truncated": false,
+        "sha256": "cf7ab094a3045d063ec018d93dd06a19af66eebfd8c0cd078e8e244cc9a43ba7",
+        "total_character_count": 4
+      },
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.00016322399460477754
+    },
+    {
+      "factor": "m2",
+      "factor_index": 9,
+      "groebner_basis": {
+        "is_unit_basis": true,
+        "polynomial_character_counts": [
+          1
+        ],
+        "polynomial_count": 1,
+        "preview": [
+          "1"
+        ],
+        "preview_truncated": false,
+        "sha256": "43de3a417d75f4818c5a553268b80ce3a5805109a3bbc6b605e9fb0b8f50b485",
+        "total_character_count": 1
+      },
+      "unit_ideal_after_step": true,
+      "wall_time_seconds": 0.00015834900113986805
+    }
+  ],
+  "schema_version": "final-theory-d2-sage-response-v0.3.5",
+  "selected_relation_count": 51,
+  "semantic_digest_sha256": "9528ee61e1116108c8914a3180def3ce855694080b8ed0cd03dc88544e99da59",
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+  "stratum": "S2_COMMON_NILPOTENT",
+  "surviving_noncommutative_component_count": 0,
+  "unique_reconstructed_transition_expression_count": 0,
+  "unique_relation_residual_count": 43,
+  "unit_subset_certificate": false,
+  "variable_count": 10,
+  "variables": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "l2",
+    "l3",
+    "l4",
+    "m2",
+    "m3",
+    "m4"
+  ],
+  "word_products_evaluated": 363,
+  "zero_required_factor": false,
+  "host_observed_wall_time_seconds": 8.95258919999469,
+  "time_limit_seconds": 900,
+  "worker_stderr_tail": "3 + 1333*b^2*c^2*d^6*l2^4*m3 + 10668*a^3*b*c*d^4*l2^5*m3 - 10667*a*b^2*c^2*d^4*l2^5*m3 - 10668*a^4*d^5*l2^5*m3 - a^2*b*c*d^5*l2^5*m3 + 10668*a^3*d^6*l2^5*m3 + 10667*a*b^2*c^2*d^3*l2^6*m3 - 5335*a^4*d^4*l2^6*m3 - 10671*a^2*b*c*d^4*l2^6*m3 + 10666*b^2*c^2*d^4*l2^6*m3 - 10666*a^3*d^5*l2^6*m3 + a*b*c*d^5*l2^6*m3 + 16001*a^2*d^6*l2^6*m3 - a*b^2*c^2*d^2*l2^7*m3 + 10663*a^4*d^3*l2^7*m3 + 10651*a^2*b*c*d^3*l2^7*m3 - 10676*b^2*c^2*d^3*l2^7*m3 + 10675*a^3*d^4*l2^7*m3 + 10673*a*b*c*d^4*l2^7*m3 + 10665*a^2*d^5*l2^7*m3 + 1333*a^4*b^2*c^2*d^2*l2^3*m3 + 5332*a^2*b^3*c^3*d^2*l2^3*m3 - 5334*b^4*c^4*d^2*l2^3*m3 - 2666*a^5*b*c*d^3*l2^3*m3 - 13330*a^3*b^2*c^2*d^3*l2^3*m3 + 8002*a*b^3*c^3*d^3*l2^3*m3 + 2666*a^4*b*c*d^4*l2^3*m3 - 10666*a^2*b^2*c^2*d^4*l2^3*m3 - 2666*b^3*c^3*d^4*l2^3*m3 - 2666*a*b^2*c^2*d^5*l2^3*m3 - 1333*b^2*c^2*d^6*l2^3*m3 + 5329*b^4*c^4*d*l2^4*m3 - 14667*a^3*b^2*c^2*d^2*l2^4*m3 + 4013*a*b^3*c^3*d^2*l2^4*m3 + 7108*a^6*d^3*l2^4*m3 - 10689*a^4*b*c*d^3*l2^4*m3 - 10701*a^2*b^2*c^2*d^3*l2^4*m3 - 13781*b^3*c^3*d^3*l2^4*m3 - 11551*a^5*d^4*l2^4*m3 - 3108*a^3*b*c*d^4*l2^4*m3 - 7129*a*b^2*c^2*d^4*l2^4*m3 + 11113*a^4*d^5*l2^4*m3 - 11993*a^2*b*c*d^5*l2^4*m3 + 5775*b^2*c^2*d^5*l2^4*m3 - 6670*a^3*d^6*l2^4*m3 + 2657*a^2*b^2*c^2*d^2*l2^5*m3 - 11*b^3*c^3*d^2*l2^5*m3 - 7091*a^3*b*c*d^3*l2^5*m3 + 1811*a*b^2*c^2*d^3*l2^5*m3 - 8901*a^4*d^4*l2^5*m3 - 5368*a^2*b*c*d^4*l2^5*m3 - 13335*b^2*c^2*d^4*l2^5*m3 + 8901*a^3*d^5*l2^5*m3 + 14230*b^3*c^3*d*l2^6*m3 - 10640*a^5*d^2*l2^6*m3 - 15864*a^3*b*c*d^2*l2^6*m3 - 8755*a*b^2*c^2*d^2*l2^6*m3 - 1817*a^4*d^3*l2^6*m3 - 5368*a^2*b*c*d^3*l2^6*m3 - 12398*b^2*c^2*d^3*l2^6*m3 + \",\"a^3*d^4*l2^7*m2*m3 + 2*a*b*c*d^4*l2^7*m2*m3 - a^2*d^5*l2^7*m2*m3 + 16001*a^3*d^4*l2^6*m2*m3 - a*b*c*d^4*l2^6*m2*m3 - 16001*a^2*d^5*l2^6*m2*m3 - 6*a^5*d*l2^7*m2*m3 + 11*a^4*d^2*l2^7*m2*m3 - 7*a^3*d^3*l2^7*m2*m3 - 27*a*b*c*d^3*l2^7*m2*m3 + 2*a^2*d^4*l2^7*m2*m3 - 3*a^6*d^2*l2^4*m2*m3 - 15993*a^5*d^3*l2^4*m2*m3 - 8*a^4*d^4*l2^4*m2*m3 + 22*b^2*c^2*d^4*l2^4*m2*m3 - 15999*a^3*d^5*l2^4*m2*m3 - a^4*d^3*l2^5*m2*m3 + a^3*d^4*l2^5*m2*m3 + 2*a*b*c*d^4*l2^5*m2*m3 - 3*a^4*d^2*l2^6*m2*m3 + 6*a^3*d^3*l2^6*m2*m3 - 15989*a*b*c*d^3*l2^6*m2*m3 - 3*a^2*d^4*l2^6*m2*m3 + 3*a^5*l2^7*m2*m3 - 2*a^4*d*l2^7*m2*m3 - 2*a^3*d^2*l2^7*m2*m3 + 49*a*b*c*d^2*l2^7*m2*m3 + a^2*d^3*l2^7*m2*m3 - 16001*a^7*d^2*l2^2*m2*m3 + 16000*a^6*d^3*l2^2*m2*m3 - 16000*a^5*d^4*l2^2*m2*m3 + 16001*a^4*d^5*l2^2*m2*m3 + 4*b^2*c^2*d^5*l2^2*m2*m3 + 2*a^6*d^2*l2^3*m2*m3 - 6*a^5*d^3*l2^3*m2*m3 + 6*a^4*d^4*l2^3*m2*m3 - 16*b^2*c^2*d^4*l2^3*m2*m3 - 2*a^3*d^5*l2^3*m2*m3 + 2*a^6*d*l2^4*m2*m3 + 16001*a^5*d^2*l2^4*m2*m3 - 4*a^4*d^3*l2^4*m2*m3 + 15961*b^2*c^2*d^3*l2^4*m2*m3 - 15999*a^3*d^4*l2^4*m2*m3 + 15990*a*b*c*d^4*l2^4*m2*m3 + 6*a^5*d*l2^5*m2*m3 - 7*a^4*d^2*l2^5*m2*m3 + 9*a*b*c*d^3*l2^5*m2*m3 + a^2*d^4*l2^5*m2*m3 + 5*a^4*d*l2^6*m2*m3 + 15995*a^3*d^2*l2^6*m2*m3 - 25*a*b*c*d^2*l2^6*m2*m3 - 16000*a^2*d^3*l2^6*m2*m3 - 3*a^4*l2^7*m2*m3 + 40*a^2*b*c*l2^7*m2*m3 + 46*b^2*c^2*l2^7*m2*m3 + 5*a^3*d*l2^7*m2*m3 - 36*a*b*c*d*l2^7*m2*m3 - 2*a^2*d^2*l2^7*m2*m3 - 7*b*c^2*d^3*l2^4*m2^2*m3 + 7*a*c*d^4*l2^4*m2^2*m3 - a^7*d*l2^2*m2*m3 + 2*a^6*d^2*l2^2*m2*m3 + 16001*a^5*d^3*l2^2*m2*m3 - a^4*d^4*l2^2*m2*m3 - 16*b^2*c^2*d^4*l2^2*m2*m3 - 16001*a^3*d^5*l2^2*m2*m3 - 2*a^5*d^2*l2^3*m2*m3 + 4*a^4*d^3*l2^3*m2*m3 + 24*b^2*c^2*d^3*l2^3*m2*m3 - 2*a^3*d^4*l2^3*m2*m3 + 8*a*b*c*d^4*l2^3*m2*m3 - 5*a^6*l2^4*m2*m3 - 15992*a^5*d*l2^4*m2*m3 - 7*a^4*d^2*l2^4*m2*m3 - 15986*b^2*c^2*d^2*l2^4*m2*m3 - 15999*a^3*d^3*l2^4*m2*m3 + 59*a*b*c*d^3*l2^4*m2*m3 - 3*a^5*l2^5*m2*m3 - 3*a^4*d*l2^5*m2*m3 + 8*a^3*d^2*l2^5*m2*m3 - 21*a*b*c*d^2*l2^5*m2*m3 - 2*a^2*d^3*l2^5*m2*m3 - 2*a^4*l2^6*m2*m\"],\"preview_truncated\":true,\"sha256\":\"52fdc31bee7c800274ae18c664736444fcabff0ff0cfb5d145b1404310528778\",\"total_character_count\":204701},\"maximum_source_stage\":3,\"minimum_source_stage\":2,\"new_equations_added\":106,\"relations_added\":51,\"strategy\":\"STREAMING_PROGRESSIVE\",\"total_equations_covered\":106,\"total_relations_evaluated\":51,\"unit_ideal\":false,\"wall_time_seconds\":2.765235525999742}\n",
+  "request_id": "9eef0b073a803d240756"
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "final-theory-d2-independent-oracle-v0.3.5",
+  "branch": "codex/final-theory-v0.3.5-d2-saturated-elimination-20260729",
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "independence": {
+    "production_groebner_algorithm": "libsingular:slimgb",
+    "oracle_groebner_algorithm": "libsingular:std",
+    "production_strategy": "streaming progressive",
+    "oracle_strategy": "one shot",
+    "production_saturation_factor_order": "forward",
+    "oracle_saturation_factor_order": "reverse"
+  },
+  "runs": [
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R2:UPPER_ONLY",
+      "exit_status": "COMPLETED",
+      "coefficient_field": "QQ",
+      "saturated_unit_ideal": true,
+      "proof_eligible": true,
+      "groebner_algorithm": "libsingular:std",
+      "groebner_strategy": "one_shot",
+      "saturation_factor_order": "reverse",
+      "certificate": "certificates/d2_saturation/independent_oracle/5a486e923e0da3ca26ba.json",
+      "semantic_digest_sha256": "080703fe91a10db5804eb3f3f52380c8e48570a921be3ab9f1d15b0452abf893"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M2:C_NONZERO",
+      "exit_status": "COMPLETED",
+      "coefficient_field": "QQ",
+      "saturated_unit_ideal": true,
+      "proof_eligible": true,
+      "groebner_algorithm": "libsingular:std",
+      "groebner_strategy": "one_shot",
+      "saturation_factor_order": "reverse",
+      "certificate": "certificates/d2_saturation/independent_oracle/f919c409685eeca9f96c.json",
+      "semantic_digest_sha256": "1b3730d2557317c9aec5294ed1794c6728145710e3cee1029b43de18dd78deec"
+    }
+  ],
+  "agreement": true,
+  "exact_numeric_distinction": "EXACT_QQ_RECOMPUTATION",
+  "completeness_scope": "two independently ordered resolved charts, one S1 and one S2",
+  "unresolved_components": [],
+  "passed": true,
+  "verdict": "V035_INDEPENDENT_ORACLE_AGREEMENT",
+  "semantic_digest_sha256": "7f3ec0a142d27d7d424b78a276852f587bfb0b81abd24dc7d10a5f65fc2048d5"
+}

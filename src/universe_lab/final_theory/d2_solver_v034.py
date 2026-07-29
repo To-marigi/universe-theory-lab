@@ -669,34 +669,42 @@ def cas_inventory(root: Path) -> dict[str, Any]:
         inventory["python_flint"] = "NOT_AVAILABLE"
     compose = root / "compose.yaml"
     if compose.is_file():
-        checks = {
-            "sage": ["docker", "compose", "exec", "-T", "sage", "sage", "--version"],
-            "singular": [
-                "docker",
-                "compose",
-                "exec",
-                "-T",
-                "sage",
-                "Singular",
-                "--version",
-            ],
-        }
-        for name, command in checks.items():
+        command = [
+            "docker",
+            "compose",
+            "exec",
+            "-T",
+            "sage",
+            "sage",
+            "-c",
+            (
+                "from sage.version import version; import json; "
+                "print(json.dumps({'sage': version, "
+                "'singular': singular.version().splitlines()[0]}))"
+            ),
+        ]
+        try:
+            completed = subprocess.run(
+                command,
+                cwd=root,
+                check=False,
+                capture_output=True,
+                text=True,
+                timeout=20,
+            )
+        except (OSError, subprocess.TimeoutExpired):
+            completed = None
+        if completed is not None and completed.returncode == 0:
             try:
-                completed = subprocess.run(
-                    command,
-                    cwd=root,
-                    check=False,
-                    capture_output=True,
-                    text=True,
-                    timeout=20,
+                response = json.loads(
+                    completed.stdout.strip().splitlines()[-1]
                 )
-            except (OSError, subprocess.TimeoutExpired):
-                continue
-            if completed.returncode == 0:
-                inventory[name] = (
-                    completed.stdout.strip() or completed.stderr.strip()
-                ).splitlines()[0]
+            except (IndexError, json.JSONDecodeError):
+                response = {}
+            for name in ("sage", "singular"):
+                value = response.get(name)
+                if isinstance(value, str) and value:
+                    inventory[name] = value
     return inventory
 
 

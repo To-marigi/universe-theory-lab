@@ -1,0 +1,734 @@
+{
+  "schema_version": "final-theory-d2-S2_COMMON_NILPOTENT-saturated-v0.3.5",
+  "branch": "codex/final-theory-v0.3.5-d2-saturated-elimination-20260729",
+  "source_commit": "7105bac9ee95fbbf23099b9945e6e0d69b149498",
+  "paper_versions": [
+    "arXiv:2603.25503v1",
+    "arXiv:0809.3032v1",
+    "arXiv:math/0603049v1",
+    "arXiv:1505.07472v2",
+    "arXiv:1905.11304v2",
+    "arXiv:1504.01648v1",
+    "arXiv:2202.13387v2",
+    "Stacks Project Algebra snapshot 2026-07-28"
+  ],
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "references/papers/0809.3032v1_florentino_simultaneous-similarity-triangularization-2x2.pdf",
+      "sha256": "f30cc5ad16c9dd79026ed8534b7aeac14d6f47f7c21e4ff4a507d36750956626"
+    },
+    {
+      "path": "references/papers/math-0603049v1_florentino_invariants-2x2-matrices.pdf",
+      "sha256": "4b9062b317b050f6d779a87c294a9c8f48f866e34c3f123e1bb27fefdf2ce278"
+    },
+    {
+      "path": "references/papers/1505.07472v2_volcic_matrix-coefficient-realization-nc-rational.pdf",
+      "sha256": "711dc7ab2238aef3f3b24cecd84d769fc00ea76e1791d78f5c836ae1245793f8"
+    },
+    {
+      "path": "references/papers/1905.11304v2_porat-vinnikov_nc-rational-matrix-centre-i.pdf",
+      "sha256": "80140fac555d1501ef72fc681bb24dd3bb21d1a1d27376ca8825f84233a9cdd1"
+    },
+    {
+      "path": "references/papers/1504.01648v1_marais-ren_localizations-prime-ideals.pdf",
+      "sha256": "6666a9d430fe729264d77210e156d6c30ae13562979691e299672a4fb4ec9f39"
+    },
+    {
+      "path": "references/papers/2202.13387v2_berthomieu-eder-safey-el-din_saturation-ideals.pdf",
+      "sha256": "ccc46859817847d174dcc5c9ff6e9e943eb1a75f72be0395281c4a7274108a77"
+    },
+    {
+      "path": "references/papers/stacks-project_algebra_2026-07-28.pdf",
+      "sha256": "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+    },
+    {
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
+    },
+    {
+      "path": "results/v0.3.3_eq112_reduction_n4.json",
+      "sha256": "2ad178275f829fcdf1f46de42ac69a688b1356ae07a058d1edf81c05623a4850"
+    }
+  ],
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "source_index_branch": [
+    "DERIVED_APPENDIX_QN_BRANCH",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH"
+  ],
+  "dimension": 2,
+  "field": "characteristic-zero algebraic closure of QQ",
+  "finite_scope": "n<=4",
+  "assumptions": [
+    "PAPER_STRONG_OPERATOR_PROFILE, including occurrence-wise transition-operator identification",
+    "fixed matrix dimension d=2",
+    "finite source stages n<=4",
+    "every Q inverse and every declared reconstructed transition inverse is restricted to its nonzero determinant locus",
+    "S1/S2/S3 chart cover from v0.3.4 is exhaustive under simultaneous similarity",
+    "DERIVED and LITERAL source-index branches remain separate"
+  ],
+  "input_certificates": {
+    "solver_integrity": "results/v0.3.5_solver_input_integrity.json",
+    "direct_operator_system": "certificates/d2_saturation/v0.3.5_direct_operator_system.json",
+    "stage3_campaign": "results/v0.3.5_stage3_subset_campaign.json",
+    "full_stage4_campaign": "results/v0.3.5_full_stage4_campaign.json",
+    "S3_commutativity": "results/v0.3.5_S3_commutativity_proof.json",
+    "independent_oracle": "results/v0.3.5_independent_oracle.json",
+    "explicit_rational_witness": "results/v0.3.5_explicit_rational_witness.json",
+    "explicit_rational_witness_upper": "results/v0.3.5_explicit_rational_witness_upper.json",
+    "explicit_rational_witness_lower": "results/v0.3.5_explicit_rational_witness_lower.json",
+    "stage3_execution_log": "certificates/d2_saturation/v0.3.5_stage3_campaign.stdout.log",
+    "full_stage4_execution_log": "certificates/d2_saturation/v0.3.5_full_campaign_resaturated.stdout.log"
+  },
+  "certificate_hashes": {
+    "results/v0.3.5_solver_input_integrity.json": "1d94f6d0cd71ed75a088e445d0863943b529f2de0e4fb5042398acbfca660d0c",
+    "certificates/d2_saturation/v0.3.5_direct_operator_system.json": "c19c00438f94c55fa3d5a7662cbb425a170f497d25698fa050d245b97714d837",
+    "results/v0.3.5_stage3_subset_campaign.json": "392c4b683e672468ec6c6d27d843edc69c3fc4fc728f6bf3fdb2775c1acf3299",
+    "results/v0.3.5_full_stage4_campaign.json": "5295236d165d052c5d57a6fb2be7b9defab7a358fa8018e854c962c5fe667956",
+    "results/v0.3.5_S3_commutativity_proof.json": "87bb38093ae659a81bed1b2bf24b538a00ae52ad77082af04399dd744f7818a5",
+    "results/v0.3.5_independent_oracle.json": "c1108d20b6993292919963fcac55a05d85e2f58c37f15371430fc294883f1acd",
+    "results/v0.3.5_explicit_rational_witness.json": "755bbe3743ced5d6594671f45733f1004bc88de1916e7fbeb9454444bbf8c300",
+    "results/v0.3.5_explicit_rational_witness_upper.json": "a7d4ac1701f0d561e39f788f13317c5fdeab04e2e32e4c1c6cd3a5fe6673f5bf",
+    "results/v0.3.5_explicit_rational_witness_lower.json": "22c246abddfe5821d32c6e983c7ef8c1a09128d65a1b0900e756d915cdbc4cdd",
+    "certificates/d2_saturation/v0.3.5_stage3_campaign.stdout.log": "a5366426b21363ef4166d73e1cba5c8d5c0b2c723bb1936a93cfb3a023da9964",
+    "certificates/d2_saturation/v0.3.5_full_campaign_resaturated.stdout.log": "d68d50eb77f3dc0e4a0dc8f1a52bb7f774f521a03788ef7088add29797c80cbb"
+  },
+  "backend_execution_summary": {
+    "sage": "10.9",
+    "singular": "Singular for x86_64-Linux version 4.4.1 (44100, 64 bit) Jan 2025",
+    "stage3_run_count": 147,
+    "full_stage4_run_count": 78,
+    "coefficient_fields": [
+      "GF(32003)",
+      "GF(32009)",
+      "QQ"
+    ],
+    "cumulative_worker_wall_time_seconds": 1109.1114619789805,
+    "cumulative_host_observed_wall_time_seconds": 2264.1887433002703,
+    "maximum_peak_rss_bytes": 405282816
+  },
+  "stratum": "S2_COMMON_NILPOTENT",
+  "chart_count": 21,
+  "charts": [
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M2:C_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/b496f114f87fb9e59373.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/b496f114f87fb9e59373.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/b496f114f87fb9e59373.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 3.9792846650016145,
+      "peak_rss_bytes": 311349248,
+      "semantic_digest_sha256": "caa007d3db6d9fd53fb3698dcdeb99cbe05211b953ef501e006a208d4b0c32b1"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M2:C_ZERO_B_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/063351cef5a1d17f11d5.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/063351cef5a1d17f11d5.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/derived/9156089d2e4f456c0e3d.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 7.504641951003578,
+      "peak_rss_bytes": 300875776,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/derived/9156089d2e4f456c0e3d.json",
+        "certificates/d2_saturation/full_stage4/GF32009/derived/9156089d2e4f456c0e3d.json"
+      ],
+      "semantic_digest_sha256": "c061abb3dd43e393756cec2f3046d00ce0831bd2f75978a67011eb8897065c70"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M2:BC_ZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/22736e6ebdbdbb08c2f6.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/22736e6ebdbdbb08c2f6.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/derived/593dca2a7d1deba77699.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 6.749037687994132,
+      "peak_rss_bytes": 302178304,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/derived/593dca2a7d1deba77699.json",
+        "certificates/d2_saturation/full_stage4/GF32009/derived/593dca2a7d1deba77699.json"
+      ],
+      "semantic_digest_sha256": "42e70d4fc89240e954c3a21e85b91bbf134672aa0734fa31aba35fcdda3c8d67"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M3:C_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/de64db4cffb174943393.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/de64db4cffb174943393.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/de64db4cffb174943393.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 1.3774287490014103,
+      "peak_rss_bytes": 299212800,
+      "semantic_digest_sha256": "07f62dc725d443cd0484192c00fe32816d6b482967025e1e1fd4c4e64d73a24c"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M3:C_ZERO_B_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/370f0b5bac709a94d1cb.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/370f0b5bac709a94d1cb.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/derived/02dc63bb4a64b90643f3.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 6.809370984003181,
+      "peak_rss_bytes": 301989888,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/derived/02dc63bb4a64b90643f3.json",
+        "certificates/d2_saturation/full_stage4/GF32009/derived/02dc63bb4a64b90643f3.json"
+      ],
+      "semantic_digest_sha256": "49ef7f162ac06baecff8f130069694759e490b807d205b9b822b3ebddb38361d"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M3:BC_ZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/fcab1ef68214cb258435.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/fcab1ef68214cb258435.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/derived/100d94f1cea6abfc71bf.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 5.704845704000036,
+      "peak_rss_bytes": 299520000,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/derived/100d94f1cea6abfc71bf.json",
+        "certificates/d2_saturation/full_stage4/GF32009/derived/100d94f1cea6abfc71bf.json"
+      ],
+      "semantic_digest_sha256": "656ecd2fe72ae192ef44c782c85f9ac800a4ed1da9b0744cdc733700fa7529a0"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M4:C_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/10fe9ee44d421356345e.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/10fe9ee44d421356345e.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/derived/ca35f96c7b1bd468ffdf.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 53.40984122699592,
+      "peak_rss_bytes": 313434112,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/derived/ca35f96c7b1bd468ffdf.json",
+        "certificates/d2_saturation/full_stage4/GF32009/derived/ca35f96c7b1bd468ffdf.json"
+      ],
+      "semantic_digest_sha256": "ca8dc1f93384e47816b78d9d4fa999b768b41173909b2af6d48ec648f1e624aa"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M4:C_ZERO_B_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/5b273f3a3781534a1ae6.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/5b273f3a3781534a1ae6.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/derived/8901aeb84f41934975be.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 6.174076073002652,
+      "peak_rss_bytes": 301326336,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/derived/8901aeb84f41934975be.json",
+        "certificates/d2_saturation/full_stage4/GF32009/derived/8901aeb84f41934975be.json"
+      ],
+      "semantic_digest_sha256": "af72c3d8939bd95841c1ae6e12ea9796a3819c5341b32f5d5755b0dee0b12b9f"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M4:BC_ZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/4d370900bc63a52cedd7.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/4d370900bc63a52cedd7.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/derived/529417803e6af6250364.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 4.461311578001187,
+      "peak_rss_bytes": 300593152,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/derived/529417803e6af6250364.json",
+        "certificates/d2_saturation/full_stage4/GF32009/derived/529417803e6af6250364.json"
+      ],
+      "semantic_digest_sha256": "05adcdfb2c4533217e97b01594889c4fc33288095321b713ec61c7f376fcc847"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M2:C_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/7161b3620c4b5c36bb8a.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/7161b3620c4b5c36bb8a.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/7161b3620c4b5c36bb8a.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 3.780021268998098,
+      "peak_rss_bytes": 310296576,
+      "semantic_digest_sha256": "d092807ad151a3b7061adfc51c8207fc50e2faf1f4c7c25efcbec09b1df2ca36"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M2:C_ZERO_B_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/eee4459bf86fe33ad474.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/eee4459bf86fe33ad474.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/1d5576c408c4e5a3cb10.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 7.7617480760018225,
+      "peak_rss_bytes": 302354432,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/1d5576c408c4e5a3cb10.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/1d5576c408c4e5a3cb10.json"
+      ],
+      "semantic_digest_sha256": "35aec11ec04862e6a8d434187ab4aaa67ffb35510c274ae1eb8588bfa4a2614c"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M2:BC_ZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/1b1439a9111a73b6dce3.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/1b1439a9111a73b6dce3.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/9cda9f61c708b80a6802.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 7.089462315001583,
+      "peak_rss_bytes": 300916736,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/9cda9f61c708b80a6802.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/9cda9f61c708b80a6802.json"
+      ],
+      "semantic_digest_sha256": "3cfa6c0ad24df0bd6a0d34650c983d013bce2b9a965b304434b9b18d0ead6422"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M3:C_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/62c8c1055c5f7cfd3d82.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/62c8c1055c5f7cfd3d82.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/62c8c1055c5f7cfd3d82.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 1.1624272590051987,
+      "peak_rss_bytes": 299261952,
+      "semantic_digest_sha256": "6669b43da1b78444f2704699c248d2402f552f1e2b33053eddcffe4407c6b4bc"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M3:C_ZERO_B_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/24bf008b4618d3136b82.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/24bf008b4618d3136b82.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/ee1a4c2410c54840481a.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 6.72294106100162,
+      "peak_rss_bytes": 302190592,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/ee1a4c2410c54840481a.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/ee1a4c2410c54840481a.json"
+      ],
+      "semantic_digest_sha256": "fd4e3437aea95540e1cc62eb5050192459d1ee67dea460de8fdb51ace58ae6ca"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M3:BC_ZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/9ac058a42644076f8851.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/9ac058a42644076f8851.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/ca96eb03a9c7afe52438.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 5.843414178001694,
+      "peak_rss_bytes": 300888064,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/ca96eb03a9c7afe52438.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/ca96eb03a9c7afe52438.json"
+      ],
+      "semantic_digest_sha256": "82d9e625d76f50890b62123e2b93aa2d032738cf7034adfc3a5744741ef2cae5"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M4:C_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/b98c87a60e398257c752.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/b98c87a60e398257c752.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/7e48e1ec2c1eda31868b.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 50.44561456899828,
+      "peak_rss_bytes": 313688064,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/7e48e1ec2c1eda31868b.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/7e48e1ec2c1eda31868b.json"
+      ],
+      "semantic_digest_sha256": "c0d7bada8bb0295046e69366752c89cf29d8fe6c9497a60459f4c90a8a4abf65"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M4:C_ZERO_B_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/4f5088fa90b376da2c83.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/4f5088fa90b376da2c83.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/768967f6f74936744268.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 5.70412771699921,
+      "peak_rss_bytes": 299532288,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/768967f6f74936744268.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/768967f6f74936744268.json"
+      ],
+      "semantic_digest_sha256": "dcc01279a7af599454fcf7ac3052ad44764a7338decc3f18a6f985099faf729e"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M4:BC_ZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/2ccbdb103e5e85de7b8a.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/2ccbdb103e5e85de7b8a.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/9f6ac930a8604b84249a.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 4.451932474999921,
+      "peak_rss_bytes": 302125056,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/9f6ac930a8604b84249a.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/9f6ac930a8604b84249a.json"
+      ],
+      "semantic_digest_sha256": "38b35838e3c120f9c121b5733cb1ec16b80bb5abdc37915d84d88c1146ed1c6e"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M5:C_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NONCOMMUTATIVE_COMPONENT_SURVIVES",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/c5b06a32dc3be7b6472f.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/c5b06a32dc3be7b6472f.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/1ef5ae6e252abb00670d.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 12,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 9.75490332100162,
+      "peak_rss_bytes": 299601920,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/1ef5ae6e252abb00670d.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/1ef5ae6e252abb00670d.json"
+      ],
+      "semantic_digest_sha256": "1531da7e360e7af0c51ce20da85cf7008879c06f556cd63115f2f82c76b27544"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M5:C_ZERO_B_NONZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NONCOMMUTATIVE_COMPONENT_SURVIVES",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/9483839b6fa4e4cb4e0d.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/9483839b6fa4e4cb4e0d.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/85bd4c364da1a23f0d27.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 4,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 4.736003049001738,
+      "peak_rss_bytes": 299327488,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/85bd4c364da1a23f0d27.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/85bd4c364da1a23f0d27.json"
+      ],
+      "semantic_digest_sha256": "71955f194a627b31cfe02c41b3c864564111494534b157fc65a543625c8a04c0"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M5:BC_ZERO",
+      "stratum": "S2_COMMON_NILPOTENT",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NONCOMMUTATIVE_COMPONENT_SURVIVES",
+      "chart_cover_provenance": [
+        "first nonzero nilpotent coefficient selects a disjoint pivot chart",
+        "mu-all-zero locus is excluded here and assigned to S3",
+        "three Q1 coordinate loci form an exact cover"
+      ],
+      "residual_gauge": "Stab(E12)={aI+bE12 | a!=0} retained; Q1 coordinate loci are split without unsafe normalisation",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/be5c852fecf43cba2750.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/be5c852fecf43cba2750.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/fd0a14d212a765b3a771.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 4,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 3.3532207919997745,
+      "peak_rss_bytes": 299089920,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/fd0a14d212a765b3a771.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/fd0a14d212a765b3a771.json"
+      ],
+      "semantic_digest_sha256": "18bbe7a7298b7e0494056d6c2c3cade8030489997f495eda57b447f385df9a57"
+    }
+  ],
+  "all_charts_processed": true,
+  "noncommutative_charts": [
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M5:C_NONZERO",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M5:C_ZERO_B_NONZERO",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M5:BC_ZERO"
+  ],
+  "exact_numeric_distinction": "All verdict-bearing ideal operations are over QQ; GF(32003) and GF(32009) are recorded only as scouts.",
+  "completeness_scope": "all 21 S2_COMMON_NILPOTENT charts in both frozen source-index branches, under the strong profile and n<=4",
+  "unresolved_components": [],
+  "verdict": "CPOBC_D2_NONCOMMUTATIVE_REPRESENTATION_FOUND",
+  "semantic_digest_sha256": "10dc2cabc5f7fea540bff04332ac2eb4de220adbfcce5efd587321981b5f8d49"
+}

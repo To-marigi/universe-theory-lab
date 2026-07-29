@@ -1,0 +1,261 @@
+{
+  "schema_version": "final-theory-d2-classification-v0.3.5",
+  "branch": "codex/final-theory-v0.3.5-d2-saturated-elimination-20260729",
+  "source_commit": "7105bac9ee95fbbf23099b9945e6e0d69b149498",
+  "paper_versions": [
+    "arXiv:2603.25503v1",
+    "arXiv:0809.3032v1",
+    "arXiv:math/0603049v1",
+    "arXiv:1505.07472v2",
+    "arXiv:1905.11304v2",
+    "arXiv:1504.01648v1",
+    "arXiv:2202.13387v2",
+    "Stacks Project Algebra snapshot 2026-07-28"
+  ],
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "references/papers/0809.3032v1_florentino_simultaneous-similarity-triangularization-2x2.pdf",
+      "sha256": "f30cc5ad16c9dd79026ed8534b7aeac14d6f47f7c21e4ff4a507d36750956626"
+    },
+    {
+      "path": "references/papers/math-0603049v1_florentino_invariants-2x2-matrices.pdf",
+      "sha256": "4b9062b317b050f6d779a87c294a9c8f48f866e34c3f123e1bb27fefdf2ce278"
+    },
+    {
+      "path": "references/papers/1505.07472v2_volcic_matrix-coefficient-realization-nc-rational.pdf",
+      "sha256": "711dc7ab2238aef3f3b24cecd84d769fc00ea76e1791d78f5c836ae1245793f8"
+    },
+    {
+      "path": "references/papers/1905.11304v2_porat-vinnikov_nc-rational-matrix-centre-i.pdf",
+      "sha256": "80140fac555d1501ef72fc681bb24dd3bb21d1a1d27376ca8825f84233a9cdd1"
+    },
+    {
+      "path": "references/papers/1504.01648v1_marais-ren_localizations-prime-ideals.pdf",
+      "sha256": "6666a9d430fe729264d77210e156d6c30ae13562979691e299672a4fb4ec9f39"
+    },
+    {
+      "path": "references/papers/2202.13387v2_berthomieu-eder-safey-el-din_saturation-ideals.pdf",
+      "sha256": "ccc46859817847d174dcc5c9ff6e9e943eb1a75f72be0395281c4a7274108a77"
+    },
+    {
+      "path": "references/papers/stacks-project_algebra_2026-07-28.pdf",
+      "sha256": "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+    },
+    {
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
+    },
+    {
+      "path": "results/v0.3.3_eq112_reduction_n4.json",
+      "sha256": "2ad178275f829fcdf1f46de42ac69a688b1356ae07a058d1edf81c05623a4850"
+    }
+  ],
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "source_index_branch": [
+    "DERIVED_APPENDIX_QN_BRANCH",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH"
+  ],
+  "dimension": 2,
+  "field": "characteristic-zero algebraic closure of QQ",
+  "finite_scope": "n<=4",
+  "assumptions": [
+    "PAPER_STRONG_OPERATOR_PROFILE, including occurrence-wise transition-operator identification",
+    "fixed matrix dimension d=2",
+    "finite source stages n<=4",
+    "every Q inverse and every declared reconstructed transition inverse is restricted to its nonzero determinant locus",
+    "S1/S2/S3 chart cover from v0.3.4 is exhaustive under simultaneous similarity",
+    "DERIVED and LITERAL source-index branches remain separate"
+  ],
+  "input_certificates": {
+    "solver_integrity": "results/v0.3.5_solver_input_integrity.json",
+    "direct_operator_system": "certificates/d2_saturation/v0.3.5_direct_operator_system.json",
+    "stage3_campaign": "results/v0.3.5_stage3_subset_campaign.json",
+    "full_stage4_campaign": "results/v0.3.5_full_stage4_campaign.json",
+    "S3_commutativity": "results/v0.3.5_S3_commutativity_proof.json",
+    "independent_oracle": "results/v0.3.5_independent_oracle.json",
+    "explicit_rational_witness": "results/v0.3.5_explicit_rational_witness.json",
+    "explicit_rational_witness_upper": "results/v0.3.5_explicit_rational_witness_upper.json",
+    "explicit_rational_witness_lower": "results/v0.3.5_explicit_rational_witness_lower.json",
+    "stage3_execution_log": "certificates/d2_saturation/v0.3.5_stage3_campaign.stdout.log",
+    "full_stage4_execution_log": "certificates/d2_saturation/v0.3.5_full_campaign_resaturated.stdout.log"
+  },
+  "certificate_hashes": {
+    "results/v0.3.5_solver_input_integrity.json": "1d94f6d0cd71ed75a088e445d0863943b529f2de0e4fb5042398acbfca660d0c",
+    "certificates/d2_saturation/v0.3.5_direct_operator_system.json": "c19c00438f94c55fa3d5a7662cbb425a170f497d25698fa050d245b97714d837",
+    "results/v0.3.5_stage3_subset_campaign.json": "392c4b683e672468ec6c6d27d843edc69c3fc4fc728f6bf3fdb2775c1acf3299",
+    "results/v0.3.5_full_stage4_campaign.json": "5295236d165d052c5d57a6fb2be7b9defab7a358fa8018e854c962c5fe667956",
+    "results/v0.3.5_S3_commutativity_proof.json": "87bb38093ae659a81bed1b2bf24b538a00ae52ad77082af04399dd744f7818a5",
+    "results/v0.3.5_independent_oracle.json": "c1108d20b6993292919963fcac55a05d85e2f58c37f15371430fc294883f1acd",
+    "results/v0.3.5_explicit_rational_witness.json": "755bbe3743ced5d6594671f45733f1004bc88de1916e7fbeb9454444bbf8c300",
+    "results/v0.3.5_explicit_rational_witness_upper.json": "a7d4ac1701f0d561e39f788f13317c5fdeab04e2e32e4c1c6cd3a5fe6673f5bf",
+    "results/v0.3.5_explicit_rational_witness_lower.json": "22c246abddfe5821d32c6e983c7ef8c1a09128d65a1b0900e756d915cdbc4cdd",
+    "certificates/d2_saturation/v0.3.5_stage3_campaign.stdout.log": "a5366426b21363ef4166d73e1cba5c8d5c0b2c723bb1936a93cfb3a023da9964",
+    "certificates/d2_saturation/v0.3.5_full_campaign_resaturated.stdout.log": "d68d50eb77f3dc0e4a0dc8f1a52bb7f774f521a03788ef7088add29797c80cbb"
+  },
+  "backend_execution_summary": {
+    "sage": "10.9",
+    "singular": "Singular for x86_64-Linux version 4.4.1 (44100, 64 bit) Jan 2025",
+    "stage3_run_count": 147,
+    "full_stage4_run_count": 78,
+    "coefficient_fields": [
+      "GF(32003)",
+      "GF(32009)",
+      "QQ"
+    ],
+    "cumulative_worker_wall_time_seconds": 1109.1114619789805,
+    "cumulative_host_observed_wall_time_seconds": 2264.1887433002703,
+    "maximum_peak_rss_bytes": 405282816
+  },
+  "stratum_verdicts": {
+    "S1_DISTINCT_EIGENVALUE": "CPOBC_D2_NONCOMMUTATIVE_REPRESENTATION_FOUND",
+    "S2_COMMON_NILPOTENT": "CPOBC_D2_NONCOMMUTATIVE_REPRESENTATION_FOUND",
+    "S3_SCALAR": "S3_NO_NONCOMMUTATIVE_REPRESENTATION_N4"
+  },
+  "source_branch_verdicts": {
+    "DERIVED_APPENDIX_QN_BRANCH": "CPOBC_D2_COMPLETE_NO_GO_STRONG_PROFILE_N4",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH": "CPOBC_D2_NONCOMMUTATIVE_REPRESENTATION_FOUND"
+  },
+  "noncommutative_representation_found": true,
+  "noncommutative_charts": [
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:BOTH_NONZERO",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:LOWER_ONLY",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:UPPER_ONLY",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M5:BC_ZERO",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M5:C_NONZERO",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S2_PIVOT_M5:C_ZERO_B_NONZERO"
+  ],
+  "explicit_rational_witness": {
+    "passed": true,
+    "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:BOTH_NONZERO",
+    "certificate": "results/v0.3.5_explicit_rational_witness.json",
+    "relation_count": 1001,
+    "canonical_scalar_numerator_count": 2564,
+    "transition_count": 165,
+    "two_sided_inverse_count": 26,
+    "commutator": {
+      "pair": [
+        "Q_1",
+        "Q_5"
+      ],
+      "matrix": [
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "2",
+          "-1"
+        ]
+      ],
+      "nonzero": true
+    },
+    "outside_paper_pauli_ansatz": true,
+    "similarity_audit": {
+      "single_orbit_representative": true,
+      "nonzero_commutator_is_similarity_invariant": true,
+      "not_a_commutative_similarity_duplicate": true,
+      "reason": "A simultaneous similarity conjugates each commutator. Therefore a nonzero [Q_1,Q_5] cannot be similar to any commutative representation."
+    }
+  },
+  "independent_explicit_witnesses": [
+    {
+      "passed": true,
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:BOTH_NONZERO",
+      "certificate": "results/v0.3.5_explicit_rational_witness.json",
+      "relation_count": 1001,
+      "canonical_scalar_numerator_count": 2564,
+      "invertibility_site_count": 191,
+      "commutator": {
+        "pair": [
+          "Q_1",
+          "Q_5"
+        ],
+        "matrix": [
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "2",
+            "-1"
+          ]
+        ],
+        "nonzero": true
+      },
+      "semantic_digest_sha256": "0424d1fac690315dea57e936fd61b57390be93454ce0af5bfc9dc4b0028bdcff"
+    },
+    {
+      "passed": true,
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:UPPER_ONLY",
+      "certificate": "results/v0.3.5_explicit_rational_witness_upper.json",
+      "relation_count": 1001,
+      "canonical_scalar_numerator_count": 2564,
+      "invertibility_site_count": 191,
+      "commutator": {
+        "pair": [
+          "Q_1",
+          "Q_5"
+        ],
+        "matrix": [
+          [
+            "0",
+            "-2"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "nonzero": true
+      },
+      "semantic_digest_sha256": "65d42922266fb4039cb037f970463d398a2fbd1efd4df7f1036bb1ef02516479"
+    },
+    {
+      "passed": true,
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:LOWER_ONLY",
+      "certificate": "results/v0.3.5_explicit_rational_witness_lower.json",
+      "relation_count": 1001,
+      "canonical_scalar_numerator_count": 2564,
+      "invertibility_site_count": 191,
+      "commutator": {
+        "pair": [
+          "Q_1",
+          "Q_5"
+        ],
+        "matrix": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "3",
+            "0"
+          ]
+        ],
+        "nonzero": true
+      },
+      "semantic_digest_sha256": "b0369ba8652c5ac9728d6539d5599be78cd59551644909f56d894e6fef830fa8"
+    }
+  ],
+  "finite_strong_profile_no_go_proved": false,
+  "d2_verdict": "CPOBC_D2_NONCOMMUTATIVE_REPRESENTATION_FOUND",
+  "global_scientific_verdict": "FINAL_THEORY_OPEN",
+  "profile_dependence": "The result is conditional on PAPER_STRONG_OPERATOR_PROFILE. No weak-profile conclusion is inferred.",
+  "finite_vs_infinite_scope": "This is an n<=4 finite compiler result. No lift to arbitrary finite n or an infinite QSG is proved.",
+  "Eq113_source_index_status": "DERIVED_APPENDIX_QN_BRANCH and LITERAL_PRINTED_QN_PLUS_1_BRANCH were both evaluated; the printed-index ambiguity itself remains unresolved.",
+  "exact_numeric_distinction": "QQ/Singular results carry the proof; both finite fields are shape scouts only.",
+  "completeness_scope": "fixed d=2, n<=4, strong operator profile, both source-index branches, all S1/S2 charts, and S3 noncommutativity exclusion",
+  "unresolved_components": [
+    "weak-profile d=2 classification",
+    "arbitrary finite-n extension",
+    "infinite-QSG extension",
+    "resolution of the Eq.(113) printed source-index ambiguity",
+    "general S3 solution-locus description"
+  ],
+  "verdict": "CPOBC_D2_NONCOMMUTATIVE_REPRESENTATION_FOUND",
+  "semantic_digest_sha256": "0c4a022e568cb6681cedd2c4d330484ec53ff3efadb781ba671dd4b46808cfca"
+}

@@ -1,0 +1,1052 @@
+{
+  "schema_version": "final-theory-d2-S1_DISTINCT_EIGENVALUE-saturated-v0.3.5",
+  "branch": "codex/final-theory-v0.3.5-d2-saturated-elimination-20260729",
+  "source_commit": "7105bac9ee95fbbf23099b9945e6e0d69b149498",
+  "paper_versions": [
+    "arXiv:2603.25503v1",
+    "arXiv:0809.3032v1",
+    "arXiv:math/0603049v1",
+    "arXiv:1505.07472v2",
+    "arXiv:1905.11304v2",
+    "arXiv:1504.01648v1",
+    "arXiv:2202.13387v2",
+    "Stacks Project Algebra snapshot 2026-07-28"
+  ],
+  "source_hashes": [
+    {
+      "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+      "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa"
+    },
+    {
+      "path": "references/papers/0809.3032v1_florentino_simultaneous-similarity-triangularization-2x2.pdf",
+      "sha256": "f30cc5ad16c9dd79026ed8534b7aeac14d6f47f7c21e4ff4a507d36750956626"
+    },
+    {
+      "path": "references/papers/math-0603049v1_florentino_invariants-2x2-matrices.pdf",
+      "sha256": "4b9062b317b050f6d779a87c294a9c8f48f866e34c3f123e1bb27fefdf2ce278"
+    },
+    {
+      "path": "references/papers/1505.07472v2_volcic_matrix-coefficient-realization-nc-rational.pdf",
+      "sha256": "711dc7ab2238aef3f3b24cecd84d769fc00ea76e1791d78f5c836ae1245793f8"
+    },
+    {
+      "path": "references/papers/1905.11304v2_porat-vinnikov_nc-rational-matrix-centre-i.pdf",
+      "sha256": "80140fac555d1501ef72fc681bb24dd3bb21d1a1d27376ca8825f84233a9cdd1"
+    },
+    {
+      "path": "references/papers/1504.01648v1_marais-ren_localizations-prime-ideals.pdf",
+      "sha256": "6666a9d430fe729264d77210e156d6c30ae13562979691e299672a4fb4ec9f39"
+    },
+    {
+      "path": "references/papers/2202.13387v2_berthomieu-eder-safey-el-din_saturation-ideals.pdf",
+      "sha256": "ccc46859817847d174dcc5c9ff6e9e943eb1a75f72be0395281c4a7274108a77"
+    },
+    {
+      "path": "references/papers/stacks-project_algebra_2026-07-28.pdf",
+      "sha256": "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+    },
+    {
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "77277a09323d225cc0df00277a6dcedde317120bd6f75db0c006f3de8a0e23d3"
+    },
+    {
+      "path": "results/v0.3.3_eq112_reduction_n4.json",
+      "sha256": "2ad178275f829fcdf1f46de42ac69a688b1356ae07a058d1edf81c05623a4850"
+    }
+  ],
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "source_index_branch": [
+    "DERIVED_APPENDIX_QN_BRANCH",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH"
+  ],
+  "dimension": 2,
+  "field": "characteristic-zero algebraic closure of QQ",
+  "finite_scope": "n<=4",
+  "assumptions": [
+    "PAPER_STRONG_OPERATOR_PROFILE, including occurrence-wise transition-operator identification",
+    "fixed matrix dimension d=2",
+    "finite source stages n<=4",
+    "every Q inverse and every declared reconstructed transition inverse is restricted to its nonzero determinant locus",
+    "S1/S2/S3 chart cover from v0.3.4 is exhaustive under simultaneous similarity",
+    "DERIVED and LITERAL source-index branches remain separate"
+  ],
+  "input_certificates": {
+    "solver_integrity": "results/v0.3.5_solver_input_integrity.json",
+    "direct_operator_system": "certificates/d2_saturation/v0.3.5_direct_operator_system.json",
+    "stage3_campaign": "results/v0.3.5_stage3_subset_campaign.json",
+    "full_stage4_campaign": "results/v0.3.5_full_stage4_campaign.json",
+    "S3_commutativity": "results/v0.3.5_S3_commutativity_proof.json",
+    "independent_oracle": "results/v0.3.5_independent_oracle.json",
+    "explicit_rational_witness": "results/v0.3.5_explicit_rational_witness.json",
+    "explicit_rational_witness_upper": "results/v0.3.5_explicit_rational_witness_upper.json",
+    "explicit_rational_witness_lower": "results/v0.3.5_explicit_rational_witness_lower.json",
+    "stage3_execution_log": "certificates/d2_saturation/v0.3.5_stage3_campaign.stdout.log",
+    "full_stage4_execution_log": "certificates/d2_saturation/v0.3.5_full_campaign_resaturated.stdout.log"
+  },
+  "certificate_hashes": {
+    "results/v0.3.5_solver_input_integrity.json": "1d94f6d0cd71ed75a088e445d0863943b529f2de0e4fb5042398acbfca660d0c",
+    "certificates/d2_saturation/v0.3.5_direct_operator_system.json": "c19c00438f94c55fa3d5a7662cbb425a170f497d25698fa050d245b97714d837",
+    "results/v0.3.5_stage3_subset_campaign.json": "392c4b683e672468ec6c6d27d843edc69c3fc4fc728f6bf3fdb2775c1acf3299",
+    "results/v0.3.5_full_stage4_campaign.json": "5295236d165d052c5d57a6fb2be7b9defab7a358fa8018e854c962c5fe667956",
+    "results/v0.3.5_S3_commutativity_proof.json": "87bb38093ae659a81bed1b2bf24b538a00ae52ad77082af04399dd744f7818a5",
+    "results/v0.3.5_independent_oracle.json": "c1108d20b6993292919963fcac55a05d85e2f58c37f15371430fc294883f1acd",
+    "results/v0.3.5_explicit_rational_witness.json": "755bbe3743ced5d6594671f45733f1004bc88de1916e7fbeb9454444bbf8c300",
+    "results/v0.3.5_explicit_rational_witness_upper.json": "a7d4ac1701f0d561e39f788f13317c5fdeab04e2e32e4c1c6cd3a5fe6673f5bf",
+    "results/v0.3.5_explicit_rational_witness_lower.json": "22c246abddfe5821d32c6e983c7ef8c1a09128d65a1b0900e756d915cdbc4cdd",
+    "certificates/d2_saturation/v0.3.5_stage3_campaign.stdout.log": "a5366426b21363ef4166d73e1cba5c8d5c0b2c723bb1936a93cfb3a023da9964",
+    "certificates/d2_saturation/v0.3.5_full_campaign_resaturated.stdout.log": "d68d50eb77f3dc0e4a0dc8f1a52bb7f774f521a03788ef7088add29797c80cbb"
+  },
+  "backend_execution_summary": {
+    "sage": "10.9",
+    "singular": "Singular for x86_64-Linux version 4.4.1 (44100, 64 bit) Jan 2025",
+    "stage3_run_count": 147,
+    "full_stage4_run_count": 78,
+    "coefficient_fields": [
+      "GF(32003)",
+      "GF(32009)",
+      "QQ"
+    ],
+    "cumulative_worker_wall_time_seconds": 1109.1114619789805,
+    "cumulative_host_observed_wall_time_seconds": 2264.1887433002703,
+    "maximum_peak_rss_bytes": 405282816
+  },
+  "stratum": "S1_DISTINCT_EIGENVALUE",
+  "chart_count": 28,
+  "charts": [
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R2:BOTH_NONZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/8d6cfe99b626df030a45.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/8d6cfe99b626df030a45.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/8d6cfe99b626df030a45.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 7.207932530000107,
+      "peak_rss_bytes": 314503168,
+      "semantic_digest_sha256": "29ffdb0db02eb71e2562712d3fcd81aa62f561bc62e1fe92b80369bef0b803e9"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R2:UPPER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/23160f66617697dd5730.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/23160f66617697dd5730.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/23160f66617697dd5730.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.6078160979959648,
+      "peak_rss_bytes": 298033152,
+      "semantic_digest_sha256": "464366b27e6fa8e70daf0af106ddc443e7df1e0f9a17485760982fdb957a9f4c"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R2:LOWER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/c85afa23f847e39a6b87.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/c85afa23f847e39a6b87.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/c85afa23f847e39a6b87.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.8831295249983668,
+      "peak_rss_bytes": 297082880,
+      "semantic_digest_sha256": "593392df536d5c05a5a642cebb6a8e577372c0d3906f4cfb3bc2cd7926f42087"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R2:BOTH_ZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_STRUCTURALLY_COMMUTATIVE_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/3faace2a805dc4a8de37.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/3faace2a805dc4a8de37.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_backend_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/3faace2a805dc4a8de37.json",
+      "commutator_components": [],
+      "proof_rule": "All three independent entries of every 2x2 commutator [Q_i,Q_j] specialise identically to zero.",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.31888369199441513,
+      "peak_rss_bytes": 296861696,
+      "semantic_digest_sha256": "3b538a4de54be4ecb476140ffbce37b0b47feb10611ebe02e4b41f86b8ff76ba"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R3:BOTH_NONZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/148c2a0fd38df41d8feb.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/148c2a0fd38df41d8feb.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/148c2a0fd38df41d8feb.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.9322328909984208,
+      "peak_rss_bytes": 299913216,
+      "semantic_digest_sha256": "ad13f7b4be760d5113dd5e7b8e85316d3e351d9cea20ffe45b5e3481eeea2d70"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R3:UPPER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/23d142e3330b1a1f0f39.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/23d142e3330b1a1f0f39.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/23d142e3330b1a1f0f39.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.30902434999734396,
+      "peak_rss_bytes": 299003904,
+      "semantic_digest_sha256": "6bc7f4fe377cf7d0c50585e07f8bc65d14d50411de441d364c7915b8adff1079"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R3:LOWER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/364beb56fff87704b732.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/364beb56fff87704b732.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/364beb56fff87704b732.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.2716397100011818,
+      "peak_rss_bytes": 298340352,
+      "semantic_digest_sha256": "01b27301d25bcdf6cd57805f736f92edd05a1947e1e3fafe57fd7edbf2d952aa"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R3:BOTH_ZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_STRUCTURALLY_COMMUTATIVE_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/dcef30e8a3e22fc7c827.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/dcef30e8a3e22fc7c827.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_backend_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/dcef30e8a3e22fc7c827.json",
+      "commutator_components": [],
+      "proof_rule": "All three independent entries of every 2x2 commutator [Q_i,Q_j] specialise identically to zero.",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.22380912300286582,
+      "peak_rss_bytes": 298311680,
+      "semantic_digest_sha256": "7173a4d9137d169cf4c3a2964d2b932a2ed5f64e5c00d332258b9da9003242c9"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R4:BOTH_NONZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/7b238563aa45d0ed80f3.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/7b238563aa45d0ed80f3.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/derived/3279113ab468e9ecc82e.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 52.41492150200065,
+      "peak_rss_bytes": 337661952,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/derived/3279113ab468e9ecc82e.json",
+        "certificates/d2_saturation/full_stage4/GF32009/derived/3279113ab468e9ecc82e.json"
+      ],
+      "semantic_digest_sha256": "6c553963789647550f78d648e5e59fbcfdd513ee2613c6327ce3a95f7970007f"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R4:UPPER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/99ee39cd6c62fd57f116.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/99ee39cd6c62fd57f116.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/derived/da7d6015be8251c8b4a7.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 5.348951640997257,
+      "peak_rss_bytes": 301191168,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/derived/da7d6015be8251c8b4a7.json",
+        "certificates/d2_saturation/full_stage4/GF32009/derived/da7d6015be8251c8b4a7.json"
+      ],
+      "semantic_digest_sha256": "508a5715912731664775d60dae048d1a611be5a44dd5cb41dd68995ebadec838"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R4:LOWER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_EMPTY_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/c91acbcf26dc02424598.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/c91acbcf26dc02424598.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/derived/7dfc12ad378485c179c4.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 5.385802160999447,
+      "peak_rss_bytes": 298901504,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/derived/7dfc12ad378485c179c4.json",
+        "certificates/d2_saturation/full_stage4/GF32009/derived/7dfc12ad378485c179c4.json"
+      ],
+      "semantic_digest_sha256": "54d69b26dc0a86f6af05acc449bf631c10f24d58e3388b1b0bce67ec55c0377e"
+    },
+    {
+      "chart": "DERIVED_APPENDIX_QN_BRANCH:S1_PIVOT_R4:BOTH_ZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+      "classification": "EXACT_STRUCTURALLY_COMMUTATIVE_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/derived/9a10a7db681813570888.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/derived/9a10a7db681813570888.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_backend_certificate": "certificates/d2_saturation/stage3_subset/QQ/derived/9a10a7db681813570888.json",
+      "commutator_components": [],
+      "proof_rule": "All three independent entries of every 2x2 commutator [Q_i,Q_j] specialise identically to zero.",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.45809197199560003,
+      "peak_rss_bytes": 298266624,
+      "semantic_digest_sha256": "6a5babd5f50bd0e72b8a9634f7b72cc3dad248cccf8e4d91bca7bc4d45d10dde"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R2:BOTH_NONZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/04c52479f8b8759de1a5.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/04c52479f8b8759de1a5.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/04c52479f8b8759de1a5.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 6.32988137799839,
+      "peak_rss_bytes": 314736640,
+      "semantic_digest_sha256": "e68c21b8b85a9b4ada4119db912d7dc4c6f8794665210809ba61c2605683e935"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R2:UPPER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/3c8bfc6ecc640ee9e820.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/3c8bfc6ecc640ee9e820.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/3c8bfc6ecc640ee9e820.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.5280367419982213,
+      "peak_rss_bytes": 297193472,
+      "semantic_digest_sha256": "24d1eab13d35abfb1d060a6de80da5f02dda747afd6b40d08beb9a192c3f819d"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R2:LOWER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/328a5c540d59d42aa01c.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/328a5c540d59d42aa01c.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/328a5c540d59d42aa01c.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.7089132889959728,
+      "peak_rss_bytes": 298971136,
+      "semantic_digest_sha256": "962049506c276aaf004b6a483e92eaa7a1f1d95810fb6250e6469979a3805689"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R2:BOTH_ZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_STRUCTURALLY_COMMUTATIVE_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/e197af30bce405e38676.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/e197af30bce405e38676.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_backend_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/e197af30bce405e38676.json",
+      "commutator_components": [],
+      "proof_rule": "All three independent entries of every 2x2 commutator [Q_i,Q_j] specialise identically to zero.",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.28130070000042906,
+      "peak_rss_bytes": 297242624,
+      "semantic_digest_sha256": "888f0df1758f1b54fdabee17eb0d207df4ffdc82376d634bd3b072a6367bf4f4"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R3:BOTH_NONZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/d40a94d7072880f2e343.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/d40a94d7072880f2e343.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/d40a94d7072880f2e343.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.8422908809952787,
+      "peak_rss_bytes": 298651648,
+      "semantic_digest_sha256": "e152db20cf750768004b247f57bfa94c57b41fa528ec78284233587c7d2cff19"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R3:UPPER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/093f365116c711d75f9f.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/093f365116c711d75f9f.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/093f365116c711d75f9f.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.2338394039979903,
+      "peak_rss_bytes": 298283008,
+      "semantic_digest_sha256": "3fe9fcff415af91315a527efafc2bb6df12e3d39419ce77e9e5b2ef7c218554a"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R3:LOWER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_BY_LOCALISED_STAGE3_SUBSYSTEM",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/b909ac2f5b1a49865bcc.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/b909ac2f5b1a49865bcc.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/b909ac2f5b1a49865bcc.json",
+      "proof_rule": "The full n<=4 localised ideal contains the stage<=3 localised subsystem. Since the latter is (1), the full localised ideal is (1).",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.6797533239951008,
+      "peak_rss_bytes": 298991616,
+      "semantic_digest_sha256": "016e2cf97f1b162032774db9f02759e7c7229d95eb686d8afa6a09ee220bd7a6"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R3:BOTH_ZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_STRUCTURALLY_COMMUTATIVE_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/af37207ef9cfbbe0b5cb.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/af37207ef9cfbbe0b5cb.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_backend_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/af37207ef9cfbbe0b5cb.json",
+      "commutator_components": [],
+      "proof_rule": "All three independent entries of every 2x2 commutator [Q_i,Q_j] specialise identically to zero.",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.6450963270035572,
+      "peak_rss_bytes": 297197568,
+      "semantic_digest_sha256": "b5dbd0834fcc3dfaa3db8e12e3a843d0ca2549245447c38459d27f9f1eb4c3c5"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R4:BOTH_NONZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/9241a3ca23c1b7761c92.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/9241a3ca23c1b7761c92.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/ecfd0f6a80b6680067c2.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 54.71940006800287,
+      "peak_rss_bytes": 338051072,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/ecfd0f6a80b6680067c2.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/ecfd0f6a80b6680067c2.json"
+      ],
+      "semantic_digest_sha256": "fbe16e5761e6684f0f86146135ac53aaa1a6ba047fec282c9d602f379446d6c3"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R4:UPPER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/bb29900f6853dd6fc6d7.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/bb29900f6853dd6fc6d7.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/32505c785cddc484cc6f.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 5.6868659110041335,
+      "peak_rss_bytes": 298835968,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/32505c785cddc484cc6f.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/32505c785cddc484cc6f.json"
+      ],
+      "semantic_digest_sha256": "98af7ac56f5ca40e704708d54eb2c623870b0925d43ba46b73927441455d93c8"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R4:LOWER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_EMPTY_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/3f49e83c7b5d6b4553d9.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/3f49e83c7b5d6b4553d9.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/93b63ef1270e1b6de156.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 0,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 5.941819203995692,
+      "peak_rss_bytes": 300519424,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/93b63ef1270e1b6de156.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/93b63ef1270e1b6de156.json"
+      ],
+      "semantic_digest_sha256": "eb5855e5144555bebf5abd1b75d45bd350df12d54f04b4eacf3c783dd300e554"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R4:BOTH_ZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_STRUCTURALLY_COMMUTATIVE_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/31b0be9a759537af8efc.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/31b0be9a759537af8efc.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_backend_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/31b0be9a759537af8efc.json",
+      "commutator_components": [],
+      "proof_rule": "All three independent entries of every 2x2 commutator [Q_i,Q_j] specialise identically to zero.",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.2775469409971265,
+      "peak_rss_bytes": 295763968,
+      "semantic_digest_sha256": "7d693997a7684f606f57a1abfa2677b083b8bd3f47d40700693fde54789a2d6d"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:BOTH_NONZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NONCOMMUTATIVE_COMPONENT_SURVIVES",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/5e7c53fe54fff08e5537.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/5e7c53fe54fff08e5537.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/c431689908516e4e4a2e.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 12,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 10.040389602996584,
+      "peak_rss_bytes": 299728896,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/c431689908516e4e4a2e.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/c431689908516e4e4a2e.json"
+      ],
+      "explicit_rational_witness": {
+        "certificate": "results/v0.3.5_explicit_rational_witness.json",
+        "passed": true,
+        "Q_matrices": {
+          "Q_1": [
+            [
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "2"
+            ]
+          ],
+          "Q_2": [
+            [
+              "2",
+              "2"
+            ],
+            [
+              "2",
+              "4"
+            ]
+          ],
+          "Q_3": [
+            [
+              "3",
+              "3"
+            ],
+            [
+              "3",
+              "6"
+            ]
+          ],
+          "Q_4": [
+            [
+              "4",
+              "4"
+            ],
+            [
+              "4",
+              "8"
+            ]
+          ],
+          "Q_5": [
+            [
+              "6",
+              "5"
+            ],
+            [
+              "6",
+              "10"
+            ]
+          ]
+        },
+        "nonzero_commutator": {
+          "pair": [
+            "Q_1",
+            "Q_5"
+          ],
+          "matrix": [
+            [
+              "1",
+              "-1"
+            ],
+            [
+              "2",
+              "-1"
+            ]
+          ],
+          "nonzero": true
+        }
+      },
+      "semantic_digest_sha256": "1cd19e0468dd98b665a53c7faf9dfc450459f3977df4fbdc24e89580615df80a"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:UPPER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NONCOMMUTATIVE_COMPONENT_SURVIVES",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/f84f4ee37314485e94d0.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/f84f4ee37314485e94d0.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/e1c9c9229537219db824.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 4,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 5.335576483004843,
+      "peak_rss_bytes": 300552192,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/e1c9c9229537219db824.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/e1c9c9229537219db824.json"
+      ],
+      "explicit_rational_witness": {
+        "certificate": "results/v0.3.5_explicit_rational_witness_upper.json",
+        "passed": true,
+        "Q_matrices": {
+          "Q_1": [
+            [
+              "2",
+              "1"
+            ],
+            [
+              "0",
+              "3"
+            ]
+          ],
+          "Q_2": [
+            [
+              "4",
+              "2"
+            ],
+            [
+              "0",
+              "6"
+            ]
+          ],
+          "Q_3": [
+            [
+              "6",
+              "3"
+            ],
+            [
+              "0",
+              "9"
+            ]
+          ],
+          "Q_4": [
+            [
+              "8",
+              "4"
+            ],
+            [
+              "0",
+              "12"
+            ]
+          ],
+          "Q_5": [
+            [
+              "12",
+              "5"
+            ],
+            [
+              "0",
+              "15"
+            ]
+          ]
+        },
+        "nonzero_commutator": {
+          "pair": [
+            "Q_1",
+            "Q_5"
+          ],
+          "matrix": [
+            [
+              "0",
+              "-2"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "nonzero": true
+        }
+      },
+      "semantic_digest_sha256": "510ad1b4aee046f80e9ca65051f9b0b98a6f7a0b9db9967e449a913ae680a8b3"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:LOWER_ONLY",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_NONCOMMUTATIVE_COMPONENT_SURVIVES",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/c77e96e0d130e8885810.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/c77e96e0d130e8885810.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_certificate": "certificates/d2_saturation/full_stage4/QQ/literal/0169482b4e7d60e380e5.json",
+      "full_relation_count": 1001,
+      "reconstructed_transitions_checked": 165,
+      "surviving_noncommutative_component_count": 4,
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 5.064632498004357,
+      "peak_rss_bytes": 300650496,
+      "full_GF_scout_certificates": [
+        "certificates/d2_saturation/full_stage4/GF32003/literal/0169482b4e7d60e380e5.json",
+        "certificates/d2_saturation/full_stage4/GF32009/literal/0169482b4e7d60e380e5.json"
+      ],
+      "explicit_rational_witness": {
+        "certificate": "results/v0.3.5_explicit_rational_witness_lower.json",
+        "passed": true,
+        "Q_matrices": {
+          "Q_1": [
+            [
+              "2",
+              "0"
+            ],
+            [
+              "1",
+              "3"
+            ]
+          ],
+          "Q_2": [
+            [
+              "4",
+              "0"
+            ],
+            [
+              "2",
+              "6"
+            ]
+          ],
+          "Q_3": [
+            [
+              "6",
+              "0"
+            ],
+            [
+              "3",
+              "9"
+            ]
+          ],
+          "Q_4": [
+            [
+              "8",
+              "0"
+            ],
+            [
+              "4",
+              "12"
+            ]
+          ],
+          "Q_5": [
+            [
+              "12",
+              "0"
+            ],
+            [
+              "6",
+              "15"
+            ]
+          ]
+        },
+        "nonzero_commutator": {
+          "pair": [
+            "Q_1",
+            "Q_5"
+          ],
+          "matrix": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "3",
+              "0"
+            ]
+          ],
+          "nonzero": true
+        }
+      },
+      "semantic_digest_sha256": "d7257c334f4274977fc1a2bebec9063ca77fd8ffba8acf74c877864999d4355e"
+    },
+    {
+      "chart": "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:BOTH_ZERO",
+      "stratum": "S1_DISTINCT_EIGENVALUE",
+      "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+      "classification": "EXACT_STRUCTURALLY_COMMUTATIVE_CHART",
+      "chart_cover_provenance": [
+        "first ratio with distinct eigenvalues selects a disjoint pivot chart",
+        "four Q1 off-diagonal loci form an exact coordinate cover"
+      ],
+      "residual_gauge": "diagonal torus and eigenline swap retained; no nonzero coordinate is normalised without a predicate",
+      "GF_scout_certificates": [
+        "certificates/d2_saturation/stage3_subset/GF32003/literal/e3029c6357a8192c3199.json",
+        "certificates/d2_saturation/stage3_subset/GF32009/literal/e3029c6357a8192c3199.json"
+      ],
+      "backend": "SageMath 10.9 / embedded Singular 4.4.1",
+      "QQ_backend_certificate": "certificates/d2_saturation/stage3_subset/QQ/literal/e3029c6357a8192c3199.json",
+      "commutator_components": [],
+      "proof_rule": "All three independent entries of every 2x2 commutator [Q_i,Q_j] specialise identically to zero.",
+      "proof_eligible": true,
+      "exit_status": "COMPLETED",
+      "wall_time_seconds": 0.3011388029990485,
+      "peak_rss_bytes": 297308160,
+      "semantic_digest_sha256": "e7e841f84ef59fa0a3275659decd70976bf891ced50082069540d03bc5e42a6f"
+    }
+  ],
+  "all_charts_processed": true,
+  "noncommutative_charts": [
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:BOTH_NONZERO",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:UPPER_ONLY",
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH:S1_PIVOT_R5:LOWER_ONLY"
+  ],
+  "exact_numeric_distinction": "All verdict-bearing ideal operations are over QQ; GF(32003) and GF(32009) are recorded only as scouts.",
+  "completeness_scope": "all 28 S1_DISTINCT_EIGENVALUE charts in both frozen source-index branches, under the strong profile and n<=4",
+  "unresolved_components": [],
+  "verdict": "CPOBC_D2_NONCOMMUTATIVE_REPRESENTATION_FOUND",
+  "semantic_digest_sha256": "b8adcd261903bce5e5a4743dd6a4bb8418ce5fc2c5e693a80b6e82d93aaa70c0"
+}
