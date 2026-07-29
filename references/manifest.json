@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-29T14:05:13.554902+00:00",
+  "generated_at": "2026-07-29T17:39:19.906215+00:00",
   "catalog": "references/sources.json",
   "records": [
     {
@@ -568,6 +568,7 @@
       "url": "https://arxiv.org/abs/2603.25503v1",
       "pdf_url": "https://arxiv.org/pdf/2603.25503v1",
       "retrieved_on": "2026-07-28",
+      "last_verified_online": "2026-07-30",
       "local_file": "papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
       "version": "v1, 2026-03-26",
       "first_submitted": "2026-03-26T14:41:23Z",
@@ -581,7 +582,8 @@
         "fixed-vector versus strong-operator GC and MSR semantics audit",
         "atomisation Eq. (103)--(114), Lemma 3.10, and Appendix Eq. (163)/(165) source and index audit",
         "v0.3.6 Eq. (112)/(113) and Eq. (139)/(145) source-index separation",
-        "v0.3.6 Eq. (120)/(130)/(135)/(137)/(139) Q5-vacuity checks"
+        "v0.3.6 Eq. (120)/(130)/(135)/(137)/(139) Q5-vacuity checks",
+        "v0.3.7 finite n<=4 Q5-free shared-core commutativity comparison"
       ],
       "claim_boundary": "The paper assumes nonsingular transition operators for the inverse-based Bell-causality analysis and leaves the general noncommutative representation problem open. Its d=2 inconsistency test is restricted to the displayed Pauli-proportional ansatz; it is not a classification of arbitrary invertible 2 by 2 representations.",
       "archive_status": "PDF_AND_TEXT",
@@ -1303,6 +1305,131 @@
       "bytes": 2828052,
       "pages": 469,
       "text_file": "text/stacks-project_algebra_2026-07-28.txt"
+    },
+    {
+      "id": "JOSS:paper-format-2026-07-30",
+      "title": "JOSS Paper Format",
+      "authors": [
+        "Open Journals"
+      ],
+      "url": "https://joss.readthedocs.io/en/latest/paper.html",
+      "retrieved_on": "2026-07-30",
+      "local_file": null,
+      "version": "live documentation retrieved 2026-07-30",
+      "used_for": [
+        "current JOSS paper length of 750 to 1750 words",
+        "required Summary, Statement of need, State of the field, Software design, Research impact statement, and AI usage disclosure sections"
+      ],
+      "claim_boundary": "Live submission-format documentation only. It does not establish scientific correctness, software eligibility, acceptance, or archival readiness for this repository.",
+      "archive_status": "METADATA_ONLY",
+      "sha256": null,
+      "bytes": null,
+      "pages": null,
+      "text_file": null
+    },
+    {
+      "id": "JOSS:submitting-2026-07-30",
+      "title": "Submitting a paper to JOSS",
+      "authors": [
+        "Open Journals"
+      ],
+      "url": "https://joss.readthedocs.io/en/latest/submitting.html",
+      "retrieved_on": "2026-07-30",
+      "local_file": null,
+      "version": "live documentation retrieved 2026-07-30",
+      "used_for": [
+        "current requirement for an OSI-approved open-source license",
+        "current AI-use disclosure and human-accountability requirements",
+        "current single-author and open-source workflow readiness signals"
+      ],
+      "claim_boundary": "Submission-policy guidance only. A metadata draft, test suite, or AI disclosure cannot substitute for a human-selected license or a JOSS editorial decision.",
+      "archive_status": "METADATA_ONLY",
+      "sha256": null,
+      "bytes": null,
+      "pages": null,
+      "text_file": null
+    },
+    {
+      "id": "Zenodo:developers-github-metadata-2026-07-30",
+      "title": "Zenodo Developers: Add metadata to your GitHub repository release",
+      "authors": [
+        "Zenodo"
+      ],
+      "url": "https://developers.zenodo.org/#add-metadata-to-your-github-repository-release",
+      "retrieved_on": "2026-07-30",
+      "local_file": null,
+      "version": "live documentation retrieved 2026-07-30",
+      "used_for": [
+        "structure and validation boundary for root-level .zenodo.json metadata",
+        "GitHub-release metadata override behavior"
+      ],
+      "claim_boundary": "The page documents metadata ingestion, not that this repository has been deposited, assigned a DOI, licensed, or released. No external deposition is performed by v0.3.7.",
+      "archive_status": "METADATA_ONLY",
+      "sha256": null,
+      "bytes": null,
+      "pages": null,
+      "text_file": null
+    },
+    {
+      "id": "CFF:official-overview-2026-07-30",
+      "title": "Citation File Format (CFF)",
+      "authors": [
+        "Citation File Format project"
+      ],
+      "url": "https://citation-file-format.github.io/",
+      "retrieved_on": "2026-07-30",
+      "local_file": null,
+      "version": "live documentation retrieved 2026-07-30; example uses CFF 1.2.0",
+      "used_for": [
+        "purpose and basic structure of CITATION.cff",
+        "GitHub and Zenodo support boundary for citation metadata"
+      ],
+      "claim_boundary": "Citation metadata improves discoverability but does not mint a DOI, grant a license, determine authorship, or validate the mathematical claims.",
+      "archive_status": "METADATA_ONLY",
+      "sha256": null,
+      "bytes": null,
+      "pages": null,
+      "text_file": null
+    },
+    {
+      "id": "Tectonic:installation-2026-07-30",
+      "title": "The Tectonic Typesetting System: Installation",
+      "authors": [
+        "The Tectonic Project"
+      ],
+      "url": "https://tectonic-typesetting.github.io/book/latest/installation/",
+      "retrieved_on": "2026-07-30",
+      "local_file": null,
+      "version": "live official documentation retrieved 2026-07-30",
+      "used_for": [
+        "selection of the portable Tectonic build route for the v0.3.7 short-report PDF"
+      ],
+      "claim_boundary": "Build-tool documentation only. It does not validate the manuscript layout, bibliography, equations, certificates, or scientific claims.",
+      "archive_status": "METADATA_ONLY",
+      "sha256": null,
+      "bytes": null,
+      "pages": null,
+      "text_file": null
+    },
+    {
+      "id": "Tectonic:release-0.16.9",
+      "title": "Tectonic 0.16.9 release",
+      "authors": [
+        "The Tectonic Project"
+      ],
+      "url": "https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.16.9",
+      "retrieved_on": "2026-07-30",
+      "local_file": null,
+      "version": "0.16.9, released 2026-04-17",
+      "used_for": [
+        "version-specific provenance of the portable compiler used to build the v0.3.7 short-report PDF"
+      ],
+      "claim_boundary": "Release metadata and binary provenance only. The downloaded compiler is a temporary build dependency and is not redistributed in this repository.",
+      "archive_status": "METADATA_ONLY",
+      "sha256": null,
+      "bytes": null,
+      "pages": null,
+      "text_file": null
     }
   ]
 }

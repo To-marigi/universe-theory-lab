@@ -1,0 +1,836 @@
+{
+  "schema_version": "final-theory-scope-addendum-v0.3.7",
+  "branch": "codex/final-theory-v0.3.7-publication-20260729",
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "finite_scope": "frozen source stages n<=4",
+  "frozen_artifact_integrity": {
+    "results/v0.3.4_polynomial_systems.json": {
+      "expected_sha256": "018c1dccc4e08102c6de1fbdd9baf6e8e89dcf818e302ebb175e23e59f5a1283",
+      "actual_sha256": "018c1dccc4e08102c6de1fbdd9baf6e8e89dcf818e302ebb175e23e59f5a1283",
+      "unchanged": true
+    },
+    "results/v0.3.5_stage3_subset_campaign.json": {
+      "expected_sha256": "392c4b683e672468ec6c6d27d843edc69c3fc4fc728f6bf3fdb2775c1acf3299",
+      "actual_sha256": "392c4b683e672468ec6c6d27d843edc69c3fc4fc728f6bf3fdb2775c1acf3299",
+      "unchanged": true
+    },
+    "results/v0.3.5_full_stage4_campaign.json": {
+      "expected_sha256": "5295236d165d052c5d57a6fb2be7b9defab7a358fa8018e854c962c5fe667956",
+      "actual_sha256": "5295236d165d052c5d57a6fb2be7b9defab7a358fa8018e854c962c5fe667956",
+      "unchanged": true
+    },
+    "results/v0.3.5_d2_classification.json": {
+      "expected_sha256": "59abc7d234e6a814206c72beec851a7fc08c4082ce2452ed38f29b76a257c342",
+      "actual_sha256": "59abc7d234e6a814206c72beec851a7fc08c4082ce2452ed38f29b76a257c342",
+      "unchanged": true
+    },
+    "results/v0.3.6_q5_constraint_census.json": {
+      "expected_sha256": "6454bd06f373e9e3a04faba2c59f435acd3cfba0d20c167863438e243a6860ca",
+      "actual_sha256": "6454bd06f373e9e3a04faba2c59f435acd3cfba0d20c167863438e243a6860ca",
+      "unchanged": true
+    },
+    "results/v0.3.6_q5_vacuity_proof.json": {
+      "expected_sha256": "67ad76c98d9a39a5b182267d59e93f4d80af25203c77c28c2265e3efed9097fb",
+      "actual_sha256": "67ad76c98d9a39a5b182267d59e93f4d80af25203c77c28c2265e3efed9097fb",
+      "unchanged": true
+    }
+  },
+  "v0.3.7_artifact_integrity": {
+    "results/v0.3.7_q5_free_partition.json": {
+      "sha256": "1188a4a725efa69fdfc5b2df27b21979c343e2f64eb5d60fbff86822b0f13094",
+      "semantic_digest_sha256": "22024c9eb5f63148ab8c0fb05a88b8db63d3ffa70f48e16dddbbe174bf832260",
+      "source_artifact_hashes_match": true
+    },
+    "results/v0.3.7_q5_free_elimination.json": {
+      "sha256": "d9c8c18b87a51909ef17a97b7c4619e6e22d2ef1ab4d6b9bf1e5e9065b0eeaf0",
+      "semantic_digest_sha256": "42dcd4f095f4d9ba87478716e1ed8e3639a823b0179cebd230f00feaedc0e47a",
+      "selection_certificate_sha256_matches": true
+    },
+    "certificate_count": 63,
+    "unique_certificate_path_count": 63,
+    "certificates": [
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/187b644d673da2fecc3d5df5.json",
+        "recorded_sha256": "a09c109950c37f20b94f5728dde57e44f786c7a789af85ce8fc53c9d2ee3f239",
+        "actual_sha256": "a09c109950c37f20b94f5728dde57e44f786c7a789af85ce8fc53c9d2ee3f239",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/b0772e11626526d3ba6e9f42.json",
+        "recorded_sha256": "182c2c3103d362fd2323104bfc89ee92f9911b7dc4b809ef74d4c3c31eb2fcea",
+        "actual_sha256": "182c2c3103d362fd2323104bfc89ee92f9911b7dc4b809ef74d4c3c31eb2fcea",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/ba1f3cb397fe19fc3bf07361.json",
+        "recorded_sha256": "5b28476761b54dacf2d8d43d7d2bda614739bb8dd7400e7539788ab8dba3f53e",
+        "actual_sha256": "5b28476761b54dacf2d8d43d7d2bda614739bb8dd7400e7539788ab8dba3f53e",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/bb7dba7c47182f6d65a48fc1.json",
+        "recorded_sha256": "2f01a72cda925be01234110e0b7d48e1eef37dbe7a2e0cfb2fe4c57edde4b140",
+        "actual_sha256": "2f01a72cda925be01234110e0b7d48e1eef37dbe7a2e0cfb2fe4c57edde4b140",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/764bffdf2826a6fd19e0a008.json",
+        "recorded_sha256": "658962a9a581e0087c09896ef964bd369d13efe223d950a6b4c8f67ea99c7793",
+        "actual_sha256": "658962a9a581e0087c09896ef964bd369d13efe223d950a6b4c8f67ea99c7793",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/7116643142cce6d10bd68b03.json",
+        "recorded_sha256": "e9c62b428d757f924239b10f9767a1f182a3ed1d7f4c38298b8bf00bc68ba1f4",
+        "actual_sha256": "e9c62b428d757f924239b10f9767a1f182a3ed1d7f4c38298b8bf00bc68ba1f4",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/1e2985f4739bb9f873d10ad3.json",
+        "recorded_sha256": "64e0a464c97a15408d2b43e4a99e2419670448fd0fc1e2971c8503de11bbd5a4",
+        "actual_sha256": "64e0a464c97a15408d2b43e4a99e2419670448fd0fc1e2971c8503de11bbd5a4",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/d05c0e749a8eb95cdd47bf51.json",
+        "recorded_sha256": "574e572640569f098905296cd354e97b18948a27865f28c7ec0b9a2bf2c81925",
+        "actual_sha256": "574e572640569f098905296cd354e97b18948a27865f28c7ec0b9a2bf2c81925",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/f8842e089ad94322614f003f.json",
+        "recorded_sha256": "48e8d514a204e684d63b921fb1d81f89dd0e5985cdfffc4e8d14fe36327fdf58",
+        "actual_sha256": "48e8d514a204e684d63b921fb1d81f89dd0e5985cdfffc4e8d14fe36327fdf58",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/9e4223726741ca10794e55c6.json",
+        "recorded_sha256": "9b9abcda06f40352f8c12b3847258f8d3ef69fb6e5962805f31aa1e3b46696b2",
+        "actual_sha256": "9b9abcda06f40352f8c12b3847258f8d3ef69fb6e5962805f31aa1e3b46696b2",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/dd3dfb0bc29c11466b8c430c.json",
+        "recorded_sha256": "97e2185ab1dddeedf3bb48eb8509b573f10886647d9f281cd77c6e6555bf5897",
+        "actual_sha256": "97e2185ab1dddeedf3bb48eb8509b573f10886647d9f281cd77c6e6555bf5897",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/8fa9092c69ddc52f557e5002.json",
+        "recorded_sha256": "d482f1cc516c079330aa362dc7ce344ceb6e409292a4da2e999030faca184ecf",
+        "actual_sha256": "d482f1cc516c079330aa362dc7ce344ceb6e409292a4da2e999030faca184ecf",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/5f27db7428c31df05199de42.json",
+        "recorded_sha256": "bf7420e4d2507360628ffd71b0d6e147cc1ee77b0fa74c4ae7f70d73c3c82762",
+        "actual_sha256": "bf7420e4d2507360628ffd71b0d6e147cc1ee77b0fa74c4ae7f70d73c3c82762",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/93667689b045cd225e403971.json",
+        "recorded_sha256": "390b19bc644ee0c6f3903adf42cea7adb95bda55f3bc988e706da82ab593f619",
+        "actual_sha256": "390b19bc644ee0c6f3903adf42cea7adb95bda55f3bc988e706da82ab593f619",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/61cbdf2d3d56fd997323402a.json",
+        "recorded_sha256": "e7570627b39833b32f3c0148e2f5cbaffd92e323898835b2c96e17b25810dd3d",
+        "actual_sha256": "e7570627b39833b32f3c0148e2f5cbaffd92e323898835b2c96e17b25810dd3d",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/c9a4e2782a212562c76cd6be.json",
+        "recorded_sha256": "8fb6d4e610a006362424cab69c72b7fa7950f0e222a064f5b0ffb624e837a92c",
+        "actual_sha256": "8fb6d4e610a006362424cab69c72b7fa7950f0e222a064f5b0ffb624e837a92c",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/a9189e4ad5494b202996989b.json",
+        "recorded_sha256": "bdacce7ece799fbe40e1b887ba82c000beff7d437da45f4738952910aaeb8801",
+        "actual_sha256": "bdacce7ece799fbe40e1b887ba82c000beff7d437da45f4738952910aaeb8801",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/8aac50b9f3b7a625f28f5e8c.json",
+        "recorded_sha256": "5f2e2b930f481e45ae71896bb6fa2312d06f683c59edf3f4072320cf18db1060",
+        "actual_sha256": "5f2e2b930f481e45ae71896bb6fa2312d06f683c59edf3f4072320cf18db1060",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/9bb8a00caf144124c0217e8c.json",
+        "recorded_sha256": "390b3f75b402fcd7e8c82f343fa584032961f493528ace68178066ff1106c6d5",
+        "actual_sha256": "390b3f75b402fcd7e8c82f343fa584032961f493528ace68178066ff1106c6d5",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/fbfb2b3a40296c2a20bb31d0.json",
+        "recorded_sha256": "ae89ec4a85792cbfc7bb2fdb523d18709e5b08fe3b4888b6dedc3451a9c1d593",
+        "actual_sha256": "ae89ec4a85792cbfc7bb2fdb523d18709e5b08fe3b4888b6dedc3451a9c1d593",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/QQ/76b37bf605456b0844875d4c.json",
+        "recorded_sha256": "3dc4626b61e078b6a73cfc6b4c1aacb3d6f3ca7ea598be9057ab4a800f800b93",
+        "actual_sha256": "3dc4626b61e078b6a73cfc6b4c1aacb3d6f3ca7ea598be9057ab4a800f800b93",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/451b6b1d2a00d18b6e6477eb.json",
+        "recorded_sha256": "1cdebccbb13c7e0bd6e6da419910faa40008db6a75ff55a987e426b00648a657",
+        "actual_sha256": "1cdebccbb13c7e0bd6e6da419910faa40008db6a75ff55a987e426b00648a657",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/700ff8cfcd0b40a72be65807.json",
+        "recorded_sha256": "6fc70d7f640c045ab5661239fc3bc59fe2ab27639f4c46c03dd00b42ac03bb45",
+        "actual_sha256": "6fc70d7f640c045ab5661239fc3bc59fe2ab27639f4c46c03dd00b42ac03bb45",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/cc66fc4c81838829d964a8fe.json",
+        "recorded_sha256": "ada8898b61a959e08f3960f453d58a70a38c7cd9045d42bbdfe3b5d958f6385a",
+        "actual_sha256": "ada8898b61a959e08f3960f453d58a70a38c7cd9045d42bbdfe3b5d958f6385a",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/1e3248c243ff6f0bc0ea2d39.json",
+        "recorded_sha256": "c48b4c7a4311781ec7376107c6a997b1ee2390e8dd5abb23cf4ce5b338a5d2f7",
+        "actual_sha256": "c48b4c7a4311781ec7376107c6a997b1ee2390e8dd5abb23cf4ce5b338a5d2f7",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/6cb03a9df68dc7f172b9c782.json",
+        "recorded_sha256": "062b215794a7f7eadc959fdc47542a1d3a1ff40aaffe7f7aa1101cdcedbbcb94",
+        "actual_sha256": "062b215794a7f7eadc959fdc47542a1d3a1ff40aaffe7f7aa1101cdcedbbcb94",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/54e6c7394705664c574cd6b1.json",
+        "recorded_sha256": "0139149b82fcf29c813b377c310a1533f25a511cea9250fbc9811bbd4ce2d407",
+        "actual_sha256": "0139149b82fcf29c813b377c310a1533f25a511cea9250fbc9811bbd4ce2d407",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/746ff05b37898d45f48a5739.json",
+        "recorded_sha256": "45748f5eba654a894e654f44ca8e4868b01db8cc6b0adf1949ac78de0601be44",
+        "actual_sha256": "45748f5eba654a894e654f44ca8e4868b01db8cc6b0adf1949ac78de0601be44",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/8e8e157dcedd7e0c802b02cc.json",
+        "recorded_sha256": "aadf2f680e8f2a3780a212a3b18ce9ee6a6e06d456543f295054e555e8db14a9",
+        "actual_sha256": "aadf2f680e8f2a3780a212a3b18ce9ee6a6e06d456543f295054e555e8db14a9",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/c079367dcccbdedd0993da97.json",
+        "recorded_sha256": "28b6f30e60b693b6e44dc21addfad4b310c8f3cac85122d1f26a2d82e8ef2f71",
+        "actual_sha256": "28b6f30e60b693b6e44dc21addfad4b310c8f3cac85122d1f26a2d82e8ef2f71",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/ef2243dc71468c0648c8bf03.json",
+        "recorded_sha256": "ca4e7d970dcf514929ffa63605eacef0c6c6dd87dd31a3111dba184b32d114cf",
+        "actual_sha256": "ca4e7d970dcf514929ffa63605eacef0c6c6dd87dd31a3111dba184b32d114cf",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/f4475045f8a0744ef12043dc.json",
+        "recorded_sha256": "108657e0845f9cdc53c7d132dbbb6dffa4a10b7b0bf037ca4d7004613e796f3e",
+        "actual_sha256": "108657e0845f9cdc53c7d132dbbb6dffa4a10b7b0bf037ca4d7004613e796f3e",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/3c796b7ede4d21dc33e5beee.json",
+        "recorded_sha256": "89d6c8a8cec3d30c0c5a1bac931855f10235b0be5597fb64554265bfcaa82c85",
+        "actual_sha256": "89d6c8a8cec3d30c0c5a1bac931855f10235b0be5597fb64554265bfcaa82c85",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/02900c2da20448fa80c99fe2.json",
+        "recorded_sha256": "7d9891450f2bc43b3b449ce65434308dd039cdd7b66662cd4f8ba9fca5bf6663",
+        "actual_sha256": "7d9891450f2bc43b3b449ce65434308dd039cdd7b66662cd4f8ba9fca5bf6663",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/8d04fbc71698d64946c2e053.json",
+        "recorded_sha256": "37d40e97131cbfbc40ddcf6b2c63a96f241dd98373d397f5b6c16ad0c4d40521",
+        "actual_sha256": "37d40e97131cbfbc40ddcf6b2c63a96f241dd98373d397f5b6c16ad0c4d40521",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/97fd9a3cf4e0a7510b9899fe.json",
+        "recorded_sha256": "8e8c92a80e0bec4c25c0c2cd4c192a3f360eca6259282f294b11273887f91f35",
+        "actual_sha256": "8e8c92a80e0bec4c25c0c2cd4c192a3f360eca6259282f294b11273887f91f35",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/7ca49e0da605803eb8c99c7f.json",
+        "recorded_sha256": "a16fd4ed51ee9b91712d4fe8367059fd6e1330f7161a91743938e9c6a97c3bdb",
+        "actual_sha256": "a16fd4ed51ee9b91712d4fe8367059fd6e1330f7161a91743938e9c6a97c3bdb",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/74a11c34d502086bcb495cd1.json",
+        "recorded_sha256": "de9feee03e46b971715bdca7db02b6da0093538b009ac927dbf43d9975960095",
+        "actual_sha256": "de9feee03e46b971715bdca7db02b6da0093538b009ac927dbf43d9975960095",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/900902f383065c5401306f90.json",
+        "recorded_sha256": "5596213ec978b22cd98229ac82ca200665edbd12370b986d0639505e24ea1945",
+        "actual_sha256": "5596213ec978b22cd98229ac82ca200665edbd12370b986d0639505e24ea1945",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/65819a5c6518988729ea8f70.json",
+        "recorded_sha256": "68aa390a258d50870631f6fe158521035e76a775176d8c02aeec5fe19605d1c8",
+        "actual_sha256": "68aa390a258d50870631f6fe158521035e76a775176d8c02aeec5fe19605d1c8",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/36664e00277975e7e462e9df.json",
+        "recorded_sha256": "68f8eb30ccec5d65a0cdd074ec29c3bba387a7cdd7910d7c776346c9db4c4b14",
+        "actual_sha256": "68f8eb30ccec5d65a0cdd074ec29c3bba387a7cdd7910d7c776346c9db4c4b14",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32003/b09383e8f38c0915471211bb.json",
+        "recorded_sha256": "2e84495777ff9e0899b271f2684b0264af93a8e5a64f2cc2299668c87daa392e",
+        "actual_sha256": "2e84495777ff9e0899b271f2684b0264af93a8e5a64f2cc2299668c87daa392e",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/3b6c0455435a2305070cb5bd.json",
+        "recorded_sha256": "6f55bc6fcb32fdd4e3c381088c8ce11ef19d649bd53d78c33c0cb203d6c8bb6d",
+        "actual_sha256": "6f55bc6fcb32fdd4e3c381088c8ce11ef19d649bd53d78c33c0cb203d6c8bb6d",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/19bbe663f46c92a8ac058995.json",
+        "recorded_sha256": "6f4c621edeb442b52e76bc3cc85b194d8ab058b8fce814f0a76906bd0c5f5724",
+        "actual_sha256": "6f4c621edeb442b52e76bc3cc85b194d8ab058b8fce814f0a76906bd0c5f5724",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/2764d90a1921ba2b116b5e82.json",
+        "recorded_sha256": "3cb05aee7eba4608c6e0e6d03dbf527c8a607ddb67122b2d2c2032f15a939694",
+        "actual_sha256": "3cb05aee7eba4608c6e0e6d03dbf527c8a607ddb67122b2d2c2032f15a939694",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/3ee577138443589ee5110dd6.json",
+        "recorded_sha256": "8081e285aecf1fd0f27c3119150a7ef9ee4faed5c4134bdbfce78367e99a6057",
+        "actual_sha256": "8081e285aecf1fd0f27c3119150a7ef9ee4faed5c4134bdbfce78367e99a6057",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/678d92a44de0ba331387b7bb.json",
+        "recorded_sha256": "a593c3448555014a8f68a608e48377dde8aad376e9c992b43bd415e9429effbd",
+        "actual_sha256": "a593c3448555014a8f68a608e48377dde8aad376e9c992b43bd415e9429effbd",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/47a6fe94377c7be4cd7fc335.json",
+        "recorded_sha256": "d0f1d4c3179c77198032a9a2e704d0c70ca53a906c004a89c8afed55fee95dad",
+        "actual_sha256": "d0f1d4c3179c77198032a9a2e704d0c70ca53a906c004a89c8afed55fee95dad",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/e642fd7d0bcb1e56162e5a4a.json",
+        "recorded_sha256": "7f3a7472610de12c172c79893e822f76fe9dd8ee73e3659c7a80554ece2e0a2c",
+        "actual_sha256": "7f3a7472610de12c172c79893e822f76fe9dd8ee73e3659c7a80554ece2e0a2c",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/dfbadc4dd0611cb09ca91b0b.json",
+        "recorded_sha256": "05fb523d54ca92589701538df836b4321466edffdb17d13907d8ae956203615f",
+        "actual_sha256": "05fb523d54ca92589701538df836b4321466edffdb17d13907d8ae956203615f",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/268f9befe6f6f4d79a019a9c.json",
+        "recorded_sha256": "a3523628cb923ae019c9a798d28d827796af994e09ef792dd26fec63bcef7542",
+        "actual_sha256": "a3523628cb923ae019c9a798d28d827796af994e09ef792dd26fec63bcef7542",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/5a26e26584a11eda8af06ada.json",
+        "recorded_sha256": "e3837f59b20d879a2a4df060441aea8196578e5173670e78535e049391f76ac6",
+        "actual_sha256": "e3837f59b20d879a2a4df060441aea8196578e5173670e78535e049391f76ac6",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/3ec0015a8c2a7dea2c0f94e7.json",
+        "recorded_sha256": "7a9871e7bcc3bdc008262bb9cbca0cde7d82a93742c9991f6b119d73756104d5",
+        "actual_sha256": "7a9871e7bcc3bdc008262bb9cbca0cde7d82a93742c9991f6b119d73756104d5",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/791f51fade4b7a54cc4b5d4a.json",
+        "recorded_sha256": "77d0dc42cae075d11b4853f065c4c2d0831d669a05969ada0a97201854e77402",
+        "actual_sha256": "77d0dc42cae075d11b4853f065c4c2d0831d669a05969ada0a97201854e77402",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/d41b09f08c75b41b19ec7291.json",
+        "recorded_sha256": "97932f842923c5ee58d1ee09e0c160547bb9e0ee60614cf972ed73f96295fde5",
+        "actual_sha256": "97932f842923c5ee58d1ee09e0c160547bb9e0ee60614cf972ed73f96295fde5",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/acc27c3f0ccb8d576088985c.json",
+        "recorded_sha256": "daf2cd50f9ae790cc1cc02d9d585cf7210a0424aa3a17fd4b54f462dd329808f",
+        "actual_sha256": "daf2cd50f9ae790cc1cc02d9d585cf7210a0424aa3a17fd4b54f462dd329808f",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/4262c2b4d4b7ece534e4b6f4.json",
+        "recorded_sha256": "5ad85d039f900c1fa80a709e84d3b5c12dbfe4f034cfba02ebdc3b626e414605",
+        "actual_sha256": "5ad85d039f900c1fa80a709e84d3b5c12dbfe4f034cfba02ebdc3b626e414605",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/f6bd54a96635b012a26ca4b6.json",
+        "recorded_sha256": "f3fb849a286858898d03da16d4fa7ab5e61aa2a10b78fce536b1580ed7d05d43",
+        "actual_sha256": "f3fb849a286858898d03da16d4fa7ab5e61aa2a10b78fce536b1580ed7d05d43",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/2ee0b67ecda66d313c3b8373.json",
+        "recorded_sha256": "cdad4ba8eaa1ce4b68f8ded4f8768918e21e5a86a32a39a1f1ff37f58d114059",
+        "actual_sha256": "cdad4ba8eaa1ce4b68f8ded4f8768918e21e5a86a32a39a1f1ff37f58d114059",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/ab3518d4c648da700d4a748e.json",
+        "recorded_sha256": "fe47830694f8a6c5c4eb7439c6da0e79ad1f30d0b9d074f667d54118f9afe236",
+        "actual_sha256": "fe47830694f8a6c5c4eb7439c6da0e79ad1f30d0b9d074f667d54118f9afe236",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/cfe0b5ce0d0354478c329caf.json",
+        "recorded_sha256": "4dbb1add4bc3349162b8e5069ba77ab075ede2e742076fac5702d1938c58c404",
+        "actual_sha256": "4dbb1add4bc3349162b8e5069ba77ab075ede2e742076fac5702d1938c58c404",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/f716bda3d7ce5ddbcde2b2f3.json",
+        "recorded_sha256": "5ea0690d2b2eae07b66a8d25138991532770a2dd43bd130b47e5b6dc281424da",
+        "actual_sha256": "5ea0690d2b2eae07b66a8d25138991532770a2dd43bd130b47e5b6dc281424da",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      },
+      {
+        "path": "certificates/d2_saturation/q5_free_v037/budget-f192a37b97e70c84/GF32009/6ea02780300d3e534442d169.json",
+        "recorded_sha256": "1e051cadb99413f4097b701b0df92187a413b9de7815b2cf99329c12d6d78411",
+        "actual_sha256": "1e051cadb99413f4097b701b0df92187a413b9de7815b2cf99329c12d6d78411",
+        "sha256_matches": true,
+        "semantic_digest_matches": true,
+        "budget_hash_matches": true,
+        "request_binding_matches": true,
+        "summary_matches_certificate": true,
+        "summary_mismatch_fields": []
+      }
+    ],
+    "all_certificate_bindings_passed": true,
+    "QQ_resolved_chart_ids_recomputed": [
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R2:BOTH_NONZERO",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R2:BOTH_ZERO",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R2:LOWER_ONLY",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R2:UPPER_ONLY",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R3:BOTH_NONZERO",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R3:BOTH_ZERO",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R3:LOWER_ONLY",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R3:UPPER_ONLY",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R4:BOTH_NONZERO",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R4:BOTH_ZERO",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R4:LOWER_ONLY",
+      "Q5_FREE_SHARED_CORE:S1_PIVOT_R4:UPPER_ONLY",
+      "Q5_FREE_SHARED_CORE:S2_PIVOT_M2:BC_ZERO",
+      "Q5_FREE_SHARED_CORE:S2_PIVOT_M2:C_NONZERO",
+      "Q5_FREE_SHARED_CORE:S2_PIVOT_M2:C_ZERO_B_NONZERO",
+      "Q5_FREE_SHARED_CORE:S2_PIVOT_M3:BC_ZERO",
+      "Q5_FREE_SHARED_CORE:S2_PIVOT_M3:C_NONZERO",
+      "Q5_FREE_SHARED_CORE:S2_PIVOT_M3:C_ZERO_B_NONZERO",
+      "Q5_FREE_SHARED_CORE:S2_PIVOT_M4:BC_ZERO",
+      "Q5_FREE_SHARED_CORE:S2_PIVOT_M4:C_NONZERO",
+      "Q5_FREE_SHARED_CORE:S2_PIVOT_M4:C_ZERO_B_NONZERO"
+    ],
+    "QQ_proof_recomputed": true,
+    "GF_scouts_complete_recomputed": true,
+    "GF_scouts_agree_recomputed": true,
+    "S3_structural_certificate_recomputed": {
+      "chart_cover_id": "DERIVED_APPENDIX_QN_BRANCH:S3_SCALAR:GENERAL_Q1",
+      "stratum": "S3_SCALAR",
+      "Q_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "substitution": "Q2=lambda_2 Q1, Q3=lambda_3 Q1, Q4=lambda_4 Q1",
+      "commutator_component_count": 0,
+      "proof_rule": "Every Q_i for 1<=i<=4 is a scalar multiple of Q1, so all pairwise commutators vanish identically.",
+      "backend_run_required": false,
+      "source_artifact": "results/v0.3.2_cpobc_d2_classification.json",
+      "source_artifact_sha256": "8c74488496e9924fec8a817f930a50676f19021ef6f72fd8ea8b71665cf16797",
+      "passed": true
+    },
+    "theorem_recomputed": true,
+    "aggregate_verdict_matches_recomputation": true,
+    "passed": true
+  },
+  "v0.3.5_historical_campaign": {
+    "combined_S1_S2_chart_count": 49,
+    "stage3_run_count": 147,
+    "full_stage4_run_count": 78,
+    "combined_backend_run_count": 225,
+    "frozen_numeric_results_changed": false,
+    "corrected_scope": "The literal portion of the combined 49-chart campaign is complete only inside the simultaneous-standard-form ansatz for R2,R3,R4,R5. The compiled n<=4 system does not justify [R5,Rj]=0, so it is not a cover of all literal solutions. The derived R2,R3,R4 chart geometry remains a valid cover for the Q1-through-Q4 predicate.",
+    "literal_full_solution_cover_claim_withdrawn": true,
+    "frozen_classification_verdict": "CPOBC_D2_NONCOMMUTATIVE_REPRESENTATION_FOUND"
+  },
+  "v0.3.6_retained_claim": {
+    "Q5_dependency_partition": {
+      "total": 2564,
+      "Q5_dependent": 12,
+      "Q5_independent": 2552
+    },
+    "claim_boundary": "Q5 is unconstrained by polynomial equalities after the frozen Q1-through-Q4 witness substitution and, conditionally, over the scalar-chain base locus. The ambient representation still requires det(Q5) != 0. This finite diagnosis does not solve the weak profile or the infinite-QSG problem.",
+    "retained_scope": "The exact Q5-vacuity result remains valid at the frozen Q1-through-Q4 witness and conditionally over the scalar-chain base. It is not asserted for an arbitrary literal base."
+  },
+  "v0.3.7_replacement_argument": {
+    "Q5_and_R5_in_elimination": false,
+    "Q5_free_canonical_numerator_count": 2552,
+    "shared_matrix_relation_count": 976,
+    "R2_R3_R4_S1_chart_count": 12,
+    "R2_R3_R4_S2_chart_count": 9,
+    "QQ_exact_resolved_chart_count": 21,
+    "GF_scout_agreement": true,
+    "forward_implication_only": true,
+    "literal_Q1_Q4_commutativity_proved": true,
+    "verdict": "LITERAL_Q1_Q4_COMMUTATIVITY_PROVED"
+  },
+  "prohibited_interpretations": [
+    "The v0.3.5 literal charts cover every literal solution.",
+    "The compiled n<=4 equations imply [R5,Rj]=0.",
+    "The v0.3.6 Q5-vacuity calculation holds over every literal base.",
+    "The finite n<=4 strong-profile result settles the full theory."
+  ],
+  "global_scientific_verdict": "FINAL_THEORY_OPEN",
+  "unresolved_components": [],
+  "passed": true,
+  "verdict": "V037_SCOPE_ADDENDUM_CERTIFIED",
+  "semantic_digest_sha256": "fd1cb00d9373470e1c37848eb011cc16b5471190acf6ca2e319909d78a12a12d"
+}

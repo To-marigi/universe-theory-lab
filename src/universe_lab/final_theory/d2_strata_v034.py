@@ -107,6 +107,12 @@ def _ratio_indices(source_index_branch: str) -> tuple[int, ...]:
     if source_index_branch == DERIVED_BRANCH:
         return (2, 3, 4)
     if source_index_branch == LITERAL_BRANCH:
+        # Historical v0.3.4/v0.3.5 literal charts included R5 in the
+        # simultaneous-standard-form ansatz.  The compiled n<=4 system does
+        # not itself justify [R5, Rj] = 0, so those 49 charts are not a cover
+        # of every literal solution.  v0.3.7 instead uses the derived
+        # {R2,R3,R4} geometry with the exact Q5-free literal subsystem; this
+        # branch is retained only to reproduce the frozen earlier artifacts.
         return (2, 3, 4, 5)
     raise ValueError(f"unknown source-index branch: {source_index_branch}")
 

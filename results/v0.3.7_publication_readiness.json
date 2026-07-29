@@ -1,0 +1,38 @@
+{
+  "schema_version": "final-theory-publication-readiness-v0.3.7",
+  "version": "0.3.7",
+  "assessed_on": "2026-07-30",
+  "status": "BLOCKED",
+  "ready_components": [
+    "exact Phase 1 QQ certificates and finite-field scouts are recorded separately",
+    "exact Phase 2 direct-relation certificates and static provenance coverage pass",
+    "scope correction preserves frozen v0.3.4 through v0.3.6 artifacts",
+    "short technical report source and visually verified PDF are present",
+    "JOSS paper, CITATION.cff, and .zenodo.json drafts are present",
+    "reproduction driver and release-manifest builder are present"
+  ],
+  "blocking_components": [
+    {
+      "id": "NO_HUMAN_SELECTED_OSI_LICENSE",
+      "required_action": "The repository owner must select and add an appropriate OSI-approved license before JOSS submission or an open-source release.",
+      "automation_boundary": "No license is inferred or selected by the agent."
+    },
+    {
+      "id": "NO_CONTINUOUS_INTEGRATION_WORKFLOW",
+      "required_action": "Add and validate CI for the portable Python verification path; decide separately how Docker/Sage exact reruns should be scheduled.",
+      "automation_boundary": "No external workflow is created or enabled in v0.3.7."
+    },
+    {
+      "id": "SOFTWARE_MATURITY_REQUIRES_HUMAN_REVIEW",
+      "required_action": "The owner should assess release history, contributor documentation, support expectations, and JOSS scope before submission.",
+      "automation_boundary": "Passing certificates do not determine editorial eligibility."
+    }
+  ],
+  "external_actions_not_performed": [
+    "GitHub release creation",
+    "Zenodo deposition",
+    "DOI reservation or minting",
+    "JOSS submission"
+  ],
+  "global_scientific_verdict": "FINAL_THEORY_OPEN"
+}

@@ -5,8 +5,10 @@ stdin.  The worker loads the frozen v0.3.4 scalar-expression arena, applies
 one exact S1/S2 chart substitution, and performs polynomial ideal operations
 over either QQ or a declared finite field.
 
-Finite-field runs are scouts only.  A proof-bearing result must have
-``coefficient_field == "QQ"`` and ``proof_eligible == true``.
+Finite-field runs are scouts only.  An ideal-solve proof must have
+``coefficient_field == "QQ"`` and ``proof_eligible == true``.  A request
+that directly verifies a complete exact identity inventory instead uses
+the separate ``identity_proof_eligible`` gate.
 """
 
 from __future__ import annotations
@@ -14,6 +16,7 @@ from __future__ import annotations
 import argparse
 import contextlib
 import gzip
+import hashlib
 import io
 import json
 import platform
@@ -42,6 +45,7 @@ DEFAULT_DIRECT_SYSTEM_PATH = (
 )
 DEFAULT_SYSTEM_PATH = "results/v0.3.4_polynomial_systems.json"
 SAGE_CONTAINER_ROOT = Path("/home/sage/work")
+LEGACY_RESPONSE_SCHEMA = "final-theory-d2-sage-response-v0.3.5"
 
 
 def _canonical_json(payload: Any) -> str:
@@ -51,6 +55,66 @@ def _canonical_json(payload: Any) -> str:
         sort_keys=True,
         separators=(",", ":"),
     )
+
+
+def _request_semantic_digest(payload: dict[str, Any]) -> str:
+    """Hash the semantic request while excluding host-generated identity."""
+
+    return stable_hash(
+        {
+            key: value
+            for key, value in payload.items()
+            if key
+            not in {
+                "request_id",
+                "request_semantic_digest_sha256",
+            }
+        }
+    )
+
+
+def _validated_request_semantic_digest(
+    payload: dict[str, Any],
+) -> str | None:
+    expected = payload.get("request_semantic_digest_sha256")
+    if expected is None:
+        return None
+    actual = _request_semantic_digest(payload)
+    if actual != expected:
+        raise ValueError(
+            "request semantic digest mismatch: "
+            f"{actual} != {expected}"
+        )
+    return actual
+
+
+def _result_semantic_digest(
+    result: dict[str, Any],
+    *,
+    selection_fields: tuple[str, ...],
+) -> str:
+    """Preserve v0.3.5 hashes; bind selections only in newer schemas."""
+
+    semantic_payload: dict[str, Any] = {
+        "chart": result["chart"],
+        "field": result["coefficient_field"],
+        "initial_basis": result["initial_groebner_basis"],
+        "saturation_trace": result["saturation_trace"],
+        "noncommutativity_checks": result[
+            "noncommutativity_checks"
+        ],
+    }
+    if result["schema_version"] != LEGACY_RESPONSE_SCHEMA:
+        semantic_payload.update(
+            {
+                field: result.get(field)
+                for field in selection_fields
+            }
+        )
+        semantic_payload["request_semantic_digest_sha256"] = result.get(
+            "request_semantic_digest_sha256"
+        )
+    return stable_hash(semantic_payload)
 
 
 def _zero_condition_substitution(
@@ -288,16 +352,35 @@ def run_sage_request(
         "compose",
         "exec",
         "-T",
-        "-e",
-        "PYTHONPATH=/home/sage/work/src",
-        "sage",
-        "sage",
-        "-python",
-        "/home/sage/work/src/universe_lab/final_theory/d2_sage_backend_v035.py",
-        "--worker",
-        "--request-id",
-        request_id,
     ]
+    if "omp_threads_per_worker" in payload:
+        thread_count = int(payload["omp_threads_per_worker"])
+        if thread_count <= 0:
+            raise ValueError("omp_threads_per_worker must be positive")
+        command.extend(
+            [
+                "-e",
+                f"OMP_NUM_THREADS={thread_count}",
+                "-e",
+                f"OPENBLAS_NUM_THREADS={thread_count}",
+            ]
+        )
+    command.extend(
+        [
+            "-e",
+            "PYTHONPATH=/home/sage/work/src",
+            "sage",
+            "sage",
+            "-python",
+            (
+                "/home/sage/work/src/universe_lab/final_theory/"
+                "d2_sage_backend_v035.py"
+            ),
+            "--worker",
+            "--request-id",
+            request_id,
+        ]
+    )
     started = time.perf_counter()
     process = subprocess.Popen(
         command,
@@ -340,7 +423,10 @@ def run_sage_request(
             stdout = exc.stdout or ""
             stderr = exc.stderr or ""
         return {
-            "schema_version": "final-theory-d2-sage-response-v0.3.5",
+            "schema_version": payload.get(
+                "response_schema_version",
+                LEGACY_RESPONSE_SCHEMA,
+            ),
             "chart": payload["chart"],
             "source_index_branch": payload["source_index_branch"],
             "coefficient_field": (
@@ -349,6 +435,10 @@ def run_sage_request(
                 else f"GF({payload['coefficient_modulus']})"
             ),
             "backend": "Sage/Singular exact subprocess",
+            "budget_file_sha256": payload.get("budget_file_sha256"),
+            "request_semantic_digest_sha256": payload.get(
+                "request_semantic_digest_sha256"
+            ),
             "request_id": request_id,
             "time_limit_seconds": timeout_seconds,
             "wall_time_seconds": time.perf_counter() - started,
@@ -360,7 +450,10 @@ def run_sage_request(
         }
     if process.returncode != 0:
         return {
-            "schema_version": "final-theory-d2-sage-response-v0.3.5",
+            "schema_version": payload.get(
+                "response_schema_version",
+                LEGACY_RESPONSE_SCHEMA,
+            ),
             "chart": payload["chart"],
             "source_index_branch": payload["source_index_branch"],
             "coefficient_field": (
@@ -370,6 +463,10 @@ def run_sage_request(
             ),
             "coefficient_modulus": int(payload["coefficient_modulus"]),
             "backend": "Sage/Singular exact subprocess",
+            "budget_file_sha256": payload.get("budget_file_sha256"),
+            "request_semantic_digest_sha256": payload.get(
+                "request_semantic_digest_sha256"
+            ),
             "request_id": request_id,
             "time_limit_seconds": timeout_seconds,
             "wall_time_seconds": time.perf_counter() - started,
@@ -383,7 +480,10 @@ def run_sage_request(
         result = json.loads(stdout)
     except json.JSONDecodeError:
         return {
-            "schema_version": "final-theory-d2-sage-response-v0.3.5",
+            "schema_version": payload.get(
+                "response_schema_version",
+                LEGACY_RESPONSE_SCHEMA,
+            ),
             "chart": payload["chart"],
             "source_index_branch": payload["source_index_branch"],
             "coefficient_field": (
@@ -393,6 +493,10 @@ def run_sage_request(
             ),
             "coefficient_modulus": int(payload["coefficient_modulus"]),
             "backend": "Sage/Singular exact subprocess",
+            "budget_file_sha256": payload.get("budget_file_sha256"),
+            "request_semantic_digest_sha256": payload.get(
+                "request_semantic_digest_sha256"
+            ),
             "request_id": request_id,
             "time_limit_seconds": timeout_seconds,
             "wall_time_seconds": time.perf_counter() - started,
@@ -666,6 +770,51 @@ def _worker_versions() -> dict[str, str]:
     }
 
 
+def _worker_apply_memory_limit(
+    payload: dict[str, Any],
+    resource_module: Any,
+) -> dict[str, Any]:
+    """Apply an optional hard address-space limit inside the Sage worker."""
+
+    supplied = payload.get("memory_limit_bytes")
+    if supplied is None:
+        return {
+            "requested": False,
+            "resource": "RLIMIT_AS",
+            "limit_bytes": None,
+            "applied": False,
+        }
+    limit = int(supplied)
+    if limit <= 0:
+        raise ValueError("memory_limit_bytes must be positive")
+    previous_soft, previous_hard = resource_module.getrlimit(
+        resource_module.RLIMIT_AS
+    )
+    infinity = resource_module.RLIM_INFINITY
+    effective = (
+        limit
+        if previous_hard == infinity
+        else min(limit, int(previous_hard))
+    )
+    resource_module.setrlimit(
+        resource_module.RLIMIT_AS,
+        (effective, effective),
+    )
+    return {
+        "requested": True,
+        "resource": "RLIMIT_AS",
+        "limit_bytes": limit,
+        "effective_limit_bytes": effective,
+        "previous_soft_limit_bytes": (
+            None if previous_soft == infinity else int(previous_soft)
+        ),
+        "previous_hard_limit_bytes": (
+            None if previous_hard == infinity else int(previous_hard)
+        ),
+        "applied": True,
+    }
+
+
 def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
     """Evaluate reduced operator words directly over a Sage fraction field."""
 
@@ -674,6 +823,8 @@ def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
     from sage.all import GF, QQ, MatrixSpace, PolynomialRing  # type: ignore[import-not-found]
 
     started = time.perf_counter()
+    memory_limit = _worker_apply_memory_limit(payload, resource)
+    request_semantic_digest = _validated_request_semantic_digest(payload)
     modulus = int(payload["coefficient_modulus"])
     coefficient_field = QQ if modulus == 0 else GF(modulus)
     variable_names = tuple(payload["variables"])
@@ -706,11 +857,46 @@ def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
     }
     identity = matrices.identity_matrix()
 
-    direct_payload = json.loads(
-        (
-            SAGE_CONTAINER_ROOT / payload["direct_system_path"]
-        ).read_text(encoding="utf-8")
+    direct_system_path = (
+        SAGE_CONTAINER_ROOT / payload["direct_system_path"]
     )
+    direct_system_bytes = direct_system_path.read_bytes()
+    direct_system_file_sha256 = hashlib.sha256(
+        direct_system_bytes
+    ).hexdigest()
+    direct_payload = json.loads(direct_system_bytes)
+    direct_system_semantic_digest_sha256 = stable_hash(
+        {
+            "dependency_nodes": direct_payload["dependency_nodes"],
+            "relations": direct_payload["relations"],
+            "transitions": direct_payload[
+                "reconstructed_transition_predicates"
+            ],
+        }
+    )
+    direct_system_self_semantic_digest_valid = (
+        direct_payload.get("semantic_digest_sha256")
+        == direct_system_semantic_digest_sha256
+    )
+    expected_direct_file_sha256 = payload.get(
+        "expected_direct_system_file_sha256"
+    )
+    expected_direct_semantic_digest = payload.get(
+        "expected_direct_system_semantic_digest_sha256"
+    )
+    if (
+        expected_direct_file_sha256 is not None
+        and direct_system_file_sha256 != expected_direct_file_sha256
+    ):
+        raise ValueError("direct-system file SHA-256 mismatch")
+    if (
+        expected_direct_semantic_digest is not None
+        and direct_system_semantic_digest_sha256
+        != expected_direct_semantic_digest
+    ):
+        raise ValueError("direct-system semantic digest mismatch")
+    if not direct_system_self_semantic_digest_valid:
+        raise ValueError("direct-system self semantic digest mismatch")
     definitions = {
         record["node_id"]: record
         for record in direct_payload["dependency_nodes"]
@@ -825,7 +1011,7 @@ def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
         expression_evaluation_count += 1
         return result
 
-    selected_relations = [
+    stage_selected_relations = [
         record
         for record in direct_payload["relations"][
             payload["source_index_branch"]
@@ -833,6 +1019,78 @@ def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
         if int(record["source_stage"])
         <= int(payload["maximum_source_stage"])
     ]
+    included_relation_families = {
+        str(value)
+        for value in payload.get("included_relation_families", [])
+    }
+    excluded_relation_ids = {
+        str(value) for value in payload.get("excluded_relation_ids", [])
+    }
+    selected_relations = [
+        record
+        for record in stage_selected_relations
+        if (
+            not included_relation_families
+            or record["family"] in included_relation_families
+        )
+        and record["relation_id"] not in excluded_relation_ids
+    ]
+    selected_relation_ids = sorted(
+        record["relation_id"] for record in selected_relations
+    )
+    selected_relation_family_counts = dict(
+        sorted(Counter(record["family"] for record in selected_relations).items())
+    )
+    forbidden_relation_families = {
+        str(value)
+        for value in payload.get("forbidden_relation_families", [])
+    }
+    selection_errors: list[str] = []
+    expected_relation_count = payload.get("expected_selected_relation_count")
+    if (
+        expected_relation_count is not None
+        and len(selected_relations) != int(expected_relation_count)
+    ):
+        selection_errors.append("selected matrix relation count mismatch")
+    expected_family_counts = payload.get("expected_relation_family_counts")
+    if (
+        expected_family_counts is not None
+        and selected_relation_family_counts
+        != {
+            str(name): int(count)
+            for name, count in expected_family_counts.items()
+        }
+    ):
+        selection_errors.append("selected relation-family counts mismatch")
+    if forbidden_relation_families.intersection(
+        selected_relation_family_counts
+    ):
+        selection_errors.append("forbidden relation family selected")
+    expected_relation_digest = payload.get(
+        "expected_selected_relation_ids_sha256"
+    )
+    selected_relation_ids_sha256 = stable_hash(selected_relation_ids)
+    if (
+        expected_relation_digest is not None
+        and selected_relation_ids_sha256 != expected_relation_digest
+    ):
+        selection_errors.append("selected relation-ID digest mismatch")
+    if selection_errors:
+        raise RuntimeError(
+            "direct relation selection failed: "
+            + _canonical_json(
+                {
+                    "errors": selection_errors,
+                    "selected_relation_count": len(selected_relations),
+                    "selected_relation_family_counts": (
+                        selected_relation_family_counts
+                    ),
+                    "selected_relation_ids_sha256": (
+                        selected_relation_ids_sha256
+                    ),
+                }
+            )
+        )
     unique_equations: dict[str, Any] = {}
     equation_provenance: dict[str, list[dict[str, Any]]] = {}
     residual_entry_cache: dict[
@@ -1283,16 +1541,23 @@ def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
         and bool(payload["saturation"])
         and not current_unit
     ):
-        seen_components: set[str] = set()
+        grouped_components: dict[str, dict[str, Any]] = {}
         for component in payload["commutator_components"]:
             polynomial = ring(component["expression"].replace("**", "^"))
             if polynomial == 0:
                 continue
             polynomial = _worker_normalise(polynomial)
             key = str(polynomial)
-            if key in seen_components:
-                continue
-            seen_components.add(key)
+            group = grouped_components.setdefault(
+                key,
+                {
+                    "polynomial": polynomial,
+                    "components": [],
+                },
+            )
+            group["components"].append(component)
+        for key, group in grouped_components.items():
+            polynomial = group["polynomial"]
             component_started = time.perf_counter()
             component_ideal, _ = saturated_ideal.saturation(
                 ring.ideal([polynomial])
@@ -1306,7 +1571,11 @@ def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
             )
             noncommutativity_checks.append(
                 {
-                    **component,
+                    **group["components"][0],
+                    "covered_components": group["components"],
+                    "covered_component_count": len(
+                        group["components"]
+                    ),
                     "normalised_expression": key,
                     "wall_time_seconds": (
                         time.perf_counter() - component_started
@@ -1329,16 +1598,126 @@ def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
         for record in noncommutativity_checks
         if not record["unit_ideal"]
     ]
+    covered_commutator_component_count = sum(
+        int(record.get("covered_component_count", 1))
+        for record in noncommutativity_checks
+    )
+    final_localisation_complete = bool(payload["saturation"]) and (
+        saturated_unit
+        or len(
+            [
+                record
+                for record in saturation_trace
+                if record.get("phase") != "PRE_STAGE4_LOCALISATION"
+            ]
+        )
+        == len(saturation_factors)
+    )
+    commutator_coverage_complete = (
+        saturated_unit
+        or not payload["commutator_components"]
+        or covered_commutator_component_count
+        == len(payload["commutator_components"])
+    )
+    peak_rss_bytes = (
+        resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024
+    )
+    memory_budget_satisfied = (
+        payload.get("memory_limit_bytes") is None
+        or peak_rss_bytes <= int(payload["memory_limit_bytes"])
+    )
+    evaluated_relation_ids_sha256 = stable_hash(
+        evaluated_relation_ids
+    )
+    expected_evaluated_relation_digest = payload.get(
+        "expected_evaluated_relation_ids_sha256"
+    )
+    expected_transition_count = payload.get(
+        "expected_reconstructed_transition_count"
+    )
+    canonical_selection_checks_passed = bool(
+        payload.get("canonical_ideal_equivalence_certified", False)
+    ) or not payload.get("selection_certificate")
     proof_eligible = (
         modulus == 0
         and bool(payload["saturation"])
         and payload["operation"] == "solve"
+        and not selection_errors
+        and canonical_selection_checks_passed
+        and final_localisation_complete
+        and commutator_coverage_complete
+        and memory_budget_satisfied
+    )
+    identity_proof_eligible = (
+        modulus == 0
+        and payload["operation"] == "compile"
+        and payload["groebner_strategy"] == "none"
+        and not bool(payload["saturation"])
+        and not bool(payload["check_noncommutativity"])
+        and not selection_errors
+        and payload.get("expected_selected_relation_count") is not None
+        and len(selected_relations)
+        == int(payload["expected_selected_relation_count"])
+        and payload.get("expected_selected_relation_ids_sha256")
+        is not None
+        and selected_relation_ids_sha256
+        == payload["expected_selected_relation_ids_sha256"]
+        and expected_evaluated_relation_digest is not None
+        and evaluated_relation_ids_sha256
+        == expected_evaluated_relation_digest
+        and len(evaluated_relation_ids) == len(selected_relations)
+        and not equations
+        and bool(payload["include_all_transition_predicates"])
+        and expected_transition_count is not None
+        and transition_count == int(expected_transition_count)
+        and not zero_required_factor
+        and factor_reduction_equivalence.get(
+            "all_source_factorisations_reconstructed_exactly"
+        )
+        is True
+        and isinstance(expected_direct_file_sha256, str)
+        and direct_system_file_sha256 == expected_direct_file_sha256
+        and isinstance(expected_direct_semantic_digest, str)
+        and direct_system_semantic_digest_sha256
+        == expected_direct_semantic_digest
+        and direct_system_self_semantic_digest_valid
+        and memory_budget_satisfied
     )
     result: dict[str, Any] = {
-        "schema_version": "final-theory-d2-sage-response-v0.3.5",
+        "schema_version": payload.get(
+            "response_schema_version",
+            LEGACY_RESPONSE_SCHEMA,
+        ),
         "chart": payload["chart"],
         "stratum": payload["stratum"],
         "source_index_branch": payload["source_index_branch"],
+        "equation_source_index_branch": payload.get(
+            "equation_source_index_branch",
+            payload["source_index_branch"],
+        ),
+        "chart_source_index_branch": payload.get(
+            "chart_source_index_branch",
+            payload["source_index_branch"],
+        ),
+        "chart_cover_id": payload.get("chart_cover_id", payload["chart"]),
+        "selection_label": payload.get(
+            "selection_label", "ALL_RELATIONS"
+        ),
+        "selection_certificate": payload.get("selection_certificate"),
+        "selection_certificate_semantic_digest_sha256": payload.get(
+            "selection_certificate_semantic_digest_sha256"
+        ),
+        "budget_file": payload.get("budget_file"),
+        "budget_file_sha256": payload.get("budget_file_sha256"),
+        "request_semantic_digest_sha256": request_semantic_digest,
+        "direct_system_path": payload["direct_system_path"],
+        "direct_system_file_sha256": direct_system_file_sha256,
+        "direct_system_semantic_digest_sha256": (
+            direct_system_semantic_digest_sha256
+        ),
+        "direct_system_self_semantic_digest_valid": (
+            direct_system_self_semantic_digest_valid
+        ),
         "semantic_profile": direct_payload["semantic_profile"],
         "coefficient_field": "QQ" if modulus == 0 else f"GF({modulus})",
         "coefficient_modulus": modulus,
@@ -1362,9 +1741,42 @@ def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
         "variable_count": len(variable_names),
         "variables": list(variable_names),
         "selected_relation_count": len(selected_relations),
+        "selected_matrix_relation_count": len(selected_relations),
+        "selected_relation_ids_sha256": selected_relation_ids_sha256,
+        "selected_relation_family_counts": (
+            selected_relation_family_counts
+        ),
+        "included_relation_families": sorted(
+            included_relation_families
+        ),
+        "forbidden_relation_families": sorted(
+            forbidden_relation_families
+        ),
+        "relation_selection_checks_passed": not selection_errors,
+        "selected_canonical_equation_count": payload.get(
+            "expected_selected_canonical_equation_count"
+        ),
+        "selected_equation_ids_sha256": payload.get(
+            "expected_selected_equation_ids_sha256"
+        ),
+        "selected_expression_ids_sha256": payload.get(
+            "expected_selected_expression_ids_sha256"
+        ),
+        "canonical_selection_checks_passed": (
+            canonical_selection_checks_passed
+        ),
+        "certified_frozen_denominator_factor_count": payload.get(
+            "expected_frozen_denominator_factor_count"
+        ),
+        "selected_denominator_record_count": payload.get(
+            "expected_frozen_denominator_factor_count"
+        ),
+        "denominator_evaluation_route": (
+            "DIRECT_INVERSE_AND_TRANSITION_RECONSTRUCTION"
+        ),
         "relations_evaluated_count": len(evaluated_relation_ids),
-        "evaluated_relation_ids_sha256": stable_hash(
-            evaluated_relation_ids
+        "evaluated_relation_ids_sha256": (
+            evaluated_relation_ids_sha256
         ),
         "nonzero_specialised_equation_count": len(equations),
         "equation_provenance_digest_sha256": stable_hash(
@@ -1455,19 +1867,25 @@ def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
         ),
         "saturation_trace": saturation_trace,
         "saturated_unit_ideal": saturated_unit,
+        "final_localisation_complete": final_localisation_complete,
         "commutator_component_count": len(
             payload["commutator_components"]
         ),
+        "covered_commutator_component_count": (
+            covered_commutator_component_count
+        ),
+        "commutator_coverage_complete": commutator_coverage_complete,
         "noncommutativity_checks": noncommutativity_checks,
         "surviving_noncommutative_component_count": len(
             surviving_noncommutative
         ),
         "proof_eligible": proof_eligible,
+        "identity_proof_eligible": identity_proof_eligible,
         "resource_usage": {
             "wall_time_seconds": time.perf_counter() - started,
-            "peak_rss_bytes": (
-                resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024
-            ),
+            "peak_rss_bytes": peak_rss_bytes,
+            "memory_limit": memory_limit,
+            "memory_budget_satisfied": memory_budget_satisfied,
         },
         "exit_status": "COMPLETED",
     }
@@ -1493,16 +1911,13 @@ def _worker_execute_direct(payload: dict[str, Any]) -> dict[str, Any]:
         )
     else:
         result["chart_verdict"] = "EXACT_CHART_NONEMPTY_NONCOMM_UNCHECKED"
-    result["semantic_digest_sha256"] = stable_hash(
-        {
-            "chart": result["chart"],
-            "field": result["coefficient_field"],
-            "initial_basis": result["initial_groebner_basis"],
-            "saturation_trace": result["saturation_trace"],
-            "noncommutativity_checks": result[
-                "noncommutativity_checks"
-            ],
-        }
+    result["semantic_digest_sha256"] = _result_semantic_digest(
+        result,
+        selection_fields=(
+            "selection_label",
+            "selected_relation_ids_sha256",
+            "selected_equation_ids_sha256",
+        ),
     )
     return result
 
@@ -1517,6 +1932,8 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
     from sage.all import GF, QQ, PolynomialRing  # type: ignore[import-not-found]
 
     started = time.perf_counter()
+    memory_limit = _worker_apply_memory_limit(payload, resource)
+    request_semantic_digest = _validated_request_semantic_digest(payload)
     modulus = int(payload["coefficient_modulus"])
     coefficient_field = QQ if modulus == 0 else GF(modulus)
     variable_names = tuple(payload["variables"])
@@ -1575,22 +1992,166 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
         return evaluate_index(int(target_indices[expression_id]))
 
     branch_system = system_payload["systems"][payload["source_index_branch"]]
-    selected_equations = [
+    stage_selected_equations = [
         record
         for record in branch_system["equations"]
         if int(record["maximum_source_stage"])
         <= int(payload["maximum_source_stage"])
     ]
+    excluded_equation_ids = {
+        str(value) for value in payload.get("excluded_equation_ids", [])
+    }
+    available_equation_ids = {
+        record["equation_id"] for record in stage_selected_equations
+    }
+    unknown_excluded_equation_ids = sorted(
+        excluded_equation_ids - available_equation_ids
+    )
+    selected_equations = [
+        record
+        for record in stage_selected_equations
+        if record["equation_id"] not in excluded_equation_ids
+    ]
+    selected_equation_ids = sorted(
+        record["equation_id"] for record in selected_equations
+    )
+    selected_expression_ids = sorted(
+        record["canonical_expression_id"] for record in selected_equations
+    )
+    selected_relation_families: dict[str, str] = {}
+    for record in selected_equations:
+        for provenance in record["provenance"]:
+            relation_id = provenance["relation_id"]
+            family = provenance["family"]
+            existing_family = selected_relation_families.setdefault(
+                relation_id,
+                family,
+            )
+            if existing_family != family:
+                raise RuntimeError(
+                    f"relation family mismatch for {relation_id}: "
+                    f"{existing_family} != {family}"
+                )
+    selected_relation_family_counts = dict(
+        sorted(Counter(selected_relation_families.values()).items())
+    )
+    selected_provenance_families = sorted(
+        set(selected_relation_families.values())
+    )
+    forbidden_provenance_families = {
+        str(value)
+        for value in payload.get("forbidden_provenance_families", [])
+    }
+    selected_equation_ids_sha256 = stable_hash(selected_equation_ids)
+    selected_expression_ids_sha256 = stable_hash(selected_expression_ids)
+    selection_errors: list[str] = []
+    if unknown_excluded_equation_ids:
+        selection_errors.append("unknown excluded equation IDs")
+    expected_equation_count = payload.get(
+        "expected_selected_canonical_equation_count"
+    )
+    if (
+        expected_equation_count is not None
+        and len(selected_equations) != int(expected_equation_count)
+    ):
+        selection_errors.append(
+            "selected canonical equation count does not match expectation"
+        )
+    expected_excluded_count = payload.get("expected_excluded_equation_count")
+    if (
+        expected_excluded_count is not None
+        and len(excluded_equation_ids) != int(expected_excluded_count)
+    ):
+        selection_errors.append(
+            "excluded canonical equation count does not match expectation"
+        )
+    expected_relation_count = payload.get("expected_selected_relation_count")
+    if (
+        expected_relation_count is not None
+        and len(selected_relation_families) != int(expected_relation_count)
+    ):
+        selection_errors.append(
+            "selected matrix relation count does not match expectation"
+        )
+    expected_family_counts = payload.get("expected_relation_family_counts")
+    if (
+        expected_family_counts is not None
+        and selected_relation_family_counts
+        != {
+            str(name): int(count)
+            for name, count in expected_family_counts.items()
+        }
+    ):
+        selection_errors.append(
+            "selected relation-family counts do not match expectation"
+        )
+    if forbidden_provenance_families.intersection(
+        selected_provenance_families
+    ):
+        selection_errors.append("forbidden provenance family selected")
+    expected_equation_digest = payload.get(
+        "expected_selected_equation_ids_sha256"
+    )
+    if (
+        expected_equation_digest is not None
+        and selected_equation_ids_sha256 != expected_equation_digest
+    ):
+        selection_errors.append("selected equation-ID digest mismatch")
+    expected_expression_digest = payload.get(
+        "expected_selected_expression_ids_sha256"
+    )
+    if (
+        expected_expression_digest is not None
+        and selected_expression_ids_sha256 != expected_expression_digest
+    ):
+        selection_errors.append("selected expression-ID digest mismatch")
+    if selection_errors:
+        raise RuntimeError(
+            "canonical equation selection failed: "
+            + _canonical_json(
+                {
+                    "errors": selection_errors,
+                    "unknown_excluded_equation_ids": (
+                        unknown_excluded_equation_ids
+                    ),
+                    "selected_equation_count": len(selected_equations),
+                    "selected_relation_count": len(
+                        selected_relation_families
+                    ),
+                    "selected_relation_family_counts": (
+                        selected_relation_family_counts
+                    ),
+                    "selected_provenance_families": (
+                        selected_provenance_families
+                    ),
+                    "selected_equation_ids_sha256": (
+                        selected_equation_ids_sha256
+                    ),
+                    "selected_expression_ids_sha256": (
+                        selected_expression_ids_sha256
+                    ),
+                }
+            )
+        )
     unique_equations: dict[str, Any] = {}
-    equation_provenance: dict[str, list[str]] = {}
+    equation_provenance: dict[str, list[dict[str, Any]]] = {}
+    zero_specialised_equation_count = 0
+    nonzero_specialised_canonical_equation_count = 0
     for record in selected_equations:
         polynomial = evaluate(record["canonical_expression_id"])
         if polynomial == 0:
+            zero_specialised_equation_count += 1
             continue
+        nonzero_specialised_canonical_equation_count += 1
         normalised = _worker_normalise(polynomial)
         key = str(normalised)
         unique_equations.setdefault(key, normalised)
-        equation_provenance.setdefault(key, []).append(record["equation_id"])
+        equation_provenance.setdefault(key, []).append(
+            {
+                "equation_id": record["equation_id"],
+                "source_stage": int(record["minimum_source_stage"]),
+            }
+        )
     equations = list(unique_equations.values())
 
     selected_denominator_records = [
@@ -1636,12 +2197,20 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
         record.get("status") == "ZERO_REQUIRED_FACTOR"
         for record in factor_records
     )
-    ideal = ring.ideal(equations)
-    gb_started = time.perf_counter()
-    initial_basis = ideal.groebner_basis(
-        algorithm=payload["groebner_algorithm"]
+    (
+        ideal,
+        initial_basis,
+        initial_gb_seconds,
+        initial_groebner_trace,
+        equations_covered_by_initial_basis,
+    ) = _worker_initial_groebner(
+        ring,
+        equations,
+        equation_provenance,
+        algorithm=payload["groebner_algorithm"],
+        strategy=payload["groebner_strategy"],
+        progressive_batch_size=payload["progressive_batch_size"],
     )
-    initial_gb_seconds = time.perf_counter() - gb_started
     initial_unit = (
         len(initial_basis) == 1 and initial_basis[0] == ring.one()
     )
@@ -1693,16 +2262,23 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
         and bool(payload["saturation"])
         and not current_unit
     ):
-        seen_components: set[str] = set()
+        grouped_components: dict[str, dict[str, Any]] = {}
         for component in payload["commutator_components"]:
             polynomial = ring(component["expression"].replace("**", "^"))
             if polynomial == 0:
                 continue
             polynomial = _worker_normalise(polynomial)
             component_key = str(polynomial)
-            if component_key in seen_components:
-                continue
-            seen_components.add(component_key)
+            group = grouped_components.setdefault(
+                component_key,
+                {
+                    "polynomial": polynomial,
+                    "components": [],
+                },
+            )
+            group["components"].append(component)
+        for component_key, group in grouped_components.items():
+            polynomial = group["polynomial"]
             component_started = time.perf_counter()
             component_ideal, _ = saturated_ideal.saturation(
                 ring.ideal([polynomial])
@@ -1716,7 +2292,11 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
             )
             noncommutativity_checks.append(
                 {
-                    **component,
+                    **group["components"][0],
+                    "covered_components": group["components"],
+                    "covered_component_count": len(
+                        group["components"]
+                    ),
                     "normalised_expression": component_key,
                     "wall_time_seconds": (
                         time.perf_counter() - component_started
@@ -1739,22 +2319,65 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
         for record in noncommutativity_checks
         if not record["unit_ideal"]
     ]
-    proof_eligible = (
+    covered_commutator_component_count = sum(
+        int(record.get("covered_component_count", 1))
+        for record in noncommutativity_checks
+    )
+    final_localisation_complete = bool(payload["saturation"]) and (
+        saturated_unit
+        or len(saturation_trace) == len(saturation_factors)
+    )
+    commutator_coverage_complete = (
+        saturated_unit
+        or not payload["commutator_components"]
+        or covered_commutator_component_count
+        == len(payload["commutator_components"])
+    )
+    preliminary_proof_eligible = (
         modulus == 0
         and bool(payload["saturation"])
         and payload["operation"] == "solve"
+        and final_localisation_complete
+        and commutator_coverage_complete
     )
     peak_rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024
+    memory_budget_satisfied = (
+        payload.get("memory_limit_bytes") is None
+        or peak_rss <= int(payload["memory_limit_bytes"])
+    )
+    proof_eligible = (
+        preliminary_proof_eligible and memory_budget_satisfied
+    )
     result: dict[str, Any] = {
-        "schema_version": "final-theory-d2-sage-response-v0.3.5",
+        "schema_version": payload.get(
+            "response_schema_version",
+            LEGACY_RESPONSE_SCHEMA,
+        ),
         "chart": payload["chart"],
         "stratum": payload["stratum"],
         "source_index_branch": payload["source_index_branch"],
+        "equation_source_index_branch": payload.get(
+            "equation_source_index_branch",
+            payload["source_index_branch"],
+        ),
+        "chart_source_index_branch": payload.get(
+            "chart_source_index_branch",
+            payload["source_index_branch"],
+        ),
+        "chart_cover_id": payload.get("chart_cover_id", payload["chart"]),
+        "selection_label": payload.get("selection_label", "ALL_EQUATIONS"),
+        "selection_certificate": payload.get("selection_certificate"),
+        "budget_file": payload.get("budget_file"),
+        "budget_file_sha256": payload.get("budget_file_sha256"),
+        "request_semantic_digest_sha256": request_semantic_digest,
+        "expression_source": "FROZEN_COMPACT_EXPRESSION_ARENA",
         "coefficient_field": "QQ" if modulus == 0 else f"GF({modulus})",
         "coefficient_modulus": modulus,
         "backend": "Sage polynomial ideals / embedded Singular",
         "backend_versions": _worker_versions(),
         "groebner_algorithm": payload["groebner_algorithm"],
+        "groebner_strategy": payload["groebner_strategy"],
+        "progressive_batch_size": payload["progressive_batch_size"],
         "saturation_factor_order": payload.get(
             "saturation_factor_order", "forward"
         ),
@@ -1763,11 +2386,24 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
         "variable_count": len(variable_names),
         "variables": list(variable_names),
         "selected_canonical_equation_count": len(selected_equations),
-        "nonzero_specialised_equation_count": len(equations),
-        "zero_specialised_equation_count": (
-            len(selected_equations) - len(equations)
+        "excluded_canonical_equation_count": len(excluded_equation_ids),
+        "selected_equation_ids_sha256": selected_equation_ids_sha256,
+        "selected_expression_ids_sha256": selected_expression_ids_sha256,
+        "selected_matrix_relation_count": len(selected_relation_families),
+        "selected_relation_family_counts": selected_relation_family_counts,
+        "selected_provenance_families": selected_provenance_families,
+        "forbidden_provenance_families": sorted(
+            forbidden_provenance_families
         ),
-        "equation_deduplication_count": len(selected_equations) - len(equations),
+        "canonical_selection_checks_passed": not selection_errors,
+        "nonzero_specialised_equation_count": len(equations),
+        "nonzero_specialised_canonical_equation_count": (
+            nonzero_specialised_canonical_equation_count
+        ),
+        "zero_specialised_equation_count": zero_specialised_equation_count,
+        "equation_deduplication_count": (
+            nonzero_specialised_canonical_equation_count - len(equations)
+        ),
         "arena_nodes_evaluated": len(cache),
         "raw_required_factor_count": len(raw_required_factors),
         "selected_denominator_record_count": len(
@@ -1778,6 +2414,10 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
         "factor_reduction_equivalence": factor_reduction_equivalence,
         "zero_required_factor": zero_required_factor,
         "initial_groebner_seconds": initial_gb_seconds,
+        "initial_groebner_trace": initial_groebner_trace,
+        "equations_covered_by_initial_basis": (
+            equations_covered_by_initial_basis
+        ),
         "initial_groebner_basis": _worker_basis_summary(initial_basis),
         "initial_unit_ideal": initial_unit,
         "saturation_requested": bool(payload["saturation"]),
@@ -1788,9 +2428,14 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
         ),
         "saturation_trace": saturation_trace,
         "saturated_unit_ideal": saturated_unit,
+        "final_localisation_complete": final_localisation_complete,
         "commutator_component_count": len(
             payload["commutator_components"]
         ),
+        "covered_commutator_component_count": (
+            covered_commutator_component_count
+        ),
+        "commutator_coverage_complete": commutator_coverage_complete,
         "noncommutativity_checks": noncommutativity_checks,
         "surviving_noncommutative_component_count": len(
             surviving_noncommutative
@@ -1799,11 +2444,23 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
         "resource_usage": {
             "wall_time_seconds": time.perf_counter() - started,
             "peak_rss_bytes": peak_rss,
+            "memory_limit": memory_limit,
+            "memory_budget_satisfied": memory_budget_satisfied,
         },
         "exit_status": "COMPLETED",
     }
-    if saturated_unit:
+    if payload["groebner_strategy"] == "none":
+        result["chart_verdict"] = "SPECIALISATION_ONLY_NO_IDEAL_SOLVE"
+    elif saturated_unit:
         result["chart_verdict"] = "EXACT_EMPTY_CHART"
+    elif (
+        bool(payload["check_noncommutativity"])
+        and bool(payload["saturation"])
+        and not payload["commutator_components"]
+    ):
+        result["chart_verdict"] = (
+            "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART"
+        )
     elif noncommutativity_checks and not surviving_noncommutative:
         result["chart_verdict"] = (
             "EXACT_NO_NONCOMMUTATIVE_SOLUTION_IN_CHART"
@@ -1814,16 +2471,13 @@ def _worker_execute(payload: dict[str, Any]) -> dict[str, Any]:
         )
     else:
         result["chart_verdict"] = "EXACT_CHART_NONEMPTY_NONCOMM_UNCHECKED"
-    result["semantic_digest_sha256"] = stable_hash(
-        {
-            "chart": result["chart"],
-            "field": result["coefficient_field"],
-            "initial_basis": result["initial_groebner_basis"],
-            "saturation_trace": result["saturation_trace"],
-            "noncommutativity_checks": result[
-                "noncommutativity_checks"
-            ],
-        }
+    result["semantic_digest_sha256"] = _result_semantic_digest(
+        result,
+        selection_fields=(
+            "selection_label",
+            "selected_equation_ids_sha256",
+            "selected_expression_ids_sha256",
+        ),
     )
     return result
 

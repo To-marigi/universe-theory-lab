@@ -1,7 +1,7 @@
 # 宇宙理論計算研究所
 
 宇宙の統一理論を、**記号導出 → 数値化 → 独立検算 → 記録**の順で育てるための
-オープンソース計算環境です。現時点では「理論そのもの」ではなく、理論を安全に
+再現可能な研究用計算環境です。現時点では「理論そのもの」ではなく、理論を安全に
 組み立てる実験台を提供します。
 
 最上位目標と、QG-Bench・String-Compilerを手段として位置付ける停止規則は
@@ -89,6 +89,25 @@ uv.lock             Python依存関係の厳密な固定
 
 `results/environment.json` には実際に使ったPython・OS・各バックエンドの版と
 検算結果が保存されます。
+
+## Final-Theory Bench v0.3.7
+
+v0.3.7 は、凍結した `n<=4` strong-operator 系の literal 分岐について、
+記録済みの非特異・分母非零領域上の `d=2` では `Q1` から `Q4` が可換になる
+ことを、`Q5` を導入しない 21 チャートの厳密 QQ 計算で証明します。これは
+無制限の CPOBC 代数の分類ではなく、全体判定は引き続き
+`FINAL_THEORY_OPEN` です。
+
+既存証明書の高速検証:
+
+```powershell
+uv run python scripts/reproduce_v037.py --verify
+```
+
+再計算手順は [`REPRODUCING_v0.3.7.md`](REPRODUCING_v0.3.7.md)、短報 PDF は
+[`output/pdf/v0.3.7_d2_commutativity_short_report.pdf`](output/pdf/v0.3.7_d2_commutativity_short_report.pdf)
+にあります。公開メタデータは草案です。現時点では人間が選択したライセンスがないため、
+JOSS/Zenodo 公開 readiness は `BLOCKED` であり、DOI や外部 deposit は存在しません。
 
 ## ローカル研究資料
 

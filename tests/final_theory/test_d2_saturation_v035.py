@@ -9,6 +9,8 @@ from universe_lab.final_theory.d2_localisation_v034 import (
     LITERAL_BRANCH,
 )
 from universe_lab.final_theory.d2_sage_backend_v035 import (
+    LEGACY_RESPONSE_SCHEMA,
+    _result_semantic_digest,
     build_chart_payload,
 )
 from universe_lab.final_theory.d2_solver_v034 import cas_inventory
@@ -52,6 +54,66 @@ def test_full_payload_requests_real_sage_operations() -> None:
     assert payload["check_noncommutativity"]
     assert payload["include_all_transition_predicates"]
     assert payload["groebner_algorithm"] == "libsingular:slimgb"
+
+
+def test_legacy_semantic_digest_ignores_v037_selection_metadata() -> None:
+    campaign = _load("results/v0.3.5_full_stage4_campaign.json")
+    certificate = _load(campaign["runs"][0]["certificate"])
+    assert certificate["schema_version"] == LEGACY_RESPONSE_SCHEMA
+    expected = certificate["semantic_digest_sha256"]
+
+    direct_fields = (
+        "selection_label",
+        "selected_relation_ids_sha256",
+        "selected_equation_ids_sha256",
+    )
+    compact_fields = (
+        "selection_label",
+        "selected_equation_ids_sha256",
+        "selected_expression_ids_sha256",
+    )
+    assert (
+        _result_semantic_digest(
+            certificate,
+            selection_fields=direct_fields,
+        )
+        == expected
+    )
+
+    augmented = {
+        **certificate,
+        "selection_label": "V037_ONLY_SELECTION",
+        "selected_relation_ids_sha256": "1" * 64,
+        "selected_equation_ids_sha256": "2" * 64,
+        "selected_expression_ids_sha256": "3" * 64,
+        "request_semantic_digest_sha256": "4" * 64,
+    }
+    assert (
+        _result_semantic_digest(
+            augmented,
+            selection_fields=direct_fields,
+        )
+        == expected
+    )
+    assert (
+        _result_semantic_digest(
+            augmented,
+            selection_fields=compact_fields,
+        )
+        == expected
+    )
+
+    modern = {
+        **augmented,
+        "schema_version": "final-theory-test-response-v0.3.7",
+    }
+    assert (
+        _result_semantic_digest(
+            modern,
+            selection_fields=direct_fields,
+        )
+        != expected
+    )
 
 
 def test_cas_inventory_uses_embedded_singular_probe(

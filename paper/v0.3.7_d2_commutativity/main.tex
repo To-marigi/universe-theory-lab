@@ -1,0 +1,416 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black,
+  pdftitle={Exact d=2 commutativity in a finite strong-operator CPOBC system},
+  pdfauthor={To-Marigi}
+}
+
+\setlist{nosep}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\KK}{\mathbb{K}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\Cpobc}{\mathrm{CPOBC}}
+\newcommand{\artifact}[1]{\texttt{\small #1}}
+
+\title{\textbf{Exact \(d=2\) commutativity in a finite\\
+strong-operator CPOBC system}}
+\author{To-Marigi\\
+\small Independent researcher}
+\date{Final-Theory Bench v0.3.7 -- 30 July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give a computer-assisted theorem for a finite, explicitly defined
+strong-operator model of causal-past-ordered Bell causality (CPOBC).
+The model is the repository's nonsingular \(n\leq 4\) compiler, not the
+unrestricted quantum sequential-growth algebra.  In dimension two, every
+solution of its literal, printed-\(Q_{n+1}\) branch has
+\([Q_i,Q_j]=0\) for \(1\leq i<j\leq 4\).  The proof removes \(Q_5\)
+before elimination: 2,564 canonical numerators split exactly into 2,552
+\(Q_5\)-free and 12 \(Q_5\)-dependent expressions, and every literal
+solution satisfies the weaker 2,552-expression shared core.  A complete
+three-stratum cover of the commuting ratios \(Q_1^{-1}Q_i\), \(i=2,3,4\),
+reduces the noncommutative alternative to 21 exact rational saturation
+calculations.  All 21 close over \(\QQ\).  Two 21-chart prime-field
+campaigns agree but are used only as scouts.
+
+As a separate proposition, we verify a scalar-chain open family in which
+\(Q_2,Q_3,Q_4\) are scalar multiples of \(Q_1\) and the literal \(Q_5\)
+fiber is \(\GL_2\).  That proposition is established by exact evaluation
+of 1,001 direct reduced-operator relations plus exhaustive, hash-bound
+compiler-provenance coverage of all 2,564 canonical numerators.  It is not
+a second independent implementation and it does not classify \(Q_5\) over
+an arbitrary base.  Machine-readable certificates, budgets, and negative
+claim boundaries are included.
+\end{abstract}
+
+\section{Problem and claim boundary}
+
+Classical sequential growth combines discrete general covariance with a
+Bell-causality condition on causal-set births
+\cite{RideoutSorkin2000}.  Srivastava and Surya formulate operator-valued
+quantum Bell-causality orderings and study the transition algebra generated
+by nonsingular operators \(Q_n\) \cite{SrivastavaSurya2026}.  Their
+time-ordered and non-time-ordered versions collapse to commutative
+transition algebras.  Their CPOBC ordering instead yields additional
+relations and leaves the general representation problem open.  The
+displayed \(d=2\) computation in their Appendix starts from a
+Pauli-proportional ansatz, Eq.\ (165), and proves that this particular
+ansatz does not extend to the full algebra.  It is not a classification of
+arbitrary invertible \(2\) by \(2\) matrices.
+
+There is also a source-index ambiguity that must remain visible.  On PDF
+page 27, atomisation Eq.\ (112) is followed by printed Eq.\ (113) with
+\(Q_{n+1}\).  The Appendix's explicit path calculation, Eq.\ (163), uses
+the stage-\(n\) generator instead.  The repository therefore keeps two
+source-index branches:
+\begin{enumerate}[label=(\roman*)]
+  \item the \emph{literal branch}, which materialises printed \(Q_{n+1}\);
+  \item the \emph{derived branch}, which materialises the \(Q_n\) index
+        obtained from the preceding atomisation formula.
+\end{enumerate}
+No assertion about author intent is made.
+
+The second semantic boundary concerns operator identities.  The source
+paper introduces general covariance on a distinguished initial vector and
+uses reachable-state reasoning before later atomisation steps employ
+operator equalities.  The repository's
+\artifact{PAPER\_STRONG\_OPERATOR\_PROFILE} materialises the selected GC,
+MSR, CPOBC, and path relations as strong operator identities.  This is an
+explicit project formalisation and strengthening; it is not described here
+as a uniform hypothesis of Ref.\ \cite{SrivastavaSurya2026}.
+
+Our main statement is consequently finite and conditional on that
+formalisation.
+
+\begin{theorem}[Finite literal-branch \(d=2\) commutativity]
+\label{thm:main}
+Let \(\KK\) be an algebraically closed field of characteristic zero.  Let
+\[
+  (Q_1,Q_2,Q_3,Q_4,Q_5)\in\GL_2(\KK)^5
+\]
+satisfy the literal branch of the frozen \(n\leq4\), nonsingular,
+\artifact{PAPER\_STRONG\_OPERATOR\_PROFILE} system released by
+Final-Theory Bench v0.3.7.  Then
+\[
+  [Q_i,Q_j]=0 \qquad (1\leq i<j\leq4).
+\]
+\end{theorem}
+
+The conclusion intentionally excludes \(Q_5\), the transition algebra
+outside the compiled inventory, weak or occurrence-dependent operator
+semantics, \(d\geq3\), and the infinite-stage CPOBC algebra.
+
+\section{Frozen finite system and the
+  \texorpdfstring{\(Q_5\)}{Q5}-free implication}
+
+The compiler freezes reduced operator relations and scalarises their
+\(2\) by \(2\) matrix entries after replacing every inverse by its
+adjugate divided by its determinant.  This is a calculation in a
+localised commutative coordinate ring; adjugate identities and
+localisation are standard \cite{StacksAlgebra,MaraisRen2015}, while exact
+saturation is a standard ideal operation \cite{BerthomieuEtAl2023}.
+These general references do not certify the project-specific relation
+inventory or any chart result.
+
+For each source-index branch the frozen direct system contains 1,001
+matrix relations.  The literal scalar system contains 2,564 distinct
+canonical numerator records.  Version 0.3.6 and the v0.3.7 partition
+certificate give the exact disjoint split
+\[
+  2564 = 2552\ \text{\(Q_5\)-independent}
+       + 12\ \text{\(Q_5\)-dependent}.
+\]
+All 191 frozen denominator records are \(Q_5\)-free.  At the matrix-relation
+level, the \(Q_5\)-free subsystem is the 976-relation shared core
+\[
+  976 = 700\ \Cpobc + 255\ \mathrm{GC} + 21\ \mathrm{MSR}.
+\]
+The 25 literal path-consistency relations are kept outside that core.
+
+\begin{lemma}[Forward implication]
+\label{lem:forward}
+Every solution of the 2,564-numerator literal system satisfies the
+2,552-numerator shared core.  Therefore, if the shared core forces
+\([Q_i,Q_j]=0\) for \(i,j\leq4\), the same commutativity statement holds
+for every literal solution, independently of \(Q_5\).
+\end{lemma}
+
+\begin{proof}
+The shared core is an exact subset selected by canonical equation IDs,
+expression IDs, provenance families, and the absence of \(Q_5\) from the
+symbol inventory.  Restricting a solution to a subset of its equations is
+immediate.  Only this direction is used: no equality of solution schemes,
+reverse implication, minimal-generator claim, or Groebner-basis claim is
+required.
+\end{proof}
+
+This small logical point removes the unsupported premise in the older
+49-chart campaign.  Version 0.3.5 placed \(R_5=Q_1^{-1}Q_5\) in a
+simultaneous standard form with \(R_2,R_3,R_4\), although the compiled
+\(n\leq4\) inventory did not force \([R_5,R_j]=0\).  Those frozen 49
+charts and 225 backend runs remain valid inside that ansatz, but they are
+not used as a cover of all literal solutions.  The v0.3.7 proof never
+introduces \(Q_5\) or \(R_5\).
+
+\section{Complete ratio strata in dimension two}
+
+Set
+\[
+  R_i=Q_1^{-1}Q_i,\qquad i=2,3,4.
+\]
+The all-stage source relation Eq.\ (120), specialised only to indices
+within \(1,\ldots,4\), has the form
+\[
+  Q_nQ_1^{-1}Q_m=Q_mQ_1^{-1}Q_n .
+\]
+Because \(Q_1\) is invertible, this is equivalent to
+\([R_n,R_m]=0\).  The relevant instances occur in the frozen shared core.
+No index-5 instance of the source theorem is imported.
+
+Over an algebraically closed characteristic-zero field, a commuting triple
+of \(2\) by \(2\) matrices has the following exhaustive form, up to
+simultaneous similarity:
+\begin{description}
+  \item[S1: distinct-spectrum pivot.] Some \(R_i\) has two distinct
+  eigenvalues.  It is diagonal, and every matrix commuting with it is
+  diagonal.
+  \item[S2: common nilpotent direction.] There is no distinct-spectrum
+  member, but some \(R_i\) is nonscalar.  Every member is
+  \(\lambda I+\mu N\) for a common nonzero \(N\) with \(N^2=0\).
+  \item[S3: scalar triple.] Every \(R_i=\lambda_i I\).
+\end{description}
+The general simultaneous-similarity theory of \(2\) by \(2\) tuples is
+well known \cite{Florentino2009,Florentino2006}.  The particular
+S1/S2/S3 normal forms, localisation factors, and finite chart split used
+here are project derivations and are tested against the frozen compiler.
+
+Choosing the first eligible pivot and covering the residual zero/nonzero
+conditions produces 12 S1 charts and 9 S2 charts.  S3 needs no elimination:
+\[
+  Q_i=Q_1R_i=\lambda_iQ_1\quad(i=2,3,4),
+\]
+so \(Q_1,\ldots,Q_4\) commute structurally.  The S1/S2 charts encode
+noncommutativity by saturating each independent component of the six
+commutators \([Q_i,Q_j]\), \(1\leq i<j\leq4\).
+
+\section{Exact chart calculation}
+
+For every S1/S2 chart, the 976 direct reduced-operator relations are
+evaluated over a rational function field and converted to a polynomial
+ideal over \(\QQ\).  The recorded determinant and chart factors define
+the open locus.  Sequential Sage/Singular saturation then asks whether a
+nonzero commutator component can survive.  A unit ideal is an exact
+certificate that the corresponding localised branch is empty.  Since a
+unit ideal over \(\QQ\) remains a unit ideal after extension of scalars,
+the result applies to the characteristic-zero field \(\KK\) in
+Theorem~\ref{thm:main}.
+
+\begin{table}[ht]
+\centering
+\caption{Proof campaign.  Prime fields are scouts, not proof fields.}
+\label{tab:campaign}
+\begin{tabular}{lrrrr}
+\toprule
+Field & S1 charts & S2 charts & Completed & Role\\
+\midrule
+\(\QQ\)       & 12 & 9 & 21 & exact proof\\
+\(\mathrm{GF}(32003)\) & 12 & 9 & 21 & scout\\
+\(\mathrm{GF}(32009)\) & 12 & 9 & 21 & scout\\
+\midrule
+Total & 36 & 27 & 63 & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All 21 rational runs have
+\artifact{exit\_status=COMPLETED},
+\artifact{proof\_eligible=true}, complete localisation, complete
+commutator-component coverage, and memory use within the externally owned
+8 GiB limit.  In S1, nine charts are empty and three have no surviving
+noncommutative component.  In S2, three charts are empty and six have no
+surviving noncommutative component.  The two scout fields reproduce all
+21 chart verdicts.  They are not promoted to characteristic-zero
+certificates.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let a literal solution be given.  By Lemma~\ref{lem:forward}, its
+\(Q_1,\ldots,Q_4\) coordinates satisfy the \(Q_5\)-free shared core.
+The ratio relations make \(R_2,R_3,R_4\) a commuting triple.  The
+three-stratum lemma places it in S1, S2, or S3 after simultaneous
+similarity.  Every S1 and S2 noncommutative branch has an exact
+characteristic-zero unit-ideal certificate; S3 is structurally
+commutative.  Hence every commutator among \(Q_1,\ldots,Q_4\) vanishes.
+\end{proof}
+
+\section{A scalar-chain \texorpdfstring{\(Q_5\)}{Q5} fiber}
+
+The main theorem says nothing about \(Q_5\).  A separate exact identity
+calculation shows why that omission matters.
+
+\begin{proposition}[Literal scalar-chain open family]
+\label{prop:fiber}
+Let
+\[
+\begin{gathered}
+ Q_1=\begin{pmatrix}a&b\\c&d\end{pmatrix},\qquad
+ Q_5=\begin{pmatrix}e&f\\g&h\end{pmatrix},\\
+ Q_i=\lambda_iQ_1\qquad(i=2,3,4).
+\end{gathered}
+\]
+On the certificate-defined open set where the 15 recorded irreducible
+factors are nonzero, all 1,001 frozen literal reduced-operator relations
+vanish identically.  Fourteen factors involve only the base coordinates
+\(a,b,c,d\) and \(\lambda_2,\lambda_3,\lambda_4\).  The only
+\(Q_5\)-dependent factor is \(fg-eh\).  Thus, above every base point in
+the corresponding 14-factor open set, the literal \(Q_5\) fiber is
+\(\GL_2\).
+\end{proposition}
+
+The proof has two distinct components, but only one actual evaluation
+route.  First, Sage 10.9 evaluates all 1,001 direct reduced-operator
+matrix relations over the exact \(\QQ\) fraction field.  In both the
+literal and derived branches, all 1,001 relation IDs are selected and
+evaluated, all residual entries are zero, and all 165 reconstructed
+transition predicates are checked.  These runs carry
+\artifact{identity\_proof\_eligible=true}; the separate ideal-solve flag
+\artifact{proof\_eligible} is correctly false.
+
+Second, a static compiler certificate proves that the direct inventory
+covers the scalar inventory.  For each branch:
+\[
+  1001 = 979\ \text{represented relations}
+       + 22\ \text{identically-zero path relations}.
+\]
+The 979 represented relations contribute all four matrix entries, giving
+3,916 provenance records that cover all 2,564 canonical numerators.
+The represented relation IDs are exactly the complement of the 22 path
+IDs.  Every source stage, family, branch, original-expression ID, and
+v0.3.3 residual digest is cross-checked.  The compact arena is schema- and
+SHA-256-bound to the frozen polynomial system, and every referenced target
+index is in range.
+
+This establishes the proposition without claiming an actual second
+compact-arena evaluation of 2,564 expressions.  The two components share
+compiler and backend lineage and are not independent implementations.
+The proposition constructs a noncommutative open family whenever \(Q_5\)
+is chosen not to commute with \(Q_1\), but only over the scalar-chain base.
+It neither classifies \(Q_5\) above an arbitrary literal solution nor
+produces a representation of the intended infinite CPOBC algebra.
+
+\section{Reproducibility and integrity}
+
+Table~\ref{tab:artifacts} gives the proof-decisive files and selectors.
+Every backend response is bound to the external budget SHA-256, the full
+semantic request digest, the selected relation/equation digests, the
+coefficient field, and the memory limit.  The v0.3.7 scope addendum
+re-opens all 63 Phase-1 certificates, recomputes their hashes and proof
+gates, reconstructs the two scout maps, and refuses a strong verdict if
+any chart is absent or ineligible.
+
+\begin{table}[ht]
+\centering
+\caption{Machine-readable claim map.}
+\label{tab:artifacts}
+\small
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.30\textwidth}
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+Artifact & Decisive fields\\
+\midrule
+\path{results/v0.3.7_q5_free_partition.json}
+& \(2564=2552+12\), selected equation/relation digests, no \(Q_5\) in
+  the shared core\\
+\path{results/v0.3.7_q5_free_elimination.json}
+& 21 exact QQ runs, 42 scouts, chart coverage, verdict
+  \artifact{LITERAL\_Q1\_Q4\_COMMUTATIVITY\_PROVED}\\
+\path{results/v0.3.7_scope_addendum.json}
+& frozen v0.3.4--v0.3.6 hashes, 63 certificate bindings, corrected
+  historical claim scope\\
+\path{results/v0.3.7_general_scalar_chain_fiber.json}
+& 1,001 exact identities per branch, 2,564-numerator provenance
+  coverage, 15/14 factor domains, identity proof gate\\
+\path{config/v0.3.7_budget.json}
+& 3,600 s per chart, 43,200 s total, 8 GiB; no runtime defaults\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The budget file SHA-256 is
+\artifact{f192a37b97e70c84aeae594db75832bdcf632bf00a78009ff45f09b1bcca2e50}.
+The exact calculation used Sage 10.9 and Singular 4.4.1.  The scalar-chain
+aggregate points only to the final request-bound certificates; superseded
+and timed-out exploratory certificates are excluded from the release
+inventory.
+
+\section{Limitations and conclusion}
+
+The result resolves a precise finite question: within the repository's
+nonsingular \(n\leq4\) strong-operator literal system, \(d=2\) forces
+pairwise commutativity of \(Q_1,\ldots,Q_4\).  It does not settle:
+\begin{itemize}
+  \item the intended index in printed Eq.\ (113);
+  \item weak, fixed-vector, or reachable-state operator semantics;
+  \item a restriction or lifting theorem between the frozen compiler and
+        the full finite- or infinite-stage CPOBC algebra;
+  \item the separately identified general Eq.\ (139) materialisation gap;
+  \item \(Q_5\) over a general base, dimensions \(d\geq3\), or singular
+        transitions;
+  \item extension of an operator or vector measure to a completed event
+        sigma algebra.
+\end{itemize}
+
+Accordingly, the repository-wide scientific verdict remains
+\artifact{FINAL\_THEORY\_OPEN}.  The finite theorem is stronger and cleaner
+than the old simultaneous-\(R_5\) ansatz because it uses only a necessary
+\(Q_5\)-free subsystem.  The scalar-chain proposition simultaneously shows
+that the literal source-index branch can have a free, generically
+noncommuting \(Q_5\) fiber on a special open base.  Keeping these two
+statements separate is essential: the first is a no-go theorem for
+\(Q_1,\ldots,Q_4\) in the frozen literal system, while the second is a
+bounded construction that exposes the remaining source-index sensitivity.
+
+\section*{AI-use disclosure}
+
+The author used OpenAI Codex to assist with code review, exact-computation
+orchestration, test generation, bibliography organisation, and language
+editing.  The human author selected the research scope and budget and is
+responsible for every claim.  AI systems are not listed as authors.  All
+proof-bearing claims are tied to exact, inspectable artifacts and tests.
+
+\section*{Data and code availability}
+
+Source code, frozen inputs, exact certificates, and the paper source are
+contained in the \emph{universe-theory-lab} repository on the
+\artifact{codex/final-theory-v0.3.7-publication-20260729} branch.  No DOI
+is claimed in this draft.  Release and archival metadata are supplied
+separately and must not be read as an external publication.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

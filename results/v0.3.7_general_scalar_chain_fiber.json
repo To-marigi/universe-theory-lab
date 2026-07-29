@@ -1,0 +1,359 @@
+{
+  "schema_version": "final-theory-general-scalar-chain-fiber-v0.3.7",
+  "branch": "codex/final-theory-v0.3.7-publication-20260729",
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "finite_scope": "frozen source stages n<=4",
+  "dimension": 2,
+  "field": "QQ fraction field; characteristic zero",
+  "source_artifacts": {
+    "results/v0.3.4_polynomial_systems.json": "018c1dccc4e08102c6de1fbdd9baf6e8e89dcf818e302ebb175e23e59f5a1283",
+    "certificates/d2_saturation/v0.3.5_direct_operator_system.json": "c19c00438f94c55fa3d5a7662cbb425a170f497d25698fa050d245b97714d837",
+    "config/v0.3.7_budget.json": "f192a37b97e70c84aeae594db75832bdcf632bf00a78009ff45f09b1bcca2e50"
+  },
+  "budget": {
+    "provenance": "EXTERNAL_REPOSITORY_BUDGET_FILE; NO_RUNTIME_DEFAULTS_OR_SELF_AUTHENTICATION",
+    "path": "config/v0.3.7_budget.json",
+    "sha256": "f192a37b97e70c84aeae594db75832bdcf632bf00a78009ff45f09b1bcca2e50",
+    "timeout_seconds_per_chart": 3600,
+    "total_wall_time_seconds": 43200,
+    "memory_limit_gib": 8.0,
+    "memory_limit_bytes": 8589934592
+  },
+  "budget_accounting": {
+    "cached_authorised_runtime_seconds": 0.0,
+    "new_invocation_elapsed_seconds": 38.10080230003223,
+    "authorised_total_wall_time_seconds": 43200,
+    "effective_workers": 1,
+    "worker_policy": "SEQUENTIAL_EXACT_QQ_WITH_TOTAL_WALL_DEADLINE",
+    "same_budget_terminal_results_are_not_retried": true
+  },
+  "symbolic_bases": {
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH": {
+      "variables": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "lambda_2",
+        "lambda_3",
+        "lambda_4",
+        "e",
+        "f",
+        "g",
+        "h"
+      ],
+      "Q1": [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "c",
+          "d"
+        ]
+      ],
+      "Q2_Q3_Q4": "Q_n=lambda_n Q1",
+      "Q5": [
+        [
+          "e",
+          "f"
+        ],
+        [
+          "g",
+          "h"
+        ]
+      ]
+    },
+    "DERIVED_APPENDIX_QN_BRANCH": {
+      "variables": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "lambda_2",
+        "lambda_3",
+        "lambda_4"
+      ],
+      "Q1": [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "c",
+          "d"
+        ]
+      ],
+      "Q2_Q3_Q4": "Q_n=lambda_n Q1",
+      "Q5": "absent"
+    }
+  },
+  "exact_runs": {
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH": {
+      "direct_relation_evaluation": {
+        "path": "certificates/d2_saturation/scalar_chain_v037/budget-f192a37b97e70c84/literal_direct_915239766b433757d11405d6.json",
+        "sha256": "48eae22f56bef62e39133f785e80bf9af6eb8d4f7ef1ccb5756f62718e7ad1c6",
+        "cached": false,
+        "passed": true,
+        "exit_status": "COMPLETED",
+        "budget_file_sha256": "f192a37b97e70c84aeae594db75832bdcf632bf00a78009ff45f09b1bcca2e50",
+        "request_semantic_digest_sha256": "915239766b433757d11405d6c2e950190c45228f830f945e5af02b7376c1b8d3",
+        "backend_versions": {
+          "python": "3.12.3",
+          "sage": "10.9",
+          "singular": "Singular for x86_64-Linux version 4.4.1 (44100, 64 bit) Jan 2025"
+        },
+        "variable_count": 11,
+        "variables": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "l2",
+          "l3",
+          "l4"
+        ],
+        "expression_source": "DIRECT_REDUCED_OPERATOR_WORDS",
+        "proof_eligible": false,
+        "identity_proof_eligible": true,
+        "direct_system_file_sha256": "c19c00438f94c55fa3d5a7662cbb425a170f497d25698fa050d245b97714d837",
+        "direct_system_semantic_digest_sha256": "6667681124ab6f482ddaa65ad62d08046995553899c0b7fd37f6573fecddb74e",
+        "wall_time_seconds": 9.1283367589931,
+        "host_wall_time_seconds": 17.632416400010698,
+        "peak_rss_bytes": 307539968,
+        "matrix_relation_count": 1001,
+        "relations_evaluated_count": 1001,
+        "relation_ids_sha256": "5801bd60d1b06ab3ee89530581cbd59aa14229a71ae8afdba1608eac21055d83",
+        "evaluated_relation_ids_sha256": "e7cfc18a058c3f8cfd371a556079b980a16f1e6b5ef4d649689cb6cbfc15d69a",
+        "nonzero_residual_count": 0,
+        "reconstructed_transitions_checked": 165,
+        "factor_domain": {
+          "raw_required_factor_count": 231,
+          "effective_irreducible_factor_count": 15,
+          "effective_irreducible_factors": [
+            "b*c - a*d",
+            "b*c - a*d + a + d - 1",
+            "b*c*l2^2 - a*d*l2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 + 4*l2 - 1",
+            "b*c*l2^2*l3^2 - a*d*l2^2*l3^2 + 3*a*l2^2*l3^2 + 3*d*l2^2*l3^2 + a*l2^2*l3 + d*l2^2*l3 - 3*a*l2*l3^2 - 3*d*l2*l3^2 - 9*l2^2*l3^2 - 6*l2^2*l3 + 18*l2*l3^2 - l2^2 + 6*l2*l3 - 9*l3^2",
+            "b*c*l2^2*l3^2*l4^2 - a*d*l2^2*l3^2*l4^2 + 4*a*l2^2*l3^2*l4^2 + 4*d*l2^2*l3^2*l4^2 - a*l2^2*l3^2*l4 - d*l2^2*l3^2*l4 + 4*a*l2^2*l3*l4^2 + 4*d*l2^2*l3*l4^2 - 6*a*l2*l3^2*l4^2 - 6*d*l2*l3^2*l4^2 - 16*l2^2*l3^2*l4^2 + 8*l2^2*l3^2*l4 - 32*l2^2*l3*l4^2 + 48*l2*l3^2*l4^2 - l2^2*l3^2 + 8*l2^2*l3*l4 - 12*l2*l3^2*l4 - 16*l2^2*l4^2 + 48*l2*l3*l4^2 - 36*l3^2*l4^2",
+            "f*g - e*h",
+            "l2",
+            "l2 - 1",
+            "l2 - l3",
+            "l2*l3 + l2 - 2*l3",
+            "l2*l3 - 2*l2*l4 + l3*l4",
+            "l2*l3*l4 - l2*l3 + 3*l2*l4 - 3*l3*l4",
+            "l3",
+            "l3 - l4",
+            "l4"
+          ],
+          "effective_irreducible_factor_ids_sha256": "3d680ea74ca81e7716aaf9112d470af5e95a5e6980e49fb8b5412acc49facb31",
+          "all_source_factorisations_reconstructed_exactly": true,
+          "zero_required_factor": false
+        }
+      },
+      "coverage_certificate": {
+        "path": "certificates/d2_saturation/v0.3.5_direct_operator_system.json",
+        "sha256": "c19c00438f94c55fa3d5a7662cbb425a170f497d25698fa050d245b97714d837",
+        "semantic_digest_sha256": "6667681124ab6f482ddaa65ad62d08046995553899c0b7fd37f6573fecddb74e",
+        "system_path": "results/v0.3.4_polynomial_systems.json",
+        "system_sha256": "018c1dccc4e08102c6de1fbdd9baf6e8e89dcf818e302ebb175e23e59f5a1283",
+        "compact_arena_path": "certificates/d2_saturation/v0.3.5_compact_expression_arena.json.gz",
+        "compact_arena_sha256": "e520e4e42f5b7c0281d70a46c8d4ff9899d5260350cd9ea0db320200f790c9ae",
+        "direct_source_artifact": "results/v0.3.3_q_only_presentation_n4.json",
+        "direct_source_artifact_sha256": "0c5cbb1e70be51c27feba60189b5c5922e83f7eba1366994ee2e50c5f0639781",
+        "direct_source_binding_valid": true,
+        "system_schema_and_status_valid": true,
+        "compact_arena_source_binding_valid": true,
+        "compact_arena_counts_consistent": true,
+        "compact_arena_target_indices_valid": true,
+        "direct_matrix_relation_count": 1001,
+        "relations_represented_in_nonzero_scalar_numerators": 979,
+        "identically_zero_path_relation_count": 22,
+        "identically_zero_path_relation_ids_sha256": "2c821e4b99bb88d9c5ed4401220c61956461300e0663d08bd84ff3754e3300d6",
+        "frozen_canonical_scalar_numerator_count": 2564,
+        "all_frozen_provenance_relation_ids_covered": true,
+        "reconstructed_transition_predicate_count": 165,
+        "explicit_inverse_site_count": 26,
+        "canonical_equation_count": 2564,
+        "canonical_equation_ids_sha256": "4c6549b8a1c0b858300c51cf0231afd2fab2ae7f096ac6458fc09f7b7aa2bbec",
+        "canonical_expression_ids_sha256": "2ea1fe6a59aa8443def8dd5af71ee27a1d48287ae30b4723dc383dc549300725",
+        "provenance_entry_count": 3916,
+        "provenance_entries_sha256": "e213cec9099c4692e05409210a200b0f3ecc9669be1d5315525fdc17a7f2aa56",
+        "represented_relation_count": 979,
+        "represented_relations_have_all_four_entries": true,
+        "represented_relations_are_exact_complement_of_zero_paths": true,
+        "zero_path_relations_are_exact_path_family": true,
+        "all_provenance_v033_digests_cross_bound": true,
+        "all_representative_expression_ids_are_provenance_originals": true,
+        "provenance_errors": [],
+        "compact_arena_reference_complete": true,
+        "missing_compact_arena_expression_ids": [],
+        "proof_rule": "Every one of the 2,564 frozen canonical numerators has compiler provenance in one of 3,916 matrix entries of the 979 represented relations. The remaining 22 of all 1,001 direct relations are independently checked to be exactly the path-consistency family. Direct relations and scalar provenance are cross-bound by their v0.3.3 digests; every representative expression is a recorded provenance original; and the compact arena is hash-bound to the frozen polynomial system. Therefore an exact zero residual for every one of the 1,001 directly evaluated matrix relations forces all 2,564 frozen canonical numerators to vanish.",
+        "passed": true
+      },
+      "passed": true
+    },
+    "DERIVED_APPENDIX_QN_BRANCH": {
+      "direct_relation_evaluation": {
+        "path": "certificates/d2_saturation/scalar_chain_v037/budget-f192a37b97e70c84/derived_direct_39573db5ac9d74acb0374d20.json",
+        "sha256": "f850849d068c4102a3f958d306d78c74cea301e0dafb4dfbfbb3743a50859893",
+        "cached": false,
+        "passed": true,
+        "exit_status": "COMPLETED",
+        "budget_file_sha256": "f192a37b97e70c84aeae594db75832bdcf632bf00a78009ff45f09b1bcca2e50",
+        "request_semantic_digest_sha256": "39573db5ac9d74acb0374d20ad7aaf539e46cc9a1e86acbf8ee796b4c91b245c",
+        "backend_versions": {
+          "python": "3.12.3",
+          "sage": "10.9",
+          "singular": "Singular for x86_64-Linux version 4.4.1 (44100, 64 bit) Jan 2025"
+        },
+        "variable_count": 7,
+        "variables": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "l2",
+          "l3",
+          "l4"
+        ],
+        "expression_source": "DIRECT_REDUCED_OPERATOR_WORDS",
+        "proof_eligible": false,
+        "identity_proof_eligible": true,
+        "direct_system_file_sha256": "c19c00438f94c55fa3d5a7662cbb425a170f497d25698fa050d245b97714d837",
+        "direct_system_semantic_digest_sha256": "6667681124ab6f482ddaa65ad62d08046995553899c0b7fd37f6573fecddb74e",
+        "wall_time_seconds": 7.64332807098981,
+        "host_wall_time_seconds": 11.854152499930933,
+        "peak_rss_bytes": 308162560,
+        "matrix_relation_count": 1001,
+        "relations_evaluated_count": 1001,
+        "relation_ids_sha256": "1f3e2ff6753a6f1e3962a3205fb927e15d1a8c5a772b7ecdb1baa356dbb31ac3",
+        "evaluated_relation_ids_sha256": "e8f11d959c31ab5ea87060c2e2f5b2c5727b29111916f771229bd24ed29b8044",
+        "nonzero_residual_count": 0,
+        "reconstructed_transitions_checked": 165,
+        "factor_domain": {
+          "raw_required_factor_count": 230,
+          "effective_irreducible_factor_count": 14,
+          "effective_irreducible_factors": [
+            "b*c - a*d",
+            "b*c - a*d + a + d - 1",
+            "b*c*l2^2 - a*d*l2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 + 4*l2 - 1",
+            "b*c*l2^2*l3^2 - a*d*l2^2*l3^2 + 3*a*l2^2*l3^2 + 3*d*l2^2*l3^2 + a*l2^2*l3 + d*l2^2*l3 - 3*a*l2*l3^2 - 3*d*l2*l3^2 - 9*l2^2*l3^2 - 6*l2^2*l3 + 18*l2*l3^2 - l2^2 + 6*l2*l3 - 9*l3^2",
+            "b*c*l2^2*l3^2*l4^2 - a*d*l2^2*l3^2*l4^2 + 4*a*l2^2*l3^2*l4^2 + 4*d*l2^2*l3^2*l4^2 - a*l2^2*l3^2*l4 - d*l2^2*l3^2*l4 + 4*a*l2^2*l3*l4^2 + 4*d*l2^2*l3*l4^2 - 6*a*l2*l3^2*l4^2 - 6*d*l2*l3^2*l4^2 - 16*l2^2*l3^2*l4^2 + 8*l2^2*l3^2*l4 - 32*l2^2*l3*l4^2 + 48*l2*l3^2*l4^2 - l2^2*l3^2 + 8*l2^2*l3*l4 - 12*l2*l3^2*l4 - 16*l2^2*l4^2 + 48*l2*l3*l4^2 - 36*l3^2*l4^2",
+            "l2",
+            "l2 - 1",
+            "l2 - l3",
+            "l2*l3 + l2 - 2*l3",
+            "l2*l3 - 2*l2*l4 + l3*l4",
+            "l2*l3*l4 - l2*l3 + 3*l2*l4 - 3*l3*l4",
+            "l3",
+            "l3 - l4",
+            "l4"
+          ],
+          "effective_irreducible_factor_ids_sha256": "beafa65fb388a74ff7bfe3e8818552a0e69d925aae266aec5a0e9410f9d8a52b",
+          "all_source_factorisations_reconstructed_exactly": true,
+          "zero_required_factor": false
+        }
+      },
+      "coverage_certificate": {
+        "path": "certificates/d2_saturation/v0.3.5_direct_operator_system.json",
+        "sha256": "c19c00438f94c55fa3d5a7662cbb425a170f497d25698fa050d245b97714d837",
+        "semantic_digest_sha256": "6667681124ab6f482ddaa65ad62d08046995553899c0b7fd37f6573fecddb74e",
+        "system_path": "results/v0.3.4_polynomial_systems.json",
+        "system_sha256": "018c1dccc4e08102c6de1fbdd9baf6e8e89dcf818e302ebb175e23e59f5a1283",
+        "compact_arena_path": "certificates/d2_saturation/v0.3.5_compact_expression_arena.json.gz",
+        "compact_arena_sha256": "e520e4e42f5b7c0281d70a46c8d4ff9899d5260350cd9ea0db320200f790c9ae",
+        "direct_source_artifact": "results/v0.3.3_q_only_presentation_n4.json",
+        "direct_source_artifact_sha256": "0c5cbb1e70be51c27feba60189b5c5922e83f7eba1366994ee2e50c5f0639781",
+        "direct_source_binding_valid": true,
+        "system_schema_and_status_valid": true,
+        "compact_arena_source_binding_valid": true,
+        "compact_arena_counts_consistent": true,
+        "compact_arena_target_indices_valid": true,
+        "direct_matrix_relation_count": 1001,
+        "relations_represented_in_nonzero_scalar_numerators": 979,
+        "identically_zero_path_relation_count": 22,
+        "identically_zero_path_relation_ids_sha256": "f85c595634516397ecaa2958e28a32efaadcd73cfd8298c6b47ecd0f0e85f028",
+        "frozen_canonical_scalar_numerator_count": 2564,
+        "all_frozen_provenance_relation_ids_covered": true,
+        "reconstructed_transition_predicate_count": 165,
+        "explicit_inverse_site_count": 26,
+        "canonical_equation_count": 2564,
+        "canonical_equation_ids_sha256": "62cb07c6c18c636528c6bf0a658ae0282b93062ba898fd810a924362a6f21731",
+        "canonical_expression_ids_sha256": "1ae521025524f4dae02bc2d96ef9dafa19cec9e7b63cc4829b4a103dd7297842",
+        "provenance_entry_count": 3916,
+        "provenance_entries_sha256": "29f127fe2b7ae71a6432fc13ba765e37f95e7aa8f5acc947d3da2b0674183fcb",
+        "represented_relation_count": 979,
+        "represented_relations_have_all_four_entries": true,
+        "represented_relations_are_exact_complement_of_zero_paths": true,
+        "zero_path_relations_are_exact_path_family": true,
+        "all_provenance_v033_digests_cross_bound": true,
+        "all_representative_expression_ids_are_provenance_originals": true,
+        "provenance_errors": [],
+        "compact_arena_reference_complete": true,
+        "missing_compact_arena_expression_ids": [],
+        "proof_rule": "Every one of the 2,564 frozen canonical numerators has compiler provenance in one of 3,916 matrix entries of the 979 represented relations. The remaining 22 of all 1,001 direct relations are independently checked to be exactly the path-consistency family. Direct relations and scalar provenance are cross-bound by their v0.3.3 digests; every representative expression is a recorded provenance original; and the compact arena is hash-bound to the frozen polynomial system. Therefore an exact zero residual for every one of the 1,001 directly evaluated matrix relations forces all 2,564 frozen canonical numerators to vanish.",
+        "passed": true
+      },
+      "passed": true
+    }
+  },
+  "literal_identity": {
+    "all_1001_matrix_relations_directly_evaluated_and_zero": true,
+    "all_2564_canonical_numerators_deduced_zero_from_direct_relations_and_coverage": true,
+    "proof_routes": [
+      "ACTUAL_1001_DIRECT_MATRIX_RELATION_EVALUATION",
+      "EXHAUSTIVE_FROZEN_COMPILER_PROVENANCE_COVERAGE"
+    ],
+    "distinct_proof_components": true,
+    "distinct_evaluation_routes": false,
+    "independent_implementation": false,
+    "shared_backend_and_compiler_lineage": true,
+    "Q5_polynomial_coordinates": 4,
+    "Q5_equality_constraints_after_scalar_chain_substitution": 0,
+    "localised_nonzero_factor_count": 15,
+    "localised_nonzero_factors": [
+      "b*c - a*d",
+      "b*c - a*d + a + d - 1",
+      "b*c*l2^2 - a*d*l2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 + 4*l2 - 1",
+      "b*c*l2^2*l3^2 - a*d*l2^2*l3^2 + 3*a*l2^2*l3^2 + 3*d*l2^2*l3^2 + a*l2^2*l3 + d*l2^2*l3 - 3*a*l2*l3^2 - 3*d*l2*l3^2 - 9*l2^2*l3^2 - 6*l2^2*l3 + 18*l2*l3^2 - l2^2 + 6*l2*l3 - 9*l3^2",
+      "b*c*l2^2*l3^2*l4^2 - a*d*l2^2*l3^2*l4^2 + 4*a*l2^2*l3^2*l4^2 + 4*d*l2^2*l3^2*l4^2 - a*l2^2*l3^2*l4 - d*l2^2*l3^2*l4 + 4*a*l2^2*l3*l4^2 + 4*d*l2^2*l3*l4^2 - 6*a*l2*l3^2*l4^2 - 6*d*l2*l3^2*l4^2 - 16*l2^2*l3^2*l4^2 + 8*l2^2*l3^2*l4 - 32*l2^2*l3*l4^2 + 48*l2*l3^2*l4^2 - l2^2*l3^2 + 8*l2^2*l3*l4 - 12*l2*l3^2*l4 - 16*l2^2*l4^2 + 48*l2*l3*l4^2 - 36*l3^2*l4^2",
+      "f*g - e*h",
+      "l2",
+      "l2 - 1",
+      "l2 - l3",
+      "l2*l3 + l2 - 2*l3",
+      "l2*l3 - 2*l2*l4 + l3*l4",
+      "l2*l3*l4 - l2*l3 + 3*l2*l4 - 3*l3*l4",
+      "l3",
+      "l3 - l4",
+      "l4"
+    ]
+  },
+  "derived_comparison": {
+    "all_1001_matrix_relations_directly_evaluated_and_zero": true,
+    "all_2564_canonical_numerators_deduced_zero_from_direct_relations_and_coverage": true,
+    "proof_routes": [
+      "ACTUAL_1001_DIRECT_MATRIX_RELATION_EVALUATION",
+      "EXHAUSTIVE_FROZEN_COMPILER_PROVENANCE_COVERAGE"
+    ],
+    "distinct_proof_components": true,
+    "distinct_evaluation_routes": false,
+    "independent_implementation": false,
+    "shared_backend_and_compiler_lineage": true,
+    "scalar_chain_base_exists_on_recorded_open_domain": true,
+    "noncommutative_solution_on_scalar_chain": false
+  },
+  "claim_boundary": "The lemma is an exact identity on the open locus where every recorded specialised inverse/transition factor is nonzero. The 2,564-numerator statement is deduced from actual direct evaluation of all 1,001 matrix relations plus exhaustive verification of the frozen compiler provenance map; it is not reported as a second independent implementation. No assertion is made on excluded denominator loci.",
+  "exact_numeric_distinction": "EXACT_QQ_DIRECT_RELATION_EVALUATION_PLUS_EXHAUSTIVE_FROZEN_COMPILER_COVERAGE; no finite-field result is used",
+  "global_scientific_verdict": "FINAL_THEORY_OPEN",
+  "unresolved_components": [],
+  "passed": true,
+  "verdict": "LEMMA_GENERAL_SCALAR_CHAIN_FIBER_EXACT",
+  "semantic_digest_sha256": "fdad4cca5d2b00b84ad9a39daae468f6bc968c00b9e8ed1d3ccfcde7fb52fbdf"
+}
