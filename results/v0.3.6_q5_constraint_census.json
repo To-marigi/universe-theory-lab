@@ -1,0 +1,849 @@
+{
+  "schema_version": "final-theory-q5-constraint-census-v0.3.6",
+  "branch": "codex/final-theory-v0.3.6-q5-closure-20260729",
+  "finite_scope": "frozen source stages n<=4",
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+  "source_artifacts": {
+    "certificates/d2_saturation/v0.3.5_direct_operator_system.json": "c19c00438f94c55fa3d5a7662cbb425a170f497d25698fa050d245b97714d837",
+    "results/v0.3.4_polynomial_systems.json": "018c1dccc4e08102c6de1fbdd9baf6e8e89dcf818e302ebb175e23e59f5a1283",
+    "certificates/d2_saturation/v0.3.5_compact_expression_arena.json.gz": "e520e4e42f5b7c0281d70a46c8d4ff9899d5260350cd9ea0db320200f790c9ae",
+    "results/v0.3.5_explicit_rational_witness.json": "755bbe3743ced5d6594671f45733f1004bc88de1916e7fbeb9454444bbf8c300"
+  },
+  "witness_reconfirmation": {
+    "source": "results/v0.3.5_explicit_rational_witness.json",
+    "source_sha256": "755bbe3743ced5d6594671f45733f1004bc88de1916e7fbeb9454444bbf8c300",
+    "Q_matrices": {
+      "Q_1": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "2"
+        ]
+      ],
+      "Q_2": [
+        [
+          "2",
+          "2"
+        ],
+        [
+          "2",
+          "4"
+        ]
+      ],
+      "Q_3": [
+        [
+          "3",
+          "3"
+        ],
+        [
+          "3",
+          "6"
+        ]
+      ],
+      "Q_4": [
+        [
+          "4",
+          "4"
+        ],
+        [
+          "4",
+          "8"
+        ]
+      ],
+      "Q_5": [
+        [
+          "6",
+          "5"
+        ],
+        [
+          "6",
+          "10"
+        ]
+      ]
+    },
+    "determinants": {
+      "Q_1": "1",
+      "Q_2": "4",
+      "Q_3": "9",
+      "Q_4": "16",
+      "Q_5": "30"
+    },
+    "R_n_equals_Q1_inverse_Qn": {
+      "R_1": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "R_2": [
+        [
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "R_3": [
+        [
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "3"
+        ]
+      ],
+      "R_4": [
+        [
+          "4",
+          "0"
+        ],
+        [
+          "0",
+          "4"
+        ]
+      ],
+      "R_5": [
+        [
+          "6",
+          "0"
+        ],
+        [
+          "0",
+          "5"
+        ]
+      ]
+    },
+    "pairwise_commutators": [
+      {
+        "pair": [
+          "Q_1",
+          "Q_2"
+        ],
+        "matrix": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "involves_Q5": false
+      },
+      {
+        "pair": [
+          "Q_1",
+          "Q_3"
+        ],
+        "matrix": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "involves_Q5": false
+      },
+      {
+        "pair": [
+          "Q_1",
+          "Q_4"
+        ],
+        "matrix": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "involves_Q5": false
+      },
+      {
+        "pair": [
+          "Q_1",
+          "Q_5"
+        ],
+        "matrix": [
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "2",
+            "-1"
+          ]
+        ],
+        "zero": false,
+        "involves_Q5": true
+      },
+      {
+        "pair": [
+          "Q_2",
+          "Q_3"
+        ],
+        "matrix": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "involves_Q5": false
+      },
+      {
+        "pair": [
+          "Q_2",
+          "Q_4"
+        ],
+        "matrix": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "involves_Q5": false
+      },
+      {
+        "pair": [
+          "Q_2",
+          "Q_5"
+        ],
+        "matrix": [
+          [
+            "2",
+            "-2"
+          ],
+          [
+            "4",
+            "-2"
+          ]
+        ],
+        "zero": false,
+        "involves_Q5": true
+      },
+      {
+        "pair": [
+          "Q_3",
+          "Q_4"
+        ],
+        "matrix": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "zero": true,
+        "involves_Q5": false
+      },
+      {
+        "pair": [
+          "Q_3",
+          "Q_5"
+        ],
+        "matrix": [
+          [
+            "3",
+            "-3"
+          ],
+          [
+            "6",
+            "-3"
+          ]
+        ],
+        "zero": false,
+        "involves_Q5": true
+      },
+      {
+        "pair": [
+          "Q_4",
+          "Q_5"
+        ],
+        "matrix": [
+          [
+            "4",
+            "-4"
+          ],
+          [
+            "8",
+            "-4"
+          ]
+        ],
+        "zero": false,
+        "involves_Q5": true
+      }
+    ],
+    "Q1_through_Q4_pairwise_commutative": true,
+    "nonzero_commutator_pairs": [
+      [
+        "Q_1",
+        "Q_5"
+      ],
+      [
+        "Q_2",
+        "Q_5"
+      ],
+      [
+        "Q_3",
+        "Q_5"
+      ],
+      [
+        "Q_4",
+        "Q_5"
+      ]
+    ],
+    "every_nonzero_commutator_involves_Q5": true,
+    "representative_Q1_Q5_commutator": [
+      [
+        "1",
+        "-1"
+      ],
+      [
+        "2",
+        "-1"
+      ]
+    ],
+    "passed": true
+  },
+  "polynomial_system_comparison": {
+    "DERIVED_APPENDIX_QN_BRANCH": {
+      "generator_inventory": 4,
+      "generator_ids": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_4"
+      ],
+      "scalar_unknowns": 16,
+      "relation_count": 1001,
+      "canonical_numerator_equation_count": 2564,
+      "relation_family_counts": {
+        "CPOBC": 700,
+        "EQ112_PATH_CONSISTENCY": 25,
+        "LOCAL_OPERATOR_GC": 255,
+        "STRONG_OPERATOR_MSR": 21
+      }
+    },
+    "LITERAL_PRINTED_QN_PLUS_1_BRANCH": {
+      "generator_inventory": 5,
+      "generator_ids": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_4",
+        "Q_5"
+      ],
+      "scalar_unknowns": 20,
+      "relation_count": 1001,
+      "canonical_numerator_equation_count": 2564,
+      "relation_family_counts": {
+        "CPOBC": 700,
+        "EQ112_PATH_CONSISTENCY": 25,
+        "LOCAL_OPERATOR_GC": 255,
+        "STRONG_OPERATOR_MSR": 21
+      }
+    }
+  },
+  "dependency_method": {
+    "direct": "literal Q_i tokens in each reduced operator word",
+    "transitive": "recursive closure through all 92 frozen dependency-DAG nodes",
+    "constraining": "a matrix relation is counted only when at least one nonzero canonical scalar numerator has a q5_ab symbol and cites that relation in provenance",
+    "unknown_dependency_tokens": [],
+    "compact_arena": {
+      "path": "certificates/d2_saturation/v0.3.5_compact_expression_arena.json.gz",
+      "sha256": "e520e4e42f5b7c0281d70a46c8d4ff9899d5260350cd9ea0db320200f790c9ae",
+      "schema_version": "final-theory-d2-compact-solver-arena-v0.3.5",
+      "node_count": 371912,
+      "target_count": 2692
+    }
+  },
+  "dependency_DAG_census": {
+    "node_count": 92,
+    "node_kind_counts": {
+      "EQ107_EQ108_LINEAR_EXPRESSION": 22,
+      "EQ112_CONJUGATE": 20,
+      "EQ112_CONJUGATE_INVERSE": 20,
+      "FORMAL_TWO_SIDED_INVERSE_AUXILIARY": 22,
+      "Q_GENERATOR": 4,
+      "Q_GENERATOR_INVERSE": 4
+    },
+    "cycle_detected": false,
+    "branch_relation_dependency_set_distributions": {
+      "DERIVED_APPENDIX_QN_BRANCH": {
+        "Q_1,Q_2": 1,
+        "Q_1,Q_2,Q_3": 50,
+        "Q_1,Q_2,Q_3,Q_4": 932,
+        "Q_1,Q_2,Q_4": 6,
+        "Q_1,Q_3,Q_4": 12
+      },
+      "LITERAL_PRINTED_QN_PLUS_1_BRANCH": {
+        "Q_1,Q_2": 1,
+        "Q_1,Q_2,Q_3": 49,
+        "Q_1,Q_2,Q_3,Q_4": 908,
+        "Q_1,Q_2,Q_3,Q_5": 24,
+        "Q_1,Q_2,Q_4": 7,
+        "Q_1,Q_3,Q_4": 12
+      }
+    }
+  },
+  "literal_relation_family_census": {
+    "CPOBC": {
+      "total_matrix_relations": 700,
+      "relations_with_direct_Q5_token": 0,
+      "relations_with_transitive_Q5_dependency": 0,
+      "nonzero_matrix_relations_constraining_Q5": 0,
+      "canonical_scalar_numerators_depending_on_Q5": 0
+    },
+    "EQ112_PATH_CONSISTENCY": {
+      "total_matrix_relations": 25,
+      "relations_with_direct_Q5_token": 24,
+      "relations_with_transitive_Q5_dependency": 24,
+      "nonzero_matrix_relations_constraining_Q5": 3,
+      "canonical_scalar_numerators_depending_on_Q5": 12
+    },
+    "LOCAL_OPERATOR_GC": {
+      "total_matrix_relations": 255,
+      "relations_with_direct_Q5_token": 0,
+      "relations_with_transitive_Q5_dependency": 0,
+      "nonzero_matrix_relations_constraining_Q5": 0,
+      "canonical_scalar_numerators_depending_on_Q5": 0
+    },
+    "STRONG_OPERATOR_MSR": {
+      "total_matrix_relations": 21,
+      "relations_with_direct_Q5_token": 0,
+      "relations_with_transitive_Q5_dependency": 0,
+      "nonzero_matrix_relations_constraining_Q5": 0,
+      "canonical_scalar_numerators_depending_on_Q5": 0
+    }
+  },
+  "Q5_relation_ids": {
+    "direct_or_transitive_occurrence": [
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-0006:001",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:002",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:003",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:004",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:005",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:006",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:007",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:008",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:009",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:010",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:011",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:012",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:013",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:014",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:015",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:016",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-0048:017",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004c:018",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:019",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:020",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:021",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-00cc:022",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-00ce:023",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-088e:024"
+    ],
+    "identically_zero_after_exact_reduction": [
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-0006:001",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:002",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:003",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:004",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:005",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:006",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:007",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:008",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:009",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:010",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:011",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:012",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:013",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:014",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:015",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-000e:016",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-0048:017",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:020",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-00cc:022",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-00ce:023",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-088e:024"
+    ],
+    "nonzero_relations_constraining_Q5": [
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004c:018",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:019",
+      "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:021"
+    ]
+  },
+  "Q5_scalar_numerator_equations": [
+    {
+      "equation_id": "numerator-01b4296f63cf79031841",
+      "canonical_expression_id": "e:01b4296f63cf790318419ea65d61cdbfba1c899adac6ba2ee822654832345572",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:019",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-0e62e2ee05be917689d3",
+      "canonical_expression_id": "e:0e62e2ee05be917689d331a5828bfd4b3dbd790154d29fb6f4656def7ba48e57",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:021",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-1049b3a2195ec1d6e68f",
+      "canonical_expression_id": "e:1049b3a2195ec1d6e68f30fde6003e204e86edbc60dca677bb79c144251505d1",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:019",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-1ac85723295d42842ebd",
+      "canonical_expression_id": "e:1ac85723295d42842ebd7a72b14c909b519ae1c95f448afb5b3f1bca7f0f4131",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:021",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-1f1ba7da6b300275203d",
+      "canonical_expression_id": "e:1f1ba7da6b300275203d0458a29fe1700d18f2cee0bfd7ae3fc678448058936a",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004c:018",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-2542e0e6c7dd9ceff48e",
+      "canonical_expression_id": "e:2542e0e6c7dd9ceff48e57dd64a981e18f797460513006057385f0cc5e8d0edf",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:021",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-28782ebf74e0814262e2",
+      "canonical_expression_id": "e:28782ebf74e0814262e21c7ca995894896c0cda7a9c50ff79abdd0e76b724e1e",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:019",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-306d81d390a246eeed8b",
+      "canonical_expression_id": "e:306d81d390a246eeed8b21d2b62d1e618b737a6e0bf3307aaab0f3965de5b60b",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:019",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-36a86dc7f1f4f31887ff",
+      "canonical_expression_id": "e:36a86dc7f1f4f31887ff8145e191f855fd425deb1ebebc845c7b4efd2472111e",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004c:018",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-7847784207c77b6d5cd9",
+      "canonical_expression_id": "e:7847784207c77b6d5cd90d419549a51931d797a4d8f51d94b4719722fcc84aca",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004c:018",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-8efa8941b6bfe300e14e",
+      "canonical_expression_id": "e:8efa8941b6bfe300e14ef0bd3fbb95cfb8fab139dce92734ca586c40e427456e",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:021",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "equation_id": "numerator-9a139c8ae4654f9aae0b",
+      "canonical_expression_id": "e:9a139c8ae4654f9aae0b8bcea7a035ad85031e39936a944dcae9f1542a35d25b",
+      "Q_generator_dependencies": [
+        "Q_1",
+        "Q_2",
+        "Q_3",
+        "Q_5"
+      ],
+      "provenance": [
+        {
+          "relation_id": "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004c:018",
+          "family": "EQ112_PATH_CONSISTENCY",
+          "matrix_entry": [
+            1,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "Q5_constraining_relation_coverage": {
+    "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004c:018": {
+      "family": "EQ112_PATH_CONSISTENCY",
+      "matrix_entries": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "canonical_scalar_equation_ids": [
+        "numerator-1f1ba7da6b300275203d",
+        "numerator-36a86dc7f1f4f31887ff",
+        "numerator-7847784207c77b6d5cd9",
+        "numerator-9a139c8ae4654f9aae0b"
+      ]
+    },
+    "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:019": {
+      "family": "EQ112_PATH_CONSISTENCY",
+      "matrix_entries": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "canonical_scalar_equation_ids": [
+        "numerator-01b4296f63cf79031841",
+        "numerator-1049b3a2195ec1d6e68f",
+        "numerator-28782ebf74e0814262e2",
+        "numerator-306d81d390a246eeed8b"
+      ]
+    },
+    "eq113:LITERAL_PRINTED_QN_PLUS_1_BRANCH:p4-004e:021": {
+      "family": "EQ112_PATH_CONSISTENCY",
+      "matrix_entries": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "canonical_scalar_equation_ids": [
+        "numerator-0e62e2ee05be917689d3",
+        "numerator-1ac85723295d42842ebd",
+        "numerator-2542e0e6c7dd9ceff48e",
+        "numerator-8efa8941b6bfe300e14e"
+      ]
+    }
+  },
+  "headline_counts": {
+    "literal_matrix_relations_total": 1001,
+    "literal_canonical_scalar_numerators_total": 2564,
+    "relations_with_direct_Q5_token": 24,
+    "relations_with_transitive_Q5_dependency": 24,
+    "Q5_relations_identically_zero_after_exact_reduction": 21,
+    "total_relations_constraining_Q5": 3,
+    "canonical_scalar_numerators_constraining_Q5": 12
+  },
+  "single_reported_total_relations_constraining_Q5": 3,
+  "interpretation": "Q5 occurs in 24 literal Eq.(113) path records, but 21 of those are exact identities. Exactly 3 nonzero matrix relations, scalarised to 12 canonical numerator equations, constrain Q5. No CPOBC, local-GC, or strong-MSR relation depends on Q5.",
+  "exact_numeric_distinction": "EXACT_STRUCTURAL_AND_RATIONAL_CENSUS",
+  "unresolved_components": [],
+  "passed": true,
+  "verdict": "V036_Q5_CONSTRAINT_CENSUS_COMPLETE",
+  "semantic_digest_sha256": "f90d8eba6f712782785b8003c99489de9770445dfb6529c9746c934d943426e8"
+}
