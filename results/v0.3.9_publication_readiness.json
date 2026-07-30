@@ -36,12 +36,32 @@
       "scope": "pre-existing d2_sage_backend_v035.py typing debt, untouched by v0.3.9"
     }
   },
-  "blocking_components": [
+  "hosted_ci_verification": {
+    "status": "OBSERVED_GREEN",
+    "run_id": 30581796295,
+    "run_url": "https://github.com/To-marigi/universe-theory-lab/actions/runs/30581796295",
+    "head_sha": "28680d92a939dc5348667ff7a6c4ad7cac3aa2c6",
+    "observed_on": "2026-07-31",
+    "runner": "ubuntu-latest, Python 3.12",
+    "workflow_conclusion": "success",
+    "job_lint_and_tests": "success",
+    "pytest": {
+      "passed": 355,
+      "failed": 0
+    },
+    "job_mypy_advisory": "failure",
+    "portability_evidence": "The workflow contains no step that materialises a local head for the frozen v0.3 branch; that step was removed in this release. The v0.3 baseline audit nevertheless passed in a clean CI clone, which is the hosted counterpart of the fresh-clone check recorded under local_verification.",
+    "boundary": "This run observed the tree at 28680d92. The present artifact is a later commit, so its own CI run is a separate observation."
+  },
+  "resolved_blocking_components": [
     {
       "id": "V039_CI_NOT_YET_OBSERVED_GREEN",
-      "required_action": "Push the branch and confirm the workflow, which now runs scripts/reproduce_v039.py and no longer materialises the frozen branch, is green on GitHub.",
-      "automation_boundary": "Local verification is not evidence of a hosted CI run."
-    },
+      "resolved_on": "2026-07-31",
+      "evidence": "GitHub Actions run 30581796295 on 28680d92a939dc5348667ff7a6c4ad7cac3aa2c6 concluded success with 355 tests passed and no frozen-branch materialisation step.",
+      "automation_boundary": "Local verification is not evidence of a hosted CI run; the run id above is."
+    }
+  ],
+  "blocking_components": [
     {
       "id": "PERMANENT_PUBLICATION_DECISION_IS_HUMAN_OWNED",
       "applies_to": "Zenodo deposit",
