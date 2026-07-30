@@ -16,6 +16,35 @@ Git attributes require LF for tracked text and mark known binary formats as
 binary.  The regression test rejects CRLF and lone carriage returns in tracked
 text independently of `core.autocrlf`.
 
+## Prerequisite: materialise the frozen v0.3 branch
+
+`git clone` creates a local head only for the branch it checks out, so a fresh
+clone has `refs/remotes/origin/codex/final-theory-v0.3-novelty-first-20260728`
+but no `refs/heads/...` of that name.  `baseline_audit_v0_3_1` resolves the
+frozen branch with a bare `git rev-parse`, which fails in that state.  The
+symptom is `ENGINEERING_STATUS: ENGINEERING_FAIL` and two failing tests,
+`test_audit_v031.py::test_v03_baseline_is_immutable` and
+`test_v031.py::test_v031_gate_statuses_and_claim_ceiling`.
+
+Create the local head once, after cloning with full history:
+
+```console
+git clone https://github.com/To-marigi/universe-theory-lab.git
+cd universe-theory-lab
+git branch --no-track codex/final-theory-v0.3-novelty-first-20260728 \
+  refs/remotes/origin/codex/final-theory-v0.3-novelty-first-20260728
+```
+
+A shallow clone is not sufficient for any of the baseline audits: they resolve
+the v0.2 and v0.3 production and freeze commits, their ancestry, and both
+annotated freeze tags.  Clone with full history, or fetch it before verifying.
+
+This prerequisite is a limitation of the audit, not of the release.  It is
+recorded here rather than worked around silently.  Removing it requires the
+audit to accept remote-tracking refs, which is a behavioural change and is
+therefore deferred to v0.3.9; v0.3.8 is a line-ending-only migration and
+carries no behavioural change.
+
 ## Verify
 
 Run the complete compatibility and scientific regression:

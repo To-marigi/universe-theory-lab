@@ -43,6 +43,21 @@ jobs:
         with:
           fetch-depth: 0
 
+      # `git clone` and actions/checkout create a local head only for the ref
+      # they check out, so audit_v031.py's bare `rev-parse` of the frozen v0.3
+      # branch fails in any clone. This step states that prerequisite instead of
+      # hiding it, and fails loudly if the remote-tracking ref is absent, which
+      # would mean the branch was never published. The portability fix that
+      # removes this prerequisite is deferred to v0.3.9: v0.3.8 is a
+      # line-ending-only migration and must not carry a behavioural change.
+      - name: Materialise the frozen v0.3 branch as a local head
+        run: |
+          set -euo pipefail
+          BRANCH=codex/final-theory-v0.3-novelty-first-20260728
+          git show-ref --verify --quiet "refs/remotes/origin/$BRANCH"
+          git branch --no-track "$BRANCH" "refs/remotes/origin/$BRANCH"
+          git rev-parse --verify "$BRANCH^{commit}"
+
       - name: Install uv
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
