@@ -28,12 +28,33 @@
       "scope": "pre-existing d2_sage_backend_v035.py typing debt"
     }
   },
-  "blocking_components": [
+  "hosted_ci_verification": {
+    "status": "OBSERVED_GREEN",
+    "run_id": 30547097249,
+    "run_url": "https://github.com/To-marigi/universe-theory-lab/actions/runs/30547097249",
+    "head_sha": "bd5e5f60d8db141c4a5055a66149fd7290922fa9",
+    "observed_on": "2026-07-30",
+    "runner": "ubuntu-latest, Python 3.12",
+    "workflow_conclusion": "success",
+    "job_lint_and_tests": "success",
+    "pytest": {
+      "passed": 341,
+      "failed": 0
+    },
+    "job_mypy_advisory": "failure",
+    "mypy_advisory_note": "Job-level continue-on-error keeps the advisory job from blocking the workflow conclusion. The 11 pre-existing errors in d2_sage_backend_v035.py are unchanged.",
+    "prerequisite_step": "The workflow creates a local head for codex/final-theory-v0.3-novelty-first-20260728 from its remote-tracking ref, because baseline_audit_v0_3_1 resolves that branch with a bare rev-parse that no clone satisfies. The same prerequisite is documented in REPRODUCING_v0.3.8.md. Removing it requires a behavioural change to audit_v031.py and is deferred to v0.3.9.",
+    "boundary": "This run observed the tree at bd5e5f60. The present artifact is a later commit, so its own CI run is a separate observation."
+  },
+  "resolved_blocking_components": [
     {
       "id": "CI_WORKFLOW_NOT_YET_OBSERVED_GREEN",
-      "required_action": "Push the branch and confirm the updated v0.3.8 workflow is green on GitHub.",
-      "automation_boundary": "Local verification is not evidence of a hosted CI run."
-    },
+      "resolved_on": "2026-07-30",
+      "evidence": "GitHub Actions run 30547097249 on bd5e5f60d8db141c4a5055a66149fd7290922fa9 concluded success with 341 tests passed.",
+      "automation_boundary": "Local verification is not evidence of a hosted CI run; the run id above is."
+    }
+  ],
+  "blocking_components": [
     {
       "id": "SOFTWARE_MATURITY_REQUIRES_HUMAN_REVIEW",
       "required_action": "The owner must assess release history, support expectations, and JOSS scope.",
