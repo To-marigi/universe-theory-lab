@@ -67,6 +67,32 @@ def _object_check(root: Path, object_id: str) -> dict[str, Any]:
     }
 
 
+def resolve_frozen_branch(root: Path, branch: str) -> subprocess.CompletedProcess[str]:
+    """Resolve a frozen branch name in a fresh clone as well as in a working copy.
+
+    ``git clone`` and ``actions/checkout`` create a local head only for the ref
+    they check out.  Every other branch exists solely as
+    ``refs/remotes/origin/<branch>``, and git's revision rules do not fall back
+    to a remote-tracking ref for a bare name, so ``git rev-parse <branch>``
+    fails in any clone and succeeds only where that head was created by hand.
+
+    Try the bare name first, so a checked-out working copy keeps its existing
+    behaviour, then the remote-tracking ref.  Both paths resolve to the same
+    commit, so the recorded audit values are unchanged.
+    """
+
+    process = _git(root, "rev-parse", "--verify", "--quiet", f"{branch}^{{commit}}")
+    if process.returncode == 0 and process.stdout.strip():
+        return process
+    return _git(
+        root,
+        "rev-parse",
+        "--verify",
+        "--quiet",
+        f"refs/remotes/origin/{branch}^{{commit}}",
+    )
+
+
 def baseline_audit_v0_3_1(
     root: Path,
     *,
@@ -84,7 +110,7 @@ def baseline_audit_v0_3_1(
         V03_ARTIFACT_FREEZE,
     )
     tag_target = _git(root, "rev-parse", f"{V03_TAG}^{{commit}}")
-    branch_target = _git(root, "rev-parse", V03_BRANCH)
+    branch_target = resolve_frozen_branch(root, V03_BRANCH)
     status = _git(root, "status", "--porcelain")
 
     artifact_records: list[dict[str, Any]] = []

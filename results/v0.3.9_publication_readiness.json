@@ -1,0 +1,74 @@
+{
+  "schema_version": "final-theory-publication-readiness-v0.3.9",
+  "version": "0.3.9",
+  "assessed_on": "2026-07-30",
+  "status": "BLOCKED",
+  "ready_components": [
+    "frozen v0.3 branch resolves from a clone with no hand-created local head",
+    "five ref-portability regression tests pin the resolver and its failure modes",
+    "the v0.3.8 CI workaround and the REPRODUCING prerequisite are both removed",
+    "v0.3.9 release manifest pins the v0.3.8 baseline by schema, count and digest",
+    "the recorded v0.3.8 manifest, its certificates and every scientific artifact are unmodified; only the current test harness is rescoped",
+    "MIT license, contribution guidance, citation metadata and deposit draft"
+  ],
+  "local_verification": {
+    "reproduce_v039": "PASSED",
+    "release_manifest_file_count": 202,
+    "v038_baseline_classification_counts": {
+      "UNCHANGED_RAW_BYTES": 188,
+      "V039_INTENTIONAL_AUDIT_PORTABILITY_CHANGE": 2,
+      "V039_INTENTIONAL_RELEASE_METADATA_UPDATE": 2,
+      "V039_INTENTIONAL_HISTORICAL_TEST_REBASE": 1
+    },
+    "undeclared_change_rejection": "EXERCISED_IN_V039_BUILDER_TESTS",
+    "inherited_v038_verification": "PASSED",
+    "ruff": "PASSED",
+    "fresh_clone_end_to_end": {
+      "clone_head": "51887c2795030c00ce587c95de1148437af08c0e",
+      "local_head_for_frozen_branch": "ABSENT",
+      "verdict": "V0_3_BASELINE_LOCK_PASS",
+      "passed": true
+    },
+    "mypy_advisory": {
+      "status": "EXPECTED_NONZERO",
+      "errors": 11,
+      "files": 1,
+      "scope": "pre-existing d2_sage_backend_v035.py typing debt, untouched by v0.3.9"
+    }
+  },
+  "blocking_components": [
+    {
+      "id": "V039_CI_NOT_YET_OBSERVED_GREEN",
+      "required_action": "Push the branch and confirm the workflow, which now runs scripts/reproduce_v039.py and no longer materialises the frozen branch, is green on GitHub.",
+      "automation_boundary": "Local verification is not evidence of a hosted CI run."
+    },
+    {
+      "id": "PERMANENT_PUBLICATION_DECISION_IS_HUMAN_OWNED",
+      "applies_to": "Zenodo deposit",
+      "required_action": "The owner must decide that this tree is what should be bound permanently to a DOI, and that the .zenodo.json metadata is correct. A Zenodo DOI cannot be withdrawn.",
+      "automation_boundary": "No agent performs the deposit; it requires the owner's account."
+    },
+    {
+      "id": "JOSS_SCOPE_AND_MATURITY_REVIEW",
+      "applies_to": "JOSS submission only",
+      "required_action": "The owner should assess release history, support expectations and fit with JOSS scope before submitting there.",
+      "automation_boundary": "Passing certificates do not determine editorial eligibility.",
+      "note": "This is an editorial gate for JOSS. Zenodo applies no editorial review, so this item does not block a Zenodo deposit; the v0.3.8 readiness artifact bundled the two and overstated the Zenodo barrier."
+    }
+  ],
+  "not_blocking": [
+    "the 11 advisory mypy errors in d2_sage_backend_v035.py",
+    "the actions/checkout@v4 Node.js 20 deprecation warning",
+    "the unsent enquiry to the authors of arXiv:2603.25503, since the short report makes no priority claim",
+    "the seven local tags beyond the two freeze tags required by the audits"
+  ],
+  "external_actions_not_performed": [
+    "GitHub release creation",
+    "Zenodo deposition",
+    "DOI reservation or minting",
+    "JOSS submission",
+    "correspondence with the authors of arXiv:2603.25503"
+  ],
+  "scientific_change": "NONE",
+  "global_scientific_verdict": "FINAL_THEORY_OPEN"
+}

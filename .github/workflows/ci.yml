@@ -21,42 +21,27 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      # Full history, tags and branches are required, not optional. The
-      # baseline audits in audit_v03.py and audit_v031.py verify the v0.2 and
-      # v0.3 freeze boundaries with `git cat-file`, `git merge-base
-      # --is-ancestor`, a `rev-parse` of the annotated freeze tag, and a
-      # `rev-parse` of the frozen v0.3 branch. A shallow checkout has none of
-      # those objects, so ENGINEERING_STATUS becomes ENGINEERING_FAIL and five
-      # tests fail (run 30542047343):
-      #   test_audit_v03.py::test_v02_baseline_commit_tag_and_hashes_remain_frozen
-      #   test_audit_v031.py::test_v03_baseline_is_immutable
-      #   test_v03.py::test_novelty_first_status_axes_remain_independent
-      #   test_v03.py::test_v02_baseline_is_still_hash_locked
-      #   test_v031.py::test_v031_gate_statuses_and_claim_ceiling
-      # Three refs must also exist on origin for those objects to be
-      # fetchable at all: the two annotated freeze tags
-      # final-theory-bench-v0.2-dynamics-final-theory-open and
+      # Full history is required, not optional. The baseline audits in
+      # audit_v03.py and audit_v031.py verify the v0.2 and v0.3 freeze
+      # boundaries with `git cat-file`, `git merge-base --is-ancestor`, a
+      # `rev-parse` of each annotated freeze tag, and a resolution of the frozen
+      # v0.3 branch. A shallow checkout has none of those objects, so
+      # ENGINEERING_STATUS becomes ENGINEERING_FAIL and five tests fail
+      # (run 30542047343).
+      #
+      # Three refs must exist on origin for those objects to be fetchable: the
+      # annotated tags final-theory-bench-v0.2-dynamics-final-theory-open and
       # final-theory-bench-v0.3-novelty-first-open, and the frozen branch
-      # codex/final-theory-v0.3-novelty-first-20260728. V031_BRANCH is only
-      # recorded as metadata and is not resolved, so it is not required.
+      # codex/final-theory-v0.3-novelty-first-20260728. V031_BRANCH is recorded
+      # as metadata only and is not resolved, so it is not required.
+      #
+      # Since v0.3.9 no step materialises a local head for the frozen branch:
+      # audit_v031.resolve_frozen_branch accepts the remote-tracking ref that
+      # every clone already has. tests/final_theory/test_audit_ref_portability_v039.py
+      # pins that behaviour, so removing this workaround cannot regress silently.
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      # `git clone` and actions/checkout create a local head only for the ref
-      # they check out, so audit_v031.py's bare `rev-parse` of the frozen v0.3
-      # branch fails in any clone. This step states that prerequisite instead of
-      # hiding it, and fails loudly if the remote-tracking ref is absent, which
-      # would mean the branch was never published. The portability fix that
-      # removes this prerequisite is deferred to v0.3.9: v0.3.8 is a
-      # line-ending-only migration and must not carry a behavioural change.
-      - name: Materialise the frozen v0.3 branch as a local head
-        run: |
-          set -euo pipefail
-          BRANCH=codex/final-theory-v0.3-novelty-first-20260728
-          git show-ref --verify --quiet "refs/remotes/origin/$BRANCH"
-          git branch --no-track "$BRANCH" "refs/remotes/origin/$BRANCH"
-          git rev-parse --verify "$BRANCH^{commit}"
 
       - name: Install uv
         run: |
@@ -72,8 +57,11 @@ jobs:
       - name: Ruff
         run: uv run ruff check .
 
-      - name: Verify v0.3.8 canonical-LF release
-        run: uv run python scripts/reproduce_v038.py
+      # v0.3.9 reuses reproduce_v038.verify_v038(check_release_manifest=False)
+      # for the bridge and the frozen Phase 1, Phase 2 and scope gates, then
+      # checks the v0.3.9 manifest against the pinned v0.3.8 baseline.
+      - name: Verify v0.3.9 release
+        run: uv run python scripts/reproduce_v039.py
 
       - name: Pytest
         run: uv run pytest -ra

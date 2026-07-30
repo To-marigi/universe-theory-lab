@@ -5,8 +5,6 @@ import json
 from pathlib import Path
 from types import ModuleType
 
-import pytest
-
 from universe_lab.artifact_migration_v038 import (
     LegacyRawDigestResolver,
     load_line_ending_bridge,
@@ -16,7 +14,6 @@ from universe_lab.artifact_migration_v038 import (
 
 ROOT = Path(__file__).resolve().parents[2]
 REPRODUCER_PATH = ROOT / "scripts/reproduce_v038.py"
-BUILDER_PATH = ROOT / "scripts/build_v038_release_manifest.py"
 MANIFEST_PATH = ROOT / "results/v0.3.8_release_manifest.json"
 BRIDGE_PATH = ROOT / "results/v0.3.8_line_ending_bridge.json"
 
@@ -44,7 +41,16 @@ def test_explicit_legacy_resolver_is_path_based() -> None:
 
 
 def test_v038_reproducer_passes_all_frozen_scientific_gates() -> None:
-    summary = _module("reproduce_v038_test", REPRODUCER_PATH).verify_v038(ROOT)
+    # Release-relative by nature: rebuilding the v0.3.8 manifest from the current
+    # tree is only meaningful while that tree *is* v0.3.8. Since v0.3.9 declares
+    # changes to audit_v031.py and ci.yml, that check moved to the v0.3.9 builder,
+    # which classifies every v0.3.8 entry and rejects undeclared ones. What is
+    # asserted here is what stays true for every later release: the bridge and the
+    # frozen scientific gates.
+    summary = _module("reproduce_v038_test", REPRODUCER_PATH).verify_v038(
+        ROOT,
+        check_release_manifest=False,
+    )
     assert summary["passed"] is True
     assert summary["bridge"]["regenerated_exactly"] is True
     assert summary["science"]["digest_resolver"] == {
@@ -68,11 +74,10 @@ def test_v038_reproducer_passes_all_frozen_scientific_gates() -> None:
 
 
 def test_v038_manifest_is_canonical_complete_and_self_excluding() -> None:
-    builder = _module("build_v038_release_manifest_test", BUILDER_PATH)
+    # Assertions about the recorded v0.3.8 artifact, which is immutable. The
+    # rebuild-from-current-tree assertion that used to open this test is
+    # release-relative and now lives in tests/final_theory/test_reproduce_v039.py.
     saved = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    rebuilt = builder.build_manifest(ROOT)
-    assert rebuilt == saved
-    assert builder.render_manifest(rebuilt) == MANIFEST_PATH.read_bytes()
     assert saved["migration"]["historical_v0.3.7_manifest"][
         "classification_counts"
     ] == {
@@ -101,19 +106,11 @@ def test_v038_manifest_is_canonical_complete_and_self_excluding() -> None:
     assert saved["scientific_change"] == "NONE"
 
 
-def test_historical_audit_rejects_an_unclassified_change(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
-    builder = _module("build_v038_release_manifest_mutation_test", BUILDER_PATH)
-    bridge = load_line_ending_bridge(BRIDGE_PATH)
-    original_raw_sha256 = builder.raw_sha256
-    target = (ROOT / "LICENSE").resolve()
-
-    def mutated_raw_sha256(path: Path) -> str:
-        if path.resolve() == target:
-            return "0" * 64
-        return original_raw_sha256(path)
-
-    monkeypatch.setattr(builder, "raw_sha256", mutated_raw_sha256)
-    with pytest.raises(RuntimeError, match="unexpected changes"):
-        builder._historical_manifest_audit(ROOT, bridge)
+# The negative case that used to live here — simulating an unclassified change
+# and asserting the historical audit refuses it — moved to
+# tests/final_theory/test_reproduce_v039.py. On a post-v0.3.8 tree it had become
+# a false positive: audit_v031.py already differs from its v0.3.8 record, so the
+# v0.3.8 builder raises whether or not the simulated LICENSE change is injected,
+# and the test would pass without exercising what it claims to. The v0.3.9
+# version withdraws a declaration instead, so the rejection it observes is
+# caused by the condition under test.
