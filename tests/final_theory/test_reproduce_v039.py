@@ -118,6 +118,41 @@ def test_scientific_verdicts_are_inherited_unchanged(
     assert "test harness is rescoped" in modified
 
 
+def test_binary_entries_are_not_labelled_as_canonical_text(
+    manifest: dict[str, Any],
+) -> None:
+    """Binary payloads must inherit v0.3.8's BINARY_RAW_BYTES label.
+
+    The first v0.3.9 builder hardcoded ``CANONICAL_LF_UTF8`` for every entry,
+    which claimed a gzip archive and a PDF were canonical LF text. Serialization
+    is now delegated to the v0.3.8 classifier, which also rejects a text entry
+    that is not valid UTF-8 or not canonical LF.
+    """
+
+    by_path = {record["path"]: record["serialization"] for record in manifest["files"]}
+    expected_binary = {
+        "certificates/d2_saturation/v0.3.5_compact_expression_arena.json.gz",
+        "output/pdf/v0.3.7_d2_commutativity_short_report.pdf",
+    }
+    actual_binary = {
+        path for path, kind in by_path.items() if kind == "BINARY_RAW_BYTES"
+    }
+    assert actual_binary == expected_binary
+    assert set(by_path.values()) == {"CANONICAL_LF_UTF8", "BINARY_RAW_BYTES"}
+
+    baseline = json.loads(
+        (REPOSITORY_ROOT / "results/v0.3.8_release_manifest.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    baseline_binary = {
+        record["path"]
+        for record in baseline["files"]
+        if record["serialization"] == "BINARY_RAW_BYTES"
+    }
+    assert actual_binary == baseline_binary
+
+
 def test_builder_rejects_an_undeclared_change(
     builder: ModuleType, monkeypatch: pytest.MonkeyPatch
 ) -> None:
@@ -153,6 +188,45 @@ def test_builder_rejects_a_moved_v038_baseline(
     monkeypatch.setattr(builder, "BASELINE_FILE_COUNT", 192)
     with pytest.raises(RuntimeError, match="baseline file count mismatch"):
         builder.build_manifest(REPOSITORY_ROOT)
+
+
+def test_bundle_verifier_accepts_a_faithful_bundle_and_rejects_tampering(
+    manifest: dict[str, Any], tmp_path: Path
+) -> None:
+    """The offline bundle check is the only verification a deposit can carry."""
+
+    import shutil
+
+    verifier = _module("verify_bundle_v039", SCRIPTS / "verify_bundle_v039.py")
+    bundle = tmp_path / "bundle"
+    staged = [record["path"] for record in manifest["files"]]
+    staged.append(verifier.MANIFEST_RELATIVE_PATH)
+    for relative_path in staged:
+        destination = bundle / relative_path
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(REPOSITORY_ROOT / relative_path, destination)
+
+    summary = verifier.verify_bundle(bundle)
+    assert summary["passed"]
+    assert summary["manifest_semantic_digest_intact"]
+    assert summary["missing_files"] == []
+    assert summary["mismatched_files"] == []
+    assert summary["unexpected_files"] == []
+    assert summary["expected_file_count"] == len(manifest["files"]) + 1
+
+    tampered = bundle / "REPRODUCING_v0.3.9.md"
+    tampered.write_text(
+        tampered.read_text(encoding="utf-8") + "\ntampered\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    (bundle / "unexpected_extra.txt").write_text("x\n", encoding="utf-8", newline="\n")
+    after = verifier.verify_bundle(bundle)
+    assert not after["passed"]
+    assert [item["path"] for item in after["mismatched_files"]] == [
+        "REPRODUCING_v0.3.9.md"
+    ]
+    assert after["unexpected_files"] == ["unexpected_extra.txt"]
 
 
 def test_full_v039_verification_passes() -> None:

@@ -15,10 +15,16 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
+import sys
 from collections import Counter
+from functools import lru_cache
 from pathlib import Path
+from types import ModuleType
 from typing import Any
+
+SCRIPTS_DIRECTORY = Path(__file__).resolve().parent
 
 RESULT_PATH = "results/v0.3.9_release_manifest.json"
 BASELINE_PATH = "results/v0.3.8_release_manifest.json"
@@ -52,6 +58,7 @@ NEW_RELEASE_SUPPORT_PATHS = (
     "results/v0.3.9_publication_readiness.json",
     "scripts/build_v039_release_manifest.py",
     "scripts/reproduce_v039.py",
+    "scripts/verify_bundle_v039.py",
     "tests/final_theory/test_audit_ref_portability_v039.py",
     "tests/final_theory/test_reproduce_v039.py",
     # The v0.3.8 manifest is carried as the historical baseline of this release.
@@ -70,6 +77,33 @@ DECLARED_CHANGES = {
     **{path: CLASSIFICATION_TEST_REBASE for path in HISTORICAL_TEST_REBASE_PATHS},
     **{path: CLASSIFICATION_SUPPORT for path in NEW_RELEASE_SUPPORT_PATHS},
 }
+
+
+@lru_cache(maxsize=1)
+def _v038_builder() -> ModuleType:
+    """Reuse the v0.3.8 serialization classifier instead of restating it.
+
+    ``_serialization`` does not merely label a file: it rejects a text entry
+    that is not valid UTF-8 or not canonical LF, and it recognises the binary
+    suffixes that must never be decoded. Duplicating either would let the two
+    releases disagree.
+    """
+
+    path = SCRIPTS_DIRECTORY / "build_v038_release_manifest.py"
+    specification = importlib.util.spec_from_file_location(
+        "build_v038_release_manifest_for_v039",
+        path,
+    )
+    if specification is None or specification.loader is None:
+        raise RuntimeError(f"cannot load {path}")
+    module = importlib.util.module_from_spec(specification)
+    sys.modules[specification.name] = module
+    specification.loader.exec_module(module)
+    return module
+
+
+def serialization_of(root: Path, relative_path: str) -> str:
+    return str(_v038_builder()._serialization(root / relative_path, relative_path))
 
 
 def _load_json(path: Path) -> dict[str, Any]:
@@ -182,7 +216,7 @@ def build_manifest(root: Path) -> dict[str, Any]:
             "path": path,
             "sha256": _sha256(root / path),
             "size_bytes": (root / path).stat().st_size,
-            "serialization": "CANONICAL_LF_UTF8",
+            "serialization": serialization_of(root, path),
             "role": DECLARED_CHANGES.get(
                 path,
                 role_by_path.get(path, CLASSIFICATION_SUPPORT),

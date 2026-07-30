@@ -63,6 +63,40 @@ uv run pytest -q tests/final_theory/test_reproduce_v039.py
 uv run ruff check scripts/build_v039_release_manifest.py scripts/reproduce_v039.py
 ```
 
+## If you have the Zenodo bundle rather than the repository
+
+The deposited bundle is a curated archive of the files named by
+`results/v0.3.9_release_manifest.json`, plus that manifest — 204 files, 47.9
+MiB. It is **not** a repository snapshot, and it deliberately excludes
+third-party material: the PDFs under `references/papers/`, the extracted texts
+under `references/text/`, and the vendored archives under
+`oracle/sage_periods/vendor/`. Those are identified in `references/sources.json`
+by DOI, URL, retrieval date and SHA-256, so they can be fetched from their
+publishers and checked against the recorded digests. They are not covered by
+this repository's MIT licence.
+
+From the bundle alone you can verify byte integrity:
+
+```console
+uv run python scripts/verify_bundle_v039.py --root <extracted bundle>
+```
+
+That checks every recorded SHA-256, the manifest's own semantic digest, and the
+absence of extra files.
+
+**You cannot run `scripts/reproduce_v039.py` from the bundle.** This is a
+measured limit, not a caution. The line-ending bridge is regenerated from
+`git ls-files`, and the frozen baseline audits resolve commits, annotated tags
+and a branch. Staging the manifest plus every bridge target and every bridge
+consumer — 335 files, 121.5 MiB — still fails, because the tracked-file set
+itself comes from git. Adding files cannot close this gap.
+
+Full reproduction therefore requires the repository at the released commit:
+
+```console
+git clone https://github.com/To-marigi/universe-theory-lab.git
+```
+
 ## The v0.3.8 release is unchanged
 
 No v0.3.8 document or artifact is edited by v0.3.9.

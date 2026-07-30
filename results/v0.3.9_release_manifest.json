@@ -52,13 +52,13 @@
       {
         "path": ".zenodo.json",
         "v0.3.8_recorded_sha256": "b2cd8bdf3af0f1efb9044dfa931ac753a6171953f66190b23ac80e1b10baf14b",
-        "v0.3.9_current_sha256": "baff5b07d84ec43b744f755fb45b1f400ec8fc7825024b06b0e022d8c0be8d25",
+        "v0.3.9_current_sha256": "3c3468043ddecd544a3576127a082f6404695e34436d4316cca07cf002856490",
         "classification": "V039_INTENTIONAL_RELEASE_METADATA_UPDATE"
       },
       {
         "path": "CITATION.cff",
         "v0.3.8_recorded_sha256": "0686e0a55395bfb8a039762d3b47a6be3dae05b083b3ccef3c2f6a12d0f21880",
-        "v0.3.9_current_sha256": "58408f20c3f15bd8277f6ba9906aafcfb1eb3fb0b80e6fe537200e1c4df6fc91",
+        "v0.3.9_current_sha256": "51ffbb4298ab10746a40a6aeb3e4250fe063bd9c22ebd91601739acd092362fe",
         "classification": "V039_INTENTIONAL_RELEASE_METADATA_UPDATE"
       },
       {
@@ -1192,8 +1192,8 @@
     },
     "undeclared_changes": []
   },
-  "file_count": 202,
-  "total_size_bytes": 50131808,
+  "file_count": 203,
+  "total_size_bytes": 50142785,
   "files": [
     {
       "path": ".gitattributes",
@@ -1225,15 +1225,15 @@
     },
     {
       "path": ".zenodo.json",
-      "sha256": "baff5b07d84ec43b744f755fb45b1f400ec8fc7825024b06b0e022d8c0be8d25",
-      "size_bytes": 2002,
+      "sha256": "3c3468043ddecd544a3576127a082f6404695e34436d4316cca07cf002856490",
+      "size_bytes": 2765,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_INTENTIONAL_RELEASE_METADATA_UPDATE"
     },
     {
       "path": "CITATION.cff",
-      "sha256": "58408f20c3f15bd8277f6ba9906aafcfb1eb3fb0b80e6fe537200e1c4df6fc91",
-      "size_bytes": 1269,
+      "sha256": "51ffbb4298ab10746a40a6aeb3e4250fe063bd9c22ebd91601739acd092362fe",
+      "size_bytes": 1414,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_INTENTIONAL_RELEASE_METADATA_UPDATE"
     },
@@ -1274,8 +1274,8 @@
     },
     {
       "path": "REPRODUCING_v0.3.9.md",
-      "sha256": "470674c67d0a0cd1e888078fe9c6ebc13c53e54163bfeb7fc861cad9afc20ff1",
-      "size_bytes": 3379,
+      "sha256": "96ce180e926e3cc2226966cbe8af39d8f156c32c3f8421de809f05384d9e960f",
+      "size_bytes": 4901,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_NEW_RELEASE_SUPPORT"
     },
@@ -1745,7 +1745,7 @@
       "path": "certificates/d2_saturation/v0.3.5_compact_expression_arena.json.gz",
       "sha256": "e520e4e42f5b7c0281d70a46c8d4ff9899d5260350cd9ea0db320200f790c9ae",
       "size_bytes": 3311750,
-      "serialization": "CANONICAL_LF_UTF8",
+      "serialization": "BINARY_RAW_BYTES",
       "role": "RELEASE_SUPPORT_SOURCE_OR_FROZEN_INPUT"
     },
     {
@@ -1801,7 +1801,7 @@
       "path": "output/pdf/v0.3.7_d2_commutativity_short_report.pdf",
       "sha256": "fb774d8fd78dc8fc05f0922841d7ad967034333602071b1361bf87846fc510cc",
       "size_bytes": 322360,
-      "serialization": "CANONICAL_LF_UTF8",
+      "serialization": "BINARY_RAW_BYTES",
       "role": "RELEASE_SUPPORT_SOURCE_OR_FROZEN_INPUT"
     },
     {
@@ -2079,8 +2079,8 @@
     },
     {
       "path": "scripts/build_v039_release_manifest.py",
-      "sha256": "8b1b6532d8e1808854ee100d73bb8f0de0a51f765c6f7cebb482a0f13ac395dc",
-      "size_bytes": 10720,
+      "sha256": "394212dc7e0767f0ee4e1df17fef67dc3e1f4ae0c01dfbef22897553f6bc155f",
+      "size_bytes": 11931,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_NEW_RELEASE_SUPPORT"
     },
@@ -2111,6 +2111,13 @@
       "size_bytes": 811,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "RELEASE_SUPPORT_SOURCE_OR_FROZEN_INPUT"
+    },
+    {
+      "path": "scripts/verify_bundle_v039.py",
+      "sha256": "373a816d84c62c0e0293697da3d07ca8636a6de2254be57bb6362e208d4eb0dc",
+      "size_bytes": 4512,
+      "serialization": "CANONICAL_LF_UTF8",
+      "role": "V039_NEW_RELEASE_SUPPORT"
     },
     {
       "path": "src/universe_lab/__init__.py",
@@ -2562,8 +2569,8 @@
     },
     {
       "path": "tests/final_theory/test_reproduce_v039.py",
-      "sha256": "e33604ea2bd0d49c32338a00610683dbdd6be091c544f494881ecbf7a9fa5246",
-      "size_bytes": 6079,
+      "sha256": "26228fa8d5e076958eb42f508fc5e9122c087dce68597162992c1bebe6597799",
+      "size_bytes": 8903,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_NEW_RELEASE_SUPPORT"
     },
@@ -2611,5 +2618,5 @@
     }
   ],
   "self_excluded_artifact": "results/v0.3.9_release_manifest.json",
-  "semantic_digest_sha256": "15e23eba4e1735d2185f013ba16aad6712b9ab23595ef1ff5e9f9a89388be021"
+  "semantic_digest_sha256": "2fac2bc8bb6ef4bf9db0d2641c844f24ca6f58e6a26987bb017dac867a7fcc6d"
 }
