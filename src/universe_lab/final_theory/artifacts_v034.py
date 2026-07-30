@@ -117,12 +117,17 @@ def _write_json(path: Path, payload: dict[str, Any]) -> None:
         json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=False)
         + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 
 def _write_text(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text.rstrip() + "\n", encoding="utf-8")
+    path.write_text(
+        text.rstrip() + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 def _git_head(root: Path) -> str:

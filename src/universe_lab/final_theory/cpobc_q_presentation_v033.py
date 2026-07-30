@@ -1120,6 +1120,7 @@ def _write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(
         json.dumps(payload, indent=2, sort_keys=False) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 
@@ -1891,7 +1892,11 @@ def write_v033_artifacts(
             relative_path = f"{report_directory}/{filename}"
             output = root / relative_path
             output.parent.mkdir(parents=True, exist_ok=True)
-            output.write_text(text.rstrip() + "\n", encoding="utf-8")
+            output.write_text(
+                text.rstrip() + "\n",
+                encoding="utf-8",
+                newline="\n",
+            )
             output_paths[relative_path] = output
 
     note_relative = (
@@ -1905,6 +1910,7 @@ def write_v033_artifacts(
             presentation=presentation,
         ),
         encoding="utf-8",
+        newline="\n",
     )
     output_paths[note_relative] = note_path
 

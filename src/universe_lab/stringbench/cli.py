@@ -146,6 +146,7 @@ def _save(payload: dict[str, Any], output: Path) -> None:
     output.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2, default=str) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 

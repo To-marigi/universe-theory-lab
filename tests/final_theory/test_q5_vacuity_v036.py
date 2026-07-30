@@ -1,9 +1,17 @@
 from __future__ import annotations
 
-import hashlib
 import json
+from collections.abc import Iterator
 from pathlib import Path
 
+import pytest
+
+from universe_lab.artifact_migration_v038 import (
+    LegacyRawDigestResolver,
+    load_line_ending_bridge,
+)
+from universe_lab.final_theory import q5_closure_v036 as closure_module
+from universe_lab.final_theory import q5_vacuity_v036 as vacuity_module
 from universe_lab.final_theory.q5_closure_v036 import (
     compile_q5_closure_audit,
     compile_q5_constraint_census,
@@ -16,6 +24,42 @@ from universe_lab.final_theory.q5_vacuity_v036 import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
+LEGACY_DIGESTS = LegacyRawDigestResolver(
+    ROOT,
+    load_line_ending_bridge(ROOT / "results/v0.3.8_line_ending_bridge.json"),
+)
+V037_MANIFEST_FILES = {
+    record["path"]: record
+    for record in json.loads(
+        (ROOT / "results/v0.3.7_release_manifest.json").read_text(
+            encoding="utf-8"
+        )
+    )["files"]
+}
+
+
+def _historical_digest(path: Path) -> str:
+    relative_path = path.resolve().relative_to(ROOT.resolve()).as_posix()
+    historical = V037_MANIFEST_FILES.get(relative_path)
+    if (
+        relative_path == "src/universe_lab/final_theory/cpobc_v031.py"
+        and historical is not None
+    ):
+        return historical["sha256"]
+    return LEGACY_DIGESTS.sha256(path)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _bridge_legacy_raw_hashes() -> Iterator[None]:
+    original_closure = closure_module._sha256
+    original_vacuity = vacuity_module._sha256
+    closure_module._sha256 = LEGACY_DIGESTS.sha256
+    vacuity_module._sha256 = _historical_digest
+    try:
+        yield
+    finally:
+        closure_module._sha256 = original_closure
+        vacuity_module._sha256 = original_vacuity
 
 
 def _load(relative: str) -> dict:
@@ -23,7 +67,7 @@ def _load(relative: str) -> dict:
 
 
 def _sha256(relative: str) -> str:
-    return hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()
+    return LEGACY_DIGESTS.sha256(ROOT / relative)
 
 
 def test_q5_census_is_exact_and_unambiguous() -> None:

@@ -1,5 +1,13 @@
+from collections.abc import Iterator
 from pathlib import Path
 
+import pytest
+
+from universe_lab.artifact_migration_v038 import (
+    LegacyRawDigestResolver,
+    load_line_ending_bridge,
+)
+from universe_lab.final_theory import audit_v031 as audit_module
 from universe_lab.final_theory.audit_v031 import (
     V03_ARTIFACT_FREEZE,
     V03_ARTIFACT_HASHES,
@@ -8,6 +16,20 @@ from universe_lab.final_theory.audit_v031 import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
+LEGACY_DIGESTS = LegacyRawDigestResolver(
+    ROOT,
+    load_line_ending_bridge(ROOT / "results/v0.3.8_line_ending_bridge.json"),
+)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _bridge_legacy_raw_hashes() -> Iterator[None]:
+    original = audit_module.sha256_file
+    audit_module.sha256_file = LEGACY_DIGESTS.sha256
+    try:
+        yield
+    finally:
+        audit_module.sha256_file = original
 
 
 def test_v03_baseline_is_immutable() -> None:

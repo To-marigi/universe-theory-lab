@@ -1,0 +1,51 @@
+{
+  "schema_version": "final-theory-publication-readiness-v0.3.8",
+  "version": "0.3.8",
+  "assessed_on": "2026-07-30",
+  "status": "BLOCKED",
+  "ready_components": [
+    "canonical LF tracked-text policy and writer enforcement",
+    "1007 legacy raw-byte bindings mapped to 207 bridge targets",
+    "bridge-aware Phase 1, Phase 2, and scope verification",
+    "canonical-LF v0.3.8 release manifest",
+    "MIT license, contribution guidance, citation metadata, and deposit draft"
+  ],
+  "local_verification": {
+    "reproduce_v038": "PASSED",
+    "release_manifest_file_count": 193,
+    "pytest": {
+      "passed": 341,
+      "failed": 0
+    },
+    "ruff": "PASSED",
+    "tracked_crlf_files": 0,
+    "tracked_mixed_eol_files": 0,
+    "vendored_wheel_zip_validation": "PASSED",
+    "mypy_advisory": {
+      "status": "EXPECTED_NONZERO",
+      "errors": 11,
+      "files": 1,
+      "scope": "pre-existing d2_sage_backend_v035.py typing debt"
+    }
+  },
+  "blocking_components": [
+    {
+      "id": "CI_WORKFLOW_NOT_YET_OBSERVED_GREEN",
+      "required_action": "Push the branch and confirm the updated v0.3.8 workflow is green on GitHub.",
+      "automation_boundary": "Local verification is not evidence of a hosted CI run."
+    },
+    {
+      "id": "SOFTWARE_MATURITY_REQUIRES_HUMAN_REVIEW",
+      "required_action": "The owner must assess release history, support expectations, and JOSS scope.",
+      "automation_boundary": "Passing certificates do not determine editorial eligibility."
+    }
+  ],
+  "external_actions_not_performed": [
+    "GitHub release creation",
+    "Zenodo deposition",
+    "DOI reservation or minting",
+    "JOSS submission"
+  ],
+  "scientific_change": "NONE",
+  "global_scientific_verdict": "FINAL_THEORY_OPEN"
+}

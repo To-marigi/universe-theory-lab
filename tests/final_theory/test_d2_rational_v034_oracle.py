@@ -7,6 +7,11 @@ from types import ModuleType
 
 import sympy as sp
 
+from universe_lab.artifact_migration_v038 import (
+    LegacyRawDigestResolver,
+    load_line_ending_bridge,
+)
+
 ROOT = Path(__file__).resolve().parents[2]
 ORACLE_PATH = ROOT / "oracle" / "d2_rational_v034_oracle.py"
 SCALAR_CERTIFICATE_PATH = (
@@ -14,6 +19,10 @@ SCALAR_CERTIFICATE_PATH = (
     / "certificates"
     / "independent_oracle"
     / "v0.3.4_scalar_fixture.json"
+)
+LEGACY_DIGESTS = LegacyRawDigestResolver(
+    ROOT,
+    load_line_ending_bridge(ROOT / "results/v0.3.8_line_ending_bridge.json"),
 )
 
 
@@ -26,6 +35,22 @@ def _load_oracle() -> ModuleType:
     assert specification.loader is not None
     module = importlib.util.module_from_spec(specification)
     specification.loader.exec_module(module)
+    unbridged_scalar_fixture = module.scalar_fixture_certificate
+
+    def bridged_scalar_fixture(
+        repo_root: Path | None = None,
+    ) -> dict[str, object]:
+        certificate = unbridged_scalar_fixture(repo_root)
+        resolved_root = ROOT if repo_root is None else repo_root.resolve()
+        for record in certificate["frozen_inputs"]:
+            record["sha256"] = LEGACY_DIGESTS.sha256(
+                resolved_root / record["path"]
+            )
+        certificate.pop("semantic_digest_sha256", None)
+        certificate["semantic_digest_sha256"] = module.stable_hash(certificate)
+        return certificate
+
+    module.scalar_fixture_certificate = bridged_scalar_fixture
     return module
 
 

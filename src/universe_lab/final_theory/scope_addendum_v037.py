@@ -73,6 +73,7 @@ def _write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 
@@ -575,6 +576,7 @@ def write_scope_addendum_v037(root: Path) -> dict[str, Any]:
     report.write_text(
         render_scope_addendum_markdown(payload),
         encoding="utf-8",
+        newline="\n",
     )
     return payload
 

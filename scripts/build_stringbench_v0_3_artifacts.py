@@ -42,12 +42,17 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2, default=str) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 
 def write_text(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text.rstrip() + "\n", encoding="utf-8")
+    path.write_text(
+        text.rstrip() + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 def fixture_payload(point: Any) -> dict[str, str]:
@@ -599,6 +604,7 @@ def main() -> int:
     (CLAIMS / "evidence_reclassification_v0.2.jsonl").write_text(
         "".join(json.dumps(item, ensure_ascii=False) + "\n" for item in claims),
         encoding="utf-8",
+        newline="\n",
     )
     build_reports(combined, production_commit)
 

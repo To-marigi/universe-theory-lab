@@ -582,7 +582,11 @@ def main() -> int:
     payload = json.dumps(result, indent=2, sort_keys=True) + "\n"
     if arguments.output is not None:
         arguments.output.parent.mkdir(parents=True, exist_ok=True)
-        arguments.output.write_text(payload, encoding="utf-8")
+        arguments.output.write_text(
+            payload,
+            encoding="utf-8",
+            newline="\n",
+        )
     else:
         print(payload, end="")
     return 0 if result["passed"] else 1

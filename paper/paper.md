@@ -26,7 +26,9 @@ artifacts retain equation provenance, denominator-open conditions, request
 digests, backend versions, peak memory, terminal status, and certificate
 hashes.
 
-The v0.3.7 release focuses on the causal-past-ordered Bell-causality (CPOBC)
+The v0.3.8 release carries the scientific result established in v0.3.7 and
+adds a canonical-LF compatibility bridge for the historical CRLF raw-byte
+digests. The result focuses on the causal-past-ordered Bell-causality (CPOBC)
 relations studied by @SrivastavaSurya2026. For the repository's frozen
 strong-operator compiler through source stage \(n\leq4\), it proves that every
 two-dimensional, nonsingular solution of the literal printed-\(Q_{n+1}\)
@@ -109,10 +111,11 @@ relations account for 3,916 matrix-entry provenance records, and the remaining
 components with shared compiler/backend lineage, not two independent
 implementations or two actual evaluation routes.
 
-The default reproduction command verifies existing hashes and proof gates
-without rerunning expensive algebra. Explicit flags rerun Phase 1, Phase 2, or
-both. The release manifest enumerates every proof certificate used by the
-aggregates.
+The default v0.3.8 reproduction command verifies the compatibility bridge,
+existing semantic and proof gates, and the canonical-LF release manifest
+without rerunning expensive algebra. Explicit v0.3.7 flags remain available
+for budget-controlled Phase 1 and Phase 2 reruns. The release manifest
+enumerates every proof certificate used by the aggregates.
 
 # Research impact statement
 
@@ -133,10 +136,12 @@ quantum-measure extension.
 
 OpenAI Codex assisted with implementation, test scaffolding, exact-run
 orchestration, artifact-integrity checks, literature-record maintenance, and
-draft prose. The human author specified the research questions and claim
+draft prose. Anthropic Claude assisted with research design, the \(Q_5\)-free
+proof strategy, symbolic cross-checks, sharpness analysis, and prior-art
+review. The human author specified the research questions and claim
 boundaries, supplied the computation budget, reviewed the changes and rendered
 paper, and remains responsible for the software and scientific claims. The AI
-system is not an author.
+systems are not authors.
 
 # Acknowledgements
 

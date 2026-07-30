@@ -1,11 +1,16 @@
 from __future__ import annotations
 
-import hashlib
 import json
+from collections.abc import Iterator
 from pathlib import Path
 
 import pytest
 
+from universe_lab.artifact_migration_v038 import (
+    LegacyRawDigestResolver,
+    load_line_ending_bridge,
+)
+from universe_lab.final_theory import cpobc_d2_v032 as cpobc_d2_module
 from universe_lab.final_theory.cpobc_d2_v032 import (
     FROZEN_D3_PATH,
     FROZEN_D3_SHA256,
@@ -22,6 +27,20 @@ from universe_lab.final_theory.cpobc_d2_v032 import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
+LEGACY_DIGESTS = LegacyRawDigestResolver(
+    ROOT,
+    load_line_ending_bridge(ROOT / "results/v0.3.8_line_ending_bridge.json"),
+)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _bridge_legacy_raw_hashes() -> Iterator[None]:
+    original = cpobc_d2_module._sha256_file
+    cpobc_d2_module._sha256_file = LEGACY_DIGESTS.sha256
+    try:
+        yield
+    finally:
+        cpobc_d2_module._sha256_file = original
 
 
 @pytest.fixture(scope="module")
@@ -208,10 +227,10 @@ def test_phase4_uses_partial_token_and_never_rounds_up(
 
 
 def test_v031_frozen_artifacts_have_not_changed() -> None:
-    assert hashlib.sha256((ROOT / FROZEN_RELATIONS_PATH).read_bytes()).hexdigest() == (
+    assert LEGACY_DIGESTS.sha256(ROOT / FROZEN_RELATIONS_PATH) == (
         FROZEN_RELATIONS_SHA256
     )
-    assert hashlib.sha256((ROOT / FROZEN_D3_PATH).read_bytes()).hexdigest() == (FROZEN_D3_SHA256)
+    assert LEGACY_DIGESTS.sha256(ROOT / FROZEN_D3_PATH) == (FROZEN_D3_SHA256)
 
 
 def test_checked_in_v032_artifacts_are_honest_and_hash_linked() -> None:
@@ -231,7 +250,7 @@ def test_checked_in_v032_artifacts_are_honest_and_hash_linked() -> None:
     for record in classification["certificate_hashes"]:
         certificate = ROOT / record["path"]
         assert certificate.is_file()
-        assert hashlib.sha256(certificate.read_bytes()).hexdigest() == record["sha256"]
+        assert LEGACY_DIGESTS.sha256(certificate) == record["sha256"]
 
     assert (
         ROOT / "Final-Theory-Program" / "reports" / "v0.3.2_cpobc_d2_classification.md"

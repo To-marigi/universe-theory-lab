@@ -650,7 +650,11 @@ def _worker_emit_progress(
         / f"{request_id}.jsonl"
     )
     progress_path.parent.mkdir(parents=True, exist_ok=True)
-    with progress_path.open("a", encoding="utf-8") as handle:
+    with progress_path.open(
+        "a",
+        encoding="utf-8",
+        newline="\n",
+    ) as handle:
         handle.write(_canonical_json(record) + "\n")
 
 
@@ -2566,7 +2570,11 @@ def main(argv: list[str] | None = None) -> int:
     if arguments.output:
         output_path = Path(arguments.output)
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_path.write_text(encoded, encoding="utf-8")
+        output_path.write_text(
+            encoded,
+            encoding="utf-8",
+            newline="\n",
+        )
     else:
         sys.stdout.write(encoded)
     return 0 if result.get("exit_status") == "COMPLETED" else 1

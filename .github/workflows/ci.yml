@@ -37,6 +37,9 @@ jobs:
       - name: Ruff
         run: uv run ruff check .
 
+      - name: Verify v0.3.8 canonical-LF release
+        run: uv run python scripts/reproduce_v038.py
+
       - name: Pytest
         run: uv run pytest -ra
 
@@ -48,10 +51,11 @@ jobs:
     # all in src/universe_lab/final_theory/d2_sage_backend_v035.py:
     # two bytes|str assignments, one shadowed name, three unused type-ignore
     # comments, one missing annotation, and four platform-conditional
-    # resource.getrusage/RUSAGE_SELF attribute errors. That file is
-    # proof-bearing solver code bound to frozen certificate digests, so it is
-    # not edited as part of a release-preparation change. Clearing these is
-    # tracked separately and must be accompanied by a full test rerun.
+    # resource.getrusage/RUSAGE_SELF attribute errors. The v0.3.8 migration
+    # changes only that file's text-output newline handling; it does not alter
+    # solver semantics or clear the existing typing debt. Clearing these
+    # errors is tracked separately and must be accompanied by a full test
+    # rerun.
     continue-on-error: true
     steps:
       - uses: actions/checkout@v4

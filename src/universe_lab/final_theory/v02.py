@@ -240,6 +240,7 @@ def write_v0_2_artifacts(
         path.write_text(
             json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
+            newline="\n",
         )
         written[name] = path
     manifest = {
@@ -271,6 +272,7 @@ def write_v0_2_artifacts(
     manifest_path.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     written[manifest_path.name] = manifest_path
     return written

@@ -1,10 +1,17 @@
 from __future__ import annotations
 
 import copy
-import hashlib
 import json
 from pathlib import Path
 
+import pytest
+
+from universe_lab.artifact_migration_v038 import (
+    LegacyRawDigestResolver,
+    load_line_ending_bridge,
+)
+from universe_lab.final_theory import q5_free_elimination_v037 as phase1_module
+from universe_lab.final_theory import scalar_chain_v037 as phase2_module
 from universe_lab.final_theory.d2_localisation_v034 import (
     DERIVED_BRANCH,
     LITERAL_BRANCH,
@@ -27,6 +34,14 @@ from universe_lab.final_theory.scalar_chain_v037 import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
+BRIDGE = load_line_ending_bridge(ROOT / "results/v0.3.8_line_ending_bridge.json")
+LEGACY_DIGESTS = LegacyRawDigestResolver(ROOT, BRIDGE)
+
+
+@pytest.fixture(autouse=True)
+def _bridge_legacy_raw_hashes(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(phase1_module, "_sha256", LEGACY_DIGESTS.sha256)
+    monkeypatch.setattr(phase2_module, "_sha256", LEGACY_DIGESTS.sha256)
 
 
 def _load(relative: str) -> dict:
@@ -34,7 +49,7 @@ def _load(relative: str) -> dict:
 
 
 def _sha256(relative: str) -> str:
-    return hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()
+    return LEGACY_DIGESTS.sha256(ROOT / relative)
 
 
 def test_scalar_chain_requests_have_exact_variable_inventories() -> None:

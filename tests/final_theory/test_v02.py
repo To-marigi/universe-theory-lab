@@ -1,7 +1,15 @@
 from __future__ import annotations
 
+from collections.abc import Iterator
 from pathlib import Path
 
+import pytest
+
+from universe_lab.artifact_migration_v038 import (
+    LegacyRawDigestResolver,
+    load_line_ending_bridge,
+)
+from universe_lab.final_theory import v02 as v02_module
 from universe_lab.final_theory.mutations_v02 import mutation_benchmark
 from universe_lab.final_theory.v02 import (
     BASELINE_COMMIT,
@@ -9,6 +17,20 @@ from universe_lab.final_theory.v02 import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
+LEGACY_DIGESTS = LegacyRawDigestResolver(
+    ROOT,
+    load_line_ending_bridge(ROOT / "results/v0.3.8_line_ending_bridge.json"),
+)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _bridge_legacy_raw_hashes() -> Iterator[None]:
+    original = v02_module._sha256
+    v02_module._sha256 = LEGACY_DIGESTS.sha256
+    try:
+        yield
+    finally:
+        v02_module._sha256 = original
 
 
 def test_all_registered_mutations_are_killed() -> None:

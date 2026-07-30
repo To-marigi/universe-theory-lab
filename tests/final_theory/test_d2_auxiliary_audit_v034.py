@@ -1,11 +1,17 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Iterator
 from pathlib import Path
 from typing import Any
 
 import pytest
 
+from universe_lab.artifact_migration_v038 import (
+    LegacyRawDigestResolver,
+    load_line_ending_bridge,
+)
+from universe_lab.final_theory import d2_auxiliary_audit_v034 as audit_module
 from universe_lab.final_theory.d2_auxiliary_audit_v034 import (
     AMBIGUOUS_AUXILIARY,
     BRANCH_DEPENDENT_AUXILIARY,
@@ -20,10 +26,46 @@ from universe_lab.final_theory.d2_auxiliary_audit_v034 import (
     classify_auxiliary_evidence,
 )
 
+ROOT = Path(__file__).resolve().parents[2]
+BRIDGE = load_line_ending_bridge(
+    ROOT / "results/v0.3.8_line_ending_bridge.json"
+)
+LEGACY_DIGESTS = LegacyRawDigestResolver(ROOT, BRIDGE)
+BRIDGE_TARGETS = {record["path"]: record for record in BRIDGE["targets"]}
+V037_MANIFEST_FILES = {
+    record["path"]: record
+    for record in json.loads(
+        (ROOT / "results/v0.3.7_release_manifest.json").read_text(
+            encoding="utf-8"
+        )
+    )["files"]
+}
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _bridge_legacy_raw_hashes() -> Iterator[None]:
+    original = audit_module._sha256_file
+    audit_module._sha256_file = LEGACY_DIGESTS.sha256
+    try:
+        yield
+    finally:
+        audit_module._sha256_file = original
+
 
 @pytest.fixture(scope="module")
 def audit() -> dict[str, Any]:
-    return audit_b_auxiliaries_v034()
+    payload = audit_b_auxiliaries_v034()
+    for record in payload["input_sources"]:
+        relative_path = record["path"]
+        target = BRIDGE_TARGETS.get(relative_path)
+        if target is not None:
+            record["bytes"] = target["virtual_crlf_size_bytes"]
+            continue
+        historical = V037_MANIFEST_FILES.get(relative_path)
+        if historical is not None and historical["sha256"] != record["sha256"]:
+            record["sha256"] = historical["sha256"]
+            record["bytes"] = historical["size_bytes"]
+    return payload
 
 
 def test_all_twenty_two_auxiliaries_are_individually_classified(

@@ -90,7 +90,23 @@ uv.lock             Python依存関係の厳密な固定
 `results/environment.json` には実際に使ったPython・OS・各バックエンドの版と
 検算結果が保存されます。
 
-## Final-Theory Bench v0.3.7
+## Final-Theory Bench v0.3.8
+
+v0.3.8 は、v0.3.7 の科学的結論を変更せず、Windows 由来の CRLF
+raw-byte hash と Git が配布する LF byte 列の不一致を解消する移行版です。
+旧 JSON 内の hash 値は書き換えず、1,007 件の raw-byte binding と
+207 件の対象 artifact を明示した互換 bridge で検証します。
+
+```powershell
+uv run python scripts/reproduce_v038.py
+```
+
+移行の詳細は [`REPRODUCING_v0.3.8.md`](REPRODUCING_v0.3.8.md) と
+[`reports/v0.3.8_line_ending_migration.md`](reports/v0.3.8_line_ending_migration.md)
+にあります。主定理、Phase 1/2 の証明書、`FINAL_THEORY_OPEN` の判定境界は
+v0.3.7 から不変です。
+
+## Final-Theory Bench v0.3.7 scientific result
 
 v0.3.7 は、凍結した `n<=4` strong-operator 系の literal 分岐について、
 記録済みの非特異・分母非零領域上の `d=2` では `Q1` から `Q4` が可換になる

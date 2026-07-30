@@ -2201,6 +2201,7 @@ def write_cpobc_v031_artifacts(root: Path) -> dict[str, Path]:
         path.write_text(
             json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
+            newline="\n",
         )
         written[name] = path
 
@@ -2229,6 +2230,7 @@ def write_cpobc_v031_artifacts(root: Path) -> dict[str, Path]:
         path.write_text(
             json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
+            newline="\n",
         )
         written[path.name] = path
 
@@ -2246,6 +2248,7 @@ def write_cpobc_v031_artifacts(root: Path) -> dict[str, Path]:
         payload_path.write_text(
             json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
+            newline="\n",
         )
 
     compiler_report = f"""# Final-Theory Bench v0.3.1 — CPOBC compiler
@@ -2318,6 +2321,10 @@ therefore remains globally inconclusive; d=4 was not executed.
     }
     for name, content in reports.items():
         path = report_dir / name
-        path.write_text(content, encoding="utf-8")
+        path.write_text(
+            content,
+            encoding="utf-8",
+            newline="\n",
+        )
         written[name] = path
     return written

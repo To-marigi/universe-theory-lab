@@ -36,7 +36,11 @@ def _extract_text(pdf_path: Path, text_path: Path) -> tuple[int, str]:
         cleaned = "\n".join(line.rstrip() for line in printable.splitlines())
         pages.append(f"\n\n===== PAGE {number} =====\n\n{cleaned}")
     text_path.parent.mkdir(parents=True, exist_ok=True)
-    text_path.write_text("".join(pages).lstrip(), encoding="utf-8")
+    text_path.write_text(
+        "".join(pages).lstrip(),
+        encoding="utf-8",
+        newline="\n",
+    )
     return len(reader.pages), str(text_path)
 
 
@@ -127,6 +131,7 @@ def main() -> int:
     output.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     print(f"Archived {len(manifest['records'])} references: {output}")
     return 0

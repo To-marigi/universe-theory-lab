@@ -73,12 +73,17 @@ def _write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 
 def _write_text(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text.rstrip() + "\n", encoding="utf-8")
+    path.write_text(
+        text.rstrip() + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 def _matrix_from_strings(entries: list[list[str]]) -> sp.Matrix:
@@ -1092,6 +1097,7 @@ def _replace_v035_addendum(path: Path, body: str) -> None:
     path.write_text(
         f"{base}\n\n{ADDENDUM_HEADING}\n\n{body.rstrip()}\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 

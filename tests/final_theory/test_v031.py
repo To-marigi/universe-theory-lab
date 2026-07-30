@@ -1,5 +1,14 @@
+from collections.abc import Iterator
 from pathlib import Path
 
+import pytest
+
+from universe_lab.artifact_migration_v038 import (
+    LegacyRawDigestResolver,
+    load_line_ending_bridge,
+)
+from universe_lab.final_theory import audit_v031 as audit_module
+from universe_lab.final_theory import v031 as v031_module
 from universe_lab.final_theory.v031 import (
     CERTIFICATE_PATHS,
     PROHIBITED_VERDICTS,
@@ -10,6 +19,23 @@ from universe_lab.final_theory.v031 import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
+LEGACY_DIGESTS = LegacyRawDigestResolver(
+    ROOT,
+    load_line_ending_bridge(ROOT / "results/v0.3.8_line_ending_bridge.json"),
+)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _bridge_legacy_raw_hashes() -> Iterator[None]:
+    original_audit = audit_module.sha256_file
+    original_v031 = v031_module.sha256_file
+    audit_module.sha256_file = LEGACY_DIGESTS.sha256
+    v031_module.sha256_file = LEGACY_DIGESTS.sha256
+    try:
+        yield
+    finally:
+        audit_module.sha256_file = original_audit
+        v031_module.sha256_file = original_v031
 
 
 def test_v031_gate_statuses_and_claim_ceiling() -> None:

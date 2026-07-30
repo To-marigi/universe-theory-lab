@@ -1363,6 +1363,7 @@ def write_cpobc_d2_v032_artifacts(
         path.write_text(
             json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
+            newline="\n",
         )
         written[path.name] = path
 
@@ -1383,6 +1384,7 @@ def write_cpobc_d2_v032_artifacts(
         path.write_text(
             json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
+            newline="\n",
         )
         written[path.name] = path
 
@@ -1390,11 +1392,16 @@ def write_cpobc_d2_v032_artifacts(
     report_path.write_text(
         _classification_report(classification, reduction),
         encoding="utf-8",
+        newline="\n",
     )
     written[report_path.name] = report_path
 
     note_path = note_dir / "final_theory_v0.3.2_d2_frontier_2026-07-28.md"
-    note_path.write_text(_research_note(), encoding="utf-8")
+    note_path.write_text(
+        _research_note(),
+        encoding="utf-8",
+        newline="\n",
+    )
     written[note_path.name] = note_path
     return written
 

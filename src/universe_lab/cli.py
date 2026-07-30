@@ -53,7 +53,11 @@ def main() -> int:
     if args.json:
         payload = {"environment": environment_report(), "validation": run_validation_suite()}
         args.json.parent.mkdir(parents=True, exist_ok=True)
-        args.json.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        args.json.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+            newline="\n",
+        )
     return exit_code
 
 

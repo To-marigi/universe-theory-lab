@@ -180,7 +180,7 @@ def main():
         },
     }
     encoded = json.dumps(result, indent=2, sort_keys=True, default=str) + "\n"
-    with open(args.output, "w", encoding="utf-8") as handle:
+    with open(args.output, "w", encoding="utf-8", newline="\n") as handle:
         handle.write(encoded)
     print(
         json.dumps(

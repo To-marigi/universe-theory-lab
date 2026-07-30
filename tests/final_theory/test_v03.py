@@ -1,10 +1,17 @@
 from __future__ import annotations
 
+from collections.abc import Iterator
 from pathlib import Path
 from typing import Any
 
 import pytest
 
+from universe_lab.artifact_migration_v038 import (
+    LegacyRawDigestResolver,
+    load_line_ending_bridge,
+)
+from universe_lab.final_theory import audit_v03 as audit_module
+from universe_lab.final_theory import v03 as v03_module
 from universe_lab.final_theory.v03 import (
     REQUIRED_PROVENANCE_FIELDS,
     RESULT_NAMES,
@@ -13,6 +20,24 @@ from universe_lab.final_theory.v03 import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
+LEGACY_DIGESTS = LegacyRawDigestResolver(
+    ROOT,
+    load_line_ending_bridge(ROOT / "results/v0.3.8_line_ending_bridge.json"),
+)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _bridge_legacy_raw_hashes() -> Iterator[None]:
+    original_audit = audit_module.sha256_file
+    original_v03 = v03_module.sha256_file
+    audit_module.sha256_file = LEGACY_DIGESTS.sha256
+    v03_module.sha256_file = LEGACY_DIGESTS.sha256
+    try:
+        yield
+    finally:
+        audit_module.sha256_file = original_audit
+        v03_module.sha256_file = original_v03
+
 
 @pytest.fixture(scope="module")
 def payloads() -> dict[str, dict[str, Any]]:

@@ -264,6 +264,7 @@ def main(argv: list[str] | None = None) -> int:
     output.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     print(f"{output}: {payload['file_count']} files, {payload['semantic_digest_sha256']}")
     return 0

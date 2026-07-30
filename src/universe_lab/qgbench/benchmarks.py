@@ -310,5 +310,7 @@ def save_results(result: dict[str, Any], destination: Path) -> None:
 
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(
-        json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        json.dumps(result, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
     )

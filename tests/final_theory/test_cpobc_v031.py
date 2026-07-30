@@ -1,11 +1,16 @@
 from __future__ import annotations
 
-import hashlib
 import json
+from collections.abc import Iterator
 from pathlib import Path
 
 import pytest
 
+from universe_lab.artifact_migration_v038 import (
+    LegacyRawDigestResolver,
+    load_line_ending_bridge,
+)
+from universe_lab.final_theory import cpobc_v031 as cpobc_module
 from universe_lab.final_theory.cpobc_v031 import (
     brute_force_bell_family_oracle,
     compile_cpobc_relations_v0_3_1,
@@ -15,6 +20,22 @@ from universe_lab.final_theory.cpobc_v031 import (
     free_reduce_word,
     structural_algebra_benchmark_v0_3_1,
 )
+
+ROOT = Path(__file__).resolve().parents[2]
+LEGACY_DIGESTS = LegacyRawDigestResolver(
+    ROOT,
+    load_line_ending_bridge(ROOT / "results/v0.3.8_line_ending_bridge.json"),
+)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _bridge_legacy_raw_hashes() -> Iterator[None]:
+    original = cpobc_module._sha256_file
+    cpobc_module._sha256_file = LEGACY_DIGESTS.sha256
+    try:
+        yield
+    finally:
+        cpobc_module._sha256_file = original
 
 
 @pytest.fixture(scope="module")
@@ -321,9 +342,7 @@ def test_checked_in_phase_c_to_e_artifacts_and_certificate_hashes() -> None:
         for record in payload["certificate_hashes"]:
             certificate = root / record["path"]
             assert certificate.is_file()
-            assert hashlib.sha256(certificate.read_bytes()).hexdigest() == record[
-                "sha256"
-            ]
+            assert LEGACY_DIGESTS.sha256(certificate) == record["sha256"]
 
     report_dir = root / "Final-Theory-Program" / "reports"
     assert all((report_dir / name).is_file() for name in report_names)
