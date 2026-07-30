@@ -21,7 +21,27 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      # Full history, tags and branches are required, not optional. The
+      # baseline audits in audit_v03.py and audit_v031.py verify the v0.2 and
+      # v0.3 freeze boundaries with `git cat-file`, `git merge-base
+      # --is-ancestor`, a `rev-parse` of the annotated freeze tag, and a
+      # `rev-parse` of the frozen v0.3 branch. A shallow checkout has none of
+      # those objects, so ENGINEERING_STATUS becomes ENGINEERING_FAIL and five
+      # tests fail (run 30542047343):
+      #   test_audit_v03.py::test_v02_baseline_commit_tag_and_hashes_remain_frozen
+      #   test_audit_v031.py::test_v03_baseline_is_immutable
+      #   test_v03.py::test_novelty_first_status_axes_remain_independent
+      #   test_v03.py::test_v02_baseline_is_still_hash_locked
+      #   test_v031.py::test_v031_gate_statuses_and_claim_ceiling
+      # Three refs must also exist on origin for those objects to be
+      # fetchable at all: the two annotated freeze tags
+      # final-theory-bench-v0.2-dynamics-final-theory-open and
+      # final-theory-bench-v0.3-novelty-first-open, and the frozen branch
+      # codex/final-theory-v0.3-novelty-first-20260728. V031_BRANCH is only
+      # recorded as metadata and is not resolved, so it is not required.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install uv
         run: |
