@@ -9,22 +9,42 @@
     "scope correction preserves frozen v0.3.4 through v0.3.6 artifacts",
     "short technical report source and visually verified PDF are present",
     "JOSS paper, CITATION.cff, and .zenodo.json drafts are present",
-    "reproduction driver and release-manifest builder are present"
+    "reproduction driver and release-manifest builder are present",
+    "MIT LICENSE is present and declared in CITATION.cff and .zenodo.json",
+    "CONTRIBUTING.md states issue, support, invariant, and AI-disclosure rules",
+    "portable CI workflow is present and its three commands pass locally"
+  ],
+  "resolved_by_owner": [
+    {
+      "id": "NO_HUMAN_SELECTED_OSI_LICENSE",
+      "resolved_on": "2026-07-30",
+      "decision": "MIT License, recorded in LICENSE, CITATION.cff, and .zenodo.json.",
+      "rationale": "Single-author research artifact with no patent surface; the short canonical text carries no transcription risk. JOSS and Zenodo treat MIT and Apache-2.0 equivalently for eligibility.",
+      "automation_boundary": "The license was selected by the repository owner, not inferred by an agent."
+    },
+    {
+      "id": "NO_COMMUNITY_GUIDELINES",
+      "resolved_on": "2026-07-30",
+      "decision": "CONTRIBUTING.md added.",
+      "rationale": "JOSS requires clear third-party guidance for contributing, reporting issues, and seeking support. The file also records the frozen-artifact, exact-over-numeric, no-silent-downgrade, and human-owned-budget invariants, and requires AI-assistance disclosure in pull requests."
+    }
   ],
   "blocking_components": [
     {
-      "id": "NO_HUMAN_SELECTED_OSI_LICENSE",
-      "required_action": "The repository owner must select and add an appropriate OSI-approved license before JOSS submission or an open-source release.",
-      "automation_boundary": "No license is inferred or selected by the agent."
+      "id": "CI_WORKFLOW_NOT_YET_OBSERVED_GREEN",
+      "required_action": "Push the branch and confirm that .github/workflows/ci.yml completes green on GitHub. Until a run exists, CI is unverified.",
+      "detail": "The workflow runs uv sync --frozen, uv run ruff check ., and uv run pytest -ra on ubuntu-latest under Python 3.12. Those commands were confirmed locally on 2026-07-30: ruff clean, 331 tests passed. Docker/Sage exact reruns are intentionally excluded from CI because they require the compose.yaml container and a human-owned budget file.",
+      "automation_boundary": "A workflow file is not evidence of a passing workflow run."
     },
     {
-      "id": "NO_CONTINUOUS_INTEGRATION_WORKFLOW",
-      "required_action": "Add and validate CI for the portable Python verification path; decide separately how Docker/Sage exact reruns should be scheduled.",
-      "automation_boundary": "No external workflow is created or enabled in v0.3.7."
+      "id": "MYPY_PREEXISTING_ERRORS_ADVISORY",
+      "required_action": "Clear the 11 mypy errors in src/universe_lab/final_theory/d2_sage_backend_v035.py in a separate change accompanied by a full test rerun, then make the mypy job blocking.",
+      "detail": "Two bytes|str assignments, one shadowed name, three unused type-ignore comments, one missing annotation, and four platform-conditional resource.getrusage/RUSAGE_SELF attribute errors. The file is proof-bearing solver code bound to frozen certificate digests and is deliberately not edited during release preparation.",
+      "automation_boundary": "Suppressing the errors through configuration would hide tracked debt and is not done."
     },
     {
       "id": "SOFTWARE_MATURITY_REQUIRES_HUMAN_REVIEW",
-      "required_action": "The owner should assess release history, contributor documentation, support expectations, and JOSS scope before submission.",
+      "required_action": "The owner should assess release history, support expectations, and JOSS scope before submission.",
       "automation_boundary": "Passing certificates do not determine editorial eligibility."
     }
   ],
@@ -32,7 +52,8 @@
     "GitHub release creation",
     "Zenodo deposition",
     "DOI reservation or minting",
-    "JOSS submission"
+    "JOSS submission",
+    "correspondence with the authors of arXiv:2603.25503"
   ],
   "global_scientific_verdict": "FINAL_THEORY_OPEN"
 }

@@ -27,6 +27,10 @@ RESULT_PATH = "results/v0.3.7_release_manifest.json"
 STATIC_PATHS = [
     ".zenodo.json",
     "CITATION.cff",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    ".github/workflows/ci.yml",
+    ".gitattributes",
     "README.md",
     "REPRODUCING_v0.3.7.md",
     ".python-version",

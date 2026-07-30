@@ -1,0 +1,71 @@
+name: CI
+
+# Portable verification path only. The exact SageMath/Singular reruns are not
+# executed here: they need the container defined in compose.yaml and a
+# human-owned resource budget (see config/*_budget.json). The committed
+# certificates under results/ are what the tests below check against.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: lint and tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Pin interpreter
+        run: uv python install 3.12
+
+      - name: Sync locked environment
+        run: uv sync --frozen
+
+      - name: Ruff
+        run: uv run ruff check .
+
+      - name: Pytest
+        run: uv run pytest -ra
+
+  types:
+    name: mypy (advisory)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Advisory on purpose. As of 2026-07-30 `uv run mypy` reports 11 errors,
+    # all in src/universe_lab/final_theory/d2_sage_backend_v035.py:
+    # two bytes|str assignments, one shadowed name, three unused type-ignore
+    # comments, one missing annotation, and four platform-conditional
+    # resource.getrusage/RUSAGE_SELF attribute errors. That file is
+    # proof-bearing solver code bound to frozen certificate digests, so it is
+    # not edited as part of a release-preparation change. Clearing these is
+    # tracked separately and must be accompanied by a full test rerun.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Pin interpreter
+        run: uv python install 3.12
+
+      - name: Sync locked environment
+        run: uv sync --frozen
+
+      - name: Mypy
+        run: uv run mypy

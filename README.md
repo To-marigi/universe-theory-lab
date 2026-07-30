@@ -168,6 +168,16 @@ v0.2では局所heterotic root loweringを四branchについて独立再現し�
 独立K3 period oracleとNarain orbit round-tripは `BLOCKED` のため、科学的総合判定は
 引き続き `PARTIAL` です。
 
+## ライセンスと参加方法
+
+本リポジトリは MIT License で公開しています（`LICENSE`）。
+
+- 問題報告・質問・変更提案の手順は `CONTRIBUTING.md` を参照してください。
+- 引用する場合は `CITATION.cff` のメタデータを使ってください。
+- 移植可能な検証経路（ruff と pytest）は GitHub Actions で継続的に実行しています。
+  SageMath/Singular による厳密再計算は `compose.yaml` のコンテナと
+  `config/*_budget.json` の予算を必要とするため、CI には含まれません。
+
 ## 性能を上げるとき
 
 - まずSymPyで導出し、`lambdify`でNumPy関数に変換します。

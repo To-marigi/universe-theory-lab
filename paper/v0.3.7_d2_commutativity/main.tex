@@ -27,6 +27,9 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\theoremstyle{plain}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\KK}{\mathbb{K}}
 \newcommand{\GL}{\mathrm{GL}}
@@ -123,6 +126,44 @@ Final-Theory Bench v0.3.7.  Then
 The conclusion intentionally excludes \(Q_5\), the transition algebra
 outside the compiled inventory, weak or occurrence-dependent operator
 semantics, \(d\geq3\), and the infinite-stage CPOBC algebra.
+
+\begin{remark}[The antichain relations alone are insufficient]
+\label{rem:sharpness}
+The conclusion of Theorem~\ref{thm:main} does not follow from the
+gregarious/antichain identities of Ref.~\cite{SrivastavaSurya2026} alone.
+Put
+\[
+  \sigma_1=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+  Q_n=\sigma_1 D_n,\quad D_n=\operatorname{diag}(a_n,b_n),\quad
+  a_nb_n\neq0,\ \ a_n\neq\pm b_n .
+\]
+The \(D_n\) commute and \(Q_k^{-1}=D_k^{-1}\sigma_1\), so
+\(Q_nQ_k^{-1}Q_m=\sigma_1D_nD_k^{-1}D_m\) is symmetric under
+\(n\leftrightarrow m\) and Eq.\ (120) holds for every admissible triple.
+Each \(Q_mQ_n^{-1}=\sigma_1D_mD_n^{-1}\sigma_1\) is diagonal, hence
+Eq.\ (129) holds for all indices, and Eq.\ (130) holds likewise.  Yet
+\[
+  [Q_i,Q_j]=(a_jb_i-a_ib_j)\operatorname{diag}(1,-1),
+\]
+which is nonzero whenever \(a_jb_i\neq a_ib_j\).  Moreover
+\(\sigma_1D_n=\tfrac{a_n+b_n}{2}\,\sigma_1
++\tfrac{i(b_n-a_n)}{2}\,\sigma_2\) is proportional to a single Pauli
+matrix only when \(a_n=\pm b_n\), so under the stated conditions no
+generator of the family lies inside the ansatz of Eq.\ (165).  The family
+is \emph{not} a solution of the frozen system; it shows only that the full
+CPOBC, GC, and MSR inventory is essential to Theorem~\ref{thm:main}, which
+is therefore not a restatement of the published antichain identities.
+\end{remark}
+
+Theorem~\ref{thm:main} is also logically independent of Lemma~3.10 of
+Ref.~\cite{SrivastavaSurya2026}, whose hypothesis is that some fixed
+\(Q_k\) commutes with \emph{every} \(Q_n\), \(n\in\mathbb{N}\).  Our
+conclusion is confined to \(1\leq i<j\leq4\) and says nothing about
+\([Q_n,Q_k]\) for \(n\geq5\); the finite theorem is consequently not a
+corollary of that lemma, and it does not activate it.  Were a future
+argument to extend a finite solution to all \(n\) with a common central
+generator, Lemma~3.10 would then apply and give commutativity of the full
+transition algebra; no such extension is claimed here.
 
 \section{Frozen finite system and the
   \texorpdfstring{\(Q_5\)}{Q5}-free implication}
@@ -398,9 +439,12 @@ bounded construction that exposes the remaining source-index sensitivity.
 
 The author used OpenAI Codex to assist with code review, exact-computation
 orchestration, test generation, bibliography organisation, and language
-editing.  The human author selected the research scope and budget and is
-responsible for every claim.  AI systems are not listed as authors.  All
-proof-bearing claims are tied to exact, inspectable artifacts and tests.
+editing, and Anthropic Claude to assist with research design, the
+\(Q_5\)-free proof strategy adopted here, independent symbolic
+cross-checks, and prior-art review.  The human author selected the research
+scope and the resource budgets, reviewed the work, and is responsible for
+every claim.  AI systems are not listed as authors.  All proof-bearing
+claims are tied to exact, inspectable artifacts and tests.
 
 \section*{Data and code availability}
 
