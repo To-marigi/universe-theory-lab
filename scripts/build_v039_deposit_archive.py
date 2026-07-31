@@ -11,11 +11,16 @@ and obtains the same SHA-256, byte for byte.
 Contents
 --------
 Exactly the files named by ``results/v0.3.9_release_manifest.json``, plus that
-manifest, which excludes itself from its own file list.  Nothing else.  The
-third-party material under ``references/`` and ``oracle/sage_periods/vendor/``
-is outside the manifest deliberately: ``references/sources.json`` records no
-licence field for any of its entries, and this repository's MIT ``LICENSE``
-does not extend to them.  See REPRODUCING_v0.3.9.md.
+manifest, which excludes itself from its own file list.  Nothing else.
+
+The third-party material under ``references/papers/``, ``references/text/`` and
+``oracle/sage_periods/vendor/`` is outside the manifest deliberately: no
+reference record carries a licence field for any entry, and this repository's
+MIT ``LICENSE`` does not extend to them.  The provenance records themselves are
+inside the bundle — ``references/manifest.json`` for the papers' digests,
+``references/sources.json`` for the catalogue, and
+``oracle/sage_periods/source_manifest.json`` for the vendored archives — so a
+reader can fetch the originals and check them.  See REPRODUCING_v0.3.9.md.
 
 Determinism
 -----------
@@ -245,8 +250,9 @@ def build_archive(
         "manifest_file_count": manifest["file_count"],
         "manifest_semantic_digest_sha256": manifest["semantic_digest_sha256"],
         "excluded_scope": (
-            "third-party material outside the release manifest: references/, "
-            "oracle/sage_periods/vendor/ and the ignored files under results/"
+            "third-party material outside the release manifest: "
+            "references/papers/, references/text/, oracle/sage_periods/vendor/ "
+            "and the ignored files under results/"
         ),
     }
 

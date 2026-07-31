@@ -53,6 +53,11 @@ HISTORICAL_TEST_REBASE_PATHS = (
 
 NEW_RELEASE_SUPPORT_PATHS = (
     "REPRODUCING_v0.3.9.md",
+    # The deposit excludes the vendored archives for licensing reasons and tells
+    # the reader to fetch them upstream and check the recorded digests. That
+    # record is this file, so it has to travel with the bundle or the instruction
+    # cannot be followed.
+    "oracle/sage_periods/source_manifest.json",
     "reports/v0.3.9_audit_ref_portability.md",
     "reports/v0.3.9_publication_readiness.md",
     "results/v0.3.9_publication_readiness.json",

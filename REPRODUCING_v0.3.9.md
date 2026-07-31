@@ -50,7 +50,8 @@ The command succeeds only if all of the following hold:
    `e4b50d41263e296860fd8a0e39aa3490510b40b48e99c8848fa035b8da7eed01`;
 3. every one of those 193 entries is byte-identical or a member of a declared
    change set — `V039_INTENTIONAL_AUDIT_PORTABILITY_CHANGE`,
-   `V039_INTENTIONAL_RELEASE_METADATA_UPDATE`, or `V039_NEW_RELEASE_SUPPORT`.
+   `V039_INTENTIONAL_RELEASE_METADATA_UPDATE`,
+   `V039_INTENTIONAL_HISTORICAL_TEST_REBASE`, or `V039_NEW_RELEASE_SUPPORT`.
    Any undeclared difference fails immediately;
 4. the v0.3.9 release manifest regenerates byte-for-byte and excludes itself.
 
@@ -60,20 +61,32 @@ The individual checks are:
 uv run python scripts/build_v039_release_manifest.py --check
 uv run pytest -q tests/final_theory/test_audit_ref_portability_v039.py
 uv run pytest -q tests/final_theory/test_reproduce_v039.py
-uv run ruff check scripts/build_v039_release_manifest.py scripts/build_v039_deposit_archive.py scripts/reproduce_v039.py
+uv run ruff check scripts/build_v039_release_manifest.py scripts/build_v039_deposit_archive.py scripts/reproduce_v039.py scripts/verify_bundle_v039.py
 ```
 
 ## If you have the Zenodo bundle rather than the repository
 
 The deposited bundle is a curated archive of the files named by
-`results/v0.3.9_release_manifest.json`, plus that manifest — 205 files, 47.9
+`results/v0.3.9_release_manifest.json`, plus that manifest — 206 files, 48.0
 MiB. It is **not** a repository snapshot, and it deliberately excludes
-third-party material: the PDFs under `references/papers/`, the extracted texts
-under `references/text/`, and the vendored archives under
-`oracle/sage_periods/vendor/`. Those are identified in `references/sources.json`
-by DOI, URL, retrieval date and SHA-256, so they can be fetched from their
-publishers and checked against the recorded digests. They are not covered by
-this repository's MIT licence.
+third-party material: the 52 PDFs under `references/papers/`, the 52 texts
+extracted from them under `references/text/`, and the 3 vendored archives under
+`oracle/sage_periods/vendor/`. None of it is covered by this repository's MIT
+licence — no reference record carries a licence field for any entry.
+
+The provenance records travel with the bundle, so the exclusion can be worked
+around rather than merely explained:
+
+| record | what it gives |
+| --- | --- |
+| `references/manifest.json` | for each of the 52 archived papers: arXiv identifier, URL, byte size, page count, SHA-256, and the name of the text extracted from it. 19 records also carry a DOI; 7 of the 59 are `METADATA_ONLY`, with no PDF archived |
+| `references/sources.json` | the 59-entry catalogue those records index — title, authors, version-pinned URL, what each source was used for, and its claim boundary |
+| `oracle/sage_periods/source_manifest.json` | for each of the 3 vendored archives: upstream repository, commit, SHA-256, plus the `sagemath/sagemath:10.8` container digest |
+
+So the papers and the vendored archives can be fetched from their sources and
+checked against the recorded digests. The extracted texts carry **no digest of
+their own** — only a filename — and are reproduced by re-extracting from the
+corresponding PDF rather than verified directly.
 
 From the bundle alone you can verify byte integrity:
 

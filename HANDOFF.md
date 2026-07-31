@@ -112,7 +112,7 @@ V039_INTENTIONAL_RELEASE_METADATA_UPDATE       2   .zenodo.json, CITATION.cff
 V039_INTENTIONAL_HISTORICAL_TEST_REBASE        1   test_reproduce_v038.py
                                              ───
                                              193
-manifest file_count 204  (193 baseline + 11 new support)
+manifest file_count 205  (193 baseline + 12 new support)
 ```
 
 `scripts/reproduce_v039.py` reuses
@@ -140,8 +140,8 @@ filenames.
 ```
 archive   final-theory-bench-v0.3.9.tar.gz
 builder   scripts/build_v039_deposit_archive.py   (--output is required)
-files     205  (204 manifest entries + the self-excluded manifest)
-size      47.9 MiB extracted
+files     206  (205 manifest entries + the self-excluded manifest)
+size      48.0 MiB extracted
 ```
 
 Deterministic: entries sorted by path, `mtime` fixed to the commit's author
@@ -183,18 +183,45 @@ invalidating itself — the same circularity as embedding a reserved DOI. They g
 into the Zenodo form, whose metadata sits outside the archive and stays editable
 after publication.
 
+### The title, deliberately
+
+The deposit title leads with the result and carries `Final-Theory Bench` as a
+parenthetical identifier, not as the opening words. Inside the repository
+`Final-Theory` names the *target under test* — the verdict is
+`FINAL_THEORY_OPEN` — but a Zenodo search result shows the title alone, where
+that reading is unavailable and the name looks like a claim. `CITATION.cff`
+follows the same shape. **Do not move the project name back to the front.**
+
+The archive filename, the module paths under `src/universe_lab/final_theory/`
+and the verdict tokens keep the name, which is what preserves the correspondence
+between the record and the code.
+
 ### Excluded, deliberately
 
 `references/papers/` (52 PDFs), `references/text/` (52 extracted texts),
 `oracle/sage_periods/vendor/` (3 archives), the 7 ignored files under
 `results/`, and anything else outside the manifest.
 
-Reason: third-party copyright. `references/sources.json` records DOI, URL,
-retrieval date and SHA-256 for 59 entries but **no licence field for any of
-them**. The default arXiv licence grants arXiv a distribution right, not third
-parties. Depositing those files under this repository's MIT `LICENSE` would
-misrepresent their terms in a record that cannot be withdrawn. Readers can fetch
-the originals and check them against the recorded digests.
+Reason: third-party copyright. **No reference record carries a licence field for
+any entry.** The default arXiv licence grants arXiv a distribution right, not
+third parties. Depositing those files under this repository's MIT `LICENSE`
+would misrepresent their terms in a record that cannot be withdrawn.
+
+Where the provenance actually lives — measured 2026-07-31, because the earlier
+description of this was wrong in two ways at once:
+
+| record | contents |
+| --- | --- |
+| `references/manifest.json` | 59 records. The 52 `PDF_AND_TEXT` ones carry `sha256`, `bytes`, `pages`, `local_file`, `text_file`; 19 carry a `doi`; 7 are `METADATA_ONLY`. **This is the file with the digests.** |
+| `references/sources.json` | the 59-entry catalogue `manifest.json` indexes. Human-readable: id, title, authors, url, used_for, claim_boundary. **No `sha256`, no `doi`.** |
+| `oracle/sage_periods/source_manifest.json` | the 3 vendored archives — upstream repository, commit, `sha256` — plus the `sagemath/sagemath:10.8` container digest. Added to the manifest in this release so the bundle can honour its own instruction. |
+
+The earlier text said `references/sources.json` recorded "DOI, URL, retrieval
+date and SHA-256". It records none of the digests, and the vendor record was not
+in the bundle at all, so the deposit told readers to check digests it did not
+ship. Both are fixed. **The extracted texts have no digest of their own** — only
+a `text_file` name — so they are reproduced by re-extracting from the PDF, not
+verified directly.
 
 ### The bundle cannot verify itself — measured, not assumed
 
@@ -248,6 +275,8 @@ and no agent performs it.
 | Public-repo rights audit | The excluded third-party material is still reachable from the public GitHub branch. Separate from the Zenodo question, but real. |
 | `.gitignore` allowlist | Add `!results/v0.3.9_*.json`. Those files were force-added, so nothing is broken; it is a consistency gap. Do it in a later version, where its classification cost is not a surprise. |
 | mypy | 11 errors on Windows, all in `d2_sage_backend_v035.py`: 2 bytes/str assignments, 1 shadowed name, 3 unused ignores, 1 missing annotation, 4 platform-conditional `resource.getrusage`. **The Linux CI runner reports 7** — the four `resource` errors do not arise there. Same debt, two platforms; the comment in `ci.yml` quotes 11 without saying which. The CI job is advisory by design. That file is proof-bearing solver code bound to frozen digests — clear it in its own change, with a full test rerun. |
+| `paper/paper.md` AI disclosure | Same tool/part split as the corrected `.zenodo.json`, and now imprecise for the same reason — see §10. In the v0.3.8 baseline and undeclared, so a fix needs a new change class. Do it in a version that is already touching the paper. |
+| `v031.py:370` wording | `"completeness_scope": "physical certification precondition only; no representation exists"`. In context it means the artifact constructs no representation — `dimension` is 3, `field` is `NOT_CONSTRUCTED` — and it is not a d=2 claim. Quoted alone it reads as a nonexistence theorem. In the v0.3.8 baseline and undeclared; rephrase in a later version. |
 | `actions/checkout@v4` | Node 20 deprecation warning. Works. Bump when convenient. |
 | 7 unpushed tags | Only the two freeze tags the audits need were published. The rest are provenance, not requirements. |
 | JOSS | Everything mechanical is in place: OSI licence, public repo, issue tracker, green CI, `CONTRIBUTING.md`, `paper/paper.md`. Only the owner's scope/maturity judgement remains — **and it does not gate Zenodo**, which applies no editorial review. The v0.3.8 readiness artifact conflated the two; v0.3.9 separates them. |
@@ -299,6 +328,26 @@ Every one of these was a real failure in this project. They share one shape:
   and it reproduces the hand-built archive byte for byte. This was the last
   instance of the family; no step of the release is machine-bound now.
 
+A second family, found 2026-07-31 while preparing the deposit: **prose nobody
+measured.** Each instance read as correct and was internally consistent. Each
+broke the moment the artifact it described was opened and counted.
+
+- **`203 files`** in `.zenodo.json`, after the manifest had reached 204.
+- **The AI disclosure** credited Codex with implementation and test scaffolding
+  in the same release where Claude wrote the deposit-archive builder and its
+  tests.
+- **"`references/sources.json` records DOI, URL, retrieval date and SHA-256"** —
+  it records none of the digests; `references/manifest.json` does. The repo's own
+  `references/README.md` had the split right the whole time. Only the
+  deposit-facing prose was wrong, and the vendor record was not in the bundle at
+  all, so the deposit instructed readers to check digests it did not ship.
+- **"v0.3.9 contains this change and nothing else"** in the audit report, after
+  v0.3.9 had gained the deposit-archive builder.
+
+The rule that follows: **a sentence entering a permanent record is measured
+against the artifact it describes, not reviewed for plausibility.** Three of
+those four survived an independent audit and a green CI.
+
 Operational traps:
 
 - **`gh run watch --exit-status` returned 0 for a failed run.** Always re-read
@@ -345,6 +394,22 @@ uv run python scripts/verify_bundle_v039.py --root <extracted bundle>
 ---
 
 ## 10. AI disclosure
+
+**Re-check this whenever an AI writes code into a release.** In v0.3.9 the
+disclosure went stale within one session: it attributed implementation and test
+scaffolding to Codex, while the deposit-archive builder and its tests were
+written by Claude. `.zenodo.json` was corrected. Two things make this worth a
+standing check rather than a one-off fix:
+
+- **`.zenodo.json` ships inside the archive**, so its disclosure is frozen at
+  deposit. The Zenodo form's metadata stays editable after publication; the file
+  does not.
+- `CONTRIBUTING.md` requires disclosure of **which tool, for which part**. A
+  disclosure that is true in substance can still fail that test.
+
+`paper/paper.md` carries the same split and is also now imprecise, but it sits
+in the v0.3.8 baseline undeclared, so correcting it costs a new declared change
+class. Deferred — see §6.
 
 Both `.zenodo.json` and the paper record that OpenAI Codex assisted with
 implementation, test scaffolding, artifact checks and prose, and that Anthropic
