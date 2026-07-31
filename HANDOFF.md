@@ -186,10 +186,10 @@ at `1f93809`, `550b129e…` at `8cc5a64`, `7719dfd0…` at `4f54ee2`, and
 `5f7058bd…` at `b1798ef`. The last of those contains the corrected author
 identity but still tells readers to use a plain clone, which lands on v0.3.5.
 
-### The sixth candidate — publication paused
+### The deposited sixth candidate
 
 ```
-commit    cba86eae795e1e985c4ba1bcd3dabe4eb2773fab   (local; CI pending)
+commit    cba86eae795e1e985c4ba1bcd3dabe4eb2773fab   (public; deposited)
 sha256    6dea3a3b9f05fe53931f2baf521c1b80e559e239266ff41ca5486f6fe382ce3b
 size      7,210,462 bytes / 206 members / 50,297,343 bytes extracted
 manifest  205 entries, eb9eb81d911f194fe2b6c18dfe81389e3a6fc0856a1bae3a767d46753f348e47
@@ -201,12 +201,10 @@ digest intact. The release reproduction passed and the full local suite passed
 `360` tests. The retained archive is outside the repository at
 `C:\Users\bbbtg\Documents\v0.3.9-cba86ea\final-theory-bench-v0.3.9.tar.gz`.
 
-This commit is not yet on `origin`; the public branch still ends at `b1798ef`.
-Do not upload or publish this archive until `cba86ea` is pushed, its CI is green,
-an unauthenticated clone resolves that commit, and the owner approves this exact
-commit/digest pair. The Zenodo `Is derived from` URL must then end in
-`/tree/cba86eae795e1e985c4ba1bcd3dabe4eb2773fab`, not the superseded `b1798ef`
-URL.
+The commit is public. Zenodo record `21720863` permanently binds the deposit to
+it through an `isDerivedFrom` related identifier ending in
+`/tree/cba86eae795e1e985c4ba1bcd3dabe4eb2773fab`. The public branch later moved
+to handoff-only commit `2470ad4`; that does not move the deposited tree.
 
 The commit and the digest are absent from `.zenodo.json` deliberately. Both are
 functions of the tree, so a file inside the archive cannot state either without
@@ -293,26 +291,18 @@ this with the measurements above.
 
 ---
 
-## 5. Owner decisions — publication hold, 2026-07-31
+## 5. Deposit — completed 2026-07-31
 
-The earlier publication approval is historical context, not current authority.
-The owner explicitly stopped Publish after the default-branch defect was found.
-
-1. **Current candidate: not yet approved.** The exact pair is
-   `cba86eae795e1e985c4ba1bcd3dabe4eb2773fab` / `6dea3a3b…`. Commit and digest
-   must be approved together because the digest is a function of the commit.
-2. **Publish: stopped.** Do not treat the earlier acceptance of permanent DOI
-   semantics as approval to publish this changed candidate.
-
-A third item from the earlier list, committing the deposit-archive builder, is
-done — see §4 and §8.
-
-### Deposited 2026-07-31
+The owner cleared the hold after the default-branch defect was fixed and
+published the exact `cba86ea` / `6dea3a3b…` pair. That approval applies only to
+this deposit; it is not standing authority for a tag, another version, mail, or
+any other publication.
 
 ```
 version DOI   10.5281/zenodo.21720863     this version, files frozen
 concept DOI   10.5281/zenodo.21720862     all versions, resolves to the latest
 record        https://zenodo.org/records/21720863
+concept URL   https://zenodo.org/records/21720862
 commit        cba86eae795e1e985c4ba1bcd3dabe4eb2773fab
 archive       6dea3a3b9f05fe53931f2baf521c1b80e559e239266ff41ca5486f6fe382ce3b
               md5 9d35096cea4b904190551d8034f5bbd0, 7,210,462 bytes
@@ -343,14 +333,14 @@ archive is rebuilt anyway.
 there are throwaway. Rehearsing the whole deposit on it costs one signup and
 removes the only real unknown: what publication actually does.
 
-**The deposit itself is the owner's action.** It requires their Zenodo account,
-and no agent performs it.
+The completed deposit was the owner's action through their Zenodo account. Any
+future deposit remains an owner action and requires fresh approval.
 
 ---
 
 ## 6. Open — later work items
 
-The deposit blockers are in §5. The items below are not additional blockers.
+The v0.3.9 deposit is complete. The items below do not alter that record.
 
 | Item | Note |
 | --- | --- |
