@@ -108,7 +108,7 @@ V039_INTENTIONAL_RELEASE_METADATA_UPDATE       2   .zenodo.json, CITATION.cff
 V039_INTENTIONAL_HISTORICAL_TEST_REBASE        1   test_reproduce_v038.py
                                              ───
                                              193
-manifest file_count 203  (193 baseline + 10 new support)
+manifest file_count 204  (193 baseline + 11 new support)
 ```
 
 `scripts/reproduce_v039.py` reuses
@@ -135,10 +135,9 @@ filenames.
 
 ```
 archive   final-theory-bench-v0.3.9.tar.gz
-sha256    97a220b4180f4de58735dcc795b3d59377cd9b8300de4c0ecc50ce87d3e78860
-size      7,202,298 bytes compressed / 47.9 MiB extracted
-files     204  (203 manifest entries + the self-excluded manifest)
-commit    313e915b59839a60643da17c943b9cfdf44ce3bf
+builder   scripts/build_v039_deposit_archive.py   (--output is required)
+files     205  (204 manifest entries + the self-excluded manifest)
+size      47.9 MiB extracted
 ```
 
 Deterministic: entries sorted by path, `mtime` fixed to the commit's author
@@ -146,8 +145,19 @@ date, uid/gid 0, empty uname/gname, mode 0644, gzip `mtime=0`. Built twice,
 byte-identical. Round-tripped: extracted and verified with
 `scripts/verify_bundle_v039.py`, `missing 0 / mismatch 0 / extra 0`.
 
-The archive currently lives only in the session scratchpad. **The script that
-builds it is not committed** — see §5.4.
+**The archive digest is bound to the packaged commit**, because `mtime` is that
+commit's author date. Never quote one without the other. Rebuild with:
+
+```console
+uv run python scripts/build_v039_deposit_archive.py --output <path>/final-theory-bench-v0.3.9.tar.gz --commit <commit>
+```
+
+The builder was validated against the archive that predates it: at `313e915`,
+with the then-current 203-entry manifest, it reproduces
+`97a220b4180f4de58735dcc795b3d59377cd9b8300de4c0ecc50ce87d3e78860`,
+7,202,298 bytes, byte for byte. That archive is superseded — the current
+manifest has 204 entries — but the reproduction is what establishes that the
+builder is the same procedure that produced the original.
 
 ### Excluded, deliberately
 
@@ -170,6 +180,9 @@ the originals and check them against the recorded digests.
 335 files (+ all bridge consumers)       → fails, 121.5 MiB
 ```
 
+Those three counts are the sets as they were measured, against the 203-entry
+manifest; the builder added since does not move the boundary.
+
 The bridge is regenerated from `git ls-files`, and the baseline audits resolve
 commits, annotated tags and a branch. **No file set closes this gap.** Do not
 try again by adding files.
@@ -185,16 +198,15 @@ this with the measurements above.
 
 Nothing below should be actioned without the owner saying so in chat.
 
-1. **Approve the archive** `97a220b4…` for deposit.
-2. **Fix the v1 commit** — `313e915` or later.
-3. **Approve permanent publication.** A Zenodo DOI cannot be withdrawn. This is
+1. **Fix the v1 commit**, then rebuild the archive at it and **approve that
+   archive** for deposit. The two are one decision now: the digest is a function
+   of the commit, so approving a digest without naming its commit approves
+   nothing.
+2. **Approve permanent publication.** A Zenodo DOI cannot be withdrawn. This is
    the only genuine blocker.
-4. **Commit the deposit-archive builder?** Recommended, as
-   `scripts/build_v039_deposit_archive.py`, so a third party can regenerate the
-   archive and match the SHA-256. Costs one more cycle: declare the path,
-   rebuild manifest, full tests, push, CI. Without it, the packaging step is the
-   one part of this release that exists only on the author's machine — which is
-   precisely the failure mode the last three releases were spent eliminating.
+
+Item 4 of the previous list — commit the deposit-archive builder — is done. See
+§4 and §8.
 
 **The deposit itself is the owner's action.** It requires their Zenodo account,
 and no agent performs it.
@@ -247,7 +259,9 @@ Every one of these was a real failure in this project. They share one shape:
 - **Bare branch resolution.** `git rev-parse <branch>` never falls back to
   `refs/remotes/origin/<branch>`, and a clone has no local head for a branch it
   did not check out. Fixed in v0.3.9.
-- **Packaging.** Currently the last instance — see §5.4.
+- **Packaging.** Closed. `scripts/build_v039_deposit_archive.py` is committed,
+  and it reproduces the hand-built archive byte for byte. This was the last
+  instance of the family; no step of the release is machine-bound now.
 
 Operational traps:
 
@@ -272,9 +286,10 @@ paper/paper.md                           JOSS draft
 REPRODUCING_v0.3.9.md                    verification, incl. bundle boundary
 reports/v0.3.9_audit_ref_portability.md  what v0.3.9 changed and why
 reports/v0.3.9_publication_readiness.md  blockers, Zenodo vs JOSS separated
-results/v0.3.9_release_manifest.json     203 entries, self-excluded
+results/v0.3.9_release_manifest.json     204 entries, self-excluded
 results/v0.3.8_line_ending_bridge.json   1,007 bindings / 84 consumers / 207 targets
 scripts/build_v039_release_manifest.py   declared-change guard
+scripts/build_v039_deposit_archive.py    deterministic deposit packaging
 scripts/reproduce_v039.py                full verification
 scripts/verify_bundle_v039.py            offline bundle integrity
 src/universe_lab/final_theory/audit_v031.py   resolve_frozen_branch
@@ -286,7 +301,7 @@ Verification, in order of cost:
 
 ```console
 uv run python scripts/reproduce_v039.py     # full, needs the git repository
-uv run pytest -q                            # 357 tests, ~6 min
+uv run pytest -q                            # 359 tests, ~6 min
 uv run ruff check .
 uv run python scripts/verify_bundle_v039.py --root <extracted bundle>
 ```

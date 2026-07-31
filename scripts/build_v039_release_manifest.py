@@ -56,6 +56,7 @@ NEW_RELEASE_SUPPORT_PATHS = (
     "reports/v0.3.9_audit_ref_portability.md",
     "reports/v0.3.9_publication_readiness.md",
     "results/v0.3.9_publication_readiness.json",
+    "scripts/build_v039_deposit_archive.py",
     "scripts/build_v039_release_manifest.py",
     "scripts/reproduce_v039.py",
     "scripts/verify_bundle_v039.py",

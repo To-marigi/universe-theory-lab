@@ -60,13 +60,13 @@ The individual checks are:
 uv run python scripts/build_v039_release_manifest.py --check
 uv run pytest -q tests/final_theory/test_audit_ref_portability_v039.py
 uv run pytest -q tests/final_theory/test_reproduce_v039.py
-uv run ruff check scripts/build_v039_release_manifest.py scripts/reproduce_v039.py
+uv run ruff check scripts/build_v039_release_manifest.py scripts/build_v039_deposit_archive.py scripts/reproduce_v039.py
 ```
 
 ## If you have the Zenodo bundle rather than the repository
 
 The deposited bundle is a curated archive of the files named by
-`results/v0.3.9_release_manifest.json`, plus that manifest — 204 files, 47.9
+`results/v0.3.9_release_manifest.json`, plus that manifest — 205 files, 47.9
 MiB. It is **not** a repository snapshot, and it deliberately excludes
 third-party material: the PDFs under `references/papers/`, the extracted texts
 under `references/text/`, and the vendored archives under
@@ -96,6 +96,25 @@ Full reproduction therefore requires the repository at the released commit:
 ```console
 git clone https://github.com/To-marigi/universe-theory-lab.git
 ```
+
+### Rebuilding the bundle
+
+The archive is reproducible from the repository, not only verifiable.
+`scripts/build_v039_deposit_archive.py` packs the manifest's files plus the
+manifest in sorted order, with every member fixed to mode 0644, uid/gid 0,
+empty owner names, and an `mtime` taken from the packaged commit's author date.
+The gzip wrapper stores neither a filename nor a timestamp, so the output
+depends on the packaged commit and on nothing else about the machine.
+
+```console
+uv run python scripts/build_v039_deposit_archive.py --output <path>/final-theory-bench-v0.3.9.tar.gz --commit <released commit> --expect-sha256 <recorded digest>
+```
+
+The builder refuses to run if any packed file differs from its recorded
+SHA-256, so a stale or dirty checkout cannot be archived under the release's
+name. Because `mtime` comes from the commit, the archive digest is bound to
+that commit: a recorded digest is only checkable when it is quoted together
+with the commit it was built from.
 
 ## The v0.3.8 release is unchanged
 
