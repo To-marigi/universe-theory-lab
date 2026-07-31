@@ -9,16 +9,19 @@ Written 2026-07-31. Read this before touching the release machinery.
 ```
 branch      codex/final-theory-v0.3.9-audit-ref-portability-20260730
 last green  run 30624874873 on 4f54ee2 — success, 359 tests
-HEAD        a later commit; its own CI run is a separate observation
+candidate   cba86ea — local reproduction, 360 tests, and bundle check green
+HEAD        a later handoff-only commit; its own CI run is a separate observation
 verdict     FINAL_THEORY_OPEN   (unchanged, and not up for revision)
-deposit     approved; target 4f54ee2 — see §4 and §5
+deposit     PAUSED; candidate cba86ea / 6dea3a3b… is not yet approved
 ```
 
 A commit cannot record its own hash or its own CI run, so §1 always names the
 last commit that was actually observed green. Check `git log` for HEAD.
 
-Mechanical blockers to a Zenodo deposit: **none**. What remains is the owner's
-decision, listed in §5.
+Publication is on explicit hold. Before any Zenodo deposit, push `cba86ea`,
+obtain a green CI result for it, confirm the commit through an unauthenticated
+clone, and obtain owner approval for the exact commit/archive-digest pair. See
+§4 and §5.
 
 ---
 
@@ -161,10 +164,10 @@ The builder was validated against the archive that predates it: at `313e915`,
 with the then-current 203-entry manifest, it reproduces
 `97a220b4180f4de58735dcc795b3d59377cd9b8300de4c0ecc50ce87d3e78860`,
 7,202,298 bytes, byte for byte. That archive is superseded — the current
-manifest has 204 entries — but the reproduction is what establishes that the
+manifest has 205 entries — but the reproduction is what establishes that the
 builder is the same procedure that produced the original.
 
-### The approved deposit
+### The superseded approved deposit
 
 ```
 commit    4f54ee27ebbaf0747b7ed8e53df98ac5a458e649   (CI 30624874873, green)
@@ -173,14 +176,36 @@ size      7,209,209 bytes / 206 members / 48.0 MiB extracted
 manifest  205 entries, 2e3229c2b274e8c206a8c2ae531c0aad6a665b1b727f5c37187f0235c7b6ed7d
 ```
 
-Two earlier candidates are superseded and must not be deposited: `a190306c…`
-at `1f93809`, which predates the prose corrections, and `550b129e…` at
-`8cc5a64`, which predates them and the metadata refresh.
+That approval is superseded: later identity metadata and the clone-instruction
+correction changed the release tree. It does not authorise the current
+candidate.
+
+Four earlier candidates are superseded and must not be deposited: `a190306c…`
+at `1f93809`, `550b129e…` at `8cc5a64`, `7719dfd0…` at `4f54ee2`, and
+`5f7058bd…` at `b1798ef`. The last of those contains the corrected author
+identity but still tells readers to use a plain clone, which lands on v0.3.5.
+
+### The sixth candidate — publication paused
+
+```
+commit    cba86eae795e1e985c4ba1bcd3dabe4eb2773fab   (local; CI pending)
+sha256    6dea3a3b9f05fe53931f2baf521c1b80e559e239266ff41ca5486f6fe382ce3b
+size      7,210,462 bytes / 206 members / 50,297,343 bytes extracted
+manifest  205 entries, eb9eb81d911f194fe2b6c18dfe81389e3a6fc0856a1bae3a767d46753f348e47
+```
 
 Built twice byte-identical; extracted and checked with
 `scripts/verify_bundle_v039.py` — `missing 0 / mismatch 0 / extra 0`, manifest
-digest intact. **The archive is not committed.** Rebuild it from the commit
-above; do not go looking for a copy.
+digest intact. The release reproduction passed and the full local suite passed
+`360` tests. The retained archive is outside the repository at
+`C:\Users\bbbtg\Documents\v0.3.9-cba86ea\final-theory-bench-v0.3.9.tar.gz`.
+
+This commit is not yet on `origin`; the public branch still ends at `b1798ef`.
+Do not upload or publish this archive until `cba86ea` is pushed, its CI is green,
+an unauthenticated clone resolves that commit, and the owner approves this exact
+commit/digest pair. The Zenodo `Is derived from` URL must then end in
+`/tree/cba86eae795e1e985c4ba1bcd3dabe4eb2773fab`, not the superseded `b1798ef`
+URL.
 
 The commit and the digest are absent from `.zenodo.json` deliberately. Both are
 functions of the tree, so a file inside the archive cannot state either without
@@ -267,18 +292,16 @@ this with the measurements above.
 
 ---
 
-## 5. Owner decisions — settled 2026-07-31
+## 5. Owner decisions — publication hold, 2026-07-31
 
-Both are decided. Recorded so a new session does not reopen them.
+The earlier publication approval is historical context, not current authority.
+The owner explicitly stopped Publish after the default-branch defect was found.
 
-1. **Deposit target: `4f54ee27ebbaf0747b7ed8e53df98ac5a458e649`**, with the
-   archive `7719dfd0…`. Commit and digest were approved together, because the
-   digest is a function of the commit and approving one without the other
-   approves nothing. See §4.
-2. **Permanent publication: approved.** The owner accepted the actual terms: a
-   version DOI cannot be withdrawn, withdrawal leaves a tombstone that keeps the
-   DOI and URL, and what is frozen is *that version's files* — metadata stays
-   editable after publication and later versions attach to the same concept DOI.
+1. **Current candidate: not yet approved.** The exact pair is
+   `cba86eae795e1e985c4ba1bcd3dabe4eb2773fab` / `6dea3a3b…`. Commit and digest
+   must be approved together because the digest is a function of the commit.
+2. **Publish: stopped.** Do not treat the earlier acceptance of permanent DOI
+   semantics as approval to publish this changed candidate.
 
 A third item from the earlier list, committing the deposit-archive builder, is
 done — see §4 and §8.
@@ -304,7 +327,9 @@ and no agent performs it.
 
 ---
 
-## 6. Open — work items, none blocking
+## 6. Open — later work items
+
+The deposit blockers are in §5. The items below are not additional blockers.
 
 | Item | Note |
 | --- | --- |
@@ -379,6 +404,10 @@ broke the moment the artifact it described was opened and counted.
   all, so the deposit instructed readers to check digests it did not ship.
 - **"v0.3.9 contains this change and nothing else"** in the audit report, after
   v0.3.9 had gained the deposit-archive builder.
+- **A plain clone in the reproduction guide**, while the repository default
+  branch was v0.3.5. Readers landed before `scripts/reproduce_v039.py` and the
+  v0.3.9 manifest even existed. Both clone examples now select the v0.3.9 branch
+  explicitly, and a regression test rejects a return to the bare command.
 
 The rule that follows: **a sentence entering a permanent record is measured
 against the artifact it describes, not reviewed for plausibility.** Three of
@@ -407,7 +436,7 @@ paper/paper.md                           JOSS draft
 REPRODUCING_v0.3.9.md                    verification, incl. bundle boundary
 reports/v0.3.9_audit_ref_portability.md  what v0.3.9 changed and why
 reports/v0.3.9_publication_readiness.md  blockers, Zenodo vs JOSS separated
-results/v0.3.9_release_manifest.json     204 entries, self-excluded
+results/v0.3.9_release_manifest.json     205 entries, self-excluded
 results/v0.3.8_line_ending_bridge.json   1,007 bindings / 84 consumers / 207 targets
 scripts/build_v039_release_manifest.py   declared-change guard
 scripts/build_v039_deposit_archive.py    deterministic deposit packaging
@@ -422,7 +451,7 @@ Verification, in order of cost:
 
 ```console
 uv run python scripts/reproduce_v039.py     # full, needs the git repository
-uv run pytest -q                            # 359 tests, ~6 min
+uv run pytest -q                            # 360 tests, ~6 min
 uv run ruff check .
 uv run python scripts/verify_bundle_v039.py --root <extracted bundle>
 ```
