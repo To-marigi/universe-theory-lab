@@ -51,7 +51,8 @@ The command succeeds only if all of the following hold:
 3. every one of those 193 entries is byte-identical or a member of a declared
    change set — `V039_INTENTIONAL_AUDIT_PORTABILITY_CHANGE`,
    `V039_INTENTIONAL_RELEASE_METADATA_UPDATE`,
-   `V039_INTENTIONAL_HISTORICAL_TEST_REBASE`, or `V039_NEW_RELEASE_SUPPORT`.
+   `V039_INTENTIONAL_HISTORICAL_TEST_REBASE`,
+   `V039_INTENTIONAL_AUTHOR_IDENTITY`, or `V039_NEW_RELEASE_SUPPORT`.
    Any undeclared difference fails immediately;
 4. the v0.3.9 release manifest regenerates byte-for-byte and excludes itself.
 

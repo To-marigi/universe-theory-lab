@@ -106,9 +106,10 @@ project were caught rather than shipped.
 v0.3.9 classification, pinned by tests:
 
 ```
-UNCHANGED_RAW_BYTES                          188
+UNCHANGED_RAW_BYTES                          186
 V039_INTENTIONAL_AUDIT_PORTABILITY_CHANGE      2   ci.yml, audit_v031.py
 V039_INTENTIONAL_RELEASE_METADATA_UPDATE       2   .zenodo.json, CITATION.cff
+V039_INTENTIONAL_AUTHOR_IDENTITY               2   LICENSE, paper/paper.md
 V039_INTENTIONAL_HISTORICAL_TEST_REBASE        1   test_reproduce_v038.py
                                              ───
                                              193
@@ -199,6 +200,23 @@ follows the same shape. **Do not move the project name back to the front.**
 The archive filename, the module paths under `src/universe_lab/final_theory/`
 and the verdict tokens keep the name, which is what preserves the correspondence
 between the record and the code.
+
+### Author identity
+
+The author is **Kenichi Osaki**, ORCID `0009-0003-9256-7089`. `LICENSE`,
+`paper/paper.md`, `.zenodo.json` and `CITATION.cff` carry that name.
+
+`paper/v0.3.7_d2_commutativity/main.tex`, the PDF built from it, and every other
+artifact frozen before v0.3.9 still carry the earlier handle **`To-Marigi`**.
+That is deliberate and must stay: they are frozen, §7-1 requires their recorded
+digests to remain valid, and rewriting the byline would invalidate the v0.3.8
+baseline entry for the PDF. `To-Marigi` is registered as an alternative name on
+the ORCID record, so the two resolve to one person without touching a frozen
+byte. **Do not "fix" the frozen byline.**
+
+If the paper is ever revised for arXiv or a journal — both of which require the
+legal name — that revision is the moment to carry the real name into a *new*
+paper version, with an addendum naming what it supersedes.
 
 ### Excluded, deliberately
 

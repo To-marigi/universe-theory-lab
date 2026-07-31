@@ -6,7 +6,8 @@ tags:
   - causal sets
   - computer-assisted proof
 authors:
-  - name: To-Marigi
+  - name: Kenichi Osaki
+    orcid: 0009-0003-9256-7089
     affiliation: "1"
 affiliations:
   - name: Independent researcher

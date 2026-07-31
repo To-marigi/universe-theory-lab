@@ -17,7 +17,7 @@
     "global": "FINAL_THEORY_OPEN"
   },
   "scientific_change": "NONE",
-  "claim_boundary": "v0.3.9 changes how one git ref is resolved during the v0.3 baseline audit. It reruns no solver, alters no certificate, and moves no verdict.",
+  "claim_boundary": "v0.3.9 changes how one git ref is resolved during the v0.3 baseline audit, adds a deterministic deposit-archive builder, and corrects the release metadata, including the author's recorded identity. It reruns no solver, alters no certificate, and moves no verdict.",
   "historical_v0.3.8_manifest_audit": {
     "baseline_artifact": "results/v0.3.8_release_manifest.json",
     "baseline_schema_version": "final-theory-release-manifest-v0.3.8",
@@ -52,13 +52,13 @@
       {
         "path": ".zenodo.json",
         "v0.3.8_recorded_sha256": "b2cd8bdf3af0f1efb9044dfa931ac753a6171953f66190b23ac80e1b10baf14b",
-        "v0.3.9_current_sha256": "ff0cc8bad9b8aaefbdc194a57a9bcdb7ceabc053ddd275807cb1d2f417edb723",
+        "v0.3.9_current_sha256": "09f63ca01be22709ace065cdd761e9541a766210971706268608dfac88d88f70",
         "classification": "V039_INTENTIONAL_RELEASE_METADATA_UPDATE"
       },
       {
         "path": "CITATION.cff",
         "v0.3.8_recorded_sha256": "0686e0a55395bfb8a039762d3b47a6be3dae05b083b3ccef3c2f6a12d0f21880",
-        "v0.3.9_current_sha256": "97dd49cbb9b527b969709cf00c218d66d282b48b3eae4019383b3cf189e20754",
+        "v0.3.9_current_sha256": "cc55f9df903a30567ee6d069b75ba81e1f7dd3f6edd615bfb3714a5c4b8324be",
         "classification": "V039_INTENTIONAL_RELEASE_METADATA_UPDATE"
       },
       {
@@ -70,8 +70,8 @@
       {
         "path": "LICENSE",
         "v0.3.8_recorded_sha256": "ed48a80d1d9e76a9b90188152bf6df630c3c2dd4b078e9f65231f6b70d1e8c39",
-        "v0.3.9_current_sha256": "ed48a80d1d9e76a9b90188152bf6df630c3c2dd4b078e9f65231f6b70d1e8c39",
-        "classification": "UNCHANGED_RAW_BYTES"
+        "v0.3.9_current_sha256": "d729cafecf3e0d682fa8baf7c32d450a931e775106316c96d91681925f356814",
+        "classification": "V039_INTENTIONAL_AUTHOR_IDENTITY"
       },
       {
         "path": "README.md",
@@ -550,8 +550,8 @@
       {
         "path": "paper/paper.md",
         "v0.3.8_recorded_sha256": "3bfba13e8a7b5b0091fb796340b10c22202c3499cd419882d5bb9a25e08c0bd9",
-        "v0.3.9_current_sha256": "3bfba13e8a7b5b0091fb796340b10c22202c3499cd419882d5bb9a25e08c0bd9",
-        "classification": "UNCHANGED_RAW_BYTES"
+        "v0.3.9_current_sha256": "6e2965cae0e0b34dc6ba4ced3f251cc64c799e85efd9e48840d8c8b2cd061588",
+        "classification": "V039_INTENTIONAL_AUTHOR_IDENTITY"
       },
       {
         "path": "paper/v0.3.7_d2_commutativity/main.tex",
@@ -1185,15 +1185,16 @@
       }
     ],
     "classification_counts": {
-      "UNCHANGED_RAW_BYTES": 188,
+      "UNCHANGED_RAW_BYTES": 186,
       "V039_INTENTIONAL_AUDIT_PORTABILITY_CHANGE": 2,
+      "V039_INTENTIONAL_AUTHOR_IDENTITY": 2,
       "V039_INTENTIONAL_HISTORICAL_TEST_REBASE": 1,
       "V039_INTENTIONAL_RELEASE_METADATA_UPDATE": 2
     },
     "undeclared_changes": []
   },
   "file_count": 205,
-  "total_size_bytes": 50164691,
+  "total_size_bytes": 50166581,
   "files": [
     {
       "path": ".gitattributes",
@@ -1225,15 +1226,15 @@
     },
     {
       "path": ".zenodo.json",
-      "sha256": "ff0cc8bad9b8aaefbdc194a57a9bcdb7ceabc053ddd275807cb1d2f417edb723",
-      "size_bytes": 3795,
+      "sha256": "09f63ca01be22709ace065cdd761e9541a766210971706268608dfac88d88f70",
+      "size_bytes": 4208,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_INTENTIONAL_RELEASE_METADATA_UPDATE"
     },
     {
       "path": "CITATION.cff",
-      "sha256": "97dd49cbb9b527b969709cf00c218d66d282b48b3eae4019383b3cf189e20754",
-      "size_bytes": 1415,
+      "sha256": "cc55f9df903a30567ee6d069b75ba81e1f7dd3f6edd615bfb3714a5c4b8324be",
+      "size_bytes": 1567,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_INTENTIONAL_RELEASE_METADATA_UPDATE"
     },
@@ -1246,10 +1247,10 @@
     },
     {
       "path": "LICENSE",
-      "sha256": "ed48a80d1d9e76a9b90188152bf6df630c3c2dd4b078e9f65231f6b70d1e8c39",
-      "size_bytes": 1066,
+      "sha256": "d729cafecf3e0d682fa8baf7c32d450a931e775106316c96d91681925f356814",
+      "size_bytes": 1070,
       "serialization": "CANONICAL_LF_UTF8",
-      "role": "RELEASE_SUPPORT_SOURCE_OR_FROZEN_INPUT"
+      "role": "V039_INTENTIONAL_AUTHOR_IDENTITY"
     },
     {
       "path": "README.md",
@@ -1274,8 +1275,8 @@
     },
     {
       "path": "REPRODUCING_v0.3.9.md",
-      "sha256": "5c0a6b67c1477622eba38fa92d7f3df87ab1dad806c5793e8f2a8569b8ec8840",
-      "size_bytes": 6947,
+      "sha256": "f6369da0fe993b8a4b4045da48b97c5fd46636a1f18bf7557bb6656f41be0e2f",
+      "size_bytes": 6986,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_NEW_RELEASE_SUPPORT"
     },
@@ -1820,10 +1821,10 @@
     },
     {
       "path": "paper/paper.md",
-      "sha256": "3bfba13e8a7b5b0091fb796340b10c22202c3499cd419882d5bb9a25e08c0bd9",
-      "size_bytes": 7785,
+      "sha256": "6e2965cae0e0b34dc6ba4ced3f251cc64c799e85efd9e48840d8c8b2cd061588",
+      "size_bytes": 7820,
       "serialization": "CANONICAL_LF_UTF8",
-      "role": "V038_CANONICAL_LF_WRITER_OR_SUPPORT"
+      "role": "V039_INTENTIONAL_AUTHOR_IDENTITY"
     },
     {
       "path": "paper/v0.3.7_d2_commutativity/main.tex",
@@ -1911,8 +1912,8 @@
     },
     {
       "path": "reports/v0.3.9_audit_ref_portability.md",
-      "sha256": "857cd31892fd847bd7fe5de7c2d54ec294ed7efaca0fdf82247e2c3c0599541e",
-      "size_bytes": 3337,
+      "sha256": "3bcec6b7e84920614e4aef93063c6214910bc86cfe3f40822f9de927fdb55d79",
+      "size_bytes": 3710,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_NEW_RELEASE_SUPPORT"
     },
@@ -2093,8 +2094,8 @@
     },
     {
       "path": "scripts/build_v039_release_manifest.py",
-      "sha256": "6dbc480ac621bde427191864c82702fa03f078877a31d04b99e9549fc64af3b1",
-      "size_bytes": 12290,
+      "sha256": "aa6ac8536769a2778e5511327bb1b422584300efb09ae618cfa92802a2d7e4d4",
+      "size_bytes": 13034,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_NEW_RELEASE_SUPPORT"
     },
@@ -2583,8 +2584,8 @@
     },
     {
       "path": "tests/final_theory/test_reproduce_v039.py",
-      "sha256": "202654b669606fdab3e32f39fc66dee021c1d6e5adf568406d32e222a34a6070",
-      "size_bytes": 13992,
+      "sha256": "a3b105bb0ae396e0661fc5214d07f9ef864afd5e28f983d2d96116f6f95128ef",
+      "size_bytes": 14122,
       "serialization": "CANONICAL_LF_UTF8",
       "role": "V039_NEW_RELEASE_SUPPORT"
     },
@@ -2632,5 +2633,5 @@
     }
   ],
   "self_excluded_artifact": "results/v0.3.9_release_manifest.json",
-  "semantic_digest_sha256": "2e3229c2b274e8c206a8c2ae531c0aad6a665b1b727f5c37187f0235c7b6ed7d"
+  "semantic_digest_sha256": "44701a6caad668f784159b1154d14f7b88dd544d89064e7d06fe4fcd2815a371"
 }

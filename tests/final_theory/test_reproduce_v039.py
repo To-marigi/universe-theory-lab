@@ -74,12 +74,14 @@ def test_every_baseline_entry_is_declared(manifest: dict[str, Any]) -> None:
         "V039_INTENTIONAL_AUDIT_PORTABILITY_CHANGE",
         "V039_INTENTIONAL_RELEASE_METADATA_UPDATE",
         "V039_INTENTIONAL_HISTORICAL_TEST_REBASE",
+        "V039_INTENTIONAL_AUTHOR_IDENTITY",
         "V039_NEW_RELEASE_SUPPORT",
     }
     assert set(audit["classification_counts"]) <= allowed
     assert audit["classification_counts"] == {
-        "UNCHANGED_RAW_BYTES": 188,
+        "UNCHANGED_RAW_BYTES": 186,
         "V039_INTENTIONAL_AUDIT_PORTABILITY_CHANGE": 2,
+        "V039_INTENTIONAL_AUTHOR_IDENTITY": 2,
         "V039_INTENTIONAL_HISTORICAL_TEST_REBASE": 1,
         "V039_INTENTIONAL_RELEASE_METADATA_UPDATE": 2,
     }
@@ -90,6 +92,7 @@ def test_declared_change_sets_are_disjoint_and_complete(builder: ModuleType) -> 
         builder.AUDIT_PORTABILITY_PATHS,
         builder.RELEASE_METADATA_PATHS,
         builder.HISTORICAL_TEST_REBASE_PATHS,
+        builder.AUTHOR_IDENTITY_PATHS,
         builder.NEW_RELEASE_SUPPORT_PATHS,
     )
     seen: set[str] = set()

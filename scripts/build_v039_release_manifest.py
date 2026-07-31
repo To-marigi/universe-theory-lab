@@ -51,6 +51,16 @@ HISTORICAL_TEST_REBASE_PATHS = (
     "tests/final_theory/test_reproduce_v038.py",
 )
 
+# The author's name and ORCID, in the two places that state authorship without
+# being frozen. The v0.3.7 report and its PDF carry the earlier handle too and
+# are deliberately not touched: they are frozen artifacts whose recorded digests
+# must stay valid. The identity is stated in the release metadata and recorded
+# as an alternative name on the ORCID record instead of being rewritten.
+AUTHOR_IDENTITY_PATHS = (
+    "LICENSE",
+    "paper/paper.md",
+)
+
 NEW_RELEASE_SUPPORT_PATHS = (
     "REPRODUCING_v0.3.9.md",
     # The deposit excludes the vendored archives for licensing reasons and tells
@@ -74,6 +84,7 @@ NEW_RELEASE_SUPPORT_PATHS = (
 CLASSIFICATION_AUDIT = "V039_INTENTIONAL_AUDIT_PORTABILITY_CHANGE"
 CLASSIFICATION_METADATA = "V039_INTENTIONAL_RELEASE_METADATA_UPDATE"
 CLASSIFICATION_TEST_REBASE = "V039_INTENTIONAL_HISTORICAL_TEST_REBASE"
+CLASSIFICATION_IDENTITY = "V039_INTENTIONAL_AUTHOR_IDENTITY"
 CLASSIFICATION_SUPPORT = "V039_NEW_RELEASE_SUPPORT"
 CLASSIFICATION_UNCHANGED = "UNCHANGED_RAW_BYTES"
 
@@ -81,6 +92,7 @@ DECLARED_CHANGES = {
     **{path: CLASSIFICATION_AUDIT for path in AUDIT_PORTABILITY_PATHS},
     **{path: CLASSIFICATION_METADATA for path in RELEASE_METADATA_PATHS},
     **{path: CLASSIFICATION_TEST_REBASE for path in HISTORICAL_TEST_REBASE_PATHS},
+    **{path: CLASSIFICATION_IDENTITY for path in AUTHOR_IDENTITY_PATHS},
     **{path: CLASSIFICATION_SUPPORT for path in NEW_RELEASE_SUPPORT_PATHS},
 }
 
@@ -268,7 +280,9 @@ def build_manifest(root: Path) -> dict[str, Any]:
         "scientific_change": "NONE",
         "claim_boundary": (
             "v0.3.9 changes how one git ref is resolved during the v0.3 baseline "
-            "audit. It reruns no solver, alters no certificate, and moves no verdict."
+            "audit, adds a deterministic deposit-archive builder, and corrects the "
+            "release metadata, including the author's recorded identity. It reruns "
+            "no solver, alters no certificate, and moves no verdict."
         ),
         "historical_v0.3.8_manifest_audit": audit,
         "file_count": len(files),
