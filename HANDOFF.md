@@ -8,10 +8,10 @@ Written 2026-07-31. Read this before touching the release machinery.
 
 ```
 branch      codex/final-theory-v0.3.9-audit-ref-portability-20260730
-last green  run 30621126760 on 1f93809 — success, 359 tests
+last green  run 30624874873 on 4f54ee2 — success, 359 tests
 HEAD        a later commit; its own CI run is a separate observation
 verdict     FINAL_THEORY_OPEN   (unchanged, and not up for revision)
-deposit     candidate built at 1f93809 — see §4
+deposit     approved; target 4f54ee2 — see §4 and §5
 ```
 
 A commit cannot record its own hash or its own CI run, so §1 always names the
@@ -163,14 +163,18 @@ with the then-current 203-entry manifest, it reproduces
 manifest has 204 entries — but the reproduction is what establishes that the
 builder is the same procedure that produced the original.
 
-### The current candidate
+### The approved deposit
 
 ```
-commit    1f938090c0348dbcbec012a30cd9d02641e06abd   (CI 30621126760, green)
-sha256    a190306cd871af36b703ffa9eeaa3b8f0af3d1ff016a707de8dc4172166d13c7
-size      7,207,171 bytes / 205 members
-manifest  204 entries, b0fed9e41a15b296941b3fc498b191e1dd23008a2cca8663dda78f8fa0dd8a3b
+commit    4f54ee27ebbaf0747b7ed8e53df98ac5a458e649   (CI 30624874873, green)
+sha256    7719dfd01954f21e7bbc72473138bc88ab04d4d7ae840edcea5a7128a8eec537
+size      7,209,209 bytes / 206 members / 48.0 MiB extracted
+manifest  205 entries, 2e3229c2b274e8c206a8c2ae531c0aad6a665b1b727f5c37187f0235c7b6ed7d
 ```
+
+Two earlier candidates are superseded and must not be deposited: `a190306c…`
+at `1f93809`, which predates the prose corrections, and `550b129e…` at
+`8cc5a64`, which predates them and the metadata refresh.
 
 Built twice byte-identical; extracted and checked with
 `scripts/verify_bundle_v039.py` — `missing 0 / mismatch 0 / extra 0`, manifest
@@ -245,19 +249,33 @@ this with the measurements above.
 
 ---
 
-## 5. Open — owner decisions
+## 5. Owner decisions — settled 2026-07-31
 
-Nothing below should be actioned without the owner saying so in chat.
+Both are decided. Recorded so a new session does not reopen them.
 
-1. **Fix the v1 commit**, then rebuild the archive at it and **approve that
-   archive** for deposit. The two are one decision now: the digest is a function
-   of the commit, so approving a digest without naming its commit approves
-   nothing.
-2. **Approve permanent publication.** A Zenodo DOI cannot be withdrawn. This is
-   the only genuine blocker.
+1. **Deposit target: `4f54ee27ebbaf0747b7ed8e53df98ac5a458e649`**, with the
+   archive `7719dfd0…`. Commit and digest were approved together, because the
+   digest is a function of the commit and approving one without the other
+   approves nothing. See §4.
+2. **Permanent publication: approved.** The owner accepted the actual terms: a
+   version DOI cannot be withdrawn, withdrawal leaves a tombstone that keeps the
+   DOI and URL, and what is frozen is *that version's files* — metadata stays
+   editable after publication and later versions attach to the same concept DOI.
 
-Item 4 of the previous list — commit the deposit-archive builder — is done. See
-§4 and §8.
+A third item from the earlier list, committing the deposit-archive builder, is
+done — see §4 and §8.
+
+### Still not done, and not the agent's to do
+
+The deposit itself. It needs the owner's Zenodo account, and no agent performs
+it. Invariant §7-6 continues to apply to everything else: tags, mail, and any
+further publication each need their own approval in chat.
+
+**DOI: not yet recorded.** When the deposit is executed, capture three things —
+the version DOI, the concept DOI, and the record URL — and write them here.
+Then add the DOI to `CITATION.cff` and the README **in a later version**: writing
+it into the current tree changes the archive digest and breaks the binding the
+deposit itself records.
 
 `sandbox.zenodo.org` is a separate instance with its own accounts, and DOIs
 there are throwaway. Rehearsing the whole deposit on it costs one signup and
