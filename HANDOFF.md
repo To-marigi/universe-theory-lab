@@ -8,9 +8,10 @@ Written 2026-07-31. Read this before touching the release machinery.
 
 ```
 branch      codex/final-theory-v0.3.9-audit-ref-portability-20260730
-last green  run 30619471105 on 8cc5a64 — success, 359 tests
+last green  run 30621126760 on 1f93809 — success, 359 tests
 HEAD        a later commit; its own CI run is a separate observation
 verdict     FINAL_THEORY_OPEN   (unchanged, and not up for revision)
+deposit     candidate built at 1f93809 — see §4
 ```
 
 A commit cannot record its own hash or its own CI run, so §1 always names the
@@ -162,6 +163,26 @@ with the then-current 203-entry manifest, it reproduces
 manifest has 204 entries — but the reproduction is what establishes that the
 builder is the same procedure that produced the original.
 
+### The current candidate
+
+```
+commit    1f938090c0348dbcbec012a30cd9d02641e06abd   (CI 30621126760, green)
+sha256    a190306cd871af36b703ffa9eeaa3b8f0af3d1ff016a707de8dc4172166d13c7
+size      7,207,171 bytes / 205 members
+manifest  204 entries, b0fed9e41a15b296941b3fc498b191e1dd23008a2cca8663dda78f8fa0dd8a3b
+```
+
+Built twice byte-identical; extracted and checked with
+`scripts/verify_bundle_v039.py` — `missing 0 / mismatch 0 / extra 0`, manifest
+digest intact. **The archive is not committed.** Rebuild it from the commit
+above; do not go looking for a copy.
+
+The commit and the digest are absent from `.zenodo.json` deliberately. Both are
+functions of the tree, so a file inside the archive cannot state either without
+invalidating itself — the same circularity as embedding a reserved DOI. They go
+into the Zenodo form, whose metadata sits outside the archive and stays editable
+after publication.
+
 ### Excluded, deliberately
 
 `references/papers/` (52 PDFs), `references/text/` (52 extracted texts),
@@ -211,6 +232,10 @@ Nothing below should be actioned without the owner saying so in chat.
 Item 4 of the previous list — commit the deposit-archive builder — is done. See
 §4 and §8.
 
+`sandbox.zenodo.org` is a separate instance with its own accounts, and DOIs
+there are throwaway. Rehearsing the whole deposit on it costs one signup and
+removes the only real unknown: what publication actually does.
+
 **The deposit itself is the owner's action.** It requires their Zenodo account,
 and no agent performs it.
 
@@ -246,6 +271,14 @@ and no agent performs it.
 6. **Never publish, deposit, push a tag, or send mail without explicit approval
    in chat.** Approval is per-action.
 7. Do not update `FINAL_THEORY_OPEN`.
+8. **Never enable the Zenodo GitHub integration for this repository.** Its own
+   page states what it does: it downloads "a .zip-ball of each new release" —
+   the whole tree — and mints a DOI for it. That would publish the third-party
+   material §4 excludes, permanently, under this repository's MIT framing.
+   Deposits here are manual and consist of exactly one file, the archive in §4.
+   As of 2026-07-31 the per-repository toggle is off and no GitHub release
+   exists, so nothing has been taken. Flipping the toggle alone is harmless;
+   creating a release with it on is not.
 
 ---
 
