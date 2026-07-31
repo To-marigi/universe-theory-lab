@@ -8,20 +8,21 @@ Written 2026-07-31. Read this before touching the release machinery.
 
 ```
 branch      codex/final-theory-v0.3.9-audit-ref-portability-20260730
-last green  run 30624874873 on 4f54ee2 — success, 359 tests
-candidate   cba86ea — local reproduction, 360 tests, and bundle check green
+last green  run 30631021751 on 2470ad4 — success, 360 tests
+deposit     DONE 2026-07-31 — 10.5281/zenodo.21720863, built at cba86ea
 HEAD        a later handoff-only commit; its own CI run is a separate observation
 verdict     FINAL_THEORY_OPEN   (unchanged, and not up for revision)
-deposit     PAUSED; candidate cba86ea / 6dea3a3b… is not yet approved
 ```
 
 A commit cannot record its own hash or its own CI run, so §1 always names the
 last commit that was actually observed green. Check `git log` for HEAD.
 
-Publication is on explicit hold. Before any Zenodo deposit, push `cba86ea`,
-obtain a green CI result for it, confirm the commit through an unauthenticated
-clone, and obtain owner approval for the exact commit/archive-digest pair. See
-§4 and §5.
+The v0.3.9 deposit is complete; §5 records the DOIs and what was read back from
+the Zenodo API to confirm it. Everything the release claims about a clone was
+verified from an unauthenticated one: the prescribed `git clone --branch`
+command lands on this branch, the frozen v0.3 branch arrives only as
+`refs/remotes/origin/...` with no local head, and `scripts/reproduce_v039.py`
+runs to `passed: true` there.
 
 ---
 
@@ -306,17 +307,37 @@ The owner explicitly stopped Publish after the default-branch defect was found.
 A third item from the earlier list, committing the deposit-archive builder, is
 done — see §4 and §8.
 
-### Still not done, and not the agent's to do
+### Deposited 2026-07-31
 
-The deposit itself. It needs the owner's Zenodo account, and no agent performs
-it. Invariant §7-6 continues to apply to everything else: tags, mail, and any
-further publication each need their own approval in chat.
+```
+version DOI   10.5281/zenodo.21720863     this version, files frozen
+concept DOI   10.5281/zenodo.21720862     all versions, resolves to the latest
+record        https://zenodo.org/records/21720863
+commit        cba86eae795e1e985c4ba1bcd3dabe4eb2773fab
+archive       6dea3a3b9f05fe53931f2baf521c1b80e559e239266ff41ca5486f6fe382ce3b
+              md5 9d35096cea4b904190551d8034f5bbd0, 7,210,462 bytes
+```
 
-**DOI: not yet recorded.** When the deposit is executed, capture three things —
-the version DOI, the concept DOI, and the record URL — and write them here.
-Then add the DOI to `CITATION.cff` and the README **in a later version**: writing
-it into the current tree changes the archive digest and breaks the binding the
-deposit itself records.
+Cite the **concept DOI** for the work, the **version DOI** for this exact bundle.
+
+Read back from the Zenodo API rather than trusted: the deposited file is one
+entry, `final-theory-bench-v0.3.9.tar.gz`, 7,210,462 bytes, md5
+`9d35096cea4b904190551d8034f5bbd0` — byte-identical to the candidate built here.
+Creator `Osaki, Kenichi` with ORCID `0009-0003-9256-7089`; `index 0`,
+`is_last true`. Three related identifiers survived, including
+`isDerivedFrom` on the commit URL. That last one is the only machine-readable
+record of which tree the archive came from: it cannot live in `.zenodo.json`,
+because a file cannot state the hash of the tree containing it.
+
+### Still not the agent's to do
+
+Invariant §7-6 continues to apply: tags, mail, further publication and any new
+version each need their own approval in chat.
+
+**Do not write the DOI into the current tree.** `CITATION.cff` and the README
+should carry it, but adding it changes the archive digest and breaks the binding
+the deposited record itself states. It goes in v0.3.10 or later, where the
+archive is rebuilt anyway.
 
 `sandbox.zenodo.org` is a separate instance with its own accounts, and DOIs
 there are throwaway. Rehearsing the whole deposit on it costs one signup and
