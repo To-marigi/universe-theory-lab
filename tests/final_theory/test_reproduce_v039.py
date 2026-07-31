@@ -18,6 +18,8 @@ import pytest
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 SCRIPTS = REPOSITORY_ROOT / "scripts"
 MANIFEST_PATH = REPOSITORY_ROOT / "results/v0.3.9_release_manifest.json"
+REPRODUCING_PATH = REPOSITORY_ROOT / "REPRODUCING_v0.3.9.md"
+RELEASE_BRANCH = "codex/final-theory-v0.3.9-audit-ref-portability-20260730"
 
 
 def _module(name: str, path: Path) -> ModuleType:
@@ -45,6 +47,21 @@ def manifest(builder: ModuleType) -> dict[str, Any]:
 def test_manifest_regenerates_exactly(manifest: dict[str, Any]) -> None:
     stored = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     assert stored == manifest
+
+
+def test_reproduction_clone_commands_checkout_the_release_branch() -> None:
+    """Every documented clone must land on v0.3.9, not the v0.3.5 default."""
+
+    document = REPRODUCING_PATH.read_text(encoding="utf-8")
+    clone_commands = [
+        line for line in document.splitlines() if line.startswith("git clone ")
+    ]
+    expected = (
+        f"git clone --branch {RELEASE_BRANCH} "
+        "https://github.com/To-marigi/universe-theory-lab.git"
+    )
+    assert clone_commands == [expected, expected]
+    assert "--single-branch" not in "\n".join(clone_commands)
 
 
 def test_manifest_excludes_itself(

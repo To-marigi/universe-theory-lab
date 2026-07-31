@@ -7,10 +7,17 @@ certificate, and moves no verdict: `scientific_change` is `NONE`.
 ## Environment
 
 ```console
-git clone https://github.com/To-marigi/universe-theory-lab.git
+git clone --branch codex/final-theory-v0.3.9-audit-ref-portability-20260730 https://github.com/To-marigi/universe-theory-lab.git
 cd universe-theory-lab
 uv sync --frozen
 ```
+
+The repository's default branch is
+`codex/final-theory-v0.3.5-d2-saturated-elimination-20260729`, so a plain
+`git clone` checks out v0.3.5 and does not provide the v0.3.9 entry point.  The
+explicit `--branch` above checks out this release branch.  Do not add
+`--single-branch`: the baseline audit also needs the remote-tracking ref for
+the frozen v0.3 branch.
 
 A full clone is required.  The baseline audits resolve the v0.2 and v0.3
 production and freeze commits, their ancestry, and both annotated freeze tags,
@@ -108,7 +115,7 @@ itself comes from git. Adding files cannot close this gap.
 Full reproduction therefore requires the repository at the released commit:
 
 ```console
-git clone https://github.com/To-marigi/universe-theory-lab.git
+git clone --branch codex/final-theory-v0.3.9-audit-ref-portability-20260730 https://github.com/To-marigi/universe-theory-lab.git
 ```
 
 ### Rebuilding the bundle
