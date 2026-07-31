@@ -7,11 +7,14 @@ Written 2026-07-31. Read this before touching the release machinery.
 ## 1. Where things stand
 
 ```
-branch   codex/final-theory-v0.3.9-audit-ref-portability-20260730
-HEAD     313e915b59839a60643da17c943b9cfdf44ce3bf   (= origin, tree clean)
-CI       run 30587407703 on 313e915 — success, 357 tests
-verdict  FINAL_THEORY_OPEN   (unchanged, and not up for revision)
+branch      codex/final-theory-v0.3.9-audit-ref-portability-20260730
+last green  run 30619471105 on 8cc5a64 — success, 359 tests
+HEAD        a later commit; its own CI run is a separate observation
+verdict     FINAL_THEORY_OPEN   (unchanged, and not up for revision)
 ```
+
+A commit cannot record its own hash or its own CI run, so §1 always names the
+last commit that was actually observed green. Check `git log` for HEAD.
 
 Mechanical blockers to a Zenodo deposit: **none**. What remains is the owner's
 decision, listed in §5.
@@ -219,7 +222,7 @@ and no agent performs it.
 | --- | --- |
 | Public-repo rights audit | The excluded third-party material is still reachable from the public GitHub branch. Separate from the Zenodo question, but real. |
 | `.gitignore` allowlist | Add `!results/v0.3.9_*.json`. Those files were force-added, so nothing is broken; it is a consistency gap. Do it in a later version, where its classification cost is not a surprise. |
-| mypy | 11 errors, all in `d2_sage_backend_v035.py`: 2 bytes/str assignments, 1 shadowed name, 3 unused ignores, 1 missing annotation, 4 platform-conditional `resource.getrusage`. The CI job is advisory by design. That file is proof-bearing solver code bound to frozen digests — clear it in its own change, with a full test rerun. |
+| mypy | 11 errors on Windows, all in `d2_sage_backend_v035.py`: 2 bytes/str assignments, 1 shadowed name, 3 unused ignores, 1 missing annotation, 4 platform-conditional `resource.getrusage`. **The Linux CI runner reports 7** — the four `resource` errors do not arise there. Same debt, two platforms; the comment in `ci.yml` quotes 11 without saying which. The CI job is advisory by design. That file is proof-bearing solver code bound to frozen digests — clear it in its own change, with a full test rerun. |
 | `actions/checkout@v4` | Node 20 deprecation warning. Works. Bump when convenient. |
 | 7 unpushed tags | Only the two freeze tags the audits need were published. The rest are provenance, not requirements. |
 | JOSS | Everything mechanical is in place: OSI licence, public repo, issue tracker, green CI, `CONTRIBUTING.md`, `paper/paper.md`. Only the owner's scope/maturity judgement remains — **and it does not gate Zenodo**, which applies no editorial review. The v0.3.8 readiness artifact conflated the two; v0.3.9 separates them. |

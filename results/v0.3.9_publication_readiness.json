@@ -38,20 +38,29 @@
   },
   "hosted_ci_verification": {
     "status": "OBSERVED_GREEN",
-    "run_id": 30581796295,
-    "run_url": "https://github.com/To-marigi/universe-theory-lab/actions/runs/30581796295",
-    "head_sha": "28680d92a939dc5348667ff7a6c4ad7cac3aa2c6",
+    "run_id": 30619471105,
+    "run_url": "https://github.com/To-marigi/universe-theory-lab/actions/runs/30619471105",
+    "head_sha": "8cc5a645087738d96559a0a940c2ab7b53c14665",
     "observed_on": "2026-07-31",
     "runner": "ubuntu-latest, Python 3.12",
     "workflow_conclusion": "success",
     "job_lint_and_tests": "success",
     "pytest": {
-      "passed": 355,
+      "passed": 359,
       "failed": 0
     },
     "job_mypy_advisory": "failure",
+    "job_mypy_advisory_note": "Advisory by design. The Linux runner reports 7 errors; the 11 counted on Windows additionally include four platform-conditional resource.getrusage/RUSAGE_SELF attribute errors that do not arise on Linux. The two counts describe the same typing debt on two platforms.",
     "portability_evidence": "The workflow contains no step that materialises a local head for the frozen v0.3 branch; that step was removed in this release. The v0.3 baseline audit nevertheless passed in a clean CI clone, which is the hosted counterpart of the fresh-clone check recorded under local_verification.",
-    "boundary": "This run observed the tree at 28680d92. The present artifact is a later commit, so its own CI run is a separate observation."
+    "boundary": "This run observed the tree at 8cc5a64. The present artifact is a later commit, so its own CI run is a separate observation.",
+    "earlier_observations": [
+      {
+        "run_id": 30581796295,
+        "head_sha": "28680d92a939dc5348667ff7a6c4ad7cac3aa2c6",
+        "pytest_passed": 355,
+        "note": "The observation that resolved V039_CI_NOT_YET_OBSERVED_GREEN. Retained because that resolution is a historical fact about that run, not about the latest one."
+      }
+    ]
   },
   "resolved_blocking_components": [
     {
