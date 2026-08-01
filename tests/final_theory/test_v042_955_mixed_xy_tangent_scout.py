@@ -135,6 +135,47 @@ def test_lower_obstruction_is_universal_along_upper_family_but_not_global() -> N
     assert "does not exclude isolated or disconnected" in transverse["not_proved"]
 
 
+def test_pure_lower_family_has_a_global_exact_no_go_using_the_same_certificate() -> None:
+    payload = _compiled()
+    lower = payload["exact_linear_blocks"]["lower"]
+    certificate = lower["full_column_rank_certificate"]
+    bounded = payload["bounded_family_global_results"]["pure_lower_triangular"]
+
+    assert bounded["exact_linearity"] == {
+        "CPOBC": True,
+        "strong_GC": True,
+        "reachable_state_MSR": True,
+        "reason": bounded["exact_linearity"]["reason"],
+        "discarded_higher_order_terms": 0,
+    }
+    assert bounded["minimal_forcing_system"]["rank_over_QQ"] == 131
+    assert bounded["minimal_forcing_system"]["nullity"] == 0
+    assert bounded["minimal_forcing_system"]["strong_GC_needed_for_rank_131"] is False
+    assert (
+        bounded["minimal_forcing_system"]["selected_rows_sha256"]
+        == certificate["selected_rows_sha256"]
+    )
+    assert (
+        bounded["minimal_forcing_system"]["echelon_rows_sha256"]
+        == certificate["echelon_rows_sha256"]
+    )
+    assert bounded["unique_solution"] == {
+        "assignment": "y_[e]=0 for all 131 ON orbits",
+        "proved_globally_within_this_bounded_family": True,
+        "resulting_operators": "A_e=diag(p_e,1)",
+        "all_Q1_through_Q4_diagonal": True,
+        "all_six_Q_commutators_zero": True,
+    }
+    assert bounded["N_nonzero"] == {
+        "source": "p1-0",
+        "residual_at_unique_solution": "D_p1=diag(0,1)",
+        "reachable_equality": "D_p1*e1=0",
+        "operator_residual_nonzero": True,
+    }
+    assert bounded["verdict"] == scout.PURE_LOWER_VERDICT
+    assert "not a theorem for x!=0,y!=0" in bounded["scope_boundary"]
+
+
 def test_all_commutator_tangents_are_forced_and_N_is_globally_nonzero() -> None:
     payload = _compiled()
     assert payload["N_nonzero_gate"] == {

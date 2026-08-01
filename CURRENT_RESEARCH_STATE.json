@@ -39,10 +39,11 @@
     "v0.4.2_955_source_native_slack_inventory": "STRUCTURED_WORD_MATRIX_INVENTORY_READY_NO_SOLVER_OR_CHART_CLAIM",
     "v0.4.2_955_N_nonzero_triangular_scout": "EXACT_17_DIMENSIONAL_FAMILY_FORCES_Q_COMMUTATIVITY_GENERAL_PROFILE_OPEN",
     "v0.4.2_955_mixed_source_native_scalar_manifest": "READY_262_VARIABLES_783_320_24_165_DETERMINANTS_N_NONZERO_NO_SOLVER_OLD_21_IDEALS_UNUSED",
-    "v0.4.2_955_mixed_xy_tangent_scout": "NO_WITNESS_OPEN_LOCAL_Y_ZERO_OBSTRUCTION_REMOTE_Y_NONZERO_AND_FULL_PROFILE_OPEN"
+    "v0.4.2_955_mixed_xy_tangent_scout": "SCHEMA_V2_NO_WITNESS_OPEN_LOCAL_UPPER_OBSTRUCTION_AND_PURE_LOWER_BOUNDED_GLOBAL_NO_GO_REMOTE_MIXED_OPEN",
+    "v0.4.2_955_pure_lower_oracle": "INDEPENDENT_EXACT_ORACLE_CERTIFIED_SR3B_AUXILIARY_NOT_NEW_SHORT_REPORT"
   },
   "affected_campaign": {
-    "status": "SR3B_A_THEOREM_CERTIFIED_MIXED_MANIFEST_READY_TANGENT_SCOUT_OPEN",
+    "status": "SR3B_A_UNCHANGED_PURE_LOWER_BOUNDED_NO_GO_ORACLE_CERTIFIED_REMOTE_MIXED_OPEN",
     "next_gate": "SYMMETRY_ORBIT_REDUCTION_THEN_SMALL_NATURAL_PRINCIPAL_OPEN_EXACT_SCOUTS",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
@@ -77,8 +78,9 @@
       "solver_run": false
     },
     "mixed_xy_tangent_scout": {
+      "schema_version": "final-theory-v042-955-mixed-xy-tangent-scout-v2",
       "verdict": "V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN",
-      "semantic_digest_sha256": "81e89ab796a6a76d71c85d3b53bd2668df418b05f5d83ffe05b5fc94148fd97f",
+      "semantic_digest_sha256": "d7a4f6dba63d17cd1107ce173fb829a60af0bbf044bb02b7ccca262c70b029d5",
       "upper_rank": 114,
       "upper_nullity": 17,
       "lower_CPOBC_plus_reachable_MSR_rank": 131,
@@ -88,12 +90,37 @@
       },
       "proved_local_scope": "UNIQUE_Y_ZERO_BRANCH_THROUGH_EVERY_UPPER_FAMILY_POINT_AND_Q_COMMUTATIVITY_THERE",
       "open_scope": [
-        "REMOTE_Y_NONZERO_SOLUTIONS",
-        "131_PRINCIPAL_OPEN_PATCHES",
+        "REMOTE_OR_DISCONNECTED_X_NONZERO_Y_NONZERO_MIXED_COMPONENTS",
         "FULL_955_PROFILE"
       ]
     },
-    "next_gate_description": "First perform symmetry/orbit reduction and exact-scout a small set of natural principal-open patches; do not brute-force all 131 patches"
+    "pure_lower_bounded_global_no_go": {
+      "role": "SR3B_AUXILIARY_THEOREM_NOT_A_NEW_SHORT_REPORT_SR3B_A_SCOPE_UNCHANGED",
+      "ansatz": "x_[e]=0, A_e=[[p_e,0],[y_[e],1]]",
+      "verdict": "V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED",
+      "all_equations_exactly_y_linear": {
+        "CPOBC": 783,
+        "strong_GC_basis": 320,
+        "reachable_state_MSR": 24
+      },
+      "exact_QQ_rank_certificate": {
+        "rank": 131,
+        "nullity": 0,
+        "selected_CPOBC_rows": 108,
+        "selected_reachable_MSR_rows": 23
+      },
+      "unique_solution": "y_[e]=0_FOR_ALL_131_ORBITS",
+      "Q_conclusion": "ALL_Q1_THROUGH_Q4_DIAGONAL_AND_COMMUTING",
+      "N_nonzero_certificate": "D_p1=diag(0,1)"
+    },
+    "pure_lower_independent_oracle": {
+      "verdict": "V042_955_PURE_LOWER_ORACLE_CERTIFIED",
+      "semantic_digest_sha256": "809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba",
+      "independent_from_tangent_rank_implementation": true,
+      "solver_run": false,
+      "full_955_profile_claimed": false
+    },
+    "next_gate_description": "For the remaining remote or disconnected x!=0,y!=0 mixed components, first perform symmetry/orbit reduction and exact-scout a small natural principal-open set; do not brute-force all 131 patches"
   },
   "approved_default_budget": {
     "timeout_seconds_per_chart": 3600,
@@ -121,6 +148,11 @@
     "reports/v0.4.2_955_n_nonzero_scout.md",
     "reports/v0.4.2_955_mixed_source_native_manifest.md",
     "reports/v0.4.2_955_mixed_xy_tangent_scout.md",
+    "results/v0.4.2_955_mixed_xy_tangent_scout.json",
+    "src/universe_lab/final_theory/mixed_xy_nonneutral_scout_v042.py",
+    "reports/v0.4.2_955_pure_lower_oracle.md",
+    "results/v0.4.2_955_pure_lower_oracle.json",
+    "src/universe_lab/final_theory/source_native_955_pure_lower_oracle_v042.py",
     "reports/v0.4.2_fixed_vector_gc_strong_msr_escape.md"
   ],
   "required_resume_tests": [
@@ -133,6 +165,7 @@
     "tests/final_theory/test_source_native_955_n_nonzero_scout_v042.py",
     "tests/final_theory/test_source_native_955_mixed_manifest_v042.py",
     "tests/final_theory/test_v042_955_mixed_xy_tangent_scout.py",
+    "tests/final_theory/test_source_native_955_pure_lower_oracle_v042.py",
     "tests/final_theory/test_v041_partial_slice_audit.py"
   ],
   "publication_posture": "ASYMMETRIC_STRONG_STRONG_VS_WEAK_WEAK_PLUS_ANY_CERTIFIED_PROFILE_SLICE_UNTIL_ONE_SIDED_REPAIR"

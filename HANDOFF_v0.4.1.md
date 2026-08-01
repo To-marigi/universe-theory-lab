@@ -15,7 +15,7 @@ as the ordering authority and this handoff for exact operational continuation:
 v0.3.9 strong/strong theorem        PUBLIC
 v0.4 weak/weak rational witness     ON RESULT COMPLETE; OFF TRANSFER PENDING
 v0.4.1 one-sided ON profiles        PROOF INTERPRETATION WITHDRAWN; BOTH OPEN
-v0.4.2 profile-native repair        SR3b-A CERTIFIED; MIXED TANGENT SCOUT OPEN
+v0.4.2 profile-native repair        PURE-LOWER NO-GO CERTIFIED; MIXED OPEN
 OFF 406-occurrence classification   OPEN SEPARATE COMPILER TRACK
 Paper I assembly                    ASYMMETRIC MAIN RESULT + SR3b-A DRAFT TRACK
 v0.5 genuine source-stage n=5       INDEPENDENT EXTENSION TRACK
@@ -39,6 +39,11 @@ way that bypasses the SR3/SR4 gates.
   locked state `THEOREM_CERTIFIED / DRAFT_RECOMMENDED /
   NOVELTY_PRIORITY_AUDIT_PENDING / DEPOSIT_NOT_AUTHORIZED`; see
   `reports/v0.4.2_partial_slice_short_report_plan.md`.
+- Within the mixed 262-variable ansatz, the `x=0` pure-lower family has the
+  bounded global no-go `V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED`,
+  independently certified by `V042_955_PURE_LOWER_ORACLE_CERTIFIED`. This is
+  an SR3b auxiliary theorem, not closure of the general profile or a new short
+  report.
 
 ### Open
 
@@ -152,14 +157,35 @@ No solver ran and none of the old 21 chart ideals was reused.
 
 The associated exact tangent scout has verdict
 `V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN`, semantic digest
-`81e89ab796a6a76d71c85d3b53bd2668df418b05f5d83ffe05b5fc94148fd97f`.
+`d7a4f6dba63d17cd1107ce173fb829a60af0bbf044bb02b7ccca262c70b029d5`
+under schema v2.
 At the diagonal point the upper block has rank 114/nullity 17, while the lower
 CPOBC+reachable-MSR block has rank 131. Its full-rank QQ certificate selects
 108 CPOBC rows and 23 reachable-MSR rows. Because the lower Jacobian is
 independent of the upper-family `x` coordinates, the same obstruction holds
 at every point of that family: its unique local branch has `y=0` and is
-commuting. This is not global closure; remote `y!=0` solutions, the 131
-principal-open patches, and the full 955 profile remain open.
+commuting.
+
+Schema v2 also upgrades the `x=0` pure lower-triangular family from a tangent
+observation to a bounded global theorem. Direct specialization checks all 783
+CPOBC, 320 strong-GC, and 24 reachable-MSR equations are exactly linear in
+the 131 `y` variables. The 108 CPOBC + 23 reachable-MSR QQ certificate has
+rank 131, so the unique solution is `y=0`; all Q matrices are diagonal and
+commute, while `D_p1=diag(0,1)` keeps the point in `N!=0`. The bounded verdict
+is `V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED`.
+
+The independent module
+`src/universe_lab/final_theory/source_native_955_pure_lower_oracle_v042.py`
+re-extracts these equations from the nonlinear manifest without importing the
+tangent rank implementation. It emits
+`results/v0.4.2_955_pure_lower_oracle.json` with verdict
+`V042_955_PURE_LOWER_ORACLE_CERTIFIED` and semantic digest
+`809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`;
+see `reports/v0.4.2_955_pure_lower_oracle.md`. This is an SR3b auxiliary
+theorem, not a new short report, and the SR3b-A scope remains unchanged.
+
+This is still not full mixed closure. Remote/disconnected `x!=0,y!=0`
+components and the full 955 profile remain open.
 
 ## 4. Critical occurrence-semantics correction
 
@@ -217,12 +243,14 @@ an expanded scalar-polynomial solver manifest.
    262-variable mixed scalar manifest is complete. Do not rerun the upper
    family or rebuild the manifest from the old 21 ideals.
 2. The exact mixed tangent scout closes the local branch through every point
-   of the 17-dimensional upper family, but its verdict remains `OPEN`. Do not
-   report it as a full-profile no-go.
-3. Do **not** brute-force all 131 `y_[e]!=0` principal patches. First construct
-   a symmetry/orbit reduction and exact-scout a small set of natural
-   principal-open patches. Permit a solver campaign only after its source
-   coverage certificate and versioned budget artifact are available.
+   of the 17-dimensional upper family. Its schema-v2 bounded subresult and the
+   independent oracle globally close the `x=0` pure-lower family. Do not rerun
+   either family or report them as a full-profile no-go.
+3. The remaining mixed target is remote/disconnected `x!=0,y!=0` components.
+   Do **not** brute-force all 131 principal patches. First construct a
+   symmetry/orbit reduction and exact-scout a small natural principal-open
+   set. Permit a solver campaign only after its source coverage certificate
+   and versioned budget artifact are available.
 4. Require direct separated validation of both Eq. (113) branches and both
    Eq. (139) domains for every proposed witness.
 5. Restore the 20 Eq. (112)-eliminated generators for the fixed-vector-GC
@@ -254,11 +282,14 @@ milestone is guarded by:
 ```powershell
 uv run pytest -q tests/final_theory/test_source_native_955_mixed_manifest_v042.py
 uv run pytest -q tests/final_theory/test_v042_955_mixed_xy_tangent_scout.py
+uv run python -m universe_lab.final_theory.source_native_955_pure_lower_oracle_v042
+uv run pytest -q tests/final_theory/test_source_native_955_pure_lower_oracle_v042.py
 ```
 
-Expected focused results are `5 passed` and `7 passed`, respectively. The
-tests regenerate the stored exact payloads and preserve the `NO_SOLVER_RUN`
-and `NO_WITNESS_OPEN` boundaries.
+Expected focused results are manifest `5 passed`, tangent schema v2 `8 passed`,
+and independent pure-lower oracle `4 passed`. The tests regenerate the stored
+exact payloads and preserve the `NO_SOLVER_RUN`, bounded-family `GLOBAL_NO_GO`,
+and general mixed `NO_WITNESS_OPEN` boundaries.
 
 The earlier broader validation snapshot (before the mixed-manifest/tangent
 milestone above) was:
@@ -319,7 +350,11 @@ Before continuing this track:
 10. run `test_source_native_955_mixed_manifest_v042.py`; require the exact
     262-variable 783/320/24 manifest and 165 determinant predicates, while
     preserving `NO_SOLVER_RUN` and the prohibition on old 21-ideal reuse.
-11. run `test_v042_955_mixed_xy_tangent_scout.py`; require upper rank/nullity
-    114/17 and the lower 108+23 QQ rank-131 certificate, while preserving the
-    explicit OPEN boundary for remote `y!=0`, 131 principal patches, and the
-    full 955 profile.
+11. run `test_v042_955_mixed_xy_tangent_scout.py`; require schema v2, upper
+    rank/nullity 114/17, the lower 108+23 QQ rank-131 certificate, and bounded
+    verdict `V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED`. Preserve the
+    OPEN boundary for remote/disconnected `x!=0,y!=0` components and full 955.
+12. run `test_source_native_955_pure_lower_oracle_v042.py`; require independent
+    exact re-extraction, verdict `V042_955_PURE_LOWER_ORACLE_CERTIFIED`, and
+    semantic digest
+    `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`.

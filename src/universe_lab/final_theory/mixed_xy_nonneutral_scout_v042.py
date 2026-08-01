@@ -5,9 +5,11 @@ The ansatz is
     A_e = [[p_e, x_[e]], [y_[e], 1]],
 
 where ``p_e`` is the rational CSG character with ``t_j=1`` and ``[e]`` is
-one of the 131 ON transition orbits.  This module computes only exact tangent
-and transverse-linearisation ranks over ``QQ``.  It intentionally does not
-promote those local obstructions to a global nonlinear classification.
+one of the 131 ON transition orbits.  The module computes exact tangent and
+transverse-linearisation ranks over ``QQ``.  On the bounded ``x=0`` pure-lower
+family those same equations are exact linear equations and give a global
+family-specific no-go.  Neither result is promoted to a global nonlinear
+classification of the mixed ansatz or the full 955 profile.
 """
 
 from __future__ import annotations
@@ -31,7 +33,8 @@ SOURCE_COMPILER_PATH = "results/v0.4.2_955_source_native_slack_compiler.json"
 RESULT_PATH = "results/v0.4.2_955_mixed_xy_tangent_scout.json"
 
 VERDICT = "V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN"
-SCHEMA = "final-theory-v042-955-mixed-xy-tangent-scout-v1"
+PURE_LOWER_VERDICT = "V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED"
+SCHEMA = "final-theory-v042-955-mixed-xy-tangent-scout-v2"
 
 type Row = dict[str, Fraction]
 type Orientation = Literal["upper", "lower"]
@@ -280,15 +283,21 @@ def _compile_orientation(
             source_id = str(constraint["source_id"])
             state = canonical_states[source_id]
             multiplicity_residual = Fraction(int(constraint["identity_coefficient"]))
+            probability_residual = Fraction(int(constraint["identity_coefficient"]))
             reachable_row: defaultdict[str, Fraction] = defaultdict(Fraction)
             for term in constraint["terms"]:
                 coefficient = Fraction(int(term["coefficient"]))
                 multiplicity_residual += coefficient
+                probability_residual += (
+                    coefficient * occurrence_matrices[str(term["transition_id"])].upper_left
+                )
                 _add_scaled(
                     reachable_row,
                     occurrence_matrices[str(term["transition_id"])].coefficients,
                     state.upper_left * coefficient,
                 )
+            if probability_residual != 0:
+                raise AssertionError(f"the CSG diagonal violates reachable MSR at {source_id}")
             _add_scaled(reachable_row, state.coefficients, multiplicity_residual)
             labelled = (
                 f"{constraint['constraint_id']}:reachable-lower-linearisation",
@@ -471,6 +480,9 @@ def compile_mixed_xy_nonneutral_scout_v042(root: Path) -> dict[str, Any]:
         raise AssertionError("upper tangent rank changed")
     if lower["ranks"]["full_linearised_profile"] != 131:
         raise AssertionError("lower tangent obstruction changed")
+    lower_certificate = lower["full_column_rank_certificate"]
+    if not isinstance(lower_certificate, dict) or lower_certificate.get("rank") != 131:
+        raise AssertionError("the pure-lower exact forcing certificate is unavailable")
 
     p1_constraint = next(
         constraint
@@ -518,6 +530,76 @@ def compile_mixed_xy_nonneutral_scout_v042(root: Path) -> dict[str, Any]:
             "no_full_mixed_candidate_tested": True,
         },
         "exact_linear_blocks": {"upper": upper, "lower": lower},
+        "bounded_family_global_results": {
+            "pure_lower_triangular": {
+                "ansatz": "A_e=[[p_e,0],[y_[e],1]]",
+                "field": "QQ",
+                "identification_mode": "ON_QUOTIENT",
+                "variable_count": 131,
+                "exact_linearity": {
+                    "CPOBC": True,
+                    "strong_GC": True,
+                    "reachable_state_MSR": True,
+                    "reason": [
+                        (
+                            "Products of matrices [[p,0],[y,1]] remain lower "
+                            "triangular and their lower-left entries are QQ-linear in y."
+                        ),
+                        (
+                            "Every reachable vector has form (alpha,L(y)) with alpha "
+                            "fixed by p and L QQ-linear in y."
+                        ),
+                        (
+                            "For D_c=[[0,0],[S_c(y),m_c]], the reachable-MSR lower "
+                            "entry is alpha_c*S_c(y)+m_c*L_c(y), again exactly linear."
+                        ),
+                    ],
+                    "discarded_higher_order_terms": 0,
+                },
+                "exact_equation_counts": {
+                    "CPOBC": 783,
+                    "strong_GC_spanning_basis": 320,
+                    "strong_GC_same_endpoint_pairs_derived": 1529,
+                    "reachable_state_MSR": 24,
+                },
+                "minimal_forcing_system": {
+                    "length_two_CPOBC_rows": 712,
+                    "reachable_state_MSR_rows": 24,
+                    "rank_over_QQ": lower["ranks"]["length_two_CPOBC_plus_reachable_MSR"],
+                    "nullity": 0,
+                    "strong_GC_needed_for_rank_131": False,
+                    "certificate_reused_from": (
+                        "exact_linear_blocks.lower.full_column_rank_certificate"
+                    ),
+                    "selected_row_count": lower_certificate["selected_independent_row_count"],
+                    "selected_rows_sha256": lower_certificate["selected_rows_sha256"],
+                    "echelon_rows_sha256": lower_certificate["echelon_rows_sha256"],
+                    "all_131_columns_are_pivots": lower_certificate["all_131_columns_are_pivots"],
+                },
+                "unique_solution": {
+                    "assignment": "y_[e]=0 for all 131 ON orbits",
+                    "proved_globally_within_this_bounded_family": True,
+                    "resulting_operators": "A_e=diag(p_e,1)",
+                    "all_Q1_through_Q4_diagonal": True,
+                    "all_six_Q_commutators_zero": True,
+                },
+                "N_nonzero": {
+                    "source": "p1-0",
+                    "residual_at_unique_solution": "D_p1=diag(0,1)",
+                    "reachable_equality": "D_p1*e1=0",
+                    "operator_residual_nonzero": True,
+                },
+                "nonsingularity": {
+                    "determinant": "det(A_e)=p_e",
+                    "all_165_occurrences_nonzero": True,
+                },
+                "scope_boundary": (
+                    "Global only for x=0 in the declared mixed-x/y ansatz; it is not "
+                    "a theorem for x!=0,y!=0, general GL2, or the full 955 profile."
+                ),
+                "verdict": PURE_LOWER_VERDICT,
+            }
+        },
         "diagonal_base_tangent": {
             "rank": upper["ranks"]["full_linearised_profile"]
             + lower["ranks"]["full_linearised_profile"],

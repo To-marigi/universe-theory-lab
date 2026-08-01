@@ -200,8 +200,9 @@ Expected result:
 
 ```text
 V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN
-semantic digest 81e89ab796a6a76d71c85d3b53bd2668df418b05f5d83ffe05b5fc94148fd97f
-7 passed
+schema final-theory-v042-955-mixed-xy-tangent-scout-v2
+semantic digest d7a4f6dba63d17cd1107ce173fb829a60af0bbf044bb02b7ccca262c70b029d5
+8 passed
 ```
 
 At the diagonal point, the upper block has exact rank 114 and nullity 17. The
@@ -212,15 +213,53 @@ coordinates, so the same rank-131 obstruction holds at every point of that
 family: the unique formal/local branch through it is `y=0`, and that branch is
 the commuting upper family.
 
-The result is deliberately `OPEN`: it does not exclude remote or disconnected
-solutions with `y!=0`, does not cover the 131 principal-open patches, and does
-not prove commutativity for the full 955 profile. No finite-field, numerical,
-Sage, Gröbner, or saturation run was performed.
+Schema v2 contains the stronger bounded-family result
+`V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED`. At `x=0`, all 783 CPOBC,
+320 strong-GC, and 24 reachable-MSR equations are exactly linear in `y`, with
+no discarded higher-order terms. The 108 CPOBC + 23 reachable-MSR QQ
+certificate has rank 131 and forces the unique solution `y=0`. Consequently
+all four Q matrices are diagonal and commute, while
+`D_p1=diag(0,1)` proves `N!=0`. Here “global” means only global within this
+declared pure-lower family.
+
+## Independent pure-lower oracle
+
+The new authoritative paths are:
+
+- `src/universe_lab/final_theory/source_native_955_pure_lower_oracle_v042.py`;
+- `results/v0.4.2_955_pure_lower_oracle.json`;
+- `reports/v0.4.2_955_pure_lower_oracle.md`;
+- `tests/final_theory/test_source_native_955_pure_lower_oracle_v042.py`.
+
+Reproduce the independent check with:
+
+```powershell
+uv run python -m universe_lab.final_theory.source_native_955_pure_lower_oracle_v042
+uv run pytest -q tests/final_theory/test_source_native_955_pure_lower_oracle_v042.py
+```
+
+Expected result:
+
+```text
+V042_955_PURE_LOWER_ORACLE_CERTIFIED
+semantic digest 809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba
+4 passed
+```
+
+The oracle re-extracts the specialized nonlinear-manifest equations and forms
+its own exact SymPy QQ rank-131 matrix; it does not import the tangent scout's
+rank implementation. This is an SR3b auxiliary theorem, not a new short
+report, and does not change the SR3b-A scope.
+
+The general mixed verdict remains deliberately `OPEN`: neither certificate
+excludes remote/disconnected solutions with `x!=0,y!=0`, and neither proves
+commutativity for the full 955 profile. No finite-field, numerical, Sage,
+Gröbner, or saturation run was performed.
 
 ## Next exact gate
 
-Do not launch an exhaustive 131-patch campaign. First construct a
-symmetry/orbit reduction and exact-scout a small set of natural principal-open
-patches. A solver campaign is allowed only after the reduced patch family is
-bound to a source-profile coverage certificate and a versioned budget
-artifact.
+Do not launch an exhaustive 131-patch campaign. For the remaining
+`x!=0,y!=0` mixed components, first construct a symmetry/orbit reduction and
+exact-scout a small set of natural principal-open patches. A solver campaign
+is allowed only after the reduced patch family is bound to a source-profile
+coverage certificate and a versioned budget artifact.

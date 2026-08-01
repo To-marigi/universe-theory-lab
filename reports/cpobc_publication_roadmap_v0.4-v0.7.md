@@ -97,7 +97,7 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
 
 ### SR3b -- v0.4.2: profile-native ON compiler と one-sided 再判定
 
-- 状態: **owner 承認済み。SR3b-A theorem certified、mixed scalar manifest と exact tangent scout 完了、一般955 profileは未解決**
+- 状態: **owner 承認済み。SR3b-A theorem certified、mixed manifest/tangent scout と pure-lower bounded no-go 完了、一般955 profileは未解決**
 - triangular scout が候補化した `msr:p1-0`, `msr:p2-0`, `msr:p2-2` は
   source-stage constraint ID であり、既存 source-to-Q lift では三本とも exact zero
   residual になる。したがって `700 + 1 = 701` direct-relation campaign は実行しない。
@@ -144,13 +144,25 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   320 strong-GC basis、24 reachable-state MSR vector residual、165 determinant predicate
   `p_e-x_[e]y_[e]!=0` を保持し、`p1-0` の定数 residual により ansatz 全体で
   `N!=0` である。旧21 chart idealsは再利用せず、solver runも行っていない。
-- 同 manifest の対角点における exact QQ tangent scout の verdict は
+- 同 manifest の対角点における exact QQ tangent scout はschema v2、semantic digest
+  `d7a4f6dba63d17cd1107ce173fb829a60af0bbf044bb02b7ccca262c70b029d5`、verdict
   `V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN`。upper blockはrank 114/nullity 17、lower
   blockはCPOBC+reachable-MSRだけでrank 131となる。後者には108 CPOBC行+23
   reachable-MSR行のexact QQ pivot certificateがある。lower Jacobianはupper-familyの
   `x` に依存しないため、全upper-family点を通る局所枝は `y=0` に限られ、その局所枝は
-  可換である。ただし遠隔 `y!=0` 解、131 principal-open patches、full 955 profileは
-  すべて `OPEN` のままである。
+  可換である。
+- さらに `x=0` の pure lower ansatz では783 CPOBC、320 strong-GC、24
+  reachable-state-MSRの全方程式がexactに`y`-linearである。108 CPOBC行+23
+  reachable-MSR行のQQ rank-131 certificateから唯一解は `y=0`、四つのQは対角で
+  可換、かつ `D_p1=diag(0,1)` なので `N!=0`。bounded verdict は
+  `V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED`、非依存oracle verdict は
+  `V042_955_PURE_LOWER_ORACLE_CERTIFIED`（semantic digest
+  `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`）である。
+  独立検証のscopeと再現境界は
+  [pure-lower oracle report](v0.4.2_955_pure_lower_oracle.md) に固定した。
+  これは新短報ではなくSR3bの補助定理であり、SR3b-Aのscopeを変更しない。
+- 残る対象はpure upper/lower lociから離れた remote/disconnected
+  `x!=0,y!=0` mixed componentsとfull 955 profileであり、いずれも `OPEN` である。
 - fixed-vector-GC 側は Eq. (112) で消去した20個の非-antichain generatorを独立に戻す。
 - 721側では exact diagonal escape point が完成し、CPOBC 783/783、inverse 712/712、
   strong MSR 24/24、fixed-vector GC 1,529/1,529 を満たしながら strong GC と
@@ -162,9 +174,10 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   INVALID`。定理の真偽は `UNRESOLVED`。
 - 監査記録:
   [v0.4.2 source-to-direct provenance audit](v0.4.2_source_to_direct_provenance_audit.md)
-- 次の探索 gate は131 patchesの総当たりではない。まず対称性/orbit reductionを行い、
-  少数の自然な principal-open patchをexact scoutする。solver campaign は、その結果を
-  profile coverage certificate と版付き budget artifactへ結合した後にだけ許可する。
+- 次の探索 gate は131 patchesの総当たりではない。まず残る `x!=0,y!=0` mixed
+  componentsに対する対称性/orbit reductionを行い、少数の自然な principal-open
+  patchをexact scoutする。solver campaign は、その結果をprofile coverage
+  certificate と版付き budget artifactへ結合した後にだけ許可する。
 
 ### SR3c -- v0.4.3: 406-occurrence OFF semantics
 
@@ -215,7 +228,8 @@ lemma、および strong-GC/reachable-MSR の `P intersect image(Phi_U)` 上の�
 収録できる。後者は独立短報 **SR3b-A** として
 `THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING /
 DEPOSIT_NOT_AUTHORIZED` に固定したが、一般 one-sided corner の解決として要旨へ
-格上げしない。
+格上げしない。pure-lower bounded global no-go は一般SR3bの補助定理としてのみ
+収録し、SR3b-Aのscopeや独立短報数を変更しない。
 
 JMP への投稿準備開始条件は次の全項目とする。
 
@@ -323,8 +337,9 @@ Paper II assembly and conditional CQG submission decision
 
 1. SR3b-A の novelty/priority audit を行い、scope lockを保った原稿を作る。deposit・投稿は
    fresh owner approvalまで行わない。
-2. mixed 262-variable manifestの131 patchesを総当たりせず、まず symmetry/orbit reductionを
-   作り、少数の自然な principal-open patchをexact scoutする。
+2. pure-lower bounded no-goをSR3b補助定理として保持し、SR3b-Aへ混入させない。残る
+   `x!=0,y!=0` mixed componentsの131 patchesを総当たりせず、まずsymmetry/orbit
+   reductionを作り、少数の自然なprincipal-open patchをexact scoutする。
 3. coverage certificateと版付きbudget artifactが揃った場合だけsolver campaignを判断し、
    二つの one-sided profileをsource-nativeに反例先行で再判定する。
 4. 修復完了までは Paper I を strong/strong 対 weak/weak の非対称な短報としてのみ

@@ -1,0 +1,94 @@
+{
+  "schema_version": "final-theory-v042-955-pure-lower-oracle-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "input_artifacts": {
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c",
+    "results/v0.4.2_955_mixed_xy_tangent_scout.json": "3f7c74b4580844418f4e908224089ad655f47271143976efa9c63a672a890ca4"
+  },
+  "input_claim_boundary": {
+    "mixed_manifest": "Checked-in nonlinear source-native 262-scalar ansatz only; no Eq.(107)/(108)/(112), Q-only reconstruction, solver, Sage, Groebner, or chart proof.",
+    "tangent_certificate": "Used solely as a list of 131 claimed independent rows; every listed row and its QQ coefficients are recomputed from the nonlinear manifest before a fresh SymPy rank."
+  },
+  "specialization": {
+    "assignment": "x_[e]=0 for all 131 ON quotient orbits",
+    "pure_lower_form": "A_e=[[p_e,0],[y_[e],1]]",
+    "checks": {
+      "record_counts": {
+        "CPOBC": 783,
+        "strong_GC": 320,
+        "reachable_MSR_vector": 24
+      },
+      "max_y_degree": {
+        "CPOBC": 1,
+        "strong_GC": 1,
+        "reachable_MSR_vector": 1
+      },
+      "zero_entries_after_x_zero": {
+        "CPOBC": [
+          "00",
+          "01",
+          "11"
+        ],
+        "strong_GC": [
+          "00",
+          "01",
+          "11"
+        ],
+        "reachable_MSR_vector": [
+          "0"
+        ]
+      },
+      "lower_entries_checked": {
+        "CPOBC": "10",
+        "strong_GC": "10",
+        "reachable_MSR_vector": "1"
+      },
+      "p1_nonzero_operator_gate": {
+        "record": "msr:p1-0",
+        "entry": "11",
+        "specialized_polynomial": [
+          {
+            "coefficient": "1",
+            "monomial": []
+          }
+        ]
+      }
+    }
+  },
+  "selected_row_crosscheck": {
+    "selected_row_count": 131,
+    "selected_row_kind_counts": {
+      "CPOBC": 108,
+      "reachable_MSR": 23
+    },
+    "all_131_labels_and_QQ_coefficients_match_nonlinear_specialization": true,
+    "matched_labels_sha256": "6e5497c9a3ead450623643b77b9341fc130666c596fd781beefa39e62453042f",
+    "selected_rows_sha256_from_tangent_certificate": "ccb22b925be3099735ed23bc824e14507c49390fb45b2ad3e49f577dc6c912ba",
+    "independent_rank_backend": "sympy.SparseMatrix.rank over exact QQ; no tangent implementation/rank function imported",
+    "matrix_shape": [
+      131,
+      131
+    ],
+    "sympy_QQ_rank": 131
+  },
+  "deduction": {
+    "pure_lower_solution_set_within_mixed_ansatz": "y=0 only",
+    "reason": "The 131 selected equations are exact homogeneous linear equations in y after x=0, and their independently recomputed QQ coefficient matrix has rank 131.",
+    "nonsingularity_at_forced_solution": "det(A_e)=p_e, and the mixed manifest certifies all 165 diagonal-base determinants are nonzero.",
+    "Q_commutativity": "At y=0 and x=0 every Q_i is diagonal; all six manifest commutators vanish at that forced point.",
+    "N_nonzero": "The p1 reachable-MSR operator residual retains constant (2,2)=1, so D_p1 is nonzero; this is a strong-MSR escape point, not an imposed reachable-MSR relation."
+  },
+  "open_boundary": [
+    "mixed solutions with x!=0 and y!=0 in the 262-scalar ansatz",
+    "nonlinear components disconnected from the pure-lower/upper loci",
+    "the full source-native 955 system outside the mixed ansatz",
+    "a global commutativity theorem or a noncommutative witness for the full 955 profile"
+  ],
+  "solver_runs": 0,
+  "sage_runs": 0,
+  "witness_certified": false,
+  "commutativity_proved_for_full_profile": false,
+  "passed": true,
+  "verdict": "V042_955_PURE_LOWER_ORACLE_CERTIFIED",
+  "semantic_digest_sha256": "809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba"
+}

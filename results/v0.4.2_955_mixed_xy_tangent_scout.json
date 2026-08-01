@@ -1,5 +1,5 @@
 {
-  "schema_version": "final-theory-v042-955-mixed-xy-tangent-scout-v1",
+  "schema_version": "final-theory-v042-955-mixed-xy-tangent-scout-v2",
   "profile": "strong_GC__reachable_state_MSR",
   "scope": {
     "finite_stages": "n<=4",
@@ -6844,6 +6844,62 @@
       }
     }
   },
+  "bounded_family_global_results": {
+    "pure_lower_triangular": {
+      "ansatz": "A_e=[[p_e,0],[y_[e],1]]",
+      "field": "QQ",
+      "identification_mode": "ON_QUOTIENT",
+      "variable_count": 131,
+      "exact_linearity": {
+        "CPOBC": true,
+        "strong_GC": true,
+        "reachable_state_MSR": true,
+        "reason": [
+          "Products of matrices [[p,0],[y,1]] remain lower triangular and their lower-left entries are QQ-linear in y.",
+          "Every reachable vector has form (alpha,L(y)) with alpha fixed by p and L QQ-linear in y.",
+          "For D_c=[[0,0],[S_c(y),m_c]], the reachable-MSR lower entry is alpha_c*S_c(y)+m_c*L_c(y), again exactly linear."
+        ],
+        "discarded_higher_order_terms": 0
+      },
+      "exact_equation_counts": {
+        "CPOBC": 783,
+        "strong_GC_spanning_basis": 320,
+        "strong_GC_same_endpoint_pairs_derived": 1529,
+        "reachable_state_MSR": 24
+      },
+      "minimal_forcing_system": {
+        "length_two_CPOBC_rows": 712,
+        "reachable_state_MSR_rows": 24,
+        "rank_over_QQ": 131,
+        "nullity": 0,
+        "strong_GC_needed_for_rank_131": false,
+        "certificate_reused_from": "exact_linear_blocks.lower.full_column_rank_certificate",
+        "selected_row_count": 131,
+        "selected_rows_sha256": "ccb22b925be3099735ed23bc824e14507c49390fb45b2ad3e49f577dc6c912ba",
+        "echelon_rows_sha256": "05a2c5c5f0eb33de1fa59587accea8b68cae959616cec3f3477b3d2a7ccad125",
+        "all_131_columns_are_pivots": true
+      },
+      "unique_solution": {
+        "assignment": "y_[e]=0 for all 131 ON orbits",
+        "proved_globally_within_this_bounded_family": true,
+        "resulting_operators": "A_e=diag(p_e,1)",
+        "all_Q1_through_Q4_diagonal": true,
+        "all_six_Q_commutators_zero": true
+      },
+      "N_nonzero": {
+        "source": "p1-0",
+        "residual_at_unique_solution": "D_p1=diag(0,1)",
+        "reachable_equality": "D_p1*e1=0",
+        "operator_residual_nonzero": true
+      },
+      "nonsingularity": {
+        "determinant": "det(A_e)=p_e",
+        "all_165_occurrences_nonzero": true
+      },
+      "scope_boundary": "Global only for x=0 in the declared mixed-x/y ansatz; it is not a theorem for x!=0,y!=0, general GL2, or the full 955 profile.",
+      "verdict": "V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED"
+    }
+  },
   "diagonal_base_tangent": {
     "rank": 245,
     "nullity": 17,
@@ -6897,5 +6953,5 @@
   "witness_certified": false,
   "passed": true,
   "verdict": "V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN",
-  "semantic_digest_sha256": "81e89ab796a6a76d71c85d3b53bd2668df418b05f5d83ffe05b5fc94148fd97f"
+  "semantic_digest_sha256": "d7a4f6dba63d17cd1107ce173fb829a60af0bbf044bb02b7ccca262c70b029d5"
 }

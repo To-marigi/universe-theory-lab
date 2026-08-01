@@ -47,6 +47,12 @@ closed: on the nonsingular source reconstruction slice
 `P_sGC+rMSR intersect image(Phi_U)`, the four `Q` matrices commute. This is the
 machine-certified `PROVED_PARTIAL_SLICE` result, not a full-profile theorem.
 
+A second bounded subresult is also closed inside the 262-variable mixed
+ansatz: on the pure-lower slice `x=0`, exact `y`-linearity and the 108+23 QQ
+rank-131 certificate force `y=0`, hence diagonal commuting Q while
+`D_p1=diag(0,1)` keeps `N!=0`. This is an SR3b auxiliary theorem, not a new
+semantic-profile row and not a change to SR3b-A.
+
 ## 3. Artifact interpretation ledger
 
 | artifact/result | arithmetic status | allowed scientific use |
@@ -66,7 +72,8 @@ machine-certified `PROVED_PARTIAL_SLICE` result, not a full-profile theorem.
 | `results/v0.4.2_955_source_native_slack_compiler.json` | structured source word/matrix-block inventory | covers 165 occurrences/131 orbits, 48 slack coordinates, and independently proves the 320-edge strong-GC basis spans all 1,529 path pairs; no scalar solver manifest or chart theorem yet |
 | `results/v0.4.2_955_n_nonzero_scout.json` | exact QQ-linear source-native scout | the entire nonsingular `A_e=[[p_e,x_e],[0,1]]` family lies in `N!=0`, but all six Q commutators are forced zero; general mixed nonlinear patches remain open |
 | `results/v0.4.2_955_mixed_source_native_manifest.json` | exact sparse QQ scalar manifest, no solver run | `V042_955_MIXED_SOURCE_NATIVE_SCALAR_MANIFEST_READY_NO_SOLVER_RUN`; 262 variables, 783 CPOBC + 320 strong-GC + 24 reachable-MSR vector equations, 165 determinant predicates, uniform `N!=0`; old 21 chart ideals are unused |
-| `results/v0.4.2_955_mixed_xy_tangent_scout.json` | exact QQ tangent/pivot certificate | `V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN`; upper rank 114/nullity 17 and lower CPOBC+reachable-MSR rank 131, but only the local branch through the upper family is closed; remote `y!=0` solutions remain open |
+| `results/v0.4.2_955_mixed_xy_tangent_scout.json` | exact QQ tangent/pivot certificate, schema v2; digest `d7a4f6dba63d17cd1107ce173fb829a60af0bbf044bb02b7ccca262c70b029d5` | `V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN`; upper rank 114/nullity 17, lower CPOBC+reachable-MSR rank 131, and the `x=0` pure-lower family has the bounded global verdict `V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED`; general mixed components remain open |
+| `results/v0.4.2_955_pure_lower_oracle.json` and `reports/v0.4.2_955_pure_lower_oracle.md` | independent fail-closed nonlinear-manifest oracle; digest `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba` | `V042_955_PURE_LOWER_ORACLE_CERTIFIED`; re-extracts all 783/320/24 equations at `x=0`, proves exact `y`-linearity, and independently verifies the 108+23 QQ rank-131 system; not a full-profile theorem |
 | `results/v0.4.2_source_to_direct_audit.json` | valid initial namespace audit | records that three source IDs are not direct relation IDs; superseded on the reason by the zero-lift audit |
 | `reports/v0.4.2_source_to_q_lift_design.md` | exact word-algebra audit | the three candidates have unique zero Q residuals; no 701-relation campaign exists |
 
@@ -202,18 +209,27 @@ remains frozen until the semantic gates below pass. Current progress is:
    `V042_955_MIXED_SOURCE_NATIVE_SCALAR_MANIFEST_READY_NO_SOLVER_RUN`; it is
    uniformly in `N!=0`, does not reuse the old 21 ideals, and is not a chart
    cover, witness, or commutativity proof;
-7. **exact mixed tangent scout complete, full problem open:** upper rank is
+7. **exact mixed tangent scout complete:** upper rank is
    114/nullity 17. The lower CPOBC+reachable-MSR block has rank 131, certified
    over QQ by 108 selected CPOBC rows plus 23 selected reachable-MSR rows. The
    same lower obstruction holds at every upper-family point, so the unique
    local branch there is `y=0` and is commuting. The verdict remains
-   `V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN`: remote `y!=0` solutions, all 131
-   principal-open patches, and the full 955 profile remain open;
-8. **next gate:** do not brute-force all 131 patches. First derive a
-   symmetry/orbit reduction and exact-scout a small set of natural
-   principal-open patches. A solver campaign is permitted only after a source
-   coverage certificate and a versioned budget artifact are bound;
-9. restore the 20 Eq. (112)-eliminated gregarious generators separately for
+   `V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN` for the general mixed problem;
+8. **pure-lower bounded global no-go certified:** after `x=0`, all 783 CPOBC,
+   320 strong-GC, and 24 reachable-MSR equations are exactly `y`-linear. The
+   same 108+23 QQ rank-131 certificate forces the unique solution `y=0`; all
+   four Q matrices are diagonal and commute, while `D_p1=diag(0,1)` certifies
+   `N!=0`. The bounded verdict is
+   `V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED`, independently checked
+   by `V042_955_PURE_LOWER_ORACLE_CERTIFIED` with semantic digest
+   `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`;
+9. **next gate:** the pure-lower theorem is an SR3b auxiliary result, not a new
+   short report, and does not change SR3b-A. The remaining targets are
+   remote/disconnected `x!=0,y!=0` mixed components and the full 955 profile.
+   Do not brute-force all 131 patches: first derive a symmetry/orbit reduction
+   and exact-scout a small natural principal-open set. A solver campaign is
+   permitted only after source coverage and versioned budget artifacts exist;
+10. restore the 20 Eq. (112)-eliminated gregarious generators separately for
    the fixed-vector-GC side; the new exact escape fixture is its regression
    guard.
 
@@ -257,6 +273,10 @@ DEPOSIT_NOT_AUTHORIZED`; see
 but novelty/priority audit and fresh owner approval precede any deposit or
 submission.
 
+The pure-lower bounded global no-go and its independent oracle remain an SR3b
+auxiliary theorem. They do not create another short report and do not alter
+the SR3b-A theorem, title, novelty gate, or deposit status.
+
 ## 11. Decision log and work not to repeat
 
 - v0.3.9 is the immutable public strong/strong baseline.
@@ -295,12 +315,20 @@ submission.
 - The exact mixed tangent scout closes only the formal/local neighbourhood of
   the 17-dimensional upper family: the upper rank/nullity is 114/17 and the
   lower CPOBC+reachable-MSR rank is 131, with a 108+23 exact QQ row
-  certificate. Do not promote this to a global no-go; remote `y!=0` solutions,
-  131 principal-open patches, and the full 955 profile remain open.
+  certificate. Schema v2 additionally proves a global no-go on the bounded
+  `x=0` pure-lower family because its equations are exactly linear, not merely
+  tangent equations.
+- The pure-lower no-go is independently certified by an oracle that reads the
+  nonlinear manifest without importing the tangent rank implementation. It
+  forces `y=0`, diagonal commuting Q, and `D_p1=diag(0,1)`. Treat this as an
+  SR3b auxiliary theorem, not a new short report; the SR3b-A scope is unchanged.
+- Do not promote either result to a global mixed or full-profile no-go. The
+  remaining mathematical target is remote/disconnected `x!=0,y!=0` mixed
+  components and the full 955 profile.
 - Do not launch a 131-patch exhaustive campaign next. First quotient patches
   by symmetry/orbits and run exact scouts on a small natural principal-open
-  set. Heavy solving remains frozen until coverage and versioned budget
-  artifacts exist.
+  set inside the remaining mixed locus. Heavy solving remains frozen until
+  coverage and versioned budget artifacts exist.
 - The 721-side source profile now has an exact Eq. (112)-image escape point.
   It validates the scope withdrawal but does not decide commutativity because
   its four Q matrices are diagonal.
