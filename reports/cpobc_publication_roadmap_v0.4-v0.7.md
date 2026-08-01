@@ -401,6 +401,11 @@ Paper II assembly and conditional CQG submission decision
   decision packet にまとめて所有者へ連絡する。
 - timeout や resource limit は破綻ではなく `OPEN_RESOURCE_LIMIT` として扱い、完了・
   空集合・反例不存在へ読み替えない。
+- source code、tests、tracked result JSON、reports は Git commit + push を正本・バックアップ
+  とし、NAS に unpacked worktree を複製しない。NAS は papers と高コストな non-Git
+  artifacts の cold backup に限定し、そこで実行・展開・build・solver runを行わない。
+  現行snapshotと復旧規則は
+  [backup policy](cpobc_backup_policy_2026-08-01.md) に固定する。
 
 ## 10. 根拠と見直し条件
 

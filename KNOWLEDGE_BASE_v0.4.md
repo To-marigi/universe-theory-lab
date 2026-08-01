@@ -21,7 +21,9 @@ later scope audit supersedes their interpretation.
 5. `reports/v0.4.1_scope_break_decision_packet.md` — current owner decision.
 6. `reports/v0.4.2_prior_art_and_related_work_audit.md` — current novelty,
    priority, related-work, and mathematical-commutativity claim boundaries.
-7. Versioned reports and machine artifacts — evidence within their declared
+7. `reports/cpobc_backup_policy_2026-08-01.md` — Git/NAS responsibility split,
+   cold-backup rule, and the current non-Git artifact snapshot checksum.
+8. Versioned reports and machine artifacts — evidence within their declared
    scope. A later scope addendum controls interpretation but does not rewrite
    old bytes.
 
@@ -115,6 +117,11 @@ verdict.
 - Local archive state: 87 source records, 66 PDFs, 14 newly acquired PDFs,
   searchable text and SHA-256 manifest regenerated, and all 66 PDFs matched at
   `Y:\universe-theory-lab-backup\references\papers\`.
+- Tracked code, tests, reports, and result JSON use Git commit plus push and do
+  not need an unpacked NAS mirror. The NAS is cold backup only: never execute
+  or extract there. Expensive Git-ignored outputs are stored as immutable
+  compressed snapshots, currently the 512-entry archive recorded in
+  `reports/cpobc_backup_policy_2026-08-01.md`.
 
 ## 4. The central methodological lesson
 

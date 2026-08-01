@@ -176,6 +176,21 @@
     "memory_limit_gib": 8,
     "versioned_budget_file_required_per_campaign": true
   },
+  "backup_policy": {
+    "policy": "reports/cpobc_backup_policy_2026-08-01.md",
+    "tracked_programs": "GIT_COMMIT_AND_PUSH_NO_UNPACKED_NAS_WORKTREE",
+    "nas_mode": "COLD_BACKUP_ONLY_NEVER_EXECUTE_OR_EXTRACT_ON_NAS",
+    "paper_backup": "Y:\\universe-theory-lab-backup\\references\\papers",
+    "non_git_artifact_snapshot": {
+      "path": "Y:\\universe-theory-lab-backup\\artifacts\\non_git_snapshots\\cpobc-nongit-research-artifacts-c3f60ba-20260801.tar.gz",
+      "source_commit": "c3f60ba1c42c794b549996ee0bc9a55ea0a5da3f",
+      "entries": 512,
+      "source_bytes": 68208771,
+      "archive_bytes": 4590362,
+      "sha256": "69500bbe912de40234b213c3ca157ad0ef91be7f0dea156f1b7b956b7ce96be0",
+      "nas_hash_verified": true
+    }
+  },
   "occurrence_counts": {
     "ON_quotient_orbits": 131,
     "reduction_alias_records": 165,
@@ -189,6 +204,7 @@
     "reports/v0.4.2_prior_art_and_related_work_audit_protocol.md",
     "reports/v0.4.2_prior_art_and_related_work_audit.md",
     "references/notes/v0.4.2_prior_art_related_work_2026-08-01.md",
+    "reports/cpobc_backup_policy_2026-08-01.md",
     "reports/v0.4.1_scope_break_decision_packet.md",
     "reports/v0.4.1_reachable_msr_soundness_audit.md",
     "reports/v0.4.1_955_partial_slice_inclusion_audit.md",

@@ -81,6 +81,11 @@ way that bypasses the SR3/SR4 gates.
 - Paper preservation is complete: 87 source records, 66 local PDFs, 14 new
   PDFs, regenerated text/hash manifest, and 66/66 SHA-256 matches at
   `Y:\universe-theory-lab-backup\references\papers\`.
+- Backup policy: tracked programs and research documents rely on Git commit
+  plus push and are not copied as an unpacked NAS worktree. The 512 expensive
+  Git-ignored research artifacts are preserved as one immutable compressed
+  snapshot; see `reports/cpobc_backup_policy_2026-08-01.md`. Never execute or
+  extract it on the NAS; restore to local storage first.
 
 ### Mathematical commutativity tools to reuse
 
@@ -362,6 +367,10 @@ files.
 - Existing public/frozen artifacts are not overwritten.
 - Source claims, independent derivations, and unresolved components remain
   separate.
+- The NAS is cold backup only. Do not create an unpacked repository mirror or
+  run/extract programs, solvers, tests, notebooks, builds, or archives there.
+  Tracked code is protected by Git push; only versioned papers and expensive
+  non-Git artifacts receive NAS backup.
 - Before any SR3b-A/Paper I wording or deposit decision, follow the completed
   claim boundaries in `reports/v0.4.2_prior_art_and_related_work_audit.md`.
   Preserve later sources under `references/`, run a delta search from the
