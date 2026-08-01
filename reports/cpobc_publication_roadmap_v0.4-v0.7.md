@@ -120,6 +120,12 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   scope、構成、図表、付録、公開前 gate は
   [SR3b-A partial-slice short-report plan](v0.4.2_partial_slice_short_report_plan.md)
   に固定した。新規性・priority audit 完了前に deposit、投稿、priority claim は行わない。
+- novelty/priority audit は
+  [prior-art and related-work audit protocol](v0.4.2_prior_art_and_related_work_audit_protocol.md)
+  に従う。直接CPOBC/QBC系譜、causal-set sequential growth、二次元行列の可換性・
+  simultaneous triangularisation、statewise/operator equality、exact certificate手法、
+  既存短報・preprintの重複を別trackで調べ、source claim/project derivation/open gapを
+  claim単位で比較する。
 - 第二段階: reachable-MSR 側は24 sourceそれぞれに
   `N_c=u_c(Jv_c)^T` を導入する最小 de-elimination（合計+48 scalar）を行い、既に
   閉じた `N=0` slice ではなく `N!=0` を反例探索の主対象にする。
@@ -335,8 +341,9 @@ Paper II assembly and conditional CQG submission decision
 
 ## 8. 現時点の最優先作業
 
-1. SR3b-A の novelty/priority audit を行い、scope lockを保った原稿を作る。deposit・投稿は
-   fresh owner approvalまで行わない。
+1. SR3b-A/Paper I の prior-art and related-work auditを版付き一次資料中心に実行し、
+   claim-by-claim comparisonと引用可能なrelated-work outlineを作る。その後scope lockを
+   保った原稿を作り、deposit・投稿はfresh owner approvalまで行わない。
 2. pure-lower bounded no-goをSR3b補助定理として保持し、SR3b-Aへ混入させない。残る
    `x!=0,y!=0` mixed componentsの131 patchesを総当たりせず、まずsymmetry/orbit
    reductionを作り、少数の自然なprincipal-open patchをexact scoutする。

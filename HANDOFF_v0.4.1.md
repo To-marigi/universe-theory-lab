@@ -50,6 +50,8 @@ way that bypasses the SR3/SR4 gates.
 - all naturally labelled 406-occurrence OFF profiles;
 - direct OFF verification of the v0.4 orbit-constant witness transfer;
 - both one-sided ON profiles in general nonsingular `GL_2`;
+- the targeted prior-art/related-work audit for SR3b-A and Paper I; until it
+  closes, novelty and priority remain `PENDING` and deposit is unauthorized;
 - globally minimal relation-ID forcing groups;
 - `n>=5`, `d>=3`, singular systems, and finite-to-infinite lifting.
 
@@ -317,6 +319,12 @@ files.
 - Existing public/frozen artifacts are not overwritten.
 - Source claims, independent derivations, and unresolved components remain
   separate.
+- Before any SR3b-A/Paper I novelty wording or deposit decision, follow
+  `reports/v0.4.2_prior_art_and_related_work_audit_protocol.md`, preserve new
+  sources under `references/`, include the mathematical commutativity and
+  simultaneous-triangularisation literature, and produce a claim-by-claim
+  comparison report. Mirror validated paper files by SHA-256 to
+  `Y:\universe-theory-lab-backup\references\papers\`.
 - No publication, deposit, tag, push, or correspondence occurs without fresh
   explicit approval.
 
@@ -358,3 +366,7 @@ Before continuing this track:
     exact re-extraction, verdict `V042_955_PURE_LOWER_ORACLE_CERTIFIED`, and
     semantic digest
     `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`.
+13. before drafting novelty, priority, or related-work claims, read and execute
+    `reports/v0.4.2_prior_art_and_related_work_audit_protocol.md`; begin with
+    the existing reference ledgers and preserve every material new source with
+    exact version, retrieval date, local copy when lawful, and claim boundary.

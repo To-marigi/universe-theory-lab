@@ -69,6 +69,7 @@ semantic-profile row and not a change to SR3b-A.
 | `results/v0.4.2_eq120_source_provenance.json` | exact source-native free-word certificate | six raw CPOBC relations plus source nonsingularity prove the three `k=1` Eq. (120) identities; no MSR, GC, Eq. (108), or Eq. (112) is used |
 | `results/v0.4.1_partial_slice_audit.json` | independently rebound source-to-chart proof | certifies Q commutativity on `P_sGC+rMSR intersect image(Phi_U)` using 21 of the 42 historical QQ certificates |
 | `reports/v0.4.2_partial_slice_short_report_plan.md` | SR3b-A scope/publication lock | `THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING / DEPOSIT_NOT_AUTHORIZED`; the proper-slice theorem is draftable independently but is not the full 955 theorem |
+| `reports/v0.4.2_prior_art_and_related_work_audit_protocol.md` | mandatory novelty/priority and related-work audit gate | requires version-specific primary-source inspection, local preservation, claim-by-claim comparison, and explicit overlap/open-search reporting before SR3b-A or Paper I novelty wording or deposit |
 | `results/v0.4.2_955_source_native_slack_compiler.json` | structured source word/matrix-block inventory | covers 165 occurrences/131 orbits, 48 slack coordinates, and independently proves the 320-edge strong-GC basis spans all 1,529 path pairs; no scalar solver manifest or chart theorem yet |
 | `results/v0.4.2_955_n_nonzero_scout.json` | exact QQ-linear source-native scout | the entire nonsingular `A_e=[[p_e,x_e],[0,1]]` family lies in `N!=0`, but all six Q commutators are forced zero; general mixed nonlinear patches remain open |
 | `results/v0.4.2_955_mixed_source_native_manifest.json` | exact sparse QQ scalar manifest, no solver run | `V042_955_MIXED_SOURCE_NATIVE_SCALAR_MANIFEST_READY_NO_SOLVER_RUN`; 262 variables, 783 CPOBC + 320 strong-GC + 24 reachable-MSR vector equations, 165 determinant predicates, uniform `N!=0`; old 21 chart ideals are unused |
@@ -272,6 +273,13 @@ DEPOSIT_NOT_AUTHORIZED`; see
 `reports/v0.4.2_partial_slice_short_report_plan.md`. Drafting is recommended,
 but novelty/priority audit and fresh owner approval precede any deposit or
 submission.
+
+The novelty/priority audit is a mandatory research task, not an editorial
+afterthought. Follow `reports/v0.4.2_prior_art_and_related_work_audit_protocol.md`:
+start from the existing local reference ledgers, inspect exact paper versions,
+archive lawful copies and text, and classify each source as direct, same-claim,
+more/less general, adjacent, method-only, or background. A bounded search with
+no match does not justify an absolute absence or priority claim.
 
 The pure-lower bounded global no-go and its independent oracle remain an SR3b
 auxiliary theorem. They do not create another short report and do not alter
