@@ -1,0 +1,473 @@
+===== PAGE 1 =====
+
+Operators
+and
+Matrices
+V olume 1, Number 4(2007), 527–534
+WEAK SIMUL TANEOUS TRIANGULARIZA TION
+–– A DETERMINANT CONDITION
+CHEN DUBI
+(communicated by M. Neumann )
+Abstract. We introduce and study the notion of weak triangularization for a set of N matrices,
+which is a weaker version of simultaneous tria ngularization. We prove that for the special case
+of 2-by-2 matrices, weak triangularization is e quivalent to simultaneous triangularization.
+1. Introduction
+1.1. Simultaneous triangularization
+Let A = {A1, A2,... AN } be a set of N matrices in Cn×n . We say that A admits
+a simultaneous triangularization if there exists a matrix T such that the matrix
+˜Aj = T−1AjT
+is upper triangular for every Aj ∈ A .
+The problem of determining whether or not a set of matrices admits a simultaneous
+triangularization is a long studied problem. In particular, we refer to the work of Radjavi
+& Rosenthal [3]. One well known necessary and sufficient condition is the following
+(Radjavi [4]):
+THEOREM 1.1. A set of matrices A = {A1, A2,... AN } has a simultaneous trian-
+gularization if and only if for every 1 ⩽ i, j,ℓ ⩽ N
+trace AiAjAℓ = trace AℓAjAi.
+It is also relatively easy to prove that every set of commuting matrices has a
+simultaneous triangularization — yet by n o means is this condition a sufficient one (as
+every set of non commuting triangular matrices forms a counterexample ).S e e [2] for
+details.
+In the present study, we look at a more relaxed property than simultaneous triangu-
+larization; a property we refer to as weak triangularization, which will be defined later
+in this section. To properly motivate the definition, we first start with the following:
+Mathematics subject classiﬁcation (2000): 15A15.
+Key words and phrases: Simultaneous triangularization, weak triangularization, characteristic polyno-
+mial, rational transfer function.
+c⃝ /BW /D0 ,Z a g r e b
+Paper OAM-01-30
+527
+
+===== PAGE 2 =====
+
+528 CHEN DUBI
+THEOREM 1.2. Let A = {A1, A2,... AN } be a set of N matrices in Cn×n ,t h e n
+the following two conditions are equivalent:
+1. A has a simultaneous triangularization.
+2. There exists a set of upper triangular matrices ˜A = { ˜A1, ˜A1,... ˜AN } and an
+invertible matrix T such that:
+(I −
+N∑
+j=1
+zjAj)−1 = T−1(I −
+N∑
+j=1
+zj ˜Aj)−1T (1.1)
+Proof. Assume first A has a simultaneous triangularization. Then:
+(I −
+N∑
+j=1
+zjAj)−1 =( T−1T −
+N∑
+j=1
+zjT−1 ˜AjT)−1
+=( T−1(I −
+N∑
+j=1
+zj ˜Aj)T)−1 = T−1(I −
+N∑
+j=1
+zj ˜Aj)−1T
+as stated.
+Assume next equation (1.1) holds. Expanding both sides into power series (for
+sufficiently small z ) and observing the linear terms implies that
+Aj = T−1 ˜AjT
+which completes the proof. □
+At this point, two remarks are due:
+1. From Theorem 1.2, the following necessary condition for simultaneous trian-
+gularization is easy to obtain:
+PROPOSITION 1.3. If A has a simultaneous triangularization, then the polynomial
+Det(I −
+N∑
+j=1
+zjAj)
+is a product of linear terms.
+The polynomial Det (I − ∑N
+j=1 zjAj) will play a key role in our further analysis.
+Hereon, we will refer to Det (I − ∑N
+j=1 zjAj) as the characteristic polynomial of A and
+denote
+Det(I −
+N∑
+j=1
+zjAj)= PA(z).
+2. Since both statements in Theorem 1.2 are equivalent, both statement can be
+chosen to define simultaneous triangularization.
+This last statement is the motivation for the next definition, which is the key notion
+in our study:
+DEFINITION 1.4. Let A = {A1, A2,... AN } be a tuple of N matrices in Cn×n .
+We say that A has a weak triangularization if there exists a tuple of upper triangular
+
+===== PAGE 3 =====
+
+WEAK SIMUL T ANEOUS TRIANGULARIZA TION 529
+matrices ˜A = { ˜A1, ˜A2,..., ˜AN } ( Ak ∈ Cn1 ×n1 ),a n d T ∈ Cn1 ×n, Tℓ ∈ Cn×n1 such
+that:
+(I −
+N∑
+j=1
+zjAj)−1 = Tℓ(I −
+N∑
+j=1
+zj ˜Aj)−1T, and TℓT = In.
+The main objective in this study is to prove the following theorem
+THEOREM 1.5. Let A = {A1, A2,... AN } be a tuple of N matrices in Cn×n ,t h e n
+A has a weak triangularization if and only if the characteristic polynomial P A(z) is a
+product of linear terms.
+We remark that following the arguments of Theorem 1.2, if A = {A1, A2,... AN }
+has a weak triangularization, then there for 1 ⩽ j ⩽ N we have that
+Aj = Tℓ ˜AjT. (1.2)
+However, the existence of an upper triangular set ˜A = { ˜A1, ˜A2,..., ˜AN } and a left
+invertible matrix T satisfying equality (1.2) do not, in general, imply weak triangular-
+ization.
+The paper is arranged as follows: hereon, Section 1. is devoted to provide the
+proper background for the proof of Theorem 1.5, which will be presented in Section 2..
+In Section 3. we show that for the special case of a tuple of N 2-by-2 matrices, weak
+triangularization is equivalent to simultaneous triangularization.
+Throughout the study, we will use the following two notations : for a Cp×n matrix
+valued function F(z) , we denote by S(F) the linear span of the columns of F(z) .I n
+other words, we denote:
+S(F)= {F(z)ξ | ξ ∈ Cn} .
+For a matrix valued function F(z) : CN → Cn×n , we denote by MF (z) the algebraic
+adjoint of F(z) .
+1.2. Cramer’s rule
+Let P(z) be a matrix polynomial with values in Cn×n . It is well known that P(z0)
+is invertible if and only if Det P(z0) ̸= 0 , and so, roots of the (scalar) polynomial
+Det P(z) are exactly the singular point of P−1(z) .By Cramer’s rule we can write:
+P−1(z)= 1
+Det P(z) MP(z).
+The following proposition will prove useful later, as we turn to prove Theorem 1.5:
+PROPOSITION 1.6. Assume Det P(z) is of the form Det P(z)= pℓ
+1(z)p2(z) and p 1
+is not a factor of p 2 .T h e nM P(z) is not of the form M P(z)= pℓ
+1(z)Q(z) (notice, here
+p1(z) is scalar valued, whereas Q (z) is matrix valued of appropriate dimensions).
+Proof. Assume, to arrive at a contradiction, that MP(z) is of the form MP(z)=
+pℓ
+1(z)Q(z) . By Cramer’s rule we have that
+P−1(z)= 1
+Det P(z) MP(z)= 1
+p2(z) Q(z).
+
+===== PAGE 4 =====
+
+530 CHEN DUBI
+Since p1(z) is not a factor of p2(z) , there exists z1 such that p1(z1)= 0a n d p2(z1) ̸= 0.
+Since p2(z1) ̸= 0,t h em a t r i x 1
+p2 (z1) Q(z1) is well defined, and hence P(z1) is invertible.
+This serves as a contradiction, since Det P(z1)= 0. □
+In a more simple manner, proposition 1.6 states that none of the irreducible factors
+of Det P(z) are "lost" when evaluating the quotient 1
+Det P(z) MP(z) .
+1.3. Triangular realization of N variable matrix valued function
+When thinking of realization of a rational matrix valued function in N complex
+variables R(z) , several possibilities come to mined. One possible realization is as a
+transfer function of Fornasini-M archesini linear system, given by
+R(z)= D + C(I −
+N∑
+j=1
+zjAj)−1
+N∑
+j=1
+zjBj
+(see [6]). Such realizations, as shown in [1], turn to be a general form of realization; that
+is, every rational matrix valued function R(z) , analytic at the origin, can be presented as
+a transfer function of a Fornasini-Marchesini system. In [5], the problem of determining
+whether or not a transfer function R (analytic at the origin ) can be realized with
+upper triangular state operators {A1, A2,..., AN } was addressed, and a necessary and
+sufficient criterion was given through the following theorem:
+THEOREM 1.7. A rational matrix valued function R (z) can be realized with upper
+triangular state operators {A1, A2,..., AN } if and only if the complement of the points
+of analyticity of R is a ﬁnite union of hyperplanes.
+2. Proof of Theorem 1.5
+Proof of main theorem. Assume first that the characteristic polynomial PA(z) is
+a product of linear terms. Using Cramer’s formula for the inverse, this implies that the
+set of singular points of the rational function
+R(z)=( I −
+N∑
+j=1
+zjAj)−1
+is a finite union of hyperplanes (which are exactly the roots of PA(z)) . By Theorem 1.7
+R(z) has the realization
+R(z)= I + C1(I −
+N∑
+j=1
+A1,jzj)−1 ∑
+j=1
+zjB1,j
+here
+C1 ∈ Cn×n1 , A1,j ∈ Cn1 ×n1 , B1,j ∈ Cn1 ×n
+and A1,j is upper triangular for 1 ⩽ j ⩽ N .
+
+===== PAGE 5 =====
+
+WEAK SIMUL T ANEOUS TRIANGULARIZA TION 531
+We denote
+R1(z)=
+[
+C1(I − ∑N
+j=1 A1,jzj)−1, (I − ∑N
+j=1 zjAj)−1 ]
+.
+Clearly, S(R(z)) ⊆S (R1(z)) . We define:
+˜Aj =
+[
+A1,j B1,j
+0n×n1 0n×n
+]
+and proceed with the following:
+R1(z) − R1(0)=
+[
+C1(I − ∑N
+j=1 A1,jzj)−1, (I − ∑N
+j=1 zjAj)−1 ]
+− [ C1, I ]
+=
+[
+C1(I − ∑N
+j=1 A1,jzj)−1 − C1, C1(I − ∑N
+j=1 zjAj)−1 ∑N
+j=1 B1,j
+]
+= C1(I −
+N∑
+j=1
+zjAj)−1 [
+I − (I − ∑N
+j=1 A1,j), ∑N
+j=1 B1,j
+]
+=
+[
+C1(I − ∑N
+j=1 A1,jzj)−1, (I − ∑N
+j=1 zjAj)−1 ] N∑
+j=1
+zj
+[
+A1,j B1,j
+0n×n1 0n×n
+]
+= R1(z)
+N∑
+j=1
+zj ˜Aj.
+F r o mt h el a s tw eh a v et h a t
+R1(z)= R1(0)(I −
+N∑
+j=1
+zj ˜Aj)−1.
+Since S(R(z)) ⊆S (R1(z)) , there exist a matrix T such that
+(I −
+N∑
+j=1
+zjAj)−1 = R1(z)T = R1(0)(I −
+N∑
+j=1
+zj ˜Aj)−1T. (2.3)
+Taking z = 0 on both sides of (2.3) we have that R1(0)T = I . Upon setting R(0)= Tℓ ,
+we have
+(I −
+N∑
+j=1
+zjAj)−1 = Tℓ(I −
+N∑
+j=1
+zj ˜Aj)−1T
+as stated.
+Next, assume that A has a weak triangularization. We denote:
+D(z)= I −
+N∑
+j=1
+zjAj, ˜D(z)= I −
+N∑
+j=1
+zj ˜Aj.
+Using Cramer’s rule, we can the write:
+D1(z)= 1
+Det D(z) MD(z)= Tℓ
+( 1
+Det ˜D(z)
+M˜D
+)
+T = 1
+Det ˜D(z)
+TℓM˜DT
+or
+Det ˜D
+Det D(z) MD(z)= TℓM˜DT.
+
+===== PAGE 6 =====
+
+532 CHEN DUBI
+Since TℓM˜DT is a polynomial matrix, so is Det ˜D
+Det D(z) MD(z) , and so all factors of
+Det D(z) are factors of Det ˜D(z)MD(z)( with the same multiplicity ). By Proposition
+1.6, this implies that all factors of Det D(z) are factors of Det ˜D(z) .S i n c e ˜A is upper
+triangular, Det ˜D(z) is a product of linear terms - and thus Det D(z) is a product of
+linear factors. □
+3. The special case N = 2
+In the final section of this study, we prove the following theorem, which states
+the interesting fact that for n = 2 , weak triangularization is equivalent to simultaneous
+triangularization.
+THEOREM 3.1. As e t A = {A1, A2,..., AN } of C2×2 matrices has a simultaneous
+triangularization if and only if the characteristic polynomial
+PA(z)= Det(I −
+N∑
+j=1
+zjAj)
+is a product of linear terms.
+Proof. Following the remark in Section 1., one direction is trivial. Assume Det(I −∑N
+j=1 zjAj) is a product of linear terms. Let us denote
+Ai =
+[
+ai bi
+ci di
+]
+.
+We adopt the following notations: we denote
+a =( a1, a2,... aN ), b =( b1, b2,... bN ), c =( c1, c2,... cN ), d =( d1, d2,... dN ),
+and for v =( v1, v2,... vN ) , u =( u1, u2,... uN ) ∈ CN we denote
+⟨ v, u⟩ =
+N∑
+j=1
+vjuj.
+In the following, we assume b ̸=( 0, 0,..., 0) and c ̸=( 0, 0,..., 0) , for if one of
+the two is indeed the zero vector, the statement is trivial.
+Through direct calculation we have that the characteristic polynomial PA(z) is
+given by:
+Det D(z)=( 1 −⟨ z, a⟩ )(1 −⟨ z, d⟩ ) −⟨ z, b⟩⟨ z, c⟩.
+And so, the characteristic polynomial is a product of linear terms if and only if there
+exists v, w ∈ CN such that:
+(1 −⟨ z, a⟩ )(1 −⟨ z, d⟩ ) −⟨ z, b⟩⟨ z, c⟩ =( 1 −⟨ z, v⟩ )(1 −⟨ z, w⟩ ).
+Comparing the linear and quadratic terms on both sides we obtain that
+⟨ z, a + d⟩ = ⟨ z, v + w⟩ (3.4)
+and
+⟨ z, v⟩⟨ z, w⟩ = ⟨ z, a⟩⟨ z, d⟩− ⟨ z, b⟩⟨ z, c⟩ (3.5)
+We proceed in several steps:
+
+===== PAGE 7 =====
+
+WEAK SIMUL T ANEOUS TRIANGULARIZA TION 533
+Step 1:
+Det
+[
+⟨ z, v − d⟩⟨ z, b⟩
+⟨ z, c⟩⟨ z, v − a⟩
+]
+= 0
+Proof of Step 1. We compute
+Det
+[
+⟨ z, v − d⟩⟨ z, b⟩
+⟨ z, c⟩⟨ z, v − a⟩
+]
+= ⟨ z, v − d⟩⟨ z, v − a⟩− ⟨ z, b⟩⟨ z, c⟩
+= ⟨ z, v⟩ 2 −⟨ z, v⟩⟨ z, a⟩− ⟨ z, v⟩⟨ z, d⟩
++⟨ z, d⟩⟨ z, a⟩− ⟨ z, b⟩⟨ z, c⟩
+= ⟨ z, v⟩ 2−⟨ z, v⟩⟨ z, a⟩− ⟨ z, v⟩⟨ z, d⟩ +⟨ z, v⟩⟨ z, w⟩
+= ⟨ z, v⟩ (⟨ z, v⟩− ⟨ z, a⟩− ⟨ z, d⟩ + ⟨ z, w⟩ )
+= ⟨ z, v⟩ (⟨ z, v + w⟩− ⟨ z, a + d⟩ )= 0
+as stated.
+Step 2: There exists λ such that v − d = λ b or
+ v − d = λ c .
+Proof of Step 2. By Step 1, we have that
+⟨ z, v − d⟩⟨ z, v − a⟩ = ⟨ z, c⟩⟨ z, b⟩ (3.6)
+Let us denote
+V1 =( v − d)⊥ , V2 =( v − a)⊥ , V3 =( b)⊥ , V4 =( c)⊥
+Since V1 ∪ V2 and V3 ∪ V4 are the set of roots of the left and right hand side of (3.6)
+respectively, it is clear that
+V1 ⊆ V3 ∪ V4
+PROPOSITION 3.2. V1 = V3 or V 1 = V4
+Proof. We first notice, since all spaces are finite dimensional of dimension N − 1,
+equality is equivalent to inclusion. And so, to arrive at a contradiction, we assume that
+V
+1 ⊈ V3 and V1 ⊈ V4 .S i n c eV1 ⊆ V3 ∪ V4 , there exists w1, w2 such that
+w1, w2 ∈ V1, w1 ∈ V3, w1 /∈ V4, w2 /∈ V3, w2 ∈ V4 (3.7)
+Since V1 is a linear space, w1 + w2 ∈ V1 ⊆ V3 ∪ V4 , implying either w1 ∈ V4 or
+w2 ∈ V3 , contradicting (3.7). □
+By Proposition 3.2, either (v − d)⊥ =( b)⊥ or (v − d)⊥ =( c)⊥ and so there
+exists λ such that v − d = λ b or v − d = λ c .
+Step 3: The matrices A1, A2,... AN have a common eigenvector.
+Proof of Step 3. We divide the proof into two possible cases:
+CASE 1: v − d = λ b : In such case, we clearly have ⟨ z, v − d⟩ = λ ⟨ z, b⟩ .N e x t ,
+since Det
+[
+⟨ z, v − d⟩⟨ z, b⟩
+⟨ z, c⟩⟨ z, v − a⟩
+]
+= 0 , it is clear that λ ⟨ z, v− a⟩ = ⟨ z, c⟩ , yielding
+vi − di = λ bi, λ (vi − ai)= ci.
+
+===== PAGE 8 =====
+
+534 CHEN DUBI
+Upon setting ξ0 =
+(
+1
+− λ
+)
+we have:
+Aiξ0 =
+(
+ai bi
+ci di
+)(
+1
+− λ
+)
+=
+(
+ai− λ bi
+ci− λ di
+)
+=
+(
+ai− vi+di
+λ (vi− ai− di)
+)
+=
+(
+1
+− λ
+)
+(ai− vi+di)
+= wiξ0
+as stated.
+CASE 2: v − d = λ c : Once again, by using the determinant equivalence shown
+in Step 1, it is easy to verify that λ (vi − ai)= bi for every 1 ⩽ i ⩽ N . Repeating the
+computation done in the first case, now with ξ0 =
+(
+− λ
+1
+)
+, is readably seen that
+Ajξ0 = viξ0
+which completes the proof of Step 3.
+Step 4: The tuple A admits a simultaneous triangularization.
+Proof of Step 4. To finalize the theorem, we notice that if ξ1 is any linearly
+independent vector to ξ0 , the matrix representation of linear transformation v ↦→ Ajv
+with respect to the ordered bases B = {ξ0, ξ1} is upper triangular, which completes the
+proof. □
+REFERENCES
+[1] D. ALPA Y,C .D UBI: A realization theorem for functions of several complex variables, System and control
+letters, 49 (2003), 225-229.
+[2] I. G OHBERG,P .L ANCASTER AND L. R ODMAN: Invariant subspaces of matrices with applications ,
+Canadian Mathematical Society Series of Monographs and Advanced Texts, (1986).
+[3] H. RADJA VI ANDP. ROSENTHAL: Simultaneous triangularization, Springer-V erlag New-Y ork,(2000).
+[4] H. R ADJA VI: A trace condition equivalent to simultaneous triangularizability ; Can. J. Math., V ol. 38,
+No.2 (1986), 476-386.
+[5] C. D UBI: Triangular realization of rational functions of N complex variables , Multidim. Sys. Sign.
+Process.,to appear.
+[6] E. F ORNASINI AND G. M ARCHESINI: Doubly-indexed dynamical syst ems: state-space models and
+structural properties, Math. Systems Theory, 12 (1978/79), 59–72.
+(Received March 29, 2007) Chen Dubi
+Department of Mathematics
+Shammon College of engineering
+84 Jabotinsky St.
+Ashdod
+Israel
+e-mail: chend@sce.ac.il
+Operators and Matrices
+www.ele-math.com
+oam@ele-math.com

@@ -16,6 +16,7 @@ v0.3.9 strong/strong theorem        PUBLIC
 v0.4 weak/weak rational witness     ON RESULT COMPLETE; OFF TRANSFER PENDING
 v0.4.1 one-sided ON profiles        PROOF INTERPRETATION WITHDRAWN; BOTH OPEN
 v0.4.2 profile-native repair        PURE-LOWER NO-GO CERTIFIED; MIXED OPEN
+prior-art/related-work audit         COMPLETE; XU OVERLAP SCOPED
 OFF 406-occurrence classification   OPEN SEPARATE COMPILER TRACK
 Paper I assembly                    ASYMMETRIC MAIN RESULT + SR3b-A DRAFT TRACK
 v0.5 genuine source-stage n=5       INDEPENDENT EXTENSION TRACK
@@ -36,9 +37,14 @@ way that bypasses the SR3/SR4 gates.
   `P intersect image(Phi_U)`: `PROVED_PARTIAL_SLICE`; this is not closure of
   the general one-sided profile.
 - This proper-slice theorem is the independent short report **SR3b-A**, with
-  locked state `THEOREM_CERTIFIED / DRAFT_RECOMMENDED /
-  NOVELTY_PRIORITY_AUDIT_PENDING / DEPOSIT_NOT_AUTHORIZED`; see
+  locked state `THEOREM_CERTIFIED / SHORT_REPORT_SLOT_CONFIRMED /
+  PRIOR_ART_AUDIT_COMPLETE / DISTINCT_TECHNICAL_CONTRIBUTION_IDENTIFIED /
+  DRAFT_RECOMMENDED / DEPOSIT_NOT_AUTHORIZED`; see
   `reports/v0.4.2_partial_slice_short_report_plan.md`.
+- The targeted prior-art audit is complete through 2026-08-01. No same claim
+  was found for the weak/weak exact rational witness or the SR3b-A
+  reconstruction-slice theorem. This is a bounded-search result, not an
+  absolute absence claim.
 - Within the mixed 262-variable ansatz, the `x=0` pure-lower family has the
   bounded global no-go `V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED`,
   independently certified by `V042_955_PURE_LOWER_ORACLE_CERTIFIED`. This is
@@ -50,10 +56,47 @@ way that bypasses the SR3/SR4 gates.
 - all naturally labelled 406-occurrence OFF profiles;
 - direct OFF verification of the v0.4 orbit-constant witness transfer;
 - both one-sided ON profiles in general nonsingular `GL_2`;
-- the targeted prior-art/related-work audit for SR3b-A and Paper I; until it
-  closes, novelty and priority remain `PENDING` and deposit is unauthorized;
 - globally minimal relation-ID forcing groups;
 - `n>=5`, `d>=3`, singular systems, and finite-to-infinite lifting.
+
+### Prior-art boundary now fixed
+
+- Xu, arXiv:2607.26672v1 (submitted 2026-07-29), is the closest public CPOBC
+  result. Its Theorem 29.12 is more general on the finite-dimensional
+  self-adjoint slice and contains several two-dimensional triangular/extension
+  rigidity statements. It leaves non-self-adjoint nonsingular transitions and
+  state-only covariance open. Treat it as
+  `STRICTLY_MORE_GENERAL_ON_SELF_ADJOINT_SLICE / ADJACENT_OVERALL`, never as a
+  same weak-semantics claim.
+- Surya's March 2024 Chengdu slides already display strong operator MSR and
+  operator path/color independence. Novelty is exact classification and
+  certification, not introduction of the strong semantics.
+- The public v0.3.9 Zenodo record is dated 2026-07-31, two days after Xu v1.
+  Do not make broad public-priority claims over self-adjoint/triangular CPOBC
+  rigidity.
+- The authority is
+  `reports/v0.4.2_prior_art_and_related_work_audit.md`; detailed theorem/page
+  notes are in
+  `references/notes/v0.4.2_prior_art_related_work_2026-08-01.md`.
+- Paper preservation is complete: 87 source records, 66 local PDFs, 14 new
+  PDFs, regenerated text/hash manifest, and 66/66 SHA-256 matches at
+  `Y:\universe-theory-lab-backup\references\papers\`.
+
+### Mathematical commutativity tools to reuse
+
+These four items are registered in the roadmap as auxiliary module **SR3b-M**.
+It is a theorem/lemma module for Paper I, not another short report.
+
+1. Split exact searches into common-invariant-line/simultaneously
+   triangularizable and irreducible branches before heavy elimination.
+2. For a residual space `R`, the minimal state-to-operator condition is
+   injectivity of `D -> D Omega` on `R`; cyclicity alone is insufficient.
+3. At a source in `d=2`, two linearly independent reachable vectors killed by
+   the same MSR residual force that residual to vanish, recovering strong MSR.
+4. The centralizer of one non-scalar `2 by 2` matrix is `F[I,A]`; proving all
+   `Q_i` commute with one such `Q_k` is enough for full pairwise commutativity.
+5. `det[A,B]=0` or simultaneous triangularizability does not imply
+   commutativity; keep the nonzero square-zero commutator branch explicit.
 
 The independently reimplemented v0.4.1 triangular scout forces all six
 commutators to zero in both one-sided cores inside its declared 132-variable
@@ -319,11 +362,10 @@ files.
 - Existing public/frozen artifacts are not overwritten.
 - Source claims, independent derivations, and unresolved components remain
   separate.
-- Before any SR3b-A/Paper I novelty wording or deposit decision, follow
-  `reports/v0.4.2_prior_art_and_related_work_audit_protocol.md`, preserve new
-  sources under `references/`, include the mathematical commutativity and
-  simultaneous-triangularisation literature, and produce a claim-by-claim
-  comparison report. Mirror validated paper files by SHA-256 to
+- Before any SR3b-A/Paper I wording or deposit decision, follow the completed
+  claim boundaries in `reports/v0.4.2_prior_art_and_related_work_audit.md`.
+  Preserve later sources under `references/`, run a delta search from the
+  2026-08-01 cutoff, and mirror validated PDFs by SHA-256 to
   `Y:\universe-theory-lab-backup\references\papers\`.
 - No publication, deposit, tag, push, or correspondence occurs without fresh
   explicit approval.
@@ -366,7 +408,8 @@ Before continuing this track:
     exact re-extraction, verdict `V042_955_PURE_LOWER_ORACLE_CERTIFIED`, and
     semantic digest
     `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`.
-13. before drafting novelty, priority, or related-work claims, read and execute
-    `reports/v0.4.2_prior_art_and_related_work_audit_protocol.md`; begin with
-    the existing reference ledgers and preserve every material new source with
-    exact version, retrieval date, local copy when lawful, and claim boundary.
+13. before drafting novelty, priority, or related-work claims, read
+    `reports/v0.4.2_prior_art_and_related_work_audit.md` and its detailed
+    reference note. Run only a delta search from 2026-08-01, preserving every
+    material new source with exact version, retrieval date, lawful local copy,
+    claim boundary, and NAS hash check.

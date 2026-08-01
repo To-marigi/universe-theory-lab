@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "retrieved_on": "2026-07-28",
+  "retrieved_on": "2026-08-01",
   "sources": [
     {
       "id": "arXiv:2205.08100v1",
@@ -364,7 +364,7 @@
       "url": "https://arxiv.org/abs/2603.25503v1",
       "pdf_url": "https://arxiv.org/pdf/2603.25503v1",
       "retrieved_on": "2026-07-28",
-      "last_verified_online": "2026-07-31",
+      "last_verified_online": "2026-08-01",
       "local_file": "papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
       "version": "v1, 2026-03-26",
       "first_submitted": "2026-03-26T14:41:23Z",
@@ -380,7 +380,8 @@
         "v0.3.6 Eq. (112)/(113) and Eq. (139)/(145) source-index separation",
         "v0.3.6 Eq. (120)/(130)/(135)/(137)/(139) Q5-vacuity checks",
         "v0.3.7 finite n<=4 Q5-free shared-core commutativity comparison",
-        "v0.4 Eq. (139)/(145) domain discrepancy and weak GC/MSR semantics audit"
+        "v0.4 Eq. (139)/(145) domain discrepancy and weak GC/MSR semantics audit",
+        "v0.4.2 audit of the Eq. (31)--(33) reachable-state-to-operator promotion and fixed-vector GC semantics"
       ],
       "claim_boundary": "The paper assumes nonsingular transition operators for the inverse-based Bell-causality analysis and leaves the general noncommutative representation problem open. Its d=2 inconsistency test is restricted to the displayed Pauli-proportional ansatz; it is not a classification of arbitrary invertible 2 by 2 representations."
     },
@@ -884,6 +885,8 @@
       "authors": ["Kenichi Osaki"],
       "url": "https://zenodo.org/records/21720863",
       "retrieved_on": "2026-07-31",
+      "last_verified_online": "2026-08-01",
+      "record_created": "2026-07-31T12:59:08.894474+00:00",
       "local_file": null,
       "version": "v0.3.9, published 2026-07-31",
       "doi": "10.5281/zenodo.21720863",
@@ -1150,6 +1153,291 @@
         "version-specific provenance of the portable compiler used to build the v0.3.7 short-report PDF"
       ],
       "claim_boundary": "Release metadata and binary provenance only. The downloaded compiler is a temporary build dependency and is not redistributed in this repository."
+    },
+    {
+      "id": "arXiv:2607.26672v1",
+      "title": "Relational Quantum Causal Processes: Exact Models, Continuum Limits, and the Boundary of Emergent Gravity",
+      "authors": ["Yipeng Xu"],
+      "url": "https://arxiv.org/abs/2607.26672v1",
+      "pdf_url": "https://arxiv.org/pdf/2607.26672v1",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/2607.26672v1_xu_relational-quantum-causal-processes.pdf",
+      "version": "v1, 2026-07-29",
+      "first_submitted": "2026-07-29T09:28:18Z",
+      "last_revised": "2026-07-29T09:28:18Z",
+      "journal_publication": null,
+      "doi": null,
+      "relationship": "ADJACENT_THEOREM",
+      "pages_or_theorems": [
+        "Section 29.11 and Theorem 29.12, PDF pp. 99--107",
+        "open-boundary list following Theorem 29.12"
+      ],
+      "used_for": [
+        "closest public 2026 CPOBC rigidity comparison",
+        "self-adjoint nonsingular commutativity and two-dimensional triangular-extension boundary",
+        "chronology and priority limits for the finite d=2 short-report sequence"
+      ],
+      "claim_boundary": "Theorem 29.12 overlaps strong/self-adjoint and triangular CPOBC rigidity, and is broader there than this project's finite cutoff. It expressly leaves non-self-adjoint nonsingular transitions, state-only covariance, and a remaining irreducible chart open. It does not state the project's weak/weak exact rational witness or a complete fixed-vector/reachable-state semantic classification."
+    },
+    {
+      "id": "Workshop:MathQFT-Chengdu-Surya-2024",
+      "title": "Quantum Dynamics of Causal Sets",
+      "authors": ["Sumati Surya"],
+      "url": "https://mathqftchengdu.math.uni-potsdam.de/mathqftchengdu/Slides/Sumati_Surya.pdf",
+      "pdf_url": "https://mathqftchengdu.math.uni-potsdam.de/mathqftchengdu/Slides/Sumati_Surya.pdf",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/2024_surya_quantum-dynamics-causal-sets_chengdu-slides.pdf",
+      "version": "workshop slides, March 2024",
+      "relationship": "DIRECT_SOURCE",
+      "pages_or_theorems": [
+        "PDF slide/page 26, operator Markov sum and color-independence identities",
+        "PDF slide/page 27, ongoing-work boundary"
+      ],
+      "used_for": [
+        "provenance of strong operator MSR and operator color-independence/GC formulations before the project",
+        "chronology of the CPOBC source program"
+      ],
+      "claim_boundary": "The slides exhibit the strong operator formulation as ongoing source-program work; they do not give the project's finite exact classification, chart certificates, or weak-semantics witness."
+    },
+    {
+      "id": "Workshop:MathQFT-Chengdu-booklet-2024",
+      "title": "Algebraic, analytic and geometric structures emerging from quantum field theory: Booklet of Abstracts",
+      "authors": ["Workshop organizers"],
+      "url": "https://mathqftchengdu.math.uni-potsdam.de/mathqftchengdu/Booklet_of_Abstracts_Chengdu_3-5.pdf",
+      "pdf_url": "https://mathqftchengdu.math.uni-potsdam.de/mathqftchengdu/Booklet_of_Abstracts_Chengdu_3-5.pdf",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/2024_mathqft-chengdu_abstract-booklet.pdf",
+      "version": "workshop booklet, 4--16 March 2024",
+      "relationship": "BACKGROUND",
+      "used_for": [
+        "date, venue, and program provenance for the 2024 Surya slides"
+      ],
+      "claim_boundary": "Program metadata only; the mathematical operator identities are verified in the separate slide deck."
+    },
+    {
+      "id": "arXiv:1002.0589v3",
+      "title": "Hilbert Spaces from Path Integrals",
+      "authors": ["Fay Dowker", "Steven Johnston", "Rafael D. Sorkin"],
+      "url": "https://arxiv.org/abs/1002.0589v3",
+      "pdf_url": "https://arxiv.org/pdf/1002.0589v3",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/1002.0589v3_dowker-johnston-sorkin_hilbert-spaces-path-integrals.pdf",
+      "version": "v3, 2010-07-02",
+      "journal_publication": "Journal of Physics A 43, 275302 (2010)",
+      "doi": "10.1088/1751-8113/43/27/275302",
+      "relationship": "ADJACENT_THEOREM",
+      "pages_or_theorems": [
+        "Theorem 1, PDF p. 7",
+        "one-dimensional and proper history-Hilbert-space examples, PDF p. 8"
+      ],
+      "used_for": [
+        "checking whether reachable/history vectors automatically span the ambient Hilbert space",
+        "examples where a history Hilbert space is a proper subspace"
+      ],
+      "claim_boundary": "The onto statement requires a nonzero-amplitude history for each final configuration. The construction does not imply that reachable CPOBC vectors span an arbitrarily chosen finite-dimensional transition space."
+    },
+    {
+      "id": "arXiv:2101.08313v2",
+      "title": "On-State Commutativity of Measurements and Joint Distributions of Their Outcomes",
+      "authors": ["Jan Czajkowski", "Alex B. Grilo"],
+      "url": "https://arxiv.org/abs/2101.08313v2",
+      "pdf_url": "https://arxiv.org/pdf/2101.08313v2",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/2101.08313v2_czajkowski-grilo_on-state-commutativity.pdf",
+      "version": "v2, 2021-03-16",
+      "relationship": "ADJACENT_THEOREM",
+      "pages_or_theorems": [
+        "Theorem 4, PDF p. 9",
+        "Theorem 5 and counterexample, PDF pp. 10--11"
+      ],
+      "used_for": [
+        "statewise versus operator commutativity warning",
+        "counterexample showing pairwise on-state commutation need not give full on-state permutability"
+      ],
+      "claim_boundary": "The measurement-projector setting is not CPOBC, does not impose GC/MSR, and does not provide the project's exact rational transition witness. It is evidence that statewise promotion requires a separate theorem."
+    },
+    {
+      "id": "arXiv:1108.6036v1",
+      "title": "Models for Discrete Quantum Gravity",
+      "authors": ["Stan Gudder"],
+      "url": "https://arxiv.org/abs/1108.6036v1",
+      "pdf_url": "https://arxiv.org/pdf/1108.6036v1",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/1108.6036v1_gudder_models-discrete-quantum-gravity.pdf",
+      "version": "v1, 2011-08-30",
+      "journal_publication": "Reports on Mathematical Physics 70(1), 15--26 (2012)",
+      "doi": "10.1016/S0034-4877(13)60010-5",
+      "relationship": "BACKGROUND",
+      "used_for": [
+        "quantum sequential-growth process lineage",
+        "operator/decoherence-functional background"
+      ],
+      "claim_boundary": "This QSGP framework is background to finite quantum growth; it does not formulate or classify the nonsingular CPOBC matrix relations studied here."
+    },
+    {
+      "id": "arXiv:1403.7839v1",
+      "title": "Labeled Causets in Discrete Quantum Gravity",
+      "authors": ["Stan Gudder"],
+      "url": "https://arxiv.org/abs/1403.7839v1",
+      "pdf_url": "https://arxiv.org/pdf/1403.7839v1",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/1403.7839v1_gudder_labeled-causets-discrete-quantum-gravity.pdf",
+      "version": "v1, 2014-03-31",
+      "relationship": "BACKGROUND",
+      "used_for": [
+        "labeled/unlabeled QSGP compression and occurrence-semantics background"
+      ],
+      "claim_boundary": "Compression between labeled and unlabeled QSGPs is not the project's occurrence-wise operator-identification switch and does not decide CPOBC commutativity."
+    },
+    {
+      "id": "arXiv:1306.0083v1",
+      "title": "Generalized Shemesh criterion, common invariant subspaces and irreducible completely positive superoperators",
+      "authors": ["Andrzej Jamiołkowski", "Grzegorz Pastuszak"],
+      "url": "https://arxiv.org/abs/1306.0083v1",
+      "pdf_url": "https://arxiv.org/pdf/1306.0083v1",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/1306.0083v1_jamiolkowski-pastuszak_generalized-shemesh-criterion.pdf",
+      "version": "v1, 2013-06-01",
+      "relationship": "ADJACENT_THEOREM",
+      "pages_or_theorems": [
+        "Theorem 1.1, PDF p. 3",
+        "Theorem 1.2, PDF p. 4",
+        "Theorem 2.4, PDF p. 7"
+      ],
+      "used_for": [
+        "exact common-eigenvector and common-invariant-subspace tests",
+        "reducible-versus-irreducible branching for two-dimensional matrix tuples"
+      ],
+      "claim_boundary": "The criteria detect common invariant structure, not pairwise commutativity. In dimension two they can isolate the triangularizable branch, which may still be noncommutative."
+    },
+    {
+      "id": "arXiv:1507.00377v3",
+      "title": "Theorems of Burnside and Wedderburn revisited",
+      "authors": ["Bamdad R. Yahaghi"],
+      "url": "https://arxiv.org/abs/1507.00377v3",
+      "pdf_url": "https://arxiv.org/pdf/1507.00377v3",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/1507.00377v3_yahaghi_burnside-wedderburn-revisited.pdf",
+      "version": "v3, 2017-03-28",
+      "relationship": "ADJACENT_THEOREM",
+      "pages_or_theorems": [
+        "Theorems 2.1--2.2, PDF pp. 6--7"
+      ],
+      "used_for": [
+        "Burnside dichotomy between a common invariant line and the full matrix algebra",
+        "exact irreducible-branch organization"
+      ],
+      "claim_boundary": "Burnside-type irreducibility does not itself force CPOBC commutativity and does not eliminate a noncommuting simultaneously triangularizable branch. Base-field hypotheses remain explicit."
+    },
+    {
+      "id": "arXiv:1811.04243v1",
+      "title": "Burnside's theorem in the setting of general fields",
+      "authors": ["Heydar Radjavi", "Bamdad R. Yahaghi"],
+      "url": "https://arxiv.org/abs/1811.04243v1",
+      "pdf_url": "https://arxiv.org/pdf/1811.04243v1",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/1811.04243v1_radjavi-yahaghi_burnside-general-fields.pdf",
+      "version": "v1, 2018-11-10",
+      "relationship": "ADJACENT_THEOREM",
+      "used_for": [
+        "general-field checks on irreducible triangularizable matrix semigroups"
+      ],
+      "claim_boundary": "This general-field Burnside theorem supplies structural background only; it neither encodes the CPOBC polynomial system nor proves its weak-semantics branches commutative."
+    },
+    {
+      "id": "arXiv:0901.1004v1",
+      "title": "Modular Theory by example",
+      "authors": ["Fernando Lledó"],
+      "url": "https://arxiv.org/abs/0901.1004v1",
+      "pdf_url": "https://arxiv.org/pdf/0901.1004v1",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/0901.1004v1_lledo_modular-theory-by-example.pdf",
+      "version": "v1, 2009-01-08",
+      "journal_publication": "Contemporary Mathematics 534, 73--95 (2011)",
+      "doi": "10.1090/conm/534/10522",
+      "relationship": "ADJACENT_THEOREM",
+      "pages_or_theorems": [
+        "Definition 2.1 and Proposition 2.2, PDF p. 2",
+        "Example 2.10, PDF p. 7"
+      ],
+      "used_for": [
+        "cyclic-vector and separating-vector definitions",
+        "finite-dimensional purification example with a cyclic and separating vector"
+      ],
+      "claim_boundary": "Cyclicity and separation are representation-dependent. A single nonzero vector in the defining two-dimensional representation is cyclic for M2 but cannot be separating for the full four-dimensional matrix algebra; a residual-family separating condition is the relevant minimal replacement."
+    },
+    {
+      "id": "PJM:203-2-441-459",
+      "title": "Locally linearly dependent operators",
+      "authors": ["Roy Meshulam", "Peter Šemrl"],
+      "url": "https://msp.org/pjm/2002/203-2/pjm-v203-n2-p10-p.pdf",
+      "pdf_url": "https://msp.org/pjm/2002/203-2/pjm-v203-n2-p10-p.pdf",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/2002_meshulam-semrl_locally-linearly-dependent-operators.pdf",
+      "version": "Pacific Journal of Mathematics 203(2), 441--459, April 2002",
+      "relationship": "ADJACENT_THEOREM",
+      "pages_or_theorems": [
+        "Theorems 2.2 and 2.4, journal pp. 444--445",
+        "Theorem 2.6, journal p. 450"
+      ],
+      "used_for": [
+        "low-rank and square-zero consequences of local linear dependence",
+        "structural motivation for rank-one reachable-MSR slack ansatzes"
+      ],
+      "claim_boundary": "LLD theorems constrain an operator subspace and can expose low-rank elements; they do not prove CPOBC commutativity or identify the project-specific slack residuals without an independent derivation."
+    },
+    {
+      "id": "DOI:10.7153/oam-01-30",
+      "title": "Weak simultaneous triangularization -- A determinant condition",
+      "authors": ["Chen Dubi"],
+      "url": "https://doi.org/10.7153/oam-01-30",
+      "pdf_url": "https://files.ele-math.com/articles/oam-01-30.pdf",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/2007_dubi_weak-simultaneous-triangularization.pdf",
+      "version": "Operators and Matrices 1(4), 527--534 (2007)",
+      "doi": "10.7153/oam-01-30",
+      "relationship": "ADJACENT_THEOREM",
+      "used_for": [
+        "two-dimensional weak-versus-simultaneous triangularization comparison",
+        "determinantal branch tests"
+      ],
+      "claim_boundary": "For 2 by 2 families the paper's weak triangularization notion collapses to simultaneous triangularization, not to pairwise commutativity. Its determinant condition does not include CPOBC, GC, or MSR."
+    },
+    {
+      "id": "DOI:10.1016/S0024-3795(00)00065-3",
+      "title": "Commuting pairs and triples of matrices and related varieties",
+      "authors": ["Robert M. Guralnick", "B. A. Sethuraman"],
+      "url": "https://doi.org/10.1016/S0024-3795(00)00065-3",
+      "pdf_url": "https://www.csun.edu/~asethura/papers/CommPairsTriples.pdf",
+      "retrieved_on": "2026-08-01",
+      "local_file": "papers/2000_guralnick-sethuraman_commuting-pairs-triples-varieties.pdf",
+      "version": "Linear Algebra and its Applications 310, 139--148 (2000)",
+      "doi": "10.1016/S0024-3795(00)00065-3",
+      "relationship": "ADJACENT_THEOREM",
+      "pages_or_theorems": [
+        "Theorems 1--3, PDF p. 1",
+        "Example 16 for two-dimensional subalgebras of M2, PDF p. 9"
+      ],
+      "used_for": [
+        "geometry and dimension sanity checks for commuting loci",
+        "two-dimensional commutative subalgebras of M2"
+      ],
+      "claim_boundary": "The paper studies the algebraic geometry of tuples already assumed to commute. It does not show that weak CPOBC semantic equations land in the commuting variety."
+    },
+    {
+      "id": "DOI:10.1016/0024-3795(84)90085-5",
+      "title": "Common eigenvectors of two matrices",
+      "authors": ["Dan Shemesh"],
+      "url": "https://doi.org/10.1016/0024-3795(84)90085-5",
+      "retrieved_on": "2026-08-01",
+      "local_file": null,
+      "version": "Linear Algebra and its Applications 62, 11--18 (1984)",
+      "doi": "10.1016/0024-3795(84)90085-5",
+      "relationship": "ADJACENT_THEOREM",
+      "used_for": [
+        "original two-matrix common-eigenvector criterion cited by the generalized Shemesh paper"
+      ],
+      "claim_boundary": "The original article is catalogued from the publisher record, but no lawful unauthenticated PDF endpoint succeeded during this audit; the archived arXiv generalization is used for theorem inspection. A common eigenvector is a reducibility test, not a commutativity theorem."
     }
   ]
 }

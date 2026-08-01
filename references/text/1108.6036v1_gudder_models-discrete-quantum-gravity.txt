@@ -1,0 +1,887 @@
+===== PAGE 1 =====
+
+arXiv:1108.6036v1  [gr-qc]  30 Aug 2011
+MODELS FOR
+DISCRETE QUANTUM GRA VITY
+S. Gudder
+Department of Mathematics
+University of Denver
+Denver, Colorado 80208, U.S.A.
+sgudder@du.edu
+Abstract
+We ﬁrst discuss a framework for discrete quantum processes ( DQP).
+It is shown that the set of q-probability operators is convex and its set
+of extreme elements is found. The property of consistency fo r a DQP
+is studied and the quadratic algebra of suitable sets is intr oduced. A
+classical sequential growth process is “quantized” to obta in a model for
+discrete quantum gravity called a quantum sequential growt h process
+(QSGP). Two methods for constructing concrete examples of Q SGP
+are provided.
+1 Introduction
+In a previous article, the author introduced a general framework for a discrete
+quantum gravity [3]. However, we did not include any concrete examp les or
+models for this framework. In particular, we did not consider the pr oblem of
+whether nontrivial models for a discrete quantum gravity actually e xist. In
+this paper we provide a method for constructing an inﬁnite number o f such
+models. We ﬁrst make a slight modiﬁcation of our deﬁnition of a discret e
+quantum process (DQP) ρn, n = 1 , 2, . . .. Instead of requiring that ρn be a
+state on a Hilbert space Hn, we require that ρn be a q-probability operator
+on Hn. This latter condition seems more appropriate from a probabilistic
+viewpoint and instead of requiring tr( ρn) = 1, this condition normalizes the
+1
+
+===== PAGE 2 =====
+
+corresponding quantum measure. By superimposing a concrete DQ P on a
+classical sequential growth process we obtain a model for discret e quantum
+gravity that we call a quantum sequential growth process.
+Section 2 considers the DQP formalism. We show that the set of q-
+probability operators is a convex set and ﬁnd its set of extreme elem ents.
+We discuss the property of consistency for a DQP and introduce th e so-
+called quadratic algebra of suitable sets. The suitable sets are thos e on
+which well-deﬁned quantum measures (or quantum probabilities) exis t.
+Section 3 reviews the concept of a classical sequential growth pro cess
+(CSGP) [1, 4, 5, 6, 8, 9]. The important notions of paths and cylinder sets
+are discussed. In Section 4 we show how to “quantize” a CSGP to obt ain
+a quantum sequential growth process (QSGP). Some results conc erning the
+consistency of a DQP are given. Finally, Section 5 provides two metho ds for
+constructing examples of QSGP.
+2 Discrete Quantum Processes
+Let (Ω , A, ν) be a probability space and let
+H = L2(Ω, A, ν) =
+{
+f : Ω → C,
+∫
+|f |2 dν < ∞
+}
+be the corresponding Hilbert space. Let A1 ⊆ A 2 ⊆ · · · ⊆ A be an increasing
+sequence of sub σ-algebras of A that generate A and let νn = ν | An be the
+restriction of ν to An, n = 1 , 2, . . .. Then Hn = L2(Ω, An, νn) forms an
+increasing sequence of closed subspaces of H called a ﬁltration of H. A
+bounded operator T on Hn will also be considered as a bounded operator
+on H by deﬁning T f = 0 for all f ∈ H ⊥
+n . We denote the characteristic
+function χΩ of Ω by 1. Of course, ∥1∥ = 1 and ⟨1, f⟩ =
+∫
+f dν for every
+f ∈ H. A q-probability operator is a bounded positive operator ρ on H that
+satisﬁes ⟨ρ1, 1⟩ = 1. Denote the set of q-probability operators on H and
+Hn by Q(H) and Q(Hn), respectively. Since 1 ∈ Hn, if ρ ∈ Q (Hn) by our
+previous convention, ρ ∈ Q (H). Notice that a positive operator ρ ∈ Q (H) if
+and only if
+
+ρ1/21
+
+ = 1 where ρ1/2 is the unique positive square root of ρ.
+A rank 1 element of Q(H) is called a pure q-probability operator. Thus
+ρ ∈ Q (H) is pure if and only if ρ has the form ρ = |ψ⟩⟨ψ| for some ψ ∈ H
+satisfying
+|⟨1, ψ⟩|=
+⏐
+⏐
+⏐
+⏐
+∫
+ψdν
+⏐
+⏐
+⏐
+⏐ = 1
+2
+
+===== PAGE 3 =====
+
+We then call ψ a q-probability vector and we denote the set of q-probability
+vectors by V(H) and the set of pure q-probability operators by Qp(H). Notice
+that if ψ ∈ V (H), then ∥ψ∥ ≥ 1 and ∥ψ∥ = 1 if and only if ψ = α1 for some
+α ∈ C with |c|= 1. Two operators ρ1, ρ2 ∈ Q (H) are orthogonal if ρ1ρ2 = 0.
+Theorem 2.1. (i) Q(A) is a convex set and Qp(H) is its set of extreme
+elements. (ii) ρ ∈ Q (H) is of trace class if and only if there exists a sequence
+of mutually orthogonal ρi ∈ Q p(H) and αi > 0 with ∑αi = 1 such that
+ρ = ∑αiρi in the strong operator topology. The ρi are unique if and only if
+the corresponding αi are distinct.
+Proof. (i) If 0 < λ < 1 and ρ1, ρ2 ∈ Q (H), then ρ = λρ1 + (1 − λ)ρ2 is a
+positive operator and
+⟨ρ1, 1⟩ = ⟨(λρ + (1 − λ) ρ2)1, 1⟩ = λ⟨ρ11, 1⟩ + (1 − λ)⟨ρ21, 1⟩ = 1
+Hence, ρ ∈ Q (H) so Q(H) is a convex set. Suppose ρ ∈ Q p(H) and ρ =
+λρ1 + (1 − λ)ρ2 where 0 < λ < 1 and ρ1, ρ2 ∈ Q (H). If ρ1 ̸= ρ2, then
+rank(ρ) ̸= 1 which is a contradiction. Hence, ρ1 = ρ2 so ρ is an extreme
+element of Q(H). Conversely, suppose ρ ∈ Q (H) is an extreme element.
+If the cardinality of the spectrum |σ(ρ)| > 1, then by the spectral theorem
+ρ = ρ1 + ρ2 where ρ1, ρ2 ̸= 0 are positive and ρ1 ̸= αρ2 for α ∈ C. If
+ρ11, ρ21 ̸= 0, then ⟨ρ11, 1⟩, ⟨ρ21, 1⟩ ̸= 0 and we can write
+ρ = ⟨ρ11, 1⟩ ρ1
+⟨ρ11, 1⟩ + ⟨ρ21, 1⟩ ρ2
+⟨ρ21, 1⟩
+Now ⟨ρ11, 1⟩− 1ρ1, ⟨ρ21, 1⟩− 1ρ2 ∈ Q (H) and
+⟨ρ11, 1⟩ + ⟨ρ21, 1⟩ = ⟨ρ1, 1⟩ = 1
+which is a contradiction. Hence, ρ11 = 0 or ρ21 = 0. Without loss of
+generality suppose that ρ21 = 0. We can now write
+ρ = 1
+2ρ1 + 1
+2(ρ1 + 2ρ2)
+Now ρ11 ̸= 0, ( ρ1 + 2ρ2)1 ̸= 0 and as before we get a contradiction. We
+conclude that |σ(ρ)|= 1. Hence, ρ = αP where P is a projection and α > 0.
+If rank( P ) > 1, then P = P1 + P2 where P1 and P2 are orthogonal nonzero
+projections so ρ = αP1+αP2. Proceeding as before we obtain a contradiction.
+Hence, rank( P ) = 1 so ρ = αP is pure. (ii) This follows from the spectral
+theorem.
+3
+
+===== PAGE 4 =====
+
+Let {Hn : n = 1, 2, . . .} be a ﬁltration of H and let ρn ∈ Q (Hn), n =
+1, 2, . . .. The n-decoherence functional Dn : An × A n → C deﬁned by
+Dn(A, B) = ⟨ρnχB, χA⟩
+gives a measure of the interference between A and B when the system is
+described by ρn. It is clear that Dn(Ωn, Ωn) = 1, Dn(A, B) = Dn(B, A) and
+A ↦→ Dn(A, B) is a complex measure for all B ∈ A n. It is also well-known
+that if A1, . . . , Ar ∈ A n then the matrix with entries Dn(Aj, Ak) is positive
+semideﬁnite. We deﬁne the map µn : An → R+ by
+µn(A) = Dn(A, A) = ⟨ρnχA, χA⟩
+Notice that µn(Ωn) = 1. Although µn is not additive, it does satisfy the
+grade-2 additivity condition : if A, B, C ∈ A n are mutually disjoint, then
+µn(A ∪ B ∪ C) = µn(A ∪ B) + µn(A ∪ C) + µn(B ∪ C)
+− µn(A) − µn(B) − µn(C) (2.1)
+We say that ρn+1 is consistent with ρn if Dn+1(A, B) = Dn(A, B) for all
+A, B ∈ A n. We call the sequence ρn, n = 1 , 2, . . ., consistent if ρn+1 is
+consistent with ρn for n = 1, 2, . . .. Of course, if the sequence ρn, n = 1, 2, . . .,
+is consistent, then µn+1(A) = µn(A) ∀A ∈ A n, n = 1 , 2, . . .. A discrete
+quantum process (DQP) is a consistent sequence ρn ∈ Q (Hn) for a ﬁltration
+Hn, n = 1, 2, . . .. A DQP ρn is pure if ρn ∈ Q p(Hn), n = 1, 2, . . ..
+If ρn is a DQP, then the corresponding maps µn : An → R+ have the form
+µn(A) = ⟨ρnχA, χA⟩ =
+
+ρ1/2
+n χA
+
+2
+Now A → ρ1/2
+n χA is a vector-valued measure on An. We conclude that µn is
+the squared norm of a vector-valued measure. In particular, if ρn = |ψn⟩⟨ψn|
+is a pure DQP, then µn(A) = |⟨ψn, χA⟩|2 so µn is the squared modulus of the
+complex-valued measure A ↦→ ⟨ ψn, χA⟩.
+For a DQP ρn ∈ Q(Hn), we say that a set A ∈ A is suitable if lim ⟨ρjχA, χA⟩
+exists and is ﬁnite and in this case we deﬁne µ(A) to be the limit. We denote
+the set of suitable sets by S(ρn). If A ∈ A n then
+lim ⟨ρjχA, χA⟩ = ⟨ρnχA, χA⟩
+so A ∈ S (ρn) and µ(A) = µn(A). This shows that the algebra A0 = ∪A n ⊆
+S(ρn). In particular, Ω ∈ S (ρn) and µ(Ω) = 1. In general, S(ρn) ̸= A and µ
+4
+
+===== PAGE 5 =====
+
+may not have a well-behaved extension from A0 to all of A [2, 7]. A subset
+B of A is a quadratic algebra if ∅, Ω ∈ B and whenever A, B, C ∈ B are
+mutually disjoint with A ∪ B, A ∪ C, B ∪ C ∈ B , we have A ∪ B ∪ C ∈ B . For
+a quadratic algebra B, a q-measure is a map µ0 : B → R+ that satisﬁes the
+grade-2 additivity condition (2.1). Of course, an algebra of sets is a quadratic
+algebra and we conclude that µn : An → R+ is a q-measure. It is not hard to
+show that S(ρn) is a quadratic algebra and µ : S(ρn) → R+ is a q-measure
+on S(ρn) [3].
+3 Classical Sequential Growth Processes
+A partially ordered set (poset) is a set x together with an irreﬂexive, tran-
+sitive relation < on x. In this work we only consider unlabeled posets and
+isomorphic posets are considered to be identical. Let Pn be the collection
+of all posets with cardinality n, n = 1 , 2, . . .. If x ∈ P n, y ∈ P n+1, then x
+produces y if y is obtained from x by adjoining a single new element to x that
+is maximal in y. We also say that x is a producer of y and y is an oﬀspring
+of x. If x produces y we write x → y. We denote the set of oﬀspring of x by
+x → and for A ⊆ P n we use the notation
+A → = {y ∈ P n+1 : x → y, x ∈ A}
+The transitive closure of → makes the set of all ﬁnite posets P = ∪P n into
+a poset.
+A path in P is a string (sequence) x1, x2, . . . where xi ∈ P i and xi → xi+1,
+i = 1, 2, . . .. An n-path in P is a ﬁnite string x1x2 · · ·xn where again xi ∈ P i
+and xi → xi+1. We denote the set of paths by Ω and the set of n-paths by
+Ωn. The set of paths whose initial n-path is ω0 ∈ Ωn is denoted by ω0 ⇒ .
+Thus, if ω0 = x1x2 · · ·xn then
+ω0 ⇒ = {ω ∈ Ω : ω = x1, x2 · · ·xnyn+1yn+2 · · · }
+If x produces y in r isomorphic ways, we say that the multiplicity of x → y
+is r and write m(x → y) = r. For example, in Figure 1, m(x → y) = 3. (To
+be precise, these diﬀerent isomorphic ways require a labeling of the p osets
+and this is the only place that labeling needs to be mentioned.)
+5
+
+===== PAGE 6 =====
+
+✫✪
+✬✩
+r r r
+x
+✻
+❅
+❅
+❅
+❅
+❅
+❅ ■
+
+
+
+
+
+  ✒✫✪
+✬✩
+r r r✁✁❆❆
+r
+✫✪
+✬✩
+r r r ❆❆✁✁
+r
+✫✪
+✬✩
+r r r   ❅❅
+r
+Figure 1
+If x ∈ P and a, b ∈ x we say that a is an ancestor of b and b is a successor
+of a if a < b . We say that a is a parent of b and b is a child of a if a < b
+and there is no c ∈ x such that a < c < b . Let c = (c0, c1, . . .) be a sequence
+of nonnegative numbers called coupling constants [5, 9]. For r, s ∈ N with
+r ≤ s, we deﬁne
+λc(s, r) =
+s∑
+k=r
+( s − r
+k − r
+)
+ck =
+s− r∑
+k=0
+( s − r
+k
+)
+cr+k
+For x ∈ P n y ∈ P n+1 with x → y we deﬁne the transition probability
+pc(x → y) = m(x → y) λc(α, π)
+λc(n, 0)
+where α is the number of ancestors and π the number of parents of the
+adjoined maximal element in y that produces y from x. It is shown in [5, 9]
+that pc(x → y) is a probability distribution in that it satisﬁes the Markov-
+sum rule ∑
+{pc(x → y) : y ∈ P n+1, x → y} = 1
+In discrete quantum gravity, the elements of P are thought of as causal
+sets and a < b is interpreted as b being in the causal future of a. The distri-
+bution y ↦→ pc(x → y) is essentially the most general that is consistent with
+principles of causality and covariance [5, 9]. It is hoped that other th eoretical
+principles or experimental data will determine the coupling constant s. One
+suggestion is to take ck = 1 /k! [6, 7]. The case ck = ck for some c > 0 has
+been previously studied and is called a percolation dynamics [5, 6, 8].
+We call an element x ∈ P a site and we sometimes call an n-path an n-
+universe and a path a universe The set P together with the set of transition
+probabilities pc(x → y) forms a classical sequential growth process (CSGP)
+6
+
+===== PAGE 7 =====
+
+which we denote by ( P, pc) [4, 5, 6, 8, 9]. It is clear that ( P, pc) is a Markov
+chain and as usual we deﬁne the probability of an n-path ω = y1y2 · · ·yn by
+pn
+c (ω) = pc(y1 → y2)pc(y2 → y3) · · ·pc(yn− 1 → yn)
+Denoting the power set of Ω n by 2 Ωn, (Ω n, 2Ωn, pn
+c ) becomes a probability
+space where
+pn
+c (A) =
+∑
+{pn
+c (ω) : ω ∈ A}
+for all A ∈ 2Ωn. The probability of a site x ∈ P n is
+pn
+c (x) =
+∑
+{pn
+x(ω) : ω ∈ Ωn, ω ends at x}
+Of course, x ↦→ pn
+c (x) is a probability measure on Pn and we have
+∑
+x∈P n
+pn
+c (x) = 1
+Example 1 . Figure 2 illustrates the ﬁrst two steps of a CSGP where the
+2 indicates the multiplicity m(x3 → x6) = 2. Table 1 lists the probabilities
+of the various sites for the general coupling constants ck and the particular
+coupling constants c′
+k = 1/k! where d = (c0 + c1)(c0 + 2c1 + c2).
+✫✪
+✬✩
+rx1
+❅
+❅
+❅❅ ■
+
+
+   ✒✫✪
+✬✩❅
+❅
+❅
+❅❅ ■
+
+
+
+  ✒
+r
+r
+x2
+✻
+✫✪
+✬✩❅
+❅
+❅
+❅ ■
+
+
+
+  ✒
+2
+r r x3
+✻
+✫✪
+✬✩
+r
+r
+r
+x4
+✫✪
+✬✩
+r
+r r
+✁✁❆❆x5
+✫✪
+✬✩
+r r
+rx6
+✫✪
+✬✩
+r r
+r
+✁✁ ❆❆x7
+✫✪
+✬✩
+r r r x8
+Figure 2
+7
+
+===== PAGE 8 =====
+
+xi x1 x2 x3 x4 x5 x6 x7 x8
+p(n)
+c (xi) 1 c1
+c0+c1
+c0
+c0+c1
+c1(c1+c2)
+d
+c2
+1
+d
+3c0c1
+d
+c0c2
+d
+c2
+0
+d
+pn
+c′(xi)
+1 1
+2
+1
+2
+3
+14
+1
+7
+3
+7
+1
+14
+1
+7
+Table 1
+For A ⊆ Ωn we use the notation
+A ⇒ = ∪ { ω ⇒ : ω ∈ A}
+Thus, A ⇒ is the set of paths whose initial n-paths are elements of A. We
+call A ⇒ a cylinder set and deﬁne
+An = {A ⇒ : A ⊆ Ωn}
+In particular, if ω ∈ Ωn then the elementary cylinder set cyl(ω) is given by
+cyl(ω) = ω ⇒ . It is easy to check that the An form an increasing sequence
+A1 ⊆ A 2 ⊆ · · · of algebras on Ω and hence C(Ω) = ∪A n is an algebra of
+subsets of Ω. Also for A ∈ C (Ω) of the form A = A1 ⇒ , A1 ⊆ Ωn, we deﬁne
+pc(A) = pn
+c (A1). It is easy to check that pc is a well-deﬁned probability
+measure on C(Ω). It follows from the Kolmogorov extension theorem that
+pc has a unique extension to a probability measure νc on the σ-algebra A
+generated by C(Ω). We conclude that (Ω , A, νc) is a probability space, the
+increasing sequence of subalgebras An generates A and that the restriction
+νc | An = pn
+c . Hence, the subspaces Hn = L2(Ω, An, pn
+c ) form a ﬁltration of
+the Hilbert space H = L2(Ω, A, νc).
+4 Quantum Sequential Growth Processes
+This section employs the framework of Section 2 to obtain a quantum sequen-
+tial growth process (QSGP) from the CSGP ( P, pc) developed in Section 3.
+We have seen that the n-path Hilbert space Hn = L2(Ω, An, pn
+c ) forms a ﬁl-
+tration of the path Hilbert space H = L2(Ω, A, νc). In the sequel, we assume
+that pn
+c (ω) ̸= 0 for every ω ∈ Ωn, n = 1, 2, . . .. Then the set of vectors
+en
+ω = pn
+c (ω)1/2χcyl(ω), ω ∈ Ωn
+8
+
+===== PAGE 9 =====
+
+form an orthonormal basis for Hn, n = 1 , 2, . . .. For A ∈ A n, notice that
+χA ∈ H with ∥χA∥ = pn
+c (A)1/2.
+We call a DQP ρn ∈ Q(Hn) a quantum sequential growth process (QSGP).
+We call ρn the local operators and µn(A) = Dn(A, A) the local q-measures for
+the process. If ρ = lim ρn exists in the strong operator topology, then ρ is a
+q-probability operator on H called the global operator for the process. If the
+global operator ρ exists, then ˆµ(A) = ⟨ρχA, χA⟩ is a (continuous) q-measure
+on A that extends µn, n = 1, 2, . . .. Unfortunately, the global operator does
+not exist, in general, so we must be content to work with the local op erators
+[2, 3, 7]. In this case, we still have the q-measure µ on the quadratic algebra
+S(ρn) ⊆ A that extends µn n = 1 , 2, . . .. We frequently identify a set
+A ⊆ Ωn with the corresponding cylinder set ( A ⇒ ) ∈ A n. We then have
+the q-measure, also denoted by µn, on 2 Ωn deﬁned by µn(A) = µn(A ⇒ ).
+Moreover, we deﬁne the q-measure, again denoted by µn, on Pn by
+µn(A) = µn ({ω ∈ Ωn : ω end in A})
+for all A ⊆ P n. In particular, for x ∈ P n we have
+µn ({x}) = µn ({ω ∈ Ωn : ω ends with x})
+If A ∈ A n has the form A1 ⇒ for A1 ⊆ Ωn then A ∈ A n+1 and A =
+(A1 → ) ⇒ where A1 →⊆ Ωn+1. Let ρn ∈ Q (Hn), ρn+1 ∈ Q (Hn+1) and let
+Dn(A, B) = ⟨ρnχB, χA⟩, Dn+1(A, B) = ⟨ρn+1χB, χA⟩ be the corresponding
+decoherence functionals. Then ρn+1 is consistent with ρn if and only if for
+all A, B ⊆ Ωn we have
+Dn+1 [(A → ) ⇒ , (B → ) ⇒ ] = Dn(A ⇒ , B ⇒ ) (4.1)
+Lemma 4.1. For ρn ∈ Q (Hn), ρn+1 ∈ Q (Hn+1) we have that ρn+1 is consis-
+tent with ρn if and only if for all ω, ω′ ∈ Ωn we have
+Dn+1 [(ω → ) ⇒ , (ω′ → ) ⇒ ] = Dn(ω ⇒ , ω′ ⇒ ) (4.2)
+Proof. Necessity is clear. For suﬃciency, suppose (4.2) holds. Then for ev ery
+A, B ⊆ Ωn we have
+Dn+1 [(A → ) ⇒ , (B → ) ⇒ )] =
+∑
+ω∈ A
+∑
+ω′∈ B
+Dn+1Dn+1 [(ω → ) ⇒ , (ω′ → ) ⇒ ]
+=
+∑
+ω∈ A
+∑
+ω′∈ B
+Dn(ω ⇒ , ω′ ⇒ ) = Dn(A ⇒ , B ⇒ )
+and the result follows from (4.1).
+9
+
+===== PAGE 10 =====
+
+For ω = x1x2 · · ·xn ∈ Ωn and y ∈ P n+1 with xn → y we use the notation
+ωy ∈ Ωn+1 where ωy = x1x2 · · ·xny. We also deﬁne pc(ω → y) = pc(xn → y)
+and write ω → y whenever xn → y.
+Theorem 4.2. For ρn ∈ Q (Hn), ρn+1 ∈ Q (Hn+1) we have that ρn+1 is
+consistent with ρn if and only if for every ω, ω′ ∈ Ωn we have
+⟨ρnen
+ω′, en
+ω⟩ =
+∑
+x∈P n+1
+ω′→ x
+∑
+y∈P n+1
+ω→ y
+pc(ω′ → x)1/2pc(ω → y)1/2⟨
+ρn+1en+1
+ω′x en+1
+ωy
+⟩
+(4.3)
+Proof. By Lemma 4.1, ρn+1 is consistent with ρn if and only if (4.2) holds.
+But
+Dn(ω ⇒ , ω′ ⇒ ) = ⟨ρnχω′⇒ , χω⇒ ⟩ =
+⟨
+ρnχcyl(ω′), χcyl(ω)
+⟩
+= pn
+c (ω′)1/2pn
+c (ω)1/2⟨ρnen
+ω′, en
+ω⟩
+Moreover, we have
+Dn+1 [(ω → ) ⇒ , (ω′ → ) ⇒ ] =
+⟨
+ρn+1χ(ω′→ )⇒ , χ(ω→ )⇒
+⟩
+=
+∑
+x∈P n+1
+ω′→ x
+∑
+y∈P n+1
+ω→ y
+⟨ρn+1χω′x⇒ , χωy⇒ ⟩
+=
+∑
+x∈P n+1
+ω′→ x
+∑
+y∈P n+1
+ω→ y
+⟨
+ρn+1χcyl(ω′x), χcyl(ωy)
+⟩
+=
+∑
+x∈P n+1
+ω′→ x
+∑
+y∈P n+1
+ω→ y
+pn
+c (ω′x)1/2pn
+c (ωy)1/2⟨
+ρn+1en+1
+ω′x , en+1
+ωy
+⟩
+= pn
+c (ω′)1/2pn
+c (ω)1/2
+∑
+x∈P n+1
+ω′→ x
+∑
+y∈P n+1
+ω→ y
+pc(ω′ → x)pc(ω → y)1/2⟨
+ρnen+1
+ω′x , en+1
+ωy
+⟩
+The result now follows.
+Viewing Hn as L2(Ωn, 2Ωn, pn
+c ) we can write (4.3) in the simple form
+⟨
+ρnχ{ω′}, χ{ω}
+⟩
+= ⟨ρn+1χω′→ , χω→ ⟩ (4.4)
+Corollary 4.3. A sequence ρn ∈ Q (Hn) is a QSGP if and only if (4.3) or
+(4.4) hold for every ω, ω′ ∈ Ωn, n = 1, 2, . . ..
+10
+
+===== PAGE 11 =====
+
+We now consider pure q-probability operators. In the following results we
+again view Hn as L2(Ωn, 2Ωn, pn
+c ).
+Corollary 4.4. If ρn ∈ Q p(Hn), ρn+1 ∈ Q p(Hn+1) with pn = |ψn⟩⟨ψn|,
+ρn+1 = |ψn+1⟩⟨ψn+1|, then ρn+1 is consistent with ρn if and only if for every
+ω, ω′ ∈ Ωn we have
+⟨
+ψn, χ{ω}
+⟩⟨
+χ{ω′}, ψn
+⟩
+= ⟨ψn+1, χω→ ⟩⟨χω′→ , ψn+1⟩ (4.5)
+Corollary 4.5. A sequence |ψn⟩⟨ψn| ∈ Q p(Hn) is a QSGP if and only if
+(4.5) holds for every ω, ω′ ∈ Ωn.
+We say that ψn+1 ∈ V (Hn+1) is strongly consistent with ψn ∈ V (Hn) if
+for every ω ∈ Ωn we have
+⟨
+ψn, χ{ω}
+⟩
+= ⟨ψn+1, χω→ ⟩ (4.6)
+By (4.5) strong consistency implies the consistency of the corresp onding q-
+probability operators.
+Corollary 4.6. If ψn+1 ∈ V (Hn+1) is strongly consistent with ψn ∈ V (Hn),
+n = 1, 2, . . ., then |ψn⟩⟨ψn| ∈ Q p(Hn) is a QSGP.
+Lemma 4.7. If ψn ∈ V (Hn) and ψn+1 ∈ Hn+1 satisﬁes (4.6) for every
+ω ∈ Ωn, then ψn+1 ∈ V (Hn+1).
+Proof. Since ψn ∈ V (Hn) we have by (4.6) that
+|⟨ψn+1, 1⟩|=
+⏐
+⏐
+⏐
+⏐
+⏐
+∑
+ω∈ Ωn
+⟨ψn+1, χω→ ⟩
+⏐
+⏐
+⏐
+⏐
+⏐ =
+⏐
+⏐
+⏐
+⏐
+⏐
+∑
+ω∈ Ωn
+⟨
+ψn, χ{ω}
+⟩
+⏐
+⏐
+⏐
+⏐
+⏐
+= |⟨ψn, 1⟩|= 1
+The result now follows.
+Corollary 4.8. If ∥ψ1∥ = 1 and ψn ∈ Hn satisﬁes (4.6) for all ω ∈ Ωn,
+n = 1, 2, . . ., then |ψn⟩⟨ψn| is a QSGP.
+Proof. Since ∥ψ1∥ = 1, it follows that ψ1 ∈ V (H1). By Lemma 4.7, ψn ∈
+V(Hn), n = 1, 2, . . .. Since (4.6) holds, the result follows from Corollary 4.6.
+Another way of writing (4.6) is
+∑
+ω→ x
+pn+1
+c (ωx)ψn+1(ωx) = pn
+c (ω)ψn(x) (4.7)
+for every ω ∈ Ωn.
+11
+
+===== PAGE 12 =====
+
+5 Discrete Quantum Gravity Models
+This section gives some examples of QSGP that can serve as models fo r
+discrete quantum gravity. The simplest way to construct a QSGP is t o form
+the constant pure DQP ρn = |1⟩⟨1|, n = 1, 2, . . .. To show that ρn is indeed
+consistent, we have for ω ∈ Ωn that
+∑
+ω→ x
+pn+1
+c (ωx) =
+∑
+ω→ x
+pn
+c (ω)pc(ω → x) = pn
+c (ω)
+∑
+ω→ x
+pc(ω → x) = pn
+c (ω)
+so consistency follows from (4.7). The corresponding q-measures are given
+by
+µn(A) = |⟨1, χA⟩|2 = pn
+c (A)2
+for every A ∈ A n. Hence, µn is the square of the classical measure. Of
+course, |1⟩⟨1| is the global q-probability operator for this QSGP and in this
+case S(ρn) = A. Moreover, we have the global q-measure µ(A) = νc(A)2 for
+A ∈ A .
+Another simple way to construct a QSGP is to employ Corollary 4.8. In
+this way we can let ψ1 = 1, ψ2 any vector in L2(Ω2, 2Ω2, p2
+c) satisfying
+⟨
+ψ2, χ{x1x2}
+⟩
++
+⟨
+ψ2χ{x1x3}
+⟩
+=
+⟨
+ψ1, χ{x1}
+⟩
+= 1
+and so on, where x1, x2, x3 are given in Figure 2. As a concrete example, let
+ψ1 = 1,
+ψ2 = 1
+2
+[
+p2
+c(x1x2)− 1χ{x1x2} + p2
+c(x1x3)χ{x1x3}
+]
+and in general
+ψn = 1
+|Ωn|
+∑
+ω∈ Ωn
+pn
+c (ω)− 1χ{ω}
+The q-measure µ1 is µ1 ({x1}) = 1 and µ2 is given by
+µ2 ({x1x2}) =
+⏐
+⏐⟨
+ψ2, χ{x1x2}
+⟩⏐
+⏐2
+= 1
+4
+µ2 ({x1x3}) =
+⏐
+⏐⟨
+ψ2, χ{x1x3}
+⟩⏐
+⏐2
+= 1
+4
+µ2(Ω2) = |⟨ψ2, 1⟩|2 = 1
+In general, we have µn(A) = |A|2 / |Ωn|2 for all A ∈ Ωn. Thus µn is the square
+of the uniform distribution. The global operator does not exist bec ause there
+is no q-measure on A that extends µn for all n ∈ N. For A ∈ A we have
+⟨ψn, χA⟩ =
+∫
+ψnχAdνc = |A ∩ { cyl(ω) : ω ∈ Ωn}|
+|Ωn|
+12
+
+===== PAGE 13 =====
+
+Letting ρn = |ψn⟩⟨ψn| we conclude that A ∈ S (ρn) if and only if
+lim
+n→∞
+|A ∩ { cyl(ω) : ω ∈ Ωn}|
+|Ωn|
+exists. For example, if |A|< ∞ then for n suﬃciently large we have
+|A ∩ { cyl(ω) : ω ∈ Ωn}|= |A|
+so A ∈ S (ρn) and µ(A) = 0. In a similar way if |A| < ∞ then for the
+complement A′, if n is suﬃciently large we have
+|A′ ∩ { cyl(ω) : ω ∈ Ωn}|= |Ωn| − |A|
+so A′ ∈ S (ρn) with µ(A′) = 1.
+We now present another method for constructing a QSGP. Unlike th e
+previous method this DQP is not pure. Let αω ∈ C, ω ∈ Ωn satisfy
+⏐
+⏐
+⏐
+⏐
+⏐
+∑
+ω∈ Ωn
+αωpn
+c (ω)1/2
+⏐
+⏐
+⏐
+⏐
+⏐ = 1 (5.1)
+and let ρn be the operator on Hn satisfying
+⟨ρnen
+ω, en
+ω′⟩ = αω′
+αω (5.2)
+Then ρn is a positive operator and by (5.1), (5.2) we have
+⟨ρn1, 1⟩ =
+⟨
+ρn
+∑
+ω
+pn
+c (ω)1/2en
+ω,
+∑
+ω′
+pn
+c (ω′)1/2en
+ω′
+⟩
+=
+∑
+ω,ω′
+pn
+c (ω)1/2pn
+c (ω′)1/2⟨ρnen
+ω, en
+ω′⟩
+=
+⏐
+⏐
+⏐
+⏐
+⏐
+∑
+ω
+pn
+c (ω)1/2αω
+⏐
+⏐
+⏐
+⏐
+⏐
+2
+= 1
+Hence, ρn ∈ Q (Hn). Now
+Ωn+1 = {ωx : ω ∈ Ωn, x ∈ P n+1, ω → x}
+13
+
+===== PAGE 14 =====
+
+and for each ωx ∈ Ωn+1, let βωx ∈ C satisfy
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+∑
+ωx∈ Ωn+1
+βωxpn+1
+c (ωx)1/2
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+= 1
+Let ρn+1 be the operator on Hn+1 satisfying
+⟨
+ρn+1en+1
+ωx , en+1
+ω′x′
+⟩
+= βω′x′
+βωx (5.3)
+As before, we have that ρn+1 ∈ Q (Hn+1). The next result follows from
+Theorem 4.2.
+Theorem 5.1. The operator ρn+1 is consistent with ρn if and only if for
+every ω, ω′ ∈ Ωn we have
+αω′
+αω =
+∑
+x′∈P n+1
+ω′→ x′
+βω′x′pc(ω′ → x′)1/2 ∑
+x∈P n+1
+ω→ x
+βωxpc(ω → x)1/2 (5.4)
+A suﬃcient condition for (5.4) to hold is
+∑
+x∈P n+1
+ω→ x
+βωxpc(ω → x)1/2 = αω (5.5)
+The proof of the next result is similar to the proof of Lemma 4.7.
+Lemma 5.2. Let ρn ∈ Q (Hn) be deﬁned by (5.2) and let ρn+1 be the operator
+on Hn+1 deﬁned by (5.3). If (5.5) holds, then ρn+1 ∈ Q (Hn+1) and ρn+1 is
+consistent with ρn.
+The next result gives the general construction.
+Corollary 5.3. Let ρ1 = I ∈ Q (H1) and deﬁne ρn ∈ Q (Hn) inductively by
+(5.3). Then ρn is a QSGP.
+References
+[1] L. Bombelli, J. Lee, D. Meyer and R. Sorkin, Spacetime as a casual set,
+Phys. Rev. Lett. 59 (1987), 521–524.
+14
+
+===== PAGE 15 =====
+
+[2] F Dowker, S. Johnston and S. Surya, On extending the quantum mea-
+sure, arXiv: quant-ph 1002:2725 (2010).
+[3] S. Gudder, Discrete quantum gravity, arXiv: gr-qc 1108.2296 ( 2011).
+[4] J. Henson, Quantum histories and quantum gravity, arXiv: gr-q c
+0901.4009 (2009).
+[5] D. Rideout and R. Sorkin, A classical sequential growth dynamics for
+causal sets, Phys. Rev. D 61 (2000), 024002.
+[6] R. Sorkin, Causal sets: discrete gravity, arXiv: gr-qc 030900 9 (2003).
+[7] R. Sorkin, Toward a “fundamental theorem of quantal measur e theory,”
+arXiv: hep-th 1104.0997 (2011) and Math. Struct. Comm. Sci. (to ap-
+pear).
+[8] S. Surya, Directions in causal set quantum gravity, arXiv: gr-q c
+1103.6272 (2011).
+[9] M. Varadarajan and D. Rideout, A general solution for classical sequen-
+tial growth dynamics of causal sets, Phys. Rev. D 73 (2006), 104021.
+15

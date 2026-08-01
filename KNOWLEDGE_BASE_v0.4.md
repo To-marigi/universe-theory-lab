@@ -19,7 +19,9 @@ later scope audit supersedes their interpretation.
 4. `HANDOFF_v0.4.1.md` — exact operational state, commands, hashes, and next
    gates.
 5. `reports/v0.4.1_scope_break_decision_packet.md` — current owner decision.
-6. Versioned reports and machine artifacts — evidence within their declared
+6. `reports/v0.4.2_prior_art_and_related_work_audit.md` — current novelty,
+   priority, related-work, and mathematical-commutativity claim boundaries.
+7. Versioned reports and machine artifacts — evidence within their declared
    scope. A later scope addendum controls interpretation but does not rewrite
    old bytes.
 
@@ -68,8 +70,9 @@ semantic-profile row and not a change to SR3b-A.
 | `reports/v0.4.2_955_minimal_deelimination_design.md` | exact local parameterisation plus provenance audit | `N_c=u_c(Jv_c)^T` is exhaustive and adds 48 scalars; a global source-native compiler is still required |
 | `results/v0.4.2_eq120_source_provenance.json` | exact source-native free-word certificate | six raw CPOBC relations plus source nonsingularity prove the three `k=1` Eq. (120) identities; no MSR, GC, Eq. (108), or Eq. (112) is used |
 | `results/v0.4.1_partial_slice_audit.json` | independently rebound source-to-chart proof | certifies Q commutativity on `P_sGC+rMSR intersect image(Phi_U)` using 21 of the 42 historical QQ certificates |
-| `reports/v0.4.2_partial_slice_short_report_plan.md` | SR3b-A scope/publication lock | `THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING / DEPOSIT_NOT_AUTHORIZED`; the proper-slice theorem is draftable independently but is not the full 955 theorem |
-| `reports/v0.4.2_prior_art_and_related_work_audit_protocol.md` | mandatory novelty/priority and related-work audit gate | requires version-specific primary-source inspection, local preservation, claim-by-claim comparison, and explicit overlap/open-search reporting before SR3b-A or Paper I novelty wording or deposit |
+| `reports/v0.4.2_partial_slice_short_report_plan.md` | SR3b-A scope/publication lock | `THEOREM_CERTIFIED / SHORT_REPORT_SLOT_CONFIRMED / PRIOR_ART_AUDIT_COMPLETE / DISTINCT_TECHNICAL_CONTRIBUTION_IDENTIFIED / DRAFT_RECOMMENDED / DEPOSIT_NOT_AUTHORIZED`; the proper-slice theorem is draftable independently but is not the full 955 theorem |
+| `reports/v0.4.2_prior_art_and_related_work_audit.md` | completed novelty/priority and related-work audit | no same claim found for SR2 or SR3b-A in the bounded search; Xu arXiv:2607.26672v1 is more general on the self-adjoint slice and forbids broad rigidity/priority wording; full one-sided profiles remain open |
+| `references/notes/v0.4.2_prior_art_related_work_2026-08-01.md` | theorem/page-level literature and mathematical-tool ledger | records direct-source semantics, Xu overlap, triangularisation/common-eigenvector/Burnside/cyclic-separating/LLD tools, 66-PDF local/NAS preservation, and exact claim boundaries |
 | `results/v0.4.2_955_source_native_slack_compiler.json` | structured source word/matrix-block inventory | covers 165 occurrences/131 orbits, 48 slack coordinates, and independently proves the 320-edge strong-GC basis spans all 1,529 path pairs; no scalar solver manifest or chart theorem yet |
 | `results/v0.4.2_955_n_nonzero_scout.json` | exact QQ-linear source-native scout | the entire nonsingular `A_e=[[p_e,x_e],[0,1]]` family lies in `N!=0`, but all six Q commutators are forced zero; general mixed nonlinear patches remain open |
 | `results/v0.4.2_955_mixed_source_native_manifest.json` | exact sparse QQ scalar manifest, no solver run | `V042_955_MIXED_SOURCE_NATIVE_SCALAR_MANIFEST_READY_NO_SOLVER_RUN`; 262 variables, 783 CPOBC + 320 strong-GC + 24 reachable-MSR vector equations, 165 determinant predicates, uniform `N!=0`; old 21 chart ideals are unused |
@@ -81,6 +84,37 @@ semantic-profile row and not a change to SR3b-A.
 The string `WEAK_D2_ON_ONE_SIDED_COMMUTATIVITY_PROVED` may appear in stored
 v0.4.1 artifacts. It is historical machine output, not an active theorem
 verdict.
+
+### 3.1 Prior-art and mathematical-commutativity facts
+
+- The direct source arXiv:2603.25503v1 writes MSR first on a reachable state
+  in Eqs. (31)--(32), promotes it to an operator identity in Eq. (33), and
+  states GC on the fixed initial vector. This is the semantic seam classified
+  by v0.4; do not attribute the project's weak-profile theorem to the source.
+- Surya's March 2024 Chengdu slides already display strong operator MSR and
+  operator path/color independence. The strong formulation is prior source
+  work; exact finite classification/certification is the project contribution.
+- Xu arXiv:2607.26672v1, submitted 2026-07-29, contains the closest public
+  CPOBC rigidity result. It is more general for finite-dimensional
+  self-adjoint nonsingular systems and has several exact `2 by 2`
+  triangular/extension results. It leaves non-self-adjoint nonsingular and
+  state-only covariance directions open. Never claim broad priority over this
+  territory; the public project Zenodo v0.3.9 date is 2026-07-31.
+- No `SAME_CLAIM` was found through 2026-08-01 for the weak/weak exact rational
+  witness or SR3b-A. This is a bounded-search finding, not a proof of absence.
+- For `2 by 2` searches, split common-invariant-line/simultaneously
+  triangularizable and irreducible branches early. `det[A,B]=0` detects the
+  former for pairs over the appropriate field but does not imply commutativity.
+- The minimal promotion from `D Omega=0` is separation by `Omega` on the
+  profile-specific residual space, i.e. injectivity of `D -> D Omega`; cyclicity
+  alone is insufficient. Two independent reachable vectors killed by the same
+  `2 by 2` MSR residual recover strong MSR sourcewise.
+- The centralizer of a non-scalar `A in M_2(F)` is `F[I,A]`. Showing all
+  `Q_i` commute with one certified non-scalar `Q_k` is a valid compact endpoint
+  for pairwise commutativity.
+- Local archive state: 87 source records, 66 PDFs, 14 newly acquired PDFs,
+  searchable text and SHA-256 manifest regenerated, and all 66 PDFs matched at
+  `Y:\universe-theory-lab-backup\references\papers\`.
 
 ## 4. The central methodological lesson
 
@@ -268,22 +302,24 @@ be advertised as their solution. Do not use “sharp semantic threshold” or
 
 The reconstruction-slice proposition is now the independent short report
 **SR3b-A**. Its locked state is
-`THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING /
+`THEOREM_CERTIFIED / SHORT_REPORT_SLOT_CONFIRMED / PRIOR_ART_AUDIT_COMPLETE /
+DISTINCT_TECHNICAL_CONTRIBUTION_IDENTIFIED / DRAFT_RECOMMENDED /
 DEPOSIT_NOT_AUTHORIZED`; see
 `reports/v0.4.2_partial_slice_short_report_plan.md`. Drafting is recommended,
-but novelty/priority audit and fresh owner approval precede any deposit or
-submission.
+but manuscript/reproduction gates and fresh owner approval precede any deposit
+or submission.
 
-The novelty/priority audit is a mandatory research task, not an editorial
-afterthought. Follow `reports/v0.4.2_prior_art_and_related_work_audit_protocol.md`:
-start from the existing local reference ledgers, inspect exact paper versions,
-archive lawful copies and text, and classify each source as direct, same-claim,
-more/less general, adjacent, method-only, or background. A bounded search with
-no match does not justify an absolute absence or priority claim.
+The novelty/priority audit is complete through 2026-08-01; follow
+`reports/v0.4.2_prior_art_and_related_work_audit.md`. Paper I and SR3b-A must
+cite Xu arXiv:2607.26672v1, distinguish its self-adjoint/triangular rigidity
+from the project's non-self-adjoint weak-semantics results, and avoid broad
+“first” or priority language. Before manuscript freeze, run a delta search from
+the recorded cutoff. A bounded search with no match never justifies an absolute
+absence claim.
 
 The pure-lower bounded global no-go and its independent oracle remain an SR3b
 auxiliary theorem. They do not create another short report and do not alter
-the SR3b-A theorem, title, novelty gate, or deposit status.
+the SR3b-A theorem, title, or deposit status.
 
 ## 11. Decision log and work not to repeat
 

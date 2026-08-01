@@ -1,0 +1,586 @@
+===== PAGE 1 =====
+
+arXiv:1507.00377v3  [math.RA]  28 Mar 2017
+THEOREMS OF BURNSIDE AND WEDDERBURN
+REVISITED
+BAMDAD R. YAHAGHI
+Dedicated to the memory of my beloved parents, the light of my heavens and earth,
+“for the ﬂame that never dies will always remain in the heart. ..”
+Abstract. We approach celebrated theorems of Burnside and Wedder-
+burn via simultaneous triangularization. First, for a gene ral ﬁeld F , we
+prove that Mn(F ) is the only irrreducible subalgebra of triangularizable
+matrices in Mn(F ) provided such a subalgebra exists. This provides a
+slight generalization of a well-known theorem of Burnside. Next, for a
+given n > 1, we characterize all ﬁelds F such that Burnside’s Theo-
+rem holds in Mn(F ), i.e., Mn(F ) is the only irreducible subalgebra of
+itself. In fact, for a subﬁeld F of the center of a division ring D, our
+simple proof of the aforementioned extension of Burnside’s Theorem
+can be adjusted to establish a Burnside type theorem for irre ducible F -
+algebras of triangularizable matrices in Mn(D) with inner eigenvalues
+in F , namely such subalgebras of Mn(D) are similar to Mn(F ). We use
+Burnside’s theorem to present a simple proof of a theorem due to Wed-
+derburn. Then, we use our Burnside type theorem to prove an ex tension
+of Wedderburn’s Theorem as follows: A subalgebra of a semi-s imple left
+Artinian F -algebra is nilpotent iﬀ the algebra, as a vector space over
+the ﬁeld F , is spanned by its nilpotent members and that the minimal
+polynomials of all of its members split into linear factors o ver F . We
+conclude with an application of Wedderburn’s Theorem.
+Keywords: semigroup, (nil)algebra, inner eigenvalues, irreducibil ity,
+triangularizability.
+MSC(2010): Primary: 15A30; Secondary: 16P10, 20M20.
+1. Introduction
+In 1905, W. Burnside proved a theorem, which is now a standard result,
+asserting that a group of n × n complex matrices is irreducible iﬀ it con-
+tains a vector space basis for Mn(C), equivalently, its linear span is Mn(C),
+see [
+1, Theorem on p.433]. Later on, this result of Burnside was gen er-
+alized by Frobenius and Schur in [ 2], eventually giving rise to a modern
+form of Burnside’s result from an algebra-theoretic perspe ctive, which is:
+Mn(C) is the only irreducible subalgebra of itself. Nowadays the follow-
+ing is known as Burnside’s Theorem: for an algebraically clo sed ﬁeld F ,
+Mn(F ) is the only irreducible subalgebra of itself. Clearly, one can natu-
+rally state a counterpart of Burnside’s Theorem for irreduc ible algebras of
+Date: Received: 13 September 2016 , Accepted: 23 March 2017.
+1
+
+===== PAGE 2 =====
+
+2 B.R. YAHAGHI
+linear transformations on ﬁnite-dimensional vector space s over algebraically
+closed ﬁelds [ 13, Theorem 1.2.2]. Many standard triangularization results
+for collections of matrices with entries from algebraicall y closed ﬁelds (resp.
+linear transformations on ﬁnite-dimensional vector space s over algebraically
+closed ﬁelds) can be proved using Burnside’s Theorem, e.g., Theorems of
+McCoy, Kaplansky, Kolchin and the Block Triangularization Theorem to
+name a few; see [ 13, Chapters 1-4]. Also, Burnside’s Theorem has appli-
+cations in linear groups and hence in the representation the ory of groups.
+For an exposition of such applications of Burnside’s Theore m, see [ 5, Part
+II.2] and [ 6, §9]. A well-known theorem of J.H.M. Wedderburn states that a
+ﬁnite-dimensional algebra over a general ﬁeld is nilpotent if the algebra, as
+a vector space over the ﬁeld, is spanned by its nilpotent memb ers; see [ 17,
+Theorem 1], [ 10, Proposition 4.6], and [ 16, Proposition 2.6.32]. Standard
+proofs of this theorem of Wedderburn, of which the author is a ware, make
+use of noncommutative ring theory.
+In this note, we approach the aforementioned celebrated the orems of
+Burnside and Wedderburn via simultaneous triangularizati on and provide
+simple proofs for the theorems. Motivated by the algebra-th eoretic version
+of Burnside’s Theorem, for a general ﬁeld F , it is shown that Mn(F ) is the
+only irreducible algebra of triangularizable matrices in Mn(F ) provided such
+a subalgebra exists (see below for deﬁnitions). We refer the reader to [ 1], [2],
+[3], [ 5], [7], [8], [ 9], [ 11], [ 12], [13], [14], [ 15], [ 18], [19], and [ 20] for proofs and
+extensions of Burnside’s Theorem. Then, for a given n > 1, we characterize
+all ﬁelds F such that Burnside’s Theorem holds in Mn(F ). Indeed, our proof
+of the aforementioned extension of Burnside’s Theorem has a t least two ad-
+vantages. (a) It essentially proves that an algebra of matri ces in Mn(F )
+with F a ﬁeld over which there exists an irreducible quadratic poly nomial,
+e.g., ﬁnite extensions of prime ﬁelds or the real ﬁeld, is tri angularizable iﬀ
+it consists of triangularizable matrices. (b) Our proof has the advantage
+that it can be adjusted to establish a Burnside type theorem f or F -algebras
+of triangularizable matrices with entries from a general di vision ring having
+inner-eigenvalues in the subﬁeld F of the center of the division ring; see The-
+orem 2.3 below. With this result at disposal, one can develop simulta neous
+triangularization theory for collections of matrices with entries from general
+division rings having inner-eigenvalues in the centers of t he division rings.
+Next, with Burnside’s theorem and the standard techniques o f simultaneous
+triangularization at our disposal, we present a simple proo f of Wedderburn’s
+Theorem. We then use our Burnside type theorem, namely Theor em 2.3, to
+prove an extension of Wedderburn’s Theorem as follows: An F -algebra (not
+necessarily ﬁnite-dimensional) that is embedded in a semi- simple left Ar-
+tinian F -algebra is nilpotent iﬀ the algebra, as a vector space over t he ﬁeld
+F , is spanned by its nilpotent members and that the minimal pol ynomials
+of all of its members split into linear factors over F ; see Theorem 2.5 and
+its consequences as pointed out in the remark following the t heorem. While
+this generalization of Wedderburn’s Theorem is essentiall y a consequence of
+
+===== PAGE 3 =====
+
+THEOREMS OF BURNSIDE AND WEDDERBURN 3
+the proof of our extension of Burnside’s theorem, it is certa inly beyond the
+scope of the standard version of Burnside’s Theorem. This ca n be thought
+of as a third advantage of the proof of our extension of Burnsi de’s theorem.
+We conclude with an application of Wedderburn’s Theorem.
+Let us start setting the stage by establishing some deﬁnitio ns and stan-
+dard notation. Throughout the paper, D denotes a general division ring and
+F stands for a general ﬁeld or a subﬁeld of the center of D. As is usual, we
+use the symbol Z( D) to denote the center of D. We view the members of
+Mn(D) as linear transformations acting on the left of Dn, where Dn is the
+right vector space of n × 1 column vectors. The subspaces {0} and Dn are
+called the trivial subspaces of Dn.
+A subspace M is invariant for a collection F of matrices if T M ⊆ M for all
+T ∈ F. A collection F of matrices in Mn(D) is called reducible if F = {0} or
+it has a nontrivial invariant subspace. The collection F is called irreducible
+if it is not reducible.
+A collection F of matrices in Mn(D) is called simultaneously triangular-
+izable or simply triangularizable if there exists a basis for the vector space
+Dn, called a triangularizing basis for F, relative to which all matrices in the
+family are upper triangular. Equivalently, there exists an invertible matrix
+S over D such that each member of S− 1FS is upper triangular, or there
+exists a maximal chain of invariant subspaces of Dn, called a triangularizing
+chain of subspaces for F, each of which is invariant under F.
+For a triangularizable matrix A ∈ Mn(D), we say that λ ∈ D is an inner
+eigenvalue of A relative to a member M of a triangularizing chain C for A if
+there exists a column vector x ∈ M\ M− such that Ax− xλ ∈ M− , where M−
+is the predecessor of M in C (note that dim M/M− = 1). If D = F , then
+inner eigenvalues of a triangularizable matrix A ∈ Mn(F ) relative to the
+members of a triangularizing chain C for A are the eigenvalues of A. Inner
+eigenvalues of a triangularizable matrix A ∈ Mn(D) relative to a member
+M of a triangularizing chain for A are also known as diagonal coeﬃcients
+relative to M. If a triangularizable matrix A ∈ Mn(D) has inner eigenvalues
+in F relative to the members of a triangularizing chain for A, then it is
+easy to verify that the inner eigenvalues of A relative to the members of
+any other triangularizing chain for A are in F . It is also easily veriﬁed that
+A ∈ Mn(D) is triangularizable and has inner eigenvalues in F iﬀ A has a
+minimal polynomial f ∈ F [X] which splits into linear factors over F .
+By an F -algebra A in Mn(D), we mean a subring of Mn(D) that is closed
+under scalar multiplication by the elements of the subﬁeld F . For a semi-
+group S in Mn(D), we use Alg F (S) to denote the F -algebra generated by S.
+By Alg( S) we simply mean Alg Z (S), where Z denotes the center of D. A
+matrix A ∈ Mn(D) is called F -algebraic if it is algebraic over the subﬁeld
+F .
+For a given ﬁeld F and k ∈ N with k > 1, we say that F is k-closed if
+every polynomial of degree k over F is reducible over F . It is plain that a
+ﬁeld F is algebraically closed if and only if F is k-closed for all k ∈ N with
+
+===== PAGE 4 =====
+
+4 B.R. YAHAGHI
+k > 1. It can be shown that ﬁnite extensions of prime ﬁelds, e.g., ﬁnite
+ﬁelds, are not k-closed for all k ∈ N with k > 1.
+Let D, E be division rings. The division ring E is called an extension of
+D if D ⊂ E and Z(D) ⊂ Z(E). A collection F of matrices in Mn(D) is called
+absolutely irreducible if it is irreducible over all extensions of D. If D = F ,
+then, by Burnside’s Theorem, the collection F is absolutely irreducible if and
+only if Alg( F) = Mn(F ). It is plain that an absolutely irreducible family
+of matrices in Mn(F ) is irreducible and its commutant consists of scalars.
+The converse of this easily seen fact follows from the Wedder burn-Artin
+type theorem below, namely Theorem 1.1. Recall that the commutant of
+a collection F of matrices, denoted by F ′, is the set of all matrices that
+commute with every element of the collection F. A collection of matrices in
+Mn(D) is said to be deﬁned over a subﬁeld F of the division ring D if the
+collection is similar to a collection of matrices in Mn(F ).
+In what follows, we will make use of the following Wedderburn -Artin type
+theorem which was proved in [ 19] (see [ 19, Theorem 2.2]).
+Theorem 1.1. Let n ∈ N, D be a division ring, F a subﬁeld of its center,
+and A an irreducible F -algebra of F -algebraic matrices in Mn(D). Let r ∈ N
+be the smallest nonzero rank present in A. Then, the integer r divides n
+and after a similarity A = Mn/r(∆), where ∆ is an irreducible division F -
+algebra of F -algebraic matrices in Mr(D). In particular, after a similarity,
+A = Mn(∆1), where ∆1 is an F -algebraic subdivision ring of D, if and only
+if r = 1.
+For s subset C of a vector space V over a division ring D, as is usual, we
+use ⟨C⟩ to denote the space spanned by the subset C. We need the following
+useful lemma in our proof of Theorem 2.1 below (see [ 13, Lemma 2.1.12]
+and [ 20, Lemma 4.2.1]).
+Lemma 1.2. Let V be a ﬁnite-dimensional vector space over a division ring
+D, S a semigroup in L(V), and T a nonzero linear transformation in L(V).
+If S is irreducible, then so is T S|R, where R = T V is the range of T .
+Proof. If dim V = 1, then the assertion trivially holds. So we may assume,
+with no loss of generality, that dim V > 1. There are now two cases to
+consider.
+(a) rank( T ) = 1.
+To prove the assertion by contradiction suppose T S|R is reducible. Since
+dim R = 1 in this case, it follows from deﬁnition that T S|R = {0}. Therefore,
+
+===== PAGE 5 =====
+
+THEOREMS OF BURNSIDE AND WEDDERBURN 5
+T ST = {0}. Pick a nonzero x ∈ V such that T x ̸= 0. Now either ST x = {0}
+in which case ⟨T x⟩ is a nontrivial invariant subspace for S, or else
+⟨ST x⟩ = {
+k∑
+i=1
+SiT xi : k ∈ N, Si ∈ S, xi ∈ ⟨ x⟩ (1 ≤ i ≤ k)}
+is a nontrivial invariant subspace for S, because T ST = {0} and S is a
+semigroup. This contradicts the hypothesis that S is irreducible.
+(b) rank( T ) > 1.
+To prove that T S|R is irreducible we use contradiction. Suppose that
+T S|R is reducible. So there exists a nontrivial subspace M of R = T V such
+that T SM ⊆ M. Choose a nonzero x ∈ M and note that T S⟨x⟩ ⊆ M. The
+subspace
+⟨Sx⟩ = {
+k∑
+i=1
+Sixi : k ∈ N, Si ∈ S, xi ∈ ⟨ x⟩ (1 ≤ i ≤ k)}
+is an invariant subspace of S. Furthermore, it is proper, for T S⟨x⟩ ⊆ M ⊂ R.
+If Sx = 0, then ⟨x⟩ is a nontrivial invariant subspace for S, otherwise ⟨Sx⟩
+would be a nontrivial invariant subspace for S. So in any event we conclude
+that S is reducible, a contradiction. □
+A subspace is called hyperinvariant for a collections of matrices if it is
+invariant under the union of the collection and its commutan t. A matrix
+A in Mn(F ) ( n > 1) is called reducible if A as a linear transformation on
+F n is reducible, i.e., it has a nontrivial invariant subspace. The following
+exercise follows from the Cayley-Hamilton Theorem: a matri x A in Mn(F )
+is irreducible if and only if the characteristic polynomial for A is irreducible
+over F ; if and only if every nonzero x in F n is a cyclic vector for A, i.e.,
+{x, Ax, . . . , An− 1x} spans F n. Furthermore,
+{A}′ = F [A] = {f (A) : f ∈ F [X] with deg( f ) ≤ n − 1},
+where {A}′ denotes the commutant of A (see [20, Lemma 1.1.1]). In contrast
+to this exercise, we have the following, which is [ 20, Lemma 2.2.20].
+Lemma 1.3. Let F be a ﬁeld and n > 1. A matrix A in Mn(F ) has no
+nontrivial hyperinvariant subspace if and only if the minim al polynomial for
+A is irreducible over F . Furthermore, after a similarity, {A}′ = M n
+r
+(F [C]),
+where r = deg(m A) (divides n) and C = C(m A) in Mr(F ) denotes the
+companion matrix of the minimal polynomial of A.
+
+===== PAGE 6 =====
+
+6 B.R. YAHAGHI
+Proof. The “only if” part of the assertion is easy. To prove it by cont ra-
+diction suppose m A, the minimal polynomial of A, is reducible over F . So
+there exists a polynomial f ∈ F [X] diﬀerent from m A that divides m A. It
+is now easily seen that ker( f (A)) is a nontrivial hyperinvariant subspace for
+A, a contradiction. To see the “if” part, suppose that m A is irreducible over
+F . From the Rational Canonical Form Theorem (see Theorem VII. 4.2(i)
+and Theorem VII.4.6(i) of [ 4]), we see that r = deg(m A) divides n and that
+A is similar to a direct sum of copies of the companion matrix of mA. More
+precisely, A is similar to C ⊕ · · · ⊕ C ∈ M n
+r
+(F [C]), where C denotes the
+the companion matrix of m A. With no loss of generality, we may assume
+that A = C ⊕ · · · ⊕ C ∈ M n
+r
+(F [C]). In view of the aforementioned elemen-
+tary exercise, a straightforward calculation shows that {A}′ = M n
+r
+(F [C]).
+Since m A is irreducible over F , we conclude that F [C] is an irreducible
+algebra in Mr(F ) which, in turn, implies the irreducibility of the algebra
+{A}′ = M n
+r
+(F [C]) in Mn(F ). That is, the matrix A has no nontrivial hy-
+perinvariant subspace. □
+2. Main Results
+First, we present a simple proof of the following result whic h is slightly
+stronger than Burnside’s Theorem.
+Theorem 2.1. Let n ∈ N, F be a ﬁeld, and A an irreducible algebra of
+triangularizable matrices in Mn(F ). Then, A = Mn(F ). Therefore, the
+ﬁeld F is k-closed for each k = 2 , . . . , n whenever n > 1, and Burnside’s
+Theorem holds in Mn(F ).
+Proof. Pick T ∈ A with rank T = r, where r is the minimal nonzero rank
+present in A. First, we show that r = 1. To see this, note that T A|T F n
+is an irreducible division algebra of triangularizable lin ear transformations
+on T F n. This implies that T A|T F n = F IT F n, from which we obtain r =
+dim T F n = 1, for T A|T F n is irreducible by Lemma
+1.2. Next, we show that
+P − 1AP = Mn(F ) for some P ∈ Mn(F ), implying that A = Mn(F ). Since
+r = 1, we see that, after a similarity, E11 ∈ A , where E11 is the standard
+n × n matrix with 1 in the (1 , 1)-place and zero elsewhere. To see this,
+choose a rank-one matrix T ∈ A and an A ∈ A such that T A|T F n = IT F n.
+Then T A is clearly a rank-one idempotent, and hence is similar to E11 by
+a standard exercise in linear algebra. We prove the assertio n by induction
+on n. If n = 1, we have nothing to prove. Suppose that the assertion
+holds for matrices of size less than n. Let A be an irreducible algebra of
+triangularizable matrices in Mn(F ). As E11 ∈ A , we can write
+E11AE11 = F ⊕ 0n− 1 ⊆ A , (I − E11)A(I − E11) = 0 1 ⊕ A 1 ⊆ A ,
+
+===== PAGE 7 =====
+
+THEOREMS OF BURNSIDE AND WEDDERBURN 7
+where E11 = I1 ⊕ 0n− 1 ∈ A and A1 ⊆ Mn− 1(F ) is an irreducible alge-
+bra of triangularizable matrices in Mn− 1(F ). It follows from the induction
+hypothesis that A1 = Mn− 1(F ). Therefore,
+E11AE11 = F ⊕ 0n− 1 ⊆ A , (I − E11)A(I − E11) = 0 1 ⊕ Mn− 1(F ) ⊆ A .
+As A is irreducible, we see that ( I − E11)AE11 ̸= 0 and E11A(I − E11) ̸= 0.
+Thus, there are 2 ≤ i0 ≤ n and 2 ≤ j0 ≤ n such that Ei0i0AE11 ̸= 0
+and E11AEj0j0 ̸= 0, implying that Ei01 ∈ A and E1j0 ∈ A . This, in turn,
+yields E1i0 = E1j0Ej0i0 ∈ A and Ej01 = Ej0i0Ei01 ∈ A . It thus follows
+that Ei1 = Eii0Ei01 ∈ A and E1j = E1j0Ej0j ∈ A for all 1 ≤ i, j ≤ n.
+Consequently, Eij = Ei1E1j ∈ A for all 1 ≤ i, j ≤ n. Therefore, A = Mn(F ),
+as desired. □
+Remark. A consequence of Theorem 2.1 is the following: Let F be a ﬁeld
+that is not 2-closed and A an algebra of matrices in Mn(F ). Then A is
+triangularizable iﬀ A consists of triangularizable matrices (see [19, Theorem
+2.8]). This result does not follow from Burnside’s Theorem b ecause the
+ground ﬁeld F in Burnside’s Theorem is assumed to be algebraically closed .
+The following theorem, for a given n > 1, characterizes all ﬁelds F such
+that Burnside’s Theorem holds in Mn(F ).
+Theorem 2.2. Let F be a ﬁeld and n > 1. The following are equivalent.
+(i) The only irreducible algebra in Mn(F ) is Mn(F ).
+(ii) Every irreducible family of matrices in Mn(F ) is absolutely irreducible.
+(iii) The commutant of every irreducible family of matrices in Mn(F )
+consists of scalars.
+(iv) Every nonscalar matrix in Mn(F ) has a nontrivial hyperinvariant
+subspace.
+(v) The ﬁeld F is k-closed for all k dividing n with k > 1.
+Proof. “(i) =⇒ (ii)” Obvious.
+“(ii) =⇒ (iii)” Let F be an irreducible family of matrices in Mn(F ) and
+A denote the algebra generated by F. It is plain that F′ = A′. On the other
+hand, by the hypothesis, we must have A = Mn(F ). Therefore, F′ = A′ =
+Mn(F )′ = {cIn : c ∈ F }, proving the assertion.
+“(iii) = ⇒ (iv)” Use contradiction. Suppose that the nonscalar matrix
+A in Mn(F ) has no nontrivial hyperinvariant subspace. Therefore, {A}′
+must be an irreducible family, in fact algebra, of matrices i n Mn(F ). Since
+A ∈ ({A}′)′, it follows from the hypothesis that A is scalar, a contradiction.
+“(iv) = ⇒ (v)” Use contradiction again. Suppose that there exists an
+irreducible polynomial f over F such that deg f = r > 1 divides n. Let C ∈
+Mr(F ) denote the companion matrix for f . Set A = C⊕· · ·⊕C ∈ M n
+r
+(F [C]).
+
+===== PAGE 8 =====
+
+8 B.R. YAHAGHI
+It is plain that A is nonscalar and that m A = f . Now irreducibility of m A
+contradicts the hypothesis in view of Lemma 1.3.
+“(v) =⇒ (i)” Let A be an irreducible algebra in Mn(F ). Let D = F
+and let r and ∆ be as in Theorem 1.1. Since ∆ is a division algebra in
+Mr(F ), the minimal polynomial m A of every A ∈ ∆ is irreducible over F ,
+implying that deg(m A) divides r by the Rational Canonical Form Theorem
+(see Theorem VII.4.2(i) and Theorem VII.4.6(i) of [ 4]). Therefore, r = 1 and
+∆ = F because F is k-closed for all k dividing n with k > 1. It now follows
+from Theorem 1.1, or from the proof of Theorem 2.1, that A = Mn(F ), as
+desired. □
+Remark. Since the ﬁeld of real numbers is k-closed whenever k is an odd
+number greater than 1, a quick consequence of the preceding t heorem is
+what we can call Burnside’s Theorem for real matrices : Let n ∈ N be an odd
+number. Then the only irreducible algebra of matrices in Mn(R) is Mn(R).
+In fact, mimicking the proof of Theorem 2.1 above one can prove the
+following result, which can be thought of as an extension of B urnside’s The-
+orem to irreducible F -algebras of triangularizable matrices in Mn(D) with
+inner-eigenvalues in a subﬁeld F of the center of D. As pointed out in [ 19],
+the following is a quick consequence of Theorem 1.1. However, here we
+provide a detailed proof of this result for the sake of comple teness on the
+one hand, and on the other hand to show the extent to which the p roof of
+Theorem 1.1 is simpliﬁed in this special case. For some consequences of t his
+theorem, see [ 19].
+Theorem 2.3. Let n ∈ N, D be a division ring, F a subﬁeld of its center,
+and A an irreducible F -algebra of triangularizable matrices in Mn(D) with
+inner-eigenvalues in F . Then, after a similarity, A = Mn(F ). In particular,
+A is deﬁned over F , A is absolutely irreducible, and the ﬁeld F is k-closed
+for each k = 2, . . . , n whenever n > 1.
+Proof. Clearly, it suﬃces to show that A is similar to Mn(F ). To prove this,
+ﬁrst, by an argument identical to that presented in the proof of Theorem
+2.1 but in the setting of vector spaces over division rings, we se e that the
+minimal nonzero rank present in A is 1. And hence, just as we saw in the
+proof of Theorem 2.1, A contains a rank-one idempotent, which is similar to
+E11 by a standard exercise from linear algebra. Consequently, t here exists
+an invertible matrix P ∈ Mn(D) such that E11 ∈ P − 1AP . Next, again, as
+in the proof of Theorem 2.1, to prove the assertion, we proceed by induction
+on n, the size of matrices. If n = 1, then the assertion trivially holds.
+Assuming that the assertion holds for matrices of size less t han n, we prove
+
+===== PAGE 9 =====
+
+THEOREMS OF BURNSIDE AND WEDDERBURN 9
+the assertion for matrices of size n. To this end, let A be as in the statement
+of the theorem. Clearly, in view of the hypothesis, we can wri te
+E11P − 1AP E11 = F ⊕ 0n− 1 ⊆ P − 1AP,
+(I − E11)P − 1AP (I − E11) = 0 1 ⊕ A 1 ⊆ P − 1AP,
+where E11 = I1 ⊕ 0n− 1 ∈ P − 1AP and A1 ⊆ Mn− 1(D) is an irreducible F -
+algebra of triangularizable matrices in Mn− 1(D) with inner-eigenvalues in F .
+It thus follows from the inductive hypothesis that there exi sts an invertible
+matrix Q1 ∈ Mn− 1(D) such that Q− 1
+1 A1Q1 = Mn− 1(F ). Therefore, letting
+R := (I1 ⊕ Q1)P ∈ Mn(D), we have E11 ∈ R− 1AR, and hence we can write
+E11R− 1ARE11 = F ⊕ 0n− 1 ⊆ R− 1AR,
+(I − E11)R− 1AR(I − E11) = 0 1 ⊕ Mn− 1(F ) ⊆ R− 1AR.
+As R− 1AR is irreducible, we see that
+(I − E11)R− 1ARE11 ̸= 0 and E11R− 1AR(I − E11) ̸= 0.
+Thus, there are 2 ≤ i0 ≤ n and 2 ≤ j0 ≤ n such that Ei0i0R− 1ARE11 ̸= 0
+and E11R− 1AREj0j0 ̸= 0, implying that aEi01 ∈ R− 1AR and bE1j0 ∈
+R− 1AR for some nonzero a, b ∈ D. If necessary, by passing to S− 1R− 1ARS
+and replacing RS with R from the beginning, where S := diag(b− 1, 1, . . . ,1) ∈
+Mn(D), we may assume that b = 1. Now E1i0 = E1j0Ej0i0 ∈ R− 1AR, and
+hence aE11 = E1i0aEi01 ∈ R− 1AR, implying that a ∈ F because A has
+inner-eigenvalues in F . Thus, we might as well assume that a = 1. So
+far, we have Ei01, E1i0, E1j0 ∈ R− 1AR. We complete the proof by show-
+ing that R− 1AR = Mn(F ). To this end, we have E11 ∈ R− 1AR and
+Ei1 = Eii0Ei01 ∈ R− 1AR for all 2 ≤ i ≤ n, implying that Ei1 ∈ R− 1AR for
+all 1 ≤ i ≤ n. Likewise, E1j ∈ R− 1AR for all 1 ≤ j ≤ n. Consequently,
+Eij = Ei1E1j ∈ R− 1AR for all 1 ≤ i, j ≤ n. Therefore, R− 1AR ⊇ Mn(F ).
+Conversely, let A = ( aij) ∈ R− 1AR ⊆ Mn(D) be arbitrary. Then aijE11 =
+E1iAEj1 ∈ R− 1AR for all 1 ≤ i, j ≤ n, from which we see that aij ∈ F
+for all 1 ≤ i, j ≤ n, because A has inner-eigenvalues in F . This yields
+R− 1AR ⊆ Mn(F ), completing the proof. □
+We now use Burnside’s Theorem to prove the following theorem due to
+Wedderburn (see [17, Theorem 1], [ 10, Proposition 4.6], and [ 16, Proposition
+2.6.32]). We recall that if F is a ﬁeld, every ﬁnite-dimensional F -algebra
+can be embedded in a unital algebra and that every n-dimensional unital F
+algebra A can be embedded in Mn(F ) via A ↦→ [LA]B, where LA : A − → A
+is the left multiplication by A, i.e., LA(B) = AB (B ∈ A ) and B is a
+ﬁxed vector space basis for A. Therefore, every n-dimensional F -algebra
+can be embedded in Mk(F ), where k ∈ { n, n + 1}. In fact, it can be shown
+that every n-dimensional F -algebra A can be embedded in Mn(F ); see for
+instance [ 10, Corollary 5.5.b].
+
+===== PAGE 10 =====
+
+10 B.R. YAHAGHI
+Theorem 2.4. Let F be a ﬁeld and A a ﬁnite-dimensional F -algebra which
+is spanned by nilpotents as a vector space over F . Then, the algebra A
+is nilpotent, more precisely, An = 0 , where n = dim A + 1 and An :=
+{A1 · · ·An : Ai ∈ A , 1 ≤ i ≤ n}. In particular, A is a nilalgebra, i.e.,
+consists of nilpotent elements.
+Proof. As k = dim A, we can embed A in Mk+1(F ) by the comment we made
+preceding the theorem. So without loss of generality, we can assume that
+A ⊆ Mn(F ), where n = k + 1. As nilpotency does not depend on the ground
+ﬁeld, we may assume, without loss of generality, that F is algebraically
+closed. Note that the assertion trivially holds if n = 1. So suppose that
+n > 1.
+First we show that the algebra A is triangularizable. Suppose that M ⊂ N
+are two invariant subspaces for A with dim N
+M > 1. It suﬃces to show that
+ˆA, the set of all quotient transformations ˆA on N
+M (A ∈ A), is reducible.
+It easily follows from the hypothesis that every ˆA ∈ ˆA can be written as a
+linear combination of nilpotent elements of ˆA. Thus, tr( ˆA) = {0}. Since
+the ground ﬁeld F is algebraically closed, from Burnside’s Theorem, we see
+that ˆA is reducible, as desired. Therefore, the algebra ˆA is triangularizable.
+Thus, there exists a basis B, for the vector space F n, with respect to which
+every A ∈ A has strictly upper triangular matrix representation, for A as a
+vector space over F is spanned by its nilpotent elements. This shows that
+A consists of nilpotents and hence An = 0 because every A ∈ A has strictly
+upper triangular matrix representation with respect to B. This completes
+the proof. □
+With Theorem 2.3 at our disposal, we are ready to give an extension
+of Wedderburn’s Theorem for certain algebras of matrices (n ot necessarily
+ﬁnite-dimensional) over division rings that are spanned by their nilpotent
+elements, and consequently for certain subalgebras of semi -simple left Ar-
+tinian F -algebras as explained in the remark that follows.
+Theorem 2.5. Let n ∈ N, F be a subﬁeld of the center of D, and A an
+F -algebra of triangularizable matrices in Mn(D) with inner eigenvalues in
+F that is spanned by its nilpotent elements as a vector space ov er F . Then,
+the algebra A is nilpotent. More precisely, An = 0, where An := {A1 · · ·An :
+Ai ∈ A , 1 ≤ i ≤ n}. In particular, A is a nilalgebra, i.e., consists of nilpotent
+elements.
+Proof. Clearly, with no loss of generality, we may assume that n > 1. Let
+0 = M0 < M1 < · · ·< Mk = Dn
+
+===== PAGE 11 =====
+
+THEOREMS OF BURNSIDE AND WEDDERBURN 11
+be a maximal chain of invariant subspaces for the F -algebra A. We prove
+the assertion by showing that dim Mi
+Mi−1
+= 1 for all 1 ≤ i ≤ k. Fix 1 ≤ i ≤ n
+and use Ai to denote the set of quotient linear transformations induce d
+by A on Mi
+Mi−1
+. Clearly, Ai is an irreducible F -algebra of F -algebraic tri-
+angularizable linear transformations in L( Mi
+Mi−1
+) with inner eigenvalues in
+F that is spanned by its nilpotent elements. Fixing a basis for Mi
+Mi−1
+, we
+may think of Ai as an irreducible F -algebra of triangularizable matrices in
+Mni(D) with inner eigenvalues in F , where ni = dim Mi
+Mi−1
+. By Theorem
+2.3, Ai ∼ Mni(F ). In particular, the F -algebra Ai is ﬁnite-dimensional and
+is spanned by its nilpotent elements. It thus follows from Th eorem 2.4 that
+Ai is nilpotent. This clearly implies ni = 1 and Ai = 0 for all 1 ≤ i ≤ k.
+Therefore k = n and the proof is complete. □
+Remark. Clearly, the theorem, i.e., the nilpotency of the F -algebra, holds
+under the weaker hypothesis that the F -algebra A is embedded in a ﬁ-
+nite direct sum of matrix rings over division rings, where F is a subﬁeld of
+the intersection of the centers of the division rings, and th at the minimal
+polynomials of all of its members split into linear factors o ver F ; or equiv-
+alently, in view of the Wedderburn-Artin Theorem ([ 4, Theorem IX.5.4]),
+the F -algebra A is embedded in a semi-simple left Aritinian F -algebra (as
+opposed to being embedded in a simple left Artinian F -algebra, which is the
+case in the statement of the theorem) and that the minimal pol ynomials of
+all of its members split into linear factors over F .
+Let A be an F -algebra and C ⊆ A . By Nσ(C) we mean the set of all
+A ∈ A that can be written as an F -linear combination of nilpotent elements
+from C. By a semigroup ideal J of a (multiplicative) semigroup S, we mean
+a subset of S with the property that SJ ∈ J and J S ∈ J for all J ∈ J
+and S ∈ S . We conclude with the following application of Wedderburn’ s
+Theorem.
+Theorem 2.6. Let n > 1, F be a ﬁeld, S an irreducible semigroup in Mn(F )
+and J a nonzero semigroup ideal of S. Then
+(i)
+{
+A ∈ AlgF (S ∪ { I}) : J AJ ⊆ Nσ(J AJ )
+}
+= {0}.
+(ii)
+{
+A ∈ AlgF (S ∪ { I}) : AJ ⊆ Nσ(AJ )
+}
+= {0}.
+(iii)
+{
+A ∈ AlgF (S ∪ { I}) : J A ⊆ Nσ(J A)
+}
+= {0}.
+(iv)
+{
+A ∈ AlgF (S ∪ { I}) : ( J1AJ2)n = 0 ∀J1, J2 ∈ J
+}
+= {0}.
+(v)
+{
+A ∈ AlgF (S ∪ { I}) : ( AJ)n = 0 ∀J ∈ J
+}
+= {0}.
+(vi)
+{
+A ∈ AlgF (S ∪ { I}) : ( J A)n = 0 ∀J ∈ J
+}
+= {0}.
+
+===== PAGE 12 =====
+
+12 B.R. YAHAGHI
+Proof. Clearly (iv), (v), and (vi) follow from (i), (ii), and (iii), respectively.
+We prove (i); (ii) and (iii) can be proved in a similar fashion . Let A ∈
+AlgF (S ∪ { I}) be such that J AJ ⊆ Nσ(J AJ ). We prove that A = 0. It is
+plain that J AJ ⊆ Alg(J ). The algebra Alg( J ) is irreducible because the
+semigroup S is irreducible and J is a nonzero semigroup ideal of S. On the
+other hand, it follows from the hypothesis that Alg( J AJ ) is spanned by its
+nilpotent elements. So by Theorem 2.4, Alg( J AJ ) is nilpotent, and hence
+reducible. This implies Alg( J AJ ) = 0, for Alg( J AJ ) is an ideal of the
+irreducible algebra Alg( J ). Consequently, J AJ = 0, from which we easily
+see that A = 0 because the nonzero semigroup ideal J is irreducible. This
+completes the proof. □
+Acknowledgments
+This paper was written while the author was on sabbatical lea ve at the
+University of Waterloo. He would like to thank Department of Pure Math-
+ematics of the University of Waterloo, and in particular Pro fessors Laurent
+Marcoux and Heydar Radjavi, for their support. The author wo uld like to
+thank the referee for his/her helpful comments.
+References
+[1] W. Burnside, On the condition of reducibility of any grou p of linear substitutions,
+Proc. London Math. Soc. 3 (1905), 430-434.
+[2] F.G. Frobenius and I. Schur, ¨Uber die ¨Aquivalenz der Gruppen linearer Substitu-
+tionen, Sitzungsber. Preuss. Akad. Wiss. (1906), 209-217.
+[3] I. Halperin and P. Rosenthal, Burnside’s theorem on alge bras of matrices, Amer.
+Math. Monthly , 87 (1980), 810.
+[4] T.W. Hungerford, Algebra, Springer Verlag, New York, 1974.
+[5] I. Kaplansky, Fields and Rings , 2nd ed, University of Chicago Press, Chicago, 1972.
+[6] T.Y. Lam, A First Course in Noncommutative Rings , Springer Verlag, New York,
+1991.
+[7] T.Y. Lam, A theorem of Burnside on matrix rings, Amer. Math. Monthly , 105
+(1998), 651-653.
+[8] T-K. Lee and Y. Zhou, On irreducible and transitive algeb ras in matrix algebras,
+Linear and Multilinear Algebra , Volume 57, Issue 7, January 2009, pp. 659-672.
+[9] V. Lomonosov and P. Rosenthal, The simplest proof of Burn side’s theorem on matrix
+algebras, Linear Algebra Appl. 383 (2004), 45-47.
+[10] Richard S. Pierce, Associative Algebras, Springer Verlag, New York, 1982.
+[11] M. Radjabalipour, P. Rosenthal, B.R. Yahaghi, Burnsid e’s Theorem for matrix al-
+gebras over division rings, Linear Algebra Appl. 383 (2004), 29-44.
+
+===== PAGE 13 =====
+
+THEOREMS OF BURNSIDE AND WEDDERBURN 13
+[12] H. Radjavi and P. Rosenthal, Invariant Subspaces, Springer Verlag, New York, 1973.
+[13] H. Radjavi and P. Rosenthal, Simultaneous Triangularization, Springer Verlag, New
+York, 2000.
+[14] H. Radjavi and B.R. Yahaghi, On irreducible algebras sp anned by triangularizable
+matrices, Linear Algebra Appl. 436 (2012), 2001-2007.
+[15] E. Rosenthal, A remark on Burnside’s theorem on matrix a lgebras, Linear Algebra
+Appl. 63 (1984), 175-177.
+[16] L.H. Rowen, Ring Theory, Student Edition , Academic Press, San Diego, 1991.
+[17] J.H.M. Wedderburn, Notes on algebras, Ann. Math. 38 (1937), 854-856.
+[18] B.R. Yahaghi, On irreducible semigroups of martices wi th traces in a subﬁeld, Linear
+Algebra Appl. 383 (2004), 17-28.
+[19] B.R. Yahaghi, On F -algebras of algebraic matrices over a subﬁeld F of the center
+of a division ring, Linear Algebra Appl. 418 (2006), 599-613.
+[20] B.R. Yahaghi, Reducibility Results on Operator Semigroups, Ph.D. Thesis, Dalhousie
+University, Halifax, Canada, 2002.
+Department of Mathematics, F aculty of Sciences, Golestan U niversity,
+Gorgan 19395-5746, Iran
+E-mail address : bamdad5@hotmail.com, bamdad@bamdadyahaghi.com

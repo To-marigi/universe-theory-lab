@@ -40,6 +40,10 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   strong MSR のもとで `Q_1,...,Q_4` の可換性を証明。
 - 公開基準: Zenodo v0.3.9 を固定基準とし、凍結済み成果物は改変しない。
 - 第一論文での役割: 強い作用素意味論における rigidity 側の定理。
+- 文献境界: Xu, arXiv:2607.26672v1（2026-07-29）は self-adjoint finite CPOBC と
+  複数の二次元 triangular/extension branch により広い rigidity theorem を持つ。
+  v0.3.9 の arbitrary `GL_2`, `n<=4` exact certificate scope は同一ではないが、
+  `first d=2 CPOBC rigidity` や self-adjoint/triangular 領域の priority は主張しない。
 
 ### SR2 -- v0.4: fixed-vector/reachable-state の厳密反例
 
@@ -54,6 +58,9 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   - 独立 oracle による再検算
 - 第一論文での役割: source-native な弱い意味論では rigidity が破れるという
   separation theorem。
+- prior-art 判定: 2026-08-01 までの bounded audit で同一の exact rational
+  weak/weak witness は発見されず、`DISTINCT_CONTRIBUTION_IDENTIFIED`。ただし
+  bibliographic absence の絶対主張は行わない。
 - 限界: 現反例の reachable subspace は一次元であり、非可換性は初期状態から
   到達する ray 上では観測されない。この点を物理的非可換性として誇張しない。
 
@@ -116,16 +123,18 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   確定した。一般 one-sided profile、特に `P minus image(Phi_U)` は未解決である。
 - この proper-slice theorem は一般 SR3b の解決を待たず、独立短報
   **SR3b-A** として固定する。状態は
-  **`THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING / DEPOSIT_NOT_AUTHORIZED`**。
+  **`THEOREM_CERTIFIED / SHORT_REPORT_SLOT_CONFIRMED / PRIOR_ART_AUDIT_COMPLETE /
+  DISTINCT_TECHNICAL_CONTRIBUTION_IDENTIFIED / DRAFT_RECOMMENDED /
+  DEPOSIT_NOT_AUTHORIZED`**。
   scope、構成、図表、付録、公開前 gate は
   [SR3b-A partial-slice short-report plan](v0.4.2_partial_slice_short_report_plan.md)
-  に固定した。新規性・priority audit 完了前に deposit、投稿、priority claim は行わない。
+  に固定した。deposit・投稿は manuscript/reproducibility gate と fresh owner approval
+  まで行わない。
 - novelty/priority audit は
-  [prior-art and related-work audit protocol](v0.4.2_prior_art_and_related_work_audit_protocol.md)
-  に従う。直接CPOBC/QBC系譜、causal-set sequential growth、二次元行列の可換性・
-  simultaneous triangularisation、statewise/operator equality、exact certificate手法、
-  既存短報・preprintの重複を別trackで調べ、source claim/project derivation/open gapを
-  claim単位で比較する。
+  [audit report](v0.4.2_prior_art_and_related_work_audit.md) として2026-08-01に完了した。
+  Xu, arXiv:2607.26672v1 を material adjacent theorem として追加し、source Eq. (120)
+  自体は先行関係、project contribution は有限 provenance、pullback/localisation、proper
+  slice、21 exact charts の合成であると固定した。一般955/721は引き続き open。
 - 第二段階: reachable-MSR 側は24 sourceそれぞれに
   `N_c=u_c(Jv_c)^T` を導入する最小 de-elimination（合計+48 scalar）を行い、既に
   閉じた `N=0` slice ではなく `N!=0` を反例探索の主対象にする。
@@ -184,6 +193,23 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   componentsに対する対称性/orbit reductionを行い、少数の自然な principal-open
   patchをexact scoutする。solver campaign は、その結果をprofile coverage
   certificate と版付き budget artifactへ結合した後にだけ許可する。
+- 数学文献監査から、scout前に common-invariant-line/simultaneous-triangularisable branch
+  と irreducible branch を exact に分離する。`det[A,B]=0` は可換性ではなく前者の判定に
+  使う。residual family 上の `D -> D Omega` injectivity、sourcewise reachable rank two、
+  一つの non-scalar `Q_k` の centralizer `F[I,Q_k]` を最小回復条件・証明終点候補として
+  compiler/test planへ追加する。
+
+#### SR3b-M -- minimal semantic recovery lemma module
+
+- 状態: **新規にロードマップ登録。軽量な数学補題track、独立短報にはしない**
+- reachable-state MSR residual が同一 source の二つの独立 reachable vectors を消すなら
+  `d=2` で strong MSR が回復することを sourcewise theorem として形式化する。
+- fixed-vector equality は full transition algebra ではなく profile-specific residual space
+  `R` に対する evaluation `D -> D Omega` の injectivity が必要十分であることを証明する。
+- cyclicityだけでは不十分、`C^2` 上で full `M_2` separating vector は存在しない、という
+  nonclaim/counterexampleを併記する。
+- この module を SR3b の「最小追加仮定」回答に使い、full one-sided commutativityが未解決でも
+  条件付き recovery theorem として Paper I に収録可能にする。
 
 ### SR3c -- v0.4.3: 406-occurrence OFF semantics
 
@@ -232,10 +258,16 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
 補助定理として、raw CPOBC と非特異性だけによる dimension-independent Eq. (120)
 lemma、および strong-GC/reachable-MSR の `P intersect image(Phi_U)` 上の可換性を
 収録できる。後者は独立短報 **SR3b-A** として
-`THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING /
+`THEOREM_CERTIFIED / SHORT_REPORT_SLOT_CONFIRMED / PRIOR_ART_AUDIT_COMPLETE /
+DISTINCT_TECHNICAL_CONTRIBUTION_IDENTIFIED / DRAFT_RECOMMENDED /
 DEPOSIT_NOT_AUTHORIZED` に固定したが、一般 one-sided corner の解決として要旨へ
 格上げしない。pure-lower bounded global no-go は一般SR3bの補助定理としてのみ
 収録し、SR3b-Aのscopeや独立短報数を変更しない。
+
+Paper I は Xu, arXiv:2607.26672v1 の self-adjoint/triangular rigidity と仮定を明示的に
+比較する。元論文・2024講演資料に既にある strong operator formulation を project の
+導入として売らず、arbitrary non-self-adjoint finite `GL_2` certificates と弱意味論の
+exact separation を中心に置く。
 
 JMP への投稿準備開始条件は次の全項目とする。
 
@@ -341,9 +373,9 @@ Paper II assembly and conditional CQG submission decision
 
 ## 8. 現時点の最優先作業
 
-1. SR3b-A/Paper I の prior-art and related-work auditを版付き一次資料中心に実行し、
-   claim-by-claim comparisonと引用可能なrelated-work outlineを作る。その後scope lockを
-   保った原稿を作り、deposit・投稿はfresh owner approvalまで行わない。
+1. 完了済み prior-art audit の Xu 比較と数学的可換性 tool ledger を Paper I/SR3b-A
+   outlineへ反映する。SR1 と Xu の仮定包含を短い reconciliation subsection に固定し、
+   scope lockを保った原稿を作る。deposit・投稿はfresh owner approvalまで行わない。
 2. pure-lower bounded no-goをSR3b補助定理として保持し、SR3b-Aへ混入させない。残る
    `x!=0,y!=0` mixed componentsの131 patchesを総当たりせず、まずsymmetry/orbit
    reductionを作り、少数の自然なprincipal-open patchをexact scoutする。
@@ -352,6 +384,8 @@ Paper II assembly and conditional CQG submission decision
 4. 修復完了までは Paper I を strong/strong 対 weak/weak の非対称な短報としてのみ
    構成し、sharp semantic threshold や complete classification を書かない。
 5. 406-occurrence OFF、relation minimality、v0.5 を修復本線から分離する。
+6. manuscript freeze 前に 2026-08-01 からの literature delta search を行い、新規PDFを
+   `references/` と NAS へ版付き・SHA-256照合で保存する。
 
 ## 9. 研究拡張と破綻時の判断規則
 

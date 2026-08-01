@@ -1,0 +1,846 @@
+===== PAGE 1 =====
+
+Sumati Surya
+Raman Research Institute
+Algebraic, analytic, geometric structures emerging from quantum field theory
+Sichuan University,
+March, 2024
+Quantum Dynamics of Causal Sets
+
+===== PAGE 2 =====
+
+Outline
+•Posets and Lorentzian geometry: an introduction
+•Causal Sets: A route to quantising  spacetime
+•The quantum partition function: entropy versus action
+•Sequential growth dynamics and quantum vector measures
+Work done in collaboration with S. Carlip, P . Carlip,  F. Dowker, S. Johnston, A. Mathur, A. A. Singh, S. Zalel
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●●
+●
+●
+●
+●
+●
+●●
+●
+●
+●●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+● ●
+●
+● ●
+●
+●
+●
+●
+●
+●● ●
+●
+1020304050U
+1020304050V
+
+===== PAGE 3 =====
+
+•Spacetime is a Lorentzian manifold  , where  has signature
+•  can be positive, negative or zero
+•At every point , the vectors in   are arranged in ``lightcones” to the past  and the future.
+•Vectors are either
+‣future or past timelike ( )
+‣future or past null/lightlike ( )
+‣spacelike
+
+(M,g) g (−,+,+,+)
+ds2=gabdxadxb
+p∈M TpM
+ds2<0
+ds2=0
+(ds2>0)
+Posets and Lorentzian Geometry
+Future
+Past
+(−,+,+,+)
+Example: Minkowski/Flat Spacetime
+ ds2=−dt2+dx2+dy2+dz2
+Future
+p
+
+===== PAGE 4 =====
+
+•  if there exists a curve  from  to  whose tangent everywhere is future-directed and non-
+spacelike.
+• is transitive: if
+•If  is  a  causal spacetime,  is acyclic :
+x≺y γ x y
+≺ x≺zandz≺y⇒x≺y
+(M,g) ≺ x≺y⇒y⊀x
+t1
+t2
+Posets and Lorentzian Geometry
+Acyclic:
+Transitive:
+x≺y⇒y/≺x
+x≺y,y≺z⇒x≺z
+x
+y
+z
+γ
+  has
+no associated poset
+(−,−,+,+)
+Past lightcone
+Future lightcone
+Robb, 1914, “A theory of time and space”
+Defines an order relations  on  :    (causality relation) and (chronology relation)M≺ ≺≺
+ is a partially ordered set  (M,≺)
+Principle of Causality
+
+===== PAGE 5 =====
+
+A quick review of terminology
+•Causal  Future and Past:
+•Chronological Future and Past:
+J+(x)={y∈M|x≺y},J−(x)={y∈M|y≺x}
+I+(x)={y∈M|x≺≺y},I−(x)={y∈M|y≺≺x}
+‣Causal relation  : Tangent to   from  to  is everywhere either timelike or null
+‣Chronological relation : Tangent to  from  to  is everywhere timelike
+‣Both  and   are posets
+≺ γ x y
+≺≺ γ x y
+(M,≺) (M,≺≺)
+x
+y
+z
+γ
+Requires  to be at least gab C2
+Open Sets
+
+===== PAGE 6 =====
+
+Under conformal transformations:
+˜gab=Ω2gab,d˜s2=0=ds2⇒(M,˜≺)=(M,≺)
+p
+What part of  is ? (M,g)(M,≺)
+
+===== PAGE 7 =====
+
+‣:  dimensional Minkowski spacetime,
+‣Chronological Automorphism
+‣Conformal transformations: Lorentz group + local dilatations.
+𝕄dd ds2=−dt2+
+d−1
+∑i=1
+dx2
+i
+f:𝕄d→𝕄d,x≺≺y⇔f(x)≺≺f(y),∀x,y∈𝕄d.
+Theorem: The group of chronological automorphisms is isomorphic to the group  of
+conformal transformations on  .                    --- Alexandrov and Ovchinnikova, 1953, Zeeman, 1964 𝕄d
+  determines  upto  a conformal factor(ℝd,≺mink) ds2
+mink
+A Flat  Spacetime Result
+
+===== PAGE 8 =====
+
+Theorem: If a chronological bijection exists between two future and past distinguishing
+spacetimes then they are conformally isometric
+                                                        --- Hawking, King, McCarthy,  1976, Malament,  1977
+Causal Structure as the ``Essence” of Lorentzian Geometry
+•Let  be two causal spacetimes
+•Let   be their respective chronological and causal posets
+•Chronological  Bijection:
+•Causal Bijection:
+•Future and past distinguishing spacetimes:  or ,
+
+•Chronological Bijection  Causal Bijection if they are future and past distinguishing
+•Conformal Isometry :
+(M1,g1),(M2,g2)
+(Mi,≺≺i),(Mi,≺i)
+f:(M1,≺≺1)→(M2,≺≺2),f(x)≺≺2f(y)⇔x≺≺1y,∀x,y∈M1
+f:(M1,≺1)→(M2,≺2),f(x)≺2f(y)⇔x≺1y,∀x,y∈M1
+I+(x)=I+(y) I−(x)=I−(y)⇒x=y
+⇒
+F:(M1,g1)→(M2,g2),g2=Ω2g1
+— Kronheimer and Penrose, 1967
+-- Hawking and Ellis, Penrose
+
+===== PAGE 9 =====
+
+  =       +                                   (M,g) (M,≺) ϵ
+—Hawking, King, McCarthy:  1976
+—Malament: 1977
+-- Kronheimer and Penrose, 1967
+Causal Structure as the ``Essence” of Lorentzian Geometry
+HKMMKP theorem:
+Local Volume Element
+``Causal Structure is 9/10th of the spacetime” -- Finkelstein, 1969
+‣This decomposition of spacetime is  unique to signature
+‣Suggests a non-Riemannian way of thinking about spacetime topology and geometry
+‣Alexandrov intervals  are open sets
+‣Alexandrov interval  topology = Manifold topology   in strongly causal spacetimes
+‣Chronological bijection  dimension and the topology (for special distinguishing spts) is the
+same.
+(−,+,+,+,…,+)
+I(x,y)≡I+(x)∩I−(y)
+⇒
+-- Malament, 1977, Parrikar and Surya, 2011
+Suggests  a non-Riemannian order-theoretic route to quantising spacetime
+
+===== PAGE 10 =====
+
+ -- Kronheimer and Penrose 1967
+“Extract from  its causal essence”(M,g)
+Axiomatic  Approach to Causal Structure
+Discretising the ``Essence”:
+“To admit structures which can be very different
+from a manifold. The possibility arises, for example,
+of a locally countable or discrete event-space
+equipped with causal relations macroscopically
+similar to those of a space-time continuum.”
+Ideas of discrete Causal Structure
+‣Kronheimer and Penrose 1967
+‣Finkelstein, 1969
+‣Myrheim, 1978
+‣‘tHooft, 1979
+‣Hemion, 1980
+‣Bombelli, Lee, Meyer and Sorkin, 1987
+
+===== PAGE 11 =====
+
+Discrete Posets or Causal Sets: A route to quantum spacetime
+  =       +                                   (M,g) (M,≺) ϵHKMMKP theorem:
+Acyclic:
+Transitive:
+x≺y⇒y/≺x
+x≺y,y≺z⇒x≺z
++
+Local Finiteness: |Fut(x)∩Past(y)|<∞
+ϵ∼V n∝V n
+Continuum Continuum-Discreteness correspondence Discrete
+Causal Set:
+A  locally ﬁnite poset
+
+===== PAGE 12 =====
+
+1.Causal Sets are the fine grained structure of  spacetime
+2.Continuum Spacetime is an approximation of  underlying causal sets
+-- Myrheim, 1978
+ -- Bombelli, Lee, Meyer and Sorkin,1987
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●●
+●
+●
+●
+●
+●
+●●
+●
+●
+●●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+● ●
+●
+● ●
+●
+●
+●
+●
+●
+●● ●
+●
+1020304050U
+1020304050V
+Order + Number  Spacetime
+
+≈
+C≈(M,g)
+The Causal Set Hypothesis
+Order  Causal Order
+Number  Spacetime Volume
+↔
+↔
+
+===== PAGE 13 =====
+
+The continuum approximation
+‣Order   Causal Order,
+‣Number,   Volume,
+(M,g)≈C
+≺↔ ≺g
+n↔ V
+•  cannot be implemented covariantly on a regular lattice
+• ,   via a  Poisson sprinkling:
+‣Lorentz Invariance  is preserved for
+‣Non-locality: resulting graph does not have a fixed/finite  valency
+n∝V
+⟨n⟩∝V PV(n)=(ρV)n
+n!e−ρV,ρ−1=Vc
+C≈𝕄d
+n∝V
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●●
+●
+●
+●
+●
+●
+●●
+●
+●
+●●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+● ●
+●
+● ●
+●
+●
+●
+●
+●
+●
+● ●
+●
+10
+20
+30
+40
+50U
+10
+20
+30
+40
+50V
+
+Is Poisson optimal?
+ --Saravani and Aslanbeigi 2014
+Δn=ρV
+Very different from a regular lattice or even a Euclidean random lattice
+
+===== PAGE 14 =====
+
+Geometric Reconstruction: spacetime from causal sets
+•Fundamental Conjecture:  If  and , then
+•Indirect evidence:
+•Timelike distance    — Myrheim, Myer, Sorkin, Glaser, Surya, ..
+•Spacetime dimension — Brightwell, Gregory
+•Spatial homology —Major, Rideout, Surya
+•D’Alembertian     — Sorkin, Henson, Benincasa, Dowker, Glaser
+•Scalar curvature --Benincasa, Dowker, Glaser
+•Einstein-Hilbert Action --Benincasa, Dowker, Glaser
+•Gibbons-Hawking-York boundary terms — Buck, Dowker, Jubb & Surya
+•Locality and Interval Abundance  — Glaser & Surya
+•Spatial and Spacelike Distance  — Rideout & Wallden, Eichhorn, Mizera & Surya, Eichhorn, Surya, Versteegen
+•Horizon area  —Dou & Sorkin, Barton, Counsell, Dowker,  Gould & Jubb, ..
+•Scalar Field theory —Johnston, Sorkin, Dowker, Yazdi, Surya, Nomaan X, Jubb, Rejzner, et al.
+•Entanglement Entropy —Sorkin, Yazdi, Surya, Nomaan X
+•......
+C≈ρ(M1,g1) C≈ρ(M2,g2) (M1,g1)∼ρ(M2,g2)
+: When are two Lorentzian Spacetimes Close? (M1,g1)∼ρ(M2,g2)
+
+===== PAGE 15 =====
+
+Quantum Dynamics for Causal Sets
+•In the continuum the gravitational path integral is:
+•Continuum replaced by discrete structure:  ``  ‘’
+•Lorentzian Path Sum:
+‣ is the sample space of all  element posets
+‣  is the Benincasa-Dowker-Glaser action
+•Large  (thermodynamic limit):
+Z=∫𝒟[g]ei
+ℏSEH(g)
+g→c
+Zn=∑c∈Ωn
+ei
+ℏSBDG(c)
+Ωn n
+SBDG(c)
+n Z=limn→∞
+Zn
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●●
+●
+●
+●
+●
+●
+●●
+●
+●
+●●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+●
+● ●
+●
+● ●
+●
+●
+●
+●
+●
+●● ●
+●
+1020304050U
+1020304050V
+Ωn
+``Causal Sets are the fine grained structure of  spacetime”
+
+===== PAGE 16 =====
+
+Discrete Einstein-Hilbert Action:
+The Benincasa-Dowker-Glaser Action(s)
+— Benincasa & Dowker, 2010,
+— Dowker & Glaser, 2012,
+— Glaser, 2014
+# of -element intervalsNJ= J
+….
+•
+•: Planck Length, : discreteness scale, : known
+consts.
+•Eg: For
+1
+ℏS(d)
+BDG(C)=−αd(
+ℓ
+ℓp)
+d−2
+(n+βd
+αd
+Jmax
+∑J=0
+Cd
+JNJ)
+ℓp ℓ αd,βd,Cd
+J
+d=4,1
+ℏS(4)
+BDG=4
+6(n−N0+9N1−16N2+8N3)
+A discrete interval is an intersection of an up-set with a down-set
+example:
+  N0=10,N5=1
+ is  “foliated” by the the
+ intervals to the past of
+
+J−(p)
+J−element
+p∈𝕄d limρ→∞
+ℓ2
+ℓ2p
+⟨SBDG⟩=SEH+bdryterms
+
+===== PAGE 17 =====
+
+•  : sample space of all n-element causal sets
+•
+•Typical causal sets are Kleitmann-Rothschild (KR):
+•3 layers:
+•elements of  form an antichain
+• ,
+•
+•
+•
+Ωn
+|Ωn|∼2n2
+4+3n
+2+o(n)
+𝕃k,k=1,2,3,|𝕃1,3|∼n
+4,|𝕃2|∼n
+2
+𝕃k
+∀e∈𝕃1,∃∼n
+4no.ofe′ ∈𝕃2suchthate≺*e′
+∀e∈𝕃3,∃∼n
+4no.ofe′ ∈𝕃2suchthate′ ≺*e
+∀e∈𝕃1,e′ ∈𝕃3,e′ ≺e
+|ΩKR|∼2n2
+4+3n
+2+o(n)
+- Kleitman and Rothschild, Trans AMS, 1975
+∼n/4
+∼n/2
+∼n/4
+Onset of asymptotic regime                -- J. Henson, D. Rideout, R. Sorkin and S.Surya, JEM, 2015n∼100
+``Causal Sets are the fine grained structure of  spacetime’’
+
+===== PAGE 18 =====
+
+∼n/4
+∼n/2
+∼n/4A KR poset is not continuum-like
+•Does  not arise from a typical Poisson sprinkling into any continuum
+•Myrheim-Myer Continuum Dimension is fractional :
+
+•Maximal time-like distance
+•Interval Abundances are not like the continuum:
+
+(M,g)
+⟨R⟩
+n2=Γ(d+1)Γ(d/2)
+4Γ(3d/2) ⇒Γ(dKR+1)Γ(dKR/2)
+4Γ(3dKR/2) =3
+16⇒dKR∼2.5
+HKR=3
+ 0
+ 50
+ 100
+ 150
+ 200
+ 250
+ 300
+ 350
+ 400
+ 450
+ 0  5  10  15  20
+Nmd
+m
+simulated
+analytic
+ 0.01
+ 0.1
+ 1
+ 10
+ 100
+ 1000
+ 10000
+ 0  5  10  15  20  25  30
+Nmd
+m
+
+===== PAGE 19 =====
+
+•-layered poset:  :
+• ,
+•Dominant hierarchy:
+•For  none of these are like continuumlike
+K C=𝕃1⊔𝕃2…𝕃Ke≺e′ ,e∈𝕃k,e′ ∈𝕃k′ ⇒k<k′
+|Ω(K)
+n|∼2c(K)n2+o(n2),c(K)≤1/4,
+|Ω(3)
+n|>|Ω(2)
+n|>|Ω(4)
+n|>|Ω(5)
+n|…
+K≪n
+--  D. Dhar, JMP , 1978
+--  Promel, Steger, Taraz 2001
+The layered hierarchy
+
+===== PAGE 20 =====
+
+-- Sorkin, unpublished,
+-- Loomis and Carlip, 2017
+-- A.Anand Singh, A.Mathur and Surya,  2021
+-- P . Carlip, S. Carlip and S. Surya, 2022
+-- P . Carlip, S. Carlip and S. Surya, 2023
+‣
+‣Number of links:
+‣
+‣
+‣For all   as well,
+‣  — Dhar’s Entropy function.
+‣
+ZKR=∑c∈ΩKR
+eiSBDG(c)/ℏ
+N0=pNmax
+0 ≈pn2
+S(d)
+BDG=μpn2+o(n2)
+⇒ZKR=∑N0
+Γ(N0)eiSL/ℏ
+K≪n ZK=∑N0
+Γ(N0)eiSL/ℏ
+Γ[N0=pNmax
+0 ]∝h(p)=−plnp−(1−p)ln(1−p)
+ZK∼eiμn
+∫
+1/2
+0
+dpexp[n2
+(iμλ0p/2+h(2p)/4)+o(n2)]
+The contribution from layered posets
+‣: Link Action
+‣ : Density of states
+SL
+Γ(N0)
+Bilayer calculation
+—Loomis and Carlip, 2017
+Combinatorial
+Enumeration argument
+S(4)
+BDG=μ(n−N0+9N1−16N2+8N3)
+
+===== PAGE 21 =====
+
+Theorem:  If , the  BDG action suppresses all -layer orders when
+, in any dimension.
+ℓ>ℓmin K
+K<<n
+•  is dimension dependent,   ,  (Eg: )
+•
+•What about continuumlike causal sets?
+•Ongoing work suggests  that  causal sets  are NOT suppressed..
+ℓmin 1.13<(ℓmin/ℓp)<2.33 d=4,ℓmin=1.136ℓp
+Zn≈∑c∈Ωn\Ω(K)
+n
+ei
+ℏSBDG(c)
+∼(M,g)
+Bilayer calculation of
+—Loomis and Carlip, 2017
+What are other (non-layered) families of posets that are entropically sub-dominant?
+Can we find a more fundamental, ``principled’’ model of causal set dynamics
+which is order theoretic?
+
+===== PAGE 22 =====
+
+The Sequential Growth Paradigm
+— Rideout & Sorkin,2000-2001
+— O’Connor, Martin, Rideout & Sorkin, 2001
+— Brightwell, Dowker, Garcia, Henson, Rideout  & Sorkin, 2003
+— Brightwell,  Georgiou, 2010,
+— Brightwell and Luczak, 2011-2012,
+— Dowker, Johnston & Surya 2011,
+— Surya & Zalel 2020
+— Dowker, Imambaccus, Owens, Sorkin & Zalel, 2020....
+n=3
+n=2
+Colour represents coordinate time
+n=1
+�������
+�������
+q2
+pq
+pq
+p2
+pq q2
+p q
+p
+Stochastic  triple (Ω,𝔄,μ)
+‣Internal temporality: new
+element can never be to
+the past of an existing
+element
+‣    if  there is
+an order isomorphism
+between    and
+‣``Bell causality” or
+spectator independence
+μ(ci
+n)=μ(cj
+n)
+ci
+n cj
+n
+Classical Stochastic  triple  (Ω,𝔄,μ) Quantum Stochastic  triple  (Ω,𝔄,μv)
+
+===== PAGE 23 =====
+
+Dynamics as a Measure Space  (Ω,𝒜,μ)
+‣:  Space of countable past finite causal sets
+‣Cylinder sets:
+‣:  Event Algebra generated by
+‣generate the finite time “labelled” algebra
+‣ is closed under finite unions, intersections and complements
+Ω
+cyl(cn)≡{c∈Ω|c|n=cn}
+𝒜
+𝒜
+‣   a ``colour’’ invariant measure
+‣But  is not covariant!
+μ:𝒜→X
+𝒜
+— Brightwell, Dowker, Garcia, Henson, Rideout  & Sorkin
+������� �������������� �������
+Ω Ω
+cyl( )
+�������
+
+===== PAGE 24 =====
+
+Covariant Events  in 𝒜
+Stem Event Originary Event Post Event
+‣Analogues of the “return to the origin”  event in the random walk
+‣Sigma algebra completion :
+‣Quotient sigma algebra is covariant.
+‣Does  extend to    ?
+‣If  is a probability measure, then the Kolmogorov-Caratheodary-Hahn extension theorem
+guarantees this for any choice of
+𝒜→𝔖(𝒜)
+˜𝔖=𝔖/∼
+μ 𝔖(𝒜)
+μ
+μ
+
+===== PAGE 25 =====
+
+Quantum Sequential Growth
+Classical Stochastic  triple  (Ω,𝔄,μ) Quantum Stochastic  triple  (Ω,𝔄,μv)
+Vector Measure Histories Hilbert Space
+μv:𝒜→ℋ
+— Dowker, Johnston & Sorkin,2010
+•: Free vector space :
+•
+•
+•
+V f:𝒜→ℂ
+⟨f,g⟩≡∑α,β∈𝔄
+f*(α)g(β)D(α,β)
+limi→∞
+||fi−gi||V=0⇒{fi}∼{gi}
+ℋ≡V/∼,[{fi}]∈ℋ
+•
+•
+• : decoherence functional
+μv(α)≡[χα]∈ℋ
+⟨μv(α),μv(β)⟩=D(α,β)
+D(α,β)
+— Dowker, Johnston & Surya, 2010
+Caratheodary-Hahn-Kluvnek theorem:
+  extends to     only under special convergence conditionsμv 𝔖(𝒜)
+— Dowker, Johnston & Surya 2011,
+---Surya & Zalel, 2020
+
+•Hermitian,
+•Biadditive
+•Strongly Positive
+D(α,β)
+
+===== PAGE 26 =====
+
+n=1
+n=3
+�������
+�������
+q2
+pq
+pq
+p2
+pq q2
+n=2
+p q
+p
+Experiments with Quantum Sequential Growth
+• ,  does not extend to
+•Simple examples of  Commutative Dynamics ( )
+which extend to
+•Non-Commutative Dynamics,
+‣Transfer Operators:
+
+‣ Color independence: ,  if ,
+where  is a product of a sequence of
+transfer operators
+p∈ℂD(c1,c2)=A*(c1)A(c2) 𝔖(𝒜)
+ℋ≃ℂ
+𝔖(𝒜)
+ℋ≃ℂm,m>1
+|ci
+n+1⟩=̂Ai
+n|cn⟩, ⇒∑i∈I(cn)
+̂Ai
+n=̂I
+̂Aγ=̂Aγ′ γ∼γ′
+̂Aγ
+— Surya & Zalel, 2020
+— ongoing work
+— Dowker, Johnston, Surya 2010
+How can one characterise this algebra of transfer operators?
+What are  the representations of this algebra?
+
+===== PAGE 27 =====
+
+•Causal set theory is strongly motivated by Lorentzian geometry
+•Continuum spacetime can be reconstructed from causal sets  : lots of evidence!
+•There is an intimate interplay between causality/order and dynamics
+•Causal set theory is a discrete playground for mathematicians to explore!
+•Combinatorics: enumeration of (sub)-dominant posets ?
+•Quantum Stochastic Growth:
+‣Transfer Operator Algebras
+‣Vector Measure and its Extension
+‣Recent  comparison of Classical SG with Hopf-Algebras
+•.....
+K
+In Conclusion..
+Thank you!
+--Yates, Zalel, 2023

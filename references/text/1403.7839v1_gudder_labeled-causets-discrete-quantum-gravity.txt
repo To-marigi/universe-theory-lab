@@ -1,0 +1,773 @@
+===== PAGE 1 =====
+
+LABELED CAUSETS IN
+DISCRETE QUANTUM GRA VITY
+S. Gudder
+Department of Mathematics
+University of Denver
+Denver, Colorado 80208, U.S.A.
+sgudder@du.edu
+Abstract
+We point out that labeled causets have a much simpler structure
+than unlabeled causets. For example, labeled causets can be uniquely
+speciﬁed by a sequence of integers. Moreover, each labeled causet
+processes a unique predecessor and hence has a unique history. Our
+main result shows that an arbitrary quantum sequential growth pro-
+cess (QSGP) on the set of labeled causets “compresses” in a natural
+way onto a QSGP on the set of unlabeled causets. The price we have
+to pay is that this procedure causes an “explosion” of values due to
+multiplicities. We also observe that this procedure is not reversible.
+This indicates that although many QSGPs on the set of unlabeled
+causets can be constructed using this method, not all can, so it is not
+completely general. We close by showing that a natural metric can be
+deﬁned on labeled and unlabeled causets and on their paths.
+1 Introduction
+In the causal set approach to discrete quantum gravity, a causal set (causet)
+represents a possible universe at a certain time instant and a possible “com-
+pleted” universe is represented by a path of growing causets [2, 5, 6, 8, 9].
+Just as covariance dictates that the laws of physics are independent of the
+coordinate system employed, in the discrete theory, covariance implies that
+1
+arXiv:1403.7839v1  [gr-qc]  31 Mar 2014
+
+===== PAGE 2 =====
+
+order isomorphic causets should be identiﬁed. That is, a causet should be
+independent of labeling. This is unfortunate because it is very convenient to
+work with labeled causets. At a fundamental level, the labeling speciﬁes the
+“birth order” of the vertices of a causet. Although covariance dictates that
+a causet should be independent of the birth order of its vertices, this order is
+useful in keeping track of the causets. In particular, the labeled oﬀspring of a
+labeled causet possess a natural lexicographic total order. This lexicographic
+order together with its level uniquely specify a labeled causet in terms of a
+sequence of positive integers.
+Although there are many more labeled causets than unlabeled causets,
+their graph structure is much simpler. This is because the graph of labeled
+causets forms a tree which implies that each labeled causet has a unique
+producer (predecessor) and hence possesses a unique history. This unique
+history structure makes it much simpler to construct a candidate quantum
+dynamics to form a quantum sequential growth process (QSGP) which is the
+basis for this approach to discrete quantum gravity.
+Even though the graphic structure ( P,→) of unlabeled causets is quite
+complicated, the graphic structure ( P′,→) of labeled causets is simple. A
+QSGP consists of a sequence{ρn} of Hilbert space operators, and it is more
+straightforward to construct these operators for P′ then for P. The main
+point of this paper is that even though the QSGP{ρn} forP′ can be arbitrary
+and need not satisfy any covariance conditions, we can “compress” {ρn} to
+form a QSGP{ˆρn} onP that is automatically covariant. We thus obtain the
+surprising result that any quantum dynamics on P′ compresses in a natural
+way to a quantum dynamics on P.
+As one might suspect, there is a price to be paid for this fortunate circum-
+stance. Since there are usually many ways to label an unlabeled causet, the
+compression map is many-to-one which results in a multiplicity factor. This
+factor increases with n and may aﬀect the convergence of quantum measures.
+In this way, events inP′with ﬁnite quantum measure may have correspond-
+ing events in P with inﬁnite quantum measure. We also observe that this
+procedure is not reversible. That is, a QSGP on P may not be “expandable”
+to a QSGP on P′. This indicates that although many QSGPs on P can be
+constructed using this method, not all can, so it is not completely general. In
+the last section of this article we show that a natural metric can be deﬁned
+on labeled and unlabeled causets and on their paths.
+2
+
+===== PAGE 3 =====
+
+2 Quantum Sequential Growth Processes
+A ﬁnite partially ordered set is called a causet. In this section we treat only
+unlabeled causets and two isomorphic causets are considered to be identical.
+LetPn be the collection of all causets of cardinality n, n = 1, 2, . . ., and let
+P =∪Pn be the collection of all causets. If a, b are elements of a causet x,
+we interpret the order a < b as meaning that b is in the causal future of a. If
+a < b and there is no c with a < c < b , then a is a parent of b and b is a child
+of a. An element a∈ x for x∈P is maximal if there is no b∈ x with a < b .
+If x∈P n, y∈P n+1 then x produces y if y is obtained from x by adjoining
+a single maximal element a to x. We then write x→ y and y = x↑ a. If
+x→ y, we say that x is a producer of y and y is an oﬀspring of x. Of course,
+x may produce many oﬀspring and a causet may be the oﬀspring of many
+producers.
+The transitive closure of→ makesP into a partially ordered set itself and
+we call (P,→) the causet growth process (CGP). A path inP is a sequence
+(string) ω1ω2··· , where ωi∈P and ωi→ ωi+1, i = 1, 2, . . .. An n-path inP
+is a ﬁnite string ω1ω2··· ωn where, again ωi∈P i and ωi→ ωi+1. We denote
+the set of paths by Ω and the set of n-paths by Ωn. If ω = ω1ω2··· ωn∈ Ωn,
+we deﬁne (ω→)⊆ Ωn+1 by
+(ω→) ={ω1ω2··· ωnωn+1 : ωn→ ωn+1}
+Thus, (ω→) is the set of one-step continuations of ω. If A⊆ Ωn we deﬁne
+(A→)⊆ Ωn+1 by
+(A→) =∪{ (ω→): ω∈ A}
+The set of all paths beginning withω∈ Ωn is called anelementary cylinder
+set and is denoted by cyl( ω). If A⊆ Ωn, then the cylinder set cyl(A) is
+deﬁned by
+cyl(A) =∪{ cyl(ω): ω∈ A}
+Using the notation
+C(Ωn) ={cyl(A): A⊆ Ωn}
+we see that
+C(Ω1)⊆C (Ω2)⊆···
+is an increasing sequence of subalgebras of the cylinder algebra C(Ω) =
+∪C(Ωn). LettingA be the σ-algebra generated byC(Ω), we have that (Ω,A)
+3
+
+===== PAGE 4 =====
+
+is a measurable space. For A⊆ Ω, we deﬁne the sets An⊆ Ωn by
+An ={ω1ω2··· ωn : ω1ω2··· ωnωn+1···∈ A}
+That is, An is the set of n-paths that can be continued to a path in A. We
+think of An as the n-step approximation to A. We have that
+cyl(A1)⊆ cyl(A2)⊆···⊆ A
+so that A⊆∩ cyl(An) but A̸=∩cyl(An) in general, even if A∈A .
+Let Hn = L2(Ωn) be the n-path Hilbert space CΩn with the usual inner
+product
+⟨f, g⟩ =
+∑{
+f(ω)g(ω): ω∈ Ωn
+}
+For A⊆ Ωn the characteristic function χA∈ Hn with∥χA∥ =
+√
+|A| where
+|A| denotes the cardinality of A. In particular, 1 n = χΩn satisﬁes∥1n∥ =√
+|Ωn| . A positive operator ρ on Hn that satisﬁes⟨ρ1n, 1n⟩ = 1 is called a
+probability operator. Corresponding to a probability operator ρ we deﬁne the
+decoherence functional Dρ : 2Ωn× 2Ωn→ C by
+Dρ(A, B) =⟨ρχB, χA⟩
+We interpret Dρ(A, B) as a measure of the interference between the events
+A, B when the system is described by ρ. We also deﬁne the q–measure
+µρ : 2Ωn → R+ by µρ(A) = Dρ(A, A) and interpret µρ(A) as the quantum
+propensity of the event A⊆ Ωn. In general, µρ is not additive on 2Ωn so µρ is
+not a measure. However, µρ is grade-2 additive [1, 2, 5, 7] in the sense that
+if A, B, C∈ 2Ωn are mutually disjoint, then
+µρ(A∪ B∪ C) = µρ(A∪ B)+ µρ(A∪ C)+ µρ(B∪ C)− µρ(A)− µρ(B)− µρ(C)
+Let ρn be a probability operator on Hn, n = 1 , 2, . . .. We say that the
+sequence{ρn} is consistent if
+Dρn+1(A→, B→) = Dρn(A, B)
+for every A, B⊆ Ωn. We call a consistent sequence{ρn} a quantum sequential
+growth process (QSGP). Now let{ρn} be a QSGP and denote the correspond-
+ing q-measures by µn. A set A∈A is suitable if lim µn(An) exists (and is
+ﬁnite) in which case we deﬁne µ(A) = lim µn(An). We denote the collection
+4
+
+===== PAGE 5 =====
+
+of suitable sets by S(Ω). It follows from consistency that if A = cyl(B) for
+B⊆ Ωn, then lim µm(Am) = µn(B). Hence, A∈S (Ω) and µ(A) = µn(B).
+We conclude thatC(Ω)⊆S (Ω)⊆A and it can be shown that the inclusions
+are proper, in general. In a certain sense, µ is a q-measure on S(Ω) that
+extends the q-measures µn. There are physically relevant sets in A that are
+not inC(Ω). In this case it is important to know whether such a set A is in
+S(Ω) and to ﬁnd µ(A). For example, if ω∈ Ω, then{ω} =∩{ ω}n∈A but
+{ω} /∈C (Ω). Also, the complement {ω}′ /∈C (Ω).
+We now consider a method for constructing a QSGP. A transition ampli-
+tude is a map˜a:P×P→ C such that˜a(x, y) = 0 if x̸→ y and∑
+y˜a(x, y) = 1
+for every x∈P . This is similar to a Markov chain except ˜a(x, y) may be
+complex. The amplitude process (AP) corresponding to ˜a is given by the
+maps an : Ωn→ C where
+an(ω1ω2··· ωn) =˜a(ω1, ω2)˜a(ω2, ω3)··· ˜a(ωn−1, ωn)
+We can consider an to be a vector in Hn. Notice that
+⟨1n, an⟩ =
+∑
+ω∈Ωn
+an(ω) = 1
+Deﬁne the rank 1 positive operator ρn =|an⟩⟨an| on Hn. Since
+⟨ρn1n, 1n⟩ =|⟨1n, an⟩|2 = 1
+we conclude that ρn is a probability operator.
+The corresponding decoherence functional becomes
+Dn(A, B) =⟨ρnχB, χA⟩ =⟨χB, an⟩⟨an, χA⟩
+=
+∑
+ω∈A
+an(ω)
+∑
+ω∈B
+an(ω)
+In particular, for ω, ω′∈ Ωn, Dn(ω, ω′) = an(ω)an(ω′) are the matrix elements
+of ρn. The q-measure µn : 2Ωn→ R+ becomes
+µn(A) = Dn(A, A) =
+⏐⏐⏐⏐⏐
+∑
+ω∈A
+an(ω)
+⏐⏐⏐⏐⏐
+2
+It is shown in [4] that the sequence {ρn} is consistent and hence forms a
+QSGP.
+5
+
+===== PAGE 6 =====
+
+3 Labeled Causets
+A labeling for a causet x is a bijection ℓ: x→{ 1, 2, . . . ,|x|} such that a, b∈ x
+with a < b implies that ℓ(a) < ℓ (b). A labeled causet is a pair ( x, ℓ) where
+ℓ is a labeling of x. For simplicity, we frequently write x = (x, ℓ) and call x
+an ℓ-causet. Two ℓ-causets x and y are isomorphic if there exists a bijection
+φ: x→ y such that a < b if and only if φ(a) < φ (b) and ℓ [φ(a)] = ℓ(a) for
+every a∈ x. Isomorphic ℓ-causets are identiﬁed. A given unlabeled causet
+x can always be labeled. Just take a maximal element a∈ x and label it
+ℓ(a) =|x|. Remove a from x to form x ∖{a} and label a maximal element
+b∈ x ∖{a} by ℓ(b) =|x|− 1. Continue this process until there is only one
+element c left and label it ℓ(c) = 1. To show that ℓ is a labeling of x, suppose
+d, e∈ x with d < e . Now there is a maximal chain d < d 1 <··· dk < e in x.
+By the way ℓ was contracted, we have
+ℓ(d) < ℓ(d1) <··· ℓ(dk) < ℓ(e)
+so ℓ(d) < ℓ (e). Whenever, there is a choice of maximal elements we may
+obtain a new labeling, so there usually are many ways to label a causet.
+(There are exceptions, like a chain or antichain.)
+We denote the set of ℓ-causets with cardinality n byP′
+n and the set of
+all ℓ-causets by P′ =∪P′
+n. The deﬁnitions of Section 2 such as producer,
+oﬀspring, paths, QSGPs and APs are essentially the same for ℓ-causets as
+they were for causets. For x, y∈P ′ if y = x↑ a, we always label a with
+the integer |x| + 1 = |y|. We denote the collection of n-paths in P′ by
+Ω′
+n and the collection of paths in P′ by Ω′. We deﬁne the Hilbert spaces
+H′
+n = L2(Ω′
+n) as before. If ω = ω1ω2··· ωn∈ Ω′
+n we say that ωj is contained
+in ω, j = 1, 2, . . . , n.
+Lemma 3.1. An ℓ-causet y cannot be the oﬀspring of two distinct ℓ-causet
+producers.
+Proof. If we delete the element of y labeled|y| we obtain a producer of y.
+But any producer of y is obtained in this way so there is only one ℓ-causet
+that produces y.
+The next lemma shows that unlike in P, paths inP′ never cross (except
+at ω1).
+Lemma 3.2. If x∈P ′
+n, then x is contained in a unique n-path.
+6
+
+===== PAGE 7 =====
+
+Proof. Let ωn = x. If we delete the element ofωn labeled n, then the resulting
+set ωn−1 is an ℓ-causet with ωn−1→ ωn If we next delete the element of ωn−1
+labeled n− 1, then the resulting set ωn−1 is an ℓ-causet with ωn−2→ ωn−1.
+Continue this process until we obtain the one element ℓ-causet ω1. Then
+ω = ω1ω2··· ωn is an n-path containing x. If there were another n-path
+ω′ = ω′
+1ω′
+2··· ω′
+n with ω′
+n = x, then ω′
+n−1 = ωn−1 because of Lemma 3.1. But
+by Lemma 3.1 again, ω′
+n−2 = ωn−2 and continuing we obtain ω′ = ω. Hence,
+ω is unique.
+Let x ={a1, a2, . . . , an} be an ℓ-causet where we can assume without loss
+of generality that the label on aj is j, j = 1, . . . , n. Deﬁne
+jx↑ ={i∈ N: aj≤ ai}
+Lemma 3.3. If x, y, z∈P ′ and x→ y, z, then jy↑⊆ jz↑ or jx↑⊆ jy↑ for
+all j = 1, 2, . . . ,|y|.
+Proof. Let y = {a1, . . . , an} and z = {b1, . . . , bn}. We can assume that
+ai = bi, i = 1, . . . , n− 1. If aj̸≤ an and bj̸≤ bn, then jy↑ = jz↑. If aj≤ an
+and bj≤ bn, then again jy↑ = jz↑. If aj≤ an and bj̸≤ bn then jz↑⊆ jy↑ and
+if aj̸≤ an and bj≤ bn then jy↑⊆ jz↑.
+Order the oﬀspring of x∈P ′ lexicographically as follows. If x→ y, z
+then y < z if 1y↑ = 1z↑, . . . jy↑ = jz↑, (j + 1)y↑ ⊊ (j + 1)z.
+Theorem 3.4. The relation < is a total order.
+Proof. Clearly y̸< y . If y < z , the z̸< y . Suppose that x→ y, z, u and
+y < z , z < u . Then 1 y↑ = 1 z↑,··· , jy↑ = jz↑, ( j + 1)y↑ ⊊ (j + 1)z and
+1z↑ = 1u↑, . . . , kz↑ = ku↑, (k + 1)z ⊊ (k + 1)u↑. We then have
+1y↑ = 1u↑, . . . ,min(j, k)y↑ = min(j, k)u↑
+If min(j, k) = j, then
+1y↑ = 1u↑, . . . , jy↑ = jz↑ = ju↑, (j + 1)y↑ ⊊ (j + 1)z↑ = (j + 1)u↑
+If min(j, k) = k, then
+1y↑ = 1u↑, . . . , ky↑ = kz↑ = ku↑, (k + 1)y↑ = (k + 1)z↑ ⊊ (k + 1)u↑
+7
+
+===== PAGE 8 =====
+
+In either case, y < u so < is a partial order relation. To show that < is a
+total order relation, suppose that x→ y, z. If jy↑ = jz↑ for j = 1, 2, . . . ,|y|,
+then the adjoined maximal element of y has the same parents as the adjoined
+maximal element of z. Hence, y and z are isomorphic ℓ-causets so y = z.
+Otherwise, by Lemma 3.3, 1 y↑ = 1z↑, . . . , jy↑ = jz↑ and (j+)y↑ ⊊ (j + 1)z↑
+or (j + 1)z↑ ⊊ (j + 1)y↑ so y < z or z < y .
+Two elements a, b of an ℓ-causet are comparable if a≤ b or b≤ a. Other-
+wise, a and b are incomparable. An antichain in x∈P ′ is a set of mutually in-
+comparable elements of x. It is shown in [3] that the number of oﬀspring o(x)
+of x∈P ′ is the number of distinct antichains in x. Let y1 < y2 <··· < y o(x)
+be the oﬀspring of x∈P ′ ordered lexicographically. We call j the succes-
+sion of yj and|yi| the generation of yj. If x∈P ′ with x̸=∅, then x has
+a unique producer so its succession s(x) is well deﬁned. By convention we
+deﬁne s(∅) = 0. We can uniquely specify each x∈P ′ by listing its succession
+sequence
+(s(x0), s(x1), . . . , s(xn))
+where x0→ x1→···→ xn = x, n =|x|. Of course x0 =∅ and s(x0) = 0,
+s(x1) = 1 for all x∈P ′.
+x
+1
+y
+x
+y
+1 1
+12 2
+2
+2
+3
+3
+3
+3
+4 4
+Example 1
+‘
+‘
+If x, y∈P ′ we write x∼ y if x and y are order isomorphic. Then ∼ is
+an equivalence relation and we denote the equivalence class containing x by
+[x]. Let
+Q =P′/∼={[x]: x∈P ′}
+If x∈P ′, let ˆx∈P be x without the labels. Since we identify isomorphic
+causets we have x∼ y if and only if ˆx =ˆy. Letting φ:Q→P be φ ([x]) =ˆx
+8
+
+===== PAGE 9 =====
+
+we see that φ is well-deﬁned and it is easy to check that φ is a bijection. If
+x, y∈P ′ and x→ y, then clearly ˆx→ˆy inP. Unfortunately, if x→ y inP′
+and x′∼ x, y′∼ y, then we can have x′̸→ y′ as Example 1 shows.
+For x, y∈P ′ we write [ x]→ [y] if there exist x′, y′∈P ′ with x′∼ x,
+y′∼ y and x′→ y′. However, the identiﬁcation φ ([x]) =ˆx is not very useful
+because [ x]→ [y] implies φ ([x])→ φ ([y]) but φ ([x])→ φ ([y]) need not
+imply x→ y as the previous example shows. It is more useful to deﬁne a
+map ψ : Ω′
+n→ Ωn as follows. If ω = ω1ω3··· ωn∈ Ω′
+n we deﬁne
+ψ(ω) =ˆω =ˆω1ˆω2··· ˆωn
+Since any x∈P can be labeled, we have that ψ : Ω′
+n→ Ωn is surjective.
+Lemma 3.5. Let ω = ω1ω2··· ωn, ω′ = ω′
+1ω′
+2··· ω′
+n∈ Ω′
+n. Then ψ(ω) =
+ψ(ω′) if and only if ωj∼ ω′
+j, j = 1, 2, . . . , n.
+Proof. If ψ(ω) = ψ(ω′) then ˆω =ˆω′ so
+ˆω1ˆω2··· ˆωn =ˆω′
+1ˆω′
+2··· ˆω′
+n
+which implies that ˆωj = ˆω′
+j, j = 1 , . . . , n. We conclude that ωj ∼ ω′
+j,
+j = 1, . . . , n. Conversely, if ωj∼ ω′
+j, j = 1, . . . , n, then ˆωj =ˆω′
+j. Hence
+ψ(ω) =ˆω1ˆω2··· ˆωn =ˆω′
+1ˆω′
+2··· ˆω′
+n = ψ(ω′)
+Let x, y∈P ′ with x→ y′ and y′∼ y we write y∼x y′. Then ∼x is
+an equivalence relation and we denote the equivalence classes by [ y]x. If
+x→ y, the multiplicity of x→ y is denoted by m(x→ y) and is deﬁned
+by m(x → y) = |[y]x|. The multiplicity m(ω) of ω ∈ Ω′
+n is deﬁned by
+m(ω) =|ψ−1(ˆω)|.
+Lemma 3.6. If ω = ω1ω2··· ωn∈ Ω′
+n, then
+m(ω) = m(ω1→ ω2)m(ω2→ ω3)··· m(ωn−1→ ωn)
+Proof. If ω′ = ω′
+1ω′
+2··· ω′
+n∈ Ω′
+n where ω′
+i∼ ωi, i = 1 , . . . , n, then ψ(ω′) =
+ψ(ω). The number of n-paths of the form ω′ is
+m(ω1→ ω2)m(ω2→ ω3)··· m(ωn−1→ ωn)
+The result follows.
+9
+
+===== PAGE 10 =====
+
+4 Amplitude Processes on P′
+In this section we present examples of various APs on P′. As shown in
+Section 2, these APs can be used to construct QSGPs on P′. Moreover, we
+shall show in Section 5 that any QSGP onP′ can be “compressed” to a QSGP
+onP. Recall that a transition amplitude onP′ is a map˜a:P′×P′→ C such
+that˜a(x, y) = 0 if x̸→ y and∑
+y˜a(x, y) = 1. We say that ˜a is covariant if
+˜a(x, y) is independent of the labeling of x and y; that is, if x∼ x′, y∼ y′
+then˜a(x, y) =˜a(x′, y′)
+If y = x↑ a, then y is a leaf oﬀspring of x if a has no more than one
+parent. It is clear that for x∈P ′, x has|x| + 1 leaf oﬀspring and that there
+are n! leaf oﬀspring in P′
+n. For each x∈P ′, label the leaf oﬀspring of x
+lexicographically, y1, y2, . . . , y|x|+1. Deﬁne ˜a:P′×P ′→ C by˜a(x, y) = 0
+unless y is a leaf oﬀspring of x and then
+˜a(x, xj) =−e2πij(|x|+2), j = 1, . . . ,|x| + 1
+where of course i =√−1 . It is easy to check that˜a is a transition amplitude
+onP′ but˜a is not covariant.
+If ω = ω1ω2··· ωn∈ Ω′
+n, then
+an(ω) =˜a(ω1, ω2)··· ˜a(ωn−1, ωn)
+Hence, if ω1ω2···∈ Ω′ and at least one ωj is not a leaf oﬀspring, then
+µn ({ω}n) =|an(ω1··· ωn)|2 = 0
+for n suﬃciently large. Hence, {ω} ∈ S(Ω′) and µ ({ω}) = 0. If every
+ωn is a leaf oﬀspring, then µn ({ω}n) = 1 for all n so{ω} ∈ S(Ω′) with
+µ ({ω}) = 1. As another example, let A⊆ Ω′ be the set of paths for which
+no ﬁrst succession leaf oﬀspring except ω1 appear. Letting F be the set of
+10
+
+===== PAGE 11 =====
+
+all ﬁrst succession leaf oﬀspring (except ω1), we have
+µn(An) =
+⏐⏐⏐
+∑
+{˜a(ω1, ω2)··· ˜a(ωn−1, ωn): ωj /∈ F}
+⏐⏐⏐
+2
+=
+⏐⏐⏐
+∑{
+˜a(ω1, ω2)··· ˜a(ωn−2, ωn−1)(1 + e2πi/(n+1)): ωj /∈ F
+}⏐⏐⏐
+2
+=
+⏐⏐⏐
+∑{
+˜a(ω1, ω2)··· ˜a(ωn−3, ωn−2)(1+ e2πi/n)(1+ e2πi/(n+1)): ωj /∈ F
+}⏐⏐⏐
+2
+...
+=
+⏐⏐(1 + e2πi/3)
+⏐⏐2⏐⏐(1 + e2πi/4)
+⏐⏐2
+···
+⏐⏐(1 + e2πi/(n+1)⏐⏐2
+= (2 + 2 cos 2π/3)2(2 + 2 cosπ/2)2··· (2 + 2 cos 2π/(n + 1))2
+We conclude that lim µn(An) =∞ so A̸∈S (Ω).
+As another example, let ˜a(x, y) = 0 unless y is a leaf oﬀspring of x and
+then˜a(x, y) = (|x| + 1)−1. Then ˜a is a covariant transition amplitude. Let
+Ln⊆ Ω′
+n be the set of n-paths ω = ω1ω2··· ωn such that ωj are leaf oﬀspring,
+j = 1, 2, . . . , n. Then an(ω) = 0 for every ω∈ Ω′
+n ∖ Ln and an(ω) = 1/n! for
+every ω∈ Ln. We conclude that Dn(ω, ω′) = 0 unless ω, ω′∈ Ln in which
+case Dn(ω, ω′) = (n!)−2. Moreover, for A, B⊆ Ω′
+n we have
+Dn(A, B) =
+∑
+{Dn(ω, ω′): ω∈ A, ω′∈ B} =|A∩ Ln|| B∩ Ln|
+(n!)2
+and µn(A) = (n!)−2|A∩ Ln|2. Let L⊆ Ω′ be the set of paths ω = ω1ω2···
+where ωj are leaf oﬀspring, j = 1, 2, . . .. If ω∈ Ω′∖L, then clearly µn (|ω|n) =
+0 so{ω}∈S (Ω′) with µ ({ω}) = 0. If ω∈ L then µn ({ω}n) = ( n!)−2→ 0
+so again{ω}∈S (Ω′) with µ ({ω}) = 0. Also, if ω∈ L, then
+µn
+(
+{ω}′n)
+= (n!− 1)2
+(n!)2 =
+(
+1− 1
+n!
+)2
+→ 1
+so{ω}′∈S (Ω) with µ
+(
+{ω}′)
+= 1. In a similar way, if ω∈ Ω′ ∖ L then
+{ω}′∈S (Ω) with µ
+(
+{ω}′)
+= 1. Let A⊆ L be the subset of L consisting of
+paths ω = ω1ω2··· where each ωi is a connected graph. It is easy to check
+that|An| = (n− 1)!. Hence,
+µn(An) = [(n− 1)!]2
+(n!)2 = 1
+n2→ 0
+11
+
+===== PAGE 12 =====
+
+Thus, A∈S (Ω′) and µ(A) = 0. Since µn is the square of a measure on
+C(Ω′
+n), µ has a unique extension ν fromC(Ω′) toA′ as a square of a measure.
+It follows thatS(Ω′) =A′. However, µ(A)̸= ν(A) for all A∈A′, in general,
+because we need not have A =∩cyl(An).
+We now brieﬂy mention two covariant transition amplitudes that may
+have physical relevance. The ﬁrst is complex percolation ˜a:P′×P ′→ C
+[1]. As usual ˜a(x, y) = 0 if x̸→ y. Let p∈ C be arbitrary. If y = x↑ a we
+deﬁne˜a(x, y) = pπ(1− p)u where π is the number of parents of a and u is
+the number of elements of x that are incomparable to a. It is clear that ˜a
+is covariant. To show that the Markov condition ∑
+y˜a(x, y) = 1 holds, it is
+well-known form the classical theory that this condition holds if 0 ≤ p≤ 1.
+By analytic continuation, the condition still holds for complex p.
+Our last example is a quantum action dynamics presented in [3]. This
+dynamics has the form of a discrete Feynman integral. Since this formalism
+was treated in detail in [3], we refer the reader to that reference for further
+consideration.
+5 Compressing a QSGP from P′ toP
+This section shows that an arbitrary QSGP on P′ can be compressed in a
+natural way to a QSGP on P. The compression operator Sn : H′
+n→ Hn is
+the linear operator deﬁned by
+Snχω = χψ(ω) = χˆω
+We also deﬁne the covariance operator Tn : Hn→ H′
+n as the linear operator
+given by
+Tnχγ =
+∑
+{χω∈ H′
+n :ˆω = γ}
+Lemma 5.1. The operators Sn and Tn satisfy Tn = S∗
+n.
+Proof. For ω∈ Ω′
+n and γ∈ Ωn we have that
+⟨Snχω, χγ⟩ =⟨χˆω, χγ⟩ = δˆω,γ
+Moreover,
+⟨χω, Tnχγ⟩ =
+⣨
+χω,
+∑
+{χω∈ H′
+n :ˆω = γ}
+⟩
+= δˆω,γ
+The result now follows.
+12
+
+===== PAGE 13 =====
+
+The next theorem is the main result of this section.
+Theorem 5.2. If{ρn} is a QSGP for P′, then ˆρn = SnρnS∗
+n is a QSGP for
+P.
+Proof. We have thatˆρn is positive because
+⟨ˆρnf, f⟩ =⟨SnρnS∗
+nf, f⟩ =⟨ρnS∗
+nf, S∗
+nf⟩≥ 0
+for every f∈ Hn. The normalization condition follows from
+⟨ˆρn1n, 1n⟩ =⟨ρnS∗
+n1n, S∗
+n1n⟩ =⟨ρnTn1n, Tn1n⟩ =⟨ρn1n, 1n⟩ = 1
+Consistency follows from
+⟨
+ˆρn+1χ(ω→), χ(ω′→)
+⟩
+=
+⟨
+ρn+1Tn+1χ(ω→), Tn+1χ(ω′→)
+⟩
+==⟨ρnTnχω, Tnχω′⟩ =⟨ˆρnχω, χω′⟩
+because
+⟨ˆρn+1χA→, χB→⟩ =⟨ˆρnχA, χB⟩
+results from bilinearity.
+The compression procedure is not reversible in the sense that if ρn is a
+QSGP forP, then ρ′
+n = S∗
+nρnSn need not be a QSGP for P′. For example,
+in general
+⟨ρ′
+n1n, 1n⟩ =⟨ρnSn1n, Sn1n⟩̸ = 1
+We now show that the compression operators grow according to multiplicity.
+First S∗
+nSn : H′
+n→ H′
+n satisﬁes
+S∗
+nSnχω = Tnχˆω =
+∑
+{χω′∈ H′
+n :ˆω′ =ˆω}
+and SnS∗
+n : Hn→ Hn satisﬁes
+SnS∗
+nχγ = SnTnχγ = Sn
+∑
+{χω∈ H′
+n :ˆω = γ} = m(γ)χγ
+We thus see that SnS∗
+n is diagonal with eigenvalues{m(γ): γ∈ Ωn}. Hence,
+∥SnS∗
+n∥ = max{m(γ): γ∈ Ωn}
+13
+
+===== PAGE 14 =====
+
+By the C∗-identity, we have
+∥Tn∥ =∥Sn∥ = [∥SnS∗
+n∥]1/2 = [max{m(γ): γ∈ Ωn}]1/2
+Suppose we have an AP {an} onP′. We have seen that ρn =|an⟩⟨an| is
+a QSGP forP′. The corresponding QSGP ˆρn forP becomes
+ˆρn = Sn|an⟩⟨an|S∗
+n
+Hence,
+ˆρnχγ = Sn|an⟩⟨an|Tnχγ = Sn|an⟩⟨an, Tnχγ⟩
+= Sn|an⟩
+⣨
+an,
+∑
+{χω∈ H′
+n :ˆω = γ}
+⟩
+= Sn|an⟩
+∑
+{⟨an, χω⟩:ˆω = γ}
+= Sn|an⟩
+∑
+{an(ω): ˆω = γ}
+We conclude that
+Dn(γ, γ′) =⟨ˆρnχγ′, χγ⟩ =⟨Sn| an⟩⟨an| Tnχγ′, χγ⟩
+=⟨an, Tnχγ′⟩⟨an, Tnχγ⟩
+=
+∑{
+an(ω): ˆω = γ
+}∑
+{an(ω′): ˆω′ = γ′}
+It follows that
+µn(A) =
+⏐⏐⏐⏐⏐
+∑
+γ∈A
+{an(ω): ˆω = γ}
+⏐⏐⏐⏐⏐
+2
+and in particular,
+µn(γ) =
+⏐⏐⏐
+∑
+{an(ω): ˆω = γ}
+⏐⏐⏐
+2
+We say that an AP {an} onP′ is covariant if an(ω) is independent of
+the labeling of ω; that is, an(ω) = an(ω′) whenever ω∼ ω′(ˆω = ˆω′). Of
+course, for a covariant transition amplitude˜a, the corresponding AP{an} is
+covariant. If the AP{an} onP′ is covariant, then
+Dn(γ, γ′) = m(ω)m(ω′)an(ω)an(ω′)
+14
+
+===== PAGE 15 =====
+
+whereˆω = γ,ˆω′ = γ′. We also have
+µn(A) =
+⏐⏐⏐⏐⏐
+∑
+γ∈A
+{m(ω)an(ω): ˆω = γ}
+⏐⏐⏐⏐⏐
+2
+and in particular,
+µn(γ) =|m(ω)|2|an(ω)|2
+where ˆω = γ. These last three equations exhibit the “explosion” in values
+resulting from multiplicity most clearly.
+We can illustrate the situation directly for covariant APs as follows. Let
+˜a:P′×P′→ C be a covariant transitional amplitude. For γ = γ1γ2··· γn∈
+Ωn, deﬁne
+ˆan(γ) = m(ω1→ ω2)˜a(ω1, ω2)··· m(ωn−1→ ωn)˜a(ωn−1, ωn)
+where ˆωi = γi, i = 1, . . . , n. Since ˜a is covariant,ˆan(γ) is well-deﬁned and
+letting ω = ω1ω2··· ωn∈ Ω′
+n whereˆωi = γi, i = 1, . . . , n we haveˆω = γ and
+ˆan(γ) = m(ω)an(ω)
+Our previous results now follow.
+6 Metrics
+We have seen in Section 3 that any x∈P ′
+n is uniquely determined by its
+succession sequence
+s(x) = (s0, s1, . . . , sn)
+If y∈P ′
+n has succession sequence
+s(y) = (t0, t1, . . . , tn)
+we write x≺ y is s(x) precedes s(y) lexicographically:
+s0 = t0, s1 = t1, . . . , sj = tj, sj+1 < t j+1
+for some j with j≤ n− 1. Then ≺ is a total order on P′
+n. We can then
+well-order the elements ofP′
+n as
+x1≺ x2≺···≺ xm
+15
+
+===== PAGE 16 =====
+
+where m =|P′
+n|. We now deﬁne ρ(xi, xj) =|i− j| for all xi, xj∈P ′
+n. It is
+clear that ρ(xi, xj) = 0 if and only if xi = xj and that ρ(xi, xj) = ρ(xj, xi)
+for all xi, xj∈P ′
+n. Moreover, by the triangle inequality for real numbers we
+have
+ρ(xi, xj) =|i− j|≤| i− k| +|k− j| = ρ(xi, xk) + ρ(xk, xj)
+for all xk∈P ′
+n. Thus, ρ is a metric onP′
+n. For x, y∈P n deﬁne
+ρ(x, y) = max{ρ(x′, y′): ˆx′ = x,ˆy′ = y}
+if x̸= y and deﬁne ρ(x, y) = 0, otherwise.
+Theorem 6.1. The map ρ:Pn×P n→ R is a metric on Pn.
+Proof. Clearly, ρ(x, y)≥ 0 and ρ(x, y) = ρ(y, x) for all x, y∈P n. Also,
+ρ(x, x) = 0. Suppose x, y∈P n with x̸= y. If ˆx′ = x,ˆy′ = y, then x′̸= y′ so
+ρ(x′, y′) > 0. It follows that ρ(x, y) > 0. For x, y, z∈P n, if x = y we have
+that
+ρ(x, y) = 0≤ ρ(x, z) + ρ(z, y)
+so suppose that x̸= y. If z = x, then
+ρ(x, z) + ρ(z, y) = ρ(x, y)
+and a similar result holds if z = y. Finally, suppose that x, y, z are all
+distinct. Now there exists x′, y′, z′∈P ′
+n with ˆx′ = x, ˆy′ = y, ˆz′ = z and
+ρ(x, y) = ρ(x′, y′). Since ρ is a metric onP′
+n we have that
+ρ(x, y) = ρ(x′, y′)≤ ρ(x′, z′) + ρ(z′, y′)≤ ρ(x, z) + ρ(z, y)
+Hence, the triangle equality holds so ρ is a metric onPn.
+We now deﬁne metrics on Ω′
+n and Ωn. For ω, ω′∈ Ω′
+n with ω = ω2ω2··· ωn,
+ω′ = ω′
+1ω′
+2··· ω′
+n deﬁne
+ρ(ω, ω′) = max{ρ(ωi, ω′
+i): i = 1, 2, . . . , n} (6.1)
+Theorem 6.2. The map ρ: Ω′
+n× Ω′
+n→ R is a metric.
+Proof. Clearly, ρ(ω, ω′)≥ 0, ρ(ω, ω′) = ρ(ω′, ω) and ρ(ω, ω′)=0 if and only if
+ω = ω′. If ω′′ = ω′′
+i ω′′
+2··· ω′′
+n∈ Ω′
+n we have that ρ(ω, ω′) = ρ(ωj, ω′
+j) for some
+j∈{ 1, . . . , n} and that
+ρ(ω, ω′) = ρ(ωj, ω′
+j)≤ ρ(ωj, ω′′
+j ) + ρ(ω′′
+j , ω′
+j)≤ ρ(ω, ω′′) + ρ(ω′′, ω′)
+16
+
+===== PAGE 17 =====
+
+We can deﬁne a metric on Ω n in a similar way using (6.1). Other metrics
+on Ω′
+n and Ωn that might be convenient are
+ρ1(ω, ω′) =
+n∑
+i=1
+ρ(ωi, ω′
+i)
+ρ2(ω, ω′) =
+[n∑
+i=1
+ρ(ωi, ω′
+i)2
+]1/2
+References
+[1] F. Dowker, S. Johnston and S. Surya, On extending the quantum mea-
+sure, arXiv: gr-qc 1204.4596 (2010).
+[2] S. Gudder, Discrete quantum gravity, arXiv: gr-qc 1108.2296 (2011).
+[3] S. Gudder, A dynamics for discrete quantum gravity, arXiv: gr-qc
+1303.0433 (2013).
+[4] S. Gudder, An approach to discrete quantum gravity, arXiv: gr-qc
+1305.5184 (2013).
+[5] J. Henson, Quantum histories and quantum gravity, arXiv: gr-qc
+0901.4009 (2009).
+[6] D. Rideout and R. Sorkin, A classical sequential growth dynamics for
+causal sets, Phys. Rev. D61 (2000), 024002.
+[7] R. Sorkin, Quantum mechanics as quantum measure theory, Mod. Phys.
+Letts. A9 (1994), 3119–3127.
+[8] R. Sorkin, Causal sets: discrete gravity, arXiv: gr-qc 0309009 (2003).
+[9] S. Surya, Directions in causal set quantum gravity, arXiv: gr-qc
+1103.6272 (2011).
+17

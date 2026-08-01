@@ -1,0 +1,852 @@
+===== PAGE 1 =====
+
+arXiv:1306.0083v1  [math.QA]  1 Jun 2013
+Generalized Shemesh criterion, common
+invariant subspaces and irreducible
+completely positive superoperators
+Andrzej Jamiołkowski (Toruń) and Grzegorz Pastuszak (Wars zawa)
+Abstract
+Assume that A1, ..., As are complex n× n matrices. We give a com-
+putable criterion for existence of a common eigenvector of Ai which
+generalize the result of D. Shemesh established for two matr ices. We
+use this criterion to prove some necessary and suﬃcient cond ition for
+Ai to have a common invariant subspace of dimension d, 2 ≤ d < n ,
+if every Ai has pairwise diﬀerent eigenvalues. Finally, we observe tha t
+the set of all matrices having multiple eigevalues has Lebes gue mea-
+sure 0 and thus the condition is suﬃcient in practical application s.
+Being motivated by quantum information theory, we give a ﬂavo ur of
+such applications for irreducible completely positive sup eroperators.
+1 Introduction and the main results
+Quantum theory, in its nonrelativistic formulation, is bui lt on the theory
+of Hilbert spaces and operators. Assume that H is a ﬁxed Hilbert space
+associated with a given quantum system S. We denote by B(H) the set of
+all linear continuous operators on H. Then the set of states of the system
+S is, by deﬁnition, represented by all semipositive elements of B(H) with
+trace equal to one. This set of states will be denoted by S(H).
+In the beginning of seventies it appeared that some natural q uestions
+connected with fundamentals of quantum mechanics (more pre cisely, with
+the theory of open quantum systems) lead to investigations o f linear maps in
+a real Banach space of self-adjoint operators on a ﬁxed Hilbe rt space (cf. e.g.
+2010 Mathematics Subject Classiﬁcation : 15A18, 47A15.
+Key words and phrases : Shemesh criterion, common eigenvectors, common invarian t
+subspaces, irreducible operators, completely positive su peroperators.
+1
+
+===== PAGE 2 =====
+
+2 A. Jamiołkowski and G. Pastuszak
+[9], [10]). The concept of a Banach space with the partial ord er deﬁned by a
+speciﬁc cone, namely, the cone of positive semideﬁnite oper ators, constitutes
+a basic idea in the description of open quantum systems and in the quantum
+information theory ([9], cf. also the last section of this pa per).
+In this paper we consider ﬁnite dimensional Hilbert spaces - such spaces
+are the current focus in quantum computing and quantum infor mation
+theory for experimental reasons. This means we assume H ∼= Cn and
+B(H) ∼
+= Mn(C). It should be stressed that to describe all possible changes of
+quantum states one has to consider some speciﬁc linear opera tors in B(H).
+Very often, at least in physical literature, they are called superoperators.
+The general form of such maps is well known. Namely, for a give n superop-
+erator Φ : B(H) → B(H), dimH < ∞ , there always exists an operator-sum
+presentation given by
+(∗) Φ( X) =
+s∑
+i=1
+AiXB i,
+where Ai, Bi are elements of B(H), for all i = 1 , ..., s. A particular class
+of such maps, the so-called completely positive maps (or in physical termi-
+nology quantum operations or quantum channels ) play a prominent role in
+formulations of evolution of open quantum systems and in the theory of
+quantum measurements.
+It is obvious from the above considerations that properties of superopera-
+tors Φ : B(H) → B(H) are connected with properties of the sets {A1, ..., As}
+and {B1, ..., Bs} of matrices. In particular, in case of completely positive
+maps, we have Bi = A∗
+i for i = 1, ..., s, where A∗
+i denotes matrix adjoint to
+Ai, and thus quantum channels are described by maps of the form
+(∗∗) Φ( X) =
+s∑
+i=1
+AiXA ∗
+i .
+The matrices Ai occuring in the expression above are called the Kraus
+coeﬃcients of Φ.
+Motivated by the main results of [6], we discuss in the paper s ome prop-
+erties of a completely positive map Φ of the form (∗∗) in terms of common
+invariant subspaces of its Kraus coeﬃcients Ai. Namely, it turns out that
+Φ is irreducible (see [6] for the deﬁnitions) if and only if the matrices Ai do
+not have a nontrivial common invariant subspace.
+This paper is devoted to give a computable criterion for a com pletely
+positive superoperator Φ to be irreducible. To establish the criterion we
+
+===== PAGE 3 =====
+
+Generalized Shemesh criterion 3
+give at ﬁrst a computable condition for the matrices A1, ..., As to have a
+common invariant subspace of a ﬁxed dimension d.
+In what follows, we consequently assume that B(H) ∼= Mn(C) is the
+vector space of all n × n complex matrices.
+Assume that x ∈ Cn, x ̸= 0 . We say that x is a common eigenvector of
+A1, ..., As ∈ Mn(C) if and only if x is an eigenvector of every Ai, that is,
+Aix = µix for some µi ∈ C.
+Assume that W is a subspace of Cn. We say that W is a common in-
+variant subspace of A1, ..., As ∈ Mn(C) if and only if W is Ai-invariant for
+all i = 1 , ..., s, that is, Aiw ∈ W for all w ∈ W . It is clear that Ai have a
+common eigenvector if and only if Ai have a common invariant subspace of
+dimension 1.
+Assume that A, B ∈ Mn(C). We denote by [A, B] := AB − BA the
+commutator of A and B, and by ker A := {v ∈ Cn|Av = 0} the kernel of A.
+In [15] D. Shemesh proved the following criterion for existe nce of common
+eigenvector of two complex matrices A and B.
+Theorem 1.1. ([15, Theorem 3.1]) Assume that A, B ∈ Mn(C) and
+N (A, B) :=
+n− 1⋂
+k,l=1
+ker[Ak, Bl].
+Then A and B have a common eigenvector if and only if N (A, B) ̸= 0.
+It it observed in [15] that N (A, B) = ker K, where
+K =
+n− 1∑
+k,l=1
+[Ak, Bl]∗[Ak, Bl]
+and X ∗ denotes matrix adjoint to X. It follows that the condition
+N (A, B) =
+n− 1⋂
+k,l=1
+ker[Ak, Bl] ̸= 0
+is computable, i.e. it can be veriﬁed by ﬁnite and deterministic algorithm .
+In view of Theorem 1.1 it is natural to consider the following problem:
+Is there a computable condition veriﬁng the existence of com mon invariant
+subspace of dimension d of s complex n × n matrices A1, ..., As, where 1 ≤
+d < n and s ≥ 2?
+Partial solutions to this problem are given in [1], [2], [7] a nd [16] where
+it is mainly assumed that s = 2 . In [1] and [2] the authors study the case
+when algebra generated by two complex matrices is semisimpl e and use the
+
+===== PAGE 4 =====
+
+4 A. Jamiołkowski and G. Pastuszak
+concept of a standard polynomial, see [14], Section 20.4. In [7] and [16] the
+authors reduce the general problem to the question of existe nce of common
+eigenvector of suitable compound matrices, see [11], Chapter I.
+The general version of the problem with arbitrary d and s is solved com-
+pletely in [3] where some techniques of Gröbner bases theory and algebraic
+geometry are used.
+In this paper we present a diﬀerent approach to the problem di scussed.
+Namely, for d = 1 we prove the following computable generalization of the
+Shemesh criterion.
+Theorem 1.2. Assume that A1, ..., As ∈ Mn(C) and
+M(A1, ..., As) :=
+n− 1⋂
+ki,lj ≥ 0
+k1+k2+...+ks̸=0
+l1+l2+...+ls̸=0
+ker[Ak1
+1 ...Aks
+s , Al1
+1 ...Als
+s ].
+(1) Matrices Ai have a common eigenvector if and only if
+M(A1, ..., As) ̸= 0.
+(2) We have M(A1, ..., As) = ker K where
+K =
+n− 1∑
+ki,lj≥ 0
+k1+k2+...+ks̸=0
+l1+l2+...+ls̸=0
+[Ak1
+1 ...Aks
+s , Al1
+1 ...Als
+s ]∗[Ak1
+1 ...Aks
+s , Al1
+1 ...Als
+s ].
+If d > 1 and each of A1, ..., As ∈ Mn(C) has pairwise diﬀerent eigenvalues,
+we apply Theorem 1.2 to establish a computable criterion for existence of
+common invariant subspace of Ai of dimension d. In this approach we make
+use of some methods presented in [7] and [16].
+Furthermore, we observe that the set of all matrices having a t least
+one multiple eigevalue is Lebesgue-measureble, and its mea sure is equal to
+zero. This yields that when matrices A1, ..., As ∈ Mn(C) are random it is
+reasonble to expect that non of them has multiple eigenvalues. Consequently,
+our criterion may be considered as suﬃcient for practical ap plications.
+In the ﬁnal section of the paper we give a ﬂavor of such applica tions
+presenting a computable method of veriﬁng whether a complet ely positive
+superoperator deﬁned by its Kraus coeﬃcients is irreducibl e.
+
+===== PAGE 5 =====
+
+Generalized Shemesh criterion 5
+2 The generalized Shemesh criterion
+This section is devoted to the detailed proof of Theorem 1.2 w hich we shall
+call the generalized Shemesh criterion .
+We start with a simple fact from linear algebra.
+Proposition 2.1. Assume that A ∈ Mn(C) and X ̸= 0 is A-invariant.
+Then there is an eigenvector w ∈ Cn of A such that w ∈ X.
+Proof. Assume that dimX = s ≥ 1 and X = ⟨x1, ..., xs⟩. The Steinitz
+exchange lemma implies that there are vectors ys+1, ..., yn ∈ Cn such that
+Cn = ⟨x1, ..., xs, ys+1, ..., yn⟩. Assume that B is an invertible matrix of the
+form
+B =
+[
+x1 x2 . . . x s ys+1 . . . y n
+]
+.
+Since X is A-invariant, there is a matrix
+˜A =
+[A1 A2
+0 A3
+]
+,
+where A1 ∈ Ms(C), such that A = B ˜AB− 1. Clearly there is v = (v1, ..., vs)tr ∈
+Cs with A1v = µv for some µ ∈ C. This implies that ˜A˜v = µ˜v for
+˜v = ( v1, ..., vs, 0, ..., 0
+ 
+n− s
+)tr and hence A(B˜v) = µ(B˜v) and B˜v ∈ X. Thus
+w := B˜v satisﬁes the required conditions. ✷
+Assume that A ∈ Mn(C) and µ ∈ C is an eigenvalue of A. We denote by
+V A
+µ the eigenspace associated to µ, that is,
+V A
+µ := {v ∈ Cn|Av = µv}.
+The following lemma is commonly known (see [4], [5], [13] for more gen-
+eral versions). It states that pairwise commuting square co mplex matrices
+A1, ..., As ∈ Mn(C) have a common eigenvector.
+Lemma 2.2. Assume that A1, ..., As ∈ Mn(C) and AiAj = AjAi for all
+i, j = 1, ..., s. Then there is a common eigenvector of Ai.
+Proof. Assume that s = 2 and A = A1, B = A2. Since A is a complex
+matrix, A has at least one eigenvalue, say µ ∈ C. If x ∈ V A
+µ , then
+A(Bx) = ( AB)x = (BA)x = B(Ax) = B(µx) = µ(Bx)
+hence V A
+µ is B-invariant. It follows from Proposition 2.1 that there is an
+eigenvector y of B such that y ∈ V A
+µ . Thus y is a common eigenvector of A
+and B.
+
+===== PAGE 6 =====
+
+6 A. Jamiołkowski and G. Pastuszak
+Assume now that s ≥ 3 and x ∈ Cn is a common eigenvector of A1, ..., As− 1
+such that A1x = µ1x,..., As− 1x = µs− 1x, for some µ1, ..., µs− 1 ∈ C, and hence
+x ∈ V A
+µ1 ∩ ... ∩ V A
+µs−1. We will show that A1, ..., As− 1, As also have a common
+eigenvector.
+Indeed, observe that
+Ai(Asx) = ( AiAs)x = (AsAi)x = As(Aix) = As(µix) = µi(Asx)
+and hence V A
+µi is As-invariant for any i = 1, ..., s− 1. It follows that V A
+µ1 ∩ ...∩
+V A
+µs−1 is a nonzero As-invariant subspace and hence there is an eigenvector
+y of As such that y ∈ V A
+µ1 ∩ ... ∩ V A
+µs−1, by Proposition 2.1. Thus y is is a
+common eigenvector of A1, ..., As− 1, As, and the lemma follows by induction.
+✷
+Corollary 2.3. Assume that A1, ..., As ∈ Mn(C), X ̸= 0 is Ai-invariant and
+(AiAj)x = ( AjAi)x for any x ∈ X. Then there is a common eigenvector u
+of Ai such that u ∈ X.
+Proof. Assume that dimX = t ≥ 1 and X = ⟨x1, ..., xt⟩. Steinitz ex-
+change lemma implies that Cn = ⟨x1, ..., xt, yt+1, ..., yn⟩ for some yt+1, ..., yn ∈
+Cn. We set
+B =
+[
+x1 x2 . . . x t yt+1 . . . y n
+]
+.
+Since X is Ai-invariant, there are matrices
+˜
+Ai =
+[Ai
+1 Ai
+2
+0 Ai
+3
+]
+,
+where Ai
+1 ∈ Mt(C), such that Ai = B˜AiB− 1. We will show that Ai
+1Aj
+1 =
+Aj
+1Ai
+1 for any i, j = 1, ..., s.
+Assume that v = ( v1, ..., vt)tr ∈ Ct and ˜v = ( v1, ..., vt, 0, ..., 0
+ 
+n− t
+)tr ∈ Cn.
+Then clearly B˜v ∈ X and hence
+(Ai
+1Aj
+1)v = (˜Ai˜Aj)˜v = (B− 1B)(˜Ai˜Aj)(B− 1B)˜v = B− 1(B(˜Ai ˜Aj)B− 1)B˜v =
+= B− 1(AiAj)B˜v = B− 1(AjAi)B˜v = B− 1(B(˜Aj˜
+Ai)B− 1)B˜v =
+= (B− 1B)(˜Aj˜Ai)(B− 1B)˜v = ( ˜Aj˜Ai)˜v = (Aj
+1Ai
+1)v
+since Ai, Aj commute on X. This implies that (Ai
+1Aj
+1)er = ( Aj
+1Ai
+1)er for
+any vector er of the standard basis of Ct. Hence Ai
+1Aj
+1 = Aj
+1Ai
+1 and it
+follows by Lemma 2.2 that Ai
+1 have a common eigenvector w = (w1, ..., wt)tr.
+
+===== PAGE 7 =====
+
+Generalized Shemesh criterion 7
+This implies that B ˜w ∈ X is a common eigenvector of Ai, where ˜w =
+(w1, ..., wt, 0, ..., 0  
+n− t
+)tr. Thus u := B ˜w satisﬁes the required conditions. ✷
+Now we are ready to prove a generalization of [15, Theorem 3.1 ].
+Theorem 2.4. Assume that A1, ..., As ∈ Mn(C) and
+M(A1, ..., As) :=
+∞⋂
+ki,lj ≥ 0
+k1+k2+...+ks̸=0
+l1+l2+...+ls̸=0
+ker[Ak1
+1 ...Aks
+s , Al1
+1 ...Als
+s ].
+(1) The subspace M(A1, ..., As) is Ai-invariant for any i = 1, ..., s.
+(2) Matrices Ai have a common eigenvector if and only if
+M(A1, ..., As) ̸= 0.
+Proof. (1) If M(A1, ..., As) = 0 then clearly M(A1, ..., As) is Ai-invariant.
+Hence assume that M(A1, ..., As) ̸= 0 and let v ∈ M (A1, ..., As). We set
+Pv := {p(A1, ..., As)v|p ∈ C⟨x1, ..., xs⟩},
+where C⟨x1, ..., xs⟩ is a complex polynomial ring of s non-commutative
+variables x1, ..., xs. We will show that Pv ⊆ M (A1, ..., As) for any v ∈
+M(A1, ..., As).
+Assume that k1, ..., ks, l1, ..., ls ≥ 0. If k2 + ... + ks ̸= 0 and l1 + ... + ls ̸= 0,
+then
+(Ak1
+1 ...Aks
+s )(Al1
+1 ...Als
+s )v = Ak1
+1 [(Ak2
+2 ...Aks
+s )(Al1
+1 ...Als
+s )]v =
+= Ak1
+1 [(Al1
+1 ...Als
+s )(Ak2
+2 ...Aks
+s )]v = Ak1+l1
+1 [(Al2
+2 ...Als
+s )(Ak2
+2 ...Aks
+s )]v
+since v ∈ ker[Ak2
+2 ...Aks
+s , Al1
+1 ...Als
+s ].
+If k2 + ... + ks = 0 or l1 + ... + ls = 0 then also
+(Ak1
+1 ...Aks
+s )(Al1
+1 ...Als
+s )v = Ak1+l1
+1 [(Al2
+2 ...Als
+s )(Ak2
+2 ...Aks
+s )]v.
+Therefore a simple induction argument implies that
+(Ak1
+1 ...Aks
+s )(Al1
+1 ...Als
+s )v = (Ak1+l1
+1 ...Aks+ls
+1 )v
+for any k1, ..., ks, l1, ..., ls ≥ 0. It follows that if q ∈ C⟨x1, ..., xs⟩, then
+q(A1...As)v = (
+∑
+0≤ ti≤ deg(q)
+aq
+t1...tsAt1
+1 ...Ats
+s )v
+for some aq
+t1...ts ∈ C.
+
+===== PAGE 8 =====
+
+8 A. Jamiołkowski and G. Pastuszak
+Moreover,
+(Ak1
+1 ...Aks
+s )(Al1
+1 ...Als
+s )q(A1...As)v =
+= (Ak1
+1 ...Aks
+s )(Al1
+1 ...Als
+s )(
+∑
+0≤ ti≤ deg(q)
+aq
+t1...tsAt1
+1 ...Ats
+s )v =
+=
+∑
+0≤ ti≤ deg(q)
+aq
+t1...ts(Ak1
+1 ...Aks
+s )(Al1
+1 ...Als
+s )At1
+1 ...Ats
+s v =
+=
+∑
+0≤ ti≤ deg(q)
+aq
+t1...tsAt1+k1+l1
+1 ...Ats+ks+ls
+s v =
+=
+∑
+0≤ ti≤ deg(q)
+aq
+t1...ts(Al1
+1 ...Als
+s )(Ak1
+1 ...Aks
+s )At1
+1 ...Ats
+s v =
+= (Al1
+1 ...Als
+s )(Ak1
+1 ...Aks
+s )(
+∑
+0≤ ti≤ deg(q)
+aq
+t1...tsAt1
+1 ...Ats
+s )v =
+= (Al1
+1 ...Als
+s )(Ak1
+1 ...Aks
+s )q(A1...As)v
+and thus q(A1, ..., As)v ∈ ker[Ak1
+1 ...Aks
+s , Al1
+1 ...Als
+s ] for any q ∈ C⟨x1, ..., xs⟩
+and k1, ..., ks, l1, ..., ls ≥ 0.
+This implies that Pv ⊆ M (A1, ..., As) for any v ∈ M (A1, ..., As) and
+hence
+M(A1, ..., As) =
+⋃
+v∈M (A1,...,As)
+Pv.
+This shows that the subspace M(A1, ..., As) is Ai-invariant since clearly
+Pv is Ai-invariant, for any i = 1, ..., s.
+(2) ⇒ Assume that x ∈ Cn is a common eigenvector of Ai such that
+Aix = µix for some µi ∈ C. Then
+(Ak1
+1 ...Aks
+s )(Al1
+1 ...Als
+s )x = µk1+l1
+1 ...µks+ls
+s x = (Al1
+1 ...Als
+s )(Ak1
+1 ...Aks
+s )x
+hence x ∈ ker[Ak1
+1 ...Aks
+s , Al1
+1 ...Als
+s ] for any ki, lj ≥ 0. It follows that x ∈
+M(A1, ..., As) and M(A1, ..., As) ̸= 0.
+⇐ The subspace M(A1, ..., As) is Ai-invariant by (1). Moreover, if x ∈
+M(A1, ..., As), then x ∈ ker[Ai, Aj] for any i, j = 1 , ..., s and thus Ai com-
+mute on M(A1, ..., As). Since M(A1, ..., As) ̸= 0, it follows by Corollary 2.3
+that Ai have a common eigenvector v ∈ M (A1, ..., As). ✷
+Now our aim is to show that the condition
+M(A1, ..., As) ̸= 0
+is computable. To prove this fact we need the following two le mmas.
+Assume that A ∈ Mn(C) and fA ∈ C[x] is the characteristic polyno-
+mial of A. Recall that fA(A) = 0 by the renowned theorem of Cayley and
+Hamilton.
+
+===== PAGE 9 =====
+
+Generalized Shemesh criterion 9
+Lemma 2.5. Assume that A ∈ Mn(C) and t ≥ n. Then the matrix At is a
+linear combination of matrices 1n = A0, A1, ..., An− 1.
+Proof. Assume that fA(x) = xn +an− 1xn− 1+...+a1x+a0. Since fA(A) =
+0, we have An = − an− 1An− 1 − ... − a1A − a01n.
+Assume that t ≥ n and all matrices An, An+1, .., At are linear combina-
+tions of 1n, A, ..., An− 1. Then At+1 = AnAt− n+1 = − an− 1At − ...− a1At− n+2 −
+a0At− n+1 and hence At+1 is a linear combination of 1n, A, ..., An− 1. Thus the
+lemma follows by induction. ✷
+We denote by ⟨·|·⟩and || · ||the standard scalar product in Cn and the
+standard norm in Cn, respectively.
+Lemma 2.6. Assume that A, B ∈ Mn(C). Then
+ker(A∗A + B∗B) = ker A ∩ ker B.
+Proof. Assume that X = A∗A, Y = B∗B. Clearly ker A ∩ ker B ⊆
+ker(X + Y ) so it is suﬃcient to show that ker(X + Y ) ⊆ ker A ∩ ker B.
+Assume that α ∈ ker(X + Y ). Then Xα + Y α = 0 and hence (α)trXα +
+(α)trY α = 0. Observe that for any β ∈ Cn we have
+(β)trXβ = ⟨β|Xβ ⟩ = ⟨β|A∗Aβ⟩ = ⟨Aβ|Aβ⟩ = ||Aβ||2
+and similarly (β)trY β = ||Bβ ||2. This implies that X, Y are positive semi-
+deﬁnite and hence (α)trXα + (α)trY α = 0 yields that
+||Aα||2 = (α)trXα = 0 = ( α)trY α = ||Bα||2.
+In consequence, Aα = Bα = 0 and α ∈ ker A ∩ ker B. This shows that
+ker(X + Y ) ⊆ ker A ∩ ker B. ✷
+Corollary 2.7. Assume that A1, ..., As ∈ Mn(C). Then the following equal-
+ities holds.
+(1)
+M(A1, ..., As) =
+n− 1⋂
+ki,lj≥ 0
+k1+k2+...+ks̸=0
+l1+l2+...+ls̸=0
+ker[Ak1
+1 ...Aks
+s , Al1
+1 ...Als
+s ].
+(2) M(A1, ..., As) = ker K where
+K =
+n− 1∑
+ki,lj≥ 0
+k1+k2+...+ks̸=0
+l1+l2+...+ls̸=0
+[Ak1
+1 ...Aks
+s , Al1
+1 ...Als
+s ]∗[Ak1
+1 ...Aks
+s , Al1
+1 ...Als
+s ].
+
+===== PAGE 10 =====
+
+10 A. Jamiołkowski and G. Pastuszak
+Proof. (1) Assume that t1, ..., ts ≥ 0. It follows by Lemma 2.5 that
+At1
+1 ...Ats
+s is a linear combination of Ak1
+1 ...Aks
+s for some 0 ≤ ki ≤ n − 1.
+Moreover, observe that
+[A + B, C + D] = [ A, C] + [A, D] + [B, C] + [B, D]
+and hence
+ker[A, C] ∩ ker[A, D] ∩ ker[B, C] ∩ ker[B, D] ⊆ ker[A + B, C + D]
+for any A, B, C, D ∈ Mn(C). This implies what is required.
+(2) The equality follows by (1) and Lemma 2.6. ✷
+Proof of Theorem 1.2. (1) is a consequence of Theorem 2.4 (2) and Corol-
+lary 2.7 (1) whereas (2) of Corollary 2.7 (2). ✷
+Note that Theorem 1.2 provide us a computable condition veri ﬁng the
+existence of a common eigenvector of s ≥ 2 complex matrices A1, ..., As ∈
+Mn(C). The condition is a generalization of [15, Theorem 3.1] sinc e M(A, B) =
+N (A, B) for all A, B ∈ Mn(C), see Theorem 1.1.
+Indeed, it is easy to see from the proof of [15, Theorem 3.1] th at if
+v ∈ N (A, B), then
+(Ap1Bp2)(Aq1Bq2)v = (Ap1+q1Bp2+q2)v = (Aq1Bq2)(Ap1Bp2)v
+for all p1, p2, q1, q2 ≥ 0 and hence v ∈ ker[Ap1Bp2, Aq1Bq2]. This implies
+that N (A, B) ⊆ M (A, B) and since clearly M(A, B) ⊆ N (A, B), we get
+N (A, B) = M(A, B).
+3 Common invariant subspaces of higher di-
+mensions
+In Section 2 we proved a computable criterion that allows one to check
+whether there exists a common eigenvector of s ≥ 2 complex matrices
+A1, ..., As ∈ Mn(C), or equivalently, a common invariant subspace of di-
+mension 1.
+In this section we apply the above result to show a computable criterion
+for existence of a common invariant subspace of dimension d ≥ 2 of ma-
+trices A1, ..., As ∈ Mn(C), if any Ai has pairwise diﬀerent eigenvalues. Our
+approach bases on methods from [7] and [16].
+Moreover, we show that the set of all n × n complex matrices having at
+least one multiple eigenvalue is Lebesgue-measurable, and of measure zero.
+
+===== PAGE 11 =====
+
+Generalized Shemesh criterion 11
+This can can be interpret in the following way: if all matrice s A1, ..., As ∈
+Mn(C) are random then it should be expected that each one of them has
+pairwise diﬀerent eigenvalues. In consequence, the assump tion seems not to
+be so strong in practical applications.
+First we recall the deﬁnition of k-th compound of a matrix, see [11].
+Assume that n ≥ 1 and α, β ⊆ ⟨ n⟩, where ⟨s⟩ := {1, ..., s} for any s ∈ N.
+If A ∈ Mn(C), we denote by A[α|β] a submatrix of A composed from rows
+of A indexed by α and columns of A indexed by β.
+Assume that k ≤ n and
+Qk,n := {(i1, ..., ik) ∈ Nk|1 ≤ i1 < i 2 < ... < i k ≤ n}
+is the set of all k-tuples of elements from ⟨n⟩ ordered lexicographically.
+The k-th compound of A ∈ Mn(C) is deﬁned to be the matrix
+Ck(A) := [det A[α|β]]α,β∈ Qk,n ∈ M(n
+k)(C).
+The following theorem is implicitly contained in [16]. It ge neralizes [7,
+Theorem 2.2] and [7, Theorem 3.1] for the case of s complex matrices where
+s ≥ 2.
+Theorem 3.1. Assume that A1, ..., As ∈ Mn(C) are nonsingular, k ∈ N,
+2 ≤ k < n and Ck(A1), ..., Ck(As) have pairwise diﬀerent eigenvalues. Then
+Ai have a common invariant subspace of dimension k if and only if Ck(Ai)
+have a common eigenvector.
+Proof. Theorem follows easily from the proof of [16, Theorem 2.2]. ✷
+We can exchange assumptions of Theorem 3.1 for the assumptio n that
+A1, ..., As have pairwise diﬀerent eigenvalues. It can be easily conclu ded from
+the proposition below which is essentially the same as [7, Le mma 2.4].
+Proposition 3.2. Assume that A ∈ Mn(C) has pairwise diﬀerent eigenval-
+ues, k ∈ N and 2 ≤ k < n . Then there is t ∈ { 0, ..., p} where
+p =
+( n
+k
+)
+(
+( n
+k
+)
+− 1)
+2 (k − 1)
+such that A − t1n is nonsingular and Ck(A − t1n) has pairwise diﬀerent
+eigenvalues.
+Proof. It follows by [7, Lemma 2.4] that there is t ∈ { 0, ..., p} where
+p =
+( n
+k
+)
+(
+( n
+k
+)
+− 1)
+2 (k − 1)
+
+===== PAGE 12 =====
+
+12 A. Jamiołkowski and G. Pastuszak
+such that Ck(A − t1n) has pairwise diﬀerent eigenvalues. All eigenvalues of
+Ck(A − t1n) are of the form (t − λi1)(t − λi2)...(t − λik) where 1 ≤ i1 <
+i2 < ... < i k ≤ n and λ1, λ2, ..., λn are eigenvalues of A, see [7, Theorem 2.1
+(7)]. This implies that t is not an eigenvalue of A since otherwise it is clear
+that 0 is a multiple eigenvalue of Ck(A − t1n). Hence det(A − t1n) ̸= 0 and
+A − t1n is nonsingular. ✷
+Corollary 3.3. Assume that A1, ..., As ∈ Mn(C) have pairwise diﬀerent
+eigenvalues and k ∈ N, 2 ≤ k < n .
+(1) There are t1, ..., ts ∈ { 0, ..., p} where
+p =
+( n
+k
+)
+(
+( n
+k
+)
+− 1)
+2 (k − 1)
+such that ˜Ai := Ai − ti1n are nonsingular and Ck(˜Ai) have pairwise diﬀerent
+eigenvalues.
+(2) The matrices A1, ..., As ∈ Mn(C) have a common invariant subspace
+of dimension k if and only if Ck(˜Ai) have a common eigenvector.
+(3) The matrices A1, ..., As ∈ Mn(C) have a common invariant subspace
+of dimension k if and only if ker K ̸= 0 where
+K =
+n− 1∑
+ki,lj≥ 0
+k1+k2+...+ks̸=0
+l1+l2+...+ls̸=0
+[X k1
+1 ...X ks
+s , Xl1
+1 ...X ls
+s ]∗[X k1
+1 ...X ks
+s , Xl1
+1 ...X ls
+s ]
+and Xi := Ck(˜Ai) for i = 1, ..., s.
+Proof. (1) follows by Proposition 3.2. (2) follows by (1), Theorem 3 .1
+and a simple fact that Ai have a common invariant subspace W if and only
+if Ai − qi1n have a common invariant subspace W , for any W ⊆ Cn and
+qi ∈ C. (3) follows by (2) and Theorem 1.2. ✷
+Now we propose a ﬁnite and deterministic algorithm veriﬁng t he ex-
+istence of a common invariant subspace of A1, ..., As ∈ Mn(C) of a ﬁxed
+dimension d provided every Ai has pairwise diﬀerent eigenvalues.
+Recall ﬁrst that the discriminant disc(f ) of a polynomial f ∈ C[x] is,
+by the deﬁnition, the resultant of f and f ′ where f ′ denotes the formal
+derivative of f , see [12, Chapter IV], Section 8.
+It is commonly known that disc (f ) = 0 if and only if f has a multiple
+root. Obviously, the condition disc (f ) = 0 is computable.
+
+===== PAGE 13 =====
+
+Generalized Shemesh criterion 13
+Algorithm. Input: A1, ..., As ∈ Mn(C) having pairwise diﬀerent eigen-
+values and d ∈ { 1, ..., n − 1}. Output: ’yes’ if there is a common invariant
+subspace of dimension d and ’no’ otherwise.
+1. If d = 1, compute M(A1, ..., As) and check whether M(A1, ..., As) ̸= 0
+using Theorem 1.2. If M(A1, ..., As) ̸= 0 , print ’yes’, otherwise print
+’no’.
+2. If d ≥ 2, compute p = (n
+d)((n
+d)− 1)
+2 (d − 1) and ti ∈ { 0, ..., p} such that
+det(˜Ai) ̸= 0 and disc (fi) ̸= 0 where ˜Ai := A − ti1n and fi denotes the
+characteristic polynomial of Cd(˜Ai). Go to the step 3.
+3. Compute ker K where the matrix K is the matrix from Corollary 3.3
+(3). If ker K ̸= 0, print ’yes’, otherwise print ’no’. ✷
+The correctness of the above algorithm follows from Theorem 1.2 and
+Corollary 3.3.
+Our next aim is to show that the set of all complex n× n matrices having
+at least one multiple eigenvalue is Lebesgue-measurable, a nd of measure
+zero. We set the following notation.
+We identify the linear space Mn(C) of all complex n× n matrices with Cn2
+which is a measurable space with the Lebesgue measure induce d from R2n2
+,
+see [8, Chapter I] for details. Hence the space Mn(C) becomes a measurable
+space with the same Lebesgue measure as the one on R2n2
+. We denote this
+measure by Ln.
+Assume that A = [aij]i,j=1,...,n ∈ Mn(C) and fA(t) = det( A − t1n) ∈ C[t]
+is the characteristic polynomial of A. Although the discriminant disc (fA) of
+fA is a complex number, it is clear that it can be viewed as a polyn omial of
+n2 variables aij with integer coeﬃcients.
+Hence we deﬁne disc n ∈ Z[(xij)i,j=1,...,n] in such a way that
+discn((aij)i,j=1,...,n) = disc(fA)
+for any A = [aij]i,j=1,...,n ∈ Mn(C).
+Observe that the set
+Zn := {A = [aij]i,j=1,...,n ∈ Cn2
+|discn((aij)i,j=1,...,n) = 0 }
+represents the set of all complex n × n matrices having at least one multiple
+eigenvalue.
+Proposition 3.4. The set Zn is Lebesgue-measurable and Ln(Zn) = 0 .
+
+===== PAGE 14 =====
+
+14 A. Jamiołkowski and G. Pastuszak
+Proof. Clearly, disc n viewed as a complex function is measurable and
+holomorphic in Cn2
+. Moreover, disc n is not identically zero since there are
+matrices with pairwise diﬀerent eigenvalues. Hence [8, Cha pter I, Corollary
+10] yields Ln(Zn) = 0 . ✷
+4 An application to completely positive super-
+operators
+This section is devoted to show an application of our results in the theory of
+completely positive superoperators deﬁned on a ﬁnite-dime nsional complex
+Hilbert space, see [9], [10].
+Assume that H is a complex Hilbert space and B(H) is the set of all
+linear continouous operators on H. It is commonly known that B(H) is
+equipped with the structure of a Banach space. As it was menti oned in
+Section 1, a linear and continouous map Φ : B(H) → B(H) on B(H) is
+called a superoperator.
+Assume that H is a complex ﬁnite-dimensional Hilbert space and dim(H) =
+n. A superoperator Φ : B(H) → B(H) on B(H) of the form
+Φ(X) =
+s∑
+i=1
+KiXK ∗
+i ,
+where Ki ∈ B(H) is completely positive. Such operators play a prominent
+role in quantum information theory, see [9], [10] for detail s.
+The operators K1, ..., Ks ∈ B(H) in the above formula are called the
+Kraus coeﬃcients of Φ. Clearly, they can be viewed as arbitrary n × n
+complex matrices and also can be treated as objects that deﬁn e Φ.
+Important subclass of the class of all completely positive s uperoperators
+is formed by irreducible completely positive superoperators, see [6] for the
+deﬁnitions. The following theorem connects irreducible co mpletely positive
+superoperators with the subject matter of the paper.
+Theorem 4.1. (see [6]) Assume that H is a complex ﬁnite-dimensional
+Hilbert space and Φ : B(H) → B(H) is a completely positive superoperator
+on B(H) such that Φ(X) = ∑s
+i=1 KiXK ∗
+i . Then Φ is irreducible if and only
+if the matrices Ki do not have a nontrivial common invariant subspace in
+H. ✷
+In view of Theorem 4.1 we can apply the algorithm presented in Section
+3 to check whether given completely positive superoperator Φ is irreducible,
+
+===== PAGE 15 =====
+
+Generalized Shemesh criterion 15
+if its Kraus coeﬃcients do not have a multiple eigenvalue. Mo reover, Propo-
+sition 3.4 yields that such a situation should be quite commo n in practical
+applications.
+
+===== PAGE 16 =====
+
+16 A. Jamiołkowski and G. Pastuszak
+References
+[1] Yu. Alpin, A. George, Kh.D. Ikramov, Solving the two dime nsional CIS
+problem by a rational algorithm, Linear Algebra and its Applications 312
+(2000) 115-123.
+[2] Yu. Alpin, Kh.D. Ikramov, Rational procedures in the pro blem of com-
+mon invariant subspaces of two matrices, Journal of Mathematical Sci-
+ences Vol. 114, No. 6 (2003), 1757–1764.
+[3] D. Arapura, Ch. Peterson, The common invariant subspace problem:
+an approach via Grobner bases, Linear Algebra and its Applications 384
+(2004), 1–7.
+[4] M.P. Drazin, Some generalizatins of matrix commutativi ty, Proc. Lon-
+don Math. Soc. (3) 1 (1951), 222–231.
+[5] M.P. Drazin, J.W. Dugney, K.W. Gruenberg, Some theorems on com-
+mutative matrices, Journal London Math. Soc. 26 (1951), 221–228.
+[6] D.R. Farenick, Irreducible positive linear maps on oper ator algebras,
+Proc. Amer. Math. Soc. 124 (11) (1996), 3381–3390.
+[7] A. George, Kh.D. Ikramov, Common invariant subspaces of two matri-
+ces, Linear Algebra and its Applications 287 (1999), 171–179.
+[8] R.C. Gunning, H. Rossi, Analytic Functions of Several Complex Vari-
+ables, Prentice-Hall Series in Modern Analysis, 1965.
+[9] T. Heinosaari, M. Ziman, The Mathematical Language of Quantum The-
+ory, Cambridge Univ. Press, 2012.
+[10] A. Jamiołkowski, Eﬀective methods in investigation of irreducible
+quantum operations, Int. J. Geom. Methods Mod. Phys. 9, No. 2, Pa-
+per No. 14, 8 p. (2012).
+[11] T.J. Laﬀey, Simultaneous triangularization of matric es – low rank cases
+and the nonderogatory case, Linear and Multilinear Algebra 6 (1978) 269–
+305.
+[12] S. Lang, Algebra. Revised Third Edition , Springer, GTM 211, 2002.
+[13] N.H. McCoy, On quasi-commutative matrices, Trans. American Math.
+Soc. 36 (1934), 327–340.
+
+===== PAGE 17 =====
+
+Generalized Shemesh criterion 17
+[14] R.S. Pierce, Associative Algebras, Springer-Verlag, 1982.
+[15] D. Shemesh, Common eigenvectors of two matrices, Linear Algebra and
+its Applications 62 (1984), 11–18.
+[16] M. Tsatsomeros, A criterion for the existence of common invariant sub-
+spaces of matrices, Linear Algebra and its Applications 322 (2001), 51–59.
+Andrzej Jamiołkowski
+Faculty of Physics, Astronomy and Informatics
+Nicolaus Copernicus University
+Grudziądzka 5
+87-100 Toruń, Poland
+jam@ﬁzyka.umk.pl
+Grzegorz Pastuszak
+Center for Theoretical Physics of the Polish Academy of Scie nces
+Al. Lotników 32/46
+02-668 Warszawa, Poland
+past@mat.umk.pl

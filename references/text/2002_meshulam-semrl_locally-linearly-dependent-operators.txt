@@ -1,0 +1,926 @@
+===== PAGE 1 =====
+
+Paciﬁc
+Journal of
+Mathematics
+LOCALL Y LINEARL Y DEPENDENT OPERA TORS
+Roy Meshulam and Peter ˇSemrl
+Volume 203 No. 2 April 2002
+
+===== PAGE 2 =====
+
+PACIFIC JOURNAL OF MATHEMATICS
+Vol. 203, No. 2, 2002
+LOCALL Y LINEARL Y DEPENDENT OPERA TORS
+Roy Meshulam and Peter ˇSemrl
+Let U and V be vector spaces over a ﬁeld F. Linear op-
+erators T1, . . . , Tn : U → V are locally linearly dependent
+if T1u, . . . , Tnu are linearly dependent for every u ∈ U . W e
+extend and unify known results on locally linearly dependent
+operators and present two applications of these new results,
+one in algebra and one in functional analysis.
+1. Introduction.
+Let T be a linear operator deﬁned on a complex vector space X and let n
+be a positive integer. Kaplansky [ 4] proved that T is algebraic of degree at
+most n if and only if for every x ∈ X the vectors x, T x, . . . , T nx are linearly
+dependent. One consequence of Kaplansky’s result is that if X is a Banach
+space and T : X → X a bounded linear operator, then T is algebraic if and
+only if for every x ∈ X there exists a positive integer n (depending on x)
+such that x, T x, . . . , T nx are linearly dependent.
+Let U and V be vector spaces over a ﬁeld F. Linear operators T1, . . . , T n :
+U → V are locally linearly dependent if T1u, . . . , T nu are linearly dependent
+for every u ∈ U . In view of Kaplansky’s result it is natural to study the
+global consequences of local dependence. Amitsur [ 1] proved that for every
+n-tuple of locally linearly dependent operators T1, . . . , T n : U → V there
+exist scalars α1, . . . , α n, not all zero, such that S = α1T1 + . . . + αnTn
+satisﬁes
+rank S ≤
+( n + 1
+2
+)
+− 1.
+Aupetit [ 2, p. 87] proved that if U and V are complex vector spaces then S
+can be chosen so that
+rank S ≤ n − 1.
+It is easy to see that this estimate is sharp (see [ 3]). Breˇ sar and ˇSemrl [ 3]
+extended Aupetit’s result to the case where F is an arbitrary inﬁnite ﬁeld.
+We will show that the same conclusion holds also for ﬁnite ﬁelds.
+For technical reasons it is sometimes convenient to deal with the linear
+spaces spanned by n-tuples of locally linearly dependent operators. For
+linear spaces U and V over a ﬁeld F we denote by L(U, V ) the set of all
+linear operators from U into V . In case U = V we write L(U ) = L(U, U ). A
+subspace S ⊂ L (U, V ) is locally linearly dependent if for every u ∈ U there
+441
+
+===== PAGE 3 =====
+
+442 ROY MESHULAM AND PETER ˇSEMRL
+exists a nonzero S ∈ S such that Su = 0. In Section 2 we prove that if S
+is an n-dimensional locally linearly dependent subspace of L(U, V ) then S
+contains a nonzero operator of rank at most n − 1. When F has at least
+n + 2 elements we give a stronger result: If S contains an operator of rank at
+least n, then S must contain a nonzero operator of rank at most n − 2. We
+also show that if F is inﬁnite and S ⊂ L (U ) is a locally linearly dependent
+n-dimensional space of pairwise commuting operators, then S contains a
+nonzero square-zero operator of rank at most n − 1.
+Let X and Y be (real or complex) Banach spaces. We denote by B(X, Y )
+and BF (X, Y ) the set of all linear bounded operators from X into Y and the
+set of all linear bounded ﬁnite rank operators from X into Y , respectively.
+If S ⊂ B (X, Y ) is a linear subspace then we write SF = S ∩ B F (X, Y )
+and we say that a linear subspace is nontrivial if it contains nonzero ele-
+ments. M¨ uller [7] extended the second part of Kaplansky’s result on locally
+algebraic operators by proving that if S ⊂ B (X, Y ) is a locally linearly de-
+pendent space of countable dimension then SF is nontrivial. Breˇ sar and
+ˇSemrl [ 3] provided a short proof of this statement. Larson [ 5] proved that
+if S ⊂ B (X, Y ) is a locally linearly dependent subspace of countable dimen-
+sion satisfying a certain “ﬁnite dimensional support” condition then SF is
+nontrivial and locally linearly dependent. We will unify and extend these
+results.
+It turns out that some of the results in Section 2 do not depend on the
+linearity of the space S but rather on S being an algebraic set. We brieﬂy
+remark on these nonlinear extensions in Section 3.
+We believe that problems concerning locally linearly dependent operators
+are interesting by themselves. However, they are also important because of
+applications. Amitsur studied them in order to obtain results on rings satis-
+fying generalized polynomial identities [ 1]. Larson’s motivation for studying
+them were problems concerning reﬂexivity and linear interpolation [ 5], while
+Breˇ sar andˇSemrl used the results on locally linearly dependent operators to
+characterize commuting pairs of continuous derivations d, g of a Banach al-
+gebra A with the property that ( dg)(x) is quasi-nilpotent for every x ∈ A [3].
+In the last section our new results will be applied to obtain an improvment of
+Amitsur’s result on rings satisfying generalized polynomial identities and to
+get a shorter proof of the above mentioned result on derivations. Recall that
+a linear mapping d : A → A is called a derivation if d(xy) = xd(y) + d(x)y
+for all x, y ∈ A.
+Let us ﬁx the notation. If A is any ﬁnite set then |A|denotes its cardinal-
+ity. For a nonzero vector u belonging to a vector space U we denote by [ u]
+the one-dimensional space spanned by u. Finally, PU = {[u] : u ∈ U \ {0} }
+denotes the projective space of U .
+
+===== PAGE 4 =====
+
+LOCALLY LINEARLY DEPENDENT OPERATORS 443
+2. Locally linearly dependent operators.
+We begin this section with a statement which will help us reduce some prob-
+lems concerning locally linearly dependent operators to the ﬁnite-dimensio-
+nal case.
+Proposition 2.1. Let U and V be vector spaces over a ﬁeld F, S an n-di-
+mensional subspace of L(U, V ), and k a positive integer. Then there exists
+a positive integer t ≤
+( k+n− 1
+k
+)
+and rank k idempotents P1, . . . , P t ∈ L (U )
+and Q1, . . . , Q t ∈ L (V ) such that every T ∈ S of rank at least k satisﬁes
+rank (QiT Pi) = k for some i, 1 ≤ i ≤ t.
+Proof. Let {uα }α ∈I and {vβ }β∈J be ﬁxed Hamel bases of U and V , respec-
+tively. Operators in L(U, V ) will be identiﬁed with matrices with respect
+to these two bases. To each subset I0 ⊂ I with |I0| = k we can asso-
+ciate an idempotent whose range is span {uα }α ∈I0 and whose null space
+is span {uα }α ∈I\ I0. So, to prove our statement, it suﬃces to ﬁnd subsets
+I1, . . . , I t ⊂ I, J1, . . . , J t ⊂ J, each of cardinality k, such that for every
+T ∈ S of rank at least k we have det T [Ji|Ii] ̸= 0 for some i, 1 ≤ i ≤ t. Here
+T [Ji|Ii] denotes the k × k submatrix of T determined by Ji × Ii.
+The subsets {Ii}t
+i=1 and {Ji}t
+i=1 are constructed inductively as follows:
+Suppose {Ii}l
+i=1 and {Ji}l
+i=1 have already been chosen. If for any T ∈ S
+with rank T ≥ k there exists an i, 1 ≤ i ≤ l, such that det T [Ji|Ii] ̸= 0 then
+let t = l. Otherwise there is an Tl+1 ∈ S with rank at least k such that
+det Tl+1[Ji|Ii] = 0 for all i = 1 , . . . , l . We can ﬁnd Il+1 ⊂ I and Jl+1 ⊂ J,
+both of cardinality k, such that det Tl+1[Jl+1|Il+1] ̸= 0.
+Let S1, . . . , S n be a basis of S and deﬁne for every positive integer l ≤ t
+(apriori t might be inﬁnite) a homogeneous polynomial fl of degree k by
+fl(x1, . . . , x n) = det
+( n∑
+i=1
+xiSi[Jl|Il]
+)
+.
+Let al = (al1, . . . , a ln) be coordinates of Tl with respect to the basis {S1, . . . ,
+Sn}, that is, Tl =∑n
+i=1 aliSi. It follows from our inductive construction that
+fl(al) ̸= 0, 1 ≤ l ≤ t, and fl(al′) = 0 whenever l′ > l . Consequently, the
+polynomials {fl}t
+l=1 are linearly independent: If ∑t
+l=1 λlfl = 0 is a nontrivial
+linear dependence and l′= max{l : λl ̸= 0} then
+0 =
+t∑
+l=1
+λlfl(al′) = λl′fl′(al′) ̸= 0,
+a contradiction. Since the dimension of the space of all homogenous poly-
+nomials of degree k in n variables is
+( k+n− 1
+k
+)
+, we have t ≤
+( k+n− 1
+k
+)
+as de-
+sired. □
+
+===== PAGE 5 =====
+
+444 ROY MESHULAM AND PETER ˇSEMRL
+We now prove that every n-dimensional locally linearly dependent space
+contains a nonzero operator of rank at most n − 1. In fact, we will prove a
+slightly stronger result. An n-dimensional subspace S ⊂ L (U, V ) is locally
+linearly dependent if dim Su = dim {Su : S ∈ S} ≤ n − 1 for every u ∈ U .
+We say that S ⊂ L (U, V ) is c-locally linearly dependent if dim Su ≤ n − c
+for every u ∈ U .
+Theorem 2.2. Let U and V be vector spaces over a ﬁeld F and let n, c
+be positive integers with c ≤ n − 1. If S ⊂ L (U, V ) is a c-locally linearly
+dependent subspace of dimension n then there exists a nonzero S ∈ S such
+that rank S ≤ n − c.
+Proof. In the case that F is an inﬁnite ﬁeld the proof is a direct adaptation of
+the argument for the c = 1 case due to Breˇ sar and ˇSemrl [ 3]. By induction
+we may assume that dim Su = n − c for some u ∈ U . So, there exists
+0 ̸= S ∈ S such that Su = 0. We will complete the proof of this case by
+showing that the range of S is contained in Su. Suppose to the contrary
+that Sv ̸∈ Su for some v ∈ U . Let S1 be an ( n − c)-dimensional subspace
+of S such that S1u = Su. Then, by [ 3, Lemma 2.1] we can ﬁnd a nonzero
+scalar α such that
+dim S1(u + αv) = n − c and Sv ̸∈ S1(u + αv).
+Then S(u + αv) = αSv ̸∈ S1(u + αv), and consequently, dim S(u + αv) ≥
+n − c + 1, a contradiction.
+Assume now that F is a ﬁnite ﬁeld and U is ﬁnite dimensional. Denote
+|F|= q and dim U = m. Let
+Z = {([u], [S]) ∈ PU × PS : Su = 0}.
+On one hand, for every u ∈ U we have dim {S ∈ S : Su = 0} ≥ c hence
+|Z|=
+∑
+[u]∈PU
+|{[S] : Su = 0}| ≥ |PU |qc − 1
+q − 1 .
+On the other hand, let r = min{rank S : S ∈ S \ {0}}. Then the null space
+of every nonzero S ∈ S is at most ( m − r)-dimensional therefore
+|Z|=
+∑
+[S]∈PS
+|{[u] : Su = 0}| ≤ |PS|qm− r − 1
+q − 1 .
+Comparing these two inequalities we obtain (qm− 1)(qc− 1) ≤ (qn− 1)(qm− r−
+1). If m = dim U ≤ n − c then rank S ≤ n − c for all S ∈ S . Otherwise
+
+===== PAGE 6 =====
+
+LOCALLY LINEARLY DEPENDENT OPERATORS 445
+m ≥ n − c + 1 hence
+qm− r > q m− r − 1 ≥ (qm − 1)(qc − 1)
+qn − 1
+= (qm − 1)(qc − 1)
+qm+c− 1 − 1
+qm+c− 1 − 1
+qn − 1
+≥ (qm − 1)(qc − 1)
+qm+c− 1 − 1 qm+c− n− 1 ≥ (q − 1)qm+c− n− 1 ≥ qm+c− n− 1.
+It follows that r ≤ n − c.
+It remains to consider the case that F is a ﬁnite ﬁeld and U an inﬁnite
+dimensional vector space. Assume that rank S ≥ n − c + 1 for all nonzero
+operators S ∈ S . Applying Proposition 2.1 with k = n − c + 1 we obtain
+ﬁnitely many idempotents P1, . . . , P t ∈ L (U ) of rank n − c + 1 such that
+for every nonzero S ∈ S there exists an i, 1 ≤ i ≤ t, such that rank SPi =
+n − c + 1. Let U ′=∑t
+i=1 PiU and for S ∈ S let S′∈ L (U ′, V ) denote the
+restriction of S to U ′. It follows that S ′= {S′ : S ∈ S} is an n-dimensional
+c-locally linearly dependent subspace of L(U ′, V ) and rank S′ ≥ n − c + 1
+for all nonzero S′∈ S ′, contradicting the ﬁnite-dimensional case. □
+For a subspace S ⊂ L (U, V ) we denote by SF the space of all ﬁnite rank
+operators in S. Larson [ 5, Proposition 2.3] proved that if S is ﬁnite di-
+mensional locally linearly dependent, then SF is a nontrivial locally linearly
+dependent subspace. Combining this with Theorem 2.2 we get the following
+result.
+Corollary 2.3. Let U and V be vector spaces over a ﬁeld F. If S ⊂ L (U, V )
+is a locally linearly dependent ﬁnite dimensional subspace then there exists
+a nonzero S ∈ S such that rank S ≤ dim SF − 1.
+Theorem 2.2 can be improved for suﬃciently large ﬁelds. For simplicity
+we only consider the c = 1 case.
+Theorem 2.4. Let n be a positive integer and let F be a ﬁeld with at least
+n + 2 elements. Suppose that U and V are vector spaces over F and S ⊂
+L(U, V ) is an n-dimensional locally linearly dependent space of operators. If
+S contains an operator of rank at least n then there is a nonzero S ∈ S such
+that rank S ≤ n − 2.
+Proof. By an application of Proposition 2.1 we may assume that U and V
+are ﬁnite dimensional. We will identify U with Fm, V with Fp, and L(U, V )
+with Mp× m(F), the space of all p × m matrices. There is no loss of generality
+in assuming that m > n .
+To illustrate our approach we ﬁrst give a simple proof of the theorem for
+an algebraically closed ﬁeld F. Consider the projective algebraic variety
+Z = {([u], [S]) ∈ PU × PS : Su = 0}
+
+===== PAGE 7 =====
+
+446 ROY MESHULAM AND PETER ˇSEMRL
+and let π1, π 2 denote the projections of Z into PU and PS respectively. Since
+S is locally linearly dependent the projection π1 is surjective, hence
+dim Z ≥ dim PU.(1)
+Let Z0 be an irreducible component of Z of maximal dimension then
+dim Z = dim Z0 = dim π2(Z0) + min{dim π− 1
+2 ([S]) : [ S] ∈ π2(Z0)}(2)
+= dim π2(Z0) + dim PU − max{rank S : [ S] ∈ π2(Z0)}.
+Combining ( 1) and ( 2) we obtain
+max{rank S : [ S] ∈ π2(Z0)} ≤ dim π2(Z0).
+If π2(Z0) = PS then max {rank S : S ∈ S} ≤ dim PS = n − 1, contradicting
+our assumptions. Therefore, π2(Z0) ̸= PS, hence
+max{rank S : [ S] ∈ π2(Z0)} ≤ dim π2(Z0) ≤ n − 2.
+The proof of Theorem 2.4 for general inﬁnite ﬁelds uses a similiar idea:
+We will show that if S contains an operator of rank ≥ n then both U1 =⋃
+rankS≥ n P(ker S) and U2 = ⋃
+rankS=n− 1 P(ker S) are contained in proper
+algebraic subsets of PU . Since F is inﬁnite it will follow that there exists a
+[u] ∈ PU − (U1 ∪ U2). Let 0 ̸= S ∈ S such that Su = 0 then rank S ≤ n − 2.
+We need some preliminaries.
+Claim 1. Let x = ( x1, . . . , x n), y = ( y1, . . . , y m− n) be variables and let
+fst(x), 1 ≤ s ≤ m, 1 ≤ t ≤ m − n, be homogeneous polynomials of the same
+degree. Then there exists a nonzero homogeneous polynomial P (z1, . . . , z m)
+such that
+P
+( m− n∑
+t=1
+f1t(x)yt, . . . ,
+m− n∑
+t=1
+fmt(x)yt
+)
+= 0.(3)
+Proof. Introduce new variables ξ = ( ξ1, . . . , ξ m− n− 1) and for 1 ≤ i ≤ m let
+Fi(x, y ) = ∑m− n
+t=1 fit(x)yt, Gi(x, ξ ) = ∑m− n− 1
+t=1 fit(x)ξt + fi,m − n(x). Since
+G1(x, ξ ), . . . , G m(x, ξ ) are polynomials in m − 1 variables there exists a
+nonzero polynomial R(z1, . . . , z m) = ∑
+γ rγzγ (where γ = ( γ1, . . . , γ m),
+zγ = zγ1
+1 · · ·zγm
+m ) such that R(G1(x, ξ ), . . . , G m(x, ξ )) = 0. Write |γ| =∑m
+i=1 γi and let N = max {|γ|: rγ ̸= 0 }. By substituting ξi = yi/y m− n for
+1 ≤ i ≤ m − n − 1 it is easy to check that P (z1, . . . , z m) = ∑
+|γ|=N rγzγ
+satisﬁes P (F1(x, y ), . . . , F m(x, y )) = 0. □
+Claim 2. Let x = ( x1, . . . , x n), y = ( y1, . . . , y m− n+1) be variables and let
+fst(x), 1 ≤ s ≤ m, 1 ≤ t ≤ m − n + 1, be homogeneous polynomials of
+the same degree. Then for any nonzero homogenous polynomial g(x) there
+
+===== PAGE 8 =====
+
+LOCALLY LINEARLY DEPENDENT OPERATORS 447
+exists a nonzero homogeneous polynomial Q(z) ∈ F[z1, . . . , z m] such that
+Q
+( m− n+1∑
+t=1
+f1t(a)yt, . . . ,
+m− n+1∑
+t=1
+fmt(a)yt
+)
+= 0 (4)
+for any a ∈ Fn which satisﬁes g(a) = 0 .
+Proof. Introduce new variables ξ = ( ξ1, . . . , ξ m− n) and for 1 ≤ i ≤ m let
+Fi(x, y ) =∑m− n+1
+t=1 fit(x)yt, Gi(x, ξ ) =∑m− n
+t=1 fit(x)ξt + fi,m − n+1(x). Since
+G1(x, ξ ), . . . , G m(x, ξ ), g (x) are m + 1 polynomials in m variables there exist
+polynomials Q0(z), . . . , Q k(z) ∈ F[z1, . . . , z m], not all of them zero, such
+that ∑k
+i=0 Qi(G1(x, ξ ), . . . , G m(x, ξ ))g(x)i = 0. Since g(x) is homogenous
+and nonzero we may assume that all the Qi’s are homogenous and Q0(z) ̸=
+0. As in Claim 1 it can be checked that Q0(F1(a, y ), . . . , F m(a, y )) = 0
+whenever g(a) = 0. □
+For an integer t, 1 ≤ t ≤ min{p, m }, we deﬁne At = {(I, J ) : I ⊂
+{1, . . . , p }, J ⊂ { 1, . . . , m }, |I|= |J|= t}. Let S1, . . . , S n be a basis of S
+and denote S(x) = S(x1, . . . , x n) =∑n
+i=1 xiSi.
+Claim 3. For any (I, J ) ∈ An there exists a nonzero homogeneous form
+PIJ (z) ∈ F[z1, . . . , z m] such that if a ∈ Fn and u ∈ Fm satisfy S(a)u = 0
+then
+PIJ (λu) = 0 (5)
+where λ = det S(a)[I|J].
+Proof. We may assume that I = {1, . . . , n } , J = {m − n + 1, . . . , m }. By
+Cramer’s rule for any m− n+1 ≤ i ≤ m there exist homogenous polynomials
+fij(x) , 1 ≤ j ≤ m− n, of degree n such that for any a ∈ Fn and u ∈ ker S(a)
+det S(a)[I|J]ui =
+m− n∑
+j=1
+fij(a)uj.(6)
+By deﬁning fij(x) = δij det S(x)[I|J] for 1 ≤ i, j ≤ m − n, Equation ( 6)
+becomes valid for all 1 ≤ i ≤ m. According to Claim 1 there exists a nonzero
+homogenous polynomial P (z1, . . . , z m) which satisﬁes ( 3). Combining ( 6)
+and ( 3) it follows that P (det S(a)[I|J]u) = 0 whenever S(a)u = 0. □
+Claim 4. For every nonzero homogenous polynomial g(x) ∈ F[x1, . . . , x n]
+and every (I ′, J ′) ∈ An− 1 there exists a nonzero homogeneous form QI ′J ′(z)
+∈ F[z1, . . . , z m] such that if a ∈ Fn, u ∈ Fm satisfy g(a) = 0 and S(a)u = 0
+then
+QI ′J ′(λu) = 0 (7)
+where λ = det S(a)[I ′|J ′].
+
+===== PAGE 9 =====
+
+448 ROY MESHULAM AND PETER ˇSEMRL
+Proof. Let I ′ = {1, . . . , n − 1} , J ′ = {m − n + 2, . . . , m }. As in Claim 3
+there exist homogenous polynomials fij(x) , 1 ≤ i ≤ m , 1 ≤ j ≤ m − n + 1
+of degree n − 1 such that if a ∈ Fn , u ∈ Fm satisfy S(a)u = 0 then for all
+1 ≤ i ≤ m
+det S(a)[I ′|J ′]ui =
+m− n+1∑
+j=1
+fij(a)uj.(8)
+By Claim 2 there exists a homogenous polynomial Q(z1, . . . , z m) which satis-
+ﬁes (4) if g(a) = 0. Combining ( 8) and ( 4) it follows that Q(det S(a)[I ′|J ′]u)
+= 0 whenever S(a)u = 0 and g(a) = 0. □
+Now we are ready to prove the Theorem for inﬁnite ﬁelds. Let {PIJ (z) :
+(I, J ) ∈ An}be the forms determined by Claim 3. Suppose that rank S0 ≥ n
+for some S0 ∈ S . Then there exists an ( I0, J 0) ∈ An such that rank S0[I0|J0]
+= n. Let g(x) = det( S(x)[I0|J0]). Clearly, g(x) is a nonzero homoge-
+nous form in F[x1, . . . , x n]. Let {QI ′J ′(z) : ( I ′, J ′) ∈ An− 1} be the forms
+determined by Claim 4 and the above g(x). For any homogenous form
+R(z) ∈ F[z1, . . . , z m] let V (R) = {[u] ∈ PU : R(u) = 0 } denote the projec-
+tive zero set of R(z).
+Let 0 ̸= a ∈ Fn. If rank S(a) ≥ n then there exists an ( I, J ) ∈ An such
+that det( S(a)[I|J]) ̸= 0. Hence, by ( 5), PIJ (u) = 0 for any u which satisﬁes
+S(a)u = 0. It follows that
+⋃
+{a∈Fn : rank S(a)≥ n}
+P(ker S(a)) ⊂
+⋃
+(I,J )∈An
+V (PIJ ).(9)
+If on the other hand rank S(a) = n − 1 then there exists an ( I ′, J ′) ∈
+An− 1 such that det( S(a)[I ′|J ′]) ̸= 0. Since g(a) = 0 it follows by ( 7) that
+QI ′J ′(u) = 0 for any u ∈ ker S(a). Therefore
+⋃
+{a∈Fn : rank S(a)=n− 1}
+P(ker S(a)) ⊂
+⋃
+(I ′,J ′)∈An− 1
+V (QI ′J ′).(10)
+Let
+R(z) =
+∏
+(I,J )∈An
+PIJ (z)
+∏
+(I ′,J ′)∈An− 1
+QI ′J ′(z) .
+Combining ( 9) and ( 10) we obtain
+⋃
+{a∈Fn : rank S(a)≥ n− 1}
+P(ker S(a)) ⊂ V (R).
+Since R(z) is a nonzero homogenous form and F is inﬁnite there exists a
+[u] ∈ PU \V (R). Let 0 ̸= a ∈ Fn be an n-tuple such that S(a)u = 0. Then
+rank S(a) ≤ n − 2.
+
+===== PAGE 10 =====
+
+LOCALLY LINEARLY DEPENDENT OPERATORS 449
+It remains to consider the ﬁnite ﬁeld case. Let F be the ﬁeld with q
+elements, q ≥ n + 2. Let
+Z = {([u], [a]) ∈ PU × PFn : S(a)u = 0}
+and suppose a0 ∈ Fn satisﬁes rank S(a0) ≥ n. Since S is locally linearly
+dependent we have
+|Z|=
+∑
+[u]∈PU
+|{[a] : S(a)u = 0}| ≥ |PU |= qm − 1
+q − 1 .
+Let r = min {rank S : S ∈ S \ { 0}}, let ( I0, J 0) ∈ An be such that
+rank S(a0)[I0|J0] = n, and let g(x) = det( S(x)[I0|J0]). Clearly, if a ∈ Fn
+satisﬁes rank S(a) ≤ n − 1 then g(a) = 0. Therefore
+|Z|=
+∑
+[a]∈PFn
+|P(ker S(a))|=
+∑
+{[a] : rank S(a)≤ n− 1}
+|P(ker S(a))|+
+∑
+{[a] : rank S(a)≥ n}
+|P(ker S(a))| ≤
+|{[a] : g(a) = 0 }|qm− r − 1
+q − 1 + |PFn|qm− n − 1
+q − 1 .
+We need the following simple upper bound (see e.g., Theorem 6.15 in [ 6]).
+Proposition 2.5. Assume that |F|= q. If h(x1, . . . , x k) ∈ F[x1, . . . , x k] is
+a nonzero homogenous form of degree d′≥ 1 then
+|{[a] ∈ PFk : h(a) = 0 }| ≤ d′ qk− 1 − 1
+q − 1 .
+Now g(x) is homogenous of degree n and satisﬁes g(a0) ̸= 0. Combin-
+ing Proposition 2.5 (with h = g , k = n and d′ = n) with the previous
+inequalities we obtain
+qm − 1
+q − 1 ≤ |Z| ≤n qn− 1 − 1
+q − 1
+qm− r − 1
+q − 1 + qn − 1
+q − 1
+qm− n − 1
+q − 1 .
+It follows that
+qm− r − 1 ≥ (qm − 1)(q − 1) − (qn − 1)(qm− n − 1)
+n(qn− 1 − 1) ≥
+qm+1 − 2qm
+nqn− 1 = qm− n+1(q − 2)
+n ≥ qm− n+1
+hence r ≤ n − 2 . □
+Theorem 2.2 with c = 1 can be improved also in the case that F is an
+inﬁnite ﬁeld and S consists of pairwise commuting matrices.
+
+===== PAGE 11 =====
+
+450 ROY MESHULAM AND PETER ˇSEMRL
+Theorem 2.6. Let U be a vector space over an inﬁnite ﬁeld F and let n be a
+positive integer. If S ⊂ L (U ) is an n-dimensional locally linearly dependent
+subspace of pairwise commuting matrices then there exists a nonzero S ∈ S
+such that S2 = 0 and rank S ≤ n − 1.
+Remarks. The special case when F is the ﬁeld of complex numbers was
+proved in [ 2, p. 87]. This result is important for applications (see the next
+section). In fact, we will need, and therefore we will prove, a slightly stronger
+statement as follows: Assume that S1, . . . , S n : U → U are locally linearly
+dependent operators satisfying SiSj = SjSi, 1 ≤ i, j ≤ n. Suppose also that
+S1, . . . , S n− 1 are not locally linearly dependent. Then there exists scalars
+α1, . . . , α n− 1 such that S = α1S1 + . . . + αn− 1Sn− 1 + Sn is of square zero
+and rank S ≤ n − 1.
+Proof. We can ﬁnd u ∈ U such that S1u, . . . , S n− 1u are linearly inde-
+pendent. Then there exist scalars α1, . . . , α n− 1 such that Su = ( α1S1 +
+. . . α n− 1Sn− 1 + Sn)u = 0. As in the proof of Theorem 2.2 we show that
+the range of S is contained in the linear span of S1u, . . . , S n− 1u. Let
+v ∈ U be any vector. Then there exist β1, . . . , β n− 1 ∈ F such that Sv =
+β1S1u+. . . +βn− 1Sn− 1u. It follows that S2v = S(β1S1 +. . . +βn− 1Sn− 1)u =
+(β1S1 + . . . + βn− 1Sn− 1)Su = 0. This completes the proof. □
+We will conclude this section by unifying and extending the results of
+Larson [ 5, Theorem 3.2] and M¨ uller [7, Theorem 1].
+Theorem 2.7. Let X and Y be Banach spaces and let S ⊂ B (X, Y ) be a
+locally linearly dependent linear space of countable dimension. Then SF has
+a nontrivial ﬁnite dimensional locally linearly dependent subspace.
+Remark. Larson obtained this result under an additional “ﬁnite dimen-
+sional support” assumption on SF . The above theorem is also an essential
+improvment of M¨ uller’s result. Namely, the conclusion of the result of M¨ uller
+is that S contains a nonzero ﬁnite rank operator. His result gives no infor-
+mation how large is the space SF nor what is the minimal rank of nonzero
+operators from S. Our result implies that either S contains an operator of
+a small rank or the dimension of SF is large. More precisely, if the minimal
+nonzero rank of operators from S is n, then SF is at least ( n+1)-dimensional.
+This follows directly from Theorems 2.2 and 2.7.
+Proof. Let {Sk : k = 1 , 2, . . . } be a basis of S and denote by Fn the set
+of all vectors x ∈ X such that S1x, . . . , S nx are linearly dependent. Then
+∪∞
+n=1Fn = X.
+If {xm} is a sequence in Fn converging to x, then x ∈ F n. For suppose
+that for each m, αm
+1 , . . . , α m
+n are scalars, not all zero, such that αm
+1 S1xm +
+. . . + αm
+n Snxm = 0. Divide these scalars by the one with the largest absolute
+
+===== PAGE 12 =====
+
+LOCALLY LINEARLY DEPENDENT OPERATORS 451
+value. We can thus assume that each one of them has absolute value at most
+1 and one of them has absolute value equal to 1. Then a subsequence of the
+sequence of n-tuples {(αm
+1 , . . . , α m
+n )} converges to an n-tuple ( α1, . . . , α n);
+it is not the zero n-tuple since at least one of α1, . . . , α n has modulus 1.
+Re-label so that {(αm
+1 , . . . , α m
+n )} is such a subsequence. Then α1S1x + . . . +
+αnSnx = lim m→∞ (αm
+1 S1xm + · · ·+ αm
+n Snxm) = 0.
+Thus, each Fn is closed and by the Baire category theorem there exists
+a positive integer k such that Fk contains an open ball, say {x ∈ X :
+||x − x0||< ε}. We will show that Fk = X. Assume on the contrary that
+there exists y ∈ X such that S1y, . . . , S ky are linearly independent. Then
+the vectors S1(y + αx0), . . . , S k(y + αx0) are linearly independent for all
+but ﬁnitely many scalars α. Hence, S1(x0 + (1/α )y), . . . , S k(x0 + (1/α )y)
+are linearly independent for all but ﬁnitely many nonzero scalars α. This is
+impossible since Fk contains {x ∈ X : ||x − x0||< ε}. Hence, we have a
+desired relation Fk = X.
+So, the linear span of {S1, . . . , S k} is a locally linearly dependent space.
+We already know that then {S1, . . . , S k}F is nontrivial and locally linearly
+dependent [ 5, Proposition 2.3]. This completes the proof. □
+3. Nonlinear locally linearly dependent sets of operators.
+The methods of the previous section can be applied to some nonlinear sets
+of operators that are locally linearly dependent. We will only consider the
+ﬁnite-dimensional case, so operators will be identiﬁed with matrices. Let
+p, q, n be positive integers and W = Fn the n-dimensional coordinate space.
+Let x = ( x1, . . . , x n) be a vector of variables and suppose S(x) = ( sij(x))
+is a p × q matrix of homogenous polynomials sij(x) ∈ F[x1, . . . , x n] of ﬁxed
+degree d. The set S = {S(a) : a ∈ W }is called an ( n, d )-family in Mp× q(F).
+S is locally linearly dependent if for any u ∈ Fq there exists a nonzero a ∈ W
+such that S(a)u = 0.
+Theorem 3.1. Suppose S ⊂ Mp× q(F) is a locally linearly dependent (n, d )-
+family and |F| ≥ dn + 2. Then either there exists an 0 ̸= a ∈ W such that
+rank S(a) ≤ n − 2 or rank S(a) = n − 1 for all 0 ̸= a ∈ W .
+If d = 1 then S is a linear space of matrices. This special case coincides
+with the ﬁnite-dimensional case of Theorem 2.4. The proof of the general
+case goes through in almost the same way. Theorem 2.2 can be similarly
+extended to this more general nonlinear setting.
+4. Applications.
+The aim of this section is to illustrate applicability of the results of Section 2
+in algebra and functional analysis. We start by an improvment of Amitsur’s
+result on rings satisfying generalized polynomial identities [ 1].
+
+===== PAGE 13 =====
+
+452 ROY MESHULAM AND PETER ˇSEMRL
+Theorem 4.1. Let R be a primitive ring considered as a dense ring of linear
+transformations on a vector space V over a division ring D with the cen-
+ter C. Let R be a C-algebra satisfying a nontrivial generalized polynomial
+identity of degree k which includes n C -independent elements (including 1).
+Then R contains a ﬁnite rank transformation and D is ﬁnite over C with
+(D : C) ≤ 4n− 1
+(
+n − 1 + n
+[k
+2
+])2
+.
+Remark. Amitsur proved this result with a weaker estimate
+(D : C) ≤ 4n− 1
+(( n + 1
+2
+)
+− 1 + n
+[k
+2
+])2
+.
+Proof. We have proved that if T1, . . . , T n are locally linearly dependent op-
+erators between vector spaces over a ﬁeld F, then there exists a nontrivial
+linear combination of these operators of rank at most n − 1. The same result
+with essentially the same proof holds true if F is any inﬁnite division ring.
+As every ﬁnite division ring ring is commutative, this statement holds for all
+division rings F. In fact, we can extend this as follows: Let U and V be left
+vector spaces over a division ring F, V0 a ﬁnite-dimensional subspace of V ,
+and let linear operators T1, . . . , T n : U → V be locally linearly dependent
+modulo V0. Then there exist α1, . . . , α n ∈ F, not all zero, such that
+rank (α1T1 + . . . + αnTn) ≤ dim V0 + n − 1.
+To verify this extension one simply considers locally linearly dependent op-
+erators QT1, . . . , QT n : U → V /V 0. Here, of course, Q : V → V /V 0 is the
+quotient map.
+Amitsur proved this statement with the above estimate replaced by a
+weaker one
+rank (α1T1 + . . . + αnTn) ≤ dim V0 +
+( n + 1
+2
+)
+− 1 .
+To prove the theorem one has to follow step by step the proof of Amitsur
+applying our better estimate instead of the Amitsur’s one. □
+Our next application is to give a shorter and simpler proof of the char-
+acterization of commuting pairs d, g of continuous derivations of a Banach
+algebra such that dg(x) is quasi-nilpotent for every x ∈ A . An interested
+reader can ﬁnd some remarks on the background of this problem in [ 3,
+p. 1259].
+Theorem 4.2. Let A be a complex Banach algebra and d, g : A → A be
+continuous derivations. If d and g commute, then the following are equiva-
+lent.
+
+===== PAGE 14 =====
+
+LOCALLY LINEARLY DEPENDENT OPERATORS 453
+(i) dg(x) is quasi-nilpotent for every x ∈ A.
+(ii) dg(x)3 lies in the radical of A for every x ∈ A.
+(iii) if π is a continuous irreducible representation of A on a Banach space
+X, then there exist linear operators A and B on X such that π(d(x)) =
+[π(x), A ], π(g(x)) = [ π(x), B ], x ∈ A , AB = BA = 0 , and either
+A2 = 0 or B2 = 0, unless πd = 0 or πg = 0.
+Proof. This result has already been proved in [ 3]. We will just sketch the
+ﬁrst few steps of the proof since they are the same as in [ 3]. First one
+can observe that the only nontrivial implication is ( i) ⇒ (iii). Assume,
+therefore, that ( i) holds and that π is a continuous irreducible representation
+of A on a Banach space X. Then B = π(A) ⊂ B (X) is a dense algebra of
+bounded linear operators on X. Deﬁne D, G : B → B by D(π(x)) = π(d(x)),
+G(π(x)) = π(g(x)). It turns out that these maps are well-deﬁned and that
+there exist a commuting pair of linear operators A and B on X such that
+D(S) = [ S, A ] and G(S) = [ S, B ] for all S ∈ B. Note that D(S) = [ S, A − λ]
+for any scalar operator λ, and that a derivation cD, where c is any nonzero
+complex number, satisﬁes the same assumption as D. Therefore, whenever
+it will be suitable, we will replace A by A − λ or cA, and, of course, we will
+do the same with B. Let us also point out that D and G, and consequently
+A and B, appear symmetrically.
+So, our basic assumption is that DG(S) = [[ S, B ], A ] is quasi-nilpotent for
+every S ∈ B and we have to prove that there exist scalars λ and µ such that
+(A − λ)(B − µ) = 0 and either ( A − λ)2 = 0 or ( B − µ)2 = 0. In [ 3] this part
+of the proof was long, involving tedious computations. Having new results
+on locally linearly dependent operators we can now present a much simpler
+and shorter proof. It will be broken up into a series of steps. Two of them
+go through in exactly the same way as in [ 3]. We will include them for the
+sake of completness. If f is a linear (not necessarily bounded) functional on
+X and x ∈ X we denote by x ⊗ f a rank one operator ( x ⊗ f )z = f (z)x,
+z ∈ X. Note that every rank one operator on X can be written in this form.
+Step 4.3. Let Y be a subspace of X invariant under both A and B and
+assume that the restrictions of A and B to Y satisfy A|Y = B|Y . Then there
+exists a complex number λ such that (A − λ)2
+|Y = 0.
+Proof. Suppose there exists y ∈ Y such that y, Ay, and A2y are linearly
+independent. Then, since B is a dense subalgebra of B(X), we can ﬁnd S ∈ B
+such that Sy = SAy = 0 and SA2y = y. It follows that [[ S, B ], A ]y = y
+contradicting the fact that [[ S, B ], A ] is quasi-nilpotent. So, for every y ∈ Y
+the vectors y, Ay, and A2y are linearly dependent. By Kaplansky’s theorem
+on locally algebraic operators we have either A|Y = λI + N for some scalar
+λ and some square-zero operator N , or A|Y = λP + µ(I − P ) for some
+scalars λ, µ, λ ̸= µ, and some idempotent P ̸∈ {0, I }. Here, I denotes
+
+===== PAGE 15 =====
+
+454 ROY MESHULAM AND PETER ˇSEMRL
+the identity operator on Y . In the ﬁrst case the desired conclusion follows
+trivially. In the second case there is no loss of generality in assuming that
+A|Y = B|Y = P . Take a nonzero x from the range of P and a nonzero y from
+the null space of P . Then we can ﬁnd S ∈ B such that Sx = y and Sy = x.
+Consequently, [[S, B ], A ](x + y) = x + y. This contradiction shows that the
+second possibility cannot occur. This completes the proof of Step 4.3. □
+Step 4.4. Let Y be a two-dimensional subspace of X invariant under both
+A and B. Then there exist scalars λ and µ such that (A − λ)|Y (B − µ)|Y = 0
+and either (A − λ)2
+|Y = 0 or (B − µ)2
+|Y = 0.
+Proof. The conclusion follows directly if A|Y is a scalar operator. If not,
+then because B|Y commutes with A|Y , we have B|Y = αA|Y + βI for some
+scalars α and β. So, we may assume that A|Y = B|Y and complete the proof
+using Step 4.3. □
+Step 4.5. Let Y be a subspace of X invariant under both A and B and
+assume that A2
+|Y = 0. Then there exists a scalar λ such that A|Y (B − λ)|Y =
+0.
+Proof. It is easy to see that all we have to do is to prove that ABy belongs
+to the linear span of Ay for every y ∈ Y . Assume that this is not true for a
+certain y ∈ Y . Then we can ﬁnd S ∈ B satisfying SAy = 0 and SABy = − y,
+yielding [[ S, B ], A ]Ay = Ay. We have Ay ̸= 0 since otherwise ABy = BAy
+would be 0, too. This contradiction completes the proof. □
+Step 4.6. Let Y be a subspace of X invariant under both A and B. If
+AB|Y = 0 then either A2
+|Y = 0 or B2
+|Y = 0.
+Proof. Assume ﬁrst that there are x, y ∈ Y such that A2x and B2y are
+linearly independent. Then there is an S ∈ B such that SA2x = − y, SB 2y =
+− x, SAx ∈ Y , and SBy ∈ Y . But then [[ S, B ], A ](Ax + By) = Ax + By ̸= 0
+since 0 ̸= A2x = A(Ax + By). Therefore, such x and y cannot exist. That
+is, A2x and B2y are dependent for any x, y ∈ Y . If neither A2 nor B2 is
+zero on Y , then there is w ∈ Y such that A2Y = B2Y = span {w}. Note
+that there is y ∈ Y such that A2y = λw ̸= 0 and B2y = µw ̸= 0. However,
+picking S ∈ B such that Sw = y, SAy ∈ Y , and SBy ∈ Y , we arrive at
+[[S, B ], A ]2Ay = λµAy. With this contradiction the proof of this step is
+completed. □
+Step 4.7. Let Y be a subspace of X invariant under both A and B. If
+AB|Y = I then there exist a nonzero scalar λ and a square-zero operator
+M : Y → Y such that A|Y = λI + M and B|Y = 1
+λ I − 1
+λ2 M . Here, I denotes
+the identity operator on Y .
+Proof. If there exists y ∈ Y such that y, Ay, and A2y are linearly indepen-
+dent then we can ﬁnd S ∈ B such that Sy = SA2y = 0 and SAy = Ay.
+
+===== PAGE 16 =====
+
+LOCALLY LINEARLY DEPENDENT OPERATORS 455
+It follows that [[ S, B ], A ]Ay = 2 Ay, a contradiction. By Kaplansky’s theo-
+rem on locally algebraic operators A|Y is algebraic of degree at most two.
+If A|Y = λI + M with M a square-zero (possibly zero) operator, then the
+desired conclusion follows directly from the equation AB|Y = I. In the re-
+maining case we have A = αP + β(I − P ) for some scalars α ̸= β, α, β ̸= 0,
+and some idempotent P : Y → Y , P ̸= 0, I . Then B = α− 1P + β− 1(I − P )
+and we can ﬁnd linearly independent vectors x and y belonging to the range
+of P and I − P , respectively, and S ∈ B such that Sx = y and Sy = x.
+It follows that x + y belongs to the eigenspace of [[ S, B ], A ] corresponding
+to the nonzero eigenvalue
+(
+2 − α 2+β 2
+αβ
+)
+. This contradiction completes the
+proof of this step. □
+Step 4.8. Assume that the operators A, B, and I are locally linearly de-
+pendent. Then there exist scalars λ and µ such that (A − λ)(B − µ) = 0 and
+either (A − λ)2 = 0 or (B − µ)2 = 0.
+Proof. If the dimension of the linear span of A, B, I is 1 or 2 then we can
+assume with no loss of generality that either A = B, or A = 0, or B = 0. So,
+in this case we are done by Step 4.3. Step 4.4 gives the desired conclusion
+if dim X ≤ 2. It remains to consider the case that A, B, I are linearly
+independent and dim X > 2. Then, by Theorem 2.4 there exist scalars
+α, β, γ such that αA + βB + γI = F is of rank one. Note that we can
+assume with no loss of generality that γ = 0.
+Assume ﬁrst that one of scalars α, β , say α, is zero. Then B is of rank
+one. If it is square-zero, then we complete the proof using Step 4.5. If not,
+then after multiplying by an approprite constant, we can assume that B is
+an idempotent of rank one. As A commutes with B it leaves the null space
+and the range of B invariant. Hence, the one-dimensional range of B is
+contained in an eigenspace of A corresponding to an eigenvalue λ. It follows
+that ( A − λ)B = 0, and hence, the desired conclusion follows from Step 4.6.
+It remains to consider the case that both α and β are nonzero. In this
+case we may assume that A = B + z ⊗ f for some z ∈ X and some linear
+functional f on X. The null space of f is invariant for both A and B
+because A and B commute. The restrictions of A and B to this common
+invariant subspace coincide, and so, by Step 4.3, we may assume that both
+these restrictions are square-zero. Let u ∈ X be a vector such that X is a
+direct sum of the null space of f and the linear span of u and deﬁne a linear
+operator T : X → X such that T u = 0 and the restriction of T to the null
+space of f coincides with the restriction of A to this subspace. Then T 2 = 0,
+the range of T is contained in the null space of f , and A = T + x ⊗ f and
+B = T + y ⊗ f for some x, y ∈ X. Applying AB = BA we get
+T y + f (y)x = T x + f (x)y.
+
+===== PAGE 17 =====
+
+456 ROY MESHULAM AND PETER ˇSEMRL
+Multiplying by T we arrive at
+f (y)T x = f (x)T y.
+We will consider three cases. If f (x) = f (y) = 0, then clearly A2B =
+AB2 = 0. In case that there was x ∈ X such that ABx ̸= 0 we would have
+S ∈ B satisfying SABx = x, which would further imply [[ S, B ]A]ABx =
+ABx, a contradiction. Therefore, AB = 0 in this case and one can complete
+the proof using Step 4.6.
+If f (x) = 0 and f (y) ̸= 0 then T x = 0 which yields AB = 0 and we are
+done.
+In the remaining case that both f (x) and f (y) are nonzero, we may assume
+with no loss of generality that f (x) = 1. From the above equations we get
+T y = f (y)T x, and consequently, ( f (y) − 1)T x = y − f (y)x. Now, if f (y) = 1
+then T x = T y, and consequently, x = y. Thus, A = B, and the desired
+conclusion follows from Step 4.3. So, assume that f (y) ̸= 1. Then T x, and
+hence T y, belong to the linear span of x and y, which is then obviously
+invariant under both A and B. Let us ﬁrst consider the case that T x is
+nonzero. Since T 2 = 0, the vectors x and T x are linearly independent.
+Thus, the linear span of x and y is the same as the linear span of x and
+T x. Since AT x = BT x = 0, Step 4.4 implies that the restriction of A2 or
+B2, say A2, to the linear span of x and y is zero. We already know that the
+restriction of A2 to the null space of f is zero. So, A2 = 0 and we complete
+the proof in this case using Step 4.5. We will show that the remaining case,
+that T x = 0 and hence T y = 0, cannot occur. Namely, in this case x and
+y would be linearly dependent. The operators A and B would have matrix
+representations
+A =
+[
+1 0
+0 A′
+]
+and B =
+[
+α 0
+0 A′
+]
+with respect to the decomposition of X into the direct sum of the linear
+span of x and the null space of f . Here, A′ is the restriction of A to the
+null space of f and α is a nonzero scalar. Take any nonzero z in the null
+space of f such that A′z = 0. Then the linear span of x and z is invariant
+under both A and B. The restrictions of ( A − λ)2 and ( B − µ)2 to this
+two-dimensional subspace are both nonzero for any choice of scalars λ and
+µ. This contradiction with Step 4.4 completes the proof. □
+Step 4.9. If AB = N is a square-zero operator then there exist scalars λ
+and µ such that (A − λ)(B − µ) = 0 and either (A − λ)2 = 0 or (B − µ)2 = 0.
+Proof. The null space of N is invariant under both A and B and the re-
+striction of AB to this subspace is the zero operator. So, by Step 4.6 one
+of the restrictions of A or B to the null space of N , say the restriction of
+A, is square-zero. It follows that A3B = A2(AB) = 0. Next we will see
+that A2B = 0. If not, then we would have an x ∈ X with A2Bx ̸= 0
+
+===== PAGE 18 =====
+
+LOCALLY LINEARLY DEPENDENT OPERATORS 457
+and S ∈ B such that SA2Bx = Ax. But then [[ S, B ], A ]A2Bx = A2Bx, a
+contradiction. The next step is to prove that there is a scalar λ such that
+AB = λAB2. To this end it is enough to show that ABx belongs to the
+linear span of AB2x for every x ∈ X. Assume this is not true for a given
+x ∈ X. Then we can ﬁnd S ∈ B such that SABx = x and SAB 2x = 0,
+which further yields [[ S, B ], A ]ABx = ABx, a contradiction. Now, let x be
+any vector from X. Then x = λBx + (x − λBx). We already know that
+A2Bx = 0. Also, x − λBx belongs to the null space of N . The restriction
+of A to this subspace is square-zero. So, A2x = 0. Applying Step 4.5 we
+complete the proof. □
+Now we are ready for the last step of the proof.
+Step 4.10. If A, B, and I are not locally linearly dependent then there exist
+scalars λ and µ such that (A − λ)(B − µ) = 0 and either (A − λ)2 = 0 or
+(B − µ)2 = 0.
+Proof. The operators AB, A, B, and I are locally linearly dependent. In-
+deed, if this were not true then there would exist x ∈ X and S ∈ B such
+that SABx = x and SAx = SBx = Sx = 0, and so, [[ S, B ], A ]x = x. By
+Theorem 2.6 and a remark following it we know that there exist scalars α,
+β, and γ such that AB + αA + βB + γ = M is a square-zero operator of
+ﬁnite rank. Replacing A by A + β and B by B + α, and then multiplying
+A by an appropriate constant, we get AB = N or AB = I + N with N
+being square-zero with ﬁnite rank. In the ﬁrst case we complete the proof
+applying the previous step. So, assume that AB = I + N . Let N have a
+matrix representation
+N =
+
+
+0 0 0
+I 0 0
+0 0 0
+
+
+with respect to a direct sum decomposition of X into two appropriate ﬁnite-
+dimensional spaces X1, X2, and a subspace X3. The null space of N is
+invariant for A and B and the restriction of AB to this subspace is the
+identity operator. Applying Step 4.7 we can assume, after multiplying A
+and B by appropriate constants, that the restriction of A to this subspace
+is a sum of the identity and a square-zero operator, while B is a diﬀerence
+of these two operators. Since A commutes with N we have
+A =
+
+
+A1 0 0
+A2 A1 A3
+A4 0 A5
+
+.
+But [
+A1 A3
+0 A5
+]
+
+===== PAGE 19 =====
+
+458 ROY MESHULAM AND PETER ˇSEMRL
+is a sum of the identity and a square-zero operator. It follows that A1
+is a sum of the identity and a square-zero operator, too. Consequently,
+(A − I)4 = 0, and similarly, ( B − I)4 = 0.
+So, we may assume that A4 = B4 = 0. We will ﬁrst prove that for every
+x ∈ X the vector BA3x belongs to the linear span of A3x. Indeed, if this was
+not true for some x then we would have S ∈ B such that SBA 3x = − A2x
+and SA3x = 0 implying that [[ S, B ], A ]A3x = A3x ̸= 0. So, BA3 = λA3
+for some scalar λ. If A3 ̸= 0 then, since B is nilpotent, we necessarily have
+λ = 0. So, in this case BA3 = 0. But, of course, this is true also in the case
+that A3 = 0. We will next prove that for every x ∈ X the vector B2A2x
+belongs to the linear span of BA2x. Indeed, if this was not true for some
+x then we would have S ∈ B such that SB 2A2x = − ABx and SBA 2x = 0
+implying that [[ S, B ], A ]BA2x = BA2x ̸= 0. As before we conclude that
+B2A2 = 0 and we complete the proof using the previous step. □
+Acknowledgement. The authors thank Kostia Beidar for the correspon-
+dence concerning the application of our results in the theory of rings satis-
+fying generalized polynomial identities.
+References
+[1] S.A. Amitsur, Generalized polynomial identities and pivotal monomials , Trans. Amer.
+Math. Soc., 114 (1965), 210-226, MR 30 #3117 , Zbl 0131.03202 .
+[2] B. Aupetit, A Primer on Spectral Theory , Springer-Verlag, 1991, MR 92c:46001 ,
+Zbl 0715.46023 .
+[3] M. Breˇ sar and P.ˇSemrl, On locally linearly dependent operators and derivations , Trans.
+Amer. Math. Soc., 351 (1999), 1257-1275, MR 99e:47039 , Zbl 0920.15009 .
+[4] I. Kaplansky, Inﬁnite Abelian Groups , Ann Arbor, 1954, MR 16,444g , Zbl 0057.01901 .
+[5] D.R. Larson, Reﬂexivity, algebraic reﬂexivity and linear interpolation , Amer. J. Math.,
+283 (1988), 283-299, MR 89d:47096 , Zbl 0654.47023 .
+[6] R. Lidl and H. Niderreiter, Finite Fields , Encyclopedia Math. Appl., 20, Cambridge
+Univ. Press, Cambridge, 1983, MR 86c:11106 , Zbl 0554.12010 .
+[7] V. M¨ uller,Kaplansky’s theorem and Banach PI-algebras, Paciﬁc J. Math., 141 (1990),
+355-361, MR 91k:46048 , Zbl 0736.46044 .
+Received June 23, 2000. This paper was supported in part by a grant from the Ministry
+of Science of Slovenia and by the Israel Science Foundation.
+Department of Mathematics
+Technion
+Haifa 32000 Israel
+
+===== PAGE 20 =====
+
+LOCALLY LINEARLY DEPENDENT OPERATORS 459
+E-mail address : meshulam@math.technion.ac.il
+Department of Mathematics
+University of Ljubljana
+Jadranska 19
+SI-1000 Ljubljana
+Slovenia
+E-mail address : peter.semrl@fmf.uni-lj.si

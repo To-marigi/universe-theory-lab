@@ -1,0 +1,1381 @@
+===== PAGE 1 =====
+
+arXiv:1002.0589v3  [quant-ph]  2 Jul 2010
+Hilbert Spaces from Path Integrals
+F ay Dowker1, Steven Johnston 1, Rafael D. Sorkin 2, 3
+1 Theoretical Physics, Blackett Laboratory, Imperial Colle ge London, London,
+SW7 2AZ, UK
+2 Perimeter Institute, 31 Caroline Street North, W aterloo ON , N2L 2Y5 Canada
+3 Department of Physics, Syracuse University, Syracuse, NY 1 3244-1130, USA
+E-mail: f.dowker@imperial.ac.uk, steven.johnston02@imperial.ac.uk and
+rsorkin@perimeterinstitute.ca
+Abstract. It is shown that a Hilbert space can be constructed for a quant um
+system starting from a framework in which histories are fund amental. The
+Decoherence Functional provides the inner product on this “ History Hilbert
+space”. It is also shown that the History Hilbert space is the standard Hilbert
+space in the case of non-relativistic quantum mechanics.
+PACS numbers: 03.65.w, 03.65.Ta, 04.60.Gw
+1. Introduction
+It is not yet known how quantum theory and gravity will be reconciled . However,
+the four-dimensional nature of reality revealed by our best theor y of gravity, General
+Relativity, suggests that unity in physics will only be achieved if quant um theory can
+be founded on the concept of history rather than that of state. The same suggestion
+emerges even more emphatically from the causal set programme, w hose characteristic
+kind of spatio-temporal discreteness militates strongly against an y dynamics resting
+on the idea of Hamiltonian evolution.
+A major step toward a histories-based formulation of quantum mec hanics was
+taken by Dirac and Feynman, showing that the quantum-mechanica l propagator can
+be expressed as a sum over histories [1, 2, 3], but it remains a challenge to make
+histories the foundational basis of quantum mechanics. One attem pt to do this was
+made by J. Hartle who set out new, histories-based axioms for Generalised Quantum
+Mechanics (GQM) which do not require the existence of a Hilbert space of state s
+[4, 5]. Closely related in its technical aspects — whilst diﬀering in interpr etational
+aspiration — is Quantum Measure Theory (QMT) [6, 7, 8, 9]. Thus far, both these
+approaches appear in the literature more as formal axiomatic syst ems than as fully
+ﬂedged mathematical physics, although some concrete examples g oing beyond ordinary
+quantum mechanics have been studied [10].
+In this paper we take a step toward establishing QMT and GQM more ﬁr mly on
+their foundations and connecting them up with the more familiar form alism of state-
+vectors and operators. First we demonstrate in detail the Gel’fan d-Naimark-Segal
+(GNS) type construction given in [10] of a History Hilbert space for any quantum
+measure system (to be deﬁned). It is technically helpful within quan tum measure
+theory that such a construction is available, but the conceptual s igniﬁcance of this fact
+
+===== PAGE 2 =====
+
+Hilbert Spaces from Path Integrals 2
+would be slight, were it not that the constructed Hilbert space prov ably is the usual
+Hilbert space in the case of certain familiar quantum systems (via an is omorphism
+that obtains formally in any unitary quantum theory with pure initial s tate). In this
+paper we exhibit non-relativistic particle quantum mechanics in d spatial dimensions
+as a quantum measure system, and we prove that the Hilbert space constructed from
+the quantum measure is the usual Hilbert space of (equivalence clas ses of) square
+integrable complex functions on Rd, given certain conditions on the propagator. The
+class of systems for which these conditions can be established is larg e and includes the
+free particle and the simple harmonic oscillator. Thus, one of the main ingredients
+of text-book Copenhagen Quantum Mechanics is derivable from the starting point of
+histories.
+2. Quantum Measure Theory: a histories-based framework
+We describe here the framework set out in [6, 7, 8, 9]. In QMT, a phys ical, quantum
+system is associated with a sample space Ω of possible histories, the space over which
+the integration of the path integral takes place. Each history γ in the sample space
+represents as complete a description of physical reality as is classic ally conceivable in
+the theory. The kind of elements in Ω varies from theory to theory. In n-particle
+quantum mechanics, a history is a set of n trajectories. In a scalar ﬁeld theory,
+a history is a real or complex function on spacetime. The business of discovering
+the appropriate sample space for a particular theory is part of phy sics. Even in the
+seemingly simple case of non-relativistic particle quantum mechanics, we do not yet
+know what properties the trajectories in Ω should possess, not to mention the knotty
+problems involved in deﬁning Ω for fermionic ﬁeld theories for example. We will be
+able to sidestep these issues in the current work.
+2.1. Event Algebra
+Once the sample space has been settled upon, any proposition abou t physical reality
+is represented by a subset of Ω. For example in the case of the non- relativistic particle,
+ifR is a region of space and T a time, the proposition “the particle is in R at time T ”
+corresponds to the set of all trajectories which pass through R at T . We follow the
+standard terminology of stochastic processes and refer to such subsets of Ω as events.
+An event algebra on a sample space Ω is a non-empty collection, A, of subsets of
+Ω such that
+(i) For any α ∈ A, we have Ω \α ∈ A.
+(ii) For any α,β ∈ A, we have α ∪ β ∈ A.
+An event algebra is then an algebra of sets [11]. It follows immediately t hat ∅ ∈ A,
+Ω ∈ A (∅ is the empty set) and A is closed under ﬁnite unions and intersections.
+An event algebra A is a Boolean algebra under intersection (logical “and”), union
+(logical “or”) and complement (logical “not”) with unit element Ω and zero element
+∅ . It is also a (unital) ring with identity element Ω, multiplication as interse ction and
+addition as symmetric diﬀerence (logical “xor”):
+(i) α ·β :=α ∩ β .
+(ii) α +β := (α \β ) ∪ (β \α ).
+
+===== PAGE 3 =====
+
+Hilbert Spaces from Path Integrals 3
+This ring is Boolean since α ·α =α . It is also an algebra over Z2. More discussion of
+the event algebra is given in [9].
+An example of an event algebra is the power set 2 Ω := {S :S ⊆ Ω} of all subsets
+of Ω. For physical systems with an inﬁnite sample space, however, t he event algebra
+will be strictly contained in the power set of Ω, something which is familia r from
+classical measure theory ‡ where the collection of “measurable sets” is not the whole
+power set.
+If A is also closed under countable unions and intersections then A is a σ -algebra.
+2.2. Decoherence Functional
+A decoherence functional on an event algebra A is a map D : A × A → C such that
+(i) For all α,β ∈ A, we have D(α,β ) = D(β,α )∗ (Hermiticity).
+(ii) For all α,β,γ ∈ A with β ∩ γ = ∅ , we have D(α,β ∪ γ) = D(α,β ) + D(α,γ )
+(Linearity).
+(iii) D(Ω, Ω) = 1 ( Normalisation).
+(iv) For any ﬁnite collection of events α i ∈ A (i = 1 ,...,N ) the N × N matrix
+D(α i,α j) is positive semideﬁnite ( Strong positivity ).
+A decoherence functional D satisfying the weaker condition D(α,α ) ≥ 0 for all
+α ∈ A is called positive. Note that in Generalised Quantum Mechanics, a decoherence
+functional is deﬁned to be positive rather than strongly positive [4 , 5].
+A quantal measure on an event algebra A is a map µ : A → R such that
+(i) For all α ∈ A, we have µ (α ) ≥ 0 ( Positivity).
+(ii) For all mutually disjoint α,β,γ ∈ A, we have
+µ (α ∪ β ∪ γ) − µ (α ∪ β ) − µ (β ∪ γ) − µ (α ∪ γ) +µ (α ) +µ (β ) +µ (γ) = 0 .
+(Quantal Sum Rule )
+(iii) µ (Ω) = 1 ( Normalisation).
+IfD : A × A → C is a decoherence functional then the map µ : A → R deﬁned by
+µ (α ) := D(α,α ) is a quantal measure.
+A triple, (Ω, A,D ), of sample space, event algebra and decoherence functional will
+be called a quantum measure system .
+2.3. A Hilbert Space Construction
+Given a quantum measure system, (Ω , A,D ), we can construct a Hilbert space:
+a complex vector space with (non-degenerate) Hermitian inner pro duct which is
+complete with respect to the induced norm. This construction is give n in [10] and
+is essentially that given by V.P. Belavkin in [12, Theorem 3, Part 1] wher e the
+decoherence functional is called a “correlation kernel”. The const ruction is akin to
+the GNS construction of a Hilbert space from a C∗ -algebra and is the same as the
+construction appearing in Kolmogorov’s Dilation Theorem [13, Theore m 2.2], [14].
+To start, we ﬁrst construct the free vector space on A and use the decoherence
+functional to deﬁne a degenerate inner product on it.
+‡ To contrast with quantum measure theory, the usual textbook measure theory (see Halm os, [11])
+will be called “classical”.
+
+===== PAGE 4 =====
+
+Hilbert Spaces from Path Integrals 4
+2.3.1. Inner product space: H1 To deﬁne the free vector space on an event algebra A
+we start with the set of all complex-valued functions on A which are non-zero only on
+a ﬁnite number of events. This set becomes a vector space, H1, if addition and scalar
+multiplication are deﬁned by:
+(i) For all u,v ∈ H1 and α ∈ A, we have (u +v)(α ) := u(α ) +v(α ).
+(ii) For all u ∈ H1, λ ∈ C and α ∈ A, we have (λu)(α ) := λu(α ).
+We now deﬁne an inner product space ( H1, ⟨·, ·⟩1) by deﬁning a degenerate inner
+product on H1 using the decoherence functional D. For u,v ∈ H1 deﬁne:
+⟨u,v ⟩1 :=
+∑
+α ∈ A
+∑
+β ∈ A
+u(α )∗D(α,β )v(β ). (2.1)
+This sum is well-deﬁned because u andv are non-zero for only a ﬁnite number of events.
+This satisﬁes the conditions for an inner product. Note that the st rong positivity of
+the decoherence functional is essential for ⟨u,u ⟩1 ≥ 0.
+To see that the inner product is degenerate consider, for example , the non-zero
+vectoru ∈ H1 deﬁned by:
+u(x) :=
+
+
+
+
+
+
+
+1 if x =α,
+1 if x =β,
+− 1 if x =α ∪ β,
+0 otherwise
+(2.2)
+for two nonempty, disjoint events α,β ∈ A. By applying the properties of the
+decoherence functional we see that ||u||1 = 0.
+2.3.2. Hilbert space: H2 We now quotient and complete the inner product space
+(H1, ⟨·, ·⟩1) to form a Hilbert space ( H2, ⟨·, ·⟩2).
+For two Cauchy sequences {un}, {vn} in H1 we deﬁne an equivalence relation
+{un} ∼ 1 {vn} ⇐ ⇒ lim
+n→∞
+||un − vn||1 = 0. (2.3)
+We denote the ∼ 1 equivalence class of a Cauchy sequence {un} by [un]1. The set
+of these equivalence classes form a Hilbert space, ( H2, ⟨·, ·⟩2), if addition, scalar
+multiplication and the inner product are deﬁned by:
+(i) For all [ un]1, [vn]1 ∈ H1, we have [un]1 + [vn]1 := [un +vn]1.
+(ii) For all [ un]1 ∈ H1 and λ ∈ C, we have λ[un]1 := [λu n]1.
+(iii) For all [ un]1, [vn]1 ∈ H1, we have
+⟨[un]1, [vn]1⟩2 := lim
+n→∞
+⟨un,v n⟩1 (2.4)
+These are all well-deﬁned, independent of which representative is c hosen from the
+equivalence classes.
+The construction of a Hilbert space (here ( H2, ⟨·, ·⟩2)) from an inner product space
+(here (H1, ⟨·, ·⟩1)) is a standard operation described in many textbooks (for examp le,
+[15, Section 7], [16, p198]).
+Whether or not H2 is separable depends on the particular event algebra and
+decoherence functional that are used in its construction §. In Sections 3, 4 and 4.5
+we shall present systems for which the constructed Hilbert space is isomorphic to a
+§ The dimension of H1 is equal to the cardinality of A but the dimension of H2, which is less than
+that of H1, depends on the ∼ 1 equivalence relation (which in turn depends on D).
+
+===== PAGE 5 =====
+
+Hilbert Spaces from Path Integrals 5
+separable Hilbert space (the standard Hilbert space for the syste m). In these examples
+the constructed Hilbert space is therefore separable.
+Note that we did not use the full structure of the quantum measur e system: only
+the event algebra, A and the decoherence functional D were used and nowhere did the
+underlying sample space enter into the game. This will be important in o ur discussion
+of particle quantum mechanics where there is an event algebra A but we have no
+precise deﬁnition, as yet, of the sample space.
+We will refer to the Hilbert space, H2, constructed from a quantum measure
+system as the History Hilbert space . For quantum systems which have a standard,
+Copenhagen formulation in terms of unitary evolution on a Hilbert spa ce of states
+and which can also be cast into the form of a quantum measure system, the question
+arises as to the relationship between the standard Hilbert space an d the History Hilbert
+space. This is the question under study in this paper and it will be show n that
+in general the answer depends on the initial state and the Schr¨ od inger dynamics
+for the system since these are what deﬁne the decoherence func tional. However,
+we conjecture that generically where both Hilbert spaces exist and the decoherence
+functional encodes a pure initial state, they are isomorphic. More over the isomorphism
+is physically meaningful, so that one can conclude that the History Hilb ert space is
+the standard Hilbert space of the system.
+We will prove this conjecture for a variety of non-relativistic partic le systems and
+exhibit the isomorphism explicitly. The systems considered include a pa rticle with a
+ﬁnite conﬁguration space, a free non-relativistic particle in d spatial dimensions, and
+a non-relativistic particle in various backgrounds, including a quadra tic potential and
+an inﬁnite potential barrier.
+Before turning to these speciﬁc cases, we recall the following simple lemma.
+Lemma 1. A linear map f :HA → HB from a Hilbert space ( HA, ⟨·, ·⟩A) to a Hilbert
+space (HB, ⟨·, ·⟩B) that preserves the inner product, i.e.
+⟨f (u),f (v)⟩B = ⟨u,v ⟩A (2.5)
+for all u,v ∈ HA, is one-to-one.
+Proof. For all u,v ∈ HA we have
+f (v) = f (u) ⇐ ⇒ 0 = ||f (u) − f (v)||B = ||f (u − v)||B = ||u − v||A ⇐ ⇒ u =v (2.6)
+3. Finite Conﬁguration Space
+We analyse the case of a unitary quantum system with ﬁnite conﬁgur ation space as
+a warm up for the system of main interest, particle quantum mechan ics. Consider a
+system which has a ﬁnite conﬁguration space of n possible conﬁgurations at any time.
+We shall only consider the system’s conﬁguration at a ﬁnite number N of ﬁxed times
+t1 = 0 <t 2 <...<t N =T . An example of such a system is a particle with n possible
+positions at each time which evolves in N − 1 discrete time-steps from time t = 0 to
+time t =T .
+
+===== PAGE 6 =====
+
+Hilbert Spaces from Path Integrals 6
+3.1. Standard Hilbert space approach
+The Hilbert space for the system is ( Cn, ⟨·, ·⟩) and states of the system at a particular
+time are represented by vectors in Cn. For a state ψ ∈ Cn theith component,ψ i, is the
+amplitude that the system is in conﬁguration i. For all ψ,φ ∈ Cn the non-degenerate
+inner product is given by
+⟨ψ,φ ⟩ :=
+n∑
+i=1
+ψ ∗
+iφ i. (3.1)
+There exists a time evolution operator, U (t′,t ), a unitary transformation which
+evolves states at time t to states at time t′ and which satisﬁes the folding property
+U (t′′,t ′)U (t′,t ) = U (t′′,t ). (3.2)
+3.2. A Quantum Measure System
+Each history, γ, of the system is represented by an N -tuple of integers γ =
+(γ1,γ 2,...,γ N ) (with 1 ≤ γa ≤ n for all a = 1,...,N ) where each integer γa denotes
+the conﬁguration of the system at time t =ta. The system’s sample space, Ω, is the
+(ﬁnite) collection of these nN possible histories. The event algebra, A, is the power
+set of Ω: A := 2 Ω = {S :S ⊆ Ω}.
+To deﬁne the decoherence functional we assume there is an initial s tate ψ ∈ Cn
+of unit norm. This can be thought of as a vector in Cn or simply as an n-tuple
+of amplitudes weighting each initial conﬁguration at time t = 0. The decoherence
+functional for singleton events is,
+D({γ}, {¯γ}) := ψ (γ1)∗U ∗
+γ 2γ 1U ∗
+γ 3γ 2...U ∗
+γ N γ N − 1
+δγ N ¯γ NU¯γ N ¯γ N − 1...U ¯γ 2 ¯γ 1ψ (¯γ1) (3.3)
+where γ, ¯γ ∈ Ω, ψ (γ1) is the γ1-th component of ψ and Uγ 2γ 1 is short hand for
+U (t2,t 1)γ 2γ 1 , the amplitude to go from γ1 att1 toγ2 att2. D has “Schwinger-Kel’dysh”
+form, equalling the complex conjugated amplitude of γ times the amplitude of ¯γ when
+the two histories end at the same ﬁnal position, and zero otherwise . The decoherence
+functional of events α,β ∈ A is then ﬁxed by the bi-additivity property:
+D(α,β ) :=
+∑
+γ ∈ α
+∑
+¯γ ∈ β
+D({γ}, {¯γ}). (3.4)
+We deﬁne the restricted evolution of the initial state ψ ∈ Cn with respect to a
+history γ to be the state ψ γ ∈ Cn given by:
+ψ γ :=P γ NU (tN,t N − 1)P γ N − 1 · · ·P γ 3U (t3,t 2)P γ 2U (t2,t 1)P γ 1ψ (3.5)
+where P i is the projection operator in Cn that projects onto the state which is non-
+zero only on the ith conﬁguration. [Thus ψ γ is just the conﬁguration γN weighted by
+the amplitude Uγ N γ N − 1...U γ 2γ 1ψ (γ1).] Restricted evolution of the initial state with
+respect to an event α is then deﬁned to be the state ψ α ∈ Cn
+ψ α :=
+∑
+γ ∈ α
+ψ γ. (3.6)
+Note that ψ γ = ψ {γ }, so we can use either notation when an event is a singleton. It
+is easy to see that the decoherence functional for two events α,β ∈ A is equal to the
+inner product between the two restricted evolution states, ψ α and ψ β :
+D(α,β ) := ⟨ψ α,ψ β ⟩. (3.7)
+
+===== PAGE 7 =====
+
+Hilbert Spaces from Path Integrals 7
+3.3. Isomorphism
+We now look at conditions on the initial state and evolution of the syst em that ensure
+the History Hilbert space ( H2, ⟨·, ·⟩2) is isomorphic to ( Cn, ⟨·, ·⟩).
+For this system both the sample space and event algebra are ﬁnite s o the inner
+product space ( H1, ⟨·, ·⟩1) is ﬁnite dimensional and therefore complete but with a
+degenerate inner product. In this case there is no need to conside r Cauchy sequences
+of elements of H1. Instead, we deﬁne the equivalence relation directly on H1: u ∼ 1v
+if ||u − v||1 = 0. And H2 is deﬁned as H2 :=H1/ ∼ 1 the space of equivalence classes,
+[u]1 under ∼ 1. For all u,v ∈ H1, we have by (3.7)
+⟨[u]1, [v]1⟩2 := ⟨u,v ⟩1. (3.8)
+It will prove useful to deﬁne a map f0 :H1 → Cn given by
+f0(u) :=
+∑
+α ∈ A
+u(α )ψ α, (3.9)
+for all u ∈ H1. This sum is well-deﬁned since u(α ) is non-zero for only a ﬁnite number
+of α ∈ A. This f0 is linear and, for all u,v ∈ H1, we have
+⟨f0(u),f 0(v)⟩ = ⟨u,v ⟩1, (3.10)
+which ensures
+[u]1 = [v]1 ⇒ f0(u) = f0(v). (3.11)
+Using the map f0 we deﬁne the candidate isomorphism f :H2 → Cn by
+f ([u]1) := f0(u), (3.12)
+for all [ u]1 ∈ H2. By (3.11), f is well-deﬁned, independent of the equivalence class
+representative chosen. The map f is linear and (3.8) and (3.10) ensure that for all
+[u]1, [v]1 ∈ H2, we have:
+⟨f ([u]1),f ([v]1)⟩ = ⟨[u]1, [v]1⟩2. (3.13)
+By Lemma 1, since f is linear and satisﬁes (3.13), it is one-to-one. If we can ﬁnd
+a condition on the initial state and dynamics that ensures the map f is onto then it
+is the isomorphism we seek.
+Theorem 1 (Onto). Let the evolution operators U (t′,t ) and initial state ψ ∈ Cn be
+such that, for each conﬁguration j = 1,...,n at the ﬁnal time, there exists a history
+ending at j, γ j = (γ j
+1,γ j
+2,...,γ j
+N − 1,j ) ∈ Ω, with non-zero amplitude. In other words,
+the j-th component of the restricted evolution of the initial state with r espect to
+history γ j is non-zero: ( ψ γ j )j ̸= 0. Then the map f is onto.
+Proof. For eachj choose a history γ j ∈ A such that (ψ γ j )j ̸= 0 (note that ψ γ j is only
+non-zero in the j-th component). Let φ ∈ Cn be a vector we wish to map to.
+Deﬁne u ∈ H1 by
+u(x) :=
+{ φ j/ (ψ γ j )j if x = {γ j} for j = 1,...,n,
+0 otherwise. (3.14)
+This is a well-deﬁned vector in H1 and satisﬁes f ([u]1) = φ. Hence f is onto.
+
+===== PAGE 8 =====
+
+Hilbert Spaces from Path Integrals 8
+An example of a case in which H2 is not isomorphic to Cn is if the initial state
+has support only on a single conﬁguration, k, and the evolution is trivial, U (t,t ′) = 1.
+Then the only conﬁguration at the ﬁnal time with nonzero amplitude is k and the
+History Hilbert space is one dimensional, not Cn. Another example is if the evolution
+is “local” on the lattice, so that after the ﬁrst time step, only k and k ± 1 say have
+nonzero amplitude. Then the dimension of the History Hilbert space w ill depend on
+the number of time steps and will grow with N until it reaches n after which it will
+be constant.
+4. Particle in d dimensions
+We turn now to a less trivial system, that of a non-relativistic partic le moving in d
+dimensions.
+4.1. Hilbert space approach
+We recall some basic technology in order to ﬁx our notation. The Hilbe rt space for
+the system is ( L2(Rd), ⟨·, ·⟩). In order to deﬁne this, we ﬁrst deﬁne the inner product
+space ( L2(Rd), ⟨·, ·⟩0), the space of square integrable functions ψ : Rd → C. For all
+ψ,φ ∈ L 2(Rd) a degenerate inner product is given by
+⟨ψ,φ ⟩0 :=
+∫
+Rd
+ψ ∗ (x)φ(x)dx. (4.1)
+To see that the inner product is degenerate consider any vector ψ ∈ L 2(Rd) which is
+non-zero only on a set of measure zero. Although ψ ̸= 0, we have ||ψ ||0 = 0.
+For two vectors ψ,φ ∈ L 2(Rd) deﬁne the equivalence relation ∼ by
+ψ ∼ φ ⇐ ⇒ || ψ − φ||0 = 0. (4.2)
+The ∼ equivalence class ofψ ∈ L 2(Rd) will be denoted by [ψ ]. The set of all equivalence
+classes forms the Hilbert space ( L2(Rd), ⟨·, ·⟩) where, for all [ ψ ], [φ] ∈ L2(Rd),
+⟨[ψ ], [φ]⟩ := ⟨ψ,φ ⟩0. State vectors for the particle at a ﬁxed time are vectors in
+L2(Rd).
+4.2. Quantum Measure System
+The sample space of the system, Ω, is the set of all continuous ∥ mapsγ : [0,T ] → Rd.
+These maps represent the trajectory of the particle from an initia l time t = 0 to a
+ﬁnal “truncation time” t =T .
+Introducing a truncation time T seems necessary for the construction undertaken
+below, which produces the quantal measure for the correspondin g subalgebra AT ⊆ A.
+This limitation to a subalgebra of the full event algebra is only apparen t, however,
+because A is the union of the AT , and the measure of an event A ∈ A does not depend
+on which subalgebra we refer it to. In section 4.6 we explain this in deta il for the case
+of unitary theories such as we are concerned with in the present pa per.
+∥ W e choose continuous maps for deﬁniteness but recognise tha t the correct sample space may have
+more reﬁned continuity conditions or even be something more general. The results of our work will
+remain applicable so long as the actual event algebra contai ns a subalgebra isomorphic to the A we
+deﬁne here and on which the measure is deﬁned by the propagato r in the same — standard — way.
+
+===== PAGE 9 =====
+
+Hilbert Spaces from Path Integrals 9
+4.2.1. Event algebra The event algebra A we now deﬁne is strictly contained in the
+power set 2 Ω. Let N be any positive integer, N ≥ 2. Let t = (t1,t 2,...,t N ) be any N -
+tuple of real numbers with 0 = t1 <t 2 <...<t N =T and α = (α 1,α 2,...,α N ) any
+N -tuple of subsets of Rd such that, for each k = 1,...,N , either α k or its complement
+α c
+k is a bounded Lebesgue measurable set. A subset α ⊆ Ω is called a homogeneous
+event¶ [17] if there exists an integer N and a pair ( t, α) such that
+α = {γ ∈ Ω : γ(tk) ∈ α k,k = 1,...,N }. (4.3)
+Eachα k can be thought of as a condition on the system, a restriction on the position
+of the particle, at time tk. We represent a homogeneous event by the pair ( t, α). This
+representation is non-unique because, for example, the same hom ogeneous event α is
+represented by the pairs
+t := (t1,t 2,t 3), α := (α 1,α 2,α 3), (4.4)
+and
+t′ := (t1,t 2,t ′,t 3), α′ := (α 1,α 2, Rd,α 3). (4.5)
+The event algebra A is deﬁned to be the collection of all ﬁnite unions of
+homogeneous events. Any event α ∈ A which is not a homogeneous event will be
+called inhomogeneous.
+We can better understand the structure of the event algebra if w e consider a few
+set operations in it. Abusing notation slightly we’ll represent a homog eneous event
+α (with representation ( t, α)) by its ordered collection of sets: α = (α 1,α 2,...,α N ).
+The complement of α is then a ﬁnite union of 2 N − 1 disjoint homogeneous events.
+For example for α = (α 1,α 2,α 3) we have
+α c = (α c
+1,α 2,α 3) ∪ (α 1,α c
+2,α 3) ∪ (α 1,α 2,α c
+3) (4.6)
+∪ (α c
+1,α c
+2,α 3) ∪ (α c
+1,α 2,α c
+3) ∪ (α 1,α c
+2,α c
+3) ∪ (α c
+1,α c
+2,α c
+3)
+where c denotes set-complement.
+The intersection of two homogeneous events α = ( α 1,α 2,...,α N ),β =
+(β1,β 2,...,β N ) (which, by adding extra copies of Rd as needed, can be assumed
+to have the same time-sequence t) is the homogeneous event α ∩ β = (α 1 ∩ β1,α 2 ∩
+β2,...,α N ∩ βN ).
+These two properties say that the homogeneous events form a semiring and ensure
+that for two homogeneous events α andβ the event α \β =α ∩ β c is a ﬁnite union of
+disjoint homogeneous events. This means that a ﬁnite union of homo geneous events
+can be re-expressed as a ﬁnite union of disjoint homogeneous events. As an example
+consider the event α =α 1
+H ∪ α 2
+H ∪ α 3
+H for three homogeneous events α A
+H (A = 1, 2, 3).
+We can deﬁne three disjoint events ¯α A by
+¯α 1 =α 1
+H, ¯α 2 :=α 2
+H \α 1
+H, ¯α 3 := (α 3
+H \α 1
+H ) ∩ (α 3
+H \α 2
+H ). (4.7)
+Now, from the remarks above,
+α 2
+H \α 1
+H =
+N1⋃
+i=1
+β i
+1, α 3
+H \α 1
+H =
+N2⋃
+j=1
+β j
+2, α 3
+H \α 2
+H =
+N3⋃
+k=1
+β k
+3, (4.8)
+whereβ i
+1,β j
+2,β k
+3 are homogeneous events such that β i
+A ∩β i′
+A = ∅ ifi ̸=i′ (forA = 1, 2, 3
+and i,i ′ = 1,...,N A).
+¶ Alternative names include elementary event, regular event or cylinder set.
+
+===== PAGE 10 =====
+
+Hilbert Spaces from Path Integrals 10
+We therefore have
+α = ¯α 1 ∪ ¯α 2 ∪ ¯α 3 =α 1
+H ∪
+( N1⋃
+i=1
+β i
+1
+)
+∪
+
+
+
+
+N2⋃
+j=1
+β j
+2
+
+ ∩
+( N3⋃
+k=1
+β k
+3
+) 
+ (4.9)
+=α 1
+H ∪
+( N1⋃
+i=1
+β i
+1
+)
+∪
+
+
+N2⋃
+j=1
+N3⋃
+k=1
+β j
+2 ∩ β k
+3
+
+
+which expresses α as a ﬁnite union of mutually disjoint homogeneous events—namely
+α 1
+H,β i
+1 (i = 1,...,N 1) and β j
+2 ∩ β k
+3 (j = 1,...,N 2,k = 1,...,N 3). The procedure
+followed in this example extends without diﬃculty to M >3 homogeneous events but
+with an associated proliferation of notation.
+(For representing such relationships, the Boolean-algebraic nota tion can be quite
+expressive. For example, the essence of (4.7)-(4.9) is the disjoint decomposition,
+for any three events, α ∪ β ∪ γ = α + (1 + α )β + (1 + α )(1 + β )γ. Notice
+here that 1 + α is the complement of α , as is clearly visible in the calculation,
+α ∩ (1 +α ) ≡ α (1 +α ) = α +α 2 =α +α = 0.)
+The event algebra A deﬁned here is an algebra but not a σ -algebra. We allow only
+a ﬁnite number of times when deﬁning a homogeneous event which mea ns A is closed
+under ﬁnite unions but not under countable unions. In Section 4.2.2, a decoherence
+functional will be deﬁned on A. It is not clear whether this deﬁnition can be extended
+to deﬁne a decoherence functional on the full σ -algebra (of subsets of Ω) generated by
+A. For this to be done it would require a “fundamental theorem of qua ntum measure
+theory” analogous to the Carath´ eodory-Kolmogorov Extension Theorem for classical
+measures (Theorem A, p. 54 of [11])
+4.2.2. Decoherence functional Let ψ ∈ L 2(Rd) be the normalised initial state, then
+the decoherence functional for singleton events is given formally b y
+D({γ}, {¯γ}) := ψ (γ(0))∗e− iS[γ ]δ(γ(T ) − ¯γ(T ))eiS[¯γ ]ψ (¯γ(0)). (4.10)
+By bi-additivity, the decoherence functional for events α,β ∈ A is then given by the
+double path integral:
+D(α,β ) :=
+∫
+γ ∈ α
+[dγ]
+∫
+¯γ ∈ β
+[d¯γ]D({γ}, {¯γ}). (4.11)
+All these formulae are, as yet, only formal. We do not know rigorous ly what Ω is,
+whether the singleton subsets of Ω are measureable, or how to deﬁ ne the integration-
+measure [dγ]. Indeed, one might anticipate that, as with Wiener measure, neithe r
+eiS[γ ] nor [dγ] can be deﬁned separately, and only their combination in (4.11) will
+exist mathematically.
+Nonetheless, we can make sense of the decoherence functional ( 4.11) on A because
+the form of the events — unions of homogeneous events — allows us t o equate the path
+integrals in (4.11) to well-deﬁned expressions involving the propagator. The propagator
+is a function + K(x′,t ′|x,t ) that encodes the dynamics of the particle. We assume that
+the dynamics of the system is unitary. We deﬁne the restricted evo lution ofψ ∈ L 2(Rd)
+according to a homogeneous event α ∈ A (with representation t = (t1,t 2,...,t N ) and
+α = (α 1,α 2,...,α N )) to be ψ α given by
++ The propagator may in general be a distribution, as in the cas e of a simple harmonic oscillator
+example in Section 4.4.
+
+===== PAGE 11 =====
+
+Hilbert Spaces from Path Integrals 11
+ψ α (xT,T ) := χ α N (xT )
+∫
+α N − 1
+dxN − 1
+∫
+α N − 2
+dxN − 2 · · ·
+∫
+α 2
+dx2
+∫
+α 1
+dx1
+K(xT,T |xN − 1,t N − 1) · · ·K(x2,t 2|x1, 0)ψ (x1), (4.12)
+where
+χ A(x) :=
+
+
+
+1 if x ∈ A,
+0 if x /∈ A.
+(4.13)
+is the characteristic function of A ⊂ Rd.
+The convergence of the integrals (and therefore the existence o f ψ α ) in (4.12)
+depends on the propagator for the system and the type of α k subsets allowed. For the
+examples we shall consider ∗ in Section 4.4 the integrals converge if all the α k subsets
+are bounded and, it turns out, in the isomorphism proof in Section 4.3 we will only
+require such events. In fact we will deal only with two-time homogen eous events with
+bounded measurable sets at the initial and ﬁnal times.
+Nevertheless we must still deﬁne the decoherence functional on t he entire
+event algebra A and to do this we must deﬁne restricted evolution according to a
+homogeneous event α when some of the α k subsets are unbounded (which, for the
+event algebra we are considering, only happens if the α k are complements of bounded
+measurable sets). In general (and certainly for the examples we s hall look at) the
+propagator is oscillatory in position and if α k, say, is unbounded the dxk integral in
+(4.12) does not converge absolutely.
+We deal with this non-convergence in the standard way (see e.g. [2, footnote
+13]) by introducing a convergence factor. For each unbounded α k we replace the
+non-convergentdxk integral∫
+α k
+K(xk+1,t k+1|xk,t k)K(xk,t k|xk− 1,t k− 1)dxk, (4.14)
+in (4.12) by
+lim
+ǫ→ 0+
+∫
+α k
+K(xk+1,t k+1|xk,t k)K(xk,t k|xk− 1,t k− 1) exp
+(
+−ǫx2
+k
+)
+dxk. (4.15)
+For the propagators we consider this integral converges and the ǫ → 0+ limit exists.
+By using these convergence factors we can deﬁne ψ α for all homogeneous events α ∈ A.
+For the propagators we will consider, the following composition prop erty holds:
+lim
+ǫ→ 0+
+∫
+Rd
+K(xk+1,t k+1|xk,t k)K(xk,t k|xk− 1,t k− 1) exp
+(
+−ǫx2
+k
+)
+dxtk (4.16)
+=K(xk+1,t k+1|xk− 1,t k− 1). (4.17)
+This property is the analogue of the Einstein-Smoluchowski-Chapma n-Kolmogorov
+equation in the theory of Brownian motion. This property is essentia l if ψ α is to
+depend only on the homogeneous event α and not its representation in terms of the
+pair ( t, α) and we assume it holds for all propagators henceforth.
+∗ These examples include the free particle and the simple harm onic oscillator.
+
+===== PAGE 12 =====
+
+Hilbert Spaces from Path Integrals 12
+Having deﬁned restricted evolution according to a homogeneous ev ent we now
+deﬁne it for all events in A. Let α be an event given by
+α =
+M⋃
+k=1
+α k
+H, (4.18)
+with the α k
+H (k = 1 ,...,M ) a ﬁnite collection of mutually disjoint homogeneous
+events. We deﬁne ψ α as the sum
+ψ α :=
+M∑
+k=1
+ψ α k
+H
+. (4.19)
+If the propagator satisﬁes the composition property (4.16) this d oesn’t depend on the
+representation of α as a union of homogeneous events.
+For two events α,β ∈ A and an initial normalised vector ψ ∈ L 2(Rd) one can
+show that the decoherence functional (4.11) on A × A is equal to the inner product
+D(α,β ) := ⟨ψ α,ψ β ⟩0, (4.20)
+by using the familiar expression for the propagator K as a path integral
+K(x2,t 2|x1,t 1) =
+∫
+[dγ]eiS[γ ] (4.21)
+where the integral is over all paths γ which begin at x1 at t1 and end at x2 at t2.
+4.3. Isomorphism
+Henceforth we assume the initial state ψ ∈ L 2(Rd) has unit norm, the decoherence
+functional for events in A is given by the propagator K as described in section 4.2.2,
+the spaces H1, H2 are deﬁned as in sections 2.3.1 and 2.3.2. We will ﬁnd conditions
+on the initial state and propagator that ensure the History Hilbert space (H2, ⟨·, ·⟩2)
+is isomorphic to ( L2(Rd), ⟨·, ·⟩).
+It will prove useful to deﬁne a map f0 :H1 → L2(Rd) given by
+f0(u) :=
+∑
+α ∈ A
+u(α ) [ψ α ], (4.22)
+for all u ∈ H1. The sum is well-deﬁned since u(α ) is only non-zero for a ﬁnite number
+of events α ∈ A. This map f0 is linear and for all u,v ∈ H1, we have
+⟨f0(u),f 0(v)⟩ = ⟨u,v ⟩1. (4.23)
+Since the map f0 is linear and preserves the inner products in H1 and L2(Rd) it
+maps a Cauchy sequence, {un} of elements of H1 to a Cauchy sequence in L2(Rd).
+SinceL2(Rd) is complete this sequence has a limit and it is this limit we assign as the
+image of our candidate isomorphism, f :H2 → L2(Rd) deﬁned by:
+f ([un]1) := lim
+n→∞
+f0(un). (4.24)
+The map f is linear and well-deﬁned, independent of which representative, {un}
+of the [un]1 equivalence class is used in the deﬁnition above.
+Using (4.23) and the continuity of the ⟨·, ·⟩ inner product [19, Lemma 3.2-2] we
+have
+⟨f ([un]1),f ([vn]1)⟩ := ⟨ lim
+n→∞
+f0(un), lim
+m→∞
+f0(vm)⟩ (4.25)
+
+===== PAGE 13 =====
+
+Hilbert Spaces from Path Integrals 13
+= lim
+n→∞
+⟨f0(un),f 0(vn)⟩ = lim
+n→∞
+⟨un,v n⟩1 =: ⟨[un]1, [vn]1⟩2. (4.26)
+By Lemma 1, since f is linear and satisﬁes (4.26), it is one-to-one. We can now
+state our main theorem:
+Theorem 2 (Onto). Let the propagator K(xT,T |x0, 0) be continuous as a function
+of ( xT, x0) ∈ R2d and such that for each xT , ∃x0 withK(xT,T |x0, 0) non-zero. Then
+the map f deﬁned by (4.24) is onto.
+To prove Theorem 2 we follow a strategy suggested by the proof of Theorem 1:
+we want to show, roughly, that every ﬁnal position can be reached by a history of
+nonzero amplitude. The implementation of the strategy is more comp licated than in
+the ﬁnite case and will proceed by establishing a series of Lemmas.
+Lemma 2. Let the propagator K(xT,T |x0, 0) be continuous as a function of
+(xT, x0) ∈ R2d. Let ψ ∈ L 2(Rd) be the initial state. Let A ⊂ Rd be a compact
+measurable set and α be the homogeneous event represented by t = (0 ,T ), α =
+(A, Rd). Then
+ψ α (xT,T ) :=
+∫
+A
+K(xT,T |x0, 0)ψ (x0)dx0, (4.27)
+is continuous as a function of xT ∈ Rd.
+Proof. Fix a position xT ∈ Rd at the ﬁnal time. Let C be the closed unit ball centred
+at xT . By assumption, K(xT,T |x0, 0) is continuous (as a function of ( xT, x0) ∈ R2d)
+so, by the Heine-Cantor theorem, it is uniformly continuous (as a fu nction of ( xT, x0))
+on the compact set C × A ⊂ R2d. This means for any ǫ >0 there exists δ >0 such
+that for ( xT, x0), (x′
+T, x′
+0) ∈ C × A we have
+√
+|xT − x′
+T |2 + |x0 − x′
+0|2<δ ⇒ | K(xT,T |x0, 0) − K(x′
+T,T |x′
+0, 0)|<ǫ. (4.28)
+In particular if x0 = x′
+0 and |xT − x′
+T |<δ < 1 then
+⏐
+⏐
+⏐K(xT,T |x0, 0) − K(x′
+T,T |x0, 0)
+⏐
+⏐
+⏐<ǫ ∀x0 ∈ A. (4.29)
+So for |xT − x′
+T |<δ < 1 we have
+|ψ α (xT,T ) − ψ α (x′
+T,T )|
+:=
+⏐
+⏐
+⏐
+⏐
+∫
+A
+(
+K(xT,T |x0, 0) − K(x′
+T,T |x0, 0)
+)
+ψ (x0)dx0
+⏐
+⏐
+⏐
+⏐
+≤
+( ∫
+A
+⏐
+⏐
+⏐K(xT,T |x0, 0) − K(x′
+T,T |x0, 0)
+⏐
+⏐
+⏐
+2
+dx0
+) 1
+2
+( ∫
+A
+|ψ (x0)|2dx0
+) 1
+2
+<ǫ |A|
+where we have used the Cauchy-Schwarz inequality and the normalis ation of ψ and
+|A| is the Lebesgue measure of A. |A| is ﬁnite so, since ǫ is arbitrary, ψ α (xT,T ) is
+continuous at xT . This holds for any xT ∈ Rd.
+Lemma 3. Let the propagator K(xT,T |x0, 0) be continuous as a function of ( xT, x0)
+and be such that for each xT , ∃x0 s.t. K(xT,T |x0, 0) is non-zero. Then for any
+point xT ∈ Rd at the truncation time t = T there exists a compact measurable
+
+===== PAGE 14 =====
+
+Hilbert Spaces from Path Integrals 14
+set A ⊂ Rd (depending on xT ) such that the homogeneous event α represented by
+t = (0,T ), α = (A, Rd) satisﬁes
+ψ α (xT,T ) :=
+∫
+A
+K(xT,T |x0, 0)ψ (x0)dx0 ̸= 0. (4.30)
+Proof. The proof relies on Lebesgue’s Diﬀerentiation Theorem [18, p100] wh ich states
+that if G : Rd → C is an integrable function then
+G(x) = lim
+B→ x
+∫
+BG(x′)dx′
+|B| , (4.31)
+for almost all x ∈ Rd. Here B is an d-dimensional ball centred on x which contracts
+to x in the limit and |B| is its Lebesgue measure.
+Aiming for a contradiction we assume that
+∫
+A
+K(xT,T |x′, 0)ψ (x′)dx′ = 0, (4.32)
+for all compact measurable sets A ⊂ Rd.
+TakingA to be a sequence of closed balls contracting to an arbitrary point x ∈ Rd
+at the initial time then (4.31) gives
+K(xT,T |x, 0)ψ (x) = lim
+A→ x
+∫
+AK(xT,T |x′, 0)ψ (x′)dx′
+|A| = 0, (4.33)
+for almost all x ∈ Rd. This is a contradiction since K is continuous and ∃x0 with
+K(xT,T |x0, 0) ̸= 0 so there is a compact set containing x0 on whichK(xT,T |x, 0) ̸= 0.
+Lemma 4. Let the propagator K(xT,T |x0, 0) satisfy the conditions of Lemma 3.
+Then, for any point xT ∈ Rd at the truncation time there exists a homogeneous event
+α represented by t = (0,T ), α = (A,B ) (with A ⊂ Rd a compact measurable set and
+B ⊂ Rd an open ball centred on xT ) and a strictly positive real number P such that
+ψ α is uniformly continuous in B and |ψ α (x,T )|>P for all x ∈ B.
+Proof. By Lemmas 2 and 3, there exists a compact measurable set A ⊂ Rd such that,
+for the homogeneous event β represented by β = (A, Rd) the function ψ β (x,T ) is
+continuous for all x ∈ Rd and satisﬁes ψ β (xT,T ) ̸= 0.
+This implies there exists δ >0 such that
+|x − xT |<δ ⇒ | ψ β (x,T ) − ψ β (xT,T )|< |ψ β (xT,T )|
+2 . (4.34)
+Let B be the open ball of radius δ centred on xT . Setting P = |ψ β (xT,T )|/ 2> 0 we
+see that x ∈ B implies |ψ β (x,T )|>P > 0.
+Since ψ β (x,T ) is continuous it is uniformly continuous in any compact set and
+therefore any subset of a compact set. It is thus uniformly contin uous in B. For
+α := (A,B ) we then have ψ α = χ Bψ β (χ B is the characteristic function of B) and
+the result follows.
+The next lemma is the heart of the proof.
+
+===== PAGE 15 =====
+
+Hilbert Spaces from Path Integrals 15
+Lemma 5. Let the propagator K(xT,T |x0, 0) satisfy the conditions of Lemmas 2 and
+3. Let I be a compact d-interval with positive measure |I|> 0 at the truncation time.
+Then for any ǫ> 0 there exists a vector u ∈ H1 such that
+||[χ I ] − f0(u)||<ǫ. (4.35)
+Proof. Let ǫ >0. For any x ∈ I there exists, by Lemma 4, a homogeneous event α x
+represented by αx = (Ax,B x) (with Bx an open ball centred on x) and a real number
+Px > 0 such that ψ α x is uniformly continuous in Bx and |ψ α x (x′,T )|> Px for all
+x′ ∈ B.
+The collection of Bx, taken for all x ∈ I, form an open cover of I, which, since I is
+compact, admits a ﬁnite subcover labelled by {xi ∈ I |i = 1...N }. Deﬁne Ai :=Axi ,
+Bi :=Bxi,α i :=α xi and Pi :=Pxi.
+EachBi will now be “cut up” into ﬁnitely many disjoint sets, Dij, over which the
+ψ α i functions vary by only “small amounts”. The ﬁrst step toward this is to form a
+ﬁnite number of N mutually disjoint sets Ci ⊆ Bi given by
+C1 :=B1 ∩ I, C i := (Bi ∩ I) \
+i− 1⋃
+j=1
+Cj (i = 2,...,N ), (4.36)
+and such that
+I =
+N⋃
+i=1
+Ci. (4.37)
+Without loss of generality we assume the Ci are non-empty.
+Each function ψ α i is uniformly continuous in Ci and satisﬁes |ψ α i(x,T )|>P i for
+all x ∈ Ci for some strictly positive Pi ∈ R.
+LetP >0 be the minimum value of the Pi and let δi> 0 (i = 1,...,N ) be chosen
+such that
+|x − y|<δ i ⇒ | ψ α i (x,T ) − ψ α i (y,T )|< ǫP√
+|I|
+, (4.38)
+for all x, y ∈ Ci.
+Letting δ > 0 be the minimum of the δi now subdivide each Ci into a ﬁnite
+number,Mi, of non-empty disjoint sets Dij (i = 1,...,N ;j = 1,...,M i) such that
+Mi⋃
+j=1
+Dij =Ci and x, y ∈ Dij ⇒ | x − y|<δ. (4.39)
+If we arbitrarily choose points xij ∈ Dij the Dij sets are “small enough” that,
+by (4.38), |ψ α i (xij,T ) − ψ α i (x,T )|<ǫP/
+√
+|I| for all x ∈ Dij. Deﬁning homogeneous
+eventsα ij to be represented by αij := (Ai,D ij) therefore gives
+⏐
+⏐
+⏐
+⏐1 − ψ α ij (x,T )
+ψ α ij (xij,T )
+⏐
+⏐
+⏐
+⏐ = |ψ α ij (xij,T ) − ψ α ij (x,T )|
+|ψ α ij (xij,T )| < 1
+|ψ α ij (xij,T )|
+ǫP√
+|I|
+< ǫ√
+|I|
+, (4.40)
+for all x ∈ Dij where we note |ψ α ij (xij)|>P > 0.
+Now deﬁne a H1 vector by
+u(x) :=
+{
+1/ψ α ij (xij,T ) if x =α ij for i = 1,...,N ;j = 1,...,M i
+0 otherwise. (4.41)
+
+===== PAGE 16 =====
+
+Hilbert Spaces from Path Integrals 16
+This is a well-deﬁned vector in H1 since there are only a ﬁnite number of events
+x =α ij on which u(x) is non-zero. We now compute
+||[χ I ] − f0(u)||2 =
+∫
+Rd
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+χ I (x) −
+N∑
+i=1
+Mi∑
+j=1
+ψ α ij (x,T )
+ψ α ij (xij,T )
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+2
+dx (4.42)
+=
+N∑
+i=1
+Mi∑
+j=1
+∫
+Dij
+⏐
+⏐
+⏐
+⏐1 − ψ α ij (x,T )
+ψ α ij (xij,T )
+⏐
+⏐
+⏐
+⏐
+2
+dx<
+N∑
+i=1
+Mi∑
+j=1
+∫
+Dij
+ǫ2
+|I|dx =ǫ2, (4.43)
+where we have used (4.40), the disjointness of the Dij and
+N∑
+i=1
+Mi∑
+j=1
+∫
+Dij
+dx = |I|. (4.44)
+We have thus constructed u ∈ H1 such that
+||[χ I ] − f0(u)||<ǫ. (4.45)
+We can now prove Theorem 2.
+Proof. (of Theorem 2)
+A step function on Rd is a function S : Rd → C that is a ﬁnite linear combination
+of characteristic functions of compact d-intervals.
+Let [φ] ∈ L2(Rd) be the element we wish to map to. We assume [ φ] ̸= 0 for
+otherwise the zero vector in H2 would satisfy f (0) = [ φ]. Let {[Sn]} be a sequence
+of L2(Rd) vectors, where the Sn are step functions that are not identically zero, such
+that
+||[φ] − [Sn]||< 1
+2n, (4.46)
+for each positive integer n. Such a sequence {[Sn]} exists since the step functions are
+dense in L2(Rd) [18, p133].
+For each step function Sn we can (non-uniquely) decompose it as
+Sn =
+Nn∑
+i=1
+sn,iχ In,i, (4.47)
+for a ﬁnite collection of Nn ≥ 1 non-zero complex numbers sn,i and mutually
+disjoint compact d-intervalsIn,i . Deﬁne Mn > 0 to be the maximum value of |sn,i |
+(i = 1,...,N n).
+By Lemma 5, for each n = 1, 2,... and each i = 1,...,N n there exists a vector
+un,i ∈ H1 such that
+||[χ In,i ] − f0(un,i )||< 1
+2nNnMn
+. (4.48)
+Deﬁning un ∈ H1 by
+un :=
+Nn∑
+i=1
+sn,iun,i, (4.49)
+
+===== PAGE 17 =====
+
+Hilbert Spaces from Path Integrals 17
+we see that
+||[Sn]−f0(un)|| ≤
+Nn∑
+i=1
+|sn,i |||[χ In,i ]−f0(un,i )||<
+Nn∑
+i=1
+|sn,i |
+2nNnMn
+<
+Nn∑
+i=1
+1
+2nNn
+= 1
+2n. (4.50)
+This, together with (4.46), implies
+||[φ] − f0(un)||< 1
+n, (4.51)
+i.e. f0(un) is a Cauchy sequence converging to [ φ]. Since f0 preserves the inner
+product this means {un} is a Cauchy sequence of H1 elements such thatf ([un]1) = [φ].
+[φ] ∈ L2(Rd) was arbitrary so the map f is onto.
+Theorem 2 gives suﬃcient conditions on the propagator for the Hist ory Hilbert
+space to be isomorphic to L2(Rd) for any initial state . If the initial state itself satisﬁes
+certain conditions, then the conditions on the propagator can be r elaxed. For example,
+if the initial state, ψ , is everywhere nonzero, then even a trivial evolution with a
+delta-function propagator will suﬃce to make the History Hilbert sp ace isomorphic to
+L2(Rd).
+4.4. Examples
+We now look at examples for which the propagator is known explicitly. T he expressions
+for the propagators are taken from [20].
+For a free particle of mass m in d dimensions the Lagrangian is
+L = m
+2 ˙x2. (4.52)
+The propagator is given by
+K(x′,t ′|x,t ) =
+( m
+2πi ℏ(t′ − t)
+) d/ 2
+exp
+[ im
+2ℏ(t′ − t) (x′ − x)2
+]
+. (4.53)
+For a charged particle (with mass m and charge e) in a constant vector potential A
+the Lagrangian is
+L = m
+2 ˙x2 +eA · ˙x. (4.54)
+The propagator is given by
+K(x′,t ′|x,t ) =
+( m
+2πi ℏ(t′ − t)
+) d/ 2
+exp
+[ im
+2ℏ(t′ − t) (x′ − x)2 + ieA
+ℏ ·(x′ − x)
+]
+. (4.55)
+Both of these propagators satisfy the conditions for Theorem 2. Since the system with
+constant vector potential is gauge equivalent to the free particle , the theorem is bound
+to hold for both or neither.
+A particle of mass m in a simple harmonic oscillator potential of period 2 π/ω in
+one spatial dimension has Lagrangian
+L = m
+2 ˙x2 − mω 2
+2 x2. (4.56)
+Deﬁning, ∆t :=t′ − t, the propagator is
+K(x′,t ′|x,t ) =
+( mω
+2πi ℏ sin(ω ∆t)
+) 1/ 2
+exp
+[
+− mω
+2iℏ
+[
+(x′2 +x2) cot(ω ∆t) − 2 xx′
+sin(ω ∆t)
+]]
+, (4.57)
+
+===== PAGE 18 =====
+
+Hilbert Spaces from Path Integrals 18
+if ∆t ̸=Mπ/ω for integer M .
+If ∆t =Mπ/ω for integer M we have
+K(x′,t ′|x,t ) = e(− iM π/ 2)δ(x′ − (− 1)Mx). (4.58)
+Clearly the propagator fulﬁls the conditions for Theorem 2 if the tru ncation time
+T is not equal to Mπ/ω for integer M . More care is needed if the truncation time is
+an integer multiple of π/ω .
+If T = Mπ/ω for integer M then the propagator does not fulﬁl the conditions
+for Theorem 2. In this case we cannot use only two-time events to d emonstrate the
+isomorphism. The Hilbert spaces are still isomorphic, however, as ca n be seen by using
+three-time homogeneous events α represented by α = (R,α t2,α T ) in which the set at
+time t1 = 0 is R and such that T − t2 is not an integer multiple of π/ω . Evolving
+the initial state according to these events is equivalent to unrestr ictedly evolving the
+initial state from t1 = 0 to t2 > 0. The state at time t2 can then be viewed as
+the “initial state” for two-time homogeneous events represente d by ( α t2,α T ). The
+conditions for Theorem 2 are met by K(xT,T |xt2,t 2) so the theorem can be applied
+and the isomorphism demonstrated. These ideas can similarly be applie d to the simple
+harmonic oscillator in d dimensions.
+4.5. Particle with an inﬁnite potential barrier
+Consider a physical system of a non-relativistic particle in one dimens ion restricted to
+the positive halﬂine R+ = {x ∈ R|x> 0} by an inﬁnite potential barrier.
+The Hilbert space for this system is L2(R+) which we deﬁne as a vector subspace
+of L2(R):
+L2(R+) := {[ψ ] ∈ L2(R) : ψ (x) = 0 for x ≤ 0}. (4.59)
+The sample space, Ω, and event algebra, A, for this system will be the same as
+for a particle in 1 dimension. The diﬀerence is that, when deﬁning the d ecoherence
+functional we now use an initial vector ψ ∈ L 2(R) such that ψ (x) = 0 for x ≤ 0 and
+a propagator deﬁned by [21, p40]:
+K(x′,t ′|x,t ) = χ R+ (x′)χ R+ (x)
+( m
+2πi ℏ(t′ − t)
+) 1/ 2
+(4.60)
+×
+[
+exp
+[im(x′ − x)2
+2ℏ(t′ − t)
+]
+− exp
+[im(x′ +x)2
+2ℏ(t′ − t)
+]]
+, (4.61)
+where m is the mass of the particle.
+This propagator does not satisfy the conditions of Theorem 2—it is c ontinuous
+as a function of ( x,x ′) ∈ R2 but is zero for x ≤ 0 or x′ ≤ 0. It is not surprising
+therefore that the map f :H2 → L2(R) deﬁned by (4.24) is not an isomorphism with
+this event algebra and decoherence functional, namely because f only gives vectors
+[ψ ] ∈ L2(R+) as expected.
+It is possible to show, by using the same methods used in the isomorph ism proof
+for a particle in d dimensions, that the History Hilbert space for this event algebra
+and decoherence functional is isomorphic to L2(R+).
+
+===== PAGE 19 =====
+
+Hilbert Spaces from Path Integrals 19
+4.6. Inﬁnite times
+In the preceding sections we assumed a ﬁnite time interval both in th e ﬁnite
+conﬁguration space case and the quantum mechanics case. We can extend the analysis
+to cover all times to the future of the initial time, t ∈ [0, ∞ ). We will describe how
+to do this in the quantum mechanics case; the extension can be applie d, mutatis
+mutandis, to the ﬁnite conﬁguration space case.
+The sample space Ω is now the set of continuous real functions on [0 , ∞ ). The
+homogeneous events, α , are deﬁned as before as represented by a positive integer
+N ≥ 1, an N -tuple of times t = (t1 = 0,t 2,...t N ) and an N -tuple of measurable
+subsets of Rd, α = (α 1,α 2,...,α N ) such that either α k or α c
+k is bounded. Now,
+however, there is no truncation time and therefore no restriction on the times tk,
+they can be arbitrarily large. The event algebra, A, is the set of ﬁnite unions of the
+homogeneous events. Since there is no common truncation time T , the restricted
+evolution of the initial state with respect to a homogeneous event, as deﬁned by 4.12,
+results in a state deﬁned at a time, tN , that depends on the event. Such states cannot
+be added together to deﬁne the restricted evolution of the initial s tate with respect
+to a event which is a union of disjoint homogeneous events which have diﬀerent last
+times. Instead, we evolve the restricted state back to the initial t ime t = 0, i.e. we
+deﬁne
+ψ α (x0, 0) :=
+∫
+Rd
+dxNK(x0, 0|xN,t N )ψ α (xN,t N ) (4.62)
+for each homogeneous event α .
+We can now work at the initial time. The restricted state at t = 0 of an
+inhomogeneous event is the sum of the restricted states at t = 0 of its constituent
+disjoint homogeneous events (as in (4.19)). The decoherence fun ctional is deﬁned as
+the inner product of the restricted states at t = 0.
+The event algebra, A∞ , in the inﬁnite time case contains a subalgebra, A∞ |T ,
+which is canonically isomorphic to the event algebra, AT with a truncation time
+because each history with a truncation time corresponds to an eve nt in the inﬁnite time
+case: the event is the set of inﬁnite time histories which match the tr uncated history.
+The decoherence functionals on A∞ |T and AT agree because the unitary evolution
+back to the initial time preserves the inner product. Theorem 2 the refore also applies
+to the semi-inﬁnite time case: if the History Hilbert space is isomorphic to L2(Rd)
+with a truncation time, it is isomorphic without. In the former case it is convenient to
+construct the History Hilbert space at the truncation time as we did and in the latter
+it is convenient to consider the History Hilbert space associated with the initial time,
+but for the unitary systems we are considering this is not a real dist inction, being akin
+to working in the Schr¨ odinger or Heisenberg Picture.
+4.7. Mixed states
+The conjecture made at the end of section 2 was that where both s tandard and History
+Hilbert spaces exist, generically they are isomorphic if the decohere nce functional
+encodes a pure initial state. If in contrast the initial state is a stat istical mixture then
+the decoherence functional is a convex combination of decoheren ce functionals, and
+then the History Hilbert space can be bigger than the standard Hilbe rt space. Indeed,
+we make note of the following expectations for the case of a ﬁnite co nﬁguration space.
+If the initial state is a density matrix of rank ri then the History Hilbert space is
+
+===== PAGE 20 =====
+
+Hilbert Spaces from Path Integrals 20
+generically the direct sum of ri copies of the standard Hilbert space Cn. Even more
+generally, if there is also a ﬁnal density matrix of rank rf then the History Hilbert
+space is the direct sum of ri copies of Crf . [26]
+5. Discussion
+If histories-based formulations of quantum mechanics are nearer to the truth than
+state- and operator-based formulations, and in particular if some thing like Quantum
+Measure Theory is the right framework for a theory of quantum gr avity, then there is
+no particular reason why one should expect Hilbert spaces to be par t of physics at a
+fundamental level.
+Indeed, in histories formulations which assume only plain, “weak” pos itivity (and
+in which, therefore, no Hilbert space arises), certain kinds of devic es can in principle
+exist that are not possible within ordinary quantum mechanics, and t his could be
+regarded as desirable. For example non-signaling correlations of th e “PR box” type
+become possible [22].
+Nor does reference to a Hilbert space seem to be needed for interp retive reasons.
+On the contrary, attempts to overcome the “operationalist” bias of the so called
+Copenhagen interpretation tend to lead in the opposite direction, a way from state-
+vectors and toward histories and the associated events [7].
+Thus, it seems hard to argue on principle that a Hilbert space is neede d. On the
+other hand, there do exist good reasons to regard strong positiv ity as more natural
+than weak positivity. First, it is mathematically much simpler than weak positivity,
+whence more amenable to being veriﬁed and worked with [10]. (Not tha t its deﬁnition
+is any simpler, but that it comprises, apparently, far fewer indepen dent conditions.)
+Second, strong positivity is preserved under composition of subsy stems, whereas the
+obvious “product measure” of two weakly positive quantal measur es is not in general
+positive at all. And third — at a technical level — the histories hilbert sp ace to which
+strong positivity leads has already proven to be useful in certain ap plications [22, 23],
+while there are also indications that the map taking events α ∈ A to vectors in H
+could be of aid in the eﬀort to extend the decoherence functional f rom A to a larger
+fragment of the σ -algebra it generates.
+It thus seems appropriate to add strong positivity to the axioms de ﬁning a
+decoherence functional (as we have done in this paper), and from a strongly positive
+decoherence functional a histories hilbert space H automatically arises. Once we
+have it, we can ask whether the histories hilbert space helps us to ma ke contact with
+the quantal formalism of standard textbooks. This is something th at any proposed
+formulation has to be able to do, and it is the principal question animat ing the
+present paper. The positive answer we have obtained is that for th e systems we have
+studied, the histories hilbert spaces that pertain to them can be dir ectly identiﬁed with
+the corresponding state-spaces of the ordinary quantum descr iption. (The two are
+“naturally isomorphic”.) Thereby an important part of the mathema tical apparatus
+of ordinary quantum mechanics is recovered quite simply. This result can be seen as
+an advance for both Generalised Quantum Mechanics and Quantum M easure Theory
+because the basic underlying structures — histories and decohere nce functionals —
+are common to both approaches. (Strong positivity has not norma lly been assumed
+in Generalised Quantum Mechanics, but there is no reason why it could not be.)
+Beyond state-vectors, the other main ingredients of the standa rd quantum
+machinery are the operators representing position, momentum, ﬁ eld values,
+
+===== PAGE 21 =====
+
+Hilbert Spaces from Path Integrals 21
+“observables”, and the like. How might they be derived from historie s? In the
+specialized context of unitary, Hamiltonian evolution and the Schr¨ o dinger equation,
+time-ordered operators can be obtained from functions (“funct ionals”) on the sample
+space Ω (see [2]), but whether such a relationship exists in the same g enerality as the
+histories hilbert space itself (that is for any quantum measure theo ry) remains to be
+seen. An interesting generalization where one does seem able to rec over ﬁeld operators
+from the decoherence functional is that of quantum ﬁeld theory o n a causal set [24].
+The context of this paper has been that of non-relativistic quantu m mechanics,
+yet people have not yet completely laid the rigorous mathematical fo undations of a
+histories framework for this theory. Nevertheless the decohere nce functional limited
+to A × A is known (we haven’t yet deﬁned calculus but we can calculate the volu me of
+a pyramid, see footnote 10, page 371 of [2]), and this suﬃced to de monstrate our main
+result, that the History Hilbert space H is the standard Hilbert space. A key question
+for the future that will also be of interpretational signiﬁcance is wh at the sample
+space of histories is. Is it the set of all continuous trajectories an d if so, exactly how
+continuous are they? This is closely related to the question, can the decoherence
+functional — and hence the quantal measure — be extended to a lar ger collection of
+sets than A? Is that larger collection the whole σ -algebra generated by A or something
+smaller? These questions have been explored by Geroch [25]. To the e xtent that they
+ﬁnd satisfactory answers, we will be able to say that Quantum Mech anics as Quantum
+Measure Theory is as well-deﬁned mathematically as the Wiener proce ss.
+Be that as it may, neither Brownian motion nor the quantum mechanic s of
+nonrelativistic point-particles can lay claim to fundamental status in present-day
+physics. Relativistic quantum ﬁeld theory comes closer, but in that c ontext, neither
+formulation — neither path-integrals/histories nor state-vector s-cum-operators —
+enjoys a mathematically rigorous existence. Instead we have the d ivergences and
+other pathologies whose resolution is commonly anticipated from the side of quantum
+gravity. If this expectation is borne out, the decoherence funct ional of quantum
+gravity might actually be easier to place on a sound mathematical foo ting than that
+of the Hydrogen atom, because in place of a path-integral over an inﬁnite dimensional
+function-space, we will have something more ﬁnitary in nature, like a summation over
+a discrete space of histories. ♯
+In that case the trek back to nonrelativistic quantum mechanics will be longer,
+but we expect that the histories hilbert space deﬁned above will still be an important
+milestone along the way.
+Acknowledgments
+The authors would like to thank Chris Isham for helpful criticisms on t he ﬁrst draft
+of this paper. We also thank Raquel S. Garcia for discussions during the early stages
+of this work. SJ is supported by a STFC studentship. FD acknowledg es support
+from ENRAGE, a Marie Curie Research Training Network contract MR TN-CT-2004-
+005616 and the Royal Society IJP 2006/R2. FD and SJ thank Perime ter Institute
+♯ One can already observe such a trend in the theory formulated in [24] of a free scalar ﬁeld on a
+causal set C corresponding to a bounded spacetime region. The decoheren ce functional of the theory
+can be computed and is again given by a double integral of the t ype of (4.11). Now however, the
+domain of integration is just Rn rather than some inﬁnite-dimensional path-space. Moreove r, the
+integrand contains, besides the expected oscillating phas es, damping terms that lessen by half the
+need for integrating-factors like those in (4.15).
+
+===== PAGE 22 =====
+
+Hilbert Spaces from Path Integrals 22
+for Theoretical Physics for hospitality during the writing of this pap er. Research at
+Perimeter Institute for Theoretical Physics is supported in part b y the Government
+of Canada through NSERC and by the Province of Ontario through M RI.
+References
+[1] P.A.M. Dirac The Lagrangian in Quantum Mechanics , Phys. Z. Sowjetunion, 3 64-77 (1933)
+[2] R. P. Feynman, Space-Time Approach to Non-Relativistic Quantum Mechanic s, Rev. Mod.
+Phys, 20, 367 (1948)
+[3] R. P. Feynman and A. R. Hibbs, Quantum Mechanics and Path Integrals , McGraw Hill 1965.
+[4] J. B. Hartle, The quantum mechanics of cosmology Dec 1989, Lectures at Winter School on
+Quantum Cosmology and Baby Universes, Jerusalem, Israel, D ec 27, 1989 - Jan 4, 1990.
+[5] J. B. Hartle, Spacetime quantum mechanics and the quantum mechanics of sp acetime in
+Proceedings of the Les Houches Summer School on Gravitation and Quantizations, Les
+Houches, France, 6 Jul - 1 Aug 1992, eds J. Zinn-Justin, and B. Julia, North-Holland (1995)
+arXiv:gr-qc/9304006
+[6] R.D. Sorkin, Quantum Mechanics as Quantum Measure Theory , Mod.Phys.Lett. A9 (1994)
+3119-3128, arXiv:gr-qc/9401003
+[7] R.D. Sorkin Quantum Dynamics without the Wave Function , J.
+Phys. A: Math. Theor. 40 (2007) 3207-3221, arXiv:quant-ph/ 0610204
+http://www.perimeterinstitute.ca/personal/rsorkin/some.papers/
+[8] R.D. Sorkin, Quantum Measure Theory and Its Interpretation , in Quantum Classical
+Correspondence: Proceedings of the 4th Drexel Symposium on Quantum Nonintegrability,
+held Philadelphia, September 8-11, 1994, pages 229-251 (In ternational Press, Cambridge
+Mass. 1997) D.H. Feng and B-L Hu, editors, arXiv:gr-qc/9507 057
+[9] R.D. Sorkin, An exercise in “anhomomorphic logic” , Journal of Physics: Confer-
+ence Series (JPCS) 67 : 012018 (2007), a special volume edited by L. Diosi,
+H-T Elze, and G. Vitiello, and devoted to the Proceedings of t he DICE-
+2006 meeting, held September 2006, in Piombino, Italia. arX iv:quant-ph/0703276
+http://www.perimeterinstitute.ca/personal/rsorkin/some.papers/
+[10] X. Martin, D. O’Connor and R.D. Sorkin Random walk in generalized quantum theory Phys.
+Rev. D 71, 024029 (2005), arXiv:gr-qc/0403085
+[11] P.R. Halmos, Measure Theory, Van Nostrand, 1964.
+[12] V.P. Belavkin, Reconstruction theorem for quantum stochastic processes , Translated from:
+Teoreticheskaya i Matematicheskaya Fizika, 62 (3) 409–431 (1985), arXiv:math/0512410
+[13] D. E. Dutkay, Positive deﬁnite maps, representations and frames , Reviews in Mathematical
+Physics, vol. 16, No. 4 451-477 (2004), arXiv:math/0511137
+[14] D.E. Evans and J.T. Lewis, Dilations of Irreversible Evolutions in Algebraic Quantum Theory,
+Dublin Institute for Advanced Studies 1977.
+[15] R. Geroch, Special Topics in Particle Physics , Unpublished
+[16] K.G. Binmore, The Foundations of Analysis: Book 2, Topological Ideas , Cambridge University
+Press, 1981.
+[17] C.J. Isham, Quantum Logic and the Histories Approach to Quantum Theory , J.Math.Phys. 35
+(1994) 2157-2185, arXiv:gr-qc/9308006.
+[18] R.L. Wheeden, A. Zygmund, Measure and Integral: An Introduction to Real Analysis , Marcel
+Dekker, Inc. 1977.
+[19] E. Kreyszig, Introductory Functional Analysis with Applications , John Wiley & Sons, 1978.
+[20] C. Grosche, F. Steiner, Handbook of Feynman Path Integrals , Springer, 1998
+[21] L.S. Schulman, Techniques and Applications of Path Integration , Wiley-Interscience, 1981.
+[22] David Craig, Fay Dowker, Joe Henson, Seth Major, David R ideout and Rafael D. Sorkin, “A
+Bell Inequality Analog in Quantum Measure Theory”, J. Phys. A: Math. Theor. 40 : 501-523
+(2007), quant-ph/0605008,
+[23] Sumati Surya and Petros W allden, “Quantum Covers in Qua ntum Measure Theory” Found.
+Phys., 40, 585-60 (2010) arXiv:0809.1951
+[24] Steven Johnston, “Feynman Propagator for a Free Scalar Field on a Causal Set” Phys. Rev.
+Lett 103 : 180401 (2009) arXiv:0909.0944 [hep-th]
+[25] R Geroch Path Integrals Unpublished notes available at
+http://physics.syr.edu/ sorkin/lecture.notes
+[26] Marie Ericsson and David Poulin (unpublished)

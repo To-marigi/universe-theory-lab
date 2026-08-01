@@ -1,0 +1,1386 @@
+===== PAGE 1 =====
+
+arXiv:2101.08313v2  [quant-ph]  16 Mar 2021
+On-state commutativity of measurements
+and joint distributions of their outcomes
+Jan Czajkowski ∗ 1 and Alex B. Grilo †2
+1QuSoft, University of Amsterdam
+2Sorbonne Universit´ e, CNRS, LIP6
+Abstract
+In this note, we analyze joint probability distributions that arise fro m outcomes of se-
+quences of quantum measurements performed on sets of quantu m states. First, we identify
+some properties of these distributions that need to be fulﬁlled to ge t a classical behavior.
+Secondly, we prove that a joint distribution exists iﬀ measurement o perators “on-state”
+permute (permutability is the commutativity of more than two opera tors). By “on-state”
+we mean properties of operators that hold only on a subset of stat es in the Hilbert space.
+Then, we disprove a conjecture proposed by Carstens, Ebrahimi, Tabia, and Unruh (eprint
+2018), which states that the property of partial on-state perm utation implies full on-state
+permutation. We disprove this conjecture with a counterexample w here pairwise “on-state”
+commutativity does not imply on-state permutability, unlike in the cas e of commutativity
+for all states in the Hilbert space.
+Finally, we explore the new concept of on-state commutativity by sh owing a simple
+proof that if two projections almost on-state commute, then the re is a commuting pair
+of operators that are on-state close to the originals. This result w as originally proven by
+Hastings (Communications in Mathematical Physics, 2019) for gene ral operators.
+∗j.czajkowski@uva.nl
+†Alex.Bredariol-Grilo@lip6.fr
+1
+
+===== PAGE 2 =====
+
+1 Introduction
+In this work we propose a basic formalism for studying classi cal distributions that come from
+joint measurements on quantum states.
+Our initial motivation comes from studying a conjecture pro posed in a recent paper by
+Carstens, Ebrahimi, Tabia, and Unruh [CETU18]. Their resul t on quantum indiﬀerentiability 1
+relies on a conjecture proposed by them, which informally st ates that commutation of projectors
+with respect to a ﬁxed quantum state implies a classical join t distribution of their measurement
+outcomes. More concretely, they conjecture the following. 2
+Conjecture 1 (Informal). If we have a set of N measurementsP1,...,P N that commute on a
+quantum state|ψ⟩, 3 then there exist random variables X1,...,X N drawn from a distribution D
+such that for any t> 1,∀1,...,i t, the marginals of this distribution on Xi1,...,X it correspond
+to measuring|ψ⟩ with measurements Pi1,...,P it .
+Motivated by this conjecture, our goal is to study the behavi or of N random variables
+X1,X 2,...,X N corresponding to the outcomes of a sequence of quantum measu rements that
+commute on a set of quantum states F ⊆D (H). Surprisingly, such results have only been
+studied forF =D(H), i.e. measurements commuting on all quantum states.
+The focal point of this note is to study which are the necessar y and suﬃcient properties of
+the quantum setup, so that such a probability distribution i s well-deﬁned. With this in hand, we
+then have two applications. First, we disprove Conjecture 1 . Secondly, we show a simpler proof
+for a variant of the result by Hastings [Has09] on operators t hat almost-commute on speciﬁc
+states.
+To be able to explain our contributions in more details, we wi ll ﬁrst start with a detour to
+very basic properties of probability distributions that ar ise from classical processes. Then, we
+discuss how these properties could be deﬁned in the quantum s etting (but, unfortunately, they
+do not hold for general quantum setups), and ﬁnally we state o ur results and discuss related
+works.
+1.1 Classical Distributions
+We discuss here properties of classical distributions that may be obvious at ﬁrst but are crucial
+and not trivial in the quantum world.
+In the following, we let A,B,C be events that come from a classical experiment. We denote
+the event corresponding to A not happening as
+A, the probability that A and B both happen
+as P[A,B ], and the probability that A happens conditioned on the fact that event B happens
+as P[A|B] = P[A,B ]
+P[B] (assuming P[B]̸= 0).
+The ﬁrst property that we want to recall on classical distrib utions is that we can compute
+the marginals of the distribution when given the joint distribution:
+Property 1 (Classical Marginals) . P[A|C] = P[A,B |C] + P[A, B|C].
+A second property that we want to recall is that the probabili ty that A and A occur is 0,
+even when considering other events:
+Property 2 (Classical Disjointness) . P[A,B | ¯A]P[
+A] = P[A,B, A] = 0 .
+1Indiﬀerentiability is a strong security notion capturing s ecurity of cryptographic constructions such as hash
+functions, where we require that any polynomial-time adver sary cannot distinguish if it has access to a crypto-
+graphic hash function or an ideal random function, even if sh e has access to some internal auxiliary functions
+used to construct the hash function. The quantum version ass umes the adversary makes quantum queries.
+2See Conjecture 2 for the formal statement.
+3Informally, two operators A and B commute on |ψ ⟩ if [A,B ]|ψ ⟩ = 0.
+2
+
+===== PAGE 3 =====
+
+Another property that we have classically is reducibility, which says that the probability of
+eventsA and A both happening is the same as the probability of A.
+Property 3 (Classical Reducibility) . P[A,B |A]P[A] = P[A,B,A ] = P[A,B ].
+Finally, the last property we study is sequential independence4 of random variables. Roughly,
+this property just says that the probability that event A happens and that event B happens is
+the same as the probability that event B happens and that event A happens.
+Property 4 (Classical Sequential Independence) . P[A|B]P[B] = P[A,B ] = P[B|A]P[A].
+We stress that these properties hold trivially for all classical distributions and all events
+such that P[A]̸= 0, P[A]̸= 0, P[B]̸= 0, and P[C]̸= 0.
+1.2 Quantum Distributions and their Properties
+Our goal is to ﬁnd necessary conditions for the existence of a classical description of the ex-
+periment where we perform a sequence of N general measurements, irrespective of the order.
+More concretely, we aim to ﬁnd the properties of measurement operators Q1,...,Q N on speciﬁc
+subsets of quantum states F so that there exists a joint distribution of X1,X 2,...,X N such
+that all marginals of this distribution on Xi1,...,X it correspond to measuring a state |ψ⟩∈F
+with measurements Qi1,...,Q it. In this case, we call it a quantum distribution .
+The main obstacle in this task is the fact that quantum measur ements do not necessarily
+commute, unlike in the classical world: the chosen order for performing the measurements
+inﬂuences the ﬁnal probability distribution of the joint me asurement outcomes. Because of
+that, we will consider the quantum analog of Properties 1 to 4 , and study when such properties
+hold in the quantum case, and their implication for having su ch a joint distribution. Our
+connections closely follow [ME84], where they show that the existence of a joint distribution for
+two arbitrary quantum observables (Hermitian operators) on every quantum state is equivalent
+to their commutation. In this work, we show how to extend thei r analysis in two ways: we
+are interested in multiple observables and we consider spec iﬁc sets of quantum states. In
+order to carry out this analysis, we extend the properties de scribed in Section 1.1 to quantum
+measurements and study their relations to each other. We lea ve the formal deﬁnitions of the
+quantum analogs of these classical properties to Section 3. 1.
+1.3 Our Results
+Using the formalism described in the previous section, we pr ove the following connections be-
+tween joint quantum distributions and the measurement oper ators.
+First, we show that quantumly, the marginal property also im plies the sequential indepen-
+dence one.
+Result 1 (Informal statement of Theorem 1) . If a joint distribution has the quantum marginal
+property, then it also has the quantum sequential independe nce property.
+Then, we show that in the on-state case, we have that there is a quantum joint distribution
+iﬀ all operators permute 5. This result is a generalization of the classic results from [Nel67,
+Fin73, Fin82, ME84] to the on-state case.
+Result 2 (Informal statement of Theorem 4) . Fix a set of quantum states F. A set of mea-
+surements yield a quantum joint distribution on each state i nF iﬀ these operators permute on
+every state in F.
+4Sequential independence has been originally deﬁned in [GN0 1] in the context of quantum measurements.
+5Informally, a set of operators permutes on |ψ ⟩ if applied in any order they yield the same state: A1 · · ·AN |ψ ⟩ =
+Aσ (1) · · ·Aσ (N)|ψ ⟩, where σ is a permutation.
+3
+
+===== PAGE 4 =====
+
+Then, we show that pairwise on-state commutation does not im ply full on-state permutation,
+unlike in the case of permutation on all states. This fact—th at we prove via a numerical
+example—together with Result 2 implies that Conjecture 1 is false.
+Result 3. Conjecture 1 is false.
+Finally, our last result is a simpler proof for a restricted v ersion of Theorem 1 in [Has09],
+which states that if two operators A andB almost-commute, we can ﬁnd commuting operators
+A′ andB′ that are close to A andB, respectively. In our case, we consider on-state commutati on
+instead of the regular one, and unlike in [Has09], our proof w orks only for projectors.
+Result 4 (Making almost commuting projectors commute) . Given any two projectors P1 and
+P2 and a state |ψ⟩ we have that if ∥(P1P2− P2P1)|ψ⟩∥ =ǫ then there is a projector P ′
+2 that is
+close to the original projector on the state ∥(P ′
+2− P2)|ψ⟩∥≤
+√
+2ǫ and [P1,P ′
+2] = 0 .
+1.4 Related Work
+A prominent result in the literature is that a joint distribu tion for a set of measurements exists
+iﬀ all the operators pairwise commute. Diﬀerent versions of t his result were previously proven:
+In [Nel67] the author considers the case of continuous varia bles and N observables. A similar
+result but without specifying the Hilbert space is achieved with diﬀerent mathematical tools
+in [Fin82]. In the speciﬁc case where we have only two observa bles, we mention three works;
+In [Fin73] and [ME84] the authors prove the classic problem i n a way similar to each other,
+but using diﬀerent mathematical tools. All but the ﬁrst work m entioned here focus on the
+joint distribution as a functional from the space of states. An approach using ∗-algebras was
+presented by Hans Maassen in [Maa06, Maa10].
+The authors of [GN02] analyze the case of general measuremen ts but prove that the mea-
+surement operators pairwise commute iﬀ the square-root ope rators permute (Corollaries 3 and
+6 in [GN02]), in the sense of our Deﬁnition 3 (for all states in H). In general the problem
+of conditional probabilities in Quantum Mechanics was disc ussed by Cassinelli and Zanghi in
+[CZ83].
+The related problems of incompatible devices measurement a nd joint measurability of quan-
+tum eﬀects are covered in [HMZ16] and [BN18] respectively.
+In [Lin97, FR96] the authors prove that for any two Hermitian matrices if their commutator
+has small norm, then there are operators close to the origina ls that fully commute. In [Has09]
+Hastings proves how close the new operators are in terms of th e norm of the commutator.
+Organization
+In Section 2, we provide some preliminaries. Then in Section 3, we discuss quantum distributions
+and their properties. Finally, in Section 4, we discuss the a lmost-commuting case.
+Acknowledgements
+JC thanks Dominique Unruh and Christian Schaﬀner for helpful discussions. JC was supported
+by a NWO VIDI grant (Project No. 639.022.519). Most of this wo rk was done while AG was
+aﬃliated to CWI and QuSoft.
+2 Preliminaries
+2.1 Notation
+In this work, we are going to use calligraphic letters ( S,R,... ) to denote sets. We denote
+[N ] :={1, 2,...,N }. ForS⊆ [N ], we denote by S(i) the i-th element of the set S in ascending
+4
+
+===== PAGE 5 =====
+
+order. For some ﬁxed sets X1,..., XN , we denote by ⃗ xan element ofX1×···XN and forS⊆ [N ]
+we have ⃗ xS := (xS(1),...,x S(|S|)). We denote the set of all t-element permutations by Σ t. For
+some complex number c =a +bi, we deﬁne Re(c) = a as its real part.
+2.2 Quantum Measurements
+We brieﬂy review some concepts in quantum computation/info rmation and we refer to [NC11]
+for an more detailed introduction to these topics.
+Quantum states are represented by positive semi-deﬁnite op erators with unit trace, i.e.,
+ρ⪰ 0, Tr(ρ) = 1. We denote the set of all density operators on some Hilber t spaceH byD(H).
+To describe general measurements, we use the notion of Posit ive Operator Valued Measure
+(POVM). The only requirement of POVMs is that they consist of positive operators and sum
+up to the identity operator. More formally, a POVM with set of outcomesX is described by a
+set of operators M ={Qx}x∈X , where∀x∈X :Qx⪰ 0, and ∑
+x∈X Qx =
+/BD .
+We denote the probability of getting the outcome x when measuringρ with the measurement
+M by P[x←M (ρ)] := Tr(Qxρ). To describe the post-measurement state, we can write down
+operators of M as products of linear operators on H (denoted byL(H)), Qx =Ax†Ax, where
+Ax∈L (H) (such a decomposition is always possible since Qx⪰ 0). The post-measurement
+state when the outcome of M on ρ is x is given by
+ρx := AxρAx†
+Tr(Qxρ). (1)
+The operator Ax is called the square root of Qx.
+3 Quantum Distributions
+In this section, we study the description of the statistics o f outcomes derived from a sequence
+of measurements. Our approach is to consider the quantum ver sion of the classical properties
+described in Section 1.1. Since quantum measurements do not commute in general, these
+quantum properties do not always hold. We then study the conn ection between properties of
+the measurements and the properties of their outcome distri bution.
+The structure of our proofs follows [ME84], where they show t hat for two Hermitian observ-
+ables there is a joint distribution for the outcomes of their joint measurement iﬀ they commute.
+We stress that the result in [ME84] only works for measuremen ts that commute on every quan-
+tum state and our result extends it to the case of joint distri butions deﬁned on a limited set of
+states.
+In the following, we denote the observables with Q and their square-roots with R. In
+Section 3.1, we deﬁne the quantum analogues of the classical properties of distributions deﬁned
+in Section 1.1. Then, in Section 3.2, we state and prove the ma in result of this section, where
+we show a connection between existence of a distribution and permutability—a generalization
+of commutativity—of the corresponding measurement operat ors.
+3.1 Quantum Distributions
+We analyse a functional from the set of density operators and ﬁnite sets of N random variables
+X1,X 2,...,X N to reals W[N ] :D(H)× (X1×···×X N )→ [0, 1]. We deﬁne this functional 6 as
+Wρ
+[N ](⃗ x) := Tr
+(
+Q⃗ x
+[N ]ρ
+)
+, (2)
+6Note that the superscript of Wρ
+[N](⃗ x) denotes the ﬁrst input to the functional, so we have W[N](ρ,⃗ x).
+5
+
+===== PAGE 6 =====
+
+whereQ⃗ x
+[N ] is a positive semideﬁnite operator corresponding to the out come⃗ x∈X 1×···×X N .
+The subscript [N ] of W denotes the set of indices of random variables that the distr ibution is
+deﬁned on. This deﬁnition is similar to the one proposed by [M E84].
+The starting point of our discussion is that every random var iable Xi corresponds to the
+measurementMi ={Qxi
+i }. So we have to keep in mind that these operators are ﬁxed throu ghout
+this note.
+Given the deﬁnition of W, we can state conditions so that it can be seen as a joint quant um
+distribution:
+• Normalization: ∑
+⃗ xQ⃗ x
+[N ] = /BD , which implies that for all ρ∈D (H), ∑
+⃗ xWρ(⃗ x) = 1.
+• Linearity: for every ⃗ x∈X 1×···×X N , ρ1,ρ 2∈D (H) and λ 1,λ 2∈ [0, 1], we have that
+Wλ 1ρ1+λ 2ρ2
+[N ] (⃗ x) = λ 1Wρ1
+[N ](⃗ x) +λ 2Wρ2
+[N ](⃗ x).
+• Non-negativity: for every ⃗ x∈X 1×···×X N and ρ∈D (H), we have Wρ
+[N ](⃗ x)≥ 0.
+We describe the quantum analogues of the properties describ ed in Section 1.1.
+Marginals. We start with a sequence of general measurements (i.e. POVMs ): {Mi}i∈ [N ],
+whereMi :={Qx
+i}x∈X i for all i and all Qx
+i ⪰ 0 and ∑
+x∈X iQx
+i =
+/BD . Moreover, for S⊆ [N ] we
+deﬁne Q⃗ y
+S to be measurement operators where ⃗ y∈X S(1)×···×X S(|S|).
+GivenQ⃗ y
+S and their corresponding square-roots R⃗ y
+S andρ, we have that if Tr
+(
+R⃗ y
+SρR⃗ y†
+S
+)
+̸= 0,
+then we deﬁne the conditional distribution for any sequence ⃗ xas
+Wρ
+[N ](⃗ x|⃗ y) := W
+R⃗ y
+SρR⃗ y†
+S
+[N ] (⃗ x)/ TrR⃗ y
+SρR⃗ y†
+S . (3)
+For all those measurements, for a set F ⊆D (H), and for U ⊆ [N ], we deﬁne the “orbit”
+of the post-measurement states. For any T ⊆ [N ] of size t, we take s≤ t setsS1,..., Ss that
+are a partition of T . We then consider the post-measurement states generated by sequences of
+measurements corresponding to Si:
+GU (F) :=
+{
+R⃗ ys
+Ss···R⃗ y1
+S1ψR⃗ y1†
+S1 ···R⃗ ys†
+Ss / Tr
+(
+R⃗ ys
+Ss···R⃗ y1
+S1ψR⃗ y1†
+S1 ···R⃗ ys†
+Ss
+)
+:ψ∈F ,T ⊆U,
+s≤|T| , S1,..., Ss⊆T ,
+s⋃
+i=1
+Si =T,∀i̸=jSi∩S j =∅,⃗ yi∈X Si(1)×···×X Si(|Si|)
+}
+, (4)
+where R⃗ yi
+Si are the square-root operators of Q⃗ yi
+Si =R⃗ yi†
+Si R⃗ yi
+Si. The subscript of G denotes the set
+we take the subsets of, usually it is [ N ] but later we also consider [ N ]\S for someS.
+With our quantum marginals property, we require that the ope rator we get after we sum
+over a subset of variables is still a valid measurement opera tor.
+Property 5 (Quantum Marginals) . We say that the joint distribution W has the quantum
+marginals property on set F if for every S⊆ [N ], there is a measurement MS ={Q⃗ y}⃗ y∈ (Xi)i∈S
+such that for every value ⃗ x∈X 1×X 2×···×X N , denoting ⃗ x:= (x1,x 2,...,x N ) and for every
+density operator ρ∈G [N ](F) deﬁned as in Equation (4) we have that
+Wρ
+S (⃗ xS ) := Tr
+(
+Q⃗ xS
+S ρ
+)
+=
+∑
+xi∈X i,i ∈ [N ]\S
+Wρ
+[N ](⃗ x). (5)
+Additionally for |S|= 1 the operators Qxi
+i are the operators from Mi.
+6
+
+===== PAGE 7 =====
+
+Disjointness. It follows from the deﬁnition of POVMs that the quantum measu rement oper-
+ators need not be orthogonal, and this implies that the disjo intness property (Property 2 does
+not hold in generality quantumly.
+Disjointness is a property that concerns a post-measuremen t state of a set S of variables.
+To ensure the existence of a measurement operator correspon ding to S, we need to assume
+Property 5.
+Property 6 (Quantum Disjointness). Let W be a joint distribution for which Property 5 holds.
+We say that W has the quantum disjointness property on set F if for every subset S⊆ [N ],
+for every density operator ρ∈G [N ]\S (F), and for every value ⃗ x∈X 1×X 2×···×X N and
+⃗ y∈ ∏
+i∈SXi, we have that if ⃗ y̸=⃗ xS , then
+Wρ
+[N ](⃗ x|⃗ y)Wρ
+[N ](⃗ y) = Tr
+(
+Q⃗ x
+[N ]R⃗ y
+SρR⃗ y†
+S
+)
+= 0. (6)
+Reducibility . Reducibility (Property 3) is a similar property to disjoint ness but with the key
+diﬀerence that we condition on the same event:
+Property 7 (Quantum Reducibility). Let W be a joint distribution for which Property 5 holds.
+We say that W has the quantum reducibility property on set F if for every subset S⊂ [N ],
+every density operator ρ∈G [N ]\S (F), and value ⃗ x∈X 1×X 2×···×X N , we have that
+Wρ
+[N ](⃗ x|⃗ xS )Wρ
+[N ](⃗ xS ) = Tr
+(
+Q⃗ x
+[N ]R⃗ xS
+S ρR⃗ xS †
+S
+)
+= Tr
+(
+Q⃗ x
+[N ]ρ
+)
+. (7)
+Note that the last two properties together allow us to conclu de that the operators are
+(morally) on-state projections: Property 6 plays the role of diﬀerent projectors being ortho gonal
+and Property 7 that projecting twice to the same space does no t change the resulting state.
+More concretely, we say that the Ri’s are on-state projectors on ψ ∈F if for all S⊆ [N ],
+all ⃗ x∈X 1×···×X N , all ⃗ y∈ ∏
+i∈SXi, and for R⃗ y
+S := Ry1
+S(1)Ry2
+S(2)···Ryt
+S(t) and Q⃗ y
+S := R⃗ y†
+S R⃗ y
+S
+(similarly for [N ]), we have
+Tr
+(
+R⃗ y†
+S Q⃗ x
+[N ]R⃗ y
+Sψ
+)
+=δ⃗ y,⃗ xS Tr
+(
+Q⃗ x
+[N ]ψ
+)
+. (8)
+Sequential Independence As previously discussed, the notion of time order in the quan tum
+setting is much more delicate as the probabilistic events no longer commute. Let us go back
+to the example of the simple sequence ( A,B ) from Section 1.1 but now consider A and B as
+quantum observables measured on the state ρ. Let us assume for simplicity that A and B
+are projections. The probability of measuring a with A is Tr (Aρ) and the state after this
+measurement is ρa := AρA
+Tr(Aρ) so the probability of measuring the sequence ( a,b ) equals
+P[b← B(ρa)]P[a← A(ρ)] = Tr
+(
+B AρA
+Tr(Aρ)
+)
+Tr (Aρ) = Tr (ABAρ). (9)
+On the other hand the probability of measuring the sequence ( b,a ) equals Tr (BABρ ) which is in
+general diﬀerent than Equation (9). This simple example show s that sequential independence
+is not attained by all quantum joint probabilities. More for mally, the notion of sequential
+independence from [GN02] for quantum joint probabilities c an be stated as follows.
+Property 8 (Quantum Sequential Independence) . Let W be a joint distribution for which
+Property 5 holds. We say that W has the quantum sequential independence property on set F
+if for every density operator ψ∈F , for any T ⊆ [N ] of size t, for all s≤ t, partitionS1,..., Ss
+7
+
+===== PAGE 8 =====
+
+ofT , permutation σ ∈ Σs, and ⃗ x∈X 1×X 2×···×X N such that ⃗ x:= (x1,x 2,...,x N ) and
+⃗ yi :=
+(
+xSi(1),x Si(2),...,x Si(|Si|)
+)
+, we have that
+Tr
+(
+Q⃗ ys
+SsR⃗ ys− 1
+Ss− 1···R⃗ y1
+S1ψR⃗ y1†
+S1 R⃗ y2†
+S2 ···R⃗ ys− 1†
+Ss− 1
+)
+= Tr
+(
+Q
+⃗ yσ (s)
+Sσ (s)
+R
+⃗ yσ (s− 1)
+Sσ (s− 1)
+···R
+⃗ yσ (1)
+Sσ (1)
+ψR
+⃗ yσ (1)†
+Sσ (1)
+R
+⃗ yσ (2)†
+Sσ (2)
+···R
+⃗ yσ (s− 1)†
+Sσ (s− 1)
+)
+. (10)
+Theorem 1 (Marginals imply Sequential Independence) . If a joint distribution W has Prop-
+erty 5, 6, and 7, then it also has Property 8.
+Proof. First note that Properties 5, 6, and 7 directly imply Equatio n (8).
+We now prove the statement for two sets of indices and then arg ue how to extend it for s
+sets. In our restricted case, we have that
+Tr
+(
+Q⃗ y1
+S1R⃗ y2
+S2ψR⃗ y2†
+S2
+)
+= Tr
+
+ ∑
+⃗ y′
+Q⃗ y′
+S1∪S 2R⃗ y2
+S2ψR⃗ y2†
+S2
+
+ (11)
+= Tr
+(
+Q⃗ y
+S1∪S 2R⃗ y2
+S2ψR⃗ y2†
+S2
+)
+(12)
+= Tr
+(
+Q⃗ y
+S1∪S 2ψ
+)
+, (13)
+where the ﬁrst equality comes from the marginals property, t he second equality comes from the
+disjointness property if we take ⃗ ythat agrees with ⃗ y2 onS2, and the last equality comes from
+the reducibility property.
+The above derivation can be repeated for any other two sets S ′
+1 andS ′
+2 such thatS ′
+1∪S ′
+2 =
+S1∪S 2. Any pair like this will yield Tr
+(
+Q⃗ y
+S1∪S 2ψ
+)
+that equals Tr
+(
+Q⃗ y
+S ′
+1∪S ′
+2
+ψ
+)
+for all other sets
+S ′
+1 andS ′
+2, hence we have proven Property 8 for any two subsets.
+In general, we prove a slightly stronger statement than Prop erty 8. We prove that not only
+diﬀerent sequences give the same probabilities but also that these probabilities equal Tr
+(
+Q⃗ y
+Tψ
+)
+for some operator Q⃗ y
+T .
+The general case holds by taking ρ∈G [N ]\S s(F) instead of ψ and use it in the above cal-
+culation. To prove Property 8 for any s sets we consider ρ =R⃗ ys− 1
+Ss− 1···R⃗ y1
+S1ψR⃗ y1†
+S1 R⃗ y2†
+S2 ···R⃗ ys− 1†
+Ss− 1
+and Tr
+(
+Q⃗ ys
+Ssρ
+)
+. We shave oﬀ operators from ρ one by one using Equation (13). After s steps
+we have that Tr
+(
+Q⃗ ys
+Ssρ
+)
+= Tr
+(
+Q⃗ xT
+T ψ
+)
+. Again, repeating this procedure for a diﬀerent ρ′ with
+sets that sum to the same T yields the claimed result.
+3.2 Joint Distributions and Permutability
+In this section, we state the deﬁnition of a joint distributi on that describes a sequence of
+quantum measurements done on states from a small set. We also deﬁne a generalization of
+commutativity and prove that a joint distribution exists if and only if the measurement operators
+are permutable.
+Deﬁnition 2 (Quantum Joint Distribution On State) . A joint distribution of N random vari-
+ables X1,...,X N that describe outcomes of general quantum measurements of s tates ψ ∈F is
+deﬁned as a positive, normalized, and linear functional
+W[N ] :D(H)× (X1×X 2×···×X N )→ [0, 1], (14)
+for which
+(1) Quantum Marginals on states in F, Property 5, holds,
+8
+
+===== PAGE 9 =====
+
+(2) Quantum Disjointness on states in F, Property 6, holds,
+(3) Quantum Reducibility on states in F, Property 7, holds,
+(4) Quantum Sequential Independence on states in F, Property 8, holds.
+Next we show the connection between the existence of joint di stributions and requirements
+on the measurement operators. But ﬁrst let us deﬁne the notio n of on-state permutability.
+Deﬁnition 3 (On-state permutator, (fully) permutable operators) . For any s operatorsRi and
+a permutation of the s-element set σ∈ Σs the permutator on ψ is deﬁned as
+[R1,R 2,...,R s]ψ (σ ) :=
+Tr
+(
+RsRs− 1···R1ψR †
+1R†
+2···R†
+s
+)
+− Tr
+(
+Rσ (s)Rσ (s− 1)···Rσ (1)ψR †
+σ (1)R†
+σ (2)···R†
+σ (s)
+)
+. (15)
+We say that the operators R1,...,R s are permutable if [R1,...,R s]ψ (σ ) = 0 for all σ∈ Σs.
+Moreover, we call a set of measurements {Mi}i fully permutable on F if all square-root opera-
+tors R⃗ y
+i of these measurements Mi permute on ψ∈F for all σ∈ Σs.
+Now we state the theorem connecting existence of joint distr ibutions with permutability of
+the measurement operators. This statement extends Theorem 3. 2 of [ME84], where they prove
+that if the joint distribution satisﬁes the marginals prope rty (they use the name “nondistur-
+bance”), then the operators pairwise commute.
+Theorem 4 (Quantum Joint Distribution and Permutability) . There is a quantum joint distri-
+bution on states ψ ∈F describing measurement outcomes of N observables X1,...,X N if and
+only if all square roots Rx
+i of Qx
+i operators of measurements Mi permute on ψ ∈F and are
+on-state projectors according to Equation (8).
+Proof. (⇒ ) Permutability follows from Property 8 for N single-element sets Si ={i}. Being
+on-state projectors (Equation (8)) follows from Property 6 and Property 7.
+(⇐ ) The other direction of the proof follows by setting the meas urement operators to Q⃗ y
+S :=
+Ryt†
+S(t)Ryt− 1†
+S(t− 1)···Ry1†
+S(1)Ry1
+S(1)Ry2
+S(2)···Ryt
+S(t), for every setS⊆ [N ] with|S|=t. Similarly we deﬁne
+R⃗ y
+S :=Ry1
+S(1)Ry2
+S(2)···Ryt
+S(t).
+The marginals property follows from the fact that ∑
+xi∈X iQxi
+i =
+/BD :
+∑
+xi∈X i,i ∈ [N ]\S
+Tr
+(
+Q
+xii
+i1 R⃗ y
+[N ]\{ i1}ρR⃗ y†
+[N ]\{ i1}
+)
+=
+∑
+xi∈X i,i ∈ [N ]\ (S∪{i1})
+Tr
+(
+Q
+xi2
+i2 R⃗ y
+[N ]\{ i1,i 2}ρR⃗ y†
+[N ]\{ i1,i 2}
+)
+=···= Tr
+(
+Q⃗ y
+Sρ
+)
+. (16)
+Properties 6 and 7 are natural consequences of Equation (8). The only diﬀerence between
+the properties and on-state projections is the set G[N ]\S (F) versus just F. Nonetheless, with
+our deﬁnition of R⃗ y
+S , Equation (8) implies disjointness and reducibility.
+In Theorem 1 we have already proved that marginals together w ith disjointness and re-
+ducibility imply sequential independence, which conclude s our proof.
+3.3 Pairwise on-state commutation does not imply full commu tation
+We now investigate whether full permutability is the weakes t assumption we can have for joint
+distributions to exist.
+When we consider this question for the full Hilbert space F =D(H), this problem has
+been considered by a number of works in the literature [Nel67 , Fin73, Fin82, ME84] and it is
+9
+
+===== PAGE 10 =====
+
+well-known that it suﬃces for the measurement operators to p airwise commute, i.e., pairwise
+commutation on all possible quantum states implies permuta bility of the operators.
+Our goal in this section is to consider the case where F ⊊D(H). In particular, in [CETU18],
+in order to connect perfect quantum indiﬀerentiability to cl assical indiﬀerentiability with state-
+less simulators 7, they rely on the following conjecture.
+Conjecture 2 (Conjecture 2 from [CETU18]) . Consider N binary measurements described by
+projectorsP1,...,P N , and a quantum state |Ψ⟩.
+Assume that any t out of the N measurements permute on state |Ψ⟩. That is, for any I
+with|I|=t, if P ′
+1,...,P ′
+t andP ′′
+1,...,P ′′
+t are the projectors{Pi}i∈I (possibly in diﬀerent order),
+then P ′
+t,...,P ′
+1|Ψ⟩ =P ′′
+t,...,P ′′
+1|Ψ⟩.
+Then there exist random variables X1,...,X N with a joint distribution D such that for any
+I ={i1,...,i t} the joint distribution of Xi1,...,X it is the distribution of the outcomes when
+we measure|Ψ⟩ with measurements Pi1,...,P it .
+Conjecture 2 states that if any t measurement operators permute on state |Ψ⟩ then there
+is a joint distribution. From Theorem 4, we know that if there is a joint distribution then
+the operators fully permute. Hence, the key point of the conj ecture is that if any t operators
+permute on a state, then they fully permute on it. However, we show here that Conjecture 2 is
+not true, in general.
+Theorem 5. There is a set of four projectors {P1,P 2,P 3,P 4} and a state |φ⟩∈ C8 such that the
+projectors are 2-permutable (they pairwise commute) on sta te|φ⟩ and they are not 4-permutable
+on|φ⟩.
+Proof. To prove the statement we found an example of such operators a nd a state numerically
+by random constrained search. We consider 4 projectors Pi and a state |φ⟩ of dimension 8. The
+constraints we impose are
+∀i,j ̸=i [Pi,P j]|φ⟩ = 0, (17)
+moreover operators Pi are projectors: ∀iP 2
+i =Pi and|φ⟩ is a unit-norm complex vector.
+We look for an example to the statement that 2-permutability (commutativity) does not
+imply 4-permutability, so that
+(P1P2P3P4− P3P4P1P2)|φ⟩̸ = 0. (18)
+To ﬁnd such example we used software for symbolic computing t o deﬁne the problem and
+maximize∥(P1P2P3P4− P3P4P1P2)|φ⟩∥, where we maximize over operators Pi and the state
+|φ⟩.
+The result of our optimization can be found in Appendix A. Not e that however we consider
+vector equalities—instead of just traces like in Theorem 4— our example provides a stronger
+argument for the necessity of full permutability.
+One can notice by looking at the optimization problem that it is not a semideﬁnite problem,
+nor that it has any other structure that is easy to exploit. Fo r that reason ﬁnding larger
+instances is computationally very expensive.
+We notice that Theorem 5 actually disproves a slightly stron ger version of Conjecture 2. In
+the use of Conjecture 2 in [CETU18], they implicitly assume t hat we can replace Pi by /BD − Pi
+and the permutation still holds. While this modiﬁcation giv es a slightly stronger assumption,
+our counterexample in Theorem 5 works just as well.
+7Roughly, we say thatA is classical (quantum) indiﬀerentiable from B iﬀ we can map classical (resp. quantum)
+attacks on A to classical (resp. quantum) attacks on B using simulators. Moreover, we say that the simulator is
+stateless if it does not store any internal state.
+10
+
+===== PAGE 11 =====
+
+For the joint distribution in Conjecture 2 to exist, we know f rom Theorem 4 that all operators
+must on-state permute. An important observation is that Con jecture 2 regards vector equalities
+and Theorem 4 regards measurement outcomes. The theorem is “ easier” than the former and
+our counterexample works with vector equalities, hence we i ndeed disprove Conjecture 2.
+In [Ebr18] the author uses a diﬀerent conjecture and diﬀerent r easoning to prove the existence
+of the joint distribution. Our counterexample does not disp rove this other approach and we
+refer interested readers to [Ebr18].
+4 Almost On-State Commutation
+In the last part of the paper we discuss almost commutativity in the on-state case. In particular,
+we show here that if we have two projectors that almost commut e on a state then we can deﬁne
+a projector that fully commutes with one of the original oper ators and is on-state close to the
+second one.
+The main tool that we need to prove this result is the Jordan’s lemma.
+Lemma 6 (Jordan’s lemma [Jor75]) . LetP1 and P2 be two projectors with rank ri := rank(Pi)
+for i ∈ {1, 2}. Then both projectors can be decomposed simultaneously in th e form Pi =⨁ri
+k=1Pk
+i , where Pk
+i denote rank-1 projectors acting on one- or two-dimensional subspaces.
+We denote the one- and two-dimensional subspaces by S1,...,S l and subspaces by T1,...,T l′,
+respectively. The eigenvectors |vk, 1⟩ and|vk, 2⟩ of Pk
+1 and Pk
+2 respectively are related by:
+|vk, 2⟩ = cosθk|vk, 1⟩ + sinθk|v⊥
+k, 1⟩,|vk, 1⟩ = cosθk|vk, 2⟩− sinθk|v⊥
+k, 2⟩. (19)
+We can now prove our result.
+Theorem 7 (Making almost commuting projectors commute) . Given any two projectors P1
+and P2 and a state |ψ⟩ we have that if ∥(P1P2− P2P1)|ψ⟩∥ =ǫ then there is a projector P ′
+2 that
+is close to the original projector on the state ∥(P ′
+2− P2)|ψ⟩∥≤
+√
+2ǫ and [P1,P ′
+2] = 0 .
+Proof. By Jordan’s lemma (Lemma 6), there exist bits λi, 1,λ i, 2∈{ 0, 1} and vectors|u1⟩,..., |um⟩
+and|v1, 1⟩,|v1, 2⟩,..., |vℓ, 1⟩,|vℓ, 2⟩, such that
+1. P1 = ∑
+i∈ [m]λi, 1|ui⟩⟨ui|+ ∑
+i∈ [ℓ]|vi, 1⟩⟨vi, 1|andP2 = ∑
+i∈ [m]λi, 2|ui⟩⟨ui|+ ∑
+i∈ [ℓ]|vi, 2⟩⟨vi, 2|;
+2.⟨ui|uk⟩ = 0 and ⟨ui|vj,b⟩ = 0 for all b,i,j and k̸=i;
+3.⟨vj,b ′|vi,b⟩ = 0 for i̸=j and any b,b ′;
+4. 0 <⟨vi, 1|vi, 2⟩< 1.
+Let θi be the angle between |vi, 1⟩ and|vi, 2⟩ (i.e. cos θi =⟨vi, 1|vi, 2⟩), and |v⊥
+i, 1⟩ be the state
+orthogonal to |vi, 1⟩ in the subspace spanned by these two vectors. Since the non-c ommuting
+part of P1 and P2 must come from the pairs |vi, 1⟩,|vi, 2⟩, we will deﬁne P ′
+2 by removing the
+non-commuting part of P2, shifting the vector |vi, 2⟩, to either |vi, 1⟩ or|v⊥
+i, 1⟩:
+P ′
+2 =
+∑
+i∈ [m]
+λi, 2|ui⟩⟨ui|+
+∑
+i∈ [ℓ]:θi≤ π
+4
+|vi, 1⟩⟨vi, 1|+
+∑
+i∈ [ℓ]:θi> π
+4
+|v⊥
+i, 1⟩⟨v⊥
+i, 1|.
+We have clearly that [P1,P ′
+2] = 0 since the two projectors are simultaneously diagonaliz able
+and we now want to prove that
+
+(P ′
+2− P2)|ψ⟩
+
+≤
+√
+2ε.
+11
+
+===== PAGE 12 =====
+
+Notice that
+
+(P ′
+2− P2)|ψ⟩
+
+2
+=
+
+
+
+
+
+
+∑
+i∈ [l′]:θi≤ π
+4
+(|vi, 1⟩⟨vi, 1|ψ⟩−| vi, 2⟩⟨vi, 2|ψ⟩) +
+∑
+i∈ [l′]:θi> π
+4
+(
+|v⊥
+i, 1⟩⟨v⊥
+i, 1|ψ⟩−| vi, 2⟩⟨vi, 2|ψ⟩
+)
+
+
+
+
+
+
+2
+(20)
+=
+∑
+i∈ [l′]:θi≤ π
+4
+∥|vi, 1⟩⟨vi, 1|ψ⟩−| vi, 2⟩⟨vi, 2|ψ⟩∥2 +
+∑
+i∈ [l′]:θi> π
+4
+
+
+|v⊥
+i, 1⟩⟨v⊥
+i, 1|ψ⟩−| vi, 2⟩⟨vi, 2|ψ⟩
+
+
+
+2
+, (21)
+where in the last step we used that ⟨vi,b ′|vj,b⟩ = 0 for i̸=j.
+Using that|vi, 2⟩ = cosθi|vi, 1⟩ + sinθi|v⊥
+i, 1⟩, we have that if θi≤ π
+4 , then
+∥⟨vi, 1|ψ⟩|vi, 1⟩−⟨ vi, 2|ψ⟩|vi, 2⟩∥2
+= sin 4θi|⟨vi, 1|ψ⟩|2− 2 sin3θi cosθiRe(⟨v⊥
+i, 1|ψ⟩⟨vi, 1|ψ⟩) + sin2θi cos2θi|⟨v⊥
+i, 1|ψ⟩|2
++ sin4θi|⟨v⊥
+i, 1|ψ⟩|2 + 2 sin3θi cosθiRe(⟨vi, 1|ψ⟩⟨v⊥
+i, 1|ψ⟩) + sin2θi cos2θi|⟨vi, 1|ψ⟩|2
+≤ 2 sin2θi cos2θi(|⟨v⊥
+i, 1|ψ⟩|2 +|⟨vi, 1|ψ⟩|2), (22)
+where in the inequality we used our assumption that θi≤ π
+4 which implies that sin θi≤ cosθi.
+Using similar calculations, we have that if θi≥ π
+4
+
+
+⟨v⊥
+i, 1|ψ⟩|v⊥
+i, 1⟩−⟨ vi, 2|ψ⟩|vi, 2⟩
+
+
+
+2
+≤ 2 sin2θi cos2θi(|⟨v⊥
+i, 1|ψ⟩|2 +|⟨vi, 1|ψ⟩|2). (23)
+We will show now that∑
+i
+sin2θi cos2θi(|⟨v⊥
+i, 1|ψ⟩|2 +|⟨vi, 1|ψ⟩|2) = ε2,
+which ﬁnishes the proof:
+ε2 =∥(P2P1− P1P2)|ψ⟩∥2
+=
+
+
+
+
+
+
+∑
+i∈ [l′]
+|vi, 1⟩⟨vi, 1|vi, 2⟩⟨vi, 2|ψ⟩−| vi, 2⟩⟨vi, 2|vi, 1⟩⟨vi, 1|ψ⟩.
+
+
+
+
+
+
+2
+=
+
+
+
+
+
+
+∑
+i∈ [l′]
+cosθi
+((
+cosθi⟨vi, 1|ψ⟩ + sinθi⟨v⊥
+i, 1|ψ⟩
+)
+|vi, 1⟩−⟨ vi, 1|ψ⟩
+(
+cosθi|vi, 1⟩ + sinθi|v⊥
+i, 1⟩
+))
+
+
+
+
+
+
+2
+=
+
+
+
+
+
+
+∑
+i∈ [l′]
+sinθi cosθi
+(
+⟨v⊥
+i, 1|ψ⟩|vi, 1⟩−⟨ vi, 1|ψ⟩|v⊥
+i, 1⟩
+)
+
+
+
+
+
+
+2
+=
+∑
+i∈ [l′]
+sin2θi cos2θi
+(
+|⟨v⊥
+i, 1|ψ⟩|2 +|⟨vi, 1|ψ⟩|2
+)
+.
+where in the second equality we again use that |vi, 2⟩ = cosθi|vi, 1⟩ + sinθi|v⊥
+i, 1⟩ and in the fourth
+equality we use the fact that ⟨vi,b ′|vj,b⟩ = 0 for i̸=j.
+Our proof relies solely on Jordan’s Lemma Note that Jordan’s Lemma is suﬃcient only if
+we analyze commutation of projectors. Results that show how to make any Hermitian matrices
+commute [FR96, Has09] are much more complicated to prove and it is not clear how to translate
+them to the “on-state” case.
+We stress that our proof only works for two projectors, since Jordan’s lemma does not
+generalize for three or more projectors. Therefore, we leav e as open problem (dis)proving a
+generalized version of Theorem 7 for more projectors.
+In [Ebr18] the author proves Theorem 7 for ε = 0, but with a diﬀerent proof. They use
+Halmo’s two rojections theorem instead of Jordan’s lemma.
+12
+
+===== PAGE 13 =====
+
+References
+[BN18] Andreas Bluhm and Ion Nechita. Joint measurability o f quantum eﬀects and the
+matrix diamond. Journal of Mathematical Physics , 59(11):112202, 2018.
+[CETU18] Tore Vincent Carstens, Ehsan Ebrahimi, Gelo Noel T abia, and Dominique Unruh.
+On quantum indiﬀerentiability. Technical report, Cryptolo gy ePrint Archive, Report
+2018/257, 2018. https://eprint. iacr. org/2018/257, 2018 .
+[CZ83] Gianni Cassinelli and N Zanghi. Conditional probabi lities in quantum mechanics.
+i. – conditioning with respect to a single event. Il Nuovo Cimento B (1971-1996) ,
+73(2):237–245, 1983.
+[Cza21] Jan Czajkowski. Github repository “joints-counte rexample”, 2021.
+[Ebr18] Ehsan Ebrahimi. Post-quantum security in the presence of superposition que ries.
+2018.
+[Fin73] Arthur Fine. Probability and the interpretation of quantum mechanics. The British
+Journal for the Philosophy of Science , 24(1):1–37, 1973.
+[Fin82] Arthur Fine. Joint distributions, quantum correla tions, and commuting observables.
+Journal of Mathematical Physics , 23(7):1306–1310, 1982.
+[FR96] Peter Friis and Mikael Rørdam. Almost commuting self -adjoint matrices-a short
+proof of huaxin lin’s theorem. Journal fur die Reine und Angewandte Mathematik ,
+479:121–132, 1996.
+[GN01] Stan Gudder and Gabriel Nagy. Sequential quantum mea surements. Journal of
+Mathematical Physics , 42(11):5212–5222, 2001.
+[GN02] Stan Gudder and Gabriel Nagy. Sequentially independ ent eﬀects. Proceedings of the
+American Mathematical Society , 130(4):1125–1130, 2002.
+[Has09] Matthew B Hastings. Making almost commuting matric es commute. Communica-
+tions in Mathematical Physics , 291(2):321–345, 2009.
+[HMZ16] Teiko Heinosaari, Takayuki Miyadera, and M´ ario Zi man. An invitation to quantum
+incompatibility. Journal of Physics A: Mathematical and Theoretical , 49(12):123001,
+2016.
+[Jor75] Camille Jordan. Essai sur la g´ eom´ etrie ` a n dimensions. Bulletin de la Soci´ et´ e
+math´ ematique de France, 3:103–174, 1875.
+[Lin97] Huaxin Lin. Almost commuting selfadjoint matrices and applications. Fields Inst.
+Commun, 13:193–233, 1997.
+[Maa06] Hans Maassen. Quantum Probability and Quantum Info rmation Theory.
+https: // www. math. ru. nl/~ maassen/ lectures/ Trieste. pdf, 2006.
+[Maa10] Hans Maassen. Quantum probability and quantum info rmation theory. In Quantum
+information, computation and cryptography , pages 65–108. Springer, 2010.
+[ME84] WM de Muynck and JPHW van den Eijnde. A derivation of lo cal commutativity
+from macrocausality using a quantum mechanical theory of me asurement. Founda-
+tions of physics , 14(2):111–146, 1984.
+13
+
+===== PAGE 14 =====
+
+[NC11] Michael A. Nielsen and Isaac L. Chuang. Quantum Computation and Quantum
+Information: 10th Anniversary Edition . Cambridge University Press, 10th edition,
+2011.
+[Nel67] Edward Nelson. Dynamical theories of Brownian motion , volume 3. Princeton
+university press, 1967.
+14
+
+===== PAGE 15 =====
+
+A Numerical values
+Below we present the state and the projectors that are claime d in the proof of Theorem 5. The
+script used to generate these values can be found in [Cza21]. Before we write out the state and
+the projections that we found, let us state our violation of t he permutator:
+∥(P1P2P3P4− P3P4P1P2)|φ⟩∥ = 0. 25± 3·10− 8. (24)
+All the constraints listed in the proof of Theorem 5 are fulﬁl led up to the seventh decimal digit
+of precision, so up to 10 − 7. Internal computations of the algorithm are performed with machine
+precision of 10 − 15.
+The state is
+|φ⟩ :=
+
+
+
+
+
+
+
+
+
+
+
+
+− 0. 135381− 0. 0503468i
+0. 325588− 0. 222403i
+− 0. 209447− 0. 0404665i
+− 0. 418336 + 0. 130098i
+− 0. 503693− 0. 299414i
+0. 379842 + 0. 205081i
+− 0. 179291− 0. 0381456i
+0. 0840381− 0. 125995i
+
+
+
+
+
+
+
+
+
+
+
+
+. (25)
+We deﬁne the projectors by their eigenvectors:
+P1 =|π 1⟩⟨π 1|, P 2 =|π 2
+1⟩⟨π 2
+1|+|π 2
+2⟩⟨π 2
+2|, (26)
+P3 =|π 3
+1⟩⟨π 3
+1|+|π 3
+2⟩⟨π 3
+2|+|π 3
+3⟩⟨π 3
+3|, P 4 =|π 4
+1⟩⟨π 4
+1|+|π 4
+2⟩⟨π 4
+2|. (27)
+The eigenvector of P1 is:
+|π 1⟩ :=
+
+
+
+
+
+
+
+
+
+
+
+
+0. 440777 + 0. 168408i
+0. 208781− 0. 37351i
+0. 247514 + 0. 0276065i
+− 0. 297971 + 0. 0252308i
+0. 118798 + 0. 112225i
+− 0. 293428 + 0. 270889i
+− 0. 193073 + 0. 218869i
+− 0. 41405
+
+
+
+
+
+
+
+
+
+
+
+
+. (28)
+The eigenvectors of P2 are:
+|π 2
+1⟩ :=
+
+
+
+
+
+
+
+
+
+
+
+
+− 0. 497016− 0. 094035i
+0. 417527− 0. 0737062i
+− 0. 000125303 + 0. 35123i
+0. 166569− 0. 187245i
+− 0. 373202 + 0. 205633i
+0. 318452− 0. 251475i
+− 0. 107473− 0. 123987i
+− 0. 0711523
+
+
+
+
+
+
+
+
+
+
+
+
+,|π 2
+2⟩ :=
+
+
+
+
+
+
+
+
+
+
+
+
+0. 365906 + 0. 0620997i
+0. 418728− 0. 2059i
+0. 229457 + 0. 0557421i
+− 0. 140393 + 0. 0945029i
+− 0. 199205− 0. 188139i
+0. 103617 + 0. 279644i
+− 0. 546498 + 0. 147197i
+0. 275295
+
+
+
+
+
+
+
+
+
+
+
+
+. (29)
+15
+
+===== PAGE 16 =====
+
+The eigenvectors of P3 are:
+|π 3
+1⟩ :=
+
+
+
+
+
+
+
+
+
+
+
+
+− 0. 453059 + 0. 181543i
+− 0. 452841 + 0. 0154095i
+− 0. 17948− 0. 222827i
+− 0. 230355− 0. 0526756i
+− 0. 0918752− 0. 250754i
+0. 242416− 0. 126917i
+0. 300832− 0. 287566i
+0. 315259
+
+
+
+
+
+
+
+
+
+
+
+
+,|π 3
+2⟩ :=
+
+
+
+
+
+
+
+
+
+
+
+
+− 0. 0586669− 0. 269559i
+− 0. 280155 + 0. 373271i
+− 0. 150758− 0. 158539i
+0. 158793− 0. 0454731i
+0. 165888 + 0. 362832i
+− 0. 110453− 0. 310755i
+0. 353894− 0. 00811586i
+− 0. 487537
+
+
+
+
+
+
+
+
+
+
+
+
+, (30)
+|π 3
+3⟩ :=
+
+
+
+
+
+
+
+
+
+
+
+
+− 0. 182739− 0. 114718i
+0. 246775− 0. 134678i
+− 0. 513357− 0. 193655i
+− 0. 10451 + 0. 421294i
+0. 111183 + 0. 122625i
+− 0. 200917− 0. 25897i
+− 0. 0290851 + 0. 398494i
+0. 30081
+
+
+
+
+
+
+
+
+
+
+
+
+. (31)
+The eigenvectors of P4 are:
+|π 4
+1⟩ :=
+
+
+
+
+
+
+
+
+
+
+
+
+− 0. 464187 + 0. 213035i
+− 0. 364421 + 0. 119836i
+− 0. 324984− 0. 23097i
+− 0. 256841 + 0. 0478513i
+− 0. 0700499− 0. 192822i
+0. 146148− 0. 225755i
+0. 243944− 0. 284786i
+0. 331272
+
+
+
+
+
+
+
+
+
+
+
+
+,|π 4
+2⟩ :=
+
+
+
+
+
+
+
+
+
+
+
+
+0. 111757 + 0. 151275i
+0. 236223− 0. 323279i
+0. 157312− 0. 115385i
+− 0. 30864 + 0. 0990552i
+− 0. 260931− 0. 236239i
+0. 240497 + 0. 13559i
+− 0. 453404 + 0. 12357i
+0. 490125
+
+
+
+
+
+
+
+
+
+
+
+
+. (32)
+16
