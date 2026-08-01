@@ -124,7 +124,11 @@
     },
     "next_gate_description": "For the remaining remote or disconnected x!=0,y!=0 mixed components, first perform symmetry/orbit reduction and exact-scout a small natural principal-open set; do not brute-force all 131 patches",
     "minimal_semantic_recovery_module_SR3b_M": {
-      "status": "ROADMAP_ADDED_AUXILIARY_LEMMA_MODULE_NOT_A_NEW_SHORT_REPORT",
+      "status": "SR3B_M_CONDITIONAL_RECOVERY_LEMMAS_CERTIFIED_NOT_A_NEW_SHORT_REPORT",
+      "artifact": "results/v0.4.2_sr3b_m_semantic_recovery.json",
+      "report": "reports/v0.4.2_sr3b_m_semantic_recovery.md",
+      "semantic_digest_sha256": "a742976ab7d955a66beb07f6efd06170cd3b2f320638b6a64c3292f6fcf5d735",
+      "one_sided_profiles_closed": false,
       "targets": [
         "SOURCEWISE_TWO_INDEPENDENT_PROBE_VECTORS_FOR_THE_SAME_RESIDUAL_RECOVER_STRONG_MSR_IN_D2",
         "RESIDUAL_SPACE_EVALUATION_INJECTIVITY_IS_MINIMAL_FIXED_VECTOR_TO_OPERATOR_PROMOTION",
@@ -144,23 +148,47 @@
       "reachable_span_rank": 1,
       "reachable_visible": false,
       "interpretation": "EXACT_LOGICAL_SEPARATION_WITH_NONCOMMUTATIVITY_OFF_THE_REACHABLE_RAY",
-      "dedicated_independent_observability_artifact": "PENDING"
+      "dedicated_independent_observability_artifact": "results/v0.4.2_sr2v_baseline_observability.json",
+      "verdict": "SR2V_BASELINE_OBSERVABILITY_AUDIT_CERTIFIED",
+      "semantic_digest_sha256": "73508f8ad94d97a3147cbd913d687f0b779c740b80a84a4836854053f6f01c62"
     },
     "SR2_V": {
-      "status": "NEW_FIRST_PRIORITY_SPEC_AND_IMPLEMENTATION_PENDING",
+      "status": "BASELINE_AND_BOUNDED_EXACT_SCOUTS_COMPLETE_SEARCH_OPEN_NO_TERMINAL",
       "quality_target": "EXACT_RATIONAL_RANK_TWO_AND_STAGE_SOURCE_COMPATIBLE_REACHABLE_VISIBLE_WEAK_WEAK_WITNESS",
       "terminal_verdicts": [
         "REACHABLE_VISIBLE_NONCOMMUTATIVE_WITNESS_CERTIFIED",
         "REACHABLE_VISIBLE_NONCOMMUTATIVITY_OBSTRUCTED",
         "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT"
       ],
+      "bounded_results": {
+        "rational_torus_scout": {
+          "artifact": "results/v0.4.2_sr2v_visible_torus_scout.json",
+          "verdict": "SR2V_VISIBLE_TORUS_SCOUT_NO_WITNESS_OPEN",
+          "semantic_digest_sha256": "7ed0d5f8c3d67528bd6cb2853e8b8887479488453799a43b6645d87437ad028f",
+          "scalar_torus_dimension": 49,
+          "rational_points_checked": 180,
+          "general_obstruction_claimed": false
+        },
+        "invariant_line_breaking_tangent": {
+          "artifact": "results/v0.4.2_sr2v_baseline_lower_tangent.json",
+          "report": "reports/v0.4.2_sr2v_visible_search.md",
+          "verdict": "SR2V_BASELINE_LOWER_TANGENT_VISIBILITY_OBSTRUCTED",
+          "semantic_digest_sha256": "d83afca2c460bad9e8d420e75ad60e1974f3419f0dd655bfc51821d6a02b5a92",
+          "lower_subsystem_rows": 1187,
+          "lower_rank": 131,
+          "lower_kernel": "Q_5_EXTERNAL_ONLY",
+          "full_jacobian_rank": 455,
+          "full_jacobian_nullity": 73,
+          "general_obstruction_claimed": false
+        }
+      },
+      "current_component_target": "DISCONNECTED_TRANSVERSE_REDUCIBLE_OR_IRREDUCIBLE_COMMUTATOR_DETERMINANT_PRINCIPAL_OPEN",
       "short_report_rule": "SEPARATE_SHORT_REPORT_CANDIDATE_ONLY_FOR_EXACT_VISIBLE_WITNESS_OR_FULL_PROFILE_OBSTRUCTION"
     },
     "priority_order": [
-      "DEFINE_SR2_V_VISIBILITY_DOMAIN_AND_VERDICT_SCHEMA",
-      "INDEPENDENTLY_AUDIT_CURRENT_SR2_WITNESS_OBSERVABILITY",
-      "FORMALISE_SR3B_M_WITH_SOURCE_BOUND_ASSUMPTION_LEDGER",
-      "COUNTEREXAMPLE_FIRST_REACHABLE_VISIBLE_WEAK_WEAK_SEARCH",
+      "SR2_V_VISIBILITY_DOMAIN_BASELINE_AUDIT_AND_SR3B_M_COMPLETE",
+      "SR2_V_TORUS_AND_INVARIANT_LINE_TANGENT_BOUNDED_GATES_COMPLETE",
+      "SR2_V_DISCONNECTED_REDUCIBLE_AND_IRREDUCIBLE_EXACT_SEARCH_CURRENT",
       "955_REDUCIBLE_IRREDUCIBLE_AND_SYMMETRY_REDUCED_MIXED_SCOUTS",
       "721_NATIVE_COMPILER_AFTER_955_TERMINAL_OR_AS_BUDGET_FALLBACK",
       "DOWNSTREAM_OFF_RELATION_MINIMUM_N5_D3_AND_LIFTING"
@@ -242,6 +270,9 @@
     "KNOWLEDGE_BASE_v0.4.md",
     "reports/cpobc_publication_roadmap_v0.4-v0.7.md",
     "reports/v0.4.2_post_literature_strategy_review.md",
+    "reports/v0.4.2_sr2v_baseline_observability.md",
+    "reports/v0.4.2_sr3b_m_semantic_recovery.md",
+    "reports/v0.4.2_sr2v_visible_search.md",
     "HANDOFF_v0.4.1.md",
     "reports/v0.4.2_prior_art_and_related_work_audit_protocol.md",
     "reports/v0.4.2_prior_art_and_related_work_audit.md",
@@ -275,7 +306,11 @@
     "tests/final_theory/test_source_native_955_mixed_manifest_v042.py",
     "tests/final_theory/test_v042_955_mixed_xy_tangent_scout.py",
     "tests/final_theory/test_source_native_955_pure_lower_oracle_v042.py",
-    "tests/final_theory/test_v041_partial_slice_audit.py"
+    "tests/final_theory/test_v041_partial_slice_audit.py",
+    "tests/final_theory/test_weak_d2_observability_v042.py",
+    "tests/final_theory/test_semantic_recovery_v042.py",
+    "tests/final_theory/test_weak_d2_visible_torus_scout_v042.py",
+    "tests/final_theory/test_weak_d2_visible_tangent_v042.py"
   ],
   "publication_posture": "STATEWISE_VERSUS_OPERATOR_OBSERVABILITY_EXACT_SEPARATION_AND_MINIMAL_RECOVERY_WITH_SCOPED_SR3B_A_ONE_SIDED_CLOSURE_AS_UPGRADE_NO_BROAD_PRIORITY_OVER_XU_2607_26672"
 }

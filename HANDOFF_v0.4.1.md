@@ -301,32 +301,50 @@ It recomputes 407 paths/87 endpoint trees/1,529 path pairs, and keeps Eq. (113)
 25/25 and Eq. (139) 4/10 as separated fail-closed validation ledgers. It is not
 an expanded scalar-polynomial solver manifest.
 
-1. Specify SR2-V first: a stage/source-compatible visibility domain, exact
-   reachable-span rank, commutator-on-state metrics, and the three terminal
-   verdicts in the post-literature strategy review.
-2. Build an independent observability verifier for the current SR2 witness and
-   bind its rank-one/off-reachable-sector status to a machine-readable result.
-   Do not alter the original v0.4 witness bytes.
-3. Formalise SR3b-M with an assumption ledger: residual-space evaluation
-   injectivity, same-residual multi-probe rank two, cyclicity counterexample,
-   and the non-scalar centralizer endpoint. Do not infer sourcewise recovery
-   from a globally spanning set of states at different sources.
-4. Run counterexample-first exact scouts for a rank-two and reachable-visible
-   weak/weak witness. Require direct separated validation of both Eq. (113)
-   branches and both Eq. (139) domains for every proposed witness.
-5. Only after those lightweight gates, return to the remote/disconnected
-   `x!=0,y!=0` 955 components. The first upper family, mixed tangent branch,
+1. **Complete:** SR2-V now has a stage/source-compatible visibility domain,
+   exact metrics, and a separate nonterminal baseline verdict.
+2. **Complete:** the independent observability verifier rebuilt 407 paths and
+   87 endpoint states without importing the original witness compiler. Its
+   verdict is `SR2V_BASELINE_OBSERVABILITY_AUDIT_CERTIFIED`, semantic digest
+   `73508f8ad94d97a3147cbd913d687f0b779c740b80a84a4836854053f6f01c62`;
+   reachable rank is one and all six operator-nonzero commutators are invisible.
+3. **Complete:** SR3b-M has verdict
+   `SR3B_M_CONDITIONAL_RECOVERY_LEMMAS_CERTIFIED`, semantic digest
+   `a742976ab7d955a66beb07f6efd06170cd3b2f320638b6a64c3292f6fcf5d735`.
+   It certifies evaluation injectivity, same-residual two-probe recovery,
+   global-span and cyclicity counterexamples, and the non-scalar centralizer
+   endpoint. It closes neither one-sided profile.
+4. **Bounded exact scouts complete; SR2-V remains open:** the 49-dimensional
+   scalar exponent torus has rank 83 in 132 variables. A deterministic
+   180-point rational campaign left no Q commutator free; verdict
+   `SR2V_VISIBLE_TORUS_SCOUT_NO_WITNESS_OPEN`, digest
+   `7ed0d5f8c3d67528bd6cb2853e8b8887479488453799a43b6645d87437ad028f`.
+   The invariant-line-breaking subsystem has 1,187 rows, rank 131, and kernel
+   only cutoff-external Q5. The full 528-variable Jacobian has rank 455/nullity
+   73 but no in-scope lower-left or first-order visibility direction; verdict
+   `SR2V_BASELINE_LOWER_TANGENT_VISIBILITY_OBSTRUCTED`, digest
+   `d83afca2c460bad9e8d420e75ad60e1974f3419f0dd655bfc51821d6a02b5a92`.
+   These are not SR2-V terminals; see
+   `reports/v0.4.2_sr2v_visible_search.md`.
+5. **Current:** search disconnected transverse-reducible and irreducible
+   weak/weak components. Do not repeat first-order perturbations of the frozen
+   upper family. Require direct separated validation of both Eq. (113)
+   branches and both Eq. (139) domains. Numerical and finite-field points are
+   scouts until exact rational direct certification.
+6. Only after the bounded SR2-V campaign reaches an allowed terminal, return
+   to the remote/disconnected `x!=0,y!=0` 955 components. The first upper
+   family, mixed tangent branch,
    and global `x=0` pure-lower family are already closed in their declared
    scopes; do not rerun them or report them as a full-profile no-go.
-6. For 955, do **not** brute-force all 131 principal patches. First split the
+7. For 955, do **not** brute-force all 131 principal patches. First split the
    common-invariant-line and irreducible branches, construct a symmetry/orbit
    reduction, and exact-scout a small natural principal-open set. Permit a
    solver campaign only after its source coverage certificate and versioned
    budget artifact are available.
-7. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
+8. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
    terminal state, or use 721 as the fallback if 955 exhausts its budget. Keep
    the certified diagonal 721 escape point as a regression fixture.
-8. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
+9. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
    tracks. SR3b-A drafting may proceed in parallel under its existing scope and
    owner-gated deposit rule.
 
@@ -355,12 +373,21 @@ uv run pytest -q tests/final_theory/test_source_native_955_mixed_manifest_v042.p
 uv run pytest -q tests/final_theory/test_v042_955_mixed_xy_tangent_scout.py
 uv run python -m universe_lab.final_theory.source_native_955_pure_lower_oracle_v042
 uv run pytest -q tests/final_theory/test_source_native_955_pure_lower_oracle_v042.py
+uv run python -m universe_lab.final_theory.weak_d2_observability_v042
+uv run python -m universe_lab.final_theory.semantic_recovery_v042
+uv run python -m universe_lab.final_theory.weak_d2_visible_torus_scout_v042
+uv run python -m universe_lab.final_theory.weak_d2_visible_tangent_v042
+uv run pytest -q tests/final_theory/test_weak_d2_observability_v042.py
+uv run pytest -q tests/final_theory/test_semantic_recovery_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_visible_torus_scout_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_visible_tangent_v042.py
 ```
 
-Expected focused results are manifest `5 passed`, tangent schema v2 `8 passed`,
-and independent pure-lower oracle `4 passed`. The tests regenerate the stored
-exact payloads and preserve the `NO_SOLVER_RUN`, bounded-family `GLOBAL_NO_GO`,
-and general mixed `NO_WITNESS_OPEN` boundaries.
+Expected focused results are manifest `5 passed`, 955 tangent schema v2
+`8 passed`, independent pure-lower oracle `4 passed`, SR2-V baseline `6 passed`,
+SR3b-M `14 passed`, and the two visible-search suites `9 passed`. The tests
+regenerate the stored exact payloads and preserve the `NO_SOLVER_RUN`,
+bounded-family `GLOBAL_NO_GO`, and general mixed `NO_WITNESS_OPEN` boundaries.
 
 The earlier broader validation snapshot (before the mixed-manifest/tangent
 milestone above) was:
@@ -438,7 +465,12 @@ Before continuing this track:
     exact re-extraction, verdict `V042_955_PURE_LOWER_ORACLE_CERTIFIED`, and
     semantic digest
     `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`.
-13. before drafting novelty, priority, or related-work claims, read
+13. run the four SR2-V/SR3b-M focused suites named in §8. Require the baseline
+    rank-one audit, the conditional SR3b-M lemma boundary, the finite-torus
+    `OPEN` boundary, and the rank-131 invariant-line-breaking tangent scope.
+    Do not call either bounded negative result a reachable-visibility
+    obstruction for arbitrary `GL_2`.
+14. before drafting novelty, priority, or related-work claims, read
     `reports/v0.4.2_prior_art_and_related_work_audit.md` and its detailed
     reference note. Run only a delta search from 2026-08-01, preserving every
     material new source with exact version, retrieval date, lawful local copy,
@@ -446,7 +478,9 @@ Before continuing this track:
 
 Items 2--12 preserve the 955 regression boundary and are required when 955 is
 resumed. They are not the immediate implementation order. The immediate order
-is: define SR2-V, implement its independent audit of the frozen SR2 witness,
-formalise SR3b-M, attempt the bounded visible-witness campaign, and only then
-resume the 955 mixed locus. No heavy solver is needed for the first three
-items.
+is now: retain the completed SR2-V baseline, SR3b-M, torus, and tangent
+artifacts; split the remaining weak/weak search into disconnected transverse
+reducible and irreducible components; exact-scout a symmetry-reduced
+commutator-determinant principal open; and only after an SR2-V terminal resume
+the 955 mixed locus. The frozen upper-family tangent search must not be
+repeated.

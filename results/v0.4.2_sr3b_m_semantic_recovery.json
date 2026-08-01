@@ -1,0 +1,278 @@
+{
+  "schema_version": "final-theory-v042-sr3b-m-semantic-recovery-v1",
+  "date": "2026-08-01",
+  "field": "Q",
+  "dimension": 2,
+  "input_artifacts": {
+    "results/v0.3.9_release_manifest.json": "02e75a35c2d062e9017905c3da66b365f8c0f7907346027802affd283eabe516",
+    "results/v0.4.2_sr2v_baseline_observability.json": "4f57805e871c0589560669c5aa65181c29ca41cdf722420729279945770710de"
+  },
+  "assumption_ledger": {
+    "residual_family": "For a declared source/profile, admissible residuals lie in a specified finite-dimensional linear space R over Q.",
+    "evaluation": "ev_V(D)=(D*v) for every probe v in the declared probe family V.",
+    "same_residual_requirement": "Every probe in V must test the same residual D; probes attached to different source residuals cannot be pooled.",
+    "single_Omega_GC": "Fixed-vector GC supplies one cylinder state per source, not two independent probes for the same source residual.",
+    "strong_profile_endpoint": "Only after both GC and MSR residual families promote to operator identities may the finite nonsingular d=2 n<=4 ON v0.3.9 commutativity theorem be invoked."
+  },
+  "lemmas": {
+    "residual_family_separation": {
+      "statement": "Statewise equality promotes to D=0 for every D in R exactly when ev_V is injective on R.",
+      "full_M2_one_probe": {
+        "residual_space_dimension": 4,
+        "probe_count": 1,
+        "probe_span_rank": 1,
+        "evaluation_matrix": [
+          [
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0"
+          ]
+        ],
+        "evaluation_rank": 2,
+        "kernel_dimension": 2,
+        "injective": false
+      },
+      "full_M2_two_basis_probes": {
+        "residual_space_dimension": 4,
+        "probe_count": 2,
+        "probe_span_rank": 2,
+        "evaluation_matrix": [
+          [
+            "1",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "evaluation_rank": 4,
+        "kernel_dimension": 0,
+        "injective": true
+      },
+      "smaller_residual_space_one_probe": {
+        "residual_space_dimension": 2,
+        "probe_count": 1,
+        "probe_span_rank": 1,
+        "evaluation_matrix": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "evaluation_rank": 2,
+        "kernel_dimension": 0,
+        "injective": true
+      },
+      "minimality": "Injectivity is necessary and sufficient for the declared residual space; separation of all M2 is not required when R is smaller."
+    },
+    "same_source_two_probe_recovery": {
+      "probe_matrix": "[[a,c],[b,d]]",
+      "determinant": "a*d-b*c",
+      "residual_matrix": "[[x,y],[z,w]]",
+      "elimination_identities": {
+        "delta_times_x": "0",
+        "delta_times_y": "0",
+        "delta_times_z": "0",
+        "delta_times_w": "0"
+      },
+      "all_symbolic_identities_zero": true,
+      "conclusion": "If both residual actions vanish and a*d-b*c is nonzero, then x=y=z=w=0."
+    },
+    "global_span_is_not_sourcewise_recovery": {
+      "states": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "global_state_span_rank": 2,
+      "source_residuals": [
+        [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      ],
+      "matched_actions": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "both_matched_actions_zero": true,
+      "both_source_residuals_nonzero": true,
+      "conclusion": "States attached to different source residuals may span K^2 while each nonzero residual annihilates only its own matched state."
+    },
+    "cyclicity_is_not_separation": {
+      "vector": [
+        "1",
+        "0"
+      ],
+      "cyclic_generators": [
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      ],
+      "cyclic_images": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "cyclic_image_span_rank": 2,
+      "nonzero_annihilator": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "annihilator_action": [
+        "0",
+        "0"
+      ],
+      "cyclic": true,
+      "separating_for_full_M2": false
+    },
+    "non_scalar_centralizer_endpoint": {
+      "ad_A_coefficient_matrix": [
+        [
+          "0",
+          "-c",
+          "b",
+          "0"
+        ],
+        [
+          "-b",
+          "a - d",
+          "0",
+          "b"
+        ],
+        [
+          "c",
+          "0",
+          "-a + d",
+          "-c"
+        ],
+        [
+          "0",
+          "c",
+          "-b",
+          "0"
+        ]
+      ],
+      "rank_two_branch_minors": {
+        "b_nonzero_branch": "b**2",
+        "c_nonzero_branch": "c**2",
+        "diagonal_nonscalar_branch": "-a**2 + 2*a*d - d**2"
+      },
+      "branch_minors_match": {
+        "b_nonzero_branch": true,
+        "c_nonzero_branch": true,
+        "diagonal_nonscalar_branch": true
+      },
+      "I_and_A_are_in_kernel": {
+        "I": true,
+        "A": true
+      },
+      "proof": "For non-scalar A, at least one of b,c,a-d is nonzero, so a displayed rank-two minor is nonzero. I and A are independent kernel vectors, hence rank(ad_A)<=2. Thus rank(ad_A)=2 and ker(ad_A)=span{I,A}."
+    }
+  },
+  "cpobc_binding": {
+    "fixed_vector_GC_residual": "D_(alpha,beta)=P_alpha-P_beta tested on Omega.",
+    "reachable_MSR_residual": "D_c=sum_j A_(c,j)-I tested on v_c=P_alpha*Omega.",
+    "ordinary_profile_probe_count_per_source": 1,
+    "multi_probe_recovery_is_additional_assumption": true,
+    "one_sided_profiles_resolved": false,
+    "weak_weak_visible_witness_resolved": false,
+    "conditional_commutativity_recovery": "If evaluation is injective for every GC and MSR residual family, both become strong operator identities; under the frozen ON/nonsingular/n<=4 hypotheses, the v0.3.9 d=2 theorem then forces Q1,...,Q4 to commute."
+  },
+  "gates": {
+    "full_M2_one_probe_not_injective": true,
+    "full_M2_two_basis_probes_injective": true,
+    "smaller_two_dimensional_residual_space_one_probe_injective": true,
+    "symbolic_multi_probe_elimination_identities_zero": true,
+    "global_span_different_source_counterexample_exact": true,
+    "cyclicity_counterexample_exact": true,
+    "centralizer_branch_minors_exact": true
+  },
+  "passed": true,
+  "verdict": "SR3B_M_CONDITIONAL_RECOVERY_LEMMAS_CERTIFIED",
+  "claim_boundary": "These are exact conditional linear-algebra recovery lemmas bound to the CPOBC residual semantics. They do not prove that the base single-Omega profile supplies the required separating probes, and they do not close either one-sided profile.",
+  "semantic_digest_sha256": "a742976ab7d955a66beb07f6efd06170cd3b2f320638b6a64c3292f6fcf5d735"
+}

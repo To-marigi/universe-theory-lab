@@ -2,6 +2,12 @@
 
 Written 2026-07-31. Read this before touching the release machinery.
 
+For the active post-release v0.4 research track, read
+`HANDOFF_v0.4.1.md` before this release handoff. It now records the completed
+SR2-V baseline audit, SR3b-M lemmas, the 180-point rational-torus scout, and
+the exact rank-131 invariant-line-breaking tangent obstruction. The public
+v0.3.9 release described below remains immutable.
+
 ---
 
 ## 1. Where things stand

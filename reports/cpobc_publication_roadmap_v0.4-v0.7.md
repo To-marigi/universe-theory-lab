@@ -74,9 +74,18 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
 
 ### SR2-V -- v0.4-V: reachable observability strengthening
 
-- 状態: **文献調査後に新規登録。exact audit と counterexample-first search は未実装**
-- 現 SR2 witness を `operator_noncommutative=true`, `reachable_span_rank=1`,
-  `reachable_visible=false` と machine-readable に固定する。
+- 状態: **baseline exact audit と SR3b-M は完了。reachable-visible search は bounded exact
+  scout 済みだが、三つの終端判定には未到達で OPEN**
+- 現 SR2 witness は独立 verifier により `operator_noncommutative=true`,
+  `reachable_span_rank=1`, `reachable_visible=false` と machine-readable に固定済み。
+- transverse upper-triangular scalar-torus の180有理点では witness はなく、全点で六可換子が
+  exact linear row span に入った。ただし有限sampleであり一般no-goではない。
+- frozen upper-triangular witness family の invariant-line-breaking Jacobian は、1187行・132
+  lower coordinatesでrank 131、kernelはcutoff外 `Q_5` のみ。full 528-variable tangentでも
+  actual `n<=4` lower-left方向は残らない。これはbase-upper-right非依存の一次障害であり、
+  higher-order/disconnected/irreducible componentsは未解決。
+- authoritative bounded-search report:
+  `reports/v0.4.2_sr2v_visible_search.md`。
 - 将来の witness では reachable-span rank と、stage/source-compatible reachable state 上の
   `[Q_i,Q_j]` の作用を別々に検証する。
 - 第一目標は、rank two かつ reachable-visible な exact rational weak/weak witness。
@@ -374,9 +383,9 @@ v0.4 weak/weak rational witness    RESULT COMPLETE
           |
 post-literature refocus             STATEWISE OBSERVABILITY / RECOVERY
           |
-SR2-V exact audit + SR3b-M lemmas   NEW FIRST PRIORITY
+SR2-V exact audit + SR3b-M lemmas   COMPLETE
           |
-reachable-visible witness or exact obstruction campaign
+SR2-V reducible/irreducible exact campaign   OPEN; LOCAL UPPER BRANCH SEALED
           |
 955 non-self-adjoint state-only repair, then 721 repair
           |
@@ -407,22 +416,25 @@ Paper II assembly and conditional CQG submission decision
 
 ## 8. 現時点の最優先作業
 
-1. SR2-V の stage/source-compatible visibility domain、exact metrics、verdict schema を
-   固定し、現 witness の rank-one/off-reachable-sector 性を独立 verifier で成果物化する。
-2. SR3b-M を source-bound residual spaces 上の injectivity theorem、single-source
-   multi-probe theorem、cyclicity counterexample、centralizer endpoint として形式化する。
-3. weak/weak で rank-two かつ reachable-visible な exact rational witness を反例先行で
-   探索する。完全被覆がない bounded no-go は一般 obstruction と呼ばない。
-4. その後に955の `x!=0,y!=0` mixed componentsを reducible/irreducible と symmetry/orbit
+1. **complete:** SR2-V の visibility domain/verdict schema と、現 witness の
+   rank-one/off-reachable-sector independent audit。
+2. **complete:** SR3b-M の residual-space injectivity、same-residual multi-probe、cyclicity
+   counterexample、centralizer endpoint。
+3. **complete bounded gates:** 49-dimensional scalar torusの180 exact rational pointsと、
+   upper-family全体に共通するrank-131 invariant-line-breaking tangent obstruction。
+4. **current:** weak/weak の未接続 transverse reducible component と irreducible componentを
+   分離し、det-commutator principal-openをsymmetry reduction後にexact scoutする。完全被覆が
+   ない bounded no-go は一般 obstruction と呼ばず、数値点は有理直接検証なしに採用しない。
+5. その後に955の `x!=0,y!=0` mixed componentsを reducible/irreducible と symmetry/orbit
    で分け、少数の自然なprincipal-open patchをexact scoutする。131 patchesを総当たりしない。
-5. coverage certificateと版付きbudget artifactが揃った場合だけsolver campaignを判断する。
+6. coverage certificateと版付きbudget artifactが揃った場合だけsolver campaignを判断する。
    955のterminal後に721 native compilerへ進む。
-6. SR3b-A は短報scopeを保って並行執筆できるが、deposit・投稿はfresh owner approvalまで
+7. SR3b-A は短報scopeを保って並行執筆できるが、deposit・投稿はfresh owner approvalまで
    行わない。pure-lower bounded no-goをSR3b-Aへ混入させない。
-7. Paper I は observability/recovery を中心にscopedに構成し、sharp semantic threshold や
+8. Paper I は observability/recovery を中心にscopedに構成し、sharp semantic threshold や
    complete classification を書かない。406-occurrence OFF、relation minimality、`n=5`、
    `d=3` はdownstreamへ分離する。
-8. manuscript freeze 前に 2026-08-01 からの literature delta search を行い、新規PDFを
+9. manuscript freeze 前に 2026-08-01 からの literature delta search を行い、新規PDFを
    `references/` と NAS へ版付き・SHA-256照合で保存する。
 
 ## 9. 研究拡張と破綻時の判断規則

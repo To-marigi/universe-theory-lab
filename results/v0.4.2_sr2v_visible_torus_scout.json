@@ -1,0 +1,1695 @@
+{
+  "schema_version": "final-theory-v042-sr2v-visible-torus-scout-v1",
+  "date": "2026-08-01",
+  "field": "Q",
+  "dimension": 2,
+  "finite_scope": "n<=4",
+  "profile": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
+  "input_artifacts": {
+    "results/v0.3.1_cpobc_relations_n4.json": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_atomisation_paths_n4.json": "b7c12b280ea80132c6d6ff967da7bd2ef64fa2b3ef6cf10ef0345c2162549980",
+    "results/v0.3.3_eq112_reduction_n4.json": "e217862b767eb69c946a5b011d43957c608d1c4748192ce8a5562193ada61678",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "declared_chart": {
+    "matrix_form": "[[a_e,x_e],[0,b_e]]",
+    "initial_vector": "e_2",
+    "upper_diagonal": "sampled rational points of the full frozen scalar monomial torus",
+    "lower_diagonal": "normalized CSG t_j=1 character",
+    "upper_right_coordinates": "one per ON transition orbit plus Q5",
+    "occurrence_identification": "ON",
+    "interpretation": "common invariant line transverse to the initial vector"
+  },
+  "scalar_torus": {
+    "variable_count": 132,
+    "raw_relation_counts": {
+      "CPOBC": 783,
+      "Eq113_both_branches": 50,
+      "Eq139_completed": 10
+    },
+    "exact_QQ_rank": 83,
+    "exact_QQ_dimension": 49,
+    "integer_nullspace_basis": true
+  },
+  "linear_problem": {
+    "variable_count": 132,
+    "relation_counts": {
+      "CPOBC": 783,
+      "Eq113_both_branches": 50,
+      "Eq139_completed": 10,
+      "fixed_vector_GC_basis": 320,
+      "reachable_state_MSR": 24
+    },
+    "arithmetic": "fractions.Fraction only; no floats or finite fields"
+  },
+  "candidate_campaign": {
+    "planned_candidate_count": 180,
+    "evaluated_candidate_count": 180,
+    "stopped_on_first_certified_witness": false,
+    "rank_census": {
+      "127": 17,
+      "129": 2,
+      "130": 27,
+      "131": 100,
+      "132": 34
+    },
+    "maximum_linear_nullity": 5,
+    "candidate_records": [
+      {
+        "candidate_id": "constant-character",
+        "base": 2,
+        "origin": "zero exponent point",
+        "max_absolute_exponent": 0,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "normalized-lower-character",
+        "base": 2,
+        "origin": "upper diagonal equals lower CSG",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-00",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-00",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-01",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-01",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-02",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-02",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-03",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-03",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-04",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-04",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-05",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-05",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-06",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-06",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-07",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-07",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-08",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-08",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-09",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-09",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-10",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-10",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-11",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-11",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-12",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-12",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-13",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-13",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-14",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-14",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-15",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-15",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-16",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-16",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-17",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-17",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-18",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-18",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-19",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-19",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-20",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-20",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-21",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-21",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-22",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-22",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-23",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-23",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-24",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-24",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-25",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-25",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-26",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-26",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 129,
+        "linear_nullity": 3,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-27",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-27",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-28",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-28",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-29",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-29",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 129,
+        "linear_nullity": 3,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-30",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-30",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-31",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-31",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-32",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-32",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-33",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-33",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-34",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-34",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-35",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-35",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-36",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-36",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-37",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-37",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-38",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-38",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-39",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-39",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-40",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-40",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-41",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-41",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-42",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-42",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-43",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-43",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-44",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-44",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-45",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-45",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-46",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-46",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-47",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-47",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "basis-plus-48",
+        "base": 2,
+        "origin": "torus basis vector",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-basis-48",
+        "base": 2,
+        "origin": "normalized lower character plus torus basis vector",
+        "max_absolute_exponent": 4,
+        "linear_rank": 127,
+        "linear_nullity": 5,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-00",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-01",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-02",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-03",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-04",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-05",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-06",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-07",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-08",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-09",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-10",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-11",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-12",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-13",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-14",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-15",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-16",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-17",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-18",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-19",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-20",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-21",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-22",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-23",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-24",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-25",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-26",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-27",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-28",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 3,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-29",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-30",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-31",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-32",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-33",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-34",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-35",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 3,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-36",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-37",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-38",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-39",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-40",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-41",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-42",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 2,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-43",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-44",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-45",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-46",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 3,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "sparse-random-47",
+        "base": 2,
+        "origin": "seeded four-basis combination",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-00",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-01",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-02",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-03",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-04",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-05",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-06",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-07",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-08",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-09",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-10",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-11",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-12",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-13",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 6,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-14",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 130,
+        "linear_nullity": 2,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "lower-plus-random-15",
+        "base": 2,
+        "origin": "normalized lower character plus seeded combination",
+        "max_absolute_exponent": 5,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "signed-base-random-00",
+        "base": -2,
+        "origin": "signed rational torus point",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "base-three-random-00",
+        "base": 3,
+        "origin": "independent positive rational base",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "signed-base-random-01",
+        "base": -2,
+        "origin": "signed rational torus point",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "base-three-random-01",
+        "base": 3,
+        "origin": "independent positive rational base",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "signed-base-random-02",
+        "base": -2,
+        "origin": "signed rational torus point",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "base-three-random-02",
+        "base": 3,
+        "origin": "independent positive rational base",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "signed-base-random-03",
+        "base": -2,
+        "origin": "signed rational torus point",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "base-three-random-03",
+        "base": 3,
+        "origin": "independent positive rational base",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "signed-base-random-04",
+        "base": -2,
+        "origin": "signed rational torus point",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "base-three-random-04",
+        "base": 3,
+        "origin": "independent positive rational base",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "signed-base-random-05",
+        "base": -2,
+        "origin": "signed rational torus point",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "base-three-random-05",
+        "base": 3,
+        "origin": "independent positive rational base",
+        "max_absolute_exponent": 2,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "signed-base-random-06",
+        "base": -2,
+        "origin": "signed rational torus point",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "base-three-random-06",
+        "base": 3,
+        "origin": "independent positive rational base",
+        "max_absolute_exponent": 1,
+        "linear_rank": 132,
+        "linear_nullity": 0,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "signed-base-random-07",
+        "base": -2,
+        "origin": "signed rational torus point",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      },
+      {
+        "candidate_id": "base-three-random-07",
+        "base": 3,
+        "origin": "independent positive rational base",
+        "max_absolute_exponent": 1,
+        "linear_rank": 131,
+        "linear_nullity": 1,
+        "free_Q_commutators": []
+      }
+    ]
+  },
+  "witness": null,
+  "search_terminal": "NOT_A_SEARCH_TERMINAL_BOUNDED_ANSATZ_ONLY",
+  "gates": {
+    "scalar_relation_count_is_843": true,
+    "scalar_torus_rank_is_83": true,
+    "scalar_torus_dimension_is_49": true,
+    "all_candidates_are_exact_nonzero_rational_points": true,
+    "linear_relation_inventory_is_complete_for_declared_chart": true,
+    "witness_directly_certified_if_found": true
+  },
+  "passed": true,
+  "verdict": "SR2V_VISIBLE_TORUS_SCOUT_NO_WITNESS_OPEN",
+  "claim_boundary": "A certified hit is a genuine exact weak/weak witness because every frozen relation is directly rechecked.  If no hit is found, the result excludes only the listed finite rational torus sample in the declared reducible transverse ON chart; it is not an obstruction for the full chart or arbitrary GL_2.",
+  "semantic_digest_sha256": "7ed0d5f8c3d67528bd6cb2853e8b8887479488453799a43b6645d87437ad028f"
+}

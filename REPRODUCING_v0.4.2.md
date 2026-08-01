@@ -256,6 +256,61 @@ excludes remote/disconnected solutions with `x!=0,y!=0`, and neither proves
 commutativity for the full 955 profile. No finite-field, numerical, Sage,
 Gröbner, or saturation run was performed.
 
+## SR2-V observability and minimal recovery
+
+```powershell
+uv run python -m universe_lab.final_theory.weak_d2_observability_v042
+uv run python -m universe_lab.final_theory.semantic_recovery_v042
+uv run pytest -q tests/final_theory/test_weak_d2_observability_v042.py
+uv run pytest -q tests/final_theory/test_semantic_recovery_v042.py
+```
+
+Expected results:
+
+```text
+SR2V_BASELINE_OBSERVABILITY_AUDIT_CERTIFIED
+semantic digest 73508f8ad94d97a3147cbd913d687f0b779c740b80a84a4836854053f6f01c62
+6 passed
+SR3B_M_CONDITIONAL_RECOVERY_LEMMAS_CERTIFIED
+semantic digest a742976ab7d955a66beb07f6efd06170cd3b2f320638b6a64c3292f6fcf5d735
+14 passed
+```
+
+The observability verifier independently reconstructs 407 paths and 87
+endpoint states, proves reachable rank one, and verifies that all six nonzero
+Q commutators annihilate every declared cylinder state. SR3b-M certifies
+conditional residual-evaluation and same-residual multi-probe lemmas. Neither
+artifact closes the reachable-visible search or a one-sided profile.
+
+## SR2-V bounded reachable-visible scouts
+
+```powershell
+uv run python -m universe_lab.final_theory.weak_d2_visible_torus_scout_v042
+uv run python -m universe_lab.final_theory.weak_d2_visible_tangent_v042
+uv run pytest -q tests/final_theory/test_weak_d2_visible_torus_scout_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_visible_tangent_v042.py
+```
+
+Expected results:
+
+```text
+SR2V_VISIBLE_TORUS_SCOUT_NO_WITNESS_OPEN
+semantic digest 7ed0d5f8c3d67528bd6cb2853e8b8887479488453799a43b6645d87437ad028f
+SR2V_BASELINE_LOWER_TANGENT_VISIBILITY_OBSTRUCTED
+semantic digest d83afca2c460bad9e8d420e75ad60e1974f3419f0dd655bfc51821d6a02b5a92
+9 passed
+```
+
+The first command constructs the exact 49-dimensional scalar exponent torus
+and tests 180 deterministic nonzero rational points. No Q commutator survives,
+but the finite campaign is not a torus cover. The second command differentiates
+the full weak/weak system over exact dual numbers. Its 1,187-row
+invariant-line-breaking subsystem has rank 131 on 132 lower coordinates and
+kernel only cutoff-external Q5; the full 528-variable Jacobian has rank 455 and
+nullity 73 with no in-scope lower-left direction. This is a first-order bounded
+obstruction, not a global SR2-V terminal. See
+`reports/v0.4.2_sr2v_visible_search.md`.
+
 ## Next exact gate
 
 Do not launch an exhaustive 131-patch campaign. For the remaining

@@ -54,6 +54,16 @@ exact logical separation, not yet reachable-visible noncommutativity. The new
 SR2-V track records operator noncommutativity, reachable rank, and action on a
 stage/source-compatible reachable-state domain as separate predicates.
 
+That observability statement is now independently machine-certified, rather
+than inferred from the original witness compiler. The follow-up exact search
+has not reached an SR2-V terminal. A 180-point rational-torus campaign found no
+transverse reducible witness, and an exact 1,187-row lower-component Jacobian
+has rank 131 on 132 lower coordinates, leaving only the cutoff-external `Q_5`
+direction. Thus the frozen upper-triangular rank-one family has no first-order
+reachable-visible escape, even when all 528 matrix-entry coordinates vary.
+This is a bounded/local obstruction; disconnected, higher-order, and
+irreducible components remain open.
+
 A proper sublocus of the strong-GC/reachable-state-MSR corner is nevertheless
 closed: on the nonsingular source reconstruction slice
 `P_sGC+rMSR intersect image(Phi_U)`, the four `Q` matrices commute. This is the
@@ -83,6 +93,10 @@ semantic-profile row and not a change to SR3b-A.
 | `reports/v0.4.2_partial_slice_short_report_plan.md` | SR3b-A scope/publication lock | `THEOREM_CERTIFIED / SHORT_REPORT_SLOT_CONFIRMED / PRIOR_ART_AUDIT_COMPLETE / DISTINCT_TECHNICAL_CONTRIBUTION_IDENTIFIED / DRAFT_RECOMMENDED / DEPOSIT_NOT_AUTHORIZED`; the proper-slice theorem is draftable independently but is not the full 955 theorem |
 | `reports/v0.4.2_prior_art_and_related_work_audit.md` | completed novelty/priority and related-work audit | no same claim found for SR2 or SR3b-A in the bounded search; Xu arXiv:2607.26672v1 is more general on the self-adjoint slice and forbids broad rigidity/priority wording; full one-sided profiles remain open |
 | `reports/v0.4.2_post_literature_strategy_review.md` | current research-direction authority after the audit | refocuses Paper I on statewise observability, exact separation, and minimal recovery; adds SR2-V; makes full one-sided closure and `n=5` upgrades rather than scoped-manuscript gates |
+| `results/v0.4.2_sr2v_baseline_observability.json` | independent exact `Fraction` reconstruction; digest `73508f8ad94d97a3147cbd913d687f0b779c740b80a84a4836854053f6f01c62` | certifies 407 paths/87 states, reachable rank one, six operator-nonzero commutators, and zero action on every declared reachable domain; baseline audit only |
+| `results/v0.4.2_sr3b_m_semantic_recovery.json` | exact QQ/symbolic lemma certificate; digest `a742976ab7d955a66beb07f6efd06170cd3b2f320638b6a64c3292f6fcf5d735` | residual-family evaluation injectivity, same-residual two-probe recovery, global-span and cyclicity counterexamples, and the non-scalar `2x2` centralizer endpoint; closes neither one-sided profile |
+| `results/v0.4.2_sr2v_visible_torus_scout.json` | exact finite rational scout; digest `7ed0d5f8c3d67528bd6cb2853e8b8887479488453799a43b6645d87437ad028f` | 49-dimensional scalar torus, 180 rational points, no free Q commutator; `OPEN` bounded evidence, not a torus cover or general no-go |
+| `results/v0.4.2_sr2v_baseline_lower_tangent.json` and `reports/v0.4.2_sr2v_visible_search.md` | exact dual-number QQ tangent certificate; digest `d83afca2c460bad9e8d420e75ad60e1974f3419f0dd655bfc51821d6a02b5a92` | base-upper-right-independent 1,187-row invariant-line-breaking subsystem has rank 131/kernel external Q5; full Jacobian rank 455/nullity 73 but no in-scope lower direction or first-order visibility escape; not a global obstruction |
 | `references/notes/v0.4.2_prior_art_related_work_2026-08-01.md` | theorem/page-level literature and mathematical-tool ledger | records direct-source semantics, Xu overlap, triangularisation/common-eigenvector/Burnside/cyclic-separating/LLD tools, 66-PDF local/NAS preservation, and exact claim boundaries |
 | `results/v0.4.2_955_source_native_slack_compiler.json` | structured source word/matrix-block inventory | covers 165 occurrences/131 orbits, 48 slack coordinates, and independently proves the 320-edge strong-GC basis spans all 1,529 path pairs; no scalar solver manifest or chart theorem yet |
 | `results/v0.4.2_955_n_nonzero_scout.json` | exact QQ-linear source-native scout | the entire nonsingular `A_e=[[p_e,x_e],[0,1]]` family lies in `N!=0`, but all six Q commutators are forced zero; general mixed nonlinear patches remain open |
@@ -147,9 +161,17 @@ verdict.
   and nonzero commutator action on a declared stage/source-compatible reachable
   state. These are separate conditions; neither is silently inferred from
   operator noncommutativity.
+- The SR2-V baseline verifier is complete: 407 paths, 87 endpoint states,
+  exact reachable rank one, and all six nonzero commutators invisible on the
+  full declared cylinder-state domain. The 180-point rational-torus scout and
+  rank-131 invariant-line-breaking tangent certificate are bounded negative
+  results only; SR2-V remains open.
 - SR3b-M must distinguish ordinary reachability from multiple preparations or
   probes applied to the same residual. The latter is a conditional recovery
   theorem, not an automatic consequence of the base single-state semantics.
+- SR3b-M is now exact and machine-certified. Its same-residual two-probe and
+  residual-evaluation injectivity lemmas may be used in Paper I, but they do
+  not settle either one-sided profile or the reachable-visible search.
 - The next heavy profile is 955 because it lies in the non-self-adjoint,
   state-only boundary left open by Xu and already has the strongest native
   compiler/certificate assets. The 721 compiler follows 955 or becomes the
@@ -259,6 +281,13 @@ The owner approved repair work after independently checking the primary
 source, implementation, escape point, and 35-test regression. Sage/Singular
 remains frozen until the semantic gates below pass. Current progress is:
 
+The post-literature lightweight gates preceding further 955 work are also now
+materialized: SR2-V baseline observability audit is complete; SR3b-M is
+complete; the first transverse rational-torus and invariant-line-breaking
+tangent scouts are complete with bounded `OPEN` scope. The current immediate
+target is a disconnected transverse-reducible or irreducible weak/weak
+component. No local perturbation of the frozen upper family should be rerun.
+
 1. **complete:** the v0.4.1 driver/oracle can no longer reissue the withdrawn
    theorem; new outputs and certificate writes use separate restricted-locus
    paths, while the old three JSON artifacts and 42 certificates are pinned
@@ -300,8 +329,9 @@ remains frozen until the semantic gates below pass. Current progress is:
    `V042_955_PURE_LOWER_TRIANGULAR_GLOBAL_NO_GO_PROVED`, independently checked
    by `V042_955_PURE_LOWER_ORACLE_CERTIFIED` with semantic digest
    `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`;
-9. **next gate:** the pure-lower theorem is an SR3b auxiliary result, not a new
-   short report, and does not change SR3b-A. The remaining targets are
+9. **955 resumption gate:** the pure-lower theorem is an SR3b auxiliary result,
+   not a new short report, and does not change SR3b-A. After the bounded SR2-V
+   campaign reaches an allowed terminal, the remaining 955 targets are
    remote/disconnected `x!=0,y!=0` mixed components and the full 955 profile.
    Do not brute-force all 131 patches: first derive a symmetry/orbit reduction
    and exact-scout a small natural principal-open set. A solver campaign is
@@ -378,6 +408,28 @@ the SR3b-A theorem, title, or deposit status.
 - v0.3.9 is the immutable public strong/strong baseline.
 - v0.4 followed the counterexample-first rule and closed the weak/weak ON
   corner with an exact rational witness; no elimination was needed.
+- The independent SR2-V audit fixes that witness at reachable rank one and
+  proves all six nonzero commutators annihilate all 87 compiled cylinder
+  states. Do not describe it as reachable-visible.
+- The transverse rational-torus scout tested 180 exact rational points in a
+  49-dimensional scalar torus and found no free Q commutator. Do not rerun the
+  same points or promote the finite census to a torus cover.
+- The weak/weak invariant-line-breaking subsystem has 1,187 exact rows,
+  rank 131 on 132 lower coordinates, and kernel equal to cutoff-external Q5.
+  The full 528-coordinate Jacobian has rank 455/nullity 73, but no actual
+  `n<=4` lower-left tangent direction. Do not search again by first-order
+  perturbation of the frozen upper family; target disconnected or irreducible
+  components. This is not a full SR2-V obstruction.
+- A source/target frame cocycle `A_(c->d)=p_(c->d)S_dS_c^-1` was rejected as
+  a construction route. It gives strong GC, exact reachable-state MSR,
+  reachable rank two, and visible noncommuting Q for nonconstant harmonic
+  frame columns, but the tested exact point fails all 783 raw CPOBC equations
+  and every completed Eq. (139) instance. Preserve the lesson: CPOBC, not the
+  statewise semantic equations, is the barrier for this natural gauge ansatz.
+- SR3b-M is complete as a conditional lemma module. Global reachable rank two
+  across different sources is still not sourcewise residual recovery; two
+  independent probes must act on the same residual, or evaluation must be
+  injective on its declared residual space.
 - v0.4.1 completed 42 exact QQ runs and an independent arithmetic oracle, then
   failed the later semantic-coverage audit. Do not rerun those 42 charts to
   repair the problem; new coordinates are required.
