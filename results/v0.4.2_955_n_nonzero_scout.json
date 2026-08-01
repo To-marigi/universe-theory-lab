@@ -1,0 +1,70 @@
+{
+  "schema_version": "final-theory-v042-955-n-nonzero-triangular-scout-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "scope": {
+    "finite_source_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ",
+    "identification_mode": "ON_QUOTIENT",
+    "ansatz": "A_e=[[p_e,x_[e]],[0,1]], p_e=CSG(t_j=1), Omega=e1"
+  },
+  "source_artifact_sha256": {
+    "results/v0.3.1_cpobc_relations_n4.json": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba",
+    "results/v0.4.2_955_source_native_slack_compiler.json": "0e34c3132c47c4fb0485e9c570581d6ff16f8ce942446f7557ebdb4dd0cd70cc"
+  },
+  "checks": {
+    "occurrences": 165,
+    "ON_orbits_and_variables": 131,
+    "all_determinants_nonzero": true,
+    "raw_CPOBC_equations": 783,
+    "raw_CPOBC_rank": 108,
+    "strong_GC_basis_equations": 320,
+    "all_same_endpoint_GC_pairs_spanned": 1529,
+    "strong_GC_connectivity_evidence_sha256": "1077ec8ce21902c5db6ce106aaf30dd92c4e5d0574edde75b06e3cbdd55c6b54",
+    "reachable_state_MSR_sources": 24,
+    "all_reachable_state_residuals_zero": true,
+    "uniform_N_nonzero_certificate": {
+      "source_id": "p1-0",
+      "operator_residual_lower_right": "1",
+      "independent_of_upper_right_coordinates": true
+    },
+    "combined_profile_rank": 114,
+    "combined_profile_nullity": 17,
+    "commutator_functionals": {
+      "Q1_Q2": {
+        "augmented_rank": 114,
+        "forced_zero_within_declared_ansatz": true
+      },
+      "Q1_Q3": {
+        "augmented_rank": 114,
+        "forced_zero_within_declared_ansatz": true
+      },
+      "Q1_Q4": {
+        "augmented_rank": 114,
+        "forced_zero_within_declared_ansatz": true
+      },
+      "Q2_Q3": {
+        "augmented_rank": 114,
+        "forced_zero_within_declared_ansatz": true
+      },
+      "Q2_Q4": {
+        "augmented_rank": 114,
+        "forced_zero_within_declared_ansatz": true
+      },
+      "Q3_Q4": {
+        "augmented_rank": 114,
+        "forced_zero_within_declared_ansatz": true
+      }
+    },
+    "all_six_Q_commutators_forced_zero_in_ansatz": true
+  },
+  "solver_status": "EXACT_SPARSE_QQ_GAUSSIAN_ELIMINATION_ONLY",
+  "sage_status": "NOT_INVOKED",
+  "numerical_or_finite_field_evidence_used": false,
+  "claim_boundary": "This excludes a noncommutative witness only in the declared exact N!=0 upper-triangular ON-quotient family. It does not prove general commutativity and it does not close any mixed upper/lower nonlinear patch.",
+  "verdict": "V042_955_N_NONZERO_SCOUT_NO_WITNESS_OPEN",
+  "passed": true,
+  "semantic_digest_sha256": "27935a8b7908f26179036b7732c5999f5ffe3b4b23363768ab714a83f90853d3"
+}

@@ -1,0 +1,2009 @@
+{
+  "all_transition_predicates_requested": true,
+  "backend": "Sage fraction field / embedded Singular ideals",
+  "backend_versions": {
+    "python": "3.12.3",
+    "sage": "10.9",
+    "singular": "Singular for x86_64-Linux version 4.4.1 (44100, 64 bit) Jan 2025"
+  },
+  "budget_file": "config/v0.4.1_budget.json",
+  "budget_file_sha256": "f192a37b97e70c84aeae594db75832bdcf632bf00a78009ff45f09b1bcca2e50",
+  "cached_q_word_product_count": 42,
+  "canonical_selection_checks_passed": true,
+  "certified_frozen_denominator_factor_count": null,
+  "chart": "fixed_vector_GC__strong_MSR:S2_PIVOT_M2:C_NONZERO",
+  "chart_cover_id": "DERIVED_APPENDIX_QN_BRANCH:S2_PIVOT_M2:C_NONZERO",
+  "chart_source_index_branch": "DERIVED_APPENDIX_QN_BRANCH",
+  "chart_verdict": "EXACT_EMPTY_CHART",
+  "check_noncommutativity_requested": true,
+  "coefficient_field": "QQ",
+  "coefficient_modulus": 0,
+  "commutator_component_count": 18,
+  "commutator_coverage_complete": true,
+  "covered_commutator_component_count": 0,
+  "denominator_evaluation_route": "DIRECT_INVERSE_AND_TRANSITION_RECONSTRUCTION",
+  "dependency_nodes_evaluated": 22,
+  "direct_system_file_sha256": "5fa2cbd16503d8cd16bc09db07d3b82c1e25df17fcd133cb472875e0e5408e56",
+  "direct_system_path": "certificates/d2_saturation/v0.3.5_direct_operator_system.json",
+  "direct_system_self_semantic_digest_valid": true,
+  "direct_system_semantic_digest_sha256": "6667681124ab6f482ddaa65ad62d08046995553899c0b7fd37f6573fecddb74e",
+  "effective_saturation_factor_count": 0,
+  "equation_complexity_inventory": [],
+  "equation_provenance_digest_sha256": "789054d1865d1143860d6c34ada1622636cbb0f9a92c5a68c769bb58d49e4433",
+  "equation_source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+  "equations_covered_by_initial_basis": 94,
+  "evaluated_relation_ids_sha256": "5e85585e7ba56d9d4ed624b4d6ea5d99241f7fa07f76dc0a5660f78799a4d913",
+  "exit_status": "COMPLETED",
+  "expression_source": "DIRECT_REDUCED_OPERATOR_WORDS",
+  "factor_reduction_equivalence": {
+    "all_source_factorisations_reconstructed_exactly": true,
+    "deduplication_preserves_saturation": true,
+    "justification": "Over a field, saturation by a nonzero scalar unit, repeated irreducible factors, and duplicate factors is unchanged; every source polynomial was reconstructed exactly from its recorded unit, irreducible factors, and multiplicities.",
+    "source_factorisations": [
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          115,
+          116,
+          117,
+          118
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "ba19b5280441cd493173bfbe13a3f3ed30581ace7de0507a8c8e9f043dcc0e92",
+        "source_occurrence_count": 12,
+        "source_polynomial_sha256": "c9208cd0b6c0458ce658009014bbb190012a8eca4e6c1f2973478c45093a0db8"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c"
+          }
+        ],
+        "source_factor_indices_preview": [
+          124
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "a0e7ee310005c50a63df935df6caf5b005a45efb89c1e9d9ad6f4883838f6dcc",
+        "source_occurrence_count": 1,
+        "source_polynomial_sha256": "879923da020d1533f4d8e921ea7bac61e8ba41d3c89d17a4d14e3a89c6780d5d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "l2"
+          }
+        ],
+        "source_factor_indices_preview": [
+          120
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "b344603b272cddd6307249d2d9c2fd5e7e93f8fa2a622d38fde392402c235a5a",
+        "source_occurrence_count": 1,
+        "source_polynomial_sha256": "e523f9d32d200d4c898117c977ff5109e2a298ef92341cd3f9d2c18ac99d493a"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          10,
+          11,
+          12,
+          13,
+          99,
+          100,
+          101,
+          102
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "7bd54fe7ee1cbd84fd3cc6547e208eac0b599de8048a1234e8dbcde8d3aeb7fa",
+        "source_occurrence_count": 8,
+        "source_polynomial_sha256": "c5fb25c38f8ed54a12455a9873d8cc9f42247b3ca9048b28e1d0771c8c58b50d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          95,
+          96,
+          97,
+          98
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "f64b4782163004fecb4ad0fba5505c5fbf725db95aaa6f71dc066a20775e82e0",
+        "source_occurrence_count": 4,
+        "source_polynomial_sha256": "8610436a4cd8f3c542547002cc8f3a75b02d7fbe2c8685bb9bf9287e8af6707d"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          31,
+          32,
+          33,
+          34,
+          43,
+          44,
+          45,
+          46
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "0a231f319ca73be927a2462101ba85571c5062d225ab0d869c4c8b052d333859",
+        "source_occurrence_count": 8,
+        "source_polynomial_sha256": "7f9d80c2a6b0fc9c3ed4800b4b7f0e268218ecfa8606c594c1a180053209c081"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          9
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "16390873ae6b6a173fc894a873bab02283debbd320b5f0758849d01afa6ee8b6",
+        "source_occurrence_count": 1,
+        "source_polynomial_sha256": "cd9c65f2fbb9749089c47077db0cf152e4f6d1e314ec4052354b265a03694634"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          107,
+          108,
+          109,
+          110
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "e344a0f56bf348c1d7fc6abcb6b426b026f7db1a8923f92e9a6fd92e94ec2b32",
+        "source_occurrence_count": 12,
+        "source_polynomial_sha256": "bd95b22cd71c009799133c16c50d8bd83b0fd0962c44057d4224969d86b19071"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          2
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "038966de9f6b9a901b20b4c6ca8b2a46009feebe031babc842d43690c0bc222b",
+        "source_occurrence_count": 1,
+        "source_polynomial_sha256": "10194c416fc51a1cb4e4351341892bfc2c2b2626e48cfca518ffb4218212148e"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 3,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          15,
+          16,
+          17,
+          18
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "6dc02b77cd6196461cf092eb6a2acf2233c6080fd6f0798555223e69cdf61fff",
+        "source_occurrence_count": 4,
+        "source_polynomial_sha256": "b6fee847df0338b8c16acf184a926e6774ec3ea8d9a073ba134e7cd00da1539c"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          35,
+          36,
+          37,
+          38
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "c6e9d3e1a9e1b1dbcd3acc96b91174f785494d7db102d8367aa380881e22ea3a",
+        "source_occurrence_count": 4,
+        "source_polynomial_sha256": "57b671b73f8062df1e7f305d44c32b785565bb4775483a0dcd5b9a2bd4e84e80"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "c5cf29ee76bc12feb9e3796af03208ff488952ddcefdbdba792aff970ade2b0b",
+        "source_occurrence_count": 8,
+        "source_polynomial_sha256": "6572c58b3c34040ba277caee34404d86bb135583abecb0048475a5cb510ce957"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "l4"
+          }
+        ],
+        "source_factor_indices_preview": [
+          122
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "38fc41bd815d669d946f6f9ac1658121c24412a63b732541da674ea79a30c937",
+        "source_occurrence_count": 1,
+        "source_polynomial_sha256": "c717ad029e35cb00d4271cc7b85922048c248a080c7fad10ecd65ef4ecd4823a"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          19,
+          20,
+          21,
+          22
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "095da923dcc1a9d1ceaf6c75d7a19beb6491bb6a12d3ef50f46216dad44639dc",
+        "source_occurrence_count": 4,
+        "source_polynomial_sha256": "97076622129b1f0d12ace1a12a665108eb66ec4e20f6179b3c8d7f2ff32a8df1"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "m2"
+          }
+        ],
+        "source_factor_indices_preview": [
+          123
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "201add142419aaa1ff8bf4b25772b7af870d06753a642c57a49640cd9835f6d4",
+        "source_occurrence_count": 1,
+        "source_polynomial_sha256": "5a669488ee2070800f4b7c22ac37d09b913cf9201806773ef0a8d86b614f8d8c"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          111,
+          112,
+          113,
+          114
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "954de81c6459362eb53fbc02d20867819c3c99bc9d7f8ee3c023ff41f1708721",
+        "source_occurrence_count": 12,
+        "source_polynomial_sha256": "ff8e9df6bfef855b2f7f1bcd32bcbd315080e257753db10f589fdd39ce46a2d4"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 - l2 + 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "c*m2 + l2 - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          14
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "b8d52dc8aa20e6a056357c967c95447dd9feb6e3e818e98cb2b9183e8c918cc6",
+        "source_occurrence_count": 1,
+        "source_polynomial_sha256": "40601b787b7d9a648aa9212513ac206fbe55a31ec7d7a527f38369d70aa37f65"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          27,
+          28,
+          29,
+          30
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "5287cc7b65fe1cd268d5f24085171e782c7a036c10a797c16641d70847beb7dd",
+        "source_occurrence_count": 4,
+        "source_polynomial_sha256": "e5548aef491c33e1adecd7132dcbe16dd12a217d989342f2a79581bddfe30187"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          5,
+          6,
+          7,
+          8,
+          91,
+          92,
+          93,
+          94
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "acac64d3b9cf6be18ccdbd025863aba792a6138600415e97a95b5bbdc7234eca",
+        "source_occurrence_count": 8,
+        "source_polynomial_sha256": "3ebb6f370f5c5d649aba5303a248673086bf9a8d24922e4378dfd57a09a5373b"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          103,
+          104,
+          105,
+          106
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "53ac792ffce9f07991f00987cd2edc1e2c78e1a659bb325870e4811dacc45917",
+        "source_occurrence_count": 4,
+        "source_polynomial_sha256": "044d5f40bfd911fa3d424e20fc4f541bbbe5a69ba1b84d15963be361b5b7e8be"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "l3"
+          }
+        ],
+        "source_factor_indices_preview": [
+          121
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "ed6be4acfc5393a4be9966c7fc2ae828325d39c58759ea6a55d3dcea6d03b9f8",
+        "source_occurrence_count": 1,
+        "source_polynomial_sha256": "a34a826c7491ae2119e005ec45b2269c7ab25b82286d3587a9261449f9b7dd9e"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          1
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "080a9ed428559ef602668b4c00f114f1a11c3f6b02a435f0bdc154578e4d7f22",
+        "source_occurrence_count": 1,
+        "source_polynomial_sha256": "b3627effe2184e7bad3c943da6007cbd027831e446ea0ec70e1dc8df6eb8a30c"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          23,
+          24,
+          25,
+          26,
+          47,
+          48,
+          49,
+          50
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "c66382c0763fb0a70caf00cff49dc6737f38a6b886572fde816e24d0538c17f5",
+        "source_occurrence_count": 8,
+        "source_polynomial_sha256": "faa5085a0b94cd79b4f54114450992ae7678e216c68f870de4119158842d5f9f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          39,
+          40,
+          41,
+          42
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "8edb4d5d16c6f61302711acb8a9b124e0b28796d31e77cd570e1ff836678dca1",
+        "source_occurrence_count": 4,
+        "source_polynomial_sha256": "b1aa4f9d661d7b267083f64a7f1f5a46de95bfd561b742d0c14ed8f0edc2034f"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 4,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          },
+          {
+            "multiplicity": 2,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "ccb5b654a05f0a699e47e7ccde923185d2b3715d28edd7599f9cd89843b513fc",
+        "source_occurrence_count": 8,
+        "source_polynomial_sha256": "1f9f28b7ba46a7305a6db6a19e1cfa07f0191ecf080656ad5d1fc55a17a77333"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "-1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d"
+          }
+        ],
+        "source_factor_indices_preview": [
+          0,
+          119
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "5cf3f554dfa513bf7921ab83b1536b0a1fae427de91a990970dd546af3a9c832",
+        "source_occurrence_count": 2,
+        "source_polynomial_sha256": "0214864f04be6639b34067f928bd75a23479723a98c8e0ecf3346b19eb0f271a"
+      },
+      {
+        "exact_reconstruction_verified": true,
+        "factorisation_unit": "1",
+        "irreducible_factors": [
+          {
+            "multiplicity": 2,
+            "normalised_factor": "l2"
+          },
+          {
+            "multiplicity": 1,
+            "normalised_factor": "b*c - a*d + a + d - 1"
+          }
+        ],
+        "source_factor_indices_preview": [
+          3,
+          4
+        ],
+        "source_factor_indices_preview_truncated": false,
+        "source_factor_indices_sha256": "8be6d66e9099c68d8feb52ce42478d2153cac2763b784174ae6ae96cd636b596",
+        "source_occurrence_count": 2,
+        "source_polynomial_sha256": "61186dd963c352e628e8e3f0675adadfa6e04b1dbde875a7c967dd684dd95b96"
+      }
+    ],
+    "source_polynomial_occurrence_count": 125,
+    "unique_source_polynomial_count": 27,
+    "zero_required_factor": false
+  },
+  "factor_reduction_records": [
+    {
+      "factor": "b*c - a*d",
+      "source_occurrence_count": 111,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 0
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 1
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 5
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 6
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 7
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 8
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 10
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 11
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 12
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 13
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 15
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 16
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 17
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 18
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 19
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 20
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 21
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 22
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 23
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 24
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 25
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 26
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 27
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 28
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 29
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 30
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 31
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 32
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 33
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 34
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 39
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 40
+        }
+      ],
+      "source_occurrences_preview_truncated": true,
+      "source_occurrences_sha256": "45b88db6b92f2bad22eb02a571eb2fd91d80feecc1e1229c25cd6401ec9dd22f"
+    },
+    {
+      "factor": "b*c - a*d + a + d - 1",
+      "source_occurrence_count": 75,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 2
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 3
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 4
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 5
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 6
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 7
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 8
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 15
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 16
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 17
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 18
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 19
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 20
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 21
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 22
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 23
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 24
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 25
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 26
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 31
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 32
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 33
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 34
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 35
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 36
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 37
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 38
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 39
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 40
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 41
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 42
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 43
+        }
+      ],
+      "source_occurrences_preview_truncated": true,
+      "source_occurrences_sha256": "ac70a1497293feef30bc269040ef75d35dc9711f9594b28979df732369074ba2"
+    },
+    {
+      "factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1",
+      "source_occurrence_count": 29,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 9
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 10
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 11
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 12
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 13
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 27
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 28
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 29
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 30
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 39
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 40
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 41
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 42
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 75
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 76
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 77
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 78
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 79
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 80
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 81
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 82
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 99
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 100
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 101
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 102
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 115
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 116
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 117
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 118
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "651434acae8a6eefa4a060ba27739c5d0150e8dcf053eb7e1430b2879ec940e6"
+    },
+    {
+      "factor": "c",
+      "source_occurrence_count": 1,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 124
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "0356a9056116142298c63bd3a0968f80c03e010d265e3fcfbb9a3be15777e021"
+    },
+    {
+      "factor": "c*m2 + l2 - 1",
+      "source_occurrence_count": 17,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 14
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 15
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 16
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 17
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 18
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 31
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 32
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 33
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 34
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 43
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 44
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 45
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 46
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 95
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 96
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 97
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 98
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "315f08f48ea512cd29397ab0bb27f1d023c87bff83c0a42675820e395a0170ca"
+    },
+    {
+      "factor": "c*m2 - l2 + 1",
+      "source_occurrence_count": 17,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 14
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 15
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 16
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 17
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 18
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 31
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 32
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 33
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 34
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 43
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 44
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 45
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 46
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 95
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 96
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 97
+        },
+        {
+          "multiplicity": 1,
+          "source_factor_index": 98
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "315f08f48ea512cd29397ab0bb27f1d023c87bff83c0a42675820e395a0170ca"
+    },
+    {
+      "factor": "l2",
+      "source_occurrence_count": 80,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 2,
+          "source_factor_index": 1
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 3
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 4
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 5
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 6
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 7
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 8
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 10
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 11
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 12
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 13
+        },
+        {
+          "multiplicity": 3,
+          "source_factor_index": 15
+        },
+        {
+          "multiplicity": 3,
+          "source_factor_index": 16
+        },
+        {
+          "multiplicity": 3,
+          "source_factor_index": 17
+        },
+        {
+          "multiplicity": 3,
+          "source_factor_index": 18
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 19
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 20
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 21
+        },
+        {
+          "multiplicity": 4,
+          "source_factor_index": 22
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 23
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 24
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 25
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 26
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 31
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 32
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 33
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 34
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 43
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 44
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 45
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 46
+        },
+        {
+          "multiplicity": 2,
+          "source_factor_index": 47
+        }
+      ],
+      "source_occurrences_preview_truncated": true,
+      "source_occurrences_sha256": "e566502bf50992c10a69697750c6480fdeff1cbceafa426cb5b2108afbebf365"
+    },
+    {
+      "factor": "l3",
+      "source_occurrence_count": 1,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 121
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "2506c7ae8e8e669fd1d77331ab3d31fa7ac1ddad28ac5ee348a6364b55bbe70e"
+    },
+    {
+      "factor": "l4",
+      "source_occurrence_count": 1,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 122
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "fb74db897aee8474aea963dd4437831b4bf0e32f6ec5aafe2a44bc11a131d698"
+    },
+    {
+      "factor": "m2",
+      "source_occurrence_count": 1,
+      "source_occurrences_preview": [
+        {
+          "multiplicity": 1,
+          "source_factor_index": 123
+        }
+      ],
+      "source_occurrences_preview_truncated": false,
+      "source_occurrences_sha256": "9e2d4fea5d9f10c2bf7634fc0739c0b485697d0f236c44bf006543a11e9af26e"
+    }
+  ],
+  "final_localisation_complete": true,
+  "final_resaturates_pre_stage4_factors": true,
+  "forbidden_relation_families": [
+    "EQ112_PATH_CONSISTENCY",
+    "LOCAL_OPERATOR_GC"
+  ],
+  "groebner_algorithm": "libsingular:slimgb",
+  "groebner_strategy": "progressive",
+  "identity_proof_eligible": false,
+  "included_relation_families": [
+    "CPOBC",
+    "STRONG_OPERATOR_MSR"
+  ],
+  "initial_groebner_basis": {
+    "is_unit_basis": true,
+    "polynomial_character_counts": [
+      1
+    ],
+    "polynomial_count": 1,
+    "preview": [
+      "1"
+    ],
+    "preview_truncated": false,
+    "sha256": "43de3a417d75f4818c5a553268b80ce3a5805109a3bbc6b605e9fb0b8f50b485",
+    "total_character_count": 1
+  },
+  "initial_groebner_seconds": 1.5474834770000143,
+  "initial_groebner_trace": [
+    {
+      "batch_index": 0,
+      "families": [
+        "CPOBC",
+        "STRONG_OPERATOR_MSR"
+      ],
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          1940,
+          1002,
+          1387,
+          1865,
+          789,
+          751,
+          933,
+          1361,
+          2214,
+          1089,
+          1361,
+          673,
+          1502,
+          1072,
+          932,
+          809,
+          869,
+          1079,
+          1433,
+          859,
+          725,
+          885,
+          1007,
+          847,
+          755,
+          1357,
+          1047,
+          905,
+          361,
+          415,
+          739,
+          489,
+          453,
+          201,
+          173,
+          302,
+          436,
+          161,
+          73,
+          241,
+          484,
+          149,
+          141,
+          193,
+          232,
+          343,
+          113,
+          266,
+          225,
+          214,
+          99,
+          222,
+          242,
+          151,
+          169,
+          157,
+          49,
+          43,
+          47,
+          98,
+          113,
+          52,
+          86,
+          101,
+          182,
+          154,
+          107,
+          107,
+          201,
+          149,
+          177,
+          97,
+          93,
+          37,
+          91
+        ],
+        "polynomial_count": 75,
+        "preview": [
+          "a^2*b^4*c^6*l2^2*m3 + 18*a*b^4*c^6*d*l2^2*m3 - 30*a^2*b^3*c^5*d^2*l2^2*m3 + 41*b^4*c^6*d^2*l2^2*m3 + 30*a^3*b^2*c^4*d^3*l2^2*m3 - 60*a*b^3*c^5*d^3*l2^2*m3 - 15*a^4*b*c^3*d^4*l2^2*m3 + 55*a^2*b^2*c^4*d^4*l2^2*m3 + 70*b^3*c^5*d^4*l2^2*m3 + 3*a^5*c^2*d^5*l2^2*m3 - 26*a^3*b*c^3*d^5*l2^2*m3 - 88*a*b^2*c^4*d^5*l2^2*m3 + 5*a^4*c^2*d^6*l2^2*m3 + 48*a^2*b*c^3*d^6*l2^2*m3 + 43*b^2*c^4*d^6*l2^2*m3 - 10*a^3*c^2*d^7*l2^2*m3 - 38*a*b*c^3*d^7*l2^2*m3 + 10*a^2*c^2*d^8*l2^2*m3 + 11*b*c^3*d^8*l2^2*m3 - 5*a*c^2*d^9*l2^2*m3 + c^2*d^10*l2^2*m3 - 9*a*b^4*c^6*l2^2*m3 + 24*a^2*b^3*c^5*d*l2^2*m3 - 49*b^4*c^6*d*l2^2*m3 - 36*a^3*b^2*c^4*d^2*l2^2*m3 + 106*a*b^3*c^5*d^2*l2^2*m3 + 24*a^4*b*c^3*d^3*l2^2*m3 - 134*a^2*b^2*c^4*d^3*l2^2*m3 - 118*b^3*c^5*d^3*l2^2*m3 - 6*a^5*c^2*d^4*l2^2*m3 + 81*a^3*b*c^3*d^4*l2^2*m3 + 167*a*b^2*c^4*d^4*l2^2*m3 - 19*a^4*c^2*d^5*l2^2*m3 - 103*a^2*b*c^3*d^5*l2^2*m3 - 95*b^2*c^4*d^5*l2^2*m3 + 24*a^3*c^2*d^6*l2^2*m3 + 91*a*b*c^3*d^6*l2^2*m3 - 26*a^2*c^2*d^7*l2^2*m3 - 29*b*c^3*d^7*l2^2*m3 + 14*a*c^2*d^8*l2^2*m3 - 3*c^2*d^9*l2^2*m3 - 3*a^2*b^3*c^5*l2^2*m3 + 16*b^4*c^6*l2^2*m3 + 9*a^3*b^2*c^4*d*l2^2*m3 - 62*a*b^3*c^5*d*l2^2*m3 - 9*a^4*b*c^3*d^2*l2^2*m3 + 108*a^2*b^2*c^4*d^2*l2^2*m3 + 53*b^3*c^5*d^2*l2^2*m3 + 3*a^5*c^2*d^3*l2^2*m3 - 82*a^3*b*c^3*d^3*l2^2*m3 - 83*a*b^2*c^4*d^3*l2^2*m3 + 23*a^4*c^2*d^4*l2^2*m3 + 56*a^2*b*c^3*d^4*l2^2*m3 + 66*b^2*c^4*d^4*l2^2*m3 - 14*a^3*c^2*d^5*l2^2*m3 - 70*a*b*c^3*d^5*l2^2*m3 + 22*a^2*c^2*d^6*l2^2*m3 + 25*b*c^3*d^6*l2^2*m3 - 13*a*c^2*d^7*l2^2*m3 + 3*c^2*d^8*l2^2*m3 + 9*a*b^3*c^5*l2^2*m3 - 27*a^2*b^2*c^4*d*l2^2*m3 + b^3*c^5*d*l2^2*m3 + 27*a^3*b*c^3*d^2*l2^2*m3 - 9*a*b^2*c^4*d^2*l2^2*m3 - 9*a^4*c^2*d^3*l2^2*m3 + 11*a^2*b*c^3*d^3*l2^2*m3 - 14*b^2*c^4*d^3*l2^2*m3 - 4*a^3*c^2*d^4*l2^2*m3 + 17*a*b*c^3*d^4*l2^2*m3 - 6*a^2*c^2*d^5*l2^2*m3 - 7*b*c^3*d^5*l2^2*m3 + 4*a*c^2*d^6*l2^2*m3 - c^2*d^7*l2^2*m3 - 4*b^3*c^5*l2^2*m3 + 12*a*b^2*c^4*d*l2^2*m3 - 12*a^2*b*c^3*d^2*l2^2*m3 + 4*a^3*c^2*d^3*l2^2*m3",
+          "b^5*c^7*l2^2*m3 - 5*a*b^4*c^6*d*l2^2*m3 + 10*a^2*b^3*c^5*d^2*l2^2*m3 - 10*a^3*b^2*c^4*d^3*l2^2*m3 + 5*a^4*b*c^3*d^4*l2^2*m3 - a^5*c^2*d^5*l2^2*m3 + 2*a*b^4*c^6*l2^2*m3 - 8*a^2*b^3*c^5*d*l2^2*m3 + 2*b^4*c^6*d*l2^2*m3 + 12*a^3*b^2*c^4*d^2*l2^2*m3 - 8*a*b^3*c^5*d^2*l2^2*m3 - 8*a^4*b*c^3*d^3*l2^2*m3 + 12*a^2*b^2*c^4*d^3*l2^2*m3 + 2*a^5*c^2*d^4*l2^2*m3 - 8*a^3*b*c^3*d^4*l2^2*m3 + 2*a^4*c^2*d^5*l2^2*m3 + a^2*b^3*c^5*l2^2*m3 - 2*b^4*c^6*l2^2*m3 - 3*a^3*b^2*c^4*d*l2^2*m3 + 10*a*b^3*c^5*d*l2^2*m3 + 3*a^4*b*c^3*d^2*l2^2*m3 - 18*a^2*b^2*c^4*d^2*l2^2*m3 + b^3*c^5*d^2*l2^2*m3 - a^5*c^2*d^3*l2^2*m3 + 14*a^3*b*c^3*d^3*l2^2*m3 - 3*a*b^2*c^4*d^3*l2^2*m3 - 4*a^4*c^2*d^4*l2^2*m3 + 3*a^2*b*c^3*d^4*l2^2*m3 - a^3*c^2*d^5*l2^2*m3 - 2*a*b^3*c^5*l2^2*m3 + 6*a^2*b^2*c^4*d*l2^2*m3 - 2*b^3*c^5*d*l2^2*m3 - 6*a^3*b*c^3*d^2*l2^2*m3 + 6*a*b^2*c^4*d^2*l2^2*m3 + 2*a^4*c^2*d^3*l2^2*m3 - 6*a^2*b*c^3*d^3*l2^2*m3 + 2*a^3*c^2*d^4*l2^2*m3 + b^3*c^5*l2^2*m3 - 3*a*b^2*c^4*d*l2^2*m3 + 3*a^2*b*c^3*d^2*l2^2*m3 - a^3*c^2*d^3*l2^2*m3",
+          "a^3*b^3*c^5*l2^2*m3 + 4*a*b^4*c^6*l2^2*m3 + 2*a^2*b^3*c^5*d*l2^2*m3 + 16*b^4*c^6*d*l2^2*m3 - 7*a*b^3*c^5*d^2*l2^2*m3 + 10*a^2*b^2*c^4*d^3*l2^2*m3 + 44*b^3*c^5*d^3*l2^2*m3 - 5*a^3*b*c^3*d^4*l2^2*m3 - 40*a*b^2*c^4*d^4*l2^2*m3 + a^4*c^2*d^5*l2^2*m3 + 20*a^2*b*c^3*d^5*l2^2*m3 + 34*b^2*c^4*d^5*l2^2*m3 - 4*a^3*c^2*d^6*l2^2*m3 - 25*a*b*c^3*d^6*l2^2*m3 + 6*a^2*c^2*d^7*l2^2*m3 + 10*b*c^3*d^7*l2^2*m3 - 4*a*c^2*d^8*l2^2*m3 + c^2*d^9*l2^2*m3 - 3*a^2*b^3*c^5*l2^2*m3 - 10*b^4*c^6*l2^2*m3 + a*b^3*c^5*d*l2^2*m3 - 12*a^2*b^2*c^4*d^2*l2^2*m3 - 66*b^3*c^5*d^2*l2^2*m3 + 8*a^3*b*c^3*d^3*l2^2*m3 + 66*a*b^2*c^4*d^3*l2^2*m3 - 2*a^4*c^2*d^4*l2^2*m3 - 39*a^2*b*c^3*d^4*l2^2*m3 - 72*b^2*c^4*d^4*l2^2*m3 + 9*a^3*c^2*d^5*l2^2*m3 + 57*a*b*c^3*d^5*l2^2*m3 - 15*a^2*c^2*d^6*l2^2*m3 - 26*b*c^3*d^6*l2^2*m3 + 11*a*c^2*d^7*l2^2*m3 - 3*c^2*d^8*l2^2*m3 + 2*a*b^3*c^5*l2^2*m3 + 3*a^2*b^2*c^4*d*l2^2*m3 + 26*b^3*c^5*d*l2^2*m3 - 3*a^3*b*c^3*d^2*l2^2*m3 - 30*a*b^2*c^4*d^2*l2^2*m3 + a^4*c^2*d^3*l2^2*m3 + 22*a^2*b*c^3*d^3*l2^2*m3 + 47*b^2*c^4*d^3*l2^2*m3 - 6*a^3*c^2*d^4*l2^2*m3 - 41*a*b*c^3*d^4*l2^2*m3 + 12*a^2*c^2*d^5*l2^2*m3 + 22*b*c^3*d^5*l2^2*m3 - 10*a*c^2*d^6*l2^2*m3 + 3*c^2*d^7*l2^2*m3 - 2*b^3*c^5*l2^2*m3 + 3*a*b^2*c^4*d*l2^2*m3 - 3*a^2*b*c^3*d^2*l2^2*m3 - 9*b^2*c^4*d^2*l2^2*m3 + a^3*c^2*d^3*l2^2*m3 + 9*a*b*c^3*d^3*l2^2*m3 - 3*a^2*c^2*d^4*l2^2*m3 - 6*b*c^3*d^4*l2^2*m3 + 3*a*c^2*d^5*l2^2*m3 - c^2*d^6*l2^2*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "94e1676516c792b23314ff634fa198148d0622cb6a6a81b0f3a42a638f9da9b4",
+        "total_character_count": 40876
+      },
+      "maximum_source_stage": 3,
+      "minimum_source_stage": 3,
+      "new_equations_added": 94,
+      "relations_added": 33,
+      "strategy": "STREAMING_PROGRESSIVE",
+      "total_equations_covered": 94,
+      "total_relations_evaluated": 33,
+      "unit_ideal": false,
+      "wall_time_seconds": 1.15829880900003
+    }
+  ],
+  "initial_unit_ideal": false,
+  "inverse_factor_records": [
+    {
+      "factor": "-b*c + a*d",
+      "kind": "INVERSE_SITE",
+      "origin": "det(Q_1^-1)"
+    },
+    {
+      "factor": "-b*c*l2^2 + a*d*l2^2",
+      "kind": "INVERSE_SITE",
+      "origin": "det(Q_2^-1)"
+    },
+    {
+      "factor": "-b*c + a*d - a - d + 1",
+      "kind": "INVERSE_SITE",
+      "origin": "det(BINV:692d8de209a59f16bf3e)"
+    },
+    {
+      "factor": "-b*c*l2^2 + a*d*l2^2 - a*l2^2 - d*l2^2 + l2^2",
+      "kind": "INVERSE_SITE",
+      "origin": "det(BINV:847dbbdcf2b8502a5bfb)"
+    },
+    {
+      "factor": "-b*c*l2^2 + a*d*l2^2 - a*l2^2 - d*l2^2 + l2^2",
+      "kind": "INVERSE_SITE",
+      "origin": "det(BINV:de00eadcbff77bc4940e)"
+    },
+    {
+      "factor": "-b*c*l2^2 + a*d*l2^2 - 2*c^2*m2^2 - 2*a*l2^2 - 2*d*l2^2 + a*l2 + d*l2 + 4*l2^2 + c*m2 - 4*l2 + 1",
+      "kind": "INVERSE_SITE",
+      "origin": "det(BINV:2585179d7faa71e1f634)"
+    },
+    {
+      "factor": "-c^2*m2^2 + l2^2 - 2*l2 + 1",
+      "kind": "INVERSE_SITE",
+      "origin": "det(BINV:85c25c2c6160291f296b)"
+    }
+  ],
+  "linear_expressions_evaluated": 30,
+  "maximum_source_stage": 4,
+  "noncommutativity_checks": [],
+  "nonzero_specialised_equation_count": 94,
+  "operation": "solve",
+  "path_residuals_evaluated": 0,
+  "pre_stage4_localisation_performed": true,
+  "pre_stage4_localisation_unit_ideal": true,
+  "progressive_batch_size": 4,
+  "proof_eligible": true,
+  "raw_required_factor_count": 125,
+  "reconstructed_transition_predicates_vacuous_due_to_unit_localised_subset": true,
+  "reconstructed_transition_predicates_vacuous_due_to_unit_numerator": false,
+  "reconstructed_transitions_checked": 0,
+  "relation_selection_checks_passed": true,
+  "relations_evaluated_count": 33,
+  "request_semantic_digest_sha256": "ef608654007077788f4d4dccda1f8a2e6819d8cb660db5fde59ed7286b1fd376",
+  "resource_usage": {
+    "memory_budget_satisfied": true,
+    "memory_limit": {
+      "applied": true,
+      "effective_limit_bytes": 8589934592,
+      "limit_bytes": 8589934592,
+      "previous_hard_limit_bytes": null,
+      "previous_soft_limit_bytes": null,
+      "requested": true,
+      "resource": "RLIMIT_AS"
+    },
+    "peak_rss_bytes": 315076608,
+    "wall_time_seconds": 1.7336985900000172
+  },
+  "saturated_unit_ideal": true,
+  "saturation_factor_order": "forward",
+  "saturation_method": "SEQUENTIAL_SAGE_NATIVE_IDEAL_SATURATION_ON_SUBSYSTEM",
+  "saturation_requested": true,
+  "saturation_trace": [
+    {
+      "factor": "b*c - a*d",
+      "factor_index": 0,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          682,
+          572,
+          552,
+          361,
+          267,
+          648,
+          207,
+          550,
+          223,
+          270,
+          85,
+          97,
+          91,
+          471,
+          332,
+          244,
+          681,
+          341,
+          213,
+          157,
+          93,
+          41,
+          15,
+          57,
+          29,
+          14,
+          57,
+          29,
+          61,
+          27,
+          11,
+          27,
+          126,
+          49,
+          53,
+          23,
+          9,
+          23,
+          109,
+          41,
+          21
+        ],
+        "polynomial_count": 41,
+        "preview": [
+          "a^2*d^2*l2^5*m3 + 2*b*c*d^2*l2^5*m3 - 2*a*d^3*l2^5*m3 + d^4*l2^5*m3 - c*d^3*l2^4*m2*m3 + a^2*b*c*l2^4*m3 + 2*b^2*c^2*l2^4*m3 + a^3*d*l2^4*m3 + 2*a*b*c*d*l2^4*m3 - 4*a^2*d^2*l2^4*m3 - 5*b*c*d^2*l2^4*m3 + 5*a*d^3*l2^4*m3 - 2*d^4*l2^4*m3 + c*d^2*l2^4*m2*m3 - a^2*b*c*l2^3*m3 - 2*b^2*c^2*l2^3*m3 - a^3*d*l2^3*m3 - 2*a*b*c*d*l2^3*m3 + 3*a^2*d^2*l2^3*m3 + 3*b*c*d^2*l2^3*m3 - 3*a*d^3*l2^3*m3 + d^4*l2^3*m3 - a*b*c*l2^4*m3 - a^2*d*l2^4*m3 - b*c*d*l2^4*m3 + 2*a*d^2*l2^4*m3 - d^3*l2^4*m3 + c*d^3*l2^2*m2*m3 + a*b*c*l2^3*m3 + a^2*d*l2^3*m3 + b*c*d*l2^3*m3 - 2*a*d^2*l2^3*m3 + d^3*l2^3*m3 - a*c*d^2*l2*m2*m3 - c*d^2*l2^2*m2*m3 + a*c*d*l2*m2*m3 + c*d^2*l2*m2*m3 + c^2*l2*m2^2*m3 - c*d*l2*m2*m3",
+          "a^2*d*l2^5*m2*m3 - 2*a*d^2*l2^5*m2*m3 + d^3*l2^5*m2*m3 - c*d^2*l2^4*m2^2*m3 + a^3*l2^4*m2*m3 - 4*a^2*d*l2^4*m2*m3 - b*c*d*l2^4*m2*m3 + 5*a*d^2*l2^4*m2*m3 - 2*d^3*l2^4*m2*m3 + 2*b*c*l2^5*m2*m3 + c*d*l2^4*m2^2*m3 - a^3*l2^3*m2*m3 + 3*a^2*d*l2^3*m2*m3 + b*c*d*l2^3*m2*m3 - 3*a*d^2*l2^3*m2*m3 + d^3*l2^3*m2*m3 - a^2*l2^4*m2*m3 - 3*b*c*l2^4*m2*m3 + 2*a*d*l2^4*m2*m3 - d^2*l2^4*m2*m3 + c*d^2*l2^2*m2^2*m3 + a^2*l2^3*m2*m3 + b*c*l2^3*m2*m3 - 2*a*d*l2^3*m2*m3 + d^2*l2^3*m2*m3 - a*c*d*l2*m2^2*m3 - c*d*l2^2*m2^2*m3 + c^2*l2*m2^3*m3 + a*c*l2*m2^2*m3 + c*d*l2*m2^2*m3 - c*l2*m2^2*m3",
+          "a^2*d*l2^5*m3^2 - 2*a*d^2*l2^5*m3^2 + d^3*l2^5*m3^2 - c*d^2*l2^4*m2*m3^2 + a^3*l2^4*m3^2 - 4*a^2*d*l2^4*m3^2 - b*c*d*l2^4*m3^2 + 5*a*d^2*l2^4*m3^2 - 2*d^3*l2^4*m3^2 + 2*b*c*l2^5*m3^2 + c*d*l2^4*m2*m3^2 - a^3*l2^3*m3^2 + 3*a^2*d*l2^3*m3^2 + b*c*d*l2^3*m3^2 - 3*a*d^2*l2^3*m3^2 + d^3*l2^3*m3^2 - a^2*l2^4*m3^2 - 3*b*c*l2^4*m3^2 + 2*a*d*l2^4*m3^2 - d^2*l2^4*m3^2 + c*d^2*l2^2*m2*m3^2 + a^2*l2^3*m3^2 + b*c*l2^3*m3^2 - 2*a*d*l2^3*m3^2 + d^2*l2^3*m3^2 - a*c*d*l2*m2*m3^2 - c*d*l2^2*m2*m3^2 + c^2*l2*m2^2*m3^2 + a*c*l2*m2*m3^2 + c*d*l2*m2*m3^2 - c*l2*m2*m3^2"
+        ],
+        "preview_truncated": true,
+        "sha256": "3ea891d1aaf3441bc518ca4c6482e861842e1206b7d7dbbd4dfc0ffb8b709763",
+        "total_character_count": 7959
+      },
+      "phase": "PRE_STAGE4_LOCALISATION",
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.08351763500002107
+    },
+    {
+      "factor": "b*c - a*d + a + d - 1",
+      "factor_index": 1,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          117,
+          53,
+          157,
+          75,
+          11,
+          9,
+          37,
+          17,
+          7
+        ],
+        "polynomial_count": 9,
+        "preview": [
+          "a^2*l2^5*m3 + 2*b*c*l2^5*m3 - 2*a*d*l2^5*m3 + d^2*l2^5*m3 - a^2*l2^4*m3 - 2*b*c*l2^4*m3 + 2*a*d*l2^4*m3 - d^2*l2^4*m3",
+          "a*c*l2^5*m3 - c*d*l2^5*m3 - a*c*l2^4*m3 + c*d*l2^4*m3",
+          "a^3*l2^2*m3 + 4*a*b*c*l2^2*m3 - 3*a^2*d*l2^2*m3 - 4*b*c*d*l2^2*m3 + 3*a*d^2*l2^2*m3 - d^3*l2^2*m3 - a^2*l2^2*m3 - 2*b*c*l2^2*m3 + 2*a*d*l2^2*m3 - d^2*l2^2*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "7122ab08fbe942b4486a50d7d1b9dfd11d66b9a35b4ce61b1993f82d9d97e334",
+        "total_character_count": 483
+      },
+      "phase": "PRE_STAGE4_LOCALISATION",
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.005217920999939452
+    },
+    {
+      "factor": "b*c*l2^2 - a*d*l2^2 + 2*c^2*m2^2 + 2*a*l2^2 + 2*d*l2^2 - a*l2 - d*l2 - 4*l2^2 - c*m2 + 4*l2 - 1",
+      "factor_index": 2,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          117,
+          53,
+          157,
+          75,
+          11,
+          9,
+          37,
+          17,
+          7
+        ],
+        "polynomial_count": 9,
+        "preview": [
+          "a^2*l2^5*m3 + 2*b*c*l2^5*m3 - 2*a*d*l2^5*m3 + d^2*l2^5*m3 - a^2*l2^4*m3 - 2*b*c*l2^4*m3 + 2*a*d*l2^4*m3 - d^2*l2^4*m3",
+          "a*c*l2^5*m3 - c*d*l2^5*m3 - a*c*l2^4*m3 + c*d*l2^4*m3",
+          "a^3*l2^2*m3 + 4*a*b*c*l2^2*m3 - 3*a^2*d*l2^2*m3 - 4*b*c*d*l2^2*m3 + 3*a*d^2*l2^2*m3 - d^3*l2^2*m3 - a^2*l2^2*m3 - 2*b*c*l2^2*m3 + 2*a*d*l2^2*m3 - d^2*l2^2*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "7122ab08fbe942b4486a50d7d1b9dfd11d66b9a35b4ce61b1993f82d9d97e334",
+        "total_character_count": 483
+      },
+      "phase": "PRE_STAGE4_LOCALISATION",
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.0047085179999157845
+    },
+    {
+      "factor": "c",
+      "factor_index": 3,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          7,
+          7,
+          13,
+          5
+        ],
+        "polynomial_count": 4,
+        "preview": [
+          "l2^2*m3",
+          "l2*m3^2",
+          "l3*m2 - l2*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "7ccbecee58f976c5cf4e3cb59b698e681cc95d2273a3b7210abd25caacf007ae",
+        "total_character_count": 32
+      },
+      "phase": "PRE_STAGE4_LOCALISATION",
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.0013440960000252744
+    },
+    {
+      "factor": "c*m2 + l2 - 1",
+      "factor_index": 4,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          7,
+          7,
+          13,
+          5
+        ],
+        "polynomial_count": 4,
+        "preview": [
+          "l2^2*m3",
+          "l2*m3^2",
+          "l3*m2 - l2*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "7ccbecee58f976c5cf4e3cb59b698e681cc95d2273a3b7210abd25caacf007ae",
+        "total_character_count": 32
+      },
+      "phase": "PRE_STAGE4_LOCALISATION",
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.0013301719999390116
+    },
+    {
+      "factor": "c*m2 - l2 + 1",
+      "factor_index": 5,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          7,
+          7,
+          13,
+          5
+        ],
+        "polynomial_count": 4,
+        "preview": [
+          "l2^2*m3",
+          "l2*m3^2",
+          "l3*m2 - l2*m3"
+        ],
+        "preview_truncated": true,
+        "sha256": "7ccbecee58f976c5cf4e3cb59b698e681cc95d2273a3b7210abd25caacf007ae",
+        "total_character_count": 32
+      },
+      "phase": "PRE_STAGE4_LOCALISATION",
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.0008275000000139698
+    },
+    {
+      "factor": "l2",
+      "factor_index": 6,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          5,
+          2
+        ],
+        "polynomial_count": 2,
+        "preview": [
+          "l3*m2",
+          "m3"
+        ],
+        "preview_truncated": false,
+        "sha256": "8050fea29aae5406f20caf178151fc39e16fcf5d95385b58d91560b79a9cf7dc",
+        "total_character_count": 7
+      },
+      "phase": "PRE_STAGE4_LOCALISATION",
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.0011137900000903755
+    },
+    {
+      "factor": "l3",
+      "factor_index": 7,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          2,
+          2
+        ],
+        "polynomial_count": 2,
+        "preview": [
+          "m2",
+          "m3"
+        ],
+        "preview_truncated": false,
+        "sha256": "cf7ab094a3045d063ec018d93dd06a19af66eebfd8c0cd078e8e244cc9a43ba7",
+        "total_character_count": 4
+      },
+      "phase": "PRE_STAGE4_LOCALISATION",
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.0009010410000200864
+    },
+    {
+      "factor": "l4",
+      "factor_index": 8,
+      "groebner_basis": {
+        "is_unit_basis": false,
+        "polynomial_character_counts": [
+          2,
+          2
+        ],
+        "polynomial_count": 2,
+        "preview": [
+          "m2",
+          "m3"
+        ],
+        "preview_truncated": false,
+        "sha256": "cf7ab094a3045d063ec018d93dd06a19af66eebfd8c0cd078e8e244cc9a43ba7",
+        "total_character_count": 4
+      },
+      "phase": "PRE_STAGE4_LOCALISATION",
+      "unit_ideal_after_step": false,
+      "wall_time_seconds": 0.001137913999968987
+    },
+    {
+      "factor": "m2",
+      "factor_index": 9,
+      "groebner_basis": {
+        "is_unit_basis": true,
+        "polynomial_character_counts": [
+          1
+        ],
+        "polynomial_count": 1,
+        "preview": [
+          "1"
+        ],
+        "preview_truncated": false,
+        "sha256": "43de3a417d75f4818c5a553268b80ce3a5805109a3bbc6b605e9fb0b8f50b485",
+        "total_character_count": 1
+      },
+      "phase": "PRE_STAGE4_LOCALISATION",
+      "unit_ideal_after_step": true,
+      "wall_time_seconds": 0.0008860279999680643
+    }
+  ],
+  "schema_version": "final-theory-one-sided-d2-qq-response-v0.4.1",
+  "selected_canonical_equation_count": null,
+  "selected_denominator_record_count": null,
+  "selected_equation_ids_sha256": null,
+  "selected_expression_ids_sha256": null,
+  "selected_matrix_relation_count": 721,
+  "selected_relation_count": 721,
+  "selected_relation_family_counts": {
+    "CPOBC": 700,
+    "STRONG_OPERATOR_MSR": 21
+  },
+  "selected_relation_ids_sha256": "461445fdc9fb03ac4f26a4c327b7020a864163a28380e9cf40ac9d6f2a3e0bd3",
+  "selection_certificate": null,
+  "selection_certificate_semantic_digest_sha256": null,
+  "selection_label": "CPOBC_PLUS_STRONG_MSR_721",
+  "semantic_digest_sha256": "c41ac8eff1be1dcdb942bce8d1cd3a6c00afdfad87fddeb993c6653f8a88ec05",
+  "semantic_profile": "PAPER_STRONG_OPERATOR_PROFILE",
+  "source_index_branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+  "stratum": "S2_COMMON_NILPOTENT",
+  "surviving_noncommutative_component_count": 0,
+  "unique_reconstructed_transition_expression_count": 0,
+  "unique_relation_residual_count": 30,
+  "unit_subset_certificate": true,
+  "variable_count": 10,
+  "variables": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "l2",
+    "l3",
+    "l4",
+    "m2",
+    "m3",
+    "m4"
+  ],
+  "word_products_evaluated": 211,
+  "zero_required_factor": false,
+  "host_observed_wall_time_seconds": 5.399711500002013,
+  "time_limit_seconds": 3600,
+  "worker_stderr_tail": "18*b^3*c^5*d^3*l2^2*m3 - 6*a^5*c^2*d^4*l2^2*m3 + 81*a^3*b*c^3*d^4*l2^2*m3 + 167*a*b^2*c^4*d^4*l2^2*m3 - 19*a^4*c^2*d^5*l2^2*m3 - 103*a^2*b*c^3*d^5*l2^2*m3 - 95*b^2*c^4*d^5*l2^2*m3 + 24*a^3*c^2*d^6*l2^2*m3 + 91*a*b*c^3*d^6*l2^2*m3 - 26*a^2*c^2*d^7*l2^2*m3 - 29*b*c^3*d^7*l2^2*m3 + 14*a*c^2*d^8*l2^2*m3 - 3*c^2*d^9*l2^2*m3 - 3*a^2*b^3*c^5*l2^2*m3 + 16*b^4*c^6*l2^2*m3 + 9*a^3*b^2*c^4*d*l2^2*m3 - 62*a*b^3*c^5*d*l2^2*m3 - 9*a^4*b*c^3*d^2*l2^2*m3 + 108*a^2*b^2*c^4*d^2*l2^2*m3 + 53*b^3*c^5*d^2*l2^2*m3 + 3*a^5*c^2*d^3*l2^2*m3 - 82*a^3*b*c^3*d^3*l2^2*m3 - 83*a*b^2*c^4*d^3*l2^2*m3 + 23*a^4*c^2*d^4*l2^2*m3 + 56*a^2*b*c^3*d^4*l2^2*m3 + 66*b^2*c^4*d^4*l2^2*m3 - 14*a^3*c^2*d^5*l2^2*m3 - 70*a*b*c^3*d^5*l2^2*m3 + 22*a^2*c^2*d^6*l2^2*m3 + 25*b*c^3*d^6*l2^2*m3 - 13*a*c^2*d^7*l2^2*m3 + 3*c^2*d^8*l2^2*m3 + 9*a*b^3*c^5*l2^2*m3 - 27*a^2*b^2*c^4*d*l2^2*m3 + b^3*c^5*d*l2^2*m3 + 27*a^3*b*c^3*d^2*l2^2*m3 - 9*a*b^2*c^4*d^2*l2^2*m3 - 9*a^4*c^2*d^3*l2^2*m3 + 11*a^2*b*c^3*d^3*l2^2*m3 - 14*b^2*c^4*d^3*l2^2*m3 - 4*a^3*c^2*d^4*l2^2*m3 + 17*a*b*c^3*d^4*l2^2*m3 - 6*a^2*c^2*d^5*l2^2*m3 - 7*b*c^3*d^5*l2^2*m3 + 4*a*c^2*d^6*l2^2*m3 - c^2*d^7*l2^2*m3 - 4*b^3*c^5*l2^2*m3 + 12*a*b^2*c^4*d*l2^2*m3 - 12*a^2*b*c^3*d^2*l2^2*m3 + 4*a^3*c^2*d^3*l2^2*m3\",\"b^5*c^7*l2^2*m3 - 5*a*b^4*c^6*d*l2^2*m3 + 10*a^2*b^3*c^5*d^2*l2^2*m3 - 10*a^3*b^2*c^4*d^3*l2^2*m3 + 5*a^4*b*c^3*d^4*l2^2*m3 - a^5*c^2*d^5*l2^2*m3 + 2*a*b^4*c^6*l2^2*m3 - 8*a^2*b^3*c^5*d*l2^2*m3 + 2*b^4*c^6*d*l2^2*m3 + 12*a^3*b^2*c^4*d^2*l2^2*m3 - 8*a*b^3*c^5*d^2*l2^2*m3 - 8*a^4*b*c^3*d^3*l2^2*m3 + 12*a^2*b^2*c^4*d^3*l2^2*m3 + 2*a^5*c^2*d^4*l2^2*m3 - 8*a^3*b*c^3*d^4*l2^2*m3 + 2*a^4*c^2*d^5*l2^2*m3 + a^2*b^3*c^5*l2^2*m3 - 2*b^4*c^6*l2^2*m3 - 3*a^3*b^2*c^4*d*l2^2*m3 + 10*a*b^3*c^5*d*l2^2*m3 + 3*a^4*b*c^3*d^2*l2^2*m3 - 18*a^2*b^2*c^4*d^2*l2^2*m3 + b^3*c^5*d^2*l2^2*m3 - a^5*c^2*d^3*l2^2*m3 + 14*a^3*b*c^3*d^3*l2^2*m3 - 3*a*b^2*c^4*d^3*l2^2*m3 - 4*a^4*c^2*d^4*l2^2*m3 + 3*a^2*b*c^3*d^4*l2^2*m3 - a^3*c^2*d^5*l2^2*m3 - 2*a*b^3*c^5*l2^2*m3 + 6*a^2*b^2*c^4*d*l2^2*m3 - 2*b^3*c^5*d*l2^2*m3 - 6*a^3*b*c^3*d^2*l2^2*m3 + 6*a*b^2*c^4*d^2*l2^2*m3 + 2*a^4*c^2*d^3*l2^2*m3 - 6*a^2*b*c^3*d^3*l2^2*m3 + 2*a^3*c^2*d^4*l2^2*m3 + b^3*c^5*l2^2*m3 - 3*a*b^2*c^4*d*l2^2*m3 + 3*a^2*b*c^3*d^2*l2^2*m3 - a^3*c^2*d^3*l2^2*m3\",\"a^3*b^3*c^5*l2^2*m3 + 4*a*b^4*c^6*l2^2*m3 + 2*a^2*b^3*c^5*d*l2^2*m3 + 16*b^4*c^6*d*l2^2*m3 - 7*a*b^3*c^5*d^2*l2^2*m3 + 10*a^2*b^2*c^4*d^3*l2^2*m3 + 44*b^3*c^5*d^3*l2^2*m3 - 5*a^3*b*c^3*d^4*l2^2*m3 - 40*a*b^2*c^4*d^4*l2^2*m3 + a^4*c^2*d^5*l2^2*m3 + 20*a^2*b*c^3*d^5*l2^2*m3 + 34*b^2*c^4*d^5*l2^2*m3 - 4*a^3*c^2*d^6*l2^2*m3 - 25*a*b*c^3*d^6*l2^2*m3 + 6*a^2*c^2*d^7*l2^2*m3 + 10*b*c^3*d^7*l2^2*m3 - 4*a*c^2*d^8*l2^2*m3 + c^2*d^9*l2^2*m3 - 3*a^2*b^3*c^5*l2^2*m3 - 10*b^4*c^6*l2^2*m3 + a*b^3*c^5*d*l2^2*m3 - 12*a^2*b^2*c^4*d^2*l2^2*m3 - 66*b^3*c^5*d^2*l2^2*m3 + 8*a^3*b*c^3*d^3*l2^2*m3 + 66*a*b^2*c^4*d^3*l2^2*m3 - 2*a^4*c^2*d^4*l2^2*m3 - 39*a^2*b*c^3*d^4*l2^2*m3 - 72*b^2*c^4*d^4*l2^2*m3 + 9*a^3*c^2*d^5*l2^2*m3 + 57*a*b*c^3*d^5*l2^2*m3 - 15*a^2*c^2*d^6*l2^2*m3 - 26*b*c^3*d^6*l2^2*m3 + 11*a*c^2*d^7*l2^2*m3 - 3*c^2*d^8*l2^2*m3 + 2*a*b^3*c^5*l2^2*m3 + 3*a^2*b^2*c^4*d*l2^2*m3 + 26*b^3*c^5*d*l2^2*m3 - 3*a^3*b*c^3*d^2*l2^2*m3 - 30*a*b^2*c^4*d^2*l2^2*m3 + a^4*c^2*d^3*l2^2*m3 + 22*a^2*b*c^3*d^3*l2^2*m3 + 47*b^2*c^4*d^3*l2^2*m3 - 6*a^3*c^2*d^4*l2^2*m3 - 41*a*b*c^3*d^4*l2^2*m3 + 12*a^2*c^2*d^5*l2^2*m3 + 22*b*c^3*d^5*l2^2*m3 - 10*a*c^2*d^6*l2^2*m3 + 3*c^2*d^7*l2^2*m3 - 2*b^3*c^5*l2^2*m3 + 3*a*b^2*c^4*d*l2^2*m3 - 3*a^2*b*c^3*d^2*l2^2*m3 - 9*b^2*c^4*d^2*l2^2*m3 + a^3*c^2*d^3*l2^2*m3 + 9*a*b*c^3*d^3*l2^2*m3 - 3*a^2*c^2*d^4*l2^2*m3 - 6*b*c^3*d^4*l2^2*m3 + 3*a*c^2*d^5*l2^2*m3 - c^2*d^6*l2^2*m3\"],\"preview_truncated\":true,\"sha256\":\"94e1676516c792b23314ff634fa198148d0622cb6a6a81b0f3a42a638f9da9b4\",\"total_character_count\":40876},\"maximum_source_stage\":3,\"minimum_source_stage\":3,\"new_equations_added\":94,\"relations_added\":33,\"strategy\":\"STREAMING_PROGRESSIVE\",\"total_equations_covered\":94,\"total_relations_evaluated\":33,\"unit_ideal\":false,\"wall_time_seconds\":1.15829880900003}\n",
+  "request_id": "e59c38c53b75393eed26"
+}

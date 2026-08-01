@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "version": "v0.4.1",
+  "verdict": "ONE_SIDED_TRIANGULAR_SCOUT_NO_NONCOMMUTATIVE_SURVIVOR",
+  "classification": "EXACT_QQ_LINEAR_SUFFICIENT_CORE_SCOUT_NOT_GENERAL_D2_PROOF",
+  "identification_mode": "ON_QUOTIENT",
+  "source_artifacts": {
+    "results/v0.3.1_cpobc_relations_n4.json": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "ansatz": {
+    "coefficient_field": "QQ (Fraction exact arithmetic)",
+    "matrix_form": "[[p_e,x_orbit(e)],[0,q_e]]",
+    "first_diagonal_character": "CSG t_j=1",
+    "second_diagonal_character": "CSG t_j=2^j",
+    "upper_right_variables": "identified by transition orbit plus unconstrained Q_5_EXTERNAL",
+    "variable_count": 132,
+    "occurrence_identification": "ON_QUOTIENT"
+  },
+  "source_relation_counts": {
+    "CPOBC_raw_word_equations": 783,
+    "strong_MSR_source_constraints": 24,
+    "strong_GC_generating_basis_relations": 320
+  },
+  "profiles": {
+    "fixed_vector_GC__strong_MSR": {
+      "core_relations": "CPOBC + strong operator MSR",
+      "source_raw_linear_equation_count": 807,
+      "weak_side_not_imposed": "fixed-vector GC is omitted only for a sufficient no-go core",
+      "rank": 130,
+      "nullity": 2,
+      "joint_commutator_augmented_rank": 130,
+      "independent_commutator_conditions_remaining": 0,
+      "all_Q1_through_Q4_commutators_forced_zero_within_declared_ansatz": true,
+      "commutators": {
+        "Q1_Q2": {
+          "augmented_rank": 130,
+          "forced_zero_within_declared_ansatz": true
+        },
+        "Q1_Q3": {
+          "augmented_rank": 130,
+          "forced_zero_within_declared_ansatz": true
+        },
+        "Q1_Q4": {
+          "augmented_rank": 130,
+          "forced_zero_within_declared_ansatz": true
+        },
+        "Q2_Q3": {
+          "augmented_rank": 130,
+          "forced_zero_within_declared_ansatz": true
+        },
+        "Q2_Q4": {
+          "augmented_rank": 130,
+          "forced_zero_within_declared_ansatz": true
+        },
+        "Q3_Q4": {
+          "augmented_rank": 130,
+          "forced_zero_within_declared_ansatz": true
+        }
+      }
+    },
+    "strong_GC__reachable_state_MSR": {
+      "core_relations": "CPOBC + strong operator GC basis",
+      "source_raw_linear_equation_count": 1103,
+      "weak_side_not_imposed": "reachable-state MSR is omitted only for a sufficient no-go core",
+      "rank": 114,
+      "nullity": 18,
+      "joint_commutator_augmented_rank": 114,
+      "independent_commutator_conditions_remaining": 0,
+      "all_Q1_through_Q4_commutators_forced_zero_within_declared_ansatz": true,
+      "commutators": {
+        "Q1_Q2": {
+          "augmented_rank": 114,
+          "forced_zero_within_declared_ansatz": true
+        },
+        "Q1_Q3": {
+          "augmented_rank": 114,
+          "forced_zero_within_declared_ansatz": true
+        },
+        "Q1_Q4": {
+          "augmented_rank": 114,
+          "forced_zero_within_declared_ansatz": true
+        },
+        "Q2_Q3": {
+          "augmented_rank": 114,
+          "forced_zero_within_declared_ansatz": true
+        },
+        "Q2_Q4": {
+          "augmented_rank": 114,
+          "forced_zero_within_declared_ansatz": true
+        },
+        "Q3_Q4": {
+          "augmented_rank": 114,
+          "forced_zero_within_declared_ansatz": true
+        }
+      }
+    }
+  },
+  "no_numeric_or_finite_field_evidence_used": true,
+  "solver_invoked": false,
+  "claim_boundary": "Each result is exact only in the declared ON-quotient triangular two-character family and its sufficient no-go core. It is not a general GL_2(QQ) proof, not a complete one-sided-profile theorem, and says nothing about OFF naturally labelled occurrence semantics.",
+  "semantic_digest_sha256": "b3981798a5a2c06b9a7f79329b50fefa88d53b533715bc6bcb3cc2ba9f28420a"
+}

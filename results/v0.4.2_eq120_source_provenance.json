@@ -1,0 +1,1040 @@
+{
+  "schema_version": "final-theory-v042-eq120-source-provenance-certificate-v0.4.2",
+  "scope": {
+    "finite_stages": "n<=4",
+    "target_dimension": 2,
+    "algebraic_derivation_dimension": "dimension-independent",
+    "profile_use": "strong_GC__reachable_state_MSR__ON_QUOTIENT_partial_slice"
+  },
+  "primary_source": {
+    "paper": "arXiv:2603.25503v1",
+    "path": "references/papers/2603.25503v1_srivastava-surya_quantum-bell-causality-qsg.pdf",
+    "sha256": "545c2c1a6a0ad046bcb41612a0d108030601992ccc9e3c9d472dec3d92cc89aa",
+    "visually_checked_pdf_pages": [
+      27,
+      28
+    ],
+    "equations_checked": [
+      103,
+      105,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120
+    ]
+  },
+  "input_hashes": {
+    "source_cpobc_relations": {
+      "path": "results/v0.3.1_cpobc_relations_n4.json",
+      "sha256": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9"
+    },
+    "generator_reduction": {
+      "path": "results/v0.3.2_cpobc_generator_reduction.json",
+      "sha256": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b"
+    },
+    "direct_system": {
+      "path": "certificates/d2_saturation/v0.3.5_direct_operator_system.json",
+      "sha256": "5fa2cbd16503d8cd16bc09db07d3b82c1e25df17fcd133cb472875e0e5408e56"
+    }
+  },
+  "selected_700_relation_ids": {
+    "branch": "LITERAL_PRINTED_QN_PLUS_1_BRANCH",
+    "family": "CPOBC",
+    "count": 700,
+    "ordered_ids_sha256": "cef66f304c7aff361bd92b44eba9a453a01331566d1becf0e73b1cf5895d2431"
+  },
+  "raw_selection_rule": {
+    "stage_pairs": [
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "both_sources": "canonical antichains",
+    "precursor_pair_at_both_stages": {
+      "B": [
+        0
+      ],
+      "Q": []
+    },
+    "branch": "GREATER",
+    "paper_equations": [
+      103,
+      105
+    ],
+    "uniqueness_required": true
+  },
+  "raw_relation_inventory": [
+    {
+      "stage_pair": [
+        2,
+        1
+      ],
+      "relation_id": "cpobc-relation-0b2bbe81c6394d603f63",
+      "relation_hash": "0b2bbe81c6394d603f638117ddf72f52e3e0d251b6adb9932b996e26eb7e7d71",
+      "relation_content_sha256": "b6c78fb7da3e509663850ae59894c0081e859baacec112fcdf1b1c29d5bc3bfe",
+      "source_ids": [
+        "p2-0",
+        "p1-0"
+      ],
+      "bell_family_id": "cpobc-family-85b04d47d7c0f650c453",
+      "precursor_codes": {
+        "B": 1,
+        "Q": 0
+      },
+      "occurrences": {
+        "B_n": {
+          "semantic_name": "B_2",
+          "occurrence_id": "cpobc-transition-f399c07eaf2707696f9f",
+          "orbit_id": "cpobc-transition-orbit-4680d526f3e1a66f3e9a",
+          "operator_variable": "X_f399c07eaf270769"
+        },
+        "Q_n": {
+          "semantic_name": "Q_2",
+          "occurrence_id": "cpobc-transition-3b93b9f523031a23c77f",
+          "orbit_id": "cpobc-transition-orbit-9fb0da3749caf7b75239",
+          "operator_variable": "X_3b93b9f523031a23"
+        },
+        "B_m": {
+          "semantic_name": "B_1",
+          "occurrence_id": "cpobc-transition-f5898ff572639d996985",
+          "orbit_id": "cpobc-transition-orbit-f1c4030ab10488e60e8c",
+          "operator_variable": "X_f5898ff572639d99"
+        },
+        "Q_m": {
+          "semantic_name": "Q_1",
+          "occurrence_id": "cpobc-transition-7137acaa934673cc789d",
+          "orbit_id": "cpobc-transition-orbit-74b3519240acc75a0c55",
+          "operator_variable": "X_7137acaa934673cc"
+        }
+      },
+      "eq103": {
+        "label": "Eq.(103)",
+        "lhs_word": [
+          "B_2",
+          "Q_1"
+        ],
+        "rhs_word": [
+          "B_1",
+          "Q_2"
+        ]
+      },
+      "eq105": {
+        "label": "Eq.(105)",
+        "lhs_word": [
+          "B_2"
+        ],
+        "rhs_word": [
+          "B_1",
+          "Q_2",
+          "Q_1^-1"
+        ]
+      },
+      "dependency_flags": {
+        "CPOBC_axiom_instance": true,
+        "MSR_used": false,
+        "GC_used": false,
+        "Eq108_used": false,
+        "Eq112_used": false
+      }
+    },
+    {
+      "stage_pair": [
+        3,
+        1
+      ],
+      "relation_id": "cpobc-relation-49726b7f352ba79916e5",
+      "relation_hash": "49726b7f352ba79916e5ebc57fc7e05bd2f42ef43d4c9c57ed2733b613ee7469",
+      "relation_content_sha256": "af708b0873c7434a443b222ad0ac8b63f2b75c1924092858b4e0827b1d210178",
+      "source_ids": [
+        "p3-000",
+        "p1-0"
+      ],
+      "bell_family_id": "cpobc-family-85b04d47d7c0f650c453",
+      "precursor_codes": {
+        "B": 1,
+        "Q": 0
+      },
+      "occurrences": {
+        "B_n": {
+          "semantic_name": "B_3",
+          "occurrence_id": "cpobc-transition-f04b8a1e627055ac3163",
+          "orbit_id": "cpobc-transition-orbit-ab3dd7af1184608f2cac",
+          "operator_variable": "X_f04b8a1e627055ac"
+        },
+        "Q_n": {
+          "semantic_name": "Q_3",
+          "occurrence_id": "cpobc-transition-779d09aa463a38abdba6",
+          "orbit_id": "cpobc-transition-orbit-ab12f7513b8a36c56a4f",
+          "operator_variable": "X_779d09aa463a38ab"
+        },
+        "B_m": {
+          "semantic_name": "B_1",
+          "occurrence_id": "cpobc-transition-f5898ff572639d996985",
+          "orbit_id": "cpobc-transition-orbit-f1c4030ab10488e60e8c",
+          "operator_variable": "X_f5898ff572639d99"
+        },
+        "Q_m": {
+          "semantic_name": "Q_1",
+          "occurrence_id": "cpobc-transition-7137acaa934673cc789d",
+          "orbit_id": "cpobc-transition-orbit-74b3519240acc75a0c55",
+          "operator_variable": "X_7137acaa934673cc"
+        }
+      },
+      "eq103": {
+        "label": "Eq.(103)",
+        "lhs_word": [
+          "B_3",
+          "Q_1"
+        ],
+        "rhs_word": [
+          "B_1",
+          "Q_3"
+        ]
+      },
+      "eq105": {
+        "label": "Eq.(105)",
+        "lhs_word": [
+          "B_3"
+        ],
+        "rhs_word": [
+          "B_1",
+          "Q_3",
+          "Q_1^-1"
+        ]
+      },
+      "dependency_flags": {
+        "CPOBC_axiom_instance": true,
+        "MSR_used": false,
+        "GC_used": false,
+        "Eq108_used": false,
+        "Eq112_used": false
+      }
+    },
+    {
+      "stage_pair": [
+        3,
+        2
+      ],
+      "relation_id": "cpobc-relation-6002781cceb198b6edfd",
+      "relation_hash": "6002781cceb198b6edfd06e63b9920798363076ce6d9ed50bfb886bbb16b6728",
+      "relation_content_sha256": "e539a84069615c58f0dc8f454098e09b22c7e8a130881179a394be04e0587f1e",
+      "source_ids": [
+        "p3-000",
+        "p2-0"
+      ],
+      "bell_family_id": "cpobc-family-85b04d47d7c0f650c453",
+      "precursor_codes": {
+        "B": 1,
+        "Q": 0
+      },
+      "occurrences": {
+        "B_n": {
+          "semantic_name": "B_3",
+          "occurrence_id": "cpobc-transition-f04b8a1e627055ac3163",
+          "orbit_id": "cpobc-transition-orbit-ab3dd7af1184608f2cac",
+          "operator_variable": "X_f04b8a1e627055ac"
+        },
+        "Q_n": {
+          "semantic_name": "Q_3",
+          "occurrence_id": "cpobc-transition-779d09aa463a38abdba6",
+          "orbit_id": "cpobc-transition-orbit-ab12f7513b8a36c56a4f",
+          "operator_variable": "X_779d09aa463a38ab"
+        },
+        "B_m": {
+          "semantic_name": "B_2",
+          "occurrence_id": "cpobc-transition-f399c07eaf2707696f9f",
+          "orbit_id": "cpobc-transition-orbit-4680d526f3e1a66f3e9a",
+          "operator_variable": "X_f399c07eaf270769"
+        },
+        "Q_m": {
+          "semantic_name": "Q_2",
+          "occurrence_id": "cpobc-transition-3b93b9f523031a23c77f",
+          "orbit_id": "cpobc-transition-orbit-9fb0da3749caf7b75239",
+          "operator_variable": "X_3b93b9f523031a23"
+        }
+      },
+      "eq103": {
+        "label": "Eq.(103)",
+        "lhs_word": [
+          "B_3",
+          "Q_2"
+        ],
+        "rhs_word": [
+          "B_2",
+          "Q_3"
+        ]
+      },
+      "eq105": {
+        "label": "Eq.(105)",
+        "lhs_word": [
+          "B_3"
+        ],
+        "rhs_word": [
+          "B_2",
+          "Q_3",
+          "Q_2^-1"
+        ]
+      },
+      "dependency_flags": {
+        "CPOBC_axiom_instance": true,
+        "MSR_used": false,
+        "GC_used": false,
+        "Eq108_used": false,
+        "Eq112_used": false
+      }
+    },
+    {
+      "stage_pair": [
+        4,
+        1
+      ],
+      "relation_id": "cpobc-relation-1d7b3a88785401c6531b",
+      "relation_hash": "1d7b3a88785401c6531b0b369736fedc3a128da982b8f32984b44ce58c7b90b5",
+      "relation_content_sha256": "e8bd0b0bbd70789ae68783b61de17a202b3cc441fc03c384efff7b92204e8707",
+      "source_ids": [
+        "p4-0000",
+        "p1-0"
+      ],
+      "bell_family_id": "cpobc-family-85b04d47d7c0f650c453",
+      "precursor_codes": {
+        "B": 1,
+        "Q": 0
+      },
+      "occurrences": {
+        "B_n": {
+          "semantic_name": "B_4",
+          "occurrence_id": "cpobc-transition-cc171f1f9d349453e34d",
+          "orbit_id": "cpobc-transition-orbit-77da9d98600f42d61c83",
+          "operator_variable": "X_cc171f1f9d349453"
+        },
+        "Q_n": {
+          "semantic_name": "Q_4",
+          "occurrence_id": "cpobc-transition-9fabc20614d5b2aa595d",
+          "orbit_id": "cpobc-transition-orbit-9db8e170556712ebafa5",
+          "operator_variable": "X_9fabc20614d5b2aa"
+        },
+        "B_m": {
+          "semantic_name": "B_1",
+          "occurrence_id": "cpobc-transition-f5898ff572639d996985",
+          "orbit_id": "cpobc-transition-orbit-f1c4030ab10488e60e8c",
+          "operator_variable": "X_f5898ff572639d99"
+        },
+        "Q_m": {
+          "semantic_name": "Q_1",
+          "occurrence_id": "cpobc-transition-7137acaa934673cc789d",
+          "orbit_id": "cpobc-transition-orbit-74b3519240acc75a0c55",
+          "operator_variable": "X_7137acaa934673cc"
+        }
+      },
+      "eq103": {
+        "label": "Eq.(103)",
+        "lhs_word": [
+          "B_4",
+          "Q_1"
+        ],
+        "rhs_word": [
+          "B_1",
+          "Q_4"
+        ]
+      },
+      "eq105": {
+        "label": "Eq.(105)",
+        "lhs_word": [
+          "B_4"
+        ],
+        "rhs_word": [
+          "B_1",
+          "Q_4",
+          "Q_1^-1"
+        ]
+      },
+      "dependency_flags": {
+        "CPOBC_axiom_instance": true,
+        "MSR_used": false,
+        "GC_used": false,
+        "Eq108_used": false,
+        "Eq112_used": false
+      }
+    },
+    {
+      "stage_pair": [
+        4,
+        2
+      ],
+      "relation_id": "cpobc-relation-01e29996483e2c4f342c",
+      "relation_hash": "01e29996483e2c4f342c5aceeec8212e1466f8481cd8f9dcd3fab3ed19a285fd",
+      "relation_content_sha256": "5d6437c1dfbe918a395a4eaff6d96ae404e5099ceb70f2e110f4c9e306e10eb3",
+      "source_ids": [
+        "p4-0000",
+        "p2-0"
+      ],
+      "bell_family_id": "cpobc-family-85b04d47d7c0f650c453",
+      "precursor_codes": {
+        "B": 1,
+        "Q": 0
+      },
+      "occurrences": {
+        "B_n": {
+          "semantic_name": "B_4",
+          "occurrence_id": "cpobc-transition-cc171f1f9d349453e34d",
+          "orbit_id": "cpobc-transition-orbit-77da9d98600f42d61c83",
+          "operator_variable": "X_cc171f1f9d349453"
+        },
+        "Q_n": {
+          "semantic_name": "Q_4",
+          "occurrence_id": "cpobc-transition-9fabc20614d5b2aa595d",
+          "orbit_id": "cpobc-transition-orbit-9db8e170556712ebafa5",
+          "operator_variable": "X_9fabc20614d5b2aa"
+        },
+        "B_m": {
+          "semantic_name": "B_2",
+          "occurrence_id": "cpobc-transition-f399c07eaf2707696f9f",
+          "orbit_id": "cpobc-transition-orbit-4680d526f3e1a66f3e9a",
+          "operator_variable": "X_f399c07eaf270769"
+        },
+        "Q_m": {
+          "semantic_name": "Q_2",
+          "occurrence_id": "cpobc-transition-3b93b9f523031a23c77f",
+          "orbit_id": "cpobc-transition-orbit-9fb0da3749caf7b75239",
+          "operator_variable": "X_3b93b9f523031a23"
+        }
+      },
+      "eq103": {
+        "label": "Eq.(103)",
+        "lhs_word": [
+          "B_4",
+          "Q_2"
+        ],
+        "rhs_word": [
+          "B_2",
+          "Q_4"
+        ]
+      },
+      "eq105": {
+        "label": "Eq.(105)",
+        "lhs_word": [
+          "B_4"
+        ],
+        "rhs_word": [
+          "B_2",
+          "Q_4",
+          "Q_2^-1"
+        ]
+      },
+      "dependency_flags": {
+        "CPOBC_axiom_instance": true,
+        "MSR_used": false,
+        "GC_used": false,
+        "Eq108_used": false,
+        "Eq112_used": false
+      }
+    },
+    {
+      "stage_pair": [
+        4,
+        3
+      ],
+      "relation_id": "cpobc-relation-17e9d7ae74c8bed62194",
+      "relation_hash": "17e9d7ae74c8bed621949c5847f822ba987e510fc20a05e0638721020ea23f4a",
+      "relation_content_sha256": "ae0473d7ae29fe3ff232d1f9a6c1563610abd950a452abf2329f5d16bedb45a5",
+      "source_ids": [
+        "p4-0000",
+        "p3-000"
+      ],
+      "bell_family_id": "cpobc-family-85b04d47d7c0f650c453",
+      "precursor_codes": {
+        "B": 1,
+        "Q": 0
+      },
+      "occurrences": {
+        "B_n": {
+          "semantic_name": "B_4",
+          "occurrence_id": "cpobc-transition-cc171f1f9d349453e34d",
+          "orbit_id": "cpobc-transition-orbit-77da9d98600f42d61c83",
+          "operator_variable": "X_cc171f1f9d349453"
+        },
+        "Q_n": {
+          "semantic_name": "Q_4",
+          "occurrence_id": "cpobc-transition-9fabc20614d5b2aa595d",
+          "orbit_id": "cpobc-transition-orbit-9db8e170556712ebafa5",
+          "operator_variable": "X_9fabc20614d5b2aa"
+        },
+        "B_m": {
+          "semantic_name": "B_3",
+          "occurrence_id": "cpobc-transition-f04b8a1e627055ac3163",
+          "orbit_id": "cpobc-transition-orbit-ab3dd7af1184608f2cac",
+          "operator_variable": "X_f04b8a1e627055ac"
+        },
+        "Q_m": {
+          "semantic_name": "Q_3",
+          "occurrence_id": "cpobc-transition-779d09aa463a38abdba6",
+          "orbit_id": "cpobc-transition-orbit-ab12f7513b8a36c56a4f",
+          "operator_variable": "X_779d09aa463a38ab"
+        }
+      },
+      "eq103": {
+        "label": "Eq.(103)",
+        "lhs_word": [
+          "B_4",
+          "Q_3"
+        ],
+        "rhs_word": [
+          "B_3",
+          "Q_4"
+        ]
+      },
+      "eq105": {
+        "label": "Eq.(105)",
+        "lhs_word": [
+          "B_4"
+        ],
+        "rhs_word": [
+          "B_3",
+          "Q_4",
+          "Q_3^-1"
+        ]
+      },
+      "dependency_flags": {
+        "CPOBC_axiom_instance": true,
+        "MSR_used": false,
+        "GC_used": false,
+        "Eq108_used": false,
+        "Eq112_used": false
+      }
+    }
+  ],
+  "q_occurrence_identification": [
+    {
+      "stage": 1,
+      "semantic_name": "Q_1",
+      "occurrence_id": "cpobc-transition-7137acaa934673cc789d",
+      "transition_hash": "7137acaa934673cc789d9c135a18df6eaa1e203c35dfce07dda174e7b3c0dde0",
+      "orbit_id": "cpobc-transition-orbit-74b3519240acc75a0c55",
+      "source_id": "p1-0",
+      "operator_variable": "X_7137acaa934673cc",
+      "identifier_rule": "definition of the source-causet gregarious transition",
+      "reduced_expression": [
+        {
+          "coefficient": 1,
+          "word": [
+            "Q_1"
+          ]
+        }
+      ],
+      "used_as_identifier_only": true
+    },
+    {
+      "stage": 2,
+      "semantic_name": "Q_2",
+      "occurrence_id": "cpobc-transition-3b93b9f523031a23c77f",
+      "transition_hash": "3b93b9f523031a23c77f106e63912a91cd46d035ce4ca73960c73e2e04a63be8",
+      "orbit_id": "cpobc-transition-orbit-9fb0da3749caf7b75239",
+      "source_id": "p2-0",
+      "operator_variable": "X_3b93b9f523031a23",
+      "identifier_rule": "definition of the source-causet gregarious transition",
+      "reduced_expression": [
+        {
+          "coefficient": 1,
+          "word": [
+            "Q_2"
+          ]
+        }
+      ],
+      "used_as_identifier_only": true
+    },
+    {
+      "stage": 3,
+      "semantic_name": "Q_3",
+      "occurrence_id": "cpobc-transition-779d09aa463a38abdba6",
+      "transition_hash": "779d09aa463a38abdba64a8009e4d18a66c75901057d2e6973646e4f9c22334c",
+      "orbit_id": "cpobc-transition-orbit-ab12f7513b8a36c56a4f",
+      "source_id": "p3-000",
+      "operator_variable": "X_779d09aa463a38ab",
+      "identifier_rule": "definition of the source-causet gregarious transition",
+      "reduced_expression": [
+        {
+          "coefficient": 1,
+          "word": [
+            "Q_3"
+          ]
+        }
+      ],
+      "used_as_identifier_only": true
+    },
+    {
+      "stage": 4,
+      "semantic_name": "Q_4",
+      "occurrence_id": "cpobc-transition-9fabc20614d5b2aa595d",
+      "transition_hash": "9fabc20614d5b2aa595dada6160c0f272dbc6a29b5cbe75c2dad60ceeb6cc53b",
+      "orbit_id": "cpobc-transition-orbit-9db8e170556712ebafa5",
+      "source_id": "p4-0000",
+      "operator_variable": "X_9fabc20614d5b2aa",
+      "identifier_rule": "definition of the source-causet gregarious transition",
+      "reduced_expression": [
+        {
+          "coefficient": 1,
+          "word": [
+            "Q_4"
+          ]
+        }
+      ],
+      "used_as_identifier_only": true
+    }
+  ],
+  "pair_certificates": [
+    {
+      "indices": [
+        2,
+        3
+      ],
+      "orientation": {
+        "k": 1,
+        "m": 2,
+        "n": 3
+      },
+      "source_relation_ids": [
+        "cpobc-relation-6002781cceb198b6edfd",
+        "cpobc-relation-0b2bbe81c6394d603f63",
+        "cpobc-relation-49726b7f352ba79916e5"
+      ],
+      "source_relation_roles": {
+        "paper_eq115_n_vs_m": "cpobc-relation-6002781cceb198b6edfd",
+        "paper_eq116_m_vs_k": "cpobc-relation-0b2bbe81c6394d603f63",
+        "paper_eq117_n_vs_k": "cpobc-relation-49726b7f352ba79916e5"
+      },
+      "source_relation_content_sha256": "4b16e9f0a9c740fffe23aacf1794621a1082d5748f47cbbfe7db4a2d2ff0d5e1",
+      "paper_premises": [
+        {
+          "label": "Eq.(115)",
+          "lhs_word": [
+            "B_3"
+          ],
+          "rhs_word": [
+            "B_2",
+            "Q_3",
+            "Q_2^-1"
+          ]
+        },
+        {
+          "label": "Eq.(116)",
+          "lhs_word": [
+            "B_2"
+          ],
+          "rhs_word": [
+            "B_1",
+            "Q_2",
+            "Q_1^-1"
+          ]
+        },
+        {
+          "label": "Eq.(117)",
+          "lhs_word": [
+            "B_3"
+          ],
+          "rhs_word": [
+            "B_1",
+            "Q_3",
+            "Q_1^-1"
+          ]
+        }
+      ],
+      "free_word_derivation": [
+        {
+          "label": "Eq.(118)",
+          "lhs_word": [
+            "B_1",
+            "Q_3",
+            "Q_1^-1"
+          ],
+          "rhs_word": [
+            "B_1",
+            "Q_2",
+            "Q_1^-1",
+            "Q_3",
+            "Q_2^-1"
+          ]
+        },
+        {
+          "label": "left-cancel B_1",
+          "lhs_word": [
+            "Q_3",
+            "Q_1^-1"
+          ],
+          "rhs_word": [
+            "Q_2",
+            "Q_1^-1",
+            "Q_3",
+            "Q_2^-1"
+          ]
+        },
+        {
+          "label": "Eq.(119)/(120)",
+          "lhs_word": [
+            "Q_3",
+            "Q_1^-1",
+            "Q_2"
+          ],
+          "rhs_word": [
+            "Q_2",
+            "Q_1^-1",
+            "Q_3"
+          ]
+        }
+      ],
+      "target_residual": [
+        {
+          "coefficient": 1,
+          "word": [
+            "Q_3",
+            "Q_1^-1",
+            "Q_2"
+          ]
+        },
+        {
+          "coefficient": -1,
+          "word": [
+            "Q_2",
+            "Q_1^-1",
+            "Q_3"
+          ]
+        }
+      ],
+      "target_residual_display": "Q_3*Q_1^-1*Q_2 - Q_2*Q_1^-1*Q_3",
+      "verified": true
+    },
+    {
+      "indices": [
+        2,
+        4
+      ],
+      "orientation": {
+        "k": 1,
+        "m": 2,
+        "n": 4
+      },
+      "source_relation_ids": [
+        "cpobc-relation-01e29996483e2c4f342c",
+        "cpobc-relation-0b2bbe81c6394d603f63",
+        "cpobc-relation-1d7b3a88785401c6531b"
+      ],
+      "source_relation_roles": {
+        "paper_eq115_n_vs_m": "cpobc-relation-01e29996483e2c4f342c",
+        "paper_eq116_m_vs_k": "cpobc-relation-0b2bbe81c6394d603f63",
+        "paper_eq117_n_vs_k": "cpobc-relation-1d7b3a88785401c6531b"
+      },
+      "source_relation_content_sha256": "df34a9f9618112ab0487fdcbfcbd1f26566cb054a563d74f8d0d47812806a831",
+      "paper_premises": [
+        {
+          "label": "Eq.(115)",
+          "lhs_word": [
+            "B_4"
+          ],
+          "rhs_word": [
+            "B_2",
+            "Q_4",
+            "Q_2^-1"
+          ]
+        },
+        {
+          "label": "Eq.(116)",
+          "lhs_word": [
+            "B_2"
+          ],
+          "rhs_word": [
+            "B_1",
+            "Q_2",
+            "Q_1^-1"
+          ]
+        },
+        {
+          "label": "Eq.(117)",
+          "lhs_word": [
+            "B_4"
+          ],
+          "rhs_word": [
+            "B_1",
+            "Q_4",
+            "Q_1^-1"
+          ]
+        }
+      ],
+      "free_word_derivation": [
+        {
+          "label": "Eq.(118)",
+          "lhs_word": [
+            "B_1",
+            "Q_4",
+            "Q_1^-1"
+          ],
+          "rhs_word": [
+            "B_1",
+            "Q_2",
+            "Q_1^-1",
+            "Q_4",
+            "Q_2^-1"
+          ]
+        },
+        {
+          "label": "left-cancel B_1",
+          "lhs_word": [
+            "Q_4",
+            "Q_1^-1"
+          ],
+          "rhs_word": [
+            "Q_2",
+            "Q_1^-1",
+            "Q_4",
+            "Q_2^-1"
+          ]
+        },
+        {
+          "label": "Eq.(119)/(120)",
+          "lhs_word": [
+            "Q_4",
+            "Q_1^-1",
+            "Q_2"
+          ],
+          "rhs_word": [
+            "Q_2",
+            "Q_1^-1",
+            "Q_4"
+          ]
+        }
+      ],
+      "target_residual": [
+        {
+          "coefficient": 1,
+          "word": [
+            "Q_4",
+            "Q_1^-1",
+            "Q_2"
+          ]
+        },
+        {
+          "coefficient": -1,
+          "word": [
+            "Q_2",
+            "Q_1^-1",
+            "Q_4"
+          ]
+        }
+      ],
+      "target_residual_display": "Q_4*Q_1^-1*Q_2 - Q_2*Q_1^-1*Q_4",
+      "verified": true
+    },
+    {
+      "indices": [
+        3,
+        4
+      ],
+      "orientation": {
+        "k": 1,
+        "m": 3,
+        "n": 4
+      },
+      "source_relation_ids": [
+        "cpobc-relation-17e9d7ae74c8bed62194",
+        "cpobc-relation-49726b7f352ba79916e5",
+        "cpobc-relation-1d7b3a88785401c6531b"
+      ],
+      "source_relation_roles": {
+        "paper_eq115_n_vs_m": "cpobc-relation-17e9d7ae74c8bed62194",
+        "paper_eq116_m_vs_k": "cpobc-relation-49726b7f352ba79916e5",
+        "paper_eq117_n_vs_k": "cpobc-relation-1d7b3a88785401c6531b"
+      },
+      "source_relation_content_sha256": "3cc8e80ea52b987a6eb8efe26eb2dbea7e48ae5e86a7d5c65eeaa6f3791517c5",
+      "paper_premises": [
+        {
+          "label": "Eq.(115)",
+          "lhs_word": [
+            "B_4"
+          ],
+          "rhs_word": [
+            "B_3",
+            "Q_4",
+            "Q_3^-1"
+          ]
+        },
+        {
+          "label": "Eq.(116)",
+          "lhs_word": [
+            "B_3"
+          ],
+          "rhs_word": [
+            "B_1",
+            "Q_3",
+            "Q_1^-1"
+          ]
+        },
+        {
+          "label": "Eq.(117)",
+          "lhs_word": [
+            "B_4"
+          ],
+          "rhs_word": [
+            "B_1",
+            "Q_4",
+            "Q_1^-1"
+          ]
+        }
+      ],
+      "free_word_derivation": [
+        {
+          "label": "Eq.(118)",
+          "lhs_word": [
+            "B_1",
+            "Q_4",
+            "Q_1^-1"
+          ],
+          "rhs_word": [
+            "B_1",
+            "Q_3",
+            "Q_1^-1",
+            "Q_4",
+            "Q_3^-1"
+          ]
+        },
+        {
+          "label": "left-cancel B_1",
+          "lhs_word": [
+            "Q_4",
+            "Q_1^-1"
+          ],
+          "rhs_word": [
+            "Q_3",
+            "Q_1^-1",
+            "Q_4",
+            "Q_3^-1"
+          ]
+        },
+        {
+          "label": "Eq.(119)/(120)",
+          "lhs_word": [
+            "Q_4",
+            "Q_1^-1",
+            "Q_3"
+          ],
+          "rhs_word": [
+            "Q_3",
+            "Q_1^-1",
+            "Q_4"
+          ]
+        }
+      ],
+      "target_residual": [
+        {
+          "coefficient": 1,
+          "word": [
+            "Q_4",
+            "Q_1^-1",
+            "Q_3"
+          ]
+        },
+        {
+          "coefficient": -1,
+          "word": [
+            "Q_3",
+            "Q_1^-1",
+            "Q_4"
+          ]
+        }
+      ],
+      "target_residual_display": "Q_4*Q_1^-1*Q_3 - Q_3*Q_1^-1*Q_4",
+      "verified": true
+    }
+  ],
+  "selected_700_pair_bindings": [
+    {
+      "indices": [
+        2,
+        3
+      ],
+      "source_relation_id": "cpobc-relation-6002781cceb198b6edfd",
+      "selected_direct_relation_id": "cpobc-relation-6002781cceb198b6edfd:eq103",
+      "selected_direct_relation_content_sha256": "29b34a9bcfbe5cd5608f2fc5f6d463cc9760ebaf932c8f68c2ecac363c2659a8",
+      "direct_expression_used_as_source_proof": false
+    },
+    {
+      "indices": [
+        2,
+        4
+      ],
+      "source_relation_id": "cpobc-relation-01e29996483e2c4f342c",
+      "selected_direct_relation_id": "cpobc-relation-01e29996483e2c4f342c:eq103",
+      "selected_direct_relation_content_sha256": "596075cea9af1b1f4657d19acf17cc4b3b92af3d1a19fdd6dff17680dce81976",
+      "direct_expression_used_as_source_proof": false
+    },
+    {
+      "indices": [
+        3,
+        4
+      ],
+      "source_relation_id": "cpobc-relation-17e9d7ae74c8bed62194",
+      "selected_direct_relation_id": "cpobc-relation-17e9d7ae74c8bed62194:eq103",
+      "selected_direct_relation_content_sha256": "8eb8d283438bc8c5fc161bc5b1c3c451a779f9a86d899f02ac706c15b63941a3",
+      "direct_expression_used_as_source_proof": false
+    }
+  ],
+  "dependency_closure": {
+    "axioms_used": [
+      "six raw CPOBC Eq.(103) instances",
+      "source transition nonsingularity"
+    ],
+    "definitions_used": [
+      "Q_s is the empty-precursor gregarious occurrence from the s-antichain"
+    ],
+    "source_nonsingularity_operations": [
+      "right multiplication by Q_m^-1 in Eq.(103)->Eq.(105)",
+      "left cancellation of B_1",
+      "right multiplication by Q_m"
+    ],
+    "occurrence_ledger_use": "identifier-only for the four Q occurrences",
+    "B_reduced_expressions_used": false,
+    "MSR_used": false,
+    "GC_used": false,
+    "Eq108_used": false,
+    "Eq112_used": false,
+    "dependency_closed": true
+  },
+  "counts": {
+    "unique_raw_relations": 6,
+    "unique_Q_occurrences": 4,
+    "unique_B_occurrences": 4,
+    "k1_Eq120_instances": 3,
+    "selected_direct_pair_bindings": 3
+  },
+  "chart_cover_gate": {
+    "partial_slice_955": "CLOSED_SOURCE_NATIVE_EQ120_PREMISES",
+    "abstract_R2_R4_partition": "SOURCE_NATIVE_REUSABLE",
+    "reason": "Every source point satisfies the six raw CPOBC instances and source nonsingularity, hence all three k=1 Eq.(120) identities.  With det(Q_1)!=0, the independently checked adjugate identity makes R_2,R_3,R_4 commute.",
+    "future_slack_compilers": "The same source-native derivation survives arbitrary reachable-MSR slack because it never substitutes a B occurrence through Eq.(108) or Eq.(112).",
+    "selected_700_direct_ideal_membership_claimed": false,
+    "claim_boundary": "This proves Eq.(120) on the source-native nonsingular locus, including the audited source reconstruction slice.  It does not prove Eq.(120) on an arbitrary 700-relation direct point outside that source image."
+  },
+  "verdict": "V042_EQ120_SOURCE_NATIVE_PROVENANCE_PROVED",
+  "passed": true,
+  "semantic_digest_sha256": "77d11eff7d14d84182abbf1eb30732fe2b94855507f1826747ba878fadb8d6ca"
+}

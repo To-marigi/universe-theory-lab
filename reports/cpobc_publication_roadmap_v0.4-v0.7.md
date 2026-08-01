@@ -1,0 +1,335 @@
+# CPOBC 研究・出版ロードマップ v0.4--v0.7
+
+決定日: 2026-08-01
+位置づけ: v0.3.9 以後の研究順序と論文化判断を固定する作業文書
+
+Current scientific facts and cross-version proof rules are indexed in
+[`KNOWLEDGE_BASE_v0.4.md`](../KNOWLEDGE_BASE_v0.4.md). Read it before starting
+or resuming any SR3--SR6 implementation. Tools should also read the compact
+mutable index [`CURRENT_RESEARCH_STATE.json`](../CURRENT_RESEARCH_STATE.json);
+it is navigation metadata, not a proof certificate.
+
+## 1. 出版方針の決定
+
+個々の計算結果を独立した査読論文として細分化せず、まず版付きの短報として
+証拠・未解決点・再現手順を固定し、それらを二本の主論文へ統合する。
+
+1. **第一論文（数学的中核）**
+   - 第一目標誌: *Journal of Mathematical Physics*（JMP）
+   - 主題: 有限 CPOBC において、作用素意味論の強さが `d=2` の可換性を
+     どこまで決定するか
+   - 必要短報: SR1--SR4
+2. **第二論文（次元境界と無限系への橋）**
+   - 条件付き第一目標誌: *Classical and Quantum Gravity*（CQG）
+   - 主題: `d=3` の次元閾値と、有限段階の結果を無限 CPOBC へ移す
+     restriction/lifting 問題
+   - 必要短報: SR5--SR6
+   - CQG を選ぶのは、有限行列分類を越える物理的・構造的意義が得られた
+     場合に限る。
+
+JOSS は数学・数理物理の主論文の代替にはしない。コンパイラと証明成果物の
+基盤が独立利用可能な研究ソフトウェアへ成熟した場合だけ、別のソフトウェア
+論文として検討する。
+
+## 2. 第一論文へ統合する短報
+
+### SR1 -- v0.3.9: strong/strong `d=2` 可換性
+
+- 状態: **完了・公開済み**
+- 内容: `n<=4`、非特異、occurrence identification ON、strong GC と
+  strong MSR のもとで `Q_1,...,Q_4` の可換性を証明。
+- 公開基準: Zenodo v0.3.9 を固定基準とし、凍結済み成果物は改変しない。
+- 第一論文での役割: 強い作用素意味論における rigidity 側の定理。
+
+### SR2 -- v0.4: fixed-vector/reachable-state の厳密反例
+
+- 状態: **研究結果完成、短報・公開版の整備は未完**
+- 判定: `WEAK_D2_NONCOMMUTATIVE_WITNESS_CERTIFIED`
+- 内容: `n<=4`、`d=2`、非特異、有理係数の厳密な非可換解。
+- 必須証拠:
+  - CPOBC、GC、MSR、Eq. (113) の両分岐、Eq. (139) の両被覆への直接代入
+  - 全遷移行列の行列式非零
+  - 全六個の `Q_1,...,Q_4` の交換子非零
+  - occurrence identification ON/OFF の両方への適用範囲
+  - 独立 oracle による再検算
+- 第一論文での役割: source-native な弱い意味論では rigidity が破れるという
+  separation theorem。
+- 限界: 現反例の reachable subspace は一次元であり、非可換性は初期状態から
+  到達する ray 上では観測されない。この点を物理的非可換性として誇張しない。
+
+### SR3a -- v0.4.1: ON 片側強化プロファイルと最小回復条件
+
+- 状態: **証明解釈を撤回。両 profile の真偽は未解決**
+- 対象:
+  1. fixed-vector GC x strong MSR
+  2. strong GC x reachable-state MSR
+  3. occurrence identification ON の完全分類。OFF は SR3c へ分離
+- 主要課題:
+  - 一般 `GL_2` で非可換反例を先に探索する。
+  - 反例がなければ、全チャートを被覆した `QQ` 上の
+    saturation/unit-ideal 証明を行う。
+  - strong GC と strong MSR のどちらが単独で可換性を回復するかを決める。
+  - reachable vectors の spanning 条件、および residual space に対する
+    separating-vector 条件を定理化する。
+  - 可換性を強制する最小関係群を、任意の `GL_2` に対する大域結果と
+    ansatz 内の局所結果に分けて記録する。
+- 許容される終端:
+  - 厳密反例
+  - 完全消去による可換性証明
+  - 明記した資源上限による未解決
+- 禁止事項: triangular scout のランク結果を一般 `GL_2` の完全分類へ昇格しない。
+- occurrence identification OFF は、v0.3.2 の165件を独立化する操作ではない。
+  自然ラベル付きDAGの406遷移を用いる別 compiler とし、ON の131 quotient
+  variables と混同しない。
+- 現在の静的仕様と実行ゲート:
+  [v0.4.1 research protocol](v0.4.1_one_sided_research_protocol.md)
+- scope correction:
+  [v0.4.1 ON semantics lattice](v0.4.1_on_semantics_lattice.md)
+- soundness audit:
+  [v0.4.1 reachable-MSR soundness audit](v0.4.1_reachable_msr_soundness_audit.md)
+- owner decision packet:
+  [v0.4.1 scope-break decision packet](v0.4.1_scope_break_decision_packet.md)
+- 42/42 exact QQ chart と独立 oracle の算術は保持するが、入力座標は
+  `PAPER_STRONG_OPERATOR_PROFILE` 由来の restricted locus である。Eq. (108) の
+  strong-MSR 依存と Eq. (112) の strong-GC 依存が relation filtering より先に
+  埋め込まれていたため、one-sided profile への forward implication は無効。
+- 強/強と弱/弱の両端だけが確定し、二つの one-sided corner は `OPEN` に戻る。
+
+### SR3b -- v0.4.2: profile-native ON compiler と one-sided 再判定
+
+- 状態: **owner 承認済み。partial-slice theorem、structured slack inventory、第一 N!=0 scout 完了**
+- triangular scout が候補化した `msr:p1-0`, `msr:p2-0`, `msr:p2-2` は
+  source-stage constraint ID であり、既存 source-to-Q lift では三本とも exact zero
+  residual になる。したがって `700 + 1 = 701` direct-relation campaign は実行しない。
+- 第一段階: live driver/oracle の撤回済み forward rule をscope-correctし、既存955系が
+  `P intersect image(Phi)` を被覆するか、localisationを含めて機械検証する。
+- scope fix は完了。将来の成果物は restricted-locus 専用 path/verdict を使い、旧3 JSON
+  と42 certificate は read-only historical arithmetic input として固定した。
+- 955 pullback は 783 -> 83 identity + 700 residual、strong-GC basis は
+  320 -> 65 identity + 255 residual と exact に閉じ、165 transition predicate と
+  4 Q + 22 B inverse site の source nonsingularity binding も閉じた。
+- 六つの raw antichain CPOBC Eq. (103) と source nonsingularity だけから三つの
+  `k=1` Eq. (120) を source-native に導出した。MSR、GC、Eq. (108)、Eq. (112) は
+  不使用であり、この証明は将来の reachable-MSR slack にも再利用できる。
+- 以上を `R_2`--`R_4` 分割と 21 exact QQ certificates に独立再結合し、
+  `P_sGC+rMSR intersect image(Phi_U)` 上の可換性を `PROVED_PARTIAL_SLICE` として
+  確定した。一般 one-sided profile、特に `P minus image(Phi_U)` は未解決である。
+- 第二段階: reachable-MSR 側は24 sourceそれぞれに
+  `N_c=u_c(Jv_c)^T` を導入する最小 de-elimination（合計+48 scalar）を行い、既に
+  閉じた `N=0` slice ではなく `N!=0` を反例探索の主対象にする。
+- この +48 は局所的には exhaustive と証明済み。ただし frozen Eq. (107) recursion と
+  Eq. (112) の B factor は Eq. (108) を展開済みなので、旧 Q presentation へ48変数を
+  後付けすることはできない。source-native global compiler が必要である。
+- source-native structured inventory は完成した。165 occurrence / 131 orbit、783 CPOBC、
+  320 strong-GC basis、24 timid definition、48 slack、131 determinant localisation、48
+  `N!=0` open patch を保持する。407 path / 87 endpoint fibre が320辺の連結木となり、
+  1,529 same-endpoint pair 全体を張ることも独立再計算した。ただし scalar-polynomial
+  manifest と global chart cover は未実装である。
+- Eq. (113) は25/25、Eq. (139) は4/10を分離した validation-only gate として台帳化し、
+  Eq. (112) 由来の座標定義を弱意味論へ逆流させない。
+- 第一の exact `N!=0` scout は `A_e=[[p_e,x_[e]],[0,1]]` を調べた。全24
+  reachable-MSR と非特異性を満たし、`p1-0` で operator residual の右下成分が1なので
+  強 MSR slice 外にある。CPOBC rank 108、CPOBC+strong-GC rank 114/nullity 17だが、
+  六 Q commutator は全て rank increment 0 であり、この族に非可換 witness はない。
+  一般結論ではなく、次は mixed upper/lower principal-open patch を exact 化する。
+- fixed-vector-GC 側は Eq. (112) で消去した20個の非-antichain generatorを独立に戻す。
+- 721側では exact diagonal escape point が完成し、CPOBC 783/783、inverse 712/712、
+  strong MSR 24/24、fixed-vector GC 1,529/1,529 を満たしながら strong GC と
+  Eq. (112) を破る。これは旧座標の非被覆を直接証明するが、Q は可換なので一般721
+  可換性問題は未解決のままである。
+- 131 orbit matrices / 165 aliases の compiler は assumption ledger と source coverage
+  certificate の検証器として構築し、既定の Gröbner 座標系にはしない。
+- 現在の soundness 判定は `PROFILE MISREPRESENTATION; THE CLAIMED PROFILE PROOF IS
+  INVALID`。定理の真偽は `UNRESOLVED`。
+- 監査記録:
+  [v0.4.2 source-to-direct provenance audit](v0.4.2_source_to_direct_provenance_audit.md)
+- solver campaign は新座標が target source profile の必要領域を被覆することを
+  機械検証してからだけ許可する。
+
+### SR3c -- v0.4.3: 406-occurrence OFF semantics
+
+- 状態: **未実装。ON 結果と混同しない独立 compiler track**
+- 自然ラベル付き50 source nodes・406 transition occurrences に対する labelled
+  CPOBC/MSR/Eq. (113)/Eq. (139) lifts を作る。
+- v0.4 の orbit-constant witness transfer は候補に留め、406 residual の直接 exact
+  verification 後にのみ OFF witness へ昇格する。
+- ON の21 chart cover は自動再利用しない。
+
+### SR3d -- v0.4.4: relation-level minimal forcing core
+
+- 状態: **profile-native compiler 完成まで延期**
+- direct relation minimality と source-constraint minimalityを分離する。
+- 既存の21本の非零 direct MSR residual を調べる場合、その結論は強 profile の
+  presentation 内 redundancy と明記する。
+- one-sided semantics の最小関係群は、SR3b の修復座標上でのみ再開する。
+
+### SR4 -- v0.5: genuine source-stage `n=5` と `Q_6`-free 安定性
+
+- 状態: **Paper I の ON theorem draft と並行可能な独立 extension track**
+- 主要課題:
+  - 真正な source-stage `n=5` 関係を生成する。
+  - Eq. (113) の literal/derived 分岐を統合しない。
+  - Eq. (139) の printed-strict/Eq. (145)-completed 被覆を統合しない。
+  - `Q_6` に依存しない部分系を抽出し、低段階の結論が外部自由変数による
+    見かけの効果でないことを証明する。
+  - strong/weak の主要結論が `n<=4` の打切りに固有か、`n=5` でも安定かを
+    厳密に判定する。
+- 第一論文での役割: 有限カットオフ依存という最も自然な査読上の疑義を処理する。
+
+## 3. 第一論文の投稿ゲート
+
+仮題:
+
+> *Semantic rigidity and noncommutative representations of finite quantum
+> sequential growth in dimension two*
+
+当初の中心命題は scope audit により未証明へ戻った。sharp threshold を中心命題に
+戻すには SR3b の再判定が必要である。当面の sound な対比は次である。
+
+> 有限 ON `d=2` 系では strong/strong profile が可換である一方、両方を
+> source-native vector equality に弱めると非特異な有理非可換解が存在する。
+> 一側だけを strong にした二つの境界は profile-native 座標で再判定する。
+
+補助定理として、raw CPOBC と非特異性だけによる dimension-independent Eq. (120)
+lemma、および strong-GC/reachable-MSR の `P intersect image(Phi_U)` 上の可換性を
+収録できる。後者は一般 one-sided corner の解決として要旨へ格上げしない。
+
+JMP への投稿準備開始条件は次の全項目とする。
+
+- SR1 と SR2 の theorem/witness を一つの定義体系で記述できる。
+- sharp classification を掲げる場合、SR3b で二つの ON 片側プロファイルが
+  profile-native に解決されている。未解決のままなら完全分類とは書かない。
+- OFF=406、relation-level minimality、`n=5` が本文で未解決 extension として明確に
+  分離されている。これらは ON finite theorem の投稿準備を妨げない。
+- 全主張が exact characteristic-zero certificate を持つ。
+- 数値解・有限体計算は scout と明記され、証明に使用されていない。
+- 独立実装による主要定理・反例の再検算がある。
+- source claim、project derivation、open problem が本文と成果物で分離されている。
+
+題名・要旨で **complete classification** と書けるのは、SR3b が両 one-sided
+corner を profile-native に解決した後に限る。その場合も必ず `finite ON semantics
+lattice` と限定する。OFF、relation-level minimum、`n>=5` を含む無限定な完全分類は
+主張しない。
+
+## 4. 第二論文へ統合する短報
+
+### SR5 -- v0.6: `d=3` の次元閾値
+
+- 状態: **第一論文の投稿準備後に実施**
+- 研究順序: 反例探索を先行し、数値解・有限体解は scout のみに使う。
+- 主要課題:
+  - v0.4.2 で得た dimension-independent な source-native Eq. (120) free-word
+    lemma をそのまま再利用し、`d=2` 固有なのは後段の chart rigidity だけであることを
+    分離する。
+  - strong/weak のどの意味論で真正な非可換 `d=3` 解が初めて現れるか。
+  - 見つかった解が非特異で、全関係を満たし、単なる自由ファイバーでないか。
+  - reachable subspace が全空間を張る例、またはそれが不可能であるという
+    obstruction を得られるか。
+- 許容される終端: 厳密 witness、厳密 no-go、または資源上限付き open。
+
+### SR6 -- v0.7: 有限系から無限 CPOBC への restriction/lifting
+
+- 状態: **SR5 の後に実施**
+- 主要課題:
+  - 無限表現から各有限 source-stage 系への restriction が、現在の関係 inventory
+    と意味論プロファイルを保存する条件を定式化する。
+  - 整合する有限解族から無限表現を構成できるための compatibility、compactness、
+    inverse/direct-limit 条件を特定する。
+  - lifting が一般には偽なら、厳密な obstruction theorem または反例を与える。
+  - occurrence-wise operator identification と Eq. (113)/(139) の分岐が極限でどう
+    振る舞うかを明記する。
+
+## 5. 第二論文の投稿ゲート
+
+仮題:
+
+> *Finite-dimensional operator Bell causality in quantum sequential growth:
+> dimension thresholds and infinite-stage extension*
+
+CQG を第一目標とするには、次の少なくとも一つに加えて、有限系と量子逐次成長の
+物理的解釈を明確にする必要がある。
+
+- full-span または同等に非退化な reachable-state 非可換表現
+- 有限段階の rigidity/noncommutativity を無限 CPOBC に移す restriction/lifting 定理
+- そのような移行を妨げる、物理的意味を持つ obstruction theorem
+
+これらが得られず、結果が有限行列方程式の分類に留まる場合は、CQG を機械的に
+選ばず、JMP 系の第二論文または数学寄りの投稿先として再評価する。
+
+## 6. 実施順序
+
+```text
+v0.3.9 strong/strong theorem       DONE
+          |
+v0.4 weak/weak rational witness    RESULT COMPLETE
+          |
+v0.4.1 ON one-sided profiles       PROOF INTERPRETATION INVALID; BOTH OPEN
+          |
+v0.4.2 profile-native compiler and counterexample-first repair
+          |
+corrected short report / Paper I scope decision
+          |
+parallel: v0.4.3 OFF / v0.4.4 relation minimum / v0.5 n=5
+          |
+Paper I assembly and JMP submission decision
+          |
+v0.6 d=3 threshold
+          |
+v0.7 finite-to-infinite theorem/obstruction
+          |
+Paper II assembly and conditional CQG submission decision
+```
+
+## 7. 短報共通の完成条件
+
+各短報は最低限、次を含む。
+
+- 固定した問題定義、意味論スイッチ、段階範囲、基礎体、非特異条件
+- 文献から採った関係と project 固有の強化の区別
+- Eq. (113) と Eq. (139) の分岐別 inventory
+- exact certificate と独立 oracle
+- 再現コマンド、機械可読結果、semantic digest
+- 成功判定、失敗判定、未解決範囲
+- 既存公開版を上書きしない版管理と provenance
+
+短報は原則として Zenodo/arXiv 上の技術報告として蓄積し、査読誌への細切れ投稿は
+行わない。ただし、単独で閉じた強い定理または反例が得られ、統合論文を待つことが
+新規性確認を不必要に遅らせる場合は例外を再検討する。
+
+## 8. 現時点の最優先作業
+
+1. v0.4.1 の scope-break correction と owner decision packet を確定する。
+2. owner 承認後、v0.4.2 profile-native ON compiler と assumption ledger を作る。
+3. 二つの one-sided profile を source-native に反例先行で再判定する。
+4. 修復完了までは Paper I を strong/strong 対 weak/weak の非対称な短報としてのみ
+   構成し、sharp semantic threshold や complete classification を書かない。
+5. 406-occurrence OFF、relation minimality、v0.5 を修復本線から分離する。
+
+## 9. 研究拡張と破綻時の判断規則
+
+- 標準計算予算は、1 chart 3,600秒、総計43,200秒、8 GiB とする。2026-08-01
+  にプロジェクト所有者が今後の同種キャンペーンにも承認した。各版で独立した
+  budget artifact を作り、上限変更時のみ再承認を得る。
+- 想定外の結果が exact certificate を持ち、既存 SR より大幅に強い定理、新しい
+  obstruction、または自然な拡張でより強い結果へ到達する場合は、元の SR を曖昧に
+  せず追加研究線としてロードマップへ登録する。
+- 定義の不整合、source-stage lift の不成立、chart cover の欠落、証明 verifier の
+  破綻などが主要主張を脅かす場合は、その系統の計算を停止する。失敗成果物、最小
+  再現手順、影響する主張、維持できる成果、修復案、必要資源、推奨判断を一つの
+  decision packet にまとめて所有者へ連絡する。
+- timeout や resource limit は破綻ではなく `OPEN_RESOURCE_LIMIT` として扱い、完了・
+  空集合・反例不存在へ読み替えない。
+
+## 10. 根拠と見直し条件
+
+- 公開済み基準: [Zenodo v0.3.9](https://zenodo.org/records/21720863)
+- 現在の弱意味論結果: [v0.4 classification](v0.4_weak_d2_classification.md)
+- Eq. (139) 監査: [v0.4 coverage audit](v0.4_eq139_coverage.md)
+- JMP の公式 scope:
+  <https://publishing.aip.org/publications/journals/special-topics/jmp/>
+- CQG の公式 scope/article types:
+  <https://publishingsupport.iopscience.iop.org/journals/classical-and-quantum-gravity/about-classical-quantum-gravity/>
+
+投稿先の記述は 2026-08-01 時点の暫定判断であり、採択可能性の保証ではない。
+scope、article type、投稿規定は各投稿直前に公式ページで再確認し、このロードマップを
+必要に応じて版更新する。

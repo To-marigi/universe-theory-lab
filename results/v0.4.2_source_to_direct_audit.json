@@ -1,0 +1,150 @@
+{
+  "schema_version": "final-theory-single-strong-msr-source-to-direct-audit-v0.4.2",
+  "version": "0.4.2",
+  "finite_scope": "ON quotient; n<=4; d=2; static provenance audit only",
+  "source_artifacts": {
+    "results/v0.4.1_one_sided_inventory.json": "6357f66f78dd1b136cba90f3bcf04a43163bd6bcadb4d0d5441548c2c133f652",
+    "results/v0.4_weak_d2_classification.json": "18e71f439913896fb370944c6479fc358d4d6d0d127162809ba46822ccd2fe65",
+    "results/v0.3.1_cpobc_relations_n4.json": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+    "certificates/d2_saturation/v0.3.5_direct_operator_system.json": "5fa2cbd16503d8cd16bc09db07d3b82c1e25df17fcd133cb472875e0e5408e56",
+    "src/universe_lab/final_theory/d2_sage_backend_v035.py": "1c7e7c8ca79005cf81c4b070f8931e7c3bbaa9cbe3f4e5ed21b05f065e6f5dc0"
+  },
+  "inventory": {
+    "path": "results/v0.4.1_one_sided_inventory.json",
+    "semantic_digest_sha256": "5b09ebcb7be60fecc027e93e4277007c94d98573937038cd03a3a399a46af3c6"
+  },
+  "direct_system": {
+    "path": "certificates/d2_saturation/v0.3.5_direct_operator_system.json",
+    "file_sha256": "5fa2cbd16503d8cd16bc09db07d3b82c1e25df17fcd133cb472875e0e5408e56",
+    "semantic_digest_sha256": "6667681124ab6f482ddaa65ad62d08046995553899c0b7fd37f6573fecddb74e",
+    "literal_q5_free_strong_MSR_relation_ids": [
+      "msr:p3-000",
+      "msr:p3-002",
+      "msr:p3-006",
+      "msr:p3-024",
+      "msr:p3-026",
+      "msr:p4-0000",
+      "msr:p4-0002",
+      "msr:p4-0006",
+      "msr:p4-000e",
+      "msr:p4-0044",
+      "msr:p4-0046",
+      "msr:p4-0048",
+      "msr:p4-004c",
+      "msr:p4-004e",
+      "msr:p4-00cc",
+      "msr:p4-00ce",
+      "msr:p4-0888",
+      "msr:p4-088a",
+      "msr:p4-088e",
+      "msr:p4-08cc",
+      "msr:p4-08ce"
+    ],
+    "literal_q5_free_strong_MSR_relation_count": 21,
+    "direct_relation_record_has_source_constraint_id_field": false
+  },
+  "triangular_scout_selection": {
+    "source_path": "minimal_semantic_recovery.triangular_ansatz_local_result.single_strong_MSR_relations_that_suffice",
+    "single_strong_MSR_relations_that_suffice": [
+      "msr:p1-0",
+      "msr:p2-0",
+      "msr:p2-2"
+    ],
+    "CPOBC_commutator_quotient_dimension": 1,
+    "claim_boundary": "Exact only in the declared occurrence-identified triangular two-character family; this is not the globally smallest relation group in arbitrary d=2."
+  },
+  "triangular_scout_source_candidates": [
+    {
+      "source_constraint_id": "msr:p1-0",
+      "source_id": "p1-0",
+      "source_stage": 1,
+      "source_term_count": 2,
+      "source_identity_coefficient": -1,
+      "source_matrix_entry_equation_count_d3": 9,
+      "triangular_scout_selected": true,
+      "v04_witness_operator_residual": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "v04_witness_strong_operator_zero": false,
+      "direct_relation_id_present": false,
+      "accepted_source_to_direct_relation_id": null,
+      "mapping_status": "PROVENANCE_NOT_PRESENT"
+    },
+    {
+      "source_constraint_id": "msr:p2-0",
+      "source_id": "p2-0",
+      "source_stage": 2,
+      "source_term_count": 3,
+      "source_identity_coefficient": -1,
+      "source_matrix_entry_equation_count_d3": 9,
+      "triangular_scout_selected": true,
+      "v04_witness_operator_residual": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "3"
+        ]
+      ],
+      "v04_witness_strong_operator_zero": false,
+      "direct_relation_id_present": false,
+      "accepted_source_to_direct_relation_id": null,
+      "mapping_status": "PROVENANCE_NOT_PRESENT"
+    },
+    {
+      "source_constraint_id": "msr:p2-2",
+      "source_id": "p2-2",
+      "source_stage": 2,
+      "source_term_count": 3,
+      "source_identity_coefficient": -1,
+      "source_matrix_entry_equation_count_d3": 9,
+      "triangular_scout_selected": true,
+      "v04_witness_operator_residual": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "v04_witness_strong_operator_zero": false,
+      "direct_relation_id_present": false,
+      "accepted_source_to_direct_relation_id": null,
+      "mapping_status": "PROVENANCE_NOT_PRESENT"
+    }
+  ],
+  "candidate_direct_relation_intersection": [],
+  "proposed_701_relation_direct_campaign": {
+    "status": "NOT_COMPILED",
+    "reason": "The three candidate IDs identify source-stage matrix constraints, not relation IDs selectable by the frozen direct-operator worker.",
+    "no_false_direct_relation_count_claim": true,
+    "solver_invoked": false,
+    "finite_field_fallback_permitted": false
+  },
+  "required_next_stage": {
+    "status": "REQUIRED_BEFORE_ANY_701_RELATION_QQ_CAMPAIGN",
+    "work_items": [
+      "Compile a source-stage-to-Q direct lift for each named MSR constraint.",
+      "Record a one-to-one-or-many provenance map and exact expression digest.",
+      "Extend the Sage worker input contract to select lifted source constraints.",
+      "Bind localisation, commutator coverage, memory limit, and result digest after the lift."
+    ],
+    "backend_current_contract": "DIRECT_REDUCED_OPERATOR_WORDS_ONLY",
+    "backend_source_sha256": "1c7e7c8ca79005cf81c4b070f8931e7c3bbaa9cbe3f4e5ed21b05f065e6f5dc0"
+  },
+  "verdict": "V042_SOURCE_TO_DIRECT_PROVENANCE_REQUIRED",
+  "passed": true,
+  "claim_boundary": "This audit neither proves nor refutes one-relation sufficiency. It proves only that the proposed direct 701-relation campaign lacks required provenance.",
+  "semantic_digest_sha256": "8718c6d9266486ec6df775bdd8027b5e64658451a0b3fd09b35498bb5faf5237"
+}

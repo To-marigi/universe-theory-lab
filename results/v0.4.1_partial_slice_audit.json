@@ -1,0 +1,783 @@
+{
+  "schema_version": "final-theory-v041-strong-gc-partial-slice-audit-v0.4.1",
+  "finite_scope": "ON quotient; n<=4; d=2; nonsingular; characteristic zero",
+  "source_profile": {
+    "name": "strong_GC__reachable_state_MSR",
+    "P": "source-native CPOBC + strong GC + reachable-state MSR + nonsingularity",
+    "reachable_state_MSR_role": "Retained in P but not used by the forward pullback into D_955; dropping an equation enlarges the direct target locus."
+  },
+  "maps_and_loci": {
+    "Phi_U": "the frozen 165-occurrence rational reconstruction on the open domain U where its 4 Q and 22 B inverse bases are nonsingular",
+    "D_955": "the U-locus satisfying exactly the 700 CPOBC and 255 local-operator-GC direct matrix relations, together with all 165 reconstructed-transition nonsingularity predicates",
+    "source_point": "x in P",
+    "Q_preimage": "q in U with Phi_U(q)=x",
+    "auxiliary_inverse_coordinates": "not independent in d=2; they are adjugate/determinant values at the 4 Q and 22 B inverse bases",
+    "chart_cover": "the simultaneous-similarity S1/S2/S3 cover of commuting R_n=Q_1^-1 Q_n for n=2,3,4"
+  },
+  "inclusion": {
+    "direction": "P intersection image(Phi_U) subset Phi_U(D_955)",
+    "relation_locus_inclusion_proved": true,
+    "quantified_relation_locus_form": "For every x in P and every q in U with Phi_U(q)=x, q satisfies the 700+255 direct relations and all audited nonsingularity sites.",
+    "commutativity_consequence_proved": true,
+    "commutativity_gap": null,
+    "reverse_inclusion_claimed": false,
+    "full_profile_coverage_claimed": false
+  },
+  "checks": {
+    "artifact_integrity": {
+      "passed": true,
+      "direct_system_semantic_digest_sha256": "6667681124ab6f482ddaa65ad62d08046995553899c0b7fd37f6573fecddb74e",
+      "historical_byte_bridge": {
+        "direct_to_current_Q_presentation_matches": false,
+        "Q_presentation_to_current_sources_matches": {
+          "results/v0.3.1_cpobc_relations_n4.json": false,
+          "results/v0.3.2_cpobc_generator_reduction.json": false
+        },
+        "used_as_proof_gate": false,
+        "reason": "Release metadata hydration changed wrapper bytes.  The proof gate below independently re-substitutes every source relation and requires exact expression/digest equality with the direct system."
+      },
+      "source_artifact_sha256": {
+        "certificates/d2_saturation/v0.3.5_direct_operator_system.json": "5fa2cbd16503d8cd16bc09db07d3b82c1e25df17fcd133cb472875e0e5408e56",
+        "results/v0.3.1_cpobc_relations_n4.json": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+        "results/v0.3.2_cpobc_d2_classification.json": "c38b78ff66df02e1c628e165ea3c84a54779cc88adfa9f6cda88864f7dd2b719",
+        "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+        "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba",
+        "results/v0.3.3_q_only_presentation_n4.json": "4d8011b16b18f5eada737fabc53075ef5ded18a58828fdeeef40fcdbe47cfef8",
+        "results/v0.4.1_one_sided_elimination.json": "629e263bfb507d4678e80de1679aeaa927797c4753487b435a4799297eb04959",
+        "results/v0.4.1_one_sided_elimination_manifest.json": "b5ca2f2994d07617026cea0f6eb749a0e9e0bc35363e5cf0862a9fe92e04068a",
+        "results/v0.4.1_one_sided_elimination_oracle.json": "cb709d1123bc8c435ad14f419cd2275fa048c07a9ff665142f8c0a87e2c752f6",
+        "results/v0.4.1_one_sided_inventory.json": "6357f66f78dd1b136cba90f3bcf04a43163bd6bcadb4d0d5441548c2c133f652"
+      }
+    },
+    "CPOBC_pullback": {
+      "passed": true,
+      "source_equation_count": 783,
+      "identically_zero_pullback_count": 83,
+      "nonzero_direct_pullback_count": 700,
+      "direct_relation_id_sha256": "cef66f304c7aff361bd92b44eba9a453a01331566d1becf0e73b1cf5895d2431",
+      "proof_rule": "A source CPOBC point in image(Phi_U) evaluates each independently rewritten source word residual to zero; the 83 zero pullbacks need no relation and the other 700 are exactly the direct CPOBC records."
+    },
+    "strong_GC_pullback": {
+      "passed": true,
+      "source_basis_relation_count": 320,
+      "source_same_endpoint_pair_count": 1529,
+      "identically_zero_pullback_count": 65,
+      "nonzero_direct_pullback_count": 255,
+      "direct_relation_id_sha256": "91a6329940f086ef583a2757a63046dc97378b14ae35e3f2b7f5375b77943f13",
+      "proof_rule": "Strong source GC kills the endpoint-wise 320-relation spanning-tree basis.  Independent substitution through Phi_U gives 65 identities and exactly the 255 local-operator-GC direct records."
+    },
+    "inverse_and_nonsingularity": {
+      "passed": true,
+      "reconstructed_transition_predicate_count": 165,
+      "Q_inverse_site_count": 4,
+      "B_inverse_site_count": 22,
+      "inverse_site_source_occurrence_count": 26,
+      "inverse_site_to_source_occurrence_sha256": "b6b4a4ccdd01eff7441ddff6728306e6ae7c2996a4b8b8947b54126f033540d9",
+      "proof_rule": "At a source point in image(Phi_U), all 165 reconstructed matrices equal their source transition operators.  Source nonsingularity therefore supplies every transition determinant; in particular it supplies the four Q and 22 B determinants used by every rational inverse."
+    },
+    "Eq120_premise_binding": {
+      "passed": true,
+      "status": "EQ120_PREMISES_PROVED_ON_SOURCE_SLICE",
+      "classification_path": "results/v0.3.2_cpobc_d2_classification.json",
+      "classification_sha256": "c38b78ff66df02e1c628e165ea3c84a54779cc88adfa9f6cda88864f7dd2b719",
+      "Eq120_to_ratio_commutation_identity_verified": true,
+      "independent_source_ledger": {
+        "raw_relation_count": 6,
+        "raw_relation_inventory": [
+          {
+            "relation_id": "cpobc-relation-0b2bbe81c6394d603f63",
+            "relation_hash": "0b2bbe81c6394d603f638117ddf72f52e3e0d251b6adb9932b996e26eb7e7d71",
+            "stages": {
+              "n": 2,
+              "m": 1
+            },
+            "occurrence_ids": {
+              "A_m": "cpobc-transition-f5898ff572639d996985",
+              "A_n": "cpobc-transition-f399c07eaf2707696f9f",
+              "A_prime_m": "cpobc-transition-7137acaa934673cc789d",
+              "A_prime_n": "cpobc-transition-3b93b9f523031a23c77f"
+            },
+            "operator_variables": {
+              "A_m": "X_f5898ff572639d99",
+              "A_n": "X_f399c07eaf270769",
+              "A_prime_m": "X_7137acaa934673cc",
+              "A_prime_n": "X_3b93b9f523031a23"
+            },
+            "Eq105_form": {
+              "equation_id": "eq105",
+              "residual_terms": [
+                {
+                  "coefficient": 1,
+                  "word": [
+                    "A_n"
+                  ]
+                },
+                {
+                  "coefficient": -1,
+                  "word": [
+                    "A_m",
+                    "A_prime_n",
+                    "A_prime_m^-1"
+                  ]
+                }
+              ],
+              "display": "A_n - A_m*A_prime_n*A_prime_m^-1 = 0"
+            },
+            "dependency_flags": {
+              "MSR_used_to_generate": false,
+              "GC_used_to_generate": false,
+              "Eq103_to_Eq105_right_inverse_verified": true,
+              "source_nonsingularity_required_for_cancellation": true
+            }
+          },
+          {
+            "relation_id": "cpobc-relation-49726b7f352ba79916e5",
+            "relation_hash": "49726b7f352ba79916e5ebc57fc7e05bd2f42ef43d4c9c57ed2733b613ee7469",
+            "stages": {
+              "n": 3,
+              "m": 1
+            },
+            "occurrence_ids": {
+              "A_m": "cpobc-transition-f5898ff572639d996985",
+              "A_n": "cpobc-transition-f04b8a1e627055ac3163",
+              "A_prime_m": "cpobc-transition-7137acaa934673cc789d",
+              "A_prime_n": "cpobc-transition-779d09aa463a38abdba6"
+            },
+            "operator_variables": {
+              "A_m": "X_f5898ff572639d99",
+              "A_n": "X_f04b8a1e627055ac",
+              "A_prime_m": "X_7137acaa934673cc",
+              "A_prime_n": "X_779d09aa463a38ab"
+            },
+            "Eq105_form": {
+              "equation_id": "eq105",
+              "residual_terms": [
+                {
+                  "coefficient": 1,
+                  "word": [
+                    "A_n"
+                  ]
+                },
+                {
+                  "coefficient": -1,
+                  "word": [
+                    "A_m",
+                    "A_prime_n",
+                    "A_prime_m^-1"
+                  ]
+                }
+              ],
+              "display": "A_n - A_m*A_prime_n*A_prime_m^-1 = 0"
+            },
+            "dependency_flags": {
+              "MSR_used_to_generate": false,
+              "GC_used_to_generate": false,
+              "Eq103_to_Eq105_right_inverse_verified": true,
+              "source_nonsingularity_required_for_cancellation": true
+            }
+          },
+          {
+            "relation_id": "cpobc-relation-6002781cceb198b6edfd",
+            "relation_hash": "6002781cceb198b6edfd06e63b9920798363076ce6d9ed50bfb886bbb16b6728",
+            "stages": {
+              "n": 3,
+              "m": 2
+            },
+            "occurrence_ids": {
+              "A_m": "cpobc-transition-f399c07eaf2707696f9f",
+              "A_n": "cpobc-transition-f04b8a1e627055ac3163",
+              "A_prime_m": "cpobc-transition-3b93b9f523031a23c77f",
+              "A_prime_n": "cpobc-transition-779d09aa463a38abdba6"
+            },
+            "operator_variables": {
+              "A_m": "X_f399c07eaf270769",
+              "A_n": "X_f04b8a1e627055ac",
+              "A_prime_m": "X_3b93b9f523031a23",
+              "A_prime_n": "X_779d09aa463a38ab"
+            },
+            "Eq105_form": {
+              "equation_id": "eq105",
+              "residual_terms": [
+                {
+                  "coefficient": 1,
+                  "word": [
+                    "A_n"
+                  ]
+                },
+                {
+                  "coefficient": -1,
+                  "word": [
+                    "A_m",
+                    "A_prime_n",
+                    "A_prime_m^-1"
+                  ]
+                }
+              ],
+              "display": "A_n - A_m*A_prime_n*A_prime_m^-1 = 0"
+            },
+            "dependency_flags": {
+              "MSR_used_to_generate": false,
+              "GC_used_to_generate": false,
+              "Eq103_to_Eq105_right_inverse_verified": true,
+              "source_nonsingularity_required_for_cancellation": true
+            }
+          },
+          {
+            "relation_id": "cpobc-relation-1d7b3a88785401c6531b",
+            "relation_hash": "1d7b3a88785401c6531b0b369736fedc3a128da982b8f32984b44ce58c7b90b5",
+            "stages": {
+              "n": 4,
+              "m": 1
+            },
+            "occurrence_ids": {
+              "A_m": "cpobc-transition-f5898ff572639d996985",
+              "A_n": "cpobc-transition-cc171f1f9d349453e34d",
+              "A_prime_m": "cpobc-transition-7137acaa934673cc789d",
+              "A_prime_n": "cpobc-transition-9fabc20614d5b2aa595d"
+            },
+            "operator_variables": {
+              "A_m": "X_f5898ff572639d99",
+              "A_n": "X_cc171f1f9d349453",
+              "A_prime_m": "X_7137acaa934673cc",
+              "A_prime_n": "X_9fabc20614d5b2aa"
+            },
+            "Eq105_form": {
+              "equation_id": "eq105",
+              "residual_terms": [
+                {
+                  "coefficient": 1,
+                  "word": [
+                    "A_n"
+                  ]
+                },
+                {
+                  "coefficient": -1,
+                  "word": [
+                    "A_m",
+                    "A_prime_n",
+                    "A_prime_m^-1"
+                  ]
+                }
+              ],
+              "display": "A_n - A_m*A_prime_n*A_prime_m^-1 = 0"
+            },
+            "dependency_flags": {
+              "MSR_used_to_generate": false,
+              "GC_used_to_generate": false,
+              "Eq103_to_Eq105_right_inverse_verified": true,
+              "source_nonsingularity_required_for_cancellation": true
+            }
+          },
+          {
+            "relation_id": "cpobc-relation-01e29996483e2c4f342c",
+            "relation_hash": "01e29996483e2c4f342c5aceeec8212e1466f8481cd8f9dcd3fab3ed19a285fd",
+            "stages": {
+              "n": 4,
+              "m": 2
+            },
+            "occurrence_ids": {
+              "A_m": "cpobc-transition-f399c07eaf2707696f9f",
+              "A_n": "cpobc-transition-cc171f1f9d349453e34d",
+              "A_prime_m": "cpobc-transition-3b93b9f523031a23c77f",
+              "A_prime_n": "cpobc-transition-9fabc20614d5b2aa595d"
+            },
+            "operator_variables": {
+              "A_m": "X_f399c07eaf270769",
+              "A_n": "X_cc171f1f9d349453",
+              "A_prime_m": "X_3b93b9f523031a23",
+              "A_prime_n": "X_9fabc20614d5b2aa"
+            },
+            "Eq105_form": {
+              "equation_id": "eq105",
+              "residual_terms": [
+                {
+                  "coefficient": 1,
+                  "word": [
+                    "A_n"
+                  ]
+                },
+                {
+                  "coefficient": -1,
+                  "word": [
+                    "A_m",
+                    "A_prime_n",
+                    "A_prime_m^-1"
+                  ]
+                }
+              ],
+              "display": "A_n - A_m*A_prime_n*A_prime_m^-1 = 0"
+            },
+            "dependency_flags": {
+              "MSR_used_to_generate": false,
+              "GC_used_to_generate": false,
+              "Eq103_to_Eq105_right_inverse_verified": true,
+              "source_nonsingularity_required_for_cancellation": true
+            }
+          },
+          {
+            "relation_id": "cpobc-relation-17e9d7ae74c8bed62194",
+            "relation_hash": "17e9d7ae74c8bed621949c5847f822ba987e510fc20a05e0638721020ea23f4a",
+            "stages": {
+              "n": 4,
+              "m": 3
+            },
+            "occurrence_ids": {
+              "A_m": "cpobc-transition-f04b8a1e627055ac3163",
+              "A_n": "cpobc-transition-cc171f1f9d349453e34d",
+              "A_prime_m": "cpobc-transition-779d09aa463a38abdba6",
+              "A_prime_n": "cpobc-transition-9fabc20614d5b2aa595d"
+            },
+            "operator_variables": {
+              "A_m": "X_f04b8a1e627055ac",
+              "A_n": "X_cc171f1f9d349453",
+              "A_prime_m": "X_779d09aa463a38ab",
+              "A_prime_n": "X_9fabc20614d5b2aa"
+            },
+            "Eq105_form": {
+              "equation_id": "eq105",
+              "residual_terms": [
+                {
+                  "coefficient": 1,
+                  "word": [
+                    "A_n"
+                  ]
+                },
+                {
+                  "coefficient": -1,
+                  "word": [
+                    "A_m",
+                    "A_prime_n",
+                    "A_prime_m^-1"
+                  ]
+                }
+              ],
+              "display": "A_n - A_m*A_prime_n*A_prime_m^-1 = 0"
+            },
+            "dependency_flags": {
+              "MSR_used_to_generate": false,
+              "GC_used_to_generate": false,
+              "Eq103_to_Eq105_right_inverse_verified": true,
+              "source_nonsingularity_required_for_cancellation": true
+            }
+          }
+        ],
+        "raw_relation_ids_sha256": "2dfb3fa204d44c699aced71b724481cf46d44a031ba42716dc250711814dfa1e",
+        "pair_derivations": [
+          {
+            "indices": [
+              2,
+              3
+            ],
+            "source_relation_ids": [
+              "cpobc-relation-6002781cceb198b6edfd",
+              "cpobc-relation-0b2bbe81c6394d603f63",
+              "cpobc-relation-49726b7f352ba79916e5"
+            ],
+            "source_relation_content_sha256": "4b16e9f0a9c740fffe23aacf1794621a1082d5748f47cbbfe7db4a2d2ff0d5e1",
+            "occurrence_identifications": {
+              "Tn": true,
+              "Tm": true,
+              "Gn": true,
+              "Gm": true,
+              "T1": true,
+              "G1": true
+            },
+            "cancellation_occurrence_ids": {
+              "left_T1": "cpobc-transition-f5898ff572639d996985",
+              "right_Gm": "cpobc-transition-3b93b9f523031a23c77f"
+            },
+            "substituted_source_residual": [
+              {
+                "coefficient": -1,
+                "word": [
+                  "T_1",
+                  "G_2",
+                  "G_1^-1",
+                  "G_3",
+                  "G_2^-1"
+                ]
+              },
+              {
+                "coefficient": 1,
+                "word": [
+                  "T_1",
+                  "G_3",
+                  "G_1^-1"
+                ]
+              }
+            ],
+            "derived_abstract_residual": [
+              {
+                "coefficient": -1,
+                "word": [
+                  "G_2",
+                  "G_1^-1",
+                  "G_3"
+                ]
+              },
+              {
+                "coefficient": 1,
+                "word": [
+                  "G_3",
+                  "G_1^-1",
+                  "G_2"
+                ]
+              }
+            ],
+            "target_Q_residual": [
+              {
+                "coefficient": -1,
+                "word": [
+                  "Q_2",
+                  "Q_1^-1",
+                  "Q_3"
+                ]
+              },
+              {
+                "coefficient": 1,
+                "word": [
+                  "Q_3",
+                  "Q_1^-1",
+                  "Q_2"
+                ]
+              }
+            ],
+            "verified": true
+          },
+          {
+            "indices": [
+              2,
+              4
+            ],
+            "source_relation_ids": [
+              "cpobc-relation-01e29996483e2c4f342c",
+              "cpobc-relation-0b2bbe81c6394d603f63",
+              "cpobc-relation-1d7b3a88785401c6531b"
+            ],
+            "source_relation_content_sha256": "df34a9f9618112ab0487fdcbfcbd1f26566cb054a563d74f8d0d47812806a831",
+            "occurrence_identifications": {
+              "Tn": true,
+              "Tm": true,
+              "Gn": true,
+              "Gm": true,
+              "T1": true,
+              "G1": true
+            },
+            "cancellation_occurrence_ids": {
+              "left_T1": "cpobc-transition-f5898ff572639d996985",
+              "right_Gm": "cpobc-transition-3b93b9f523031a23c77f"
+            },
+            "substituted_source_residual": [
+              {
+                "coefficient": -1,
+                "word": [
+                  "T_1",
+                  "G_2",
+                  "G_1^-1",
+                  "G_4",
+                  "G_2^-1"
+                ]
+              },
+              {
+                "coefficient": 1,
+                "word": [
+                  "T_1",
+                  "G_4",
+                  "G_1^-1"
+                ]
+              }
+            ],
+            "derived_abstract_residual": [
+              {
+                "coefficient": -1,
+                "word": [
+                  "G_2",
+                  "G_1^-1",
+                  "G_4"
+                ]
+              },
+              {
+                "coefficient": 1,
+                "word": [
+                  "G_4",
+                  "G_1^-1",
+                  "G_2"
+                ]
+              }
+            ],
+            "target_Q_residual": [
+              {
+                "coefficient": -1,
+                "word": [
+                  "Q_2",
+                  "Q_1^-1",
+                  "Q_4"
+                ]
+              },
+              {
+                "coefficient": 1,
+                "word": [
+                  "Q_4",
+                  "Q_1^-1",
+                  "Q_2"
+                ]
+              }
+            ],
+            "verified": true
+          },
+          {
+            "indices": [
+              3,
+              4
+            ],
+            "source_relation_ids": [
+              "cpobc-relation-17e9d7ae74c8bed62194",
+              "cpobc-relation-49726b7f352ba79916e5",
+              "cpobc-relation-1d7b3a88785401c6531b"
+            ],
+            "source_relation_content_sha256": "3cc8e80ea52b987a6eb8efe26eb2dbea7e48ae5e86a7d5c65eeaa6f3791517c5",
+            "occurrence_identifications": {
+              "Tn": true,
+              "Tm": true,
+              "Gn": true,
+              "Gm": true,
+              "T1": true,
+              "G1": true
+            },
+            "cancellation_occurrence_ids": {
+              "left_T1": "cpobc-transition-f5898ff572639d996985",
+              "right_Gm": "cpobc-transition-779d09aa463a38abdba6"
+            },
+            "substituted_source_residual": [
+              {
+                "coefficient": -1,
+                "word": [
+                  "T_1",
+                  "G_3",
+                  "G_1^-1",
+                  "G_4",
+                  "G_3^-1"
+                ]
+              },
+              {
+                "coefficient": 1,
+                "word": [
+                  "T_1",
+                  "G_4",
+                  "G_1^-1"
+                ]
+              }
+            ],
+            "derived_abstract_residual": [
+              {
+                "coefficient": -1,
+                "word": [
+                  "G_3",
+                  "G_1^-1",
+                  "G_4"
+                ]
+              },
+              {
+                "coefficient": 1,
+                "word": [
+                  "G_4",
+                  "G_1^-1",
+                  "G_3"
+                ]
+              }
+            ],
+            "target_Q_residual": [
+              {
+                "coefficient": -1,
+                "word": [
+                  "Q_3",
+                  "Q_1^-1",
+                  "Q_4"
+                ]
+              },
+              {
+                "coefficient": 1,
+                "word": [
+                  "Q_4",
+                  "Q_1^-1",
+                  "Q_3"
+                ]
+              }
+            ],
+            "verified": true
+          }
+        ],
+        "dependency_closure": {
+          "CPOBC": true,
+          "source_nonsingularity": true,
+          "MSR": false,
+          "GC": false,
+          "occurrence_identification": true
+        },
+        "passed": true
+      },
+      "k1_target_pullbacks": {
+        "R2_R3": [
+          {
+            "coefficient": -1,
+            "word": [
+              "Q_2",
+              "Q_1^-1",
+              "Q_3"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word": [
+              "Q_3",
+              "Q_1^-1",
+              "Q_2"
+            ]
+          }
+        ],
+        "R2_R4": [
+          {
+            "coefficient": -1,
+            "word": [
+              "Q_2",
+              "Q_1^-1",
+              "Q_4"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word": [
+              "Q_4",
+              "Q_1^-1",
+              "Q_2"
+            ]
+          }
+        ],
+        "R3_R4": [
+          {
+            "coefficient": -1,
+            "word": [
+              "Q_3",
+              "Q_1^-1",
+              "Q_4"
+            ]
+          },
+          {
+            "coefficient": 1,
+            "word": [
+              "Q_4",
+              "Q_1^-1",
+              "Q_3"
+            ]
+          }
+        ]
+      },
+      "literal_selected_700_matches": {
+        "R2_R3": [],
+        "R2_R4": [],
+        "R3_R4": []
+      },
+      "literal_binding_passed": false,
+      "source_native_certificate_hook": {
+        "path": "results/v0.4.2_eq120_source_provenance.json",
+        "required_schema_version": "final-theory-v042-eq120-source-provenance-certificate-v0.4.2",
+        "required_input_sha256": {
+          "source_cpobc_relations": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+          "generator_reduction": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+          "direct_system": "5fa2cbd16503d8cd16bc09db07d3b82c1e25df17fcd133cb472875e0e5408e56"
+        },
+        "selected_700_relation_count": 700,
+        "selected_700_ordered_relation_ids_sha256": "cef66f304c7aff361bd92b44eba9a453a01331566d1becf0e73b1cf5895d2431",
+        "required_pair_indices": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "required_raw_source_relation_count": 6,
+        "semantic_digest_rule": "SHA-256 of canonical JSON (sorted keys, compact separators, ASCII) after removing top-level semantic_digest_sha256"
+      },
+      "ideal_or_derivation_certificate_present": true,
+      "ideal_or_derivation_certificate_passed": true,
+      "source_native_certificate_validation": {
+        "passed": true,
+        "path": "results/v0.4.2_eq120_source_provenance.json",
+        "file_sha256": "864536f5624b63900ab6ff31f5070706ce51881408044fb60e3b1f4853cdfed4",
+        "semantic_digest_sha256": "77d11eff7d14d84182abbf1eb30732fe2b94855507f1826747ba878fadb8d6ca",
+        "schema_version": "final-theory-v042-eq120-source-provenance-certificate-v0.4.2",
+        "raw_source_relation_count": 6,
+        "Q_occurrence_identifier_count": 4,
+        "k1_pair_certificate_count": 3,
+        "selected_700_pair_binding_count": 3,
+        "independent_free_word_recomputation_passed": true,
+        "forbidden_semantic_dependencies_absent": true,
+        "selected_700_direct_ideal_membership_claimed": false
+      },
+      "missing_gate": null,
+      "claim_boundary": "The source-native proof establishes Eq.(120) on the nonsingular source locus and hence on its audited reconstruction slice; it does not claim direct-ideal membership away from that image."
+    },
+    "chart_cover_and_QQ_certificates": {
+      "passed": true,
+      "Eq120_ratio_identity_independently_verified": true,
+      "S1_chart_count": 12,
+      "S2_chart_count": 9,
+      "S3_structurally_commuting": true,
+      "conditional_exhaustiveness_lemma": {
+        "passed": true,
+        "conditional_on": "pairwise commutation of invertible R2,R3,R4",
+        "predicate_partition": "some ratio has distinct eigenvalues (S1); otherwise some ratio is nonscalar (S2); otherwise all ratios are scalar (S3)",
+        "first_pivot_partition": {
+          "ordered_ratio_indices": [
+            2,
+            3,
+            4
+          ],
+          "S1_pivots": 3,
+          "S2_pivots": 3
+        },
+        "S1_exact_centralizer_verified": true,
+        "S1_Q1_coordinate_partition": [
+          "b!=0,c!=0",
+          "b!=0,c=0",
+          "b=0,c!=0",
+          "b=0,c=0"
+        ],
+        "S2_exact_centralizer_verified": true,
+        "S2_Q1_coordinate_partition": [
+          "c!=0",
+          "c=0,b!=0",
+          "b=0,c=0"
+        ],
+        "S3_rule": "R_n=lambda_n I, hence Q_n=lambda_n Q_1",
+        "proof_boundary": "This certifies 12+9+1 exhaustiveness only after pairwise ratio commutation has been established."
+      },
+      "independently_recomputed_nonzero_commutator_component_count": 140,
+      "all_omitted_commutator_components_independently_zero": true,
+      "QQ_exact_empty_chart_count": 12,
+      "QQ_exact_no_noncommutative_solution_chart_count": 9,
+      "nonempty_charts_with_all_165_transition_predicates": 9,
+      "independent_oracle_bound": true,
+      "certificate_set_sha256": "26b29c370433214e002064c063eda3eb3fdabef43093477bead6b73e947bf38e",
+      "proof_rule": "Conditional on Eq.(120), R2,R3,R4 commute on det(Q1)!=0.  The exact d=2 S1/S2/S3 simultaneous-form partition gives 12+9+1 charts.  The 21 S1/S2 QQ certificates close every noncommutative Q1--Q4 branch; S3 commutes identically."
+    }
+  },
+  "certificate_interpretation": {
+    "certificates_total_in_historical_campaign": 42,
+    "certificates_used_for_this_partial_theorem": 21,
+    "used_profile": "strong_GC__reachable_state_MSR",
+    "established_here": "The independently bound source-native Eq.(120) proof, the 21 955-core certificates, and S3 prove Q1--Q4 commutativity on P intersection image(Phi_U).",
+    "other_21_certificates": "They close the separate 721 reduced core arithmetically, but this audit does not assert its source-profile slice inclusion."
+  },
+  "claim_boundary": "The source-to-955 relation-locus inclusion, localisation, and source-native Eq.(120) proof establish the partial commutativity theorem on P intersection image(Phi_U).  No conclusion is obtained on P minus image(Phi_U), and no full-profile theorem is claimed.",
+  "passed": true,
+  "verdict": "PROVED_PARTIAL_SLICE",
+  "semantic_digest_sha256": "2d65ddeefdec9606b6680dce6a6a790fb30ff50dd8d552a01043b022a6c99839"
+}

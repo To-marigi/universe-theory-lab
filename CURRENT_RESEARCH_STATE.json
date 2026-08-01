@@ -1,0 +1,89 @@
+{
+  "schema_version": "cpobc-current-research-state-v1",
+  "updated": "2026-08-01",
+  "mutable_index_not_a_proof_certificate": true,
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "public_baseline": {
+    "version": "v0.3.9",
+    "scope": "finite nonsingular d=2 n<=4 ON_QUOTIENT strong_GC strong_MSR",
+    "status": "COMMUTATIVITY_PROVED_UNAFFECTED"
+  },
+  "on_semantic_profiles": {
+    "strong_GC__strong_MSR": "COMMUTATIVITY_PROVED",
+    "fixed_vector_GC__strong_MSR": "OPEN_PROOF_INTERPRETATION_WITHDRAWN",
+    "strong_GC__reachable_state_MSR": "OPEN_PROOF_INTERPRETATION_WITHDRAWN",
+    "fixed_vector_GC__reachable_state_MSR": "NONCOMMUTATIVE_RATIONAL_WITNESS_CERTIFIED"
+  },
+  "superseded_interpretations": [
+    {
+      "verdict_string": "WEAK_D2_ON_ONE_SIDED_COMMUTATIVITY_PROVED",
+      "current_use": "HISTORICAL_RESTRICTED_LOCUS_MACHINE_OUTPUT_ONLY",
+      "reason": "Eq108 strong-MSR and Eq112 strong-GC dependencies were fixed before relation-family filtering"
+    },
+    {
+      "claim": "AT_LEAST_ONE_STRONG_SIDE_IFF_COMMUTATIVE",
+      "current_use": "WITHDRAWN_BOTH_ONE_SIDED_TRUTH_VALUES_UNRESOLVED"
+    }
+  ],
+  "preserved_results": {
+    "v0.4_weak_weak_witness": "VALID_ON_QUOTIENT_OFF_TRANSFER_PENDING",
+    "v0.4.1_triangular_scout": "VALID_BOUNDED_ANSATZ_ONLY",
+    "v0.4.1_42_QQ_certificates": "VALID_FOR_STRONG_PROFILE_DERIVED_RESTRICTED_LOCI",
+    "v0.4.1_certificate_oracle": "VALID_ARITHMETIC_ORACLE_NOT_SEMANTIC_COVERAGE_ORACLE",
+    "v0.4.1_scope_corrected_driver_oracle": "COMPLETE_RESTRICTED_LOCUS_OUTPUTS_HISTORICAL_BYTES_READ_ONLY",
+    "v0.4.2_reachable_MSR_local_slack": "EXACT_PLUS_48_LOCAL_PARAMETERISATION_GLOBAL_COMPILER_REQUIRED",
+    "v0.4.2_fixed_vector_GC_strong_MSR_escape": "EXACT_EQ112_IMAGE_ESCAPE_CERTIFIED_COMMUTATIVITY_UNDECIDED",
+    "v0.4.2_source_native_Eq120": "PROVED_FROM_SIX_RAW_CPOBC_RELATIONS_AND_NONSINGULARITY",
+    "v0.4.1_955_partial_slice": "PROVED_PARTIAL_SLICE_P_INTERSECT_IMAGE_PHI_ONLY",
+    "v0.4.2_955_source_native_slack_inventory": "STRUCTURED_WORD_MATRIX_INVENTORY_READY_NO_SOLVER_OR_CHART_CLAIM",
+    "v0.4.2_955_N_nonzero_triangular_scout": "EXACT_17_DIMENSIONAL_FAMILY_FORCES_Q_COMMUTATIVITY_GENERAL_PROFILE_OPEN"
+  },
+  "affected_campaign": {
+    "status": "PARTIAL_SLICE_PROVED_STRUCTURED_SLACK_INVENTORY_READY_FIRST_N_NONZERO_SCOUT_CLOSED",
+    "next_gate": "MIXED_UPPER_LOWER_N_NONZERO_EXACT_SCALAR_MANIFEST",
+    "solver_run_permitted": false,
+    "relation_level_minimality": "DEFERRED",
+    "certified_partial_slice": {
+      "verdict": "PROVED_PARTIAL_SLICE",
+      "scope": "strong_GC reachable_state_MSR nonsingular P intersection image(Phi_U)",
+      "semantic_digest_sha256": "2d65ddeefdec9606b6680dce6a6a790fb30ff50dd8d552a01043b022a6c99839",
+      "full_profile_claimed": false
+    }
+  },
+  "approved_default_budget": {
+    "timeout_seconds_per_chart": 3600,
+    "total_wall_time_seconds": 43200,
+    "memory_limit_gib": 8,
+    "versioned_budget_file_required_per_campaign": true
+  },
+  "occurrence_counts": {
+    "ON_quotient_orbits": 131,
+    "reduction_alias_records": 165,
+    "OFF_labelled_source_nodes": 50,
+    "OFF_labelled_transition_occurrences": 406
+  },
+  "authoritative_documents": [
+    "KNOWLEDGE_BASE_v0.4.md",
+    "reports/cpobc_publication_roadmap_v0.4-v0.7.md",
+    "HANDOFF_v0.4.1.md",
+    "reports/v0.4.1_scope_break_decision_packet.md",
+    "reports/v0.4.1_reachable_msr_soundness_audit.md",
+    "reports/v0.4.1_955_partial_slice_inclusion_audit.md",
+    "reports/v0.4.2_955_minimal_deelimination_design.md",
+    "reports/v0.4.2_eq120_source_provenance.md",
+    "reports/v0.4.2_955_source_native_slack_compiler.md",
+    "reports/v0.4.2_955_n_nonzero_scout.md",
+    "reports/v0.4.2_fixed_vector_gc_strong_msr_escape.md"
+  ],
+  "required_resume_tests": [
+    "tests/final_theory/test_v041_reachable_msr_soundness.py",
+    "tests/final_theory/test_v042_source_to_q_lift.py",
+    "tests/final_theory/test_fixed_vector_gc_strong_msr_escape_v042.py",
+    "tests/final_theory/test_strong_gc_reachable_msr_slack_v042.py",
+    "tests/final_theory/test_eq120_source_provenance_v042.py",
+    "tests/final_theory/test_source_native_955_slack_compiler_v042.py",
+    "tests/final_theory/test_source_native_955_n_nonzero_scout_v042.py",
+    "tests/final_theory/test_v041_partial_slice_audit.py"
+  ],
+  "publication_posture": "ASYMMETRIC_STRONG_STRONG_VS_WEAK_WEAK_PLUS_ANY_CERTIFIED_PROFILE_SLICE_UNTIL_ONE_SIDED_REPAIR"
+}
