@@ -97,7 +97,7 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
 
 ### SR3b -- v0.4.2: profile-native ON compiler と one-sided 再判定
 
-- 状態: **owner 承認済み。partial-slice theorem、structured slack inventory、第一 N!=0 scout 完了**
+- 状態: **owner 承認済み。SR3b-A theorem certified、mixed scalar manifest と exact tangent scout 完了、一般955 profileは未解決**
 - triangular scout が候補化した `msr:p1-0`, `msr:p2-0`, `msr:p2-2` は
   source-stage constraint ID であり、既存 source-to-Q lift では三本とも exact zero
   residual になる。したがって `700 + 1 = 701` direct-relation campaign は実行しない。
@@ -114,6 +114,12 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
 - 以上を `R_2`--`R_4` 分割と 21 exact QQ certificates に独立再結合し、
   `P_sGC+rMSR intersect image(Phi_U)` 上の可換性を `PROVED_PARTIAL_SLICE` として
   確定した。一般 one-sided profile、特に `P minus image(Phi_U)` は未解決である。
+- この proper-slice theorem は一般 SR3b の解決を待たず、独立短報
+  **SR3b-A** として固定する。状態は
+  **`THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING / DEPOSIT_NOT_AUTHORIZED`**。
+  scope、構成、図表、付録、公開前 gate は
+  [SR3b-A partial-slice short-report plan](v0.4.2_partial_slice_short_report_plan.md)
+  に固定した。新規性・priority audit 完了前に deposit、投稿、priority claim は行わない。
 - 第二段階: reachable-MSR 側は24 sourceそれぞれに
   `N_c=u_c(Jv_c)^T` を導入する最小 de-elimination（合計+48 scalar）を行い、既に
   閉じた `N=0` slice ではなく `N!=0` を反例探索の主対象にする。
@@ -124,14 +130,27 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   320 strong-GC basis、24 timid definition、48 slack、131 determinant localisation、48
   `N!=0` open patch を保持する。407 path / 87 endpoint fibre が320辺の連結木となり、
   1,529 same-endpoint pair 全体を張ることも独立再計算した。ただし scalar-polynomial
-  manifest と global chart cover は未実装である。
+  manifest そのものではなく、global chart cover も主張しない。
 - Eq. (113) は25/25、Eq. (139) は4/10を分離した validation-only gate として台帳化し、
   Eq. (112) 由来の座標定義を弱意味論へ逆流させない。
 - 第一の exact `N!=0` scout は `A_e=[[p_e,x_[e]],[0,1]]` を調べた。全24
   reachable-MSR と非特異性を満たし、`p1-0` で operator residual の右下成分が1なので
   強 MSR slice 外にある。CPOBC rank 108、CPOBC+strong-GC rank 114/nullity 17だが、
   六 Q commutator は全て rank increment 0 であり、この族に非可換 witness はない。
-  一般結論ではなく、次は mixed upper/lower principal-open patch を exact 化する。
+  一般結論ではない。
+- 次の mixed source-native ansatz
+  `A_e=[[p_e,x_[e]],[y_[e],1]]` は131 orbit上の262変数へexactに展開済みで、verdict は
+  `V042_955_MIXED_SOURCE_NATIVE_SCALAR_MANIFEST_READY_NO_SOLVER_RUN`。783 CPOBC、
+  320 strong-GC basis、24 reachable-state MSR vector residual、165 determinant predicate
+  `p_e-x_[e]y_[e]!=0` を保持し、`p1-0` の定数 residual により ansatz 全体で
+  `N!=0` である。旧21 chart idealsは再利用せず、solver runも行っていない。
+- 同 manifest の対角点における exact QQ tangent scout の verdict は
+  `V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN`。upper blockはrank 114/nullity 17、lower
+  blockはCPOBC+reachable-MSRだけでrank 131となる。後者には108 CPOBC行+23
+  reachable-MSR行のexact QQ pivot certificateがある。lower Jacobianはupper-familyの
+  `x` に依存しないため、全upper-family点を通る局所枝は `y=0` に限られ、その局所枝は
+  可換である。ただし遠隔 `y!=0` 解、131 principal-open patches、full 955 profileは
+  すべて `OPEN` のままである。
 - fixed-vector-GC 側は Eq. (112) で消去した20個の非-antichain generatorを独立に戻す。
 - 721側では exact diagonal escape point が完成し、CPOBC 783/783、inverse 712/712、
   strong MSR 24/24、fixed-vector GC 1,529/1,529 を満たしながら strong GC と
@@ -143,8 +162,9 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   INVALID`。定理の真偽は `UNRESOLVED`。
 - 監査記録:
   [v0.4.2 source-to-direct provenance audit](v0.4.2_source_to_direct_provenance_audit.md)
-- solver campaign は新座標が target source profile の必要領域を被覆することを
-  機械検証してからだけ許可する。
+- 次の探索 gate は131 patchesの総当たりではない。まず対称性/orbit reductionを行い、
+  少数の自然な principal-open patchをexact scoutする。solver campaign は、その結果を
+  profile coverage certificate と版付き budget artifactへ結合した後にだけ許可する。
 
 ### SR3c -- v0.4.3: 406-occurrence OFF semantics
 
@@ -192,7 +212,10 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
 
 補助定理として、raw CPOBC と非特異性だけによる dimension-independent Eq. (120)
 lemma、および strong-GC/reachable-MSR の `P intersect image(Phi_U)` 上の可換性を
-収録できる。後者は一般 one-sided corner の解決として要旨へ格上げしない。
+収録できる。後者は独立短報 **SR3b-A** として
+`THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING /
+DEPOSIT_NOT_AUTHORIZED` に固定したが、一般 one-sided corner の解決として要旨へ
+格上げしない。
 
 JMP への投稿準備開始条件は次の全項目とする。
 
@@ -267,7 +290,7 @@ v0.4.1 ON one-sided profiles       PROOF INTERPRETATION INVALID; BOTH OPEN
           |
 v0.4.2 profile-native compiler and counterexample-first repair
           |
-corrected short report / Paper I scope decision
+SR3b-A certified partial-slice draft + one-sided OPEN residual problem
           |
 parallel: v0.4.3 OFF / v0.4.4 relation minimum / v0.5 n=5
           |
@@ -298,9 +321,12 @@ Paper II assembly and conditional CQG submission decision
 
 ## 8. 現時点の最優先作業
 
-1. v0.4.1 の scope-break correction と owner decision packet を確定する。
-2. owner 承認後、v0.4.2 profile-native ON compiler と assumption ledger を作る。
-3. 二つの one-sided profile を source-native に反例先行で再判定する。
+1. SR3b-A の novelty/priority audit を行い、scope lockを保った原稿を作る。deposit・投稿は
+   fresh owner approvalまで行わない。
+2. mixed 262-variable manifestの131 patchesを総当たりせず、まず symmetry/orbit reductionを
+   作り、少数の自然な principal-open patchをexact scoutする。
+3. coverage certificateと版付きbudget artifactが揃った場合だけsolver campaignを判断し、
+   二つの one-sided profileをsource-nativeに反例先行で再判定する。
 4. 修復完了までは Paper I を strong/strong 対 weak/weak の非対称な短報としてのみ
    構成し、sharp semantic threshold や complete classification を書かない。
 5. 406-occurrence OFF、relation minimality、v0.5 を修復本線から分離する。

@@ -35,20 +35,65 @@
     "v0.4.2_fixed_vector_GC_strong_MSR_escape": "EXACT_EQ112_IMAGE_ESCAPE_CERTIFIED_COMMUTATIVITY_UNDECIDED",
     "v0.4.2_source_native_Eq120": "PROVED_FROM_SIX_RAW_CPOBC_RELATIONS_AND_NONSINGULARITY",
     "v0.4.1_955_partial_slice": "PROVED_PARTIAL_SLICE_P_INTERSECT_IMAGE_PHI_ONLY",
+    "v0.4.2_partial_slice_short_report_SR3b_A": "THEOREM_CERTIFIED_DRAFT_RECOMMENDED_NOVELTY_PRIORITY_AUDIT_PENDING_DEPOSIT_NOT_AUTHORIZED",
     "v0.4.2_955_source_native_slack_inventory": "STRUCTURED_WORD_MATRIX_INVENTORY_READY_NO_SOLVER_OR_CHART_CLAIM",
-    "v0.4.2_955_N_nonzero_triangular_scout": "EXACT_17_DIMENSIONAL_FAMILY_FORCES_Q_COMMUTATIVITY_GENERAL_PROFILE_OPEN"
+    "v0.4.2_955_N_nonzero_triangular_scout": "EXACT_17_DIMENSIONAL_FAMILY_FORCES_Q_COMMUTATIVITY_GENERAL_PROFILE_OPEN",
+    "v0.4.2_955_mixed_source_native_scalar_manifest": "READY_262_VARIABLES_783_320_24_165_DETERMINANTS_N_NONZERO_NO_SOLVER_OLD_21_IDEALS_UNUSED",
+    "v0.4.2_955_mixed_xy_tangent_scout": "NO_WITNESS_OPEN_LOCAL_Y_ZERO_OBSTRUCTION_REMOTE_Y_NONZERO_AND_FULL_PROFILE_OPEN"
   },
   "affected_campaign": {
-    "status": "PARTIAL_SLICE_PROVED_STRUCTURED_SLACK_INVENTORY_READY_FIRST_N_NONZERO_SCOUT_CLOSED",
-    "next_gate": "MIXED_UPPER_LOWER_N_NONZERO_EXACT_SCALAR_MANIFEST",
+    "status": "SR3B_A_THEOREM_CERTIFIED_MIXED_MANIFEST_READY_TANGENT_SCOUT_OPEN",
+    "next_gate": "SYMMETRY_ORBIT_REDUCTION_THEN_SMALL_NATURAL_PRINCIPAL_OPEN_EXACT_SCOUTS",
     "solver_run_permitted": false,
+    "solver_campaign_preconditions": [
+      "SOURCE_PROFILE_COVERAGE_CERTIFICATE",
+      "VERSIONED_BUDGET_ARTIFACT"
+    ],
     "relation_level_minimality": "DEFERRED",
     "certified_partial_slice": {
       "verdict": "PROVED_PARTIAL_SLICE",
       "scope": "strong_GC reachable_state_MSR nonsingular P intersection image(Phi_U)",
       "semantic_digest_sha256": "2d65ddeefdec9606b6680dce6a6a790fb30ff50dd8d552a01043b022a6c99839",
       "full_profile_claimed": false
-    }
+    },
+    "short_report_SR3b_A": {
+      "label": "SR3b-A",
+      "status": "THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING / DEPOSIT_NOT_AUTHORIZED",
+      "plan": "reports/v0.4.2_partial_slice_short_report_plan.md",
+      "general_955_profile_claimed": false
+    },
+    "mixed_source_native_manifest": {
+      "verdict": "V042_955_MIXED_SOURCE_NATIVE_SCALAR_MANIFEST_READY_NO_SOLVER_RUN",
+      "semantic_digest_sha256": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2",
+      "variables": 262,
+      "equation_counts": {
+        "CPOBC": 783,
+        "strong_GC_basis": 320,
+        "reachable_state_MSR_vector": 24
+      },
+      "determinant_predicates": 165,
+      "N_nonzero_uniformly_certified": true,
+      "old_21_chart_ideals_reused": false,
+      "solver_run": false
+    },
+    "mixed_xy_tangent_scout": {
+      "verdict": "V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN",
+      "semantic_digest_sha256": "81e89ab796a6a76d71c85d3b53bd2668df418b05f5d83ffe05b5fc94148fd97f",
+      "upper_rank": 114,
+      "upper_nullity": 17,
+      "lower_CPOBC_plus_reachable_MSR_rank": 131,
+      "exact_QQ_selected_row_certificate": {
+        "CPOBC": 108,
+        "reachable_MSR": 23
+      },
+      "proved_local_scope": "UNIQUE_Y_ZERO_BRANCH_THROUGH_EVERY_UPPER_FAMILY_POINT_AND_Q_COMMUTATIVITY_THERE",
+      "open_scope": [
+        "REMOTE_Y_NONZERO_SOLUTIONS",
+        "131_PRINCIPAL_OPEN_PATCHES",
+        "FULL_955_PROFILE"
+      ]
+    },
+    "next_gate_description": "First perform symmetry/orbit reduction and exact-scout a small set of natural principal-open patches; do not brute-force all 131 patches"
   },
   "approved_default_budget": {
     "timeout_seconds_per_chart": 3600,
@@ -69,10 +114,13 @@
     "reports/v0.4.1_scope_break_decision_packet.md",
     "reports/v0.4.1_reachable_msr_soundness_audit.md",
     "reports/v0.4.1_955_partial_slice_inclusion_audit.md",
+    "reports/v0.4.2_partial_slice_short_report_plan.md",
     "reports/v0.4.2_955_minimal_deelimination_design.md",
     "reports/v0.4.2_eq120_source_provenance.md",
     "reports/v0.4.2_955_source_native_slack_compiler.md",
     "reports/v0.4.2_955_n_nonzero_scout.md",
+    "reports/v0.4.2_955_mixed_source_native_manifest.md",
+    "reports/v0.4.2_955_mixed_xy_tangent_scout.md",
     "reports/v0.4.2_fixed_vector_gc_strong_msr_escape.md"
   ],
   "required_resume_tests": [
@@ -83,6 +131,8 @@
     "tests/final_theory/test_eq120_source_provenance_v042.py",
     "tests/final_theory/test_source_native_955_slack_compiler_v042.py",
     "tests/final_theory/test_source_native_955_n_nonzero_scout_v042.py",
+    "tests/final_theory/test_source_native_955_mixed_manifest_v042.py",
+    "tests/final_theory/test_v042_955_mixed_xy_tangent_scout.py",
     "tests/final_theory/test_v041_partial_slice_audit.py"
   ],
   "publication_posture": "ASYMMETRIC_STRONG_STRONG_VS_WEAK_WEAK_PLUS_ANY_CERTIFIED_PROFILE_SLICE_UNTIL_ONE_SIDED_REPAIR"

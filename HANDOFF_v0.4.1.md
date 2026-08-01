@@ -15,9 +15,9 @@ as the ordering authority and this handoff for exact operational continuation:
 v0.3.9 strong/strong theorem        PUBLIC
 v0.4 weak/weak rational witness     ON RESULT COMPLETE; OFF TRANSFER PENDING
 v0.4.1 one-sided ON profiles        PROOF INTERPRETATION WITHDRAWN; BOTH OPEN
-v0.4.2 profile-native repair        PARTIAL SLICE PROVED; SLACK INVENTORY READY
+v0.4.2 profile-native repair        SR3b-A CERTIFIED; MIXED TANGENT SCOUT OPEN
 OFF 406-occurrence classification   OPEN SEPARATE COMPILER TRACK
-Paper I assembly                    ASYMMETRIC MAIN RESULT + CERTIFIED 955 SLICE
+Paper I assembly                    ASYMMETRIC MAIN RESULT + SR3b-A DRAFT TRACK
 v0.5 genuine source-stage n=5       INDEPENDENT EXTENSION TRACK
 ```
 
@@ -35,6 +35,10 @@ way that bypasses the SR3/SR4 gates.
 - Strong GC plus reachable-state MSR on the proper reconstruction slice
   `P intersect image(Phi_U)`: `PROVED_PARTIAL_SLICE`; this is not closure of
   the general one-sided profile.
+- This proper-slice theorem is the independent short report **SR3b-A**, with
+  locked state `THEOREM_CERTIFIED / DRAFT_RECOMMENDED /
+  NOVELTY_PRIORITY_AUDIT_PENDING / DEPOSIT_NOT_AUTHORIZED`; see
+  `reports/v0.4.2_partial_slice_short_report_plan.md`.
 
 ### Open
 
@@ -137,6 +141,26 @@ semantic digest
 The result covers only `P intersect image(Phi_U)`; the full 955 profile remains
 open on `P minus image(Phi_U)`.
 
+The mixed source-native ansatz `A_e=[[p_e,x_[e]],[y_[e],1]]` is now expanded
+as a 262-variable sparse QQ manifest. Its verdict is
+`V042_955_MIXED_SOURCE_NATIVE_SCALAR_MANIFEST_READY_NO_SOLVER_RUN`, semantic
+digest `13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2`.
+It contains 783 CPOBC, 320 strong-GC-basis, and 24 reachable-state-MSR vector
+equations, plus all 165 determinant predicates. The `p1-0` operator residual
+has a constant lower-right entry one, so the ansatz is uniformly in `N!=0`.
+No solver ran and none of the old 21 chart ideals was reused.
+
+The associated exact tangent scout has verdict
+`V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN`, semantic digest
+`81e89ab796a6a76d71c85d3b53bd2668df418b05f5d83ffe05b5fc94148fd97f`.
+At the diagonal point the upper block has rank 114/nullity 17, while the lower
+CPOBC+reachable-MSR block has rank 131. Its full-rank QQ certificate selects
+108 CPOBC rows and 23 reachable-MSR rows. Because the lower Jacobian is
+independent of the upper-family `x` coordinates, the same obstruction holds
+at every point of that family: its unique local branch has `y=0` and is
+commuting. This is not global closure; remote `y!=0` solutions, the 131
+principal-open patches, and the full 955 profile remain open.
+
 ## 4. Critical occurrence-semantics correction
 
 Never describe the 165 entries of the v0.3.2 reduction map as 165 independent
@@ -189,19 +213,23 @@ It recomputes 407 paths/87 endpoint trees/1,529 path pairs, and keeps Eq. (113)
 25/25 and Eq. (139) 4/10 as separated fail-closed validation ledgers. It is not
 an expanded scalar-polynomial solver manifest.
 
-1. The first exact `N!=0` family is closed negatively: the 131-variable
-   upper-triangular system has rank 114/nullity 17 and forces all six Q
-   commutators to zero. Do not rerun this family.
-2. Expand mixed upper/lower `N!=0` patches into exact scalar-polynomial/localisation
-   manifests. Use the 131-orbit/165-alias compiler as the assumption-ledger and
-   coverage verifier, not as the default Gröbner coordinate system.
-3. Require direct separated validation of both Eq. (113) branches and both
+1. The first exact `N!=0` upper-triangular family is closed negatively, and the
+   262-variable mixed scalar manifest is complete. Do not rerun the upper
+   family or rebuild the manifest from the old 21 ideals.
+2. The exact mixed tangent scout closes the local branch through every point
+   of the 17-dimensional upper family, but its verdict remains `OPEN`. Do not
+   report it as a full-profile no-go.
+3. Do **not** brute-force all 131 `y_[e]!=0` principal patches. First construct
+   a symmetry/orbit reduction and exact-scout a small set of natural
+   principal-open patches. Permit a solver campaign only after its source
+   coverage certificate and versioned budget artifact are available.
+4. Require direct separated validation of both Eq. (113) branches and both
    Eq. (139) domains for every proposed witness.
-4. Restore the 20 Eq. (112)-eliminated generators for the fixed-vector-GC
+5. Restore the 20 Eq. (112)-eliminated generators for the fixed-vector-GC
    side. Use the certified diagonal 721 escape point as a regression fixture;
    it passes CPOBC 783/783, inverse 712/712, strong MSR 24/24, fixed-vector GC
    1,529/1,529, but violates strong GC and Eq. (112).
-5. Keep OFF, relation minimality, and v0.5 as separate downstream tracks.
+6. Keep OFF, relation minimality, and v0.5 as separate downstream tracks.
 
 The initial v0.4.2 fail-closed namespace audit is reproducible via
 `REPRODUCING_v0.4.2.md` and has semantic digest
@@ -220,9 +248,20 @@ alternatives, estimated repair cost, and a recommended decision.
 
 ## 8. Reproduction and validation
 
-See `REPRODUCING_v0.4.1.md`.
+See `REPRODUCING_v0.4.1.md` and `REPRODUCING_v0.4.2.md`. The current mixed
+milestone is guarded by:
 
-The current measured validation is:
+```powershell
+uv run pytest -q tests/final_theory/test_source_native_955_mixed_manifest_v042.py
+uv run pytest -q tests/final_theory/test_v042_955_mixed_xy_tangent_scout.py
+```
+
+Expected focused results are `5 passed` and `7 passed`, respectively. The
+tests regenerate the stored exact payloads and preserve the `NO_SOLVER_RUN`
+and `NO_WITNESS_OPEN` boundaries.
+
+The earlier broader validation snapshot (before the mixed-manifest/tangent
+milestone above) was:
 
 ```text
 v0.4--v0.4.2 targeted tests                     80 passed
@@ -262,8 +301,8 @@ Before continuing this track:
 3. run the two focused semantic guards:
    `test_v041_reachable_msr_soundness.py` and
    `test_v042_source_to_q_lift.py`;
-4. require an assumption ledger and source-profile coverage certificate before
-   any new solver manifest is accepted;
+4. require an assumption ledger, source-profile coverage certificate, and
+   versioned budget artifact before any solver campaign is accepted;
 5. preserve the v0.4.1 certificates as restricted-locus evidence rather than
    rewriting their historical verdict strings.
 6. run both semantic escape guards:
@@ -277,3 +316,10 @@ Before continuing this track:
    verdict.
 9. run `test_source_native_955_n_nonzero_scout_v042.py`; its `OPEN` verdict
    excludes only the declared exact upper-triangular family.
+10. run `test_source_native_955_mixed_manifest_v042.py`; require the exact
+    262-variable 783/320/24 manifest and 165 determinant predicates, while
+    preserving `NO_SOLVER_RUN` and the prohibition on old 21-ideal reuse.
+11. run `test_v042_955_mixed_xy_tangent_scout.py`; require upper rank/nullity
+    114/17 and the lower 108+23 QQ rank-131 certificate, while preserving the
+    explicit OPEN boundary for remote `y!=0`, 131 principal patches, and the
+    full 955 profile.

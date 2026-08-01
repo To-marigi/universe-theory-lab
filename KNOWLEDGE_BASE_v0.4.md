@@ -62,8 +62,11 @@ machine-certified `PROVED_PARTIAL_SLICE` result, not a full-profile theorem.
 | `reports/v0.4.2_955_minimal_deelimination_design.md` | exact local parameterisation plus provenance audit | `N_c=u_c(Jv_c)^T` is exhaustive and adds 48 scalars; a global source-native compiler is still required |
 | `results/v0.4.2_eq120_source_provenance.json` | exact source-native free-word certificate | six raw CPOBC relations plus source nonsingularity prove the three `k=1` Eq. (120) identities; no MSR, GC, Eq. (108), or Eq. (112) is used |
 | `results/v0.4.1_partial_slice_audit.json` | independently rebound source-to-chart proof | certifies Q commutativity on `P_sGC+rMSR intersect image(Phi_U)` using 21 of the 42 historical QQ certificates |
+| `reports/v0.4.2_partial_slice_short_report_plan.md` | SR3b-A scope/publication lock | `THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING / DEPOSIT_NOT_AUTHORIZED`; the proper-slice theorem is draftable independently but is not the full 955 theorem |
 | `results/v0.4.2_955_source_native_slack_compiler.json` | structured source word/matrix-block inventory | covers 165 occurrences/131 orbits, 48 slack coordinates, and independently proves the 320-edge strong-GC basis spans all 1,529 path pairs; no scalar solver manifest or chart theorem yet |
 | `results/v0.4.2_955_n_nonzero_scout.json` | exact QQ-linear source-native scout | the entire nonsingular `A_e=[[p_e,x_e],[0,1]]` family lies in `N!=0`, but all six Q commutators are forced zero; general mixed nonlinear patches remain open |
+| `results/v0.4.2_955_mixed_source_native_manifest.json` | exact sparse QQ scalar manifest, no solver run | `V042_955_MIXED_SOURCE_NATIVE_SCALAR_MANIFEST_READY_NO_SOLVER_RUN`; 262 variables, 783 CPOBC + 320 strong-GC + 24 reachable-MSR vector equations, 165 determinant predicates, uniform `N!=0`; old 21 chart ideals are unused |
+| `results/v0.4.2_955_mixed_xy_tangent_scout.json` | exact QQ tangent/pivot certificate | `V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN`; upper rank 114/nullity 17 and lower CPOBC+reachable-MSR rank 131, but only the local branch through the upper family is closed; remote `y!=0` solutions remain open |
 | `results/v0.4.2_source_to_direct_audit.json` | valid initial namespace audit | records that three source IDs are not direct relation IDs; superseded on the reason by the zero-lift audit |
 | `reports/v0.4.2_source_to_q_lift_design.md` | exact word-algebra audit | the three candidates have unique zero Q residuals; no 701-relation campaign exists |
 
@@ -191,9 +194,26 @@ remains frozen until the semantic gates below pass. Current progress is:
 5. **first `N != 0` scout complete:** in the exact 131-variable upper-triangular
    family, CPOBC has rank 108 and CPOBC+strong GC rank 114/nullity 17; the
    `p1-0` operator-MSR residual has permanent lower-right entry one, yet all
-   six Q commutators are forced zero. Mixed upper/lower nonlinear patches are
-   still open and are the next scalar-manifest target;
-6. restore the 20 Eq. (112)-eliminated gregarious generators separately for
+   six Q commutators are forced zero;
+6. **mixed scalar manifest complete, no solver:** the 131-orbit ansatz
+   `A_e=[[p_e,x_e],[y_e,1]]` has 262 variables and expands 783 CPOBC, 320
+   strong-GC basis, and 24 reachable-MSR vector equations with all 165
+   determinant predicates. Its verdict is
+   `V042_955_MIXED_SOURCE_NATIVE_SCALAR_MANIFEST_READY_NO_SOLVER_RUN`; it is
+   uniformly in `N!=0`, does not reuse the old 21 ideals, and is not a chart
+   cover, witness, or commutativity proof;
+7. **exact mixed tangent scout complete, full problem open:** upper rank is
+   114/nullity 17. The lower CPOBC+reachable-MSR block has rank 131, certified
+   over QQ by 108 selected CPOBC rows plus 23 selected reachable-MSR rows. The
+   same lower obstruction holds at every upper-family point, so the unique
+   local branch there is `y=0` and is commuting. The verdict remains
+   `V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN`: remote `y!=0` solutions, all 131
+   principal-open patches, and the full 955 profile remain open;
+8. **next gate:** do not brute-force all 131 patches. First derive a
+   symmetry/orbit reduction and exact-scout a small set of natural
+   principal-open patches. A solver campaign is permitted only after a source
+   coverage certificate and a versioned budget artifact are bound;
+9. restore the 20 Eq. (112)-eliminated gregarious generators separately for
    the fixed-vector-GC side; the new exact escape fixture is its regression
    guard.
 
@@ -229,6 +249,14 @@ general one-sided corners must remain explicitly open, and the slice must not
 be advertised as their solution. Do not use “sharp semantic threshold” or
 “complete finite ON classification” in a title, abstract, or conclusion.
 
+The reconstruction-slice proposition is now the independent short report
+**SR3b-A**. Its locked state is
+`THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING /
+DEPOSIT_NOT_AUTHORIZED`; see
+`reports/v0.4.2_partial_slice_short_report_plan.md`. Drafting is recommended,
+but novelty/priority audit and fresh owner approval precede any deposit or
+submission.
+
 ## 11. Decision log and work not to repeat
 
 - v0.3.9 is the immutable public strong/strong baseline.
@@ -260,6 +288,19 @@ be advertised as their solution. Do not use “sharp semantic threshold” or
   general no-go theorem. Three mixed local-`SL_2` numerical attempts retained
   CPOBC residuals near `10^-1` and are invalid scouts, so do not seed exact
   certification from those points.
+- The exact 262-variable mixed source-native manifest is now available with
+  783/320/24 profile blocks and 165 determinant predicates. It guarantees
+  `N!=0`, invokes no solver, and deliberately does not reuse the historical 21
+  chart ideals.
+- The exact mixed tangent scout closes only the formal/local neighbourhood of
+  the 17-dimensional upper family: the upper rank/nullity is 114/17 and the
+  lower CPOBC+reachable-MSR rank is 131, with a 108+23 exact QQ row
+  certificate. Do not promote this to a global no-go; remote `y!=0` solutions,
+  131 principal-open patches, and the full 955 profile remain open.
+- Do not launch a 131-patch exhaustive campaign next. First quotient patches
+  by symmetry/orbits and run exact scouts on a small natural principal-open
+  set. Heavy solving remains frozen until coverage and versioned budget
+  artifacts exist.
 - The 721-side source profile now has an exact Eq. (112)-image escape point.
   It validates the scope withdrawal but does not decide commutativity because
   its four Q matrices are diagonal.

@@ -1,4 +1,4 @@
-# Reproducing the v0.4.2 source-to-direct provenance audit
+# Reproducing the v0.4.2 profile-native audits and exact scouts
 
 The v0.4.2 namespace artifact is a fail-closed static audit.  A subsequent
 exact lift audit found the stronger explanation: all three source candidates
@@ -146,3 +146,81 @@ adding the 320 strong-GC basis rows gives rank 114/nullity 17. Every Q
 commutator has augmented rank 114 and is therefore forced zero in this family.
 The verdict remains `OPEN` because mixed upper/lower nonlinear patches are not
 classified.
+
+## SR3b-A partial-slice short report
+
+The certified proper-slice theorem is now tracked as independent short report
+**SR3b-A**. Its locked state is:
+
+```text
+THEOREM_CERTIFIED / DRAFT_RECOMMENDED / NOVELTY_PRIORITY_AUDIT_PENDING / DEPOSIT_NOT_AUTHORIZED
+```
+
+See `reports/v0.4.2_partial_slice_short_report_plan.md` for the theorem scope,
+paper structure, evidence map, novelty/priority gate, and explicit nonclaims.
+The theorem remains only
+`P_sGC+rMSR intersect image(Phi_U) => [Q_i,Q_j]=0`; neither the full 955
+profile nor `P minus image(Phi_U)` is closed.
+
+## Mixed source-native 955 scalar manifest
+
+The checked-in sparse QQ manifest is regenerated in memory and compared byte
+for semantic content by:
+
+```powershell
+uv run python -m universe_lab.final_theory.source_native_955_mixed_manifest_v042
+uv run pytest -q tests/final_theory/test_source_native_955_mixed_manifest_v042.py
+```
+
+Expected result:
+
+```text
+V042_955_MIXED_SOURCE_NATIVE_SCALAR_MANIFEST_READY_NO_SOLVER_RUN
+semantic digest 13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2
+5 passed
+```
+
+The ansatz `A_e=[[p_e,x_[e]],[y_[e],1]]` has 262 variables over 131 ON
+orbits. The manifest expands 783 CPOBC, 320 strong-GC-basis, and 24
+reachable-state-MSR vector residuals, and records all 165 occurrence
+determinants `p_e-x_[e]y_[e]` (131 distinct factors). Its observed term census
+is 23,166. A constant lower-right entry at source `p1-0` proves `N!=0`
+throughout the ansatz. The old 21 chart ideals are not reused. This is a
+manifest only: no solver or Sage process ran, and it is not a witness, chart
+cover, or commutativity proof.
+
+## Exact mixed x/y tangent scout
+
+```powershell
+uv run python -m universe_lab.final_theory.mixed_xy_nonneutral_scout_v042
+uv run pytest -q tests/final_theory/test_v042_955_mixed_xy_tangent_scout.py
+```
+
+Expected result:
+
+```text
+V042_955_MIXED_XY_SCOUT_NO_WITNESS_OPEN
+semantic digest 81e89ab796a6a76d71c85d3b53bd2668df418b05f5d83ffe05b5fc94148fd97f
+7 passed
+```
+
+At the diagonal point, the upper block has exact rank 114 and nullity 17. The
+lower CPOBC plus reachable-MSR block has rank 131. The stored QQ pivot
+certificate selects 108 CPOBC rows and 23 reachable-MSR rows and pivots all
+131 `y` columns. The lower Jacobian is independent of the upper-family `x`
+coordinates, so the same rank-131 obstruction holds at every point of that
+family: the unique formal/local branch through it is `y=0`, and that branch is
+the commuting upper family.
+
+The result is deliberately `OPEN`: it does not exclude remote or disconnected
+solutions with `y!=0`, does not cover the 131 principal-open patches, and does
+not prove commutativity for the full 955 profile. No finite-field, numerical,
+Sage, Gröbner, or saturation run was performed.
+
+## Next exact gate
+
+Do not launch an exhaustive 131-patch campaign. First construct a
+symmetry/orbit reduction and exact-scout a small set of natural principal-open
+patches. A solver campaign is allowed only after the reduced patch family is
+bound to a source-profile coverage certificate and a versioned budget
+artifact.
