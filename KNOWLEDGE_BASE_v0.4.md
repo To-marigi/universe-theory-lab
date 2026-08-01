@@ -12,18 +12,20 @@ later scope audit supersedes their interpretation.
 
 1. `reports/cpobc_publication_roadmap_v0.4-v0.7.md` — research and publication
    order.
-2. This knowledge base — current scientific state, terminology, and proof
+2. `reports/v0.4.2_post_literature_strategy_review.md` — post-audit scientific
+   focus, Paper I theorem stack, observability track, and revised gates.
+3. This knowledge base — current scientific state, terminology, and proof
    rules.
-3. `CURRENT_RESEARCH_STATE.json` — compact mutable index for tools and future
+4. `CURRENT_RESEARCH_STATE.json` — compact mutable index for tools and future
    agents; it is not a proof certificate.
-4. `HANDOFF_v0.4.1.md` — exact operational state, commands, hashes, and next
+5. `HANDOFF_v0.4.1.md` — exact operational state, commands, hashes, and next
    gates.
-5. `reports/v0.4.1_scope_break_decision_packet.md` — current owner decision.
-6. `reports/v0.4.2_prior_art_and_related_work_audit.md` — current novelty,
+6. `reports/v0.4.1_scope_break_decision_packet.md` — scope-break owner decision.
+7. `reports/v0.4.2_prior_art_and_related_work_audit.md` — current novelty,
    priority, related-work, and mathematical-commutativity claim boundaries.
-7. `reports/cpobc_backup_policy_2026-08-01.md` — Git/NAS responsibility split,
+8. `reports/cpobc_backup_policy_2026-08-01.md` — Git/NAS responsibility split,
    cold-backup rule, and the current non-Git artifact snapshot checksum.
-8. Versioned reports and machine artifacts — evidence within their declared
+9. Versioned reports and machine artifacts — evidence within their declared
    scope. A later scope addendum controls interpretation but does not rewrite
    old bytes.
 
@@ -45,6 +47,12 @@ occurrence identification `ON_QUOTIENT` unless stated otherwise.
 The sharp “at least one strong side” threshold is not a theorem. Both
 one-sided truth values are unresolved. `FINAL_THEORY_OPEN` remains the global
 status.
+
+The weak/weak witness is algebraically noncommutative but has reachable-span
+rank one, and every certified `Q` commutator kills that reachable ray. It is an
+exact logical separation, not yet reachable-visible noncommutativity. The new
+SR2-V track records operator noncommutativity, reachable rank, and action on a
+stage/source-compatible reachable-state domain as separate predicates.
 
 A proper sublocus of the strong-GC/reachable-state-MSR corner is nevertheless
 closed: on the nonsingular source reconstruction slice
@@ -74,6 +82,7 @@ semantic-profile row and not a change to SR3b-A.
 | `results/v0.4.1_partial_slice_audit.json` | independently rebound source-to-chart proof | certifies Q commutativity on `P_sGC+rMSR intersect image(Phi_U)` using 21 of the 42 historical QQ certificates |
 | `reports/v0.4.2_partial_slice_short_report_plan.md` | SR3b-A scope/publication lock | `THEOREM_CERTIFIED / SHORT_REPORT_SLOT_CONFIRMED / PRIOR_ART_AUDIT_COMPLETE / DISTINCT_TECHNICAL_CONTRIBUTION_IDENTIFIED / DRAFT_RECOMMENDED / DEPOSIT_NOT_AUTHORIZED`; the proper-slice theorem is draftable independently but is not the full 955 theorem |
 | `reports/v0.4.2_prior_art_and_related_work_audit.md` | completed novelty/priority and related-work audit | no same claim found for SR2 or SR3b-A in the bounded search; Xu arXiv:2607.26672v1 is more general on the self-adjoint slice and forbids broad rigidity/priority wording; full one-sided profiles remain open |
+| `reports/v0.4.2_post_literature_strategy_review.md` | current research-direction authority after the audit | refocuses Paper I on statewise observability, exact separation, and minimal recovery; adds SR2-V; makes full one-sided closure and `n=5` upgrades rather than scoped-manuscript gates |
 | `references/notes/v0.4.2_prior_art_related_work_2026-08-01.md` | theorem/page-level literature and mathematical-tool ledger | records direct-source semantics, Xu overlap, triangularisation/common-eigenvector/Burnside/cyclic-separating/LLD tools, 66-PDF local/NAS preservation, and exact claim boundaries |
 | `results/v0.4.2_955_source_native_slack_compiler.json` | structured source word/matrix-block inventory | covers 165 occurrences/131 orbits, 48 slack coordinates, and independently proves the 320-edge strong-GC basis spans all 1,529 path pairs; no scalar solver manifest or chart theorem yet |
 | `results/v0.4.2_955_n_nonzero_scout.json` | exact QQ-linear source-native scout | the entire nonsingular `A_e=[[p_e,x_e],[0,1]]` family lies in `N!=0`, but all six Q commutators are forced zero; general mixed nonlinear patches remain open |
@@ -109,8 +118,10 @@ verdict.
   former for pairs over the appropriate field but does not imply commutativity.
 - The minimal promotion from `D Omega=0` is separation by `Omega` on the
   profile-specific residual space, i.e. injectivity of `D -> D Omega`; cyclicity
-  alone is insufficient. Two independent reachable vectors killed by the same
-  `2 by 2` MSR residual recover strong MSR sourcewise.
+  alone is insufficient. Two independent probe vectors killed by the same
+  `2 by 2` MSR residual recover strong MSR sourcewise. Ordinary single-`Omega`
+  GC supplies only one state at each source, so a global rank-two reachable set
+  does not by itself provide this sourcewise multi-probe condition.
 - The centralizer of a non-scalar `A in M_2(F)` is `F[I,A]`. Showing all
   `Q_i` commute with one certified non-scalar `Q_k` is a valid compact endpoint
   for pairwise commutativity.
@@ -122,6 +133,30 @@ verdict.
   or extract there. Expensive Git-ignored outputs are stored as immutable
   compressed snapshots, currently the 512-entry archive recorded in
   `reports/cpobc_backup_policy_2026-08-01.md`.
+
+### 3.2 Post-literature strategic facts
+
+- Paper I is now organized around statewise-versus-operator observability,
+  exact semantic separation, and minimal recovery—not a broad historical
+  `d=2` rigidity claim.
+- SR2-V is the first new research track. Its three terminal states are
+  `REACHABLE_VISIBLE_NONCOMMUTATIVE_WITNESS_CERTIFIED`,
+  `REACHABLE_VISIBLE_NONCOMMUTATIVITY_OBSTRUCTED`, and
+  `REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT`.
+- The strong SR2-V quality target requires both exact reachable-span rank two
+  and nonzero commutator action on a declared stage/source-compatible reachable
+  state. These are separate conditions; neither is silently inferred from
+  operator noncommutativity.
+- SR3b-M must distinguish ordinary reachability from multiple preparations or
+  probes applied to the same residual. The latter is a conditional recovery
+  theorem, not an automatic consequence of the base single-state semantics.
+- The next heavy profile is 955 because it lies in the non-self-adjoint,
+  state-only boundary left open by Xu and already has the strongest native
+  compiler/certificate assets. The 721 compiler follows 955 or becomes the
+  fallback if 955 reaches its budget terminal.
+- SR3b-A remains a confirmed scoped short report, but SR2-V and SR3b-M have
+  higher conceptual priority. Full 955/721 closure and `n=5` are upgrades, not
+  mandatory gates for drafting a carefully scoped Paper I.
 
 ## 4. The central methodological lesson
 
@@ -299,13 +334,23 @@ owner decision.
 
 ## 10. Publication posture
 
-Until both one-sided profiles are repaired, Paper I may use the asymmetric
-main result—strong/strong commutativity versus the weak/weak exact
-noncommutative witness—together with the dimension-independent source-native
-Eq. (120) lemma and the certified 955 reconstruction-slice proposition. Both
-general one-sided corners must remain explicitly open, and the slice must not
-be advertised as their solution. Do not use “sharp semantic threshold” or
-“complete finite ON classification” in a title, abstract, or conclusion.
+Paper I is now scoped as a statewise-versus-operator observability and recovery
+paper. Its established asymmetric core is strong/strong commutativity versus
+the weak/weak exact noncommutative witness, together with the
+dimension-independent source-native Eq. (120) lemma and the certified 955
+reconstruction-slice proposition. SR2-V must disclose that the current witness
+has reachable rank one and off-reachable-sector commutators, while SR3b-M must
+state the exact residual-separation and multi-probe recovery conditions. Both
+general one-sided corners remain explicitly open unless later closed, and the
+slice must not be advertised as their solution. Do not use “sharp semantic
+threshold” or “complete finite ON classification” in a title, abstract, or
+conclusion.
+
+A bounded SR2-V campaign must reach witness, obstruction, or resource-limit
+terminal before manuscript freeze, but neither full one-sided closure nor
+`n=5` is an absolute gate for a scoped draft. If only the present rank-one
+witness survives, the target-journal decision is reassessed from the completed
+manuscript rather than strengthened by wording.
 
 The reconstruction-slice proposition is now the independent short report
 **SR3b-A**. Its locked state is
@@ -387,9 +432,12 @@ the SR3b-A theorem, title, or deposit status.
 - The standard 3,600 s/chart, 43,200 s total, 8 GiB budget is approved for
   future versioned campaigns. Broader research expansion is authorised when
   exact evidence reveals a stronger result or natural extension.
-- The owner approved the revised repair order: code scope fix, certified
-  `P intersect image(Phi)` partial slice, +48-variable slack extension, then
-  the 131-orbit coverage verifier. Sage remains frozen during these gates.
+- The earlier repair order—code scope fix, certified `P intersect image(Phi)`
+  partial slice, +48-variable slack extension, then the 131-orbit coverage
+  verifier—completed its first three milestones. The current next-work order is
+  superseded by `reports/v0.4.2_post_literature_strategy_review.md`: SR2-V and
+  SR3b-M first, then symmetry-reduced 955 work, then 721. Heavy solving remains
+  frozen until profile coverage and versioned budget gates pass.
 
 Before repeating external research, search `references/sources.json`,
 `references/manifest.json`, `references/text/`, and `references/notes/`.

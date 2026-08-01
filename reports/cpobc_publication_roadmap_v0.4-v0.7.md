@@ -9,6 +9,12 @@ or resuming any SR3--SR6 implementation. Tools should also read the compact
 mutable index [`CURRENT_RESEARCH_STATE.json`](../CURRENT_RESEARCH_STATE.json);
 it is navigation metadata, not a proof certificate.
 
+The post-literature strategic authority is
+[`v0.4.2_post_literature_strategy_review.md`](v0.4.2_post_literature_strategy_review.md).
+It supersedes the earlier ordering where the two one-sided profiles and `n=5`
+were treated as mandatory Paper I gates; it does not supersede any certified
+theorem, scope correction, or frozen artifact.
+
 ## 1. 出版方針の決定
 
 個々の計算結果を独立した査読論文として細分化せず、まず版付きの短報として
@@ -16,9 +22,11 @@ it is navigation metadata, not a proof certificate.
 
 1. **第一論文（数学的中核）**
    - 第一目標誌: *Journal of Mathematical Physics*（JMP）
-   - 主題: 有限 CPOBC において、作用素意味論の強さが `d=2` の可換性を
-     どこまで決定するか
-   - 必要短報: SR1--SR4
+   - 主題: 有限 CPOBC において、状態上の GC/MSR がどの作用素関係を観測・分離し、
+     どの追加条件で `d=2` の作用素恒等式と可換性を回復するか
+   - 必要成果: SR1、SR2、SR2-V observability audit、SR3b-M、SR3b-A。
+     full SR3 と SR4 は classification/robustness upgrade であり、scoped manuscript の
+     絶対 gate にはしない。
 2. **第二論文（次元境界と無限系への橋）**
    - 条件付き第一目標誌: *Classical and Quantum Gravity*（CQG）
    - 主題: `d=3` の次元閾値と、有限段階の結果を無限 CPOBC へ移す
@@ -63,6 +71,22 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   bibliographic absence の絶対主張は行わない。
 - 限界: 現反例の reachable subspace は一次元であり、非可換性は初期状態から
   到達する ray 上では観測されない。この点を物理的非可換性として誇張しない。
+
+### SR2-V -- v0.4-V: reachable observability strengthening
+
+- 状態: **文献調査後に新規登録。exact audit と counterexample-first search は未実装**
+- 現 SR2 witness を `operator_noncommutative=true`, `reachable_span_rank=1`,
+  `reachable_visible=false` と machine-readable に固定する。
+- 将来の witness では reachable-span rank と、stage/source-compatible reachable state 上の
+  `[Q_i,Q_j]` の作用を別々に検証する。
+- 第一目標は、rank two かつ reachable-visible な exact rational weak/weak witness。
+  見つからない場合は、完全被覆を持つ exact obstruction のみを一般 no-go と呼ぶ。
+- 終端判定:
+  - `REACHABLE_VISIBLE_NONCOMMUTATIVE_WITNESS_CERTIFIED`
+  - `REACHABLE_VISIBLE_NONCOMMUTATIVITY_OBSTRUCTED`
+  - `REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT`
+- 強い witness または一般 obstruction が得られた場合だけ独立短報候補に昇格する。
+  単なる audit または bounded no-go は SR2/Paper I の補助moduleとする。
 
 ### SR3a -- v0.4.1: ON 片側強化プロファイルと最小回復条件
 
@@ -195,19 +219,23 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
   certificate と版付き budget artifactへ結合した後にだけ許可する。
 - 数学文献監査から、scout前に common-invariant-line/simultaneous-triangularisable branch
   と irreducible branch を exact に分離する。`det[A,B]=0` は可換性ではなく前者の判定に
-  使う。residual family 上の `D -> D Omega` injectivity、sourcewise reachable rank two、
+  使う。residual family 上の `D -> D Omega` injectivity、同一 residual に対する
+  sourcewise multi-probe rank two、
   一つの non-scalar `Q_k` の centralizer `F[I,Q_k]` を最小回復条件・証明終点候補として
   compiler/test planへ追加する。
 
 #### SR3b-M -- minimal semantic recovery lemma module
 
 - 状態: **新規にロードマップ登録。軽量な数学補題track、独立短報にはしない**
-- reachable-state MSR residual が同一 source の二つの独立 reachable vectors を消すなら
-  `d=2` で strong MSR が回復することを sourcewise theorem として形式化する。
+- reachable-state MSR residual が同一 source の二つの独立 probe vectors を消すなら
+  `d=2` で strong MSR が回復することを multi-probe sourcewise theorem として形式化する。
 - fixed-vector equality は full transition algebra ではなく profile-specific residual space
   `R` に対する evaluation `D -> D Omega` の injectivity が必要十分であることを証明する。
 - cyclicityだけでは不十分、`C^2` 上で full `M_2` separating vector は存在しない、という
   nonclaim/counterexampleを併記する。
+- single-`Omega` GC は各 source に一つの state しか与えないため、異なる source を通じた
+  global reachable rank two だけでは各 source residual の strong identity は従わないことを
+  明記する。通常の reachability と multi-preparation recovery を混同しない。
 - この module を SR3b の「最小追加仮定」回答に使い、full one-sided commutativityが未解決でも
   条件付き recovery theorem として Paper I に収録可能にする。
 
@@ -230,7 +258,7 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
 
 ### SR4 -- v0.5: genuine source-stage `n=5` と `Q_6`-free 安定性
 
-- 状態: **Paper I の ON theorem draft と並行可能な独立 extension track**
+- 状態: **Paper I の scoped draft を妨げない downstream robustness track**
 - 主要課題:
   - 真正な source-stage `n=5` 関係を生成する。
   - Eq. (113) の literal/derived 分岐を統合しない。
@@ -239,14 +267,15 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
     見かけの効果でないことを証明する。
   - strong/weak の主要結論が `n<=4` の打切りに固有か、`n=5` でも安定かを
     厳密に判定する。
-- 第一論文での役割: 有限カットオフ依存という最も自然な査読上の疑義を処理する。
+- 第一論文での役割: 得られれば有限カットオフ依存への強い回答になるが、SR2-V と
+  SR3b-M より後に置き、scoped Paper I の投稿準備 gate にはしない。
 
 ## 3. 第一論文の投稿ゲート
 
-仮題:
+文献調査後の仮題:
 
-> *Semantic rigidity and noncommutative representations of finite quantum
-> sequential growth in dimension two*
+> *Statewise versus operator Bell causality in finite quantum sequential
+> growth: exact separation and recovery at dimension two*
 
 当初の中心命題は scope audit により未証明へ戻った。sharp threshold を中心命題に
 戻すには SR3b の再判定が必要である。当面の sound な対比は次である。
@@ -266,12 +295,17 @@ DEPOSIT_NOT_AUTHORIZED` に固定したが、一般 one-sided corner の解決�
 
 Paper I は Xu, arXiv:2607.26672v1 の self-adjoint/triangular rigidity と仮定を明示的に
 比較する。元論文・2024講演資料に既にある strong operator formulation を project の
-導入として売らず、arbitrary non-self-adjoint finite `GL_2` certificates と弱意味論の
-exact separation を中心に置く。
+導入として売らず、arbitrary non-self-adjoint finite `GL_2` certificates、弱意味論の
+exact separation、statewise equality の observability と minimal recovery を中心に置く。
 
 JMP への投稿準備開始条件は次の全項目とする。
 
 - SR1 と SR2 の theorem/witness を一つの定義体系で記述できる。
+- SR2-V audit が現 witness の reachable rank one と全 commutator の off-ray 性を exact に
+  固定し、manuscript freeze 前に承認予算内の visible-witness/obstruction campaign が
+  三終端のいずれかへ到達している。
+- SR3b-M が residual-family injectivity、single-source multi-probe rank two、cyclicity の
+  非十分性、および centralizer endpoint を profile assumptions と結合している。
 - sharp classification を掲げる場合、SR3b で二つの ON 片側プロファイルが
   profile-native に解決されている。未解決のままなら完全分類とは書かない。
 - OFF=406、relation-level minimality、`n=5` が本文で未解決 extension として明確に
@@ -338,19 +372,19 @@ v0.3.9 strong/strong theorem       DONE
           |
 v0.4 weak/weak rational witness    RESULT COMPLETE
           |
-v0.4.1 ON one-sided profiles       PROOF INTERPRETATION INVALID; BOTH OPEN
+post-literature refocus             STATEWISE OBSERVABILITY / RECOVERY
           |
-v0.4.2 profile-native compiler and counterexample-first repair
+SR2-V exact audit + SR3b-M lemmas   NEW FIRST PRIORITY
           |
-SR3b-A certified partial-slice draft + one-sided OPEN residual problem
+reachable-visible witness or exact obstruction campaign
           |
-parallel: v0.4.3 OFF / v0.4.4 relation minimum / v0.5 n=5
+955 non-self-adjoint state-only repair, then 721 repair
           |
-Paper I assembly and JMP submission decision
+Paper I scoped assembly and submission-strength review
           |
-v0.6 d=3 threshold
+parallel writing: SR3b-A scoped technical draft
           |
-v0.7 finite-to-infinite theorem/obstruction
+downstream: OFF / relation minimum / n=5 / d=3 / finite-to-infinite
           |
 Paper II assembly and conditional CQG submission decision
 ```
@@ -373,18 +407,22 @@ Paper II assembly and conditional CQG submission decision
 
 ## 8. 現時点の最優先作業
 
-1. 完了済み prior-art audit の Xu 比較と数学的可換性 tool ledger を Paper I/SR3b-A
-   outlineへ反映する。SR1 と Xu の仮定包含を短い reconciliation subsection に固定し、
-   scope lockを保った原稿を作る。deposit・投稿はfresh owner approvalまで行わない。
-2. pure-lower bounded no-goをSR3b補助定理として保持し、SR3b-Aへ混入させない。残る
-   `x!=0,y!=0` mixed componentsの131 patchesを総当たりせず、まずsymmetry/orbit
-   reductionを作り、少数の自然なprincipal-open patchをexact scoutする。
-3. coverage certificateと版付きbudget artifactが揃った場合だけsolver campaignを判断し、
-   二つの one-sided profileをsource-nativeに反例先行で再判定する。
-4. 修復完了までは Paper I を strong/strong 対 weak/weak の非対称な短報としてのみ
-   構成し、sharp semantic threshold や complete classification を書かない。
-5. 406-occurrence OFF、relation minimality、v0.5 を修復本線から分離する。
-6. manuscript freeze 前に 2026-08-01 からの literature delta search を行い、新規PDFを
+1. SR2-V の stage/source-compatible visibility domain、exact metrics、verdict schema を
+   固定し、現 witness の rank-one/off-reachable-sector 性を独立 verifier で成果物化する。
+2. SR3b-M を source-bound residual spaces 上の injectivity theorem、single-source
+   multi-probe theorem、cyclicity counterexample、centralizer endpoint として形式化する。
+3. weak/weak で rank-two かつ reachable-visible な exact rational witness を反例先行で
+   探索する。完全被覆がない bounded no-go は一般 obstruction と呼ばない。
+4. その後に955の `x!=0,y!=0` mixed componentsを reducible/irreducible と symmetry/orbit
+   で分け、少数の自然なprincipal-open patchをexact scoutする。131 patchesを総当たりしない。
+5. coverage certificateと版付きbudget artifactが揃った場合だけsolver campaignを判断する。
+   955のterminal後に721 native compilerへ進む。
+6. SR3b-A は短報scopeを保って並行執筆できるが、deposit・投稿はfresh owner approvalまで
+   行わない。pure-lower bounded no-goをSR3b-Aへ混入させない。
+7. Paper I は observability/recovery を中心にscopedに構成し、sharp semantic threshold や
+   complete classification を書かない。406-occurrence OFF、relation minimality、`n=5`、
+   `d=3` はdownstreamへ分離する。
+8. manuscript freeze 前に 2026-08-01 からの literature delta search を行い、新規PDFを
    `references/` と NAS へ版付き・SHA-256照合で保存する。
 
 ## 9. 研究拡張と破綻時の判断規則

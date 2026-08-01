@@ -9,21 +9,26 @@ superseded as release provenance.
 Start with `KNOWLEDGE_BASE_v0.4.md` for current scientific facts and reusable
 proof rules. `CURRENT_RESEARCH_STATE.json` is the compact mutable index for
 tools and future agents. Use `reports/cpobc_publication_roadmap_v0.4-v0.7.md`
-as the ordering authority and this handoff for exact operational continuation:
+as the ordering authority, read
+`reports/v0.4.2_post_literature_strategy_review.md` for the post-audit refocus,
+and use this handoff for exact operational continuation:
 
 ```text
 v0.3.9 strong/strong theorem        PUBLIC
 v0.4 weak/weak rational witness     ON RESULT COMPLETE; OFF TRANSFER PENDING
+v0.4-V observability strengthening  NEW FIRST RESEARCH PRIORITY
+SR3b-M minimal recovery lemmas       REQUIRED PAPER I MODULE; NOT A SHORT REPORT
 v0.4.1 one-sided ON profiles        PROOF INTERPRETATION WITHDRAWN; BOTH OPEN
 v0.4.2 profile-native repair        PURE-LOWER NO-GO CERTIFIED; MIXED OPEN
 prior-art/related-work audit         COMPLETE; XU OVERLAP SCOPED
 OFF 406-occurrence classification   OPEN SEPARATE COMPILER TRACK
-Paper I assembly                    ASYMMETRIC MAIN RESULT + SR3b-A DRAFT TRACK
+Paper I assembly                    STATEWISE OBSERVABILITY/RECOVERY + SR3b-A
 v0.5 genuine source-stage n=5       INDEPENDENT EXTENSION TRACK
 ```
 
-Do not begin `d=3`, an infinite lifting theorem, or a journal manuscript in a
-way that bypasses the SR3/SR4 gates.
+Do not begin `d=3` or an infinite lifting theorem in a way that bypasses the
+SR2-V/SR3b-M and scoped Paper I gates. A scoped Paper I draft may begin without
+full 955/721 closure or `n=5`; it must not claim complete classification.
 
 ## 2. Scientific state
 
@@ -32,7 +37,9 @@ way that bypasses the SR3/SR4 gates.
 - Strong GC plus strong MSR, occurrence identification ON: finite nonsingular
   `d=2`, `n<=4` commutativity is proved by the public v0.3.9 baseline.
 - Fixed-vector GC plus reachable-state MSR, occurrence identification ON: v0.4
-  supplies a nonsingular exact rational noncommutative witness.
+  supplies a nonsingular exact rational noncommutative witness. Its reachable
+  span is rank one and every Q commutator kills that ray, so it certifies
+  algebraic separation but not reachable-visible noncommutativity.
 - Strong GC plus reachable-state MSR on the proper reconstruction slice
   `P intersect image(Phi_U)`: `PROVED_PARTIAL_SLICE`; this is not closure of
   the general one-sided profile.
@@ -56,6 +63,8 @@ way that bypasses the SR3/SR4 gates.
 - all naturally labelled 406-occurrence OFF profiles;
 - direct OFF verification of the v0.4 orbit-constant witness transfer;
 - both one-sided ON profiles in general nonsingular `GL_2`;
+- a rank-two, stage/source-compatible reachable-visible weak/weak witness or a
+  full-profile exact obstruction (`SR2-V`);
 - globally minimal relation-ID forcing groups;
 - `n>=5`, `d>=3`, singular systems, and finite-to-infinite lifting.
 
@@ -96,8 +105,11 @@ It is a theorem/lemma module for Paper I, not another short report.
    triangularizable and irreducible branches before heavy elimination.
 2. For a residual space `R`, the minimal state-to-operator condition is
    injectivity of `D -> D Omega` on `R`; cyclicity alone is insufficient.
-3. At a source in `d=2`, two linearly independent reachable vectors killed by
-   the same MSR residual force that residual to vanish, recovering strong MSR.
+3. At a source in `d=2`, two linearly independent probe vectors killed by the
+   same MSR residual force that residual to vanish, recovering strong MSR.
+   Single-`Omega` GC gives only one state per source; global reachable rank two
+   is not this multi-probe condition and does not automatically promote all
+   source residuals.
 4. The centralizer of one non-scalar `2 by 2` matrix is `F[I,A]`; proving all
    `Q_i` commute with one such `Q_k` is enough for full pairwise commutativity.
 5. `det[A,B]=0` or simultaneous triangularizability does not imply
@@ -289,25 +301,34 @@ It recomputes 407 paths/87 endpoint trees/1,529 path pairs, and keeps Eq. (113)
 25/25 and Eq. (139) 4/10 as separated fail-closed validation ledgers. It is not
 an expanded scalar-polynomial solver manifest.
 
-1. The first exact `N!=0` upper-triangular family is closed negatively, and the
-   262-variable mixed scalar manifest is complete. Do not rerun the upper
-   family or rebuild the manifest from the old 21 ideals.
-2. The exact mixed tangent scout closes the local branch through every point
-   of the 17-dimensional upper family. Its schema-v2 bounded subresult and the
-   independent oracle globally close the `x=0` pure-lower family. Do not rerun
-   either family or report them as a full-profile no-go.
-3. The remaining mixed target is remote/disconnected `x!=0,y!=0` components.
-   Do **not** brute-force all 131 principal patches. First construct a
-   symmetry/orbit reduction and exact-scout a small natural principal-open
-   set. Permit a solver campaign only after its source coverage certificate
-   and versioned budget artifact are available.
-4. Require direct separated validation of both Eq. (113) branches and both
-   Eq. (139) domains for every proposed witness.
-5. Restore the 20 Eq. (112)-eliminated generators for the fixed-vector-GC
-   side. Use the certified diagonal 721 escape point as a regression fixture;
-   it passes CPOBC 783/783, inverse 712/712, strong MSR 24/24, fixed-vector GC
-   1,529/1,529, but violates strong GC and Eq. (112).
-6. Keep OFF, relation minimality, and v0.5 as separate downstream tracks.
+1. Specify SR2-V first: a stage/source-compatible visibility domain, exact
+   reachable-span rank, commutator-on-state metrics, and the three terminal
+   verdicts in the post-literature strategy review.
+2. Build an independent observability verifier for the current SR2 witness and
+   bind its rank-one/off-reachable-sector status to a machine-readable result.
+   Do not alter the original v0.4 witness bytes.
+3. Formalise SR3b-M with an assumption ledger: residual-space evaluation
+   injectivity, same-residual multi-probe rank two, cyclicity counterexample,
+   and the non-scalar centralizer endpoint. Do not infer sourcewise recovery
+   from a globally spanning set of states at different sources.
+4. Run counterexample-first exact scouts for a rank-two and reachable-visible
+   weak/weak witness. Require direct separated validation of both Eq. (113)
+   branches and both Eq. (139) domains for every proposed witness.
+5. Only after those lightweight gates, return to the remote/disconnected
+   `x!=0,y!=0` 955 components. The first upper family, mixed tangent branch,
+   and global `x=0` pure-lower family are already closed in their declared
+   scopes; do not rerun them or report them as a full-profile no-go.
+6. For 955, do **not** brute-force all 131 principal patches. First split the
+   common-invariant-line and irreducible branches, construct a symmetry/orbit
+   reduction, and exact-scout a small natural principal-open set. Permit a
+   solver campaign only after its source coverage certificate and versioned
+   budget artifact are available.
+7. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
+   terminal state, or use 721 as the fallback if 955 exhausts its budget. Keep
+   the certified diagonal 721 escape point as a regression fixture.
+8. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
+   tracks. SR3b-A drafting may proceed in parallel under its existing scope and
+   owner-gated deposit rule.
 
 The initial v0.4.2 fail-closed namespace audit is reproducible via
 `REPRODUCING_v0.4.2.md` and has semantic digest
@@ -383,8 +404,8 @@ files.
 
 Before continuing this track:
 
-1. read `KNOWLEDGE_BASE_v0.4.md`, `CURRENT_RESEARCH_STATE.json`, and the current
-   roadmap;
+1. read `KNOWLEDGE_BASE_v0.4.md`, `CURRENT_RESEARCH_STATE.json`, the current
+   roadmap, and `reports/v0.4.2_post_literature_strategy_review.md`;
 2. retain the recorded owner approval; the slice inclusion gate has passed,
    but keep Sage frozen until the global source-native assumption-ledger and
    coverage gates pass;
@@ -422,3 +443,10 @@ Before continuing this track:
     reference note. Run only a delta search from 2026-08-01, preserving every
     material new source with exact version, retrieval date, lawful local copy,
     claim boundary, and NAS hash check.
+
+Items 2--12 preserve the 955 regression boundary and are required when 955 is
+resumed. They are not the immediate implementation order. The immediate order
+is: define SR2-V, implement its independent audit of the frozen SR2 witness,
+formalise SR3b-M, attempt the bounded visible-witness campaign, and only then
+resume the 955 mixed locus. No heavy solver is needed for the first three
+items.

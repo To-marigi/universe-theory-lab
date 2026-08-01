@@ -126,12 +126,53 @@
     "minimal_semantic_recovery_module_SR3b_M": {
       "status": "ROADMAP_ADDED_AUXILIARY_LEMMA_MODULE_NOT_A_NEW_SHORT_REPORT",
       "targets": [
-        "SOURCEWISE_TWO_INDEPENDENT_REACHABLE_VECTORS_RECOVER_STRONG_MSR_IN_D2",
+        "SOURCEWISE_TWO_INDEPENDENT_PROBE_VECTORS_FOR_THE_SAME_RESIDUAL_RECOVER_STRONG_MSR_IN_D2",
         "RESIDUAL_SPACE_EVALUATION_INJECTIVITY_IS_MINIMAL_FIXED_VECTOR_TO_OPERATOR_PROMOTION",
         "CYCLICITY_ALONE_INSUFFICIENT_AND_FULL_M2_HAS_NO_SEPARATING_VECTOR_ON_C2",
-        "NONSCALAR_2X2_CENTRALIZER_ENDPOINT_FOR_PAIRWISE_COMMUTATIVITY"
+        "NONSCALAR_2X2_CENTRALIZER_ENDPOINT_FOR_PAIRWISE_COMMUTATIVITY",
+        "GLOBAL_REACHABLE_RANK_TWO_ACROSS_DIFFERENT_SOURCES_DOES_NOT_BY_ITSELF_PROMOTE_SOURCEWISE_RESIDUALS"
       ]
     }
+  },
+  "post_literature_strategy": {
+    "status": "POST_LITERATURE_STRATEGY_REFOCUSED",
+    "authority": "reports/v0.4.2_post_literature_strategy_review.md",
+    "paper_I_center": "STATEWISE_VERSUS_OPERATOR_OBSERVABILITY_EXACT_SEPARATION_AND_MINIMAL_RECOVERY_IN_NONSELFADJOINT_FINITE_D2",
+    "working_title": "Statewise versus operator Bell causality in finite quantum sequential growth: exact separation and recovery at dimension two",
+    "current_SR2_observability": {
+      "operator_noncommutative": true,
+      "reachable_span_rank": 1,
+      "reachable_visible": false,
+      "interpretation": "EXACT_LOGICAL_SEPARATION_WITH_NONCOMMUTATIVITY_OFF_THE_REACHABLE_RAY",
+      "dedicated_independent_observability_artifact": "PENDING"
+    },
+    "SR2_V": {
+      "status": "NEW_FIRST_PRIORITY_SPEC_AND_IMPLEMENTATION_PENDING",
+      "quality_target": "EXACT_RATIONAL_RANK_TWO_AND_STAGE_SOURCE_COMPATIBLE_REACHABLE_VISIBLE_WEAK_WEAK_WITNESS",
+      "terminal_verdicts": [
+        "REACHABLE_VISIBLE_NONCOMMUTATIVE_WITNESS_CERTIFIED",
+        "REACHABLE_VISIBLE_NONCOMMUTATIVITY_OBSTRUCTED",
+        "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT"
+      ],
+      "short_report_rule": "SEPARATE_SHORT_REPORT_CANDIDATE_ONLY_FOR_EXACT_VISIBLE_WITNESS_OR_FULL_PROFILE_OBSTRUCTION"
+    },
+    "priority_order": [
+      "DEFINE_SR2_V_VISIBILITY_DOMAIN_AND_VERDICT_SCHEMA",
+      "INDEPENDENTLY_AUDIT_CURRENT_SR2_WITNESS_OBSERVABILITY",
+      "FORMALISE_SR3B_M_WITH_SOURCE_BOUND_ASSUMPTION_LEDGER",
+      "COUNTEREXAMPLE_FIRST_REACHABLE_VISIBLE_WEAK_WEAK_SEARCH",
+      "955_REDUCIBLE_IRREDUCIBLE_AND_SYMMETRY_REDUCED_MIXED_SCOUTS",
+      "721_NATIVE_COMPILER_AFTER_955_TERMINAL_OR_AS_BUDGET_FALLBACK",
+      "DOWNSTREAM_OFF_RELATION_MINIMUM_N5_D3_AND_LIFTING"
+    ],
+    "paper_I_gates": {
+      "scoped_draft_requires_full_955_and_721_closure": false,
+      "scoped_draft_requires_n5": false,
+      "manuscript_freeze_requires_SR2_V_terminal": true,
+      "complete_finite_ON_semantics_lattice_requires_both_one_sided_profiles": true,
+      "target_journal_reassess_if_only_rank_one_witness_remains": true
+    },
+    "SR3b_A_status_changed": false
   },
   "prior_art_and_related_work_audit": {
     "status": "PRIOR_ART_AUDIT_COMPLETE_DISTINCT_CONTRIBUTION_IDENTIFIED",
@@ -151,7 +192,7 @@
     "mathematical_tools_adopted": [
       "REDUCIBLE_IRREDUCIBLE_BRANCH_VIA_2X2_TRIANGULARISATION_AND_COMMON_EIGENVECTORS",
       "RESIDUAL_FAMILY_SEPARATING_VECTOR_AS_MINIMAL_PROMOTION",
-      "SOURCEWISE_REACHABLE_SPAN_RANK_TWO_RECOVERS_STRONG_MSR",
+      "SOURCEWISE_MULTI_PROBE_RANK_TWO_FOR_THE_SAME_RESIDUAL_RECOVERS_STRONG_MSR",
       "CENTRALIZER_OF_ONE_NONSCALAR_2X2_MATRIX_AS_COMMUTATIVITY_ENDPOINT"
     ],
     "mandatory_tracks": [
@@ -200,6 +241,7 @@
   "authoritative_documents": [
     "KNOWLEDGE_BASE_v0.4.md",
     "reports/cpobc_publication_roadmap_v0.4-v0.7.md",
+    "reports/v0.4.2_post_literature_strategy_review.md",
     "HANDOFF_v0.4.1.md",
     "reports/v0.4.2_prior_art_and_related_work_audit_protocol.md",
     "reports/v0.4.2_prior_art_and_related_work_audit.md",
@@ -235,5 +277,5 @@
     "tests/final_theory/test_source_native_955_pure_lower_oracle_v042.py",
     "tests/final_theory/test_v041_partial_slice_audit.py"
   ],
-  "publication_posture": "ASYMMETRIC_STRONG_STRONG_VS_WEAK_WEAK_PLUS_SCOPED_SR3B_A_UNTIL_ONE_SIDED_REPAIR_NO_BROAD_PRIORITY_OVER_XU_2607_26672"
+  "publication_posture": "STATEWISE_VERSUS_OPERATOR_OBSERVABILITY_EXACT_SEPARATION_AND_MINIMAL_RECOVERY_WITH_SCOPED_SR3B_A_ONE_SIDED_CLOSURE_AS_UPGRADE_NO_BROAD_PRIORITY_OVER_XU_2607_26672"
 }
