@@ -24,7 +24,7 @@ import itertools
 import json
 import random
 from collections import defaultdict
-from collections.abc import Iterable
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from fractions import Fraction
 from pathlib import Path
@@ -54,6 +54,7 @@ Q5 = "Q_5_EXTERNAL"
 SparseRow = dict[str, Fraction]
 Matrix2 = tuple[tuple[Fraction, Fraction], tuple[Fraction, Fraction]]
 Vector2 = tuple[Fraction, Fraction]
+ScalarCharacter = Callable[[int, Iterable[int], int], Fraction]
 
 ZERO_MATRIX: Matrix2 = ((Fraction(0), Fraction(0)), (Fraction(0), Fraction(0)))
 IDENTITY: Matrix2 = ((Fraction(1), Fraction(0)), (Fraction(0), Fraction(1)))
@@ -543,7 +544,10 @@ def _top_assignment(candidate: dict[str, Any], variables: tuple[str, ...]) -> di
 def _linear_system(
     context: ScoutContext,
     top: dict[str, Fraction],
+    lower_character: ScalarCharacter | None = None,
 ) -> tuple[list[SparseRow], dict[str, int], dict[str, SparseRow], dict[str, TriangularLinear]]:
+    lower = _csg if lower_character is None else lower_character
+
     def transition(
         stage: int,
         relation: Iterable[int],
@@ -551,7 +555,7 @@ def _linear_system(
         variable: str,
     ) -> TriangularLinear:
         rows = tuple(int(row) for row in relation)
-        return _linear_matrix(top[variable], _csg(stage, rows, precursor), variable)
+        return _linear_matrix(top[variable], lower(stage, rows, precursor), variable)
 
     def occurrence(occurrence_id: str) -> TriangularLinear:
         record = context.occurrence_records[occurrence_id]
@@ -568,7 +572,11 @@ def _linear_system(
 
     def q(stage: int) -> TriangularLinear:
         variable = _q_variable(context, stage)
-        return _linear_matrix(top[variable], Fraction(1, 2**stage), variable)
+        return _linear_matrix(
+            top[variable],
+            lower(stage, (0,) * stage, 0),
+            variable,
+        )
 
     occurrence_matrices = {
         occurrence_id: occurrence(occurrence_id)
@@ -762,12 +770,15 @@ def _direct_certificate(
     candidate: dict[str, Any],
     top: dict[str, Fraction],
     coordinates: SparseRow,
+    lower_character: ScalarCharacter | None = None,
 ) -> dict[str, Any]:
+    lower = _csg if lower_character is None else lower_character
+
     def transition(stage: int, relation: Iterable[int], precursor: int, variable: str) -> Matrix2:
         return _matrix(
             top[variable],
             coordinates.get(variable, Fraction(0)),
-            _csg(stage, relation, precursor),
+            lower(stage, relation, precursor),
         )
 
     def from_signature(stage: int, relation_code: int, precursor: int) -> Matrix2:
@@ -776,7 +787,11 @@ def _direct_certificate(
 
     def q(stage: int) -> Matrix2:
         variable = _q_variable(context, stage)
-        return _matrix(top[variable], coordinates.get(variable, Fraction(0)), Fraction(1, 2**stage))
+        return _matrix(
+            top[variable],
+            coordinates.get(variable, Fraction(0)),
+            lower(stage, (0,) * stage, 0),
+        )
 
     occurrence_matrices = {}
     for occurrence_id, record in context.occurrence_records.items():

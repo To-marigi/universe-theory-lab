@@ -1,8 +1,8 @@
 # Handoff -- CPOBC v0.4/v0.4.1 research track
 
-Written 2026-08-01. This is the live handoff for work after the public v0.3.9
-release. The historical `HANDOFF.md` remains the frozen v0.3.9 record and is not
-superseded as release provenance.
+Written 2026-08-01; continued 2026-08-02. This is the live handoff for work
+after the public v0.3.9 release. The historical `HANDOFF.md` remains the frozen
+v0.3.9 record and is not superseded as release provenance.
 
 ## 1. Governing roadmap
 
@@ -11,12 +11,14 @@ proof rules. `CURRENT_RESEARCH_STATE.json` is the compact mutable index for
 tools and future agents. Use `reports/cpobc_publication_roadmap_v0.4-v0.7.md`
 as the ordering authority, read
 `reports/v0.4.2_post_literature_strategy_review.md` for the post-audit refocus,
-and use this handoff for exact operational continuation:
+`reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` for the
+current SR2-V exact branch state, and use this handoff for exact operational
+continuation:
 
 ```text
 v0.3.9 strong/strong theorem        PUBLIC
 v0.4 weak/weak rational witness     ON RESULT COMPLETE; OFF TRANSFER PENDING
-v0.4-V observability strengthening  NEW FIRST RESEARCH PRIORITY
+v0.4-V observability strengthening  EXACT BRANCH REDUCTIONS READY; OPEN
 SR3b-M minimal recovery lemmas       REQUIRED PAPER I MODULE; NOT A SHORT REPORT
 v0.4.1 one-sided ON profiles        PROOF INTERPRETATION WITHDRAWN; BOTH OPEN
 v0.4.2 profile-native repair        PURE-LOWER NO-GO CERTIFIED; MIXED OPEN
@@ -57,6 +59,26 @@ full 955/721 closure or `n=5`; it must not claim complete classification.
   independently certified by `V042_955_PURE_LOWER_ORACLE_CERTIFIED`. This is
   an SR3b auxiliary theorem, not closure of the general profile or a new short
   report.
+- Within SR2-V, the aligned branch is nonlinearly closed on the nonempty
+  principal open `Delta_align!=0`, and the two-character transitive-percolation
+  transverse family splits on a second nonempty principal open. Their
+  determinant-zero boundaries and other components remain open.
+- The six nonzero Q-commutator pivots now give a complete four-way structural
+  cover of Q-noncommutativity: pair-irreducible, triple-irreducible,
+  transverse globally reducible, and aligned globally reducible. This is a
+  branch cover, not a solution of the CPOBC equations.
+- One exact harmonic state slice has a state-native rank-two chart with 131
+  actual edge orbits and 262 affine action parameters. Fixed-vector GC and
+  reachable-state MSR are built in; CPOBC and supplemental Eq. (113)/(139)
+  remain unsolved.
+- On that fixed state slice, the first pair-irreducible shear patch is compiled:
+  `D12=det[Q1,Q2]` is a nonzero seven-term cubic and the full separated sparse
+  ledger is materialized. No solver has run and no relation-variety point in
+  `D12!=0` is known.
+- The two scalar monomial relation lattices are globally parameterized: the
+  843-by-132 operator block is a split `G_m^49`, and the 1,163-by-132
+  observed-bottom plus fixed-GC block is a split `G_m^29`. The 24 additive
+  MSR equations and cocycle fibres are not included in this classification.
 
 ### Open
 
@@ -98,8 +120,9 @@ full 955/721 closure or `n=5`; it must not claim complete classification.
 
 ### Mathematical commutativity tools to reuse
 
-These four items are registered in the roadmap as auxiliary module **SR3b-M**.
-It is a theorem/lemma module for Paper I, not another short report.
+The recovery items below are registered in the roadmap as auxiliary module
+**SR3b-M**; the commutator-pivot items are reusable SR2-V structure. This is
+theorem/lemma material for Paper I, not another short report.
 
 1. Split exact searches into common-invariant-line/simultaneously
    triangularizable and irreducible branches before heavy elimination.
@@ -114,6 +137,11 @@ It is a theorem/lemma module for Paper I, not another short report.
    `Q_i` commute with one such `Q_k` is enough for full pairwise commutativity.
 5. `det[A,B]=0` or simultaneous triangularizability does not imply
    commutativity; keep the nonzero square-zero commutator branch explicit.
+6. A nonzero Q commutator has four exact branches under the invariants
+   `det C`, `tr(C A_e)`, and `det(C Omega,Omega)`. Pair-irreducible no-go alone
+   never closes the triple-irreducible branch; Q5 remains supplemental.
+7. Reachable rank two is a separate state condition; do not infer it from an
+   invariant-line normalization or from operator noncommutativity.
 
 The independently reimplemented v0.4.1 triangular scout forces all six
 commutators to zero in both one-sided cores inside its declared 132-variable
@@ -326,25 +354,62 @@ an expanded scalar-polynomial solver manifest.
    `d83afca2c460bad9e8d420e75ad60e1974f3419f0dd655bfc51821d6a02b5a92`.
    These are not SR2-V terminals; see
    `reports/v0.4.2_sr2v_visible_search.md`.
-5. **Current:** search disconnected transverse-reducible and irreducible
-   weak/weak components. Do not repeat first-order perturbations of the frozen
-   upper family. Require direct separated validation of both Eq. (113)
-   branches and both Eq. (139) domains. Numerical and finite-field points are
-   scouts until exact rational direct certification.
-6. Only after the bounded SR2-V campaign reaches an allowed terminal, return
+5. **Nonlinear aligned open complete:** the selected residuals factor exactly
+   as `F=H y`; the stored determinant is nonzero, so `Delta_align!=0` forces
+   `y=0`. This supersedes the phrase "first-order only" on that open, but not
+   on `Delta_align=0` or disconnected components. Verdict
+   `SR2V_ALIGNED_PRINCIPAL_OPEN_VISIBILITY_OBSTRUCTED`, digest
+   `66ed68773f8023c0e84f18c48719dc5517cb3c43f8d5f87e25b3f9ddf01d6fa5`.
+6. **Generic transverse splitting complete:** for two transitive-percolation
+   diagonal characters, the same-character line commutes and the distinct
+   character family has only the split coboundary extension on the nonempty
+   open `Delta(r,s)!=0`, within `r*s*(1+r)*(1+s)!=0`. This is a
+   `Q_1,...,Q_4` result; supplemental Q5 has its upper-right coordinate fixed
+   to zero outside the 131-variable kernel. Verdict
+   `SR2V_TRANSITIVE_EXTENSION_PRINCIPAL_OPEN_SPLITTING_CERTIFIED`, digest
+   `5b3cf83ae5cd6338cfa07c1894bf5eab2f6cf8fe5870fd8fdc6911682b06d000`.
+7. **Q-noncommutative branch cover complete:** six Q pairs and four exact
+   branches per nonzero commutator cover the target. Verdict
+   `SR2V_COMMUTATOR_PIVOT_BRANCH_COVER_CERTIFIED`, digest
+   `100fefe528012254edcd66c7237ae5706dcb3bba6badbe75da170f68403b4032`.
+8. **State-native rank-two chart complete:** one exact harmonic boundary slice
+   gives 87 states, 131 actual edge actions, 262 affine parameters, and exact
+   rank two while building in GC/MSR and reducing actual-edge
+   nonsingularity to `beta_e!=0` (automatic only on the shear slice). Verdict
+   `SR2V_STATE_NATIVE_RANK2_CHART_CERTIFIED`, digest
+   `3bf3b56c97ef73fcce3ff089f5229191b9d1ade04e217706ac51abe11eaebe6c`.
+9. **First pair-irreducible manifest complete, no solver:** the state-native
+   shear D12 patch has 136 saturated coordinates, 9,345 scalar entries, and
+   29,994 terms. The ambient open is exact and nonempty, but its intersection
+   with the relation variety is unresolved. Verdict
+   `SR2V_STATE_NATIVE_SHEAR_D12_MANIFEST_CERTIFIED_NO_SOLVER_RUN`, digest
+   `9b7b3006988ed4bf33e8b495f79821141d52e0ae17ed33fd801ae3ed8c8a00a0`.
+10. **Scalar lattice SNF complete:** the exact operator and observed-bottom
+   monomial lattices have ranks 83 and 103, all nonzero Smith factors one, and
+   primitive kernel ranks 49 and 29. Verdict
+   `SR2V_SCALAR_LATTICE_SNF_CERTIFIED_NONTERMINAL`, digest
+   `155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9`.
+11. **Current:** bind a separate Q5 determinant localization and versioned
+   solver budget to the D12 manifest, impose additive bottom MSR on the
+   primitive Laurent map, and target `Delta_align=0`, `Delta(r,s)=0`, and the
+   triple-irreducible pivots. Do not resample generic points inside the two certified
+   opens. Require direct separated validation of both Eq. (113) branches and
+   both Eq. (139) domains. Numerical and finite-field points are scouts until
+   exact rational direct certification.
+12. Only after the bounded SR2-V campaign reaches an allowed terminal, return
    to the remote/disconnected `x!=0,y!=0` 955 components. The first upper
    family, mixed tangent branch,
    and global `x=0` pure-lower family are already closed in their declared
    scopes; do not rerun them or report them as a full-profile no-go.
-7. For 955, do **not** brute-force all 131 principal patches. First split the
+13. For 955, do **not** brute-force all 131 principal patches. First split the
    common-invariant-line and irreducible branches, construct a symmetry/orbit
    reduction, and exact-scout a small natural principal-open set. Permit a
    solver campaign only after its source coverage certificate and versioned
    budget artifact are available.
-8. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
+14. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
    terminal state, or use 721 as the fallback if 955 exhausts its budget. Keep
    the certified diagonal 721 escape point as a regression fixture.
-9. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
+15. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
    tracks. SR3b-A drafting may proceed in parallel under its existing scope and
    owner-gated deposit rule.
 
@@ -377,17 +442,33 @@ uv run python -m universe_lab.final_theory.weak_d2_observability_v042
 uv run python -m universe_lab.final_theory.semantic_recovery_v042
 uv run python -m universe_lab.final_theory.weak_d2_visible_torus_scout_v042
 uv run python -m universe_lab.final_theory.weak_d2_visible_tangent_v042
+uv run python -m universe_lab.final_theory.weak_d2_aligned_principal_open_v042
+uv run python -m universe_lab.final_theory.weak_d2_transitive_extension_v042
+uv run python -m universe_lab.final_theory.weak_d2_commutator_branching_v042
+uv run python -m universe_lab.final_theory.weak_d2_state_native_rank2_v042
+uv run python -m universe_lab.final_theory.weak_d2_state_native_shear_pair_open_v042
+uv run python -m universe_lab.final_theory.sr2v_scalar_lattice_v042
 uv run pytest -q tests/final_theory/test_weak_d2_observability_v042.py
 uv run pytest -q tests/final_theory/test_semantic_recovery_v042.py
 uv run pytest -q tests/final_theory/test_weak_d2_visible_torus_scout_v042.py
 uv run pytest -q tests/final_theory/test_weak_d2_visible_tangent_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_aligned_principal_open_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_transitive_extension_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_commutator_branching_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_state_native_rank2_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_state_native_shear_pair_open_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_scalar_lattice_v042.py
 ```
 
 Expected focused results are manifest `5 passed`, 955 tangent schema v2
 `8 passed`, independent pure-lower oracle `4 passed`, SR2-V baseline `6 passed`,
-SR3b-M `14 passed`, and the two visible-search suites `9 passed`. The tests
+SR3b-M `14 passed`, the two original visible-search suites `9 passed`, and the
+six new SR2-V suites `31 passed`. The tests
 regenerate the stored exact payloads and preserve the `NO_SOLVER_RUN`,
 bounded-family `GLOBAL_NO_GO`, and general mixed `NO_WITNESS_OPEN` boundaries.
+
+The 2026-08-02 mutable-index resume suite, including all six new SR2-V suites,
+reports `122 passed`; Ruff and Mypy pass on all eight changed source modules.
 
 The earlier broader validation snapshot (before the mixed-manifest/tangent
 milestone above) was:
@@ -465,7 +546,8 @@ Before continuing this track:
     exact re-extraction, verdict `V042_955_PURE_LOWER_ORACLE_CERTIFIED`, and
     semantic digest
     `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`.
-13. run the four SR2-V/SR3b-M focused suites named in §8. Require the baseline
+13. run the SR2-V/SR3b-M suites named in §8, including the six new
+    principal-open/chart/lattice suites. Require the baseline
     rank-one audit, the conditional SR3b-M lemma boundary, the finite-torus
     `OPEN` boundary, and the rank-131 invariant-line-breaking tangent scope.
     Do not call either bounded negative result a reachable-visibility
@@ -478,9 +560,9 @@ Before continuing this track:
 
 Items 2--12 preserve the 955 regression boundary and are required when 955 is
 resumed. They are not the immediate implementation order. The immediate order
-is now: retain the completed SR2-V baseline, SR3b-M, torus, and tangent
-artifacts; split the remaining weak/weak search into disconnected transverse
-reducible and irreducible components; exact-scout a symmetry-reduced
-commutator-determinant principal open; and only after an SR2-V terminal resume
-the 955 mixed locus. The frozen upper-family tangent search must not be
-repeated.
+is now: retain the completed baseline and SR3b-M; use the primitive scalar
+Laurent maps rather than finite torus resampling; bind Q5 nonsingularity and a
+versioned budget to the compiled pair-irreducible D12 manifest; then treat the
+two determinant-degeneracy loci and triple-irreducible pivots. Only after an SR2-V
+terminal resume the 955 mixed locus. The frozen upper-family tangent search
+and generic points in the two certified principal opens must not be repeated.

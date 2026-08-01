@@ -311,10 +311,66 @@ nullity 73 with no in-scope lower-left direction. This is a first-order bounded
 obstruction, not a global SR2-V terminal. See
 `reports/v0.4.2_sr2v_visible_search.md`.
 
+## SR2-V principal-open reductions and state-native rank-two chart
+
+```powershell
+uv run python -m universe_lab.final_theory.weak_d2_aligned_principal_open_v042
+uv run python -m universe_lab.final_theory.weak_d2_transitive_extension_v042
+uv run python -m universe_lab.final_theory.weak_d2_commutator_branching_v042
+uv run python -m universe_lab.final_theory.weak_d2_state_native_rank2_v042
+uv run python -m universe_lab.final_theory.weak_d2_state_native_shear_pair_open_v042
+uv run python -m universe_lab.final_theory.sr2v_scalar_lattice_v042
+uv run pytest -q tests/final_theory/test_weak_d2_aligned_principal_open_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_transitive_extension_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_commutator_branching_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_state_native_rank2_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_state_native_shear_pair_open_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_scalar_lattice_v042.py
+```
+
+Expected results:
+
+```text
+SR2V_ALIGNED_PRINCIPAL_OPEN_VISIBILITY_OBSTRUCTED
+semantic digest 66ed68773f8023c0e84f18c48719dc5517cb3c43f8d5f87e25b3f9ddf01d6fa5
+SR2V_TRANSITIVE_EXTENSION_PRINCIPAL_OPEN_SPLITTING_CERTIFIED
+semantic digest 5b3cf83ae5cd6338cfa07c1894bf5eab2f6cf8fe5870fd8fdc6911682b06d000
+SR2V_COMMUTATOR_PIVOT_BRANCH_COVER_CERTIFIED
+semantic digest 100fefe528012254edcd66c7237ae5706dcb3bba6badbe75da170f68403b4032
+SR2V_STATE_NATIVE_RANK2_CHART_CERTIFIED
+semantic digest 3bf3b56c97ef73fcce3ff089f5229191b9d1ade04e217706ac51abe11eaebe6c
+SR2V_STATE_NATIVE_SHEAR_D12_MANIFEST_CERTIFIED_NO_SOLVER_RUN
+semantic digest 9b7b3006988ed4bf33e8b495f79821141d52e0ae17ed33fd801ae3ed8c8a00a0
+SR2V_SCALAR_LATTICE_SNF_CERTIFIED_NONTERMINAL
+semantic digest 155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9
+31 passed
+```
+
+The aligned certificate upgrades `F'(0)y=0` to the exact localized
+factorization `F=H y`, so the nonempty open `det H!=0` contains no nonlinear
+invariant-line-breaking branch. The transverse certificate proves generic
+splitting only for its two-character transitive-percolation family. The
+commutator artifact is a structural six-pair/four-branch cover, not a CPOBC
+solution. The state-native chart fixes one harmonic rank-two boundary slice
+and builds GC/MSR into 262 affine edge parameters; the 783 CPOBC and separate
+Eq. (113)/(139) ledgers remain unsolved. None of these verdicts is an SR2-V
+terminal. The shear D12 artifact compiles all ledgers into 29,994 sparse terms
+and proves only that the ambient pair-irreducible open is nonempty; no solver
+has run and no relation-variety point is certified. The Smith-normal-form
+artifact additionally certifies primitive
+Laurent parameterizations `G_m^49` and `G_m^29` for the two declared scalar
+monomial loci, before additive MSR and cocycle equations. See
+`reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md`.
+
 ## Next exact gate
 
-Do not launch an exhaustive 131-patch campaign. For the remaining
-`x!=0,y!=0` mixed components, first construct a symmetry/orbit reduction and
-exact-scout a small set of natural principal-open patches. A solver campaign
-is allowed only after the reduced patch family is bound to a source-profile
-coverage certificate and a versioned budget artifact.
+For SR2-V, use the primitive Laurent maps instead of finite torus sampling.
+The state-native shear `det[Q_1,Q_2]!=0` manifest is compiled; bind a separate
+Q5 determinant localization and versioned solver budget before determining
+whether its relation variety meets the open. Then treat `Delta_align=0`, the exceptional transverse
+`Delta(r,s)=0` locus, and the triple-irreducible pivots. Keep supplemental Q5
+and the two Eq. (113) and Eq. (139) ledgers separate. Do not launch an
+exhaustive 131-patch campaign. When the 955 mixed components resume, first
+construct a symmetry/orbit reduction and exact-scout a small set of natural
+principal-open patches. Any solver campaign requires a source-profile coverage
+certificate and a versioned budget artifact.

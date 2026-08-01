@@ -1,0 +1,202 @@
+{
+  "canonical_transverse_chart": {
+    "Q_commutator": "[Q_i,Q_j]=b_i*b_j*((r_i-1)z_j-(r_j-1)z_i)*E_12",
+    "basis_matrix": "S_ij=[C_ij*Omega,Omega]",
+    "global_reducibility_test": "X_21=0 for every generator X",
+    "inverse_law": "M(r,z)^-1=M(r^-1,-r^-1*z)",
+    "normalisation": [
+      "S_ij^-1*Omega=e_2",
+      "S_ij^-1*C_ij*S_ij=E_12"
+    ],
+    "pivot_equation": "b_i*b_j*((r_i-1)z_j-(r_j-1)z_i)=1",
+    "product_law": "M(r,z)M(s,w)=M(r*s,z+r*w)",
+    "residual_conjugation_after_normalisation": "identity only",
+    "tau_formula": "tau_ij(X)=X_21",
+    "upper_parameterisation": "A_e=b_e*[[r_e,z_e],[0,1]]",
+    "warning": "det[Q_i,Q_j] is identically zero in this chart and cannot be used as its noncommutativity saturation"
+  },
+  "claim_boundary": "This proves a complete four-way linear-algebra branch cover after choosing one nonzero Q commutator.  It does not show that any branch contains a CPOBC solution, does not close any branch, and is not an SR2-V terminal.  Supplemental Q5 reducibility must be tracked separately from the 131-generator finite transition family.",
+  "date": "2026-08-02",
+  "dimension": 2,
+  "field": "Q",
+  "finite_scope": "n<=4",
+  "gates": {
+    "actual_ON_transition_generators_are_131": true,
+    "aligned_example_is_annihilated": true,
+    "compiled_family_with_external_Q5_has_132_generators": true,
+    "pair_irreducible_example_has_invertible_commutator": true,
+    "six_Q_pair_pivots": true,
+    "symbolic_2x2_identities_hold": true,
+    "transverse_example_has_nonzero_frame_determinant": true,
+    "triple_breaker_example_has_nonzero_tau": true
+  },
+  "generator_inventory": {
+    "actual_ON_transition_generators": 131,
+    "compiled_operator_family_size": 132,
+    "supplemental_cutoff_external_Q5": "Q_5_EXTERNAL",
+    "tau_rule": "use all 131 actual generators for finite reducibility; include Q5 as a separate tau branch when triangularising the supplemental Eq139 compiler family"
+  },
+  "input_artifacts": {
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_eq112_reduction_n4.json": "e217862b767eb69c946a5b011d43957c608d1c4748192ce8a5562193ada61678"
+  },
+  "nonempty_branch_examples": {
+    "aligned_reducible": {
+      "C_omega": [
+        "0",
+        "0"
+      ],
+      "omega": [
+        "1",
+        "0"
+      ]
+    },
+    "pair_irreducible": {
+      "commutator": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "-2",
+          "0"
+        ]
+      ],
+      "commutator_determinant": "4"
+    },
+    "transverse_reducible": {
+      "det_C_omega__omega": "1",
+      "omega": [
+        "0",
+        "1"
+      ]
+    },
+    "triple_irreducible": {
+      "breaker": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "canonical_commutator": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "tau": "1"
+    }
+  },
+  "passed": true,
+  "pivot_cover": {
+    "Q_pairs": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "branch_invariants": {
+      "determinant": "det(C_ij)",
+      "initial_frame": "d_ij=det(C_ij*Omega,Omega)",
+      "transition_trace": "tau_ij,e=tr(C_ij*A_e)"
+    },
+    "complete_branches_on_each_pivot": [
+      {
+        "branch": "PAIR_IRREDUCIBLE",
+        "conclusion": "Q_i,Q_j have no common invariant line",
+        "conditions": [
+          "det(C_ij)!=0"
+        ]
+      },
+      {
+        "branch": "TRIPLE_IRREDUCIBLE",
+        "conclusion": "Q_i,Q_j,A_e have no common invariant line",
+        "conditions": [
+          "det(C_ij)=0",
+          "tau_ij,e!=0 for at least one compiled generator"
+        ]
+      },
+      {
+        "branch": "TRANSVERSE_GLOBALLY_REDUCIBLE",
+        "conclusion": "all actual transitions preserve L=ker(C_ij), while Omega is transverse to L",
+        "conditions": [
+          "det(C_ij)=0",
+          "tau_ij,e=0 for every actual transition generator",
+          "d_ij!=0"
+        ]
+      },
+      {
+        "branch": "ALIGNED_GLOBALLY_REDUCIBLE",
+        "conclusion": "Omega lies in L and every reachable state remains in L; all upper-triangular commutators are unreachable-sector-only",
+        "conditions": [
+          "det(C_ij)=0",
+          "tau_ij,e=0 for every actual transition generator",
+          "d_ij=0"
+        ]
+      }
+    ],
+    "cover_reason": "Q-noncommutativity means at least one of the six listed commutators is nonzero",
+    "pivot_assumption": "C_ij=[Q_i,Q_j]!=0"
+  },
+  "profile_binding": "structural cover for Q-noncommutative occurrence-identification-ON models before imposing the full CPOBC/GC/MSR relation ideal",
+  "reachable_rank_boundary": "The branch cover classifies invariant-line geometry only.  Reachable span rank two must still be imposed through endpoint-state minors; it does not follow from irreducibility or transversality alone.",
+  "schema_version": "final-theory-v042-sr2v-commutator-pivot-branch-cover-v1",
+  "search_terminal": "NOT_A_SEARCH_TERMINAL_STRUCTURAL_COVER_ONLY",
+  "semantic_digest_sha256": "100fefe528012254edcd66c7237ae5706dcb3bba6badbe75da170f68403b4032",
+  "symbolic_certificate": {
+    "all_zero_identity_checks": true,
+    "canonical_component_residuals": {
+      "diagonal": "b*g - c*f",
+      "lower_left": "-a*g + c*e - c*h + d*g",
+      "upper_right": "a*f - b*e + b*h - d*f"
+    },
+    "cayley_hamilton_residual": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "generic_commutator_trace": "0",
+    "ideal_membership_identities": {
+      "force_A21": "0",
+      "force_A21_formula": "c*U+b*L+D*(a-d)=0",
+      "force_B21": "0",
+      "force_B21_formula": "g*U+f*L-D*(h-e)=0",
+      "interpretation": "with diagonal=0, lower_left=0, and upper_right=1, the identities give c=A21=0 and g=B21=0"
+    },
+    "tau_in_canonical_basis": "x21"
+  },
+  "verdict": "SR2V_COMMUTATOR_PIVOT_BRANCH_COVER_CERTIFIED"
+}

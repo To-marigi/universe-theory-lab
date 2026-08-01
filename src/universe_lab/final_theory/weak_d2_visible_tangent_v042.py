@@ -294,6 +294,8 @@ def _compile(
     root: Path,
     deformation: Deformation = "pure_lower",
     upper_coordinates: dict[str, Fraction] | None = None,
+    *,
+    include_exact_lower_rows: bool = False,
 ) -> dict[str, Any]:
     context = torus._build_context(root)
 
@@ -540,7 +542,7 @@ def _compile(
         variable for variable in lower_kernel_support if variable != external_lower_coordinate
     ]
 
-    return {
+    result: dict[str, Any] = {
         "context": context,
         "deformation": deformation,
         "variable_count": len(variables),
@@ -575,6 +577,9 @@ def _compile(
         "reachable_lower_components_not_forced_zero": len(reachable_free),
         "commutator_actions": commutator_actions,
     }
+    if include_exact_lower_rows:
+        result["_exact_lower_component_rows"] = lower_component_rows
+    return result
 
 
 def build_payload(root: Path) -> dict[str, Any]:

@@ -15,6 +15,35 @@ It supersedes the earlier ordering where the two one-sided profiles and `n=5`
 were treated as mandatory Paper I gates; it does not supersede any certified
 theorem, scope correction, or frozen artifact.
 
+### 2026-08-02 SR2-V execution update
+
+This update controls any older "current" SR2-V execution wording later in the
+roadmap; the publication and terminal gates remain unchanged.
+
+SR2-V remains `OPEN`, but its undifferentiated reducible/irreducible search has
+been replaced by six exact assets: a nonlinear aligned principal-open
+obstruction, a generic two-character transverse splitting theorem, a complete
+six-pair/four-branch Q-commutator cover, a state-native rank-two chart, and
+primitive split-torus scalar lattices of dimensions 49 and 29, plus the first
+state-native pair-irreducible D12 sparse manifest without a solver verdict.
+These are Paper I strengthening lemmas and search architecture, not a new
+short report and not a terminal classification.
+
+The current order is:
+
+1. impose additive bottom MSR on the primitive `G_m^29` Laurent map;
+2. bind Q5 nonsingularity and a versioned solver budget to the compiled
+   pair-irreducible `det[Q_1,Q_2]!=0` manifest;
+3. aligned `Delta_align=0` and transverse splitting `Delta(r,s)=0` degeneracy
+   loci;
+4. triple-irreducible commutator-trace pivots and the wider scalar-character
+   reducible locus;
+5. direct `QQ` certification of any hit against every relation and semantic
+   ledger.
+
+The detailed authority for this milestone is
+[`v0.4.2_sr2v_principal_open_and_state_native_progress.md`](v0.4.2_sr2v_principal_open_and_state_native_progress.md).
+
 ## 1. 出版方針の決定
 
 個々の計算結果を独立した査読論文として細分化せず、まず版付きの短報として
@@ -74,18 +103,30 @@ JOSS は数学・数理物理の主論文の代替にはしない。コンパイ
 
 ### SR2-V -- v0.4-V: reachable observability strengthening
 
-- 状態: **baseline exact audit と SR3b-M は完了。reachable-visible search は bounded exact
-  scout 済みだが、三つの終端判定には未到達で OPEN**
+- 状態: **baseline exact audit と SR3b-M に加え、二つの principal-open 定理、
+  六 pair 分岐被覆、state-native rank-two chart、scalar-lattice SNF が完了。
+  三つの終端判定には未到達で OPEN**
 - 現 SR2 witness は独立 verifier により `operator_noncommutative=true`,
   `reachable_span_rank=1`, `reachable_visible=false` と machine-readable に固定済み。
-- transverse upper-triangular scalar-torus の180有理点では witness はなく、全点で六可換子が
-  exact linear row span に入った。ただし有限sampleであり一般no-goではない。
+- transverse upper-triangular scalar-torus の180有理点では witness はなかった。この有限
+  sample 自体は一般 no-go ではないが、現在は Smith 標準形により operator scalar locus を
+  `G_m^49`、observed-bottom + fixed-GC locus を `G_m^29` と大域的に parameterize 済み。
 - frozen upper-triangular witness family の invariant-line-breaking Jacobian は、1187行・132
   lower coordinatesでrank 131、kernelはcutoff外 `Q_5` のみ。full 528-variable tangentでも
-  actual `n<=4` lower-left方向は残らない。これはbase-upper-right非依存の一次障害であり、
-  higher-order/disconnected/irreducible componentsは未解決。
-- authoritative bounded-search report:
-  `reports/v0.4.2_sr2v_visible_search.md`。
+  actual `n<=4` lower-left方向は残らない。さらに `F=Hy` により
+  `Delta_align!=0` 上では高次・非線形 branch も `y=0` に強制される。
+  `Delta_align=0`、他の可約成分、pair/triple 既約 branch は未解決。
+- two-character transitive-percolation extension は同一 character 線と
+  `r!=s, Delta(r,s)!=0` で split し可換。例外 locus `Delta(r,s)=0` は未解決。
+- 六つの非零 Q-commutator pivot は pair-irreducible、triple-irreducible、
+  transverse reducible、aligned reducible の四分岐で対象を構造的に完全被覆する。
+- 一つの harmonic boundary slice 上で、87 state・131 edge orbit・262 affine parameter の
+  state-native rank-two chart を exact に構築済み。GC/MSR は組込みだが operator relation は未解決。
+- その shear slice 上で `D12=det[Q1,Q2]` が非零七項三次式であることと、全 relation
+  ledger の sparse manifest を exact に認定済み。solver 未実行で交差の有無は未解決。
+- authoritative exact-progress reports:
+  `reports/v0.4.2_sr2v_visible_search.md` および
+  `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md`。
 - 将来の witness では reachable-span rank と、stage/source-compatible reachable state 上の
   `[Q_i,Q_j]` の作用を別々に検証する。
 - 第一目標は、rank two かつ reachable-visible な exact rational weak/weak witness。
@@ -385,7 +426,7 @@ post-literature refocus             STATEWISE OBSERVABILITY / RECOVERY
           |
 SR2-V exact audit + SR3b-M lemmas   COMPLETE
           |
-SR2-V reducible/irreducible exact campaign   OPEN; LOCAL UPPER BRANCH SEALED
+SR2-V exact campaign   OPEN; D12 MANIFEST / BRANCH COVER / TWO OPENS / RANK2 / SCALAR SNF READY
           |
 955 non-self-adjoint state-only repair, then 721 repair
           |

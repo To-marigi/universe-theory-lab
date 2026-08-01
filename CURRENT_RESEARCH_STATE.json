@@ -1,6 +1,6 @@
 {
   "schema_version": "cpobc-current-research-state-v1",
-  "updated": "2026-08-01",
+  "updated": "2026-08-02",
   "mutable_index_not_a_proof_certificate": true,
   "global_verdict": "FINAL_THEORY_OPEN",
   "public_baseline": {
@@ -40,7 +40,13 @@
     "v0.4.2_955_N_nonzero_triangular_scout": "EXACT_17_DIMENSIONAL_FAMILY_FORCES_Q_COMMUTATIVITY_GENERAL_PROFILE_OPEN",
     "v0.4.2_955_mixed_source_native_scalar_manifest": "READY_262_VARIABLES_783_320_24_165_DETERMINANTS_N_NONZERO_NO_SOLVER_OLD_21_IDEALS_UNUSED",
     "v0.4.2_955_mixed_xy_tangent_scout": "SCHEMA_V2_NO_WITNESS_OPEN_LOCAL_UPPER_OBSTRUCTION_AND_PURE_LOWER_BOUNDED_GLOBAL_NO_GO_REMOTE_MIXED_OPEN",
-    "v0.4.2_955_pure_lower_oracle": "INDEPENDENT_EXACT_ORACLE_CERTIFIED_SR3B_AUXILIARY_NOT_NEW_SHORT_REPORT"
+    "v0.4.2_955_pure_lower_oracle": "INDEPENDENT_EXACT_ORACLE_CERTIFIED_SR3B_AUXILIARY_NOT_NEW_SHORT_REPORT",
+    "v0.4.2_sr2v_aligned_principal_open": "EXACT_NONLINEAR_Y_ZERO_OBSTRUCTION_ON_NONEMPTY_DELTA_ALIGN_NONZERO_OPEN_SEARCH_OPEN",
+    "v0.4.2_sr2v_transitive_extension_principal_open": "GENERIC_SPLITTING_CERTIFIED_FOR_TWO_CHARACTER_TRANSITIVE_PERCOLATION_FAMILY_EXCEPTIONAL_LOCUS_OPEN",
+    "v0.4.2_sr2v_commutator_pivot_cover": "COMPLETE_SIX_PAIR_FOUR_BRANCH_STRUCTURAL_COVER_NO_BRANCH_SOLVED",
+    "v0.4.2_sr2v_state_native_rank2_chart": "EXACT_FIXED_HARMONIC_SLICE_262_PARAMETER_CHART_GC_MSR_BUILT_IN_OPERATOR_RELATIONS_OPEN",
+    "v0.4.2_sr2v_scalar_lattice_SNF": "EXACT_SPLIT_GM49_AND_GM29_PRIMITIVE_LAURENT_PARAMETERISATIONS_ADDITIVE_MSR_AND_COCYCLE_OPEN",
+    "v0.4.2_sr2v_state_native_shear_D12_manifest": "EXACT_29994_TERM_PAIR_IRREDUCIBLE_SPARSE_MANIFEST_NO_SOLVER_RELATION_INTERSECTION_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_PURE_LOWER_BOUNDED_NO_GO_ORACLE_CERTIFIED_REMOTE_MIXED_OPEN",
@@ -153,14 +159,14 @@
       "semantic_digest_sha256": "73508f8ad94d97a3147cbd913d687f0b779c740b80a84a4836854053f6f01c62"
     },
     "SR2_V": {
-      "status": "BASELINE_AND_BOUNDED_EXACT_SCOUTS_COMPLETE_SEARCH_OPEN_NO_TERMINAL",
+      "status": "D12_MANIFEST_PRINCIPAL_OPEN_REDUCTIONS_BRANCH_COVER_STATE_NATIVE_RANK2_AND_SCALAR_SNF_CERTIFIED_SEARCH_OPEN_NO_TERMINAL",
       "quality_target": "EXACT_RATIONAL_RANK_TWO_AND_STAGE_SOURCE_COMPATIBLE_REACHABLE_VISIBLE_WEAK_WEAK_WITNESS",
       "terminal_verdicts": [
         "REACHABLE_VISIBLE_NONCOMMUTATIVE_WITNESS_CERTIFIED",
         "REACHABLE_VISIBLE_NONCOMMUTATIVITY_OBSTRUCTED",
         "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT"
       ],
-      "bounded_results": {
+      "nonterminal_exact_results": {
         "rational_torus_scout": {
           "artifact": "results/v0.4.2_sr2v_visible_torus_scout.json",
           "verdict": "SR2V_VISIBLE_TORUS_SCOUT_NO_WITNESS_OPEN",
@@ -180,15 +186,129 @@
           "full_jacobian_rank": 455,
           "full_jacobian_nullity": 73,
           "general_obstruction_claimed": false
+        },
+        "aligned_nonlinear_principal_open": {
+          "artifact": "results/v0.4.2_sr2v_aligned_principal_open.json",
+          "verdict": "SR2V_ALIGNED_PRINCIPAL_OPEN_VISIBILITY_OBSTRUCTED",
+          "semantic_digest_sha256": "66ed68773f8023c0e84f18c48719dc5517cb3c43f8d5f87e25b3f9ddf01d6fa5",
+          "factorisation": "F_Y_Z_EQUALS_H_Y_Z_TIMES_Y",
+          "principal_open": "DELTA_ALIGN_DET_H_NONZERO",
+          "nonempty_exact_base_evaluation": true,
+          "open_scope": [
+            "DELTA_ALIGN_ZERO_DEGENERACY_HYPERSURFACE",
+            "DISCONNECTED_COMPONENTS",
+            "TRANSVERSE_REDUCIBLE_COMPONENTS",
+            "IRREDUCIBLE_COMPONENTS"
+          ],
+          "search_terminal": false
+        },
+        "transitive_extension_principal_open": {
+          "artifact": "results/v0.4.2_sr2v_transitive_extension_principal_open.json",
+          "verdict": "SR2V_TRANSITIVE_EXTENSION_PRINCIPAL_OPEN_SPLITTING_CERTIFIED",
+          "semantic_digest_sha256": "5b3cf83ae5cd6338cfa07c1894bf5eab2f6cf8fe5870fd8fdc6911682b06d000",
+          "sample_rank": 130,
+          "sample_nullity": 1,
+          "kernel": "GLOBAL_CONJUGATION_COBOUNDARY_ONLY_ON_DECLARED_OPEN",
+          "parameter_domain": "r*s*(1+r)*(1+s)!=0",
+          "commutativity_scope": "Q_1_TO_Q_4_WITH_Q5_UPPER_RIGHT_FIXED_ZERO",
+          "open_scope": [
+            "EXCEPTIONAL_DELTA_R_S_ZERO_LOCUS",
+            "GENERAL_SCALAR_CHARACTERS",
+            "OTHER_REDUCIBLE_COMPONENTS"
+          ],
+          "search_terminal": false
+        },
+        "commutator_pivot_branch_cover": {
+          "artifact": "results/v0.4.2_sr2v_commutator_pivot_branch_cover.json",
+          "verdict": "SR2V_COMMUTATOR_PIVOT_BRANCH_COVER_CERTIFIED",
+          "semantic_digest_sha256": "100fefe528012254edcd66c7237ae5706dcb3bba6badbe75da170f68403b4032",
+          "Q_pair_count": 6,
+          "branches": [
+            "PAIR_IRREDUCIBLE",
+            "TRIPLE_IRREDUCIBLE",
+            "TRANSVERSE_GLOBALLY_REDUCIBLE",
+            "ALIGNED_GLOBALLY_REDUCIBLE"
+          ],
+          "supplemental_Q5_separate": true,
+          "search_terminal": false
+        },
+        "state_native_rank2_chart": {
+          "artifact": "results/v0.4.2_sr2v_state_native_rank2_chart.json",
+          "verdict": "SR2V_STATE_NATIVE_RANK2_CHART_CERTIFIED",
+          "semantic_digest_sha256": "3bf3b56c97ef73fcce3ff089f5229191b9d1ade04e217706ac51abe11eaebe6c",
+          "endpoint_states": 87,
+          "actual_edge_orbits": 131,
+          "full_affine_parameters": 262,
+          "shear_parameters": 131,
+          "reachable_span_rank": 2,
+          "built_in_semantics": [
+            "FIXED_VECTOR_GC",
+            "REACHABLE_STATE_MSR",
+            "EDGE_NONSINGULARITY_REDUCED_TO_BETA_NONZERO"
+          ],
+          "remaining_operator_ledgers": {
+            "CPOBC": 783,
+            "Eq113_literal": 25,
+            "Eq113_derived": 25,
+            "Eq139_strict": 4,
+            "Eq139_completed": 10
+          },
+          "fixed_state_slice_is_global_rank2_cover": false,
+          "search_terminal": false
+        },
+        "state_native_shear_D12_manifest": {
+          "artifact": "results/v0.4.2_sr2v_state_native_shear_D12_manifest.json",
+          "verdict": "SR2V_STATE_NATIVE_SHEAR_D12_MANIFEST_CERTIFIED_NO_SOLVER_RUN",
+          "semantic_digest_sha256": "9b7b3006988ed4bf33e8b495f79821141d52e0ae17ed33fd801ae3ed8c8a00a0",
+          "D12_polynomial_digest_sha256": "66716220b6f2851e700b260b9e082501914ba50dab1502f21da9f7584fcaa289",
+          "saturated_coordinates": 136,
+          "actual_edge_shear_coordinates": 131,
+          "supplemental_Q5_coordinates": 4,
+          "scalar_entries": 9345,
+          "sparse_terms": 29994,
+          "maximum_total_degree": 6,
+          "D12_terms": 7,
+          "D12_degree": 3,
+          "D12_ambient_open_nonempty": true,
+          "D12_open_meets_relation_variety": "UNRESOLVED",
+          "solver_run": false,
+          "solver_run_permitted_before_Q5_and_budget_binding": false,
+          "supplemental_Q5_nonsingularity": "SEPARATE_LOCALISATION_REQUIRED",
+          "fixed_state_slice_is_global_rank2_cover": false,
+          "search_terminal": false
+        },
+        "scalar_lattice_SNF": {
+          "artifact": "results/v0.4.2_sr2v_scalar_lattice.json",
+          "verdict": "SR2V_SCALAR_LATTICE_SNF_CERTIFIED_NONTERMINAL",
+          "semantic_digest_sha256": "155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9",
+          "operator_block": {
+            "shape": [843, 132],
+            "rank": 83,
+            "primitive_kernel_rank": 49,
+            "split_torus": "G_m^49"
+          },
+          "observed_bottom_plus_fixed_GC_block": {
+            "shape": [1163, 132],
+            "rank": 103,
+            "primitive_kernel_rank": 29,
+            "split_torus": "G_m^29"
+          },
+          "all_nonzero_smith_invariants_are_one": true,
+          "additive_MSR_included": false,
+          "cocycle_fibre_included": false,
+          "search_terminal": false
         }
       },
-      "current_component_target": "DISCONNECTED_TRANSVERSE_REDUCIBLE_OR_IRREDUCIBLE_COMMUTATOR_DETERMINANT_PRINCIPAL_OPEN",
+      "current_component_target": "BIND_Q5_AND_VERSIONED_BUDGET_TO_D12_MANIFEST_PLUS_ADDITIVE_BOTTOM_MSR_ON_PRIMITIVE_LAURENT_MAP_THEN_DEGENERACY_AND_TRIPLE_BRANCHES",
       "short_report_rule": "SEPARATE_SHORT_REPORT_CANDIDATE_ONLY_FOR_EXACT_VISIBLE_WITNESS_OR_FULL_PROFILE_OBSTRUCTION"
     },
     "priority_order": [
       "SR2_V_VISIBILITY_DOMAIN_BASELINE_AUDIT_AND_SR3B_M_COMPLETE",
-      "SR2_V_TORUS_AND_INVARIANT_LINE_TANGENT_BOUNDED_GATES_COMPLETE",
-      "SR2_V_DISCONNECTED_REDUCIBLE_AND_IRREDUCIBLE_EXACT_SEARCH_CURRENT",
+      "SR2_V_PRINCIPAL_OPEN_REDUCTIONS_AND_COMMUTATOR_BRANCH_COVER_COMPLETE",
+      "SR2_V_SCALAR_LATTICE_SPLIT_TORI_GM49_GM29_COMPLETE",
+      "SR2_V_STATE_NATIVE_D12_SPARSE_MANIFEST_COMPLETE_NO_SOLVER",
+      "SR2_V_STATE_NATIVE_RANK2_PAIR_IRREDUCIBLE_SHEAR_EXACT_SCOUT_CURRENT",
+      "SR2_V_DEGENERACY_LOCI_AND_TRIPLE_IRREDUCIBLE_BRANCHES_NEXT",
       "955_REDUCIBLE_IRREDUCIBLE_AND_SYMMETRY_REDUCED_MIXED_SCOUTS",
       "721_NATIVE_COMPILER_AFTER_955_TERMINAL_OR_AS_BUDGET_FALLBACK",
       "DOWNSTREAM_OFF_RELATION_MINIMUM_N5_D3_AND_LIFTING"
@@ -273,6 +393,19 @@
     "reports/v0.4.2_sr2v_baseline_observability.md",
     "reports/v0.4.2_sr3b_m_semantic_recovery.md",
     "reports/v0.4.2_sr2v_visible_search.md",
+    "reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md",
+    "results/v0.4.2_sr2v_aligned_principal_open.json",
+    "results/v0.4.2_sr2v_transitive_extension_principal_open.json",
+    "results/v0.4.2_sr2v_commutator_pivot_branch_cover.json",
+    "results/v0.4.2_sr2v_state_native_rank2_chart.json",
+    "results/v0.4.2_sr2v_state_native_shear_D12_manifest.json",
+    "results/v0.4.2_sr2v_scalar_lattice.json",
+    "src/universe_lab/final_theory/weak_d2_aligned_principal_open_v042.py",
+    "src/universe_lab/final_theory/weak_d2_transitive_extension_v042.py",
+    "src/universe_lab/final_theory/weak_d2_commutator_branching_v042.py",
+    "src/universe_lab/final_theory/weak_d2_state_native_rank2_v042.py",
+    "src/universe_lab/final_theory/weak_d2_state_native_shear_pair_open_v042.py",
+    "src/universe_lab/final_theory/sr2v_scalar_lattice_v042.py",
     "HANDOFF_v0.4.1.md",
     "reports/v0.4.2_prior_art_and_related_work_audit_protocol.md",
     "reports/v0.4.2_prior_art_and_related_work_audit.md",
@@ -310,7 +443,13 @@
     "tests/final_theory/test_weak_d2_observability_v042.py",
     "tests/final_theory/test_semantic_recovery_v042.py",
     "tests/final_theory/test_weak_d2_visible_torus_scout_v042.py",
-    "tests/final_theory/test_weak_d2_visible_tangent_v042.py"
+    "tests/final_theory/test_weak_d2_visible_tangent_v042.py",
+    "tests/final_theory/test_weak_d2_aligned_principal_open_v042.py",
+    "tests/final_theory/test_weak_d2_transitive_extension_v042.py",
+    "tests/final_theory/test_weak_d2_commutator_branching_v042.py",
+    "tests/final_theory/test_weak_d2_state_native_rank2_v042.py",
+    "tests/final_theory/test_weak_d2_state_native_shear_pair_open_v042.py",
+    "tests/final_theory/test_sr2v_scalar_lattice_v042.py"
   ],
   "publication_posture": "STATEWISE_VERSUS_OPERATOR_OBSERVABILITY_EXACT_SEPARATION_AND_MINIMAL_RECOVERY_WITH_SCOPED_SR3B_A_ONE_SIDED_CLOSURE_AS_UPGRADE_NO_BROAD_PRIORITY_OVER_XU_2607_26672"
 }

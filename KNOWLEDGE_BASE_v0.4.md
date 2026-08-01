@@ -1,6 +1,6 @@
 # CPOBC research knowledge base — v0.4 track
 
-Updated: 2026-08-01
+Updated: 2026-08-02
 
 This is the live scientific index after the public v0.3.9 release. Use the
 publication roadmap for ordering, this file for current facts and reusable
@@ -14,18 +14,20 @@ later scope audit supersedes their interpretation.
    order.
 2. `reports/v0.4.2_post_literature_strategy_review.md` — post-audit scientific
    focus, Paper I theorem stack, observability track, and revised gates.
-3. This knowledge base — current scientific state, terminology, and proof
+3. `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` — current
+   exact SR2-V branch reductions, chart/manifests, and nonterminal boundaries.
+4. This knowledge base — current scientific state, terminology, and proof
    rules.
-4. `CURRENT_RESEARCH_STATE.json` — compact mutable index for tools and future
+5. `CURRENT_RESEARCH_STATE.json` — compact mutable index for tools and future
    agents; it is not a proof certificate.
-5. `HANDOFF_v0.4.1.md` — exact operational state, commands, hashes, and next
+6. `HANDOFF_v0.4.1.md` — exact operational state, commands, hashes, and next
    gates.
-6. `reports/v0.4.1_scope_break_decision_packet.md` — scope-break owner decision.
-7. `reports/v0.4.2_prior_art_and_related_work_audit.md` — current novelty,
+7. `reports/v0.4.1_scope_break_decision_packet.md` — scope-break owner decision.
+8. `reports/v0.4.2_prior_art_and_related_work_audit.md` — current novelty,
    priority, related-work, and mathematical-commutativity claim boundaries.
-8. `reports/cpobc_backup_policy_2026-08-01.md` — Git/NAS responsibility split,
+9. `reports/cpobc_backup_policy_2026-08-01.md` — Git/NAS responsibility split,
    cold-backup rule, and the current non-Git artifact snapshot checksum.
-9. Versioned reports and machine artifacts — evidence within their declared
+10. Versioned reports and machine artifacts — evidence within their declared
    scope. A later scope addendum controls interpretation but does not rewrite
    old bytes.
 
@@ -57,12 +59,13 @@ stage/source-compatible reachable-state domain as separate predicates.
 That observability statement is now independently machine-certified, rather
 than inferred from the original witness compiler. The follow-up exact search
 has not reached an SR2-V terminal. A 180-point rational-torus campaign found no
-transverse reducible witness, and an exact 1,187-row lower-component Jacobian
-has rank 131 on 132 lower coordinates, leaving only the cutoff-external `Q_5`
-direction. Thus the frozen upper-triangular rank-one family has no first-order
-reachable-visible escape, even when all 528 matrix-entry coordinates vary.
-This is a bounded/local obstruction; disconnected, higher-order, and
-irreducible components remain open.
+transverse reducible witness. The earlier 1,187-row rank-131 tangent
+obstruction is now strengthened nonlinearly: the selected residuals factor as
+`F(y,z)=H(y,z)y`, and on the explicit nonempty principal open `det H != 0`
+every exact solution has `y=0`. A two-character transitive-percolation
+extension also splits generically on a certified nonempty principal open.
+These results leave their determinant-degeneracy loci, other reducible
+components, and irreducible branches open.
 
 A proper sublocus of the strong-GC/reachable-state-MSR corner is nevertheless
 closed: on the nonsingular source reconstruction slice
@@ -97,6 +100,13 @@ semantic-profile row and not a change to SR3b-A.
 | `results/v0.4.2_sr3b_m_semantic_recovery.json` | exact QQ/symbolic lemma certificate; digest `a742976ab7d955a66beb07f6efd06170cd3b2f320638b6a64c3292f6fcf5d735` | residual-family evaluation injectivity, same-residual two-probe recovery, global-span and cyclicity counterexamples, and the non-scalar `2x2` centralizer endpoint; closes neither one-sided profile |
 | `results/v0.4.2_sr2v_visible_torus_scout.json` | exact finite rational scout; digest `7ed0d5f8c3d67528bd6cb2853e8b8887479488453799a43b6645d87437ad028f` | 49-dimensional scalar torus, 180 rational points, no free Q commutator; `OPEN` bounded evidence, not a torus cover or general no-go |
 | `results/v0.4.2_sr2v_baseline_lower_tangent.json` and `reports/v0.4.2_sr2v_visible_search.md` | exact dual-number QQ tangent certificate; digest `d83afca2c460bad9e8d420e75ad60e1974f3419f0dd655bfc51821d6a02b5a92` | base-upper-right-independent 1,187-row invariant-line-breaking subsystem has rank 131/kernel external Q5; full Jacobian rank 455/nullity 73 but no in-scope lower direction or first-order visibility escape; not a global obstruction |
+| `results/v0.4.2_sr2v_aligned_principal_open.json` | exact determinant-localized polynomial factorization; digest `66ed68773f8023c0e84f18c48719dc5517cb3c43f8d5f87e25b3f9ddf01d6fa5` | upgrades the aligned tangent result to `F=H y`; on the nonempty open `det H!=0`, all exact solutions have `y=0`; Eq. (113) 25/25 and Eq. (139) 4/10 provenance remain separately serialized; the degeneracy hypersurface and other components remain open |
+| `results/v0.4.2_sr2v_transitive_extension_principal_open.json` | exact symbolic identities plus a nonzero 130-minor; digest `5b3cf83ae5cd6338cfa07c1894bf5eab2f6cf8fe5870fd8fdc6911682b06d000` | on `r*s*(1+r)*(1+s)!=0`, the same-character line and a generic distinct-character principal open force `Q_1,...,Q_4` commutativity through split extensions; Q5 upper-right coordinate is fixed outside the kernel and the exceptional determinant-zero locus remains open |
+| `results/v0.4.2_sr2v_commutator_pivot_branch_cover.json` | exact `2 by 2` polynomial identities; digest `100fefe528012254edcd66c7237ae5706dcb3bba6badbe75da170f68403b4032` | six Q pairs completely cover Q-noncommutativity and split it into pair-irreducible, triple-irreducible, transverse-reducible, and aligned-reducible branches; structural cover only |
+| `results/v0.4.2_sr2v_state_native_rank2_chart.json` | exact harmonic-state and local-frame certificate; digest `3bf3b56c97ef73fcce3ff089f5229191b9d1ade04e217706ac51abe11eaebe6c` | 87 states, 131 orbit actions, exact reachable rank two; fixed-vector GC/reachable MSR are built into a 262-parameter fixed-state chart and nonsingularity reduces to `beta_e!=0` (automatic on the shear slice), while CPOBC/Eq. (113)/Eq. (139) remain unsolved |
+| `results/v0.4.2_sr2v_state_native_shear_D12_manifest.json` | exact sparse QQ substitution manifest; digest `9b7b3006988ed4bf33e8b495f79821141d52e0ae17ed33fd801ae3ed8c8a00a0` | 131-edge shear plus separate Q5; `D12=det[Q1,Q2]` is a nonzero seven-term cubic and all 783/712/25+25/4+10/1529/24 ledgers are compiled; no solver or relation-variety intersection claim |
+| `results/v0.4.2_sr2v_scalar_lattice.json` | exact ZZ/QQ Smith-normal-form and primitive-kernel certificate; digest `155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9` | operator scalar block is a split `G_m^49`; observed-bottom plus fixed-GC block is a split `G_m^29`; additive MSR, cocycle, commutator, and chart-cover claims are excluded |
+| `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` | current SR2-V exact progress authority | consolidates the six new certificates, discarded numerical-scout boundary, revised exact search order, and nonterminal publication scope |
 | `references/notes/v0.4.2_prior_art_related_work_2026-08-01.md` | theorem/page-level literature and mathematical-tool ledger | records direct-source semantics, Xu overlap, triangularisation/common-eigenvector/Burnside/cyclic-separating/LLD tools, 66-PDF local/NAS preservation, and exact claim boundaries |
 | `results/v0.4.2_955_source_native_slack_compiler.json` | structured source word/matrix-block inventory | covers 165 occurrences/131 orbits, 48 slack coordinates, and independently proves the 320-edge strong-GC basis spans all 1,529 path pairs; no scalar solver manifest or chart theorem yet |
 | `results/v0.4.2_955_n_nonzero_scout.json` | exact QQ-linear source-native scout | the entire nonsingular `A_e=[[p_e,x_e],[0,1]]` family lies in `N!=0`, but all six Q commutators are forced zero; general mixed nonlinear patches remain open |
@@ -130,6 +140,12 @@ verdict.
 - For `2 by 2` searches, split common-invariant-line/simultaneously
   triangularizable and irreducible branches early. `det[A,B]=0` detects the
   former for pairs over the appropriate field but does not imply commutativity.
+- For a chosen nonzero Q commutator `C`, the exact complete split uses
+  `det C`, all transition traces `tr(C A_e)`, and
+  `det(C Omega,Omega)`. The resulting branches are pair-irreducible,
+  triple-irreducible, transverse globally reducible, and aligned globally
+  reducible. `det C=0` alone does not prove reducibility of the whole generator
+  family. The 131 actual transitions and supplemental Q5 remain distinct.
 - The minimal promotion from `D Omega=0` is separation by `Omega` on the
   profile-specific residual space, i.e. injectivity of `D -> D Omega`; cyclicity
   alone is insufficient. Two independent probe vectors killed by the same
@@ -163,9 +179,31 @@ verdict.
   operator noncommutativity.
 - The SR2-V baseline verifier is complete: 407 paths, 87 endpoint states,
   exact reachable rank one, and all six nonzero commutators invisible on the
-  full declared cylinder-state domain. The 180-point rational-torus scout and
-  rank-131 invariant-line-breaking tangent certificate are bounded negative
-  results only; SR2-V remains open.
+  full declared cylinder-state domain. The aligned branch now has a nonlinear
+  obstruction on `det H!=0`; a transverse two-character family splits on a
+  second nonempty principal open. Neither covers its determinant-zero boundary,
+  so SR2-V remains open.
+- Q-noncommutativity is now covered structurally by six nonzero commutator
+  pivots. Each pivot has four exact branches: pair-irreducible,
+  triple-irreducible, transverse globally reducible, and aligned globally
+  reducible. In the transverse upper chart the commutator determinant is
+  identically zero, so noncommutativity must be saturated by the normalized
+  upper-right commutator coefficient instead.
+- The state-native rank-two chart fixes one harmonic terminal boundary slice,
+  uses 262 affine edge parameters, and builds all fixed-vector GC and
+  reachable-state MSR equations into the coordinates. It is complete for edge
+  actions over that fixed state slice, not a cover of all rank-two state
+  assignments and not a solution of the operator relations.
+- The first pair-irreducible state-native shear patch is compiled, not solved.
+  `D12=det[Q1,Q2]` is a nonzero seven-term cubic; `D12!=0` would make the pair
+  irreducible and visible, but the manifest does not show that the CPOBC
+  relation variety meets that open. Supplemental Q5 nonsingularity and a
+  versioned solver budget must be bound before elimination.
+- The scalar monomial relation lattices are now global rather than sampled:
+  the 843-by-132 operator block has rank 83 and Smith factors `1^83`, while the
+  1,163-by-132 observed-bottom plus fixed-GC block has rank 103 and factors
+  `1^103`. Their primitive kernels give split tori `G_m^49` and `G_m^29`.
+  The 24 additive MSR equations and extension fibres still have to be imposed.
 - SR3b-M must distinguish ordinary reachability from multiple preparations or
   probes applied to the same residual. The latter is a conditional recovery
   theorem, not an automatic consequence of the base single-state semantics.
@@ -282,11 +320,36 @@ source, implementation, escape point, and 35-test regression. Sage/Singular
 remains frozen until the semantic gates below pass. Current progress is:
 
 The post-literature lightweight gates preceding further 955 work are also now
-materialized: SR2-V baseline observability audit is complete; SR3b-M is
-complete; the first transverse rational-torus and invariant-line-breaking
-tangent scouts are complete with bounded `OPEN` scope. The current immediate
-target is a disconnected transverse-reducible or irreducible weak/weak
-component. No local perturbation of the frozen upper family should be rerun.
+materialized: SR2-V baseline observability and SR3b-M are complete; the aligned
+tangent obstruction has been upgraded to a nonlinear principal-open theorem;
+a two-character transverse family splits generically; the six Q-commutator
+pivots give a complete structural branch cover; and an exact state-native
+rank-two chart is ready. Smith-normal-form certificates also replace finite
+scalar-torus sampling by primitive `G_m^49` and `G_m^29` Laurent coordinates.
+The immediate targets are now the compiled D12 relation-variety intersection,
+the two determinant degeneracy loci, and the triple-irreducible branches.
+Generic points inside the certified opens should not be resampled.
+
+For SR2-V specifically:
+
+1. **aligned open closed:** `F=H y` and a nonzero exact determinant certify
+   `y=0` on `Delta_align!=0`; only `Delta_align=0` and other components remain;
+2. **transverse family generically closed:** the same-character line commutes,
+   and on `r!=s, Delta(r,s)!=0` the only extension is the split coboundary;
+3. **branch cover complete:** six Q pairs and four branches per nonzero pivot
+   cover every Q-noncommutative model, with supplemental Q5 tracked separately;
+4. **rank-two chart ready:** one exact harmonic boundary slice has 262 affine
+   edge parameters (131 on the shear slice), while CPOBC and supplemental
+   Eq. (113)/(139) remain to be solved;
+5. **first pair-open manifest ready, no solver:** the saturated 136-coordinate
+   D12 input has 9,345 scalar entries and 29,994 terms; the nonempty ambient
+   open is certified but intersection with the relation variety is unresolved;
+6. **scalar lattices globalized:** the two declared monomial loci are split
+   connected tori of dimensions 49 and 29 before additive MSR/cocycle equations;
+7. **terminal unchanged:** none of these scoped certificates is a witness or
+   full-profile obstruction, so SR2-V remains `OPEN`.
+
+For the one-sided repair track, current progress remains:
 
 1. **complete:** the v0.4.1 driver/oracle can no longer reissue the withdrawn
    theorem; new outputs and certificate writes use separate restricted-locus
@@ -413,13 +476,24 @@ the SR3b-A theorem, title, or deposit status.
   states. Do not describe it as reachable-visible.
 - The transverse rational-torus scout tested 180 exact rational points in a
   49-dimensional scalar torus and found no free Q commutator. Do not rerun the
-  same points or promote the finite census to a torus cover.
+  same points or promote the finite census to a torus cover. The relevant
+  monomial loci now have primitive global Laurent maps `G_m^49` and `G_m^29`;
+  use those maps for additive-MSR and cocycle work instead.
 - The weak/weak invariant-line-breaking subsystem has 1,187 exact rows,
   rank 131 on 132 lower coordinates, and kernel equal to cutoff-external Q5.
   The full 528-coordinate Jacobian has rank 455/nullity 73, but no actual
-  `n<=4` lower-left tangent direction. Do not search again by first-order
-  perturbation of the frozen upper family; target disconnected or irreducible
-  components. This is not a full SR2-V obstruction.
+  `n<=4` lower-left tangent direction. The nonlinear `F=H y` certificate now
+  closes `Delta_align!=0`; do not search that open again. Target
+  `Delta_align=0`, the exceptional transverse determinant locus, or the
+  pair/triple irreducible pivots. This is not a full SR2-V obstruction.
+- The state-native rank-two chart fixes one harmonic boundary slice and is
+  complete only for edge actions over those states. Do not call it a cover of
+  all rank-two state assignments or treat its exact validation sample as a
+  CPOBC point.
+- The state-native D12 shear manifest is a pre-solver input only. Its stored
+  rational point proves ambient-open nonemptiness while directly failing
+  CPOBC; never cite it as a model. Add a separate Q5 determinant localization
+  and versioned budget binding before any elimination campaign.
 - A source/target frame cocycle `A_(c->d)=p_(c->d)S_dS_c^-1` was rejected as
   a construction route. It gives strong GC, exact reachable-state MSR,
   reachable rank two, and visible noncommuting Q for nonconstant harmonic
