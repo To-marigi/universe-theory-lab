@@ -1,0 +1,2228 @@
+{
+  "schema_version": "final-theory-v042-sr2v-transverse-determinant-zero-locus-v2",
+  "date": "2026-08-02",
+  "finite_scope": "n<=4",
+  "dimension": 2,
+  "profile": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
+  "semantic_branch_rule": {
+    "Eq113": "derived and literal readings are alternative branches, never simultaneous",
+    "Eq139": "printed-strict and Eq145-completed domains are alternative branches",
+    "matrix_count": 4,
+    "joint_all_readings_inference_forbidden": true
+  },
+  "declared_chart": {
+    "matrix_form": "A_e=[[a_e,x_e],[0,b_e]]",
+    "initial_vector": "e_2",
+    "interpretation": "globally reducible line transverse to the initial vector",
+    "scalar_base": "G_m^49(a) x BottomMSR(b), dimension 54",
+    "upper_right_coordinates": 132
+  },
+  "field": {
+    "base_points_and_matrices": "QQ",
+    "universal_identities": "generic symbolic 2x2 over QQ",
+    "floating_point_used": false,
+    "finite_field_used": false,
+    "groebner_used": false,
+    "sage_used": false
+  },
+  "input_artifacts": {
+    "results/v0.4.2_sr2v_scalar_lattice.json": {
+      "raw_sha256": "5989b3685c33e30a6ed3a39896cab0473043f847183de935f4b7c0f76814d3b5",
+      "semantic_digest_sha256": "155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9"
+    },
+    "results/v0.4.2_sr2v_bottom_msr_global_csg.json": {
+      "raw_sha256": "03cb9b5a2f3b5fedc8ae8abca25fae40886e43aa1064a060f5d6dbaf93467777",
+      "semantic_digest_sha256": "d7978cac841bf725baa03df99aa661183a5c96367a2979b245b978f7d5dd08a4"
+    },
+    "results/v0.4.2_sr2v_transverse_cocycle_principal_open.json": {
+      "raw_sha256": "f68c4123ba430c2a38b504d9ee84987bdc558ac414eab86c815bb788b706151b",
+      "semantic_digest_sha256": "07e60a4d6b029d3cf08efd3ef3aae14598a1614090d3809d764973065b35eaf0"
+    }
+  },
+  "bound_transverse_conclusion": {
+    "verdict": "SR2V_TRANSVERSE_ALL_FOUR_SEMANTIC_BRANCHES_Q1_Q4_SPLITTING_PRINCIPAL_OPENS_CERTIFIED_NONTERMINAL",
+    "next_exact_gate_it_declared": "analyse the four branch-specific determinant-zero loci without combining the alternative Eq113 or Eq139 semantics",
+    "its_rebuild_is_guarded_by_its_own_regression": true
+  },
+  "universal_commutator_identity": {
+    "chart": "Q_i=[[a_i,x_i],[0,b_i]]",
+    "commutator_upper_right": "a_i*x_j - a_j*x_i - b_i*x_j + b_j*x_i",
+    "template": "x_j*(a_i - b_i) - x_i*(a_j - b_j)",
+    "difference": "0",
+    "other_commutator_entries_are_zero": true,
+    "commuting_subspace": "K_delta=ker C(delta) in QQ^4",
+    "commuting_criterion": "the four Q coordinates lie in K_delta; when delta!=0 this is span(delta), while when delta=0 it is all of QQ^4",
+    "nonzero_delta_commuting_subspace": "K_delta=span(delta)",
+    "zero_delta_commuting_subspace": "K_0=QQ^4",
+    "equal_eigenvalue_specialisation_is_identically_zero": true,
+    "coboundary_specialisation_is_identically_zero": true,
+    "witness_criterion": "a reachable-visible noncommutative witness exists at a base point exactly when the six commutator rows leave the row space there, that is when rank[M;C]>rank M with C=C(delta); vanishing of a determinant alone is not sufficient"
+  },
+  "universal_coboundary_identity": {
+    "substitution": "x_e = beta_e = a_e - b_e",
+    "conjugator": "C=[[1,-1],[0,1]]",
+    "generator_identity": "[[a_e,a_e-b_e],[0,b_e]] = C*diag(a_e,b_e)*C^-1",
+    "generator_failures": [],
+    "word_identity": "upper_right(W) = A_W - B_W for every word, inverses included",
+    "checked_words": [
+      {
+        "letters": [
+          0,
+          1
+        ],
+        "upper_right_minus_A_minus_B": "0"
+      },
+      {
+        "letters": [
+          1,
+          0
+        ],
+        "upper_right_minus_A_minus_B": "0"
+      },
+      {
+        "letters": [
+          0,
+          1,
+          2
+        ],
+        "upper_right_minus_A_minus_B": "0"
+      },
+      {
+        "letters": [
+          2,
+          1,
+          0
+        ],
+        "upper_right_minus_A_minus_B": "0"
+      },
+      {
+        "letters": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "upper_right_minus_A_minus_B": "0"
+      },
+      {
+        "letters": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "upper_right_minus_A_minus_B": "0"
+      }
+    ],
+    "inverted_word_letters": [
+      0,
+      1,
+      2,
+      1,
+      0
+    ],
+    "inverted_word_residual": "0",
+    "operator_row_consequence": "an operator relation forces A_lhs=A_rhs and B_lhs=B_rhs, so its residual on beta is (A_lhs-B_lhs)-(A_rhs-B_rhs)=0 at every base point",
+    "fixed_vector_GC_consequence": "a fixed-vector GC relation only forces B_lhs=B_rhs, so its residual on beta is A_lhs-A_rhs and vanishes exactly when the upper character satisfies that monomial row",
+    "reachable_state_MSR_consequence": "an MSR row evaluates on beta to (identity_coefficient+sum coeff*a_e)*A_state and vanishes exactly when the upper character satisfies that additive equation",
+    "membership_criterion": "beta lies in ker M exactly when the upper character also lies on the bottom scalar locus"
+  },
+  "general_bottom_character": {
+    "closed_form": "b_e=lam(width,maximal)/lam(stage,0), lam=sum binomial*t_k, t0=1",
+    "cutoff_external_coordinate": "b_Q5=q5, free and independent of t",
+    "normalized_specialisation": "t1=t2=t3=t4=1, q5=1/32",
+    "occurrence_signature_failures": [],
+    "Q_stage_failures": [],
+    "agrees_with_the_shipped_csg_at_the_normalized_point": true,
+    "shipped_eq139_row_hardcodes_the_normalized_bottom": true,
+    "eq139_instances_compared": [
+      [
+        3,
+        1,
+        2
+      ],
+      [
+        4,
+        1,
+        2
+      ],
+      [
+        4,
+        1,
+        3
+      ],
+      [
+        4,
+        2,
+        3
+      ]
+    ],
+    "eq139_row_mismatches_at_the_normalized_point": [],
+    "general_bottom_eq139_builder_reproduces_the_shipped_rows": true
+  },
+  "full_diagonal_locus": {
+    "name": "full-diagonal locus",
+    "definition": "E={a_e=b_e for all 132 coordinates}",
+    "why_nonempty": "the bottom scalar locus satisfies the 843-row operator monomial lattice and therefore lies inside the upper torus G_m^49; E is its diagonal copy",
+    "dimension": 5,
+    "codimension_in_the_transverse_scalar_base": 49,
+    "relation_to_equal_Q_spectrum_locus": "E is contained in the generally larger locus Z_Q={delta_Q=0}; all of Z_Q is witness-free by the universal commutator identity",
+    "contained_in_every_branch_determinant_zero_locus": true,
+    "exact_rank_at_every_certified_sample": 127,
+    "exact_nullity_at_every_certified_sample": 5,
+    "rank_drop_from_the_generic_derived_rank": 4,
+    "stratum_wide_rank_constancy_proved": false,
+    "kernel_identification_at_every_certified_sample": "ker M is the tangent space of the five-dimensional bottom scalar locus, realised as the scalar deformations x_e=d b_e/d p for p in {t1,t2,t3,t4,q5}",
+    "kernel_argument": "the five tangent vectors annihilate every row of every branch matrix, they are linearly independent, and the exact nullity is five, so they span the kernel exactly at that point",
+    "commutator_conclusion": "a=b forces delta_Q=0 everywhere on E, so the universal template makes all six commutator rows vanish identically on E, whatever the rank and kernel are",
+    "witness_conclusion": "no reachable-visible noncommutative witness anywhere on E, in any of the four semantic branches",
+    "witness_conclusion_is_stratum_wide": true,
+    "witness_conclusion_argument": "delta_Q=0 on all of E and the commutator template is identically zero when delta_Q=0, so rank[M;C]=rank M at every point of E independently of the pointwise rank certificates",
+    "samples": [
+      {
+        "couplings": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "cutoff_external_q5": "1/32",
+        "all_843_operator_monomial_rows_hold": true,
+        "point_digest_sha256": "7f3b161c8fad3f6d3753890374e8dbef6371cea34f759dc31043fba91ca7f9e3",
+        "delta_Q": {
+          "1": "0",
+          "2": "0",
+          "3": "0",
+          "4": "0"
+        },
+        "delta_Q_is_zero": true,
+        "all_six_commutator_rows_vanish_identically": true,
+        "branches": {
+          "derived_Eq113__strict_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "derived_Eq113__completed_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__strict_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__completed_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          }
+        },
+        "bottom_tangent_row_violations": {
+          "derived_Eq113__strict_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "derived_Eq113__completed_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "literal_Eq113__strict_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "literal_Eq113__completed_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          }
+        },
+        "bottom_tangent_rank": 5,
+        "tangent_digest_sha256": "452b547585e626eeda43a0530545003d73dcbcafadc84d25d41a3ac12225ffa5"
+      },
+      {
+        "couplings": [
+          "3",
+          "5",
+          "7",
+          "11"
+        ],
+        "cutoff_external_q5": "13/4",
+        "all_843_operator_monomial_rows_hold": true,
+        "point_digest_sha256": "14443ed90a1dec2ce218826387d464c8b67d1b6426d1ed32802cdd2f4cbd1e21",
+        "delta_Q": {
+          "1": "0",
+          "2": "0",
+          "3": "0",
+          "4": "0"
+        },
+        "delta_Q_is_zero": true,
+        "all_six_commutator_rows_vanish_identically": true,
+        "branches": {
+          "derived_Eq113__strict_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "derived_Eq113__completed_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__strict_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__completed_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          }
+        },
+        "bottom_tangent_row_violations": {
+          "derived_Eq113__strict_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "derived_Eq113__completed_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "literal_Eq113__strict_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "literal_Eq113__completed_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          }
+        },
+        "bottom_tangent_rank": 5,
+        "tangent_digest_sha256": "351caf51cdb6ac14c9455ab420aa427f7bef17a25caff57e3b1e7c770ccbb4c3"
+      },
+      {
+        "couplings": [
+          "2/3",
+          "5/7",
+          "9/4",
+          "1/6"
+        ],
+        "cutoff_external_q5": "7/5",
+        "all_843_operator_monomial_rows_hold": true,
+        "point_digest_sha256": "7c885cd35321d29464edea04aadae971e4eb8ad5346bac9c1b4e517a53b29c7e",
+        "delta_Q": {
+          "1": "0",
+          "2": "0",
+          "3": "0",
+          "4": "0"
+        },
+        "delta_Q_is_zero": true,
+        "all_six_commutator_rows_vanish_identically": true,
+        "branches": {
+          "derived_Eq113__strict_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "derived_Eq113__completed_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__strict_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__completed_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          }
+        },
+        "bottom_tangent_row_violations": {
+          "derived_Eq113__strict_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "derived_Eq113__completed_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "literal_Eq113__strict_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "literal_Eq113__completed_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          }
+        },
+        "bottom_tangent_rank": 5,
+        "tangent_digest_sha256": "6626b3e65f6f2677f0086920b957a4ef0ad46f2a48d893b99e5aa124c6f1b13b"
+      }
+    ]
+  },
+  "two_scalar_locus": {
+    "name": "two-scalar locus",
+    "definition": "S={the upper character a is itself a bottom scalar locus point}",
+    "reference_bottom_couplings": [
+      "3",
+      "5",
+      "7",
+      "11"
+    ],
+    "reference_cutoff_external_q5": "13/4",
+    "dimension": 10,
+    "codimension_in_the_transverse_scalar_base": 44,
+    "meets_delta_nonzero": true,
+    "also_contains_delta_zero_points_outside_E": true,
+    "exact_rank_at_every_certified_nonzero_delta_sample": 130,
+    "exact_nullity_at_every_certified_nonzero_delta_sample": 2,
+    "stratum_wide_rank_constancy_proved": false,
+    "universal_nullity_lower_bound_on_S_minus_E": 1,
+    "universal_nullity_argument": "by the coboundary membership criterion beta lies in ker M at every point of S, and beta is nonzero away from the equal-eigenvalue stratum, so the nullity is at least one everywhere on S minus E",
+    "kernel_identification_at_every_certified_nonzero_delta_sample": "ker M = span(beta, e_Q5)",
+    "kernel_argument": "beta and e_Q5 annihilate every row, they are independent, and the exact nullity is two at that point",
+    "commutator_conclusion": "beta is a global conjugation coboundary and the six commutator forms annihilate it identically at every base point; e_Q5 has no Q1,...,Q4 component; so at the four certified samples, where delta_Q!=0 and the kernel is span(beta,e_Q5), Q1,...,Q4 commute",
+    "witness_conclusion": "no reachable-visible noncommutative witness at any certified sample of S, in any of the four semantic branches",
+    "witness_conclusion_is_stratum_wide": false,
+    "witness_conclusion_argument": "the subfamily T is witness-free because delta_Q=0; on the remaining delta_Q!=0 part of S, only the beta direction is universally harmless, and witness freedom is certified at four points rather than proved stratum-wide",
+    "same_couplings_independent_Q5_subfamily": {
+      "name": "same-couplings independent-Q5 subfamily",
+      "symbol": "T",
+      "definition": "the upper and lower bottom characters share t1,t2,t3,t4 while their external Q5 coordinates vary independently",
+      "dimension": 6,
+      "relation_to_E": "E is the q5_upper=q5_lower diagonal inside T",
+      "relation_to_S": "E is a proper subset of T and T is a subset of S",
+      "delta_Q_zero_part_of_S": "exactly T: Q_n=1/lambda(n,0) for n=1..4, and equality recursively forces equality of t1,t2,t3,t4; Q5 is not in delta_Q",
+      "witness_conclusion": "all six commutator rows vanish identically on T, so T is witness-free subfamily-wide independently of branch rank",
+      "witness_conclusion_is_subfamily_wide": true,
+      "rank_constancy_proved": false,
+      "sample": {
+        "shared_couplings": [
+          "3",
+          "5",
+          "7",
+          "11"
+        ],
+        "lower_cutoff_external_q5": "13/4",
+        "upper_cutoff_external_q5": "17/5",
+        "differing_coordinates": [
+          "Q_5_EXTERNAL"
+        ],
+        "all_843_operator_monomial_rows_hold": true,
+        "all_320_fixed_vector_GC_monomial_rows_hold": true,
+        "delta_Q": {
+          "1": "0",
+          "2": "0",
+          "3": "0",
+          "4": "0"
+        },
+        "delta_Q_is_zero": true,
+        "all_six_commutator_rows_vanish_identically": true,
+        "beta_violations_per_row_block": {
+          "CPOBC": {
+            "rows": 783,
+            "violations": 0
+          },
+          "Eq113_derived": {
+            "rows": 25,
+            "violations": 0
+          },
+          "Eq113_literal": {
+            "rows": 25,
+            "violations": 0
+          },
+          "Eq139_completed": {
+            "rows": 10,
+            "violations": 0
+          },
+          "fixed_vector_GC_basis": {
+            "rows": 320,
+            "violations": 0
+          },
+          "reachable_state_MSR": {
+            "rows": 24,
+            "violations": 0
+          }
+        },
+        "branches": {
+          "derived_Eq113__strict_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "derived_Eq113__completed_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__strict_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__completed_Eq139": {
+            "rank": 127,
+            "nullity": 5,
+            "rank_with_commutator_rows": 127,
+            "commutator_rows_leave_the_row_space": false
+          }
+        },
+        "upper_bottom_tangent_rank": 5,
+        "upper_bottom_tangent_row_violations": {
+          "derived_Eq113__strict_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "derived_Eq113__completed_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "literal_Eq113__strict_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          },
+          "literal_Eq113__completed_Eq139": {
+            "t1": 0,
+            "t2": 0,
+            "t3": 0,
+            "t4": 0,
+            "q5": 0
+          }
+        },
+        "kernel_identification": "ker M is the five-dimensional tangent space of the upper bottom-character locus at this exact point"
+      }
+    },
+    "samples": [
+      {
+        "upper_couplings": [
+          "2",
+          "4",
+          "6",
+          "10"
+        ],
+        "upper_cutoff_external_q5": "1/3",
+        "all_843_operator_monomial_rows_hold": true,
+        "all_320_fixed_vector_GC_monomial_rows_hold": true,
+        "delta_Q": {
+          "1": "1/12",
+          "2": "1/36",
+          "3": "7/800",
+          "4": "15/5494"
+        },
+        "delta_Q_is_zero": false,
+        "beta_violations_per_row_block": {
+          "CPOBC": {
+            "rows": 783,
+            "violations": 0
+          },
+          "Eq113_derived": {
+            "rows": 25,
+            "violations": 0
+          },
+          "Eq113_literal": {
+            "rows": 25,
+            "violations": 0
+          },
+          "Eq139_completed": {
+            "rows": 10,
+            "violations": 0
+          },
+          "fixed_vector_GC_basis": {
+            "rows": 320,
+            "violations": 0
+          },
+          "reachable_state_MSR": {
+            "rows": 24,
+            "violations": 0
+          }
+        },
+        "six_commutator_forms_on_beta": {
+          "Q1_Q2": "0",
+          "Q1_Q3": "0",
+          "Q1_Q4": "0",
+          "Q2_Q3": "0",
+          "Q2_Q4": "0",
+          "Q3_Q4": "0"
+        },
+        "branches": {
+          "derived_Eq113__strict_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "derived_Eq113__completed_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__strict_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__completed_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          }
+        },
+        "kernel_reports": {
+          "derived_Eq113__strict_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "derived_Eq113__completed_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "literal_Eq113__strict_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "literal_Eq113__completed_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          }
+        },
+        "point_digest_sha256": "a9f35f00ac5921b2c4b0f1c54c0ebde6729628c5179ac7a2502b916040b6282f"
+      },
+      {
+        "upper_couplings": [
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "upper_cutoff_external_q5": "1/32",
+        "all_843_operator_monomial_rows_hold": true,
+        "all_320_fixed_vector_GC_monomial_rows_hold": true,
+        "delta_Q": {
+          "1": "1/4",
+          "2": "1/6",
+          "3": "3/32",
+          "4": "33/656"
+        },
+        "delta_Q_is_zero": false,
+        "beta_violations_per_row_block": {
+          "CPOBC": {
+            "rows": 783,
+            "violations": 0
+          },
+          "Eq113_derived": {
+            "rows": 25,
+            "violations": 0
+          },
+          "Eq113_literal": {
+            "rows": 25,
+            "violations": 0
+          },
+          "Eq139_completed": {
+            "rows": 10,
+            "violations": 0
+          },
+          "fixed_vector_GC_basis": {
+            "rows": 320,
+            "violations": 0
+          },
+          "reachable_state_MSR": {
+            "rows": 24,
+            "violations": 0
+          }
+        },
+        "six_commutator_forms_on_beta": {
+          "Q1_Q2": "0",
+          "Q1_Q3": "0",
+          "Q1_Q4": "0",
+          "Q2_Q3": "0",
+          "Q2_Q4": "0",
+          "Q3_Q4": "0"
+        },
+        "branches": {
+          "derived_Eq113__strict_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "derived_Eq113__completed_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__strict_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__completed_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          }
+        },
+        "kernel_reports": {
+          "derived_Eq113__strict_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "derived_Eq113__completed_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "literal_Eq113__strict_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "literal_Eq113__completed_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          }
+        },
+        "point_digest_sha256": "7f3b161c8fad3f6d3753890374e8dbef6371cea34f759dc31043fba91ca7f9e3"
+      },
+      {
+        "upper_couplings": [
+          "5",
+          "2",
+          "9",
+          "4"
+        ],
+        "upper_cutoff_external_q5": "3",
+        "all_843_operator_monomial_rows_hold": true,
+        "all_320_fixed_vector_GC_monomial_rows_hold": true,
+        "delta_Q": {
+          "1": "-1/12",
+          "2": "-1/156",
+          "3": "1/992",
+          "4": "9/5986"
+        },
+        "delta_Q_is_zero": false,
+        "beta_violations_per_row_block": {
+          "CPOBC": {
+            "rows": 783,
+            "violations": 0
+          },
+          "Eq113_derived": {
+            "rows": 25,
+            "violations": 0
+          },
+          "Eq113_literal": {
+            "rows": 25,
+            "violations": 0
+          },
+          "Eq139_completed": {
+            "rows": 10,
+            "violations": 0
+          },
+          "fixed_vector_GC_basis": {
+            "rows": 320,
+            "violations": 0
+          },
+          "reachable_state_MSR": {
+            "rows": 24,
+            "violations": 0
+          }
+        },
+        "six_commutator_forms_on_beta": {
+          "Q1_Q2": "0",
+          "Q1_Q3": "0",
+          "Q1_Q4": "0",
+          "Q2_Q3": "0",
+          "Q2_Q4": "0",
+          "Q3_Q4": "0"
+        },
+        "branches": {
+          "derived_Eq113__strict_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "derived_Eq113__completed_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__strict_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__completed_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          }
+        },
+        "kernel_reports": {
+          "derived_Eq113__strict_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "derived_Eq113__completed_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "literal_Eq113__strict_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "literal_Eq113__completed_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          }
+        },
+        "point_digest_sha256": "a4683cdc34de1303d09aa01bc33fb3a8545fbe8aa964cb601b0b3f811239d32e"
+      },
+      {
+        "upper_couplings": [
+          "1/2",
+          "1/3",
+          "1/5",
+          "1/7"
+        ],
+        "upper_cutoff_external_q5": "2",
+        "all_843_operator_monomial_rows_hold": true,
+        "all_320_fixed_vector_GC_monomial_rows_hold": true,
+        "delta_Q": {
+          "1": "5/12",
+          "2": "29/84",
+          "3": "283/1184",
+          "4": "1331/8528"
+        },
+        "delta_Q_is_zero": false,
+        "beta_violations_per_row_block": {
+          "CPOBC": {
+            "rows": 783,
+            "violations": 0
+          },
+          "Eq113_derived": {
+            "rows": 25,
+            "violations": 0
+          },
+          "Eq113_literal": {
+            "rows": 25,
+            "violations": 0
+          },
+          "Eq139_completed": {
+            "rows": 10,
+            "violations": 0
+          },
+          "fixed_vector_GC_basis": {
+            "rows": 320,
+            "violations": 0
+          },
+          "reachable_state_MSR": {
+            "rows": 24,
+            "violations": 0
+          }
+        },
+        "six_commutator_forms_on_beta": {
+          "Q1_Q2": "0",
+          "Q1_Q3": "0",
+          "Q1_Q4": "0",
+          "Q2_Q3": "0",
+          "Q2_Q4": "0",
+          "Q3_Q4": "0"
+        },
+        "branches": {
+          "derived_Eq113__strict_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "derived_Eq113__completed_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__strict_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          },
+          "literal_Eq113__completed_Eq139": {
+            "rank": 130,
+            "nullity": 2,
+            "rank_with_commutator_rows": 130,
+            "commutator_rows_leave_the_row_space": false
+          }
+        },
+        "kernel_reports": {
+          "derived_Eq113__strict_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "derived_Eq113__completed_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "literal_Eq113__strict_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          },
+          "literal_Eq113__completed_Eq139": {
+            "beta_row_violations": 0,
+            "rows_with_a_nonzero_Q5_column": 0,
+            "dimension_of_span_beta_e_Q5": 2,
+            "rank_after_appending_both_directions": 132
+          }
+        },
+        "point_digest_sha256": "afaa4a62e9a91199ceef36afe6612b92a58db1906c77c8e2b91b276c09c160f4"
+      }
+    ]
+  },
+  "off_normalized_principal_opens": [
+    {
+      "label": "generic-upper-A",
+      "couplings": [
+        "3",
+        "5",
+        "7",
+        "11"
+      ],
+      "cutoff_external_q5": "13/4",
+      "upper_torus_coordinates": [
+        "2",
+        "3/2",
+        "4/3",
+        "5",
+        "3",
+        "2/3",
+        "3",
+        "2",
+        "5/3",
+        "6",
+        "1",
+        "1",
+        "4",
+        "5/2",
+        "2",
+        "2",
+        "3/2",
+        "4/3",
+        "5",
+        "3",
+        "2/3",
+        "3",
+        "2",
+        "5/3",
+        "6",
+        "1",
+        "1",
+        "4",
+        "5/2",
+        "2",
+        "2",
+        "3/2",
+        "4/3",
+        "5",
+        "3",
+        "2/3",
+        "3",
+        "2",
+        "5/3",
+        "6",
+        "1",
+        "1",
+        "4",
+        "5/2",
+        "2",
+        "2",
+        "3/2",
+        "4/3",
+        "5"
+      ],
+      "all_843_operator_monomial_rows_hold": true,
+      "delta_Q": {
+        "1": "31/4",
+        "2": "29/12",
+        "3": "255/32",
+        "4": "327/82"
+      },
+      "delta_Q_is_zero": false,
+      "branches": {
+        "derived_Eq113__strict_Eq139": {
+          "rank": 131,
+          "nullity": 1,
+          "rank_with_commutator_rows": 131,
+          "commutator_rows_leave_the_row_space": false
+        },
+        "derived_Eq113__completed_Eq139": {
+          "rank": 131,
+          "nullity": 1,
+          "rank_with_commutator_rows": 131,
+          "commutator_rows_leave_the_row_space": false
+        },
+        "literal_Eq113__strict_Eq139": {
+          "rank": 132,
+          "nullity": 0,
+          "rank_with_commutator_rows": 132,
+          "commutator_rows_leave_the_row_space": false
+        },
+        "literal_Eq113__completed_Eq139": {
+          "rank": 132,
+          "nullity": 0,
+          "rank_with_commutator_rows": 132,
+          "commutator_rows_leave_the_row_space": false
+        }
+      },
+      "beta_violations_per_row_block": {
+        "CPOBC": {
+          "rows": 783,
+          "violations": 0
+        },
+        "Eq113_derived": {
+          "rows": 25,
+          "violations": 0
+        },
+        "Eq113_literal": {
+          "rows": 25,
+          "violations": 0
+        },
+        "Eq139_completed": {
+          "rows": 10,
+          "violations": 0
+        },
+        "fixed_vector_GC_basis": {
+          "rows": 320,
+          "violations": 224
+        },
+        "reachable_state_MSR": {
+          "rows": 24,
+          "violations": 24
+        }
+      },
+      "coboundary_dichotomy": {
+        "conjugation_invariant_blocks_are_satisfied": true,
+        "omega_dependent_blocks_are_violated": true,
+        "interpretation": "the upper character is not a bottom scalar locus point here, so beta leaves the kernel exactly through the fixed-vector GC and reachable-state MSR rows, as the universal identity predicts"
+      },
+      "conclusion": "a new nonempty splitting principal open in each of the four semantic branches, over a non-normalized bottom character"
+    },
+    {
+      "label": "generic-upper-B",
+      "couplings": [
+        "2/3",
+        "5/7",
+        "9/4",
+        "1/6"
+      ],
+      "cutoff_external_q5": "7/5",
+      "upper_torus_coordinates": [
+        "1/2",
+        "2/3",
+        "3/4",
+        "4/5",
+        "5/2",
+        "2",
+        "7/4",
+        "1/5",
+        "1",
+        "1",
+        "1",
+        "1",
+        "3",
+        "7/3",
+        "1/4",
+        "2/5",
+        "3/2",
+        "4/3",
+        "5/4",
+        "6/5",
+        "7/2",
+        "1/3",
+        "1/2",
+        "3/5",
+        "2",
+        "5/3",
+        "3/2",
+        "7/5",
+        "1/2",
+        "2/3",
+        "3/4",
+        "4/5",
+        "5/2",
+        "2",
+        "7/4",
+        "1/5",
+        "1",
+        "1",
+        "1",
+        "1",
+        "3",
+        "7/3",
+        "1/4",
+        "2/5",
+        "3/2",
+        "4/3",
+        "5/4",
+        "6/5",
+        "7/2"
+      ],
+      "all_843_operator_monomial_rows_hold": true,
+      "delta_Q": {
+        "1": "51/20",
+        "2": "385/192",
+        "3": "3647/5175",
+        "4": "2115/719"
+      },
+      "delta_Q_is_zero": false,
+      "branches": {
+        "derived_Eq113__strict_Eq139": {
+          "rank": 131,
+          "nullity": 1,
+          "rank_with_commutator_rows": 131,
+          "commutator_rows_leave_the_row_space": false
+        },
+        "derived_Eq113__completed_Eq139": {
+          "rank": 131,
+          "nullity": 1,
+          "rank_with_commutator_rows": 131,
+          "commutator_rows_leave_the_row_space": false
+        },
+        "literal_Eq113__strict_Eq139": {
+          "rank": 132,
+          "nullity": 0,
+          "rank_with_commutator_rows": 132,
+          "commutator_rows_leave_the_row_space": false
+        },
+        "literal_Eq113__completed_Eq139": {
+          "rank": 132,
+          "nullity": 0,
+          "rank_with_commutator_rows": 132,
+          "commutator_rows_leave_the_row_space": false
+        }
+      },
+      "beta_violations_per_row_block": {
+        "CPOBC": {
+          "rows": 783,
+          "violations": 0
+        },
+        "Eq113_derived": {
+          "rows": 25,
+          "violations": 0
+        },
+        "Eq113_literal": {
+          "rows": 25,
+          "violations": 0
+        },
+        "Eq139_completed": {
+          "rows": 10,
+          "violations": 0
+        },
+        "fixed_vector_GC_basis": {
+          "rows": 320,
+          "violations": 255
+        },
+        "reachable_state_MSR": {
+          "rows": 24,
+          "violations": 24
+        }
+      },
+      "coboundary_dichotomy": {
+        "conjugation_invariant_blocks_are_satisfied": true,
+        "omega_dependent_blocks_are_violated": true,
+        "interpretation": "the upper character is not a bottom scalar locus point here, so beta leaves the kernel exactly through the fixed-vector GC and reachable-state MSR rows, as the universal identity predicts"
+      },
+      "conclusion": "a new nonempty splitting principal open in each of the four semantic branches, over a non-normalized bottom character"
+    }
+  ],
+  "deterministic_degeneracy_scan": {
+    "family": "a_e=b_e*s^K[j][e] through the equal-eigenvalue point",
+    "base_bottom_couplings": [
+      "3",
+      "5",
+      "7",
+      "11"
+    ],
+    "base_cutoff_external_q5": "13/4",
+    "directions": [
+      0,
+      7,
+      12,
+      13,
+      18,
+      20,
+      25,
+      26,
+      28,
+      33,
+      35,
+      42,
+      44,
+      45,
+      48
+    ],
+    "scalars": [
+      "-2",
+      "2",
+      "3",
+      "5"
+    ],
+    "point_count": 60,
+    "rank_profile_census": {
+      "127/130/127/130": 4,
+      "127/127/127/127": 8,
+      "130/130/130/130": 20,
+      "129/130/129/130": 4,
+      "130/130/131/131": 8,
+      "131/131/132/132": 4,
+      "129/129/129/129": 4,
+      "130/131/130/131": 4,
+      "131/131/131/131": 4
+    },
+    "rank_is_constant_along_each_punctured_line": true,
+    "records": [
+      {
+        "direction": 0,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/130/127/130",
+        "augmented_rank_profile": "127/130/127/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 0,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/130/127/130",
+        "augmented_rank_profile": "127/130/127/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 0,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/130/127/130",
+        "augmented_rank_profile": "127/130/127/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 0,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/130/127/130",
+        "augmented_rank_profile": "127/130/127/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 7,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/127/127/127",
+        "augmented_rank_profile": "127/127/127/127",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 7,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/127/127/127",
+        "augmented_rank_profile": "127/127/127/127",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 7,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/127/127/127",
+        "augmented_rank_profile": "127/127/127/127",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 7,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/127/127/127",
+        "augmented_rank_profile": "127/127/127/127",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 12,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 12,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 12,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 12,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 13,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 13,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 13,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 13,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 18,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "129/130/129/130",
+        "augmented_rank_profile": "129/130/129/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 18,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "129/130/129/130",
+        "augmented_rank_profile": "129/130/129/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 18,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "129/130/129/130",
+        "augmented_rank_profile": "129/130/129/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 18,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "129/130/129/130",
+        "augmented_rank_profile": "129/130/129/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 20,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/131/131",
+        "augmented_rank_profile": "130/130/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 20,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/131/131",
+        "augmented_rank_profile": "130/130/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 20,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/131/131",
+        "augmented_rank_profile": "130/130/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 20,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/131/131",
+        "augmented_rank_profile": "130/130/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 25,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          -1,
+          0,
+          -1,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "131/131/132/132",
+        "augmented_rank_profile": "131/131/132/132",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 25,
+        "scalar": "2",
+        "Q_column_exponents": [
+          -1,
+          0,
+          -1,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "131/131/132/132",
+        "augmented_rank_profile": "131/131/132/132",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 25,
+        "scalar": "3",
+        "Q_column_exponents": [
+          -1,
+          0,
+          -1,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "131/131/132/132",
+        "augmented_rank_profile": "131/131/132/132",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 25,
+        "scalar": "5",
+        "Q_column_exponents": [
+          -1,
+          0,
+          -1,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "131/131/132/132",
+        "augmented_rank_profile": "131/131/132/132",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 26,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "129/129/129/129",
+        "augmented_rank_profile": "129/129/129/129",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 26,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "129/129/129/129",
+        "augmented_rank_profile": "129/129/129/129",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 26,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "129/129/129/129",
+        "augmented_rank_profile": "129/129/129/129",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 26,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "129/129/129/129",
+        "augmented_rank_profile": "129/129/129/129",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 28,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/131/130/131",
+        "augmented_rank_profile": "130/131/130/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 28,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/131/130/131",
+        "augmented_rank_profile": "130/131/130/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 28,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/131/130/131",
+        "augmented_rank_profile": "130/131/130/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 28,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/131/130/131",
+        "augmented_rank_profile": "130/131/130/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 33,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/131/131",
+        "augmented_rank_profile": "130/130/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 33,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/131/131",
+        "augmented_rank_profile": "130/130/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 33,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/131/131",
+        "augmented_rank_profile": "130/130/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 33,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/131/131",
+        "augmented_rank_profile": "130/130/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 35,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 35,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 35,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 35,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 42,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 42,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 42,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 42,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 44,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 44,
+        "scalar": "2",
+        "Q_column_exponents": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 44,
+        "scalar": "3",
+        "Q_column_exponents": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 44,
+        "scalar": "5",
+        "Q_column_exponents": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "130/130/130/130",
+        "augmented_rank_profile": "130/130/130/130",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 45,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          -1,
+          0,
+          -1,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "131/131/131/131",
+        "augmented_rank_profile": "131/131/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 45,
+        "scalar": "2",
+        "Q_column_exponents": [
+          -1,
+          0,
+          -1,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "131/131/131/131",
+        "augmented_rank_profile": "131/131/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 45,
+        "scalar": "3",
+        "Q_column_exponents": [
+          -1,
+          0,
+          -1,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "131/131/131/131",
+        "augmented_rank_profile": "131/131/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 45,
+        "scalar": "5",
+        "Q_column_exponents": [
+          -1,
+          0,
+          -1,
+          0
+        ],
+        "delta_Q_is_zero": false,
+        "rank_profile": "131/131/131/131",
+        "augmented_rank_profile": "131/131/131/131",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 48,
+        "scalar": "-2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/127/127/127",
+        "augmented_rank_profile": "127/127/127/127",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 48,
+        "scalar": "2",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/127/127/127",
+        "augmented_rank_profile": "127/127/127/127",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 48,
+        "scalar": "3",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/127/127/127",
+        "augmented_rank_profile": "127/127/127/127",
+        "any_branch_admits_a_visible_witness": false
+      },
+      {
+        "direction": 48,
+        "scalar": "5",
+        "Q_column_exponents": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "delta_Q_is_zero": true,
+        "rank_profile": "127/127/127/127",
+        "augmented_rank_profile": "127/127/127/127",
+        "any_branch_admits_a_visible_witness": false
+      }
+    ],
+    "records_digest_sha256": "cbf307722d8c9c2d5c7fe915e1d88740a1f1de554cab041886737839495ed80f",
+    "witnesses": [],
+    "commutator_rows_stay_inside_the_row_space_at_every_scanned_point": true,
+    "scan_status": "BOUNDED_DETERMINISTIC_SCAN_NOT_A_GLOBAL_OBSTRUCTION"
+  },
+  "span_beta_e_Q5_is_not_the_right_invariant": {
+    "direction": 13,
+    "scalar": "3",
+    "Q_column_exponents": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "delta_Q": [
+      "0",
+      "1/6",
+      "0",
+      "0"
+    ],
+    "upper_is_a_bottom_character": false,
+    "beta_row_violations": 120,
+    "rank": 130,
+    "nullity": 2,
+    "kernel_indices_outside_span_beta_e_Q5": [
+      0
+    ],
+    "kernel_Q_coordinates": [
+      [
+        "0",
+        "41/72",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "six_commutator_forms_on_each_kernel_vector": [
+      {
+        "Q1_Q2": "0",
+        "Q1_Q3": "0",
+        "Q1_Q4": "0",
+        "Q2_Q3": "0",
+        "Q2_Q4": "0",
+        "Q3_Q4": "0"
+      },
+      {
+        "Q1_Q2": "0",
+        "Q1_Q3": "0",
+        "Q1_Q4": "0",
+        "Q2_Q3": "0",
+        "Q2_Q4": "0",
+        "Q3_Q4": "0"
+      }
+    ],
+    "all_commutator_forms_vanish_on_the_whole_kernel": true,
+    "lesson": "the kernel can leave span(beta,e_Q5) at a degenerate point and still commute; at this nonzero-delta_Q point its Q coordinates land on span(delta_Q)=K_delta.  The invariant a future search must decide is whether the Q-projection of ker M lies in K_delta=ker C(delta_Q), not whether ker M lies in the coboundary span"
+  },
+  "resource_and_claim_boundaries": {
+    "solver_status": "NOT_RUN",
+    "groebner_status": "NOT_RUN",
+    "determinants_expanded_over_54_base_parameters": false,
+    "four_determinant_zero_loci_solved": false,
+    "degeneracy_locus_fully_stratified": false,
+    "transverse_chart_globally_obstructed": false,
+    "pair_or_triple_irreducible_branch_touched": false,
+    "aligned_branch_or_Delta_align_touched": false,
+    "state_native_D12_manifest_touched": false,
+    "global_weak_weak_obstruction_claimed": false,
+    "next_exact_gate": "decide globally whether the Q-projection of ker M lies in K_delta=ker C(delta_Q), equivalently whether rank[M;C]=rank M; on delta_Q!=0 this reduces to containment in span(delta_Q), while on delta_Q=0 it is automatic because K_0=QQ^4.  Do not defend span(beta,e_Q5): the kernel provably leaves it and still commutes"
+  },
+  "gates": {
+    "prerequisite_certificates_bind_by_verdict_and_semantic_digest": true,
+    "universal_commutator_template_is_exact": true,
+    "zero_delta_commuting_subspace_is_all_QQ4": true,
+    "commutator_forms_annihilate_the_coboundary_symbolically": true,
+    "coboundary_conjugation_identity_holds_on_words_and_inverses": true,
+    "general_bottom_character_matches_the_shipped_csg_when_normalized": true,
+    "general_bottom_eq139_builder_matches_the_shipped_rows_when_normalized": true,
+    "full_diagonal_locus_is_nonempty_and_on_the_operator_lattice": true,
+    "full_diagonal_rank_is_127_in_all_four_branches_at_every_sample": true,
+    "bottom_tangent_space_is_the_exact_kernel_at_full_diagonal_samples": true,
+    "two_scalar_rank_is_130_at_every_certified_nonzero_delta_sample": true,
+    "two_scalar_nonzero_delta_sample_kernel_is_span_beta_and_e_Q5": true,
+    "two_scalar_certified_rank130_samples_have_nonzero_delta": true,
+    "two_scalar_locus_also_has_a_Q5_only_delta_zero_subfamily": true,
+    "no_witness_at_any_certified_nested_locus_sample": true,
+    "off_normalized_bottom_characters_carry_full_rank_opens": true,
+    "deterministic_scan_found_no_witness": true,
+    "deterministic_scan_rank_is_constant_along_each_punctured_line": true,
+    "span_beta_e_Q5_is_certified_not_to_be_the_right_invariant": true,
+    "coboundary_dichotomy_exhibited_off_the_bottom_locus": true
+  },
+  "passed": true,
+  "witness": null,
+  "search_terminal": "NOT_A_SEARCH_TERMINAL_NESTED_DEGENERACY_LOCI_AND_BOUNDED_SCAN_ONLY",
+  "verdict": "SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL",
+  "claim_boundary": "This exact certificate proves two universal identities and gives exact results on nested loci of the transverse scalar base.  Universal, over the whole base: the six Q commutator coefficients are x_j*(a_i-b_i)-x_i*(a_j-b_j), so a witness needs rank[M;C]>rank M rather than a vanishing determinant.  The commuting subspace is K_delta=ker C(delta_Q): it equals span(delta_Q) only when delta_Q is nonzero, and equals all of QQ^4 when delta_Q=0.  Beta=a-b is a global conjugation coboundary, so it satisfies every operator relation row everywhere and every commutator form annihilates it.  Consequently the entire equal-Q spectrum locus delta_Q=0 is witness-free.  Its five-dimensional full diagonal sublocus E={a_e=b_e} is therefore witness-free at every point.  The rank 127, the nullity five and the identification of the kernel with the tangent space of the bottom scalar locus are certified at three exact rational points of E, not proved locus-wide.  On the ten-dimensional two-scalar locus, where the upper character is itself a bottom scalar locus point, beta lies in the kernel everywhere, and rank 130, nullity two and ker M=span(beta,e_Q5) are certified at four exact rational points with delta_Q nonzero.  This locus also contains the six-dimensional same-couplings independent-Q5 subfamily T with delta_Q=0; T is witness-free throughout, and at one exact point of T minus E the rank is 127 and the kernel is the five-dimensional upper bottom-locus tangent space.  Witness freedom on the remaining nonzero-delta_Q part of S is pointwise, not locus-wide.  It also certifies, for the first time, full-rank splitting principal opens over non-normalized bottom characters.  It never combines alternative Eq113 or Eq139 readings.  It does not solve the four determinant-zero loci, does not stratify the whole degeneracy locus, does not obstruct the transverse chart or the weak/weak profile, does not touch the pair/triple-irreducible or aligned branches or the state-native D12 manifest, certifies no witness, and issues no SR2-V terminal.  The scan is a bounded deterministic search, not a global obstruction.  One recorded point shows that ker M can leave span(beta,e_Q5) and still commute, so that span is not the invariant a successor search should defend.",
+  "semantic_digest_sha256": "a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f"
+}

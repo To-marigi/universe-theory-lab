@@ -68,8 +68,30 @@ split on four separately compiled nonempty principal opens: derived/literal
 Eq. (113), each crossed with strict/completed Eq. (139). The branch matrices
 have shapes `1156 by 132` or `1162 by 132` and force all 131 actual cocycles to
 zero, hence `Q1,...,Q4` commute. The 1,187-row all-readings matrix is auxiliary
-only. The four determinant-zero loci, other reducible components, and
-irreducible branches remain open.
+only.
+
+Those four determinant-zero boundaries are now partly classified, and the
+analysis changed the question. The six commutator coefficients are
+universally `x_j*(a_i-b_i)-x_i*(a_j-b_j)`, so a reachable-visible witness needs
+`rank[M;C]>rank M`, not merely `Delta=0`: a determinant-zero point is where the
+principal-open argument stops, not where a witness appears. Substituting
+`x_e=beta_e:=a_e-b_e` gives `[[a,a-b],[0,b]]=C*diag(a,b)*C^-1` with
+`C=[[1,-1],[0,1]]`, so `beta` is a global conjugation coboundary: it satisfies
+every operator relation row at every base point, and every commutator form
+annihilates it. The commuting subspace is `K_delta=ker C(delta_Q)`: for nonzero
+`delta_Q` it is `span(delta_Q)`, while for zero `delta_Q` it is all of `QQ^4`.
+Hence the entire equal-`Q`-spectrum locus is witness-free. On its
+five-dimensional full diagonal sublocus `E={a_e=b_e}`, rank 127 and the
+bottom-tangent kernel are certified at three exact points, not locus-wide. On
+the ten-dimensional two-scalar locus, `beta` always lies in the kernel; at four
+certified nonzero-`delta_Q` points the branch rank is 130 with kernel exactly
+`span(beta,e_Q5)`. The same locus also contains a six-dimensional
+same-couplings independent-Q5 subfamily `T` with `delta_Q=0`, witness-free
+throughout; at one exact point of `T\E`, rank is 127 with a five-dimensional
+tangent kernel. Rank constancy and witness freedom on the remaining
+nonzero-`delta_Q` part are not claimed. Splitting principal
+opens are now also certified over non-normalized bottom characters. The
+remaining reducible components and irreducible branches stay open.
 
 The next exact gates sharpen this further. On the observed-bottom primitive
 `G_m^29`, all 24 additive reachable-MSR equations are globally triangular and
@@ -151,6 +173,7 @@ semantic-profile row and not a change to SR3b-A.
 | `results/v0.4.2_sr2v_variable_harmonic_two_row_audit.json` and `reports/v0.4.2_sr2v_variable_harmonic_two_row_audit.md` | exact harmonic-space/gauge audit and two-row escape certificate; digest `64a79807b4a19169517c5a9864b005c38a44593118987ed88e95dd2edb9cb84e` | predecessor result proving the fixed-`k` two-row obstruction Zariski-special and constructing an open rational section; it did not solve the other entries, which the following sparse-section certificate then audits and obstructs |
 | `results/v0.4.2_sr2v_variable_harmonic_sparse_section_cpobc.json` and `reports/v0.4.2_sr2v_variable_harmonic_sparse_section_cpobc.md` | exact 3,132-entry substitution, sparse polynomial identities, and rank-62 minor; digest `4c8a71689c69d4845344eb44e459b3a5256075188b1f2d71dabc5a7428235efe` | the predecessor escape has 911 raw residuals; two alpha-killing rows plus determinant `2^192*3^9*977` make the beta-one, two-alpha `Delta!=0` section a localized unit ideal; wider alpha/beta support is open |
 | `results/v0.4.2_sr2v_transverse_cocycle_principal_open.json` and `reports/v0.4.2_sr2v_transverse_cocycle_principal_open.md` | exact four-matrix branch-separated rational linear algebra; digest `07e60a4d6b029d3cf08efd3ef3aae14598a1614090d3809d764973065b35eaf0` | separate nonzero minors on derived/literal Eq. (113) crossed with strict/completed Eq. (139) force all actual cocycles to zero and `Q1,...,Q4` to commute on four nonempty opens; the joint 1,187-row matrix is auxiliary and all four determinant-zero loci remain open |
+| `results/v0.4.2_sr2v_transverse_determinant_zero_locus.json` and `reports/v0.4.2_sr2v_transverse_determinant_zero_locus.md` | exact universal `2 by 2` identities plus exact rational rank/kernel data at eight nested-locus points, two off-normalized opens, and a 60-point deterministic scan; digest `a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f` | the witness condition is `rank[M;C]>rank M`, not `Delta=0`, and the commuting subspace is `K_delta=ker C(delta_Q)`; the whole `delta_Q=0` locus is witness-free; three full-diagonal samples have rank 127 and bottom-tangent kernel, four nonzero-`delta_Q` two-scalar samples have rank 130 and kernel `span(beta,e_Q5)`, and one Q5-only two-scalar sample has rank 127 with a larger tangent kernel; rank constancy and the remaining nonzero-`delta_Q` locus are open, as are the four unexpanded hypersurfaces |
 | `references/notes/v0.4.2_sr2v_bottom_msr_csg_interpretation_2026-08-02.md` | source/derivation boundary | finite CSG is prior classical work; the new project claim is the exact weak/weak `G_m^29` coordinate classification and its certified scope, not broad CSG priority |
 | `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` | current SR2-V exact progress authority | consolidates the exact certificates through the sparse-section unit ideal and four branch-separated cocycle opens, discarded numerical-scout boundary, revised exact search order, and nonterminal publication scope |
 | `references/notes/v0.4.2_prior_art_related_work_2026-08-01.md` | theorem/page-level literature and mathematical-tool ledger | records direct-source semantics, Xu overlap, triangularisation/common-eigenvector/Burnside/cyclic-separating/LLD tools, 66-PDF local/NAS preservation, and exact claim boundaries |
@@ -375,10 +398,13 @@ exact unit-ideal obstructions, and the selected two-row mechanism has an exact
 variable-`k` escape. The escape fails 911 raw entries, while its entire beta-
 one, two-alpha principal-open section is empty by a rank-62 unit certificate.
 Separately, four transverse semantic branches have their own nonempty
-splitting opens. The immediate targets are their four determinant-zero loci,
-wider state-native alpha/beta support, the aligned degeneracy locus, and the
-triple-irreducible branches. Generic points inside certified opens should not
-be resampled.
+splitting opens, and their universal commutator kernel plus nested degeneracy
+loci are now partly classified. The immediate targets are whether the
+`Q`-projection of `ker M` always lies in `K_delta=ker C(delta_Q)`, wider state-native
+alpha/beta support, the aligned degeneracy locus,
+and the triple-irreducible branches. Generic points inside certified opens
+should not be resampled. The equal-`Q` locus needs no witness rescan, but the
+nonzero-`delta_Q` part of the two-scalar locus remains open away from four points.
 
 For SR2-V specifically:
 
@@ -407,9 +433,16 @@ For SR2-V specifically:
     two-alpha section;
 9. **four transverse opens closed:** four separately compiled Eq. (113)/Eq.
     (139) semantic branches have nonzero 131- or 132-column minors, forcing all
-    actual cocycles to zero and `Q1,...,Q4` to commute on each open; their four
-    determinant-zero boundaries remain unresolved;
-10. **terminal unchanged:** none of these scoped certificates is a witness or
+    actual cocycles to zero and `Q1,...,Q4` to commute on each open;
+10. **commutator kernel and nested loci classified:** the witness condition is
+    `rank[M;C]>rank M`, not `Delta=0`, and the commuting subspace is
+    `K_delta=ker C(delta_Q)`; the whole `delta_Q=0` locus is witness-free. Three
+    full-diagonal samples have rank 127 with bottom-tangent kernel; four
+    nonzero-`delta_Q` two-scalar samples have rank 130 with kernel
+    `span(beta,e_Q5)`; one Q5-only sample has rank 127 with a larger tangent
+    kernel. The residual question is whether the `Q`-projection of `ker M`
+    always lies in `K_delta`;
+11. **terminal unchanged:** none of these scoped certificates is a witness or
     full-profile obstruction, so SR2-V remains `OPEN`.
 
 For the one-sided repair track, current progress remains:
@@ -555,8 +588,8 @@ the SR3b-A theorem, title, or deposit status.
   The full 528-coordinate Jacobian has rank 455/nullity 73, but no actual
   `n<=4` lower-left tangent direction. The nonlinear `F=H y` certificate now
   closes `Delta_align!=0`; do not search that open again. Target
-  `Delta_align=0`, the branch-specific transverse determinant loci, or the
-  pair/triple irreducible pivots. The 1,187-row all-readings inventory is not a
+  `Delta_align=0`, the still-unclassified part of the transverse degeneracy
+  locus, or the pair/triple irreducible pivots. The 1,187-row all-readings inventory is not a
   semantic branch and must never support an Eq. (113)/Eq. (139) conclusion.
   This is not a full SR2-V obstruction.
 - The original state-native rank-two chart fixes one harmonic boundary slice
@@ -576,7 +609,33 @@ the SR3b-A theorem, title, or deposit status.
   has a universally zero external-Q5 column and a nonzero actual 131-column
   minor; literal Eq. (113) has a nonzero full 132-column minor. Both statements
   hold separately for strict and completed Eq. (139), giving four nonempty
-  splitting opens. Search only their branch-specific determinant-zero loci.
+  splitting opens.
+- Do not equate the transverse determinant-zero loci with a witness locus. The
+  correct condition is `rank[M;C]>rank M` for the six commutator rows `C`. The
+  commuting subspace is `K_delta=ker C(delta_Q)`: it is `span(delta_Q)` only for
+  nonzero `delta_Q`, and is all `QQ^4` at zero. Therefore do not rescan the
+  equal-`Q`-spectrum locus for witnesses. The nonzero-`delta_Q` part of the
+  two-scalar locus remains open away from four certified points; do not mark the
+  whole locus closed. Rank constancy is not proved.
+- Do not cite or regenerate the uncommitted draft digest `37bcbb5b...`. Its
+  criterion incorrectly used `span(delta_Q)` at `delta_Q=0` and missed the
+  Q5-only part of the two-scalar locus. Schema v2 digest `a61eaeec...` supersedes
+  it before any commit or release.
+- Larger exploratory counts reported during that session (~490 line points and
+  ~900 points overall) have no frozen complete input ledger in this artifact.
+  Treat them as scouts only; the formal evidence is the 60-point deterministic
+  scan and eight explicit nested-locus samples.
+- Do not adopt "the kernel stays inside `span(beta,e_Q5)`" as the invariant to
+  defend. One recorded degenerate point has `beta` outside the kernel entirely,
+  a kernel not contained in that span, and still-vanishing commutator forms. The
+  decidable invariant is containment of the `Q`-projection of `ker M` in
+  `K_delta=ker C(delta_Q)`. `beta=a-b` is a global conjugation coboundary, satisfies
+  every operator relation row at every base point, and is annihilated by every
+  commutator form, so a kernel direction equal to `beta` never yields a witness.
+- `transverse._eq139_row` hardcodes the normalized `torus._csg` bottom
+  character. Use `sr2v_transverse_determinant_zero_locus_v042.eq139_row` and
+  `branch_matrix` for any evaluation away from `t=(1,1,1,1)`; mixing the two
+  silently produces meaningless strict-branch ranks.
 - A source/target frame cocycle `A_(c->d)=p_(c->d)S_dS_c^-1` was rejected as
   a construction route. It gives strong GC, exact reachable-state MSR,
   reachable rank two, and visible noncommuting Q for nonconstant harmonic

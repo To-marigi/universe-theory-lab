@@ -18,7 +18,8 @@ continuation:
 ```text
 v0.3.9 strong/strong theorem        PUBLIC
 v0.4 weak/weak rational witness     ON RESULT COMPLETE; OFF TRANSFER PENDING
-v0.4-V observability strengthening  BOTTOM CSG CLASSIFIED; FIXED SLICES CLOSED; OPEN
+v0.4-V observability strengthening  BOTTOM CSG CLASSIFIED; FIXED SLICES CLOSED;
+                                    EQUAL-Q LOCUS WITNESS-FREE; S PARTLY CLASSIFIED; OPEN
 SR3b-M minimal recovery lemmas       REQUIRED PAPER I MODULE; NOT A SHORT REPORT
 v0.4.1 one-sided ON profiles        PROOF INTERPRETATION WITHDRAWN; BOTH OPEN
 v0.4.2 profile-native repair        PURE-LOWER NO-GO CERTIFIED; MIXED OPEN
@@ -65,12 +66,35 @@ This section controls older SR2-V “next step” wording later in the handoff.
   used for branch inference. Verdict
   `SR2V_TRANSVERSE_ALL_FOUR_SEMANTIC_BRANCHES_Q1_Q4_SPLITTING_PRINCIPAL_OPENS_CERTIFIED_NONTERMINAL`,
   digest `07e60a4d6b029d3cf08efd3ef3aae14598a1614090d3809d764973065b35eaf0`.
+- The transverse determinant-zero gate is now open from the inside. Determinant
+  vanishing is not the witness condition: the six commutator coefficients are
+  universally `x_j*(a_i-b_i)-x_i*(a_j-b_j)`, so a witness needs
+  `rank[M;C]>rank M`, not `Delta=0`. The commuting subspace is
+  `K_delta=ker C(delta_Q)`: it is `span(delta_Q)` only for nonzero `delta_Q` and
+  all of `QQ^4` at zero. Thus the entire equal-`Q`-spectrum locus is witness-free;
+  `beta=a-b` is a global
+  conjugation coboundary that lies in the kernel wherever the upper character is
+  itself a bottom character and never produces a witness. Four nonzero-`delta_Q`
+  two-scalar points have rank 130 and kernel `span(beta,e_Q5)`, while a Q5-only
+  point outside the full diagonal has `delta_Q=0`, rank 127 and a five-dimensional
+  tangent kernel. Verdict
+  `SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL`,
+  digest `a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f`.
+  Do not restore the uncommitted v1 draft digest `37bcbb5b...`: it omitted the
+  `delta_Q=0` exception and the Q5-only subfamily and was superseded before commit.
+  Likewise, do not cite the session's larger ~900-point scout count as a
+  certificate; only the frozen 60-point scan and eight exact locus samples are
+  reproducible evidence.
 
-The next operations are to analyse the four branch-specific transverse
-determinant-zero loci without merging semantic alternatives, and to enlarge
-the state-native support beyond beta one and the two retained alphas. The next
-genuine state cover remains the rank-two open in `Gr(2,63)` (dimension 122),
-not another isolated `k`.
+The next operation is no longer "solve the four determinant-zero loci". It is
+the sharper residual question: decide whether the `Q`-projection of `ker M`
+always lies in `K_delta=ker C(delta_Q)`, equivalently whether
+`rank[M;C] = rank M` on the whole transverse base. On `delta_Q!=0` this becomes
+containment in `span(delta_Q)`; on `delta_Q=0` it is automatic. Do not defend
+`span(beta,e_Q5)` instead: the kernel provably leaves that span at a recorded
+degenerate point and still commutes. Alongside that, enlarge the state-native support beyond
+beta one and the two retained alphas. The next genuine state cover remains the
+rank-two open in `Gr(2,63)` (dimension 122), not another isolated `k`.
 
 Focused reproduction:
 
@@ -82,6 +106,7 @@ uv run pytest -q tests/final_theory/test_weak_d2_state_native_corrected_csg_rank
 uv run pytest -q tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py
 ```
 
 Do not begin `d=3` or an infinite lifting theorem in a way that bypasses the
@@ -143,8 +168,22 @@ full 955/721 closure or `n=5`; it must not claim complete classification.
   localized unit ideal. Variable betas and the other 129 alphas remain open.
 - On four separately compiled transverse semantic branches, nonzero 131- or
   132-column minors force every actual upper-right cocycle to vanish. Thus
-  `Q1,...,Q4` commute on each open; the four determinant-zero boundaries remain
-  open.
+  `Q1,...,Q4` commute on each open.
+- Nested loci inside and around those determinant-zero boundaries are now
+  partially classified. The whole equal-`Q`-spectrum locus `delta_Q=0` is
+  witness-free. Its full diagonal sublocus `a_e=b_e` (dimension 5) is therefore
+  witness-free at every point; at three
+  exact points its branch rank is 127 with kernel equal to the tangent space of
+  the bottom scalar locus. The two-scalar locus, where the upper character is
+  itself a bottom scalar locus point (dimension 10), always contains `beta=a-b`
+  in its kernel; at four exact points with `delta_Q!=0` its branch rank is 130 and
+  the kernel is exactly `span(beta,e_Q5)`, so those points carry no witness.
+  Its six-dimensional same-couplings independent-Q5 subfamily has `delta_Q=0`
+  and is witness-free throughout; one exact off-diagonal Q5-only point has rank
+  127 and a five-dimensional tangent kernel. Rank constancy on these loci and
+  witness freedom on the remaining nonzero-`delta_Q` part are not claimed.
+  Splitting principal opens
+  are also certified over non-normalized bottom characters for the first time.
 
 ### Open
 
@@ -470,24 +509,37 @@ an expanded scalar-polynomial solver manifest.
     has a nonzero actual-transition splitting minor, so `Q1,...,Q4` commute on
     its own nonempty principal open. The old 1,187-row joint matrix is auxiliary
     only and cannot support a branch conclusion.
-13. **Current:** analyse the four branch-specific determinant-zero loci and
-    enlarge the state-native search to variable betas or wider alpha support.
+13. **Transverse commutator kernel and nested loci classified:** the witness
+    condition is `rank[M;C]>rank M`, not `Delta=0`, and the commuting subspace is
+    `K_delta=ker C(delta_Q)`. The entire `delta_Q=0` locus is witness-free. At
+    three full-diagonal points the rank is 127 with bottom-tangent kernel; four
+    nonzero-`delta_Q` two-scalar points have rank 130 and kernel
+    `span(beta,e_Q5)`; and one Q5-only point has rank 127 and a larger tangent
+    kernel. Verdict
+    `SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL`,
+    digest `a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f`.
+14. **Current:** decide whether the `Q`-projection of `ker M` always lies in
+    `K_delta=ker C(delta_Q)`, equivalently whether `rank[M;C]=rank M` on the whole
+    transverse base; on nonzero `delta_Q` this is containment in `span(delta_Q)`.
+    transverse base; `span(beta,e_Q5)` is *not* the invariant to defend, since the
+    kernel provably leaves it at a recorded degenerate point and still commutes.
+    Also enlarge the state-native search to variable betas or wider alpha support.
     Then target `Delta_align=0` and the triple-irreducible pivots. Numerical and
     finite-field points are scouts until exact rational direct certification.
-14. Only after the bounded SR2-V campaign reaches an allowed terminal, return
+15. Only after the bounded SR2-V campaign reaches an allowed terminal, return
    to the remote/disconnected `x!=0,y!=0` 955 components. The first upper
    family, mixed tangent branch,
    and global `x=0` pure-lower family are already closed in their declared
    scopes; do not rerun them or report them as a full-profile no-go.
-15. For 955, do **not** brute-force all 131 principal patches. First split the
+16. For 955, do **not** brute-force all 131 principal patches. First split the
    common-invariant-line and irreducible branches, construct a symmetry/orbit
    reduction, and exact-scout a small natural principal-open set. Permit a
    solver campaign only after its source coverage certificate and versioned
    budget artifact are available.
-16. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
+17. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
    terminal state, or use 721 as the fallback if 955 exhausts its budget. Keep
    the certified diagonal 721 escape point as a regression fixture.
-17. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
+18. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
    tracks. SR3b-A drafting may proceed in parallel under its existing scope and
    owner-gated deposit rule.
 
@@ -637,7 +689,8 @@ Before continuing this track:
     `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`.
 13. run the SR2-V/SR3b-M suites named in §8, including the principal-open,
     chart/lattice, global bottom-MSR, fixed-state obstruction, variable-`k`,
-    sparse-section, and four-branch transverse cocycle suites. Require the baseline
+    sparse-section, four-branch transverse cocycle, and transverse
+    determinant-zero stratum suites. Require the baseline
     rank-one audit, the conditional SR3b-M lemma boundary, the finite-torus
     `OPEN` boundary, and the rank-131 invariant-line-breaking tangent scope.
     Do not call either bounded negative result a reachable-visibility
@@ -651,9 +704,10 @@ Before continuing this track:
 Items 2--12 preserve the 955 regression boundary and are required when 955 is
 resumed. They are not the immediate implementation order. The immediate order
 is now: retain the completed baseline and SR3b-M; use the certified sparse-
-section unit ideal and four branch-separated transverse splitting opens as
-regressions; analyse the four transverse determinant-zero loci; and widen the
-state-native alpha/beta support before the aligned and triple-irreducible work.
+section unit ideal, the four branch-separated transverse splitting opens and the
+commutator-kernel/nested-locus certificate as regressions; decide whether the
+`Q`-projection of `ker M` always lies in `K_delta=ker C(delta_Q)`; and widen the state-native
+alpha/beta support before the aligned and triple-irreducible work.
 Never run the old fixed-state D12/shear solver. Only after an SR2-V terminal
 resume the 955 mixed locus. The frozen upper-family tangent search and generic
 points in certified principal opens must not be repeated.

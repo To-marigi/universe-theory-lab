@@ -63,7 +63,8 @@
     "v0.4.2_sr2v_corrected_CSG_fixed_hk_obstruction": "NONSINGULAR_RAW_CPOBC_UNIT_IDEAL_BY_TWO_ROWS_PLUS_BETA_LOCALIZER_FIXED_HK_ONLY",
     "v0.4.2_sr2v_variable_harmonic_two_row_audit": "FIXED_K_MECHANISM_ZARISKI_SPECIAL_EXACT_TWO_ROW_ESCAPE_PREDECESSOR_ONLY_SPARSE_SECTION_CLOSED_BY_FOLLOWUP",
     "v0.4.2_sr2v_variable_harmonic_sparse_section_cpobc": "BETA_ONE_TWO_ALPHA_DELTA_OPEN_RAW_CPOBC_UNIT_IDEAL_BY_ALPHA_KILLERS_AND_RANK62_MINOR_NONTERMINAL",
-    "v0.4.2_sr2v_transverse_cocycle_four_branch_opens": "FOUR_SEPARATE_EQ113_EQ139_SEMANTIC_BRANCH_PRINCIPAL_OPENS_FORCE_Q1_Q4_SPLITTING_NONTERMINAL"
+    "v0.4.2_sr2v_transverse_cocycle_four_branch_opens": "FOUR_SEPARATE_EQ113_EQ139_SEMANTIC_BRANCH_PRINCIPAL_OPENS_FORCE_Q1_Q4_SPLITTING_NONTERMINAL",
+    "v0.4.2_sr2v_transverse_determinant_zero_strata": "COMMUTATOR_KERNEL_CLASSIFIED_EQUAL_Q_SPECTRUM_LOCUS_WITNESS_FREE_TWO_SCALAR_NONZERO_DELTA_POINTWISE_AND_Q5_ONLY_SUBFAMILY_CERTIFIED_NONTERMINAL"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_PURE_LOWER_BOUNDED_NO_GO_ORACLE_CERTIFIED_REMOTE_MIXED_OPEN",
@@ -176,7 +177,7 @@
       "semantic_digest_sha256": "73508f8ad94d97a3147cbd913d687f0b779c740b80a84a4836854053f6f01c62"
     },
     "SR2_V": {
-      "status": "BOTTOM_MSR_GLOBAL_CSG_CLASSIFIED_FIXED_SLICES_AND_VARIABLE_K_TWO_ALPHA_SPARSE_SECTION_OBSTRUCTED_FOUR_TRANSVERSE_SEMANTIC_SPLITTING_OPENS_CERTIFIED_SEARCH_OPEN_NO_TERMINAL",
+      "status": "BOTTOM_MSR_GLOBAL_CSG_CLASSIFIED_FIXED_SLICES_AND_VARIABLE_K_TWO_ALPHA_SPARSE_SECTION_OBSTRUCTED_FOUR_TRANSVERSE_SEMANTIC_SPLITTING_OPENS_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_SEARCH_OPEN_NO_TERMINAL",
       "quality_target": "EXACT_RATIONAL_RANK_TWO_AND_STAGE_SOURCE_COMPATIBLE_REACHABLE_VISIBLE_WEAK_WEAK_WITNESS",
       "terminal_verdicts": [
         "REACHABLE_VISIBLE_NONCOMMUTATIVE_WITNESS_CERTIFIED",
@@ -303,13 +304,19 @@
           "verdict": "SR2V_SCALAR_LATTICE_SNF_CERTIFIED_NONTERMINAL",
           "semantic_digest_sha256": "155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9",
           "operator_block": {
-            "shape": [843, 132],
+            "shape": [
+              843,
+              132
+            ],
             "rank": 83,
             "primitive_kernel_rank": 49,
             "split_torus": "G_m^49"
           },
           "observed_bottom_plus_fixed_GC_block": {
-            "shape": [1163, 132],
+            "shape": [
+              1163,
+              132
+            ],
             "rank": 103,
             "primitive_kernel_rank": 29,
             "split_torus": "G_m^29"
@@ -418,17 +425,77 @@
             "literal_Eq113__strict_Eq139",
             "literal_Eq113__completed_Eq139"
           ],
-          "strict_matrix_shape": [1156, 132],
-          "completed_matrix_shape": [1162, 132],
+          "strict_matrix_shape": [
+            1156,
+            132
+          ],
+          "completed_matrix_shape": [
+            1162,
+            132
+          ],
           "derived_rank": 131,
           "literal_rank": 132,
           "Q1_through_Q4_commute_on_each_separate_principal_open": true,
           "joint_1187_matrix_used_for_branch_inference": false,
           "four_determinant_zero_loci_solved": false,
           "search_terminal": false
+        },
+        "transverse_determinant_zero_strata": {
+          "artifact": "results/v0.4.2_sr2v_transverse_determinant_zero_locus.json",
+          "report": "reports/v0.4.2_sr2v_transverse_determinant_zero_locus.md",
+          "verdict": "SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL",
+          "semantic_digest_sha256": "a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f",
+          "witness_condition": "RANK_M_WITH_COMMUTATOR_ROWS_EXCEEDS_RANK_M_NOT_DETERMINANT_ZERO",
+          "commuting_subspace": "K_DELTA_EQUALS_KERNEL_OF_C_DELTA;_FOR_NONZERO_DELTA_SPAN_DELTA;FOR_ZERO_DELTA_ALL_QQ4",
+          "commutator_template": "x_j*(a_i-b_i)-x_i*(a_j-b_j)",
+          "coboundary_identity": "A_e_at_x_equals_beta_is_C_diag_a_b_C_inverse_with_C_1_minus1_0_1",
+          "full_diagonal_locus": {
+            "definition": "a_e=b_e",
+            "dimension": 5,
+            "branch_rank": 127,
+            "nullity": 5,
+            "kernel": "TANGENT_SPACE_OF_THE_FIVE_DIMENSIONAL_BOTTOM_SCALAR_LOCUS",
+            "delta_Q_zero": true,
+            "witness_free": "LOCUS_WIDE_BY_DELTA_Q_ZERO",
+            "rank_and_kernel_certified": "POINTWISE_AT_THREE_EXACT_POINTS"
+          },
+          "equal_Q_spectrum_locus": {
+            "definition": "delta_Q=0",
+            "witness_free": "LOCUS_WIDE_BY_ZERO_COMMUTATOR_ROWS",
+            "rank_classified": false
+          },
+          "two_scalar_locus": {
+            "definition": "upper character is itself a bottom scalar locus point",
+            "dimension": 10,
+            "branch_rank_at_four_nonzero_delta_Q_points": 130,
+            "nullity_at_four_nonzero_delta_Q_points": 2,
+            "kernel_at_four_nonzero_delta_Q_points": "SPAN_BETA_AND_E_Q5",
+            "meets_delta_Q_nonzero": true,
+            "also_contains_delta_Q_zero_points_outside_E": true,
+            "witness_free_on_nonzero_delta_Q_part": "POINTWISE_AT_FOUR_EXACT_POINTS_ONLY",
+            "rank_and_kernel_certified": "POINTWISE_AT_FOUR_NONZERO_DELTA_Q_POINTS",
+            "universal_nullity_lower_bound_on_S_minus_E": 1,
+            "same_couplings_independent_Q5_subfamily": {
+              "symbol": "T",
+              "dimension": 6,
+              "delta_Q_zero": true,
+              "witness_free": "SUBFAMILY_WIDE",
+              "sample_rank": 127,
+              "sample_nullity": 5,
+              "sample_kernel": "UPPER_BOTTOM_LOCUS_TANGENT_SPACE"
+            }
+          },
+          "off_normalized_full_rank_opens_certified": true,
+          "deterministic_scan_points": 60,
+          "deterministic_scan_witnesses": 0,
+          "four_determinant_zero_loci_solved": false,
+          "degeneracy_locus_fully_stratified": false,
+          "search_terminal": false,
+          "stratum_wide_rank_constancy_proved": false,
+          "span_beta_e_Q5_recorded_as_the_wrong_invariant": true
         }
       },
-      "current_component_target": "ANALYSE_FOUR_BRANCH_SPECIFIC_TRANSVERSE_DETERMINANT_ZERO_LOCI_AND_ENLARGE_STATE_NATIVE_SUPPORT_BEYOND_BETA_ONE_TWO_ALPHA_SECTION",
+      "current_component_target": "DECIDE_WHETHER_Q_PROJECTION_OF_KER_M_LIES_IN_KER_C_DELTA_Q_GLOBALLY_EQUIVALENTLY_RANK_M_WITH_COMMUTATOR_ROWS_EQUALS_RANK_M;ON_NONZERO_DELTA_Q_THIS_IS_SPAN_DELTA_Q;AND_ENLARGE_STATE_NATIVE_SUPPORT",
       "short_report_rule": "SEPARATE_SHORT_REPORT_CANDIDATE_ONLY_FOR_EXACT_VISIBLE_WITNESS_OR_FULL_PROFILE_OBSTRUCTION"
     },
     "priority_order": [
@@ -439,7 +506,8 @@
       "SR2_V_VARIABLE_HARMONIC_TWO_ROW_ESCAPE_AND_OPEN_SECTION_COMPLETE",
       "SR2_V_VARIABLE_HARMONIC_TWO_ALPHA_SPARSE_SECTION_RAW_CPOBC_UNIT_IDEAL_COMPLETE",
       "SR2_V_TRANSVERSE_COCYCLE_FOUR_SEMANTIC_BRANCH_PRINCIPAL_OPENS_COMPLETE",
-      "SR2_V_FOUR_TRANSVERSE_DETERMINANT_ZERO_LOCI_AND_STATE_NATIVE_SUPPORT_ENLARGEMENT_CURRENT",
+      "SR2_V_TRANSVERSE_COMMUTATOR_KERNEL_EQUAL_Q_LOCUS_AND_NESTED_DEGENERACY_CERTIFICATE_COMPLETE",
+      "SR2_V_KER_M_Q_PROJECTION_INTO_KER_C_DELTA_Q_QUESTION_AND_STATE_NATIVE_SUPPORT_ENLARGEMENT_CURRENT",
       "SR2_V_ALIGNED_DEGENERACY_AND_TRIPLE_IRREDUCIBLE_BRANCHES_NEXT",
       "955_REDUCIBLE_IRREDUCIBLE_AND_SYMMETRY_REDUCED_MIXED_SCOUTS",
       "721_NATIVE_COMPILER_AFTER_955_TERMINAL_OR_AS_BUDGET_FALLBACK",
@@ -585,7 +653,10 @@
     "reports/v0.4.2_955_pure_lower_oracle.md",
     "results/v0.4.2_955_pure_lower_oracle.json",
     "src/universe_lab/final_theory/source_native_955_pure_lower_oracle_v042.py",
-    "reports/v0.4.2_fixed_vector_gc_strong_msr_escape.md"
+    "reports/v0.4.2_fixed_vector_gc_strong_msr_escape.md",
+    "reports/v0.4.2_sr2v_transverse_determinant_zero_locus.md",
+    "results/v0.4.2_sr2v_transverse_determinant_zero_locus.json",
+    "src/universe_lab/final_theory/sr2v_transverse_determinant_zero_locus_v042.py"
   ],
   "required_resume_tests": [
     "tests/final_theory/test_ci_version_boundary_v04.py",
@@ -617,7 +688,8 @@
     "tests/final_theory/test_weak_d2_state_native_corrected_csg_rank2_v042.py",
     "tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py",
     "tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py",
-    "tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py"
+    "tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py",
+    "tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py"
   ],
   "publication_posture": "STATEWISE_VERSUS_OPERATOR_OBSERVABILITY_EXACT_SEPARATION_AND_MINIMAL_RECOVERY_WITH_SCOPED_SR3B_A_ONE_SIDED_CLOSURE_AS_UPGRADE_NO_BROAD_PRIORITY_OVER_XU_2607_26672"
 }

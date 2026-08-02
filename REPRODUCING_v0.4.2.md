@@ -389,7 +389,8 @@ uv run python -m universe_lab.final_theory.weak_d2_state_native_corrected_csg_ra
 uv run python -m universe_lab.final_theory.sr2v_variable_harmonic_two_row_audit_v042
 uv run python -m universe_lab.final_theory.sr2v_variable_harmonic_sparse_section_cpobc_v042
 uv run python -m universe_lab.final_theory.sr2v_transverse_cocycle_principal_open_v042
-uv run pytest -q tests/final_theory/test_sr2v_additive_msr_laurent_v042.py tests/final_theory/test_sr2v_bottom_msr_global_csg_v042.py tests/final_theory/test_weak_d2_state_native_shear_d12_preflight_v042.py tests/final_theory/test_weak_d2_state_native_fixed_harmonic_cpobc_obstruction_v042.py tests/final_theory/test_weak_d2_state_native_corrected_csg_rank2_v042.py tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py
+uv run python -m universe_lab.final_theory.sr2v_transverse_determinant_zero_locus_v042
+uv run pytest -q tests/final_theory/test_sr2v_additive_msr_laurent_v042.py tests/final_theory/test_sr2v_bottom_msr_global_csg_v042.py tests/final_theory/test_weak_d2_state_native_shear_d12_preflight_v042.py tests/final_theory/test_weak_d2_state_native_fixed_harmonic_cpobc_obstruction_v042.py tests/final_theory/test_weak_d2_state_native_corrected_csg_rank2_v042.py tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py
 ```
 
 Expected verdicts and semantic digests:
@@ -411,6 +412,8 @@ SR2V_VARIABLE_HARMONIC_TWO_ALPHA_PRINCIPAL_OPEN_CPOBC_UNIT_IDEAL_CERTIFIED_NONTE
 4c8a71689c69d4845344eb44e459b3a5256075188b1f2d71dabc5a7428235efe
 SR2V_TRANSVERSE_ALL_FOUR_SEMANTIC_BRANCHES_Q1_Q4_SPLITTING_PRINCIPAL_OPENS_CERTIFIED_NONTERMINAL
 07e60a4d6b029d3cf08efd3ef3aae14598a1614090d3809d764973065b35eaf0
+SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL
+a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f
 ```
 
 The local Laurent certificate is retained as a Jacobian regression; the
@@ -425,15 +428,30 @@ rows plus a nonzero rank-62 minor prove the entire beta-one, two-alpha
 `Delta!=0` section empty. The separate transverse certificate builds four
 Eq. (113)/Eq. (139) semantic matrices and proves `Q1,...,Q4` splitting on four
 nonempty principal opens. It never uses the 1,187-row joint inventory for a
-branch conclusion.
+branch conclusion. The determinant-zero certificate then classifies the
+universal commuting subspace and analyses nested loci. The witness condition is
+`rank[M;C]>rank M`, not `Delta=0`, and
+`K_delta=ker C(delta_Q)` equals `span(delta_Q)` only when `delta_Q!=0`; at zero
+it is all `QQ^4`. Thus the whole equal-`Q`-spectrum locus is witness-free.
+`beta=a-b` is a global conjugation coboundary annihilated by every commutator
+form. At three full-diagonal points rank is 127 with bottom-tangent kernel. On
+the ten-dimensional two-scalar locus `beta` is always in the kernel; four exact
+nonzero-`delta_Q` points have rank 130 and kernel `span(beta,e_Q5)`. Its
+six-dimensional Q5-only subfamily has `delta_Q=0` and is witness-free; one exact
+point there has rank 127 and a five-dimensional tangent kernel. Rank constancy
+and the remaining nonzero-`delta_Q` part are open.
 
 ## Next exact gate
 
 For state-native SR2-V, enlarge the exact section beyond beta one and the two
 retained alpha coordinates; do not rerun the now-empty sparse section or either
-old fixed-state D12/shear campaign. In the transverse reducible branch, treat
-the four branch-specific determinant-zero loci without combining derived and
-literal Eq. (113) or strict and completed Eq. (139). Then treat
+old fixed-state D12/shear campaign. In the transverse reducible branch, the
+equal-`Q`-spectrum locus is already witness-free, but the nonzero-`delta_Q` part
+of the two-scalar locus remains open away from four points. Decide whether the
+`Q`-projection of `ker M` always lies in `K_delta=ker C(delta_Q)`, still without
+combining derived and literal Eq. (113) or strict and completed Eq. (139);
+`span(beta,e_Q5)` is recorded as the wrong locus-wide invariant.
+Then treat
 `Delta_align=0` and the triple-irreducible pivots. Keep supplemental Q5
 separate. Do not launch an exhaustive 131-patch campaign.
 When the 955 mixed components resume, first construct a symmetry/orbit

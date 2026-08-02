@@ -55,8 +55,15 @@ strictly scoped conclusions:
 
 The controlling implementation order is therefore now:
 
-1. analyse the four branch-specific transverse determinant-zero loci without
-   combining Eq. (113) or Eq. (139) alternatives;
+1. decide whether the `Q`-projection of `ker M` always lies in
+   `K_delta=ker C(delta_Q)`, equivalently whether `rank[M;C]=rank M` on the whole transverse
+   base, without combining
+   Eq. (113) or Eq. (139) alternatives; on nonzero `delta_Q`, `K_delta` is
+   `span(delta_Q)`, while the whole zero-`delta_Q` locus is already witness-free.
+   Three full-diagonal points have rank 127 and bottom-tangent kernel; four
+   nonzero-`delta_Q` two-scalar points have rank 130 and kernel
+   `span(beta,e_Q5)`; a Q5-only point has rank 127 and a larger tangent kernel.
+   The witness condition is `rank[M;C]>rank M`, not `Delta=0`;
 2. enlarge the state-native search beyond the beta-one, two-alpha sparse
    section, first by adding alpha support or variable betas while preserving
    the exact harmonic and nonsingularity ledgers;
