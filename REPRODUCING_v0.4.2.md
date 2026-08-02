@@ -1,5 +1,21 @@
 # Reproducing the v0.4.2 profile-native audits and exact scouts
 
+## CI and public-release boundary
+
+The mutable v0.4 tree is reproduced with:
+
+```powershell
+uv run python scripts/reproduce_v04.py
+uv run pytest -q tests/final_theory/test_ci_version_boundary_v04.py
+```
+
+The public v0.3.9 raw-byte contracts are intentionally not replayed against
+this tree. CI checks them in a separate full-history checkout of exact public
+commit `cba86eae795e1e985c4ba1bcd3dabe4eb2773fab`. Do not regenerate
+`results/v0.3.8_line_ending_bridge.json` or
+`results/v0.3.9_release_manifest.json`; see
+`reports/v0.4_ci_release_boundary_repair_2026-08-02.md`.
+
 The v0.4.2 namespace artifact is a fail-closed static audit.  A subsequent
 exact lift audit found the stronger explanation: all three source candidates
 have unique zero Q residuals. Neither step invokes Sage/Singular, and the
@@ -73,7 +89,7 @@ FIXED_VECTOR_GC_STRONG_MSR_ESCAPE_CERTIFIED
 ```
 
 The checked-in JSON has SHA-256
-`7a51348850ea5d5c3c6048d8f9857b9b983c6945e36772c1e35f3c02da19d495`.
+`6c8b230fc4c4a8c2a0d4f352da846b633639ecf59f0ef67537a53b5dedb229a6`.
 It verifies 165/165 nonsingular occurrences, CPOBC 783/783, inverse forms
 712/712, strong MSR 24/24, and fixed-vector GC 1,529/1,529, while strong GC
 fails on 510 path pairs and Eq. (112) fails at `p2-2`. The four Q matrices are
@@ -340,7 +356,7 @@ semantic digest 100fefe528012254edcd66c7237ae5706dcb3bba6badbe75da170f68403b4032
 SR2V_STATE_NATIVE_RANK2_CHART_CERTIFIED
 semantic digest 3bf3b56c97ef73fcce3ff089f5229191b9d1ade04e217706ac51abe11eaebe6c
 SR2V_STATE_NATIVE_SHEAR_D12_MANIFEST_CERTIFIED_NO_SOLVER_RUN
-semantic digest 9b7b3006988ed4bf33e8b495f79821141d52e0ae17ed33fd801ae3ed8c8a00a0
+semantic digest 82cd51ddd29e5923b003c8cf8f75a5a26cf5a36edf68728ad58d298d3f573090
 SR2V_SCALAR_LATTICE_SNF_CERTIFIED_NONTERMINAL
 semantic digest 155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9
 31 passed

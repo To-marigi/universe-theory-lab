@@ -333,6 +333,7 @@ def run(root: Path | None = None) -> dict[str, Any]:
     target.write_text(
         json.dumps(payload, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     return payload
 

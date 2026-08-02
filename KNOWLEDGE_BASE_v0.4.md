@@ -104,7 +104,7 @@ semantic-profile row and not a change to SR3b-A.
 | `results/v0.4.2_sr2v_transitive_extension_principal_open.json` | exact symbolic identities plus a nonzero 130-minor; digest `5b3cf83ae5cd6338cfa07c1894bf5eab2f6cf8fe5870fd8fdc6911682b06d000` | on `r*s*(1+r)*(1+s)!=0`, the same-character line and a generic distinct-character principal open force `Q_1,...,Q_4` commutativity through split extensions; Q5 upper-right coordinate is fixed outside the kernel and the exceptional determinant-zero locus remains open |
 | `results/v0.4.2_sr2v_commutator_pivot_branch_cover.json` | exact `2 by 2` polynomial identities; digest `100fefe528012254edcd66c7237ae5706dcb3bba6badbe75da170f68403b4032` | six Q pairs completely cover Q-noncommutativity and split it into pair-irreducible, triple-irreducible, transverse-reducible, and aligned-reducible branches; structural cover only |
 | `results/v0.4.2_sr2v_state_native_rank2_chart.json` | exact harmonic-state and local-frame certificate; digest `3bf3b56c97ef73fcce3ff089f5229191b9d1ade04e217706ac51abe11eaebe6c` | 87 states, 131 orbit actions, exact reachable rank two; fixed-vector GC/reachable MSR are built into a 262-parameter fixed-state chart and nonsingularity reduces to `beta_e!=0` (automatic on the shear slice), while CPOBC/Eq. (113)/Eq. (139) remain unsolved |
-| `results/v0.4.2_sr2v_state_native_shear_D12_manifest.json` | exact sparse QQ substitution manifest; digest `9b7b3006988ed4bf33e8b495f79821141d52e0ae17ed33fd801ae3ed8c8a00a0` | 131-edge shear plus separate Q5; `D12=det[Q1,Q2]` is a nonzero seven-term cubic and all 783/712/25+25/4+10/1529/24 ledgers are compiled; no solver or relation-variety intersection claim |
+| `results/v0.4.2_sr2v_state_native_shear_D12_manifest.json` | exact sparse QQ substitution manifest; digest `82cd51ddd29e5923b003c8cf8f75a5a26cf5a36edf68728ad58d298d3f573090` | 131-edge shear plus separate Q5; `D12=det[Q1,Q2]` is a nonzero seven-term cubic and all 783/712/25+25/4+10/1529/24 ledgers are compiled; no solver or relation-variety intersection claim |
 | `results/v0.4.2_sr2v_scalar_lattice.json` | exact ZZ/QQ Smith-normal-form and primitive-kernel certificate; digest `155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9` | operator scalar block is a split `G_m^49`; observed-bottom plus fixed-GC block is a split `G_m^29`; additive MSR, cocycle, commutator, and chart-cover claims are excluded |
 | `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` | current SR2-V exact progress authority | consolidates the six new certificates, discarded numerical-scout boundary, revised exact search order, and nonterminal publication scope |
 | `references/notes/v0.4.2_prior_art_related_work_2026-08-01.md` | theorem/page-level literature and mathematical-tool ledger | records direct-source semantics, Xu overlap, triangularisation/common-eigenvector/Burnside/cyclic-separating/LLD tools, 66-PDF local/NAS preservation, and exact claim boundaries |
@@ -469,6 +469,14 @@ the SR3b-A theorem, title, or deposit status.
 ## 11. Decision log and work not to repeat
 
 - v0.3.9 is the immutable public strong/strong baseline.
+- Current-tree CI and public-release replay are separate verification domains.
+  The current lane runs `scripts/reproduce_v04.py`; the historical lane checks
+  out public v0.3.9 commit
+  `cba86eae795e1e985c4ba1bcd3dabe4eb2773fab` with full history and runs its
+  frozen reproducer and four release-relative test files. Never regenerate the
+  v0.3.8 bridge or v0.3.9 release manifest against v0.4. The fail-closed hashes,
+  LF normalization boundary, and regression test are recorded in
+  `reports/v0.4_ci_release_boundary_repair_2026-08-02.md`.
 - v0.4 followed the counterexample-first rule and closed the weak/weak ON
   corner with an exact rational witness; no elimination was needed.
 - The independent SR2-V audit fixes that witness at reachable rank one and

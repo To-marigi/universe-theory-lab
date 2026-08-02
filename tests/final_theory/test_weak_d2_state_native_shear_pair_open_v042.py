@@ -29,7 +29,7 @@ def test_frozen_shear_manifest_rebuilds_exactly(rebuilt: dict[str, Any]) -> None
     assert frozen == rebuilt
     assert frozen["semantic_digest_sha256"] == shear.semantic_digest(frozen)
     assert frozen["semantic_digest_sha256"] == (
-        "9b7b3006988ed4bf33e8b495f79821141d52e0ae17ed33fd801ae3ed8c8a00a0"
+        "82cd51ddd29e5923b003c8cf8f75a5a26cf5a36edf68728ad58d298d3f573090"
     )
     assert frozen["verdict"] == shear.VERDICT
     assert frozen["search_terminal"] == shear.SEARCH_TERMINAL

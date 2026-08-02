@@ -383,7 +383,7 @@ an expanded scalar-polynomial solver manifest.
    29,994 terms. The ambient open is exact and nonempty, but its intersection
    with the relation variety is unresolved. Verdict
    `SR2V_STATE_NATIVE_SHEAR_D12_MANIFEST_CERTIFIED_NO_SOLVER_RUN`, digest
-   `9b7b3006988ed4bf33e8b495f79821141d52e0ae17ed33fd801ae3ed8c8a00a0`.
+   `82cd51ddd29e5923b003c8cf8f75a5a26cf5a36edf68728ad58d298d3f573090`.
 10. **Scalar lattice SNF complete:** the exact operator and observed-bottom
    monomial lattices have ranks 83 and 103, all nonzero Smith factors one, and
    primitive kernel ranks 49 and 29. Verdict
@@ -433,6 +433,14 @@ alternatives, estimated repair cost, and a recommended decision.
 See `REPRODUCING_v0.4.1.md` and `REPRODUCING_v0.4.2.md`. The current mixed
 milestone is guarded by:
 
+CI now separates the mutable v0.4 tree from the byte-frozen public v0.3.9
+release. The current lane runs `scripts/reproduce_v04.py` and excludes only
+four release-relative wrappers; a separate lane checks out exact public commit
+`cba86eae795e1e985c4ba1bcd3dabe4eb2773fab` with `fetch-depth: 0` and runs all
+four there. The v0.3.8 bridge and v0.3.9 release manifest remain unchanged and
+are hash-pinned by `test_ci_version_boundary_v04.py`. See
+`reports/v0.4_ci_release_boundary_repair_2026-08-02.md`.
+
 ```powershell
 uv run pytest -q tests/final_theory/test_source_native_955_mixed_manifest_v042.py
 uv run pytest -q tests/final_theory/test_v042_955_mixed_xy_tangent_scout.py
@@ -468,7 +476,10 @@ regenerate the stored exact payloads and preserve the `NO_SOLVER_RUN`,
 bounded-family `GLOBAL_NO_GO`, and general mixed `NO_WITNESS_OPEN` boundaries.
 
 The 2026-08-02 mutable-index resume suite, including all six new SR2-V suites,
-reports `122 passed`; Ruff and Mypy pass on all eight changed source modules.
+the CI boundary guard, and all semantic escape guards reports `125 passed`.
+The current CI-lane command reports `495 passed`; the exact public-v0.3.9
+checkout reports `25 passed` for its four release-boundary files, in addition
+to a successful `scripts/reproduce_v039.py` replay.
 
 The earlier broader validation snapshot (before the mixed-manifest/tangent
 milestone above) was:
@@ -480,12 +491,12 @@ ruff                                             passed
 mypy                                             passed
 ```
 
-The dependency regression intentionally excludes historical reproduction
-wrappers whose frozen raw-byte bridges correctly reject the post-v0.3.9
-reference-manifest changes. This is not a mathematical or compiler failure,
-and those bridges must not be rewritten. No full historical suite is claimed
-for v0.4.1; a later release needs its own bridge for intentional post-v0.3.9
-files.
+The current-tree regression intentionally excludes four historical
+reproduction wrappers whose frozen raw-byte bridges correctly reject the
+post-v0.3.9 reference-manifest changes. This is not a mathematical or compiler
+failure, and those bridges must not be rewritten. Their separate exact-public-
+commit lane is now mandatory and verified. A future public v0.4 release needs
+its own new bridge for intentional post-v0.3.9 files.
 
 ## 9. Invariants
 

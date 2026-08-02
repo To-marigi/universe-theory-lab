@@ -57,14 +57,56 @@ jobs:
       - name: Ruff
         run: uv run ruff check .
 
-      # v0.3.9 reuses reproduce_v038.verify_v038(check_release_manifest=False)
-      # for the bridge and the frozen Phase 1, Phase 2 and scope gates, then
-      # checks the v0.3.9 manifest against the pinned v0.3.8 baseline.
-      - name: Verify v0.3.9 release
-        run: uv run python scripts/reproduce_v039.py
+      # The current branch is a v0.4 research tree. Historical raw-byte
+      # release verification is intentionally run only in historical-v0.3.9
+      # below, at the exact public source commit. Running reproduce_v039.py on
+      # this tree would correctly reject the newer reference catalogue.
+      - name: Verify v0.4 current result
+        run: uv run python scripts/reproduce_v04.py
 
       - name: Pytest
-        run: uv run pytest -ra
+        run: |
+          uv run pytest -ra \
+            --ignore=tests/final_theory/test_reproduce_v037.py \
+            --ignore=tests/final_theory/test_line_ending_bridge_v038.py \
+            --ignore=tests/final_theory/test_reproduce_v038.py \
+            --ignore=tests/final_theory/test_reproduce_v039.py
+
+  historical-v039:
+    name: frozen v0.3.9 release
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # Zenodo v0.3.9 record 21720863 names this exact source commit. The
+      # v0.3.8 line-ending bridge and v0.3.9 release manifest are historical
+      # raw-byte contracts, so they must be verified in this checkout rather
+      # than regenerated or reinterpreted on the current v0.4 tree.
+      - uses: actions/checkout@v4
+        with:
+          ref: cba86eae795e1e985c4ba1bcd3dabe4eb2773fab
+          fetch-depth: 0
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Pin interpreter
+        run: uv python install 3.12
+
+      - name: Sync locked environment
+        run: uv sync --frozen
+
+      - name: Verify frozen v0.3.9 release
+        run: uv run python scripts/reproduce_v039.py
+
+      - name: Historical release-boundary tests
+        run: |
+          uv run pytest -ra \
+            tests/final_theory/test_reproduce_v037.py \
+            tests/final_theory/test_line_ending_bridge_v038.py \
+            tests/final_theory/test_reproduce_v038.py \
+            tests/final_theory/test_reproduce_v039.py
 
   types:
     name: mypy (advisory)

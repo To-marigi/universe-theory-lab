@@ -373,6 +373,7 @@ def write_fixed_vector_gc_strong_msr_escape_v042(root: Path) -> Path:
     target.write_text(
         json.dumps(result, indent=2, sort_keys=False, ensure_ascii=False) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
     return target
 
