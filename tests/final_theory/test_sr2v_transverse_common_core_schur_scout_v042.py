@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -12,7 +11,7 @@ import pytest
 from universe_lab.final_theory import sr2v_transverse_common_core_schur_scout_v042 as result
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_SEMANTIC_DIGEST = "b977d2a21444beae5d853680c0945dd74fef1504f4b3045f587c509936b4a35a"
+EXPECTED_SEMANTIC_DIGEST = "36c0685c7d3dbe8f1396cf8c9bc14f55447f6b15f33bafea2e916d4423d54ae6"
 
 
 def _load(relative: str) -> dict[str, Any]:
@@ -38,7 +37,9 @@ def test_artifact_rebuilds_exactly(rebuilt: dict[str, Any]) -> None:
     assert frozen["witness"] is None
     assert all(frozen["gates"].values())
     for relative, binding in frozen["input_artifacts"].items():
-        assert hashlib.sha256((ROOT / relative).read_bytes()).hexdigest() == binding["raw_sha256"]
+        assert binding["binding_kind"] == "canonical_json_semantic_digest"
+        assert "raw_sha256" not in binding
+        assert result.semantic_digest(_load(relative)) == binding["semantic_digest_sha256"]
 
 
 def test_second_fixed_four_passes_81_then_is_rejected(

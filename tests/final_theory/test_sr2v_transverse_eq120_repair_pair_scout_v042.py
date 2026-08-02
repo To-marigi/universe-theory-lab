@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -12,7 +11,7 @@ import pytest
 from universe_lab.final_theory import sr2v_transverse_eq120_repair_pair_scout_v042 as result
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_SEMANTIC_DIGEST = "a6754c57355d2f7ed2ce9df9abd1603d7563bb9bec1785fa1c53c2dddb8364e9"
+EXPECTED_SEMANTIC_DIGEST = "f14853252dfadf4f2335f4f25a2388731ad821739f8b9534988cf31b5ac1bf18"
 
 
 def _load(relative: str) -> dict[str, Any]:
@@ -38,7 +37,9 @@ def test_artifact_rebuilds_exactly(rebuilt: dict[str, Any]) -> None:
     assert frozen["witness"] is None
     assert all(frozen["gates"].values())
     for relative, binding in frozen["input_artifacts"].items():
-        assert hashlib.sha256((ROOT / relative).read_bytes()).hexdigest() == binding["raw_sha256"]
+        assert binding["binding_kind"] == "canonical_json_semantic_digest"
+        assert "raw_sha256" not in binding
+        assert result.semantic_digest(_load(relative)) == binding["semantic_digest_sha256"]
 
 
 @pytest.mark.parametrize(

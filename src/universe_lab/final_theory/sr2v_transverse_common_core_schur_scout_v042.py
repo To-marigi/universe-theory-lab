@@ -24,7 +24,7 @@ from universe_lab.final_theory import sr2v_transverse_determinant_zero_locus_v04
 from universe_lab.final_theory import weak_d2_visible_torus_scout_v042 as torus
 
 RESULT_PATH = "results/v0.4.2_sr2v_transverse_common_core_schur_scout.json"
-SCHEMA = "final-theory-v042-sr2v-transverse-common-core-schur-scout-v4"
+SCHEMA = "final-theory-v042-sr2v-transverse-common-core-schur-scout-v5"
 VERDICT = "SR2V_TRANSVERSE_COMMON_CORE_FIXED4_REJECTED_FULL_M0_NO_ESCAPE_AT_ADVERSARIAL_POINT_OPEN"
 SEARCH_TERMINAL = "NOT_A_SEARCH_TERMINAL_83_EXACT_EVALUATIONS_ONLY"
 
@@ -57,14 +57,6 @@ def _load(path: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise AssertionError(f"JSON object required: {path}")
     return value
-
-
-def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
 
 
 def _canonical_json(value: Any) -> str:
@@ -844,7 +836,7 @@ def build_payload(root: Path) -> dict[str, Any]:
         "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
         "input_artifacts": {
             relative: {
-                "raw_sha256": _sha256(root / relative),
+                "binding_kind": "canonical_json_semantic_digest",
                 "semantic_digest_sha256": _load(root / relative).get("semantic_digest_sha256"),
             }
             for relative in (unit_minor.RESULT_PATH, lattice.RESULT_PATH)

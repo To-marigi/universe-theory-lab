@@ -26,7 +26,7 @@ from universe_lab.final_theory import sr2v_transverse_determinant_zero_locus_v04
 from universe_lab.final_theory import weak_d2_visible_torus_scout_v042 as torus
 
 RESULT_PATH = "results/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.json"
-SCHEMA = "final-theory-v042-sr2v-transverse-eq120-repair-pair-scout-v3"
+SCHEMA = "final-theory-v042-sr2v-transverse-eq120-repair-pair-scout-v4"
 VERDICT = (
     "SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL"
 )
@@ -125,14 +125,6 @@ def _load(path: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise AssertionError(f"JSON object required: {path}")
     return value
-
-
-def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
 
 
 def _canonical_json(value: Any) -> str:
@@ -612,7 +604,7 @@ def build_payload(root: Path) -> dict[str, Any]:
         ),
         "input_artifacts": {
             relative: {
-                "raw_sha256": _sha256(root / relative),
+                "binding_kind": "canonical_json_semantic_digest",
                 "semantic_digest_sha256": _load(root / relative).get("semantic_digest_sha256"),
             }
             for relative in (unit_minor.RESULT_PATH, base_cover.RESULT_PATH)

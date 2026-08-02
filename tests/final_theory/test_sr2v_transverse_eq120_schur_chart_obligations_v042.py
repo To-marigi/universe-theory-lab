@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -14,7 +13,7 @@ from universe_lab.final_theory import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_SEMANTIC_DIGEST = "7abbbbdfd5455b6b000842d7698a0a2d9058df87ef4ac2882e47edf44ff7ce0e"
+EXPECTED_SEMANTIC_DIGEST = "d7ac88daccd2328280ff10558979b2a520c0d9628b5b6637d2e12a7d6bb79bb6"
 
 
 def _load(relative: str) -> dict[str, Any]:
@@ -40,7 +39,9 @@ def test_artifact_rebuilds_exactly(rebuilt: dict[str, Any]) -> None:
     assert frozen["witness"] is None
     assert all(frozen["gates"].values())
     for relative, binding in frozen["input_artifacts"].items():
-        assert hashlib.sha256((ROOT / relative).read_bytes()).hexdigest() == binding["raw_sha256"]
+        assert binding["binding_kind"] == "canonical_json_semantic_digest"
+        assert "raw_sha256" not in binding
+        assert result.semantic_digest(_load(relative)) == binding["semantic_digest_sha256"]
 
 
 def test_predecessors_are_bound_without_semantic_branches(rebuilt: dict[str, Any]) -> None:

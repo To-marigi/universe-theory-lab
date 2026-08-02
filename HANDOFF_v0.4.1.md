@@ -129,7 +129,9 @@ minors by units while allowing refinement opens, and explicitly rejects both
 an `AB` minor that ignores `Q5` and the inference `multivariate gcd 1 => unit
 ideal`. Verdict
 `SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_CERTIFIED_NONTERMINAL`,
-digest `7abbbbdfd5455b6b000842d7698a0a2d9058df87ef4ac2882e47edf44ff7ce0e`.
+digest `d7ac88daccd2328280ff10558979b2a520c0d9628b5b6637d2e12a7d6bb79bb6`.
+The three new successor certificates bind predecessors by canonical JSON
+semantic digest, not raw bytes, so Windows CRLF and Linux LF checkouts agree.
 
 Three four-row Schur scouts are rejected:
 `{83,147,154,688}` fails five mixed/direction points, while
@@ -151,7 +153,7 @@ are `(g2,g3,g4)=(-1/2,-1/2,0)` and the determinant-form values are
 still remains `131/131`. Therefore only this three-minor subcover is rejected;
 the Eq. (120) charts and the full common core remain open. Verdict
 `SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL`,
-digest `a6754c57355d2f7ed2ce9df9abd1603d7563bb9bec1785fa1c53c2dddb8364e9`.
+digest `f14853252dfadf4f2335f4f25a2388731ad821739f8b9534988cf31b5ac1bf18`.
 
 The next strong-certificate operation is full-module saturation, not another
 fixed-pair scout. Lazily Schur-reduce all `M0` rows through the certified

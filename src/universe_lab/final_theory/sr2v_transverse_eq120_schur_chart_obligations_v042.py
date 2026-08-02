@@ -25,7 +25,7 @@ from universe_lab.final_theory import sr2v_transverse_base_cover_ablation_v042 a
 from universe_lab.final_theory import sr2v_transverse_common_core_unit_minor_v042 as unit_minor
 
 RESULT_PATH = "results/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.json"
-SCHEMA = "final-theory-v042-sr2v-transverse-eq120-schur-chart-obligations-v2"
+SCHEMA = "final-theory-v042-sr2v-transverse-eq120-schur-chart-obligations-v3"
 VERDICT = (
     "SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_"
     "CERTIFIED_NONTERMINAL"
@@ -38,14 +38,6 @@ def _load(path: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise AssertionError(f"JSON object required: {path}")
     return value
-
-
-def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
 
 
 def _canonical_json(value: Any) -> str:
@@ -630,7 +622,7 @@ def build_payload(root: Path) -> dict[str, Any]:
         ),
         "input_artifacts": {
             relative: {
-                "raw_sha256": _sha256(root / relative),
+                "binding_kind": "canonical_json_semantic_digest",
                 "semantic_digest_sha256": _load(root / relative)[
                     "semantic_digest_sha256"
                 ],
