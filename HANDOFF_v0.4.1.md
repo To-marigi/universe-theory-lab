@@ -79,22 +79,40 @@ This section controls older SR2-V “next step” wording later in the handoff.
   point outside the full diagonal has `delta_Q=0`, rank 127 and a five-dimensional
   tangent kernel. Verdict
   `SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL`,
-  digest `a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f`.
+  v3 digest `da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30`.
   Do not restore the uncommitted v1 draft digest `37bcbb5b...`: it omitted the
   `delta_Q=0` exception and the Q5-only subfamily and was superseded before commit.
-  Likewise, do not cite the session's larger ~900-point scout count as a
-  certificate; only the frozen 60-point scan and eight exact locus samples are
-  reproducible evidence.
+  The committed v2 digest `a61eaeec...` had correct point data but overstated
+  four sampled scalars as whole punctured-line rank constancy; v3 corrects the
+  wording without changing those data.
+- The successor scalar-base/cover/ablation certificate proves that CPOBC alone
+  has saturated scalar rank 83 and defines the common `G_m^49`; both Eq. (113)
+  scalar readings are redundant and Eq. (139) scalar rows vanish. Source-native
+  Eq. (120) reduces the six commutators globally to the minimal star
+  `c12,c13,c14`, and locally to one row on each of `D(rk-r1)`, with a three-row
+  equal-ratio nonunit remainder. Strict Eq. (139) controls completed by literal
+  row inclusion, leaving two Eq. (113) readings crossed with four loci: eight
+  obligations. Exact direct ablations show that fixed-vector GC and
+  reachable-state MSR are each individually necessary for a universal
+  transverse commutativity statement. The GC-ablation witness passes all 50
+  source-reaching path-state MSR checks. Verdict
+  `SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL`,
+  digest `005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e`.
+  A separate 960-evaluation exact scout found no full-profile escape; its input
+  ledger is preserved in `reports/v0.4.2_sr2v_transverse_exact_scout_ledger.md`,
+  but it remains bounded scout evidence, not a theorem.
 
-The next operation is no longer "solve the four determinant-zero loci". It is
-the sharper residual question: decide whether the `Q`-projection of `ker M`
-always lies in `K_delta=ker C(delta_Q)`, equivalently whether
-`rank[M;C] = rank M` on the whole transverse base. On `delta_Q!=0` this becomes
-containment in `span(delta_Q)`; on `delta_Q=0` it is automatic. Do not defend
-`span(beta,e_Q5)` instead: the kernel provably leaves that span at a recorded
-degenerate point and still commutes. Alongside that, enlarge the state-native support beyond
-beta one and the two retained alphas. The next genuine state cover remains the
-rank-two open in `Gr(2,63)` (dimension 122), not another isolated `k`.
+The next operation is the common-core reduction before branching. Test the
+fixed 127-by-127 non-Q-column minor candidate in
+`M0=CPOBC+fixed-vector GC+reachable-state MSR`; its observed support graph has a
+unique perfect matching, but unit factorisation is not yet proved. If it is a
+base unit, eliminate the 127 non-Q columns and decide the four Eq. (120) loci in
+at most five Q columns. Only if common-core membership fails should work split
+into the eight derived/literal strict obligations. On every route the exact
+criterion remains `rank[M;C]=rank M`; `span(beta,e_Q5)` is not the invariant.
+Alongside that, enlarge the state-native support beyond beta one and the two
+retained alphas. The next genuine state cover remains the rank-two open in
+`Gr(2,63)` (dimension 122), not another isolated `k`.
 
 Focused reproduction:
 
@@ -107,6 +125,7 @@ uv run pytest -q tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v0
 uv run pytest -q tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_base_cover_ablation_v042.py
 ```
 
 Do not begin `d=3` or an infinite lifting theorem in a way that bypasses the
@@ -517,29 +536,37 @@ an expanded scalar-polynomial solver manifest.
     `span(beta,e_Q5)`; and one Q5-only point has rank 127 and a larger tangent
     kernel. Verdict
     `SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL`,
-    digest `a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f`.
-14. **Current:** decide whether the `Q`-projection of `ker M` always lies in
-    `K_delta=ker C(delta_Q)`, equivalently whether `rank[M;C]=rank M` on the whole
-    transverse base; on nonzero `delta_Q` this is containment in `span(delta_Q)`.
-    transverse base; `span(beta,e_Q5)` is *not* the invariant to defend, since the
-    kernel provably leaves it at a recorded degenerate point and still commutes.
-    Also enlarge the state-native search to variable betas or wider alpha support.
-    Then target `Delta_align=0` and the triple-irreducible pivots. Numerical and
-    finite-field points are scouts until exact rational direct certification.
-15. Only after the bounded SR2-V campaign reaches an allowed terminal, return
+    v3 digest `da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30`.
+14. **Transverse base and minimal targets certified:** CPOBC alone defines the
+    saturated `G_m^49` scalar base; strict Eq. (139) controls completed; and raw
+    CPOBC Eq. (120) reduces six commutators to the globally minimal star of three.
+    The nontrivial base is covered by three one-row opens plus one three-row
+    equal-ratio locus. Both weak semantic blocks have exact ablation witnesses,
+    and restoring the omitted block closes the rank escape at the same point.
+    Verdict
+    `SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL`,
+    digest `005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e`.
+15. **Current:** try the branch-independent common core first. Prove the frozen
+    127-column matched minor is a Laurent unit, reduce to the Q Schur complement,
+    and solve the four Eq. (120) loci. If this fails, retain derived/literal
+    strict as eight separate obligations. Also enlarge the state-native search
+    to variable betas or wider alpha support, then target `Delta_align=0` and
+    triple-irreducible pivots. Numerical and finite-field points remain scouts
+    until exact rational direct certification.
+16. Only after the bounded SR2-V campaign reaches an allowed terminal, return
    to the remote/disconnected `x!=0,y!=0` 955 components. The first upper
    family, mixed tangent branch,
    and global `x=0` pure-lower family are already closed in their declared
    scopes; do not rerun them or report them as a full-profile no-go.
-16. For 955, do **not** brute-force all 131 principal patches. First split the
+17. For 955, do **not** brute-force all 131 principal patches. First split the
    common-invariant-line and irreducible branches, construct a symmetry/orbit
    reduction, and exact-scout a small natural principal-open set. Permit a
    solver campaign only after its source coverage certificate and versioned
    budget artifact are available.
-17. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
+18. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
    terminal state, or use 721 as the fallback if 955 exhausts its budget. Keep
    the certified diagonal 721 escape point as a regression fixture.
-18. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
+19. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
    tracks. SR3b-A drafting may proceed in parallel under its existing scope and
    owner-gated deposit rule.
 
@@ -596,6 +623,8 @@ uv run pytest -q tests/final_theory/test_weak_d2_commutator_branching_v042.py
 uv run pytest -q tests/final_theory/test_weak_d2_state_native_rank2_v042.py
 uv run pytest -q tests/final_theory/test_weak_d2_state_native_shear_pair_open_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_scalar_lattice_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_base_cover_ablation_v042.py
 ```
 
 Expected focused results are manifest `5 passed`, 955 tangent schema v2
@@ -605,9 +634,12 @@ eight latest exact-gate SR2-V suites `71 passed`. The tests
 regenerate the stored exact payloads and preserve the `NO_SOLVER_RUN`,
 bounded-family `GLOBAL_NO_GO`, and general mixed `NO_WITNESS_OPEN` boundaries.
 
-The 2026-08-02 mutable-index resume suite, including all eight latest SR2-V
+The 2026-08-02 mutable-index resume suite, including the latest SR2-V
 suites, the CI boundary guard, and all semantic escape guards reports
-`196 passed`. The current CI-lane command reports `566 passed`; the exact public-v0.3.9
+`196 passed` at its recorded checkpoint. The new determinant/base-cover pair
+reports `20 passed`, with Ruff and targeted mypy clean. An unfiltered local run
+reports `598 passed`; its only 13 nonpasses are in the four historical wrappers
+that the current CI lane intentionally excludes. The exact public-v0.3.9
 checkout reports `25 passed` for its four release-boundary files, in addition
 to a successful `scripts/reproduce_v039.py` replay.
 

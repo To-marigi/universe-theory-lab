@@ -115,7 +115,7 @@ from universe_lab.final_theory.weak_d2_visible_torus_scout_v042 import (
 
 RESULT_PATH = "results/v0.4.2_sr2v_transverse_determinant_zero_locus.json"
 
-SCHEMA = "final-theory-v042-sr2v-transverse-determinant-zero-locus-v2"
+SCHEMA = "final-theory-v042-sr2v-transverse-determinant-zero-locus-v3"
 VERDICT = (
     "SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL"
 )
@@ -414,13 +414,14 @@ def branch_matrix(
     rows = list(joint_rows[:783])
     eq113_range = range(783, 808) if eq113_branch == torus.EQ113_DERIVED else range(808, 833)
     rows.extend(joint_rows[index] for index in eq113_range)
-    if eq139_domain == torus.EQ139_STRICT:
-        for instance in torus._eq139_instances(torus.EQ139_STRICT):
-            rows.append(eq139_row(context, upper, lower, instance))
-    elif eq139_domain == torus.EQ139_COMPLETED:
-        rows.extend(joint_rows[833:843])
-    else:
+    if eq139_domain not in (torus.EQ139_STRICT, torus.EQ139_COMPLETED):
         raise ValueError(f"unknown Eq139 domain: {eq139_domain}")
+    # Both readings use the same general-bottom word builder.  Since the four
+    # strict instances are a literal subset of the ten completed instances,
+    # this makes Row(M_strict) <= Row(M_completed) transparent for each fixed
+    # Eq. (113) reading instead of relying on the normalized joint inventory.
+    for instance in torus._eq139_instances(eq139_domain):
+        rows.append(eq139_row(context, upper, lower, instance))
     rows.extend(joint_rows[843:1187])
     expected = 1156 if eq139_domain == torus.EQ139_STRICT else 1162
     if len(rows) != expected:
@@ -1305,7 +1306,7 @@ def degeneracy_scan(
         "scalars": [str(value) for value in SCAN_SCALARS],
         "point_count": len(records),
         "rank_profile_census": census,
-        "rank_is_constant_along_each_punctured_line": all(
+        "rank_profile_agrees_at_all_four_recorded_scalars_for_each_direction": all(
             len({record["rank_profile"] for record in records if record["direction"] == direction})
             == 1
             for direction in SCAN_DIRECTIONS
@@ -1429,8 +1430,8 @@ def build_payload(root: Path) -> dict[str, Any]:
             for branch in BRANCH_SPECS
         ),
         "deterministic_scan_found_no_witness": not scan["witnesses"],
-        "deterministic_scan_rank_is_constant_along_each_punctured_line": scan[
-            "rank_is_constant_along_each_punctured_line"
+        "deterministic_scan_rank_profiles_agree_at_the_recorded_samples": scan[
+            "rank_profile_agrees_at_all_four_recorded_scalars_for_each_direction"
         ],
         "span_beta_e_Q5_is_certified_not_to_be_the_right_invariant": bool(
             span_note["kernel_indices_outside_span_beta_e_Q5"]

@@ -52,18 +52,28 @@ strictly scoped conclusions:
   cocycles to vanish on a nonempty principal open in every branch, so
   `Q1,...,Q4` commute there. The `1187 by 132` all-readings matrix is auxiliary
   overconstrained data and supports no branch inference.
+- The successor base audit proves that CPOBC alone defines the saturated common
+  `G_m^49`; both Eq. (113) scalar readings are redundant and Eq. (139) scalar
+  rows vanish. Source-native Eq. (120) reduces all six commutator targets to the
+  globally minimal star `c12,c13,c14`, then to three one-row opens plus one
+  three-row equal-ratio locus. Strict Eq. (139) controls completed by row
+  inclusion, leaving eight obligations across the two Eq. (113) readings.
+- Exact direct ablations prove that fixed-vector GC and all-reachable-state MSR
+  are each individually necessary for universal transverse commutativity. The
+  GC-ablation witness passes all 50 source-reaching path-state MSR checks. Both
+  rank escapes disappear when the omitted block is restored; the full profile
+  remains open.
 
 The controlling implementation order is therefore now:
 
-1. decide whether the `Q`-projection of `ker M` always lies in
-   `K_delta=ker C(delta_Q)`, equivalently whether `rank[M;C]=rank M` on the whole transverse
-   base, without combining
-   Eq. (113) or Eq. (139) alternatives; on nonzero `delta_Q`, `K_delta` is
-   `span(delta_Q)`, while the whole zero-`delta_Q` locus is already witness-free.
-   Three full-diagonal points have rank 127 and bottom-tangent kernel; four
-   nonzero-`delta_Q` two-scalar points have rank 130 and kernel
-   `span(beta,e_Q5)`; a Q5-only point has rank 127 and a larger tangent kernel.
-   The witness condition is `rank[M;C]>rank M`, not `Delta=0`;
+1. attack the branch-independent common core
+   `M0=CPOBC+fixed-vector GC+reachable-state MSR`: prove or refute that the
+   candidate 127-column matched minor is a Laurent unit, reduce to the Q Schur
+   complement, and solve the three one-row Eq. (120) opens plus the three-row
+   equal-ratio nonunit locus. If common-core membership fails, split only then
+   into the eight derived/literal strict obligations; completed follows from
+   strict and the Eq. (113) readings are never combined. The exact witness
+   condition remains `rank[M;C]>rank M`;
 2. enlarge the state-native search beyond the beta-one, two-alpha sparse
    section, first by adding alpha support or variable betas while preserving
    the exact harmonic and nonsingularity ledgers;
@@ -487,7 +497,8 @@ post-literature refocus             STATEWISE OBSERVABILITY / RECOVERY
           |
 SR2-V exact audit + SR3b-M lemmas   COMPLETE
           |
-SR2-V exact campaign   OPEN; SPARSE STATE SECTION EMPTY / FOUR TRANSVERSE SPLITTING OPENS
+SR2-V exact campaign   OPEN; BASE/EQ120 COVER + BOTH SEMANTIC ABLATIONS COMPLETE;
+                       COMMON-CORE FOUR-LOCUS TEST, ELSE 8 STRICT OBLIGATIONS
           |
 955 non-self-adjoint state-only repair, then 721 repair
           |

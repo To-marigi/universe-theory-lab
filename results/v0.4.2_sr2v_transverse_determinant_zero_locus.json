@@ -1,5 +1,5 @@
 {
-  "schema_version": "final-theory-v042-sr2v-transverse-determinant-zero-locus-v2",
+  "schema_version": "final-theory-v042-sr2v-transverse-determinant-zero-locus-v3",
   "date": "2026-08-02",
   "finite_scope": "n<=4",
   "dimension": 2,
@@ -1279,7 +1279,7 @@
       "130/131/130/131": 4,
       "131/131/131/131": 4
     },
-    "rank_is_constant_along_each_punctured_line": true,
+    "rank_profile_agrees_at_all_four_recorded_scalars_for_each_direction": true,
     "records": [
       {
         "direction": 0,
@@ -2215,7 +2215,7 @@
     "no_witness_at_any_certified_nested_locus_sample": true,
     "off_normalized_bottom_characters_carry_full_rank_opens": true,
     "deterministic_scan_found_no_witness": true,
-    "deterministic_scan_rank_is_constant_along_each_punctured_line": true,
+    "deterministic_scan_rank_profiles_agree_at_the_recorded_samples": true,
     "span_beta_e_Q5_is_certified_not_to_be_the_right_invariant": true,
     "coboundary_dichotomy_exhibited_off_the_bottom_locus": true
   },
@@ -2224,5 +2224,5 @@
   "search_terminal": "NOT_A_SEARCH_TERMINAL_NESTED_DEGENERACY_LOCI_AND_BOUNDED_SCAN_ONLY",
   "verdict": "SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL",
   "claim_boundary": "This exact certificate proves two universal identities and gives exact results on nested loci of the transverse scalar base.  Universal, over the whole base: the six Q commutator coefficients are x_j*(a_i-b_i)-x_i*(a_j-b_j), so a witness needs rank[M;C]>rank M rather than a vanishing determinant.  The commuting subspace is K_delta=ker C(delta_Q): it equals span(delta_Q) only when delta_Q is nonzero, and equals all of QQ^4 when delta_Q=0.  Beta=a-b is a global conjugation coboundary, so it satisfies every operator relation row everywhere and every commutator form annihilates it.  Consequently the entire equal-Q spectrum locus delta_Q=0 is witness-free.  Its five-dimensional full diagonal sublocus E={a_e=b_e} is therefore witness-free at every point.  The rank 127, the nullity five and the identification of the kernel with the tangent space of the bottom scalar locus are certified at three exact rational points of E, not proved locus-wide.  On the ten-dimensional two-scalar locus, where the upper character is itself a bottom scalar locus point, beta lies in the kernel everywhere, and rank 130, nullity two and ker M=span(beta,e_Q5) are certified at four exact rational points with delta_Q nonzero.  This locus also contains the six-dimensional same-couplings independent-Q5 subfamily T with delta_Q=0; T is witness-free throughout, and at one exact point of T minus E the rank is 127 and the kernel is the five-dimensional upper bottom-locus tangent space.  Witness freedom on the remaining nonzero-delta_Q part of S is pointwise, not locus-wide.  It also certifies, for the first time, full-rank splitting principal opens over non-normalized bottom characters.  It never combines alternative Eq113 or Eq139 readings.  It does not solve the four determinant-zero loci, does not stratify the whole degeneracy locus, does not obstruct the transverse chart or the weak/weak profile, does not touch the pair/triple-irreducible or aligned branches or the state-native D12 manifest, certifies no witness, and issues no SR2-V terminal.  The scan is a bounded deterministic search, not a global obstruction.  One recorded point shows that ker M can leave span(beta,e_Q5) and still commute, so that span is not the invariant a successor search should defend.",
-  "semantic_digest_sha256": "a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f"
+  "semantic_digest_sha256": "da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30"
 }

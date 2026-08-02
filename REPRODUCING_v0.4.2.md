@@ -390,7 +390,8 @@ uv run python -m universe_lab.final_theory.sr2v_variable_harmonic_two_row_audit_
 uv run python -m universe_lab.final_theory.sr2v_variable_harmonic_sparse_section_cpobc_v042
 uv run python -m universe_lab.final_theory.sr2v_transverse_cocycle_principal_open_v042
 uv run python -m universe_lab.final_theory.sr2v_transverse_determinant_zero_locus_v042
-uv run pytest -q tests/final_theory/test_sr2v_additive_msr_laurent_v042.py tests/final_theory/test_sr2v_bottom_msr_global_csg_v042.py tests/final_theory/test_weak_d2_state_native_shear_d12_preflight_v042.py tests/final_theory/test_weak_d2_state_native_fixed_harmonic_cpobc_obstruction_v042.py tests/final_theory/test_weak_d2_state_native_corrected_csg_rank2_v042.py tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py
+uv run python -m universe_lab.final_theory.sr2v_transverse_base_cover_ablation_v042
+uv run pytest -q tests/final_theory/test_sr2v_additive_msr_laurent_v042.py tests/final_theory/test_sr2v_bottom_msr_global_csg_v042.py tests/final_theory/test_weak_d2_state_native_shear_d12_preflight_v042.py tests/final_theory/test_weak_d2_state_native_fixed_harmonic_cpobc_obstruction_v042.py tests/final_theory/test_weak_d2_state_native_corrected_csg_rank2_v042.py tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py tests/final_theory/test_sr2v_transverse_base_cover_ablation_v042.py
 ```
 
 Expected verdicts and semantic digests:
@@ -413,7 +414,9 @@ SR2V_VARIABLE_HARMONIC_TWO_ALPHA_PRINCIPAL_OPEN_CPOBC_UNIT_IDEAL_CERTIFIED_NONTE
 SR2V_TRANSVERSE_ALL_FOUR_SEMANTIC_BRANCHES_Q1_Q4_SPLITTING_PRINCIPAL_OPENS_CERTIFIED_NONTERMINAL
 07e60a4d6b029d3cf08efd3ef3aae14598a1614090d3809d764973065b35eaf0
 SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL
-a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f
+da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30
+SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL
+005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e
 ```
 
 The local Laurent certificate is retained as a Jacobian regression; the
@@ -438,19 +441,31 @@ form. At three full-diagonal points rank is 127 with bottom-tangent kernel. On
 the ten-dimensional two-scalar locus `beta` is always in the kernel; four exact
 nonzero-`delta_Q` points have rank 130 and kernel `span(beta,e_Q5)`. Its
 six-dimensional Q5-only subfamily has `delta_Q=0` and is witness-free; one exact
-point there has rank 127 and a five-dimensional tangent kernel. Rank constancy
-and the remaining nonzero-`delta_Q` part are open.
+point there has rank 127 and a five-dimensional tangent kernel. The corrected
+v3 wording asserts only agreement of the four recorded scalar samples in each
+scan direction; whole-line rank constancy remains open.
+
+The successor certificate proves that CPOBC alone defines the saturated common
+`G_m^49`, reduces the six commutators through source-native Eq. (120) to the
+minimal star `c12,c13,c14`, and uses strict-to-completed row inclusion to leave
+eight localized obligations. It also directly certifies two noncommutative
+semantic-block ablations. The fixed-GC ablation still satisfies reachable-state
+MSR on all 50 source-reaching path states; restoring either omitted block closes
+the escape at the same scalar point. These are individual-necessity results,
+not a full-profile witness.
 
 ## Next exact gate
 
 For state-native SR2-V, enlarge the exact section beyond beta one and the two
 retained alpha coordinates; do not rerun the now-empty sparse section or either
-old fixed-state D12/shear campaign. In the transverse reducible branch, the
-equal-`Q`-spectrum locus is already witness-free, but the nonzero-`delta_Q` part
-of the two-scalar locus remains open away from four points. Decide whether the
-`Q`-projection of `ker M` always lies in `K_delta=ker C(delta_Q)`, still without
-combining derived and literal Eq. (113) or strict and completed Eq. (139);
-`span(beta,e_Q5)` is recorded as the wrong locus-wide invariant.
+old fixed-state D12/shear campaign. In the transverse reducible branch, first
+test the branch-independent common core
+`M0=CPOBC+fixed-vector GC+reachable-state MSR`. Prove or refute that the
+candidate 127-column matched minor is a Laurent unit, then reduce to the Q
+Schur complement. Solve the three one-row opens `D(rk-r1)` and the one
+three-row equal-ratio nonunit locus. Only if common-core membership fails split
+into derived/literal strict, retaining eight obligations. Completed Eq. (139)
+then follows from strict; derived and literal Eq. (113) are never combined.
 Then treat
 `Delta_align=0` and the triple-irreducible pivots. Keep supplemental Q5
 separate. Do not launch an exhaustive 131-patch campaign.

@@ -64,7 +64,8 @@
     "v0.4.2_sr2v_variable_harmonic_two_row_audit": "FIXED_K_MECHANISM_ZARISKI_SPECIAL_EXACT_TWO_ROW_ESCAPE_PREDECESSOR_ONLY_SPARSE_SECTION_CLOSED_BY_FOLLOWUP",
     "v0.4.2_sr2v_variable_harmonic_sparse_section_cpobc": "BETA_ONE_TWO_ALPHA_DELTA_OPEN_RAW_CPOBC_UNIT_IDEAL_BY_ALPHA_KILLERS_AND_RANK62_MINOR_NONTERMINAL",
     "v0.4.2_sr2v_transverse_cocycle_four_branch_opens": "FOUR_SEPARATE_EQ113_EQ139_SEMANTIC_BRANCH_PRINCIPAL_OPENS_FORCE_Q1_Q4_SPLITTING_NONTERMINAL",
-    "v0.4.2_sr2v_transverse_determinant_zero_strata": "COMMUTATOR_KERNEL_CLASSIFIED_EQUAL_Q_SPECTRUM_LOCUS_WITNESS_FREE_TWO_SCALAR_NONZERO_DELTA_POINTWISE_AND_Q5_ONLY_SUBFAMILY_CERTIFIED_NONTERMINAL"
+    "v0.4.2_sr2v_transverse_determinant_zero_strata": "SCHEMA_V3_COMMUTATOR_KERNEL_CLASSIFIED_EQUAL_Q_SPECTRUM_LOCUS_WITNESS_FREE_TWO_SCALAR_NONZERO_DELTA_POINTWISE_AND_Q5_ONLY_SUBFAMILY_CERTIFIED_NONTERMINAL",
+    "v0.4.2_sr2v_transverse_base_cover_ablation": "CPOBC_INTRINSIC_GM49_EQ120_MINIMAL_STAR_FOUR_LOCUS_COVER_AND_GC_MSR_INDIVIDUAL_NECESSITY_CERTIFIED_NONTERMINAL"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_PURE_LOWER_BOUNDED_NO_GO_ORACLE_CERTIFIED_REMOTE_MIXED_OPEN",
@@ -444,7 +445,8 @@
           "artifact": "results/v0.4.2_sr2v_transverse_determinant_zero_locus.json",
           "report": "reports/v0.4.2_sr2v_transverse_determinant_zero_locus.md",
           "verdict": "SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIED_NONTERMINAL",
-          "semantic_digest_sha256": "a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f",
+          "semantic_digest_sha256": "da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30",
+          "schema_revision_note": "V3_REPLACES_V2_WHOLE_PUNCTURED_LINE_WORDING_WITH_FOUR_RECORDED_SCALARS_PER_DIRECTION_DATA_UNCHANGED",
           "witness_condition": "RANK_M_WITH_COMMUTATOR_ROWS_EXCEEDS_RANK_M_NOT_DETERMINANT_ZERO",
           "commuting_subspace": "K_DELTA_EQUALS_KERNEL_OF_C_DELTA;_FOR_NONZERO_DELTA_SPAN_DELTA;FOR_ZERO_DELTA_ALL_QQ4",
           "commutator_template": "x_j*(a_i-b_i)-x_i*(a_j-b_j)",
@@ -488,14 +490,54 @@
           "off_normalized_full_rank_opens_certified": true,
           "deterministic_scan_points": 60,
           "deterministic_scan_witnesses": 0,
+          "deterministic_scan_rank_claim": "FOUR_RECORDED_SCALARS_HAVE_THE_SAME_PROFILE_IN_EACH_OF_15_DIRECTIONS_NOT_WHOLE_LINE_CONSTANCY",
           "four_determinant_zero_loci_solved": false,
           "degeneracy_locus_fully_stratified": false,
           "search_terminal": false,
           "stratum_wide_rank_constancy_proved": false,
           "span_beta_e_Q5_recorded_as_the_wrong_invariant": true
+        },
+        "transverse_base_cover_ablation": {
+          "artifact": "results/v0.4.2_sr2v_transverse_base_cover_ablation.json",
+          "report": "reports/v0.4.2_sr2v_transverse_base_cover_ablation.md",
+          "verdict": "SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL",
+          "semantic_digest_sha256": "005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e",
+          "scalar_base": {
+            "CPOBC_QQ_rank": 83,
+            "CPOBC_smith_nonzero_invariants_all_one": true,
+            "upper_split_torus_dimension": 49,
+            "both_Eq113_scalar_readings_redundant": true,
+            "all_Eq139_scalar_rows_zero": true,
+            "transverse_base_dimension": 54
+          },
+          "commutator_reduction": {
+            "source": "RAW_CPOBC_EQ120_THREE_IDENTITIES",
+            "six_rows_equivalent_to_global_star": ["c12", "c13", "c14"],
+            "global_star_size_is_minimal": true,
+            "strict_Eq139_controls_completed_separately_for_each_Eq113": true,
+            "remaining_loci_per_strict_Eq113_reading": 4,
+            "remaining_obligations": 8
+          },
+          "assumption_ablations": {
+            "reachable_state_MSR_individually_necessary": true,
+            "fixed_vector_GC_individually_necessary": true,
+            "fixed_vector_GC_ablation_all_source_reaching_MSR_checks": 50,
+            "fixed_vector_GC_ablation_all_source_reaching_MSR_failures": 0,
+            "full_profile_escape_at_the_same_two_base_points": false
+          },
+          "bounded_full_profile_scout": {
+            "ledger": "reports/v0.4.2_sr2v_transverse_exact_scout_ledger.md",
+            "exact_QQ_evaluations": 960,
+            "distinct_base_points": 957,
+            "nonzero_delta_Q_evaluations": 900,
+            "full_profile_escapes": 0,
+            "input_ledger_digest_sha256": "ca646382bbe5402ecd43747648dff6eb2c3ad3e634ce4200ceff2515ced93311",
+            "status": "SCOUT_ONLY_OUTPUT_LEDGER_NOT_YET_FROZEN"
+          },
+          "search_terminal": false
         }
       },
-      "current_component_target": "DECIDE_WHETHER_Q_PROJECTION_OF_KER_M_LIES_IN_KER_C_DELTA_Q_GLOBALLY_EQUIVALENTLY_RANK_M_WITH_COMMUTATOR_ROWS_EQUALS_RANK_M;ON_NONZERO_DELTA_Q_THIS_IS_SPAN_DELTA_Q;AND_ENLARGE_STATE_NATIVE_SUPPORT",
+      "current_component_target": "PROVE_COMMON_CORE_127_COLUMN_MINOR_IS_A_LAURENT_UNIT_THEN_SOLVE_EQ120_THREE_ONE_ROW_OPENS_AND_ONE_THREE_ROW_EQUAL_RATIO_LOCUS;FALL_BACK_TO_EIGHT_STRICT_EQ113_OBLIGATIONS;AND_ENLARGE_STATE_NATIVE_SUPPORT",
       "short_report_rule": "SEPARATE_SHORT_REPORT_CANDIDATE_ONLY_FOR_EXACT_VISIBLE_WITNESS_OR_FULL_PROFILE_OBSTRUCTION"
     },
     "priority_order": [
@@ -507,7 +549,8 @@
       "SR2_V_VARIABLE_HARMONIC_TWO_ALPHA_SPARSE_SECTION_RAW_CPOBC_UNIT_IDEAL_COMPLETE",
       "SR2_V_TRANSVERSE_COCYCLE_FOUR_SEMANTIC_BRANCH_PRINCIPAL_OPENS_COMPLETE",
       "SR2_V_TRANSVERSE_COMMUTATOR_KERNEL_EQUAL_Q_LOCUS_AND_NESTED_DEGENERACY_CERTIFICATE_COMPLETE",
-      "SR2_V_KER_M_Q_PROJECTION_INTO_KER_C_DELTA_Q_QUESTION_AND_STATE_NATIVE_SUPPORT_ENLARGEMENT_CURRENT",
+      "SR2_V_INTRINSIC_SCALAR_BASE_EQ120_MINIMAL_STAR_FOUR_LOCUS_COVER_AND_GC_MSR_ABLATIONS_COMPLETE",
+      "SR2_V_COMMON_CORE_127_COLUMN_UNIT_MINOR_THEN_FOUR_EQ120_LOCI_CURRENT",
       "SR2_V_ALIGNED_DEGENERACY_AND_TRIPLE_IRREDUCIBLE_BRANCHES_NEXT",
       "955_REDUCIBLE_IRREDUCIBLE_AND_SYMMETRY_REDUCED_MIXED_SCOUTS",
       "721_NATIVE_COMPILER_AFTER_955_TERMINAL_OR_AS_BUDGET_FALLBACK",
@@ -656,7 +699,11 @@
     "reports/v0.4.2_fixed_vector_gc_strong_msr_escape.md",
     "reports/v0.4.2_sr2v_transverse_determinant_zero_locus.md",
     "results/v0.4.2_sr2v_transverse_determinant_zero_locus.json",
-    "src/universe_lab/final_theory/sr2v_transverse_determinant_zero_locus_v042.py"
+    "src/universe_lab/final_theory/sr2v_transverse_determinant_zero_locus_v042.py",
+    "reports/v0.4.2_sr2v_transverse_base_cover_ablation.md",
+    "reports/v0.4.2_sr2v_transverse_exact_scout_ledger.md",
+    "results/v0.4.2_sr2v_transverse_base_cover_ablation.json",
+    "src/universe_lab/final_theory/sr2v_transverse_base_cover_ablation_v042.py"
   ],
   "required_resume_tests": [
     "tests/final_theory/test_ci_version_boundary_v04.py",
@@ -689,7 +736,8 @@
     "tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py",
     "tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py",
     "tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py",
-    "tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py"
+    "tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py",
+    "tests/final_theory/test_sr2v_transverse_base_cover_ablation_v042.py"
   ],
   "publication_posture": "STATEWISE_VERSUS_OPERATOR_OBSERVABILITY_EXACT_SEPARATION_AND_MINIMAL_RECOVERY_WITH_SCOPED_SR3B_A_ONE_SIDED_CLOSURE_AS_UPGRADE_NO_BROAD_PRIORITY_OVER_XU_2607_26672"
 }

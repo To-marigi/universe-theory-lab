@@ -1,0 +1,1731 @@
+{
+  "claim_boundary": "the scalar-base and cover reductions are exact; the two ablation assignments are exact relation-group countermodels; none proves or refutes full-profile commutativity on the eight remaining localized obligations",
+  "date": "2026-08-02",
+  "dimension": 2,
+  "field": "Q",
+  "finite_scope": "n<=4",
+  "gates": {
+    "CPOBC_alone_defines_a_primitive_rank83_scalar_lattice": true,
+    "Eq120_sharpens_the_remaining_cover_to_four_loci_per_Eq113_reading": true,
+    "Q_ratio_characters_have_four_independent_coordinates": true,
+    "Z_Q_plus_four_principal_charts_cover_the_base": true,
+    "alternative_Eq113_readings_do_not_shrink_the_scalar_base": true,
+    "both_semantic_block_ablations_have_direct_exact_witnesses": true,
+    "derived_and_literal_Eq113_remain_separate": true,
+    "ratio_commutator_identity_is_exact": true,
+    "reinstating_each_omitted_block_closes_its_rank_escape_at_the_same_point": true,
+    "source_native_Eq120_reduces_six_commutators_to_a_minimal_star_of_three": true,
+    "strict_Eq139_rows_are_a_literal_subset_of_completed_rows": true
+  },
+  "input_artifacts": {
+    "results/v0.4.2_eq120_source_provenance.json": {
+      "raw_sha256": "864536f5624b63900ab6ff31f5070706ce51881408044fb60e3b1f4853cdfed4",
+      "semantic_digest_sha256": "77d11eff7d14d84182abbf1eb30732fe2b94855507f1826747ba878fadb8d6ca"
+    },
+    "results/v0.4.2_sr2v_scalar_lattice.json": {
+      "raw_sha256": "5989b3685c33e30a6ed3a39896cab0473043f847183de935f4b7c0f76814d3b5",
+      "semantic_digest_sha256": "155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9"
+    },
+    "results/v0.4.2_sr2v_transverse_determinant_zero_locus.json": {
+      "raw_sha256": "2880ddc8ef875b92b9982f7601b2cc4f21fb9dc9dd4ea1bf092fc359ce7ae0ef",
+      "semantic_digest_sha256": "da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30"
+    }
+  },
+  "passed": true,
+  "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
+  "ratio_normalized_cover": {
+    "commutator_formula": "[Qi,Qj]_12=b_Qi*b_Qj*((r_Qi-1)*y_Qj-(r_Qj-1)*y_Qi)",
+    "complete_base_cover": [
+      "Z_Q",
+      "D(u1)",
+      "D(u2)",
+      "D(u3)",
+      "D(u4)"
+    ],
+    "delta_formula": "delta_i=b_Qi*(r_Qi-1)",
+    "equal_Q_spectrum_locus": "Z_Q=V(u1,u2,u3,u4)",
+    "equal_Q_spectrum_locus_dimension": 50,
+    "equal_Q_spectrum_locus_is_split_smooth": true,
+    "equal_Q_spectrum_locus_is_witness_free": true,
+    "on_D_uk_three_target_rows": "u_k*y_Qj-u_j*y_Qk for j!=k",
+    "regular_change_of_coordinates": "r_e=a_e/b_e, y_e=x_e/b_e",
+    "remaining_three_rows_follow_after_inverting_u_k": true,
+    "symbolic_difference": "0",
+    "u_coordinates": "u_i=r_Qi-1",
+    "why_regular": "every b_e is a unit on the nonsingular bottom CSG principal open"
+  },
+  "remaining_exact_obligations": {
+    "automatic_safe_locus": "r1=r2=r3=r4=1, contained in Z_Q",
+    "branch_count_after_strict_to_completed_reduction": 2,
+    "locus_count_per_branch": 4,
+    "obligation_count": 8,
+    "obligations": [
+      {
+        "Eq113_reading": "EQ113_QN_BRANCH",
+        "Eq139_domain": "EQ139_PRINTED_STRICT_M_K_LT_N",
+        "locus": "U2=D(r2-r1)",
+        "target_rows": [
+          "c12"
+        ]
+      },
+      {
+        "Eq113_reading": "EQ113_QN_BRANCH",
+        "Eq139_domain": "EQ139_PRINTED_STRICT_M_K_LT_N",
+        "locus": "U3=D(r3-r1)",
+        "target_rows": [
+          "c13"
+        ]
+      },
+      {
+        "Eq113_reading": "EQ113_QN_BRANCH",
+        "Eq139_domain": "EQ139_PRINTED_STRICT_M_K_LT_N",
+        "locus": "U4=D(r4-r1)",
+        "target_rows": [
+          "c14"
+        ]
+      },
+      {
+        "Eq113_reading": "EQ113_QN_BRANCH",
+        "Eq139_domain": "EQ139_PRINTED_STRICT_M_K_LT_N",
+        "locus": "D_equal_nonunit=V(r2-r1,r3-r1,r4-r1) intersect D(r1-1)",
+        "target_rows": [
+          "c12",
+          "c13",
+          "c14"
+        ]
+      },
+      {
+        "Eq113_reading": "EQ113_QN_PLUS_1_BRANCH",
+        "Eq139_domain": "EQ139_PRINTED_STRICT_M_K_LT_N",
+        "locus": "U2=D(r2-r1)",
+        "target_rows": [
+          "c12"
+        ]
+      },
+      {
+        "Eq113_reading": "EQ113_QN_PLUS_1_BRANCH",
+        "Eq139_domain": "EQ139_PRINTED_STRICT_M_K_LT_N",
+        "locus": "U3=D(r3-r1)",
+        "target_rows": [
+          "c13"
+        ]
+      },
+      {
+        "Eq113_reading": "EQ113_QN_PLUS_1_BRANCH",
+        "Eq139_domain": "EQ139_PRINTED_STRICT_M_K_LT_N",
+        "locus": "U4=D(r4-r1)",
+        "target_rows": [
+          "c14"
+        ]
+      },
+      {
+        "Eq113_reading": "EQ113_QN_PLUS_1_BRANCH",
+        "Eq139_domain": "EQ139_PRINTED_STRICT_M_K_LT_N",
+        "locus": "D_equal_nonunit=V(r2-r1,r3-r1,r4-r1) intersect D(r1-1)",
+        "target_rows": [
+          "c12",
+          "c13",
+          "c14"
+        ]
+      }
+    ],
+    "target_on_each_chart": "prove the declared one-row or three-row star target lies in the localized full strict branch row module, or provide an exact escaping kernel vector"
+  },
+  "scalar_base_audit": {
+    "CPOBC_integer_row_lattice_is_saturated": true,
+    "CPOBC_smith_nonzero_invariants": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "QQ_ranks": {
+      "CPOBC": 83,
+      "CPOBC_plus_both_Eq113_readings": 83,
+      "CPOBC_plus_derived_Eq113": 83,
+      "CPOBC_plus_literal_Eq113": 83
+    },
+    "Q_ratio_character_rank": 4,
+    "all_completed_Eq139_scalar_rows_are_identically_zero": true,
+    "both_Eq113_scalar_readings_are_redundant_over_the_CPOBC_integer_lattice": true,
+    "conclusion": "the common G_m^49 upper base is intrinsic to CPOBC; it was not created by intersecting the alternative Eq113 readings",
+    "coordinate_column_Q_exponent_signatures": {
+      "Q1": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "Q2": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "Q3": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "Q4": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "lower_scalar_base": "BottomMSR_CSG(t1,t2,t3,t4,q5), dimension 5",
+    "primitive_kernel_coordinate_columns": {
+      "Q1": 44,
+      "Q2": 13,
+      "Q3": 15,
+      "Q4": 12
+    },
+    "row_counts": {
+      "CPOBC": 783,
+      "completed_Eq139": 10,
+      "derived_Eq113": 25,
+      "literal_Eq113": 25
+    },
+    "transverse_scalar_base_dimension": 54,
+    "upper_scalar_base": "ker(CPOBC scalar exponent lattice) = G_m^49",
+    "upper_torus_dimension": 49
+  },
+  "schema_version": "final-theory-v042-sr2v-transverse-base-cover-ablation-v1",
+  "search_terminal": "NOT_A_SEARCH_TERMINAL_EIGHT_LOCAL_MEMBERSHIP_OBLIGATIONS_REMAIN",
+  "semantic_block_ablations": {
+    "omit_fixed_vector_GC": {
+      "ablation_id": "omit_fixed_vector_GC",
+      "bottom_character": {
+        "couplings": [
+          "3",
+          "5",
+          "7",
+          "11"
+        ],
+        "cutoff_external_q5": "13/4"
+      },
+      "branches": {
+        "derived_Eq113__completed_Eq139": {
+          "ablated_augmented_rank": 130,
+          "ablated_commutator_rank_increment": 1,
+          "ablated_rank": 129,
+          "full_profile_augmented_rank": 130,
+          "full_profile_has_no_escape_at_this_point": true,
+          "full_profile_rank": 130
+        },
+        "derived_Eq113__strict_Eq139": {
+          "ablated_augmented_rank": 130,
+          "ablated_commutator_rank_increment": 1,
+          "ablated_rank": 129,
+          "full_profile_augmented_rank": 130,
+          "full_profile_has_no_escape_at_this_point": true,
+          "full_profile_rank": 130
+        },
+        "literal_Eq113__completed_Eq139": {
+          "ablated_augmented_rank": 130,
+          "ablated_commutator_rank_increment": 1,
+          "ablated_rank": 129,
+          "full_profile_augmented_rank": 130,
+          "full_profile_has_no_escape_at_this_point": true,
+          "full_profile_rank": 130
+        },
+        "literal_Eq113__strict_Eq139": {
+          "ablated_augmented_rank": 130,
+          "ablated_commutator_rank_increment": 1,
+          "ablated_rank": 129,
+          "full_profile_augmented_rank": 130,
+          "full_profile_has_no_escape_at_this_point": true,
+          "full_profile_rank": 130
+        }
+      },
+      "claim_boundary": "relation-group independence at one exact transverse base point; not a global minimality theorem and not a counterexample to the full weak/weak profile",
+      "commutator_values_on_witness": {
+        "Q1_Q2": "-41/24",
+        "Q1_Q3": "-41/64",
+        "Q1_Q4": "-1/4",
+        "Q2_Q3": "0",
+        "Q2_Q4": "0",
+        "Q3_Q4": "0"
+      },
+      "delta_Q": {
+        "1": "1/4",
+        "2": "0",
+        "3": "0",
+        "4": "0"
+      },
+      "direct_certificate": {
+        "all_132_assigned_matrices_are_nonsingular": true,
+        "all_path_state_span_rank": 2,
+        "all_same_endpoint_paths_give_same_state": false,
+        "commutators": [
+          {
+            "first_visible_path": "lgc-path-7d005d730d05189479f3",
+            "matrix": [
+              [
+                "0",
+                "-41/24"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": true,
+            "pair": [
+              1,
+              2
+            ],
+            "visible_path_count": 407
+          },
+          {
+            "first_visible_path": "lgc-path-7d005d730d05189479f3",
+            "matrix": [
+              [
+                "0",
+                "-41/64"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": true,
+            "pair": [
+              1,
+              3
+            ],
+            "visible_path_count": 407
+          },
+          {
+            "first_visible_path": "lgc-path-7d005d730d05189479f3",
+            "matrix": [
+              [
+                "0",
+                "-1/4"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": true,
+            "pair": [
+              1,
+              4
+            ],
+            "visible_path_count": 407
+          },
+          {
+            "first_visible_path": null,
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": false,
+            "pair": [
+              2,
+              3
+            ],
+            "visible_path_count": 0
+          },
+          {
+            "first_visible_path": null,
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": false,
+            "pair": [
+              2,
+              4
+            ],
+            "visible_path_count": 0
+          },
+          {
+            "first_visible_path": null,
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": false,
+            "pair": [
+              3,
+              4
+            ],
+            "visible_path_count": 0
+          }
+        ],
+        "direct_substitution": {
+          "CPOBC": {
+            "checked": 783,
+            "failures": []
+          },
+          "Eq113": {
+            "EQ113_QN_BRANCH": {
+              "checked": 25,
+              "failures": []
+            },
+            "EQ113_QN_PLUS_1_BRANCH": {
+              "checked": 25,
+              "failures": []
+            }
+          },
+          "Eq139": {
+            "EQ139_EQ145_COMPLETED_M_K_LE_N": {
+              "checked": 10,
+              "failures": []
+            },
+            "EQ139_PRINTED_STRICT_M_K_LT_N": {
+              "checked": 4,
+              "failures": []
+            }
+          },
+          "fixed_vector_GC": {
+            "checked": 1529,
+            "failures": [
+              "lgc-path-73192a6770fa82828f12:lgc-path-fc1eafd06aa0360d6535",
+              "lgc-path-ea7b195db90fbd5d9de7:lgc-path-fc1eafd06aa0360d6535",
+              "lgc-path-07b60204afbd042a3e3e:lgc-path-7a32187fb800fbb83069",
+              "lgc-path-330d646216a118c5937d:lgc-path-7a32187fb800fbb83069",
+              "lgc-path-4fff5940ddb8a5b17811:lgc-path-7a32187fb800fbb83069",
+              "lgc-path-7a32187fb800fbb83069:lgc-path-7ab08fc5dc3ce4c2435f",
+              "lgc-path-7a32187fb800fbb83069:lgc-path-edf06924c77f06ebe7f3",
+              "lgc-path-6caa7d513e6afe57341f:lgc-path-a4973db486cccf9f1319",
+              "lgc-path-6caa7d513e6afe57341f:lgc-path-b0f8074437d99c8ef1b1",
+              "lgc-path-8b07ddaf34f8062001cf:lgc-path-a4973db486cccf9f1319",
+              "lgc-path-8b07ddaf34f8062001cf:lgc-path-b0f8074437d99c8ef1b1",
+              "lgc-path-23526b04675064d6f369:lgc-path-ab18f2501efeb01159b0",
+              "lgc-path-23526b04675064d6f369:lgc-path-c1202daa948bdecf1898",
+              "lgc-path-791cf8747999c11d37cb:lgc-path-ab18f2501efeb01159b0",
+              "lgc-path-791cf8747999c11d37cb:lgc-path-c1202daa948bdecf1898",
+              "lgc-path-0d172747c7f9d8d1869d:lgc-path-85bfe0e8a728692eeedf",
+              "lgc-path-0d172747c7f9d8d1869d:lgc-path-cc5c4fd30c66af99235a",
+              "lgc-path-46d0c4bc002c3048d107:lgc-path-917a5052201fdb86c3d2",
+              "lgc-path-6cfbcb17b6edd147d6ba:lgc-path-917a5052201fdb86c3d2",
+              "lgc-path-917a5052201fdb86c3d2:lgc-path-91c0851a40afa4cd9d89",
+              "lgc-path-917a5052201fdb86c3d2:lgc-path-d68e92e8f78404121279",
+              "lgc-path-847923a1fc437e3cae36:lgc-path-a64c1e6f8e256d3176a2",
+              "lgc-path-a64c1e6f8e256d3176a2:lgc-path-faf3c810f0acbea02fbd",
+              "lgc-path-08ee8912a7779c1882ed:lgc-path-e5932dcdafd52e319d8d",
+              "lgc-path-48c7be7e2966a206db6e:lgc-path-e5932dcdafd52e319d8d",
+              "lgc-path-4abbbdf6287a6b1399ff:lgc-path-e5932dcdafd52e319d8d",
+              "lgc-path-4b55eeed33ccb07990de:lgc-path-e5932dcdafd52e319d8d",
+              "lgc-path-6c72b23806cbaeaa92ba:lgc-path-e5932dcdafd52e319d8d",
+              "lgc-path-8ee4935bd731f3b1220c:lgc-path-e5932dcdafd52e319d8d",
+              "lgc-path-979c66118606856219a3:lgc-path-e5932dcdafd52e319d8d",
+              "lgc-path-a5e0685d0d5300db2bfb:lgc-path-e5932dcdafd52e319d8d",
+              "lgc-path-d665e421de60886109aa:lgc-path-e5932dcdafd52e319d8d",
+              "lgc-path-04209a02358400c51f5f:lgc-path-23782f42bdd847f7e2f4",
+              "lgc-path-04209a02358400c51f5f:lgc-path-67cff41b7afd90799bae",
+              "lgc-path-04209a02358400c51f5f:lgc-path-6cea49fd243664f412b3",
+              "lgc-path-0fa31b4b94bd19340ee5:lgc-path-23782f42bdd847f7e2f4",
+              "lgc-path-0fa31b4b94bd19340ee5:lgc-path-67cff41b7afd90799bae",
+              "lgc-path-0fa31b4b94bd19340ee5:lgc-path-6cea49fd243664f412b3",
+              "lgc-path-23782f42bdd847f7e2f4:lgc-path-3bfde8847e2ee908d23e",
+              "lgc-path-23782f42bdd847f7e2f4:lgc-path-73af5776d0b9b1ccf13e",
+              "lgc-path-23782f42bdd847f7e2f4:lgc-path-9254c107c08dfb788b63",
+              "lgc-path-23782f42bdd847f7e2f4:lgc-path-b0037976324710ff08f1",
+              "lgc-path-23782f42bdd847f7e2f4:lgc-path-b0924a247492f0f42757",
+              "lgc-path-3bfde8847e2ee908d23e:lgc-path-67cff41b7afd90799bae",
+              "lgc-path-3bfde8847e2ee908d23e:lgc-path-6cea49fd243664f412b3",
+              "lgc-path-67cff41b7afd90799bae:lgc-path-73af5776d0b9b1ccf13e",
+              "lgc-path-67cff41b7afd90799bae:lgc-path-9254c107c08dfb788b63",
+              "lgc-path-67cff41b7afd90799bae:lgc-path-b0037976324710ff08f1",
+              "lgc-path-67cff41b7afd90799bae:lgc-path-b0924a247492f0f42757",
+              "lgc-path-6cea49fd243664f412b3:lgc-path-73af5776d0b9b1ccf13e",
+              "lgc-path-6cea49fd243664f412b3:lgc-path-9254c107c08dfb788b63",
+              "lgc-path-6cea49fd243664f412b3:lgc-path-b0037976324710ff08f1",
+              "lgc-path-6cea49fd243664f412b3:lgc-path-b0924a247492f0f42757",
+              "lgc-path-1f827b9cd93452f96334:lgc-path-4ca852f7d065305e7079",
+              "lgc-path-1f827b9cd93452f96334:lgc-path-59de9831c06b87855b98",
+              "lgc-path-443dc80519af436f40cd:lgc-path-4ca852f7d065305e7079",
+              "lgc-path-443dc80519af436f40cd:lgc-path-59de9831c06b87855b98",
+              "lgc-path-4ca852f7d065305e7079:lgc-path-5447f93c3b6f5ce01a65",
+              "lgc-path-5447f93c3b6f5ce01a65:lgc-path-59de9831c06b87855b98",
+              "lgc-path-08a0d4ff63bc04d551c9:lgc-path-527b6fa4e710eb256935",
+              "lgc-path-08a0d4ff63bc04d551c9:lgc-path-766d11c821d63a551956",
+              "lgc-path-08a0d4ff63bc04d551c9:lgc-path-7d945e8cf7a9d82b1159",
+              "lgc-path-08a0d4ff63bc04d551c9:lgc-path-97f9504ae4100039ff45",
+              "lgc-path-08a0d4ff63bc04d551c9:lgc-path-981b95264fc5a3f51303",
+              "lgc-path-08a0d4ff63bc04d551c9:lgc-path-ac58e703a5a92ed32524",
+              "lgc-path-08a0d4ff63bc04d551c9:lgc-path-e5e6a4b5842ab8ae14c0",
+              "lgc-path-527b6fa4e710eb256935:lgc-path-55f81aa64fa3e1b623f6",
+              "lgc-path-527b6fa4e710eb256935:lgc-path-807cb33668d8f8f05cdc",
+              "lgc-path-55f81aa64fa3e1b623f6:lgc-path-766d11c821d63a551956",
+              "lgc-path-55f81aa64fa3e1b623f6:lgc-path-7d945e8cf7a9d82b1159",
+              "lgc-path-55f81aa64fa3e1b623f6:lgc-path-97f9504ae4100039ff45",
+              "lgc-path-55f81aa64fa3e1b623f6:lgc-path-981b95264fc5a3f51303",
+              "lgc-path-55f81aa64fa3e1b623f6:lgc-path-ac58e703a5a92ed32524",
+              "lgc-path-55f81aa64fa3e1b623f6:lgc-path-e5e6a4b5842ab8ae14c0",
+              "lgc-path-766d11c821d63a551956:lgc-path-807cb33668d8f8f05cdc",
+              "lgc-path-7d945e8cf7a9d82b1159:lgc-path-807cb33668d8f8f05cdc",
+              "lgc-path-807cb33668d8f8f05cdc:lgc-path-97f9504ae4100039ff45",
+              "lgc-path-807cb33668d8f8f05cdc:lgc-path-981b95264fc5a3f51303",
+              "lgc-path-807cb33668d8f8f05cdc:lgc-path-ac58e703a5a92ed32524",
+              "lgc-path-807cb33668d8f8f05cdc:lgc-path-e5e6a4b5842ab8ae14c0",
+              "lgc-path-09ef84e2349679810f33:lgc-path-0a8e27c604e914e473c5",
+              "lgc-path-09ef84e2349679810f33:lgc-path-0ede6ae0bc3c2ee4f3a4",
+              "lgc-path-09ef84e2349679810f33:lgc-path-12b40707d707c06af647",
+              "lgc-path-09ef84e2349679810f33:lgc-path-44d3c7420083bda55655",
+              "lgc-path-09ef84e2349679810f33:lgc-path-5c3c66651c6d97479d77",
+              "lgc-path-09ef84e2349679810f33:lgc-path-821825c6479526be3314",
+              "lgc-path-09ef84e2349679810f33:lgc-path-8e24360b3d45c29fb6f7",
+              "lgc-path-09ef84e2349679810f33:lgc-path-8e30107acf03dbb56116",
+              "lgc-path-09ef84e2349679810f33:lgc-path-aa133b5b49203a465bb8",
+              "lgc-path-09ef84e2349679810f33:lgc-path-ddaf7dbd0444f5f9e0c9",
+              "lgc-path-09ef84e2349679810f33:lgc-path-ed8a9f99807e29c0e078",
+              "lgc-path-09ef84e2349679810f33:lgc-path-f00bd3ac2dcebc64f5e4",
+              "lgc-path-0a8e27c604e914e473c5:lgc-path-4804d4147bc28b49b702",
+              "lgc-path-0a8e27c604e914e473c5:lgc-path-6850947242001f89c0a5",
+              "lgc-path-0ede6ae0bc3c2ee4f3a4:lgc-path-4804d4147bc28b49b702",
+              "lgc-path-0ede6ae0bc3c2ee4f3a4:lgc-path-6850947242001f89c0a5",
+              "lgc-path-12b40707d707c06af647:lgc-path-4804d4147bc28b49b702",
+              "lgc-path-12b40707d707c06af647:lgc-path-6850947242001f89c0a5",
+              "lgc-path-44d3c7420083bda55655:lgc-path-4804d4147bc28b49b702",
+              "lgc-path-44d3c7420083bda55655:lgc-path-6850947242001f89c0a5",
+              "lgc-path-4804d4147bc28b49b702:lgc-path-5c3c66651c6d97479d77",
+              "lgc-path-4804d4147bc28b49b702:lgc-path-821825c6479526be3314",
+              "lgc-path-4804d4147bc28b49b702:lgc-path-8e24360b3d45c29fb6f7",
+              "lgc-path-4804d4147bc28b49b702:lgc-path-8e30107acf03dbb56116",
+              "lgc-path-4804d4147bc28b49b702:lgc-path-aa133b5b49203a465bb8",
+              "lgc-path-4804d4147bc28b49b702:lgc-path-ddaf7dbd0444f5f9e0c9",
+              "lgc-path-4804d4147bc28b49b702:lgc-path-ed8a9f99807e29c0e078",
+              "lgc-path-4804d4147bc28b49b702:lgc-path-f00bd3ac2dcebc64f5e4",
+              "lgc-path-5c3c66651c6d97479d77:lgc-path-6850947242001f89c0a5",
+              "lgc-path-6850947242001f89c0a5:lgc-path-821825c6479526be3314",
+              "lgc-path-6850947242001f89c0a5:lgc-path-8e24360b3d45c29fb6f7",
+              "lgc-path-6850947242001f89c0a5:lgc-path-8e30107acf03dbb56116",
+              "lgc-path-6850947242001f89c0a5:lgc-path-aa133b5b49203a465bb8",
+              "lgc-path-6850947242001f89c0a5:lgc-path-ddaf7dbd0444f5f9e0c9",
+              "lgc-path-6850947242001f89c0a5:lgc-path-ed8a9f99807e29c0e078",
+              "lgc-path-6850947242001f89c0a5:lgc-path-f00bd3ac2dcebc64f5e4",
+              "lgc-path-0e461a69ceb18e7aaa75:lgc-path-2a6a5a1f20d7db27787e",
+              "lgc-path-0e461a69ceb18e7aaa75:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-0e461a69ceb18e7aaa75:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-0f682acb444271c5663b:lgc-path-2a6a5a1f20d7db27787e",
+              "lgc-path-0f682acb444271c5663b:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-0f682acb444271c5663b:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-1044ce29444cb3de9a38:lgc-path-2a6a5a1f20d7db27787e",
+              "lgc-path-1044ce29444cb3de9a38:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-1044ce29444cb3de9a38:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-225d929e33be251def45:lgc-path-2a6a5a1f20d7db27787e",
+              "lgc-path-225d929e33be251def45:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-225d929e33be251def45:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-292c2e8522fc5659d79c:lgc-path-2a6a5a1f20d7db27787e",
+              "lgc-path-292c2e8522fc5659d79c:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-292c2e8522fc5659d79c:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-3e88bdf41be10730ac73",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-4871d6925ee9f5c07353",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-51fdb17679e14978a99a",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-5b79d249cf230c3bea5a",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-6b294cf5fb7567c08f54",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-6cc3b2ccb2df1660ff65",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-77c1f2b8750e27880f12",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-86a3744a479add9bbfce",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-86ff37e64f80bc245615",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-87ad472d2f829b78f8f5",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-a6a9368c19d65456df15",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-b63f481ed3aee0864ed8",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-bdacbe32b50695c9b04d",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-beb928789c29e88ebeef",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-c834e6cbd12911c9acf6",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-d5b317c5a013c8c9500e",
+              "lgc-path-2a6a5a1f20d7db27787e:lgc-path-eeb441dc7b35441a6428",
+              "lgc-path-3e88bdf41be10730ac73:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-3e88bdf41be10730ac73:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-4871d6925ee9f5c07353:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-4871d6925ee9f5c07353:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-51fdb17679e14978a99a:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-51fdb17679e14978a99a:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-5b79d249cf230c3bea5a:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-5b79d249cf230c3bea5a:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-6b294cf5fb7567c08f54:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-6b294cf5fb7567c08f54:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-6cc3b2ccb2df1660ff65:lgc-path-7128da9876a4d5e70263",
+              "lgc-path-6cc3b2ccb2df1660ff65:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-77c1f2b8750e27880f12",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-86a3744a479add9bbfce",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-86ff37e64f80bc245615",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-87ad472d2f829b78f8f5",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-a6a9368c19d65456df15",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-b63f481ed3aee0864ed8",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-bdacbe32b50695c9b04d",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-beb928789c29e88ebeef",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-c834e6cbd12911c9acf6",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-d5b317c5a013c8c9500e",
+              "lgc-path-7128da9876a4d5e70263:lgc-path-eeb441dc7b35441a6428",
+              "lgc-path-77c1f2b8750e27880f12:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-86a3744a479add9bbfce:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-86ff37e64f80bc245615:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-87ad472d2f829b78f8f5:lgc-path-87cd91b7fd87226dae65",
+              "lgc-path-87cd91b7fd87226dae65:lgc-path-a6a9368c19d65456df15",
+              "lgc-path-87cd91b7fd87226dae65:lgc-path-b63f481ed3aee0864ed8",
+              "lgc-path-87cd91b7fd87226dae65:lgc-path-bdacbe32b50695c9b04d",
+              "lgc-path-87cd91b7fd87226dae65:lgc-path-beb928789c29e88ebeef",
+              "lgc-path-87cd91b7fd87226dae65:lgc-path-c834e6cbd12911c9acf6",
+              "lgc-path-87cd91b7fd87226dae65:lgc-path-d5b317c5a013c8c9500e",
+              "lgc-path-87cd91b7fd87226dae65:lgc-path-eeb441dc7b35441a6428",
+              "lgc-path-01e1e548c86f9f932f92:lgc-path-07473b9013a986a43df8",
+              "lgc-path-01e1e548c86f9f932f92:lgc-path-27ffe83389d0de8b0924",
+              "lgc-path-01e1e548c86f9f932f92:lgc-path-51258f9803fa89c6c0c8",
+              "lgc-path-01e1e548c86f9f932f92:lgc-path-945be7a98e98d38ecb97",
+              "lgc-path-01e1e548c86f9f932f92:lgc-path-95e04112f1ff2deeac3d",
+              "lgc-path-01e1e548c86f9f932f92:lgc-path-dfdddd1d5dafdf200a0a",
+              "lgc-path-01e1e548c86f9f932f92:lgc-path-e2469a88d47127b87969",
+              "lgc-path-01e1e548c86f9f932f92:lgc-path-f43921475ba82619554e",
+              "lgc-path-01e1e548c86f9f932f92:lgc-path-f78328dad4b9b4d04087",
+              "lgc-path-07473b9013a986a43df8:lgc-path-20505cc51fab992dab22",
+              "lgc-path-07473b9013a986a43df8:lgc-path-69bcdaf1e8c41938d783",
+              "lgc-path-07473b9013a986a43df8:lgc-path-6a3af9435b310beaa0e2",
+              "lgc-path-07473b9013a986a43df8:lgc-path-aa671b6553dae97af720",
+              "lgc-path-07473b9013a986a43df8:lgc-path-e6bb1516d11b4b6e3a10",
+              "lgc-path-20505cc51fab992dab22:lgc-path-27ffe83389d0de8b0924",
+              "lgc-path-20505cc51fab992dab22:lgc-path-51258f9803fa89c6c0c8",
+              "lgc-path-20505cc51fab992dab22:lgc-path-945be7a98e98d38ecb97",
+              "lgc-path-20505cc51fab992dab22:lgc-path-95e04112f1ff2deeac3d",
+              "lgc-path-20505cc51fab992dab22:lgc-path-dfdddd1d5dafdf200a0a",
+              "lgc-path-20505cc51fab992dab22:lgc-path-e2469a88d47127b87969",
+              "lgc-path-20505cc51fab992dab22:lgc-path-f43921475ba82619554e",
+              "lgc-path-20505cc51fab992dab22:lgc-path-f78328dad4b9b4d04087",
+              "lgc-path-27ffe83389d0de8b0924:lgc-path-69bcdaf1e8c41938d783",
+              "lgc-path-27ffe83389d0de8b0924:lgc-path-6a3af9435b310beaa0e2",
+              "lgc-path-27ffe83389d0de8b0924:lgc-path-aa671b6553dae97af720",
+              "lgc-path-27ffe83389d0de8b0924:lgc-path-e6bb1516d11b4b6e3a10",
+              "lgc-path-51258f9803fa89c6c0c8:lgc-path-69bcdaf1e8c41938d783",
+              "lgc-path-51258f9803fa89c6c0c8:lgc-path-6a3af9435b310beaa0e2",
+              "lgc-path-51258f9803fa89c6c0c8:lgc-path-aa671b6553dae97af720",
+              "lgc-path-51258f9803fa89c6c0c8:lgc-path-e6bb1516d11b4b6e3a10",
+              "lgc-path-69bcdaf1e8c41938d783:lgc-path-945be7a98e98d38ecb97",
+              "lgc-path-69bcdaf1e8c41938d783:lgc-path-95e04112f1ff2deeac3d",
+              "lgc-path-69bcdaf1e8c41938d783:lgc-path-dfdddd1d5dafdf200a0a",
+              "lgc-path-69bcdaf1e8c41938d783:lgc-path-e2469a88d47127b87969",
+              "lgc-path-69bcdaf1e8c41938d783:lgc-path-f43921475ba82619554e",
+              "lgc-path-69bcdaf1e8c41938d783:lgc-path-f78328dad4b9b4d04087",
+              "lgc-path-6a3af9435b310beaa0e2:lgc-path-945be7a98e98d38ecb97",
+              "lgc-path-6a3af9435b310beaa0e2:lgc-path-95e04112f1ff2deeac3d",
+              "lgc-path-6a3af9435b310beaa0e2:lgc-path-dfdddd1d5dafdf200a0a",
+              "lgc-path-6a3af9435b310beaa0e2:lgc-path-e2469a88d47127b87969",
+              "lgc-path-6a3af9435b310beaa0e2:lgc-path-f43921475ba82619554e",
+              "lgc-path-6a3af9435b310beaa0e2:lgc-path-f78328dad4b9b4d04087",
+              "lgc-path-945be7a98e98d38ecb97:lgc-path-aa671b6553dae97af720",
+              "lgc-path-945be7a98e98d38ecb97:lgc-path-e6bb1516d11b4b6e3a10",
+              "lgc-path-95e04112f1ff2deeac3d:lgc-path-aa671b6553dae97af720",
+              "lgc-path-95e04112f1ff2deeac3d:lgc-path-e6bb1516d11b4b6e3a10",
+              "lgc-path-aa671b6553dae97af720:lgc-path-dfdddd1d5dafdf200a0a",
+              "lgc-path-aa671b6553dae97af720:lgc-path-e2469a88d47127b87969",
+              "lgc-path-aa671b6553dae97af720:lgc-path-f43921475ba82619554e",
+              "lgc-path-aa671b6553dae97af720:lgc-path-f78328dad4b9b4d04087",
+              "lgc-path-dfdddd1d5dafdf200a0a:lgc-path-e6bb1516d11b4b6e3a10",
+              "lgc-path-e2469a88d47127b87969:lgc-path-e6bb1516d11b4b6e3a10",
+              "lgc-path-e6bb1516d11b4b6e3a10:lgc-path-f43921475ba82619554e",
+              "lgc-path-e6bb1516d11b4b6e3a10:lgc-path-f78328dad4b9b4d04087",
+              "lgc-path-4a8b0696b84257c85a92:lgc-path-4bd849218b4fff0a9bd8",
+              "lgc-path-4a8b0696b84257c85a92:lgc-path-8b359c0a80edf1347a91",
+              "lgc-path-4a8b0696b84257c85a92:lgc-path-8d229854726b84e754c5",
+              "lgc-path-4a8b0696b84257c85a92:lgc-path-e66add3e1c16dc5556e4",
+              "lgc-path-4bd849218b4fff0a9bd8:lgc-path-5347e683d732cb7bd16e",
+              "lgc-path-4bd849218b4fff0a9bd8:lgc-path-6d6e1405a2bf0bb60697",
+              "lgc-path-4bd849218b4fff0a9bd8:lgc-path-7bcea65f9db56a3508db",
+              "lgc-path-4bd849218b4fff0a9bd8:lgc-path-a11e1acfb33f23fcdfb6",
+              "lgc-path-4bd849218b4fff0a9bd8:lgc-path-c8a4c4bd63d0c7c3b508",
+              "lgc-path-5347e683d732cb7bd16e:lgc-path-8b359c0a80edf1347a91",
+              "lgc-path-5347e683d732cb7bd16e:lgc-path-8d229854726b84e754c5",
+              "lgc-path-5347e683d732cb7bd16e:lgc-path-e66add3e1c16dc5556e4",
+              "lgc-path-6d6e1405a2bf0bb60697:lgc-path-8b359c0a80edf1347a91",
+              "lgc-path-6d6e1405a2bf0bb60697:lgc-path-8d229854726b84e754c5",
+              "lgc-path-6d6e1405a2bf0bb60697:lgc-path-e66add3e1c16dc5556e4",
+              "lgc-path-7bcea65f9db56a3508db:lgc-path-8b359c0a80edf1347a91",
+              "lgc-path-7bcea65f9db56a3508db:lgc-path-8d229854726b84e754c5",
+              "lgc-path-7bcea65f9db56a3508db:lgc-path-e66add3e1c16dc5556e4",
+              "lgc-path-8b359c0a80edf1347a91:lgc-path-a11e1acfb33f23fcdfb6",
+              "lgc-path-8b359c0a80edf1347a91:lgc-path-c8a4c4bd63d0c7c3b508",
+              "lgc-path-8d229854726b84e754c5:lgc-path-a11e1acfb33f23fcdfb6",
+              "lgc-path-8d229854726b84e754c5:lgc-path-c8a4c4bd63d0c7c3b508",
+              "lgc-path-a11e1acfb33f23fcdfb6:lgc-path-e66add3e1c16dc5556e4",
+              "lgc-path-c8a4c4bd63d0c7c3b508:lgc-path-e66add3e1c16dc5556e4",
+              "lgc-path-26bbcf411e70e8f234cd:lgc-path-451b66f2d69e108f55e5",
+              "lgc-path-26bbcf411e70e8f234cd:lgc-path-706047e51f53568d9097",
+              "lgc-path-26bbcf411e70e8f234cd:lgc-path-781ea9df453d45abacba",
+              "lgc-path-26bbcf411e70e8f234cd:lgc-path-88b4743dabe7620acf17",
+              "lgc-path-26bbcf411e70e8f234cd:lgc-path-a6b45c04a405e5d8b6e7",
+              "lgc-path-26bbcf411e70e8f234cd:lgc-path-bfa3e42a7bef80e09cb4",
+              "lgc-path-451b66f2d69e108f55e5:lgc-path-684c6cc14bec840abf1f",
+              "lgc-path-451b66f2d69e108f55e5:lgc-path-994bf976f3918a2b48fc",
+              "lgc-path-684c6cc14bec840abf1f:lgc-path-706047e51f53568d9097",
+              "lgc-path-684c6cc14bec840abf1f:lgc-path-781ea9df453d45abacba",
+              "lgc-path-684c6cc14bec840abf1f:lgc-path-88b4743dabe7620acf17",
+              "lgc-path-684c6cc14bec840abf1f:lgc-path-a6b45c04a405e5d8b6e7",
+              "lgc-path-684c6cc14bec840abf1f:lgc-path-bfa3e42a7bef80e09cb4",
+              "lgc-path-706047e51f53568d9097:lgc-path-994bf976f3918a2b48fc",
+              "lgc-path-781ea9df453d45abacba:lgc-path-994bf976f3918a2b48fc",
+              "lgc-path-88b4743dabe7620acf17:lgc-path-994bf976f3918a2b48fc",
+              "lgc-path-994bf976f3918a2b48fc:lgc-path-a6b45c04a405e5d8b6e7",
+              "lgc-path-994bf976f3918a2b48fc:lgc-path-bfa3e42a7bef80e09cb4",
+              "lgc-path-1413d56a8817126def3d:lgc-path-a1b8d3f21da6711b9927",
+              "lgc-path-1413d56a8817126def3d:lgc-path-aaefabbf9cfc76cad55d",
+              "lgc-path-1413d56a8817126def3d:lgc-path-ad2ce9566280ca4209ef",
+              "lgc-path-a1b8d3f21da6711b9927:lgc-path-be6b419afa9321d4f139",
+              "lgc-path-aaefabbf9cfc76cad55d:lgc-path-be6b419afa9321d4f139",
+              "lgc-path-ad2ce9566280ca4209ef:lgc-path-be6b419afa9321d4f139",
+              "lgc-path-404c3770d55aac2c80e4:lgc-path-70ddf29af5c72834ea8b",
+              "lgc-path-404c3770d55aac2c80e4:lgc-path-f030925a701275902c25",
+              "lgc-path-4ceaa40a2aaf060a7b06:lgc-path-70ddf29af5c72834ea8b",
+              "lgc-path-4ceaa40a2aaf060a7b06:lgc-path-f030925a701275902c25",
+              "lgc-path-70ddf29af5c72834ea8b:lgc-path-8ced1dde0414ae461711",
+              "lgc-path-70ddf29af5c72834ea8b:lgc-path-c10f755e58ff9ce9900b",
+              "lgc-path-70ddf29af5c72834ea8b:lgc-path-f5f4bdbb2ff078c39746",
+              "lgc-path-70ddf29af5c72834ea8b:lgc-path-fb4762d82085389f55be",
+              "lgc-path-8ced1dde0414ae461711:lgc-path-f030925a701275902c25",
+              "lgc-path-c10f755e58ff9ce9900b:lgc-path-f030925a701275902c25",
+              "lgc-path-f030925a701275902c25:lgc-path-f5f4bdbb2ff078c39746",
+              "lgc-path-f030925a701275902c25:lgc-path-fb4762d82085389f55be",
+              "lgc-path-747dc5889faa731ce5b0:lgc-path-7e0c3d6e70e76b89c347",
+              "lgc-path-76af63218b5f46ee67c0:lgc-path-7e0c3d6e70e76b89c347",
+              "lgc-path-7e0c3d6e70e76b89c347:lgc-path-854d6e6fb2dfaa6b55f2",
+              "lgc-path-7e0c3d6e70e76b89c347:lgc-path-9dc21e4f0868a04713a0",
+              "lgc-path-7e0c3d6e70e76b89c347:lgc-path-b1c075da90541595d98c",
+              "lgc-path-7e0c3d6e70e76b89c347:lgc-path-e3879490eec84770b174",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-1cf305bfbb7b8dd10650",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-202f83e060a8d0bf8bf8",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-2fba503ffaa2e199a307",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-362b22c1a44f5876055c",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-51bb84b1f167b2e413f6",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-5530c5c0a30e7c40fbb4",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-92039e027c3a77c5371e",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-b92142353c9ef919c69a",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-ba79ff2c427586676391",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-be89383b14a918436e28",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-c356b4f9231cfe350326",
+              "lgc-path-02e6178a0794418a5fcf:lgc-path-f19beb26b2f2b8aceb90",
+              "lgc-path-1cf305bfbb7b8dd10650:lgc-path-3b6f942f739fbbd78ff4",
+              "lgc-path-1cf305bfbb7b8dd10650:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-202f83e060a8d0bf8bf8:lgc-path-3b6f942f739fbbd78ff4",
+              "lgc-path-202f83e060a8d0bf8bf8:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-2fba503ffaa2e199a307:lgc-path-3b6f942f739fbbd78ff4",
+              "lgc-path-2fba503ffaa2e199a307:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-362b22c1a44f5876055c:lgc-path-3b6f942f739fbbd78ff4",
+              "lgc-path-362b22c1a44f5876055c:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-3b6f942f739fbbd78ff4:lgc-path-51bb84b1f167b2e413f6",
+              "lgc-path-3b6f942f739fbbd78ff4:lgc-path-5530c5c0a30e7c40fbb4",
+              "lgc-path-3b6f942f739fbbd78ff4:lgc-path-92039e027c3a77c5371e",
+              "lgc-path-3b6f942f739fbbd78ff4:lgc-path-b92142353c9ef919c69a",
+              "lgc-path-3b6f942f739fbbd78ff4:lgc-path-ba79ff2c427586676391",
+              "lgc-path-3b6f942f739fbbd78ff4:lgc-path-be89383b14a918436e28",
+              "lgc-path-3b6f942f739fbbd78ff4:lgc-path-c356b4f9231cfe350326",
+              "lgc-path-3b6f942f739fbbd78ff4:lgc-path-f19beb26b2f2b8aceb90",
+              "lgc-path-51bb84b1f167b2e413f6:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-5530c5c0a30e7c40fbb4:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-92039e027c3a77c5371e:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-b92142353c9ef919c69a:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-ba79ff2c427586676391:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-be89383b14a918436e28:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-c356b4f9231cfe350326:lgc-path-dcdf209f2ad51b2ff8ac",
+              "lgc-path-dcdf209f2ad51b2ff8ac:lgc-path-f19beb26b2f2b8aceb90",
+              "lgc-path-058599f497449964aa8b:lgc-path-47c03f341307671f00d1",
+              "lgc-path-058599f497449964aa8b:lgc-path-672a51fa48f052ce8386",
+              "lgc-path-058599f497449964aa8b:lgc-path-af7fa786db8840424627",
+              "lgc-path-47c03f341307671f00d1:lgc-path-773b1e4c768946923207",
+              "lgc-path-672a51fa48f052ce8386:lgc-path-773b1e4c768946923207",
+              "lgc-path-773b1e4c768946923207:lgc-path-af7fa786db8840424627",
+              "lgc-path-0128a2f4f54200223282:lgc-path-138aca6fe16eda6a82d3",
+              "lgc-path-1170de8e8cc24c452051:lgc-path-138aca6fe16eda6a82d3",
+              "lgc-path-138aca6fe16eda6a82d3:lgc-path-30492d9c456b19c878e4",
+              "lgc-path-138aca6fe16eda6a82d3:lgc-path-3fcf47a05ddb53ca8165",
+              "lgc-path-138aca6fe16eda6a82d3:lgc-path-5f25c9fd2a021206f7b9",
+              "lgc-path-138aca6fe16eda6a82d3:lgc-path-99d64ebdc20ad322c836",
+              "lgc-path-138aca6fe16eda6a82d3:lgc-path-b861d82f0fd07513d9b0",
+              "lgc-path-138aca6fe16eda6a82d3:lgc-path-f22d670fd7850e359010",
+              "lgc-path-138aca6fe16eda6a82d3:lgc-path-fbf25a473bcea73dded5",
+              "lgc-path-044ac18cfe69138cca70:lgc-path-40c92a9534ab190bff4e",
+              "lgc-path-0e5d4399c1188a896d6c:lgc-path-40c92a9534ab190bff4e",
+              "lgc-path-202d0b39da667d85b18f:lgc-path-40c92a9534ab190bff4e",
+              "lgc-path-40c92a9534ab190bff4e:lgc-path-6bb05a03c3016996a711",
+              "lgc-path-40c92a9534ab190bff4e:lgc-path-7dccd9ed6379520929e8",
+              "lgc-path-40c92a9534ab190bff4e:lgc-path-7e47448c3e95c402e25c",
+              "lgc-path-40c92a9534ab190bff4e:lgc-path-95dcebc955444848a754",
+              "lgc-path-40c92a9534ab190bff4e:lgc-path-b7422632cea5af661e7b",
+              "lgc-path-0ec397ca432996590a0a:lgc-path-630d274036df481bfe44",
+              "lgc-path-0ec397ca432996590a0a:lgc-path-6a6d46eb3cc7c45d1519",
+              "lgc-path-0ec397ca432996590a0a:lgc-path-8ed800c0911b6ad11db7",
+              "lgc-path-0ec397ca432996590a0a:lgc-path-a7a229ce0bd90e4e271b",
+              "lgc-path-0ec397ca432996590a0a:lgc-path-c0d92eb32b42aa165c89",
+              "lgc-path-630d274036df481bfe44:lgc-path-7a5266b1ad13ad8ee91d",
+              "lgc-path-630d274036df481bfe44:lgc-path-7dbb6dcc68d02a4df6ae",
+              "lgc-path-630d274036df481bfe44:lgc-path-97ac9f4189c9ad2303d8",
+              "lgc-path-630d274036df481bfe44:lgc-path-a186fb8ad96e4c6f0dc7",
+              "lgc-path-630d274036df481bfe44:lgc-path-cbcd2f6f82e0a5a697ec",
+              "lgc-path-6a6d46eb3cc7c45d1519:lgc-path-7a5266b1ad13ad8ee91d",
+              "lgc-path-6a6d46eb3cc7c45d1519:lgc-path-7dbb6dcc68d02a4df6ae",
+              "lgc-path-6a6d46eb3cc7c45d1519:lgc-path-97ac9f4189c9ad2303d8",
+              "lgc-path-6a6d46eb3cc7c45d1519:lgc-path-a186fb8ad96e4c6f0dc7",
+              "lgc-path-6a6d46eb3cc7c45d1519:lgc-path-cbcd2f6f82e0a5a697ec",
+              "lgc-path-7a5266b1ad13ad8ee91d:lgc-path-8ed800c0911b6ad11db7",
+              "lgc-path-7a5266b1ad13ad8ee91d:lgc-path-a7a229ce0bd90e4e271b",
+              "lgc-path-7a5266b1ad13ad8ee91d:lgc-path-c0d92eb32b42aa165c89",
+              "lgc-path-7dbb6dcc68d02a4df6ae:lgc-path-8ed800c0911b6ad11db7",
+              "lgc-path-7dbb6dcc68d02a4df6ae:lgc-path-a7a229ce0bd90e4e271b",
+              "lgc-path-7dbb6dcc68d02a4df6ae:lgc-path-c0d92eb32b42aa165c89",
+              "lgc-path-8ed800c0911b6ad11db7:lgc-path-97ac9f4189c9ad2303d8",
+              "lgc-path-8ed800c0911b6ad11db7:lgc-path-a186fb8ad96e4c6f0dc7",
+              "lgc-path-8ed800c0911b6ad11db7:lgc-path-cbcd2f6f82e0a5a697ec",
+              "lgc-path-97ac9f4189c9ad2303d8:lgc-path-a7a229ce0bd90e4e271b",
+              "lgc-path-97ac9f4189c9ad2303d8:lgc-path-c0d92eb32b42aa165c89",
+              "lgc-path-a186fb8ad96e4c6f0dc7:lgc-path-a7a229ce0bd90e4e271b",
+              "lgc-path-a186fb8ad96e4c6f0dc7:lgc-path-c0d92eb32b42aa165c89",
+              "lgc-path-a7a229ce0bd90e4e271b:lgc-path-cbcd2f6f82e0a5a697ec",
+              "lgc-path-c0d92eb32b42aa165c89:lgc-path-cbcd2f6f82e0a5a697ec",
+              "lgc-path-56a5a1515a2612192ddb:lgc-path-7f867f8fbb5f023cc387",
+              "lgc-path-56a5a1515a2612192ddb:lgc-path-8ddc46a9a3bb8c4813de",
+              "lgc-path-7f867f8fbb5f023cc387:lgc-path-b7c348681c2af0c81aef",
+              "lgc-path-7f867f8fbb5f023cc387:lgc-path-f2e55c88236ed3af61f8",
+              "lgc-path-8ddc46a9a3bb8c4813de:lgc-path-b7c348681c2af0c81aef",
+              "lgc-path-8ddc46a9a3bb8c4813de:lgc-path-f2e55c88236ed3af61f8",
+              "lgc-path-5a2d8a0a72172b157d00:lgc-path-a0b49af2ea5178e91097",
+              "lgc-path-5a2d8a0a72172b157d00:lgc-path-b1dfb707500305ec5117",
+              "lgc-path-5a2d8a0a72172b157d00:lgc-path-bc083383475d23ca8f3b",
+              "lgc-path-5a2d8a0a72172b157d00:lgc-path-c50c30e5d1d138da13f9",
+              "lgc-path-5a2d8a0a72172b157d00:lgc-path-e816e719da8157a5e278",
+              "lgc-path-5a2d8a0a72172b157d00:lgc-path-f513e1eb382a40424b09",
+              "lgc-path-74b3731d76ca4ce68ccb:lgc-path-a0b49af2ea5178e91097",
+              "lgc-path-74b3731d76ca4ce68ccb:lgc-path-b1dfb707500305ec5117",
+              "lgc-path-74b3731d76ca4ce68ccb:lgc-path-bc083383475d23ca8f3b",
+              "lgc-path-74b3731d76ca4ce68ccb:lgc-path-c50c30e5d1d138da13f9",
+              "lgc-path-74b3731d76ca4ce68ccb:lgc-path-e816e719da8157a5e278",
+              "lgc-path-74b3731d76ca4ce68ccb:lgc-path-f513e1eb382a40424b09",
+              "lgc-path-a0b49af2ea5178e91097:lgc-path-c5854a69ee4982da89a0",
+              "lgc-path-a0b49af2ea5178e91097:lgc-path-f11ef76a647e1ea1bd10",
+              "lgc-path-b1dfb707500305ec5117:lgc-path-c5854a69ee4982da89a0",
+              "lgc-path-b1dfb707500305ec5117:lgc-path-f11ef76a647e1ea1bd10",
+              "lgc-path-bc083383475d23ca8f3b:lgc-path-c5854a69ee4982da89a0",
+              "lgc-path-bc083383475d23ca8f3b:lgc-path-f11ef76a647e1ea1bd10",
+              "lgc-path-c50c30e5d1d138da13f9:lgc-path-c5854a69ee4982da89a0",
+              "lgc-path-c50c30e5d1d138da13f9:lgc-path-f11ef76a647e1ea1bd10",
+              "lgc-path-c5854a69ee4982da89a0:lgc-path-e816e719da8157a5e278",
+              "lgc-path-c5854a69ee4982da89a0:lgc-path-f513e1eb382a40424b09",
+              "lgc-path-e816e719da8157a5e278:lgc-path-f11ef76a647e1ea1bd10",
+              "lgc-path-f11ef76a647e1ea1bd10:lgc-path-f513e1eb382a40424b09",
+              "lgc-path-3858b77a9c644c5bf4bb:lgc-path-630b1a4b7aedf7465b05",
+              "lgc-path-3858b77a9c644c5bf4bb:lgc-path-b9dc59b3b37bfc680ba2",
+              "lgc-path-3858b77a9c644c5bf4bb:lgc-path-f3bba5b1f73750214855",
+              "lgc-path-3bbd7a379f8fdc24015d:lgc-path-630b1a4b7aedf7465b05",
+              "lgc-path-3bbd7a379f8fdc24015d:lgc-path-b9dc59b3b37bfc680ba2",
+              "lgc-path-3bbd7a379f8fdc24015d:lgc-path-f3bba5b1f73750214855",
+              "lgc-path-630b1a4b7aedf7465b05:lgc-path-7e4cf9c2d8035245402e",
+              "lgc-path-630b1a4b7aedf7465b05:lgc-path-bd74a5daf96c2f0291a6",
+              "lgc-path-630b1a4b7aedf7465b05:lgc-path-d0591a8edb7e864b3ecf",
+              "lgc-path-630b1a4b7aedf7465b05:lgc-path-dfa8ba54dcc9b79bd638",
+              "lgc-path-7e4cf9c2d8035245402e:lgc-path-b9dc59b3b37bfc680ba2",
+              "lgc-path-7e4cf9c2d8035245402e:lgc-path-f3bba5b1f73750214855",
+              "lgc-path-b9dc59b3b37bfc680ba2:lgc-path-bd74a5daf96c2f0291a6",
+              "lgc-path-b9dc59b3b37bfc680ba2:lgc-path-d0591a8edb7e864b3ecf",
+              "lgc-path-b9dc59b3b37bfc680ba2:lgc-path-dfa8ba54dcc9b79bd638",
+              "lgc-path-bd74a5daf96c2f0291a6:lgc-path-f3bba5b1f73750214855",
+              "lgc-path-d0591a8edb7e864b3ecf:lgc-path-f3bba5b1f73750214855",
+              "lgc-path-dfa8ba54dcc9b79bd638:lgc-path-f3bba5b1f73750214855",
+              "lgc-path-0b6c2bd5535e61b642db:lgc-path-76fdb01d0e6cb91b9a94",
+              "lgc-path-1ed5c2bfb7ea12feb172:lgc-path-76fdb01d0e6cb91b9a94",
+              "lgc-path-76fdb01d0e6cb91b9a94:lgc-path-95ad597ac00fb226e698",
+              "lgc-path-76fdb01d0e6cb91b9a94:lgc-path-abfc01a66bb9d3a1cd13",
+              "lgc-path-76fdb01d0e6cb91b9a94:lgc-path-dd0b64cc7926a1692c0e",
+              "lgc-path-76fdb01d0e6cb91b9a94:lgc-path-f08a9197b25bedc9e730",
+              "lgc-path-1ccf51331c14f7836ebc:lgc-path-271d31ce72e49759025f",
+              "lgc-path-1ccf51331c14f7836ebc:lgc-path-77cd703648298bd6c795",
+              "lgc-path-1ccf51331c14f7836ebc:lgc-path-cf890a2842e4fb0f891a",
+              "lgc-path-212683eedb36c74dd2f8:lgc-path-271d31ce72e49759025f",
+              "lgc-path-212683eedb36c74dd2f8:lgc-path-77cd703648298bd6c795",
+              "lgc-path-212683eedb36c74dd2f8:lgc-path-cf890a2842e4fb0f891a",
+              "lgc-path-271d31ce72e49759025f:lgc-path-408a90cfde514761919c",
+              "lgc-path-271d31ce72e49759025f:lgc-path-577ce3d2c07962150abb",
+              "lgc-path-271d31ce72e49759025f:lgc-path-b5b917decb8d210c14e1",
+              "lgc-path-271d31ce72e49759025f:lgc-path-c231dbdd8f7dca075ae6",
+              "lgc-path-408a90cfde514761919c:lgc-path-77cd703648298bd6c795",
+              "lgc-path-408a90cfde514761919c:lgc-path-cf890a2842e4fb0f891a",
+              "lgc-path-577ce3d2c07962150abb:lgc-path-77cd703648298bd6c795",
+              "lgc-path-577ce3d2c07962150abb:lgc-path-cf890a2842e4fb0f891a",
+              "lgc-path-77cd703648298bd6c795:lgc-path-b5b917decb8d210c14e1",
+              "lgc-path-77cd703648298bd6c795:lgc-path-c231dbdd8f7dca075ae6",
+              "lgc-path-b5b917decb8d210c14e1:lgc-path-cf890a2842e4fb0f891a",
+              "lgc-path-c231dbdd8f7dca075ae6:lgc-path-cf890a2842e4fb0f891a",
+              "lgc-path-03f3adf0f7d4dbd4c2c3:lgc-path-128fe30db7d7d3556894",
+              "lgc-path-03f3adf0f7d4dbd4c2c3:lgc-path-4bff239688b67380ccc1",
+              "lgc-path-03f3adf0f7d4dbd4c2c3:lgc-path-c0c8baffe989f0cc1b26",
+              "lgc-path-03f3adf0f7d4dbd4c2c3:lgc-path-fe549c6c5056efc07ea7",
+              "lgc-path-128fe30db7d7d3556894:lgc-path-a91eee620d2523707b1e",
+              "lgc-path-128fe30db7d7d3556894:lgc-path-bfcbcb9670ab6b0ef9a4",
+              "lgc-path-4bff239688b67380ccc1:lgc-path-a91eee620d2523707b1e",
+              "lgc-path-4bff239688b67380ccc1:lgc-path-bfcbcb9670ab6b0ef9a4",
+              "lgc-path-a91eee620d2523707b1e:lgc-path-c0c8baffe989f0cc1b26",
+              "lgc-path-a91eee620d2523707b1e:lgc-path-fe549c6c5056efc07ea7",
+              "lgc-path-bfcbcb9670ab6b0ef9a4:lgc-path-c0c8baffe989f0cc1b26",
+              "lgc-path-bfcbcb9670ab6b0ef9a4:lgc-path-fe549c6c5056efc07ea7",
+              "lgc-path-058ec8f495c3820d08f1:lgc-path-17ace0a96ee3acc042be",
+              "lgc-path-058ec8f495c3820d08f1:lgc-path-6298fc6980cea261e2db",
+              "lgc-path-058ec8f495c3820d08f1:lgc-path-66e5f7a36efd1e68e2ee",
+              "lgc-path-058ec8f495c3820d08f1:lgc-path-74d5e1345ce3a3b96065",
+              "lgc-path-058ec8f495c3820d08f1:lgc-path-90b0c2a5032e768846d6",
+              "lgc-path-058ec8f495c3820d08f1:lgc-path-b5aa1be2b18daa8a0560",
+              "lgc-path-17ace0a96ee3acc042be:lgc-path-59ad19352e19c3790b5d",
+              "lgc-path-59ad19352e19c3790b5d:lgc-path-6298fc6980cea261e2db",
+              "lgc-path-59ad19352e19c3790b5d:lgc-path-66e5f7a36efd1e68e2ee",
+              "lgc-path-59ad19352e19c3790b5d:lgc-path-74d5e1345ce3a3b96065",
+              "lgc-path-59ad19352e19c3790b5d:lgc-path-90b0c2a5032e768846d6",
+              "lgc-path-59ad19352e19c3790b5d:lgc-path-b5aa1be2b18daa8a0560",
+              "lgc-path-5030592397a70900a55b:lgc-path-c21d26fc6361d72420e6",
+              "lgc-path-a3fc53fc825bc2a3e5cb:lgc-path-c21d26fc6361d72420e6",
+              "lgc-path-202fe2e6dab7abb8f9c7:lgc-path-459cb3b7e06d34b56d24",
+              "lgc-path-459cb3b7e06d34b56d24:lgc-path-4d6cda8b068d847d8c45",
+              "lgc-path-459cb3b7e06d34b56d24:lgc-path-83325f598c2c4d5cfa81",
+              "lgc-path-459cb3b7e06d34b56d24:lgc-path-c0378c637389beb0b754",
+              "lgc-path-459cb3b7e06d34b56d24:lgc-path-eaca147675d3e86ff067",
+              "lgc-path-2f3de36864f93818845c:lgc-path-435288877b48c7f53c9c",
+              "lgc-path-2f3de36864f93818845c:lgc-path-789201c6a5963e267970",
+              "lgc-path-435288877b48c7f53c9c:lgc-path-8cae1355970348e3b8a2",
+              "lgc-path-789201c6a5963e267970:lgc-path-8cae1355970348e3b8a2",
+              "lgc-path-0fd0ee8278de706be03d:lgc-path-458ff3f098ccdd479975",
+              "lgc-path-0fd0ee8278de706be03d:lgc-path-c83523010b12273c27f6",
+              "lgc-path-458ff3f098ccdd479975:lgc-path-cdd92602096e62389c06",
+              "lgc-path-c83523010b12273c27f6:lgc-path-cdd92602096e62389c06",
+              "lgc-path-2a3d467d0f022fb04e98:lgc-path-4e032c7079a3de6af7d4",
+              "lgc-path-4e032c7079a3de6af7d4:lgc-path-634edfa4057e99f0dde5",
+              "lgc-path-7a2bd620c65fd978dab3:lgc-path-fd1e20ad67334c03d86a",
+              "lgc-path-7ed5958f7c276a5fe915:lgc-path-fd1e20ad67334c03d86a",
+              "lgc-path-98d4f8a38b9788d59bf0:lgc-path-fd1e20ad67334c03d86a",
+              "lgc-path-d4504808b7ce9e6abd42:lgc-path-fd1e20ad67334c03d86a",
+              "lgc-path-405e3b9a5eb212f731fa:lgc-path-96e78c795cffd1daaebf",
+              "lgc-path-8aef23381620b1b962e8:lgc-path-96e78c795cffd1daaebf"
+            ]
+          },
+          "reachable_state_MSR": {
+            "all_source_reaching_path_state_checks": 50,
+            "all_source_reaching_path_state_failures": [],
+            "checked": 24,
+            "failures": [],
+            "operator_nonzero_residual_count": 1,
+            "source_state_convention_when_GC_is_absent": "first frozen path anchor"
+          }
+        },
+        "endpoint_count": 87,
+        "passed": true,
+        "path_count": 407,
+        "some_nonzero_commutator_is_reachable_path_visible": true,
+        "upper_right_nonzero_coordinates": {
+          "cpobc-transition-orbit-00e3f260ed14f8d323f1": "1",
+          "cpobc-transition-orbit-033cb4be4bc5e068b734": "1",
+          "cpobc-transition-orbit-05b265c4c11b96cd7638": "-1",
+          "cpobc-transition-orbit-0c11b662b524e49c7878": "-1",
+          "cpobc-transition-orbit-0e46d46cc5b194fe928e": "1",
+          "cpobc-transition-orbit-135b834fc5db9a0a0657": "-1",
+          "cpobc-transition-orbit-13e56855045c5e712525": "1",
+          "cpobc-transition-orbit-14747b8142aea693e693": "-1",
+          "cpobc-transition-orbit-14a352a0e1aa72c4a208": "3",
+          "cpobc-transition-orbit-1a8f8fe75eb556291b09": "1",
+          "cpobc-transition-orbit-1ce7842933d8ffa2e3bd": "1",
+          "cpobc-transition-orbit-1e16e185933d50ee63a0": "-1",
+          "cpobc-transition-orbit-1f6dc886d7104325ed26": "-1",
+          "cpobc-transition-orbit-1ffa257f133af8ac5d41": "-1",
+          "cpobc-transition-orbit-24bcd95969fc6dc31c0d": "1",
+          "cpobc-transition-orbit-2fe55a94a6eb4209ac89": "1",
+          "cpobc-transition-orbit-322233def63d300522f2": "41/16",
+          "cpobc-transition-orbit-3c1374e8b4f0f7deebce": "-1",
+          "cpobc-transition-orbit-42b6782fe542ab2e9b05": "1",
+          "cpobc-transition-orbit-480001e813b6a8df9bde": "41/16",
+          "cpobc-transition-orbit-4963cb39781e9b264bf0": "41/16",
+          "cpobc-transition-orbit-4c7d9b47e7db31a2f105": "41/6",
+          "cpobc-transition-orbit-4f0633d50c52cc6f863c": "41/6",
+          "cpobc-transition-orbit-4f90919f2171f7dede3e": "1",
+          "cpobc-transition-orbit-50fb01f66cc1cf4a7737": "1",
+          "cpobc-transition-orbit-572d32cb6a7f7a77d126": "1",
+          "cpobc-transition-orbit-5ec7b318bba439bee678": "1",
+          "cpobc-transition-orbit-66c105c8686d1dd540e8": "-41/8",
+          "cpobc-transition-orbit-6c344f4bcc88004609a5": "-2",
+          "cpobc-transition-orbit-702aaf10b2c915c19ab2": "-1",
+          "cpobc-transition-orbit-724886441537c84f38e7": "-1",
+          "cpobc-transition-orbit-74b3519240acc75a0c55": "-123/4",
+          "cpobc-transition-orbit-76354ebabc57255c5a64": "-1",
+          "cpobc-transition-orbit-79234c8570bced8f696b": "-1",
+          "cpobc-transition-orbit-792fade47daa0c95cc46": "-2",
+          "cpobc-transition-orbit-7a50fe6cbe9be3ccc836": "-41/16",
+          "cpobc-transition-orbit-7cb4aeb9a737d4648226": "-2",
+          "cpobc-transition-orbit-81de110aa28c9b3e2f3d": "-1",
+          "cpobc-transition-orbit-821f49d80711c6c3cd4e": "1",
+          "cpobc-transition-orbit-829b87ec0397af66e4f0": "1",
+          "cpobc-transition-orbit-83af550a9d7e565aeeb5": "-1",
+          "cpobc-transition-orbit-8abdf9dfa29b8d1441c5": "1",
+          "cpobc-transition-orbit-8c2a5e92048199acdf30": "-1",
+          "cpobc-transition-orbit-912e9a73e629bd2bd97b": "1",
+          "cpobc-transition-orbit-92c3b00eb3588bf835c0": "-1",
+          "cpobc-transition-orbit-9985753ad535b09543f8": "-1",
+          "cpobc-transition-orbit-9db8e170556712ebafa5": "-1",
+          "cpobc-transition-orbit-9ebbb147ab4c496e85c3": "41/16",
+          "cpobc-transition-orbit-9fb0da3749caf7b75239": "-41/6",
+          "cpobc-transition-orbit-a2e7d5d1f236cc9f11bd": "1",
+          "cpobc-transition-orbit-a9d316ed9eea0710f2d0": "-1",
+          "cpobc-transition-orbit-aab3b9a8363b9460cff0": "-1",
+          "cpobc-transition-orbit-ab12f7513b8a36c56a4f": "-41/16",
+          "cpobc-transition-orbit-b75c3f4edb0b6b7b050a": "1",
+          "cpobc-transition-orbit-c05237b8de19729ea411": "-2",
+          "cpobc-transition-orbit-c14a3f6b73fbb4153633": "-1",
+          "cpobc-transition-orbit-c30299e06d5c1a1ef226": "-41/16",
+          "cpobc-transition-orbit-c30e4a4e7f5d04230080": "-41/16",
+          "cpobc-transition-orbit-c3a5cbc85747dbe8b9e8": "1",
+          "cpobc-transition-orbit-c6cc3608d029c19c02c9": "-1",
+          "cpobc-transition-orbit-cdf3c3ff87768a162e5a": "41/16",
+          "cpobc-transition-orbit-d0cb1ad71da4a5c49263": "-41/16",
+          "cpobc-transition-orbit-d6e558ececccf9f88035": "-41/16",
+          "cpobc-transition-orbit-d94ea641fd612d052438": "1",
+          "cpobc-transition-orbit-da8004ea942f479f0feb": "-1",
+          "cpobc-transition-orbit-dc84b1cd4588f40679b6": "1",
+          "cpobc-transition-orbit-dd5911a6a6514aee11f9": "1",
+          "cpobc-transition-orbit-dda1fce16b861c364e33": "1",
+          "cpobc-transition-orbit-e072ba8f219cdc7a6cd0": "-41/16",
+          "cpobc-transition-orbit-e0fd6c880f27f4068310": "1",
+          "cpobc-transition-orbit-e139e4d413e98c372def": "-1",
+          "cpobc-transition-orbit-e2d5606fac0808ef44c8": "41/16",
+          "cpobc-transition-orbit-e673275325f2cb6ee99b": "-1",
+          "cpobc-transition-orbit-e8310ddb51cd387a3feb": "1",
+          "cpobc-transition-orbit-e86fda9f3c53c904b72e": "1",
+          "cpobc-transition-orbit-eba2edac5c3fa2800b3c": "-1",
+          "cpobc-transition-orbit-ef3a65de93c87020ac8b": "-41/6",
+          "cpobc-transition-orbit-f1c4030ab10488e60e8c": "123/4",
+          "cpobc-transition-orbit-f9261894d9abb92e0107": "1"
+        },
+        "upper_right_support": 79
+      },
+      "minimal_repair_at_this_point": "reinstating the omitted row block makes rank[M;C]=rank M in all four branches",
+      "normalized_Q_geometry": {
+        "Eq120_rows": {
+          "E23": "0",
+          "E24": "0",
+          "E34": "0"
+        },
+        "affine_intercept": "-41",
+        "affine_line": "z=(-41)*r+(-41)",
+        "affine_slope": "-41",
+        "commutator_obstruction_h_equals_slope_plus_intercept": "-82",
+        "r_Q": [
+          "2",
+          "1",
+          "1",
+          "1"
+        ],
+        "z_Q": [
+          "-123",
+          "-82",
+          "-82",
+          "-82"
+        ]
+      },
+      "omitted_block": "fixed_vector_GC",
+      "retained_semantic_block": "reachable_state_MSR_on_all_source_reaching_paths",
+      "semantic_interpretation": "fixed-vector GC fails, but reachable-state MSR holds on every one of the 50 frozen paths reaching the 24 MSR source states, not merely on anchors",
+      "strongest_union": {
+        "augmented_rank": 130,
+        "chosen_kernel_basis_index": 1,
+        "meaning": "derived completed plus literal completed, with the declared block omitted",
+        "nullity": 3,
+        "rank": 129
+      },
+      "upper_character": {
+        "all_843_operator_scalar_rows_hold": true,
+        "factors": [
+          {
+            "kernel_column": 44,
+            "scalar": "2"
+          }
+        ],
+        "formula": "a_e=b_e*product scalar^K[column,e]",
+        "point_digest_sha256": "790da27496dec5b404713f717e6aad1e8db482a988642bd1d63c7158b62770a1"
+      },
+      "witness_coordinate_digest_sha256": "097164d6f456375d673ac24b6a1b02e6722b942e4eb88e220640c2f80d37e7c2"
+    },
+    "omit_reachable_state_MSR": {
+      "ablation_id": "omit_reachable_state_MSR",
+      "bottom_character": {
+        "couplings": [
+          "3",
+          "5",
+          "7",
+          "11"
+        ],
+        "cutoff_external_q5": "13/4"
+      },
+      "branches": {
+        "derived_Eq113__completed_Eq139": {
+          "ablated_augmented_rank": 110,
+          "ablated_commutator_rank_increment": 1,
+          "ablated_rank": 109,
+          "full_profile_augmented_rank": 131,
+          "full_profile_has_no_escape_at_this_point": true,
+          "full_profile_rank": 131
+        },
+        "derived_Eq113__strict_Eq139": {
+          "ablated_augmented_rank": 109,
+          "ablated_commutator_rank_increment": 1,
+          "ablated_rank": 108,
+          "full_profile_augmented_rank": 130,
+          "full_profile_has_no_escape_at_this_point": true,
+          "full_profile_rank": 130
+        },
+        "literal_Eq113__completed_Eq139": {
+          "ablated_augmented_rank": 110,
+          "ablated_commutator_rank_increment": 1,
+          "ablated_rank": 109,
+          "full_profile_augmented_rank": 131,
+          "full_profile_has_no_escape_at_this_point": true,
+          "full_profile_rank": 131
+        },
+        "literal_Eq113__strict_Eq139": {
+          "ablated_augmented_rank": 109,
+          "ablated_commutator_rank_increment": 1,
+          "ablated_rank": 108,
+          "full_profile_augmented_rank": 130,
+          "full_profile_has_no_escape_at_this_point": true,
+          "full_profile_rank": 130
+        }
+      },
+      "claim_boundary": "relation-group independence at one exact transverse base point; not a global minimality theorem and not a counterexample to the full weak/weak profile",
+      "commutator_values_on_witness": {
+        "Q1_Q2": "0",
+        "Q1_Q3": "0",
+        "Q1_Q4": "-3/82",
+        "Q2_Q3": "0",
+        "Q2_Q4": "-1/82",
+        "Q3_Q4": "-3/656"
+      },
+      "delta_Q": {
+        "1": "0",
+        "2": "0",
+        "3": "0",
+        "4": "1/82"
+      },
+      "direct_certificate": {
+        "all_132_assigned_matrices_are_nonsingular": true,
+        "all_path_state_span_rank": 2,
+        "all_same_endpoint_paths_give_same_state": true,
+        "commutators": [
+          {
+            "first_visible_path": null,
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": false,
+            "pair": [
+              1,
+              2
+            ],
+            "visible_path_count": 0
+          },
+          {
+            "first_visible_path": null,
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": false,
+            "pair": [
+              1,
+              3
+            ],
+            "visible_path_count": 0
+          },
+          {
+            "first_visible_path": "lgc-path-7d005d730d05189479f3",
+            "matrix": [
+              [
+                "0",
+                "-3/82"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": true,
+            "pair": [
+              1,
+              4
+            ],
+            "visible_path_count": 407
+          },
+          {
+            "first_visible_path": null,
+            "matrix": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": false,
+            "pair": [
+              2,
+              3
+            ],
+            "visible_path_count": 0
+          },
+          {
+            "first_visible_path": "lgc-path-7d005d730d05189479f3",
+            "matrix": [
+              [
+                "0",
+                "-1/82"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": true,
+            "pair": [
+              2,
+              4
+            ],
+            "visible_path_count": 407
+          },
+          {
+            "first_visible_path": "lgc-path-7d005d730d05189479f3",
+            "matrix": [
+              [
+                "0",
+                "-3/656"
+              ],
+              [
+                "0",
+                "0"
+              ]
+            ],
+            "operator_nonzero": true,
+            "pair": [
+              3,
+              4
+            ],
+            "visible_path_count": 407
+          }
+        ],
+        "direct_substitution": {
+          "CPOBC": {
+            "checked": 783,
+            "failures": []
+          },
+          "Eq113": {
+            "EQ113_QN_BRANCH": {
+              "checked": 25,
+              "failures": []
+            },
+            "EQ113_QN_PLUS_1_BRANCH": {
+              "checked": 25,
+              "failures": []
+            }
+          },
+          "Eq139": {
+            "EQ139_EQ145_COMPLETED_M_K_LE_N": {
+              "checked": 10,
+              "failures": []
+            },
+            "EQ139_PRINTED_STRICT_M_K_LT_N": {
+              "checked": 4,
+              "failures": []
+            }
+          },
+          "fixed_vector_GC": {
+            "checked": 1529,
+            "failures": []
+          },
+          "reachable_state_MSR": {
+            "all_source_reaching_path_state_checks": 50,
+            "all_source_reaching_path_state_failures": [
+              "msr:p1-0:lgc-path-7d005d730d05189479f3",
+              "msr:p2-0:lgc-path-f872722c6964eaa3e216",
+              "msr:p2-2:lgc-path-2a5b50329c95a348a35d",
+              "msr:p3-000:lgc-path-7176e1bc74244890cf88",
+              "msr:p3-002:lgc-path-73192a6770fa82828f12",
+              "msr:p3-002:lgc-path-ea7b195db90fbd5d9de7",
+              "msr:p3-002:lgc-path-fc1eafd06aa0360d6535",
+              "msr:p3-006:lgc-path-b2b0d3bfba12e303910b",
+              "msr:p3-024:lgc-path-b7ad3711375908c6a219",
+              "msr:p3-026:lgc-path-5ed275bb52774892a28f",
+              "msr:p4-0000:lgc-path-27e6ef8f30c0372eb7df",
+              "msr:p4-0002:lgc-path-07b60204afbd042a3e3e",
+              "msr:p4-0002:lgc-path-330d646216a118c5937d",
+              "msr:p4-0002:lgc-path-4fff5940ddb8a5b17811",
+              "msr:p4-0002:lgc-path-7a32187fb800fbb83069",
+              "msr:p4-0002:lgc-path-7ab08fc5dc3ce4c2435f",
+              "msr:p4-0002:lgc-path-edf06924c77f06ebe7f3",
+              "msr:p4-0006:lgc-path-6caa7d513e6afe57341f",
+              "msr:p4-0006:lgc-path-8b07ddaf34f8062001cf",
+              "msr:p4-0006:lgc-path-a4973db486cccf9f1319",
+              "msr:p4-0006:lgc-path-b0f8074437d99c8ef1b1",
+              "msr:p4-000e:lgc-path-30ae504ffc709cb164b7",
+              "msr:p4-0044:lgc-path-17c20040a89eede06c26",
+              "msr:p4-0044:lgc-path-199dc877b9772932fdac",
+              "msr:p4-0044:lgc-path-3802e7944af80cf699b0",
+              "msr:p4-0044:lgc-path-acd6ee22824ad0dd9561",
+              "msr:p4-0046:lgc-path-23526b04675064d6f369",
+              "msr:p4-0046:lgc-path-791cf8747999c11d37cb",
+              "msr:p4-0046:lgc-path-ab18f2501efeb01159b0",
+              "msr:p4-0046:lgc-path-c1202daa948bdecf1898",
+              "msr:p4-0048:lgc-path-0d172747c7f9d8d1869d",
+              "msr:p4-0048:lgc-path-85bfe0e8a728692eeedf",
+              "msr:p4-0048:lgc-path-cc5c4fd30c66af99235a",
+              "msr:p4-004c:lgc-path-46d0c4bc002c3048d107",
+              "msr:p4-004c:lgc-path-6cfbcb17b6edd147d6ba",
+              "msr:p4-004c:lgc-path-917a5052201fdb86c3d2",
+              "msr:p4-004c:lgc-path-91c0851a40afa4cd9d89",
+              "msr:p4-004c:lgc-path-d68e92e8f78404121279",
+              "msr:p4-004e:lgc-path-3900db7bbdd1dcd6b8c0",
+              "msr:p4-004e:lgc-path-b390ff27879bf460049a",
+              "msr:p4-004e:lgc-path-d9c0d9a10206b118dce2",
+              "msr:p4-00cc:lgc-path-aafb7fd65abd1670f54b",
+              "msr:p4-00ce:lgc-path-aa44302ac93d23af8c6d",
+              "msr:p4-0888:lgc-path-4f61cd1e466d1c4aa7cb",
+              "msr:p4-088a:lgc-path-847923a1fc437e3cae36",
+              "msr:p4-088a:lgc-path-a64c1e6f8e256d3176a2",
+              "msr:p4-088a:lgc-path-faf3c810f0acbea02fbd",
+              "msr:p4-088e:lgc-path-98d97b95228774215385",
+              "msr:p4-08cc:lgc-path-7aaf13b0fce749de6246",
+              "msr:p4-08ce:lgc-path-ed3266583762bbe223da"
+            ],
+            "checked": 24,
+            "failures": [
+              "msr:p1-0",
+              "msr:p2-0",
+              "msr:p2-2",
+              "msr:p3-000",
+              "msr:p3-002",
+              "msr:p3-006",
+              "msr:p3-024",
+              "msr:p3-026",
+              "msr:p4-0000",
+              "msr:p4-0002",
+              "msr:p4-0006",
+              "msr:p4-000e",
+              "msr:p4-0044",
+              "msr:p4-0046",
+              "msr:p4-0048",
+              "msr:p4-004c",
+              "msr:p4-004e",
+              "msr:p4-00cc",
+              "msr:p4-00ce",
+              "msr:p4-0888",
+              "msr:p4-088a",
+              "msr:p4-088e",
+              "msr:p4-08cc",
+              "msr:p4-08ce"
+            ],
+            "operator_nonzero_residual_count": 24,
+            "source_state_convention_when_GC_is_absent": "first frozen path anchor"
+          }
+        },
+        "endpoint_count": 87,
+        "passed": true,
+        "path_count": 407,
+        "some_nonzero_commutator_is_reachable_path_visible": true,
+        "upper_right_nonzero_coordinates": {
+          "cpobc-transition-orbit-05b265c4c11b96cd7638": "6/41",
+          "cpobc-transition-orbit-0c11b662b524e49c7878": "6/41",
+          "cpobc-transition-orbit-135b834fc5db9a0a0657": "6/41",
+          "cpobc-transition-orbit-14a352a0e1aa72c4a208": "-99/41",
+          "cpobc-transition-orbit-1ffa257f133af8ac5d41": "6/41",
+          "cpobc-transition-orbit-5ec7b318bba439bee678": "-90/41",
+          "cpobc-transition-orbit-702aaf10b2c915c19ab2": "6/41",
+          "cpobc-transition-orbit-724886441537c84f38e7": "6/41",
+          "cpobc-transition-orbit-74b3519240acc75a0c55": "3",
+          "cpobc-transition-orbit-76354ebabc57255c5a64": "6/41",
+          "cpobc-transition-orbit-77da9d98600f42d61c83": "-54/41",
+          "cpobc-transition-orbit-79234c8570bced8f696b": "6/41",
+          "cpobc-transition-orbit-7cb4aeb9a737d4648226": "-126/41",
+          "cpobc-transition-orbit-81de110aa28c9b3e2f3d": "6/41",
+          "cpobc-transition-orbit-8c2a5e92048199acdf30": "6/41",
+          "cpobc-transition-orbit-9985753ad535b09543f8": "6/41",
+          "cpobc-transition-orbit-9db8e170556712ebafa5": "-6/41",
+          "cpobc-transition-orbit-9fb0da3749caf7b75239": "1",
+          "cpobc-transition-orbit-a9d316ed9eea0710f2d0": "6/41",
+          "cpobc-transition-orbit-aab3b9a8363b9460cff0": "6/41",
+          "cpobc-transition-orbit-ab12f7513b8a36c56a4f": "3/8",
+          "cpobc-transition-orbit-c14a3f6b73fbb4153633": "6/41",
+          "cpobc-transition-orbit-c30299e06d5c1a1ef226": "3/8",
+          "cpobc-transition-orbit-c30e4a4e7f5d04230080": "3/8",
+          "cpobc-transition-orbit-d0cb1ad71da4a5c49263": "3/8",
+          "cpobc-transition-orbit-e072ba8f219cdc7a6cd0": "3/8",
+          "cpobc-transition-orbit-eba2edac5c3fa2800b3c": "6/41",
+          "cpobc-transition-orbit-ef3a65de93c87020ac8b": "1"
+        },
+        "upper_right_support": 28
+      },
+      "minimal_repair_at_this_point": "reinstating the omitted row block makes rank[M;C]=rank M in all four branches",
+      "normalized_Q_geometry": {
+        "Eq120_rows": {
+          "E23": "0",
+          "E24": "0",
+          "E34": "0"
+        },
+        "affine_intercept": "36",
+        "affine_line": "z=(-24)*r+(36)",
+        "affine_slope": "-24",
+        "commutator_obstruction_h_equals_slope_plus_intercept": "12",
+        "r_Q": [
+          "1",
+          "1",
+          "1",
+          "2"
+        ],
+        "z_Q": [
+          "12",
+          "12",
+          "12",
+          "-12"
+        ]
+      },
+      "omitted_block": "reachable_state_MSR",
+      "retained_semantic_block": "fixed_vector_GC",
+      "semantic_interpretation": "fixed-vector GC holds, while the omitted reachable-state MSR block fails",
+      "strongest_union": {
+        "augmented_rank": 110,
+        "chosen_kernel_basis_index": 18,
+        "meaning": "derived completed plus literal completed, with the declared block omitted",
+        "nullity": 23,
+        "rank": 109
+      },
+      "upper_character": {
+        "all_843_operator_scalar_rows_hold": true,
+        "factors": [
+          {
+            "kernel_column": 12,
+            "scalar": "2"
+          },
+          {
+            "kernel_column": 48,
+            "scalar": "3"
+          }
+        ],
+        "formula": "a_e=b_e*product scalar^K[column,e]",
+        "point_digest_sha256": "a654907af777bc279dee8dba25ddd52c476e3d25b989f30545185ecd789679d0"
+      },
+      "witness_coordinate_digest_sha256": "90e5f09e98e78aa6d048d7bb07295e1502964aa374eaba679f14da17ab248ed5"
+    }
+  },
+  "semantic_digest_sha256": "005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e",
+  "source_native_Eq120_star_commutator_reduction": {
+    "all_displayed_prefactors_are_units": true,
+    "arbitrary_base_symbolic_row_combination_differences": {
+      "E23": "0",
+      "E24": "0",
+      "E34": "0"
+    },
+    "automatic_remainder": "r1=r2=r3=r4=1, which lies in Z_Q and is witness-free",
+    "each_Eq120_row_uses_exactly_three_raw_CPOBC_rows": true,
+    "free_algebra_source_identity": "B1*T_mn=F_nm-F_n1*Q1^-1*Q_m+F_m1*Q1^-1*Q_n",
+    "global_rank_test_reduction": "modulo raw CPOBC, adjoining all six Q commutator rows is equivalent to adjoining only c12,c13,c14",
+    "identity_template": "c_mn=E_mn+c_1n-c_1m",
+    "normalization": "Q_i=b_i*P_i, P_i=[[r_i,z_i],[0,1]]",
+    "ratio_Eq120_rows": {
+      "E23": "(r2-r1)*(z3-z1)-(r3-r1)*(z2-z1)",
+      "E24": "(r2-r1)*(z4-z1)-(r4-r1)*(z2-z1)",
+      "E34": "(r3-r1)*(z4-z1)-(r4-r1)*(z3-z1)"
+    },
+    "ratio_row_unit_proportionality": "t_mn=-(b_m*b_n/a1)*E_mn",
+    "sharper_complete_cover": [
+      {
+        "locus": "U2=D(r2-r1)",
+        "target_rows": [
+          "c12"
+        ]
+      },
+      {
+        "locus": "U3=D(r3-r1)",
+        "target_rows": [
+          "c13"
+        ]
+      },
+      {
+        "locus": "U4=D(r4-r1)",
+        "target_rows": [
+          "c14"
+        ]
+      },
+      {
+        "locus": "D_equal_nonunit=V(r2-r1,r3-r1,r4-r1) intersect D(r1-1)",
+        "target_rows": [
+          "c12",
+          "c13",
+          "c14"
+        ]
+      }
+    ],
+    "single_row_chart_argument": "on U_k, Eq120 gives z_i-z1=lambda*(r_i-r1); then every star row is (r_i-r1)*h and c_1k=(r_k-r1)*h, so c_1k=0 forces all six",
+    "six_to_star_identities": {
+      "c23": "0",
+      "c24": "0",
+      "c34": "0"
+    },
+    "source_native_Eq120": "T_mn=Q_n*Q_1^-1*Q_m-Q_m*Q_1^-1*Q_n=0 for 2<=m<n<=4",
+    "source_row_indices_zero_based": {
+      "F21": 0,
+      "F31": 4,
+      "F32": 29,
+      "F41": 44,
+      "F42": 147,
+      "F43": 548
+    },
+    "source_rows": {
+      "F21": {
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0b2bbe81c6394d603f63"
+      },
+      "F31": {
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-49726b7f352ba79916e5"
+      },
+      "F32": {
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-6002781cceb198b6edfd"
+      },
+      "F41": {
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-1d7b3a88785401c6531b"
+      },
+      "F42": {
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-01e29996483e2c4f342c"
+      },
+      "F43": {
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-17e9d7ae74c8bed62194"
+      }
+    },
+    "three_star_rows_are_globally_minimal": {
+      "point": "r1=r2=r3=r4=r with r!=1",
+      "reason": "all E_mn vanish and c_1i=(r-1)*(z_i-z1) have rank three"
+    },
+    "upper_right_row_combination": "t_mn=A_B1^-1*(f_nm-(b_m/b1)*f_n1+(b_n/b1)*f_m1)"
+  },
+  "strict_to_completed_Eq139_inclusion": {
+    "both_domains_are_built_by_the_same_constructor": true,
+    "branch_local_row_inclusion_maps": {
+      "EQ113_QN_BRANCH": {
+        "CPOBC": "i -> i, 0<=i<783",
+        "Eq113": "783+i -> 783+i, 0<=i<25",
+        "Eq139_strict_to_completed": {
+          "808": 809,
+          "809": 812,
+          "810": 813,
+          "811": 815
+        },
+        "fixed_vector_GC": "812+i -> 818+i, 0<=i<320",
+        "reachable_state_MSR": "1132+i -> 1138+i, 0<=i<24"
+      },
+      "EQ113_QN_PLUS_1_BRANCH": {
+        "CPOBC": "i -> i, 0<=i<783",
+        "Eq113": "783+i -> 783+i, 0<=i<25",
+        "Eq139_strict_to_completed": {
+          "808": 809,
+          "809": 812,
+          "810": 813,
+          "811": 815
+        },
+        "fixed_vector_GC": "812+i -> 818+i, 0<=i<320",
+        "reachable_state_MSR": "1132+i -> 1138+i, 0<=i<24"
+      }
+    },
+    "canonical_general_bottom_constructor": "sr2v_transverse_determinant_zero_locus_v042.eq139_row",
+    "completed_instances": [
+      [
+        2,
+        1,
+        2
+      ],
+      [
+        3,
+        1,
+        2
+      ],
+      [
+        3,
+        1,
+        3
+      ],
+      [
+        3,
+        2,
+        3
+      ],
+      [
+        4,
+        1,
+        2
+      ],
+      [
+        4,
+        1,
+        3
+      ],
+      [
+        4,
+        1,
+        4
+      ],
+      [
+        4,
+        2,
+        3
+      ],
+      [
+        4,
+        2,
+        4
+      ],
+      [
+        4,
+        3,
+        4
+      ]
+    ],
+    "conclusion": "for each Eq113 reading separately, Row(M_strict) is contained in Row(M_completed), so strict commutativity implies completed commutativity",
+    "derived_and_literal_Eq113_are_not_combined": true,
+    "strict_completed_instance_positions": [
+      1,
+      4,
+      5,
+      7
+    ],
+    "strict_instances": [
+      [
+        3,
+        1,
+        2
+      ],
+      [
+        4,
+        1,
+        2
+      ],
+      [
+        4,
+        1,
+        3
+      ],
+      [
+        4,
+        2,
+        3
+      ]
+    ]
+  },
+  "verdict": "SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL",
+  "witness": null
+}

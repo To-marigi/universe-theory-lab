@@ -17,18 +17,24 @@ later scope audit supersedes their interpretation.
 3. `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` — current
    exact SR2-V branch reductions, bottom-MSR classification, fixed-state
    obstructions, chart/manifests, and nonterminal boundaries.
-4. This knowledge base — current scientific state, terminology, and proof
+4. `reports/v0.4.2_sr2v_transverse_base_cover_ablation.md` — current transverse
+   scalar-base audit, Eq. (120) commutator reduction, assumption ablations,
+   and the eight exact residual obligations.
+5. `reports/v0.4.2_sr2v_transverse_exact_scout_ledger.md` — deterministic input
+   recipe and digests for the 960-evaluation bounded exact scout; not a proof
+   certificate.
+6. This knowledge base — current scientific state, terminology, and proof
    rules.
-5. `CURRENT_RESEARCH_STATE.json` — compact mutable index for tools and future
+7. `CURRENT_RESEARCH_STATE.json` — compact mutable index for tools and future
    agents; it is not a proof certificate.
-6. `HANDOFF_v0.4.1.md` — exact operational state, commands, hashes, and next
+8. `HANDOFF_v0.4.1.md` — exact operational state, commands, hashes, and next
    gates.
-7. `reports/v0.4.1_scope_break_decision_packet.md` — scope-break owner decision.
-8. `reports/v0.4.2_prior_art_and_related_work_audit.md` — current novelty,
+9. `reports/v0.4.1_scope_break_decision_packet.md` — scope-break owner decision.
+10. `reports/v0.4.2_prior_art_and_related_work_audit.md` — current novelty,
    priority, related-work, and mathematical-commutativity claim boundaries.
-9. `reports/cpobc_backup_policy_2026-08-01.md` — Git/NAS responsibility split,
+11. `reports/cpobc_backup_policy_2026-08-01.md` — Git/NAS responsibility split,
    cold-backup rule, and the current non-Git artifact snapshot checksum.
-10. Versioned reports and machine artifacts — evidence within their declared
+12. Versioned reports and machine artifacts — evidence within their declared
    scope. A later scope addendum controls interpretation but does not rewrite
    old bytes.
 
@@ -92,6 +98,29 @@ tangent kernel. Rank constancy and witness freedom on the remaining
 nonzero-`delta_Q` part are not claimed. Splitting principal
 opens are now also certified over non-normalized bottom characters. The
 remaining reducible components and irreducible branches stay open.
+
+The successor base audit removes three hidden ambiguities. First, CPOBC alone
+has saturated scalar rank 83, so its primitive kernel is the common `G_m^49`;
+both Eq. (113) scalar readings are integral-lattice consequences and all
+Eq. (139) scalar rows vanish. Second, strict Eq. (139) is a literal row subset
+of completed Eq. (139), separately for each Eq. (113) reading. Third,
+source-native Eq. (120) puts the three ratio rows `E23,E24,E34` in the raw
+CPOBC row space and gives `c_mn=E_mn+c_1n-c_1m`. Thus six commutator targets are
+globally equivalent to the minimal star `c12,c13,c14`. On each
+`D(r_k-r_1)`, one star row suffices; the equal-ratio nonunit locus needs all
+three. The remaining full-profile proof is therefore two strict Eq. (113)
+branches crossed with four loci, eight obligations, unless the common core
+closes them all at once.
+
+Two exact direct ablations establish individual necessity of both weak
+semantic row groups in the transverse occurrence-identified chart. Omitting
+reachable-state MSR while retaining fixed-vector GC gives a common four-branch
+noncommutative witness; omitting fixed-vector GC while retaining MSR gives a
+second one. The latter passes MSR on every one of the 50 frozen paths reaching
+the 24 source states, not merely on selected anchors. Reinstating the omitted
+group removes the rank escape at the same scalar point. These are necessary-
+assumption countermodels, not a full-profile witness and not sufficiency of the
+two groups together.
 
 The next exact gates sharpen this further. On the observed-bottom primitive
 `G_m^29`, all 24 additive reachable-MSR equations are globally triangular and
@@ -173,7 +202,8 @@ semantic-profile row and not a change to SR3b-A.
 | `results/v0.4.2_sr2v_variable_harmonic_two_row_audit.json` and `reports/v0.4.2_sr2v_variable_harmonic_two_row_audit.md` | exact harmonic-space/gauge audit and two-row escape certificate; digest `64a79807b4a19169517c5a9864b005c38a44593118987ed88e95dd2edb9cb84e` | predecessor result proving the fixed-`k` two-row obstruction Zariski-special and constructing an open rational section; it did not solve the other entries, which the following sparse-section certificate then audits and obstructs |
 | `results/v0.4.2_sr2v_variable_harmonic_sparse_section_cpobc.json` and `reports/v0.4.2_sr2v_variable_harmonic_sparse_section_cpobc.md` | exact 3,132-entry substitution, sparse polynomial identities, and rank-62 minor; digest `4c8a71689c69d4845344eb44e459b3a5256075188b1f2d71dabc5a7428235efe` | the predecessor escape has 911 raw residuals; two alpha-killing rows plus determinant `2^192*3^9*977` make the beta-one, two-alpha `Delta!=0` section a localized unit ideal; wider alpha/beta support is open |
 | `results/v0.4.2_sr2v_transverse_cocycle_principal_open.json` and `reports/v0.4.2_sr2v_transverse_cocycle_principal_open.md` | exact four-matrix branch-separated rational linear algebra; digest `07e60a4d6b029d3cf08efd3ef3aae14598a1614090d3809d764973065b35eaf0` | separate nonzero minors on derived/literal Eq. (113) crossed with strict/completed Eq. (139) force all actual cocycles to zero and `Q1,...,Q4` to commute on four nonempty opens; the joint 1,187-row matrix is auxiliary and all four determinant-zero loci remain open |
-| `results/v0.4.2_sr2v_transverse_determinant_zero_locus.json` and `reports/v0.4.2_sr2v_transverse_determinant_zero_locus.md` | exact universal `2 by 2` identities plus exact rational rank/kernel data at eight nested-locus points, two off-normalized opens, and a 60-point deterministic scan; digest `a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f` | the witness condition is `rank[M;C]>rank M`, not `Delta=0`, and the commuting subspace is `K_delta=ker C(delta_Q)`; the whole `delta_Q=0` locus is witness-free; three full-diagonal samples have rank 127 and bottom-tangent kernel, four nonzero-`delta_Q` two-scalar samples have rank 130 and kernel `span(beta,e_Q5)`, and one Q5-only two-scalar sample has rank 127 with a larger tangent kernel; rank constancy and the remaining nonzero-`delta_Q` locus are open, as are the four unexpanded hypersurfaces |
+| `results/v0.4.2_sr2v_transverse_determinant_zero_locus.json` and `reports/v0.4.2_sr2v_transverse_determinant_zero_locus.md` | exact universal `2 by 2` identities plus exact rational rank/kernel data at eight nested-locus points, two off-normalized opens, and a 60-point deterministic scan; corrected v3 digest `da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30` | the witness condition is `rank[M;C]>rank M`, not `Delta=0`, and the commuting subspace is `K_delta=ker C(delta_Q)`; the whole `delta_Q=0` locus is witness-free; three full-diagonal samples have rank 127 and bottom-tangent kernel, four nonzero-`delta_Q` two-scalar samples have rank 130 and kernel `span(beta,e_Q5)`, and one Q5-only two-scalar sample has rank 127 with a larger tangent kernel; the four scalar samples per scan direction agree, but whole-line rank constancy and the remaining nonzero-`delta_Q` locus are open |
+| `results/v0.4.2_sr2v_transverse_base_cover_ablation.json` and `reports/v0.4.2_sr2v_transverse_base_cover_ablation.md` | exact ZZ/QQ/SymPy scalar-base and source-row certificate plus two full direct-substitution rational ablations; digest `005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e` | CPOBC alone defines the saturated common `G_m^49`; strict Eq. (139) controls completed; raw Eq. (120) reduces six commutators to a minimal three-edge star and four loci per Eq. (113) reading; fixed-vector GC and all-reachable-state MSR are individually necessary for universal transverse commutativity, while the full profile and eight localized obligations remain open |
 | `references/notes/v0.4.2_sr2v_bottom_msr_csg_interpretation_2026-08-02.md` | source/derivation boundary | finite CSG is prior classical work; the new project claim is the exact weak/weak `G_m^29` coordinate classification and its certified scope, not broad CSG priority |
 | `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` | current SR2-V exact progress authority | consolidates the exact certificates through the sparse-section unit ideal and four branch-separated cocycle opens, discarded numerical-scout boundary, revised exact search order, and nonterminal publication scope |
 | `references/notes/v0.4.2_prior_art_related_work_2026-08-01.md` | theorem/page-level literature and mathematical-tool ledger | records direct-source semantics, Xu overlap, triangularisation/common-eigenvector/Burnside/cyclic-separating/LLD tools, 66-PDF local/NAS preservation, and exact claim boundaries |

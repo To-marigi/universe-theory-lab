@@ -14,7 +14,7 @@ from universe_lab.final_theory import sr2v_transverse_determinant_zero_locus_v04
 from universe_lab.final_theory import weak_d2_visible_torus_scout_v042 as torus
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_SEMANTIC_DIGEST = "a61eaeec40499a0d756699fcaa8ff71ee1e54da2adb5e95b985f6a488503773f"
+EXPECTED_SEMANTIC_DIGEST = "da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30"
 
 
 def _load(relative: str) -> dict[str, Any]:
@@ -229,7 +229,7 @@ def test_deterministic_scan_is_bounded_and_witness_free(rebuilt: dict[str, Any])
     assert scan["point_count"] == len(locus.SCAN_DIRECTIONS) * len(locus.SCAN_SCALARS)
     assert scan["directions"] == list(locus.SCAN_DIRECTIONS)
     assert scan["witnesses"] == []
-    assert scan["rank_is_constant_along_each_punctured_line"] is True
+    assert scan["rank_profile_agrees_at_all_four_recorded_scalars_for_each_direction"] is True
     assert scan["commutator_rows_stay_inside_the_row_space_at_every_scanned_point"] is True
     assert scan["scan_status"] == "BOUNDED_DETERMINISTIC_SCAN_NOT_A_GLOBAL_OBSTRUCTION"
     assert sum(scan["rank_profile_census"].values()) == scan["point_count"]
