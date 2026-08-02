@@ -1,0 +1,555 @@
+{
+  "claim_boundary": "the two older chart-open points reject their recorded finite repair selections, while sources 8 and 14 repair the Eq. (120) kernel there; the third exact point shows that all three proposed two-row minor opens still fail to cover D(g2) or D(g3). This rejects only that finite pair-minor subcover, not an Eq. (120) chart, the complete common core, or commutativity, and the targeting rationales are not global determinant factorization certificates",
+  "date": "2026-08-02",
+  "dimension": 2,
+  "field": "Q",
+  "finite_scope": "n<=4",
+  "frozen_bindings": {
+    "base_cover_verdict": "SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL",
+    "unit_minor_verdict": "SR2V_TRANSVERSE_COMMON_CORE_GLOBAL_UNIT_MINOR_CERTIFIED_NONTERMINAL"
+  },
+  "gates": {
+    "all_selected_Q5_components_are_zero": true,
+    "all_three_pair_restrictions_fail_at_the_new_point": true,
+    "all_three_proposed_pair_minors_vanish_at_the_new_point": true,
+    "both_complete_common_core_checks_remain_131_to_131": true,
+    "both_points_are_inside_their_declared_charts": true,
+    "both_proposed_pairs_are_exactly_rejected": true,
+    "eq120_base_cover_is_frozen_and_bound": true,
+    "new_point_complete_common_core_check_remains_131_to_131": true,
+    "new_point_is_in_both_g2_and_g3_charts": true,
+    "sources_8_14_repair_both_older_points_on_the_eq120_kernel": true,
+    "unit_minor_is_frozen_and_bound": true
+  },
+  "input_artifacts": {
+    "results/v0.4.2_sr2v_transverse_base_cover_ablation.json": {
+      "raw_sha256": "c6ab35fcd0deb2a0045a50a0740f80664db66bdaafeff60b98822a8ccf944565",
+      "semantic_digest_sha256": "005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e"
+    },
+    "results/v0.4.2_sr2v_transverse_common_core_unit_minor.json": {
+      "raw_sha256": "98929d1b16dfc1e0e475279194bd572f881afad2f84b52154a19ae6f5f8fd8c5",
+      "semantic_digest_sha256": "59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97"
+    }
+  },
+  "older_repair_pair_rejections": {
+    "g2": {
+      "Q_column_order": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5"
+      ],
+      "all_candidate_Q5_components_are_zero": true,
+      "all_joint_sources": [
+        29,
+        147,
+        32,
+        120
+      ],
+      "candidate_plus_star_rank": 4,
+      "candidate_rank": 3,
+      "candidate_schur_rows": [
+        [
+          "5/32",
+          "-3/16",
+          "-3/4",
+          "0",
+          "0"
+        ],
+        [
+          "3/82",
+          "0",
+          "0",
+          "-3/4",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "185/738",
+          "5/41",
+          "-80/123",
+          "-10",
+          "0"
+        ]
+      ],
+      "chart_function": "g2=a_Q1*b_Q2-a_Q2*b_Q1",
+      "chart_id": "g2",
+      "eq120_base_sources": [
+        29,
+        147
+      ],
+      "exact_positive_rational_slice_point": {
+        "u12": "1",
+        "u13": "2",
+        "u15": "1",
+        "u44": "3",
+        "u45": "3"
+      },
+      "full_M0_has_no_escape_at_this_point": true,
+      "full_M0_plus_all_six_commutators_rank": 131,
+      "full_M0_rank": 131,
+      "g_value": "-1/48",
+      "pair_is_rejected_on_its_declared_chart": true,
+      "pivot_rank": 127,
+      "point_is_inside_declared_chart": true,
+      "pointwise_eq120_kernel_repair_by_sources_8_14": {
+        "all_C_Q5_coefficients_are_zero": true,
+        "candidate_plus_target_e_w_rank": 2,
+        "candidate_rank": 2,
+        "joint_sources": [
+          8,
+          14
+        ],
+        "pair_minor_D_AB": "975/2048",
+        "restriction_column_order": [
+          "h",
+          "w",
+          "q5"
+        ],
+        "restriction_rows_ABC": [
+          [
+            "15/64",
+            "-25/32",
+            "0"
+          ],
+          [
+            "39/64",
+            "0",
+            "0"
+          ]
+        ],
+        "scope": "this exact point on the Eq. (120) kernel only",
+        "target_e_w_is_spanned": true,
+        "target_e_w_rank": 1
+      },
+      "proposed_patch_sources": [
+        32,
+        120
+      ],
+      "residual_data_digest_sha256": "4f5d250c5866facf0f7a026624485aa40c9ceb4ebdc69095d10d9a41b542550f",
+      "row_id_digest_sha256": "243a781a3a8e85286cd22972f94a09a151f16fdc26d75ad462ecd46e5fdfb970",
+      "row_ids": [
+        "CPOBC:cpobc-relation-6002781cceb198b6edfd:eq103",
+        "CPOBC:cpobc-relation-01e29996483e2c4f342c:eq103",
+        "CPOBC:cpobc-relation-acd16446c5b21a075015:eq103",
+        "CPOBC:cpobc-relation-4af3986a008d2a9f404e:eq103"
+      ],
+      "star_rank": 1,
+      "star_schur_rows_c12_c13_c14": [
+        [
+          "-1/12",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/48",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "targeting_rationale": "the sampled maximal minor has an extra u44-u45 zero factor",
+      "targeting_rationale_is_not_a_global_factorization_certificate": true
+    },
+    "g3": {
+      "Q_column_order": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4",
+        "Q5"
+      ],
+      "all_candidate_Q5_components_are_zero": true,
+      "all_joint_sources": [
+        29,
+        548,
+        424,
+        544
+      ],
+      "candidate_plus_star_rank": 4,
+      "candidate_rank": 3,
+      "candidate_schur_rows": [
+        [
+          "5/32",
+          "-3/32",
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "-3/656",
+          "0",
+          "0",
+          "3/32",
+          "0"
+        ],
+        [
+          "-125/1312",
+          "-45/1312",
+          "-15/82",
+          "15/4",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "chart_function": "g3=a_Q1*b_Q3-a_Q3*b_Q1",
+      "chart_id": "g3",
+      "eq120_base_sources": [
+        29,
+        548
+      ],
+      "exact_positive_rational_slice_point": {
+        "u12": "1",
+        "u13": "3",
+        "u15": "1",
+        "u44": "2",
+        "u45": "2"
+      },
+      "full_M0_has_no_escape_at_this_point": true,
+      "full_M0_plus_all_six_commutators_rank": 131,
+      "full_M0_rank": 131,
+      "g_value": "1/256",
+      "pair_is_rejected_on_its_declared_chart": true,
+      "pivot_rank": 127,
+      "point_is_inside_declared_chart": true,
+      "pointwise_eq120_kernel_repair_by_sources_8_14": {
+        "all_C_Q5_coefficients_are_zero": true,
+        "candidate_plus_target_e_w_rank": 2,
+        "candidate_rank": 2,
+        "joint_sources": [
+          8,
+          14
+        ],
+        "pair_minor_D_AB": "225/4096",
+        "restriction_column_order": [
+          "h",
+          "w",
+          "q5"
+        ],
+        "restriction_rows_ABC": [
+          [
+            "15/128",
+            "-5/16",
+            "0"
+          ],
+          [
+            "57/128",
+            "-23/32",
+            "0"
+          ]
+        ],
+        "scope": "this exact point on the Eq. (120) kernel only",
+        "target_e_w_is_spanned": true,
+        "target_e_w_rank": 1
+      },
+      "proposed_patch_sources": [
+        424,
+        544
+      ],
+      "residual_data_digest_sha256": "5cab0f87e927ede8c6bc0bb5c1d44d6e77ad182adc0cb3bfdc505f494f0d60cb",
+      "row_id_digest_sha256": "c90087f1ff56a1cda32d6c2d4d368a0cff070546a346358f41c3d6c01e4f4d73",
+      "row_ids": [
+        "CPOBC:cpobc-relation-6002781cceb198b6edfd:eq103",
+        "CPOBC:cpobc-relation-17e9d7ae74c8bed62194:eq103",
+        "CPOBC:cpobc-relation-1ec3ed17390040921622:eq103",
+        "CPOBC:cpobc-relation-0ffb84f57be00d27455d:eq103"
+      ],
+      "star_rank": 1,
+      "star_schur_rows_c12_c13_c14": [
+        [
+          "-1/6",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/64",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "targeting_rationale": "the sampled maximal minor has an extra u12*u45-u44 zero factor",
+      "targeting_rationale_is_not_a_global_factorization_certificate": true
+    }
+  },
+  "passed": true,
+  "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
+  "schema_version": "final-theory-v042-sr2v-transverse-eq120-repair-pair-scout-v2",
+  "search_terminal": "NOT_A_SEARCH_TERMINAL_THREE_PAIR_MINOR_SUBCOVER_REJECTION_ONLY",
+  "semantic_digest_sha256": "dea028466f41a6a186fbcb09f7b5ba8a74d12834dc7f348d0a1f5f04abf4bcf7",
+  "three_pair_minor_common_zero": {
+    "Q_column_order": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4",
+      "Q5"
+    ],
+    "all_three_pair_minors_vanish": true,
+    "all_three_pair_restrictions_fail_to_span_e_w": true,
+    "chart_function_values": {
+      "g2": "1/96",
+      "g3": "1/256",
+      "g4": "0"
+    },
+    "exact_positive_rational_slice_point": {
+      "u12": "1",
+      "u13": "1/2",
+      "u15": "1",
+      "u44": "2",
+      "u45": "2"
+    },
+    "full_M0_has_no_escape_at_this_point": true,
+    "full_M0_plus_all_six_commutators_rank": 131,
+    "full_M0_rank": 131,
+    "g4_eq120_base_sources": [
+      147,
+      548
+    ],
+    "lies_in_D_g2_intersect_D_g3": true,
+    "lies_on_V_g4": true,
+    "pair_minor_records": {
+      "32_120": {
+        "Q_candidate_plus_star_rank": 2,
+        "Q_candidate_rank": 1,
+        "Q_column_order": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4",
+          "Q5"
+        ],
+        "Q_schur_rows": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "5/1312",
+            "15/164",
+            "-15/82",
+            "-5/16",
+            "0"
+          ]
+        ],
+        "Q_star_is_not_spanned": true,
+        "Q_star_rank": 1,
+        "all_C_Q5_coefficients_are_zero": true,
+        "candidate_plus_target_e_w_rank": 2,
+        "candidate_rank": 1,
+        "joint_sources": [
+          32,
+          120
+        ],
+        "pair_minor_D_AB": "0",
+        "restriction_column_order": [
+          "h",
+          "w",
+          "q5"
+        ],
+        "restriction_rows_ABC": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-5/5248",
+            "-5/1312",
+            "0"
+          ]
+        ],
+        "row_ids": [
+          "CPOBC:cpobc-relation-acd16446c5b21a075015:eq103",
+          "CPOBC:cpobc-relation-4af3986a008d2a9f404e:eq103"
+        ],
+        "target_e_w_is_spanned": false,
+        "target_e_w_rank": 1
+      },
+      "424_544": {
+        "Q_candidate_plus_star_rank": 2,
+        "Q_candidate_rank": 1,
+        "Q_column_order": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4",
+          "Q5"
+        ],
+        "Q_schur_rows": [
+          [
+            "25/1312",
+            "-45/1312",
+            "45/164",
+            "-15/16",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "Q_star_is_not_spanned": true,
+        "Q_star_rank": 1,
+        "all_C_Q5_coefficients_are_zero": true,
+        "candidate_plus_target_e_w_rank": 2,
+        "candidate_rank": 1,
+        "joint_sources": [
+          424,
+          544
+        ],
+        "pair_minor_D_AB": "0",
+        "restriction_column_order": [
+          "h",
+          "w",
+          "q5"
+        ],
+        "restriction_rows_ABC": [
+          [
+            "-15/5248",
+            "-5/1312",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "row_ids": [
+          "CPOBC:cpobc-relation-1ec3ed17390040921622:eq103",
+          "CPOBC:cpobc-relation-0ffb84f57be00d27455d:eq103"
+        ],
+        "target_e_w_is_spanned": false,
+        "target_e_w_rank": 1
+      },
+      "8_14": {
+        "Q_candidate_plus_star_rank": 2,
+        "Q_candidate_rank": 1,
+        "Q_column_order": [
+          "Q1",
+          "Q2",
+          "Q3",
+          "Q4",
+          "Q5"
+        ],
+        "Q_schur_rows": [
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-1/8",
+            "9/16",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "Q_star_is_not_spanned": true,
+        "Q_star_rank": 1,
+        "all_C_Q5_coefficients_are_zero": true,
+        "candidate_plus_target_e_w_rank": 2,
+        "candidate_rank": 1,
+        "joint_sources": [
+          8,
+          14
+        ],
+        "pair_minor_D_AB": "0",
+        "restriction_column_order": [
+          "h",
+          "w",
+          "q5"
+        ],
+        "restriction_rows_ABC": [
+          [
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-3/128",
+            "1/16",
+            "0"
+          ]
+        ],
+        "row_ids": [
+          "CPOBC:cpobc-relation-3070531c43a3aae506e5:eq103",
+          "CPOBC:cpobc-relation-d5e82a55e59f5b8ad09a:eq103"
+        ],
+        "target_e_w_is_spanned": false,
+        "target_e_w_rank": 1
+      }
+    },
+    "pivot_rank": 127,
+    "proposed_pair_minor_opens_do_not_cover_D_g2_or_D_g3": true,
+    "scope": "rejects only the three recorded two-row repair-minor opens as a subcover; it does not reject D(g2), D(g3), D(g4), or full M0",
+    "star_schur_rows_c12_c13_c14": [
+      [
+        "1/24",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1/64",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "verdict": "SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL",
+  "witness": null
+}

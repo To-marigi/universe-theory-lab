@@ -1,0 +1,378 @@
+{
+  "aligned_chart_certificate": {
+    "Eq120_effect": "all three exterior rows vanish identically on g2=g3=g4=0",
+    "automatic_safe_remainder": {
+      "all_six_commutator_checks": {
+        "c12": "0",
+        "c13": "0",
+        "c14": "0",
+        "c23": "0",
+        "c24": "0",
+        "c34": "0"
+      },
+      "consequence": "r1=r2=r3=r4=1, hence delta_Q=0",
+      "locus": "V(g2,g3,g4,f)",
+      "needs_no_repair_rows": true
+    },
+    "cover_partition": {
+      "aligned_nonunit_locus": "V(g2,g3,g4) intersect D(f)",
+      "automatic_remainder": "V(g2,g3,g4,f)",
+      "complete_set_theoretic_argument": "either some g_k is nonzero, or every g_k is zero; in the latter case either f is nonzero (aligned obligation) or f=0 (delta_Q=0)",
+      "non_aligned_opens": [
+        "D(g2)",
+        "D(g3)",
+        "D(g4)"
+      ],
+      "partition_identity_checks": [
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "exact_localized_obligation": {
+      "general_sufficient_conditions": [
+        "directly exhibit all three target coordinate rows in Row(T_L)",
+        "or exhibit a localized-unit 5x5 minor, which is stronger than needed",
+        "or give local identities plus a certified unit-ideal/Bezout cover"
+      ],
+      "necessary_and_sufficient_condition": "e_w2,e_w3,e_w4 all belong to the row module of the five-column aligned restriction matrix over S_L",
+      "pure_quotient_minor_sufficient_condition": {
+        "adjugate_identity_difference": [
+          "0",
+          "0",
+          "0"
+        ],
+        "minor": "det of their 3x3 (B2,B3,B4) block",
+        "premise": "three selected rows have A=C=0",
+        "required_unit_test": "the quotient minor is a unit in S_L"
+      },
+      "rank_form_over_each_residue_field": "rank(T_L)=rank(T_L with e_w2,e_w3,e_w4 adjoined); this pointwise test is not by itself a global module certificate",
+      "ring": "S_L=(R/(g2,g3,g4))[f^-1]"
+    },
+    "generic_Schur_row_restriction": {
+      "A": "b1*rho1 + b2*rho2 + b3*rho3 + b4*rho4",
+      "B2_B3_B4": [
+        "b2*rho2",
+        "b3*rho3",
+        "b4*rho4"
+      ],
+      "C": "rho5",
+      "columns": [
+        "A",
+        "B2",
+        "B3",
+        "B4",
+        "C"
+      ],
+      "restricted_equation": "A*h+B2*w2+B3*w3+B4*w4+C*q5",
+      "symbolic_difference": "0"
+    },
+    "locus": "L=V(g2,g3,g4) intersect D(f), with f=r1-1",
+    "parameterisation": {
+      "Q1": "x1=b1*h",
+      "Q2": "x2=b2*(h+w2)",
+      "Q3": "x3=b3*(h+w3)",
+      "Q4": "x4=b4*(h+w4)",
+      "Q5": "q5 is independent"
+    },
+    "spectral_difference": "delta=f*b",
+    "star_commutators": {
+      "formula": "c1i=f*b1*b_i*w_i for i=2,3,4",
+      "symbolic_difference_checks": {
+        "c12": "0",
+        "c13": "0",
+        "c14": "0"
+      },
+      "unit_equivalence": "on D(f), commutativity is equivalent to w2=w3=w4=0"
+    }
+  },
+  "claim_boundary": "this exact successor derives the fail-closed row-module obligations on the three Eq120 ratio opens and the aligned remainder after the global 127-column unit elimination; it certifies no repair row, no localized repair minor, no unit-ideal cover, no global star membership, no noncommutative witness and no SR2-V terminal",
+  "date": "2026-08-02",
+  "dimension": 2,
+  "field": "Q",
+  "finite_scope": "n<=4",
+  "gates": {
+    "Eq120_kernel_is_reconstructed_on_all_three_g_charts": true,
+    "Q5_coupling_is_fail_closed": true,
+    "aligned_three_obstruction_coordinates_are_derived": true,
+    "each_chart_commutator_is_a_unit_times_gk_times_w": true,
+    "f_zero_remainder_is_automatically_safe": true,
+    "four_loci_plus_automatic_remainder_are_complete": true,
+    "frozen_127_column_unit_minor_is_bound": true,
+    "frozen_Eq120_four_locus_cover_is_bound": true,
+    "generic_five_column_Schur_restriction_is_exact": true,
+    "multivariate_gcd_is_not_promoted_to_unit_ideal": true,
+    "visible_reference_change_only_rescales_pair_minors_by_units": true
+  },
+  "input_artifacts": {
+    "results/v0.4.2_sr2v_transverse_base_cover_ablation.json": {
+      "raw_sha256": "c6ab35fcd0deb2a0045a50a0740f80664db66bdaafeff60b98822a8ccf944565",
+      "semantic_digest_sha256": "005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e"
+    },
+    "results/v0.4.2_sr2v_transverse_common_core_unit_minor.json": {
+      "raw_sha256": "98929d1b16dfc1e0e475279194bd572f881afad2f84b52154a19ae6f5f8fd8c5",
+      "semantic_digest_sha256": "59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97"
+    }
+  },
+  "non_aligned_chart_certificate": {
+    "Eq120_rows": {
+      "formula": "E_ij=g_i*(z_j-z1)-g_j*(z_i-z1)",
+      "forward_parametrisation_checks": {
+        "E23": "0",
+        "E24": "0",
+        "E34": "0"
+      }
+    },
+    "Q5_fail_closed_audit": {
+      "AB_minor": "1",
+      "conclusion": "a unit AB minor does not isolate w when either selected row has a Q5 coefficient; require C=0 or a genuine three-column module identity",
+      "kernel_generator_h_w_q5": [
+        "-1",
+        "-1",
+        "1"
+      ],
+      "naive_rows_ABC": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "rank_after_adjoining_e_w": 3,
+      "row_rank": 2
+    },
+    "all_six_commutators_on_the_chart_kernel": {
+      "formula": "c_ij=(b_i*b_j/b1)*(r_i-r_j)*w",
+      "symbolic_difference_checks": {
+        "c12": "0",
+        "c13": "0",
+        "c14": "0",
+        "c23": "0",
+        "c24": "0",
+        "c34": "0"
+      }
+    },
+    "exact_localized_obligation": {
+      "Q5_free_pair_sufficient_condition": {
+        "identity": "A_r*ell_s-A_s*ell_r=D_rs*w",
+        "identity_difference": "0",
+        "minor": "D_rs=A_r*B_s-A_s*B_r",
+        "premise": "C_r=C_s=0",
+        "required_unit_test": "D_rs is a unit in S_k"
+      },
+      "covered_minor_family_condition": "for an ideal I of valid repair minors, require I*S_k=S_k; equivalently certify a Bezout identity after localization, or (I:g_k^infinity)=R after the declared base units are inverted",
+      "direct_certificate": "exhibit coefficients p_r in S_k with sum p_r*(A_r,B_r,C_r)=e_w",
+      "necessary_and_sufficient_condition": "e_w=(0,1,0) belongs to Row_{S_k}(T_k); equivalently every Schur-kernel vector (h,w,q5) has w=0",
+      "restriction_matrix": "T_k has rows (A_r,B_r,C_r) for all Schur(M0) rows",
+      "ring_on_Uk": "S_k=R[g_k^-1] with every declared base unit already inverted",
+      "three_row_sufficient_condition": {
+        "adjugate_w_identity_difference": "0",
+        "minor": "det([[A_i,B_i,C_i]]_{i=1}^3)",
+        "required_unit_test": "the 3x3 determinant is a unit in S_k"
+      }
+    },
+    "gcd_fail_closed_audit": {
+      "Groebner_basis_contains_one": false,
+      "common_torus_zero": [
+        "u=1",
+        "v=1"
+      ],
+      "conclusion": "multivariate gcd 1 is not a unit-ideal or cover certificate",
+      "gcd": "1",
+      "polynomials": [
+        "u-1",
+        "v-1"
+      ],
+      "ring": "QQ[u^+-1,v^+-1]"
+    },
+    "generic_Schur_row_restriction": {
+      "A": "b1*r1*rho1 - b1*rho1 + b2*r2*rho2 - b2*rho2 + b3*r3*rho3 - b3*rho3 + b4*r4*rho4 - b4*rho4",
+      "B": "(b1*rho1 + b2*rho2 + b3*rho3 + b4*rho4)/b1",
+      "C": "rho5",
+      "restricted_equation": "A*h+B*w+C*q5",
+      "row": "rho=(rho1,rho2,rho3,rho4,rho5)",
+      "symbolic_difference": "0"
+    },
+    "normalization": {
+      "diagonal_units": "b_i",
+      "ratio_differences": {
+        "g2": "r2-r1",
+        "g3": "r3-r1",
+        "g4": "r4-r1"
+      },
+      "ratios": "r_i=a_i/b_i",
+      "spectral_difference": "delta_i=b_i*(r_i-1)",
+      "upper_right_coordinates": "x_i=b_i*z_i",
+      "visible_vector": "v_i=b_i/b1"
+    },
+    "three_non_aligned_charts": [
+      {
+        "chart": "U2=D(g2)",
+        "commutativity_obstruction_coordinate": "w",
+        "localized_unit": "g2=r2-r1",
+        "parameter_reconstruction": {
+          "h": "(z2-z1)/g2",
+          "reverse_numerator_identity_checks": {
+            "Q1": "0",
+            "Q2": "0",
+            "Q3": "0",
+            "Q4": "0"
+          },
+          "w": "b1*(z1-(r1-1)*h)",
+          "x_Q1_through_Q4": "delta*h+(b/b1)*w"
+        },
+        "target_commutator": "c12",
+        "target_commutator_on_the_chart_kernel": "-b2*w*(-r1 + r2)",
+        "unit_equivalence": "on D(g2), b2 and g2 are units, so c12=0 iff w=0"
+      },
+      {
+        "chart": "U3=D(g3)",
+        "commutativity_obstruction_coordinate": "w",
+        "localized_unit": "g3=r3-r1",
+        "parameter_reconstruction": {
+          "h": "(z3-z1)/g3",
+          "reverse_numerator_identity_checks": {
+            "Q1": "0",
+            "Q2": "0",
+            "Q3": "0",
+            "Q4": "0"
+          },
+          "w": "b1*(z1-(r1-1)*h)",
+          "x_Q1_through_Q4": "delta*h+(b/b1)*w"
+        },
+        "target_commutator": "c13",
+        "target_commutator_on_the_chart_kernel": "-b3*w*(-r1 + r3)",
+        "unit_equivalence": "on D(g3), b3 and g3 are units, so c13=0 iff w=0"
+      },
+      {
+        "chart": "U4=D(g4)",
+        "commutativity_obstruction_coordinate": "w",
+        "localized_unit": "g4=r4-r1",
+        "parameter_reconstruction": {
+          "h": "(z4-z1)/g4",
+          "reverse_numerator_identity_checks": {
+            "Q1": "0",
+            "Q2": "0",
+            "Q3": "0",
+            "Q4": "0"
+          },
+          "w": "b1*(z1-(r1-1)*h)",
+          "x_Q1_through_Q4": "delta*h+(b/b1)*w"
+        },
+        "target_commutator": "c14",
+        "target_commutator_on_the_chart_kernel": "-b4*w*(-r1 + r4)",
+        "unit_equivalence": "on D(g4), b4 and g4 are units, so c14=0 iff w=0"
+      }
+    ],
+    "visible_reference_invariance": {
+      "conclusion": "changing the visible-vector reference rescales B and every AB pair minor by a declared diagonal unit; Q2/Q3/Q4 relabeling creates no new repair divisor or chart",
+      "records": [
+        {
+          "B_scaling": "B^(1)=(b1/b1)*B^(1)",
+          "B_scaling_difference": "0",
+          "obstruction_coordinate": "w_1=(b1/b1)*w_1",
+          "pair_minor_scaling": "D_rs^(1)=(b1/b1)*D_rs^(1)",
+          "pair_minor_scaling_difference": "0",
+          "parametrisation_difference_checks": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "reference": "Q1",
+          "scaling_is_a_declared_unit": true
+        },
+        {
+          "B_scaling": "B^(2)=(b1/b2)*B^(1)",
+          "B_scaling_difference": "0",
+          "obstruction_coordinate": "w_2=(b2/b1)*w_1",
+          "pair_minor_scaling": "D_rs^(2)=(b1/b2)*D_rs^(1)",
+          "pair_minor_scaling_difference": "0",
+          "parametrisation_difference_checks": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "reference": "Q2",
+          "scaling_is_a_declared_unit": true
+        },
+        {
+          "B_scaling": "B^(3)=(b1/b3)*B^(1)",
+          "B_scaling_difference": "0",
+          "obstruction_coordinate": "w_3=(b3/b1)*w_1",
+          "pair_minor_scaling": "D_rs^(3)=(b1/b3)*D_rs^(1)",
+          "pair_minor_scaling_difference": "0",
+          "parametrisation_difference_checks": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "reference": "Q3",
+          "scaling_is_a_declared_unit": true
+        },
+        {
+          "B_scaling": "B^(4)=(b1/b4)*B^(1)",
+          "B_scaling_difference": "0",
+          "obstruction_coordinate": "w_4=(b4/b1)*w_1",
+          "pair_minor_scaling": "D_rs^(4)=(b1/b4)*D_rs^(1)",
+          "pair_minor_scaling_difference": "0",
+          "parametrisation_difference_checks": [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "reference": "Q4",
+          "scaling_is_a_declared_unit": true
+        }
+      ]
+    }
+  },
+  "passed": true,
+  "predecessor_bindings": {
+    "Eq120_four_locus_cover_verdict": "SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL",
+    "common_core_unit_minor_verdict": "SR2V_TRANSVERSE_COMMON_CORE_GLOBAL_UNIT_MINOR_CERTIFIED_NONTERMINAL",
+    "global_non_Q_elimination_shape": [
+      127,
+      127
+    ],
+    "remaining_Schur_columns": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4",
+      "Q5"
+    ],
+    "uses_no_Eq113_or_Eq139_rows_in_the_unit_minor": true
+  },
+  "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
+  "repair_certificate_contract": {
+    "U2": "prove e_w in Row(T_2) over R[g2^-1] or give an exact escape",
+    "U3": "prove e_w in Row(T_3) over R[g3^-1] or give an exact escape",
+    "U4": "prove e_w in Row(T_4) over R[g4^-1] or give an exact escape",
+    "accepted_global_proof_forms": [
+      "direct localized row-module identities with only declared-unit denominators",
+      "localized-unit minors whose hypotheses include the Q5 column",
+      "a finite chart family with an exact saturation/unit-ideal or Bezout cover"
+    ],
+    "aligned": "prove e_w2,e_w3,e_w4 in Row(T_L) over (R/(g2,g3,g4))[f^-1] or give an exact escape",
+    "rejected_promotions": [
+      "finite rational or finite-field rank agreement",
+      "a minor nonzero at one or finitely many points",
+      "multivariate gcd equal to one without a unit-ideal certificate",
+      "an AB minor that ignores nonzero Q5 coefficients"
+    ]
+  },
+  "schema_version": "final-theory-v042-sr2v-transverse-eq120-schur-chart-obligations-v1",
+  "search_terminal": "NOT_A_SEARCH_TERMINAL_REPAIR_ROW_MODULE_MEMBERSHIP_UNRESOLVED",
+  "semantic_digest_sha256": "56bc0f94aff5a87e109d3fd54e343ebe36076c889279c5740ed3e92c539048c8",
+  "verdict": "SR2V_TRANSVERSE_EQ120_SCHUR_CHART_OBLIGATIONS_CERTIFIED_NONTERMINAL",
+  "witness": null
+}

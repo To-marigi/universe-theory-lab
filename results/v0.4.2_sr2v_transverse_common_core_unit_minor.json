@@ -1,0 +1,1022 @@
+{
+  "claim_boundary": "this proves a global rank-127 common-core minor and a lossless five-Q-column reduction; it does not yet prove that the three star commutator rows lie in the remaining Schur row module and therefore does not issue an SR2-V terminal",
+  "date": "2026-08-02",
+  "dimension": 2,
+  "field": "Q",
+  "finite_scope": "n<=4",
+  "gates": {
+    "CSG_support_has_a_unique_perfect_matching": true,
+    "common_core_uses_no_Eq113_or_Eq139_rows": true,
+    "determinant_is_a_global_localized_unit": true,
+    "direct_reference_determinant_matches_the_symbolic_formula": true,
+    "fixed_non_Q_minor_is_127_by_127": true,
+    "the_five_extra_independent_bottom_edges_vanish_identically": true
+  },
+  "input_artifacts": {
+    "results/v0.4.2_sr2v_bottom_msr_global_csg.json": {
+      "raw_sha256": "03cb9b5a2f3b5fedc8ae8abca25fae40886e43aa1064a060f5d6dbaf93467777",
+      "semantic_digest_sha256": "d7978cac841bf725baa03df99aa661183a5c96367a2979b245b978f7d5dd08a4"
+    },
+    "results/v0.4.2_sr2v_scalar_lattice.json": {
+      "raw_sha256": "5989b3685c33e30a6ed3a39896cab0473043f847183de935f4b7c0f76814d3b5",
+      "semantic_digest_sha256": "155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9"
+    }
+  },
+  "next_gate": {
+    "ambient_columns_after_global_elimination": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4",
+      "Q5"
+    ],
+    "branch_count_if_common_core_succeeds": 0,
+    "task": "compute the common-core Schur row module on these five columns and prove that it contains the three globally minimal star commutator rows",
+    "why": "Eq113 and Eq139 were not used in the globally invertible block"
+  },
+  "passed": true,
+  "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
+  "schema_version": "final-theory-v042-sr2v-transverse-common-core-unit-minor-v1",
+  "search_terminal": "NOT_A_SEARCH_TERMINAL_FIVE_Q_COLUMN_SCHUR_PROBLEM_REMAINS",
+  "semantic_digest_sha256": "59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97",
+  "unit_minor_certificate": {
+    "CSG_base_safe_symbolic_supergraph_edges": 554,
+    "alternating_digraph_is_acyclic": true,
+    "bottom_CSG_identically_vanishing_edge_digest_sha256": "ee1154a8073cddaca2658debeccb1631f60834f7696b3931cd8e834efd12f1ea",
+    "bottom_CSG_identically_vanishing_edges": [
+      {
+        "block": "fixed_vector_GC",
+        "column": 84,
+        "independent_diagonal_formula": "-b96*(-b125*b127 + b34*b56)",
+        "offset": 0,
+        "row": 83,
+        "variable": "cpobc-transition-orbit-aab3b9a8363b9460cff0"
+      },
+      {
+        "block": "fixed_vector_GC",
+        "column": 92,
+        "independent_diagonal_formula": "-a87*(-b125*b127 + b34*b56)",
+        "offset": 0,
+        "row": 83,
+        "variable": "cpobc-transition-orbit-c30299e06d5c1a1ef226"
+      },
+      {
+        "block": "fixed_vector_GC",
+        "column": 54,
+        "independent_diagonal_formula": "b127*(-b100*b36 + b29*b37)",
+        "offset": 6,
+        "row": 87,
+        "variable": "cpobc-transition-orbit-725eaa7cb4c6fcc23d4d"
+      },
+      {
+        "block": "fixed_vector_GC",
+        "column": 97,
+        "independent_diagonal_formula": "b100*b127*b97 - b34*b39*b56",
+        "offset": 9,
+        "row": 88,
+        "variable": "cpobc-transition-orbit-c6cc3608d029c19c02c9"
+      },
+      {
+        "block": "fixed_vector_GC",
+        "column": 42,
+        "independent_diagonal_formula": "-b56*(-b116*b38 + b35*b81)",
+        "offset": 21,
+        "row": 93,
+        "variable": "cpobc-transition-orbit-50fb01f66cc1cf4a7737"
+      }
+    ],
+    "column_selection": [
+      "cpobc-transition-orbit-00e3f260ed14f8d323f1",
+      "cpobc-transition-orbit-021863f6c5f84a5b6801",
+      "cpobc-transition-orbit-02acf2b1c993d98b7133",
+      "cpobc-transition-orbit-033cb4be4bc5e068b734",
+      "cpobc-transition-orbit-05b265c4c11b96cd7638",
+      "cpobc-transition-orbit-09a8d1b8a777eed84f27",
+      "cpobc-transition-orbit-0c11b662b524e49c7878",
+      "cpobc-transition-orbit-0e46d46cc5b194fe928e",
+      "cpobc-transition-orbit-118f0dd21b894bcb09e8",
+      "cpobc-transition-orbit-135b834fc5db9a0a0657",
+      "cpobc-transition-orbit-13e56855045c5e712525",
+      "cpobc-transition-orbit-14747b8142aea693e693",
+      "cpobc-transition-orbit-14a352a0e1aa72c4a208",
+      "cpobc-transition-orbit-1a8f8fe75eb556291b09",
+      "cpobc-transition-orbit-1ce7842933d8ffa2e3bd",
+      "cpobc-transition-orbit-1cf71a48cd05d50fdcca",
+      "cpobc-transition-orbit-1e16e185933d50ee63a0",
+      "cpobc-transition-orbit-1f6dc886d7104325ed26",
+      "cpobc-transition-orbit-1ffa257f133af8ac5d41",
+      "cpobc-transition-orbit-20042da00d186fc9b90f",
+      "cpobc-transition-orbit-221317868d1ec1367b7b",
+      "cpobc-transition-orbit-24bcd95969fc6dc31c0d",
+      "cpobc-transition-orbit-24f4e7495e42fdb88981",
+      "cpobc-transition-orbit-2bfe4259b3303a0fc4f2",
+      "cpobc-transition-orbit-2e9489a29cd7f1dcf43e",
+      "cpobc-transition-orbit-2edfbf8aa31df0393257",
+      "cpobc-transition-orbit-2fe55a94a6eb4209ac89",
+      "cpobc-transition-orbit-322233def63d300522f2",
+      "cpobc-transition-orbit-328a2147fc7139a468ab",
+      "cpobc-transition-orbit-35ceff949eb5ad404757",
+      "cpobc-transition-orbit-3c1374e8b4f0f7deebce",
+      "cpobc-transition-orbit-3e8afe2525d32da108a4",
+      "cpobc-transition-orbit-42b6782fe542ab2e9b05",
+      "cpobc-transition-orbit-44aed6fdc8c82794cb65",
+      "cpobc-transition-orbit-4680d526f3e1a66f3e9a",
+      "cpobc-transition-orbit-480001e813b6a8df9bde",
+      "cpobc-transition-orbit-4963cb39781e9b264bf0",
+      "cpobc-transition-orbit-4c7d9b47e7db31a2f105",
+      "cpobc-transition-orbit-4f0633d50c52cc6f863c",
+      "cpobc-transition-orbit-4f90256c3f960072c075",
+      "cpobc-transition-orbit-4f90919f2171f7dede3e",
+      "cpobc-transition-orbit-50744ddb4d41d46effa1",
+      "cpobc-transition-orbit-50fb01f66cc1cf4a7737",
+      "cpobc-transition-orbit-572d32cb6a7f7a77d126",
+      "cpobc-transition-orbit-5ec7b318bba439bee678",
+      "cpobc-transition-orbit-5fd8a7aee802a71f6d4b",
+      "cpobc-transition-orbit-603f33032dcd7628d7e6",
+      "cpobc-transition-orbit-62a5e784c5d01b928183",
+      "cpobc-transition-orbit-660a04d5a95e7f32ce73",
+      "cpobc-transition-orbit-66c105c8686d1dd540e8",
+      "cpobc-transition-orbit-6c344f4bcc88004609a5",
+      "cpobc-transition-orbit-6e062491d0be82ba52f6",
+      "cpobc-transition-orbit-702aaf10b2c915c19ab2",
+      "cpobc-transition-orbit-724886441537c84f38e7",
+      "cpobc-transition-orbit-725eaa7cb4c6fcc23d4d",
+      "cpobc-transition-orbit-73ee7ec1958ea20309f4",
+      "cpobc-transition-orbit-76354ebabc57255c5a64",
+      "cpobc-transition-orbit-77da9d98600f42d61c83",
+      "cpobc-transition-orbit-781ed720ac4886bb4881",
+      "cpobc-transition-orbit-79234c8570bced8f696b",
+      "cpobc-transition-orbit-792fade47daa0c95cc46",
+      "cpobc-transition-orbit-7a50fe6cbe9be3ccc836",
+      "cpobc-transition-orbit-7c34e2705dd7a7da4013",
+      "cpobc-transition-orbit-7cb4aeb9a737d4648226",
+      "cpobc-transition-orbit-81de110aa28c9b3e2f3d",
+      "cpobc-transition-orbit-821f49d80711c6c3cd4e",
+      "cpobc-transition-orbit-829b87ec0397af66e4f0",
+      "cpobc-transition-orbit-83af550a9d7e565aeeb5",
+      "cpobc-transition-orbit-863a9bd90f9d39e401c9",
+      "cpobc-transition-orbit-8abdf9dfa29b8d1441c5",
+      "cpobc-transition-orbit-8c2a5e92048199acdf30",
+      "cpobc-transition-orbit-8f89534e9699d4b60a83",
+      "cpobc-transition-orbit-912e9a73e629bd2bd97b",
+      "cpobc-transition-orbit-92c3b00eb3588bf835c0",
+      "cpobc-transition-orbit-92dc21cb80d8c56a73bf",
+      "cpobc-transition-orbit-983362874bc6f5900920",
+      "cpobc-transition-orbit-9935bc41706b8cb46d09",
+      "cpobc-transition-orbit-9985753ad535b09543f8",
+      "cpobc-transition-orbit-9ebbb147ab4c496e85c3",
+      "cpobc-transition-orbit-9ff04b14a6a5144f9cde",
+      "cpobc-transition-orbit-a2e7d5d1f236cc9f11bd",
+      "cpobc-transition-orbit-a39f0b6b0562d39d8ff3",
+      "cpobc-transition-orbit-a8735d60c851d2c15719",
+      "cpobc-transition-orbit-a9d316ed9eea0710f2d0",
+      "cpobc-transition-orbit-aab3b9a8363b9460cff0",
+      "cpobc-transition-orbit-ab3dd7af1184608f2cac",
+      "cpobc-transition-orbit-abdf5cd989e6572c3e23",
+      "cpobc-transition-orbit-b75c3f4edb0b6b7b050a",
+      "cpobc-transition-orbit-baafeb4275a21d07bac0",
+      "cpobc-transition-orbit-c05237b8de19729ea411",
+      "cpobc-transition-orbit-c1362589f8c6be68d74c",
+      "cpobc-transition-orbit-c14a3f6b73fbb4153633",
+      "cpobc-transition-orbit-c30299e06d5c1a1ef226",
+      "cpobc-transition-orbit-c30e4a4e7f5d04230080",
+      "cpobc-transition-orbit-c3a5cbc85747dbe8b9e8",
+      "cpobc-transition-orbit-c454591c34e8d03181ef",
+      "cpobc-transition-orbit-c56a9533c54e735f2ef9",
+      "cpobc-transition-orbit-c6cc3608d029c19c02c9",
+      "cpobc-transition-orbit-c80821324d0f87cb927b",
+      "cpobc-transition-orbit-cdb7132cf2abc92dbdd9",
+      "cpobc-transition-orbit-cdf3c3ff87768a162e5a",
+      "cpobc-transition-orbit-cdfc71c75ed77da7d424",
+      "cpobc-transition-orbit-d0cb1ad71da4a5c49263",
+      "cpobc-transition-orbit-d1f79270d04af8745d36",
+      "cpobc-transition-orbit-d243760f268b3217c8aa",
+      "cpobc-transition-orbit-d441a75cce471a87b103",
+      "cpobc-transition-orbit-d6e558ececccf9f88035",
+      "cpobc-transition-orbit-d94ea641fd612d052438",
+      "cpobc-transition-orbit-da8004ea942f479f0feb",
+      "cpobc-transition-orbit-dc84b1cd4588f40679b6",
+      "cpobc-transition-orbit-dd5911a6a6514aee11f9",
+      "cpobc-transition-orbit-dda1fce16b861c364e33",
+      "cpobc-transition-orbit-e072ba8f219cdc7a6cd0",
+      "cpobc-transition-orbit-e0fd6c880f27f4068310",
+      "cpobc-transition-orbit-e139e4d413e98c372def",
+      "cpobc-transition-orbit-e2d5606fac0808ef44c8",
+      "cpobc-transition-orbit-e673275325f2cb6ee99b",
+      "cpobc-transition-orbit-e6b20720d6b9c6fab03b",
+      "cpobc-transition-orbit-e8310ddb51cd387a3feb",
+      "cpobc-transition-orbit-e86fda9f3c53c904b72e",
+      "cpobc-transition-orbit-eba2edac5c3fa2800b3c",
+      "cpobc-transition-orbit-ef3a65de93c87020ac8b",
+      "cpobc-transition-orbit-f028c08c093f1786f726",
+      "cpobc-transition-orbit-f1c4030ab10488e60e8c",
+      "cpobc-transition-orbit-f7298176e2ac36e3beb0",
+      "cpobc-transition-orbit-f9261894d9abb92e0107",
+      "cpobc-transition-orbit-fa434ca56a37e5e01bd5"
+    ],
+    "column_selection_digest_sha256": "a7d10f686478c127b89d69fda1cb9ee6768995b5c60b7b1d04dadc58eaee50a4",
+    "common_core": "raw CPOBC + fixed-vector GC + reachable-state MSR",
+    "determinant_formula": {
+      "bottom_lambda_exponents": {
+        "lambda(1,0)": -67,
+        "lambda(1,1)": 58,
+        "lambda(2,0)": -69,
+        "lambda(2,1)": 18,
+        "lambda(2,2)": 20,
+        "lambda(3,0)": -51,
+        "lambda(3,1)": 4,
+        "lambda(3,2)": 4,
+        "lambda(3,3)": 2
+      },
+      "coefficient": "-1",
+      "display": "-s7*s13*s22*s25*s28*s29*s31*s32*s36^2*s42*s44^6*s47/(s30*s39*s45) * lambda(1,1)^58*lambda(2,1)^18*lambda(2,2)^20*lambda(3,1)^4*lambda(3,2)^4*lambda(3,3)^2/(lambda(1,0)^67*lambda(2,0)^69*lambda(3,0)^51)",
+      "is_a_unit_on_the_declared_base": true,
+      "q5_exponent": 0,
+      "unit_reason": "every s_j is a Laurent coordinate and every displayed lambda factor is inverted on the normalized finite-CSG principal open",
+      "upper_torus_exponent_digest_sha256": "8477c3abdebbf2bffbccd054fc3d0ff6853f14b5c07dfe0a81aee6530ea5d1a6",
+      "upper_torus_exponents_s0_through_s48": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        -1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        1,
+        0,
+        6,
+        -1,
+        0,
+        1,
+        0
+      ]
+    },
+    "excluded_Q_columns": [
+      "cpobc-transition-orbit-74b3519240acc75a0c55",
+      "cpobc-transition-orbit-9fb0da3749caf7b75239",
+      "cpobc-transition-orbit-ab12f7513b8a36c56a4f",
+      "cpobc-transition-orbit-9db8e170556712ebafa5",
+      "Q_5_EXTERNAL"
+    ],
+    "explicitly_excluded_blocks": [
+      "Eq113_derived",
+      "Eq113_literal",
+      "Eq139"
+    ],
+    "global_conclusion": "the selected non-Q block is invertible at every point of the full 54-dimensional transverse base; the common-core kernel has dimension at most five and is determined by its Q1,...,Q5 coordinates",
+    "independent_diagonal_symbolic_support_edges": 559,
+    "matched_coefficient_records_digest_sha256": "0a7f00ead9aba9fda77dfa39e8f550b9d5eb8c009c25e1553c227b6af575272c",
+    "matched_coefficient_type_counts": {
+      "bottom_only": 112,
+      "constant": 1,
+      "contains_upper_diagonal_symbols": 14
+    },
+    "matching_permutation_inversions": 3918,
+    "matching_permutation_is_even": true,
+    "matrix_shape": [
+      127,
+      127
+    ],
+    "perfect_matching": [
+      34,
+      96,
+      124,
+      15,
+      85,
+      102,
+      74,
+      39,
+      27,
+      35,
+      115,
+      78,
+      36,
+      100,
+      83,
+      28,
+      57,
+      91,
+      20,
+      58,
+      88,
+      75,
+      1,
+      103,
+      5,
+      45,
+      8,
+      18,
+      79,
+      86,
+      68,
+      53,
+      9,
+      51,
+      104,
+      24,
+      42,
+      40,
+      72,
+      107,
+      26,
+      125,
+      44,
+      109,
+      14,
+      69,
+      59,
+      3,
+      119,
+      65,
+      82,
+      0,
+      21,
+      13,
+      94,
+      110,
+      80,
+      66,
+      10,
+      111,
+      118,
+      89,
+      63,
+      50,
+      60,
+      17,
+      64,
+      67,
+      16,
+      56,
+      117,
+      46,
+      126,
+      114,
+      73,
+      116,
+      108,
+      30,
+      97,
+      25,
+      31,
+      33,
+      101,
+      121,
+      52,
+      84,
+      105,
+      29,
+      93,
+      92,
+      32,
+      6,
+      7,
+      112,
+      81,
+      4,
+      77,
+      70,
+      48,
+      11,
+      120,
+      98,
+      62,
+      123,
+      38,
+      37,
+      49,
+      61,
+      106,
+      2,
+      22,
+      12,
+      43,
+      113,
+      87,
+      23,
+      71,
+      90,
+      76,
+      54,
+      122,
+      55,
+      95,
+      99,
+      47,
+      19,
+      41
+    ],
+    "perfect_matching_digest_sha256": "c7c003365b01f861aa4d484a9fc5b34fc80f59e36088857142a1f156c7a049ac",
+    "perfect_matching_is_unique": true,
+    "reference_cross_check": {
+      "couplings": [
+        "3",
+        "5",
+        "7",
+        "11"
+      ],
+      "direct_and_symbolic_values_agree": true,
+      "direct_exact_determinant": "-1825392246246337890625/35285261221157874094964374278630269653193857744860446176891688917551800280236318873907105176395184543666254834850228400478655868813925377501551336095744",
+      "direct_exact_rank": 127,
+      "q5": "13/4",
+      "symbolic_unit_formula_value": "-1825392246246337890625/35285261221157874094964374278630269653193857744860446176891688917551800280236318873907105176395184543666254834850228400478655868813925377501551336095744"
+    },
+    "row_block_counts": {
+      "CPOBC": 83,
+      "fixed_vector_GC": 20,
+      "reachable_state_MSR": 24
+    },
+    "row_selection": [
+      {
+        "block": "CPOBC",
+        "joint_index": 0
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 1
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 2
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 3
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 4
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 5
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 6
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 7
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 17
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 18
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 19
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 24
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 25
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 26
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 42
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 43
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 44
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 45
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 46
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 47
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 48
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 49
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 50
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 51
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 52
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 53
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 54
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 55
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 56
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 57
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 58
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 59
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 60
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 61
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 62
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 63
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 103
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 104
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 105
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 106
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 107
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 108
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 109
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 110
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 111
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 112
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 113
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 114
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 115
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 135
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 136
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 137
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 138
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 139
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 140
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 141
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 142
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 143
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 144
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 145
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 146
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 203
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 204
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 205
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 206
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 215
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 216
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 217
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 218
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 223
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 224
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 225
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 226
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 231
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 232
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 233
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 234
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 235
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 236
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 695
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 696
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 697
+      },
+      {
+        "block": "CPOBC",
+        "joint_index": 698
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 843,
+        "offset": 0
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 846,
+        "offset": 3
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 847,
+        "offset": 4
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 848,
+        "offset": 5
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 849,
+        "offset": 6
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 852,
+        "offset": 9
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 853,
+        "offset": 10
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 854,
+        "offset": 11
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 860,
+        "offset": 17
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 862,
+        "offset": 19
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 864,
+        "offset": 21
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 866,
+        "offset": 23
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 869,
+        "offset": 26
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 878,
+        "offset": 35
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 881,
+        "offset": 38
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 914,
+        "offset": 71
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 917,
+        "offset": 74
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 927,
+        "offset": 84
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 983,
+        "offset": 140
+      },
+      {
+        "block": "fixed_vector_GC",
+        "joint_index": 984,
+        "offset": 141
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1163,
+        "offset": 0
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1164,
+        "offset": 1
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1165,
+        "offset": 2
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1166,
+        "offset": 3
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1167,
+        "offset": 4
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1168,
+        "offset": 5
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1169,
+        "offset": 6
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1170,
+        "offset": 7
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1171,
+        "offset": 8
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1172,
+        "offset": 9
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1173,
+        "offset": 10
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1174,
+        "offset": 11
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1175,
+        "offset": 12
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1176,
+        "offset": 13
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1177,
+        "offset": 14
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1178,
+        "offset": 15
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1179,
+        "offset": 16
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1180,
+        "offset": 17
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1181,
+        "offset": 18
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1182,
+        "offset": 19
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1183,
+        "offset": 20
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1184,
+        "offset": 21
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1185,
+        "offset": 22
+      },
+      {
+        "block": "reachable_state_MSR",
+        "joint_index": 1186,
+        "offset": 23
+      }
+    ],
+    "row_selection_digest_sha256": "efb3990fd45998ee7c801b82f82f527193a4e853b0df1a81f53dcbfcbcd9073d"
+  },
+  "verdict": "SR2V_TRANSVERSE_COMMON_CORE_GLOBAL_UNIT_MINOR_CERTIFIED_NONTERMINAL",
+  "witness": null
+}

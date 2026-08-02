@@ -391,7 +391,15 @@ uv run python -m universe_lab.final_theory.sr2v_variable_harmonic_sparse_section
 uv run python -m universe_lab.final_theory.sr2v_transverse_cocycle_principal_open_v042
 uv run python -m universe_lab.final_theory.sr2v_transverse_determinant_zero_locus_v042
 uv run python -m universe_lab.final_theory.sr2v_transverse_base_cover_ablation_v042
+uv run python -m universe_lab.final_theory.sr2v_transverse_common_core_unit_minor_v042
+uv run python -m universe_lab.final_theory.sr2v_transverse_common_core_schur_scout_v042
+uv run python -m universe_lab.final_theory.sr2v_transverse_eq120_schur_chart_obligations_v042
+uv run python -m universe_lab.final_theory.sr2v_transverse_eq120_repair_pair_scout_v042
 uv run pytest -q tests/final_theory/test_sr2v_additive_msr_laurent_v042.py tests/final_theory/test_sr2v_bottom_msr_global_csg_v042.py tests/final_theory/test_weak_d2_state_native_shear_d12_preflight_v042.py tests/final_theory/test_weak_d2_state_native_fixed_harmonic_cpobc_obstruction_v042.py tests/final_theory/test_weak_d2_state_native_corrected_csg_rank2_v042.py tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py tests/final_theory/test_sr2v_transverse_base_cover_ablation_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_unit_minor_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_schur_scout_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_schur_chart_obligations_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_repair_pair_scout_v042.py
 ```
 
 Expected verdicts and semantic digests:
@@ -417,6 +425,14 @@ SR2V_TRANSVERSE_COMMUTATOR_KERNEL_COBOUNDARY_AND_NESTED_DEGENERACY_LOCI_CERTIFIE
 da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30
 SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL
 005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e
+SR2V_TRANSVERSE_COMMON_CORE_GLOBAL_UNIT_MINOR_CERTIFIED_NONTERMINAL
+59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97
+SR2V_TRANSVERSE_COMMON_CORE_FIXED4_REJECTED_FULL_M0_NO_ESCAPE_AT_ADVERSARIAL_POINT_OPEN
+90cdaa5399f9e6663836d277e60f327558a2533ab32f382a701ba075f86ad55c
+SR2V_TRANSVERSE_EQ120_SCHUR_CHART_OBLIGATIONS_CERTIFIED_NONTERMINAL
+56bc0f94aff5a87e109d3fd54e343ebe36076c889279c5740ed3e92c539048c8
+SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL
+dea028466f41a6a186fbcb09f7b5ba8a74d12834dc7f348d0a1f5f04abf4bcf7
 ```
 
 The local Laurent certificate is retained as a Jacobian regression; the
@@ -454,16 +470,49 @@ MSR on all 50 source-reaching path states; restoring either omitted block closes
 the escape at the same scalar point. These are individual-necessity results,
 not a full-profile witness.
 
+The common-core unit-minor successor then uses only raw CPOBC, fixed-vector GC,
+and reachable-state MSR to invert a fixed 127-by-127 non-`Q` block over the
+entire 54-dimensional transverse base. Its 554-edge safe symbolic supergraph
+has a unique perfect matching and its determinant is a Laurent unit. This is a
+lossless five-`Q`-column reduction, not yet a commutativity theorem.
+
+The five-`Q` scout freezes the original 81-point candidate ledger and targeted
+82nd and 83rd exact points. Three tested four-row candidates are rejected. The
+third fails at the positive rational torus point
+`(u12,u13,u15,u44,u45)=(1/2,1,1,1,2)` with exact escape `e_Q2`. At both targeted
+candidate escapes the complete common core and all four semantic branches
+remain `131 -> 131` after all commutators, so no full-profile witness is found.
+
+The Eq. (120) chart-obligation successor derives the exact remaining module
+problem. On each `D(gk)`, Eq. (120) gives
+`x=delta*h+(b/b1)*w` and `c1k=-b_k*g_k*w`, so the target is the localized
+coordinate row `e_w`. On the aligned remainder it becomes simultaneous
+membership of `e_w2,e_w3,e_w4`; the `r1=1` sublocus is automatically safe.
+The certificate retains the external `Q5` coefficient, proves visible-reference
+changes only rescale pair minors by units, and records why a finite rank ledger,
+a pointwise nonzero minor, an `AB` minor with hidden `Q5`, or multivariate gcd
+one is not a global proof.
+
+The repair-pair scout then rejects `(32,120)` on `D(g2)` and `(424,544)` on
+`D(g3)` by exact positive-rational points. Pair `(8,14)` repairs those two
+points, but all three pair minors vanish at
+`u=(1,1/2,1,2,2)`, where `(g2,g3,g4)=(1/96,1/256,0)`. Each restricted rank is
+`1/1/2`, while full `M0` remains `131 -> 131`. This rejects only the proposed
+three-minor subcover, not either chart or the common-core theorem target.
+
 ## Next exact gate
 
 For state-native SR2-V, enlarge the exact section beyond beta one and the two
 retained alpha coordinates; do not rerun the now-empty sparse section or either
-old fixed-state D12/shear campaign. In the transverse reducible branch, first
-test the branch-independent common core
-`M0=CPOBC+fixed-vector GC+reachable-state MSR`. Prove or refute that the
-candidate 127-column matched minor is a Laurent unit, then reduce to the Q
-Schur complement. Solve the three one-row opens `D(rk-r1)` and the one
-three-row equal-ratio nonunit locus. Only if common-core membership fails split
+old fixed-state D12/shear campaign. In the transverse reducible branch, use the
+certified global unit minor in the branch-independent common core
+`M0=CPOBC+fixed-vector GC+reachable-state MSR` and work only in its five-`Q`
+Schur complement. On each `D(gk)`, lazily compute the full Schur row module and
+certify `e_w` membership directly or via the saturated syzygy-image ideal
+`B(ker[A,C]):gk^infinity`; first prove syntactically whether `Q5` vanishes from
+all common-core rows before simplifying to `B(ker A)`. Use exponent-lattice
+HNF/SNF to remove spectator torus variables, and treat the aligned quotient
+separately. Only if common-core membership fails split
 into derived/literal strict, retaining eight obligations. Completed Eq. (139)
 then follows from strict; derived and literal Eq. (113) are never combined.
 Then treat

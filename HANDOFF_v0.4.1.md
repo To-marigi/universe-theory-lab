@@ -101,15 +101,68 @@ This section controls older SR2-V “next step” wording later in the handoff.
   A separate 960-evaluation exact scout found no full-profile escape; its input
   ledger is preserved in `reports/v0.4.2_sr2v_transverse_exact_scout_ledger.md`,
   but it remains bounded scout evidence, not a theorem.
+- The proposed branch-independent elimination has now passed globally.  A
+  fixed 127-by-127 minor of the non-`Q` columns uses 83 raw CPOBC rows, 20
+  fixed-vector-GC rows, and all 24 reachable-state-MSR rows.  After five
+  bottom-CSG zero edges are removed symbolically, its 554-edge safe support
+  supergraph has a unique perfect matching.  The determinant is a single
+  Laurent monomial in the upper `G_m^49` coordinates and already-localized
+  bottom `lambda` factors, hence a unit on the full 54-dimensional transverse
+  base.  No Eq. (113), Eq. (139), Eq. (120), or new principal open is used.
+  Verdict `SR2V_TRANSVERSE_COMMON_CORE_GLOBAL_UNIT_MINOR_CERTIFIED_NONTERMINAL`,
+  digest `59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97`.
+  The exact consequence is `rank(M0)>=127` everywhere and a lossless reduction
+  to the five `Q` columns.  This is not yet a commutativity terminal.
 
-The next operation is the common-core reduction before branching. Test the
-fixed 127-by-127 non-Q-column minor candidate in
-`M0=CPOBC+fixed-vector GC+reachable-state MSR`; its observed support graph has a
-unique perfect matching, but unit factorisation is not yet proved. If it is a
-base unit, eliminate the 127 non-Q columns and decide the four Eq. (120) loci in
-at most five Q columns. Only if common-core membership fails should work split
-into the eight derived/literal strict obligations. On every route the exact
-criterion remains `rank[M;C]=rank M`; `span(beta,e_Q5)` is not the invariant.
+The common-core Schur problem now has an exact fail-closed chart contract.
+After the 127 non-`Q` columns are eliminated, source-native Eq. (120) splits
+the base into `U2=D(g2)`, `U3=D(g3)`, `U4=D(g4)`, the aligned locus
+`V(g2,g3,g4) intersect D(r1-1)`, and the automatically safe remainder
+`r1=r2=r3=r4=1`. On each `Uk`, every Eq. (120) solution has
+`x=delta*h+(b/b1)*w`; the target commutator is a unit times `gk*w`. Thus the
+exact obligation is `e_w` membership in the localized Schur row module. On the
+aligned locus the three targets `e_w2,e_w3,e_w4` must lie in the five-column
+restriction module. The certificate retains `Q5`, proves that changing the
+visible reference only rescales minors by units, and explicitly rejects both
+an `AB` minor that ignores `Q5` and the inference `multivariate gcd 1 => unit
+ideal`. Verdict `SR2V_TRANSVERSE_EQ120_SCHUR_CHART_OBLIGATIONS_CERTIFIED_NONTERMINAL`,
+digest `56bc0f94aff5a87e109d3fd54e343ebe36076c889279c5740ed3e92c539048c8`.
+
+Three four-row Schur scouts are rejected:
+`{83,147,154,688}` fails five mixed/direction points, while
+`{23,147,154,688}` passes that 81-point ledger but fails on the exact
+hypersurface point `u13*u45-u44=0` with ranks `3/3/4`. At the latter point full
+`M0` and all four branches remain `131/131` after all commutators, so it is not
+a witness. The replacement `{23,31,147,688}` also passes the preceding 82
+points but fails at the positive rational torus point
+`(u12,u13,u15,u44,u45)=(1/2,1,1,1,2)`; its exact escape is `e_Q2`, while full
+`M0` and every branch again remain `131/131`. None of these fixed-four sets may
+be reused. Two proposed Eq. (120) repair pairs, `(32,120)` on `U2` and
+`(424,544)` on `U3`, also have exact positive-rational chart-internal failures.
+The alternative `(8,14)` repairs those two points, but all three pair minors
+vanish simultaneously at `u=(1,1/2,1,2,2)`, where
+`(g2,g3,g4)=(1/96,1/256,0)` and each restricted rank is `1/1/2`. Full `M0`
+still remains `131/131`. Therefore only this three-minor subcover is rejected;
+the Eq. (120) charts and the full common core remain open. Verdict
+`SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL`,
+digest `dea028466f41a6a186fbcb09f7b5ba8a74d12834dc7f348d0a1f5f04abf4bcf7`.
+
+The next exact operation is full-module saturation, not another fixed-pair
+scout. Lazily Schur-reduce all `M0` rows through the certified matching DAG;
+on `Uk`, form `(A_r,B_r,C_r)` and prove `e_w` membership directly, or compute
+the syzygy image ideal `J=B(ker[A,C])` and certify `(J:gk^infinity)=R`. If a
+syntactic audit proves the common-core `Q5` column zero, this simplifies to
+`J=B(ker A)`. Use exponent-lattice HNF/SNF to remove spectator torus variables
+before rational saturation. The aligned quotient is handled separately.
+Only if common-core membership fails should work split into the eight
+derived/literal strict obligations. On every route the
+exact criterion remains `rank[M;C]=rank M`; `span(beta,e_Q5)` is not the invariant.
+Run charts sequentially with one CAS worker. Checkpoint and leave the current
+leaf explicitly open at aggregate RSS 7.5 GiB (worker 7.0 GiB), five million
+live sparse terms, 60 minutes per non-aligned leaf, 90 minutes for aligned, or
+split depth 6 / 64 leaves. A cap yields `WEAK_D2_OPEN_RESOURCE_LIMIT`, never a
+noncommutative conclusion; preserve the unresolved ideal, monomial order, and
+row-selection digest.
 Alongside that, enlarge the state-native support beyond beta one and the two
 retained alphas. The next genuine state cover remains the rank-two open in
 `Gr(2,63)` (dimension 122), not another isolated `k`.
@@ -126,6 +179,10 @@ uv run pytest -q tests/final_theory/test_sr2v_variable_harmonic_sparse_section_c
 uv run pytest -q tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_base_cover_ablation_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_unit_minor_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_schur_scout_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_schur_chart_obligations_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_repair_pair_scout_v042.py
 ```
 
 Do not begin `d=3` or an infinite lifting theorem in a way that bypasses the
@@ -625,19 +682,24 @@ uv run pytest -q tests/final_theory/test_weak_d2_state_native_shear_pair_open_v0
 uv run pytest -q tests/final_theory/test_sr2v_scalar_lattice_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_base_cover_ablation_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_unit_minor_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_schur_scout_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_schur_chart_obligations_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_repair_pair_scout_v042.py
 ```
 
 Expected focused results are manifest `5 passed`, 955 tangent schema v2
 `8 passed`, independent pure-lower oracle `4 passed`, SR2-V baseline `6 passed`,
 SR3b-M `14 passed`, the two original visible-search suites `9 passed`, and the
-eight latest exact-gate SR2-V suites `71 passed`. The tests
+twelve latest exact-gate SR2-V suites `105 passed`. The tests
 regenerate the stored exact payloads and preserve the `NO_SOLVER_RUN`,
 bounded-family `GLOBAL_NO_GO`, and general mixed `NO_WITNESS_OPEN` boundaries.
 
 The 2026-08-02 mutable-index resume suite, including the latest SR2-V
 suites, the CI boundary guard, and all semantic escape guards reports
-`196 passed` at its recorded checkpoint. The new determinant/base-cover pair
-reports `20 passed`, with Ruff and targeted mypy clean. An unfiltered local run
+`196 passed` at its recorded checkpoint. The determinant/base-cover/unit-minor/
+Schur-scout/chart-contract/repair-scout six-suite chain reports `54 passed`,
+with Ruff and targeted mypy clean. An unfiltered local run
 reports `598 passed`; its only 13 nonpasses are in the four historical wrappers
 that the current CI lane intentionally excludes. The exact public-v0.3.9
 checkout reports `25 passed` for its four release-boundary files, in addition
