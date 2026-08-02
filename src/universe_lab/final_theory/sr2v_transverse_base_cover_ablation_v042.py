@@ -1007,7 +1007,11 @@ def main() -> None:
     payload = build_payload(root)
     output = root / RESULT_PATH
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    output.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(payload["verdict"])
     print(payload["semantic_digest_sha256"])
     print(output)

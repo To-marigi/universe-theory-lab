@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -12,7 +11,7 @@ import pytest
 from universe_lab.final_theory import sr2v_transverse_common_core_unit_minor_v042 as result
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_SEMANTIC_DIGEST = "59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97"
+EXPECTED_SEMANTIC_DIGEST = "286b2c8e0329dd585c33dee13c66e3a923a270d04822f3489186aad4ee1e45ac"
 
 
 def _load(relative: str) -> dict[str, Any]:
@@ -38,7 +37,9 @@ def test_artifact_rebuilds_exactly(rebuilt: dict[str, Any]) -> None:
     assert frozen["witness"] is None
     assert all(frozen["gates"].values())
     for relative, binding in frozen["input_artifacts"].items():
-        assert hashlib.sha256((ROOT / relative).read_bytes()).hexdigest() == binding["raw_sha256"]
+        assert binding["binding_kind"] == "canonical_json_semantic_digest"
+        assert "raw_sha256" not in binding
+        assert result.semantic_digest(_load(relative)) == binding["semantic_digest_sha256"]
 
 
 def test_minor_is_common_core_only_and_has_the_declared_shape(rebuilt: dict[str, Any]) -> None:

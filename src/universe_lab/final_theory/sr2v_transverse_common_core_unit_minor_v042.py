@@ -33,7 +33,7 @@ from universe_lab.final_theory import sr2v_transverse_determinant_zero_locus_v04
 from universe_lab.final_theory import weak_d2_visible_torus_scout_v042 as torus
 
 RESULT_PATH = "results/v0.4.2_sr2v_transverse_common_core_unit_minor.json"
-SCHEMA = "final-theory-v042-sr2v-transverse-common-core-unit-minor-v1"
+SCHEMA = "final-theory-v042-sr2v-transverse-common-core-unit-minor-v2"
 VERDICT = "SR2V_TRANSVERSE_COMMON_CORE_GLOBAL_UNIT_MINOR_CERTIFIED_NONTERMINAL"
 SEARCH_TERMINAL = "NOT_A_SEARCH_TERMINAL_FIVE_Q_COLUMN_SCHUR_PROBLEM_REMAINS"
 
@@ -85,14 +85,6 @@ def _load(path: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise AssertionError(f"JSON object required: {path}")
     return value
-
-
-def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for block in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(block)
-    return digest.hexdigest()
 
 
 def _canonical_json(value: Any) -> str:
@@ -637,7 +629,7 @@ def build_payload(root: Path) -> dict[str, Any]:
         "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
         "input_artifacts": {
             relative: {
-                "raw_sha256": _sha256(root / relative),
+                "binding_kind": "canonical_json_semantic_digest",
                 "semantic_digest_sha256": _load(root / relative).get("semantic_digest_sha256"),
             }
             for relative in (lattice.RESULT_PATH, bottom_global.RESULT_PATH)
@@ -646,8 +638,9 @@ def build_payload(root: Path) -> dict[str, Any]:
         "next_gate": {
             "ambient_columns_after_global_elimination": ["Q1", "Q2", "Q3", "Q4", "Q5"],
             "task": (
-                "compute the common-core Schur row module on these five columns and prove "
-                "that it contains the three globally minimal star commutator rows"
+                "prove residue-field rank containment of the three minimal star rows on "
+                "these five columns; global Schur row-module membership is a stronger "
+                "sufficient route"
             ),
             "branch_count_if_common_core_succeeds": 0,
             "why": "Eq113 and Eq139 were not used in the globally invertible block",
@@ -659,8 +652,9 @@ def build_payload(root: Path) -> dict[str, Any]:
         "verdict": VERDICT,
         "claim_boundary": (
             "this proves a global rank-127 common-core minor and a lossless five-Q-column "
-            "reduction; it does not yet prove that the three star commutator rows lie in "
-            "the remaining Schur row module and therefore does not issue an SR2-V terminal"
+            "reduction; it does not yet prove residue-field rank containment of the three "
+            "star commutator rows, nor the stronger global Schur row-module membership, "
+            "and therefore does not issue an SR2-V terminal"
         ),
     }
     payload["semantic_digest_sha256"] = semantic_digest(payload)
@@ -672,7 +666,11 @@ def main() -> None:
     payload = build_payload(root)
     output = root / RESULT_PATH
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    output.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(payload["verdict"])
     print(payload["semantic_digest_sha256"])
     print(output)

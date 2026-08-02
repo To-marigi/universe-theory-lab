@@ -1,0 +1,429 @@
+{
+  "canonical_input_binding": {
+    "actual_semantic_digest_sha256": "286b2c8e0329dd585c33dee13c66e3a923a270d04822f3489186aad4ee1e45ac",
+    "binding_kind": "canonical_json_semantic_digest",
+    "expected_semantic_digest_sha256": "286b2c8e0329dd585c33dee13c66e3a923a270d04822f3489186aad4ee1e45ac",
+    "passed": true,
+    "path": "results/v0.4.2_sr2v_transverse_common_core_unit_minor.json"
+  },
+  "claim_boundary": "this proves only that full M0 and its globally reduced Schur rows have an identically zero external-Q5 coefficient on the declared 54-dimensional base. It proves neither the non-aligned two-column nor aligned four-column pointwise rank conditions, no global row-module membership, no witness, and no SR2-V terminal. Eq113 or Eq139 rows must be re-audited for Q5 if they are added after a common-core failure. The equal-ratio aligned remainder used in this Schur bookkeeping is not the structural ALIGNED_GLOBALLY_REDUCIBLE branch; Q5-freeness here is M0/transverse only",
+  "common_core_definition": {
+    "blocks": [
+      "raw CPOBC",
+      "fixed-vector GC",
+      "reachable-state MSR"
+    ],
+    "explicitly_excluded": [
+      "Eq113 derived",
+      "Eq113 literal",
+      "Eq139"
+    ],
+    "joint_source_intervals": [
+      "0..782",
+      "843..1162",
+      "1163..1186"
+    ],
+    "symbol": "M0"
+  },
+  "date": "2026-08-02",
+  "dimension": 2,
+  "exact_point_cross_checks": {
+    "point_count": 4,
+    "records": [
+      {
+        "M0_rank": 127,
+        "Schur_rows_with_nonzero_Q5": 0,
+        "direct_M0_rows_with_nonzero_Q5": 0,
+        "nonzero_Schur_row_count": 0,
+        "pivot_basis_is_exactly_the_127_non_Q_columns": true,
+        "pivot_rank": 127,
+        "point_id": "reference_equal",
+        "slice_factors": []
+      },
+      {
+        "M0_rank": 131,
+        "Schur_rows_with_nonzero_Q5": 0,
+        "direct_M0_rows_with_nonzero_Q5": 0,
+        "nonzero_Schur_row_count": 597,
+        "pivot_basis_is_exactly_the_127_non_Q_columns": true,
+        "pivot_rank": 127,
+        "point_id": "g2_pair_rejection",
+        "slice_factors": [
+          {
+            "base": "1",
+            "kernel_column": 12
+          },
+          {
+            "base": "2",
+            "kernel_column": 13
+          },
+          {
+            "base": "1",
+            "kernel_column": 15
+          },
+          {
+            "base": "3",
+            "kernel_column": 44
+          },
+          {
+            "base": "3",
+            "kernel_column": 45
+          }
+        ]
+      },
+      {
+        "M0_rank": 131,
+        "Schur_rows_with_nonzero_Q5": 0,
+        "direct_M0_rows_with_nonzero_Q5": 0,
+        "nonzero_Schur_row_count": 597,
+        "pivot_basis_is_exactly_the_127_non_Q_columns": true,
+        "pivot_rank": 127,
+        "point_id": "g3_pair_rejection",
+        "slice_factors": [
+          {
+            "base": "1",
+            "kernel_column": 12
+          },
+          {
+            "base": "3",
+            "kernel_column": 13
+          },
+          {
+            "base": "1",
+            "kernel_column": 15
+          },
+          {
+            "base": "2",
+            "kernel_column": 44
+          },
+          {
+            "base": "2",
+            "kernel_column": 45
+          }
+        ]
+      },
+      {
+        "M0_rank": 131,
+        "Schur_rows_with_nonzero_Q5": 0,
+        "direct_M0_rows_with_nonzero_Q5": 0,
+        "nonzero_Schur_row_count": 582,
+        "pivot_basis_is_exactly_the_127_non_Q_columns": true,
+        "pivot_rank": 127,
+        "point_id": "three_pair_common_zero",
+        "slice_factors": [
+          {
+            "base": "1",
+            "kernel_column": 12
+          },
+          {
+            "base": "1/2",
+            "kernel_column": 13
+          },
+          {
+            "base": "1",
+            "kernel_column": 15
+          },
+          {
+            "base": "2",
+            "kernel_column": 44
+          },
+          {
+            "base": "2",
+            "kernel_column": 45
+          }
+        ]
+      }
+    ],
+    "records_digest_sha256": "72515db27573409d1fb7b5767ad5ff08ffa2cddd28e8eeb79e0f746c0da21161",
+    "role": "implementation cross-checks only; the global proof is the source support census plus the unit-block Schur identity"
+  },
+  "field": "Q",
+  "finite_scope": "n<=4",
+  "gates": {
+    "all_1127_symbolic_M0_rows_are_Q5_free": true,
+    "all_127_symbolic_pivot_rows_are_Q5_free": true,
+    "all_four_exact_implementation_cross_checks_are_Q5_free": true,
+    "all_four_semantic_branches_contain_the_full_M0_core": true,
+    "all_frozen_source_and_zero_ledger_digests_match": true,
+    "canonical_unit_minor_semantic_binding_passes": true,
+    "full_M0_inventory_is_783_plus_320_plus_24": true,
+    "pivot_compiler_matches_the_full_M0_compiler": true,
+    "pointwise_rank_contract_truth_tables_are_exact": true,
+    "source_maps_and_all_references_are_Q5_free": true,
+    "unit_block_Schur_identity_preserves_Q5_zero": true
+  },
+  "global_Schur_identity_certificate": {
+    "conclusion": "Q5-free source rows and Q5-free pivot rows imply Q5-free Schur rows on the entire declared base",
+    "dimension_free_block_form": {
+      "arbitrary_M0_row": "[v w 0_Q5]",
+      "only_denominator": "det(P), already certified as a global unit",
+      "pivot_rows": "[P U 0_Q5] with P 127 by 127",
+      "reduction": "[v w 0]-v*P^-1*[P U 0]=[0,w-v*P^-1*U,0]"
+    },
+    "generic_2_by_2_proxy_Q5_residual_check": "0",
+    "generic_2_by_2_proxy_non_Q_residual_checks": [
+      "0",
+      "0"
+    ]
+  },
+  "passed": true,
+  "pointwise_determinantal_next_gate_contract": {
+    "aligned_next_gate": {
+      "closed_condition": "certify <A_1,...,A_m>+I3(B)=R, equivalently B has rank three on V(A_1,...,A_m)",
+      "equivalent_auxiliary_ideal_route": "for k=2,3,4, in R[h,w2,w3,w4] certify the ideal generated by A_i*h+B_i2*w2+B_i3*w3+B_i4*w4 and w_k-1 is the unit ideal; R is the equal-ratio quotient localized at f=r1-1",
+      "equivalent_global_determinantal_contract": "I3(B)=R and <A_1,...,A_m> is contained in sqrt(I4(T))",
+      "matrix": "T=[A B2 B3 B4], with B=[B2 B3 B4] and one row per Schur(M0) generator",
+      "open_conditions": "for every j, certify (I4(T):A_j^infinity)=R on D(A_j)",
+      "pointwise_equivalence": "if some A_j is nonzero, all three w coordinates are forced to zero iff rank(T)=4; if every A_j is zero, they are forced to zero iff rank(B)=3",
+      "status": "CONTRACT_ONLY_UNIT_IDEALS_NOT_COMPUTED"
+    },
+    "coefficient_ring_scope": {
+      "aligned": "R means (R_base/(g2,g3,g4))[f^-1] with f=r1-1; over the unquotiented base, first add (g2,g3,g4) and then saturate by f",
+      "non_aligned": "for chart k, R means the Eq120 chart ring S_k=R_base[g_k^-1]; over R_base, every displayed unit-ideal statement is equivalently read after saturation by g_k"
+    },
+    "linear_algebra_truth_tables": {
+      "aligned": [
+        {
+          "A_nonzero": true,
+          "case_id": "A_nonzero_rank4_safe",
+          "rank_B": 3,
+          "rank_T": 4,
+          "w2_w3_w4_forced_zero": true
+        },
+        {
+          "A_nonzero": true,
+          "case_id": "A_nonzero_rank3_unsafe",
+          "rank_B": 2,
+          "rank_T": 3,
+          "w2_w3_w4_forced_zero": false
+        },
+        {
+          "A_nonzero": false,
+          "case_id": "A_zero_B_rank3_safe",
+          "rank_B": 3,
+          "rank_T": 3,
+          "w2_w3_w4_forced_zero": true
+        },
+        {
+          "A_nonzero": false,
+          "case_id": "A_zero_B_rank2_unsafe",
+          "rank_B": 2,
+          "rank_T": 2,
+          "w2_w3_w4_forced_zero": false
+        }
+      ],
+      "non_aligned": [
+        {
+          "A_nonzero": true,
+          "case_id": "A_nonzero_rank2_safe",
+          "rank_B": 1,
+          "rank_T": 2,
+          "w_forced_zero": true
+        },
+        {
+          "A_nonzero": true,
+          "case_id": "A_nonzero_rank1_unsafe",
+          "rank_B": 1,
+          "rank_T": 1,
+          "w_forced_zero": false
+        },
+        {
+          "A_nonzero": false,
+          "case_id": "A_zero_B_rank1_safe",
+          "rank_B": 1,
+          "rank_T": 1,
+          "w_forced_zero": true
+        },
+        {
+          "A_nonzero": false,
+          "case_id": "A_zero_B_rank0_unsafe",
+          "rank_B": 0,
+          "rank_T": 0,
+          "w_forced_zero": false
+        }
+      ]
+    },
+    "non_aligned_next_gate": {
+      "closed_condition": "certify <A_1,...,A_m,B_1,...,B_m>=R, equivalently B has rank one on V(A_1,...,A_m)",
+      "equivalent_auxiliary_ideal_route": "in R[h], certify J=<A_i*h+B_i : 1<=i<=m>=R[h]; this excludes every normalized bad solution w=1. If J_tilde is the denominator-cleared lift in R_base[h], certify equivalently (J_tilde:g_k^infinity)=R_base[h]",
+      "equivalent_global_determinantal_contract": "I1(T)=R and <A_1,...,A_m> is contained in sqrt(I2(T))",
+      "matrix": "T=[A B] with one row for every Schur(M0) generator",
+      "open_conditions": "for every j, certify (I2(T):A_j^infinity)=R on D(A_j)",
+      "pointwise_equivalence": "if some A_j is nonzero, w is forced to zero iff rank(T)=2; if every A_j is zero, w is forced to zero iff rank(B)=1",
+      "status": "CONTRACT_ONLY_UNIT_IDEALS_NOT_COMPUTED"
+    },
+    "scope": "these are pointwise determinantal contracts after the Q5-free lemma, not completed unit-ideal certificates and not global row-module identities",
+    "scout_only_row_hints": {
+      "aligned_pure_B_candidate_rows": [
+        8,
+        27,
+        97
+      ],
+      "non_aligned_candidate_rows": [
+        8,
+        11
+      ],
+      "status": "SCOUT_ONLY_NOT_USED_BY_ANY_GATE"
+    }
+  },
+  "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
+  "reduced_obligations": {
+    "aligned": {
+      "after_for_full_M0": [
+        "A",
+        "B2",
+        "B3",
+        "B4"
+      ],
+      "before": [
+        "A",
+        "B2",
+        "B3",
+        "B4",
+        "C_Q5"
+      ],
+      "certified_identity": "C_Q5=0 for every aligned Schur(M0) row"
+    },
+    "external_Q5_direction": "e_Q5 remains a free common-core cocycle direction but does not enter the Q1,...,Q4 commutators",
+    "non_aligned": {
+      "after_for_full_M0": [
+        "A",
+        "B"
+      ],
+      "before": [
+        "A",
+        "B",
+        "C_Q5"
+      ],
+      "certified_identity": "C_Q5=0 for every Schur(M0) row"
+    }
+  },
+  "schema_version": "final-theory-v042-sr2v-transverse-common-core-q5-free-v2",
+  "search_terminal": "NOT_A_SEARCH_TERMINAL_FULL_M0_POINTWISE_IDEAL_CERTIFICATES_REMAIN",
+  "semantic_branch_inheritance_certificate": {
+    "branch_count": 4,
+    "branches": {
+      "derived_Eq113__completed_Eq139": {
+        "Eq113_reading": "EQ113_QN_BRANCH",
+        "Eq139_reading": "EQ139_EQ145_COMPLETED_M_K_LE_N",
+        "M0_source_order_digest_sha256": "5305add80b371fda81ee189e24a5a6d13addcca0439c1de7a6dc36f871d18012",
+        "contains_all_1127_M0_rows_once_and_in_order": true,
+        "row_block_counts": {
+          "CPOBC": 783,
+          "EQ113_QN_BRANCH": 25,
+          "EQ139_EQ145_COMPLETED_M_K_LE_N": 10,
+          "fixed_vector_GC_basis": 320,
+          "reachable_state_MSR": 24
+        },
+        "row_construction": "raw_CPOBC + selected Eq113 rows + selected Eq139 rows + fixed-vector GC + reachable-state MSR",
+        "row_count": 1162
+      },
+      "derived_Eq113__strict_Eq139": {
+        "Eq113_reading": "EQ113_QN_BRANCH",
+        "Eq139_reading": "EQ139_PRINTED_STRICT_M_K_LT_N",
+        "M0_source_order_digest_sha256": "5305add80b371fda81ee189e24a5a6d13addcca0439c1de7a6dc36f871d18012",
+        "contains_all_1127_M0_rows_once_and_in_order": true,
+        "row_block_counts": {
+          "CPOBC": 783,
+          "EQ113_QN_BRANCH": 25,
+          "EQ139_PRINTED_STRICT_M_K_LT_N": 4,
+          "fixed_vector_GC_basis": 320,
+          "reachable_state_MSR": 24
+        },
+        "row_construction": "raw_CPOBC + selected Eq113 rows + selected Eq139 rows + fixed-vector GC + reachable-state MSR",
+        "row_count": 1156
+      },
+      "literal_Eq113__completed_Eq139": {
+        "Eq113_reading": "EQ113_QN_PLUS_1_BRANCH",
+        "Eq139_reading": "EQ139_EQ145_COMPLETED_M_K_LE_N",
+        "M0_source_order_digest_sha256": "5305add80b371fda81ee189e24a5a6d13addcca0439c1de7a6dc36f871d18012",
+        "contains_all_1127_M0_rows_once_and_in_order": true,
+        "row_block_counts": {
+          "CPOBC": 783,
+          "EQ113_QN_PLUS_1_BRANCH": 25,
+          "EQ139_EQ145_COMPLETED_M_K_LE_N": 10,
+          "fixed_vector_GC_basis": 320,
+          "reachable_state_MSR": 24
+        },
+        "row_construction": "raw_CPOBC + selected Eq113 rows + selected Eq139 rows + fixed-vector GC + reachable-state MSR",
+        "row_count": 1162
+      },
+      "literal_Eq113__strict_Eq139": {
+        "Eq113_reading": "EQ113_QN_PLUS_1_BRANCH",
+        "Eq139_reading": "EQ139_PRINTED_STRICT_M_K_LT_N",
+        "M0_source_order_digest_sha256": "5305add80b371fda81ee189e24a5a6d13addcca0439c1de7a6dc36f871d18012",
+        "contains_all_1127_M0_rows_once_and_in_order": true,
+        "row_block_counts": {
+          "CPOBC": 783,
+          "EQ113_QN_PLUS_1_BRANCH": 25,
+          "EQ139_PRINTED_STRICT_M_K_LT_N": 4,
+          "fixed_vector_GC_basis": 320,
+          "reachable_state_MSR": 24
+        },
+        "row_construction": "raw_CPOBC + selected Eq113 rows + selected Eq139 rows + fixed-vector GC + reachable-state MSR",
+        "row_count": 1156
+      }
+    },
+    "inheritance_rule": "any pointwise commutativity conclusion proved from M0 alone is inherited by each semantic branch because every branch matrix is M0 plus rows",
+    "non_converse_warning": "Q5-freeness of M0 does not assert Q5-freeness of appended Eq113/Eq139 rows; those rows retain their existing branch-separated audit"
+  },
+  "semantic_digest_sha256": "d19b01460604c647dc290143bf3a5aba2986bc9e6be235fd1ebae3a7702c25a3",
+  "source_native_Q5_census": {
+    "Q5_context_index": 131,
+    "Q5_is_a_signature_variable": false,
+    "Q5_is_an_occurrence_variable": false,
+    "Q5_variable": "Q_5_EXTERNAL",
+    "context_variable_count": 132,
+    "fixed_vector_GC": {
+      "generator_count": 320,
+      "path_transition_reference_count": 1564,
+      "references_resolving_to_Q5": 0
+    },
+    "raw_CPOBC": {
+      "operator_reference_count": 3061,
+      "references_resolving_to_Q5": 0,
+      "row_count": 783
+    },
+    "reachable_state_MSR": {
+      "anchor_paths_use_the_same_Q5_free_path_inventory": true,
+      "constraint_count": 24,
+      "references_resolving_to_Q5": 0,
+      "transition_reference_count": 131
+    },
+    "source_generation_provenance": {
+      "Q_stage_selector_role": "the q(stage) / _q_variable selector that can return external Q5 is not invoked by any of the three M0 source builders; it belongs to Eq113 token parsing, Eq139, commutator, and diagnostic builders",
+      "context_builder": "weak_d2_visible_torus_scout_v042._build_context",
+      "fixed_vector_GC": "operator_gc.generating_relation_basis over path_inventory, resolved only through signature_variables",
+      "raw_CPOBC": "cpobc.relations[*].raw_noncommutative_relation, resolved only through occurrence_variables",
+      "reachable_state_MSR": "cpobc.MSR_operator_constraints multiplied by one endpoint anchor from the same operator_gc path_inventory"
+    }
+  },
+  "symbolic_support_certificate": {
+    "M0_row_count": 1127,
+    "M0_row_label_digest_sha256": "7d13c8873f00ae2709ed7f3c8408adf2d3a02931fef89520b05fe561f83138f0",
+    "M0_source_index_digest_sha256": "5305add80b371fda81ee189e24a5a6d13addcca0439c1de7a6dc36f871d18012",
+    "Q5_zero_ledger_digest_sha256": "8c350de36aafee6a449733f81dab1e26d02668f15c6a7fd9c16524b8e61a1fd0",
+    "block_row_counts": {
+      "fixed_vector_GC": 320,
+      "raw_CPOBC": 783,
+      "reachable_state_MSR": 24
+    },
+    "block_symbolic_support_edge_counts": {
+      "fixed_vector_GC": 1677,
+      "raw_CPOBC": 2831,
+      "reachable_state_MSR": 191
+    },
+    "full_symbolic_support_ledger_digest_sha256": "fffd8dc361df49a22e07b6f2feefd10c647478d3aa18fdf08d5c230f888a70be",
+    "pivot_row_count": 127,
+    "pivot_row_label_digest_sha256": "36d81c06234bced8b11a256b6262c5d175e2181ef420a2ae9c9dd1ed3644fafc",
+    "pivot_rows_with_Q5_support_key": 0,
+    "pivot_rows_with_nonzero_Q5_symbolic_coefficient": 0,
+    "pivot_source_index_digest_sha256": "b9800e6b358b6f24476f268d46d4bd12f9c263706281db05064396179bf546d0",
+    "pivot_symbolic_support_ledger_digest_sha256": "6b1bae9d77c5f6225f85644ede768fcc4472a4dfd924b79e43ccd9657a12ec73",
+    "rows_with_Q5_support_key": 0,
+    "rows_with_nonzero_Q5_symbolic_coefficient": 0,
+    "selected_pivot_rows_match_full_symbolic_compiler": true
+  },
+  "verdict": "SR2V_TRANSVERSE_COMMON_CORE_Q5_FREE_SCHUR_REDUCTION_CERTIFIED_NONTERMINAL",
+  "witness": null
+}

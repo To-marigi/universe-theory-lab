@@ -1,6 +1,6 @@
 # Handoff -- CPOBC v0.4/v0.4.1 research track
 
-Written 2026-08-01; continued 2026-08-02. This is the live handoff for work
+Written 2026-08-01; continued through 2026-08-03. This is the live handoff for work
 after the public v0.3.9 release. The historical `HANDOFF.md` remains the frozen
 v0.3.9 record and is not superseded as release provenance.
 
@@ -110,9 +110,21 @@ This section controls older SR2-V “next step” wording later in the handoff.
   bottom `lambda` factors, hence a unit on the full 54-dimensional transverse
   base.  No Eq. (113), Eq. (139), Eq. (120), or new principal open is used.
   Verdict `SR2V_TRANSVERSE_COMMON_CORE_GLOBAL_UNIT_MINOR_CERTIFIED_NONTERMINAL`,
-  digest `59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97`.
+  digest `286b2c8e0329dd585c33dee13c66e3a923a270d04822f3489186aad4ee1e45ac`.
   The exact consequence is `rank(M0)>=127` everywhere and a lossless reduction
   to the five `Q` columns.  This is not yet a commutativity terminal.
+- The apparent fifth Schur column is now removed for the full common core.
+  A source-native census finds zero `Q5` references in all 783 raw-CPOBC,
+  320 fixed-vector-GC, and 24 reachable-state-MSR rows; an independent symbolic
+  compilation finds zero nonzero `Q5` coefficients in all 1,127 rows and in the
+  127 pivot rows.  The block identity `[P U 0; v w 0]` therefore makes every
+  global Schur row `Q5`-free.  Each of the four separate Eq. (113)/Eq. (139)
+  branch matrices contains `M0` once and in order, so a pointwise theorem from
+  `M0` is inherited by all four branches without combining the two Eq. (113)
+  readings or deriving Eq. (139).  This does not assert that the appended
+  branch rows are themselves `Q5`-free.  Verdict
+  `SR2V_TRANSVERSE_COMMON_CORE_Q5_FREE_SCHUR_REDUCTION_CERTIFIED_NONTERMINAL`,
+  digest `d19b01460604c647dc290143bf3a5aba2986bc9e6be235fd1ebae3a7702c25a3`.
 
 The common-core Schur problem now has an exact fail-closed chart contract.
 After the 127 non-`Q` columns are eliminated, source-native Eq. (120) gives the
@@ -123,15 +135,18 @@ overlapping cover `U2=D(g2)`, `U3=D(g3)`, `U4=D(g4)`, together with the aligned 
 exact pointwise obligation is residue-field rank equality after adjoining
 `e_w`. Membership of `e_w` in the localized Schur row module is a stronger,
 functorial sufficient certificate, not a pointwise necessity. The aligned
-locus has the analogous three rank tests for `e_w2,e_w3,e_w4`. The certificate
-retains `Q5`, proves that changing the visible reference rescales the same
-minors by units while allowing refinement opens, and explicitly rejects both
-an `AB` minor that ignores `Q5` and the inference `multivariate gcd 1 => unit
-ideal`. Verdict
+locus has the analogous three rank tests for `e_w2,e_w3,e_w4`. The earlier
+fail-closed contract retained `Q5`; the successor audit above now proves that
+the full common-core Schur rows have zero `Q5` coefficient, reducing the
+non-aligned matrix to `(A,B)` and the aligned matrix to `(A,B2,B3,B4)`.
+Changing the visible reference rescales the same minors by units while allowing
+refinement opens. The certificate also rejects both an `AB` minor used before
+the Q5 audit and the inference `multivariate gcd 1 => unit ideal`. Verdict
 `SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_CERTIFIED_NONTERMINAL`,
-digest `d7ac88daccd2328280ff10558979b2a520c0d9628b5b6637d2e12a7d6bb79bb6`.
-The three new successor certificates bind predecessors by canonical JSON
-semantic digest, not raw bytes, so Windows CRLF and Linux LF checkouts agree.
+digest `c040fa5f4a1542becf5ba4579a2cefb5b0f224b910da1ec2da42bb77df44d644`.
+The common-core unit certificate and its four new successors bind predecessors
+by canonical JSON semantic digest, not raw bytes, so Windows CRLF and Linux LF
+checkouts agree.
 
 Three four-row Schur scouts are rejected:
 `{83,147,154,688}` fails five mixed/direction points, while
@@ -153,24 +168,54 @@ are `(g2,g3,g4)=(-1/2,-1/2,0)` and the determinant-form values are
 still remains `131/131`. Therefore only this three-minor subcover is rejected;
 the Eq. (120) charts and the full common core remain open. Verdict
 `SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL`,
-digest `f14853252dfadf4f2335f4f25a2388731ad821739f8b9534988cf31b5ac1bf18`.
+digest `4efc456ac29986380f985aa7299b38fd17351f57ae87648b034aea6ae088208a`.
 
-The next strong-certificate operation is full-module saturation, not another
-fixed-pair scout. Lazily Schur-reduce all `M0` rows through the certified
-matching DAG; on `Uk`, form `(A_r,B_r,C_r)` and prove `e_w` membership directly,
-or compute the syzygy image ideal `J=B(ker[A,C])` and certify
-`(J:gk^infinity)=R`. If a syntactic audit proves the common-core `Q5` column
-zero, this simplifies to `J=B(ker A)`. Use exponent-lattice HNF/SNF to remove
-spectator torus variables before rational saturation. The aligned quotient is
-handled separately. Failure of this stronger row-module certificate is not by
-itself a pointwise escape; inspect residue-field rank/Fitting support before
-splitting into the eight derived/literal strict obligations. On every route the
-exact pointwise criterion remains `rank[M;C]=rank M`; `span(beta,e_Q5)` is not
-the invariant.
+The next exact operation is the pointwise auxiliary-ideal calculation, not
+another fixed-pair scout and not global row-module membership. Lazily
+Schur-reduce all `M0` rows through the certified matching DAG. On each chart
+ring `S_k=R_base[g_k^-1]`, form `T_k=[A B]` and certify
+`J_k=<A_i*h+B_i>=S_k[h]`; over the original base this is the saturation
+`(J_k:g_k^infinity)=R_base[h]`. Equivalently certify `I1(T_k)=S_k` and
+`<A_i> subset sqrt(I2(T_k))`. On the equal-ratio quotient localized at
+`f=r1-1`, use `T=[A B2 B3 B4]`: either certify `I3(B)=R` together with
+`<A_i> subset sqrt(I4(T))`, or exclude the three normalized obstruction charts
+`w2=1`, `w3=1`, `w4=1`. Global row-module membership remains an accepted
+stronger sufficient route, but its failure is not a pointwise escape. Use
+exponent-lattice HNF/SNF to remove spectator torus variables before rational
+saturation. If the common-core pointwise conditions hold, all four semantic
+branches follow by row inclusion and the old eight branch/locus obligations
+are unnecessary. If a bad common-core point is found, lift it through Eq. (120)
+and the 127-pivot backsolve, verify all `M0` rows and commutators directly, and
+only then test the four branch-specific Eq. (113)/Eq. (139) additions; those
+rows may reintroduce `Q5`. On every route the exact pointwise criterion remains
+`rank[M;C]=rank M`; `span(beta,e_Q5)` is not the invariant.
+The complete compiler/backend/budget/witness-lift contract is frozen in
+`reports/v0.4.2_sr2v_q5_free_auxiliary_ideal_execution_plan.md`.
+Its first fail-closed implementation check exposed an important coordinate
+correction: the 52-dimensional base is an upper Laurent torus over the
+14-factor bottom-CSG principal open, not a pure Laurent torus. Nonmonomial
+`lambda(width,maximal)` factors are already certified base units and must be
+tracked explicitly in every denominator-clearing step. This does not affect the
+bottom-CSG, unit-minor, or Q5-free theorems; no manifest result was emitted under
+the rejected pure-Laurent model.
+The first full Phase-A manifest build did not complete. The frozen checkpoint
+machine-certifies the four predecessor bindings, the 14-factor bottom-CSG
+localization, and a lightweight reconstruction of the corrected `R52` ring.
+The reported 3,602-second wall time, CPU/RSS values, and stop event are only a
+manually recorded local observation: the attempt-time source snapshot and raw
+monitor transcript were not preserved, so they are not a machine-reproducible
+resource certificate and no partial row count is claimed. The 1,127-row Schur
+ledger, six chart manifests, and denominator inverse ledger remain incomplete;
+no Sage, Gröbner, saturation, or witness claim was made. Verdict
+`SR2V_Q5_FREE_AUXILIARY_IDEAL_MANIFEST_OPEN_RESOURCE_LIMIT_NONTERMINAL`, digest
+`357d739091d2bf36740895f35c9227ba912e69f8d455f9e91dd8a6ea7ce6c605`.
+Before any solver run, add deterministic row checkpoints and replace repeated
+SymPy `cancel` operations with a cached fraction-field representation.
 Run charts sequentially with one CAS worker. Checkpoint and leave the current
 leaf explicitly open at aggregate RSS 7.5 GiB (worker 7.0 GiB), five million
-live sparse terms, 60 minutes per non-aligned leaf, 90 minutes for aligned, or
-split depth 6 / 64 leaves. A cap yields `WEAK_D2_OPEN_RESOURCE_LIMIT`, never a
+live sparse terms, 3,600 seconds per request on every chart, 43,200 seconds
+aggregate, or split depth 6 / 64 leaves. Do not silently grant a 90-minute
+aligned request. A cap yields `WEAK_D2_OPEN_RESOURCE_LIMIT`, never a
 noncommutative conclusion; preserve the unresolved ideal, monomial order, and
 row-selection digest.
 Alongside that, enlarge the state-native support beyond beta one and the two
@@ -193,6 +238,8 @@ uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_unit_minor_
 uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_schur_scout_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_schur_chart_obligations_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_repair_pair_scout_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_q5_free_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_q5_free_auxiliary_ideal_manifest_v042.py
 ```
 
 Do not begin `d=3` or an infinite lifting theorem in a way that bypasses the
@@ -613,13 +660,17 @@ an expanded scalar-polynomial solver manifest.
     Verdict
     `SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL`,
     digest `005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e`.
-15. **Current:** try the branch-independent common core first. Prove the frozen
-    127-column matched minor is a Laurent unit, reduce to the Q Schur complement,
-    and solve the four Eq. (120) loci. If this fails, retain derived/literal
-    strict as eight separate obligations. Also enlarge the state-native search
-    to variable betas or wider alpha support, then target `Delta_align=0` and
-    triple-irreducible pivots. Numerical and finite-field points remain scouts
-    until exact rational direct certification.
+15. **Current:** the branch-independent 127-column unit minor and Q5-free Schur
+    reduction are complete, but the first complete Phase-A input-manifest build
+    reached the manually observed 3,600-second request boundary before emitting
+    a result. Add deterministic per-row checkpoints and a cached fraction-field
+    representation, then freeze all 1,127 Schur rows and six chart manifests.
+    Only after that input certificate passes may the four Eq. (120) loci be
+    solved with `J_k=<A_i*h+B_i>` and the three normalized aligned obstruction
+    ideals. A common-core success propagates to all four semantic branches;
+    only a lifted, directly verified common-core bad point triggers separate
+    branch rows. Numerical and finite-field points remain scouts until exact
+    rational direct certification.
 16. Only after the bounded SR2-V campaign reaches an allowed terminal, return
    to the remote/disconnected `x!=0,y!=0` 955 components. The first upper
    family, mixed tangent branch,
@@ -708,9 +759,9 @@ bounded-family `GLOBAL_NO_GO`, and general mixed `NO_WITNESS_OPEN` boundaries.
 The 2026-08-02 mutable-index resume suite, including the latest SR2-V
 suites, the CI boundary guard, and all semantic escape guards reports
 `196 passed` at its recorded checkpoint. The determinant/base-cover/unit-minor/
-Schur-scout/chart-contract/repair-scout six-suite chain reports `54 passed`,
-with Ruff and targeted mypy clean. An unfiltered local run
-reports `598 passed`; its only 13 nonpasses are in the four historical wrappers
+Schur-scout/chart-contract/repair-scout/Q5-free/Phase-A-checkpoint eight-suite
+chain reports `67 passed`, with Ruff and targeted mypy clean. The 2026-08-03
+unfiltered local run reports `645 passed`; its only 13 nonpasses are in the four historical wrappers
 that the current CI lane intentionally excludes. The exact public-v0.3.9
 checkout reports `25 passed` for its four release-boundary files, in addition
 to a successful `scripts/reproduce_v039.py` replay.

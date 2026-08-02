@@ -11,7 +11,7 @@ import pytest
 from universe_lab.final_theory import sr2v_transverse_common_core_schur_scout_v042 as result
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_SEMANTIC_DIGEST = "36c0685c7d3dbe8f1396cf8c9bc14f55447f6b15f33bafea2e916d4423d54ae6"
+EXPECTED_SEMANTIC_DIGEST = "5d1dae52b6f268b52e0deedccca405d49c92f8a01527f62b07c02bd239d1a875"
 
 
 def _load(relative: str) -> dict[str, Any]:

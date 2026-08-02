@@ -13,7 +13,7 @@ from universe_lab.final_theory import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_SEMANTIC_DIGEST = "d7ac88daccd2328280ff10558979b2a520c0d9628b5b6637d2e12a7d6bb79bb6"
+EXPECTED_SEMANTIC_DIGEST = "c040fa5f4a1542becf5ba4579a2cefb5b0f224b910da1ec2da42bb77df44d644"
 
 
 def _load(relative: str) -> dict[str, Any]:

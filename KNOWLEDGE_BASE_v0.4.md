@@ -20,6 +20,10 @@ later scope audit supersedes their interpretation.
 4. `reports/v0.4.2_sr2v_transverse_base_cover_ablation.md` — current transverse
    scalar-base audit, Eq. (120) commutator reduction, assumption ablations,
    and the eight exact residual obligations.
+
+Current refinement: read
+`reports/v0.4.2_sr2v_transverse_common_core_q5_free.md` next for the source-native
+Q5-free reduction and exact two-/four-column next-gate contracts.
 5. `reports/v0.4.2_sr2v_transverse_exact_scout_ledger.md` — deterministic input
    recipe and digests for the 960-evaluation bounded exact scout; not a proof
    certificate.
@@ -111,6 +115,15 @@ globally equivalent to the minimal star `c12,c13,c14`. On each
 three. The remaining full-profile proof is therefore two strict Eq. (113)
 branches crossed with four loci, eight obligations, unless the common core
 closes them all at once.
+
+The common core has now been reduced globally. A fixed 127-by-127 non-`Q`
+minor is a Laurent unit on the whole 54-dimensional transverse base. A separate
+source-native audit proves that all 1,127 `M0` rows and all pivot rows have zero
+external-`Q5` coefficient, which Schur elimination preserves. Hence each
+non-aligned chart has only `(A,B)` and the aligned quotient only
+`(A,B2,B3,B4)`. The exact pointwise ideals remain open; if they close, all four
+semantic branches follow by row inclusion and the eight older obligations are
+bypassed.
 
 Two exact direct ablations establish individual necessity of both weak
 semantic row groups in the transverse occurrence-identified chart. Omitting
@@ -204,10 +217,13 @@ semantic-profile row and not a change to SR3b-A.
 | `results/v0.4.2_sr2v_transverse_cocycle_principal_open.json` and `reports/v0.4.2_sr2v_transverse_cocycle_principal_open.md` | exact four-matrix branch-separated rational linear algebra; digest `07e60a4d6b029d3cf08efd3ef3aae14598a1614090d3809d764973065b35eaf0` | separate nonzero minors on derived/literal Eq. (113) crossed with strict/completed Eq. (139) force all actual cocycles to zero and `Q1,...,Q4` to commute on four nonempty opens; the joint 1,187-row matrix is auxiliary and all four determinant-zero loci remain open |
 | `results/v0.4.2_sr2v_transverse_determinant_zero_locus.json` and `reports/v0.4.2_sr2v_transverse_determinant_zero_locus.md` | exact universal `2 by 2` identities plus exact rational rank/kernel data at eight nested-locus points, two off-normalized opens, and a 60-point deterministic scan; corrected v3 digest `da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30` | the witness condition is `rank[M;C]>rank M`, not `Delta=0`, and the commuting subspace is `K_delta=ker C(delta_Q)`; the whole `delta_Q=0` locus is witness-free; three full-diagonal samples have rank 127 and bottom-tangent kernel, four nonzero-`delta_Q` two-scalar samples have rank 130 and kernel `span(beta,e_Q5)`, and one Q5-only two-scalar sample has rank 127 with a larger tangent kernel; the four scalar samples per scan direction agree, but whole-line rank constancy and the remaining nonzero-`delta_Q` locus are open |
 | `results/v0.4.2_sr2v_transverse_base_cover_ablation.json` and `reports/v0.4.2_sr2v_transverse_base_cover_ablation.md` | exact ZZ/QQ/SymPy scalar-base and source-row certificate plus two full direct-substitution rational ablations; digest `005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e` | CPOBC alone defines the saturated common `G_m^49`; strict Eq. (139) controls completed; raw Eq. (120) reduces six commutators to a minimal three-edge star and four loci per Eq. (113) reading; fixed-vector GC and all-reachable-state MSR are individually necessary for universal transverse commutativity, while the full profile and eight localized obligations remain open |
-| `results/v0.4.2_sr2v_transverse_common_core_unit_minor.json` and `reports/v0.4.2_sr2v_transverse_common_core_unit_minor.md` | exact symbolic-support, unique-matching, Laurent-factor and direct-QQ certificate; digest `59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97` | a fixed common-core 127-by-127 non-`Q` minor is a unit on the full 54-dimensional transverse base, without Eq. (113)/(139); all non-`Q` cocycles eliminate globally and only a five-`Q` pointwise rank problem remains; this is nonterminal |
-| `results/v0.4.2_sr2v_transverse_common_core_schur_scout.json` and `reports/v0.4.2_sr2v_transverse_common_core_schur_scout.md` | exact 81-point candidate ledger plus direct 82nd- and 83rd-point adversarial rank evaluations; digest `36c0685c7d3dbe8f1396cf8c9bc14f55447f6b15f33bafea2e916d4423d54ae6` | rejects three four-row candidates; the third fails at a positive rational torus point with exact escape `e_Q2`; at both targeted `3/3/4` candidate escapes the full common core and all branches remain `131/131`, so no witness is obtained; no determinant factorization is certified and global five-Q star containment remains open |
-| `results/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.json` and `reports/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.md` | exact SymPy identities and frozen-predecessor bindings; digest `d7ac88daccd2328280ff10558979b2a520c0d9628b5b6637d2e12a7d6bb79bb6` | derives exact residue-field rank conditions and stronger localized row-module certificate contracts on the overlapping cover `D(g2)`, `D(g3)`, `D(g4)` and the aligned remainder; includes `Q5`, reference scaling/refinement, automatic `delta_Q=0` safety, and counterexamples to unsafe proof shortcuts; no repair membership is claimed |
-| `results/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.json` and `reports/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.md` | exact positive-rational Schur ranks and full-`M0` checks; digest `f14853252dfadf4f2335f4f25a2388731ad821739f8b9534988cf31b5ac1bf18` | rejects proposed repair pairs `(32,120)` and `(424,544)` and then the three-minor subcover obtained by adding `(8,14)`; all three minors vanish at a point inside both `D(g2)` and `D(g3)`, while full `M0` remains `131/131`; both normalized `g_i=r_i-r1` and determinant form `d_i=-b1*b_i*g_i` are recorded; the charts and pointwise rank question remain open |
+| `results/v0.4.2_sr2v_transverse_common_core_unit_minor.json` and `reports/v0.4.2_sr2v_transverse_common_core_unit_minor.md` | exact symbolic-support, unique-matching, Laurent-factor and direct-QQ certificate; digest `286b2c8e0329dd585c33dee13c66e3a923a270d04822f3489186aad4ee1e45ac` | a fixed common-core 127-by-127 non-`Q` minor is a unit on the full 54-dimensional transverse base, without Eq. (113)/(139); all non-`Q` cocycles eliminate globally and only a five-`Q` pointwise rank problem remains; this is nonterminal |
+| `results/v0.4.2_sr2v_transverse_common_core_schur_scout.json` and `reports/v0.4.2_sr2v_transverse_common_core_schur_scout.md` | exact 81-point candidate ledger plus direct 82nd- and 83rd-point adversarial rank evaluations; digest `5d1dae52b6f268b52e0deedccca405d49c92f8a01527f62b07c02bd239d1a875` | rejects three four-row candidates; the third fails at a positive rational torus point with exact escape `e_Q2`; at both targeted `3/3/4` candidate escapes the full common core and all branches remain `131/131`, so no witness is obtained; no determinant factorization is certified, and the later Q5-free successor leaves the full two-/four-column pointwise ideal problem open |
+| `results/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.json` and `reports/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.md` | exact SymPy identities and frozen-predecessor bindings; digest `c040fa5f4a1542becf5ba4579a2cefb5b0f224b910da1ec2da42bb77df44d644` | derives exact residue-field rank conditions and stronger localized row-module certificate contracts on the overlapping cover `D(g2)`, `D(g3)`, `D(g4)` and the aligned remainder; retains `Q5` fail-closed as a predecessor contract, records reference scaling/refinement and automatic `delta_Q=0` safety, and supplies counterexamples to unsafe proof shortcuts; the later source-native successor removes Q5 for full `M0` only |
+| `results/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.json` and `reports/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.md` | exact positive-rational Schur ranks and full-`M0` checks; digest `4efc456ac29986380f985aa7299b38fd17351f57ae87648b034aea6ae088208a` | rejects proposed repair pairs `(32,120)` and `(424,544)` and then the three-minor subcover obtained by adding `(8,14)`; all three minors vanish at a point inside both `D(g2)` and `D(g3)`, while full `M0` remains `131/131`; both normalized `g_i=r_i-r1` and determinant form `d_i=-b1*b_i*g_i` are recorded; the charts and pointwise rank question remain open |
+| `results/v0.4.2_sr2v_transverse_common_core_q5_free.json` and `reports/v0.4.2_sr2v_transverse_common_core_q5_free.md` | source-native census, independent symbolic support compilation, global block identity, four exact cross-checks, and four-branch row-inclusion audit; digest `d19b01460604c647dc290143bf3a5aba2986bc9e6be235fd1ebae3a7702c25a3` | every one of the 1,127 full-`M0` rows and every pivot row has identically zero external-`Q5` coefficient, so global Schur reduction leaves only `(A,B)` on a non-aligned chart and `(A,B2,B3,B4)` on the aligned quotient; pointwise truth-table and localized ideal contracts are exact, but no unit ideal, radical containment, witness, or SR2-V terminal is claimed |
+| `reports/v0.4.2_sr2v_q5_free_auxiliary_ideal_execution_plan.md` | frozen next-gate compiler, ring, localization, resource, certificate, and witness-lift contract | requires a complete 1,127-row sparse Schur manifest, six auxiliary ideals, one-worker 8-GiB/43,200-second fail-closed execution, and direct branch verification of any rational escape; implementation and unit-ideal certificates are not yet claimed |
+| `results/v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest.json` and `reports/v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest.md` | schema-v2 fail-closed Phase-A checkpoint; digest `357d739091d2bf36740895f35c9227ba912e69f8d455f9e91dd8a6ea7ce6c605` | machine-certifies four canonical predecessor bindings, the 14-factor bottom localization, and the lightweight `R52` spectator reconstruction; the 3,602-second attempt metrics are manually recorded and not machine-reproducible; all 1,127-row/six-chart manifests, denominator inverse ledger, solver and mathematical conclusions remain open |
 | `references/notes/v0.4.2_sr2v_bottom_msr_csg_interpretation_2026-08-02.md` | source/derivation boundary | finite CSG is prior classical work; the new project claim is the exact weak/weak `G_m^29` coordinate classification and its certified scope, not broad CSG priority |
 | `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` | current SR2-V exact progress authority | consolidates the exact certificates through the sparse-section unit ideal and four branch-separated cocycle opens, discarded numerical-scout boundary, revised exact search order, and nonterminal publication scope |
 | `references/notes/v0.4.2_prior_art_related_work_2026-08-01.md` | theorem/page-level literature and mathematical-tool ledger | records direct-source semantics, Xu overlap, triangularisation/common-eigenvector/Burnside/cyclic-separating/LLD tools, 66-PDF local/NAS preservation, and exact claim boundaries |
@@ -672,8 +688,12 @@ the SR3b-A theorem, title, or deposit status.
   edges vanish identically only after the bottom-CSG formula is imposed. This
   distinction is reusable: a unique-matching supergraph plus unit matched edges
   proves a monomial determinant even when off-matching edges vanish on special
-  strata. All future transverse work should eliminate these 127 columns first
-  and operate on the five-`Q` Schur module; do not return to branch-specific
+  strata. All future transverse work should eliminate these 127 columns first.
+  The source-native successor proves that the fifth, external `Q5` column is
+  identically zero in all 1,127 common-core rows and stays zero under Schur
+  elimination. Thus the exact target is a two-column `(A,B)` matrix on each
+  non-aligned chart and a four-column `(A,B2,B3,B4)` matrix on the aligned
+  quotient, not a five-`Q` module. Do not return to branch-specific
   131/132-column minors unless a genuine residue-field rank escape is found.
 - Three four-row Schur scout candidates are rejected. `{83,147,154,688}` failed
   five points omitted by its 69-point scout. `{23,147,154,688}` passed the
@@ -688,10 +708,10 @@ the SR3b-A theorem, title, or deposit status.
   problem.
   With `g_k=r_k-r1` inverted, every solution has
   `x=delta*h+(b/b1)*w`, and `c1k=-b_k*g_k*w`. A generic Schur row restricts to
-  `A*h+B*w+C*q5`; the exact condition is residue-field rank invariance after
-  adjoining `e_w=(0,1,0)`. Localized row-module membership of `e_w` is a
-  stronger functorial sufficient certificate. If selected rows are proven
-  `Q5`-free, a unit `AB` minor suffices. Otherwise it does not: the explicit
+  `A*h+B*w` for full `M0`; the exact condition is residue-field rank invariance
+  after adjoining `e_w=(0,1)`. Localized row-module membership of `e_w` is a
+  stronger functorial sufficient certificate. Before the source-native Q5 audit
+  one had to retain a possible `C*q5` term: the explicit
   rows `(1,0,1)` and `(0,1,1)` have unit `AB` minor but do not span `e_w`.
   Changing the visible reference from `Q1` to another `Qk` rescales `B` and
   every same-reference pair minor by a declared unit, so it cannot manufacture
@@ -699,18 +719,46 @@ the SR3b-A theorem, title, or deposit status.
   changes may still give refinement opens such as `D(r3-r2)`.
 - On the aligned remainder `g2=g3=g4=0`, split `f=r1-1`. The closed part
   `f=0` has `delta_Q=0` and is automatically witness-free. On `D(f)`, use
-  coordinates `(h,w2,w3,w4,q5)` and prove the three residue-field rank
-  equalities. Membership of all three target coordinate rows in the localized
-  five-column module is an accepted stronger certificate. Eq. (120) supplies
-  no further rows there.
+  coordinates `(h,w2,w3,w4)` and prove the three residue-field rank equalities.
+  Membership of all three target coordinate rows in the localized four-column
+  module is an accepted stronger certificate. Eq. (120) supplies no further
+  rows there.
 - Do not promote a multivariate gcd equal to one to a unit-ideal conclusion.
   The repair-pair scout gives the project-specific warning: two pairs fail on
   their own chart-internal points, `(8,14)` repairs those points, yet all three
   pair minors have a common zero with `g2,g3` nonzero while full `M0` still
-  contains every commutator. The next strong-certificate gate is the full
-  syzygy-image saturation `B(ker[A,C]):g_k^infinity`, not another finite
-  fixed-pair ledger. Failure of that stronger certificate alone is not a
-  pointwise witness; residue-field ranks must then be checked directly.
+  contains every commutator. The minimal exact next gate is the auxiliary ideal
+  `J_k=<A_i*h+B_i>` in the chart-localized ring, equivalently its `g_k`
+  saturation over the original base. The determinantal form is
+  `I1(T_k)=R` and `<A_i> subset sqrt(I2(T_k))`. On the aligned quotient use
+  `I3(B)=R` plus `<A_i> subset sqrt(I4(T))`, or the three normalized
+  obstruction ideals `w_k=1`. Full row-module membership is still a stronger
+  sufficient route, but its failure alone is not a pointwise witness.
+- Every one of the four semantic branch matrices contains `M0` exactly once
+  and in order. Therefore a pointwise commutativity theorem proved from `M0`
+  propagates to all four branches by kernel inclusion. This does not combine
+  literal and derived Eq. (113), derive Eq. (139), or assert that their appended
+  rows are Q5-free. The old eight branch/locus obligations are a fallback only
+  after a genuine common-core failure.
+- The spectator-reduced transverse coefficient ring is not a pure `G_m^52`.
+  In bottom coupling coordinates it is
+  `QQ[t1,...,t4,s0,...,s47][(F_lambda*product(s_j))^-1]`, where `F_lambda`
+  is the frozen product of the 14 nontrivial finite-CSG lambda factors. The
+  first auxiliary-manifest build correctly stopped when it assumed every
+  denominator was monomial. Future compilers must bind the bottom-CSG artifact
+  directly and accept only rational scalars, upper Laurent monomials, and
+  certified lambda factors. This coordinate correction leaves the existing
+  unit-minor and Q5-free conclusions unchanged.
+- The first complete Phase-A manifest attempt reached its manually observed
+  3,600-second request boundary without emitting a result. Because the
+  attempt-time source snapshot and raw monitor transcript were not preserved,
+  its timing, CPU, RSS, and stop event are provenance notes rather than a
+  machine resource certificate; no partial row count is accepted. The frozen
+  schema-v2 checkpoint independently rebuilds only the four predecessor
+  bindings, 14-factor localization, and lightweight `R52` spectator gate. The
+  next implementation must checkpoint deterministically by row and replace
+  repeated SymPy `cancel` with a cached fraction-field representation before
+  any Sage/Singular request is authorized.
 - Bind mutable v0.4 successor JSON artifacts to predecessors by canonical JSON
   semantic digest, not raw-byte SHA. Raw-byte contracts remain appropriate for
   frozen public releases, but CRLF/LF checkout normalization must not change a
@@ -719,9 +767,10 @@ the SR3b-A theorem, title, or deposit status.
   effective torus variables by the exponent-difference lattice (HNF/SNF)
   before Gröbner work. Process one chart and one CAS worker at a time. Stop and
   preserve an explicit open leaf at aggregate RSS 7.5 GiB, worker RSS 7.0 GiB,
-  five million live sparse terms, 60 minutes per non-aligned leaf, 90 minutes
-  aligned, or split depth 6 / 64 leaves. Store the ideal, monomial order, row
-  digest, and exact last certificate; a resource cap yields only
+  five million live sparse terms, 3,600 seconds per request on every chart,
+  43,200 seconds aggregate, or split depth 6 / 64 leaves. No 90-minute aligned
+  exception is approved. Store the ideal, monomial order, row digest, and exact
+  last certificate; a resource cap yields only
   `WEAK_D2_OPEN_RESOURCE_LIMIT`.
 - `transverse._eq139_row` hardcodes the normalized `torus._csg` bottom
   character. Use `sr2v_transverse_determinant_zero_locus_v042.eq139_row` and

@@ -67,8 +67,12 @@ strictly scoped conclusions:
   A fixed 127-by-127 minor from raw CPOBC, fixed-vector GC, and reachable-state
   MSR has a unique-matching Laurent-unit determinant on the full 54-dimensional
   base. It uses neither Eq. (113) nor Eq. (139), so the eight branch-local
-  obligations are provisionally replaced by one five-`Q` pointwise rank
-  question. This reduction is exact but not yet an SR2-V terminal.
+  obligations are provisionally replaced by one common-core pointwise rank
+  question. A source-native successor further proves that external `Q5` is
+  absent from all 1,127 common-core rows and remains absent after Schur
+  elimination. The remaining matrices have two columns on each non-aligned
+  chart and four columns on the aligned quotient. These reductions are exact
+  but not yet an SR2-V terminal.
 - Three fixed-four Schur candidates are now rejected. The second passed 81 exact
   direction/support points but failed at a direct exact-rank test point;
   the third passed those 82 points but failed at a positive rational torus point
@@ -79,30 +83,35 @@ strictly scoped conclusions:
 - The four-locus cover now has exact pointwise rank conditions and stronger
   row-module certificate contracts. On `D(gk)`, Eq. (120) leaves one
   commutator obstruction `w`; adjoining `e_w` must preserve every residue-field
-  rank. Localized membership in the `(A,B,C_Q5)` Schur row module is sufficient
-  but not pointwise necessary. The aligned remainder has three obstruction
-  coordinates, while its `delta_Q=0` boundary is automatic. Reference changes
-  rescale the same minors by units but may refine the cover; neither a
-  hidden-`Q5` `AB` minor nor multivariate gcd one is an accepted cover proof.
+  rank. The original fail-closed contract retained `(A,B,C_Q5)`; the subsequent
+  Q5-free theorem reduces this to `(A,B)`. Localized row-module membership is
+  sufficient but not pointwise necessary. The aligned remainder has three
+  obstruction coordinates and a four-column matrix, while its `delta_Q=0`
+  boundary is automatic. Reference changes rescale the same minors by units but
+  may refine the cover; multivariate gcd one is not an accepted cover proof.
 - The first proposed repair pairs on `D(g2)` and `D(g3)`, and the three-minor
   subcover obtained by adding a third pair, are exactly rejected at positive
   rational points. Full `M0` remains `131 -> 131` at every rejection point.
-  This redirects the next strong-certificate attempt from fixed-row scouts to
-  full syzygy-image saturation without weakening the common-core conjecture.
+  This redirects the next exact attempt from fixed-row scouts to the minimal
+  auxiliary-ideal/saturation conditions without weakening the common-core
+  conjecture.
 
 The controlling implementation order is therefore now:
 
 1. finish the branch-independent common core
    `M0=CPOBC+fixed-vector GC+reachable-state MSR`: use the certified global
    127-column unit minor and the exact Eq. (120) chart contract. Compute the
-   full localized Schur generators; on `D(gk)` prove the residue-field rank
-   condition. A strong accepted route is `e_w` membership through a direct
-   identity or the saturated syzygy-image ideal `B(ker[A,C]):gk^infinity`.
-   Solve the aligned quotient separately. If this stronger certificate fails,
-   inspect the residue-field rank/Fitting support before splitting into the
-   eight derived/literal strict obligations; completed follows from strict and
-   the Eq. (113) readings are never combined. The exact witness condition
-   remains `rank[M;C]>rank M`;
+   Q5-free Schur generators. On each `S_k=R_base[g_k^-1]`, certify
+   `J_k=<A_i*h+B_i>=S_k[h]`, or equivalently
+   `I1(T_k)=S_k` and `<A_i> subset sqrt(I2(T_k))`. Solve the aligned quotient
+   separately through `I3(B)=R` plus `<A_i> subset sqrt(I4(T))`, or the three
+   normalized affine obstruction ideals. Global row-module membership remains
+   a stronger sufficient route. If the common-core conditions succeed, all
+   four semantic branches inherit the result by row inclusion and the old eight
+   obligations are bypassed. If a bad point appears, lift and verify it against
+   full `M0` before testing the four branch additions; completed follows from
+   strict and the Eq. (113) readings are never combined. The exact witness
+   condition remains `rank[M;C]>rank M`;
 2. enlarge the state-native search beyond the beta-one, two-alpha sparse
    section, first by adding alpha support or variable betas while preserving
    the exact harmonic and nonsingularity ledgers;
@@ -113,6 +122,18 @@ The controlling implementation order is therefore now:
    relation ledger before assigning an SR2-V terminal.
 
 No old fixed-state D12/shear solver campaign is permitted.
+The exact compiler, localization, resource, certificate, and witness-lift
+contract for item 1 is frozen in
+`reports/v0.4.2_sr2v_q5_free_auxiliary_ideal_execution_plan.md`.
+The first complete Phase-A manifest attempt did not emit a result before its
+manually observed request boundary. Schema-v2 checkpoint
+`SR2V_Q5_FREE_AUXILIARY_IDEAL_MANIFEST_OPEN_RESOURCE_LIMIT_NONTERMINAL`
+(digest `357d739091d2bf36740895f35c9227ba912e69f8d455f9e91dd8a6ea7ce6c605`)
+machine-certifies only the bound inputs, 14-factor bottom localization, and
+lightweight `R52` reconstruction. Its timing/CPU/RSS values are manual
+observations without an immutable attempt source or raw monitor log. The next
+implementation step is deterministic row checkpointing plus a cached
+fraction-field representation; no solver is authorized yet.
 
 ### Earlier 2026-08-02 SR2-V execution update (superseded)
 
@@ -526,8 +547,8 @@ post-literature refocus             STATEWISE OBSERVABILITY / RECOVERY
           |
 SR2-V exact audit + SR3b-M lemmas   COMPLETE
           |
-SR2-V exact campaign   OPEN; BASE/EQ120 COVER + BOTH SEMANTIC ABLATIONS COMPLETE;
-                       COMMON-CORE FOUR-LOCUS TEST, ELSE 8 STRICT OBLIGATIONS
+SR2-V exact campaign   OPEN; BASE/EQ120 COVER + COMMON-CORE UNIT/Q5-FREE COMPLETE;
+                       PHASE-A MANIFEST RESOURCE-OPEN; OPTIMIZATION CURRENT
           |
 955 non-self-adjoint state-only repair, then 721 repair
           |

@@ -395,11 +395,15 @@ uv run python -m universe_lab.final_theory.sr2v_transverse_common_core_unit_mino
 uv run python -m universe_lab.final_theory.sr2v_transverse_common_core_schur_scout_v042
 uv run python -m universe_lab.final_theory.sr2v_transverse_eq120_schur_chart_obligations_v042
 uv run python -m universe_lab.final_theory.sr2v_transverse_eq120_repair_pair_scout_v042
+uv run python -m universe_lab.final_theory.sr2v_transverse_common_core_q5_free_v042
+uv run python -m universe_lab.final_theory.sr2v_q5_free_auxiliary_ideal_manifest_v042
 uv run pytest -q tests/final_theory/test_sr2v_additive_msr_laurent_v042.py tests/final_theory/test_sr2v_bottom_msr_global_csg_v042.py tests/final_theory/test_weak_d2_state_native_shear_d12_preflight_v042.py tests/final_theory/test_weak_d2_state_native_fixed_harmonic_cpobc_obstruction_v042.py tests/final_theory/test_weak_d2_state_native_corrected_csg_rank2_v042.py tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py tests/final_theory/test_sr2v_transverse_determinant_zero_locus_v042.py tests/final_theory/test_sr2v_transverse_base_cover_ablation_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_unit_minor_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_schur_scout_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_schur_chart_obligations_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_repair_pair_scout_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_q5_free_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_q5_free_auxiliary_ideal_manifest_v042.py
 ```
 
 Expected verdicts and semantic digests:
@@ -426,18 +430,23 @@ da062443965d679dc936dd4263f150c6d413deea7f5425790d039e099c89ac30
 SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL
 005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e
 SR2V_TRANSVERSE_COMMON_CORE_GLOBAL_UNIT_MINOR_CERTIFIED_NONTERMINAL
-59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97
+286b2c8e0329dd585c33dee13c66e3a923a270d04822f3489186aad4ee1e45ac
 SR2V_TRANSVERSE_COMMON_CORE_FIXED4_REJECTED_FULL_M0_NO_ESCAPE_AT_ADVERSARIAL_POINT_OPEN
-36c0685c7d3dbe8f1396cf8c9bc14f55447f6b15f33bafea2e916d4423d54ae6
+5d1dae52b6f268b52e0deedccca405d49c92f8a01527f62b07c02bd239d1a875
 SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_CERTIFIED_NONTERMINAL
-d7ac88daccd2328280ff10558979b2a520c0d9628b5b6637d2e12a7d6bb79bb6
+c040fa5f4a1542becf5ba4579a2cefb5b0f224b910da1ec2da42bb77df44d644
 SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL
-f14853252dfadf4f2335f4f25a2388731ad821739f8b9534988cf31b5ac1bf18
+4efc456ac29986380f985aa7299b38fd17351f57ae87648b034aea6ae088208a
+SR2V_TRANSVERSE_COMMON_CORE_Q5_FREE_SCHUR_REDUCTION_CERTIFIED_NONTERMINAL
+d19b01460604c647dc290143bf3a5aba2986bc9e6be235fd1ebae3a7702c25a3
+SR2V_Q5_FREE_AUXILIARY_IDEAL_MANIFEST_OPEN_RESOURCE_LIMIT_NONTERMINAL
+357d739091d2bf36740895f35c9227ba912e69f8d455f9e91dd8a6ea7ce6c605
 ```
 
-These three successor schemas use canonical JSON semantic-digest predecessor
-bindings. Raw-byte SHA bindings are intentionally absent, so CRLF/LF checkout
-normalization does not change their reconstructed payloads.
+The common-core unit schema and its four successor schemas use canonical JSON
+semantic-digest predecessor bindings. Raw-byte SHA bindings are intentionally
+absent, so CRLF/LF checkout normalization does not change their reconstructed
+payloads.
 
 The local Laurent certificate is retained as a Jacobian regression; the
 global certificate supersedes only its former global-open boundary. The Q5
@@ -508,23 +517,50 @@ points, but all three pair minors vanish at
 `1/1/2`, while full `M0` remains `131 -> 131`. This rejects only the proposed
 three-minor subcover, not either chart or the common-core theorem target.
 
+The source-native Q5 audit then checks all 1,127 common-core rows independently:
+none of 4,756 source references resolves to external `Q5`, the independent
+symbolic compiler finds no nonzero Q5 coefficient, and the 127 pivot rows are
+also Q5-free. The global Schur block identity therefore removes Q5 exactly.
+The non-aligned target is `T=[A B]`; the aligned target is
+`T=[A B2 B3 B4]`. Every semantic branch contains `M0` once and in order, so a
+common-core pointwise theorem propagates to all four branches by row inclusion.
+This does not assert Q5-freeness of appended Eq. (113) or Eq. (139) rows.
+
+The Phase-A checkpoint then machine-rebuilds the four predecessor bindings,
+the 14-factor bottom-CSG localization, and the lightweight spectator reduction
+to
+`R52=QQ[t1,...,t4,s0,...,s47][(F_lambda*product(s_j))^-1]`. The complete
+1,127-row manifest attempt did not emit a result before its manually observed
+request boundary. Its elapsed time, CPU/RSS, and stop event are manual local
+observations because no attempt-time source snapshot or raw monitor transcript
+was preserved; no partial row count is certified. Running the module command
+above reproduces the fail-closed checkpoint only and does **not** repeat the
+long attempt. No Sage, Gröbner basis, saturation, unit ideal, or witness is
+claimed.
+
 ## Next exact gate
 
 For state-native SR2-V, enlarge the exact section beyond beta one and the two
 retained alpha coordinates; do not rerun the now-empty sparse section or either
 old fixed-state D12/shear campaign. In the transverse reducible branch, use the
 certified global unit minor in the branch-independent common core
-`M0=CPOBC+fixed-vector GC+reachable-state MSR` and work only in its five-`Q`
-Schur complement. On each `D(gk)`, prove the residue-field rank condition. A
-strong accepted route is to lazily compute the full Schur row module and
-certify `e_w` membership directly or via the saturated syzygy-image ideal
-`B(ker[A,C]):gk^infinity`; first prove syntactically whether `Q5` vanishes from
-all common-core rows before simplifying to `B(ker A)`. Use exponent-lattice
-HNF/SNF to remove spectator torus variables, and treat the aligned quotient
-separately. If the stronger membership certificate fails, inspect the
-residue-field rank/Fitting support before splitting into derived/literal strict,
-retaining eight obligations. Completed Eq. (139)
-then follows from strict; derived and literal Eq. (113) are never combined.
+`M0=CPOBC+fixed-vector GC+reachable-state MSR` and use its Q5-free Schur
+complement. First optimize the Phase-A compiler with deterministic row
+checkpoints and a cached fraction-field representation, then freeze all 1,127
+Schur rows and six chart generator manifests. Only after that input gate passes,
+on each `S_k=R_base[g_k^-1]` certify the auxiliary ideal
+`J_k=<A_i*h+B_i>=S_k[h]`, equivalently the `g_k`-saturated unit ideal over the
+original base. The determinantal alternative is `I1(T_k)=S_k` and
+`<A_i> subset sqrt(I2(T_k))`. On the equal-ratio quotient localized at
+`f=r1-1`, certify `I3(B)=R` and `<A_i> subset sqrt(I4(T))`, or exclude each of
+the three normalized obstruction charts `w2=1`, `w3=1`, `w4=1`. Full Schur
+row-module membership is a stronger accepted route, not a necessity. Use
+exponent-lattice HNF/SNF to remove spectator torus variables. If the common-core
+ideal certificates succeed, all four branches follow and the old eight
+branch/locus obligations are bypassed. If a bad point is found, lift it by
+Eq. (120) and the 127-pivot backsolve, verify `M0` and commutators directly, and
+then test the four branch-specific additions; completed Eq. (139) follows from
+strict, while derived and literal Eq. (113) are never combined.
 Then treat
 `Delta_align=0` and the triple-irreducible pivots. Keep supplemental Q5
 separate. Do not launch an exhaustive 131-patch campaign.

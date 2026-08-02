@@ -11,7 +11,7 @@ import pytest
 from universe_lab.final_theory import sr2v_transverse_eq120_repair_pair_scout_v042 as result
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_SEMANTIC_DIGEST = "f14853252dfadf4f2335f4f25a2388731ad821739f8b9534988cf31b5ac1bf18"
+EXPECTED_SEMANTIC_DIGEST = "4efc456ac29986380f985aa7299b38fd17351f57ae87648b034aea6ae088208a"
 
 
 def _load(relative: str) -> dict[str, Any]:

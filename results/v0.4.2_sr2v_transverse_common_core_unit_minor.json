@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "this proves a global rank-127 common-core minor and a lossless five-Q-column reduction; it does not yet prove that the three star commutator rows lie in the remaining Schur row module and therefore does not issue an SR2-V terminal",
+  "claim_boundary": "this proves a global rank-127 common-core minor and a lossless five-Q-column reduction; it does not yet prove residue-field rank containment of the three star commutator rows, nor the stronger global Schur row-module membership, and therefore does not issue an SR2-V terminal",
   "date": "2026-08-02",
   "dimension": 2,
   "field": "Q",
@@ -14,11 +14,11 @@
   },
   "input_artifacts": {
     "results/v0.4.2_sr2v_bottom_msr_global_csg.json": {
-      "raw_sha256": "03cb9b5a2f3b5fedc8ae8abca25fae40886e43aa1064a060f5d6dbaf93467777",
+      "binding_kind": "canonical_json_semantic_digest",
       "semantic_digest_sha256": "d7978cac841bf725baa03df99aa661183a5c96367a2979b245b978f7d5dd08a4"
     },
     "results/v0.4.2_sr2v_scalar_lattice.json": {
-      "raw_sha256": "5989b3685c33e30a6ed3a39896cab0473043f847183de935f4b7c0f76814d3b5",
+      "binding_kind": "canonical_json_semantic_digest",
       "semantic_digest_sha256": "155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9"
     }
   },
@@ -31,14 +31,14 @@
       "Q5"
     ],
     "branch_count_if_common_core_succeeds": 0,
-    "task": "compute the common-core Schur row module on these five columns and prove that it contains the three globally minimal star commutator rows",
+    "task": "prove residue-field rank containment of the three minimal star rows on these five columns; global Schur row-module membership is a stronger sufficient route",
     "why": "Eq113 and Eq139 were not used in the globally invertible block"
   },
   "passed": true,
   "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
-  "schema_version": "final-theory-v042-sr2v-transverse-common-core-unit-minor-v1",
+  "schema_version": "final-theory-v042-sr2v-transverse-common-core-unit-minor-v2",
   "search_terminal": "NOT_A_SEARCH_TERMINAL_FIVE_Q_COLUMN_SCHUR_PROBLEM_REMAINS",
-  "semantic_digest_sha256": "59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97",
+  "semantic_digest_sha256": "286b2c8e0329dd585c33dee13c66e3a923a270d04822f3489186aad4ee1e45ac",
   "unit_minor_certificate": {
     "CSG_base_safe_symbolic_supergraph_edges": 554,
     "alternating_digraph_is_acyclic": true,

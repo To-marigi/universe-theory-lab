@@ -1,6 +1,6 @@
 {
   "schema_version": "cpobc-current-research-state-v1",
-  "updated": "2026-08-02",
+  "updated": "2026-08-03",
   "mutable_index_not_a_proof_certificate": true,
   "global_verdict": "FINAL_THEORY_OPEN",
   "public_baseline": {
@@ -69,7 +69,9 @@
     "v0.4.2_sr2v_transverse_common_core_unit_minor": "GLOBAL_127_BY_127_NON_Q_LAURENT_UNIT_MINOR_FIVE_Q_SCHUR_REDUCTION_CERTIFIED_NONTERMINAL",
     "v0.4.2_sr2v_transverse_common_core_schur_scout": "THREE_FIXED4_CANDIDATES_REJECTED_FULL_M0_NO_ESCAPE_AT_ADVERSARIAL_POINTS_OPEN",
     "v0.4.2_sr2v_transverse_eq120_schur_chart_obligations": "FOUR_LOCUS_POINTWISE_RANK_AND_STRONG_ROW_MODULE_CONTRACTS_CERTIFIED_NONTERMINAL",
-    "v0.4.2_sr2v_transverse_eq120_repair_pair_scout": "THREE_PAIR_MINOR_SUBCOVER_REJECTED_FULL_M0_SURVIVES_NONTERMINAL"
+    "v0.4.2_sr2v_transverse_eq120_repair_pair_scout": "THREE_PAIR_MINOR_SUBCOVER_REJECTED_FULL_M0_SURVIVES_NONTERMINAL",
+    "v0.4.2_sr2v_transverse_common_core_q5_free": "FULL_M0_AND_GLOBAL_SCHUR_REDUCTION_Q5_FREE_NONALIGNED_TWO_COLUMN_ALIGNED_FOUR_COLUMN_POINTWISE_IDEALS_OPEN",
+    "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_PURE_LOWER_BOUNDED_NO_GO_ORACLE_CERTIFIED_REMOTE_MIXED_OPEN",
@@ -544,7 +546,7 @@
           "artifact": "results/v0.4.2_sr2v_transverse_common_core_unit_minor.json",
           "report": "reports/v0.4.2_sr2v_transverse_common_core_unit_minor.md",
           "verdict": "SR2V_TRANSVERSE_COMMON_CORE_GLOBAL_UNIT_MINOR_CERTIFIED_NONTERMINAL",
-          "semantic_digest_sha256": "59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97",
+          "semantic_digest_sha256": "286b2c8e0329dd585c33dee13c66e3a923a270d04822f3489186aad4ee1e45ac",
           "common_core": "RAW_CPOBC_PLUS_FIXED_VECTOR_GC_PLUS_REACHABLE_STATE_MSR",
           "Eq113_or_Eq139_used": false,
           "minor_shape": [127, 127],
@@ -558,6 +560,7 @@
           "determinant_is_global_unit": true,
           "transverse_base_dimension": 54,
           "remaining_columns": ["Q1", "Q2", "Q3", "Q4", "Q5"],
+          "predecessor_binding_kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
           "rejected_four_row_schur_candidates": [
             [83, 147, 154, 688],
             [23, 147, 154, 688],
@@ -575,7 +578,7 @@
           "artifact": "results/v0.4.2_sr2v_transverse_common_core_schur_scout.json",
           "report": "reports/v0.4.2_sr2v_transverse_common_core_schur_scout.md",
           "verdict": "SR2V_TRANSVERSE_COMMON_CORE_FIXED4_REJECTED_FULL_M0_NO_ESCAPE_AT_ADVERSARIAL_POINT_OPEN",
-          "semantic_digest_sha256": "36c0685c7d3dbe8f1396cf8c9bc14f55447f6b15f33bafea2e916d4423d54ae6",
+          "semantic_digest_sha256": "5d1dae52b6f268b52e0deedccca405d49c92f8a01527f62b07c02bd239d1a875",
           "exact_evaluations": 83,
           "rejected_fixed4_candidates": [
             [83, 147, 154, 688],
@@ -601,7 +604,7 @@
           "artifact": "results/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.json",
           "report": "reports/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.md",
           "verdict": "SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_CERTIFIED_NONTERMINAL",
-          "semantic_digest_sha256": "d7ac88daccd2328280ff10558979b2a520c0d9628b5b6637d2e12a7d6bb79bb6",
+          "semantic_digest_sha256": "c040fa5f4a1542becf5ba4579a2cefb5b0f224b910da1ec2da42bb77df44d644",
           "non_aligned_charts": ["D(g2)", "D(g3)", "D(g4)"],
           "non_aligned_obstruction_coordinate": "w",
           "non_aligned_exact_condition": "FOR_EACH_RESIDUE_FIELD_RANK_T_EQUALS_RANK_T_WITH_E_W",
@@ -622,7 +625,7 @@
           "artifact": "results/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.json",
           "report": "reports/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.md",
           "verdict": "SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL",
-          "semantic_digest_sha256": "f14853252dfadf4f2335f4f25a2388731ad821739f8b9534988cf31b5ac1bf18",
+          "semantic_digest_sha256": "4efc456ac29986380f985aa7299b38fd17351f57ae87648b034aea6ae088208a",
           "rejected_pair_minors": [[32, 120], [424, 544], [8, 14]],
           "common_zero_torus_factors": {
             "u12": "1",
@@ -640,9 +643,72 @@
           "Eq120_charts_or_full_M0_rejected": false,
           "predecessor_binding_kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
           "search_terminal": false
+        },
+        "transverse_common_core_q5_free": {
+          "artifact": "results/v0.4.2_sr2v_transverse_common_core_q5_free.json",
+          "report": "reports/v0.4.2_sr2v_transverse_common_core_q5_free.md",
+          "next_gate_execution_plan": "reports/v0.4.2_sr2v_q5_free_auxiliary_ideal_execution_plan.md",
+          "schema_version": "final-theory-v042-sr2v-transverse-common-core-q5-free-v2",
+          "verdict": "SR2V_TRANSVERSE_COMMON_CORE_Q5_FREE_SCHUR_REDUCTION_CERTIFIED_NONTERMINAL",
+          "semantic_digest_sha256": "d19b01460604c647dc290143bf3a5aba2986bc9e6be235fd1ebae3a7702c25a3",
+          "M0_row_count": 1127,
+          "M0_blocks": {
+            "raw_CPOBC": 783,
+            "fixed_vector_GC": 320,
+            "reachable_state_MSR": 24
+          },
+          "source_references_resolving_to_Q5": 0,
+          "symbolic_M0_rows_with_nonzero_Q5_coefficient": 0,
+          "pivot_rows_with_nonzero_Q5_coefficient": 0,
+          "global_Schur_rows_are_Q5_free": true,
+          "four_semantic_branches_contain_M0_once_and_in_order": true,
+          "non_aligned_columns": ["h", "w"],
+          "aligned_columns": ["h", "w2", "w3", "w4"],
+          "non_aligned_ring": "S_k=R_base[g_k^-1]",
+          "aligned_ring": "(R_base/(g2,g3,g4))[(r1-1)^-1]",
+          "base_ring_kind": "UPPER_LAURENT_TORUS_OVER_BOTTOM_CSG_14_FACTOR_PRINCIPAL_OPEN_NOT_PURE_GM52",
+          "denominator_gate": "RATIONAL_TIMES_UPPER_MONOMIAL_TIMES_CERTIFIED_BOTTOM_LAMBDA_FACTORS_ONLY",
+          "phase_A_preflight_correction": "PURE_LAURENT_MODEL_REJECTED_BEFORE_ARTIFACT_EMISSION_EXISTING_THEOREMS_UNAFFECTED",
+          "pointwise_rank_truth_tables_certified": true,
+          "unit_ideal_or_radical_certificates_computed": false,
+          "global_row_module_membership_claimed": false,
+          "Eq113_or_Eq139_Q5_free_claimed": false,
+          "predecessor_binding_kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
+          "search_terminal": false
+        },
+        "q5_free_auxiliary_ideal_manifest_checkpoint": {
+          "artifact": "results/v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest.json",
+          "report": "reports/v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest.md",
+          "execution_plan": "reports/v0.4.2_sr2v_q5_free_auxiliary_ideal_execution_plan.md",
+          "schema_version": "final-theory-v042-sr2v-q5-free-auxiliary-ideal-manifest-v2",
+          "verdict": "SR2V_Q5_FREE_AUXILIARY_IDEAL_MANIFEST_OPEN_RESOURCE_LIMIT_NONTERMINAL",
+          "semantic_digest_sha256": "357d739091d2bf36740895f35c9227ba912e69f8d455f9e91dd8a6ea7ce6c605",
+          "passed": false,
+          "machine_certified": {
+            "canonical_predecessor_bindings": 4,
+            "bottom_CSG_lambda_factor_count": 14,
+            "upper_kernel_shape": [49, 132],
+            "Q5_only_upper_columns": [48],
+            "Q5_only_upper_support": [131],
+            "dropped_spectators": ["bottom_q5", "s48"],
+            "active_ring": "R52=QQ[t1,t2,t3,t4,s0,...,s47][(F_lambda*product(s0,...,s47))^-1]"
+          },
+          "resource_attempt_evidence": "MANUALLY_RECORDED_LOCAL_OBSERVATION_NOT_MACHINE_REPRODUCIBLE",
+          "manually_reported_wall_seconds": 3602,
+          "manually_reported_last_CPU_seconds": "3517.109375",
+          "manually_reported_last_working_set_bytes": 688783360,
+          "attempt_source_snapshot_available": false,
+          "raw_monitor_log_available": false,
+          "partial_completion_count_certified": false,
+          "full_1127_source_Schur_ledger_generated": false,
+          "full_six_chart_generator_manifests_generated": false,
+          "denominator_inverse_reconstruction_ledger_completed": false,
+          "solver_or_Groebner_started": false,
+          "next_implementation_gate": "DETERMINISTIC_ROW_CHECKPOINTS_AND_CACHED_FRACTION_FIELD_REPRESENTATION",
+          "search_terminal": false
         }
       },
-      "current_component_target": "PROVE_RESIDUE_FIELD_RANK_EQUALITY_ON_U2_U3_U4_AND_ALIGNED;TRY_FULL_M0_LOCALIZED_SCHUR_SYZYGY_SATURATION_AS_A_STRONG_CERTIFICATE;IF_MEMBERSHIP_FAILS_INSPECT_FITTING_SUPPORT_BEFORE_ANY_ESCAPE_OR_EIGHT_BRANCH_SPLIT;AND_ENLARGE_STATE_NATIVE_SUPPORT",
+      "current_component_target": "OPTIMIZE_PHASE_A_WITH_DETERMINISTIC_ROW_CHECKPOINTS_AND_CACHED_FRACTION_FIELD;THEN_FREEZE_ALL_1127_SCHUR_ROWS_AND_SIX_CHART_MANIFESTS;ONLY_THEN_RUN_Q5_FREE_AUXILIARY_IDEAL_CERTIFICATES;IF_A_BAD_POINT_EXISTS_LIFT_AND_VERIFY_FULL_M0_THEN_BRANCH_ROWS",
       "short_report_rule": "SEPARATE_SHORT_REPORT_CANDIDATE_ONLY_FOR_EXACT_VISIBLE_WITNESS_OR_FULL_PROFILE_OBSTRUCTION"
     },
     "priority_order": [
@@ -655,7 +721,7 @@
       "SR2_V_TRANSVERSE_COCYCLE_FOUR_SEMANTIC_BRANCH_PRINCIPAL_OPENS_COMPLETE",
       "SR2_V_TRANSVERSE_COMMUTATOR_KERNEL_EQUAL_Q_LOCUS_AND_NESTED_DEGENERACY_CERTIFICATE_COMPLETE",
       "SR2_V_INTRINSIC_SCALAR_BASE_EQ120_MINIMAL_STAR_FOUR_LOCUS_COVER_AND_GC_MSR_ABLATIONS_COMPLETE",
-      "SR2_V_COMMON_CORE_UNIT_MINOR_AND_EQ120_POINTWISE_RANK_CONTRACT_COMPLETE_LOCALIZED_SYZYGY_SATURATION_STRONG_ROUTE_CURRENT",
+      "SR2_V_COMMON_CORE_UNIT_MINOR_Q5_FREE_SCHUR_AND_POINTWISE_CONTRACTS_COMPLETE_PHASE_A_MANIFEST_RESOURCE_OPEN_OPTIMIZATION_CURRENT",
       "SR2_V_ALIGNED_DEGENERACY_AND_TRIPLE_IRREDUCIBLE_BRANCHES_NEXT",
       "955_REDUCIBLE_IRREDUCIBLE_AND_SYMMETRY_REDUCED_MIXED_SCOUTS",
       "721_NATIVE_COMPILER_AFTER_955_TERMINAL_OR_AS_BUDGET_FALLBACK",
