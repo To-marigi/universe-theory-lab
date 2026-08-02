@@ -428,11 +428,11 @@ SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIE
 SR2V_TRANSVERSE_COMMON_CORE_GLOBAL_UNIT_MINOR_CERTIFIED_NONTERMINAL
 59c73ef93bfc67fafb643223152ca49a6b4eb9b4a958fd8d0894c394aacf5f97
 SR2V_TRANSVERSE_COMMON_CORE_FIXED4_REJECTED_FULL_M0_NO_ESCAPE_AT_ADVERSARIAL_POINT_OPEN
-90cdaa5399f9e6663836d277e60f327558a2533ab32f382a701ba075f86ad55c
-SR2V_TRANSVERSE_EQ120_SCHUR_CHART_OBLIGATIONS_CERTIFIED_NONTERMINAL
-56bc0f94aff5a87e109d3fd54e343ebe36076c889279c5740ed3e92c539048c8
+b977d2a21444beae5d853680c0945dd74fef1504f4b3045f587c509936b4a35a
+SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_CERTIFIED_NONTERMINAL
+7abbbbdfd5455b6b000842d7698a0a2d9058df87ef4ac2882e47edf44ff7ce0e
 SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL
-dea028466f41a6a186fbcb09f7b5ba8a74d12834dc7f348d0a1f5f04abf4bcf7
+a6754c57355d2f7ed2ce9df9abd1603d7563bb9bec1785fa1c53c2dddb8364e9
 ```
 
 The local Laurent certificate is retained as a Jacobian regression; the
@@ -483,20 +483,24 @@ third fails at the positive rational torus point
 candidate escapes the complete common core and all four semantic branches
 remain `131 -> 131` after all commutators, so no full-profile witness is found.
 
-The Eq. (120) chart-obligation successor derives the exact remaining module
-problem. On each `D(gk)`, Eq. (120) gives
-`x=delta*h+(b/b1)*w` and `c1k=-b_k*g_k*w`, so the target is the localized
-coordinate row `e_w`. On the aligned remainder it becomes simultaneous
-membership of `e_w2,e_w3,e_w4`; the `r1=1` sublocus is automatically safe.
-The certificate retains the external `Q5` coefficient, proves visible-reference
-changes only rescale pair minors by units, and records why a finite rank ledger,
+The Eq. (120) chart-obligation successor derives the exact remaining pointwise
+rank problem. On each `D(gk)`, Eq. (120) gives
+`x=delta*h+(b/b1)*w` and `c1k=-b_k*g_k*w`; adjoining the coordinate row `e_w`
+must preserve rank over every residue field. Localized row-module membership of
+`e_w` is a stronger sufficient certificate. On the aligned remainder the same
+distinction applies simultaneously to `e_w2,e_w3,e_w4`; the `r1=1` sublocus is
+automatically safe. The certificate retains the external `Q5` coefficient,
+proves that the same corresponding minors under visible-reference changes are
+unit rescalings while alternate anchors may refine the cover, and records why a finite rank ledger,
 a pointwise nonzero minor, an `AB` minor with hidden `Q5`, or multivariate gcd
 one is not a global proof.
 
 The repair-pair scout then rejects `(32,120)` on `D(g2)` and `(424,544)` on
 `D(g3)` by exact positive-rational points. Pair `(8,14)` repairs those two
 points, but all three pair minors vanish at
-`u=(1,1/2,1,2,2)`, where `(g2,g3,g4)=(1/96,1/256,0)`. Each restricted rank is
+`u=(1,1/2,1,2,2)`, where the normalized ratio values are
+`(g2,g3,g4)=(-1/2,-1/2,0)` and the determinant-form values are
+`(d2,d3,d4)=(1/96,1/256,0)`, with `d_i=-b1*b_i*g_i`. Each restricted rank is
 `1/1/2`, while full `M0` remains `131 -> 131`. This rejects only the proposed
 three-minor subcover, not either chart or the common-core theorem target.
 
@@ -507,13 +511,15 @@ retained alpha coordinates; do not rerun the now-empty sparse section or either
 old fixed-state D12/shear campaign. In the transverse reducible branch, use the
 certified global unit minor in the branch-independent common core
 `M0=CPOBC+fixed-vector GC+reachable-state MSR` and work only in its five-`Q`
-Schur complement. On each `D(gk)`, lazily compute the full Schur row module and
+Schur complement. On each `D(gk)`, prove the residue-field rank condition. A
+strong accepted route is to lazily compute the full Schur row module and
 certify `e_w` membership directly or via the saturated syzygy-image ideal
 `B(ker[A,C]):gk^infinity`; first prove syntactically whether `Q5` vanishes from
 all common-core rows before simplifying to `B(ker A)`. Use exponent-lattice
 HNF/SNF to remove spectator torus variables, and treat the aligned quotient
-separately. Only if common-core membership fails split
-into derived/literal strict, retaining eight obligations. Completed Eq. (139)
+separately. If the stronger membership certificate fails, inspect the
+residue-field rank/Fitting support before splitting into derived/literal strict,
+retaining eight obligations. Completed Eq. (139)
 then follows from strict; derived and literal Eq. (113) are never combined.
 Then treat
 `Delta_align=0` and the triple-irreducible pivots. Keep supplemental Q5

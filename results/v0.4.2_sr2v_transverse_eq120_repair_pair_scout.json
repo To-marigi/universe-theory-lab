@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "the two older chart-open points reject their recorded finite repair selections, while sources 8 and 14 repair the Eq. (120) kernel there; the third exact point shows that all three proposed two-row minor opens still fail to cover D(g2) or D(g3). This rejects only that finite pair-minor subcover, not an Eq. (120) chart, the complete common core, or commutativity, and the targeting rationales are not global determinant factorization certificates",
+  "claim_boundary": "the two older chart-open points reject their recorded finite repair selections, while sources 8 and 14 repair the Eq. (120) kernel there; the third exact point shows that all three proposed two-row minor opens still fail to cover D(g2) or D(g3). Here g_i=r_i-r_1 and the separately reported determinant form d_i=-b_1*b_i*g_i defines the same principal open because the diagonal factors are declared units. This rejects only that finite pair-minor subcover, not an Eq. (120) chart, the complete common core, or commutativity, and the targeting rationales are not global determinant factorization certificates",
   "date": "2026-08-02",
   "dimension": 2,
   "field": "Q",
@@ -13,9 +13,11 @@
     "all_three_pair_restrictions_fail_at_the_new_point": true,
     "all_three_proposed_pair_minors_vanish_at_the_new_point": true,
     "both_complete_common_core_checks_remain_131_to_131": true,
-    "both_points_are_inside_their_declared_charts": true,
+    "both_points_are_inside_their_ratio_charts": true,
     "both_proposed_pairs_are_exactly_rejected": true,
+    "determinant_and_ratio_chart_functions_are_unit_equivalent": true,
     "eq120_base_cover_is_frozen_and_bound": true,
+    "new_point_chart_notations_are_unit_equivalent": true,
     "new_point_complete_common_core_check_remains_131_to_131": true,
     "new_point_is_in_both_g2_and_g3_charts": true,
     "sources_8_14_repair_both_older_points_on_the_eq120_kernel": true,
@@ -33,6 +35,7 @@
   },
   "older_repair_pair_rejections": {
     "g2": {
+      "D_d_equals_D_g_on_declared_nonsingular_base": true,
       "Q_column_order": [
         "Q1",
         "Q2",
@@ -79,8 +82,15 @@
           "0"
         ]
       ],
-      "chart_function": "g2=a_Q1*b_Q2-a_Q2*b_Q1",
+      "chart_function_unit_relation": "d2=-b_Q1*b_Q2*g2",
+      "chart_function_unit_relation_residual": "0",
       "chart_id": "g2",
+      "declared_diagonal_unit_values": {
+        "b_Q1": "1/4",
+        "b_Q2": "1/12"
+      },
+      "determinant_form_d_value": "-1/48",
+      "determinant_form_function": "d2=a_Q1*b_Q2-a_Q2*b_Q1",
       "eq120_base_sources": [
         29,
         147
@@ -95,10 +105,11 @@
       "full_M0_has_no_escape_at_this_point": true,
       "full_M0_plus_all_six_commutators_rank": 131,
       "full_M0_rank": 131,
-      "g_value": "-1/48",
       "pair_is_rejected_on_its_declared_chart": true,
       "pivot_rank": 127,
-      "point_is_inside_declared_chart": true,
+      "point_is_inside_determinant_open_D_d": true,
+      "point_is_inside_ratio_chart_D_g": true,
+      "point_membership_in_D_d_agrees_with_D_g": true,
       "pointwise_eq120_kernel_repair_by_sources_8_14": {
         "all_C_Q5_coefficients_are_zero": true,
         "candidate_plus_target_e_w_rank": 2,
@@ -133,6 +144,8 @@
         32,
         120
       ],
+      "ratio_chart_function": "g2=r_Q2-r_Q1=a_Q2/b_Q2-a_Q1/b_Q1",
+      "ratio_chart_g_value": "1",
       "residual_data_digest_sha256": "4f5d250c5866facf0f7a026624485aa40c9ceb4ebdc69095d10d9a41b542550f",
       "row_id_digest_sha256": "243a781a3a8e85286cd22972f94a09a151f16fdc26d75ad462ecd46e5fdfb970",
       "row_ids": [
@@ -169,6 +182,7 @@
       "targeting_rationale_is_not_a_global_factorization_certificate": true
     },
     "g3": {
+      "D_d_equals_D_g_on_declared_nonsingular_base": true,
       "Q_column_order": [
         "Q1",
         "Q2",
@@ -215,8 +229,15 @@
           "0"
         ]
       ],
-      "chart_function": "g3=a_Q1*b_Q3-a_Q3*b_Q1",
+      "chart_function_unit_relation": "d3=-b_Q1*b_Q3*g3",
+      "chart_function_unit_relation_residual": "0",
       "chart_id": "g3",
+      "declared_diagonal_unit_values": {
+        "b_Q1": "1/4",
+        "b_Q3": "1/32"
+      },
+      "determinant_form_d_value": "1/256",
+      "determinant_form_function": "d3=a_Q1*b_Q3-a_Q3*b_Q1",
       "eq120_base_sources": [
         29,
         548
@@ -231,10 +252,11 @@
       "full_M0_has_no_escape_at_this_point": true,
       "full_M0_plus_all_six_commutators_rank": 131,
       "full_M0_rank": 131,
-      "g_value": "1/256",
       "pair_is_rejected_on_its_declared_chart": true,
       "pivot_rank": 127,
-      "point_is_inside_declared_chart": true,
+      "point_is_inside_determinant_open_D_d": true,
+      "point_is_inside_ratio_chart_D_g": true,
+      "point_membership_in_D_d_agrees_with_D_g": true,
       "pointwise_eq120_kernel_repair_by_sources_8_14": {
         "all_C_Q5_coefficients_are_zero": true,
         "candidate_plus_target_e_w_rank": 2,
@@ -269,6 +291,8 @@
         424,
         544
       ],
+      "ratio_chart_function": "g3=r_Q3-r_Q1=a_Q3/b_Q3-a_Q1/b_Q1",
+      "ratio_chart_g_value": "-1/2",
       "residual_data_digest_sha256": "5cab0f87e927ede8c6bc0bb5c1d44d6e77ad182adc0cb3bfdc505f494f0d60cb",
       "row_id_digest_sha256": "c90087f1ff56a1cda32d6c2d4d368a0cff070546a346358f41c3d6c01e4f4d73",
       "row_ids": [
@@ -307,9 +331,9 @@
   },
   "passed": true,
   "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
-  "schema_version": "final-theory-v042-sr2v-transverse-eq120-repair-pair-scout-v2",
+  "schema_version": "final-theory-v042-sr2v-transverse-eq120-repair-pair-scout-v3",
   "search_terminal": "NOT_A_SEARCH_TERMINAL_THREE_PAIR_MINOR_SUBCOVER_REJECTION_ONLY",
-  "semantic_digest_sha256": "dea028466f41a6a186fbcb09f7b5ba8a74d12834dc7f348d0a1f5f04abf4bcf7",
+  "semantic_digest_sha256": "a6754c57355d2f7ed2ce9df9abd1603d7563bb9bec1785fa1c53c2dddb8364e9",
   "three_pair_minor_common_zero": {
     "Q_column_order": [
       "Q1",
@@ -320,10 +344,42 @@
     ],
     "all_three_pair_minors_vanish": true,
     "all_three_pair_restrictions_fail_to_span_e_w": true,
-    "chart_function_values": {
-      "g2": "1/96",
-      "g3": "1/256",
-      "g4": "0"
+    "chart_function_unit_relations": {
+      "2": {
+        "D_d_equals_D_g_on_declared_nonsingular_base": true,
+        "b_Q1": "1/4",
+        "b_Q2": "1/12",
+        "determinant_form_function": "d2=a_Q1*b_Q2-a_Q2*b_Q1",
+        "identity_residual": "0",
+        "point_membership_agrees": true,
+        "ratio_chart_function": "g2=r_Q2-r_Q1",
+        "unit_relation": "d2=-b_Q1*b_Q2*g2"
+      },
+      "3": {
+        "D_d_equals_D_g_on_declared_nonsingular_base": true,
+        "b_Q1": "1/4",
+        "b_Q3": "1/32",
+        "determinant_form_function": "d3=a_Q1*b_Q3-a_Q3*b_Q1",
+        "identity_residual": "0",
+        "point_membership_agrees": true,
+        "ratio_chart_function": "g3=r_Q3-r_Q1",
+        "unit_relation": "d3=-b_Q1*b_Q3*g3"
+      },
+      "4": {
+        "D_d_equals_D_g_on_declared_nonsingular_base": true,
+        "b_Q1": "1/4",
+        "b_Q4": "1/82",
+        "determinant_form_function": "d4=a_Q1*b_Q4-a_Q4*b_Q1",
+        "identity_residual": "0",
+        "point_membership_agrees": true,
+        "ratio_chart_function": "g4=r_Q4-r_Q1",
+        "unit_relation": "d4=-b_Q1*b_Q4*g4"
+      }
+    },
+    "determinant_form_d_values": {
+      "d2": "1/96",
+      "d3": "1/256",
+      "d4": "0"
     },
     "exact_positive_rational_slice_point": {
       "u12": "1",
@@ -525,6 +581,11 @@
     },
     "pivot_rank": 127,
     "proposed_pair_minor_opens_do_not_cover_D_g2_or_D_g3": true,
+    "ratio_chart_g_values": {
+      "g2": "-1/2",
+      "g3": "-1/2",
+      "g4": "0"
+    },
     "scope": "rejects only the three recorded two-row repair-minor opens as a subcover; it does not reject D(g2), D(g3), D(g4), or full M0",
     "star_schur_rows_c12_c13_c14": [
       [

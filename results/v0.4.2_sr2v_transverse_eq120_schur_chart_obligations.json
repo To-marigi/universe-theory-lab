@@ -14,20 +14,21 @@
       "locus": "V(g2,g3,g4,f)",
       "needs_no_repair_rows": true
     },
-    "cover_partition": {
+    "cover_decomposition": {
       "aligned_nonunit_locus": "V(g2,g3,g4) intersect D(f)",
       "automatic_remainder": "V(g2,g3,g4,f)",
       "complete_set_theoretic_argument": "either some g_k is nonzero, or every g_k is zero; in the latter case either f is nonzero (aligned obligation) or f=0 (delta_Q=0)",
+      "cover_identity_checks": [
+        "0",
+        "0",
+        "0"
+      ],
       "non_aligned_opens": [
         "D(g2)",
         "D(g3)",
         "D(g4)"
       ],
-      "partition_identity_checks": [
-        "0",
-        "0",
-        "0"
-      ]
+      "overlap_note": "D(g2), D(g3), and D(g4) may overlap; this is a cover, not a partition"
     },
     "exact_localized_obligation": {
       "general_sufficient_conditions": [
@@ -35,7 +36,7 @@
         "or exhibit a localized-unit 5x5 minor, which is stronger than needed",
         "or give local identities plus a certified unit-ideal/Bezout cover"
       ],
-      "necessary_and_sufficient_condition": "e_w2,e_w3,e_w4 all belong to the row module of the five-column aligned restriction matrix over S_L",
+      "pointwise_necessary_and_sufficient_condition": "over every residue field of S_L, adjoining e_w2,e_w3,e_w4 does not increase the aligned restriction-matrix rank",
       "pure_quotient_minor_sufficient_condition": {
         "adjugate_identity_difference": [
           "0",
@@ -47,7 +48,8 @@
         "required_unit_test": "the quotient minor is a unit in S_L"
       },
       "rank_form_over_each_residue_field": "rank(T_L)=rank(T_L with e_w2,e_w3,e_w4 adjoined); this pointwise test is not by itself a global module certificate",
-      "ring": "S_L=(R/(g2,g3,g4))[f^-1]"
+      "ring": "S_L=(R/(g2,g3,g4))[f^-1]",
+      "strong_global_sufficient_condition": "e_w2,e_w3,e_w4 all belong to the row module of the five-column aligned restriction matrix over S_L; this is sufficient and functorial, but stronger than the residue-field rank condition"
     },
     "generic_Schur_row_restriction": {
       "A": "b1*rho1 + b2*rho2 + b3*rho3 + b4*rho4",
@@ -86,7 +88,7 @@
       "unit_equivalence": "on D(f), commutativity is equivalent to w2=w3=w4=0"
     }
   },
-  "claim_boundary": "this exact successor derives the fail-closed row-module obligations on the three Eq120 ratio opens and the aligned remainder after the global 127-column unit elimination; it certifies no repair row, no localized repair minor, no unit-ideal cover, no global star membership, no noncommutative witness and no SR2-V terminal",
+  "claim_boundary": "this exact successor derives the fail-closed pointwise rank conditions and stronger accepted row-module certificate contracts on the three Eq120 ratio opens and the aligned remainder after the global 127-column unit elimination; it certifies no repair row, no localized repair minor, no unit-ideal cover, no global star membership, no noncommutative witness and no SR2-V terminal",
   "date": "2026-08-02",
   "dimension": 2,
   "field": "Q",
@@ -102,6 +104,7 @@
     "frozen_Eq120_four_locus_cover_is_bound": true,
     "generic_five_column_Schur_restriction_is_exact": true,
     "multivariate_gcd_is_not_promoted_to_unit_ideal": true,
+    "row_module_membership_is_not_mislabeled_as_pointwise_necessary": true,
     "visible_reference_change_only_rescales_pair_minors_by_units": true
   },
   "input_artifacts": {
@@ -167,9 +170,10 @@
       },
       "covered_minor_family_condition": "for an ideal I of valid repair minors, require I*S_k=S_k; equivalently certify a Bezout identity after localization, or (I:g_k^infinity)=R after the declared base units are inverted",
       "direct_certificate": "exhibit coefficients p_r in S_k with sum p_r*(A_r,B_r,C_r)=e_w",
-      "necessary_and_sufficient_condition": "e_w=(0,1,0) belongs to Row_{S_k}(T_k); equivalently every Schur-kernel vector (h,w,q5) has w=0",
+      "pointwise_necessary_and_sufficient_condition": "for every residue field kappa(p) of S_k, rank(T_k tensor kappa(p)) equals the rank after adjoining e_w=(0,1,0); equivalently every residue-field Schur-kernel vector has w=0",
       "restriction_matrix": "T_k has rows (A_r,B_r,C_r) for all Schur(M0) rows",
       "ring_on_Uk": "S_k=R[g_k^-1] with every declared base unit already inverted",
+      "strong_global_sufficient_condition": "e_w=(0,1,0) belongs to Row_{S_k}(T_k); this gives a functorial localized identity and implies the pointwise condition, but is not necessary for residue-field or S_k-valued kernel vectors to have w=0",
       "three_row_sufficient_condition": {
         "adjugate_w_identity_difference": "0",
         "minor": "det([[A_i,B_i,C_i]]_{i=1}^3)",
@@ -209,6 +213,31 @@
       "spectral_difference": "delta_i=b_i*(r_i-1)",
       "upper_right_coordinates": "x_i=b_i*z_i",
       "visible_vector": "v_i=b_i/b1"
+    },
+    "row_module_strength_audit": {
+      "conclusion": "row-module membership is a strong scheme-theoretic/functorial certificate, not a necessary consequence of pointwise commutativity",
+      "d": "u-1",
+      "e_w_in_row_module": false,
+      "generic_two_by_two_determinant": "-(u - 1)**2",
+      "nonmembership_reason": "a*(-d,1,0)+b*(0,d,0)=e_w forces a*d=0, hence a=0 in the domain S, and then b*d=1 although d=u-1 is not a unit",
+      "pointwise_kernel_has_w_zero": true,
+      "ring": "S=QQ[u^+-1]",
+      "rows_ABC": [
+        [
+          "-(u-1)",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "u-1",
+          "0"
+        ]
+      ],
+      "special_fibre_u_equals_1_ranks_before_after_e_w": [
+        1,
+        1
+      ]
     },
     "three_non_aligned_charts": [
       {
@@ -270,7 +299,7 @@
       }
     ],
     "visible_reference_invariance": {
-      "conclusion": "changing the visible-vector reference rescales B and every AB pair minor by a declared diagonal unit; Q2/Q3/Q4 relabeling creates no new repair divisor or chart",
+      "conclusion": "changing the visible-vector reference rescales B and every AB pair minor by a declared diagonal unit; Q2/Q3/Q4 relabeling creates no new repair divisor or global non-aligned region, although it can refine the cover by opens such as D(r_i-r_j)",
       "records": [
         {
           "B_scaling": "B^(1)=(b1/b1)*B^(1)",
@@ -354,25 +383,26 @@
   },
   "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
   "repair_certificate_contract": {
-    "U2": "prove e_w in Row(T_2) over R[g2^-1] or give an exact escape",
-    "U3": "prove e_w in Row(T_3) over R[g3^-1] or give an exact escape",
-    "U4": "prove e_w in Row(T_4) over R[g4^-1] or give an exact escape",
+    "U2": "prove the residue-field rank condition; a strong accepted route is e_w in Row(T_2) over R[g2^-1]",
+    "U3": "prove the residue-field rank condition; a strong accepted route is e_w in Row(T_3) over R[g3^-1]",
+    "U4": "prove the residue-field rank condition; a strong accepted route is e_w in Row(T_4) over R[g4^-1]",
     "accepted_global_proof_forms": [
       "direct localized row-module identities with only declared-unit denominators",
       "localized-unit minors whose hypotheses include the Q5 column",
       "a finite chart family with an exact saturation/unit-ideal or Bezout cover"
     ],
-    "aligned": "prove e_w2,e_w3,e_w4 in Row(T_L) over (R/(g2,g3,g4))[f^-1] or give an exact escape",
+    "aligned": "prove the three residue-field rank conditions; a strong accepted route is e_w2,e_w3,e_w4 in Row(T_L) over (R/(g2,g3,g4))[f^-1]",
     "rejected_promotions": [
       "finite rational or finite-field rank agreement",
       "a minor nonzero at one or finitely many points",
       "multivariate gcd equal to one without a unit-ideal certificate",
-      "an AB minor that ignores nonzero Q5 coefficients"
+      "an AB minor that ignores nonzero Q5 coefficients",
+      "calling row-module membership necessary merely because every residue-field kernel has w=0"
     ]
   },
-  "schema_version": "final-theory-v042-sr2v-transverse-eq120-schur-chart-obligations-v1",
+  "schema_version": "final-theory-v042-sr2v-transverse-eq120-schur-chart-obligations-v2",
   "search_terminal": "NOT_A_SEARCH_TERMINAL_REPAIR_ROW_MODULE_MEMBERSHIP_UNRESOLVED",
-  "semantic_digest_sha256": "56bc0f94aff5a87e109d3fd54e343ebe36076c889279c5740ed3e92c539048c8",
-  "verdict": "SR2V_TRANSVERSE_EQ120_SCHUR_CHART_OBLIGATIONS_CERTIFIED_NONTERMINAL",
+  "semantic_digest_sha256": "7abbbbdfd5455b6b000842d7698a0a2d9058df87ef4ac2882e47edf44ff7ce0e",
+  "verdict": "SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_CERTIFIED_NONTERMINAL",
   "witness": null
 }

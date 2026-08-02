@@ -68,7 +68,7 @@
     "v0.4.2_sr2v_transverse_base_cover_ablation": "CPOBC_INTRINSIC_GM49_EQ120_MINIMAL_STAR_FOUR_LOCUS_COVER_AND_GC_MSR_INDIVIDUAL_NECESSITY_CERTIFIED_NONTERMINAL",
     "v0.4.2_sr2v_transverse_common_core_unit_minor": "GLOBAL_127_BY_127_NON_Q_LAURENT_UNIT_MINOR_FIVE_Q_SCHUR_REDUCTION_CERTIFIED_NONTERMINAL",
     "v0.4.2_sr2v_transverse_common_core_schur_scout": "THREE_FIXED4_CANDIDATES_REJECTED_FULL_M0_NO_ESCAPE_AT_ADVERSARIAL_POINTS_OPEN",
-    "v0.4.2_sr2v_transverse_eq120_schur_chart_obligations": "FOUR_LOCUS_ROW_MODULE_CONTRACT_Q5_REFERENCE_AND_GCD_FAIL_CLOSED_CERTIFIED_NONTERMINAL",
+    "v0.4.2_sr2v_transverse_eq120_schur_chart_obligations": "FOUR_LOCUS_POINTWISE_RANK_AND_STRONG_ROW_MODULE_CONTRACTS_CERTIFIED_NONTERMINAL",
     "v0.4.2_sr2v_transverse_eq120_repair_pair_scout": "THREE_PAIR_MINOR_SUBCOVER_REJECTED_FULL_M0_SURVIVES_NONTERMINAL"
   },
   "affected_campaign": {
@@ -564,7 +564,8 @@
             [23, 31, 147, 688]
           ],
           "second_candidate_original_ledger_points": 81,
-          "second_candidate_adversarial_hypersurface": "u13*u45-u44=0",
+          "second_candidate_exact_rank_test_relation": "u13*u45-u44=0",
+          "symbolic_factorization_certified": false,
           "second_candidate_adversarial_ranks_candidate_star_augmented": [3, 3, 4],
           "full_M0_adversarial_rank_with_all_commutators": [131, 131],
           "four_row_scout_global_claimed": false,
@@ -574,7 +575,7 @@
           "artifact": "results/v0.4.2_sr2v_transverse_common_core_schur_scout.json",
           "report": "reports/v0.4.2_sr2v_transverse_common_core_schur_scout.md",
           "verdict": "SR2V_TRANSVERSE_COMMON_CORE_FIXED4_REJECTED_FULL_M0_NO_ESCAPE_AT_ADVERSARIAL_POINT_OPEN",
-          "semantic_digest_sha256": "90cdaa5399f9e6663836d277e60f327558a2533ab32f382a701ba075f86ad55c",
+          "semantic_digest_sha256": "b977d2a21444beae5d853680c0945dd74fef1504f4b3045f587c509936b4a35a",
           "exact_evaluations": 83,
           "rejected_fixed4_candidates": [
             [83, 147, 154, 688],
@@ -598,16 +599,19 @@
         "transverse_eq120_schur_chart_obligations": {
           "artifact": "results/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.json",
           "report": "reports/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.md",
-          "verdict": "SR2V_TRANSVERSE_EQ120_SCHUR_CHART_OBLIGATIONS_CERTIFIED_NONTERMINAL",
-          "semantic_digest_sha256": "56bc0f94aff5a87e109d3fd54e343ebe36076c889279c5740ed3e92c539048c8",
+          "verdict": "SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_CERTIFIED_NONTERMINAL",
+          "semantic_digest_sha256": "7abbbbdfd5455b6b000842d7698a0a2d9058df87ef4ac2882e47edf44ff7ce0e",
           "non_aligned_charts": ["D(g2)", "D(g3)", "D(g4)"],
           "non_aligned_obstruction_coordinate": "w",
-          "non_aligned_exact_condition": "e_w_IN_LOCALIZED_ROW_MODULE",
+          "non_aligned_exact_condition": "FOR_EACH_RESIDUE_FIELD_RANK_T_EQUALS_RANK_T_WITH_E_W",
+          "strong_non_aligned_certificate": "e_w_IN_LOCALIZED_ROW_MODULE",
           "aligned_locus": "V(g2,g3,g4)_INTERSECT_D(r1-1)",
           "aligned_obstruction_coordinates": ["w2", "w3", "w4"],
           "automatic_safe_remainder": "V(g2,g3,g4,r1-1)",
           "Q5_fail_closed": true,
-          "reference_change_creates_no_new_minor": true,
+          "same_minor_reference_change_is_unit_scaling": true,
+          "reference_change_may_create_refinement_opens": true,
+          "non_aligned_principal_opens_form_cover_not_partition": true,
           "multivariate_gcd_one_is_not_a_cover": true,
           "repair_row_module_membership_proved": false,
           "search_terminal": false
@@ -616,7 +620,7 @@
           "artifact": "results/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.json",
           "report": "reports/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.md",
           "verdict": "SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL",
-          "semantic_digest_sha256": "dea028466f41a6a186fbcb09f7b5ba8a74d12834dc7f348d0a1f5f04abf4bcf7",
+          "semantic_digest_sha256": "a6754c57355d2f7ed2ce9df9abd1603d7563bb9bec1785fa1c53c2dddb8364e9",
           "rejected_pair_minors": [[32, 120], [424, 544], [8, 14]],
           "common_zero_torus_factors": {
             "u12": "1",
@@ -625,7 +629,9 @@
             "u44": "2",
             "u45": "2"
           },
-          "common_zero_chart_values": {"g2": "1/96", "g3": "1/256", "g4": "0"},
+          "common_zero_ratio_chart_values_g": {"g2": "-1/2", "g3": "-1/2", "g4": "0"},
+          "common_zero_determinant_form_values_d": {"d2": "1/96", "d3": "1/256", "d4": "0"},
+          "normalization_identity": "d_i=a_Q1*b_Qi-a_Qi*b_Q1=-b_Q1*b_Qi*g_i",
           "each_pair_candidate_star_augmented_ranks": [1, 1, 2],
           "full_M0_all_commutator_ranks": [131, 131],
           "three_minor_subcover_rejected": true,
@@ -633,7 +639,7 @@
           "search_terminal": false
         }
       },
-      "current_component_target": "COMPUTE_FULL_M0_LOCALIZED_SCHUR_SYZYGY_IDEALS_ON_U2_U3_U4_AND_ALIGNED;CERTIFY_SATURATION_OR_EXACT_ESCAPE;FALL_BACK_TO_EIGHT_STRICT_EQ113_OBLIGATIONS_ONLY_IF_COMMON_CORE_MEMBERSHIP_FAILS;AND_ENLARGE_STATE_NATIVE_SUPPORT",
+      "current_component_target": "PROVE_RESIDUE_FIELD_RANK_EQUALITY_ON_U2_U3_U4_AND_ALIGNED;TRY_FULL_M0_LOCALIZED_SCHUR_SYZYGY_SATURATION_AS_A_STRONG_CERTIFICATE;IF_MEMBERSHIP_FAILS_INSPECT_FITTING_SUPPORT_BEFORE_ANY_ESCAPE_OR_EIGHT_BRANCH_SPLIT;AND_ENLARGE_STATE_NATIVE_SUPPORT",
       "short_report_rule": "SEPARATE_SHORT_REPORT_CANDIDATE_ONLY_FOR_EXACT_VISIBLE_WITNESS_OR_FULL_PROFILE_OBSTRUCTION"
     },
     "priority_order": [
@@ -646,7 +652,7 @@
       "SR2_V_TRANSVERSE_COCYCLE_FOUR_SEMANTIC_BRANCH_PRINCIPAL_OPENS_COMPLETE",
       "SR2_V_TRANSVERSE_COMMUTATOR_KERNEL_EQUAL_Q_LOCUS_AND_NESTED_DEGENERACY_CERTIFICATE_COMPLETE",
       "SR2_V_INTRINSIC_SCALAR_BASE_EQ120_MINIMAL_STAR_FOUR_LOCUS_COVER_AND_GC_MSR_ABLATIONS_COMPLETE",
-      "SR2_V_COMMON_CORE_UNIT_MINOR_AND_EQ120_ROW_MODULE_CONTRACT_COMPLETE_LOCALIZED_SYZYGY_SATURATION_CURRENT",
+      "SR2_V_COMMON_CORE_UNIT_MINOR_AND_EQ120_POINTWISE_RANK_CONTRACT_COMPLETE_LOCALIZED_SYZYGY_SATURATION_STRONG_ROUTE_CURRENT",
       "SR2_V_ALIGNED_DEGENERACY_AND_TRIPLE_IRREDUCIBLE_BRANCHES_NEXT",
       "955_REDUCIBLE_IRREDUCIBLE_AND_SYMMETRY_REDUCED_MIXED_SCOUTS",
       "721_NATIVE_COMPILER_AFTER_955_TERMINAL_OR_AS_BUDGET_FALLBACK",

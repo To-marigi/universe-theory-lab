@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "all ranks and residuals are exact over QQ; the original 81-point ledger proves only sample minimality and two successive fixed-four candidates are now exactly rejected at points 82 and 83; the pointwise 131->131 checks do not prove global Schur row-module membership or commutativity",
+  "claim_boundary": "all ranks and residuals are exact over QQ; the original 81-point ledger proves only sample minimality and two successive fixed-four candidates are now exactly rejected by direct calculations at points 82 and 83; no determinant polynomial, degree, term count, factorization, or hypersurface claim is certified; the pointwise 131->131 checks do not prove global Schur row-module membership or commutativity",
   "date": "2026-08-02",
   "dimension": 2,
   "field": "Q",
@@ -28,7 +28,7 @@
   },
   "passed": true,
   "profile_under_study": "fixed_vector_GC__reachable_state_MSR__occurrence_identification_ON",
-  "schema_version": "final-theory-v042-sr2v-transverse-common-core-schur-scout-v3",
+  "schema_version": "final-theory-v042-sr2v-transverse-common-core-schur-scout-v4",
   "scout_certificate": {
     "Q_column_order": [
       "Q1",
@@ -127,16 +127,16 @@
     },
     "sample_ledger": {
       "adversarial_record_ids": [
-        "ADV2_u13_u45_minus_u44",
-        "ADV3_positive_rational_determinant_zero"
+        "ADV2_exact_rank_test_point",
+        "ADV3_exact_rank_test_point"
       ],
-      "all_83_input_digest_sha256": "dbe2e1ca00298a841a6957ca7fc8db323a4f5396589e47df2053d0cea6b6e951",
+      "all_83_input_digest_sha256": "c74a4b34c292a4ef2a971a2d2900f6574a09eb27f46fde854379aa263eb2864e",
       "distinct_point_count": 82,
       "families": {
         "all_31_nonempty_F7_supports": 31,
         "all_49_single_directions": 49,
-        "reference_equal": 1,
-        "symbolic_hypersurface_adversarial": 2
+        "direct_exact_adversarial_evaluations": 2,
+        "reference_equal": 1
       },
       "original_81_input_digest_sha256": "a2895b674604187b0813d56fb0d9c4db326f4371db33a7603c1aefdb1a2c9da8",
       "original_evaluation_count": 81,
@@ -2892,8 +2892,7 @@
       "full_M0_plus_all_six_commutators_rank": 131,
       "full_M0_plus_star_rank": 131,
       "full_M0_rank": 131,
-      "star_rank": 3,
-      "targeted_symbolic_hypersurface": "u13*u45-u44=0"
+      "star_rank": 3
     },
     "second_fixed_four_candidate": {
       "each_single_row_removal_failure_counts": {
@@ -2969,6 +2968,7 @@
           "0"
         ]
       ],
+      "certification_scope": "direct exact-rational Schur-row reconstruction and rank calculation at this stored slice point only",
       "conclusion": "the third fixed-four candidate has the exact escape e_Q2, while the complete common core and all four semantic branches remain 131->131",
       "delta_Q": [
         "-1/8",
@@ -3012,7 +3012,7 @@
           "kernel_column": 45
         }
       ],
-      "family": "symbolic_determinant_hypersurface_adversarial",
+      "family": "direct_exact_adversarial_evaluation",
       "fixed5_patch": {
         "joint_sources": [
           23,
@@ -3061,7 +3061,7 @@
       },
       "pivot_rank": 127,
       "residual_data_digest_sha256": "cf5bf9836d75e411ec16fa87741e8ce8c43a3db90c00036a003b12f725300973",
-      "sample_id": "ADV3_positive_rational_determinant_zero",
+      "sample_id": "ADV3_exact_rank_test_point",
       "star_evaluations_on_escape": [
         "-1/8",
         "0",
@@ -3090,21 +3090,7 @@
           "-1/8",
           "0"
         ]
-      ],
-      "symbolic_determinant_numerator": {
-        "degree_in_u12": 1,
-        "factorization_over_Q": "irreducible",
-        "slice_variables": [
-          "u12",
-          "u13",
-          "u15",
-          "u44",
-          "u45"
-        ],
-        "term_count": 88,
-        "total_degree": 10,
-        "value_at_exact_slice_point": "0"
-      }
+      ]
     },
     "third_fixed_four_candidate": {
       "augmented_rank_at_second_candidate_adversarial_point": 4,
@@ -3142,7 +3128,7 @@
     }
   },
   "search_terminal": "NOT_A_SEARCH_TERMINAL_83_EXACT_EVALUATIONS_ONLY",
-  "semantic_digest_sha256": "90cdaa5399f9e6663836d277e60f327558a2533ab32f382a701ba075f86ad55c",
+  "semantic_digest_sha256": "b977d2a21444beae5d853680c0945dd74fef1504f4b3045f587c509936b4a35a",
   "verdict": "SR2V_TRANSVERSE_COMMON_CORE_FIXED4_REJECTED_FULL_M0_NO_ESCAPE_AT_ADVERSARIAL_POINT_OPEN",
   "witness": null
 }

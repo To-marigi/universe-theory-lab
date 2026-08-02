@@ -115,23 +115,27 @@ This section controls older SR2-V “next step” wording later in the handoff.
   to the five `Q` columns.  This is not yet a commutativity terminal.
 
 The common-core Schur problem now has an exact fail-closed chart contract.
-After the 127 non-`Q` columns are eliminated, source-native Eq. (120) splits
-the base into `U2=D(g2)`, `U3=D(g3)`, `U4=D(g4)`, the aligned locus
+After the 127 non-`Q` columns are eliminated, source-native Eq. (120) gives the
+overlapping cover `U2=D(g2)`, `U3=D(g3)`, `U4=D(g4)`, together with the aligned locus
 `V(g2,g3,g4) intersect D(r1-1)`, and the automatically safe remainder
 `r1=r2=r3=r4=1`. On each `Uk`, every Eq. (120) solution has
 `x=delta*h+(b/b1)*w`; the target commutator is a unit times `gk*w`. Thus the
-exact obligation is `e_w` membership in the localized Schur row module. On the
-aligned locus the three targets `e_w2,e_w3,e_w4` must lie in the five-column
-restriction module. The certificate retains `Q5`, proves that changing the
-visible reference only rescales minors by units, and explicitly rejects both
+exact pointwise obligation is residue-field rank equality after adjoining
+`e_w`. Membership of `e_w` in the localized Schur row module is a stronger,
+functorial sufficient certificate, not a pointwise necessity. The aligned
+locus has the analogous three rank tests for `e_w2,e_w3,e_w4`. The certificate
+retains `Q5`, proves that changing the visible reference rescales the same
+minors by units while allowing refinement opens, and explicitly rejects both
 an `AB` minor that ignores `Q5` and the inference `multivariate gcd 1 => unit
-ideal`. Verdict `SR2V_TRANSVERSE_EQ120_SCHUR_CHART_OBLIGATIONS_CERTIFIED_NONTERMINAL`,
-digest `56bc0f94aff5a87e109d3fd54e343ebe36076c889279c5740ed3e92c539048c8`.
+ideal`. Verdict
+`SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_CERTIFIED_NONTERMINAL`,
+digest `7abbbbdfd5455b6b000842d7698a0a2d9058df87ef4ac2882e47edf44ff7ce0e`.
 
 Three four-row Schur scouts are rejected:
 `{83,147,154,688}` fails five mixed/direction points, while
-`{23,147,154,688}` passes that 81-point ledger but fails on the exact
-hypersurface point `u13*u45-u44=0` with ranks `3/3/4`. At the latter point full
+`{23,147,154,688}` passes that 81-point ledger but fails at an exact point
+satisfying `u13*u45-u44=0`, with directly computed ranks `3/3/4`. No symbolic
+minor factorization is certified. At the latter point full
 `M0` and all four branches remain `131/131` after all commutators, so it is not
 a witness. The replacement `{23,31,147,688}` also passes the preceding 82
 points but fails at the positive rational torus point
@@ -140,23 +144,27 @@ points but fails at the positive rational torus point
 be reused. Two proposed Eq. (120) repair pairs, `(32,120)` on `U2` and
 `(424,544)` on `U3`, also have exact positive-rational chart-internal failures.
 The alternative `(8,14)` repairs those two points, but all three pair minors
-vanish simultaneously at `u=(1,1/2,1,2,2)`, where
-`(g2,g3,g4)=(1/96,1/256,0)` and each restricted rank is `1/1/2`. Full `M0`
+vanish simultaneously at `u=(1,1/2,1,2,2)`, where the normalized ratio values
+are `(g2,g3,g4)=(-1/2,-1/2,0)` and the determinant-form values are
+`(d2,d3,d4)=(1/96,1/256,0)`. Here
+`d_i=a_Q1*b_Qi-a_Qi*b_Q1=-b_Q1*b_Qi*g_i`. Each restricted rank is `1/1/2`. Full `M0`
 still remains `131/131`. Therefore only this three-minor subcover is rejected;
 the Eq. (120) charts and the full common core remain open. Verdict
 `SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL`,
-digest `dea028466f41a6a186fbcb09f7b5ba8a74d12834dc7f348d0a1f5f04abf4bcf7`.
+digest `a6754c57355d2f7ed2ce9df9abd1603d7563bb9bec1785fa1c53c2dddb8364e9`.
 
-The next exact operation is full-module saturation, not another fixed-pair
-scout. Lazily Schur-reduce all `M0` rows through the certified matching DAG;
-on `Uk`, form `(A_r,B_r,C_r)` and prove `e_w` membership directly, or compute
-the syzygy image ideal `J=B(ker[A,C])` and certify `(J:gk^infinity)=R`. If a
-syntactic audit proves the common-core `Q5` column zero, this simplifies to
-`J=B(ker A)`. Use exponent-lattice HNF/SNF to remove spectator torus variables
-before rational saturation. The aligned quotient is handled separately.
-Only if common-core membership fails should work split into the eight
-derived/literal strict obligations. On every route the
-exact criterion remains `rank[M;C]=rank M`; `span(beta,e_Q5)` is not the invariant.
+The next strong-certificate operation is full-module saturation, not another
+fixed-pair scout. Lazily Schur-reduce all `M0` rows through the certified
+matching DAG; on `Uk`, form `(A_r,B_r,C_r)` and prove `e_w` membership directly,
+or compute the syzygy image ideal `J=B(ker[A,C])` and certify
+`(J:gk^infinity)=R`. If a syntactic audit proves the common-core `Q5` column
+zero, this simplifies to `J=B(ker A)`. Use exponent-lattice HNF/SNF to remove
+spectator torus variables before rational saturation. The aligned quotient is
+handled separately. Failure of this stronger row-module certificate is not by
+itself a pointwise escape; inspect residue-field rank/Fitting support before
+splitting into the eight derived/literal strict obligations. On every route the
+exact pointwise criterion remains `rank[M;C]=rank M`; `span(beta,e_Q5)` is not
+the invariant.
 Run charts sequentially with one CAS worker. Checkpoint and leave the current
 leaf explicitly open at aggregate RSS 7.5 GiB (worker 7.0 GiB), five million
 live sparse terms, 60 minutes per non-aligned leaf, 90 minutes for aligned, or

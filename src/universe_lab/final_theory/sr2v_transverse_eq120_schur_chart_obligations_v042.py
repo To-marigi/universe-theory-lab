@@ -5,10 +5,11 @@ five Schur columns ``Q1,...,Q5``.  Source-native Eq. (120) further controls the
 first four columns.  This module computes the exact localized normal forms on
 the three non-aligned ratio charts and on their aligned remainder.
 
-It deliberately does not select repair rows.  Its conclusion is the precise
-row-module membership problem a later certificate must solve, including the
-external ``Q5`` column.  In particular, a finite rank scout, a nonzero minor at
-one point, or a multivariate gcd equal to one is not promoted to a proof.
+It deliberately does not select repair rows.  Its conclusion separates the
+pointwise residue-field rank criterion from a stronger localized row-module
+identity that is sufficient for it, including the external ``Q5`` column.  In
+particular, a finite rank scout, a nonzero minor at one point, or a
+multivariate gcd equal to one is not promoted to a proof.
 """
 
 from __future__ import annotations
@@ -24,8 +25,11 @@ from universe_lab.final_theory import sr2v_transverse_base_cover_ablation_v042 a
 from universe_lab.final_theory import sr2v_transverse_common_core_unit_minor_v042 as unit_minor
 
 RESULT_PATH = "results/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.json"
-SCHEMA = "final-theory-v042-sr2v-transverse-eq120-schur-chart-obligations-v1"
-VERDICT = "SR2V_TRANSVERSE_EQ120_SCHUR_CHART_OBLIGATIONS_CERTIFIED_NONTERMINAL"
+SCHEMA = "final-theory-v042-sr2v-transverse-eq120-schur-chart-obligations-v2"
+VERDICT = (
+    "SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_"
+    "CERTIFIED_NONTERMINAL"
+)
 SEARCH_TERMINAL = "NOT_A_SEARCH_TERMINAL_REPAIR_ROW_MODULE_MEMBERSHIP_UNRESOLVED"
 
 
@@ -246,7 +250,20 @@ def _chart_obligation_certificate() -> dict[str, Any]:
     ):
         raise AssertionError("the Q5 fail-closed counterexample changed")
 
-    u, v = sp.symbols("u v", nonzero=True)
+    u = sp.symbols("u", nonzero=True)
+    d = u - 1
+    strength_counterexample = sp.Matrix([[-d, 1, 0], [0, d, 0]])
+    strength_special = strength_counterexample.subs(u, 1)
+    strength_generic_minor = sp.factor(strength_counterexample[:, :2].det())
+    if (
+        strength_special.rank() != 1
+        or strength_special.col_join(target_w).rank() != 1
+        or strength_generic_minor != -(u - 1) ** 2
+        or sp.Poly(d, u, domain=sp.QQ).degree() != 1
+    ):
+        raise AssertionError("the pointwise-versus-row-module counterexample changed")
+
+    v = sp.symbols("v", nonzero=True)
     gcd_example = sp.gcd(u - 1, v - 1)
     groebner_example = sp.groebner([u - 1, v - 1], u, v, domain=sp.QQ)
     groebner_contains_one = any(poly.as_expr() == 1 for poly in groebner_example.polys)
@@ -284,15 +301,22 @@ def _chart_obligation_certificate() -> dict[str, Any]:
             "conclusion": (
                 "changing the visible-vector reference rescales B and every AB pair "
                 "minor by a declared diagonal unit; Q2/Q3/Q4 relabeling creates no new "
-                "repair divisor or chart"
+                "repair divisor or global non-aligned region, although it can refine the "
+                "cover by opens such as D(r_i-r_j)"
             ),
         },
         "exact_localized_obligation": {
             "ring_on_Uk": "S_k=R[g_k^-1] with every declared base unit already inverted",
             "restriction_matrix": "T_k has rows (A_r,B_r,C_r) for all Schur(M0) rows",
-            "necessary_and_sufficient_condition": (
-                "e_w=(0,1,0) belongs to Row_{S_k}(T_k); equivalently every "
-                "Schur-kernel vector (h,w,q5) has w=0"
+            "pointwise_necessary_and_sufficient_condition": (
+                "for every residue field kappa(p) of S_k, rank(T_k tensor kappa(p)) "
+                "equals the rank after adjoining e_w=(0,1,0); equivalently every "
+                "residue-field Schur-kernel vector has w=0"
+            ),
+            "strong_global_sufficient_condition": (
+                "e_w=(0,1,0) belongs to Row_{S_k}(T_k); this gives a functorial "
+                "localized identity and implies the pointwise condition, but is not "
+                "necessary for residue-field or S_k-valued kernel vectors to have w=0"
             ),
             "direct_certificate": "exhibit coefficients p_r in S_k with sum p_r*(A_r,B_r,C_r)=e_w",
             "Q5_free_pair_sufficient_condition": {
@@ -322,6 +346,26 @@ def _chart_obligation_certificate() -> dict[str, Any]:
             "conclusion": (
                 "a unit AB minor does not isolate w when either selected row has a Q5 "
                 "coefficient; require C=0 or a genuine three-column module identity"
+            ),
+        },
+        "row_module_strength_audit": {
+            "ring": "S=QQ[u^+-1]",
+            "d": "u-1",
+            "rows_ABC": [["-(u-1)", "1", "0"], ["0", "u-1", "0"]],
+            "pointwise_kernel_has_w_zero": True,
+            "special_fibre_u_equals_1_ranks_before_after_e_w": [
+                int(strength_special.rank()),
+                int(strength_special.col_join(target_w).rank()),
+            ],
+            "generic_two_by_two_determinant": str(strength_generic_minor),
+            "e_w_in_row_module": False,
+            "nonmembership_reason": (
+                "a*(-d,1,0)+b*(0,d,0)=e_w forces a*d=0, hence a=0 in the "
+                "domain S, and then b*d=1 although d=u-1 is not a unit"
+            ),
+            "conclusion": (
+                "row-module membership is a strong scheme-theoretic/functorial "
+                "certificate, not a necessary consequence of pointwise commutativity"
             ),
         },
         "gcd_fail_closed_audit": {
@@ -393,7 +437,7 @@ def _aligned_obligation_certificate() -> dict[str, Any]:
         for index in range(1, 4)
     ]
     if any(value != 0 for value in partition_identities):
-        raise AssertionError("the four-locus partition identity changed")
+        raise AssertionError("the four-locus cover identity changed")
 
     automatic_commutators = {}
     arbitrary_x = tuple(sp.symbols("x1:5"))
@@ -430,9 +474,14 @@ def _aligned_obligation_certificate() -> dict[str, Any]:
         },
         "exact_localized_obligation": {
             "ring": "S_L=(R/(g2,g3,g4))[f^-1]",
-            "necessary_and_sufficient_condition": (
+            "pointwise_necessary_and_sufficient_condition": (
+                "over every residue field of S_L, adjoining e_w2,e_w3,e_w4 does not "
+                "increase the aligned restriction-matrix rank"
+            ),
+            "strong_global_sufficient_condition": (
                 "e_w2,e_w3,e_w4 all belong to the row module of the five-column "
-                "aligned restriction matrix over S_L"
+                "aligned restriction matrix over S_L; this is sufficient and "
+                "functorial, but stronger than the residue-field rank condition"
             ),
             "rank_form_over_each_residue_field": (
                 "rank(T_L)=rank(T_L with e_w2,e_w3,e_w4 adjoined); this pointwise "
@@ -458,15 +507,16 @@ def _aligned_obligation_certificate() -> dict[str, Any]:
             "all_six_commutator_checks": automatic_commutators,
             "needs_no_repair_rows": True,
         },
-        "cover_partition": {
+        "cover_decomposition": {
             "non_aligned_opens": ["D(g2)", "D(g3)", "D(g4)"],
             "aligned_nonunit_locus": "V(g2,g3,g4) intersect D(f)",
             "automatic_remainder": "V(g2,g3,g4,f)",
-            "partition_identity_checks": [str(value) for value in partition_identities],
+            "cover_identity_checks": [str(value) for value in partition_identities],
             "complete_set_theoretic_argument": (
                 "either some g_k is nonzero, or every g_k is zero; in the latter case "
                 "either f is nonzero (aligned obligation) or f=0 (delta_Q=0)"
             ),
+            "overlap_note": "D(g2), D(g3), and D(g4) may overlap; this is a cover, not a partition",
         },
     }
 
@@ -546,6 +596,10 @@ def build_payload(root: Path) -> dict[str, Any]:
             "rank_after_adjoining_e_w"
         ]
         > chart["Q5_fail_closed_audit"]["row_rank"],
+        "row_module_membership_is_not_mislabeled_as_pointwise_necessary": (
+            chart["row_module_strength_audit"]["pointwise_kernel_has_w_zero"]
+            and not chart["row_module_strength_audit"]["e_w_in_row_module"]
+        ),
         "multivariate_gcd_is_not_promoted_to_unit_ideal": (
             chart["gcd_fail_closed_audit"]["gcd"] == "1"
             and not chart["gcd_fail_closed_audit"]["Groebner_basis_contains_one"]
@@ -558,7 +612,7 @@ def build_payload(root: Path) -> dict[str, Any]:
             "needs_no_repair_rows"
         ],
         "four_loci_plus_automatic_remainder_are_complete": set(
-            aligned["cover_partition"]["partition_identity_checks"]
+            aligned["cover_decomposition"]["cover_identity_checks"]
         )
         == {"0"},
     }
@@ -593,12 +647,21 @@ def build_payload(root: Path) -> dict[str, Any]:
         "non_aligned_chart_certificate": chart,
         "aligned_chart_certificate": aligned,
         "repair_certificate_contract": {
-            "U2": "prove e_w in Row(T_2) over R[g2^-1] or give an exact escape",
-            "U3": "prove e_w in Row(T_3) over R[g3^-1] or give an exact escape",
-            "U4": "prove e_w in Row(T_4) over R[g4^-1] or give an exact escape",
+            "U2": (
+                "prove the residue-field rank condition; a strong accepted route is "
+                "e_w in Row(T_2) over R[g2^-1]"
+            ),
+            "U3": (
+                "prove the residue-field rank condition; a strong accepted route is "
+                "e_w in Row(T_3) over R[g3^-1]"
+            ),
+            "U4": (
+                "prove the residue-field rank condition; a strong accepted route is "
+                "e_w in Row(T_4) over R[g4^-1]"
+            ),
             "aligned": (
-                "prove e_w2,e_w3,e_w4 in Row(T_L) over "
-                "(R/(g2,g3,g4))[f^-1] or give an exact escape"
+                "prove the three residue-field rank conditions; a strong accepted route "
+                "is e_w2,e_w3,e_w4 in Row(T_L) over (R/(g2,g3,g4))[f^-1]"
             ),
             "accepted_global_proof_forms": [
                 "direct localized row-module identities with only declared-unit denominators",
@@ -610,6 +673,8 @@ def build_payload(root: Path) -> dict[str, Any]:
                 "a minor nonzero at one or finitely many points",
                 "multivariate gcd equal to one without a unit-ideal certificate",
                 "an AB minor that ignores nonzero Q5 coefficients",
+                "calling row-module membership necessary merely because every "
+                "residue-field kernel has w=0",
             ],
         },
         "gates": gates,
@@ -618,7 +683,8 @@ def build_payload(root: Path) -> dict[str, Any]:
         "search_terminal": SEARCH_TERMINAL,
         "verdict": VERDICT,
         "claim_boundary": (
-            "this exact successor derives the fail-closed row-module obligations on the "
+            "this exact successor derives the fail-closed pointwise rank conditions and "
+            "stronger accepted row-module certificate contracts on the "
             "three Eq120 ratio opens and the aligned remainder after the global 127-column "
             "unit elimination; it certifies no repair row, no localized repair minor, no "
             "unit-ideal cover, no global star membership, no noncommutative witness and no "

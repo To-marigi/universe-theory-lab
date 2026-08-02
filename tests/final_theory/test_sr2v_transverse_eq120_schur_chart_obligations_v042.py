@@ -14,7 +14,7 @@ from universe_lab.final_theory import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_SEMANTIC_DIGEST = "56bc0f94aff5a87e109d3fd54e343ebe36076c889279c5740ed3e92c539048c8"
+EXPECTED_SEMANTIC_DIGEST = "7abbbbdfd5455b6b000842d7698a0a2d9058df87ef4ac2882e47edf44ff7ce0e"
 
 
 def _load(relative: str) -> dict[str, Any]:
@@ -89,7 +89,11 @@ def test_generic_schur_row_keeps_q5_fail_closed(rebuilt: dict[str, Any]) -> None
     assert restriction["C"] == "rho5"
     assert restriction["symbolic_difference"] == "0"
     obligation = certificate["exact_localized_obligation"]
-    assert "e_w=(0,1,0) belongs" in obligation["necessary_and_sufficient_condition"]
+    assert "every residue-field Schur-kernel vector has w=0" in obligation[
+        "pointwise_necessary_and_sufficient_condition"
+    ]
+    assert "e_w=(0,1,0) belongs" in obligation["strong_global_sufficient_condition"]
+    assert "is not necessary" in obligation["strong_global_sufficient_condition"]
     assert obligation["Q5_free_pair_sufficient_condition"]["premise"] == "C_r=C_s=0"
     assert obligation["Q5_free_pair_sufficient_condition"]["identity_difference"] == "0"
     assert obligation["three_row_sufficient_condition"][
@@ -106,7 +110,10 @@ def test_visible_reference_changes_only_by_declared_units(rebuilt: dict[str, Any
         assert record["B_scaling_difference"] == "0"
         assert record["pair_minor_scaling_difference"] == "0"
         assert record["scaling_is_a_declared_unit"] is True
-    assert "creates no new repair divisor or chart" in audit["conclusion"]
+    assert "creates no new repair divisor or global non-aligned region" in audit[
+        "conclusion"
+    ]
+    assert "refine the cover" in audit["conclusion"]
 
 
 def test_ab_minor_without_q5_control_is_rejected(rebuilt: dict[str, Any]) -> None:
@@ -128,6 +135,19 @@ def test_multivariate_gcd_is_not_a_cover_certificate(rebuilt: dict[str, Any]) ->
     assert "not a unit-ideal" in audit["conclusion"]
 
 
+def test_row_membership_is_not_promoted_to_pointwise_necessity(
+    rebuilt: dict[str, Any],
+) -> None:
+    audit = rebuilt["non_aligned_chart_certificate"]["row_module_strength_audit"]
+    assert audit["ring"] == "S=QQ[u^+-1]"
+    assert audit["rows_ABC"] == [["-(u-1)", "1", "0"], ["0", "u-1", "0"]]
+    assert audit["pointwise_kernel_has_w_zero"] is True
+    assert audit["special_fibre_u_equals_1_ranks_before_after_e_w"] == [1, 1]
+    assert audit["generic_two_by_two_determinant"] == "-(u - 1)**2"
+    assert audit["e_w_in_row_module"] is False
+    assert "not a necessary consequence" in audit["conclusion"]
+
+
 def test_aligned_locus_has_three_distinct_obstruction_coordinates(
     rebuilt: dict[str, Any],
 ) -> None:
@@ -144,8 +164,11 @@ def test_aligned_locus_has_three_distinct_obstruction_coordinates(
     assert restriction["columns"] == ["A", "B2", "B3", "B4", "C"]
     assert restriction["symbolic_difference"] == "0"
     obligation = aligned["exact_localized_obligation"]
+    assert "adjoining e_w2,e_w3,e_w4 does not" in obligation[
+        "pointwise_necessary_and_sufficient_condition"
+    ]
     assert "e_w2,e_w3,e_w4 all belong" in obligation[
-        "necessary_and_sufficient_condition"
+        "strong_global_sufficient_condition"
     ]
     assert obligation["pure_quotient_minor_sufficient_condition"][
         "adjugate_identity_difference"
@@ -154,11 +177,12 @@ def test_aligned_locus_has_three_distinct_obstruction_coordinates(
 
 def test_four_loci_and_automatic_remainder_are_complete(rebuilt: dict[str, Any]) -> None:
     aligned = rebuilt["aligned_chart_certificate"]
-    partition = aligned["cover_partition"]
-    assert partition["non_aligned_opens"] == ["D(g2)", "D(g3)", "D(g4)"]
-    assert partition["aligned_nonunit_locus"] == "V(g2,g3,g4) intersect D(f)"
-    assert partition["automatic_remainder"] == "V(g2,g3,g4,f)"
-    assert partition["partition_identity_checks"] == ["0", "0", "0"]
+    cover = aligned["cover_decomposition"]
+    assert cover["non_aligned_opens"] == ["D(g2)", "D(g3)", "D(g4)"]
+    assert cover["aligned_nonunit_locus"] == "V(g2,g3,g4) intersect D(f)"
+    assert cover["automatic_remainder"] == "V(g2,g3,g4,f)"
+    assert cover["cover_identity_checks"] == ["0", "0", "0"]
+    assert "not a partition" in cover["overlap_note"]
     safe = aligned["automatic_safe_remainder"]
     assert safe["consequence"] == "r1=r2=r3=r4=1, hence delta_Q=0"
     assert set(safe["all_six_commutator_checks"].values()) == {"0"}
@@ -177,5 +201,6 @@ def test_result_is_an_obligation_certificate_not_a_terminal(rebuilt: dict[str, A
     }
     assert any("gcd" in item for item in contract["rejected_promotions"])
     assert any("Q5" in item for item in contract["rejected_promotions"])
+    assert any("residue-field" in item for item in contract["rejected_promotions"])
     assert "no localized repair minor" in rebuilt["claim_boundary"]
     assert rebuilt["search_terminal"] == result.SEARCH_TERMINAL

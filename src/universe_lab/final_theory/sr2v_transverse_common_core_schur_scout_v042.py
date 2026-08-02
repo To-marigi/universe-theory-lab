@@ -24,7 +24,7 @@ from universe_lab.final_theory import sr2v_transverse_determinant_zero_locus_v04
 from universe_lab.final_theory import weak_d2_visible_torus_scout_v042 as torus
 
 RESULT_PATH = "results/v0.4.2_sr2v_transverse_common_core_schur_scout.json"
-SCHEMA = "final-theory-v042-sr2v-transverse-common-core-schur-scout-v3"
+SCHEMA = "final-theory-v042-sr2v-transverse-common-core-schur-scout-v4"
 VERDICT = "SR2V_TRANSVERSE_COMMON_CORE_FIXED4_REJECTED_FULL_M0_NO_ESCAPE_AT_ADVERSARIAL_POINT_OPEN"
 SEARCH_TERMINAL = "NOT_A_SEARCH_TERMINAL_83_EXACT_EVALUATIONS_ONLY"
 
@@ -387,9 +387,10 @@ def scout_certificate(
     ]
 
     # The third fixed-four selection passes the original 81 points and the
-    # preceding adversarial point.  Its own determinant numerator is linear in
-    # u12 on the five-direction B0 slice, so the following positive rational
-    # point is an exact point of that hypersurface rather than a random sample.
+    # preceding adversarial point.  The following positive rational point is
+    # retained only as an exact rank-test input.  No determinant polynomial,
+    # degree, term count, factorization, or hypersurface description is
+    # certified by this artifact.
     third_adversarial_upper = locus.bottom_point(context, lower)
     for column, base in THIRD_CANDIDATE_ADVERSARIAL_FACTORS:
         for variable_index, variable in enumerate(context.variables):
@@ -632,7 +633,6 @@ def scout_certificate(
                 {"kernel_column": column, "base": str(base)}
                 for column, base in SECOND_CANDIDATE_ADVERSARIAL_FACTORS
             ],
-            "targeted_symbolic_hypersurface": "u13*u45-u44=0",
             "delta_Q": [str(value) for value in adversarial_delta],
             "candidate_rank": adversarial_candidate_rank,
             "star_rank": adversarial_star_rank,
@@ -655,8 +655,8 @@ def scout_certificate(
             ),
         },
         "third_fixed_four_adversarial_rejection": {
-            "sample_id": "ADV3_positive_rational_determinant_zero",
-            "family": "symbolic_determinant_hypersurface_adversarial",
+            "sample_id": "ADV3_exact_rank_test_point",
+            "family": "direct_exact_adversarial_evaluation",
             "exact_slice_point": {
                 f"u{column}": str(base)
                 for column, base in THIRD_CANDIDATE_ADVERSARIAL_FACTORS
@@ -665,14 +665,10 @@ def scout_certificate(
                 {"kernel_column": column, "base": str(base)}
                 for column, base in THIRD_CANDIDATE_ADVERSARIAL_FACTORS
             ],
-            "symbolic_determinant_numerator": {
-                "slice_variables": ["u12", "u13", "u15", "u44", "u45"],
-                "total_degree": 10,
-                "term_count": 88,
-                "degree_in_u12": 1,
-                "factorization_over_Q": "irreducible",
-                "value_at_exact_slice_point": "0",
-            },
+            "certification_scope": (
+                "direct exact-rational Schur-row reconstruction and rank "
+                "calculation at this stored slice point only"
+            ),
             "pivot_rank": int(third_pivot_echelon["rank"]),
             "delta_Q": [str(value) for value in third_delta],
             "candidate_schur_rows": third_candidate_dense,
@@ -721,7 +717,7 @@ def scout_certificate(
                 "reference_equal": 1,
                 "all_49_single_directions": 49,
                 "all_31_nonempty_F7_supports": 31,
-                "symbolic_hypersurface_adversarial": 2,
+                "direct_exact_adversarial_evaluations": 2,
             },
             "original_81_input_digest_sha256": _digest(
                 [
@@ -744,16 +740,16 @@ def scout_certificate(
                         for sample in samples
                     ],
                     {
-                        "sample_id": "ADV2_u13_u45_minus_u44",
-                        "family": "symbolic_hypersurface_adversarial",
+                        "sample_id": "ADV2_exact_rank_test_point",
+                        "family": "direct_exact_adversarial_evaluation",
                         "factors": [
                             {"kernel_column": column, "base": str(base)}
                             for column, base in SECOND_CANDIDATE_ADVERSARIAL_FACTORS
                         ],
                     },
                     {
-                        "sample_id": "ADV3_positive_rational_determinant_zero",
-                        "family": "symbolic_hypersurface_adversarial",
+                        "sample_id": "ADV3_exact_rank_test_point",
+                        "family": "direct_exact_adversarial_evaluation",
                         "factors": [
                             {"kernel_column": column, "base": str(base)}
                             for column, base in THIRD_CANDIDATE_ADVERSARIAL_FACTORS
@@ -763,8 +759,8 @@ def scout_certificate(
             ),
             "records": serial_records,
             "adversarial_record_ids": [
-                "ADV2_u13_u45_minus_u44",
-                "ADV3_positive_rational_determinant_zero",
+                "ADV2_exact_rank_test_point",
+                "ADV3_exact_rank_test_point",
             ],
         },
         "fixed_three_row_sample_minimality": {
@@ -862,8 +858,10 @@ def build_payload(root: Path) -> dict[str, Any]:
         "claim_boundary": (
             "all ranks and residuals are exact over QQ; the original 81-point ledger "
             "proves only sample minimality and two successive fixed-four candidates are "
-            "now exactly rejected at points 82 and 83; the pointwise 131->131 checks do "
-            "not prove global Schur row-module membership or commutativity"
+            "now exactly rejected by direct calculations at points 82 and 83; no "
+            "determinant polynomial, degree, term count, factorization, or hypersurface "
+            "claim is certified; the pointwise 131->131 checks do not prove global "
+            "Schur row-module membership or commutativity"
         ),
     }
     payload["semantic_digest_sha256"] = semantic_digest(payload)

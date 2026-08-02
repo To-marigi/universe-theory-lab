@@ -67,39 +67,42 @@ strictly scoped conclusions:
   A fixed 127-by-127 minor from raw CPOBC, fixed-vector GC, and reachable-state
   MSR has a unique-matching Laurent-unit determinant on the full 54-dimensional
   base. It uses neither Eq. (113) nor Eq. (139), so the eight branch-local
-  obligations are provisionally replaced by one five-`Q` Schur row-module
+  obligations are provisionally replaced by one five-`Q` pointwise rank
   question. This reduction is exact but not yet an SR2-V terminal.
 - Three fixed-four Schur candidates are now rejected. The second passed 81 exact
-  direction/support points but failed on a targeted symbolic-minor hypersurface;
+  direction/support points but failed at a direct exact-rank test point;
   the third passed those 82 points but failed at a positive rational torus point
   with exact escape `e_Q2`. The full common core remained `131 -> 131` at both
   points. Future finite candidates are scouts only and must be attacked on their
   maximal-minor zero loci. The research gate remains the full Schur module or a
   certified four-locus cover.
-- The four-locus cover now has an exact row-module contract. On `D(gk)`, Eq.
-  (120) leaves one commutator obstruction `w`; the target is localized
-  membership of `e_w` in the `(A,B,C_Q5)` Schur row module. The aligned
-  remainder has three obstruction coordinates, while its `delta_Q=0` boundary
-  is automatic. Reference changes only rescale pair minors by units, and neither
-  a hidden-`Q5` `AB` minor nor multivariate gcd one is an accepted cover proof.
+- The four-locus cover now has exact pointwise rank conditions and stronger
+  row-module certificate contracts. On `D(gk)`, Eq. (120) leaves one
+  commutator obstruction `w`; adjoining `e_w` must preserve every residue-field
+  rank. Localized membership in the `(A,B,C_Q5)` Schur row module is sufficient
+  but not pointwise necessary. The aligned remainder has three obstruction
+  coordinates, while its `delta_Q=0` boundary is automatic. Reference changes
+  rescale the same minors by units but may refine the cover; neither a
+  hidden-`Q5` `AB` minor nor multivariate gcd one is an accepted cover proof.
 - The first proposed repair pairs on `D(g2)` and `D(g3)`, and the three-minor
   subcover obtained by adding a third pair, are exactly rejected at positive
   rational points. Full `M0` remains `131 -> 131` at every rejection point.
-  This redirects computation from fixed-row scouts to full syzygy-image
-  saturation without weakening the common-core conjecture.
+  This redirects the next strong-certificate attempt from fixed-row scouts to
+  full syzygy-image saturation without weakening the common-core conjecture.
 
 The controlling implementation order is therefore now:
 
 1. finish the branch-independent common core
    `M0=CPOBC+fixed-vector GC+reachable-state MSR`: use the certified global
    127-column unit minor and the exact Eq. (120) chart contract. Compute the
-   full localized Schur generators; on `D(gk)` certify `e_w` membership through
-   a direct identity or the saturated syzygy-image ideal
-   `B(ker[A,C]):gk^infinity`, and solve the aligned quotient separately. If common-core
-   membership fails, split only then
-   into the eight derived/literal strict obligations; completed follows from
-   strict and the Eq. (113) readings are never combined. The exact witness
-   condition remains `rank[M;C]>rank M`;
+   full localized Schur generators; on `D(gk)` prove the residue-field rank
+   condition. A strong accepted route is `e_w` membership through a direct
+   identity or the saturated syzygy-image ideal `B(ker[A,C]):gk^infinity`.
+   Solve the aligned quotient separately. If this stronger certificate fails,
+   inspect the residue-field rank/Fitting support before splitting into the
+   eight derived/literal strict obligations; completed follows from strict and
+   the Eq. (113) readings are never combined. The exact witness condition
+   remains `rank[M;C]>rank M`;
 2. enlarge the state-native search beyond the beta-one, two-alpha sparse
    section, first by adding alpha support or variable betas while preserving
    the exact harmonic and nonsingularity ledgers;

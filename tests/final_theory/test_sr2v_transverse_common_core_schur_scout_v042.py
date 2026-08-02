@@ -12,7 +12,7 @@ import pytest
 from universe_lab.final_theory import sr2v_transverse_common_core_schur_scout_v042 as result
 
 ROOT = Path(__file__).resolve().parents[2]
-EXPECTED_SEMANTIC_DIGEST = "90cdaa5399f9e6663836d277e60f327558a2533ab32f382a701ba075f86ad55c"
+EXPECTED_SEMANTIC_DIGEST = "b977d2a21444beae5d853680c0945dd74fef1504f4b3045f587c509936b4a35a"
 
 
 def _load(relative: str) -> dict[str, Any]:
@@ -100,8 +100,12 @@ def test_sample_ledger_has_all_single_and_F7_supports(rebuilt: dict[str, Any]) -
         "reference_equal": 1,
         "all_49_single_directions": 49,
         "all_31_nonempty_F7_supports": 31,
-        "symbolic_hypersurface_adversarial": 2,
+        "direct_exact_adversarial_evaluations": 2,
     }
+    assert ledger["adversarial_record_ids"] == [
+        "ADV2_exact_rank_test_point",
+        "ADV3_exact_rank_test_point",
+    ]
     assert len(ledger["records"]) == 81
     assert all(record["candidate_spans_star"] for record in ledger["records"])
     assert all(
@@ -123,7 +127,7 @@ def test_fixed_four_is_rejected_but_full_M0_holds_at_adversarial_point(
     adversarial = rebuilt["scout_certificate"][
         "second_fixed_four_adversarial_rejection"
     ]
-    assert adversarial["targeted_symbolic_hypersurface"] == "u13*u45-u44=0"
+    assert "targeted_symbolic_hypersurface" not in adversarial
     assert adversarial["delta_Q"] == ["1/2", "1/6", "-1/112", "1/82"]
     assert (
         adversarial["candidate_rank"],
@@ -157,14 +161,19 @@ def test_third_fixed_four_has_certified_positive_rational_escape(
         "u44": "1",
         "u45": "2",
     }
-    assert adversarial["symbolic_determinant_numerator"] == {
-        "slice_variables": ["u12", "u13", "u15", "u44", "u45"],
-        "total_degree": 10,
-        "term_count": 88,
-        "degree_in_u12": 1,
-        "factorization_over_Q": "irreducible",
-        "value_at_exact_slice_point": "0",
-    }
+    assert adversarial["sample_id"] == "ADV3_exact_rank_test_point"
+    assert adversarial["family"] == "direct_exact_adversarial_evaluation"
+    assert adversarial["certification_scope"] == (
+        "direct exact-rational Schur-row reconstruction and rank calculation at "
+        "this stored slice point only"
+    )
+    assert "symbolic_determinant_numerator" not in adversarial
+    assert {
+        "total_degree",
+        "term_count",
+        "degree_in_u12",
+        "factorization_over_Q",
+    }.isdisjoint(adversarial)
     assert adversarial["delta_Q"] == ["-1/8", "0", "-1/64", "-1/164"]
     assert adversarial["candidate_schur_rows"] == [
         ["5/192", "0", "0", "0", "0"],
