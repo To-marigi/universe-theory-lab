@@ -15,7 +15,8 @@ later scope audit supersedes their interpretation.
 2. `reports/v0.4.2_post_literature_strategy_review.md` — post-audit scientific
    focus, Paper I theorem stack, observability track, and revised gates.
 3. `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` — current
-   exact SR2-V branch reductions, chart/manifests, and nonterminal boundaries.
+   exact SR2-V branch reductions, bottom-MSR classification, fixed-state
+   obstructions, chart/manifests, and nonterminal boundaries.
 4. This knowledge base — current scientific state, terminology, and proof
    rules.
 5. `CURRENT_RESEARCH_STATE.json` — compact mutable index for tools and future
@@ -59,13 +60,49 @@ stage/source-compatible reachable-state domain as separate predicates.
 That observability statement is now independently machine-certified, rather
 than inferred from the original witness compiler. The follow-up exact search
 has not reached an SR2-V terminal. A 180-point rational-torus campaign found no
-transverse reducible witness. The earlier 1,187-row rank-131 tangent
-obstruction is now strengthened nonlinearly: the selected residuals factor as
+transverse reducible witness. The aligned selected residuals factor as
 `F(y,z)=H(y,z)y`, and on the explicit nonempty principal open `det H != 0`
 every exact solution has `y=0`. A two-character transitive-percolation
-extension also splits generically on a certified nonempty principal open.
-These results leave their determinant-degeneracy loci, other reducible
-components, and irreducible branches open.
+extension also splits generically. The broader transverse cocycle fibre is now
+split on four separately compiled nonempty principal opens: derived/literal
+Eq. (113), each crossed with strict/completed Eq. (139). The branch matrices
+have shapes `1156 by 132` or `1162 by 132` and force all 131 actual cocycles to
+zero, hence `Q1,...,Q4` commute. The 1,187-row all-readings matrix is auxiliary
+only. The four determinant-zero loci, other reducible components, and
+irreducible branches remain open.
+
+The next exact gates sharpen this further. On the observed-bottom primitive
+`G_m^29`, all 24 additive reachable-MSR equations are globally triangular and
+their complete nonzero locus is the smooth irreducible rational normalized
+finite-CSG principal open in four couplings times external `G_m(Q5)`. The
+separate upper operator character remains `G_m^49`; reachable-state MSR must
+not be promoted to strong MSR on that character.
+
+The former fixed-harmonic state-native chart is not a viable solver input. Its
+full 262-parameter raw-CPOBC ideal contains the constant `2/117`, so every
+localization, including D12 and Q5, is empty. A corrected CSG-compatible first
+harmonic removes all pure constants. For the selected independent harmonic
+`k`, however, two alpha-free raw equations
+`f=beta_u+1/8` and `g=8 beta_v(1-8 beta_u)`, together with the required inverse
+`rho beta_v-1`, satisfy
+
+```text
+1 = (rho/16) g + 4 rho beta_v f - (rho beta_v - 1).
+```
+
+Thus that corrected fixed-`(h,k)` nonsingular slice is also empty. These two
+results close only their declared state assignments, not all rank-two state
+assignments and not SR2-V. Varying `k` in the 62-dimensional root-zero
+harmonic space shows that this two-row mechanism is Zariski-special: an exact
+rank-two escape `k` solves both rows with every beta nonzero, and a coefficient
+determinant `-393/2` produces a rational section on a nonempty principal open.
+The follow-up substitutes that escape into all 3,132 raw scalar entries and
+finds 911 nonzero residuals. On the full beta-one, two-alpha `Delta!=0`
+section, two further raw entries force the alphas to zero, and an exact rank-62
+harmonic minor with determinant `2^192*3^9*977` then forces `k=0`, contradicting
+`Delta!=0`. That sparse section therefore has a localized unit ideal. Variable
+betas, the other 129 alphas, and a complete open subset of `Gr(2,63)` remain
+unclassified. The old fixed-state D12/shear solver must not be run.
 
 A proper sublocus of the strong-GC/reachable-state-MSR corner is nevertheless
 closed: on the nonsingular source reconstruction slice
@@ -104,9 +141,18 @@ semantic-profile row and not a change to SR3b-A.
 | `results/v0.4.2_sr2v_transitive_extension_principal_open.json` | exact symbolic identities plus a nonzero 130-minor; digest `5b3cf83ae5cd6338cfa07c1894bf5eab2f6cf8fe5870fd8fdc6911682b06d000` | on `r*s*(1+r)*(1+s)!=0`, the same-character line and a generic distinct-character principal open force `Q_1,...,Q_4` commutativity through split extensions; Q5 upper-right coordinate is fixed outside the kernel and the exceptional determinant-zero locus remains open |
 | `results/v0.4.2_sr2v_commutator_pivot_branch_cover.json` | exact `2 by 2` polynomial identities; digest `100fefe528012254edcd66c7237ae5706dcb3bba6badbe75da170f68403b4032` | six Q pairs completely cover Q-noncommutativity and split it into pair-irreducible, triple-irreducible, transverse-reducible, and aligned-reducible branches; structural cover only |
 | `results/v0.4.2_sr2v_state_native_rank2_chart.json` | exact harmonic-state and local-frame certificate; digest `3bf3b56c97ef73fcce3ff089f5229191b9d1ade04e217706ac51abe11eaebe6c` | 87 states, 131 orbit actions, exact reachable rank two; fixed-vector GC/reachable MSR are built into a 262-parameter fixed-state chart and nonsingularity reduces to `beta_e!=0` (automatic on the shear slice), while CPOBC/Eq. (113)/Eq. (139) remain unsolved |
-| `results/v0.4.2_sr2v_state_native_shear_D12_manifest.json` | exact sparse QQ substitution manifest; digest `82cd51ddd29e5923b003c8cf8f75a5a26cf5a36edf68728ad58d298d3f573090` | 131-edge shear plus separate Q5; `D12=det[Q1,Q2]` is a nonzero seven-term cubic and all 783/712/25+25/4+10/1529/24 ledgers are compiled; no solver or relation-variety intersection claim |
+| `results/v0.4.2_sr2v_state_native_shear_D12_manifest.json` | exact sparse QQ substitution manifest; digest `82cd51ddd29e5923b003c8cf8f75a5a26cf5a36edf68728ad58d298d3f573090` | 131-edge shear plus separate Q5; `D12=det[Q1,Q2]` is a nonzero seven-term cubic and all ledgers are compiled; the original artifact made no intersection claim, while the later fixed-harmonic unit certificate proves this fixed-state intersection empty |
 | `results/v0.4.2_sr2v_scalar_lattice.json` | exact ZZ/QQ Smith-normal-form and primitive-kernel certificate; digest `155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9` | operator scalar block is a split `G_m^49`; observed-bottom plus fixed-GC block is a split `G_m^29`; additive MSR, cocycle, commutator, and chart-cover claims are excluded |
-| `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` | current SR2-V exact progress authority | consolidates the six new certificates, discarded numerical-scout boundary, revised exact search order, and nonterminal publication scope |
+| `results/v0.4.2_sr2v_additive_msr_laurent.json` | exact local Laurent/Jacobian certificate | normalized CSG point has logarithmic rank 24 and local dimension five; retained as an independent regression after the global classification |
+| `results/v0.4.2_sr2v_bottom_msr_global_csg.json` and `reports/v0.4.2_sr2v_bottom_msr_global_csg.md` | exact global triangular/CSG isomorphism certificate; digest `d7978cac841bf725baa03df99aa661183a5c96367a2979b245b978f7d5dd08a4` | globally classifies the nonzero bottom-MSR locus as normalized finite CSG times `G_m(Q5)`; does not solve upper `G_m^49`, the cocycle fibre, or SR2-V |
+| `results/v0.4.2_sr2v_state_native_shear_D12_preflight.json` | exact Q5-localization and approved-budget provenance; fail-closed digest `58b77ba00838a1051364c2c7feebbbe99bf3104b957c15d4e356fe2fdd8aa524` | live rebuild binds the later fixed-harmonic unit-ideal certificate and returns `EXECUTION_CANCELLED_BY_LATER_UNIT_IDEAL`; it cannot re-authorise the solver |
+| `results/v0.4.2_sr2v_fixed_harmonic_cpobc_obstruction.json` | exact raw-CPOBC unit generator; digest `d5514f31bf6caef5ca102ef8ce78f0bcf137e72922c0f230c716386f22cffc7d` | the complete 262-parameter chart for the former fixed harmonic state assignment is empty before localization; not a global state cover |
+| `results/v0.4.2_sr2v_corrected_csg_fixed_hk_obstruction.json` | exact full-chart census, beta-lattice SNF, and localized two-row unit identity; digest `2b6c8483598cf73bbf9dd2365dd2c7828c10bc0aedb72c58a84c47142c215b7f` | the corrected CSG-compatible selected fixed-`(h,k)` nonsingular slice is empty; other `k` and other harmonic two-planes remain open |
+| `results/v0.4.2_sr2v_variable_harmonic_two_row_audit.json` and `reports/v0.4.2_sr2v_variable_harmonic_two_row_audit.md` | exact harmonic-space/gauge audit and two-row escape certificate; digest `64a79807b4a19169517c5a9864b005c38a44593118987ed88e95dd2edb9cb84e` | predecessor result proving the fixed-`k` two-row obstruction Zariski-special and constructing an open rational section; it did not solve the other entries, which the following sparse-section certificate then audits and obstructs |
+| `results/v0.4.2_sr2v_variable_harmonic_sparse_section_cpobc.json` and `reports/v0.4.2_sr2v_variable_harmonic_sparse_section_cpobc.md` | exact 3,132-entry substitution, sparse polynomial identities, and rank-62 minor; digest `4c8a71689c69d4845344eb44e459b3a5256075188b1f2d71dabc5a7428235efe` | the predecessor escape has 911 raw residuals; two alpha-killing rows plus determinant `2^192*3^9*977` make the beta-one, two-alpha `Delta!=0` section a localized unit ideal; wider alpha/beta support is open |
+| `results/v0.4.2_sr2v_transverse_cocycle_principal_open.json` and `reports/v0.4.2_sr2v_transverse_cocycle_principal_open.md` | exact four-matrix branch-separated rational linear algebra; digest `07e60a4d6b029d3cf08efd3ef3aae14598a1614090d3809d764973065b35eaf0` | separate nonzero minors on derived/literal Eq. (113) crossed with strict/completed Eq. (139) force all actual cocycles to zero and `Q1,...,Q4` to commute on four nonempty opens; the joint 1,187-row matrix is auxiliary and all four determinant-zero loci remain open |
+| `references/notes/v0.4.2_sr2v_bottom_msr_csg_interpretation_2026-08-02.md` | source/derivation boundary | finite CSG is prior classical work; the new project claim is the exact weak/weak `G_m^29` coordinate classification and its certified scope, not broad CSG priority |
+| `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md` | current SR2-V exact progress authority | consolidates the exact certificates through the sparse-section unit ideal and four branch-separated cocycle opens, discarded numerical-scout boundary, revised exact search order, and nonterminal publication scope |
 | `references/notes/v0.4.2_prior_art_related_work_2026-08-01.md` | theorem/page-level literature and mathematical-tool ledger | records direct-source semantics, Xu overlap, triangularisation/common-eigenvector/Burnside/cyclic-separating/LLD tools, 66-PDF local/NAS preservation, and exact claim boundaries |
 | `results/v0.4.2_955_source_native_slack_compiler.json` | structured source word/matrix-block inventory | covers 165 occurrences/131 orbits, 48 slack coordinates, and independently proves the 320-edge strong-GC basis spans all 1,529 path pairs; no scalar solver manifest or chart theorem yet |
 | `results/v0.4.2_955_n_nonzero_scout.json` | exact QQ-linear source-native scout | the entire nonsingular `A_e=[[p_e,x_e],[0,1]]` family lies in `N!=0`, but all six Q commutators are forced zero; general mixed nonlinear patches remain open |
@@ -189,21 +235,19 @@ verdict.
   reducible. In the transverse upper chart the commutator determinant is
   identically zero, so noncommutativity must be saturated by the normalized
   upper-right commutator coefficient instead.
-- The state-native rank-two chart fixes one harmonic terminal boundary slice,
-  uses 262 affine edge parameters, and builds all fixed-vector GC and
-  reachable-state MSR equations into the coordinates. It is complete for edge
-  actions over that fixed state slice, not a cover of all rank-two state
-  assignments and not a solution of the operator relations.
-- The first pair-irreducible state-native shear patch is compiled, not solved.
-  `D12=det[Q1,Q2]` is a nonzero seven-term cubic; `D12!=0` would make the pair
-  irreducible and visible, but the manifest does not show that the CPOBC
-  relation variety meets that open. Supplemental Q5 nonsingularity and a
-  versioned solver budget must be bound before elimination.
+- The original state-native rank-two chart fixes one harmonic terminal
+  boundary slice, uses 262 affine edge parameters, and builds fixed-vector GC
+  and reachable-state MSR into the coordinates. The later raw-CPOBC audit
+  proves that complete fixed-state chart empty by the constant `2/117`.
+- Its pair-irreducible shear/D12 manifest and later Q5/budget preflight remain
+  valid ambient/provenance artifacts, but the relation intersection is empty
+  on that fixed state assignment. No elimination may be launched there.
 - The scalar monomial relation lattices are now global rather than sampled:
   the 843-by-132 operator block has rank 83 and Smith factors `1^83`, while the
   1,163-by-132 observed-bottom plus fixed-GC block has rank 103 and factors
   `1^103`. Their primitive kernels give split tori `G_m^49` and `G_m^29`.
-  The 24 additive MSR equations and extension fibres still have to be imposed.
+  The 24 additive bottom-MSR equations are now imposed and globally classified
+  on `G_m^29`; the upper `G_m^49` character and extension fibre remain open.
 - SR3b-M must distinguish ordinary reachability from multiple preparations or
   probes applied to the same residual. The latter is a conditional recovery
   theorem, not an automatic consequence of the base single-state semantics.
@@ -326,9 +370,15 @@ a two-character transverse family splits generically; the six Q-commutator
 pivots give a complete structural branch cover; and an exact state-native
 rank-two chart is ready. Smith-normal-form certificates also replace finite
 scalar-torus sampling by primitive `G_m^49` and `G_m^29` Laurent coordinates.
-The immediate targets are now the compiled D12 relation-variety intersection,
-the two determinant degeneracy loci, and the triple-irreducible branches.
-Generic points inside the certified opens should not be resampled.
+Bottom MSR is now globally classified, both isolated fixed-state charts have
+exact unit-ideal obstructions, and the selected two-row mechanism has an exact
+variable-`k` escape. The escape fails 911 raw entries, while its entire beta-
+one, two-alpha principal-open section is empty by a rank-62 unit certificate.
+Separately, four transverse semantic branches have their own nonempty
+splitting opens. The immediate targets are their four determinant-zero loci,
+wider state-native alpha/beta support, the aligned degeneracy locus, and the
+triple-irreducible branches. Generic points inside certified opens should not
+be resampled.
 
 For SR2-V specifically:
 
@@ -338,16 +388,29 @@ For SR2-V specifically:
    and on `r!=s, Delta(r,s)!=0` the only extension is the split coboundary;
 3. **branch cover complete:** six Q pairs and four branches per nonzero pivot
    cover every Q-noncommutative model, with supplemental Q5 tracked separately;
-4. **rank-two chart ready:** one exact harmonic boundary slice has 262 affine
-   edge parameters (131 on the shear slice), while CPOBC and supplemental
-   Eq. (113)/(139) remain to be solved;
-5. **first pair-open manifest ready, no solver:** the saturated 136-coordinate
-   D12 input has 9,345 scalar entries and 29,994 terms; the nonempty ambient
-   open is certified but intersection with the relation variety is unresolved;
+4. **original rank-two chart closed:** one exact harmonic boundary slice has
+   262 affine edge parameters, but its raw CPOBC ideal contains `2/117` and is
+   empty before localization;
+5. **D12 execution cancelled:** the 136-coordinate ambient input, Q5
+   localization, and approved budget are certified, but the fixed-state
+   relation intersection is empty and no solver may run;
 6. **scalar lattices globalized:** the two declared monomial loci are split
-   connected tori of dimensions 49 and 29 before additive MSR/cocycle equations;
-7. **terminal unchanged:** none of these scoped certificates is a witness or
-   full-profile obstruction, so SR2-V remains `OPEN`.
+   connected tori of dimensions 49 and 29; all 24 additive bottom-MSR equations
+   reduce the latter globally to normalized finite CSG times external Q5;
+7. **corrected selected state closed:** a CSG-compatible `h` removes all pure
+   constants, but for one fixed harmonic `k`, two raw rows plus beta
+   nonsingularity generate one exactly;
+8. **fixed-`k` mechanism escaped then sparse section closed:** the harmonic space has dimension 63 and
+    the fixed-`h` family is `P^61`; an exact alternative `k` and a nonempty-open
+    rational section solve the selected two rows, but direct substitution has
+    911 residuals and a rank-62 localized certificate closes the beta-one,
+    two-alpha section;
+9. **four transverse opens closed:** four separately compiled Eq. (113)/Eq.
+    (139) semantic branches have nonzero 131- or 132-column minors, forcing all
+    actual cocycles to zero and `Q1,...,Q4` to commute on each open; their four
+    determinant-zero boundaries remain unresolved;
+10. **terminal unchanged:** none of these scoped certificates is a witness or
+    full-profile obstruction, so SR2-V remains `OPEN`.
 
 For the one-sided repair track, current progress remains:
 
@@ -492,16 +555,28 @@ the SR3b-A theorem, title, or deposit status.
   The full 528-coordinate Jacobian has rank 455/nullity 73, but no actual
   `n<=4` lower-left tangent direction. The nonlinear `F=H y` certificate now
   closes `Delta_align!=0`; do not search that open again. Target
-  `Delta_align=0`, the exceptional transverse determinant locus, or the
-  pair/triple irreducible pivots. This is not a full SR2-V obstruction.
-- The state-native rank-two chart fixes one harmonic boundary slice and is
-  complete only for edge actions over those states. Do not call it a cover of
-  all rank-two state assignments or treat its exact validation sample as a
-  CPOBC point.
-- The state-native D12 shear manifest is a pre-solver input only. Its stored
-  rational point proves ambient-open nonemptiness while directly failing
-  CPOBC; never cite it as a model. Add a separate Q5 determinant localization
-  and versioned budget binding before any elimination campaign.
+  `Delta_align=0`, the branch-specific transverse determinant loci, or the
+  pair/triple irreducible pivots. The 1,187-row all-readings inventory is not a
+  semantic branch and must never support an Eq. (113)/Eq. (139) conclusion.
+  This is not a full SR2-V obstruction.
+- The original state-native rank-two chart fixes one harmonic boundary slice
+  and is complete only for edge actions over those states. Its full raw-CPOBC
+  relation variety is now proved empty by `2/117`. Do not call it a cover or
+  treat its exact validation sample as a CPOBC point.
+- The old state-native D12 shear manifest, Q5 localization, and budget binding
+  are provenance-only. Their fixed-state relation intersection is empty, so
+  never cite the ambient point as a model and never run the planned solver.
+- The corrected CSG-compatible fixed-`(h,k)` chart is also empty after beta
+  localization, but its two-row mechanism is Zariski-special in variable `k`.
+  Its escape/open rational section has now been tested against the full raw
+  ledger: the point has 911 residuals and the beta-one, two-alpha section is a
+  localized unit ideal. Do not call its two-row assignment a full CPOBC point,
+  and do not rescan that sparse section. Enlarge beta or alpha support.
+- The four transverse cocycle matrices must remain separate. Derived Eq. (113)
+  has a universally zero external-Q5 column and a nonzero actual 131-column
+  minor; literal Eq. (113) has a nonzero full 132-column minor. Both statements
+  hold separately for strict and completed Eq. (139), giving four nonempty
+  splitting opens. Search only their branch-specific determinant-zero loci.
 - A source/target frame cocycle `A_(c->d)=p_(c->d)S_dS_c^-1` was rejected as
   a construction route. It gives strong GC, exact reachable-state MSR,
   reachable rank two, and visible noncommuting Q for nonconstant harmonic

@@ -368,25 +368,75 @@ invariant-line-breaking branch. The transverse certificate proves generic
 splitting only for its two-character transitive-percolation family. The
 commutator artifact is a structural six-pair/four-branch cover, not a CPOBC
 solution. The state-native chart fixes one harmonic rank-two boundary slice
-and builds GC/MSR into 262 affine edge parameters; the 783 CPOBC and separate
-Eq. (113)/(139) ledgers remain unsolved. None of these verdicts is an SR2-V
-terminal. The shear D12 artifact compiles all ledgers into 29,994 sparse terms
-and proves only that the ambient pair-irreducible open is nonempty; no solver
-has run and no relation-variety point is certified. The Smith-normal-form
+and builds GC/MSR into 262 affine edge parameters. The later raw-CPOBC audit
+proves that fixed-state relation variety empty by the constant `2/117`; no
+solver has run or may run on it. None of these verdicts is an SR2-V terminal.
+The shear D12 artifact still certifies only ambient pair-irreducible
+nonemptiness. The Smith-normal-form
 artifact additionally certifies primitive
 Laurent parameterizations `G_m^49` and `G_m^29` for the two declared scalar
-monomial loci, before additive MSR and cocycle equations. See
+monomial loci; the later section below globally imposes bottom MSR. See
 `reports/v0.4.2_sr2v_principal_open_and_state_native_progress.md`.
+
+## SR2-V bottom-MSR, state-slice, and transverse-cocycle certificates
+
+```powershell
+uv run python -m universe_lab.final_theory.sr2v_additive_msr_laurent_v042
+uv run python -m universe_lab.final_theory.sr2v_bottom_msr_global_csg_v042
+uv run python -m universe_lab.final_theory.weak_d2_state_native_shear_d12_preflight_v042
+uv run python -m universe_lab.final_theory.weak_d2_state_native_fixed_harmonic_cpobc_obstruction_v042
+uv run python -m universe_lab.final_theory.weak_d2_state_native_corrected_csg_rank2_v042
+uv run python -m universe_lab.final_theory.sr2v_variable_harmonic_two_row_audit_v042
+uv run python -m universe_lab.final_theory.sr2v_variable_harmonic_sparse_section_cpobc_v042
+uv run python -m universe_lab.final_theory.sr2v_transverse_cocycle_principal_open_v042
+uv run pytest -q tests/final_theory/test_sr2v_additive_msr_laurent_v042.py tests/final_theory/test_sr2v_bottom_msr_global_csg_v042.py tests/final_theory/test_weak_d2_state_native_shear_d12_preflight_v042.py tests/final_theory/test_weak_d2_state_native_fixed_harmonic_cpobc_obstruction_v042.py tests/final_theory/test_weak_d2_state_native_corrected_csg_rank2_v042.py tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py
+```
+
+Expected verdicts and semantic digests:
+
+```text
+SR2V_ADDITIVE_MSR_LAURENT_SMOOTH_CSG_POINT_CERTIFIED_NONTERMINAL
+53241bd2973c41153d145d6e2fee2f082c4631f7aeba76e30f0e89cca7df3b8b
+SR2V_BOTTOM_MSR_GLOBAL_CSG_PARAMETERISATION_CERTIFIED_NONTERMINAL
+d7978cac841bf725baa03df99aa661183a5c96367a2979b245b978f7d5dd08a4
+SR2V_STATE_NATIVE_SHEAR_D12_PREFLIGHT_SUPERSEDED_EXECUTION_CANCELLED
+58b77ba00838a1051364c2c7feebbbe99bf3104b957c15d4e356fe2fdd8aa524
+SR2V_FIXED_HARMONIC_FULL_ALPHA_BETA_CPOBC_UNIT_IDEAL_OBSTRUCTION_CERTIFIED_NO_SOLVER_RUN
+d5514f31bf6caef5ca102ef8ce78f0bcf137e72922c0f230c716386f22cffc7d
+SR2V_CORRECTED_CSG_FIXED_HK_NONSINGULAR_CPOBC_UNIT_IDEAL_OBSTRUCTION_CERTIFIED_NO_SOLVER_RUN
+2b6c8483598cf73bbf9dd2365dd2c7828c10bc0aedb72c58a84c47142c215b7f
+SR2V_FIXED_K_TWO_ROW_OBSTRUCTION_ZARISKI_SPECIAL_CERTIFIED_NONTERMINAL
+64a79807b4a19169517c5a9864b005c38a44593118987ed88e95dd2edb9cb84e
+SR2V_VARIABLE_HARMONIC_TWO_ALPHA_PRINCIPAL_OPEN_CPOBC_UNIT_IDEAL_CERTIFIED_NONTERMINAL
+4c8a71689c69d4845344eb44e459b3a5256075188b1f2d71dabc5a7428235efe
+SR2V_TRANSVERSE_ALL_FOUR_SEMANTIC_BRANCHES_Q1_Q4_SPLITTING_PRINCIPAL_OPENS_CERTIFIED_NONTERMINAL
+07e60a4d6b029d3cf08efd3ef3aae14598a1614090d3809d764973065b35eaf0
+```
+
+The local Laurent certificate is retained as a Jacobian regression; the
+global certificate supersedes only its former global-open boundary. The Q5
+and budget preflight is also retained, but the old fixed-state D12 execution
+is cancelled because its full alpha/beta CPOBC ideal already contains one.
+The corrected fixed-`(h,k)` slice has a different two-row obstruction only
+after beta localization. Varying `k` proves that mechanism is Zariski-special
+and supplies a nonempty open rational section for those two rows. The follow-up
+checks all raw entries: the escape has 911 residuals, and two alpha-killing
+rows plus a nonzero rank-62 minor prove the entire beta-one, two-alpha
+`Delta!=0` section empty. The separate transverse certificate builds four
+Eq. (113)/Eq. (139) semantic matrices and proves `Q1,...,Q4` splitting on four
+nonempty principal opens. It never uses the 1,187-row joint inventory for a
+branch conclusion.
 
 ## Next exact gate
 
-For SR2-V, use the primitive Laurent maps instead of finite torus sampling.
-The state-native shear `det[Q_1,Q_2]!=0` manifest is compiled; bind a separate
-Q5 determinant localization and versioned solver budget before determining
-whether its relation variety meets the open. Then treat `Delta_align=0`, the exceptional transverse
-`Delta(r,s)=0` locus, and the triple-irreducible pivots. Keep supplemental Q5
-and the two Eq. (113) and Eq. (139) ledgers separate. Do not launch an
-exhaustive 131-patch campaign. When the 955 mixed components resume, first
-construct a symmetry/orbit reduction and exact-scout a small set of natural
-principal-open patches. Any solver campaign requires a source-profile coverage
-certificate and a versioned budget artifact.
+For state-native SR2-V, enlarge the exact section beyond beta one and the two
+retained alpha coordinates; do not rerun the now-empty sparse section or either
+old fixed-state D12/shear campaign. In the transverse reducible branch, treat
+the four branch-specific determinant-zero loci without combining derived and
+literal Eq. (113) or strict and completed Eq. (139). Then treat
+`Delta_align=0` and the triple-irreducible pivots. Keep supplemental Q5
+separate. Do not launch an exhaustive 131-patch campaign.
+When the 955 mixed components resume, first construct a symmetry/orbit
+reduction and exact-scout a small set of natural principal-open patches. Any
+solver campaign requires a source-profile coverage certificate and a
+versioned budget artifact.

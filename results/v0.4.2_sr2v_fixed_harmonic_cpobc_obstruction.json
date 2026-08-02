@@ -1,0 +1,3430 @@
+{
+  "algebraic_conclusion": {
+    "D12_localization_can_restore_a_point": false,
+    "Q5_localization_can_restore_a_point": false,
+    "coefficient_ring": "QQ[alpha_e,beta_e : 131 actual ON edge orbits]",
+    "nonsingular_beta_localization_can_restore_a_point": false,
+    "proof": "The full alpha/beta raw Eq. (103) scalar generator 2/117 belongs to the ideal; multiplication by 117/2 gives 1.",
+    "raw_CPOBC_ideal": "UNIT_IDEAL",
+    "reason_localizations_do_not_help": "localization preserves 1 in an ideal that is already the unit ideal",
+    "relation_variety_for_this_fixed_state_assignment": "EMPTY",
+    "solver_required": false
+  },
+  "beta1_shear_crosscheck": {
+    "core_unit_generator": {
+      "aliases": {
+        "A_m": {
+          "occurrence_id": "cpobc-transition-f5898ff572639d996985",
+          "orbit_id": "cpobc-transition-orbit-f1c4030ab10488e60e8c",
+          "source_id": "p1-0",
+          "target_id": "p2-2"
+        },
+        "A_n": {
+          "occurrence_id": "cpobc-transition-69d9e4ab736858a2b6b0",
+          "orbit_id": "cpobc-transition-orbit-1cf71a48cd05d50fdcca",
+          "source_id": "p3-006",
+          "target_id": "p4-000e"
+        },
+        "A_prime_m": {
+          "occurrence_id": "cpobc-transition-7137acaa934673cc789d",
+          "orbit_id": "cpobc-transition-orbit-74b3519240acc75a0c55",
+          "source_id": "p1-0",
+          "target_id": "p2-0"
+        },
+        "A_prime_n": {
+          "occurrence_id": "cpobc-transition-e8c5ca0a8113deb72789",
+          "orbit_id": "cpobc-transition-orbit-c30e4a4e7f5d04230080",
+          "source_id": "p3-006",
+          "target_id": "p4-0006"
+        }
+      },
+      "display": "(A_n*A_prime_m-A_m*A_prime_n)[1,0]=7/663",
+      "entry": [
+        1,
+        0
+      ],
+      "equation_id": "eq103",
+      "exact_constant_value": "7/663",
+      "involved_endpoint_states": {
+        "p1-0": [
+          "1",
+          "0"
+        ],
+        "p2-0": [
+          "2/3",
+          "1/119"
+        ],
+        "p2-2": [
+          "1/3",
+          "-1/119"
+        ],
+        "p3-006": [
+          "13/119",
+          "0"
+        ],
+        "p4-0006": [
+          "10/357",
+          "0"
+        ],
+        "p4-000e": [
+          "3/119",
+          "0"
+        ]
+      },
+      "lhs_core_entry": [
+        {
+          "coefficient": "1/119",
+          "monomial": []
+        }
+      ],
+      "lhs_matrix": {
+        "00": [
+          {
+            "coefficient": "2/13",
+            "monomial": []
+          },
+          {
+            "coefficient": "3/14161",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-1cf71a48cd05d50fdcca"
+              }
+            ]
+          }
+        ],
+        "01": [
+          {
+            "coefficient": "3/119",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-1cf71a48cd05d50fdcca"
+              }
+            ]
+          },
+          {
+            "coefficient": "3/14161",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-1cf71a48cd05d50fdcca"
+              },
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-74b3519240acc75a0c55"
+              }
+            ]
+          },
+          {
+            "coefficient": "2/13",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-74b3519240acc75a0c55"
+              }
+            ]
+          }
+        ],
+        "10": [
+          {
+            "coefficient": "1/119",
+            "monomial": []
+          }
+        ],
+        "11": [
+          {
+            "coefficient": "1",
+            "monomial": []
+          },
+          {
+            "coefficient": "1/119",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-74b3519240acc75a0c55"
+              }
+            ]
+          }
+        ]
+      },
+      "lhs_word": [
+        "A_n",
+        "A_prime_m"
+      ],
+      "matrices": {
+        "A_m": {
+          "00": [
+            {
+              "coefficient": "1/3",
+              "monomial": []
+            }
+          ],
+          "01": [
+            {
+              "coefficient": "1/3",
+              "monomial": [
+                {
+                  "exponent": 1,
+                  "variable": "alpha:cpobc-transition-orbit-f1c4030ab10488e60e8c"
+                }
+              ]
+            }
+          ],
+          "10": [
+            {
+              "coefficient": "-1/119",
+              "monomial": []
+            }
+          ],
+          "11": [
+            {
+              "coefficient": "1",
+              "monomial": []
+            },
+            {
+              "coefficient": "-1/119",
+              "monomial": [
+                {
+                  "exponent": 1,
+                  "variable": "alpha:cpobc-transition-orbit-f1c4030ab10488e60e8c"
+                }
+              ]
+            }
+          ]
+        },
+        "A_n": {
+          "00": [
+            {
+              "coefficient": "3/13",
+              "monomial": []
+            }
+          ],
+          "01": [
+            {
+              "coefficient": "3/119",
+              "monomial": [
+                {
+                  "exponent": 1,
+                  "variable": "alpha:cpobc-transition-orbit-1cf71a48cd05d50fdcca"
+                }
+              ]
+            }
+          ],
+          "10": [],
+          "11": [
+            {
+              "coefficient": "1",
+              "monomial": []
+            }
+          ]
+        },
+        "A_prime_m": {
+          "00": [
+            {
+              "coefficient": "2/3",
+              "monomial": []
+            }
+          ],
+          "01": [
+            {
+              "coefficient": "2/3",
+              "monomial": [
+                {
+                  "exponent": 1,
+                  "variable": "alpha:cpobc-transition-orbit-74b3519240acc75a0c55"
+                }
+              ]
+            }
+          ],
+          "10": [
+            {
+              "coefficient": "1/119",
+              "monomial": []
+            }
+          ],
+          "11": [
+            {
+              "coefficient": "1",
+              "monomial": []
+            },
+            {
+              "coefficient": "1/119",
+              "monomial": [
+                {
+                  "exponent": 1,
+                  "variable": "alpha:cpobc-transition-orbit-74b3519240acc75a0c55"
+                }
+              ]
+            }
+          ]
+        },
+        "A_prime_n": {
+          "00": [
+            {
+              "coefficient": "10/39",
+              "monomial": []
+            }
+          ],
+          "01": [
+            {
+              "coefficient": "10/357",
+              "monomial": [
+                {
+                  "exponent": 1,
+                  "variable": "alpha:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+                }
+              ]
+            }
+          ],
+          "10": [],
+          "11": [
+            {
+              "coefficient": "1",
+              "monomial": []
+            }
+          ]
+        }
+      },
+      "polynomial_variable_support": [],
+      "raw_display": "A_n*A_prime_m - A_m*A_prime_n = 0",
+      "relation_id": "cpobc-relation-1decb1e77431d5355ada",
+      "residual_core_entry": [
+        {
+          "coefficient": "7/663",
+          "monomial": []
+        }
+      ],
+      "residual_matrix": {
+        "00": [
+          {
+            "coefficient": "8/117",
+            "monomial": []
+          },
+          {
+            "coefficient": "3/14161",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-1cf71a48cd05d50fdcca"
+              }
+            ]
+          }
+        ],
+        "01": [
+          {
+            "coefficient": "3/119",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-1cf71a48cd05d50fdcca"
+              }
+            ]
+          },
+          {
+            "coefficient": "3/14161",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-1cf71a48cd05d50fdcca"
+              },
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-74b3519240acc75a0c55"
+              }
+            ]
+          },
+          {
+            "coefficient": "2/13",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-74b3519240acc75a0c55"
+              }
+            ]
+          },
+          {
+            "coefficient": "-10/1071",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+              }
+            ]
+          },
+          {
+            "coefficient": "-1/3",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-f1c4030ab10488e60e8c"
+              }
+            ]
+          }
+        ],
+        "10": [
+          {
+            "coefficient": "7/663",
+            "monomial": []
+          }
+        ],
+        "11": [
+          {
+            "coefficient": "1/119",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-74b3519240acc75a0c55"
+              }
+            ]
+          },
+          {
+            "coefficient": "10/42483",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+              }
+            ]
+          },
+          {
+            "coefficient": "1/119",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-f1c4030ab10488e60e8c"
+              }
+            ]
+          }
+        ]
+      },
+      "rhs_core_entry": [
+        {
+          "coefficient": "-10/4641",
+          "monomial": []
+        }
+      ],
+      "rhs_matrix": {
+        "00": [
+          {
+            "coefficient": "10/117",
+            "monomial": []
+          }
+        ],
+        "01": [
+          {
+            "coefficient": "10/1071",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+              }
+            ]
+          },
+          {
+            "coefficient": "1/3",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-f1c4030ab10488e60e8c"
+              }
+            ]
+          }
+        ],
+        "10": [
+          {
+            "coefficient": "-10/4641",
+            "monomial": []
+          }
+        ],
+        "11": [
+          {
+            "coefficient": "1",
+            "monomial": []
+          },
+          {
+            "coefficient": "-10/42483",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+              }
+            ]
+          },
+          {
+            "coefficient": "-1/119",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-f1c4030ab10488e60e8c"
+              }
+            ]
+          }
+        ]
+      },
+      "rhs_word": [
+        "A_m",
+        "A_prime_n"
+      ],
+      "unit_identity": "(663/7)*(7/663)=1",
+      "unit_multiplier": "663/7"
+    },
+    "entry_position_histogram": {
+      "00": 95,
+      "10": 83
+    },
+    "independent_records_digest_sha256": "df55b36d50ae69dfdac6767bbc84f2613252ea132c3de8d7b1a62638b5128e4a",
+    "manifest_records_digest_sha256": "df55b36d50ae69dfdac6767bbc84f2613252ea132c3de8d7b1a62638b5128e4a",
+    "manifest_records_equal_independent_records": true,
+    "pure_nonzero_constant_entries": 178,
+    "records": [
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-02c6016741374af23c63",
+        "value": "1/52"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-037265ea63f82ccc3a3b",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-03a3ad1a7dc8cbe58488",
+        "value": "2/195"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-04e452ce959f8253ec9d",
+        "value": "1/208"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-093b29b088f34790c0a0",
+        "value": "3/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0bb4e6d952aee35e0c4f",
+        "value": "2/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0bc7d98c3797590dc67c",
+        "value": "1/351"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0c0c4c0462874d9ff1bb",
+        "value": "1/20"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0c5cd1524f5d660d4965",
+        "value": "1/351"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0ca7a22bed9cdf4bc14a",
+        "value": "2/117"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0ed39267b5d9ab585845",
+        "value": "27/1190"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0fef4118ae096de5c744",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-1004d92ada22932d879a",
+        "value": "4/81"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-1616e0ba98a01c398fcf",
+        "value": "8/357"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-18b96d06057ae1c20a0d",
+        "value": "8/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-18d118e8a605ceebf8dd",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-1d42b6f3bfc0cc520594",
+        "value": "4/81"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-1decb1e77431d5355ada",
+        "value": "7/663"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-1f4a8b738ae1ad23f1a1",
+        "value": "9/952"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-20b434a1d89dd4ca8a97",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-214f8bc3e7e1c8199dad",
+        "value": "1/102"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-224a53c2b0df368879dd",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-26d4b3b9a485d1398461",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-27bae6d4574d4707eb3a",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-2ae8b567755d35190a67",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-306d7fb972f6b3384e9c",
+        "value": "7/144"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-30e2ff24c570b49b9d8c",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-32772bc0b90d303c6a4f",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-32af9b57052c90f77b8d",
+        "value": "1/21"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3320f982bcbcfb1bd588",
+        "value": "2/351"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-33e6c66d1903f91325d1",
+        "value": "1/21"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "equal_second_orientation",
+        "relation_id": "cpobc-relation-33e6c66d1903f91325d1",
+        "value": "-1/21"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-34f6e3fc3953e758e176",
+        "value": "1/20"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-372f19c974f0c287f587",
+        "value": "10/1071"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3767a5745f37a94f8e9f",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-37e38f3ea89104801c63",
+        "value": "1/390"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3874a0b384150a88ae75",
+        "value": "2/45"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-38c816e43cb5b5e8a5bd",
+        "value": "7/144"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-39b5944ab4ba91f274c5",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3a4065d77a909925deb0",
+        "value": "1/20"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3ae0ec6ec7e86dc83d29",
+        "value": "7/144"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3c55d9758edeab523d8b",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3cb04b55140e87576fce",
+        "value": "8/833"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3e84ad0f778d3cd83e26",
+        "value": "4/81"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "equal_second_orientation",
+        "relation_id": "cpobc-relation-3e84ad0f778d3cd83e26",
+        "value": "-4/81"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-408e114f0ce8d528e70d",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-40b9a4b708aa8d8b06bb",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-42eb182e15b8b054bb61",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-451448c492ec4bd8ef7b",
+        "value": "1/21"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-4603c50054245e1465d4",
+        "value": "7/144"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-48dbe57beb5c0100fe12",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-495b3da88add064cd512",
+        "value": "2/351"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-4aaef24e7c618681d21c",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-4cab941f4d883e43b8fe",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-505578541e2920922e4e",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-52912d459a42daccf8b1",
+        "value": "1/65"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-544425432f754ea894ad",
+        "value": "-3/26"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-556ede9c8a9e86e73f99",
+        "value": "1/104"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-55ad4ccfdeb37218bdfd",
+        "value": "9/952"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-566dc189f994fd756f99",
+        "value": "1/104"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-5be123e11aa899d77ccf",
+        "value": "-29/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-5c81e92437f9405dc62e",
+        "value": "1/351"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-5caf0e3af7c6e68a9dc1",
+        "value": "-5/52"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-5d2ebad301b2345660a8",
+        "value": "1/65"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-5e0f9993bb7385dca406",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-5e146385be50db3e3fb1",
+        "value": "-29/195"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-61aa51c4cedb13e08a66",
+        "value": "1/65"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-639104be5f7d7a58a348",
+        "value": "1/102"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-64c9db9237b98534cc86",
+        "value": "8/833"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-67c122842422fb82d939",
+        "value": "4/351"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-67fbd3034032b9845b21",
+        "value": "-19/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-6a05ce5b80c68834d679",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-6bf2ce4757c796cfb357",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-6d4f35933e4644840fc1",
+        "value": "1/208"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-6ec3626ee042475c329a",
+        "value": "1/390"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-714964fb4c136fd75ff6",
+        "value": "1/208"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-72f87eae07f49fe395e9",
+        "value": "8/357"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-74e9abd8aff876146235",
+        "value": "4/81"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-74f97242aa49cfbde4a3",
+        "value": "1/312"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-75bfef668419261e4333",
+        "value": "4/81"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-775a17e86645eccc501b",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-796df1e59828565f2db8",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-79f5202401e05a9e178b",
+        "value": "2/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-7a41220754a81724cc18",
+        "value": "1/260"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-7ced8d31915e25e02839",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-7d516ed8b28c703fcab5",
+        "value": "1/21"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-7e54a42fcf01052c9dce",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-7f808b52acde678da3b7",
+        "value": "-3/26"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-82480b1d39a2211b1198",
+        "value": "10/1071"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-82b1c44bc732b3364e71",
+        "value": "4/81"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "equal_second_orientation",
+        "relation_id": "cpobc-relation-82b1c44bc732b3364e71",
+        "value": "-4/81"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-830c0d08892212fa7cbf",
+        "value": "1/195"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-8372dec31d959a3a3d15",
+        "value": "1/104"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-83d4e447caa24942e0f6",
+        "value": "1/102"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-8459f61c2f0d36569bf8",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-86476c9744ce900dd105",
+        "value": "-5/39"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-865a193cf06c60ad7df2",
+        "value": "7/144"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-87b48d506d89c8a89e89",
+        "value": "30/1547"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-88408b8ed640dfb3dab0",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-89c0bbfdce18143bf357",
+        "value": "-29/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-8b6db694743ff85d5a92",
+        "value": "4/273"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-8fbe240499e24ab14d25",
+        "value": "10/117"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-903afe9f2a64f0d95c6d",
+        "value": "5/238"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-90736862b9764a6b0f78",
+        "value": "-19/208"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-95fa04eabaf92e94c4f7",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-99c0b9b87b5d3c93f713",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-9bb12b9ecfe8e003dc29",
+        "value": "8/833"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-9c52e4d80bc819cc703b",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-9d41b9ad91cee91cef5b",
+        "value": "11/1190"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a134882c9a2b4b46290b",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a14bd71465b71f91dbc3",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a353f339e6b3ba35a3a0",
+        "value": "10/1071"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a40cb1a2773031325443",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a4146f4bf3df782ffae6",
+        "value": "5/108"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "equal_second_orientation",
+        "relation_id": "cpobc-relation-a4146f4bf3df782ffae6",
+        "value": "-5/108"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a510bf6ce80f0c030c59",
+        "value": "57/3094"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a66d057139c499021c80",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a8c769d16816173d76c4",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-aec91250c6e3f5878520",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-afaf15a2e7e9f970e443",
+        "value": "2/273"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b1b2712af698d2985481",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b22bf70bf2799ac00fac",
+        "value": "6/595"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b2b6bb64a8b9787e2912",
+        "value": "4/81"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b50db5e3d23cd4c5bdb6",
+        "value": "1/20"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b57a3ae772132cae9b43",
+        "value": "18/833"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b619c927d82031e24821",
+        "value": "11/1190"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b6737ec355e3f38234c4",
+        "value": "1/208"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b7609822bbb6dc6594e1",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b855d6b6d9dd7d00b778",
+        "value": "-3/26"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-baadafc80d2bee5d6abc",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-bd9bdcdc52d0da70166a",
+        "value": "1/260"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-beedce6fa5be53bbfa36",
+        "value": "1/21"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-c2b898271b3c8b0d823e",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-c4349499f3d9b219629d",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-c45a72c965114510e922",
+        "value": "5/108"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-c507d091a0af61e2ad2f",
+        "value": "8/833"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-c757b9718fe8717866d4",
+        "value": "1/21"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-c88662a0463607e1b0da",
+        "value": "5/238"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-c90d9f512a560d9e8087",
+        "value": "1/21"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-cdc72bcc42681642d3cf",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-ce9005a5bb51d45ba87d",
+        "value": "18/833"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d2555abcb70c2319e95c",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d2af5352ad8a2cb06a1e",
+        "value": "3/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d2e39071f395b9d28ec8",
+        "value": "1/195"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d3946a9b7d9618aa51e6",
+        "value": "-9/65"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d3c848109d9f997a1af9",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d3d9c71c745ea04540e8",
+        "value": "2/195"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-daa18fae00f4dde30857",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-dc357eddd56f76830c86",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-dcaebfe8b1835ddac170",
+        "value": "1/20"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "equal_second_orientation",
+        "relation_id": "cpobc-relation-dcaebfe8b1835ddac170",
+        "value": "-1/20"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-dd1f3a174d0e950c3ce8",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-df1a0655f86d0a62f48e",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-e310f1ac940284c99046",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-e3a3dddaa612b6e5c5cd",
+        "value": "5/108"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-e49f43699f2860a1fb9a",
+        "value": "3/208"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-e5814319235a73b69234",
+        "value": "18/833"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-e695bbebca783d60c632",
+        "value": "12/595"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-eaea3e14dc2e752f6b7d",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-edb4337c44e666d82c56",
+        "value": "4/81"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-ef33a94195a1b553f946",
+        "value": "1/260"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f1cab1401d3c74a13d8c",
+        "value": "1/390"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f22cf24c3af785b3daa0",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f3f817d4186d62d7aca9",
+        "value": "1/21"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f4b816bafc9e0cb9236d",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f4de791db3a57b0f8e30",
+        "value": "1/351"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f608651066aaff851fcf",
+        "value": "-29/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f85c44cf97b136e33084",
+        "value": "1/312"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fb3d94035ce50d36496d",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fc0e972041d7a9719d24",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fce0cd883c3282788bbb",
+        "value": "3/136"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fce92c4c4f8bc6482e67",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fd07e96f8239442338a6",
+        "value": "7/144"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "equal_second_orientation",
+        "relation_id": "cpobc-relation-fd07e96f8239442338a6",
+        "value": "-7/144"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fd372e7b9dfb9d63030b",
+        "value": "1/20"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fdcfb40d8156bfcfab3a",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fdfa39a95ae3d6d38efd",
+        "value": "1/21"
+      },
+      {
+        "entry": [
+          1,
+          0
+        ],
+        "equation_id": "equal_second_orientation",
+        "relation_id": "cpobc-relation-fdfa39a95ae3d6d38efd",
+        "value": "-1/21"
+      }
+    ],
+    "relations_with_a_pure_nonzero_constant_entry": 171,
+    "specialisation": "beta_e=1 for all 131 actual ON edge orbits"
+  },
+  "claim_boundary": "For one fixed harmonic rank-two state assignment, the full 262-parameter alpha/beta state-native chart has empty raw-CPOBC relation variety by an exact QQ unit generator. This does not obstruct other rank-two state assignments, the full weak/weak profile, or SR2-V.",
+  "date": "2026-08-02",
+  "dimension": 2,
+  "execution_boundary": {
+    "budget_consumed": false,
+    "finite_field_status": "NOT_RUN",
+    "groebner_status": "NOT_RUN",
+    "numerical_status": "NOT_RUN",
+    "sage_status": "NOT_INVOKED",
+    "solver_status": "NOT_RUN",
+    "witness": null
+  },
+  "field": "Q",
+  "finite_scope": "n<=4",
+  "full_alpha_beta_constant_residual_census": {
+    "entry_position_histogram": {
+      "00": 95
+    },
+    "pure_nonzero_constant_entries": 95,
+    "raw_operator_equations": 783,
+    "raw_scalar_entries": 3132,
+    "records": [
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-02c6016741374af23c63",
+        "value": "1/52"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-037265ea63f82ccc3a3b",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-03a3ad1a7dc8cbe58488",
+        "value": "2/195"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-04e452ce959f8253ec9d",
+        "value": "1/208"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-093b29b088f34790c0a0",
+        "value": "3/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0bb4e6d952aee35e0c4f",
+        "value": "2/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0bc7d98c3797590dc67c",
+        "value": "1/351"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0c5cd1524f5d660d4965",
+        "value": "1/351"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0ca7a22bed9cdf4bc14a",
+        "value": "2/117"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-0fef4118ae096de5c744",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-18d118e8a605ceebf8dd",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-20b434a1d89dd4ca8a97",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-224a53c2b0df368879dd",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-26d4b3b9a485d1398461",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-27bae6d4574d4707eb3a",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-2ae8b567755d35190a67",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-30e2ff24c570b49b9d8c",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-32772bc0b90d303c6a4f",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3320f982bcbcfb1bd588",
+        "value": "2/351"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3767a5745f37a94f8e9f",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-37e38f3ea89104801c63",
+        "value": "1/390"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-39b5944ab4ba91f274c5",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-3c55d9758edeab523d8b",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-408e114f0ce8d528e70d",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-40b9a4b708aa8d8b06bb",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-42eb182e15b8b054bb61",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-48dbe57beb5c0100fe12",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-495b3da88add064cd512",
+        "value": "2/351"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-4aaef24e7c618681d21c",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-4cab941f4d883e43b8fe",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-505578541e2920922e4e",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-52912d459a42daccf8b1",
+        "value": "1/65"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-556ede9c8a9e86e73f99",
+        "value": "1/104"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-566dc189f994fd756f99",
+        "value": "1/104"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-5c81e92437f9405dc62e",
+        "value": "1/351"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-5d2ebad301b2345660a8",
+        "value": "1/65"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-5e0f9993bb7385dca406",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-61aa51c4cedb13e08a66",
+        "value": "1/65"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-67c122842422fb82d939",
+        "value": "4/351"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-6a05ce5b80c68834d679",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-6bf2ce4757c796cfb357",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-6d4f35933e4644840fc1",
+        "value": "1/208"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-6ec3626ee042475c329a",
+        "value": "1/390"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-714964fb4c136fd75ff6",
+        "value": "1/208"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-74f97242aa49cfbde4a3",
+        "value": "1/312"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-775a17e86645eccc501b",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-796df1e59828565f2db8",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-79f5202401e05a9e178b",
+        "value": "2/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-7a41220754a81724cc18",
+        "value": "1/260"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-7ced8d31915e25e02839",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-7e54a42fcf01052c9dce",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-830c0d08892212fa7cbf",
+        "value": "1/195"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-8372dec31d959a3a3d15",
+        "value": "1/104"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-8459f61c2f0d36569bf8",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-88408b8ed640dfb3dab0",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-8b6db694743ff85d5a92",
+        "value": "4/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-95fa04eabaf92e94c4f7",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-99c0b9b87b5d3c93f713",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-9c52e4d80bc819cc703b",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a134882c9a2b4b46290b",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a14bd71465b71f91dbc3",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a40cb1a2773031325443",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a66d057139c499021c80",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-a8c769d16816173d76c4",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-aec91250c6e3f5878520",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-afaf15a2e7e9f970e443",
+        "value": "2/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b6737ec355e3f38234c4",
+        "value": "1/208"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-b7609822bbb6dc6594e1",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-baadafc80d2bee5d6abc",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-bd9bdcdc52d0da70166a",
+        "value": "1/260"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-c2b898271b3c8b0d823e",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-c4349499f3d9b219629d",
+        "value": "1/156"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-cdc72bcc42681642d3cf",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d2555abcb70c2319e95c",
+        "value": "1/78"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d2af5352ad8a2cb06a1e",
+        "value": "3/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d2e39071f395b9d28ec8",
+        "value": "1/195"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d3c848109d9f997a1af9",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-d3d9c71c745ea04540e8",
+        "value": "2/195"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-daa18fae00f4dde30857",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-dc357eddd56f76830c86",
+        "value": "1/91"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-dd1f3a174d0e950c3ce8",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-df1a0655f86d0a62f48e",
+        "value": "1/130"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-e310f1ac940284c99046",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-e49f43699f2860a1fb9a",
+        "value": "3/208"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-eaea3e14dc2e752f6b7d",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-ef33a94195a1b553f946",
+        "value": "1/260"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f1cab1401d3c74a13d8c",
+        "value": "1/390"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f22cf24c3af785b3daa0",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f4b816bafc9e0cb9236d",
+        "value": "1/273"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f4de791db3a57b0f8e30",
+        "value": "1/351"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-f85c44cf97b136e33084",
+        "value": "1/312"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fb3d94035ce50d36496d",
+        "value": "1/117"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fc0e972041d7a9719d24",
+        "value": "1/182"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fce92c4c4f8bc6482e67",
+        "value": "1/234"
+      },
+      {
+        "entry": [
+          0,
+          0
+        ],
+        "equation_id": "eq103",
+        "relation_id": "cpobc-relation-fdcfb40d8156bfcfab3a",
+        "value": "1/234"
+      }
+    ],
+    "records_digest_sha256": "0b32fd734dc5b6bc84efdb16c4905cce72ec8669f9640bcc2ca3b064792ced13",
+    "relations_with_a_pure_nonzero_constant_entry": 95
+  },
+  "full_alpha_beta_core_unit_generator": {
+    "aliases": {
+      "A_m": {
+        "occurrence_id": "cpobc-transition-4da70d95744abb102a44",
+        "orbit_id": "cpobc-transition-orbit-d6e558ececccf9f88035",
+        "source_id": "p3-006",
+        "target_id": "p4-088e"
+      },
+      "A_n": {
+        "occurrence_id": "cpobc-transition-cab2c327e2cc6ded86fb",
+        "orbit_id": "cpobc-transition-orbit-1f6dc886d7104325ed26",
+        "source_id": "p4-088e",
+        "target_id": "p5-000631e"
+      },
+      "A_prime_m": {
+        "occurrence_id": "cpobc-transition-e8c5ca0a8113deb72789",
+        "orbit_id": "cpobc-transition-orbit-c30e4a4e7f5d04230080",
+        "source_id": "p3-006",
+        "target_id": "p4-0006"
+      },
+      "A_prime_n": {
+        "occurrence_id": "cpobc-transition-4c1cd3ad1a42c7100802",
+        "orbit_id": "cpobc-transition-orbit-05b265c4c11b96cd7638",
+        "source_id": "p4-088e",
+        "target_id": "p5-000210e"
+      }
+    },
+    "display": "(A_n*A_prime_m-A_m*A_prime_n)[0,0]=2/117",
+    "entry": [
+      0,
+      0
+    ],
+    "equation_id": "eq103",
+    "exact_constant_value": "2/117",
+    "involved_endpoint_states": {
+      "p3-006": [
+        "13/119",
+        "0"
+      ],
+      "p4-0006": [
+        "10/357",
+        "0"
+      ],
+      "p4-088e": [
+        "2/119",
+        "0"
+      ],
+      "p5-000210e": [
+        "1/357",
+        "0"
+      ],
+      "p5-000631e": [
+        "1/357",
+        "0"
+      ]
+    },
+    "lhs_core_entry": [
+      {
+        "coefficient": "5/117",
+        "monomial": []
+      }
+    ],
+    "lhs_matrix": {
+      "00": [
+        {
+          "coefficient": "5/117",
+          "monomial": []
+        }
+      ],
+      "01": [
+        {
+          "coefficient": "1/357",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "alpha:cpobc-transition-orbit-1f6dc886d7104325ed26"
+            },
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+            }
+          ]
+        },
+        {
+          "coefficient": "5/1071",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "alpha:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+            }
+          ]
+        }
+      ],
+      "10": [],
+      "11": [
+        {
+          "coefficient": "1",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-1f6dc886d7104325ed26"
+            },
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+            }
+          ]
+        }
+      ]
+    },
+    "lhs_word": [
+      "A_n",
+      "A_prime_m"
+    ],
+    "matrices": {
+      "A_m": {
+        "00": [
+          {
+            "coefficient": "2/13",
+            "monomial": []
+          }
+        ],
+        "01": [
+          {
+            "coefficient": "2/119",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-d6e558ececccf9f88035"
+              }
+            ]
+          }
+        ],
+        "10": [],
+        "11": [
+          {
+            "coefficient": "1",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "beta:cpobc-transition-orbit-d6e558ececccf9f88035"
+              }
+            ]
+          }
+        ]
+      },
+      "A_n": {
+        "00": [
+          {
+            "coefficient": "1/6",
+            "monomial": []
+          }
+        ],
+        "01": [
+          {
+            "coefficient": "1/357",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-1f6dc886d7104325ed26"
+              }
+            ]
+          }
+        ],
+        "10": [],
+        "11": [
+          {
+            "coefficient": "1",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "beta:cpobc-transition-orbit-1f6dc886d7104325ed26"
+              }
+            ]
+          }
+        ]
+      },
+      "A_prime_m": {
+        "00": [
+          {
+            "coefficient": "10/39",
+            "monomial": []
+          }
+        ],
+        "01": [
+          {
+            "coefficient": "10/357",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+              }
+            ]
+          }
+        ],
+        "10": [],
+        "11": [
+          {
+            "coefficient": "1",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "beta:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+              }
+            ]
+          }
+        ]
+      },
+      "A_prime_n": {
+        "00": [
+          {
+            "coefficient": "1/6",
+            "monomial": []
+          }
+        ],
+        "01": [
+          {
+            "coefficient": "1/357",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "alpha:cpobc-transition-orbit-05b265c4c11b96cd7638"
+              }
+            ]
+          }
+        ],
+        "10": [],
+        "11": [
+          {
+            "coefficient": "1",
+            "monomial": [
+              {
+                "exponent": 1,
+                "variable": "beta:cpobc-transition-orbit-05b265c4c11b96cd7638"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "polynomial_variable_support": [],
+    "raw_display": "A_n*A_prime_m - A_m*A_prime_n = 0",
+    "relation_id": "cpobc-relation-0ca7a22bed9cdf4bc14a",
+    "residual_core_entry": [
+      {
+        "coefficient": "2/117",
+        "monomial": []
+      }
+    ],
+    "residual_matrix": {
+      "00": [
+        {
+          "coefficient": "2/117",
+          "monomial": []
+        }
+      ],
+      "01": [
+        {
+          "coefficient": "-2/4641",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "alpha:cpobc-transition-orbit-05b265c4c11b96cd7638"
+            }
+          ]
+        },
+        {
+          "coefficient": "1/357",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "alpha:cpobc-transition-orbit-1f6dc886d7104325ed26"
+            },
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+            }
+          ]
+        },
+        {
+          "coefficient": "5/1071",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "alpha:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+            }
+          ]
+        },
+        {
+          "coefficient": "-2/119",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "alpha:cpobc-transition-orbit-d6e558ececccf9f88035"
+            },
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-05b265c4c11b96cd7638"
+            }
+          ]
+        }
+      ],
+      "10": [],
+      "11": [
+        {
+          "coefficient": "-1",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-05b265c4c11b96cd7638"
+            },
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-d6e558ececccf9f88035"
+            }
+          ]
+        },
+        {
+          "coefficient": "1",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-1f6dc886d7104325ed26"
+            },
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-c30e4a4e7f5d04230080"
+            }
+          ]
+        }
+      ]
+    },
+    "rhs_core_entry": [
+      {
+        "coefficient": "1/39",
+        "monomial": []
+      }
+    ],
+    "rhs_matrix": {
+      "00": [
+        {
+          "coefficient": "1/39",
+          "monomial": []
+        }
+      ],
+      "01": [
+        {
+          "coefficient": "2/4641",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "alpha:cpobc-transition-orbit-05b265c4c11b96cd7638"
+            }
+          ]
+        },
+        {
+          "coefficient": "2/119",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "alpha:cpobc-transition-orbit-d6e558ececccf9f88035"
+            },
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-05b265c4c11b96cd7638"
+            }
+          ]
+        }
+      ],
+      "10": [],
+      "11": [
+        {
+          "coefficient": "1",
+          "monomial": [
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-05b265c4c11b96cd7638"
+            },
+            {
+              "exponent": 1,
+              "variable": "beta:cpobc-transition-orbit-d6e558ececccf9f88035"
+            }
+          ]
+        }
+      ]
+    },
+    "rhs_word": [
+      "A_m",
+      "A_prime_n"
+    ],
+    "unit_identity": "(117/2)*(2/117)=1",
+    "unit_multiplier": "117/2"
+  },
+  "gates": {
+    "D12_manifest_is_comparison_only_and_remains_no_solver": true,
+    "all_131_beta1_shear_determinants_are_nonzero_constants": true,
+    "all_131_full_chart_determinants_are_nonzero_beta_monomials": true,
+    "beta1_shear_core_Eq103_entry_is_exactly_7_over_663": true,
+    "beta1_shear_pure_nonzero_constant_entry_count_is_178": true,
+    "beta1_shear_unit_ideal_multiplier_is_exact": true,
+    "both_reconstructions_cover_all_783_raw_CPOBC_equations": true,
+    "full_alpha_beta_core_Eq103_entry_is_exactly_2_over_117": true,
+    "full_alpha_beta_pure_nonzero_constant_entry_count_is_95": true,
+    "full_alpha_beta_unit_ideal_multiplier_is_exact": true,
+    "harmonic_state_equations_hold_exactly": true,
+    "harmonic_state_span_has_rank_two": true,
+    "independent_graph_has_165_occurrences_131_orbits_87_states": true,
+    "manifest_beta1_core_entry_matches_exactly": true,
+    "manifest_census_matches_independent_beta1_reconstruction": true,
+    "manifest_pure_constant_census_count_is_178": true,
+    "raw_CPOBC_and_reduction_SHA256_are_bound": true,
+    "unit_generators_are_Q5_D12_budget_independent": true
+  },
+  "independent_reconstruction": {
+    "D12_localization_coordinate_count": 0,
+    "ON_orbit_count": 131,
+    "Q5_coordinate_count": 0,
+    "alpha_coordinate_count": 131,
+    "beta_coordinate_count": 131,
+    "budget_input_count": 0,
+    "endpoint_state_count": 87,
+    "full_affine_coordinate_count": 262,
+    "graph_source": "raw occurrence reduction map plus raw MSR source ledger",
+    "harmonic_failures": [],
+    "imports_D12_polynomial_helpers": false,
+    "nonsingular_subdomain": "product_e(beta_e)!=0",
+    "nonterminal_source_count": 24,
+    "occurrence_count": 165,
+    "parameterisation": "A_e=F_target*[[1,alpha_e],[0,beta_e]]*F_source^-1",
+    "support_determinant": "-26/127449",
+    "support_terminals": [
+      "p5-0000000",
+      "p5-000008c"
+    ]
+  },
+  "input_bindings": {
+    "manifest_comparison_only": {
+      "not_used_to_construct_graph_states_matrices_or_residuals": true,
+      "path": "results/v0.4.2_sr2v_state_native_shear_D12_manifest.json",
+      "raw_sha256": "125d21520df39578e102300c5e0d15509631e1c579506c361fdd58f216312d82",
+      "semantic_digest_sha256": "82cd51ddd29e5923b003c8cf8f75a5a26cf5a36edf68728ad58d298d3f573090"
+    },
+    "mathematical_inputs": {
+      "results/v0.3.1_cpobc_relations_n4.json": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+      "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b"
+    }
+  },
+  "passed": true,
+  "profile_slice": "one_fixed_harmonic_rank2_state_assignment__all_131_alpha_e_and_all_131_beta_e_free__occurrence_identification_ON",
+  "schema_version": "final-theory-v042-sr2v-fixed-harmonic-full-affine-cpobc-unit-ideal-v1",
+  "scope_exclusions": {
+    "SR2V_terminal_verdict": false,
+    "all_SR2V_branches": "NOT_COVERED",
+    "all_rank_two_state_assignments": "NOT_COVERED",
+    "global_commutativity_or_noncommutativity_claim": false,
+    "other_rank_two_state_assignments": "NOT_COVERED",
+    "this_fixed_harmonic_262_parameter_alpha_beta_chart": "COVERED_EMPTY",
+    "weak_GC_weak_MSR_full_profile": "NOT_COVERED"
+  },
+  "search_terminal": "FIXED_HARMONIC_STATE_ASSIGNMENT_CHART_TERMINAL_ONLY",
+  "semantic_digest_sha256": "d5514f31bf6caef5ca102ef8ce78f0bcf137e72922c0f230c716386f22cffc7d",
+  "verdict": "SR2V_FIXED_HARMONIC_FULL_ALPHA_BETA_CPOBC_UNIT_IDEAL_OBSTRUCTION_CERTIFIED_NO_SOLVER_RUN"
+}

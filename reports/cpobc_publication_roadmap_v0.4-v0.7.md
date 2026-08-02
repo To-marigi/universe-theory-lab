@@ -15,10 +15,64 @@ It supersedes the earlier ordering where the two one-sided profiles and `n=5`
 were treated as mandatory Paper I gates; it does not supersede any certified
 theorem, scope correction, or frozen artifact.
 
-### 2026-08-02 SR2-V execution update
+### 2026-08-02 SR2-V exact-gate correction
 
-This update controls any older "current" SR2-V execution wording later in the
-roadmap; the publication and terminal gates remain unchanged.
+This correction supersedes the older SR2-V execution order immediately below.
+It does not change the publication target or any terminal definition.
+
+- The bottom-scalar `G_m^29` plus all 24 additive reachable-MSR equations is
+  globally the normalized finite-CSG four-parameter principal open times the
+  external `G_m(Q5)`. This is a project-coordinate lemma, not a claim to have
+  discovered classical CSG.
+- The old fixed-harmonic 262-parameter state chart is exactly empty by the
+  constant raw-CPOBC generator `2/117`. The Q5/budget preflight is preserved,
+  but the corresponding D12 solver launch is cancelled.
+- A corrected CSG-compatible first harmonic removes the constant generator.
+  For the selected second harmonic `k`, two alpha-free raw relations plus one
+  beta nonsingularity localizer still generate `1` exactly. That fixed-`(h,k)`
+  nonsingular slice is also empty without a solver.
+- These are scoped state-slice obstructions. SR2-V remains `OPEN`, obtains no
+  separate short-report slot, and neither obstruction may be promoted to all
+  rank-two state assignments.
+
+The variable-`k` and transverse-cocycle gates are now both complete, with
+strictly scoped conclusions:
+
+- The fixed-`k` two-row obstruction is Zariski-special, and an exact rank-two
+  `k` solves those two rows on a nonempty rational section. Direct substitution
+  into all 3,132 raw CPOBC scalar entries nevertheless gives 911 residuals.
+  More strongly, two further entries kill the two retained alpha coordinates,
+  and a nonzero `62 by 62` minor makes the whole `Delta!=0`, beta-one,
+  two-alpha sparse section a localized unit ideal. This does not close variable
+  betas or the other 129 alpha coordinates.
+- The transverse cocycle theorem uses four alternative semantic matrices,
+  never their intersection: derived/literal Eq. (113), each crossed with
+  printed-strict/completed Eq. (139). Their shapes are `1156 by 132` and
+  `1162 by 132`. Separate nonzero minors force all 131 actual transition
+  cocycles to vanish on a nonempty principal open in every branch, so
+  `Q1,...,Q4` commute there. The `1187 by 132` all-readings matrix is auxiliary
+  overconstrained data and supports no branch inference.
+
+The controlling implementation order is therefore now:
+
+1. analyse the four branch-specific transverse determinant-zero loci without
+   combining Eq. (113) or Eq. (139) alternatives;
+2. enlarge the state-native search beyond the beta-one, two-alpha sparse
+   section, first by adding alpha support or variable betas while preserving
+   the exact harmonic and nonsingularity ledgers;
+3. enlarge fixed-`h` calculations toward a genuine rank-two harmonic-plane
+   cover, whose natural moduli are an open subset of `Gr(2,63)`;
+4. continue the aligned degeneracy locus and triple-irreducible pivots;
+5. certify any witness or obstruction directly against every semantic and
+   relation ledger before assigning an SR2-V terminal.
+
+No old fixed-state D12/shear solver campaign is permitted.
+
+### Earlier 2026-08-02 SR2-V execution update (superseded)
+
+This section preserves the pre-gate plan for chronology. The exact-gate
+correction immediately above supersedes its "current" wording; the publication
+and terminal gates remain unchanged.
 
 SR2-V remains `OPEN`, but its undifferentiated reducible/irreducible search has
 been replaced by six exact assets: a nonlinear aligned principal-open
@@ -426,7 +480,7 @@ post-literature refocus             STATEWISE OBSERVABILITY / RECOVERY
           |
 SR2-V exact audit + SR3b-M lemmas   COMPLETE
           |
-SR2-V exact campaign   OPEN; D12 MANIFEST / BRANCH COVER / TWO OPENS / RANK2 / SCALAR SNF READY
+SR2-V exact campaign   OPEN; SPARSE STATE SECTION EMPTY / FOUR TRANSVERSE SPLITTING OPENS
           |
 955 non-self-adjoint state-only repair, then 721 repair
           |

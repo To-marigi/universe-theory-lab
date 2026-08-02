@@ -18,7 +18,7 @@ continuation:
 ```text
 v0.3.9 strong/strong theorem        PUBLIC
 v0.4 weak/weak rational witness     ON RESULT COMPLETE; OFF TRANSFER PENDING
-v0.4-V observability strengthening  EXACT BRANCH REDUCTIONS READY; OPEN
+v0.4-V observability strengthening  BOTTOM CSG CLASSIFIED; FIXED SLICES CLOSED; OPEN
 SR3b-M minimal recovery lemmas       REQUIRED PAPER I MODULE; NOT A SHORT REPORT
 v0.4.1 one-sided ON profiles        PROOF INTERPRETATION WITHDRAWN; BOTH OPEN
 v0.4.2 profile-native repair        PURE-LOWER NO-GO CERTIFIED; MIXED OPEN
@@ -26,6 +26,62 @@ prior-art/related-work audit         COMPLETE; XU OVERLAP SCOPED
 OFF 406-occurrence classification   OPEN SEPARATE COMPILER TRACK
 Paper I assembly                    STATEWISE OBSERVABILITY/RECOVERY + SR3b-A
 v0.5 genuine source-stage n=5       INDEPENDENT EXTENSION TRACK
+```
+
+### 2026-08-02 exact-gate continuation
+
+This section controls older SR2-V “next step” wording later in the handoff.
+
+- Bottom scalar MSR is complete: the 24 Laurent equations on `G_m^29` are
+  globally the normalized finite-CSG principal open in four couplings times
+  external `G_m(Q5)`. Verdict
+  `SR2V_BOTTOM_MSR_GLOBAL_CSG_PARAMETERISATION_CERTIFIED_NONTERMINAL`, digest
+  `d7978cac841bf725baa03df99aa661183a5c96367a2979b245b978f7d5dd08a4`.
+- The former fixed harmonic alpha/beta chart is empty by the constant raw
+  generator `2/117`. The D12 Q5/budget preflight remains valid provenance, but
+  no solver may run on this slice.
+- The corrected CSG-compatible selected fixed-`(h,k)` slice is nonsingularly
+  empty by the exact two-row beta-localized unit identity. Verdict
+  `SR2V_CORRECTED_CSG_FIXED_HK_NONSINGULAR_CPOBC_UNIT_IDEAL_OBSTRUCTION_CERTIFIED_NO_SOLVER_RUN`,
+  digest `2b6c8483598cf73bbf9dd2365dd2c7828c10bc0aedb72c58a84c47142c215b7f`.
+- That two-row mechanism is not generic in the variable harmonic family. The
+  exact audit constructs another rank-two root-zero `k`, with all betas one,
+  that solves the same two rows, and a rational section on the nonempty open
+  where its coefficient determinant is nonzero. Its predecessor verdict is
+  `SR2V_FIXED_K_TWO_ROW_OBSTRUCTION_ZARISKI_SPECIAL_CERTIFIED_NONTERMINAL`,
+  digest `64a79807b4a19169517c5a9864b005c38a44593118987ed88e95dd2edb9cb84e`.
+- The follow-up checks all 3,132 raw CPOBC entries at that escape and finds 911
+  nonzero residuals. On the entire beta-one, two-alpha `Delta!=0` section, two
+  extra rows force both alphas to zero and a `62 by 62` minor with determinant
+  `2^192*3^9*977` forces the root-zero harmonic coordinate to zero. Hence this
+  sparse section is a localized unit ideal. Verdict
+  `SR2V_VARIABLE_HARMONIC_TWO_ALPHA_PRINCIPAL_OPEN_CPOBC_UNIT_IDEAL_CERTIFIED_NONTERMINAL`,
+  digest `4c8a71689c69d4845344eb44e459b3a5256075188b1f2d71dabc5a7428235efe`.
+- The transverse reducible cocycle fibre is split on four separate nonempty
+  principal opens: derived/literal Eq. (113), each with strict/completed
+  Eq. (139). The `1156 by 132` and `1162 by 132` branch matrices have exact
+  ranks 131 on derived branches and 132 on literal branches. All 131 actual
+  cocycles vanish, so `Q1,...,Q4` commute. The joint 1,187-row matrix is never
+  used for branch inference. Verdict
+  `SR2V_TRANSVERSE_ALL_FOUR_SEMANTIC_BRANCHES_Q1_Q4_SPLITTING_PRINCIPAL_OPENS_CERTIFIED_NONTERMINAL`,
+  digest `07e60a4d6b029d3cf08efd3ef3aae14598a1614090d3809d764973065b35eaf0`.
+
+The next operations are to analyse the four branch-specific transverse
+determinant-zero loci without merging semantic alternatives, and to enlarge
+the state-native support beyond beta one and the two retained alphas. The next
+genuine state cover remains the rank-two open in `Gr(2,63)` (dimension 122),
+not another isolated `k`.
+
+Focused reproduction:
+
+```powershell
+uv run pytest -q tests/final_theory/test_sr2v_additive_msr_laurent_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_bottom_msr_global_csg_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_state_native_fixed_harmonic_cpobc_obstruction_v042.py
+uv run pytest -q tests/final_theory/test_weak_d2_state_native_corrected_csg_rank2_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_variable_harmonic_two_row_audit_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_variable_harmonic_sparse_section_cpobc_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_transverse_cocycle_principal_open_v042.py
 ```
 
 Do not begin `d=3` or an infinite lifting theorem in a way that bypasses the
@@ -67,18 +123,28 @@ full 955/721 closure or `n=5`; it must not claim complete classification.
   cover of Q-noncommutativity: pair-irreducible, triple-irreducible,
   transverse globally reducible, and aligned globally reducible. This is a
   branch cover, not a solution of the CPOBC equations.
-- One exact harmonic state slice has a state-native rank-two chart with 131
-  actual edge orbits and 262 affine action parameters. Fixed-vector GC and
-  reachable-state MSR are built in; CPOBC and supplemental Eq. (113)/(139)
-  remain unsolved.
-- On that fixed state slice, the first pair-irreducible shear patch is compiled:
-  `D12=det[Q1,Q2]` is a nonzero seven-term cubic and the full separated sparse
-  ledger is materialized. No solver has run and no relation-variety point in
-  `D12!=0` is known.
+- One exact harmonic state slice has a complete 262-parameter state-native
+  edge-action chart, but its raw CPOBC ideal contains the constant `2/117`.
+  The fixed-state relation variety is empty before any localization.
+- Its D12 shear manifest and Q5/budget preflight are preserved as exact
+  ambient/provenance artifacts. No solver has run or may now run on that empty
+  fixed state slice.
 - The two scalar monomial relation lattices are globally parameterized: the
   843-by-132 operator block is a split `G_m^49`, and the 1,163-by-132
   observed-bottom plus fixed-GC block is a split `G_m^29`. The 24 additive
-  MSR equations and cocycle fibres are not included in this classification.
+  bottom-MSR equations are globally normalized finite CSG times external Q5.
+  The upper character and cocycle fibres are not globally classified by that
+  result; the separate four-branch theorem covers nonempty transverse opens.
+- A corrected CSG-compatible selected fixed-`(h,k)` chart is also empty after
+  beta localization, but the responsible two-row mechanism is Zariski-special
+  in variable `k`. An exact rank-two escape and nonempty-open rational section
+  solve those rows. The follow-up proves that escape fails 911 raw entries and
+  that its full beta-one, two-alpha `Delta!=0` section is empty by an exact
+  localized unit ideal. Variable betas and the other 129 alphas remain open.
+- On four separately compiled transverse semantic branches, nonzero 131- or
+  132-column minors force every actual upper-right cocycle to vanish. Thus
+  `Q1,...,Q4` commute on each open; the four determinant-zero boundaries remain
+  open.
 
 ### Open
 
@@ -372,44 +438,56 @@ an expanded scalar-polynomial solver manifest.
    branches per nonzero commutator cover the target. Verdict
    `SR2V_COMMUTATOR_PIVOT_BRANCH_COVER_CERTIFIED`, digest
    `100fefe528012254edcd66c7237ae5706dcb3bba6badbe75da170f68403b4032`.
-8. **State-native rank-two chart complete:** one exact harmonic boundary slice
+8. **Original state-native chart classified:** one exact harmonic boundary slice
    gives 87 states, 131 actual edge actions, 262 affine parameters, and exact
    rank two while building in GC/MSR and reducing actual-edge
    nonsingularity to `beta_e!=0` (automatic only on the shear slice). Verdict
    `SR2V_STATE_NATIVE_RANK2_CHART_CERTIFIED`, digest
    `3bf3b56c97ef73fcce3ff089f5229191b9d1ade04e217706ac51abe11eaebe6c`.
-9. **First pair-irreducible manifest complete, no solver:** the state-native
+   The later full alpha/beta audit proves this fixed-state relation variety
+   empty by the constant `2/117`.
+9. **First pair-irreducible manifest retained, solver cancelled:** the state-native
    shear D12 patch has 136 saturated coordinates, 9,345 scalar entries, and
-   29,994 terms. The ambient open is exact and nonempty, but its intersection
-   with the relation variety is unresolved. Verdict
+   29,994 terms. The ambient open is exact and nonempty, but its fixed-state
+   relation intersection is empty. Verdict
    `SR2V_STATE_NATIVE_SHEAR_D12_MANIFEST_CERTIFIED_NO_SOLVER_RUN`, digest
    `82cd51ddd29e5923b003c8cf8f75a5a26cf5a36edf68728ad58d298d3f573090`.
-10. **Scalar lattice SNF complete:** the exact operator and observed-bottom
+10. **Scalar lattice and bottom MSR complete:** the exact operator and observed-bottom
    monomial lattices have ranks 83 and 103, all nonzero Smith factors one, and
    primitive kernel ranks 49 and 29. Verdict
    `SR2V_SCALAR_LATTICE_SNF_CERTIFIED_NONTERMINAL`, digest
    `155ddfd5ec1b90765acbb0eccfaa66991fc2d98a44432055b5481b09a0de5eb9`.
-11. **Current:** bind a separate Q5 determinant localization and versioned
-   solver budget to the D12 manifest, impose additive bottom MSR on the
-   primitive Laurent map, and target `Delta_align=0`, `Delta(r,s)=0`, and the
-   triple-irreducible pivots. Do not resample generic points inside the two certified
-   opens. Require direct separated validation of both Eq. (113) branches and
-   both Eq. (139) domains. Numerical and finite-field points are scouts until
-   exact rational direct certification.
-12. Only after the bounded SR2-V campaign reaches an allowed terminal, return
+   The 24 additive equations then give the global finite-CSG classification,
+   digest `d7978cac841bf725baa03df99aa661183a5c96367a2979b245b978f7d5dd08a4`.
+11. **State-native sparse section closed:** the original chart is empty before
+    localization; the corrected selected fixed-`(h,k)` chart is empty after a
+    two-row beta localization; the variable-`k` audit proves that mechanism
+    Zariski-special; and its exact escape fails the full raw ledger. Two alpha
+    killers plus a rank-62 minor prove the entire beta-one, two-alpha
+    `Delta!=0` section empty.
+12. **Four transverse semantic opens complete:** derived/literal Eq. (113) and
+    strict/completed Eq. (139) are compiled as four different matrices. Each
+    has a nonzero actual-transition splitting minor, so `Q1,...,Q4` commute on
+    its own nonempty principal open. The old 1,187-row joint matrix is auxiliary
+    only and cannot support a branch conclusion.
+13. **Current:** analyse the four branch-specific determinant-zero loci and
+    enlarge the state-native search to variable betas or wider alpha support.
+    Then target `Delta_align=0` and the triple-irreducible pivots. Numerical and
+    finite-field points are scouts until exact rational direct certification.
+14. Only after the bounded SR2-V campaign reaches an allowed terminal, return
    to the remote/disconnected `x!=0,y!=0` 955 components. The first upper
    family, mixed tangent branch,
    and global `x=0` pure-lower family are already closed in their declared
    scopes; do not rerun them or report them as a full-profile no-go.
-13. For 955, do **not** brute-force all 131 principal patches. First split the
+15. For 955, do **not** brute-force all 131 principal patches. First split the
    common-invariant-line and irreducible branches, construct a symmetry/orbit
    reduction, and exact-scout a small natural principal-open set. Permit a
    solver campaign only after its source coverage certificate and versioned
    budget artifact are available.
-14. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
+16. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
    terminal state, or use 721 as the fallback if 955 exhausts its budget. Keep
    the certified diagonal 721 escape point as a regression fixture.
-15. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
+17. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
    tracks. SR3b-A drafting may proceed in parallel under its existing scope and
    owner-gated deposit rule.
 
@@ -471,13 +549,13 @@ uv run pytest -q tests/final_theory/test_sr2v_scalar_lattice_v042.py
 Expected focused results are manifest `5 passed`, 955 tangent schema v2
 `8 passed`, independent pure-lower oracle `4 passed`, SR2-V baseline `6 passed`,
 SR3b-M `14 passed`, the two original visible-search suites `9 passed`, and the
-six new SR2-V suites `31 passed`. The tests
+eight latest exact-gate SR2-V suites `71 passed`. The tests
 regenerate the stored exact payloads and preserve the `NO_SOLVER_RUN`,
 bounded-family `GLOBAL_NO_GO`, and general mixed `NO_WITNESS_OPEN` boundaries.
 
-The 2026-08-02 mutable-index resume suite, including all six new SR2-V suites,
-the CI boundary guard, and all semantic escape guards reports `125 passed`.
-The current CI-lane command reports `495 passed`; the exact public-v0.3.9
+The 2026-08-02 mutable-index resume suite, including all eight latest SR2-V
+suites, the CI boundary guard, and all semantic escape guards reports
+`196 passed`. The current CI-lane command reports `566 passed`; the exact public-v0.3.9
 checkout reports `25 passed` for its four release-boundary files, in addition
 to a successful `scripts/reproduce_v039.py` replay.
 
@@ -557,8 +635,9 @@ Before continuing this track:
     exact re-extraction, verdict `V042_955_PURE_LOWER_ORACLE_CERTIFIED`, and
     semantic digest
     `809f1931c2274b0b57a3bdedf73ca1997a3115030af11437f6c1f1793c20f5ba`.
-13. run the SR2-V/SR3b-M suites named in §8, including the six new
-    principal-open/chart/lattice suites. Require the baseline
+13. run the SR2-V/SR3b-M suites named in §8, including the principal-open,
+    chart/lattice, global bottom-MSR, fixed-state obstruction, variable-`k`,
+    sparse-section, and four-branch transverse cocycle suites. Require the baseline
     rank-one audit, the conditional SR3b-M lemma boundary, the finite-torus
     `OPEN` boundary, and the rank-131 invariant-line-breaking tangent scope.
     Do not call either bounded negative result a reachable-visibility
@@ -571,9 +650,10 @@ Before continuing this track:
 
 Items 2--12 preserve the 955 regression boundary and are required when 955 is
 resumed. They are not the immediate implementation order. The immediate order
-is now: retain the completed baseline and SR3b-M; use the primitive scalar
-Laurent maps rather than finite torus resampling; bind Q5 nonsingularity and a
-versioned budget to the compiled pair-irreducible D12 manifest; then treat the
-two determinant-degeneracy loci and triple-irreducible pivots. Only after an SR2-V
-terminal resume the 955 mixed locus. The frozen upper-family tangent search
-and generic points in the two certified principal opens must not be repeated.
+is now: retain the completed baseline and SR3b-M; use the certified sparse-
+section unit ideal and four branch-separated transverse splitting opens as
+regressions; analyse the four transverse determinant-zero loci; and widen the
+state-native alpha/beta support before the aligned and triple-irreducible work.
+Never run the old fixed-state D12/shear solver. Only after an SR2-V terminal
+resume the 955 mixed locus. The frozen upper-family tangent search and generic
+points in certified principal opens must not be repeated.
