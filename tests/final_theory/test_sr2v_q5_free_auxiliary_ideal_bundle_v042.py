@@ -1,9 +1,20 @@
-"""Fail-closed guards for the two-tier Phase-A bundle freeze."""
+"""Fail-closed guards for the two-tier Phase-A bundle freeze.
+
+Every test in this module runs in well under a second: none of them compile
+Phase A or touch the committed bundle chunks. That makes this file the
+preflight gate for the bundle module -- run it before spending the roughly
+fifty minutes each on ``write_bundle`` and ``verify_bundle``. A change to any
+provenance-computing helper (``_verdict_for``, ``_dirty_paths_excluding_own_outputs``,
+``_gates``, ...) needs a fast test added here in the same commit; see
+KNOWLEDGE_BASE_v0.4 section 5.1 for the two regenerations that were wasted
+finding this out the expensive way.
+"""
 
 from __future__ import annotations
 
 import gzip
 import json
+import re
 import struct
 from pathlib import Path
 from typing import Any
@@ -231,6 +242,37 @@ def test_required_checks_cover_the_code_binding() -> None:
     """A recompilation under different sources must not certify this root."""
 
     assert "code_binding_hashes" in bundle.REQUIRED_RECOMPILATION_CHECKS
+
+
+def test_no_stale_verdict_like_strings_in_the_module_source() -> None:
+    """A double-backtick-quoted constant value must still be a live one.
+
+    The module's docstring and comments quote verdict and terminal *values* in
+    double backticks, for example ``OPEN_ARTIFACT_INCOMPLETE``. When
+    ``FROZEN_VERDICT`` was renamed on 2026-08-03, the docstring kept quoting the
+    old value -- a stale copy that this test would have caught in under a
+    second, instead of after a ~50-minute regeneration whose bundle-module hash
+    the prose fix then invalidated anyway. Every long uppercase token quoted
+    this way must either be a real name on the module (a reference like
+    ``REQUIRED_RECOMPILATION_CHECKS``) or equal one of the verdict/terminal
+    constants' *current* values.
+    """
+
+    source = Path(bundle.__file__).read_text(encoding="utf-8")
+    current_values = {
+        bundle.FROZEN_VERDICT,
+        bundle.OBSERVED_VERDICT,
+        bundle.INCOMPLETE_VERDICT,
+        bundle.SEARCH_TERMINAL,
+    }
+    stale = [
+        token
+        for token in re.findall(r"``([^`]+)``", source)
+        if re.fullmatch(r"[A-Z][A-Z0-9_]+", token)
+        and not hasattr(bundle, token)
+        and token not in current_values
+    ]
+    assert stale == []
 
 
 def test_regenerated_outputs_do_not_count_as_a_dirty_worktree() -> None:
