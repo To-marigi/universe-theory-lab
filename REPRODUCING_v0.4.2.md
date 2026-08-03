@@ -404,6 +404,7 @@ uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_schur_chart_oblig
 uv run pytest -q tests/final_theory/test_sr2v_transverse_eq120_repair_pair_scout_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_transverse_common_core_q5_free_v042.py
 uv run pytest -q tests/final_theory/test_sr2v_q5_free_auxiliary_ideal_manifest_v042.py
+uv run pytest -q tests/final_theory/test_sr2v_q5_free_auxiliary_ideal_bundle_v042.py
 ```
 
 Expected verdicts and semantic digests:
@@ -441,6 +442,8 @@ SR2V_TRANSVERSE_COMMON_CORE_Q5_FREE_SCHUR_REDUCTION_CERTIFIED_NONTERMINAL
 d19b01460604c647dc290143bf3a5aba2986bc9e6be235fd1ebae3a7702c25a3
 SR2V_Q5_FREE_AUXILIARY_IDEAL_MANIFEST_OPEN_RESOURCE_LIMIT_NONTERMINAL
 357d739091d2bf36740895f35c9227ba912e69f8d455f9e91dd8a6ea7ce6c605
+SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_FROZEN_NO_SOLVER_RUN
+4c137b6c302066df91813e0333e84684df538a40fbdc6843f1d92eee10b25845
 ```
 
 The common-core unit schema and its four successor schemas use canonical JSON
@@ -538,6 +541,44 @@ above reproduces the fail-closed checkpoint only and does **not** repeat the
 long attempt. No Sage, Gröbner basis, saturation, unit ideal, or witness is
 claimed.
 
+## Phase-A bundle: two-tier freeze
+
+The full Phase-A payload is about 20.9 GiB as pretty JSON and is never tracked
+in Git. It is frozen in two tiers: a 3.33 MiB root manifest under Git, and both
+coefficient arenas outside Git as compact canonical JSONL split into
+deterministic gzip chunks (level 6, `mtime=0`, no embedded filename). Nine
+chunks total 2,025.6 MiB uncompressed and 128.0 MiB compressed. The
+uncompressed canonical byte stream is the mathematical authority; each chunk's
+gzip digest is a transport check only.
+
+Both commands below are expensive: each recompiles all 1,127 rows and takes
+roughly fifty minutes on one core.
+
+```bash
+uv run python -m universe_lab.final_theory.sr2v_q5_free_auxiliary_ideal_bundle_v042
+uv run python -m universe_lab.final_theory.sr2v_q5_free_auxiliary_ideal_bundle_v042 --verify
+```
+
+The first command writes the chunks and a root carrying
+`FULL_BUILD_DIGEST_OBSERVED_UNFROZEN_NONTERMINAL`: storing the bundle is a
+digest commitment and nothing more. The second streams every chunk against the
+ledger and independently recompiles Phase A -- source and pivot rebuild, the
+Schur identities, Q5 and spectator vanishing, denominator clearing with its
+inverse reconstruction, the six chart generator manifests, and the six frozen
+rational cross-check points. Only when all of those agree does the verdict rise
+to `SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_FROZEN_NO_SOLVER_RUN`. A missing
+chunk or any digest mismatch yields `OPEN_ARTIFACT_INCOMPLETE`.
+
+The full logical payload digest is
+`2a79c1d0b9fd464ba9c80e970cad948b21920f8d25e7403256ccbc27017a5a8a`. The v0.4.2
+resource checkpoint `357d7390...c605` is a separate, earlier artifact and is not
+superseded or overwritten by the bundle.
+
+The chunk directory is Git-ignored. It is backed up as an immutable NAS
+snapshot under the CPOBC backup policy and is intended for a Zenodo
+supplemental dataset at publication; it is never expanded or executed on the
+NAS.
+
 ## Next exact gate
 
 For state-native SR2-V, enlarge the exact section beyond beta one and the two
@@ -545,9 +586,10 @@ retained alpha coordinates; do not rerun the now-empty sparse section or either
 old fixed-state D12/shear campaign. In the transverse reducible branch, use the
 certified global unit minor in the branch-independent common core
 `M0=CPOBC+fixed-vector GC+reachable-state MSR` and use its Q5-free Schur
-complement. First optimize the Phase-A compiler with deterministic row
-checkpoints and a cached fraction-field representation, then freeze all 1,127
-Schur rows and six chart generator manifests. Only after that input gate passes,
+complement. The Phase-A input gate is now closed: the compiler carries
+deterministic row checkpoints and a cached fraction-field representation, and
+all 1,127 Schur rows and six chart generator manifests are frozen and verified
+in the bundle above. Proceeding from that input gate,
 on each `S_k=R_base[g_k^-1]` certify the auxiliary ideal
 `J_k=<A_i*h+B_i>=S_k[h]`, equivalently the `g_k`-saturated unit ideal over the
 original base. The determinantal alternative is `I1(T_k)=S_k` and
