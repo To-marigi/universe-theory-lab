@@ -233,6 +233,30 @@ def test_required_checks_cover_the_code_binding() -> None:
     assert "code_binding_hashes" in bundle.REQUIRED_RECOMPILATION_CHECKS
 
 
+def test_regenerated_outputs_do_not_count_as_a_dirty_worktree() -> None:
+    """The root and its report are rewritten by every run, so they prove nothing."""
+
+    own = f" M {bundle.ROOT_RESULT_PATH}\n M {bundle.ROOT_REPORT_PATH}\n"
+    assert bundle._dirty_paths_excluding_own_outputs(own) == []
+    assert bundle._dirty_paths_excluding_own_outputs("") == []
+
+
+def test_real_source_changes_still_mark_the_worktree_dirty() -> None:
+    """Anything else uncommitted must keep the commit field honest."""
+
+    status = (
+        f" M {bundle.ROOT_RESULT_PATH}\n"
+        f" M {bundle.COMPILER_MODULE_PATH}\n"
+        "?? reports/some_new_report.md\n"
+        'R  old/path.py -> "src/renamed module.py"\n'
+    )
+    assert bundle._dirty_paths_excluding_own_outputs(status) == [
+        bundle.COMPILER_MODULE_PATH,
+        "reports/some_new_report.md",
+        "src/renamed module.py",
+    ]
+
+
 def test_bundle_arena_directory_is_not_tracked_in_git() -> None:
     """The arenas must stay out of the repository; only the root is tracked."""
 

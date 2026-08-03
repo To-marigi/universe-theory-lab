@@ -122,6 +122,29 @@ def _normalised_text_digest(path: Path) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def _dirty_paths_excluding_own_outputs(status_output: str) -> list[str]:
+    """Working-tree changes that are not this module's own regenerated outputs.
+
+    The root manifest and its report are written by every run, so finding them
+    modified says nothing about whether the *code* was committed.  The chunk
+    directory is Git-ignored and never appears here at all.
+    """
+
+    generated = {ROOT_RESULT_PATH, ROOT_REPORT_PATH}
+    dirty: list[str] = []
+    for line in status_output.splitlines():
+        if not line.strip():
+            continue
+        path = line[3:].strip()
+        if " -> " in path:
+            path = path.split(" -> ", 1)[1]
+        path = path.strip('"')
+        if path in generated or path.startswith(f"{BUNDLE_DIRECTORY}/"):
+            continue
+        dirty.append(path)
+    return dirty
+
+
 def _code_commit(root: Path) -> str:
     """Record the commit the bundle was produced from, or that it was dirty."""
 
@@ -132,7 +155,7 @@ def _code_commit(root: Path) -> str:
             check=True,
             text=True,
         )
-        if completed.stdout.strip():
+        if _dirty_paths_excluding_own_outputs(completed.stdout):
             return "UNCOMMITTED_WORKTREE"
         revision = subprocess.run(
             ["git", "-C", str(root), "rev-parse", "HEAD"],

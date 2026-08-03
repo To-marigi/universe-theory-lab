@@ -12,15 +12,37 @@ first time and its two coefficient arenas are deliberately stored outside Git.
 
 ## 2. Source state
 
-- Source commit: `24c4170` (`research: freeze the verified Phase-A bundle root`)
+- Source commit at archive time: `24c4170`
 - Root manifest (tracked in Git):
   `results/v0.4.2_sr2v_q5_free_auxiliary_ideal_bundle_root.json`
-- Root semantic digest:
+- Root semantic digest at archive time:
   `4c137b6c302066df91813e0333e84684df538a40fbdc6843f1d92eee10b25845`
 - Full logical payload digest:
   `2a79c1d0b9fd464ba9c80e970cad948b21920f8d25e7403256ccbc27017a5a8a`
-- Root verdict at snapshot time:
-  `SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_FROZEN_NO_SOLVER_RUN`
+
+### 2.1 Root superseded, archive unchanged
+
+The verifier contract was tightened after this archive was made: an absent
+recompilation check no longer counts as a pass, the recompiled compiler,
+bundle and `uv.lock` digests are now compared against the committed code
+binding, and the frozen verdict was renamed to state that digests and solver
+inputs are frozen rather than every byte of the manifest. The root was
+therefore regenerated and re-verified.
+
+The archived chunks are unaffected. Regeneration produced all nine chunks
+**bit-identically** -- every uncompressed SHA-256, gzip SHA-256 and byte count
+matched, as did the row index, chart generator tables and arena
+correspondence digests -- so this NAS object remains the authoritative cold
+backup and was deliberately not duplicated under a second name.
+
+Current root, verified by an independent recompilation on 2026-08-03:
+
+- Root semantic digest:
+  `aa246d3856a5f12e67a326222d906ce5b7239d83053fd5b902d2e5e5b6d54e7c`
+- Root verdict:
+  `SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_DIGEST_AND_SOLVER_INPUTS_FROZEN_NO_SOLVER_RUN`
+- Full logical payload digest: unchanged, and now reproduced across six
+  independent compiles.
 
 ## 3. File census
 

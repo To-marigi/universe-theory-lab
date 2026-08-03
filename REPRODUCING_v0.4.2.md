@@ -442,8 +442,8 @@ SR2V_TRANSVERSE_COMMON_CORE_Q5_FREE_SCHUR_REDUCTION_CERTIFIED_NONTERMINAL
 d19b01460604c647dc290143bf3a5aba2986bc9e6be235fd1ebae3a7702c25a3
 SR2V_Q5_FREE_AUXILIARY_IDEAL_MANIFEST_OPEN_RESOURCE_LIMIT_NONTERMINAL
 357d739091d2bf36740895f35c9227ba912e69f8d455f9e91dd8a6ea7ce6c605
-SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_FROZEN_NO_SOLVER_RUN
-4c137b6c302066df91813e0333e84684df538a40fbdc6843f1d92eee10b25845
+SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_DIGEST_AND_SOLVER_INPUTS_FROZEN_NO_SOLVER_RUN
+aa246d3856a5f12e67a326222d906ce5b7239d83053fd5b902d2e5e5b6d54e7c
 ```
 
 The common-core unit schema and its four successor schemas use canonical JSON
@@ -565,9 +565,21 @@ digest commitment and nothing more. The second streams every chunk against the
 ledger and independently recompiles Phase A -- source and pivot rebuild, the
 Schur identities, Q5 and spectator vanishing, denominator clearing with its
 inverse reconstruction, the six chart generator manifests, and the six frozen
-rational cross-check points. Only when all of those agree does the verdict rise
-to `SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_FROZEN_NO_SOLVER_RUN`. A missing
-chunk or any digest mismatch yields `OPEN_ARTIFACT_INCOMPLETE`.
+rational cross-check points -- and also checks that the compiler module, the
+bundle module and `uv.lock` still hash to the values the root was produced
+from. Only when every entry of `REQUIRED_RECOMPILATION_CHECKS` is present and
+true does the verdict rise to
+`SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_DIGEST_AND_SOLVER_INPUTS_FROZEN_NO_SOLVER_RUN`.
+A check that reports failure, a missing chunk, or any digest mismatch yields
+`OPEN_ARTIFACT_INCOMPLETE`; a check that is simply absent leaves the verdict
+unfrozen rather than being read as a pass.
+
+The verdict deliberately says *digest and solver inputs*, not *full manifest*:
+the bundle retains both arenas and commits to everything else by digest, and it
+does not store every byte of the roughly 20.9 GiB logical payload. Editing the
+compiler or the bundle module invalidates an existing root under this contract,
+which is intended -- a root must be regenerated and re-verified after any
+change to the code that produced it.
 
 The full logical payload digest is
 `2a79c1d0b9fd464ba9c80e970cad948b21920f8d25e7403256ccbc27017a5a8a`. The v0.4.2
