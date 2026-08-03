@@ -38,11 +38,12 @@ backup and was deliberately not duplicated under a second name.
 Current root, verified by an independent recompilation on 2026-08-03:
 
 - Root semantic digest:
-  `aa246d3856a5f12e67a326222d906ce5b7239d83053fd5b902d2e5e5b6d54e7c`
+  `09b8ab346af957016be9a11f0f38b6fa94a1bee7310b2fe046633baef2f15688`
 - Root verdict:
   `SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_DIGEST_AND_SOLVER_INPUTS_FROZEN_NO_SOLVER_RUN`
-- Full logical payload digest: unchanged, and now reproduced across six
-  independent compiles.
+- Full logical payload digest: unchanged, and reproduced by every independent
+  compile run so far (ten as of this record: two direct compiles and four
+  write/verify pairs).
 
 ## 3. File census
 

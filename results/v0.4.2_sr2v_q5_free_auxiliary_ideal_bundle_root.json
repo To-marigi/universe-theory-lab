@@ -110024,11 +110024,11 @@
     "total_uncompressed_bytes": 2124026895,
     "tracked_in_git": false
   },
-  "claim_boundary": "This root is a two-tier freeze of the no-Sage Phase-A input manifest. It commits to the 1,127-row Schur ledger, both coefficient arenas, and the six auxiliary-generator charts by digest, and it stores the arenas outside Git as deterministic gzip chunks of compact canonical JSONL. Writing the root and the chunks is a digest commitment only. It computes no Groebner basis, saturation, unit ideal, witness, commutativity theorem, counterexample, or SR2-V terminal.",
+  "claim_boundary": "This root is a two-tier freeze of the no-Sage Phase-A input manifest. It commits to the 1,127-row Schur ledger, both coefficient arenas, and the six auxiliary-generator charts by digest, and it stores the arenas outside Git as deterministic gzip chunks of compact canonical JSONL. It does not retain the full logical payload byte for byte, so the frozen verdict claims frozen digests and solver inputs rather than a stored full manifest. Writing the root and the chunks is a digest commitment only. It computes no Groebner basis, saturation, unit ideal, witness, commutativity theorem, counterexample, or SR2-V terminal.",
   "code_binding": {
     "bundle_module": "src/universe_lab/final_theory/sr2v_q5_free_auxiliary_ideal_bundle_v042.py",
-    "bundle_module_normalised_LF_sha256": "11c1f07c0df3d0a11c124f6d313e0d52fa7c158d061f0bb3e41eae0907da6978",
-    "code_commit": "55f04fa4e0e044620212933161f5935a60b91586",
+    "bundle_module_normalised_LF_sha256": "bfd99c7576bd93be1cf3c2371e037f0010ae719075e54769a6a366194768dc7b",
+    "code_commit": "8bf3a78dd104b67e9f6241d78c67df7be2ea7305",
     "compiler_module": "src/universe_lab/final_theory/sr2v_q5_free_auxiliary_ideal_manifest_v042.py",
     "compiler_module_normalised_LF_sha256": "42d66e50002c59cbf5b2240eae1599489b3aea93bc4eda17b8365c1be56d86e1",
     "uv_lock_normalised_LF_sha256": "25f4d380be075132f2ee669792c5d703fd6de5ffff817023fd7b85712b980591"
@@ -127189,7 +127189,7 @@
   },
   "schema_version": "final-theory-v042-sr2v-q5-free-auxiliary-ideal-bundle-root-v1",
   "search_terminal": "NOT_A_SEARCH_TERMINAL_NO_GROEBNER_OR_UNIT_IDEAL_CERTIFICATE",
-  "semantic_digest_sha256": "4c137b6c302066df91813e0333e84684df538a40fbdc6843f1d92eee10b25845",
+  "semantic_digest_sha256": "09b8ab346af957016be9a11f0f38b6fa94a1bee7310b2fe046633baef2f15688",
   "source_inventory_summary": {
     "M0_row_count": 1127,
     "block_counts": {
@@ -127208,7 +127208,7 @@
     "nas": "immutable cold backup of the finished compressed bundle; never expanded there",
     "publication": "Zenodo supplemental dataset"
   },
-  "verdict": "SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_FROZEN_NO_SOLVER_RUN",
+  "verdict": "SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_DIGEST_AND_SOLVER_INPUTS_FROZEN_NO_SOLVER_RUN",
   "verification": {
     "artifact_incomplete": false,
     "chunk_streaming_verified": true,
@@ -127219,6 +127219,7 @@
     "recompilation_checks": {
       "arena_correspondence": true,
       "chart_generator_tables_digest": true,
+      "code_binding_hashes": true,
       "compiler_payload_passed": true,
       "cross_check_digest": true,
       "denominator_audit_digest": true,
