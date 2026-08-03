@@ -380,6 +380,38 @@ of the following.
 For a no-go campaign, the inclusion certificate is a prerequisite to solver
 execution, not a post-processing check.
 
+### 5.1 Self-binding artifact contracts cost a full regeneration to edit
+
+The SR2-V Phase-A bundle root binds the SHA-256 of the compiler module, the
+bundle module and `uv.lock`, and its verifier refuses the frozen verdict when
+any of them has moved. That is the correct contract: a recompilation under
+different sources must not certify an older root. The consequence is that any
+edit to those files invalidates the artifact and costs one full recompile plus
+one full verification.
+
+Two regenerations on 2026-08-03 were spent for no scientific reason:
+
+1. the frozen verdict string was renamed, but the module docstring, the root
+   claim boundary and the rendered report still described the previous
+   contract; correcting that prose changed the bundle module's hash *after*
+   the root had already been produced;
+2. the provenance helper counted the root manifest and its own report -- which
+   every run rewrites -- as evidence of an uncommitted worktree, so a clean
+   checkout still recorded `UNCOMMITTED_WORKTREE` in the published freeze.
+
+The rule: when a self-binding artifact is in play, treat a change to any
+contract constant as one batch. Before regenerating, enumerate every place the
+constant is quoted -- docstrings, claim boundaries, rendered reports, tests,
+reproduction guides -- and every provenance field the artifact records, and
+settle all of them in a single commit. Check the provenance helpers against a
+clean checkout before the expensive run, because a field that comes out wrong
+cannot be patched without paying the regeneration cost again.
+
+The same reasoning applies to the verdict ladder itself. A verdict function
+that reads two summary booleans will happily freeze an artifact whose detailed
+checks were never recorded. Require every named check to be **present and
+true**; treat a missing check as unfrozen, not as a pass.
+
 ## 6. Occurrence and equation census
 
 | object | count / distinction |

@@ -557,6 +557,23 @@ bind its own versioned budget file. A deviation requires fresh approval. The
 v0.4.1 Sage/Singular campaign has now completed under this budget. No finite
 field run occurred.
 
+### Measured Phase-A cost after the 2026-08-03 rewrite
+
+The SR2-V Phase-A compiler now represents every Laurent coefficient as a
+reduced element of `QQ(t1,t2,t3,t4)` instead of a SymPy expression renormalised
+by `sp.cancel`. The bounded attempt that timed out at 3,600 s had a 17.2 h
+central estimate; the same work now measures:
+
+- about 46 minutes to compile all 1,127 rows;
+- about the same again to verify a bundle by independent recompilation;
+- 128 MiB of deterministic gzip chunks, from 20.9 GiB of pretty JSON.
+
+Budget the pair -- roughly 100 minutes -- for any change to the compiler
+module, the bundle module or `uv.lock`, because the bundle root binds their
+digests and a change forces a regeneration followed by a re-verification.
+Settle every contract string and provenance field before starting that run;
+see `KNOWLEDGE_BASE_v0.4.md` section 5.1 for why two such runs were wasted.
+
 ## 7. Next work
 
 The structured source-native inventory now covers 165 occurrences in 131 ON
@@ -790,6 +807,11 @@ its own new bridge for intentional post-v0.3.9 files.
 - A bounded ansatz is never promoted to arbitrary `GL_2`.
 - No timed-out chart is called empty.
 - Existing public/frozen artifacts are not overwritten.
+- The Phase-A bundle root binds the compiler, bundle and lockfile digests.
+  Editing any of them invalidates the frozen root by design: regenerate and
+  re-verify, never hand-patch the artifact. A verifier must require every named
+  check to be present and true, so an unrecorded check leaves the bundle
+  unfrozen instead of passing silently.
 - Source claims, independent derivations, and unresolved components remain
   separate.
 - The NAS is cold backup only. Do not create an unpacked repository mirror or
