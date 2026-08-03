@@ -18,10 +18,15 @@ Writing the root and the chunks is a digest commitment, nothing more, and it
 carries ``FULL_BUILD_DIGEST_OBSERVED_UNFROZEN_NONTERMINAL``.  Only a verifier
 run that streams every chunk *and* independently recompiles the 1,127 rows --
 source and pivot rebuild, the Schur identities, Q5 and spectator vanishing,
-denominator clearing with its inverse reconstruction, the six chart manifests
-and the six frozen rational cross-check points -- may raise the verdict to
-``SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_FROZEN_NO_SOLVER_RUN``.  A missing
-chunk or any digest mismatch drops it to ``OPEN_ARTIFACT_INCOMPLETE``.
+denominator clearing with its inverse reconstruction, the six chart manifests,
+the six frozen rational cross-check points, and the code binding the root was
+produced from -- may raise the verdict, and then only if every entry of
+``REQUIRED_RECOMPILATION_CHECKS`` is present and true.  A failing check, a
+missing chunk or any digest mismatch drops it to ``OPEN_ARTIFACT_INCOMPLETE``;
+an absent check leaves it unfrozen rather than counting as a pass.
+
+The frozen verdict names what is actually retained: the arenas plus digest
+commitments to the rest, not every byte of the logical payload.
 
 No Groebner basis, saturation, unit ideal, commutativity theorem, counterexample
 or SR2-V terminal is claimed here.
@@ -535,9 +540,12 @@ def build_root_manifest(
             "This root is a two-tier freeze of the no-Sage Phase-A input manifest. It "
             "commits to the 1,127-row Schur ledger, both coefficient arenas, and the six "
             "auxiliary-generator charts by digest, and it stores the arenas outside Git as "
-            "deterministic gzip chunks of compact canonical JSONL. Writing the root and the "
-            "chunks is a digest commitment only. It computes no Groebner basis, saturation, "
-            "unit ideal, witness, commutativity theorem, counterexample, or SR2-V terminal."
+            "deterministic gzip chunks of compact canonical JSONL. It does not retain the "
+            "full logical payload byte for byte, so the frozen verdict claims frozen "
+            "digests and solver inputs rather than a stored full manifest. Writing the "
+            "root and the chunks is a digest commitment only. It computes no Groebner "
+            "basis, saturation, unit ideal, witness, commutativity theorem, "
+            "counterexample, or SR2-V terminal."
         ),
     }
     manifest_root["gates"] = _gates(manifest_root, compiler_passed=bool(payload["passed"]))
@@ -849,7 +857,13 @@ def render_root_report(manifest_root: Mapping[str, Any]) -> str:
         "requires a verifier pass that streams every chunk and independently recompiles",
         "the source and pivot rebuild, the Schur identities, Q5 and spectator vanishing,",
         "denominator clearing with its inverse reconstruction, the six chart generator",
-        "manifests, and the six frozen rational cross-check points.",
+        "manifests, the six frozen rational cross-check points, and the compiler,",
+        "bundle and lockfile digests the root was produced from. Every required check",
+        "must be present and true; an absent one leaves the bundle unfrozen.",
+        "",
+        "The verdict says digest and solver inputs, not full manifest: the arenas are",
+        "retained and everything else is committed to by digest, so the roughly",
+        "20.9 GiB logical payload is not stored byte for byte.",
         "",
         "## Scope boundary",
         "",
