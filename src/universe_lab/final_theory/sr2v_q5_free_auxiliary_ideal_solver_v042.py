@@ -33,7 +33,8 @@ import hashlib
 import json
 import subprocess
 import time
-from collections.abc import Iterator, Mapping, Sequence
+from collections.abc import Iterable, Iterator, Mapping, Sequence
+from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
@@ -217,31 +218,61 @@ def resolve_chart_quotient_ids(root: Path) -> dict[str, Any]:
     }
 
 
-def sage_polynomial_string(
-    serial_terms: Sequence[Sequence[Any]], variable_names: Sequence[str]
-) -> str:
-    """Render one arena record's ``terms`` field as a Sage-parseable expression.
+#: A generator is stored as ``[[exponent_list, numerator, denominator], ...]``
+#: over the *full* ring (base 52 variables plus whichever auxiliary variables
+#: the chart uses), sorted by exponent tuple with no duplicate exponents --
+#: the same shape ``PolynomialArena`` already uses, just extended in width.
+GeneratorTerms = list[list[Any]]
 
-    ``serial_terms`` is ``[[[[index, power], ...], numerator, denominator], ...]``
-    -- exactly the shape ``PolynomialArena.intern`` writes and
-    ``read_arena_chunks`` yields back, so no intermediate ``Fraction`` object
-    is needed.
+
+def _extend_terms(
+    serial_terms: Sequence[Sequence[Any]],
+    width: int,
+    bump_index: int | None,
+) -> dict[tuple[int, ...], Fraction]:
+    """Embed a base-52-variable term list into the full ring.
+
+    ``bump_index`` sets that one ring coordinate's exponent to 1 on every term
+    -- used to represent multiplication by an auxiliary variable such as
+    ``h``. Pass ``None`` for a coefficient with no auxiliary factor.
     """
 
-    if not serial_terms:
-        return "0"
-    signed_parts: list[str] = []
+    result: dict[tuple[int, ...], Fraction] = {}
     for exponent_pairs, numerator, denominator in serial_terms:
-        factors = [
-            f"{variable_names[index]}^{power}" if power != 1 else variable_names[index]
-            for index, power in exponent_pairs
+        full = [0] * width
+        for index, power in exponent_pairs:
+            full[index] = power
+        if bump_index is not None:
+            full[bump_index] = 1
+        key = tuple(full)
+        result[key] = result.get(key, Fraction(0)) + Fraction(int(numerator), int(denominator))
+    return result
+
+
+def _merge_terms(
+    parts: Iterable[Mapping[tuple[int, ...], Fraction]],
+) -> dict[tuple[int, ...], Fraction]:
+    merged: dict[tuple[int, ...], Fraction] = {}
+    for part in parts:
+        for key, value in part.items():
+            total = merged.get(key, Fraction(0)) + value
+            if total:
+                merged[key] = total
+            elif key in merged:
+                del merged[key]
+    return merged
+
+
+def _serialise_terms(terms: Mapping[tuple[int, ...], Fraction]) -> GeneratorTerms:
+    return [
+        [
+            [[index, power] for index, power in enumerate(exponent) if power],
+            value.numerator,
+            value.denominator,
         ]
-        magnitude = abs(int(numerator))
-        coefficient = str(magnitude) if denominator == 1 else f"({magnitude}/{denominator})"
-        term = f"{coefficient}*" + "*".join(factors) if factors else coefficient
-        signed_parts.append(("-" if numerator < 0 else "+") + term)
-    text = "".join(signed_parts)
-    return text[1:] if text.startswith("+") else text
+        for exponent, value in sorted(terms.items())
+        if value
+    ]
 
 
 def stream_polynomial_arena(root: Path) -> Iterator[dict[str, Any]]:
@@ -257,34 +288,63 @@ def stream_polynomial_arena(root: Path) -> Iterator[dict[str, Any]]:
     yield from bundle.read_arena_chunks(directory, chunks)
 
 
-def _non_aligned_generator(
-    variable_names: Sequence[str],
+def _non_aligned_generator_terms(
+    width: int,
+    h_index: int,
     a_terms: Sequence[Sequence[Any]],
     b_terms: Sequence[Sequence[Any]],
-) -> str:
-    a_string = sage_polynomial_string(a_terms, variable_names)
-    b_string = sage_polynomial_string(b_terms, variable_names)
-    return f"(h)*({a_string})+({b_string})"
+) -> GeneratorTerms:
+    """Build ``h*A+B`` directly as full-width terms; no Sage parsing involved."""
+
+    merged = _merge_terms(
+        [_extend_terms(a_terms, width, h_index), _extend_terms(b_terms, width, None)]
+    )
+    return _serialise_terms(merged)
 
 
-def _aligned_generator(
-    variable_names: Sequence[str],
+def _aligned_generator_terms(
+    width: int,
+    index_by_auxiliary: Mapping[str, int],
     coefficients: Mapping[str, Sequence[Sequence[Any]]],
-) -> str:
-    parts = [f"({sage_polynomial_string(coefficients['constant'], variable_names)})"]
-    parts.append(f"(h)*({sage_polynomial_string(coefficients['h'], variable_names)})")
-    for key in sorted(key for key in coefficients if key not in ("constant", "h")):
-        parts.append(f"({key})*({sage_polynomial_string(coefficients[key], variable_names)})")
-    return "+".join(parts)
+) -> GeneratorTerms:
+    """Build ``h*A+constant+sum(w_j*B_j)`` directly as full-width terms."""
+
+    merged = _merge_terms(
+        _extend_terms(terms, width, index_by_auxiliary.get(key))
+        for key, terms in coefficients.items()
+    )
+    return _serialise_terms(merged)
+
+
+def _plain_generator_terms(width: int, terms: Sequence[Sequence[Any]]) -> GeneratorTerms:
+    return _serialise_terms(_extend_terms(terms, width, None))
+
+
+def _rabinowitsch_generator_terms(
+    width: int, z_index: int, localiser_terms: Sequence[Sequence[Any]]
+) -> GeneratorTerms:
+    """Build ``1-z*localiser`` directly as full-width terms."""
+
+    one = {(0,) * width: Fraction(1)}
+    z_times_localiser = {
+        key: -value for key, value in _extend_terms(localiser_terms, width, z_index).items()
+    }
+    return _serialise_terms(_merge_terms([one, z_times_localiser]))
 
 
 def build_chart_ideal(root: Path, chart_name: str) -> dict[str, Any]:
-    """Materialise one chart's full ideal from the verified bundle, in Sage syntax.
+    """Materialise one chart's full ideal from the verified bundle as term lists.
 
     This does not run Sage. It only reads back frozen, already-verified
     content; the polynomial ring variables and the Rabinowitsch equation match
     ``reports/v0.4.2_sr2v_q5_free_auxiliary_ideal_execution_plan.md`` sections
-    3 and 4 exactly.
+    3 and 4 exactly. Generators are structured ``[exponent, numerator,
+    denominator]`` term lists rather than Sage source text: some coefficients
+    in this campaign run to hundreds of thousands of terms, and building a
+    single chained-``+`` expression string that large blows CPython's
+    recursion limit during ``compile()``/``sage_eval`` well before Sage ever
+    sees it. A term list is read on the Sage side with an O(term-count) dict
+    construction instead.
     """
 
     if chart_name not in ALL_CHARTS:
@@ -294,6 +354,15 @@ def build_chart_ideal(root: Path, chart_name: str) -> dict[str, Any]:
     base_variables = list(committed["ring_binding"]["polynomial_arena_variable_order"])
     if base_variables != [*(f"t{i}" for i in (1, 2, 3, 4)), *(f"s{i}" for i in range(48))]:
         raise AssertionError("the frozen active-variable order changed")
+    auxiliary_variables = (
+        ["h"] if chart_name in NON_ALIGNED_CHARTS else list(chart["auxiliary_variables"])
+    )
+    ring_variables = [*base_variables, *auxiliary_variables, "z"]
+    if len(set(ring_variables)) != len(ring_variables):
+        raise AssertionError("ring variable name collision")
+    width = len(ring_variables)
+    index_by_auxiliary = {name: ring_variables.index(name) for name in auxiliary_variables}
+    z_index = ring_variables.index("z")
 
     quotient = resolve_chart_quotient_ids(root)
     needed_ids: set[int] = set()
@@ -317,9 +386,9 @@ def build_chart_ideal(root: Path, chart_name: str) -> dict[str, Any]:
         )
 
     dropped_zero_generators = 0
+    generators: list[GeneratorTerms] = []
     if chart_name in NON_ALIGNED_CHARTS:
-        auxiliary_variables = ["h"]
-        generators = []
+        h_index = index_by_auxiliary["h"]
         for entry in chart["generator_polynomial_ids"]:
             a_terms, b_terms = by_id[int(entry[1])], by_id[int(entry[2])]
             if not a_terms and not b_terms:
@@ -327,11 +396,9 @@ def build_chart_ideal(root: Path, chart_name: str) -> dict[str, Any]:
                 # generator never changes what it generates.
                 dropped_zero_generators += 1
                 continue
-            generators.append(_non_aligned_generator(base_variables, a_terms, b_terms))
+            generators.append(_non_aligned_generator_terms(width, h_index, a_terms, b_terms))
     else:
-        auxiliary_variables = list(chart["auxiliary_variables"])
         key_order = list(chart["generator_auxiliary_key_order"])
-        generators = []
         for entry in chart["generator_polynomial_ids"]:
             coefficients = {
                 key: by_id[int(entry[1 + index])] for index, key in enumerate(key_order)
@@ -339,19 +406,15 @@ def build_chart_ideal(root: Path, chart_name: str) -> dict[str, Any]:
             if not any(coefficients.values()):
                 dropped_zero_generators += 1
                 continue
-            generators.append(_aligned_generator(base_variables, coefficients))
+            generators.append(_aligned_generator_terms(width, index_by_auxiliary, coefficients))
         for name in _CLEARED_QUOTIENT_NAMES:
             generators.append(
-                sage_polynomial_string(by_id[quotient["resolved"]["cleared"][name]], base_variables)
+                _plain_generator_terms(width, by_id[quotient["resolved"]["cleared"][name]])
             )
 
     rabinowitsch_id = quotient["resolved"]["rabinowitsch"][_rabinowitsch_key(chart_name)]
-    localiser_string = sage_polynomial_string(by_id[rabinowitsch_id], base_variables)
-    generators.append(f"1-(z)*({localiser_string})")
+    generators.append(_rabinowitsch_generator_terms(width, z_index, by_id[rabinowitsch_id]))
 
-    ring_variables = [*base_variables, *auxiliary_variables, "z"]
-    if len(set(ring_variables)) != len(ring_variables):
-        raise AssertionError("ring variable name collision")
     return {
         "chart": chart_name,
         "ring_variables": ring_variables,
@@ -417,12 +480,27 @@ resource.setrlimit(resource.RLIMIT_AS, (memory_limit_bytes, memory_limit_bytes))
 with open(request["ideal_file"], encoding="utf-8") as handle:
     payload = json.load(handle)
 ring_variables = payload["ring_variables"]
-generators_src = payload["generators"]
+generators_terms = payload["generators"]
+width = len(ring_variables)
+
+
+def to_polynomial(ring, serial_terms):
+    # Built as a single dict->polynomial construction, not a chained Sage
+    # expression: some generators carry hundreds of thousands of terms, and
+    # sage_eval on that large a source string exceeds CPython's recursion
+    # limit during compile() before Sage ever sees it.
+    data = {}
+    for exponent_pairs, numerator, denominator in serial_terms:
+        exponent = [0] * width
+        for index, power in exponent_pairs:
+            exponent[index] = power
+        data[tuple(exponent)] = QQ(numerator) / QQ(denominator)
+    return ring(data)
+
 
 started = time.perf_counter()
 ring = PolynomialRing(QQ, ring_variables, order="degrevlex")
-ring_locals = dict(ring.gens_dict())
-gens = [sage_eval(text, locals=ring_locals) for text in generators_src]
+gens = [to_polynomial(ring, terms) for terms in generators_terms]
 parse_seconds = time.perf_counter() - started
 
 ideal = ring.ideal(gens)

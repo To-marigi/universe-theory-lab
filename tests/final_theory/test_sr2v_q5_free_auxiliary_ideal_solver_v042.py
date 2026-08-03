@@ -7,6 +7,7 @@ module's own preflight test file.
 
 from __future__ import annotations
 
+from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
@@ -17,28 +18,80 @@ from universe_lab.final_theory import sr2v_q5_free_auxiliary_ideal_solver_v042 a
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def test_empty_polynomial_renders_as_zero() -> None:
-    assert solver.sage_polynomial_string([], ["t1", "t2"]) == "0"
+def _as_dict(terms: solver.GeneratorTerms, width: int) -> dict[tuple[int, ...], tuple[int, int]]:
+    """Term list -> {exponent tuple: (numerator, denominator)}, for easy assertions."""
+
+    out: dict[tuple[int, ...], tuple[int, int]] = {}
+    for exponent_pairs, numerator, denominator in terms:
+        exponent = [0] * width
+        for index, power in exponent_pairs:
+            exponent[index] = power
+        out[tuple(exponent)] = (numerator, denominator)
+    return out
 
 
-def test_signs_render_without_a_double_operator() -> None:
+def test_extend_terms_embeds_into_a_wider_ring_without_a_bump() -> None:
     terms = [[[[0, 2], [1, 1]], 3, 2], [[], -5, 1]]
-    rendered = solver.sage_polynomial_string(terms, ["t1", "t2"])
-    assert rendered == "(3/2)*t1^2*t2-5"
-    assert "+-" not in rendered
+    embedded = solver._extend_terms(terms, width=4, bump_index=None)  # noqa: SLF001
+    assert embedded == {(2, 1, 0, 0): Fraction(3, 2), (0, 0, 0, 0): Fraction(-5)}
 
 
-def test_leading_negative_term_has_no_stray_plus() -> None:
-    terms = [[[], -5, 1], [[[0, 1]], 1, 1]]
-    rendered = solver.sage_polynomial_string(terms, ["t1", "t2"])
-    assert rendered == "-5+1*t1"
-    assert not rendered.startswith("+")
+def test_extend_terms_bump_index_multiplies_by_the_auxiliary_variable() -> None:
+    terms = [[[[0, 1]], 1, 1]]
+    embedded = solver._extend_terms(terms, width=3, bump_index=2)  # noqa: SLF001
+    assert embedded == {(1, 0, 1): Fraction(1)}
 
 
-def test_exponent_one_is_not_written_with_a_caret() -> None:
-    rendered = solver.sage_polynomial_string([[[[0, 1]], 1, 1]], ["t1"])
-    assert rendered == "1*t1"
-    assert "^" not in rendered
+def test_merge_terms_sums_and_cancels() -> None:
+    merged = solver._merge_terms(  # noqa: SLF001
+        [{(0, 0): Fraction(1), (1, 0): Fraction(2)}, {(0, 0): Fraction(-1), (1, 0): Fraction(3)}]
+    )
+    assert merged == {(1, 0): Fraction(5)}
+    assert (0, 0) not in merged, "an exact cancellation must not leave a zero entry"
+
+
+def test_non_aligned_generator_terms_is_h_times_a_plus_b() -> None:
+    a_terms = [[[[0, 1]], 1, 1]]  # t1 (using base index 0 in a 2-wide base)
+    b_terms = [[[], 5, 1]]  # constant 5
+    terms = solver._non_aligned_generator_terms(  # noqa: SLF001
+        width=3, h_index=2, a_terms=a_terms, b_terms=b_terms
+    )
+    assert _as_dict(terms, width=3) == {(1, 0, 1): (1, 1), (0, 0, 0): (5, 1)}
+
+
+def test_rabinowitsch_generator_terms_is_one_minus_z_times_localiser() -> None:
+    localiser = [[[], 1, 1]]  # constant 1
+    terms = solver._rabinowitsch_generator_terms(width=2, z_index=1, localiser_terms=localiser)  # noqa: SLF001
+    assert _as_dict(terms, width=2) == {(0, 0): (1, 1), (0, 1): (-1, 1)}
+
+
+def test_generator_terms_drop_exact_cancellations() -> None:
+    a_terms = [[[[0, 1]], 3, 1], [[[0, 1]], -3, 1]]  # 3*t1 - 3*t1 cancels to zero
+    b_terms = [[[], 7, 1]]
+    terms = solver._non_aligned_generator_terms(  # noqa: SLF001
+        width=3, h_index=2, a_terms=a_terms, b_terms=b_terms
+    )
+    assert _as_dict(terms, width=3) == {(0, 0, 0): (7, 1)}
+    assert all(entry[1] != 0 for entry in terms)
+
+
+def test_aligned_generator_terms_sums_constant_h_and_every_w() -> None:
+    coefficients = {
+        "constant": [[[], 1, 1]],
+        "h": [[[], 2, 1]],
+        "w3": [[[], 3, 1]],
+        "w4": [[[], 4, 1]],
+    }
+    index_by_auxiliary = {"h": 2, "w3": 3, "w4": 4}
+    terms = solver._aligned_generator_terms(  # noqa: SLF001
+        width=5, index_by_auxiliary=index_by_auxiliary, coefficients=coefficients
+    )
+    assert _as_dict(terms, width=5) == {
+        (0, 0, 0, 0, 0): (1, 1),  # constant
+        (0, 0, 1, 0, 0): (2, 1),  # h
+        (0, 0, 0, 1, 0): (3, 1),  # w3
+        (0, 0, 0, 0, 1): (4, 1),  # w4
+    }
 
 
 @pytest.mark.parametrize(
