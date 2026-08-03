@@ -677,31 +677,47 @@ an expanded scalar-polynomial solver manifest.
     Verdict
     `SR2V_TRANSVERSE_BASE_FOUR_CHART_REDUCTION_AND_GC_MSR_BLOCK_INDEPENDENCE_CERTIFIED_NONTERMINAL`,
     digest `005d9a5492bd379f5ac51d1d17b7d31df4acaa175fc9089ef4a138b761f23f6e`.
-15. **Current:** the branch-independent 127-column unit minor and Q5-free Schur
-    reduction are complete, but the first complete Phase-A input-manifest build
-    reached the manually observed 3,600-second request boundary before emitting
-    a result. Add deterministic per-row checkpoints and a cached fraction-field
-    representation, then freeze all 1,127 Schur rows and six chart manifests.
-    Only after that input certificate passes may the four Eq. (120) loci be
-    solved with `J_k=<A_i*h+B_i>` and the three normalized aligned obstruction
-    ideals. A common-core success propagates to all four semantic branches;
-    only a lifted, directly verified common-core bad point triggers separate
-    branch rows. Numerical and finite-field points remain scouts until exact
-    rational direct certification.
-16. Only after the bounded SR2-V campaign reaches an allowed terminal, return
+15. **Complete:** the branch-independent 127-column unit minor and Q5-free
+    Schur reduction fed a rewritten Phase-A compiler -- every Laurent
+    coefficient as a reduced `QQ(t1,t2,t3,t4)` element instead of a SymPy
+    expression renormalised by `sp.cancel` -- that now compiles all 1,127 Schur
+    rows and all six chart generator manifests in about 46 minutes instead of
+    timing out at 3,600 s. The result is frozen as a two-tier bundle: a
+    3.33 MiB Git-tracked root plus 128 MiB of deterministic gzip chunks kept
+    outside Git, verified by an independent recompilation. Verdict
+    `SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_DIGEST_AND_SOLVER_INPUTS_FROZEN_NO_SOLVER_RUN`,
+    root digest
+    `09b8ab346af957016be9a11f0f38b6fa94a1bee7310b2fe046633baef2f15688`, full
+    logical payload digest
+    `2a79c1d0b9fd464ba9c80e970cad948b21920f8d25e7403256ccbc27017a5a8a`. See
+    `REPRODUCING_v0.4.2.md` for the writer/verifier commands and
+    `KNOWLEDGE_BASE_v0.4.md` section 5.1 for the self-binding-artifact lesson
+    from producing it.
+16. **Next:** the input certificate above now permits solving the four
+    Eq. (120) loci with `J_k=<A_i*h+B_i>=S_k[h]` on each `S_k=R_base[g_k^-1]`
+    and the three normalized aligned obstruction ideals. This is the campaign's
+    first Sage/Singular solver invocation. Per section 5's mandatory soundness
+    gates, it requires an assumption ledger, a source-profile coverage
+    certificate, and its own versioned budget artifact before it runs -- the
+    approved `config/v0.4.1_budget.json` was scoped to the v0.4.1 campaign and
+    does not by itself authorise this one. A common-core success propagates to
+    all four semantic branches; only a lifted, directly verified common-core
+    bad point triggers separate branch rows. Numerical and finite-field points
+    remain scouts until exact rational direct certification.
+17. Only after the bounded SR2-V campaign reaches an allowed terminal, return
    to the remote/disconnected `x!=0,y!=0` 955 components. The first upper
    family, mixed tangent branch,
    and global `x=0` pure-lower family are already closed in their declared
    scopes; do not rerun them or report them as a full-profile no-go.
-17. For 955, do **not** brute-force all 131 principal patches. First split the
+18. For 955, do **not** brute-force all 131 principal patches. First split the
    common-invariant-line and irreducible branches, construct a symmetry/orbit
    reduction, and exact-scout a small natural principal-open set. Permit a
    solver campaign only after its source coverage certificate and versioned
    budget artifact are available.
-18. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
+19. Restore the 20 Eq. (112)-eliminated generators for 721 after 955 reaches a
    terminal state, or use 721 as the fallback if 955 exhausts its budget. Keep
    the certified diagonal 721 escape point as a regression fixture.
-19. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
+20. Keep OFF, relation minimality, `n=5`, and `d=3` as separate downstream
    tracks. SR3b-A drafting may proceed in parallel under its existing scope and
    owner-gated deposit rule.
 
