@@ -19,7 +19,7 @@ import hashlib
 import json
 import math
 from collections import Counter, defaultdict
-from collections.abc import Iterable, Mapping, Sequence
+from collections.abc import Callable, Iterable, Mapping, Sequence
 from dataclasses import dataclass
 from fractions import Fraction
 from pathlib import Path
@@ -28,7 +28,9 @@ from typing import Any
 import networkx as nx
 import sympy as sp
 from sympy.matrices.normalforms import smith_normal_form
-from sympy.polys.domains import ZZ
+from sympy.polys.domains import QQ, ZZ
+from sympy.polys.fields import FracElement, field
+from sympy.polys.rings import PolyElement
 
 from universe_lab.final_theory import sr2v_bottom_msr_global_csg_v042 as bottom_global
 from universe_lab.final_theory import sr2v_scalar_lattice_v042 as lattice
@@ -66,18 +68,49 @@ ALIGNED_SCOUT_ROWS = (8, 27, 97)
 FullExponent = tuple[int, ...]
 T_SYMBOLS = sp.symbols("t1:5")
 BOTTOM_Q5_SYMBOL = sp.Symbol("bottom_q5")
-LaurentPolynomial = dict[FullExponent, sp.Expr]
+
+#: Every Laurent coefficient produced by this compiler is an element of the
+#: rational function field ``QQ(t1,t2,t3,t4)``.  Representing it as a sparse
+#: ``FracElement`` instead of a generic ``sp.Expr`` keeps each value in reduced
+#: form by construction, so the per-operation ``sp.cancel`` that dominated the
+#: bounded Phase-A attempt is no longer needed anywhere.
+COEFFICIENT_FIELD = field("t1,t2,t3,t4", QQ)[0]
+COEFFICIENT_RING = COEFFICIENT_FIELD.ring
+COEFFICIENT_ZERO = COEFFICIENT_FIELD.zero
+COEFFICIENT_ONE = COEFFICIENT_FIELD.one
+
+#: ``FracElement`` carries no static type information, so the alias documents the
+#: intent while remaining ``Any`` to the type checker.
+type Coefficient = Any
+LaurentPolynomial = dict[FullExponent, Coefficient]
 FractionPolynomial = dict[FullExponent, Fraction]
 SymbolicRow = dict[str, sp.Expr]
 BaseRow = dict[str, LaurentPolynomial]
+
+
+#: Optional observer invoked once per compiled row.  It receives the stage name,
+#: the number of rows finished, the total, and the digest that pins the row, so a
+#: long Phase-A run can be followed and, on a rerun, checked row by row instead of
+#: only at the end.
+ProgressCallback = Callable[[str, int, int, str], None] | None
+
+
+def _progress_reporter(progress: ProgressCallback) -> Callable[[str, int, int, str], None]:
+    if progress is None:
+        return lambda _stage, _done, _total, _digest: None
+    return progress
 
 
 def _canonical_json(value: Any) -> str:
     return json.dumps(value, ensure_ascii=True, sort_keys=True, separators=(",", ":"))
 
 
+def _digest_canonical_json(canonical: str) -> str:
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
 def _digest(value: Any) -> str:
-    return hashlib.sha256(_canonical_json(value).encode("utf-8")).hexdigest()
+    return _digest_canonical_json(_canonical_json(value))
 
 
 def semantic_digest(payload: dict[str, Any]) -> str:
@@ -106,32 +139,52 @@ def _serial_exponent(exponent: FullExponent) -> list[list[int]]:
     return [[index, value] for index, value in enumerate(exponent) if value]
 
 
-def _serial_qq_polynomial(expression: sp.Expr) -> list[list[Any]]:
-    polynomial = sp.Poly(sp.expand(expression), *T_SYMBOLS, domain=sp.QQ)
+def _serial_ring_polynomial(polynomial: PolyElement) -> list[list[Any]]:
     return [
         [
-            _serial_exponent(tuple(int(value) for value in exponent)),
-            int(coefficient.p),
-            int(coefficient.q),
+            _serial_exponent(tuple(int(value) for value in monomial)),
+            int(QQ.numer(coefficient)),
+            int(QQ.denom(coefficient)),
         ]
-        for exponent, coefficient in polynomial.terms()
+        for monomial, coefficient in polynomial.terms()
     ]
 
 
-def _normal_coefficient(expression: sp.Expr | Fraction | int) -> sp.Expr:
-    return sp.cancel(sp.sympify(expression))
+def _serial_qq_polynomial(expression: sp.Expr) -> list[list[Any]]:
+    return _serial_ring_polynomial(COEFFICIENT_RING.from_expr(sp.expand(expression)))
 
 
-def _serial_coefficient(expression: sp.Expr) -> dict[str, Any]:
-    numerator, denominator = sp.fraction(_normal_coefficient(expression))
-    denominator_poly = sp.Poly(denominator, *T_SYMBOLS, domain=sp.QQ)
-    leading = denominator_poly.LC()
-    numerator = sp.expand(numerator / leading)
-    denominator = sp.expand(denominator / leading)
-    return {
-        "numerator": _serial_qq_polynomial(numerator),
-        "denominator": _serial_qq_polynomial(denominator),
+def _normal_coefficient(expression: Coefficient | sp.Expr | Fraction | int) -> Coefficient:
+    """Land any admissible scalar in ``QQ(t1,t2,t3,t4)``, already in reduced form."""
+
+    if isinstance(expression, FracElement):
+        if expression.field is not COEFFICIENT_FIELD:
+            raise AssertionError("a coefficient escaped the declared QQ(t) fraction field")
+        return expression
+    if isinstance(expression, Fraction):
+        return COEFFICIENT_FIELD(QQ(expression.numerator, expression.denominator))
+    if isinstance(expression, PolyElement | int):
+        return COEFFICIENT_FIELD(expression)
+    return COEFFICIENT_FIELD.from_expr(sp.sympify(expression))
+
+
+_SERIAL_COEFFICIENT_CACHE: dict[Coefficient, dict[str, Any]] = {}
+
+
+def _serial_coefficient(coefficient: Coefficient) -> dict[str, Any]:
+    """Serialise a reduced coefficient as a denominator-monic numerator/denominator pair."""
+
+    cached = _SERIAL_COEFFICIENT_CACHE.get(coefficient)
+    if cached is not None:
+        return cached
+    numerator, denominator = coefficient.numer, coefficient.denom
+    leading = denominator.LC
+    serial = {
+        "numerator": _serial_ring_polynomial(numerator.quo_ground(leading)),
+        "denominator": _serial_ring_polynomial(denominator.quo_ground(leading)),
     }
+    _SERIAL_COEFFICIENT_CACHE[coefficient] = serial
+    return serial
 
 
 def _serial_polynomial(polynomial: LaurentPolynomial) -> list[list[Any]]:
@@ -139,6 +192,18 @@ def _serial_polynomial(polynomial: LaurentPolynomial) -> list[list[Any]]:
         [_serial_exponent(exponent), _serial_coefficient(coefficient)]
         for exponent, coefficient in sorted(polynomial.items())
     ]
+
+
+def _coefficient_free_symbols(coefficient: Coefficient) -> set[sp.Symbol]:
+    """Symbols actually occurring in a coefficient, read off its sparse support."""
+
+    present: set[sp.Symbol] = set()
+    for polynomial in (coefficient.numer, coefficient.denom):
+        for monomial in polynomial.monoms():
+            for index, power in enumerate(monomial):
+                if power:
+                    present.add(T_SYMBOLS[index])
+    return present
 
 
 def _serial_fraction_polynomial(polynomial: FractionPolynomial) -> list[list[Any]]:
@@ -152,14 +217,13 @@ def _poly_digest(polynomial: LaurentPolynomial) -> str:
     return _digest(_serial_polynomial(polynomial))
 
 
-def _clean(polynomial: Mapping[FullExponent, sp.Expr]) -> LaurentPolynomial:
-    result = {
-        exponent: _normal_coefficient(value) for exponent, value in polynomial.items() if value != 0
-    }
-    return {exponent: value for exponent, value in result.items() if value != 0}
+def _clean(polynomial: Mapping[FullExponent, Coefficient]) -> LaurentPolynomial:
+    """Drop vanishing terms.  Fraction-field values are reduced already."""
+
+    return {exponent: value for exponent, value in polynomial.items() if value}
 
 
-def _constant(width: int, value: sp.Expr | Fraction | int) -> LaurentPolynomial:
+def _constant(width: int, value: Coefficient | sp.Expr | Fraction | int) -> LaurentPolynomial:
     coefficient = _normal_coefficient(value)
     return {} if not coefficient else {(0,) * width: coefficient}
 
@@ -167,7 +231,7 @@ def _constant(width: int, value: sp.Expr | Fraction | int) -> LaurentPolynomial:
 def _monomial(
     width: int,
     exponent: FullExponent,
-    coefficient: sp.Expr | Fraction | int = 1,
+    coefficient: Coefficient | sp.Expr | Fraction | int = 1,
 ) -> LaurentPolynomial:
     if len(exponent) != width:
         raise AssertionError("Laurent exponent width mismatch")
@@ -176,12 +240,22 @@ def _monomial(
 
 
 def _add(left: LaurentPolynomial, right: LaurentPolynomial) -> LaurentPolynomial:
-    result: defaultdict[FullExponent, sp.Expr] = defaultdict(lambda: sp.Integer(0))
-    for exponent, value in left.items():
-        result[exponent] += value
+    if not left:
+        return dict(right)
+    if not right:
+        return dict(left)
+    result = dict(left)
     for exponent, value in right.items():
-        result[exponent] += value
-    return _clean(result)
+        current = result.get(exponent)
+        if current is None:
+            result[exponent] = value
+            continue
+        total = current + value
+        if total:
+            result[exponent] = total
+        else:
+            del result[exponent]
+    return result
 
 
 def _neg(polynomial: LaurentPolynomial) -> LaurentPolynomial:
@@ -189,34 +263,66 @@ def _neg(polynomial: LaurentPolynomial) -> LaurentPolynomial:
 
 
 def _sub(left: LaurentPolynomial, right: LaurentPolynomial) -> LaurentPolynomial:
-    return _add(left, _neg(right))
+    if not right:
+        return dict(left)
+    result = dict(left)
+    for exponent, value in right.items():
+        current = result.get(exponent)
+        if current is None:
+            result[exponent] = -value
+            continue
+        total = current - value
+        if total:
+            result[exponent] = total
+        else:
+            del result[exponent]
+    return result
 
 
 def _mul(left: LaurentPolynomial, right: LaurentPolynomial) -> LaurentPolynomial:
     if not left or not right:
         return {}
-    result: defaultdict[FullExponent, sp.Expr] = defaultdict(lambda: sp.Integer(0))
+    if len(left) == 1:
+        ((shift, scalar),) = left.items()
+        return {
+            tuple(a + b for a, b in zip(exponent, shift, strict=True)): coefficient * scalar
+            for exponent, coefficient in right.items()
+        }
+    if len(right) == 1:
+        ((shift, scalar),) = right.items()
+        return {
+            tuple(a + b for a, b in zip(exponent, shift, strict=True)): coefficient * scalar
+            for exponent, coefficient in left.items()
+        }
+    result: LaurentPolynomial = {}
     for left_exponent, left_value in left.items():
         for right_exponent, right_value in right.items():
             exponent = tuple(a + b for a, b in zip(left_exponent, right_exponent, strict=True))
-            result[exponent] += left_value * right_value
-    return _clean(result)
+            product = left_value * right_value
+            current = result.get(exponent)
+            if current is None:
+                result[exponent] = product
+                continue
+            total = current + product
+            if total:
+                result[exponent] = total
+            else:
+                del result[exponent]
+    return result
 
 
 def _scale_shift(
     polynomial: LaurentPolynomial,
-    scalar: sp.Expr | Fraction | int,
+    scalar: Coefficient | sp.Expr | Fraction | int,
     shift: FullExponent,
 ) -> LaurentPolynomial:
     value = _normal_coefficient(scalar)
     if not polynomial or not value:
         return {}
-    return _clean(
-        {
-            tuple(a + b for a, b in zip(exponent, shift, strict=True)): coefficient * value
-            for exponent, coefficient in polynomial.items()
-        }
-    )
+    return {
+        tuple(a + b for a, b in zip(exponent, shift, strict=True)): coefficient * value
+        for exponent, coefficient in polynomial.items()
+    }
 
 
 def _divide_by_monomial(
@@ -226,26 +332,40 @@ def _divide_by_monomial(
     if len(divisor) != 1:
         raise AssertionError("division is permitted only by a Laurent monomial")
     ((exponent, coefficient),) = divisor.items()
-    return _scale_shift(polynomial, 1 / coefficient, tuple(-value for value in exponent))
+    return _scale_shift(
+        polynomial,
+        COEFFICIENT_ONE / coefficient,
+        tuple(-value for value in exponent),
+    )
+
+
+def _evaluate_ring_polynomial(polynomial: PolyElement, point: Sequence[Fraction]) -> Fraction:
+    total = Fraction(0)
+    for monomial, coefficient in polynomial.terms():
+        term = Fraction(int(QQ.numer(coefficient)), int(QQ.denom(coefficient)))
+        for value, power in zip(point, monomial, strict=True):
+            if power:
+                term *= value**power
+        total += term
+    return total
 
 
 def _evaluate(polynomial: LaurentPolynomial, point: Sequence[Fraction]) -> Fraction:
-    substitutions = {
-        symbol: sp.Rational(point[index].numerator, point[index].denominator)
-        for index, symbol in enumerate(T_SYMBOLS)
-    }
-    total = sp.Integer(0)
+    bottom = point[:4]
+    total = Fraction(0)
     for exponent, coefficient in polynomial.items():
-        term = _normal_coefficient(coefficient.subs(substitutions, simultaneous=True))
+        denominator = _evaluate_ring_polynomial(coefficient.denom, bottom)
+        if not denominator:
+            raise ZeroDivisionError("localized coefficient denominator vanished at the point")
+        term = _evaluate_ring_polynomial(coefficient.numer, bottom) / denominator
         for value, power in zip(point, exponent, strict=True):
+            if not power:
+                continue
             if not value and power < 0:
                 raise ZeroDivisionError("Laurent variable evaluated at zero")
             term *= value**power
         total += term
-    total = sp.cancel(total)
-    if not total.is_Rational:
-        raise AssertionError(f"localized coefficient did not evaluate rationally: {total}")
-    return Fraction(int(total.p), int(total.q))
+    return total
 
 
 def _row_digest(row: Mapping[str, LaurentPolynomial]) -> str:
@@ -329,7 +449,7 @@ def _expression_to_base(
         residual = sp.cancel(residual)
         if residual.free_symbols or not residual.is_Rational:
             raise AssertionError(f"unresolved diagonal expression: {residual}")
-        coefficient = sp.Rational(residual.p, residual.q)
+        coefficient = COEFFICIENT_FIELD(QQ(int(residual.p), int(residual.q)))
         result = _add(result, _scale_shift(product, coefficient, (0,) * width))
     return result
 
@@ -664,7 +784,7 @@ class LocalizedArena:
             {
                 "polynomial_id": identifier,
                 "term_count": len(polynomial),
-                "sha256": _digest(serial),
+                "sha256": _digest_canonical_json(key),
                 "terms": serial,
             }
         )
@@ -690,7 +810,7 @@ class PolynomialArena:
             {
                 "polynomial_id": identifier,
                 "term_count": len(polynomial),
-                "sha256": _digest(serial),
+                "sha256": _digest_canonical_json(key),
                 "terms": serial,
             }
         )
@@ -721,32 +841,108 @@ def _lambda_factor_basis() -> dict[str, dict[str, Any]]:
                     "factor_id": f"lambda_{width}_{maximal}",
                     "expression": str(normal),
                     "polynomial": normal,
+                    "ring_polynomial": COEFFICIENT_RING.from_expr(normal),
                     "aliases": [],
                 },
             )
             record["aliases"].append(f"lambda({width},{maximal})")
+    _assert_factor_basis_is_irreducible(by_key)
     return by_key
 
 
-def _denominator_factorisation(
-    expression: sp.Expr,
+def _assert_factor_basis_is_irreducible(factor_basis: Mapping[str, Mapping[str, Any]]) -> None:
+    """Trial division may replace factorisation only over an irreducible basis.
+
+    ``_denominator_factorisation`` divides denominators by the basis factors
+    instead of running ``sp.factor_list`` on every coefficient.  That agrees
+    with full factorisation exactly when each basis element is irreducible over
+    ``QQ``, so the property is checked once, here, rather than assumed.
+    """
+
+    for record in factor_basis.values():
+        unit, factors = sp.factor_list(record["polynomial"], *T_SYMBOLS)
+        if not sp.sympify(unit).is_Rational or len(factors) != 1 or int(factors[0][1]) != 1:
+            raise AssertionError(f"reducible lambda factor in the basis: {record['factor_id']}")
+
+
+_DENOMINATOR_FACTORISATION_CACHE: dict[PolyElement, tuple[dict[str, int], bool, list[str]]] = {}
+
+#: Rational unit left over once a denominator has been divided by its certified
+#: lambda factors.  ``_materialize_over_qq`` needs it to clear denominators by
+#: multiplication instead of polynomial division.
+_DENOMINATOR_GROUND_UNIT_CACHE: dict[PolyElement, Any] = {}
+
+
+def _factorise_denominator_polynomial(
+    denominator: PolyElement,
     factor_basis: Mapping[str, Mapping[str, Any]],
 ) -> tuple[dict[str, int], bool, list[str]]:
-    _numerator, denominator = sp.fraction(_normal_coefficient(expression))
-    unit, factors = sp.factor_list(denominator, *T_SYMBOLS)
-    if not sp.sympify(unit).is_Rational:
-        return {}, False, [str(unit)]
+    """Split a denominator into certified lambda factors by exact trial division.
+
+    Because the basis is irreducible (see ``_assert_factor_basis_is_irreducible``)
+    and ``QQ[t1..t4]`` is a UFD, dividing out the basis factors yields the same
+    multiplicities as ``sp.factor_list`` while avoiding it entirely.  Only a
+    residual that is not a ground constant needs real factorisation, and that is
+    exactly the case the audit reports as an unknown factor.
+    """
+
+    cached = _DENOMINATOR_FACTORISATION_CACHE.get(denominator)
+    if cached is not None:
+        return cached
+    work = denominator
     exponents: defaultdict[str, int] = defaultdict(int)
+    for record in factor_basis.values():
+        factor = record["ring_polynomial"]
+        while True:
+            quotient, remainder = divmod(work, factor)
+            if remainder:
+                break
+            work = quotient
+            exponents[str(record["factor_id"])] += 1
     unknown: list[str] = []
-    for factor, multiplicity in factors:
-        normal = _normal_polynomial_factor(factor)
-        key = _canonical_json(_serial_qq_polynomial(normal))
-        record = factor_basis.get(key)
-        if record is None:
-            unknown.append(str(normal))
-        else:
-            exponents[str(record["factor_id"])] += int(multiplicity)
-    return dict(exponents), not unknown, unknown
+    if work.is_ground:
+        _DENOMINATOR_GROUND_UNIT_CACHE[denominator] = work.LC
+    else:
+        unit, residual_factors = sp.factor_list(work.as_expr(), *T_SYMBOLS)
+        if not sp.sympify(unit).is_Rational:
+            rejected: tuple[dict[str, int], bool, list[str]] = ({}, False, [str(unit)])
+            _DENOMINATOR_FACTORISATION_CACHE[denominator] = rejected
+            return rejected
+        unknown = [str(_normal_polynomial_factor(factor)) for factor, _ in residual_factors]
+    result = (dict(exponents), not unknown, unknown)
+    _DENOMINATOR_FACTORISATION_CACHE[denominator] = result
+    return result
+
+
+def _denominator_factorisation(
+    coefficient: Coefficient,
+    factor_basis: Mapping[str, Mapping[str, Any]],
+) -> tuple[dict[str, int], bool, list[str]]:
+    return _factorise_denominator_polynomial(
+        _normal_coefficient(coefficient).denom,
+        factor_basis,
+    )
+
+
+_FACTOR_PRODUCT_CACHE: dict[tuple[tuple[str, int], ...], tuple[PolyElement, sp.Expr]] = {}
+
+
+def _certified_denominator_product(
+    exponents: Mapping[str, int],
+    factor_basis: Mapping[str, Mapping[str, Any]],
+) -> tuple[PolyElement, sp.Expr]:
+    """Return the clearing product both as a ring element and as a report expression."""
+
+    key = tuple(sorted(exponents.items()))
+    cached = _FACTOR_PRODUCT_CACHE.get(key)
+    if cached is None:
+        by_id = {str(record["factor_id"]): record for record in factor_basis.values()}
+        ring_product = COEFFICIENT_RING.one
+        for factor_id, exponent in key:
+            ring_product = ring_product * by_id[factor_id]["ring_polynomial"] ** exponent
+        cached = (ring_product, _factor_product(exponents, factor_basis))
+        _FACTOR_PRODUCT_CACHE[key] = cached
+    return cached
 
 
 def _factor_product(
@@ -762,17 +958,19 @@ def _factor_product(
 
 
 def _localized_bottom_unit_certificate(
-    expression: sp.Expr,
+    coefficient: Coefficient,
     factor_basis: Mapping[str, Mapping[str, Any]],
 ) -> dict[str, Any]:
-    numerator, denominator = sp.fraction(_normal_coefficient(expression))
-    numerator_factors, numerator_certified, numerator_unknown = _denominator_factorisation(
-        1 / numerator,
+    value = _normal_coefficient(coefficient)
+    numerator_factors, numerator_certified, numerator_unknown = _factorise_denominator_polynomial(
+        (COEFFICIENT_ONE / value).denom,
         factor_basis,
     )
-    denominator_factors, denominator_certified, denominator_unknown = _denominator_factorisation(
-        expression, factor_basis
-    )
+    (
+        denominator_factors,
+        denominator_certified,
+        denominator_unknown,
+    ) = _factorise_denominator_polynomial(value.denom, factor_basis)
     return {
         "numerator_factor_exponents": dict(sorted(numerator_factors.items())),
         "denominator_factor_exponents": dict(sorted(denominator_factors.items())),
@@ -784,36 +982,126 @@ def _localized_bottom_unit_certificate(
 
 def _materialize_over_qq(
     polynomial: LaurentPolynomial,
-    denominator_product: sp.Expr,
+    denominator_exponents: Mapping[str, int],
+    factor_basis: Mapping[str, Mapping[str, Any]],
 ) -> FractionPolynomial:
+    """Clear denominators against the certified lambda product, by multiplication only.
+
+    The clearing product is the factorwise maximum over the whole coefficient
+    family, so for each coefficient it is a multiple of that coefficient's own
+    denominator.  Multiplying by the complementary factor product and dividing by
+    the leftover rational unit is therefore exact, and replaces a multivariate
+    polynomial division per term.
+    """
+
     result: defaultdict[FullExponent, Fraction] = defaultdict(Fraction)
+    cleared_numerators: dict[Coefficient, PolyElement] = {}
     for exponent, coefficient in polynomial.items():
-        cleared = _normal_coefficient(coefficient * denominator_product)
-        numerator, denominator = sp.fraction(cleared)
-        if sp.Poly(denominator, *T_SYMBOLS, domain=sp.QQ).total_degree() != 0:
-            raise AssertionError(f"certified denominator product did not clear {coefficient}")
-        expression = sp.expand(numerator / denominator)
-        coefficient_polynomial = sp.Poly(expression, *T_SYMBOLS, domain=sp.QQ)
-        for t_exponent, value in coefficient_polynomial.terms():
+        cleared = cleared_numerators.get(coefficient)
+        if cleared is None:
+            factors, certified, _unknown = _denominator_factorisation(coefficient, factor_basis)
+            if not certified:
+                raise AssertionError(
+                    f"certified denominator product did not clear {coefficient}",
+                )
+            complement, _expression = _certified_denominator_product(
+                {
+                    factor_id: exponent_bound - factors.get(factor_id, 0)
+                    for factor_id, exponent_bound in denominator_exponents.items()
+                },
+                factor_basis,
+            )
+            unit = _DENOMINATOR_GROUND_UNIT_CACHE[coefficient.denom]
+            cleared = (coefficient.numer * complement).quo_ground(unit)
+            cleared_numerators[coefficient] = cleared
+        for t_exponent, value in cleared.terms():
             full = list(exponent)
             for index, power in enumerate(t_exponent):
                 full[index] += int(power)
-            result[tuple(full)] += Fraction(int(value.p), int(value.q))
+            result[tuple(full)] += Fraction(int(QQ.numer(value)), int(QQ.denom(value)))
     return {exponent: value for exponent, value in result.items() if value}
 
 
 def _fraction_to_localized(polynomial: FractionPolynomial) -> LaurentPolynomial:
-    result: defaultdict[FullExponent, sp.Expr] = defaultdict(lambda: sp.Integer(0))
+    """Fold the four bottom exponents of a QQ presentation back into the coefficients.
+
+    The bottom part of every Laurent exponent is collected per upper monomial and
+    converted in one step, so each coefficient is built by a single fraction-field
+    construction instead of one per term.
+    """
+
+    grouped: dict[FullExponent, dict[tuple[int, ...], Fraction]] = defaultdict(dict)
     for exponent, coefficient in polynomial.items():
-        base = list(exponent)
-        t_monomial = sp.Integer(1)
-        for index, symbol in enumerate(T_SYMBOLS):
-            t_monomial *= symbol ** base[index]
-            base[index] = 0
-        result[tuple(base)] += (
-            sp.Rational(coefficient.numerator, coefficient.denominator) * t_monomial
+        grouped[(0, 0, 0, 0, *exponent[4:])][exponent[:4]] = coefficient
+
+    result: LaurentPolynomial = {}
+    for base, bottom_terms in grouped.items():
+        shift = tuple(
+            min(0, min(exponent[index] for exponent in bottom_terms)) for index in range(4)
         )
-    return _clean(result)
+        numerator = COEFFICIENT_RING.from_dict(
+            {
+                tuple(value - offset for value, offset in zip(exponent, shift, strict=True)): QQ(
+                    coefficient.numerator, coefficient.denominator
+                )
+                for exponent, coefficient in bottom_terms.items()
+            }
+        )
+        if not numerator:
+            continue
+        if any(shift):
+            # The shift is the per-variable minimum, so the numerator is not
+            # divisible by the denominator monomial and the pair is already reduced.
+            value = COEFFICIENT_FIELD.new(
+                numerator,
+                COEFFICIENT_RING.from_dict({tuple(-offset for offset in shift): QQ.one}),
+            )
+        else:
+            value = COEFFICIENT_FIELD(numerator)
+        if value:
+            result[base] = value
+    return result
+
+
+def _shift_and_scale(
+    polynomial: FractionPolynomial,
+    shift: FullExponent | None,
+    factor: Fraction | int,
+) -> FractionPolynomial:
+    """Translate exponents and rescale coefficients, skipping either when trivial."""
+
+    if shift is None:
+        if factor == 1:
+            return dict(polynomial)
+        return {exponent: coefficient * factor for exponent, coefficient in polynomial.items()}
+    return {
+        tuple(a + b for a, b in zip(exponent, shift, strict=True)): coefficient * factor
+        for exponent, coefficient in polynomial.items()
+    }
+
+
+def _reconstructs_original(
+    restored: Mapping[FullExponent, Coefficient],
+    original: Mapping[FullExponent, Coefficient],
+    denominator_product: PolyElement,
+) -> bool:
+    """Check that undoing the clearing returns the original coefficients exactly.
+
+    ``restored`` still carries the certified denominator product, so instead of
+    dividing it back out — which would cost a gcd per term — the identity
+    ``restored * original.denom == original.numer * product * restored.denom``
+    is verified by polynomial multiplication alone.
+    """
+
+    if set(restored) != set(original):
+        return False
+    for exponent, coefficient in original.items():
+        value = restored[exponent]
+        left = value.numer * coefficient.denom
+        right = coefficient.numer * denominator_product * value.denom
+        if left != right:
+            return False
+    return True
 
 
 def _clearing_certificate(
@@ -846,48 +1134,47 @@ def _clearing_certificate(
                     "unknown_factors": unknown,
                 }
             )
-    denominator_product = _factor_product(denominator_exponents, factor_basis)
+    ring_denominator_product, denominator_product = _certified_denominator_product(
+        denominator_exponents, factor_basis
+    )
     materialized = {
-        name: _materialize_over_qq(polynomial, denominator_product)
+        name: _materialize_over_qq(polynomial, denominator_exponents, factor_basis)
         for name, polynomial in coefficients.items()
     }
     minima = [0] * width
     scalar = 1
     nonzero_materialized = [polynomial for polynomial in materialized.values() if polynomial]
     if nonzero_materialized:
-        minima = [
-            min(exponent[index] for polynomial in nonzero_materialized for exponent in polynomial)
-            for index in range(width)
-        ]
+        first = True
         for polynomial in nonzero_materialized:
-            for coefficient in polynomial.values():
+            for exponent, coefficient in polynomial.items():
+                if first:
+                    minima = list(exponent)
+                    first = False
+                else:
+                    for index, value in enumerate(exponent):
+                        if value < minima[index]:
+                            minima[index] = value
                 scalar = math.lcm(scalar, coefficient.denominator)
     shift = tuple(max(0, -value) for value in minima)
+    shifting = any(shift)
     cleared = {
-        name: {
-            tuple(a + b for a, b in zip(exponent, shift, strict=True)): coefficient * scalar
-            for exponent, coefficient in polynomial.items()
-        }
+        name: _shift_and_scale(polynomial, shift if shifting else None, scalar)
         for name, polynomial in materialized.items()
     }
     unshifted = {
-        name: {
-            tuple(a - b for a, b in zip(exponent, shift, strict=True)): coefficient / scalar
-            for exponent, coefficient in polynomial.items()
-        }
+        name: _shift_and_scale(
+            polynomial,
+            tuple(-value for value in shift) if shifting else None,
+            Fraction(1, scalar),
+        )
         for name, polynomial in cleared.items()
     }
     reconstructed = {
-        name: {
-            exponent: _normal_coefficient(coefficient / denominator_product)
-            for exponent, coefficient in _fraction_to_localized(polynomial).items()
-        }
-        for name, polynomial in unshifted.items()
+        name: _fraction_to_localized(polynomial) for name, polynomial in unshifted.items()
     }
     nonnegative = all(
-        all(value >= 0 for value in exponent)
-        for polynomial in cleared.values()
-        for exponent in polynomial
+        min(exponent) >= 0 for polynomial in cleared.values() for exponent in polynomial
     )
     integral = all(
         coefficient.denominator == 1
@@ -916,7 +1203,7 @@ def _clearing_certificate(
         "cleared_exponents_are_nonnegative": nonnegative,
         "cleared_coefficients_are_integers": integral,
         "inverse_reconstruction_verified": all(
-            _clean(reconstructed[name]) == _clean(polynomial)
+            _reconstructs_original(reconstructed[name], polynomial, ring_denominator_product)
             for name, polynomial in coefficients.items()
         ),
     }
@@ -1422,8 +1709,9 @@ def _bottom_localization_ledger(
     )
 
 
-def build_payload(root: Path) -> dict[str, Any]:
+def build_payload(root: Path, *, progress: ProgressCallback = None) -> dict[str, Any]:
     root = root.resolve()
+    report = _progress_reporter(progress)
     predecessors = _predecessor_bindings(root)
     factor_basis = _lambda_factor_basis()
     bottom_localization, active_bottom_localising_product = _bottom_localization_ledger(
@@ -1432,7 +1720,9 @@ def build_payload(root: Path) -> dict[str, Any]:
     )
     context = torus._build_context(root)  # noqa: SLF001
     operator_context = lattice._build_context(root)  # noqa: SLF001
-    labels, blocks = transverse._joint_row_labels(context)  # noqa: SLF001
+    # The second return value indexes row labels by block name, not by joint
+    # source, so the per-row block is read off the rebuilt symbolic rows below.
+    labels = transverse._joint_row_labels(context)[0]  # noqa: SLF001
 
     independent_rows, upper_symbols, lower_symbols = _rebuild_symbolic_m0_rows(context)
     predecessor_rows = q5_free._symbolic_full_m0_rows(context)  # noqa: SLF001
@@ -1541,6 +1831,12 @@ def build_payload(root: Path) -> dict[str, Any]:
                 "dropped_spectators_absent": spectator_free,
             }
         )
+        report(
+            "schur_row",
+            len(reconstruction_ledger),
+            len(independent_rows),
+            str(reconstruction_ledger[-1]["Schur_row_sha256"]),
+        )
 
     spectator_drop_passed = full_spectator_violations == 0
     if not spectator_drop_passed:
@@ -1602,6 +1898,12 @@ def build_payload(root: Path) -> dict[str, Any]:
                 "coefficient_order": ["A", "B2", "B3", "B4"],
                 **aligned_clearing,
             }
+        )
+        report(
+            "restriction_row",
+            len(non_aligned_rows),
+            len(M0_SOURCES),
+            _digest([non_aligned_clearing, aligned_clearing]),
         )
 
     chart_polynomials = _chart_polynomials(context, coordinates)
@@ -1726,11 +2028,12 @@ def build_payload(root: Path) -> dict[str, Any]:
         chart_polynomials,
     )
 
+    block_by_source = {row.joint_source: row.block for row in independent_rows}
     source_inventory = [
         {
             "joint_source": source,
             "row_id": labels[source],
-            "block": blocks[source],
+            "block": block_by_source[source],
         }
         for source in M0_SOURCES
     ]
@@ -1974,12 +2277,17 @@ def render_report(payload: Mapping[str, Any]) -> str:
 
 
 def _write_json(path: Path, payload: Mapping[str, Any]) -> None:
+    """Stream the payload to disk.
+
+    ``json.dumps`` materialises every chunk in a list before joining it, which
+    exhausts memory on the full 1,127-row manifest.  ``json.dump`` writes the
+    same bytes incrementally.
+    """
+
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
-        newline="\n",
-    )
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        json.dump(payload, handle, ensure_ascii=False, indent=2, sort_keys=True)
+        handle.write("\n")
 
 
 def _lightweight_base_ring_certificate(root: Path) -> dict[str, Any]:
@@ -2013,7 +2321,8 @@ def _lightweight_base_ring_certificate(root: Path) -> dict[str, Any]:
         and (
             any(exponent[4] for exponent in polynomial)
             or any(
-                BOTTOM_Q5_SYMBOL in coefficient.free_symbols for coefficient in polynomial.values()
+                BOTTOM_Q5_SYMBOL in _coefficient_free_symbols(coefficient)
+                for coefficient in polynomial.values()
             )
         )
     ]
