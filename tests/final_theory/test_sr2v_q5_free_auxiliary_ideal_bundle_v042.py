@@ -155,38 +155,82 @@ def test_non_contiguous_identifiers_are_refused(tmp_path: Path) -> None:
         _write(tmp_path, "a", records, 10_000)
 
 
-def test_verdict_ladder_is_fail_closed() -> None:
-    """Storing the bundle is a commitment; only a full verifier pass freezes it."""
+def _passing_verification(**overrides: Any) -> dict[str, Any]:
+    record: dict[str, Any] = {
+        "performed": True,
+        "chunk_streaming_verified": True,
+        "independent_recompilation_verified": True,
+        "recompilation_checks": dict.fromkeys(bundle.REQUIRED_RECOMPILATION_CHECKS, True),
+        "artifact_incomplete": False,
+        "failures": [],
+    }
+    record.update(overrides)
+    return record
 
-    assert bundle._verdict_for({"performed": False}) == bundle.OBSERVED_VERDICT
+
+def test_a_complete_verifier_pass_freezes() -> None:
+    assert bundle._verdict_for(_passing_verification()) == bundle.FROZEN_VERDICT
+
+
+@pytest.mark.parametrize(
+    "overrides",
+    [
+        pytest.param({"performed": False}, id="never_run"),
+        pytest.param({"chunk_streaming_verified": False}, id="chunks_unstreamed"),
+        pytest.param({"independent_recompilation_verified": False}, id="not_recompiled"),
+        pytest.param({"recompilation_checks": {}}, id="no_checks_recorded"),
+    ],
+)
+def test_an_incomplete_verifier_pass_stays_unfrozen(overrides: dict[str, Any]) -> None:
+    """Anything short of a full pass leaves the bundle a digest commitment."""
+
+    assert bundle._verdict_for(_passing_verification(**overrides)) == bundle.OBSERVED_VERDICT
+
+
+@pytest.mark.parametrize("missing", bundle.REQUIRED_RECOMPILATION_CHECKS)
+def test_every_required_check_must_be_present_to_freeze(missing: str) -> None:
+    """A check that was never recorded must not be read as a pass."""
+
+    checks = dict.fromkeys(bundle.REQUIRED_RECOMPILATION_CHECKS, True)
+    del checks[missing]
     assert (
-        bundle._verdict_for(
-            {"chunk_streaming_verified": True, "independent_recompilation_verified": False}
-        )
+        bundle._verdict_for(_passing_verification(recompilation_checks=checks))
         == bundle.OBSERVED_VERDICT
     )
+
+
+@pytest.mark.parametrize("failing", bundle.REQUIRED_RECOMPILATION_CHECKS)
+def test_any_failing_check_reports_an_incomplete_artifact(failing: str) -> None:
+    checks = dict.fromkeys(bundle.REQUIRED_RECOMPILATION_CHECKS, True)
+    checks[failing] = False
     assert (
-        bundle._verdict_for(
-            {"chunk_streaming_verified": False, "independent_recompilation_verified": True}
-        )
-        == bundle.OBSERVED_VERDICT
-    )
-    assert (
-        bundle._verdict_for(
-            {"chunk_streaming_verified": True, "independent_recompilation_verified": True}
-        )
-        == bundle.FROZEN_VERDICT
-    )
-    assert (
-        bundle._verdict_for(
-            {
-                "chunk_streaming_verified": True,
-                "independent_recompilation_verified": True,
-                "artifact_incomplete": True,
-            }
-        )
+        bundle._verdict_for(_passing_verification(recompilation_checks=checks))
         == bundle.INCOMPLETE_VERDICT
     )
+
+
+@pytest.mark.parametrize(
+    "overrides",
+    [
+        pytest.param({"artifact_incomplete": True}, id="declared_incomplete"),
+        pytest.param({"failures": ["polynomial_arena: missing chunk"]}, id="recorded_failure"),
+    ],
+)
+def test_a_damaged_artifact_is_reported_as_incomplete(overrides: dict[str, Any]) -> None:
+    assert bundle._verdict_for(_passing_verification(**overrides)) == bundle.INCOMPLETE_VERDICT
+
+
+def test_the_frozen_verdict_does_not_overclaim_byte_retention() -> None:
+    """The bundle keeps the arenas and digests, not every byte of the manifest."""
+
+    assert "DIGEST_AND_SOLVER_INPUTS_FROZEN" in bundle.FROZEN_VERDICT
+    assert "NO_SOLVER_RUN" in bundle.FROZEN_VERDICT
+
+
+def test_required_checks_cover_the_code_binding() -> None:
+    """A recompilation under different sources must not certify this root."""
+
+    assert "code_binding_hashes" in bundle.REQUIRED_RECOMPILATION_CHECKS
 
 
 def test_bundle_arena_directory_is_not_tracked_in_git() -> None:

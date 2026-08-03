@@ -47,10 +47,31 @@ ROOT_REPORT_PATH = "reports/v0.4.2_sr2v_q5_free_auxiliary_ideal_bundle_root.md"
 BUNDLE_DIRECTORY = "results/v0.4.2_sr2v_q5_free_auxiliary_ideal_bundle"
 
 SCHEMA = "final-theory-v042-sr2v-q5-free-auxiliary-ideal-bundle-root-v1"
-FROZEN_VERDICT = "SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_FROZEN_NO_SOLVER_RUN"
+
+#: The bundle stores the arenas and commits to the rest by digest; it does not
+#: retain every byte of the full manifest.  The verdict says exactly that.
+FROZEN_VERDICT = (
+    "SR2V_Q5_FREE_AUXILIARY_IDEAL_FULL_MANIFEST_DIGEST_AND_SOLVER_INPUTS_FROZEN_NO_SOLVER_RUN"
+)
 OBSERVED_VERDICT = "FULL_BUILD_DIGEST_OBSERVED_UNFROZEN_NONTERMINAL"
 INCOMPLETE_VERDICT = "OPEN_ARTIFACT_INCOMPLETE"
 SEARCH_TERMINAL = "NOT_A_SEARCH_TERMINAL_NO_GROEBNER_OR_UNIT_IDEAL_CERTIFICATE"
+
+#: Every one of these must be present and True before the frozen verdict is
+#: reachable.  Adding a check here makes older verification records unfreezable
+#: until they are re-run, which is the intended direction of failure.
+REQUIRED_RECOMPILATION_CHECKS = (
+    "arena_correspondence",
+    "chart_generator_tables_digest",
+    "code_binding_hashes",
+    "compiler_payload_passed",
+    "cross_check_digest",
+    "denominator_audit_digest",
+    "full_logical_payload_digest",
+    "ring_binding",
+    "row_index_digest",
+    "streamed_arena_matches_recompiled_arena",
+)
 
 #: Uncompressed canonical bytes per chunk.  Chunks are closed at the first
 #: record that would exceed this, so a single record is never split.
@@ -565,13 +586,30 @@ def _gates(manifest_root: Mapping[str, Any], *, compiler_passed: bool) -> dict[s
 
 
 def _verdict_for(verification: Mapping[str, Any]) -> str:
-    if verification.get("artifact_incomplete"):
+    """Decide the verdict from the whole verification record, not two flags.
+
+    Fail-closed in both directions: a check that reports failure yields
+    ``OPEN_ARTIFACT_INCOMPLETE``, while a check that is simply absent -- an
+    older record, a partial run, a hand-assembled dictionary -- leaves the
+    verdict at the unfrozen digest commitment.  Every entry of
+    ``REQUIRED_RECOMPILATION_CHECKS`` must be present and ``True`` before the
+    frozen verdict can be reached.
+    """
+
+    checks = verification.get("recompilation_checks") or {}
+    if verification.get("artifact_incomplete") or verification.get("failures"):
         return INCOMPLETE_VERDICT
-    if verification.get("chunk_streaming_verified") and verification.get(
-        "independent_recompilation_verified"
-    ):
-        return FROZEN_VERDICT
-    return OBSERVED_VERDICT
+    if any(value is not True for value in checks.values()):
+        return INCOMPLETE_VERDICT
+    if not verification.get("performed"):
+        return OBSERVED_VERDICT
+    if not verification.get("chunk_streaming_verified"):
+        return OBSERVED_VERDICT
+    if not verification.get("independent_recompilation_verified"):
+        return OBSERVED_VERDICT
+    if any(checks.get(name) is not True for name in REQUIRED_RECOMPILATION_CHECKS):
+        return OBSERVED_VERDICT
+    return FROZEN_VERDICT
 
 
 def write_bundle(
@@ -661,6 +699,17 @@ def verify_bundle(
             code_commit=str(committed["code_binding"]["code_commit"]),
         )
         recompilation_checks = {
+            # The compiler and bundle sources, and the locked environment, must
+            # be the ones the root was produced from; otherwise the recompiled
+            # digests would attest to different code.
+            "code_binding_hashes": all(
+                rebuilt["code_binding"].get(field) == committed["code_binding"].get(field)
+                for field in (
+                    "compiler_module_normalised_LF_sha256",
+                    "bundle_module_normalised_LF_sha256",
+                    "uv_lock_normalised_LF_sha256",
+                )
+            ),
             "full_logical_payload_digest": payload["semantic_digest_sha256"]
             == committed["full_logical_payload"]["semantic_digest_sha256"],
             "compiler_payload_passed": bool(payload["passed"]),
