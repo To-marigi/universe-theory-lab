@@ -17,5 +17,33 @@ services:
       JUPYTER_ENABLE_LAB: "yes"
       OMP_NUM_THREADS: ${OMP_NUM_THREADS:-8}
       OPENBLAS_NUM_THREADS: ${OPENBLAS_NUM_THREADS:-8}
+    # One-off solver containers inherit this cgroup ceiling.  The Python
+    # worker also applies RLIMIT_AS, while the host supervisor stops at the
+    # lower 7 GiB soft boundary from the execution plan.
+    mem_limit: "8g"
     shm_size: "2gb"
     restart: unless-stopped
+
+  # Ephemeral, non-networked execution surface for supervised CAS attempts.
+  # The repository is read-only here; results are streamed to the host-side
+  # supervisor, which publishes them atomically under a unique attempt ID.
+  sage-solver:
+    image: sagemath/sagemath:10.9
+    init: true
+    working_dir: /home/sage/work
+    volumes:
+      - ./:/home/sage/work:ro
+    environment:
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONPATH: /home/sage/work/src
+      SR2V_REPOSITORY_ROOT: /home/sage/work
+    mem_limit: "8g"
+    memswap_limit: "8g"
+    pids_limit: 256
+    shm_size: "2gb"
+    network_mode: none
+    restart: "no"
+    profiles:
+      - solver
