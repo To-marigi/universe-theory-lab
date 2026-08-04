@@ -62,6 +62,31 @@ ALL_CHARTS = (*NON_ALIGNED_CHARTS, *ALIGNED_CHARTS)
 _CLEARED_QUOTIENT_NAMES = ("d2", "d3", "d4")
 _RABINOWITSCH_NAMES = ("d2", "d3", "d4", "f_tilde")
 
+#: For any subset ``S`` of an ideal ``J``'s generators, ``<S> subseteq J``, so
+#: a Groebner basis of ``<S>`` reaching ``[1]`` already proves ``J`` is the
+#: unit ideal -- the converse holds no information, so a stage short of
+#: ``[1]`` only means "keep going," never "not the unit ideal." On the
+#: measured U2 chart, 544 generators totalled 12,672,299 terms with a median
+#: of 11,821 and a largest of 236,327: a handful of enormous generators
+#: dominate the cost, so trying the smallest ones first can reach ``[1]``
+#: without ever building or reducing the biggest ones. Each entry is a prefix
+#: length into the term-count-ascending list of "optional" generators --
+#: everything except the Rabinowitsch relation and, on the aligned charts,
+#: the three d2/d3/d4 equal-ratio relations, which every stage keeps
+#: unconditionally (see ``_required_generator_count`` and ``_WORKER_SCRIPT``).
+#: ``None`` must be the last entry: it means "every remaining optional
+#: generator," so a chart that never reaches ``[1]`` on a proper subset still
+#: gets a complete, authoritative result for the full ideal instead of
+#: silently stopping early. The recipe may override this default; see
+#: ``build_chart_recipe``.
+DEFAULT_ESCALATION_SIZES: tuple[int | None, ...] = (16, 32, 64, 128, 256, None)
+
+#: Bump whenever the recipe gains, loses, or changes the meaning of a field.
+#: ``write_chart_recipe_file`` refuses to reuse a cached recipe written under a
+#: different version, so a stale file cannot reach the worker and fail there on
+#: a missing key.
+RECIPE_SCHEMA_VERSION = 2
+
 
 def _canonical_json(value: Any) -> str:
     return json.dumps(value, ensure_ascii=True, sort_keys=True, separators=(",", ":"))
@@ -264,7 +289,57 @@ def _unique_preserving_order(rows: Iterable[tuple[int, ...]]) -> list[tuple[int,
     return unique
 
 
-def build_chart_recipe(root: Path, chart_name: str, *, modulus: int = 0) -> dict[str, Any]:
+def _required_generator_count(chart_name: str) -> int:
+    """How many of ``generators``' trailing entries every escalation stage must keep.
+
+    ``build_chart_recipe`` appends the three d2/d3/d4 equal-ratio relations
+    after the row-derived generators on the aligned charts only (see
+    ``_CLEARED_QUOTIENT_NAMES``); the non-aligned charts append none. These
+    are structurally required for the localisation to work, not merely
+    convenient -- escalating without one would test a different, weaker
+    ideal, not a subset proof of the real one -- so ``_WORKER_SCRIPT`` must
+    never drop them from any stage, however small.
+    """
+
+    return len(_CLEARED_QUOTIENT_NAMES) if chart_name in ALIGNED_CHARTS else 0
+
+
+def _escalation_stage_plan(
+    escalation_sizes: Sequence[int | None], total_optional: int
+) -> list[tuple[int | None, int]]:
+    """Turn configured escalation sizes into deduplicated ``(target, effective)`` stages.
+
+    Mirrors the planning arithmetic embedded in ``_WORKER_SCRIPT``, which
+    cannot import this module -- it runs as Sage source in a separate
+    container process -- so the trickiest part of the escalation logic
+    (clamping and de-duplication) gets real, executable test coverage instead
+    of only a source-text check. ``effective`` clamps ``target`` (``None``
+    meaning "every remaining generator") to ``total_optional``; consecutive
+    stages that clamp to the same effective size collapse to one, since they
+    would build and solve the identical ideal, and a repeat Groebner call is
+    exactly the cost this escalation exists to avoid.
+    """
+
+    plan: list[tuple[int | None, int]] = []
+    previous_effective_size: int | None = None
+    for target_size in escalation_sizes:
+        effective_size = (
+            total_optional if target_size is None else min(int(target_size), total_optional)
+        )
+        if effective_size == previous_effective_size:
+            continue
+        plan.append((target_size, effective_size))
+        previous_effective_size = effective_size
+    return plan
+
+
+def build_chart_recipe(
+    root: Path,
+    chart_name: str,
+    *,
+    modulus: int = 0,
+    escalation_sizes: Sequence[int | None] | None = None,
+) -> dict[str, Any]:
     """Describe one chart's ideal by arena identifier, without materialising it.
 
     The polynomial data itself is never loaded here. Reading the ~19.1 million
@@ -280,6 +355,14 @@ def build_chart_recipe(root: Path, chart_name: str, *, modulus: int = 0) -> dict
 
     ``modulus`` of ``0`` means the exact field ``QQ``; a prime selects
     ``GF(p)`` for a screening run, which is not a proof over ``QQ``.
+
+    ``escalation_sizes`` overrides ``DEFAULT_ESCALATION_SIZES`` for this
+    recipe; pass ``None`` (the default) to use the module default. The worker
+    escalates through nested subsets of increasing size, ordered by term
+    count, before ever computing a Groebner basis of everything -- see
+    ``_WORKER_SCRIPT`` and ``_required_generator_count`` for how the
+    Rabinowitsch relation and, on the aligned charts, the d2/d3/d4 equal-ratio
+    relations stay pinned into every stage.
     """
 
     if chart_name not in ALL_CHARTS:
@@ -326,6 +409,8 @@ def build_chart_recipe(root: Path, chart_name: str, *, modulus: int = 0) -> dict
         generators.extend(
             [[None, int(quotient["resolved"]["cleared"][name])]] for name in _CLEARED_QUOTIENT_NAMES
         )
+    required_generator_count = _required_generator_count(chart_name)
+    sizes = DEFAULT_ESCALATION_SIZES if escalation_sizes is None else tuple(escalation_sizes)
 
     needed_ids = sorted(
         {int(pair[1]) for generator in generators for pair in generator if pair[1] is not None}
@@ -344,12 +429,15 @@ def build_chart_recipe(root: Path, chart_name: str, *, modulus: int = 0) -> dict
         if record["arena"] == "polynomial_arena"
     ]
     recipe = {
+        "recipe_schema_version": RECIPE_SCHEMA_VERSION,
         "chart": chart_name,
         "modulus": int(modulus),
         "ring_variables": ring_variables,
         "z_index": ring_variables.index("z"),
         "rabinowitsch_polynomial_id": rabinowitsch_id,
         "generator_count": len(generators) + 1,
+        "required_generator_count": required_generator_count,
+        "escalation_sizes": list(sizes),
         "source_row_count": len(entries),
         "dropped_zero_row_count": len(rows) - len(nonzero_rows),
         "dropped_duplicate_row_count": len(nonzero_rows) - len(unique_rows),
@@ -382,6 +470,14 @@ def _load_json(path: Path) -> dict[str, Any]:
 
 
 def write_chart_recipe_file(root: Path, chart_name: str, *, modulus: int = 0) -> Path:
+    """Write one chart's recipe, reusing a cached file only when it still applies.
+
+    The cache is keyed on the frozen root digest, the modulus, *and* the recipe
+    schema version. Without the schema check a recipe written before a field was
+    added is silently reused and the worker fails on the missing key, which is
+    loud but wastes a container round trip and is confusing to diagnose.
+    """
+
     directory = root / SOLVER_DIRECTORY / "recipes"
     directory.mkdir(parents=True, exist_ok=True)
     suffix = "QQ" if not modulus else f"GF{modulus}"
@@ -392,6 +488,7 @@ def write_chart_recipe_file(root: Path, chart_name: str, *, modulus: int = 0) ->
             existing.get("committed_root_semantic_digest_sha256")
             == _committed_root(root)["semantic_digest_sha256"]
             and existing.get("modulus") == modulus
+            and existing.get("recipe_schema_version") == RECIPE_SCHEMA_VERSION
         ):
             return path
     _write_json(path, build_chart_recipe(root, chart_name, modulus=modulus))
@@ -502,8 +599,16 @@ load_seconds = time.perf_counter() - started
 progress("load_complete", load_seconds=float(load_seconds), loaded_terms=loaded_terms)
 
 build_started = time.perf_counter()
+generator_specs = recipe["generators"]
+# generator_specs[required_from_index:] are the aligned charts' d2/d3/d4
+# equal-ratio relations (an empty slice, so a no-op, on the three non-aligned
+# charts); the Rabinowitsch relation appended below is required
+# unconditionally too. Both are pinned into every escalation stage below
+# instead of being sorted in with everything else.
+required_from_index = len(generator_specs) - int(recipe["required_generator_count"])
 gens = []
-for generator in recipe["generators"]:
+required_flags = []
+for spec_index, generator in enumerate(generator_specs):
     total = ring.zero()
     for multiplier_index, identifier in generator:
         piece = by_id[int(identifier)]
@@ -512,8 +617,10 @@ for generator in recipe["generators"]:
         total += piece
     if total:
         gens.append(total)
+        required_flags.append(spec_index >= required_from_index)
 localiser = by_id[int(recipe["rabinowitsch_polynomial_id"])]
 gens.append(ring.one() - gens_by_index[int(recipe["z_index"])] * localiser)
+required_flags.append(True)
 build_seconds = time.perf_counter() - build_started
 
 del by_id
@@ -529,18 +636,96 @@ generator_term_counts = sorted(
     (int(polynomial.number_of_terms()) for polynomial in gens), reverse=True
 )
 
+escalation_sizes = recipe["escalation_sizes"]
+escalation_stages = []
+escalation_successful_size = None
+escalation_successful_generator_count = None
 gb_seconds = None
 basis_size = None
 is_unit_ideal = None
 if stage_only != "build":
-    ideal = ring.ideal(gens)
-    gb_started = time.perf_counter()
-    progress("groebner_started", generators=len(gens), generator_terms=generator_terms)
-    basis = ideal.groebner_basis()
-    gb_seconds = float(time.perf_counter() - gb_started)
-    basis_size = len(basis)
-    is_unit_ideal = bool(basis_size == 1 and basis[0].is_unit())
-    progress("groebner_complete", groebner_seconds=gb_seconds, basis_size=basis_size)
+    # <S> subseteq J for any subset S of J's generators, so a Groebner basis
+    # of <S> reaching [1] already proves J is the unit ideal -- the converse
+    # holds no information, so a stage short of [1] only means "keep going,"
+    # never "not the unit ideal." Escalating through the smallest generators
+    # first can reach [1] without ever building or reducing the handful of
+    # enormous ones that dominate the cost of one Groebner call on everything.
+    required_gens = [gen for gen, required in zip(gens, required_flags) if required]
+    optional_sorted = sorted(
+        (gen for gen, required in zip(gens, required_flags) if not required),
+        key=lambda polynomial: polynomial.number_of_terms(),
+    )
+    total_optional = len(optional_sorted)
+
+    # Mirrors the host-side _escalation_stage_plan (tested there without
+    # Sage): clamp each configured size to how many optional generators
+    # actually exist, then drop a stage whose clamp repeats the previous
+    # one, since it would build and solve the identical ideal again.
+    stage_plan = []
+    previous_effective_size = None
+    for target_size in escalation_sizes:
+        effective_size = (
+            total_optional if target_size is None else min(int(target_size), total_optional)
+        )
+        if effective_size == previous_effective_size:
+            continue
+        stage_plan.append((target_size, effective_size))
+        previous_effective_size = effective_size
+
+    progress(
+        "escalation_started",
+        stages_planned=len(stage_plan),
+        required_generators=len(required_gens),
+        optional_generators=total_optional,
+    )
+    gb_seconds = 0.0
+    for target_size, effective_size in stage_plan:
+        stage_gens = required_gens + optional_sorted[:effective_size]
+        progress(
+            "escalation_stage_started",
+            target_size=target_size,
+            effective_size=effective_size,
+            generator_count=len(stage_gens),
+        )
+        stage_ideal = ring.ideal(stage_gens)
+        stage_started = time.perf_counter()
+        stage_basis = stage_ideal.groebner_basis()
+        stage_seconds = float(time.perf_counter() - stage_started)
+        stage_basis_size = len(stage_basis)
+        stage_is_unit_ideal = bool(stage_basis_size == 1 and stage_basis[0].is_unit())
+        gb_seconds += stage_seconds
+        basis_size = stage_basis_size
+        is_unit_ideal = stage_is_unit_ideal
+        escalation_stages.append(
+            {
+                "target_size": target_size,
+                "effective_size": effective_size,
+                "generator_count": len(stage_gens),
+                "seconds": stage_seconds,
+                "basis_size": stage_basis_size,
+                "is_unit_ideal": stage_is_unit_ideal,
+            }
+        )
+        progress(
+            "escalation_stage_complete",
+            target_size=target_size,
+            effective_size=effective_size,
+            seconds=stage_seconds,
+            basis_size=stage_basis_size,
+            is_unit_ideal=stage_is_unit_ideal,
+        )
+        if stage_is_unit_ideal:
+            escalation_successful_size = target_size
+            escalation_successful_generator_count = len(stage_gens)
+            break
+    progress(
+        "escalation_complete",
+        groebner_seconds=gb_seconds,
+        stages_run=len(escalation_stages),
+        successful_size=escalation_successful_size,
+        is_unit_ideal=is_unit_ideal,
+        basis_size=basis_size,
+    )
 
 result = {
     "chart": recipe["chart"],
@@ -558,6 +743,11 @@ result = {
     "groebner_seconds": gb_seconds,
     "basis_size": basis_size,
     "is_unit_ideal": is_unit_ideal,
+    "escalation_sizes_configured": escalation_sizes,
+    "escalation_sizes_attempted": [stage["target_size"] for stage in escalation_stages],
+    "escalation_stages": escalation_stages,
+    "escalation_successful_size": escalation_successful_size,
+    "escalation_successful_generator_count": escalation_successful_generator_count,
     "stage_only": stage_only,
     "max_ru_maxrss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
     "sage_version": str(sage.version.version),

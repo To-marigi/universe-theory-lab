@@ -174,3 +174,203 @@ def test_all_charts_are_exactly_the_six_from_the_execution_plan() -> None:
         "aligned_w4_equals_1",
     }
     assert len(solver.ALL_CHARTS) == 6
+
+
+# -- Escalation: try the smallest generators first, since <S> subseteq J means a
+# -- Groebner basis of [1] on any subset already proves the whole ideal is [1].
+
+
+def test_a_cached_recipe_from_an_older_schema_is_not_reused() -> None:
+    """A stale recipe must be regenerated, not handed to the worker to choke on.
+
+    The cache key originally covered only the frozen root digest and the
+    modulus, so a recipe written before a field existed was reused and the
+    worker died on the missing key inside the container.
+    """
+
+    import inspect
+
+    source = inspect.getsource(solver.write_chart_recipe_file)
+    assert "recipe_schema_version" in source
+    assert "RECIPE_SCHEMA_VERSION" in source
+
+
+def test_recipe_schema_version_is_a_positive_integer() -> None:
+    assert isinstance(solver.RECIPE_SCHEMA_VERSION, int)
+    assert solver.RECIPE_SCHEMA_VERSION > 0
+
+
+def test_default_escalation_sizes_are_increasing() -> None:
+    """Each stage before the full-set marker must be strictly larger than the last."""
+
+    finite_sizes = [size for size in solver.DEFAULT_ESCALATION_SIZES if size is not None]
+    assert finite_sizes == sorted(finite_sizes)
+    assert len(set(finite_sizes)) == len(finite_sizes)
+    assert all(size > 0 for size in finite_sizes)
+
+
+def test_default_escalation_sizes_end_with_a_full_set_marker() -> None:
+    """``None`` means "every remaining generator" -- a chart that never reaches
+    ``[1]`` on a proper subset must still get a complete result for the full
+    ideal, so the marker must appear, and only once, at the very end."""
+
+    assert solver.DEFAULT_ESCALATION_SIZES[-1] is None
+    assert solver.DEFAULT_ESCALATION_SIZES.count(None) == 1
+
+
+@pytest.mark.parametrize("chart", solver.NON_ALIGNED_CHARTS)
+def test_required_generator_count_is_zero_on_non_aligned_charts(chart: str) -> None:
+    assert solver._required_generator_count(chart) == 0  # noqa: SLF001
+
+
+@pytest.mark.parametrize("chart", solver.ALIGNED_CHARTS)
+def test_required_generator_count_reserves_the_three_equal_ratio_relations(chart: str) -> None:
+    """The aligned charts must always keep d2, d3, and d4 pinned into every stage."""
+
+    assert solver._required_generator_count(chart) == 3  # noqa: SLF001
+
+
+def test_build_chart_recipe_accepts_an_escalation_sizes_override() -> None:
+    """The recipe, not only the module default, can set the escalation plan."""
+
+    import inspect
+
+    signature = inspect.signature(solver.build_chart_recipe)
+    assert "escalation_sizes" in signature.parameters
+    assert signature.parameters["escalation_sizes"].default is None
+
+
+@pytest.mark.parametrize("total_optional", [0, 1, 15, 16, 17, 255, 256, 257, 543, 10_000])
+def test_escalation_stage_plan_last_stage_always_covers_every_optional_generator(
+    total_optional: int,
+) -> None:
+    """The full set must always be attempted -- that is what makes a negative
+    result on the last stage authoritative for the whole ideal."""
+
+    plan = solver._escalation_stage_plan(solver.DEFAULT_ESCALATION_SIZES, total_optional)  # noqa: SLF001
+    assert plan[-1][1] == total_optional
+
+
+@pytest.mark.parametrize("total_optional", [0, 1, 15, 16, 17, 255, 256, 257, 543, 10_000])
+def test_escalation_stage_plan_effective_sizes_are_nested_and_never_repeat(
+    total_optional: int,
+) -> None:
+    """Each stage's generators are a superset of the previous stage's, and no
+    two stages compute the identical subset."""
+
+    plan = solver._escalation_stage_plan(solver.DEFAULT_ESCALATION_SIZES, total_optional)  # noqa: SLF001
+    effective_sizes = [effective for _, effective in plan]
+    assert effective_sizes == sorted(set(effective_sizes))
+
+
+def test_escalation_stage_plan_collapses_stages_past_the_optional_count() -> None:
+    """A chart with fewer optional generators than the largest configured size
+    must not repeat the identical full-set Groebner call twice."""
+
+    plan = solver._escalation_stage_plan((16, 32, 64, None), 20)  # noqa: SLF001
+    assert plan == [(16, 16), (32, 20)]
+
+
+def test_escalation_stage_plan_collapses_to_one_stage_when_nothing_is_optional() -> None:
+    plan = solver._escalation_stage_plan(solver.DEFAULT_ESCALATION_SIZES, 0)  # noqa: SLF001
+    assert plan == [(16, 0)]
+
+
+def test_escalation_stage_plan_keeps_every_size_when_the_optional_count_is_huge() -> None:
+    plan = solver._escalation_stage_plan(solver.DEFAULT_ESCALATION_SIZES, 10_000)  # noqa: SLF001
+    assert plan == [(16, 16), (32, 32), (64, 64), (128, 128), (256, 256), (None, 10_000)]
+
+
+def test_worker_script_clamp_expression_matches_the_pure_python_plan_helper() -> None:
+    """The embedded Sage planner and the tested pure-Python mirror must agree.
+
+    They cannot literally share code across the container process boundary --
+    the worker runs as Sage source in a separate container -- so this pins them
+    to the same clamping expression, character for character, as the next best
+    thing to one shared implementation.
+    """
+
+    import inspect
+
+    source = inspect.getsource(solver._escalation_stage_plan)  # noqa: SLF001
+    clamp_expression = (
+        "total_optional if target_size is None else min(int(target_size), total_optional)"
+    )
+    assert clamp_expression in source
+    assert clamp_expression in solver._WORKER_SCRIPT  # noqa: SLF001
+
+
+def test_worker_script_replaces_the_single_groebner_call_with_escalation() -> None:
+    script = solver._WORKER_SCRIPT  # noqa: SLF001
+    assert "groebner_basis()" in script
+    assert "groebner_started" not in script
+    assert "groebner_complete" not in script
+    assert "escalation_stage_started" in script
+    assert "escalation_stage_complete" in script
+
+
+def test_worker_script_unions_the_required_generators_into_every_stage() -> None:
+    """``required_gens`` must prefix every stage's ideal, never just some of them."""
+
+    script = solver._WORKER_SCRIPT  # noqa: SLF001
+    assert script.count("required_gens + optional_sorted[:effective_size]") == 1
+
+
+def test_worker_script_takes_nested_prefixes_of_one_fixed_sorted_list() -> None:
+    """Escalation stages must be nested: a later stage is a strict superset.
+
+    ``optional_sorted`` is sorted exactly once, before the stage loop, and
+    every stage slices a prefix of that same list -- so stage N's generators
+    are always a subset of stage N+1's, never a differently chosen set.
+    """
+
+    script = solver._WORKER_SCRIPT  # noqa: SLF001
+    assert script.count("optional_sorted = sorted(") == 1
+    assert "optional_sorted[:effective_size]" in script
+
+
+def test_worker_script_sorts_optional_generators_by_term_count_ascending() -> None:
+    script = solver._WORKER_SCRIPT  # noqa: SLF001
+    assert "key=lambda polynomial: polynomial.number_of_terms()" in script
+
+
+def test_worker_script_stops_at_the_first_stage_that_reaches_the_unit_ideal() -> None:
+    script = solver._WORKER_SCRIPT  # noqa: SLF001
+    assert "if stage_is_unit_ideal:" in script
+    assert "break" in script
+
+
+def test_worker_script_pins_rabinowitsch_and_equal_ratio_relations_as_required() -> None:
+    """``required_flags`` must mark the trailing d2/d3/d4 slots and the
+    Rabinowitsch relation, never a row-derived generator sorted for escalation."""
+
+    script = solver._WORKER_SCRIPT  # noqa: SLF001
+    assert "required_generator_count" in script
+    assert "required_flags.append(spec_index >= required_from_index)" in script
+    assert "required_flags.append(True)" in script
+
+
+def test_worker_script_groebner_seconds_is_the_total_across_stages() -> None:
+    script = solver._WORKER_SCRIPT  # noqa: SLF001
+    assert "gb_seconds += stage_seconds" in script
+
+
+def test_worker_script_records_the_escalation_provenance_fields() -> None:
+    script = solver._WORKER_SCRIPT  # noqa: SLF001
+    for field in (
+        "escalation_sizes_configured",
+        "escalation_sizes_attempted",
+        "escalation_stages",
+        "escalation_successful_size",
+        "escalation_successful_generator_count",
+    ):
+        assert f'"{field}"' in script
+
+
+def test_worker_script_still_stops_after_build_before_any_groebner_call() -> None:
+    """``stage_only == "build"`` must return before the escalation loop runs."""
+
+    script = solver._WORKER_SCRIPT  # noqa: SLF001
+    assert 'if stage_only != "build":' in script
+    build_guard_index = script.index('if stage_only != "build":')
+    assert script.index("groebner_basis()") > build_guard_index
