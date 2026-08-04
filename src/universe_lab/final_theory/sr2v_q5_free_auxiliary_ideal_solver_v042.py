@@ -34,7 +34,6 @@ import json
 import subprocess
 import time
 from collections.abc import Iterable, Iterator, Mapping, Sequence
-from fractions import Fraction
 from pathlib import Path
 from typing import Any
 
@@ -208,71 +207,29 @@ def resolve_chart_quotient_ids(root: Path) -> dict[str, Any]:
             )
     return {
         "resolved": resolved,
-        "terms": {
-            name: found[digest]["terms"]
-            for name, digest in {
-                **{f"cleared_{n}": targets[f"cleared_{n}"] for n in _CLEARED_QUOTIENT_NAMES},
-                **{f"rabinowitsch_{n}": targets[f"rabinowitsch_{n}"] for n in _RABINOWITSCH_NAMES},
-            }.items()
-        },
+        "target_sha256": targets,
+        "committed_root_semantic_digest_sha256": committed["semantic_digest_sha256"],
     }
 
 
-#: A generator is stored as ``[[exponent_list, numerator, denominator], ...]``
-#: over the *full* ring (base 52 variables plus whichever auxiliary variables
-#: the chart uses), sorted by exponent tuple with no duplicate exponents --
-#: the same shape ``PolynomialArena`` already uses, just extended in width.
-GeneratorTerms = list[list[Any]]
+def resolve_chart_quotient_ids_cached(root: Path) -> dict[str, Any]:
+    """``resolve_chart_quotient_ids`` memoised against the committed root digest.
 
-
-def _extend_terms(
-    serial_terms: Sequence[Sequence[Any]],
-    width: int,
-    bump_index: int | None,
-) -> dict[tuple[int, ...], Fraction]:
-    """Embed a base-52-variable term list into the full ring.
-
-    ``bump_index`` sets that one ring coordinate's exponent to 1 on every term
-    -- used to represent multiplication by an auxiliary variable such as
-    ``h``. Pass ``None`` for a coefficient with no auxiliary factor.
+    The resolution streams every arena chunk and costs about fifty seconds, but
+    its answer is a function of the frozen root alone. The cache is keyed on
+    that root's semantic digest, so a re-frozen bundle invalidates it rather
+    than silently reusing identifiers from a different freeze.
     """
 
-    result: dict[tuple[int, ...], Fraction] = {}
-    for exponent_pairs, numerator, denominator in serial_terms:
-        full = [0] * width
-        for index, power in exponent_pairs:
-            full[index] = power
-        if bump_index is not None:
-            full[bump_index] = 1
-        key = tuple(full)
-        result[key] = result.get(key, Fraction(0)) + Fraction(int(numerator), int(denominator))
-    return result
-
-
-def _merge_terms(
-    parts: Iterable[Mapping[tuple[int, ...], Fraction]],
-) -> dict[tuple[int, ...], Fraction]:
-    merged: dict[tuple[int, ...], Fraction] = {}
-    for part in parts:
-        for key, value in part.items():
-            total = merged.get(key, Fraction(0)) + value
-            if total:
-                merged[key] = total
-            elif key in merged:
-                del merged[key]
-    return merged
-
-
-def _serialise_terms(terms: Mapping[tuple[int, ...], Fraction]) -> GeneratorTerms:
-    return [
-        [
-            [[index, power] for index, power in enumerate(exponent) if power],
-            value.numerator,
-            value.denominator,
-        ]
-        for exponent, value in sorted(terms.items())
-        if value
-    ]
+    path = root / SOLVER_DIRECTORY / "chart_quotient_ids.json"
+    expected = _committed_root(root)["semantic_digest_sha256"]
+    if path.is_file():
+        cached = _load_json(path)
+        if cached.get("committed_root_semantic_digest_sha256") == expected:
+            return cached
+    resolved = resolve_chart_quotient_ids(root)
+    _write_json(path, resolved)
+    return resolved
 
 
 def stream_polynomial_arena(root: Path) -> Iterator[dict[str, Any]]:
@@ -288,63 +245,41 @@ def stream_polynomial_arena(root: Path) -> Iterator[dict[str, Any]]:
     yield from bundle.read_arena_chunks(directory, chunks)
 
 
-def _non_aligned_generator_terms(
-    width: int,
-    h_index: int,
-    a_terms: Sequence[Sequence[Any]],
-    b_terms: Sequence[Sequence[Any]],
-) -> GeneratorTerms:
-    """Build ``h*A+B`` directly as full-width terms; no Sage parsing involved."""
+def _unique_preserving_order(rows: Iterable[tuple[int, ...]]) -> list[tuple[int, ...]]:
+    """Drop repeated generator coefficient tuples, keeping first appearance.
 
-    merged = _merge_terms(
-        [_extend_terms(a_terms, width, h_index), _extend_terms(b_terms, width, None)]
-    )
-    return _serialise_terms(merged)
+    Two M0 rows that reduce to the same coefficient tuple give the *same*
+    polynomial, and repeating a generator never changes the ideal it
+    generates. In this campaign that removes about a third of the non-zero
+    rows, so it is both safe and worth doing before any Groebner call.
+    """
 
-
-def _aligned_generator_terms(
-    width: int,
-    index_by_auxiliary: Mapping[str, int],
-    coefficients: Mapping[str, Sequence[Sequence[Any]]],
-) -> GeneratorTerms:
-    """Build ``h*A+constant+sum(w_j*B_j)`` directly as full-width terms."""
-
-    merged = _merge_terms(
-        _extend_terms(terms, width, index_by_auxiliary.get(key))
-        for key, terms in coefficients.items()
-    )
-    return _serialise_terms(merged)
+    seen: set[tuple[int, ...]] = set()
+    unique: list[tuple[int, ...]] = []
+    for row in rows:
+        if row in seen:
+            continue
+        seen.add(row)
+        unique.append(row)
+    return unique
 
 
-def _plain_generator_terms(width: int, terms: Sequence[Sequence[Any]]) -> GeneratorTerms:
-    return _serialise_terms(_extend_terms(terms, width, None))
+def build_chart_recipe(root: Path, chart_name: str, *, modulus: int = 0) -> dict[str, Any]:
+    """Describe one chart's ideal by arena identifier, without materialising it.
 
+    The polynomial data itself is never loaded here. Reading the ~19.1 million
+    arena terms into Python lists costs tens of GiB, so the host only decides
+    *which* frozen arena records combine into which generator and hands that
+    recipe to the Sage worker, which streams the same committed chunks and
+    converts each record straight into a Singular polynomial.
 
-def _rabinowitsch_generator_terms(
-    width: int, z_index: int, localiser_terms: Sequence[Sequence[Any]]
-) -> GeneratorTerms:
-    """Build ``1-z*localiser`` directly as full-width terms."""
+    Two reductions are applied, both of which leave the generated ideal
+    unchanged: a row whose coefficients are all zero is dropped, and a
+    coefficient tuple that repeats an earlier row is dropped. In this campaign
+    that takes the non-aligned charts from 1,127 rows to 543.
 
-    one = {(0,) * width: Fraction(1)}
-    z_times_localiser = {
-        key: -value for key, value in _extend_terms(localiser_terms, width, z_index).items()
-    }
-    return _serialise_terms(_merge_terms([one, z_times_localiser]))
-
-
-def build_chart_ideal(root: Path, chart_name: str) -> dict[str, Any]:
-    """Materialise one chart's full ideal from the verified bundle as term lists.
-
-    This does not run Sage. It only reads back frozen, already-verified
-    content; the polynomial ring variables and the Rabinowitsch equation match
-    ``reports/v0.4.2_sr2v_q5_free_auxiliary_ideal_execution_plan.md`` sections
-    3 and 4 exactly. Generators are structured ``[exponent, numerator,
-    denominator]`` term lists rather than Sage source text: some coefficients
-    in this campaign run to hundreds of thousands of terms, and building a
-    single chained-``+`` expression string that large blows CPython's
-    recursion limit during ``compile()``/``sage_eval`` well before Sage ever
-    sees it. A term list is read on the Sage side with an O(term-count) dict
-    construction instead.
+    ``modulus`` of ``0`` means the exact field ``QQ``; a prime selects
+    ``GF(p)`` for a screening run, which is not a proof over ``QQ``.
     """
 
     if chart_name not in ALL_CHARTS:
@@ -360,67 +295,67 @@ def build_chart_ideal(root: Path, chart_name: str) -> dict[str, Any]:
     ring_variables = [*base_variables, *auxiliary_variables, "z"]
     if len(set(ring_variables)) != len(ring_variables):
         raise AssertionError("ring variable name collision")
-    width = len(ring_variables)
     index_by_auxiliary = {name: ring_variables.index(name) for name in auxiliary_variables}
-    z_index = ring_variables.index("z")
 
-    quotient = resolve_chart_quotient_ids(root)
-    needed_ids: set[int] = set()
-    for generator in chart["generator_polynomial_ids"]:
-        needed_ids.update(int(value) for value in generator[1:])
-    needed_ids.add(quotient["resolved"]["rabinowitsch"][_rabinowitsch_key(chart_name)])
-    if chart_name in ALIGNED_CHARTS:
-        needed_ids.update(quotient["resolved"]["cleared"].values())
+    quotient = resolve_chart_quotient_ids_cached(root)
+    rabinowitsch_id = quotient["resolved"]["rabinowitsch"][_rabinowitsch_key(chart_name)]
 
-    by_id: dict[int, list[Any]] = {}
-    for record in stream_polynomial_arena(root):
-        identifier = int(record["polynomial_id"])
-        if identifier in needed_ids:
-            by_id[identifier] = record["terms"]
-            if len(by_id) == len(needed_ids):
-                break
-    missing = needed_ids - set(by_id)
-    if missing:
-        raise AssertionError(
-            f"{chart_name}: polynomial ids absent from the committed arena: {missing}"
-        )
-
-    dropped_zero_generators = 0
-    generators: list[GeneratorTerms] = []
+    entries = chart["generator_polynomial_ids"]
     if chart_name in NON_ALIGNED_CHARTS:
-        h_index = index_by_auxiliary["h"]
-        for entry in chart["generator_polynomial_ids"]:
-            a_terms, b_terms = by_id[int(entry[1])], by_id[int(entry[2])]
-            if not a_terms and not b_terms:
-                # 0*h+0 contributes nothing to the ideal; dropping a zero
-                # generator never changes what it generates.
-                dropped_zero_generators += 1
-                continue
-            generators.append(_non_aligned_generator_terms(width, h_index, a_terms, b_terms))
+        key_order = ["h", "constant"]
     else:
         key_order = list(chart["generator_auxiliary_key_order"])
-        for entry in chart["generator_polynomial_ids"]:
-            coefficients = {
-                key: by_id[int(entry[1 + index])] for index, key in enumerate(key_order)
-            }
-            if not any(coefficients.values()):
-                dropped_zero_generators += 1
-                continue
-            generators.append(_aligned_generator_terms(width, index_by_auxiliary, coefficients))
-        for name in _CLEARED_QUOTIENT_NAMES:
-            generators.append(
-                _plain_generator_terms(width, by_id[quotient["resolved"]["cleared"][name]])
-            )
+    rows: list[tuple[int, ...]] = [
+        tuple(int(value) for value in entry[1 : 1 + len(key_order)]) for entry in entries
+    ]
+    nonzero_rows = [row for row in rows if any(row)]
+    unique_rows = _unique_preserving_order(nonzero_rows)
 
-    rabinowitsch_id = quotient["resolved"]["rabinowitsch"][_rabinowitsch_key(chart_name)]
-    generators.append(_rabinowitsch_generator_terms(width, z_index, by_id[rabinowitsch_id]))
+    #: Each generator is ``sum(auxiliary_variable * arena_polynomial)``. The
+    #: ``constant`` slot has no auxiliary factor, so its multiplier index is
+    #: ``None``; every other slot multiplies by exactly one ring variable.
+    generators: list[list[list[int | None]]] = [
+        [
+            [index_by_auxiliary.get(key), identifier]
+            for key, identifier in zip(key_order, row, strict=True)
+            if identifier or key == "constant"
+        ]
+        for row in unique_rows
+    ]
+    if chart_name in ALIGNED_CHARTS:
+        generators.extend(
+            [[None, int(quotient["resolved"]["cleared"][name])]] for name in _CLEARED_QUOTIENT_NAMES
+        )
 
-    return {
+    needed_ids = sorted(
+        {int(pair[1]) for generator in generators for pair in generator if pair[1] is not None}
+    )
+    chunks = [
+        {
+            "path": "/home/sage/work/"
+            + (Path(bundle.BUNDLE_DIRECTORY) / str(record["path"])).as_posix(),
+            "gzip_bytes": record["gzip_bytes"],
+            "gzip_sha256": record["gzip_sha256"],
+            "uncompressed_bytes": record["uncompressed_bytes"],
+            "uncompressed_sha256": record["uncompressed_sha256"],
+            "record_count": record["record_count"],
+        }
+        for record in committed["chunk_ledger"]["chunks"]
+        if record["arena"] == "polynomial_arena"
+    ]
+    recipe = {
         "chart": chart_name,
+        "modulus": int(modulus),
         "ring_variables": ring_variables,
-        "generator_count": len(generators),
-        "dropped_zero_generator_count": dropped_zero_generators,
+        "z_index": ring_variables.index("z"),
+        "rabinowitsch_polynomial_id": rabinowitsch_id,
+        "generator_count": len(generators) + 1,
+        "source_row_count": len(entries),
+        "dropped_zero_row_count": len(rows) - len(nonzero_rows),
+        "dropped_duplicate_row_count": len(nonzero_rows) - len(unique_rows),
         "generators": generators,
+        "needed_polynomial_ids": needed_ids,
+        "chunks": chunks,
         "generators_digest_sha256": _digest(generators),
         "committed_root_semantic_digest_sha256": committed["semantic_digest_sha256"],
         "committed_full_logical_payload_digest_sha256": committed["full_logical_payload"][
@@ -429,6 +364,7 @@ def build_chart_ideal(root: Path, chart_name: str) -> dict[str, Any]:
         "committed_chart_manifest_sha256": chart["chart_manifest_sha256"],
         "committed_generator_manifest_sha256": chart["generator_manifest_sha256"],
     }
+    return recipe
 
 
 def _rabinowitsch_key(chart_name: str) -> str:
@@ -445,29 +381,32 @@ def _load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def write_chart_ideal_file(root: Path, chart_name: str) -> Path:
-    directory = root / SOLVER_DIRECTORY / "ideals"
+def write_chart_recipe_file(root: Path, chart_name: str, *, modulus: int = 0) -> Path:
+    directory = root / SOLVER_DIRECTORY / "recipes"
     directory.mkdir(parents=True, exist_ok=True)
-    path = directory / f"{chart_name}.json"
+    suffix = "QQ" if not modulus else f"GF{modulus}"
+    path = directory / f"{chart_name}.{suffix}.json"
     if path.is_file():
         existing = _load_json(path)
         if (
             existing.get("committed_root_semantic_digest_sha256")
             == _committed_root(root)["semantic_digest_sha256"]
+            and existing.get("modulus") == modulus
         ):
             return path
-    ideal = build_chart_ideal(root, chart_name)
-    _write_json(path, ideal)
+    _write_json(path, build_chart_recipe(root, chart_name, modulus=modulus))
     return path
 
 
-#: Reads the ideal from a file inside the container rather than through the
-#: host-container pipe: a chart's generator text can run to hundreds of MiB to
-#: low GiB, and ``subprocess.communicate`` would otherwise have to buffer all
-#: of it on both ends. Only this small driver script and a tiny
-#: ``{ideal_file, memory_limit_bytes}`` payload cross the pipe; the file itself
-#: is read directly off the bind-mounted repository.
+#: The worker streams the committed arena chunks itself and turns each needed
+#: record straight into a Singular polynomial. Nothing materialises the whole
+#: coefficient set in Python: the 19.1 million arena terms cost tens of GiB as
+#: nested Python lists but only a few hundred MiB as Singular's packed sparse
+#: representation. Chunk digests are verified incrementally while streaming, so
+#: this stays as fail-closed as ``bundle.read_arena_chunks``.
 _WORKER_SCRIPT = r"""
+import gzip
+import hashlib
 import json
 import resource
 import sys
@@ -476,52 +415,155 @@ import time
 request = json.loads(sys.stdin.read())
 memory_limit_bytes = int(request["memory_limit_bytes"])
 resource.setrlimit(resource.RLIMIT_AS, (memory_limit_bytes, memory_limit_bytes))
+stage_only = request.get("stage_only")
 
-with open(request["ideal_file"], encoding="utf-8") as handle:
-    payload = json.load(handle)
-ring_variables = payload["ring_variables"]
-generators_terms = payload["generators"]
+
+def plain(value):
+    # sage -c runs the Sage preparser, so numeric literals and anything derived
+    # from them become Sage types (Integer, RealDoubleElement, ...) that the
+    # json module refuses to encode. Everything crossing the JSON boundary is
+    # coerced back to a plain Python number here.
+    if isinstance(value, bool) or value is None:
+        return value
+    try:
+        if value == int(value):
+            return int(value)
+    except (TypeError, ValueError, OverflowError):
+        pass
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return str(value)
+
+
+def progress(stage, **fields):
+    # Written to stderr so a killed request still leaves evidence of how far it
+    # got; stdout carries only the final JSON result.
+    fields["stage"] = stage
+    fields["elapsed"] = float(time.perf_counter() - script_started)
+    fields["rss_kib"] = int(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
+    sys.stderr.write(json.dumps(fields, default=plain) + "\n")
+    sys.stderr.flush()
+
+
+script_started = time.perf_counter()
+with open(request["recipe_file"], encoding="utf-8") as handle:
+    recipe = json.load(handle)
+progress("recipe_loaded", chart=recipe["chart"])
+
+ring_variables = recipe["ring_variables"]
 width = len(ring_variables)
-
-
-def to_polynomial(ring, serial_terms):
-    # Built as a single dict->polynomial construction, not a chained Sage
-    # expression: some generators carry hundreds of thousands of terms, and
-    # sage_eval on that large a source string exceeds CPython's recursion
-    # limit during compile() before Sage ever sees it.
-    data = {}
-    for exponent_pairs, numerator, denominator in serial_terms:
-        exponent = [0] * width
-        for index, power in exponent_pairs:
-            exponent[index] = power
-        data[tuple(exponent)] = QQ(numerator) / QQ(denominator)
-    return ring(data)
-
+modulus = int(recipe["modulus"])
+field = QQ if modulus == 0 else GF(modulus)
+ring = PolynomialRing(field, ring_variables, order="degrevlex")
+gens_by_index = list(ring.gens())
+needed = set(int(value) for value in recipe["needed_polynomial_ids"])
+needed.add(int(recipe["rabinowitsch_polynomial_id"]))
 
 started = time.perf_counter()
-ring = PolynomialRing(QQ, ring_variables, order="degrevlex")
-gens = [to_polynomial(ring, terms) for terms in generators_terms]
-parse_seconds = time.perf_counter() - started
+by_id = {}
+scanned_records = 0
+loaded_terms = 0
+for chunk_index, chunk in enumerate(recipe["chunks"]):
+    digest = hashlib.sha256()
+    seen_in_chunk = 0
+    with gzip.open(chunk["path"], "rb") as handle:
+        for line in handle:
+            digest.update(line)
+            seen_in_chunk += 1
+            record = json.loads(line)
+            identifier = int(record["polynomial_id"])
+            if identifier in needed and identifier not in by_id:
+                data = {}
+                for exponent_pairs, numerator, denominator in record["terms"]:
+                    exponent = [0] * width
+                    for index, power in exponent_pairs:
+                        exponent[index] = power
+                    data[tuple(exponent)] = field(numerator) / field(denominator)
+                by_id[identifier] = ring(data)
+                loaded_terms += len(data)
+            scanned_records += 1
+    if seen_in_chunk != int(chunk["record_count"]):
+        raise AssertionError(chunk["path"] + ": record count does not match the ledger")
+    if digest.hexdigest() != chunk["uncompressed_sha256"]:
+        raise AssertionError(chunk["path"] + ": uncompressed digest does not match the ledger")
+    progress(
+        "chunk_verified",
+        chunk_index=chunk_index,
+        chunks=len(recipe["chunks"]),
+        loaded=len(by_id),
+        needed=len(needed),
+        loaded_terms=loaded_terms,
+    )
+missing = sorted(needed - set(by_id))
+if missing:
+    raise AssertionError("arena is missing polynomial ids: " + repr(missing[:8]))
+load_seconds = time.perf_counter() - started
+progress("load_complete", load_seconds=float(load_seconds), loaded_terms=loaded_terms)
 
-ideal = ring.ideal(gens)
-gb_started = time.perf_counter()
-basis = ideal.groebner_basis()
-gb_seconds = time.perf_counter() - gb_started
+build_started = time.perf_counter()
+gens = []
+for generator in recipe["generators"]:
+    total = ring.zero()
+    for multiplier_index, identifier in generator:
+        piece = by_id[int(identifier)]
+        if multiplier_index is not None:
+            piece = gens_by_index[int(multiplier_index)] * piece
+        total += piece
+    if total:
+        gens.append(total)
+localiser = by_id[int(recipe["rabinowitsch_polynomial_id"])]
+gens.append(ring.one() - gens_by_index[int(recipe["z_index"])] * localiser)
+build_seconds = time.perf_counter() - build_started
 
-is_unit_ideal = len(basis) == 1 and basis[0].is_unit()
+del by_id
+generator_terms = sum(int(polynomial.number_of_terms()) for polynomial in gens)
+progress(
+    "build_complete",
+    build_seconds=float(build_seconds),
+    generators=len(gens),
+    generator_terms=generator_terms,
+)
+
+generator_term_counts = sorted(
+    (int(polynomial.number_of_terms()) for polynomial in gens), reverse=True
+)
+
+gb_seconds = None
+basis_size = None
+is_unit_ideal = None
+if stage_only != "build":
+    ideal = ring.ideal(gens)
+    gb_started = time.perf_counter()
+    progress("groebner_started", generators=len(gens), generator_terms=generator_terms)
+    basis = ideal.groebner_basis()
+    gb_seconds = float(time.perf_counter() - gb_started)
+    basis_size = len(basis)
+    is_unit_ideal = bool(basis_size == 1 and basis[0].is_unit())
+    progress("groebner_complete", groebner_seconds=gb_seconds, basis_size=basis_size)
+
 result = {
-    "chart": payload["chart"],
-    "ring_variable_count": len(ring_variables),
+    "chart": recipe["chart"],
+    "modulus": modulus,
+    "coefficient_field": "QQ" if modulus == 0 else ("GF(%d)" % modulus),
+    "ring_variable_count": width,
+    "arena_records_scanned": scanned_records,
+    "arena_polynomials_loaded": len(needed),
     "generator_count": len(gens),
-    "parse_seconds": parse_seconds,
+    "generator_terms": generator_terms,
+    "largest_generator_term_counts": generator_term_counts[:10],
+    "median_generator_term_count": generator_term_counts[len(generator_term_counts) // 2],
+    "load_seconds": load_seconds,
+    "build_seconds": build_seconds,
     "groebner_seconds": gb_seconds,
-    "basis_size": len(basis),
-    "is_unit_ideal": bool(is_unit_ideal),
+    "basis_size": basis_size,
+    "is_unit_ideal": is_unit_ideal,
+    "stage_only": stage_only,
     "max_ru_maxrss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
     "sage_version": str(sage.version.version),
     "singular_version": singular.version().splitlines()[0],
 }
-print(json.dumps(result))
+print(json.dumps(result, default=plain))
 """
 
 
@@ -531,31 +573,112 @@ def _decode(value: bytes | str | None) -> str:
     return value.decode("utf-8", errors="replace") if isinstance(value, bytes) else value
 
 
+def _progress_records(stderr_text: str) -> list[dict[str, Any]]:
+    """Recover the worker's stage markers from stderr.
+
+    A killed request still leaves these, so a timeout reports how far it got --
+    which chunk it was verifying, or whether it had reached Groebner at all --
+    instead of only that it ran out of time.
+    """
+
+    records: list[dict[str, Any]] = []
+    for line in stderr_text.splitlines():
+        stripped = line.strip()
+        if not stripped.startswith("{"):
+            continue
+        try:
+            value = json.loads(stripped)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(value, dict) and "stage" in value:
+            records.append(value)
+    return records
+
+
+#: The container-side worker is launched by ``sage -c``, but the process that
+#: actually appears in the container's process table is ``sage-eval``, so a
+#: ``pkill -f "sage -c"`` matches nothing. A real run was observed surviving its
+#: own timeout that way, holding 6.6 GiB and a full core for eleven minutes past
+#: the approved limit.
+#:
+#: ``sage -c`` concatenates any trailing arguments onto the script itself, so
+#: the request id cannot be passed as a separate argv entry. It is instead
+#: embedded as a comment on the script's first line: the whole script text is
+#: part of the command line, so ``pgrep -f`` matches it there.
+_WORKER_TAG = "sr2v_auxiliary_ideal_worker"
+
+
+def _tagged_worker_script(request_id: str) -> str:
+    return f"# {_WORKER_TAG}={request_id}\n{_WORKER_SCRIPT}"
+
+
+def _kill_container_worker(root: Path, request_id: str) -> dict[str, Any]:
+    """Kill this request's container-side worker, and report what happened.
+
+    Fail-closed in the reporting sense: the caller records the outcome instead
+    of assuming the kill worked, because a surviving worker silently violates
+    the sequential single-worker resource contract.
+    """
+
+    pattern = f"{_WORKER_TAG}={request_id}"
+    outcome: dict[str, Any] = {"pattern": pattern}
+    try:
+        killed = subprocess.run(
+            ["docker", "compose", "exec", "-T", "sage", "pkill", "-9", "-f", pattern],
+            cwd=root,
+            check=False,
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        outcome["pkill_returncode"] = killed.returncode
+        survivors = subprocess.run(
+            ["docker", "compose", "exec", "-T", "sage", "pgrep", "-c", "-f", pattern],
+            cwd=root,
+            check=False,
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        remaining = (survivors.stdout or "0").strip() or "0"
+        outcome["surviving_worker_count"] = int(remaining)
+        outcome["worker_terminated"] = outcome["surviving_worker_count"] == 0
+    except (OSError, subprocess.SubprocessError, ValueError) as error:
+        outcome["worker_terminated"] = False
+        outcome["error"] = f"{type(error).__name__}: {error}"
+    return outcome
+
+
 def run_sage_groebner_request(
     root: Path,
     chart_name: str,
-    ideal_file: Path,
+    recipe_file: Path,
     *,
     memory_limit_bytes: int,
     timeout_seconds: int,
+    stage_only: str | None = None,
 ) -> dict[str, Any]:
-    """Send one chart's ideal to the ``sage`` Compose service and compute its basis.
+    """Send one chart's recipe to the ``sage`` Compose service and compute its basis.
 
-    ``ideal_file`` must already sit under ``root`` (the repository is bind-
-    mounted into the container at ``/home/sage/work``), and is read directly by
-    the worker rather than piped in, since it can run to hundreds of MiB.
+    ``recipe_file`` must already sit under ``root`` (the repository is bind-
+    mounted into the container at ``/home/sage/work``). Only the recipe and
+    this driver script cross the pipe; the worker streams the arena chunks
+    itself.
 
-    Fail-closed on timeout: the process and its container-side child are both
-    killed, and the result records ``TIMEOUT`` rather than a fabricated basis.
-    This mirrors ``d2_sage_backend_v035.run_sage_request``'s host-side shape
-    without importing or reusing any of its v0.3.5 ideal-construction code.
+    Fail-closed on timeout: the host process and the container-side worker are
+    both killed, the kill is verified, and the result records ``TIMEOUT``
+    rather than a fabricated basis. This mirrors
+    ``d2_sage_backend_v035.run_sage_request``'s host-side shape without
+    importing or reusing any of its v0.3.5 ideal-construction code.
     """
 
-    container_path = "/home/sage/work/" + ideal_file.resolve().relative_to(root).as_posix()
+    container_path = "/home/sage/work/" + recipe_file.resolve().relative_to(root).as_posix()
+    request_id = _digest([chart_name, container_path, time.time_ns()])[:20]
     payload = {
         "chart": chart_name,
-        "ideal_file": container_path,
+        "recipe_file": container_path,
         "memory_limit_bytes": memory_limit_bytes,
+        "stage_only": stage_only,
     }
     command = [
         "docker",
@@ -565,7 +688,7 @@ def run_sage_groebner_request(
         "sage",
         "sage",
         "-c",
-        _WORKER_SCRIPT,
+        _tagged_worker_script(request_id),
     ]
     started = time.perf_counter()
     process = subprocess.Popen(
@@ -579,14 +702,7 @@ def run_sage_groebner_request(
     try:
         stdout, stderr = process.communicate(_canonical_json(payload), timeout=timeout_seconds)
     except subprocess.TimeoutExpired as exc:
-        subprocess.run(
-            ["docker", "compose", "exec", "-T", "sage", "pkill", "-f", "sage -c"],
-            cwd=root,
-            check=False,
-            capture_output=True,
-            text=True,
-            timeout=20,
-        )
+        kill_outcome = _kill_container_worker(root, request_id)
         process.kill()
         try:
             stdout, stderr = process.communicate(timeout=20)
@@ -598,6 +714,9 @@ def run_sage_groebner_request(
             "exit_status": "TIMEOUT",
             "wall_time_seconds": time.perf_counter() - started,
             "time_limit_seconds": timeout_seconds,
+            "request_id": request_id,
+            "container_worker_kill": kill_outcome,
+            "progress_tail": _progress_records(stderr or ""),
             "stdout_tail": (stdout or "")[-4000:],
             "stderr_tail": (stderr or "")[-4000:],
         }
@@ -635,6 +754,8 @@ def run_sage_groebner_request(
     result["exit_status"] = "COMPLETED"
     result["host_observed_wall_time_seconds"] = wall_time
     result["time_limit_seconds"] = timeout_seconds
+    result["request_id"] = request_id
+    result["progress_tail"] = _progress_records(stderr)
     return result
 
 
@@ -642,28 +763,59 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--chart", choices=ALL_CHARTS, help="run only this chart")
     parser.add_argument(
-        "--materialize-only",
+        "--recipe-only",
         action="store_true",
-        help="write the ideal file(s) without invoking Sage",
+        help="write the recipe file(s) without invoking Sage",
+    )
+    parser.add_argument(
+        "--modulus",
+        type=int,
+        default=0,
+        help=(
+            "0 (default) computes over QQ; a prime screens over GF(p), "
+            "which is a scout result and never a proof over QQ"
+        ),
+    )
+    parser.add_argument(
+        "--timeout-seconds",
+        type=int,
+        default=None,
+        help="override the per-chart timeout downwards for a screening run",
+    )
+    parser.add_argument(
+        "--stage-only",
+        choices=("build",),
+        default=None,
+        help="stop after building the generators, before any Groebner call",
     )
     arguments = parser.parse_args(argv)
     root = Path(__file__).resolve().parents[3]
     charts = [arguments.chart] if arguments.chart else list(ALL_CHARTS)
     budget = load_human_budget(root)
+    timeout_seconds = budget["timeout_seconds_per_chart"]
+    if arguments.timeout_seconds is not None:
+        if arguments.timeout_seconds > timeout_seconds:
+            raise ValueError("the approved per-chart timeout may only be lowered, never raised")
+        timeout_seconds = arguments.timeout_seconds
 
+    suffix = "QQ" if not arguments.modulus else f"GF{arguments.modulus}"
     for chart_name in charts:
-        path = write_chart_ideal_file(root, chart_name)
-        print(_canonical_json({"chart": chart_name, "ideal_file": str(path)}))
-        if arguments.materialize_only:
+        path = write_chart_recipe_file(root, chart_name, modulus=arguments.modulus)
+        print(_canonical_json({"chart": chart_name, "recipe_file": str(path)}))
+        if arguments.recipe_only:
             continue
         result = run_sage_groebner_request(
             root,
             chart_name,
             path,
             memory_limit_bytes=budget["memory_limit_bytes"],
-            timeout_seconds=budget["timeout_seconds_per_chart"],
+            timeout_seconds=timeout_seconds,
+            stage_only=arguments.stage_only,
         )
-        result_path = root / SOLVER_DIRECTORY / "results" / f"{chart_name}.json"
+        stage_suffix = f".{arguments.stage_only}" if arguments.stage_only else ""
+        result_path = (
+            root / SOLVER_DIRECTORY / "results" / f"{chart_name}.{suffix}{stage_suffix}.json"
+        )
         _write_json(result_path, result)
         print(_canonical_json({"chart": chart_name, "result": result}))
     return 0
