@@ -6,9 +6,10 @@ content-addressed attempt, and runs exactly one dedicated ``sage-solver``
 container.  The container has no network, sees the repository read-only, and
 is polled for state and memory while worker progress is durably hash-chained.
 
-The initial supported mathematical route is the non-aligned U2/U3/U4 pilot:
-either materialisation only or native sequential saturation.  A finite-field
-run is explicitly a scout; even a unit ideal remains certificate-pending.
+The supported mathematical routes are bounded non-aligned U2/U3/U4 pilots:
+materialisation, sequential saturation, and a versioned determinantal CEGAR
+scout.  A finite-field run is explicitly a scout; even a positive
+determinantal condition remains direct-lift-pending.
 """
 
 from __future__ import annotations
@@ -46,6 +47,12 @@ CONTAINER_PREFIX: Final = "sr2v-aux-"
 SOFT_RSS_GIB: Final = 7
 MAX_LOADED_TERMS: Final = 5_000_000
 MAX_LIVE_BASIS_TERMS: Final = 5_000_000
+MAX_DETERMINANTAL_LIVE_BASIS_TERMS: Final = 100_000
+MAX_DETERMINANTAL_ROUNDS: Final = 8
+MAX_DETERMINANTAL_MINORS: Final = 64
+MAX_GENERATED_MINOR_TERMS: Final = 40_000
+MAX_DETERMINANTAL_CERTIFICATE_TERMS: Final = 100_000
+MAX_DETERMINANTAL_CERTIFICATE_BYTES: Final = 8 * 1024**2
 DEFAULT_PILOT_TIMEOUT_SECONDS: Final = 300
 DEFAULT_POLL_SECONDS: Final = 15.0
 FINALIZATION_RESERVE_SECONDS: Final = 120
@@ -318,6 +325,18 @@ def _selected_entry_positions(plan: Mapping[str, Any], stage: Mapping[str, Any])
     return [rows[int(index)] for index in stage["selected_unique_row_indices"]]
 
 
+def determinantal_resource_caps(selected_count: int) -> tuple[int, int]:
+    """Keep later candidate expansions under the audited stage-7 resource envelope."""
+
+    if type(selected_count) is not int or selected_count <= 0:
+        raise ValueError("selected_count must be a positive integer")
+    if selected_count <= 1:
+        return 10_000, 10_000
+    if selected_count <= 4:
+        return 50_000, 20_000
+    return MAX_DETERMINANTAL_LIVE_BASIS_TERMS, MAX_GENERATED_MINOR_TERMS
+
+
 def build_stage_request(
     repository_root: Path,
     *,
@@ -340,18 +359,54 @@ def build_stage_request(
     quotient_key = chart.lower().replace("u", "d")
     factor_id = int(quotient["resolved"]["cleared"][quotient_key])
     factor_sha256 = str(quotient["target_sha256"][f"cleared_{quotient_key}"])
+    selected_count = len(positions)
+    determinantal_basis_cap, determinantal_minor_term_cap = determinantal_resource_caps(
+        selected_count
+    )
+    determinantal_policy: dict[str, Any] | None = None
+    if method in worker.DETERMINANTAL_METHODS:
+        determinantal_policy = {
+            "schema_version": worker.DETERMINANTAL_POLICY_SCHEMA,
+            "certificate_requirement": "EXACT_EXPONENT_MEMBERSHIP_DIRECT_LIFT_PENDING",
+            "coefficient_scope": (
+                "QQ_EXACT_CANDIDATE" if modulus == 0 else "FINITE_FIELD_SCOUT_ONLY"
+            ),
+            "max_certificate_bytes": MAX_DETERMINANTAL_CERTIFICATE_BYTES,
+            "max_certificate_terms": MAX_DETERMINANTAL_CERTIFICATE_TERMS,
+            "max_generated_minor_terms": determinantal_minor_term_cap,
+            "max_minor_count": MAX_DETERMINANTAL_MINORS,
+            "max_rounds": MAX_DETERMINANTAL_ROUNDS,
+            "minor_pair_policy": "CHEAPEST_PIVOT_STAR_THEN_COST_PREFIXES_1_2_4",
+            "radical_target_policy": "ALL_EFFECTIVE_SELECTED_A_COMPONENTS",
+            "row_universe_sha256": worker.canonical_sha256(entries),
+            "selected_entry_indices_sha256": worker.canonical_sha256(positions),
+            "task_kind": (
+                "INVENTORY_ONLY"
+                if method == worker.DETERMINANTAL_INVENTORY_METHOD
+                else "COMBINED_SUBSET_CERTIFICATE"
+            ),
+            "verification_mode": "LIBSINGULAR_SAT_WITH_EXP_AND_CONTAINMENT",
+        }
+        determinantal_policy["semantic_digest_sha256"] = worker.semantic_digest(
+            determinantal_policy
+        )
     payload: dict[str, Any] = {
         "schema_version": worker.REQUEST_SCHEMA,
         "bottom_factor_records": _bottom_factor_records(repository_root, frozen_root),
         "chart": chart,
         "chart_factor_polynomial_id": factor_id,
         "chart_factor_sha256": factor_sha256,
+        "determinantal_policy": determinantal_policy,
         "expected_root_semantic_digest_sha256": frozen_root["semantic_digest_sha256"],
         "expected_worker_source_sha256": worker.worker_source_sha256(),
         "factor_group_order": list(factor_group_order),
         "groebner_algorithm": groebner_algorithm,
         "incremental_batch_sizes": list(incremental_batch_sizes),
-        "max_live_basis_terms": MAX_LIVE_BASIS_TERMS,
+        "max_live_basis_terms": (
+            determinantal_basis_cap
+            if method in worker.DETERMINANTAL_METHODS
+            else MAX_LIVE_BASIS_TERMS
+        ),
         "max_loaded_terms": MAX_LOADED_TERMS,
         "memory_limit_bytes": budget.memory_limit_bytes,
         "method": method,
@@ -408,6 +463,9 @@ def _image_digest(repository_root: Path) -> str:
 
 
 def _is_legacy_worker_process_line(line: str) -> bool:
+    columns = line.split(maxsplit=5)
+    if len(columns) >= 5 and columns[4] == "Singular":
+        return True
     markers = (
         "sage-eval",
         "sr2v_q5_free_auxiliary_ideal_worker=",

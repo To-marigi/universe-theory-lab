@@ -472,11 +472,14 @@ class HashChainJsonlWriter:
         self.close()
 
 
-def verify_hash_chain_jsonl(path: Path) -> HashChainSummary:
-    """Verify LF framing, canonical records, sequence numbers, and every link."""
+def _verify_and_replay_hash_chain_jsonl(
+    path: Path,
+) -> tuple[HashChainSummary, tuple[JsonObject, ...]]:
+    """Verify a hash chain and return the authenticated payload snapshot."""
 
     head = ZERO_SHA256
     count = 0
+    payloads: list[JsonObject] = []
     try:
         with path.open("r", encoding="utf-8", newline="") as handle:
             for line_number, line in enumerate(handle, start=1):
@@ -520,11 +523,19 @@ def verify_hash_chain_jsonl(path: Path) -> HashChainSummary:
                 observed = canonical_payload_sha256(core)
                 if not hmac.compare_digest(claimed, observed):
                     raise ValueError(f"line {line_number} has the wrong record digest")
+                payloads.append(record["payload"])
                 head = claimed
                 count += 1
     except (OSError, TypeError, ValueError, json.JSONDecodeError) as error:
         raise HashChainValidationError(f"{path}: {error}") from error
-    return HashChainSummary(count, head)
+    return HashChainSummary(count, head), tuple(payloads)
+
+
+def verify_hash_chain_jsonl(path: Path) -> HashChainSummary:
+    """Verify LF framing, canonical records, sequence numbers, and every link."""
+
+    summary, _payloads = _verify_and_replay_hash_chain_jsonl(path)
+    return summary
 
 
 class StatusClassification(StrEnum):
@@ -538,12 +549,16 @@ SUCCESS_STATUSES: Final = frozenset(
     {
         "BUILD_COMPLETED",
         "COMPLETED",
+        "DETERMINANTAL_INVENTORY_COMPLETED",
         "RECIPE_ONLY_COMPLETED",
         "REDUNDANCY_AUDIT_COMPLETED",
     }
 )
 NONTERMINAL_STATUSES: Final = frozenset(
     {
+        "DETERMINANTAL_CONDITIONS_CERTIFIED_DIRECT_LIFT_PENDING",
+        "DETERMINANTAL_GF_SCOUT_PASSED",
+        "DETERMINANTAL_SUBSET_INCONCLUSIVE",
         "TIMEOUT",
         "SOFT_RESOURCE_LIMIT",
         "NOT_RUN_TOTAL_BUDGET_EXHAUSTED",
@@ -705,6 +720,7 @@ _PRODUCTION_BINDING_DETAIL_KEYS: Final = frozenset(
 _RUNTIME_BINDING_DETAIL_KEYS: Final = frozenset(
     {
         "container_contract_verified",
+        "event_log_valid",
         "host_process_termination_verified",
         "postflight_audit_verified",
         "postflight_legacy_processes",
@@ -753,14 +769,340 @@ def _validate_source_snapshot(
     return observed
 
 
-def _last_hash_chain_payload(path: Path) -> Mapping[str, object]:
-    lines = path.read_bytes().splitlines()
-    if not lines:
-        raise ValueError(f"{path}: event log is empty")
-    record = json.loads(lines[-1])
-    if not isinstance(record, Mapping) or not isinstance(record.get("payload"), Mapping):
-        raise TypeError(f"{path}: terminal event record is malformed")
-    return record["payload"]
+def _validate_authenticated_worker_protocol_replay(
+    event_payloads: tuple[JsonObject, ...],
+    *,
+    request_payload: Mapping[str, object] | None,
+    request_payload_sha256: str,
+    worker_result: object,
+) -> None:
+    """Cross-bind strict-generation worker protocol messages to result metadata."""
+
+    worker_messages: list[JsonObject] = []
+    result_message_positions: list[int] = []
+    request_verified_positions: list[int] = []
+    for event_position, payload in enumerate(event_payloads):
+        if payload.get("event") != "WORKER_MESSAGE":
+            continue
+        raw_message = payload.get("message")
+        if not isinstance(raw_message, Mapping):
+            raise TypeError(
+                f"event payload {event_position}: WORKER_MESSAGE.message must be an object"
+            )
+        message = _normalise_json_object(
+            raw_message, label=f"event payload {event_position} worker message"
+        )
+        if message.get("schema_version") != "sr2v-q5-free-worker-message-v1":
+            raise ValueError(f"event payload {event_position}: unsupported worker message schema")
+        message_type = message.get("message_type")
+        if message_type not in {"progress", "result"}:
+            raise ValueError(f"event payload {event_position}: unsupported worker message type")
+        worker_position = len(worker_messages)
+        worker_messages.append(message)
+        worker_event = message.get("event")
+        if worker_event == "REQUEST_VERIFIED":
+            request_verified_positions.append(worker_position)
+            if message_type != "progress":
+                raise ValueError("REQUEST_VERIFIED must be a progress message")
+        if message_type == "result":
+            result_message_positions.append(worker_position)
+            if worker_event not in {"WORKER_FINISHED", "WORKER_FAILED"}:
+                raise ValueError("worker result has an invalid terminal event")
+        elif worker_event in {"WORKER_FINISHED", "WORKER_FAILED"}:
+            raise ValueError("worker terminal event must be a result message")
+
+    if worker_messages:
+        if request_verified_positions != [0]:
+            raise ValueError(
+                "REQUEST_VERIFIED must occur exactly once as the first worker protocol message"
+            )
+        request_verified = worker_messages[0]
+        authenticated_request_digest = _require_sha256(
+            request_verified.get("request_payload_sha256"),
+            label="authenticated REQUEST_VERIFIED request payload digest",
+        )
+        if not hmac.compare_digest(authenticated_request_digest, request_payload_sha256):
+            raise ValueError(
+                "REQUEST_VERIFIED request digest disagrees with request envelope and manifest"
+            )
+
+    if worker_result is None:
+        if result_message_positions:
+            raise ValueError(
+                "authenticated worker result message is present but worker_result is null"
+            )
+        return
+    if not isinstance(worker_result, Mapping):
+        raise TypeError("worker_result must be an object or null")
+    if len(result_message_positions) != 1:
+        raise ValueError("event log must contain exactly one authenticated worker result message")
+    if result_message_positions[0] != len(worker_messages) - 1:
+        raise ValueError("authenticated worker result must be the last worker protocol message")
+    authenticated_result = worker_messages[result_message_positions[0]]
+    normalised_worker_result = _normalise_json_object(
+        worker_result, label="result details worker_result"
+    )
+    if not hmac.compare_digest(
+        canonical_json_bytes(authenticated_result),
+        canonical_json_bytes(normalised_worker_result),
+    ):
+        raise ValueError("worker_result disagrees with the authenticated worker result message")
+    if authenticated_result.get("event") == "WORKER_FINISHED":
+        if request_payload is None:
+            raise ValueError("authenticated successful worker result has no request binding")
+        _validate_authenticated_worker_result_contract(authenticated_result, request_payload)
+
+
+_AUXILIARY_WORKER_STATUS_CONTRACT: Final = {
+    "build_only": frozenset({"BUILD_COMPLETED", "SOFT_RESOURCE_LIMIT"}),
+    "determinantal_cegar_v1": frozenset(
+        {
+            "DETERMINANTAL_CONDITIONS_CERTIFIED_DIRECT_LIFT_PENDING",
+            "DETERMINANTAL_GF_SCOUT_PASSED",
+            "DETERMINANTAL_SUBSET_INCONCLUSIVE",
+            "SOFT_RESOURCE_LIMIT",
+        }
+    ),
+    "determinantal_inventory_v1": frozenset(
+        {"DETERMINANTAL_INVENTORY_COMPLETED", "SOFT_RESOURCE_LIMIT"}
+    ),
+    "incremental_native_saturation": frozenset(
+        {"COMPLETED", "SOFT_RESOURCE_LIMIT", "UNIT_IDEAL_FOUND_CERTIFICATE_PENDING"}
+    ),
+    "libsingular_ab_saturation": frozenset(
+        {"COMPLETED", "SOFT_RESOURCE_LIMIT", "UNIT_IDEAL_FOUND_CERTIFICATE_PENDING"}
+    ),
+    "libsingular_system_saturation": frozenset(
+        {"COMPLETED", "SOFT_RESOURCE_LIMIT", "UNIT_IDEAL_FOUND_CERTIFICATE_PENDING"}
+    ),
+    "native_saturation": frozenset(
+        {"COMPLETED", "SOFT_RESOURCE_LIMIT", "UNIT_IDEAL_FOUND_CERTIFICATE_PENDING"}
+    ),
+    "redundancy_audit": frozenset({"REDUNDANCY_AUDIT_COMPLETED", "SOFT_RESOURCE_LIMIT"}),
+}
+_DETERMINANTAL_CEGAR_METHOD: Final = "determinantal_cegar_v1"
+_DETERMINANTAL_INVENTORY_METHOD: Final = "determinantal_inventory_v1"
+_DETERMINANTAL_POLICY_SCHEMA: Final = "sr2v-determinantal-cegar-policy-v1"
+_DETERMINANTAL_SUBSET_IMPLICATION_RULE: Final = (
+    "SELECTED_ENTRY_UNIT_AND_ALL_EFFECTIVE_SELECTED_A_IN_RADICAL_OF_"
+    "SELECTED_MINOR_SUBIDEAL_IMPLIES_FULL_I1_AND_FULL_A_RADICAL_I2"
+)
+
+
+def _require_worker_result_fields(
+    result: Mapping[str, object], required: set[str], *, label: str
+) -> None:
+    missing = sorted(required - set(result))
+    if missing:
+        raise ValueError(f"{label} is missing required fields {missing}")
+
+
+def _validated_determinantal_policy(
+    request_payload: Mapping[str, object], *, expected_task_kind: str
+) -> Mapping[str, object]:
+    raw_policy = request_payload.get("determinantal_policy")
+    if not isinstance(raw_policy, Mapping):
+        raise ValueError("determinantal request has no policy object")
+    if raw_policy.get("schema_version") != _DETERMINANTAL_POLICY_SCHEMA:
+        raise ValueError("determinantal request has an unsupported policy schema")
+    task_kind = raw_policy.get("task_kind")
+    legacy_combined_policy = (
+        task_kind is None and expected_task_kind == "COMBINED_SUBSET_CERTIFICATE"
+    )
+    if task_kind != expected_task_kind and not legacy_combined_policy:
+        raise ValueError("determinantal request policy task disagrees with its method")
+    claimed = _require_sha256(
+        raw_policy.get("semantic_digest_sha256"), label="determinantal policy semantic digest"
+    )
+    semantic_payload = {
+        key: value for key, value in raw_policy.items() if key != "semantic_digest_sha256"
+    }
+    if not hmac.compare_digest(claimed, canonical_payload_sha256(semantic_payload)):
+        raise ValueError("determinantal request policy semantic digest mismatch")
+    return raw_policy
+
+
+def _validate_determinantal_inventory_result(
+    result: Mapping[str, object], policy: Mapping[str, object]
+) -> None:
+    required = {
+        "determinantal_inventory_schema",
+        "discarded_minors",
+        "effective_rows",
+        "generated_minor_terms",
+        "inventory_sha256",
+        "minor_candidates",
+        "policy_semantic_digest_sha256",
+        "raw_selected_row_count",
+        "row_unit_associate_relations",
+    }
+    _require_worker_result_fields(result, required, label="determinantal inventory result")
+    if result["determinantal_inventory_schema"] != "sr2v-determinantal-inventory-v1":
+        raise ValueError("determinantal inventory result has an unsupported schema")
+    policy_digest = _require_sha256(
+        result["policy_semantic_digest_sha256"], label="inventory policy digest"
+    )
+    if not hmac.compare_digest(policy_digest, str(policy["semantic_digest_sha256"])):
+        raise ValueError("determinantal inventory result disagrees with the request policy")
+    inventory_core = {
+        "discarded_minors": result["discarded_minors"],
+        "effective_rows": result["effective_rows"],
+        "generated_minor_terms": result["generated_minor_terms"],
+        "minor_candidates": result["minor_candidates"],
+        "policy_semantic_digest_sha256": policy_digest,
+        "raw_selected_row_count": result["raw_selected_row_count"],
+        "row_unit_associate_relations": result["row_unit_associate_relations"],
+    }
+    inventory_digest = _require_sha256(result["inventory_sha256"], label="inventory digest")
+    if not hmac.compare_digest(inventory_digest, canonical_payload_sha256(inventory_core)):
+        raise ValueError("determinantal inventory digest does not authenticate its payload")
+
+
+def _validate_determinantal_certificate_result(
+    result: Mapping[str, object],
+    policy: Mapping[str, object],
+    *,
+    modulus: int,
+) -> None:
+    required = {
+        "certificate_bytes",
+        "certificate_scope",
+        "certificate_sha256",
+        "certificate_term_accounting",
+        "determinantal_certificate_schema",
+        "determinantal_conditions_certified",
+        "direct_J_lift_verified",
+        "effective_rows",
+        "entry_condition",
+        "generated_minor_terms",
+        "minor_candidates",
+        "minor_prefix_trace",
+        "policy_semantic_digest_sha256",
+        "row_unit_associate_relations",
+        "subset_implication_verified",
+    }
+    _require_worker_result_fields(result, required, label="determinantal certificate result")
+    if result["determinantal_certificate_schema"] != "sr2v-determinantal-certificate-v1":
+        raise ValueError("determinantal certificate result has an unsupported schema")
+    conditions = result["determinantal_conditions_certified"]
+    direct_lift = result["direct_J_lift_verified"]
+    subset_implication = result["subset_implication_verified"]
+    if type(conditions) is not bool or type(direct_lift) is not bool:
+        raise TypeError("determinantal condition/lift fields must be boolean")
+    if type(subset_implication) is not bool or subset_implication is not conditions:
+        raise ValueError("determinantal subset implication disagrees with its conditions")
+    if direct_lift:
+        raise ValueError("this determinantal generation cannot claim a direct J lift")
+    status = result["status"]
+    expected_positive_status = (
+        "DETERMINANTAL_CONDITIONS_CERTIFIED_DIRECT_LIFT_PENDING"
+        if modulus == 0
+        else "DETERMINANTAL_GF_SCOUT_PASSED"
+    )
+    if conditions and status != expected_positive_status:
+        raise ValueError("determinantal positive status disagrees with coefficient scope")
+    if not conditions and status != "DETERMINANTAL_SUBSET_INCONCLUSIVE":
+        raise ValueError("determinantal inconclusive condition has a positive status")
+    expected_scope = "QQ_CANDIDATE" if modulus == 0 else "SCOUT_ONLY"
+    if result["certificate_scope"] != expected_scope:
+        raise ValueError("determinantal certificate scope disagrees with the request modulus")
+    expected_coefficient_scope = "QQ_EXACT_CANDIDATE" if modulus == 0 else "FINITE_FIELD_SCOUT_ONLY"
+    if policy.get("coefficient_scope") != expected_coefficient_scope:
+        raise ValueError(
+            "determinantal policy coefficient scope disagrees with the request modulus"
+        )
+    policy_digest = _require_sha256(
+        result["policy_semantic_digest_sha256"], label="certificate policy digest"
+    )
+    if not hmac.compare_digest(policy_digest, str(policy["semantic_digest_sha256"])):
+        raise ValueError("determinantal certificate disagrees with the request policy")
+    certificate_core = {
+        "certificate_requirement": policy.get("certificate_requirement"),
+        "coefficient_scope": policy.get("coefficient_scope"),
+        "conditions_certified_over_selected_field": conditions,
+        "direct_J_lift_verified": False,
+        "effective_rows": result["effective_rows"],
+        "entry_condition": result["entry_condition"],
+        "minor_candidates": result["minor_candidates"],
+        "minor_prefix_trace": result["minor_prefix_trace"],
+        "policy_semantic_digest_sha256": policy_digest,
+        "row_unit_associate_relations": result["row_unit_associate_relations"],
+        "subset_implication_rule": _DETERMINANTAL_SUBSET_IMPLICATION_RULE,
+    }
+    certificate_bytes = _strict_nonnegative_int(
+        result["certificate_bytes"], label="determinantal certificate bytes"
+    )
+    if certificate_bytes != len(canonical_json_bytes(certificate_core)):
+        raise ValueError("determinantal certificate byte count disagrees with its payload")
+    certificate_digest = _require_sha256(
+        result["certificate_sha256"], label="determinantal certificate digest"
+    )
+    if not hmac.compare_digest(certificate_digest, canonical_payload_sha256(certificate_core)):
+        raise ValueError("determinantal certificate digest does not authenticate its payload")
+    effective_rows = result["effective_rows"]
+    if not isinstance(effective_rows, list):
+        raise TypeError("determinantal effective_rows must be a list")
+    expected_terms = _strict_nonnegative_int(
+        result["generated_minor_terms"], label="generated minor terms"
+    )
+    for position, row in enumerate(effective_rows):
+        if not isinstance(row, Mapping):
+            raise TypeError(f"determinantal effective row {position} must be an object")
+        expected_terms += _strict_nonnegative_int(
+            row.get("A_term_count"), label=f"effective row {position} A term count"
+        )
+        expected_terms += _strict_nonnegative_int(
+            row.get("B_term_count"), label=f"effective row {position} B term count"
+        )
+    term_accounting = _strict_nonnegative_int(
+        result["certificate_term_accounting"], label="certificate term accounting"
+    )
+    if term_accounting != expected_terms:
+        raise ValueError("determinantal certificate term accounting mismatch")
+
+
+def _validate_authenticated_worker_result_contract(
+    result: Mapping[str, object], request_payload: Mapping[str, object]
+) -> None:
+    method = request_payload.get("method")
+    if not isinstance(method, str) or method not in _AUXILIARY_WORKER_STATUS_CONTRACT:
+        raise ValueError("verified request has an unsupported worker method")
+    if result.get("method") != method:
+        raise ValueError("authenticated worker method disagrees with the verified request")
+    modulus = request_payload.get("modulus")
+    if type(modulus) is not int or modulus < 0:
+        raise ValueError("verified request modulus must be a non-negative integer")
+    expected_field = "QQ" if modulus == 0 else f"GF({modulus})"
+    if result.get("coefficient_field") != expected_field:
+        raise ValueError("authenticated worker coefficient field disagrees with the request")
+    status = result.get("status")
+    if not isinstance(status, str) or status not in _AUXILIARY_WORKER_STATUS_CONTRACT[method]:
+        raise ValueError("authenticated worker status is not allowed for the request method")
+    if method == _DETERMINANTAL_CEGAR_METHOD and status in {
+        "DETERMINANTAL_CONDITIONS_CERTIFIED_DIRECT_LIFT_PENDING",
+        "DETERMINANTAL_GF_SCOUT_PASSED",
+    }:
+        expected_positive_status = (
+            "DETERMINANTAL_CONDITIONS_CERTIFIED_DIRECT_LIFT_PENDING"
+            if modulus == 0
+            else "DETERMINANTAL_GF_SCOUT_PASSED"
+        )
+        if status != expected_positive_status:
+            raise ValueError("authenticated determinantal status disagrees with coefficient scope")
+    if status == "SOFT_RESOURCE_LIMIT":
+        if result.get("direct_J_lift_verified") not in {None, False}:
+            raise ValueError("a resource-limited result cannot claim a direct J lift")
+        return
+    if method == _DETERMINANTAL_INVENTORY_METHOD:
+        policy = _validated_determinantal_policy(
+            request_payload, expected_task_kind="INVENTORY_ONLY"
+        )
+        _validate_determinantal_inventory_result(result, policy)
+    elif method == _DETERMINANTAL_CEGAR_METHOD:
+        policy = _validated_determinantal_policy(
+            request_payload, expected_task_kind="COMBINED_SUBSET_CERTIFICATE"
+        )
+        _validate_determinantal_certificate_result(result, policy, modulus=modulus)
 
 
 def _validate_production_attempt_bindings(
@@ -812,11 +1154,16 @@ def _validate_production_attempt_bindings(
             identity["recipe_payload_digest_sha256"], label="identity recipe payload digest"
         )
         request_path = attempt_path / "request.json"
+        verified_request_payload: Mapping[str, object] | None = None
         if request_path.is_file():
             request = verify_recipe_envelope(read_json_object(request_path))
             request_content_matches = hmac.compare_digest(
                 request_digest, request.payload_digest_sha256
             )
+            raw_request_method = request.payload.get("method")
+            if not isinstance(raw_request_method, str) or not raw_request_method:
+                raise ValueError("verified request method must be a non-empty string")
+            verified_request_payload = request.payload
         else:
             request_content_matches = prelaunch_artifact_failure
         if (
@@ -879,8 +1226,11 @@ def _validate_production_attempt_bindings(
         event_log_valid = details.get("event_log_valid", True)
         if type(event_log_valid) is not bool:
             raise TypeError("event_log_valid must be boolean when present")
+        event_payloads: tuple[JsonObject, ...] = ()
         if event_log_valid:
-            event_summary = verify_hash_chain_jsonl(attempt_path / "events.jsonl")
+            event_summary, event_payloads = _verify_and_replay_hash_chain_jsonl(
+                attempt_path / "events.jsonl"
+            )
             event_head = _require_sha256(
                 details["event_log_head_sha256"], label="result event-log head"
             )
@@ -890,7 +1240,9 @@ def _validate_production_attempt_bindings(
             if event_summary != HashChainSummary(event_count, event_head):
                 raise ValueError("event log head/count disagree with result details")
             if details.get("event_log_valid") is True:
-                terminal_event = _last_hash_chain_payload(attempt_path / "events.jsonl")
+                if not event_payloads:
+                    raise ValueError("event log is empty")
+                terminal_event = event_payloads[-1]
                 if terminal_event.get("event") != "CONTAINER_ATTEMPT_FINISHED":
                     raise ValueError("event log has no authenticated terminal attempt event")
                 if "failure_phase" in details:
@@ -967,6 +1319,13 @@ def _validate_production_attempt_bindings(
         process_returncode = details["process_returncode"]
         if process_returncode is not None and type(process_returncode) is not int:
             raise TypeError("process_returncode must be an integer or null")
+        if enhanced_runtime_binding and event_log_valid:
+            _validate_authenticated_worker_protocol_replay(
+                event_payloads,
+                request_payload=verified_request_payload,
+                request_payload_sha256=request_digest,
+                worker_result=worker_result,
+            )
         if worker_result is not None:
             if not isinstance(worker_result, Mapping):
                 raise TypeError("worker_result must be an object or null")

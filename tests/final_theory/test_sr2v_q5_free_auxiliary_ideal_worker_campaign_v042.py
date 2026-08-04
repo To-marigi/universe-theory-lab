@@ -32,6 +32,7 @@ def _request() -> dict[str, Any]:
         "chart": "U2",
         "chart_factor_polynomial_id": 4,
         "chart_factor_sha256": "a" * 64,
+        "determinantal_policy": None,
         "expected_root_semantic_digest_sha256": "b" * 64,
         "expected_worker_source_sha256": "c" * 64,
         "factor_group_order": ["chart", "bottom", "torus"],
@@ -99,6 +100,117 @@ def test_redundancy_audit_uses_the_nonincremental_full_stage_contract() -> None:
     request = _request()
     request["method"] = "redundancy_audit"
     worker.validate_request(request)
+
+
+def _determinantal_policy(request: dict[str, Any]) -> dict[str, Any]:
+    policy: dict[str, Any] = {
+        "schema_version": worker.DETERMINANTAL_POLICY_SCHEMA,
+        "certificate_requirement": "EXACT_EXPONENT_MEMBERSHIP_DIRECT_LIFT_PENDING",
+        "coefficient_scope": "FINITE_FIELD_SCOUT_ONLY",
+        "max_certificate_bytes": 8 * 1024**2,
+        "max_certificate_terms": 100_000,
+        "max_generated_minor_terms": 1_000_000,
+        "max_minor_count": 64,
+        "max_rounds": 8,
+        "minor_pair_policy": "CHEAPEST_PIVOT_STAR_THEN_COST_PREFIXES_1_2_4",
+        "radical_target_policy": "ALL_EFFECTIVE_SELECTED_A_COMPONENTS",
+        "row_universe_sha256": "f" * 64,
+        "selected_entry_indices_sha256": worker.canonical_sha256(request["selected_entry_indices"]),
+        "task_kind": (
+            "INVENTORY_ONLY"
+            if request["method"] == worker.DETERMINANTAL_INVENTORY_METHOD
+            else "COMBINED_SUBSET_CERTIFICATE"
+        ),
+        "verification_mode": "LIBSINGULAR_SAT_WITH_EXP_AND_CONTAINMENT",
+    }
+    policy["semantic_digest_sha256"] = worker.semantic_digest(policy)
+    return policy
+
+
+def test_determinantal_request_requires_a_versioned_self_bound_policy() -> None:
+    request = _request()
+    request["method"] = worker.DETERMINANTAL_METHOD
+    request["determinantal_policy"] = _determinantal_policy(request)
+    worker.validate_request(request)
+
+    tampered = dict(request)
+    tampered_policy = dict(request["determinantal_policy"])
+    tampered_policy["max_minor_count"] = 65
+    tampered["determinantal_policy"] = tampered_policy
+    with pytest.raises(worker.WorkerInputError, match="semantic digest"):
+        worker.validate_request(tampered)
+
+    missing = dict(request)
+    missing["determinantal_policy"] = None
+    with pytest.raises(worker.WorkerInputError, match="policy object"):
+        worker.validate_request(missing)
+
+
+def test_non_determinantal_request_rejects_a_smuggled_policy() -> None:
+    request = _request()
+    request["determinantal_policy"] = _determinantal_policy(request)
+    with pytest.raises(worker.WorkerInputError, match="null determinantal policy"):
+        worker.validate_request(request)
+
+
+def test_determinantal_inventory_is_a_distinct_bound_method() -> None:
+    request = _request()
+    request["method"] = worker.DETERMINANTAL_INVENTORY_METHOD
+    request["determinantal_policy"] = _determinantal_policy(request)
+    worker.validate_request(request)
+
+    request["method"] = worker.DETERMINANTAL_METHOD
+    with pytest.raises(worker.WorkerInputError, match="task kind"):
+        worker.validate_request(request)
+
+
+@pytest.mark.parametrize(
+    ("status", "expected_exit"),
+    [
+        ("DETERMINANTAL_INVENTORY_COMPLETED", 0),
+        ("DETERMINANTAL_CONDITIONS_CERTIFIED_DIRECT_LIFT_PENDING", 2),
+        ("DETERMINANTAL_GF_SCOUT_PASSED", 2),
+        ("DETERMINANTAL_SUBSET_INCONCLUSIVE", 2),
+    ],
+)
+def test_worker_exit_code_matches_determinantal_status_classification(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    status: str,
+    expected_exit: int,
+) -> None:
+    request = _request()
+    monkeypatch.setattr(worker, "load_verified_request", lambda _path: request)
+    monkeypatch.setattr(worker, "_run_sage", lambda _root, _request, _emitter: {"status": status})
+
+    assert worker.run(tmp_path / "request.json", tmp_path) == expected_exit
+
+
+def test_determinantal_prefix_and_pivot_star_schedule_are_fixed() -> None:
+    assert worker.determinantal_prefix_sizes(0) == []
+    assert worker.determinantal_prefix_sizes(6) == [1, 2, 4, 6]
+    schedule = worker.determinantal_pair_schedule([(36, 34), (42, 40), (48, 46), (93, 49)])
+    assert [
+        (record["left_index"], record["right_index"], record["cost_upper_bound"])
+        for record in schedule
+    ] == [
+        (0, 1, 2868),
+        (0, 2, 3288),
+        (0, 3, 4926),
+        (1, 2, 3852),
+        (1, 3, 5778),
+        (2, 3, 6630),
+    ]
+
+
+def test_determinantal_resource_caps_do_not_relax_after_stage_seven() -> None:
+    assert campaign.determinantal_resource_caps(1) == (10_000, 10_000)
+    assert campaign.determinantal_resource_caps(4) == (50_000, 20_000)
+    assert campaign.determinantal_resource_caps(7) == (100_000, 40_000)
+    assert campaign.determinantal_resource_caps(8) == (100_000, 40_000)
+    assert campaign.determinantal_resource_caps(543) == (100_000, 40_000)
+    with pytest.raises(ValueError, match="positive integer"):
+        campaign.determinantal_resource_caps(0)
 
 
 @pytest.mark.parametrize("method", ["libsingular_ab_saturation", "libsingular_system_saturation"])
@@ -231,6 +343,15 @@ def test_legacy_process_audit_recognises_the_module_worker_command() -> None:
     )
     assert not campaign._is_legacy_worker_process_line(  # noqa: SLF001
         "1 0 sage-jupyter --no-browser"
+    )
+
+
+def test_legacy_process_audit_recognises_a_standalone_singular_child() -> None:
+    assert campaign._is_legacy_worker_process_line(  # noqa: SLF001
+        "42 7 6815744 660 Singular /usr/local/bin/Singular -q"
+    )
+    assert not campaign._is_legacy_worker_process_line(  # noqa: SLF001
+        "43 1 1024 5 python3 worker.py --note Singular"
     )
 
 

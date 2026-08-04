@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Mapping, Sequence
 from pathlib import Path
 from typing import Any
 
@@ -38,26 +39,75 @@ def _fingerprint(
     )
 
 
-def _production_attempt(tmp_path: Path) -> sup.AttemptDirectory:
-    recipe = {"chart": "U2", "method": "build_only", "modulus": 32003}
+def _request_verified_message(request_digest: str) -> dict[str, object]:
+    return {
+        "event": "REQUEST_VERIFIED",
+        "message_type": "progress",
+        "request_payload_sha256": request_digest,
+        "schema_version": "sr2v-q5-free-worker-message-v1",
+    }
+
+
+def _write_production_event_log(
+    attempt: sup.AttemptDirectory,
+    *,
+    worker_messages: Sequence[Mapping[str, object]],
+    status: str = "BUILD_COMPLETED",
+    process_returncode: int = 0,
+) -> sup.HashChainSummary:
+    if attempt.events_path.exists():
+        attempt.events_path.unlink()
+    with sup.HashChainJsonlWriter(attempt.events_path) as events:
+        events.append({"event": "CONTAINER_LAUNCH_REQUESTED"})
+        for message in worker_messages:
+            events.append({"event": "WORKER_MESSAGE", "message": message})
+        events.append(
+            {
+                "cleanup_verified": True,
+                "container_contract_verified": True,
+                "event": "CONTAINER_ATTEMPT_FINISHED",
+                "host_process_termination_verified": True,
+                "postflight_audit_verified": True,
+                "process_returncode": process_returncode,
+                "status": status,
+            }
+        )
+        return events.summary
+
+
+def _production_attempt(
+    tmp_path: Path,
+    *,
+    method: str = "build_only",
+    modulus: int = 32003,
+    recipe_updates: Mapping[str, object] | None = None,
+    status: str = "BUILD_COMPLETED",
+    strict_protocol_replay: bool = True,
+    worker_result_updates: Mapping[str, object] | None = None,
+) -> sup.AttemptDirectory:
+    recipe: dict[str, object] = {"chart": "U2", "method": method, "modulus": modulus}
+    if recipe_updates is not None:
+        recipe.update(recipe_updates)
     envelope = sup.create_recipe_envelope(recipe)
     recipe_digest = str(envelope["payload_digest_sha256"])
     worker_text = "# frozen worker\n"
     worker_digest = hashlib.sha256(worker_text.encode("utf-8")).hexdigest()
     worker_path = "src/universe_lab/final_theory/sr2v_q5_free_auxiliary_ideal_worker_v042.py"
+    execution_policy: dict[str, object] = {
+        "single_worker": True,
+        "source_bindings": {worker_path: worker_digest},
+    }
+    if strict_protocol_replay:
+        execution_policy["runtime_binding_schema"] = "sr2v-runtime-binding-v1"
     fingerprint = sup.create_attempt_fingerprint(
         chart="U2",
-        coefficient_modulus=32003,
+        coefficient_modulus=modulus,
         recipe_payload_digest_sha256=recipe_digest,
         budget_payload_digest_sha256=sup.validate_budget(_budget_payload()).payload_sha256,
         worker_source_sha256=worker_digest,
         container_image_digest="sha256:" + "3" * 64,
         monomial_order="degrevlex",
-        execution_policy={
-            "runtime_binding_schema": "sr2v-runtime-binding-v1",
-            "single_worker": True,
-            "source_bindings": {worker_path: worker_digest},
-        },
+        execution_policy=execution_policy,
     )
     attempt = sup.create_attempt_directory(tmp_path, fingerprint, attempt_id="production")
     sup.atomic_write_json(attempt.path / "request.json", envelope)
@@ -70,28 +120,28 @@ def _production_attempt(tmp_path: Path) -> sup.AttemptDirectory:
             "schema_version": "sr2v-solver-source-snapshot-v1",
         },
     )
-    with sup.HashChainJsonlWriter(attempt.events_path) as events:
-        events.append(
-            {
-                "cleanup_verified": True,
-                "container_contract_verified": True,
-                "event": "CONTAINER_ATTEMPT_FINISHED",
-                "host_process_termination_verified": True,
-                "postflight_audit_verified": True,
-                "process_returncode": 0,
-                "status": "BUILD_COMPLETED",
-            }
-        )
-        event_summary = events.summary
-    worker_result = {
+    worker_result: dict[str, object] = {
+        "coefficient_field": "QQ" if modulus == 0 else f"GF({modulus})",
         "event": "WORKER_FINISHED",
         "message_type": "result",
+        "method": method,
         "schema_version": "sr2v-q5-free-worker-message-v1",
-        "status": "BUILD_COMPLETED",
+        "status": status,
     }
+    if worker_result_updates is not None:
+        worker_result.update(worker_result_updates)
+    worker_messages: list[Mapping[str, object]] = []
+    if strict_protocol_replay:
+        worker_messages = [_request_verified_message(recipe_digest), worker_result]
+    event_summary = _write_production_event_log(
+        attempt,
+        worker_messages=worker_messages,
+        process_returncode=sup.exit_code_for_status(status),
+        status=status,
+    )
     sup.record_attempt_result(
         attempt,
-        status="BUILD_COMPLETED",
+        status=status,
         wall_time_seconds=1,
         details={
             "cleanup_verified": True,
@@ -104,16 +154,90 @@ def _production_attempt(tmp_path: Path) -> sup.AttemptDirectory:
             "postflight_audit_verified": True,
             "postflight_legacy_processes": [],
             "postflight_stale_containers": [],
-            "process_returncode": 0,
+            "process_returncode": sup.exit_code_for_status(status),
             "request_payload_sha256": recipe_digest,
-            "terminal_attempt_status": "BUILD_COMPLETED",
+            "terminal_attempt_status": status,
             "terminal_cleanup_verified": True,
-            "terminal_process_returncode": 0,
+            "terminal_process_returncode": sup.exit_code_for_status(status),
             "worker_result": worker_result,
             "worker_source_sha256": worker_digest,
         },
     )
     return attempt
+
+
+def _determinantal_policy(*, task_kind: str, modulus: int = 32003) -> dict[str, object]:
+    policy: dict[str, object] = {
+        "certificate_requirement": "EXACT_EXPONENT_MEMBERSHIP_DIRECT_LIFT_PENDING",
+        "coefficient_scope": ("QQ_EXACT_CANDIDATE" if modulus == 0 else "FINITE_FIELD_SCOUT_ONLY"),
+        "schema_version": "sr2v-determinantal-cegar-policy-v1",
+        "task_kind": task_kind,
+    }
+    policy["semantic_digest_sha256"] = sup.canonical_payload_sha256(policy)
+    return policy
+
+
+def _determinantal_certificate_result_fields(
+    policy: Mapping[str, object], *, direct_lift: bool = False
+) -> dict[str, Any]:
+    effective_rows = [{"A_term_count": 1, "B_term_count": 1}]
+    certificate_core: dict[str, object] = {
+        "certificate_requirement": policy["certificate_requirement"],
+        "coefficient_scope": policy["coefficient_scope"],
+        "conditions_certified_over_selected_field": False,
+        "direct_J_lift_verified": direct_lift,
+        "effective_rows": effective_rows,
+        "entry_condition": {},
+        "minor_candidates": [],
+        "minor_prefix_trace": [],
+        "policy_semantic_digest_sha256": policy["semantic_digest_sha256"],
+        "row_unit_associate_relations": [],
+        "subset_implication_rule": (
+            "SELECTED_ENTRY_UNIT_AND_ALL_EFFECTIVE_SELECTED_A_IN_RADICAL_OF_"
+            "SELECTED_MINOR_SUBIDEAL_IMPLIES_FULL_I1_AND_FULL_A_RADICAL_I2"
+        ),
+    }
+    return {
+        "certificate_bytes": len(sup.canonical_json_bytes(certificate_core)),
+        "certificate_scope": "SCOUT_ONLY",
+        "certificate_sha256": sup.canonical_payload_sha256(certificate_core),
+        "certificate_term_accounting": 2,
+        "determinantal_certificate_schema": "sr2v-determinantal-certificate-v1",
+        "determinantal_conditions_certified": False,
+        "direct_J_lift_verified": direct_lift,
+        "effective_rows": effective_rows,
+        "entry_condition": {},
+        "generated_minor_terms": 0,
+        "minor_candidates": [],
+        "minor_prefix_trace": [],
+        "policy_semantic_digest_sha256": policy["semantic_digest_sha256"],
+        "row_unit_associate_relations": [],
+        "subset_implication_verified": False,
+    }
+
+
+def _rewrite_authenticated_worker_result(
+    attempt: sup.AttemptDirectory, result: sup.JsonObject
+) -> None:
+    details = result["details"]
+    assert isinstance(details, dict)
+    worker_result = details["worker_result"]
+    request_digest = details["request_payload_sha256"]
+    status = result["status"]
+    process_returncode = details["process_returncode"]
+    assert isinstance(worker_result, Mapping)
+    assert isinstance(request_digest, str)
+    assert isinstance(status, str)
+    assert isinstance(process_returncode, int)
+    event_summary = _write_production_event_log(
+        attempt,
+        worker_messages=[_request_verified_message(request_digest), worker_result],
+        process_returncode=process_returncode,
+        status=status,
+    )
+    details["event_log_head_sha256"] = event_summary.head_sha256
+    details["event_log_record_count"] = event_summary.record_count
+    sup.atomic_write_json(attempt.result_path, result, overwrite=True)
 
 
 def test_strict_budget_accepts_the_exact_integer_contract() -> None:
@@ -349,7 +473,15 @@ def test_hash_chain_rejects_tampering_truncation_and_crlf(tmp_path: Path) -> Non
     [
         ("COMPLETED", sup.StatusClassification.SUCCESS, 0),
         ("BUILD_COMPLETED", sup.StatusClassification.SUCCESS, 0),
+        ("DETERMINANTAL_INVENTORY_COMPLETED", sup.StatusClassification.SUCCESS, 0),
         ("REDUNDANCY_AUDIT_COMPLETED", sup.StatusClassification.SUCCESS, 0),
+        ("DETERMINANTAL_GF_SCOUT_PASSED", sup.StatusClassification.NONTERMINAL, 2),
+        (
+            "DETERMINANTAL_CONDITIONS_CERTIFIED_DIRECT_LIFT_PENDING",
+            sup.StatusClassification.NONTERMINAL,
+            2,
+        ),
+        ("DETERMINANTAL_SUBSET_INCONCLUSIVE", sup.StatusClassification.NONTERMINAL, 2),
         ("TIMEOUT", sup.StatusClassification.NONTERMINAL, 2),
         ("UNIT_IDEAL_FOUND_CERTIFICATE_PENDING", sup.StatusClassification.NONTERMINAL, 2),
         ("WEAK_D2_OPEN_RESOURCE_LIMIT", sup.StatusClassification.NONTERMINAL, 2),
@@ -549,6 +681,218 @@ def test_production_history_revalidates_all_bound_artifacts(tmp_path: Path) -> N
     assert history.status_counts == (("BUILD_COMPLETED", 1),)
 
 
+def test_legacy_production_history_keeps_the_pre_replay_generation_boundary(
+    tmp_path: Path,
+) -> None:
+    _production_attempt(tmp_path, strict_protocol_replay=False)
+
+    history = sup.load_attempt_history(tmp_path)
+
+    assert history.completed_attempt_count == 1
+    assert history.status_counts == (("BUILD_COMPLETED", 1),)
+
+
+@pytest.mark.parametrize(
+    ("field", "forged_value"),
+    [
+        ("method", "determinantal_cegar_v1"),
+        (
+            "certificate",
+            {
+                "certificate_schema": "sr2v-determinantal-certificate-v1",
+                "verified": True,
+            },
+        ),
+    ],
+)
+def test_strict_history_rejects_worker_result_fields_absent_from_authenticated_event(
+    tmp_path: Path, field: str, forged_value: sup.JsonValue
+) -> None:
+    attempt = _production_attempt(tmp_path)
+    result = sup.read_json_object(attempt.result_path)
+    details = result["details"]
+    assert isinstance(details, dict)
+    worker_result = details["worker_result"]
+    assert isinstance(worker_result, dict)
+    worker_result[field] = forged_value
+    sup.atomic_write_json(attempt.result_path, result, overwrite=True)
+
+    with pytest.raises(sup.AttemptHistoryError, match="authenticated worker result"):
+        sup.load_attempt_history(tmp_path)
+
+
+def test_strict_history_binds_authenticated_worker_method_to_request(tmp_path: Path) -> None:
+    attempt = _production_attempt(tmp_path)
+    result = sup.read_json_object(attempt.result_path)
+    details = result["details"]
+    assert isinstance(details, dict)
+    worker_result = details["worker_result"]
+    request_digest = details["request_payload_sha256"]
+    assert isinstance(worker_result, dict)
+    assert isinstance(request_digest, str)
+    worker_result["method"] = "determinantal_cegar_v1"
+    event_summary = _write_production_event_log(
+        attempt,
+        worker_messages=[_request_verified_message(request_digest), worker_result],
+    )
+    details["event_log_head_sha256"] = event_summary.head_sha256
+    details["event_log_record_count"] = event_summary.record_count
+    sup.atomic_write_json(attempt.result_path, result, overwrite=True)
+
+    with pytest.raises(sup.AttemptHistoryError, match="method disagrees"):
+        sup.load_attempt_history(tmp_path)
+
+
+@pytest.mark.parametrize(
+    ("method", "status"),
+    [
+        ("determinantal_cegar_v1", "COMPLETED"),
+        ("determinantal_inventory_v1", "COMPLETED"),
+        ("build_only", "DETERMINANTAL_INVENTORY_COMPLETED"),
+    ],
+)
+def test_strict_history_rejects_rehashed_status_from_another_method_contract(
+    tmp_path: Path, method: str, status: str
+) -> None:
+    _production_attempt(tmp_path, method=method, status=status)
+
+    with pytest.raises(sup.AttemptHistoryError, match="status is not allowed"):
+        sup.load_attempt_history(tmp_path)
+
+
+@pytest.mark.parametrize(
+    ("modulus", "status"),
+    [
+        (32003, "DETERMINANTAL_CONDITIONS_CERTIFIED_DIRECT_LIFT_PENDING"),
+        (0, "DETERMINANTAL_GF_SCOUT_PASSED"),
+    ],
+)
+def test_strict_history_rejects_rehashed_determinantal_coefficient_scope(
+    tmp_path: Path, modulus: int, status: str
+) -> None:
+    _production_attempt(
+        tmp_path,
+        method="determinantal_cegar_v1",
+        modulus=modulus,
+        status=status,
+    )
+
+    with pytest.raises(sup.AttemptHistoryError, match="coefficient scope"):
+        sup.load_attempt_history(tmp_path)
+
+
+def test_strict_history_rejects_rehashed_direct_lift_claim_from_scout_generation(
+    tmp_path: Path,
+) -> None:
+    policy = _determinantal_policy(task_kind="COMBINED_SUBSET_CERTIFICATE")
+    attempt = _production_attempt(
+        tmp_path,
+        method="determinantal_cegar_v1",
+        recipe_updates={"determinantal_policy": policy},
+        status="DETERMINANTAL_SUBSET_INCONCLUSIVE",
+        worker_result_updates=_determinantal_certificate_result_fields(policy),
+    )
+    assert sup.load_attempt_history(tmp_path).completed_attempt_count == 1
+    result = sup.read_json_object(attempt.result_path)
+    details = result["details"]
+    assert isinstance(details, dict)
+    worker_result = details["worker_result"]
+    assert isinstance(worker_result, dict)
+    worker_result.update(_determinantal_certificate_result_fields(policy, direct_lift=True))
+    _rewrite_authenticated_worker_result(attempt, result)
+
+    with pytest.raises(sup.AttemptHistoryError, match="cannot claim a direct J lift"):
+        sup.load_attempt_history(tmp_path)
+
+
+def test_strict_history_rejects_rehashed_inventory_payload_without_matching_digest(
+    tmp_path: Path,
+) -> None:
+    policy = _determinantal_policy(task_kind="INVENTORY_ONLY")
+    inventory_core: dict[str, object] = {
+        "discarded_minors": [],
+        "effective_rows": [],
+        "generated_minor_terms": 0,
+        "minor_candidates": [],
+        "policy_semantic_digest_sha256": policy["semantic_digest_sha256"],
+        "raw_selected_row_count": 0,
+        "row_unit_associate_relations": [],
+    }
+    inventory_fields: dict[str, Any] = {
+        **inventory_core,
+        "determinantal_inventory_schema": "sr2v-determinantal-inventory-v1",
+        "inventory_sha256": sup.canonical_payload_sha256(inventory_core),
+    }
+    attempt = _production_attempt(
+        tmp_path,
+        method="determinantal_inventory_v1",
+        recipe_updates={"determinantal_policy": policy},
+        status="DETERMINANTAL_INVENTORY_COMPLETED",
+        worker_result_updates=inventory_fields,
+    )
+    assert sup.load_attempt_history(tmp_path).completed_attempt_count == 1
+    result = sup.read_json_object(attempt.result_path)
+    details = result["details"]
+    assert isinstance(details, dict)
+    worker_result = details["worker_result"]
+    assert isinstance(worker_result, dict)
+    worker_result["generated_minor_terms"] = 1
+    _rewrite_authenticated_worker_result(attempt, result)
+
+    with pytest.raises(sup.AttemptHistoryError, match="inventory digest"):
+        sup.load_attempt_history(tmp_path)
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_error"),
+    [
+        ("duplicate_result", "exactly one"),
+        ("result_not_last", "last worker protocol message"),
+        ("wrong_request_digest", "request digest disagrees"),
+        ("request_not_first", "REQUEST_VERIFIED"),
+        ("duplicate_request_verified", "REQUEST_VERIFIED"),
+    ],
+)
+def test_strict_history_replays_authenticated_worker_protocol_fail_closed(
+    tmp_path: Path, mutation: str, expected_error: str
+) -> None:
+    attempt = _production_attempt(tmp_path)
+    result = sup.read_json_object(attempt.result_path)
+    details = result["details"]
+    assert isinstance(details, dict)
+    worker_result = details["worker_result"]
+    request_digest = details["request_payload_sha256"]
+    assert isinstance(worker_result, Mapping)
+    assert isinstance(request_digest, str)
+    request_verified = _request_verified_message(request_digest)
+    late_progress: dict[str, object] = {
+        "event": "LATE_PROGRESS",
+        "message_type": "progress",
+        "schema_version": "sr2v-q5-free-worker-message-v1",
+    }
+    worker_messages: list[Mapping[str, object]]
+    if mutation == "duplicate_result":
+        worker_messages = [request_verified, worker_result, worker_result]
+    elif mutation == "result_not_last":
+        worker_messages = [request_verified, worker_result, late_progress]
+    elif mutation == "wrong_request_digest":
+        worker_messages = [_request_verified_message("f" * 64), worker_result]
+    elif mutation == "request_not_first":
+        worker_messages = [late_progress, request_verified, worker_result]
+    else:
+        worker_messages = [request_verified, request_verified, worker_result]
+    event_summary = _write_production_event_log(
+        attempt,
+        worker_messages=worker_messages,
+    )
+    details["event_log_head_sha256"] = event_summary.head_sha256
+    details["event_log_record_count"] = event_summary.record_count
+    sup.atomic_write_json(attempt.result_path, result, overwrite=True)
+
+    with pytest.raises(sup.AttemptHistoryError, match=expected_error):
+        sup.load_attempt_history(tmp_path)
+
+
 @pytest.mark.parametrize(
     "mutation",
     [
@@ -577,6 +921,7 @@ def test_production_history_cannot_be_downgraded_or_tampered(tmp_path: Path, mut
         else:
             for key in (
                 "container_contract_verified",
+                "event_log_valid",
                 "host_process_termination_verified",
                 "postflight_audit_verified",
                 "postflight_legacy_processes",
@@ -698,20 +1043,16 @@ def test_supervisor_status_override_preserves_authenticated_worker_payload(
     details["process_returncode"] = process_returncode
     details["terminal_attempt_status"] = status
     details["terminal_process_returncode"] = process_returncode
-    attempt.events_path.unlink()
-    with sup.HashChainJsonlWriter(attempt.events_path) as events:
-        events.append(
-            {
-                "cleanup_verified": True,
-                "container_contract_verified": True,
-                "event": "CONTAINER_ATTEMPT_FINISHED",
-                "host_process_termination_verified": True,
-                "postflight_audit_verified": True,
-                "process_returncode": process_returncode,
-                "status": status,
-            }
-        )
-        event_summary = events.summary
+    worker_result = details["worker_result"]
+    request_digest = details["request_payload_sha256"]
+    assert isinstance(worker_result, Mapping)
+    assert isinstance(request_digest, str)
+    event_summary = _write_production_event_log(
+        attempt,
+        worker_messages=[_request_verified_message(request_digest), worker_result],
+        status=status,
+        process_returncode=process_returncode,
+    )
     details["event_log_head_sha256"] = event_summary.head_sha256
     details["event_log_record_count"] = event_summary.record_count
     sup.atomic_write_json(attempt.result_path, result, overwrite=True)
@@ -739,20 +1080,16 @@ def test_outer_finalizer_failure_preserves_authenticated_timeout_gate(tmp_path: 
             "terminal_process_returncode": 143,
         }
     )
-    attempt.events_path.unlink()
-    with sup.HashChainJsonlWriter(attempt.events_path) as events:
-        events.append(
-            {
-                "cleanup_verified": True,
-                "container_contract_verified": True,
-                "event": "CONTAINER_ATTEMPT_FINISHED",
-                "host_process_termination_verified": True,
-                "postflight_audit_verified": True,
-                "process_returncode": 143,
-                "status": "TIMEOUT",
-            }
-        )
-        event_summary = events.summary
+    worker_result = details["worker_result"]
+    request_digest = details["request_payload_sha256"]
+    assert isinstance(worker_result, Mapping)
+    assert isinstance(request_digest, str)
+    event_summary = _write_production_event_log(
+        attempt,
+        worker_messages=[_request_verified_message(request_digest), worker_result],
+        status="TIMEOUT",
+        process_returncode=143,
+    )
     details["event_log_head_sha256"] = event_summary.head_sha256
     details["event_log_record_count"] = event_summary.record_count
     sup.atomic_write_json(attempt.result_path, result, overwrite=True)
