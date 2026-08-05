@@ -1,0 +1,103 @@
+{
+  "schema_version": "final-theory-v042-paper1-claim-boundary-v1",
+  "as_of": "2026-08-05",
+  "paper": "Paper I",
+  "working_title": "Statewise versus operator Bell causality in finite quantum sequential growth: exact separation and recovery at dimension two",
+  "status": "SCOPED_MANUSCRIPT_ASSEMBLY_READY",
+  "submission_review": "PENDING",
+  "scope": {
+    "field": "QQ certificates with characteristic-zero interpretation",
+    "dimension": 2,
+    "finite_source_stages": "n<=4",
+    "occurrence_identification": "ON is certified for the declared artifacts; OFF is retained as a separate bounded domain where the SR2 witness reports it",
+    "transition_domain": "all declared source transitions nonsingular",
+    "paper_center": "statewise versus operator observability, exact separation, and minimal recovery"
+  },
+  "claims": [
+    {
+      "id": "C1_SR1_STRONG_STRONG_BASELINE",
+      "status": "CERTIFIED_PUBLIC_BASELINE",
+      "statement": "The frozen v0.3.7/v0.3.9 literal strong-GC/strong-MSR finite d=2 n<=4 ON baseline forces Q1,...,Q4 commutativity on its recorded denominator-open and 21 QQ charts plus S3 certificate; Q5 is not used.",
+      "allowed_wording": "Use as the strong/strong comparison theorem; do not claim broad priority, self-adjoint priority, or complete d=2 classification.",
+      "evidence": [
+        {"path": "results/v0.3.7_release_manifest.json", "raw_sha256": "c044277acf756ca79d471c20d4963c1b7721db8986b516134b5b8e499e9de338", "semantic_digest": "b97b83ec5ca8df9f984a5779be597e54b5a8a9cab885ab61b91ebbf5e79bc58d"},
+        {"path": "results/v0.3.9_release_manifest.json", "raw_sha256": "02e75a35c2d062e9017905c3da66b365f8c0f7907346027802affd283eabe516", "semantic_digest": "eb9eb81d911f194fe2b6c18dfe81389e3a6fc0856a1bae3a767d46753f348e47"},
+        {"path": "reports/v0.3.9_publication_readiness.md"}
+      ]
+    },
+    {
+      "id": "C2_SR2_WEAK_WEAK_SEPARATION",
+      "status": "CERTIFIED_EXACT_RATIONAL_WITNESS",
+      "statement": "Fixed-vector GC plus reachable-state MSR admits an exact rational noncommutative d=2 witness in the frozen finite n<=4 presentation.",
+      "allowed_wording": "Call this an exact logical weak/weak separation and an off-reachable-sector witness; do not call it reachable-visible noncommutativity.",
+      "census": {"cpobc_equations": 783, "fixed_vector_gc_path_pairs": 1529, "reachable_state_msr_constraints": 24, "eq113_derived_relations": 25, "eq113_literal_relations": 25, "eq139_printed_strict_instances": 4, "eq139_completed_instances": 10, "transition_determinants": 165, "nonzero_q1_to_q4_commutators": 6},
+      "evidence": [
+        {"path": "results/v0.4_weak_d2_classification.json", "raw_sha256": "18e71f439913896fb370944c6479fc358d4d6d0d127162809ba46822ccd2fe65"},
+        {"path": "reports/v0.4.2_post_literature_strategy_review.md"}
+      ]
+    },
+    {
+      "id": "C3_EQ120_SOURCE_NATIVE_LEMMA",
+      "status": "CERTIFIED_EXACT",
+      "statement": "Six raw antichain CPOBC relations and source nonsingularity imply the three k=1 Eq. (120) identities without MSR, GC, Eq. (108), Eq. (112), or B-reduction.",
+      "allowed_wording": "State the free-word lemma as dimension-independent; d=2 enters only in the subsequent chart closure.",
+      "evidence": [
+        {"path": "results/v0.4.2_eq120_source_provenance.json", "raw_sha256": "864536f5624b63900ab6ff31f5070706ce51881408044fb60e3b1f4853cdfed4", "semantic_digest": "77d11eff7d14d84182abbf1eb30732fe2b94855507f1826747ba878fadb8d6ca"},
+        {"path": "reports/v0.4.2_eq120_source_provenance.md"}
+      ]
+    },
+    {
+      "id": "C4_SR3B_A_RECONSTRUCTION_SLICE",
+      "status": "CERTIFIED_PROPER_SLICE",
+      "statement": "On P_sGC+rMSR intersect image(Phi_U), source-to-direct inclusion, localisation, Eq. (120), and exact d=2 chart certificates force Q1,...,Q4 commutativity.",
+      "allowed_wording": "Call this a proper reconstruction-slice theorem; do not extend it to the full 955 profile or to the image complement.",
+      "evidence": [
+        {"path": "results/v0.4.1_partial_slice_audit.json", "raw_sha256": "a37bc2ccd318e7f23c13e4bc7b66fca17aa12a04d604f79224883d6eaad089b5", "semantic_digest": "2d65ddeefdec9606b6680dce6a6a790fb30ff50dd8d552a01043b022a6c99839"},
+        {"path": "reports/v0.4.2_partial_slice_short_report_plan.md"}
+      ]
+    },
+    {
+      "id": "C5_SR3B_M_CONDITIONAL_RECOVERY",
+      "status": "CERTIFIED_CONDITIONAL_LEMMAS",
+      "statement": "Evaluation injectivity on the declared residual family is necessary and sufficient for statewise-to-operator recovery; same-residual two-probe recovery and the non-scalar 2x2 centralizer endpoint are exact.",
+      "allowed_wording": "Present as conditional recovery lemmas; do not assert that the ordinary single-Omega profile supplies the probes.",
+      "evidence": [
+        {"path": "results/v0.4.2_sr3b_m_semantic_recovery.json", "raw_sha256": "164dba4833f8fb2e6967d9bdf01f8656d83b5033f2ec11ded0676dc124b235a8", "semantic_digest": "a742976ab7d955a66beb07f6efd06170cd3b2f320638b6a64c3292f6fcf5d735"},
+        {"path": "reports/v0.4.2_sr3b_m_semantic_recovery.md"}
+      ]
+    }
+  ],
+  "nonclaims": [
+    {"id": "N1_FULL_955", "status": "OPEN", "wording": "No general strong-GC/reachable-state-MSR 955-profile theorem."},
+    {"id": "N2_PROFILE_721", "status": "OPEN", "wording": "No general fixed-vector-GC/strong-MSR theorem."},
+    {"id": "N3_COMPLETE_ON_CLASSIFICATION", "status": "NOT_ESTABLISHED", "wording": "Do not write complete finite ON semantics lattice."},
+    {"id": "N4_REACHABLE_VISIBLE_WITNESS", "status": "OPEN", "wording": "The current weak/weak witness has reachable span rank one and is not reachable-visible."},
+    {"id": "N5_U2_FULL_IDEAL", "status": "OPEN_RESOURCE_LIMIT", "wording": "The bounded GF determinantal scout is not a QQ full unit/non-unit theorem."},
+    {"id": "N6_EXTENSIONS", "status": "OUT_OF_SCOPE", "wording": "OFF compiler, relation minimality, n>=5, d>=3, singular, and infinite-system claims remain downstream."}
+  ],
+  "resource_boundary": {
+    "artifact": "reports/v0.4.2_sr2v_auxiliary_ideal_determinantal_pilot_2026-08-05.md",
+    "status": "SOFT_RESOURCE_LIMIT_NONTERMINAL",
+    "full_unit_theorem_claimed": false,
+    "process_postflight_verified": true,
+    "role_in_paper": "reproducibility and limitation record only"
+  },
+  "publication_gates": {
+    "scoped_manuscript": "READY_TO_ASSEMBLE",
+    "submission": "OWNER_AND_MANUSCRIPT_REVIEW_PENDING",
+    "zenodo_or_doi": "OWNER_ONLY_NOT_AUTHORIZED",
+    "joss": "SEPARATE_EDITORIAL_SCOPE_GATE"
+  },
+  "version_lanes": {
+    "current_v04_lane": "Use current result artifacts and focused tests; do not treat historical release-reproduction tests as current-lane evidence.",
+    "public_v039_lane": "Frozen public commit cba86eae795e1e985c4ba1bcd3dabe4eb2773fab and its release manifest are a separate historical lane.",
+    "sr2v_global_status": "SEARCH_OPEN_NO_TERMINAL",
+    "u2_subroute_is_not_sr2v_terminal": true
+  },
+  "validation": {
+    "required_result_files_exist": true,
+    "stale_historical_verdicts_are_not_active_claims": true,
+    "full_profile_claimed": false,
+    "passed": true
+  }
+}
