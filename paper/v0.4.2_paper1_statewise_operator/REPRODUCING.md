@@ -264,29 +264,41 @@ not report the attempted computation as cleanly reproduced.
 
 ## 4. TeX build status
 
-The v0.4.2 Paper I `main.tex` scaffold is present.  On this workstation neither
-`latexmk` nor `pdflatex` is installed, so its PDF build is unverified.  This is
-a documented toolchain absence, not a passing TeX check.
-
-After installing a TeX toolchain, run one of the following from this directory:
+The host workstation still has neither `latexmk` nor `pdflatex`.  A pinned
+container toolchain is now available, and a local draft build was completed
+and visually checked on 2026-08-05.  The canonical build entry point is the
+repository helper below, run from the repository root:
 
 ```powershell
-if (Get-Command latexmk -ErrorAction SilentlyContinue) {
-  latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
-} elseif (Get-Command pdflatex -ErrorAction SilentlyContinue) {
-  pdflatex -interaction=nonstopmode -halt-on-error main.tex
-  bibtex main
-  if ($LASTEXITCODE -ne 0) { throw 'BibTeX failed' }
-  pdflatex -interaction=nonstopmode -halt-on-error main.tex
-  pdflatex -interaction=nonstopmode -halt-on-error main.tex
-} else {
-  throw 'TeX build unavailable: install latexmk or pdflatex before claiming PDF reproduction'
-}
+uv run python scripts/build_v042_paper1_pdf.py --dry-run
+uv run python scripts/build_v042_paper1_pdf.py
 ```
 
-When LaTeX is introduced, a successful build only verifies manuscript
-compilation.  It must be reported alongside the current claim validator and
-focused Paper I tests; it does not widen C1--C5 or remove any nonclaim.
+The helper fixes the image to
+`texlive/texlive:latest-medium@sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9`.
+There is no mutable-tag or host-TeX fallback.  The source command
+`\bibliography{../v0.3.9_d2_commutativity_short_report/references,references}`
+requires repository-relative context: mounting only this manuscript directory
+breaks the shared bibliography path.  The helper therefore copies the paper
+directory and the shared `references.bib` into a repository-shaped temporary
+mirror below `tmp/pdfs/`, runs `latexmk` inside that mirror, and removes the
+mirror on success or failure.
+
+The final `main.log` is authoritative for build diagnostics.  An overfull
+horizontal box, an undefined reference or citation, a LaTeX/Package error, a
+nonzero Docker exit, a missing log/PDF, or an output-integrity mismatch makes
+the helper fail.  On success it atomically replaces
+`output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf` and prints a JSON record
+containing the image reference, toolchain, page-count availability, byte count,
+SHA-256, diagnostics, and output path.  The generated PDF is intentionally
+untracked and is not required by the read-only manuscript validator in a fresh
+clone.
+
+The dated build and all-page visual inspection are recorded in
+`reports/v0.4.2_paper1_pdf_build_2026-08-05.md`.  This is layout/build
+verification only.  It is separate from submission authorization, does not
+freeze the draft, does not remove the six intentional draft-proof boxes, and
+does not widen C1--C5 or any nonclaim.
 
 ## 5. Reporting a reproduction
 

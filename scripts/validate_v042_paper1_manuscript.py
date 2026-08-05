@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -27,8 +28,67 @@ EXPECTED_MANUSCRIPT_PATHS = {
     MANUSCRIPT_ROOT / "REPRODUCING.md",
     MANUSCRIPT_ROOT / "references.bib",
 }
+PDF_BUILD_HELPER_PATH = Path("scripts/build_v042_paper1_pdf.py")
+PDF_BUILD_HELPER_SHA256 = "f131bbfe76304f1445afe162af5d731c7c3c4d31ba1b7dced4e83a0fb87c91d4"
+PDF_BUILD_REPORT_PATH = Path("reports/v0.4.2_paper1_pdf_build_2026-08-05.md")
+PDF_BUILD_REPORT_SHA256 = "ae85230ec220d6a2bf976179eeb6b4951d798bfa4593a851f4ba9109bb84d117"
+PDF_BUILD_IMAGE = (
+    "texlive/texlive:latest-medium@"
+    "sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9"
+)
+PDF_BUILD_OUTPUT_PATH = Path("output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf")
+PDF_BUILD_MAIN_SHA256 = "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd"
+PDF_BUILD_OBSERVED_SHA256 = "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"
+PDF_BUILD_REPORT_REQUIRED_FRAGMENTS = (
+    "Status: `LOCAL_DRAFT_BUILT_AND_VISUALLY_VERIFIED`.",
+    "All 10 pages were visually inspected.",
+    "No clipping, overlap, or table collision was found.",
+    "The generated PDF is an untracked local observation.",
+    "it is not a required reproducibility-contract hash",
+)
 EXPECTED_CLAIM_LABELS = ["C1", "C2", "C3", "C4", "C5"]
 EXPECTED_NONCLAIM_LABELS = ["N1", "N2", "N3", "N4", "N5", "N6"]
+EXPECTED_DRAFT_MARKER_INVOCATIONS = 6
+C3_SOURCE_RELATION_IDS = (
+    "cpobc-relation-0b2bbe81c6394d603f63",
+    "cpobc-relation-49726b7f352ba79916e5",
+    "cpobc-relation-6002781cceb198b6edfd",
+    "cpobc-relation-1d7b3a88785401c6531b",
+    "cpobc-relation-01e29996483e2c4f342c",
+    "cpobc-relation-17e9d7ae74c8bed62194",
+)
+C3_RAW_IDENTITIES = (
+    r"B_2Q_1=B_1Q_2",
+    r"B_3Q_1=B_1Q_3",
+    r"B_3Q_2=B_2Q_3",
+    r"B_4Q_1=B_1Q_4",
+    r"B_4Q_2=B_2Q_4",
+    r"B_4Q_3=B_3Q_4",
+)
+C3_REQUIRED_PROOF_FRAGMENTS = (
+    r"\cite[Eqs.~(103), (105), and (115)--(120)]{SrivastavaSurya2026}",
+    "Only associativity and adjacent unit cancellation were used",
+    r"Neither GC nor MSR, Eq.~(108), Eq.~(112), B-reduction, \(d=2\), or \(Q_5\)",
+    "arbitrary point of the direct system",
+    r"R_i:=Q_1^{-1}Q_i",
+)
+C5_REQUIRED_PROOF_FRAGMENTS = (
+    r"\ker(\operatorname{ev}_V)=\{0\}",
+    r"\(DP=0\)",
+    r"kernel dimension \(2\)",
+    r"rank \(4\) and zero kernel",
+    r"\mathcal R=\operatorname{span}\{I,E_{21}\}",
+    "Independent non-scalar",
+    r"b^2,\qquad c^2,\qquad -(a-d)^2",
+    "Cyclicity does not imply separation.",
+    "general linear-algebra counterexamples",
+    "solution of the CPOBC equations",
+    "same-residual multi-probe data",
+    "each source and for each declared GC and MSR residual family",
+    "has not been proved by the current artifacts",
+    "all declared GC and MSR residuals",
+    "frozen occurrence-ON",
+)
 MANIFEST_SCHEMA = "final-theory-v042-paper1-manuscript-manifest-v1"
 CLAIM_LEDGER_SCHEMA = "final-theory-v042-paper1-claim-boundary-v1"
 BOUNDED_SCOUT_MANIFEST_PATH = Path(
@@ -191,13 +251,39 @@ def _citation_keys(source: str) -> set[str]:
     return keys
 
 
-def _bibliography_keys(path: Path, errors: list[str]) -> set[str]:
+def _bibliography_key_counts(path: Path, errors: list[str]) -> Counter[str]:
     try:
         source = path.read_text(encoding="utf-8")
     except OSError as exc:
         errors.append(f"cannot read bibliography {path.as_posix()}: {exc}")
-        return set()
-    return set(BIB_ENTRY_PATTERN.findall(source))
+        return Counter()
+    return Counter(BIB_ENTRY_PATTERN.findall(source))
+
+
+def _validate_citation_closure(
+    tex: str,
+    bibliography_key_counts: tuple[Counter[str], ...],
+    errors: list[str],
+) -> None:
+    cited = _citation_keys(tex)
+    _require(bool(cited), "TeX source has no citation keys", errors)
+
+    combined_counts: Counter[str] = Counter()
+    for key_counts in bibliography_key_counts:
+        combined_counts.update(key_counts)
+
+    missing = sorted(cited - set(combined_counts))
+    _require(
+        not missing,
+        f"citation keys absent from configured bibliographies: {missing}",
+        errors,
+    )
+    duplicates = sorted(key for key, count in combined_counts.items() if count > 1)
+    _require(
+        not duplicates,
+        f"bibliography entry keys occur more than once across configured resources: {duplicates}",
+        errors,
+    )
 
 
 def _manifest_file_records(
@@ -352,6 +438,58 @@ def _validate_claim_ledger(
     return ledger
 
 
+def _validate_completed_c3_c5_proofs(tex: str, errors: list[str]) -> None:
+    source = _strip_tex_comments(tex)
+
+    def section(start: str, end: str, label: str) -> str:
+        start_index = source.find(start)
+        end_index = source.find(end, start_index + len(start)) if start_index >= 0 else -1
+        if start_index < 0 or end_index < 0:
+            errors.append(f"cannot isolate completed {label} proof section")
+            return ""
+        return source[start_index:end_index]
+
+    c3 = section(r"\subsection{C3:", r"\subsection{C4:", "C3")
+    c5 = section(r"\subsection{C5:", r"\section{Proof roadmap", "C5")
+    recovery = section(
+        r"\section{Recovery conditions and their boundary}",
+        r"\section{Explicit nonclaims}",
+        "C5 recovery boundary",
+    )
+
+    _require(r"\draftmarker{" not in c3, "completed C3 proof retains a DRAFT marker", errors)
+    _require(r"\draftmarker{" not in c5, "completed C5 proof retains a DRAFT marker", errors)
+    _require(
+        r"\draftmarker{" not in recovery,
+        "completed C5 recovery boundary retains a DRAFT marker",
+        errors,
+    )
+    for relation_id in C3_SOURCE_RELATION_IDS:
+        _require(
+            c3.count(relation_id) == 1,
+            f"C3 must contain exactly one complete relation ID: {relation_id}",
+            errors,
+        )
+    for identity in C3_RAW_IDENTITIES:
+        _require(identity in c3, f"C3 raw relation identity is absent: {identity}", errors)
+    normalised_c3 = _normalise_whitespace(c3)
+    for fragment in C3_REQUIRED_PROOF_FRAGMENTS:
+        _require(
+            _normalise_whitespace(fragment) in normalised_c3,
+            f"C3 proof boundary is absent: {fragment!r}",
+            errors,
+        )
+
+    c5_evidence = c5 + "\n" + recovery
+    normalised_c5 = _normalise_whitespace(c5_evidence)
+    for fragment in C5_REQUIRED_PROOF_FRAGMENTS:
+        _require(
+            _normalise_whitespace(fragment) in normalised_c5,
+            f"C5 proof boundary is absent: {fragment!r}",
+            errors,
+        )
+
+
 def _validate_bibliography_and_tex(root: Path, manifest: dict[str, Any], errors: list[str]) -> None:
     tex_path = root / MANUSCRIPT_ROOT / "main.tex"
     if not tex_path.is_file():
@@ -394,22 +532,18 @@ def _validate_bibliography_and_tex(root: Path, manifest: dict[str, Any], errors:
     _require((root / shared_relative).is_file(), "shared bibliography file is missing", errors)
     _require((root / local_relative).is_file(), "local bibliography file is missing", errors)
 
-    cited = _citation_keys(tex)
-    _require(bool(cited), "TeX source has no citation keys", errors)
-    shared_keys = _bibliography_keys(root / shared_relative, errors)
-    local_keys = _bibliography_keys(root / local_relative, errors)
-    missing = sorted(cited - shared_keys - local_keys)
-    _require(
-        not missing,
-        f"citation keys absent from shared/local bibliographies: {missing}",
-        errors,
-    )
+    shared_key_counts = _bibliography_key_counts(root / shared_relative, errors)
+    local_key_counts = _bibliography_key_counts(root / local_relative, errors)
+    _validate_citation_closure(tex, (shared_key_counts, local_key_counts), errors)
+    shared_keys = set(shared_key_counts)
+    local_keys = set(local_key_counts)
     _require("Xu2026Relational" in local_keys, "local bibliography lacks Xu2026Relational", errors)
     _require(
         {"RideoutSorkin2000", "SrivastavaSurya2026"} <= shared_keys,
         "shared bibliography lacks manuscript baseline citations",
         errors,
     )
+    _validate_completed_c3_c5_proofs(tex, errors)
 
     for label in EXPECTED_CLAIM_LABELS:
         _require(f"\\subsection{{{label}:" in tex, f"TeX source lacks {label} subsection", errors)
@@ -464,9 +598,18 @@ def _validate_bibliography_and_tex(root: Path, manifest: dict[str, Any], errors:
         errors,
     )
     _require(isinstance(minimum, int) and minimum > 0, "invalid DRAFT marker minimum", errors)
+    _require(
+        minimum == EXPECTED_DRAFT_MARKER_INVOCATIONS,
+        "manifest DRAFT marker invocation gate changed",
+        errors,
+    )
     invocation_count = len(re.findall(r"\\draftmarker\s*\{", _strip_tex_comments(tex)))
     if isinstance(minimum, int):
-        _require(invocation_count >= minimum, "insufficient DRAFT marker invocations", errors)
+        _require(
+            invocation_count == minimum,
+            f"DRAFT marker invocation count mismatch: expected {minimum}, got {invocation_count}",
+            errors,
+        )
     fragments = markers.get("required_tex_fragments")
     _require(isinstance(fragments, list), "draft marker fragments must be a list", errors)
     if isinstance(fragments, list):
@@ -1001,6 +1144,93 @@ def _validate_literature_delta_search(
     _validate_literature_source_archive(root, errors)
 
 
+def _expected_tex_build() -> dict[str, Any]:
+    return {
+        "toolchain_status": "HOST_ABSENT_PINNED_CONTAINER_AVAILABLE",
+        "pdf_status": "LOCAL_DRAFT_BUILT_AND_VISUALLY_VERIFIED",
+        "pdf_verified": True,
+        "submission_ready": False,
+        "pinned_container_image": PDF_BUILD_IMAGE,
+        "build_helper": {
+            "path": PDF_BUILD_HELPER_PATH.as_posix(),
+            "raw_sha256": PDF_BUILD_HELPER_SHA256,
+        },
+        "build_report": {
+            "path": PDF_BUILD_REPORT_PATH.as_posix(),
+            "raw_sha256": PDF_BUILD_REPORT_SHA256,
+        },
+        "default_output_path": PDF_BUILD_OUTPUT_PATH.as_posix(),
+        "generated_pdf": {
+            "tracked": False,
+            "required_for_manifest_validation": False,
+            "raw_sha256_role": "DATED_OBSERVATION_NOT_REPRODUCIBILITY_CONTRACT",
+        },
+        "dated_observation": {
+            "date": "2026-08-05",
+            "main_tex_raw_sha256": PDF_BUILD_MAIN_SHA256,
+            "pdf": {
+                "page_count": 10,
+                "bytes": 371899,
+                "raw_sha256": PDF_BUILD_OBSERVED_SHA256,
+            },
+            "toolchain": {
+                "tex_live": "2026",
+                "latexmk": "4.88",
+                "pdftex": "1.40.29",
+                "bibtex": "0.99e",
+            },
+            "diagnostics": {
+                "blocking_total": 0,
+                "overfull_hbox": 0,
+                "undefined_reference_or_citation": 0,
+                "latex_or_package_error": 0,
+                "underfull_box": 0,
+            },
+            "visual_qa": {
+                "pages_inspected": 10,
+                "all_pages_inspected": True,
+                "clipping_or_overlap_found": False,
+                "intentional_draft_boxes_remain": True,
+            },
+        },
+    }
+
+
+def _validate_tex_build(root: Path, manifest: dict[str, Any], errors: list[str]) -> None:
+    tex_build = manifest.get("tex_build")
+    if not isinstance(tex_build, dict):
+        errors.append("manifest tex_build must be an object")
+        return
+    _require(
+        tex_build == _expected_tex_build(),
+        "TeX/PDF build contract or dated observation changed",
+        errors,
+    )
+
+    for path, expected_hash, label in (
+        (PDF_BUILD_HELPER_PATH, PDF_BUILD_HELPER_SHA256, "PDF build helper"),
+        (PDF_BUILD_REPORT_PATH, PDF_BUILD_REPORT_SHA256, "PDF build report"),
+    ):
+        absolute = root / path
+        _require(absolute.is_file(), f"missing {label}: {path.as_posix()}", errors)
+        if absolute.is_file():
+            _require(_sha256(absolute) == expected_hash, f"{label} SHA-256 mismatch", errors)
+
+    report = root / PDF_BUILD_REPORT_PATH
+    if report.is_file():
+        try:
+            source = _normalise_whitespace(report.read_text(encoding="utf-8"))
+        except OSError as exc:
+            errors.append(f"cannot read PDF build report: {exc}")
+        else:
+            for fragment in PDF_BUILD_REPORT_REQUIRED_FRAGMENTS:
+                _require(
+                    fragment in source,
+                    f"PDF build report boundary is absent: {fragment!r}",
+                    errors,
+                )
+
+
 def _validate_status_boundaries(
     manifest: dict[str, Any], ledger: dict[str, Any] | None, errors: list[str]
 ) -> None:
@@ -1014,18 +1244,6 @@ def _validate_status_boundaries(
         "manuscript is not marked as a non-frozen draft scaffold",
         errors,
     )
-    tex_build = manifest.get("tex_build")
-    if not isinstance(tex_build, dict):
-        errors.append("manifest tex_build must be an object")
-    else:
-        _require(
-            tex_build.get("toolchain_status") == "ABSENT",
-            "TeX toolchain status changed",
-            errors,
-        )
-        _require(tex_build.get("pdf_status") == "UNBUILT", "PDF status changed", errors)
-        _require(tex_build.get("pdf_verified") is False, "PDF must remain unverified", errors)
-
     freeze = manifest.get("freeze")
     if not isinstance(freeze, dict):
         errors.append("manifest freeze must be an object")
@@ -1135,6 +1353,7 @@ def validate_paper1_manuscript(root: Path) -> list[str]:
     _validate_state_boundary_text(root, manifest, errors)
     _validate_bounded_scout_reproduction(root, manifest, errors)
     _validate_literature_delta_search(root, manifest, errors)
+    _validate_tex_build(root, manifest, errors)
     _validate_status_boundaries(manifest, ledger, errors)
     return errors
 

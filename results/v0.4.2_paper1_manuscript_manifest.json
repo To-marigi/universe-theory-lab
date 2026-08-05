@@ -7,12 +7,12 @@
     {
       "path": "paper/v0.4.2_paper1_statewise_operator/main.tex",
       "role": "latex_manuscript_scaffold",
-      "raw_sha256": "8284d73cfea078174cadf018b073ed42b767f9c24a0505907d65b7f5e550cdd4"
+      "raw_sha256": "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd"
     },
     {
       "path": "paper/v0.4.2_paper1_statewise_operator/REPRODUCING.md",
       "role": "reproduction_protocol",
-      "raw_sha256": "6079c8474423384b58963b739eed088a2e85b33478d0f70bc96831ff2c3c1c53"
+      "raw_sha256": "9025b26ef924b3ddd629c27254f3cd868586143c0edeb5a5543b516e36008b14"
     },
     {
       "path": "paper/v0.4.2_paper1_statewise_operator/references.bib",
@@ -66,7 +66,7 @@
   ],
   "draft_markers": {
     "required_token": "DRAFT PROOF INSERT REQUIRED.",
-    "minimum_invocations": 9,
+    "minimum_invocations": 6,
     "required_tex_fragments": [
       "Claim-locked manuscript scaffold.",
       "This file is a scoped assembly draft.",
@@ -74,9 +74,53 @@
     ]
   },
   "tex_build": {
-    "toolchain_status": "ABSENT",
-    "pdf_status": "UNBUILT",
-    "pdf_verified": false
+    "toolchain_status": "HOST_ABSENT_PINNED_CONTAINER_AVAILABLE",
+    "pdf_status": "LOCAL_DRAFT_BUILT_AND_VISUALLY_VERIFIED",
+    "pdf_verified": true,
+    "submission_ready": false,
+    "pinned_container_image": "texlive/texlive:latest-medium@sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9",
+    "build_helper": {
+      "path": "scripts/build_v042_paper1_pdf.py",
+      "raw_sha256": "f131bbfe76304f1445afe162af5d731c7c3c4d31ba1b7dced4e83a0fb87c91d4"
+    },
+    "build_report": {
+      "path": "reports/v0.4.2_paper1_pdf_build_2026-08-05.md",
+      "raw_sha256": "ae85230ec220d6a2bf976179eeb6b4951d798bfa4593a851f4ba9109bb84d117"
+    },
+    "default_output_path": "output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf",
+    "generated_pdf": {
+      "tracked": false,
+      "required_for_manifest_validation": false,
+      "raw_sha256_role": "DATED_OBSERVATION_NOT_REPRODUCIBILITY_CONTRACT"
+    },
+    "dated_observation": {
+      "date": "2026-08-05",
+      "main_tex_raw_sha256": "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd",
+      "pdf": {
+        "page_count": 10,
+        "bytes": 371899,
+        "raw_sha256": "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"
+      },
+      "toolchain": {
+        "tex_live": "2026",
+        "latexmk": "4.88",
+        "pdftex": "1.40.29",
+        "bibtex": "0.99e"
+      },
+      "diagnostics": {
+        "blocking_total": 0,
+        "overfull_hbox": 0,
+        "undefined_reference_or_citation": 0,
+        "latex_or_package_error": 0,
+        "underfull_box": 0
+      },
+      "visual_qa": {
+        "pages_inspected": 10,
+        "all_pages_inspected": true,
+        "clipping_or_overlap_found": false,
+        "intentional_draft_boxes_remain": true
+      }
+    }
   },
   "literature_delta_search": {
     "since": "2026-08-01",

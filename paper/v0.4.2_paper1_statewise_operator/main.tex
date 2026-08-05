@@ -27,6 +27,7 @@
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 \theoremstyle{remark}
@@ -255,10 +256,82 @@ It is stated independently of \(d=2\); dimension two enters only in the
 subsequent chart closure.
 \end{lemma}
 
-\draftmarker{Insert the six selected source records and the free-word
-derivation, with each cancellation and inverse operation stated.  The source
-relation itself must be cited as prior material; the manuscript contribution
-is the finite provenance and its use in the certified assembly.}
+\begin{proof}
+The source CPOBC word relation and its unit rewrite are prior material
+\cite[Eqs.~(103), (105), and (115)--(120)]{SrivastavaSurya2026}.  Table
+\ref{tab:c3-raw-relations} records the six instances selected by the
+source-provenance certificate.  The identifiers are complete record IDs, not
+abbreviated hashes.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\caption{Six C3 raw source records and their unit rewrites.}
+\label{tab:c3-raw-relations}
+\begin{tabularx}{\textwidth}{@{}c p{0.39\textwidth} X@{}}
+\toprule
+Pair \((n,m)\) & Complete relation record ID & Raw identity; right-cancelled form\\
+\midrule
+\((2,1)\) & \texttt{cpobc-relation-0b2bbe81c6394d603f63}
+  & \(B_2Q_1=B_1Q_2;\quad B_2=B_1Q_2Q_1^{-1}\)\\
+\((3,1)\) & \texttt{cpobc-relation-49726b7f352ba79916e5}
+  & \(B_3Q_1=B_1Q_3;\quad B_3=B_1Q_3Q_1^{-1}\)\\
+\((3,2)\) & \texttt{cpobc-relation-6002781cceb198b6edfd}
+  & \(B_3Q_2=B_2Q_3;\quad B_3=B_2Q_3Q_2^{-1}\)\\
+\((4,1)\) & \texttt{cpobc-relation-1d7b3a88785401c6531b}
+  & \(B_4Q_1=B_1Q_4;\quad B_4=B_1Q_4Q_1^{-1}\)\\
+\((4,2)\) & \texttt{cpobc-relation-01e29996483e2c4f342c}
+  & \(B_4Q_2=B_2Q_4;\quad B_4=B_2Q_4Q_2^{-1}\)\\
+\((4,3)\) & \texttt{cpobc-relation-17e9d7ae74c8bed62194}
+  & \(B_4Q_3=B_3Q_4;\quad B_4=B_3Q_4Q_3^{-1}\)\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Fix \(2\leq m<n\leq4\).  The table contains exactly the records for
+\((n,m)\), \((m,1)\), and \((n,1)\).  Source-native nonsingularity makes the
+displayed \(B\)'s and \(Q\)'s units.  Right multiplication of the three raw
+identities by the indicated adjacent inverse gives
+\[
+  B_n=B_mQ_nQ_m^{-1},\qquad
+  B_m=B_1Q_mQ_1^{-1},\qquad
+  B_n=B_1Q_nQ_1^{-1}.
+\]
+Substitution of the middle identity into the first, followed by comparison
+with the third, yields
+\[
+  B_1Q_nQ_1^{-1}
+  =B_1Q_mQ_1^{-1}Q_nQ_m^{-1}.
+\]
+Left multiplication by \(B_1^{-1}\) cancels the adjacent \(B_1\), and right
+multiplication by \(Q_m\) cancels the adjacent \(Q_m^{-1}Q_m\).  Hence
+\[
+  Q_nQ_1^{-1}Q_m=Q_mQ_1^{-1}Q_n.
+\]
+These are the three asserted identities.  Only associativity and adjacent
+unit cancellation were used; no commutation or reordering was assumed.
+Neither GC nor MSR, Eq.~(108), Eq.~(112), B-reduction, \(d=2\), or \(Q_5\)
+enters the derivation.  No direct-system point enters either, and this
+source-native argument claims no such identity at an arbitrary point of the
+direct system without a separately proved source-to-direct binding.
+\end{proof}
+
+\begin{corollary}[Commuting source ratios]
+\label{cor:c3-ratios}
+Under the hypotheses of Lemma~\ref{lem:c3}, set
+\[
+  R_i:=Q_1^{-1}Q_i\qquad(1\leq i\leq4).
+\]
+Then \(R_1=I\) and \(R_2,R_3,R_4\) commute pairwise.
+\end{corollary}
+
+\begin{proof}
+Left multiplication of the C3 identity by \(Q_1^{-1}\) gives
+\[
+  R_nR_m=R_mR_n\qquad(2\leq m<n\leq4),
+\]
+and \(R_1=Q_1^{-1}Q_1=I\).
+\end{proof}
 
 \subsection{C4: proper reconstruction slice}
 
@@ -299,18 +372,109 @@ For a declared residual space \(\mathcal R\) and sourcewise probe family
 \(V\), statewise equality promotes every \(D\in\mathcal R\) to the operator
 identity \(D=0\) if and only if \(\operatorname{ev}_V\) is injective.
 In dimension two, two independent probes applied to the same residual are a
-sufficient exact recovery condition.  The corresponding non-scalar
-\(2\times2\) centralizer endpoint is
-\[
-  \operatorname{Cent}(A)=\QQ[I,A]
-\]
-for a non-scalar \(A\in M_2(\QQ)\).
+sufficient exact recovery condition.
 \end{theorem}
 
-\draftmarker{Insert the residual-space rank calculation, same-residual
-two-probe argument, cyclicity counterexample, and centralizer proof.  Do not
-assert that ordinary single-\(\Omega\) CPOBC semantics supplies the required
-additional probes.}
+\begin{lemma}[Evaluation-kernel criterion]
+\label{lem:c5-kernel}
+For any declared residual space and probe family,
+\[
+  \operatorname{ev}_V\text{ is injective}
+  \quad\Longleftrightarrow\quad
+  \ker(\operatorname{ev}_V)=\{0\}.
+\]
+Thus the statewise equations \(Dv=0\) for every \(v\in V\) force every
+\(D\in\mathcal R\) to vanish exactly when this kernel is zero.
+\end{lemma}
+
+\begin{proof}
+The evaluation map is linear.  A linear map is injective exactly when its
+kernel is zero, while the simultaneous statewise equations say precisely that
+\(D\) belongs to this kernel.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:c5}]
+The equivalence is Lemma~\ref{lem:c5-kernel}.  For the dimension-two
+sufficiency statement, let \(v_1,v_2\in\QQ^2\) be independent probes applied
+to the same residual \(D\), and put \(P=(v_1\ v_2)\).  If
+\(Dv_1=Dv_2=0\), then \(DP=0\).  Independence makes \(P\) invertible, so
+\(D=0\).  The same-residual qualification is essential: this matrix equation
+does not exist if the two columns are tested against different operators.
+\end{proof}
+
+\begin{proposition}[Dimension-two evaluation ranks]
+\label{prop:c5-ranks}
+With the ordered basis
+\(\mathcal B=(E_{11},E_{12},E_{21},E_{22})\) of \(M_2(\QQ)\), evaluation on
+\(e_1\) has matrix
+\[
+  [\operatorname{ev}_{\{e_1\}}]_{\mathcal B}
+  =\begin{pmatrix}1&0&0&0\\0&0&1&0\end{pmatrix}.
+\]
+It has rank \(2\) and kernel
+\(\operatorname{span}\{E_{12},E_{22}\}\), hence kernel dimension \(2\).
+Evaluation on the two basis probes has matrix
+\[
+  [\operatorname{ev}_{\{e_1,e_2\}}]_{\mathcal B}
+  =\begin{pmatrix}
+      1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1
+    \end{pmatrix},
+\]
+which has rank \(4\) and zero kernel.  By contrast, for the smaller residual
+space \(\mathcal R=\operatorname{span}\{I,E_{21}\}\), the one-probe matrix
+at \(e_1\) is
+\[
+  \begin{pmatrix}1&0\\0&1\end{pmatrix},
+\]
+so its rank is \(2\) and one probe is already separating on this
+two-dimensional \(\mathcal R\).
+\end{proposition}
+
+\begin{proof}
+The displayed columns are the coordinate vectors of the basis matrices
+applied to the listed probes.  Their ranks and kernels follow by inspection.
+\end{proof}
+
+\begin{lemma}[Independent non-scalar \(2\times2\) centralizer lemma]
+\label{lem:c5-centralizer}
+If \(A\in M_2(\QQ)\) is non-scalar, then
+\[
+  \operatorname{Cent}(A)=\QQ I+\QQ A=\QQ[I,A].
+\]
+This lemma is independent of the residual-recovery argument.
+\end{lemma}
+
+\begin{proof}
+Write
+\[
+ A=\begin{pmatrix}a&b\\c&d\end{pmatrix},\qquad
+ X=\begin{pmatrix}x&y\\z&w\end{pmatrix}.
+\]
+In the coordinates \((x,y,z,w)\), the coefficient matrix of
+\(\operatorname{ad}_A(X)=AX-XA\) is
+\[
+ C_A=\begin{pmatrix}
+ 0&-c&b&0\\
+ -b&a-d&0&b\\
+ c&0&d-a&-c\\
+ 0&c&-b&0
+ \end{pmatrix}.
+\]
+The minors on rows/columns
+\((\{1,2\},\{1,3\})\),
+\((\{1,3\},\{2,4\})\), and, when \(b=c=0\),
+\((\{2,3\},\{2,3\})\), are respectively
+\[
+  b^2,\qquad c^2,\qquad -(a-d)^2.
+\]
+Because \(A\) is non-scalar, the applicable branch has a nonzero minor, so
+\(\operatorname{rank} C_A\geq2\).  Both \(I\) and \(A\) lie in its kernel and
+are independent, so rank-nullity gives \(\operatorname{rank} C_A\leq2\).
+Consequently the rank is \(2\), the kernel is
+\(\operatorname{span}\{I,A\}\), and this kernel is the centralizer.  Finally,
+\(\QQ[I,A]\) is contained in the centralizer and contains \(I\) and \(A\), so
+it is exactly the same two-dimensional span.
+\end{proof}
 
 \section{Proof roadmap and dependency audit}
 
@@ -408,11 +572,21 @@ Do not infer a complete weak/weak classification from this witness.}
 
 Theorem~\ref{thm:c5} is deliberately conditional.  One probe cannot
 separate all of \(M_2(\QQ)\): evaluation at \(e_1\), for example, has a
-nontrivial kernel on the full matrix algebra.  Conversely, the basis probes
-\(e_1,e_2\) recover all of \(M_2(\QQ)\), and a single probe can separate a
-smaller declared residual space.  The correct condition is therefore
-injectivity on \(\mathcal R\), not a generic slogan about cyclicity or global
-reachability.
+rank-two kernel on the full matrix algebra.  Conversely,
+Proposition~\ref{prop:c5-ranks} shows that the basis probes \(e_1,e_2\) have
+evaluation rank four and recover all of \(M_2(\QQ)\), while one probe has
+rank two and separates \(\operatorname{span}\{I,E_{21}\}\).  The correct
+condition is therefore injectivity on \(\mathcal R\), not a dimension count
+for an unrelated ambient algebra.
+
+Cyclicity does not imply separation.  Indeed, \(e_1\) is cyclic for the
+defining \(M_2(\QQ)\)-action because
+\[
+  \operatorname{span}\{Ie_1,E_{21}e_1\}
+  =\operatorname{span}\{e_1,e_2\}=\QQ^2,
+\]
+but the nonzero operator \(E_{12}\) annihilates \(e_1\).  Thus a cyclic vector
+need not be separating for the full residual space.
 
 The sourcewise qualifier cannot be omitted.  The exact counterexample
 \[
@@ -422,11 +596,21 @@ The sourcewise qualifier cannot be omitted.  The exact counterexample
 has \(\operatorname{span}\{v_1,v_2\}=\QQ^2\) and
 \(D_1v_1=D_2v_2=0\), although both residuals are nonzero.  Vectors tested
 against distinct source residuals therefore cannot be pooled to recover
-either residual as an operator identity.
+either residual as an operator identity.  The cyclicity and different-source
+examples are general linear-algebra counterexamples; neither is asserted to
+be a solution of the CPOBC equations.
 
-\draftmarker{Add the exact evaluation-rank ledger and make the bridge to the
-strong/strong baseline only under separately verified injectivity for each
-declared GC and MSR residual family.}
+The bridge back to CPOBC requires more than these linear-algebra facts.  For
+each source and for each declared GC and MSR residual family, one must prove
+that its own evaluation map is injective and that every probe used for that
+map acts on the same residual operator.  Such same-residual multi-probe data
+are an additional assumption, not a consequence of pooling reachable states
+from different sources, and their availability has not been proved by the
+current artifacts.  Only after all declared GC and MSR residuals have thereby
+become operator identities, and only after the frozen occurrence-ON,
+nonsingular, \(d=2\), \(n\leq4\) hypotheses have independently been verified,
+may Theorem~\ref{thm:c1} be applied.  This is a conditional bridge and does
+not resolve either one-sided profile.
 
 \section{Explicit nonclaims}
 
@@ -448,11 +632,15 @@ work inferred from its results:
         special-case OFF witness does not remove this boundary.
 \end{enumerate}
 
-The global SR2-V status remains
-\texttt{SEARCH\_OPEN\_NO\_TERMINAL}.  The U2 subroute status
-\texttt{SOFT\_RESOURCE\_LIMIT\_NONTERMINAL} records a bounded computation and
-verified process cleanup; it is neither an obstruction theorem nor a terminal
-verdict.
+\begin{description}[style=nextline]
+  \item[Global SR2-V status remains]
+        \texttt{SEARCH\_OPEN\_NO\_TERMINAL}
+  \item[U2 subroute status]
+        \texttt{SOFT\_RESOURCE\_LIMIT\_NONTERMINAL}
+
+        This status records a bounded computation and verified process cleanup;
+        it is neither an obstruction theorem nor a terminal verdict.
+\end{description}
 
 \section{Reproducibility appendix}
 
@@ -464,28 +652,31 @@ substituting prose summaries for them.
 \centering
 \caption{Paper I claim ledger and principal evidence artifacts.}
 \label{tab:artifacts}
-\small
-\begin{tabularx}{\textwidth}{@{}p{0.14\textwidth}p{0.32\textwidth}X@{}}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.06\textwidth}
+  >{\raggedright\arraybackslash}p{0.49\textwidth}
+  >{\raggedright\arraybackslash}X@{}}
 \toprule
 Claim & Artifact & Recorded binding\\
 \midrule
-C1 & \texttt{results/v0.3.7\_release\_manifest.json};
-     \texttt{results/v0.3.9\_release\_manifest.json}
+C1 & \path{results/v0.3.7_release_manifest.json}\newline
+     \path{results/v0.3.9_release_manifest.json}
    & frozen public baseline; v0.3.7 semantic digest
      \texttt{b97b83\ldots bc58d}; v0.3.9 semantic digest
      \texttt{eb9eb8\ldots 48e47}\\
-C2 & \texttt{results/v0.4\_weak\_d2\_classification.json};
-     \texttt{results/v0.4.2\_sr2v\_baseline\_observability.json}
+C2 & \path{results/v0.4_weak_d2_classification.json}\newline
+     \path{results/v0.4.2_sr2v_baseline_observability.json}
    & witness raw SHA-256 \texttt{18e71f\ldots 2fe65}; observability raw
      SHA-256 \texttt{4f5780\ldots 10de}; semantic digest
      \texttt{73508f\ldots c62}\\
-C3 & \texttt{results/v0.4.2\_eq120\_source\_provenance.json}
+C3 & \path{results/v0.4.2_eq120_source_provenance.json}
    & raw SHA-256 \texttt{864536\ldots fed4}; semantic digest
      \texttt{77d11e\ldots d6ca}\\
-C4 & \texttt{results/v0.4.1\_partial\_slice\_audit.json}
+C4 & \path{results/v0.4.1_partial_slice_audit.json}
    & raw SHA-256 \texttt{a37bc2\ldots 089b5}; semantic digest
      \texttt{2d65dd\ldots 99839}\\
-C5 & \texttt{results/v0.4.2\_sr3b\_m\_semantic\_recovery.json}
+C5 & \path{results/v0.4.2_sr3b_m_semantic_recovery.json}
    & raw SHA-256 \texttt{164dba\ldots 235a8}; semantic digest
      \texttt{a74297\ldots 5d735}\\
 \bottomrule
@@ -502,7 +693,7 @@ pytest -q tests/final_theory/test_semantic_recovery_v042.py
 \end{verbatim}
 
 The resource-boundary record for the U2 subroute is
-\texttt{reports/v0.4.2\_sr2v\_auxiliary\_ideal\_determinantal\_pilot\_2026-08-05.md}.
+\path{reports/v0.4.2_sr2v_auxiliary_ideal_determinantal_pilot_2026-08-05.md}.
 It has no theorem role beyond reproducibility and limitation reporting.
 
 \draftmarker{Before a release candidate, verify these commands in a clean
