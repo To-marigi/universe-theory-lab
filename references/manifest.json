@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-05T05:36:51.411253+00:00",
+  "generated_at": "2026-08-05T11:59:31.777749+00:00",
   "catalog": "references/sources.json",
   "records": [
     {
@@ -2247,6 +2247,226 @@
       ],
       "claim_boundary": "This paper concerns coupled-mode theory for optical resonators with exchange symmetry and PT-symmetric photonics. It does not treat the finite 2 by 2 CPOBC relation system, its commutativity classification, or statewise-to-operator promotion. It is recorded solely as an inspected nonmaterial hit; no local PDF or extracted text is retained because it does not support a project claim or implementation decision.",
       "archive_status": "METADATA_ONLY",
+      "sha256": null,
+      "bytes": null,
+      "pages": null,
+      "text_file": null
+    },
+    {
+      "id": "arXiv:PaperI-submission-gate-recheck-2026-08-05T113124Z",
+      "title": "Official arXiv API responses: Paper I pre-submission full-overlap and exact-ID gate",
+      "authors": [
+        "arXiv"
+      ],
+      "url": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608052359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list=",
+      "exact_id_url": "https://arxiv.org/api/query?id_list=2607.26672,2603.25503&start=0&max_results=2",
+      "retrieved_on": "2026-08-05",
+      "local_file": null,
+      "local_artifacts": [
+        {
+          "role": "FULL_OVERLAP_RAW_API_RESPONSE",
+          "path": "papers/2026-08-05_paper1_submission_gate_arxiv_full_overlap_atom.xml",
+          "media_type": "application/atom+xml",
+          "sha256": "sha256:50bd487ce4aa0c2b34a7cb97e1097031758c4b3c2b1f29cf66af108d6d9d0df9",
+          "bytes": 1091452
+        },
+        {
+          "role": "EXACT_ID_RAW_API_RESPONSE",
+          "path": "papers/2026-08-05_paper1_submission_gate_arxiv_exact_ids_atom.xml",
+          "media_type": "application/atom+xml",
+          "sha256": "sha256:c6010e09756745faae531100ee27bd2196c6691ec93190a9874a8c650213928c",
+          "bytes": 5201
+        },
+        {
+          "role": "NORMALIZED_SCREENING_LEDGER",
+          "path": "papers/2026-08-05_paper1_submission_gate_arxiv_normalized.json",
+          "media_type": "application/json",
+          "sha256": "sha256:ecfd6cc78c604c578ccd970ba1589d5e38262c74f8d806129f96d64f88be775e",
+          "bytes": 503209
+        }
+      ],
+      "dataset_snapshot": {
+        "gate_status": "CLOSED_NO_MATERIAL_DELTA_WITHIN_SUBMISSION_GATE_FULL_OVERLAP_AS_OF_2026-08-05T11:31:24Z",
+        "full_overlap_feed_updated_utc": "2026-08-05T11:31:24Z",
+        "effective_response_query": {
+          "authority": "ARCHIVED_ATOM_FEED_TITLE_AND_QUERY_LINK",
+          "field": "submittedDate",
+          "window_start_compact_utc": "202607311500",
+          "window_end_compact_utc": "202608052359",
+          "categories": [
+            "gr-qc",
+            "quant-ph",
+            "math-ph",
+            "math.OA",
+            "math.RA",
+            "math.AC",
+            "math.FA",
+            "math.CO"
+          ],
+          "start": 0,
+          "max_results": 2000,
+          "id_list": [],
+          "window_start_utc": "2026-07-31T15:00:00Z",
+          "window_end_minute_utc": "2026-08-05T23:59:00Z",
+          "window_end_exclusive_utc": "2026-08-06T00:00:00Z",
+          "feed_title": "arXiv Query: search_query=submittedDate:\"202607311500 TO 202608052359\" AND (cat:gr-qc OR (cat:quant-ph OR (cat:math-ph OR (cat:math.OA OR (cat:math.RA OR (cat:math.AC OR (cat:math.FA OR cat:math.CO) ) ) ) ) ) )&id_list=&start=0&max_results=2000",
+          "self_link": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608052359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list="
+        },
+        "normalizer": "scripts/normalize_v042_paper1_submission_gate_response.py",
+        "check_command": ".venv\\Scripts\\python.exe scripts/normalize_v042_paper1_submission_gate_response.py --check",
+        "response_entry_count": 556,
+        "entries_published_in_submitted_date_window": 556,
+        "entries_published_outside_submitted_date_window": 0,
+        "entries_published_at_or_before_feed_cutoff": 556,
+        "entries_published_after_feed_cutoff": 0,
+        "minimum_published_utc": "2026-07-31T15:01:28Z",
+        "maximum_published_utc": "2026-08-04T17:59:09Z",
+        "ordered_arxiv_ids_sha256": "sha256:a92cc0e5448f7fb4b8c2a7564c3fa87dd52bd8926bc4930971bc1f963cfa5935",
+        "records_sha256": "sha256:5f8364fd5049830fa62da68b49fa003444563a4beacde5950f103f0a12b14b02",
+        "screening_decision_counts": {
+          "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 533,
+          "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 23,
+          "MATERIAL_DELTA_TO_C1_C5": 0
+        },
+        "authorization_boundary": {
+          "technical_literature_gate_only": true,
+          "manuscript_freeze_authorized": false,
+          "submission_authorized": false,
+          "deposit_authorized": false,
+          "publication_authorized": false,
+          "owner_only": true
+        },
+        "retrievals": {
+          "full_overlap": {
+            "requested_url": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608052359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list=",
+            "request_started_utc": "2026-08-05T11:31:20.124Z",
+            "retrieved_utc": "2026-08-05T11:31:26.068Z",
+            "http_status": 200
+          },
+          "exact_ids": {
+            "requested_url": "https://arxiv.org/api/query?id_list=2607.26672,2603.25503&start=0&max_results=2",
+            "request_started_utc": "2026-08-05T11:31:39.649Z",
+            "retrieved_utc": "2026-08-05T11:31:40.486Z",
+            "http_status": 200
+          }
+        },
+        "full_overlap_comparison": {
+          "query_semantics_equal": true,
+          "feed_title_text_equal": false,
+          "baseline_response_entry_count": 556,
+          "submission_gate_response_entry_count": 556,
+          "added_ids": [],
+          "missing_ids": [],
+          "metadata_changed_ids": [],
+          "screening_changed_ids": [],
+          "version_pair_diagnostics": [],
+          "response_order_equal": false,
+          "response_order_moved_record_count": 553,
+          "response_order_not_a_materiality_contract": true,
+          "metadata_by_id_sha256": "97913f712442e345403784449466cb1d6a7f2eecf3a8dd9910f9aa754b091ff7",
+          "screening_by_id_sha256": "9987148cc19621917b821a9a0bfecfe719d06514ff5f409fd31642907f640ed1"
+        },
+        "title_abstract_rescreen": {
+          "records_screened": 556,
+          "rule_triggered_candidates": 23,
+          "candidate_ids": [
+            "2608.00159v1",
+            "2608.00297v1",
+            "2608.01110v1",
+            "2608.01114v1",
+            "2608.01293v1",
+            "2608.01317v1",
+            "2608.01376v1",
+            "2608.01424v1",
+            "2608.01485v1",
+            "2608.01650v1",
+            "2608.01689v1",
+            "2608.01831v1",
+            "2608.02262v1",
+            "2608.02459v1",
+            "2608.02473v1",
+            "2608.02861v1",
+            "2608.03334v1",
+            "2608.03427v1",
+            "2608.03526v1",
+            "2608.03552v1",
+            "2608.03755v1",
+            "2608.03825v1",
+            "2608.03897v1"
+          ],
+          "candidate_metadata_changed_ids": [],
+          "candidate_decision_changed_ids": [],
+          "material_delta_ids": [],
+          "status": "COMPLETED_NO_MATERIAL_DELTA"
+        },
+        "exact_id_checks": {
+          "raw_response": {
+            "path": "references/papers/2026-08-05_paper1_submission_gate_arxiv_exact_ids_atom.xml",
+            "sha256": "c6010e09756745faae531100ee27bd2196c6691ec93190a9874a8c650213928c",
+            "bytes": 5201,
+            "feed_updated_utc": "2026-08-05T11:31:40Z"
+          },
+          "effective_response_query": {
+            "authority": "ARCHIVED_ATOM_FEED_TITLE_AND_QUERY_LINK",
+            "search_query": "",
+            "id_list": [
+              "2607.26672",
+              "2603.25503"
+            ],
+            "start": 0,
+            "max_results": 2,
+            "feed_title": "arXiv Query: search_query=&id_list=2607.26672,2603.25503&start=0&max_results=2",
+            "self_link": "https://arxiv.org/api/query?search_query=&start=0&max_results=2&id_list=2607.26672,2603.25503"
+          },
+          "opensearch": {
+            "total_results": 2,
+            "start_index": 0,
+            "items_per_page": 2
+          },
+          "response_entry_count": 2,
+          "records": [
+            {
+              "arxiv_id": "2603.25503v1",
+              "base_id": "2603.25503",
+              "version": "v1",
+              "updated_utc": "2026-03-26T14:41:23Z",
+              "published_utc": "2026-03-26T14:41:23Z",
+              "title": "Implementing Bell causality in Quantum Sequential Growth",
+              "authors": [
+                "Ritesh Srivastava",
+                "Sumati Surya"
+              ],
+              "abstract_sha256": "71f3b53380834a0346ca59a2069e0ac4a3d348ae0fcc29fed61c8859629a782a"
+            },
+            {
+              "arxiv_id": "2607.26672v1",
+              "base_id": "2607.26672",
+              "version": "v1",
+              "updated_utc": "2026-07-29T09:28:18Z",
+              "published_utc": "2026-07-29T09:28:18Z",
+              "title": "Relational Quantum Causal Processes: Exact Models, Continuum Limits, and the Boundary of Emergent Gravity",
+              "authors": [
+                "Yipeng Xu"
+              ],
+              "abstract_sha256": "0694a2d05db85e6d524e684aa5a84b00739cad81d59b17ce22f5b31ca2160c56"
+            }
+          ],
+          "versions": {
+            "2603.25503": "v1",
+            "2607.26672": "v1"
+          },
+          "status": "BOTH_TRACKED_RECORDS_REMAIN_V1"
+        }
+      },
+      "version": "official arXiv API Atom responses archived at full-overlap feed timestamp 2026-08-05T11:31:24Z and exact-ID feed timestamp 2026-08-05T11:31:40Z; 556 title/abstract records rescreened; Xu and Srivastava--Surya remain v1",
+      "relationship": "SEARCH_DATASET",
+      "used_for": [
+        "Paper I pre-submission full-overlap submittedDate gate for C1--C5",
+        "ID-keyed comparison with the archived 2026-08-05T04:52:45Z baseline",
+        "exact-ID version and updated-metadata checks for arXiv:2607.26672 and arXiv:2603.25503"
+      ],
+      "claim_boundary": "This artifact-specific 2026-08-05T11:31Z gate establishes only that the archived submittedDate response fully overlaps the committed window, has the same 556 versioned IDs, normalized title/abstract metadata, and C1--C5 screening decisions when compared by ID, and that the separately queried Xu and Srivastava--Surya records remain at v1. It does not establish exhaustive literature coverage, novelty, priority, absence, or general coverage of updates to records submitted before the window. The changed arXiv API response order is not a materiality signal. This checker must not be reused for a later submission: a later gate requires new date-stamped raw responses, a new source ID, and a window-aware normalizer proving start no later than the baseline start, end no earlier than the prior end, and a monotone feed cutoff. This artifact closes only a technical literature-delta gate. It does not authorize manuscript freeze, submission, deposit, or publication; all such actions are owner-only and remain unapproved.",
+      "archive_status": "LOCAL_ARTIFACTS",
       "sha256": null,
       "bytes": null,
       "pages": null,
