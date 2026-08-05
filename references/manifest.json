@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-05T01:59:19.703968+00:00",
+  "generated_at": "2026-08-05T05:36:51.411253+00:00",
   "catalog": "references/sources.json",
   "records": [
     {
@@ -2115,21 +2115,89 @@
     },
     {
       "id": "arXiv:PaperI-literature-delta-query-2026-08-05",
-      "title": "Official arXiv API query: bounded Paper I literature-delta screen",
+      "title": "Official arXiv API response: bounded Paper I submittedDate screen",
       "authors": [
         "arXiv"
       ],
-      "url": "https://export.arxiv.org/api/query?search_query=lastUpdatedDate%3A%5B202607311500%20TO%20202608052359%5D%20AND%20(cat%3Agr-qc%20OR%20cat%3Aquant-ph%20OR%20cat%3Amath-ph%20OR%20cat%3Amath.OA%20OR%20cat%3Amath.RA%20OR%20cat%3Amath.AC%20OR%20cat%3Amath.FA%20OR%20cat%3Amath.CO)&start=0&max_results=2000&sortBy=lastUpdatedDate&sortOrder=descending",
+      "url": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608052359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list=",
       "retrieved_on": "2026-08-05",
       "local_file": null,
-      "version": "official arXiv API response retrieved 2026-08-05; lastUpdatedDate query 2026-07-31T15:00Z through the coarse 2026-08-05T23:59Z upper bound; 524 screened records",
+      "local_artifacts": [
+        {
+          "role": "RAW_API_RESPONSE",
+          "path": "papers/2026-08-05_paper1_arxiv_delta_query_atom.xml",
+          "media_type": "application/atom+xml",
+          "sha256": "sha256:8f1b253e2eebaa4788f19616c15ef4cc250da80bfc0d640eea4bd01b7eee08a3",
+          "bytes": 1091434
+        },
+        {
+          "role": "NORMALIZED_SCREENING_LEDGER",
+          "path": "papers/2026-08-05_paper1_arxiv_delta_query_normalized.json",
+          "media_type": "application/json",
+          "sha256": "sha256:39e12901c8db41a63070cb4ea1794a1da415aeea8c8df0160df79d7224a42c29",
+          "bytes": 497237
+        }
+      ],
+      "dataset_snapshot": {
+        "gate_status": "CLOSED_NO_MATERIAL_DELTA_WITHIN_ARCHIVED_SUBMITTEDDATE_SCOPE_AS_OF_2026-08-05T04:52:45Z",
+        "feed_updated_utc": "2026-08-05T04:52:45Z",
+        "effective_response_query": {
+          "authority": "ARCHIVED_ATOM_FEED_TITLE_AND_QUERY_LINK",
+          "field": "submittedDate",
+          "window_start_compact_utc": "202607311500",
+          "window_end_compact_utc": "202608052359",
+          "categories": [
+            "gr-qc",
+            "quant-ph",
+            "math-ph",
+            "math.OA",
+            "math.RA",
+            "math.AC",
+            "math.FA",
+            "math.CO"
+          ],
+          "start": 0,
+          "max_results": 2000,
+          "id_list": [],
+          "window_start_utc": "2026-07-31T15:00:00Z",
+          "window_end_minute_utc": "2026-08-05T23:59:00Z",
+          "window_end_exclusive_utc": "2026-08-06T00:00:00Z",
+          "feed_title": "arXiv Query: search_query=submittedDate:\"202607311500 TO 202608052359\" AND (cat:gr-qc OR cat:quant-ph OR cat:math-ph OR cat:math.OA OR cat:math.RA OR cat:math.AC OR cat:math.FA OR cat:math.CO)&id_list=&start=0&max_results=2000",
+          "self_link": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608052359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list="
+        },
+        "normalizer": "scripts/normalize_v042_paper1_arxiv_delta_response.py",
+        "check_command": ".venv\\Scripts\\python.exe scripts/normalize_v042_paper1_arxiv_delta_response.py --check",
+        "response_entry_count": 556,
+        "entries_published_in_submitted_date_window": 556,
+        "entries_published_outside_submitted_date_window": 0,
+        "entries_published_at_or_before_feed_cutoff": 556,
+        "entries_published_after_feed_cutoff": 0,
+        "minimum_published_utc": "2026-07-31T15:01:28Z",
+        "maximum_published_utc": "2026-08-04T17:59:09Z",
+        "ordered_arxiv_ids_sha256": "sha256:5f8a03534e8ce34f289f0bccf7457ee6e808e6dc8efccb41cb54e8515d99c18d",
+        "records_sha256": "sha256:1d53423d64956f4901980d315dee87ef834c775d17cacaefa3f6440778b14bb3",
+        "screening_decision_counts": {
+          "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 533,
+          "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 23,
+          "MATERIAL_DELTA_TO_C1_C5": 0
+        }
+      },
+      "historical_unarchived_observation": {
+        "reported_screened_record_count": 524,
+        "status": "NONAUTHORITATIVE_UNARCHIVED_HISTORY_QUERY_AND_MEMBERSHIP_UNKNOWN",
+        "query_provenance_known": false,
+        "membership_known": false,
+        "comparison_to_archived_556_authorized": false
+      },
+      "version": "official arXiv API Atom response archived at feed timestamp 2026-08-05T04:52:45Z; effective submittedDate window 2026-07-31T15:00Z through 2026-08-05T23:59Z; 556 normalized and screened records",
       "relationship": "SEARCH_DATASET",
       "used_for": [
-        "bounded Paper I literature-delta gate for C1--C5",
-        "checking new records and later version updates after the 2026-08-01 ledger cutoff"
+        "bounded Paper I submittedDate-window gate for C1--C5",
+        "screening records submitted in the archived 2026-07-31T15:00Z through 2026-08-05T23:59Z response scope",
+        "deterministic title-and-abstract rescreen of all 556 records in the archived response"
       ],
-      "claim_boundary": "This metadata-only query records a bounded official-arXiv screen, not an exhaustive database, novelty, priority, or absence result. The effective assessment cutoff was 2026-08-05T01:43:02Z; records later than that were not used. A redundant query after the completed retrieval/direct checks received HTTP 429, so no inference is drawn from that unavailable redundant response. The detailed scope and required pre-submission recheck are in reports/v0.4.2_paper1_literature_delta_2026-08-05.md. No local PDF applies to an API-query dataset.",
-      "archive_status": "METADATA_ONLY",
+      "claim_boundary": "The archived 556-entry response and normalized ledger support only a bounded official-arXiv title/abstract screen within the submittedDate window encoded by the Atom feed title and query link. They do not establish exhaustive database coverage, novelty, priority, absence, or general coverage of later versions whose original submission predates the window. The only separately recorded exact-ID version checks are Xu arXiv:2607.26672 and Srivastava--Surya arXiv:2603.25503. The earlier unarchived 524-count observation has neither known query provenance nor known membership and is nonauthoritative. Immediately before submission, the minimum contract is a full-overlap submittedDate snapshot plus those tracked exact-ID checks; whether to add broader pre-window version-update coverage remains an explicit editorial decision. The detailed scope is in reports/v0.4.2_paper1_literature_delta_2026-08-05.md. No local PDF applies to an API-query dataset; the raw Atom dataset and normalized JSON ledger are retained separately and hash-bound.",
+      "archive_status": "LOCAL_ARTIFACTS",
       "sha256": null,
       "bytes": null,
       "pages": null,

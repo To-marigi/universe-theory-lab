@@ -36,26 +36,22 @@
 \newcommand{\GL}{\mathrm{GL}}
 \newcommand{\End}{\mathrm{End}}
 \newcommand{\im}{\operatorname{im}}
-\newcommand{\draftmarker}[1]{%
-  \begin{quote}\small
-  \fcolorbox{red!60!black}{red!6}{%
-    \parbox{0.90\linewidth}{\textbf{DRAFT PROOF INSERT REQUIRED.} #1}}
-  \end{quote}}
+\newcommand{\digest}[2]{\shortstack[l]{\texttt{#1}\\\texttt{#2}}}
 
 \title{\textbf{Statewise versus operator Bell causality in finite\\
 quantum sequential growth: exact separation and recovery at dimension two}}
 \author{Kenichi Osaki\\
 \small Independent researcher\\
 \small ORCID: \href{https://orcid.org/0009-0003-9256-7089}{0009-0003-9256-7089}}
-\date{Paper I manuscript scaffold, v0.4.2 -- 5 August 2026}
+\date{Paper I proof-complete release-candidate source, v0.4.2 -- 5 August 2026}
 
 \begin{document}
 \maketitle
 
 \begin{center}
-\small\emph{Claim-locked manuscript scaffold.  The theorem statements below
-are limited to the v0.4.2 Paper I claim ledger.  Every proof section that
-has not yet been written for human review carries an explicit draft marker.}
+\small\emph{Claim-locked proof-complete source.  The theorem statements below
+are limited to the v0.4.2 Paper I claim ledger.  Proof completion and machine
+audit do not authorise submission, deposit, or manuscript freeze.}
 \end{center}
 
 \begin{abstract}
@@ -82,8 +78,8 @@ The operator-valued CPOBC setting considered here follows the finite
 presentation and source relations documented in \cite{SrivastavaSurya2026},
 with the project-specific semantic distinctions kept explicit.
 
-This draft is intentionally narrower than a general representation theorem.
-It is a paper skeleton for the five statements C1--C5 in
+This article is intentionally narrower than a general representation theorem.
+It proves the five statements C1--C5 in
 \texttt{results/v0.4.2\_paper1\_claim\_boundary.json}.  The terms
 ``finite'', ``nonsingular'', ``occurrence ON'', \(d=2\), and \(n\leq4\)
 are part of every theorem scope unless a statement explicitly says otherwise.
@@ -109,10 +105,12 @@ that territory.  Its distinct center is the exact statewise weak/weak
 separation in Theorem~\ref{thm:c2}, together with the explicitly conditional
 recovery and proper-slice statements below.
 
-The comparison in this draft is bound to the versioned literature audit
-through 1 August 2026.  A fresh delta search is required before manuscript
-freeze; an unavailable companion manuscript mentioned by Xu is not treated
-as inspected.
+The comparison is bound to the versioned baseline and an archived 556-record
+arXiv \texttt{submittedDate} snapshot (feed 5 August 2026, 04:52:45 UTC).  It
+omits pre-window version updates; only Xu and Srivastava--Surya receive
+exact-ID checks.  Before submission, repeat both checks and decide separately
+whether broader update coverage is needed.  Xu's unavailable companion is
+uninspected.
 
 \begin{table}[ht]
 \centering
@@ -218,10 +216,125 @@ locus satisfies
 The certificate does not use \(Q_5\).
 \end{theorem}
 
-\draftmarker{Insert a human-readable account of the frozen literal
-strong/strong certificate and its 21-chart-plus-S3 coverage.  Do not replace
-this finite comparison theorem by a broad rigidity, self-adjoint, or complete
-classification statement.}
+\begin{proof}
+Let \(L\) denote the frozen literal scalar system.  After inverses are
+replaced by adjugates divided by their determinant factors, \(L\) has 2,564
+distinct canonical numerator records.  The authenticated partition is the
+disjoint decomposition
+\[
+  2564=2552\ \text{\(Q_5\)-free numerators}
+       +12\ \text{\(Q_5\)-dependent numerators},
+\]
+and all 191 denominator records are \(Q_5\)-free.  At matrix-relation level,
+the 2,552 numerators are the scalar entries of the 976-relation shared core
+\[
+  976=700\ \mathrm{CPOBC}+255\ \mathrm{GC}
+      +21\ \text{strong-MSR relations}.
+\]
+The 25 literal path-consistency relations are not members of this shared
+core.  Consequently every literal solution on the recorded denominator-open
+locus satisfies the shared core: it is only the forward implication obtained
+by restricting the equation set to the shared-core subset.  No reverse implication,
+equality of loci, relation-minimality statement, or Gr\"obner-basis statement
+is used.
+
+Put
+\[
+  R_i=Q_1^{-1}Q_i\qquad(i=2,3,4).
+\]
+The three recorded Eq.~(120) instances inside the shared core give
+\[
+  Q_nQ_1^{-1}Q_m=Q_mQ_1^{-1}Q_n
+  \qquad(2\leq m<n\leq4).
+\]
+Left multiplication by \(Q_1^{-1}\) shows that
+\([R_n,R_m]=0\).  Thus \(R_2,R_3,R_4\) are a commuting triple.  Over an
+algebraic closure, exactly one of the following alternatives holds.
+\begin{description}
+  \item[S1: distinct-spectrum pivot.] The first eligible \(R_i\) has two
+        distinct eigenvalues.  In its eigenbasis it is diagonal, and its
+        centralizer consists of diagonal matrices, so the other ratios are
+        diagonal in the same basis.
+  \item[S2: common nilpotent direction.] No ratio has distinct spectrum, but
+        the first eligible \(R_i\) is nonscalar.  After subtracting its sole
+        eigenvalue it is a nonzero square-zero matrix \(N\).  The
+        two-dimensional centralizer is \(\langle I,N\rangle\), hence every
+        ratio has the form \(\lambda I+\mu N\) for this common \(N\).
+  \item[S3: scalar triple.] Every ratio is scalar.
+\end{description}
+This is exhaustive: a ratio either has distinct spectrum, is nonscalar with
+one eigenvalue, or is scalar; choosing the first eligible index in the order
+\(2,3,4\) makes the strata disjoint.
+
+For each of the three possible S1 pivots, the four recorded \(Q_1\)-coordinate
+branches are \texttt{BOTH\_NONZERO}, \texttt{UPPER\_ONLY},
+\texttt{LOWER\_ONLY}, and \texttt{BOTH\_ZERO}; these are the 12 S1 charts.
+For each of the three possible S2 pivots, the branches are
+\texttt{C\_NONZERO}, \texttt{C\_ZERO\_B\_NONZERO}, and
+\texttt{BC\_ZERO}; these are the 9 S2 charts.  Every chart contains the 976
+shared-core relations, the complete declared localisation, and every
+independent component of the six commutators among \(Q_1,\ldots,Q_4\).
+The 21 exact \(\QQ\) certificates report
+\[
+  \begin{array}{c|cc}
+    &\text{exactly empty}&\text{no noncommutative point}\\ \hline
+    \mathrm{S1}&9&3\\
+    \mathrm{S2}&3&6
+  \end{array}
+\]
+with no unresolved S1/S2 chart.  In S3,
+\(Q_i=Q_1R_i=\lambda_iQ_1\) for \(i=2,3,4\), so commutativity is structural;
+the full structural chart ID is
+\path{DERIVED_APPENDIX_QN_BRANCH:S3_SCALAR:GENERAL_Q1}.
+The chart equations and localisation factors are defined over \(\QQ\); the
+exact unit and zero-remainder certificates remain valid after scalar
+extension.  Passing to an algebraic closure above therefore chooses the
+simultaneous normal form but does not replace the characteristic-zero proof
+by a finite-field scout.
+
+The proof-bearing bindings are recorded without digest abbreviation in
+Table~\ref{tab:c1-authority}.
+\begin{table}[p]
+\centering
+\footnotesize
+\caption{C1 authority bindings.  Digests are full hexadecimal values.}
+\label{tab:c1-authority}
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.42\textwidth}
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+Artifact and field & Exact binding and role\\
+\midrule
+\path{results/v0.3.9_release_manifest.json}, semantic digest
+  & \digest{eb9eb81d911f194fe2b6c18dfe81389e}{3a6fc0856a1bae3a767d46753f348e47};
+    frozen release authority\\
+\path{results/v0.3.7_q5_free_partition.json}, semantic digest
+  & \digest{22024c9eb5f63148ab8c0fb05a88b8db}{63d3ffa70f48e16dddbbe174bf832260};
+    literal \(Q_5\)-free partition\\
+same partition, ordered 976 matrix-relation IDs
+  & \digest{1a3e313ea2b0036b072a8ca969c0bc4d}{a628c2099b679d6737c5eae04f5de265};
+    shared-core identity\\
+same partition, ordered 191 denominator IDs
+  & \digest{590225322705bd7580c5b25e1339fb69}{aecdd0c11452b62de8bf1d814511b70e};
+    localisation identity\\
+\path{results/v0.3.7_q5_free_elimination.json}, semantic digest
+  & \digest{42dcd4f095f4d9ba87478716e1ed8e36}{39a823b0179cebd230f00feaedc0e47a};
+    exact chart verdicts and S3 record\\
+\path{results/v0.3.7_release_manifest.json}, 21 exact-\(\QQ\) path set
+  & \digest{4379b938a256ef6f518b37e807d12d2f}{588cac041d5cf8e95a7501a7ba0b3aef};
+    complete proof-certificate path binding\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+It follows in S1, S2, and S3 that all six commutators among
+\(Q_1,\ldots,Q_4\) vanish.  By the forward subset implication, the same is
+true for every literal solution.  This argument never introduces a ratio
+\(R_5\), never constrains a \(Q_5\) fibre, and gives no conclusion about
+\(Q_5\), priority, rigidity, occurrence OFF, a complete classification, or
+stages \(n\geq5\).  Its 976-relation strong/strong shared core is not the
+955-relation reconstruction locus used in C4.
+\end{proof}
 
 \subsection{C2: exact weak/weak separation}
 
@@ -237,9 +350,154 @@ this does not supply a profile-native 406-occurrence OFF compiler or an OFF
 classification.
 \end{theorem}
 
-\draftmarker{Insert the independently checkable witness derivation and the
-exact finite audit.  Retain the distinction between statewise vanishing and
-operator residuals; do not promote this theorem to either one-sided profile.}
+\begin{proof}
+For a transition \(e\) at source stage \(n\), let \(w_e\) be the cardinality
+of its precursor and let \(m_e\) be the number of maximal elements of that
+precursor.  The frozen rational assignment is
+\[
+ A_e=
+ \begin{pmatrix}p_e&b_e\\0&1\end{pmatrix},
+ \qquad
+ p_e=\frac{2^{w_e-m_e}}{2^n},
+ \qquad
+ b_e=\begin{cases}
+       4/2^n,&\text{if the precursor is empty},\\
+       0,&\text{otherwise}.
+     \end{cases}
+\]
+Because \(0\leq m_e\leq w_e\), \(p_e\) is a nonzero rational number and
+\(\det A_e=p_e\neq0\) for every one of the 165 transition occurrences.
+For the gregarious antichain transitions this gives the five exact matrices
+in Table~\ref{tab:c2-q-matrices}.
+
+\begin{table}[ht]
+\centering
+\caption{The five exact gregarious generators in the C2 witness.}
+\label{tab:c2-q-matrices}
+\begin{tabular}{c c c}
+\toprule
+\(n\) & \(Q_n\) & \(\det Q_n\)\\
+\midrule
+1 & \(\left(\begin{smallmatrix}1/2&2\\0&1\end{smallmatrix}\right)\) & \(1/2\)\\
+2 & \(\left(\begin{smallmatrix}1/4&1\\0&1\end{smallmatrix}\right)\) & \(1/4\)\\
+3 & \(\left(\begin{smallmatrix}1/8&1/2\\0&1\end{smallmatrix}\right)\) & \(1/8\)\\
+4 & \(\left(\begin{smallmatrix}1/16&1/4\\0&1\end{smallmatrix}\right)\) & \(1/16\)\\
+5 & \(\left(\begin{smallmatrix}1/32&1/8\\0&1\end{smallmatrix}\right)\) & \(1/32\)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Set \(\Omega=e_1=(1,0)^{\mathsf T}\).  Direct multiplication gives
+\[
+  A_e\Omega=p_e\Omega .
+\]
+Every finite path product therefore sends \(\Omega\) to a nonzero rational
+multiple of \(\Omega\).  Hence the reachable span has rank at most one; it
+has rank exactly one because the compiled inventory contains the nonzero
+basis state \(v_{p1-0}=\Omega\).  This proves the stated exact rank-one
+claim without a floating-point rank test.
+
+For \(1\leq i<j\leq4\), direct multiplication of the displayed \(Q\)'s gives
+\[
+ [Q_i,Q_j]
+ =\begin{pmatrix}
+    0&4(2^{-i}-2^{-j})\\0&0
+  \end{pmatrix}.
+\]
+The six upper-right entries are recorded in
+Table~\ref{tab:c2-commutators}; each is nonzero, whereas every displayed
+commutator kills \(\Omega\) and hence the entire reachable ray.
+
+\begin{table}[ht]
+\centering
+\caption{All six operator commutators among \(Q_1,\ldots,Q_4\).}
+\label{tab:c2-commutators}
+\begin{tabular}{c c c}
+\toprule
+Pair \((i,j)\) & Upper-right entry & Action on the reachable ray\\
+\midrule
+\((1,2)\) & \(1\)   & zero\\
+\((1,3)\) & \(3/2\) & zero\\
+\((1,4)\) & \(7/4\) & zero\\
+\((2,3)\) & \(1/2\) & zero\\
+\((2,4)\) & \(3/4\) & zero\\
+\((3,4)\) & \(1/4\) & zero\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The residual ledger also makes the statewise/operator distinction explicit.
+At endpoint \path{p3-002}, the path pair
+\path{lgc-path-73192a6770fa82828f12} and
+\path{lgc-path-fc1eafd06aa0360d6535} has
+\[
+ D_{\alpha,\beta}=
+ \begin{pmatrix}0&-1/2\\0&0\end{pmatrix}\neq0,
+ \qquad D_{\alpha,\beta}\Omega=0.
+\]
+For the source constraint \path{msr:p1-0}, the operator residual is
+\[
+ M_{p1-0}=\begin{pmatrix}0&2\\0&1\end{pmatrix}\neq0,
+ \qquad M_{p1-0}v_{p1-0}=0.
+\]
+Thus neither statewise equality is being silently promoted to an operator
+identity.
+
+Exact substitution in the complete electronic ledger verifies 783 CPOBC
+word equations, 712 inverse-containing rewrites, 1,529 fixed-vector GC path
+pairs, 24 reachable-state MSR constraints, both \(25+25\) Eq.~(113)
+branches, both \(4+10\) Eq.~(139) domains, all 165 transition determinants,
+and the six commutators above.  The 165 occurrences form 131 orbit classes.
+Counting the ten top-level record families gives
+\[
+  165+783+712+1529+24+25+25+4+10+6=3283.
+\]
+The 131 orbit descriptors are a join index for the 165 occurrence records,
+not additional members of this 3,283-record total.  The compact index stores
+the sorted natural IDs and a SHA-256 digest for every family, so omission,
+duplication, and composite-ID collision are detectable without reproducing
+the full 1.6 MB ledger in the article.
+
+\begin{table}[p]
+\centering
+\footnotesize
+\caption{C2 electronic-supplement authorities and independent checks.}
+\label{tab:c2-authority}
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.43\textwidth}
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+Bound artifact & Exact binding and role\\
+\midrule
+\path{results/v0.4.2_paper1_witness_tables.json}
+  & schema \path{final-theory-v042-paper1-witness-tables-v1}; semantic digest
+    \digest{6e3aff10dcf855617973b3b83bece809}{f00ef39f9568471475e58c1ab5fca542};
+    compact proof-facing index and per-family natural-ID digests\\
+\path{results/v0.4_weak_d2_classification.json}
+  & raw SHA-256
+    \digest{18e71f439913896fb370944c6479fc35}{8d4d6d0d127162809ba46822ccd2fe65};
+    complete electronic substitution ledger; no semantic digest is invented\\
+\path{tests/final_theory/test_weak_d2_v04_oracle.py}
+  & raw SHA-256
+    \digest{54c5ec91fd3af0c824b153e451caa469}{5036e39d3915e68e76618ee2f455b324};
+    independent SymPy reconstruction using exact rational matrices\\
+\path{results/v0.4.2_sr2v_baseline_observability.json}
+  & raw SHA-256
+    \digest{4f57805e871c0589560669c5aa65181c}{29ca41cdf722420729279945770710de};
+    semantic digest
+    \digest{73508f8ad94d97a3147cbd913d687f0b}{779c740b80a84a4836854053f6f01c62};
+    independent path, rank, and residual-visibility reconstruction\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The assignment is orbit-constant on the certified occurrence-ON inventory.
+It is therefore an admissible point after the ON equalities are removed, but
+that logical observation does not construct or classify the profile-native
+406-occurrence OFF system.  Nor does the witness imply reachable-visible
+noncommutativity, either one-sided theorem, or a complete weak/weak
+classification.
+\end{proof}
 
 \subsection{C3: source-native Eq.~(120)}
 
@@ -360,9 +618,105 @@ inclusion and no conclusion on
 \(P_{\mathrm{sGC+rMSR}}^{\mathrm{ns}}\setminus\im(\Phi_U)\) are claimed.
 \end{theorem}
 
-\draftmarker{Insert the quantified source-to-direct pullback, the
-localisation argument, and the exact 12-S1, 9-S2, and S3 closure.  Keep the
-proper-slice qualifier in the theorem title, abstract, and conclusion.}
+\begin{proof}
+Fix
+\(x\in P_{\mathrm{sGC+rMSR}}^{\mathrm{ns}}\cap\im(\Phi_U)\) and fix an
+arbitrary \(q\in U\) with \(\Phi_U(q)=x\).  We first use the
+source-to-direct lane.  Independent substitution of the 783 source CPOBC word
+residuals through \(\Phi_U\) gives 83 identities and 700 non-identically-zero
+pullback expressions.  Their ordered IDs are exactly the 700 CPOBC IDs defining the
+direct locus.  Since \(x\) satisfies source CPOBC, all 700 direct residuals
+vanish at \(q\).
+
+Strong source GC annihilates all 1,529 same-endpoint path-pair residuals.  An
+endpoint-wise spanning-tree basis has 320 edges and spans that complete
+inventory.  Substitution of these 320 basis residuals through \(\Phi_U\)
+gives 65 identities and exactly the 255 local-operator-GC direct residuals.
+They too vanish at \(q\).
+
+Finally, all 165 reconstructed transition matrices at \(q\) agree with their
+source transition operators at \(x\).  Source nonsingularity therefore gives
+all 165 determinant predicates.  In particular, it supplies the four \(Q\)
+and twenty-two \(B\) determinant factors used by the rational inverse bases;
+these inverse coordinates are adjugate-over-determinant values, not
+independent choices.  By the definition in Section~3, these three facts put
+\(q\) in \(D_{955}\):
+\[
+  700\ \mathrm{CPOBC}+255\ \mathrm{GC}
+  \quad\text{with all 165 reconstructed transitions nonsingular}.
+\]
+Reachable-state MSR is part of the definition of
+\(P_{\mathrm{sGC+rMSR}}^{\mathrm{ns}}\), but no reachable-state-MSR equation
+was used in this forward inclusion.  That non-use does not enlarge the
+source profile of the theorem.
+
+The Eq.~(120) lane is logically separate.  Lemma~\ref{lem:c3} applies to the
+source CPOBC records and source nonsingularity at \(x\), and gives
+\[
+  Q_nQ_1^{-1}Q_m=Q_mQ_1^{-1}Q_n
+  \qquad(2\leq m<n\leq4).
+\]
+Because \(x=\Phi_U(q)\), the reconstructed \(Q\)-coordinates at \(q\) are the
+same source coordinates, and \(q\in U\) supplies \(Q_1^{-1}\).  Hence the
+ratios \(R_i(q)=Q_1(q)^{-1}Q_i(q)\), \(i=2,3,4\), commute pairwise.  This step
+uses the six source-native records proved in C3; it is not an ideal-membership
+deduction from the selected 700 direct CPOBC relations.
+
+Conditional on these commuting ratios, the dimension-two first-pivot
+partition is exhaustive.  For the 955-relation lane, the 12 S1 charts split
+as 9 exactly empty and 3 with no noncommutative solution; the 9 S2 charts
+split as 3 exactly empty and 6 with no noncommutative solution.  S3 is
+structurally commutative because
+\(Q_i=\lambda_iQ_1\).  The 21 exact certificates have complete localisation
+and complete independent-commutator-component coverage; the audit also
+recomputes every omitted component as zero.  Therefore every commutator among
+\(Q_1(q),\ldots,Q_4(q)\) vanishes.
+
+The proof authorities are listed in Table~\ref{tab:c4-authority}.  The C4
+certificate IDs carry the profile prefix
+\path{strong_GC__reachable_state_MSR}; this historical label does not add an
+rMSR matrix relation to the selected 955-relation core.  These are not the C1
+\path{Q5_FREE_SHARED_CORE} certificates for the 976-relation core.
+
+\begin{table}[p]
+\centering
+\footnotesize
+\caption{C4 authority and ordered-ID bindings.}
+\label{tab:c4-authority}
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.43\textwidth}
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+Artifact or bound set & Full semantic or ordered-set digest\\
+\midrule
+\path{results/v0.4.1_partial_slice_audit.json}
+  & \digest{2d65ddeefdec9606b6680dce6a6a790f}{b30ff50dd8d552a01043b022a6c99839}\\
+\path{results/v0.4.2_eq120_source_provenance.json}
+  & \digest{77d11eff7d14d84182abbf1eb30732fe}{2b94855507f1826747ba878fadb8d6ca}\\
+\path{results/v0.4.1_one_sided_elimination_manifest.json}
+  & \digest{173a66aa506281ccdd6c4411e0590510}{51228c703ba2632487ed9102e792a1f5}\\
+\path{results/v0.4.1_one_sided_elimination.json}
+  & \digest{6b4300485c23c485177584d8dd9afd8c}{77463e64ca55cf812eae9898b430382c}\\
+\path{results/v0.4.1_one_sided_elimination_oracle.json}
+  & \digest{48e3eea12ed6f7f8497260922d088e2e}{fdeb6a14548451157517d307f1c1b4a3}\\
+700 ordered direct-CPOBC IDs
+  & \digest{cef66f304c7aff361bd92b44eba9a453}{a01331566d1becf0e73b1cf5895d2431}\\
+255 ordered direct-GC IDs
+  & \digest{91a6329940f086ef583a2757a63046dc}{97378b14ae35e3f2b7f5375b77943f13}\\
+26 inverse-site/source-occurrence bindings
+  & \digest{b6b4a4ccdd01eff7441ddff6728306e6}{ae7c2996a4b8b8947b54126f033540d9}\\
+21 exact-\(\QQ\) certificate set
+  & \digest{26b29c370433214e002064c063eda3eb}{3fdabef43093477bead6b73e947bf38e}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Since \(q\) was arbitrary over the chosen \(x\), the asserted forward image
+inclusion and commutativity conclusion follow.  The argument proves neither a
+reverse inclusion nor a statement on the image complement.  It assigns no
+ideal-membership consequence to an arbitrary direct point, and it is not a
+commutativity theorem for the full 955 source profile.
+\end{proof}
 
 \subsection{C5: conditional statewise-to-operator recovery}
 
@@ -519,10 +873,84 @@ exact \(\QQ\) certificates used & 21 & proper-slice closure only\\
 \end{tabularx}
 \end{table}
 
-\draftmarker{This section is a dependency roadmap, not a substitute for the
-complete proofs.  Before release, add the selected record IDs, quantified
-map domains, human-readable chart-cover proof, and certificate-to-claim
-bindings.}
+\subsection*{Proof-to-authority map and chart-ID generation}
+
+The two chart lanes share only the dimension-two cover suffixes.  They do not
+share a relation core or a certificate set.  Table~\ref{tab:lane-map} fixes
+the distinction used in the proofs.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\caption{Proof lanes and their claim-bearing authorities.}
+\label{tab:lane-map}
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.09\textwidth}
+  >{\raggedright\arraybackslash}p{0.25\textwidth}
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+Lane & Relation/probe content & Authority and permitted inference\\
+\midrule
+C1
+  & 976 matrix relations: \(700+255+21\)
+  & \path{results/v0.3.7_q5_free_partition.json} and
+    \path{results/v0.3.7_q5_free_elimination.json}; forward implication from
+    the 2,564 literal numerators to \(Q_1\)--\(Q_4\) commutativity only\\
+C3
+  & six source records, three Eq.~(120) targets
+  & \path{results/v0.4.2_eq120_source_provenance.json}; source CPOBC and
+    nonsingularity only, with no selected-direct-ideal inference\\
+C4
+  & 955 direct relations: \(700+255\), plus reconstructed nonsingularity
+  & \path{results/v0.4.1_partial_slice_audit.json}; forward proper-slice
+    inclusion and commutativity only\\
+C2
+  & 3,283 witness-ledger records and 131 orbit descriptors
+  & \path{results/v0.4.2_paper1_witness_tables.json}; exact witness audit,
+    not a weak-profile classification\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+For both C1 and C4, let \(i\) be the first eligible index in \(2,3,4\).
+The S1 cover suffix is
+\begin{center}
+\small\path{S1_PIVOT_Ri:<Q1-branch>}.
+\end{center}
+where \path{<Q1-branch>} ranges over
+\path{BOTH_NONZERO}, \path{UPPER_ONLY}, \path{LOWER_ONLY}, and
+\path{BOTH_ZERO}.  This rule gives \(3\cdot4=12\) IDs.  The S2 suffix is
+\begin{center}
+\small\path{S2_PIVOT_Mi:<Q1-branch>}.
+\end{center}
+where the final branch is one of \path{C_NONZERO},
+\path{C_ZERO_B_NONZERO}, or \path{BC_ZERO}, giving \(3\cdot3=9\) IDs.
+The cover-level prefix is \path{DERIVED_APPENDIX_QN_BRANCH}.  The C1
+certificate prefix is \path{Q5_FREE_SHARED_CORE}, while the C4 certificate
+prefix is \path{strong_GC__reachable_state_MSR}.  The common S3 cover ID is
+\path{DERIVED_APPENDIX_QN_BRANCH:S3_SCALAR:GENERAL_Q1}; S3 requires no
+backend run.
+
+The lane prefix is mathematically material.  Both C1 and C4 have the same
+within-stratum numerical split: S1 has 9 empty charts and 3 charts with no
+noncommutative point, while S2 has 3 empty charts and 6 charts with no
+noncommutative point.  This numerical agreement does not identify their
+relation cores or certificate sets: a certificate from one lane is never
+used as a certificate for the other.
+
+\paragraph{Electronic enumeration policy.}
+The manuscript prints the quantified map domains, the complete chart-ID
+generation rule, and every small proof-critical record set used directly in
+the algebraic derivations.  Bulk finite inventories are supplied
+electronically rather than duplicated in the article.  For C1, the ordered
+976-relation list and the 21 exact-\(\QQ\) chart records are bound by the
+full digests in Table~\ref{tab:c1-authority}.  For C4, the ordered 700 CPOBC
+and 255 GC lists and its distinct 21-certificate set are bound by
+Table~\ref{tab:c4-authority}.  The lane prefix together with the S1/S2 suffix
+rule above generates every chart ID.  Thus a certificate reference is the
+tuple consisting of its lane prefix, generated cover ID, and bound set
+digest; numerical agreement between lanes never authorises substitution of
+one lane's certificate for another.
 
 \section{Witness audit for C2}
 
@@ -535,7 +963,8 @@ The C2 witness is exact over \(\QQ\).  With
  b_e=\begin{cases}4/2^n,&\text{for a gregarious transition},\\
                     0,&\text{otherwise},\end{cases}
 \]
-where \(w\) and \(m\) are the declared precursor statistics.  For the
+where \(w=w_e\) is precursor cardinality and \(m=m_e\) is the number of
+maximal precursor elements.  For the
 antichain gregarious generators,
 \[
  Q_n=\begin{pmatrix}2^{-n}&4\,2^{-n}\\0&1\end{pmatrix}.
@@ -547,26 +976,93 @@ is not called reachable-visible.
 
 \begin{table}[ht]
 \centering
-\caption{Exact finite checks recorded for the C2 witness.}
+\caption{Complete family census in the compact C2 index.}
 \label{tab:witness}
-\begin{tabular}{lr}
+\begin{tabularx}{\textwidth}{@{}X r X@{}}
 \toprule
-Audit family & Recorded checks\\
+Audit family & Records & Electronic-index role\\
 \midrule
-frozen CPOBC word equations & 783\\
-same-endpoint fixed-vector GC pairs & 1,529\\
-reachable-state MSR sources & 24\\
-Eq.~(113), derived and literal branches & \(25+25\)\\
-Eq.~(139), printed-strict and completed domains & \(4+10\)\\
-transition occurrence determinants & 165\\
-nonzero commutators among \(Q_1,\ldots,Q_4\) & 6\\
+transition occurrences & 165 & occurrence-to-orbit map and determinant check\\
+orbit descriptors & 131 & join index; excluded from the 3,283-record sum\\
+frozen CPOBC word equations & 783 & complete substitution family\\
+inverse-containing rewrites & 712 & complete inverse-form family\\
+same-endpoint fixed-vector GC pairs & 1,529 & complete path-pair family\\
+reachable-state MSR sources & 24 & complete source family\\
+Eq.~(113), \(Q_n\) and \(Q_{n+1}\) branches & \(25+25\) & branches kept separate\\
+Eq.~(139), printed-strict and completed domains & \(4+10\) & domains kept separate\\
+nonzero commutators among \(Q_1,\ldots,Q_4\) & 6 & all unordered pairs\\
+\midrule
+Top-level record total & 3,283 & orbit descriptors not double-counted\\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
-\draftmarker{Before submission, replace this audit summary by the complete
-witness table, direct residual ledger, and independent-oracle comparison.
-Do not infer a complete weak/weak classification from this witness.}
+The table is generated from the compact index bound below.
+\begin{center}
+\small
+\path{results/v0.4.2_paper1_witness_tables.json}\\
+schema\\
+\path{final-theory-v042-paper1-witness-tables-v1}\\
+semantic digest\\
+\digest{6e3aff10dcf855617973b3b83bece809}{f00ef39f9568471475e58c1ab5fca542}
+\end{center}
+For every family the index stores the lexicographically sorted natural or
+composite IDs and the SHA-256 digest of that sorted list.  Composite IDs are
+encoded from the ordered source-ID components, so both duplicate records and
+delimiter collisions fail closed.  These digests bind the omitted rows; they
+are not a substitute for the complete ledger bound separately below.
+\begin{center}
+\small
+\path{results/v0.4_weak_d2_classification.json}\\
+raw SHA-256\\
+\digest{18e71f439913896fb370944c6479fc35}{8d4d6d0d127162809ba46822ccd2fe65}
+\end{center}
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\caption{Independent comparison roles for the C2 audit.}
+\label{tab:c2-oracles}
+\begin{tabularx}{\textwidth}{@{}
+  >{\raggedright\arraybackslash}p{0.35\textwidth}
+  >{\raggedright\arraybackslash}X@{}}
+\toprule
+Authority & Comparison role\\
+\midrule
+complete weak-witness ledger
+  & authoritative exhaustive record payload and declared gate verdicts\\
+\path{tests/final_theory/test_weak_d2_v04_oracle.py}
+  & reconstructs transition matrices and the CPOBC, inverse, GC, MSR,
+    Eq.~(113), Eq.~(139), and commutator checks with independent exact SymPy
+    arithmetic\\
+\path{results/v0.4.2_sr2v_baseline_observability.json}
+  & reconstructs all 407 paths and 87 endpoints with exact fractions,
+    verifies reachable rank one, and confirms that all six nonzero operator
+    commutators annihilate the compiled reachable sector\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Only the compact index is printed in the article.  The 3,283 complete record
+payloads remain in the bound electronic supplement; reproducing them as a
+multi-page PDF table would weaken rather than improve omission checking.
+
+\paragraph{Electronic witness ledger.}
+The article prints the complete witness formula, the five gregarious
+generators, all six \(Q_1,\ldots,Q_4\) commutators, representative nonzero GC
+and MSR operator residuals, and the full family census.  The exhaustive
+3,283-record audit is supplied electronically in
+\path{results/v0.4_weak_d2_classification.json}.  The compact index
+\path{results/v0.4.2_paper1_witness_tables.json} contains every sorted
+family ID, per-family counts and SHA-256 digests, the occurrence-to-orbit
+map, the exact rank-one evidence, and the representative residuals.  Its
+extractor authenticates all bound inputs before parsing and regenerates both
+the canonical semantics and exact tracked bytes; missing, duplicate, or
+colliding IDs fail validation.  The independent exact-arithmetic oracle and
+the observability audit retain their separate comparison roles.  The compact
+index is an omission certificate and navigation layer, not a replacement
+authority, a weak-profile classification, or a promotion of statewise
+equalities to operator identities.
 
 \section{Recovery conditions and their boundary}
 
@@ -685,28 +1181,43 @@ C5 & \path{results/v0.4.2_sr3b_m_semantic_recovery.json}
 
 The current reproduction-facing commands are:
 \begin{verbatim}
+uv run python scripts/validate_v042_paper1_claim_boundary.py
+uv run python scripts/validate_v042_paper1_manuscript.py
+uv run python scripts/extract_v042_paper1_witness_tables.py --check
+uv run pytest -q tests/final_theory/test_extract_v042_paper1_witness_tables.py
+uv run pytest -q tests/final_theory/test_weak_d2_v04_oracle.py \
+  tests/final_theory/test_weak_d2_observability_v042.py
 uv run pytest -q tests/final_theory/test_eq120_source_provenance_v042.py
 uv run python scripts/reproduce_v041_partial_slice_audit.py --write-audit
 uv run pytest -q tests/final_theory/test_v041_partial_slice_audit.py
-python -m universe_lab.final_theory.semantic_recovery_v042
-pytest -q tests/final_theory/test_semantic_recovery_v042.py
+uv run python -m universe_lab.final_theory.semantic_recovery_v042
+uv run pytest -q tests/final_theory/test_semantic_recovery_v042.py
 \end{verbatim}
 
 The resource-boundary record for the U2 subroute is
 \path{reports/v0.4.2_sr2v_auxiliary_ideal_determinantal_pilot_2026-08-05.md}.
 It has no theorem role beyond reproducibility and limitation reporting.
 
-\draftmarker{Before a release candidate, verify these commands in a clean
-environment, expand abbreviated digests to their full 64 hexadecimal
-characters in the release manifest, and add the versioned software and
-resource ledger.}
+\paragraph{Versioned software and resource ledger.}
+The release-candidate check uses Python 3.12.10 under the project constraint
+\path{>=3.12,<3.13}, uv 0.9.24, pytest 9.1.1, Ruff 0.13.3, and mypy 1.20.2.
+The PDF is built with the digest-pinned
+\path{texlive/texlive:latest-medium} image recorded in the manuscript
+manifest; the observed tools are TeX Live 2026, latexmk 4.88, pdfTeX 1.40.29,
+and BibTeX 0.99e.  The separately bounded U2 subroute uses the digest-pinned
+SageMath 10.9 image recorded in \path{compose.yaml}.  No fresh Sage result is
+used to close C1--C5.  Full artifact and source digests, the clean-checkout
+protocol, PDF diagnostics, all-page visual inspection, and process-survivor
+audit are recorded in the manifest, reproduction guide, and dated build
+report.
 
 \section*{Manuscript status}
 
-This file is a scoped assembly draft.  It is not a submission, deposit, or
-claim that the required human-readable proofs, independent audits, and
-release checks have been completed.  The owner and manuscript-review gates
-remain pending.
+This file is a proof-complete, machine-audited release-candidate source for
+the scoped claims C1--C5.  It is not a submission or deposit, is not frozen,
+and does not authorise either action.  The owner and manuscript-review gates
+remain pending, as does the required literature-delta recheck immediately
+before any future submission.
 
 \bibliographystyle{plain}
 \bibliography{../v0.3.9_d2_commutativity_short_report/references,references}

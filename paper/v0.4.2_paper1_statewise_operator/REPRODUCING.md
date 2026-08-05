@@ -4,10 +4,10 @@ This directory records the reproducibility contract for the scoped Paper I
 working title, *Statewise versus operator Bell causality in finite quantum
 sequential growth: exact separation and recovery at dimension two*.
 
-As of 2026-08-05, the manuscript package is
-`SCOPED_MANUSCRIPT_ASSEMBLY_READY`; submission remains
-`OWNER_AND_MANUSCRIPT_REVIEW_PENDING`.  The source of truth for what may be
-claimed is:
+As of 2026-08-05, the manuscript package is a
+`PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN`.  Proof completion is a source
+and evidence status only: freeze, submission, and deposit remain owner-only
+and unauthorized.  The source of truth for what may be claimed is:
 
 - `results/v0.4.2_paper1_claim_boundary.json` (machine-readable ledger), and
 - `reports/v0.4.2_paper1_claim_boundary_2026-08-05.md` (human-readable
@@ -84,25 +84,103 @@ claim-ledger binding, bounded-scout M -> E -> manuscript-manifest binding,
 nonclaims, and owner-only publication gates.  It does not build a PDF or
 widen the scientific claim boundary.
 
-### 1.3 Run the focused Paper I tests
+### 1.3 Check the compact electronic supplement
+
+```powershell
+uv run python scripts/extract_v042_paper1_witness_tables.py --check
+```
+
+Expected output:
+
+```text
+paper1_witness_tables=OK
+```
+
+The tracked result `results/v0.4.2_paper1_witness_tables.json` is a compact,
+proof-facing electronic supplement.  The check authenticates the complete
+weak ledger, the independent observability artifact, and the independent
+exact-arithmetic oracle before regenerating the supplement in memory.  It
+then requires both the self-excluding semantic digest and the exact canonical
+bytes to match.  The compact result retains 3,283 sorted natural IDs and their
+family digests, plus the 165 occurrence to 131 orbit map; it does not copy the
+complete residual payload into the manuscript.
+
+The 1.6 MiB `results/v0.4_weak_d2_classification.json` remains the complete
+electronic-ledger authority.  The compact supplement is an authenticated
+index and selected exact witness table, not a replacement authority and not a
+new theorem.  Do not paste all 3,283 records into the PDF.  Any future
+supplement refresh must use the explicit `--write` maintenance mode, review
+the resulting raw and semantic hashes, and update the manuscript manifest in
+the same change.  Ordinary reproduction uses `--check` only.
+
+### 1.4 Check the archived literature-delta snapshot offline
+
+```powershell
+uv run python scripts/normalize_v042_paper1_arxiv_delta_response.py --check
+uv run pytest -q -p no:cacheprovider `
+  tests/final_theory/test_normalize_v042_paper1_arxiv_delta_response.py
+```
+
+These commands use no network.  They regenerate the normalized screening
+ledger from the archived 1,091,434-byte Atom response and require exact
+agreement with the tracked 497,237-byte JSON ledger.  The authoritative query
+semantics come only from the archived Atom feed title and self-link.  Both
+encode `submittedDate`, the compact window `202607311500` through
+`202608052359`, the eight declared categories, `start=0`,
+`max_results=2000`, and an empty `id_list`.  The snapshot contains 556
+entries: all 556 have `published` timestamps inside that submitted-date
+window and at or before the feed timestamp, none is outside either boundary,
+533 match no report-defined target rule, 23 were inspected at title/abstract
+level and found nonmaterial, and zero are material to C1--C5.  The raw
+response and normalized ledger SHA-256 values are
+`8f1b253e2eebaa4788f19616c15ef4cc250da80bfc0d640eea4bd01b7eee08a3`
+and
+`39e12901c8db41a63070cb4ea1794a1da415aeea8c8df0160df79d7224a42c29`.
+
+This submitted-date snapshot does not generally cover later versions whose
+original submission predates the window.  The separately tracked exact-ID
+version checks cover only Xu `arXiv:2607.26672` and Srivastava--Surya
+`arXiv:2603.25503`.  The earlier unarchived 524-count observation has unknown
+query provenance and unknown ID membership; comparison with the archived 556
+set is unauthorized.  It remains non-authoritative provenance, and no
+524-member set or count difference is inferred.  In the reference archive,
+the query has `LOCAL_ARTIFACTS` status because its raw and normalized datasets
+are retained.  The two separately excluded hits remain `METADATA_ONLY`.
+
+Immediately before submission, the minimum deterministic contract is a
+full-overlap `submittedDate` snapshot beginning at
+`2026-07-31T15:00:00Z`, plus repeat exact-ID version checks for Xu and
+Srivastava--Surya.  Whether to add general pre-window version-update coverage
+remains an explicit editorial decision.  Archive the new response,
+regenerate the ledger, and reread every triggered candidate.
+
+### 1.5 Run the focused Paper I tests
 
 ```powershell
 uv run pytest -q -p no:cacheprovider `
   tests/final_theory/test_paper1_claim_boundary_v042.py `
+  tests/final_theory/test_paper1_manuscript_v042.py `
+  tests/final_theory/test_extract_v042_paper1_witness_tables.py `
+  tests/final_theory/test_normalize_v042_paper1_arxiv_delta_response.py `
   tests/final_theory/test_weak_d2_v04.py `
+  tests/final_theory/test_weak_d2_v04_oracle.py `
   tests/final_theory/test_weak_d2_observability_v042.py `
+  tests/final_theory/test_q5_free_elimination_v037.py `
   tests/final_theory/test_eq120_source_provenance_v042.py `
   tests/final_theory/test_v041_partial_slice_audit.py `
   tests/final_theory/test_semantic_recovery_v042.py
 ```
 
-This is the focused Paper I regression set: weak/weak separation and its
-observability boundary, the source-native Eq. (120) lemma, the SR3b-A proper
-slice, the SR3b-M conditional recovery lemmas, and the claim-boundary
-validator.  It is intentionally not a repository-wide unbounded test run.
-A current-tree run on 2026-08-05 observed 45 passing tests.  That is a dated
-observation rather than a required fixed count: retain the actual count and
-tool versions from each reproduction run in its manuscript record.
+This is the focused Paper I regression set: manuscript and claim-boundary
+validation, compact-supplement extraction, archived literature-ledger
+normalization, weak/weak separation, its weak oracle and observability
+boundary, the q5-free elimination and its oracle checks, the source-native
+Eq. (120) lemma, the SR3b-A proper slice, and the SR3b-M conditional recovery
+lemmas.  It is intentionally not a
+repository-wide unbounded test run.  The pass count is a dated observation
+rather than a fixed contract: retain the actual count and tool versions from
+each reproduction run in its manuscript record.  The focused command above
+observed 100 passing tests in the current tree on 2026-08-05.
 
 ## 2. Public frozen v0.3.9 lane
 
@@ -295,10 +373,14 @@ untracked and is not required by the read-only manuscript validator in a fresh
 clone.
 
 The dated build and all-page visual inspection are recorded in
-`reports/v0.4.2_paper1_pdf_build_2026-08-05.md`.  This is layout/build
-verification only.  It is separate from submission authorization, does not
-freeze the draft, does not remove the six intentional draft-proof boxes, and
-does not widen C1--C5 or any nonclaim.
+`reports/v0.4.2_paper1_pdf_build_2026-08-05.md`.  For the current source hash,
+the final local observation is a 17-page PDF: all 17 pages were inspected,
+all blocking and box diagnostics were zero, no clipping or overlap was found,
+and no intentional draft-proof boxes remain.  The report preserves the older
+10-page build as a prior-source observation rather than silently rebinding it
+to the current source.  This is layout/build verification only.  It is
+separate from submission authorization, does not freeze the release
+candidate, and does not widen C1--C5 or any nonclaim.
 
 ## 5. Reporting a reproduction
 

@@ -19,7 +19,9 @@ EXPECTATIONS_PATH = (
 )
 LITERATURE_REPORT_PATH = ROOT / "reports/v0.4.2_paper1_literature_delta_2026-08-05.md"
 LITERATURE_NOTE_PATH = ROOT / "references/notes/v0.4.2_paper1_literature_delta_2026-08-05.md"
-LITERATURE_DELTA_STATUS = "CLOSED_NO_MATERIAL_DELTA_AS_OF_2026-08-05T01:43Z"
+LITERATURE_DELTA_STATUS = (
+    "CLOSED_NO_MATERIAL_DELTA_WITHIN_ARCHIVED_SUBMITTEDDATE_SCOPE_AS_OF_2026-08-05T04:52:45Z"
+)
 SCOUT_INPUT_MANIFEST_PATH = (
     ROOT / "results/v0.4.2_sr2v_q5_free_auxiliary_ideal_bounded_scout_reproduction_manifest.json"
 )
@@ -92,9 +94,10 @@ def test_paper1_manuscript_validator_passes_after_bounded_core_pinning() -> None
     assert result.stdout.strip() == "paper1_manuscript=OK"
 
 
-def test_completed_c3_c5_proofs_and_six_marker_gate_are_pinned() -> None:
+def test_completed_proofs_and_closed_marker_gate_are_pinned_fail_closed() -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     tex = MAIN_TEX_PATH.read_text(encoding="utf-8")
+    validator = _load_paper1_validator()
     c3 = tex.split(r"\subsection{C3:", 1)[1].split(r"\subsection{C4:", 1)[0]
     c5 = tex.split(r"\subsection{C5:", 1)[1].split(r"\section{Proof roadmap", 1)[0]
     recovery = tex.split(r"\section{Recovery conditions and their boundary}", 1)[1].split(
@@ -105,8 +108,10 @@ def test_completed_c3_c5_proofs_and_six_marker_gate_are_pinned() -> None:
     def normalise(value: str) -> str:
         return " ".join(value.split())
 
-    assert manifest["draft_markers"]["minimum_invocations"] == 6
-    assert tex.count(r"\draftmarker{") == 6
+    assert manifest["draft_markers"] == validator.EXPECTED_DRAFT_MARKER_CONTRACT
+    assert tex.count(r"\draftmarker{") == 0
+    assert tex.count("DRAFT PROOF INSERT REQUIRED.") == 0
+    assert r"\newcommand{\draftmarker}" not in tex
     assert r"\draftmarker{" not in c3
     assert r"\draftmarker{" not in c5
     assert r"\draftmarker{" not in recovery
@@ -147,6 +152,19 @@ def test_completed_c3_c5_proofs_and_six_marker_gate_are_pinned() -> None:
         "frozen occurrence-ON",
     ):
         assert normalise(fragment) in normalise(c5_evidence)
+
+    for reappearance in (
+        "\n\\draftmarker{reappeared}\n",
+        "\nDRAFT PROOF INSERT REQUIRED.\n",
+        "\n\\newcommand{\\draftmarker}[1]{#1}\n",
+    ):
+        errors: list[str] = []
+        validator._validate_draft_marker_contract(
+            tex + reappearance,
+            manifest["draft_markers"],
+            errors,
+        )
+        assert any("DRAFT marker" in error for error in errors), reappearance
 
 
 def test_completed_proof_validator_rejects_c3_or_c5_evidence_drift() -> None:
@@ -203,7 +221,7 @@ def test_citation_closure_rejects_missing_and_duplicate_bibtex_keys() -> None:
 
 def test_paper1_manuscript_remains_unfrozen_and_owner_gated() -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    assert manifest["status"] == "DRAFT_SCAFFOLD_NOT_FROZEN"
+    assert manifest["status"] == "PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN"
     assert manifest["freeze"] == {
         "status": "NOT_FROZEN",
         "frozen": False,
@@ -216,13 +234,45 @@ def test_paper1_manuscript_remains_unfrozen_and_owner_gated() -> None:
         assert gate["authorized"] is False
 
 
+def test_electronic_supplement_and_weak_q5_authorities_are_pinned() -> None:
+    validator = _load_paper1_validator()
+    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+
+    assert manifest["electronic_supplement"] == validator._expected_electronic_supplement()
+    contract = manifest["electronic_supplement"]
+    assert contract["policy"] == {
+        "complete_weak_ledger_remains_authority": True,
+        "compact_result_replaces_complete_ledger": False,
+        "embed_all_3283_records_in_pdf": False,
+        "ordinary_reproduction_mode": "--check",
+        "write_requires_review_and_manifest_rebinding": True,
+    }
+    assert contract["result"]["schema_version"] == ("final-theory-v042-paper1-witness-tables-v1")
+    assert contract["result"]["expected_total_top_level_records"] == 3283
+    assert contract["result"]["transition_occurrence_count"] == 165
+    assert contract["result"]["transition_orbit_count"] == 131
+    assert contract["q5_free_elimination_authority"]["result"]["schema_version"] == (
+        "final-theory-q5-free-campaign-v0.3.7"
+    )
+
+    errors: list[str] = []
+    validator._validate_electronic_supplement(ROOT, manifest, errors)
+    assert not errors
+
+    altered = copy.deepcopy(manifest)
+    altered["electronic_supplement"]["result"]["semantic_digest_sha256"] = "0" * 64
+    errors = []
+    validator._validate_electronic_supplement(ROOT, altered, errors)
+    assert any("electronic supplement contract changed" in error for error in errors)
+
+
 def test_pdf_build_contract_is_pinned_but_generated_pdf_is_not_required(tmp_path: Path) -> None:
     validator = _load_paper1_validator()
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     tex_build = manifest["tex_build"]
 
     assert tex_build["toolchain_status"] == "HOST_ABSENT_PINNED_CONTAINER_AVAILABLE"
-    assert tex_build["pdf_status"] == "LOCAL_DRAFT_BUILT_AND_VISUALLY_VERIFIED"
+    assert tex_build["pdf_status"] == "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED"
     assert tex_build["pdf_verified"] is True
     assert tex_build["submission_ready"] is False
     assert tex_build["pinned_container_image"] == PDF_BUILD_IMAGE
@@ -231,19 +281,56 @@ def test_pdf_build_contract_is_pinned_but_generated_pdf_is_not_required(tmp_path
         "required_for_manifest_validation": False,
         "raw_sha256_role": "DATED_OBSERVATION_NOT_REPRODUCIBILITY_CONTRACT",
     }
-    assert tex_build["dated_observation"]["pdf"] == {
-        "page_count": 10,
-        "bytes": 371899,
-        "raw_sha256": "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca",
+    current = tex_build["current_observation"]
+    assert current["main_tex_raw_sha256"] == (
+        "5e484a505a50097b45c7ec98740e195cc6d6c05fd37c7b154e91fff15cd79e8c"
+    )
+    assert current["pdf"] == {
+        "page_count": 17,
+        "bytes": 409169,
+        "raw_sha256": "cfd79f8436628d0480850ac0eee344f5ba11188c64571384a578c830356ca482",
     }
-    assert tex_build["dated_observation"]["diagnostics"]["blocking_total"] == 0
-    assert tex_build["dated_observation"]["diagnostics"]["underfull_box"] == 0
-    assert tex_build["dated_observation"]["visual_qa"] == {
-        "pages_inspected": 10,
+    assert current["diagnostics"] == {
+        "blocking_total": 0,
+        "overfull_hbox": 0,
+        "undefined_reference_or_citation": 0,
+        "latex_or_package_error": 0,
+        "underfull_box": 0,
+    }
+    assert current["visual_qa"] == {
+        "render_dpi": 120,
+        "pages_inspected": 17,
         "all_pages_inspected": True,
         "clipping_or_overlap_found": False,
-        "intentional_draft_boxes_remain": True,
+        "intentional_draft_boxes_remain": False,
     }
+    assert tex_build["prior_observations"] == [
+        {
+            "status": "PRIOR_SOURCE_OBSERVATION_NOT_CURRENT_BINDING",
+            "date": "2026-08-05",
+            "main_tex_raw_sha256": (
+                "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd"
+            ),
+            "pdf": {
+                "page_count": 10,
+                "bytes": 371899,
+                "raw_sha256": ("cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"),
+            },
+            "diagnostics": {
+                "blocking_total": 0,
+                "overfull_hbox": 0,
+                "undefined_reference_or_citation": 0,
+                "latex_or_package_error": 0,
+                "underfull_box": 0,
+            },
+            "visual_qa": {
+                "pages_inspected": 10,
+                "all_pages_inspected": True,
+                "clipping_or_overlap_found": False,
+                "intentional_draft_boxes_remain": True,
+            },
+        }
+    ]
 
     for relative in (PDF_BUILD_HELPER_RELATIVE, PDF_BUILD_REPORT_RELATIVE):
         target = tmp_path / relative
@@ -281,18 +368,53 @@ def test_pdf_build_contract_is_pinned_but_generated_pdf_is_not_required(tmp_path
 
 
 def test_paper1_literature_delta_is_closed_bounded_and_recheck_gated() -> None:
+    validator = _load_paper1_validator()
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     literature = manifest["literature_delta_search"]
 
     assert literature["status"] == LITERATURE_DELTA_STATUS
     assert literature["completed"] is True
     assert literature["search_window"] == {
-        "start_utc": "2026-07-31T15:00:00Z",
-        "effective_assessment_cutoff_utc": "2026-08-05T01:43:02Z",
-        "category_api_coarse_upper_bound_utc": "2026-08-05T23:59Z",
+        "field": "submittedDate",
+        "window_start_utc": "2026-07-31T15:00:00Z",
+        "window_end_minute_utc": "2026-08-05T23:59:00Z",
+        "window_end_exclusive_utc": "2026-08-06T00:00:00Z",
+        "feed_cutoff_utc": "2026-08-05T04:52:45Z",
     }
     assert literature["official_repository"] == "arXiv"
-    assert literature["screened_record_count"] == 524
+    assert literature["screened_record_count"] == 556
+    assert literature["archived_snapshot"] == validator._expected_literature_archived_snapshot()
+    snapshot = literature["archived_snapshot"]
+    assert snapshot["response_entry_count"] == 556
+    assert snapshot["effective_response_query"]["field"] == "submittedDate"
+    assert snapshot["entries_published_in_submitted_date_window"] == 556
+    assert snapshot["entries_published_outside_submitted_date_window"] == 0
+    assert snapshot["entries_published_at_or_before_feed_cutoff"] == 556
+    assert snapshot["entries_published_after_feed_cutoff"] == 0
+    assert snapshot["coverage_boundary"]["general_pre_window_version_updates_covered"] is False
+    assert snapshot["reconciliation"]["comparison_to_archived_556_authorized"] is False
+    assert snapshot["screening_decision_counts"] == {
+        "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 533,
+        "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 23,
+        "MATERIAL_DELTA_TO_C1_C5": 0,
+    }
+    assert snapshot["ordered_arxiv_ids_sha256"] == (
+        "5f8a03534e8ce34f289f0bccf7457ee6e808e6dc8efccb41cb54e8515d99c18d"
+    )
+    assert snapshot["records_sha256"] == (
+        "1d53423d64956f4901980d315dee87ef834c775d17cacaefa3f6440778b14bb3"
+    )
+    for binding_name in ("raw_response", "normalized_ledger"):
+        binding = snapshot[binding_name]
+        path = ROOT / binding["path"]
+        assert path.stat().st_size == binding["bytes"]
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == binding["raw_sha256"]
+    for binding_name in ("normalizer", "dedicated_test"):
+        binding = snapshot[binding_name]
+        assert (
+            hashlib.sha256((ROOT / binding["path"]).read_bytes()).hexdigest()
+            == (binding["raw_sha256"])
+        )
     assert literature["screened_categories"] == [
         "gr-qc",
         "quant-ph",
@@ -314,8 +436,22 @@ def test_paper1_literature_delta_is_closed_bounded_and_recheck_gated() -> None:
     ]
     assert literature["companion_public_arxiv_record_located"] is False
     assert literature["post_completion_requery"] == {
-        "status": "HTTP_429_RATE_LIMITED_AFTER_COMPLETION",
-        "affects_completed_screening": False,
+        "historical_unarchived_observation": {
+            "status": "NONAUTHORITATIVE_UNARCHIVED_HISTORY_QUERY_AND_MEMBERSHIP_UNKNOWN",
+            "screened_record_count": 524,
+            "query_provenance_known": False,
+            "id_membership_known": False,
+            "comparison_to_archived_556_authorized": False,
+            "authoritative": False,
+        },
+        "historical_http_429": {
+            "status": "NO_RESPONSE_RETAINED_NOT_EVIDENCE",
+            "affects_archived_screening": False,
+        },
+        "archival_retrieval": {
+            "status": "SUCCESS_NO_RETRY",
+            "feed_updated_utc": "2026-08-05T04:52:45Z",
+        },
     }
     assert literature["source_catalog_record_ids"] == [
         "arXiv:PaperI-literature-delta-query-2026-08-05",
@@ -327,9 +463,13 @@ def test_paper1_literature_delta_is_closed_bounded_and_recheck_gated() -> None:
         "manifest_path": "references/manifest.json",
         "status": "HASH_ONLY_SKIP_TEXT_PYPDF_UNAVAILABLE",
         "command": "scripts/archive_references.py --skip-text",
+        "query_archive_status": "LOCAL_ARTIFACTS",
+        "excluded_hit_archive_status": "METADATA_ONLY",
+        "excluded_hit_ids": ["arXiv:2608.03273v1", "arXiv:2608.02166v1"],
     }
     assert literature["material_delta_for_claim_labels"] == []
     assert literature["recheck_before_submission"] is True
+    assert literature["full_overlap_recheck_before_submission"] is True
     assert literature["priority_or_absolute_absence_claimed"] is False
 
     assert literature["audit_report"]["path"] == LITERATURE_REPORT_PATH.relative_to(ROOT).as_posix()
@@ -344,11 +484,18 @@ def test_paper1_literature_delta_is_closed_bounded_and_recheck_gated() -> None:
     )
 
     report = " ".join(LITERATURE_REPORT_PATH.read_text(encoding="utf-8").split())
-    note = LITERATURE_NOTE_PATH.read_text(encoding="utf-8")
-    assert "lastUpdatedDate:[202607311500+TO+202608052359]" in report
-    assert "HTTP 429" in report
+    note = " ".join(LITERATURE_NOTE_PATH.read_text(encoding="utf-8").split())
+    assert "effective response query is a `submittedDate` window" in report
+    assert "556-entry Atom snapshot" in report
+    assert "23 title/abstract candidates" in report
+    assert "zero C1--C5 material deltas" in report
+    assert "full-overlap `submittedDate` response beginning" in report
+    assert "does not close a general later-version-update gate" in report
+    assert "does not compare it to, subtract it from" in report
     assert "not an absolute literature-absence, novelty, or priority determination" in report
-    assert "mandatory immediately before public submission" in note
+    assert "Immediately before public submission" in note
+    assert "effective query provenance and membership are both unknown" in note
+    assert "is not compared with the archived 556 response" in note
     for source_id in literature["source_catalog_record_ids"]:
         assert source_id in report
         assert source_id in note
@@ -358,7 +505,17 @@ def test_paper1_literature_delta_is_closed_bounded_and_recheck_gated() -> None:
     catalog_by_id = {record["id"]: record for record in source_catalog["sources"]}
     archive_by_id = {record["id"]: record for record in archive["records"]}
     assert source_catalog["retrieved_on"] == "2026-08-05"
-    for source_id in literature["source_catalog_record_ids"]:
+    query_id, *excluded_ids = literature["source_catalog_record_ids"]
+    assert catalog_by_id[query_id]["local_file"] is None
+    assert archive_by_id[query_id]["archive_status"] == "LOCAL_ARTIFACTS"
+    assert catalog_by_id[query_id]["historical_unarchived_observation"] == {
+        "reported_screened_record_count": 524,
+        "status": "NONAUTHORITATIVE_UNARCHIVED_HISTORY_QUERY_AND_MEMBERSHIP_UNKNOWN",
+        "query_provenance_known": False,
+        "membership_known": False,
+        "comparison_to_archived_556_authorized": False,
+    }
+    for source_id in excluded_ids:
         assert catalog_by_id[source_id]["local_file"] is None
         assert archive_by_id[source_id]["archive_status"] == "METADATA_ONLY"
 

@@ -1,4 +1,4 @@
-"""Validate the non-frozen Paper I v0.4.2 manuscript scaffold.
+"""Validate the proof-complete, non-frozen Paper I v0.4.2 release candidate.
 
 The validator is deliberately read-only.  It verifies the manuscript snapshot,
 its bibliography closure, and the claim/publication boundaries without
@@ -28,27 +28,75 @@ EXPECTED_MANUSCRIPT_PATHS = {
     MANUSCRIPT_ROOT / "REPRODUCING.md",
     MANUSCRIPT_ROOT / "references.bib",
 }
+WITNESS_EXTRACTOR_PATH = Path("scripts/extract_v042_paper1_witness_tables.py")
+WITNESS_EXTRACTOR_SHA256 = "f71790c5ce3d7d239100981666a5327716f6c5529c3491a13c1c0d9cc46710dd"
+WITNESS_RESULT_PATH = Path("results/v0.4.2_paper1_witness_tables.json")
+WITNESS_RESULT_SHA256 = "7608f8f987352fd297ae4e5911a65e018700a5c187b3d60e7a0677f72e3700f7"
+WITNESS_RESULT_SCHEMA = "final-theory-v042-paper1-witness-tables-v1"
+WITNESS_RESULT_SEMANTIC_SHA256 = "6e3aff10dcf855617973b3b83bece809f00ef39f9568471475e58c1ab5fca542"
+WITNESS_TEST_PATH = Path("tests/final_theory/test_extract_v042_paper1_witness_tables.py")
+WITNESS_TEST_SHA256 = "b2825147db27a2bf0a76bd39b656835b8de7b7e4c7c4aa55a55aa02ca6617a3a"
+WEAK_AUTHORITY_PATH = Path("results/v0.4_weak_d2_classification.json")
+WEAK_AUTHORITY_SHA256 = "18e71f439913896fb370944c6479fc358d4d6d0d127162809ba46822ccd2fe65"
+WEAK_ORACLE_PATH = Path("tests/final_theory/test_weak_d2_v04_oracle.py")
+WEAK_ORACLE_SHA256 = "54c5ec91fd3af0c824b153e451caa4695036e39d3915e68e76618ee2f455b324"
+OBSERVABILITY_AUTHORITY_PATH = Path("results/v0.4.2_sr2v_baseline_observability.json")
+OBSERVABILITY_AUTHORITY_SHA256 = "4f57805e871c0589560669c5aa65181c29ca41cdf722420729279945770710de"
+OBSERVABILITY_SCHEMA = "final-theory-v042-sr2v-baseline-observability-v1"
+OBSERVABILITY_SEMANTIC_SHA256 = "73508f8ad94d97a3147cbd913d687f0b779c740b80a84a4836854053f6f01c62"
+Q5_FREE_AUTHORITY_PATH = Path("results/v0.3.7_q5_free_elimination.json")
+Q5_FREE_AUTHORITY_SHA256 = "4c394fd5e4b864f3bb34debee51d536b1828c0f9a0d3a64b1d09142ef3b3ff14"
+Q5_FREE_SCHEMA = "final-theory-q5-free-campaign-v0.3.7"
+Q5_FREE_RECORDED_SEMANTIC_SHA256 = (
+    "42dcd4f095f4d9ba87478716e1ed8e3639a823b0179cebd230f00feaedc0e47a"
+)
+Q5_FREE_ORACLE_PATH = Path("tests/final_theory/test_q5_free_elimination_v037.py")
+Q5_FREE_ORACLE_SHA256 = "5f3e06535de65e63e483f5930e22d522881a5ea15138e401dca60c71bd72f6e7"
+SELF_EXCLUDING_SEMANTIC_DIGEST_METHOD = (
+    "sha256(UTF-8 canonical JSON after excluding top-level semantic_digest_sha256: "
+    "ensure_ascii=true, sort_keys=true, separators=(',', ':'))"
+)
+PROOF_COMPLETE_STATUS = "PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN"
 PDF_BUILD_HELPER_PATH = Path("scripts/build_v042_paper1_pdf.py")
 PDF_BUILD_HELPER_SHA256 = "f131bbfe76304f1445afe162af5d731c7c3c4d31ba1b7dced4e83a0fb87c91d4"
 PDF_BUILD_REPORT_PATH = Path("reports/v0.4.2_paper1_pdf_build_2026-08-05.md")
-PDF_BUILD_REPORT_SHA256 = "ae85230ec220d6a2bf976179eeb6b4951d798bfa4593a851f4ba9109bb84d117"
+PDF_BUILD_REPORT_SHA256 = "8784453108f7edcc0939669c7b22e5745e1bf6e7d6d6663f6d5ad1a6362ead50"
 PDF_BUILD_IMAGE = (
     "texlive/texlive:latest-medium@"
     "sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9"
 )
 PDF_BUILD_OUTPUT_PATH = Path("output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf")
-PDF_BUILD_MAIN_SHA256 = "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd"
-PDF_BUILD_OBSERVED_SHA256 = "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"
+PDF_BUILD_MAIN_SHA256 = "5e484a505a50097b45c7ec98740e195cc6d6c05fd37c7b154e91fff15cd79e8c"
+PDF_BUILD_OBSERVED_SHA256 = "cfd79f8436628d0480850ac0eee344f5ba11188c64571384a578c830356ca482"
+PDF_BUILD_PRIOR_MAIN_SHA256 = "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd"
+PDF_BUILD_PRIOR_OBSERVED_SHA256 = "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"
 PDF_BUILD_REPORT_REQUIRED_FRAGMENTS = (
-    "Status: `LOCAL_DRAFT_BUILT_AND_VISUALLY_VERIFIED`.",
-    "All 10 pages were visually inspected.",
-    "No clipping, overlap, or table collision was found.",
+    "Status: `CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED`.",
+    "All 17 pages were rendered at 120 dpi and visually inspected.",
+    "No clipping, overlap, table collision, or unnatural page break was found",
+    "the remaining 16 page images were pixel-identical",
+    "retained only as prior-source history",
     "The generated PDF is an untracked local observation.",
     "it is not a required reproducibility-contract hash",
 )
 EXPECTED_CLAIM_LABELS = ["C1", "C2", "C3", "C4", "C5"]
 EXPECTED_NONCLAIM_LABELS = ["N1", "N2", "N3", "N4", "N5", "N6"]
-EXPECTED_DRAFT_MARKER_INVOCATIONS = 6
+EXPECTED_DRAFT_MARKER_CONTRACT: dict[str, Any] = {
+    "status": "CLOSED",
+    "forbidden_token": "DRAFT PROOF INSERT REQUIRED.",
+    "expected_invocations": 0,
+    "expected_token_occurrences": 0,
+    "expected_macro_definitions": 0,
+    "reappearance_policy": "FAIL_CLOSED",
+    "required_tex_fragments": [
+        "Claim-locked proof-complete source.",
+        (
+            "Proof completion and machine audit do not authorise submission, deposit, "
+            "or manuscript freeze."
+        ),
+        "proof-complete, machine-audited release-candidate source",
+    ],
+}
 C3_SOURCE_RELATION_IDS = (
     "cpobc-relation-0b2bbe81c6394d603f63",
     "cpobc-relation-49726b7f352ba79916e5",
@@ -113,20 +161,52 @@ BOUNDED_SCOUT_EXPECTED_CORE_DIGESTS = {
     "candidate_minor_only": "cb9252dbc9d1610d3d0410f0d8f111a862b341cee59a4ced20bb8527c66a1c87",
 }
 LEGACY_OBSERVATION_STATUS = "NONDETERMINISTIC_LEGACY_OBSERVATION_NOT_A_REPRODUCTION_EXPECTATION"
-LITERATURE_DELTA_STATUS = "CLOSED_NO_MATERIAL_DELTA_AS_OF_2026-08-05T01:43Z"
+LITERATURE_DELTA_STATUS = (
+    "CLOSED_NO_MATERIAL_DELTA_WITHIN_ARCHIVED_SUBMITTEDDATE_SCOPE_AS_OF_2026-08-05T04:52:45Z"
+)
 LITERATURE_AUDIT_REPORT_PATH = Path("reports/v0.4.2_paper1_literature_delta_2026-08-05.md")
 LITERATURE_NOTE_PATH = Path("references/notes/v0.4.2_paper1_literature_delta_2026-08-05.md")
 LITERATURE_SOURCES_PATH = Path("references/sources.json")
 LITERATURE_ARCHIVE_MANIFEST_PATH = Path("references/manifest.json")
-LITERATURE_AUDIT_REPORT_SHA256 = "8a592316412d9e5210dc80c9e891bac1575632d805f1f9b31cb6f8e9081018d9"
-LITERATURE_NOTE_SHA256 = "b9334cf591c13ade693e3d145969d0add02e175a8807ae7e57361bcee717bfe8"
+LITERATURE_AUDIT_REPORT_SHA256 = "8040c4a537f707b29eba06af06710aa981efc3bd12f4e43a8ea24f652c5d0676"
+LITERATURE_NOTE_SHA256 = "0712c516933ec4850591e5afc0e709205023a918abe5d315fe48392a77f6d76a"
+LITERATURE_RAW_RESPONSE_PATH = Path(
+    "references/papers/2026-08-05_paper1_arxiv_delta_query_atom.xml"
+)
+LITERATURE_RAW_RESPONSE_SHA256 = "8f1b253e2eebaa4788f19616c15ef4cc250da80bfc0d640eea4bd01b7eee08a3"
+LITERATURE_RAW_RESPONSE_BYTES = 1091434
+LITERATURE_NORMALIZED_LEDGER_PATH = Path(
+    "references/papers/2026-08-05_paper1_arxiv_delta_query_normalized.json"
+)
+LITERATURE_NORMALIZED_LEDGER_SHA256 = (
+    "39e12901c8db41a63070cb4ea1794a1da415aeea8c8df0160df79d7224a42c29"
+)
+LITERATURE_NORMALIZED_LEDGER_BYTES = 497237
+LITERATURE_NORMALIZER_PATH = Path("scripts/normalize_v042_paper1_arxiv_delta_response.py")
+LITERATURE_NORMALIZER_SHA256 = "4068b63080d79ac18fb42396759560399bf09a4b1742b934fd78d0598657f303"
+LITERATURE_NORMALIZER_TEST_PATH = Path(
+    "tests/final_theory/test_normalize_v042_paper1_arxiv_delta_response.py"
+)
+LITERATURE_NORMALIZER_TEST_SHA256 = (
+    "afb5b38483f2acb25f92afdc3efdd7ba539659199c3970e027fdfa6399fcac16"
+)
+LITERATURE_NORMALIZER_CHECK_COMMAND = (
+    r".venv\Scripts\python.exe scripts/normalize_v042_paper1_arxiv_delta_response.py --check"
+)
+LITERATURE_FEED_UPDATED_UTC = "2026-08-05T04:52:45Z"
+LITERATURE_ORDERED_IDS_SHA256 = "5f8a03534e8ce34f289f0bccf7457ee6e808e6dc8efccb41cb54e8515d99c18d"
+LITERATURE_RECORDS_SHA256 = "1d53423d64956f4901980d315dee87ef834c775d17cacaefa3f6440778b14bb3"
+LITERATURE_DECISION_COUNTS = {
+    "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 533,
+    "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 23,
+    "MATERIAL_DELTA_TO_C1_C5": 0,
+}
 LITERATURE_CATEGORY_API_URL = (
-    "https://export.arxiv.org/api/query?search_query="
-    "lastUpdatedDate%3A%5B202607311500%20TO%20202608052359%5D%20AND%20"
-    "(cat%3Agr-qc%20OR%20cat%3Aquant-ph%20OR%20cat%3Amath-ph%20OR%20"
-    "cat%3Amath.OA%20OR%20cat%3Amath.RA%20OR%20cat%3Amath.AC%20OR%20"
-    "cat%3Amath.FA%20OR%20cat%3Amath.CO)&start=0&max_results=2000&"
-    "sortBy=lastUpdatedDate&sortOrder=descending"
+    "https://arxiv.org/api/query?search_query="
+    "submittedDate:%22202607311500+TO+202608052359%22+AND+"
+    "(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+"
+    "(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))"
+    "&start=0&max_results=2000&id_list="
 )
 LITERATURE_SOURCE_RECORD_IDS = [
     "arXiv:PaperI-literature-delta-query-2026-08-05",
@@ -138,11 +218,16 @@ LITERATURE_REFERENCE_ARCHIVE = {
     "manifest_path": LITERATURE_ARCHIVE_MANIFEST_PATH.as_posix(),
     "status": "HASH_ONLY_SKIP_TEXT_PYPDF_UNAVAILABLE",
     "command": "scripts/archive_references.py --skip-text",
+    "query_archive_status": "LOCAL_ARTIFACTS",
+    "excluded_hit_archive_status": "METADATA_ONLY",
+    "excluded_hit_ids": ["arXiv:2608.03273v1", "arXiv:2608.02166v1"],
 }
 LITERATURE_SEARCH_WINDOW = {
-    "start_utc": "2026-07-31T15:00:00Z",
-    "effective_assessment_cutoff_utc": "2026-08-05T01:43:02Z",
-    "category_api_coarse_upper_bound_utc": "2026-08-05T23:59Z",
+    "field": "submittedDate",
+    "window_start_utc": "2026-07-31T15:00:00Z",
+    "window_end_minute_utc": "2026-08-05T23:59:00Z",
+    "window_end_exclusive_utc": "2026-08-06T00:00:00Z",
+    "feed_cutoff_utc": LITERATURE_FEED_UPDATED_UTC,
 }
 LITERATURE_SCREENED_CATEGORIES = [
     "gr-qc",
@@ -154,22 +239,82 @@ LITERATURE_SCREENED_CATEGORIES = [
     "math.FA",
     "math.CO",
 ]
+LITERATURE_EFFECTIVE_RESPONSE_QUERY = {
+    "authority": "ARCHIVED_ATOM_FEED_TITLE_AND_QUERY_LINK",
+    "field": "submittedDate",
+    "window_start_compact_utc": "202607311500",
+    "window_end_compact_utc": "202608052359",
+    "categories": LITERATURE_SCREENED_CATEGORIES,
+    "start": 0,
+    "max_results": 2000,
+    "id_list": [],
+    "window_start_utc": "2026-07-31T15:00:00Z",
+    "window_end_minute_utc": "2026-08-05T23:59:00Z",
+    "window_end_exclusive_utc": "2026-08-06T00:00:00Z",
+    "feed_title": (
+        'arXiv Query: search_query=submittedDate:"202607311500 TO 202608052359" '
+        "AND (cat:gr-qc OR cat:quant-ph OR cat:math-ph OR cat:math.OA OR cat:math.RA "
+        "OR cat:math.AC OR cat:math.FA OR cat:math.CO)&id_list=&start=0&max_results=2000"
+    ),
+    "self_link": LITERATURE_CATEGORY_API_URL,
+}
+LITERATURE_COVERAGE_BOUNDARY = {
+    "archived_submitted_date_snapshot_only": True,
+    "general_pre_window_version_updates_covered": False,
+    "minimum_pre_submission_contract": [
+        "archive and rescreen a full-overlap submittedDate response",
+        "repeat exact-ID version checks for arXiv:2607.26672 and arXiv:2603.25503",
+        "retain general pre-window version-update coverage as an explicit editorial decision",
+    ],
+    "tracked_exact_id_version_checks_recorded_outside_this_ledger": [
+        "arXiv:2607.26672",
+        "arXiv:2603.25503",
+    ],
+}
+LITERATURE_RECONCILIATION = {
+    "comparison_to_archived_556_authorized": False,
+    "historical_524_id_membership_known": False,
+    "historical_524_query_provenance_known": False,
+    "historical_reported_screened_record_count": 524,
+    "materiality_reassessment_status": "COMPLETED_ON_ARCHIVED_556_RESPONSE",
+    "status": "NONAUTHORITATIVE_UNARCHIVED_HISTORY_QUERY_AND_MEMBERSHIP_UNKNOWN",
+}
 LITERATURE_REPORT_REQUIRED_FRAGMENTS = [
     f"Status: `{LITERATURE_DELTA_STATUS}`",
-    "screened 524",
-    "HTTP 429",
+    "556-entry Atom snapshot",
+    LITERATURE_RAW_RESPONSE_SHA256,
+    LITERATURE_NORMALIZED_LEDGER_SHA256,
+    "23 title/abstract candidates",
+    "zero C1--C5 material deltas",
+    "effective response query is a `submittedDate` window",
+    "does not close a general later-version-update gate",
+    "does not compare it to, subtract it from",
+    "No inference is drawn from that unavailable response.",
+    "succeeded without retry",
+    "full-overlap `submittedDate` response beginning",
+    "2026-07-31T15:00:00Z",
     "arXiv:PaperI-literature-delta-query-2026-08-05",
     "arXiv:2608.03273v1",
     "arXiv:2608.02166v1",
-    "Before submission, repeat the official-arXiv version checks",
+    "repeat the exact-ID version checks for Xu",
 ]
 LITERATURE_NOTE_REQUIRED_FRAGMENTS = [
     f"Status: `{LITERATURE_DELTA_STATUS}`",
-    "524 records",
+    "locally archived 556-entry arXiv Atom",
+    LITERATURE_RAW_RESPONSE_SHA256,
+    LITERATURE_NORMALIZED_LEDGER_SHA256,
+    "Of 556 records, 533",
+    "23 triggered candidates",
+    "This closure covers the archived `submittedDate` response only.",
+    "General pre-window version-update coverage",
+    "is not compared with the archived 556 response",
+    "later HTTP 429 response was unavailable and is likewise not evidence",
+    "new full-overlap `submittedDate` snapshot beginning",
+    "2026-07-31T15:00:00Z",
     "arXiv:PaperI-literature-delta-query-2026-08-05",
     "arXiv:2608.03273v1",
     "arXiv:2608.02166v1",
-    "mandatory immediately before public submission",
+    "Immediately before public submission",
 ]
 CANONICAL_LEDGER_DIGEST_METHOD = (
     "sha256(UTF-8 canonical JSON: ensure_ascii=true, sort_keys=true, separators=(',', ':'))"
@@ -196,6 +341,21 @@ def _canonical_json_sha256(payload: dict[str, Any]) -> str:
     encoded = json.dumps(payload, ensure_ascii=True, sort_keys=True, separators=(",", ":")).encode(
         "utf-8"
     )
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def _self_excluding_json_sha256(payload: dict[str, Any]) -> str:
+    semantic = {key: value for key, value in payload.items() if key != "semantic_digest_sha256"}
+    return _canonical_json_sha256(semantic)
+
+
+def _compact_utf8_json_sha256(payload: object) -> str:
+    encoded = json.dumps(
+        payload,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
 
 
@@ -358,6 +518,178 @@ def _validate_manifest_hashes(root: Path, manifest: dict[str, Any], errors: list
         )
 
 
+def _expected_electronic_supplement() -> dict[str, Any]:
+    return {
+        "status": "PINNED_COMPACT_AUTHENTICATED_INDEX",
+        "policy": {
+            "complete_weak_ledger_remains_authority": True,
+            "compact_result_replaces_complete_ledger": False,
+            "embed_all_3283_records_in_pdf": False,
+            "ordinary_reproduction_mode": "--check",
+            "write_requires_review_and_manifest_rebinding": True,
+        },
+        "extractor": {
+            "path": WITNESS_EXTRACTOR_PATH.as_posix(),
+            "raw_sha256": WITNESS_EXTRACTOR_SHA256,
+            "check_mode": "--check",
+        },
+        "result": {
+            "path": WITNESS_RESULT_PATH.as_posix(),
+            "schema_version": WITNESS_RESULT_SCHEMA,
+            "raw_sha256": WITNESS_RESULT_SHA256,
+            "semantic_digest_method": SELF_EXCLUDING_SEMANTIC_DIGEST_METHOD,
+            "semantic_digest_sha256": WITNESS_RESULT_SEMANTIC_SHA256,
+            "expected_total_top_level_records": 3283,
+            "transition_occurrence_count": 165,
+            "transition_orbit_count": 131,
+        },
+        "dedicated_test": {
+            "path": WITNESS_TEST_PATH.as_posix(),
+            "raw_sha256": WITNESS_TEST_SHA256,
+        },
+        "source_authorities": [
+            {
+                "path": WEAK_AUTHORITY_PATH.as_posix(),
+                "raw_sha256": WEAK_AUTHORITY_SHA256,
+                "role": "complete_electronic_ledger_authority",
+            },
+            {
+                "path": OBSERVABILITY_AUTHORITY_PATH.as_posix(),
+                "raw_sha256": OBSERVABILITY_AUTHORITY_SHA256,
+                "schema_version": OBSERVABILITY_SCHEMA,
+                "semantic_digest_sha256": OBSERVABILITY_SEMANTIC_SHA256,
+                "role": "independent_exact_rational_observability_authority",
+            },
+            {
+                "path": WEAK_ORACLE_PATH.as_posix(),
+                "raw_sha256": WEAK_ORACLE_SHA256,
+                "role": "independent_exact_arithmetic_oracle_code",
+            },
+        ],
+        "q5_free_elimination_authority": {
+            "result": {
+                "path": Q5_FREE_AUTHORITY_PATH.as_posix(),
+                "raw_sha256": Q5_FREE_AUTHORITY_SHA256,
+                "schema_version": Q5_FREE_SCHEMA,
+                "recorded_semantic_digest_sha256": Q5_FREE_RECORDED_SEMANTIC_SHA256,
+            },
+            "oracle_test": {
+                "path": Q5_FREE_ORACLE_PATH.as_posix(),
+                "raw_sha256": Q5_FREE_ORACLE_SHA256,
+            },
+        },
+    }
+
+
+def _validate_electronic_supplement(
+    root: Path, manifest: dict[str, Any], errors: list[str]
+) -> None:
+    contract = manifest.get("electronic_supplement")
+    _require(
+        contract == _expected_electronic_supplement(),
+        "electronic supplement contract changed",
+        errors,
+    )
+
+    for path, expected_hash, label in (
+        (WITNESS_EXTRACTOR_PATH, WITNESS_EXTRACTOR_SHA256, "witness-table extractor"),
+        (WITNESS_RESULT_PATH, WITNESS_RESULT_SHA256, "witness-table result"),
+        (WITNESS_TEST_PATH, WITNESS_TEST_SHA256, "witness-table dedicated test"),
+        (WEAK_AUTHORITY_PATH, WEAK_AUTHORITY_SHA256, "complete weak ledger"),
+        (OBSERVABILITY_AUTHORITY_PATH, OBSERVABILITY_AUTHORITY_SHA256, "observability authority"),
+        (WEAK_ORACLE_PATH, WEAK_ORACLE_SHA256, "weak exact-arithmetic oracle"),
+        (Q5_FREE_AUTHORITY_PATH, Q5_FREE_AUTHORITY_SHA256, "q5-free elimination result"),
+        (Q5_FREE_ORACLE_PATH, Q5_FREE_ORACLE_SHA256, "q5-free elimination oracle test"),
+    ):
+        absolute = root / path
+        _require(absolute.is_file(), f"missing {label}: {path.as_posix()}", errors)
+        if absolute.is_file():
+            _require(_sha256(absolute) == expected_hash, f"{label} raw SHA-256 mismatch", errors)
+
+    witness = _read_json_object(root / WITNESS_RESULT_PATH, errors, "witness-table result")
+    if witness is not None:
+        _require(
+            witness.get("schema_version") == WITNESS_RESULT_SCHEMA,
+            "witness-table result schema changed",
+            errors,
+        )
+        _require(witness.get("passed") is True, "witness-table result is not passing", errors)
+        _require(
+            witness.get("verdict") == "PAPER1_WITNESS_TABLES_EXTRACTED_FROM_BOUND_AUTHORITIES",
+            "witness-table result verdict changed",
+            errors,
+        )
+        _require(
+            witness.get("semantic_digest_sha256") == WITNESS_RESULT_SEMANTIC_SHA256,
+            "witness-table recorded semantic digest changed",
+            errors,
+        )
+        _require(
+            _self_excluding_json_sha256(witness) == WITNESS_RESULT_SEMANTIC_SHA256,
+            "witness-table semantic digest does not recompute",
+            errors,
+        )
+        census = witness.get("family_census")
+        _require(isinstance(census, dict), "witness-table family census is absent", errors)
+        if isinstance(census, dict):
+            _require(
+                census.get("derived_total_top_level_records") == 3283
+                and census.get("expected_total_top_level_records") == 3283,
+                "witness-table family census changed",
+                errors,
+            )
+        transitions = witness.get("transition_tables")
+        _require(isinstance(transitions, dict), "witness transition table is absent", errors)
+        if isinstance(transitions, dict):
+            _require(
+                transitions.get("occurrence_count") == 165
+                and transitions.get("orbit_count") == 131,
+                "witness transition occurrence/orbit census changed",
+                errors,
+            )
+
+    observability = _read_json_object(
+        root / OBSERVABILITY_AUTHORITY_PATH,
+        errors,
+        "observability authority",
+    )
+    if observability is not None:
+        _require(
+            observability.get("schema_version") == OBSERVABILITY_SCHEMA,
+            "observability authority schema changed",
+            errors,
+        )
+        _require(
+            observability.get("semantic_digest_sha256") == OBSERVABILITY_SEMANTIC_SHA256
+            and _self_excluding_json_sha256(observability) == OBSERVABILITY_SEMANTIC_SHA256,
+            "observability semantic digest changed",
+            errors,
+        )
+
+    q5_free = _read_json_object(
+        root / Q5_FREE_AUTHORITY_PATH,
+        errors,
+        "q5-free elimination result",
+    )
+    if q5_free is not None:
+        _require(
+            q5_free.get("schema_version") == Q5_FREE_SCHEMA,
+            "q5-free elimination schema changed",
+            errors,
+        )
+        _require(
+            q5_free.get("semantic_digest_sha256") == Q5_FREE_RECORDED_SEMANTIC_SHA256,
+            "q5-free elimination recorded semantic digest changed",
+            errors,
+        )
+        _require(
+            q5_free.get("phase1_proof_complete") is True
+            and q5_free.get("verdict") == "LITERAL_Q1_Q4_COMMUTATIVITY_PROVED",
+            "q5-free elimination proof boundary changed",
+            errors,
+        )
+
+
 def _validate_claim_ledger(
     root: Path, manifest: dict[str, Any], errors: list[str]
 ) -> dict[str, Any] | None:
@@ -490,6 +822,44 @@ def _validate_completed_c3_c5_proofs(tex: str, errors: list[str]) -> None:
         )
 
 
+def _validate_draft_marker_contract(tex: str, markers: object, errors: list[str]) -> None:
+    if not isinstance(markers, dict):
+        errors.append("manifest draft_markers must be an object")
+        return
+    _require(
+        markers == EXPECTED_DRAFT_MARKER_CONTRACT,
+        "closed DRAFT-marker contract changed",
+        errors,
+    )
+    invocation_count = len(re.findall(r"\\draftmarker\s*\{", tex))
+    token_count = tex.count(str(EXPECTED_DRAFT_MARKER_CONTRACT["forbidden_token"]))
+    macro_definition_count = len(
+        re.findall(
+            r"\\(?:newcommand|renewcommand|providecommand)\*?\s*"
+            r"(?:\{\s*)?\\draftmarker\b",
+            tex,
+        )
+    )
+    for label, actual, field in (
+        ("invocation", invocation_count, "expected_invocations"),
+        ("token occurrence", token_count, "expected_token_occurrences"),
+        ("macro definition", macro_definition_count, "expected_macro_definitions"),
+    ):
+        expected = EXPECTED_DRAFT_MARKER_CONTRACT[field]
+        _require(
+            actual == expected,
+            f"DRAFT marker {label} count mismatch: expected {expected}, got {actual}",
+            errors,
+        )
+    normalised_tex = _normalise_whitespace(tex)
+    for fragment in EXPECTED_DRAFT_MARKER_CONTRACT["required_tex_fragments"]:
+        _require(
+            isinstance(fragment, str) and _normalise_whitespace(fragment) in normalised_tex,
+            f"proof-complete boundary text is absent: {fragment!r}",
+            errors,
+        )
+
+
 def _validate_bibliography_and_tex(root: Path, manifest: dict[str, Any], errors: list[str]) -> None:
     tex_path = root / MANUSCRIPT_ROOT / "main.tex"
     if not tex_path.is_file():
@@ -586,39 +956,7 @@ def _validate_bibliography_and_tex(root: Path, manifest: dict[str, Any], errors:
                 errors,
             )
 
-    markers = manifest.get("draft_markers")
-    if not isinstance(markers, dict):
-        errors.append("manifest draft_markers must be an object")
-        return
-    token = markers.get("required_token")
-    minimum = markers.get("minimum_invocations")
-    _require(
-        isinstance(token, str) and token in tex,
-        "required DRAFT marker token is absent",
-        errors,
-    )
-    _require(isinstance(minimum, int) and minimum > 0, "invalid DRAFT marker minimum", errors)
-    _require(
-        minimum == EXPECTED_DRAFT_MARKER_INVOCATIONS,
-        "manifest DRAFT marker invocation gate changed",
-        errors,
-    )
-    invocation_count = len(re.findall(r"\\draftmarker\s*\{", _strip_tex_comments(tex)))
-    if isinstance(minimum, int):
-        _require(
-            invocation_count == minimum,
-            f"DRAFT marker invocation count mismatch: expected {minimum}, got {invocation_count}",
-            errors,
-        )
-    fragments = markers.get("required_tex_fragments")
-    _require(isinstance(fragments, list), "draft marker fragments must be a list", errors)
-    if isinstance(fragments, list):
-        for fragment in fragments:
-            _require(
-                isinstance(fragment, str) and fragment in tex,
-                f"required DRAFT boundary text is absent: {fragment!r}",
-                errors,
-            )
+    _validate_draft_marker_contract(tex, manifest.get("draft_markers"), errors)
 
 
 def _validate_state_boundary_text(root: Path, manifest: dict[str, Any], errors: list[str]) -> None:
@@ -810,8 +1148,173 @@ def _validate_bounded_scout_reproduction(
     )
 
 
+def _expected_literature_archived_snapshot() -> dict[str, Any]:
+    return {
+        "authority_status": "AUTHORITATIVE_ARCHIVED_556_RESPONSE",
+        "feed_updated_utc": LITERATURE_FEED_UPDATED_UTC,
+        "raw_response": {
+            "path": LITERATURE_RAW_RESPONSE_PATH.as_posix(),
+            "raw_sha256": LITERATURE_RAW_RESPONSE_SHA256,
+            "bytes": LITERATURE_RAW_RESPONSE_BYTES,
+            "media_type": "application/atom+xml",
+            "role": "RAW_API_RESPONSE",
+        },
+        "normalized_ledger": {
+            "path": LITERATURE_NORMALIZED_LEDGER_PATH.as_posix(),
+            "schema_version": "1.0",
+            "source_id": LITERATURE_SOURCE_RECORD_IDS[0],
+            "raw_sha256": LITERATURE_NORMALIZED_LEDGER_SHA256,
+            "bytes": LITERATURE_NORMALIZED_LEDGER_BYTES,
+            "media_type": "application/json",
+            "role": "NORMALIZED_SCREENING_LEDGER",
+        },
+        "normalizer": {
+            "path": LITERATURE_NORMALIZER_PATH.as_posix(),
+            "raw_sha256": LITERATURE_NORMALIZER_SHA256,
+            "check_command": LITERATURE_NORMALIZER_CHECK_COMMAND,
+        },
+        "dedicated_test": {
+            "path": LITERATURE_NORMALIZER_TEST_PATH.as_posix(),
+            "raw_sha256": LITERATURE_NORMALIZER_TEST_SHA256,
+        },
+        "effective_response_query": LITERATURE_EFFECTIVE_RESPONSE_QUERY,
+        "response_entry_count": 556,
+        "entries_published_in_submitted_date_window": 556,
+        "entries_published_outside_submitted_date_window": 0,
+        "entries_published_at_or_before_feed_cutoff": 556,
+        "entries_published_after_feed_cutoff": 0,
+        "minimum_published_utc": "2026-07-31T15:01:28Z",
+        "maximum_published_utc": "2026-08-04T17:59:09Z",
+        "screening_decision_counts": LITERATURE_DECISION_COUNTS,
+        "coverage_boundary": LITERATURE_COVERAGE_BOUNDARY,
+        "reconciliation": LITERATURE_RECONCILIATION,
+        "ordered_arxiv_ids_sha256": LITERATURE_ORDERED_IDS_SHA256,
+        "records_sha256": LITERATURE_RECORDS_SHA256,
+    }
+
+
+def _validate_literature_snapshot_files(root: Path, errors: list[str]) -> None:
+    for path, expected_hash, expected_bytes, label in (
+        (
+            LITERATURE_RAW_RESPONSE_PATH,
+            LITERATURE_RAW_RESPONSE_SHA256,
+            LITERATURE_RAW_RESPONSE_BYTES,
+            "literature raw Atom response",
+        ),
+        (
+            LITERATURE_NORMALIZED_LEDGER_PATH,
+            LITERATURE_NORMALIZED_LEDGER_SHA256,
+            LITERATURE_NORMALIZED_LEDGER_BYTES,
+            "literature normalized ledger",
+        ),
+        (
+            LITERATURE_NORMALIZER_PATH,
+            LITERATURE_NORMALIZER_SHA256,
+            None,
+            "literature normalizer",
+        ),
+        (
+            LITERATURE_NORMALIZER_TEST_PATH,
+            LITERATURE_NORMALIZER_TEST_SHA256,
+            None,
+            "literature normalizer dedicated test",
+        ),
+    ):
+        absolute = root / path
+        _require(absolute.is_file(), f"missing {label}: {path.as_posix()}", errors)
+        if not absolute.is_file():
+            continue
+        _require(_sha256(absolute) == expected_hash, f"{label} raw SHA-256 mismatch", errors)
+        if expected_bytes is not None:
+            _require(
+                absolute.stat().st_size == expected_bytes,
+                f"{label} byte count mismatch",
+                errors,
+            )
+
+    ledger = _read_json_object(
+        root / LITERATURE_NORMALIZED_LEDGER_PATH,
+        errors,
+        "literature normalized ledger",
+    )
+    if ledger is None:
+        return
+    expected_headers = {
+        "schema_version": "1.0",
+        "source_id": LITERATURE_SOURCE_RECORD_IDS[0],
+        "gate_status": LITERATURE_DELTA_STATUS,
+        "effective_response_query": LITERATURE_EFFECTIVE_RESPONSE_QUERY,
+        "response_entry_count": 556,
+        "entries_published_in_submitted_date_window": 556,
+        "entries_published_outside_submitted_date_window": 0,
+        "entries_published_at_or_before_feed_cutoff": 556,
+        "entries_published_after_feed_cutoff": 0,
+        "minimum_published_utc": "2026-07-31T15:01:28Z",
+        "maximum_published_utc": "2026-08-04T17:59:09Z",
+        "coverage_boundary": LITERATURE_COVERAGE_BOUNDARY,
+        "reconciliation": LITERATURE_RECONCILIATION,
+    }
+    for field, expected in expected_headers.items():
+        _require(
+            ledger.get(field) == expected,
+            f"literature normalized ledger header changed: {field}",
+            errors,
+        )
+    _require(
+        ledger.get("raw_response")
+        == {
+            "path": LITERATURE_RAW_RESPONSE_PATH.as_posix(),
+            "sha256": LITERATURE_RAW_RESPONSE_SHA256,
+            "bytes": LITERATURE_RAW_RESPONSE_BYTES,
+            "feed_updated_utc": LITERATURE_FEED_UPDATED_UTC,
+        },
+        "literature normalized ledger raw-response binding changed",
+        errors,
+    )
+    records = ledger.get("records")
+    _require(isinstance(records, list), "literature normalized records must be a list", errors)
+    if isinstance(records, list):
+        ordered_ids = [
+            record.get("arxiv_id") if isinstance(record, dict) else None for record in records
+        ]
+        _require(
+            len(records) == 556
+            and all(isinstance(identifier, str) for identifier in ordered_ids)
+            and _compact_utf8_json_sha256(ordered_ids) == LITERATURE_ORDERED_IDS_SHA256,
+            "literature normalized ordered-ID digest changed",
+            errors,
+        )
+        _require(
+            _compact_utf8_json_sha256(records) == LITERATURE_RECORDS_SHA256,
+            "literature normalized complete-record digest changed",
+            errors,
+        )
+    _require(
+        ledger.get("ordered_arxiv_ids_sha256") == LITERATURE_ORDERED_IDS_SHA256
+        and ledger.get("records_sha256") == LITERATURE_RECORDS_SHA256,
+        "literature normalized recorded content digests changed",
+        errors,
+    )
+    screening = ledger.get("screening")
+    _require(isinstance(screening, dict), "literature normalized screening is absent", errors)
+    if isinstance(screening, dict):
+        _require(
+            screening.get("decision_counts") == LITERATURE_DECISION_COUNTS
+            and screening.get("material_delta_ids") == [],
+            "literature normalized screening decisions changed",
+            errors,
+        )
+    _require(
+        ledger.get("reconciliation") == LITERATURE_RECONCILIATION,
+        "literature normalized historical-observation reconciliation changed",
+        errors,
+    )
+
+
 def _validate_literature_source_archive(root: Path, errors: list[str]) -> None:
-    """Authenticate the three metadata-only records used by the dated gate."""
+    """Authenticate the archived query dataset and two metadata-only hits."""
+
+    _validate_literature_snapshot_files(root, errors)
 
     catalog = _read_json_object(root / LITERATURE_SOURCES_PATH, errors, "reference source catalog")
     archive = _read_json_object(
@@ -871,13 +1374,16 @@ def _validate_literature_source_archive(root: Path, errors: list[str]) -> None:
             continue
         source = catalog_by_id[identifier]
         archived = archive_by_id[identifier]
+        expected_archive_status = (
+            "LOCAL_ARTIFACTS" if identifier == LITERATURE_SOURCE_RECORD_IDS[0] else "METADATA_ONLY"
+        )
         _require(
-            archived.get("archive_status") == "METADATA_ONLY"
+            archived.get("archive_status") == expected_archive_status
             and archived.get("sha256") is None
             and archived.get("bytes") is None
             and archived.get("pages") is None
             and archived.get("text_file") is None,
-            f"literature-delta record {identifier} must remain metadata-only",
+            f"literature-delta archive role changed for {identifier}",
             errors,
         )
         archived_source = {
@@ -895,6 +1401,8 @@ def _validate_literature_source_archive(root: Path, errors: list[str]) -> None:
     if query is not None:
         _require(
             query.get("url") == LITERATURE_CATEGORY_API_URL
+            and query.get("title")
+            == "Official arXiv API response: bounded Paper I submittedDate screen"
             and query.get("relationship") == "SEARCH_DATASET"
             and query.get("local_file") is None,
             "literature-delta official query provenance changed",
@@ -903,15 +1411,80 @@ def _validate_literature_source_archive(root: Path, errors: list[str]) -> None:
         _require(
             query.get("used_for")
             == [
-                "bounded Paper I literature-delta gate for C1--C5",
-                "checking new records and later version updates after the 2026-08-01 ledger cutoff",
+                "bounded Paper I submittedDate-window gate for C1--C5",
+                (
+                    "screening records submitted in the archived 2026-07-31T15:00Z "
+                    "through 2026-08-05T23:59Z response scope"
+                ),
+                (
+                    "deterministic title-and-abstract rescreen of all 556 records in the "
+                    "archived response"
+                ),
             ],
             "literature-delta official query use boundary changed",
             errors,
         )
+        expected_local_artifacts = [
+            {
+                "role": "RAW_API_RESPONSE",
+                "path": LITERATURE_RAW_RESPONSE_PATH.relative_to("references").as_posix(),
+                "media_type": "application/atom+xml",
+                "sha256": f"sha256:{LITERATURE_RAW_RESPONSE_SHA256}",
+                "bytes": LITERATURE_RAW_RESPONSE_BYTES,
+            },
+            {
+                "role": "NORMALIZED_SCREENING_LEDGER",
+                "path": LITERATURE_NORMALIZED_LEDGER_PATH.relative_to("references").as_posix(),
+                "media_type": "application/json",
+                "sha256": f"sha256:{LITERATURE_NORMALIZED_LEDGER_SHA256}",
+                "bytes": LITERATURE_NORMALIZED_LEDGER_BYTES,
+            },
+        ]
+        expected_dataset_snapshot = {
+            "gate_status": LITERATURE_DELTA_STATUS,
+            "feed_updated_utc": LITERATURE_FEED_UPDATED_UTC,
+            "effective_response_query": LITERATURE_EFFECTIVE_RESPONSE_QUERY,
+            "normalizer": LITERATURE_NORMALIZER_PATH.as_posix(),
+            "check_command": LITERATURE_NORMALIZER_CHECK_COMMAND,
+            "response_entry_count": 556,
+            "entries_published_in_submitted_date_window": 556,
+            "entries_published_outside_submitted_date_window": 0,
+            "entries_published_at_or_before_feed_cutoff": 556,
+            "entries_published_after_feed_cutoff": 0,
+            "minimum_published_utc": "2026-07-31T15:01:28Z",
+            "maximum_published_utc": "2026-08-04T17:59:09Z",
+            "ordered_arxiv_ids_sha256": f"sha256:{LITERATURE_ORDERED_IDS_SHA256}",
+            "records_sha256": f"sha256:{LITERATURE_RECORDS_SHA256}",
+            "screening_decision_counts": LITERATURE_DECISION_COUNTS,
+        }
+        _require(
+            query.get("local_artifacts") == expected_local_artifacts,
+            "literature-delta query local-artifact bindings changed",
+            errors,
+        )
+        _require(
+            query.get("dataset_snapshot") == expected_dataset_snapshot,
+            "literature-delta query dataset snapshot changed",
+            errors,
+        )
+        _require(
+            query.get("historical_unarchived_observation")
+            == {
+                "reported_screened_record_count": 524,
+                "status": "NONAUTHORITATIVE_UNARCHIVED_HISTORY_QUERY_AND_MEMBERSHIP_UNKNOWN",
+                "query_provenance_known": False,
+                "membership_known": False,
+                "comparison_to_archived_556_authorized": False,
+            },
+            "literature-delta historical 524 observation changed",
+            errors,
+        )
         _require(
             isinstance(query.get("claim_boundary"), str)
-            and "HTTP 429" in query["claim_boundary"]
+            and "within the submittedDate window" in query["claim_boundary"]
+            and "general coverage of later versions" in query["claim_boundary"]
+            and "neither known query provenance nor known membership" in query["claim_boundary"]
+            and "explicit editorial decision" in query["claim_boundary"]
             and "No local PDF applies" in query["claim_boundary"],
             "literature-delta official query claim boundary changed",
             errors,
@@ -985,6 +1558,7 @@ def _validate_literature_delta_search(
         "note_raw_sha256",
         "official_repository",
         "screened_record_count",
+        "archived_snapshot",
         "screened_categories",
         "targeted_categories",
         "tracked_source_versions",
@@ -995,6 +1569,7 @@ def _validate_literature_delta_search(
         "reference_archive",
         "material_delta_for_claim_labels",
         "recheck_before_submission",
+        "full_overlap_recheck_before_submission",
         "priority_or_absolute_absence_claimed",
     }
     _require(
@@ -1020,8 +1595,13 @@ def _validate_literature_delta_search(
         errors,
     )
     _require(
-        literature.get("screened_record_count") == 524,
+        literature.get("screened_record_count") == 556,
         "literature delta screened-record count changed",
+        errors,
+    )
+    _require(
+        literature.get("archived_snapshot") == _expected_literature_archived_snapshot(),
+        "literature delta archived-snapshot contract changed",
         errors,
     )
     _require(
@@ -1053,10 +1633,24 @@ def _validate_literature_delta_search(
     _require(
         literature.get("post_completion_requery")
         == {
-            "status": "HTTP_429_RATE_LIMITED_AFTER_COMPLETION",
-            "affects_completed_screening": False,
+            "historical_unarchived_observation": {
+                "status": "NONAUTHORITATIVE_UNARCHIVED_HISTORY_QUERY_AND_MEMBERSHIP_UNKNOWN",
+                "screened_record_count": 524,
+                "query_provenance_known": False,
+                "id_membership_known": False,
+                "comparison_to_archived_556_authorized": False,
+                "authoritative": False,
+            },
+            "historical_http_429": {
+                "status": "NO_RESPONSE_RETAINED_NOT_EVIDENCE",
+                "affects_archived_screening": False,
+            },
+            "archival_retrieval": {
+                "status": "SUCCESS_NO_RETRY",
+                "feed_updated_utc": LITERATURE_FEED_UPDATED_UTC,
+            },
         },
-        "literature delta rate-limit record changed",
+        "literature delta retrieval/prior-observation record changed",
         errors,
     )
     _require(
@@ -1077,6 +1671,11 @@ def _validate_literature_delta_search(
     _require(
         literature.get("recheck_before_submission") is True,
         "literature delta must require a pre-submission recheck",
+        errors,
+    )
+    _require(
+        literature.get("full_overlap_recheck_before_submission") is True,
+        "literature delta must require a full-overlap pre-submission recheck",
         errors,
     )
     _require(
@@ -1134,9 +1733,10 @@ def _validate_literature_delta_search(
         except OSError as exc:
             errors.append(f"cannot read {label}: {exc}")
             continue
+        normalised_source = " ".join(source.split())
         for fragment in fragments:
             _require(
-                fragment in source,
+                " ".join(fragment.split()) in normalised_source,
                 f"{label} lacks required boundary text: {fragment!r}",
                 errors,
             )
@@ -1147,7 +1747,7 @@ def _validate_literature_delta_search(
 def _expected_tex_build() -> dict[str, Any]:
     return {
         "toolchain_status": "HOST_ABSENT_PINNED_CONTAINER_AVAILABLE",
-        "pdf_status": "LOCAL_DRAFT_BUILT_AND_VISUALLY_VERIFIED",
+        "pdf_status": "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
         "pdf_verified": True,
         "submission_ready": False,
         "pinned_container_image": PDF_BUILD_IMAGE,
@@ -1165,12 +1765,12 @@ def _expected_tex_build() -> dict[str, Any]:
             "required_for_manifest_validation": False,
             "raw_sha256_role": "DATED_OBSERVATION_NOT_REPRODUCIBILITY_CONTRACT",
         },
-        "dated_observation": {
+        "current_observation": {
             "date": "2026-08-05",
             "main_tex_raw_sha256": PDF_BUILD_MAIN_SHA256,
             "pdf": {
-                "page_count": 10,
-                "bytes": 371899,
+                "page_count": 17,
+                "bytes": 409169,
                 "raw_sha256": PDF_BUILD_OBSERVED_SHA256,
             },
             "toolchain": {
@@ -1187,12 +1787,38 @@ def _expected_tex_build() -> dict[str, Any]:
                 "underfull_box": 0,
             },
             "visual_qa": {
-                "pages_inspected": 10,
+                "render_dpi": 120,
+                "pages_inspected": 17,
                 "all_pages_inspected": True,
                 "clipping_or_overlap_found": False,
-                "intentional_draft_boxes_remain": True,
+                "intentional_draft_boxes_remain": False,
             },
         },
+        "prior_observations": [
+            {
+                "status": "PRIOR_SOURCE_OBSERVATION_NOT_CURRENT_BINDING",
+                "date": "2026-08-05",
+                "main_tex_raw_sha256": PDF_BUILD_PRIOR_MAIN_SHA256,
+                "pdf": {
+                    "page_count": 10,
+                    "bytes": 371899,
+                    "raw_sha256": PDF_BUILD_PRIOR_OBSERVED_SHA256,
+                },
+                "diagnostics": {
+                    "blocking_total": 0,
+                    "overfull_hbox": 0,
+                    "undefined_reference_or_citation": 0,
+                    "latex_or_package_error": 0,
+                    "underfull_box": 0,
+                },
+                "visual_qa": {
+                    "pages_inspected": 10,
+                    "all_pages_inspected": True,
+                    "clipping_or_overlap_found": False,
+                    "intentional_draft_boxes_remain": True,
+                },
+            }
+        ],
     }
 
 
@@ -1240,8 +1866,8 @@ def _validate_status_boundaries(
         errors,
     )
     _require(
-        manifest.get("status") == "DRAFT_SCAFFOLD_NOT_FROZEN",
-        "manuscript is not marked as a non-frozen draft scaffold",
+        manifest.get("status") == PROOF_COMPLETE_STATUS,
+        "manuscript is not marked as a proof-complete, non-frozen release candidate",
         errors,
     )
     freeze = manifest.get("freeze")
@@ -1350,6 +1976,7 @@ def validate_paper1_manuscript(root: Path) -> list[str]:
     _validate_manifest_hashes(root, manifest, errors)
     ledger = _validate_claim_ledger(root, manifest, errors)
     _validate_bibliography_and_tex(root, manifest, errors)
+    _validate_electronic_supplement(root, manifest, errors)
     _validate_state_boundary_text(root, manifest, errors)
     _validate_bounded_scout_reproduction(root, manifest, errors)
     _validate_literature_delta_search(root, manifest, errors)

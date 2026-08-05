@@ -1,18 +1,18 @@
 {
   "schema_version": "final-theory-v042-paper1-manuscript-manifest-v1",
   "as_of": "2026-08-05",
-  "status": "DRAFT_SCAFFOLD_NOT_FROZEN",
+  "status": "PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN",
   "manuscript_root": "paper/v0.4.2_paper1_statewise_operator",
   "manuscript_files": [
     {
       "path": "paper/v0.4.2_paper1_statewise_operator/main.tex",
-      "role": "latex_manuscript_scaffold",
-      "raw_sha256": "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd"
+      "role": "latex_proof_complete_release_candidate_source",
+      "raw_sha256": "5e484a505a50097b45c7ec98740e195cc6d6c05fd37c7b154e91fff15cd79e8c"
     },
     {
       "path": "paper/v0.4.2_paper1_statewise_operator/REPRODUCING.md",
       "role": "reproduction_protocol",
-      "raw_sha256": "9025b26ef924b3ddd629c27254f3cd868586143c0edeb5a5543b516e36008b14"
+      "raw_sha256": "f9dc8f27f217f6b2aea1d0fa9bec03abd5ee838fde8c2bcecd611a6215caed79"
     },
     {
       "path": "paper/v0.4.2_paper1_statewise_operator/references.bib",
@@ -35,6 +35,66 @@
     "semantic_digest_method": "sha256(UTF-8 canonical JSON: ensure_ascii=true, sort_keys=true, separators=(',', ':'))",
     "semantic_digest_sha256": "f41f31a39711ad2c03e46473226eb504f37d400398f2f217982ce0ca9e29fc2f",
     "ledger_status": "SCOPED_MANUSCRIPT_ASSEMBLY_READY"
+  },
+  "electronic_supplement": {
+    "status": "PINNED_COMPACT_AUTHENTICATED_INDEX",
+    "policy": {
+      "complete_weak_ledger_remains_authority": true,
+      "compact_result_replaces_complete_ledger": false,
+      "embed_all_3283_records_in_pdf": false,
+      "ordinary_reproduction_mode": "--check",
+      "write_requires_review_and_manifest_rebinding": true
+    },
+    "extractor": {
+      "path": "scripts/extract_v042_paper1_witness_tables.py",
+      "raw_sha256": "f71790c5ce3d7d239100981666a5327716f6c5529c3491a13c1c0d9cc46710dd",
+      "check_mode": "--check"
+    },
+    "result": {
+      "path": "results/v0.4.2_paper1_witness_tables.json",
+      "schema_version": "final-theory-v042-paper1-witness-tables-v1",
+      "raw_sha256": "7608f8f987352fd297ae4e5911a65e018700a5c187b3d60e7a0677f72e3700f7",
+      "semantic_digest_method": "sha256(UTF-8 canonical JSON after excluding top-level semantic_digest_sha256: ensure_ascii=true, sort_keys=true, separators=(',', ':'))",
+      "semantic_digest_sha256": "6e3aff10dcf855617973b3b83bece809f00ef39f9568471475e58c1ab5fca542",
+      "expected_total_top_level_records": 3283,
+      "transition_occurrence_count": 165,
+      "transition_orbit_count": 131
+    },
+    "dedicated_test": {
+      "path": "tests/final_theory/test_extract_v042_paper1_witness_tables.py",
+      "raw_sha256": "b2825147db27a2bf0a76bd39b656835b8de7b7e4c7c4aa55a55aa02ca6617a3a"
+    },
+    "source_authorities": [
+      {
+        "path": "results/v0.4_weak_d2_classification.json",
+        "raw_sha256": "18e71f439913896fb370944c6479fc358d4d6d0d127162809ba46822ccd2fe65",
+        "role": "complete_electronic_ledger_authority"
+      },
+      {
+        "path": "results/v0.4.2_sr2v_baseline_observability.json",
+        "raw_sha256": "4f57805e871c0589560669c5aa65181c29ca41cdf722420729279945770710de",
+        "schema_version": "final-theory-v042-sr2v-baseline-observability-v1",
+        "semantic_digest_sha256": "73508f8ad94d97a3147cbd913d687f0b779c740b80a84a4836854053f6f01c62",
+        "role": "independent_exact_rational_observability_authority"
+      },
+      {
+        "path": "tests/final_theory/test_weak_d2_v04_oracle.py",
+        "raw_sha256": "54c5ec91fd3af0c824b153e451caa4695036e39d3915e68e76618ee2f455b324",
+        "role": "independent_exact_arithmetic_oracle_code"
+      }
+    ],
+    "q5_free_elimination_authority": {
+      "result": {
+        "path": "results/v0.3.7_q5_free_elimination.json",
+        "raw_sha256": "4c394fd5e4b864f3bb34debee51d536b1828c0f9a0d3a64b1d09142ef3b3ff14",
+        "schema_version": "final-theory-q5-free-campaign-v0.3.7",
+        "recorded_semantic_digest_sha256": "42dcd4f095f4d9ba87478716e1ed8e3639a823b0179cebd230f00feaedc0e47a"
+      },
+      "oracle_test": {
+        "path": "tests/final_theory/test_q5_free_elimination_v037.py",
+        "raw_sha256": "5f3e06535de65e63e483f5930e22d522881a5ea15138e401dca60c71bd72f6e7"
+      }
+    }
   },
   "claim_labels": ["C1", "C2", "C3", "C4", "C5"],
   "nonclaim_labels": ["N1", "N2", "N3", "N4", "N5", "N6"],
@@ -65,17 +125,21 @@
     }
   ],
   "draft_markers": {
-    "required_token": "DRAFT PROOF INSERT REQUIRED.",
-    "minimum_invocations": 6,
+    "status": "CLOSED",
+    "forbidden_token": "DRAFT PROOF INSERT REQUIRED.",
+    "expected_invocations": 0,
+    "expected_token_occurrences": 0,
+    "expected_macro_definitions": 0,
+    "reappearance_policy": "FAIL_CLOSED",
     "required_tex_fragments": [
-      "Claim-locked manuscript scaffold.",
-      "This file is a scoped assembly draft.",
-      "It is not a submission, deposit, or"
+      "Claim-locked proof-complete source.",
+      "Proof completion and machine audit do not authorise submission, deposit, or manuscript freeze.",
+      "proof-complete, machine-audited release-candidate source"
     ]
   },
   "tex_build": {
     "toolchain_status": "HOST_ABSENT_PINNED_CONTAINER_AVAILABLE",
-    "pdf_status": "LOCAL_DRAFT_BUILT_AND_VISUALLY_VERIFIED",
+    "pdf_status": "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
     "pdf_verified": true,
     "submission_ready": false,
     "pinned_container_image": "texlive/texlive:latest-medium@sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9",
@@ -85,7 +149,7 @@
     },
     "build_report": {
       "path": "reports/v0.4.2_paper1_pdf_build_2026-08-05.md",
-      "raw_sha256": "ae85230ec220d6a2bf976179eeb6b4951d798bfa4593a851f4ba9109bb84d117"
+      "raw_sha256": "8784453108f7edcc0939669c7b22e5745e1bf6e7d6d6663f6d5ad1a6362ead50"
     },
     "default_output_path": "output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf",
     "generated_pdf": {
@@ -93,13 +157,13 @@
       "required_for_manifest_validation": false,
       "raw_sha256_role": "DATED_OBSERVATION_NOT_REPRODUCIBILITY_CONTRACT"
     },
-    "dated_observation": {
+    "current_observation": {
       "date": "2026-08-05",
-      "main_tex_raw_sha256": "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd",
+      "main_tex_raw_sha256": "5e484a505a50097b45c7ec98740e195cc6d6c05fd37c7b154e91fff15cd79e8c",
       "pdf": {
-        "page_count": 10,
-        "bytes": 371899,
-        "raw_sha256": "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"
+        "page_count": 17,
+        "bytes": 409169,
+        "raw_sha256": "cfd79f8436628d0480850ac0eee344f5ba11188c64571384a578c830356ca482"
       },
       "toolchain": {
         "tex_live": "2026",
@@ -115,30 +179,146 @@
         "underfull_box": 0
       },
       "visual_qa": {
-        "pages_inspected": 10,
+        "render_dpi": 120,
+        "pages_inspected": 17,
         "all_pages_inspected": true,
         "clipping_or_overlap_found": false,
-        "intentional_draft_boxes_remain": true
+        "intentional_draft_boxes_remain": false
       }
-    }
+    },
+    "prior_observations": [
+      {
+        "status": "PRIOR_SOURCE_OBSERVATION_NOT_CURRENT_BINDING",
+        "date": "2026-08-05",
+        "main_tex_raw_sha256": "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd",
+        "pdf": {
+          "page_count": 10,
+          "bytes": 371899,
+          "raw_sha256": "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"
+        },
+        "diagnostics": {
+          "blocking_total": 0,
+          "overfull_hbox": 0,
+          "undefined_reference_or_citation": 0,
+          "latex_or_package_error": 0,
+          "underfull_box": 0
+        },
+        "visual_qa": {
+          "pages_inspected": 10,
+          "all_pages_inspected": true,
+          "clipping_or_overlap_found": false,
+          "intentional_draft_boxes_remain": true
+        }
+      }
+    ]
   },
   "literature_delta_search": {
     "since": "2026-08-01",
     "search_window": {
-      "start_utc": "2026-07-31T15:00:00Z",
-      "effective_assessment_cutoff_utc": "2026-08-05T01:43:02Z",
-      "category_api_coarse_upper_bound_utc": "2026-08-05T23:59Z"
+      "field": "submittedDate",
+      "window_start_utc": "2026-07-31T15:00:00Z",
+      "window_end_minute_utc": "2026-08-05T23:59:00Z",
+      "window_end_exclusive_utc": "2026-08-06T00:00:00Z",
+      "feed_cutoff_utc": "2026-08-05T04:52:45Z"
     },
-    "status": "CLOSED_NO_MATERIAL_DELTA_AS_OF_2026-08-05T01:43Z",
+    "status": "CLOSED_NO_MATERIAL_DELTA_WITHIN_ARCHIVED_SUBMITTEDDATE_SCOPE_AS_OF_2026-08-05T04:52:45Z",
     "completed": true,
     "audit_report": {
       "path": "reports/v0.4.2_paper1_literature_delta_2026-08-05.md",
-      "raw_sha256": "8a592316412d9e5210dc80c9e891bac1575632d805f1f9b31cb6f8e9081018d9"
+      "raw_sha256": "8040c4a537f707b29eba06af06710aa981efc3bd12f4e43a8ea24f652c5d0676"
     },
     "note_path": "references/notes/v0.4.2_paper1_literature_delta_2026-08-05.md",
-    "note_raw_sha256": "b9334cf591c13ade693e3d145969d0add02e175a8807ae7e57361bcee717bfe8",
+    "note_raw_sha256": "0712c516933ec4850591e5afc0e709205023a918abe5d315fe48392a77f6d76a",
     "official_repository": "arXiv",
-    "screened_record_count": 524,
+    "screened_record_count": 556,
+    "archived_snapshot": {
+      "authority_status": "AUTHORITATIVE_ARCHIVED_556_RESPONSE",
+      "feed_updated_utc": "2026-08-05T04:52:45Z",
+      "raw_response": {
+        "path": "references/papers/2026-08-05_paper1_arxiv_delta_query_atom.xml",
+        "raw_sha256": "8f1b253e2eebaa4788f19616c15ef4cc250da80bfc0d640eea4bd01b7eee08a3",
+        "bytes": 1091434,
+        "media_type": "application/atom+xml",
+        "role": "RAW_API_RESPONSE"
+      },
+      "normalized_ledger": {
+        "path": "references/papers/2026-08-05_paper1_arxiv_delta_query_normalized.json",
+        "schema_version": "1.0",
+        "source_id": "arXiv:PaperI-literature-delta-query-2026-08-05",
+        "raw_sha256": "39e12901c8db41a63070cb4ea1794a1da415aeea8c8df0160df79d7224a42c29",
+        "bytes": 497237,
+        "media_type": "application/json",
+        "role": "NORMALIZED_SCREENING_LEDGER"
+      },
+      "normalizer": {
+        "path": "scripts/normalize_v042_paper1_arxiv_delta_response.py",
+        "raw_sha256": "4068b63080d79ac18fb42396759560399bf09a4b1742b934fd78d0598657f303",
+        "check_command": ".venv\\Scripts\\python.exe scripts/normalize_v042_paper1_arxiv_delta_response.py --check"
+      },
+      "dedicated_test": {
+        "path": "tests/final_theory/test_normalize_v042_paper1_arxiv_delta_response.py",
+        "raw_sha256": "afb5b38483f2acb25f92afdc3efdd7ba539659199c3970e027fdfa6399fcac16"
+      },
+      "effective_response_query": {
+        "authority": "ARCHIVED_ATOM_FEED_TITLE_AND_QUERY_LINK",
+        "field": "submittedDate",
+        "window_start_compact_utc": "202607311500",
+        "window_end_compact_utc": "202608052359",
+        "categories": [
+          "gr-qc",
+          "quant-ph",
+          "math-ph",
+          "math.OA",
+          "math.RA",
+          "math.AC",
+          "math.FA",
+          "math.CO"
+        ],
+        "start": 0,
+        "max_results": 2000,
+        "id_list": [],
+        "window_start_utc": "2026-07-31T15:00:00Z",
+        "window_end_minute_utc": "2026-08-05T23:59:00Z",
+        "window_end_exclusive_utc": "2026-08-06T00:00:00Z",
+        "feed_title": "arXiv Query: search_query=submittedDate:\"202607311500 TO 202608052359\" AND (cat:gr-qc OR cat:quant-ph OR cat:math-ph OR cat:math.OA OR cat:math.RA OR cat:math.AC OR cat:math.FA OR cat:math.CO)&id_list=&start=0&max_results=2000",
+        "self_link": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608052359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list="
+      },
+      "response_entry_count": 556,
+      "entries_published_in_submitted_date_window": 556,
+      "entries_published_outside_submitted_date_window": 0,
+      "entries_published_at_or_before_feed_cutoff": 556,
+      "entries_published_after_feed_cutoff": 0,
+      "minimum_published_utc": "2026-07-31T15:01:28Z",
+      "maximum_published_utc": "2026-08-04T17:59:09Z",
+      "screening_decision_counts": {
+        "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 533,
+        "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 23,
+        "MATERIAL_DELTA_TO_C1_C5": 0
+      },
+      "coverage_boundary": {
+        "archived_submitted_date_snapshot_only": true,
+        "general_pre_window_version_updates_covered": false,
+        "minimum_pre_submission_contract": [
+          "archive and rescreen a full-overlap submittedDate response",
+          "repeat exact-ID version checks for arXiv:2607.26672 and arXiv:2603.25503",
+          "retain general pre-window version-update coverage as an explicit editorial decision"
+        ],
+        "tracked_exact_id_version_checks_recorded_outside_this_ledger": [
+          "arXiv:2607.26672",
+          "arXiv:2603.25503"
+        ]
+      },
+      "reconciliation": {
+        "comparison_to_archived_556_authorized": false,
+        "historical_524_id_membership_known": false,
+        "historical_524_query_provenance_known": false,
+        "historical_reported_screened_record_count": 524,
+        "materiality_reassessment_status": "COMPLETED_ON_ARCHIVED_556_RESPONSE",
+        "status": "NONAUTHORITATIVE_UNARCHIVED_HISTORY_QUERY_AND_MEMBERSHIP_UNKNOWN"
+      },
+      "ordered_arxiv_ids_sha256": "5f8a03534e8ce34f289f0bccf7457ee6e808e6dc8efccb41cb54e8515d99c18d",
+      "records_sha256": "1d53423d64956f4901980d315dee87ef834c775d17cacaefa3f6440778b14bb3"
+    },
     "screened_categories": [
       "gr-qc",
       "quant-ph",
@@ -157,8 +337,22 @@
     "keyword_hits_not_material": ["arXiv:2608.03273", "arXiv:2608.02166"],
     "companion_public_arxiv_record_located": false,
     "post_completion_requery": {
-      "status": "HTTP_429_RATE_LIMITED_AFTER_COMPLETION",
-      "affects_completed_screening": false
+      "historical_unarchived_observation": {
+        "status": "NONAUTHORITATIVE_UNARCHIVED_HISTORY_QUERY_AND_MEMBERSHIP_UNKNOWN",
+        "screened_record_count": 524,
+        "query_provenance_known": false,
+        "id_membership_known": false,
+        "comparison_to_archived_556_authorized": false,
+        "authoritative": false
+      },
+      "historical_http_429": {
+        "status": "NO_RESPONSE_RETAINED_NOT_EVIDENCE",
+        "affects_archived_screening": false
+      },
+      "archival_retrieval": {
+        "status": "SUCCESS_NO_RETRY",
+        "feed_updated_utc": "2026-08-05T04:52:45Z"
+      }
     },
     "source_catalog_record_ids": [
       "arXiv:PaperI-literature-delta-query-2026-08-05",
@@ -169,10 +363,14 @@
       "sources_path": "references/sources.json",
       "manifest_path": "references/manifest.json",
       "status": "HASH_ONLY_SKIP_TEXT_PYPDF_UNAVAILABLE",
-      "command": "scripts/archive_references.py --skip-text"
+      "command": "scripts/archive_references.py --skip-text",
+      "query_archive_status": "LOCAL_ARTIFACTS",
+      "excluded_hit_archive_status": "METADATA_ONLY",
+      "excluded_hit_ids": ["arXiv:2608.03273v1", "arXiv:2608.02166v1"]
     },
     "material_delta_for_claim_labels": [],
     "recheck_before_submission": true,
+    "full_overlap_recheck_before_submission": true,
     "priority_or_absolute_absence_claimed": false
   },
   "version_boundary": {
@@ -187,6 +385,21 @@
       "neither an obstruction theorem nor a terminal verdict."
     ],
     "reproducing_required_fragments": [
+      "PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN",
+      "freeze, submission, and deposit remain owner-only and unauthorized",
+      "scripts/extract_v042_paper1_witness_tables.py --check",
+      "scripts/normalize_v042_paper1_arxiv_delta_response.py --check",
+      "The authoritative query semantics come only from the archived Atom feed title and self-link.",
+      "all 556 have `published` timestamps inside that submitted-date window",
+      "This submitted-date snapshot does not generally cover later versions whose original submission predates the window.",
+      "unknown query provenance and unknown ID membership",
+      "comparison with the archived 556 set is unauthorized",
+      "full-overlap `submittedDate` snapshot beginning at `2026-07-31T15:00:00Z`",
+      "general pre-window version-update coverage remains an explicit editorial decision",
+      "The 1.6 MiB `results/v0.4_weak_d2_classification.json` remains the complete electronic-ledger authority.",
+      "The compact result retains 3,283 sorted natural IDs and their family digests",
+      "the q5-free elimination and its oracle checks",
+      "the final local observation is a 17-page PDF",
       "U2 determinantal subroute: reproduce the limitation, not a theorem",
       "a fresh clone can run these two bounded derived scouts without restoring or regenerating the 3,161-record",
       "This does not reproduce the full 3,161-record arena, the full bundle, the historical stage-8 raw event, or its postflight payload.",
@@ -200,6 +413,10 @@
       "Raw supervised attempts remain untracked, including stage-8 raw events/postflight. Their absence prevents raw historical replay."
     ],
     "reproducing_forbidden_fragments": [
+      "SCOPED_MANUSCRIPT_ASSEMBLY_READY; submission remains",
+      "does not remove the six intentional draft-proof boxes",
+      "observed 92 passing tests",
+      "32 below",
       "The expected output digests are respectively",
       "PENDING_BOUNDED_SAGE_RECOMPUTATION: no reproducible certificate-core digest is pinned."
     ]
