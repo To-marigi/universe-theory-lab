@@ -1,0 +1,523 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=blue!55!black,
+  urlcolor=blue!55!black,
+  pdftitle={Statewise versus operator Bell causality in finite quantum sequential growth},
+  pdfauthor={Kenichi Osaki}
+}
+
+\setlist{nosep}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\End}{\mathrm{End}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\draftmarker}[1]{%
+  \begin{quote}\small
+  \fcolorbox{red!60!black}{red!6}{%
+    \parbox{0.90\linewidth}{\textbf{DRAFT PROOF INSERT REQUIRED.} #1}}
+  \end{quote}}
+
+\title{\textbf{Statewise versus operator Bell causality in finite\\
+quantum sequential growth: exact separation and recovery at dimension two}}
+\author{Kenichi Osaki\\
+\small Independent researcher\\
+\small ORCID: \href{https://orcid.org/0009-0003-9256-7089}{0009-0003-9256-7089}}
+\date{Paper I manuscript scaffold, v0.4.2 -- 5 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\small\emph{Claim-locked manuscript scaffold.  The theorem statements below
+are limited to the v0.4.2 Paper I claim ledger.  Every proof section that
+has not yet been written for human review carries an explicit draft marker.}
+\end{center}
+
+\begin{abstract}
+We assemble a bounded manuscript for the finite, nonsingular, occurrence-ON
+quantum sequential-growth presentation with \(d=2\) and source stages
+\(n\leq4\).  The manuscript records exactly five ledger-bound statements:
+a frozen strong/strong commutativity baseline; an exact rational
+fixed-vector/general-covariance and reachable-state/martingale witness of
+noncommutativity; a source-native Eq.~(120) lemma; commutativity on a proper
+reconstruction slice; and conditional statewise-to-operator recovery lemmas.
+The purpose is to keep the distinction between statewise and operator
+semantics auditable, not to classify all finite semantics.  In particular,
+the full 955 and 721 profiles, a complete finite ON classification, and a
+reachable-visible witness are not claimed.  The bounded U2 auxiliary-ideal
+investigation is retained only as a reproducibility and resource-boundary
+record, not as a unit-ideal theorem.
+\end{abstract}
+
+\section{Introduction and claim boundary}
+
+Classical sequential growth motivates covariance and Bell-causality
+conditions on transitions between causal sets \cite{RideoutSorkin2000}.
+The operator-valued CPOBC setting considered here follows the finite
+presentation and source relations documented in \cite{SrivastavaSurya2026},
+with the project-specific semantic distinctions kept explicit.
+
+This draft is intentionally narrower than a general representation theorem.
+It is a paper skeleton for the five statements C1--C5 in
+\texttt{results/v0.4.2\_paper1\_claim\_boundary.json}.  The terms
+``finite'', ``nonsingular'', ``occurrence ON'', \(d=2\), and \(n\leq4\)
+are part of every theorem scope unless a statement explicitly says otherwise.
+Exact certificates use arithmetic over \(\QQ\); their declared
+characteristic-zero interpretation is retained without adding a new
+field-extension claim.
+
+Two distinctions organize the paper.  First, a residual may be required to
+vanish as an operator, or only after evaluation on a specified state.
+Second, a source assignment need not lie in the image of the frozen rational
+reconstruction map.  The latter distinction is why the reconstruction-slice
+theorem below is a proper-slice statement rather than a theorem for the full
+strong-GC/reachable-state-MSR profile.
+
+\section{Relation to adjacent rigidity results}
+
+Xu's 2026 theorem package is materially broader on finite-dimensional
+self-adjoint nonsingular systems and on several triangular and extension
+branches \cite{Xu2026Relational}.  It also identifies non-self-adjoint
+nonsingular transitions and state-only covariance as open boundaries.  The
+present manuscript therefore makes no broad rigidity or priority claim over
+that territory.  Its distinct center is the exact statewise weak/weak
+separation in Theorem~\ref{thm:c2}, together with the explicitly conditional
+recovery and proper-slice statements below.
+
+The comparison in this draft is bound to the versioned literature audit
+through 1 August 2026.  A fresh delta search is required before manuscript
+freeze; an unavailable companion manuscript mentioned by Xu is not treated
+as inspected.
+
+\begin{table}[ht]
+\centering
+\caption{Claim boundary relative to the closest adjacent rigidity result.}
+\label{tab:xu-comparison}
+\begin{tabularx}{\textwidth}{@{}p{0.20\textwidth}p{0.34\textwidth}X@{}}
+\toprule
+Result & Declared setting & Manuscript use and boundary\\
+\midrule
+Xu \cite{Xu2026Relational}
+  & self-adjoint nonsingular systems and several triangular/extension branches
+  & broader in those settings; no project priority claim\\
+C1 baseline
+  & frozen literal strong-operator, \(d=2\), \(n\leq4\), occurrence ON
+  & finite comparison endpoint for \(Q_1,\ldots,Q_4\) only\\
+C2 separation
+  & fixed-vector GC and reachable-state MSR over \(\QQ\)
+  & exact non-self-adjoint statewise separation; reachable rank one\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Finite setup and semantic definitions}
+
+\subsection{Frozen finite domain}
+
+Let \(Q_1,\ldots,Q_4\in\GL_2(\QQ)\) denote the declared stage generators;
+the statements below do not add a conclusion about \(Q_5\).  The transition
+source cutoff is \(n\leq4\), while endpoint-stage-five data and \(Q_5\) may
+still occur where a source formula requests them.  Every commutator conclusion
+in this manuscript concerns \(Q_1,\ldots,Q_4\), and the C1 certificate does
+not use \(Q_5\).  The transition domain is the declared nonsingular domain,
+and occurrence identification is the certified ON domain of the underlying
+artifacts.  Literal and derived Eq.~(113) inventories, and printed-strict and
+completed Eq.~(139) inventories, remain separately recorded rather than
+being identified by this manuscript.
+
+\begin{definition}[Statewise and strong residual conditions]
+For a same-endpoint path-pair residual \(D_{\alpha,\beta}\), fixed-vector
+general covariance means
+\[
+  D_{\alpha,\beta}\Omega=0
+\]
+on the declared initial vector \(\Omega\); strong general covariance means
+\(D_{\alpha,\beta}=0\) as an operator.  For a source martingale residual
+\(M_c\) and its declared state \(v_c\), reachable-state MSR means
+\[
+  M_cv_c=0,
+\]
+while strong MSR means \(M_c=0\).  These definitions describe only the
+declared finite residual inventories.
+\end{definition}
+
+\begin{definition}[Residual evaluation]
+Let \(\mathcal R\subseteq\End(\QQ^2)\) be a declared linear space of
+admissible residual operators, and let \(V\subseteq\QQ^2\) be a collection
+of probes applied to the \emph{same} residual.  Define
+\[
+  \operatorname{ev}_V:\mathcal R\longrightarrow(\QQ^2)^V,
+  \qquad D\longmapsto(Dv)_{v\in V}.
+\]
+The word ``recovery'' below always refers to this fixed residual family and
+these sourcewise probes; it does not pool states tested against different
+residual operators.
+\end{definition}
+
+\begin{definition}[Reconstruction slice]
+Let
+\(P_{\mathrm{sGC+rMSR}}^{\mathrm{ns}}\) be the set of source assignments
+satisfying source-native CPOBC, strong GC, reachable-state MSR, and all
+declared nonsingularity predicates.  Let \(U\) be the open domain on which
+the four \(Q\)- and twenty-two \(B\)-inverse bases of the frozen
+165-occurrence rational reconstruction are nonsingular, and let
+\[
+  \Phi_U:U\longrightarrow\text{(source assignments)}
+\]
+denote that reconstruction.  The reconstruction slice is
+\(P_{\mathrm{sGC+rMSR}}^{\mathrm{ns}}\cap\im(\Phi_U)\).
+\end{definition}
+
+\begin{definition}[Reachable-visible noncommutativity]
+A noncommutative witness is called reachable-visible here only if the
+declared reachable sector exposes the nonzero commutator under the stated
+visibility criterion.  This definition fixes a boundary term; the present
+paper does not assert that its weak/weak witness has this property.
+\end{definition}
+
+\section{Ledger-bound theorem statements}
+
+\subsection{C1: frozen strong/strong baseline}
+
+\begin{theorem}[C1: finite strong/strong comparison theorem]
+\label{thm:c1}
+In the frozen v0.3.7/v0.3.9 literal strong-GC/strong-MSR finite
+\(d=2\), \(n\leq4\), occurrence-ON baseline, the complete S1/S2/S3 cover
+reduces the noncommutative alternative to 21 exact \(\QQ\) chart
+calculations and the structural S3 certificate.  These exclude every
+noncommutative branch, so every solution on the recorded denominator-open
+locus satisfies
+\[
+  [Q_i,Q_j]=0\qquad(1\leq i<j\leq4).
+\]
+The certificate does not use \(Q_5\).
+\end{theorem}
+
+\draftmarker{Insert a human-readable account of the frozen literal
+strong/strong certificate and its 21-chart-plus-S3 coverage.  Do not replace
+this finite comparison theorem by a broad rigidity, self-adjoint, or complete
+classification statement.}
+
+\subsection{C2: exact weak/weak separation}
+
+\begin{theorem}[C2: exact rational weak/weak separation]
+\label{thm:c2}
+The frozen finite \(d=2\), \(n\leq4\) presentation admits an exact rational,
+nonsingular noncommutative witness satisfying fixed-vector GC and
+reachable-state MSR.  The witness is an off-reachable-sector witness: its
+reachable span has rank one, and it is not asserted to be reachable-visible.
+The same orbit-constant assignment is also a witness with occurrence
+identification OFF because the ON assignment is an admissible special case;
+this does not supply a profile-native 406-occurrence OFF compiler or an OFF
+classification.
+\end{theorem}
+
+\draftmarker{Insert the independently checkable witness derivation and the
+exact finite audit.  Retain the distinction between statewise vanishing and
+operator residuals; do not promote this theorem to either one-sided profile.}
+
+\subsection{C3: source-native Eq.~(120)}
+
+\begin{lemma}[C3: source-native Eq.~(120) lemma]
+\label{lem:c3}
+For units in a unital associative algebra, six raw antichain CPOBC relations
+and the declared source nonsingularity imply the three \(k=1\) identities
+\[
+  Q_nQ_1^{-1}Q_m=Q_mQ_1^{-1}Q_n
+  \qquad(2\leq m<n\leq4).
+\]
+The derivation uses neither MSR, GC, Eq.~(108), Eq.~(112), nor B-reduction.
+It is stated independently of \(d=2\); dimension two enters only in the
+subsequent chart closure.
+\end{lemma}
+
+\draftmarker{Insert the six selected source records and the free-word
+derivation, with each cancellation and inverse operation stated.  The source
+relation itself must be cited as prior material; the manuscript contribution
+is the finite provenance and its use in the certified assembly.}
+
+\subsection{C4: proper reconstruction slice}
+
+\begin{theorem}[C4: reconstruction-slice commutativity]
+\label{thm:c4}
+For every
+\[
+  x\in P_{\mathrm{sGC+rMSR}}^{\mathrm{ns}}\cap\im(\Phi_U)
+\]
+and every \(q\in U\) with \(\Phi_U(q)=x\), the source-to-direct inclusion,
+localisation, and the independently bound source relations give
+\[
+  q\in D_{955}.
+\]
+Lemma~\ref{lem:c3} and the exact \(d=2\) chart certificates then imply
+\[
+  [Q_i(q),Q_j(q)]=0\qquad(1\leq i<j\leq4).
+\]
+Consequently, the established forward image inclusion is
+\[
+  P_{\mathrm{sGC+rMSR}}^{\mathrm{ns}}\cap\im(\Phi_U)
+  \subseteq\Phi_U(D_{955}),
+\]
+where \(D_{955}\) is the declared direct relation locus.  No converse
+inclusion and no conclusion on
+\(P_{\mathrm{sGC+rMSR}}^{\mathrm{ns}}\setminus\im(\Phi_U)\) are claimed.
+\end{theorem}
+
+\draftmarker{Insert the quantified source-to-direct pullback, the
+localisation argument, and the exact 12-S1, 9-S2, and S3 closure.  Keep the
+proper-slice qualifier in the theorem title, abstract, and conclusion.}
+
+\subsection{C5: conditional statewise-to-operator recovery}
+
+\begin{theorem}[C5: residual-space recovery]
+\label{thm:c5}
+For a declared residual space \(\mathcal R\) and sourcewise probe family
+\(V\), statewise equality promotes every \(D\in\mathcal R\) to the operator
+identity \(D=0\) if and only if \(\operatorname{ev}_V\) is injective.
+In dimension two, two independent probes applied to the same residual are a
+sufficient exact recovery condition.  The corresponding non-scalar
+\(2\times2\) centralizer endpoint is
+\[
+  \operatorname{Cent}(A)=\QQ[I,A]
+\]
+for a non-scalar \(A\in M_2(\QQ)\).
+\end{theorem}
+
+\draftmarker{Insert the residual-space rank calculation, same-residual
+two-probe argument, cyclicity counterexample, and centralizer proof.  Do not
+assert that ordinary single-\(\Omega\) CPOBC semantics supplies the required
+additional probes.}
+
+\section{Proof roadmap and dependency audit}
+
+The proof architecture is deliberately modular.  Lemma~\ref{lem:c3} is
+source-native and dimension-independent.  The reconstruction argument in
+Theorem~\ref{thm:c4} then binds source data to the direct locus, including
+its localisation predicates.  Only after that binding do the \(d=2\)
+S1/S2/S3 chart certificates close the noncommutative branches.  The
+strong/strong baseline, Theorem~\ref{thm:c1}, remains a comparison theorem,
+while Theorem~\ref{thm:c2} demonstrates that the two statewise conditions do
+not themselves force operator commutativity.
+
+\begin{center}
+\small
+raw source CPOBC \(\longrightarrow\) Eq.~(120)
+\(\longrightarrow\) source-to-direct inclusion and localisation
+\(\longrightarrow\) commuting ratios
+\(\longrightarrow\) S1/S2/S3 chart closure.
+\end{center}
+
+The principal certificate census for the reconstruction-slice path is
+shown in Table~\ref{tab:spine}.  Counts are evidence ledgers, not a claim of
+relation minimality.
+
+\begin{table}[ht]
+\centering
+\caption{Certified proof-spine census used by the proper-slice statement.}
+\label{tab:spine}
+\begin{tabularx}{\textwidth}{@{}l r X@{}}
+\toprule
+Item & Count & Role in the manuscript\\
+\midrule
+source CPOBC records & \(783=83+700\) & source-to-direct CPOBC pullback\\
+strong-GC generating basis & \(320=65+255\) & direct local-operator-GC pullback\\
+same-endpoint path pairs & 1,529 & coverage for the declared GC basis\\
+reconstructed transitions & 165 & nonsingularity and occurrence binding\\
+rational inverse bases & \(4\ Q+22\ B\) & localisation origin\\
+raw Eq.~(120) records / targets & \(6/3\) & source-native lemma\\
+dimension-two cover & \(12\ \mathrm{S1}+9\ \mathrm{S2}+\mathrm{S3}\) & chart closure\\
+exact \(\QQ\) certificates used & 21 & proper-slice closure only\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\draftmarker{This section is a dependency roadmap, not a substitute for the
+complete proofs.  Before release, add the selected record IDs, quantified
+map domains, human-readable chart-cover proof, and certificate-to-claim
+bindings.}
+
+\section{Witness audit for C2}
+
+The C2 witness is exact over \(\QQ\).  With
+\(\Omega=(1,0)^\mathsf{T}\), the recorded transition family has the form
+\[
+ A_e=
+ \begin{pmatrix}2^{w-m}/2^n & b_e\\0&1\end{pmatrix},
+ \qquad
+ b_e=\begin{cases}4/2^n,&\text{for a gregarious transition},\\
+                    0,&\text{otherwise},\end{cases}
+\]
+where \(w\) and \(m\) are the declared precursor statistics.  For the
+antichain gregarious generators,
+\[
+ Q_n=\begin{pmatrix}2^{-n}&4\,2^{-n}\\0&1\end{pmatrix}.
+\]
+Thus the recorded witness has nonzero commutators among
+\(Q_1,\ldots,Q_4\), while every reachable state is a nonzero rational
+multiple of \(\Omega\).  This last fact is the reason its noncommutativity
+is not called reachable-visible.
+
+\begin{table}[ht]
+\centering
+\caption{Exact finite checks recorded for the C2 witness.}
+\label{tab:witness}
+\begin{tabular}{lr}
+\toprule
+Audit family & Recorded checks\\
+\midrule
+frozen CPOBC word equations & 783\\
+same-endpoint fixed-vector GC pairs & 1,529\\
+reachable-state MSR sources & 24\\
+Eq.~(113), derived and literal branches & \(25+25\)\\
+Eq.~(139), printed-strict and completed domains & \(4+10\)\\
+transition occurrence determinants & 165\\
+nonzero commutators among \(Q_1,\ldots,Q_4\) & 6\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\draftmarker{Before submission, replace this audit summary by the complete
+witness table, direct residual ledger, and independent-oracle comparison.
+Do not infer a complete weak/weak classification from this witness.}
+
+\section{Recovery conditions and their boundary}
+
+Theorem~\ref{thm:c5} is deliberately conditional.  One probe cannot
+separate all of \(M_2(\QQ)\): evaluation at \(e_1\), for example, has a
+nontrivial kernel on the full matrix algebra.  Conversely, the basis probes
+\(e_1,e_2\) recover all of \(M_2(\QQ)\), and a single probe can separate a
+smaller declared residual space.  The correct condition is therefore
+injectivity on \(\mathcal R\), not a generic slogan about cyclicity or global
+reachability.
+
+The sourcewise qualifier cannot be omitted.  The exact counterexample
+\[
+  v_1=e_1,\quad D_1=E_{12},\qquad
+  v_2=e_2,\quad D_2=E_{21}
+\]
+has \(\operatorname{span}\{v_1,v_2\}=\QQ^2\) and
+\(D_1v_1=D_2v_2=0\), although both residuals are nonzero.  Vectors tested
+against distinct source residuals therefore cannot be pooled to recover
+either residual as an operator identity.
+
+\draftmarker{Add the exact evaluation-rank ledger and make the bridge to the
+strong/strong baseline only under separately verified injectivity for each
+declared GC and MSR residual family.}
+
+\section{Explicit nonclaims}
+
+The following boundaries are part of the manuscript, rather than future
+work inferred from its results:
+\begin{enumerate}[label=N\arabic*.]
+  \item No general strong-GC/reachable-state-MSR theorem for the full
+        955 profile is claimed.
+  \item No general fixed-vector-GC/strong-MSR theorem for the 721 profile
+        is claimed.
+  \item No complete finite occurrence-ON semantics lattice is claimed.
+  \item The current weak/weak witness is not claimed to be
+        reachable-visible.
+  \item The bounded GF determinantal U2 scout is not a \(\QQ\) theorem that
+        the full auxiliary ideal is unit or non-unit.
+  \item A general or profile-native occurrence-OFF compiler and
+        classification, relation minimality, \(n\geq5\), \(d\geq3\), singular
+        transitions, and infinite-system claims are out of scope.  The C2
+        special-case OFF witness does not remove this boundary.
+\end{enumerate}
+
+The global SR2-V status remains
+\texttt{SEARCH\_OPEN\_NO\_TERMINAL}.  The U2 subroute status
+\texttt{SOFT\_RESOURCE\_LIMIT\_NONTERMINAL} records a bounded computation and
+verified process cleanup; it is neither an obstruction theorem nor a terminal
+verdict.
+
+\section{Reproducibility appendix}
+
+Table~\ref{tab:artifacts} records the claim-bearing machine artifacts.  The
+manuscript must preserve their raw hashes and semantic digests rather than
+substituting prose summaries for them.
+
+\begin{table}[ht]
+\centering
+\caption{Paper I claim ledger and principal evidence artifacts.}
+\label{tab:artifacts}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.14\textwidth}p{0.32\textwidth}X@{}}
+\toprule
+Claim & Artifact & Recorded binding\\
+\midrule
+C1 & \texttt{results/v0.3.7\_release\_manifest.json};
+     \texttt{results/v0.3.9\_release\_manifest.json}
+   & frozen public baseline; v0.3.7 semantic digest
+     \texttt{b97b83\ldots bc58d}; v0.3.9 semantic digest
+     \texttt{eb9eb8\ldots 48e47}\\
+C2 & \texttt{results/v0.4\_weak\_d2\_classification.json};
+     \texttt{results/v0.4.2\_sr2v\_baseline\_observability.json}
+   & witness raw SHA-256 \texttt{18e71f\ldots 2fe65}; observability raw
+     SHA-256 \texttt{4f5780\ldots 10de}; semantic digest
+     \texttt{73508f\ldots c62}\\
+C3 & \texttt{results/v0.4.2\_eq120\_source\_provenance.json}
+   & raw SHA-256 \texttt{864536\ldots fed4}; semantic digest
+     \texttt{77d11e\ldots d6ca}\\
+C4 & \texttt{results/v0.4.1\_partial\_slice\_audit.json}
+   & raw SHA-256 \texttt{a37bc2\ldots 089b5}; semantic digest
+     \texttt{2d65dd\ldots 99839}\\
+C5 & \texttt{results/v0.4.2\_sr3b\_m\_semantic\_recovery.json}
+   & raw SHA-256 \texttt{164dba\ldots 235a8}; semantic digest
+     \texttt{a74297\ldots 5d735}\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The current reproduction-facing commands are:
+\begin{verbatim}
+uv run pytest -q tests/final_theory/test_eq120_source_provenance_v042.py
+uv run python scripts/reproduce_v041_partial_slice_audit.py --write-audit
+uv run pytest -q tests/final_theory/test_v041_partial_slice_audit.py
+python -m universe_lab.final_theory.semantic_recovery_v042
+pytest -q tests/final_theory/test_semantic_recovery_v042.py
+\end{verbatim}
+
+The resource-boundary record for the U2 subroute is
+\texttt{reports/v0.4.2\_sr2v\_auxiliary\_ideal\_determinantal\_pilot\_2026-08-05.md}.
+It has no theorem role beyond reproducibility and limitation reporting.
+
+\draftmarker{Before a release candidate, verify these commands in a clean
+environment, expand abbreviated digests to their full 64 hexadecimal
+characters in the release manifest, and add the versioned software and
+resource ledger.}
+
+\section*{Manuscript status}
+
+This file is a scoped assembly draft.  It is not a submission, deposit, or
+claim that the required human-readable proofs, independent audits, and
+release checks have been completed.  The owner and manuscript-review gates
+remain pending.
+
+\bibliographystyle{plain}
+\bibliography{../v0.3.9_d2_commutativity_short_report/references,references}
+
+\end{document}

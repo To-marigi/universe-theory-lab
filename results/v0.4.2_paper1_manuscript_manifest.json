@@ -1,0 +1,212 @@
+{
+  "schema_version": "final-theory-v042-paper1-manuscript-manifest-v1",
+  "as_of": "2026-08-05",
+  "status": "DRAFT_SCAFFOLD_NOT_FROZEN",
+  "manuscript_root": "paper/v0.4.2_paper1_statewise_operator",
+  "manuscript_files": [
+    {
+      "path": "paper/v0.4.2_paper1_statewise_operator/main.tex",
+      "role": "latex_manuscript_scaffold",
+      "raw_sha256": "8284d73cfea078174cadf018b073ed42b767f9c24a0505907d65b7f5e550cdd4"
+    },
+    {
+      "path": "paper/v0.4.2_paper1_statewise_operator/REPRODUCING.md",
+      "role": "reproduction_protocol",
+      "raw_sha256": "6079c8474423384b58963b739eed088a2e85b33478d0f70bc96831ff2c3c1c53"
+    },
+    {
+      "path": "paper/v0.4.2_paper1_statewise_operator/references.bib",
+      "role": "local_bibliography_delta",
+      "raw_sha256": "674666f5e757cc56c616bcbe182042fa08f42c0af30fdbcc588728273942fc3f"
+    }
+  ],
+  "bibliography": {
+    "tex_entries": [
+      "../v0.3.9_d2_commutativity_short_report/references",
+      "references"
+    ],
+    "shared_bib_path": "paper/v0.3.9_d2_commutativity_short_report/references.bib",
+    "local_bib_path": "paper/v0.4.2_paper1_statewise_operator/references.bib"
+  },
+  "claim_ledger": {
+    "path": "results/v0.4.2_paper1_claim_boundary.json",
+    "raw_sha256": "93ac15eca24cf3c24dd4a27cf54694153b9fac96c91f6fe673579ba88609425c",
+    "schema_version": "final-theory-v042-paper1-claim-boundary-v1",
+    "semantic_digest_method": "sha256(UTF-8 canonical JSON: ensure_ascii=true, sort_keys=true, separators=(',', ':'))",
+    "semantic_digest_sha256": "f41f31a39711ad2c03e46473226eb504f37d400398f2f217982ce0ca9e29fc2f",
+    "ledger_status": "SCOPED_MANUSCRIPT_ASSEMBLY_READY"
+  },
+  "claim_labels": ["C1", "C2", "C3", "C4", "C5"],
+  "nonclaim_labels": ["N1", "N2", "N3", "N4", "N5", "N6"],
+  "nonclaim_text_requirements": [
+    {
+      "id": "N1",
+      "required_fragment": "No general strong-GC/reachable-state-MSR theorem for the full 955 profile is claimed."
+    },
+    {
+      "id": "N2",
+      "required_fragment": "No general fixed-vector-GC/strong-MSR theorem for the 721 profile is claimed."
+    },
+    {
+      "id": "N3",
+      "required_fragment": "No complete finite occurrence-ON semantics lattice is claimed."
+    },
+    {
+      "id": "N4",
+      "required_fragment": "The current weak/weak witness is not claimed to be reachable-visible."
+    },
+    {
+      "id": "N5",
+      "required_fragment": "The bounded GF determinantal U2 scout is not a \\(\\QQ\\) theorem that the full auxiliary ideal is unit or non-unit."
+    },
+    {
+      "id": "N6",
+      "required_fragment": "A general or profile-native occurrence-OFF compiler and classification, relation minimality, \\(n\\geq5\\), \\(d\\geq3\\), singular transitions, and infinite-system claims are out of scope. The C2 special-case OFF witness does not remove this boundary."
+    }
+  ],
+  "draft_markers": {
+    "required_token": "DRAFT PROOF INSERT REQUIRED.",
+    "minimum_invocations": 9,
+    "required_tex_fragments": [
+      "Claim-locked manuscript scaffold.",
+      "This file is a scoped assembly draft.",
+      "It is not a submission, deposit, or"
+    ]
+  },
+  "tex_build": {
+    "toolchain_status": "ABSENT",
+    "pdf_status": "UNBUILT",
+    "pdf_verified": false
+  },
+  "literature_delta_search": {
+    "since": "2026-08-01",
+    "search_window": {
+      "start_utc": "2026-07-31T15:00:00Z",
+      "effective_assessment_cutoff_utc": "2026-08-05T01:43:02Z",
+      "category_api_coarse_upper_bound_utc": "2026-08-05T23:59Z"
+    },
+    "status": "CLOSED_NO_MATERIAL_DELTA_AS_OF_2026-08-05T01:43Z",
+    "completed": true,
+    "audit_report": {
+      "path": "reports/v0.4.2_paper1_literature_delta_2026-08-05.md",
+      "raw_sha256": "8a592316412d9e5210dc80c9e891bac1575632d805f1f9b31cb6f8e9081018d9"
+    },
+    "note_path": "references/notes/v0.4.2_paper1_literature_delta_2026-08-05.md",
+    "note_raw_sha256": "b9334cf591c13ade693e3d145969d0add02e175a8807ae7e57361bcee717bfe8",
+    "official_repository": "arXiv",
+    "screened_record_count": 524,
+    "screened_categories": [
+      "gr-qc",
+      "quant-ph",
+      "math-ph",
+      "math.OA",
+      "math.RA",
+      "math.AC",
+      "math.FA",
+      "math.CO"
+    ],
+    "targeted_categories": ["math.PR", "physics.*"],
+    "tracked_source_versions": {
+      "arXiv:2607.26672": "v1",
+      "arXiv:2603.25503": "v1"
+    },
+    "keyword_hits_not_material": ["arXiv:2608.03273", "arXiv:2608.02166"],
+    "companion_public_arxiv_record_located": false,
+    "post_completion_requery": {
+      "status": "HTTP_429_RATE_LIMITED_AFTER_COMPLETION",
+      "affects_completed_screening": false
+    },
+    "source_catalog_record_ids": [
+      "arXiv:PaperI-literature-delta-query-2026-08-05",
+      "arXiv:2608.03273v1",
+      "arXiv:2608.02166v1"
+    ],
+    "reference_archive": {
+      "sources_path": "references/sources.json",
+      "manifest_path": "references/manifest.json",
+      "status": "HASH_ONLY_SKIP_TEXT_PYPDF_UNAVAILABLE",
+      "command": "scripts/archive_references.py --skip-text"
+    },
+    "material_delta_for_claim_labels": [],
+    "recheck_before_submission": true,
+    "priority_or_absolute_absence_claimed": false
+  },
+  "version_boundary": {
+    "global_sr2v_status": "SEARCH_OPEN_NO_TERMINAL",
+    "u2_role": "SUBROUTE_ONLY_NONTERMINAL",
+    "u2_is_global_terminal": false
+  },
+  "state_boundary_text": {
+    "main_tex_required_fragments": [
+      "\\texttt{SEARCH\\_OPEN\\_NO\\_TERMINAL}",
+      "\\texttt{SOFT\\_RESOURCE\\_LIMIT\\_NONTERMINAL}",
+      "neither an obstruction theorem nor a terminal verdict."
+    ],
+    "reproducing_required_fragments": [
+      "U2 determinantal subroute: reproduce the limitation, not a theorem",
+      "a fresh clone can run these two bounded derived scouts without restoring or regenerating the 3,161-record",
+      "This does not reproduce the full 3,161-record arena, the full bundle, the historical stage-8 raw event, or its postflight payload.",
+      "It is not a reexecution of the old stage-7 worker: it is a separately pinned derived calculation",
+      "Its input mode is BOUNDED_SCOUT_SUBSET_ONLY and its derivation status is DERIVED_CALCULATION_NOT_STAGE7_WORKER_REEXECUTION.",
+      "Its current status is PINNED, with row185_normal_form core digest",
+      "candidate_minor_only core digest",
+      "The scouts fail closed on a core-digest mismatch.",
+      "NONDETERMINISTIC_LEGACY_OBSERVATION_NOT_A_REPRODUCTION_EXPECTATION: they included timing values and are not expected output digests.",
+      "timing and mirror observations are only in runtime_observation.",
+      "Raw supervised attempts remain untracked, including stage-8 raw events/postflight. Their absence prevents raw historical replay."
+    ],
+    "reproducing_forbidden_fragments": [
+      "The expected output digests are respectively",
+      "PENDING_BOUNDED_SAGE_RECOMPUTATION: no reproducible certificate-core digest is pinned."
+    ]
+  },
+  "reproducibility_boundary": {
+    "stage7_fixture_inputs_tracked": true,
+    "bounded_scout_subset_fixture_tracked": true,
+    "bounded_scouts_clone_portable": true,
+    "full_3161_record_polynomial_arena_tracked": false,
+    "full_bundle_clone_reproducible": false,
+    "stage7_worker_reexecution": false,
+    "derived_bounded_scout_calculation": true,
+    "raw_stage8_event_replay_available": false,
+    "sage_free_fixture_selection_test_available": true,
+    "certificate_core_expectations_final_status": "PINNED"
+  },
+  "bounded_scout_reproduction": {
+    "input_manifest": {
+      "path": "results/v0.4.2_sr2v_q5_free_auxiliary_ideal_bounded_scout_reproduction_manifest.json",
+      "schema_version": "sr2v-q5-free-bounded-scout-reproduction-input-manifest-v1"
+    },
+    "expectations": {
+      "path": "results/v0.4.2_sr2v_q5_free_auxiliary_ideal_bounded_scout_expectations.json",
+      "schema_version": "sr2v-q5-free-bounded-scout-expectations-v1",
+      "pending_status": "PENDING_BOUNDED_SAGE_RECOMPUTATION",
+      "required_final_status": "PINNED",
+      "certificate_core_names": ["row185_normal_form", "candidate_minor_only"],
+      "raw_sha256": "346aa987d9e29babc13b16c95fb088ea0c566a6e0704f8ae82c126e13a4e3f60",
+      "semantic_digest_sha256": "fd4a7fb3c9734abb324bf7d2e4bcb6c4296c3bb7e15f0c218b408a46f7f745da",
+      "certificate_core_digests": {
+        "row185_normal_form": "bd2d390ea996ea5149578bb569d6bba98fecbcb96b1b00d0fe8ff7b365f00deb",
+        "candidate_minor_only": "cb9252dbc9d1610d3d0410f0d8f111a862b341cee59a4ced20bb8527c66a1c87"
+      }
+    },
+    "legacy_observation_status": "NONDETERMINISTIC_LEGACY_OBSERVATION_NOT_A_REPRODUCTION_EXPECTATION"
+  },
+  "freeze": {
+    "status": "NOT_FROZEN",
+    "frozen": false,
+    "authorized": false
+  },
+  "publication_gates": {
+    "submission": {
+      "status": "OWNER_ONLY_NOT_AUTHORIZED",
+      "owner_only": true,
+      "authorized": false
+    },
+    "deposit": {
+      "status": "OWNER_ONLY_NOT_AUTHORIZED",
+      "owner_only": true,
+      "authorized": false
+    }
+  }
+}

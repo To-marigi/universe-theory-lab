@@ -26,6 +26,13 @@ REQUIRED_NONCLAIM_IDS = {
     "N5_U2_FULL_IDEAL",
     "N6_EXTENSIONS",
 }
+C2_CLAIM_ID = "C2_SR2_WEAK_WEAK_SEPARATION"
+C2_OBSERVABILITY_PATH = "results/v0.4.2_sr2v_baseline_observability.json"
+C2_OBSERVABILITY_RAW_SHA256 = "4f57805e871c0589560669c5aa65181c29ca41cdf722420729279945770710de"
+C2_OBSERVABILITY_SEMANTIC_DIGEST = (
+    "73508f8ad94d97a3147cbd913d687f0b779c740b80a84a4836854053f6f01c62"
+)
+C2_COMMUTATOR_PAIRS = {(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)}
 
 
 def _sha256(path: Path) -> str:
@@ -39,6 +46,141 @@ def _sha256(path: Path) -> str:
 def _require(condition: bool, message: str, errors: list[str]) -> None:
     if not condition:
         errors.append(message)
+
+
+def _validate_c2_observability_binding(
+    root: Path, claims: list[dict[str, Any]], errors: list[str]
+) -> None:
+    c2_claim = next((claim for claim in claims if claim.get("id") == C2_CLAIM_ID), None)
+    _require(c2_claim is not None, "C2 claim is missing", errors)
+    if c2_claim is None:
+        return
+
+    evidence = c2_claim.get("evidence")
+    matching_evidence = (
+        [
+            item
+            for item in evidence
+            if isinstance(item, dict) and item.get("path") == C2_OBSERVABILITY_PATH
+        ]
+        if isinstance(evidence, list)
+        else []
+    )
+    _require(
+        len(matching_evidence) == 1,
+        "C2 observability artifact must appear exactly once in its evidence",
+        errors,
+    )
+    if len(matching_evidence) != 1:
+        return
+    binding = matching_evidence[0]
+    _require(
+        binding.get("raw_sha256") == C2_OBSERVABILITY_RAW_SHA256,
+        "C2 observability raw SHA-256 binding changed",
+        errors,
+    )
+    _require(
+        binding.get("semantic_digest") == C2_OBSERVABILITY_SEMANTIC_DIGEST,
+        "C2 observability semantic digest binding changed",
+        errors,
+    )
+
+    artifact_path = root / C2_OBSERVABILITY_PATH
+    try:
+        artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        errors.append(f"cannot read C2 observability artifact: {exc}")
+        return
+    if not isinstance(artifact, dict):
+        errors.append("C2 observability artifact must be a JSON object")
+        return
+
+    _require(
+        artifact.get("semantic_digest_sha256") == C2_OBSERVABILITY_SEMANTIC_DIGEST,
+        "C2 observability artifact semantic digest changed",
+        errors,
+    )
+    summary = artifact.get("reachable_inventory", {}).get("summary", {})
+    baseline = artifact.get("baseline_classification", {})
+    _require(
+        isinstance(summary, dict) and summary.get("reachable_span_rank") == 1,
+        "C2 observability reachable span rank is not one",
+        errors,
+    )
+    _require(
+        isinstance(baseline, dict)
+        and baseline.get("reachable_span_rank") == 1
+        and baseline.get("reachable_visible") is False,
+        "C2 observability is no longer rank-one and off-reachable",
+        errors,
+    )
+
+    visibility = artifact.get("commutator_visibility", {})
+    _require(isinstance(visibility, dict), "C2 commutator visibility must be an object", errors)
+    if not isinstance(visibility, dict):
+        return
+    _require(
+        visibility.get("reachable_visible_on_any_compiled_cylinder_state") is False,
+        "C2 commutator is unexpectedly reachable-visible",
+        errors,
+    )
+    _require(
+        visibility.get("all_six_annihilate_full_reachable_span") is True,
+        "C2 commutators no longer all annihilate the reachable span",
+        errors,
+    )
+    records = visibility.get("records")
+    _require(
+        isinstance(records, list) and len(records) == 6,
+        "C2 must bind six commutators",
+        errors,
+    )
+    if not isinstance(records, list):
+        return
+
+    observed_pairs: set[tuple[int, int]] = set()
+    for record in records:
+        if not isinstance(record, dict):
+            errors.append("C2 commutator record is not an object")
+            continue
+        pair = record.get("pair")
+        if (
+            isinstance(pair, list)
+            and len(pair) == 2
+            and all(isinstance(value, int) for value in pair)
+        ):
+            observed_pairs.add((pair[0], pair[1]))
+        else:
+            errors.append("C2 commutator record has an invalid pair")
+        _require(
+            record.get("operator_nonzero") is True,
+            "C2 commutator record is no longer operator-nonzero",
+            errors,
+        )
+        _require(
+            record.get("annihilates_full_reachable_span") is True,
+            "C2 commutator record no longer annihilates the reachable span",
+            errors,
+        )
+        domains = record.get("domains")
+        if not isinstance(domains, dict) or not domains:
+            errors.append("C2 commutator record has no visibility domains")
+            continue
+        for domain_name, domain in domains.items():
+            _require(
+                isinstance(domain, dict) and domain.get("nonzero_action_count") == 0,
+                f"C2 commutator action is nonzero in domain {domain_name!r}",
+                errors,
+            )
+    _require(observed_pairs == C2_COMMUTATOR_PAIRS, "C2 commutator pair set changed", errors)
+    gates = artifact.get("gates", {})
+    _require(
+        isinstance(gates, dict)
+        and gates.get("reachable_span_rank_is_exactly_one") is True
+        and gates.get("no_Q_commutator_is_detected_on_any_compiled_cylinder_state") is True,
+        "C2 observability gates are incomplete",
+        errors,
+    )
 
 
 def validate_claim_boundary(root: Path) -> list[str]:
@@ -131,6 +273,11 @@ def validate_claim_boundary(root: Path) -> list[str]:
                         f"semantic digest mismatch for {relative}",
                         errors,
                     )
+
+    typed_claims = (
+        [claim for claim in claims if isinstance(claim, dict)] if isinstance(claims, list) else []
+    )
+    _validate_c2_observability_binding(root, typed_claims, errors)
 
     resource_boundary = data.get("resource_boundary", {})
     _require(

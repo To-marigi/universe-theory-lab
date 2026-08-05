@@ -2,7 +2,7 @@ name: universe-theory-lab
 
 services:
   sage:
-    image: sagemath/sagemath:10.9
+    image: sagemath/sagemath:10.9@sha256:e068670ae5863b54b2550e72437ec637b0283acb0dc712c8584c124dbf44e667
     init: true
     working_dir: /home/sage/work
     ports:
@@ -28,7 +28,7 @@ services:
   # The repository is read-only here; results are streamed to the host-side
   # supervisor, which publishes them atomically under a unique attempt ID.
   sage-solver:
-    image: sagemath/sagemath:10.9
+    image: sagemath/sagemath:10.9@sha256:e068670ae5863b54b2550e72437ec637b0283acb0dc712c8584c124dbf44e667
     init: true
     working_dir: /home/sage/work
     volumes:

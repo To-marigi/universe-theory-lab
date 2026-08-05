@@ -14,13 +14,18 @@ import time
 from pathlib import Path
 from typing import Any
 
+from universe_lab.final_theory import (
+    sr2v_q5_free_auxiliary_ideal_scout_fixtures_v042 as fixtures,
+)
+
+_STAGE7_REQUEST_FIXTURE = fixtures.STAGE7_REQUEST_FIXTURE
+_STAGE7_RESULT_FIXTURE = fixtures.STAGE7_RESULT_FIXTURE
+_STAGE7_REQUEST_RAW_SHA256 = fixtures.STAGE7_REQUEST_RAW_SHA256
+_STAGE7_RESULT_RAW_SHA256 = fixtures.STAGE7_RESULT_RAW_SHA256
+
 
 def _canonical(value: object) -> str:
-    from universe_lab.final_theory.sr2v_q5_free_auxiliary_ideal_worker_v042 import (
-        canonical_sha256,
-    )
-
-    return canonical_sha256(value)
+    return fixtures.canonical_sha256(value)
 
 
 def _normal_form_record(polynomial: Any, basis: Any) -> dict[str, Any]:
@@ -34,31 +39,25 @@ def _normal_form_record(polynomial: Any, basis: Any) -> dict[str, Any]:
     return record
 
 
-def _find_stage7_request(repository_root: Path) -> tuple[Path, dict[str, Any]]:
-    """Find the unique recorded GF stage-7 CEGAR attempt."""
+def _is_canonical_stage7_result(payload: dict[str, Any]) -> bool:
+    return fixtures.is_canonical_stage7_result(payload)
 
-    candidates: list[tuple[Path, dict[str, Any]]] = []
-    attempts = repository_root / "results/v0.4.2_sr2v_q5_free_auxiliary_ideal_supervised/attempts"
-    for result_path in attempts.glob("*/**/result.json"):
-        payload = json.loads(result_path.read_text(encoding="utf-8"))
-        details = payload.get("details")
-        worker_result = details.get("worker_result") if isinstance(details, dict) else None
-        if not isinstance(worker_result, dict):
-            continue
-        if (
-            payload.get("status") == "DETERMINANTAL_SUBSET_INCONCLUSIVE"
-            and worker_result.get("method") == "determinantal_cegar_v1"
-            and worker_result.get("coefficient_field") == "GF(32003)"
-            and worker_result.get("raw_selected_row_count") == 7
-        ):
-            request_path = result_path.parent / "request.json"
-            candidates.append((request_path, payload))
-    if len(candidates) != 1:
-        raise RuntimeError(f"expected one canonical stage-7 CEGAR attempt, found {len(candidates)}")
-    return candidates[0]
+
+def _load_tracked_stage7_fixture(
+    repository_root: Path,
+) -> tuple[Path, dict[str, Any], dict[str, Any]]:
+    return fixtures.load_tracked_stage7_fixture(repository_root)
+
+
+def _find_stage7_request(repository_root: Path) -> tuple[Path, dict[str, Any]]:
+    """Use verified tracked fixtures and reject conflicting local mirrors."""
+
+    return fixtures.find_stage7_request(repository_root)
 
 
 def run(repository_root: Path) -> dict[str, Any]:
+    reproduction_manifest = fixtures.validate_bounded_scout_reproduction_inputs(repository_root)
+
     from sage.all import GF, PolynomialRing
 
     from universe_lab.final_theory import sr2v_q5_free_auxiliary_ideal_worker_v042 as worker
@@ -86,8 +85,22 @@ def run(repository_root: Path) -> dict[str, Any]:
     chart_factor_id = int(request["chart_factor_polynomial_id"])
     localizer_id = int(chart["planned_Rabinowitsch_localization_polynomial_id"])
     needed.update({chart_factor_id, localizer_id})
+    if needed != fixtures.ROW185_NEEDED_POLYNOMIAL_IDS:
+        raise RuntimeError(f"row-185 bounded subset ids changed: {sorted(needed)}")
+    records, loaded_terms = fixtures.load_polynomial_subset(repository_root, root, needed)
+    if (
+        len(records) != len(fixtures.ROW185_NEEDED_POLYNOMIAL_IDS)
+        or loaded_terms != fixtures.ROW185_LOADED_TERM_COUNT
+    ):
+        raise RuntimeError("row-185 bounded subset record or term count changed")
+    local_arena_mirror_verified = fixtures.verify_local_polynomial_arena_mirror(
+        repository_root,
+        root,
+        records,
+        loaded_terms,
+        needed,
+    )
     emitter = worker.Emitter()
-    records, loaded_terms = worker._scan_needed_records(repository_root, root, needed, emitter)
     field = GF(request["modulus"])
     width = len(base_variables)
     by_id = {
@@ -169,6 +182,7 @@ def run(repository_root: Path) -> dict[str, Any]:
         new_minor_records.append(record)
 
     prefix_records: list[dict[str, Any]] = []
+    prefix_runtime_observations: list[dict[str, Any]] = []
     for prefix_size in (1, 2, len(old_candidates)):
         selected_minors = [minor for minor, _record in old_candidates[:prefix_size]]
         minor_basis, minor_summary = worker._localized_standard_basis(
@@ -195,16 +209,13 @@ def run(repository_root: Path) -> dict[str, Any]:
         prefix_records.append(
             {
                 "prefix_size": prefix_size,
-                "basis": {
-                    key: minor_summary[key]
-                    for key in (
-                        "basis_digest_sha256",
-                        "basis_size",
-                        "basis_term_count",
-                        "largest_basis_polynomial_terms",
-                        "is_unit_ideal",
-                    )
-                },
+                "basis": fixtures.deterministic_basis_summary(minor_summary),
+            }
+        )
+        prefix_runtime_observations.append(
+            {
+                "prefix_size": prefix_size,
+                **fixtures.runtime_basis_observation(minor_summary),
             }
         )
 
@@ -228,8 +239,8 @@ def run(repository_root: Path) -> dict[str, Any]:
     if expanded_minor_summary["limit_exceeded"]:
         raise RuntimeError("row-185 expanded minor ideal exceeded the live basis cap")
 
-    result: dict[str, Any] = {
-        "schema_version": "sr2v-row185-normal-form-scout-v1",
+    certificate_core = {
+        "schema_version": "sr2v-row185-normal-form-certificate-core-v1",
         "chart": "U2",
         "coefficient_field": "GF(32003)",
         "root_semantic_digest_sha256": root["semantic_digest_sha256"],
@@ -246,18 +257,7 @@ def run(repository_root: Path) -> dict[str, Any]:
         "loaded_terms": loaded_terms,
         "old_unit_associate_relations": old_relations,
         "all_unit_associate_relations": all_relations,
-        "old_entry_basis": {
-            key: old_entry_summary[key]
-            for key in (
-                "basis_digest_sha256",
-                "basis_size",
-                "basis_term_count",
-                "largest_basis_polynomial_terms",
-                "is_unit_ideal",
-                "groebner_seconds",
-                "saturation_seconds",
-            )
-        },
+        "old_entry_basis": fixtures.deterministic_basis_summary(old_entry_summary),
         "row185_entry_normal_forms": new_entry_records,
         "old_minor_inventory": {
             "candidate_count": len(old_candidates),
@@ -269,23 +269,42 @@ def run(repository_root: Path) -> dict[str, Any]:
         "expanded_minor_only": {
             "generator_count": len(expanded_minor_generators),
             "new_nonzero_minor_count": len(new_pair_minors),
-            "basis": {
-                key: expanded_minor_summary[key]
-                for key in (
-                    "basis_digest_sha256",
-                    "basis_size",
-                    "basis_term_count",
-                    "largest_basis_polynomial_terms",
-                    "is_unit_ideal",
-                    "groebner_seconds",
-                    "saturation_seconds",
-                )
-            },
+            "basis": fixtures.deterministic_basis_summary(expanded_minor_summary),
         },
-        "elapsed_seconds": time.monotonic() - started,
     }
-    result["semantic_digest_sha256"] = _canonical(result)
-    return result
+    certificate_core = fixtures.bind_certificate_core(certificate_core)
+    fixtures.verify_bound_certificate_core(certificate_core)
+    expectations = fixtures.verify_scout_certificate_core_expectation(
+        repository_root,
+        reproduction_manifest,
+        "row185_normal_form",
+        certificate_core["certificate_core_digest_sha256"],
+    )
+    return {
+        "schema_version": "sr2v-row185-normal-form-scout-v2",
+        "certificate_core": certificate_core,
+        "certificate_core_digest_sha256": certificate_core["certificate_core_digest_sha256"],
+        "runtime_observation": {
+            "elapsed_seconds": time.monotonic() - started,
+            "local_full_arena_mirror_verified": local_arena_mirror_verified,
+            "old_entry_basis": fixtures.runtime_basis_observation(old_entry_summary),
+            "old_minor_prefix_bases": prefix_runtime_observations,
+            "expanded_minor_only": fixtures.runtime_basis_observation(expanded_minor_summary),
+        },
+        "reproduction_contract": {
+            "certificate_core_expectation_status": expectations["status"],
+            "expectations_semantic_digest_sha256": expectations["semantic_digest_sha256"],
+            "input_manifest_semantic_digest_sha256": reproduction_manifest[
+                "semantic_digest_sha256"
+            ],
+        },
+        "legacy_observation": {
+            "legacy_full_result_semantic_digest_sha256": (
+                "dc89668ac743214b4c84ee732672f7542e1517c2c200409cff2db54cc1d5d177"
+            ),
+            "legacy_observation_status": fixtures.LEGACY_OBSERVATION_STATUS,
+        },
+    }
 
 
 if __name__ == "__main__":

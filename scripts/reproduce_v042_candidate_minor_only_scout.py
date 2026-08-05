@@ -4,40 +4,48 @@ from __future__ import annotations
 
 import json
 import sys
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
+from universe_lab.final_theory import (
+    sr2v_q5_free_auxiliary_ideal_scout_fixtures_v042 as fixtures,
+)
+
+_STAGE7_REQUEST_FIXTURE = fixtures.STAGE7_REQUEST_FIXTURE
+_STAGE7_RESULT_FIXTURE = fixtures.STAGE7_RESULT_FIXTURE
+_STAGE7_REQUEST_RAW_SHA256 = fixtures.STAGE7_REQUEST_RAW_SHA256
+_STAGE7_RESULT_RAW_SHA256 = fixtures.STAGE7_RESULT_RAW_SHA256
+
 
 def _canonical(value: object) -> str:
-    from universe_lab.final_theory.sr2v_q5_free_auxiliary_ideal_worker_v042 import (
-        canonical_sha256,
-    )
+    return fixtures.canonical_sha256(value)
 
-    return canonical_sha256(value)
+
+def _is_canonical_stage7_result(payload: dict[str, Any]) -> bool:
+    return fixtures.is_canonical_stage7_result(payload)
+
+
+def _load_tracked_stage7_fixture(
+    repository_root: Path,
+) -> tuple[Path, dict[str, Any], dict[str, Any]]:
+    return fixtures.load_tracked_stage7_fixture(repository_root)
 
 
 def _find_stage7_request(repository_root: Path) -> tuple[Path, dict[str, Any]]:
-    candidates: list[tuple[Path, dict[str, Any]]] = []
-    attempts = repository_root / "results/v0.4.2_sr2v_q5_free_auxiliary_ideal_supervised/attempts"
-    for result_path in attempts.glob("*/**/result.json"):
-        payload = json.loads(result_path.read_text(encoding="utf-8"))
-        details = payload.get("details")
-        worker_result = details.get("worker_result") if isinstance(details, dict) else None
-        if not isinstance(worker_result, dict):
-            continue
-        if (
-            payload.get("status") == "DETERMINANTAL_SUBSET_INCONCLUSIVE"
-            and worker_result.get("method") == "determinantal_cegar_v1"
-            and worker_result.get("coefficient_field") == "GF(32003)"
-            and worker_result.get("raw_selected_row_count") == 7
-        ):
-            candidates.append((result_path.parent / "request.json", payload))
-    if len(candidates) != 1:
-        raise RuntimeError(f"expected one canonical stage-7 request, found {len(candidates)}")
-    return candidates[0]
+    return fixtures.find_stage7_request(repository_root)
+
+
+def _require_complete_basis(summary: Mapping[str, Any]) -> None:
+    if summary["limit_exceeded"]:
+        raise RuntimeError("candidate differential minor ideal exceeded the live basis cap")
 
 
 def run(repository_root: Path, candidate_source: int = 10) -> dict[str, Any]:
+    if candidate_source != 10:
+        raise RuntimeError("this bounded follow-up is fixed to the cost-next source row 10")
+    reproduction_manifest = fixtures.validate_bounded_scout_reproduction_inputs(repository_root)
+
     from sage.all import GF, PolynomialRing
 
     from universe_lab.final_theory import sr2v_q5_free_auxiliary_ideal_worker_v042 as worker
@@ -66,8 +74,22 @@ def run(repository_root: Path, candidate_source: int = 10) -> dict[str, Any]:
     chart_factor_id = int(request["chart_factor_polynomial_id"])
     localizer_id = int(chart["planned_Rabinowitsch_localization_polynomial_id"])
     needed.update({chart_factor_id, localizer_id})
+    if needed != fixtures.CANDIDATE_ROW10_NEEDED_POLYNOMIAL_IDS:
+        raise RuntimeError(f"candidate row-10 bounded subset ids changed: {sorted(needed)}")
+    records, loaded_terms = fixtures.load_polynomial_subset(repository_root, root, needed)
+    if (
+        len(records) != len(fixtures.CANDIDATE_ROW10_NEEDED_POLYNOMIAL_IDS)
+        or loaded_terms != fixtures.CANDIDATE_ROW10_LOADED_TERM_COUNT
+    ):
+        raise RuntimeError("candidate row-10 bounded subset record or term count changed")
+    local_arena_mirror_verified = fixtures.verify_local_polynomial_arena_mirror(
+        repository_root,
+        root,
+        records,
+        loaded_terms,
+        needed,
+    )
     emitter = worker.Emitter()
-    records, loaded_terms = worker._scan_needed_records(repository_root, root, needed, emitter)
     by_id = {
         identifier: worker._materialize_polynomial(record, ring, field, width)
         for identifier, record in records.items()
@@ -95,8 +117,6 @@ def run(repository_root: Path, candidate_source: int = 10) -> dict[str, Any]:
         representatives,
         max_generated_minor_terms=int(request["determinantal_policy"]["max_generated_minor_terms"]),
     )
-    if candidate_source != 10:
-        raise RuntimeError("this bounded follow-up is fixed to the cost-next source row 10")
     old_pairs = pairs[: len(old_rows)]
     old_representatives, old_relations = worker._deduplicate_ground_unit_pairs(old_rows, old_pairs)
     old_candidates, _old_discarded, old_limit = worker._determinantal_minor_candidates(
@@ -142,8 +162,8 @@ def run(repository_root: Path, candidate_source: int = 10) -> dict[str, Any]:
         raise RuntimeError(
             f"selected differential minor subset exceeds cap: {differential_cost_upper_bound}"
         )
-    result: dict[str, Any] = {
-        "schema_version": "sr2v-candidate-minor-only-scout-v1",
+    certificate_core: dict[str, Any] = {
+        "schema_version": "sr2v-candidate-minor-only-certificate-core-v1",
         "chart": "U2",
         "coefficient_field": "GF(32003)",
         "candidate_source": candidate_source,
@@ -169,6 +189,7 @@ def run(repository_root: Path, candidate_source: int = 10) -> dict[str, Any]:
             "subset_safe": True,
         },
     }
+    runtime_observation: dict[str, Any] = {}
     if resource_limit is None or differential_candidates != candidates:
         factors = [
             ("chart", chart_factor),
@@ -189,24 +210,43 @@ def run(repository_root: Path, candidate_source: int = 10) -> dict[str, Any]:
             phase="CANDIDATE_ROW10_DIFFERENTIAL_MINOR_ONLY",
             ring=ring,
         )
+        _require_complete_basis(summary)
         del basis
-        result["expanded_minor_only"] = {
+        certificate_core["expanded_minor_only"] = {
             "generator_count": len(differential_candidates),
-            **{
-                key: summary[key]
-                for key in (
-                    "basis_digest_sha256",
-                    "basis_size",
-                    "basis_term_count",
-                    "largest_basis_polynomial_terms",
-                    "is_unit_ideal",
-                    "groebner_seconds",
-                    "saturation_seconds",
-                )
-            },
+            **fixtures.deterministic_basis_summary(summary),
         }
-    result["semantic_digest_sha256"] = _canonical(result)
-    return result
+        runtime_observation["expanded_minor_only"] = fixtures.runtime_basis_observation(summary)
+    certificate_core = fixtures.bind_certificate_core(certificate_core)
+    fixtures.verify_bound_certificate_core(certificate_core)
+    expectations = fixtures.verify_scout_certificate_core_expectation(
+        repository_root,
+        reproduction_manifest,
+        "candidate_minor_only",
+        certificate_core["certificate_core_digest_sha256"],
+    )
+    return {
+        "schema_version": "sr2v-candidate-minor-only-scout-v2",
+        "certificate_core": certificate_core,
+        "certificate_core_digest_sha256": certificate_core["certificate_core_digest_sha256"],
+        "runtime_observation": {
+            "local_full_arena_mirror_verified": local_arena_mirror_verified,
+            **runtime_observation,
+        },
+        "reproduction_contract": {
+            "certificate_core_expectation_status": expectations["status"],
+            "expectations_semantic_digest_sha256": expectations["semantic_digest_sha256"],
+            "input_manifest_semantic_digest_sha256": reproduction_manifest[
+                "semantic_digest_sha256"
+            ],
+        },
+        "legacy_observation": {
+            "legacy_full_result_semantic_digest_sha256": (
+                "02f2ab4fbb53e8c91b5e67eb686a35543e61a51db2f912191f7621a002e4f947"
+            ),
+            "legacy_observation_status": fixtures.LEGACY_OBSERVATION_STATUS,
+        },
+    }
 
 
 if __name__ == "__main__":
