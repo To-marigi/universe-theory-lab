@@ -283,12 +283,12 @@ def test_pdf_build_contract_is_pinned_but_generated_pdf_is_not_required(tmp_path
     }
     current = tex_build["current_observation"]
     assert current["main_tex_raw_sha256"] == (
-        "5e484a505a50097b45c7ec98740e195cc6d6c05fd37c7b154e91fff15cd79e8c"
+        "41823e65e16187f9832782fbf3d45f95556b938aac7b5e6ee20d5ebf20854b87"
     )
     assert current["pdf"] == {
-        "page_count": 17,
-        "bytes": 409169,
-        "raw_sha256": "cfd79f8436628d0480850ac0eee344f5ba11188c64571384a578c830356ca482",
+        "page_count": 18,
+        "bytes": 409760,
+        "raw_sha256": "92c7fd5ba1bdcb5f16ec3827e3377027217fe41f61eafed10afcc49e8d6cc506",
     }
     assert current["diagnostics"] == {
         "blocking_total": 0,
@@ -299,7 +299,7 @@ def test_pdf_build_contract_is_pinned_but_generated_pdf_is_not_required(tmp_path
     }
     assert current["visual_qa"] == {
         "render_dpi": 120,
-        "pages_inspected": 17,
+        "pages_inspected": 18,
         "all_pages_inspected": True,
         "clipping_or_overlap_found": False,
         "intentional_draft_boxes_remain": False,

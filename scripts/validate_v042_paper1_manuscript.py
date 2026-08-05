@@ -60,21 +60,21 @@ PROOF_COMPLETE_STATUS = "PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN"
 PDF_BUILD_HELPER_PATH = Path("scripts/build_v042_paper1_pdf.py")
 PDF_BUILD_HELPER_SHA256 = "f131bbfe76304f1445afe162af5d731c7c3c4d31ba1b7dced4e83a0fb87c91d4"
 PDF_BUILD_REPORT_PATH = Path("reports/v0.4.2_paper1_pdf_build_2026-08-05.md")
-PDF_BUILD_REPORT_SHA256 = "8784453108f7edcc0939669c7b22e5745e1bf6e7d6d6663f6d5ad1a6362ead50"
+PDF_BUILD_REPORT_SHA256 = "5c4230d39d8db58fb58cccfdf4f7ce48b20716fe37dfa2e854c7f3b0eadb0c52"
 PDF_BUILD_IMAGE = (
     "texlive/texlive:latest-medium@"
     "sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9"
 )
 PDF_BUILD_OUTPUT_PATH = Path("output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf")
-PDF_BUILD_MAIN_SHA256 = "5e484a505a50097b45c7ec98740e195cc6d6c05fd37c7b154e91fff15cd79e8c"
-PDF_BUILD_OBSERVED_SHA256 = "cfd79f8436628d0480850ac0eee344f5ba11188c64571384a578c830356ca482"
+PDF_BUILD_MAIN_SHA256 = "41823e65e16187f9832782fbf3d45f95556b938aac7b5e6ee20d5ebf20854b87"
+PDF_BUILD_OBSERVED_SHA256 = "92c7fd5ba1bdcb5f16ec3827e3377027217fe41f61eafed10afcc49e8d6cc506"
 PDF_BUILD_PRIOR_MAIN_SHA256 = "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd"
 PDF_BUILD_PRIOR_OBSERVED_SHA256 = "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"
 PDF_BUILD_REPORT_REQUIRED_FRAGMENTS = (
     "Status: `CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED`.",
-    "All 17 pages were rendered at 120 dpi and visually inspected.",
+    "All 18 pages were rendered at 120 dpi and visually inspected.",
     "No clipping, overlap, table collision, or unnatural page break was found",
-    "the remaining 16 page images were pixel-identical",
+    "the added prose moves the reference and evidence floats by one page",
     "retained only as prior-source history",
     "The generated PDF is an untracked local observation.",
     "it is not a required reproducibility-contract hash",
@@ -1769,8 +1769,8 @@ def _expected_tex_build() -> dict[str, Any]:
             "date": "2026-08-05",
             "main_tex_raw_sha256": PDF_BUILD_MAIN_SHA256,
             "pdf": {
-                "page_count": 17,
-                "bytes": 409169,
+                "page_count": 18,
+                "bytes": 409760,
                 "raw_sha256": PDF_BUILD_OBSERVED_SHA256,
             },
             "toolchain": {
@@ -1788,7 +1788,7 @@ def _expected_tex_build() -> dict[str, Any]:
             },
             "visual_qa": {
                 "render_dpi": 120,
-                "pages_inspected": 17,
+                "pages_inspected": 18,
                 "all_pages_inspected": True,
                 "clipping_or_overlap_found": False,
                 "intentional_draft_boxes_remain": False,

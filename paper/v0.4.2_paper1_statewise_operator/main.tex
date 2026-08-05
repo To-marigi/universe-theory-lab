@@ -191,6 +191,10 @@ denote that reconstruction.  The reconstruction slice is
 \(P_{\mathrm{sGC+rMSR}}^{\mathrm{ns}}\cap\im(\Phi_U)\).
 \end{definition}
 
+We write \(D_{955}\subseteq U\) for the declared direct relation locus on
+which the 700 direct-CPOBC residuals and 255 local-operator-GC residuals
+vanish and all 165 reconstructed transitions are nonsingular.
+
 \begin{definition}[Reachable-visible noncommutativity]
 A noncommutative witness is called reachable-visible here only if the
 declared reachable sector exposes the nonzero commutator under the stated
@@ -521,6 +525,10 @@ The source CPOBC word relation and its unit rewrite are prior material
 source-provenance certificate.  The identifiers are complete record IDs, not
 abbreviated hashes.
 
+Here \(B_i\) denotes the source-side auxiliary appearing in the recorded
+source-native CPOBC relations; declared source nonsingularity makes each
+\(B_i\) a unit.
+
 \begin{table}[ht]
 \centering
 \footnotesize
@@ -639,7 +647,7 @@ source transition operators at \(x\).  Source nonsingularity therefore gives
 all 165 determinant predicates.  In particular, it supplies the four \(Q\)
 and twenty-two \(B\) determinant factors used by the rational inverse bases;
 these inverse coordinates are adjugate-over-determinant values, not
-independent choices.  By the definition in Section~3, these three facts put
+independent choices.  By the definition of \(D_{955}\) above, these three facts put
 \(q\) in \(D_{955}\):
 \[
   700\ \mathrm{CPOBC}+255\ \mathrm{GC}
@@ -793,7 +801,7 @@ applied to the listed probes.  Their ranks and kernels follow by inspection.
 \label{lem:c5-centralizer}
 If \(A\in M_2(\QQ)\) is non-scalar, then
 \[
-  \operatorname{Cent}(A)=\QQ I+\QQ A=\QQ[I,A].
+  \operatorname{Cent}(A)=\QQ I+\QQ A=\operatorname{span}_{\QQ}\{I,A\}.
 \]
 This lemma is independent of the residual-recovery argument.
 \end{lemma}
@@ -826,8 +834,8 @@ Because \(A\) is non-scalar, the applicable branch has a nonzero minor, so
 are independent, so rank-nullity gives \(\operatorname{rank} C_A\leq2\).
 Consequently the rank is \(2\), the kernel is
 \(\operatorname{span}\{I,A\}\), and this kernel is the centralizer.  Finally,
-\(\QQ[I,A]\) is contained in the centralizer and contains \(I\) and \(A\), so
-it is exactly the same two-dimensional span.
+\(\operatorname{span}_{\QQ}\{I,A\}\) is contained in the centralizer and
+contains \(I\) and \(A\), so it is exactly the same two-dimensional span.
 \end{proof}
 
 \section{Proof roadmap and dependency audit}
