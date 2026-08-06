@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import importlib.util
 import json
+import shutil
 import subprocess
 import sys
 import tarfile
@@ -15,6 +16,9 @@ import pytest
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 ZENODO_DIRECTORY = REPOSITORY_ROOT / "zenodo" / "paper1-v0.4.2"
+OWNER_DECISION_PDF_SHA256 = (
+    "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43"
+)
 
 
 def _module(name: str, path: Path) -> ModuleType:
@@ -95,6 +99,56 @@ def _synthetic_root(builder: ModuleType, root: Path) -> tuple[object, ...]:
     )
     pdf.write_bytes(pdf_bytes)
     pdf_sha = hashlib.sha256(pdf_bytes).hexdigest()
+
+    original_owner_pdf_sha = OWNER_DECISION_PDF_SHA256
+    owner_artifact = json.loads(
+        (REPOSITORY_ROOT / builder.OWNER_DECISION_ARTIFACT_PATH).read_text(
+            encoding="utf-8"
+        )
+    )
+    owner_artifact["decisions"]["final_pdf"].update(
+        {
+            "sha256": pdf_sha,
+            "bytes": len(pdf_bytes),
+            "page_count": 18,
+        }
+    )
+    owner_artifact.pop("semantic_digest_sha256", None)
+    owner_artifact["semantic_digest_sha256"] = builder._semantic_digest(owner_artifact)
+    owner_artifact_path = root / builder.OWNER_DECISION_ARTIFACT_PATH
+    owner_artifact_path.parent.mkdir(parents=True, exist_ok=True)
+    owner_artifact_path.write_text(
+        json.dumps(owner_artifact, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    owner_report_path = root / builder.OWNER_DECISION_REPORT_PATH
+    owner_report_path.parent.mkdir(parents=True, exist_ok=True)
+    owner_report = (
+        REPOSITORY_ROOT / builder.OWNER_DECISION_REPORT_PATH
+    ).read_text(encoding="utf-8").replace(original_owner_pdf_sha, pdf_sha)
+    owner_report_path.write_text(owner_report, encoding="utf-8", newline="\n")
+    builder.OWNER_DECISION_PDF_SHA256 = pdf_sha
+    builder.OWNER_DECISION_PDF_BYTES = len(pdf_bytes)
+    builder.OWNER_DECISION_PDF_PAGE_COUNT = 18
+    verifier_module = sys.modules.get("verify_paper1_bundle_v042")
+    if verifier_module is not None:
+        verifier_module.OWNER_DECISION_PDF_SHA256 = pdf_sha
+        verifier_module.OWNER_DECISION_PDF_BYTES = len(pdf_bytes)
+        verifier_module.OWNER_DECISION_PDF_PAGE_COUNT = 18
+    metadata["owner_decision_binding"] = {
+        "path": builder.OWNER_DECISION_ARTIFACT_PATH,
+        "report_path": builder.OWNER_DECISION_REPORT_PATH,
+        "raw_sha256": hashlib.sha256(owner_artifact_path.read_bytes()).hexdigest(),
+        "semantic_digest_sha256": owner_artifact["semantic_digest_sha256"],
+        "report_raw_sha256": hashlib.sha256(owner_report_path.read_bytes()).hexdigest(),
+        "decision_date": "2026-08-06",
+    }
+    metadata_path.write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
     report = root / builder.PDF_BUILD_REPORT_PATH
     report.parent.mkdir(parents=True, exist_ok=True)
@@ -179,10 +233,25 @@ def _synthetic_root(builder: ModuleType, root: Path) -> tuple[object, ...]:
         "PAPER_I_SCOPED_ARCHIVE_SUBMISSION_CANDIDATE_NOT_FROZEN\n"
         "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED\n"
         "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED\n"
-        "scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check\n",
+        "scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check\n"
+        "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py --check\n",
         encoding="utf-8",
         newline="\n",
     )
+
+    for source_path in (
+        builder.ZENODO_PREDRAFT_REPORT_PATH,
+        builder.ZENODO_PREDRAFT_NOTE_PATH,
+        builder.ZENODO_PREDRAFT_NORMALIZER_PATH,
+        builder.ZENODO_PREDRAFT_LEDGER_PATH,
+        builder.ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH,
+        builder.ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH,
+        builder.ZENODO_PREDRAFT_RECEIPT_PATH,
+    ):
+        source = REPOSITORY_ROOT / source_path
+        destination = root / source_path
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, destination)
 
     specs = (
         builder.FileSpec(
@@ -194,6 +263,11 @@ def _synthetic_root(builder: ModuleType, root: Path) -> tuple[object, ...]:
             "package/metadata.template.json",
             builder.METADATA_TEMPLATE_PATH,
             "metadata",
+        ),
+        builder.FileSpec(
+            "package/owner_decision.json",
+            builder.OWNER_DECISION_ARTIFACT_PATH,
+            "owner_decision",
         ),
         builder.FileSpec(
             "paper/main.tex",
@@ -214,6 +288,21 @@ def _synthetic_root(builder: ModuleType, root: Path) -> tuple[object, ...]:
             builder.PDF_BUILD_REPORT_PATH,
             builder.PDF_BUILD_REPORT_PATH,
             "pdf_report",
+        ),
+        builder.FileSpec(
+            builder.OWNER_DECISION_REPORT_PATH,
+            builder.OWNER_DECISION_REPORT_PATH,
+            "owner_decision_report",
+        ),
+        builder.FileSpec(
+            builder.ZENODO_PREDRAFT_REPORT_PATH,
+            builder.ZENODO_PREDRAFT_REPORT_PATH,
+            "zenodo_predraft_report",
+        ),
+        builder.FileSpec(
+            builder.ZENODO_PREDRAFT_NOTE_PATH,
+            builder.ZENODO_PREDRAFT_NOTE_PATH,
+            "zenodo_predraft_note",
         ),
     )
     (root / "source").mkdir(parents=True, exist_ok=True)
@@ -279,6 +368,106 @@ def test_single_archive_output_is_deterministic_and_verifiable(
     assert all((member.uname, member.gname) == ("", "") for member in members)
     assert all(member.mtime == 0 for member in members)
     assert first_summary["pdf_binding"]["pdf_page_count"] == 18
+
+
+def test_owner_decision_fields_are_bound_into_both_manifests(
+    builder: ModuleType,
+    verifier: ModuleType,
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "repository"
+    root.mkdir()
+    specs = _synthetic_root(builder, root)
+    output = tmp_path / "upload"
+    summary = builder.build_upload_set(root, output, specs=specs)
+    assert summary["owner_decision_binding"]["path"] == builder.OWNER_DECISION_ARTIFACT_PATH
+    assert summary["owner_decisions"]["license"]["paper"] == "CC BY 4.0"
+    assert summary["owner_decisions"]["publication_date"]["value"] is None
+    assert summary["owner_decisions"]["doi"]["value"] is None
+    assert summary["owner_decisions"]["related_identifiers"]["value"] == []
+    with tarfile.open(output / builder.UPLOAD_ARCHIVE_NAME, mode="r:gz") as archive:
+        member = next(
+            item for item in archive.getmembers() if item.name.endswith("/upload_checksums.json")
+        )
+        handle = archive.extractfile(member)
+        assert handle is not None
+        outer_manifest = json.loads(handle.read().decode("utf-8"))
+    assert outer_manifest["owner_decisions"] == summary["owner_decisions"]
+    assert verifier.verify_upload_directory(output)["passed"]
+
+
+def test_predraft_gate_report_note_are_bound_and_raw_artifacts_excluded(
+    builder: ModuleType,
+    verifier: ModuleType,
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "repository"
+    root.mkdir()
+    specs = _synthetic_root(builder, root)
+    output = tmp_path / "upload"
+    summary = builder.build_upload_set(root, output, specs=specs)
+    gate = summary["zenodo_predraft_literature_gate"]
+    assert gate["feed_cutoff_utc"] == "2026-08-06T11:28:07Z"
+    assert gate["response_entry_count"] == 722
+    assert gate["reviewed_title_abstract_count"] == 28
+    assert gate["material_delta_count"] == 0
+    with tarfile.open(output / builder.UPLOAD_ARCHIVE_NAME, mode="r:gz") as outer:
+        outer_inner = next(
+            member for member in outer.getmembers() if member.name.endswith("supplement.tar.gz")
+        )
+        handle = outer.extractfile(outer_inner)
+        assert handle is not None
+        inner_bytes = handle.read()
+    inner_path = tmp_path / builder.UPLOAD_SUPPLEMENT_NAME
+    inner_path.write_bytes(inner_bytes)
+    with tarfile.open(inner_path, mode="r:gz") as inner:
+        member_names = {
+            member.name.split(f"{builder.SUPPLEMENT_PREFIX}/", 1)[-1]
+            for member in inner.getmembers()
+        }
+    assert builder.ZENODO_PREDRAFT_REPORT_PATH in member_names
+    assert builder.ZENODO_PREDRAFT_NOTE_PATH in member_names
+    assert builder.ZENODO_PREDRAFT_NORMALIZER_PATH not in member_names
+    assert builder.ZENODO_PREDRAFT_LEDGER_PATH not in member_names
+    assert verifier.verify_upload_directory(output)["passed"]
+
+
+def test_predraft_gate_report_tamper_fails_closed(
+    builder: ModuleType,
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "repository"
+    root.mkdir()
+    specs = _synthetic_root(builder, root)
+    report_path = root / builder.ZENODO_PREDRAFT_REPORT_PATH
+    report_path.write_text(
+        report_path.read_text(encoding="utf-8").replace("722", "721", 1),
+        encoding="utf-8",
+        newline="\n",
+    )
+    with pytest.raises(RuntimeError, match="Zenodo predraft gate artifact hash/size drifted"):
+        builder.build_upload_set(root, tmp_path / "upload", specs=specs)
+
+
+def test_owner_decision_license_tamper_fails_closed(
+    builder: ModuleType,
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "repository"
+    root.mkdir()
+    specs = _synthetic_root(builder, root)
+    owner_path = root / builder.OWNER_DECISION_ARTIFACT_PATH
+    owner = json.loads(owner_path.read_text(encoding="utf-8"))
+    owner["decisions"]["license"]["paper"] = "MIT"
+    owner.pop("semantic_digest_sha256", None)
+    owner["semantic_digest_sha256"] = builder._semantic_digest(owner)
+    owner_path.write_text(
+        json.dumps(owner, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    with pytest.raises(RuntimeError, match="owner decision license policy drifted"):
+        builder.build_upload_set(root, tmp_path / "upload", specs=specs)
 
 
 def test_two_file_layout_requires_and_records_owner_waiver(
@@ -447,6 +636,10 @@ def test_default_allowlist_uses_final_pdf_and_zenodo_literature_documents(
     assert "zenodo/paper1-v0.4.2/UPLOAD_CHECKLIST.md" in paths
     assert builder.ZENODO_LITERATURE_REPORT_PATH in paths
     assert builder.ZENODO_LITERATURE_NOTE_PATH in paths
+    assert builder.ZENODO_PREDRAFT_REPORT_PATH in paths
+    assert builder.ZENODO_PREDRAFT_NOTE_PATH in paths
+    assert builder.ZENODO_PREDRAFT_NORMALIZER_PATH not in paths
+    assert builder.ZENODO_PREDRAFT_LEDGER_PATH not in paths
     assert not any(path.startswith("references/papers/") for path in paths)
 
 

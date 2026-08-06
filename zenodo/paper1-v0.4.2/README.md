@@ -9,7 +9,8 @@ exact separation and recovery at dimension two*.
 The tools package and verify bytes locally.  They do not authorize a
 publication, call Zenodo, or change the repository's scientific files.  The
 metadata worksheet still requires owner confirmation of publication date,
-license, final Git commit, relations, and DOI.
+final Git commit, relations, and DOI.  The Paper I license decision is already
+recorded as CC BY 4.0; the repository software license remains MIT.
 
 The command-line builder requires an explicit source binding choice:
 `--commit <REVISION>` is mandatory for a production/archive build; the only
@@ -37,6 +38,17 @@ inner semantic digest, and records the exact Zenodo upload list.  The commit
 binding is summary-only and is never embedded in either archive, avoiding a
 circular hash.
 
+The machine-readable owner decision is
+`zenodo/paper1-v0.4.2/owner_decision.json`, with the dated human record at
+`reports/v0.4.2_paper1_owner_decision_2026-08-06.md`.  It binds acceptance of
+the current 18-page PDF (SHA-256
+`9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43`), the
+strict single-archive layout, CC BY 4.0, the actual-publication-date policy,
+draft DOI-reservation policy, an initial empty relation list, and the
+external-at-deposit commit policy.  Current publication date, DOI, and commit
+values remain null.  Draft creation, DOI reservation, freeze, submission,
+deposit, and publication remain unperformed and unauthorized.
+
 The final PDF is read-only input.  The builder copies only
 `output/pdf/paper1_statewise_operator_v0.4.2.pdf`, whose source/report binding
 is `reports/v0.4.2_paper1_pdf_build_2026-08-06.md`; a pending source/PDF
@@ -50,6 +62,18 @@ the 2026-08-06 Zenodo literature report and note.  Raw Atom responses,
 normalized ledgers, retrieval receipts, third-party reference PDFs/texts,
 vendored archives, and the repository root README remain excluded.  Full
 reproduction still requires the repository and pinned toolchains.
+
+## Recorded owner policies and pending release actions
+
+`metadata.template.json` remains a UI worksheet, not a Zenodo API payload.  It
+records the approved CC BY 4.0 Paper I license and initial empty relations.
+`publication_date`, `doi`, and `final_commit` remain null under their approved
+policies (actual Zenodo publication date, DOI reservation in the Zenodo draft,
+and external commit binding at the deposit/build cycle).  The owner decision
+artifact and dated report are checked into the supplement and fail closed if
+their hashes, policies, or release gates drift.  Draft creation, DOI
+reservation, manuscript freeze, submission approval, deposit, and publication
+are still unperformed and unauthorized.
 
 ## Historical two-file layout (owner waiver only)
 

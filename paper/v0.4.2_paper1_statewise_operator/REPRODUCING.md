@@ -191,6 +191,47 @@ an exhaustive novelty, priority, absence, or general pre-window update claim.
 It is artifact-specific: a later submission or deposit requires a new dated
 archive and normalizer rather than reuse of this 2026-08-06 observation.
 
+### 1.4b Check the Zenodo predraft literature gate offline
+
+```powershell
+uv run python scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py --check
+uv run pytest -q -p no:cacheprovider `
+  tests/final_theory/test_normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py
+```
+
+This fresh predraft gate replays no network request.  It verifies the archived
+full-overlap Atom response (1,422,899 bytes), exact-ID response (5,201 bytes),
+retrieval receipt (2,004 bytes), and normalized ledger (700,160 bytes), with
+SHA-256 values
+`a7e0bef901b70998fa64d3f4f6f7e8882ee8b7508ea935f9cafc664ce1218cf4`,
+`fbe8a6498392001e23a85ca9cd6765fc404de1f915acc0a4d4fd4761b8bdba43`,
+`0b56aa1a0cc49f023110d8f19e3ef7772f22eda92848403f1f624daaa8784428`, and
+`4066604659f286dcdb134e295bd2c31c1736c7583a4ac2c8d51d65eeb9a84f6b`.
+The full-overlap feed cutoff is `2026-08-06T11:28:07Z`; all 722 returned
+records are in-window and at or before that cutoff.  The screen has 694
+no-target records, 28 title/abstract-inspected nonmaterial records, and zero
+material C1--C5 deltas.  The tracked exact IDs `arXiv:2607.26672` and
+`arXiv:2603.25503` remain `v1`.
+The normalized reconciliation deliberately records
+`metadata_equal_by_id=false` because the two shared IDs gained category-only
+metadata; `metadata_changes_reviewed=true` binds the Sol review of
+`2608.02182v1` and `2608.02458v1`.
+
+The versioned-ID delta contract is exact and ID-keyed: 178 added IDs, 12
+missing v1 IDs replaced by v2, 166 new bases, two category-only shared-ID
+changes, and no shared screening-decision change.  Its five fixed digests are
+`13812bafc110aa41761be9733585fcc4dcdb6dfb3ae83e42cf24de867df89dc6`,
+`e6ab3dd1239a3304cc10db37d989f4a5b95569b451c786cdd5d7e767c5bb3daa`,
+`3c2dc8184c8d1a2b28ae739e85020bc5e423383f3f0e14ae7a3e6bc70e09b23b`,
+`4d8ae8e5a42b5ce970c6297ba85372f26c5e325b7af8d9f494f92c0807209087`, and
+`ec8a00b5ff3693ce402ec32906fa1adcbd6d59f872e2cc95fe490593f91d3425`.
+The gate is a bounded technical title/abstract and exact-ID check.  It does
+not establish exhaustive coverage, novelty, priority, absence, or general
+pre-window version-update coverage, and it does not authorize manuscript
+freeze, submission, deposit, or publication.  Only the dated human report and
+research note are supplement members; raw Atom, receipt, normalized-ledger,
+and third-party artifacts remain excluded.
+
 ### 1.5 Run the focused Paper I tests
 
 ```powershell
@@ -201,6 +242,7 @@ uv run pytest -q -p no:cacheprovider `
   tests/final_theory/test_normalize_v042_paper1_arxiv_delta_response.py `
   tests/final_theory/test_normalize_v042_paper1_submission_gate_response.py `
   tests/final_theory/test_normalize_v042_paper1_zenodo_gate_20260806.py `
+  tests/final_theory/test_normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py `
   tests/final_theory/test_weak_d2_v04.py `
   tests/final_theory/test_weak_d2_v04_oracle.py `
   tests/final_theory/test_weak_d2_observability_v042.py `
@@ -222,7 +264,7 @@ lemmas.  It is intentionally not a
 repository-wide unbounded test run.  The pass count is a dated observation
 rather than a fixed contract: retain the actual count and tool versions from
 each reproduction run in its manuscript record.  The focused command above
-observed 190 passing tests in the current tree on 2026-08-06.
+observed 202 passing tests in the current tree on 2026-08-06.
 
 ## 2. Public frozen v0.3.9 lane
 

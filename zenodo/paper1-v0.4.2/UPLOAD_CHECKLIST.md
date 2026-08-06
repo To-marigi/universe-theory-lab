@@ -4,6 +4,17 @@ This is an owner gate for a new Paper I preprint record.  It is not an
 automatic publish script.  Do not edit the frozen v0.3.9 software record or
 copy the root `.zenodo.json` / `CITATION.cff` into this package.
 
+The approved owner policies are recorded in
+`owner_decision.json` and
+`reports/v0.4.2_paper1_owner_decision_2026-08-06.md`: the accepted final PDF
+is 18 pages with SHA-256
+`9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43`, the
+strict single archive is accepted, the Paper I license is CC BY 4.0 (the
+repository software remains MIT), and initial related identifiers are `[]`.
+Publication date, DOI, and final commit values remain null under their stated
+policies.  Draft creation, DOI reservation, freeze, submission, deposit, and
+publication remain unperformed and unauthorized.
+
 ## 0. Owner decisions before packaging
 
 - [ ] The owner has selected the final source commit and final verified PDF.
@@ -12,6 +23,8 @@ copy the root `.zenodo.json` / `CITATION.cff` into this package.
       **two-file owner waiver** and will use both explicit waiver flags.
 - [ ] Publication date, license, relations, DOI handling, and the final
       publish action have an owner decision.
+- [ ] The production worksheet retains `license = CC BY 4.0`; do not replace
+      the repository's MIT software license decision.
 
 The metadata worksheet is a UI worksheet, not a Zenodo API payload.  Null
 owner fields are intentionally not silently filled by these tools.
@@ -44,6 +57,8 @@ uv run python zenodo/paper1-v0.4.2/verify_paper1_bundle.py `
 - [ ] Record the outer archive SHA-256 and byte count, outer manifest semantic
       digest, inner supplement SHA-256 and semantic digest, final PDF SHA-256,
       PDF byte count, page count, and selected commit in the release notes.
+- [ ] Confirm the owner decision artifact/report hashes in the builder summary
+      and that all release gates remain false.
 
 The strict verifier checks deterministic gzip/tar metadata, outer and inner
 manifest digests, member hashes/sizes, the final PDF source/report binding,
@@ -112,8 +127,10 @@ valid.
       n<=4, QQ, C1--C5, N1--N6, U2 boundary, and AI non-author wording.
 - [ ] Keep communities, funding, and related identifiers empty unless the
       owner explicitly decides otherwise.
-- [ ] Select publication date and license deliberately; these are not inferred
-      by the builder.
+- [ ] Keep publication date null until Zenodo publishes the record; the policy
+      is the actual Zenodo publication date.
+- [ ] Use CC BY 4.0 for Paper I.  The repository software license remains MIT.
+- [ ] DOI policy is reserve-in-draft; no DOI is currently reserved.
 
 ## 5. Save draft, preview, and publish gate
 

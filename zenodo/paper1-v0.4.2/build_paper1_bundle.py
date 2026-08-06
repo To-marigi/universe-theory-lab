@@ -37,6 +37,7 @@ from typing import Any
 
 SUPPLEMENT_SCHEMA_VERSION = "zenodo-paper1-supplement-manifest-v1"
 OUTER_SCHEMA_VERSION = "zenodo-paper1-single-archive-manifest-v1"
+OWNER_DECISION_SCHEMA_VERSION = "zenodo-paper1-owner-decision-v1"
 BUNDLE_VERSION = "0.4.2"
 SUPPLEMENT_PREFIX = "paper1-statewise-operator-v0.4.2-supplement"
 OUTER_PREFIX = "paper1-statewise-operator-v0.4.2-upload"
@@ -52,17 +53,126 @@ WITNESS_SOURCE_PATH = "results/v0.4.2_paper1_witness_tables.json"
 MANUSCRIPT_MANIFEST_PATH = "results/v0.4.2_paper1_manuscript_manifest.json"
 CLAIM_LEDGER_PATH = "results/v0.4.2_paper1_claim_boundary.json"
 PDF_BUILD_REPORT_PATH = "reports/v0.4.2_paper1_pdf_build_2026-08-06.md"
+OWNER_DECISION_ARTIFACT_PATH = "zenodo/paper1-v0.4.2/owner_decision.json"
+OWNER_DECISION_REPORT_PATH = "reports/v0.4.2_paper1_owner_decision_2026-08-06.md"
 METADATA_TEMPLATE_PATH = "zenodo/paper1-v0.4.2/metadata.template.json"
 ZENODO_LITERATURE_REPORT_PATH = "reports/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md"
 ZENODO_LITERATURE_NOTE_PATH = (
     "references/notes/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md"
 )
+ZENODO_PREDRAFT_REPORT_PATH = (
+    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
+)
+ZENODO_PREDRAFT_NOTE_PATH = (
+    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
+)
+ZENODO_PREDRAFT_NORMALIZER_PATH = (
+    "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py"
+)
+ZENODO_PREDRAFT_LEDGER_PATH = (
+    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_normalized.json"
+)
+ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH = (
+    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_full_overlap_atom.xml"
+)
+ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH = (
+    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_exact_ids_atom.xml"
+)
+ZENODO_PREDRAFT_RECEIPT_PATH = (
+    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_retrieval.json"
+)
+ZENODO_PREDRAFT_SOURCE_ID = "arXiv:PaperI-zenodo-predraft-gate-2026-08-06T1123Z"
+ZENODO_PREDRAFT_GATE_STATUS = (
+    "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_PREDRAFT_GATE_AS_OF_2026-08-06T11:28:07Z"
+)
+ZENODO_PREDRAFT_FEED_CUTOFF = "2026-08-06T11:28:07Z"
+ZENODO_PREDRAFT_ARTIFACT_HASHES = {
+    ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH: (
+        "a7e0bef901b70998fa64d3f4f6f7e8882ee8b7508ea935f9cafc664ce1218cf4",
+        1422899,
+    ),
+    ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH: (
+        "fbe8a6498392001e23a85ca9cd6765fc404de1f915acc0a4d4fd4761b8bdba43",
+        5201,
+    ),
+    ZENODO_PREDRAFT_RECEIPT_PATH: (
+        "0b56aa1a0cc49f023110d8f19e3ef7772f22eda92848403f1f624daaa8784428",
+        2004,
+    ),
+    ZENODO_PREDRAFT_LEDGER_PATH: (
+        "4066604659f286dcdb134e295bd2c31c1736c7583a4ac2c8d51d65eeb9a84f6b",
+        700160,
+    ),
+    ZENODO_PREDRAFT_NORMALIZER_PATH: (
+        "c81340e55fadbb1edc2b57ee35386a2ef811436877cc3b5149ed30e0574ccb98",
+        44395,
+    ),
+    ZENODO_PREDRAFT_REPORT_PATH: (
+        "2d6557fb5e01c02fb2d9ca050440118305153013622b8716733ed8fa036623e9",
+        9590,
+    ),
+    ZENODO_PREDRAFT_NOTE_PATH: (
+        "48e0dce188b74abdc7a5b1d8c02f49286eccc164406cefd3827236ec5a916764",
+        8015,
+    ),
+}
+ZENODO_PREDRAFT_DELTA_CONTRACT = {
+    "added_count": 178,
+    "added_ids_sha256": (
+        "13812bafc110aa41761be9733585fcc4dcdb6dfb3ae83e42cf24de867df89dc6"
+    ),
+    "missing_count": 12,
+    "missing_ids_sha256": (
+        "e6ab3dd1239a3304cc10db37d989f4a5b95569b451c786cdd5d7e767c5bb3daa"
+    ),
+    "version_pair_count": 178,
+    "version_pairs_sha256": (
+        "3c2dc8184c8d1a2b28ae739e85020bc5e423383f3f0e14ae7a3e6bc70e09b23b"
+    ),
+    "replacement_base_ids": [
+        "2607.29501",
+        "2608.00710",
+        "2608.01121",
+        "2608.01680",
+        "2608.01774",
+        "2608.02350",
+        "2608.02546",
+        "2608.02652",
+        "2608.03697",
+        "2608.03714",
+        "2608.03828",
+        "2608.03987",
+    ],
+    "new_no_target_count": 173,
+    "new_rule_triggered_ids": [
+        "2608.04263v1",
+        "2608.04456v1",
+        "2608.04685v1",
+        "2608.04947v1",
+        "2608.05077v1",
+    ],
+    "new_rule_triggered_ids_sha256": (
+        "4d8ae8e5a42b5ce970c6297ba85372f26c5e325b7af8d9f494f92c0807209087"
+    ),
+    "prior_candidate_count": 23,
+    "predraft_candidate_count": 28,
+    "shared_metadata_changed_ids": ["2608.02182v1", "2608.02458v1"],
+    "shared_screening_changed_ids": [],
+    "shared_metadata_review_ids_sha256": (
+        "ec8a00b5ff3693ce402ec32906fa1adcbd6d59f872e2cc95fe490593f91d3425"
+    ),
+}
 FINAL_REBIND_STATUSES = frozenset(
     {
         "FINAL_VERIFIED_SOURCE_PDF_BINDING",
         "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
     }
 )
+OWNER_DECISION_PDF_SHA256 = (
+    "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43"
+)
+OWNER_DECISION_PDF_BYTES = 427745
+OWNER_DECISION_PDF_PAGE_COUNT = 18
 # Kept empty deliberately: even the owner-editable metadata worksheet must
 # exist in the selected final commit when commit binding is requested.
 COMMIT_UNTRACKED_OPTIONAL_PATHS = frozenset()
@@ -133,6 +243,7 @@ REQUIRED_REPRODUCING_FRAGMENTS = (
     "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED",
     "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
     "scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check",
+    "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py --check",
 )
 
 
@@ -162,6 +273,11 @@ DEFAULT_SOURCE_FILE_SPECS: tuple[FileSpec, ...] = (
         "package/metadata.template.json",
         METADATA_TEMPLATE_PATH,
         "owner_editable_zenodo_metadata_worksheet_not_api_payload",
+    ),
+    FileSpec(
+        "package/owner_decision.json",
+        OWNER_DECISION_ARTIFACT_PATH,
+        "machine_readable_owner_decision_binding",
     ),
     FileSpec(
         "paper/v0.4.2_paper1_statewise_operator/main.tex",
@@ -224,6 +340,11 @@ DEFAULT_SOURCE_FILE_SPECS: tuple[FileSpec, ...] = (
         "pdf_build_report",
     ),
     FileSpec(
+        OWNER_DECISION_REPORT_PATH,
+        OWNER_DECISION_REPORT_PATH,
+        "dated_human_owner_decision_report",
+    ),
+    FileSpec(
         "reports/v0.4.2_sr2v_auxiliary_ideal_determinantal_pilot_2026-08-05.md",
         "reports/v0.4.2_sr2v_auxiliary_ideal_determinantal_pilot_2026-08-05.md",
         "u2_resource_open_limitation_report",
@@ -243,6 +364,16 @@ DEFAULT_SOURCE_FILE_SPECS: tuple[FileSpec, ...] = (
         ZENODO_LITERATURE_NOTE_PATH,
         "zenodo_literature_gate_note_without_raw_feed",
     ),
+    FileSpec(
+        ZENODO_PREDRAFT_REPORT_PATH,
+        ZENODO_PREDRAFT_REPORT_PATH,
+        "zenodo_predraft_literature_gate_report_without_raw_feed",
+    ),
+    FileSpec(
+        ZENODO_PREDRAFT_NOTE_PATH,
+        ZENODO_PREDRAFT_NOTE_PATH,
+        "zenodo_predraft_literature_gate_note_without_raw_feed",
+    ),
 )
 
 EXCLUDED_SCOPE = {
@@ -251,8 +382,9 @@ EXCLUDED_SCOPE = {
     "third_party_extracted_text": "references/text/",
     "vendored_archives": "oracle/sage_periods/vendor/",
     "raw_literature_query_artifacts": (
-        "references/papers/2026-08-05_paper1_arxiv_delta_query_* and "
-        "references/papers/2026-08-06_paper1_zenodo_gate_*"
+        "references/papers/2026-08-05_paper1_arxiv_delta_query_*, "
+        "references/papers/2026-08-06_paper1_zenodo_gate_*, and "
+        "references/papers/2026-08-06_paper1_zenodo_predraft_*"
     ),
     "pdf_in_supplement": PDF_SOURCE_PATH,
     "repository_snapshot": "all files outside this explicit supplement manifest",
@@ -365,6 +497,139 @@ def _normalise_whitespace(value: str) -> str:
     return " ".join(value.split())
 
 
+def _validate_owner_decision(
+    root: Path,
+    pdf_binding: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Validate the dated owner decision without authorizing release actions."""
+
+    artifact_path = root / OWNER_DECISION_ARTIFACT_PATH
+    report_path = root / OWNER_DECISION_REPORT_PATH
+    artifact = _load_json(artifact_path, "owner decision artifact")
+    if artifact.get("schema_version") != OWNER_DECISION_SCHEMA_VERSION:
+        raise RuntimeError("owner decision artifact schema version drifted")
+    recorded_semantic = artifact.get("semantic_digest_sha256")
+    if not isinstance(recorded_semantic, str) or _semantic_digest(
+        {key: value for key, value in artifact.items() if key != "semantic_digest_sha256"}
+    ) != recorded_semantic:
+        raise RuntimeError("owner decision artifact semantic digest is invalid")
+    if artifact.get("decision_date") != "2026-08-06":
+        raise RuntimeError("owner decision date drifted")
+    if artifact.get("status") != "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING":
+        raise RuntimeError("owner decision artifact status drifted")
+    authority = artifact.get("authority")
+    if not isinstance(authority, dict) or (
+        authority.get("release_actions_not_authorized") is not True
+    ):
+        raise RuntimeError("owner decision artifact must keep release actions unauthorized")
+    decisions = artifact.get("decisions")
+    if not isinstance(decisions, dict):
+        raise RuntimeError("owner decision artifact decisions are missing")
+    final_pdf = decisions.get("final_pdf")
+    expected_pdf = {
+        "accepted": True,
+        "source_path": PDF_SOURCE_PATH,
+        "sha256": OWNER_DECISION_PDF_SHA256,
+        "bytes": OWNER_DECISION_PDF_BYTES,
+        "page_count": OWNER_DECISION_PDF_PAGE_COUNT,
+        "status": "CURRENT_FINAL_VERIFIED_PDF_ACCEPTED",
+    }
+    if final_pdf != expected_pdf:
+        raise RuntimeError("owner decision final PDF acceptance drifted")
+    if pdf_binding is not None:
+        if (
+            pdf_binding.get("pdf_sha256") != final_pdf["sha256"]
+            or pdf_binding.get("pdf_bytes") != final_pdf["bytes"]
+            or pdf_binding.get("pdf_page_count") != final_pdf["page_count"]
+        ):
+            raise RuntimeError(
+                "owner decision final PDF acceptance does not match current PDF binding"
+            )
+    layout = decisions.get("upload_layout")
+    if layout != {
+        "accepted": SINGLE_ARCHIVE_LAYOUT,
+        "two_file_owner_waiver": False,
+        "archive_name": UPLOAD_ARCHIVE_NAME,
+        "status": "STRICT_SINGLE_ARCHIVE_ACCEPTED",
+    }:
+        raise RuntimeError("owner decision upload layout drifted")
+    if decisions.get("license") != {
+        "paper": "CC BY 4.0",
+        "repository_software": "MIT",
+        "status": "PAPER_LICENSE_APPROVED_SOFTWARE_LICENSE_UNCHANGED",
+    }:
+        raise RuntimeError("owner decision license policy drifted")
+    if decisions.get("publication_date") != {
+        "policy": "actual_zenodo_publication_date",
+        "value": None,
+        "status": "VALUE_PENDING_PUBLICATION",
+    }:
+        raise RuntimeError("owner decision publication-date policy drifted")
+    if decisions.get("doi") != {
+        "policy": "reserve_in_zenodo_draft",
+        "value": None,
+        "status": "RESERVATION_PENDING_DRAFT",
+    }:
+        raise RuntimeError("owner decision DOI policy drifted")
+    if decisions.get("related_identifiers") != {
+        "initial": [],
+        "value": [],
+        "status": "INITIAL_EMPTY_LIST_APPROVED",
+    }:
+        raise RuntimeError("owner decision related-identifiers policy drifted")
+    if decisions.get("final_commit") != {
+        "policy": "external_at_deposit_build_cycle",
+        "value": None,
+        "status": "VALUE_PENDING_SELECTED_COMMIT",
+    }:
+        raise RuntimeError("owner decision final-commit policy drifted")
+    expected_gates = {
+        "draft_created": False,
+        "doi_reserved": False,
+        "freeze_executed": False,
+        "submission_approved": False,
+        "deposit_executed": False,
+        "published": False,
+    }
+    if artifact.get("release_gates") != expected_gates:
+        raise RuntimeError("owner decision release gates must remain unexecuted")
+    try:
+        report = report_path.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise RuntimeError(f"owner decision report cannot be read: {exc}") from exc
+    required_report_fragments = (
+        "# Paper I v0.4.2 owner decision record — 2026-08-06",
+        OWNER_DECISION_PDF_SHA256,
+        "CC BY 4.0",
+        "The two-file owner waiver is",
+        "false; the production upload list is exactly",
+        "actual Zenodo publication date",
+        "reserve a DOI in the Zenodo draft",
+        "Initial related identifiers are approved as an empty list (`[]`).",
+        "final commit is recorded externally at the deposit/build cycle",
+        "Draft creation, DOI reservation, manuscript freeze, submission approval,",
+        "deposit, and publication have not been performed or approved.",
+    )
+    missing_report_fragments = [
+        fragment for fragment in required_report_fragments if fragment not in report
+    ]
+    if missing_report_fragments:
+        raise RuntimeError(
+            f"owner decision report binding drifted: {missing_report_fragments}"
+        )
+    return {
+        "path": OWNER_DECISION_ARTIFACT_PATH,
+        "raw_sha256": _sha256(artifact_path),
+        "semantic_digest_sha256": recorded_semantic,
+        "report_path": OWNER_DECISION_REPORT_PATH,
+        "report_raw_sha256": _sha256(report_path),
+        "decision_date": artifact["decision_date"],
+        "status": artifact["status"],
+        "decisions": decisions,
+        "release_gates": expected_gates,
+    }
+
+
 def _validate_candidate_source(root: Path) -> dict[str, Any]:
     """Require the externally readable candidate boundary before PDF binding."""
 
@@ -401,7 +666,13 @@ def _validate_candidate_source(root: Path) -> dict[str, Any]:
     }
 
 
-def _validate_metadata_template(root: Path) -> dict[str, Any]:
+def _validate_metadata_template(
+    root: Path,
+    owner_decision: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    owner_decision = (
+        _validate_owner_decision(root) if owner_decision is None else owner_decision
+    )
     template = _load_json(root / METADATA_TEMPLATE_PATH, "metadata template")
     description = template.get("description")
     if not isinstance(description, str):
@@ -413,6 +684,8 @@ def _validate_metadata_template(root: Path) -> dict[str, Any]:
     ]
     if missing:
         raise RuntimeError(f"metadata description is missing required fragments: {missing}")
+    if template.get("status") != "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING":
+        raise RuntimeError("metadata template owner-decision status drifted")
     if template.get("template_role") != "UI worksheet only; not a Zenodo API payload":
         raise RuntimeError("metadata template is not marked as a non-API worksheet")
     if template.get("upload_type_ui_worksheet") != "Publication / Preprint":
@@ -435,6 +708,14 @@ def _validate_metadata_template(root: Path) -> dict[str, Any]:
         raise RuntimeError("metadata worksheet creator identity drifted")
     if template.get("related_identifiers") != []:
         raise RuntimeError("metadata worksheet must leave related_identifiers empty")
+    if template.get("publication_date") is not None:
+        raise RuntimeError("metadata publication_date must remain null before Zenodo publication")
+    if template.get("license") != "CC BY 4.0":
+        raise RuntimeError("Paper I metadata license must be CC BY 4.0")
+    if template.get("doi") is not None:
+        raise RuntimeError("metadata DOI must remain null before draft reservation")
+    if template.get("final_commit") is not None:
+        raise RuntimeError("metadata final_commit must remain null until the external build cycle")
     keywords = template.get("keywords")
     if not isinstance(keywords, list) or not REQUIRED_METADATA_KEYWORDS <= set(keywords):
         raise RuntimeError(
@@ -471,12 +752,258 @@ def _validate_metadata_template(root: Path) -> dict[str, Any]:
         or binding.get("semantic_digest_sha256") != semantic_sha
     ):
         raise RuntimeError("metadata claim ledger digest binding drifted")
+    owner_binding = template.get("owner_decision_binding")
+    if not isinstance(owner_binding, dict):
+        raise RuntimeError("metadata worksheet lacks owner_decision_binding")
+    expected_owner_binding = {
+        "path": owner_decision["path"],
+        "report_path": owner_decision["report_path"],
+        "raw_sha256": owner_decision["raw_sha256"],
+        "semantic_digest_sha256": owner_decision["semantic_digest_sha256"],
+        "report_raw_sha256": owner_decision["report_raw_sha256"],
+        "decision_date": owner_decision["decision_date"],
+    }
+    if owner_binding != expected_owner_binding:
+        raise RuntimeError("metadata owner decision binding drifted")
+    decisions = owner_decision["decisions"]
+    if template.get("publication_date") != decisions["publication_date"]["value"]:
+        raise RuntimeError("metadata publication_date disagrees with owner decision")
+    if template.get("license") != decisions["license"]["paper"]:
+        raise RuntimeError("metadata license disagrees with owner decision")
+    if template.get("doi") != decisions["doi"]["value"]:
+        raise RuntimeError("metadata DOI disagrees with owner decision")
+    if template.get("related_identifiers") != decisions["related_identifiers"]["value"]:
+        raise RuntimeError("metadata relations disagree with owner decision")
+    if template.get("final_commit") != decisions["final_commit"]["value"]:
+        raise RuntimeError("metadata final_commit disagrees with owner decision")
     return {
         "template_raw_sha256": _sha256(root / METADATA_TEMPLATE_PATH),
         "claim_ledger_raw_sha256": raw_sha,
         "claim_ledger_semantic_digest_sha256": semantic_sha,
         "description_fragments_checked": list(REQUIRED_DESCRIPTION_FRAGMENTS),
         "metadata_keywords_checked": sorted(REQUIRED_METADATA_KEYWORDS),
+        "owner_decision_binding": expected_owner_binding,
+        "owner_decision_status": owner_decision["status"],
+        "owner_decisions": decisions,
+        "owner_release_gates": owner_decision["release_gates"],
+    }
+
+
+def _validate_zenodo_predraft_gate(root: Path) -> dict[str, Any]:
+    """Validate the fresh predraft gate while excluding its raw artifacts."""
+
+    paths = {
+        path: root / Path(path) for path in ZENODO_PREDRAFT_ARTIFACT_HASHES
+    }
+    for source_path, path in paths.items():
+        if not path.is_file():
+            raise FileNotFoundError(
+                f"Zenodo predraft gate artifact is missing: {source_path}"
+            )
+        expected_sha, expected_bytes = ZENODO_PREDRAFT_ARTIFACT_HASHES[source_path]
+        actual_bytes = path.stat().st_size
+        actual_sha = _sha256(path)
+        if (actual_sha, actual_bytes) != (expected_sha, expected_bytes):
+            raise RuntimeError(
+                "Zenodo predraft gate artifact hash/size drifted: "
+                f"{source_path} ({actual_sha}, {actual_bytes})"
+            )
+
+    ledger = _load_json(paths[ZENODO_PREDRAFT_LEDGER_PATH], "Zenodo predraft ledger")
+    if ledger.get("schema_version") != "1.4":
+        raise RuntimeError("Zenodo predraft ledger schema version drifted")
+    if ledger.get("source_id") != ZENODO_PREDRAFT_SOURCE_ID:
+        raise RuntimeError("Zenodo predraft source ID drifted")
+    if ledger.get("gate_status") != ZENODO_PREDRAFT_GATE_STATUS:
+        raise RuntimeError("Zenodo predraft gate status drifted")
+    raw_response = ledger.get("raw_response")
+    if raw_response != {
+        "path": ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH,
+        "sha256": ZENODO_PREDRAFT_ARTIFACT_HASHES[
+            ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH
+        ][0],
+        "bytes": ZENODO_PREDRAFT_ARTIFACT_HASHES[
+            ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH
+        ][1],
+        "feed_updated_utc": ZENODO_PREDRAFT_FEED_CUTOFF,
+    }:
+        raise RuntimeError("Zenodo predraft full-overlap response binding drifted")
+    if ledger.get("response_entry_count") != 722:
+        raise RuntimeError("Zenodo predraft response entry count drifted")
+    if ledger.get("entries_published_in_submitted_date_window") != 722:
+        raise RuntimeError("Zenodo predraft submitted-date count drifted")
+    if ledger.get("entries_published_outside_submitted_date_window") != 0:
+        raise RuntimeError("Zenodo predraft out-of-window count drifted")
+    if ledger.get("entries_published_at_or_before_feed_cutoff") != 722:
+        raise RuntimeError("Zenodo predraft cutoff count drifted")
+    if ledger.get("entries_published_after_feed_cutoff") != 0:
+        raise RuntimeError("Zenodo predraft post-cutoff count drifted")
+    screening = ledger.get("screening")
+    if not isinstance(screening, dict) or screening.get("decision_counts") != {
+        "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 694,
+        "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 28,
+        "MATERIAL_DELTA_TO_C1_C5": 0,
+    }:
+        raise RuntimeError("Zenodo predraft screening decision counts drifted")
+    if screening.get("material_delta_ids") != []:
+        raise RuntimeError("Zenodo predraft material delta IDs are not empty")
+    reconciliation = ledger.get("reconciliation")
+    if not isinstance(reconciliation, dict) or (
+        reconciliation.get("id_set_equal") is not False
+        or reconciliation.get("metadata_equal_by_id") is not False
+        or reconciliation.get("metadata_changes_reviewed") is not True
+        or reconciliation.get("reviewed_metadata_changed_ids")
+        != ["2608.02182v1", "2608.02458v1"]
+        or reconciliation.get("screening_decisions_equal_by_shared_versioned_id")
+        is not True
+    ):
+        raise RuntimeError("Zenodo predraft metadata review contract drifted")
+
+    predraft = ledger.get("predraft_gate_recheck")
+    if not isinstance(predraft, dict):
+        raise RuntimeError("Zenodo predraft recheck section is missing")
+    if predraft.get("gate_trigger_utc") != "2026-08-06T11:23:00Z":
+        raise RuntimeError("Zenodo predraft gate trigger drifted")
+    exact_checks = predraft.get("exact_id_checks")
+    expected_exact = {
+        "response_entry_count": 2,
+        "versions": {"2603.25503": "v1", "2607.26672": "v1"},
+        "status": "BOTH_TRACKED_RECORDS_REMAIN_V1",
+    }
+    if not isinstance(exact_checks, dict) or any(
+        exact_checks.get(key) != value for key, value in expected_exact.items()
+    ):
+        raise RuntimeError("Zenodo predraft exact-ID version contract drifted")
+    comparison = predraft.get("full_overlap_comparison")
+    if not isinstance(comparison, dict):
+        raise RuntimeError("Zenodo predraft full-overlap comparison is missing")
+    if (
+        comparison.get("metadata_changed_ids")
+        != ["2608.02182v1", "2608.02458v1"]
+        or comparison.get("screening_changed_ids") != []
+    ):
+        raise RuntimeError("Zenodo predraft full-overlap metadata review drifted")
+    delta = comparison.get("reviewed_delta_contract")
+    if delta != ZENODO_PREDRAFT_DELTA_CONTRACT:
+        raise RuntimeError("Zenodo predraft reviewed versioned-ID delta contract drifted")
+    title_abstract = predraft.get("title_abstract_rescreen")
+    if not isinstance(title_abstract, dict) or (
+        title_abstract.get("records_screened") != 722
+        or title_abstract.get("rule_triggered_candidates") != 28
+        or title_abstract.get("candidate_decision_changed_ids") != []
+        or title_abstract.get("material_delta_ids") != []
+        or title_abstract.get("status") != "COMPLETED_REVIEWED_NO_MATERIAL_DELTA"
+    ):
+        raise RuntimeError("Zenodo predraft title/abstract rescreen contract drifted")
+    receipt = _load_json(paths[ZENODO_PREDRAFT_RECEIPT_PATH], "Zenodo predraft receipt")
+    retrievals = receipt.get("retrievals")
+    if not isinstance(retrievals, dict):
+        raise RuntimeError("Zenodo predraft retrieval receipt is malformed")
+    expected_retrievals = {
+        "full_overlap": (
+            ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH,
+            ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH],
+        ),
+        "exact_ids": (
+            ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH,
+            ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH],
+        ),
+    }
+    for key, (path, (sha, size)) in expected_retrievals.items():
+        record = retrievals.get(key)
+        if not isinstance(record, dict) or (
+            record.get("path") != path
+            or record.get("sha256") != sha
+            or record.get("bytes") != size
+            or record.get("http_status") != 200
+        ):
+            raise RuntimeError(f"Zenodo predraft retrieval receipt binding drifted: {key}")
+
+    report_text = paths[ZENODO_PREDRAFT_REPORT_PATH].read_text(encoding="utf-8")
+    note_text = paths[ZENODO_PREDRAFT_NOTE_PATH].read_text(encoding="utf-8")
+    report_fragments = (
+        ZENODO_PREDRAFT_GATE_STATUS,
+        "| Returned and screened records | 722 |",
+        "| Material delta to C1",
+        "The fresh response has 178 added IDs and 12 missing old IDs.",
+    )
+    note_fragments = (
+        f"`{ZENODO_PREDRAFT_FEED_CUTOFF}` contains 722 screened",
+        "The 28 title/abstract-inspected records are all nonmaterial to C1--C5.",
+        "178 added versioned",
+    )
+    all_contract_digests = tuple(
+        value
+        for key, value in ZENODO_PREDRAFT_DELTA_CONTRACT.items()
+        if key.endswith("sha256")
+    )
+    for label, text, fragments in (
+        ("report", report_text, report_fragments),
+        ("research note", note_text, note_fragments),
+    ):
+        missing = [
+            fragment
+            for fragment in fragments + all_contract_digests
+            if fragment not in text
+        ]
+        if missing:
+            raise RuntimeError(f"Zenodo predraft {label} binding drifted: {missing}")
+
+    excluded_artifacts = [
+        {
+            "path": path,
+            "raw_sha256": ZENODO_PREDRAFT_ARTIFACT_HASHES[path][0],
+            "bytes": ZENODO_PREDRAFT_ARTIFACT_HASHES[path][1],
+            "role": "EXCLUDED_FROM_ZENODO_SUPPLEMENT",
+        }
+        for path in (
+            ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH,
+            ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH,
+            ZENODO_PREDRAFT_RECEIPT_PATH,
+            ZENODO_PREDRAFT_LEDGER_PATH,
+        )
+    ]
+    return {
+        "source_id": ZENODO_PREDRAFT_SOURCE_ID,
+        "status": ZENODO_PREDRAFT_GATE_STATUS,
+        "gate_trigger_utc": "2026-08-06T11:23:00Z",
+        "feed_cutoff_utc": ZENODO_PREDRAFT_FEED_CUTOFF,
+        "response_entry_count": 722,
+        "reviewed_title_abstract_count": 28,
+        "material_delta_count": 0,
+        "metadata_equal_by_id": False,
+        "metadata_changes_reviewed": True,
+        "reviewed_metadata_changed_ids": ["2608.02182v1", "2608.02458v1"],
+        "report": {
+            "path": ZENODO_PREDRAFT_REPORT_PATH,
+            "raw_sha256": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_REPORT_PATH][0],
+            "bytes": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_REPORT_PATH][1],
+            "role": "HUMAN_REPORT_INCLUDED_IN_ZENODO_SUPPLEMENT",
+        },
+        "research_note": {
+            "path": ZENODO_PREDRAFT_NOTE_PATH,
+            "raw_sha256": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_NOTE_PATH][0],
+            "bytes": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_NOTE_PATH][1],
+            "role": "RESEARCH_NOTE_INCLUDED_IN_ZENODO_SUPPLEMENT",
+        },
+        "normalizer": {
+            "path": ZENODO_PREDRAFT_NORMALIZER_PATH,
+            "raw_sha256": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_NORMALIZER_PATH][0],
+            "bytes": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_NORMALIZER_PATH][1],
+            "check_command": (
+                ".venv\\Scripts\\python.exe "
+                "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py "
+                "--check"
+            ),
+            "role": "REPOSITORY_REPRODUCTION_SCRIPT_NOT_INCLUDED_IN_SUPPLEMENT",
+        },
+        "excluded_artifacts": excluded_artifacts,
+        "reviewed_delta_contract": ZENODO_PREDRAFT_DELTA_CONTRACT,
+        "tracked_exact_ids": ["arXiv:2607.26672", "arXiv:2603.25503"],
+        "supplement_member_policy": {
+            "included_paths": [ZENODO_PREDRAFT_REPORT_PATH, ZENODO_PREDRAFT_NOTE_PATH],
+            "excluded_raw_and_derived_paths": [item["path"] for item in excluded_artifacts],
+        },
     }
 
 
@@ -654,6 +1181,7 @@ def _supplement_manifest(
     root: Path,
     pdf_binding: dict[str, Any],
     metadata_binding: dict[str, Any],
+    predraft_gate_binding: dict[str, Any],
     specs: Iterable[FileSpec] | None,
 ) -> dict[str, Any]:
     records = _source_records(
@@ -663,7 +1191,7 @@ def _supplement_manifest(
     payload: dict[str, Any] = {
         "schema_version": SUPPLEMENT_SCHEMA_VERSION,
         "bundle_version": BUNDLE_VERSION,
-        "status": "OWNER_DECISION_REQUIRED_BEFORE_FREEZE_OR_UPLOAD",
+        "status": "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING",
         "title": PAPER_TITLE,
         "primary_resource": "Paper I preprint",
         "recommended_upload_type": "Publication / Preprint",
@@ -681,9 +1209,13 @@ def _supplement_manifest(
         ],
         "pdf_binding": pdf_binding,
         "metadata_binding": metadata_binding,
+        "zenodo_predraft_literature_gate": predraft_gate_binding,
+        "owner_decision_binding": metadata_binding["owner_decision_binding"],
+        "owner_decisions": metadata_binding["owner_decisions"],
+        "owner_release_gates": metadata_binding["owner_release_gates"],
         "self_excluded_artifact": SUPPLEMENT_MANIFEST_PATH,
         "excluded_scope": EXCLUDED_SCOPE,
-        "owner_decisions": {
+        "owner_field_values": {
             "publication_date": None,
             "license": None,
             "final_commit": None,
@@ -699,6 +1231,7 @@ def _supplement_manifest(
 def _outer_manifest(
     pdf_binding: dict[str, Any],
     metadata_binding: dict[str, Any],
+    predraft_gate_binding: dict[str, Any],
     inner_supplement: dict[str, Any],
     inner_supplement_size: int,
     inner_supplement_sha256: str,
@@ -730,7 +1263,7 @@ def _outer_manifest(
     payload: dict[str, Any] = {
         "schema_version": OUTER_SCHEMA_VERSION,
         "bundle_version": BUNDLE_VERSION,
-        "status": "OWNER_DECISION_REQUIRED_BEFORE_FREEZE_OR_UPLOAD",
+        "status": "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING",
         "layout": SINGLE_ARCHIVE_LAYOUT,
         "zenodo_upload_files": [UPLOAD_ARCHIVE_NAME],
         "title": PAPER_TITLE,
@@ -741,6 +1274,10 @@ def _outer_manifest(
         "files": files,
         "pdf_binding": pdf_binding,
         "metadata_binding": metadata_binding,
+        "zenodo_predraft_literature_gate": predraft_gate_binding,
+        "owner_decision_binding": metadata_binding["owner_decision_binding"],
+        "owner_decisions": metadata_binding["owner_decisions"],
+        "owner_release_gates": metadata_binding["owner_release_gates"],
         "inner_supplement_binding": {
             "path": UPLOAD_SUPPLEMENT_NAME,
             "size_bytes": inner_supplement_size,
@@ -753,7 +1290,7 @@ def _outer_manifest(
         "self_excluded_artifact": OUTER_MANIFEST_PATH,
         "excluded_scope": EXCLUDED_SCOPE,
         "commit_binding_embedded": False,
-        "owner_decisions": {
+        "owner_field_values": {
             "publication_date": None,
             "license": None,
             "final_commit": None,
@@ -957,15 +1494,23 @@ def build_upload_set(
         DEFAULT_SOURCE_FILE_SPECS if specs is None else specs
     )
     candidate_source_binding = _validate_candidate_source(root)
-    metadata_binding = _validate_metadata_template(root)
     pdf_binding = _validate_pdf_binding(root)
+    owner_decision = _validate_owner_decision(root, pdf_binding)
+    metadata_binding = _validate_metadata_template(root, owner_decision)
+    predraft_gate_binding = _validate_zenodo_predraft_gate(root)
     commit_binding = (
         _validate_commit_binding(root, revision, selected_specs) if revision else None
     )
     packaged_commit = commit_binding["commit"] if commit_binding else None
     output_dir.mkdir(parents=True, exist_ok=True)
     pdf_bytes = (root / PDF_SOURCE_PATH).read_bytes()
-    manifest = _supplement_manifest(root, pdf_binding, metadata_binding, selected_specs)
+    manifest = _supplement_manifest(
+        root,
+        pdf_binding,
+        metadata_binding,
+        predraft_gate_binding,
+        selected_specs,
+    )
     with tempfile.TemporaryDirectory(prefix="paper1-supplement-") as temporary:
         temporary_path = Path(temporary)
         _stage_supplement(root, temporary_path / "inner", manifest)
@@ -997,22 +1542,25 @@ def build_upload_set(
                 "supplement_member_count": manifest["file_count"] + 1,
                 "pdf_binding": pdf_binding,
                 "metadata_binding": metadata_binding,
+                "zenodo_predraft_literature_gate": predraft_gate_binding,
+                "owner_decision_binding": metadata_binding["owner_decision_binding"],
+                "owner_decisions": metadata_binding["owner_decisions"],
+                "owner_release_gates": metadata_binding["owner_release_gates"],
                 "candidate_source_binding": candidate_source_binding,
                 "commit_binding": commit_binding,
                 "packaged_commit": packaged_commit,
                 "status": manifest["status"],
                 "owner_confirmation_required": [
                     "publication_date",
-                    "license",
-                    "final_commit",
                     "doi",
-                    "related_identifiers",
+                    "final_commit",
                 ],
             }
 
         outer_manifest = _outer_manifest(
             pdf_binding,
             metadata_binding,
+            predraft_gate_binding,
             manifest,
             len(inner_supplement_bytes),
             inner_supplement_sha,
@@ -1051,16 +1599,18 @@ def build_upload_set(
         "supplement_member_count": manifest["file_count"] + 1,
         "pdf_binding": pdf_binding,
         "metadata_binding": metadata_binding,
+        "zenodo_predraft_literature_gate": predraft_gate_binding,
+        "owner_decision_binding": metadata_binding["owner_decision_binding"],
+        "owner_decisions": metadata_binding["owner_decisions"],
+        "owner_release_gates": metadata_binding["owner_release_gates"],
         "candidate_source_binding": candidate_source_binding,
         "commit_binding": commit_binding,
         "packaged_commit": packaged_commit,
         "status": manifest["status"],
         "owner_confirmation_required": [
             "publication_date",
-            "license",
-            "final_commit",
             "doi",
-            "related_identifiers",
+            "final_commit",
         ],
     }
 
