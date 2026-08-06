@@ -67,6 +67,23 @@ normalized ledgers, retrieval receipts, third-party reference PDFs/texts,
 vendored archives, and the repository root README remain excluded.  Full
 reproduction still requires the repository and pinned toolchains.
 
+## Current predraft literature handoff
+
+The current technical literature authority is the independent
+`2026-08-06T2315Z` arXiv predraft gate: 722 records, zero added/missing,
+metadata, screening, version, and candidate deltas relative to the 1123Z
+snapshot, with both tracked records still at `v1`.  The exact handoff may be
+used by the owner to **Save draft** in Zenodo, but not to publish, reserve a
+DOI, push a commit, freeze the manuscript, or deposit a later file set.  All
+release gates remain false and `remote_visibility` remains
+`NOT_VERIFIED_BY_BUILDER` until an owner separately verifies it.
+
+The 1123Z report and research note are retained only as the documented
+historical predecessor in the supplement.  The current report and note are
+the authority for this handoff; raw Atom responses, the retrieval receipt,
+and normalized ledgers for both gates remain excluded.  Any later draft-save
+attempt, manuscript freeze, or deposit requires a newly timestamped gate.
+
 ## Recorded owner policies and pending release actions
 
 `metadata.template.json` remains a UI worksheet, not a Zenodo API payload.  It

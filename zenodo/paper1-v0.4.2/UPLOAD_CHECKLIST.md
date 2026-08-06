@@ -16,6 +16,15 @@ Publication date, DOI, and final commit values remain null under their stated
 policies.  Draft creation, freeze, submission, deposit, and publication remain
 unperformed and unauthorized.  No DOI reservation is requested.
 
+The fresh `2026-08-06T2315Z` predraft literature gate is complete: it compares
+722 records to the 1123Z predecessor with zero added/missing, metadata,
+screening, version, and candidate deltas, and retains both tracked IDs at
+`v1`.  This exact handoff may be used to **Save draft** (not publish) after
+the owner completes this checklist.  Publication, push, DOI, and other owner
+release gates remain false; remote visibility is still pending owner
+verification.  A later draft-save attempt, freeze, or deposit requires a new
+timestamped gate.
+
 ## 0. Owner decisions before packaging
 
 - [ ] The owner has selected the final source commit and final verified PDF.
@@ -35,7 +44,7 @@ owner fields are intentionally not silently filled by these tools.
 From the repository root, with the final generated PDF present:
 
 ```powershell
-uv run python scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check
+uv run python scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py --check
 uv run python zenodo/paper1-v0.4.2/build_paper1_bundle.py `
   --output-dir ..\paper1-v0.4.2-upload `
   --commit <owner-approved-final-commit>
@@ -131,7 +140,8 @@ current provenance or a current upload candidate.
 
 ## 5. Save draft, preview, and publish gate
 
-- [ ] Save the Zenodo draft; do not publish yet.
+- [ ] This exact 2315Z-gated handoff may be used to **Save draft**; do not
+      publish yet.
 - [ ] Check title, creator, ORCID, affiliation, resource type, version,
       description, keywords, license/date/relations in the preview.
 - [ ] Confirm the displayed upload file list is exactly the selected layout
@@ -141,9 +151,9 @@ current provenance or a current upload candidate.
 - [ ] Give the owner the draft URL, the exact commit recorded in both
       `source_commit_binding` and the external receipt, all recorded SHA-256
       values, layout, and owner-only metadata choices.
-- [ ] Immediately before publication, run and record a fresh date-stamped
-      literature gate; if it finds material change, stop and resolve it before
-      any publication approval.
+- [ ] Before any later draft-save action, manuscript freeze, deposit, or
+      publication, run and record a newly timestamped literature gate.  If it
+      finds material change, stop and resolve it before any approval.
 - [ ] Obtain explicit owner approval to publish this draft.
 - [ ] Publish once; do not overwrite the v0.3.9 software record.
 

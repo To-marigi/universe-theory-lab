@@ -69,105 +69,106 @@ ZENODO_LITERATURE_NOTE_PATH = (
     "references/notes/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md"
 )
 ZENODO_PREDRAFT_REPORT_PATH = (
-    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
+    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260806T2315Z.md"
 )
 ZENODO_PREDRAFT_NOTE_PATH = (
-    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
+    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260806T2315Z.md"
 )
 ZENODO_PREDRAFT_NORMALIZER_PATH = (
-    "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py"
+    "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py"
 )
 ZENODO_PREDRAFT_LEDGER_PATH = (
-    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_normalized.json"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_normalized.json"
 )
 ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH = (
-    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_full_overlap_atom.xml"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_full_overlap_atom.xml"
 )
 ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH = (
-    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_exact_ids_atom.xml"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_exact_ids_atom.xml"
 )
 ZENODO_PREDRAFT_RECEIPT_PATH = (
-    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_retrieval.json"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_retrieval.json"
 )
-ZENODO_PREDRAFT_SOURCE_ID = "arXiv:PaperI-zenodo-predraft-gate-2026-08-06T1123Z"
+ZENODO_PREDRAFT_SOURCE_ID = "arXiv:PaperI-zenodo-predraft-gate-2026-08-06T2315Z"
 ZENODO_PREDRAFT_GATE_STATUS = (
-    "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_PREDRAFT_GATE_AS_OF_2026-08-06T11:28:07Z"
+    "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_PREDRAFT_GATE_AS_OF_2026-08-06T23:16:23Z"
 )
-ZENODO_PREDRAFT_FEED_CUTOFF = "2026-08-06T11:28:07Z"
+ZENODO_PREDRAFT_GATE_TRIGGER_UTC = "2026-08-06T23:15:00Z"
+ZENODO_PREDRAFT_FEED_CUTOFF = "2026-08-06T23:16:23Z"
 ZENODO_PREDRAFT_ARTIFACT_HASHES = {
     ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH: (
-        "a7e0bef901b70998fa64d3f4f6f7e8882ee8b7508ea935f9cafc664ce1218cf4",
+        "5755490b293f9cd8e78217de7ea01e4799ffbb1df04daa0d4f411974caf7b373",
         1422899,
     ),
     ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH: (
-        "fbe8a6498392001e23a85ca9cd6765fc404de1f915acc0a4d4fd4761b8bdba43",
+        "eff76a847e3b02a01041fd8185e38bbaba93ec769ca037c903719f0062b920eb",
         5201,
     ),
     ZENODO_PREDRAFT_RECEIPT_PATH: (
-        "0b56aa1a0cc49f023110d8f19e3ef7772f22eda92848403f1f624daaa8784428",
+        "fbe9b22defc23e84627339f9844ea8c8078ce96e563c6dfca0f559c57b933523",
         2004,
     ),
     ZENODO_PREDRAFT_LEDGER_PATH: (
-        "4066604659f286dcdb134e295bd2c31c1736c7583a4ac2c8d51d65eeb9a84f6b",
-        700160,
+        "084e69f06f31c93e5f7b9394da15e088733b45074dc7d59920e86507c516c456",
+        655325,
     ),
     ZENODO_PREDRAFT_NORMALIZER_PATH: (
-        "c81340e55fadbb1edc2b57ee35386a2ef811436877cc3b5149ed30e0574ccb98",
-        44395,
+        "a1e5280ef034b95cd43c5fb3a91c3af43404d7f7e7c44c6acf36568ae9d24d44",
+        44269,
     ),
     ZENODO_PREDRAFT_REPORT_PATH: (
+        "9910c0df61ffc64d19fbe3a1eacc4fbdfe8c7335e4cc21912460dbe8b7243901",
+        3580,
+    ),
+    ZENODO_PREDRAFT_NOTE_PATH: (
+        "aca9b76bf484e0467d32b7b66e4f3ccc9ee2cf077937996ab1c43e2b4bd7002b",
+        1675,
+    ),
+}
+ZENODO_PREDRAFT_PREDECESSOR_SOURCE_ID = (
+    "arXiv:PaperI-zenodo-predraft-gate-2026-08-06T1123Z"
+)
+ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH = (
+    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
+)
+ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH = (
+    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
+)
+ZENODO_PREDRAFT_PREDECESSOR_DOCUMENT_HASHES = {
+    ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH: (
         "2d6557fb5e01c02fb2d9ca050440118305153013622b8716733ed8fa036623e9",
         9590,
     ),
-    ZENODO_PREDRAFT_NOTE_PATH: (
+    ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH: (
         "48e0dce188b74abdc7a5b1d8c02f49286eccc164406cefd3827236ec5a916764",
         8015,
     ),
 }
 ZENODO_PREDRAFT_DELTA_CONTRACT = {
-    "added_count": 178,
+    "added_count": 0,
     "added_ids_sha256": (
-        "13812bafc110aa41761be9733585fcc4dcdb6dfb3ae83e42cf24de867df89dc6"
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     ),
-    "missing_count": 12,
+    "missing_count": 0,
     "missing_ids_sha256": (
-        "e6ab3dd1239a3304cc10db37d989f4a5b95569b451c786cdd5d7e767c5bb3daa"
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     ),
-    "version_pair_count": 178,
+    "version_pair_count": 0,
     "version_pairs_sha256": (
-        "3c2dc8184c8d1a2b28ae739e85020bc5e423383f3f0e14ae7a3e6bc70e09b23b"
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     ),
-    "replacement_base_ids": [
-        "2607.29501",
-        "2608.00710",
-        "2608.01121",
-        "2608.01680",
-        "2608.01774",
-        "2608.02350",
-        "2608.02546",
-        "2608.02652",
-        "2608.03697",
-        "2608.03714",
-        "2608.03828",
-        "2608.03987",
-    ],
-    "new_no_target_count": 173,
-    "new_rule_triggered_ids": [
-        "2608.04263v1",
-        "2608.04456v1",
-        "2608.04685v1",
-        "2608.04947v1",
-        "2608.05077v1",
-    ],
+    "replacement_base_ids": [],
+    "new_no_target_count": 0,
+    "new_rule_triggered_ids": [],
     "new_rule_triggered_ids_sha256": (
-        "4d8ae8e5a42b5ce970c6297ba85372f26c5e325b7af8d9f494f92c0807209087"
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     ),
-    "prior_candidate_count": 23,
+    "prior_candidate_count": 28,
     "predraft_candidate_count": 28,
-    "shared_metadata_changed_ids": ["2608.02182v1", "2608.02458v1"],
+    "shared_metadata_changed_ids": [],
     "shared_screening_changed_ids": [],
     "shared_metadata_review_ids_sha256": (
-        "ec8a00b5ff3693ce402ec32906fa1adcbd6d59f872e2cc95fe490593f91d3425"
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     ),
 }
 FINAL_REBIND_STATUSES = frozenset(
@@ -250,7 +251,7 @@ REQUIRED_REPRODUCING_FRAGMENTS = (
     "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED",
     "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
     "scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check",
-    "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py --check",
+    "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py --check",
 )
 
 
@@ -389,12 +390,22 @@ DEFAULT_SOURCE_FILE_SPECS: tuple[FileSpec, ...] = (
     FileSpec(
         ZENODO_PREDRAFT_REPORT_PATH,
         ZENODO_PREDRAFT_REPORT_PATH,
-        "zenodo_predraft_literature_gate_report_without_raw_feed",
+        "current_zenodo_predraft_literature_gate_report_without_raw_feed",
     ),
     FileSpec(
         ZENODO_PREDRAFT_NOTE_PATH,
         ZENODO_PREDRAFT_NOTE_PATH,
-        "zenodo_predraft_literature_gate_note_without_raw_feed",
+        "current_zenodo_predraft_literature_gate_note_without_raw_feed",
+    ),
+    FileSpec(
+        ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH,
+        ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH,
+        "historical_zenodo_predraft_predecessor_report_without_raw_feed",
+    ),
+    FileSpec(
+        ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH,
+        ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH,
+        "historical_zenodo_predraft_predecessor_note_without_raw_feed",
     ),
 )
 
@@ -406,7 +417,8 @@ EXCLUDED_SCOPE = {
     "raw_literature_query_artifacts": (
         "references/papers/2026-08-05_paper1_arxiv_delta_query_*, "
         "references/papers/2026-08-06_paper1_zenodo_gate_*, and "
-        "references/papers/2026-08-06_paper1_zenodo_predraft_*"
+        "references/papers/2026-08-06_paper1_zenodo_predraft_*, and "
+        "references/papers/2026-08-07_paper1_zenodo_predraft_*"
     ),
     "pdf_in_supplement": PDF_SOURCE_PATH,
     "repository_snapshot": "all files outside this explicit supplement manifest",
@@ -863,35 +875,68 @@ def _validate_metadata_template(
     }
 
 
-def _validate_zenodo_predraft_gate(root: Path) -> dict[str, Any]:
-    """Validate the fresh predraft gate while excluding its raw artifacts."""
+def _predraft_predecessor_binding() -> dict[str, Any]:
+    """Return the immutable 1123Z evidence retained only as supplement history."""
 
-    paths = {
-        path: root / Path(path) for path in ZENODO_PREDRAFT_ARTIFACT_HASHES
+    def document(path: str, role: str) -> dict[str, Any]:
+        sha256, bytes_count = ZENODO_PREDRAFT_PREDECESSOR_DOCUMENT_HASHES[path]
+        return {
+            "path": path,
+            "raw_sha256": sha256,
+            "bytes": bytes_count,
+            "role": role,
+        }
+
+    return {
+        "source_id": ZENODO_PREDRAFT_PREDECESSOR_SOURCE_ID,
+        "gate_trigger_utc": "2026-08-06T11:23:00Z",
+        "feed_cutoff_utc": "2026-08-06T11:28:07Z",
+        "report": document(
+            ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH,
+            "HISTORICAL_PREDECESSOR_REPORT_INCLUDED_IN_ZENODO_SUPPLEMENT",
+        ),
+        "research_note": document(
+            ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH,
+            "HISTORICAL_PREDECESSOR_NOTE_INCLUDED_IN_ZENODO_SUPPLEMENT",
+        ),
     }
+
+
+def _validate_zenodo_predraft_gate(root: Path) -> dict[str, Any]:
+    """Fail closed on the current 2315Z gate and its historical document context."""
+
+    paths = {path: root / Path(path) for path in ZENODO_PREDRAFT_ARTIFACT_HASHES}
     for source_path, path in paths.items():
         if not path.is_file():
-            raise FileNotFoundError(
-                f"Zenodo predraft gate artifact is missing: {source_path}"
-            )
+            raise FileNotFoundError(f"Zenodo predraft gate artifact is missing: {source_path}")
         expected_sha, expected_bytes = ZENODO_PREDRAFT_ARTIFACT_HASHES[source_path]
-        actual_bytes = path.stat().st_size
-        actual_sha = _sha256(path)
-        if (actual_sha, actual_bytes) != (expected_sha, expected_bytes):
+        if (_sha256(path), path.stat().st_size) != (expected_sha, expected_bytes):
             raise RuntimeError(
                 "Zenodo predraft gate artifact hash/size drifted: "
-                f"{source_path} ({actual_sha}, {actual_bytes})"
+                f"{source_path} ({_sha256(path)}, {path.stat().st_size})"
+            )
+    for source_path, (expected_sha, expected_bytes) in (
+        ZENODO_PREDRAFT_PREDECESSOR_DOCUMENT_HASHES.items()
+    ):
+        path = root / source_path
+        if not path.is_file():
+            raise FileNotFoundError(
+                f"Zenodo predraft predecessor document is missing: {source_path}"
+            )
+        if (_sha256(path), path.stat().st_size) != (expected_sha, expected_bytes):
+            raise RuntimeError(
+                "Zenodo predraft predecessor document hash/size drifted: "
+                f"{source_path} ({_sha256(path)}, {path.stat().st_size})"
             )
 
     ledger = _load_json(paths[ZENODO_PREDRAFT_LEDGER_PATH], "Zenodo predraft ledger")
-    if ledger.get("schema_version") != "1.4":
-        raise RuntimeError("Zenodo predraft ledger schema version drifted")
-    if ledger.get("source_id") != ZENODO_PREDRAFT_SOURCE_ID:
-        raise RuntimeError("Zenodo predraft source ID drifted")
-    if ledger.get("gate_status") != ZENODO_PREDRAFT_GATE_STATUS:
-        raise RuntimeError("Zenodo predraft gate status drifted")
-    raw_response = ledger.get("raw_response")
-    if raw_response != {
+    if (
+        ledger.get("schema_version") != "1.4"
+        or ledger.get("source_id") != ZENODO_PREDRAFT_SOURCE_ID
+        or ledger.get("gate_status") != ZENODO_PREDRAFT_GATE_STATUS
+    ):
+        raise RuntimeError("Zenodo predraft ledger identity/status drifted")
+    expected_raw = {
         "path": ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH,
         "sha256": ZENODO_PREDRAFT_ARTIFACT_HASHES[
             ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH
@@ -900,46 +945,57 @@ def _validate_zenodo_predraft_gate(root: Path) -> dict[str, Any]:
             ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH
         ][1],
         "feed_updated_utc": ZENODO_PREDRAFT_FEED_CUTOFF,
-    }:
+    }
+    if ledger.get("raw_response") != expected_raw:
         raise RuntimeError("Zenodo predraft full-overlap response binding drifted")
-    if ledger.get("response_entry_count") != 722:
-        raise RuntimeError("Zenodo predraft response entry count drifted")
-    if ledger.get("entries_published_in_submitted_date_window") != 722:
-        raise RuntimeError("Zenodo predraft submitted-date count drifted")
-    if ledger.get("entries_published_outside_submitted_date_window") != 0:
-        raise RuntimeError("Zenodo predraft out-of-window count drifted")
-    if ledger.get("entries_published_at_or_before_feed_cutoff") != 722:
-        raise RuntimeError("Zenodo predraft cutoff count drifted")
-    if ledger.get("entries_published_after_feed_cutoff") != 0:
-        raise RuntimeError("Zenodo predraft post-cutoff count drifted")
-    screening = ledger.get("screening")
-    if not isinstance(screening, dict) or screening.get("decision_counts") != {
-        "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 694,
-        "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 28,
-        "MATERIAL_DELTA_TO_C1_C5": 0,
-    }:
-        raise RuntimeError("Zenodo predraft screening decision counts drifted")
-    if screening.get("material_delta_ids") != []:
-        raise RuntimeError("Zenodo predraft material delta IDs are not empty")
-    reconciliation = ledger.get("reconciliation")
-    if not isinstance(reconciliation, dict) or (
-        reconciliation.get("id_set_equal") is not False
-        or reconciliation.get("metadata_equal_by_id") is not False
-        or reconciliation.get("metadata_changes_reviewed") is not True
-        or reconciliation.get("reviewed_metadata_changed_ids")
-        != ["2608.02182v1", "2608.02458v1"]
-        or reconciliation.get("screening_decisions_equal_by_shared_versioned_id")
-        is not True
+    if (
+        ledger.get("response_entry_count") != 722
+        or ledger.get("entries_published_in_submitted_date_window") != 722
+        or ledger.get("entries_published_outside_submitted_date_window") != 0
+        or ledger.get("entries_published_at_or_before_feed_cutoff") != 722
+        or ledger.get("entries_published_after_feed_cutoff") != 0
     ):
-        raise RuntimeError("Zenodo predraft metadata review contract drifted")
+        raise RuntimeError("Zenodo predraft response-count contract drifted")
+    screening = ledger.get("screening")
+    if not isinstance(screening, dict) or (
+        screening.get("decision_counts")
+        != {
+            "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 694,
+            "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 28,
+            "MATERIAL_DELTA_TO_C1_C5": 0,
+        }
+        or screening.get("material_delta_ids") != []
+        or len(screening.get("inspected_candidate_ids", [])) != 28
+    ):
+        raise RuntimeError("Zenodo predraft screening/candidate contract drifted")
+    reconciliation = ledger.get("reconciliation")
+    expected_reconciliation = {
+        "id_set_equal": True,
+        "metadata_equal_by_id": True,
+        "metadata_changes_reviewed": True,
+        "reviewed_metadata_changed_ids": [],
+        "screening_decisions_equal_by_shared_versioned_id": True,
+        "materiality_reassessment_status": "COMPLETED_REVIEWED_NO_MATERIAL_DELTA",
+    }
+    if not isinstance(reconciliation, dict) or any(
+        reconciliation.get(key) != value for key, value in expected_reconciliation.items()
+    ):
+        raise RuntimeError("Zenodo predraft zero-delta reconciliation drifted")
 
     predraft = ledger.get("predraft_gate_recheck")
-    if not isinstance(predraft, dict):
-        raise RuntimeError("Zenodo predraft recheck section is missing")
-    if predraft.get("gate_trigger_utc") != "2026-08-06T11:23:00Z":
-        raise RuntimeError("Zenodo predraft gate trigger drifted")
+    if not isinstance(predraft, dict) or (
+        predraft.get("gate_trigger_utc") != ZENODO_PREDRAFT_GATE_TRIGGER_UTC
+    ):
+        raise RuntimeError("Zenodo predraft gate trigger/recheck drifted")
     exact_checks = predraft.get("exact_id_checks")
+    expected_exact_raw = {
+        "path": ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH,
+        "sha256": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH][0],
+        "bytes": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH][1],
+        "feed_updated_utc": "2026-08-06T23:16:27Z",
+    }
     expected_exact = {
+        "raw_response": expected_exact_raw,
         "response_entry_count": 2,
         "versions": {"2603.25503": "v1", "2607.26672": "v1"},
         "status": "BOTH_TRACKED_RECORDS_REMAIN_V1",
@@ -949,30 +1005,36 @@ def _validate_zenodo_predraft_gate(root: Path) -> dict[str, Any]:
     ):
         raise RuntimeError("Zenodo predraft exact-ID version contract drifted")
     comparison = predraft.get("full_overlap_comparison")
-    if not isinstance(comparison, dict):
-        raise RuntimeError("Zenodo predraft full-overlap comparison is missing")
-    if (
-        comparison.get("metadata_changed_ids")
-        != ["2608.02182v1", "2608.02458v1"]
-        or comparison.get("screening_changed_ids") != []
+    expected_zero_lists = {
+        "added_ids": [],
+        "missing_ids": [],
+        "metadata_changed_ids": [],
+        "screening_changed_ids": [],
+        "version_pair_diagnostics": [],
+        "material_delta_ids": [],
+    }
+    if not isinstance(comparison, dict) or (
+        comparison.get("query_semantics_equal") is not True
+        or comparison.get("feed_cutoff_monotone") is not True
+        or comparison.get("id_set_equal") is not True
+        or comparison.get("reviewed_delta_contract") != ZENODO_PREDRAFT_DELTA_CONTRACT
+        or any(comparison.get(key) != value for key, value in expected_zero_lists.items())
     ):
-        raise RuntimeError("Zenodo predraft full-overlap metadata review drifted")
-    delta = comparison.get("reviewed_delta_contract")
-    if delta != ZENODO_PREDRAFT_DELTA_CONTRACT:
-        raise RuntimeError("Zenodo predraft reviewed versioned-ID delta contract drifted")
+        raise RuntimeError("Zenodo predraft zero-delta comparison contract drifted")
     title_abstract = predraft.get("title_abstract_rescreen")
     if not isinstance(title_abstract, dict) or (
         title_abstract.get("records_screened") != 722
         or title_abstract.get("rule_triggered_candidates") != 28
+        or title_abstract.get("candidate_ids_sha256")
+        != "7ebcd847c96b580085620402edef3c4e6c0560054c5587c54ebc9b5b6898a77f"
+        or title_abstract.get("candidate_metadata_changed_ids") != []
         or title_abstract.get("candidate_decision_changed_ids") != []
         or title_abstract.get("material_delta_ids") != []
         or title_abstract.get("status") != "COMPLETED_REVIEWED_NO_MATERIAL_DELTA"
     ):
-        raise RuntimeError("Zenodo predraft title/abstract rescreen contract drifted")
+        raise RuntimeError("Zenodo predraft title/abstract zero-delta contract drifted")
     receipt = _load_json(paths[ZENODO_PREDRAFT_RECEIPT_PATH], "Zenodo predraft receipt")
     retrievals = receipt.get("retrievals")
-    if not isinstance(retrievals, dict):
-        raise RuntimeError("Zenodo predraft retrieval receipt is malformed")
     expected_retrievals = {
         "full_overlap": (
             ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH,
@@ -983,6 +1045,8 @@ def _validate_zenodo_predraft_gate(root: Path) -> dict[str, Any]:
             ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH],
         ),
     }
+    if not isinstance(retrievals, dict):
+        raise RuntimeError("Zenodo predraft retrieval receipt is malformed")
     for key, (path, (sha, size)) in expected_retrievals.items():
         record = retrievals.get(key)
         if not isinstance(record, dict) or (
@@ -995,31 +1059,31 @@ def _validate_zenodo_predraft_gate(root: Path) -> dict[str, Any]:
 
     report_text = paths[ZENODO_PREDRAFT_REPORT_PATH].read_text(encoding="utf-8")
     note_text = paths[ZENODO_PREDRAFT_NOTE_PATH].read_text(encoding="utf-8")
-    report_fragments = (
-        ZENODO_PREDRAFT_GATE_STATUS,
-        "| Returned and screened records | 722 |",
-        "| Material delta to C1",
-        "The fresh response has 178 added IDs and 12 missing old IDs.",
-    )
-    note_fragments = (
-        f"`{ZENODO_PREDRAFT_FEED_CUTOFF}` contains 722 screened",
-        "The 28 title/abstract-inspected records are all nonmaterial to C1--C5.",
-        "178 added versioned",
-    )
-    all_contract_digests = tuple(
-        value
-        for key, value in ZENODO_PREDRAFT_DELTA_CONTRACT.items()
-        if key.endswith("sha256")
-    )
-    for label, text, fragments in (
-        ("report", report_text, report_fragments),
-        ("research note", note_text, note_fragments),
-    ):
-        missing = [
-            fragment
-            for fragment in fragments + all_contract_digests
-            if fragment not in text
-        ]
+    required_text = {
+        "report": (
+            report_text,
+            (
+                ZENODO_PREDRAFT_GATE_STATUS,
+                ZENODO_PREDRAFT_SOURCE_ID,
+                "Versioned-ID additions: none.  Missing versioned IDs: none.",
+                "Title deltas: none.  Abstract-hash deltas: none.  Category deltas: none.",
+                "Version replacements: none.  Screening-decision deltas: none.",
+                "arXiv:2603.25503v1",
+                "arXiv:2607.26672v1",
+            ),
+        ),
+        "research note": (
+            note_text,
+            (
+                ZENODO_PREDRAFT_SOURCE_ID,
+                ZENODO_PREDRAFT_FEED_CUTOFF,
+                "no added or missing versioned ID",
+                "same 28 rule-triggered title/abstract records",
+            ),
+        ),
+    }
+    for label, (text, fragments) in required_text.items():
+        missing = [fragment for fragment in fragments if fragment not in text]
         if missing:
             raise RuntimeError(f"Zenodo predraft {label} binding drifted: {missing}")
 
@@ -1037,17 +1101,18 @@ def _validate_zenodo_predraft_gate(root: Path) -> dict[str, Any]:
             ZENODO_PREDRAFT_LEDGER_PATH,
         )
     ]
+    predecessor = _predraft_predecessor_binding()
     return {
         "source_id": ZENODO_PREDRAFT_SOURCE_ID,
         "status": ZENODO_PREDRAFT_GATE_STATUS,
-        "gate_trigger_utc": "2026-08-06T11:23:00Z",
+        "gate_trigger_utc": ZENODO_PREDRAFT_GATE_TRIGGER_UTC,
         "feed_cutoff_utc": ZENODO_PREDRAFT_FEED_CUTOFF,
         "response_entry_count": 722,
         "reviewed_title_abstract_count": 28,
         "material_delta_count": 0,
-        "metadata_equal_by_id": False,
+        "metadata_equal_by_id": True,
         "metadata_changes_reviewed": True,
-        "reviewed_metadata_changed_ids": ["2608.02182v1", "2608.02458v1"],
+        "reviewed_metadata_changed_ids": [],
         "report": {
             "path": ZENODO_PREDRAFT_REPORT_PATH,
             "raw_sha256": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_REPORT_PATH][0],
@@ -1060,13 +1125,14 @@ def _validate_zenodo_predraft_gate(root: Path) -> dict[str, Any]:
             "bytes": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_NOTE_PATH][1],
             "role": "RESEARCH_NOTE_INCLUDED_IN_ZENODO_SUPPLEMENT",
         },
+        "historical_predecessor": predecessor,
         "normalizer": {
             "path": ZENODO_PREDRAFT_NORMALIZER_PATH,
             "raw_sha256": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_NORMALIZER_PATH][0],
             "bytes": ZENODO_PREDRAFT_ARTIFACT_HASHES[ZENODO_PREDRAFT_NORMALIZER_PATH][1],
             "check_command": (
                 ".venv\\Scripts\\python.exe "
-                "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py "
+                "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py "
                 "--check"
             ),
             "role": "REPOSITORY_REPRODUCTION_SCRIPT_NOT_INCLUDED_IN_SUPPLEMENT",
@@ -1075,7 +1141,11 @@ def _validate_zenodo_predraft_gate(root: Path) -> dict[str, Any]:
         "reviewed_delta_contract": ZENODO_PREDRAFT_DELTA_CONTRACT,
         "tracked_exact_ids": ["arXiv:2607.26672", "arXiv:2603.25503"],
         "supplement_member_policy": {
-            "included_paths": [ZENODO_PREDRAFT_REPORT_PATH, ZENODO_PREDRAFT_NOTE_PATH],
+            "current_authority_paths": [ZENODO_PREDRAFT_REPORT_PATH, ZENODO_PREDRAFT_NOTE_PATH],
+            "historical_predecessor_paths": [
+                ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH,
+                ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH,
+            ],
             "excluded_raw_and_derived_paths": [item["path"] for item in excluded_artifacts],
         },
     }

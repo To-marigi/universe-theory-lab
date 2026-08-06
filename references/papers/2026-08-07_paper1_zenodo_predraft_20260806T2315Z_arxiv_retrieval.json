@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "user_agent": "universe-theory-lab/0.4.2 (Paper I Zenodo predraft literature gate)",
+  "authorization_boundary": {
+    "technical_literature_gate_only": true,
+    "manuscript_freeze_authorized": false,
+    "submission_authorized": false,
+    "deposit_authorized": false,
+    "publication_authorized": false,
+    "owner_only": true
+  },
+  "retrievals": {
+    "full_overlap": {
+      "requested_url": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608062359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list=",
+      "request_started_utc": "2026-08-06T23:16:22.330Z",
+      "retrieved_utc": "2026-08-06T23:16:24.260Z",
+      "http_status": 200,
+      "content_type": "application/atom+xml",
+      "path": "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_full_overlap_atom.xml",
+      "sha256": "5755490b293f9cd8e78217de7ea01e4799ffbb1df04daa0d4f411974caf7b373",
+      "bytes": 1422899
+    },
+    "exact_ids": {
+      "requested_url": "https://arxiv.org/api/query?id_list=2607.26672,2603.25503&start=0&max_results=2",
+      "request_started_utc": "2026-08-06T23:16:27.262Z",
+      "retrieved_utc": "2026-08-06T23:16:27.941Z",
+      "http_status": 200,
+      "content_type": "application/atom+xml",
+      "path": "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_exact_ids_atom.xml",
+      "sha256": "eff76a847e3b02a01041fd8185e38bbaba93ec769ca037c903719f0062b920eb",
+      "bytes": 5201
+    }
+  },
+  "claim_boundary": "This receipt records two official arXiv API HTTP responses and their local hashes. It supplies no literature, novelty, priority, absence, or publication claim. This artifact closes only a technical literature-delta gate. It does not authorize manuscript freeze, submission, deposit, or publication; all such actions are owner-only and remain unapproved."
+}

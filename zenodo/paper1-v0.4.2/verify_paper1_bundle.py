@@ -42,107 +42,114 @@ OWNER_DECISION_REPORT_PATH = (
 DOI_POLICY = "NO_DRAFT_RESERVATION_ZENODO_REGISTERS_DOI_AT_PUBLICATION"
 DOI_STATUS = "NO_DRAFT_RESERVATION_DOI_PENDING_PUBLICATION"
 ZENODO_PREDRAFT_REPORT_PATH = (
-    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
+    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260806T2315Z.md"
 )
 ZENODO_PREDRAFT_NOTE_PATH = (
-    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
+    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260806T2315Z.md"
 )
 ZENODO_PREDRAFT_NORMALIZER_PATH = (
-    "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py"
+    "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py"
 )
 ZENODO_PREDRAFT_LEDGER_PATH = (
-    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_normalized.json"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_normalized.json"
 )
 ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH = (
-    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_full_overlap_atom.xml"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_full_overlap_atom.xml"
 )
 ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH = (
-    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_exact_ids_atom.xml"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_exact_ids_atom.xml"
 )
 ZENODO_PREDRAFT_RECEIPT_PATH = (
-    "references/papers/2026-08-06_paper1_zenodo_predraft_20260806T1123Z_arxiv_retrieval.json"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_retrieval.json"
 )
-ZENODO_PREDRAFT_SOURCE_ID = "arXiv:PaperI-zenodo-predraft-gate-2026-08-06T1123Z"
+ZENODO_PREDRAFT_SOURCE_ID = "arXiv:PaperI-zenodo-predraft-gate-2026-08-06T2315Z"
 ZENODO_PREDRAFT_GATE_STATUS = (
-    "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_PREDRAFT_GATE_AS_OF_2026-08-06T11:28:07Z"
+    "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_PREDRAFT_GATE_AS_OF_2026-08-06T23:16:23Z"
 )
-ZENODO_PREDRAFT_FEED_CUTOFF = "2026-08-06T11:28:07Z"
+ZENODO_PREDRAFT_GATE_TRIGGER_UTC = "2026-08-06T23:15:00Z"
+ZENODO_PREDRAFT_FEED_CUTOFF = "2026-08-06T23:16:23Z"
 ZENODO_PREDRAFT_ARTIFACT_HASHES = {
     ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH: (
-        "a7e0bef901b70998fa64d3f4f6f7e8882ee8b7508ea935f9cafc664ce1218cf4",
+        "5755490b293f9cd8e78217de7ea01e4799ffbb1df04daa0d4f411974caf7b373",
         1422899,
     ),
     ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH: (
-        "fbe8a6498392001e23a85ca9cd6765fc404de1f915acc0a4d4fd4761b8bdba43",
+        "eff76a847e3b02a01041fd8185e38bbaba93ec769ca037c903719f0062b920eb",
         5201,
     ),
     ZENODO_PREDRAFT_RECEIPT_PATH: (
-        "0b56aa1a0cc49f023110d8f19e3ef7772f22eda92848403f1f624daaa8784428",
+        "fbe9b22defc23e84627339f9844ea8c8078ce96e563c6dfca0f559c57b933523",
         2004,
     ),
     ZENODO_PREDRAFT_LEDGER_PATH: (
-        "4066604659f286dcdb134e295bd2c31c1736c7583a4ac2c8d51d65eeb9a84f6b",
-        700160,
+        "084e69f06f31c93e5f7b9394da15e088733b45074dc7d59920e86507c516c456",
+        655325,
     ),
     ZENODO_PREDRAFT_NORMALIZER_PATH: (
-        "c81340e55fadbb1edc2b57ee35386a2ef811436877cc3b5149ed30e0574ccb98",
-        44395,
+        "a1e5280ef034b95cd43c5fb3a91c3af43404d7f7e7c44c6acf36568ae9d24d44",
+        44269,
     ),
     ZENODO_PREDRAFT_REPORT_PATH: (
+        "9910c0df61ffc64d19fbe3a1eacc4fbdfe8c7335e4cc21912460dbe8b7243901",
+        3580,
+    ),
+    ZENODO_PREDRAFT_NOTE_PATH: (
+        "aca9b76bf484e0467d32b7b66e4f3ccc9ee2cf077937996ab1c43e2b4bd7002b",
+        1675,
+    ),
+}
+ZENODO_PREDRAFT_PREDECESSOR_SOURCE_ID = (
+    "arXiv:PaperI-zenodo-predraft-gate-2026-08-06T1123Z"
+)
+ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH = (
+    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
+)
+ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH = (
+    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
+)
+ZENODO_PREDRAFT_PREDECESSOR_DOCUMENT_HASHES = {
+    ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH: (
         "2d6557fb5e01c02fb2d9ca050440118305153013622b8716733ed8fa036623e9",
         9590,
     ),
-    ZENODO_PREDRAFT_NOTE_PATH: (
+    ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH: (
         "48e0dce188b74abdc7a5b1d8c02f49286eccc164406cefd3827236ec5a916764",
         8015,
     ),
 }
 ZENODO_PREDRAFT_DELTA_CONTRACT = {
-    "added_count": 178,
+    "added_count": 0,
     "added_ids_sha256": (
-        "13812bafc110aa41761be9733585fcc4dcdb6dfb3ae83e42cf24de867df89dc6"
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     ),
-    "missing_count": 12,
+    "missing_count": 0,
     "missing_ids_sha256": (
-        "e6ab3dd1239a3304cc10db37d989f4a5b95569b451c786cdd5d7e767c5bb3daa"
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     ),
-    "version_pair_count": 178,
+    "version_pair_count": 0,
     "version_pairs_sha256": (
-        "3c2dc8184c8d1a2b28ae739e85020bc5e423383f3f0e14ae7a3e6bc70e09b23b"
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     ),
-    "replacement_base_ids": [
-        "2607.29501",
-        "2608.00710",
-        "2608.01121",
-        "2608.01680",
-        "2608.01774",
-        "2608.02350",
-        "2608.02546",
-        "2608.02652",
-        "2608.03697",
-        "2608.03714",
-        "2608.03828",
-        "2608.03987",
-    ],
-    "new_no_target_count": 173,
-    "new_rule_triggered_ids": [
-        "2608.04263v1",
-        "2608.04456v1",
-        "2608.04685v1",
-        "2608.04947v1",
-        "2608.05077v1",
-    ],
+    "replacement_base_ids": [],
+    "new_no_target_count": 0,
+    "new_rule_triggered_ids": [],
     "new_rule_triggered_ids_sha256": (
-        "4d8ae8e5a42b5ce970c6297ba85372f26c5e325b7af8d9f494f92c0807209087"
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     ),
-    "prior_candidate_count": 23,
+    "prior_candidate_count": 28,
     "predraft_candidate_count": 28,
-    "shared_metadata_changed_ids": ["2608.02182v1", "2608.02458v1"],
+    "shared_metadata_changed_ids": [],
     "shared_screening_changed_ids": [],
     "shared_metadata_review_ids_sha256": (
-        "ec8a00b5ff3693ce402ec32906fa1adcbd6d59f872e2cc95fe490593f91d3425"
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     ),
 }
+FINAL_REBIND_STATUSES = frozenset(
+    {
+        "FINAL_VERIFIED_SOURCE_PDF_BINDING",
+        "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
+    }
+)
 OWNER_DECISION_PDF_SHA256 = (
     "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43"
 )
@@ -654,6 +661,33 @@ def _source_commit_binding_errors(
     return errors
 
 
+def _predraft_predecessor_binding() -> dict[str, Any]:
+    """Return the immutable 1123Z documents retained as supplemental history."""
+
+    def document(path: str, role: str) -> dict[str, Any]:
+        sha256, bytes_count = ZENODO_PREDRAFT_PREDECESSOR_DOCUMENT_HASHES[path]
+        return {
+            "path": path,
+            "raw_sha256": sha256,
+            "bytes": bytes_count,
+            "role": role,
+        }
+
+    return {
+        "source_id": ZENODO_PREDRAFT_PREDECESSOR_SOURCE_ID,
+        "gate_trigger_utc": "2026-08-06T11:23:00Z",
+        "feed_cutoff_utc": "2026-08-06T11:28:07Z",
+        "report": document(
+            ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH,
+            "HISTORICAL_PREDECESSOR_REPORT_INCLUDED_IN_ZENODO_SUPPLEMENT",
+        ),
+        "research_note": document(
+            ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH,
+            "HISTORICAL_PREDECESSOR_NOTE_INCLUDED_IN_ZENODO_SUPPLEMENT",
+        ),
+    }
+
+
 def _predraft_gate_errors(
     contents: dict[str, bytes],
     gate_binding: Any,
@@ -666,14 +700,14 @@ def _predraft_gate_errors(
     expected_scalars = {
         "source_id": ZENODO_PREDRAFT_SOURCE_ID,
         "status": ZENODO_PREDRAFT_GATE_STATUS,
-        "gate_trigger_utc": "2026-08-06T11:23:00Z",
+        "gate_trigger_utc": ZENODO_PREDRAFT_GATE_TRIGGER_UTC,
         "feed_cutoff_utc": ZENODO_PREDRAFT_FEED_CUTOFF,
         "response_entry_count": 722,
         "reviewed_title_abstract_count": 28,
         "material_delta_count": 0,
-        "metadata_equal_by_id": False,
+        "metadata_equal_by_id": True,
         "metadata_changes_reviewed": True,
-        "reviewed_metadata_changed_ids": ["2608.02182v1", "2608.02458v1"],
+        "reviewed_metadata_changed_ids": [],
         "tracked_exact_ids": ["arXiv:2607.26672", "arXiv:2603.25503"],
         "reviewed_delta_contract": ZENODO_PREDRAFT_DELTA_CONTRACT,
     }
@@ -709,6 +743,21 @@ def _predraft_gate_errors(
             else:
                 note_text = text
 
+    predecessor = _predraft_predecessor_binding()
+    if gate_binding.get("historical_predecessor") != predecessor:
+        errors.append("Zenodo predraft historical predecessor binding drifted")
+    for key in ("report", "research_note"):
+        record = predecessor[key]
+        path = record["path"]
+        payload = contents.get(path)
+        if payload is None:
+            errors.append(f"Zenodo predraft historical {key} is missing from supplement")
+        elif (
+            _sha256_bytes(payload) != record["raw_sha256"]
+            or len(payload) != record["bytes"]
+        ):
+            errors.append(f"Zenodo predraft historical {key} bytes do not match binding")
+
     normalizer = gate_binding.get("normalizer")
     expected_normalizer_sha, expected_normalizer_bytes = ZENODO_PREDRAFT_ARTIFACT_HASHES[
         ZENODO_PREDRAFT_NORMALIZER_PATH
@@ -719,7 +768,7 @@ def _predraft_gate_errors(
         "bytes": expected_normalizer_bytes,
         "check_command": (
             ".venv\\Scripts\\python.exe "
-            "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py "
+            "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py "
             "--check"
         ),
         "role": "REPOSITORY_REPRODUCTION_SCRIPT_NOT_INCLUDED_IN_SUPPLEMENT",
@@ -749,33 +798,34 @@ def _predraft_gate_errors(
                 f"{record['path']}"
             )
     expected_policy = {
-        "included_paths": [ZENODO_PREDRAFT_REPORT_PATH, ZENODO_PREDRAFT_NOTE_PATH],
+        "current_authority_paths": [ZENODO_PREDRAFT_REPORT_PATH, ZENODO_PREDRAFT_NOTE_PATH],
+        "historical_predecessor_paths": [
+            ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH,
+            ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH,
+        ],
         "excluded_raw_and_derived_paths": [record["path"] for record in expected_excluded],
     }
     if gate_binding.get("supplement_member_policy") != expected_policy:
         errors.append("Zenodo predraft supplement member policy drifted")
 
-    all_contract_digests = tuple(
-        value
-        for key, value in ZENODO_PREDRAFT_DELTA_CONTRACT.items()
-        if key.endswith("sha256")
-    )
     if report_text is not None:
         for fragment in (
             ZENODO_PREDRAFT_GATE_STATUS,
-            "| Returned and screened records | 722 |",
-            "| Material delta to C1",
-            "The fresh response has 178 added IDs and 12 missing old IDs.",
-            *all_contract_digests,
+            ZENODO_PREDRAFT_SOURCE_ID,
+            "Versioned-ID additions: none.  Missing versioned IDs: none.",
+            "Title deltas: none.  Abstract-hash deltas: none.  Category deltas: none.",
+            "Version replacements: none.  Screening-decision deltas: none.",
+            "arXiv:2603.25503v1",
+            "arXiv:2607.26672v1",
         ):
             if fragment not in report_text:
                 errors.append(f"Zenodo predraft report lacks {fragment!r}")
     if note_text is not None:
         for fragment in (
-            f"`{ZENODO_PREDRAFT_FEED_CUTOFF}` contains 722 screened",
-            "The 28 title/abstract-inspected records are all nonmaterial to C1--C5.",
-            "178 added versioned",
-            *all_contract_digests,
+            ZENODO_PREDRAFT_SOURCE_ID,
+            ZENODO_PREDRAFT_FEED_CUTOFF,
+            "no added or missing versioned ID",
+            "same 28 rule-triggered title/abstract records",
         ):
             if fragment not in note_text:
                 errors.append(f"Zenodo predraft research note lacks {fragment!r}")

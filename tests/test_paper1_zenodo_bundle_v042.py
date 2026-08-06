@@ -234,7 +234,7 @@ def _synthetic_root(builder: ModuleType, root: Path) -> tuple[object, ...]:
         "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED\n"
         "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED\n"
         "scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check\n"
-        "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py --check\n",
+        "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py --check\n",
         encoding="utf-8",
         newline="\n",
     )
@@ -242,6 +242,8 @@ def _synthetic_root(builder: ModuleType, root: Path) -> tuple[object, ...]:
     for source_path in (
         builder.ZENODO_PREDRAFT_REPORT_PATH,
         builder.ZENODO_PREDRAFT_NOTE_PATH,
+        builder.ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH,
+        builder.ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH,
         builder.ZENODO_PREDRAFT_NORMALIZER_PATH,
         builder.ZENODO_PREDRAFT_LEDGER_PATH,
         builder.ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH,
@@ -303,6 +305,16 @@ def _synthetic_root(builder: ModuleType, root: Path) -> tuple[object, ...]:
             builder.ZENODO_PREDRAFT_NOTE_PATH,
             builder.ZENODO_PREDRAFT_NOTE_PATH,
             "zenodo_predraft_note",
+        ),
+        builder.FileSpec(
+            builder.ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH,
+            builder.ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH,
+            "zenodo_predraft_predecessor_report",
+        ),
+        builder.FileSpec(
+            builder.ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH,
+            builder.ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH,
+            "zenodo_predraft_predecessor_note",
         ),
     )
     (root / "source").mkdir(parents=True, exist_ok=True)
@@ -443,10 +455,17 @@ def test_predraft_gate_report_note_are_bound_and_raw_artifacts_excluded(
     output = tmp_path / "upload"
     summary = builder.build_upload_set(root, output, specs=specs, revision=commit)
     gate = summary["zenodo_predraft_literature_gate"]
-    assert gate["feed_cutoff_utc"] == "2026-08-06T11:28:07Z"
+    assert gate["feed_cutoff_utc"] == "2026-08-06T23:16:23Z"
     assert gate["response_entry_count"] == 722
     assert gate["reviewed_title_abstract_count"] == 28
     assert gate["material_delta_count"] == 0
+    assert gate["metadata_equal_by_id"] is True
+    assert gate["reviewed_delta_contract"]["added_count"] == 0
+    assert gate["reviewed_delta_contract"]["missing_count"] == 0
+    assert gate["reviewed_delta_contract"]["version_pair_count"] == 0
+    assert gate["historical_predecessor"]["source_id"] == (
+        builder.ZENODO_PREDRAFT_PREDECESSOR_SOURCE_ID
+    )
     with tarfile.open(output / builder.UPLOAD_SUPPLEMENT_NAME, mode="r:gz") as inner:
         member_names = {
             member.name.split(f"{builder.SUPPLEMENT_PREFIX}/", 1)[-1]
@@ -454,8 +473,13 @@ def test_predraft_gate_report_note_are_bound_and_raw_artifacts_excluded(
         }
     assert builder.ZENODO_PREDRAFT_REPORT_PATH in member_names
     assert builder.ZENODO_PREDRAFT_NOTE_PATH in member_names
+    assert builder.ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH in member_names
+    assert builder.ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH in member_names
     assert builder.ZENODO_PREDRAFT_NORMALIZER_PATH not in member_names
     assert builder.ZENODO_PREDRAFT_LEDGER_PATH not in member_names
+    assert builder.ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH not in member_names
+    assert builder.ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH not in member_names
+    assert builder.ZENODO_PREDRAFT_RECEIPT_PATH not in member_names
     assert verifier.verify_upload_directory(output)["passed"]
 
 
@@ -473,6 +497,26 @@ def test_predraft_gate_report_tamper_fails_closed(
         newline="\n",
     )
     with pytest.raises(RuntimeError, match="Zenodo predraft gate artifact hash/size drifted"):
+        builder.build_upload_set(root, tmp_path / "upload", specs=specs)
+
+
+def test_predraft_gate_historical_predecessor_tamper_fails_closed(
+    builder: ModuleType,
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "repository"
+    root.mkdir()
+    specs = _synthetic_root(builder, root)
+    predecessor = root / builder.ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH
+    predecessor.write_text(
+        predecessor.read_text(encoding="utf-8") + "\nTampered.\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    with pytest.raises(
+        RuntimeError,
+        match="Zenodo predraft predecessor document hash/size drifted",
+    ):
         builder.build_upload_set(root, tmp_path / "upload", specs=specs)
 
 
@@ -757,6 +801,8 @@ def test_default_allowlist_uses_final_pdf_and_zenodo_literature_documents(
     assert builder.ZENODO_LITERATURE_NOTE_PATH in paths
     assert builder.ZENODO_PREDRAFT_REPORT_PATH in paths
     assert builder.ZENODO_PREDRAFT_NOTE_PATH in paths
+    assert builder.ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH in paths
+    assert builder.ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH in paths
     assert builder.ZENODO_PREDRAFT_NORMALIZER_PATH not in paths
     assert builder.ZENODO_PREDRAFT_LEDGER_PATH not in paths
     assert not any(path.startswith("references/papers/") for path in paths)
