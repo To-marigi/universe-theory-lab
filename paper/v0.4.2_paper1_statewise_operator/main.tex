@@ -17,7 +17,7 @@
   linkcolor=blue!55!black,
   citecolor=blue!55!black,
   urlcolor=blue!55!black,
-  pdftitle={Statewise versus operator Bell causality in finite quantum sequential growth},
+  pdftitle={Statewise versus operator Bell causality in finite quantum sequential growth: exact separation and recovery at dimension two},
   pdfauthor={Kenichi Osaki}
 }
 
@@ -43,15 +43,19 @@ quantum sequential growth: exact separation and recovery at dimension two}}
 \author{Kenichi Osaki\\
 \small Independent researcher\\
 \small ORCID: \href{https://orcid.org/0009-0003-9256-7089}{0009-0003-9256-7089}}
-\date{Paper I proof-complete release-candidate source, v0.4.2 -- 5 August 2026}
+\date{Paper I v0.4.2}
 
 \begin{document}
 \maketitle
 
 \begin{center}
-\small\emph{Claim-locked proof-complete source.  The theorem statements below
-are limited to the v0.4.2 Paper I claim ledger.  Proof completion and machine
-audit do not authorise submission, deposit, or manuscript freeze.}
+\small\emph{Claim-locked archive/submission candidate, Paper I v0.4.2.  The
+theorem statements below are limited to C1--C5 and the explicit nonclaims
+N1--N6.  The U2 boundary has two layers: scientifically,
+\texttt{SEARCH\_OPEN\_NO\_TERMINAL} with
+\texttt{SOFT\_RESOURCE\_LIMIT\_NONTERMINAL} and
+\texttt{u2\_is\_global\_terminal=false}; editorially,
+\texttt{PAPER\_I\_SCOPED\_U2\_RESOURCE\_OPEN\_LIMITATION\_ACCEPTED}.}
 \end{center}
 
 \begin{abstract}
@@ -69,6 +73,29 @@ reachable-visible witness are not claimed.  The bounded U2 auxiliary-ideal
 investigation is retained only as a reproducibility and resource-boundary
 record, not as a unit-ideal theorem.
 \end{abstract}
+
+\section{Data, code, and AI disclosure}
+
+The source, exact claim ledger, compact witness supplement, reproduction
+protocol, and bounded U2 limitation record are maintained in the project
+repository at
+\url{https://github.com/To-marigi/universe-theory-lab}.  The complete weak
+electronic ledger remains the authority; the compact supplement is an
+authenticated navigation and selected-witness layer, and third-party
+reference PDFs, extracted texts, and vendored archives are excluded from the
+submission supplement.  The exact repository revision selected for any
+external archive is recorded in the external Zenodo metadata at deposit; no
+revision or DOI is asserted by this article.
+
+OpenAI Codex (using the Luna and Sol agent scopes) was used for implementation
+planning, code and test scaffolding, exact-artifact and log inspection,
+performance checks, literature/provenance checks, and bounded prose drafting.
+Anthropic Claude was used for research-design discussion, symbolic
+cross-checks, prior-art and documentation review, and bounded prose drafting.
+The AI systems are neither authors nor independent proof authorities.  The
+human author selected the definitions, scope, budgets, evidence, and final
+wording, and retains full responsibility for every mathematical and editorial
+claim.  Release of this version requires the human owner's explicit approval.
 
 \section{Introduction and claim boundary}
 
@@ -105,12 +132,15 @@ that territory.  Its distinct center is the exact statewise weak/weak
 separation in Theorem~\ref{thm:c2}, together with the explicitly conditional
 recovery and proper-slice statements below.
 
-The comparison is bound to the versioned baseline and an archived 556-record
-arXiv \texttt{submittedDate} snapshot (feed 5 August 2026, 04:52:45 UTC).  It
-omits pre-window version updates; only Xu and Srivastava--Surya receive
-exact-ID checks.  Before submission, repeat both checks and decide separately
-whether broader update coverage is needed.  Xu's unavailable companion is
-uninspected.
+The comparison is bound to the versioned baseline and the latest archived
+Zenodo-preparation gate: a 556-record arXiv \texttt{submittedDate} snapshot
+(feed 6 August 2026, 00:47:37 UTC).  Relative to the immediately preceding
+gate, its versioned-ID set, normalized metadata, and screening decisions are
+unchanged, with zero material C1--C5 deltas; the separate exact-ID checks keep
+Xu and Srivastava--Surya at version~1.  The gate still omits general pre-window
+version updates and makes no novelty, priority, or absence claim.  A later
+deposit requires a fresh dated gate rather than reusing this observation.
+Xu's unavailable companion remains uninspected.
 
 \begin{table}[ht]
 \centering
@@ -1143,7 +1173,13 @@ work inferred from its results:
         \texttt{SOFT\_RESOURCE\_LIMIT\_NONTERMINAL}
 
         This status records a bounded computation and verified process cleanup;
-        it is neither an obstruction theorem nor a terminal verdict.
+        it is neither an obstruction theorem nor a terminal verdict, and
+        \texttt{u2\_is\_global\_terminal=false}.  The scientific layer is
+        therefore open, while the Paper I editorial layer accepts the scoped
+        limitation under
+        \texttt{PAPER\_I\_SCOPED\_U2\_RESOURCE\_OPEN\_LIMITATION\_ACCEPTED}.
+        A later manuscript freeze requires this explicit scoped limitation (or
+        a terminal SR2-V outcome), not a terminal result by itself.
 \end{description}
 
 \section{Reproducibility appendix}
@@ -1207,7 +1243,7 @@ The resource-boundary record for the U2 subroute is
 It has no theorem role beyond reproducibility and limitation reporting.
 
 \paragraph{Versioned software and resource ledger.}
-The release-candidate check uses Python 3.12.10 under the project constraint
+The archive/submission-candidate check uses Python 3.12.10 under the project constraint
 \path{>=3.12,<3.13}, uv 0.9.24, pytest 9.1.1, Ruff 0.13.3, and mypy 1.20.2.
 The PDF is built with the digest-pinned
 \path{texlive/texlive:latest-medium} image recorded in the manuscript
@@ -1221,11 +1257,15 @@ report.
 
 \section*{Manuscript status}
 
-This file is a proof-complete, machine-audited release-candidate source for
-the scoped claims C1--C5.  It is not a submission or deposit, is not frozen,
-and does not authorise either action.  The owner and manuscript-review gates
-remain pending, as does the required literature-delta recheck immediately
-before any future submission.
+Claim-locked archive/submission candidate, Paper I v0.4.2.  This file records
+the scoped claims C1--C5, the explicit nonclaims N1--N6, and the two-layer U2
+boundary: scientific status
+\path{SEARCH_OPEN_NO_TERMINAL}/
+\path{SOFT_RESOURCE_LIMIT_NONTERMINAL} with
+\path{u2_is_global_terminal=false}, and editorial disposition
+\path{PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED}.  Archive
+metadata, the exact repository commit, and any DOI are maintained externally
+to keep the PDF bytes stable.
 
 \bibliographystyle{plain}
 \bibliography{../v0.3.9_d2_commutativity_short_report/references,references}

@@ -26,6 +26,10 @@ REQUIRED_NONCLAIM_IDS = {
     "N5_U2_FULL_IDEAL",
     "N6_EXTENSIONS",
 }
+EDITORIAL_DISPOSITION = "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED"
+EDITORIAL_DISPOSITION_AUTHORITY = "reports/v0.4.2_paper1_editorial_disposition_2026-08-06.md"
+CLAIM_LEDGER_STATUS = "PAPER_I_SCOPED_ARCHIVE_SUBMISSION_CANDIDATE_NOT_FROZEN"
+PDF_SOURCE_REBIND_STATUS = "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED"
 C2_CLAIM_ID = "C2_SR2_WEAK_WEAK_SEPARATION"
 C2_OBSERVABILITY_PATH = "results/v0.4.2_sr2v_baseline_observability.json"
 C2_OBSERVABILITY_RAW_SHA256 = "4f57805e871c0589560669c5aa65181c29ca41cdf722420729279945770710de"
@@ -203,7 +207,7 @@ def validate_claim_boundary(root: Path) -> list[str]:
         errors,
     )
     _require(
-        data.get("status") == "SCOPED_MANUSCRIPT_ASSEMBLY_READY",
+        data.get("status") == CLAIM_LEDGER_STATUS,
         "ledger is not scoped-ready",
         errors,
     )
@@ -290,10 +294,84 @@ def validate_claim_boundary(root: Path) -> list[str]:
         "U2 full-unit theorem must remain unclaimed",
         errors,
     )
+    _require(
+        resource_boundary.get("scientific_global_sr2v_status") == "SEARCH_OPEN_NO_TERMINAL"
+        and resource_boundary.get("u2_is_global_terminal") is False,
+        "resource boundary scientific two-layer status changed",
+        errors,
+    )
+    _require(
+        resource_boundary.get("paper_I_editorial_disposition") == EDITORIAL_DISPOSITION
+        and resource_boundary.get("editorial_disposition_authority")
+        == EDITORIAL_DISPOSITION_AUTHORITY,
+        "resource boundary editorial disposition binding changed",
+        errors,
+    )
+    _require(
+        resource_boundary.get("manuscript_freeze_requires_SR2_V_terminal") is False
+        and resource_boundary.get(
+            "manuscript_freeze_requires_SR2_V_outcome_or_scoped_open_limitation"
+        )
+        is True,
+        "resource boundary manuscript freeze gate changed",
+        errors,
+    )
     publication = data.get("publication_gates", {})
     _require(
         publication.get("zenodo_or_doi") == "OWNER_ONLY_NOT_AUTHORIZED",
         "external publication action is not owner-gated",
+        errors,
+    )
+    _require(
+        publication.get("paper_I_editorial_disposition") == EDITORIAL_DISPOSITION
+        and publication.get("editorial_disposition_authority")
+        == EDITORIAL_DISPOSITION_AUTHORITY,
+        "publication editorial disposition binding changed",
+        errors,
+    )
+    _require(
+        publication.get("manuscript_freeze_requires_SR2_V_terminal") is False
+        and publication.get(
+            "manuscript_freeze_requires_SR2_V_outcome_or_scoped_open_limitation"
+        )
+        is True,
+        "publication manuscript freeze gate changed",
+        errors,
+    )
+    pdf_source_rebind = publication.get("pdf_source_rebind")
+    _require(
+        isinstance(pdf_source_rebind, dict)
+        and pdf_source_rebind.get("status") == PDF_SOURCE_REBIND_STATUS
+        and pdf_source_rebind.get("required_before_submission_or_deposit") is True
+        and pdf_source_rebind.get("completed") is True
+        and pdf_source_rebind.get("publication_authorized") is False,
+        "publication PDF/source rebind gate changed",
+        errors,
+    )
+    lanes = data.get("version_lanes", {})
+    _require(
+        isinstance(lanes, dict)
+        and lanes.get("sr2v_global_status") == "SEARCH_OPEN_NO_TERMINAL"
+        and lanes.get("scientific_global_sr2v_status") == "SEARCH_OPEN_NO_TERMINAL"
+        and lanes.get("u2_status") == "SOFT_RESOURCE_LIMIT_NONTERMINAL"
+        and lanes.get("u2_subroute_is_not_sr2v_terminal") is True
+        and lanes.get("u2_is_global_terminal") is False,
+        "version-lane scientific two-layer status changed",
+        errors,
+    )
+    _require(
+        isinstance(lanes, dict)
+        and lanes.get("paper_I_editorial_disposition") == EDITORIAL_DISPOSITION
+        and lanes.get("editorial_disposition_authority") == EDITORIAL_DISPOSITION_AUTHORITY,
+        "version-lane editorial disposition binding changed",
+        errors,
+    )
+    _require(
+        isinstance(lanes, dict)
+        and lanes.get("manuscript_freeze_requires_SR2_V_terminal") is False
+        and lanes.get("manuscript_freeze_requires_SR2_V_outcome_or_scoped_open_limitation")
+        is True,
+        "version-lane manuscript freeze gate changed",
         errors,
     )
     _require(

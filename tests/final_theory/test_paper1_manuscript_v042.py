@@ -30,8 +30,8 @@ SCOUT_EXPECTATIONS_RELATIVE = Path(
 )
 PAPER1_VALIDATOR_PATH = ROOT / "scripts/validate_v042_paper1_manuscript.py"
 PDF_BUILD_HELPER_RELATIVE = Path("scripts/build_v042_paper1_pdf.py")
-PDF_BUILD_REPORT_RELATIVE = Path("reports/v0.4.2_paper1_pdf_build_2026-08-05.md")
-PDF_BUILD_OUTPUT_RELATIVE = Path("output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf")
+PDF_BUILD_REPORT_RELATIVE = Path("reports/v0.4.2_paper1_pdf_build_2026-08-06.md")
+PDF_BUILD_OUTPUT_RELATIVE = Path("output/pdf/paper1_statewise_operator_v0.4.2.pdf")
 PDF_BUILD_IMAGE = (
     "texlive/texlive:latest-medium@"
     "sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9"
@@ -221,7 +221,7 @@ def test_citation_closure_rejects_missing_and_duplicate_bibtex_keys() -> None:
 
 def test_paper1_manuscript_remains_unfrozen_and_owner_gated() -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    assert manifest["status"] == "PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN"
+    assert manifest["status"] == "PAPER_I_SCOPED_ARCHIVE_SUBMISSION_CANDIDATE_NOT_FROZEN"
     assert manifest["freeze"] == {
         "status": "NOT_FROZEN",
         "frozen": False,
@@ -232,6 +232,12 @@ def test_paper1_manuscript_remains_unfrozen_and_owner_gated() -> None:
         assert gate["status"] == "OWNER_ONLY_NOT_AUTHORIZED"
         assert gate["owner_only"] is True
         assert gate["authorized"] is False
+    assert manifest["publication_gates"]["pdf_source_rebind"] == {
+        "status": "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
+        "required_before_submission_or_deposit": True,
+        "completed": True,
+        "publication_authorized": False,
+    }
 
 
 def test_electronic_supplement_and_weak_q5_authorities_are_pinned() -> None:
@@ -283,12 +289,12 @@ def test_pdf_build_contract_is_pinned_but_generated_pdf_is_not_required(tmp_path
     }
     current = tex_build["current_observation"]
     assert current["main_tex_raw_sha256"] == (
-        "41823e65e16187f9832782fbf3d45f95556b938aac7b5e6ee20d5ebf20854b87"
+        "e3a39aac3ba2593666a772b4d04c86bff2faf19936a5d8eb45a2a341248101b1"
     )
     assert current["pdf"] == {
         "page_count": 18,
-        "bytes": 409760,
-        "raw_sha256": "92c7fd5ba1bdcb5f16ec3827e3377027217fe41f61eafed10afcc49e8d6cc506",
+        "bytes": 427745,
+        "raw_sha256": "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43",
     }
     assert current["diagnostics"] == {
         "blocking_total": 0,
@@ -298,11 +304,17 @@ def test_pdf_build_contract_is_pinned_but_generated_pdf_is_not_required(tmp_path
         "underfull_box": 0,
     }
     assert current["visual_qa"] == {
-        "render_dpi": 120,
+        "render_dpi": 144,
         "pages_inspected": 18,
         "all_pages_inspected": True,
         "clipping_or_overlap_found": False,
         "intentional_draft_boxes_remain": False,
+    }
+    assert current["source_pdf_binding"] == {
+        "status": "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
+        "source_hash_matches_current_observation": True,
+        "report_hash_pinned": True,
+        "publication_authorized": False,
     }
     assert tex_build["prior_observations"] == [
         {
@@ -597,3 +609,40 @@ def test_paper1_validator_rejects_a_self_rebound_expectations_artifact(tmp_path:
     assert any("raw SHA-256 mismatch" in error for error in errors)
     assert any("self semantic digest mismatch" in error for error in errors)
     assert any("certificate-core digests differ" in error for error in errors)
+
+
+def test_zenodo_literature_gate_is_hash_bound_and_owner_gated() -> None:
+    validator = _load_paper1_validator()
+    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    gate = manifest["zenodo_literature_gate"]
+
+    assert gate == validator._expected_zenodo_literature_gate()
+    assert gate["response_entry_count"] == 556
+    assert gate["screening_decision_counts"] == {
+        "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 533,
+        "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 23,
+        "MATERIAL_DELTA_TO_C1_C5": 0,
+    }
+    assert gate["tracked_source_versions"] == {
+        "arXiv:2607.26672": "v1",
+        "arXiv:2603.25503": "v1",
+    }
+    assert gate["later_deposit_requires_new_dated_gate"] is True
+    assert gate["authorization_boundary"] == {
+        "technical_literature_gate_only": True,
+        "manuscript_freeze_authorized": False,
+        "submission_authorized": False,
+        "deposit_authorized": False,
+        "publication_authorized": False,
+        "owner_only": True,
+    }
+
+    errors: list[str] = []
+    validator._validate_zenodo_literature_gate(ROOT, manifest, errors)
+    assert not errors
+
+    altered = copy.deepcopy(manifest)
+    altered["zenodo_literature_gate"]["id_set_equal_to_prior_gate"] = False
+    errors = []
+    validator._validate_zenodo_literature_gate(ROOT, altered, errors)
+    assert "Zenodo literature-gate contract changed" in errors

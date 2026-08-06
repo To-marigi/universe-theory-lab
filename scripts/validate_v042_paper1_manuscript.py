@@ -1,4 +1,4 @@
-"""Validate the proof-complete, non-frozen Paper I v0.4.2 release candidate.
+"""Validate the claim-locked, non-frozen Paper I v0.4.2 candidate.
 
 The validator is deliberately read-only.  It verifies the manuscript snapshot,
 its bibliography closure, and the claim/publication boundaries without
@@ -56,28 +56,42 @@ SELF_EXCLUDING_SEMANTIC_DIGEST_METHOD = (
     "sha256(UTF-8 canonical JSON after excluding top-level semantic_digest_sha256: "
     "ensure_ascii=true, sort_keys=true, separators=(',', ':'))"
 )
-PROOF_COMPLETE_STATUS = "PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN"
+PROOF_COMPLETE_STATUS = "PAPER_I_SCOPED_ARCHIVE_SUBMISSION_CANDIDATE_NOT_FROZEN"
+EDITORIAL_DISPOSITION = "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED"
+EDITORIAL_DISPOSITION_AUTHORITY_PATH = Path(
+    "reports/v0.4.2_paper1_editorial_disposition_2026-08-06.md"
+)
+EDITORIAL_DISPOSITION_REQUIRED_FRAGMENTS = (
+    "scientific_global_sr2v_status = SEARCH_OPEN_NO_TERMINAL",
+    "u2_status = SOFT_RESOURCE_LIMIT_NONTERMINAL",
+    "u2_is_global_terminal = false",
+    "paper_i_editorial_disposition = PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED",
+    "manuscript_freeze_requires_SR2_V_terminal = false",
+    "manuscript_freeze_requires_SR2_V_outcome_or_scoped_open_limitation = true",
+)
+PDF_SOURCE_BINDING_STATUS = "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED"
 PDF_BUILD_HELPER_PATH = Path("scripts/build_v042_paper1_pdf.py")
-PDF_BUILD_HELPER_SHA256 = "f131bbfe76304f1445afe162af5d731c7c3c4d31ba1b7dced4e83a0fb87c91d4"
-PDF_BUILD_REPORT_PATH = Path("reports/v0.4.2_paper1_pdf_build_2026-08-05.md")
-PDF_BUILD_REPORT_SHA256 = "5c4230d39d8db58fb58cccfdf4f7ce48b20716fe37dfa2e854c7f3b0eadb0c52"
+PDF_BUILD_HELPER_SHA256 = "45eb8e8bc112198f1b0fcce0fb1e7f4e2241a6bc431ee7fd7c96c5be07db20ff"
+PDF_BUILD_REPORT_PATH = Path("reports/v0.4.2_paper1_pdf_build_2026-08-06.md")
+PDF_BUILD_REPORT_SHA256 = "a313c6db550ed2aa0558e5c25d27c437ef0958b34e4023092ed9b0b3cb5b2096"
 PDF_BUILD_IMAGE = (
     "texlive/texlive:latest-medium@"
     "sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9"
 )
-PDF_BUILD_OUTPUT_PATH = Path("output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf")
-PDF_BUILD_MAIN_SHA256 = "41823e65e16187f9832782fbf3d45f95556b938aac7b5e6ee20d5ebf20854b87"
-PDF_BUILD_OBSERVED_SHA256 = "92c7fd5ba1bdcb5f16ec3827e3377027217fe41f61eafed10afcc49e8d6cc506"
+PDF_BUILD_OUTPUT_PATH = Path("output/pdf/paper1_statewise_operator_v0.4.2.pdf")
+PDF_BUILD_MAIN_SHA256 = "e3a39aac3ba2593666a772b4d04c86bff2faf19936a5d8eb45a2a341248101b1"
+PDF_BUILD_OBSERVED_SHA256 = "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43"
 PDF_BUILD_PRIOR_MAIN_SHA256 = "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd"
 PDF_BUILD_PRIOR_OBSERVED_SHA256 = "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"
 PDF_BUILD_REPORT_REQUIRED_FRAGMENTS = (
     "Status: `CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED`.",
-    "All 18 pages were rendered at 120 dpi and visually inspected.",
-    "No clipping, overlap, table collision, or unnatural page break was found",
-    "the added prose moves the reference and evidence floats by one page",
-    "retained only as prior-source history",
-    "The generated PDF is an untracked local observation.",
-    "it is not a required reproducibility-contract hash",
+    "All 18 pages were rendered at 144 dpi and visually inspected",
+    "No clipping, overlap, table collision, truncated text, broken glyph",
+    PDF_BUILD_MAIN_SHA256,
+    PDF_BUILD_OBSERVED_SHA256,
+    "process_audit=OK",
+    "Neither rejected nor superseded bytes are authorized upload artifacts.",
+    "The generated PDF remains an untracked local observation",
 )
 EXPECTED_CLAIM_LABELS = ["C1", "C2", "C3", "C4", "C5"]
 EXPECTED_NONCLAIM_LABELS = ["N1", "N2", "N3", "N4", "N5", "N6"]
@@ -89,12 +103,9 @@ EXPECTED_DRAFT_MARKER_CONTRACT: dict[str, Any] = {
     "expected_macro_definitions": 0,
     "reappearance_policy": "FAIL_CLOSED",
     "required_tex_fragments": [
-        "Claim-locked proof-complete source.",
-        (
-            "Proof completion and machine audit do not authorise submission, deposit, "
-            "or manuscript freeze."
-        ),
-        "proof-complete, machine-audited release-candidate source",
+        "Claim-locked archive/submission candidate, Paper I v0.4.2.",
+        "The theorem statements below are limited to C1--C5 and the explicit nonclaims N1--N6.",
+        r"PAPER\_I\_SCOPED\_U2\_RESOURCE\_OPEN\_LIMITATION\_ACCEPTED",
     ],
 }
 C3_SOURCE_RELATION_IDS = (
@@ -316,6 +327,56 @@ LITERATURE_NOTE_REQUIRED_FRAGMENTS = [
     "arXiv:2608.02166v1",
     "Immediately before public submission",
 ]
+ZENODO_LITERATURE_STATUS = (
+    "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_GATE_FULL_OVERLAP_"
+    "AS_OF_2026-08-06T00:47:37Z"
+)
+ZENODO_LITERATURE_REPORT_PATH = Path(
+    "reports/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md"
+)
+ZENODO_LITERATURE_NOTE_PATH = Path(
+    "references/notes/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md"
+)
+ZENODO_LITERATURE_CHECKER_PATH = Path(
+    "scripts/normalize_v042_paper1_zenodo_gate_20260806.py"
+)
+ZENODO_LITERATURE_TEST_PATH = Path(
+    "tests/final_theory/test_normalize_v042_paper1_zenodo_gate_20260806.py"
+)
+ZENODO_LITERATURE_REPORT_SHA256 = (
+    "58a4f0abadf94b15c3407bb81068619a30b1552f3b465d83f1959f84dfac4872"
+)
+ZENODO_LITERATURE_NOTE_SHA256 = (
+    "c4b47201c525f96f38b1fa7c54284f348fb26ddf91b6b79350bd6f344370e69c"
+)
+ZENODO_LITERATURE_CHECKER_SHA256 = (
+    "d9b3c418760f5fb7d6e50b4d5508af98f5224229f4464319fd00d1a4e71a876a"
+)
+ZENODO_LITERATURE_TEST_SHA256 = (
+    "f141815c32ddb2dfbb4217c3faec87866e1eb608128ff3cdf5378bc1fe3f4057"
+)
+ZENODO_LITERATURE_EVIDENCE = {
+    "full_overlap_atom": {
+        "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_full_overlap_atom.xml",
+        "bytes": 1091452,
+        "raw_sha256": "c2b42041557a012f2847b069c3f217863a0b435249422cc8c2f35a4cd7fdf9e4",
+    },
+    "exact_ids_atom": {
+        "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_exact_ids_atom.xml",
+        "bytes": 5201,
+        "raw_sha256": "d95502ec8339d3f378080a60adfdde70b59f5942519e2aad6ce0d69d4b97166d",
+    },
+    "retrieval_receipt": {
+        "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_retrieval.json",
+        "bytes": 1957,
+        "raw_sha256": "434da49c430eed3790e389fd513575b6c57ef7d04b787d29dd3a568805bdf41d",
+    },
+    "normalized_ledger": {
+        "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_normalized.json",
+        "bytes": 504422,
+        "raw_sha256": "3b8f474592ec6c5ed31a2463e2a1fd924afee7bcea90da44c8b3e22052b9642a",
+    },
+}
 CANONICAL_LEDGER_DIGEST_METHOD = (
     "sha256(UTF-8 canonical JSON: ensure_ascii=true, sort_keys=true, separators=(',', ':'))"
 )
@@ -724,8 +785,8 @@ def _validate_claim_ledger(
         errors,
     )
     _require(
-        binding.get("ledger_status") == "SCOPED_MANUSCRIPT_ASSEMBLY_READY"
-        and ledger.get("status") == "SCOPED_MANUSCRIPT_ASSEMBLY_READY",
+        binding.get("ledger_status") == PROOF_COMPLETE_STATUS
+        and ledger.get("status") == PROOF_COMPLETE_STATUS,
         "claim ledger status changed",
         errors,
     )
@@ -855,9 +916,81 @@ def _validate_draft_marker_contract(tex: str, markers: object, errors: list[str]
     for fragment in EXPECTED_DRAFT_MARKER_CONTRACT["required_tex_fragments"]:
         _require(
             isinstance(fragment, str) and _normalise_whitespace(fragment) in normalised_tex,
-            f"proof-complete boundary text is absent: {fragment!r}",
+            f"candidate boundary text is absent: {fragment!r}",
             errors,
         )
+
+
+def _validate_editorial_disposition(
+    root: Path, manifest: dict[str, Any], errors: list[str]
+) -> None:
+    expected = {
+        "status": EDITORIAL_DISPOSITION,
+        "authority": {
+            "path": EDITORIAL_DISPOSITION_AUTHORITY_PATH.as_posix(),
+            "role": "dated_two_layer_gate_authority",
+        },
+        "scientific_global_sr2v_status": "SEARCH_OPEN_NO_TERMINAL",
+        "u2_status": "SOFT_RESOURCE_LIMIT_NONTERMINAL",
+        "u2_is_global_terminal": False,
+        "manuscript_freeze_requires_SR2_V_terminal": False,
+        "manuscript_freeze_requires_SR2_V_outcome_or_scoped_open_limitation": True,
+    }
+    _require(
+        manifest.get("editorial_disposition") == expected,
+        "manifest editorial disposition contract changed",
+        errors,
+    )
+    authority = root / EDITORIAL_DISPOSITION_AUTHORITY_PATH
+    _require(
+        authority.is_file(),
+        "missing editorial disposition authority: "
+        f"{EDITORIAL_DISPOSITION_AUTHORITY_PATH.as_posix()}",
+        errors,
+    )
+    if authority.is_file():
+        try:
+            source = authority.read_text(encoding="utf-8")
+        except OSError as exc:
+            errors.append(f"cannot read editorial disposition authority: {exc}")
+        else:
+            normalised = _normalise_whitespace(source)
+            for fragment in EDITORIAL_DISPOSITION_REQUIRED_FRAGMENTS:
+                _require(
+                    _normalise_whitespace(fragment) in normalised,
+                    f"editorial disposition authority lacks {fragment!r}",
+                    errors,
+                )
+    ai_disclosure = manifest.get("ai_disclosure")
+    _require(
+        ai_disclosure
+        == {
+            "human_author_responsible": True,
+            "ai_systems_are_authors": False,
+            "ai_systems_are_proof_authorities": False,
+            "systems": [
+                "OpenAI Codex (Luna/Sol agent scopes)",
+                "Anthropic Claude",
+            ],
+            "scope": ["bounded implementation", "artifact and log audit", "drafting assistance"],
+        },
+        "manifest AI disclosure contract changed",
+        errors,
+    )
+    data_code = manifest.get("data_code_availability")
+    _require(
+        data_code
+        == {
+            "repository_url": "https://github.com/To-marigi/universe-theory-lab",
+            "exact_commit_recorded_externally_at_deposit": True,
+            "complete_ledger_authority": "results/v0.4_weak_d2_classification.json",
+            "compact_supplement_role": "authenticated navigation and selected-witness layer",
+            "third_party_reference_pdfs_texts_excluded": True,
+            "vendored_archives_excluded": True,
+        },
+        "manifest data/code availability contract changed",
+        errors,
+    )
 
 
 def _validate_bibliography_and_tex(root: Path, manifest: dict[str, Any], errors: list[str]) -> None:
@@ -1744,6 +1877,179 @@ def _validate_literature_delta_search(
     _validate_literature_source_archive(root, errors)
 
 
+def _expected_zenodo_literature_gate() -> dict[str, Any]:
+    return {
+        "status": ZENODO_LITERATURE_STATUS,
+        "as_of_utc": "2026-08-06T00:47:37Z",
+        "artifact_specific": True,
+        "report": {
+            "path": ZENODO_LITERATURE_REPORT_PATH.as_posix(),
+            "raw_sha256": ZENODO_LITERATURE_REPORT_SHA256,
+        },
+        "research_note": {
+            "path": ZENODO_LITERATURE_NOTE_PATH.as_posix(),
+            "raw_sha256": ZENODO_LITERATURE_NOTE_SHA256,
+        },
+        "checker": {
+            "path": ZENODO_LITERATURE_CHECKER_PATH.as_posix(),
+            "raw_sha256": ZENODO_LITERATURE_CHECKER_SHA256,
+            "check_command": (
+                "uv run python scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check"
+            ),
+        },
+        "dedicated_test": {
+            "path": ZENODO_LITERATURE_TEST_PATH.as_posix(),
+            "raw_sha256": ZENODO_LITERATURE_TEST_SHA256,
+        },
+        "archived_evidence": ZENODO_LITERATURE_EVIDENCE,
+        "response_entry_count": 556,
+        "id_set_equal_to_prior_gate": True,
+        "normalized_metadata_equal_by_id": True,
+        "screening_decisions_equal_by_id": True,
+        "response_order_moved_record_count": 401,
+        "response_order_is_materiality_contract": False,
+        "screening_decision_counts": LITERATURE_DECISION_COUNTS,
+        "tracked_source_versions": {
+            "arXiv:2607.26672": "v1",
+            "arXiv:2603.25503": "v1",
+        },
+        "general_pre_window_version_updates_covered": False,
+        "priority_or_absolute_absence_claimed": False,
+        "later_deposit_requires_new_dated_gate": True,
+        "authorization_boundary": {
+            "technical_literature_gate_only": True,
+            "manuscript_freeze_authorized": False,
+            "submission_authorized": False,
+            "deposit_authorized": False,
+            "publication_authorized": False,
+            "owner_only": True,
+        },
+    }
+
+
+def _validate_zenodo_literature_gate(
+    root: Path, manifest: dict[str, Any], errors: list[str]
+) -> None:
+    gate = manifest.get("zenodo_literature_gate")
+    if not isinstance(gate, dict):
+        errors.append("manifest zenodo_literature_gate must be an object")
+        return
+    _require(
+        gate == _expected_zenodo_literature_gate(),
+        "Zenodo literature-gate contract changed",
+        errors,
+    )
+
+    bound_files = (
+        (ZENODO_LITERATURE_REPORT_PATH, ZENODO_LITERATURE_REPORT_SHA256, None),
+        (ZENODO_LITERATURE_NOTE_PATH, ZENODO_LITERATURE_NOTE_SHA256, None),
+        (ZENODO_LITERATURE_CHECKER_PATH, ZENODO_LITERATURE_CHECKER_SHA256, None),
+        (ZENODO_LITERATURE_TEST_PATH, ZENODO_LITERATURE_TEST_SHA256, None),
+        *(
+            (
+                Path(binding["path"]),
+                str(binding["raw_sha256"]),
+                int(binding["bytes"]),
+            )
+            for binding in ZENODO_LITERATURE_EVIDENCE.values()
+        ),
+    )
+    for path, expected_hash, expected_bytes in bound_files:
+        absolute = root / path
+        _require(absolute.is_file(), f"missing Zenodo literature-gate file: {path}", errors)
+        if not absolute.is_file():
+            continue
+        _require(
+            _sha256(absolute) == expected_hash,
+            f"Zenodo literature-gate SHA-256 mismatch: {path}",
+            errors,
+        )
+        if expected_bytes is not None:
+            _require(
+                absolute.stat().st_size == expected_bytes,
+                f"Zenodo literature-gate byte count mismatch: {path}",
+                errors,
+            )
+
+    for path, fragments, label in (
+        (
+            ZENODO_LITERATURE_REPORT_PATH,
+            (
+                ZENODO_LITERATURE_STATUS,
+                "The archived response contains 556 unique versioned records.",
+                "added IDs: 0; missing IDs: 0",
+                "There are zero material C1--C5 deltas.",
+                "must not be reused for a later Zenodo upload",
+            ),
+            "Zenodo literature-gate report",
+        ),
+        (
+            ZENODO_LITERATURE_NOTE_PATH,
+            (
+                ZENODO_LITERATURE_STATUS,
+                "same 556 versioned IDs",
+                "API order changed for 401 records",
+                "no C1--C5 material delta was found",
+                "A later submission or deposit requires a fresh dated archive",
+            ),
+            "Zenodo literature-gate note",
+        ),
+    ):
+        try:
+            source = " ".join((root / path).read_text(encoding="utf-8").split())
+        except OSError as exc:
+            errors.append(f"cannot read {label}: {exc}")
+            continue
+        for fragment in fragments:
+            _require(
+                " ".join(fragment.split()) in source,
+                f"{label} lacks required boundary text: {fragment!r}",
+                errors,
+            )
+
+    normalized_path = root / Path(ZENODO_LITERATURE_EVIDENCE["normalized_ledger"]["path"])
+    normalized = _read_json_object(normalized_path, errors, "Zenodo literature-gate ledger")
+    if normalized is None:
+        return
+    recheck = normalized.get("zenodo_gate_recheck")
+    _require(
+        normalized.get("gate_status") == ZENODO_LITERATURE_STATUS,
+        "Zenodo literature-gate ledger status changed",
+        errors,
+    )
+    _require(
+        normalized.get("response_entry_count") == 556,
+        "Zenodo literature-gate entry count changed",
+        errors,
+    )
+    _require(
+        normalized.get("screening", {}).get("decision_counts") == LITERATURE_DECISION_COUNTS,
+        "Zenodo literature-gate screening counts changed",
+        errors,
+    )
+    if not isinstance(recheck, dict):
+        errors.append("Zenodo literature-gate ledger recheck must be an object")
+        return
+    comparison = recheck.get("full_overlap_comparison")
+    _require(
+        isinstance(comparison, dict)
+        and comparison.get("added_ids") == []
+        and comparison.get("missing_ids") == []
+        and comparison.get("metadata_changed_ids") == []
+        and comparison.get("screening_changed_ids") == []
+        and comparison.get("response_order_moved_record_count") == 401
+        and comparison.get("response_order_not_a_materiality_contract") is True,
+        "Zenodo literature-gate ID-keyed comparison changed",
+        errors,
+    )
+    _require(
+        recheck.get("exact_id_checks", {}).get("versions")
+        == {"2603.25503": "v1", "2607.26672": "v1"},
+        "Zenodo literature-gate exact-ID versions changed",
+        errors,
+    )
+
+
 def _expected_tex_build() -> dict[str, Any]:
     return {
         "toolchain_status": "HOST_ABSENT_PINNED_CONTAINER_AVAILABLE",
@@ -1766,11 +2072,11 @@ def _expected_tex_build() -> dict[str, Any]:
             "raw_sha256_role": "DATED_OBSERVATION_NOT_REPRODUCIBILITY_CONTRACT",
         },
         "current_observation": {
-            "date": "2026-08-05",
+            "date": "2026-08-06",
             "main_tex_raw_sha256": PDF_BUILD_MAIN_SHA256,
             "pdf": {
                 "page_count": 18,
-                "bytes": 409760,
+                "bytes": 427745,
                 "raw_sha256": PDF_BUILD_OBSERVED_SHA256,
             },
             "toolchain": {
@@ -1787,11 +2093,17 @@ def _expected_tex_build() -> dict[str, Any]:
                 "underfull_box": 0,
             },
             "visual_qa": {
-                "render_dpi": 120,
+                "render_dpi": 144,
                 "pages_inspected": 18,
                 "all_pages_inspected": True,
                 "clipping_or_overlap_found": False,
                 "intentional_draft_boxes_remain": False,
+            },
+            "source_pdf_binding": {
+                "status": PDF_SOURCE_BINDING_STATUS,
+                "source_hash_matches_current_observation": True,
+                "report_hash_pinned": True,
+                "publication_authorized": False,
             },
         },
         "prior_observations": [
@@ -1832,6 +2144,32 @@ def _validate_tex_build(root: Path, manifest: dict[str, Any], errors: list[str])
         "TeX/PDF build contract or dated observation changed",
         errors,
     )
+    main_path = root / MANUSCRIPT_ROOT / "main.tex"
+    current_observation = tex_build.get("current_observation")
+    if main_path.is_file() and isinstance(current_observation, dict):
+        current_source_sha = _sha256(main_path)
+        _require(
+            current_observation.get("main_tex_raw_sha256") == current_source_sha,
+            "final PDF/source binding does not bind the current main.tex",
+            errors,
+        )
+        binding = current_observation.get("source_pdf_binding")
+        _require(
+            binding
+            == {
+                "status": PDF_SOURCE_BINDING_STATUS,
+                "source_hash_matches_current_observation": True,
+                "report_hash_pinned": True,
+                "publication_authorized": False,
+            },
+            "final PDF/source binding status changed",
+            errors,
+        )
+        _require(
+            tex_build.get("submission_ready") is False,
+            "technical PDF/source completion must not authorize submission",
+            errors,
+        )
 
     for path, expected_hash, label in (
         (PDF_BUILD_HELPER_PATH, PDF_BUILD_HELPER_SHA256, "PDF build helper"),
@@ -1867,7 +2205,7 @@ def _validate_status_boundaries(
     )
     _require(
         manifest.get("status") == PROOF_COMPLETE_STATUS,
-        "manuscript is not marked as a proof-complete, non-frozen release candidate",
+        "manuscript is not marked as the Paper I archive/submission candidate",
         errors,
     )
     freeze = manifest.get("freeze")
@@ -1902,6 +2240,18 @@ def _validate_status_boundaries(
                 f"{gate_name} must remain unauthorized",
                 errors,
             )
+        pdf_rebind = gates.get("pdf_source_rebind")
+        _require(
+            pdf_rebind
+            == {
+                "status": PDF_SOURCE_BINDING_STATUS,
+                "required_before_submission_or_deposit": True,
+                "completed": True,
+                "publication_authorized": False,
+            },
+            "PDF/source rebind gate changed",
+            errors,
+        )
 
     boundary = manifest.get("version_boundary")
     if not isinstance(boundary, dict):
@@ -1920,6 +2270,34 @@ def _validate_status_boundaries(
     _require(
         boundary.get("u2_is_global_terminal") is False,
         "U2 cannot be a global terminal",
+        errors,
+    )
+    _require(
+        boundary.get("u2_status") == "SOFT_RESOURCE_LIMIT_NONTERMINAL",
+        "U2 scientific status changed",
+        errors,
+    )
+    _require(
+        boundary.get("scientific_global_sr2v_status") == "SEARCH_OPEN_NO_TERMINAL",
+        "scientific global SR2-V status changed",
+        errors,
+    )
+    _require(
+        boundary.get("paper_I_editorial_disposition") == EDITORIAL_DISPOSITION,
+        "Paper I editorial disposition changed",
+        errors,
+    )
+    _require(
+        boundary.get("editorial_disposition_authority")
+        == EDITORIAL_DISPOSITION_AUTHORITY_PATH.as_posix(),
+        "editorial disposition authority binding changed",
+        errors,
+    )
+    _require(
+        boundary.get("manuscript_freeze_requires_SR2_V_terminal") is False
+        and boundary.get("manuscript_freeze_requires_SR2_V_outcome_or_scoped_open_limitation")
+        is True,
+        "manuscript freeze SR2-V gate changed",
         errors,
     )
     reproducibility = manifest.get("reproducibility_boundary")
@@ -1959,6 +2337,29 @@ def _validate_status_boundaries(
                 "claim ledger no longer marks U2 as subroute-only",
                 errors,
             )
+            _require(
+                version_lanes.get("scientific_global_sr2v_status") == "SEARCH_OPEN_NO_TERMINAL"
+                and version_lanes.get("u2_status") == "SOFT_RESOURCE_LIMIT_NONTERMINAL"
+                and version_lanes.get("u2_is_global_terminal") is False,
+                "claim ledger two-layer scientific gate changed",
+                errors,
+            )
+            _require(
+                version_lanes.get("paper_I_editorial_disposition") == EDITORIAL_DISPOSITION
+                and version_lanes.get("editorial_disposition_authority")
+                == EDITORIAL_DISPOSITION_AUTHORITY_PATH.as_posix(),
+                "claim ledger editorial disposition binding changed",
+                errors,
+            )
+            _require(
+                version_lanes.get("manuscript_freeze_requires_SR2_V_terminal") is False
+                and version_lanes.get(
+                    "manuscript_freeze_requires_SR2_V_outcome_or_scoped_open_limitation"
+                )
+                is True,
+                "claim ledger manuscript freeze gate changed",
+                errors,
+            )
 
 
 def validate_paper1_manuscript(root: Path) -> list[str]:
@@ -1975,11 +2376,13 @@ def validate_paper1_manuscript(root: Path) -> list[str]:
 
     _validate_manifest_hashes(root, manifest, errors)
     ledger = _validate_claim_ledger(root, manifest, errors)
+    _validate_editorial_disposition(root, manifest, errors)
     _validate_bibliography_and_tex(root, manifest, errors)
     _validate_electronic_supplement(root, manifest, errors)
     _validate_state_boundary_text(root, manifest, errors)
     _validate_bounded_scout_reproduction(root, manifest, errors)
     _validate_literature_delta_search(root, manifest, errors)
+    _validate_zenodo_literature_gate(root, manifest, errors)
     _validate_tex_build(root, manifest, errors)
     _validate_status_boundaries(manifest, ledger, errors)
     return errors

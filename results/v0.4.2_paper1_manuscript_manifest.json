@@ -1,18 +1,18 @@
 {
   "schema_version": "final-theory-v042-paper1-manuscript-manifest-v1",
-  "as_of": "2026-08-05",
-  "status": "PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN",
+  "as_of": "2026-08-06",
+  "status": "PAPER_I_SCOPED_ARCHIVE_SUBMISSION_CANDIDATE_NOT_FROZEN",
   "manuscript_root": "paper/v0.4.2_paper1_statewise_operator",
   "manuscript_files": [
     {
       "path": "paper/v0.4.2_paper1_statewise_operator/main.tex",
-      "role": "latex_proof_complete_release_candidate_source",
-      "raw_sha256": "41823e65e16187f9832782fbf3d45f95556b938aac7b5e6ee20d5ebf20854b87"
+      "role": "latex_claim_locked_archive_submission_candidate_source",
+      "raw_sha256": "e3a39aac3ba2593666a772b4d04c86bff2faf19936a5d8eb45a2a341248101b1"
     },
     {
       "path": "paper/v0.4.2_paper1_statewise_operator/REPRODUCING.md",
       "role": "reproduction_protocol",
-      "raw_sha256": "f9dc8f27f217f6b2aea1d0fa9bec03abd5ee838fde8c2bcecd611a6215caed79"
+      "raw_sha256": "3439487c6820784164bdb187387ed66d767ea3ef4ca7f3a478a3960cb62cc6ae"
     },
     {
       "path": "paper/v0.4.2_paper1_statewise_operator/references.bib",
@@ -30,11 +30,11 @@
   },
   "claim_ledger": {
     "path": "results/v0.4.2_paper1_claim_boundary.json",
-    "raw_sha256": "93ac15eca24cf3c24dd4a27cf54694153b9fac96c91f6fe673579ba88609425c",
+    "raw_sha256": "37db1962f807076668b71b9575f1c7200c9bba319d2a4375f4493e94d0a94b37",
     "schema_version": "final-theory-v042-paper1-claim-boundary-v1",
     "semantic_digest_method": "sha256(UTF-8 canonical JSON: ensure_ascii=true, sort_keys=true, separators=(',', ':'))",
-    "semantic_digest_sha256": "f41f31a39711ad2c03e46473226eb504f37d400398f2f217982ce0ca9e29fc2f",
-    "ledger_status": "SCOPED_MANUSCRIPT_ASSEMBLY_READY"
+    "semantic_digest_sha256": "5b34ee648320174f4083a4d9d650eb369dc27bd24ed97d503b42675dc020f915",
+    "ledger_status": "PAPER_I_SCOPED_ARCHIVE_SUBMISSION_CANDIDATE_NOT_FROZEN"
   },
   "electronic_supplement": {
     "status": "PINNED_COMPACT_AUTHENTICATED_INDEX",
@@ -132,10 +132,44 @@
     "expected_macro_definitions": 0,
     "reappearance_policy": "FAIL_CLOSED",
     "required_tex_fragments": [
-      "Claim-locked proof-complete source.",
-      "Proof completion and machine audit do not authorise submission, deposit, or manuscript freeze.",
-      "proof-complete, machine-audited release-candidate source"
+      "Claim-locked archive/submission candidate, Paper I v0.4.2.",
+      "The theorem statements below are limited to C1--C5 and the explicit nonclaims N1--N6.",
+      "PAPER\\_I\\_SCOPED\\_U2\\_RESOURCE\\_OPEN\\_LIMITATION\\_ACCEPTED"
     ]
+  },
+  "editorial_disposition": {
+    "status": "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED",
+    "authority": {
+      "path": "reports/v0.4.2_paper1_editorial_disposition_2026-08-06.md",
+      "role": "dated_two_layer_gate_authority"
+    },
+    "scientific_global_sr2v_status": "SEARCH_OPEN_NO_TERMINAL",
+    "u2_status": "SOFT_RESOURCE_LIMIT_NONTERMINAL",
+    "u2_is_global_terminal": false,
+    "manuscript_freeze_requires_SR2_V_terminal": false,
+    "manuscript_freeze_requires_SR2_V_outcome_or_scoped_open_limitation": true
+  },
+  "ai_disclosure": {
+    "human_author_responsible": true,
+    "ai_systems_are_authors": false,
+    "ai_systems_are_proof_authorities": false,
+    "systems": [
+      "OpenAI Codex (Luna/Sol agent scopes)",
+      "Anthropic Claude"
+    ],
+    "scope": [
+      "bounded implementation",
+      "artifact and log audit",
+      "drafting assistance"
+    ]
+  },
+  "data_code_availability": {
+    "repository_url": "https://github.com/To-marigi/universe-theory-lab",
+    "exact_commit_recorded_externally_at_deposit": true,
+    "complete_ledger_authority": "results/v0.4_weak_d2_classification.json",
+    "compact_supplement_role": "authenticated navigation and selected-witness layer",
+    "third_party_reference_pdfs_texts_excluded": true,
+    "vendored_archives_excluded": true
   },
   "tex_build": {
     "toolchain_status": "HOST_ABSENT_PINNED_CONTAINER_AVAILABLE",
@@ -145,25 +179,25 @@
     "pinned_container_image": "texlive/texlive:latest-medium@sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9",
     "build_helper": {
       "path": "scripts/build_v042_paper1_pdf.py",
-      "raw_sha256": "f131bbfe76304f1445afe162af5d731c7c3c4d31ba1b7dced4e83a0fb87c91d4"
+      "raw_sha256": "45eb8e8bc112198f1b0fcce0fb1e7f4e2241a6bc431ee7fd7c96c5be07db20ff"
     },
     "build_report": {
-      "path": "reports/v0.4.2_paper1_pdf_build_2026-08-05.md",
-      "raw_sha256": "5c4230d39d8db58fb58cccfdf4f7ce48b20716fe37dfa2e854c7f3b0eadb0c52"
+      "path": "reports/v0.4.2_paper1_pdf_build_2026-08-06.md",
+      "raw_sha256": "a313c6db550ed2aa0558e5c25d27c437ef0958b34e4023092ed9b0b3cb5b2096"
     },
-    "default_output_path": "output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf",
+    "default_output_path": "output/pdf/paper1_statewise_operator_v0.4.2.pdf",
     "generated_pdf": {
       "tracked": false,
       "required_for_manifest_validation": false,
       "raw_sha256_role": "DATED_OBSERVATION_NOT_REPRODUCIBILITY_CONTRACT"
     },
     "current_observation": {
-      "date": "2026-08-05",
-      "main_tex_raw_sha256": "41823e65e16187f9832782fbf3d45f95556b938aac7b5e6ee20d5ebf20854b87",
+      "date": "2026-08-06",
+      "main_tex_raw_sha256": "e3a39aac3ba2593666a772b4d04c86bff2faf19936a5d8eb45a2a341248101b1",
       "pdf": {
         "page_count": 18,
-        "bytes": 409760,
-        "raw_sha256": "92c7fd5ba1bdcb5f16ec3827e3377027217fe41f61eafed10afcc49e8d6cc506"
+        "bytes": 427745,
+        "raw_sha256": "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43"
       },
       "toolchain": {
         "tex_live": "2026",
@@ -179,11 +213,17 @@
         "underfull_box": 0
       },
       "visual_qa": {
-        "render_dpi": 120,
+        "render_dpi": 144,
         "pages_inspected": 18,
         "all_pages_inspected": true,
         "clipping_or_overlap_found": false,
         "intentional_draft_boxes_remain": false
+      },
+      "source_pdf_binding": {
+        "status": "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
+        "source_hash_matches_current_observation": true,
+        "report_hash_pinned": true,
+        "publication_authorized": false
       }
     },
     "prior_observations": [
@@ -373,22 +413,116 @@
     "full_overlap_recheck_before_submission": true,
     "priority_or_absolute_absence_claimed": false
   },
+  "zenodo_literature_gate": {
+    "status": "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_GATE_FULL_OVERLAP_AS_OF_2026-08-06T00:47:37Z",
+    "as_of_utc": "2026-08-06T00:47:37Z",
+    "artifact_specific": true,
+    "report": {
+      "path": "reports/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md",
+      "raw_sha256": "58a4f0abadf94b15c3407bb81068619a30b1552f3b465d83f1959f84dfac4872"
+    },
+    "research_note": {
+      "path": "references/notes/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md",
+      "raw_sha256": "c4b47201c525f96f38b1fa7c54284f348fb26ddf91b6b79350bd6f344370e69c"
+    },
+    "checker": {
+      "path": "scripts/normalize_v042_paper1_zenodo_gate_20260806.py",
+      "raw_sha256": "d9b3c418760f5fb7d6e50b4d5508af98f5224229f4464319fd00d1a4e71a876a",
+      "check_command": "uv run python scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check"
+    },
+    "dedicated_test": {
+      "path": "tests/final_theory/test_normalize_v042_paper1_zenodo_gate_20260806.py",
+      "raw_sha256": "f141815c32ddb2dfbb4217c3faec87866e1eb608128ff3cdf5378bc1fe3f4057"
+    },
+    "archived_evidence": {
+      "full_overlap_atom": {
+        "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_full_overlap_atom.xml",
+        "bytes": 1091452,
+        "raw_sha256": "c2b42041557a012f2847b069c3f217863a0b435249422cc8c2f35a4cd7fdf9e4"
+      },
+      "exact_ids_atom": {
+        "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_exact_ids_atom.xml",
+        "bytes": 5201,
+        "raw_sha256": "d95502ec8339d3f378080a60adfdde70b59f5942519e2aad6ce0d69d4b97166d"
+      },
+      "retrieval_receipt": {
+        "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_retrieval.json",
+        "bytes": 1957,
+        "raw_sha256": "434da49c430eed3790e389fd513575b6c57ef7d04b787d29dd3a568805bdf41d"
+      },
+      "normalized_ledger": {
+        "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_normalized.json",
+        "bytes": 504422,
+        "raw_sha256": "3b8f474592ec6c5ed31a2463e2a1fd924afee7bcea90da44c8b3e22052b9642a"
+      }
+    },
+    "response_entry_count": 556,
+    "id_set_equal_to_prior_gate": true,
+    "normalized_metadata_equal_by_id": true,
+    "screening_decisions_equal_by_id": true,
+    "response_order_moved_record_count": 401,
+    "response_order_is_materiality_contract": false,
+    "screening_decision_counts": {
+      "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 533,
+      "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 23,
+      "MATERIAL_DELTA_TO_C1_C5": 0
+    },
+    "tracked_source_versions": {
+      "arXiv:2607.26672": "v1",
+      "arXiv:2603.25503": "v1"
+    },
+    "general_pre_window_version_updates_covered": false,
+    "priority_or_absolute_absence_claimed": false,
+    "later_deposit_requires_new_dated_gate": true,
+    "authorization_boundary": {
+      "technical_literature_gate_only": true,
+      "manuscript_freeze_authorized": false,
+      "submission_authorized": false,
+      "deposit_authorized": false,
+      "publication_authorized": false,
+      "owner_only": true
+    }
+  },
   "version_boundary": {
     "global_sr2v_status": "SEARCH_OPEN_NO_TERMINAL",
     "u2_role": "SUBROUTE_ONLY_NONTERMINAL",
-    "u2_is_global_terminal": false
+    "u2_is_global_terminal": false,
+    "u2_status": "SOFT_RESOURCE_LIMIT_NONTERMINAL",
+    "scientific_global_sr2v_status": "SEARCH_OPEN_NO_TERMINAL",
+    "paper_I_editorial_disposition": "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED",
+    "editorial_disposition_authority": "reports/v0.4.2_paper1_editorial_disposition_2026-08-06.md",
+    "manuscript_freeze_requires_SR2_V_terminal": false,
+    "manuscript_freeze_requires_SR2_V_outcome_or_scoped_open_limitation": true
   },
   "state_boundary_text": {
     "main_tex_required_fragments": [
+      "Claim-locked archive/submission candidate, Paper I v0.4.2.",
+      "C1--C5 and the explicit nonclaims N1--N6",
       "\\texttt{SEARCH\\_OPEN\\_NO\\_TERMINAL}",
       "\\texttt{SOFT\\_RESOURCE\\_LIMIT\\_NONTERMINAL}",
-      "neither an obstruction theorem nor a terminal verdict."
+      "u2\\_is\\_global\\_terminal=false",
+      "PAPER\\_I\\_SCOPED\\_U2\\_RESOURCE\\_OPEN\\_LIMITATION\\_ACCEPTED",
+      "https://github.com/To-marigi/universe-theory-lab",
+      "OpenAI Codex (using the Luna and Sol agent scopes) was used for implementation",
+      "Anthropic Claude was used for research-design discussion",
+      "The AI systems are neither authors nor independent proof authorities.",
+      "The human author selected the definitions, scope, budgets, evidence, and final wording, and retains full responsibility",
+      "Release of this version requires the human owner's explicit approval.",
+      "The exact repository revision selected for any external archive is recorded in the external Zenodo metadata at deposit",
+      "third-party reference PDFs, extracted texts, and vendored archives are excluded from the submission supplement",
+      "latest archived Zenodo-preparation gate: a 556-record arXiv",
+      "feed 6 August 2026, 00:47:37 UTC",
+      "it is neither an obstruction theorem nor a terminal verdict, and"
     ],
     "reproducing_required_fragments": [
-      "PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN",
-      "freeze, submission, and deposit remain owner-only and unauthorized",
+      "PAPER_I_SCOPED_ARCHIVE_SUBMISSION_CANDIDATE_NOT_FROZEN",
+      "claim-locked archive/submission candidate for Paper I v0.4.2",
+      "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED",
+      "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
       "scripts/extract_v042_paper1_witness_tables.py --check",
       "scripts/normalize_v042_paper1_arxiv_delta_response.py --check",
+      "scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check",
+      "observed 190 passing tests in the current tree on 2026-08-06",
       "The authoritative query semantics come only from the archived Atom feed title and self-link.",
       "all 556 have `published` timestamps inside that submitted-date window",
       "This submitted-date snapshot does not generally cover later versions whose original submission predates the window.",
@@ -399,7 +533,10 @@
       "The 1.6 MiB `results/v0.4_weak_d2_classification.json` remains the complete electronic-ledger authority.",
       "The compact result retains 3,283 sorted natural IDs and their family digests",
       "the q5-free elimination and its oracle checks",
-      "the final local observation is a 17-page PDF",
+      "Its feed cutoff is `2026-08-06T00:47:37Z`.",
+      "a later submission or deposit requires a new dated archive and normalizer",
+      "reports/v0.4.2_paper1_pdf_build_2026-08-06.md",
+      "18-page, 427745-byte PDF",
       "U2 determinantal subroute: reproduce the limitation, not a theorem",
       "a fresh clone can run these two bounded derived scouts without restoring or regenerating the 3,161-record",
       "This does not reproduce the full 3,161-record arena, the full bundle, the historical stage-8 raw event, or its postflight payload.",
@@ -413,6 +550,8 @@
       "Raw supervised attempts remain untracked, including stage-8 raw events/postflight. Their absence prevents raw historical replay."
     ],
     "reproducing_forbidden_fragments": [
+      "PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN",
+      "freeze, submission, and deposit remain owner-only and unauthorized",
       "SCOPED_MANUSCRIPT_ASSEMBLY_READY; submission remains",
       "does not remove the six intentional draft-proof boxes",
       "observed 92 passing tests",
@@ -468,6 +607,12 @@
       "status": "OWNER_ONLY_NOT_AUTHORIZED",
       "owner_only": true,
       "authorized": false
+    },
+    "pdf_source_rebind": {
+      "status": "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
+      "required_before_submission_or_deposit": true,
+      "completed": true,
+      "publication_authorized": false
     }
   }
 }

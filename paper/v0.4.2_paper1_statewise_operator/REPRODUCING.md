@@ -4,14 +4,22 @@ This directory records the reproducibility contract for the scoped Paper I
 working title, *Statewise versus operator Bell causality in finite quantum
 sequential growth: exact separation and recovery at dimension two*.
 
-As of 2026-08-05, the manuscript package is a
-`PROOF_COMPLETE_RELEASE_CANDIDATE_NOT_FROZEN`.  Proof completion is a source
-and evidence status only: freeze, submission, and deposit remain owner-only
-and unauthorized.  The source of truth for what may be claimed is:
+As of 2026-08-06, the manuscript package is a
+`PAPER_I_SCOPED_ARCHIVE_SUBMISSION_CANDIDATE_NOT_FROZEN`.  It is a
+claim-locked archive/submission candidate for Paper I v0.4.2.  Its scientific
+U2 layer remains `SEARCH_OPEN_NO_TERMINAL` with
+`SOFT_RESOURCE_LIMIT_NONTERMINAL` and `u2_is_global_terminal=false`; its Paper
+I editorial layer is
+`PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED`.  The current PDF/source
+binding is complete, but owner review and approval still govern every external
+action.  The source of truth
+for what may be claimed is:
 
 - `results/v0.4.2_paper1_claim_boundary.json` (machine-readable ledger), and
 - `reports/v0.4.2_paper1_claim_boundary_2026-08-05.md` (human-readable
-  evidence ledger).
+  evidence ledger), and
+- `reports/v0.4.2_paper1_editorial_disposition_2026-08-06.md` (dated
+  two-layer gate addendum).
 
 The scope is characteristic-zero interpretation of QQ certificates, `d=2`,
 finite source stages `n<=4`, declared nonsingular transitions, and occurrence
@@ -154,6 +162,35 @@ Srivastava--Surya.  Whether to add general pre-window version-update coverage
 remains an explicit editorial decision.  Archive the new response,
 regenerate the ledger, and reread every triggered candidate.
 
+### 1.4a Check the dated Zenodo-preparation literature gate offline
+
+```powershell
+uv run python scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check
+uv run pytest -q -p no:cacheprovider `
+  tests/final_theory/test_normalize_v042_paper1_zenodo_gate_20260806.py
+```
+
+The 2026-08-06 gate is the current dated implementation of that minimum
+contract.  It archives a 1,091,452-byte full-overlap Atom response, a
+5,201-byte exact-ID response, a 1,957-byte retrieval receipt, and a
+504,422-byte normalized ledger.  The full-overlap, exact-ID, receipt, and
+normalized-ledger SHA-256 values are respectively
+`c2b42041557a012f2847b069c3f217863a0b435249422cc8c2f35a4cd7fdf9e4`,
+`d95502ec8339d3f378080a60adfdde70b59f5942519e2aad6ce0d69d4b97166d`,
+`434da49c430eed3790e389fd513575b6c57ef7d04b787d29dd3a568805bdf41d`,
+and
+`3b8f474592ec6c5ed31a2463e2a1fd924afee7bcea90da44c8b3e22052b9642a`.
+
+Its feed cutoff is `2026-08-06T00:47:37Z`.  Comparison to the immediately
+preceding gate is by versioned arXiv ID: all 556 IDs, normalized metadata, and
+screening decisions agree; 401 response-order moves are explicitly
+nonmaterial; and the same 23 inspected candidates yield zero material C1--C5
+deltas.  The separate exact-ID response keeps Xu and Srivastava--Surya at
+version 1.  The gate remains a bounded title/abstract and exact-ID check, not
+an exhaustive novelty, priority, absence, or general pre-window update claim.
+It is artifact-specific: a later submission or deposit requires a new dated
+archive and normalizer rather than reuse of this 2026-08-06 observation.
+
 ### 1.5 Run the focused Paper I tests
 
 ```powershell
@@ -162,13 +199,18 @@ uv run pytest -q -p no:cacheprovider `
   tests/final_theory/test_paper1_manuscript_v042.py `
   tests/final_theory/test_extract_v042_paper1_witness_tables.py `
   tests/final_theory/test_normalize_v042_paper1_arxiv_delta_response.py `
+  tests/final_theory/test_normalize_v042_paper1_submission_gate_response.py `
+  tests/final_theory/test_normalize_v042_paper1_zenodo_gate_20260806.py `
   tests/final_theory/test_weak_d2_v04.py `
   tests/final_theory/test_weak_d2_v04_oracle.py `
   tests/final_theory/test_weak_d2_observability_v042.py `
   tests/final_theory/test_q5_free_elimination_v037.py `
   tests/final_theory/test_eq120_source_provenance_v042.py `
   tests/final_theory/test_v041_partial_slice_audit.py `
-  tests/final_theory/test_semantic_recovery_v042.py
+  tests/final_theory/test_semantic_recovery_v042.py `
+  tests/final_theory/test_v042_stage7_fixture_portability.py `
+  tests/final_theory/test_build_v042_paper1_pdf.py `
+  tests/test_paper1_zenodo_bundle_v042.py
 ```
 
 This is the focused Paper I regression set: manuscript and claim-boundary
@@ -180,7 +222,7 @@ lemmas.  It is intentionally not a
 repository-wide unbounded test run.  The pass count is a dated observation
 rather than a fixed contract: retain the actual count and tool versions from
 each reproduction run in its manuscript record.  The focused command above
-observed 100 passing tests in the current tree on 2026-08-05.
+observed 190 passing tests in the current tree on 2026-08-06.
 
 ## 2. Public frozen v0.3.9 lane
 
@@ -208,6 +250,14 @@ The U2 auxiliary-ideal work remains a reproducibility and limitation record only
 Its status is SOFT_RESOURCE_LIMIT_NONTERMINAL, while the global SR2-V status
 remains SEARCH_OPEN_NO_TERMINAL. Neither a bounded GF(32003) result nor a
 non-unit minor basis proves a QQ theorem or a non-unit theorem for all 543 rows.
+
+This is a two-layer gate.  Scientifically, `u2_is_global_terminal=false` and
+the global search remains open.  Editorially, Paper I accepts the scoped
+limitation under
+`PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED`; a later manuscript
+freeze requires this explicit scoped limitation or a terminal SR2-V outcome,
+not a U2 terminal verdict.  The dated authority is
+`reports/v0.4.2_paper1_editorial_disposition_2026-08-06.md`.
 
 The formal historical authority is reports/v0.4.2_sr2v_auxiliary_ideal_determinantal_pilot_2026-08-05.md,
 including stage-8 attempt 20260804T234311036034Z-ee5eba925784438285676c05f2f6a716,
@@ -342,10 +392,9 @@ not report the attempted computation as cleanly reproduced.
 
 ## 4. TeX build status
 
-The host workstation still has neither `latexmk` nor `pdflatex`.  A pinned
-container toolchain is now available, and a local draft build was completed
-and visually checked on 2026-08-05.  The canonical build entry point is the
-repository helper below, run from the repository root:
+The host workstation still has neither `latexmk` nor `pdflatex`.  The
+canonical candidate was built and checked on 2026-08-06 with the pinned
+container entry point below, run from the repository root:
 
 ```powershell
 uv run python scripts/build_v042_paper1_pdf.py --dry-run
@@ -366,21 +415,24 @@ The final `main.log` is authoritative for build diagnostics.  An overfull
 horizontal box, an undefined reference or citation, a LaTeX/Package error, a
 nonzero Docker exit, a missing log/PDF, or an output-integrity mismatch makes
 the helper fail.  On success it atomically replaces
-`output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf` and prints a JSON record
+`output/pdf/paper1_statewise_operator_v0.4.2.pdf` and prints a JSON record
 containing the image reference, toolchain, page-count availability, byte count,
 SHA-256, diagnostics, and output path.  The generated PDF is intentionally
 untracked and is not required by the read-only manuscript validator in a fresh
 clone.
 
-The dated build and all-page visual inspection are recorded in
-`reports/v0.4.2_paper1_pdf_build_2026-08-05.md`.  For the current source hash,
-the final local observation is a 17-page PDF: all 17 pages were inspected,
-all blocking and box diagnostics were zero, no clipping or overlap was found,
-and no intentional draft-proof boxes remain.  The report preserves the older
-10-page build as a prior-source observation rather than silently rebinding it
-to the current source.  This is layout/build verification only.  It is
-separate from submission authorization, does not freeze the release
-candidate, and does not widen C1--C5 or any nonclaim.
+The current dated build and all-page visual inspection are recorded in
+`reports/v0.4.2_paper1_pdf_build_2026-08-06.md`.  The source-bound observation
+is an 18-page, 427745-byte PDF with SHA-256
+`9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43`.
+All 18 pages were rendered at 144 dpi and inspected; every blocking and box
+diagnostic is zero, no clipping or overlap was found, and no intentional
+draft-proof box remains.  The manifest records
+`CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED` and a completed
+PDF/source rebind, while submission and deposit remain owner-only and
+unauthorized.  Any later source or PDF change reopens that fail-closed gate.
+This is layout/build verification only and does not widen C1--C5 or any
+nonclaim.
 
 ## 5. Reporting a reproduction
 

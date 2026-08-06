@@ -1,4 +1,4 @@
-"""Build the Paper I v0.4.2 draft PDF in a digest-pinned TeX container.
+"""Build the Paper I v0.4.2 archive/submission-candidate PDF.
 
 The repository's TeX source refers to a bibliography in a sibling paper
 directory.  This helper therefore builds from a temporary repository-shaped
@@ -29,7 +29,7 @@ IMAGE_REF = (
 )
 PAPER_RELATIVE = Path("paper/v0.4.2_paper1_statewise_operator")
 SHARED_BIB_RELATIVE = Path("paper/v0.3.9_d2_commutativity_short_report/references.bib")
-DEFAULT_OUTPUT_RELATIVE = Path("output/pdf/paper1_statewise_operator_draft_v0.4.2.pdf")
+DEFAULT_OUTPUT_RELATIVE = Path("output/pdf/paper1_statewise_operator_v0.4.2.pdf")
 MIRROR_PARENT_RELATIVE = Path("tmp/pdfs")
 CONTAINER_WORKDIR = f"/workspace/{PAPER_RELATIVE.as_posix()}"
 
@@ -265,7 +265,7 @@ def build_pdf(
     runner: Runner = subprocess.run,
     mirror_parent: Path | None = None,
 ) -> dict[str, Any]:
-    """Build, inspect, and atomically publish the draft PDF."""
+    """Build, inspect, and atomically publish the candidate PDF."""
 
     repository_root = repository_root.resolve()
     output_path = output_path.resolve()

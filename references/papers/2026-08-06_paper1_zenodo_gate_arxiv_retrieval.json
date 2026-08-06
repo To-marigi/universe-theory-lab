@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "user_agent": "universe-theory-lab/0.4.2 (Paper I Zenodo literature gate)",
+  "authorization_boundary": {
+    "technical_literature_gate_only": true,
+    "manuscript_freeze_authorized": false,
+    "submission_authorized": false,
+    "deposit_authorized": false,
+    "publication_authorized": false,
+    "owner_only": true
+  },
+  "retrievals": {
+    "full_overlap": {
+      "requested_url": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608062359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list=",
+      "request_started_utc": "2026-08-06T00:47:36.372Z",
+      "retrieved_utc": "2026-08-06T00:47:38.652Z",
+      "http_status": 200,
+      "content_type": "application/atom+xml",
+      "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_full_overlap_atom.xml",
+      "sha256": "c2b42041557a012f2847b069c3f217863a0b435249422cc8c2f35a4cd7fdf9e4",
+      "bytes": 1091452
+    },
+    "exact_ids": {
+      "requested_url": "https://arxiv.org/api/query?id_list=2607.26672,2603.25503&start=0&max_results=2",
+      "request_started_utc": "2026-08-06T00:47:41.654Z",
+      "retrieved_utc": "2026-08-06T00:47:42.400Z",
+      "http_status": 200,
+      "content_type": "application/atom+xml",
+      "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_exact_ids_atom.xml",
+      "sha256": "d95502ec8339d3f378080a60adfdde70b59f5942519e2aad6ce0d69d4b97166d",
+      "bytes": 5201
+    }
+  },
+  "claim_boundary": "This receipt records two official arXiv API HTTP responses and their local hashes. It supplies no literature, novelty, priority, absence, or publication claim. This artifact closes only a technical literature-delta gate. It does not authorize manuscript freeze, submission, deposit, or publication; all such actions are owner-only and remain unapproved."
+}

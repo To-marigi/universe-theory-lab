@@ -973,18 +973,88 @@
       "claim_boundary": "Category fit is a project assessment based on the current manuscript and remains subject to arXiv moderation. The documentation does not guarantee acceptance in either category."
     },
     {
+      "id": "Zenodo:create-new-upload-2026-08-06",
+      "title": "Create new upload",
+      "authors": ["Zenodo"],
+      "url": "https://help.zenodo.org/docs/deposit/create-new-upload/",
+      "retrieved_on": "2026-08-06",
+      "local_file": null,
+      "version": "live official deposit documentation retrieved 2026-08-06",
+      "used_for": [
+        "manual Paper I draft-upload, save, preview, and publish workflow",
+        "current file-count and size limits, DOI-registration boundary, and 45-day file-edit warning",
+        "publication-date interpretation for a newly public preprint"
+      ],
+      "claim_boundary": "The page documents Zenodo's current deposit workflow and limits. It does not authorize this project to upload or publish, select a license, reserve a DOI, or treat a saved draft as a publication."
+    },
+    {
+      "id": "Zenodo:resource-types-2026-08-06",
+      "title": "Resource types",
+      "authors": ["Zenodo"],
+      "url": "https://help.zenodo.org/docs/deposit/describe-records/resource-type/",
+      "retrieved_on": "2026-08-06",
+      "local_file": null,
+      "version": "live official deposit documentation retrieved 2026-08-06",
+      "used_for": [
+        "separating the Paper I preprint record from the existing v0.3.9 software record",
+        "selecting publication/preprint as the significant resource type for the Paper I upload"
+      ],
+      "claim_boundary": "The page explains discoverability and mixed-type choices. The recommendation to create an independent Paper I preprint record is a project-specific archival judgment, not a Zenodo review or acceptance decision."
+    },
+    {
+      "id": "Zenodo:licenses-2026-08-06",
+      "title": "Licenses and rights",
+      "authors": ["Zenodo"],
+      "url": "https://help.zenodo.org/docs/deposit/describe-records/licenses/",
+      "retrieved_on": "2026-08-06",
+      "local_file": null,
+      "version": "live official deposit documentation retrieved 2026-08-06",
+      "used_for": [
+        "recording that Zenodo requires a license and defaults to CC BY 4.0",
+        "keeping the manuscript license and MIT-licensed software supplement as separate owner decisions"
+      ],
+      "claim_boundary": "The page documents available license metadata and mixed-license uploads. It does not grant a license on behalf of the author or determine the correct license for Paper I."
+    },
+    {
+      "id": "Zenodo:creators-2026-08-06",
+      "title": "Creators",
+      "authors": ["Zenodo"],
+      "url": "https://help.zenodo.org/docs/deposit/describe-records/creators/",
+      "retrieved_on": "2026-08-06",
+      "local_file": null,
+      "version": "live official deposit documentation retrieved 2026-08-06",
+      "used_for": [
+        "creator-name splitting, ORCID validation, and independent-researcher affiliation entry"
+      ],
+      "claim_boundary": "The page describes creator metadata. It does not validate the author's identity, ORCID ownership, affiliation wording, or authorship responsibility."
+    },
+    {
+      "id": "Zenodo:manage-versions-2026-08-06",
+      "title": "Manage versions",
+      "authors": ["Zenodo"],
+      "url": "https://help.zenodo.org/docs/deposit/manage-versions/",
+      "retrieved_on": "2026-08-06",
+      "local_file": null,
+      "version": "live official deposit documentation retrieved 2026-08-06",
+      "used_for": [
+        "distinguishing a new Paper I record from a new version of the existing v0.3.9 software record",
+        "preserving version-specific files and persistent identifiers"
+      ],
+      "claim_boundary": "The page describes Zenodo record versioning. It does not establish that Paper I and the v0.3.9 software are versions of the same object; the project treats them as distinct resources."
+    },
+    {
       "id": "Zenodo:manage-files-2026-08-01",
       "title": "Manage files",
       "authors": ["Zenodo"],
       "url": "https://help.zenodo.org/docs/deposit/manage-files/",
       "retrieved_on": "2026-08-01",
       "local_file": null,
-      "version": "live official deposit documentation retrieved 2026-08-01",
+      "version": "live official deposit documentation retrieved 2026-08-01; retained as a historical observation and superseded for current workflow by the 2026-08-06 source entries",
       "used_for": [
-        "current 30-day window for minor correction of files after publication",
+        "historical 2026-08-01 observation of the then-displayed file-correction window",
         "adding a standalone previewable PDF and selecting the default preview without changing the existing DOI"
       ],
-      "claim_boundary": "The documentation permits file editing within the stated window but does not decide whether adding the already-bundled short-report PDF is minor or significant; the depositor remains responsible for preserving the frozen release and describing any change."
+      "claim_boundary": "This dated entry must not be used for the current edit-window duration. The depositor remains responsible for previewing the complete file set and preserving the frozen release."
     },
     {
       "id": "INSPIRE:adding-material-2026-08-01",
@@ -1768,6 +1838,218 @@
         "exact-ID version and updated-metadata checks for arXiv:2607.26672 and arXiv:2603.25503"
       ],
       "claim_boundary": "This artifact-specific 2026-08-05T11:31Z gate establishes only that the archived submittedDate response fully overlaps the committed window, has the same 556 versioned IDs, normalized title/abstract metadata, and C1--C5 screening decisions when compared by ID, and that the separately queried Xu and Srivastava--Surya records remain at v1. It does not establish exhaustive literature coverage, novelty, priority, absence, or general coverage of updates to records submitted before the window. The changed arXiv API response order is not a materiality signal. This checker must not be reused for a later submission: a later gate requires new date-stamped raw responses, a new source ID, and a window-aware normalizer proving start no later than the baseline start, end no earlier than the prior end, and a monotone feed cutoff. This artifact closes only a technical literature-delta gate. It does not authorize manuscript freeze, submission, deposit, or publication; all such actions are owner-only and remain unapproved."
+    },
+    {
+      "id": "arXiv:PaperI-zenodo-gate-recheck-2026-08-06",
+      "title": "Official arXiv API responses: Paper I Zenodo preparation gate",
+      "authors": [
+        "arXiv"
+      ],
+      "url": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608062359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list=",
+      "exact_id_url": "https://arxiv.org/api/query?id_list=2607.26672,2603.25503&start=0&max_results=2",
+      "retrieved_on": "2026-08-06",
+      "local_file": null,
+      "local_artifacts": [
+        {
+          "role": "FULL_OVERLAP_RAW_API_RESPONSE",
+          "path": "papers/2026-08-06_paper1_zenodo_gate_arxiv_full_overlap_atom.xml",
+          "media_type": "application/atom+xml",
+          "sha256": "sha256:c2b42041557a012f2847b069c3f217863a0b435249422cc8c2f35a4cd7fdf9e4",
+          "bytes": 1091452
+        },
+        {
+          "role": "EXACT_ID_RAW_API_RESPONSE",
+          "path": "papers/2026-08-06_paper1_zenodo_gate_arxiv_exact_ids_atom.xml",
+          "media_type": "application/atom+xml",
+          "sha256": "sha256:d95502ec8339d3f378080a60adfdde70b59f5942519e2aad6ce0d69d4b97166d",
+          "bytes": 5201
+        },
+        {
+          "role": "RETRIEVAL_PROVENANCE",
+          "path": "papers/2026-08-06_paper1_zenodo_gate_arxiv_retrieval.json",
+          "media_type": "application/json",
+          "sha256": "sha256:434da49c430eed3790e389fd513575b6c57ef7d04b787d29dd3a568805bdf41d",
+          "bytes": 1957
+        },
+        {
+          "role": "NORMALIZED_SCREENING_LEDGER",
+          "path": "papers/2026-08-06_paper1_zenodo_gate_arxiv_normalized.json",
+          "media_type": "application/json",
+          "sha256": "sha256:3b8f474592ec6c5ed31a2463e2a1fd924afee7bcea90da44c8b3e22052b9642a",
+          "bytes": 504422
+        }
+      ],
+      "dataset_snapshot": {
+        "gate_status": "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_GATE_FULL_OVERLAP_AS_OF_2026-08-06T00:47:37Z",
+        "full_overlap_feed_updated_utc": "2026-08-06T00:47:37Z",
+        "effective_response_query": {
+          "authority": "ARCHIVED_ATOM_FEED_TITLE_AND_QUERY_LINK",
+          "field": "submittedDate",
+          "window_start_compact_utc": "202607311500",
+          "window_end_compact_utc": "202608062359",
+          "categories": [
+            "gr-qc",
+            "quant-ph",
+            "math-ph",
+            "math.OA",
+            "math.RA",
+            "math.AC",
+            "math.FA",
+            "math.CO"
+          ],
+          "start": 0,
+          "max_results": 2000,
+          "id_list": [],
+          "window_start_utc": "2026-07-31T15:00:00Z",
+          "window_end_minute_utc": "2026-08-06T23:59:00Z",
+          "window_end_exclusive_utc": "2026-08-07T00:00:00Z",
+          "feed_title": "arXiv Query: search_query=submittedDate:\"202607311500 TO 202608062359\" AND (cat:gr-qc OR (cat:quant-ph OR (cat:math-ph OR (cat:math.OA OR (cat:math.RA OR (cat:math.AC OR (cat:math.FA OR cat:math.CO) ) ) ) ) ) )&id_list=&start=0&max_results=2000",
+          "self_link": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608062359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list="
+        },
+        "normalizer": "scripts/normalize_v042_paper1_zenodo_gate_20260806.py",
+        "fetch_command": ".venv\\Scripts\\python.exe scripts/normalize_v042_paper1_zenodo_gate_20260806.py --fetch",
+        "check_command": ".venv\\Scripts\\python.exe scripts/normalize_v042_paper1_zenodo_gate_20260806.py --check",
+        "response_entry_count": 556,
+        "entries_published_in_submitted_date_window": 556,
+        "entries_published_outside_submitted_date_window": 0,
+        "entries_published_at_or_before_feed_cutoff": 556,
+        "entries_published_after_feed_cutoff": 0,
+        "minimum_published_utc": "2026-07-31T15:01:28Z",
+        "maximum_published_utc": "2026-08-04T17:59:09Z",
+        "ordered_arxiv_ids_sha256": "sha256:d73fc0cb5f6cdefa74f5d319dc9a9eca8c17adf15a9c0d7a360db0ea7f42e24d",
+        "records_sha256": "sha256:a7b40bd7a6cdfde23677ba03686a805d925620ea227a50ec5efb144f603d27da",
+        "screening_decision_counts": {
+          "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 533,
+          "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 23,
+          "MATERIAL_DELTA_TO_C1_C5": 0
+        },
+        "authorization_boundary": {
+          "technical_literature_gate_only": true,
+          "manuscript_freeze_authorized": false,
+          "submission_authorized": false,
+          "deposit_authorized": false,
+          "publication_authorized": false,
+          "owner_only": true
+        },
+        "retrieval_receipt": {
+          "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_retrieval.json",
+          "sha256": "434da49c430eed3790e389fd513575b6c57ef7d04b787d29dd3a568805bdf41d",
+          "bytes": 1957,
+          "retrievals": {
+            "full_overlap": {
+              "requested_url": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608062359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list=",
+              "request_started_utc": "2026-08-06T00:47:36.372Z",
+              "retrieved_utc": "2026-08-06T00:47:38.652Z",
+              "http_status": 200,
+              "content_type": "application/atom+xml",
+              "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_full_overlap_atom.xml",
+              "sha256": "c2b42041557a012f2847b069c3f217863a0b435249422cc8c2f35a4cd7fdf9e4",
+              "bytes": 1091452
+            },
+            "exact_ids": {
+              "requested_url": "https://arxiv.org/api/query?id_list=2607.26672,2603.25503&start=0&max_results=2",
+              "request_started_utc": "2026-08-06T00:47:41.654Z",
+              "retrieved_utc": "2026-08-06T00:47:42.400Z",
+              "http_status": 200,
+              "content_type": "application/atom+xml",
+              "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_exact_ids_atom.xml",
+              "sha256": "d95502ec8339d3f378080a60adfdde70b59f5942519e2aad6ce0d69d4b97166d",
+              "bytes": 5201
+            }
+          }
+        },
+        "full_overlap_comparison": {
+          "prior_scope_preserved": true,
+          "window_start_not_later_than_prior": true,
+          "window_end_not_earlier_than_prior": true,
+          "feed_cutoff_monotone": true,
+          "prior_window_start_compact_utc": "202607311500",
+          "prior_window_end_compact_utc": "202608052359",
+          "current_window_start_compact_utc": "202607311500",
+          "current_window_end_compact_utc": "202608062359",
+          "prior_feed_updated_utc": "2026-08-05T11:31:24Z",
+          "current_feed_updated_utc": "2026-08-06T00:47:37Z",
+          "previous_response_entry_count": 556,
+          "zenodo_gate_response_entry_count": 556,
+          "added_ids": [],
+          "missing_ids": [],
+          "metadata_changed_ids": [],
+          "screening_changed_ids": [],
+          "version_pair_diagnostics": [],
+          "response_order_equal": false,
+          "response_order_moved_record_count": 401,
+          "response_order_not_a_materiality_contract": true,
+          "metadata_by_id_sha256": "97913f712442e345403784449466cb1d6a7f2eecf3a8dd9910f9aa754b091ff7",
+          "screening_by_id_sha256": "9987148cc19621917b821a9a0bfecfe719d06514ff5f409fd31642907f640ed1"
+        },
+        "title_abstract_rescreen": {
+          "records_screened": 556,
+          "rule_triggered_candidates": 23,
+          "candidate_ids": [
+            "2608.00159v1",
+            "2608.00297v1",
+            "2608.01110v1",
+            "2608.01114v1",
+            "2608.01293v1",
+            "2608.01317v1",
+            "2608.01376v1",
+            "2608.01424v1",
+            "2608.01485v1",
+            "2608.01650v1",
+            "2608.01689v1",
+            "2608.01831v1",
+            "2608.02262v1",
+            "2608.02459v1",
+            "2608.02473v1",
+            "2608.02861v1",
+            "2608.03334v1",
+            "2608.03427v1",
+            "2608.03526v1",
+            "2608.03552v1",
+            "2608.03755v1",
+            "2608.03825v1",
+            "2608.03897v1"
+          ],
+          "candidate_metadata_changed_ids": [],
+          "candidate_decision_changed_ids": [],
+          "material_delta_ids": [],
+          "status": "COMPLETED_NO_MATERIAL_DELTA"
+        },
+        "exact_id_checks": {
+          "raw_response": {
+            "path": "references/papers/2026-08-06_paper1_zenodo_gate_arxiv_exact_ids_atom.xml",
+            "sha256": "d95502ec8339d3f378080a60adfdde70b59f5942519e2aad6ce0d69d4b97166d",
+            "bytes": 5201,
+            "feed_updated_utc": "2026-08-06T00:47:42Z"
+          },
+          "effective_response_query": {
+            "authority": "ARCHIVED_ATOM_FEED_TITLE_AND_QUERY_LINK",
+            "search_query": "",
+            "id_list": [
+              "2607.26672",
+              "2603.25503"
+            ],
+            "start": 0,
+            "max_results": 2,
+            "feed_title": "arXiv Query: search_query=&id_list=2607.26672,2603.25503&start=0&max_results=2",
+            "self_link": "https://arxiv.org/api/query?search_query=&start=0&max_results=2&id_list=2607.26672,2603.25503"
+          },
+          "response_entry_count": 2,
+          "versions": {
+            "2603.25503": "v1",
+            "2607.26672": "v1"
+          },
+          "status": "BOTH_TRACKED_RECORDS_REMAIN_V1"
+        }
+      },
+      "version": "official arXiv API Atom responses archived for the 2026-08-06 Zenodo preparation gate; full-overlap feed timestamp 2026-08-06T00:47:37Z; exact-ID feed timestamp 2026-08-06T00:47:42Z",
+      "relationship": "SEARCH_DATASET",
+      "used_for": [
+        "Paper I Zenodo preparation full-overlap submittedDate gate for C1--C5",
+        "ID-keyed comparison with the immediately prior 2026-08-05 Paper I gate",
+        "exact-ID version and updated-metadata checks for arXiv:2607.26672 and arXiv:2603.25503"
+      ],
+      "claim_boundary": "This artifact-specific 2026-08-06 gate establishes only that the archived expanded submittedDate response begins no later than and ends no earlier than the prior gate, has the same versioned IDs, normalized title/abstract metadata, and C1--C5 screening decisions when compared by ID, and that the separately queried Xu and Srivastava--Surya records remain at v1. It does not establish exhaustive literature coverage, novelty, priority, absence, or general coverage of updates to records submitted before the window. The changed arXiv API response order is not a materiality signal. A future gate requires a new date-stamped archive, source ID, and window-aware normalizer. This artifact closes only a technical literature-delta gate. It does not authorize manuscript freeze, submission, deposit, or publication; all such actions are owner-only and remain unapproved."
     }
   ]
 }

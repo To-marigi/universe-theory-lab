@@ -30,6 +30,13 @@ def test_paper1_report_keeps_the_scope_boundary() -> None:
     assert "complete finite ON semantics lattice" in report
     assert "v0.4.2_sr2v_baseline_observability.json" in report
 
+    addendum = (
+        ROOT / "reports/v0.4.2_paper1_editorial_disposition_2026-08-06.md"
+    ).read_text(encoding="utf-8")
+    assert "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED" in addendum
+    assert "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED" in addendum
+    assert "supplements rather than rewrites that" in addendum
+
 
 def test_c2_observability_evidence_pins_the_off_reachable_boundary() -> None:
     ledger = json.loads(
