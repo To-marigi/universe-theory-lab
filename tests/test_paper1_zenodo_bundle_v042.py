@@ -1,4 +1,4 @@
-"""Focused tests for the Paper I single-archive upload and owner waiver."""
+"""Focused tests for the Paper I PDF-plus-supplement Zenodo layout."""
 
 from __future__ import annotations
 
@@ -142,7 +142,7 @@ def _synthetic_root(builder: ModuleType, root: Path) -> tuple[object, ...]:
         "raw_sha256": hashlib.sha256(owner_artifact_path.read_bytes()).hexdigest(),
         "semantic_digest_sha256": owner_artifact["semantic_digest_sha256"],
         "report_raw_sha256": hashlib.sha256(owner_report_path.read_bytes()).hexdigest(),
-        "decision_date": "2026-08-06",
+        "decision_date": "2026-08-07",
     }
     metadata_path.write_text(
         json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
@@ -332,7 +332,36 @@ def _commit_synthetic_sources(root: Path, specs: tuple[object, ...]) -> str:
     return resolved.stdout.strip()
 
 
-def test_single_archive_output_is_deterministic_and_verifiable(
+def _rewrite_supplement_manifest(
+    builder: ModuleType,
+    archive_path: Path,
+    destination: Path,
+    mutate: object,
+) -> None:
+    stage = destination.parent / "tampered-supplement-stage"
+    stage.mkdir()
+    with tarfile.open(archive_path, mode="r:gz") as archive:
+        for member in archive.getmembers():
+            relative = member.name.split(f"{builder.SUPPLEMENT_PREFIX}/", 1)[-1]
+            target = stage / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            handle = archive.extractfile(member)
+            assert handle is not None
+            target.write_bytes(handle.read())
+    manifest_path = stage / builder.SUPPLEMENT_MANIFEST_PATH
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    mutate(manifest)
+    manifest.pop("semantic_digest_sha256", None)
+    manifest["semantic_digest_sha256"] = builder._semantic_digest(manifest)
+    manifest_path.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    builder._write_tar(stage, destination)
+
+
+def test_pdf_and_supplement_output_is_deterministic_and_verifiable(
     builder: ModuleType,
     verifier: ModuleType,
     tmp_path: Path,
@@ -340,29 +369,33 @@ def test_single_archive_output_is_deterministic_and_verifiable(
     root = tmp_path / "repository"
     root.mkdir()
     specs = _synthetic_root(builder, root)
+    commit = _commit_synthetic_sources(root, specs)
     first = tmp_path / "upload-first"
     second = tmp_path / "upload-second"
 
-    first_summary = builder.build_upload_set(root, first, specs=specs)
-    builder.build_upload_set(root, second, specs=specs)
+    first_summary = builder.build_upload_set(root, first, specs=specs, revision=commit)
+    builder.build_upload_set(root, second, specs=specs, revision=commit)
 
-    expected_names = {builder.UPLOAD_ARCHIVE_NAME}
+    expected_names = {builder.UPLOAD_PDF_NAME, builder.UPLOAD_SUPPLEMENT_NAME}
     assert set(first_summary["files"]) == expected_names
-    assert first_summary["layout"] == builder.SINGLE_ARCHIVE_LAYOUT
-    assert first_summary["zenodo_upload_files"] == [builder.UPLOAD_ARCHIVE_NAME]
+    assert first_summary["layout"] == builder.PDF_AND_SUPPLEMENT_LAYOUT
+    assert first_summary["zenodo_upload_files"] == [
+        builder.UPLOAD_PDF_NAME,
+        builder.UPLOAD_SUPPLEMENT_NAME,
+    ]
     assert {path.name for path in first.iterdir()} == expected_names
     for name in expected_names:
         assert (first / name).read_bytes() == (second / name).read_bytes()
 
     verified = verifier.verify_upload_directory(first)
     assert verified["passed"]
-    assert verified["archive"]["inner_supplement"]["passed"]
-    assert verified["archive"]["inner_supplement"]["pdf_members"] == []
-    assert verified["archive"]["inner_supplement"]["forbidden_members"] == []
+    assert verified["supplement"]["passed"]
+    assert verified["supplement"]["pdf_members"] == []
+    assert verified["supplement"]["forbidden_members"] == []
 
-    with tarfile.open(first / builder.UPLOAD_ARCHIVE_NAME, mode="r:gz") as archive:
+    with tarfile.open(first / builder.UPLOAD_SUPPLEMENT_NAME, mode="r:gz") as archive:
         members = archive.getmembers()
-    assert all(member.name.startswith(f"{builder.OUTER_PREFIX}/") for member in members)
+    assert all(member.name.startswith(f"{builder.SUPPLEMENT_PREFIX}/") for member in members)
     assert all(member.mode == 0o644 for member in members)
     assert all((member.uid, member.gid) == (0, 0) for member in members)
     assert all((member.uname, member.gname) == ("", "") for member in members)
@@ -370,7 +403,7 @@ def test_single_archive_output_is_deterministic_and_verifiable(
     assert first_summary["pdf_binding"]["pdf_page_count"] == 18
 
 
-def test_owner_decision_fields_are_bound_into_both_manifests(
+def test_owner_decision_fields_are_bound_into_the_default_supplement(
     builder: ModuleType,
     verifier: ModuleType,
     tmp_path: Path,
@@ -378,21 +411,23 @@ def test_owner_decision_fields_are_bound_into_both_manifests(
     root = tmp_path / "repository"
     root.mkdir()
     specs = _synthetic_root(builder, root)
+    commit = _commit_synthetic_sources(root, specs)
     output = tmp_path / "upload"
-    summary = builder.build_upload_set(root, output, specs=specs)
+    summary = builder.build_upload_set(root, output, specs=specs, revision=commit)
     assert summary["owner_decision_binding"]["path"] == builder.OWNER_DECISION_ARTIFACT_PATH
     assert summary["owner_decisions"]["license"]["paper"] == "CC BY 4.0"
     assert summary["owner_decisions"]["publication_date"]["value"] is None
     assert summary["owner_decisions"]["doi"]["value"] is None
+    assert summary["owner_decisions"]["doi"]["draft_reservation_requested"] is False
     assert summary["owner_decisions"]["related_identifiers"]["value"] == []
-    with tarfile.open(output / builder.UPLOAD_ARCHIVE_NAME, mode="r:gz") as archive:
+    with tarfile.open(output / builder.UPLOAD_SUPPLEMENT_NAME, mode="r:gz") as archive:
         member = next(
             item for item in archive.getmembers() if item.name.endswith("/upload_checksums.json")
         )
         handle = archive.extractfile(member)
         assert handle is not None
-        outer_manifest = json.loads(handle.read().decode("utf-8"))
-    assert outer_manifest["owner_decisions"] == summary["owner_decisions"]
+        supplement_manifest = json.loads(handle.read().decode("utf-8"))
+    assert supplement_manifest["owner_decisions"] == summary["owner_decisions"]
     assert verifier.verify_upload_directory(output)["passed"]
 
 
@@ -404,23 +439,15 @@ def test_predraft_gate_report_note_are_bound_and_raw_artifacts_excluded(
     root = tmp_path / "repository"
     root.mkdir()
     specs = _synthetic_root(builder, root)
+    commit = _commit_synthetic_sources(root, specs)
     output = tmp_path / "upload"
-    summary = builder.build_upload_set(root, output, specs=specs)
+    summary = builder.build_upload_set(root, output, specs=specs, revision=commit)
     gate = summary["zenodo_predraft_literature_gate"]
     assert gate["feed_cutoff_utc"] == "2026-08-06T11:28:07Z"
     assert gate["response_entry_count"] == 722
     assert gate["reviewed_title_abstract_count"] == 28
     assert gate["material_delta_count"] == 0
-    with tarfile.open(output / builder.UPLOAD_ARCHIVE_NAME, mode="r:gz") as outer:
-        outer_inner = next(
-            member for member in outer.getmembers() if member.name.endswith("supplement.tar.gz")
-        )
-        handle = outer.extractfile(outer_inner)
-        assert handle is not None
-        inner_bytes = handle.read()
-    inner_path = tmp_path / builder.UPLOAD_SUPPLEMENT_NAME
-    inner_path.write_bytes(inner_bytes)
-    with tarfile.open(inner_path, mode="r:gz") as inner:
+    with tarfile.open(output / builder.UPLOAD_SUPPLEMENT_NAME, mode="r:gz") as inner:
         member_names = {
             member.name.split(f"{builder.SUPPLEMENT_PREFIX}/", 1)[-1]
             for member in inner.getmembers()
@@ -470,7 +497,7 @@ def test_owner_decision_license_tamper_fails_closed(
         builder.build_upload_set(root, tmp_path / "upload", specs=specs)
 
 
-def test_two_file_layout_requires_and_records_owner_waiver(
+def test_default_layout_is_previewable_pdf_plus_supplement(
     builder: ModuleType,
     verifier: ModuleType,
     tmp_path: Path,
@@ -478,28 +505,110 @@ def test_two_file_layout_requires_and_records_owner_waiver(
     root = tmp_path / "repository"
     root.mkdir()
     specs = _synthetic_root(builder, root)
-    with pytest.raises(ValueError, match="owner_waiver"):
-        builder.build_upload_set(root, tmp_path / "without-waiver", specs=specs, layout="two_file")
-    output = tmp_path / "waived"
+    commit = _commit_synthetic_sources(root, specs)
+    output = tmp_path / "default"
+    summary = builder.build_upload_set(root, output, specs=specs, revision=commit)
+    assert summary["layout"] == builder.PDF_AND_SUPPLEMENT_LAYOUT
+    assert summary["historical_layout"] is False
+    assert set(summary["files"]) == {builder.UPLOAD_PDF_NAME, builder.UPLOAD_SUPPLEMENT_NAME}
+    assert verifier.verify_upload_directory(output)["passed"]
+
+
+def test_unbound_preview_is_explicit_and_never_uploadable(
+    builder: ModuleType,
+    verifier: ModuleType,
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "repository"
+    root.mkdir()
+    specs = _synthetic_root(builder, root)
+    output = tmp_path / "unbound"
+    summary = builder.build_upload_set(root, output, specs=specs)
+    assert summary["source_commit_binding"]["status"] == "UNBOUND_PREVIEW"
+    assert summary["source_commit_binding"]["commit"] is None
+    assert summary["packaged_commit"] is None
+    with tarfile.open(output / builder.UPLOAD_SUPPLEMENT_NAME, mode="r:gz") as archive:
+        member = next(
+            item for item in archive.getmembers() if item.name.endswith("/upload_checksums.json")
+        )
+        handle = archive.extractfile(member)
+        assert handle is not None
+        manifest = json.loads(handle.read().decode("utf-8"))
+    assert manifest["status"] == "UNBOUND_PREVIEW"
+    assert manifest["source_commit_binding"]["commit"] is None
+    assert manifest["source_commit_binding"]["tree_url"] is None
+    verified = verifier.verify_upload_directory(output)
+    assert verified["passed"] is False
+    assert any(
+        "UNBOUND_PREVIEW supplement is never eligible for upload" in error
+        for error in verified["supplement"]["source_commit_binding_errors"]
+    )
+
+
+def test_embedded_source_commit_binding_tamper_fails_closed(
+    builder: ModuleType,
+    verifier: ModuleType,
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "repository"
+    root.mkdir()
+    specs = _synthetic_root(builder, root)
+    commit = _commit_synthetic_sources(root, specs)
+    output = tmp_path / "upload"
+    builder.build_upload_set(root, output, specs=specs, revision=commit)
+    tampered = tmp_path / "tampered.tar.gz"
+
+    def mutate(manifest: dict[str, object]) -> None:
+        binding = manifest["source_commit_binding"]
+        assert isinstance(binding, dict)
+        checked = binding["checked_sources"]
+        assert isinstance(checked, list)
+        checked[0]["sha256"] = "0" * 64
+
+    _rewrite_supplement_manifest(
+        builder,
+        output / builder.UPLOAD_SUPPLEMENT_NAME,
+        tampered,
+        mutate,
+    )
+    verified = verifier.verify_supplement_archive(
+        tampered,
+        standalone_pdf=output / builder.UPLOAD_PDF_NAME,
+    )
+    assert verified["passed"] is False
+    assert (
+        "production source binding checked_sources do not exactly match manifest.files"
+        in verified["source_commit_binding_errors"]
+    )
+
+
+def test_historical_single_archive_is_integrity_checkable_but_root_rejects_it(
+    builder: ModuleType,
+    verifier: ModuleType,
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "repository"
+    root.mkdir()
+    specs = _synthetic_root(builder, root)
+    commit = _commit_synthetic_sources(root, specs)
+    output = tmp_path / "historical"
     summary = builder.build_upload_set(
         root,
         output,
         specs=specs,
-        layout="two_file",
-        owner_waiver=True,
+        revision=commit,
+        layout=builder.SINGLE_ARCHIVE_LAYOUT,
     )
-    assert summary["layout"] == builder.TWO_FILE_OWNER_WAIVER_LAYOUT
-    assert summary["owner_waiver"] is True
-    assert set(summary["files"]) == {builder.UPLOAD_PDF_NAME, builder.UPLOAD_SUPPLEMENT_NAME}
-    assert not verifier.verify_upload_directory(output)["passed"]
-    verified = verifier.verify_upload_directory(
-        output,
-        allow_two_file_owner_waiver=True,
-    )
-    assert verified["passed"]
+    assert summary["historical_layout"] is True
+    archive = output / builder.UPLOAD_ARCHIVE_NAME
+    assert verifier.verify_single_archive(archive)["passed"]
+    strict = verifier.verify_upload_directory(output)
+    assert strict["passed"] is False
+    assert strict["integrity_passed"] is True
+    assert "not an eligible Paper I Zenodo upload layout" in strict["error"]
 
 
-def test_commit_binding_checks_all_allowlisted_source_bytes_and_stays_out_of_archive(
+def test_commit_binding_is_embedded_and_matches_manifest_files(
     builder: ModuleType,
     tmp_path: Path,
 ) -> None:
@@ -510,13 +619,20 @@ def test_commit_binding_checks_all_allowlisted_source_bytes_and_stays_out_of_arc
     output = tmp_path / "upload"
     summary = builder.build_upload_set(root, output, specs=specs, revision=commit)
     assert summary["packaged_commit"] == commit
-    assert summary["commit_binding"]["checked_source_count"] == len(specs) + 1
-    assert builder.WITNESS_SOURCE_PATH in summary["commit_binding"]["automatic_sources"]
+    binding = summary["source_commit_binding"]
+    assert binding["status"] == "PRODUCTION_COMMIT_BOUND"
+    assert binding["commit"] == commit
+    assert len(binding["commit"]) == 40
+    assert binding["repository_url"] == builder.REPOSITORY_URL
+    assert binding["tree_url"] is None
+    assert binding["remote_visibility"] == "NOT_VERIFIED_BY_BUILDER"
+    assert binding["checked_source_count"] == len(specs) + 1
+    assert builder.WITNESS_SOURCE_PATH in binding["automatic_sources"]
     assert any(
-        record["path"] == builder.WITNESS_SOURCE_PATH
-        for record in summary["commit_binding"]["checked_sources"]
+        record["source_path"] == builder.WITNESS_SOURCE_PATH
+        for record in binding["checked_sources"]
     )
-    with tarfile.open(output / builder.UPLOAD_ARCHIVE_NAME, mode="r:gz") as archive:
+    with tarfile.open(output / builder.UPLOAD_SUPPLEMENT_NAME, mode="r:gz") as archive:
         manifest_member = next(
             member
             for member in archive.getmembers()
@@ -525,8 +641,17 @@ def test_commit_binding_checks_all_allowlisted_source_bytes_and_stays_out_of_arc
         handle = archive.extractfile(manifest_member)
         assert handle is not None
         manifest = json.loads(handle.read().decode("utf-8"))
-    assert "commit" not in manifest
-    assert "packaged_commit" not in manifest
+    assert manifest["source_commit_binding"] == binding
+    assert manifest["status"] == "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING"
+    projected = [
+        {
+            "source_path": record["source_path"],
+            "sha256": record["sha256"],
+            "size_bytes": record["size_bytes"],
+        }
+        for record in manifest["files"]
+    ]
+    assert binding["checked_sources"] == projected
 
 
 def test_commit_binding_rejects_witness_table_mismatch(
@@ -590,21 +715,13 @@ def test_tampering_is_reported_without_touching_source_pdf(
     root = tmp_path / "repository"
     root.mkdir()
     specs = _synthetic_root(builder, root)
+    commit = _commit_synthetic_sources(root, specs)
     output = tmp_path / "upload"
-    builder.build_upload_set(
-        root,
-        output,
-        specs=specs,
-        layout="two_file",
-        owner_waiver=True,
-    )
+    builder.build_upload_set(root, output, specs=specs, revision=commit)
 
     pdf = output / builder.UPLOAD_PDF_NAME
     pdf.write_bytes(pdf.read_bytes() + b"tampered\n")
-    summary = verifier.verify_upload_directory(
-        output,
-        allow_two_file_owner_waiver=True,
-    )
+    summary = verifier.verify_upload_directory(output)
     assert not summary["passed"]
     assert "standalone PDF SHA-256 mismatch" in summary["supplement"]["external_pdf_errors"]
     assert (root / builder.PDF_SOURCE_PATH).read_bytes().startswith(b"%PDF-1.7")
@@ -634,6 +751,8 @@ def test_default_allowlist_uses_final_pdf_and_zenodo_literature_documents(
     assert builder.PDF_SOURCE_PATH == "output/pdf/paper1_statewise_operator_v0.4.2.pdf"
     assert builder.PDF_BUILD_REPORT_PATH == "reports/v0.4.2_paper1_pdf_build_2026-08-06.md"
     assert "zenodo/paper1-v0.4.2/UPLOAD_CHECKLIST.md" in paths
+    assert builder.ZENODO_FORM_VALUES_PATH in paths
+    assert builder.ZENODO_SUBMISSION_POLICY_NOTE_PATH in paths
     assert builder.ZENODO_LITERATURE_REPORT_PATH in paths
     assert builder.ZENODO_LITERATURE_NOTE_PATH in paths
     assert builder.ZENODO_PREDRAFT_REPORT_PATH in paths
@@ -641,6 +760,43 @@ def test_default_allowlist_uses_final_pdf_and_zenodo_literature_documents(
     assert builder.ZENODO_PREDRAFT_NORMALIZER_PATH not in paths
     assert builder.ZENODO_PREDRAFT_LEDGER_PATH not in paths
     assert not any(path.startswith("references/papers/") for path in paths)
+
+
+def test_zenodo_form_values_match_metadata_and_no_reservation_policy(
+    builder: ModuleType,
+) -> None:
+    metadata = json.loads(
+        (REPOSITORY_ROOT / builder.METADATA_TEMPLATE_PATH).read_text(encoding="utf-8")
+    )
+    owner = json.loads(
+        (REPOSITORY_ROOT / builder.OWNER_DECISION_ARTIFACT_PATH).read_text(
+            encoding="utf-8"
+        )
+    )
+    form_values = (REPOSITORY_ROOT / builder.ZENODO_FORM_VALUES_PATH).read_text(
+        encoding="utf-8"
+    )
+    assert metadata["doi_policy"] == owner["decisions"]["doi"]
+    availability = metadata["data_code_availability"]
+    assert availability["exact_commit_recorded_in_supplement_manifest_at_build"] is True
+    assert availability["exact_commit_recorded_in_external_receipt_at_build"] is True
+    assert availability["remote_commit_visibility_verified_by_builder"] is False
+    assert "exact_commit_recorded_in_external_zenodo_metadata_at_deposit" not in availability
+    assert owner["decisions"]["doi"]["draft_reservation_requested"] is False
+    assert all(value is False for value in owner["release_gates"].values())
+    for value in (
+        metadata["title"],
+        metadata["description"],
+        *metadata["keywords"],
+        builder.UPLOAD_PDF_NAME,
+        builder.UPLOAD_SUPPLEMENT_NAME,
+        "No draft reservation; Zenodo assigns/registers DOI at publication.",
+        "Technical info",
+        "Other",
+        "ZENODO_UPLOAD_RECEIPT.md",
+    ):
+        assert value in form_values
+    assert "02f31f1a2135b97f00f794dff510309fb82f15d8" not in form_values
 
 
 def test_cli_requires_commit_or_explicit_unbound_preview(builder: ModuleType) -> None:

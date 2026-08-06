@@ -1,11 +1,16 @@
 {
   "schema_version": "zenodo-paper1-owner-decision-v1",
-  "decision_date": "2026-08-06",
+  "decision_date": "2026-08-07",
   "status": "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING",
   "authority": {
     "kind": "human_owner_decision",
     "scope": "Paper I v0.4.2 Zenodo packaging",
-    "release_actions_not_authorized": true
+    "release_actions_not_authorized": true,
+    "amends_report": "reports/v0.4.2_paper1_owner_decision_2026-08-06.md",
+    "amendment_scope": [
+      "upload_layout",
+      "doi_handling"
+    ]
   },
   "decisions": {
     "final_pdf": {
@@ -17,10 +22,14 @@
       "status": "CURRENT_FINAL_VERIFIED_PDF_ACCEPTED"
     },
     "upload_layout": {
-      "accepted": "single_archive",
-      "two_file_owner_waiver": false,
-      "archive_name": "paper1_statewise_operator_v0.4.2_zenodo.tar.gz",
-      "status": "STRICT_SINGLE_ARCHIVE_ACCEPTED"
+      "accepted": "pdf_and_supplement",
+      "zenodo_upload_files": [
+        "paper1_statewise_operator_v0.4.2.pdf",
+        "paper1_statewise_operator_v0.4.2_supplement.tar.gz"
+      ],
+      "pdf_preview_required": true,
+      "legacy_single_archive_historical_only": true,
+      "status": "PDF_AND_SUPPLEMENT_PREPRINT_LAYOUT_ACCEPTED"
     },
     "license": {
       "paper": "CC BY 4.0",
@@ -33,9 +42,10 @@
       "status": "VALUE_PENDING_PUBLICATION"
     },
     "doi": {
-      "policy": "reserve_in_zenodo_draft",
+      "policy": "NO_DRAFT_RESERVATION_ZENODO_REGISTERS_DOI_AT_PUBLICATION",
+      "draft_reservation_requested": false,
       "value": null,
-      "status": "RESERVATION_PENDING_DRAFT"
+      "status": "NO_DRAFT_RESERVATION_DOI_PENDING_PUBLICATION"
     },
     "related_identifiers": {
       "initial": [],
@@ -56,5 +66,5 @@
     "deposit_executed": false,
     "published": false
   },
-  "semantic_digest_sha256": "7a637b60a95f0f709b7b49609e66a540a91159d9d15d8b77100909ce67d231a8"
+  "semantic_digest_sha256": "2c971e6ab26e23c5ee5390ed568fb8230494dabafb00d6a3ef0a8bb6adc5a20a"
 }

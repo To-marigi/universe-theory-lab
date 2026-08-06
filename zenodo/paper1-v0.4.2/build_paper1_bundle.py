@@ -1,17 +1,13 @@
 """Build the owner-gated Paper I v0.4.2 Zenodo upload candidate.
 
-The default candidate follows the historical one-archive discipline: an
-output directory contains exactly one deterministic outer archive.  The
-outer archive contains the final standalone PDF, the deterministic source /
-reproduction supplement archive, and an outer self-excluding
-``upload_checksums.json``.  The supplement keeps its own self-excluding
-manifest and records the PDF as an external-file binding; the outer archive
-binds the actual PDF bytes to that record.
+The default candidate is a standalone final PDF plus a deterministic source /
+reproduction supplement archive.  Zenodo can therefore preview the Preprint
+PDF directly while the supplement records that PDF as an external-file hash
+binding, without duplicating the PDF bytes inside the supplement.
 
-The historical two-file PDF + supplement layout remains available only when
-the owner explicitly selects ``layout="two_file"`` together with
-``owner_waiver=True``.  It is not the default and is marked as such in every
-generated summary.
+The historical one-archive candidate is retained only for offline integrity
+verification and explicit legacy comparisons; it is not the recommended
+Paper I Zenodo layout.
 
 The final verified generated PDF is read-only input.  Before copying it, this
 builder fail-closes on the current manuscript manifest, PDF build report, and
@@ -53,9 +49,21 @@ WITNESS_SOURCE_PATH = "results/v0.4.2_paper1_witness_tables.json"
 MANUSCRIPT_MANIFEST_PATH = "results/v0.4.2_paper1_manuscript_manifest.json"
 CLAIM_LEDGER_PATH = "results/v0.4.2_paper1_claim_boundary.json"
 PDF_BUILD_REPORT_PATH = "reports/v0.4.2_paper1_pdf_build_2026-08-06.md"
+REPOSITORY_URL = "https://github.com/To-marigi/universe-theory-lab"
 OWNER_DECISION_ARTIFACT_PATH = "zenodo/paper1-v0.4.2/owner_decision.json"
-OWNER_DECISION_REPORT_PATH = "reports/v0.4.2_paper1_owner_decision_2026-08-06.md"
+PREVIOUS_OWNER_DECISION_REPORT_PATH = (
+    "reports/v0.4.2_paper1_owner_decision_2026-08-06.md"
+)
+OWNER_DECISION_REPORT_PATH = (
+    "reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md"
+)
 METADATA_TEMPLATE_PATH = "zenodo/paper1-v0.4.2/metadata.template.json"
+ZENODO_FORM_VALUES_PATH = "zenodo/paper1-v0.4.2/ZENODO_FORM_VALUES.md"
+ZENODO_SUBMISSION_POLICY_NOTE_PATH = (
+    "references/notes/v0.4.2_paper1_zenodo_submission_policy_2026-08-07.md"
+)
+DOI_POLICY = "NO_DRAFT_RESERVATION_ZENODO_REGISTERS_DOI_AT_PUBLICATION"
+DOI_STATUS = "NO_DRAFT_RESERVATION_DOI_PENDING_PUBLICATION"
 ZENODO_LITERATURE_REPORT_PATH = "reports/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md"
 ZENODO_LITERATURE_NOTE_PATH = (
     "references/notes/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md"
@@ -181,7 +189,7 @@ UPLOAD_PDF_NAME = "paper1_statewise_operator_v0.4.2.pdf"
 UPLOAD_SUPPLEMENT_NAME = "paper1_statewise_operator_v0.4.2_supplement.tar.gz"
 UPLOAD_ARCHIVE_NAME = "paper1_statewise_operator_v0.4.2_zenodo.tar.gz"
 SINGLE_ARCHIVE_LAYOUT = "single_archive"
-TWO_FILE_OWNER_WAIVER_LAYOUT = "two_file_owner_waiver"
+PDF_AND_SUPPLEMENT_LAYOUT = "pdf_and_supplement"
 WITNESS_MEMBER_PATH = f"witness/{UPLOAD_PDF_NAME.removesuffix('.pdf')}_witness_tables.json"
 
 MEMBER_MODE = 0o644
@@ -205,25 +213,24 @@ REQUIRED_DESCRIPTION_FRAGMENTS = (
     "occurrence-ON",
     "d=2",
     "n<=4",
-    "QQ",
-    "C1",
-    "C2",
-    "C3",
-    "C4",
-    "C5",
-    "N1--N6",
-    "SEARCH_OPEN_NO_TERMINAL",
-    "SOFT_RESOURCE_LIMIT_NONTERMINAL",
-    "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED",
-    "third-party reference PDFs/texts",
-    "human author is responsible",
-    "AI systems are not authors",
+    "five ledger-bound results",
+    "strong/strong commutativity baseline",
+    "fixed-vector/general-covariance",
+    "Eq. (120)",
+    "proper reconstruction slice",
+    "statewise-to-operator recovery",
+    "955 or 721 profiles",
+    "U2 auxiliary-ideal",
+    "not as a unit-ideal theorem",
 )
 REQUIRED_METADATA_KEYWORDS = {
     "causal sets",
     "quantum sequential growth",
+    "finite quantum sequential growth",
     "Bell causality",
+    "CPOBC",
     "statewise observability",
+    "statewise-to-operator recovery",
     "exact rational certificates",
     "noncommutative matrices",
 }
@@ -268,6 +275,16 @@ DEFAULT_SOURCE_FILE_SPECS: tuple[FileSpec, ...] = (
         "package/UPLOAD_CHECKLIST.md",
         "zenodo/paper1-v0.4.2/UPLOAD_CHECKLIST.md",
         "owner_gated_manual_upload_checklist",
+    ),
+    FileSpec(
+        "package/ZENODO_FORM_VALUES.md",
+        ZENODO_FORM_VALUES_PATH,
+        "copy_paste_zenodo_form_values",
+    ),
+    FileSpec(
+        ZENODO_SUBMISSION_POLICY_NOTE_PATH,
+        ZENODO_SUBMISSION_POLICY_NOTE_PATH,
+        "current_zenodo_submission_policy_source_note",
     ),
     FileSpec(
         "package/metadata.template.json",
@@ -342,7 +359,12 @@ DEFAULT_SOURCE_FILE_SPECS: tuple[FileSpec, ...] = (
     FileSpec(
         OWNER_DECISION_REPORT_PATH,
         OWNER_DECISION_REPORT_PATH,
-        "dated_human_owner_decision_report",
+        "dated_human_owner_decision_amendment",
+    ),
+    FileSpec(
+        PREVIOUS_OWNER_DECISION_REPORT_PATH,
+        PREVIOUS_OWNER_DECISION_REPORT_PATH,
+        "superseded_historical_owner_decision_report",
     ),
     FileSpec(
         "reports/v0.4.2_sr2v_auxiliary_ideal_determinantal_pilot_2026-08-05.md",
@@ -513,7 +535,7 @@ def _validate_owner_decision(
         {key: value for key, value in artifact.items() if key != "semantic_digest_sha256"}
     ) != recorded_semantic:
         raise RuntimeError("owner decision artifact semantic digest is invalid")
-    if artifact.get("decision_date") != "2026-08-06":
+    if artifact.get("decision_date") != "2026-08-07":
         raise RuntimeError("owner decision date drifted")
     if artifact.get("status") != "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING":
         raise RuntimeError("owner decision artifact status drifted")
@@ -522,6 +544,10 @@ def _validate_owner_decision(
         authority.get("release_actions_not_authorized") is not True
     ):
         raise RuntimeError("owner decision artifact must keep release actions unauthorized")
+    if authority.get("amends_report") != PREVIOUS_OWNER_DECISION_REPORT_PATH:
+        raise RuntimeError("owner decision amendment provenance drifted")
+    if authority.get("amendment_scope") != ["upload_layout", "doi_handling"]:
+        raise RuntimeError("owner decision amendment scope drifted")
     decisions = artifact.get("decisions")
     if not isinstance(decisions, dict):
         raise RuntimeError("owner decision artifact decisions are missing")
@@ -547,10 +573,11 @@ def _validate_owner_decision(
             )
     layout = decisions.get("upload_layout")
     if layout != {
-        "accepted": SINGLE_ARCHIVE_LAYOUT,
-        "two_file_owner_waiver": False,
-        "archive_name": UPLOAD_ARCHIVE_NAME,
-        "status": "STRICT_SINGLE_ARCHIVE_ACCEPTED",
+        "accepted": PDF_AND_SUPPLEMENT_LAYOUT,
+        "zenodo_upload_files": [UPLOAD_PDF_NAME, UPLOAD_SUPPLEMENT_NAME],
+        "pdf_preview_required": True,
+        "legacy_single_archive_historical_only": True,
+        "status": "PDF_AND_SUPPLEMENT_PREPRINT_LAYOUT_ACCEPTED",
     }:
         raise RuntimeError("owner decision upload layout drifted")
     if decisions.get("license") != {
@@ -566,9 +593,10 @@ def _validate_owner_decision(
     }:
         raise RuntimeError("owner decision publication-date policy drifted")
     if decisions.get("doi") != {
-        "policy": "reserve_in_zenodo_draft",
+        "policy": DOI_POLICY,
+        "draft_reservation_requested": False,
         "value": None,
-        "status": "RESERVATION_PENDING_DRAFT",
+        "status": DOI_STATUS,
     }:
         raise RuntimeError("owner decision DOI policy drifted")
     if decisions.get("related_identifiers") != {
@@ -598,17 +626,24 @@ def _validate_owner_decision(
     except OSError as exc:
         raise RuntimeError(f"owner decision report cannot be read: {exc}") from exc
     required_report_fragments = (
-        "# Paper I v0.4.2 owner decision record — 2026-08-06",
+        "# Paper I v0.4.2 owner decision amendment — 2026-08-07",
         OWNER_DECISION_PDF_SHA256,
         "CC BY 4.0",
-        "The two-file owner waiver is",
-        "false; the production upload list is exactly",
-        "actual Zenodo publication date",
-        "reserve a DOI in the Zenodo draft",
-        "Initial related identifiers are approved as an empty list (`[]`).",
-        "final commit is recorded externally at the deposit/build cycle",
-        "Draft creation, DOI reservation, manuscript freeze, submission approval,",
-        "deposit, and publication have not been performed or approved.",
+        "supersedes only the upload-layout and DOI",
+        "The production upload list is",
+        "exactly `paper1_statewise_operator_v0.4.2.pdf`",
+        "paper1_statewise_operator_v0.4.2.pdf",
+        "paper1_statewise_operator_v0.4.2_supplement.tar.gz",
+        "actual first-public Zenodo date",
+        "DOI policy is **no draft reservation**",
+        "No, I need one",
+        "Zenodo assigns/registers the DOI at publication",
+        "Initial related identifiers remain the approved empty list (`[]`).",
+        "exact source commit remains an external deposit/build-cycle value",
+        "No Zenodo form value or file was submitted or saved.",
+        "Draft creation,",
+        "publication have not been",
+        "No DOI reservation is requested.",
     )
     missing_report_fragments = [
         fragment for fragment in required_report_fragments if fragment not in report
@@ -713,7 +748,7 @@ def _validate_metadata_template(
     if template.get("license") != "CC BY 4.0":
         raise RuntimeError("Paper I metadata license must be CC BY 4.0")
     if template.get("doi") is not None:
-        raise RuntimeError("metadata DOI must remain null before draft reservation")
+        raise RuntimeError("metadata DOI must remain null until Zenodo publication")
     if template.get("final_commit") is not None:
         raise RuntimeError("metadata final_commit must remain null until the external build cycle")
     keywords = template.get("keywords")
@@ -721,6 +756,33 @@ def _validate_metadata_template(
         raise RuntimeError(
             "metadata worksheet keywords must include the Paper I scientific vocabulary"
         )
+    additional = template.get("additional_descriptions")
+    if not isinstance(additional, list) or len(additional) != 2:
+        raise RuntimeError("metadata additional descriptions must have two public UI entries")
+    technical, ai_note = additional
+    if not isinstance(technical, dict) or technical.get("type") != "Technical info":
+        raise RuntimeError("metadata technical claim-boundary description drifted")
+    if not isinstance(ai_note, dict) or ai_note.get("type") != "Other":
+        raise RuntimeError("metadata AI additional-description type drifted")
+    technical_description = technical.get("description")
+    ai_description = ai_note.get("description")
+    if not isinstance(technical_description, str) or not all(
+        fragment in technical_description
+        for fragment in (
+            "C1", "C2", "C3", "C4", "C5", "N1--N6",
+            "SEARCH_OPEN_NO_TERMINAL", "SOFT_RESOURCE_LIMIT_NONTERMINAL",
+            "PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED",
+        )
+    ):
+        raise RuntimeError("metadata technical claim-boundary content is incomplete")
+    if not isinstance(ai_description, str) or not all(
+        fragment in ai_description
+        for fragment in (
+            "human author is responsible", "AI systems are not authors",
+            "not proof authorities",
+        )
+    ):
+        raise RuntimeError("metadata AI additional-description content is incomplete")
     ai_disclosure = template.get("ai_disclosure")
     if not isinstance(ai_disclosure, dict) or (
         ai_disclosure.get("ai_systems_are_authors") is not False
@@ -735,8 +797,18 @@ def _validate_metadata_template(
         raise RuntimeError("metadata worksheet data/code availability is missing")
     if data_code.get("repository_url") != "https://github.com/To-marigi/universe-theory-lab":
         raise RuntimeError("metadata worksheet repository URL drifted")
-    if data_code.get("exact_commit_recorded_in_external_zenodo_metadata_at_deposit") is not True:
-        raise RuntimeError("metadata worksheet must reserve the exact external commit record")
+    expected_commit_provenance = {
+        "exact_commit_recorded_in_supplement_manifest_at_build": True,
+        "exact_commit_recorded_in_external_receipt_at_build": True,
+        "remote_commit_visibility_verified_by_builder": False,
+    }
+    if any(
+        data_code.get(key) is not value
+        for key, value in expected_commit_provenance.items()
+    ):
+        raise RuntimeError("metadata worksheet commit-provenance policy drifted")
+    if "exact_commit_recorded_in_external_zenodo_metadata_at_deposit" in data_code:
+        raise RuntimeError("metadata worksheet retains the superseded external-metadata policy")
 
     ledger_path = root / CLAIM_LEDGER_PATH
     ledger = _load_json(ledger_path, "claim boundary ledger")
@@ -772,6 +844,8 @@ def _validate_metadata_template(
         raise RuntimeError("metadata license disagrees with owner decision")
     if template.get("doi") != decisions["doi"]["value"]:
         raise RuntimeError("metadata DOI disagrees with owner decision")
+    if template.get("doi_policy") != decisions["doi"]:
+        raise RuntimeError("metadata DOI policy disagrees with owner decision")
     if template.get("related_identifiers") != decisions["related_identifiers"]["value"]:
         raise RuntimeError("metadata relations disagree with owner decision")
     if template.get("final_commit") != decisions["final_commit"]["value"]:
@@ -1183,15 +1257,19 @@ def _supplement_manifest(
     metadata_binding: dict[str, Any],
     predraft_gate_binding: dict[str, Any],
     specs: Iterable[FileSpec] | None,
+    source_commit_binding: dict[str, Any],
 ) -> dict[str, Any]:
     records = _source_records(
         root,
         DEFAULT_SOURCE_FILE_SPECS if specs is None else specs,
     )
+    preview = source_commit_binding.get("status") == "UNBOUND_PREVIEW"
     payload: dict[str, Any] = {
         "schema_version": SUPPLEMENT_SCHEMA_VERSION,
         "bundle_version": BUNDLE_VERSION,
-        "status": "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING",
+        "status": "UNBOUND_PREVIEW"
+        if preview
+        else "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING",
         "title": PAPER_TITLE,
         "primary_resource": "Paper I preprint",
         "recommended_upload_type": "Publication / Preprint",
@@ -1210,6 +1288,7 @@ def _supplement_manifest(
         "pdf_binding": pdf_binding,
         "metadata_binding": metadata_binding,
         "zenodo_predraft_literature_gate": predraft_gate_binding,
+        "source_commit_binding": source_commit_binding,
         "owner_decision_binding": metadata_binding["owner_decision_binding"],
         "owner_decisions": metadata_binding["owner_decisions"],
         "owner_release_gates": metadata_binding["owner_release_gates"],
@@ -1236,12 +1315,13 @@ def _outer_manifest(
     inner_supplement_size: int,
     inner_supplement_sha256: str,
 ) -> dict[str, Any]:
-    """Create the self-excluding manifest for the default single archive.
+    """Create the self-excluding manifest for a historical single archive.
 
     The outer manifest deliberately records the inner archive as a member and
     the final PDF as a member.  The inner manifest remains authoritative for
-    its source allowlist and metadata checks; this layer binds those bytes to
-    the single file that the owner uploads to Zenodo.
+    its source allowlist, metadata checks, and ``source_commit_binding``;
+    this layer binds those bytes to the historical single file.  The wrapper
+    itself therefore remains commit-binding-free for legacy compatibility.
     """
 
     files = [
@@ -1289,7 +1369,13 @@ def _outer_manifest(
         },
         "self_excluded_artifact": OUTER_MANIFEST_PATH,
         "excluded_scope": EXCLUDED_SCOPE,
+        # The historical wrapper itself remains commit-binding-free; the
+        # current binding lives in the embedded supplement manifest.
         "commit_binding_embedded": False,
+        "inner_commit_binding_embedded": isinstance(
+            inner_supplement.get("source_commit_binding"), dict
+        ),
+        "commit_binding_location": "inner_supplement.source_commit_binding",
         "owner_field_values": {
             "publication_date": None,
             "license": None,
@@ -1403,6 +1489,8 @@ def _validate_commit_binding(
     """
 
     commit = _resolve_commit(root, revision)
+    if not re.fullmatch(r"[0-9a-f]{40}", commit):
+        raise RuntimeError("resolved production commit is not a full 40-hex revision")
     checked: list[dict[str, Any]] = []
     optional_untracked: list[str] = []
     selected_specs = list(specs)
@@ -1441,17 +1529,44 @@ def _validate_commit_binding(
             )
         checked.append(
             {
-                "path": spec.source_path,
+                "archive_path": spec.archive_path,
+                "source_path": spec.source_path,
                 "sha256": _sha256_bytes(current),
-                "bytes": len(current),
+                "size_bytes": len(current),
             }
         )
     return {
+        "status": "PRODUCTION_COMMIT_BOUND",
         "commit": commit,
+        "repository_url": REPOSITORY_URL,
+        "tree_url": None,
+        "remote_visibility": "NOT_VERIFIED_BY_BUILDER",
         "checked_source_count": len(checked),
-        "checked_sources": checked,
+        "checked_sources": [
+            {
+                key: record[key]
+                for key in ("source_path", "sha256", "size_bytes")
+            }
+            for record in sorted(checked, key=lambda item: item["archive_path"])
+        ],
         "automatic_sources": [WITNESS_SOURCE_PATH],
         "optional_untracked_sources": optional_untracked,
+    }
+
+
+def _unbound_preview_source_binding() -> dict[str, Any]:
+    """Return the explicit, non-uploadable source-binding sentinel."""
+
+    return {
+        "status": "UNBOUND_PREVIEW",
+        "commit": None,
+        "repository_url": REPOSITORY_URL,
+        "tree_url": None,
+        "remote_visibility": "NOT_VERIFIED_BY_BUILDER",
+        "checked_source_count": 0,
+        "checked_sources": [],
+        "automatic_sources": [WITNESS_SOURCE_PATH],
+        "optional_untracked_sources": sorted(COMMIT_UNTRACKED_OPTIONAL_PATHS),
     }
 
 
@@ -1461,34 +1576,28 @@ def build_upload_set(
     *,
     revision: str | None = None,
     specs: Iterable[FileSpec] | None = None,
-    layout: str = SINGLE_ARCHIVE_LAYOUT,
-    owner_waiver: bool = False,
+    layout: str = PDF_AND_SUPPLEMENT_LAYOUT,
 ) -> dict[str, Any]:
-    """Create the default single archive or an explicit two-file waiver set.
+    """Create the default PDF + supplement set or an explicit legacy archive.
 
-    ``layout`` accepts the canonical values ``single_archive`` and
-    ``two_file`` (hyphenated spellings are accepted for CLI/API ergonomics).
-    Two-file output is intentionally fail-closed unless ``owner_waiver`` is
-    true; this prevents an old invocation from silently producing a layout
-    that no longer matches the Paper I default.
+    ``pdf_and_supplement`` is the Paper I default because it gives Zenodo a
+    directly previewable Preprint PDF without duplicating that PDF inside the
+    reproducibility archive.  ``single_archive`` is retained only as an
+    explicit historical candidate for offline comparison.
     """
 
     root = root.resolve()
     output_dir = output_dir.resolve()
     layout = {
+        "pdf-and-supplement": PDF_AND_SUPPLEMENT_LAYOUT,
+        "pdf_and_supplement": PDF_AND_SUPPLEMENT_LAYOUT,
+        "two-file": PDF_AND_SUPPLEMENT_LAYOUT,
+        "two_file": PDF_AND_SUPPLEMENT_LAYOUT,
         "single-archive": SINGLE_ARCHIVE_LAYOUT,
         "single_archive": SINGLE_ARCHIVE_LAYOUT,
-        "two-file": "two_file",
-        "two_file": "two_file",
-        TWO_FILE_OWNER_WAIVER_LAYOUT: "two_file",
     }.get(layout, layout)
-    if layout not in {SINGLE_ARCHIVE_LAYOUT, "two_file"}:
+    if layout not in {PDF_AND_SUPPLEMENT_LAYOUT, SINGLE_ARCHIVE_LAYOUT}:
         raise ValueError(f"unknown upload layout: {layout!r}")
-    if layout == "two_file" and not owner_waiver:
-        raise ValueError(
-            "two-file output requires explicit owner_waiver=True; "
-            "single_archive is the Paper I default"
-        )
     _validate_output_dir(output_dir, root)
     selected_specs = _normalise_specs(
         DEFAULT_SOURCE_FILE_SPECS if specs is None else specs
@@ -1498,10 +1607,12 @@ def build_upload_set(
     owner_decision = _validate_owner_decision(root, pdf_binding)
     metadata_binding = _validate_metadata_template(root, owner_decision)
     predraft_gate_binding = _validate_zenodo_predraft_gate(root)
-    commit_binding = (
-        _validate_commit_binding(root, revision, selected_specs) if revision else None
+    source_commit_binding = (
+        _validate_commit_binding(root, revision, selected_specs)
+        if revision
+        else _unbound_preview_source_binding()
     )
-    packaged_commit = commit_binding["commit"] if commit_binding else None
+    packaged_commit = source_commit_binding["commit"]
     output_dir.mkdir(parents=True, exist_ok=True)
     pdf_bytes = (root / PDF_SOURCE_PATH).read_bytes()
     manifest = _supplement_manifest(
@@ -1510,6 +1621,7 @@ def build_upload_set(
         metadata_binding,
         predraft_gate_binding,
         selected_specs,
+        source_commit_binding,
     )
     with tempfile.TemporaryDirectory(prefix="paper1-supplement-") as temporary:
         temporary_path = Path(temporary)
@@ -1519,17 +1631,18 @@ def build_upload_set(
         inner_supplement_bytes = inner_supplement_temp.read_bytes()
         inner_supplement_sha = _sha256_bytes(inner_supplement_bytes)
 
-        if layout == "two_file":
+        if layout == PDF_AND_SUPPLEMENT_LAYOUT:
             # Copy only after all fail-closed checks pass; this is a copy,
-            # never a move.  The old layout is owner-waiver-only.
+            # never a move.  The PDF remains external to the supplement and
+            # is bound by the supplement manifest's PDF hash record.
             pdf_destination = output_dir / UPLOAD_PDF_NAME
             supplement_destination = output_dir / UPLOAD_SUPPLEMENT_NAME
             pdf_destination.write_bytes(pdf_bytes)
             supplement_destination.write_bytes(inner_supplement_bytes)
             return {
                 "output_dir": str(output_dir),
-                "layout": TWO_FILE_OWNER_WAIVER_LAYOUT,
-                "owner_waiver": True,
+                "layout": PDF_AND_SUPPLEMENT_LAYOUT,
+                "historical_layout": False,
                 "zenodo_upload_files": [UPLOAD_PDF_NAME, UPLOAD_SUPPLEMENT_NAME],
                 "files": [UPLOAD_PDF_NAME, UPLOAD_SUPPLEMENT_NAME],
                 "standalone_pdf_sha256": _sha256(pdf_destination),
@@ -1547,7 +1660,8 @@ def build_upload_set(
                 "owner_decisions": metadata_binding["owner_decisions"],
                 "owner_release_gates": metadata_binding["owner_release_gates"],
                 "candidate_source_binding": candidate_source_binding,
-                "commit_binding": commit_binding,
+                "source_commit_binding": source_commit_binding,
+                "commit_binding": source_commit_binding,
                 "packaged_commit": packaged_commit,
                 "status": manifest["status"],
                 "owner_confirmation_required": [
@@ -1581,7 +1695,7 @@ def build_upload_set(
     return {
         "output_dir": str(output_dir),
         "layout": SINGLE_ARCHIVE_LAYOUT,
-        "owner_waiver": False,
+        "historical_layout": True,
         "zenodo_upload_files": [UPLOAD_ARCHIVE_NAME],
         "files": [UPLOAD_ARCHIVE_NAME],
         "outer_archive_sha256": _sha256(outer_destination),
@@ -1604,7 +1718,8 @@ def build_upload_set(
         "owner_decisions": metadata_binding["owner_decisions"],
         "owner_release_gates": metadata_binding["owner_release_gates"],
         "candidate_source_binding": candidate_source_binding,
-        "commit_binding": commit_binding,
+        "source_commit_binding": source_commit_binding,
+        "commit_binding": source_commit_binding,
         "packaged_commit": packaged_commit,
         "status": manifest["status"],
         "owner_confirmation_required": [
@@ -1638,23 +1753,18 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
         type=Path,
         required=True,
         help=(
-            "new or empty external directory; default layout contains exactly "
-            "one outer Zenodo archive"
+            "new or empty external directory; default layout contains the "
+            "standalone Preprint PDF and its supplement archive"
         ),
     )
     parser.add_argument(
         "--layout",
-        choices=("single-archive", "two-file"),
-        default="single-archive",
+        choices=("pdf-and-supplement", "single-archive"),
+        default="pdf-and-supplement",
         help=(
-            "single-archive (default) or the historical two-file layout; "
-            "two-file requires --owner-waiver"
+            "pdf-and-supplement (default, directly previewable Preprint PDF) "
+            "or an explicit historical single-archive candidate"
         ),
-    )
-    parser.add_argument(
-        "--owner-waiver",
-        action="store_true",
-        help="explicitly authorize the non-default two-file PDF + supplement layout",
     )
     binding_group = parser.add_mutually_exclusive_group(required=True)
     binding_group.add_argument(
@@ -1678,8 +1788,8 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
         help="fail unless the inner supplement archive has this SHA-256",
     )
     parser.add_argument(
-        "--expect-archive-sha256",
-        help="fail unless the default outer archive has this SHA-256",
+        "--expect-pdf-sha256",
+        help="fail unless the standalone PDF has this SHA-256",
     )
     return parser.parse_args(argv)
 
@@ -1691,7 +1801,6 @@ def main(argv: list[str] | None = None) -> int:
         arguments.output_dir,
         revision=arguments.revision,
         layout=arguments.layout,
-        owner_waiver=arguments.owner_waiver,
     )
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     expected = arguments.expect_supplement_sha256
@@ -1701,11 +1810,11 @@ def main(argv: list[str] | None = None) -> int:
             f"{summary['supplement_sha256']} != {expected}"
         )
         return 1
-    expected_archive = arguments.expect_archive_sha256
-    if expected_archive is not None:
-        actual_archive = summary.get("outer_archive_sha256")
-        if actual_archive != expected_archive:
-            print(f"outer archive sha256 mismatch: {actual_archive} != {expected_archive}")
+    expected_pdf = arguments.expect_pdf_sha256
+    if expected_pdf is not None:
+        actual_pdf = summary.get("standalone_pdf_sha256")
+        if actual_pdf != expected_pdf:
+            print(f"standalone PDF sha256 mismatch: {actual_pdf} != {expected_pdf}")
             return 1
     return 0
 

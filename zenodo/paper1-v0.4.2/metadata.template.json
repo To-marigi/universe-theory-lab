@@ -7,6 +7,12 @@
   "upload_type_ui_worksheet": "Publication / Preprint",
   "version": "0.4.2",
   "publication_date": null,
+  "doi_policy": {
+    "policy": "NO_DRAFT_RESERVATION_ZENODO_REGISTERS_DOI_AT_PUBLICATION",
+    "draft_reservation_requested": false,
+    "value": null,
+    "status": "NO_DRAFT_RESERVATION_DOI_PENDING_PUBLICATION"
+  },
   "license": "CC BY 4.0",
   "access_right": "open",
   "language": "English",
@@ -22,8 +28,11 @@
   "keywords": [
     "causal sets",
     "quantum sequential growth",
+    "finite quantum sequential growth",
     "Bell causality",
+    "CPOBC",
     "statewise observability",
+    "statewise-to-operator recovery",
     "exact rational certificates",
     "noncommutative matrices",
     "operator semantics",
@@ -44,7 +53,17 @@
       "note": "Add only after the final Paper I commit is selected."
     }
   ],
-  "description": "Paper I is a claim-locked archive/submission candidate giving a scoped characteristic-zero interpretation of exact QQ certificates for finite quantum sequential growth at dimension d=2, source stages n<=4, declared nonsingular transitions, and certified occurrence-ON artifacts. C1 is the frozen v0.3.7/v0.3.9 literal strong-GC/strong-MSR comparison baseline, which forces Q1 through Q4 commutativity on its recorded denominator-open 21-chart/S3 certificate and does not use Q5. C2 is an exact rational weak/weak separation: fixed-vector GC plus reachable-state MSR admits a noncommutative witness, but its reachable span has rank one, so the witness is not claimed to be reachable-visible. C3 proves the six raw antichain CPOBC source identities behind Eq. (120) from source nonsingularity alone. C4 proves commutativity only on the proper reconstruction slice P_sGC+rMSR intersect image(Phi_U), not on the full 955 profile or its image complement. C5 gives conditional statewise-to-operator recovery: evaluation injectivity on the declared residual family is necessary and sufficient, with exact same-residual two-probe and non-scalar 2x2 centralizer endpoints; the ordinary single-Omega profile is not claimed to supply those probes. The explicit nonclaims N1--N6 cover the full 955 and 721 profiles, a complete finite ON lattice, reachable-visible weak noncommutativity, a full U2 ideal theorem, occurrence-OFF classification, relation minimality, n>=5, d>=3, singular transitions, and infinite-system conclusions. Scientifically, the global SR2-V status remains SEARCH_OPEN_NO_TERMINAL, U2 remains SOFT_RESOURCE_LIMIT_NONTERMINAL, and u2_is_global_terminal=false. The Paper I editorial disposition is PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED; this is a scoped resource-open limitation, not a QQ theorem or a terminal verdict. The upload excludes third-party reference PDFs/texts and vendored archives; the complete weak electronic ledger remains authoritative, while the compact supplement is an authenticated navigation and selected-witness layer. Full reproduction requires the repository, pinned toolchains, and its exact claim-bound evidence. The human author is responsible for all claims. OpenAI Codex (Luna/Sol) and Anthropic Claude assisted bounded implementation, audit, and drafting; AI systems are not authors and are not proof authorities.",
+  "description": "We present a bounded analysis of the finite, nonsingular, occurrence-ON quantum sequential-growth presentation at dimension d=2 and source stages n<=4. The preprint records five ledger-bound results: a frozen strong/strong commutativity baseline; an exact rational fixed-vector/general-covariance and reachable-state/martingale witness of noncommutativity; a source-native Eq. (120) lemma; commutativity on a proper reconstruction slice; and conditional statewise-to-operator recovery lemmas. Its purpose is to make the distinction between statewise and operator semantics auditable, rather than to classify all finite semantics. In particular, it does not claim the full 955 or 721 profiles, a complete finite occurrence-ON classification, or a reachable-visible witness. The bounded U2 auxiliary-ideal investigation is retained as a reproducibility and resource-boundary record, not as a unit-ideal theorem.",
+  "additional_descriptions": [
+    {
+      "type": "Technical info",
+      "description": "Scope and claim boundary. Paper I is a claim-locked archive/submission candidate giving a scoped characteristic-zero interpretation of exact QQ certificates for finite quantum sequential growth at dimension d=2, source stages n<=4, declared nonsingular transitions, and certified occurrence-ON artifacts. C1 is the frozen v0.3.7/v0.3.9 literal strong-GC/strong-MSR comparison baseline, which forces Q1 through Q4 commutativity on its recorded denominator-open 21-chart/S3 certificate and does not use Q5. C2 is an exact rational weak/weak separation: fixed-vector GC plus reachable-state MSR admits a noncommutative witness, but its reachable span has rank one, so the witness is not claimed to be reachable-visible. C3 proves the six raw antichain CPOBC source identities behind Eq. (120) from source nonsingularity alone. C4 proves commutativity only on the proper reconstruction slice P_sGC+rMSR intersect image(Phi_U), not on the full 955 profile or its image complement. C5 gives conditional statewise-to-operator recovery: evaluation injectivity on the declared residual family is necessary and sufficient, with exact same-residual two-probe and non-scalar 2x2 centralizer endpoints; the ordinary single-Omega profile is not claimed to supply those probes. The explicit nonclaims N1--N6 cover the full 955 and 721 profiles, a complete finite ON lattice, reachable-visible weak noncommutativity, a full U2 ideal theorem, occurrence-OFF classification, relation minimality, n>=5, d>=3, singular transitions, and infinite-system conclusions. Scientifically, the global SR2-V status remains SEARCH_OPEN_NO_TERMINAL, U2 remains SOFT_RESOURCE_LIMIT_NONTERMINAL, and u2_is_global_terminal=false. The Paper I editorial disposition is PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED; this is a scoped resource-open limitation, not a QQ theorem or a terminal verdict. The upload excludes third-party reference PDFs/texts and vendored archives; the complete weak electronic ledger remains authoritative, while the compact supplement is an authenticated navigation and selected-witness layer. Full reproduction requires the repository, pinned toolchains, and its exact claim-bound evidence."
+    },
+    {
+      "type": "Other",
+      "description": "Authorship and AI assistance. The human author is responsible for all claims. OpenAI Codex (Luna/Sol) and Anthropic Claude assisted bounded implementation, audit, and drafting; AI systems are not authors and are not proof authorities."
+    }
+  ],
   "claim_ledger_binding": {
     "path": "results/v0.4.2_paper1_claim_boundary.json",
     "raw_sha256": "37db1962f807076668b71b9575f1c7200c9bba319d2a4375f4493e94d0a94b37",
@@ -52,11 +71,11 @@
   },
   "owner_decision_binding": {
     "path": "zenodo/paper1-v0.4.2/owner_decision.json",
-    "report_path": "reports/v0.4.2_paper1_owner_decision_2026-08-06.md",
-    "raw_sha256": "c997b75692feaf5ab4e7359847f5e71dc5b878390adfc91a750b5b28caa27f06",
-    "semantic_digest_sha256": "7a637b60a95f0f709b7b49609e66a540a91159d9d15d8b77100909ce67d231a8",
-    "report_raw_sha256": "74adbbfa1ffa0dc22f4e3730a727fabfc4330fa71ee52d30106ff882ef18b876",
-    "decision_date": "2026-08-06"
+    "report_path": "reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md",
+    "raw_sha256": "08e7cbc3a1e911a88e9a73c76a901bb3e4101550a6c23ea51b46dc43b08ac3ef",
+    "semantic_digest_sha256": "2c971e6ab26e23c5ee5390ed568fb8230494dabafb00d6a3ef0a8bb6adc5a20a",
+    "report_raw_sha256": "2f8089f8c831573856ed01a4da0ba47cfa8c68ce529d572e1f3bb758e3ae840d",
+    "decision_date": "2026-08-07"
   },
   "final_commit": null,
   "archive_sha256": null,
@@ -80,7 +99,9 @@
   "data_code_availability": {
     "repository_url": "https://github.com/To-marigi/universe-theory-lab",
     "exact_commit": null,
-    "exact_commit_recorded_in_external_zenodo_metadata_at_deposit": true,
+    "exact_commit_recorded_in_supplement_manifest_at_build": true,
+    "exact_commit_recorded_in_external_receipt_at_build": true,
+    "remote_commit_visibility_verified_by_builder": false,
     "complete_ledger_authority": "results/v0.4_weak_d2_classification.json",
     "compact_supplement_role": "authenticated navigation and selected-witness layer",
     "third_party_reference_pdfs_texts_excluded": true,
