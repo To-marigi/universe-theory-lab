@@ -30,7 +30,7 @@ SCOUT_EXPECTATIONS_RELATIVE = Path(
 )
 PAPER1_VALIDATOR_PATH = ROOT / "scripts/validate_v042_paper1_manuscript.py"
 PDF_BUILD_HELPER_RELATIVE = Path("scripts/build_v042_paper1_pdf.py")
-PDF_BUILD_REPORT_RELATIVE = Path("reports/v0.4.2_paper1_pdf_build_2026-08-06.md")
+PDF_BUILD_REPORT_RELATIVE = Path("reports/v0.4.2_paper1_pdf_build_2026-08-07.md")
 PDF_BUILD_OUTPUT_RELATIVE = Path("output/pdf/paper1_statewise_operator_v0.4.2.pdf")
 PDF_BUILD_IMAGE = (
     "texlive/texlive:latest-medium@"
@@ -289,12 +289,12 @@ def test_pdf_build_contract_is_pinned_but_generated_pdf_is_not_required(tmp_path
     }
     current = tex_build["current_observation"]
     assert current["main_tex_raw_sha256"] == (
-        "e3a39aac3ba2593666a772b4d04c86bff2faf19936a5d8eb45a2a341248101b1"
+        "22cd27ee94d175c05f6c39c94e2b87a6d72dd25d44bfec42da156bc84c9d1b5e"
     )
     assert current["pdf"] == {
         "page_count": 18,
-        "bytes": 427745,
-        "raw_sha256": "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43",
+        "bytes": 428286,
+        "raw_sha256": "c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e",
     }
     assert current["diagnostics"] == {
         "blocking_total": 0,
@@ -303,20 +303,63 @@ def test_pdf_build_contract_is_pinned_but_generated_pdf_is_not_required(tmp_path
         "latex_or_package_error": 0,
         "underfull_box": 0,
     }
-    assert current["visual_qa"] == {
-        "render_dpi": 144,
-        "pages_inspected": 18,
-        "all_pages_inspected": True,
-        "clipping_or_overlap_found": False,
-        "intentional_draft_boxes_remain": False,
-    }
+    # The current bytes were QA'd by the assistant session that made the
+    # adjacent-results addition, not by the owner.  The record must keep saying
+    # so until an owner acceptance of these bytes is separately recorded.
+    qa = current["visual_qa"]
+    assert qa["render_dpi"] == 144
+    assert qa["pages_inspected"] == 18 and qa["all_pages_inspected"] is True
+    assert qa["clipping_or_overlap_found"] is False
+    assert qa["intentional_draft_boxes_remain"] is False
+    assert qa["evidence_directory"] == "tmp/pdfs/paper1-zenodo-final-qa-20260807c"
+    assert qa["performed_by"] == "ASSISTANT_20260807_ADJACENT_RESULTS_ADDITION_SESSION"
+    assert qa["owner_acceptance_of_current_bytes_recorded"] is False
+    # Every page is accounted for: reflowed pages were re-inspected, the rest
+    # are byte-identical to content already inspected.
+    assert sorted(qa["reflowed_pages_individually_inspected"]
+                  + qa["pages_identical_to_prior_qa"]) == list(range(1, 19))
+
+    # The double build is an independent re-verification, so it must stay in its
+    # own record and must never be folded into the visual_qa above.  It was
+    # measured on the prior candidate and characterises the build, not bytes.
+    reverification = current["double_build_reverification"]
+    assert reverification["performed_by"] == "INDEPENDENT_REVERIFICATION_SESSION"
+    assert reverification["candidate_bytes_touched"] is False
+    assert reverification["content_and_xref_bytes_identical"] is True
+    assert reverification["pairwise_differing_byte_count"] == 66
+    assert reverification["differing_fields_only"] == ["/CreationDate", "/ModDate", "/ID"]
+    assert reverification["repeated_for_current_candidate"] is False
+    assert reverification["measured_on_pdf_sha256"] == (
+        "3be46154cf1965f6196599b7bf875bd640f8d04df6000ae6b7021c13ea7e6bcd"
+    )
     assert current["source_pdf_binding"] == {
         "status": "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
         "source_hash_matches_current_observation": True,
         "report_hash_pinned": True,
         "publication_authorized": False,
     }
-    assert tex_build["prior_observations"] == [
+    # Both superseded candidates must remain visible as demoted observations
+    # rather than being erased by successive rebindings.
+    first_0807 = tex_build["prior_observations"][0]
+    assert first_0807["date"] == "2026-08-07"
+    assert first_0807["main_tex_raw_sha256"] == (
+        "3608ac245c8d5456b8817909114b226ae138f61b08689acdc961c6d4bdb2075e"
+    )
+    assert first_0807["pdf"]["raw_sha256"] == (
+        "3be46154cf1965f6196599b7bf875bd640f8d04df6000ae6b7021c13ea7e6bcd"
+    )
+    assert "d=2 obstruction" in first_0807["superseded_reason"]
+
+    withdrawn = tex_build["prior_observations"][1]
+    assert withdrawn["date"] == "2026-08-06"
+    assert withdrawn["main_tex_raw_sha256"] == (
+        "e3a39aac3ba2593666a772b4d04c86bff2faf19936a5d8eb45a2a341248101b1"
+    )
+    assert withdrawn["pdf"]["raw_sha256"] == (
+        "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43"
+    )
+    assert "latest archived gate" in withdrawn["superseded_reason"]
+    assert tex_build["prior_observations"][2:] == [
         {
             "status": "PRIOR_SOURCE_OBSERVATION_NOT_CURRENT_BINDING",
             "date": "2026-08-05",
@@ -646,3 +689,47 @@ def test_zenodo_literature_gate_is_hash_bound_and_owner_gated() -> None:
     errors = []
     validator._validate_zenodo_literature_gate(ROOT, altered, errors)
     assert "Zenodo literature-gate contract changed" in errors
+
+
+def test_expired_recency_wording_cannot_reenter_the_manuscript(tmp_path: Path) -> None:
+    """The 2026-08-06 candidate was withdrawn for calling its bound snapshot the
+    "latest archived" gate.  Recency wording expires silently, so a positive
+    fragment list cannot catch it; the manifest must forbid it explicitly."""
+    validator = _load_paper1_validator()
+    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+
+    forbidden = manifest["state_boundary_text"]["main_tex_forbidden_fragments"]
+    assert "latest archived Zenodo-preparation gate" in forbidden
+
+    manuscript_root = tmp_path / "paper/v0.4.2_paper1_statewise_operator"
+    manuscript_root.mkdir(parents=True)
+    for name in ("main.tex", "REPRODUCING.md"):
+        shutil.copyfile(
+            ROOT / "paper/v0.4.2_paper1_statewise_operator" / name, manuscript_root / name
+        )
+
+    errors: list[str] = []
+    validator._validate_state_boundary_text(tmp_path, manifest, errors)
+    assert not errors
+
+    # The manuscript wraps this sentence across source lines, so the regression
+    # is reintroduced as its own paragraph rather than by rewriting a line.
+    main_tex = manuscript_root / "main.tex"
+    main_tex.write_text(
+        main_tex.read_text(encoding="utf-8") + "\nThe comparison is bound to the latest archived"
+        " Zenodo-preparation gate.\n",
+        encoding="utf-8",
+    )
+    errors = []
+    validator._validate_state_boundary_text(tmp_path, manifest, errors)
+    assert any("forbidden recency wording remains in main.tex" in e for e in errors)
+
+
+def test_state_boundary_requires_a_nonempty_main_tex_forbidden_list() -> None:
+    validator = _load_paper1_validator()
+    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    altered = copy.deepcopy(manifest)
+    altered["state_boundary_text"]["main_tex_forbidden_fragments"] = []
+    errors: list[str] = []
+    validator._validate_state_boundary_text(ROOT, altered, errors)
+    assert "manifest main_tex_forbidden_fragments must be a nonempty list" in errors

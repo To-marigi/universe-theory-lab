@@ -17,7 +17,7 @@ import pytest
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 ZENODO_DIRECTORY = REPOSITORY_ROOT / "zenodo" / "paper1-v0.4.2"
 OWNER_DECISION_PDF_SHA256 = (
-    "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43"
+    "c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e"
 )
 
 
@@ -793,7 +793,7 @@ def test_default_allowlist_uses_final_pdf_and_zenodo_literature_documents(
     specs = builder._normalise_specs(builder.DEFAULT_SOURCE_FILE_SPECS)
     paths = {spec.source_path for spec in specs}
     assert builder.PDF_SOURCE_PATH == "output/pdf/paper1_statewise_operator_v0.4.2.pdf"
-    assert builder.PDF_BUILD_REPORT_PATH == "reports/v0.4.2_paper1_pdf_build_2026-08-06.md"
+    assert builder.PDF_BUILD_REPORT_PATH == "reports/v0.4.2_paper1_pdf_build_2026-08-07.md"
     assert "zenodo/paper1-v0.4.2/UPLOAD_CHECKLIST.md" in paths
     assert builder.ZENODO_FORM_VALUES_PATH in paths
     assert builder.ZENODO_SUBMISSION_POLICY_NOTE_PATH in paths

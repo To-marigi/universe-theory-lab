@@ -8,22 +8,29 @@ The approved owner policies are recorded in
 `owner_decision.json` and
 `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md`, which preserves
 and links the superseded 2026-08-06 record: the accepted final PDF
-is 18 pages with SHA-256
-`9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43`, the
+is 18 pages, 428286 bytes, with SHA-256
+`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`, the
 directly previewable PDF-plus-supplement layout is accepted, the Paper I license is CC BY 4.0 (the
 repository software remains MIT), and initial related identifiers are `[]`.
 Publication date, DOI, and final commit values remain null under their stated
 policies.  Draft creation, freeze, submission, deposit, and publication remain
 unperformed and unauthorized.  No DOI reservation is requested.
 
-The fresh `2026-08-06T2315Z` predraft literature gate is complete: it compares
-722 records to the 1123Z predecessor with zero added/missing, metadata,
-screening, version, and candidate deltas, and retains both tracked IDs at
-`v1`.  This exact handoff may be used to **Save draft** (not publish) after
-the owner completes this checklist.  Publication, push, DOI, and other owner
-release gates remain false; remote visibility is still pending owner
-verification.  A later draft-save attempt, freeze, or deposit requires a new
-timestamped gate.
+**No draft-save is currently authorized.**  The `2026-08-06T2315Z` predraft
+literature gate is complete and remains valid evidence, but it was cut against
+the superseded candidate
+`9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43`, before the
+Sol wording audit forced the rebuild.  It is therefore historical provenance,
+not the authority for the current candidate
+`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`.
+
+A newly timestamped literature gate must be cut and recorded immediately before
+the first draft-save of the current candidate, and its artifacts must replace
+the `ZENODO_PREDRAFT_*` bindings in `verify_paper1_bundle.py`.  Cutting it early
+would repeat the failure that withdrew the 2026-08-06 candidate: a dated gate
+becomes stale while the owner audit and approval are still outstanding.
+Publication, push, DOI, and other owner release gates remain false; remote
+visibility is still pending owner verification.
 
 ## 0. Owner decisions before packaging
 
@@ -44,7 +51,7 @@ owner fields are intentionally not silently filled by these tools.
 From the repository root, with the final generated PDF present:
 
 ```powershell
-uv run python scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py --check
+uv run python scripts/normalize_v042_paper1_zenodo_predraft_gate_<NEW-TIMESTAMP>.py --check
 uv run python zenodo/paper1-v0.4.2/build_paper1_bundle.py `
   --output-dir ..\paper1-v0.4.2-upload `
   --commit <owner-approved-final-commit>
@@ -140,8 +147,11 @@ current provenance or a current upload candidate.
 
 ## 5. Save draft, preview, and publish gate
 
-- [ ] This exact 2315Z-gated handoff may be used to **Save draft**; do not
-      publish yet.
+- [ ] A newly timestamped literature gate for the current candidate has been
+      cut, checked, and recorded, and its artifacts are bound in
+      `verify_paper1_bundle.py`.  Only then may this handoff be used to
+      **Save draft**; do not publish yet.  The 2315Z gate does not satisfy
+      this step: it predates the current candidate.
 - [ ] Check title, creator, ORCID, affiliation, resource type, version,
       description, keywords, license/date/relations in the preview.
 - [ ] Confirm the displayed upload file list is exactly the selected layout

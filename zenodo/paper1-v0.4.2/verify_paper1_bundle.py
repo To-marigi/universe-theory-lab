@@ -30,7 +30,7 @@ SINGLE_ARCHIVE_LAYOUT = "single_archive"
 PDF_AND_SUPPLEMENT_LAYOUT = "pdf_and_supplement"
 PDF_SOURCE_PATH = "output/pdf/paper1_statewise_operator_v0.4.2.pdf"
 WITNESS_SOURCE_PATH = "results/v0.4.2_paper1_witness_tables.json"
-PDF_BUILD_REPORT_PATH = "reports/v0.4.2_paper1_pdf_build_2026-08-06.md"
+PDF_BUILD_REPORT_PATH = "reports/v0.4.2_paper1_pdf_build_2026-08-07.md"
 REPOSITORY_URL = "https://github.com/To-marigi/universe-theory-lab"
 OWNER_DECISION_ARTIFACT_PATH = "zenodo/paper1-v0.4.2/owner_decision.json"
 PREVIOUS_OWNER_DECISION_REPORT_PATH = (
@@ -39,6 +39,13 @@ PREVIOUS_OWNER_DECISION_REPORT_PATH = (
 OWNER_DECISION_REPORT_PATH = (
     "reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md"
 )
+# Kept in step with the builder: the 2026-08-07 amendment also supersedes the
+# final-PDF source binding, because the PDF was rebuilt after the wording audit.
+OWNER_DECISION_AMENDMENT_SCOPE = [
+    "upload_layout",
+    "doi_handling",
+    "final_pdf_source_binding",
+]
 DOI_POLICY = "NO_DRAFT_RESERVATION_ZENODO_REGISTERS_DOI_AT_PUBLICATION"
 DOI_STATUS = "NO_DRAFT_RESERVATION_DOI_PENDING_PUBLICATION"
 ZENODO_PREDRAFT_REPORT_PATH = (
@@ -151,9 +158,9 @@ FINAL_REBIND_STATUSES = frozenset(
     }
 )
 OWNER_DECISION_PDF_SHA256 = (
-    "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43"
+    "c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e"
 )
-OWNER_DECISION_PDF_BYTES = 427745
+OWNER_DECISION_PDF_BYTES = 428286
 OWNER_DECISION_PDF_PAGE_COUNT = 18
 WITNESS_MEMBER_PATH = f"witness/{UPLOAD_PDF_NAME.removesuffix('.pdf')}_witness_tables.json"
 MEMBER_MODE = 0o644
@@ -465,7 +472,7 @@ def _metadata_binding_ok(
         errors.append("owner decision release actions are not kept unauthorized")
     elif authority.get("amends_report") != PREVIOUS_OWNER_DECISION_REPORT_PATH:
         errors.append("owner decision amendment provenance drifted")
-    elif authority.get("amendment_scope") != ["upload_layout", "doi_handling"]:
+    elif authority.get("amendment_scope") != OWNER_DECISION_AMENDMENT_SCOPE:
         errors.append("owner decision amendment scope drifted")
     expected_gates = {
         "draft_created": False,
@@ -512,7 +519,12 @@ def _metadata_binding_ok(
         "# Paper I v0.4.2 owner decision amendment — 2026-08-07",
         OWNER_DECISION_PDF_SHA256,
         "CC BY 4.0",
-        "supersedes only the upload-layout and DOI",
+        "supersedes only the upload-layout, DOI",
+        "final-PDF source-binding portions of the earlier record",
+        "The final PDF was rebuilt twice on this date",
+        "the owner completed its all-page visual QA",
+        "The owner directed the second change and its rebuild.",
+        "an owner acceptance of these exact bytes is not yet recorded",
         "The production upload list is",
         "exactly `paper1_statewise_operator_v0.4.2.pdf`",
         "paper1_statewise_operator_v0.4.2.pdf",

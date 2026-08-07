@@ -72,23 +72,51 @@ EDITORIAL_DISPOSITION_REQUIRED_FRAGMENTS = (
 PDF_SOURCE_BINDING_STATUS = "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED"
 PDF_BUILD_HELPER_PATH = Path("scripts/build_v042_paper1_pdf.py")
 PDF_BUILD_HELPER_SHA256 = "45eb8e8bc112198f1b0fcce0fb1e7f4e2241a6bc431ee7fd7c96c5be07db20ff"
-PDF_BUILD_REPORT_PATH = Path("reports/v0.4.2_paper1_pdf_build_2026-08-06.md")
-PDF_BUILD_REPORT_SHA256 = "a313c6db550ed2aa0558e5c25d27c437ef0958b34e4023092ed9b0b3cb5b2096"
+PDF_BUILD_REPORT_PATH = Path("reports/v0.4.2_paper1_pdf_build_2026-08-07.md")
+PDF_BUILD_REPORT_SHA256 = "898d40edaa28161bce97e000fece674f21c61b3c37236a55aa016b7d650b4430"
 PDF_BUILD_IMAGE = (
     "texlive/texlive:latest-medium@"
     "sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9"
 )
 PDF_BUILD_OUTPUT_PATH = Path("output/pdf/paper1_statewise_operator_v0.4.2.pdf")
-PDF_BUILD_MAIN_SHA256 = "e3a39aac3ba2593666a772b4d04c86bff2faf19936a5d8eb45a2a341248101b1"
-PDF_BUILD_OBSERVED_SHA256 = "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43"
-PDF_BUILD_PRIOR_MAIN_SHA256 = "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd"
-PDF_BUILD_PRIOR_OBSERVED_SHA256 = "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"
+PDF_BUILD_MAIN_SHA256 = "22cd27ee94d175c05f6c39c94e2b87a6d72dd25d44bfec42da156bc84c9d1b5e"
+PDF_BUILD_OBSERVED_SHA256 = "c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e"
+PDF_BUILD_PRIOR_MAIN_SHA256 = "3608ac245c8d5456b8817909114b226ae138f61b08689acdc961c6d4bdb2075e"
+PDF_BUILD_PRIOR_OBSERVED_SHA256 = "3be46154cf1965f6196599b7bf875bd640f8d04df6000ae6b7021c13ea7e6bcd"
+# The withdrawn 2026-08-06 candidate stays bound so the report cannot quietly
+# drop the reason the whole rebuild sequence started.
+PDF_BUILD_WITHDRAWN_MAIN_SHA256 = (
+    "e3a39aac3ba2593666a772b4d04c86bff2faf19936a5d8eb45a2a341248101b1"
+)
+PDF_BUILD_WITHDRAWN_OBSERVED_SHA256 = (
+    "9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43"
+)
+# Independent double-build observations. They are recorded, not asserted equal
+# to the candidate: pdfTeX writes a build timestamp and a timestamp-derived
+# /ID, so byte equality is not available without a deterministic build.  They
+# were measured on PDF_BUILD_PRIOR_OBSERVED_SHA256 and characterise the build,
+# not those particular bytes.
+PDF_BUILD_REVERIFICATION_SHA256 = (
+    "b43441e5c48c9d91f477409ed828611a63161f2424103538a828e726e33a0522",
+    "6173541fdf0b0faf1a7eec5b5f745d14229245bcf8bb62be0ef66522aead3297",
+)
 PDF_BUILD_REPORT_REQUIRED_FRAGMENTS = (
     "Status: `CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED`.",
     "All 18 pages were rendered at 144 dpi and visually inspected",
     "No clipping, overlap, table collision, truncated text, broken glyph",
     PDF_BUILD_MAIN_SHA256,
     PDF_BUILD_OBSERVED_SHA256,
+    PDF_BUILD_PRIOR_MAIN_SHA256,
+    PDF_BUILD_PRIOR_OBSERVED_SHA256,
+    PDF_BUILD_WITHDRAWN_MAIN_SHA256,
+    PDF_BUILD_WITHDRAWN_OBSERVED_SHA256,
+    *PDF_BUILD_REVERIFICATION_SHA256,
+    "exactly 66 bytes confined to `/CreationDate`, `/ModDate`, and `/ID`",
+    "tmp/pdfs/paper1-zenodo-final-qa-20260807c",
+    # Attribution guards: the current bytes were not QA'd by the owner, and the
+    # report must keep saying so until an owner acceptance is recorded.
+    "not by the owner",
+    "owner acceptance of the current bytes has not yet been separately recorded",
     "process_audit=OK",
     "Neither rejected nor superseded bytes are authorized upload artifacts.",
     "The generated PDF remains an untracked local observation",
@@ -1119,6 +1147,26 @@ def _validate_state_boundary_text(root: Path, manifest: dict[str, Any], errors: 
                 errors,
             )
 
+    # Recency wording expires on its own and cannot be caught by a positive
+    # fragment check: the 2026-08-06 candidate was withdrawn because it called
+    # its bound snapshot the "latest archived" gate.  Fail closed on reentry.
+    main_forbidden = requirements.get("main_tex_forbidden_fragments")
+    if not isinstance(main_forbidden, list) or not main_forbidden:
+        errors.append("manifest main_tex_forbidden_fragments must be a nonempty list")
+    else:
+        main_tex_path = root / MANUSCRIPT_ROOT / "main.tex"
+        try:
+            main_tex_source = _normalise_whitespace(main_tex_path.read_text(encoding="utf-8"))
+        except OSError as exc:
+            errors.append(f"cannot read state-boundary document {main_tex_path.as_posix()}: {exc}")
+        else:
+            for fragment in main_forbidden:
+                _require(
+                    isinstance(fragment, str) and fragment not in main_tex_source,
+                    f"forbidden recency wording remains in main.tex: {fragment!r}",
+                    errors,
+                )
+
     forbidden = requirements.get("reproducing_forbidden_fragments")
     if not isinstance(forbidden, list):
         errors.append("manifest reproducing_forbidden_fragments must be a list")
@@ -2053,7 +2101,7 @@ def _validate_zenodo_literature_gate(
 def _expected_tex_build() -> dict[str, Any]:
     return {
         "toolchain_status": "HOST_ABSENT_PINNED_CONTAINER_AVAILABLE",
-        "pdf_status": "CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED",
+        "pdf_status": PDF_SOURCE_BINDING_STATUS,
         "pdf_verified": True,
         "submission_ready": False,
         "pinned_container_image": PDF_BUILD_IMAGE,
@@ -2072,11 +2120,11 @@ def _expected_tex_build() -> dict[str, Any]:
             "raw_sha256_role": "DATED_OBSERVATION_NOT_REPRODUCIBILITY_CONTRACT",
         },
         "current_observation": {
-            "date": "2026-08-06",
+            "date": "2026-08-07",
             "main_tex_raw_sha256": PDF_BUILD_MAIN_SHA256,
             "pdf": {
                 "page_count": 18,
-                "bytes": 427745,
+                "bytes": 428286,
                 "raw_sha256": PDF_BUILD_OBSERVED_SHA256,
             },
             "toolchain": {
@@ -2098,6 +2146,14 @@ def _expected_tex_build() -> dict[str, Any]:
                 "all_pages_inspected": True,
                 "clipping_or_overlap_found": False,
                 "intentional_draft_boxes_remain": False,
+                "evidence_directory": "tmp/pdfs/paper1-zenodo-final-qa-20260807c",
+                "evidence_directory_tracked": False,
+                "performed_by": "ASSISTANT_20260807_ADJACENT_RESULTS_ADDITION_SESSION",
+                "owner_acceptance_of_current_bytes_recorded": False,
+                "reflowed_pages_individually_inspected": [
+                    2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
+                ],
+                "pages_identical_to_prior_qa": [1, 15, 16, 17, 18],
             },
             "source_pdf_binding": {
                 "status": PDF_SOURCE_BINDING_STATUS,
@@ -2105,16 +2161,142 @@ def _expected_tex_build() -> dict[str, Any]:
                 "report_hash_pinned": True,
                 "publication_authorized": False,
             },
+            "double_build_reverification": {
+                "status": "CONTENT_BYTES_IDENTICAL_TIMESTAMP_METADATA_ONLY_DELTA",
+                "performed_by": "INDEPENDENT_REVERIFICATION_SESSION",
+                "candidate_bytes_touched": False,
+                "build_count": 2,
+                "output_written_to_scratch": True,
+                "observed_sha256": [
+                    "b43441e5c48c9d91f477409ed828611a63161f2424103538a828e726e33a0522",
+                    "6173541fdf0b0faf1a7eec5b5f745d14229245bcf8bb62be0ef66522aead3297",
+                ],
+                "bytes": 427920,
+                "page_count": 18,
+                "blocking_diagnostics": 0,
+                "pairwise_differing_byte_count": 66,
+                "differing_fields_only": [
+                    "/CreationDate",
+                    "/ModDate",
+                    "/ID",
+                ],
+                "content_and_xref_bytes_identical": True,
+                "supports_raw_sha256_role": "DATED_OBSERVATION_NOT_REPRODUCIBILITY_CONTRACT",
+                "measured_on_pdf_sha256": PDF_BUILD_PRIOR_OBSERVED_SHA256,
+                "repeated_for_current_candidate": False,
+            },
         },
         "prior_observations": [
             {
                 "status": "PRIOR_SOURCE_OBSERVATION_NOT_CURRENT_BINDING",
-                "date": "2026-08-05",
+                "date": "2026-08-07",
                 "main_tex_raw_sha256": PDF_BUILD_PRIOR_MAIN_SHA256,
+                "pdf": {
+                    "page_count": 18,
+                    "bytes": 427920,
+                    "raw_sha256": PDF_BUILD_PRIOR_OBSERVED_SHA256,
+                    "creation_date": "D:20260807000228Z",
+                },
+                "toolchain": {
+                    "tex_live": "2026",
+                    "latexmk": "4.88",
+                    "pdftex": "1.40.29",
+                    "bibtex": "0.99e",
+                },
+                "diagnostics": {
+                    "blocking_total": 0,
+                    "overfull_hbox": 0,
+                    "undefined_reference_or_citation": 0,
+                    "latex_or_package_error": 0,
+                    "underfull_box": 0,
+                },
+                "visual_qa": {
+                    "render_dpi": 144,
+                    "pages_inspected": 18,
+                    "all_pages_inspected": True,
+                    "clipping_or_overlap_found": False,
+                    "intentional_draft_boxes_remain": False,
+                    "evidence_directory": "tmp/pdfs/paper1-zenodo-final-qa-20260807b",
+                    "evidence_directory_tracked": False,
+                    "performed_by": "OWNER_20260807_PREPARATION_SESSION",
+                    "page_renders": 18,
+                    "contact_sheets": 5,
+                },
+                "double_build_reverification": {
+                    "status": "CONTENT_BYTES_IDENTICAL_TIMESTAMP_METADATA_ONLY_DELTA",
+                    "performed_by": "INDEPENDENT_REVERIFICATION_SESSION",
+                    "candidate_bytes_touched": False,
+                    "build_count": 2,
+                    "output_written_to_scratch": True,
+                    "observed_sha256": [
+                        "b43441e5c48c9d91f477409ed828611a63161f2424103538a828e726e33a0522",
+                        "6173541fdf0b0faf1a7eec5b5f745d14229245bcf8bb62be0ef66522aead3297",
+                    ],
+                    "bytes": 427920,
+                    "page_count": 18,
+                    "blocking_diagnostics": 0,
+                    "pairwise_differing_byte_count": 66,
+                    "differing_fields_only": [
+                        "/CreationDate",
+                        "/ModDate",
+                        "/ID",
+                    ],
+                    "content_and_xref_bytes_identical": True,
+                    "supports_raw_sha256_role": "DATED_OBSERVATION_NOT_REPRODUCIBILITY_CONTRACT",
+                },
+                "superseded_reason": (
+                    "adjacent-results section did not state the relation to the "
+                    "source's d=2 obstruction; one paragraph added at owner "
+                    "instruction"
+                ),
+            },
+            {
+                "status": "PRIOR_SOURCE_OBSERVATION_NOT_CURRENT_BINDING",
+                "date": "2026-08-06",
+                "main_tex_raw_sha256": PDF_BUILD_WITHDRAWN_MAIN_SHA256,
+                "pdf": {
+                    "page_count": 18,
+                    "bytes": 427745,
+                    "raw_sha256": PDF_BUILD_WITHDRAWN_OBSERVED_SHA256,
+                },
+                "toolchain": {
+                    "tex_live": "2026",
+                    "latexmk": "4.88",
+                    "pdftex": "1.40.29",
+                    "bibtex": "0.99e",
+                },
+                "diagnostics": {
+                    "blocking_total": 0,
+                    "overfull_hbox": 0,
+                    "undefined_reference_or_citation": 0,
+                    "latex_or_package_error": 0,
+                    "underfull_box": 0,
+                },
+                "visual_qa": {
+                    "render_dpi": 144,
+                    "pages_inspected": 18,
+                    "all_pages_inspected": True,
+                    "clipping_or_overlap_found": False,
+                    "intentional_draft_boxes_remain": False,
+                },
+                "superseded_reason": (
+                    "adjacent-literature paragraph asserted the bound 556-record "
+                    "snapshot was the latest archived gate; rebound to a "
+                    "historical-baseline statement"
+                ),
+            },
+            {
+                "status": "PRIOR_SOURCE_OBSERVATION_NOT_CURRENT_BINDING",
+                "date": "2026-08-05",
+                "main_tex_raw_sha256": (
+                    "6cf9855b1822f0c16a9ab2b3fff1fc37cd87395cbf8352e2b8322885f195cdbd"
+                ),
                 "pdf": {
                     "page_count": 10,
                     "bytes": 371899,
-                    "raw_sha256": PDF_BUILD_PRIOR_OBSERVED_SHA256,
+                    "raw_sha256": (
+                        "cf8c4c01210b010127ce29750165031a7a83788aa4cd525a829f7dddfd1adaca"
+                    ),
                 },
                 "diagnostics": {
                     "blocking_total": 0,
@@ -2129,10 +2311,9 @@ def _expected_tex_build() -> dict[str, Any]:
                     "clipping_or_overlap_found": False,
                     "intentional_draft_boxes_remain": True,
                 },
-            }
+            },
         ],
     }
-
 
 def _validate_tex_build(root: Path, manifest: dict[str, Any], errors: list[str]) -> None:
     tex_build = manifest.get("tex_build")

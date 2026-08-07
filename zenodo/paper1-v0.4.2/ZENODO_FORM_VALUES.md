@@ -8,15 +8,18 @@ external draft is recorded locally and later owner-only approvals are given.
 Create a **new upload**, not a new version of Zenodo record `21720863` (the
 separate v0.3.9 software record).
 
-The fresh `2026-08-06T2315Z` predraft literature gate is complete: its
-722-record comparison against the 1123Z predecessor has zero added/missing,
-metadata, screening, version, and candidate deltas, and the two tracked
-records remain at `v1`.  This exact handoff may be used to **Save draft**;
-it does not authorize publication, DOI reservation, a Git push, manuscript
-freeze, or deposit.  Those release gates remain `false`, and
+The `2026-08-06T2315Z` predraft literature gate is complete: its 722-record
+comparison against the 1123Z predecessor has zero added/missing, metadata,
+screening, version, and candidate deltas, and the two tracked records remain at
+`v1`.  That gate was cut against the superseded PDF `9f58867d…fd43` and is
+historical provenance only.
+
+**This handoff does not authorize Save draft.**  The current candidate
+`c112b987…fa2e` requires a newly timestamped literature gate, cut immediately
+before the first draft-save and bound into `verify_paper1_bundle.py`.  Nothing
+here authorizes publication, DOI reservation, a Git push, manuscript freeze, or
+deposit.  Those release gates remain `false`, and
 `remote_visibility = NOT_VERIFIED_BY_BUILDER` is pending owner verification.
-Any later draft-save attempt, freeze, or deposit requires a newly timestamped
-literature gate.
 
 ## Core fields
 

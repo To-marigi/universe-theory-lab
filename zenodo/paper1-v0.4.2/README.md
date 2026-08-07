@@ -42,8 +42,8 @@ The machine-readable owner decision is
 `zenodo/paper1-v0.4.2/owner_decision.json`, with the dated human record at
 `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md`; that amendment
 preserves and links the superseded 2026-08-06 record.  It binds acceptance of
-the current 18-page PDF (SHA-256
-`9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43`), the
+the current 18-page, 428286-byte PDF (SHA-256
+`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`), the
 PDF-plus-supplement layout, CC BY 4.0, the actual-publication-date policy,
 no-draft-reservation DOI policy, an initial empty relation list, and the
 external-at-deposit commit policy.  Current publication date, DOI, and commit
@@ -55,7 +55,7 @@ requested.
 
 The final PDF is read-only input.  The builder copies only
 `output/pdf/paper1_statewise_operator_v0.4.2.pdf`, whose source/report binding
-is `reports/v0.4.2_paper1_pdf_build_2026-08-06.md`; a pending source/PDF
+is `reports/v0.4.2_paper1_pdf_build_2026-08-07.md`; a pending source/PDF
 rebind fails closed.  A fresh clone without that generated PDF therefore
 fails closed until the owner provides the exact final verified input.
 
@@ -69,14 +69,21 @@ reproduction still requires the repository and pinned toolchains.
 
 ## Current predraft literature handoff
 
-The current technical literature authority is the independent
-`2026-08-06T2315Z` arXiv predraft gate: 722 records, zero added/missing,
-metadata, screening, version, and candidate deltas relative to the 1123Z
-snapshot, with both tracked records still at `v1`.  The exact handoff may be
-used by the owner to **Save draft** in Zenodo, but not to publish, reserve a
-DOI, push a commit, freeze the manuscript, or deposit a later file set.  All
-release gates remain false and `remote_visibility` remains
-`NOT_VERIFIED_BY_BUILDER` until an owner separately verifies it.
+The `2026-08-06T2315Z` arXiv predraft gate is complete and remains valid
+evidence: 722 records, zero added/missing, metadata, screening, version, and
+candidate deltas relative to the 1123Z snapshot, with both tracked records
+still at `v1`.  It is, however, **historical provenance rather than the
+authority for the current candidate**: it was cut against the superseded PDF
+`9f58867d…fd43`, before the Sol wording audit forced the rebuild to
+`c112b987…fa2e`.
+
+**No draft-save is authorized on this gate.**  A newly timestamped gate must be
+cut immediately before the first draft-save of the current candidate, and its
+artifacts must replace the `ZENODO_PREDRAFT_*` bindings in
+`verify_paper1_bundle.py`.  Cutting it earlier would recreate the staleness
+that withdrew the 2026-08-06 candidate.  All release gates remain false and
+`remote_visibility` remains `NOT_VERIFIED_BY_BUILDER` until an owner separately
+verifies it.
 
 The 1123Z report and research note are retained only as the documented
 historical predecessor in the supplement.  The current report and note are

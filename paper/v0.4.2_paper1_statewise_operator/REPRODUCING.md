@@ -170,8 +170,9 @@ uv run pytest -q -p no:cacheprovider `
   tests/final_theory/test_normalize_v042_paper1_zenodo_gate_20260806.py
 ```
 
-The 2026-08-06 gate is the current dated implementation of that minimum
-contract.  It archives a 1,091,452-byte full-overlap Atom response, a
+The 2026-08-06T00:47:37Z gate is the dated manuscript-comparison baseline for
+that minimum contract, not the current predraft handoff authority.  It
+archives a 1,091,452-byte full-overlap Atom response, a
 5,201-byte exact-ID response, a 1,957-byte retrieval receipt, and a
 504,422-byte normalized ledger.  The full-overlap, exact-ID, receipt, and
 normalized-ledger SHA-256 values are respectively
@@ -254,7 +255,7 @@ lemmas.  It is intentionally not a
 repository-wide unbounded test run.  The pass count is a dated observation
 rather than a fixed contract: retain the actual count and tool versions from
 each reproduction run in its manuscript record.  The focused command above
-observed 213 passing tests in the current tree on 2026-08-07.
+observed 215 passing tests in the current tree on 2026-08-07.
 
 ## 2. Public frozen v0.3.9 lane
 
@@ -454,12 +455,18 @@ untracked and is not required by the read-only manuscript validator in a fresh
 clone.
 
 The current dated build and all-page visual inspection are recorded in
-`reports/v0.4.2_paper1_pdf_build_2026-08-06.md`.  The source-bound observation
-is an 18-page, 427745-byte PDF with SHA-256
-`9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43`.
+`reports/v0.4.2_paper1_pdf_build_2026-08-07.md`.  The source-bound observation
+is an 18-page, 428286-byte PDF with SHA-256
+`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`.
 All 18 pages were rendered at 144 dpi and inspected; every blocking and box
 diagnostic is zero, no clipping or overlap was found, and no intentional
-draft-proof box remains.  The manifest records
+draft-proof box remains.  That record also carries an independent double-build
+re-verification: two further builds from the same pinned image differ from the
+candidate, and from each other, in exactly 66 bytes confined to
+`/CreationDate`, `/ModDate`, and `/ID`, with all content and cross-reference
+bytes identical.  The build is therefore reproducible up to the pdfTeX
+timestamp, which is why the PDF hash stays a dated observation rather than a
+byte-reproducibility contract.  The manifest records
 `CURRENT_SOURCE_FINAL_BUILD_AND_ALL_PAGE_VISUAL_QA_VERIFIED` and a completed
 PDF/source rebind, while submission and deposit remain owner-only and
 unauthorized.  Any later source or PDF change reopens that fail-closed gate.
