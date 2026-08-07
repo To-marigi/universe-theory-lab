@@ -455,14 +455,14 @@ def test_predraft_gate_report_note_are_bound_and_raw_artifacts_excluded(
     output = tmp_path / "upload"
     summary = builder.build_upload_set(root, output, specs=specs, revision=commit)
     gate = summary["zenodo_predraft_literature_gate"]
-    assert gate["feed_cutoff_utc"] == "2026-08-06T23:16:23Z"
-    assert gate["response_entry_count"] == 722
-    assert gate["reviewed_title_abstract_count"] == 28
+    assert gate["feed_cutoff_utc"] == "2026-08-07T15:52:17Z"
+    assert gate["response_entry_count"] == 908
+    assert gate["reviewed_title_abstract_count"] == 34
     assert gate["material_delta_count"] == 0
     assert gate["metadata_equal_by_id"] is True
-    assert gate["reviewed_delta_contract"]["added_count"] == 0
-    assert gate["reviewed_delta_contract"]["missing_count"] == 0
-    assert gate["reviewed_delta_contract"]["version_pair_count"] == 0
+    assert gate["reviewed_delta_contract"]["added_count"] == 200
+    assert gate["reviewed_delta_contract"]["missing_count"] == 14
+    assert gate["reviewed_delta_contract"]["version_pair_count"] == 200
     assert gate["historical_predecessor"]["source_id"] == (
         builder.ZENODO_PREDRAFT_PREDECESSOR_SOURCE_ID
     )

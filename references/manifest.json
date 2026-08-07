@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-06T23:43:41.372953+00:00",
+  "generated_at": "2026-08-07T16:37:20.085831+00:00",
   "catalog": "references/sources.json",
   "records": [
     {
@@ -3268,6 +3268,210 @@
         "exact-ID version and updated-metadata checks for arXiv:2607.26672 and arXiv:2603.25503"
       ],
       "claim_boundary": "This artifact-specific predraft gate establishes only that the independently archived submittedDate response preserves the prior scope and monotone cutoff; the prior Sol-reviewed candidate set remains unchanged, and the current delta has no new candidate, metadata, screening, or version pair, so no new Sol title/abstract review was required; and the separately queried Xu and Srivastava--Surya records remain at v1. It does not establish exhaustive literature coverage, novelty, priority, absence, or general coverage of updates to records submitted before the window. A future gate requires a new date-stamped archive and normalizer. This artifact closes only a technical literature-delta gate. It does not authorize manuscript freeze, submission, deposit, or publication; all such actions are owner-only and remain unapproved.",
+      "archive_status": "LOCAL_ARTIFACTS",
+      "sha256": null,
+      "bytes": null,
+      "pages": null,
+      "text_file": null
+    },
+    {
+      "id": "arXiv:PaperI-zenodo-predraft-gate-2026-08-07T1600Z",
+      "title": "Official arXiv API responses: Paper I Zenodo predraft literature gate",
+      "authors": [
+        "arXiv"
+      ],
+      "url": "https://arxiv.org/api/query?search_query=submittedDate:%22202607311500+TO+202608062359%22+AND+(cat:gr-qc+OR+(cat:quant-ph+OR+(cat:math-ph+OR+(cat:math.OA+OR+(cat:math.RA+OR+(cat:math.AC+OR+(cat:math.FA+OR+cat:math.CO)))))))&start=0&max_results=2000&id_list=",
+      "exact_id_url": "https://arxiv.org/api/query?id_list=2607.26672,2603.25503&start=0&max_results=2",
+      "retrieved_on": "2026-08-07",
+      "local_file": null,
+      "local_artifacts": [
+        {
+          "role": "FULL_OVERLAP_RAW_API_RESPONSE",
+          "path": "papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_full_overlap_atom.xml",
+          "media_type": "application/atom+xml",
+          "sha256": "sha256:31b5f30d6b5f2fbda9ecf2c1240db3ecc1af9dba6377ac8d79468f0b685d8326",
+          "bytes": 1805159
+        },
+        {
+          "role": "EXACT_ID_RAW_API_RESPONSE",
+          "path": "papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_exact_ids_atom.xml",
+          "media_type": "application/atom+xml",
+          "sha256": "sha256:c69bfb3502f2a4dd054e2a7de2b0e95cfb65d288cef4b90aeccd99db829501d9",
+          "bytes": 5201
+        },
+        {
+          "role": "RETRIEVAL_PROVENANCE",
+          "path": "papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_retrieval.json",
+          "media_type": "application/json",
+          "sha256": "sha256:618e86b82b23eb1645c62bd00f744fd6449d46f1603b10fa5de228eb5915a0c5",
+          "bytes": 2004
+        },
+        {
+          "role": "NORMALIZED_SCREENING_LEDGER",
+          "path": "papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_normalized.json",
+          "media_type": "application/json",
+          "sha256": "sha256:3b3d664c6841fef3e400be3246b8ed99063e104cc5195d29b2b1b5248b7a7e88",
+          "bytes": 873257
+        }
+      ],
+      "dataset_snapshot": {
+        "gate_status": "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_PREDRAFT_GATE_AS_OF_2026-08-07T15:52:17Z",
+        "gate_trigger_utc": "2026-08-07T16:00:00Z",
+        "full_overlap_feed_updated_utc": "2026-08-07T15:52:17Z",
+        "query_scope": {
+          "authority": "ARCHIVED_ATOM_FEED_TITLE_AND_QUERY_LINK",
+          "field": "submittedDate",
+          "window_start_compact_utc": "202607311500",
+          "window_end_compact_utc": "202608062359",
+          "categories": [
+            "gr-qc",
+            "quant-ph",
+            "math-ph",
+            "math.OA",
+            "math.RA",
+            "math.AC",
+            "math.FA",
+            "math.CO"
+          ],
+          "start": 0,
+          "max_results": 2000
+        },
+        "normalizer": "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260807T1600Z.py",
+        "fetch_command": ".venv\\Scripts\\python.exe scripts/normalize_v042_paper1_zenodo_predraft_gate_20260807T1600Z.py --fetch",
+        "check_command": ".venv\\Scripts\\python.exe scripts/normalize_v042_paper1_zenodo_predraft_gate_20260807T1600Z.py --check",
+        "response_entry_count": 908,
+        "entries_published_in_submitted_date_window": 908,
+        "entries_published_outside_submitted_date_window": 0,
+        "entries_published_at_or_before_feed_cutoff": 908,
+        "entries_published_after_feed_cutoff": 0,
+        "minimum_published_utc": "2026-07-31T15:01:28Z",
+        "maximum_published_utc": "2026-08-06T17:58:49Z",
+        "ordered_arxiv_ids_sha256": "sha256:acd6bd1bca37ad642c248b90c8619667f9e8f9beea01a4fc3e1e99c7f5a89d85",
+        "records_sha256": "sha256:0e927d51a902490a2f7286bad8a826bd38e9b6f8d79de0bfe2ca8b155da13bcd",
+        "screening_decision_counts": {
+          "NO_REPORT_DEFINED_TARGET_RULE_MATCH": 874,
+          "INSPECTED_TITLE_ABSTRACT_NONMATERIAL_TO_C1_C5": 34,
+          "MATERIAL_DELTA_TO_C1_C5": 0
+        },
+        "authorization_boundary": {
+          "technical_literature_gate_only": true,
+          "manuscript_freeze_authorized": false,
+          "submission_authorized": false,
+          "deposit_authorized": false,
+          "publication_authorized": false,
+          "owner_only": true
+        },
+        "retrieval_receipt": {
+          "path": "references/papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_retrieval.json",
+          "sha256": "618e86b82b23eb1645c62bd00f744fd6449d46f1603b10fa5de228eb5915a0c5",
+          "bytes": 2004
+        },
+        "full_overlap_comparison": {
+          "query_semantics_equal": true,
+          "feed_cutoff_monotone": true,
+          "prior_feed_updated_utc": "2026-08-06T23:16:23Z",
+          "predraft_feed_updated_utc": "2026-08-07T15:52:17Z",
+          "prior_response_entry_count": 722,
+          "predraft_response_entry_count": 908,
+          "added_count": 200,
+          "added_ids_sha256": "15935e568fbe3b8c88b296c4dd054ddf42d74ee8ba72dcff1d09c5d47b76a7d1",
+          "missing_count": 14,
+          "missing_ids_sha256": "7829de7e2f1e684d489b0495e8424e5e4a21c1f52fc99655919c9be5bde60514",
+          "version_pair_count": 200,
+          "version_pairs_sha256": "5db8251d2d5a5a880a2373181241c8833c25b1d5e35b1824e297b49d5c06623b",
+          "metadata_changed_ids": [],
+          "screening_changed_ids": [],
+          "material_delta_ids": [],
+          "metadata_by_id_sha256": "527af886f3d94987d61ada570dfbc738ec3282389b0e186adc2705cd3d594bd1",
+          "screening_by_id_sha256": "8a9403765de00b90cb126cd1f4333ae71c4253d45958ed9097285039ee53105e"
+        },
+        "metadata_reconciliation": {
+          "metadata_equal_by_id": true,
+          "metadata_changes_reviewed": true,
+          "reviewed_metadata_changed_ids": []
+        },
+        "reviewed_versioned_id_delta": {
+          "status": "COMPLETED_REVIEWED_NO_MATERIAL_DELTA",
+          "sol_title_abstract_review_required": false,
+          "sol_title_abstract_review_completed": true,
+          "full_text_or_pdf_required": false,
+          "manuscript_change_required": false,
+          "reviewed_delta_contract": {
+            "added_count": 200,
+            "added_ids_sha256": "15935e568fbe3b8c88b296c4dd054ddf42d74ee8ba72dcff1d09c5d47b76a7d1",
+            "missing_count": 14,
+            "missing_ids_sha256": "7829de7e2f1e684d489b0495e8424e5e4a21c1f52fc99655919c9be5bde60514",
+            "version_pair_count": 200,
+            "version_pairs_sha256": "5db8251d2d5a5a880a2373181241c8833c25b1d5e35b1824e297b49d5c06623b",
+            "replacement_base_ids": [
+              "2608.00451",
+              "2608.00546",
+              "2608.01040",
+              "2608.01121",
+              "2608.01887",
+              "2608.02249",
+              "2608.02333",
+              "2608.02659",
+              "2608.02745",
+              "2608.03549",
+              "2608.04294",
+              "2608.04542",
+              "2608.04639",
+              "2608.05103"
+            ],
+            "new_no_target_count": 194,
+            "new_rule_triggered_ids": [
+              "2608.05298v1",
+              "2608.05368v1",
+              "2608.05473v1",
+              "2608.06235v1",
+              "2608.06330v1",
+              "2608.06359v1"
+            ],
+            "new_rule_triggered_ids_sha256": "7133035b26688e381b096f971d2a41926c93d28039e91022babb4483e4dc9733",
+            "prior_candidate_count": 28,
+            "predraft_candidate_count": 34,
+            "shared_metadata_changed_ids": [],
+            "shared_screening_changed_ids": [],
+            "shared_metadata_review_ids_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+          },
+          "complete_per_record_rationales": {
+            "path": "references/papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_normalized.json",
+            "field": "predraft_gate_recheck.reviewed_versioned_id_delta"
+          }
+        },
+        "title_abstract_rescreen": {
+          "records_screened": 908,
+          "rule_triggered_candidates": 34,
+          "candidate_ids_sha256": "afc43b9510ddaaf223bfeb9ecb2bbf6bc2218bb1041ce100a45091def22bd852",
+          "candidate_metadata_changed_ids": [],
+          "candidate_decision_changed_ids": [],
+          "material_delta_ids": [],
+          "status": "COMPLETED_REVIEWED_NO_MATERIAL_DELTA"
+        },
+        "exact_id_checks": {
+          "raw_response": {
+            "path": "references/papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_exact_ids_atom.xml",
+            "sha256": "c69bfb3502f2a4dd054e2a7de2b0e95cfb65d288cef4b90aeccd99db829501d9",
+            "bytes": 5201,
+            "feed_updated_utc": "2026-08-07T15:52:21Z"
+          },
+          "response_entry_count": 2,
+          "versions": {
+            "2603.25503": "v1",
+            "2607.26672": "v1"
+          },
+          "status": "BOTH_TRACKED_RECORDS_REMAIN_V1"
+        }
+      },
+      "version": "official arXiv API Atom responses archived for the 2026-08-07T1600Z Zenodo predraft gate; full-overlap feed timestamp 2026-08-07T15:52:17Z; exact-ID feed timestamp 2026-08-07T15:52:21Z",
+      "relationship": "SEARCH_DATASET",
+      "used_for": [
+        "Paper I Zenodo draft-creation preflight full-overlap submittedDate gate for C1--C5",
+        "ID-keyed comparison with the independent 2026-08-06T2315Z predraft gate",
+        "exact-ID version and updated-metadata checks for arXiv:2607.26672 and arXiv:2603.25503"
+      ],
+      "claim_boundary": "This artifact-specific predraft gate establishes only that the independently archived submittedDate response preserves the prior scope and monotone cutoff; every added, missing, version-replaced, or newly rule-triggered versioned ID within the still-closed submittedDate window was reviewed by title and abstract and found nonmaterial; no shared versioned ID's screening decision changed; and the separately queried Xu and Srivastava--Surya records remain at v1. It does not establish exhaustive literature coverage, novelty, priority, absence, or general coverage of updates to records submitted before the window. A future gate requires a new date-stamped archive and normalizer. This artifact closes only a technical literature-delta gate. It does not authorize manuscript freeze, submission, deposit, or publication; all such actions are owner-only and remain unapproved.",
       "archive_status": "LOCAL_ARTIFACTS",
       "sha256": null,
       "bytes": null,

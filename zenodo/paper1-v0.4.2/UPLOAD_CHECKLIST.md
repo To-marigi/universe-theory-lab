@@ -16,21 +16,34 @@ Publication date, DOI, and final commit values remain null under their stated
 policies.  Draft creation, freeze, submission, deposit, and publication remain
 unperformed and unauthorized.  No DOI reservation is requested.
 
-**No draft-save is currently authorized.**  The `2026-08-06T2315Z` predraft
-literature gate is complete and remains valid evidence, but it was cut against
-the superseded candidate
-`9f58867d91673c09229077cd651a35d16d10e90c618cc6ef6083fd4fb644fd43`, before the
-Sol wording audit forced the rebuild.  It is therefore historical provenance,
-not the authority for the current candidate
-`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`.
+**The literature gate is current.**  The `2026-08-07T1600Z` predraft gate was
+cut against the current candidate
+`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e` and is the
+active authority: `verify_paper1_bundle.py`'s `ZENODO_PREDRAFT_*` bindings
+point to it.  Its fixed submittedDate window had accumulated real arXiv
+index catch-up since the `2026-08-06T2315Z` gate (722 -> 908 records); every
+added, missing, version-replaced, or newly rule-triggered ID within that
+still-closed window was individually reviewed by title/abstract and found
+nonmaterial to C1--C5.  See
+`reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260807T1600Z.md`
+for the full result.  The superseded `2026-08-06T2315Z` gate (cut against the
+withdrawn `9f58867d…fd43` candidate) remains bound only as the historical
+predecessor document inside the supplement.
 
-A newly timestamped literature gate must be cut and recorded immediately before
-the first draft-save of the current candidate, and its artifacts must replace
-the `ZENODO_PREDRAFT_*` bindings in `verify_paper1_bundle.py`.  Cutting it early
-would repeat the failure that withdrew the 2026-08-06 candidate: a dated gate
-becomes stale while the owner audit and approval are still outstanding.
-Publication, push, DOI, and other owner release gates remain false; remote
-visibility is still pending owner verification.
+**Owner acceptance of the current PDF bytes is now recorded.**  The all-page
+visual QA of the current bytes was performed by the assistant session that made
+the last addition, not by the owner directly; the owner separately accepted
+these exact bytes (SHA-256
+`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`), per
+`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md`, and
+`build_paper1_bundle.py`/`verify_paper1_bundle.py` bind that acceptance
+sentence as a required fragment.  This still does not by itself authorize
+**Save draft** — see the release gate below.  A later deposit attempt still
+requires a freshly timestamped literature gate cut immediately beforehand,
+per the same reasoning that withdrew the `2026-08-06` candidate: a dated gate
+becomes stale while time passes.  Publication, push, DOI, and other owner
+release gates remain false; remote visibility is still pending owner
+verification.
 
 ## 0. Owner decisions before packaging
 
@@ -51,7 +64,7 @@ owner fields are intentionally not silently filled by these tools.
 From the repository root, with the final generated PDF present:
 
 ```powershell
-uv run python scripts/normalize_v042_paper1_zenodo_predraft_gate_<NEW-TIMESTAMP>.py --check
+uv run python scripts/normalize_v042_paper1_zenodo_predraft_gate_20260807T1600Z.py --check
 uv run python zenodo/paper1-v0.4.2/build_paper1_bundle.py `
   --output-dir ..\paper1-v0.4.2-upload `
   --commit <owner-approved-final-commit>
@@ -147,11 +160,18 @@ current provenance or a current upload candidate.
 
 ## 5. Save draft, preview, and publish gate
 
-- [ ] A newly timestamped literature gate for the current candidate has been
-      cut, checked, and recorded, and its artifacts are bound in
-      `verify_paper1_bundle.py`.  Only then may this handoff be used to
-      **Save draft**; do not publish yet.  The 2315Z gate does not satisfy
-      this step: it predates the current candidate.
+- [x] A literature gate for the current candidate has been cut, checked, and
+      recorded (`2026-08-07T1600Z`, `verify_paper1_bundle.py`'s
+      `ZENODO_PREDRAFT_*` bindings point to it). This step alone does not
+      authorize **Save draft**; do not publish yet.
+- [x] Owner acceptance of the current PDF bytes
+      (`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`) is
+      recorded in
+      `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md`. Both
+      the builder and verifier fail closed on this fragment.
+- [ ] If meaningful time has passed since the `2026-08-07T1600Z` gate was cut,
+      a fresh gate is cut immediately beforehand rather than reusing this one;
+      a dated gate is evidence for its own moment, not a standing guarantee.
 - [ ] Check title, creator, ORCID, affiliation, resource type, version,
       description, keywords, license/date/relations in the preview.
 - [ ] Confirm the displayed upload file list is exactly the selected layout

@@ -8,17 +8,24 @@ external draft is recorded locally and later owner-only approvals are given.
 Create a **new upload**, not a new version of Zenodo record `21720863` (the
 separate v0.3.9 software record).
 
-The `2026-08-06T2315Z` predraft literature gate is complete: its 722-record
-comparison against the 1123Z predecessor has zero added/missing, metadata,
-screening, version, and candidate deltas, and the two tracked records remain at
-`v1`.  That gate was cut against the superseded PDF `9f58867d…fd43` and is
-historical provenance only.
+The `2026-08-07T1600Z` predraft literature gate is complete and current: it
+was cut against candidate `c112b987…fa2e` and is bound into
+`verify_paper1_bundle.py`. Its fixed submittedDate window had accumulated
+real arXiv index catch-up since the `2026-08-06T2315Z` predecessor gate
+(722 -> 908 records); every difference was individually reviewed and found
+nonmaterial, and the two tracked records remain at `v1`. The `2026-08-06T2315Z`
+gate itself was cut against the superseded PDF `9f58867d…fd43` and is now
+historical provenance only, retained as the documented predecessor.
 
-**This handoff does not authorize Save draft.**  The current candidate
-`c112b987…fa2e` requires a newly timestamped literature gate, cut immediately
-before the first draft-save and bound into `verify_paper1_bundle.py`.  Nothing
-here authorizes publication, DOI reservation, a Git push, manuscript freeze, or
-deposit.  Those release gates remain `false`, and
+**Owner acceptance of the current PDF bytes is recorded, but this worksheet
+still does not by itself authorize Save draft.** The all-page visual QA of the
+current bytes was performed by the assistant session that made the last
+addition, not by the owner directly; the owner separately accepted these exact
+bytes, recorded in
+`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md`, and both the
+builder and verifier fail closed on that record. Nothing here authorizes
+publication, DOI reservation, a Git push, manuscript freeze, or deposit. Those
+release gates remain `false`, and
 `remote_visibility = NOT_VERIFIED_BY_BUILDER` is pending owner verification.
 
 ## Core fields

@@ -215,12 +215,46 @@ category, screening, version, and candidate deltas.  The same 28
 title/abstract-inspected records remain nonmaterial, and the tracked exact
 IDs `arXiv:2607.26672` and `arXiv:2603.25503` remain `v1`.
 
-This is the current technical gate for the exact draft-save handoff only.  It
-does not authorize publication, DOI reservation, a Git push, manuscript
-freeze, or deposit; any later draft-save attempt, freeze, or deposit requires
-a newly timestamped gate.  The 1123Z report and note are retained only as
-historical predecessor documents in the supplement.  Raw Atom, receipt, and
-normalized-ledger artifacts remain excluded from the supplement.
+This 2315Z gate is superseded by 1.4c below as the current draft-save
+handoff authority; it remains bound only as the documented historical
+predecessor inside the supplement.
+
+### 1.4c Check the current Zenodo predraft literature gate offline
+
+```powershell
+uv run python scripts/normalize_v042_paper1_zenodo_predraft_gate_20260807T1600Z.py --check
+uv run pytest -q -p no:cacheprovider `
+  tests/final_theory/test_normalize_v042_paper1_zenodo_predraft_gate_20260807T1600Z.py
+```
+
+The current 1600Z predraft gate replays no network request.  It verifies the
+1,805,159-byte full-overlap Atom response, 5,201-byte exact-ID response,
+2,004-byte retrieval receipt, and 873,257-byte normalized ledger, with
+SHA-256 values
+`31b5f30d6b5f2fbda9ecf2c1240db3ecc1af9dba6377ac8d79468f0b685d8326`,
+`c69bfb3502f2a4dd054e2a7de2b0e95cfb65d288cef4b90aeccd99db829501d9`,
+`618e86b82b23eb1645c62bd00f744fd6449d46f1603b10fa5de228eb5915a0c5`, and
+`3b3d664c6841fef3e400be3246b8ed99063e104cc5195d29b2b1b5248b7a7e88`.
+The full-overlap feed cutoff is `2026-08-07T15:52:17Z`; all 908 returned
+records are in-window and at or before that cutoff, a real arXiv index
+catch-up of 186 records since the 2315Z gate's 722.  The ID-keyed comparison
+to the `2026-08-06T2315Z` predecessor has a reviewed nonzero delta: 200
+versioned-ID additions, 14 missing versioned IDs, 14 base-ID version
+replacements, and 6 newly rule-triggered candidates never seen by the prior
+gate; every one of those was individually reviewed by title and abstract by
+this assistant session and found nonmaterial to C1--C5, and no shared
+versioned ID's screening decision changed.  34 title/abstract records are
+inspected in total (the 28 carried from the prior gate plus the 6 new), and
+the tracked exact IDs `arXiv:2607.26672` and `arXiv:2603.25503` remain `v1`.
+
+This is the current technical gate for the exact draft-save handoff.  It does
+not authorize publication, DOI reservation, a Git push, manuscript freeze, or
+deposit; any later draft-save attempt, freeze, or deposit requires a newly
+timestamped gate if meaningful time has passed.  The 2315Z report and note are
+retained only as the documented historical predecessor document in the
+supplement, superseding the earlier 1123Z predecessor.  Raw Atom, receipt, and
+normalized-ledger artifacts remain excluded from the supplement for every
+gate.
 
 ### 1.5 Run the focused Paper I tests
 
@@ -234,6 +268,7 @@ uv run pytest -q -p no:cacheprovider `
   tests/final_theory/test_normalize_v042_paper1_zenodo_gate_20260806.py `
   tests/final_theory/test_normalize_v042_paper1_zenodo_predraft_gate_20260806T1123Z.py `
   tests/final_theory/test_normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py `
+  tests/final_theory/test_normalize_v042_paper1_zenodo_predraft_gate_20260807T1600Z.py `
   tests/final_theory/test_weak_d2_v04.py `
   tests/final_theory/test_weak_d2_v04_oracle.py `
   tests/final_theory/test_weak_d2_observability_v042.py `
@@ -255,7 +290,7 @@ lemmas.  It is intentionally not a
 repository-wide unbounded test run.  The pass count is a dated observation
 rather than a fixed contract: retain the actual count and tool versions from
 each reproduction run in its manuscript record.  The focused command above
-observed 215 passing tests in the current tree on 2026-08-07.
+observed 223 passing tests in the current tree on 2026-08-08.
 
 ## 2. Public frozen v0.3.9 lane
 

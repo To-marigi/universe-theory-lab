@@ -49,102 +49,124 @@ OWNER_DECISION_AMENDMENT_SCOPE = [
 DOI_POLICY = "NO_DRAFT_RESERVATION_ZENODO_REGISTERS_DOI_AT_PUBLICATION"
 DOI_STATUS = "NO_DRAFT_RESERVATION_DOI_PENDING_PUBLICATION"
 ZENODO_PREDRAFT_REPORT_PATH = (
-    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260806T2315Z.md"
+    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260807T1600Z.md"
 )
 ZENODO_PREDRAFT_NOTE_PATH = (
-    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260806T2315Z.md"
+    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260807T1600Z.md"
 )
 ZENODO_PREDRAFT_NORMALIZER_PATH = (
-    "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py"
+    "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260807T1600Z.py"
 )
 ZENODO_PREDRAFT_LEDGER_PATH = (
-    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_normalized.json"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_normalized.json"
 )
 ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH = (
-    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_full_overlap_atom.xml"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_full_overlap_atom.xml"
 )
 ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH = (
-    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_exact_ids_atom.xml"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_exact_ids_atom.xml"
 )
 ZENODO_PREDRAFT_RECEIPT_PATH = (
-    "references/papers/2026-08-07_paper1_zenodo_predraft_20260806T2315Z_arxiv_retrieval.json"
+    "references/papers/2026-08-07_paper1_zenodo_predraft_20260807T1600Z_arxiv_retrieval.json"
 )
-ZENODO_PREDRAFT_SOURCE_ID = "arXiv:PaperI-zenodo-predraft-gate-2026-08-06T2315Z"
+ZENODO_PREDRAFT_SOURCE_ID = "arXiv:PaperI-zenodo-predraft-gate-2026-08-07T1600Z"
 ZENODO_PREDRAFT_GATE_STATUS = (
-    "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_PREDRAFT_GATE_AS_OF_2026-08-06T23:16:23Z"
+    "CLOSED_NO_MATERIAL_DELTA_WITHIN_ZENODO_PREDRAFT_GATE_AS_OF_2026-08-07T15:52:17Z"
 )
-ZENODO_PREDRAFT_GATE_TRIGGER_UTC = "2026-08-06T23:15:00Z"
-ZENODO_PREDRAFT_FEED_CUTOFF = "2026-08-06T23:16:23Z"
+ZENODO_PREDRAFT_GATE_TRIGGER_UTC = "2026-08-07T16:00:00Z"
+ZENODO_PREDRAFT_FEED_CUTOFF = "2026-08-07T15:52:17Z"
 ZENODO_PREDRAFT_ARTIFACT_HASHES = {
     ZENODO_PREDRAFT_FULL_OVERLAP_ATOM_PATH: (
-        "5755490b293f9cd8e78217de7ea01e4799ffbb1df04daa0d4f411974caf7b373",
-        1422899,
+        "31b5f30d6b5f2fbda9ecf2c1240db3ecc1af9dba6377ac8d79468f0b685d8326",
+        1805159,
     ),
     ZENODO_PREDRAFT_EXACT_IDS_ATOM_PATH: (
-        "eff76a847e3b02a01041fd8185e38bbaba93ec769ca037c903719f0062b920eb",
+        "c69bfb3502f2a4dd054e2a7de2b0e95cfb65d288cef4b90aeccd99db829501d9",
         5201,
     ),
     ZENODO_PREDRAFT_RECEIPT_PATH: (
-        "fbe9b22defc23e84627339f9844ea8c8078ce96e563c6dfca0f559c57b933523",
+        "618e86b82b23eb1645c62bd00f744fd6449d46f1603b10fa5de228eb5915a0c5",
         2004,
     ),
     ZENODO_PREDRAFT_LEDGER_PATH: (
-        "084e69f06f31c93e5f7b9394da15e088733b45074dc7d59920e86507c516c456",
-        655325,
+        "3b3d664c6841fef3e400be3246b8ed99063e104cc5195d29b2b1b5248b7a7e88",
+        873257,
     ),
     ZENODO_PREDRAFT_NORMALIZER_PATH: (
-        "a1e5280ef034b95cd43c5fb3a91c3af43404d7f7e7c44c6acf36568ae9d24d44",
-        44269,
+        "1963f3d4d101b3450f1a4143060b5009b3fd042593294a85f035aeaec5d9ce23",
+        47111,
     ),
     ZENODO_PREDRAFT_REPORT_PATH: (
+        "c425091ff0a064bbddf9c1b38f8c26020c7b8e3a0470847b4dda27a89fb7f6c4",
+        5768,
+    ),
+    ZENODO_PREDRAFT_NOTE_PATH: (
+        "7332facb79d978d51198b19b1ab2b67db8ebfc6f148c444fdc1b96511c561bf3",
+        2559,
+    ),
+}
+ZENODO_PREDRAFT_PREDECESSOR_SOURCE_ID = (
+    "arXiv:PaperI-zenodo-predraft-gate-2026-08-06T2315Z"
+)
+ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH = (
+    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260806T2315Z.md"
+)
+ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH = (
+    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260806T2315Z.md"
+)
+ZENODO_PREDRAFT_PREDECESSOR_DOCUMENT_HASHES = {
+    ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH: (
         "9910c0df61ffc64d19fbe3a1eacc4fbdfe8c7335e4cc21912460dbe8b7243901",
         3580,
     ),
-    ZENODO_PREDRAFT_NOTE_PATH: (
+    ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH: (
         "aca9b76bf484e0467d32b7b66e4f3ccc9ee2cf077937996ab1c43e2b4bd7002b",
         1675,
     ),
 }
-ZENODO_PREDRAFT_PREDECESSOR_SOURCE_ID = (
-    "arXiv:PaperI-zenodo-predraft-gate-2026-08-06T1123Z"
-)
-ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH = (
-    "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
-)
-ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH = (
-    "references/notes/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-06T1123Z.md"
-)
-ZENODO_PREDRAFT_PREDECESSOR_DOCUMENT_HASHES = {
-    ZENODO_PREDRAFT_PREDECESSOR_REPORT_PATH: (
-        "2d6557fb5e01c02fb2d9ca050440118305153013622b8716733ed8fa036623e9",
-        9590,
-    ),
-    ZENODO_PREDRAFT_PREDECESSOR_NOTE_PATH: (
-        "48e0dce188b74abdc7a5b1d8c02f49286eccc164406cefd3827236ec5a916764",
-        8015,
-    ),
-}
 ZENODO_PREDRAFT_DELTA_CONTRACT = {
-    "added_count": 0,
+    "added_count": 200,
     "added_ids_sha256": (
-        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        "15935e568fbe3b8c88b296c4dd054ddf42d74ee8ba72dcff1d09c5d47b76a7d1"
     ),
-    "missing_count": 0,
+    "missing_count": 14,
     "missing_ids_sha256": (
-        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        "7829de7e2f1e684d489b0495e8424e5e4a21c1f52fc99655919c9be5bde60514"
     ),
-    "version_pair_count": 0,
+    "version_pair_count": 200,
     "version_pairs_sha256": (
-        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        "5db8251d2d5a5a880a2373181241c8833c25b1d5e35b1824e297b49d5c06623b"
     ),
-    "replacement_base_ids": [],
-    "new_no_target_count": 0,
-    "new_rule_triggered_ids": [],
+    "replacement_base_ids": [
+        "2608.00451",
+        "2608.00546",
+        "2608.01040",
+        "2608.01121",
+        "2608.01887",
+        "2608.02249",
+        "2608.02333",
+        "2608.02659",
+        "2608.02745",
+        "2608.03549",
+        "2608.04294",
+        "2608.04542",
+        "2608.04639",
+        "2608.05103",
+    ],
+    "new_no_target_count": 194,
+    "new_rule_triggered_ids": [
+        "2608.05298v1",
+        "2608.05368v1",
+        "2608.05473v1",
+        "2608.06235v1",
+        "2608.06330v1",
+        "2608.06359v1",
+    ],
     "new_rule_triggered_ids_sha256": (
-        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        "7133035b26688e381b096f971d2a41926c93d28039e91022babb4483e4dc9733"
     ),
     "prior_candidate_count": 28,
-    "predraft_candidate_count": 28,
+    "predraft_candidate_count": 34,
     "shared_metadata_changed_ids": [],
     "shared_screening_changed_ids": [],
     "shared_metadata_review_ids_sha256": (
@@ -524,7 +546,7 @@ def _metadata_binding_ok(
         "The final PDF was rebuilt twice on this date",
         "the owner completed its all-page visual QA",
         "The owner directed the second change and its rebuild.",
-        "an owner acceptance of these exact bytes is not yet recorded",
+        "Owner acceptance of these exact bytes is now recorded.",
         "The production upload list is",
         "exactly `paper1_statewise_operator_v0.4.2.pdf`",
         "paper1_statewise_operator_v0.4.2.pdf",
@@ -714,8 +736,8 @@ def _predraft_gate_errors(
         "status": ZENODO_PREDRAFT_GATE_STATUS,
         "gate_trigger_utc": ZENODO_PREDRAFT_GATE_TRIGGER_UTC,
         "feed_cutoff_utc": ZENODO_PREDRAFT_FEED_CUTOFF,
-        "response_entry_count": 722,
-        "reviewed_title_abstract_count": 28,
+        "response_entry_count": 908,
+        "reviewed_title_abstract_count": 34,
         "material_delta_count": 0,
         "metadata_equal_by_id": True,
         "metadata_changes_reviewed": True,
@@ -780,7 +802,7 @@ def _predraft_gate_errors(
         "bytes": expected_normalizer_bytes,
         "check_command": (
             ".venv\\Scripts\\python.exe "
-            "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260806T2315Z.py "
+            "scripts/normalize_v042_paper1_zenodo_predraft_gate_20260807T1600Z.py "
             "--check"
         ),
         "role": "REPOSITORY_REPRODUCTION_SCRIPT_NOT_INCLUDED_IN_SUPPLEMENT",
@@ -824,9 +846,9 @@ def _predraft_gate_errors(
         for fragment in (
             ZENODO_PREDRAFT_GATE_STATUS,
             ZENODO_PREDRAFT_SOURCE_ID,
-            "Versioned-ID additions: none.  Missing versioned IDs: none.",
-            "Title deltas: none.  Abstract-hash deltas: none.  Category deltas: none.",
-            "Version replacements: none.  Screening-decision deltas: none.",
+            "Versioned-ID additions: 200. Missing versioned IDs: 14",
+            "Version replacements (base arXiv ID present under a different version on",
+            "New rule-triggered candidates (present only in the current response",
             "arXiv:2603.25503v1",
             "arXiv:2607.26672v1",
         ):
@@ -836,8 +858,8 @@ def _predraft_gate_errors(
         for fragment in (
             ZENODO_PREDRAFT_SOURCE_ID,
             ZENODO_PREDRAFT_FEED_CUTOFF,
-            "no added or missing versioned ID",
-            "same 28 rule-triggered title/abstract records",
+            "not a zero-delta recheck",
+            "(722 -> 908 records)",
         ):
             if fragment not in note_text:
                 errors.append(f"Zenodo predraft research note lacks {fragment!r}")

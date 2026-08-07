@@ -69,27 +69,32 @@ reproduction still requires the repository and pinned toolchains.
 
 ## Current predraft literature handoff
 
-The `2026-08-06T2315Z` arXiv predraft gate is complete and remains valid
-evidence: 722 records, zero added/missing, metadata, screening, version, and
-candidate deltas relative to the 1123Z snapshot, with both tracked records
-still at `v1`.  It is, however, **historical provenance rather than the
-authority for the current candidate**: it was cut against the superseded PDF
-`9f58867d…fd43`, before the Sol wording audit forced the rebuild to
-`c112b987…fa2e`.
+The `2026-08-07T1600Z` arXiv predraft gate is complete and is the current
+authority: `verify_paper1_bundle.py`'s `ZENODO_PREDRAFT_*` bindings point to
+it, and it was cut against the current candidate `c112b987…fa2e`. Its fixed
+submittedDate window had accumulated real arXiv index catch-up since the
+`2026-08-06T2315Z` gate (722 -> 908 records); every added, missing,
+version-replaced, or newly rule-triggered ID within that still-closed window
+was individually reviewed by title/abstract and found nonmaterial to C1--C5,
+and both tracked records remain at `v1`. See
+`reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260807T1600Z.md`
+for the full reviewed delta.
 
-**No draft-save is authorized on this gate.**  A newly timestamped gate must be
-cut immediately before the first draft-save of the current candidate, and its
-artifacts must replace the `ZENODO_PREDRAFT_*` bindings in
-`verify_paper1_bundle.py`.  Cutting it earlier would recreate the staleness
-that withdrew the 2026-08-06 candidate.  All release gates remain false and
-`remote_visibility` remains `NOT_VERIFIED_BY_BUILDER` until an owner separately
-verifies it.
+**Owner acceptance of the current PDF bytes is recorded.** The all-page visual
+QA of the current bytes was performed by the assistant session that made the
+last addition, not by the owner directly; the owner separately accepted these
+exact bytes, and the amendment report and both the builder and verifier record
+and fail closed on that acceptance. This still does not by itself authorize
+draft-save. All release gates remain false and `remote_visibility` remains
+`NOT_VERIFIED_BY_BUILDER` until an owner separately verifies it.
 
-The 1123Z report and research note are retained only as the documented
-historical predecessor in the supplement.  The current report and note are
-the authority for this handoff; raw Atom responses, the retrieval receipt,
-and normalized ledgers for both gates remain excluded.  Any later draft-save
-attempt, manuscript freeze, or deposit requires a newly timestamped gate.
+The `2026-08-06T2315Z` report and research note are retained only as the
+documented historical predecessor in the supplement, superseding the earlier
+`1123Z` predecessor now that a further gate has been cut. The current report
+and note are the authority for this handoff; raw Atom responses, the
+retrieval receipt, and normalized ledgers for all gates remain excluded. A
+later draft-save attempt, manuscript freeze, or deposit still requires a
+freshly timestamped gate if meaningful time has passed since this one.
 
 ## Recorded owner policies and pending release actions
 
