@@ -28,15 +28,43 @@ def test_frozen_result_regenerates_exactly() -> None:
     assert frozen == _compiled()
     assert frozen["semantic_digest_sha256"] == gate._semantic_digest(frozen)
     assert frozen["semantic_digest_sha256"] == (
-        "c2da9973499e79924b068f3cf1c39f0174661cae64b552dda35155735dc2e448"
+        "f59d46a8d52210fe6b63757b8af10484654fbe8ef1483182dcd14c6fcfe817e4"
     )
     assert frozen["verdict"] == gate.VERDICT_ALL_LIFT_Q_BLOCKED
     assert frozen["scope"]["field"] == "QQ"
+    basepoint = frozen["basepoint_and_jet_fibre_recheck"]
+    assert basepoint["all_131_matrices_equal_diag_p_e_1"] is True
+    assert basepoint["all_131_determinants_nonzero"] is True
+    assert (
+        basepoint["tangent_variables_z"],
+        basepoint["second_order_fibre_variables_a"],
+        basepoint["third_order_fibre_variables_b"],
+    ) == (49, 49, 49)
+    assert basepoint["weighted_fourth_monomial_dimension"] == 334376
+    assert basepoint["particular_third_order_forms_digest_sha256"] == (
+        "435bb9239f479ef5ac054de7a6f605e3161ddb073e4fd8a6cf49eee06f419c5e"
+    )
     assert frozen["unrestricted_source_native_955_status"] == "OPEN"
 
 
 def test_all_dependent_core_fourth_compatibility_forms_vanish() -> None:
-    core = _compiled()["fourth_order_core_compatibility"]
+    payload = _compiled()
+    core = payload["fourth_order_core_compatibility"]
+    raw = payload["raw_fourth_order_core_stream_recheck"]["combined"]
+
+    assert raw["nonzero_fourth_forms"] == 2706
+    assert raw["zero_fourth_forms"] == 1706
+    assert raw["total_terms"] == 1647981
+    assert (
+        raw["z_quartic_terms"],
+        raw["z_squared_times_a_terms"],
+        raw["a_squared_terms"],
+        raw["z_times_b_terms"],
+    ) == (807387, 657142, 64286, 119166)
+    assert raw["maximum_terms_one_form"] == 2376
+    assert raw["stream_digest_sha256"] == (
+        "08a74b02b2712bfcdf2b492716109588f6c4276ef56f325a29f8b00f078552ff"
+    )
 
     assert core["scalar_slots"] == 4412
     assert core["Jacobian_rank"] == core["independent_Jacobian_rows"] == 427
@@ -46,6 +74,9 @@ def test_all_dependent_core_fourth_compatibility_forms_vanish() -> None:
     assert core["raw_compatibility_term_histogram"] == {"0": 3985}
     assert core["compatibility_span_rank"] == 0
     assert core["compatibility_basis_total_terms"] == 0
+    assert core["compatibility_basis_digest_sha256"] == (
+        "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    )
     assert core["all_third_order_core_jets_lift_through_fourth_order"] is True
     assert core["raw_compatibility_stream_digest_sha256"] == (
         "4ba14a1b2136e8fef7fa8dea6919b6e206d2b4483d63feda4046b36b452ad640"
@@ -67,6 +98,14 @@ def test_Q_fourth_jets_vanish_intrinsically_after_core_elimination() -> None:
     assert q["scalar_entry_slots"] == 24
     assert raw["nonzero_fourth_forms"] == 6
     assert raw["total_terms"] == 2374
+    assert raw["term_count_histogram_all_slots"] == {
+        "0": 18,
+        "308": 1,
+        "335": 1,
+        "342": 1,
+        "433": 1,
+        "478": 2,
+    }
     assert raw["stream_digest_sha256"] == (
         "8a8028737161af61101e0fea19d710726e6582a8fbf4d9ec4f4fbc97db6ec8b3"
     )
@@ -90,6 +129,10 @@ def test_terminal_blind_directions_remain_silent_through_order_four() -> None:
 
     assert blind["count"] == 16
     assert len(blind["weighted_coordinate_indices"]) == 48
+    expected = sorted(
+        offset + index for index in blind["tangent_coordinate_indices"] for offset in (0, 49, 98)
+    )
+    assert blind["weighted_coordinate_indices"] == expected
     assert blind["raw_core_weighted_fourth_monomial_occurrences"] == 0
     assert blind["raw_Q_weighted_fourth_monomial_occurrences"] == 0
     assert blind["intrinsic_Q_weighted_fourth_monomial_occurrences"] == 0
@@ -113,7 +156,8 @@ def test_only_the_bounded_sparse_audit_was_executed() -> None:
     assert usage["below_hard_memory_limit"] is True
     assert usage["actual_Jacobian_basis_terms"] == 135396
     assert usage["actual_compatibility_basis_terms"] == 0
-    assert usage["conservative_basis_memory_estimate_bytes"] == 606193664
+    assert usage["actual_Jacobian_basis_form_overhead_bytes"] == 1748992
+    assert usage["conservative_basis_memory_estimate_bytes"] == 607942656
     assert usage["raw_forms_streamed_and_discarded"] is True
     assert usage["dense_334376_column_matrix_materialised"] is False
     assert payload["execution_decision"] == {

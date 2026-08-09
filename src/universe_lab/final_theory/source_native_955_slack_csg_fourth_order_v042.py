@@ -529,7 +529,10 @@ def compile_slack_csg_fourth_order_v042(root: Path) -> dict[str, Any]:
     per_term = int(budget["conservative_python_bytes_per_sparse_term"])
     reserve = int(budget["fixed_runtime_reserve_bytes"])
     jacobian_terms = expected_basis["basis_total_weighted_terms"]
-    conservative_memory = reserve + per_term * (jacobian_terms + compatibility_terms)
+    jacobian_form_overhead = 427 * 4096
+    conservative_memory = (
+        reserve + per_term * (jacobian_terms + compatibility_terms) + jacobian_form_overhead
+    )
     if conservative_memory >= int(budget["hard_memory_limit_bytes"]):
         raise RuntimeError("actual fourth-order bases exceeded the hard memory estimate")
 
@@ -637,6 +640,7 @@ def compile_slack_csg_fourth_order_v042(root: Path) -> dict[str, Any]:
         "resource_usage": {
             "versioned_budget": budget,
             "actual_Jacobian_basis_terms": jacobian_terms,
+            "actual_Jacobian_basis_form_overhead_bytes": jacobian_form_overhead,
             "actual_compatibility_basis_terms": compatibility_terms,
             "conservative_basis_memory_estimate_bytes": conservative_memory,
             "below_hard_memory_limit": (
