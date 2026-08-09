@@ -5,7 +5,7 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、二つのゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、三つのゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -18,7 +18,9 @@ reduce してから scout する」という趣旨の記述は、本文書が上
 中心          955 を obstruction 側本命で決着させる → 721 → finite ON lattice
 新ゲート1     対称性・軌道簡約   NEGATIVE TERMINAL（対称群は自明、patch 削減 0）
 新ゲート2     大域双線形簡約     262 → 46 パラメータ、局所化なし solver なし
-次ゲート      縮約座標での 1次消去 → 双線形形式解析 → 非特異条件の持ち込み
+新ゲート3     mixed枝閉包         46 → 43 → 厳密17次元 pure-upper 全解族
+              Q可換子24成分は0、非特異165 occurrence全通過、mixed ansatz終端
+次ゲート      無制限 source-native slack 系の次数・線形ブロック・coverage gap 証明
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -184,19 +186,77 @@ reachable_MSR_vector 1 :  1/2*t19 + 26*t21 = 0
 
 ---
 
-## 5. 次のゲート（この順で）
+## 5. ゲート3: rank 3 消去・CPOBC枝閉包・非特異条件（mixed ansatz終端）
 
-`CURRENT_RESEARCH_STATE.json` の `affected_campaign.next_gate` に固定済み。
+```
+artifact  results/v0.4.2_955_mixed_branch_closure.json
+report    reports/v0.4.2_955_mixed_branch_closure.md
+module    src/universe_lab/final_theory/source_native_955_mixed_branch_closure_v042.py
+digest    9316c624c589131120447e5399d8b77603f73d99c0b71258f8da1c197958a867
+verdict   V042_955_MIXED_ANSATZ_17D_PURE_UPPER_COMMUTATIVE_TERMINAL_CERTIFIED
+```
 
-1. **1次部分 rank 3 の消去。** 46 → 43 変数。純粋な厳密線形代数。
-2. **CPOBC 対角の 954 個の双線形形式の構造解析。** 全て次数2・最大3項。
-   `s^T M_k t = 0` の形なので、行列式的／階数的な扱いが自然。
-3. **非特異条件を縮約座標へ持ち込む。** これは**必須**であり、後回しにしては
-   ならない。§7 を読むこと。
+```powershell
+uv run python -m universe_lab.final_theory.source_native_955_mixed_branch_closure_v042
+uv run pytest tests/final_theory/test_v042_955_mixed_branch_closure.py -q
+```
 
-heavy solver は従来どおり coverage certificate と版付き budget artifact が
-揃うまで凍結（`solver_run_permitted: false`）。今回の二ゲートは Gröbner 0、
-saturation 0、有限体 0、数値 0、Sage 0 で完了している。
+### 5.1 46 → 43 と可換子の消滅
+
+保留されていた rank 3 を実際に消去した。
+
+```
+s19 = 3*s21,  t19 = 0,  t21 = 0
+```
+
+この代入だけで、前段のQ可換子 **24成分 / 60項は全て恒等的に0**。したがって
+宣言済み mixed ansatz の955解は全て可換であり、CPOBC枝分けはこの可換性結論には
+不要である。
+
+### 5.2 CPOBCは5単項式だけ
+
+954本の対角式は870本が恒等的に消え、残る84本は次の5式の非零スカラー倍だけ:
+
+```
+s21*t11 = s21*t15 = s21*t16 = s21*t18 = s21*t22 = 0
+```
+
+出現数は順に16, 13, 13, 30, 12。各単項式に元のCPOBC選択式を束縛済み。
+
+### 5.3 全解分類
+
+`s21!=0` 枝ではCPOBCが上の5個の`t`を消し、残る63本は全て1次式、rank 21。
+`s21=0` 枝では結合1次rank 26。二枝は次の単一17次元 pure-upper 線形族に合流する:
+
+```
+all t = 0
+(s11,s15,s16,s18,s21,s22) = (15,12,12,14,1,12)*u
+free: s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s12,s13,s14,s17,s20,u
+```
+
+`s21=0` 枝は `u=0` の16次元超平面。一般17パラメータ点で縮約系1,933成分を
+全検査して failures 0。これにより tangent scout が open とした
+remote/disconnected `x!=0,y!=0` mixed component は**存在しない**と確定した。
+
+### 5.4 非特異条件
+
+131因子を43変数へ実際に再コンパイル。rank 3 消去だけで88因子が定数非零、
+43因子（元の50 occurrence、異なる多項式26個）が可変のまま残る。しかし最終族は
+全 `y=0` なので、全因子は `p_e in {1/16,1/8,1/4,1/2}` に戻る。
+**165 source occurrence 全て通過、failures 0。**
+
+### 5.5 新しい次ゲート
+
+mixed ansatz をさらに解く作業は不要。`CURRENT_RESEARCH_STATE.json` の次ゲートは
+無制限 source-native slack 系へ戻し、次の順に固定した。
+
+1. mixed ansatz が捨てた自由度と coverage gap を明示する。
+2. 無制限系の次数分布と厳密線形ブロックを solver なしで測る。
+3. source-profile coverage certificate と版付き budget artifact が揃った場合だけ
+   solver 実行を再検討する。
+
+heavy solver は引き続き凍結（`solver_run_permitted: false`）。三ゲートとも
+Gröbner 0、saturation 0、有限体 0、数値 0、Sage 0 で完了。
 
 ---
 
@@ -209,17 +269,17 @@ saturation 0、有限体 0、数値 0、Sage 0 で完了している。
 
 ---
 
-## 7. 罠 — 未処理の落とし穴
+## 7. 罠 — 範囲と後続で踏みやすい点
 
-- **縮約系は非特異条件を含まない。** `det(A_e) = p_e - x_[e]*y_[e] != 0` は
-  46変数系に課していない。縮約系の解が自動的に許容点になるわけではない。
-  成果物の `claim_boundary` に明記してある。obstruction を主張する前に
-  必ず localisation を持ち込むこと。逆に witness を主張する場合も、
-  165 occurrence 全ての非特異性を別途検査しなければならない。
+- **ゲート2の46変数系だけには非特異条件が入っていない。** ただしゲート3は
+  `det(A_e) = p_e - x_[e]*y_[e] != 0` を131因子・165 occurrence 全て持ち込み、
+  最終17次元族で failures 0 を認証した。ゲート3まで引用する場合、この穴は
+  mixed ansatz 内では閉じている。無制限 slack 系へ自動転用してはならない。
 - **`Eq113` / `Eq139` の分岐は縮約系に入っていない。** 955 profile の
   common core（CPOBC + strong_GC + reachable_state_MSR）だけである。
   full witness には別途必要（`mixed_xy_tangent_scout` の
-  `full_witness_gates_not_run` を参照）。
+  `full_witness_gates_not_run` を参照）。ただし mixed ansatz 内では common core
+  だけで既に全Q可換なので、追加分岐が非可換 witness を復活させることはない。
 - **`reachable_MSR_operator` と `reachable_MSR_vector` を取り違えないこと。**
   955 は **vector**（到達状態上）。operator ブロックは強い意味論のもので、
   こちらは mixed でも `(0,1)` のみ＝厳密線形だが、955 では使えない。
@@ -262,20 +322,23 @@ bridge する方式である。
 
 ```powershell
 uv run ruff check .
-uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py -q
+uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py -q
 uv run pytest -q
 ```
 
-新規テストは 19 件。うち独立検証として、核基底を manifest の生の行と直接
+三ゲートの新規テストは 27 件。うち独立検証として、核基底を manifest の生の行と直接
 内積で検査するもの（`test_kernel_basis_is_independently_verified_against_the_manifest_rows`）と、
-二重次数を成果物を介さず manifest から再計測するものを含む。
+二重次数を成果物を介さず manifest から再計測するもの、一般17パラメータ族で
+1,933成分を再代入するものを含む。
 
 ---
 
 ## 10. AI 開示
 
-本セッションのモジュール、テスト、報告、`MISSION.md` の現行フェーズ節は
-Anthropic Claude が作成し、人間の著者が範囲を選択し内容に責任を負う。
+ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3の
+モジュール・テスト・報告・引き継ぎ更新は OpenAI Codex が作成した。Luna は
+読み取り専用のブランチ／不要ファイル棚卸しだけを担当した。人間の著者が範囲を
+選択し内容に責任を負う。
 `CONTRIBUTING.md` の「どのツールがどの部分か」要件に対応する記録である。
 
 `.zenodo.json` と `paper/paper.md` の開示は**触っていない**。両者は凍結

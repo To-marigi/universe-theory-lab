@@ -44,7 +44,12 @@ open と書いた方向（non-self-adjoint / state-only covariance）との直�
 
 obstruction 側を本命とするのは、蓄積データがその方向を指しているためである。
 **955 トラック固有の証拠**は、pure-lower ansatz の global no-go 証明と、
-mixed-xy tangent scout に witness がないことである。**隣接する SR2-V トラック**
+mixed-xy tangent scout に witness がないことに加え、
+[`reports/v0.4.2_955_mixed_branch_closure.md`](reports/v0.4.2_955_mixed_branch_closure.md)
+が宣言済み mixed ansatz の全解を17次元 pure-upper 可換族に分類したことである。
+この分類は165個の非特異 occurrence を全検査し、remote / disconnected な
+`x!=0,y!=0` 成分が同 ansatz 内に存在しないことまで認証する。
+**隣接する SR2-V トラック**
 では、bounded full-profile scout が 960 点で escape 0、固定状態 slice が
 unit ideal ですべて潰れている。両者は別トラックの結果であり、SR2-V の証拠は
 955 の証拠ではない。さらに
@@ -53,9 +58,10 @@ unit ideal ですべて潰れている。両者は別トラックの結果であ
 131 個の独立な非線形問題に等しい一方、一様な obstruction 論証は patch 数に鈍感
 である。
 
-これは計画上の賭けであって定理ではない。960 点 0 escape は証拠であり、remote /
-disconnected な mixed components は依然として open である。witness が出た場合は
-そちらを終端として受け入れる。
+obstruction 本命という全体方針はなお計画上の賭けであって、full 955 の定理ではない。
+mixed ansatz 内の remote / disconnected 成分は閉じたが、無制限 source-native
+slack 系はその外側にあり open である。次は ansatz が捨てた自由度と coverage gap を
+明示し、そこで witness が出た場合はそちらを終端として受け入れる。
 
 ### 到達順序
 

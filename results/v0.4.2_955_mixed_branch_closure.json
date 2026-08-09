@@ -1,0 +1,2590 @@
+{
+  "schema_version": "final-theory-v042-955-mixed-branch-closure-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "scope": {
+    "finite_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ",
+    "identification_mode": "ON_QUOTIENT",
+    "ansatz": "A_e=[[p_e,x_[e]],[y_[e],1]], p_e=CSG(t_j=1)"
+  },
+  "source_artifact_sha256": {
+    "results/v0.4.2_955_global_bilinear_reduction.json": "c46cf4b0d356d1afeed11f3120e14a8faa9f07f1c966ef57c0048a7d732049b1",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c"
+  },
+  "predecessor_binding": {
+    "kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
+    "results/v0.4.2_955_global_bilinear_reduction.json": "38b648b62ad893768285aa17ff282d60e35d26fea03798ccb56f7593b2a5e7d5",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2"
+  },
+  "linear_rank_three_elimination": {
+    "input_coordinates": 46,
+    "linear_entry_count": 5,
+    "rank": 3,
+    "pivot_coordinates": [
+      "s19",
+      "t19",
+      "t21"
+    ],
+    "free_coordinates": [
+      "s0",
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s7",
+      "s8",
+      "s9",
+      "s10",
+      "s11",
+      "s12",
+      "s13",
+      "s14",
+      "s15",
+      "s16",
+      "s17",
+      "s18",
+      "s20",
+      "s21",
+      "s22",
+      "t0",
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7",
+      "t8",
+      "t9",
+      "t10",
+      "t11",
+      "t12",
+      "t13",
+      "t14",
+      "t15",
+      "t16",
+      "t17",
+      "t18",
+      "t20",
+      "t22"
+    ],
+    "output_coordinates": 43,
+    "substitution": {
+      "s19": [
+        {
+          "coefficient": "3",
+          "monomial": [
+            {
+              "variable": "s21",
+              "exponent": 1
+            }
+          ]
+        }
+      ],
+      "t19": [],
+      "t21": []
+    },
+    "rref": [
+      {
+        "s19": "1",
+        "s21": "-3"
+      },
+      {
+        "t19": "1"
+      },
+      {
+        "t21": "1"
+      }
+    ],
+    "exact_QQ": true
+  },
+  "Q_commutator_after_linear_elimination": {
+    "entries_before": 24,
+    "terms_before": 60,
+    "entries_checked": 24,
+    "nonzero_remainders": 0,
+    "checked_labels_sha256": "e67aeba613d5ca9a0f8228903101e5caacea31b6fcf1226c9fdb411f2bbe0b70",
+    "identically_zero_on_the_rank_three_linear_locus": true,
+    "conclusion": "Every solution of the 955 profile inside the declared mixed ansatz has pairwise commuting Q1,...,Q4; no CPOBC branch split is needed for this conclusion."
+  },
+  "CPOBC_after_linear_elimination": {
+    "input_diagonal_entries": 954,
+    "identically_zero_entries": 870,
+    "surviving_scalar_monomial_instances": 84,
+    "surviving_terms": 84,
+    "unique_monomial_equations": [
+      {
+        "monomial": "s21*t11",
+        "instances": 16,
+        "selected_source_equation": {
+          "relation_id": "cpobc-relation-18e5e61fc80299257680",
+          "equation_id": "eq103",
+          "entry": "11",
+          "coefficient": "-16"
+        }
+      },
+      {
+        "monomial": "s21*t15",
+        "instances": 13,
+        "selected_source_equation": {
+          "relation_id": "cpobc-relation-0a58a64fd12b00f99f47",
+          "equation_id": "eq103",
+          "entry": "11",
+          "coefficient": "-16"
+        }
+      },
+      {
+        "monomial": "s21*t16",
+        "instances": 13,
+        "selected_source_equation": {
+          "relation_id": "cpobc-relation-0ca7a22bed9cdf4bc14a",
+          "equation_id": "eq103",
+          "entry": "11",
+          "coefficient": "-16"
+        }
+      },
+      {
+        "monomial": "s21*t18",
+        "instances": 30,
+        "selected_source_equation": {
+          "relation_id": "cpobc-relation-1d42b6f3bfc0cc520594",
+          "equation_id": "eq103",
+          "entry": "11",
+          "coefficient": "-16"
+        }
+      },
+      {
+        "monomial": "s21*t22",
+        "instances": 12,
+        "selected_source_equation": {
+          "relation_id": "cpobc-relation-02c6016741374af23c63",
+          "equation_id": "eq103",
+          "entry": "11",
+          "coefficient": "-16"
+        }
+      }
+    ],
+    "equivalent_system": [
+      "s21*t11",
+      "s21*t15",
+      "s21*t16",
+      "s21*t18",
+      "s21*t22"
+    ]
+  },
+  "exact_branch_closure": {
+    "case_split": "s21=0 OR s21!=0",
+    "s21_nonzero_branch": {
+      "CPOBC_forces_zero": [
+        "t11",
+        "t15",
+        "t16",
+        "t18",
+        "t22"
+      ],
+      "branch_census": {
+        "CPOBC": {
+          "input_entries": 954,
+          "surviving_entries": 0,
+          "total_terms": 0,
+          "maximum_terms_per_entry": 0,
+          "degree_histogram": {}
+        },
+        "strong_GC": {
+          "input_entries": 932,
+          "surviving_entries": 47,
+          "total_terms": 94,
+          "maximum_terms_per_entry": 2,
+          "degree_histogram": {
+            "1": 47
+          }
+        },
+        "reachable_MSR_vector": {
+          "input_entries": 47,
+          "surviving_entries": 16,
+          "total_terms": 16,
+          "maximum_terms_per_entry": 1,
+          "degree_histogram": {
+            "1": 16
+          }
+        }
+      },
+      "homogeneous_linear_entry_counts": {
+        "reachable_MSR_vector": 16,
+        "strong_GC": 47
+      },
+      "surviving_profile_entries": 63,
+      "combined_linear_rank": 21,
+      "combined_rref": [
+        {
+          "s11": "1",
+          "s22": "-5/4"
+        },
+        {
+          "s15": "1",
+          "s22": "-1"
+        },
+        {
+          "s16": "1",
+          "s22": "-1"
+        },
+        {
+          "s18": "1",
+          "s22": "-7/6"
+        },
+        {
+          "s21": "1",
+          "s22": "-1/12"
+        },
+        {
+          "t0": "1"
+        },
+        {
+          "t1": "1"
+        },
+        {
+          "t2": "1"
+        },
+        {
+          "t3": "1"
+        },
+        {
+          "t4": "1"
+        },
+        {
+          "t5": "1"
+        },
+        {
+          "t6": "1"
+        },
+        {
+          "t7": "1"
+        },
+        {
+          "t8": "1"
+        },
+        {
+          "t9": "1"
+        },
+        {
+          "t10": "1"
+        },
+        {
+          "t12": "1"
+        },
+        {
+          "t13": "1"
+        },
+        {
+          "t14": "1"
+        },
+        {
+          "t17": "1"
+        },
+        {
+          "t20": "1"
+        }
+      ],
+      "pivot_coordinates": [
+        "s11",
+        "s15",
+        "s16",
+        "s18",
+        "s21",
+        "t0",
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5",
+        "t6",
+        "t7",
+        "t8",
+        "t9",
+        "t10",
+        "t12",
+        "t13",
+        "t14",
+        "t17",
+        "t20"
+      ],
+      "free_coordinates_on_closure": [
+        "s0",
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "s8",
+        "s9",
+        "s10",
+        "s12",
+        "s13",
+        "s14",
+        "s17",
+        "s20",
+        "s22"
+      ],
+      "branch_restriction": "s22!=0 (equivalently s21=s22/12!=0)",
+      "closure_dimension": 17,
+      "remaining_residuals_after_linear_parameterisation": 0
+    },
+    "s21_zero_branch": {
+      "branch_census": {
+        "CPOBC": {
+          "input_entries": 954,
+          "surviving_entries": 0,
+          "total_terms": 0,
+          "maximum_terms_per_entry": 0,
+          "degree_histogram": {}
+        },
+        "strong_GC": {
+          "input_entries": 932,
+          "surviving_entries": 94,
+          "total_terms": 94,
+          "maximum_terms_per_entry": 1,
+          "degree_histogram": {
+            "1": 94
+          }
+        },
+        "reachable_MSR_vector": {
+          "input_entries": 47,
+          "surviving_entries": 26,
+          "total_terms": 53,
+          "maximum_terms_per_entry": 3,
+          "degree_histogram": {
+            "1": 21,
+            "2": 5
+          }
+        }
+      },
+      "homogeneous_linear_entry_counts": {
+        "reachable_MSR_vector": 21,
+        "strong_GC": 94
+      },
+      "combined_linear_rank": 26,
+      "combined_rref": [
+        {
+          "s11": "1"
+        },
+        {
+          "s15": "1"
+        },
+        {
+          "s16": "1"
+        },
+        {
+          "s18": "1"
+        },
+        {
+          "s22": "1"
+        },
+        {
+          "t0": "1"
+        },
+        {
+          "t1": "1"
+        },
+        {
+          "t2": "1"
+        },
+        {
+          "t3": "1"
+        },
+        {
+          "t4": "1"
+        },
+        {
+          "t5": "1"
+        },
+        {
+          "t6": "1"
+        },
+        {
+          "t7": "1"
+        },
+        {
+          "t8": "1"
+        },
+        {
+          "t9": "1"
+        },
+        {
+          "t10": "1"
+        },
+        {
+          "t11": "1"
+        },
+        {
+          "t12": "1"
+        },
+        {
+          "t13": "1"
+        },
+        {
+          "t14": "1"
+        },
+        {
+          "t15": "1"
+        },
+        {
+          "t16": "1"
+        },
+        {
+          "t17": "1"
+        },
+        {
+          "t18": "1"
+        },
+        {
+          "t20": "1"
+        },
+        {
+          "t22": "1"
+        }
+      ],
+      "forced_zero_after_s21": [
+        "s11",
+        "s15",
+        "s16",
+        "s18",
+        "s22",
+        "t0",
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5",
+        "t6",
+        "t7",
+        "t8",
+        "t9",
+        "t10",
+        "t11",
+        "t12",
+        "t13",
+        "t14",
+        "t15",
+        "t16",
+        "t17",
+        "t18",
+        "t20",
+        "t22"
+      ],
+      "free_coordinates": [
+        "s0",
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "s8",
+        "s9",
+        "s10",
+        "s12",
+        "s13",
+        "s14",
+        "s17",
+        "s20"
+      ],
+      "dimension": 16,
+      "relation_to_nonzero_branch_closure": "the s22=0 hyperplane",
+      "remaining_nonlinear_entries_vanish_after_forced_zeros": true
+    }
+  },
+  "solution_classification": {
+    "solution_set_inside_declared_mixed_ansatz": "17_DIMENSIONAL_PURE_UPPER_LINEAR_FAMILY",
+    "free_coordinates": [
+      "s0",
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6",
+      "s7",
+      "s8",
+      "s9",
+      "s10",
+      "s12",
+      "s13",
+      "s14",
+      "s17",
+      "s20",
+      "s22"
+    ],
+    "free_parameter_count": 17,
+    "zero_coordinates_in_43_coordinate_quotient": [
+      "t0",
+      "t1",
+      "t2",
+      "t3",
+      "t4",
+      "t5",
+      "t6",
+      "t7",
+      "t8",
+      "t9",
+      "t10",
+      "t11",
+      "t12",
+      "t13",
+      "t14",
+      "t15",
+      "t16",
+      "t17",
+      "t18",
+      "t20",
+      "t22"
+    ],
+    "dependent_coordinates_in_43_coordinate_quotient": {
+      "s11": "5/4*s22",
+      "s15": "s22",
+      "s16": "s22",
+      "s18": "7/6*s22",
+      "s21": "1/12*s22"
+    },
+    "primitive_integral_direction_with_u_equal_s21": {
+      "s11": "15*u",
+      "s15": "12*u",
+      "s16": "12*u",
+      "s18": "14*u",
+      "s21": "u",
+      "s22": "12*u"
+    },
+    "rank_three_dependent_coordinates": {
+      "s19": "3*s21",
+      "t19": "0",
+      "t21": "0"
+    },
+    "all_y_coordinates_zero": true,
+    "remote_or_disconnected_x_nonzero_y_nonzero_components": 0,
+    "reduced_profile_entries_checked_at_general_family_point": 1933,
+    "residual_failures": [],
+    "every_assignment_of_the_17_free_coordinates_is_a_solution": true
+  },
+  "nonsingularity_localisation": {
+    "raw_source_occurrences": 165,
+    "distinct_ON_quotient_factors": 131,
+    "automatic_after_rank_three_elimination": 88,
+    "active_after_rank_three_elimination": 43,
+    "active_raw_source_occurrences": 50,
+    "unique_active_factor_polynomials": 26,
+    "reduced_factors": [
+      {
+        "orbit_id": "cpobc-transition-orbit-00e3f260ed14f8d323f1",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-021863f6c5f84a5b6801",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-02acf2b1c993d98b7133",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/2",
+            "monomial": []
+          },
+          {
+            "coefficient": "-2",
+            "monomial": [
+              {
+                "variable": "s15",
+                "exponent": 1
+              },
+              {
+                "variable": "t15",
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "coefficient": "8",
+            "monomial": [
+              {
+                "variable": "s21",
+                "exponent": 1
+              },
+              {
+                "variable": "t15",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-033cb4be4bc5e068b734",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-05b265c4c11b96cd7638",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-09a8d1b8a777eed84f27",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-0c11b662b524e49c7878",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-0e46d46cc5b194fe928e",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-118f0dd21b894bcb09e8",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-135b834fc5db9a0a0657",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-13e56855045c5e712525",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-14747b8142aea693e693",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s16",
+                "exponent": 1
+              },
+              {
+                "variable": "t16",
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "coefficient": "-2",
+            "monomial": [
+              {
+                "variable": "s21",
+                "exponent": 1
+              },
+              {
+                "variable": "t16",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-14a352a0e1aa72c4a208",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s0",
+                "exponent": 1
+              },
+              {
+                "variable": "t0",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-1a8f8fe75eb556291b09",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-1ce7842933d8ffa2e3bd",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-1cf71a48cd05d50fdcca",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-1e16e185933d50ee63a0",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s16",
+                "exponent": 1
+              },
+              {
+                "variable": "t16",
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "coefficient": "-2",
+            "monomial": [
+              {
+                "variable": "s21",
+                "exponent": 1
+              },
+              {
+                "variable": "t16",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-1f6dc886d7104325ed26",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s16",
+                "exponent": 1
+              },
+              {
+                "variable": "t16",
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "coefficient": "-2",
+            "monomial": [
+              {
+                "variable": "s21",
+                "exponent": 1
+              },
+              {
+                "variable": "t16",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-1ffa257f133af8ac5d41",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-20042da00d186fc9b90f",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/2",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s1",
+                "exponent": 1
+              },
+              {
+                "variable": "t1",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-221317868d1ec1367b7b",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-24bcd95969fc6dc31c0d",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-24f4e7495e42fdb88981",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/2",
+            "monomial": []
+          },
+          {
+            "coefficient": "8",
+            "monomial": [
+              {
+                "variable": "s21",
+                "exponent": 1
+              },
+              {
+                "variable": "t22",
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "coefficient": "-2",
+            "monomial": [
+              {
+                "variable": "s22",
+                "exponent": 1
+              },
+              {
+                "variable": "t22",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-2bfe4259b3303a0fc4f2",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s2",
+                "exponent": 1
+              },
+              {
+                "variable": "t2",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-2e9489a29cd7f1dcf43e",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-2edfbf8aa31df0393257",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s15",
+                "exponent": 1
+              },
+              {
+                "variable": "t15",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-2fe55a94a6eb4209ac89",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-322233def63d300522f2",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-328a2147fc7139a468ab",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-35ceff949eb5ad404757",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-3c1374e8b4f0f7deebce",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s18",
+                "exponent": 1
+              },
+              {
+                "variable": "t18",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-3e8afe2525d32da108a4",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s15",
+                "exponent": 1
+              },
+              {
+                "variable": "t15",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-42b6782fe542ab2e9b05",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-44aed6fdc8c82794cb65",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s15",
+                "exponent": 1
+              },
+              {
+                "variable": "t15",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-4680d526f3e1a66f3e9a",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-480001e813b6a8df9bde",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-4963cb39781e9b264bf0",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-4c7d9b47e7db31a2f105",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/2",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-4f0633d50c52cc6f863c",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-4f90256c3f960072c075",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-4f90919f2171f7dede3e",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-50744ddb4d41d46effa1",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/2",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s3",
+                "exponent": 1
+              },
+              {
+                "variable": "t3",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-50fb01f66cc1cf4a7737",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-572d32cb6a7f7a77d126",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s4",
+                "exponent": 1
+              },
+              {
+                "variable": "t4",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-5ec7b318bba439bee678",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-5fd8a7aee802a71f6d4b",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-603f33032dcd7628d7e6",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s22",
+                "exponent": 1
+              },
+              {
+                "variable": "t22",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-62a5e784c5d01b928183",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/2",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s5",
+                "exponent": 1
+              },
+              {
+                "variable": "t5",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-660a04d5a95e7f32ce73",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-66c105c8686d1dd540e8",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-2",
+            "monomial": [
+              {
+                "variable": "s11",
+                "exponent": 1
+              },
+              {
+                "variable": "t11",
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "coefficient": "2",
+            "monomial": [
+              {
+                "variable": "s21",
+                "exponent": 1
+              },
+              {
+                "variable": "t11",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-6c344f4bcc88004609a5",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s11",
+                "exponent": 1
+              },
+              {
+                "variable": "t11",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-6e062491d0be82ba52f6",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-702aaf10b2c915c19ab2",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-724886441537c84f38e7",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-725eaa7cb4c6fcc23d4d",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s6",
+                "exponent": 1
+              },
+              {
+                "variable": "t6",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-73ee7ec1958ea20309f4",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s7",
+                "exponent": 1
+              },
+              {
+                "variable": "t7",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-74b3519240acc75a0c55",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/2",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-76354ebabc57255c5a64",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-77da9d98600f42d61c83",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-781ed720ac4886bb4881",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-79234c8570bced8f696b",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-792fade47daa0c95cc46",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s11",
+                "exponent": 1
+              },
+              {
+                "variable": "t11",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-7a50fe6cbe9be3ccc836",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-2",
+            "monomial": [
+              {
+                "variable": "s18",
+                "exponent": 1
+              },
+              {
+                "variable": "t18",
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "coefficient": "4",
+            "monomial": [
+              {
+                "variable": "s21",
+                "exponent": 1
+              },
+              {
+                "variable": "t18",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-7c34e2705dd7a7da4013",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-7cb4aeb9a737d4648226",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s11",
+                "exponent": 1
+              },
+              {
+                "variable": "t11",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-81de110aa28c9b3e2f3d",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-821f49d80711c6c3cd4e",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-829b87ec0397af66e4f0",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-83af550a9d7e565aeeb5",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s16",
+                "exponent": 1
+              },
+              {
+                "variable": "t16",
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "coefficient": "-2",
+            "monomial": [
+              {
+                "variable": "s21",
+                "exponent": 1
+              },
+              {
+                "variable": "t16",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-863a9bd90f9d39e401c9",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-8abdf9dfa29b8d1441c5",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-8c2a5e92048199acdf30",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-8f89534e9699d4b60a83",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s8",
+                "exponent": 1
+              },
+              {
+                "variable": "t8",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-912e9a73e629bd2bd97b",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-92c3b00eb3588bf835c0",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s18",
+                "exponent": 1
+              },
+              {
+                "variable": "t18",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-92dc21cb80d8c56a73bf",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-983362874bc6f5900920",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-9935bc41706b8cb46d09",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s9",
+                "exponent": 1
+              },
+              {
+                "variable": "t9",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-9985753ad535b09543f8",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-9db8e170556712ebafa5",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-9ebbb147ab4c496e85c3",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-9fb0da3749caf7b75239",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-9ff04b14a6a5144f9cde",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-a2e7d5d1f236cc9f11bd",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-a39f0b6b0562d39d8ff3",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-a8735d60c851d2c15719",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-a9d316ed9eea0710f2d0",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-aab3b9a8363b9460cff0",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-ab12f7513b8a36c56a4f",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-ab3dd7af1184608f2cac",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-abdf5cd989e6572c3e23",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-b75c3f4edb0b6b7b050a",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s10",
+                "exponent": 1
+              },
+              {
+                "variable": "t10",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-baafeb4275a21d07bac0",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-c05237b8de19729ea411",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s11",
+                "exponent": 1
+              },
+              {
+                "variable": "t11",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-c1362589f8c6be68d74c",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s12",
+                "exponent": 1
+              },
+              {
+                "variable": "t12",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-c14a3f6b73fbb4153633",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-c30299e06d5c1a1ef226",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-c30e4a4e7f5d04230080",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-c3a5cbc85747dbe8b9e8",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-c454591c34e8d03181ef",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/2",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s13",
+                "exponent": 1
+              },
+              {
+                "variable": "t13",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-c56a9533c54e735f2ef9",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-c6cc3608d029c19c02c9",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s18",
+                "exponent": 1
+              },
+              {
+                "variable": "t18",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-c80821324d0f87cb927b",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s22",
+                "exponent": 1
+              },
+              {
+                "variable": "t22",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-cdb7132cf2abc92dbdd9",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/2",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s14",
+                "exponent": 1
+              },
+              {
+                "variable": "t14",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-cdf3c3ff87768a162e5a",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-cdfc71c75ed77da7d424",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s15",
+                "exponent": 1
+              },
+              {
+                "variable": "t15",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-d0cb1ad71da4a5c49263",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-d1f79270d04af8745d36",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-d243760f268b3217c8aa",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-d441a75cce471a87b103",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-d6e558ececccf9f88035",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-2",
+            "monomial": [
+              {
+                "variable": "s16",
+                "exponent": 1
+              },
+              {
+                "variable": "t16",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-d94ea641fd612d052438",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-da8004ea942f479f0feb",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s18",
+                "exponent": 1
+              },
+              {
+                "variable": "t18",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-dc84b1cd4588f40679b6",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-dd5911a6a6514aee11f9",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-dda1fce16b861c364e33",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-e072ba8f219cdc7a6cd0",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-e0fd6c880f27f4068310",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s17",
+                "exponent": 1
+              },
+              {
+                "variable": "t17",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-e139e4d413e98c372def",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s18",
+                "exponent": 1
+              },
+              {
+                "variable": "t18",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-e2d5606fac0808ef44c8",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-e673275325f2cb6ee99b",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s18",
+                "exponent": 1
+              },
+              {
+                "variable": "t18",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-e6b20720d6b9c6fab03b",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s22",
+                "exponent": 1
+              },
+              {
+                "variable": "t22",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-e8310ddb51cd387a3feb",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-e86fda9f3c53c904b72e",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-eba2edac5c3fa2800b3c",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-ef3a65de93c87020ac8b",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-f028c08c093f1786f726",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s20",
+                "exponent": 1
+              },
+              {
+                "variable": "t20",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-f1c4030ab10488e60e8c",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/2",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-f7298176e2ac36e3beb0",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/8",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-f9261894d9abb92e0107",
+        "active_after_linear_elimination": false,
+        "factor": [
+          {
+            "coefficient": "1/16",
+            "monomial": []
+          }
+        ]
+      },
+      {
+        "orbit_id": "cpobc-transition-orbit-fa434ca56a37e5e01bd5",
+        "active_after_linear_elimination": true,
+        "factor": [
+          {
+            "coefficient": "1/4",
+            "monomial": []
+          },
+          {
+            "coefficient": "-1",
+            "monomial": [
+              {
+                "variable": "s22",
+                "exponent": 1
+              },
+              {
+                "variable": "t22",
+                "exponent": 1
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "at_classified_solution_family": {
+      "all_factors_equal_nonzero_p_e": true,
+      "diagonal_character_histogram": {
+        "1/16": 56,
+        "1/2": 10,
+        "1/4": 25,
+        "1/8": 40
+      },
+      "raw_occurrences_satisfied": 165,
+      "failures": 0
+    }
+  },
+  "solver_status": {
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "claim_boundary": [
+    "This is an exact QQ linear elimination and a two-branch field case split.",
+    "It is terminal for the declared 262-coordinate mixed ansatz only.",
+    "It proves no theorem for the unrestricted source-native slack system outside that ansatz.",
+    "The full source-native 955 profile therefore remains open.",
+    "The classification includes and verifies all 165 source nonsingularity occurrences.",
+    "No noncommutative witness exists inside the declared mixed ansatz."
+  ],
+  "commutativity_proved_for_955_profile_inside_declared_mixed_ansatz": true,
+  "commutativity_proved_for_unrestricted_source_native_955_profile": false,
+  "witness_certified": false,
+  "mixed_ansatz_search_terminal": true,
+  "full_955_search_terminal": false,
+  "passed": true,
+  "verdict": "V042_955_MIXED_ANSATZ_17D_PURE_UPPER_COMMUTATIVE_TERMINAL_CERTIFIED",
+  "semantic_digest_sha256": "9316c624c589131120447e5399d8b77603f73d99c0b71258f8da1c197958a867"
+}

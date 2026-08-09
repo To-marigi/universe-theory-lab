@@ -1,6 +1,6 @@
 {
   "schema_version": "cpobc-current-research-state-v1",
-  "updated": "2026-08-09",
+  "updated": "2026-08-10",
   "mutable_index_not_a_proof_certificate": true,
   "global_verdict": "FINAL_THEORY_OPEN",
   "public_baseline": {
@@ -39,7 +39,7 @@
   "on_semantic_profiles": {
     "strong_GC__strong_MSR": "COMMUTATIVITY_PROVED",
     "fixed_vector_GC__strong_MSR": "OPEN_PROOF_INTERPRETATION_WITHDRAWN",
-    "strong_GC__reachable_state_MSR": "OPEN_PROOF_INTERPRETATION_WITHDRAWN",
+    "strong_GC__reachable_state_MSR": "MIXED_ANSATZ_COMMUTATIVITY_PROVED_UNRESTRICTED_SOURCE_NATIVE_PROFILE_OPEN",
     "fixed_vector_GC__reachable_state_MSR": "NONCOMMUTATIVE_RATIONAL_WITNESS_CERTIFIED"
   },
   "superseded_interpretations": [
@@ -71,6 +71,7 @@
     "v0.4.2_955_pure_lower_oracle": "INDEPENDENT_EXACT_ORACLE_CERTIFIED_SR3B_AUXILIARY_NOT_NEW_SHORT_REPORT",
     "v0.4.2_955_symmetry_orbit_reduction": "EXACT_GAUGE_TORUS_GRADING_CERTIFIED_AND_COMBINATORIAL_SYMMETRY_GROUP_PROVED_TRIVIAL_ZERO_PATCH_REDUCTION_NONTERMINAL",
     "v0.4.2_955_global_bilinear_reduction": "CPOBC_OFF_DIAGONAL_GLOBALLY_EXACTLY_LINEAR_TWO_23_DIMENSIONAL_KERNELS_262_TO_46_PARAMETERS_NO_LOCALISATION_NO_SOLVER_NONTERMINAL",
+    "v0.4.2_955_mixed_branch_closure": "RANK3_QUOTIENT_KILLS_Q_COMMUTATOR_CPOBC_FIVE_MONOMIALS_EXACT_17D_PURE_UPPER_GLOBAL_SOLUTION_FAMILY_ALL_165_NONSINGULAR_MIXED_ANSATZ_TERMINAL_NO_SOLVER",
     "v0.4.2_sr2v_aligned_principal_open": "EXACT_NONLINEAR_Y_ZERO_OBSTRUCTION_ON_NONEMPTY_DELTA_ALIGN_NONZERO_OPEN_SEARCH_OPEN",
     "v0.4.2_sr2v_transitive_extension_principal_open": "GENERIC_SPLITTING_CERTIFIED_FOR_TWO_CHARACTER_TRANSITIVE_PERCOLATION_FAMILY_EXCEPTIONAL_LOCUS_OPEN",
     "v0.4.2_sr2v_commutator_pivot_cover": "COMPLETE_SIX_PAIR_FOUR_BRANCH_STRUCTURAL_COVER_NO_BRANCH_SOLVED",
@@ -95,8 +96,8 @@
     "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN"
   },
   "affected_campaign": {
-    "status": "SR3B_A_UNCHANGED_PURE_LOWER_BOUNDED_NO_GO_ORACLE_CERTIFIED_MIXED_GAUGE_TORUS_AND_TRIVIAL_SYMMETRY_GROUP_CERTIFIED_REMOTE_MIXED_OPEN",
-    "next_gate": "ELIMINATE_REDUCED_LINEAR_RANK_THREE_THEN_ANALYSE_954_REDUCED_BILINEAR_FORMS_AND_CARRY_NONSINGULARITY_LOCALISATION_INTO_THE_46_PARAMETER_COORDINATES",
+    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_EXACT_17D_PURE_UPPER_COMMUTATIVE_UNRESTRICTED_SOURCE_NATIVE_955_OPEN",
+    "next_gate": "RETURN_TO_UNRESTRICTED_SOURCE_NATIVE_955_SLACK_AND_CERTIFY_DEGREE_LINEAR_BLOCK_AND_ANSATZ_COVERAGE_GAP_BEFORE_ANY_SOLVER",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
       "SOURCE_PROFILE_COVERAGE_CERTIFICATE",
@@ -146,7 +147,9 @@
       "open_scope": [
         "REMOTE_OR_DISCONNECTED_X_NONZERO_Y_NONZERO_MIXED_COMPONENTS",
         "FULL_955_PROFILE"
-      ]
+      ],
+      "remote_mixed_scope_closed_by": "results/v0.4.2_955_mixed_branch_closure.json",
+      "remaining_open_scope_after_successor": "UNRESTRICTED_SOURCE_NATIVE_955_PROFILE_OUTSIDE_DECLARED_MIXED_ANSATZ"
     },
     "pure_lower_bounded_global_no_go": {
       "role": "SR3B_AUXILIARY_THEOREM_NOT_A_NEW_SHORT_REPORT_SR3B_A_SCOPE_UNCHANGED",
@@ -174,7 +177,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "The symmetry/orbit half of the former next gate closed with a negative terminal: the combinatorial symmetry group is trivial, so the 131 patches y_[e]!=0 admit no symmetry reduction. The successor gate replaced patch scouting entirely: the CPOBC off-diagonal blocks are globally exactly linear, their two 23-dimensional kernels reduce the mixed system from 262 to 46 parameters with no localisation and no solver, and the recompiled system has 1,933 entries, 9,557 terms and maximum degree 4 with a 60-term Q-commutator target. Remaining work is to eliminate the reduced rank-three linear part, analyse the 954 reduced bilinear CPOBC forms, and carry the nonsingularity localisation into the reduced coordinates",
+    "next_gate_description": "The deferred rank-three elimination is complete: s19=3*s21 and t19=t21=0 reduce 46 to 43 coordinates and annihilate all 24 Q-commutator entries exactly. The 954 CPOBC diagonal equations collapse to 84 instances of five monomials s21*t_j. Their two exact branches join a single 17-dimensional pure-upper linear solution family with all y coordinates zero. All 1,933 reduced profile entries and all 165 source nonsingularity occurrences pass on the general family, so remote/disconnected x-nonzero-y-nonzero components are ruled out and the declared mixed ansatz is terminal. Remaining work is outside that ansatz: return to the unrestricted source-native 955 slack inventory and certify the degree structure, exact linear blocks, and the coverage gap before authorising any solver.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -258,6 +261,51 @@
       "solver_run": false,
       "search_terminal": false,
       "full_955_profile_claimed": false
+    },
+    "mixed_branch_closure": {
+      "artifact": "results/v0.4.2_955_mixed_branch_closure.json",
+      "report": "reports/v0.4.2_955_mixed_branch_closure.md",
+      "module": "src/universe_lab/final_theory/source_native_955_mixed_branch_closure_v042.py",
+      "schema_version": "final-theory-v042-955-mixed-branch-closure-v1",
+      "verdict": "V042_955_MIXED_ANSATZ_17D_PURE_UPPER_COMMUTATIVE_TERMINAL_CERTIFIED",
+      "semantic_digest_sha256": "9316c624c589131120447e5399d8b77603f73d99c0b71258f8da1c197958a867",
+      "linear_rank_three_elimination": {
+        "coordinates_before": 46,
+        "coordinates_after": 43,
+        "substitution": "s19=3*s21, t19=t21=0",
+        "Q_commutator_entries_before": 24,
+        "Q_commutator_terms_before": 60,
+        "Q_commutator_nonzero_remainders_after": 0
+      },
+      "CPOBC_quotient": {
+        "input_diagonal_entries": 954,
+        "identically_zero_entries": 870,
+        "surviving_scalar_monomial_instances": 84,
+        "unique_monomials": [
+          "s21*t11",
+          "s21*t15",
+          "s21*t16",
+          "s21*t18",
+          "s21*t22"
+        ]
+      },
+      "solution_classification": {
+        "dimension": 17,
+        "family": "PURE_UPPER_LINEAR",
+        "all_y_coordinates_zero": true,
+        "remote_or_disconnected_mixed_components": 0,
+        "reduced_entries_checked": 1933,
+        "residual_failures": 0
+      },
+      "nonsingularity": {
+        "raw_source_occurrences": 165,
+        "distinct_quotient_factors": 131,
+        "all_equal_nonzero_p_e_on_solution_family": true,
+        "failures": 0
+      },
+      "solver_run": false,
+      "mixed_ansatz_search_terminal": true,
+      "unrestricted_source_native_955_profile_claimed": false
     },
     "minimal_semantic_recovery_module_SR3b_M": {
       "status": "SR3B_M_CONDITIONAL_RECOVERY_LEMMAS_CERTIFIED_NOT_A_NEW_SHORT_REPORT",
