@@ -72,6 +72,7 @@
     "v0.4.2_955_symmetry_orbit_reduction": "EXACT_GAUGE_TORUS_GRADING_CERTIFIED_AND_COMBINATORIAL_SYMMETRY_GROUP_PROVED_TRIVIAL_ZERO_PATCH_REDUCTION_NONTERMINAL",
     "v0.4.2_955_global_bilinear_reduction": "CPOBC_OFF_DIAGONAL_GLOBALLY_EXACTLY_LINEAR_TWO_23_DIMENSIONAL_KERNELS_262_TO_46_PARAMETERS_NO_LOCALISATION_NO_SOLVER_NONTERMINAL",
     "v0.4.2_955_mixed_branch_closure": "RANK3_QUOTIENT_KILLS_Q_COMMUTATOR_CPOBC_FIVE_MONOMIALS_EXACT_17D_PURE_UPPER_GLOBAL_SOLUTION_FAMILY_ALL_165_NONSINGULAR_MIXED_ANSATZ_TERMINAL_NO_SOLVER",
+    "v0.4.2_955_slack_coverage_gap": "SOURCE_NATIVE_MSR_SLACK_CHART_EXACT_572_TO_476_MIXED_CUT_DIRECT_RANK214_PLUS48_DERIVED_SYNTACTIC_DEGREE_CEILING11_NO_EXPANSION_NO_SOLVER_FULL_OPEN",
     "v0.4.2_sr2v_aligned_principal_open": "EXACT_NONLINEAR_Y_ZERO_OBSTRUCTION_ON_NONEMPTY_DELTA_ALIGN_NONZERO_OPEN_SEARCH_OPEN",
     "v0.4.2_sr2v_transitive_extension_principal_open": "GENERIC_SPLITTING_CERTIFIED_FOR_TWO_CHARACTER_TRANSITIVE_PERCOLATION_FAMILY_EXCEPTIONAL_LOCUS_OPEN",
     "v0.4.2_sr2v_commutator_pivot_cover": "COMPLETE_SIX_PAIR_FOUR_BRANCH_STRUCTURAL_COVER_NO_BRANCH_SOLVED",
@@ -96,11 +97,11 @@
     "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN"
   },
   "affected_campaign": {
-    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_EXACT_17D_PURE_UPPER_COMMUTATIVE_UNRESTRICTED_SOURCE_NATIVE_955_OPEN",
-    "next_gate": "RETURN_TO_UNRESTRICTED_SOURCE_NATIVE_955_SLACK_AND_CERTIFY_DEGREE_LINEAR_BLOCK_AND_ANSATZ_COVERAGE_GAP_BEFORE_ANY_SOLVER",
+    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_COVERAGE_GAP_214_NORMALS_CERTIFIED_UNRESTRICTED_SOURCE_NATIVE_955_OPEN",
+    "next_gate": "STREAMED_TERM_COUNT_ONLY_PREFLIGHT_FOR_THE_476_COORDINATE_TIMID_ELIMINATED_SYSTEM_THEN_VERSIONED_EXPANSION_BUDGET",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
-      "SOURCE_PROFILE_COVERAGE_CERTIFICATE",
+      "STREAMED_TERM_COUNT_ONLY_PREFLIGHT",
       "VERSIONED_BUDGET_ARTIFACT"
     ],
     "relation_level_minimality": "DEFERRED",
@@ -177,7 +178,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "The deferred rank-three elimination is complete: s19=3*s21 and t19=t21=0 reduce 46 to 43 coordinates and annihilate all 24 Q-commutator entries exactly. The 954 CPOBC diagonal equations collapse to 84 instances of five monomials s21*t_j. Their two exact branches join a single 17-dimensional pure-upper linear solution family with all y coordinates zero. All 1,933 reduced profile entries and all 165 source nonsingularity occurrences pass on the general family, so remote/disconnected x-nonzero-y-nonzero components are ruled out and the declared mixed ansatz is terminal. Remaining work is outside that ansatz: return to the unrestricted source-native 955 slack inventory and certify the degree structure, exact linear blocks, and the coverage gap before authorising any solver.",
+    "next_gate_description": "The unrestricted nonsingular reachable-state MSR slack chart is now certified as 572 coordinates before and 476 after exact monic triangular elimination of 24 timid matrices. The mixed ansatz cuts 214 direct independent diagonal coordinate directions on the 107 non-timid matrices and imposes 48 additional derived timid diagonal obligations, so its QQ terminal verdict cannot be promoted to the unrestricted characteristic-zero chart by density. Acyclic substitution gives syntactic degree ceilings 7 for states, 8 for timid matrices, 5 for raw CPOBC blocks and 11 for strong-GC blocks. No scalar polynomial was expanded and full 955 remains open. The next gate is a streamed term-count-only preflight for the 476-coordinate timid-eliminated system, followed by a versioned expansion budget; no heavy solver is authorised before both exist.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -306,6 +307,41 @@
       "solver_run": false,
       "mixed_ansatz_search_terminal": true,
       "unrestricted_source_native_955_profile_claimed": false
+    },
+    "slack_coverage_gap": {
+      "artifact": "results/v0.4.2_955_slack_coverage_gap.json",
+      "report": "reports/v0.4.2_955_slack_coverage_gap.md",
+      "module": "src/universe_lab/final_theory/source_native_955_slack_coverage_gap_v042.py",
+      "schema_version": "final-theory-v042-955-slack-coverage-gap-v1",
+      "verdict": "V042_955_SLACK_COVERAGE_GAP_214_NORMALS_DEGREE11_CEILING_CERTIFIED",
+      "semantic_digest_sha256": "19ec4466745981dc1fa1d91b945b81212f2215aa7be924b9857368f46c7b4f71",
+      "field_scope": {
+        "structural_coverage_gap": "characteristic-zero field",
+        "imported_mixed_terminal_predecessor": "QQ"
+      },
+      "effective_slack_chart": {
+        "coordinates_before_timid_elimination": 572,
+        "timid_scalar_pivots": 96,
+        "coordinates_after_timid_elimination": 476,
+        "independent_non_timid_matrices": 107,
+        "timid_matrices": 24
+      },
+      "mixed_diagonal_restriction": {
+        "direct_independent_coordinate_rank": 214,
+        "coordinates_after_direct_restriction": 262,
+        "derived_timid_diagonal_obligations": 48,
+        "derived_obligation_rank_measured": false
+      },
+      "syntactic_degree_ceilings": {
+        "state_vector": 7,
+        "timid_matrix": 8,
+        "raw_CPOBC": 5,
+        "strong_GC": 11
+      },
+      "scalar_polynomial_expansion_run": false,
+      "solver_run": false,
+      "mixed_terminal_promoted_to_full_profile": false,
+      "unrestricted_source_native_955_status": "OPEN"
     },
     "minimal_semantic_recovery_module_SR3b_M": {
       "status": "SR3B_M_CONDITIONAL_RECOVERY_LEMMAS_CERTIFIED_NOT_A_NEW_SHORT_REPORT",
@@ -1059,6 +1095,10 @@
     "tests/final_theory/test_source_native_955_mixed_manifest_v042.py",
     "tests/final_theory/test_v042_955_mixed_xy_tangent_scout.py",
     "tests/final_theory/test_source_native_955_pure_lower_oracle_v042.py",
+    "tests/final_theory/test_v042_955_symmetry_orbit_reduction.py",
+    "tests/final_theory/test_v042_955_global_bilinear_reduction.py",
+    "tests/final_theory/test_v042_955_mixed_branch_closure.py",
+    "tests/final_theory/test_v042_955_slack_coverage_gap.py",
     "tests/final_theory/test_v041_partial_slice_audit.py",
     "tests/final_theory/test_weak_d2_observability_v042.py",
     "tests/final_theory/test_semantic_recovery_v042.py",

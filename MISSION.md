@@ -60,8 +60,12 @@ unit ideal ですべて潰れている。両者は別トラックの結果であ
 
 obstruction 本命という全体方針はなお計画上の賭けであって、full 955 の定理ではない。
 mixed ansatz 内の remote / disconnected 成分は閉じたが、無制限 source-native
-slack 系はその外側にあり open である。次は ansatz が捨てた自由度と coverage gap を
-明示し、そこで witness が出た場合はそちらを終端として受け入れる。
+slack 系はその外側にあり open である。
+[`reports/v0.4.2_955_slack_coverage_gap.md`](reports/v0.4.2_955_slack_coverage_gap.md)
+は、mixed ansatz が476次元の有効 slack chart から少なくとも214本の独立な対角方向を
+捨てることを認証した。したがって mixed 終端を一般 obstruction へ昇格してはならない。
+次は476座標系の streamed term-count preflight と版付き予算を作り、そこで witness が
+出た場合はそちらを終端として受け入れる。
 
 ### 到達順序
 

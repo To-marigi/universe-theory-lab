@@ -5,7 +5,7 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、三つのゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、四つのゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -20,7 +20,9 @@ reduce してから scout する」という趣旨の記述は、本文書が上
 新ゲート2     大域双線形簡約     262 → 46 パラメータ、局所化なし solver なし
 新ゲート3     mixed枝閉包         46 → 43 → 厳密17次元 pure-upper 全解族
               Q可換子24成分は0、非特異165 occurrence全通過、mixed ansatz終端
-次ゲート      無制限 source-native slack 系の次数・線形ブロック・coverage gap 証明
+新ゲート4     slack coverage gap  572 → 476、mixedがdirect rank 214方向を捨てる
+              導来obligation 48、構文次数上限11、full 955はopen
+次ゲート      476座標系のstreamed term-count-only preflight → 版付き展開予算
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -245,7 +247,7 @@ remote/disconnected `x!=0,y!=0` mixed component は**存在しない**と確定�
 全 `y=0` なので、全因子は `p_e in {1/16,1/8,1/4,1/2}` に戻る。
 **165 source occurrence 全て通過、failures 0。**
 
-### 5.5 新しい次ゲート
+### 5.5 ゲート4へ引き渡した手順
 
 mixed ansatz をさらに解く作業は不要。`CURRENT_RESEARCH_STATE.json` の次ゲートは
 無制限 source-native slack 系へ戻し、次の順に固定した。
@@ -255,12 +257,63 @@ mixed ansatz をさらに解く作業は不要。`CURRENT_RESEARCH_STATE.json` �
 3. source-profile coverage certificate と版付き budget artifact が揃った場合だけ
    solver 実行を再検討する。
 
-heavy solver は引き続き凍結（`solver_run_permitted: false`）。三ゲートとも
+heavy solver は引き続き凍結（`solver_run_permitted: false`）。ここまでの三ゲートは
 Gröbner 0、saturation 0、有限体 0、数値 0、Sage 0 で完了。
 
 ---
 
-## 6. 破棄された計画
+## 6. ゲート4: 無制限 slack coverage gap と次数上限
+
+```
+artifact  results/v0.4.2_955_slack_coverage_gap.json
+report    reports/v0.4.2_955_slack_coverage_gap.md
+module    src/universe_lab/final_theory/source_native_955_slack_coverage_gap_v042.py
+digest    19ec4466745981dc1fa1d91b945b81212f2215aa7be924b9857368f46c7b4f71
+verdict   V042_955_SLACK_COVERAGE_GAP_214_NORMALS_DEGREE11_CEILING_CERTIFIED
+```
+
+```powershell
+uv run python -m universe_lab.final_theory.source_native_955_slack_coverage_gap_v042
+uv run pytest tests/final_theory/test_v042_955_slack_coverage_gap.py -q
+```
+
+### 6.1 572 → 476 の厳密 slack chart
+
+131個の一般 `2x2` quotient matrix は524 scalar entries。reachable-state MSR の
+二次元 annihilator parameterisation `R=u(Jv)^T` が48 slack coordinates を加えるため、
+出発点は572座標。24個の timid definition は互いに異なる matrix を monic triangular
+に定義し、96 entries を厳密に消去する。したがって有効 chart は **476座標**である。
+
+非特異 source transition と `Omega!=0` により全到達状態は非零なので、`v0!=0` と
+`v1!=0` の二 patch が reachable-state MSR locus を覆う。これは局所線形化ではない。
+
+### 6.2 mixed ansatz が捨てた自由度
+
+timid 24個を除く107個の独立 matrix に mixed 対角 `(p_e,1)` を課すと、異なる自由
+座標 `00/11` を固定する214本になる。よって **direct exact rank 214**、
+`476-214=262` で mixed manifest の `x/y` ambient 数と一致する。
+
+消去された24 timid matrix の対角形は、さらに48本の導来 obligation として残る。
+この48本のランクは測っていない。従って mixed locus は少なくとも余次元214であり、
+mixed 終端を稠密性で無制限系へ昇格できない。適用体を混同しないこと: この coverage
+gap の構造計数は標数0、引用する前段 mixed terminal verdict は **`QQ` 限定**である。
+
+### 6.3 streamed expansion 前の次数上限
+
+timid recurrence を非循環順に伝播した構文的上限は、state 7、timid matrix 8、
+raw CPOBC 5、strong GC 11。相殺後の厳密次数ではない。scalar polynomial expansion は
+0回で term count は未測定、solver も全種0回。
+
+### 6.4 新しい次ゲート
+
+次は **476座標 timid-eliminated 系の streamed term-count-only preflight**。式全体を
+保持せず、block別 scalar equation / nonzero term 数、実測次数、係数 bit 長、項数分位点、
+peak memory 見積りだけを出す。その後に版付き expansion budget を作る。この二つが
+揃うまで heavy solver を開始しない。full 955 は `OPEN` のまま。
+
+---
+
+## 7. 破棄された計画
 
 **「131 patch を構造的基準で選んで exact scout する」は不要になった。**
 ゲート2が patch を一つも開かずに探索空間を落としたため。ゲート1の成果物に
@@ -269,7 +322,7 @@ Gröbner 0、saturation 0、有限体 0、数値 0、Sage 0 で完了。
 
 ---
 
-## 7. 罠 — 範囲と後続で踏みやすい点
+## 8. 罠 — 範囲と後続で踏みやすい点
 
 - **ゲート2の46変数系だけには非特異条件が入っていない。** ただしゲート3は
   `det(A_e) = p_e - x_[e]*y_[e] != 0` を131因子・165 occurrence 全て持ち込み、
@@ -291,7 +344,7 @@ Gröbner 0、saturation 0、有限体 0、数値 0、Sage 0 で完了。
 
 ---
 
-## 8. 既存の不具合（本セッション由来ではない）
+## 9. 既存の不具合（本セッション由来ではない）
 
 ```
 5 failed, 8 errors — tests/final_theory/test_line_ending_bridge_v038.py
@@ -318,27 +371,27 @@ bridge する方式である。
 
 ---
 
-## 9. 検証コマンド（コスト順）
+## 10. 検証コマンド（コスト順）
 
 ```powershell
 uv run ruff check .
-uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py -q
+uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py -q
 uv run pytest -q
 ```
 
-三ゲートの新規テストは 27 件。うち独立検証として、核基底を manifest の生の行と直接
+四ゲートの新規テストは 34 件。うち独立検証として、核基底を manifest の生の行と直接
 内積で検査するもの（`test_kernel_basis_is_independently_verified_against_the_manifest_rows`）と、
 二重次数を成果物を介さず manifest から再計測するもの、一般17パラメータ族で
-1,933成分を再代入するものを含む。
+1,933成分を再代入するもの、timid recurrence から次数 histogram を再構成するものを含む。
 
 ---
 
-## 10. AI 開示
+## 11. AI 開示
 
-ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3の
+ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4の
 モジュール・テスト・報告・引き継ぎ更新は OpenAI Codex が作成した。Luna は
-読み取り専用のブランチ／不要ファイル棚卸しだけを担当した。人間の著者が範囲を
-選択し内容に責任を負う。
+読み取り専用のブランチ／不要ファイル棚卸しと、ゲート4の数値・digest・適用体境界の
+独立再検算を担当した。人間の著者が範囲を選択し内容に責任を負う。
 `CONTRIBUTING.md` の「どのツールがどの部分か」要件に対応する記録である。
 
 `.zenodo.json` と `paper/paper.md` の開示は**触っていない**。両者は凍結
