@@ -73,6 +73,7 @@
     "v0.4.2_955_global_bilinear_reduction": "CPOBC_OFF_DIAGONAL_GLOBALLY_EXACTLY_LINEAR_TWO_23_DIMENSIONAL_KERNELS_262_TO_46_PARAMETERS_NO_LOCALISATION_NO_SOLVER_NONTERMINAL",
     "v0.4.2_955_mixed_branch_closure": "RANK3_QUOTIENT_KILLS_Q_COMMUTATOR_CPOBC_FIVE_MONOMIALS_EXACT_17D_PURE_UPPER_GLOBAL_SOLUTION_FAMILY_ALL_165_NONSINGULAR_MIXED_ANSATZ_TERMINAL_NO_SOLVER",
     "v0.4.2_955_slack_coverage_gap": "SOURCE_NATIVE_MSR_SLACK_CHART_EXACT_572_TO_476_MIXED_CUT_DIRECT_RANK214_PLUS48_DERIVED_SYNTACTIC_DEGREE_CEILING11_NO_EXPANSION_NO_SOLVER_FULL_OPEN",
+    "v0.4.2_955_slack_term_preflight": "STREAMED_EXACT_476_COORDINATE_CORE_4412_SLOTS_4152_NONZERO_101200_TERMS_DEGREE9_NO_EXACT_LINEAR_EQUATIONS_16_TERMINAL_SLACK_BLIND_DIRECTIONS_NO_SOLVER_FULL_OPEN",
     "v0.4.2_sr2v_aligned_principal_open": "EXACT_NONLINEAR_Y_ZERO_OBSTRUCTION_ON_NONEMPTY_DELTA_ALIGN_NONZERO_OPEN_SEARCH_OPEN",
     "v0.4.2_sr2v_transitive_extension_principal_open": "GENERIC_SPLITTING_CERTIFIED_FOR_TWO_CHARACTER_TRANSITIVE_PERCOLATION_FAMILY_EXCEPTIONAL_LOCUS_OPEN",
     "v0.4.2_sr2v_commutator_pivot_cover": "COMPLETE_SIX_PAIR_FOUR_BRANCH_STRUCTURAL_COVER_NO_BRANCH_SOLVED",
@@ -97,11 +98,11 @@
     "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN"
   },
   "affected_campaign": {
-    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_COVERAGE_GAP_214_NORMALS_CERTIFIED_UNRESTRICTED_SOURCE_NATIVE_955_OPEN",
-    "next_gate": "STREAMED_TERM_COUNT_ONLY_PREFLIGHT_FOR_THE_476_COORDINATE_TIMID_ELIMINATED_SYSTEM_THEN_VERSIONED_EXPANSION_BUDGET",
+    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_476_COORDINATE_STREAM_PREFLIGHT_CERTIFIED_16_TERMINAL_SLACK_BLIND_DIRECTIONS_FULL_955_OPEN",
+    "next_gate": "CSG_BASEPOINT_EXACT_JACOBIAN_AND_Q_COMMUTATOR_TANGENT_ESCAPE_AUDIT_INCLUDING_THE_16_TERMINAL_SLACK_BLIND_DIRECTIONS",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
-      "STREAMED_TERM_COUNT_ONLY_PREFLIGHT",
+      "CSG_BASEPOINT_EXACT_JACOBIAN_AND_Q_COMMUTATOR_TANGENT_ESCAPE_AUDIT",
       "VERSIONED_BUDGET_ARTIFACT"
     ],
     "relation_level_minimality": "DEFERRED",
@@ -178,7 +179,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "The unrestricted nonsingular reachable-state MSR slack chart is now certified as 572 coordinates before and 476 after exact monic triangular elimination of 24 timid matrices. The mixed ansatz cuts 214 direct independent diagonal coordinate directions on the 107 non-timid matrices and imposes 48 additional derived timid diagonal obligations, so its QQ terminal verdict cannot be promoted to the unrestricted characteristic-zero chart by density. Acyclic substitution gives syntactic degree ceilings 7 for states, 8 for timid matrices, 5 for raw CPOBC blocks and 11 for strong-GC blocks. No scalar polynomial was expanded and full 955 remains open. The next gate is a streamed term-count-only preflight for the 476-coordinate timid-eliminated system, followed by a versioned expansion budget; no heavy solver is authorised before both exist.",
+    "next_gate_description": "The 476-coordinate timid-eliminated unrestricted QQ chart has now been scalar-expanded exactly in streaming mode. Its 783 CPOBC and 320 strong-GC matrix blocks give 4,412 scalar slots, 4,152 nonzero entries and 101,200 terms; the exact maximum degree is 9 rather than the syntactic ceiling 11, and the largest entry has 3,723 terms. No nonzero equation is exactly linear, while the degree-one component has rank 304 only as origin-Jacobian planning data. All 131 determinant predicates are nonzero polynomials with 6,250 total terms. Sixteen coordinates, exactly both slack components at eight terminal stage-4 sources, are globally absent from the entire core relation support. They do not themselves certify a noncommutative Q witness. The next gate is an exact Jacobian and Q-commutator tangent-escape audit at the known nonsingular diagonal CSG point, including those 16 blind directions. No generic solver or campaign budget is authorised yet.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -341,6 +342,55 @@
       "scalar_polynomial_expansion_run": false,
       "solver_run": false,
       "mixed_terminal_promoted_to_full_profile": false,
+      "unrestricted_source_native_955_status": "OPEN"
+    },
+    "slack_streamed_term_preflight": {
+      "artifact": "results/v0.4.2_955_slack_term_preflight.json",
+      "report": "reports/v0.4.2_955_slack_term_preflight.md",
+      "module": "src/universe_lab/final_theory/source_native_955_slack_term_preflight_v042.py",
+      "schema_version": "final-theory-v042-955-slack-streamed-term-preflight-v1",
+      "verdict": "V042_955_SLACK_STREAMED_TERM_PREFLIGHT_CERTIFIED_NO_SOLVER",
+      "semantic_digest_sha256": "b61d611830ff89815b9046b8df3a8b284f6716cdeb687c4d2bb7bb960e5190ab",
+      "basis_normalisation": "Omega=e1 by unrestricted simultaneous GL2 basis change",
+      "variable_namespace": {
+        "coordinates": 476,
+        "independent_matrix_entries": 428,
+        "reachable_MSR_slack_coordinates": 48
+      },
+      "streamed_core_system": {
+        "matrix_blocks": 1103,
+        "scalar_entry_slots": 4412,
+        "nonzero_scalar_entries": 4152,
+        "identically_zero_scalar_entries": 260,
+        "total_terms": 101200,
+        "maximum_terms_in_one_entry": 3723,
+        "maximum_exact_degree": 9,
+        "compact_storage_model_bytes": 3376080,
+        "full_scalar_polynomials_retained": false
+      },
+      "linear_structure": {
+        "exact_linear_nonzero_equations": 0,
+        "degree_one_component_rows": 772,
+        "degree_one_component_rank_at_origin": 304,
+        "origin_is_not_a_nonsingular_basepoint": true
+      },
+      "terminal_slack_blind_directions": {
+        "coordinate_count": 16,
+        "source_count": 8,
+        "source_stage": 4,
+        "globally_absent_from_CPOBC_and_strong_GC_support": true,
+        "Q_witness_claimed": false
+      },
+      "nonsingularity_determinants": {
+        "predicates": 131,
+        "all_nonzero_polynomials": true,
+        "total_terms": 6250,
+        "maximum_terms": 986,
+        "maximum_degree": 5
+      },
+      "streamed_scalar_expansion_runs": 1,
+      "full_manifest_materialisations": 0,
+      "solver_run": false,
       "unrestricted_source_native_955_status": "OPEN"
     },
     "minimal_semantic_recovery_module_SR3b_M": {
@@ -1099,6 +1149,7 @@
     "tests/final_theory/test_v042_955_global_bilinear_reduction.py",
     "tests/final_theory/test_v042_955_mixed_branch_closure.py",
     "tests/final_theory/test_v042_955_slack_coverage_gap.py",
+    "tests/final_theory/test_v042_955_slack_term_preflight.py",
     "tests/final_theory/test_v041_partial_slice_audit.py",
     "tests/final_theory/test_weak_d2_observability_v042.py",
     "tests/final_theory/test_semantic_recovery_v042.py",

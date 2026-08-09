@@ -5,7 +5,7 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、四つのゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、五つのゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -22,7 +22,9 @@ reduce してから scout する」という趣旨の記述は、本文書が上
               Q可換子24成分は0、非特異165 occurrence全通過、mixed ansatz終端
 新ゲート4     slack coverage gap  572 → 476、mixedがdirect rank 214方向を捨てる
               導来obligation 48、構文次数上限11、full 955はopen
-次ゲート      476座標系のstreamed term-count-only preflight → 版付き展開予算
+新ゲート5     streamed term count  4,152非零entry、101,200項、exact degree 9
+              exact linear式0、terminal slack blind direction 16本
+次ゲート      非特異CSG点のexact Jacobian + Q可換子tangent escape audit
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -311,9 +313,78 @@ raw CPOBC 5、strong GC 11。相殺後の厳密次数ではない。scalar polyn
 peak memory 見積りだけを出す。その後に版付き expansion budget を作る。この二つが
 揃うまで heavy solver を開始しない。full 955 は `OPEN` のまま。
 
+このpreflightはゲート5として完了した。版付き予算より先に、そこで見つかった16本の
+blind directionを含むCSG基点tangent auditへ進む。
+
 ---
 
-## 7. 破棄された計画
+## 7. ゲート5: 476座標 streamed term-count preflight
+
+```
+artifact  results/v0.4.2_955_slack_term_preflight.json
+report    reports/v0.4.2_955_slack_term_preflight.md
+module    src/universe_lab/final_theory/source_native_955_slack_term_preflight_v042.py
+digest    b61d611830ff89815b9046b8df3a8b284f6716cdeb687c4d2bb7bb960e5190ab
+verdict   V042_955_SLACK_STREAMED_TERM_PREFLIGHT_CERTIFIED_NO_SOLVER
+```
+
+```powershell
+uv run python -m universe_lab.final_theory.source_native_955_slack_term_preflight_v042
+uv run pytest tests/final_theory/test_v042_955_slack_term_preflight.py -q
+```
+
+### 7.1 exact scalar census
+
+`Omega=e1` を unrestricted `GL_2` chart の基底正規化として用いた。24 timid matrixと
+24 stateだけを保持し、783 CPOBC + 320 strong-GCを1 blockずつ展開・hash・破棄した。
+
+```text
+matrix blocks       1,103
+scalar slots        4,412
+nonzero entries     4,152
+zero entries          260
+exact terms       101,200
+max terms/entry      3,723
+exact max degree         9
+```
+
+CPOBCは3,132 entryすべて非零、18,836 terms、最大24 terms、degree 4。strong GCは
+1,020非零 / 260 zero、82,364 terms、最大3,723 terms、degree 9。前ゲートの構文上限
+5 / 11より実測4 / 9まで下がった。full polynomial manifestは保持していない。
+
+完全に次数1以下の非零式は0本。全式の次数1成分だけは772 rows / rank 304だが、
+これは非特異でない原点のJacobian planning dataにすぎず、exact eliminationではない。
+
+### 7.2 16本のterminal slack blind direction
+
+476座標中460だけがcoreに現れる。残る16本は
+
+```text
+p4-0000, p4-000e, p4-00cc, p4-00ce,
+p4-0888, p4-088e, p4-08cc, p4-08ce
+```
+
+の各 `u:c:0`, `u:c:1`。CPOBCとstrong GCの全多項式supportから恒等的に消える。
+ただしこれらはterminal timid slackであり、別のgregarious matrixから定義される
+`Q1,...,Q4` の非可換性を単独では証明しない。
+
+### 7.3 非特異条件と資源判断
+
+131 determinantは全て非零多項式、合計6,250 terms、最大986 terms、degree 5。
+別inverse座標によるlocaliserは131座標・131式・6,381 terms、degree 6。入力全保持の
+portable compact modelは3,376,080 bytesだが、degree 9 / 476変数のsolver basis growthは
+予測できない。stream expansion 1回、full manifest 0、全solver 0。
+
+### 7.4 新しい次ゲート
+
+既知の非特異対角CSG解を476 slack coordinatesへ逆写像し、その点でcore Jacobian
+kernelと6個のQ可換子微分を同時に測る。16 blind directionも明示的に含める。
+Q tangent escapeがあればformal deformation候補へ進み、なければ高次の局所obstruction
+を設計する。generic solverと版付きbudgetはその判断まで凍結。
+
+---
+
+## 8. 破棄された計画
 
 **「131 patch を構造的基準で選んで exact scout する」は不要になった。**
 ゲート2が patch を一つも開かずに探索空間を落としたため。ゲート1の成果物に
@@ -322,7 +393,7 @@ peak memory 見積りだけを出す。その後に版付き expansion budget �
 
 ---
 
-## 8. 罠 — 範囲と後続で踏みやすい点
+## 9. 罠 — 範囲と後続で踏みやすい点
 
 - **ゲート2の46変数系だけには非特異条件が入っていない。** ただしゲート3は
   `det(A_e) = p_e - x_[e]*y_[e] != 0` を131因子・165 occurrence 全て持ち込み、
@@ -344,7 +415,7 @@ peak memory 見積りだけを出す。その後に版付き expansion budget �
 
 ---
 
-## 9. 既存の不具合（本セッション由来ではない）
+## 10. 既存の不具合（本セッション由来ではない）
 
 ```
 5 failed, 8 errors — tests/final_theory/test_line_ending_bridge_v038.py
@@ -371,27 +442,29 @@ bridge する方式である。
 
 ---
 
-## 10. 検証コマンド（コスト順）
+## 11. 検証コマンド（コスト順）
 
 ```powershell
 uv run ruff check .
-uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py -q
+uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py tests/final_theory/test_v042_955_slack_term_preflight.py -q
 uv run pytest -q
 ```
 
-四ゲートの新規テストは 34 件。うち独立検証として、核基底を manifest の生の行と直接
+五ゲートの新規テストは 41 件。うち独立検証として、核基底を manifest の生の行と直接
 内積で検査するもの（`test_kernel_basis_is_independently_verified_against_the_manifest_rows`）と、
 二重次数を成果物を介さず manifest から再計測するもの、一般17パラメータ族で
-1,933成分を再代入するもの、timid recurrence から次数 histogram を再構成するものを含む。
+1,933成分を再代入するもの、timid recurrence から次数 histogram を再構成するもの、
+24 timid residualをreachable stateへ再作用して48成分の零を再検査するものを含む。
 
 ---
 
-## 11. AI 開示
+## 12. AI 開示
 
-ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4の
+ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4・5の
 モジュール・テスト・報告・引き継ぎ更新は OpenAI Codex が作成した。Luna は
 読み取り専用のブランチ／不要ファイル棚卸しと、ゲート4の数値・digest・適用体境界の
-独立再検算を担当した。人間の著者が範囲を選択し内容に責任を負う。
+独立再検算、ゲート5で再利用可能な疎多項式・stream・budget実装の探索を担当した。
+人間の著者が範囲を選択し内容に責任を負う。
 `CONTRIBUTING.md` の「どのツールがどの部分か」要件に対応する記録である。
 
 `.zenodo.json` と `paper/paper.md` の開示は**触っていない**。両者は凍結

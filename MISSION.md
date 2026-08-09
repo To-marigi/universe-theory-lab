@@ -64,8 +64,12 @@ slack 系はその外側にあり open である。
 [`reports/v0.4.2_955_slack_coverage_gap.md`](reports/v0.4.2_955_slack_coverage_gap.md)
 は、mixed ansatz が476次元の有効 slack chart から少なくとも214本の独立な対角方向を
 捨てることを認証した。したがって mixed 終端を一般 obstruction へ昇格してはならない。
-次は476座標系の streamed term-count preflight と版付き予算を作り、そこで witness が
-出た場合はそちらを終端として受け入れる。
+続く
+[`reports/v0.4.2_955_slack_term_preflight.md`](reports/v0.4.2_955_slack_term_preflight.md)
+は476座標系をstream展開し、4,152非零式・101,200項・実測最大次数9と、core全体から
+恒等的に消える16本のterminal slack方向を確定した。次は既知の非特異CSG点でexact
+JacobianとQ可換子のtangent escapeを測る。そこで witness 方向が出た場合はそちらを
+終端候補として受け入れる。
 
 ### 到達順序
 
