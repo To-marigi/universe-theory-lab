@@ -1,0 +1,522 @@
+{
+  "schema_version": "final-theory-v042-955-commutator-span-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "gate_design": "reports/v0.4.2_955_commutator_span_gate_design.md",
+  "verdict_strings_fixed_before_measurement": true,
+  "scope": {
+    "finite_source_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ",
+    "identification_mode": "ON_QUOTIENT",
+    "chart": "unrestricted 476-coordinate source-native slack chart",
+    "locus": "upper stratum, all 107 lower-left coordinates zero"
+  },
+  "source_artifact_sha256": {
+    "results/v0.4.2_955_source_native_slack_compiler.json": "0e34c3132c47c4fb0485e9c570581d6ff16f8ce942446f7557ebdb4dd0cd70cc",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.4.2_955_upper_stratum.json": "d68d435ec4461106a20380dad6373c3d87b9d9806ee2ecdc6b20a1e96e00b78a"
+  },
+  "predecessor_binding": {
+    "kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
+    "results/v0.4.2_955_upper_stratum.json": "678823e2e663f02c6273d3070698baf7025efd16776694aa9c595830a944ae69",
+    "results/v0.4.2_955_source_native_slack_compiler.json": "5baf2a4a0273c8f5d9c08d2436b2df1ef77eafad97a4532d444dc9a8e522e042",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2"
+  },
+  "commutator_shape": {
+    "unevaluated_monomials_per_pair": 4,
+    "nonzero_columns_after_evaluating_the_diagonal": 2,
+    "reason": "For upper-triangular Q_i=[[a_i,b_i],[0,d_i]] the (0,1) commutator entry is (a_i-d_i)b_j-(a_j-d_j)b_i.  Four monomials collapse onto the two columns b_i and b_j once the weight-zero diagonal is evaluated at the point."
+  },
+  "question": "Over a point s of the scalar variety S the core (0,1) block is a homogeneous linear system L(s) in the 123 positive-weight coordinates and each Q commutator is a four-term linear form.  Every fibre point over s has commuting Q exactly when all six forms lie in the row span of L(s).",
+  "growth_characters": {
+    "formula": "A = lambda(varpi,m)/lambda(n,0) with lambda(a,b)=sum_k C(a-b,k-b) t_k",
+    "reference_implementation": "src/universe_lab/final_theory/commutative_csg_v031.py: lambda_value and transition_amplitude",
+    "control_reproduces_frozen_characters": true,
+    "couplings_used": 5
+  },
+  "evaluated_points": [
+    {
+      "label": "control_all_ones",
+      "couplings": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "characters_sha256": "dccf24f17f04377eb7ed62793e01461640dd2857fbadf1d0c80010d18ed34f80",
+      "distinct_characters": [
+        "1/16",
+        "1/2",
+        "1/4",
+        "1/8"
+      ],
+      "streamed_core_entries": 4152,
+      "nonzero_core_entries": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "generic_1_2_3_5_7",
+      "couplings": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "7"
+      ],
+      "characters_sha256": "aeada493ea46c85a10eefed90e93cda2bf9a67505e84d343a765f1536579be8a",
+      "distinct_characters": [
+        "1/18",
+        "1/21",
+        "1/27",
+        "1/3",
+        "1/4",
+        "1/54",
+        "1/7",
+        "1/8",
+        "10/27",
+        "11/18",
+        "13/21",
+        "13/54",
+        "2/21",
+        "2/3",
+        "2/9",
+        "3/8",
+        "4/27",
+        "5/21",
+        "5/54",
+        "5/8",
+        "7/54",
+        "8/21"
+      ],
+      "streamed_core_entries": 4152,
+      "nonzero_core_entries": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "generic_2_1_4_1_3",
+      "couplings": [
+        "2",
+        "1",
+        "4",
+        "1",
+        "3"
+      ],
+      "characters_sha256": "59595e597237f0caaec98824f7ea43a896865eb1ecf83d87f70c506f31cba20f",
+      "distinct_characters": [
+        "1/18",
+        "1/2",
+        "1/3",
+        "1/37",
+        "1/4",
+        "1/8",
+        "1/9",
+        "10/37",
+        "19/37",
+        "2/3",
+        "2/37",
+        "2/9",
+        "3/37",
+        "4/37",
+        "5/18",
+        "5/37",
+        "5/8",
+        "5/9",
+        "9/37"
+      ],
+      "streamed_core_entries": 4152,
+      "nonzero_core_entries": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "generic_3_1_1_1_1",
+      "couplings": [
+        "3",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "characters_sha256": "ec74529716f5f2957c8f8e5d811ef447305576ddaa27425c14df8d6bfd460ef9",
+      "distinct_characters": [
+        "1/10",
+        "1/18",
+        "1/2",
+        "1/3",
+        "1/4",
+        "1/5",
+        "1/6",
+        "1/9",
+        "2/5",
+        "2/9",
+        "3/10",
+        "3/4",
+        "4/9"
+      ],
+      "streamed_core_entries": 4152,
+      "nonzero_core_entries": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "polynomial_monomials_before_evaluation": 4,
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    }
+  ],
+  "rejected_couplings": [
+    {
+      "label": "degenerate_zero_odd",
+      "couplings": [
+        "1",
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      "stage": "assignment_construction",
+      "reason": "the diagonal CSG reachable state became zero"
+    },
+    {
+      "label": "degenerate_negative",
+      "couplings": [
+        "1",
+        "-2",
+        "3",
+        "-4",
+        "5"
+      ],
+      "stage": "character_construction",
+      "reason": "lambda(3,0)=0; the coupling is not usable"
+    }
+  ],
+  "aggregate": {
+    "points_verified_as_exact_core_solutions": 4,
+    "points_with_an_escape": 0,
+    "total_escapes": 0,
+    "L_rank_values": [
+      114
+    ],
+    "fibre_dimension_values": [
+      9
+    ],
+    "verdict": "V042_955_UPPER_STRATUM_SPAN_POINTWISE_EVIDENCE_ONLY_NONTERMINAL"
+  },
+  "scope_limits": [
+    "The growth family fixes A:*:11 to one at every transition, so these points vary the first diagonal entry across couplings but never the second.  Points of S with a free second diagonal are not sampled here.",
+    "Finitely many points of S cannot decide the stratum; a uniform statement needs the membership proved symbolically or over a cover of S.",
+    "The upper stratum is not the unrestricted 955 profile, and the gauge torus cannot degenerate a mixed point into it.",
+    "An in-span outcome reaches none of the three declared 955 terminals.",
+    "An escape would be a witness candidate only, still owing nonsingularity, the N!=0 gate, the Eq113 and Eq139 branches, exact rationality and above all reachable visibility."
+  ],
+  "solver_status": {
+    "exact_sparse_QQ_linear_algebra_runs": 4,
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "unrestricted_source_native_955_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_955_UPPER_STRATUM_SPAN_POINTWISE_EVIDENCE_ONLY_NONTERMINAL",
+  "semantic_digest_sha256": "3b95e12a8cfca62f607b559fa215e5dcb34bf3fb494b47490b5a9d25407a5c0e"
+}
