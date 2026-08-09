@@ -74,6 +74,7 @@
     "v0.4.2_955_mixed_branch_closure": "RANK3_QUOTIENT_KILLS_Q_COMMUTATOR_CPOBC_FIVE_MONOMIALS_EXACT_17D_PURE_UPPER_GLOBAL_SOLUTION_FAMILY_ALL_165_NONSINGULAR_MIXED_ANSATZ_TERMINAL_NO_SOLVER",
     "v0.4.2_955_slack_coverage_gap": "SOURCE_NATIVE_MSR_SLACK_CHART_EXACT_572_TO_476_MIXED_CUT_DIRECT_RANK214_PLUS48_DERIVED_SYNTACTIC_DEGREE_CEILING11_NO_EXPANSION_NO_SOLVER_FULL_OPEN",
     "v0.4.2_955_slack_term_preflight": "STREAMED_EXACT_476_COORDINATE_CORE_4412_SLOTS_4152_NONZERO_101200_TERMS_DEGREE9_NO_EXACT_LINEAR_EQUATIONS_16_TERMINAL_SLACK_BLIND_DIRECTIONS_NO_SOLVER_FULL_OPEN",
+    "v0.4.2_955_slack_CSG_tangent": "EXACT_NONSINGULAR_N_NONZERO_CSG_INVERSE_IMAGE_CORE_JACOBIAN_RANK427_TANGENT_DIM49_Q_GRADIENT_RAW_RANK6_MODULO_CORE_RANK0_FIRST_ORDER_ESCAPE_BLOCKED_SECOND_ORDER_OPEN",
     "v0.4.2_sr2v_aligned_principal_open": "EXACT_NONLINEAR_Y_ZERO_OBSTRUCTION_ON_NONEMPTY_DELTA_ALIGN_NONZERO_OPEN_SEARCH_OPEN",
     "v0.4.2_sr2v_transitive_extension_principal_open": "GENERIC_SPLITTING_CERTIFIED_FOR_TWO_CHARACTER_TRANSITIVE_PERCOLATION_FAMILY_EXCEPTIONAL_LOCUS_OPEN",
     "v0.4.2_sr2v_commutator_pivot_cover": "COMPLETE_SIX_PAIR_FOUR_BRANCH_STRUCTURAL_COVER_NO_BRANCH_SOLVED",
@@ -98,11 +99,11 @@
     "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN"
   },
   "affected_campaign": {
-    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_476_COORDINATE_STREAM_PREFLIGHT_CERTIFIED_16_TERMINAL_SLACK_BLIND_DIRECTIONS_FULL_955_OPEN",
-    "next_gate": "CSG_BASEPOINT_EXACT_JACOBIAN_AND_Q_COMMUTATOR_TANGENT_ESCAPE_AUDIT_INCLUDING_THE_16_TERMINAL_SLACK_BLIND_DIRECTIONS",
+    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_FIRST_ORDER_Q_TANGENT_ESCAPE_BLOCKED_SECOND_ORDER_AND_REMOTE_FULL_955_OPEN",
+    "next_gate": "STREAM_THE_SECOND_ORDER_CORE_COMPATIBILITY_OBSTRUCTION_AND_Q_QUADRATIC_ESCAPE_ON_THE_49_DIMENSIONAL_CSG_TANGENT_KERNEL",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
-      "CSG_BASEPOINT_EXACT_JACOBIAN_AND_Q_COMMUTATOR_TANGENT_ESCAPE_AUDIT",
+      "CSG_BASEPOINT_SECOND_ORDER_CORE_COMPATIBILITY_AND_Q_ESCAPE_AUDIT",
       "VERSIONED_BUDGET_ARTIFACT"
     ],
     "relation_level_minimality": "DEFERRED",
@@ -179,7 +180,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "The 476-coordinate timid-eliminated unrestricted QQ chart has now been scalar-expanded exactly in streaming mode. Its 783 CPOBC and 320 strong-GC matrix blocks give 4,412 scalar slots, 4,152 nonzero entries and 101,200 terms; the exact maximum degree is 9 rather than the syntactic ceiling 11, and the largest entry has 3,723 terms. No nonzero equation is exactly linear, while the degree-one component has rank 304 only as origin-Jacobian planning data. All 131 determinant predicates are nonzero polynomials with 6,250 total terms. Sixteen coordinates, exactly both slack components at eight terminal stage-4 sources, are globally absent from the entire core relation support. They do not themselves certify a noncommutative Q witness. The next gate is an exact Jacobian and Q-commutator tangent-escape audit at the known nonsingular diagonal CSG point, including those 16 blind directions. No generic solver or campaign budget is authorised yet.",
+    "next_gate_description": "The known diagonal CSG solution has been pulled back exactly to the 476-coordinate slack chart. All 24 u:c:0 coordinates vanish, all 24 u:c:1 coordinates are nonzero, all 131 matrices equal diag(p_e,1), all determinants are nonzero, and the point lies on the N-nonzero open. The streamed core Jacobian has rank 427 and a 49-dimensional Zariski tangent kernel. The six Q commutators have 12 nonzero gradient rows of raw rank 6, but every row reduces to zero modulo the core Jacobian rowspace, so every first-order core deformation is Q-commutative to first order. The 16 terminal slack blind directions are also Q-silent. This is only a first-order obstruction; quadratic or remote noncommutative solutions remain open. The next gate is a streamed second-order compatibility obstruction and Q-quadratic-escape audit on the 49-dimensional tangent kernel. No generic solver or campaign budget is authorised yet.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -390,6 +391,45 @@
       },
       "streamed_scalar_expansion_runs": 1,
       "full_manifest_materialisations": 0,
+      "solver_run": false,
+      "unrestricted_source_native_955_status": "OPEN"
+    },
+    "slack_CSG_tangent_audit": {
+      "artifact": "results/v0.4.2_955_slack_csg_tangent.json",
+      "report": "reports/v0.4.2_955_slack_csg_tangent.md",
+      "module": "src/universe_lab/final_theory/source_native_955_slack_csg_tangent_v042.py",
+      "schema_version": "final-theory-v042-955-slack-csg-tangent-v1",
+      "verdict": "V042_955_SLACK_CSG_Q_TANGENT_ESCAPE_FIRST_ORDER_BLOCKED_CERTIFIED",
+      "semantic_digest_sha256": "3182718cc0424dcc7837c8f2cc3dd03e6b27c0c106f9dbbb378b936c5e50e382",
+      "basepoint": {
+        "matrices": "A_e=diag(p_e,1)",
+        "slack_coordinates_nonzero": 24,
+        "all_u0_zero_all_u1_nonzero": true,
+        "N_nonzero": true,
+        "source_determinants_checked": 131,
+        "source_determinant_failures": 0
+      },
+      "core_Jacobian": {
+        "CPOBC_rank": 381,
+        "strong_GC_rank": 180,
+        "combined_rank": 427,
+        "ambient_coordinates": 476,
+        "tangent_dimension": 49,
+        "basepoint_residual_failures": 0
+      },
+      "Q_commutator_Jacobian": {
+        "nonzero_rows": 12,
+        "raw_rank": 6,
+        "rank_modulo_core_rowspace": 0,
+        "first_order_Q_tangent_escape_exists": false
+      },
+      "terminal_slack_blind_directions": {
+        "count": 16,
+        "all_in_core_tangent_kernel": true,
+        "all_Q_silent_at_first_order": true
+      },
+      "first_order_only": true,
+      "second_order_obstruction_open": true,
       "solver_run": false,
       "unrestricted_source_native_955_status": "OPEN"
     },
@@ -1150,6 +1190,7 @@
     "tests/final_theory/test_v042_955_mixed_branch_closure.py",
     "tests/final_theory/test_v042_955_slack_coverage_gap.py",
     "tests/final_theory/test_v042_955_slack_term_preflight.py",
+    "tests/final_theory/test_v042_955_slack_csg_tangent.py",
     "tests/final_theory/test_v041_partial_slice_audit.py",
     "tests/final_theory/test_weak_d2_observability_v042.py",
     "tests/final_theory/test_semantic_recovery_v042.py",

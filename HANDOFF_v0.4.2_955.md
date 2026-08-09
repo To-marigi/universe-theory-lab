@@ -5,7 +5,7 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、五つのゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、六つのゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -24,7 +24,9 @@ reduce してから scout する」という趣旨の記述は、本文書が上
               導来obligation 48、構文次数上限11、full 955はopen
 新ゲート5     streamed term count  4,152非零entry、101,200項、exact degree 9
               exact linear式0、terminal slack blind direction 16本
-次ゲート      非特異CSG点のexact Jacobian + Q可換子tangent escape audit
+新ゲート6     CSG tangent audit     core rank 427、tangent dim 49
+              Q gradient raw rank 6 / modulo core rank 0、first-order escapeなし
+次ゲート      49次元kernel上の二次compatibility obstruction + Q二次escape
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -382,9 +384,61 @@ kernelと6個のQ可換子微分を同時に測る。16 blind directionも明示
 Q tangent escapeがあればformal deformation候補へ進み、なければ高次の局所obstruction
 を設計する。generic solverと版付きbudgetはその判断まで凍結。
 
+この監査はゲート6として完了し、全first-order escapeがblockされた。次は二次監査。
+
 ---
 
-## 8. 破棄された計画
+## 8. ゲート6: 非特異CSG点のQ tangent escape監査
+
+```
+artifact  results/v0.4.2_955_slack_csg_tangent.json
+report    reports/v0.4.2_955_slack_csg_tangent.md
+module    src/universe_lab/final_theory/source_native_955_slack_csg_tangent_v042.py
+digest    3182718cc0424dcc7837c8f2cc3dd03e6b27c0c106f9dbbb378b936c5e50e382
+verdict   V042_955_SLACK_CSG_Q_TANGENT_ESCAPE_FIRST_ORDER_BLOCKED_CERTIFIED
+```
+
+```powershell
+uv run python -m universe_lab.final_theory.source_native_955_slack_csg_tangent_v042
+uv run pytest tests/final_theory/test_v042_955_slack_csg_tangent.py -q
+```
+
+### 8.1 CSG点のslack inverse image
+
+全source matrixを `diag(p_e,1)` にする476座標を厳密に再構成。24 sourceすべてで
+`u:c:0=0`, `u:c:1!=0`、特に `u:p1-0=(0,1)`。よって基点は `N!=0` open上。
+全131 determinantは `p_e in {1/16,1/8,1/4,1/2}` でfailures 0。
+
+### 8.2 core Jacobian
+
+```text
+CPOBC       2,870 nonzero rows, rank 381
+strong GC   1,020 nonzero rows, rank 180
+combined    3,890 nonzero rows, rank 427
+tangent dimension = 476 - 427 = 49
+```
+
+全4,412 scalar slotのCSG点評価はfailures 0。前ゲートのpolynomial stream digestとも一致。
+
+### 8.3 Q可換子の一次 obstruction
+
+6可換子・24 entriesのうちgradient非零は12 rows、raw rank 6。しかしcore Jacobian
+echelonへ全12 rowsをreduceするとremainders 0、追加rank 0。従って49次元kernelの
+全方向で `d[Qi,Qj]=0`。16 terminal blind directionも全てQ-silent。
+
+これは**一次だけ**。`[Qi,Qj]=O(t^2)` のcurveを否定しない。exact witnessや局所
+obstructionへ昇格してはならない。
+
+### 8.4 新しい次ゲート
+
+49次元kernel `K` 上で `x=x_CSG+tKz+t^2w` を代入し、二次core compatibility
+`Jw + H[Kz,Kz]/2=0` とQ可換子の二次項をstream計算する。left-kernel obstructionを
+先に取り、full Hessian tensorは保持しない。二次Q escapeがcompatibilityを通る場合だけ
+higher-order liftingへ進む。generic solverは凍結。
+
+---
+
+## 9. 破棄された計画
 
 **「131 patch を構造的基準で選んで exact scout する」は不要になった。**
 ゲート2が patch を一つも開かずに探索空間を落としたため。ゲート1の成果物に
@@ -393,7 +447,7 @@ Q tangent escapeがあればformal deformation候補へ進み、なければ高�
 
 ---
 
-## 9. 罠 — 範囲と後続で踏みやすい点
+## 10. 罠 — 範囲と後続で踏みやすい点
 
 - **ゲート2の46変数系だけには非特異条件が入っていない。** ただしゲート3は
   `det(A_e) = p_e - x_[e]*y_[e] != 0` を131因子・165 occurrence 全て持ち込み、
@@ -415,7 +469,7 @@ Q tangent escapeがあればformal deformation候補へ進み、なければ高�
 
 ---
 
-## 10. 既存の不具合（本セッション由来ではない）
+## 11. 既存の不具合（本セッション由来ではない）
 
 ```
 5 failed, 8 errors — tests/final_theory/test_line_ending_bridge_v038.py
@@ -442,25 +496,26 @@ bridge する方式である。
 
 ---
 
-## 11. 検証コマンド（コスト順）
+## 12. 検証コマンド（コスト順）
 
 ```powershell
 uv run ruff check .
-uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py tests/final_theory/test_v042_955_slack_term_preflight.py -q
+uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py tests/final_theory/test_v042_955_slack_term_preflight.py tests/final_theory/test_v042_955_slack_csg_tangent.py -q
 uv run pytest -q
 ```
 
-五ゲートの新規テストは 41 件。うち独立検証として、核基底を manifest の生の行と直接
+六ゲートの新規テストは 48 件。うち独立検証として、核基底を manifest の生の行と直接
 内積で検査するもの（`test_kernel_basis_is_independently_verified_against_the_manifest_rows`）と、
 二重次数を成果物を介さず manifest から再計測するもの、一般17パラメータ族で
 1,933成分を再代入するもの、timid recurrence から次数 histogram を再構成するもの、
-24 timid residualをreachable stateへ再作用して48成分の零を再検査するものを含む。
+24 timid residualをreachable stateへ再作用して48成分の零を再検査するもの、
+3,890 raw core Jacobian rowsへ12 Q-gradient rowsを再reduceするものを含む。
 
 ---
 
-## 12. AI 開示
+## 13. AI 開示
 
-ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4・5の
+ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4・5・6の
 モジュール・テスト・報告・引き継ぎ更新は OpenAI Codex が作成した。Luna は
 読み取り専用のブランチ／不要ファイル棚卸しと、ゲート4の数値・digest・適用体境界の
 独立再検算、ゲート5で再利用可能な疎多項式・stream・budget実装の探索を担当した。

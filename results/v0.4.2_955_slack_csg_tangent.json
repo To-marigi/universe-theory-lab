@@ -1,0 +1,874 @@
+{
+  "schema_version": "final-theory-v042-955-slack-csg-tangent-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "scope": {
+    "finite_source_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ",
+    "identification_mode": "ON_QUOTIENT",
+    "basepoint": "diagonal CSG t_j=1 source matrices"
+  },
+  "input_bindings": {
+    "results/v0.4.2_955_source_native_slack_compiler.json": {
+      "raw_sha256": "0e34c3132c47c4fb0485e9c570581d6ff16f8ce942446f7557ebdb4dd0cd70cc",
+      "semantic_digest_sha256": "5baf2a4a0273c8f5d9c08d2436b2df1ef77eafad97a4532d444dc9a8e522e042"
+    },
+    "results/v0.4.2_955_slack_term_preflight.json": {
+      "raw_sha256": "1ad4a9a824d7a582403f41d26c0630fffebb1d292b9f29b89316f31cafb91a74",
+      "semantic_digest_sha256": "b61d611830ff89815b9046b8df3a8b284f6716cdeb687c4d2bb7bb960e5190ab"
+    },
+    "results/v0.4.2_955_mixed_source_native_manifest.json": {
+      "raw_sha256": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c",
+      "semantic_digest_sha256": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2"
+    }
+  },
+  "variable_namespace": {
+    "coordinates": 476,
+    "names_sha256": "e5c9a43acd2760e185336c13cdab9ec6e4413e2b33b947ec65f9d246dd2c1982"
+  },
+  "basepoint_inverse_image": {
+    "coordinates": 476,
+    "assignment_sha256": "b3fab5af7ab110d3ab86215152e71132774deacc6c8dea430e1b99adb192eb93",
+    "slack_records": [
+      {
+        "source_id": "p1-0",
+        "u": [
+          "0",
+          "1"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p2-0",
+        "u": [
+          "0",
+          "6"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p2-2",
+        "u": [
+          "0",
+          "4"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p3-000",
+        "u": [
+          "0",
+          "56"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p3-002",
+        "u": [
+          "0",
+          "40"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p3-006",
+        "u": [
+          "0",
+          "32"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p3-024",
+        "u": [
+          "0",
+          "32"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p3-026",
+        "u": [
+          "0",
+          "12"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-0000",
+        "u": [
+          "0",
+          "960"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-0002",
+        "u": [
+          "0",
+          "704"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-0006",
+        "u": [
+          "0",
+          "576"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-000e",
+        "u": [
+          "0",
+          "512"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-0044",
+        "u": [
+          "0",
+          "576"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-0046",
+        "u": [
+          "0",
+          "224"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-0048",
+        "u": [
+          "0",
+          "512"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-004c",
+        "u": [
+          "0",
+          "448"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-004e",
+        "u": [
+          "0",
+          "192"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-00cc",
+        "u": [
+          "0",
+          "384"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-00ce",
+        "u": [
+          "0",
+          "80"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-0888",
+        "u": [
+          "0",
+          "512"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-088a",
+        "u": [
+          "0",
+          "192"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-088e",
+        "u": [
+          "0",
+          "160"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-08cc",
+        "u": [
+          "0",
+          "80"
+        ],
+        "nonzero_coordinates": 1
+      },
+      {
+        "source_id": "p4-08ce",
+        "u": [
+          "0",
+          "32"
+        ],
+        "nonzero_coordinates": 1
+      }
+    ],
+    "nonzero_slack_coordinates": [
+      "u:p1-0:1",
+      "u:p2-0:1",
+      "u:p2-2:1",
+      "u:p3-000:1",
+      "u:p3-002:1",
+      "u:p3-006:1",
+      "u:p3-024:1",
+      "u:p3-026:1",
+      "u:p4-0000:1",
+      "u:p4-0002:1",
+      "u:p4-0006:1",
+      "u:p4-000e:1",
+      "u:p4-0044:1",
+      "u:p4-0046:1",
+      "u:p4-0048:1",
+      "u:p4-004c:1",
+      "u:p4-004e:1",
+      "u:p4-00cc:1",
+      "u:p4-00ce:1",
+      "u:p4-0888:1",
+      "u:p4-088a:1",
+      "u:p4-088e:1",
+      "u:p4-08cc:1",
+      "u:p4-08ce:1"
+    ],
+    "nonzero_slack_coordinate_count": 24,
+    "all_131_matrices_equal_diag_p_e_1": true,
+    "all_131_determinants_nonzero": true,
+    "determinant_value_histogram": {
+      "1/16": 56,
+      "1/2": 10,
+      "1/4": 25,
+      "1/8": 40
+    }
+  },
+  "timid_expansion_recheck": {
+    "expanded_matrices": 131,
+    "expanded_states": 24,
+    "operation_ledger": {
+      "polynomial_additions": 644,
+      "polynomial_scales": 452,
+      "polynomial_multiplications": 336,
+      "raw_product_pairs_total": 2002,
+      "maximum_raw_product_pairs_one_multiply": 88,
+      "maximum_input_terms_one_multiply": 54,
+      "maximum_output_terms_one_multiply": 82,
+      "maximum_polynomial_terms_seen": 82,
+      "maximum_polynomial_degree_seen": 5,
+      "maximum_coefficient_bits_seen": 3,
+      "maximum_product_degree_bound": 5
+    }
+  },
+  "core_Jacobian": {
+    "per_block": {
+      "CPOBC": {
+        "scalar_entry_slots": 3132,
+        "polynomial_nonzero_entries": 3132,
+        "jacobian_nonzero_rows": 2870,
+        "jacobian_zero_rows": 262,
+        "basepoint_residual_failures": 0,
+        "polynomial_stream_digest_sha256": "74bdc9d908f4492cda28813f25a0eeb7561f33656ac0779b8a27e47c92f193d5",
+        "gradient_stream_digest_sha256": "bd2602c59c46d8b34969821a2a822d5caff7081c974744d528c96d2ebff5c447",
+        "operation_ledger": {
+          "polynomial_additions": 9964,
+          "polynomial_scales": 3132,
+          "polynomial_multiplications": 13664,
+          "raw_product_pairs_total": 20988,
+          "maximum_raw_product_pairs_one_multiply": 12,
+          "maximum_input_terms_one_multiply": 13,
+          "maximum_output_terms_one_multiply": 12,
+          "maximum_polynomial_terms_seen": 24,
+          "maximum_polynomial_degree_seen": 4,
+          "maximum_coefficient_bits_seen": 2,
+          "maximum_product_degree_bound": 4
+        },
+        "rank": 381,
+        "echelon_digest_sha256": "3073e2dc712f9c9a7d1c55cfedadd642add963e2bf2480230d2374f10bf33db7"
+      },
+      "strong_GC": {
+        "scalar_entry_slots": 1280,
+        "polynomial_nonzero_entries": 1020,
+        "jacobian_nonzero_rows": 1020,
+        "jacobian_zero_rows": 260,
+        "basepoint_residual_failures": 0,
+        "polynomial_stream_digest_sha256": "a8d7ac699a944927db5e689ba9008021829dc26f0fb59e544c18f60caec37825",
+        "gradient_stream_digest_sha256": "ae4d1363d703e4542f2fce16a83685d9399fa29a4216b1a33975eaab3211933d",
+        "operation_ledger": {
+          "polynomial_additions": 8736,
+          "polynomial_scales": 1280,
+          "polynomial_multiplications": 14912,
+          "raw_product_pairs_total": 166904,
+          "maximum_raw_product_pairs_one_multiply": 1779,
+          "maximum_input_terms_one_multiply": 596,
+          "maximum_output_terms_one_multiply": 1779,
+          "maximum_polynomial_terms_seen": 3723,
+          "maximum_polynomial_degree_seen": 9,
+          "maximum_coefficient_bits_seen": 3,
+          "maximum_product_degree_bound": 9
+        },
+        "rank": 180,
+        "echelon_digest_sha256": "931027f292f54dc44e803f2d5bca2b833bd157c4658f01e1c6705fea2a92c49b"
+      }
+    },
+    "combined_nonzero_rows": 3890,
+    "combined_rank": 427,
+    "tangent_dimension": 49,
+    "combined_echelon_digest_sha256": "e41c6382cba66e7d0deaaa8131bba1cd306f761a9c5f8a006008eac5dfd9ab52",
+    "basepoint_residual_failures": 0
+  },
+  "Q_commutator_Jacobian": {
+    "Q_representatives": {
+      "Q1": "cpobc-transition-7137acaa934673cc789d",
+      "Q2": "cpobc-transition-3b93b9f523031a23c77f",
+      "Q3": "cpobc-transition-779d09aa463a38abdba6",
+      "Q4": "cpobc-transition-9fabc20614d5b2aa595d"
+    },
+    "commutator_pairs": 6,
+    "scalar_entry_slots": 24,
+    "nonzero_gradient_rows": 12,
+    "zero_gradient_rows": 12,
+    "gradient_stream_digest_sha256": "328487a8d3b22b23cf4e2a045ba03643f3ecaa193e25b4cb79c239cc8135cff4",
+    "operation_ledger": {
+      "polynomial_additions": 72,
+      "polynomial_scales": 24,
+      "polynomial_multiplications": 96,
+      "raw_product_pairs_total": 96,
+      "maximum_raw_product_pairs_one_multiply": 1,
+      "maximum_input_terms_one_multiply": 2,
+      "maximum_output_terms_one_multiply": 1,
+      "maximum_polynomial_terms_seen": 4,
+      "maximum_polynomial_degree_seen": 2,
+      "maximum_coefficient_bits_seen": 1,
+      "maximum_product_degree_bound": 2
+    },
+    "raw_rank": 6,
+    "raw_echelon_digest_sha256": "9db44597866479a382ca669a68be832f4d0ba911b9586f3af4abba690a1e561b",
+    "rank_after_appending_to_core": 427,
+    "rank_modulo_core_rowspace": 0,
+    "nonzero_rowspace_remainders": 0,
+    "all_Q_gradients_in_core_rowspace": true,
+    "first_order_Q_tangent_escape_exists": false,
+    "records": [
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "entry": "00",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-3b93b9f523031a23c77f"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "entry": "01",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-3b93b9f523031a23c77f"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            89,
+            "-1/2"
+          ],
+          [
+            173,
+            "3/4"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "entry": "10",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-3b93b9f523031a23c77f"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            90,
+            "1/2"
+          ],
+          [
+            174,
+            "-3/4"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "entry": "11",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-3b93b9f523031a23c77f"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "entry": "00",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-779d09aa463a38abdba6"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "entry": "01",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-779d09aa463a38abdba6"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            173,
+            "7/8"
+          ],
+          [
+            189,
+            "-1/2"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "entry": "10",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-779d09aa463a38abdba6"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            174,
+            "-7/8"
+          ],
+          [
+            190,
+            "1/2"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "entry": "11",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-779d09aa463a38abdba6"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "entry": "00",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "entry": "01",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            173,
+            "15/16"
+          ],
+          [
+            261,
+            "-1/2"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "entry": "10",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            174,
+            "-15/16"
+          ],
+          [
+            262,
+            "1/2"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "entry": "11",
+        "Q_representatives": [
+          "cpobc-transition-7137acaa934673cc789d",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "entry": "00",
+        "Q_representatives": [
+          "cpobc-transition-3b93b9f523031a23c77f",
+          "cpobc-transition-779d09aa463a38abdba6"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "entry": "01",
+        "Q_representatives": [
+          "cpobc-transition-3b93b9f523031a23c77f",
+          "cpobc-transition-779d09aa463a38abdba6"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            89,
+            "7/8"
+          ],
+          [
+            189,
+            "-3/4"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "entry": "10",
+        "Q_representatives": [
+          "cpobc-transition-3b93b9f523031a23c77f",
+          "cpobc-transition-779d09aa463a38abdba6"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            90,
+            "-7/8"
+          ],
+          [
+            190,
+            "3/4"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "entry": "11",
+        "Q_representatives": [
+          "cpobc-transition-3b93b9f523031a23c77f",
+          "cpobc-transition-779d09aa463a38abdba6"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "entry": "00",
+        "Q_representatives": [
+          "cpobc-transition-3b93b9f523031a23c77f",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "entry": "01",
+        "Q_representatives": [
+          "cpobc-transition-3b93b9f523031a23c77f",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            89,
+            "15/16"
+          ],
+          [
+            261,
+            "-3/4"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "entry": "10",
+        "Q_representatives": [
+          "cpobc-transition-3b93b9f523031a23c77f",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            90,
+            "-15/16"
+          ],
+          [
+            262,
+            "3/4"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "entry": "11",
+        "Q_representatives": [
+          "cpobc-transition-3b93b9f523031a23c77f",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "entry": "00",
+        "Q_representatives": [
+          "cpobc-transition-779d09aa463a38abdba6",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "entry": "01",
+        "Q_representatives": [
+          "cpobc-transition-779d09aa463a38abdba6",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            189,
+            "15/16"
+          ],
+          [
+            261,
+            "-7/8"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "entry": "10",
+        "Q_representatives": [
+          "cpobc-transition-779d09aa463a38abdba6",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 4,
+        "gradient_nonzero": true,
+        "gradient": [
+          [
+            190,
+            "-15/16"
+          ],
+          [
+            262,
+            "7/8"
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "entry": "11",
+        "Q_representatives": [
+          "cpobc-transition-779d09aa463a38abdba6",
+          "cpobc-transition-9fabc20614d5b2aa595d"
+        ],
+        "polynomial_terms": 2,
+        "gradient_nonzero": false,
+        "gradient": []
+      }
+    ]
+  },
+  "terminal_slack_blind_directions": {
+    "coordinates": [
+      "u:p4-0000:0",
+      "u:p4-0000:1",
+      "u:p4-000e:0",
+      "u:p4-000e:1",
+      "u:p4-00cc:0",
+      "u:p4-00cc:1",
+      "u:p4-00ce:0",
+      "u:p4-00ce:1",
+      "u:p4-0888:0",
+      "u:p4-0888:1",
+      "u:p4-088e:0",
+      "u:p4-088e:1",
+      "u:p4-08cc:0",
+      "u:p4-08cc:1",
+      "u:p4-08ce:0",
+      "u:p4-08ce:1"
+    ],
+    "count": 16,
+    "all_standard_basis_directions_in_core_tangent_kernel": true,
+    "all_Q_commutator_directional_derivatives_zero": true,
+    "core_failures": 0,
+    "Q_failures": 0,
+    "interpretation": "These global terminal-source freedoms preserve the common core but do not themselves move the source-defined Q commutators at first order."
+  },
+  "explicit_Q_tangent_escape_certificate": null,
+  "open_conditions_at_basepoint": {
+    "source_determinants_checked": 131,
+    "source_determinant_failures": 0,
+    "N_nonzero": true,
+    "nonzero_slack_coordinate_count": 24,
+    "open_conditions_impose_no_linear_tangent_equations": true
+  },
+  "execution_decision": {
+    "generic_solver_authorised": false,
+    "higher_order_lifting_authorised": false,
+    "second_order_obstruction_audit_authorised": true,
+    "next_gate": "COMPUTE_THE_SECOND_ORDER_Q_OBSTRUCTION_ON_THE_CSG_TANGENT_KERNEL"
+  },
+  "solver_status": {
+    "exact_sparse_QQ_linear_algebra_runs": 1,
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "claim_boundary": [
+    "The basepoint is an exact nonsingular source-native 955 common-core solution.",
+    "A tangent escape, if present, is first-order only and is not an exact witness.",
+    "The 16 terminal slack blind directions are Q-silent at first order.",
+    "Higher-order core lifting, Eq113, Eq139 and exact Q noncommutativity remain required.",
+    "No unrestricted source-native 955 terminal verdict is claimed."
+  ],
+  "unrestricted_source_native_955_status": "OPEN",
+  "passed": true,
+  "verdict": "V042_955_SLACK_CSG_Q_TANGENT_ESCAPE_FIRST_ORDER_BLOCKED_CERTIFIED",
+  "semantic_digest_sha256": "3182718cc0424dcc7837c8f2cc3dd03e6b27c0c106f9dbbb378b936c5e50e382"
+}

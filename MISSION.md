@@ -67,9 +67,12 @@ slack 系はその外側にあり open である。
 続く
 [`reports/v0.4.2_955_slack_term_preflight.md`](reports/v0.4.2_955_slack_term_preflight.md)
 は476座標系をstream展開し、4,152非零式・101,200項・実測最大次数9と、core全体から
-恒等的に消える16本のterminal slack方向を確定した。次は既知の非特異CSG点でexact
-JacobianとQ可換子のtangent escapeを測る。そこで witness 方向が出た場合はそちらを
-終端候補として受け入れる。
+恒等的に消える16本のterminal slack方向を確定した。さらに
+[`reports/v0.4.2_955_slack_csg_tangent.md`](reports/v0.4.2_955_slack_csg_tangent.md)
+は既知の非特異CSG点でcore Jacobian rank 427・tangent次元49を得て、Q可換子微分の
+core rowspace modulo rankが0、すなわちfirst-order escapeがないことを証明した。次は
+49次元kernel上の二次compatibility obstructionとQ二次項をstream測定する。そこで
+witness方向が出た場合はそちらを終端候補として受け入れる。
 
 ### 到達順序
 
