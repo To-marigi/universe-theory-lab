@@ -1,0 +1,266 @@
+{
+  "schema_version": "final-theory-v042-955-upper-stratum-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "scope": {
+    "finite_source_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ",
+    "identification_mode": "ON_QUOTIENT",
+    "chart": "unrestricted 476-coordinate source-native slack chart",
+    "ansatz": "none; this is not the bounded mixed x/y family"
+  },
+  "source_artifact_sha256": {
+    "results/v0.4.2_955_source_native_slack_compiler.json": "0e34c3132c47c4fb0485e9c570581d6ff16f8ce942446f7557ebdb4dd0cd70cc",
+    "results/v0.4.2_955_slack_term_preflight.json": "1ad4a9a824d7a582403f41d26c0630fffebb1d292b9f29b89316f31cafb91a74",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c",
+    "results/v0.4.2_955_slack_csg_tangent.json": "ab0496b92da8c03338db8977e6d19d5b4cc594cdbb445cb1295dc80a190d9a52"
+  },
+  "predecessor_binding": {
+    "kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
+    "results/v0.4.2_955_source_native_slack_compiler.json": "5baf2a4a0273c8f5d9c08d2436b2df1ef77eafad97a4532d444dc9a8e522e042",
+    "results/v0.4.2_955_slack_term_preflight.json": "b61d611830ff89815b9046b8df3a8b284f6716cdeb687c4d2bb7bb960e5190ab",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2",
+    "results/v0.4.2_955_slack_csg_tangent.json": "3182718cc0424dcc7837c8f2cc3dd03e6b27c0c106f9dbbb378b936c5e50e382"
+  },
+  "reachable_state_MSR_is_built_in": {
+    "source_constraints": 24,
+    "vector_entry_constraints_before_substitution": 48,
+    "constraints_after_substitution": 0,
+    "identity_reason": "(Jv_c)^T v_c=0 for every source c",
+    "consequence": "The core on this chart is CPOBC plus strong GC only.  Every rank below is computed against that core, and reachable-state MSR adds no row."
+  },
+  "coordinate_families": {
+    "A:00": 107,
+    "A:01": 107,
+    "A:10": 107,
+    "A:11": 107,
+    "u:0": 24,
+    "u:1": 24
+  },
+  "derived_grading": {
+    "method": "The weights are not assumed.  Each distinct monomial of each residual entry (i,j) contributes the exact linear constraint sum(weights)=j-i, and the inhomogeneous system is solved by exact rational elimination.",
+    "distinct_monomial_constraints": 47298,
+    "rank": 460,
+    "solution_space_dimension": 16,
+    "inconsistent_rows": 0,
+    "grading_exists": true,
+    "family_weights": {
+      "A:00": [
+        "0"
+      ],
+      "A:01": [
+        "1"
+      ],
+      "A:10": [
+        "-1"
+      ],
+      "A:11": [
+        "0"
+      ],
+      "u:0": [
+        "1"
+      ],
+      "u:1": [
+        "0"
+      ]
+    },
+    "homogeneity_violations": 0,
+    "weights_sha256": "2303096e047498954bc6ae18103029848f04f7557ea7901d416cd8671235a6c6",
+    "coordinates_occurring_in_the_core": 460,
+    "coordinates_absent_from_the_core": {
+      "total": 16,
+      "per_family": {
+        "A:00": 0,
+        "A:01": 0,
+        "A:10": 0,
+        "A:11": 0,
+        "u:0": 8,
+        "u:1": 8
+      },
+      "names": {
+        "u:0": [
+          "u:p4-0000:0",
+          "u:p4-000e:0",
+          "u:p4-00cc:0",
+          "u:p4-00ce:0",
+          "u:p4-0888:0",
+          "u:p4-088e:0",
+          "u:p4-08cc:0",
+          "u:p4-08ce:0"
+        ],
+        "u:1": [
+          "u:p4-0000:1",
+          "u:p4-000e:1",
+          "u:p4-00cc:1",
+          "u:p4-00ce:1",
+          "u:p4-0888:1",
+          "u:p4-088e:1",
+          "u:p4-08cc:1",
+          "u:p4-08ce:1"
+        ]
+      },
+      "note": "These coordinates appear in no CPOBC or strong-GC monomial, so the grading constraints leave their weight free.  The reported family weights are taken over the occurring coordinates only, where they are forced.",
+      "equals_the_frozen_terminal_slack_blind_directions": true,
+      "cross_check": "The independently frozen tangent audit recorded exactly these coordinates as the terminal slack blind directions.  Absence from every core monomial is the algebraic reason they are blind."
+    }
+  },
+  "upper_stratum": {
+    "definition": "all 107 lower-left coordinates A:*:10 are zero",
+    "streamed_nonzero_core_entries": 4152,
+    "lower_left_entries_nonzero_on_stratum": 0,
+    "upper_right_entries_nonlinear_in_the_positive_family": 0,
+    "diagonal_entries_containing_a_weighted_coordinate": 0,
+    "scalar_system": {
+      "entries": 1814,
+      "terms": 9673,
+      "degree_histogram": {
+        "2": 1153,
+        "3": 95,
+        "4": 436,
+        "5": 61,
+        "6": 45,
+        "7": 16,
+        "8": 7,
+        "9": 1
+      },
+      "coordinates": "A:*:00, A:*:11, u:*:1"
+    },
+    "positive_weight_family": {
+      "definition": "the weight +1 coordinates, derived not assumed",
+      "A:*:01": 107,
+      "u:*:0": 16,
+      "total": 123,
+      "note": "The slack coordinates u:*:0 carry weight +1 alongside the upper-right matrix entries, so the fibre is linear in the combined family and not in A:*:01 alone.  This correction came out of deriving the weights."
+    },
+    "upper_right_linear_fibre": {
+      "entries": 1038,
+      "terms": 16004,
+      "exactly_linear_in_the_positive_weight_family": true,
+      "coefficients_free_of_every_weighted_coordinate": true
+    },
+    "per_block": {
+      "CPOBC": {
+        "lower_left_seen": 783,
+        "scalar": 1304,
+        "upper_right_linear": 783,
+        "vanished_on_stratum": 262
+      },
+      "strong_GC": {
+        "lower_left_seen": 255,
+        "scalar": 510,
+        "upper_right_linear": 255
+      }
+    },
+    "decomposition": "The upper stratum of the unrestricted profile is a scalar variety S in the diagonal and slack coordinates carrying an affine-linear upper-right fibre over each of its points."
+  },
+  "Q_commutator_collapse": {
+    "pairs": 6,
+    "diagonal_entries_nonzero_on_stratum": 0,
+    "lower_left_entries_nonzero_on_stratum": 0,
+    "upper_right_entries_nonlinear": 0,
+    "surviving_entry": "01",
+    "records": [
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "entries": {
+          "01": {
+            "term_count": 4,
+            "upper_right_degree": 1
+          }
+        }
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "entries": {
+          "01": {
+            "term_count": 4,
+            "upper_right_degree": 1
+          }
+        }
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "entries": {
+          "01": {
+            "term_count": 4,
+            "upper_right_degree": 1
+          }
+        }
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "entries": {
+          "01": {
+            "term_count": 4,
+            "upper_right_degree": 1
+          }
+        }
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "entries": {
+          "01": {
+            "term_count": 4,
+            "upper_right_degree": 1
+          }
+        }
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "entries": {
+          "01": {
+            "term_count": 4,
+            "upper_right_degree": 1
+          }
+        }
+      }
+    ],
+    "consequence": "On the upper stratum the whole commutativity question is one scalar-coefficient linear form per pair in the upper-right coordinates."
+  },
+  "supersedes": {
+    "gate": "DESIGN_THE_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
+    "reason": "MISSION.md phase-A stop rule: an order-by-order local expansion whose cost grows and which approaches none of the declared terminals is frozen once a route to a finite theorem exists.  The grading supplies that route.",
+    "jet_ladder_explanation": "At the diagonal CSG basepoint the lower-left linear part of the core has full rank 107, so the formal implicit function theorem places the local component inside the upper stratum.  That is the finite reason four successive orders were silent.  It is a formal-local statement at one point and nothing more."
+  },
+  "next_gate": "DECIDE_THE_SIX_UPPER_RIGHT_COMMUTATOR_FORMS_AGAINST_THE_CORE_ROW_SPAN_ON_S",
+  "solver_status": {
+    "exact_sparse_QQ_linear_algebra_runs": 1,
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "claim_boundary": [
+    "The upper stratum is not the unrestricted 955 profile.",
+    "Mixed points with both off-diagonal families nonzero remain open, and the gauge torus cannot degenerate them into the stratum because its weights blow up one side while shrinking the other.",
+    "No witness and no obstruction is certified; the commutator forms are emitted, not decided.",
+    "A later witness candidate still needs nonsingularity, the N!=0 gate, the Eq113 and Eq139 obligations, and reachable visibility; an operator-only witness with rank-one reachable span only reproduces the known SR2 weakness.",
+    "An obstruction on the stratum alone also reaches none of the three declared 955 terminals."
+  ],
+  "unrestricted_source_native_955_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_955_UPPER_STRATUM_SCALAR_TIMES_LINEAR_FIBRE_DECOMPOSITION_CERTIFIED_NONTERMINAL",
+  "semantic_digest_sha256": "678823e2e663f02c6273d3070698baf7025efd16776694aa9c595830a944ae69"
+}

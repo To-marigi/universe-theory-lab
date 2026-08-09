@@ -1,11 +1,27 @@
 # Handoff — 955 profile track, 2026-08-09/10 session
 
+> **2026-08-10 追補 — 計画の三段階化と jet 梯子の破棄。**
+>
+> オーナーが `MISSION.md` に**三段階の計画**を固定した。段階A（955 → 721 →
+> finite ON lattice）**の完了をもって本プロジェクトを終了**し、その後に段階C
+> （検証方法論を独立した成果物にする）、最後に段階B（必須導出目標へ向け標的を
+> 変える）へ進む。段階Aの完了は必須導出目標のどれにも到達しないことを承知の
+> うえでの決定である。この認識を後から書き換えないこと。
+>
+> 同時に段階Aの**停止規則**が入った。「次数を1つ上げる作業を、有限の定理への
+> 変換経路を示さずに続けない」。これにより第五次 jet preflight
+> （候補単項式 4,014,962 本）は**破棄**され、代わりに
+> [`reports/v0.4.2_955_upper_stratum.md`](reports/v0.4.2_955_upper_stratum.md)
+> の有限ゲートに置き換わった。§12 を読むこと。四次まで沈黙が続いた理由は、
+> CSG 基点で左下線形部が rank 107 フルランクであり形式陰関数定理で局所成分が
+> upper stratum に入るから、と有限に説明がついた。
+
 これを読む前に `HANDOFF_v0.4.1.md` の冒頭（Paper I v0.4.2 公開済みの注記）を
 読むこと。`HANDOFF.md` は v0.3.9 リリースの凍結記録であり、本文書はそれを
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、十一のゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、十二のゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -36,7 +52,12 @@ reduce してから scout する」という趣旨の記述は、本文書が上
               bounded stream 5.73 GB < 8 GiB、dense 682.77 GBは却下
 新ゲート11    CSG fourth order      3,985 compatibility forms全て0、全三次jetが四次lift
               raw Q 6/24非零だがintrinsic 24/24で0、四次escapeなし
-次ゲート      4,014,962候補monomialの第五次full fourth-jet-fibre preflight設計
+新ゲート12    無制限チャートの次数付け導出と upper stratum 分解（§12）
+              47,298制約でrank 460・不整合0、A:*:01とu:*:0が重み+1
+              {A:*:10=0} 上で (1,0)恒等零／(0,1)は123座標に厳密線形／対角は無汚染
+              Q可換子6組が各4項の線形形式に崩壊。第五次preflightは破棄
+計画          段階A（955→721→lattice）で本プロジェクト終了 → 段階C → 段階B
+次ゲート      S の厳密点で6形式を core row span に対して判定（§12.5）
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -727,3 +748,95 @@ uv run pytest -q
 `.zenodo.json` と `paper/paper.md` の開示は**触っていない**。両者は凍結
 アーカイブのダイジェストに影響するため、次にアーカイブを再構築する版で
 まとめて更新すること（`HANDOFF.md` §10）。
+
+---
+
+## 12. ゲート12: 無制限チャートの次数付けと upper stratum 分解（2026-08-10）
+
+```
+artifact  results/v0.4.2_955_upper_stratum.json
+report    reports/v0.4.2_955_upper_stratum.md
+module    src/universe_lab/final_theory/source_native_955_upper_stratum_v042.py
+digest    678823e2e663f02c6273d3070698baf7025efd16776694aa9c595830a944ae69
+verdict   V042_955_UPPER_STRATUM_SCALAR_TIMES_LINEAR_FIBRE_DECOMPOSITION_CERTIFIED_NONTERMINAL
+```
+
+```powershell
+uv run python -m universe_lab.final_theory.source_native_955_upper_stratum_v042
+uv run pytest tests/final_theory/test_v042_955_upper_stratum.py -q
+```
+
+### 12.1 前提（毎回検証すること）
+
+**reachable-state MSR はこのチャートに恒等的に組み込まれている。** slack
+compiler の `constraints_after_substitution: 0`、理由は `(J v_c)^T v_c = 0`。
+本チャートの core は **CPOBC + strong GC のみ**。rank 427 も本ゲートの全ランクも
+その core に対するものである。MSR 行を別途足そうとしないこと。
+
+### 12.2 次数付けは導出した（仮定していない）
+
+47,298 の単項式制約、rank 460、不整合 0、均一性違反 0。
+
+```
+A:*:00  0     A:*:01  +1     A:*:10  -1
+A:*:11  0     u:*:0   +1     u:*:1    0
+```
+
+**罠**: 正の重みを持つのは右上行列成分だけではない。`u:*:0` も +1 を持つ。
+仮定していたら分解の記述を誤っていた。ファイバーは `A:*:01`(107) と
+`u:*:0`(16) の**合計123座標**に線形である。
+
+解空間の自由度16は、core のどの単項式にも現れない16座標であり、独立に凍結
+済みの tangent 監査の `terminal_slack_blind_directions` と**完全一致**する
+（成果物に `equals_the_frozen_terminal_slack_blind_directions: true`）。
+blind である代数的理由がこれで判明した。
+
+### 12.3 分解（主結果）
+
+upper stratum = `{107個の A:*:10 が全て0}` 上で、4,152 の非零 core 成分すべてに
+対し反例0で:
+
+- `(1,0)` ブロックは恒等的に消える
+- `(0,1)` ブロックは正重み族に厳密線形、係数は重み付き座標を含まない
+- 対角ブロックは重み付き座標を一切含まない
+
+| | 座標 | 成分 | 項数 |
+|---|---|---|---|
+| スカラー多様体 `S` | `A:*:00`, `A:*:11`, `u:*:1` | 1,814 | 9,673（最大次数9） |
+| 正重み線形ファイバー | 123 | 1,038 | 16,004 |
+
+ansatz なし・対角固定なしで、gate 2 の大域双線形簡約と同じパターンが無制限
+チャート上に再現した。
+
+### 12.4 可換子は6本の4項線形形式に崩壊
+
+upper stratum 上で、6組すべて対角0・左下0、生き残るのは `(0,1)` のみで
+**各4項**。476変数・101,200項の core が、可換性に関しては6本の4項線形形式に
+なった。
+
+### 12.5 次のゲートと、そこでの警告
+
+```
+DECIDE_THE_SIX_UPPER_RIGHT_COMMUTATOR_FORMS_AGAINST_THE_CORE_ROW_SPAN_ON_S
+```
+
+`S` の厳密点で、6形式が正重み線形系の row span に入るかを判定する。厳密線形
+代数のみで、Gröbner も予算も不要。
+
+- **span 内** → その点で可換性が強制される（obstruction 側の証拠）
+- **span 外** → 線形系を解いて **955 witness 候補**が得られる
+
+**警告 1**: `Q` の対角が自由なので `(a00 - a11)` は一般に非零であり、可換子形式は
+generic に非零である。**WITNESS 側に転ぶ可能性を排除していない。** 両終端を
+terminal 形に設計し、verdict 文字列を実行前に固定すること。
+
+**警告 2**: mixed ansatz の upper family が可換だったのは対角を `(p_e, 1)` に
+凍結していたためである。**その直観をここへ持ち込まないこと。**
+
+**警告 3**: witness 候補が出ても、非特異性、`N != 0`、Eq113/Eq139、そして
+**reachable visibility** が別途必要。到達スパン rank 1 の operator-only witness は
+SR2 の既知の弱点を再現するだけで、宣言済み三終端には届かない。
+
+**警告 4**: upper stratum は無制限 955 ではない。両非対角族が非零の mixed 点は
+open で、ゲージトーラスは片側を膨張させるため退化で落とせない。stratum 上の
+obstruction も三終端には届かない。

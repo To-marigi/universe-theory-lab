@@ -101,11 +101,12 @@
     "v0.4.2_sr2v_transverse_eq120_schur_chart_obligations": "FOUR_LOCUS_POINTWISE_RANK_AND_STRONG_ROW_MODULE_CONTRACTS_CERTIFIED_NONTERMINAL",
     "v0.4.2_sr2v_transverse_eq120_repair_pair_scout": "THREE_PAIR_MINOR_SUBCOVER_REJECTED_FULL_M0_SURVIVES_NONTERMINAL",
     "v0.4.2_sr2v_transverse_common_core_q5_free": "FULL_M0_AND_GLOBAL_SCHUR_REDUCTION_Q5_FREE_NONALIGNED_TWO_COLUMN_ALIGNED_FOUR_COLUMN_POINTWISE_IDEALS_OPEN",
-    "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN"
+    "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN",
+    "v0.4.2_955_upper_stratum": "GAUGE_WEIGHTS_DERIVED_NOT_ASSUMED_UPPER_STRATUM_IS_SCALAR_VARIETY_TIMES_LINEAR_FIBRE_SIX_COMMUTATORS_COLLAPSE_TO_FOUR_TERM_LINEAR_FORMS_NONTERMINAL"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "DESIGN_THE_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
+    "next_gate": "DECIDE_THE_SIX_UPPER_RIGHT_COMMUTATOR_FORMS_AGAINST_THE_CORE_ROW_SPAN_ON_S",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
       "CSG_BASEPOINT_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
@@ -186,7 +187,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "At the exact nonsingular N-nonzero diagonal CSG point over QQ, the full third-order jet fiber v=v_particular(z,a)+K*b has been audited exactly through order four. All 3,985 dependent-Jacobian fourth-order compatibility forms vanish identically, so every third-order core jet lifts through fourth order. Although six of the 24 raw Q scalar fourth forms are nonzero with 2,374 terms total, all 24 intrinsic weighted fourth forms reduce to zero through the core Jacobian-jet basis; Q therefore vanishes through order four on every core-compatible fourth lift. The 16 terminal slack directions remain core- and Q-silent. This is local and formal only: fifth order, convergence, remote components, Eq113/Eq139, and unrestricted source-native 955 remain open. At fifth order the full fourth-jet fiber u=u_particular(z,a,b)+K*c has 2,869,685 z^5, 1,020,425 z^3*a, 60,025 z*a^2, 60,025 z^2*b, 2,401 a*b, and 2,401 z*c candidate monomials, total 4,014,962. The next gate is to design a versioned sparse term and memory preflight; no fifth-order actual audit or generic solver is authorised without it.",
+    "next_gate_description": "The fifth-order jet preflight is SUPERSEDED and not to be built. MISSION.md phase A fixes a stop rule for order-by-order local expansion, and reports/v0.4.2_955_upper_stratum.md supplies the finite route it demanded. Deriving the gauge weights from the 476-coordinate chart itself (47,298 monomial constraints, rank 460, zero inconsistencies) shows A:*:01 and u:*:0 carry weight +1, A:*:10 carries -1, and A:*:00, A:*:11, u:*:1 carry 0. On the upper stratum where all 107 lower-left coordinates vanish, the (1,0) block is identically zero, the (0,1) block is exactly linear in the 123-coordinate positive-weight family, and the diagonal blocks carry no weighted coordinate, so the stratum is a scalar variety S carrying an affine-linear fibre. The six Q commutators there have vanishing diagonal and lower left and reduce to one four-term linear form each. The next gate decides those six forms against the core row span at exact points of S by exact linear algebra; a point outside the span yields a 955 witness candidate, a point inside is obstruction evidence. Both outcomes must be terminal-shaped before the run, and the mixed-ansatz intuition that upper families commute must not be imported, because that held only with the diagonal frozen to (p_e,1). The four silent jet orders are explained finitely: the lower-left linear part has full rank 107 at the CSG basepoint, so the formal implicit function theorem places the local component inside the upper stratum. That is formal-local at one point only.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -681,6 +682,67 @@
         "NONSCALAR_2X2_CENTRALIZER_ENDPOINT_FOR_PAIRWISE_COMMUTATIVITY",
         "GLOBAL_REACHABLE_RANK_TWO_ACROSS_DIFFERENT_SOURCES_DOES_NOT_BY_ITSELF_PROMOTE_SOURCEWISE_RESIDUALS"
       ]
+    },
+    "upper_stratum": {
+      "artifact": "results/v0.4.2_955_upper_stratum.json",
+      "report": "reports/v0.4.2_955_upper_stratum.md",
+      "module": "src/universe_lab/final_theory/source_native_955_upper_stratum_v042.py",
+      "schema_version": "final-theory-v042-955-upper-stratum-v1",
+      "verdict": "V042_955_UPPER_STRATUM_SCALAR_TIMES_LINEAR_FIBRE_DECOMPOSITION_CERTIFIED_NONTERMINAL",
+      "semantic_digest_sha256": "678823e2e663f02c6273d3070698baf7025efd16776694aa9c595830a944ae69",
+      "reachable_state_MSR_is_built_in_by_timid_recurrences": true,
+      "core_on_this_chart": "CPOBC and strong_GC only",
+      "derived_grading": {
+        "weights_assumed": false,
+        "distinct_monomial_constraints": 47298,
+        "rank": 460,
+        "solution_space_dimension": 16,
+        "inconsistent_rows": 0,
+        "homogeneity_violations": 0,
+        "family_weights": {
+          "A:00": 0,
+          "A:01": 1,
+          "A:10": -1,
+          "A:11": 0,
+          "u:0": 1,
+          "u:1": 0
+        },
+        "correction_found_by_deriving": "u:*:0 also carries weight +1, not only A:*:01",
+        "unconstrained_coordinates": 16,
+        "unconstrained_equal_frozen_terminal_blind_directions": true
+      },
+      "upper_stratum": {
+        "definition": "all 107 lower-left coordinates A:*:10 vanish",
+        "streamed_nonzero_core_entries": 4152,
+        "counterexamples": {
+          "lower_left_nonzero": 0,
+          "upper_right_nonlinear": 0,
+          "diagonal_contaminated": 0
+        },
+        "scalar_variety_S": {
+          "entries": 1814,
+          "terms": 9673,
+          "maximum_degree": 9
+        },
+        "positive_weight_fibre": {
+          "coordinates": 123,
+          "entries": 1038,
+          "terms": 16004
+        }
+      },
+      "Q_commutator_collapse": {
+        "pairs": 6,
+        "surviving_entry": "01",
+        "terms_per_pair": 4,
+        "diagonal_and_lower_left_vanish": true
+      },
+      "supersedes": "DESIGN_THE_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
+      "supersession_authority": "MISSION.md phase-A stop rule",
+      "jet_ladder_finite_explanation": "Full rank 107 lower-left linear part at the CSG basepoint plus the formal implicit function theorem places the local component inside the upper stratum; formal-local at one point only",
+      "witness_outcome_not_excluded": true,
+      "solver_run": false,
+      "search_terminal": false,
+      "full_955_profile_claimed": false
     }
   },
   "post_literature_strategy": {
@@ -1032,7 +1094,11 @@
           },
           "commutator_reduction": {
             "source": "RAW_CPOBC_EQ120_THREE_IDENTITIES",
-            "six_rows_equivalent_to_global_star": ["c12", "c13", "c14"],
+            "six_rows_equivalent_to_global_star": [
+              "c12",
+              "c13",
+              "c14"
+            ],
             "global_star_size_is_minimal": true,
             "strict_Eq139_controls_completed_separately_for_each_Eq113": true,
             "remaining_loci_per_strict_Eq113_reading": 4,
@@ -1063,7 +1129,10 @@
           "semantic_digest_sha256": "286b2c8e0329dd585c33dee13c66e3a923a270d04822f3489186aad4ee1e45ac",
           "common_core": "RAW_CPOBC_PLUS_FIXED_VECTOR_GC_PLUS_REACHABLE_STATE_MSR",
           "Eq113_or_Eq139_used": false,
-          "minor_shape": [127, 127],
+          "minor_shape": [
+            127,
+            127
+          ],
           "row_block_counts": {
             "CPOBC": 83,
             "fixed_vector_GC": 20,
@@ -1073,18 +1142,46 @@
           "unique_perfect_matching": true,
           "determinant_is_global_unit": true,
           "transverse_base_dimension": 54,
-          "remaining_columns": ["Q1", "Q2", "Q3", "Q4", "Q5"],
+          "remaining_columns": [
+            "Q1",
+            "Q2",
+            "Q3",
+            "Q4",
+            "Q5"
+          ],
           "predecessor_binding_kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
           "rejected_four_row_schur_candidates": [
-            [83, 147, 154, 688],
-            [23, 147, 154, 688],
-            [23, 31, 147, 688]
+            [
+              83,
+              147,
+              154,
+              688
+            ],
+            [
+              23,
+              147,
+              154,
+              688
+            ],
+            [
+              23,
+              31,
+              147,
+              688
+            ]
           ],
           "second_candidate_original_ledger_points": 81,
           "second_candidate_exact_rank_test_relation": "u13*u45-u44=0",
           "symbolic_factorization_certified": false,
-          "second_candidate_adversarial_ranks_candidate_star_augmented": [3, 3, 4],
-          "full_M0_adversarial_rank_with_all_commutators": [131, 131],
+          "second_candidate_adversarial_ranks_candidate_star_augmented": [
+            3,
+            3,
+            4
+          ],
+          "full_M0_adversarial_rank_with_all_commutators": [
+            131,
+            131
+          ],
           "four_row_scout_global_claimed": false,
           "search_terminal": false
         },
@@ -1095,9 +1192,24 @@
           "semantic_digest_sha256": "5d1dae52b6f268b52e0deedccca405d49c92f8a01527f62b07c02bd239d1a875",
           "exact_evaluations": 83,
           "rejected_fixed4_candidates": [
-            [83, 147, 154, 688],
-            [23, 147, 154, 688],
-            [23, 31, 147, 688]
+            [
+              83,
+              147,
+              154,
+              688
+            ],
+            [
+              23,
+              147,
+              154,
+              688
+            ],
+            [
+              23,
+              31,
+              147,
+              688
+            ]
           ],
           "third_candidate_positive_adversarial_torus_factors": {
             "u12": "1/2",
@@ -1107,8 +1219,15 @@
             "u45": "2"
           },
           "third_candidate_exact_escape": "e_Q2",
-          "adversarial_candidate_star_augmented_ranks": [3, 3, 4],
-          "adversarial_full_M0_all_commutator_ranks": [131, 131],
+          "adversarial_candidate_star_augmented_ranks": [
+            3,
+            3,
+            4
+          ],
+          "adversarial_full_M0_all_commutator_ranks": [
+            131,
+            131
+          ],
           "full_common_core_witnesses_found": 0,
           "global_row_module_claimed": false,
           "predecessor_binding_kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
@@ -1119,12 +1238,20 @@
           "report": "reports/v0.4.2_sr2v_transverse_eq120_schur_chart_obligations.md",
           "verdict": "SR2V_TRANSVERSE_EQ120_SCHUR_CHART_STRONG_CERTIFICATE_CONTRACTS_CERTIFIED_NONTERMINAL",
           "semantic_digest_sha256": "c040fa5f4a1542becf5ba4579a2cefb5b0f224b910da1ec2da42bb77df44d644",
-          "non_aligned_charts": ["D(g2)", "D(g3)", "D(g4)"],
+          "non_aligned_charts": [
+            "D(g2)",
+            "D(g3)",
+            "D(g4)"
+          ],
           "non_aligned_obstruction_coordinate": "w",
           "non_aligned_exact_condition": "FOR_EACH_RESIDUE_FIELD_RANK_T_EQUALS_RANK_T_WITH_E_W",
           "strong_non_aligned_certificate": "e_w_IN_LOCALIZED_ROW_MODULE",
           "aligned_locus": "V(g2,g3,g4)_INTERSECT_D(r1-1)",
-          "aligned_obstruction_coordinates": ["w2", "w3", "w4"],
+          "aligned_obstruction_coordinates": [
+            "w2",
+            "w3",
+            "w4"
+          ],
           "automatic_safe_remainder": "V(g2,g3,g4,r1-1)",
           "Q5_fail_closed": true,
           "same_minor_reference_change_is_unit_scaling": true,
@@ -1140,7 +1267,20 @@
           "report": "reports/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.md",
           "verdict": "SR2V_TRANSVERSE_EQ120_THREE_PAIR_MINOR_SUBCOVER_EXACTLY_REJECTED_FULL_M0_SURVIVES_NONTERMINAL",
           "semantic_digest_sha256": "4efc456ac29986380f985aa7299b38fd17351f57ae87648b034aea6ae088208a",
-          "rejected_pair_minors": [[32, 120], [424, 544], [8, 14]],
+          "rejected_pair_minors": [
+            [
+              32,
+              120
+            ],
+            [
+              424,
+              544
+            ],
+            [
+              8,
+              14
+            ]
+          ],
           "common_zero_torus_factors": {
             "u12": "1",
             "u13": "1/2",
@@ -1148,11 +1288,26 @@
             "u44": "2",
             "u45": "2"
           },
-          "common_zero_ratio_chart_values_g": {"g2": "-1/2", "g3": "-1/2", "g4": "0"},
-          "common_zero_determinant_form_values_d": {"d2": "1/96", "d3": "1/256", "d4": "0"},
+          "common_zero_ratio_chart_values_g": {
+            "g2": "-1/2",
+            "g3": "-1/2",
+            "g4": "0"
+          },
+          "common_zero_determinant_form_values_d": {
+            "d2": "1/96",
+            "d3": "1/256",
+            "d4": "0"
+          },
           "normalization_identity": "d_i=a_Q1*b_Qi-a_Qi*b_Q1=-b_Q1*b_Qi*g_i",
-          "each_pair_candidate_star_augmented_ranks": [1, 1, 2],
-          "full_M0_all_commutator_ranks": [131, 131],
+          "each_pair_candidate_star_augmented_ranks": [
+            1,
+            1,
+            2
+          ],
+          "full_M0_all_commutator_ranks": [
+            131,
+            131
+          ],
           "three_minor_subcover_rejected": true,
           "Eq120_charts_or_full_M0_rejected": false,
           "predecessor_binding_kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
@@ -1176,8 +1331,16 @@
           "pivot_rows_with_nonzero_Q5_coefficient": 0,
           "global_Schur_rows_are_Q5_free": true,
           "four_semantic_branches_contain_M0_once_and_in_order": true,
-          "non_aligned_columns": ["h", "w"],
-          "aligned_columns": ["h", "w2", "w3", "w4"],
+          "non_aligned_columns": [
+            "h",
+            "w"
+          ],
+          "aligned_columns": [
+            "h",
+            "w2",
+            "w3",
+            "w4"
+          ],
           "non_aligned_ring": "S_k=R_base[g_k^-1]",
           "aligned_ring": "(R_base/(g2,g3,g4))[(r1-1)^-1]",
           "base_ring_kind": "UPPER_LAURENT_TORUS_OVER_BOTTOM_CSG_14_FACTOR_PRINCIPAL_OPEN_NOT_PURE_GM52",
@@ -1201,10 +1364,20 @@
           "machine_certified": {
             "canonical_predecessor_bindings": 4,
             "bottom_CSG_lambda_factor_count": 14,
-            "upper_kernel_shape": [49, 132],
-            "Q5_only_upper_columns": [48],
-            "Q5_only_upper_support": [131],
-            "dropped_spectators": ["bottom_q5", "s48"],
+            "upper_kernel_shape": [
+              49,
+              132
+            ],
+            "Q5_only_upper_columns": [
+              48
+            ],
+            "Q5_only_upper_support": [
+              131
+            ],
+            "dropped_spectators": [
+              "bottom_q5",
+              "s48"
+            ],
             "active_ring": "R52=QQ[t1,t2,t3,t4,s0,...,s47][(F_lambda*product(s0,...,s47))^-1]"
           },
           "resource_attempt_evidence": "MANUALLY_RECORDED_LOCAL_OBSERVATION_NOT_MACHINE_REPRODUCIBLE",
