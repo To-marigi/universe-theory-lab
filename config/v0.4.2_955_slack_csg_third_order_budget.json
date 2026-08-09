@@ -1,0 +1,27 @@
+{
+  "schema_version": "final-theory-v042-955-slack-csg-third-order-budget-v1",
+  "campaign": "955_CSG_FULL_SECOND_ORDER_JET_FIBER_THIRD_ORDER",
+  "field": "QQ",
+  "hard_memory_limit_bytes": 8589934592,
+  "soft_memory_limit_bytes": 4294967296,
+  "preflight_timeout_seconds": 600,
+  "audit_timeout_seconds": 3600,
+  "conservative_python_bytes_per_sparse_term": 512,
+  "fixed_runtime_reserve_bytes": 536870912,
+  "compatibility_basis_term_limit": 10000000,
+  "single_weighted_form_term_limit": 23226,
+  "total_add_scaled_source_term_visits_limit": 200000000,
+  "execution_rule": "AUTHORISE_ONLY_IF_PREFLIGHT_BASIS_ESTIMATE_AND_STREAM_LIMITS_FIT;_ABORT_FAIL_CLOSED_IF_ANY_AUDIT_CAP_IS_REACHED",
+  "authorised_operations": [
+    "EXACT_SPARSE_QQ_WEIGHTED_JET_EXPANSION",
+    "EXACT_SPARSE_QQ_SIMULTANEOUS_ROW_ELIMINATION",
+    "STREAMED_COMPATIBILITY_AND_Q_REMAINDER_CENSUS"
+  ],
+  "not_authorised": [
+    "GENERIC_GROEBNER_OR_SATURATION",
+    "FINITE_FIELD_CAMPAIGN",
+    "NUMERICAL_SOLVE",
+    "SAGE_SOLVE",
+    "DENSE_23226_COLUMN_MATRIX_MATERIALISATION"
+  ]
+}

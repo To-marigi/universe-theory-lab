@@ -76,7 +76,10 @@ core rowspace modulo rankが0、すなわちfirst-order escapeがないことを
 liftし、Q可換子24成分も全core lift上で二次まで消えることを証明した。これはCSG点の
 局所formal結果に限り、三次・remote component・full 955はopenである。三次では二次補正の
 49自由成分も保持し、20,825個の `z^3` と2,401個の `z*a`、計23,226候補monomialに対する
-疎性とメモリをpreflightしてから進む。
+疎性とメモリをpreflightした。その結果、raw coreは371,687項、独立Jacobian basisは
+31,761項・保守保存見積り約18 MB、従属行reduceの予測term visitsは約160万であった。
+8 GiB内のfail-closed stream監査を認可し、次は3,985 compatibility formsとQ三次remainderを
+実際にreduceする。dense 23,226-column戦略とgeneric solverは使用しない。
 
 ### 到達順序
 

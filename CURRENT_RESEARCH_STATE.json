@@ -76,6 +76,7 @@
     "v0.4.2_955_slack_term_preflight": "STREAMED_EXACT_476_COORDINATE_CORE_4412_SLOTS_4152_NONZERO_101200_TERMS_DEGREE9_NO_EXACT_LINEAR_EQUATIONS_16_TERMINAL_SLACK_BLIND_DIRECTIONS_NO_SOLVER_FULL_OPEN",
     "v0.4.2_955_slack_CSG_tangent": "EXACT_NONSINGULAR_N_NONZERO_CSG_INVERSE_IMAGE_CORE_JACOBIAN_RANK427_TANGENT_DIM49_Q_GRADIENT_RAW_RANK6_MODULO_CORE_RANK0_FIRST_ORDER_ESCAPE_BLOCKED_SUCCESSOR_CLOSES_SECOND_ORDER",
     "v0.4.2_955_slack_CSG_second_order": "EXACT_QQ_49D_KERNEL_ALL_3985_CORE_COMPATIBILITY_FORMS_ZERO_ALL_FIRST_ORDER_TANGENTS_LIFT_THROUGH_SECOND_ORDER_ALL_24_Q_INTRINSIC_QUADRATIC_FORMS_ZERO_THIRD_ORDER_AND_REMOTE_FULL_955_OPEN",
+    "v0.4.2_955_slack_CSG_third_order_preflight": "FULL_SECOND_ORDER_JET_FIBER_49_Z_PLUS49_A_WEIGHTED_MONOMIALS23226_RAW_CORE_TERMS371687_JACOBIAN_BASIS_TERMS31761_FAIL_CLOSED_8GIB_STREAM_AUDIT_AUTHORISED_NO_THIRD_ORDER_SCIENTIFIC_CLAIM",
     "v0.4.2_sr2v_aligned_principal_open": "EXACT_NONLINEAR_Y_ZERO_OBSTRUCTION_ON_NONEMPTY_DELTA_ALIGN_NONZERO_OPEN_SEARCH_OPEN",
     "v0.4.2_sr2v_transitive_extension_principal_open": "GENERIC_SPLITTING_CERTIFIED_FOR_TWO_CHARACTER_TRANSITIVE_PERCOLATION_FAMILY_EXCEPTIONAL_LOCUS_OPEN",
     "v0.4.2_sr2v_commutator_pivot_cover": "COMPLETE_SIX_PAIR_FOUR_BRANCH_STRUCTURAL_COVER_NO_BRANCH_SOLVED",
@@ -100,11 +101,10 @@
     "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN"
   },
   "affected_campaign": {
-    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_SECOND_ORDER_THIRD_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "PREFLIGHT_THEN_STREAM_THE_THIRD_ORDER_CORE_COMPATIBILITY_AND_Q_ESCAPE_AT_THE_CSG_POINT",
+    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_SECOND_ORDER_THIRD_ORDER_PREFLIGHT_SAFE_THIRD_ORDER_AND_REMOTE_FULL_955_OPEN",
+    "next_gate": "RUN_FAIL_CLOSED_STREAMED_THIRD_ORDER_CORE_COMPATIBILITY_AND_Q_ESCAPE_AUDIT",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
-      "CSG_BASEPOINT_THIRD_ORDER_SPARSE_TERM_AND_MEMORY_PREFLIGHT",
       "CSG_BASEPOINT_THIRD_ORDER_CORE_COMPATIBILITY_AND_Q_ESCAPE_AUDIT",
       "VERSIONED_BUDGET_ARTIFACT"
     ],
@@ -182,7 +182,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "At the exact nonsingular N-nonzero diagonal CSG point, the streamed core Jacobian has rank 427 and tangent dimension 49. Simultaneous exact QQ elimination of all 4,412 second-order core jets produces 3,985 dependent-Jacobian compatibility forms, every one identically zero, so every first-order tangent vector lifts through second order. All 24 Q-commutator scalar jets have zero intrinsic quadratic form after the same core elimination, so Q vanishes through order two on every core lift. The 16 terminal slack blind directions remain core- and Q-silent through order two, including zero raw restricted-quadratic occurrences. This is local and formal only: third order, convergence, remote components, Eq113/Eq139, and unrestricted source-native 955 remain open. At third order the full second-order jet fiber w=w_particular(z)+K*a must be retained: the candidate basis has 20,825 z-cubic plus 2,401 z-times-a monomials, total 23,226. The next gate is a versioned sparse term and memory preflight on this full fiber, followed by streamed third-order compatibility and Q-escape only if the budget is safe. No generic solver is authorised.",
+    "next_gate_description": "At the exact nonsingular N-nonzero diagonal CSG point, all 3,985 second-order compatibility forms vanish and Q is blocked through order two on every core lift. The required full second-order jet fiber w=w_particular(z)+K*a has 20,825 z-cubic plus 2,401 z-times-a monomials. Its exact preflight streamed all 4,412 raw core third jets: 2,706 are nonzero with 371,687 total terms and maximum 502 per form. The 427 independent Jacobian-basis third jets have only 31,761 terms, a conservative Python storage estimate of 18,010,624 bytes, and predict 1,602,836 source-term visits for the dependent reductions. A fail-closed streamed audit capped at 10,000,000 compatibility-basis terms has a conservative 5,673,132,544-byte peak below the 8 GiB hard limit; the 47,925,343,232-byte unbounded dense strategy is rejected. The next gate is therefore the bounded exact reduction of all 3,985 third-order compatibility forms followed by the 24 Q remainders. This preflight made no third-order obstruction or Q claim. Third order, convergence, remote components, Eq113/Eq139, and unrestricted source-native 955 remain open; no generic solver is authorised.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -477,6 +477,47 @@
       },
       "third_order_open": true,
       "remote_components_open": true,
+      "solver_run": false,
+      "unrestricted_source_native_955_status": "OPEN"
+    },
+    "slack_CSG_third_order_preflight": {
+      "artifact": "results/v0.4.2_955_slack_csg_third_order_preflight.json",
+      "report": "reports/v0.4.2_955_slack_csg_third_order_preflight.md",
+      "module": "src/universe_lab/final_theory/source_native_955_slack_csg_third_order_preflight_v042.py",
+      "budget": "config/v0.4.2_955_slack_csg_third_order_budget.json",
+      "schema_version": "final-theory-v042-955-slack-csg-third-order-preflight-v1",
+      "verdict": "V042_955_SLACK_CSG_THIRD_ORDER_FULL_JET_FIBER_PREFLIGHT_CERTIFIED",
+      "semantic_digest_sha256": "a7cac5ae64b3debdc8c98e5df18ba739b87b37fca91715f9c5236f14b56cf490",
+      "full_second_order_jet_fibre": {
+        "first_order_variables_z": 49,
+        "second_order_fibre_variables_a": 49,
+        "coordinate_model": "w=w_particular(z)+K*a",
+        "z_cubic_monomials": 20825,
+        "z_times_a_monomials": 2401,
+        "total_weighted_monomials": 23226,
+        "particular_quadratic_terms": 5111
+      },
+      "raw_core_third_stream": {
+        "scalar_slots": 4412,
+        "nonzero_forms": 2706,
+        "total_terms": 371687,
+        "maximum_terms_one_form": 502
+      },
+      "Jacobian_basis_third_jets": {
+        "rank": 427,
+        "total_terms": 31761,
+        "conservative_python_storage_estimate_bytes": 18010624,
+        "predicted_dependent_source_term_visits": 1602836,
+        "dependent_compatibility_reductions_executed": 0
+      },
+      "budget_decision": {
+        "hard_memory_limit_bytes": 8589934592,
+        "bounded_peak_estimate_bytes": 5673132544,
+        "unbounded_dense_worst_case_bytes": 47925343232,
+        "unbounded_dense_strategy_rejected": true,
+        "fail_closed_streamed_audit_authorised": true
+      },
+      "third_order_scientific_claim_made": false,
       "solver_run": false,
       "unrestricted_source_native_955_status": "OPEN"
     },
@@ -1194,6 +1235,10 @@
     "reports/v0.4.2_955_slack_csg_second_order.md",
     "results/v0.4.2_955_slack_csg_second_order.json",
     "src/universe_lab/final_theory/source_native_955_slack_csg_second_order_v042.py",
+    "reports/v0.4.2_955_slack_csg_third_order_preflight.md",
+    "results/v0.4.2_955_slack_csg_third_order_preflight.json",
+    "src/universe_lab/final_theory/source_native_955_slack_csg_third_order_preflight_v042.py",
+    "config/v0.4.2_955_slack_csg_third_order_budget.json",
     "reports/v0.4.2_955_n_nonzero_scout.md",
     "reports/v0.4.2_955_mixed_source_native_manifest.md",
     "reports/v0.4.2_955_mixed_xy_tangent_scout.md",
@@ -1242,6 +1287,7 @@
     "tests/final_theory/test_v042_955_slack_term_preflight.py",
     "tests/final_theory/test_v042_955_slack_csg_tangent.py",
     "tests/final_theory/test_v042_955_slack_csg_second_order.py",
+    "tests/final_theory/test_v042_955_slack_csg_third_order_preflight.py",
     "tests/final_theory/test_v041_partial_slice_audit.py",
     "tests/final_theory/test_weak_d2_observability_v042.py",
     "tests/final_theory/test_semantic_recovery_v042.py",

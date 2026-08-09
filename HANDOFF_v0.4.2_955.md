@@ -5,7 +5,7 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、七つのゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、八つのゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -28,7 +28,9 @@ reduce してから scout する」という趣旨の記述は、本文書が上
               Q gradient raw rank 6 / modulo core rank 0、first-order escapeなし
 新ゲート7     CSG second order      3,985 compatibility forms全て0、全tangentが二次lift
               Q intrinsic quadratic forms 24/24で0、二次escapeなし
-次ゲート      full二次jet fiberの三次23,226候補monomial preflight → 安全なら三次監査
+新ゲート8     third-order preflight full二次jet fiber、raw 371,687項、basis 31,761項
+              bounded stream 5.67 GB < 8 GiB、dense 47.9 GBは却下
+次ゲート      fail-closed三次compatibility 3,985本 + Q remainder 24本のexact監査
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -484,9 +486,64 @@ field / numerical / Sageは全て0。full 955は `OPEN`。
 versioned preflightを作る。安全なら三次core compatibilityとQ escapeへ進む。安全な8 GiB
 budgetを立てられなければ、資源限界終端候補を記録して無理にsolverを走らせない。
 
+このpreflightはゲート8として完了し、fail-closed三次監査が予算内と判定された。
+
 ---
 
-## 10. 破棄された計画
+## 10. ゲート8: full second-order jet fibre三次preflight
+
+```
+artifact  results/v0.4.2_955_slack_csg_third_order_preflight.json
+report    reports/v0.4.2_955_slack_csg_third_order_preflight.md
+module    src/universe_lab/final_theory/source_native_955_slack_csg_third_order_preflight_v042.py
+budget    config/v0.4.2_955_slack_csg_third_order_budget.json
+digest    a7cac5ae64b3debdc8c98e5df18ba739b87b37fca91715f9c5236f14b56cf490
+verdict   V042_955_SLACK_CSG_THIRD_ORDER_FULL_JET_FIBER_PREFLIGHT_CERTIFIED
+```
+
+```powershell
+uv run python -m universe_lab.final_theory.source_native_955_slack_csg_third_order_preflight_v042
+uv run pytest tests/final_theory/test_v042_955_slack_csg_third_order_preflight.py -q
+```
+
+### 10.1 三次で保持すべきfiber
+
+`z` だけを三次へ上げるのは誤り。二次補正は
+
+```text
+w = w_particular(z) + K a
+```
+
+で、49個のhomogeneous fibre変数 `a` を持つ。weight 3の候補は `z^3` 20,825個と
+`z*a` 2,401個、計23,226。canonical `w_particular` は476座標中268 nonzero forms、
+総5,111 quadratic terms、最大62項。全4,412 raw core二次式を再検査してfailures 0。
+
+### 10.2 exact streamed census
+
+```text
+raw core third forms       2,706 nonzero / 4,412 slots
+raw weighted terms         371,687 = 252,521 z^3 + 119,166 z*a
+maximum raw terms/form     502
+Jacobian basis forms       427
+Jacobian basis terms       31,761
+conservative basis bytes   18,010,624
+predicted dependent visits 1,602,836
+raw Q third forms          6 nonzero / 24 slots, 458 terms
+```
+
+Qの6 nonzeroは**raw**でありcore reduction前。escapeとは解釈しない。従属3,985行も
+compatibility reduceしていないため、本ゲートに三次の科学的結論はない。
+
+### 10.3 budget判定と実行規則
+
+8 GiB hard limitに対し、10,000,000 compatibility-basis-term cap付きstream監査は
+保守peak 5,673,132,544 bytes。dense worst caseは47,925,343,232 bytesなので禁止。
+単一form 23,226項、source-term visits 200,000,000回、compatibility basis 10,000,000項の
+いずれかへ達したらfail closed。予算内なので次の三次exact auditを認可した。
+
+---
+
+## 11. 破棄された計画
 
 **「131 patch を構造的基準で選んで exact scout する」は不要になった。**
 ゲート2が patch を一つも開かずに探索空間を落としたため。ゲート1の成果物に
@@ -495,7 +552,7 @@ budgetを立てられなければ、資源限界終端候補を記録して無�
 
 ---
 
-## 11. 罠 — 範囲と後続で踏みやすい点
+## 12. 罠 — 範囲と後続で踏みやすい点
 
 - **ゲート2の46変数系だけには非特異条件が入っていない。** ただしゲート3は
   `det(A_e) = p_e - x_[e]*y_[e] != 0` を131因子・165 occurrence 全て持ち込み、
@@ -517,7 +574,7 @@ budgetを立てられなければ、資源限界終端候補を記録して無�
 
 ---
 
-## 12. 既存の不具合（本セッション由来ではない）
+## 13. 既存の不具合（本セッション由来ではない）
 
 ```
 5 failed, 8 errors — tests/final_theory/test_line_ending_bridge_v038.py
@@ -544,31 +601,32 @@ bridge する方式である。
 
 ---
 
-## 13. 検証コマンド（コスト順）
+## 14. 検証コマンド（コスト順）
 
 ```powershell
 uv run ruff check .
-uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py tests/final_theory/test_v042_955_slack_term_preflight.py tests/final_theory/test_v042_955_slack_csg_tangent.py tests/final_theory/test_v042_955_slack_csg_second_order.py -q
+uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py tests/final_theory/test_v042_955_slack_term_preflight.py tests/final_theory/test_v042_955_slack_csg_tangent.py tests/final_theory/test_v042_955_slack_csg_second_order.py tests/final_theory/test_v042_955_slack_csg_third_order_preflight.py -q
 uv run pytest -q
 ```
 
-七ゲートの新規テストは 55 件。うち独立検証として、核基底を manifest の生の行と直接
+八ゲートの新規テストは 62 件。うち独立検証として、核基底を manifest の生の行と直接
 内積で検査するもの（`test_kernel_basis_is_independently_verified_against_the_manifest_rows`）と、
 二重次数を成果物を介さず manifest から再計測するもの、一般17パラメータ族で
 1,933成分を再代入するもの、timid recurrence から次数 histogram を再構成するもの、
 24 timid residualをreachable stateへ再作用して48成分の零を再検査するもの、
 3,890 raw core Jacobian rowsへ12 Q-gradient rowsを再reduceするもの、二次形式抽出を
-2変数の手計算oracleと照合するものを含む。
+2変数の手計算oracleと照合するもの、weighted三次抽出を手計算oracleと照合するものを含む。
 
 ---
 
-## 14. AI 開示
+## 15. AI 開示
 
-ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4・5・6・7の
+ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4・5・6・7・8の
 モジュール・テスト・報告・引き継ぎ更新は OpenAI Codex が作成した。Luna は
 読み取り専用のブランチ／不要ファイル棚卸しと、ゲート4の数値・digest・適用体境界の
 独立再検算、ゲート5で再利用可能な疎多項式・stream・budget実装の探索、ゲート7の
-数値・digest・結論範囲の読み取り専用監査を担当した。
+数値・digest・結論範囲の読み取り専用監査、ゲート8で三次helper候補のread-only探索を
+担当した。
 人間の著者が範囲を選択し内容に責任を負う。
 `CONTRIBUTING.md` の「どのツールがどの部分か」要件に対応する記録である。
 
