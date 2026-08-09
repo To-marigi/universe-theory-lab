@@ -34,20 +34,29 @@ PDF_BUILD_REPORT_PATH = "reports/v0.4.2_paper1_pdf_build_2026-08-07.md"
 REPOSITORY_URL = "https://github.com/To-marigi/universe-theory-lab"
 OWNER_DECISION_ARTIFACT_PATH = "zenodo/paper1-v0.4.2/owner_decision.json"
 PREVIOUS_OWNER_DECISION_REPORT_PATH = (
-    "reports/v0.4.2_paper1_owner_decision_2026-08-06.md"
-)
-OWNER_DECISION_REPORT_PATH = (
     "reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md"
 )
-# Kept in step with the builder: the 2026-08-07 amendment also supersedes the
-# final-PDF source binding, because the PDF was rebuilt after the wording audit.
+OWNER_DECISION_REPORT_PATH = (
+    "reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md"
+)
+# Kept in step with the builder: the 2026-08-09 amendment supersedes only the
+# publication_date, doi, final_commit, release_gates, and status portions of
+# the 2026-08-07 decision, now that Paper I v0.4.2 has actually been
+# published on Zenodo.
 OWNER_DECISION_AMENDMENT_SCOPE = [
-    "upload_layout",
-    "doi_handling",
-    "final_pdf_source_binding",
+    "publication_date",
+    "doi",
+    "final_commit",
+    "release_gates",
+    "status",
 ]
 DOI_POLICY = "NO_DRAFT_RESERVATION_ZENODO_REGISTERS_DOI_AT_PUBLICATION"
-DOI_STATUS = "NO_DRAFT_RESERVATION_DOI_PENDING_PUBLICATION"
+DOI_STATUS = "DOI_REGISTERED_AT_PUBLICATION"
+OWNER_DECISION_STATUS = "OWNER_DECISIONS_RECORDED_AND_PUBLISHED"
+PUBLISHED_VERSION_DOI = "10.5281/zenodo.21861533"
+PUBLISHED_CONCEPT_DOI = "10.5281/zenodo.21861532"
+PUBLISHED_FINAL_COMMIT = "1ba7a1e3e92d91edaca34f357d7cc6a2a2105ff2"
+PUBLICATION_DATE = "2026-08-09"
 ZENODO_PREDRAFT_REPORT_PATH = (
     "reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260807T1600Z.md"
 )
@@ -345,16 +354,16 @@ def _metadata_binding_ok(
         errors.append("metadata worksheet recommendation drifted")
     if template.get("related_identifiers") != []:
         errors.append("metadata relation list is not empty by default")
-    if template.get("status") != "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING":
+    if template.get("status") != OWNER_DECISION_STATUS:
         errors.append("metadata owner-decision status drifted")
-    if template.get("publication_date") is not None:
-        errors.append("metadata publication_date is not null")
+    if template.get("publication_date") != PUBLICATION_DATE:
+        errors.append("metadata publication_date does not match the recorded publication date")
     if template.get("license") != "CC BY 4.0":
         errors.append("metadata Paper I license is not CC BY 4.0")
-    if template.get("doi") is not None:
-        errors.append("metadata DOI is not null until Zenodo publication")
-    if template.get("final_commit") is not None:
-        errors.append("metadata final_commit is not null before external binding")
+    if template.get("doi") != PUBLISHED_VERSION_DOI:
+        errors.append("metadata DOI does not match the published version DOI")
+    if template.get("final_commit") != PUBLISHED_FINAL_COMMIT:
+        errors.append("metadata final_commit does not match the published packaged commit")
     keywords = template.get("keywords")
     required_keywords = {
         "causal sets",
@@ -461,13 +470,14 @@ def _metadata_binding_ok(
         },
         "publication_date": {
             "policy": "actual_zenodo_publication_date",
-            "value": None,
-            "status": "VALUE_PENDING_PUBLICATION",
+            "value": PUBLICATION_DATE,
+            "status": "ACTUAL_PUBLICATION_DATE_RECORDED",
         },
         "doi": {
             "policy": DOI_POLICY,
             "draft_reservation_requested": False,
-            "value": None,
+            "value": PUBLISHED_VERSION_DOI,
+            "concept_doi": PUBLISHED_CONCEPT_DOI,
             "status": DOI_STATUS,
         },
         "related_identifiers": {
@@ -477,15 +487,15 @@ def _metadata_binding_ok(
         },
         "final_commit": {
             "policy": "external_at_deposit_build_cycle",
-            "value": None,
-            "status": "VALUE_PENDING_SELECTED_COMMIT",
+            "value": PUBLISHED_FINAL_COMMIT,
+            "status": "COMMIT_RECORDED_AT_PUBLICATION",
         },
     }
     if owner_decisions != expected_decisions:
         errors.append("owner decision choices drifted")
     if owner.get("decision_date") != "2026-08-07":
         errors.append("owner decision date drifted")
-    if owner.get("status") != "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING":
+    if owner.get("status") != OWNER_DECISION_STATUS:
         errors.append("owner decision release status drifted")
     authority = owner.get("authority")
     if not isinstance(authority, dict) or (
@@ -497,12 +507,13 @@ def _metadata_binding_ok(
     elif authority.get("amendment_scope") != OWNER_DECISION_AMENDMENT_SCOPE:
         errors.append("owner decision amendment scope drifted")
     expected_gates = {
-        "draft_created": False,
+        "draft_created": True,
         "doi_reserved": False,
-        "freeze_executed": False,
-        "submission_approved": False,
-        "deposit_executed": False,
-        "published": False,
+        "doi_registered": True,
+        "freeze_executed": True,
+        "submission_approved": True,
+        "deposit_executed": True,
+        "published": True,
     }
     if owner.get("release_gates") != expected_gates:
         errors.append("owner decision release gates drifted")
@@ -538,26 +549,21 @@ def _metadata_binding_ok(
             errors.append("PDF binding disagrees with accepted owner decision")
     report_text = owner_report_bytes.decode("utf-8", errors="replace")
     for fragment in (
-        "# Paper I v0.4.2 owner decision amendment — 2026-08-07",
+        "# Paper I v0.4.2 owner decision amendment — 2026-08-09",
+        "only the publication_date, doi, final_commit, release_gates, and status",
         OWNER_DECISION_PDF_SHA256,
-        "CC BY 4.0",
-        "supersedes only the upload-layout, DOI",
-        "final-PDF source-binding portions of the earlier record",
-        "The final PDF was rebuilt twice on this date",
-        "the owner completed its all-page visual QA",
-        "The owner directed the second change and its rebuild.",
-        "Owner acceptance of these exact bytes is now recorded.",
-        "The production upload list is",
-        "exactly `paper1_statewise_operator_v0.4.2.pdf`",
-        "paper1_statewise_operator_v0.4.2.pdf",
-        "paper1_statewise_operator_v0.4.2_supplement.tar.gz",
-        "DOI policy is **no draft reservation**",
-        "No, I need one",
-        "Zenodo assigns/registers the DOI at publication",
-        "No Zenodo form value or file was submitted or saved.",
-        "Draft creation,",
-        "publication have not been",
-        "No DOI reservation is requested.",
+        "https://zenodo.org/records/21861533",
+        PUBLISHED_VERSION_DOI,
+        PUBLISHED_CONCEPT_DOI,
+        PUBLISHED_FINAL_COMMIT,
+        "2eb3b1f842916f18ee01f8f1a4657a5b8bea5ce93e6fe558c62214a9d2c176dc",
+        "reports/v0.4.2_paper1_zenodo_publication_readback_2026-08-09.md",
+        "doi_reserved",
+        "doi_registered",
+        "freeze_executed",
+        "release_actions_not_authorized",
+        "the owner's own direct action on",
+        "This record does not rebuild or re-upload anything.",
     ):
         if fragment not in report_text:
             errors.append(f"owner decision report lacks {fragment!r}")
@@ -607,8 +613,10 @@ def _source_commit_binding_errors(
 
     if status != "PRODUCTION_COMMIT_BOUND":
         errors.append("source_commit_binding status is not production-bound")
-    if manifest.get("status") != "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING":
-        errors.append("production source binding requires the owner-pending manifest status")
+    if manifest.get("status") != OWNER_DECISION_STATUS:
+        errors.append(
+            "production source binding requires the current owner-decision manifest status"
+        )
     commit = binding.get("commit")
     if not isinstance(commit, str) or re.fullmatch(r"[0-9a-f]{40}", commit) is None:
         errors.append("production source binding commit must be a full 40-hex revision")
@@ -996,8 +1004,7 @@ def verify_supplement_archive(
                 metadata_errors.append("supplement owner release gates drifted")
     passed = bool(
         manifest.get("schema_version") == SUPPLEMENT_SCHEMA_VERSION
-        and manifest.get("status")
-        == "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING"
+        and manifest.get("status") == OWNER_DECISION_STATUS
         and manifest.get("self_excluded_artifact") == SUPPLEMENT_MANIFEST_PATH
         and manifest.get("file_count") == len(expected)
         and manifest.get("recommended_upload_type") == "Publication / Preprint"

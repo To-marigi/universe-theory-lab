@@ -52,18 +52,20 @@ PDF_BUILD_REPORT_PATH = "reports/v0.4.2_paper1_pdf_build_2026-08-07.md"
 REPOSITORY_URL = "https://github.com/To-marigi/universe-theory-lab"
 OWNER_DECISION_ARTIFACT_PATH = "zenodo/paper1-v0.4.2/owner_decision.json"
 PREVIOUS_OWNER_DECISION_REPORT_PATH = (
-    "reports/v0.4.2_paper1_owner_decision_2026-08-06.md"
-)
-OWNER_DECISION_REPORT_PATH = (
     "reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md"
 )
-# The 2026-08-07 amendment supersedes the upload-layout, DOI-handling, and
-# final-PDF source-binding portions of the 2026-08-06 decision.  The third
-# scope was added when the manuscript was rebuilt after the Sol wording audit.
+OWNER_DECISION_REPORT_PATH = (
+    "reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md"
+)
+# The 2026-08-09 amendment supersedes only the publication_date, doi,
+# final_commit, release_gates, and status portions of the 2026-08-07
+# decision, now that Paper I v0.4.2 has actually been published on Zenodo.
 OWNER_DECISION_AMENDMENT_SCOPE = [
-    "upload_layout",
-    "doi_handling",
-    "final_pdf_source_binding",
+    "publication_date",
+    "doi",
+    "final_commit",
+    "release_gates",
+    "status",
 ]
 METADATA_TEMPLATE_PATH = "zenodo/paper1-v0.4.2/metadata.template.json"
 ZENODO_FORM_VALUES_PATH = "zenodo/paper1-v0.4.2/ZENODO_FORM_VALUES.md"
@@ -71,7 +73,12 @@ ZENODO_SUBMISSION_POLICY_NOTE_PATH = (
     "references/notes/v0.4.2_paper1_zenodo_submission_policy_2026-08-07.md"
 )
 DOI_POLICY = "NO_DRAFT_RESERVATION_ZENODO_REGISTERS_DOI_AT_PUBLICATION"
-DOI_STATUS = "NO_DRAFT_RESERVATION_DOI_PENDING_PUBLICATION"
+DOI_STATUS = "DOI_REGISTERED_AT_PUBLICATION"
+OWNER_DECISION_STATUS = "OWNER_DECISIONS_RECORDED_AND_PUBLISHED"
+PUBLISHED_VERSION_DOI = "10.5281/zenodo.21861533"
+PUBLISHED_CONCEPT_DOI = "10.5281/zenodo.21861532"
+PUBLISHED_FINAL_COMMIT = "1ba7a1e3e92d91edaca34f357d7cc6a2a2105ff2"
+PUBLICATION_DATE = "2026-08-09"
 ZENODO_LITERATURE_REPORT_PATH = "reports/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md"
 ZENODO_LITERATURE_NOTE_PATH = (
     "references/notes/v0.4.2_paper1_zenodo_literature_gate_2026-08-06.md"
@@ -579,7 +586,7 @@ def _validate_owner_decision(
         raise RuntimeError("owner decision artifact semantic digest is invalid")
     if artifact.get("decision_date") != "2026-08-07":
         raise RuntimeError("owner decision date drifted")
-    if artifact.get("status") != "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING":
+    if artifact.get("status") != OWNER_DECISION_STATUS:
         raise RuntimeError("owner decision artifact status drifted")
     authority = artifact.get("authority")
     if not isinstance(authority, dict) or (
@@ -630,14 +637,15 @@ def _validate_owner_decision(
         raise RuntimeError("owner decision license policy drifted")
     if decisions.get("publication_date") != {
         "policy": "actual_zenodo_publication_date",
-        "value": None,
-        "status": "VALUE_PENDING_PUBLICATION",
+        "value": PUBLICATION_DATE,
+        "status": "ACTUAL_PUBLICATION_DATE_RECORDED",
     }:
         raise RuntimeError("owner decision publication-date policy drifted")
     if decisions.get("doi") != {
         "policy": DOI_POLICY,
         "draft_reservation_requested": False,
-        "value": None,
+        "value": PUBLISHED_VERSION_DOI,
+        "concept_doi": PUBLISHED_CONCEPT_DOI,
         "status": DOI_STATUS,
     }:
         raise RuntimeError("owner decision DOI policy drifted")
@@ -649,48 +657,41 @@ def _validate_owner_decision(
         raise RuntimeError("owner decision related-identifiers policy drifted")
     if decisions.get("final_commit") != {
         "policy": "external_at_deposit_build_cycle",
-        "value": None,
-        "status": "VALUE_PENDING_SELECTED_COMMIT",
+        "value": PUBLISHED_FINAL_COMMIT,
+        "status": "COMMIT_RECORDED_AT_PUBLICATION",
     }:
         raise RuntimeError("owner decision final-commit policy drifted")
     expected_gates = {
-        "draft_created": False,
+        "draft_created": True,
         "doi_reserved": False,
-        "freeze_executed": False,
-        "submission_approved": False,
-        "deposit_executed": False,
-        "published": False,
+        "doi_registered": True,
+        "freeze_executed": True,
+        "submission_approved": True,
+        "deposit_executed": True,
+        "published": True,
     }
     if artifact.get("release_gates") != expected_gates:
-        raise RuntimeError("owner decision release gates must remain unexecuted")
+        raise RuntimeError("owner decision release gates do not match the published record")
     try:
         report = report_path.read_text(encoding="utf-8")
     except OSError as exc:
         raise RuntimeError(f"owner decision report cannot be read: {exc}") from exc
     required_report_fragments = (
-        "# Paper I v0.4.2 owner decision amendment — 2026-08-07",
+        "# Paper I v0.4.2 owner decision amendment — 2026-08-09",
+        "only the publication_date, doi, final_commit, release_gates, and status",
         OWNER_DECISION_PDF_SHA256,
-        "CC BY 4.0",
-        "supersedes only the upload-layout, DOI",
-        "final-PDF source-binding portions of the earlier record",
-        "The final PDF was rebuilt twice on this date",
-        "the owner completed its all-page visual QA",
-        "The owner directed the second change and its rebuild.",
-        "Owner acceptance of these exact bytes is now recorded.",
-        "The production upload list is",
-        "exactly `paper1_statewise_operator_v0.4.2.pdf`",
-        "paper1_statewise_operator_v0.4.2.pdf",
-        "paper1_statewise_operator_v0.4.2_supplement.tar.gz",
-        "actual first-public Zenodo date",
-        "DOI policy is **no draft reservation**",
-        "No, I need one",
-        "Zenodo assigns/registers the DOI at publication",
-        "Initial related identifiers remain the approved empty list (`[]`).",
-        "exact source commit remains an external deposit/build-cycle value",
-        "No Zenodo form value or file was submitted or saved.",
-        "Draft creation,",
-        "publication have not been",
-        "No DOI reservation is requested.",
+        "https://zenodo.org/records/21861533",
+        PUBLISHED_VERSION_DOI,
+        PUBLISHED_CONCEPT_DOI,
+        PUBLISHED_FINAL_COMMIT,
+        "2eb3b1f842916f18ee01f8f1a4657a5b8bea5ce93e6fe558c62214a9d2c176dc",
+        "reports/v0.4.2_paper1_zenodo_publication_readback_2026-08-09.md",
+        "doi_reserved",
+        "doi_registered",
+        "freeze_executed",
+        "release_actions_not_authorized",
+        "the owner's own direct action on",
+        "This record does not rebuild or re-upload anything.",
     )
     missing_report_fragments = [
         fragment for fragment in required_report_fragments if fragment not in report
@@ -766,7 +767,7 @@ def _validate_metadata_template(
     ]
     if missing:
         raise RuntimeError(f"metadata description is missing required fragments: {missing}")
-    if template.get("status") != "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING":
+    if template.get("status") != OWNER_DECISION_STATUS:
         raise RuntimeError("metadata template owner-decision status drifted")
     if template.get("template_role") != "UI worksheet only; not a Zenodo API payload":
         raise RuntimeError("metadata template is not marked as a non-API worksheet")
@@ -790,14 +791,14 @@ def _validate_metadata_template(
         raise RuntimeError("metadata worksheet creator identity drifted")
     if template.get("related_identifiers") != []:
         raise RuntimeError("metadata worksheet must leave related_identifiers empty")
-    if template.get("publication_date") is not None:
-        raise RuntimeError("metadata publication_date must remain null before Zenodo publication")
+    if template.get("publication_date") != PUBLICATION_DATE:
+        raise RuntimeError("metadata publication_date must match the recorded publication date")
     if template.get("license") != "CC BY 4.0":
         raise RuntimeError("Paper I metadata license must be CC BY 4.0")
-    if template.get("doi") is not None:
-        raise RuntimeError("metadata DOI must remain null until Zenodo publication")
-    if template.get("final_commit") is not None:
-        raise RuntimeError("metadata final_commit must remain null until the external build cycle")
+    if template.get("doi") != PUBLISHED_VERSION_DOI:
+        raise RuntimeError("metadata DOI must match the published version DOI")
+    if template.get("final_commit") != PUBLISHED_FINAL_COMMIT:
+        raise RuntimeError("metadata final_commit must match the published packaged commit")
     keywords = template.get("keywords")
     if not isinstance(keywords, list) or not REQUIRED_METADATA_KEYWORDS <= set(keywords):
         raise RuntimeError(
@@ -1377,9 +1378,7 @@ def _supplement_manifest(
     payload: dict[str, Any] = {
         "schema_version": SUPPLEMENT_SCHEMA_VERSION,
         "bundle_version": BUNDLE_VERSION,
-        "status": "UNBOUND_PREVIEW"
-        if preview
-        else "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING",
+        "status": "UNBOUND_PREVIEW" if preview else OWNER_DECISION_STATUS,
         "title": PAPER_TITLE,
         "primary_resource": "Paper I preprint",
         "recommended_upload_type": "Publication / Preprint",

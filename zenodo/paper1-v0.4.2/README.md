@@ -6,10 +6,21 @@ Paper I:
 *Statewise versus operator Bell causality in finite quantum sequential growth:
 exact separation and recovery at dimension two*.
 
-The tools package and verify bytes locally.  They do not authorize a
-publication, call Zenodo, or change the repository's scientific files.  The
-metadata worksheet still requires owner confirmation of publication date,
-final Git commit, relations, and DOI.  The Paper I license decision is already
+**Paper I v0.4.2 is published.** The owner published this record directly on
+Zenodo on 2026-08-09: https://zenodo.org/records/21861533, version DOI
+`10.5281/zenodo.21861533`, concept DOI `10.5281/zenodo.21861532`, packaged
+commit `1ba7a1e3e92d91edaca34f357d7cc6a2a2105ff2`. See
+`reports/v0.4.2_paper1_zenodo_publication_readback_2026-08-09.md` for the
+three-way readback verification and
+`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md` for the
+resulting owner decision record. The tools below remain useful for local
+integrity re-verification and for preparing a future version, but they no
+longer gate an unperformed release for this version.
+
+The tools package and verify bytes locally.  They do not call Zenodo or
+change the repository's scientific files.  The metadata worksheet now
+records the actual publication date, final Git commit, relations, and DOI
+for this published version.  The Paper I license decision is already
 recorded as CC BY 4.0; the repository software license remains MIT.
 
 The command-line builder requires an explicit source binding choice:
@@ -40,18 +51,19 @@ source list, so this binding does not create a circular hash.
 
 The machine-readable owner decision is
 `zenodo/paper1-v0.4.2/owner_decision.json`, with the dated human record at
-`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md`; that amendment
-preserves and links the superseded 2026-08-06 record.  It binds acceptance of
-the current 18-page, 428286-byte PDF (SHA-256
+`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md`; that amendment
+preserves and links the superseded 2026-08-07 record.  It binds acceptance of
+the published 18-page, 428286-byte PDF (SHA-256
 `c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`), the
-PDF-plus-supplement layout, CC BY 4.0, the actual-publication-date policy,
-no-draft-reservation DOI policy, an initial empty relation list, and the
-external-at-deposit commit policy.  Current publication date, DOI, and commit
-values remain null in the metadata worksheet; the selected production commit
-is nevertheless recorded inside the supplement manifest and external receipt.
-Draft creation, freeze, submission, deposit, and
-publication remain unperformed and unauthorized; no DOI reservation is
-requested.
+PDF-plus-supplement layout, CC BY 4.0, the now-known actual publication date
+`2026-08-09`, the registered version DOI `10.5281/zenodo.21861533` (no draft
+reservation was used; Zenodo registered it at publication as the policy
+specified), an initial empty relation list, and the packaged commit
+`1ba7a1e3e92d91edaca34f357d7cc6a2a2105ff2`.  The metadata worksheet now
+carries these same values.  `draft_created`, `submission_approved`,
+`deposit_executed`, `published`, and `doi_registered` are all now `true` in
+`release_gates`; `doi_reserved` stays `false`, because no draft reservation
+was ever requested or used.
 
 The final PDF is read-only input.  The builder copies only
 `output/pdf/paper1_statewise_operator_v0.4.2.pdf`, whose source/report binding
@@ -80,13 +92,15 @@ and both tracked records remain at `v1`. See
 `reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260807T1600Z.md`
 for the full reviewed delta.
 
-**Owner acceptance of the current PDF bytes is recorded.** The all-page visual
-QA of the current bytes was performed by the assistant session that made the
-last addition, not by the owner directly; the owner separately accepted these
-exact bytes, and the amendment report and both the builder and verifier record
-and fail closed on that acceptance. This still does not by itself authorize
-draft-save. All release gates remain false and `remote_visibility` remains
-`NOT_VERIFIED_BY_BUILDER` until an owner separately verifies it.
+**Owner acceptance of the current PDF bytes is recorded, and this candidate
+is now published.** The all-page visual QA of the current bytes was
+performed by the assistant session that made the last addition, not by the
+owner directly; the owner separately accepted these exact bytes, and the
+amendment report and both the builder and verifier record and fail closed on
+that acceptance. `remote_visibility` remains `NOT_VERIFIED_BY_BUILDER` in the
+locally built bundle's manifest, because the builder itself never checks
+remote Git visibility; this is unrelated to Zenodo publication, which the
+owner performed directly.
 
 The `2026-08-06T2315Z` report and research note are retained only as the
 documented historical predecessor in the supplement, superseding the earlier
@@ -96,18 +110,20 @@ retrieval receipt, and normalized ledgers for all gates remain excluded. A
 later draft-save attempt, manuscript freeze, or deposit still requires a
 freshly timestamped gate if meaningful time has passed since this one.
 
-## Recorded owner policies and pending release actions
+## Recorded owner policies and release state
 
 `metadata.template.json` remains a UI worksheet, not a Zenodo API payload.  It
-records the approved CC BY 4.0 Paper I license and initial empty relations.
-`publication_date`, `doi`, and `final_commit` remain null under their approved
-policies (actual Zenodo publication date, **no draft DOI reservation** with
-Zenodo assigning/registering the DOI at publication, and external commit
-binding at the deposit/build cycle).  The owner decision
+records the approved CC BY 4.0 Paper I license, initial empty relations, and
+now the actual `publication_date` (`2026-08-09`), `doi`
+(`10.5281/zenodo.21861533`), and `final_commit`
+(`1ba7a1e3e92d91edaca34f357d7cc6a2a2105ff2`) for the published record, per the
+already-approved policies (actual Zenodo publication date, **no draft DOI
+reservation** with Zenodo assigning/registering the DOI at publication, and
+external commit binding at the deposit/build cycle).  The owner decision
 artifact and dated report are checked into the supplement and fail closed if
-their hashes, policies, or release gates drift.  Draft creation, manuscript
-freeze, submission approval, deposit, and publication are still unperformed
-and unauthorized; no DOI reservation is requested.
+their hashes, policies, or release gates drift.  A later scientific or file
+change to Paper I requires a new Zenodo version and its own owner decisions;
+it does not mutate this record.
 
 ## Historical single-archive candidate
 

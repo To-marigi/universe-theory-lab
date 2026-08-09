@@ -428,8 +428,8 @@ def test_owner_decision_fields_are_bound_into_the_default_supplement(
     summary = builder.build_upload_set(root, output, specs=specs, revision=commit)
     assert summary["owner_decision_binding"]["path"] == builder.OWNER_DECISION_ARTIFACT_PATH
     assert summary["owner_decisions"]["license"]["paper"] == "CC BY 4.0"
-    assert summary["owner_decisions"]["publication_date"]["value"] is None
-    assert summary["owner_decisions"]["doi"]["value"] is None
+    assert summary["owner_decisions"]["publication_date"]["value"] == "2026-08-09"
+    assert summary["owner_decisions"]["doi"]["value"] == "10.5281/zenodo.21861533"
     assert summary["owner_decisions"]["doi"]["draft_reservation_requested"] is False
     assert summary["owner_decisions"]["related_identifiers"]["value"] == []
     with tarfile.open(output / builder.UPLOAD_SUPPLEMENT_NAME, mode="r:gz") as archive:
@@ -686,7 +686,7 @@ def test_commit_binding_is_embedded_and_matches_manifest_files(
         assert handle is not None
         manifest = json.loads(handle.read().decode("utf-8"))
     assert manifest["source_commit_binding"] == binding
-    assert manifest["status"] == "OWNER_DECISIONS_RECORDED_RELEASE_ACTIONS_PENDING"
+    assert manifest["status"] == "OWNER_DECISIONS_RECORDED_AND_PUBLISHED"
     projected = [
         {
             "source_path": record["source_path"],
@@ -829,7 +829,7 @@ def test_zenodo_form_values_match_metadata_and_no_reservation_policy(
     assert availability["remote_commit_visibility_verified_by_builder"] is False
     assert "exact_commit_recorded_in_external_zenodo_metadata_at_deposit" not in availability
     assert owner["decisions"]["doi"]["draft_reservation_requested"] is False
-    assert all(value is False for value in owner["release_gates"].values())
+    assert owner["release_gates"]["doi_reserved"] is False
     for value in (
         metadata["title"],
         metadata["description"],

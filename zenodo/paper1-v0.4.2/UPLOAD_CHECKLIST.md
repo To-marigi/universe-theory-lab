@@ -1,18 +1,22 @@
 # Paper I v0.4.2: Zenodo手動アップロード・チェックリスト
 
+**このレコードは既に公開済みです。** オーナーは2026-08-09にZenodo上で本レコードを直接公開しました:
+https://zenodo.org/records/21861533 、version DOI `10.5281/zenodo.21861533`、concept DOI `10.5281/zenodo.21861532`、束縛コミット `1ba7a1e3e92d91edaca34f357d7cc6a2a2105ff2`。
+三方向の読み戻し検証は `reports/v0.4.2_paper1_zenodo_publication_readback_2026-08-09.md`、それに基づくオーナー決定の記録は `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md` を参照してください。以下のチェックリストは、このバージョンの公開作業そのものはもう完了済みであることを前提に、ローカルでの整合性再検証や次バージョン準備のための参照として残しています。
+
 これはPaper Iの新規プレプリントレコードのためのオーナーゲートです。自動投稿スクリプトではありません。凍結済みのv0.3.9ソフトウェアレコードを編集したり、リポジトリルートの `.zenodo.json` / `CITATION.cff` をこのパッケージにコピーしたりしないでください。
 
-承認済みのオーナー方針は `owner_decision.json` と `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md` に記録されています（後者は前身の2026-08-06記録を保存・参照しています）。要点: 受諾済みの最終PDFは18ページ・428286 bytes、SHA-256
-`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`、直接プレビュー可能なPDF＋supplement構成が承認済み、Paper Iのライセンスは CC BY 4.0（リポジトリソフトウェアはMITのまま）、初期の関連識別子は `[]`。公開日・DOI・最終コミット値は、それぞれの承認済み方針の下でnullのまま。draft作成・freeze・submission・deposit・publicationは未実行・未承認です。DOI予約は要求していません。
+承認済みのオーナー方針は `owner_decision.json` と `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md` に記録されています（後者は前身の2026-08-07記録を保存・参照しています）。要点: 公開済みの最終PDFは18ページ・428286 bytes、SHA-256
+`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`、直接プレビュー可能なPDF＋supplement構成が承認済み、Paper Iのライセンスは CC BY 4.0（リポジトリソフトウェアはMITのまま）、初期の関連識別子は `[]`。公開日は `2026-08-09`、DOIは `10.5281/zenodo.21861533`、最終コミットは `1ba7a1e3e92d91edaca34f357d7cc6a2a2105ff2` として記録済みです。draft作成・submission・deposit・publicationはすべて完了済み（`release_gates` で `true`）。DOIのdraft予約は一度も要求していません（`doi_reserved: false` のまま）。
 
 **文献ゲートは現行のものです。** `2026-08-07T1600Z` predraftゲートは現行候補
 `c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e` に対して切られ、現行の権威です: `verify_paper1_bundle.py` の `ZENODO_PREDRAFT_*` 束縛はこれを指しています。固定submittedDateウィンドウ内で、`2026-08-06T2315Z` ゲート以降に実際のarXivインデックス追いつきが発生していました（722 -> 908件）。このまだ閉じたウィンドウ内で追加・欠落・版更新・新規ルール該当となったIDはすべて個別にタイトル/アブストラクトでレビューされ、C1--C5に対して非重要と判定されています。詳細は
 `reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260807T1600Z.md`
 を参照してください。superseded（置き換え済み）の `2026-08-06T2315Z` ゲート（取り下げられた `9f58867d…fd43` 候補に対して切られたもの）は、supplement内の歴史的な前身文書としてのみ束縛されています。
 
-**現行PDFバイトのオーナー受諾は記録済みです。** 現行バイトの全ページ目視QAは、最後の追記を行ったアシスタントセッションが実施したものであり、オーナー本人によるものではありません。オーナーはこれとは別に、これらの正確なバイト（SHA-256
+**現行PDFバイトのオーナー受諾は記録済みで、本レコードは公開済みです。** 現行バイトの全ページ目視QAは、最後の追記を行ったアシスタントセッションが実施したものであり、オーナー本人によるものではありません。オーナーはこれとは別に、これらの正確なバイト（SHA-256
 `c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`）を
-`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md` の記録に基づいて受諾しており、`build_paper1_bundle.py`/`verify_paper1_bundle.py` はこの受諾文を必須フラグメントとして束縛しています。これ単独では **Save draft** を承認しません — 下記のリリースゲートを参照してください。後のdeposit試行には、`2026-08-06` 候補を取り下げたのと同じ理由により、直前に改めて日付付きの文献ゲートを切る必要があります: 日付付きゲートはその時点限りの証拠であり、恒久的な保証ではありません。publication・push・DOI・その他のオーナー・リリースゲートはfalseのまま、remote visibilityもオーナー検証待ちのままです。
+`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md` の記録に基づいて受諾しており、`build_paper1_bundle.py`/`verify_paper1_bundle.py` はこの受諾文を必須フラグメントとして束縛しています。**次バージョン**を準備する際には、直前に改めて日付付きの文献ゲートを切る必要があります: 日付付きゲートはその時点限りの証拠であり、恒久的な保証ではありません。ローカルでビルドしたバンドルの `remote_visibility` は `NOT_VERIFIED_BY_BUILDER` のままですが、これはbuilderがGitのremote可視性を検証しない仕様であることによるもので、Zenodo公開そのものとは無関係です（公開はオーナーが直接実施済み）。
 
 ## 0. パッケージ化前のオーナー決定事項
 
@@ -92,27 +96,31 @@ supplementの `upload_checksums.json` はソースメンバーを記録し、選
 - [ ] DOI方針は**draft予約なし**: DOI欄は空欄のままにし、「Get a DOI
       now!」は**クリックしない**。Zenodoはpublication時にDOIを割り当て・登録する。
 
-## 5. Save draft・プレビュー・publishゲート
+## 5. Save draft・プレビュー・publishゲート（このバージョンは完了済み）
 
 - [x] 現行候補に対する文献ゲートが切られ、チェックされ、記録済み
       （`2026-08-07T1600Z`、`verify_paper1_bundle.py` の
-      `ZENODO_PREDRAFT_*` 束縛がこれを指している）。このステップ単独では **Save draft** を承認しない。まだpublishしないこと。
+      `ZENODO_PREDRAFT_*` 束縛がこれを指している）。
 - [x] 現行PDFバイト
       （`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`）のオーナー受諾は
-      `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md` に記録済み。builder・verifierの両方がこのフラグメントに対してfail closedしている。
-- [ ] `2026-08-07T1600Z` ゲートが切られてから意味のある時間が経過していれば、これを再利用せず直前に改めて新しいゲートを切ること。日付付きゲートはその瞬間限りの証拠であり、恒久的な保証ではない。
-- [ ] プレビューでtitle・creator・ORCID・affiliation・resource type・version・description・keywords・license/date/relationsを確認する。
-- [ ] 表示されているアップロードファイル一覧が、上記の選択済み構成とちょうど一致していることを確認し、Zenodoが表示するバイト数／チェックサムを記録する。
-- [ ] 最終PDFプレビューのページ数／内容を、ローカルで束縛されている最終PDFと比較する。ZenodoとローカルのTitle値が異なる場合は停止する。
-- [ ] draft URL、`source_commit_binding` と外部receiptの両方に記録された正確なコミット、記録済みの全SHA-256値、構成、オーナー専権のメタデータ選択をオーナーに提示する。
-- [ ] 後のdraft-save操作・manuscript freeze・deposit・publicationの前には、必ず新たに日付付きの文献ゲートを実行・記録すること。重要な変更が見つかった場合は、いかなる承認の前にも停止して解決すること。
-- [ ] このdraftをpublishする明示的なオーナー承認を得る。
-- [ ] 一度だけpublishする。v0.3.9ソフトウェアレコードを上書きしないこと。
+      `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md` に記録済み。builder・verifierの両方がこのフラグメントに対してfail closedしている。
+- [x] オーナーがdraftを作成・保存し、プレビューを確認した（Zenodo UI上で直接実施）。
+- [x] 表示されたアップロードファイル一覧・バイト数／チェックサムを記録済み: `paper1_statewise_operator_v0.4.2.pdf`（428286 bytes）、`paper1_statewise_operator_v0.4.2_supplement.tar.gz`（144797 bytes）— `reports/v0.4.2_paper1_zenodo_publication_readback_2026-08-09.md` 参照。
+- [x] draft URL、正確なコミット（`1ba7a1e3e92d91edaca34f357d7cc6a2a2105ff2`）、記録済みの全SHA-256値、構成、オーナー専権のメタデータ選択はオーナーに提示済み。
+- [x] オーナーがこのdraftをpublishすることを明示的に承認し、実施した。
+- [x] 一度だけpublishした。v0.3.9ソフトウェアレコードは上書きしていない。
 
-## 6. Publication後の読み戻し
+**次バージョンを準備する場合**は、直前に改めて日付付きの文献ゲートを実行すること。日付付きゲートはその時点限りの証拠であり、恒久的な保証ではない。
 
-- [ ] 公開レコードURL、version DOI、concept DOI、公開日、公開タイムスタンプを記録する。
-- [ ] 公開ページまたはAPIから、メタデータと正確なファイル名／バイト数／チェックサム一覧を読み戻し、ローカルワークシートと比較する。
-- [ ] 公開済みファイルをダウンロードし、ローカルのSHA-256値と比較する。デフォルト構成の場合、ダウンロードした両ファイルをクリーンなディレクトリに置き、
-      `verify_paper1_bundle.py --root <directory>` を再実行する。
-- [ ] DOIとsupplementのsource-commit束縛、最終外部receiptをリリースノートに保存する。後の科学的変更やファイル変更は必ず新しいversionとして扱い、このレコードをその場で書き換えないこと。
+## 6. Publication後の読み戻し（完了済み）
+
+- [x] 公開レコードURL・version DOI・concept DOI・公開日・公開タイムスタンプを記録済み:
+      https://zenodo.org/records/21861533 、`10.5281/zenodo.21861533`（version DOI）、
+      `10.5281/zenodo.21861532`（concept DOI）、公開日 `2026-08-09`。
+- [x] 公開ページ／APIから、メタデータと正確なファイル名／バイト数／チェックサム一覧を読み戻し、ローカルワークシートと比較済み。
+- [x] 公開済みファイルをダウンロードし、ローカルのSHA-256値と比較済み（完全一致）。ダウンロードした両ファイルに対して
+      `verify_paper1_bundle.py --root <directory>` を再実行し、strict verificationが全カテゴリ空でパスした。
+- [x] DOIとsupplementのsource-commit束縛、最終外部receiptをリリースノート
+      （`reports/v0.4.2_paper1_zenodo_publication_readback_2026-08-09.md`）に保存済み。
+
+後の科学的変更やファイル変更は必ず新しいversionとして扱い、このレコードをその場で書き換えないこと。

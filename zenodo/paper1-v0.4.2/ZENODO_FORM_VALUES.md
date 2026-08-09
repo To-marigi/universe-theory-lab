@@ -1,14 +1,15 @@
 # Paper I v0.4.2 — Zenodoフォーム入力値
 
-このワークシートは**draftの作成のみ**を完了させるためのものです。publication・DOI予約・manuscript freeze・Git pushを承認するものではありません。`owner_decision.json` の全リリースゲートは、保存済みの外部draftがローカルに記録され、後にオーナー専権の承認が与えられるまで `false` のままです。
+**このレコードは既に公開済みです。** オーナーは2026-08-09にZenodo上で本レコードを直接公開しました:
+https://zenodo.org/records/21861533 、version DOI `10.5281/zenodo.21861533`、concept DOI `10.5281/zenodo.21861532`。以下は、実際に公開されたフォーム値の記録であり、かつ次バージョン準備時のテンプレートとして残しています。三方向の読み戻し検証は `reports/v0.4.2_paper1_zenodo_publication_readback_2026-08-09.md` を参照してください。
 
-Zenodoレコード `21720863`（別の v0.3.9 ソフトウェアレコード）の「new version」ではなく、**新規アップロード**を作成してください。
+Zenodoレコード `21720863`（別の v0.3.9 ソフトウェアレコード）の「new version」ではなく、**新規アップロード**として作成されました。
 
-`2026-08-07T1600Z` predraft文献ゲートは完了済み・現行のものです: 候補
+`2026-08-07T1600Z` predraft文献ゲートは、この公開の直前に切られた現行のものでした: 候補
 `c112b987…fa2e` に対して切られ、`verify_paper1_bundle.py` に束縛されています。固定submittedDateウィンドウ内で、前身の `2026-08-06T2315Z` ゲート以降に実際のarXivインデックス追いつきが発生していました（722 -> 908件）。すべての差分は個別にレビューされ非重要と判定されており、追跡対象の2レコードは `v1` のままです。`2026-08-06T2315Z` ゲート自体はsupersededのPDF `9f58867d…fd43` に対して切られたもので、現在は歴史的な来歴としてのみ、文書化された前身として保持されています。
 
-**現行PDFバイトのオーナー受諾は記録済みですが、このワークシート単独ではSave draftを承認しません。** 現行バイトの全ページ目視QAは、最後の追記を行ったアシスタントセッションが実施したものであり、オーナー本人によるものではありません。オーナーはこれとは別に、これらの正確なバイトを
-`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md` の記録に基づいて受諾しており、builder・verifierの両方がこの記録に対してfail closedしています。ここに記載されている内容は、publication・DOI予約・Git push・manuscript freeze・depositのいずれも承認するものではありません。これらのリリースゲートは `false` のまま、`remote_visibility = NOT_VERIFIED_BY_BUILDER` もオーナー検証待ちのままです。
+**現行PDFバイトのオーナー受諾は記録済みで、この公開の根拠になっています。** 現行バイトの全ページ目視QAは、最後の追記を行ったアシスタントセッションが実施したものであり、オーナー本人によるものではありません。オーナーはこれとは別に、これらの正確なバイトを
+`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md` の記録に基づいて受諾しており、builder・verifierの両方がこの記録に対してfail closedしています。`release_gates` の `draft_created`・`submission_approved`・`deposit_executed`・`published`・`doi_registered` はすべて `true` です。`doi_reserved` は `false` のままです — draft予約は一度も要求・使用していません。
 
 ## 主要項目（Core fields）
 
@@ -117,14 +118,12 @@ reproducibility
 
 ## 公開日とDOI方針
 
-ローカルワークシートの値は `null` のままです：
+ローカルワークシートの値は、実際の公開結果に更新済みです：
 
 ```text
-publication_date = null
-doi = null
+publication_date = 2026-08-09
+doi = 10.5281/zenodo.21861533
 ```
-
-保存済みdraftに対して、Zenodoが日付を必須にしたり、あらかじめ埋めたりすることがあります。そのUI上の値はpublicationの承認ではなく、ローカルに記録された公開日でもありません。publication前に、オーナーが実際の初回公開Zenodo日を確認し、リリースレコードに記録する必要があります。
 
 **DOIについての指示:** `No, I need one` を選択しますが、「Get a DOI now!」はクリックしないでください。方針は次のとおりです（原文）:
 
@@ -154,6 +153,7 @@ supplementは外部PDFをSHA-256で束縛し、選択済みのsource-commit束�
 
 両ファイルをアップロードした後、スタンドアロンPDFをZenodoのデフォルトプレビューとして明示的に選択し、draftを保存する前に表示されているサイズ／チェックサムを外部receiptと比較してください。アップロードされたsupplementの `source_commit_binding.commit` が外部receiptのSHAと正確に一致することを確認してください。
 
-## Draft限定のhandoff receipt
+## Handoff receipt（記録済み）
 
-オーナーが後にZenodo draftを作成・保存した場合は、（publishせずに）以下をローカルに記録してください: draft URL／レコード識別子、作成タイムスタンプ、表示されたファイル名とSHA-256値、UI上の公開日の値、「Get a DOI now!」を使用しなかったことの確認。そのreceiptを得て初めて、`draft_created` を別途オーナー承認済みの更新として検討可能になります。現時点では `false` のままです。
+draft URL／レコード識別子、作成タイムスタンプ、表示されたファイル名とSHA-256値、UI上の公開日の値、「Get a DOI now!」を使用しなかったことの確認は、すべて
+`reports/v0.4.2_paper1_zenodo_publication_readback_2026-08-09.md` に記録済みです。`draft_created` は `owner_decision.json` の `release_gates` で `true` です。
