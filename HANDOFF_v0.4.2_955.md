@@ -5,7 +5,7 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、九つのゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、十一のゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -32,7 +32,11 @@ reduce してから scout する」という趣旨の記述は、本文書が上
               bounded stream 5.67 GB < 8 GiB、dense 47.9 GBは却下
 新ゲート9     CSG third order       3,985 compatibility forms全て0、全二次jetが三次lift
               raw Q 6/24非零だがintrinsic 24/24で0、三次escapeなし
-次ゲート      334,376候補monomialの四次full third-jet fibre preflight
+新ゲート10    fourth-order preflight full三次jet fiber、raw 1,647,981項、basis 135,396項
+              bounded stream 5.73 GB < 8 GiB、dense 682.77 GBは却下
+新ゲート11    CSG fourth order      3,985 compatibility forms全て0、全三次jetが四次lift
+              raw Q 6/24非零だがintrinsic 24/24で0、四次escapeなし
+次ゲート      4,014,962候補monomialの第五次full fourth-jet-fibre preflight設計
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -585,6 +589,49 @@ z^4 270,725 + z^2*a 60,025 + a^2 1,225 + z*b 2,401 = 334,376
 
 三次候補23,226の14倍超。直ちに四次reduceせず、canonical `v_particular` とraw weight-4
 stream、Jacobian basis growth、8 GiB memoryを先にpreflightする。full 955は `OPEN`。
+このpreflightとactual監査はゲート10・11として完了した。
+
+---
+
+## 11A. ゲート10: full third-order jet fibre四次preflight
+
+```
+artifact  results/v0.4.2_955_slack_csg_fourth_order_preflight.json
+report    reports/v0.4.2_955_slack_csg_fourth_order_preflight.md
+module    src/universe_lab/final_theory/source_native_955_slack_csg_fourth_order_preflight_v042.py
+budget    config/v0.4.2_955_slack_csg_fourth_order_budget.json
+digest    688641d2e301d154542ab0296aaff4a1f1d5c5abc32c67f594a679baffd4e6b7
+verdict   V042_955_SLACK_CSG_FOURTH_ORDER_FULL_JET_FIBER_PREFLIGHT_CERTIFIED
+```
+
+canonical三次補正は268/476 coordinate formsが非零、28,033 weighted terms、最大360項。
+`v=v_particular(z,a)+K b` 上でraw weight-4 core streamは1,647,981項、最大2,376項。
+427 Jacobian basis jetsは135,396項、保守71,071,744 bytes。従属行の予測visitsは
+6,797,996回。10,000,000-term compatibility cap込みの監査見積りは5,726,193,664 bytesで
+8 GiB内、dense worst 682,770,911,232 bytesは棄却した。Qはraw 6/24非零、2,374項だが、
+本ゲートではintrinsic reductionを行っていない。
+
+---
+
+## 11B. ゲート11: full third-order jet fibre四次exact監査
+
+```
+artifact  results/v0.4.2_955_slack_csg_fourth_order.json
+report    reports/v0.4.2_955_slack_csg_fourth_order.md
+module    src/universe_lab/final_theory/source_native_955_slack_csg_fourth_order_v042.py
+digest    f59d46a8d52210fe6b63757b8af10484654fbe8ef1483182dcd14c6fcfe817e4
+verdict   V042_955_SLACK_CSG_FOURTH_ORDER_ALL_THIRD_ORDER_JETS_LIFT_Q_ESCAPE_BLOCKED_CERTIFIED
+```
+
+3,985 dependent rowsのcompatibility weighted formsは全て0、span rank 0。従って
+**対角CSG点の**任意のfull third-order core jet `(z,a,b)` は四次までliftする。raw Qは
+6/24 entries非零、2,374項だが、core Jacobian fourth-jet basisへreduceするとintrinsic
+nonzero 0/24、rank 0。16 terminal blind directionsもraw core/Q・intrinsic・remainderで
+occurrence 0。actual保守メモリは427 form overhead込み607,942,656 bytes。
+
+第五次の候補は `z^5` 2,869,685、`z^3*a` 1,020,425、`z*a^2` 60,025、`z^2*b`
+60,025、`a*b` 2,401、`z*c` 2,401、計4,014,962。これはpreflight設計の認可であり、
+第五次actual・形式収束・generic solverの認可ではない。full 955は `OPEN`。
 
 ---
 
@@ -650,11 +697,11 @@ bridge する方式である。
 
 ```powershell
 uv run ruff check .
-uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py tests/final_theory/test_v042_955_slack_term_preflight.py tests/final_theory/test_v042_955_slack_csg_tangent.py tests/final_theory/test_v042_955_slack_csg_second_order.py tests/final_theory/test_v042_955_slack_csg_third_order_preflight.py tests/final_theory/test_v042_955_slack_csg_third_order.py -q
+uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py tests/final_theory/test_v042_955_slack_term_preflight.py tests/final_theory/test_v042_955_slack_csg_tangent.py tests/final_theory/test_v042_955_slack_csg_second_order.py tests/final_theory/test_v042_955_slack_csg_third_order_preflight.py tests/final_theory/test_v042_955_slack_csg_third_order.py tests/final_theory/test_v042_955_slack_csg_fourth_order_preflight.py tests/final_theory/test_v042_955_slack_csg_fourth_order.py -q
 uv run pytest -q
 ```
 
-九ゲートの新規テストは 69 件。うち独立検証として、核基底を manifest の生の行と直接
+十一ゲートの新規テストは 82 件。うち独立検証として、核基底を manifest の生の行と直接
 内積で検査するもの（`test_kernel_basis_is_independently_verified_against_the_manifest_rows`）と、
 二重次数を成果物を介さず manifest から再計測するもの、一般17パラメータ族で
 1,933成分を再代入するもの、timid recurrence から次数 histogram を再構成するもの、
@@ -667,12 +714,13 @@ uv run pytest -q
 
 ## 16. AI 開示
 
-ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4・5・6・7・8・9の
+ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4・5・6・7・8・9・10・11の
 モジュール・テスト・報告・引き継ぎ更新は OpenAI Codex が作成した。Luna は
 読み取り専用のブランチ／不要ファイル棚卸しと、ゲート4の数値・digest・適用体境界の
 独立再検算、ゲート5で再利用可能な疎多項式・stream・budget実装の探索、ゲート7の
 数値・digest・結論範囲の読み取り専用監査、ゲート8で三次helper候補のread-only探索、
-ゲート9の数式範囲・全2-jet coverage・三次結論の独立監査を担当した。
+ゲート9の数式範囲・全2-jet coverage・三次結論の独立監査、ゲート10の疎性外挿、
+ゲート11のwriterなしexact再生成・digest・予算・論理範囲の独立監査を担当した。
 人間の著者が範囲を選択し内容に責任を負う。
 `CONTRIBUTING.md` の「どのツールがどの部分か」要件に対応する記録である。
 

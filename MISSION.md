@@ -74,14 +74,21 @@ core rowspace modulo rankが0、すなわちfirst-order escapeがないことを
 [`reports/v0.4.2_955_slack_csg_second_order.md`](reports/v0.4.2_955_slack_csg_second_order.md)
 は49次元kernel上の3,985本の二次compatibility formが全て0で、全一次方向が二次まで
 liftし、Q可換子24成分も全core lift上で二次まで消えることを証明した。これはCSG点の
-局所formal結果に限り、三次・remote component・full 955はopenである。三次では二次補正の
+局所formal結果に限る。三次では二次補正の
 49自由成分も保持し、20,825個の `z^3` と2,401個の `z*a`、計23,226候補monomialに対する
 疎性とメモリをpreflightした。その結果、raw coreは371,687項、独立Jacobian basisは
 31,761項・保守保存見積り約18 MB、従属行reduceの予測term visitsは約160万であった。
 8 GiB内のfail-closed stream監査を実行した結果、3,985 compatibility formsは全て0、
 full二次jet fibreの全点が三次までliftし、Q intrinsic weighted third formsも24/24で0に
-なった。すなわちCSG点のQ escapeは三次までblockされた。次は334,376候補monomialを持つ
-四次full third-jet fibreの疎性・メモリpreflightであり、generic solverは使用しない。
+なった。すなわちCSG点のQ escapeは三次までblockされた。続く四次preflightでは
+334,376候補monomialを疎にstreamし、raw core 1,647,981項、独立Jacobian basis
+135,396項、8 GiB内のbounded audit見積り5,726,193,664 bytesを得た。認可したfail-closed
+四次監査では、3,985 compatibility formsが再び全て0で、full三次jet fibreの全点が
+四次までliftし、Q intrinsic weighted fourth formsも24/24で0になった。16 terminal
+blind directionsも四次までsilentである。これらは `QQ` 上の対角CSG点に限る形式局所結果で、
+第五次・収束・remote component・Eq113/Eq139・full 955はopenである。次は4,014,962候補を
+持つ第五次full fourth-jet-fibre preflightの設計であり、別の疎性標本とversioned budgetなしに
+第五次actualやgeneric solverを実行しない。
 
 ### 到達順序
 
