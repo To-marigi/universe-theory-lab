@@ -4,6 +4,18 @@ Written 2026-08-01; continued through 2026-08-03. This is the live handoff for w
 after the public v0.3.9 release. The historical `HANDOFF.md` remains the frozen
 v0.3.9 record and is not superseded as release provenance.
 
+**Paper I v0.4.2 is published, as of 2026-08-09.** Everywhere below that
+frames "Paper I assembly" or "SR3b-A" as in-progress, undrafted, or
+`DEPOSIT_NOT_AUTHORIZED` is now historical: the owner published it directly
+on Zenodo at https://zenodo.org/records/21861533, version DOI
+`10.5281/zenodo.21861533`, packaged commit
+`1ba7a1e3e92d91edaca34f357d7cc6a2a2105ff2`. See
+`CURRENT_RESEARCH_STATE.json`'s `paper_i_v042_baseline` key,
+`reports/v0.4.2_paper1_zenodo_publication_readback_2026-08-09.md`, and
+`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md` for the
+authoritative record. Any further deposit/publication action beyond this
+recorded version still needs fresh owner approval in chat.
+
 ## 1. Governing roadmap
 
 Start with `KNOWLEDGE_BASE_v0.4.md` for current scientific facts and reusable
