@@ -840,3 +840,65 @@ SR2 の既知の弱点を再現するだけで、宣言済み三終端には届�
 **警告 4**: upper stratum は無制限 955 ではない。両非対角族が非零の mixed 点は
 open で、ゲージトーラスは片側を膨張させるため退化で落とせない。stratum 上の
 obstruction も三終端には届かない。
+
+---
+
+## 13. ゲート13: 可換子形式の row-span 判定（2026-08-10）
+
+```
+artifact  results/v0.4.2_955_commutator_span.json
+report    reports/v0.4.2_955_commutator_span.md
+design    reports/v0.4.2_955_commutator_span_gate_design.md  (計測前に固定、commit 8f900aa)
+module    src/universe_lab/final_theory/source_native_955_commutator_span_v042.py
+digest    3b95e12a8cfca62f607b559fa215e5dcb34bf3fb494b47490b5a9d25407a5c0e
+verdict   V042_955_UPPER_STRATUM_SPAN_POINTWISE_EVIDENCE_ONLY_NONTERMINAL
+```
+
+### 13.1 結果
+
+`S` の厳密点は一般結合 `t_0..t_4` の CSG 族から取り、**各点が core の厳密解である
+ことを先に検証**した（4,152成分すべて零。非零なら棄却し修復しない）。
+
+| 結合 | rank(L) | ファイバー | 判定 |
+|---|---|---|---|
+| `(1,1,1,1,1)` 対照 | 114 | 9 | IN_SPAN |
+| `(1,2,3,5,7)` | 114 | 9 | IN_SPAN |
+| `(2,1,4,1,3)` | 114 | 9 | IN_SPAN |
+| `(3,1,1,1,1)` | 114 | 9 | IN_SPAN |
+
+棄却2件（`reachable state became zero` / `lambda(3,0)=0`）を理由付きで保存。
+対照は凍結済み131特性の完全再現を機械検査している。
+
+可換子行は評価前4単項式・評価後**2列**。`(a_i-d_i)b_j-(a_j-d_j)b_i` の畳み込みで
+あり、事前設計の予測と一致。
+
+### 13.2 これは obstruction の証拠にすぎない
+
+**最重要の限界: CSG 族は `A:*:11` を常に1に固定する。** 結合を変えても第二対角は
+動かない。そして可換子形式が generic に非零になるのはまさにその方向である。
+**WITNESS 側の可能性は一切排除されていない。** obstruction 本命という方針を
+この4点の結果に読み込まないこと。
+
+有限個の点は stratum を決めない。stratum は無制限955ではない。in-span は宣言済み
+三終端のどれにも届かない。
+
+### 13.3 `Q(t)` 記号計算の顛末
+
+- **成功（未認証）**: 記号 assignment が core を**恒等的に**満たすと報告された
+  （4,412成分すべて `t` の有理関数として零）。事実なら4点抽出より強い。ただし
+  **これは補助セッションの報告でリポジトリ未認証**。認証は次のゲート。
+- **未完**: `rank(L)` は 1038×123 の `Q(t)` 上疎消去が pivot ごとの `sympy.cancel`
+  で詰まり、最初の100行すら抜けなかった。span 判定も因子抽出も未実施。
+  浮動小数点にも有限体にも切り替えていない。プロセスは停止済み。**この経路は放棄。**
+
+### 13.4 次のゲート
+
+```
+CONSTRUCT_POINTS_OF_S_WITH_A_FREE_SECOND_DIAGONAL_THEN_RERUN_THE_SPAN_DECISION
+```
+
+1. `A:*:11 != 1` を持つ `S` の点を構成し、同じ判定を回す（本命）
+2. §13.3 の記号 core 同一性をリポジトリで認証する（実行可能な規模）
+3. `Q(t)` 上の span 判定を素朴な全体消去で再試行しない。可換子行は `b_Q1..b_Q4` の
+   2列しか持たないので、その4列以外を `L` から消去した関係式を見るほうが桁違いに
+   小さい。問いは `(p_i - 1) b_j = (p_j - 1) b_i` の形が出るかどうかである。

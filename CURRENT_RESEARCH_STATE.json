@@ -102,11 +102,12 @@
     "v0.4.2_sr2v_transverse_eq120_repair_pair_scout": "THREE_PAIR_MINOR_SUBCOVER_REJECTED_FULL_M0_SURVIVES_NONTERMINAL",
     "v0.4.2_sr2v_transverse_common_core_q5_free": "FULL_M0_AND_GLOBAL_SCHUR_REDUCTION_Q5_FREE_NONALIGNED_TWO_COLUMN_ALIGNED_FOUR_COLUMN_POINTWISE_IDEALS_OPEN",
     "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN",
-    "v0.4.2_955_upper_stratum": "GAUGE_WEIGHTS_DERIVED_NOT_ASSUMED_UPPER_STRATUM_IS_SCALAR_VARIETY_TIMES_LINEAR_FIBRE_SIX_COMMUTATORS_COLLAPSE_TO_FOUR_TERM_LINEAR_FORMS_NONTERMINAL"
+    "v0.4.2_955_upper_stratum": "GAUGE_WEIGHTS_DERIVED_NOT_ASSUMED_UPPER_STRATUM_IS_SCALAR_VARIETY_TIMES_LINEAR_FIBRE_SIX_COMMUTATORS_COLLAPSE_TO_FOUR_TERM_LINEAR_FORMS_NONTERMINAL",
+    "v0.4.2_955_commutator_span": "SIX_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_FOUR_VERIFIED_GENERAL_COUPLING_GROWTH_POINTS_SECOND_DIAGONAL_NEVER_VARIED_POINTWISE_EVIDENCE_ONLY_NONTERMINAL"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "DECIDE_THE_SIX_UPPER_RIGHT_COMMUTATOR_FORMS_AGAINST_THE_CORE_ROW_SPAN_ON_S",
+    "next_gate": "CONSTRUCT_POINTS_OF_S_WITH_A_FREE_SECOND_DIAGONAL_THEN_RERUN_THE_SPAN_DECISION",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
       "CSG_BASEPOINT_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
@@ -187,7 +188,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "The fifth-order jet preflight is SUPERSEDED and not to be built. MISSION.md phase A fixes a stop rule for order-by-order local expansion, and reports/v0.4.2_955_upper_stratum.md supplies the finite route it demanded. Deriving the gauge weights from the 476-coordinate chart itself (47,298 monomial constraints, rank 460, zero inconsistencies) shows A:*:01 and u:*:0 carry weight +1, A:*:10 carries -1, and A:*:00, A:*:11, u:*:1 carry 0. On the upper stratum where all 107 lower-left coordinates vanish, the (1,0) block is identically zero, the (0,1) block is exactly linear in the 123-coordinate positive-weight family, and the diagonal blocks carry no weighted coordinate, so the stratum is a scalar variety S carrying an affine-linear fibre. The six Q commutators there have vanishing diagonal and lower left and reduce to one four-term linear form each. The next gate decides those six forms against the core row span at exact points of S by exact linear algebra; a point outside the span yields a 955 witness candidate, a point inside is obstruction evidence. Both outcomes must be terminal-shaped before the run, and the mixed-ansatz intuition that upper families commute must not be imported, because that held only with the diagonal frozen to (p_e,1). The four silent jet orders are explained finitely: the lower-left linear part has full rank 107 at the CSG basepoint, so the formal implicit function theorem places the local component inside the upper stratum. That is formal-local at one point only.",
+    "next_gate_description": "The commutator span decision is IN_SPAN at all four verified general-coupling growth points, but the growth family pins every A:*:11 to one, so the second diagonal entry was never varied. That is exactly the direction in which the upper-triangular commutator form (a_i-d_i)b_j-(a_j-d_j)b_i becomes generically nonzero, so a witness outcome is not excluded and the obstruction-first bet must not be read into the current evidence. The next gate constructs points of the scalar variety S with A:*:11 != 1 and reruns the same exact row-span decision there, under the verdict strings already pre-registered in reports/v0.4.2_955_commutator_span_gate_design.md. A secondary, weaker gate is to decide the same membership symbolically over Q(t_0..t_4), which would upgrade the four points to a theorem on the growth locus but would not lift the frozen-second-diagonal limitation.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -740,6 +741,51 @@
       "supersession_authority": "MISSION.md phase-A stop rule",
       "jet_ladder_finite_explanation": "Full rank 107 lower-left linear part at the CSG basepoint plus the formal implicit function theorem places the local component inside the upper stratum; formal-local at one point only",
       "witness_outcome_not_excluded": true,
+      "solver_run": false,
+      "search_terminal": false,
+      "full_955_profile_claimed": false
+    },
+    "commutator_span": {
+      "artifact": "results/v0.4.2_955_commutator_span.json",
+      "report": "reports/v0.4.2_955_commutator_span.md",
+      "gate_design": "reports/v0.4.2_955_commutator_span_gate_design.md",
+      "module": "src/universe_lab/final_theory/source_native_955_commutator_span_v042.py",
+      "schema_version": "final-theory-v042-955-commutator-span-v1",
+      "verdict": "V042_955_UPPER_STRATUM_SPAN_POINTWISE_EVIDENCE_ONLY_NONTERMINAL",
+      "semantic_digest_sha256": "3b95e12a8cfca62f607b559fa215e5dcb34bf3fb494b47490b5a9d25407a5c0e",
+      "verdict_strings_fixed_before_measurement": true,
+      "points": {
+        "source": "classical sequential growth with general couplings t_0..t_4",
+        "verified_as_exact_core_solutions": 4,
+        "core_entries_checked_per_point": 4152,
+        "nonzero_core_entries": 0,
+        "control_reproduces_frozen_characters": true,
+        "rejected_couplings": 2,
+        "rejection_reasons": [
+          "the diagonal CSG reachable state became zero",
+          "lambda(3,0)=0; the coupling is not usable"
+        ]
+      },
+      "result": {
+        "L_shape": [
+          1038,
+          123
+        ],
+        "L_rank": 114,
+        "fibre_dimension": 9,
+        "pairs": 6,
+        "escapes": 0,
+        "all_in_span": true,
+        "commutator_monomials_before_evaluation": 4,
+        "commutator_nonzero_columns_after_evaluation": 2
+      },
+      "scope_limits": {
+        "second_diagonal_never_varied": "the growth family pins every A:*:11 to one",
+        "witness_outcome_still_possible": true,
+        "finitely_many_points_cannot_decide_the_stratum": true,
+        "stratum_is_not_the_unrestricted_profile": true,
+        "reaches_none_of_the_three_declared_955_terminals": true
+      },
       "solver_run": false,
       "search_terminal": false,
       "full_955_profile_claimed": false
