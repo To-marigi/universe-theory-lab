@@ -4,6 +4,14 @@ Written 2026-08-01; continued through 2026-08-03. This is the live handoff for w
 after the public v0.3.9 release. The historical `HANDOFF.md` remains the frozen
 v0.3.9 record and is not superseded as release provenance.
 
+**For the 955 profile track, read `HANDOFF_v0.4.2_955.md` first (2026-08-09/10).**
+The owner refocused the programme on closing 955 obstruction-first, `MISSION.md`
+gained a current-phase section, and two gates closed: the combinatorial symmetry
+group of the 955 system is trivial (no patch reduction), and the CPOBC
+off-diagonal blocks are globally exactly linear, reducing the mixed system from
+262 to 46 parameters with no localisation and no solver. Any wording below that
+plans a 131-patch symmetry reduction followed by patch scouting is superseded.
+
 **Paper I v0.4.2 is published, as of 2026-08-09.** Everywhere below that
 frames "Paper I assembly" or "SR3b-A" as in-progress, undrafted, or
 `DEPOSIT_NOT_AUTHORIZED` is now historical: the owner published it directly

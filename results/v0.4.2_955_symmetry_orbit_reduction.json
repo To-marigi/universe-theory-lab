@@ -1,0 +1,237 @@
+{
+  "schema_version": "final-theory-v042-955-symmetry-orbit-reduction-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "gate": "SYMMETRY_ORBIT_REDUCTION_BEFORE_PRINCIPAL_OPEN_EXACT_SCOUTS",
+  "scope": {
+    "finite_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ",
+    "identification_mode": "ON_QUOTIENT",
+    "ansatz": "A_e=[[p_e,x_[e]],[y_[e],1]], p_e=CSG(t_j=1)",
+    "reduced_object": "the 131 principal patches y_[e]!=0 left open by the mixed x/y scout"
+  },
+  "source_artifact_sha256": {
+    "results/v0.3.1_cpobc_relations_n4.json": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c",
+    "results/v0.4.2_955_mixed_xy_tangent_scout.json": "3f7c74b4580844418f4e908224089ad655f47271143976efa9c63a672a890ca4"
+  },
+  "predecessor_binding": {
+    "kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2",
+    "results/v0.4.2_955_mixed_xy_tangent_scout.json": "d7a4f6dba63d17cd1107ce173fb829a60af0bbf044bb02b7ccca262c70b029d5"
+  },
+  "gauge_torus": {
+    "action": "g_t=diag(t,1) acts by x_[e]->t*x_[e], y_[e]->t^-1*y_[e]",
+    "grading": "deg_x - deg_y",
+    "matrix_entry_rule": "residual entry (i,j) is homogeneous of grade j-i",
+    "vector_component_rule": "reachable state-vector residual component i has grade -i",
+    "per_block": {
+      "CPOBC": {
+        "records": 783,
+        "checked_terms": 8946
+      },
+      "strong_GC": {
+        "records": 320,
+        "checked_terms": 12948
+      },
+      "reachable_MSR_operator": {
+        "records": 24,
+        "checked_terms": 286
+      },
+      "reachable_MSR_vector": {
+        "records": 24,
+        "checked_terms": 986
+      }
+    },
+    "matrix_block_terms_checked": 22180,
+    "vector_terms_checked": 986,
+    "Q_commutator_terms_checked": 48,
+    "violations": 0,
+    "preparation_vector_is_g_t_eigenvector": {
+      "vector": "e_1",
+      "machine_evidence": "The reachable state-vector residual block is exactly homogeneous of grade -i in every component; a preparation vector outside the g_t eigenbasis would destroy that homogeneity."
+    },
+    "invariants": {
+      "diagonal_entries": "p_e and 1 are fixed by conjugation with diag(t,1)",
+      "determinant": "det(A_e)=p_e-x_[e]*y_[e] has grade 0 and is invariant",
+      "products": "u_[e]=x_[e]*y_[e] are invariant coordinates",
+      "commutativity": "Q commutativity is a conjugation-invariant condition"
+    },
+    "reduction_consequence": {
+      "free_parameters": 1,
+      "statement": "One global torus parameter, not one per edge.  On the patch y_[e0]!=0 the gauge may be fixed by y_[e0]=1, which lowers the 262-parameter mixed ansatz to 261 parameters and no further."
+    },
+    "relation_variety_is_a_union_of_G_m_orbits": true,
+    "no_degeneration_to_the_pure_families": {
+      "statement": "The weights are +1 on every x and -1 on every y, so a mixed point has no limit inside the affine chart as t->0 or t->infinity: x->0 forces y->infinity and conversely.",
+      "consequence": "The proved global pure-lower no-go cannot be extended to the mixed components by a torus degeneration argument.  A mixed obstruction needs its own proof."
+    },
+    "nonclaims": [
+      "The torus is not claimed to be the full stabiliser of the ansatz.",
+      "No global classification of the mixed locus follows from the grading.",
+      "The grading is a symmetry certificate, not an obstruction or a witness."
+    ],
+    "verdict": "V042_955_MIXED_GAUGE_TORUS_GRADING_CERTIFIED"
+  },
+  "combinatorial_symmetry": {
+    "definition": "A permutation sigma of the 131 ON transition orbits that preserves the CSG character p, the stage, the transition kind and each of Q_1,...,Q_4, and maps the CPOBC, strong-GC and reachable-state-MSR equation sets onto themselves.",
+    "why_Q_is_pinned": "The commutator target is written in Q_1,...,Q_4.  A permutation that moved a Q generator would not transport a witness between patches, so the Q orbits are singleton colours from the start.",
+    "Q_orbits": {
+      "cpobc-transition-orbit-74b3519240acc75a0c55": 1,
+      "cpobc-transition-orbit-9db8e170556712ebafa5": 4,
+      "cpobc-transition-orbit-9fb0da3749caf7b75239": 2,
+      "cpobc-transition-orbit-ab12f7513b8a36c56a4f": 3
+    },
+    "equation_inventory": {
+      "CPOBC": 783,
+      "reachable_state_MSR": 24,
+      "strong_GC": 320
+    },
+    "incidence_label_is_side_agnostic": true,
+    "incidence_label_reason": "A symmetry may exchange the two sides of a residual, so side-tagged labels would be finer than the symmetry group.  A coarser invariant label can only weaken the conclusion, never make it unsound.",
+    "initial_colour_classes": 23,
+    "initial_equation_colour_classes": 5,
+    "refinement_rounds": 3,
+    "refinement_history": [
+      {
+        "round": 1,
+        "orbit_classes": 131,
+        "equation_classes": 228
+      },
+      {
+        "round": 2,
+        "orbit_classes": 131,
+        "equation_classes": 983
+      },
+      {
+        "round": 3,
+        "orbit_classes": 131,
+        "equation_classes": 983
+      }
+    ],
+    "stable_colour_classes": 131,
+    "class_size_histogram": {
+      "1": 131
+    },
+    "stable_partition_sha256": "253194f3f33e04e409d9a100db1c8ae0e78e24c47ebae86eee54a6570b1bdaf6",
+    "nontrivial_classes": [],
+    "discrete": true
+  },
+  "reduction_outcome": {
+    "patches_before": 131,
+    "symmetry_orbit_upper_bound_on_distinct_patches": 131,
+    "patches_removed_by_symmetry": 0,
+    "gauge_parameters_removed": 1,
+    "brute_force_131_patch_sweep_authorised": false
+  },
+  "soundness_boundary": {
+    "colouring_is_a_coarsening_of_the_true_symmetry_orbits": true,
+    "discrete_implies_trivial_symmetry_group": true,
+    "combinatorial_word_level_symmetries_only": "The certified group consists of permutations of the 131 orbits acting on the CPOBC, strong-GC and reachable-MSR word and term structure.  Polynomial-level or nonlinear automorphisms of the relation variety are not classified, so the triviality result does not exclude a coefficient-level coincidence that this abstraction cannot see.",
+    "nondiscrete_classes_are_not_orbits": "Two patches may be merged only after an explicit permutation is emitted and verified by re-mapping the full CPOBC, strong-GC and reachable-MSR equation multisets.  No such permutation is emitted here.",
+    "explicit_permutation_certificates_emitted": 0
+  },
+  "deterministic_scout_schedule": {
+    "role": "Deterministic patch ordering for the next gate.  Selection is by stage, then CSG character, then orbit id; it is a schedule, not a result.",
+    "head": [
+      {
+        "rank": 1,
+        "patch": "y_[cpobc-transition-orbit-74b3519240acc75a0c55]!=0",
+        "orbit_id": "cpobc-transition-orbit-74b3519240acc75a0c55",
+        "stage": 1,
+        "p": "1/2",
+        "cpobc_incidence": 30,
+        "is_Q": true
+      },
+      {
+        "rank": 2,
+        "patch": "y_[cpobc-transition-orbit-f1c4030ab10488e60e8c]!=0",
+        "orbit_id": "cpobc-transition-orbit-f1c4030ab10488e60e8c",
+        "stage": 1,
+        "p": "1/2",
+        "cpobc_incidence": 30,
+        "is_Q": false
+      },
+      {
+        "rank": 3,
+        "patch": "y_[cpobc-transition-orbit-4680d526f3e1a66f3e9a]!=0",
+        "orbit_id": "cpobc-transition-orbit-4680d526f3e1a66f3e9a",
+        "stage": 2,
+        "p": "1/4",
+        "cpobc_incidence": 100,
+        "is_Q": false
+      },
+      {
+        "rank": 4,
+        "patch": "y_[cpobc-transition-orbit-4f0633d50c52cc6f863c]!=0",
+        "orbit_id": "cpobc-transition-orbit-4f0633d50c52cc6f863c",
+        "stage": 2,
+        "p": "1/4",
+        "cpobc_incidence": 39,
+        "is_Q": false
+      },
+      {
+        "rank": 5,
+        "patch": "y_[cpobc-transition-orbit-9fb0da3749caf7b75239]!=0",
+        "orbit_id": "cpobc-transition-orbit-9fb0da3749caf7b75239",
+        "stage": 2,
+        "p": "1/4",
+        "cpobc_incidence": 45,
+        "is_Q": true
+      },
+      {
+        "rank": 6,
+        "patch": "y_[cpobc-transition-orbit-c56a9533c54e735f2ef9]!=0",
+        "orbit_id": "cpobc-transition-orbit-c56a9533c54e735f2ef9",
+        "stage": 2,
+        "p": "1/4",
+        "cpobc_incidence": 44,
+        "is_Q": false
+      },
+      {
+        "rank": 7,
+        "patch": "y_[cpobc-transition-orbit-ef3a65de93c87020ac8b]!=0",
+        "orbit_id": "cpobc-transition-orbit-ef3a65de93c87020ac8b",
+        "stage": 2,
+        "p": "1/4",
+        "cpobc_incidence": 44,
+        "is_Q": false
+      },
+      {
+        "rank": 8,
+        "patch": "y_[cpobc-transition-orbit-4c7d9b47e7db31a2f105]!=0",
+        "orbit_id": "cpobc-transition-orbit-4c7d9b47e7db31a2f105",
+        "stage": 2,
+        "p": "1/2",
+        "cpobc_incidence": 30,
+        "is_Q": false
+      }
+    ],
+    "executed": false
+  },
+  "solver_status": {
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "strategic_consequence": {
+    "patchwise_witness_search": "With a trivial symmetry group the 131 patches are pairwise non-interchangeable, so a witness search must solve 131 independent nonlinear problems.  Symmetry offers no saving there.",
+    "uniform_obstruction_route": "A uniform obstruction argument is insensitive to the patch count, so the negative outcome of this gate raises the relative value of the obstruction terminal over the witness terminal.  This is a planning judgement, not a mathematical claim about which terminal is true."
+  },
+  "claim_boundary": [
+    "This gate reduces the open patch cover; it decides nothing about the 955 profile.",
+    "No witness is certified and no obstruction is proved.",
+    "The full 955 profile and the unrestricted source-native slack system stay open.",
+    "The mixed x/y ansatz is a declared family, not general GL_2."
+  ],
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_955_SYMMETRY_GROUP_TRIVIAL_NO_PATCH_REDUCTION_CERTIFIED",
+  "semantic_digest_sha256": "df2103fd7a4c7c62b525df8cf1ec0e37ae5d394454706a8f1250606d6f8fa05b"
+}

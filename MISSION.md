@@ -16,6 +16,67 @@
 8. 最終的には標準模型、真空選択、結合定数
 9. 既存理論から自動的には出ない反証可能な予言
 
+この9項目は縮小も削除もしない。以下の現行フェーズは、この目標へ到達するための
+順序であって、目標の差し替えではない。
+
+## 現行フェーズ（オーナー決定 2026-08-09）
+
+### 決定の理由
+
+Paper I v0.4.2 (`10.5281/zenodo.21861533`) までで、統一理論としての強い新規性は
+出ていない。リポジトリ自身の
+[`reports/v0.4.2_prior_art_and_related_work_audit.md`](reports/v0.4.2_prior_art_and_related_work_audit.md)
+がその根拠を記録している。SR1 は Xu, arXiv:2607.26672 が self-adjoint slice で
+より一般であり、SR2 は `reachable_span_rank=1` の到達不可視な分離、SR3b-A は
+reconstruction slice 上の補題である。したがって当面の中心は、外部から読める
+未解決問題を一つ閉じることに置く。
+
+### 現行フェーズの中心
+
+> **955 profile (strong GC + reachable-state MSR) を、witness ではなく
+> obstruction 側を本命として決着させる。**
+
+`955` を選ぶ理由は一つだけである。prior-art audit が、これを Xu が明示的に
+open と書いた方向（non-self-adjoint / state-only covariance）との直接の重なり
+として分類しているためである。どちらに転んでも「最近の論文が名指しした未解決
+問題に答えた」という外部から検証可能な新規性になる。内部証明書の累積では
+この可読性は得られない。
+
+obstruction 側を本命とするのは、蓄積データがその方向を指しているためである。
+**955 トラック固有の証拠**は、pure-lower ansatz の global no-go 証明と、
+mixed-xy tangent scout に witness がないことである。**隣接する SR2-V トラック**
+では、bounded full-profile scout が 960 点で escape 0、固定状態 slice が
+unit ideal ですべて潰れている。両者は別トラックの結果であり、SR2-V の証拠は
+955 の証拠ではない。さらに
+[`reports/v0.4.2_955_symmetry_orbit_reduction.md`](reports/v0.4.2_955_symmetry_orbit_reduction.md)
+により組合せ的対称群が自明であることが確定したため、patch ごとの witness 探索は
+131 個の独立な非線形問題に等しい一方、一様な obstruction 論証は patch 数に鈍感
+である。
+
+これは計画上の賭けであって定理ではない。960 点 0 escape は証拠であり、remote /
+disconnected な mixed components は依然として open である。witness が出た場合は
+そちらを終端として受け入れる。
+
+### 到達順序
+
+1. **955 を閉じる。** 三終端 —
+   `REACHABLE_VISIBLE_NONCOMMUTATIVE_WITNESS_CERTIFIED` /
+   `REACHABLE_VISIBLE_NONCOMMUTATIVITY_OBSTRUCTED` /
+   `REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT` — のいずれかに到達する。
+2. **721 profile (fixed-vector GC + strong MSR) を閉じる。**
+   Eq. (112) で消去された20生成元を戻す native compiler を先に作る。
+3. **`complete finite ON semantics lattice` を名乗る。** これを名乗れるのは
+   955 と 721 の双方が profile-native に解決された場合だけである。
+4. **その後にスケールアップする。** `n=5`、`d=3`、occurrence-OFF、singular、
+   finite-to-infinite lifting。lattice 完成という言い切れる定理を得る前に
+   これらへ散らばらない。
+
+### 現行フェーズで名乗らないもの
+
+- 上記1〜3の段階で「最終理論」「統一理論」に接近したとは書かない。
+- `d=2`, `n<=4` の可換性補題を、必須導出目標の進捗として数えない。
+- OFF、`n>=5`、singular、`d>=3` を含む無限定な complete classification。
+
 ## 手段と目的を分離する
 
 - QG-Benchは連続時空回収の検証器であり、最終理論ではない。
@@ -33,5 +94,8 @@
 - 数値フィットだけでゲージ対称性、2偏極、ゴースト不在を認定しない。
 - 低エネルギーGRを再現しただけで最終理論と呼ばない。
 - 既知理論の局所的な再現を停止条件なしに続けない。
+- bounded ansatz の no-go を一般 obstruction に昇格しない。
+- scout の非発見を obstruction の証明として記録しない。
 
 全ゲートが通るまでは、科学的な最終判定を `FINAL_THEORY_OPEN` とする。
+現行フェーズの完了はこの判定を動かさない。

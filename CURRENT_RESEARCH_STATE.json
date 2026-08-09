@@ -1,6 +1,6 @@
 {
   "schema_version": "cpobc-current-research-state-v1",
-  "updated": "2026-08-06",
+  "updated": "2026-08-09",
   "mutable_index_not_a_proof_certificate": true,
   "global_verdict": "FINAL_THEORY_OPEN",
   "public_baseline": {
@@ -69,6 +69,8 @@
     "v0.4.2_955_mixed_source_native_scalar_manifest": "READY_262_VARIABLES_783_320_24_165_DETERMINANTS_N_NONZERO_NO_SOLVER_OLD_21_IDEALS_UNUSED",
     "v0.4.2_955_mixed_xy_tangent_scout": "SCHEMA_V2_NO_WITNESS_OPEN_LOCAL_UPPER_OBSTRUCTION_AND_PURE_LOWER_BOUNDED_GLOBAL_NO_GO_REMOTE_MIXED_OPEN",
     "v0.4.2_955_pure_lower_oracle": "INDEPENDENT_EXACT_ORACLE_CERTIFIED_SR3B_AUXILIARY_NOT_NEW_SHORT_REPORT",
+    "v0.4.2_955_symmetry_orbit_reduction": "EXACT_GAUGE_TORUS_GRADING_CERTIFIED_AND_COMBINATORIAL_SYMMETRY_GROUP_PROVED_TRIVIAL_ZERO_PATCH_REDUCTION_NONTERMINAL",
+    "v0.4.2_955_global_bilinear_reduction": "CPOBC_OFF_DIAGONAL_GLOBALLY_EXACTLY_LINEAR_TWO_23_DIMENSIONAL_KERNELS_262_TO_46_PARAMETERS_NO_LOCALISATION_NO_SOLVER_NONTERMINAL",
     "v0.4.2_sr2v_aligned_principal_open": "EXACT_NONLINEAR_Y_ZERO_OBSTRUCTION_ON_NONEMPTY_DELTA_ALIGN_NONZERO_OPEN_SEARCH_OPEN",
     "v0.4.2_sr2v_transitive_extension_principal_open": "GENERIC_SPLITTING_CERTIFIED_FOR_TWO_CHARACTER_TRANSITIVE_PERCOLATION_FAMILY_EXCEPTIONAL_LOCUS_OPEN",
     "v0.4.2_sr2v_commutator_pivot_cover": "COMPLETE_SIX_PAIR_FOUR_BRANCH_STRUCTURAL_COVER_NO_BRANCH_SOLVED",
@@ -93,8 +95,8 @@
     "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN"
   },
   "affected_campaign": {
-    "status": "SR3B_A_UNCHANGED_PURE_LOWER_BOUNDED_NO_GO_ORACLE_CERTIFIED_REMOTE_MIXED_OPEN",
-    "next_gate": "SYMMETRY_ORBIT_REDUCTION_THEN_SMALL_NATURAL_PRINCIPAL_OPEN_EXACT_SCOUTS",
+    "status": "SR3B_A_UNCHANGED_PURE_LOWER_BOUNDED_NO_GO_ORACLE_CERTIFIED_MIXED_GAUGE_TORUS_AND_TRIVIAL_SYMMETRY_GROUP_CERTIFIED_REMOTE_MIXED_OPEN",
+    "next_gate": "ELIMINATE_REDUCED_LINEAR_RANK_THREE_THEN_ANALYSE_954_REDUCED_BILINEAR_FORMS_AND_CARRY_NONSINGULARITY_LOCALISATION_INTO_THE_46_PARAMETER_COORDINATES",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
       "SOURCE_PROFILE_COVERAGE_CERTIFICATE",
@@ -172,7 +174,91 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "For the remaining remote or disconnected x!=0,y!=0 mixed components, first perform symmetry/orbit reduction and exact-scout a small natural principal-open set; do not brute-force all 131 patches",
+    "next_gate_description": "The symmetry/orbit half of the former next gate closed with a negative terminal: the combinatorial symmetry group is trivial, so the 131 patches y_[e]!=0 admit no symmetry reduction. The successor gate replaced patch scouting entirely: the CPOBC off-diagonal blocks are globally exactly linear, their two 23-dimensional kernels reduce the mixed system from 262 to 46 parameters with no localisation and no solver, and the recompiled system has 1,933 entries, 9,557 terms and maximum degree 4 with a 60-term Q-commutator target. Remaining work is to eliminate the reduced rank-three linear part, analyse the 954 reduced bilinear CPOBC forms, and carry the nonsingularity localisation into the reduced coordinates",
+    "symmetry_orbit_reduction": {
+      "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
+      "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
+      "module": "src/universe_lab/final_theory/source_native_955_symmetry_orbit_reduction_v042.py",
+      "schema_version": "final-theory-v042-955-symmetry-orbit-reduction-v1",
+      "verdict": "V042_955_SYMMETRY_GROUP_TRIVIAL_NO_PATCH_REDUCTION_CERTIFIED",
+      "semantic_digest_sha256": "df2103fd7a4c7c62b525df8cf1ec0e37ae5d394454706a8f1250606d6f8fa05b",
+      "gauge_torus": {
+        "verdict": "V042_955_MIXED_GAUGE_TORUS_GRADING_CERTIFIED",
+        "action": "g_t=diag(t,1): x_[e]->t*x_[e], y_[e]->t^-1*y_[e]",
+        "grading_terms_checked": {
+          "matrix_blocks": 22180,
+          "reachable_MSR_vector": 986,
+          "Q_commutator": 48
+        },
+        "violations": 0,
+        "preparation_vector_machine_checked_as_e1": true,
+        "gauge_parameters_removed": 1,
+        "full_stabiliser_claimed": false,
+        "pure_family_degeneration_available": false
+      },
+      "combinatorial_symmetry": {
+        "initial_orbit_colour_classes": 23,
+        "stable_orbit_colour_classes": 131,
+        "discrete": true,
+        "patches_removed_by_symmetry": 0,
+        "explicit_permutation_certificates_emitted": 0,
+        "combinatorial_word_level_only_polynomial_automorphisms_unclassified": true,
+        "stable_partition_sha256": "253194f3f33e04e409d9a100db1c8ae0e78e24c47ebae86eee54a6570b1bdaf6"
+      },
+      "solver_run": false,
+      "search_terminal": false,
+      "full_955_profile_claimed": false
+    },
+    "global_bilinear_reduction": {
+      "artifact": "results/v0.4.2_955_global_bilinear_reduction.json",
+      "report": "reports/v0.4.2_955_global_bilinear_reduction.md",
+      "module": "src/universe_lab/final_theory/source_native_955_global_bilinear_reduction_v042.py",
+      "schema_version": "final-theory-v042-955-global-bilinear-reduction-v1",
+      "verdict": "V042_955_GLOBAL_BILINEAR_REDUCTION_262_TO_46_CERTIFIED_NONTERMINAL",
+      "semantic_digest_sha256": "38b648b62ad893768285aa17ff282d60e35d26fea03798ccb56f7593b2a5e7d5",
+      "global_exact_linearity": {
+        "cpobc_upper_right_bidegrees": "1,0 only",
+        "cpobc_lower_left_bidegrees": "0,1 only",
+        "cpobc_diagonal_bidegrees": "1,1 only",
+        "is_a_global_identity_not_a_linearisation": true
+      },
+      "cpobc_kernels": {
+        "x_rank": 108,
+        "x_nullity": 23,
+        "y_rank": 108,
+        "y_nullity": 23,
+        "agrees_with_frozen_tangent_CPOBC_ranks": true,
+        "off_diagonal_vanishing_self_check_entries": 1566,
+        "off_diagonal_vanishing_failures": 0
+      },
+      "reduction": {
+        "parameters_before": 262,
+        "parameters_after": 46,
+        "effective_modulo_gauge": 45,
+        "localisation_used": false,
+        "patch_decomposition_used": false,
+        "solver_used": false
+      },
+      "reduced_system": {
+        "surviving_entries": 1933,
+        "total_terms": 9557,
+        "maximum_total_degree": 4,
+        "cpobc_diagonal_is_bilinear_with_at_most_three_terms": true,
+        "linear_part_rank": 3,
+        "linear_part_eliminated_here": false,
+        "implied_upper_bound_on_remaining_parameters": 43,
+        "gauge_grading_violations": 0
+      },
+      "reduced_Q_commutator": {
+        "surviving_entries": 24,
+        "total_terms": 60,
+        "identically_zero": false
+      },
+      "nonsingularity_localisation_imposed": false,
+      "solver_run": false,
+      "search_terminal": false,
+      "full_955_profile_claimed": false
+    },
     "minimal_semantic_recovery_module_SR3b_M": {
       "status": "SR3B_M_CONDITIONAL_RECOVERY_LEMMAS_CERTIFIED_NOT_A_NEW_SHORT_REPORT",
       "artifact": "results/v0.4.2_sr3b_m_semantic_recovery.json",
