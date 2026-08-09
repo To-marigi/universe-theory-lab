@@ -1,46 +1,28 @@
-# Paper I v0.4.2 — Zenodo form values
+# Paper I v0.4.2 — Zenodoフォーム入力値
 
-This worksheet is complete for creating a **draft only**.  It does not
-authorize publication, DOI reservation, manuscript freeze, or a Git push.
-All release gates in `owner_decision.json` remain `false` until a saved
-external draft is recorded locally and later owner-only approvals are given.
+このワークシートは**draftの作成のみ**を完了させるためのものです。publication・DOI予約・manuscript freeze・Git pushを承認するものではありません。`owner_decision.json` の全リリースゲートは、保存済みの外部draftがローカルに記録され、後にオーナー専権の承認が与えられるまで `false` のままです。
 
-Create a **new upload**, not a new version of Zenodo record `21720863` (the
-separate v0.3.9 software record).
+Zenodoレコード `21720863`（別の v0.3.9 ソフトウェアレコード）の「new version」ではなく、**新規アップロード**を作成してください。
 
-The `2026-08-07T1600Z` predraft literature gate is complete and current: it
-was cut against candidate `c112b987…fa2e` and is bound into
-`verify_paper1_bundle.py`. Its fixed submittedDate window had accumulated
-real arXiv index catch-up since the `2026-08-06T2315Z` predecessor gate
-(722 -> 908 records); every difference was individually reviewed and found
-nonmaterial, and the two tracked records remain at `v1`. The `2026-08-06T2315Z`
-gate itself was cut against the superseded PDF `9f58867d…fd43` and is now
-historical provenance only, retained as the documented predecessor.
+`2026-08-07T1600Z` predraft文献ゲートは完了済み・現行のものです: 候補
+`c112b987…fa2e` に対して切られ、`verify_paper1_bundle.py` に束縛されています。固定submittedDateウィンドウ内で、前身の `2026-08-06T2315Z` ゲート以降に実際のarXivインデックス追いつきが発生していました（722 -> 908件）。すべての差分は個別にレビューされ非重要と判定されており、追跡対象の2レコードは `v1` のままです。`2026-08-06T2315Z` ゲート自体はsupersededのPDF `9f58867d…fd43` に対して切られたもので、現在は歴史的な来歴としてのみ、文書化された前身として保持されています。
 
-**Owner acceptance of the current PDF bytes is recorded, but this worksheet
-still does not by itself authorize Save draft.** The all-page visual QA of the
-current bytes was performed by the assistant session that made the last
-addition, not by the owner directly; the owner separately accepted these exact
-bytes, recorded in
-`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md`, and both the
-builder and verifier fail closed on that record. Nothing here authorizes
-publication, DOI reservation, a Git push, manuscript freeze, or deposit. Those
-release gates remain `false`, and
-`remote_visibility = NOT_VERIFIED_BY_BUILDER` is pending owner verification.
+**現行PDFバイトのオーナー受諾は記録済みですが、このワークシート単独ではSave draftを承認しません。** 現行バイトの全ページ目視QAは、最後の追記を行ったアシスタントセッションが実施したものであり、オーナー本人によるものではありません。オーナーはこれとは別に、これらの正確なバイトを
+`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md` の記録に基づいて受諾しており、builder・verifierの両方がこの記録に対してfail closedしています。ここに記載されている内容は、publication・DOI予約・Git push・manuscript freeze・depositのいずれも承認するものではありません。これらのリリースゲートは `false` のまま、`remote_visibility = NOT_VERIFIED_BY_BUILDER` もオーナー検証待ちのままです。
 
-## Core fields
+## 主要項目（Core fields）
 
-| Zenodo field | Final input |
+| Zenodoフィールド | 最終入力値 |
 | --- | --- |
 | Resource type | `Publication` → `Preprint` |
-| Title | Copy the title below exactly. |
+| Title | 下記のtitleをそのままコピーする。 |
 | Do you already have a DOI? | `No, I need one` |
 | Version | `0.4.2` |
 | Access right | `Open` |
 | License | `CC BY 4.0` |
 | Language | `English` |
 
-### Title
+### Title（原文どおり貼り付け）
 
 ```text
 Statewise versus operator Bell causality in finite quantum sequential growth: exact separation and recovery at dimension two
@@ -48,7 +30,7 @@ Statewise versus operator Bell causality in finite quantum sequential growth: ex
 
 ### Creator
 
-| Creator field | Final input |
+| Creatorフィールド | 最終入力値 |
 | --- | --- |
 | Person type | `Person` |
 | Given name | `Kenichi` |
@@ -57,15 +39,11 @@ Statewise versus operator Bell causality in finite quantum sequential growth: ex
 | ORCID | `0009-0003-9256-7089` |
 | Affiliation | `Independent researcher` |
 
-Search by the ORCID first and select the matching `Kenichi Osaki` profile.  If
-manual entry is required, use the split given/family names above.
-`Independent researcher` is the approved non-institutional wording; do not
-invent an institutional affiliation.
+まずORCIDで検索し、一致する `Kenichi Osaki` プロファイルを選択してください。手動入力が必要な場合は、上記のgiven/family名を分割したものを使用してください。`Independent researcher` は承認済みの非所属機関表記です。所属機関を創作しないでください。
 
-### Main public description
+### Main public description（原文どおり貼り付け）
 
-Paste this in the main **Description** field.  It is the public-facing English
-abstract, not the full internal claim ledger.
+これをメインの **Description** フィールドに貼り付けてください。これは一般公開向けの英語アブストラクトであり、内部の完全なclaim ledgerではありません。
 
 ```text
 We present a bounded analysis of the finite, nonsingular, occurrence-ON quantum sequential-growth presentation at dimension d=2 and source stages n<=4. The preprint records five ledger-bound results: a frozen strong/strong commutativity baseline; an exact rational fixed-vector/general-covariance and reachable-state/martingale witness of noncommutativity; a source-native Eq. (120) lemma; commutativity on a proper reconstruction slice; and conditional statewise-to-operator recovery lemmas. Its purpose is to make the distinction between statewise and operator semantics auditable, rather than to classify all finite semantics. In particular, it does not claim the full 955 or 721 profiles, a complete finite occurrence-ON classification, or a reachable-visible witness. The bounded U2 auxiliary-ideal investigation is retained as a reproducibility and resource-boundary record, not as a unit-ideal theorem.
@@ -73,18 +51,15 @@ We present a bounded analysis of the finite, nonsingular, occurrence-ON quantum 
 
 ### Additional descriptions
 
-In Zenodo's **Additional descriptions** UI, add these two separate entries.
-Choose the listed selectable type for each entry; do not merge them into the
-main Description field.
+Zenodoの **Additional descriptions** UIで、以下の2つの独立したエントリを追加してください。それぞれ記載のとおりのtypeを選択し、メインのDescriptionフィールドに統合しないでください。
 
 #### Additional description 1
 
-| Field | Value |
+| フィールド | 値 |
 | --- | --- |
 | Type | `Technical info` |
 
-Zenodo has no separate title box for an additional description.  Paste the
-heading as the first sentence of the description itself:
+Zenodoには追加descriptionの見出し欄が別途ないため、descriptionの最初の一文として見出しを貼り付けてください：
 
 ```text
 Scope and claim boundary. Paper I is a claim-locked archive/submission candidate giving a scoped characteristic-zero interpretation of exact QQ certificates for finite quantum sequential growth at dimension d=2, source stages n<=4, declared nonsingular transitions, and certified occurrence-ON artifacts. C1 is the frozen v0.3.7/v0.3.9 literal strong-GC/strong-MSR comparison baseline, which forces Q1 through Q4 commutativity on its recorded denominator-open 21-chart/S3 certificate and does not use Q5. C2 is an exact rational weak/weak separation: fixed-vector GC plus reachable-state MSR admits a noncommutative witness, but its reachable span has rank one, so the witness is not claimed to be reachable-visible. C3 proves the six raw antichain CPOBC source identities behind Eq. (120) from source nonsingularity alone. C4 proves commutativity only on the proper reconstruction slice P_sGC+rMSR intersect image(Phi_U), not on the full 955 profile or its image complement. C5 gives conditional statewise-to-operator recovery: evaluation injectivity on the declared residual family is necessary and sufficient, with exact same-residual two-probe and non-scalar 2x2 centralizer endpoints; the ordinary single-Omega profile is not claimed to supply those probes. The explicit nonclaims N1--N6 cover the full 955 and 721 profiles, a complete finite ON lattice, reachable-visible weak noncommutativity, a full U2 ideal theorem, occurrence-OFF classification, relation minimality, n>=5, d>=3, singular transitions, and infinite-system conclusions. Scientifically, the global SR2-V status remains SEARCH_OPEN_NO_TERMINAL, U2 remains SOFT_RESOURCE_LIMIT_NONTERMINAL, and u2_is_global_terminal=false. The Paper I editorial disposition is PAPER_I_SCOPED_U2_RESOURCE_OPEN_LIMITATION_ACCEPTED; this is a scoped resource-open limitation, not a QQ theorem or a terminal verdict. The upload excludes third-party reference PDFs/texts and vendored archives; the complete weak electronic ledger remains authoritative, while the compact supplement is an authenticated navigation and selected-witness layer. Full reproduction requires the repository, pinned toolchains, and its exact claim-bound evidence.
@@ -92,20 +67,19 @@ Scope and claim boundary. Paper I is a claim-locked archive/submission candidate
 
 #### Additional description 2
 
-| Field | Value |
+| フィールド | 値 |
 | --- | --- |
 | Type | `Other` |
 
-Again, paste the heading inside the description because there is no separate
-title field:
+こちらも同様に、別途見出し欄がないためdescription内に見出しを貼り付けてください：
 
 ```text
 Authorship and AI assistance. The human author is responsible for all claims. OpenAI Codex (Luna/Sol) and Anthropic Claude assisted bounded implementation, audit, and drafting; AI systems are not authors and are not proof authorities.
 ```
 
-### Keywords
+### Keywords（原文どおり貼り付け）
 
-Enter these as separate keywords:
+以下を個別のkeywordとして入力してください：
 
 ```text
 causal sets
@@ -123,98 +97,63 @@ computer-assisted proof
 reproducibility
 ```
 
-## Leave these empty
+## 空欄のままにする項目
 
-| Zenodo field | Final value |
+| Zenodoフィールド | 最終値 |
 | --- | --- |
-| Communities | Empty (`[]`) |
-| Funding | Empty (`[]`) |
-| Related/alternate identifiers | Empty (`[]`) |
-| Existing DOI | Empty (`null`) |
-| Additional titles | Empty |
-| Contributors | Empty; AI systems are not contributors/authors |
-| Additional dates | Empty |
-| References | Empty; the bibliography is in the PDF |
-| Repository URL / Software fields | Empty; this record is a Preprint |
-| Journal / imprint / thesis / conference | Empty |
-| Domain-specific fields | Empty |
+| Communities | 空（`[]`） |
+| Funding | 空（`[]`） |
+| Related/alternate identifiers | 空（`[]`） |
+| Existing DOI | 空（`null`） |
+| Additional titles | 空 |
+| Contributors | 空；AIシステムはcontributors/authorsではない |
+| Additional dates | 空 |
+| References | 空；参考文献リストはPDF内にある |
+| Repository URL / Software fields | 空；このレコードはPreprintである |
+| Journal / imprint / thesis / conference | 空 |
+| Domain-specific fields | 空 |
 
-Do not add the v0.3.9 concept DOI or a commit URL as a relation unless the
-owner records a later, explicit decision.
+オーナーが後に明示的な決定を記録しない限り、v0.3.9のconcept DOIやcommit URLをrelationとして追加しないでください。
 
-## Publication date and DOI policy
+## 公開日とDOI方針
 
-The local worksheet values remain `null`:
+ローカルワークシートの値は `null` のままです：
 
 ```text
 publication_date = null
 doi = null
 ```
 
-For a saved draft, Zenodo may require or prefill a date.  That UI value is not
-an approval to publish and is not a locally recorded publication date.  Before
-publication, the owner must confirm the actual first-public Zenodo date and
-record it in the release record.
+保存済みdraftに対して、Zenodoが日付を必須にしたり、あらかじめ埋めたりすることがあります。そのUI上の値はpublicationの承認ではなく、ローカルに記録された公開日でもありません。publication前に、オーナーが実際の初回公開Zenodo日を確認し、リリースレコードに記録する必要があります。
 
-**DOI instruction:** Select `No, I need one`, but do not click “Get a DOI
-now!”.  No draft reservation; Zenodo assigns/registers DOI at publication.
-There is no DOI to paste into the draft form.
+**DOIについての指示:** `No, I need one` を選択しますが、「Get a DOI now!」はクリックしないでください。方針は次のとおりです（原文）:
 
-Keep `Publisher = Zenodo`, `Visibility = Public`, and embargo disabled.  The
-optional copyright box may be left empty; CC BY 4.0 remains the controlling
-reuse statement.
+"No draft reservation; Zenodo assigns/registers DOI at publication."
 
-## Exact commit value
+（draft予約は行わない。ZenodoはpublicationのタイミングでDOIを割り当て・登録する。）draftフォームに貼り付けるDOIはありません。
 
-This repository-tracked worksheet intentionally does not hard-code its own
-commit, which would create a circular self-reference.  The production
-supplement's `upload_checksums.json` embeds `source_commit_binding` with the
-exact full 40-hex SHA, canonical repository URL, checked source hashes/sizes,
-and automatic witness.  The builder does not verify that the selected commit
-is pushed, so its `tree_url` is explicitly `null` and
-`remote_visibility = NOT_VERIFIED_BY_BUILDER` until the owner verifies the
-remote state.  Copy the same exact SHA from the generated
-`ZENODO_UPLOAD_RECEIPT.md` delivered next to (not inside) the upload
-directory and compare the two values.  Under the current empty-related-
-identifier policy, the SHA is provenance for local verification and is not
-pasted into a Zenodo field.  Do not invent a `/tree/<SHA>` link, use an older
-candidate SHA, or put a placeholder into Zenodo.
+`Publisher = Zenodo`、`Visibility = Public` を維持し、embargoは無効のままにしてください。任意のcopyright欄は空欄のままで構いません。CC BY 4.0が引き続き有効な再利用条件です。
 
-Immediately before publication, run a fresh date-stamped literature gate.  If
-that changes any release file, commit the approved changes, rebuild with the
-new full SHA using `--commit`, and replace the upload set and receipt together.
+## 正確なコミット値
 
-## File selection
+このリポジトリ管理下のワークシートは、自己参照（循環参照）を作らないよう、意図的に自身のコミットをハードコードしていません。本番supplementの `upload_checksums.json` は `source_commit_binding` にフル40桁16進SHA、正規リポジトリURL、チェック済みソースハッシュ／サイズ、自動witnessを埋め込んでいます。builderは選択済みコミットがpush済みかどうかを検証しないため、`tree_url` は明示的に `null`、`remote_visibility = NOT_VERIFIED_BY_BUILDER` のまま、オーナーがremote状態を検証するまで維持されます。アップロードディレクトリの隣に（内部にではなく）生成される `ZENODO_UPLOAD_RECEIPT.md` から同一の正確なSHAをコピーし、両方の値を比較してください。現行の空関連識別子方針の下では、このSHAはローカル検証のための来歴情報であり、Zenodoのフィールドに貼り付けるものではありません。`/tree/<SHA>` リンクを創作したり、古い候補SHAを使ったり、プレースホルダーをZenodoに入力したりしないでください。
 
-The default upload layout is exactly these two files:
+publication直前に、改めて日付付きの文献ゲートを実行してください。それによってリリース対象ファイルに変更が生じた場合は、承認済みの変更をコミットし、`--commit` で新しいフルSHAを使って再ビルドし、アップロード一式とreceiptを一緒に差し替えてください。
+
+## ファイル選択
+
+デフォルトのアップロード構成は、正確に以下の2ファイルです：
 
 ```text
 paper1_statewise_operator_v0.4.2.pdf
 paper1_statewise_operator_v0.4.2_supplement.tar.gz
 ```
 
-The supplement binds the external PDF by SHA-256 and embeds the selected
-source-commit binding; do not upload a second PDF
-or the historical `paper1_statewise_operator_v0.4.2_zenodo.tar.gz` archive.
-The historical archive predates the current DOI policy and does not provide
-direct PDF preview.  Use the two-file set only when its external receipt shows
-the same production commit as the embedded `source_commit_binding` and strict
-verification passes.  The tracked worksheet's `archive_sha256` remains
-`null`; the external receipt carries the generated supplement hash without a
-self-reference.  A `--unbound-preview` supplement has
-`status = UNBOUND_PREVIEW` and `commit = null`; the verifier rejects it and it
-is never an upload candidate.
+supplementは外部PDFをSHA-256で束縛し、選択済みのsource-commit束縛を埋め込みます。2つ目のPDFや、歴史的な `paper1_statewise_operator_v0.4.2_zenodo.tar.gz` アーカイブを追加しないでください。この歴史的アーカイブは現行のDOI方針より前のもので、PDFの直接プレビューを提供しません。2ファイル構成は、その外部receiptが埋め込まれた `source_commit_binding` と同じ本番コミットを示し、strict検証が通る場合にのみ使用してください。追跡対象ワークシートの `archive_sha256` は `null` のままです；外部receiptは自己参照なしに生成済みsupplementハッシュを保持します。`--unbound-preview` のsupplementは
+`status = UNBOUND_PREVIEW`、`commit = null` となり、verifierはこれを拒否します。これはアップロード候補には決してなりません。
 
-After uploading both files, explicitly select the standalone PDF as Zenodo's
-default preview and compare its displayed size/checksum with the external
-receipt before saving the draft.  Confirm that the uploaded supplement's
-`source_commit_binding.commit` exactly matches the external receipt SHA.
+両ファイルをアップロードした後、スタンドアロンPDFをZenodoのデフォルトプレビューとして明示的に選択し、draftを保存する前に表示されているサイズ／チェックサムを外部receiptと比較してください。アップロードされたsupplementの `source_commit_binding.commit` が外部receiptのSHAと正確に一致することを確認してください。
 
-## Draft-only handoff receipt
+## Draft限定のhandoff receipt
 
-If the owner later creates and saves the Zenodo draft, record locally (without
-publishing): the draft URL/record identifier, creation timestamp, displayed
-file names and SHA-256 values, the UI publication-date value, and confirmation
-that “Get a DOI now!” was not used.  Only after that receipt may
-`draft_created` be considered for a separate owner-approved update; it is
-`false` now.
+オーナーが後にZenodo draftを作成・保存した場合は、（publishせずに）以下をローカルに記録してください: draft URL／レコード識別子、作成タイムスタンプ、表示されたファイル名とSHA-256値、UI上の公開日の値、「Get a DOI now!」を使用しなかったことの確認。そのreceiptを得て初めて、`draft_created` を別途オーナー承認済みの更新として検討可能になります。現時点では `false` のままです。

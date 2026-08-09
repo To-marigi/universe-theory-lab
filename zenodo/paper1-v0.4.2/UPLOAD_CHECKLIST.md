@@ -1,67 +1,32 @@
-# Paper I v0.4.2: Zenodo manual-upload checklist
+# Paper I v0.4.2: Zenodo手動アップロード・チェックリスト
 
-This is an owner gate for a new Paper I preprint record.  It is not an
-automatic publish script.  Do not edit the frozen v0.3.9 software record or
-copy the root `.zenodo.json` / `CITATION.cff` into this package.
+これはPaper Iの新規プレプリントレコードのためのオーナーゲートです。自動投稿スクリプトではありません。凍結済みのv0.3.9ソフトウェアレコードを編集したり、リポジトリルートの `.zenodo.json` / `CITATION.cff` をこのパッケージにコピーしたりしないでください。
 
-The approved owner policies are recorded in
-`owner_decision.json` and
-`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md`, which preserves
-and links the superseded 2026-08-06 record: the accepted final PDF
-is 18 pages, 428286 bytes, with SHA-256
-`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`, the
-directly previewable PDF-plus-supplement layout is accepted, the Paper I license is CC BY 4.0 (the
-repository software remains MIT), and initial related identifiers are `[]`.
-Publication date, DOI, and final commit values remain null under their stated
-policies.  Draft creation, freeze, submission, deposit, and publication remain
-unperformed and unauthorized.  No DOI reservation is requested.
+承認済みのオーナー方針は `owner_decision.json` と `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md` に記録されています（後者は前身の2026-08-06記録を保存・参照しています）。要点: 受諾済みの最終PDFは18ページ・428286 bytes、SHA-256
+`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`、直接プレビュー可能なPDF＋supplement構成が承認済み、Paper Iのライセンスは CC BY 4.0（リポジトリソフトウェアはMITのまま）、初期の関連識別子は `[]`。公開日・DOI・最終コミット値は、それぞれの承認済み方針の下でnullのまま。draft作成・freeze・submission・deposit・publicationは未実行・未承認です。DOI予約は要求していません。
 
-**The literature gate is current.**  The `2026-08-07T1600Z` predraft gate was
-cut against the current candidate
-`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e` and is the
-active authority: `verify_paper1_bundle.py`'s `ZENODO_PREDRAFT_*` bindings
-point to it.  Its fixed submittedDate window had accumulated real arXiv
-index catch-up since the `2026-08-06T2315Z` gate (722 -> 908 records); every
-added, missing, version-replaced, or newly rule-triggered ID within that
-still-closed window was individually reviewed by title/abstract and found
-nonmaterial to C1--C5.  See
+**文献ゲートは現行のものです。** `2026-08-07T1600Z` predraftゲートは現行候補
+`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e` に対して切られ、現行の権威です: `verify_paper1_bundle.py` の `ZENODO_PREDRAFT_*` 束縛はこれを指しています。固定submittedDateウィンドウ内で、`2026-08-06T2315Z` ゲート以降に実際のarXivインデックス追いつきが発生していました（722 -> 908件）。このまだ閉じたウィンドウ内で追加・欠落・版更新・新規ルール該当となったIDはすべて個別にタイトル/アブストラクトでレビューされ、C1--C5に対して非重要と判定されています。詳細は
 `reports/v0.4.2_paper1_zenodo_predraft_literature_gate_2026-08-07_20260807T1600Z.md`
-for the full result.  The superseded `2026-08-06T2315Z` gate (cut against the
-withdrawn `9f58867d…fd43` candidate) remains bound only as the historical
-predecessor document inside the supplement.
+を参照してください。superseded（置き換え済み）の `2026-08-06T2315Z` ゲート（取り下げられた `9f58867d…fd43` 候補に対して切られたもの）は、supplement内の歴史的な前身文書としてのみ束縛されています。
 
-**Owner acceptance of the current PDF bytes is now recorded.**  The all-page
-visual QA of the current bytes was performed by the assistant session that made
-the last addition, not by the owner directly; the owner separately accepted
-these exact bytes (SHA-256
-`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`), per
-`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md`, and
-`build_paper1_bundle.py`/`verify_paper1_bundle.py` bind that acceptance
-sentence as a required fragment.  This still does not by itself authorize
-**Save draft** — see the release gate below.  A later deposit attempt still
-requires a freshly timestamped literature gate cut immediately beforehand,
-per the same reasoning that withdrew the `2026-08-06` candidate: a dated gate
-becomes stale while time passes.  Publication, push, DOI, and other owner
-release gates remain false; remote visibility is still pending owner
-verification.
+**現行PDFバイトのオーナー受諾は記録済みです。** 現行バイトの全ページ目視QAは、最後の追記を行ったアシスタントセッションが実施したものであり、オーナー本人によるものではありません。オーナーはこれとは別に、これらの正確なバイト（SHA-256
+`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`）を
+`reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md` の記録に基づいて受諾しており、`build_paper1_bundle.py`/`verify_paper1_bundle.py` はこの受諾文を必須フラグメントとして束縛しています。これ単独では **Save draft** を承認しません — 下記のリリースゲートを参照してください。後のdeposit試行には、`2026-08-06` 候補を取り下げたのと同じ理由により、直前に改めて日付付きの文献ゲートを切る必要があります: 日付付きゲートはその時点限りの証拠であり、恒久的な保証ではありません。publication・push・DOI・その他のオーナー・リリースゲートはfalseのまま、remote visibilityもオーナー検証待ちのままです。
 
-## 0. Owner decisions before packaging
+## 0. パッケージ化前のオーナー決定事項
 
-- [ ] The owner has selected the final source commit and final verified PDF.
-- [ ] The owner accepts the **PDF-plus-supplement layout** below (the default).
-- [ ] The former single outer archive is retained only as a historical
-      candidate and is not the new Zenodo upload layout.
-- [ ] Publication date, license, relations, DOI handling, and the final
-      publish action have an owner decision.
-- [ ] The production worksheet retains `license = CC BY 4.0`; do not replace
-      the repository's MIT software license decision.
+- [ ] オーナーが最終ソースコミットと最終検証済みPDFを選定済みである。
+- [ ] オーナーが下記の **PDF＋supplement構成**（デフォルト）を承認している。
+- [ ] 旧来の単一外側アーカイブは歴史的候補としてのみ保持され、新しいZenodoアップロード構成ではない。
+- [ ] 公開日・ライセンス・関連識別子・DOIの扱い・最終publish操作について、オーナー決定がある。
+- [ ] 本番ワークシートは `license = CC BY 4.0` を保持している。リポジトリのMITソフトウェアライセンス決定を置き換えないこと。
 
-The metadata worksheet is a UI worksheet, not a Zenodo API payload.  Null
-owner fields are intentionally not silently filled by these tools.
+メタデータワークシートはUIワークシートであり、Zenodo APIペイロードではありません。null になっているオーナー項目は、これらのツールによって黙示的に埋められることはありません。
 
-## 1. Build and verify the default PDF-plus-supplement set
+## 1. デフォルトのPDF＋supplement一式をビルド・検証する
 
-From the repository root, with the final generated PDF present:
+リポジトリルートから、最終生成PDFが存在する状態で:
 
 ```powershell
 uv run python scripts/normalize_v042_paper1_zenodo_predraft_gate_20260807T1600Z.py --check
@@ -72,130 +37,82 @@ uv run python zenodo/paper1-v0.4.2/verify_paper1_bundle.py `
   --root ..\paper1-v0.4.2-upload
 ```
 
-- [ ] The builder and verifier both exit successfully.
-- [ ] The output directory is outside the repository and was new or empty.
-- [ ] The builder summary and supplement `upload_checksums.json` show
-      `source_commit_binding.status = PRODUCTION_COMMIT_BOUND`, the full
-      40-hex selected commit, the canonical repository URL, and
-      `tree_url = null` / `remote_visibility = NOT_VERIFIED_BY_BUILDER` until
-      the owner verifies remote visibility.  The binding's checked source
-      hashes/sizes exactly cover `manifest.files`, including the automatic
-      `results/v0.4.2_paper1_witness_tables.json` witness.
-- [ ] The output directory contains **exactly two files**:
+- [ ] builderとverifierの両方が正常終了する。
+- [ ] 出力ディレクトリがリポジトリ外にあり、新規または空だった。
+- [ ] builderのサマリーとsupplementの `upload_checksums.json` が
+      `source_commit_binding.status = PRODUCTION_COMMIT_BOUND`、
+      フル40桁16進の選択済みコミット、正規リポジトリURL、
+      `tree_url = null` / `remote_visibility = NOT_VERIFIED_BY_BUILDER`（オーナーがremote visibilityを検証するまで）を示している。この束縛のチェック済みソースハッシュ／サイズは `manifest.files` を過不足なくカバーしており、自動追加される
+      `results/v0.4.2_paper1_witness_tables.json` witnessも含む。
+- [ ] 出力ディレクトリに**ちょうど2ファイル**が存在する:
 
       `paper1_statewise_operator_v0.4.2.pdf`
       `paper1_statewise_operator_v0.4.2_supplement.tar.gz`
 
-- [ ] The builder summary and verifier worksheet both state
-      `layout = pdf_and_supplement` and list exactly those two Zenodo files.
-- [ ] Record the standalone PDF SHA-256/byte count, supplement SHA-256/byte
-      count and manifest semantic digest, PDF page count, and selected commit
-      in the release notes.
-- [ ] Confirm the owner decision artifact/report hashes in the builder summary
-      and that all release gates remain false.
+- [ ] builderのサマリーとverifierのワークシートの両方が
+      `layout = pdf_and_supplement` を示し、まさにこの2つのZenodoファイルを列挙している。
+- [ ] スタンドアロンPDFのSHA-256／バイト数、supplementのSHA-256／バイト数とmanifestのsemantic digest、PDFページ数、選択済みコミットをリリースノートに記録する。
+- [ ] builderサマリー内のオーナー決定アーティファクト／レポートのハッシュ、および全リリースゲートがfalseのままであることを確認する。
 
-The strict verifier checks deterministic gzip/tar metadata, outer and inner
-manifest digests, member hashes/sizes, the final PDF source/report binding,
-metadata claim fragments, and the absence of forbidden or unexpected paths.
+strict verifierは、決定的なgzip/tarメタデータ、外側・内側両方のmanifest digest、メンバーのハッシュ／サイズ、最終PDFのソース／レポート束縛、メタデータのclaimフラグメント、そして禁止パス・想定外パスが存在しないことをチェックします。
 
-For a local non-production preview only, `--unbound-preview` may replace
-`--commit <owner-approved-final-commit>`.  The supplement manifest is then
-explicitly marked `status = UNBOUND_PREVIEW` with `commit = null`; strict
-verification rejects it.  It has no Git blob binding and must never be
-uploaded or used as the release worksheet.
+ローカルの非本番プレビュー用途に限り、`--commit <owner-approved-final-commit>` の代わりに `--unbound-preview` を指定できます。この場合supplement manifestは明示的に `status = UNBOUND_PREVIEW`、`commit = null` としてマークされ、strict verificationはこれを拒否します。Git blob束縛を持たないため、アップロードやリリースワークシートとして使用してはいけません。
 
-## 2. Exact Zenodo file list (default)
+## 2. Zenodoに投稿する正確なファイル一覧（デフォルト）
 
-Upload **two** files, exactly as named:
+**2つ**のファイルを、正確に以下の名前でアップロードしてください:
 
 ```text
 paper1_statewise_operator_v0.4.2.pdf
 paper1_statewise_operator_v0.4.2_supplement.tar.gz
 ```
 
-The supplement's `upload_checksums.json` records the source members, embeds
-the selected source commit binding, and binds the standalone PDF by SHA-256.
-Do not add a second PDF, a raw reference
-PDF/text, a retrieval receipt, a raw Atom response, or a repository snapshot.
+supplementの `upload_checksums.json` はソースメンバーを記録し、選択済みソースコミット束縛を埋め込み、スタンドアロンPDFをSHA-256で束縛します。2つ目のPDF、生の参照PDF/テキスト、retrieval receipt、生のAtomレスポンス、リポジトリスナップショットは追加しないでください。
 
-## 3. Historical single-archive boundary
+## 3. 歴史的な単一アーカイブの位置づけ
 
-`paper1_statewise_operator_v0.4.2_zenodo.tar.gz` is a historical local
-candidate only.  Do not select it for the current Zenodo preprint record; its
-single-file form prevents direct PDF preview and it predates the current DOI
-policy.  It may be inspected offline with `verify_paper1_bundle.py --archive`
-for integrity/provenance comparison only.  Strict `--root` verification must
-reject it as an ineligible current upload layout even if its integrity passes.
-The legacy outer wrapper may report `commit_binding_embedded = false`; this
-refers only to the wrapper.  New historical wrappers place the production or
-explicit `UNBOUND_PREVIEW` binding in the inner supplement at
-`inner_supplement.source_commit_binding`.  An older inner supplement without
-that field is accepted only by explicit `--archive` integrity mode, never as
-current provenance or a current upload candidate.
+`paper1_statewise_operator_v0.4.2_zenodo.tar.gz` は歴史的なローカル候補にすぎません。現行のZenodoプレプリントレコードにはこれを選択しないでください。単一ファイル形式のためPDFの直接プレビューができず、現行のDOI方針より前のものです。整合性／来歴比較の目的に限り、`verify_paper1_bundle.py --archive` でオフライン検査できます。strictな `--root` 検証は、たとえ整合性が通ったとしても、これを現行アップロード構成として不適格と判定して拒否しなければなりません。レガシーな外側ラッパーは `commit_binding_embedded = false` と報告することがありますが、これはラッパーについてのみ言及したものです。新しい歴史的ラッパーは、本番または明示的な `UNBOUND_PREVIEW` 束縛を内側supplementの `inner_supplement.source_commit_binding` に配置します。その項目を持たない古い内側supplementは、明示的な `--archive` 整合性モードでのみ受け付けられ、現行の来歴や現行アップロード候補としては受け付けられません。
 
-## 4. Zenodo draft metadata
+## 4. Zenodo draftのメタデータ
 
-- [ ] Create a **new upload** (not “new version” of the v0.3.9 software
-      record).
-- [ ] Resource type: `Publication / Preprint`.
+- [ ] **新規アップロード**を作成する（v0.3.9ソフトウェアレコードの「new version」ではない）。
+- [ ] Resource type: `Publication / Preprint`。
 - [ ] Title: `Statewise versus operator Bell causality in finite quantum
-      sequential growth: exact separation and recovery at dimension two`.
-- [ ] Creator: `Osaki, Kenichi`; ORCID `0009-0003-9256-7089`; affiliation
-      `Independent researcher`.
-- [ ] Language: `English`; version: `0.4.2`; access: `Open`.
-- [ ] Copy the public abstract and keywords from `ZENODO_FORM_VALUES.md`.
-      Add the detailed scope text under **Additional descriptions → Technical
-      info** and the AI disclosure under **Additional descriptions →
-      Other**; do not put those internal claim-boundary details in the
-      main public description.
-- [ ] Keep communities, funding, and related identifiers empty unless the
-      owner explicitly decides otherwise.
-- [ ] Keep the local worksheet publication date null.  Zenodo may prefill a
-      required draft-date field; do not treat that saved-draft date as the
-      publication date.  Before publication, the owner must confirm and record
-      the actual first-public Zenodo date.
-- [ ] Use CC BY 4.0 for Paper I.  The repository software license remains MIT.
-- [ ] DOI policy is **no draft reservation**: leave DOI blank and do **not**
-      click “Get a DOI now!”.  Zenodo assigns/registers the DOI at publication.
+      sequential growth: exact separation and recovery at dimension two`（英語のまま、原文どおり貼り付け）。
+- [ ] Creator: `Osaki, Kenichi`；ORCID `0009-0003-9256-7089`；affiliation
+      `Independent researcher`（いずれも原文どおり貼り付け）。
+- [ ] Language: `English`；version: `0.4.2`；access: `Open`。
+- [ ] `ZENODO_FORM_VALUES.md` から公開アブストラクトとキーワードをコピーする。
+      詳細スコープテキストは **Additional descriptions → Technical
+      info** に、AI開示は **Additional descriptions →
+      Other** に追加する。内部的なclaim境界の詳細をメインの公開descriptionには入れないこと。
+- [ ] オーナーが明示的に別の判断をしない限り、communities・funding・関連識別子は空のままにする。
+- [ ] ローカルワークシートの公開日はnullのままにする。Zenodoは必須のdraft-date欄をあらかじめ埋めることがあるが、その保存済みdraftの日付を公開日として扱わないこと。公開前に、オーナーが実際の初回公開Zenodo日を確認・記録すること。
+- [ ] Paper IにはCC BY 4.0を使用する。リポジトリソフトウェアライセンスはMITのまま。
+- [ ] DOI方針は**draft予約なし**: DOI欄は空欄のままにし、「Get a DOI
+      now!」は**クリックしない**。Zenodoはpublication時にDOIを割り当て・登録する。
 
-## 5. Save draft, preview, and publish gate
+## 5. Save draft・プレビュー・publishゲート
 
-- [x] A literature gate for the current candidate has been cut, checked, and
-      recorded (`2026-08-07T1600Z`, `verify_paper1_bundle.py`'s
-      `ZENODO_PREDRAFT_*` bindings point to it). This step alone does not
-      authorize **Save draft**; do not publish yet.
-- [x] Owner acceptance of the current PDF bytes
-      (`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`) is
-      recorded in
-      `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md`. Both
-      the builder and verifier fail closed on this fragment.
-- [ ] If meaningful time has passed since the `2026-08-07T1600Z` gate was cut,
-      a fresh gate is cut immediately beforehand rather than reusing this one;
-      a dated gate is evidence for its own moment, not a standing guarantee.
-- [ ] Check title, creator, ORCID, affiliation, resource type, version,
-      description, keywords, license/date/relations in the preview.
-- [ ] Confirm the displayed upload file list is exactly the selected layout
-      above and record Zenodo's displayed bytes/checksums.
-- [ ] Compare the final PDF preview page count/content with the locally bound
-      final PDF.  Stop if Zenodo or local values differ.
-- [ ] Give the owner the draft URL, the exact commit recorded in both
-      `source_commit_binding` and the external receipt, all recorded SHA-256
-      values, layout, and owner-only metadata choices.
-- [ ] Before any later draft-save action, manuscript freeze, deposit, or
-      publication, run and record a newly timestamped literature gate.  If it
-      finds material change, stop and resolve it before any approval.
-- [ ] Obtain explicit owner approval to publish this draft.
-- [ ] Publish once; do not overwrite the v0.3.9 software record.
+- [x] 現行候補に対する文献ゲートが切られ、チェックされ、記録済み
+      （`2026-08-07T1600Z`、`verify_paper1_bundle.py` の
+      `ZENODO_PREDRAFT_*` 束縛がこれを指している）。このステップ単独では **Save draft** を承認しない。まだpublishしないこと。
+- [x] 現行PDFバイト
+      （`c112b987b4efb76312892481dd033598b939a0a8becfc4ac0e0eca4070dbfa2e`）のオーナー受諾は
+      `reports/v0.4.2_paper1_owner_decision_amendment_2026-08-07.md` に記録済み。builder・verifierの両方がこのフラグメントに対してfail closedしている。
+- [ ] `2026-08-07T1600Z` ゲートが切られてから意味のある時間が経過していれば、これを再利用せず直前に改めて新しいゲートを切ること。日付付きゲートはその瞬間限りの証拠であり、恒久的な保証ではない。
+- [ ] プレビューでtitle・creator・ORCID・affiliation・resource type・version・description・keywords・license/date/relationsを確認する。
+- [ ] 表示されているアップロードファイル一覧が、上記の選択済み構成とちょうど一致していることを確認し、Zenodoが表示するバイト数／チェックサムを記録する。
+- [ ] 最終PDFプレビューのページ数／内容を、ローカルで束縛されている最終PDFと比較する。ZenodoとローカルのTitle値が異なる場合は停止する。
+- [ ] draft URL、`source_commit_binding` と外部receiptの両方に記録された正確なコミット、記録済みの全SHA-256値、構成、オーナー専権のメタデータ選択をオーナーに提示する。
+- [ ] 後のdraft-save操作・manuscript freeze・deposit・publicationの前には、必ず新たに日付付きの文献ゲートを実行・記録すること。重要な変更が見つかった場合は、いかなる承認の前にも停止して解決すること。
+- [ ] このdraftをpublishする明示的なオーナー承認を得る。
+- [ ] 一度だけpublishする。v0.3.9ソフトウェアレコードを上書きしないこと。
 
-## 6. Post-publication readback
+## 6. Publication後の読み戻し
 
-- [ ] Record public record URL, version DOI, concept DOI, publication date,
-      and publication timestamp.
-- [ ] Read back metadata and the exact file name/byte/checksum list from the
-      public page or API and compare with the local worksheet.
-- [ ] Download the published file(s) and compare local SHA-256 values.  For
-      the default layout, place both downloaded files in a clean directory and
-      re-run `verify_paper1_bundle.py --root <directory>`.
-- [ ] Preserve the DOI and the supplement's source-commit binding plus final
-      external receipt in the release notes.  Any later scientific or file change receives a new version;
-      never mutate this record in place.
+- [ ] 公開レコードURL、version DOI、concept DOI、公開日、公開タイムスタンプを記録する。
+- [ ] 公開ページまたはAPIから、メタデータと正確なファイル名／バイト数／チェックサム一覧を読み戻し、ローカルワークシートと比較する。
+- [ ] 公開済みファイルをダウンロードし、ローカルのSHA-256値と比較する。デフォルト構成の場合、ダウンロードした両ファイルをクリーンなディレクトリに置き、
+      `verify_paper1_bundle.py --root <directory>` を再実行する。
+- [ ] DOIとsupplementのsource-commit束縛、最終外部receiptをリリースノートに保存する。後の科学的変更やファイル変更は必ず新しいversionとして扱い、このレコードをその場で書き換えないこと。
