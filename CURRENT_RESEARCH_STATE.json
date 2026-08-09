@@ -74,7 +74,8 @@
     "v0.4.2_955_mixed_branch_closure": "RANK3_QUOTIENT_KILLS_Q_COMMUTATOR_CPOBC_FIVE_MONOMIALS_EXACT_17D_PURE_UPPER_GLOBAL_SOLUTION_FAMILY_ALL_165_NONSINGULAR_MIXED_ANSATZ_TERMINAL_NO_SOLVER",
     "v0.4.2_955_slack_coverage_gap": "SOURCE_NATIVE_MSR_SLACK_CHART_EXACT_572_TO_476_MIXED_CUT_DIRECT_RANK214_PLUS48_DERIVED_SYNTACTIC_DEGREE_CEILING11_NO_EXPANSION_NO_SOLVER_FULL_OPEN",
     "v0.4.2_955_slack_term_preflight": "STREAMED_EXACT_476_COORDINATE_CORE_4412_SLOTS_4152_NONZERO_101200_TERMS_DEGREE9_NO_EXACT_LINEAR_EQUATIONS_16_TERMINAL_SLACK_BLIND_DIRECTIONS_NO_SOLVER_FULL_OPEN",
-    "v0.4.2_955_slack_CSG_tangent": "EXACT_NONSINGULAR_N_NONZERO_CSG_INVERSE_IMAGE_CORE_JACOBIAN_RANK427_TANGENT_DIM49_Q_GRADIENT_RAW_RANK6_MODULO_CORE_RANK0_FIRST_ORDER_ESCAPE_BLOCKED_SECOND_ORDER_OPEN",
+    "v0.4.2_955_slack_CSG_tangent": "EXACT_NONSINGULAR_N_NONZERO_CSG_INVERSE_IMAGE_CORE_JACOBIAN_RANK427_TANGENT_DIM49_Q_GRADIENT_RAW_RANK6_MODULO_CORE_RANK0_FIRST_ORDER_ESCAPE_BLOCKED_SUCCESSOR_CLOSES_SECOND_ORDER",
+    "v0.4.2_955_slack_CSG_second_order": "EXACT_QQ_49D_KERNEL_ALL_3985_CORE_COMPATIBILITY_FORMS_ZERO_ALL_FIRST_ORDER_TANGENTS_LIFT_THROUGH_SECOND_ORDER_ALL_24_Q_INTRINSIC_QUADRATIC_FORMS_ZERO_THIRD_ORDER_AND_REMOTE_FULL_955_OPEN",
     "v0.4.2_sr2v_aligned_principal_open": "EXACT_NONLINEAR_Y_ZERO_OBSTRUCTION_ON_NONEMPTY_DELTA_ALIGN_NONZERO_OPEN_SEARCH_OPEN",
     "v0.4.2_sr2v_transitive_extension_principal_open": "GENERIC_SPLITTING_CERTIFIED_FOR_TWO_CHARACTER_TRANSITIVE_PERCOLATION_FAMILY_EXCEPTIONAL_LOCUS_OPEN",
     "v0.4.2_sr2v_commutator_pivot_cover": "COMPLETE_SIX_PAIR_FOUR_BRANCH_STRUCTURAL_COVER_NO_BRANCH_SOLVED",
@@ -99,11 +100,12 @@
     "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN"
   },
   "affected_campaign": {
-    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_FIRST_ORDER_Q_TANGENT_ESCAPE_BLOCKED_SECOND_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "STREAM_THE_SECOND_ORDER_CORE_COMPATIBILITY_OBSTRUCTION_AND_Q_QUADRATIC_ESCAPE_ON_THE_49_DIMENSIONAL_CSG_TANGENT_KERNEL",
+    "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_SECOND_ORDER_THIRD_ORDER_AND_REMOTE_FULL_955_OPEN",
+    "next_gate": "PREFLIGHT_THEN_STREAM_THE_THIRD_ORDER_CORE_COMPATIBILITY_AND_Q_ESCAPE_AT_THE_CSG_POINT",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
-      "CSG_BASEPOINT_SECOND_ORDER_CORE_COMPATIBILITY_AND_Q_ESCAPE_AUDIT",
+      "CSG_BASEPOINT_THIRD_ORDER_SPARSE_TERM_AND_MEMORY_PREFLIGHT",
+      "CSG_BASEPOINT_THIRD_ORDER_CORE_COMPATIBILITY_AND_Q_ESCAPE_AUDIT",
       "VERSIONED_BUDGET_ARTIFACT"
     ],
     "relation_level_minimality": "DEFERRED",
@@ -180,7 +182,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "The known diagonal CSG solution has been pulled back exactly to the 476-coordinate slack chart. All 24 u:c:0 coordinates vanish, all 24 u:c:1 coordinates are nonzero, all 131 matrices equal diag(p_e,1), all determinants are nonzero, and the point lies on the N-nonzero open. The streamed core Jacobian has rank 427 and a 49-dimensional Zariski tangent kernel. The six Q commutators have 12 nonzero gradient rows of raw rank 6, but every row reduces to zero modulo the core Jacobian rowspace, so every first-order core deformation is Q-commutative to first order. The 16 terminal slack blind directions are also Q-silent. This is only a first-order obstruction; quadratic or remote noncommutative solutions remain open. The next gate is a streamed second-order compatibility obstruction and Q-quadratic-escape audit on the 49-dimensional tangent kernel. No generic solver or campaign budget is authorised yet.",
+    "next_gate_description": "At the exact nonsingular N-nonzero diagonal CSG point, the streamed core Jacobian has rank 427 and tangent dimension 49. Simultaneous exact QQ elimination of all 4,412 second-order core jets produces 3,985 dependent-Jacobian compatibility forms, every one identically zero, so every first-order tangent vector lifts through second order. All 24 Q-commutator scalar jets have zero intrinsic quadratic form after the same core elimination, so Q vanishes through order two on every core lift. The 16 terminal slack blind directions remain core- and Q-silent through order two, including zero raw restricted-quadratic occurrences. This is local and formal only: third order, convergence, remote components, Eq113/Eq139, and unrestricted source-native 955 remain open. At third order the full second-order jet fiber w=w_particular(z)+K*a must be retained: the candidate basis has 20,825 z-cubic plus 2,401 z-times-a monomials, total 23,226. The next gate is a versioned sparse term and memory preflight on this full fiber, followed by streamed third-order compatibility and Q-escape only if the budget is safe. No generic solver is authorised.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -429,7 +431,52 @@
         "all_Q_silent_at_first_order": true
       },
       "first_order_only": true,
-      "second_order_obstruction_open": true,
+      "second_order_obstruction_open": false,
+      "second_order_closed_by": "results/v0.4.2_955_slack_csg_second_order.json",
+      "solver_run": false,
+      "unrestricted_source_native_955_status": "OPEN"
+    },
+    "slack_CSG_second_order_audit": {
+      "artifact": "results/v0.4.2_955_slack_csg_second_order.json",
+      "report": "reports/v0.4.2_955_slack_csg_second_order.md",
+      "module": "src/universe_lab/final_theory/source_native_955_slack_csg_second_order_v042.py",
+      "schema_version": "final-theory-v042-955-slack-csg-second-order-v1",
+      "verdict": "V042_955_SLACK_CSG_SECOND_ORDER_ALL_TANGENTS_LIFT_Q_ESCAPE_BLOCKED_CERTIFIED",
+      "semantic_digest_sha256": "2c84fa6af833e320fe9e292a359808a7fcc162e225ce30edf038b5d352ae35f0",
+      "scope": {
+        "field": "QQ",
+        "basepoint": "diagonal CSG t_j=1 source matrices",
+        "formal_order": 2,
+        "local_only": true
+      },
+      "tangent_kernel": {
+        "dimension": 49,
+        "basis_digest_sha256": "6a16541866ac02b1c183bea412b6aa228659e0bbc96409cad33d01913e73075e",
+        "maximum_basis_vector_support": 158
+      },
+      "core_second_order_compatibility": {
+        "scalar_slots": 4412,
+        "Jacobian_rank": 427,
+        "dependent_Jacobian_rows": 3985,
+        "nonzero_compatibility_forms": 0,
+        "compatibility_span_rank": 0,
+        "every_first_order_tangent_lifts_through_second_order": true
+      },
+      "Q_second_order_modulo_core": {
+        "scalar_entry_slots": 24,
+        "nonzero_intrinsic_quadratic_forms": 0,
+        "intrinsic_quadratic_span_rank": 0,
+        "rank_modulo_core_compatibility_span": 0,
+        "Q_commutators_vanish_through_order_two_on_every_core_lift": true
+      },
+      "terminal_slack_blind_directions": {
+        "count": 16,
+        "raw_core_quadratic_monomial_occurrences": 0,
+        "raw_Q_quadratic_monomial_occurrences": 0,
+        "remain_core_and_Q_silent_through_order_two": true
+      },
+      "third_order_open": true,
+      "remote_components_open": true,
       "solver_run": false,
       "unrestricted_source_native_955_status": "OPEN"
     },
@@ -1144,6 +1191,9 @@
     "reports/v0.4.2_955_minimal_deelimination_design.md",
     "reports/v0.4.2_eq120_source_provenance.md",
     "reports/v0.4.2_955_source_native_slack_compiler.md",
+    "reports/v0.4.2_955_slack_csg_second_order.md",
+    "results/v0.4.2_955_slack_csg_second_order.json",
+    "src/universe_lab/final_theory/source_native_955_slack_csg_second_order_v042.py",
     "reports/v0.4.2_955_n_nonzero_scout.md",
     "reports/v0.4.2_955_mixed_source_native_manifest.md",
     "reports/v0.4.2_955_mixed_xy_tangent_scout.md",
@@ -1191,6 +1241,7 @@
     "tests/final_theory/test_v042_955_slack_coverage_gap.py",
     "tests/final_theory/test_v042_955_slack_term_preflight.py",
     "tests/final_theory/test_v042_955_slack_csg_tangent.py",
+    "tests/final_theory/test_v042_955_slack_csg_second_order.py",
     "tests/final_theory/test_v041_partial_slice_audit.py",
     "tests/final_theory/test_weak_d2_observability_v042.py",
     "tests/final_theory/test_semantic_recovery_v042.py",

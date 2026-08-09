@@ -5,7 +5,7 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、六つのゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、七つのゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -26,7 +26,9 @@ reduce してから scout する」という趣旨の記述は、本文書が上
               exact linear式0、terminal slack blind direction 16本
 新ゲート6     CSG tangent audit     core rank 427、tangent dim 49
               Q gradient raw rank 6 / modulo core rank 0、first-order escapeなし
-次ゲート      49次元kernel上の二次compatibility obstruction + Q二次escape
+新ゲート7     CSG second order      3,985 compatibility forms全て0、全tangentが二次lift
+              Q intrinsic quadratic forms 24/24で0、二次escapeなし
+次ゲート      full二次jet fiberの三次23,226候補monomial preflight → 安全なら三次監査
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -384,7 +386,8 @@ kernelと6個のQ可換子微分を同時に測る。16 blind directionも明示
 Q tangent escapeがあればformal deformation候補へ進み、なければ高次の局所obstruction
 を設計する。generic solverと版付きbudgetはその判断まで凍結。
 
-この監査はゲート6として完了し、全first-order escapeがblockされた。次は二次監査。
+この監査はゲート6として完了し、全first-order escapeがblockされた。後続の二次監査も
+ゲート7として完了し、全tangent directionが二次までliftする一方でQ escapeはなかった。
 
 ---
 
@@ -438,7 +441,52 @@ higher-order liftingへ進む。generic solverは凍結。
 
 ---
 
-## 9. 破棄された計画
+## 9. ゲート7: CSG点の二次compatibility・Q escape監査
+
+```
+artifact  results/v0.4.2_955_slack_csg_second_order.json
+report    reports/v0.4.2_955_slack_csg_second_order.md
+module    src/universe_lab/final_theory/source_native_955_slack_csg_second_order_v042.py
+digest    2c84fa6af833e320fe9e292a359808a7fcc162e225ce30edf038b5d352ae35f0
+verdict   V042_955_SLACK_CSG_SECOND_ORDER_ALL_TANGENTS_LIFT_Q_ESCAPE_BLOCKED_CERTIFIED
+```
+
+```powershell
+uv run python -m universe_lab.final_theory.source_native_955_slack_csg_second_order_v042
+uv run pytest tests/final_theory/test_v042_955_slack_csg_second_order.py -q
+```
+
+### 9.1 全tangent directionが二次までliftする
+
+49次元tangent kernel `K` 上で `x=x_CSG+tKz+t^2w` とし、4,412 scalar core jetsの
+組 `(J-row, quadratic-form)` をexact `QQ` で同時消去した。Jacobian rankは前ゲートと
+同じ427。残る3,985 dependent-Jacobian rowsのcompatibility quadratic formsは**全て0**、
+span rankも0。従って任意の一次方向 `z` に対してcoreを `O(t^3)` まで満たす `w` がある。
+
+これはsmoothnessやformal arcの全次数liftを証明しない。三次でobstructionが出る可能性は
+残る。
+
+### 9.2 Qは全core lift上で二次まで消える
+
+6可換子・24 scalar entriesを同じjet basisへreduceした。first-order Jacobian remainder 0、
+nonzero intrinsic quadratic forms 0、rank modulo core compatibility span 0。よって任意の
+core二次lift `(z,w)` で全Q可換子は `O(t^3)`。16 terminal slack blind directionsもcoreと
+Qの二次monomial occurrence 0で、二次までsilentである。
+
+### 9.3 実行境界と次ゲート
+
+ambient Hessian tensorとfull scalar manifestは保持していない。Gröbner / saturation / finite
+field / numerical / Sageは全て0。full 955は `OPEN`。
+
+三次では `w=w_particular(z)+K a` の49個のfiber変数 `a` を落としてはならない。候補基底は
+`C(51,3)=20,825` 個の `z^3` と `49^2=2,401` 個の `z*a`、計23,226。次は疎な三次jetを
+直接走らせる前に、full second-order jet fiber上のterm数・basis growth・peak memoryの
+versioned preflightを作る。安全なら三次core compatibilityとQ escapeへ進む。安全な8 GiB
+budgetを立てられなければ、資源限界終端候補を記録して無理にsolverを走らせない。
+
+---
+
+## 10. 破棄された計画
 
 **「131 patch を構造的基準で選んで exact scout する」は不要になった。**
 ゲート2が patch を一つも開かずに探索空間を落としたため。ゲート1の成果物に
@@ -447,7 +495,7 @@ higher-order liftingへ進む。generic solverは凍結。
 
 ---
 
-## 10. 罠 — 範囲と後続で踏みやすい点
+## 11. 罠 — 範囲と後続で踏みやすい点
 
 - **ゲート2の46変数系だけには非特異条件が入っていない。** ただしゲート3は
   `det(A_e) = p_e - x_[e]*y_[e] != 0` を131因子・165 occurrence 全て持ち込み、
@@ -469,7 +517,7 @@ higher-order liftingへ進む。generic solverは凍結。
 
 ---
 
-## 11. 既存の不具合（本セッション由来ではない）
+## 12. 既存の不具合（本セッション由来ではない）
 
 ```
 5 failed, 8 errors — tests/final_theory/test_line_ending_bridge_v038.py
@@ -496,29 +544,31 @@ bridge する方式である。
 
 ---
 
-## 12. 検証コマンド（コスト順）
+## 13. 検証コマンド（コスト順）
 
 ```powershell
 uv run ruff check .
-uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py tests/final_theory/test_v042_955_slack_term_preflight.py tests/final_theory/test_v042_955_slack_csg_tangent.py -q
+uv run pytest tests/final_theory/test_v042_955_symmetry_orbit_reduction.py tests/final_theory/test_v042_955_global_bilinear_reduction.py tests/final_theory/test_v042_955_mixed_branch_closure.py tests/final_theory/test_v042_955_slack_coverage_gap.py tests/final_theory/test_v042_955_slack_term_preflight.py tests/final_theory/test_v042_955_slack_csg_tangent.py tests/final_theory/test_v042_955_slack_csg_second_order.py -q
 uv run pytest -q
 ```
 
-六ゲートの新規テストは 48 件。うち独立検証として、核基底を manifest の生の行と直接
+七ゲートの新規テストは 55 件。うち独立検証として、核基底を manifest の生の行と直接
 内積で検査するもの（`test_kernel_basis_is_independently_verified_against_the_manifest_rows`）と、
 二重次数を成果物を介さず manifest から再計測するもの、一般17パラメータ族で
 1,933成分を再代入するもの、timid recurrence から次数 histogram を再構成するもの、
 24 timid residualをreachable stateへ再作用して48成分の零を再検査するもの、
-3,890 raw core Jacobian rowsへ12 Q-gradient rowsを再reduceするものを含む。
+3,890 raw core Jacobian rowsへ12 Q-gradient rowsを再reduceするもの、二次形式抽出を
+2変数の手計算oracleと照合するものを含む。
 
 ---
 
-## 13. AI 開示
+## 14. AI 開示
 
-ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4・5・6の
+ゲート1・2と `MISSION.md` の現行フェーズ節は Anthropic Claude、ゲート3・4・5・6・7の
 モジュール・テスト・報告・引き継ぎ更新は OpenAI Codex が作成した。Luna は
 読み取り専用のブランチ／不要ファイル棚卸しと、ゲート4の数値・digest・適用体境界の
-独立再検算、ゲート5で再利用可能な疎多項式・stream・budget実装の探索を担当した。
+独立再検算、ゲート5で再利用可能な疎多項式・stream・budget実装の探索、ゲート7の
+数値・digest・結論範囲の読み取り専用監査を担当した。
 人間の著者が範囲を選択し内容に責任を負う。
 `CONTRIBUTING.md` の「どのツールがどの部分か」要件に対応する記録である。
 

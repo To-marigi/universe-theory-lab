@@ -1,0 +1,582 @@
+{
+  "schema_version": "final-theory-v042-955-slack-csg-second-order-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "scope": {
+    "finite_source_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ",
+    "identification_mode": "ON_QUOTIENT",
+    "basepoint": "diagonal CSG t_j=1 source matrices",
+    "formal_order": 2
+  },
+  "input_bindings": {
+    "results/v0.4.2_955_source_native_slack_compiler.json": {
+      "raw_sha256": "0e34c3132c47c4fb0485e9c570581d6ff16f8ce942446f7557ebdb4dd0cd70cc",
+      "semantic_digest_sha256": "5baf2a4a0273c8f5d9c08d2436b2df1ef77eafad97a4532d444dc9a8e522e042"
+    },
+    "results/v0.4.2_955_mixed_source_native_manifest.json": {
+      "raw_sha256": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c",
+      "semantic_digest_sha256": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2"
+    },
+    "results/v0.4.2_955_slack_csg_tangent.json": {
+      "raw_sha256": "ab0496b92da8c03338db8977e6d19d5b4cc594cdbb445cb1295dc80a190d9a52",
+      "semantic_digest_sha256": "3182718cc0424dcc7837c8f2cc3dd03e6b27c0c106f9dbbb378b936c5e50e382",
+      "verdict": "V042_955_SLACK_CSG_Q_TANGENT_ESCAPE_FIRST_ORDER_BLOCKED_CERTIFIED"
+    }
+  },
+  "basepoint_recheck": {
+    "assignment_sha256": "b3fab5af7ab110d3ab86215152e71132774deacc6c8dea430e1b99adb192eb93",
+    "nonzero_slack_coordinates": 24,
+    "all_131_matrices_equal_diag_p_e_1": true,
+    "all_131_determinants_nonzero": true,
+    "core_residual_failures": 0
+  },
+  "tangent_kernel": {
+    "dimension": 49,
+    "free_ambient_coordinates": [
+      "A:cpobc-transition-facbaae1d9cfca830b6e:00",
+      "A:cpobc-transition-facbaae1d9cfca830b6e:11",
+      "A:cpobc-transition-fd19a434a4aa220fd16a:00",
+      "A:cpobc-transition-fd19a434a4aa220fd16a:11",
+      "A:cpobc-transition-fe9bd2d32ecee2e6dc27:00",
+      "A:cpobc-transition-fe9bd2d32ecee2e6dc27:11",
+      "A:cpobc-transition-ff252a39269d0ebabe63:00",
+      "A:cpobc-transition-ff252a39269d0ebabe63:11",
+      "u:p1-0:1",
+      "u:p2-0:1",
+      "u:p2-2:1",
+      "u:p3-000:1",
+      "u:p3-002:1",
+      "u:p3-006:1",
+      "u:p3-024:1",
+      "u:p3-026:0",
+      "u:p3-026:1",
+      "u:p4-0000:0",
+      "u:p4-0000:1",
+      "u:p4-0002:0",
+      "u:p4-0002:1",
+      "u:p4-0006:0",
+      "u:p4-0006:1",
+      "u:p4-000e:0",
+      "u:p4-000e:1",
+      "u:p4-0044:0",
+      "u:p4-0044:1",
+      "u:p4-0046:0",
+      "u:p4-0046:1",
+      "u:p4-0048:0",
+      "u:p4-0048:1",
+      "u:p4-004c:0",
+      "u:p4-004c:1",
+      "u:p4-004e:0",
+      "u:p4-004e:1",
+      "u:p4-00cc:0",
+      "u:p4-00cc:1",
+      "u:p4-00ce:0",
+      "u:p4-00ce:1",
+      "u:p4-0888:0",
+      "u:p4-0888:1",
+      "u:p4-088a:0",
+      "u:p4-088a:1",
+      "u:p4-088e:0",
+      "u:p4-088e:1",
+      "u:p4-08cc:0",
+      "u:p4-08cc:1",
+      "u:p4-08ce:0",
+      "u:p4-08ce:1"
+    ],
+    "basis_support_histogram": {
+      "1": 32,
+      "2": 1,
+      "5": 3,
+      "7": 1,
+      "31": 1,
+      "69": 1,
+      "70": 1,
+      "73": 1,
+      "80": 1,
+      "81": 1,
+      "85": 1,
+      "115": 1,
+      "144": 1,
+      "156": 2,
+      "158": 1
+    },
+    "maximum_basis_vector_support": 158,
+    "total_basis_vector_support": 1274,
+    "ambient_coordinate_tangent_support_histogram": {
+      "0": 107,
+      "1": 215,
+      "3": 22,
+      "4": 53,
+      "6": 4,
+      "9": 22,
+      "10": 28,
+      "11": 21,
+      "12": 4
+    },
+    "maximum_tangent_variables_in_one_ambient_coordinate": 12,
+    "ambient_coordinates_zero_on_entire_tangent_kernel": 107,
+    "basis_digest_sha256": "6a16541866ac02b1c183bea412b6aa228659e0bbc96409cad33d01913e73075e"
+  },
+  "second_order_core_compatibility": {
+    "scalar_slots": 4412,
+    "Jacobian_rank": 427,
+    "independent_Jacobian_rows": 427,
+    "dependent_Jacobian_rows": 3985,
+    "raw_nonzero_compatibility_forms": 0,
+    "raw_zero_compatibility_forms": 3985,
+    "raw_compatibility_term_histogram": {
+      "0": 3985
+    },
+    "maximum_terms_one_raw_compatibility_form": 0,
+    "maximum_nonzero_term_record_ties": 0,
+    "selected_maximum_nonzero_term_records": [],
+    "compatibility_quadratic_span_rank": 0,
+    "quadratic_monomial_ambient_dimension": 1225,
+    "Jacobian_echelon_digest_sha256": "e41c6382cba66e7d0deaaa8131bba1cd306f761a9c5f8a006008eac5dfd9ab52",
+    "compatibility_echelon_digest_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "raw_compatibility_stream_digest_sha256": "4ba14a1b2136e8fef7fa8dea6919b6e206d2b4483d63feda4046b36b452ad640",
+    "maximum_quadratic_terms_in_one_Jacobian_basis_jet": 72,
+    "quadratic_add_scaled_calls": 28874,
+    "basepoint_failures": 0,
+    "restricted_linear_failures": 0,
+    "formal_equation": "J_core*w + q_core(z) = 0",
+    "compatibility_meaning": "The zero-Jacobian remainders after simultaneous jet elimination must vanish for a tangent vector z to lift through order two.",
+    "every_first_order_tangent_lifts_through_second_order": true,
+    "operation_ledger": {
+      "polynomial_additions": 18700,
+      "polynomial_scales": 4412,
+      "polynomial_multiplications": 28576,
+      "raw_product_pairs_total": 187892,
+      "maximum_raw_product_pairs_one_multiply": 1779,
+      "maximum_input_terms_one_multiply": 596,
+      "maximum_output_terms_one_multiply": 1779,
+      "maximum_polynomial_terms_seen": 3723,
+      "maximum_polynomial_degree_seen": 9,
+      "maximum_coefficient_bits_seen": 3,
+      "maximum_product_degree_bound": 9
+    }
+  },
+  "Q_second_order_modulo_core": {
+    "Q_representatives": {
+      "Q1": "cpobc-transition-7137acaa934673cc789d",
+      "Q2": "cpobc-transition-3b93b9f523031a23c77f",
+      "Q3": "cpobc-transition-779d09aa463a38abdba6",
+      "Q4": "cpobc-transition-9fabc20614d5b2aa595d"
+    },
+    "scalar_entry_slots": 24,
+    "basepoint_failures": 0,
+    "first_order_Jacobian_remainder_failures": 0,
+    "nonzero_intrinsic_quadratic_forms": 0,
+    "intrinsic_quadratic_span_rank": 0,
+    "intrinsic_quadratic_echelon_digest_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "compatibility_span_remainder_nonzero_forms": 0,
+    "rank_modulo_core_compatibility_span": 0,
+    "all_Q_second_order_forms_in_compatibility_span": true,
+    "second_order_Q_escape_blocked_by_linear_span": true,
+    "Q_commutators_vanish_through_order_two_on_every_core_lift": true,
+    "remainder_echelon_digest_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "records": [
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "entry": "00",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "entry": "01",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 11,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "entry": "10",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "entry": "11",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "entry": "00",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "entry": "01",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 11,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "entry": "10",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          3
+        ],
+        "entry": "11",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "entry": "00",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "entry": "01",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 11,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "entry": "10",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          1,
+          4
+        ],
+        "entry": "11",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "entry": "00",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "entry": "01",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 10,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "entry": "10",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "entry": "11",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "entry": "00",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "entry": "01",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 10,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "entry": "10",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          2,
+          4
+        ],
+        "entry": "11",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "entry": "00",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "entry": "01",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 10,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "entry": "10",
+        "ambient_Jacobian_terms": 2,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "entry": "11",
+        "ambient_Jacobian_terms": 0,
+        "restricted_raw_quadratic_terms": 0,
+        "intrinsic_quadratic_terms_after_core_Jacobian_elimination": 0,
+        "compatibility_span_remainder_terms": 0,
+        "compatibility_span_remainder": []
+      }
+    ],
+    "operation_ledger": {
+      "polynomial_additions": 72,
+      "polynomial_scales": 24,
+      "polynomial_multiplications": 96,
+      "raw_product_pairs_total": 96,
+      "maximum_raw_product_pairs_one_multiply": 1,
+      "maximum_input_terms_one_multiply": 2,
+      "maximum_output_terms_one_multiply": 1,
+      "maximum_polynomial_terms_seen": 4,
+      "maximum_polynomial_degree_seen": 2,
+      "maximum_coefficient_bits_seen": 1,
+      "maximum_product_degree_bound": 2
+    }
+  },
+  "terminal_slack_blind_directions": {
+    "ambient_coordinate_names": [
+      "u:p4-0000:0",
+      "u:p4-0000:1",
+      "u:p4-000e:0",
+      "u:p4-000e:1",
+      "u:p4-00cc:0",
+      "u:p4-00cc:1",
+      "u:p4-00ce:0",
+      "u:p4-00ce:1",
+      "u:p4-0888:0",
+      "u:p4-0888:1",
+      "u:p4-088e:0",
+      "u:p4-088e:1",
+      "u:p4-08cc:0",
+      "u:p4-08cc:1",
+      "u:p4-08ce:0",
+      "u:p4-08ce:1"
+    ],
+    "tangent_coordinate_indices": [
+      17,
+      18,
+      23,
+      24,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ],
+    "count": 16,
+    "raw_core_quadratic_monomial_occurrences": 0,
+    "raw_Q_quadratic_monomial_occurrences": 0,
+    "compatibility_quadratic_monomial_occurrences": 0,
+    "Q_intrinsic_quadratic_monomial_occurrences": 0,
+    "remain_core_and_Q_silent_through_order_two": true
+  },
+  "resource_boundary": {
+    "ambient_Hessian_tensor_materialised": false,
+    "full_scalar_manifest_materialised": false,
+    "maximum_possible_quadratic_monomials": 1225,
+    "timid_expansion_operation_ledger": {
+      "polynomial_additions": 644,
+      "polynomial_scales": 452,
+      "polynomial_multiplications": 336,
+      "raw_product_pairs_total": 2002,
+      "maximum_raw_product_pairs_one_multiply": 88,
+      "maximum_input_terms_one_multiply": 54,
+      "maximum_output_terms_one_multiply": 82,
+      "maximum_polynomial_terms_seen": 82,
+      "maximum_polynomial_degree_seen": 5,
+      "maximum_coefficient_bits_seen": 3,
+      "maximum_product_degree_bound": 5
+    },
+    "first_order_recheck_operation_ledger": {
+      "polynomial_additions": 18700,
+      "polynomial_scales": 4412,
+      "polynomial_multiplications": 28576,
+      "raw_product_pairs_total": 187892,
+      "maximum_raw_product_pairs_one_multiply": 1779,
+      "maximum_input_terms_one_multiply": 596,
+      "maximum_output_terms_one_multiply": 1779,
+      "maximum_polynomial_terms_seen": 3723,
+      "maximum_polynomial_degree_seen": 9,
+      "maximum_coefficient_bits_seen": 3,
+      "maximum_product_degree_bound": 9
+    }
+  },
+  "execution_decision": {
+    "generic_solver_authorised": false,
+    "higher_order_formal_audit_authorised": true,
+    "next_gate": "PREFLIGHT_THEN_STREAM_THE_THIRD_ORDER_CORE_COMPATIBILITY_AND_Q_ESCAPE_ON_THE_FULL_SECOND_ORDER_CSG_JET_FIBER"
+  },
+  "solver_status": {
+    "exact_sparse_QQ_jet_linear_algebra_runs": 1,
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "claim_boundary": [
+    "All results are formal and local at the diagonal CSG point through order two.",
+    "Linear-span containment is sufficient to block Q at order two on compatible jets.",
+    "No claim is made about third or higher order, convergence, or remote components.",
+    "Eq113 and Eq139 remain separate downstream witness-validation gates.",
+    "No unrestricted source-native 955 terminal verdict is claimed."
+  ],
+  "unrestricted_source_native_955_status": "OPEN",
+  "passed": true,
+  "verdict": "V042_955_SLACK_CSG_SECOND_ORDER_ALL_TANGENTS_LIFT_Q_ESCAPE_BLOCKED_CERTIFIED",
+  "semantic_digest_sha256": "2c84fa6af833e320fe9e292a359808a7fcc162e225ce30edf038b5d352ae35f0"
+}

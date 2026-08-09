@@ -70,9 +70,13 @@ slack 系はその外側にあり open である。
 恒等的に消える16本のterminal slack方向を確定した。さらに
 [`reports/v0.4.2_955_slack_csg_tangent.md`](reports/v0.4.2_955_slack_csg_tangent.md)
 は既知の非特異CSG点でcore Jacobian rank 427・tangent次元49を得て、Q可換子微分の
-core rowspace modulo rankが0、すなわちfirst-order escapeがないことを証明した。次は
-49次元kernel上の二次compatibility obstructionとQ二次項をstream測定する。そこで
-witness方向が出た場合はそちらを終端候補として受け入れる。
+core rowspace modulo rankが0、すなわちfirst-order escapeがないことを証明した。さらに
+[`reports/v0.4.2_955_slack_csg_second_order.md`](reports/v0.4.2_955_slack_csg_second_order.md)
+は49次元kernel上の3,985本の二次compatibility formが全て0で、全一次方向が二次まで
+liftし、Q可換子24成分も全core lift上で二次まで消えることを証明した。これはCSG点の
+局所formal結果に限り、三次・remote component・full 955はopenである。三次では二次補正の
+49自由成分も保持し、20,825個の `z^3` と2,401個の `z*a`、計23,226候補monomialに対する
+疎性とメモリをpreflightしてから進む。
 
 ### 到達順序
 
