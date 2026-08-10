@@ -1,0 +1,111 @@
+{
+  "schema_version": "final-theory-v042-955-eq120-commutator-collapse-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "scope": {
+    "finite_source_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ (symbols), QQ (numeric cross-check)",
+    "identification_mode": "ON_QUOTIENT",
+    "locus": "upper stratum, Q_1 invertible, a_1 d_4 - a_4 d_1 != 0"
+  },
+  "source_artifact_sha256": {
+    "results/v0.4.2_eq120_source_provenance.json": "864536f5624b63900ab6ff31f5070706ce51881408044fb60e3b1f4853cdfed4",
+    "results/v0.4.2_955_second_diagonal_span.json": "ce20db0fc33a149e334635e37d730b887f9f65fbda90d8aa954edcae4617a0c5",
+    "results/v0.4.2_955_source_native_slack_compiler.json": "0e34c3132c47c4fb0485e9c570581d6ff16f8ce942446f7557ebdb4dd0cd70cc",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c"
+  },
+  "predecessor_binding": {
+    "kind": "CANONICAL_JSON_SEMANTIC_DIGEST_AND_VERDICT",
+    "results/v0.4.2_eq120_source_provenance.json": {
+      "verdict": "V042_EQ120_SOURCE_NATIVE_PROVENANCE_PROVED",
+      "semantic_digest_sha256": "77d11eff7d14d84182abbf1eb30732fe2b94855507f1826747ba878fadb8d6ca"
+    },
+    "results/v0.4.2_955_second_diagonal_span.json": "a4ea09f19831dcb2d593e67456b1f020142aa8024c9ec1097ad55b1e6ccfc08b",
+    "results/v0.4.2_955_source_native_slack_compiler.json": "5baf2a4a0273c8f5d9c08d2436b2df1ef77eafad97a4532d444dc9a8e522e042",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2"
+  },
+  "eq120_star_identity": {
+    "statement": "Q_n Q_1^{-1} Q_m = Q_m Q_1^{-1} Q_n for 1=k<m<n<=4",
+    "already_proved_in": "results/v0.4.2_eq120_source_provenance.json",
+    "matrix_0_1_entry_equals_3x3_minor": true,
+    "minor_definition": "det[[a_1,d_1,b_1],[a_m,d_m,b_m],[a_n,d_n,b_n]]"
+  },
+  "star_rank_reduction": {
+    "raw_relations": [
+      "E_23",
+      "E_24",
+      "E_34"
+    ],
+    "independent_relations": 2,
+    "e34_is_an_automatic_consequence_of_e23_and_e24": true,
+    "b2_solution": "(a1*b4*d2 + a2*b1*d4 - a2*b4*d1 - a4*b1*d2)/(a1*d4 - a4*d1)",
+    "b3_solution": "(a1*b4*d3 + a3*b1*d4 - a3*b4*d1 - a4*b1*d3)/(a1*d4 - a4*d1)",
+    "nonsingularity_required": "a_1*d_4 - a_4*d_1 != 0"
+  },
+  "collapse_lemma": {
+    "statement": "Given the Eq120 k=1 star and a_1*d_4-a_4*d_1!=0, every pairwise commutator c_ij is an exact scalar multiple of Lambda := c_14 = (a_1-d_1)b_4-(a_4-d_4)b_1, with a coefficient depending only on a,d (never on b).",
+    "lambda_definition": "c_14 = (a_1-d_1)*b_4 - (a_4-d_4)*b_1",
+    "denominator": "a1*d4 - a4*d1",
+    "coefficients_times_denominator": {
+      "12": "a1*d2 - a2*d1",
+      "13": "a1*d3 - a3*d1",
+      "14": "a1*d4 - a4*d1",
+      "23": "a2*d3 - a3*d2",
+      "24": "a2*d4 - a4*d2",
+      "34": "a3*d4 - a4*d3"
+    },
+    "consequence": "Full pairwise commutativity of Q_1,...,Q_4 on this locus is equivalent to the single scalar condition Lambda=0, not to six independent row-span decisions.",
+    "verified_as_exact_polynomial_identity": true,
+    "verification_method": "symbolic substitution and residual cancellation, sympy exact"
+  },
+  "numeric_cross_check": {
+    "role": "Independent confirmation against already-certified points: every point in results/v0.4.2_955_second_diagonal_span.json with zero escapes must have Lambda=0, and this recomputes Lambda directly from the source-native construction rather than trusting the earlier span test.",
+    "points_checked": 3,
+    "records": [
+      {
+        "label": "constant_1_control",
+        "lambda_value": "0",
+        "lambda_is_zero": true,
+        "predecessor_escapes": 0,
+        "consistent": true
+      },
+      {
+        "label": "constant_2",
+        "lambda_value": "0",
+        "lambda_is_zero": true,
+        "predecessor_escapes": 0,
+        "consistent": true
+      },
+      {
+        "label": "two_character_1_2_3_5_7",
+        "lambda_value": "0",
+        "lambda_is_zero": true,
+        "predecessor_escapes": 0,
+        "consistent": true
+      }
+    ],
+    "all_consistent": true
+  },
+  "reframed_next_gate": "Deciding forced commutativity on the upper stratum no longer needs six row-span tests.  It needs one: is Lambda=c_14 forced to zero by the core, or does there exist a nonsingular point of S (with the star's side condition) where Lambda!=0.",
+  "claim_boundary": [
+    "This is an algebraic identity, not a proof that Lambda vanishes everywhere on S.",
+    "The identity requires a_1*d_4-a_4*d_1!=0; points where this vanishes need a different anchor (e.g. k=1 with a different fourth index, or k=2) and are not covered here.",
+    "The upper stratum is not the unrestricted 955 profile, and this says nothing about mixed points.",
+    "No witness and no general obstruction is certified by this lemma alone."
+  ],
+  "solver_status": {
+    "symbolic_polynomial_identity_checks": 1,
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "unrestricted_source_native_955_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_955_EQ120_SIX_COMMUTATORS_COLLAPSE_TO_ONE_SCALAR_CERTIFIED",
+  "semantic_digest_sha256": "d6989a56a7fdd896e8dd4f0f8fa3516cdb836649f5a42bf5e15664b7feafdcfe"
+}

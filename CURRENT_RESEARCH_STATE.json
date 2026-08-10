@@ -105,11 +105,12 @@
     "v0.4.2_955_upper_stratum": "GAUGE_WEIGHTS_DERIVED_NOT_ASSUMED_UPPER_STRATUM_IS_SCALAR_VARIETY_TIMES_LINEAR_FIBRE_SIX_COMMUTATORS_COLLAPSE_TO_FOUR_TERM_LINEAR_FORMS_NONTERMINAL",
     "v0.4.2_955_commutator_span": "SIX_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_FOUR_VERIFIED_GENERAL_COUPLING_GROWTH_POINTS_SECOND_DIAGONAL_NEVER_VARIED_POINTWISE_EVIDENCE_ONLY_NONTERMINAL",
     "v0.4.2_955_growth_family_identity": "SEQUENTIAL_GROWTH_FAMILY_SOLVES_CPOBC_AND_STRONG_GC_IDENTICALLY_OVER_QQ_OF_THE_COUPLINGS_SECOND_DIAGONAL_STILL_FIXED_TO_ONE_NONTERMINAL",
-    "v0.4.2_955_second_diagonal_span": "SIX_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_TEN_VERIFIED_POINTS_INCLUDING_FOUR_WITH_A_NON_CONSTANT_SECOND_DIAGONAL_GATE_13_LIMITATION_CLOSED_POINTWISE_EVIDENCE_ONLY_NONTERMINAL"
+    "v0.4.2_955_second_diagonal_span": "SIX_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_TEN_VERIFIED_POINTS_INCLUDING_FOUR_WITH_A_NON_CONSTANT_SECOND_DIAGONAL_GATE_13_LIMITATION_CLOSED_POINTWISE_EVIDENCE_ONLY_NONTERMINAL",
+    "v0.4.2_955_eq120_commutator_collapse": "SIX_UPPER_STRATUM_COMMUTATORS_PROVED_PROPORTIONAL_TO_ONE_SCALAR_LAMBDA_VIA_ALREADY_CERTIFIED_EQ120_STAR_CROSS_CHECKED_AGAINST_THREE_INDEPENDENT_POINTS_NONTERMINAL"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "PROVE_THE_SPAN_MEMBERSHIP_UNIFORMLY_ON_S_OR_SWEEP_THE_REMAINING_SECOND_DIAGONAL_FREEDOM",
+    "next_gate": "DECIDE_WHETHER_LAMBDA_C14_IS_FORCED_TO_ZERO_ON_S_OR_EXHIBIT_A_NONSINGULAR_POINT_WHERE_IT_IS_NOT",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
       "CSG_BASEPOINT_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
@@ -190,7 +191,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "The second-diagonal limitation is closed: the six commutator forms stay in the core row span at ten verified points, four of which have a genuinely non-constant second diagonal taking up to 13 distinct values, all nonsingular, with zero escapes. What remains is the quantifier. Finitely many points cannot decide the stratum, and only constants and second growth characters were swept, so the next gate is either to prove the membership uniformly on S -- not by naive elimination over Q(t), which stalled, but by eliminating everything except the four Q columns from L and asking whether (p_i-1)b_j=(p_j-1)b_i falls out -- or to sweep the remaining second-diagonal freedom of the scalar variety. Either way an in-span outcome still reaches none of the three declared 955 terminals, and the mixed locus stays open.",
+    "next_gate_description": "The Eq120 star (already proved in results/v0.4.2_eq120_source_provenance.json) collapses the six upper-stratum commutator row-span questions into one: given the star and a_1*d_4-a_4*d_1!=0, every c_ij is an exact scalar multiple of Lambda=c_14, with coefficients that are clean 2x2 minors of a,d alone (proved as a symbolic polynomial identity, cross-checked against three independently recomputed points where Lambda=0 matched zero escapes exactly). The remaining question is whether the rest of the core forces Lambda=0 identically on S, or whether a nonsingular point exists with Lambda!=0 -- a witness candidate still owing nonsingularity, N!=0, Eq113/Eq139 and reachable visibility. This reframing does not by itself decide the question.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -863,6 +864,34 @@
         "stratum_is_not_the_unrestricted_profile": true,
         "reaches_none_of_the_three_declared_955_terminals": true
       },
+      "solver_run": false,
+      "search_terminal": false,
+      "full_955_profile_claimed": false
+    },
+    "eq120_commutator_collapse": {
+      "artifact": "results/v0.4.2_955_eq120_commutator_collapse.json",
+      "report": "reports/v0.4.2_955_eq120_commutator_collapse.md",
+      "module": "src/universe_lab/final_theory/source_native_955_eq120_collapse_v042.py",
+      "schema_version": "final-theory-v042-955-eq120-commutator-collapse-v1",
+      "verdict": "V042_955_EQ120_SIX_COMMUTATORS_COLLAPSE_TO_ONE_SCALAR_CERTIFIED",
+      "semantic_digest_sha256": "d6989a56a7fdd896e8dd4f0f8fa3516cdb836649f5a42bf5e15664b7feafdcfe",
+      "connects_to": "results/v0.4.2_eq120_source_provenance.json (V042_EQ120_SOURCE_NATIVE_PROVENANCE_PROVED, used by SR3b-A)",
+      "lemma": {
+        "eq120_zero_one_entry_equals_3x3_minor": true,
+        "star_independent_relations": 2,
+        "e34_automatic_given_e23_e24": true,
+        "nonsingularity_required": "a_1*d_4 - a_4*d_1 != 0",
+        "lambda_definition": "c_14 = (a_1-d_1)*b_4 - (a_4-d_4)*b_1",
+        "all_six_commutators_proportional_to_lambda": true,
+        "coefficients_are_exact_2x2_minors_of_a_and_d_only": true,
+        "verification_method": "symbolic polynomial identity, sympy exact"
+      },
+      "numeric_cross_check": {
+        "points_recomputed_independently": 3,
+        "all_lambda_zero": true,
+        "matches_predecessor_zero_escapes": true
+      },
+      "reframed_next_gate": "Deciding forced commutativity on the upper stratum needs one scalar question, not six row-span decisions: is Lambda=c_14 forced to zero by the core, or does a nonsingular point of S (with a_1*d_4-a_4*d_1!=0) exist where Lambda!=0.",
       "solver_run": false,
       "search_terminal": false,
       "full_955_profile_claimed": false

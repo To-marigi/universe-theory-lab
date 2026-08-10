@@ -21,7 +21,7 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、十五のゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、十六のゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -66,8 +66,11 @@ reduce してから scout する」という趣旨の記述は、本文書が上
 新ゲート15    第二対角を動かした span 判定（§14.2）。ゲート13の限界を解消
               10点すべて core 検証通過・特異0・escape 0、うち4点は β 非定数（最大13値）
               鍵は timid 目標値を「その軌道自身の第二対角値」にすること
+新ゲート16    Eq120が6組の可換子を1個のスカラーΛ=c_14に崩壊させる（§15）
+              6組全てがΛの厳密スカラー倍（係数はa,dの2x2小行列式のみ）と記号証明
+              3点で独立再計算しΛ=0を確認。row-span判定6本→スカラー問い1本に再定義
 計画          段階A（955→721→lattice）で本プロジェクト終了 → 段階C → 段階B
-次ゲート      残るのは量化子。S 上で一様に示すか、第二対角自由度の残りを掃く（§14.4）
+次ゲート      Λ=c_14 は S 上で0に強制されるか、非零点が存在するか（§15.4）
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -982,3 +985,69 @@ PROVE_THE_SPAN_MEMBERSHIP_UNIFORMLY_ON_S_OR_SWEEP_THE_REMAINING_SECOND_DIAGONAL_
 残っているのは**量化子**である。一様証明の経路は、`Q(t)` の素朴な全体消去では
 なく（頓挫済み）、`L` から4つの `Q` 列以外を消去して
 `(p_i - 1) b_j = (p_j - 1) b_i` の形が出るかを見ること。
+
+---
+
+## 15. ゲート16: Eq120 が6組の可換子を1個のスカラーに崩壊させる（2026-08-10）
+
+```
+artifact  results/v0.4.2_955_eq120_commutator_collapse.json
+report    reports/v0.4.2_955_eq120_commutator_collapse.md
+module    src/universe_lab/final_theory/source_native_955_eq120_collapse_v042.py
+digest    d6989a56a7fdd896e8dd4f0f8fa3516cdb836649f5a42bf5e15664b7feafdcfe
+verdict   V042_955_EQ120_SIX_COMMUTATORS_COLLAPSE_TO_ONE_SCALAR_CERTIFIED
+```
+
+### 15.1 発端
+
+ゲート15の点で `L` の非Q列119本を消去し「Q列4本だけの純粋な関係式」を抽出したところ、
+**独立な関係式がちょうど3本**（4次元中codim1）現れ、6組の可換子形式が**全て同じ
+基底に厳密分解**された。この構造は、**SR3b-A が使った source-native Eq120**
+（`results/v0.4.2_eq120_source_provenance.json`）と同一の機構だと判明した。
+
+**罠**: 最初の手計算では Q列とQ生成元段数のラベル対応を取り違え、
+`c_12(v)=0` の検証が誤って矛盾した。列インデックスと段数の対応は
+`tangent._q_mapping` の戻り値を都度確認すること。
+
+### 15.2 中心の補題
+
+upper stratum上で `Q_i=[[a_i,b_i],[0,d_i]]`。Eq120の `(0,1)` 成分は厳密に
+3×3行列式 `det[[a_1,d_1,b_1],[a_m,d_m,b_m],[a_n,d_n,b_n]]` に一致する（記号的に
+検証済み）。`E_23,E_24=0` を解くと `E_34=0` が**自動的に**従う（3本のうち独立は
+2本のみ）。この代入のもとで **6組すべての可換子が単一のスカラー
+`Λ=c_14=(a_1-d_1)b_4-(a_4-d_4)b_1` の厳密なスカラー倍**になる：
+
+```
+c_ij = [(a_i d_j - a_j d_i) / (a_1 d_4 - a_4 d_1)] · Λ
+```
+
+係数は `a,d` だけの厳密な2×2小行列式（`b` を含まない）。`a_1 d_4-a_4 d_1 != 0`
+が必要。
+
+**したがって、6本の row-span 判定は不要になった。全可換性は `Λ=0` という
+単一のスカラー条件に完全に同値。**
+
+### 15.3 独立な相互検証
+
+ゲート15で escape 0 と記録された3点（`constant_1_control`, `constant_2`,
+`two_character_1_2_3_5_7`）について、**その成果物を信用せず** source-native の
+構成から `a_1,d_1,b_1,a_4,d_4,b_4` を独立に再計算し、`Λ` を直接評価。
+**3点すべてで `Λ=0` と一致。**
+
+**実装上の罠**: `dict.update()` で整数キー(1,2,3,4)を sympy シンボルキー
+(`b[2]`)で上書きしようとすると別エントリが追加されるだけで置換されない
+（Python辞書のキー型不一致）。`values[2] = substitution[b[2]]` のように
+明示的に書くこと。同様に、`characters()` の辞書は timid 表現元も含む
+**全131表現元**を対象にする必要がある。`non_timid` に絞ると timid 漸化式の
+目標値取得で `KeyError` になる。
+
+### 15.4 次のゲート（再定義）
+
+```
+DECIDE_WHETHER_LAMBDA_C14_IS_FORCED_TO_ZERO_ON_S_OR_EXHIBIT_A_NONSINGULAR_POINT_WHERE_IT_IS_NOT
+```
+
+問いは1つ: **`Λ=c_14` は core によって0に強制されるか、それとも
+`a_1 d_4-a_4 d_1 != 0` を満たす `S` 上のどこかで `Λ != 0` となるか。**
+後者なら955 witness候補（非特異性・`N!=0`・Eq113/Eq139・reachable visibility が
+別途必要）。前者ならobstruction証拠がさらに強くなる。
