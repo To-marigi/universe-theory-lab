@@ -21,7 +21,7 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、十六のゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、十七のゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -69,8 +69,15 @@ reduce してから scout する」という趣旨の記述は、本文書が上
 新ゲート16    Eq120が6組の可換子を1個のスカラーΛ=c_14に崩壊させる（§15）
               6組全てがΛの厳密スカラー倍（係数はa,dの2x2小行列式のみ）と記号証明
               3点で独立再計算しΛ=0を確認。row-span判定6本→スカラー問い1本に再定義
+新ゲート17    非零QファイバーでΛ row-spanを監査（§16）
+              4点のQ-visible kernel、ならびに QQ(t,s) の共通第二対角族で残差0
+              D=s(t+13)/(2(t+15))、さらに非特異なD=0アンカー1点を直接監査
+              ただし全S・D=0枝はopen
+新ゲート18    localized row-module preflight（§17）
+              scalar 246、非零scalar core 1814（相異1,504）、source localizer 131
+              D14/D12/D13のrank-2 coverを固定、finite minor cover required、証明書未発行
 計画          段階A（955→721→lattice）で本プロジェクト終了 → 段階C → 段階B
-次ゲート      Λ=c_14 は S 上で0に強制されるか、非零点が存在するか（§15.4）
+次ゲート      D12/D13/D14のfinite localized minor coverを作るか、D!=0・Λ!=0のexact core fibreを探す（§17.1）
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -1043,6 +1050,8 @@ c_ij = [(a_i d_j - a_j d_i) / (a_1 d_4 - a_4 d_1)] · Λ
 
 ### 15.4 次のゲート（再定義）
 
+これはゲート16時点の履歴であり、現行の次ゲートは §16.1 に更新されている。
+
 ```
 DECIDE_WHETHER_LAMBDA_C14_IS_FORCED_TO_ZERO_ON_S_OR_EXHIBIT_A_NONSINGULAR_POINT_WHERE_IT_IS_NOT
 ```
@@ -1051,3 +1060,84 @@ DECIDE_WHETHER_LAMBDA_C14_IS_FORCED_TO_ZERO_ON_S_OR_EXHIBIT_A_NONSINGULAR_POINT_
 `a_1 d_4-a_4 d_1 != 0` を満たす `S` 上のどこかで `Λ != 0` となるか。**
 後者なら955 witness候補（非特異性・`N!=0`・Eq113/Eq139・reachable visibility が
 別途必要）。前者ならobstruction証拠がさらに強くなる。
+
+---
+
+## 16. ゲート17: 非零ファイバー上の `Lambda` 監査（2026-08-11）
+
+```
+artifact  results/v0.4.2_955_lambda_fibre_audit.json
+report    reports/v0.4.2_955_lambda_fibre_audit.md
+module    src/universe_lab/final_theory/source_native_955_lambda_fibre_audit_v042.py
+test      tests/final_theory/test_v042_955_lambda_fibre_audit.py
+verdict   V042_955_LAMBDA_ZERO_ON_CERTIFIED_FIBRE_FAMILY_FULL_S_OPEN
+```
+
+前ゲートの `Lambda=0` cross-check は上右ファイバーを全て0にした zero-section だった。
+そこで、`L` の非Q列119本を消去し、Q成分が非零の `ker(L)` 方向を4点で再構成した。
+各点の会計は `non-Q pivot rank=111`、`pure-Q residual rows=706`、`pure-Q rank=3`。
+`D!=0`、`Lambda` の純Q row-module 残差0、Q-visible kernel上の直接評価0を全点で確認した。
+
+さらに第一対角を成長特性 `(1,1,1,1,t)`、第二対角を全遷移で共通値 `s` とする二変数族を
+`QQ(t,s)` 上で監査した。4,152 core entriesは恒等的に0、純Q rankは3、`Lambda` の残差も
+恒等的に0。`D=s(t+13)/(2(t+15))` なので、`s!=0` と既存の成長分母・`t=-13,-15` を
+除く開集合で成立する。`s=2` は前回の一変数監査を再現するが、第二対角131個の独立自由度を
+主張するものではない。
+
+これは zero-section を超える一様性だが、`S` 全体の証明ではない。`S` の既約性・稠密性・
+全体を覆うpivot minorは未証明である。さらに `D=0` では、`t=-13,s=2` の非特異な
+アンカー1点で直接 `Lambda` row-span を確認しただけで、退化枝全体はopenである。
+全体判定は `OPEN` のまま。
+
+### 16.1 次のゲート
+
+Sol の監査方針に従い、次は scalar core ideal `I_S` と source determinant localization `Pi`
+を含む localized row-module certificate
+
+```
+(D*Pi)^N Lambda = r(z)L(z) + sum(f_alpha(z) h_alpha(z)),  f_alpha in I_S
+```
+
+を作る。これが閉じなければ、`D!=0` かつ `Lambda!=0` の exact core fibre を探す。
+10パラメータ二特性族の全記号消去は式膨張で予算外だったため、今回の成果物には含めない。
+
+### 16.2 `D=0` アンカー点（同日追補）
+
+`D` を割らずに、第一成長結合 `(1,1,1,1,-13)`、第二対角を全遷移で2とする一点を
+直接評価した。4,152 core failuresは0、source determinant 131個の失敗は0、
+`non-Q rank=111`、`pure-Q rank=3`、`Lambda` 残差0であった。Q-visible kernelの
+一例は `(3/56,1/16,15/224,3/56)` で、`Lambda=0`。これは `D=0` 全枝の解決ではなく、
+`D!=0` アンカーだけでは覆われない枝に対する非特異な一点の直接監査である。
+
+---
+
+## 17. ゲート18: localized row-module preflight（2026-08-11）
+
+```
+artifact  results/v0.4.2_955_localized_row_module_preflight.json
+report    reports/v0.4.2_955_localized_row_module_preflight.md
+module    src/universe_lab/final_theory/source_native_955_localized_row_module_preflight_v042.py
+test      tests/final_theory/test_v042_955_localized_row_module_preflight.py
+verdict   V042_955_LOCALIZED_ROW_MODULE_PREFLIGHT_FINITE_MINOR_COVER_REQUIRED_FULL_S_OPEN
+```
+
+Solの監査方針に従い、全Sの証明書を直接走らせず、必要な係数環とlocalizerの
+manifestをexactに再構成した。scalar座標は246、scalar coreは4,152 entry中
+非零1,814・相異なるもの1,504。upper-rightの `L` は1038×123、非Q列119で、
+fibreに厳密線形、直接Q-only rowは0。source determinantは131個すべて非零かつ相異なり、
+最大145項・次数5である（積は未展開）。
+
+`D14 != 0`、`D14=0,D12 !=0`、`D14=D12=0,D13 !=0` の三つをrank-2 anchor coverとし、
+`D12=D13=D14=0`をrank-1閉部分として分離した。既存4点では非Qのpointwise pivot
+rank 111、pure-Q rank 3を再確認したが、これは係数環上のminor coverでも
+localized row-module certificateでもない。
+
+### 17.1 次のゲート
+
+```
+BUILD_OR_FAIL_CLOSED_A_FINITE_LOCALIZED_MINOR_COVER_FOR_D12_D13_D14
+OR_FIND_A_D_NONZERO_LAMBDA_NONZERO_CORE_FIBRE
+```
+
+有限coverが膨張する場合は、MISSIONの停止規則に従って `RESOURCE_LIMIT_OPEN` に
+凍結する。Gröbner、saturation、数値探索はこのゲートで実行していない。

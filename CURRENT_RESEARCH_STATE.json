@@ -1,6 +1,6 @@
 {
   "schema_version": "cpobc-current-research-state-v1",
-  "updated": "2026-08-10",
+  "updated": "2026-08-11",
   "mutable_index_not_a_proof_certificate": true,
   "global_verdict": "FINAL_THEORY_OPEN",
   "public_baseline": {
@@ -106,11 +106,13 @@
     "v0.4.2_955_commutator_span": "SIX_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_FOUR_VERIFIED_GENERAL_COUPLING_GROWTH_POINTS_SECOND_DIAGONAL_NEVER_VARIED_POINTWISE_EVIDENCE_ONLY_NONTERMINAL",
     "v0.4.2_955_growth_family_identity": "SEQUENTIAL_GROWTH_FAMILY_SOLVES_CPOBC_AND_STRONG_GC_IDENTICALLY_OVER_QQ_OF_THE_COUPLINGS_SECOND_DIAGONAL_STILL_FIXED_TO_ONE_NONTERMINAL",
     "v0.4.2_955_second_diagonal_span": "SIX_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_TEN_VERIFIED_POINTS_INCLUDING_FOUR_WITH_A_NON_CONSTANT_SECOND_DIAGONAL_GATE_13_LIMITATION_CLOSED_POINTWISE_EVIDENCE_ONLY_NONTERMINAL",
-    "v0.4.2_955_eq120_commutator_collapse": "SIX_UPPER_STRATUM_COMMUTATORS_PROVED_PROPORTIONAL_TO_ONE_SCALAR_LAMBDA_VIA_ALREADY_CERTIFIED_EQ120_STAR_CROSS_CHECKED_AGAINST_THREE_INDEPENDENT_POINTS_NONTERMINAL"
+    "v0.4.2_955_eq120_commutator_collapse": "SIX_UPPER_STRATUM_COMMUTATORS_PROVED_PROPORTIONAL_TO_ONE_SCALAR_LAMBDA_VIA_ALREADY_CERTIFIED_EQ120_STAR_CROSS_CHECKED_AGAINST_THREE_INDEPENDENT_POINTS_NONTERMINAL",
+    "v0.4.2_955_lambda_fibre_audit": "LAMBDA_ROW_SPAN_CERTIFIED_AT_FOUR_NONZERO_Q_VISIBLE_FIBRES_ONE_NONSINGULAR_D_ZERO_ANCHOR_AND_IDENTICALLY_ON_TWO_PARAMETER_COMMON_SECOND_DIAGONAL_GROWTH_SUBFAMILY_FULL_S_OPEN",
+    "v0.4.2_955_localized_row_module_preflight": "EXACT_246_SCALAR_1814_CORE_131_LOCALIZERS_THREE_D_ANCHOR_COVER_FINITE_MINOR_COVER_REQUIRED_FULL_S_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "DECIDE_WHETHER_LAMBDA_C14_IS_FORCED_TO_ZERO_ON_S_OR_EXHIBIT_A_NONSINGULAR_POINT_WHERE_IT_IS_NOT",
+    "next_gate": "BUILD_OR_FAIL_CLOSED_A_FINITE_LOCALIZED_MINOR_COVER_FOR_D12_D13_D14_OR_FIND_A_D_NONZERO_LAMBDA_NONZERO_CORE_FIBRE",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
       "CSG_BASEPOINT_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
@@ -895,6 +897,72 @@
       "solver_run": false,
       "search_terminal": false,
       "full_955_profile_claimed": false
+    },
+    "lambda_fibre_audit": {
+      "artifact": "results/v0.4.2_955_lambda_fibre_audit.json",
+      "report": "reports/v0.4.2_955_lambda_fibre_audit.md",
+      "module": "src/universe_lab/final_theory/source_native_955_lambda_fibre_audit_v042.py",
+      "test": "tests/final_theory/test_v042_955_lambda_fibre_audit.py",
+      "schema_version": "final-theory-v042-955-lambda-fibre-audit-v1",
+      "verdict": "V042_955_LAMBDA_ZERO_ON_CERTIFIED_FIBRE_FAMILY_FULL_S_OPEN",
+      "numeric_points": 4,
+      "numeric_nonzero_Q_visible_kernel_vectors": 4,
+      "numeric_non_Q_rank": 111,
+      "numeric_pure_Q_rank": 3,
+      "symbolic_field": "QQ(t,s)",
+      "symbolic_parameters": [
+        "t: fifth first-diagonal growth coupling",
+        "s: common second-diagonal value at all source transitions"
+      ],
+      "symbolic_core_failures": 0,
+      "symbolic_pure_Q_rank": 3,
+      "symbolic_D": "s*(t+13)/(2*(t+15))",
+      "symbolic_lambda_remainder_zero": true,
+      "D_zero_branch_sample": {
+        "label": "growth_t_minus_13_constant_second_diagonal_2",
+        "core_failures": 0,
+        "rows": 1038,
+        "non_q_rank": 111,
+        "pure_q_rank": 3,
+        "D": "0",
+        "lambda_row_remainder_terms": 0,
+        "q_visible_kernel": [
+          "3/56",
+          "1/16",
+          "15/224",
+          "3/56"
+        ],
+        "source_determinants_checked": 131,
+        "source_determinant_failures": 0,
+        "nonsingular_source_fibre": true,
+        "full_D_zero_branch_claimed": false
+      },
+      "full_S_claimed": false,
+      "solver_run": false,
+      "search_terminal": false
+    },
+    "localized_row_module_preflight": {
+      "artifact": "results/v0.4.2_955_localized_row_module_preflight.json",
+      "report": "reports/v0.4.2_955_localized_row_module_preflight.md",
+      "module": "src/universe_lab/final_theory/source_native_955_localized_row_module_preflight_v042.py",
+      "test": "tests/final_theory/test_v042_955_localized_row_module_preflight.py",
+      "schema_version": "final-theory-v042-955-localized-row-module-preflight-v1",
+      "verdict": "V042_955_LOCALIZED_ROW_MODULE_PREFLIGHT_FINITE_MINOR_COVER_REQUIRED_FULL_S_OPEN",
+      "scalar_coordinates": 246,
+      "nonzero_scalar_core_entries": 1814,
+      "distinct_nonzero_scalar_core_entries": 1504,
+      "upper_right_shape": "1038x123",
+      "non_q_columns": 119,
+      "source_determinants": 131,
+      "source_determinant_max_terms": 145,
+      "source_determinant_max_degree": 5,
+      "rank_two_anchor_cover": ["D14", "D12", "D13"],
+      "rank_one_branch_certified": false,
+      "finite_minor_cover_status": "FINITE_MINOR_COVER_REQUIRED",
+      "certificate_issued": false,
+      "full_S_claimed": false,
+      "solver_run": false,
+      "search_terminal": false
     }
   },
   "post_literature_strategy": {
@@ -1741,7 +1809,13 @@
     "src/universe_lab/final_theory/sr2v_transverse_eq120_schur_chart_obligations_v042.py",
     "reports/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.md",
     "results/v0.4.2_sr2v_transverse_eq120_repair_pair_scout.json",
-    "src/universe_lab/final_theory/sr2v_transverse_eq120_repair_pair_scout_v042.py"
+    "src/universe_lab/final_theory/sr2v_transverse_eq120_repair_pair_scout_v042.py",
+    "reports/v0.4.2_955_lambda_fibre_audit.md",
+    "results/v0.4.2_955_lambda_fibre_audit.json",
+    "src/universe_lab/final_theory/source_native_955_lambda_fibre_audit_v042.py",
+    "reports/v0.4.2_955_localized_row_module_preflight.md",
+    "results/v0.4.2_955_localized_row_module_preflight.json",
+    "src/universe_lab/final_theory/source_native_955_localized_row_module_preflight_v042.py"
   ],
   "required_resume_tests": [
     "tests/final_theory/test_ci_version_boundary_v04.py",
@@ -1750,6 +1824,8 @@
     "tests/final_theory/test_fixed_vector_gc_strong_msr_escape_v042.py",
     "tests/final_theory/test_strong_gc_reachable_msr_slack_v042.py",
     "tests/final_theory/test_eq120_source_provenance_v042.py",
+    "tests/final_theory/test_v042_955_lambda_fibre_audit.py",
+    "tests/final_theory/test_v042_955_localized_row_module_preflight.py",
     "tests/final_theory/test_source_native_955_slack_compiler_v042.py",
     "tests/final_theory/test_source_native_955_n_nonzero_scout_v042.py",
     "tests/final_theory/test_source_native_955_mixed_manifest_v042.py",
