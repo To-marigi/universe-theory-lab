@@ -21,7 +21,7 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、十七のゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、十九のゲートが
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -76,6 +76,9 @@ reduce してから scout する」という趣旨の記述は、本文書が上
 新ゲート18    localized row-module preflight（§17）
               scalar 246、非零scalar core 1814（相異1,504）、source localizer 131
               D14/D12/D13のrank-2 coverを固定、finite minor cover required、証明書未発行
+新ゲート19    対称性のない独立8点でΛ row-span掃引（§16、自己訂正込み）
+              罠: _lambda_at_point は b を常に0にするので数値評価は自明にΛ=0
+              正しい row-span 判定で8点全てescape 0、うち7点D!=0
 計画          段階A（955→721→lattice）で本プロジェクト終了 → 段階C → 段階B
 次ゲート      D12/D13/D14のfinite localized minor coverを作るか、D!=0・Λ!=0のexact core fibreを探す（§17.1）
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
@@ -1141,3 +1144,56 @@ OR_FIND_A_D_NONZERO_LAMBDA_NONZERO_CORE_FIBRE
 
 有限coverが膨張する場合は、MISSIONの停止規則に従って `RESOURCE_LIMIT_OPEN` に
 凍結する。Gröbner、saturation、数値探索はこのゲートで実行していない。
+
+---
+
+## 16. ゲート19: 対称性のない独立点での Λ row-span 掃引（自己訂正込み、2026-08-11）
+
+```
+artifact  results/v0.4.2_955_independent_diagonal_sweep.json
+report    reports/v0.4.2_955_independent_diagonal_sweep.md
+module    src/universe_lab/final_theory/source_native_955_independent_diagonal_sweep_v042.py
+digest    714c5e05b3b6357267efcbd988501a3fe62e6e1d2943cacbd66a8f02bc75320e
+verdict   V042_955_LAMBDA_IN_SPAN_AT_EIGHT_INDEPENDENT_DIAGONAL_POINTS_FULL_S_OPEN
+```
+
+### 16.1 罠：`Λ` を数値評価するのは無意味な場合がある
+
+`source_native_955_eq120_collapse_v042._lambda_at_point` は `A:*:01`（`b` 座標）
+を一切設定せず常に0のままである。ここから `Λ=(a1-d1)*b4-(a4-d4)*b1` を直接
+評価すると `b=0` により**自明に0**になる。**新しい点で `Λ` を検証したいときに
+この関数を使ってはならない**——それは既知の escape=0 点でのクロスチェック
+専用である。
+
+**正しい方法**: `Λ` を数値評価せず、`commutator_span`/`second_diagonal_span`
+と同じ **row-span 判定**を使う。`L` の対角部分（重み0）だけ数値化し、123個の
+正重み座標は列として残したまま、`Λ` に対応する行が `rowspan(L)` に入るかを
+判定する。
+
+### 16.2 結果
+
+対称性を共有しない8組の結合対（片側全1・単一自由パラメータ・両側同一公式の
+いずれでもない）で正しい方法を適用。全点 fail-closed で core 検証を通過
+（対角ブロックのみの検証で全4,152成分の検証と同値——`(0,1)/(1,0)` は正重み
+族に定数項なしの厳密線形なので `b=0` で恒等的に0になるため）。
+
+| | |
+|---|---|
+| 検証点 | 8 |
+| `D≠0` の点 | 7 |
+| escape | **0** |
+| rank(L) | 全点で114 |
+
+Gate 17 の対称性の高い族を超えた独立した8点でも、Eq120 崩壊補題の非退化な
+適用範囲で一貫して `Λ` が row-span に入ることを確認した。
+
+### 16.3 次のゲート（不変）
+
+```
+BUILD_OR_FAIL_CLOSED_A_FINITE_LOCALIZED_MINOR_COVER_FOR_D12_D13_D14
+OR_FIND_A_D_NONZERO_LAMBDA_NONZERO_CORE_FIBRE
+```
+
+15点（Gate17の4+2パラメータ族＋Gate19の8点、対照点を除く）で escape 0 が
+続いている。witness 側の可能性は理論上排除されていないが、経験的証拠は
+obstruction 側に厚く積み上がっている。

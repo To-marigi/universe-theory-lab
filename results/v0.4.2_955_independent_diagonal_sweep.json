@@ -1,0 +1,277 @@
+{
+  "schema_version": "final-theory-v042-955-independent-diagonal-sweep-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "scope": {
+    "finite_source_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ",
+    "identification_mode": "ON_QUOTIENT",
+    "locus": "upper stratum, row-span test of Lambda := c_14"
+  },
+  "source_artifact_sha256": {
+    "results/v0.4.2_955_source_native_slack_compiler.json": "0e34c3132c47c4fb0485e9c570581d6ff16f8ce942446f7557ebdb4dd0cd70cc",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.4.2_955_eq120_commutator_collapse.json": "f1d7fa0053775ed67bf0e1aef42397c105746426f185b0a063617b11645150a6"
+  },
+  "predecessor_binding": {
+    "kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
+    "results/v0.4.2_955_eq120_commutator_collapse.json": "d6989a56a7fdd896e8dd4f0f8fa3516cdb836649f5a42bf5e15664b7feafdcfe",
+    "results/v0.4.2_955_source_native_slack_compiler.json": "5baf2a4a0273c8f5d9c08d2436b2df1ef77eafad97a4532d444dc9a8e522e042",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2"
+  },
+  "methodological_correction": {
+    "prior_error": "An earlier attempt evaluated Lambda by reading b values out of a fully numeric assignment that never sets A:*:01, so b=0 identically and Lambda=0 trivially -- a vacuous test, not a real check.",
+    "correct_method": "Row-span membership test: evaluate only the weight-zero (diagonal) part of each (0,1) core entry numerically, leave the 123 positive-weight coordinates as symbolic columns of L, and test whether the Lambda functional row lies in rowspan(L)."
+  },
+  "fail_closed_verification": "Only the (0,0) and (1,1) diagonal core blocks carry a nonzero constant term at b=0; the (0,1)/(1,0) blocks are exactly linear in the positive-weight family with no constant term and vanish identically there. Verifying the diagonal blocks alone is therefore equivalent to verifying the full 4,152-entry core at this construction.",
+  "points": [
+    {
+      "label": "swap_1_2_3_5_7__all_ones",
+      "first_couplings": [
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      "second_couplings": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "diagonal_only_residual_failures": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "D": "5/432",
+      "D_nonzero": true,
+      "augmented_rank": 114,
+      "status": "IN_SPAN"
+    },
+    {
+      "label": "2_3_5_7_11__1_3_2_5_4",
+      "first_couplings": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "second_couplings": [
+        1,
+        3,
+        2,
+        5,
+        4
+      ],
+      "diagonal_only_residual_failures": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "D": "87/40670",
+      "D_nonzero": true,
+      "augmented_rank": 114,
+      "status": "IN_SPAN"
+    },
+    {
+      "label": "1_1_2_1_1__3_2_1_4_2",
+      "first_couplings": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "second_couplings": [
+        3,
+        2,
+        1,
+        4,
+        2
+      ],
+      "diagonal_only_residual_failures": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "D": "6/385",
+      "D_nonzero": true,
+      "augmented_rank": 114,
+      "status": "IN_SPAN"
+    },
+    {
+      "label": "5_3_1_2_4__2_2_2_2_2",
+      "first_couplings": [
+        5,
+        3,
+        1,
+        2,
+        4
+      ],
+      "second_couplings": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "diagonal_only_residual_failures": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "D": "-29/896",
+      "D_nonzero": true,
+      "augmented_rank": 114,
+      "status": "IN_SPAN"
+    },
+    {
+      "label": "1_4_1_4_1__4_1_4_1_4",
+      "first_couplings": [
+        1,
+        4,
+        1,
+        4,
+        1
+      ],
+      "second_couplings": [
+        4,
+        1,
+        4,
+        1,
+        4
+      ],
+      "diagonal_only_residual_failures": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "D": "0",
+      "D_nonzero": false,
+      "augmented_rank": 114,
+      "status": "IN_SPAN"
+    },
+    {
+      "label": "7_5_3_2_1__1_1_3_5_7",
+      "first_couplings": [
+        7,
+        5,
+        3,
+        2,
+        1
+      ],
+      "second_couplings": [
+        1,
+        1,
+        3,
+        5,
+        7
+      ],
+      "diagonal_only_residual_failures": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "D": "-287/5400",
+      "D_nonzero": true,
+      "augmented_rank": 114,
+      "status": "IN_SPAN"
+    },
+    {
+      "label": "1_1_1_1_2__2_1_1_1_1",
+      "first_couplings": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "second_couplings": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "diagonal_only_residual_failures": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "D": "1/51",
+      "D_nonzero": true,
+      "augmented_rank": 114,
+      "status": "IN_SPAN"
+    },
+    {
+      "label": "pi_digits_3_1_4_1_5__9_2_6_5_3",
+      "first_couplings": [
+        3,
+        1,
+        4,
+        1,
+        5
+      ],
+      "second_couplings": [
+        9,
+        2,
+        6,
+        5,
+        3
+      ],
+      "diagonal_only_residual_failures": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "D": "459/16720",
+      "D_nonzero": true,
+      "augmented_rank": 114,
+      "status": "IN_SPAN"
+    }
+  ],
+  "aggregate": {
+    "points_tested": 8,
+    "points_with_D_nonzero": 7,
+    "points_with_D_zero": 1,
+    "escapes": 0,
+    "L_rank_values": [
+      114
+    ],
+    "all_in_span": true
+  },
+  "claim_boundary": [
+    "This widens the evidence base beyond the growth-family and two-character constructions; it is not a uniform proof over all of S.",
+    "The upper stratum is not the unrestricted 955 profile.",
+    "An in-span outcome at every tested point reaches none of the three declared 955 terminals.",
+    "No witness and no general obstruction is certified by this sweep alone."
+  ],
+  "solver_status": {
+    "exact_sparse_QQ_linear_algebra_runs": 8,
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "unrestricted_source_native_955_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_955_LAMBDA_IN_SPAN_AT_EIGHT_INDEPENDENT_DIAGONAL_POINTS_FULL_S_OPEN",
+  "semantic_digest_sha256": "714c5e05b3b6357267efcbd988501a3fe62e6e1d2943cacbd66a8f02bc75320e"
+}

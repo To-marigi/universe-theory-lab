@@ -108,7 +108,8 @@
     "v0.4.2_955_second_diagonal_span": "SIX_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_TEN_VERIFIED_POINTS_INCLUDING_FOUR_WITH_A_NON_CONSTANT_SECOND_DIAGONAL_GATE_13_LIMITATION_CLOSED_POINTWISE_EVIDENCE_ONLY_NONTERMINAL",
     "v0.4.2_955_eq120_commutator_collapse": "SIX_UPPER_STRATUM_COMMUTATORS_PROVED_PROPORTIONAL_TO_ONE_SCALAR_LAMBDA_VIA_ALREADY_CERTIFIED_EQ120_STAR_CROSS_CHECKED_AGAINST_THREE_INDEPENDENT_POINTS_NONTERMINAL",
     "v0.4.2_955_lambda_fibre_audit": "LAMBDA_ROW_SPAN_CERTIFIED_AT_FOUR_NONZERO_Q_VISIBLE_FIBRES_ONE_NONSINGULAR_D_ZERO_ANCHOR_AND_IDENTICALLY_ON_TWO_PARAMETER_COMMON_SECOND_DIAGONAL_GROWTH_SUBFAMILY_FULL_S_OPEN",
-    "v0.4.2_955_localized_row_module_preflight": "EXACT_246_SCALAR_1814_CORE_131_LOCALIZERS_THREE_D_ANCHOR_COVER_FINITE_MINOR_COVER_REQUIRED_FULL_S_OPEN"
+    "v0.4.2_955_localized_row_module_preflight": "EXACT_246_SCALAR_1814_CORE_131_LOCALIZERS_THREE_D_ANCHOR_COVER_FINITE_MINOR_COVER_REQUIRED_FULL_S_OPEN",
+    "v0.4.2_955_independent_diagonal_sweep": "LAMBDA_ROW_SPAN_CERTIFIED_AT_EIGHT_STRUCTURALLY_INDEPENDENT_DIAGONAL_POINTS_SEVEN_WITH_D_NONZERO_METHODOLOGICAL_CORRECTION_RECORDED_FULL_S_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
@@ -956,13 +957,37 @@
       "source_determinants": 131,
       "source_determinant_max_terms": 145,
       "source_determinant_max_degree": 5,
-      "rank_two_anchor_cover": ["D14", "D12", "D13"],
+      "rank_two_anchor_cover": [
+        "D14",
+        "D12",
+        "D13"
+      ],
       "rank_one_branch_certified": false,
       "finite_minor_cover_status": "FINITE_MINOR_COVER_REQUIRED",
       "certificate_issued": false,
       "full_S_claimed": false,
       "solver_run": false,
       "search_terminal": false
+    },
+    "independent_diagonal_sweep": {
+      "artifact": "results/v0.4.2_955_independent_diagonal_sweep.json",
+      "report": "reports/v0.4.2_955_independent_diagonal_sweep.md",
+      "module": "src/universe_lab/final_theory/source_native_955_independent_diagonal_sweep_v042.py",
+      "schema_version": "final-theory-v042-955-independent-diagonal-sweep-v1",
+      "verdict": "V042_955_LAMBDA_IN_SPAN_AT_EIGHT_INDEPENDENT_DIAGONAL_POINTS_FULL_S_OPEN",
+      "semantic_digest_sha256": "714c5e05b3b6357267efcbd988501a3fe62e6e1d2943cacbd66a8f02bc75320e",
+      "methodological_correction": "An earlier delegated measurement evaluated Lambda by reading b out of eq120_collapse._lambda_at_point's assignment, which never sets A:*:01 (b stays zero), making Lambda=0 trivial regardless of a,d. Corrected to the row-span membership test used by commutator_span/second_diagonal_span.",
+      "points_tested": 8,
+      "points_with_D_nonzero": 7,
+      "points_with_D_zero": 1,
+      "escapes": 0,
+      "L_rank_values": [
+        114
+      ],
+      "all_in_span": true,
+      "solver_run": false,
+      "search_terminal": false,
+      "full_955_profile_claimed": false
     }
   },
   "post_literature_strategy": {
