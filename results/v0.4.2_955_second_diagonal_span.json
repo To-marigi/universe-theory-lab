@@ -1,0 +1,933 @@
+{
+  "schema_version": "final-theory-v042-955-second-diagonal-span-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "gate_design": "reports/v0.4.2_955_commutator_span_gate_design.md",
+  "verdict_strings_fixed_before_measurement": true,
+  "closes_the_predecessor_limitation": "Gate 13 recorded that the growth family never varies the second diagonal.  These points do vary it, constantly and non-constantly.",
+  "scope": {
+    "finite_source_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ",
+    "identification_mode": "ON_QUOTIENT",
+    "locus": "upper stratum of the unrestricted 476-coordinate chart"
+  },
+  "source_artifact_sha256": {
+    "results/v0.4.2_955_source_native_slack_compiler.json": "0e34c3132c47c4fb0485e9c570581d6ff16f8ce942446f7557ebdb4dd0cd70cc",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.4.2_955_commutator_span.json": "19914225fec0fddbcdb219a945640bc0a5f334e33ab26a5c67d376ebdfa304d9"
+  },
+  "predecessor_binding": {
+    "kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
+    "results/v0.4.2_955_commutator_span.json": "3b95e12a8cfca62f607b559fa215e5dcb34bf3fb494b47490b5a9d25407a5c0e",
+    "results/v0.4.2_955_source_native_slack_compiler.json": "5baf2a4a0273c8f5d9c08d2436b2df1ef77eafad97a4532d444dc9a8e522e042",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2"
+  },
+  "construction": {
+    "constant": "every A:*:11 set to one rational c",
+    "two_character": "A:*:00 from couplings t, A:*:11 from independent couplings t'",
+    "timid_slack_target": "u:c:1 is solved so that the timid matrix's second diagonal equals that timid orbit's own second-diagonal value, not one.",
+    "why_that_matters": "Solving against a target of one is what made earlier candidates from the 42-dimensional binomial kernel fail with 5 to 21 nonzero core residuals.  The failure was the target, not an obstruction in the variety."
+  },
+  "evaluated_points": [
+    {
+      "label": "constant_1_control",
+      "verified_as_core_point": true,
+      "nonzero_core_entries": 0,
+      "streamed_core_entries": 4152,
+      "second_diagonal": {
+        "distinct_values": 1,
+        "identically_one": true,
+        "sample_values": [
+          "1"
+        ]
+      },
+      "singular_transitions": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "constant_2",
+      "verified_as_core_point": true,
+      "nonzero_core_entries": 0,
+      "streamed_core_entries": 4152,
+      "second_diagonal": {
+        "distinct_values": 1,
+        "identically_one": false,
+        "sample_values": [
+          "2"
+        ]
+      },
+      "singular_transitions": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "constant_3",
+      "verified_as_core_point": true,
+      "nonzero_core_entries": 0,
+      "streamed_core_entries": 4152,
+      "second_diagonal": {
+        "distinct_values": 1,
+        "identically_one": false,
+        "sample_values": [
+          "3"
+        ]
+      },
+      "singular_transitions": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "constant_1_over_2",
+      "verified_as_core_point": true,
+      "nonzero_core_entries": 0,
+      "streamed_core_entries": 4152,
+      "second_diagonal": {
+        "distinct_values": 1,
+        "identically_one": false,
+        "sample_values": [
+          "1/2"
+        ]
+      },
+      "singular_transitions": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "nonzero_columns_after_evaluation": 1,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 1,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 1,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "constant_minus_1",
+      "verified_as_core_point": true,
+      "nonzero_core_entries": 0,
+      "streamed_core_entries": 4152,
+      "second_diagonal": {
+        "distinct_values": 1,
+        "identically_one": false,
+        "sample_values": [
+          "-1"
+        ]
+      },
+      "singular_transitions": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "constant_5_over_3",
+      "verified_as_core_point": true,
+      "nonzero_core_entries": 0,
+      "streamed_core_entries": 4152,
+      "second_diagonal": {
+        "distinct_values": 1,
+        "identically_one": false,
+        "sample_values": [
+          "5/3"
+        ]
+      },
+      "singular_transitions": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "two_character_equal_scalar_degeneration",
+      "verified_as_core_point": true,
+      "nonzero_core_entries": 0,
+      "streamed_core_entries": 4152,
+      "second_diagonal": {
+        "distinct_values": 4,
+        "identically_one": false,
+        "sample_values": [
+          "1/16",
+          "1/2",
+          "1/4",
+          "1/8"
+        ]
+      },
+      "singular_transitions": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 103,
+      "fibre_dimension": 20,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "nonzero_columns_after_evaluation": 0,
+          "augmented_rank": 103,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 0,
+          "augmented_rank": 103,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 0,
+          "augmented_rank": 103,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 0,
+          "augmented_rank": 103,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 0,
+          "augmented_rank": 103,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 0,
+          "augmented_rank": 103,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "two_character_1_2_3_5_7",
+      "verified_as_core_point": true,
+      "nonzero_core_entries": 0,
+      "streamed_core_entries": 4152,
+      "second_diagonal": {
+        "distinct_values": 13,
+        "identically_one": false,
+        "sample_values": [
+          "1/18",
+          "1/21",
+          "1/27",
+          "1/3",
+          "1/4",
+          "1/54",
+          "1/7",
+          "1/8"
+        ]
+      },
+      "singular_transitions": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "two_character_2_1_4_1_3",
+      "verified_as_core_point": true,
+      "nonzero_core_entries": 0,
+      "streamed_core_entries": 4152,
+      "second_diagonal": {
+        "distinct_values": 12,
+        "identically_one": false,
+        "sample_values": [
+          "1/18",
+          "1/37",
+          "1/4",
+          "1/8",
+          "1/9",
+          "10/37",
+          "2/3",
+          "2/37"
+        ]
+      },
+      "singular_transitions": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "nonzero_columns_after_evaluation": 1,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 1,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 1,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    },
+    {
+      "label": "two_character_3_1_1_1_1",
+      "verified_as_core_point": true,
+      "nonzero_core_entries": 0,
+      "streamed_core_entries": 4152,
+      "second_diagonal": {
+        "distinct_values": 9,
+        "identically_one": false,
+        "sample_values": [
+          "1/10",
+          "1/18",
+          "1/2",
+          "1/5",
+          "1/6",
+          "1/9",
+          "2/9",
+          "3/10"
+        ]
+      },
+      "singular_transitions": 0,
+      "L_shape": [
+        1038,
+        123
+      ],
+      "L_rank": 114,
+      "fibre_dimension": 9,
+      "pairs": [
+        {
+          "pair": [
+            1,
+            2
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            1,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            3
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            2,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        },
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "nonzero_columns_after_evaluation": 2,
+          "augmented_rank": 114,
+          "rank_increment": 0,
+          "status": "IN_SPAN"
+        }
+      ],
+      "escapes": 0,
+      "verdict": "V042_955_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_POINT_CERTIFIED"
+    }
+  ],
+  "aggregate": {
+    "points": 10,
+    "verified_as_core_points": 10,
+    "points_with_a_non_constant_second_diagonal": 4,
+    "points_with_an_escape": 0,
+    "total_escapes": 0,
+    "L_rank_values": [
+      103,
+      114
+    ],
+    "maximum_distinct_second_diagonal_values": 13,
+    "verdict": "V042_955_UPPER_STRATUM_SPAN_POINTWISE_EVIDENCE_ONLY_NONTERMINAL"
+  },
+  "scalar_degeneration_note": "Taking the second couplings equal to the first makes every matrix a scalar multiple of the identity.  Its commutator rows are identically zero and its rank drops, which is the expected degenerate behaviour and is retained as a control.",
+  "scope_limits": [
+    "The second diagonal is now varied, but only along constants and second growth characters; the full second-diagonal freedom of the scalar variety is not swept.",
+    "Finitely many points cannot decide the stratum; a uniform statement still needs the membership proved symbolically or over a cover.",
+    "The upper stratum is not the unrestricted 955 profile, and the gauge torus cannot degenerate a mixed point into it.",
+    "An in-span outcome reaches none of the three declared 955 terminals."
+  ],
+  "solver_status": {
+    "exact_sparse_QQ_linear_algebra_runs": 10,
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "unrestricted_source_native_955_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_955_UPPER_STRATUM_SPAN_POINTWISE_EVIDENCE_ONLY_NONTERMINAL",
+  "semantic_digest_sha256": "a4ea09f19831dcb2d593e67456b1f020142aa8024c9ec1097ad55b1e6ccfc08b"
+}

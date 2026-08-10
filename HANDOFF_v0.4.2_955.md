@@ -906,3 +906,73 @@ CONSTRUCT_POINTS_OF_S_WITH_A_FREE_SECOND_DIAGONAL_THEN_RERUN_THE_SPAN_DECISION
 3. `Q(t)` 上の span 判定を素朴な全体消去で再試行しない。可換子行は `b_Q1..b_Q4` の
    2列しか持たないので、その4列以外を `L` から消去した関係式を見るほうが桁違いに
    小さい。問いは `(p_i - 1) b_j = (p_j - 1) b_i` の形が出るかどうかである。
+
+---
+
+## 14. ゲート14/15: 成長族の恒等性と、第二対角を動かした span 判定（2026-08-10）
+
+### 14.1 ゲート14 — 成長族は core を結合について恒等的に満たす
+
+```
+artifact  results/v0.4.2_955_growth_family_identity.json
+report    reports/v0.4.2_955_growth_family_identity.md
+module    src/universe_lab/final_theory/source_native_955_growth_family_identity_v042.py
+digest    d6e1548f13c287377b3f50b2070802e550bf06c334d5501c8bc2ff92be617755
+verdict   V042_955_GROWTH_FAMILY_SOLVES_THE_CORE_IDENTICALLY_IN_THE_COUPLINGS_CERTIFIED
+```
+
+`QQ(t_0..t_4)` 上で timid first-column 同一性が24 source すべてで成立し、core
+4,152成分すべてが恒等的に零。ゲート13の4点抽出が族の言明に格上げされた。
+`t_k=1` への特殊化が凍結131特性を再現することを機械検査（不一致なら停止）。
+
+除外軌跡を明示: 結合分母4本と到達状態積の分子22本（既約因子 `t0,t1,t2,t3,t1+t2,
+t2+t3,t1+2*t2+t3`）。
+
+**方法の注意**: 消去せず成分ごとに代入して `cancel` するだけ。約16秒。
+`Q(t)` 上の疎消去（頓挫した経路）とは別物である。
+
+### 14.2 ゲート15 — 第二対角を動かした span 判定（ゲート13の限界を解消）
+
+```
+artifact  results/v0.4.2_955_second_diagonal_span.json
+report    reports/v0.4.2_955_second_diagonal_span.md
+module    src/universe_lab/final_theory/source_native_955_second_diagonal_span_v042.py
+digest    a4ea09f19831dcb2d593e67456b1f020142aa8024c9ec1097ad55b1e6ccfc08b
+verdict   V042_955_UPPER_STRATUM_SPAN_POINTWISE_EVIDENCE_ONLY_NONTERMINAL
+```
+
+**構成の鍵は timid 目標値の1行である。** `u:c:1` を目標値1に対して解くと失敗する
+（42次元核から取った候補は残差5〜21件/4152）。目標値はその timid 軌道自身の第二
+対角値でなければならない。**失敗の原因は目標値であって多様体側の obstruction では
+なかった。** ここを間違えると「第二対角は動かせない」という誤結論に直行する。
+
+二構成: 定数 `A:*:11 = c`、および二特性（`A:*:00 = p(t)`, `A:*:11 = q(t')`）。
+
+| 点 | β相異値 | rank | ファイバー | escape |
+|---|---|---|---|---|
+| 定数 c=1 対照 / 2 / 3 / 1/2 / −1 / 5/3 | 1 | 114 | 9 | 0 |
+| 二特性 `t'=t`（スカラー退化・対照） | 4 | **103** | **20** | 0 |
+| 二特性 3種 | 13 / 12 / 9 | 114 | 9 | 0 |
+
+10点すべて fail-closed の core 検証を通過、特異遷移0、**escape 0**。
+スカラー退化点は可換子行が恒等的に零になり rank も落ちる（期待どおりの別挙動）。
+
+**したがってゲート13の最大の限界は解消した。** 第二対角を定数でも非定数でも動かして、
+なお6本すべてが row span に入る。
+
+### 14.3 残る限界（変わっていない）
+
+- 掃いたのは定数と第二成長特性だけ。第二対角自由度の全体ではない。
+- 有限個の点は stratum を決めない。
+- upper stratum は無制限955ではない。mixed 点は open。
+- in-span は宣言済み三終端のどれにも届かない。
+
+### 14.4 次のゲート
+
+```
+PROVE_THE_SPAN_MEMBERSHIP_UNIFORMLY_ON_S_OR_SWEEP_THE_REMAINING_SECOND_DIAGONAL_FREEDOM
+```
+
+残っているのは**量化子**である。一様証明の経路は、`Q(t)` の素朴な全体消去では
+なく（頓挫済み）、`L` から4つの `Q` 列以外を消去して
+`(p_i - 1) b_j = (p_j - 1) b_i` の形が出るかを見ること。
