@@ -1,0 +1,102 @@
+{
+  "schema_version": "final-theory-v042-955-growth-family-identity-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "scope": {
+    "finite_source_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ(t_0,...,t_4)",
+    "identification_mode": "ON_QUOTIENT",
+    "chart": "unrestricted 476-coordinate source-native slack chart"
+  },
+  "source_artifact_sha256": {
+    "results/v0.4.2_955_source_native_slack_compiler.json": "0e34c3132c47c4fb0485e9c570581d6ff16f8ce942446f7557ebdb4dd0cd70cc",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "123b48c1c8ce16eadd4a48200b3b3b3f826221040b0107c03e79ce073dde550c",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.4.2_955_commutator_span.json": "19914225fec0fddbcdb219a945640bc0a5f334e33ab26a5c67d376ebdfa304d9"
+  },
+  "predecessor_binding": {
+    "kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
+    "results/v0.4.2_955_commutator_span.json": "3b95e12a8cfca62f607b559fa215e5dcb34bf3fb494b47490b5a9d25407a5c0e",
+    "results/v0.4.2_955_source_native_slack_compiler.json": "5baf2a4a0273c8f5d9c08d2436b2df1ef77eafad97a4532d444dc9a8e522e042",
+    "results/v0.4.2_955_mixed_source_native_manifest.json": "13dc6cc8ec89395ba86bc66c5d96e25f79ed8cc5bbf9c6cc2b6925d1256430f2"
+  },
+  "upgrade_over_the_predecessor": "The span gate verified four sampled couplings.  This removes the sampling: the growth family satisfies the core identically in t, so every non-degenerate coupling gives a point of the scalar variety.",
+  "symbolic_characters": {
+    "orbits": 131,
+    "distinct_values": 24,
+    "specialisation_at_all_ones_reproduces_frozen_values": true,
+    "values_sha256": "4dac8297d3551cdbc950cd7e679a7a37fdf60864c8c4a457198aa1bc8d11110e"
+  },
+  "timid_first_column_identity": {
+    "statement": "p[timid] = 1 - sum(non-timid p) at every source",
+    "sources_checked": 24,
+    "symbolic_failures": 0,
+    "role": "This identity is what allows the growth characters to extend to a point of the chart at all; it is verified in t, not at a sampled coupling."
+  },
+  "core_identity": {
+    "field": "QQ(t_0,...,t_4)",
+    "streamed_nonzero_entries": 4152,
+    "per_block": {
+      "CPOBC": 3132,
+      "strong_GC": 1020
+    },
+    "entries_not_vanishing_identically": 0,
+    "second_diagonal_value": "every A:*:11 is fixed to 1 by the growth assignment"
+  },
+  "excluded_locus": {
+    "reason": "The construction is undefined where a coupling denominator or a reachable-state product vanishes.",
+    "coupling_denominators_required_nonzero": [
+      "t0 + 2*t1 + t2",
+      "t0 + 3*t1 + 3*t2 + t3",
+      "t0 + 4*t1 + 6*t2 + 4*t3 + t4",
+      "t0 + t1"
+    ],
+    "reachable_product_numerators_required_nonzero": [
+      "t0",
+      "t0**2",
+      "t0**2*t1",
+      "t0**2*t2",
+      "t0**2*t3",
+      "t0**3",
+      "t0*t1",
+      "t0*t1*(t1 + t2)",
+      "t0*t1*(t2 + t3)",
+      "t0*t1**2",
+      "t0*t1*t2",
+      "t0*t2",
+      "t0*t2*(t1 + 2*t2 + t3)",
+      "t0*t2**2",
+      "t1",
+      "t1*(t1 + t2)",
+      "t1*(t1 + t2)*(t1 + 2*t2 + t3)",
+      "t1*(t1 + t2)**2",
+      "t1**2",
+      "t1**2*(t1 + t2)",
+      "t1**2*(t2 + t3)",
+      "t1**3"
+    ],
+    "count": 26
+  },
+  "claim_boundary": [
+    "This places the growth family inside the core; it decides no commutator question.",
+    "Every A:*:11 stays one, so the second diagonal is still never varied and the gate 13 limitation is untouched.",
+    "A witness outcome off the growth family remains possible.",
+    "The growth family is a small part of the scalar variety S, not all of it.",
+    "No statement about the mixed locus or the unrestricted profile follows."
+  ],
+  "solver_status": {
+    "symbolic_rational_function_runs": 1,
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "unrestricted_source_native_955_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_955_GROWTH_FAMILY_SOLVES_THE_CORE_IDENTICALLY_IN_THE_COUPLINGS_CERTIFIED",
+  "semantic_digest_sha256": "d6e1548f13c287377b3f50b2070802e550bf06c334d5501c8bc2ff92be617755"
+}

@@ -103,7 +103,8 @@
     "v0.4.2_sr2v_transverse_common_core_q5_free": "FULL_M0_AND_GLOBAL_SCHUR_REDUCTION_Q5_FREE_NONALIGNED_TWO_COLUMN_ALIGNED_FOUR_COLUMN_POINTWISE_IDEALS_OPEN",
     "v0.4.2_sr2v_q5_free_auxiliary_ideal_manifest_checkpoint": "MACHINE_CERTIFIED_INPUTS_BOTTOM_LOCALIZATION_AND_R52_MANUAL_RESOURCE_OBSERVATION_FULL_MANIFEST_OPEN",
     "v0.4.2_955_upper_stratum": "GAUGE_WEIGHTS_DERIVED_NOT_ASSUMED_UPPER_STRATUM_IS_SCALAR_VARIETY_TIMES_LINEAR_FIBRE_SIX_COMMUTATORS_COLLAPSE_TO_FOUR_TERM_LINEAR_FORMS_NONTERMINAL",
-    "v0.4.2_955_commutator_span": "SIX_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_FOUR_VERIFIED_GENERAL_COUPLING_GROWTH_POINTS_SECOND_DIAGONAL_NEVER_VARIED_POINTWISE_EVIDENCE_ONLY_NONTERMINAL"
+    "v0.4.2_955_commutator_span": "SIX_UPPER_STRATUM_COMMUTATOR_FORMS_IN_CORE_ROW_SPAN_AT_FOUR_VERIFIED_GENERAL_COUPLING_GROWTH_POINTS_SECOND_DIAGONAL_NEVER_VARIED_POINTWISE_EVIDENCE_ONLY_NONTERMINAL",
+    "v0.4.2_955_growth_family_identity": "SEQUENTIAL_GROWTH_FAMILY_SOLVES_CPOBC_AND_STRONG_GC_IDENTICALLY_OVER_QQ_OF_THE_COUPLINGS_SECOND_DIAGONAL_STILL_FIXED_TO_ONE_NONTERMINAL"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
@@ -786,6 +787,42 @@
         "stratum_is_not_the_unrestricted_profile": true,
         "reaches_none_of_the_three_declared_955_terminals": true
       },
+      "solver_run": false,
+      "search_terminal": false,
+      "full_955_profile_claimed": false
+    },
+    "growth_family_identity": {
+      "artifact": "results/v0.4.2_955_growth_family_identity.json",
+      "report": "reports/v0.4.2_955_growth_family_identity.md",
+      "module": "src/universe_lab/final_theory/source_native_955_growth_family_identity_v042.py",
+      "schema_version": "final-theory-v042-955-growth-family-identity-v1",
+      "verdict": "V042_955_GROWTH_FAMILY_SOLVES_THE_CORE_IDENTICALLY_IN_THE_COUPLINGS_CERTIFIED",
+      "semantic_digest_sha256": "d6e1548f13c287377b3f50b2070802e550bf06c334d5501c8bc2ff92be617755",
+      "field": "QQ(t_0,...,t_4)",
+      "upgrades": "the four sampled couplings of the commutator span gate to a family statement",
+      "certified": {
+        "timid_first_column_identity_sources": 24,
+        "timid_first_column_symbolic_failures": 0,
+        "streamed_core_entries": 4152,
+        "entries_not_vanishing_identically": 0,
+        "distinct_symbolic_characters": 24,
+        "specialisation_at_all_ones_reproduces_frozen_values": true
+      },
+      "excluded_locus": {
+        "coupling_denominators": 4,
+        "reachable_product_numerators": 22,
+        "irreducible_factors": [
+          "t0",
+          "t1",
+          "t2",
+          "t3",
+          "t1+t2",
+          "t2+t3",
+          "t1+2*t2+t3"
+        ]
+      },
+      "second_diagonal_still_fixed_to_one": true,
+      "witness_outcome_off_the_growth_family_still_possible": true,
       "solver_run": false,
       "search_terminal": false,
       "full_955_profile_claimed": false
