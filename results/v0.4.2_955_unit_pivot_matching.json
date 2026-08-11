@@ -1,0 +1,213 @@
+{
+  "schema_version": "final-theory-v042-955-unit-pivot-matching-v1",
+  "profile": "strong_GC__reachable_state_MSR",
+  "scope": {
+    "finite_source_stages": "n<=4",
+    "dimension": 2,
+    "field": "QQ",
+    "identification_mode": "ON_QUOTIENT",
+    "locus": "upper stratum of the unrestricted 476-coordinate chart"
+  },
+  "source_artifact_sha256": {
+    "results/v0.4.2_955_minor_cover_preflight.json": "9e63a5f0354ca6b092d6a8804b8425d1c41aca49ef3436a7c39f8067caaffe19"
+  },
+  "predecessor_binding": {
+    "kind": "CANONICAL_JSON_SEMANTIC_DIGEST",
+    "results/v0.4.2_955_minor_cover_preflight.json": "3664bf256d654508c62efd346d2db33a6298f7402c75bb4439047d25fb215b66"
+  },
+  "column_layout": {
+    "matrix_columns_A_01": 107,
+    "slack_columns_u_0": 16,
+    "total": 123,
+    "gate18_unmatched_are_all_slack": true
+  },
+  "required_pivot_rank": {
+    "non_q_columns": 119,
+    "non_q_rank": 111,
+    "monomial_matched_rank": 107,
+    "gap": 4,
+    "extra_pivot_columns": [
+      "u:p2-2:0",
+      "u:p3-006:0",
+      "u:p3-024:0",
+      "u:p3-026:0"
+    ],
+    "same_columns_at_every_point": true,
+    "points": [
+      {
+        "first_couplings": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "second_couplings": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "non_q_rank": 111,
+        "monomial_matched_rank": 107,
+        "gap": 4,
+        "extra_pivot_columns": [
+          "u:p2-2:0",
+          "u:p3-006:0",
+          "u:p3-024:0",
+          "u:p3-026:0"
+        ]
+      },
+      {
+        "first_couplings": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "second_couplings": [
+          1,
+          2,
+          3,
+          5,
+          7
+        ],
+        "non_q_rank": 111,
+        "monomial_matched_rank": 107,
+        "gap": 4,
+        "extra_pivot_columns": [
+          "u:p2-2:0",
+          "u:p3-006:0",
+          "u:p3-024:0",
+          "u:p3-026:0"
+        ]
+      },
+      {
+        "first_couplings": [
+          2,
+          3,
+          5,
+          7,
+          11
+        ],
+        "second_couplings": [
+          1,
+          3,
+          2,
+          5,
+          4
+        ],
+        "non_q_rank": 111,
+        "monomial_matched_rank": 107,
+        "gap": 4,
+        "extra_pivot_columns": [
+          "u:p2-2:0",
+          "u:p3-006:0",
+          "u:p3-024:0",
+          "u:p3-026:0"
+        ]
+      }
+    ],
+    "scalar_degeneration_excluded": "The all-ones/all-ones pair is omitted: it is the scalar degeneration where rank(L) drops to 103, and using it would understate the required rank."
+  },
+  "free_slack_columns": {
+    "count": 8,
+    "columns": [
+      "u:p4-0002:0",
+      "u:p4-0006:0",
+      "u:p4-0044:0",
+      "u:p4-0046:0",
+      "u:p4-0048:0",
+      "u:p4-004c:0",
+      "u:p4-004e:0",
+      "u:p4-088a:0"
+    ],
+    "never_used_as_pivots": true,
+    "all_at_terminal_p4_stage": true
+  },
+  "extra_pivot_factorisations": [
+    {
+      "column": "u:p2-2:0",
+      "row_index": 24,
+      "monomials": 2,
+      "factored": "v423*(v172 - 1)",
+      "all_factors_are_localizer_units": true
+    },
+    {
+      "column": "u:p3-006:0",
+      "row_index": 215,
+      "monomials": 2,
+      "factored": "v123*v424*(v172 - 1)",
+      "all_factors_are_localizer_units": true
+    },
+    {
+      "column": "u:p3-024:0",
+      "row_index": 695,
+      "monomials": 3,
+      "factored": "v172*v271*(2*v52 + v88 - 1)",
+      "all_factors_are_localizer_units": true
+    },
+    {
+      "column": "u:p3-026:0",
+      "row_index": 223,
+      "monomials": 6,
+      "factored": "-v143*(v172 - 1)*(v312 + v424 - 1)",
+      "all_factors_are_localizer_units": true
+    }
+  ],
+  "localizer": {
+    "basis": "On the upper stratum every source matrix is upper triangular, so det = (0,0) entry times (1,1) entry; localizing at the 131 source determinants inverts every source diagonal entry.",
+    "distinct_source_diagonal_keys": 524,
+    "coefficient_entries_tested": 4490,
+    "max_terms_tested_per_entry": 8
+  },
+  "unit_edge_matching": {
+    "columns_with_a_localizer_unit_row": 111,
+    "maximum_matching_size": 111,
+    "matches_required_rank": true,
+    "rows_are_distinct": true,
+    "unmatched_columns": [
+      "u:p4-0002:0",
+      "u:p4-0006:0",
+      "u:p4-0044:0",
+      "u:p4-0046:0",
+      "u:p4-0048:0",
+      "u:p4-004c:0",
+      "u:p4-004e:0",
+      "u:p4-088a:0"
+    ],
+    "unmatched_have_no_unit_row": true
+  },
+  "determinant_unit_status": {
+    "certified": false,
+    "why_not": "A matching of unit entries makes the determinant a signed sum over permutations, not a single product.  A unit determinant needs the chosen submatrix to be permutation-triangular, or the determinant computed another way.",
+    "sparse_first_selection_columns": 111,
+    "strictly_triangular_steps": 98,
+    "maximum_residual_support_at_selection": 2,
+    "steps_short_of_triangular": 13
+  },
+  "what_this_resolves_from_gate18": "Gate 18 left 12 non-Q columns without a structural matching and called for a finite minor cover.  Those 12 are all slack coordinates; 8 are free directions that no elimination uses, and the 4 that are required each carry a coefficient that is a unit after source-determinant localization.  Widening the matching to localizer-unit edges attains the full required rank of 111 on distinct rows.",
+  "claim_boundary": [
+    "No unit determinant and therefore no localized row-module certificate is issued.",
+    "The required-pivot measurement is at three declared points; the rank being constant there is not a proof that it is constant on all of S.",
+    "The upper stratum is not the unrestricted 955 profile.",
+    "Nothing here decides whether Lambda is forced to vanish."
+  ],
+  "solver_status": {
+    "symbolic_factorisations": 4490,
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "Sage_runs": 0,
+    "solver_run": false
+  },
+  "unrestricted_source_native_955_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_955_ALL_111_REQUIRED_NON_Q_PIVOTS_HAVE_LOCALIZER_UNIT_COEFFICIENTS_DETERMINANT_UNIT_NOT_CERTIFIED_FULL_S_OPEN",
+  "semantic_digest_sha256": "18025b7eb098f1bd51b71d7a706e941615524a1887d01dd1f506a12f6ee73f0f"
+}

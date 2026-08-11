@@ -1294,3 +1294,76 @@ visibilityを追加検査してwitness終端の可否を判定する。
 
 全体判定は引き続き `FINAL_THEORY_OPEN`。上部族・有限sample・rank-one有限格子の
 結果をfull 955 profileへ昇格しない。
+
+---
+
+## 17. ゲート20: 必要な111ピボットは全て localizer 単元係数を持つ（2026-08-11）
+
+```
+artifact  results/v0.4.2_955_unit_pivot_matching.json
+report    reports/v0.4.2_955_unit_pivot_matching.md
+module    src/universe_lab/final_theory/source_native_955_unit_pivot_matching_v042.py
+digest    18025b7eb098f1bd51b71d7a706e941615524a1887d01dd1f506a12f6ee73f0f
+verdict   V042_955_ALL_111_REQUIRED_NON_Q_PIVOTS_HAVE_LOCALIZER_UNIT_COEFFICIENTS_
+          DETERMINANT_UNIT_NOT_CERTIFIED_FULL_S_OPEN
+```
+
+### 17.1 方針転換：点の追加を止めた
+
+ゲート13→19 で `Λ` の escape 探索は 8点→64点→93点 と積み上がり累計200点近くで
+escape 0 だった。しかし**195点目が0でも196点目については何も言えない**。
+`MISSION.md` の「scout の非発見を obstruction の証明として記録しない」と、
+jet 梯子を破棄したときと同じ論理が当てはまる。点の追加を止め、
+`minor_cover_preflight` が示した**構造**（107/119 の単項式マッチング）に一本化した。
+
+### 17.2 Gate 18 の12列は解決した
+
+- 列0–106 が `A:*:01`、107–122 が `u:*:0`。**未マッチ12列は全て slack**。
+- 非Qランクは111、マッチ済み107列でランク107 → **必要な追加ピボットは4本だけ**。
+- 3つの非退化点で毎回同じ4列：`u:p2-2:0, u:p3-006:0, u:p3-024:0, u:p3-026:0`。
+- 残る8本は全て終端 p4 段の**自由方向**（一度もピボットにならない）。
+
+**罠**: 最初 `first=second=(1,1,1,1,1)` で計測して rank 103 を得た。これは
+Gate 15 が記録済みの**スカラー退化点**（rank 103 / ファイバー20）であり、
+非退化点の114とは別物。必要ランクを過小評価する。ランク計測時は必ず
+非退化点を使うこと。成果物では対照として明示除外している。
+
+### 17.3 4本とも単元に因数分解
+
+```
+u:p2-2:0    ->  v423 * (v172 - 1)
+u:p3-006:0  ->  v123 * v424 * (v172 - 1)
+u:p3-024:0  ->  v172 * v271 * (2*v52 + v88 - 1)
+u:p3-026:0  -> -v143 * (v172 - 1) * (v312 + v424 - 1)
+```
+
+各因数は整数単元・source 対角座標・**source 行列の対角成分**（timid 行列の
+`1 - Σα` 型）のいずれか。upper stratum では `det(A_e)=A_e[0][0]*A_e[1][1]` なので、
+131 source determinant の局所化が全て単元にする。
+
+単元辺でマッチングを取り直すと **111列が111個の異なる行にマッチ**（必要ランクと
+完全一致）。未マッチ8列は単元行が1本もなく、そもそも不要。
+
+### 17.4 まだ閉じていないもの
+
+**単元エントリのマッチング ≠ 単元行列式。** 行列式は置換にわたる符号付き和なので、
+選んだ小行列が置換三角である必要がある。疎な台を優先した選択で
+
+| | |
+|---|---|
+| 厳密三角ステップ | **98 / 111** |
+| 最大残余台 | 2 |
+| 不足 | **13ステップ** |
+
+`determinant_unit_certified: false`。証明書は発行していない。
+
+### 17.5 次のゲート
+
+```
+CLOSE_THE_REMAINING_13_TRIANGULARITY_STEPS_FOR_A_UNIT_111_MINOR
+OR_FREEZE_955_AT_RESOURCE_LIMIT_OPEN_AND_MOVE_TO_721
+```
+
+残りは13ステップ分の三角性だけ。三角化可能な行選択を探すか、行列式を直接評価する。
+**閉じなければ MISSION の停止規則に従い 955 を凍結して 721 へ移る**こと。段階Aの
+目的は lattice の完成であって 955 単独の解決ではない。

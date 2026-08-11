@@ -112,11 +112,12 @@
     "v0.4.2_955_independent_diagonal_sweep": "LAMBDA_ROW_SPAN_CERTIFIED_AT_EIGHT_STRUCTURALLY_INDEPENDENT_DIAGONAL_POINTS_SEVEN_WITH_D_NONZERO_METHODOLOGICAL_CORRECTION_RECORDED_FULL_S_OPEN",
     "v0.4.2_955_independent_character_witness_scout": "EXACT_64_SOURCE_NATIVE_INDEPENDENT_DIAGONAL_POINTS_54_D_NONZERO_NO_LAMBDA_ESCAPE_FULL_S_OPEN",
     "v0.4.2_955_rank_one_character_audit": "EXACT_93_SOURCE_NATIVE_RANK_ONE_POINTS_12_NONSCALAR_NO_COMMUTATOR_ESCAPE_FULL_S_OPEN",
-    "v0.4.2_955_minor_cover_preflight": "EXACT_38_POINT_SAMPLE_107_OF_119_MONOMIAL_MATCHING_D14_TWO_MINOR_SAMPLE_COVER_D12_D13_ANCHORED_FULL_S_OPEN"
+    "v0.4.2_955_minor_cover_preflight": "EXACT_38_POINT_SAMPLE_107_OF_119_MONOMIAL_MATCHING_D14_TWO_MINOR_SAMPLE_COVER_D12_D13_ANCHORED_FULL_S_OPEN",
+    "v0.4.2_955_unit_pivot_matching": "GATE18_TWELVE_UNMATCHED_COLUMNS_RESOLVED_ALL_SLACK_EIGHT_FREE_FOUR_REQUIRED_WITH_LOCALIZER_UNIT_FACTORISATIONS_UNIT_EDGE_MATCHING_ATTAINS_RANK_111_DETERMINANT_UNIT_NOT_CERTIFIED_FULL_S_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "BUILD_OR_FAIL_CLOSED_A_FINITE_LOCALIZED_ROW_MODULE_CERTIFICATE_FOR_D12_D13_D14_OR_FIND_A_D_NONZERO_LAMBDA_NONZERO_CORE_FIBRE",
+    "next_gate": "CLOSE_THE_REMAINING_13_TRIANGULARITY_STEPS_FOR_A_UNIT_111_MINOR_OR_FREEZE_955_AT_RESOURCE_LIMIT_OPEN_AND_MOVE_TO_721",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
       "CSG_BASEPOINT_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
@@ -197,7 +198,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "The Eq120 star (already proved in results/v0.4.2_eq120_source_provenance.json) collapses the six upper-stratum commutator row-span questions into one: given the star and a_1*d_4-a_4*d_1!=0, every c_ij is an exact scalar multiple of Lambda=c_14, with coefficients that are clean 2x2 minors of a,d alone (proved as a symbolic polynomial identity, cross-checked against three independently recomputed points where Lambda=0 matched zero escapes exactly). The remaining question is whether the rest of the core forces Lambda=0 identically on S, or whether a nonsingular point exists with Lambda!=0 -- a witness candidate still owing nonsingularity, N!=0, Eq113/Eq139 and reachable visibility. This reframing does not by itself decide the question.",
+    "next_gate_description": "The localized row-module certificate is now 13 steps of triangularity away, not a finite-minor-cover search. All 111 required non-Q pivot columns admit coefficients that are units after localizing at the 131 source determinants, and a maximum matching over localizer-unit edges attains exactly rank 111 on 111 distinct rows; the 8 residual slack columns are terminal-stage free directions with no unit row and no need for one. What is missing is that a unit-entry matching does not by itself make the determinant a unit -- it is a signed sum over permutations -- so the chosen 111x111 submatrix must be shown permutation-triangular or its determinant computed another way. A sparse-support-first selection reaches 98 of 111 strictly triangular steps with maximum residual support 2. Find a triangularizable row selection or evaluate the determinant directly. If that stalls, MISSION.md's phase-A stop rule applies: freeze 955 at RESOURCE_LIMIT_OPEN and move to 721, since phase A's goal is the lattice, not 955 alone.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -1050,6 +1051,59 @@
       "full_S_claimed": false,
       "solver_run": false,
       "search_terminal": false
+    },
+    "unit_pivot_matching": {
+      "artifact": "results/v0.4.2_955_unit_pivot_matching.json",
+      "report": "reports/v0.4.2_955_unit_pivot_matching.md",
+      "module": "src/universe_lab/final_theory/source_native_955_unit_pivot_matching_v042.py",
+      "test": "tests/final_theory/test_v042_955_unit_pivot_matching.py",
+      "schema_version": "final-theory-v042-955-unit-pivot-matching-v1",
+      "verdict": "V042_955_ALL_111_REQUIRED_NON_Q_PIVOTS_HAVE_LOCALIZER_UNIT_COEFFICIENTS_DETERMINANT_UNIT_NOT_CERTIFIED_FULL_S_OPEN",
+      "semantic_digest_sha256": "18025b7eb098f1bd51b71d7a706e941615524a1887d01dd1f506a12f6ee73f0f",
+      "resolves_from_gate18": "the 12 structurally unmatched non-Q columns",
+      "column_layout": {
+        "A_01": 107,
+        "u_0": 16,
+        "unmatched_are_all_slack": true
+      },
+      "required_pivots": {
+        "non_q_rank": 111,
+        "monomial_matched_rank": 107,
+        "gap": 4,
+        "extra_columns": [
+          "u:p2-2:0",
+          "u:p3-006:0",
+          "u:p3-024:0",
+          "u:p3-026:0"
+        ],
+        "same_columns_at_three_non_degenerate_points": true,
+        "scalar_degeneration_excluded_because_rank_drops_to_103": true
+      },
+      "free_slack_columns": {
+        "count": 8,
+        "all_terminal_p4": true,
+        "never_pivots": true
+      },
+      "localizer_unit_factorisation": {
+        "all_four_extra_pivots_factor_into_units": true,
+        "unit_basis": "upper-triangular source matrices give det = product of diagonal entries"
+      },
+      "unit_edge_matching": {
+        "maximum_matching": 111,
+        "matches_required_rank": true,
+        "rows_distinct": true,
+        "unmatched_columns_have_no_unit_row": true
+      },
+      "determinant_unit_certified": false,
+      "triangular_peel": {
+        "strictly_triangular_steps": 98,
+        "of": 111,
+        "steps_short": 13,
+        "max_residual_support": 2
+      },
+      "solver_run": false,
+      "search_terminal": false,
+      "full_955_profile_claimed": false
     }
   },
   "post_literature_strategy": {
