@@ -1367,3 +1367,54 @@ OR_FREEZE_955_AT_RESOURCE_LIMIT_OPEN_AND_MOVE_TO_721
 残りは13ステップ分の三角性だけ。三角化可能な行選択を探すか、行列式を直接評価する。
 **閉じなければ MISSION の停止規則に従い 955 を凍結して 721 へ移る**こと。段階Aの
 目的は lattice の完成であって 955 単独の解決ではない。
+
+---
+
+## 18. ゲート21: 単元小行列ルートは閉じない（2026-08-11）
+
+```
+artifact  results/v0.4.2_955_block_determinant.json
+report    reports/v0.4.2_955_block_determinant.md
+module    src/universe_lab/final_theory/source_native_955_block_determinant_v042.py
+digest    4f97fecf934586a55c24b4cdd89d0e1d5b0c0dacca12b340130ccc9909aed5d5
+verdict   V042_955_UNIT_MINOR_ROUTE_DOES_NOT_CLOSE_IRREDUCIBLE_BLOCK_DETERMINANTS_ARE_
+          NOT_LOCALIZER_UNITS_FULL_S_OPEN
+```
+
+### 18.1 ゲート20の「13ステップ不足」は誤解を招く数字だった
+
+ゲート20は疎な台を優先した貪欲で「98/111 が厳密三角ステップ、13不足」と記録した。
+しかし**厳密 peel は最初の一手から0**である——どの行も単独の非Q列を持たない。
+貪欲は span-2 の選択を挟んで先へ進んでいただけで、三角ではなかった。
+「あと13ステップ」という近さの印象は正しくない。
+
+### 18.2 正しい診断は Dulmage–Mendelsohn
+
+| | |
+|---|---|
+| 成分数 | 60（単元39、非自明21） |
+| 最大ブロック | **15**（次に7、あとは3以下） |
+| ブロック構造 | **マッチング非依存**（標準的） |
+
+サイズ3以下の19ブロックの行列式を厳密計算 → **全て非単元**。
+新しい非単元因子が10個現れ、`v52-v55`、`v199*v71-v367*v79` など
+**どれも source 対角成分ではない**。131 source determinant の局所化では
+可逆にならない。
+
+### 18.3 代替探索は現実的でない
+
+全列が代替単元行を持つのでルートは論理的には死んでいない。しかし
+**サイズ15ブロック単独で約 1.4×10²⁹ 通り**、非自明ブロック全体で約 3.4×10¹⁰²。
+単元選択が存在すべき構造的理由は何も見つかっていない。
+
+### 18.4 停止規則の該当（オーナー判断）
+
+`MISSION.md` 段階Aの停止規則にこの状況が該当する。**955 を
+`REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT` で凍結して 721 へ移る**のが
+ミッション整合的。
+
+**凍結の代償**: `MISSION.md` は lattice を名乗れるのを「955と721の双方が
+profile-native に解決された場合だけ」と定めている。`RESOURCE_LIMIT_OPEN` は
+探索終端であって解決ではないので、**lattice 論文は名乗れなくなる**。
+段階Aの成果は「955は obstruction 側の証拠が深く積み上がったが未決着、721は解決」
+という形になる。この帰結を承知の上で判断すること。

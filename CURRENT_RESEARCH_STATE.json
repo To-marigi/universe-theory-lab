@@ -113,11 +113,12 @@
     "v0.4.2_955_independent_character_witness_scout": "EXACT_64_SOURCE_NATIVE_INDEPENDENT_DIAGONAL_POINTS_54_D_NONZERO_NO_LAMBDA_ESCAPE_FULL_S_OPEN",
     "v0.4.2_955_rank_one_character_audit": "EXACT_93_SOURCE_NATIVE_RANK_ONE_POINTS_12_NONSCALAR_NO_COMMUTATOR_ESCAPE_FULL_S_OPEN",
     "v0.4.2_955_minor_cover_preflight": "EXACT_38_POINT_SAMPLE_107_OF_119_MONOMIAL_MATCHING_D14_TWO_MINOR_SAMPLE_COVER_D12_D13_ANCHORED_FULL_S_OPEN",
-    "v0.4.2_955_unit_pivot_matching": "GATE18_TWELVE_UNMATCHED_COLUMNS_RESOLVED_ALL_SLACK_EIGHT_FREE_FOUR_REQUIRED_WITH_LOCALIZER_UNIT_FACTORISATIONS_UNIT_EDGE_MATCHING_ATTAINS_RANK_111_DETERMINANT_UNIT_NOT_CERTIFIED_FULL_S_OPEN"
+    "v0.4.2_955_unit_pivot_matching": "GATE18_TWELVE_UNMATCHED_COLUMNS_RESOLVED_ALL_SLACK_EIGHT_FREE_FOUR_REQUIRED_WITH_LOCALIZER_UNIT_FACTORISATIONS_UNIT_EDGE_MATCHING_ATTAINS_RANK_111_DETERMINANT_UNIT_NOT_CERTIFIED_FULL_S_OPEN",
+    "v0.4.2_955_block_determinant": "UNIT_MINOR_ROUTE_DOES_NOT_CLOSE_DM_BLOCKS_60_LARGEST_15_ALL_19_SMALL_BLOCK_DETERMINANTS_NON_UNIT_TEN_NEW_FACTORS_ALTERNATIVE_SEARCH_1E29_FULL_S_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "CLOSE_THE_REMAINING_13_TRIANGULARITY_STEPS_FOR_A_UNIT_111_MINOR_OR_FREEZE_955_AT_RESOURCE_LIMIT_OPEN_AND_MOVE_TO_721",
+    "next_gate": "OWNER_DECISION_FREEZE_955_AT_RESOURCE_LIMIT_OPEN_AND_MOVE_TO_721_OR_AUTHORISE_A_STRUCTURED_SEARCH_OVER_ALTERNATIVE_UNIT_MATCHINGS",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
       "CSG_BASEPOINT_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
@@ -198,7 +199,7 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "The localized row-module certificate is now 13 steps of triangularity away, not a finite-minor-cover search. All 111 required non-Q pivot columns admit coefficients that are units after localizing at the 131 source determinants, and a maximum matching over localizer-unit edges attains exactly rank 111 on 111 distinct rows; the 8 residual slack columns are terminal-stage free directions with no unit row and no need for one. What is missing is that a unit-entry matching does not by itself make the determinant a unit -- it is a signed sum over permutations -- so the chosen 111x111 submatrix must be shown permutation-triangular or its determinant computed another way. A sparse-support-first selection reaches 98 of 111 strictly triangular steps with maximum residual support 2. Find a triangularizable row selection or evaluate the determinant directly. If that stalls, MISSION.md's phase-A stop rule applies: freeze 955 at RESOURCE_LIMIT_OPEN and move to 721, since phase A's goal is the lattice, not 955 alone.",
+    "next_gate_description": "The unit-minor route to the localized row-module certificate does not close. The Dulmage-Mendelsohn decomposition of the 111-column unit matching has 60 components with a canonical largest irreducible block of size 15, and all 19 blocks of size at most three have non-unit determinants carrying ten new irreducible factors, none of them a source matrix diagonal entry, so source-determinant localization does not invert them. The route is not proved impossible -- every column has alternative unit rows -- but the size-15 block alone admits about 1.4e29 alternative matchings and no structural reason has emerged why a unit choice should exist. MISSION.md's phase-A stop rule covers this case: freeze at RESOURCE_LIMIT_OPEN once no route to a finite theorem can be shown, and do not try to break a stall by digging deeper. Freezing 955 at REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT and moving to 721 is the mission-consistent action, but it costs the lattice claim: MISSION.md allows 'complete finite ON semantics lattice' only when both profiles are resolved profile-native, and a resource-limit terminal is not a resolution. This is an owner decision.",
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
@@ -1101,6 +1102,36 @@
         "steps_short": 13,
         "max_residual_support": 2
       },
+      "solver_run": false,
+      "search_terminal": false,
+      "full_955_profile_claimed": false
+    },
+    "block_determinant": {
+      "artifact": "results/v0.4.2_955_block_determinant.json",
+      "report": "reports/v0.4.2_955_block_determinant.md",
+      "module": "src/universe_lab/final_theory/source_native_955_block_determinant_v042.py",
+      "test": "tests/final_theory/test_v042_955_block_determinant.py",
+      "schema_version": "final-theory-v042-955-block-determinant-v1",
+      "verdict": "V042_955_UNIT_MINOR_ROUTE_DOES_NOT_CLOSE_IRREDUCIBLE_BLOCK_DETERMINANTS_ARE_NOT_LOCALIZER_UNITS_FULL_S_OPEN",
+      "semantic_digest_sha256": "4f97fecf934586a55c24b4cdd89d0e1d5b0c0dacca12b340130ccc9909aed5d5",
+      "dulmage_mendelsohn": {
+        "components": 60,
+        "singletons": 39,
+        "non_trivial": 21,
+        "largest_block": 15,
+        "structure_is_matching_independent": true
+      },
+      "block_determinants": {
+        "evaluated": 19,
+        "deferred": 2,
+        "any_unit": false,
+        "new_non_unit_factors": 10
+      },
+      "alternative_search_space": {
+        "size_15_block_alone": "1.4e29",
+        "structural_reason_for_success": "none found"
+      },
+      "route_status": "UNIT_MINOR_ROUTE_CLOSED_FOR_THIS_MATCHING_NOT_PROVED_IMPOSSIBLE",
       "solver_run": false,
       "search_terminal": false,
       "full_955_profile_claimed": false
