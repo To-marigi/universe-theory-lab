@@ -21,7 +21,8 @@
 置き換えない。
 
 本文書は **955 profile (`strong_GC + reachable_state_MSR`) トラック**の
-運用引き継ぎである。このセッションで研究の中心方針が変わり、十九のゲートが
+運用引き継ぎである。このセッションで研究の中心方針が変わり、既存の十九ゲートに
+加えて三つの有限監査が追加された。
 閉じた。`HANDOFF_v0.4.1.md` の後半にある「次は 131 patch を symmetry で
 reduce してから scout する」という趣旨の記述は、本文書が上書きする。
 
@@ -79,8 +80,17 @@ reduce してから scout する」という趣旨の記述は、本文書が上
 新ゲート19    対称性のない独立8点でΛ row-span掃引（§16、自己訂正込み）
               罠: _lambda_at_point は b を常に0にするので数値評価は自明にΛ=0
               正しい row-span 判定で8点全てescape 0、うち7点D!=0
+追加監査A      独立 character witness scout（64点）
+              全64点がcore 4,152式・source determinant 131個を通過、D14!=0は54点
+              54点すべてLambda escape 0、witness candidate 0、full Sはopen
+追加監査B      rank-one character branch（93点）
+              D12=D13=D14=0の有限格子を全監査、非スカラー12点を含む6可換子escape 0
+              L rankは103（スカラー退化81点）または114（非スカラー12点）
+追加監査C      localized minor finite preflight（38点）
+              非Q119列中107列に構造的monomial matching、D14 sampleは2 minorで覆える
+              D12/D13 anchor点も追加したが、I_S・source localizer上の証明書は未発行
 計画          段階A（955→721→lattice）で本プロジェクト終了 → 段階C → 段階B
-次ゲート      D12/D13/D14のfinite localized minor coverを作るか、D!=0・Λ!=0のexact core fibreを探す（§17.1）
+次ゲート      D12/D13/D14のlocalized row-module証明書を作るか、D!=0・Λ!=0のexact core fibreを探す
 全体判定      FINAL_THEORY_OPEN（不変。更新禁止）
 ```
 
@@ -1194,6 +1204,93 @@ BUILD_OR_FAIL_CLOSED_A_FINITE_LOCALIZED_MINOR_COVER_FOR_D12_D13_D14
 OR_FIND_A_D_NONZERO_LAMBDA_NONZERO_CORE_FIBRE
 ```
 
-15点（Gate17の4+2パラメータ族＋Gate19の8点、対照点を除く）で escape 0 が
+Gate19時点の15点（Gate17の4+2パラメータ族＋Gate19の8点、対照点を除く）で escape 0 が
 続いている。witness 側の可能性は理論上排除されていないが、経験的証拠は
 obstruction 側に厚く積み上がっている。
+
+---
+
+## 18. 追加有限監査A: independent-character witness scout（2026-08-11）
+
+```
+artifact  results/v0.4.2_955_independent_character_witness_scout.json
+report    reports/v0.4.2_955_independent_character_witness_scout.md
+module    src/universe_lab/final_theory/source_native_955_independent_character_witness_scout_v042.py
+test      tests/final_theory/test_v042_955_independent_character_witness_scout.py
+verdict   V042_955_INDEPENDENT_CHARACTER_SCOUT_NO_LAMBDA_ESCAPE_FULL_S_OPEN
+```
+
+第一・第二対角の結合を独立に選ぶ8×8=64組を、source-native character construction
+からexactに生成した。全64点で4,152 core式と131 source determinantを通過し、
+`D14!=0` は54点だった。54点すべてで `Lambda` の純Q row-module残差はゼロで、
+escape candidateは0だった。
+
+これは既存の8点 independent sweepを、同じ構成の小さな決定的格子へ広げたもの。
+有限scoutなので、witness certificateでも obstructionでもない。単純な character-grid
+拡張をこれ以上無制限に続ける根拠は得られなかった。
+
+---
+
+## 19. 追加有限監査B: rank-one diagonal branch（2026-08-11）
+
+```
+artifact  results/v0.4.2_955_rank_one_character_audit.json
+report    reports/v0.4.2_955_rank_one_character_audit.md
+module    src/universe_lab/final_theory/source_native_955_rank_one_character_audit_v042.py
+test      tests/final_theory/test_v042_955_rank_one_character_audit.py
+verdict   V042_955_RANK_ONE_SOURCE_NATIVE_CHARACTER_AUDIT_NO_ESCAPE_FULL_S_OPEN
+```
+
+`D12=D13=D14=0` のrank-one条件を、結合値 `{1,2,3}`（先頭は1に正規化）の
+81×81=6,561組で全走査した。条件を満たす93点はすべてcore 4,152式とsource
+determinant 131個を通過した。81点は `rank(L)=103` のスカラー退化、残る12点は
+非スカラーで `rank(L)=114`。後者を含む全93点で6組の可換子row-span escapeは0だった。
+
+rank-one閉枝全体の証明ではないが、`D14`を割れない枝を単なる自明な
+`a_i=d_i`ケースと混同しないための有限監査になっている。
+
+---
+
+## 20. 追加有限監査C: localized minor finite preflight（2026-08-11）
+
+```
+artifact  results/v0.4.2_955_minor_cover_preflight.json
+report    reports/v0.4.2_955_minor_cover_preflight.md
+module    src/universe_lab/final_theory/source_native_955_minor_cover_preflight_v042.py
+test      tests/final_theory/test_v042_955_minor_cover_preflight.py
+verdict   V042_955_LOCALIZED_MINOR_COVER_PREFLIGHT_FINITE_SAMPLE_NOT_CERTIFIED_FULL_S_OPEN
+```
+
+Gate18の係数構造を使い、第一4点×第二9点に`D12`・`D13`を出す2点を追加した
+38点で、pivot minorの有限sample coverを測った。全38点がcoreとsource localizerを通過。
+非Q119列のうち107列は構造的monomial matchingに入り、残る12列がmulti-termの
+Schur/minor部分を担う。
+
+matching edgeの係数は112因子、最大次数3、係数絶対値1で、全て`A:*:00/11`型の
+source対角変数だった。131 source determinantをupper stratumへ制限したsupportにも
+全因子名が現れた。ただしmatchingは一意でなく、このsupport事実だけではminor
+determinantの相殺がないこと、また因子がlocalizer上の単元であることを示さない。
+
+anchor別のsample結果は、`D14`:32点・7 signatures・最小2枚、`D12`:1点・1枚、
+`D13`:1点・1枚だった。これは有限sample上の非消滅だけであり、`I_S` と131 source
+determinant localizationを含むunit-ideal/row-module証明書ではない。したがって
+`unit_minor_certificate_issued=false`を維持する。
+
+## 20.1 現在の最短ルート
+
+次は、sampleで得た候補minorをそのまま全Sの証明とみなさず、scalar core ideal と
+source determinant localizationの上で exact row-module certificate に昇格できるかを
+fail-closed に判定する。形式は
+
+```
+(D_1k * product(delta_e))^N Lambda_1k
+  = sum_r p_r(z)L_r(z) + sum_alpha f_alpha(z)h_alpha(z)
+```
+
+で、巨大な `product(delta_e)` は展開しない。ここで証明書が膨張して有限の定理へ
+変換できない場合は、MISSIONの停止規則に従い `RESOURCE_LIMIT_OPEN` に凍結する。
+`D!=0, Lambda!=0` のexact fibreが先に出た場合は、`N`・Eq113/Eq139・reachable
+visibilityを追加検査してwitness終端の可否を判定する。
+
+全体判定は引き続き `FINAL_THEORY_OPEN`。上部族・有限sample・rank-one有限格子の
+結果をfull 955 profileへ昇格しない。

@@ -109,11 +109,14 @@
     "v0.4.2_955_eq120_commutator_collapse": "SIX_UPPER_STRATUM_COMMUTATORS_PROVED_PROPORTIONAL_TO_ONE_SCALAR_LAMBDA_VIA_ALREADY_CERTIFIED_EQ120_STAR_CROSS_CHECKED_AGAINST_THREE_INDEPENDENT_POINTS_NONTERMINAL",
     "v0.4.2_955_lambda_fibre_audit": "LAMBDA_ROW_SPAN_CERTIFIED_AT_FOUR_NONZERO_Q_VISIBLE_FIBRES_ONE_NONSINGULAR_D_ZERO_ANCHOR_AND_IDENTICALLY_ON_TWO_PARAMETER_COMMON_SECOND_DIAGONAL_GROWTH_SUBFAMILY_FULL_S_OPEN",
     "v0.4.2_955_localized_row_module_preflight": "EXACT_246_SCALAR_1814_CORE_131_LOCALIZERS_THREE_D_ANCHOR_COVER_FINITE_MINOR_COVER_REQUIRED_FULL_S_OPEN",
-    "v0.4.2_955_independent_diagonal_sweep": "LAMBDA_ROW_SPAN_CERTIFIED_AT_EIGHT_STRUCTURALLY_INDEPENDENT_DIAGONAL_POINTS_SEVEN_WITH_D_NONZERO_METHODOLOGICAL_CORRECTION_RECORDED_FULL_S_OPEN"
+    "v0.4.2_955_independent_diagonal_sweep": "LAMBDA_ROW_SPAN_CERTIFIED_AT_EIGHT_STRUCTURALLY_INDEPENDENT_DIAGONAL_POINTS_SEVEN_WITH_D_NONZERO_METHODOLOGICAL_CORRECTION_RECORDED_FULL_S_OPEN",
+    "v0.4.2_955_independent_character_witness_scout": "EXACT_64_SOURCE_NATIVE_INDEPENDENT_DIAGONAL_POINTS_54_D_NONZERO_NO_LAMBDA_ESCAPE_FULL_S_OPEN",
+    "v0.4.2_955_rank_one_character_audit": "EXACT_93_SOURCE_NATIVE_RANK_ONE_POINTS_12_NONSCALAR_NO_COMMUTATOR_ESCAPE_FULL_S_OPEN",
+    "v0.4.2_955_minor_cover_preflight": "EXACT_38_POINT_SAMPLE_107_OF_119_MONOMIAL_MATCHING_D14_TWO_MINOR_SAMPLE_COVER_D12_D13_ANCHORED_FULL_S_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "BUILD_OR_FAIL_CLOSED_A_FINITE_LOCALIZED_MINOR_COVER_FOR_D12_D13_D14_OR_FIND_A_D_NONZERO_LAMBDA_NONZERO_CORE_FIBRE",
+    "next_gate": "BUILD_OR_FAIL_CLOSED_A_FINITE_LOCALIZED_ROW_MODULE_CERTIFICATE_FOR_D12_D13_D14_OR_FIND_A_D_NONZERO_LAMBDA_NONZERO_CORE_FIBRE",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
       "CSG_BASEPOINT_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
@@ -988,6 +991,65 @@
       "solver_run": false,
       "search_terminal": false,
       "full_955_profile_claimed": false
+    },
+    "independent_character_witness_scout": {
+      "artifact": "results/v0.4.2_955_independent_character_witness_scout.json",
+      "report": "reports/v0.4.2_955_independent_character_witness_scout.md",
+      "module": "src/universe_lab/final_theory/source_native_955_independent_character_witness_scout_v042.py",
+      "test": "tests/final_theory/test_v042_955_independent_character_witness_scout.py",
+      "schema_version": "final-theory-v042-955-independent-character-witness-scout-v1",
+      "verdict": "V042_955_INDEPENDENT_CHARACTER_SCOUT_NO_LAMBDA_ESCAPE_FULL_S_OPEN",
+      "first_grid_size": 8,
+      "second_grid_size": 8,
+      "points_attempted": 64,
+      "points_verified_core": 64,
+      "D14_nonzero_points": 54,
+      "lambda_escape_candidates": 0,
+      "full_S_claimed": false,
+      "solver_run": false,
+      "search_terminal": false
+    },
+    "rank_one_character_audit": {
+      "artifact": "results/v0.4.2_955_rank_one_character_audit.json",
+      "report": "reports/v0.4.2_955_rank_one_character_audit.md",
+      "module": "src/universe_lab/final_theory/source_native_955_rank_one_character_audit_v042.py",
+      "test": "tests/final_theory/test_v042_955_rank_one_character_audit.py",
+      "schema_version": "final-theory-v042-955-rank-one-character-audit-v1",
+      "verdict": "V042_955_RANK_ONE_SOURCE_NATIVE_CHARACTER_AUDIT_NO_ESCAPE_FULL_S_OPEN",
+      "grid_size": 81,
+      "rank_one_candidates": 93,
+      "q_diagonal_non_scalar_points": 12,
+      "L_rank_values": [
+        103,
+        114
+      ],
+      "commutator_escape_points": 0,
+      "full_S_claimed": false,
+      "solver_run": false,
+      "search_terminal": false
+    },
+    "minor_cover_preflight": {
+      "artifact": "results/v0.4.2_955_minor_cover_preflight.json",
+      "report": "reports/v0.4.2_955_minor_cover_preflight.md",
+      "module": "src/universe_lab/final_theory/source_native_955_minor_cover_preflight_v042.py",
+      "test": "tests/final_theory/test_v042_955_minor_cover_preflight.py",
+      "schema_version": "final-theory-v042-955-minor-cover-preflight-v1",
+      "verdict": "V042_955_LOCALIZED_MINOR_COVER_PREFLIGHT_FINITE_SAMPLE_NOT_CERTIFIED_FULL_S_OPEN",
+      "sample_points": 38,
+      "core_verified_points": 38,
+      "monomial_matching": "107_of_119_non_q_columns_112_source_diagonal_factor_occurrences_max_degree3_localizer_support_matched_not_a_unit_certificate",
+      "matching_factors_appear_in_source_localizer_support": true,
+      "unit_minor_certificate_issued": false,
+      "anchor_sample_points": {
+        "D14": 32,
+        "D12": 1,
+        "D13": 1
+      },
+      "D14_sample_minimum_cover": 2,
+      "full_S_minor_cover_issued": false,
+      "full_S_claimed": false,
+      "solver_run": false,
+      "search_terminal": false
     }
   },
   "post_literature_strategy": {
@@ -1840,7 +1902,16 @@
     "src/universe_lab/final_theory/source_native_955_lambda_fibre_audit_v042.py",
     "reports/v0.4.2_955_localized_row_module_preflight.md",
     "results/v0.4.2_955_localized_row_module_preflight.json",
-    "src/universe_lab/final_theory/source_native_955_localized_row_module_preflight_v042.py"
+    "src/universe_lab/final_theory/source_native_955_localized_row_module_preflight_v042.py",
+    "reports/v0.4.2_955_independent_character_witness_scout.md",
+    "results/v0.4.2_955_independent_character_witness_scout.json",
+    "src/universe_lab/final_theory/source_native_955_independent_character_witness_scout_v042.py",
+    "reports/v0.4.2_955_rank_one_character_audit.md",
+    "results/v0.4.2_955_rank_one_character_audit.json",
+    "src/universe_lab/final_theory/source_native_955_rank_one_character_audit_v042.py",
+    "reports/v0.4.2_955_minor_cover_preflight.md",
+    "results/v0.4.2_955_minor_cover_preflight.json",
+    "src/universe_lab/final_theory/source_native_955_minor_cover_preflight_v042.py"
   ],
   "required_resume_tests": [
     "tests/final_theory/test_ci_version_boundary_v04.py",
@@ -1851,6 +1922,9 @@
     "tests/final_theory/test_eq120_source_provenance_v042.py",
     "tests/final_theory/test_v042_955_lambda_fibre_audit.py",
     "tests/final_theory/test_v042_955_localized_row_module_preflight.py",
+    "tests/final_theory/test_v042_955_independent_character_witness_scout.py",
+    "tests/final_theory/test_v042_955_rank_one_character_audit.py",
+    "tests/final_theory/test_v042_955_minor_cover_preflight.py",
     "tests/final_theory/test_source_native_955_slack_compiler_v042.py",
     "tests/final_theory/test_source_native_955_n_nonzero_scout_v042.py",
     "tests/final_theory/test_source_native_955_mixed_manifest_v042.py",
