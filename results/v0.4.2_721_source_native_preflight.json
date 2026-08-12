@@ -1,0 +1,504 @@
+{
+  "schema_version": "final-theory-v042-721-source-native-preflight-v1",
+  "profile": "fixed_vector_GC__strong_MSR",
+  "scope": {
+    "field": "QQ symbolic free-reduced word IR",
+    "dimension": 2,
+    "identification_mode": "ON quotient",
+    "source_stages": "n<=4; same-endpoint GC paths through endpoint stage 5",
+    "Eq107_Eq108": "retained",
+    "Eq112": "excluded",
+    "scalar_matrix_expansion": "deferred to a separate bounded gate"
+  },
+  "source_artifact_sha256": {
+    "results/v0.3.1_cpobc_relations_n4.json": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "native_generators": {
+    "generators": [
+      {
+        "generator": "Q_1",
+        "source_id": "p1-0",
+        "stage": 1,
+        "kind": "ANTICHAIN_Q",
+        "retained_as_native_atom": false
+      },
+      {
+        "generator": "Q_2",
+        "source_id": "p2-0",
+        "stage": 2,
+        "kind": "ANTICHAIN_Q",
+        "retained_as_native_atom": false
+      },
+      {
+        "generator": "G_p2-2",
+        "source_id": "p2-2",
+        "stage": 2,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "Q_3",
+        "source_id": "p3-000",
+        "stage": 3,
+        "kind": "ANTICHAIN_Q",
+        "retained_as_native_atom": false
+      },
+      {
+        "generator": "G_p3-002",
+        "source_id": "p3-002",
+        "stage": 3,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p3-006",
+        "source_id": "p3-006",
+        "stage": 3,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p3-024",
+        "source_id": "p3-024",
+        "stage": 3,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p3-026",
+        "source_id": "p3-026",
+        "stage": 3,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "Q_4",
+        "source_id": "p4-0000",
+        "stage": 4,
+        "kind": "ANTICHAIN_Q",
+        "retained_as_native_atom": false
+      },
+      {
+        "generator": "G_p4-0002",
+        "source_id": "p4-0002",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-0006",
+        "source_id": "p4-0006",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-000e",
+        "source_id": "p4-000e",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-0044",
+        "source_id": "p4-0044",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-0046",
+        "source_id": "p4-0046",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-0048",
+        "source_id": "p4-0048",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-004c",
+        "source_id": "p4-004c",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-004e",
+        "source_id": "p4-004e",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-00cc",
+        "source_id": "p4-00cc",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-00ce",
+        "source_id": "p4-00ce",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-0888",
+        "source_id": "p4-0888",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-088a",
+        "source_id": "p4-088a",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-088e",
+        "source_id": "p4-088e",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-08cc",
+        "source_id": "p4-08cc",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      },
+      {
+        "generator": "G_p4-08ce",
+        "source_id": "p4-08ce",
+        "stage": 4,
+        "kind": "CAUSET_GREGARIOUS",
+        "retained_as_native_atom": true
+      }
+    ],
+    "base_generator_count": 24,
+    "non_antichain_generator_count": 20,
+    "used_token_count": 32,
+    "used_inverse_token_count": 8,
+    "used_inverse_tokens": [
+      "G_p2-2^-1",
+      "G_p3-002^-1",
+      "G_p3-006^-1",
+      "G_p3-024^-1",
+      "G_p3-026^-1",
+      "Q_1^-1",
+      "Q_2^-1",
+      "Q_3^-1"
+    ],
+    "eq112_tokens_present": false,
+    "occurrence_count": 165,
+    "signature_count": 165
+  },
+  "occurrence_map": {
+    "transition_occurrences": 165,
+    "decorated_signatures": 165,
+    "matrix_entry_variables_per_token": 4,
+    "inverse_relation_entry_slots": 64,
+    "occurrence_determinant_nonzero_predicates": 165
+  },
+  "CPOBC": {
+    "source_relation_count": 641,
+    "word_equation_count": 783,
+    "free_word_identity_count": 83,
+    "free_word_residual_count": 700,
+    "free_word_residual_term_distribution": {
+      "4": 188,
+      "8": 232,
+      "12": 10,
+      "16": 191,
+      "24": 8,
+      "32": 32,
+      "35": 11,
+      "47": 12,
+      "128": 16
+    },
+    "matches_v032_eq107_eq108_reduction": true
+  },
+  "strong_MSR": {
+    "constraint_count": 24,
+    "free_word_identity_count": 3,
+    "free_word_residual_count": 21,
+    "free_word_residual_term_distribution": {
+      "4": 4,
+      "6": 1,
+      "8": 6,
+      "10": 2,
+      "12": 2,
+      "16": 2,
+      "18": 2,
+      "20": 2
+    },
+    "records": [
+      {
+        "constraint_id": "msr:p1-0",
+        "free_word_term_count": 0,
+        "identity_after_free_reduction": true,
+        "free_word_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "constraint_id": "msr:p2-0",
+        "free_word_term_count": 0,
+        "identity_after_free_reduction": true,
+        "free_word_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "constraint_id": "msr:p2-2",
+        "free_word_term_count": 0,
+        "identity_after_free_reduction": true,
+        "free_word_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "constraint_id": "msr:p3-000",
+        "free_word_term_count": 4,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "9a3ebb9e316462d55691879cd3d2e790a53476042f346fc52b87211e1b1f7dcf"
+      },
+      {
+        "constraint_id": "msr:p3-002",
+        "free_word_term_count": 6,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "e3634219b18a2d431fe43d38a8f10cec084d00242a22caed8b48cf4778718865"
+      },
+      {
+        "constraint_id": "msr:p3-006",
+        "free_word_term_count": 4,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "1dc9ff6f9cb4aa34da6dde85393c1063e25e121ad2d0c7b82b12bc427cd49c8b"
+      },
+      {
+        "constraint_id": "msr:p3-024",
+        "free_word_term_count": 4,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "1309b09c621aa51934837887569e0f836dd41f1eb46b33f48de01f6ec896a2a2"
+      },
+      {
+        "constraint_id": "msr:p3-026",
+        "free_word_term_count": 4,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "b3a696a880032c8c8e8978ae71c5bc017ded0f2cac98769ce4a994f8040cfc6c"
+      },
+      {
+        "constraint_id": "msr:p4-0000",
+        "free_word_term_count": 8,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "efbdd3d1dc5519f51ba1f56ed0772fbc9379b85d9bb90101e6d7ce799f4fe612"
+      },
+      {
+        "constraint_id": "msr:p4-0002",
+        "free_word_term_count": 20,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "6d4d6345668096aab0e30d5dff677db1bce3b2895d8ca0b5ddb32a1aaa6933a2"
+      },
+      {
+        "constraint_id": "msr:p4-0006",
+        "free_word_term_count": 20,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "b2ad1ba1c87757c54e0aeed315f91c482af21ff98d255a2013db92df8940862e"
+      },
+      {
+        "constraint_id": "msr:p4-000e",
+        "free_word_term_count": 8,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "5098946fe4d65288f8492ab5b9ae83f9425e8099974a2ff2cb1fb87ad50b3e37"
+      },
+      {
+        "constraint_id": "msr:p4-0044",
+        "free_word_term_count": 12,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "851be3c18cf5467b8c01a2c18a71ca49af30808d593579e171d48e251b3b3aef"
+      },
+      {
+        "constraint_id": "msr:p4-0046",
+        "free_word_term_count": 18,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "477e5d71c39eaa18f3f41cf623741e78f6b082c97de8e7f9099de3c60bf8bbd4"
+      },
+      {
+        "constraint_id": "msr:p4-0048",
+        "free_word_term_count": 16,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "0d04ca4beaf06980fcf8c572c6999c3994b4fd0928dba78e75bdf78db0492382"
+      },
+      {
+        "constraint_id": "msr:p4-004c",
+        "free_word_term_count": 18,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "db76ae1c438b67c77674988cab662fdfead2cdbc686dac265a20542c309033e9"
+      },
+      {
+        "constraint_id": "msr:p4-004e",
+        "free_word_term_count": 12,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "846a3c36e31ff6e3f4adb813d91c1efe81ac99fe8c8e9dd093d7a11c2f58f34f"
+      },
+      {
+        "constraint_id": "msr:p4-00cc",
+        "free_word_term_count": 8,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "e6d763c8afd7b108504dc402fd39b7867ae27354a07938992ec8ee8290d81084"
+      },
+      {
+        "constraint_id": "msr:p4-00ce",
+        "free_word_term_count": 8,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "e5f5607a2bdc2f75da083bc594634f71fbcc284ff2ae524d248158f64991d62c"
+      },
+      {
+        "constraint_id": "msr:p4-0888",
+        "free_word_term_count": 10,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "33043215b86be476257df1f0afb1c6f388e1cb5bd0f56784c3e1b8530f1075c1"
+      },
+      {
+        "constraint_id": "msr:p4-088a",
+        "free_word_term_count": 16,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "caeeda8edf0b64a5184a86cb57e518ac35c37b8f1e7ad6000e82b853791a6daa"
+      },
+      {
+        "constraint_id": "msr:p4-088e",
+        "free_word_term_count": 10,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "e6d6f898e5624880e0aebbb5727b6cd5ee3c1b77335943055ff8c1239a40743e"
+      },
+      {
+        "constraint_id": "msr:p4-08cc",
+        "free_word_term_count": 8,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "329a3674ee343c77438c6a43f6f7770bec3f6d0557efa34dd9ab938ba6c36900"
+      },
+      {
+        "constraint_id": "msr:p4-08ce",
+        "free_word_term_count": 8,
+        "identity_after_free_reduction": false,
+        "free_word_sha256": "0292d6a2f99ae823df87804157c90cfcbaa56e8312c9b05626c8726ae7cd1407"
+      }
+    ]
+  },
+  "fixed_vector_GC": {
+    "path_count": 407,
+    "path_term_count_distribution": {
+      "1": 5,
+      "2": 20,
+      "4": 48,
+      "6": 9,
+      "8": 69,
+      "12": 13,
+      "14": 2,
+      "15": 4,
+      "16": 74,
+      "22": 8,
+      "24": 23,
+      "28": 2,
+      "30": 4,
+      "31": 3,
+      "32": 48,
+      "36": 1,
+      "44": 5,
+      "48": 10,
+      "50": 1,
+      "56": 3,
+      "57": 2,
+      "60": 5,
+      "62": 6,
+      "64": 21,
+      "72": 1,
+      "78": 1,
+      "82": 1,
+      "88": 4,
+      "92": 1,
+      "96": 6,
+      "120": 2,
+      "124": 2,
+      "128": 1,
+      "132": 1,
+      "138": 1
+    },
+    "basis_relation_count": 320,
+    "same_endpoint_pair_count": 1529,
+    "operator_word_identity_pair_count": 283,
+    "operator_word_residual_pair_count": 1246,
+    "operator_word_residual_term_distribution": {
+      "4": 48,
+      "8": 159,
+      "12": 4,
+      "14": 12,
+      "16": 385,
+      "24": 30,
+      "28": 37,
+      "29": 4,
+      "30": 4,
+      "31": 24,
+      "32": 232,
+      "46": 14,
+      "48": 25,
+      "54": 3,
+      "56": 22,
+      "58": 4,
+      "60": 10,
+      "61": 3,
+      "62": 28,
+      "64": 103,
+      "88": 2,
+      "92": 7,
+      "96": 1,
+      "106": 1,
+      "108": 4,
+      "109": 2,
+      "110": 2,
+      "112": 12,
+      "116": 4,
+      "120": 2,
+      "124": 24,
+      "126": 2,
+      "128": 18,
+      "160": 2,
+      "168": 2,
+      "184": 6,
+      "216": 2,
+      "232": 2
+    },
+    "path_product_convention": "later_transition_multiplies_on_left",
+    "fixed_vector_action": {
+      "compiled": false,
+      "representation": "free-reduced path word residuals retained",
+      "reason": "generic 2x2 scalar expansion is a separate bounded gate"
+    }
+  },
+  "solver_status": {
+    "symbolic_IR_compiled": true,
+    "generic_2x2_scalar_expansion": false,
+    "Groebner_or_saturation_runs": 0,
+    "finite_field_runs": 0,
+    "numerical_runs": 0,
+    "commutativity_decided": false
+  },
+  "claim_boundary": [
+    "The IR keeps the 20 non-antichain G generators as atoms and does not use Eq.(112).",
+    "Eq.(107)/(108) occurrence reduction is retained and independently digest-checked.",
+    "The fixed-vector GC records are source-native path-word obligations; scalar expansion and elimination are not claimed.",
+    "No full 721 commutativity theorem or noncommutative witness is issued here."
+  ],
+  "unrestricted_721_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_721_SOURCE_NATIVE_EQ112_FREE_IR_COMPILED_OPEN",
+  "semantic_digest_sha256": "622df30fd3ebbc8b0399debb695f426afd318a85cef6e6abd33bd9aedca4b296"
+}

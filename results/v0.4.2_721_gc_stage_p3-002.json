@@ -1,0 +1,145 @@
+{
+  "schema_version": "final-theory-v042-721-gc-stage-p3-002-v1",
+  "profile": "fixed_vector_GC__strong_MSR",
+  "scope": {
+    "endpoint": "p3-002",
+    "field": "QQ generic 2x2 matrix entries with commutative scalar monomials",
+    "path_product_convention": "later_transition_multiplies_on_left",
+    "inverse_saturation": "not imposed; inverse tokens remain separate variables",
+    "coverage": "one smallest nontrivial endpoint block only"
+  },
+  "source_artifact_sha256": {
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "compiler_source_sha256": "e2ba72930f6686630d81d6a669e31ceacc1cfe807611d37c575ab8161a63d747",
+  "input_native_ir_semantic_digest_sha256": "622df30fd3ebbc8b0399debb695f426afd318a85cef6e6abd33bd9aedca4b296",
+  "input_scalar_gate_sha256": "433f65a9f443997922d7a13a6a17e21f2cf579e446952d8d92ca17076d14141a",
+  "paths": {
+    "count": 3,
+    "records": [
+      {
+        "path_id": "lgc-path-73192a6770fa82828f12",
+        "path_length": 2,
+        "word_term_count": 2,
+        "word_sha256": "0338f49e48883c444831cfd43ac12a5aad2d7c81062cff0324a44659f71b30de"
+      },
+      {
+        "path_id": "lgc-path-ea7b195db90fbd5d9de7",
+        "path_length": 2,
+        "word_term_count": 2,
+        "word_sha256": "0338f49e48883c444831cfd43ac12a5aad2d7c81062cff0324a44659f71b30de"
+      },
+      {
+        "path_id": "lgc-path-fc1eafd06aa0360d6535",
+        "path_length": 2,
+        "word_term_count": 2,
+        "word_sha256": "7613b90196b7edd8162085d4416403b906819f6567cf87bf959138d56a892e00"
+      }
+    ]
+  },
+  "pairs": {
+    "count": 3,
+    "word_identity_count": 1,
+    "scalar_zero_matrix_count": 1,
+    "scalar_nonzero_matrix_count": 2,
+    "nonzero_scalar_entry_count": 8,
+    "total_scalar_term_count": 48,
+    "maximum_scalar_term_count": 6,
+    "maximum_monomial_degree": 2,
+    "records": [
+      {
+        "endpoint_causet_id": "p3-002",
+        "left_path_id": "lgc-path-73192a6770fa82828f12",
+        "right_path_id": "lgc-path-ea7b195db90fbd5d9de7",
+        "basis_chain": [
+          {
+            "relation_id": "operator-gc-c5966ad71192b2ffc5fb",
+            "orientation": "anchor_to_lhs"
+          }
+        ],
+        "word_term_count": 0,
+        "word_identity": true,
+        "word_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "scalar_matrix": {
+          "nonzero_entry_count": 0,
+          "total_scalar_term_count": 0,
+          "maximum_scalar_term_count": 0,
+          "maximum_monomial_degree": 0
+        },
+        "scalar_matrix_sha256": "d080c2cc850fd33232bd0d6d851040e850546830cc58f9fe7e0e27b0e00abccd"
+      },
+      {
+        "endpoint_causet_id": "p3-002",
+        "left_path_id": "lgc-path-73192a6770fa82828f12",
+        "right_path_id": "lgc-path-fc1eafd06aa0360d6535",
+        "basis_chain": [
+          {
+            "relation_id": "operator-gc-09644bfa140c02a35b21",
+            "orientation": "anchor_to_lhs"
+          }
+        ],
+        "word_term_count": 4,
+        "word_identity": false,
+        "word_sha256": "2bf8a18348d1ee3394f370d688a0be6c5fb7ad4b620cd201fef7570f57facb61",
+        "scalar_matrix": {
+          "nonzero_entry_count": 4,
+          "total_scalar_term_count": 24,
+          "maximum_scalar_term_count": 6,
+          "maximum_monomial_degree": 2
+        },
+        "scalar_matrix_sha256": "d170ae14dac270bfb2b6d5dd1fddc789a7503587df1dae6691d028d7eb614675"
+      },
+      {
+        "endpoint_causet_id": "p3-002",
+        "left_path_id": "lgc-path-ea7b195db90fbd5d9de7",
+        "right_path_id": "lgc-path-fc1eafd06aa0360d6535",
+        "basis_chain": [
+          {
+            "relation_id": "operator-gc-c5966ad71192b2ffc5fb",
+            "orientation": "lhs_to_anchor"
+          },
+          {
+            "relation_id": "operator-gc-09644bfa140c02a35b21",
+            "orientation": "anchor_to_lhs"
+          }
+        ],
+        "word_term_count": 4,
+        "word_identity": false,
+        "word_sha256": "2bf8a18348d1ee3394f370d688a0be6c5fb7ad4b620cd201fef7570f57facb61",
+        "scalar_matrix": {
+          "nonzero_entry_count": 4,
+          "total_scalar_term_count": 24,
+          "maximum_scalar_term_count": 6,
+          "maximum_monomial_degree": 2
+        },
+        "scalar_matrix_sha256": "d170ae14dac270bfb2b6d5dd1fddc789a7503587df1dae6691d028d7eb614675"
+      }
+    ],
+    "record_digest_sha256": "fba54ce1fe2ccda183ff72a84a7ee18703288698da1819ed1d842fa2b2c017a6"
+  },
+  "global_gc_boundary": {
+    "all_inventory_path_count": 407,
+    "all_inventory_pair_count": 1529,
+    "expanded_here": "3 pairs only",
+    "remaining_pair_count": 1526
+  },
+  "solver_status": {
+    "generic_2x2_scalar_expansion": true,
+    "inverse_saturation_runs": 0,
+    "Groebner_or_saturation_runs": 0,
+    "commutativity_decided": false
+  },
+  "claim_boundary": [
+    "Only endpoint p3-002 is scalar-expanded.",
+    "The 1,526 unexpanded GC pairs are not inferred from this block.",
+    "No full 721 commutativity theorem, witness, or obstruction is issued."
+  ],
+  "unrestricted_721_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_721_GC_STAGE_P3_002_SCALAR_COMPILED_OPEN",
+  "semantic_digest_sha256": "dd6625abf97afe95d078044c4fc809cc4efc06999fb333811e73af73dbd49cbd"
+}
