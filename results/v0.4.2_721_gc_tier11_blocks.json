@@ -1,0 +1,168 @@
+{
+  "schema_version": "final-theory-v042-721-gc-tier-11-blocks-v1",
+  "profile": "fixed_vector_GC__strong_MSR",
+  "scope": {
+    "selected_endpoint_rule": "exactly 11 paths",
+    "selected_endpoint_count": 1,
+    "field": "QQ generic 2x2 matrix entries with commutative scalar monomials",
+    "path_product_convention": "later_transition_multiplies_on_left",
+    "inverse_saturation": "not imposed; inverse tokens remain separate variables",
+    "basis_strategy": "endpoint-wise star basis retained; all selected pairs checked",
+    "pair_count_structural_check": "selected_pairs == selected_endpoints * C(path_count, 2)"
+  },
+  "selected_endpoints": [
+    "p5-000211a"
+  ],
+  "source_artifact_sha256": {
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "compiler_source_sha256": "897c5c9e3684e905ec5308573e704b6b2fcec0a30d36fd9865bcfaec2118283a",
+  "input_native_ir_semantic_digest_sha256": "622df30fd3ebbc8b0399debb695f426afd318a85cef6e6abd33bd9aedca4b296",
+  "input_calibration_stage_sha256": "c57943de361daa3b0d754d6094b953899abccfc4f7f6c416342934e66a4f535e",
+  "paths": {
+    "count": 11,
+    "records": [
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-0ec397ca432996590a0a",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "b31a0fcf894151598801d9053dffd0f347c45a589a92c63960febc2bdf178017"
+      },
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-630d274036df481bfe44",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "d0c831ee37be8fa7b9a3db63217b2b25538a85098a73957248b18c8cee3cc3eb"
+      },
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-6a6d46eb3cc7c45d1519",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "d0c831ee37be8fa7b9a3db63217b2b25538a85098a73957248b18c8cee3cc3eb"
+      },
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-7a5266b1ad13ad8ee91d",
+        "path_length": 4,
+        "word_term_count": 30,
+        "word_sha256": "3dde899932d112540ccb8e2967cd4c2bbc18c50acd2a7e67e9b56c843a29904d"
+      },
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-7dbb6dcc68d02a4df6ae",
+        "path_length": 4,
+        "word_term_count": 30,
+        "word_sha256": "3dde899932d112540ccb8e2967cd4c2bbc18c50acd2a7e67e9b56c843a29904d"
+      },
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-8ed800c0911b6ad11db7",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "8c5126544844a454132e13cec23afa03889ad08071196864afea27c1949ad8b1"
+      },
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-97ac9f4189c9ad2303d8",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "b31a0fcf894151598801d9053dffd0f347c45a589a92c63960febc2bdf178017"
+      },
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-a186fb8ad96e4c6f0dc7",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "b31a0fcf894151598801d9053dffd0f347c45a589a92c63960febc2bdf178017"
+      },
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-a7a229ce0bd90e4e271b",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "c7c1c116fe3df9da96946b39624a4feeb3f17210fa62987a5a3e68cf6db19411"
+      },
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-c0d92eb32b42aa165c89",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "c7c1c116fe3df9da96946b39624a4feeb3f17210fa62987a5a3e68cf6db19411"
+      },
+      {
+        "endpoint_causet_id": "p5-000211a",
+        "path_id": "lgc-path-cbcd2f6f82e0a5a697ec",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "b31a0fcf894151598801d9053dffd0f347c45a589a92c63960febc2bdf178017"
+      }
+    ]
+  },
+  "basis": {
+    "relation_count": 10,
+    "all_have_selected_endpoint": true
+  },
+  "pairs": {
+    "count": 55,
+    "word_identity_count": 9,
+    "scalar_zero_matrix_count": 9,
+    "nonzero_scalar_entry_count": 184,
+    "total_scalar_term_count": 805412,
+    "maximum_scalar_term_count": 6804,
+    "maximum_monomial_degree": 10,
+    "total_scalar_term_distribution": {
+      "0": 9,
+      "6474": 2,
+      "11122": 4,
+      "11632": 8,
+      "13970": 2,
+      "14480": 4,
+      "19026": 2,
+      "19040": 8,
+      "19536": 4,
+      "24096": 8,
+      "26944": 4
+    },
+    "record_digest_sha256": "87bb92cd7389f970e3ae094c2b9ca71523ad4a599edabbcfecf1debec66a4f31"
+  },
+  "per_endpoint": {
+    "p5-000211a": {
+      "path_count": 11,
+      "pair_count": 55,
+      "basis_relation_count": 10,
+      "word_identity_count": 9,
+      "scalar_zero_matrix_count": 9,
+      "total_scalar_term_count": 805412,
+      "maximum_scalar_term_count": 6804,
+      "maximum_monomial_degree": 10
+    }
+  },
+  "global_gc_boundary": {
+    "all_inventory_path_count": 407,
+    "all_inventory_pair_count": 1529,
+    "expanded_here": 55
+  },
+  "solver_status": {
+    "generic_2x2_scalar_expansion": true,
+    "inverse_saturation_runs": 0,
+    "Groebner_or_saturation_runs": 0,
+    "commutativity_decided": false
+  },
+  "claim_boundary": [
+    "Only the endpoint blocks with exactly 11 paths are scalar-expanded.",
+    "Path matrices are cached once per selected path before pair differences.",
+    "GC pairs outside this tier are not inferred from this result.",
+    "No full 721 commutativity theorem, witness, or obstruction is issued."
+  ],
+  "unrestricted_721_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_721_GC_TIER_11_BLOCKS_SCALAR_COMPILED_OPEN",
+  "semantic_digest_sha256": "7d97b9184b70602ecefb4bf859e11efca215c0101bada9a7acd754fed6196368"
+}

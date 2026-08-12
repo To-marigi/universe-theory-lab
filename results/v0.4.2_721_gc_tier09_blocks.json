@@ -1,0 +1,402 @@
+{
+  "schema_version": "final-theory-v042-721-gc-tier-09-blocks-v1",
+  "profile": "fixed_vector_GC__strong_MSR",
+  "scope": {
+    "selected_endpoint_rule": "exactly 9 paths",
+    "selected_endpoint_count": 4,
+    "field": "QQ generic 2x2 matrix entries with commutative scalar monomials",
+    "path_product_convention": "later_transition_multiplies_on_left",
+    "inverse_saturation": "not imposed; inverse tokens remain separate variables",
+    "basis_strategy": "endpoint-wise star basis retained; all selected pairs checked",
+    "pair_count_structural_check": "selected_pairs == selected_endpoints * C(path_count, 2)"
+  },
+  "selected_endpoints": [
+    "p5-000009c",
+    "p5-0002118",
+    "p5-0002198",
+    "p5-000221a"
+  ],
+  "source_artifact_sha256": {
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "compiler_source_sha256": "897c5c9e3684e905ec5308573e704b6b2fcec0a30d36fd9865bcfaec2118283a",
+  "input_native_ir_semantic_digest_sha256": "622df30fd3ebbc8b0399debb695f426afd318a85cef6e6abd33bd9aedca4b296",
+  "input_calibration_stage_sha256": "c57943de361daa3b0d754d6094b953899abccfc4f7f6c416342934e66a4f535e",
+  "paths": {
+    "count": 36,
+    "records": [
+      {
+        "endpoint_causet_id": "p5-000009c",
+        "path_id": "lgc-path-26bbcf411e70e8f234cd",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "4a999753debfde6d0976824225f0b87fc04cfa35bffa3b354f7c9745d9c855cf"
+      },
+      {
+        "endpoint_causet_id": "p5-000009c",
+        "path_id": "lgc-path-451b66f2d69e108f55e5",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "183096a8e2a262e9bc5d9637cff037043af7d8057a582da089b1b3162fc0e5d7"
+      },
+      {
+        "endpoint_causet_id": "p5-000009c",
+        "path_id": "lgc-path-684c6cc14bec840abf1f",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "ca3213ce7e55cbf8ab9c4da11af7f89f90f9eaa4725694a3d21e4600c32d60ea"
+      },
+      {
+        "endpoint_causet_id": "p5-000009c",
+        "path_id": "lgc-path-706047e51f53568d9097",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "c35cb55be1d79d49016d3a87877f458a234355d9c544c2953ed8e1ec80bb4225"
+      },
+      {
+        "endpoint_causet_id": "p5-000009c",
+        "path_id": "lgc-path-781ea9df453d45abacba",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "3645faea9cb73029a75842164c9213c2ddd8e066dbc091367e66d5ae2c721e3e"
+      },
+      {
+        "endpoint_causet_id": "p5-000009c",
+        "path_id": "lgc-path-88b4743dabe7620acf17",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "183096a8e2a262e9bc5d9637cff037043af7d8057a582da089b1b3162fc0e5d7"
+      },
+      {
+        "endpoint_causet_id": "p5-000009c",
+        "path_id": "lgc-path-994bf976f3918a2b48fc",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "29e133d32d252c3b55f9516cfd00a2d7d06e51eadb078b1af77bf63e2789a6ea"
+      },
+      {
+        "endpoint_causet_id": "p5-000009c",
+        "path_id": "lgc-path-a6b45c04a405e5d8b6e7",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "c35cb55be1d79d49016d3a87877f458a234355d9c544c2953ed8e1ec80bb4225"
+      },
+      {
+        "endpoint_causet_id": "p5-000009c",
+        "path_id": "lgc-path-bfa3e42a7bef80e09cb4",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "3645faea9cb73029a75842164c9213c2ddd8e066dbc091367e66d5ae2c721e3e"
+      },
+      {
+        "endpoint_causet_id": "p5-0002118",
+        "path_id": "lgc-path-044ac18cfe69138cca70",
+        "path_length": 4,
+        "word_term_count": 12,
+        "word_sha256": "cfce1aa63c14e3caece92455da32a661fc69de23b37bbdb66a60f21a114160f1"
+      },
+      {
+        "endpoint_causet_id": "p5-0002118",
+        "path_id": "lgc-path-0e5d4399c1188a896d6c",
+        "path_length": 4,
+        "word_term_count": 12,
+        "word_sha256": "b777f19d52e1d34f677afb86821a2a02d9475472c1a131035f7f78ddae3ddbe1"
+      },
+      {
+        "endpoint_causet_id": "p5-0002118",
+        "path_id": "lgc-path-202d0b39da667d85b18f",
+        "path_length": 4,
+        "word_term_count": 12,
+        "word_sha256": "410ba7433a8e2d2bcfb926c7851e7232e18e8464194889d8a6c81e76378c2611"
+      },
+      {
+        "endpoint_causet_id": "p5-0002118",
+        "path_id": "lgc-path-40c92a9534ab190bff4e",
+        "path_length": 4,
+        "word_term_count": 12,
+        "word_sha256": "b53f78ddc688afd8c52d2576f51a0b3a1462d557271e68f626a107394c3b40cf"
+      },
+      {
+        "endpoint_causet_id": "p5-0002118",
+        "path_id": "lgc-path-6bb05a03c3016996a711",
+        "path_length": 4,
+        "word_term_count": 12,
+        "word_sha256": "b777f19d52e1d34f677afb86821a2a02d9475472c1a131035f7f78ddae3ddbe1"
+      },
+      {
+        "endpoint_causet_id": "p5-0002118",
+        "path_id": "lgc-path-7dccd9ed6379520929e8",
+        "path_length": 4,
+        "word_term_count": 12,
+        "word_sha256": "410ba7433a8e2d2bcfb926c7851e7232e18e8464194889d8a6c81e76378c2611"
+      },
+      {
+        "endpoint_causet_id": "p5-0002118",
+        "path_id": "lgc-path-7e47448c3e95c402e25c",
+        "path_length": 4,
+        "word_term_count": 12,
+        "word_sha256": "b777f19d52e1d34f677afb86821a2a02d9475472c1a131035f7f78ddae3ddbe1"
+      },
+      {
+        "endpoint_causet_id": "p5-0002118",
+        "path_id": "lgc-path-95dcebc955444848a754",
+        "path_length": 4,
+        "word_term_count": 12,
+        "word_sha256": "cfce1aa63c14e3caece92455da32a661fc69de23b37bbdb66a60f21a114160f1"
+      },
+      {
+        "endpoint_causet_id": "p5-0002118",
+        "path_id": "lgc-path-b7422632cea5af661e7b",
+        "path_length": 4,
+        "word_term_count": 12,
+        "word_sha256": "410ba7433a8e2d2bcfb926c7851e7232e18e8464194889d8a6c81e76378c2611"
+      },
+      {
+        "endpoint_causet_id": "p5-0002198",
+        "path_id": "lgc-path-3858b77a9c644c5bf4bb",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "491aa47003e2c2ed921a81fef723d3048ffba58135b0237e8195997736217603"
+      },
+      {
+        "endpoint_causet_id": "p5-0002198",
+        "path_id": "lgc-path-3bbd7a379f8fdc24015d",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "491aa47003e2c2ed921a81fef723d3048ffba58135b0237e8195997736217603"
+      },
+      {
+        "endpoint_causet_id": "p5-0002198",
+        "path_id": "lgc-path-630b1a4b7aedf7465b05",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "8c5126544844a454132e13cec23afa03889ad08071196864afea27c1949ad8b1"
+      },
+      {
+        "endpoint_causet_id": "p5-0002198",
+        "path_id": "lgc-path-7e4cf9c2d8035245402e",
+        "path_length": 4,
+        "word_term_count": 30,
+        "word_sha256": "3dde899932d112540ccb8e2967cd4c2bbc18c50acd2a7e67e9b56c843a29904d"
+      },
+      {
+        "endpoint_causet_id": "p5-0002198",
+        "path_id": "lgc-path-b9dc59b3b37bfc680ba2",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "b1220bb67e1b225c054a5adf10589938dd7c20aa9b2edb66b41558f02d11bcc6"
+      },
+      {
+        "endpoint_causet_id": "p5-0002198",
+        "path_id": "lgc-path-bd74a5daf96c2f0291a6",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "491aa47003e2c2ed921a81fef723d3048ffba58135b0237e8195997736217603"
+      },
+      {
+        "endpoint_causet_id": "p5-0002198",
+        "path_id": "lgc-path-d0591a8edb7e864b3ecf",
+        "path_length": 4,
+        "word_term_count": 30,
+        "word_sha256": "3dde899932d112540ccb8e2967cd4c2bbc18c50acd2a7e67e9b56c843a29904d"
+      },
+      {
+        "endpoint_causet_id": "p5-0002198",
+        "path_id": "lgc-path-dfa8ba54dcc9b79bd638",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "491aa47003e2c2ed921a81fef723d3048ffba58135b0237e8195997736217603"
+      },
+      {
+        "endpoint_causet_id": "p5-0002198",
+        "path_id": "lgc-path-f3bba5b1f73750214855",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "b1220bb67e1b225c054a5adf10589938dd7c20aa9b2edb66b41558f02d11bcc6"
+      },
+      {
+        "endpoint_causet_id": "p5-000221a",
+        "path_id": "lgc-path-1ccf51331c14f7836ebc",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "4dbb57784bcc94427a3eb8a74ac9138581d96afa8ef45cc1ddee6e9b8e66c618"
+      },
+      {
+        "endpoint_causet_id": "p5-000221a",
+        "path_id": "lgc-path-212683eedb36c74dd2f8",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "b4985e4232a3b91abd444506e873df6ecdf3fe966383e5e1e87f4e01b2a7c1a1"
+      },
+      {
+        "endpoint_causet_id": "p5-000221a",
+        "path_id": "lgc-path-271d31ce72e49759025f",
+        "path_length": 4,
+        "word_term_count": 24,
+        "word_sha256": "ab6983ceab2654b38550e36186627a205d3a07f0c634a0ae961a8c4a50fb3b4d"
+      },
+      {
+        "endpoint_causet_id": "p5-000221a",
+        "path_id": "lgc-path-408a90cfde514761919c",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "d160ec3bee0648e4c748557fb3ec64b2ac022d10e6ad0a8de2fc76c781286ffe"
+      },
+      {
+        "endpoint_causet_id": "p5-000221a",
+        "path_id": "lgc-path-577ce3d2c07962150abb",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "b4985e4232a3b91abd444506e873df6ecdf3fe966383e5e1e87f4e01b2a7c1a1"
+      },
+      {
+        "endpoint_causet_id": "p5-000221a",
+        "path_id": "lgc-path-77cd703648298bd6c795",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "0e9c314a31cb7a5e9ececf119f1c99688313cd3f1dca2da637dc296fb974804a"
+      },
+      {
+        "endpoint_causet_id": "p5-000221a",
+        "path_id": "lgc-path-b5b917decb8d210c14e1",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "d160ec3bee0648e4c748557fb3ec64b2ac022d10e6ad0a8de2fc76c781286ffe"
+      },
+      {
+        "endpoint_causet_id": "p5-000221a",
+        "path_id": "lgc-path-c231dbdd8f7dca075ae6",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "4dbb57784bcc94427a3eb8a74ac9138581d96afa8ef45cc1ddee6e9b8e66c618"
+      },
+      {
+        "endpoint_causet_id": "p5-000221a",
+        "path_id": "lgc-path-cf890a2842e4fb0f891a",
+        "path_length": 4,
+        "word_term_count": 32,
+        "word_sha256": "b7a2e44e038d173983a6b0097c6a963d0d47cde81c0e7b8cda4a9afa071f45b6"
+      }
+    ]
+  },
+  "basis": {
+    "relation_count": 32,
+    "all_have_selected_endpoint": true
+  },
+  "pairs": {
+    "count": 144,
+    "word_identity_count": 21,
+    "scalar_zero_matrix_count": 21,
+    "nonzero_scalar_entry_count": 492,
+    "total_scalar_term_count": 2386400,
+    "maximum_scalar_term_count": 18792,
+    "maximum_monomial_degree": 12,
+    "total_scalar_term_distribution": {
+      "0": 21,
+      "3536": 9,
+      "4680": 4,
+      "5040": 6,
+      "5056": 2,
+      "5632": 2,
+      "6474": 2,
+      "7704": 6,
+      "8064": 2,
+      "8296": 2,
+      "8400": 9,
+      "8528": 2,
+      "8656": 3,
+      "9920": 9,
+      "11122": 4,
+      "11192": 2,
+      "11552": 3,
+      "11632": 8,
+      "12144": 1,
+      "14144": 2,
+      "14280": 1,
+      "18760": 2,
+      "19026": 2,
+      "19536": 4,
+      "24096": 8,
+      "34688": 2,
+      "39168": 4,
+      "39304": 2,
+      "40832": 2,
+      "42624": 1,
+      "45312": 4,
+      "45448": 2,
+      "47104": 2,
+      "47240": 1,
+      "65856": 4,
+      "67560": 2,
+      "73792": 2
+    },
+    "record_digest_sha256": "31048024f4dd552895b3c5f01af1fd86f2a5d60b46cf4620f8db0d6c8c1668c3"
+  },
+  "per_endpoint": {
+    "p5-000009c": {
+      "path_count": 9,
+      "pair_count": 36,
+      "basis_relation_count": 8,
+      "word_identity_count": 3,
+      "scalar_zero_matrix_count": 3,
+      "total_scalar_term_count": 251376,
+      "maximum_scalar_term_count": 3168,
+      "maximum_monomial_degree": 10
+    },
+    "p5-0002118": {
+      "path_count": 9,
+      "pair_count": 36,
+      "basis_relation_count": 8,
+      "word_identity_count": 7,
+      "scalar_zero_matrix_count": 7,
+      "total_scalar_term_count": 206816,
+      "maximum_scalar_term_count": 2496,
+      "maximum_monomial_degree": 10
+    },
+    "p5-0002198": {
+      "path_count": 9,
+      "pair_count": 36,
+      "basis_relation_count": 8,
+      "word_identity_count": 8,
+      "scalar_zero_matrix_count": 8,
+      "total_scalar_term_count": 459456,
+      "maximum_scalar_term_count": 6092,
+      "maximum_monomial_degree": 10
+    },
+    "p5-000221a": {
+      "path_count": 9,
+      "pair_count": 36,
+      "basis_relation_count": 8,
+      "word_identity_count": 3,
+      "scalar_zero_matrix_count": 3,
+      "total_scalar_term_count": 1468752,
+      "maximum_scalar_term_count": 18792,
+      "maximum_monomial_degree": 12
+    }
+  },
+  "global_gc_boundary": {
+    "all_inventory_path_count": 407,
+    "all_inventory_pair_count": 1529,
+    "expanded_here": 144
+  },
+  "solver_status": {
+    "generic_2x2_scalar_expansion": true,
+    "inverse_saturation_runs": 0,
+    "Groebner_or_saturation_runs": 0,
+    "commutativity_decided": false
+  },
+  "claim_boundary": [
+    "Only the endpoint blocks with exactly 9 paths are scalar-expanded.",
+    "Path matrices are cached once per selected path before pair differences.",
+    "GC pairs outside this tier are not inferred from this result.",
+    "No full 721 commutativity theorem, witness, or obstruction is issued."
+  ],
+  "unrestricted_721_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_721_GC_TIER_09_BLOCKS_SCALAR_COMPILED_OPEN",
+  "semantic_digest_sha256": "8ba116b279b9deb10154c6107a2fedf9f6ccee6d24eeff68a29122433f2d55c9"
+}

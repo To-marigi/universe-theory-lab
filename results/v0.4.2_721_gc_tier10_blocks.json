@@ -1,0 +1,677 @@
+{
+  "schema_version": "final-theory-v042-721-gc-tier-10-blocks-v1",
+  "profile": "fixed_vector_GC__strong_MSR",
+  "scope": {
+    "selected_endpoint_rule": "exactly 10 paths",
+    "selected_endpoint_count": 7,
+    "field": "QQ generic 2x2 matrix entries with commutative scalar monomials",
+    "path_product_convention": "later_transition_multiplies_on_left",
+    "inverse_saturation": "not imposed; inverse tokens remain separate variables",
+    "basis_strategy": "endpoint-wise star basis retained; all selected pairs checked",
+    "pair_count_structural_check": "selected_pairs == selected_endpoints * C(path_count, 2)"
+  },
+  "selected_endpoints": [
+    "p5-0000002",
+    "p5-0000006",
+    "p5-0000084",
+    "p5-0000086",
+    "p5-0000098",
+    "p5-0002110",
+    "p5-0002190"
+  ],
+  "source_artifact_sha256": {
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "compiler_source_sha256": "897c5c9e3684e905ec5308573e704b6b2fcec0a30d36fd9865bcfaec2118283a",
+  "input_native_ir_semantic_digest_sha256": "622df30fd3ebbc8b0399debb695f426afd318a85cef6e6abd33bd9aedca4b296",
+  "input_calibration_stage_sha256": "c57943de361daa3b0d754d6094b953899abccfc4f7f6c416342934e66a4f535e",
+  "paths": {
+    "count": 70,
+    "records": [
+      {
+        "endpoint_causet_id": "p5-0000002",
+        "path_id": "lgc-path-08ee8912a7779c1882ed",
+        "path_length": 4,
+        "word_term_count": 2,
+        "word_sha256": "b97e91ae0ccf56e851d66675d01b01c984efedb1bde21bf49a339b4bca007541"
+      },
+      {
+        "endpoint_causet_id": "p5-0000002",
+        "path_id": "lgc-path-48c7be7e2966a206db6e",
+        "path_length": 4,
+        "word_term_count": 2,
+        "word_sha256": "5b88fc1c37a70b05e6d08e9829c724fa06b31c33405448ca36eb6c0902793a5c"
+      },
+      {
+        "endpoint_causet_id": "p5-0000002",
+        "path_id": "lgc-path-4abbbdf6287a6b1399ff",
+        "path_length": 4,
+        "word_term_count": 2,
+        "word_sha256": "5b88fc1c37a70b05e6d08e9829c724fa06b31c33405448ca36eb6c0902793a5c"
+      },
+      {
+        "endpoint_causet_id": "p5-0000002",
+        "path_id": "lgc-path-4b55eeed33ccb07990de",
+        "path_length": 4,
+        "word_term_count": 2,
+        "word_sha256": "b97e91ae0ccf56e851d66675d01b01c984efedb1bde21bf49a339b4bca007541"
+      },
+      {
+        "endpoint_causet_id": "p5-0000002",
+        "path_id": "lgc-path-6c72b23806cbaeaa92ba",
+        "path_length": 4,
+        "word_term_count": 2,
+        "word_sha256": "8e7f5dcea99fb8323fd772d2bb1b30e4c0d70de208b9858b1429c12f22c93b30"
+      },
+      {
+        "endpoint_causet_id": "p5-0000002",
+        "path_id": "lgc-path-8ee4935bd731f3b1220c",
+        "path_length": 4,
+        "word_term_count": 2,
+        "word_sha256": "8e7f5dcea99fb8323fd772d2bb1b30e4c0d70de208b9858b1429c12f22c93b30"
+      },
+      {
+        "endpoint_causet_id": "p5-0000002",
+        "path_id": "lgc-path-979c66118606856219a3",
+        "path_length": 4,
+        "word_term_count": 2,
+        "word_sha256": "5b88fc1c37a70b05e6d08e9829c724fa06b31c33405448ca36eb6c0902793a5c"
+      },
+      {
+        "endpoint_causet_id": "p5-0000002",
+        "path_id": "lgc-path-a5e0685d0d5300db2bfb",
+        "path_length": 4,
+        "word_term_count": 2,
+        "word_sha256": "5b88fc1c37a70b05e6d08e9829c724fa06b31c33405448ca36eb6c0902793a5c"
+      },
+      {
+        "endpoint_causet_id": "p5-0000002",
+        "path_id": "lgc-path-d665e421de60886109aa",
+        "path_length": 4,
+        "word_term_count": 2,
+        "word_sha256": "8e7f5dcea99fb8323fd772d2bb1b30e4c0d70de208b9858b1429c12f22c93b30"
+      },
+      {
+        "endpoint_causet_id": "p5-0000002",
+        "path_id": "lgc-path-e5932dcdafd52e319d8d",
+        "path_length": 4,
+        "word_term_count": 2,
+        "word_sha256": "1429fb58bd0d0aed451a1ad10467d4df970d106d99438098cc1323d12764e293"
+      },
+      {
+        "endpoint_causet_id": "p5-0000006",
+        "path_id": "lgc-path-04209a02358400c51f5f",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "f7bb647adb1522d360f11d6a09bcce55bf4eec16e951d9141c8c2eeec8dddee1"
+      },
+      {
+        "endpoint_causet_id": "p5-0000006",
+        "path_id": "lgc-path-0fa31b4b94bd19340ee5",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "21d920c97d85d60fb86247490ca1309871a09530f58cedc999a0f268db80d042"
+      },
+      {
+        "endpoint_causet_id": "p5-0000006",
+        "path_id": "lgc-path-23782f42bdd847f7e2f4",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "26ad69f37e898884c13eb3bbbf351621753d6a37c0e7fc1130c4e1f90a0120da"
+      },
+      {
+        "endpoint_causet_id": "p5-0000006",
+        "path_id": "lgc-path-3bfde8847e2ee908d23e",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "8c90b369cf896347ee449b608624c254645e956548d7fcf26e0db3c17be7d225"
+      },
+      {
+        "endpoint_causet_id": "p5-0000006",
+        "path_id": "lgc-path-67cff41b7afd90799bae",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "10842cbbcab26bbcdfbc0dbc4d71bcd30ef9f8c4dffdf6157d566a078624ad73"
+      },
+      {
+        "endpoint_causet_id": "p5-0000006",
+        "path_id": "lgc-path-6cea49fd243664f412b3",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "4f5c5746c6574107b5f0807e5aa11c349eb3fa1fbff1c3e6fa3d1424447aa376"
+      },
+      {
+        "endpoint_causet_id": "p5-0000006",
+        "path_id": "lgc-path-73af5776d0b9b1ccf13e",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "f7bb647adb1522d360f11d6a09bcce55bf4eec16e951d9141c8c2eeec8dddee1"
+      },
+      {
+        "endpoint_causet_id": "p5-0000006",
+        "path_id": "lgc-path-9254c107c08dfb788b63",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "f7bb647adb1522d360f11d6a09bcce55bf4eec16e951d9141c8c2eeec8dddee1"
+      },
+      {
+        "endpoint_causet_id": "p5-0000006",
+        "path_id": "lgc-path-b0037976324710ff08f1",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "21d920c97d85d60fb86247490ca1309871a09530f58cedc999a0f268db80d042"
+      },
+      {
+        "endpoint_causet_id": "p5-0000006",
+        "path_id": "lgc-path-b0924a247492f0f42757",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "8c90b369cf896347ee449b608624c254645e956548d7fcf26e0db3c17be7d225"
+      },
+      {
+        "endpoint_causet_id": "p5-0000084",
+        "path_id": "lgc-path-13bac07c10f5c84761bf",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "937f246391105f6773b8712f925e98db4d988a1fb1f594f8a6087f2c4eaf7029"
+      },
+      {
+        "endpoint_causet_id": "p5-0000084",
+        "path_id": "lgc-path-349ce721007d7beb44b7",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "937f246391105f6773b8712f925e98db4d988a1fb1f594f8a6087f2c4eaf7029"
+      },
+      {
+        "endpoint_causet_id": "p5-0000084",
+        "path_id": "lgc-path-62bc21b8f0668baf035f",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "937f246391105f6773b8712f925e98db4d988a1fb1f594f8a6087f2c4eaf7029"
+      },
+      {
+        "endpoint_causet_id": "p5-0000084",
+        "path_id": "lgc-path-7683acb6f81577560579",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "f801e395f975555f77c591b64721116f247237e5c5a8bc28d76c130a2a6c92ef"
+      },
+      {
+        "endpoint_causet_id": "p5-0000084",
+        "path_id": "lgc-path-76fda5f8012c4f365ad2",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "5b1dfc4431797b826f793af5d5830197123930e016054373c219bc1823239221"
+      },
+      {
+        "endpoint_causet_id": "p5-0000084",
+        "path_id": "lgc-path-788e21902edd7b31a09a",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "f801e395f975555f77c591b64721116f247237e5c5a8bc28d76c130a2a6c92ef"
+      },
+      {
+        "endpoint_causet_id": "p5-0000084",
+        "path_id": "lgc-path-892a1d770099cad24655",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "937f246391105f6773b8712f925e98db4d988a1fb1f594f8a6087f2c4eaf7029"
+      },
+      {
+        "endpoint_causet_id": "p5-0000084",
+        "path_id": "lgc-path-d365d80d98bcfb2c151c",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "937f246391105f6773b8712f925e98db4d988a1fb1f594f8a6087f2c4eaf7029"
+      },
+      {
+        "endpoint_causet_id": "p5-0000084",
+        "path_id": "lgc-path-db5c7fe096c8778e41e4",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "f801e395f975555f77c591b64721116f247237e5c5a8bc28d76c130a2a6c92ef"
+      },
+      {
+        "endpoint_causet_id": "p5-0000084",
+        "path_id": "lgc-path-e56b7a415115788cfd40",
+        "path_length": 4,
+        "word_term_count": 4,
+        "word_sha256": "937f246391105f6773b8712f925e98db4d988a1fb1f594f8a6087f2c4eaf7029"
+      },
+      {
+        "endpoint_causet_id": "p5-0000086",
+        "path_id": "lgc-path-08a0d4ff63bc04d551c9",
+        "path_length": 4,
+        "word_term_count": 6,
+        "word_sha256": "f185228eecd963427326d07652190d8b26a702160821559acf17ce6231bacb11"
+      },
+      {
+        "endpoint_causet_id": "p5-0000086",
+        "path_id": "lgc-path-527b6fa4e710eb256935",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "f16548781747329dd367ed24b43d09bda2dc511ea8b143f8e77d3da63727d122"
+      },
+      {
+        "endpoint_causet_id": "p5-0000086",
+        "path_id": "lgc-path-55f81aa64fa3e1b623f6",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "fba95f719416fc75af8916c6e29a68fd5163b566dbfd87e204981f133cb9baf3"
+      },
+      {
+        "endpoint_causet_id": "p5-0000086",
+        "path_id": "lgc-path-766d11c821d63a551956",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "fa3a899951a826a7e3ae36d0b3129062e26a932ad79b8d9a62f1599c1728ffcf"
+      },
+      {
+        "endpoint_causet_id": "p5-0000086",
+        "path_id": "lgc-path-7d945e8cf7a9d82b1159",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "f16548781747329dd367ed24b43d09bda2dc511ea8b143f8e77d3da63727d122"
+      },
+      {
+        "endpoint_causet_id": "p5-0000086",
+        "path_id": "lgc-path-807cb33668d8f8f05cdc",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "4952281fd5af4d6f21158adb6f343d0a02a49981fe9ee6817a0722d279b5a22e"
+      },
+      {
+        "endpoint_causet_id": "p5-0000086",
+        "path_id": "lgc-path-97f9504ae4100039ff45",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "e37c40647ba5546a1f8daa762a7e4ed1f41aae9bb2d92b3febbae444ab8dd86e"
+      },
+      {
+        "endpoint_causet_id": "p5-0000086",
+        "path_id": "lgc-path-981b95264fc5a3f51303",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "e37c40647ba5546a1f8daa762a7e4ed1f41aae9bb2d92b3febbae444ab8dd86e"
+      },
+      {
+        "endpoint_causet_id": "p5-0000086",
+        "path_id": "lgc-path-ac58e703a5a92ed32524",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "fa3a899951a826a7e3ae36d0b3129062e26a932ad79b8d9a62f1599c1728ffcf"
+      },
+      {
+        "endpoint_causet_id": "p5-0000086",
+        "path_id": "lgc-path-e5e6a4b5842ab8ae14c0",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "fa3a899951a826a7e3ae36d0b3129062e26a932ad79b8d9a62f1599c1728ffcf"
+      },
+      {
+        "endpoint_causet_id": "p5-0000098",
+        "path_id": "lgc-path-4a8b0696b84257c85a92",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "890b7af433efaedb94c9cda98c90ea8d98b8e8031618900f783638503d0d9ac8"
+      },
+      {
+        "endpoint_causet_id": "p5-0000098",
+        "path_id": "lgc-path-4bd849218b4fff0a9bd8",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "ee967980ac2a01c1a349ff37f5b30fe07e3bf17318eafbf7497a8dadf3b26c47"
+      },
+      {
+        "endpoint_causet_id": "p5-0000098",
+        "path_id": "lgc-path-5347e683d732cb7bd16e",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "890b7af433efaedb94c9cda98c90ea8d98b8e8031618900f783638503d0d9ac8"
+      },
+      {
+        "endpoint_causet_id": "p5-0000098",
+        "path_id": "lgc-path-6d6e1405a2bf0bb60697",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "890b7af433efaedb94c9cda98c90ea8d98b8e8031618900f783638503d0d9ac8"
+      },
+      {
+        "endpoint_causet_id": "p5-0000098",
+        "path_id": "lgc-path-7bcea65f9db56a3508db",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "5efecf316613dd9025429f77e7aad7b8835f286fd293cd71dbf8a79490b80aa8"
+      },
+      {
+        "endpoint_causet_id": "p5-0000098",
+        "path_id": "lgc-path-8b359c0a80edf1347a91",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "599088a7886cee879a5a269604800aea971e0b7dc4fde01819ae4ece3f1ca861"
+      },
+      {
+        "endpoint_causet_id": "p5-0000098",
+        "path_id": "lgc-path-8d229854726b84e754c5",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "8c10c0d84718a187ed596c3e08f915166e8e423533b76b15c066ec669cc9559d"
+      },
+      {
+        "endpoint_causet_id": "p5-0000098",
+        "path_id": "lgc-path-a11e1acfb33f23fcdfb6",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "890b7af433efaedb94c9cda98c90ea8d98b8e8031618900f783638503d0d9ac8"
+      },
+      {
+        "endpoint_causet_id": "p5-0000098",
+        "path_id": "lgc-path-c8a4c4bd63d0c7c3b508",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "5efecf316613dd9025429f77e7aad7b8835f286fd293cd71dbf8a79490b80aa8"
+      },
+      {
+        "endpoint_causet_id": "p5-0000098",
+        "path_id": "lgc-path-e66add3e1c16dc5556e4",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "ee967980ac2a01c1a349ff37f5b30fe07e3bf17318eafbf7497a8dadf3b26c47"
+      },
+      {
+        "endpoint_causet_id": "p5-0002110",
+        "path_id": "lgc-path-0128a2f4f54200223282",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "5f861bfa2bba23de947ae616b5473ca241dbfd3f74d32a543a2554a4bba86d2b"
+      },
+      {
+        "endpoint_causet_id": "p5-0002110",
+        "path_id": "lgc-path-1170de8e8cc24c452051",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "f7142e20913a6e8f2d617d58227e326cad8295a52c971dd56470ad93d3d39ffe"
+      },
+      {
+        "endpoint_causet_id": "p5-0002110",
+        "path_id": "lgc-path-138aca6fe16eda6a82d3",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "7f6a9b9982d31276afaeb0706eccf5b285777798fe04fc39672684e27caba011"
+      },
+      {
+        "endpoint_causet_id": "p5-0002110",
+        "path_id": "lgc-path-30492d9c456b19c878e4",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "526e88ab8b4d6105db3e06a9747b2f0535bf851e8e2f42580ae5ec9c03feb250"
+      },
+      {
+        "endpoint_causet_id": "p5-0002110",
+        "path_id": "lgc-path-3fcf47a05ddb53ca8165",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "f7142e20913a6e8f2d617d58227e326cad8295a52c971dd56470ad93d3d39ffe"
+      },
+      {
+        "endpoint_causet_id": "p5-0002110",
+        "path_id": "lgc-path-5f25c9fd2a021206f7b9",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "a7960a6184ba219400b7e9dc10d52e63988852be49558c4ba2befb86ab8753bd"
+      },
+      {
+        "endpoint_causet_id": "p5-0002110",
+        "path_id": "lgc-path-99d64ebdc20ad322c836",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "5f861bfa2bba23de947ae616b5473ca241dbfd3f74d32a543a2554a4bba86d2b"
+      },
+      {
+        "endpoint_causet_id": "p5-0002110",
+        "path_id": "lgc-path-b861d82f0fd07513d9b0",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "a7960a6184ba219400b7e9dc10d52e63988852be49558c4ba2befb86ab8753bd"
+      },
+      {
+        "endpoint_causet_id": "p5-0002110",
+        "path_id": "lgc-path-f22d670fd7850e359010",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "f7142e20913a6e8f2d617d58227e326cad8295a52c971dd56470ad93d3d39ffe"
+      },
+      {
+        "endpoint_causet_id": "p5-0002110",
+        "path_id": "lgc-path-fbf25a473bcea73dded5",
+        "path_length": 4,
+        "word_term_count": 8,
+        "word_sha256": "5f861bfa2bba23de947ae616b5473ca241dbfd3f74d32a543a2554a4bba86d2b"
+      },
+      {
+        "endpoint_causet_id": "p5-0002190",
+        "path_id": "lgc-path-5a2d8a0a72172b157d00",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "6707a5973844b0a0f90d17f738dcd1897f7aa513765ee911ac7fec588306416f"
+      },
+      {
+        "endpoint_causet_id": "p5-0002190",
+        "path_id": "lgc-path-74b3731d76ca4ce68ccb",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "26ce2a1f6c2a73a30f450253a858db36dad1e9f840afa682b3222166ff00b34b"
+      },
+      {
+        "endpoint_causet_id": "p5-0002190",
+        "path_id": "lgc-path-a0b49af2ea5178e91097",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "811b9878c295528dacbd9107ec4fc1789222abc77a4c188f701de71016beab9d"
+      },
+      {
+        "endpoint_causet_id": "p5-0002190",
+        "path_id": "lgc-path-b1dfb707500305ec5117",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "6e5fdccd3a37140323d6726dafc3dc2a1ccd1c35b99ae6474da32a3f76d39ca3"
+      },
+      {
+        "endpoint_causet_id": "p5-0002190",
+        "path_id": "lgc-path-bc083383475d23ca8f3b",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "811b9878c295528dacbd9107ec4fc1789222abc77a4c188f701de71016beab9d"
+      },
+      {
+        "endpoint_causet_id": "p5-0002190",
+        "path_id": "lgc-path-c50c30e5d1d138da13f9",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "6e5fdccd3a37140323d6726dafc3dc2a1ccd1c35b99ae6474da32a3f76d39ca3"
+      },
+      {
+        "endpoint_causet_id": "p5-0002190",
+        "path_id": "lgc-path-c5854a69ee4982da89a0",
+        "path_length": 4,
+        "word_term_count": 12,
+        "word_sha256": "42c5763f30610e1c92cc1a24f6088dc605ab7f4ea75704c69a526714de4ab96d"
+      },
+      {
+        "endpoint_causet_id": "p5-0002190",
+        "path_id": "lgc-path-e816e719da8157a5e278",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "811b9878c295528dacbd9107ec4fc1789222abc77a4c188f701de71016beab9d"
+      },
+      {
+        "endpoint_causet_id": "p5-0002190",
+        "path_id": "lgc-path-f11ef76a647e1ea1bd10",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "26ce2a1f6c2a73a30f450253a858db36dad1e9f840afa682b3222166ff00b34b"
+      },
+      {
+        "endpoint_causet_id": "p5-0002190",
+        "path_id": "lgc-path-f513e1eb382a40424b09",
+        "path_length": 4,
+        "word_term_count": 16,
+        "word_sha256": "811b9878c295528dacbd9107ec4fc1789222abc77a4c188f701de71016beab9d"
+      }
+    ]
+  },
+  "basis": {
+    "relation_count": 63,
+    "all_have_selected_endpoint": true
+  },
+  "pairs": {
+    "count": 315,
+    "word_identity_count": 61,
+    "scalar_zero_matrix_count": 61,
+    "nonzero_scalar_entry_count": 1016,
+    "total_scalar_term_count": 758264,
+    "maximum_scalar_term_count": 3032,
+    "maximum_monomial_degree": 10,
+    "total_scalar_term_distribution": {
+      "0": 61,
+      "96": 2,
+      "240": 21,
+      "288": 2,
+      "328": 3,
+      "384": 12,
+      "416": 12,
+      "512": 1,
+      "544": 5,
+      "720": 9,
+      "816": 8,
+      "848": 12,
+      "1048": 6,
+      "1200": 18,
+      "1224": 24,
+      "1320": 3,
+      "1544": 5,
+      "1632": 5,
+      "1720": 5,
+      "1816": 2,
+      "1880": 1,
+      "2056": 1,
+      "2128": 6,
+      "2192": 3,
+      "2688": 2,
+      "2752": 8,
+      "4920": 4,
+      "5040": 4,
+      "5320": 2,
+      "5440": 2,
+      "5672": 3,
+      "5848": 3,
+      "6008": 3,
+      "6320": 9,
+      "6816": 6,
+      "6880": 18,
+      "8304": 8,
+      "8488": 2,
+      "8608": 2,
+      "11472": 8,
+      "11872": 4
+    },
+    "record_digest_sha256": "458c8979e962d03f02c2e212eec90630fd5eff4668d988f5037bd9dccf5ce194"
+  },
+  "per_endpoint": {
+    "p5-0000002": {
+      "path_count": 10,
+      "pair_count": 45,
+      "basis_relation_count": 9,
+      "word_identity_count": 10,
+      "scalar_zero_matrix_count": 10,
+      "total_scalar_term_count": 9840,
+      "maximum_scalar_term_count": 96,
+      "maximum_monomial_degree": 6
+    },
+    "p5-0000006": {
+      "path_count": 10,
+      "pair_count": 45,
+      "basis_relation_count": 9,
+      "word_identity_count": 5,
+      "scalar_zero_matrix_count": 5,
+      "total_scalar_term_count": 24944,
+      "maximum_scalar_term_count": 216,
+      "maximum_monomial_degree": 7
+    },
+    "p5-0000084": {
+      "path_count": 10,
+      "pair_count": 45,
+      "basis_relation_count": 9,
+      "word_identity_count": 18,
+      "scalar_zero_matrix_count": 18,
+      "total_scalar_term_count": 28872,
+      "maximum_scalar_term_count": 300,
+      "maximum_monomial_degree": 8
+    },
+    "p5-0000086": {
+      "path_count": 10,
+      "pair_count": 45,
+      "basis_relation_count": 9,
+      "word_identity_count": 5,
+      "scalar_zero_matrix_count": 5,
+      "total_scalar_term_count": 176608,
+      "maximum_scalar_term_count": 1736,
+      "maximum_monomial_degree": 10
+    },
+    "p5-0000098": {
+      "path_count": 10,
+      "pair_count": 45,
+      "basis_relation_count": 9,
+      "word_identity_count": 8,
+      "scalar_zero_matrix_count": 8,
+      "total_scalar_term_count": 44064,
+      "maximum_scalar_term_count": 432,
+      "maximum_monomial_degree": 7
+    },
+    "p5-0002110": {
+      "path_count": 10,
+      "pair_count": 45,
+      "basis_relation_count": 9,
+      "word_identity_count": 7,
+      "scalar_zero_matrix_count": 7,
+      "total_scalar_term_count": 170632,
+      "maximum_scalar_term_count": 1736,
+      "maximum_monomial_degree": 10
+    },
+    "p5-0002190": {
+      "path_count": 10,
+      "pair_count": 45,
+      "basis_relation_count": 9,
+      "word_identity_count": 8,
+      "scalar_zero_matrix_count": 8,
+      "total_scalar_term_count": 303304,
+      "maximum_scalar_term_count": 3032,
+      "maximum_monomial_degree": 10
+    }
+  },
+  "global_gc_boundary": {
+    "all_inventory_path_count": 407,
+    "all_inventory_pair_count": 1529,
+    "expanded_here": 315
+  },
+  "solver_status": {
+    "generic_2x2_scalar_expansion": true,
+    "inverse_saturation_runs": 0,
+    "Groebner_or_saturation_runs": 0,
+    "commutativity_decided": false
+  },
+  "claim_boundary": [
+    "Only the endpoint blocks with exactly 10 paths are scalar-expanded.",
+    "Path matrices are cached once per selected path before pair differences.",
+    "GC pairs outside this tier are not inferred from this result.",
+    "No full 721 commutativity theorem, witness, or obstruction is issued."
+  ],
+  "unrestricted_721_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_721_GC_TIER_10_BLOCKS_SCALAR_COMPILED_OPEN",
+  "semantic_digest_sha256": "d0cfadeb2252eae8a554973a6df9815da4ba6b344f1f130e4f9357059d979c5f"
+}

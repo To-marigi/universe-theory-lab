@@ -118,7 +118,8 @@
     "v0.4.2_721_source_native_preflight": "V042_721_SOURCE_NATIVE_EQ112_FREE_IR_COMPILED_OPEN",
     "v0.4.2_721_scalar_gate": "V042_721_SCALAR_CPOBC_MSR_COMPILED_GC_STAGED_OPEN",
     "v0.4.2_721_gc_small_blocks": "V042_721_GC_11_THREE_PATH_BLOCKS_SCALAR_COMPILED_OPEN",
-    "v0.4.2_721_gc_four_path_blocks": "V042_721_GC_9_FOUR_PATH_BLOCKS_SCALAR_COMPILED_OPEN"
+    "v0.4.2_721_gc_four_path_blocks": "V042_721_GC_9_FOUR_PATH_BLOCKS_SCALAR_COMPILED_OPEN",
+    "v0.4.2_721_gc_tier_blocks_remaining_nine": "ALL_NINE_REMAINING_TIERS_5_6_7_8_9_10_11_15_25_SCALAR_COMPILED_1442_PAIRS_257_WORD_IDENTITIES_MATCH_SCALAR_ZERO_ALL_1529_GC_PAIRS_NOW_EXPANDED_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
@@ -211,7 +212,8 @@
         "v0.4.2_721_source_native_preflight",
         "v0.4.2_721_scalar_gate",
         "v0.4.2_721_gc_small_blocks",
-        "v0.4.2_721_gc_four_path_blocks"
+        "v0.4.2_721_gc_four_path_blocks",
+        "v0.4.2_721_gc_tier_blocks_remaining_nine"
       ],
       "exact_counts": {
         "generators": {"antichain_Q": 4, "non_antichain_G": 20},
@@ -221,19 +223,21 @@
           "paths": 407,
           "basis_relations": 320,
           "same_endpoint_pairs": 1529,
-          "expanded_pairs": 87,
-          "remaining_pairs": 1442,
-          "endpoint_size_tiers_remaining": "5(x10) 6(x3) 7(x4) 8(x3) 9(x4) 10(x7) 11(x1) 15(x3) 25(x1); size-1 endpoints (31) contribute zero pairs"
+          "expanded_pairs": 1529,
+          "remaining_pairs": 0,
+          "all_pairs_scalar_expanded": true,
+          "word_identity_scalar_zero_agreement": "257 (remaining nine tiers) + 87 (predecessors) = 344 total word identities across all 1529 pairs, matching scalar-zero count at every single pair, zero mismatches"
         }
       },
       "commutativity_proved_for_full_profile": false,
       "inverse_relation_saturation_run": false,
-      "next_step": "Continue the endpoint-size-tier sweep (next: the 10 five-path endpoints, 100 pairs) until the 1,442 remaining GC pairs are exhausted, then address the 64 inverse-relation matrix-entry slots for the 8 inverse tokens.",
+      "next_step": "All 1,529 GC pairs are scalar-expanded and internally consistent (word identity iff scalar-zero at every pair), but the fixed_vector_GC system as a whole is not solved: no elimination/Groebner/saturation step has combined the 320 basis relations into a decision. Next: address the 64 inverse-relation matrix-entry slots for the 8 inverse tokens, then decide whether/how to attempt an elimination or commutativity decision over the now-complete scalar inventory.",
       "reports": [
         "reports/v0.4.2_721_source_native_preflight.md",
         "reports/v0.4.2_721_scalar_gate.md",
         "reports/v0.4.2_721_gc_small_blocks.md",
-        "reports/v0.4.2_721_gc_four_path_blocks.md"
+        "reports/v0.4.2_721_gc_four_path_blocks.md",
+        "reports/v0.4.2_721_gc_tier_blocks.md"
       ]
     },
     "symmetry_orbit_reduction": {
