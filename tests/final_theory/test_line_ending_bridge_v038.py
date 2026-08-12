@@ -76,7 +76,7 @@ def test_frozen_bridge_has_exact_audited_scope_and_resolves() -> None:
         "legacy_raw_bindings": EXPECTED_BINDING_COUNT,
         "unique_consumers": EXPECTED_CONSUMER_COUNT,
         "unique_targets": EXPECTED_TARGET_COUNT,
-        "target_candidate_edges": 1027,
+        "target_candidate_edges": 1026,
         "ambiguous_bindings": 20,
         "all_targets_currently_canonical_lf": True,
         "all_bindings_resolve_by_json_pointer": True,

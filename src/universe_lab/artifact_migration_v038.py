@@ -18,9 +18,15 @@ from typing import Any
 
 SCHEMA_VERSION = "universe-line-ending-bridge-v0.3.8"
 BINDING_KIND = "RAW_FILE_BYTES_LEGACY_CRLF"
-EXPECTED_BINDING_COUNT = 1007
+# references/manifest.json was excluded from target candidacy in
+# scripts/build_v038_line_ending_bridge.py (2026-08-12): it is a living
+# literature/citation-gate ledger, not an immutable historical artifact, and
+# kept growing after the v0.3.8 freeze (e.g. commit 2b32321). That removes
+# exactly one binding and one target relative to the original 2026-07-30
+# snapshot (1007, 84, 207).
+EXPECTED_BINDING_COUNT = 1006
 EXPECTED_CONSUMER_COUNT = 84
-EXPECTED_TARGET_COUNT = 207
+EXPECTED_TARGET_COUNT = 206
 
 _SHA256_RE = re.compile(r"[0-9a-f]{64}")
 _ARRAY_INDEX_RE = re.compile(r"0|[1-9][0-9]*")

@@ -8,13 +8,14 @@
     "canonical_text_rule": "Strict UTF-8; CRLF canonicalizes to LF; NUL and lone CR are rejected.",
     "non_raw_digest_rule": "Semantic, request, expression, polynomial, and budget digest fields are not raw-file bindings.",
     "self_exclusion_rule": "Paths owned by v0.3.8 (v0.3.8, v038, or v0_3_8 in the path) are excluded from both sides of the scan.",
+    "living_document_target_exclusion_rule": "references/manifest.json is excluded from target candidacy: it is a living literature/citation-gate ledger that keeps growing after the v0.3.8 freeze, not an immutable historical artifact. Its legacy binding at results/v0.3.7_release_manifest.json /files/85/sha256 is therefore not resolvable through this bridge.",
     "historical_mutation": "NONE"
   },
   "counts": {
-    "legacy_raw_bindings": 1007,
+    "legacy_raw_bindings": 1006,
     "unique_consumers": 84,
-    "unique_targets": 207,
-    "target_candidate_edges": 1027,
+    "unique_targets": 206,
+    "target_candidate_edges": 1026,
     "ambiguous_bindings": 20
   },
   "targets": [
@@ -1227,17 +1228,6 @@
       "virtual_crlf_size_bytes": 133340,
       "lf_count": 2863,
       "legacy_binding_count": 12
-    },
-    {
-      "path": "references/manifest.json",
-      "current_raw_sha256": "80758632bdf49cb3dbf2988f7b630ded0768834db9d6da539be99fbd8b8becfb",
-      "current_raw_size_bytes": 69627,
-      "canonical_lf_sha256": "80758632bdf49cb3dbf2988f7b630ded0768834db9d6da539be99fbd8b8becfb",
-      "canonical_lf_size_bytes": 69627,
-      "virtual_crlf_sha256": "2d28c78da992c6f6e86c6572b762a01b90758b9f7dcc89665b08124101cfd028",
-      "virtual_crlf_size_bytes": 71062,
-      "lf_count": 1435,
-      "legacy_binding_count": 1
     },
     {
       "path": "references/notes/final_theory_v0.3.3_gc_atomisation_frontier_2026-07-28.md",
@@ -11191,17 +11181,6 @@
       "sha256_prefix_present": false,
       "target_paths": [
         "certificates/d2_saturation/v0.3.5_direct_operator_system.json"
-      ],
-      "binding_kind": "RAW_FILE_BYTES_LEGACY_CRLF"
-    },
-    {
-      "consumer_path": "results/v0.3.7_release_manifest.json",
-      "json_pointer": "/files/85/sha256",
-      "recorded_value": "2d28c78da992c6f6e86c6572b762a01b90758b9f7dcc89665b08124101cfd028",
-      "legacy_raw_sha256": "2d28c78da992c6f6e86c6572b762a01b90758b9f7dcc89665b08124101cfd028",
-      "sha256_prefix_present": false,
-      "target_paths": [
-        "references/manifest.json"
       ],
       "binding_kind": "RAW_FILE_BYTES_LEGACY_CRLF"
     },
