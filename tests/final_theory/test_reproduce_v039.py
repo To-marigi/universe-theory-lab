@@ -93,18 +93,14 @@ def test_every_baseline_entry_is_declared(manifest: dict[str, Any]) -> None:
         "V039_INTENTIONAL_HISTORICAL_TEST_REBASE",
         "V039_INTENTIONAL_AUTHOR_IDENTITY",
         "V039_NEW_RELEASE_SUPPORT",
-        "V039_CONCURRENT_PAPER_I_WORK_UNRELATED_TO_REF_PORTABILITY",
-        "V039_LINE_ENDING_BRIDGE_LIVING_DOCUMENT_FIX",
     }
     assert set(audit["classification_counts"]) <= allowed
     assert audit["classification_counts"] == {
-        "UNCHANGED_RAW_BYTES": 176,
+        "UNCHANGED_RAW_BYTES": 186,
         "V039_INTENTIONAL_AUDIT_PORTABILITY_CHANGE": 2,
         "V039_INTENTIONAL_AUTHOR_IDENTITY": 2,
         "V039_INTENTIONAL_HISTORICAL_TEST_REBASE": 1,
         "V039_INTENTIONAL_RELEASE_METADATA_UPDATE": 2,
-        "V039_CONCURRENT_PAPER_I_WORK_UNRELATED_TO_REF_PORTABILITY": 6,
-        "V039_LINE_ENDING_BRIDGE_LIVING_DOCUMENT_FIX": 4,
     }
 
 
@@ -115,8 +111,6 @@ def test_declared_change_sets_are_disjoint_and_complete(builder: ModuleType) -> 
         builder.HISTORICAL_TEST_REBASE_PATHS,
         builder.AUTHOR_IDENTITY_PATHS,
         builder.NEW_RELEASE_SUPPORT_PATHS,
-        builder.CONCURRENT_PAPER_I_PATHS,
-        builder.LINE_ENDING_BRIDGE_FIX_PATHS,
     )
     seen: set[str] = set()
     for group in groups:

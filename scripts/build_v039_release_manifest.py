@@ -61,37 +61,6 @@ AUTHOR_IDENTITY_PATHS = (
     "paper/paper.md",
 )
 
-# Non-scientific repo/tooling files touched by concurrent Paper I / Zenodo
-# preparation work (2026-08-03 through 2026-08-08), unrelated to the ref
-# portability change this release is about. None carries a scientific
-# artifact, certificate or verdict: at the v0.3.8 baseline each was already
-# tagged V038_CANONICAL_LF_WRITER_OR_SUPPORT or
-# RELEASE_SUPPORT_SOURCE_OR_FROZEN_INPUT, never a frozen science role.
-# references/manifest.json and references/sources.json in particular are a
-# living literature/citation-gate ledger that keeps growing (see also the
-# v0.3.8 line-ending bridge's living-document exclusion for the former).
-CONCURRENT_PAPER_I_PATHS = (
-    ".gitattributes",
-    ".gitignore",
-    "compose.yaml",
-    "references/manifest.json",
-    "references/sources.json",
-    "scripts/archive_references.py",
-)
-
-# The v0.3.8 line-ending bridge assumed every target it tracked was an
-# immutable historical artifact. references/manifest.json is not one (see
-# CONCURRENT_PAPER_I_PATHS above); it is excluded from target candidacy as
-# of 2026-08-12, which changes these four v0.3.8-baseline files' bytes.
-# No scientific artifact, certificate or verdict is touched; the change is
-# purely to the compatibility-bridge bookkeeping.
-LINE_ENDING_BRIDGE_FIX_PATHS = (
-    "scripts/build_v038_line_ending_bridge.py",
-    "src/universe_lab/artifact_migration_v038.py",
-    "tests/final_theory/test_line_ending_bridge_v038.py",
-    "results/v0.3.8_line_ending_bridge.json",
-)
-
 NEW_RELEASE_SUPPORT_PATHS = (
     "REPRODUCING_v0.3.9.md",
     # The deposit excludes the vendored archives for licensing reasons and tells
@@ -117,8 +86,6 @@ CLASSIFICATION_METADATA = "V039_INTENTIONAL_RELEASE_METADATA_UPDATE"
 CLASSIFICATION_TEST_REBASE = "V039_INTENTIONAL_HISTORICAL_TEST_REBASE"
 CLASSIFICATION_IDENTITY = "V039_INTENTIONAL_AUTHOR_IDENTITY"
 CLASSIFICATION_SUPPORT = "V039_NEW_RELEASE_SUPPORT"
-CLASSIFICATION_CONCURRENT = "V039_CONCURRENT_PAPER_I_WORK_UNRELATED_TO_REF_PORTABILITY"
-CLASSIFICATION_BRIDGE_FIX = "V039_LINE_ENDING_BRIDGE_LIVING_DOCUMENT_FIX"
 CLASSIFICATION_UNCHANGED = "UNCHANGED_RAW_BYTES"
 
 DECLARED_CHANGES = {
@@ -127,8 +94,6 @@ DECLARED_CHANGES = {
     **{path: CLASSIFICATION_TEST_REBASE for path in HISTORICAL_TEST_REBASE_PATHS},
     **{path: CLASSIFICATION_IDENTITY for path in AUTHOR_IDENTITY_PATHS},
     **{path: CLASSIFICATION_SUPPORT for path in NEW_RELEASE_SUPPORT_PATHS},
-    **{path: CLASSIFICATION_CONCURRENT for path in CONCURRENT_PAPER_I_PATHS},
-    **{path: CLASSIFICATION_BRIDGE_FIX for path in LINE_ENDING_BRIDGE_FIX_PATHS},
 }
 
 
