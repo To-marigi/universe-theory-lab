@@ -33,20 +33,6 @@ from universe_lab.artifact_migration_v038 import (
 RESULT_PATH = "results/v0.3.8_line_ending_bridge.json"
 _SHA256_VALUE_RE = re.compile(r"(?:(sha256):)?([0-9a-f]{64})")
 
-# The bridge's contract (see universe_lab.artifact_migration_v038's module
-# docstring) is: an immutable v0.2--v0.3.7 artifact records the raw-byte hash
-# of a target whose *content* never changes again except for line-ending
-# re-encoding. references/manifest.json does not satisfy that: it is a
-# living literature/citation-gate ledger that keeps growing after the v0.3.8
-# freeze (e.g. commit 2b32321, 2026-08-08, added 205 records to it). Its
-# v0.3.7-era role tag ("RELEASE_SUPPORT_SOURCE_OR_FROZEN_INPUT") was
-# ambiguous and did not mark it as frozen. It is excluded here from target
-# candidacy so the bridge only tracks genuinely immutable targets; the
-# corresponding legacy binding in results/v0.3.7_release_manifest.json
-# (/files/85/sha256) is therefore not resolvable through this bridge and is
-# not counted.
-_LIVING_DOCUMENT_TARGET_EXCLUSIONS = frozenset({"references/manifest.json"})
-
 
 def _tracked_paths(root: Path) -> list[str]:
     process = subprocess.run(
@@ -101,8 +87,6 @@ def build_ledger(root: Path) -> dict[str, Any]:
     }
     virtual_digest_to_paths: dict[str, list[str]] = defaultdict(list)
     for relative_path, canonical in text_inventory.items():
-        if relative_path in _LIVING_DOCUMENT_TARGET_EXCLUSIONS:
-            continue
         if b"\n" not in canonical:
             continue
         virtual = virtual_crlf_bytes(canonical, source=relative_path)
@@ -222,13 +206,6 @@ def build_ledger(root: Path) -> dict[str, Any]:
             "self_exclusion_rule": (
                 "Paths owned by v0.3.8 (v0.3.8, v038, or v0_3_8 in the path) "
                 "are excluded from both sides of the scan."
-            ),
-            "living_document_target_exclusion_rule": (
-                "references/manifest.json is excluded from target candidacy: it is a "
-                "living literature/citation-gate ledger that keeps growing after the "
-                "v0.3.8 freeze, not an immutable historical artifact. Its legacy "
-                "binding at results/v0.3.7_release_manifest.json /files/85/sha256 is "
-                "therefore not resolvable through this bridge."
             ),
             "historical_mutation": "NONE",
         },
