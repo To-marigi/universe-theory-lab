@@ -1,6 +1,6 @@
 {
   "schema_version": "cpobc-current-research-state-v1",
-  "updated": "2026-08-11",
+  "updated": "2026-08-12",
   "mutable_index_not_a_proof_certificate": true,
   "global_verdict": "FINAL_THEORY_OPEN",
   "public_baseline": {
@@ -114,11 +114,14 @@
     "v0.4.2_955_rank_one_character_audit": "EXACT_93_SOURCE_NATIVE_RANK_ONE_POINTS_12_NONSCALAR_NO_COMMUTATOR_ESCAPE_FULL_S_OPEN",
     "v0.4.2_955_minor_cover_preflight": "EXACT_38_POINT_SAMPLE_107_OF_119_MONOMIAL_MATCHING_D14_TWO_MINOR_SAMPLE_COVER_D12_D13_ANCHORED_FULL_S_OPEN",
     "v0.4.2_955_unit_pivot_matching": "GATE18_TWELVE_UNMATCHED_COLUMNS_RESOLVED_ALL_SLACK_EIGHT_FREE_FOUR_REQUIRED_WITH_LOCALIZER_UNIT_FACTORISATIONS_UNIT_EDGE_MATCHING_ATTAINS_RANK_111_DETERMINANT_UNIT_NOT_CERTIFIED_FULL_S_OPEN",
-    "v0.4.2_955_block_determinant": "UNIT_MINOR_ROUTE_DOES_NOT_CLOSE_DM_BLOCKS_60_LARGEST_15_ALL_19_SMALL_BLOCK_DETERMINANTS_NON_UNIT_TEN_NEW_FACTORS_ALTERNATIVE_SEARCH_1E29_FULL_S_OPEN"
+    "v0.4.2_955_block_determinant": "UNIT_MINOR_ROUTE_DOES_NOT_CLOSE_DM_BLOCKS_60_LARGEST_15_ALL_19_SMALL_BLOCK_DETERMINANTS_NON_UNIT_TEN_NEW_FACTORS_ALTERNATIVE_SEARCH_1E29_FULL_S_OPEN",
+    "v0.4.2_721_source_native_preflight": "V042_721_SOURCE_NATIVE_EQ112_FREE_IR_COMPILED_OPEN",
+    "v0.4.2_721_scalar_gate": "V042_721_SCALAR_CPOBC_MSR_COMPILED_GC_STAGED_OPEN",
+    "v0.4.2_721_gc_small_blocks": "V042_721_GC_11_THREE_PATH_BLOCKS_SCALAR_COMPILED_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "OWNER_DECISION_FREEZE_955_AT_RESOURCE_LIMIT_OPEN_AND_MOVE_TO_721_OR_AUTHORISE_A_STRUCTURED_SEARCH_OVER_ALTERNATIVE_UNIT_MATCHINGS",
+    "next_gate": "OWNER_DECISION_ON_955_FREEZE_STILL_PENDING_721_SOURCE_NATIVE_COMPILER_STARTED_AS_BUDGET_FALLBACK_NEXT_721_STEP_IS_EXPAND_REMAINING_1496_OF_1529_GC_PAIRS_IN_BLOCKS_THEN_INVERSE_RELATION_SATURATION",
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
       "CSG_BASEPOINT_FIFTH_ORDER_FULL_FOURTH_JET_FIBER_PREFLIGHT",
@@ -200,6 +203,35 @@
       "full_955_profile_claimed": false
     },
     "next_gate_description": "The unit-minor route to the localized row-module certificate does not close. The Dulmage-Mendelsohn decomposition of the 111-column unit matching has 60 components with a canonical largest irreducible block of size 15, and all 19 blocks of size at most three have non-unit determinants carrying ten new irreducible factors, none of them a source matrix diagonal entry, so source-determinant localization does not invert them. The route is not proved impossible -- every column has alternative unit rows -- but the size-15 block alone admits about 1.4e29 alternative matchings and no structural reason has emerged why a unit choice should exist. MISSION.md's phase-A stop rule covers this case: freeze at RESOURCE_LIMIT_OPEN once no route to a finite theorem can be shown, and do not try to break a stall by digging deeper. Freezing 955 at REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT and moving to 721 is the mission-consistent action, but it costs the lattice claim: MISSION.md allows 'complete finite ON semantics lattice' only when both profiles are resolved profile-native, and a resource-limit terminal is not a resolution. This is an owner decision.",
+    "721_source_native_progress": {
+      "started_as": "721_NATIVE_COMPILER_AFTER_955_TERMINAL_OR_AS_BUDGET_FALLBACK",
+      "955_freeze_decision_status": "STILL_PENDING_NOT_A_PRECONDITION_FOR_THIS_FALLBACK_TRACK",
+      "gates_compiled": [
+        "v0.4.2_721_source_native_preflight",
+        "v0.4.2_721_scalar_gate",
+        "v0.4.2_721_gc_small_blocks"
+      ],
+      "exact_counts": {
+        "generators": {"antichain_Q": 4, "non_antichain_G": 20},
+        "CPOBC": {"equations": 783, "word_identities": 83, "scalar_zero_matrices": 83},
+        "strong_MSR": {"equations": 24, "word_identities": 3, "scalar_zero_matrices": 3},
+        "fixed_vector_GC": {
+          "paths": 407,
+          "basis_relations": 320,
+          "same_endpoint_pairs": 1529,
+          "expanded_pairs": 33,
+          "remaining_pairs": 1496
+        }
+      },
+      "commutativity_proved_for_full_profile": false,
+      "inverse_relation_saturation_run": false,
+      "next_step": "Partition and scalar-expand the remaining 1496 GC pairs in bounded blocks (as done for the 11 three-path endpoints), then address the 64 inverse-relation matrix-entry slots for the 8 inverse tokens.",
+      "reports": [
+        "reports/v0.4.2_721_source_native_preflight.md",
+        "reports/v0.4.2_721_scalar_gate.md",
+        "reports/v0.4.2_721_gc_small_blocks.md"
+      ]
+    },
     "symmetry_orbit_reduction": {
       "artifact": "results/v0.4.2_955_symmetry_orbit_reduction.json",
       "report": "reports/v0.4.2_955_symmetry_orbit_reduction.md",
