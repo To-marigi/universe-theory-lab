@@ -1,0 +1,43 @@
+{
+  "schema_version": "final-theory-v042-phase-c-methodology-charter-v1",
+  "prepared": "2026-08-13",
+  "status": "PHASE_C_METHOD_CHARTER_ACTIVE",
+  "trigger": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "frozen_inputs": [
+    {
+      "path": "reports/v0.4.2_phase_a_termination_decision_packet.md",
+      "role": "owner_decision_packet",
+      "claim_boundary": "decision pending predecessor; not a scientific terminal"
+    },
+    {
+      "path": "reports/v0.4.2_phase_a_freeze_execution.md",
+      "role": "state_transition_record",
+      "claim_boundary": "resource-limit freeze; not witness, obstruction, or empty-set proof"
+    },
+    {
+      "path": "reports/v0.4.2_955_block_determinant.md",
+      "role": "955_evidence",
+      "claim_boundary": "unit-minor route does not close; full 955 remains unresolved"
+    },
+    {
+      "path": "results/v0.4.2_phase_a_termination_decision_packet.json",
+      "role": "721_evidence_summary",
+      "claim_boundary": "full 721 remains unresolved; no full-profile solver result"
+    }
+  ],
+  "controls": {
+    "semantic_digest": true,
+    "claim_boundary_ledger": true,
+    "verdict_grammar": true,
+    "frozen_artifact_immutability": true,
+    "preflight_budget_separation": true
+  },
+  "next_gate": "BUILD_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX",
+  "phase_b_deferred": true,
+  "reopen_requires_owner_approval_and_versioned_budget": true,
+  "passed": true,
+  "verdict": "PHASE_C_METHOD_CHARTER_ACTIVE",
+  "semantic_digest_sha256": "a5605662197c93565a82ab9a5d4760a966fd011445d3bc0e43bc7cad99ec6f5c"
+}

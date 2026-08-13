@@ -1,0 +1,50 @@
+{
+  "schema_version": "final-theory-v042-phase-a-freeze-execution-v1",
+  "prepared": "2026-08-13",
+  "evidence_head": "dbafddd",
+  "status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
+  "owner_decision": "FREEZE_BOTH_OPEN_RESOURCE_LIMIT_THEN_PHASE_C",
+  "decision_basis": "owner_continue_instruction_after_committed_phase_a_termination_packet",
+  "freeze_executed": true,
+  "dedicated_cas_authorized": false,
+  "full_profile_solver_run": false,
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "complete_finite_on_semantics_lattice_claim_available": false,
+  "profiles": {
+    "955": {
+      "profile": "strong_GC__reachable_state_MSR",
+      "terminal_boundary": "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT",
+      "full_profile_resolved": false,
+      "witness_claimed": false,
+      "obstruction_claimed": false,
+      "evidence_report": "reports/v0.4.2_955_block_determinant.md",
+      "evidence_artifact": "results/v0.4.2_955_block_determinant.json",
+      "route_boundary": "DM block determinants are non-unit and the alternative matching search has no demonstrated finite-theorem route"
+    },
+    "721": {
+      "profile": "fixed_vector_GC__strong_MSR",
+      "terminal_boundary": "FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT",
+      "full_profile_resolved": false,
+      "witness_claimed": false,
+      "obstruction_claimed": false,
+      "evidence_report": "reports/v0.4.2_phase_a_termination_decision_packet.md",
+      "evidence_artifact": "results/v0.4.2_phase_a_termination_decision_packet.json",
+      "route_boundary": "all 1967 residuals survived inverse relation reduction and the corrected complete-residual Groebner preflight timed out at two units"
+    }
+  },
+  "phase_c": {
+    "status": "ACTIVE",
+    "charter": "reports/v0.4.2_phase_c_methodology_charter.md",
+    "artifact": "results/v0.4.2_phase_c_methodology_charter.json",
+    "next_gate": "BUILD_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX"
+  },
+  "claim_boundary": [
+    "resource-limit freeze is not a witness",
+    "resource-limit freeze is not an obstruction proof",
+    "resource-limit freeze is not an empty-set result",
+    "complete finite ON semantics lattice is not claimed"
+  ],
+  "passed": true,
+  "verdict": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
+  "semantic_digest_sha256": "c2840750142ad4f887952a9a11b4fcb04fee811680245477caa5a72a9b3d5531"
+}

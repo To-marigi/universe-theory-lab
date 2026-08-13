@@ -130,18 +130,33 @@
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
-    "next_gate": "PHASE_A_TERMINATION_DECISION_PACKET_READY_OWNER_MUST_CHOOSE_DEDICATED_CAS_BUDGET_OR_OPEN_RESOURCE_LIMIT_FREEZE_THEN_PHASE_C",
+    "next_gate": "PHASE_C_METHOD_ARTIFACT_AND_CLAIM_BOUNDARY_INVENTORY",
     "phase_A_termination_packet": {
-      "status": "OWNER_DECISION_REQUIRED_PHASE_A_TERMINATION_PACKET_READY",
+      "status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
       "report": "reports/v0.4.2_phase_a_termination_decision_packet.md",
       "artifact": "results/v0.4.2_phase_a_termination_decision_packet.json",
       "prepared": "2026-08-13",
       "evidence_head": "077c721",
       "recommended_choice": "FREEZE_BOTH_OPEN_RESOURCE_LIMIT_THEN_PHASE_C",
-      "freeze_executed": false,
+      "owner_decision": "FREEZE_BOTH_OPEN_RESOURCE_LIMIT_THEN_PHASE_C",
+      "decision_date": "2026-08-13",
+      "decision_commit": "dbafddd",
+      "execution_record": "results/v0.4.2_phase_a_freeze_execution.json",
+      "freeze_executed": true,
       "dedicated_cas_authorized": false,
       "complete_finite_on_semantics_lattice_claim_available": false,
-      "owner_decision_required": true
+      "owner_decision_required": false,
+      "terminal_boundaries": {
+        "955": "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT",
+        "721": "FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT"
+      },
+      "phase_C_started": true
+    },
+    "phase_C": {
+      "status": "ACTIVE",
+      "charter": "reports/v0.4.2_phase_c_methodology_charter.md",
+      "artifact": "results/v0.4.2_phase_c_methodology_charter.json",
+      "next_gate": "BUILD_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX"
     },
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
