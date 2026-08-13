@@ -36,6 +36,9 @@ from universe_lab.final_theory.d2_sage_backend_v035 import (
 )
 from universe_lab.final_theory.d2_strata_v034 import S1, S2, stratum_charts
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
+from universe_lab.final_theory.solver_authorization_v042 import (
+    require_production_solver_authorization,
+)
 
 SCHEMA_MANIFEST = "final-theory-one-sided-d2-qq-restricted-locus-manifest-v0.4.1"
 SCHEMA_REQUEST = "final-theory-one-sided-d2-qq-request-v0.4.1"
@@ -780,6 +783,11 @@ def run_one_sided_qq_campaign_v041(
     """Run the explicitly requested exact QQ campaign under the shared budget."""
 
     root = root.resolve()
+    require_production_solver_authorization(
+        root,
+        campaign_id="v041_restricted_locus_qq",
+        budget_path=BUDGET_PATH,
+    )
     manifest = compile_one_sided_qq_manifest_v041(root, profiles=profiles)
     write_one_sided_qq_manifest_v041(root, manifest)
     requests = manifest["requests"]

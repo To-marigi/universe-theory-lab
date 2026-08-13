@@ -130,7 +130,7 @@
   },
   "affected_campaign": {
     "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_ACTIVE_FINAL_THEORY_OPEN",
-    "next_gate": "PHASE_C_FROZEN_ARTIFACT_IMMUTABILITY_AND_REOPEN_AUTHORIZATION",
+    "next_gate": "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW",
     "phase_A_termination_packet": {
       "status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
       "report": "reports/v0.4.2_phase_a_termination_decision_packet.md",
@@ -156,7 +156,7 @@
       "status": "ACTIVE",
       "charter": "reports/v0.4.2_phase_c_methodology_charter.md",
       "artifact": "results/v0.4.2_phase_c_methodology_charter.json",
-      "next_gate": "AUDIT_FROZEN_ARTIFACT_IMMUTABILITY_AND_REOPEN_AUTHORIZATION",
+      "next_gate": "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW",
       "verdict_budget_audit": {
         "status": "PHASE_C_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION_CERTIFIED",
         "report": "reports/v0.4.2_phase_c_verdict_budget_audit.md",
@@ -200,6 +200,38 @@
         "historical_artifacts_untouched": true,
         "live_index_reconciled": true,
         "next_gate": "BUILD_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX"
+      },
+      "frozen_reopen_audit": {
+        "status": "PHASE_C_FROZEN_ARTIFACT_IMMUTABILITY_AND_REOPEN_AUTHORIZATION_CERTIFIED",
+        "report": "reports/v0.4.2_phase_c_frozen_reopen_audit.md",
+        "artifact": "results/v0.4.2_phase_c_frozen_reopen_audit.json",
+        "module": "src/universe_lab/final_theory/phase_c_frozen_reopen_audit_v042.py",
+        "test": "tests/final_theory/test_v042_phase_c_frozen_reopen_audit.py",
+        "prepared": "2026-08-14",
+        "evidence_head": "a35cd39",
+        "semantic_digest_sha256": "561d05382bd95c0d0a602876fe2f2d57358848d0f60586a92605540d909f4cd7",
+        "artifact_groups_rechecked": 12,
+        "frozen_file_bindings_rechecked": 37,
+        "raw_sha256_bindings_unchanged": true,
+        "canonical_lf_sha256_bindings_unchanged": true,
+        "mutable_live_state_excluded": true,
+        "reopen_authorized": false,
+        "full_profile_solver_run": false,
+        "scientific_verdict_added": false,
+        "global_verdict": "FINAL_THEORY_OPEN",
+        "next_gate": "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW"
+      },
+      "reopen_authorization": {
+        "status": "NOT_AUTHORIZED",
+        "owner_reopen_approval_present": false,
+        "versioned_reopen_budget_present": false,
+        "dedicated_cas_authorized": false,
+        "current_full_profile_solver_run": false,
+        "runtime_production_gate_present": true,
+        "runtime_gate_blocks_current_state": true,
+        "guard_module": "src/universe_lab/final_theory/solver_authorization_v042.py",
+        "guarded_entrypoint": "src/universe_lab/final_theory/one_sided_elimination_v041.py",
+        "reason": "Phase-A freeze is active; Phase-C methodology audits do not implicitly reopen 955 or 721."
       }
     },
     "solver_run_permitted": false,

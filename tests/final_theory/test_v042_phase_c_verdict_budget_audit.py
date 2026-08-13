@@ -92,4 +92,5 @@ def test_current_state_points_to_next_phase_c_gate() -> None:
     )
     assert audit["artifact"] == RESULT_PATH.as_posix()
     assert audit["report"] == REPORT_PATH.as_posix()
-    assert phase_c["next_gate"] == NEXT_GATE
+    assert audit["next_gate"] == NEXT_GATE
+    assert phase_c["next_gate"] == "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW"
