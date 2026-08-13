@@ -1,0 +1,98 @@
+{
+  "schema_version": "final-theory-v042-721-gc-tier-15-relation-reduced-v1",
+  "profile": "fixed_vector_GC__strong_MSR",
+  "scope": {
+    "selected_endpoint_rule": "exactly 15 paths",
+    "selected_endpoint_count": 3,
+    "method": "D*a*d -> 1+D*b*c per token, confluent on disjoint token variables",
+    "field": "QQ generic 2x2 matrix entries with commutative scalar monomials"
+  },
+  "selected_endpoints": [
+    "p5-0000088",
+    "p5-000008e",
+    "p5-000210a"
+  ],
+  "source_artifact_sha256": {
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "compiler_source_sha256": "fef291c24f9767e1068951ee6a0d7578e309897366692ada32937e4838a024bc",
+  "input_native_ir_semantic_digest_sha256": "622df30fd3ebbc8b0399debb695f426afd318a85cef6e6abd33bd9aedca4b296",
+  "input_calibration_stage_sha256": "c57943de361daa3b0d754d6094b953899abccfc4f7f6c416342934e66a4f535e",
+  "input_inverse_saturation_sha256": "2c87dbd1a8bf8eaee1d587701937042088171253f1ac35bd32c9671658b7e51d",
+  "pairs": {
+    "count": 315,
+    "newly_zero_under_reduction_count": 0,
+    "still_nonzero_under_reduction_count": 259,
+    "total_reduced_scalar_term_count": 1951016,
+    "maximum_reduced_scalar_term_count": 5271,
+    "maximum_reduced_monomial_degree": 13,
+    "total_reduced_scalar_term_distribution": {
+      "0": 56,
+      "464": 14,
+      "640": 14,
+      "880": 12,
+      "1056": 42,
+      "1384": 2,
+      "1666": 6,
+      "1674": 12,
+      "1790": 1,
+      "1796": 1,
+      "1908": 8,
+      "2362": 1,
+      "3548": 2,
+      "4114": 2,
+      "4120": 2,
+      "4376": 2,
+      "4724": 4,
+      "4942": 2,
+      "4948": 2,
+      "5260": 2,
+      "5290": 4,
+      "5296": 4,
+      "5826": 2,
+      "5832": 2,
+      "6700": 4,
+      "7048": 8,
+      "7584": 4,
+      "7876": 8,
+      "8140": 2,
+      "8412": 4,
+      "8706": 2,
+      "8712": 2,
+      "8760": 8,
+      "10464": 4,
+      "11292": 4,
+      "11640": 8,
+      "12176": 4,
+      "20552": 6,
+      "20560": 12,
+      "20810": 36
+    },
+    "record_digest_sha256": "9526d22d0ea97b0ca9d2def5636e9ae53479e715aa211a67c0b22c7df3d11b1c"
+  },
+  "global_gc_boundary": {
+    "all_inventory_path_count": 407,
+    "all_inventory_pair_count": 1529,
+    "reduced_here": 315
+  },
+  "solver_status": {
+    "generic_2x2_scalar_expansion": true,
+    "inverse_saturation_runs": 8,
+    "explicit_relation_reduction_runs": 315,
+    "Groebner_or_saturation_runs": 0,
+    "commutativity_decided": false
+  },
+  "claim_boundary": [
+    "Only the endpoint blocks with exactly 15 paths are reduced here.",
+    "No previously-zero pair became nonzero under reduction (checked, fails closed otherwise).",
+    "No full 721 commutativity theorem, witness, or obstruction is issued."
+  ],
+  "unrestricted_721_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_721_GC_TIER_15_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+  "semantic_digest_sha256": "087359e2df555445c7b758a09a844b8a21e5cf2b704dee3ae16af20f7d91ac64"
+}
