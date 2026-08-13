@@ -88,4 +88,4 @@ def test_current_state_points_to_the_completed_phase_c_gate() -> None:
     assert phase_c["claim_boundary_ledger"]["status"] == (
         "PHASE_C_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX_CERTIFIED"
     )
-    assert phase_c["next_gate"] == NEXT_GATE
+    assert phase_c["claim_boundary_ledger"]["next_gate"] == NEXT_GATE

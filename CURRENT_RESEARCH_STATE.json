@@ -130,7 +130,7 @@
   },
   "affected_campaign": {
     "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_ACTIVE_FINAL_THEORY_OPEN",
-    "next_gate": "PHASE_C_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION_AUDIT",
+    "next_gate": "PHASE_C_FROZEN_ARTIFACT_IMMUTABILITY_AND_REOPEN_AUTHORIZATION",
     "phase_A_termination_packet": {
       "status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
       "report": "reports/v0.4.2_phase_a_termination_decision_packet.md",
@@ -156,7 +156,25 @@
       "status": "ACTIVE",
       "charter": "reports/v0.4.2_phase_c_methodology_charter.md",
       "artifact": "results/v0.4.2_phase_c_methodology_charter.json",
-      "next_gate": "AUDIT_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION",
+      "next_gate": "AUDIT_FROZEN_ARTIFACT_IMMUTABILITY_AND_REOPEN_AUTHORIZATION",
+      "verdict_budget_audit": {
+        "status": "PHASE_C_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION_CERTIFIED",
+        "report": "reports/v0.4.2_phase_c_verdict_budget_audit.md",
+        "artifact": "results/v0.4.2_phase_c_verdict_budget_audit.json",
+        "module": "src/universe_lab/final_theory/phase_c_verdict_budget_audit_v042.py",
+        "test": "tests/final_theory/test_v042_phase_c_verdict_budget_audit.py",
+        "prepared": "2026-08-14",
+        "evidence_head": "333ab67",
+        "semantic_digest_sha256": "c3f26f4f620f77ae79ab63ce2d01a7d5dae51ceeaeac3aad1da48b82d68f327d",
+        "campaigns_audited": 4,
+        "versioned_budget_campaigns": 3,
+        "bounded_probes_without_production_budget": 1,
+        "production_solver_authorised": 0,
+        "production_solver_runs": 0,
+        "scientific_verdict_added": false,
+        "global_verdict": "FINAL_THEORY_OPEN",
+        "next_gate": "AUDIT_FROZEN_ARTIFACT_IMMUTABILITY_AND_REOPEN_AUTHORIZATION"
+      },
       "claim_boundary_ledger": {
         "status": "PHASE_C_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX_CERTIFIED",
         "report": "reports/v0.4.2_phase_c_claim_boundary_ledger.md",

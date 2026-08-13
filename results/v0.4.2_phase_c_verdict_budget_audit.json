@@ -1,0 +1,722 @@
+{
+  "schema_version": "final-theory-v042-phase-c-verdict-budget-audit-v1",
+  "prepared": "2026-08-14",
+  "evidence_head": "333ab67",
+  "status": "PHASE_C_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION_CERTIFIED",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "claim_boundary_ledger": {
+    "path": "results/v0.4.2_phase_c_claim_boundary_ledger.json",
+    "semantic_digest_sha256": "e45d3c7f2866ea3ea6d4590b880561cb514549747c50ea60fcdfc860fd29ddbf",
+    "scope": "Phase-C first-gate ledger input; not mutable live state"
+  },
+  "grammar": {
+    "rules": {
+      "CERTIFIED": "machine-checked within the artifact's declared scope; not automatic profile promotion",
+      "PREFLIGHT": "bounded feasibility or structure measurement; not production solver authorization",
+      "OPEN": "unresolved scope remains",
+      "OPEN_RESOURCE_LIMIT": "recorded resource/theorem-path boundary; not witness, obstruction, empty set, or solver impossibility",
+      "SUPERSEDED_OR_CANCELLED": "historical record with no reauthorization power",
+      "OWNER_APPROVED": "state-transition authorization only; not a scientific verdict",
+      "passed": "internal artifact validation status; not a scientific terminal claim"
+    },
+    "checks": [
+      {
+        "id": "global_scientific_verdict_remains_final_theory_open",
+        "passed": true,
+        "evidence": "FINAL_THEORY_OPEN"
+      },
+      {
+        "id": "live_state_does_not_permit_solver_run",
+        "passed": true,
+        "evidence": false
+      },
+      {
+        "id": "phase_a_freeze_did_not_authorise_or_run_dedicated_cas",
+        "passed": true,
+        "evidence": {
+          "schema_version": "final-theory-v042-phase-a-freeze-execution-v1",
+          "prepared": "2026-08-13",
+          "evidence_head": "dbafddd",
+          "status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
+          "owner_decision": "FREEZE_BOTH_OPEN_RESOURCE_LIMIT_THEN_PHASE_C",
+          "decision_basis": "owner_continue_instruction_after_committed_phase_a_termination_packet",
+          "freeze_executed": true,
+          "dedicated_cas_authorized": false,
+          "full_profile_solver_run": false,
+          "global_verdict": "FINAL_THEORY_OPEN",
+          "complete_finite_on_semantics_lattice_claim_available": false,
+          "profiles": {
+            "955": {
+              "profile": "strong_GC__reachable_state_MSR",
+              "terminal_boundary": "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT",
+              "full_profile_resolved": false,
+              "witness_claimed": false,
+              "obstruction_claimed": false,
+              "evidence_report": "reports/v0.4.2_955_block_determinant.md",
+              "evidence_artifact": "results/v0.4.2_955_block_determinant.json",
+              "route_boundary": "DM block determinants are non-unit and the alternative matching search has no demonstrated finite-theorem route"
+            },
+            "721": {
+              "profile": "fixed_vector_GC__strong_MSR",
+              "terminal_boundary": "FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT",
+              "full_profile_resolved": false,
+              "witness_claimed": false,
+              "obstruction_claimed": false,
+              "evidence_report": "reports/v0.4.2_phase_a_termination_decision_packet.md",
+              "evidence_artifact": "results/v0.4.2_phase_a_termination_decision_packet.json",
+              "route_boundary": "all 1967 residuals survived inverse relation reduction and the corrected complete-residual Groebner preflight timed out at two units"
+            }
+          },
+          "phase_c": {
+            "status": "ACTIVE",
+            "charter": "reports/v0.4.2_phase_c_methodology_charter.md",
+            "artifact": "results/v0.4.2_phase_c_methodology_charter.json",
+            "next_gate": "BUILD_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX"
+          },
+          "claim_boundary": [
+            "resource-limit freeze is not a witness",
+            "resource-limit freeze is not an obstruction proof",
+            "resource-limit freeze is not an empty-set result",
+            "complete finite ON semantics lattice is not claimed"
+          ],
+          "passed": true,
+          "verdict": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
+          "semantic_digest_sha256": "c2840750142ad4f887952a9a11b4fcb04fee811680245477caa5a72a9b3d5531"
+        }
+      },
+      {
+        "id": "owner_packet_does_not_claim_complete_lattice",
+        "passed": true,
+        "evidence": false
+      },
+      {
+        "id": "audit_starts_from_recorded_phase_c_gate",
+        "passed": true,
+        "evidence": "AUDIT_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION"
+      }
+    ],
+    "passed": true
+  },
+  "campaigns": [
+    {
+      "id": "955_csg_third_order_fail_closed",
+      "profile": "955_strong_GC_reachable_state_MSR_local_CSG_audit",
+      "kind": "versioned_budget_fail_closed_audit",
+      "budget_binding": {
+        "path": "config/v0.4.2_955_slack_csg_third_order_budget.json",
+        "kind": "budget_input",
+        "raw_sha256": "f773d60cda0d70a2ab38832bc31233021d713a585643db78016c84286748a552",
+        "canonical_lf_sha256": "f773d60cda0d70a2ab38832bc31233021d713a585643db78016c84286748a552",
+        "size_bytes": 1059,
+        "strict_utf8_lf": true,
+        "semantic_digest_verified": false,
+        "digest_policy": "raw_sha256_only_budget_input",
+        "schema_version": "final-theory-v042-955-slack-csg-third-order-budget-v1",
+        "verdict_or_status": null
+      },
+      "preflight_binding": {
+        "path": "results/v0.4.2_955_slack_csg_third_order_preflight.json",
+        "kind": ".json",
+        "raw_sha256": "3abcb1f77c70eb2fcc448aec38ff6d5e8a0a878031752f6bbab1ed7d140a3dd7",
+        "canonical_lf_sha256": "3abcb1f77c70eb2fcc448aec38ff6d5e8a0a878031752f6bbab1ed7d140a3dd7",
+        "size_bytes": 26794,
+        "strict_utf8_lf": true,
+        "semantic_digest_sha256": "a7cac5ae64b3debdc8c98e5df18ba739b87b37fca91715f9c5236f14b56cf490",
+        "semantic_digest_verified": true,
+        "digest_policy": "semantic_and_raw_verified",
+        "schema_version": "final-theory-v042-955-slack-csg-third-order-preflight-v1",
+        "verdict_or_status": "V042_955_SLACK_CSG_THIRD_ORDER_FULL_JET_FIBER_PREFLIGHT_CERTIFIED"
+      },
+      "audit_binding": {
+        "path": "results/v0.4.2_955_slack_csg_third_order.json",
+        "kind": ".json",
+        "raw_sha256": "b012c1d05df20f1cc7a49827fb9e3a01a5a7c7d4f30c1e8494fe904e68df7ff4",
+        "canonical_lf_sha256": "b012c1d05df20f1cc7a49827fb9e3a01a5a7c7d4f30c1e8494fe904e68df7ff4",
+        "size_bytes": 31345,
+        "strict_utf8_lf": true,
+        "semantic_digest_sha256": "53d7818f4bff6e5d3c556cdb137644feeae73a4bde50f74d5cb84feb8db16bfa",
+        "semantic_digest_verified": true,
+        "digest_policy": "semantic_and_raw_verified",
+        "schema_version": "final-theory-v042-955-slack-csg-third-order-v1",
+        "verdict_or_status": "V042_955_SLACK_CSG_THIRD_ORDER_ALL_SECOND_ORDER_JETS_LIFT_Q_ESCAPE_BLOCKED_CERTIFIED"
+      },
+      "report_binding": {
+        "path": "reports/v0.4.2_955_slack_csg_third_order_preflight.md",
+        "kind": ".md",
+        "raw_sha256": "8e05d0d5e5e4d82e341e8656fc9de31f697a34bf5d8e3c7443d754373cae1c5b",
+        "canonical_lf_sha256": "8e05d0d5e5e4d82e341e8656fc9de31f697a34bf5d8e3c7443d754373cae1c5b",
+        "size_bytes": 6295,
+        "strict_utf8_lf": true
+      },
+      "budget_embedded_matches": true,
+      "production_solver_authorised": false,
+      "production_solver_run": false,
+      "checks": [
+        {
+          "id": "budget_file_equals_embedded_versioned_budget",
+          "passed": true,
+          "evidence": "955_csg_third_order_fail_closed"
+        },
+        {
+          "id": "budget_campaign_name_matches_expected_campaign",
+          "passed": true,
+          "evidence": "955_CSG_FULL_SECOND_ORDER_JET_FIBER_THIRD_ORDER"
+        },
+        {
+          "id": "budget_requires_preflight_before_authorised_audit",
+          "passed": true,
+          "evidence": "AUTHORISE_ONLY_IF_PREFLIGHT_BASIS_ESTIMATE_AND_STREAM_LIMITS_FIT;_ABORT_FAIL_CLOSED_IF_ANY_AUDIT_CAP_IS_REACHED"
+        },
+        {
+          "id": "generic_solver_is_not_authorised_by_budget",
+          "passed": true,
+          "evidence": [
+            "GENERIC_GROEBNER_OR_SATURATION",
+            "FINITE_FIELD_CAMPAIGN",
+            "NUMERICAL_SOLVE",
+            "SAGE_SOLVE",
+            "DENSE_23226_COLUMN_MATRIX_MATERIALISATION"
+          ]
+        },
+        {
+          "id": "preflight_does_not_authorise_generic_solver",
+          "passed": true,
+          "evidence": {
+            "versioned_budget": {
+              "schema_version": "final-theory-v042-955-slack-csg-third-order-budget-v1",
+              "campaign": "955_CSG_FULL_SECOND_ORDER_JET_FIBER_THIRD_ORDER",
+              "field": "QQ",
+              "hard_memory_limit_bytes": 8589934592,
+              "soft_memory_limit_bytes": 4294967296,
+              "preflight_timeout_seconds": 600,
+              "audit_timeout_seconds": 3600,
+              "conservative_python_bytes_per_sparse_term": 512,
+              "fixed_runtime_reserve_bytes": 536870912,
+              "compatibility_basis_term_limit": 10000000,
+              "single_weighted_form_term_limit": 23226,
+              "total_add_scaled_source_term_visits_limit": 200000000,
+              "execution_rule": "AUTHORISE_ONLY_IF_PREFLIGHT_BASIS_ESTIMATE_AND_STREAM_LIMITS_FIT;_ABORT_FAIL_CLOSED_IF_ANY_AUDIT_CAP_IS_REACHED",
+              "authorised_operations": [
+                "EXACT_SPARSE_QQ_WEIGHTED_JET_EXPANSION",
+                "EXACT_SPARSE_QQ_SIMULTANEOUS_ROW_ELIMINATION",
+                "STREAMED_COMPATIBILITY_AND_Q_REMAINDER_CENSUS"
+              ],
+              "not_authorised": [
+                "GENERIC_GROEBNER_OR_SATURATION",
+                "FINITE_FIELD_CAMPAIGN",
+                "NUMERICAL_SOLVE",
+                "SAGE_SOLVE",
+                "DENSE_23226_COLUMN_MATRIX_MATERIALISATION"
+              ]
+            },
+            "basis_estimate_below_soft_memory_limit": true,
+            "bounded_audit_conservative_peak_estimate_bytes": 5673132544,
+            "bounded_audit_estimate_below_hard_memory_limit": true,
+            "unbounded_dense_compatibility_basis_worst_case_terms": 92555610,
+            "unbounded_dense_compatibility_basis_worst_case_bytes": 47925343232,
+            "unbounded_dense_strategy_rejected": true,
+            "fail_closed_streamed_third_order_audit_authorised": true,
+            "generic_solver_authorised": false,
+            "next_gate": "RUN_FAIL_CLOSED_STREAMED_THIRD_ORDER_CORE_COMPATIBILITY_AND_Q_ESCAPE_AUDIT"
+          }
+        },
+        {
+          "id": "preflight_did_not_run_generic_solver",
+          "passed": true,
+          "evidence": {
+            "exact_sparse_QQ_weighted_jet_preflight_runs": 1,
+            "independent_Jacobian_basis_third_jet_forms_retained": 427,
+            "dependent_core_compatibility_reductions": 0,
+            "Q_intrinsic_third_order_reductions": 0,
+            "Groebner_or_saturation_runs": 0,
+            "finite_field_runs": 0,
+            "numerical_runs": 0,
+            "Sage_runs": 0,
+            "generic_solver_run": false,
+            "ambient_full_third_tensor_materialised": false,
+            "dense_23226_column_matrix_materialised": false
+          }
+        },
+        {
+          "id": "authorised_fail_closed_audit_did_not_run_generic_solver",
+          "passed": true,
+          "evidence": {
+            "exact_sparse_QQ_third_order_compatibility_audit_runs": 1,
+            "dependent_core_compatibility_reductions": 3985,
+            "Q_intrinsic_third_order_reductions": 24,
+            "Groebner_or_saturation_runs": 0,
+            "finite_field_runs": 0,
+            "numerical_runs": 0,
+            "Sage_runs": 0,
+            "generic_solver_run": false
+          }
+        },
+        {
+          "id": "authorised_fail_closed_audit_has_zero_groebner_or_saturation_runs",
+          "passed": true,
+          "evidence": {
+            "exact_sparse_QQ_third_order_compatibility_audit_runs": 1,
+            "dependent_core_compatibility_reductions": 3985,
+            "Q_intrinsic_third_order_reductions": 24,
+            "Groebner_or_saturation_runs": 0,
+            "finite_field_runs": 0,
+            "numerical_runs": 0,
+            "Sage_runs": 0,
+            "generic_solver_run": false
+          }
+        },
+        {
+          "id": "campaign_is_labelled_as_preflight",
+          "passed": true,
+          "evidence": "V042_955_SLACK_CSG_THIRD_ORDER_FULL_JET_FIBER_PREFLIGHT_CERTIFIED"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "955_csg_fourth_order_fail_closed",
+      "profile": "955_strong_GC_reachable_state_MSR_local_CSG_audit",
+      "kind": "versioned_budget_fail_closed_audit",
+      "budget_binding": {
+        "path": "config/v0.4.2_955_slack_csg_fourth_order_budget.json",
+        "kind": "budget_input",
+        "raw_sha256": "2be830c1f6c318d4d6848e8d9c275ef1e1272e50edb7514d776fe68321b2b164",
+        "canonical_lf_sha256": "2be830c1f6c318d4d6848e8d9c275ef1e1272e50edb7514d776fe68321b2b164",
+        "size_bytes": 1149,
+        "strict_utf8_lf": true,
+        "semantic_digest_verified": false,
+        "digest_policy": "raw_sha256_only_budget_input",
+        "schema_version": "final-theory-v042-955-slack-csg-fourth-order-budget-v1",
+        "verdict_or_status": null
+      },
+      "preflight_binding": {
+        "path": "results/v0.4.2_955_slack_csg_fourth_order_preflight.json",
+        "kind": ".json",
+        "raw_sha256": "d70f8517f14ddd1ab2dc7b902e55ca7a23ad2523a1113eec3fb941a563dcc0d2",
+        "canonical_lf_sha256": "d70f8517f14ddd1ab2dc7b902e55ca7a23ad2523a1113eec3fb941a563dcc0d2",
+        "size_bytes": 29232,
+        "strict_utf8_lf": true,
+        "semantic_digest_sha256": "688641d2e301d154542ab0296aaff4a1f1d5c5abc32c67f594a679baffd4e6b7",
+        "semantic_digest_verified": true,
+        "digest_policy": "semantic_and_raw_verified",
+        "schema_version": "final-theory-v042-955-slack-csg-fourth-order-preflight-v1",
+        "verdict_or_status": "V042_955_SLACK_CSG_FOURTH_ORDER_FULL_JET_FIBER_PREFLIGHT_CERTIFIED"
+      },
+      "audit_binding": {
+        "path": "results/v0.4.2_955_slack_csg_fourth_order.json",
+        "kind": ".json",
+        "raw_sha256": "041e792947750ed03b38f8172eaebcdb57ea2fbacbb8525debae70a6ae9571d5",
+        "canonical_lf_sha256": "041e792947750ed03b38f8172eaebcdb57ea2fbacbb8525debae70a6ae9571d5",
+        "size_bytes": 34017,
+        "strict_utf8_lf": true,
+        "semantic_digest_sha256": "f59d46a8d52210fe6b63757b8af10484654fbe8ef1483182dcd14c6fcfe817e4",
+        "semantic_digest_verified": true,
+        "digest_policy": "semantic_and_raw_verified",
+        "schema_version": "final-theory-v042-955-slack-csg-fourth-order-v1",
+        "verdict_or_status": "V042_955_SLACK_CSG_FOURTH_ORDER_ALL_THIRD_ORDER_JETS_LIFT_Q_ESCAPE_BLOCKED_CERTIFIED"
+      },
+      "report_binding": {
+        "path": "reports/v0.4.2_955_slack_csg_fourth_order_preflight.md",
+        "kind": ".md",
+        "raw_sha256": "2b2d280b208bb329a63bbd6cd5247ad21e393e239a3ca91a5b249ea4e6fa33f5",
+        "canonical_lf_sha256": "2b2d280b208bb329a63bbd6cd5247ad21e393e239a3ca91a5b249ea4e6fa33f5",
+        "size_bytes": 5312,
+        "strict_utf8_lf": true
+      },
+      "budget_embedded_matches": true,
+      "production_solver_authorised": false,
+      "production_solver_run": false,
+      "checks": [
+        {
+          "id": "budget_file_equals_embedded_versioned_budget",
+          "passed": true,
+          "evidence": "955_csg_fourth_order_fail_closed"
+        },
+        {
+          "id": "budget_campaign_name_matches_expected_campaign",
+          "passed": true,
+          "evidence": "955_CSG_FULL_THIRD_ORDER_JET_FIBER_FOURTH_ORDER"
+        },
+        {
+          "id": "budget_requires_preflight_before_authorised_audit",
+          "passed": true,
+          "evidence": "AUTHORISE_ONLY_IF_PREFLIGHT_BASIS_ESTIMATE_AND_STREAM_LIMITS_FIT;_ABORT_FAIL_CLOSED_IF_ANY_AUDIT_CAP_IS_REACHED"
+        },
+        {
+          "id": "generic_solver_is_not_authorised_by_budget",
+          "passed": true,
+          "evidence": [
+            "GENERIC_GROEBNER_OR_SATURATION",
+            "FINITE_FIELD_CAMPAIGN",
+            "NUMERICAL_SOLVE",
+            "SAGE_SOLVE",
+            "DENSE_334376_COLUMN_MATRIX_MATERIALISATION"
+          ]
+        },
+        {
+          "id": "preflight_does_not_authorise_generic_solver",
+          "passed": true,
+          "evidence": {
+            "versioned_budget": {
+              "schema_version": "final-theory-v042-955-slack-csg-fourth-order-budget-v1",
+              "campaign": "955_CSG_FULL_THIRD_ORDER_JET_FIBER_FOURTH_ORDER",
+              "field": "QQ",
+              "hard_memory_limit_bytes": 8589934592,
+              "soft_memory_limit_bytes": 4294967296,
+              "preflight_timeout_seconds": 1200,
+              "audit_timeout_seconds": 7200,
+              "conservative_python_bytes_per_sparse_term": 512,
+              "fixed_runtime_reserve_bytes": 536870912,
+              "independent_basis_term_limit": 5000000,
+              "compatibility_basis_term_limit": 10000000,
+              "single_weighted_form_term_limit": 334376,
+              "raw_stream_total_term_limit": 50000000,
+              "total_add_scaled_source_term_visits_limit": 200000000,
+              "execution_rule": "AUTHORISE_ONLY_IF_PREFLIGHT_BASIS_ESTIMATE_AND_STREAM_LIMITS_FIT;_ABORT_FAIL_CLOSED_IF_ANY_AUDIT_CAP_IS_REACHED",
+              "authorised_operations": [
+                "EXACT_SPARSE_QQ_WEIGHTED_JET_EXPANSION",
+                "EXACT_SPARSE_QQ_SIMULTANEOUS_ROW_ELIMINATION",
+                "STREAMED_COMPATIBILITY_AND_Q_REMAINDER_CENSUS"
+              ],
+              "not_authorised": [
+                "GENERIC_GROEBNER_OR_SATURATION",
+                "FINITE_FIELD_CAMPAIGN",
+                "NUMERICAL_SOLVE",
+                "SAGE_SOLVE",
+                "DENSE_334376_COLUMN_MATRIX_MATERIALISATION"
+              ]
+            },
+            "basis_estimate_below_soft_memory_limit": true,
+            "bounded_audit_conservative_peak_estimate_bytes": 5726193664,
+            "bounded_audit_estimate_below_hard_memory_limit": true,
+            "unbounded_dense_compatibility_basis_worst_case_terms": 1332488360,
+            "unbounded_dense_compatibility_basis_worst_case_bytes": 682770911232,
+            "unbounded_dense_strategy_rejected": true,
+            "fail_closed_streamed_fourth_order_audit_authorised": true,
+            "generic_solver_authorised": false,
+            "next_gate": "RUN_FAIL_CLOSED_STREAMED_FOURTH_ORDER_CORE_COMPATIBILITY_AND_Q_ESCAPE_AUDIT"
+          }
+        },
+        {
+          "id": "preflight_did_not_run_generic_solver",
+          "passed": true,
+          "evidence": {
+            "exact_sparse_QQ_weighted_jet_preflight_runs": 1,
+            "independent_Jacobian_basis_fourth_jet_forms_retained": 427,
+            "dependent_core_compatibility_reductions": 0,
+            "Q_intrinsic_fourth_order_reductions": 0,
+            "Groebner_or_saturation_runs": 0,
+            "finite_field_runs": 0,
+            "numerical_runs": 0,
+            "Sage_runs": 0,
+            "generic_solver_run": false,
+            "ambient_full_fourth_tensor_materialised": false,
+            "dense_334376_column_matrix_materialised": false
+          }
+        },
+        {
+          "id": "authorised_fail_closed_audit_did_not_run_generic_solver",
+          "passed": true,
+          "evidence": {
+            "exact_sparse_QQ_fourth_order_compatibility_audit_runs": 1,
+            "dependent_core_compatibility_reductions": 3985,
+            "Q_intrinsic_fourth_order_reductions": 24,
+            "Groebner_or_saturation_runs": 0,
+            "finite_field_runs": 0,
+            "numerical_runs": 0,
+            "Sage_runs": 0,
+            "generic_solver_run": false
+          }
+        },
+        {
+          "id": "authorised_fail_closed_audit_has_zero_groebner_or_saturation_runs",
+          "passed": true,
+          "evidence": {
+            "exact_sparse_QQ_fourth_order_compatibility_audit_runs": 1,
+            "dependent_core_compatibility_reductions": 3985,
+            "Q_intrinsic_fourth_order_reductions": 24,
+            "Groebner_or_saturation_runs": 0,
+            "finite_field_runs": 0,
+            "numerical_runs": 0,
+            "Sage_runs": 0,
+            "generic_solver_run": false
+          }
+        },
+        {
+          "id": "campaign_is_labelled_as_preflight",
+          "passed": true,
+          "evidence": "V042_955_SLACK_CSG_FOURTH_ORDER_FULL_JET_FIBER_PREFLIGHT_CERTIFIED"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "721_corrected_complete_unit_groebner_preflight",
+      "profile": "721_fixed_vector_GC_strong_MSR",
+      "kind": "bounded_probe_without_production_budget",
+      "file_bindings": [
+        {
+          "path": "reports/v0.4.2_721_groebner_preflight.md",
+          "kind": ".md",
+          "raw_sha256": "63b83ccf0bae921aebea375168ec278ce63a7bf4e6b97842aac2380621f16333",
+          "canonical_lf_sha256": "63b83ccf0bae921aebea375168ec278ce63a7bf4e6b97842aac2380621f16333",
+          "size_bytes": 3341,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "scripts/run_v042_721_groebner_preflight.py",
+          "kind": ".py",
+          "raw_sha256": "fe301c5c17b6304ae9b21eee03600749173f531998506e96415ba649f1429cb6",
+          "canonical_lf_sha256": "fe301c5c17b6304ae9b21eee03600749173f531998506e96415ba649f1429cb6",
+          "size_bytes": 3264,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "scripts/probe_v042_721_groebner_preflight_worker.py",
+          "kind": ".py",
+          "raw_sha256": "344afea85e78a283ffc663c3614326d1085b1975b0d94c7eb009fee57e8f6550",
+          "canonical_lf_sha256": "344afea85e78a283ffc663c3614326d1085b1975b0d94c7eb009fee57e8f6550",
+          "size_bytes": 6488,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "tests/final_theory/test_v042_721_groebner_preflight.py",
+          "kind": ".py",
+          "raw_sha256": "76fae2f1ed8307fc0fc1f9594c45b94fdd24ff5227f255e30f3517ddcf7c55ea",
+          "canonical_lf_sha256": "76fae2f1ed8307fc0fc1f9594c45b94fdd24ff5227f255e30f3517ddcf7c55ea",
+          "size_bytes": 1103,
+          "strict_utf8_lf": true
+        }
+      ],
+      "versioned_budget_required": false,
+      "production_solver_authorised": false,
+      "production_solver_run": false,
+      "bounded_limits": {
+        "solver_timeout_seconds": 90,
+        "cache_build_timeout_seconds": 180
+      },
+      "checks": [
+        {
+          "id": "721_report_declares_preflight_only_and_no_profile_solver",
+          "passed": true,
+          "evidence": "reports/v0.4.2_721_groebner_preflight.md"
+        },
+        {
+          "id": "721_driver_declares_not_a_production_gate",
+          "passed": true,
+          "evidence": "scripts/run_v042_721_groebner_preflight.py"
+        },
+        {
+          "id": "721_driver_has_bounded_timeouts",
+          "passed": true,
+          "evidence": {
+            "solver_timeout_seconds": 90,
+            "cache_build_timeout_seconds": 180
+          }
+        },
+        {
+          "id": "721_driver_applies_both_hard_timeouts",
+          "passed": true,
+          "evidence": "subprocess.run timeout arguments"
+        },
+        {
+          "id": "721_worker_contains_measured_groebner_call",
+          "passed": true,
+          "evidence": "scripts/probe_v042_721_groebner_preflight_worker.py"
+        },
+        {
+          "id": "721_report_separates_probe_from_full_profile",
+          "passed": true,
+          "evidence": "bounded probe interpretation"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "sr2v_d12_historical_cancelled_budget",
+      "profile": "SR2V_state_native_shear_D12_historical_preflight",
+      "kind": "versioned_budget_historical_cancelled",
+      "budget_binding": {
+        "path": "config/v0.4.2_sr2v_state_native_shear_D12_budget.json",
+        "kind": "budget_input",
+        "raw_sha256": "f192a37b97e70c84aeae594db75832bdcf632bf00a78009ff45f09b1bcca2e50",
+        "canonical_lf_sha256": "f192a37b97e70c84aeae594db75832bdcf632bf00a78009ff45f09b1bcca2e50",
+        "size_bytes": 101,
+        "strict_utf8_lf": true,
+        "semantic_digest_verified": false,
+        "digest_policy": "raw_sha256_only_budget_input",
+        "schema_version": null,
+        "verdict_or_status": null
+      },
+      "preflight_binding": {
+        "path": "results/v0.4.2_sr2v_state_native_shear_D12_preflight.json",
+        "kind": ".json",
+        "raw_sha256": "8baf1358cc5b9ba64178a072580535a4973569f6f99d5f2462ec98e015fc5788",
+        "canonical_lf_sha256": "8baf1358cc5b9ba64178a072580535a4973569f6f99d5f2462ec98e015fc5788",
+        "size_bytes": 6893,
+        "strict_utf8_lf": true,
+        "semantic_digest_sha256": "58b77ba00838a1051364c2c7feebbbe99bf3104b957c15d4e356fe2fdd8aa524",
+        "semantic_digest_verified": true,
+        "digest_policy": "semantic_and_raw_verified",
+        "schema_version": "final-theory-v042-sr2v-state-native-shear-D12-Q5-budget-preflight-v1",
+        "verdict_or_status": "SR2V_STATE_NATIVE_SHEAR_D12_PREFLIGHT_SUPERSEDED_EXECUTION_CANCELLED"
+      },
+      "manifest_binding": {
+        "path": "results/v0.4.2_sr2v_state_native_shear_D12_manifest.json",
+        "kind": ".json",
+        "raw_sha256": "125d21520df39578e102300c5e0d15509631e1c579506c361fdd58f216312d82",
+        "canonical_lf_sha256": "125d21520df39578e102300c5e0d15509631e1c579506c361fdd58f216312d82",
+        "size_bytes": 11563975,
+        "strict_utf8_lf": true,
+        "semantic_digest_sha256": "82cd51ddd29e5923b003c8cf8f75a5a26cf5a36edf68728ad58d298d3f573090",
+        "semantic_digest_verified": true,
+        "digest_policy": "semantic_and_raw_verified",
+        "schema_version": "final-theory-v042-sr2v-state-native-shear-D12-manifest-v1",
+        "verdict_or_status": "SR2V_STATE_NATIVE_SHEAR_D12_MANIFEST_CERTIFIED_NO_SOLVER_RUN"
+      },
+      "report_binding": {
+        "path": "reports/v0.4.2_sr2v_state_native_shear_D12_preflight.md",
+        "kind": ".md",
+        "raw_sha256": "0a941673c8106f5af196b254628f5ddde79714f79d7aef7a3551d88e94ddd4f9",
+        "canonical_lf_sha256": "0a941673c8106f5af196b254628f5ddde79714f79d7aef7a3551d88e94ddd4f9",
+        "size_bytes": 3977,
+        "strict_utf8_lf": true
+      },
+      "superseding_result_binding": {
+        "path": "results/v0.4.2_sr2v_fixed_harmonic_cpobc_obstruction.json",
+        "kind": ".json",
+        "raw_sha256": "25abf593a2f8cae1ca75d5d164bc60b1c79327111544c04278621e6b0ed37183",
+        "canonical_lf_sha256": "25abf593a2f8cae1ca75d5d164bc60b1c79327111544c04278621e6b0ed37183",
+        "size_bytes": 78463,
+        "strict_utf8_lf": true,
+        "semantic_digest_sha256": "d5514f31bf6caef5ca102ef8ce78f0bcf137e72922c0f230c716386f22cffc7d",
+        "semantic_digest_verified": true,
+        "digest_policy": "semantic_and_raw_verified",
+        "schema_version": "final-theory-v042-sr2v-fixed-harmonic-full-affine-cpobc-unit-ideal-v1",
+        "verdict_or_status": "SR2V_FIXED_HARMONIC_FULL_ALPHA_BETA_CPOBC_UNIT_IDEAL_OBSTRUCTION_CERTIFIED_NO_SOLVER_RUN"
+      },
+      "versioned_budget_required": true,
+      "production_solver_authorised": false,
+      "production_solver_run": false,
+      "execution_cancelled": true,
+      "checks": [
+        {
+          "id": "D12_campaign_budget_path_is_explicit",
+          "passed": true,
+          "evidence": "config/v0.4.2_sr2v_state_native_shear_D12_budget.json"
+        },
+        {
+          "id": "D12_campaign_budget_raw_hash_matches_bound_file",
+          "passed": true,
+          "evidence": "f192a37b97e70c84aeae594db75832bdcf632bf00a78009ff45f09b1bcca2e50"
+        },
+        {
+          "id": "D12_campaign_budget_records_solver_not_executed",
+          "passed": true,
+          "evidence": {
+            "authorised_limits": {
+              "memory_limit_bytes": 8589934592,
+              "memory_limit_gib": 8,
+              "timeout_seconds_per_chart": 3600,
+              "total_wall_time_seconds": 43200
+            },
+            "fallback_budget_used": false,
+            "path": "config/v0.4.2_sr2v_state_native_shear_D12_budget.json",
+            "provenance": "CAMPAIGN_SPECIFIC_VERSIONED_OWNER_APPROVED_FILE; NO_RUNTIME_DEFAULT_OR_FALLBACK",
+            "raw_sha256": "f192a37b97e70c84aeae594db75832bdcf632bf00a78009ff45f09b1bcca2e50",
+            "solver_executed": false
+          }
+        },
+        {
+          "id": "D12_embedded_budget_limits_match_versioned_file",
+          "passed": true,
+          "evidence": {
+            "memory_limit_bytes": 8589934592,
+            "memory_limit_gib": 8,
+            "timeout_seconds_per_chart": 3600,
+            "total_wall_time_seconds": 43200
+          }
+        },
+        {
+          "id": "D12_execution_is_cancelled_and_solver_free",
+          "passed": true,
+          "evidence": {
+            "execution_authorised": false,
+            "execution_cancellation": "EXECUTION_CANCELLED_BY_LATER_UNIT_IDEAL",
+            "execution_triggered_by_this_artifact": false,
+            "finite_field_status": "NOT_RUN",
+            "future_numerical_or_finite_field_output_role": "NOT_APPLICABLE_CAMPAIGN_CANCELLED",
+            "future_resource_limit_rule": "NOT_APPLICABLE_CAMPAIGN_CANCELLED",
+            "groebner_status": "NOT_RUN",
+            "preflight_status": "HISTORICAL_PROVENANCE_CERTIFIED_SUPERSEDED",
+            "relation_variety_intersection": "EMPTY_ON_FIXED_HARMONIC_SLICE_BY_RAW_CPOBC_UNIT_IDEAL",
+            "sage_status": "NOT_INVOKED",
+            "solver_status": "NOT_RUN",
+            "witness": null
+          }
+        },
+        {
+          "id": "D12_has_no_budget_fallback_or_solver_execution",
+          "passed": true,
+          "evidence": {
+            "Q5_determinant_agrees_with_bound_manifest": true,
+            "Q5_determinant_digest_agrees_with_bound_manifest": true,
+            "Q5_determinant_is_nonzero_polynomial": true,
+            "Q5_determinant_reconstructed_exactly": true,
+            "Q5_has_four_distinct_generic_coordinates": true,
+            "Q5_localization_has_exact_identity_point": true,
+            "campaign_budget_equals_owner_approved_limits": true,
+            "campaign_specific_budget_raw_SHA256_is_bound": true,
+            "combined_D12_Q5_ambient_open_is_nonempty": true,
+            "combined_ambient_point_is_not_promoted_to_relation_solution": true,
+            "frozen_D12_manifest_raw_SHA256_is_bound": true,
+            "frozen_D12_manifest_remains_solver_free": true,
+            "frozen_D12_manifest_semantic_digest_is_bound": true,
+            "historical_execution_is_fail_closed_cancelled": true,
+            "historical_manifest_was_unresolved_at_preflight_time": true,
+            "later_fixed_state_unit_ideal_certificate_is_bound": true,
+            "no_budget_fallback_or_solver_execution": true
+          }
+        },
+        {
+          "id": "D12_manifest_raw_hash_matches_bound_file",
+          "passed": true,
+          "evidence": "125d21520df39578e102300c5e0d15509631e1c579506c361fdd58f216312d82"
+        },
+        {
+          "id": "D12_manifest_is_not_a_profile_terminal",
+          "passed": true,
+          "evidence": "NOT_A_SEARCH_TERMINAL_POLYNOMIAL_MANIFEST_ONLY"
+        },
+        {
+          "id": "D12_superseding_result_digest_is_bound",
+          "passed": true,
+          "evidence": "d5514f31bf6caef5ca102ef8ce78f0bcf137e72922c0f230c716386f22cffc7d"
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "separation_summary": {
+    "campaign_count": 4,
+    "versioned_budget_campaign_count": 3,
+    "bounded_probe_without_production_budget_count": 1,
+    "production_solver_authorised_count": 0,
+    "production_solver_run_count": 0,
+    "all_campaign_checks_passed": true,
+    "budget_files_raw_bound": true,
+    "no_default_budget_fallback_used": true
+  },
+  "reopen_boundary": {
+    "dedicated_cas_authorized": false,
+    "versioned_budget_required_for_reopen": true,
+    "owner_approval_required": true,
+    "current_721_full_profile_solver_run": false,
+    "current_955_full_profile_solver_run": false
+  },
+  "next_gate": "AUDIT_FROZEN_ARTIFACT_IMMUTABILITY_AND_REOPEN_AUTHORIZATION",
+  "passed": true,
+  "verdict": "PHASE_C_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION_CERTIFIED",
+  "semantic_digest_sha256": "c3f26f4f620f77ae79ab63ce2d01a7d5dae51ceeaeac3aad1da48b82d68f327d"
+}
