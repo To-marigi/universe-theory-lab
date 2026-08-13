@@ -1,0 +1,84 @@
+{
+  "schema_version": "final-theory-v042-721-gc-tier-04-resaturated-v1",
+  "profile": "fixed_vector_GC__strong_MSR",
+  "scope": {
+    "selected_endpoint_rule": "exactly 4 paths",
+    "selected_endpoint_count": 9,
+    "inverse_definition": "A^-1 = (1/det A) * adj(A) via one D_<token> per token",
+    "field": "QQ generic 2x2 matrix entries with commutative scalar monomials"
+  },
+  "selected_endpoints": [
+    "p4-0006",
+    "p4-0044",
+    "p4-0046",
+    "p5-000019e",
+    "p5-000211e",
+    "p5-000219e",
+    "p5-0084216",
+    "p5-0084294",
+    "p5-0084296"
+  ],
+  "source_artifact_sha256": {
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "compiler_source_sha256": "af4079a6c500a348741a2c0a94ab92cbdd6ce0c60473fb1a8b8c1a17ff96cbf5",
+  "input_native_ir_semantic_digest_sha256": "622df30fd3ebbc8b0399debb695f426afd318a85cef6e6abd33bd9aedca4b296",
+  "input_calibration_stage_sha256": "c57943de361daa3b0d754d6094b953899abccfc4f7f6c416342934e66a4f535e",
+  "input_inverse_saturation_sha256": "2c87dbd1a8bf8eaee1d587701937042088171253f1ac35bd32c9671658b7e51d",
+  "pairs": {
+    "count": 54,
+    "newly_zero_under_saturation_count": 0,
+    "still_nonzero_under_saturation_count": 39,
+    "total_saturated_scalar_term_count": 845074,
+    "maximum_saturated_scalar_term_count": 23446,
+    "maximum_saturated_monomial_degree": 18,
+    "total_saturated_scalar_term_distribution": {
+      "0": 15,
+      "144": 2,
+      "164": 3,
+      "208": 3,
+      "256": 1,
+      "740": 2,
+      "828": 2,
+      "5312": 3,
+      "7418": 2,
+      "8294": 1,
+      "10776": 2,
+      "10794": 1,
+      "18064": 1,
+      "20106": 3,
+      "23320": 1,
+      "25012": 2,
+      "28506": 2,
+      "48616": 2,
+      "51664": 2,
+      "86242": 2,
+      "93542": 2
+    },
+    "record_digest_sha256": "3b455448f87c74d72bfeb0373a224ab99496d0177f533b0aea2b9091c6b1afba"
+  },
+  "global_gc_boundary": {
+    "all_inventory_path_count": 407,
+    "all_inventory_pair_count": 1529,
+    "resaturated_here": 54
+  },
+  "solver_status": {
+    "generic_2x2_scalar_expansion": true,
+    "inverse_saturation_runs": 8,
+    "Groebner_or_saturation_runs": 0,
+    "commutativity_decided": false
+  },
+  "claim_boundary": [
+    "Only the endpoint blocks with exactly 4 paths are resaturated here.",
+    "No previously-zero pair became nonzero under substitution (checked, fails closed otherwise).",
+    "No full 721 commutativity theorem, witness, or obstruction is issued."
+  ],
+  "unrestricted_721_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_721_GC_TIER_04_RESATURATED_NO_NEWLY_ZERO_PAIR_OPEN",
+  "semantic_digest_sha256": "dbd04ad58714229cac63d1f7e47f6770c0778f39f1b6b6864655cacf76859ce2"
+}
