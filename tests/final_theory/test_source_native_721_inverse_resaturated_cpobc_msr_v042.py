@@ -37,8 +37,14 @@ def test_cpobc_and_msr_resaturate_with_no_newly_zero_residual() -> None:
 
 
 def test_msr_terms_are_unaffected_by_saturation() -> None:
-    """No MSR constraint's word contains an inverse token, so its saturated
-    scalar-term statistics must equal the original unsaturated scalar gate's."""
+    """Regression pin for a coincidence, not a claim about inverse tokens.
+
+    21 of 24 MSR words DO contain an inverse token (verified by the
+    successor inverse-token incidence gate); this term-count equality holds
+    because the substitution is monomial-to-monomial (one variable becomes
+    one product of two variables), which preserves distinct-monomial counts
+    unless two monomials collide after substitution -- for MSR none did.
+    """
 
     result = json.loads((ROOT / RESULT_PATH).read_text(encoding="utf-8"))
     msr = result["strong_MSR"]["summary"]

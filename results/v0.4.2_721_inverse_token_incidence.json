@@ -1,0 +1,87 @@
+{
+  "schema_version": "final-theory-v042-721-inverse-token-incidence-v1",
+  "profile": "fixed_vector_GC__strong_MSR",
+  "scope": {
+    "question": "of the 1,967 previously scalar-nonzero residuals, how many even contain an inverse token, at the free-word level, before any scalar expansion",
+    "why_this_bounds_elimination": "a residual whose free-reduced word never mentions an inverse token cannot be affected by any manipulation of the 8 D_<token>*det(A)-1=0 relations, substitution or elimination alike -- there is nothing for those relations to act on",
+    "method": "free-word token scan; no scalar expansion performed"
+  },
+  "source_artifact_sha256": {
+    "results/v0.3.1_cpobc_relations_n4.json": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "compiler_source_sha256": "1d6cc532eb3a4fc57d46cd2e28e25d800bdd21def52a9d5a1f7990dae39c68ee",
+  "input_native_ir_semantic_digest_sha256": "622df30fd3ebbc8b0399debb695f426afd318a85cef6e6abd33bd9aedca4b296",
+  "CPOBC": {
+    "total_count": 783,
+    "nonzero_count": 700,
+    "nonzero_containing_inverse_token_count": 700,
+    "nonzero_without_inverse_token_count": 0,
+    "structurally_unreachable_by_any_inverse_elimination": []
+  },
+  "strong_MSR": {
+    "total_count": 24,
+    "nonzero_count": 21,
+    "nonzero_containing_inverse_token_count": 21,
+    "nonzero_without_inverse_token_count": 0,
+    "structurally_unreachable_by_any_inverse_elimination": []
+  },
+  "fixed_vector_GC": {
+    "total_count": 1529,
+    "nonzero_count": 1246,
+    "nonzero_containing_inverse_token_count": 1240,
+    "nonzero_without_inverse_token_count": 6,
+    "structurally_unreachable_by_any_inverse_elimination": [
+      {
+        "first_id": "p3-002",
+        "second_id": "lgc-path-73192a6770fa82828f12|lgc-path-fc1eafd06aa0360d6535",
+        "word_sha256": "2bf8a18348d1ee3394f370d688a0be6c5fb7ad4b620cd201fef7570f57facb61"
+      },
+      {
+        "first_id": "p3-002",
+        "second_id": "lgc-path-ea7b195db90fbd5d9de7|lgc-path-fc1eafd06aa0360d6535",
+        "word_sha256": "2bf8a18348d1ee3394f370d688a0be6c5fb7ad4b620cd201fef7570f57facb61"
+      },
+      {
+        "first_id": "p4-0002",
+        "second_id": "lgc-path-330d646216a118c5937d|lgc-path-7a32187fb800fbb83069",
+        "word_sha256": "34707c5ae79a933cd30307515a0a4d255300a46e33794dbeed0e4d977180dd6f"
+      },
+      {
+        "first_id": "p4-0002",
+        "second_id": "lgc-path-7a32187fb800fbb83069|lgc-path-edf06924c77f06ebe7f3",
+        "word_sha256": "6a3f43947e6c9adf5b6d93f3a0278d89d68c084bc6de473d44da6b4fd1d0fae9"
+      },
+      {
+        "first_id": "p5-0000002",
+        "second_id": "lgc-path-08ee8912a7779c1882ed|lgc-path-e5932dcdafd52e319d8d",
+        "word_sha256": "e7c9b5f28bb7e5a17641479c050967b265f203d53e8a57c0c843d72e2dd82f28"
+      }
+    ]
+  },
+  "overall": {
+    "total_nonzero_residuals": 1967,
+    "containing_inverse_token": 1961,
+    "structurally_unreachable_by_inverse_elimination": 6,
+    "elimination_ceiling_fraction_of_total": "1961/1967"
+  },
+  "solver_status": {
+    "generic_2x2_scalar_expansion": false,
+    "inverse_saturation_runs": 8,
+    "Groebner_or_saturation_runs": 0,
+    "commutativity_decided": false
+  },
+  "claim_boundary": [
+    "This is a finite free-word count, not a scalar computation and not a search; it establishes a hard ceiling on what any inverse-relation elimination could possibly touch.",
+    "It does not itself decide whether an elimination over the reachable residuals would close them.",
+    "No full 721 commutativity theorem, witness, or obstruction is issued."
+  ],
+  "unrestricted_721_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_721_INVERSE_TOKEN_INCIDENCE_COUNTED_STRUCTURAL_ELIMINATION_CEILING_OPEN",
+  "semantic_digest_sha256": "c99a306c78566287fe214602d2514b4e0909098d3de1b520396e2dbd6ffa6ffc"
+}
