@@ -1,0 +1,63 @@
+{
+  "schema_version": "final-theory-v042-phase-c-state-reconciliation-v1",
+  "prepared": "2026-08-14",
+  "evidence_head": "4c615ba",
+  "status": "PHASE_C_PRESTART_STATE_RECONCILIATION_COMPLETE",
+  "scope": "CURRENT_RESEARCH_STATE_live_index_only",
+  "historical_artifacts_untouched": true,
+  "live_index_reconciled": true,
+  "corrections": [
+    {
+      "path": "affected_campaign.status",
+      "basis": "results/v0.4.2_phase_a_freeze_execution.json",
+      "corrected_to": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_ACTIVE_FINAL_THEORY_OPEN"
+    },
+    {
+      "path": "affected_campaign.next_gate_description",
+      "basis": "reports/v0.4.2_phase_a_freeze_execution.md",
+      "corrected_to": "955 freeze executed; Phase C active; reopening requires owner-approved tool/version and versioned budget"
+    },
+    {
+      "path": "affected_campaign.721_source_native_progress.955_freeze_decision_status",
+      "basis": "results/v0.4.2_phase_a_freeze_execution.json",
+      "corrected_to": "EXECUTED_OWNER_APPROVED_PHASE_A_FREEZE_2026-08-13_PHASE_C_ACTIVE"
+    },
+    {
+      "path": "affected_campaign.721_source_native_progress.inverse_saturation_summary",
+      "basis": "affected_campaign.721_source_native_progress.full_relation_reduction_summary",
+      "corrected_to": "defining_relation resaturation and successor reductions completed"
+    },
+    {
+      "path": "affected_campaign.721_source_native_progress.inverse_resaturated_cpobc_msr_summary",
+      "basis": "affected_campaign.721_source_native_progress.gc_tier_resaturated_summary",
+      "corrected_to": "CPOBC/MSR relation reduction completed and GC successor resaturation completed"
+    },
+    {
+      "path": "affected_campaign.721_source_native_progress.inverse_resaturated_cpobc_msr_summary.msr_terms_unaffected_because_no_inverse_tokens_appear_in_MSR_words",
+      "basis": "affected_campaign.721_source_native_progress.inverse_token_incidence_summary.correction_recorded",
+      "corrected_to": "term-count stability is a monomial-to-monomial substitution coincidence; inverse tokens are present"
+    },
+    {
+      "path": "affected_campaign.721_source_native_progress.next_step",
+      "basis": "results/v0.4.2_phase_a_freeze_execution.json",
+      "corrected_to": "Phase A frozen; Phase C active; reopening requires owner-approved dedicated CAS/toolchain and versioned budget"
+    }
+  ],
+  "preserved_boundaries": {
+    "global_verdict": "FINAL_THEORY_OPEN",
+    "complete_finite_on_semantics_lattice_claim_available": false,
+    "solver_run_permitted": false,
+    "full_721_solver_run": false,
+    "955_witness_claimed": false,
+    "955_obstruction_claimed": false,
+    "721_witness_claimed": false,
+    "721_obstruction_claimed": false
+  },
+  "phase_c": {
+    "status": "ACTIVE",
+    "next_gate": "BUILD_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX"
+  },
+  "passed": true,
+  "verdict": "PHASE_C_PRESTART_STATE_RECONCILIATION_COMPLETE",
+  "semantic_digest_sha256": "4d4ed4f1e810a3a6ab5568c024dcf2f68ab32c888d04abb4af948a6a683e260e"
+}
