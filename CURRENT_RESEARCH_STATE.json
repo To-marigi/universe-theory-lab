@@ -130,7 +130,7 @@
   },
   "affected_campaign": {
     "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_ACTIVE_FINAL_THEORY_OPEN",
-    "next_gate": "PHASE_C_METHOD_ARTIFACT_AND_CLAIM_BOUNDARY_INVENTORY",
+    "next_gate": "PHASE_C_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION_AUDIT",
     "phase_A_termination_packet": {
       "status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
       "report": "reports/v0.4.2_phase_a_termination_decision_packet.md",
@@ -156,7 +156,23 @@
       "status": "ACTIVE",
       "charter": "reports/v0.4.2_phase_c_methodology_charter.md",
       "artifact": "results/v0.4.2_phase_c_methodology_charter.json",
-      "next_gate": "BUILD_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX",
+      "next_gate": "AUDIT_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION",
+      "claim_boundary_ledger": {
+        "status": "PHASE_C_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX_CERTIFIED",
+        "report": "reports/v0.4.2_phase_c_claim_boundary_ledger.md",
+        "artifact": "results/v0.4.2_phase_c_claim_boundary_ledger.json",
+        "module": "src/universe_lab/final_theory/phase_c_claim_boundary_ledger_v042.py",
+        "test": "tests/final_theory/test_v042_phase_c_claim_boundary_ledger.py",
+        "prepared": "2026-08-14",
+        "evidence_head": "1211595",
+        "semantic_digest_sha256": "e45d3c7f2866ea3ea6d4590b880561cb514549747c50ea60fcdfc860fd29ddbf",
+        "artifact_groups": 12,
+        "frozen_file_bindings": 37,
+        "verified_machine_semantic_digests": 21,
+        "scientific_verdict_added": false,
+        "global_verdict": "FINAL_THEORY_OPEN",
+        "next_gate": "AUDIT_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION"
+      },
       "state_reconciliation": {
         "status": "PHASE_C_PRESTART_STATE_RECONCILIATION_COMPLETE",
         "report": "reports/v0.4.2_phase_c_state_reconciliation_2026-08-14.md",

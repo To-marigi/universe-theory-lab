@@ -1,0 +1,773 @@
+{
+  "schema_version": "final-theory-v042-phase-c-claim-boundary-ledger-v1",
+  "prepared": "2026-08-14",
+  "evidence_head": "1211595",
+  "status": "PHASE_C_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX_CERTIFIED",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "complete_finite_on_semantics_lattice_claim_available": false,
+  "authorities": {
+    "mission_snapshot": {
+      "path": "MISSION.md",
+      "kind": "human_report",
+      "raw_sha256": "d44d28431d1661f1f8e544db8ac78f5c5d7b7ad5d8ca529c35df3e82f04cf779",
+      "canonical_lf_sha256": "d44d28431d1661f1f8e544db8ac78f5c5d7b7ad5d8ca529c35df3e82f04cf779",
+      "size_bytes": 12123,
+      "strict_utf8_lf": true
+    },
+    "live_state": {
+      "path": "CURRENT_RESEARCH_STATE.json",
+      "binding": "mutable_live_authority_not_frozen",
+      "schema_version": "cpobc-current-research-state-v1",
+      "mutable_index_not_a_proof_certificate": true,
+      "global_verdict": "FINAL_THEORY_OPEN"
+    }
+  },
+  "verdict_grammar": {
+    "OPEN_RESOURCE_LIMIT": {
+      "means": "the declared route stopped at a recorded resource or finite-theorem-path boundary",
+      "does_not_mean": [
+        "witness certified",
+        "obstruction proved",
+        "empty solution set",
+        "commutativity proved",
+        "solver impossibility proved"
+      ]
+    },
+    "PREFLIGHT": {
+      "means": "a bounded feasibility or structure measurement",
+      "does_not_mean": [
+        "authorized production solver campaign",
+        "full-profile result"
+      ]
+    },
+    "CERTIFIED": {
+      "means": "machine-checked only within the artifact's explicit scope and claim boundary",
+      "does_not_mean": [
+        "automatic promotion to a broader profile"
+      ]
+    }
+  },
+  "correction_records": [
+    {
+      "id": "721_inverse_token_presence_correction",
+      "authority_group": "721_inverse_token_incidence",
+      "incorrect_claim": "strong-MSR words contain no inverse tokens",
+      "corrected_claim": "21 of 24 strong-MSR residuals contain inverse tokens; unchanged term counts arise from monomial-to-monomial substitution"
+    },
+    {
+      "id": "721_groebner_residual_unit_correction",
+      "authority_group": "721_corrected_groebner_preflight",
+      "superseded_commit": "e989dff",
+      "correcting_commit": "077c721",
+      "incorrect_claim": "individual scalar entries were reported as complete residual counts",
+      "corrected_claim": "the corrected preflight passes every nonzero scalar entry of each complete 2-by-2 residual unit together"
+    }
+  ],
+  "coverage_controls": {
+    "required_path_sets": {
+      "charter_frozen_inputs": [
+        "reports/v0.4.2_955_block_determinant.md",
+        "reports/v0.4.2_phase_a_freeze_execution.md",
+        "reports/v0.4.2_phase_a_termination_decision_packet.md",
+        "results/v0.4.2_phase_a_termination_decision_packet.json"
+      ],
+      "decision_packet_evidence": [
+        "reports/v0.4.2_721_gc_tier_relation_reduced.md",
+        "reports/v0.4.2_721_groebner_preflight.md",
+        "reports/v0.4.2_721_inverse_relation_reduction_cpobc_msr.md",
+        "reports/v0.4.2_955_block_determinant.md",
+        "reports/v0.4.2_955_localized_row_module_preflight.md",
+        "reports/v0.4.2_955_minor_cover_preflight.md",
+        "reports/v0.4.2_955_unit_pivot_matching.md"
+      ],
+      "freeze_record_evidence": [
+        "reports/v0.4.2_955_block_determinant.md",
+        "reports/v0.4.2_phase_a_termination_decision_packet.md",
+        "results/v0.4.2_955_block_determinant.json",
+        "results/v0.4.2_phase_a_termination_decision_packet.json"
+      ]
+    },
+    "missing_required_paths": {
+      "charter_frozen_inputs": [],
+      "decision_packet_evidence": [],
+      "freeze_record_evidence": []
+    },
+    "all_charter_frozen_inputs_indexed": true,
+    "all_decision_packet_evidence_indexed": true,
+    "all_freeze_record_evidence_indexed": true,
+    "all_predecessor_group_ids_valid": true
+  },
+  "artifact_groups": [
+    {
+      "id": "phase_a_termination_decision_packet",
+      "scope": "phase_a_cross_profile",
+      "classification": "owner_decision_aid",
+      "terminality": "predecessor_owner_decision_pending",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "The packet aggregates the bounded 955 and 721 evidence available at evidence head 077c721."
+        ],
+        "unresolved_gaps": [
+          "Neither full profile was resolved by this predecessor packet."
+        ]
+      },
+      "forbidden_inferences": [
+        "Do not read the recommended freeze as already executed in this predecessor."
+      ],
+      "predecessor_group_ids": [],
+      "files": [
+        {
+          "path": "reports/v0.4.2_phase_a_termination_decision_packet.md",
+          "kind": "human_report",
+          "raw_sha256": "aa585c0e2586c51ce78887dbb2b405ef9a57526ba112e7cb257dab93ce75185d",
+          "canonical_lf_sha256": "aa585c0e2586c51ce78887dbb2b405ef9a57526ba112e7cb257dab93ce75185d",
+          "size_bytes": 7143,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_phase_a_termination_decision_packet.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "8e3545a9dad0a4631fbba2fa9e96a542a8c5a0251926b01edcfbefdbab57eebd",
+          "canonical_lf_sha256": "8e3545a9dad0a4631fbba2fa9e96a542a8c5a0251926b01edcfbefdbab57eebd",
+          "size_bytes": 3362,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-phase-a-termination-decision-packet-v1",
+          "verdict_or_status": "OWNER_DECISION_REQUIRED_PHASE_A_TERMINATION_PACKET_READY",
+          "semantic_digest_sha256": "b95b9bdec57a5e784f1c6801daa9e6c6a7f6e37b03fdfad0a6996ab02984b34a",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "phase_a_freeze_execution",
+      "scope": "phase_a_cross_profile",
+      "classification": "owner_state_transition",
+      "terminality": "owner_approved_resource_limit_boundary",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "The owner-approved transition freezes 955 and 721 at explicit resource-limit boundaries and starts Phase C."
+        ],
+        "unresolved_gaps": [
+          "Both full one-sided profiles remain mathematically unresolved."
+        ]
+      },
+      "forbidden_inferences": [
+        "A resource-limit boundary is not a witness, obstruction, empty-set result, or commutativity theorem."
+      ],
+      "predecessor_group_ids": [
+        "phase_a_termination_decision_packet"
+      ],
+      "files": [
+        {
+          "path": "reports/v0.4.2_phase_a_freeze_execution.md",
+          "kind": "human_report",
+          "raw_sha256": "04c93ce0997cc97dae9c8100e762d6f679d46b1e38fc5af5f2fc02ed3fe2e1c9",
+          "canonical_lf_sha256": "04c93ce0997cc97dae9c8100e762d6f679d46b1e38fc5af5f2fc02ed3fe2e1c9",
+          "size_bytes": 2728,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_phase_a_freeze_execution.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "7067989fc3f90618388f633197555fc226f57b5d08afb07fc801dcf1d0cd9b16",
+          "canonical_lf_sha256": "7067989fc3f90618388f633197555fc226f57b5d08afb07fc801dcf1d0cd9b16",
+          "size_bytes": 2366,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-phase-a-freeze-execution-v1",
+          "verdict_or_status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
+          "semantic_digest_sha256": "c2840750142ad4f887952a9a11b4fcb04fee811680245477caa5a72a9b3d5531",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "phase_c_methodology_charter",
+      "scope": "phase_c_methodology",
+      "classification": "methodology_control",
+      "terminality": "active_charter",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "Phase C requires semantic identity, claim boundaries, verdict grammar, frozen-artifact invariance, and budget separation."
+        ],
+        "unresolved_gaps": [
+          "The charter itself adds no scientific verdict."
+        ]
+      },
+      "forbidden_inferences": [
+        "Do not use Phase C methodology work to reopen 955 or 721 implicitly."
+      ],
+      "predecessor_group_ids": [
+        "phase_a_freeze_execution"
+      ],
+      "files": [
+        {
+          "path": "reports/v0.4.2_phase_c_methodology_charter.md",
+          "kind": "human_report",
+          "raw_sha256": "53a44640bb906c00cfc4ede935d60422d760bf40f48a7763c5a6dc1768b25006",
+          "canonical_lf_sha256": "53a44640bb906c00cfc4ede935d60422d760bf40f48a7763c5a6dc1768b25006",
+          "size_bytes": 3487,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_phase_c_methodology_charter.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "ae9932c9b9698d357e3192be272d90bf272eed47a9c28fa91d4306670afc7d42",
+          "canonical_lf_sha256": "ae9932c9b9698d357e3192be272d90bf272eed47a9c28fa91d4306670afc7d42",
+          "size_bytes": 1649,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-phase-c-methodology-charter-v1",
+          "verdict_or_status": "PHASE_C_METHOD_CHARTER_ACTIVE",
+          "semantic_digest_sha256": "a5605662197c93565a82ab9a5d4760a966fd011445d3bc0e43bc7cad99ec6f5c",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "phase_c_state_reconciliation",
+      "scope": "phase_c_methodology",
+      "classification": "mutable_index_correction_record",
+      "terminality": "prestart_control_complete",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "Stale pending and not-yet-done fields were reconciled in the mutable live index without rewriting historical evidence."
+        ],
+        "unresolved_gaps": [
+          "The reconciliation changes no scientific claim."
+        ]
+      },
+      "forbidden_inferences": [
+        "Do not treat a live-index cleanup as a new proof certificate."
+      ],
+      "predecessor_group_ids": [
+        "phase_c_methodology_charter"
+      ],
+      "files": [
+        {
+          "path": "reports/v0.4.2_phase_c_state_reconciliation_2026-08-14.md",
+          "kind": "human_report",
+          "raw_sha256": "e61547fccf22a2b0c4b99b6de081813414dbfd56005fee53c29e15ac18e725e8",
+          "canonical_lf_sha256": "e61547fccf22a2b0c4b99b6de081813414dbfd56005fee53c29e15ac18e725e8",
+          "size_bytes": 3124,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_phase_c_state_reconciliation_2026-08-14.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "5d17dfa93729d53068c0333deadbd74250f47f533da419c13d79b4c566c3c59b",
+          "canonical_lf_sha256": "5d17dfa93729d53068c0333deadbd74250f47f533da419c13d79b4c566c3c59b",
+          "size_bytes": 3030,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-phase-c-state-reconciliation-v1",
+          "verdict_or_status": "PHASE_C_PRESTART_STATE_RECONCILIATION_COMPLETE",
+          "semantic_digest_sha256": "4d4ed4f1e810a3a6ab5568c024dcf2f68ab32c888d04abb4af948a6a683e260e",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "955_localized_row_module_preflight",
+      "scope": "955_strong_GC_reachable_state_MSR",
+      "classification": "exact_nonterminal_preflight",
+      "terminality": "nonterminal_evidence",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "The localized row-module formulation identifies a finite minor-cover obligation."
+        ],
+        "unresolved_gaps": [
+          "No finite cover or full 955 theorem is certified."
+        ]
+      },
+      "forbidden_inferences": [
+        "A preflight formulation is not row-module membership or a global obstruction."
+      ],
+      "predecessor_group_ids": [],
+      "files": [
+        {
+          "path": "reports/v0.4.2_955_localized_row_module_preflight.md",
+          "kind": "human_report",
+          "raw_sha256": "19e3dfd1244170776cb1ca060c246293ad031b53d349dc99a76cbd3f0e5779b9",
+          "canonical_lf_sha256": "19e3dfd1244170776cb1ca060c246293ad031b53d349dc99a76cbd3f0e5779b9",
+          "size_bytes": 3418,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_955_localized_row_module_preflight.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "0da28a981c4e2b8afff847e8f2e40c11a2b50d3f08917c18c3ae6887eb1cf767",
+          "canonical_lf_sha256": "0da28a981c4e2b8afff847e8f2e40c11a2b50d3f08917c18c3ae6887eb1cf767",
+          "size_bytes": 8117,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-955-localized-row-module-preflight-v1",
+          "verdict_or_status": "V042_955_LOCALIZED_ROW_MODULE_PREFLIGHT_FINITE_MINOR_COVER_REQUIRED_FULL_S_OPEN",
+          "semantic_digest_sha256": "9099d6f6c42a34fe5339cf90428e4a5a18dfa07f85bbeb66e92496c78ca5f563",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "955_minor_cover_preflight",
+      "scope": "955_strong_GC_reachable_state_MSR",
+      "classification": "exact_nonterminal_preflight",
+      "terminality": "nonterminal_evidence",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "A finite sample found a 107-of-119 monomial matching and a two-minor sample cover."
+        ],
+        "unresolved_gaps": [
+          "The finite sample is not a certified global cover."
+        ]
+      },
+      "forbidden_inferences": [
+        "Do not promote sampled minor coverage to a theorem over the full stratum."
+      ],
+      "predecessor_group_ids": [
+        "955_localized_row_module_preflight"
+      ],
+      "files": [
+        {
+          "path": "reports/v0.4.2_955_minor_cover_preflight.md",
+          "kind": "human_report",
+          "raw_sha256": "5571be4ca1bfe0d036fd210ee83a530098c2435e41b8da96f45992a875a8d393",
+          "canonical_lf_sha256": "5571be4ca1bfe0d036fd210ee83a530098c2435e41b8da96f45992a875a8d393",
+          "size_bytes": 2708,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_955_minor_cover_preflight.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "9e63a5f0354ca6b092d6a8804b8425d1c41aca49ef3436a7c39f8067caaffe19",
+          "canonical_lf_sha256": "9e63a5f0354ca6b092d6a8804b8425d1c41aca49ef3436a7c39f8067caaffe19",
+          "size_bytes": 213683,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-955-minor-cover-preflight-v1",
+          "verdict_or_status": "V042_955_LOCALIZED_MINOR_COVER_PREFLIGHT_FINITE_SAMPLE_NOT_CERTIFIED_FULL_S_OPEN",
+          "semantic_digest_sha256": "3664bf256d654508c62efd346d2db33a6298f7402c75bb4439047d25fb215b66",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "955_unit_pivot_matching",
+      "scope": "955_strong_GC_reachable_state_MSR",
+      "classification": "exact_nonterminal_matching",
+      "terminality": "nonterminal_evidence",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "All 111 required non-Q columns admit distinct unit-edge matches after source-determinant localization."
+        ],
+        "unresolved_gaps": [
+          "A unit determinant for the selected 111-by-111 minor is not certified."
+        ]
+      },
+      "forbidden_inferences": [
+        "A perfect matching of unit entries does not imply that the signed determinant is a unit."
+      ],
+      "predecessor_group_ids": [
+        "955_minor_cover_preflight"
+      ],
+      "files": [
+        {
+          "path": "reports/v0.4.2_955_unit_pivot_matching.md",
+          "kind": "human_report",
+          "raw_sha256": "b539a4afe3710dcdffd19274cbc3a17f5bf9a90dc14ab105ae2deafb07612244",
+          "canonical_lf_sha256": "b539a4afe3710dcdffd19274cbc3a17f5bf9a90dc14ab105ae2deafb07612244",
+          "size_bytes": 6402,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_955_unit_pivot_matching.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "0059b81c2c26c6e0e849159e6521960e010604fe6615fbc78089d9cac5944a25",
+          "canonical_lf_sha256": "0059b81c2c26c6e0e849159e6521960e010604fe6615fbc78089d9cac5944a25",
+          "size_bytes": 6352,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-955-unit-pivot-matching-v1",
+          "verdict_or_status": "V042_955_ALL_111_REQUIRED_NON_Q_PIVOTS_HAVE_LOCALIZER_UNIT_COEFFICIENTS_DETERMINANT_UNIT_NOT_CERTIFIED_FULL_S_OPEN",
+          "semantic_digest_sha256": "18025b7eb098f1bd51b71d7a706e941615524a1887d01dd1f506a12f6ee73f0f",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "955_block_determinant",
+      "scope": "955_strong_GC_reachable_state_MSR",
+      "classification": "exact_nonterminal_route_boundary",
+      "terminality": "supports_owner_resource_limit_boundary",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "The DM decomposition has 60 components, largest size 15, and the 19 evaluated small-block determinants are non-units carrying ten new factors."
+        ],
+        "unresolved_gaps": [
+          "Alternative row selections remain mathematically possible; the route is not proved impossible."
+        ]
+      },
+      "forbidden_inferences": [
+        "Do not interpret failure of this unit-minor route as full-profile obstruction."
+      ],
+      "predecessor_group_ids": [
+        "955_unit_pivot_matching"
+      ],
+      "files": [
+        {
+          "path": "reports/v0.4.2_955_block_determinant.md",
+          "kind": "human_report",
+          "raw_sha256": "1f84527920308eb8a494c3c7fc77e9d9618f2f9bdb96669254d470cfb15eddd9",
+          "canonical_lf_sha256": "1f84527920308eb8a494c3c7fc77e9d9618f2f9bdb96669254d470cfb15eddd9",
+          "size_bytes": 5830,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_955_block_determinant.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "27f1dd664f5faf9d8ce4dc079f0c020aebc0a21fa42bc07a2069549dce07f0bf",
+          "canonical_lf_sha256": "27f1dd664f5faf9d8ce4dc079f0c020aebc0a21fa42bc07a2069549dce07f0bf",
+          "size_bytes": 8594,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-955-block-determinant-v1",
+          "verdict_or_status": "V042_955_UNIT_MINOR_ROUTE_DOES_NOT_CLOSE_IRREDUCIBLE_BLOCK_DETERMINANTS_ARE_NOT_LOCALIZER_UNITS_FULL_S_OPEN",
+          "semantic_digest_sha256": "4f97fecf934586a55c24b4cdd89d0e1d5b0c0dacca12b340130ccc9909aed5d5",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "721_inverse_token_incidence",
+      "scope": "721_fixed_vector_GC_strong_MSR",
+      "classification": "exact_correction_and_nonterminal_measurement",
+      "terminality": "nonterminal_evidence",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "1961 of 1967 nonzero residuals contain inverse tokens; 21 of 24 strong-MSR residuals contain them."
+        ],
+        "unresolved_gaps": [
+          "Incidence alone gives no elimination or commutativity result."
+        ]
+      },
+      "forbidden_inferences": [
+        "Do not revive the corrected claim that MSR words contain no inverse tokens."
+      ],
+      "predecessor_group_ids": [],
+      "files": [
+        {
+          "path": "reports/v0.4.2_721_inverse_token_incidence.md",
+          "kind": "human_report",
+          "raw_sha256": "34e48a08a83246fe10f5ce1403fa57d9ae4d6452640709535021a6193548e385",
+          "canonical_lf_sha256": "34e48a08a83246fe10f5ce1403fa57d9ae4d6452640709535021a6193548e385",
+          "size_bytes": 3132,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_721_inverse_token_incidence.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "a9c6ebf5c77b1284693be13c9280c7c030c42ef031b9f6ff4f8f50dc474a201e",
+          "canonical_lf_sha256": "a9c6ebf5c77b1284693be13c9280c7c030c42ef031b9f6ff4f8f50dc474a201e",
+          "size_bytes": 4160,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-inverse-token-incidence-v1",
+          "verdict_or_status": "V042_721_INVERSE_TOKEN_INCIDENCE_COUNTED_STRUCTURAL_ELIMINATION_CEILING_OPEN",
+          "semantic_digest_sha256": "c99a306c78566287fe214602d2514b4e0909098d3de1b520396e2dbd6ffa6ffc",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "721_inverse_relation_reduction_cpobc_msr",
+      "scope": "721_fixed_vector_GC_strong_MSR",
+      "classification": "exact_exhaustive_nonterminal_reduction",
+      "terminality": "nonterminal_evidence",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "Exact single-token defining-relation reduction closes zero of 700 CPOBC and 21 strong-MSR nonzero residuals."
+        ],
+        "unresolved_gaps": [
+          "This confluent single-relation reduction is not a full cross-relation Gröbner elimination."
+        ]
+      },
+      "forbidden_inferences": [
+        "Zero newly-zero residuals under this reduction is not a witness or obstruction."
+      ],
+      "predecessor_group_ids": [
+        "721_inverse_token_incidence"
+      ],
+      "files": [
+        {
+          "path": "reports/v0.4.2_721_inverse_relation_reduction_cpobc_msr.md",
+          "kind": "human_report",
+          "raw_sha256": "a6f0c5245e662d4a6acd7bae754e1c750f034cb283dec4414951574fad01d84e",
+          "canonical_lf_sha256": "a6f0c5245e662d4a6acd7bae754e1c750f034cb283dec4414951574fad01d84e",
+          "size_bytes": 2767,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_721_inverse_relation_reduction_cpobc_msr.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "8a251037449bb5117486a7e061afe9241e531578f7dc75bd0f74a076c3a76aa9",
+          "canonical_lf_sha256": "8a251037449bb5117486a7e061afe9241e531578f7dc75bd0f74a076c3a76aa9",
+          "size_bytes": 533011,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-inverse-relation-reduction-cpobc-msr-v1",
+          "verdict_or_status": "V042_721_CPOBC_MSR_REDUCED_MODULO_DEFINING_RELATIONS_NO_NEWLY_ZERO_OPEN",
+          "semantic_digest_sha256": "0592e79b9a3445bd94352e6e6cdbb1fa5212160661cd6e2f1ca901ffcdcffbc3",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "721_gc_relation_reduction",
+      "scope": "721_fixed_vector_GC_strong_MSR",
+      "classification": "exact_exhaustive_nonterminal_reduction",
+      "terminality": "nonterminal_evidence",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "All 1529 fixed-vector GC pairs were reduced tier by tier; zero new pairs vanished and 1246 remained nonzero."
+        ],
+        "unresolved_gaps": [
+          "The tiered reduction does not decide the full ideal or commutativity."
+        ]
+      },
+      "forbidden_inferences": [
+        "Exhaustiveness over this reduction rule is not exhaustiveness over all algebraic consequences."
+      ],
+      "predecessor_group_ids": [
+        "721_inverse_relation_reduction_cpobc_msr"
+      ],
+      "files": [
+        {
+          "path": "reports/v0.4.2_721_gc_tier_relation_reduced.md",
+          "kind": "human_report",
+          "raw_sha256": "f15b300e2d5c1cd6c3c64b2939c1650e4396307932f906a4643a6d0dc407cb5d",
+          "canonical_lf_sha256": "f15b300e2d5c1cd6c3c64b2939c1650e4396307932f906a4643a6d0dc407cb5d",
+          "size_bytes": 3273,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier03_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "835de2d3e04e450d89e86456d8dc09d5725fe3dab8c9a6508bea3ff94cabcba9",
+          "canonical_lf_sha256": "835de2d3e04e450d89e86456d8dc09d5725fe3dab8c9a6508bea3ff94cabcba9",
+          "size_bytes": 2860,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-03-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_03_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "14f3d6d7fd81c1d2fcfcf9ef28a25d5d0b669806b8b174e5ded6bbe82026fffb",
+          "semantic_digest_verified": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier04_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "82d07696f462949ba849effc6e693bcab95adba86d65b3f990da71e61d244b3d",
+          "canonical_lf_sha256": "82d07696f462949ba849effc6e693bcab95adba86d65b3f990da71e61d244b3d",
+          "size_bytes": 2985,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-04-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_04_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "23377762ac0374ecb688f30a768ce1e8748b5631463b7cff44e8e1c57c2f8cb6",
+          "semantic_digest_verified": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier05_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "3a6167c8207f4e7f88e46549fc7856e0c700664eca7f0c77c3018040a7de80f8",
+          "canonical_lf_sha256": "3a6167c8207f4e7f88e46549fc7856e0c700664eca7f0c77c3018040a7de80f8",
+          "size_bytes": 3313,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-05-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_05_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "bb88ccc527e3f254f02e3b0f3974c7e44586d47f01edb2d4e30b51903559d5c6",
+          "semantic_digest_verified": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier06_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "1ba4f00ae1bf0b1f432742b869ab541a4a2baad2a40f155742ba5372a70a32d8",
+          "canonical_lf_sha256": "1ba4f00ae1bf0b1f432742b869ab541a4a2baad2a40f155742ba5372a70a32d8",
+          "size_bytes": 2672,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-06-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_06_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "f6ab08b067adbfb6c965786576acdce19214ef890b4dd7c2700d1f6478175d1d",
+          "semantic_digest_verified": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier07_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "90f80d879d03faa2ef3591ddedbf6964cd2fec02b00b599ae998629f0328e45b",
+          "canonical_lf_sha256": "90f80d879d03faa2ef3591ddedbf6964cd2fec02b00b599ae998629f0328e45b",
+          "size_bytes": 3013,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-07-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_07_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "4ce2c37d17745caada17e3a26d2f8e4ba2ae0989ffadbc1bd6334517ccf712da",
+          "semantic_digest_verified": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier08_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "83c1a84634ea77661a8e493935333054ea9da04eee7f1cb7acac4681013e9686",
+          "canonical_lf_sha256": "83c1a84634ea77661a8e493935333054ea9da04eee7f1cb7acac4681013e9686",
+          "size_bytes": 2919,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-08-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_08_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "a45d80a7d555d99b0fc7a118b4c80468513b0f26c1aa33720ffbde9c9ac99619",
+          "semantic_digest_verified": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier09_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "90b414971d2a3d14b28d3cd2b53748093e3fb158167af768a8c7e1c4855d219d",
+          "canonical_lf_sha256": "90b414971d2a3d14b28d3cd2b53748093e3fb158167af768a8c7e1c4855d219d",
+          "size_bytes": 3307,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-09-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_09_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "9d2d70632f4d88fdb518d22e4351a3ff4b108ad78df5e386cc892ab3e222c9bb",
+          "semantic_digest_verified": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier10_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "3bf9f6ba4339a5403ff72de371e5565d6ac9717b79075b317ba543e06b0b7b2f",
+          "canonical_lf_sha256": "3bf9f6ba4339a5403ff72de371e5565d6ac9717b79075b317ba543e06b0b7b2f",
+          "size_bytes": 3447,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-10-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_10_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "6e9066f2565231506c68db5df14dce54ef09cdadfb9e3a58122f153184e73c92",
+          "semantic_digest_verified": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier11_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "f522cf89e6dbf2584f0a7b0695a2075aec84401911bfa16d859ab486e73c5ff5",
+          "canonical_lf_sha256": "f522cf89e6dbf2584f0a7b0695a2075aec84401911bfa16d859ab486e73c5ff5",
+          "size_bytes": 2683,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-11-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_11_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "48c7edca9b4e9f636ec9f2dd12ae6113b5d12b323083ad00fbc28315440f863f",
+          "semantic_digest_verified": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier15_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "6b67a2a30a1d0c22cff86884bf595ac7b012df5ae953dc2059e20526a46d5fa6",
+          "canonical_lf_sha256": "6b67a2a30a1d0c22cff86884bf595ac7b012df5ae953dc2059e20526a46d5fa6",
+          "size_bytes": 3220,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-15-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_15_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "087359e2df555445c7b758a09a844b8a21e5cf2b704dee3ae16af20f7d91ac64",
+          "semantic_digest_verified": true
+        },
+        {
+          "path": "results/v0.4.2_721_gc_tier25_relation_reduced.json",
+          "kind": "machine_evidence",
+          "raw_sha256": "6d75bbdb794c70a7a8bccf8571c75e1fab448a01d62a9c327ba7056d706864a0",
+          "canonical_lf_sha256": "6d75bbdb794c70a7a8bccf8571c75e1fab448a01d62a9c327ba7056d706864a0",
+          "size_bytes": 2895,
+          "strict_utf8_lf": true,
+          "schema_version": "final-theory-v042-721-gc-tier-25-relation-reduced-v1",
+          "verdict_or_status": "V042_721_GC_TIER_25_RELATION_REDUCED_NO_NEWLY_ZERO_PAIR_OPEN",
+          "semantic_digest_sha256": "6576e3605cf0a5239278f2bc4644557ad3999bc1a982f26748590bb1ba8bbe39",
+          "semantic_digest_verified": true
+        }
+      ]
+    },
+    {
+      "id": "721_corrected_groebner_preflight",
+      "scope": "721_fixed_vector_GC_strong_MSR",
+      "classification": "bounded_corrected_preflight",
+      "terminality": "supports_owner_resource_limit_boundary",
+      "claim_layers": {
+        "external_source_claims": [],
+        "project_derivations": [
+          "The corrected complete-residual-unit probe took 1.078 seconds for one unit and timed out at 90 seconds for two units under current SymPy tooling."
+        ],
+        "unresolved_gaps": [
+          "No full-profile solver was run, and dedicated-CAS impossibility is not proved."
+        ]
+      },
+      "forbidden_inferences": [
+        "Do not extrapolate the bounded probe into a universal runtime or impossibility theorem."
+      ],
+      "predecessor_group_ids": [
+        "721_gc_relation_reduction"
+      ],
+      "files": [
+        {
+          "path": "reports/v0.4.2_721_groebner_preflight.md",
+          "kind": "human_report",
+          "raw_sha256": "63b83ccf0bae921aebea375168ec278ce63a7bf4e6b97842aac2380621f16333",
+          "canonical_lf_sha256": "63b83ccf0bae921aebea375168ec278ce63a7bf4e6b97842aac2380621f16333",
+          "size_bytes": 3341,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "scripts/build_v042_721_groebner_residual_cache.py",
+          "kind": "reproducer_or_test",
+          "raw_sha256": "fcb5068522d258328e57a25b240e925e204773cb65c3b812981ef01e0b2367a2",
+          "canonical_lf_sha256": "fcb5068522d258328e57a25b240e925e204773cb65c3b812981ef01e0b2367a2",
+          "size_bytes": 1486,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "scripts/probe_v042_721_groebner_preflight_worker.py",
+          "kind": "reproducer_or_test",
+          "raw_sha256": "344afea85e78a283ffc663c3614326d1085b1975b0d94c7eb009fee57e8f6550",
+          "canonical_lf_sha256": "344afea85e78a283ffc663c3614326d1085b1975b0d94c7eb009fee57e8f6550",
+          "size_bytes": 6488,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "scripts/run_v042_721_groebner_preflight.py",
+          "kind": "reproducer_or_test",
+          "raw_sha256": "fe301c5c17b6304ae9b21eee03600749173f531998506e96415ba649f1429cb6",
+          "canonical_lf_sha256": "fe301c5c17b6304ae9b21eee03600749173f531998506e96415ba649f1429cb6",
+          "size_bytes": 3264,
+          "strict_utf8_lf": true
+        },
+        {
+          "path": "tests/final_theory/test_v042_721_groebner_preflight.py",
+          "kind": "reproducer_or_test",
+          "raw_sha256": "76fae2f1ed8307fc0fc1f9594c45b94fdd24ff5227f255e30f3517ddcf7c55ea",
+          "canonical_lf_sha256": "76fae2f1ed8307fc0fc1f9594c45b94fdd24ff5227f255e30f3517ddcf7c55ea",
+          "size_bytes": 1103,
+          "strict_utf8_lf": true
+        }
+      ]
+    }
+  ],
+  "inventory_summary": {
+    "group_count": 12,
+    "file_binding_count": 37,
+    "machine_evidence_count": 21,
+    "all_paths_unique": true,
+    "duplicate_paths": [],
+    "all_frozen_files_strict_utf8_lf": true,
+    "all_machine_semantic_digests_verified": true,
+    "self_reference_excluded": true,
+    "mutable_live_state_excluded_from_raw_freeze": true
+  },
+  "phase_a_boundaries": {
+    "955": "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT",
+    "721": "FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT",
+    "both_full_profiles_resolved": false
+  },
+  "next_gate": "AUDIT_VERDICT_GRAMMAR_AND_PREFLIGHT_BUDGET_SEPARATION",
+  "passed": true,
+  "verdict": "PHASE_C_CLAIM_BOUNDARY_LEDGER_AND_FROZEN_ARTIFACT_INDEX_CERTIFIED",
+  "semantic_digest_sha256": "e45d3c7f2866ea3ea6d4590b880561cb514549747c50ea60fcdfc860fd29ddbf"
+}
