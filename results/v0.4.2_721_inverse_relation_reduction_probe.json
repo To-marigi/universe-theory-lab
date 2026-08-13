@@ -1,0 +1,481 @@
+{
+  "schema_version": "final-theory-v042-721-inverse-relation-reduction-probe-v1",
+  "profile": "fixed_vector_GC__strong_MSR",
+  "scope": {
+    "purpose": "measure real, per-residual cost of reducing modulo the 8 D_<token>*det(A)-1=0 defining relations, on a small explicit sample, before deciding whether to run it over the full 1,961-residual inventory",
+    "method": "exact monomial rewriting D*a*d -> 1 + D*b*c per token, binomial-expanded for repeated occurrences; the 8 tokens' relation variables are pairwise disjoint so this is confluent without needing a general Groebner computation",
+    "cpobc_sample_size": 12,
+    "gc_sample_size": 12,
+    "sanity_check": "D*a*d reduces to {1, D*b*c} exactly, verified before sampling"
+  },
+  "source_artifact_sha256": {
+    "results/v0.3.1_cpobc_relations_n4.json": "8e9498fd6be13ff7553f1e3d2df6919b5a1595294a8feb2134467c63c5c1dda9",
+    "results/v0.3.2_cpobc_generator_reduction.json": "88363a527e7f015457f51ae94da5ac5e03c83fca588fe07a8bfd9e4fbb0ca52b",
+    "results/v0.3.3_local_operator_gc_n4.json": "7e884ad9bff83e9e1aba8048759802bcffddd4cffc4e59dbd6b799d4860f93ba"
+  },
+  "compiler_source_sha256": "1d3625f77ecbea0538451e5968729badcaaf1894ca6fcacf75d1c3fef51c6033",
+  "input_native_ir_semantic_digest_sha256": "622df30fd3ebbc8b0399debb695f426afd318a85cef6e6abd33bd9aedca4b296",
+  "input_inverse_saturation_sha256": "2c87dbd1a8bf8eaee1d587701937042088171253f1ac35bd32c9671658b7e51d",
+  "CPOBC_sample": [
+    {
+      "id": "cpobc-relation-3070531c43a3aae506e5/eq103",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 188,
+        "maximum_scalar_term_count": 48,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 184,
+        "maximum_scalar_term_count": 50,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix_sha256": "ab6513c0e85eef4a2619eac04d1f383a5bffa3b27caa9fa8f8b7c3b361ff6e7d",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0009996891021728516
+    },
+    {
+      "id": "cpobc-relation-3070531c43a3aae506e5/equal_second_orientation",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 188,
+        "maximum_scalar_term_count": 48,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 184,
+        "maximum_scalar_term_count": 50,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix_sha256": "8f346743584d5877c591acccffd4b8590b825233b2ad354902493a990d4ab8a1",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.002000093460083008
+    },
+    {
+      "id": "cpobc-relation-3070531c43a3aae506e5/eq104",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 920,
+        "maximum_scalar_term_count": 233,
+        "maximum_monomial_degree": 10
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 898,
+        "maximum_scalar_term_count": 244,
+        "maximum_monomial_degree": 10
+      },
+      "reduced_scalar_matrix_sha256": "7c396482b3792b1e36d81721be2b654b353d5eb653725241cbcbed5f04f5f4d8",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.010508298873901367
+    },
+    {
+      "id": "cpobc-relation-4ddb43416db20379dda3/eq103",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 188,
+        "maximum_scalar_term_count": 48,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 184,
+        "maximum_scalar_term_count": 50,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix_sha256": "17ead25198124558eb63b941701c47ccf7899e6419d783f0454258843b03e5e5",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.001999378204345703
+    },
+    {
+      "id": "cpobc-relation-4ddb43416db20379dda3/equal_second_orientation",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 188,
+        "maximum_scalar_term_count": 48,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 184,
+        "maximum_scalar_term_count": 50,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix_sha256": "48ee353ed77935664a6d95e45708197ef793379e150de5d6ec1877367d1d0476",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0015006065368652344
+    },
+    {
+      "id": "cpobc-relation-4ddb43416db20379dda3/eq104",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 920,
+        "maximum_scalar_term_count": 233,
+        "maximum_monomial_degree": 10
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 898,
+        "maximum_scalar_term_count": 244,
+        "maximum_monomial_degree": 10
+      },
+      "reduced_scalar_matrix_sha256": "26002c7919f167a8706b56ab2fce541fe098ac553f7bd76b30760f5537bf88a9",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.008505582809448242
+    },
+    {
+      "id": "cpobc-relation-d5e82a55e59f5b8ad09a/eq103",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 188,
+        "maximum_scalar_term_count": 48,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 184,
+        "maximum_scalar_term_count": 50,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix_sha256": "5412e91e91ac1aa69fc707684780d2f2c53e505e17036693f48867453d128668",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0009996891021728516
+    },
+    {
+      "id": "cpobc-relation-d5e82a55e59f5b8ad09a/equal_second_orientation",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 188,
+        "maximum_scalar_term_count": 48,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 184,
+        "maximum_scalar_term_count": 50,
+        "maximum_monomial_degree": 7
+      },
+      "reduced_scalar_matrix_sha256": "04637d443bc84340a9640cc9cda7c99fab9bdab0487aa576bd4827dc7aca472d",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.002013683319091797
+    },
+    {
+      "id": "cpobc-relation-d5e82a55e59f5b8ad09a/eq104",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 920,
+        "maximum_scalar_term_count": 233,
+        "maximum_monomial_degree": 10
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 898,
+        "maximum_scalar_term_count": 244,
+        "maximum_monomial_degree": 10
+      },
+      "reduced_scalar_matrix_sha256": "24667ee56dcca5495a5a8a053a7b07c373872a97052590a1c37d98d158a8f405",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.009506940841674805
+    },
+    {
+      "id": "cpobc-relation-36245886cd8a8bf0edbf/eq103",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 944,
+        "maximum_scalar_term_count": 236,
+        "maximum_monomial_degree": 11
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 1084,
+        "maximum_scalar_term_count": 274,
+        "maximum_monomial_degree": 11
+      },
+      "reduced_scalar_matrix_sha256": "16c7ff2d912b921180037632d2aa1b79b851db84bd748c283a22a91924ab2e2b",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.009992837905883789
+    },
+    {
+      "id": "cpobc-relation-b095d0a4d5a0fb9c1725/eq103",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 944,
+        "maximum_scalar_term_count": 236,
+        "maximum_monomial_degree": 11
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 1084,
+        "maximum_scalar_term_count": 274,
+        "maximum_monomial_degree": 11
+      },
+      "reduced_scalar_matrix_sha256": "16c7ff2d912b921180037632d2aa1b79b851db84bd748c283a22a91924ab2e2b",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.010504722595214844
+    },
+    {
+      "id": "cpobc-relation-d12fea1b658ded2995f5/eq103",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 944,
+        "maximum_scalar_term_count": 236,
+        "maximum_monomial_degree": 11
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 1084,
+        "maximum_scalar_term_count": 274,
+        "maximum_monomial_degree": 11
+      },
+      "reduced_scalar_matrix_sha256": "84cfbf6b1d1a5d63a42eb1b95e614d457698a90be86b52a2e52e259a2876dff3",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.015514612197875977
+    }
+  ],
+  "GC_sample": [
+    {
+      "id": "p3-002/lgc-path-73192a6770fa82828f12|lgc-path-fc1eafd06aa0360d6535",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 24,
+        "maximum_scalar_term_count": 6,
+        "maximum_monomial_degree": 2
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 24,
+        "maximum_scalar_term_count": 6,
+        "maximum_monomial_degree": 2
+      },
+      "reduced_scalar_matrix_sha256": "d170ae14dac270bfb2b6d5dd1fddc789a7503587df1dae6691d028d7eb614675",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0010037422180175781
+    },
+    {
+      "id": "p3-002/lgc-path-ea7b195db90fbd5d9de7|lgc-path-fc1eafd06aa0360d6535",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 24,
+        "maximum_scalar_term_count": 6,
+        "maximum_monomial_degree": 2
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 24,
+        "maximum_scalar_term_count": 6,
+        "maximum_monomial_degree": 2
+      },
+      "reduced_scalar_matrix_sha256": "d170ae14dac270bfb2b6d5dd1fddc789a7503587df1dae6691d028d7eb614675",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0
+    },
+    {
+      "id": "p4-0002/lgc-path-07b60204afbd042a3e3e|lgc-path-330d646216a118c5937d",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 120,
+        "maximum_scalar_term_count": 30,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 142,
+        "maximum_scalar_term_count": 37,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix_sha256": "76c841f6a3063847a9686aa43f7a7e99dc91147a162981f267ca9e92372a7e6f",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0009999275207519531
+    },
+    {
+      "id": "p4-0002/lgc-path-07b60204afbd042a3e3e|lgc-path-7a32187fb800fbb83069",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 120,
+        "maximum_scalar_term_count": 30,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 142,
+        "maximum_scalar_term_count": 37,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix_sha256": "77df30b82b7baab5a841e193bdb18465725e56857fd13d5e4a42f77f5751e573",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0010004043579101562
+    },
+    {
+      "id": "p4-0002/lgc-path-07b60204afbd042a3e3e|lgc-path-edf06924c77f06ebe7f3",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 120,
+        "maximum_scalar_term_count": 30,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 142,
+        "maximum_scalar_term_count": 37,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix_sha256": "76c841f6a3063847a9686aa43f7a7e99dc91147a162981f267ca9e92372a7e6f",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0019996166229248047
+    },
+    {
+      "id": "p4-0002/lgc-path-330d646216a118c5937d|lgc-path-4fff5940ddb8a5b17811",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 120,
+        "maximum_scalar_term_count": 30,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 142,
+        "maximum_scalar_term_count": 37,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix_sha256": "0cf6ce4601ba907923631a3fcc93c22fb5c81a52c787521ee4e2d5dc80d2b61f",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0010023117065429688
+    },
+    {
+      "id": "p4-0002/lgc-path-330d646216a118c5937d|lgc-path-7a32187fb800fbb83069",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 48,
+        "maximum_scalar_term_count": 12,
+        "maximum_monomial_degree": 3
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 48,
+        "maximum_scalar_term_count": 12,
+        "maximum_monomial_degree": 3
+      },
+      "reduced_scalar_matrix_sha256": "b9f7ed042f2c60a72af84dead60d5397d803440969892747669381078ee61588",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0
+    },
+    {
+      "id": "p4-0002/lgc-path-330d646216a118c5937d|lgc-path-7ab08fc5dc3ce4c2435f",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 120,
+        "maximum_scalar_term_count": 30,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 142,
+        "maximum_scalar_term_count": 37,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix_sha256": "0cf6ce4601ba907923631a3fcc93c22fb5c81a52c787521ee4e2d5dc80d2b61f",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0010013580322265625
+    },
+    {
+      "id": "p4-0002/lgc-path-4fff5940ddb8a5b17811|lgc-path-7a32187fb800fbb83069",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 120,
+        "maximum_scalar_term_count": 30,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 142,
+        "maximum_scalar_term_count": 37,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix_sha256": "77df30b82b7baab5a841e193bdb18465725e56857fd13d5e4a42f77f5751e573",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0009996891021728516
+    },
+    {
+      "id": "p4-0002/lgc-path-4fff5940ddb8a5b17811|lgc-path-edf06924c77f06ebe7f3",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 120,
+        "maximum_scalar_term_count": 30,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 142,
+        "maximum_scalar_term_count": 37,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix_sha256": "76c841f6a3063847a9686aa43f7a7e99dc91147a162981f267ca9e92372a7e6f",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.001001119613647461
+    },
+    {
+      "id": "p4-0002/lgc-path-7a32187fb800fbb83069|lgc-path-7ab08fc5dc3ce4c2435f",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 120,
+        "maximum_scalar_term_count": 30,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 142,
+        "maximum_scalar_term_count": 37,
+        "maximum_monomial_degree": 6
+      },
+      "reduced_scalar_matrix_sha256": "554fc282a21ef42e3bd52ddaf621fdc0a62312ddd1e1e3aab60cf9f40a8e6219",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.0
+    },
+    {
+      "id": "p4-0002/lgc-path-7a32187fb800fbb83069|lgc-path-edf06924c77f06ebe7f3",
+      "saturated_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 48,
+        "maximum_scalar_term_count": 12,
+        "maximum_monomial_degree": 3
+      },
+      "reduced_scalar_matrix": {
+        "nonzero_entry_count": 4,
+        "total_scalar_term_count": 48,
+        "maximum_scalar_term_count": 12,
+        "maximum_monomial_degree": 3
+      },
+      "reduced_scalar_matrix_sha256": "2a2cd9c57ca26e517ebf35e5710efacbaee5238cf80af359a6cc0eab98c059ce",
+      "newly_zero_under_reduction": false,
+      "reduction_seconds": 0.00150299072265625
+    }
+  ],
+  "measurement": {
+    "total_reduction_seconds": 0.08455729484558105,
+    "mean_reduction_seconds_per_residual": 0.0035232206185658774,
+    "maximum_reduction_seconds_single_residual": 0.015514612197875977,
+    "newly_zero_under_reduction_count": 0,
+    "sample_size": 24
+  },
+  "solver_status": {
+    "generic_2x2_scalar_expansion": true,
+    "inverse_saturation_runs": 8,
+    "explicit_relation_reduction_runs": 24,
+    "Groebner_or_saturation_runs": 0,
+    "commutativity_decided": false
+  },
+  "claim_boundary": [
+    "This is a bounded sample (12 CPOBC + 12 GC residuals), not the full 1,961-residual inventory.",
+    "The measured per-residual time is the basis for deciding whether a full sweep is feasible, not itself a full result.",
+    "No full 721 commutativity theorem, witness, or obstruction is issued."
+  ],
+  "unrestricted_721_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_721_INVERSE_RELATION_REDUCTION_PROBE_BOUNDED_SAMPLE_OPEN",
+  "semantic_digest_sha256": "0b8ba8953300559a9a1b0d376f91ca89612f3bdb5cfdec6f6ac102e17be009cd"
+}

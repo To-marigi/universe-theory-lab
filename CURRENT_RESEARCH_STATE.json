@@ -123,7 +123,8 @@
     "v0.4.2_721_inverse_saturation": "V042_721_ALL_EIGHT_INVERSE_TOKENS_SATURATE_EXACTLY_GENERIC_2X2_MATRIX_IDENTITY_OPEN",
     "v0.4.2_721_inverse_resaturated_cpobc_msr": "V042_721_CPOBC_MSR_RESATURATED_NO_NEWLY_ZERO_RESIDUAL_OPEN",
     "v0.4.2_721_gc_tier_resaturated_all_eleven": "ALL_1529_GC_PAIRS_RESATURATED_ZERO_NEWLY_ZERO_1246_STILL_NONZERO_OPEN",
-    "v0.4.2_721_inverse_token_incidence": "1961_OF_1967_NONZERO_RESIDUALS_CONTAIN_AN_INVERSE_TOKEN_NO_CHEAP_STRUCTURAL_CEILING_OPEN"
+    "v0.4.2_721_inverse_token_incidence": "1961_OF_1967_NONZERO_RESIDUALS_CONTAIN_AN_INVERSE_TOKEN_NO_CHEAP_STRUCTURAL_CEILING_OPEN",
+    "v0.4.2_721_inverse_relation_reduction_probe": "BOUNDED_24_RESIDUAL_SAMPLE_MEAN_3_5MS_MAX_15_5MS_ZERO_NEWLY_ZERO_CHEAP_NOT_RESOURCE_LIMITED_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
@@ -221,7 +222,8 @@
         "v0.4.2_721_inverse_saturation",
         "v0.4.2_721_inverse_resaturated_cpobc_msr",
         "v0.4.2_721_gc_tier_resaturated_all_eleven",
-        "v0.4.2_721_inverse_token_incidence"
+        "v0.4.2_721_inverse_token_incidence",
+        "v0.4.2_721_inverse_relation_reduction_probe"
       ],
       "exact_counts": {
         "generators": {"antichain_Q": 4, "non_antichain_G": 20},
@@ -269,7 +271,16 @@
         "verdict_for_this_route": "no cheap structural ceiling; 99.7% of the nonzero inventory is a live elimination target, so it cannot be dismissed on structural grounds alone",
         "correction_recorded": "exposed and fixed a false claim in the CPOBC/MSR resaturation report/test that MSR words contain no inverse tokens; 21 of 24 do, the unchanged term count is a monomial-to-monomial substitution coincidence, not absence of inverse tokens"
       },
-      "next_step": "The inverse-token incidence count came back large (1,961/1,967), not small: 721 cannot be closed on cheap structural grounds the way 955's minor_cover_preflight closed most of its unmatched columns. Owner decision needed: (a) attempt a real, bounded elimination probe (small subset first, e.g. the 8 defining relations plus a handful of residuals, measuring actual cost before committing to the full 104-variable/1,961-residual system) to get a genuine measured ceiling in the spirit of 955's block-determinant approach, rather than declaring RESOURCE_LIMIT_OPEN without having tried; (b) fold 721 into the same pending owner decision as the 955 freeze.",
+      "inverse_relation_reduction_probe_summary": {
+        "method": "exact monomial rewriting D*a*d -> 1+D*b*c per token (disjoint variables across the 8 tokens, so confluent; not a general Groebner run)",
+        "sample_size": 24,
+        "mean_seconds_per_residual": 0.0035,
+        "max_seconds_single_residual": 0.0155,
+        "newly_zero_in_sample": 0,
+        "verdict": "measured, not assumed: the full 1,961-residual sweep is cheap (well under a minute extrapolated), so cost is not a reason to stop here",
+        "term_counts_move_both_directions": "some residuals shrink, some grow under reduction; it is real algebraic work, not a no-op"
+      },
+      "next_step": "The bounded reduction probe measured real cost (mean 3.5ms, max 15.5ms per residual) instead of assuming it: a full sweep over the 1,961 inverse-token-containing residuals is cheap, not resource-limited. Next: run the full reduction sweep (same method, same code, no sampling) over all 1,961 residuals and check whether any become newly zero under the 8 defining relations. Only after that full result is in does 'declare RESOURCE_LIMIT_OPEN' or 'fold into the 955 owner decision' become a measured claim rather than an assumption.",
       "reports": [
         "reports/v0.4.2_721_source_native_preflight.md",
         "reports/v0.4.2_721_scalar_gate.md",
@@ -279,7 +290,8 @@
         "reports/v0.4.2_721_inverse_saturation.md",
         "reports/v0.4.2_721_inverse_resaturated_cpobc_msr.md",
         "reports/v0.4.2_721_gc_tier_resaturated.md",
-        "reports/v0.4.2_721_inverse_token_incidence.md"
+        "reports/v0.4.2_721_inverse_token_incidence.md",
+        "reports/v0.4.2_721_inverse_relation_reduction_probe.md"
       ]
     },
     "symmetry_orbit_reduction": {
