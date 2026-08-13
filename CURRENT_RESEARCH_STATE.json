@@ -293,7 +293,21 @@
         "total_still_nonzero_after_reduction": 1967,
         "breakdown": {"CPOBC": {"before": 700, "after": 700}, "strong_MSR": {"before": 21, "after": 21}, "GC": {"before": 1246, "after": 1246}}
       },
-      "next_step": "The elimination route via exact defining-relation reduction is now exhaustively closed out, not sampled or assumed: cost was measured first (cheap), then the full reduction ran over all 1,967 originally scalar-nonzero residuals (CPOBC+strong-MSR+GC), and 0 became zero. This specific method (confluent single-relation-per-token reduction, no cross-relation Groebner computation) does not close 721. What remains is categorically different and heavier: a full Groebner basis over the combined ideal (1,967 residuals + 8 relations), not attempted and not casually feasible with this project's plain-Python exact-arithmetic tooling. Owner decision needed: attempt that heavier computation, or fold 721 into the same resource-limited-boundary decision already pending for 955.",
+      "groebner_preflight_summary": {
+        "purpose": "measure real sympy.groebner() cost on tiny best-case subsystems before attempting or refusing the full combined-ideal computation, per the same measure-before-declaring-infeasible discipline used for every other step in this track",
+        "method": "smallest reduced CPOBC residuals by term count + only the defining relations for tokens present, each subprocess call killed at a hard 90s wall-clock timeout",
+        "results": [
+          {"residuals": 1, "variables": 15, "wall_seconds": 0.020, "basis_size": 7},
+          {"residuals": 2, "variables": 15, "wall_seconds": 7.750, "basis_size": 32},
+          {"residuals": 3, "variables": 15, "wall_seconds": null, "status": "TIMEOUT_90S"}
+        ],
+        "target_system_scale": {"residuals": 1967, "approx_variables": 104, "max_term_count_single_equation": 32099, "max_degree": 18},
+        "verdict": "measured, not assumed: cost already blows up (~390x per added residual) at 1/1000th the target system's scale on the cheapest possible synthetic subsystem this project's own tooling can run; full unbounded run is not attempted",
+        "not_a_production_gate": true,
+        "solver_run_against_721_profile": false,
+        "report": "reports/v0.4.2_721_groebner_preflight.md"
+      },
+      "next_step": "The elimination route via exact defining-relation reduction is exhaustively closed out (0/1967 closed), and a bounded preflight has now measured that the remaining option -- a full Groebner basis over the combined ideal -- blows up (~390x per residual) already at a 3-residual/15-variable synthetic best case, roughly 1/1000th the real system's scale (1,967 residuals, ~104 variables, up to 32,099 terms/degree 18 per equation). This is a measured result, not an assumed one, obtained safely via hard-timeouts on synthetic subsystems only -- no solver was run against the real 721 profile. Owner decision needed: attempt a heavier/different-tooling approach (dedicated CAS, not present in this project), or fold 721 into the same resource-limited-boundary decision already pending for 955.",
       "reports": [
         "reports/v0.4.2_721_source_native_preflight.md",
         "reports/v0.4.2_721_scalar_gate.md",
@@ -306,7 +320,8 @@
         "reports/v0.4.2_721_inverse_token_incidence.md",
         "reports/v0.4.2_721_inverse_relation_reduction_probe.md",
         "reports/v0.4.2_721_inverse_relation_reduction_cpobc_msr.md",
-        "reports/v0.4.2_721_gc_tier_relation_reduced.md"
+        "reports/v0.4.2_721_gc_tier_relation_reduced.md",
+        "reports/v0.4.2_721_groebner_preflight.md"
       ]
     },
     "symmetry_orbit_reduction": {
