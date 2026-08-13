@@ -1,0 +1,90 @@
+{
+  "schema_version": "final-theory-v042-phase-a-termination-decision-packet-v1",
+  "prepared": "2026-08-13",
+  "evidence_head": "077c721",
+  "status": "OWNER_DECISION_REQUIRED_PHASE_A_TERMINATION_PACKET_READY",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scope": "Phase A owner decision for the full 955 and 721 one-sided profiles",
+  "recommended_choice": "FREEZE_BOTH_OPEN_RESOURCE_LIMIT_THEN_PHASE_C",
+  "freeze_executed": false,
+  "dedicated_cas_authorized": false,
+  "complete_finite_on_semantics_lattice_claim_available": false,
+  "profiles": {
+    "955": {
+      "profile": "strong_GC_plus_reachable_state_MSR",
+      "full_profile_resolved": false,
+      "proposed_freeze_label": "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT",
+      "witness_certified": false,
+      "noncommutativity_obstructed": false,
+      "route_boundary": "unit_minor_determinant_not_certified_after_DM_block_analysis",
+      "evidence": [
+        "reports/v0.4.2_955_localized_row_module_preflight.md",
+        "reports/v0.4.2_955_minor_cover_preflight.md",
+        "reports/v0.4.2_955_unit_pivot_matching.md",
+        "reports/v0.4.2_955_block_determinant.md"
+      ]
+    },
+    "721": {
+      "profile": "fixed_vector_GC_plus_strong_MSR",
+      "full_profile_resolved": false,
+      "proposed_freeze_label": "FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT",
+      "native_generators": 24,
+      "cpo_bc_equations": 783,
+      "strong_msr_equations": 24,
+      "gc_pairs": 1529,
+      "nonzero_residuals": 1967,
+      "newly_zero_after_inverse_relation_reduction": 0,
+      "corrected_groebner_preflight": {
+        "one_complete_residual_unit_scalar_equations": 4,
+        "one_unit_seconds": 1.078,
+        "one_unit_basis_size": 30,
+        "two_unit_timeout_seconds": 90,
+        "full_profile_solver_run": false
+      },
+      "evidence": [
+        "reports/v0.4.2_721_inverse_relation_reduction_cpobc_msr.md",
+        "reports/v0.4.2_721_gc_tier_relation_reduced.md",
+        "reports/v0.4.2_721_groebner_preflight.md"
+      ]
+    }
+  },
+  "choices": {
+    "A_DEDICATED_CAS_CAMPAIGN": {
+      "authorized": false,
+      "requires": [
+        "specified CAS and version",
+        "versioned budget artifact",
+        "small corrected-preflight benchmark",
+        "hard timeout and memory supervision",
+        "staged input plan"
+      ]
+    },
+    "B_FREEZE_AND_PHASE_C": {
+      "recommended": true,
+      "executed": false,
+      "consequences": [
+        "keep FINAL_THEORY_OPEN",
+        "do not claim complete finite ON semantics lattice",
+        "preserve exact partial results and correction provenance",
+        "begin Phase C methods artifact"
+      ]
+    }
+  },
+  "phase_c_scope": [
+    "semantic digests",
+    "claim-boundary ledger",
+    "verdict grammar",
+    "frozen artifact invariance",
+    "preflight/versioned-budget separation",
+    "measurement and correction provenance"
+  ],
+  "semantic_digest_sha256": "b95b9bdec57a5e784f1c6801daa9e6c6a7f6e37b03fdfad0a6996ab02984b34a",
+  "claim_boundary": [
+    "This packet is an owner decision aid, not a proof certificate.",
+    "Neither full 955 nor full 721 is resolved.",
+    "No full-profile witness, obstruction, or complete-lattice claim is issued.",
+    "No dedicated CAS is installed or run by this packet."
+  ],
+  "passed": true,
+  "verdict": "OWNER_DECISION_REQUIRED_PHASE_A_TERMINATION_PACKET_READY"
+}
