@@ -119,7 +119,8 @@
     "v0.4.2_721_scalar_gate": "V042_721_SCALAR_CPOBC_MSR_COMPILED_GC_STAGED_OPEN",
     "v0.4.2_721_gc_small_blocks": "V042_721_GC_11_THREE_PATH_BLOCKS_SCALAR_COMPILED_OPEN",
     "v0.4.2_721_gc_four_path_blocks": "V042_721_GC_9_FOUR_PATH_BLOCKS_SCALAR_COMPILED_OPEN",
-    "v0.4.2_721_gc_tier_blocks_remaining_nine": "ALL_NINE_REMAINING_TIERS_5_6_7_8_9_10_11_15_25_SCALAR_COMPILED_1442_PAIRS_257_WORD_IDENTITIES_MATCH_SCALAR_ZERO_ALL_1529_GC_PAIRS_NOW_EXPANDED_OPEN"
+    "v0.4.2_721_gc_tier_blocks_remaining_nine": "ALL_NINE_REMAINING_TIERS_5_6_7_8_9_10_11_15_25_SCALAR_COMPILED_1442_PAIRS_257_WORD_IDENTITIES_MATCH_SCALAR_ZERO_ALL_1529_GC_PAIRS_NOW_EXPANDED_OPEN",
+    "v0.4.2_721_inverse_saturation": "V042_721_ALL_EIGHT_INVERSE_TOKENS_SATURATE_EXACTLY_GENERIC_2X2_MATRIX_IDENTITY_OPEN"
   },
   "affected_campaign": {
     "status": "SR3B_A_UNCHANGED_MIXED_ANSATZ_TERMINAL_UNRESTRICTED_CSG_Q_ESCAPE_BLOCKED_THROUGH_FOURTH_ORDER_FIFTH_ORDER_AND_REMOTE_FULL_955_OPEN",
@@ -213,7 +214,8 @@
         "v0.4.2_721_scalar_gate",
         "v0.4.2_721_gc_small_blocks",
         "v0.4.2_721_gc_four_path_blocks",
-        "v0.4.2_721_gc_tier_blocks_remaining_nine"
+        "v0.4.2_721_gc_tier_blocks_remaining_nine",
+        "v0.4.2_721_inverse_saturation"
       ],
       "exact_counts": {
         "generators": {"antichain_Q": 4, "non_antichain_G": 20},
@@ -230,14 +232,21 @@
         }
       },
       "commutativity_proved_for_full_profile": false,
-      "inverse_relation_saturation_run": false,
-      "next_step": "All 1,529 GC pairs are scalar-expanded and internally consistent (word identity iff scalar-zero at every pair), but the fixed_vector_GC system as a whole is not solved: no elimination/Groebner/saturation step has combined the 320 basis relations into a decision. Next: address the 64 inverse-relation matrix-entry slots for the 8 inverse tokens, then decide whether/how to attempt an elimination or commutativity decision over the now-complete scalar inventory.",
+      "inverse_relation_saturation_run": true,
+      "inverse_saturation_summary": {
+        "tokens_saturated": 8,
+        "matrix_entry_slots_checked": 64,
+        "method": "closed-form generic 2x2 inverse A^-1=(1/det A)*adj(A), one fresh D_<token>=1/det(A) variable and defining relation D*det-1=0 per token",
+        "not_yet_done": "re-substituting these definitions into the already-compiled CPOBC/strong-MSR/GC scalar residuals"
+      },
+      "next_step": "The 8 inverse tokens now have exact algebraic content (v0.4.2_721_inverse_saturation), but it has not been substituted back into the 783 CPOBC / 24 strong-MSR / 1,529 GC scalar residuals compiled by earlier gates, which still treat inverse tokens as free variables. Next: re-run those residuals under the D_<token>*det-1=0 relations and see whether any previously-nonzero residual becomes zero or whether new obstructions appear; only after that is there a basis for attempting an elimination or commutativity decision over the complete scalar inventory.",
       "reports": [
         "reports/v0.4.2_721_source_native_preflight.md",
         "reports/v0.4.2_721_scalar_gate.md",
         "reports/v0.4.2_721_gc_small_blocks.md",
         "reports/v0.4.2_721_gc_four_path_blocks.md",
-        "reports/v0.4.2_721_gc_tier_blocks.md"
+        "reports/v0.4.2_721_gc_tier_blocks.md",
+        "reports/v0.4.2_721_inverse_saturation.md"
       ]
     },
     "symmetry_orbit_reduction": {

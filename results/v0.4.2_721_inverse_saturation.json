@@ -1,0 +1,703 @@
+{
+  "schema_version": "final-theory-v042-721-inverse-saturation-v1",
+  "profile": "fixed_vector_GC__strong_MSR",
+  "scope": {
+    "inverse_tokens": [
+      "G_p2-2^-1",
+      "G_p3-002^-1",
+      "G_p3-006^-1",
+      "G_p3-024^-1",
+      "G_p3-026^-1",
+      "Q_1^-1",
+      "Q_2^-1",
+      "Q_3^-1"
+    ],
+    "closed_form": "A^-1 = (1/det A) * adj(A) for generic invertible 2x2 A",
+    "field": "QQ generic 2x2 matrix entries with commutative scalar monomials",
+    "what_is_new_per_token": "one fresh scalar D_<token> standing for 1/det(A)",
+    "not_yet_done": "substituting these definitions back into the already compiled CPOBC/strong-MSR/GC scalar residuals is left to a successor gate"
+  },
+  "source_artifact_sha256": {
+    "input_native_ir_semantic_digest_sha256": "622df30fd3ebbc8b0399debb695f426afd318a85cef6e6abd33bd9aedca4b296"
+  },
+  "compiler_source_sha256": "778bfdfafc4c410c1e32d6c6c70a3ab2ae75e44e0538a2c81f0763932166edfe",
+  "inverse_tokens_checked": 8,
+  "matrix_entry_slots_checked": 64,
+  "records": [
+    {
+      "inverse_token": "G_p2-2^-1",
+      "base_token": "G_p2-2",
+      "determinant": {
+        "term_count": 2,
+        "max_monomial_degree": 2
+      },
+      "defining_relation": {
+        "form": "D * det(A) - 1",
+        "term_count": 3,
+        "max_monomial_degree": 3
+      },
+      "off_diagonal_zero_both_orderings": true,
+      "diagonal_reduces_to_defining_relation_both_orderings": true,
+      "saturates": true,
+      "checked_entries": [
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        }
+      ]
+    },
+    {
+      "inverse_token": "G_p3-002^-1",
+      "base_token": "G_p3-002",
+      "determinant": {
+        "term_count": 2,
+        "max_monomial_degree": 2
+      },
+      "defining_relation": {
+        "form": "D * det(A) - 1",
+        "term_count": 3,
+        "max_monomial_degree": 3
+      },
+      "off_diagonal_zero_both_orderings": true,
+      "diagonal_reduces_to_defining_relation_both_orderings": true,
+      "saturates": true,
+      "checked_entries": [
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        }
+      ]
+    },
+    {
+      "inverse_token": "G_p3-006^-1",
+      "base_token": "G_p3-006",
+      "determinant": {
+        "term_count": 2,
+        "max_monomial_degree": 2
+      },
+      "defining_relation": {
+        "form": "D * det(A) - 1",
+        "term_count": 3,
+        "max_monomial_degree": 3
+      },
+      "off_diagonal_zero_both_orderings": true,
+      "diagonal_reduces_to_defining_relation_both_orderings": true,
+      "saturates": true,
+      "checked_entries": [
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        }
+      ]
+    },
+    {
+      "inverse_token": "G_p3-024^-1",
+      "base_token": "G_p3-024",
+      "determinant": {
+        "term_count": 2,
+        "max_monomial_degree": 2
+      },
+      "defining_relation": {
+        "form": "D * det(A) - 1",
+        "term_count": 3,
+        "max_monomial_degree": 3
+      },
+      "off_diagonal_zero_both_orderings": true,
+      "diagonal_reduces_to_defining_relation_both_orderings": true,
+      "saturates": true,
+      "checked_entries": [
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        }
+      ]
+    },
+    {
+      "inverse_token": "G_p3-026^-1",
+      "base_token": "G_p3-026",
+      "determinant": {
+        "term_count": 2,
+        "max_monomial_degree": 2
+      },
+      "defining_relation": {
+        "form": "D * det(A) - 1",
+        "term_count": 3,
+        "max_monomial_degree": 3
+      },
+      "off_diagonal_zero_both_orderings": true,
+      "diagonal_reduces_to_defining_relation_both_orderings": true,
+      "saturates": true,
+      "checked_entries": [
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        }
+      ]
+    },
+    {
+      "inverse_token": "Q_1^-1",
+      "base_token": "Q_1",
+      "determinant": {
+        "term_count": 2,
+        "max_monomial_degree": 2
+      },
+      "defining_relation": {
+        "form": "D * det(A) - 1",
+        "term_count": 3,
+        "max_monomial_degree": 3
+      },
+      "off_diagonal_zero_both_orderings": true,
+      "diagonal_reduces_to_defining_relation_both_orderings": true,
+      "saturates": true,
+      "checked_entries": [
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        }
+      ]
+    },
+    {
+      "inverse_token": "Q_2^-1",
+      "base_token": "Q_2",
+      "determinant": {
+        "term_count": 2,
+        "max_monomial_degree": 2
+      },
+      "defining_relation": {
+        "form": "D * det(A) - 1",
+        "term_count": 3,
+        "max_monomial_degree": 3
+      },
+      "off_diagonal_zero_both_orderings": true,
+      "diagonal_reduces_to_defining_relation_both_orderings": true,
+      "saturates": true,
+      "checked_entries": [
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        }
+      ]
+    },
+    {
+      "inverse_token": "Q_3^-1",
+      "base_token": "Q_3",
+      "determinant": {
+        "term_count": 2,
+        "max_monomial_degree": 2
+      },
+      "defining_relation": {
+        "form": "D * det(A) - 1",
+        "term_count": 3,
+        "max_monomial_degree": 3
+      },
+      "off_diagonal_zero_both_orderings": true,
+      "diagonal_reduces_to_defining_relation_both_orderings": true,
+      "saturates": true,
+      "checked_entries": [
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "A_times_Ainv_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 0,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 0,
+          "col": 1,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 0,
+          "kind": "off_diagonal",
+          "raw_polynomial_zero": true,
+          "term_count": 0
+        },
+        {
+          "relation": "Ainv_times_A_minus_I",
+          "row": 1,
+          "col": 1,
+          "kind": "diagonal",
+          "exactly_D_times_det": true,
+          "term_count": 3
+        }
+      ]
+    }
+  ],
+  "record_digest_sha256": "66a4f706995fcecf7d8a544125d20f263b58c1866934a5d4b3b97476b926d35a",
+  "solver_status": {
+    "generic_2x2_scalar_expansion": true,
+    "inverse_saturation_runs": 8,
+    "Groebner_or_saturation_runs": 0,
+    "commutativity_decided": false
+  },
+  "claim_boundary": [
+    "This proves the generic 2x2 two-sided matrix inverse identity for each of the 8 tokens actually used; it is linear algebra, not a search or a numerical check.",
+    "The defining relations D_<token> * det(A) - 1 = 0 are new constraints, not yet imposed on the CPOBC/strong-MSR/GC scalar inventories compiled by earlier gates.",
+    "No full 721 commutativity theorem, witness, or obstruction is issued."
+  ],
+  "unrestricted_721_status": "OPEN",
+  "commutativity_proved_for_full_profile": false,
+  "witness_certified": false,
+  "search_terminal": false,
+  "passed": true,
+  "verdict": "V042_721_ALL_EIGHT_INVERSE_TOKENS_SATURATE_EXACTLY_GENERIC_2X2_MATRIX_IDENTITY_OPEN",
+  "semantic_digest_sha256": "46b896fd80fcd31c7669fe80e233cdb4cbd9ded90ef04d1dc766e227f3ac5159"
+}
