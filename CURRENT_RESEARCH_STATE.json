@@ -1,6 +1,6 @@
 {
   "schema_version": "cpobc-current-research-state-v1",
-  "updated": "2026-08-12",
+  "updated": "2026-08-13",
   "mutable_index_not_a_proof_certificate": true,
   "global_verdict": "FINAL_THEORY_OPEN",
   "public_baseline": {
@@ -294,20 +294,27 @@
         "breakdown": {"CPOBC": {"before": 700, "after": 700}, "strong_MSR": {"before": 21, "after": 21}, "GC": {"before": 1246, "after": 1246}}
       },
       "groebner_preflight_summary": {
-        "purpose": "measure real sympy.groebner() cost on tiny best-case subsystems before attempting or refusing the full combined-ideal computation, per the same measure-before-declaring-infeasible discipline used for every other step in this track",
-        "method": "smallest reduced CPOBC residuals by term count + only the defining relations for tokens present, each subprocess call killed at a hard 90s wall-clock timeout",
+        "purpose": "measure real sympy.groebner() cost on complete residual units before any owner decision, without attempting the full combined-ideal computation",
+        "predecessor_correction": "e989dff's first measurement counted individual scalar matrix entries as residuals and scored by coefficient L1 weight; it is superseded and not used as a full-system extrapolation",
+        "method": "smallest complete reduced CPOBC 2x2 residual units by total scalar term count, passing all nonzero entries of each unit together; any present variable among D,a,b,c,d activates the full inverse defining relation; each subprocess has a hard 90s wall-clock timeout",
         "results": [
-          {"residuals": 1, "variables": 15, "wall_seconds": 0.020, "basis_size": 7},
-          {"residuals": 2, "variables": 15, "wall_seconds": 7.750, "basis_size": 32},
-          {"residuals": 3, "variables": 15, "wall_seconds": null, "status": "TIMEOUT_90S"}
+          {"residual_units": 1, "scalar_equations": 4, "relation_equations": 2, "variables": 14, "groebner_seconds": 1.078, "basis_size": 30},
+          {"residual_units": 2, "scalar_equations": 8, "wall_seconds": 90.021, "status": "TIMEOUT_90S"}
         ],
+        "cache_build_seconds": 129.354,
         "target_system_scale": {"residuals": 1967, "approx_variables": 104, "max_term_count_single_equation": 32099, "max_degree": 18},
-        "verdict": "measured, not assumed: cost already blows up (~390x per added residual) at 1/1000th the target system's scale on the cheapest possible synthetic subsystem this project's own tooling can run; full unbounded run is not attempted",
+        "verdict": "complete residual-unit measurement shows rapid growth in current SymPy tooling, but is a best-case probe and does not prove full-system or dedicated-CAS impossibility; full unbounded run is not attempted",
         "not_a_production_gate": true,
         "solver_run_against_721_profile": false,
-        "report": "reports/v0.4.2_721_groebner_preflight.md"
+        "report": "reports/v0.4.2_721_groebner_preflight.md",
+        "scratch_artifacts_removed_after_verification": true,
+        "reproducers": [
+          "scripts/build_v042_721_groebner_residual_cache.py",
+          "scripts/probe_v042_721_groebner_preflight_worker.py",
+          "scripts/run_v042_721_groebner_preflight.py"
+        ]
       },
-      "next_step": "The elimination route via exact defining-relation reduction is exhaustively closed out (0/1967 closed), and a bounded preflight has now measured that the remaining option -- a full Groebner basis over the combined ideal -- blows up (~390x per residual) already at a 3-residual/15-variable synthetic best case, roughly 1/1000th the real system's scale (1,967 residuals, ~104 variables, up to 32,099 terms/degree 18 per equation). This is a measured result, not an assumed one, obtained safely via hard-timeouts on synthetic subsystems only -- no solver was run against the real 721 profile. Owner decision needed: attempt a heavier/different-tooling approach (dedicated CAS, not present in this project), or fold 721 into the same resource-limited-boundary decision already pending for 955.",
+      "next_step": "The elimination route via exact defining-relation reduction is exhaustively closed out (0/1967 closed). A corrected complete-residual-unit preflight now shows rapid growth in current SymPy tooling: one full 2x2 residual (4 scalar equations) takes 1.078s, while two full residual units time out at 90s. This is a bounded warning, not a proof of full-system or dedicated-CAS impossibility; no solver was run against the real 721 profile. Owner decision: assess a dedicated CAS with an explicit budget, or fold 721 into the same unresolved resource-limit decision already pending for 955.",
       "reports": [
         "reports/v0.4.2_721_source_native_preflight.md",
         "reports/v0.4.2_721_scalar_gate.md",

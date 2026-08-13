@@ -1,11 +1,10 @@
-"""Bounded, hard-timeout preflight for a possible full 721 Groebner run.
+"""Corrected bounded, hard-timeout preflight for a possible 721 Groebner run.
 
 Not a production gate. Measures actual sympy.groebner() cost on tiny
-subsystems (smallest reduced CPOBC residuals + only the defining relations
-whose tokens appear in them) before any owner decision about attempting the
-full combined-ideal computation (1,967 residuals + 8 relations, ~104
-variables). Each subprocess call is killed at a hard wall-clock timeout so
-a blow-up cannot hang the session.
+subsystems made from complete CPOBC residual units. Each residual unit keeps
+all nonzero entries of its 2-by-2 residual together; the predecessor probe
+incorrectly counted individual scalar entries as residuals. Each subprocess
+call is killed at a hard wall-clock timeout.
 """
 
 from __future__ import annotations
@@ -18,8 +17,39 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WORKER = ROOT / "scripts" / "probe_v042_721_groebner_preflight_worker.py"
+BUILDER = ROOT / "scripts" / "build_v042_721_groebner_residual_cache.py"
+CACHE = ROOT / "scratch_v042_721_groebner_preflight_residual_units.json"
 TIMEOUT_SECONDS = 90
-COUNTS = [1, 2, 3, 5, 8, 12, 20]
+BUILD_TIMEOUT_SECONDS = 180
+COUNTS = [1, 2, 3]
+
+if CACHE.exists():
+    print(f"--- reusing residual-unit cache {CACHE.name} ---", flush=True)
+else:
+    print(
+        f"--- build residual-unit cache (timeout {BUILD_TIMEOUT_SECONDS}s) ---",
+        flush=True,
+    )
+    build_start = time.time()
+    try:
+        build = subprocess.run(
+            [sys.executable, str(BUILDER)],
+            timeout=BUILD_TIMEOUT_SECONDS,
+            capture_output=True,
+            text=True,
+        )
+    except subprocess.TimeoutExpired:
+        elapsed = time.time() - build_start
+        raise SystemExit(
+            f"residual-unit cache build timed out after {elapsed:.1f}s; "
+            "no Groebner call was attempted"
+        ) from None
+    if build.returncode:
+        raise SystemExit(
+            f"residual-unit cache build failed:\n{build.stderr[-4000:]}"
+        )
+    print(build.stdout.strip(), flush=True)
+    print(f"cache_seconds={time.time() - build_start:.3f}", flush=True)
 
 results: list[dict] = []
 
