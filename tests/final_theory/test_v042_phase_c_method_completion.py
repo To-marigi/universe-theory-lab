@@ -59,7 +59,7 @@ def test_completion_review_keeps_phase_a_open_boundaries() -> None:
     assert payload["phase_b_transition"]["phase_b_started_by_this_review"] is False
 
 
-def test_current_state_marks_phase_c_complete_and_phase_b_next() -> None:
+def test_current_state_marks_phase_c_complete_and_phase_b_transition() -> None:
     state = json.loads((ROOT / "CURRENT_RESEARCH_STATE.json").read_text(encoding="utf-8"))
     campaign = state["affected_campaign"]
     phase_c = campaign["phase_C"]
@@ -67,16 +67,46 @@ def test_current_state_marks_phase_c_complete_and_phase_b_next() -> None:
     phase_b = campaign["phase_B"]
 
     assert campaign["status"] == (
-        "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_PHASE_B_READY_FINAL_THEORY_OPEN"
+        "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_"
+        "PHASE_B_LARGE_N_SAMPLER_EXTENSION_DESIGN_FROZEN_IMPLEMENTATION_"
+        "PREFLIGHT_BUDGET_REQUIRED_FINAL_THEORY_OPEN"
     )
-    assert campaign["next_gate"] == NEXT_GATE
+    assert campaign["next_gate"] == (
+        "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COST_PREFLIGHT_"
+        "BUDGET_APPROVAL"
+    )
     assert phase_c["status"] == "COMPLETE"
     assert phase_c["next_gate"] == START_GATE
     assert review["status"] == "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW_CERTIFIED"
     assert review["artifact"] == RESULT_PATH.as_posix()
     assert review["report"] == REPORT_PATH.as_posix()
-    assert phase_b["status"] == "READY_NOT_STARTED"
-    assert phase_b["next_gate"] == NEXT_GATE
+    assert phase_b["status"] == (
+        "LARGE_N_SAMPLER_EXTENSION_DESIGN_FROZEN_"
+        "IMPLEMENTATION_PREFLIGHT_BUDGET_REQUIRED"
+    )
+    assert phase_b["global_central_candidate"] == "causal_information_v1"
+    assert phase_b["active_candidate"] == "causal_information_v2_sparse_kraus"
+    assert phase_b["started"] is True
+    assert phase_b["starting_gate"] == NEXT_GATE
+    assert phase_b["artifact"] == (
+        "results/v0.4.2_phase_b_required_physics_gap_inventory.json"
+    )
+    assert phase_b["report"] == (
+        "reports/v0.4.2_phase_b_required_physics_gap_inventory.md"
+    )
+    assert phase_b["all_acceptance_checks_passed"] is True
+    assert phase_b["scientific_verdict_added"] is False
+    assert phase_b["next_gate"] == (
+        "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COST_PREFLIGHT_"
+        "BUDGET_APPROVAL"
+    )
+    assert phase_b["continuum_dimension_design"]["all_acceptance_checks_passed"] is True
+    assert phase_b["continuum_dimension_preflight"][
+        "all_preflight_checks_passed"
+    ] is True
+    assert phase_b["continuum_dimension_preflight"][
+        "production_measurement_pipeline_validated"
+    ] is False
     assert state["global_verdict"] == "FINAL_THEORY_OPEN"
 
 

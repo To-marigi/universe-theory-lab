@@ -1,0 +1,543 @@
+{
+  "schema_version": "final-theory-v042-phase-b-continuum-dimension-design-v1",
+  "prepared": "2026-08-15",
+  "status": "PHASE_B_CONTINUUM_DIMENSION_BOUNDED_DESIGN_FROZEN_PRODUCTION_EXTENSION_REQUIRED_NO_SAMPLING_AUTHORIZATION",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "PHASE_B_CONTINUUM_DIMENSION_DERIVATION_DESIGN",
+  "next_gate": "PHASE_B_CONTINUUM_DIMENSION_BOUNDED_MEASUREMENT_PREFLIGHT",
+  "candidate": {
+    "global_central_baseline": "causal_information_v1",
+    "phase_b_active_candidate": "causal_information_v2_sparse_kraus",
+    "v1_v2_equivalence_certified": false,
+    "cross_version_evidence_transfer": false
+  },
+  "design_config": "config/v0.4.2_phase_b_continuum_dimension_design.json",
+  "design_scope": "Preregistered relational dimension, correlation-length, scaling, control, and holdout protocol. The exact n<=5 pilot is a regression check only and does not authorize larger sampling.",
+  "dimension_estimators": [
+    {
+      "id": "ordering_fraction_inverse",
+      "role": "primary_relational_estimator",
+      "observable": "comparable_pairs / binomial(n, 2)",
+      "calibration": "f(d)=Gamma(d+1)*Gamma(d/2)/(2*Gamma(3*d/2))",
+      "calibration_anchor_values": {
+        "2": 0.5,
+        "4": 0.1
+      },
+      "calibration_source_note": "references/notes/v0.4.2_myrheim_meyer_calibration_audit_2026-08-15.md",
+      "inversion_interval": [
+        1.0,
+        6.0
+      ],
+      "numerical_tolerance": 1e-08,
+      "finite_boundary_rule": "undefined when the observed value is outside the open calibration interval",
+      "candidate_evidence": true
+    },
+    {
+      "id": "height_finite_size_scaling",
+      "role": "independent_scaling_estimator",
+      "observable": "maximum_chain_cardinality",
+      "fit": "log(H_n)=a+(1/d_H)*log(n)",
+      "fit_window": "all preregistered training sizes; no post-hoc window selection",
+      "candidate_evidence": true
+    },
+    {
+      "id": "spectral_return_plateau",
+      "role": "independent_graph_diffusion_estimator",
+      "observable": "return probability of the lazy random walk P=(I+D^-1*A)/2 on the symmetrized Hasse graph",
+      "fit": "d_s(s)=-2*d(log(P_return(s)))/d(log(s))",
+      "bounded_preflight_fit": {
+        "method": "ordinary least-squares slope of log(P_return) on log(step)",
+        "walk_time_steps": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "purpose": "arithmetic diagnostic only; not a production plateau claim"
+      },
+      "production_plateau_rule": "a contiguous walk-time window with at least four points must be frozen by the large-N extension design before production",
+      "production_plateau_window_frozen": false,
+      "ensemble_aggregation": "annealed probability-weighted return curve before fitting; quenched per-history summaries must also be reported in production",
+      "isolated_vertex_rule": "an isolated vertex is an absorbing one-vertex component",
+      "component_reporting": "connected-component sizes and finite-size saturation must be reported",
+      "candidate_evidence": true
+    }
+  ],
+  "correlation_length_observable": {
+    "graph": "undirected graph formed by symmetrized cover relations",
+    "walk": "lazy random walk P=(I+D^-1*A)/2",
+    "spectral_gap_proxy": "xi_gap,c^2=1/(1-lambda_2,c) for each nontrivial connected component",
+    "component_aggregation": "vertex-weighted root-mean-square over nontrivial components; isolated vertices have zero coverage weight",
+    "ensemble_aggregation": "conditional root-mean-square sqrt(E[xi^2 | xi defined])",
+    "ensemble_diameter_ratio": "conditional root-mean-square sqrt(E[(xi/diameter)^2 | xi defined and diameter>0])",
+    "minimum_defined_probability_mass_for_candidate_evidence": 0.95,
+    "minimum_mean_nontrivial_vertex_coverage_for_candidate_evidence": 0.95,
+    "intrinsic_linear_size": "finite-pair Hasse-graph diameter",
+    "validity_rule": "undefined only when no nontrivial connected component exists; nontrivial vertex coverage must be reported",
+    "candidate_evidence": true
+  },
+  "scaling_protocol": {
+    "planned_sizes": [
+      8,
+      12,
+      18,
+      27,
+      40,
+      60
+    ],
+    "minimum_distinct_sizes": 5,
+    "minimum_max_to_min_size_ratio": 4.0,
+    "minimum_adjacent_size_ratio": 1.25,
+    "training_sizes": [
+      8,
+      12,
+      18,
+      27
+    ],
+    "holdout_sizes": [
+      40,
+      60
+    ],
+    "candidate_fugacities_frozen": true,
+    "no_holdout_refit": true,
+    "planned_trajectories_per_seed": 4096,
+    "planned_training_seeds": [
+      101,
+      103,
+      107,
+      109,
+      113
+    ],
+    "planned_holdout_seeds": [
+      127,
+      131,
+      137
+    ],
+    "seed_aggregation": "retain per-seed estimates; report medians and simultaneous 95-percent bootstrap intervals without pooling trajectories across seeds",
+    "versioned_measurement_budget_required_before_execution": true
+  },
+  "acceptance_rules": {
+    "dimension_estimator_count_required": 2,
+    "dimension_estimator_ids": [
+      "ordering_fraction_inverse",
+      "height_finite_size_scaling",
+      "spectral_return_plateau"
+    ],
+    "dimension_estimator_selection_rule": "all defined estimators enter every pairwise check; fewer than two defined estimators is a stop; no post-hoc subset selection",
+    "dimension_last_window_size_count": 3,
+    "dimension_max_pairwise_difference": 0.5,
+    "dimension_max_absolute_log_size_slope": 0.25,
+    "correlation_length_minimum_increasing_adjacent_steps": 3,
+    "correlation_length_last_window_ratio_cv_max": 0.25,
+    "negative_control_rule": "stop if the negative control satisfies the candidate acceptance pattern, or if fewer than one defined dimension-estimator difference exceeds 0.5 with its simultaneous 95-percent interval excluding zero",
+    "threshold_ambiguity_rule": "any confidence interval crossing an acceptance threshold is inconclusive and stops promotion",
+    "control_and_holdout_must_be_reported": true,
+    "all_routes_must_replay_independently": true,
+    "no_scientific_verdict_from_pilot": true
+  },
+  "controls": [
+    {
+      "id": "random_growth_negative_control",
+      "profile_id": "random_growth_control",
+      "purpose": "detect dimension-like behavior caused by generic growth combinatorics",
+      "candidate_evidence": false
+    },
+    {
+      "id": "bdg_dimension_four_positive_control",
+      "profile_id": "bdg_control",
+      "purpose": "verify that the measurement pipeline can recover a supplied control dimension",
+      "target_dimension_is_input": true,
+      "candidate_evidence": false
+    },
+    {
+      "id": "label_permutation_control",
+      "purpose": "verify invariance under relabeling before any dimension comparison",
+      "candidate_evidence": false
+    }
+  ],
+  "stop_conditions": [
+    "candidate sampler normalization or independent replay fails",
+    "target dimension or metric enters the candidate path",
+    "two required dimension estimators disagree beyond the preregistered tolerance",
+    "correlation length does not grow in the preregistered scaling window",
+    "negative control is indistinguishable under the preregistered comparison",
+    "holdout requires refitting or changes the frozen fugacities",
+    "measurement cost exceeds the separately approved versioned budget"
+  ],
+  "production_design_gaps": [
+    "large-N candidate and negative-control sampler",
+    "fixed production spectral plateau window",
+    "executable BDG dimension-four ensemble",
+    "independent replay implementation",
+    "hard wall-time and memory supervision",
+    "versioned production measurement budget"
+  ],
+  "exact_pilot": {
+    "max_n": 5,
+    "level_counts": [
+      1,
+      1,
+      2,
+      5,
+      16,
+      63
+    ],
+    "candidate_profile_id": "causal_information_v2_sparse_kraus",
+    "random_control_profile_id": "random_growth_control",
+    "size_records": [
+      {
+        "n": 0,
+        "state_count": 1,
+        "candidate_normalized": true,
+        "random_control_normalized": true,
+        "candidate_expected_ordering_fraction": null,
+        "random_expected_ordering_fraction": null,
+        "candidate_ordering_dimension": null,
+        "random_ordering_dimension": null,
+        "candidate_expected_height": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "random_expected_height": {
+          "numerator": 0,
+          "denominator": 1
+        }
+      },
+      {
+        "n": 1,
+        "state_count": 1,
+        "candidate_normalized": true,
+        "random_control_normalized": true,
+        "candidate_expected_ordering_fraction": null,
+        "random_expected_ordering_fraction": null,
+        "candidate_ordering_dimension": null,
+        "random_ordering_dimension": null,
+        "candidate_expected_height": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "random_expected_height": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      },
+      {
+        "n": 2,
+        "state_count": 2,
+        "candidate_normalized": true,
+        "random_control_normalized": true,
+        "candidate_expected_ordering_fraction": {
+          "numerator": 8,
+          "denominator": 23
+        },
+        "random_expected_ordering_fraction": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "candidate_ordering_dimension": 2.472934619523585,
+        "random_ordering_dimension": 2.0000000009313226,
+        "candidate_expected_height": {
+          "numerator": 31,
+          "denominator": 23
+        },
+        "random_expected_height": {
+          "numerator": 3,
+          "denominator": 2
+        }
+      },
+      {
+        "n": 3,
+        "state_count": 5,
+        "candidate_normalized": true,
+        "random_control_normalized": true,
+        "candidate_expected_ordering_fraction": {
+          "numerator": 81464,
+          "denominator": 233289
+        },
+        "random_expected_ordering_fraction": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "candidate_ordering_dimension": 2.4679058315232396,
+        "random_ordering_dimension": 2.0000000009313226,
+        "candidate_expected_height": {
+          "numerator": 3216397,
+          "denominator": 1788549
+        },
+        "random_expected_height": {
+          "numerator": 49,
+          "denominator": 24
+        }
+      },
+      {
+        "n": 4,
+        "state_count": 16,
+        "candidate_normalized": true,
+        "random_control_normalized": true,
+        "candidate_expected_ordering_fraction": {
+          "numerator": 1892940091689464648,
+          "denominator": 5390269279562149983
+        },
+        "random_expected_ordering_fraction": {
+          "numerator": 721,
+          "denominator": 1440
+        },
+        "candidate_ordering_dimension": 2.4606801187619567,
+        "random_ordering_dimension": 1.9981492487713695,
+        "candidate_expected_height": {
+          "numerator": 6171953677506127984063,
+          "denominator": 2851452448888377341007
+        },
+        "random_expected_height": {
+          "numerator": 1415,
+          "denominator": 576
+        }
+      },
+      {
+        "n": 5,
+        "state_count": 63,
+        "candidate_normalized": true,
+        "random_control_normalized": true,
+        "candidate_expected_ordering_fraction": {
+          "numerator": 16891493192481356748805609652267888313032940787332305267549623867096,
+          "denominator": 47817380935981627612208606953037305862301645703979943351438866709573
+        },
+        "random_expected_ordering_fraction": {
+          "numerator": 433687,
+          "denominator": 864000
+        },
+        "candidate_ordering_dimension": 2.453153216280043,
+        "random_ordering_dimension": 1.9948018612340093,
+        "candidate_expected_height": {
+          "numerator": 2125039513433542510179497420710327643420106726151388474594700607757360995,
+          "denominator": 863876049047161657416041330881292124875896425476844683851238723379192723
+        },
+        "random_expected_height": {
+          "numerator": 8216413,
+          "denominator": 2903040
+        }
+      }
+    ],
+    "non_evidentiary": true,
+    "claim_boundary": "Exact n<=5 pilot values are regression data only. They do not measure a continuum phase, a limiting dimension, or a gravitational response."
+  },
+  "acceptance_checks": {
+    "active_candidate_identity_is_frozen": {
+      "passed": true,
+      "evidence": {
+        "central_candidate": "causal_information_v1",
+        "active_candidate": "causal_information_v2_sparse_kraus"
+      }
+    },
+    "phase_b_registry_is_structurally_valid": {
+      "passed": true,
+      "evidence": []
+    },
+    "exact_pilot_domain_is_independently_normalized": {
+      "passed": true,
+      "evidence": [
+        1,
+        1,
+        2,
+        5,
+        16,
+        63
+      ]
+    },
+    "dimension_estimators_are_preregistered": {
+      "passed": true,
+      "evidence": [
+        "ordering_fraction_inverse",
+        "height_finite_size_scaling",
+        "spectral_return_plateau"
+      ]
+    },
+    "ordering_calibration_matches_source_anchors": {
+      "passed": true,
+      "evidence": {
+        "2": 0.5,
+        "4": 0.1
+      }
+    },
+    "bounded_measurement_aggregation_is_explicit": {
+      "passed": true,
+      "evidence": {
+        "spectral_preflight_steps": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "correlation_ensemble_aggregation": "conditional root-mean-square sqrt(E[xi^2 | xi defined])"
+      }
+    },
+    "production_design_gaps_are_fail_closed": {
+      "passed": true,
+      "evidence": [
+        "large-N candidate and negative-control sampler",
+        "fixed production spectral plateau window",
+        "executable BDG dimension-four ensemble",
+        "independent replay implementation",
+        "hard wall-time and memory supervision",
+        "versioned production measurement budget"
+      ]
+    },
+    "scaling_and_holdout_are_disjoint_and_separated": {
+      "passed": true,
+      "evidence": {
+        "planned_sizes": [
+          8,
+          12,
+          18,
+          27,
+          40,
+          60
+        ],
+        "training_sizes": [
+          8,
+          12,
+          18,
+          27
+        ],
+        "holdout_sizes": [
+          40,
+          60
+        ]
+      }
+    },
+    "controls_are_separated_from_candidate_evidence": {
+      "passed": true,
+      "evidence": [
+        {
+          "id": "random_growth_negative_control",
+          "profile_id": "random_growth_control",
+          "purpose": "detect dimension-like behavior caused by generic growth combinatorics",
+          "candidate_evidence": false
+        },
+        {
+          "id": "bdg_dimension_four_positive_control",
+          "profile_id": "bdg_control",
+          "purpose": "verify that the measurement pipeline can recover a supplied control dimension",
+          "target_dimension_is_input": true,
+          "candidate_evidence": false
+        },
+        {
+          "id": "label_permutation_control",
+          "purpose": "verify invariance under relabeling before any dimension comparison",
+          "candidate_evidence": false
+        }
+      ]
+    },
+    "target_dimension_is_not_in_candidate_path": {
+      "passed": true,
+      "evidence": {
+        "profile_id": "causal_information_v2_sparse_kraus",
+        "action_operators": [
+          "link_count",
+          "diamond_count",
+          "precursor_size"
+        ],
+        "forbidden_inputs_present": false,
+        "spin2_objective_present": false,
+        "fixed_metric_present": false,
+        "target_dimension_present": false
+      }
+    },
+    "authorization_remains_fail_closed": {
+      "passed": true,
+      "evidence": {
+        "sampling_authorized": false,
+        "solver_run_permitted": false
+      }
+    }
+  },
+  "all_acceptance_checks_passed": true,
+  "authorization_boundary": {
+    "design_frozen": true,
+    "bounded_measurement_preflight_authorized": false,
+    "production_sampling_authorized": false,
+    "solver_run_permitted": false,
+    "global_verdict": "FINAL_THEORY_OPEN"
+  },
+  "source_bindings": [
+    {
+      "path": "config/v0.4.2_phase_b_continuum_dimension_design.json",
+      "raw_sha256": "244a677753476b48e26b08db5a20d381f870af32a6938c0e2e134f2b9269b019",
+      "canonical_lf_sha256": "244a677753476b48e26b08db5a20d381f870af32a6938c0e2e134f2b9269b019",
+      "size_bytes": 7240,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/candidates/candidate_registry_v042_phase_b.json",
+      "raw_sha256": "9f8e5c7860fa434570f0b1c8169dd67a110f1ac42bc3096f4161c4780f69c2a6",
+      "canonical_lf_sha256": "9f8e5c7860fa434570f0b1c8169dd67a110f1ac42bc3096f4161c4780f69c2a6",
+      "size_bytes": 7247,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/models/causal_information_v2/model_spec.json",
+      "raw_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "canonical_lf_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "size_bytes": 1032,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/dynamics_v02.py",
+      "raw_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "canonical_lf_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "size_bytes": 20648,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/causal_sets.py",
+      "raw_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+      "canonical_lf_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+      "size_bytes": 16560,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/requirements/final_theory_gates.yaml",
+      "raw_sha256": "8a10c947a9031e5dfe88ca1ad7e7a147ae2aab690f7fc29aa35150d09ec9bdb6",
+      "canonical_lf_sha256": "8a10c947a9031e5dfe88ca1ad7e7a147ae2aab690f7fc29aa35150d09ec9bdb6",
+      "size_bytes": 5188,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_active_candidate_manifest.json",
+      "raw_sha256": "8439304f2a2243b6c1429e02a9bddd74b8a9cb2979fcf747071d9949425d7ca8",
+      "canonical_lf_sha256": "8439304f2a2243b6c1429e02a9bddd74b8a9cb2979fcf747071d9949425d7ca8",
+      "size_bytes": 4917,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_candidate_identity.json",
+      "raw_sha256": "a13c3d590de0a565b9c916115811982edc0065d75744f7b7978842fd83a1af14",
+      "canonical_lf_sha256": "a13c3d590de0a565b9c916115811982edc0065d75744f7b7978842fd83a1af14",
+      "size_bytes": 7478,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/continuum_observables_v042.py",
+      "raw_sha256": "a76b038456cf41e521b3dd3c4830dbf830e53087a81cf4f59aa79d4a62bda963",
+      "canonical_lf_sha256": "a76b038456cf41e521b3dd3c4830dbf830e53087a81cf4f59aa79d4a62bda963",
+      "size_bytes": 12570,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "references/sources.json",
+      "raw_sha256": "9da2bc51ba69a4f0cd32f3532e61b9fe312af34df517d79bba314c9e599300ff",
+      "canonical_lf_sha256": "9da2bc51ba69a4f0cd32f3532e61b9fe312af34df517d79bba314c9e599300ff",
+      "size_bytes": 150069,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "references/notes/v0.4.2_myrheim_meyer_calibration_audit_2026-08-15.md",
+      "raw_sha256": "1537341333503a0a60393ad4a4aa0f1cac22cefe6613d7a8cc8a3aef3110b2f3",
+      "canonical_lf_sha256": "1537341333503a0a60393ad4a4aa0f1cac22cefe6613d7a8cc8a3aef3110b2f3",
+      "size_bytes": 1541,
+      "strict_utf8_lf": true
+    }
+  ],
+  "semantic_digest_sha256": "50005f8a6e69406c563a1c5dec651214f4e6f646ed9252f5d747091298966bb8"
+}

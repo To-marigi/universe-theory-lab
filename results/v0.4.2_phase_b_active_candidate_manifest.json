@@ -1,0 +1,112 @@
+{
+  "schema_version": "final-theory-v042-phase-b-active-candidate-manifest-v1",
+  "prepared": "2026-08-15",
+  "status": "PHASE_B_ACTIVE_CANDIDATE_INPUT_MANIFEST_FROZEN",
+  "scientific_status": "FINAL_THEORY_OPEN",
+  "active_candidate": {
+    "id": "causal_information_v2_sparse_kraus",
+    "registry_role": "COMPARATOR",
+    "spec_path": "Final-Theory-Program/models/causal_information_v2/model_spec.json",
+    "implementation_path": "src/universe_lab/final_theory/dynamics_v02.py",
+    "entry_points": [
+      "universe_lab.final_theory.dynamics_v02:CANDIDATE_PROFILE",
+      "universe_lab.final_theory.dynamics_v02:transition_instrument",
+      "universe_lab.final_theory.dynamics_v02:propagate_distribution"
+    ],
+    "formalism": "KRAUS_GROWTH",
+    "state_space": "direct sum of unlabeled finite-causet history rays",
+    "validity_domain": "exact through cardinality five",
+    "parameters": {
+      "link_fugacity": {
+        "numerator": 2,
+        "denominator": 3
+      },
+      "diamond_fugacity": {
+        "numerator": 3,
+        "denominator": 2
+      },
+      "precursor_fugacity": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "parameter_selection": "pre-registered simple rational values; no held-out fit",
+      "action_form": "S_theta = theta_link*Delta(link_count) + theta_diamond*Delta(diamond_count) + theta_precursor*|precursor|, with fugacity=exp(-theta)"
+    },
+    "operator_basis": [
+      "link_count",
+      "diamond_count",
+      "precursor_size"
+    ],
+    "normalization_rule": "per-source aggregate orbit multiplicity times exact rational local weight, divided by the exact positive source sum"
+  },
+  "predecessor_boundary": {
+    "id": "causal_information_v1",
+    "spec_path": "Final-Theory-Program/models/causal_information_v1/model_spec.json",
+    "relation": "preserved_historical_kinematic_baseline",
+    "equivalence_to_active_candidate_certified": false,
+    "evidence_transfer_to_active_candidate": false
+  },
+  "measurement_boundary": {
+    "next_gate": "PHASE_B_CONTINUUM_DIMENSION_DERIVATION_DESIGN",
+    "sampling_authorized_by_manifest": false,
+    "required_before_sampling": [
+      "preregistered dimension estimators",
+      "correlation-length observable",
+      "finite-size scaling protocol",
+      "positive and negative controls",
+      "held-out partition",
+      "sampler normalization and independent replay"
+    ]
+  },
+  "claim_boundary": "This manifest authorizes only identity and input freezing for the v2 Phase-B candidate. It does not establish a continuum phase, target dimension, Spin-2 response, universal coupling, or equivalence to v1.",
+  "acceptance_checks": {
+    "registry_central_v1_preserved": true,
+    "v0_1_registry_is_unchanged_baseline": true,
+    "phase_b_active_pointer_is_v2": true,
+    "phase_b_active_candidate_is_registered": true,
+    "v2_spec_id_matches_active_id": true,
+    "implementation_profile_matches_active_id": true,
+    "spec_and_implementation_fugacities_match": true,
+    "target_dimension_is_forbidden_input": true,
+    "v1_is_preserved_without_evidence_transfer": true
+  },
+  "all_acceptance_checks_passed": true,
+  "source_bindings": [
+    {
+      "path": "Final-Theory-Program/candidates/candidate_registry.json",
+      "raw_sha256": "732d7e1e8a0b285263c447f2a09630285fc08c8d5cadcbe5fd20769896917506",
+      "canonical_lf_sha256": "732d7e1e8a0b285263c447f2a09630285fc08c8d5cadcbe5fd20769896917506",
+      "size_bytes": 4463,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/candidates/candidate_registry_v042_phase_b.json",
+      "raw_sha256": "9f8e5c7860fa434570f0b1c8169dd67a110f1ac42bc3096f4161c4780f69c2a6",
+      "canonical_lf_sha256": "9f8e5c7860fa434570f0b1c8169dd67a110f1ac42bc3096f4161c4780f69c2a6",
+      "size_bytes": 7247,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/models/causal_information_v1/model_spec.json",
+      "raw_sha256": "c15a22edab4919b357d4019577bc96ecda750bcd836ebe0c0e5191cd0b0b35ed",
+      "canonical_lf_sha256": "c15a22edab4919b357d4019577bc96ecda750bcd836ebe0c0e5191cd0b0b35ed",
+      "size_bytes": 5214,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/models/causal_information_v2/model_spec.json",
+      "raw_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "canonical_lf_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "size_bytes": 1032,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/dynamics_v02.py",
+      "raw_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "canonical_lf_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "size_bytes": 20648,
+      "strict_utf8_lf": true
+    }
+  ],
+  "semantic_digest_sha256": "7fadf17ff51a816df5a0d86b989e6984570b924660ad6849133fd0de80de81bb"
+}

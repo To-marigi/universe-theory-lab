@@ -1,0 +1,42 @@
+{
+  "schema_version": "final-theory-v042-phase-b-continuum-dimension-bounded-preflight-budget-v1",
+  "prepared": "2026-08-15",
+  "owner_instruction": "CONTINUE_PHASE_B_BOUNDED_PREFLIGHT",
+  "owner_approval_present": true,
+  "authorizes_gate": "PHASE_B_CONTINUUM_DIMENSION_BOUNDED_MEASUREMENT_PREFLIGHT",
+  "authorization_relationship": {
+    "supersedes_design_field_for_this_gate_only": "authorization_boundary.bounded_measurement_preflight_authorized",
+    "prior_value": false,
+    "effective_value": true,
+    "production_authorization_unchanged": true,
+    "large_n_authorization_unchanged": true
+  },
+  "authorization_scope": "existing exact n<=5 distributions and analytic measurement controls only",
+  "limits": {
+    "max_n": 5,
+    "max_unlabeled_relations": 88,
+    "max_lazy_walk_steps": 8,
+    "max_runtime_seconds": 30,
+    "max_memory_mib": 512,
+    "new_sampled_trajectories": 0,
+    "solver_calls": 0
+  },
+  "allowed_operations": [
+    "rebuild exact candidate and random-control distributions through n=5",
+    "evaluate preregistered relational observables on those distributions",
+    "run analytic dimension-four estimator controls",
+    "run exhaustive relabeling-invariance checks through n=5",
+    "record large-N and BDG-control implementation gaps"
+  ],
+  "forbidden_operations": [
+    "sample or enumerate cardinality above five",
+    "run planned production sizes 8 through 60",
+    "fit candidate fugacities",
+    "run a generic algebra solver",
+    "issue a continuum, dimension, Spin-2, or final-theory verdict"
+  ],
+  "production_sampling_authorized": false,
+  "large_n_extension_authorized": false,
+  "solver_run_permitted": false,
+  "global_verdict": "FINAL_THEORY_OPEN"
+}

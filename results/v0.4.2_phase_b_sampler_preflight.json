@@ -1,0 +1,597 @@
+{
+  "schema_version": "final-theory-v042-phase-b-sampler-preflight-v1",
+  "prepared": "2026-08-15",
+  "status": "PHASE_B_BOUNDED_SAMPLER_PREFLIGHT_COMPLETE_NON_EVIDENTIARY",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "profile_id": "causal_information_v2_sparse_kraus",
+  "candidate_identity_audit_digest": "6816ded0df6cbea1e46c562c85a8c206d5b8c6312883831000902cc9b1fb4503",
+  "candidate_identity_mismatch_present": false,
+  "candidate_identity_certified": true,
+  "sampling_authorized": false,
+  "scope": "Five deterministic seeds and 1,024 trajectories per seed through cardinality three. Regression only; no continuum or candidate-derived physics evidence.",
+  "configuration": {
+    "max_n": 3,
+    "trajectories_per_seed": 1024,
+    "seeds": [
+      7,
+      17,
+      29,
+      43,
+      71
+    ],
+    "selection_rule": "integer ticket over exact Fraction branch weights",
+    "floating_point_in_dynamics": false
+  },
+  "exact_baseline": {
+    "enumeration_counts": [
+      1,
+      1,
+      2,
+      5
+    ],
+    "known_counts_through_n5": [
+      1,
+      1,
+      2,
+      5,
+      16,
+      63
+    ],
+    "independent_oracle_scope": "n<=4",
+    "terminal_state_count": 5,
+    "terminal_distribution_normalized": true
+  },
+  "route_and_normalization_audit": {
+    "source_count": 4,
+    "branch_count": 9,
+    "all_normalized_exactly": true,
+    "all_targets_in_next_level": true,
+    "all_growth_move_target_sets_match": true,
+    "checks": [
+      {
+        "source": "p0-0",
+        "stage": 0,
+        "branch_count": 1,
+        "normalized_exactly": true,
+        "targets_in_next_level": true,
+        "growth_move_target_set_match": true
+      },
+      {
+        "source": "p1-0",
+        "stage": 1,
+        "branch_count": 2,
+        "normalized_exactly": true,
+        "targets_in_next_level": true,
+        "growth_move_target_set_match": true
+      },
+      {
+        "source": "p2-0",
+        "stage": 2,
+        "branch_count": 3,
+        "normalized_exactly": true,
+        "targets_in_next_level": true,
+        "growth_move_target_set_match": true
+      },
+      {
+        "source": "p2-2",
+        "stage": 2,
+        "branch_count": 3,
+        "normalized_exactly": true,
+        "targets_in_next_level": true,
+        "growth_move_target_set_match": true
+      }
+    ]
+  },
+  "seed_runs": [
+    {
+      "seed": 7,
+      "trajectories": 1024,
+      "terminal_counts": {
+        "p3-000": 280,
+        "p3-002": 511,
+        "p3-006": 79,
+        "p3-024": 84,
+        "p3-026": 70
+      },
+      "trajectory_digest": "7bc0d96e4a0614334ebe1f2c90ac3d4fd373c2b79041dcb9e4cf12bb785496a1",
+      "route_checks": 3072
+    },
+    {
+      "seed": 17,
+      "trajectories": 1024,
+      "terminal_counts": {
+        "p3-000": 295,
+        "p3-002": 467,
+        "p3-006": 96,
+        "p3-024": 93,
+        "p3-026": 73
+      },
+      "trajectory_digest": "9d03dd2caf79abea15f2fbddc20e626d0bea99366416e249840c1193011b33b5",
+      "route_checks": 3072
+    },
+    {
+      "seed": 29,
+      "trajectories": 1024,
+      "terminal_counts": {
+        "p3-000": 298,
+        "p3-002": 469,
+        "p3-006": 99,
+        "p3-024": 84,
+        "p3-026": 74
+      },
+      "trajectory_digest": "559bdfcfcdabcf26eff95845c6255f7c3539d6847ba8609b88224e8cd040664e",
+      "route_checks": 3072
+    },
+    {
+      "seed": 43,
+      "trajectories": 1024,
+      "terminal_counts": {
+        "p3-000": 285,
+        "p3-002": 472,
+        "p3-006": 90,
+        "p3-024": 87,
+        "p3-026": 90
+      },
+      "trajectory_digest": "529bada8cebc5c2faaf8ce56bd0d043fc3c2fe8715ebbf2dd9738106efd39317",
+      "route_checks": 3072
+    },
+    {
+      "seed": 71,
+      "trajectories": 1024,
+      "terminal_counts": {
+        "p3-000": 286,
+        "p3-002": 488,
+        "p3-006": 88,
+        "p3-024": 74,
+        "p3-026": 88
+      },
+      "trajectory_digest": "81b71720412d20460f01aa97b5355f4d1d597cbcf3e99a3c69ebaadfcbd08017",
+      "route_checks": 3072
+    }
+  ],
+  "exact_distribution_comparisons": [
+    {
+      "passed": true,
+      "rows": [
+        {
+          "terminal_history": "p3-000",
+          "exact_probability": {
+            "numerator": 3375,
+            "denominator": 12167
+          },
+          "observed_count": 280,
+          "empirical_probability": {
+            "numerator": 35,
+            "denominator": 128
+          },
+          "six_sigma_tolerance": 0.08394570722530818,
+          "absolute_difference": 0.003952160557245007,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-002",
+          "exact_probability": {
+            "numerator": 282200,
+            "denominator": 596183
+          },
+          "observed_count": 511,
+          "empirical_probability": {
+            "numerator": 511,
+            "denominator": 1024
+          },
+          "six_sigma_tolerance": 0.09361668445862532,
+          "absolute_difference": 0.025678843642073828,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-006",
+          "exact_probability": {
+            "numerator": 320,
+            "denominator": 3381
+          },
+          "observed_count": 79,
+          "empirical_probability": {
+            "numerator": 79,
+            "denominator": 1024
+          },
+          "six_sigma_tolerance": 0.05488614836718534,
+          "absolute_difference": 0.017498116773883465,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-024",
+          "exact_probability": {
+            "numerator": 960,
+            "denominator": 12167
+          },
+          "observed_count": 84,
+          "empirical_probability": {
+            "numerator": 21,
+            "denominator": 256
+          },
+          "six_sigma_tolerance": 0.05054731209611669,
+          "absolute_difference": 0.0031293021081614204,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-026",
+          "exact_probability": {
+            "numerator": 256,
+            "denominator": 3381
+          },
+          "observed_count": 70,
+          "empirical_probability": {
+            "numerator": 35,
+            "denominator": 512
+          },
+          "six_sigma_tolerance": 0.049602217779498435,
+          "absolute_difference": 0.007357868419106773,
+          "within_diagnostic_tolerance": true
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "rows": [
+        {
+          "terminal_history": "p3-000",
+          "exact_probability": {
+            "numerator": 3375,
+            "denominator": 12167
+          },
+          "observed_count": 295,
+          "empirical_probability": {
+            "numerator": 295,
+            "denominator": 1024
+          },
+          "six_sigma_tolerance": 0.08394570722530818,
+          "absolute_difference": 0.010696276942754993,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-002",
+          "exact_probability": {
+            "numerator": 282200,
+            "denominator": 596183
+          },
+          "observed_count": 467,
+          "empirical_probability": {
+            "numerator": 467,
+            "denominator": 1024
+          },
+          "six_sigma_tolerance": 0.09361668445862532,
+          "absolute_difference": 0.017289906357926172,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-006",
+          "exact_probability": {
+            "numerator": 320,
+            "denominator": 3381
+          },
+          "observed_count": 96,
+          "empirical_probability": {
+            "numerator": 3,
+            "denominator": 32
+          },
+          "six_sigma_tolerance": 0.05488614836718534,
+          "absolute_difference": 0.0008965542738834664,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-024",
+          "exact_probability": {
+            "numerator": 960,
+            "denominator": 12167
+          },
+          "observed_count": 93,
+          "empirical_probability": {
+            "numerator": 93,
+            "denominator": 1024
+          },
+          "six_sigma_tolerance": 0.05054731209611669,
+          "absolute_difference": 0.01191836460816142,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-026",
+          "exact_probability": {
+            "numerator": 256,
+            "denominator": 3381
+          },
+          "observed_count": 73,
+          "empirical_probability": {
+            "numerator": 73,
+            "denominator": 1024
+          },
+          "six_sigma_tolerance": 0.049602217779498435,
+          "absolute_difference": 0.004428180919106773,
+          "within_diagnostic_tolerance": true
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "rows": [
+        {
+          "terminal_history": "p3-000",
+          "exact_probability": {
+            "numerator": 3375,
+            "denominator": 12167
+          },
+          "observed_count": 298,
+          "empirical_probability": {
+            "numerator": 149,
+            "denominator": 512
+          },
+          "six_sigma_tolerance": 0.08394570722530818,
+          "absolute_difference": 0.013625964442754993,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-002",
+          "exact_probability": {
+            "numerator": 282200,
+            "denominator": 596183
+          },
+          "observed_count": 469,
+          "empirical_probability": {
+            "numerator": 469,
+            "denominator": 1024
+          },
+          "six_sigma_tolerance": 0.09361668445862532,
+          "absolute_difference": 0.015336781357926174,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-006",
+          "exact_probability": {
+            "numerator": 320,
+            "denominator": 3381
+          },
+          "observed_count": 99,
+          "empirical_probability": {
+            "numerator": 99,
+            "denominator": 1024
+          },
+          "six_sigma_tolerance": 0.05488614836718534,
+          "absolute_difference": 0.0020331332261165334,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-024",
+          "exact_probability": {
+            "numerator": 960,
+            "denominator": 12167
+          },
+          "observed_count": 84,
+          "empirical_probability": {
+            "numerator": 21,
+            "denominator": 256
+          },
+          "six_sigma_tolerance": 0.05054731209611669,
+          "absolute_difference": 0.0031293021081614204,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-026",
+          "exact_probability": {
+            "numerator": 256,
+            "denominator": 3381
+          },
+          "observed_count": 74,
+          "empirical_probability": {
+            "numerator": 37,
+            "denominator": 512
+          },
+          "six_sigma_tolerance": 0.049602217779498435,
+          "absolute_difference": 0.003451618419106773,
+          "within_diagnostic_tolerance": true
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "rows": [
+        {
+          "terminal_history": "p3-000",
+          "exact_probability": {
+            "numerator": 3375,
+            "denominator": 12167
+          },
+          "observed_count": 285,
+          "empirical_probability": {
+            "numerator": 285,
+            "denominator": 1024
+          },
+          "six_sigma_tolerance": 0.08394570722530818,
+          "absolute_difference": 0.000930651942754993,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-002",
+          "exact_probability": {
+            "numerator": 282200,
+            "denominator": 596183
+          },
+          "observed_count": 472,
+          "empirical_probability": {
+            "numerator": 59,
+            "denominator": 128
+          },
+          "six_sigma_tolerance": 0.09361668445862532,
+          "absolute_difference": 0.012407093857926174,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-006",
+          "exact_probability": {
+            "numerator": 320,
+            "denominator": 3381
+          },
+          "observed_count": 90,
+          "empirical_probability": {
+            "numerator": 45,
+            "denominator": 512
+          },
+          "six_sigma_tolerance": 0.05488614836718534,
+          "absolute_difference": 0.006755929273883466,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-024",
+          "exact_probability": {
+            "numerator": 960,
+            "denominator": 12167
+          },
+          "observed_count": 87,
+          "empirical_probability": {
+            "numerator": 87,
+            "denominator": 1024
+          },
+          "six_sigma_tolerance": 0.05054731209611669,
+          "absolute_difference": 0.00605898960816142,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-026",
+          "exact_probability": {
+            "numerator": 256,
+            "denominator": 3381
+          },
+          "observed_count": 90,
+          "empirical_probability": {
+            "numerator": 45,
+            "denominator": 512
+          },
+          "six_sigma_tolerance": 0.049602217779498435,
+          "absolute_difference": 0.012173381580893226,
+          "within_diagnostic_tolerance": true
+        }
+      ]
+    },
+    {
+      "passed": true,
+      "rows": [
+        {
+          "terminal_history": "p3-000",
+          "exact_probability": {
+            "numerator": 3375,
+            "denominator": 12167
+          },
+          "observed_count": 286,
+          "empirical_probability": {
+            "numerator": 143,
+            "denominator": 512
+          },
+          "six_sigma_tolerance": 0.08394570722530818,
+          "absolute_difference": 0.001907214442754993,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-002",
+          "exact_probability": {
+            "numerator": 282200,
+            "denominator": 596183
+          },
+          "observed_count": 488,
+          "empirical_probability": {
+            "numerator": 61,
+            "denominator": 128
+          },
+          "six_sigma_tolerance": 0.09361668445862532,
+          "absolute_difference": 0.003217906142073826,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-006",
+          "exact_probability": {
+            "numerator": 320,
+            "denominator": 3381
+          },
+          "observed_count": 88,
+          "empirical_probability": {
+            "numerator": 11,
+            "denominator": 128
+          },
+          "six_sigma_tolerance": 0.05488614836718534,
+          "absolute_difference": 0.008709054273883467,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-024",
+          "exact_probability": {
+            "numerator": 960,
+            "denominator": 12167
+          },
+          "observed_count": 74,
+          "empirical_probability": {
+            "numerator": 37,
+            "denominator": 512
+          },
+          "six_sigma_tolerance": 0.05054731209611669,
+          "absolute_difference": 0.00663632289183858,
+          "within_diagnostic_tolerance": true
+        },
+        {
+          "terminal_history": "p3-026",
+          "exact_probability": {
+            "numerator": 256,
+            "denominator": 3381
+          },
+          "observed_count": 88,
+          "empirical_probability": {
+            "numerator": 11,
+            "denominator": 128
+          },
+          "six_sigma_tolerance": 0.049602217779498435,
+          "absolute_difference": 0.010220256580893226,
+          "within_diagnostic_tolerance": true
+        }
+      ]
+    }
+  ],
+  "replay_digest_matches": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "acceptance_criteria": {
+    "exact_domain_is_declared": true,
+    "exact_baseline_is_normalized": true,
+    "all_transition_routes_and_normalizations_pass": true,
+    "all_seed_comparisons_pass_diagnostic_tolerance": true,
+    "all_replay_digests_match": true,
+    "identity_gate_is_certified": true,
+    "continuum_design_gate_still_blocks_sampling": true
+  },
+  "claim_boundary": "A successful finite sampler regression does not establish a large-N measure, continuum phase, dimension, Spin-2 response, or universal coupling.",
+  "source_bindings": [
+    {
+      "path": "src/universe_lab/final_theory/dynamics_v02.py",
+      "raw_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "canonical_lf_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "size_bytes": 20648,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/causal_sets.py",
+      "raw_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+      "canonical_lf_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+      "size_bytes": 16560,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/models/causal_information_v2/model_spec.json",
+      "raw_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "canonical_lf_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "size_bytes": 1032,
+      "strict_utf8_lf": true
+    }
+  ],
+  "all_acceptance_checks_passed": true,
+  "semantic_digest_sha256": "d21197d34942b9783eae2184996bfaa123f28a6c03d335149af35cbdcd26ff12"
+}

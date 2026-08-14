@@ -1,0 +1,179 @@
+{
+  "schema_version": "final-theory-v042-phase-b-candidate-identity-v1",
+  "prepared": "2026-08-15",
+  "status": "PHASE_B_CANDIDATE_IDENTITY_AND_INPUT_FREEZE_CERTIFIED",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "PHASE_B_CANDIDATE_IDENTITY_AND_INPUT_FREEZE",
+  "next_gate": "PHASE_B_CONTINUUM_DIMENSION_DERIVATION_DESIGN",
+  "scope": "Candidate identity and input-freeze audit. v2 is active for Phase B without replacing the global v1 central baseline; no continuum sampling or reopening of frozen 955/721 profiles.",
+  "identity": {
+    "registry_central_candidate": "causal_information_v1",
+    "phase_b_active_candidate": "causal_information_v2_sparse_kraus",
+    "registered_candidate_ids": [
+      "causal_information_v1",
+      "causal_information_v2_sparse_kraus",
+      "causal_set_amplitude_family",
+      "quantum_channel_network_family"
+    ],
+    "registered_central_spec": "Final-Theory-Program/models/causal_information_v1/model_spec.json",
+    "registered_central_model_id": "causal_information_v1",
+    "implemented_v2_spec": "Final-Theory-Program/models/causal_information_v2/model_spec.json",
+    "implemented_v2_model_id": "causal_information_v2_sparse_kraus",
+    "implemented_v2_role": "CENTRAL_CANDIDATE",
+    "implemented_profile_id": "causal_information_v2_sparse_kraus",
+    "same_candidate_certified": false,
+    "active_candidate_identity_certified": true,
+    "mismatch_detected": false,
+    "claim_boundary": "v2 finite-growth results are v2 evidence only and cannot be transferred to the v1 candidate without an explicit certified map."
+  },
+  "frozen_decision": {
+    "decision": "v1_remains_global_central_v2_is_phase_b_active",
+    "v1_to_v2_equivalence_certified": false,
+    "cross_version_evidence_transfer": false,
+    "sampling_fail_closed_until_continuum_design_gate": true,
+    "manifest": "results/v0.4.2_phase_b_active_candidate_manifest.json"
+  },
+  "input_manifest_requirements": [
+    "candidate ID and version",
+    "spec path and SHA-256",
+    "implementation profile and entry point",
+    "operator basis, fugacities, and normalization rule",
+    "validity domain",
+    "claim boundary and non-transferable evidence boundary"
+  ],
+  "acceptance_criteria": {
+    "registered_central_candidate_is_explicit": {
+      "id": "registered_central_candidate_is_explicit",
+      "passed": true,
+      "evidence": {
+        "central_candidate": "causal_information_v1",
+        "candidate_ids": [
+          "causal_information_v1",
+          "causal_information_v2_sparse_kraus",
+          "causal_set_amplitude_family",
+          "quantum_channel_network_family"
+        ]
+      }
+    },
+    "registered_v1_spec_matches_registry": {
+      "id": "registered_v1_spec_matches_registry",
+      "passed": true,
+      "evidence": {
+        "registry_central": "causal_information_v1",
+        "v1_model_id": "causal_information_v1"
+      }
+    },
+    "frozen_v0_1_registry_is_preserved": {
+      "id": "frozen_v0_1_registry_is_preserved",
+      "passed": true,
+      "evidence": {
+        "path": "Final-Theory-Program/candidates/candidate_registry.json"
+      }
+    },
+    "phase_b_active_pointer_matches_v2": {
+      "id": "phase_b_active_pointer_matches_v2",
+      "passed": true,
+      "evidence": {
+        "phase_b_active_candidate": "causal_information_v2_sparse_kraus",
+        "v2_model_id": "causal_information_v2_sparse_kraus"
+      }
+    },
+    "v2_implementation_matches_v2_spec": {
+      "id": "v2_implementation_matches_v2_spec",
+      "passed": true,
+      "evidence": {
+        "v2_model_id": "causal_information_v2_sparse_kraus",
+        "implementation_profile_id": "causal_information_v2_sparse_kraus"
+      }
+    },
+    "active_candidate_manifest": {
+      "id": "active_candidate_manifest_matches_registry",
+      "passed": true,
+      "evidence": {
+        "registry_central": "causal_information_v1",
+        "phase_b_active_candidate": "causal_information_v2_sparse_kraus",
+        "v1_model_id": "causal_information_v1",
+        "v2_model_id": "causal_information_v2_sparse_kraus",
+        "manifest_digest": "7fadf17ff51a816df5a0d86b989e6984570b924660ad6849133fd0de80de81bb"
+      }
+    },
+    "central_benchmark_path_is_v1_bound": {
+      "id": "central_benchmark_path_is_v1_bound",
+      "passed": true,
+      "evidence": {
+        "benchmark_path": "src/universe_lab/final_theory/benchmarks.py"
+      }
+    },
+    "phase_a_and_solver_boundary_preserved": {
+      "id": "phase_a_freeze_and_solver_boundary_preserved",
+      "passed": true,
+      "evidence": {
+        "terminal_boundaries": {
+          "955": "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT",
+          "721": "FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT"
+        },
+        "solver_run_permitted": false
+      }
+    }
+  },
+  "source_bindings": [
+    {
+      "path": "Final-Theory-Program/candidates/candidate_registry_v042_phase_b.json",
+      "raw_sha256": "9f8e5c7860fa434570f0b1c8169dd67a110f1ac42bc3096f4161c4780f69c2a6",
+      "canonical_lf_sha256": "9f8e5c7860fa434570f0b1c8169dd67a110f1ac42bc3096f4161c4780f69c2a6",
+      "size_bytes": 7247,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/candidates/candidate_registry.json",
+      "raw_sha256": "732d7e1e8a0b285263c447f2a09630285fc08c8d5cadcbe5fd20769896917506",
+      "canonical_lf_sha256": "732d7e1e8a0b285263c447f2a09630285fc08c8d5cadcbe5fd20769896917506",
+      "size_bytes": 4463,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/models/causal_information_v1/model_spec.json",
+      "raw_sha256": "c15a22edab4919b357d4019577bc96ecda750bcd836ebe0c0e5191cd0b0b35ed",
+      "canonical_lf_sha256": "c15a22edab4919b357d4019577bc96ecda750bcd836ebe0c0e5191cd0b0b35ed",
+      "size_bytes": 5214,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/models/causal_information_v2/model_spec.json",
+      "raw_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "canonical_lf_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "size_bytes": 1032,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/dynamics_v02.py",
+      "raw_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "canonical_lf_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "size_bytes": 20648,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/benchmarks.py",
+      "raw_sha256": "5ccd51e7caa50a5a662545fd7e63ad60c8557c3c240305fabdf567bf90034c39",
+      "canonical_lf_sha256": "5ccd51e7caa50a5a662545fd7e63ad60c8557c3c240305fabdf567bf90034c39",
+      "size_bytes": 3873,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_active_candidate_manifest.json",
+      "raw_sha256": "8439304f2a2243b6c1429e02a9bddd74b8a9cb2979fcf747071d9949425d7ca8",
+      "canonical_lf_sha256": "8439304f2a2243b6c1429e02a9bddd74b8a9cb2979fcf747071d9949425d7ca8",
+      "size_bytes": 4917,
+      "strict_utf8_lf": true
+    }
+  ],
+  "sampling_authorized": false,
+  "all_safety_checks_passed": true,
+  "phase_a_boundary_preserved": {
+    "955": "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT",
+    "721": "FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT",
+    "solver_run_permitted": false
+  },
+  "semantic_digest_sha256": "6816ded0df6cbea1e46c562c85a8c206d5b8c6312883831000902cc9b1fb4503"
+}

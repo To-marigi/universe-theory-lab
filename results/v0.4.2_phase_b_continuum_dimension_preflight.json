@@ -1,0 +1,1731 @@
+{
+  "schema_version": "final-theory-v042-phase-b-continuum-dimension-preflight-v1",
+  "prepared": "2026-08-15",
+  "status": "PHASE_B_CONTINUUM_DIMENSION_BOUNDED_MEASUREMENT_PREFLIGHT_COMPLETE_PRODUCTION_EXTENSION_REQUIRED",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "scientific_evidence": false,
+  "starting_gate": "PHASE_B_CONTINUUM_DIMENSION_BOUNDED_MEASUREMENT_PREFLIGHT",
+  "next_gate": "PHASE_B_CONTINUUM_DIMENSION_LARGE_N_SAMPLER_EXTENSION_DESIGN",
+  "scope": "Exact n<=5 arithmetic, source-calibration, schema, normalization, and exhaustive label-invariance preflight. No new histories, planned production sizes, parameter fits, or solver calls are permitted.",
+  "budget": {
+    "path": "config/v0.4.2_phase_b_continuum_dimension_bounded_preflight_budget.json",
+    "limits": {
+      "max_n": 5,
+      "max_unlabeled_relations": 88,
+      "max_lazy_walk_steps": 8,
+      "max_runtime_seconds": 30,
+      "max_memory_mib": 512,
+      "new_sampled_trajectories": 0,
+      "solver_calls": 0
+    },
+    "owner_approval_present": true,
+    "authorizes_gate": "PHASE_B_CONTINUUM_DIMENSION_BOUNDED_MEASUREMENT_PREFLIGHT",
+    "authorization_relationship": {
+      "supersedes_design_field_for_this_gate_only": "authorization_boundary.bounded_measurement_preflight_authorized",
+      "prior_value": false,
+      "effective_value": true,
+      "production_authorization_unchanged": true,
+      "large_n_authorization_unchanged": true
+    }
+  },
+  "resource_controls": {
+    "finite_domain_structurally_bounded": true,
+    "internal_elapsed_time_guard_present": true,
+    "hard_wall_time_supervisor_used": false,
+    "hard_memory_supervisor_used": false,
+    "claim_boundary": "The preflight is structurally finite and checks elapsed time between stages. The recorded 30-second and 512-MiB limits are not a production-grade external hard supervisor."
+  },
+  "numeric_backend": {
+    "numpy_version": "2.3.5",
+    "artifact_rounding_significant_digits": 12
+  },
+  "analytic_controls": {
+    "control_scope": {
+      "ordering_anchor_check": "external source-backed known values",
+      "ordering_round_trip": "arithmetic smoke test",
+      "height_power_law": "synthetic regression smoke test",
+      "spectral_power_law": "synthetic regression smoke test",
+      "end_to_end_bdg_ensemble_control": false
+    },
+    "ordering_calibration_dimensions": [
+      1.5,
+      2.0,
+      3.0,
+      4.0,
+      5.0
+    ],
+    "ordering_max_abs_error": 2.79396772385e-09,
+    "ordering_anchor_expected": {
+      "2": 0.5,
+      "4": 0.1
+    },
+    "ordering_anchor_computed": {
+      "2": 0.5,
+      "4": 0.1
+    },
+    "ordering_anchor_max_abs_error": 0.0,
+    "height_dimension_four_recovered": 4.0,
+    "spectral_dimension_four_recovered": 4.0,
+    "lazy_transition_rows_checked": 399,
+    "lazy_transition_row_failures": 0,
+    "passed": true
+  },
+  "label_invariance": {
+    "relations_checked": 88,
+    "permutations_checked": 7980,
+    "failed_permutation_count": 0,
+    "failed_relation_ids": [],
+    "failed_cases_first_100": [],
+    "maximum_correlation_length_abs_error": 8.881784197e-15,
+    "passed": true
+  },
+  "capability_audit": {
+    "manifest_records": {
+      "candidate": {
+        "profile_id": "causal_information_v2_sparse_kraus",
+        "transition_instrument_available": true,
+        "exact_enumeration_verified_max_n": 5,
+        "production_sampler_available": false,
+        "production_sampler_max_n": null
+      },
+      "negative_control": {
+        "profile_id": "random_growth_control",
+        "transition_instrument_available": true,
+        "exact_enumeration_verified_max_n": 5,
+        "production_sampler_available": false,
+        "production_sampler_max_n": null
+      },
+      "positive_control": {
+        "profile_id": "bdg_control",
+        "profile_metadata_available": true,
+        "transition_instrument_available": false,
+        "ensemble_sampler_available": false,
+        "implemented_dimension": null
+      }
+    },
+    "runtime_probe_records": {
+      "candidate": {
+        "profile_id": "causal_information_v2_sparse_kraus",
+        "transition_instrument_available": true,
+        "expected_unsupported_error": null,
+        "reason": null
+      },
+      "negative_control": {
+        "profile_id": "random_growth_control",
+        "transition_instrument_available": true,
+        "expected_unsupported_error": null,
+        "reason": null
+      },
+      "positive_control": {
+        "profile_id": "bdg_control",
+        "transition_instrument_available": false,
+        "expected_unsupported_error": true,
+        "reason": "profile does not define this instrument: bdg_control"
+      }
+    },
+    "passed": true
+  },
+  "candidate_measurements": [
+    {
+      "n": 0,
+      "state_count": 1,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": null,
+      "ordering_fraction_dimension": null,
+      "expected_height": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "spectral_return_probabilities": [],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": null,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [],
+        "expected_component_count": null,
+        "connected_probability_mass": null,
+        "expected_largest_component_fraction": null,
+        "expected_finite_size_saturation_floor": null
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "conditional_rms_correlation_length": null,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "conditional_rms_correlation_length_over_diameter": null,
+      "mean_nontrivial_vertex_coverage": 0.0
+    },
+    {
+      "n": 1,
+      "state_count": 1,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": null,
+      "ordering_fraction_dimension": null,
+      "expected_height": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "spectral_return_probabilities": [
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        }
+      ],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": null,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [
+          {
+            "component_sizes": [
+              1
+            ],
+            "probability_mass": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "expected_component_count": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "connected_probability_mass": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "expected_largest_component_fraction": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "expected_finite_size_saturation_floor": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "conditional_rms_correlation_length": null,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "conditional_rms_correlation_length_over_diameter": null,
+      "mean_nontrivial_vertex_coverage": 0.0
+    },
+    {
+      "n": 2,
+      "state_count": 2,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": {
+        "numerator": 8,
+        "denominator": 23
+      },
+      "ordering_fraction_dimension": 2.47293461952,
+      "expected_height": {
+        "numerator": 31,
+        "denominator": 23
+      },
+      "spectral_return_probabilities": [
+        {
+          "numerator": 19,
+          "denominator": 23
+        },
+        {
+          "numerator": 19,
+          "denominator": 23
+        },
+        {
+          "numerator": 19,
+          "denominator": 23
+        },
+        {
+          "numerator": 19,
+          "denominator": 23
+        },
+        {
+          "numerator": 19,
+          "denominator": 23
+        },
+        {
+          "numerator": 19,
+          "denominator": 23
+        },
+        {
+          "numerator": 19,
+          "denominator": 23
+        },
+        {
+          "numerator": 19,
+          "denominator": 23
+        }
+      ],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": null,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [
+          {
+            "component_sizes": [
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 15,
+              "denominator": 23
+            }
+          },
+          {
+            "component_sizes": [
+              2
+            ],
+            "probability_mass": {
+              "numerator": 8,
+              "denominator": 23
+            }
+          }
+        ],
+        "expected_component_count": {
+          "numerator": 38,
+          "denominator": 23
+        },
+        "connected_probability_mass": {
+          "numerator": 8,
+          "denominator": 23
+        },
+        "expected_largest_component_fraction": {
+          "numerator": 31,
+          "denominator": 46
+        },
+        "expected_finite_size_saturation_floor": {
+          "numerator": 19,
+          "denominator": 23
+        }
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 8,
+        "denominator": 23
+      },
+      "conditional_rms_correlation_length": 1.0,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 8,
+        "denominator": 23
+      },
+      "conditional_rms_correlation_length_over_diameter": 1.0,
+      "mean_nontrivial_vertex_coverage": 0.347826086957
+    },
+    {
+      "n": 3,
+      "state_count": 5,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": {
+        "numerator": 81464,
+        "denominator": 233289
+      },
+      "ordering_fraction_dimension": 2.46790583152,
+      "expected_height": {
+        "numerator": 3216397,
+        "denominator": 1788549
+      },
+      "spectral_return_probabilities": [
+        {
+          "numerator": 1283437,
+          "denominator": 1788549
+        },
+        {
+          "numerator": 1246285,
+          "denominator": 1788549
+        },
+        {
+          "numerator": 175387,
+          "denominator": 255507
+        },
+        {
+          "numerator": 1218421,
+          "denominator": 1788549
+        },
+        {
+          "numerator": 1213777,
+          "denominator": 1788549
+        },
+        {
+          "numerator": 173065,
+          "denominator": 255507
+        },
+        {
+          "numerator": 1210294,
+          "denominator": 1788549
+        },
+        {
+          "numerator": 2419427,
+          "denominator": 3577098
+        }
+      ],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": 0.0584113019828,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [
+          {
+            "component_sizes": [
+              1,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 3375,
+              "denominator": 12167
+            }
+          },
+          {
+            "component_sizes": [
+              2,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 282200,
+              "denominator": 596183
+            }
+          },
+          {
+            "component_sizes": [
+              3
+            ],
+            "probability_mass": {
+              "numerator": 148608,
+              "denominator": 596183
+            }
+          }
+        ],
+        "expected_component_count": {
+          "numerator": 52571,
+          "denominator": 25921
+        },
+        "connected_probability_mass": {
+          "numerator": 148608,
+          "denominator": 596183
+        },
+        "expected_largest_component_fraction": {
+          "numerator": 51113,
+          "denominator": 77763
+        },
+        "expected_finite_size_saturation_floor": {
+          "numerator": 52571,
+          "denominator": 77763
+        }
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 8792,
+        "denominator": 12167
+      },
+      "conditional_rms_correlation_length": 1.15972057474,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 8792,
+        "denominator": 12167
+      },
+      "conditional_rms_correlation_length_over_diameter": 0.90968351324,
+      "mean_nontrivial_vertex_coverage": 0.564828808157
+    },
+    {
+      "n": 4,
+      "state_count": 16,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": {
+        "numerator": 1892940091689464648,
+        "denominator": 5390269279562149983
+      },
+      "ordering_fraction_dimension": 2.46068011876,
+      "expected_height": {
+        "numerator": 6171953677506127984063,
+        "denominator": 2851452448888377341007
+      },
+      "spectral_return_probabilities": [
+        {
+          "numerator": 615767514881458852897,
+          "denominator": 950484149629459113669
+        },
+        {
+          "numerator": 1719347629373086521043,
+          "denominator": 2851452448888377341007
+        },
+        {
+          "numerator": 183930019081937944691,
+          "denominator": 316828049876486371223
+        },
+        {
+          "numerator": 1620536397792245143984,
+          "denominator": 2851452448888377341007
+        },
+        {
+          "numerator": 1066849643794848744029,
+          "denominator": 1900968299258918227338
+        },
+        {
+          "numerator": 25405310407620733598473,
+          "denominator": 45623239182214037456112
+        },
+        {
+          "numerator": 16851546289746117987421,
+          "denominator": 30415492788142691637408
+        },
+        {
+          "numerator": 403068932709482143051789,
+          "denominator": 729971826915424599297792
+        }
+      ],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": 0.158024386082,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [
+          {
+            "component_sizes": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 11390625,
+              "denominator": 148035889
+            }
+          },
+          {
+            "component_sizes": [
+              2,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 99739650000,
+              "denominator": 355434169489
+            }
+          },
+          {
+            "component_sizes": [
+              2,
+              2
+            ],
+            "probability_mass": {
+              "numerator": 56440000,
+              "denominator": 671898241
+            }
+          },
+          {
+            "component_sizes": [
+              3,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 298225924043032256000,
+              "denominator": 950484149629459113669
+            }
+          },
+          {
+            "component_sizes": [
+              4
+            ],
+            "probability_mass": {
+              "numerator": 232563009402352044544,
+              "denominator": 950484149629459113669
+            }
+          }
+        ],
+        "expected_component_count": {
+          "numerator": 3934582397168180036,
+          "denominator": 1796756426520716661
+        },
+        "connected_probability_mass": {
+          "numerator": 232563009402352044544,
+          "denominator": 950484149629459113669
+        },
+        "expected_largest_component_fraction": {
+          "numerator": 4898270730826163269,
+          "denominator": 7187025706082866644
+        },
+        "expected_finite_size_saturation_floor": {
+          "numerator": 983645599292045009,
+          "denominator": 1796756426520716661
+        }
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 136645264,
+        "denominator": 148035889
+      },
+      "conditional_rms_correlation_length": 1.40497236272,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 136645264,
+        "denominator": 148035889
+      },
+      "conditional_rms_correlation_length_over_diameter": 0.829008675906,
+      "mean_nontrivial_vertex_coverage": 0.704307662318
+    },
+    {
+      "n": 5,
+      "state_count": 63,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": {
+        "numerator": 16891493192481356748805609652267888313032940787332305267549623867096,
+        "denominator": 47817380935981627612208606953037305862301645703979943351438866709573
+      },
+      "ordering_fraction_dimension": 2.45315321628,
+      "expected_height": {
+        "numerator": 2125039513433542510179497420710327643420106726151388474594700607757360995,
+        "denominator": 863876049047161657416041330881292124875896425476844683851238723379192723
+      },
+      "spectral_return_probabilities": [
+        {
+          "numerator": 1907130598264344963074667979329019168735866673464466619277450063553362763,
+          "denominator": 3167545513172926077192151546564737791211620226748430507454541985723706651
+        },
+        {
+          "numerator": 228757465044012309760546805501243821383957050964997319973915461633430967949,
+          "denominator": 427618644278345020420940458786239601813568730611038118506363168072700397885
+        },
+        {
+          "numerator": 71468294061058393211093373215718979395421525329548161053215104386764821807,
+          "denominator": 142539548092781673473646819595413200604522910203679372835454389357566799295
+        },
+        {
+          "numerator": 618682290938431168597680698360066586946687992947163002079435848413632416683,
+          "denominator": 1282855932835035061262821376358718805440706191833114355519089504218101193655
+        },
+        {
+          "numerator": 120687803717670499254915961367279949421729362580761198207926687206556421821,
+          "denominator": 256571186567007012252564275271743761088141238366622871103817900843620238731
+        },
+        {
+          "numerator": 7120159637672716118941377722248924037142167435891879246152328252498993682743,
+          "denominator": 15394271194020420735153856516304625665288474301997372266229074050617214323860
+        },
+        {
+          "numerator": 2814373450612740594890698646492564437696046154743733177103897509134484336337,
+          "denominator": 6157708477608168294061542606521850266115389720798948906491629620246885729544
+        },
+        {
+          "numerator": 30436669287725458657360857747560472008842553600465329794586895538538035981671,
+          "denominator": 67175001573907290480671373889329275630349706045079442616272323129966026140480
+        }
+      ],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": 0.282611323626,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [
+          {
+            "component_sizes": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 576650390625,
+              "denominator": 41426511213649
+            }
+          },
+          {
+            "component_sizes": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 441518125218750000,
+              "denominator": 4873787617774591201
+            }
+          },
+          {
+            "component_sizes": [
+              2,
+              2,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 39194848375000000,
+              "denominator": 451447246258894081
+            }
+          },
+          {
+            "component_sizes": [
+              3,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 627204205938998481239180886220000000,
+              "denominator": 3872536290595939034280082820634333649
+            }
+          },
+          {
+            "component_sizes": [
+              3,
+              2
+            ],
+            "probability_mass": {
+              "numerator": 109586476639100630569872328672000000,
+              "denominator": 1076111218747831829941724337680996307
+            }
+          },
+          {
+            "component_sizes": [
+              4,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 17371839268611027499970739445919652057007918495121573172130139304640000,
+              "denominator": 64643785983120940350860235644178322269624902586702663417439632361708299
+            }
+          },
+          {
+            "component_sizes": [
+              5
+            ],
+            "probability_mass": {
+              "numerator": 874685481577041689203730833024781024919327576676870766064927249172299776,
+              "denominator": 3167545513172926077192151546564737791211620226748430507454541985723706651
+            }
+          }
+        ],
+        "expected_component_count": {
+          "numerator": 1060475014121181974464121866561550614858757461721457056387727010627,
+          "denominator": 483003847838198258709177848010477836992945916201817609610493603127
+        },
+        "connected_probability_mass": {
+          "numerator": 874685481577041689203730833024781024919327576676870766064927249172299776,
+          "denominator": 3167545513172926077192151546564737791211620226748430507454541985723706651
+        },
+        "expected_largest_component_fraction": {
+          "numerator": 139680314970506122380988918194068616991490290740912157234535514116449,
+          "denominator": 193154796827423993974763799412448185329082274940449448591654490256949
+        },
+        "expected_finite_size_saturation_floor": {
+          "numerator": 1060475014121181974464121866561550614858757461721457056387727010627,
+          "denominator": 2415019239190991293545889240052389184964729581009088048052468015635
+        }
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 40849860823024,
+        "denominator": 41426511213649
+      },
+      "conditional_rms_correlation_length": 1.74054732423,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 40849860823024,
+        "denominator": 41426511213649
+      },
+      "conditional_rms_correlation_length_over_diameter": 0.748438044326,
+      "mean_nontrivial_vertex_coverage": 0.795830657944
+    }
+  ],
+  "random_control_measurements": [
+    {
+      "n": 0,
+      "state_count": 1,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": null,
+      "ordering_fraction_dimension": null,
+      "expected_height": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "spectral_return_probabilities": [],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": null,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [],
+        "expected_component_count": null,
+        "connected_probability_mass": null,
+        "expected_largest_component_fraction": null,
+        "expected_finite_size_saturation_floor": null
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "conditional_rms_correlation_length": null,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "conditional_rms_correlation_length_over_diameter": null,
+      "mean_nontrivial_vertex_coverage": 0.0
+    },
+    {
+      "n": 1,
+      "state_count": 1,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": null,
+      "ordering_fraction_dimension": null,
+      "expected_height": {
+        "numerator": 1,
+        "denominator": 1
+      },
+      "spectral_return_probabilities": [
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        }
+      ],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": null,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [
+          {
+            "component_sizes": [
+              1
+            ],
+            "probability_mass": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          }
+        ],
+        "expected_component_count": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "connected_probability_mass": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "expected_largest_component_fraction": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "expected_finite_size_saturation_floor": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "conditional_rms_correlation_length": null,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 0,
+        "denominator": 1
+      },
+      "conditional_rms_correlation_length_over_diameter": null,
+      "mean_nontrivial_vertex_coverage": 0.0
+    },
+    {
+      "n": 2,
+      "state_count": 2,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": {
+        "numerator": 1,
+        "denominator": 2
+      },
+      "ordering_fraction_dimension": 2.00000000093,
+      "expected_height": {
+        "numerator": 3,
+        "denominator": 2
+      },
+      "spectral_return_probabilities": [
+        {
+          "numerator": 3,
+          "denominator": 4
+        },
+        {
+          "numerator": 3,
+          "denominator": 4
+        },
+        {
+          "numerator": 3,
+          "denominator": 4
+        },
+        {
+          "numerator": 3,
+          "denominator": 4
+        },
+        {
+          "numerator": 3,
+          "denominator": 4
+        },
+        {
+          "numerator": 3,
+          "denominator": 4
+        },
+        {
+          "numerator": 3,
+          "denominator": 4
+        },
+        {
+          "numerator": 3,
+          "denominator": 4
+        }
+      ],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": null,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [
+          {
+            "component_sizes": [
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 1,
+              "denominator": 2
+            }
+          },
+          {
+            "component_sizes": [
+              2
+            ],
+            "probability_mass": {
+              "numerator": 1,
+              "denominator": 2
+            }
+          }
+        ],
+        "expected_component_count": {
+          "numerator": 3,
+          "denominator": 2
+        },
+        "connected_probability_mass": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "expected_largest_component_fraction": {
+          "numerator": 3,
+          "denominator": 4
+        },
+        "expected_finite_size_saturation_floor": {
+          "numerator": 3,
+          "denominator": 4
+        }
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 1,
+        "denominator": 2
+      },
+      "conditional_rms_correlation_length": 1.0,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 1,
+        "denominator": 2
+      },
+      "conditional_rms_correlation_length_over_diameter": 1.0,
+      "mean_nontrivial_vertex_coverage": 0.5
+    },
+    {
+      "n": 3,
+      "state_count": 5,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": {
+        "numerator": 1,
+        "denominator": 2
+      },
+      "ordering_fraction_dimension": 2.00000000093,
+      "expected_height": {
+        "numerator": 49,
+        "denominator": 24
+      },
+      "spectral_return_probabilities": [
+        {
+          "numerator": 91,
+          "denominator": 144
+        },
+        {
+          "numerator": 19,
+          "denominator": 32
+        },
+        {
+          "numerator": 331,
+          "denominator": 576
+        },
+        {
+          "numerator": 217,
+          "denominator": 384
+        },
+        {
+          "numerator": 1291,
+          "denominator": 2304
+        },
+        {
+          "numerator": 857,
+          "denominator": 1536
+        },
+        {
+          "numerator": 5131,
+          "denominator": 9216
+        },
+        {
+          "numerator": 1139,
+          "denominator": 2048
+        }
+      ],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": 0.128034710751,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [
+          {
+            "component_sizes": [
+              1,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 1,
+              "denominator": 8
+            }
+          },
+          {
+            "component_sizes": [
+              2,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 5,
+              "denominator": 12
+            }
+          },
+          {
+            "component_sizes": [
+              3
+            ],
+            "probability_mass": {
+              "numerator": 11,
+              "denominator": 24
+            }
+          }
+        ],
+        "expected_component_count": {
+          "numerator": 5,
+          "denominator": 3
+        },
+        "connected_probability_mass": {
+          "numerator": 11,
+          "denominator": 24
+        },
+        "expected_largest_component_fraction": {
+          "numerator": 7,
+          "denominator": 9
+        },
+        "expected_finite_size_saturation_floor": {
+          "numerator": 5,
+          "denominator": 9
+        }
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 7,
+        "denominator": 8
+      },
+      "conditional_rms_correlation_length": 1.2344267997,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 7,
+        "denominator": 8
+      },
+      "conditional_rms_correlation_length_over_diameter": 0.859124692984,
+      "mean_nontrivial_vertex_coverage": 0.736111111111
+    },
+    {
+      "n": 4,
+      "state_count": 16,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": {
+        "numerator": 721,
+        "denominator": 1440
+      },
+      "ordering_fraction_dimension": 1.99814924877,
+      "expected_height": {
+        "numerator": 1415,
+        "denominator": 576
+      },
+      "spectral_return_probabilities": [
+        {
+          "numerator": 13193,
+          "denominator": 23040
+        },
+        {
+          "numerator": 7699,
+          "denominator": 15360
+        },
+        {
+          "numerator": 8581,
+          "denominator": 18432
+        },
+        {
+          "numerator": 5477,
+          "denominator": 12288
+        },
+        {
+          "numerator": 159923,
+          "denominator": 368640
+        },
+        {
+          "numerator": 209513,
+          "denominator": 491520
+        },
+        {
+          "numerator": 248453,
+          "denominator": 589824
+        },
+        {
+          "numerator": 657115,
+          "denominator": 1572864
+        }
+      ],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": 0.317684818896,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [
+          {
+            "component_sizes": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 1,
+              "denominator": 64
+            }
+          },
+          {
+            "component_sizes": [
+              2,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 67,
+              "denominator": 576
+            }
+          },
+          {
+            "component_sizes": [
+              2,
+              2
+            ],
+            "probability_mass": {
+              "numerator": 5,
+              "denominator": 72
+            }
+          },
+          {
+            "component_sizes": [
+              3,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 823,
+              "denominator": 2880
+            }
+          },
+          {
+            "component_sizes": [
+              4
+            ],
+            "probability_mass": {
+              "numerator": 1477,
+              "denominator": 2880
+            }
+          }
+        ],
+        "expected_component_count": {
+          "numerator": 1177,
+          "denominator": 720
+        },
+        "connected_probability_mass": {
+          "numerator": 1477,
+          "denominator": 2880
+        },
+        "expected_largest_component_fraction": {
+          "numerator": 791,
+          "denominator": 960
+        },
+        "expected_finite_size_saturation_floor": {
+          "numerator": 1177,
+          "denominator": 2880
+        }
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 63,
+        "denominator": 64
+      },
+      "conditional_rms_correlation_length": 1.58108305701,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 63,
+        "denominator": 64
+      },
+      "conditional_rms_correlation_length_over_diameter": 0.758439355988,
+      "mean_nontrivial_vertex_coverage": 0.854774305556
+    },
+    {
+      "n": 5,
+      "state_count": 63,
+      "normalized_exactly": true,
+      "expected_ordering_fraction": {
+        "numerator": 433687,
+        "denominator": 864000
+      },
+      "ordering_fraction_dimension": 1.99480186123,
+      "expected_height": {
+        "numerator": 8216413,
+        "denominator": 2903040
+      },
+      "spectral_return_probabilities": [
+        {
+          "numerator": 78592987,
+          "denominator": 145152000
+        },
+        {
+          "numerator": 6153863,
+          "denominator": 13824000
+        },
+        {
+          "numerator": 46101479,
+          "denominator": 116121600
+        },
+        {
+          "numerator": 1285994653,
+          "denominator": 3483648000
+        },
+        {
+          "numerator": 612279509,
+          "denominator": 1741824000
+        },
+        {
+          "numerator": 28395988577,
+          "denominator": 83607552000
+        },
+        {
+          "numerator": 110778699637,
+          "denominator": 334430208000
+        },
+        {
+          "numerator": 163089451081,
+          "denominator": 501645312000
+        }
+      ],
+      "spectral_fit_steps": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "spectral_dimension_diagnostic": 0.518239570607,
+      "spectral_component_diagnostics": {
+        "signature_probability_masses": [
+          {
+            "component_sizes": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 1,
+              "denominator": 1024
+            }
+          },
+          {
+            "component_sizes": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 47,
+              "denominator": 3456
+            }
+          },
+          {
+            "component_sizes": [
+              2,
+              2,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 281,
+              "denominator": 10368
+            }
+          },
+          {
+            "component_sizes": [
+              3,
+              1,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 19561,
+              "denominator": 345600
+            }
+          },
+          {
+            "component_sizes": [
+              3,
+              2
+            ],
+            "probability_mass": {
+              "numerator": 37279,
+              "denominator": 518400
+            }
+          },
+          {
+            "component_sizes": [
+              4,
+              1
+            ],
+            "probability_mass": {
+              "numerator": 276449,
+              "denominator": 1209600
+            }
+          },
+          {
+            "component_sizes": [
+              5
+            ],
+            "probability_mass": {
+              "numerator": 8727463,
+              "denominator": 14515200
+            }
+          }
+        ],
+        "expected_component_count": {
+          "numerator": 914801,
+          "denominator": 604800
+        },
+        "connected_probability_mass": {
+          "numerator": 8727463,
+          "denominator": 14515200
+        },
+        "expected_largest_component_fraction": {
+          "numerator": 15924691,
+          "denominator": 18144000
+        },
+        "expected_finite_size_saturation_floor": {
+          "numerator": 914801,
+          "denominator": 3024000
+        }
+      },
+      "correlation_length_valid_probability_mass": {
+        "numerator": 1023,
+        "denominator": 1024
+      },
+      "conditional_rms_correlation_length": 1.9796999321,
+      "correlation_length_ratio_valid_probability_mass": {
+        "numerator": 1023,
+        "denominator": 1024
+      },
+      "conditional_rms_correlation_length_over_diameter": 0.698522990256,
+      "mean_nontrivial_vertex_coverage": 0.917093984237
+    }
+  ],
+  "finite_size_diagnostics": {
+    "sizes_used": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "candidate_height_scaling_dimension": 1.51641661693,
+    "random_height_scaling_dimension": 1.44416224813,
+    "protocol_sizes_available": false,
+    "claim_boundary": "n=2..5 diagnostic fits do not satisfy the preregistered size set or scale separation and are not dimension evidence."
+  },
+  "readiness": {
+    "bounded_arithmetic_and_invariance_checks_passed": true,
+    "ordering_source_calibration_validated": true,
+    "production_measurement_pipeline_validated": false,
+    "current_exact_max_n": 5,
+    "planned_sizes": [
+      8,
+      12,
+      18,
+      27,
+      40,
+      60
+    ],
+    "large_n_sampler_extension_available": false,
+    "bdg_positive_control_ensemble_available": false,
+    "versioned_production_budget_present": false,
+    "production_sampling_authorized": false,
+    "blocking_requirements": [
+      "large-N candidate and negative-control sampler",
+      "fixed production spectral plateau window",
+      "executable BDG dimension-four ensemble",
+      "independent replay implementation",
+      "hard wall-time and memory supervision",
+      "versioned production measurement budget"
+    ]
+  },
+  "acceptance_checks": {
+    "versioned_scope_and_gate_authorization_are_bounded": {
+      "passed": true,
+      "evidence": {
+        "max_n": 5,
+        "max_unlabeled_relations": 88,
+        "max_lazy_walk_steps": 8,
+        "max_runtime_seconds": 30,
+        "max_memory_mib": 512,
+        "new_sampled_trajectories": 0,
+        "solver_calls": 0,
+        "authorizes_gate": "PHASE_B_CONTINUUM_DIMENSION_BOUNDED_MEASUREMENT_PREFLIGHT",
+        "internal_runtime_guard_checked_during_build": true,
+        "hard_memory_supervisor_used": false
+      }
+    },
+    "frozen_design_rebuilds_exactly": {
+      "passed": true,
+      "evidence": "50005f8a6e69406c563a1c5dec651214f4e6f646ed9252f5d747091298966bb8"
+    },
+    "exact_candidate_and_negative_control_normalize": {
+      "passed": true,
+      "evidence": {
+        "max_n": 5,
+        "relations": 88
+      }
+    },
+    "analytic_smoke_and_source_anchor_controls_pass": {
+      "passed": true,
+      "evidence": {
+        "control_scope": {
+          "ordering_anchor_check": "external source-backed known values",
+          "ordering_round_trip": "arithmetic smoke test",
+          "height_power_law": "synthetic regression smoke test",
+          "spectral_power_law": "synthetic regression smoke test",
+          "end_to_end_bdg_ensemble_control": false
+        },
+        "ordering_calibration_dimensions": [
+          1.5,
+          2.0,
+          3.0,
+          4.0,
+          5.0
+        ],
+        "ordering_max_abs_error": 2.79396772385e-09,
+        "ordering_anchor_expected": {
+          "2": 0.5,
+          "4": 0.1
+        },
+        "ordering_anchor_computed": {
+          "2": 0.5,
+          "4": 0.1
+        },
+        "ordering_anchor_max_abs_error": 0.0,
+        "height_dimension_four_recovered": 4.0,
+        "spectral_dimension_four_recovered": 4.0,
+        "lazy_transition_rows_checked": 399,
+        "lazy_transition_row_failures": 0,
+        "passed": true
+      }
+    },
+    "all_bounded_relations_are_label_invariant": {
+      "passed": true,
+      "evidence": {
+        "relations_checked": 88,
+        "permutations_checked": 7980,
+        "failed_permutation_count": 0,
+        "failed_relation_ids": [],
+        "failed_cases_first_100": [],
+        "maximum_correlation_length_abs_error": 8.881784197e-15,
+        "passed": true
+      }
+    },
+    "spectral_preflight_window_and_component_diagnostics_are_explicit": {
+      "passed": true,
+      "evidence": {
+        "bounded_preflight_fit_steps": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "production_plateau_window_frozen": false
+      }
+    },
+    "correlation_ensemble_aggregation_matches_design": {
+      "passed": true,
+      "evidence": {
+        "graph": "undirected graph formed by symmetrized cover relations",
+        "walk": "lazy random walk P=(I+D^-1*A)/2",
+        "spectral_gap_proxy": "xi_gap,c^2=1/(1-lambda_2,c) for each nontrivial connected component",
+        "component_aggregation": "vertex-weighted root-mean-square over nontrivial components; isolated vertices have zero coverage weight",
+        "ensemble_aggregation": "conditional root-mean-square sqrt(E[xi^2 | xi defined])",
+        "ensemble_diameter_ratio": "conditional root-mean-square sqrt(E[(xi/diameter)^2 | xi defined and diameter>0])",
+        "minimum_defined_probability_mass_for_candidate_evidence": 0.95,
+        "minimum_mean_nontrivial_vertex_coverage_for_candidate_evidence": 0.95,
+        "intrinsic_linear_size": "finite-pair Hasse-graph diameter",
+        "validity_rule": "undefined only when no nontrivial connected component exists; nontrivial vertex coverage must be reported",
+        "candidate_evidence": true
+      }
+    },
+    "structured_capability_manifest_matches_runtime": {
+      "passed": true,
+      "evidence": {
+        "manifest_records": {
+          "candidate": {
+            "profile_id": "causal_information_v2_sparse_kraus",
+            "transition_instrument_available": true,
+            "exact_enumeration_verified_max_n": 5,
+            "production_sampler_available": false,
+            "production_sampler_max_n": null
+          },
+          "negative_control": {
+            "profile_id": "random_growth_control",
+            "transition_instrument_available": true,
+            "exact_enumeration_verified_max_n": 5,
+            "production_sampler_available": false,
+            "production_sampler_max_n": null
+          },
+          "positive_control": {
+            "profile_id": "bdg_control",
+            "profile_metadata_available": true,
+            "transition_instrument_available": false,
+            "ensemble_sampler_available": false,
+            "implemented_dimension": null
+          }
+        },
+        "runtime_probe_records": {
+          "candidate": {
+            "profile_id": "causal_information_v2_sparse_kraus",
+            "transition_instrument_available": true,
+            "expected_unsupported_error": null,
+            "reason": null
+          },
+          "negative_control": {
+            "profile_id": "random_growth_control",
+            "transition_instrument_available": true,
+            "expected_unsupported_error": null,
+            "reason": null
+          },
+          "positive_control": {
+            "profile_id": "bdg_control",
+            "transition_instrument_available": false,
+            "expected_unsupported_error": true,
+            "reason": "profile does not define this instrument: bdg_control"
+          }
+        },
+        "passed": true
+      }
+    },
+    "large_n_domain_gap_is_fail_closed": {
+      "passed": true,
+      "evidence": {
+        "current_max_n": 5,
+        "planned_sizes": [
+          8,
+          12,
+          18,
+          27,
+          40,
+          60
+        ]
+      }
+    },
+    "bdg_positive_control_gap_is_fail_closed": {
+      "passed": true,
+      "evidence": {
+        "profile_id": "bdg_control",
+        "profile_metadata_available": true,
+        "transition_instrument_available": false,
+        "ensemble_sampler_available": false,
+        "implemented_dimension": null
+      }
+    },
+    "no_scientific_or_production_authorization_is_added": {
+      "passed": true,
+      "evidence": {
+        "production_sampling_authorized": false,
+        "solver_run_permitted": false
+      }
+    }
+  },
+  "all_preflight_checks_passed": true,
+  "continuum_phase_supported": false,
+  "dimension_claim_issued": false,
+  "production_sampling_authorized": false,
+  "solver_run_permitted": false,
+  "source_bindings": [
+    {
+      "path": "config/v0.4.2_phase_b_continuum_dimension_bounded_preflight_budget.json",
+      "raw_sha256": "b03980d7d1072f9c52e6a9ccc1df5d39bcadad805770e54b1d764d7f2d11c70e",
+      "canonical_lf_sha256": "b03980d7d1072f9c52e6a9ccc1df5d39bcadad805770e54b1d764d7f2d11c70e",
+      "size_bytes": 1707,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "config/v0.4.2_phase_b_continuum_dimension_design.json",
+      "raw_sha256": "244a677753476b48e26b08db5a20d381f870af32a6938c0e2e134f2b9269b019",
+      "canonical_lf_sha256": "244a677753476b48e26b08db5a20d381f870af32a6938c0e2e134f2b9269b019",
+      "size_bytes": 7240,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_continuum_dimension_design.json",
+      "raw_sha256": "99334d003fcec53e785a5de71b6555b6ba2e83efde604b7cb7334ca2772b2add",
+      "canonical_lf_sha256": "99334d003fcec53e785a5de71b6555b6ba2e83efde604b7cb7334ca2772b2add",
+      "size_bytes": 19790,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/continuum_observables_v042.py",
+      "raw_sha256": "a76b038456cf41e521b3dd3c4830dbf830e53087a81cf4f59aa79d4a62bda963",
+      "canonical_lf_sha256": "a76b038456cf41e521b3dd3c4830dbf830e53087a81cf4f59aa79d4a62bda963",
+      "size_bytes": 12570,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/causal_sets.py",
+      "raw_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+      "canonical_lf_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+      "size_bytes": 16560,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/dynamics_v02.py",
+      "raw_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "canonical_lf_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "size_bytes": 20648,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/models/causal_information_v2/model_spec.json",
+      "raw_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "canonical_lf_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "size_bytes": 1032,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "config/v0.4.2_phase_b_continuum_dimension_capabilities.json",
+      "raw_sha256": "ef29b0ecbbbec401a484818d5b584a1645a62244190e6572846b12ad52e8c5dd",
+      "canonical_lf_sha256": "ef29b0ecbbbec401a484818d5b584a1645a62244190e6572846b12ad52e8c5dd",
+      "size_bytes": 987,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "references/sources.json",
+      "raw_sha256": "9da2bc51ba69a4f0cd32f3532e61b9fe312af34df517d79bba314c9e599300ff",
+      "canonical_lf_sha256": "9da2bc51ba69a4f0cd32f3532e61b9fe312af34df517d79bba314c9e599300ff",
+      "size_bytes": 150069,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "references/notes/v0.4.2_myrheim_meyer_calibration_audit_2026-08-15.md",
+      "raw_sha256": "1537341333503a0a60393ad4a4aa0f1cac22cefe6613d7a8cc8a3aef3110b2f3",
+      "canonical_lf_sha256": "1537341333503a0a60393ad4a4aa0f1cac22cefe6613d7a8cc8a3aef3110b2f3",
+      "size_bytes": 1541,
+      "strict_utf8_lf": true
+    }
+  ],
+  "semantic_digest_sha256": "c65558a5396d514bfd5e84ecd3643a142776bb8d67973dd349e18444d1c1a1de"
+}

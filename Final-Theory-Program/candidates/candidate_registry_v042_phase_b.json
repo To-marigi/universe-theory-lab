@@ -1,0 +1,171 @@
+{
+  "schema_version": "0.2",
+  "central_candidate": "causal_information_v1",
+  "active_candidates": {
+    "PHASE_B": "causal_information_v2_sparse_kraus"
+  },
+  "candidate_policy": {
+    "minimum_families": 3,
+    "maximum_active_operator_count": 4,
+    "holdout_refit": false,
+    "reference_oracle_is_candidate_evidence": false,
+    "v1_v2_equivalence_certified": false,
+    "cross_version_evidence_transfer": false
+  },
+  "candidates": [
+    {
+      "id": "causal_information_v1",
+      "name": "Quantum causal information model v1",
+      "family": "finite causal categories with quantum channels",
+      "candidate_version": "v1",
+      "role": "CENTRAL",
+      "kinematics": {
+        "status": "DEFINED",
+        "domain": "finite-cutoff sector only",
+        "spec": "Final-Theory-Program/models/causal_information_v1/model_spec.json"
+      },
+      "dynamics": {
+        "status": "ANSATZ_ONLY",
+        "missing": ["state-sum measure", "normalization or convergence", "cutoff-removal map", "derived response kernel"]
+      },
+      "background_independence": {
+        "status": "NOT_TESTED",
+        "note": "The finite objects do not require a metric, but no dynamical continuum phase has been derived."
+      },
+      "spin2_evidence": {
+        "derived_two_point_function": false,
+        "massless_k2_pole": false,
+        "spin2_residue": false,
+        "two_physical_helicities": false,
+        "ward_identity": false,
+        "ghost_free": false,
+        "universal_stress_tensor_coupling": false,
+        "coarse_graining_stability": false,
+        "held_out_causal_structure": false
+      },
+      "kill_conditions": [
+        "no 3+1 Lorentzian phase",
+        "non-CPTP physical evolution",
+        "label-dependent observables",
+        "ghost pole in a candidate-derived response",
+        "Spin-2 result disappears under frozen coarse graining"
+      ],
+      "claim_boundary": "Only the finite-cutoff kinematics are defined. No microscopic quantum gravity dynamics or emergent graviton is claimed."
+    },
+    {
+      "id": "causal_information_v2_sparse_kraus",
+      "name": "Causal-information v2 sparse Kraus growth candidate",
+      "family": "finite unlabeled causal-set history rays with rational normalized Kraus growth",
+      "candidate_version": "v2",
+      "role": "COMPARATOR",
+      "lineage": {
+        "predecessor": "causal_information_v1",
+        "relation": "VERSIONED_SUCCESSOR_NOT_CERTIFIED_EQUIVALENT",
+        "evidence_transfer_from_predecessor": false
+      },
+      "kinematics": {
+        "status": "DEFINED",
+        "domain": "finite unlabeled causal-set history rays through cardinality five",
+        "spec": "Final-Theory-Program/models/causal_information_v2/model_spec.json"
+      },
+      "dynamics": {
+        "status": "DEFINED",
+        "domain": "exact finite sparse-Kraus instrument through cardinality five",
+        "entry_point": "src/universe_lab/final_theory/dynamics_v02.py:transition_instrument",
+        "normalization": "exact rational branch normalization",
+        "missing": [
+          "quantum Bell causality",
+          "infinite covariant-event CP-instrument extension",
+          "coarse-graining map",
+          "continuum phase and dimension observable",
+          "candidate-derived response kernel"
+        ]
+      },
+      "background_independence": {
+        "status": "NOT_TESTED",
+        "note": "The finite microscopic rule is order-theoretic and has no metric or target-dimension input, but a dynamical continuum phase is not established."
+      },
+      "spin2_evidence": {
+        "derived_two_point_function": false,
+        "massless_k2_pole": false,
+        "spin2_residue": false,
+        "two_physical_helicities": false,
+        "ward_identity": false,
+        "ghost_free": false,
+        "universal_stress_tensor_coupling": false,
+        "coarse_graining_stability": false,
+        "held_out_causal_structure": false
+      },
+      "kill_conditions": [
+        "no stable continuum phase under preregistered scaling",
+        "dimension estimates fail to stabilize or disagree",
+        "sampling cannot be normalized and independently reproduced",
+        "candidate-derived response has a ghost or wrong-sign residue",
+        "v1 evidence is silently transferred without a certified map"
+      ],
+      "claim_boundary": "The v2 finite CP growth instrument is the version-pinned active Phase-B candidate through its declared cutoff. It is not a completed quantum sequential-growth theory, continuum gravity, emergent Spin-2 derivation, or universal coupling result; v1 evidence is not transferred."
+    },
+    {
+      "id": "causal_set_amplitude_family",
+      "name": "Causal-set amplitude family",
+      "family": "sum over locally finite causal orders",
+      "role": "COMPARATOR",
+      "kinematics": {
+        "status": "PARTIAL",
+        "domain": "finite causal orders and selected discrete actions"
+      },
+      "dynamics": {
+        "status": "ANSATZ_ONLY",
+        "missing": ["unique amplitude rule", "controlled Lorentzian sum", "3+1 continuum proof"]
+      },
+      "background_independence": {
+        "status": "NOT_TESTED",
+        "note": "Order-theoretic inputs are background-free, but current local QG-Bench embeds samples in fixed AdS1+1."
+      },
+      "spin2_evidence": {
+        "derived_two_point_function": false,
+        "massless_k2_pole": false,
+        "spin2_residue": false,
+        "two_physical_helicities": false,
+        "ward_identity": false,
+        "ghost_free": false,
+        "universal_stress_tensor_coupling": false,
+        "coarse_graining_stability": false,
+        "held_out_causal_structure": false
+      },
+      "kill_conditions": ["failure of manifoldlike phase", "dimension instability", "wrong-sign response residue"],
+      "claim_boundary": "The existing AdS1+1 scalar propagator benchmark is an oracle test, not a graviton derivation."
+    },
+    {
+      "id": "quantum_channel_network_family",
+      "name": "Quantum-channel network family",
+      "family": "background-free quantum information networks",
+      "role": "COMPARATOR",
+      "kinematics": {
+        "status": "PARTIAL",
+        "domain": "finite-dimensional networks with declared tensor factorization"
+      },
+      "dynamics": {
+        "status": "UNDEFINED",
+        "missing": ["causal-structure amplitude", "continuum limit", "geometric phase selector"]
+      },
+      "background_independence": {
+        "status": "NOT_TESTED",
+        "note": "Graph adjacency must not silently encode a target geometry."
+      },
+      "spin2_evidence": {
+        "derived_two_point_function": false,
+        "massless_k2_pole": false,
+        "spin2_residue": false,
+        "two_physical_helicities": false,
+        "ward_identity": false,
+        "ghost_free": false,
+        "universal_stress_tensor_coupling": false,
+        "coarse_graining_stability": false,
+        "held_out_causal_structure": false
+      },
+      "kill_conditions": ["geometry encoded in network layout", "non-CPTP channels", "mutual-information fit without field propagation"],
+      "claim_boundary": "Information-geometric reconstruction remains a hypothesis until geometry and dynamics arise from one frozen microscopic rule."
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+{
+  "schema_version": "final-theory-v042-phase-b-required-physics-gap-inventory-v1",
+  "prepared": "2026-08-14",
+  "evidence_head": "91287f0",
+  "status": "PHASE_B_REQUIRED_PHYSICS_DERIVATION_GAP_INVENTORY_COMPLETE",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "PHASE_B_REQUIRED_PHYSICS_DERIVATION_GAP_INVENTORY",
+  "next_gate": "PHASE_B_CONTINUUM_DIMENSION_DERIVATION_DESIGN",
+  "scope": "Required physics derivation audit; no deeper computation or reopening of frozen 955/721 profiles.",
+  "method": {
+    "classification_rule": "Separate measured candidate evidence, reference controls, missing derivation, and resource-boundary statements. Never promote a reference control or a finite sample to candidate evidence.",
+    "dependency_order": [
+      "continuum_3p1_dimension",
+      "emergent_spin2_response",
+      "universal_stress_tensor_coupling"
+    ],
+    "solver_reopen": "not part of this gate"
+  },
+  "candidate_snapshot": {
+    "candidate_id": "causal_information_v1",
+    "kinematics_status": "DEFINED",
+    "dynamics_status": "ANSATZ_ONLY",
+    "background_independence_status": "NOT_TESTED",
+    "spin2_evidence": {
+      "derived_two_point_function": false,
+      "massless_k2_pole": false,
+      "spin2_residue": false,
+      "two_physical_helicities": false,
+      "ward_identity": false,
+      "ghost_free": false,
+      "universal_stress_tensor_coupling": false,
+      "coarse_graining_stability": false,
+      "held_out_causal_structure": false
+    },
+    "evaluated_scientific_status": "FINAL_THEORY_OPEN",
+    "evaluated_spin2_gate_passed": false,
+    "evaluated_candidate_evidence": false
+  },
+  "gaps": [
+    {
+      "id": "continuum_3p1_dimension",
+      "required_gate": "continuum_3p1",
+      "status": "CONTINUUM_PHASE_RESOURCE_BLOCKED",
+      "classification": "MISSING_DYNAMICAL_LIMIT_AND_DIMENSION_OBSERVABLE",
+      "required_evidence": [
+        {
+          "requirement": "dimension estimator",
+          "present": false
+        },
+        {
+          "requirement": "Lorentzian signature",
+          "present": false
+        },
+        {
+          "requirement": "continuum scaling",
+          "present": false
+        },
+        {
+          "requirement": "held-out phase stability",
+          "present": false
+        }
+      ],
+      "current_finite_observables": [
+        "order fraction",
+        "interval abundances",
+        "height",
+        "width",
+        "automorphism entropy",
+        "susceptibility",
+        "Binder-like order-fraction cumulant"
+      ],
+      "evidence_paths": [
+        "Final-Theory-Program/requirements/final_theory_gates.yaml",
+        "Final-Theory-Program/models/causal_information_v1/model_spec.json",
+        "Final-Theory-Program/benchmarks/continuum_phase/README.md",
+        "Final-Theory-Program/reports/continuum_phase_analysis.md",
+        "Final-Theory-Program/reports/dynamics_source_audit.md"
+      ],
+      "claim_boundary": "The finite sizes 3, 4, and 5 do not establish a continuum phase; the current resource boundary also does not exclude one.",
+      "next_task": "Define a preregistered dimension estimator, correlation-length observable, ensemble/measure, finite-size scaling protocol, controls, and held-out test before any bounded sampling."
+    },
+    {
+      "id": "emergent_spin2_response",
+      "required_gate": "emergent_spin2",
+      "status": "SPIN2_NOT_FOUND",
+      "classification": "NO_QUALIFYING_CANDIDATE_DERIVED_RESPONSE",
+      "required_evidence": [
+        {
+          "requirement": "derived two-point response",
+          "present": false
+        },
+        {
+          "requirement": "1/(k^2+i0) pole",
+          "present": false
+        },
+        {
+          "requirement": "Spin-2 residue",
+          "present": false
+        },
+        {
+          "requirement": "two physical helicities in D=4",
+          "present": false
+        },
+        {
+          "requirement": "Ward identity",
+          "present": false
+        },
+        {
+          "requirement": "no scalar or vector ghost",
+          "present": false
+        },
+        {
+          "requirement": "coarse-graining stability",
+          "present": false
+        },
+        {
+          "requirement": "held-out causal-structure replication",
+          "present": false
+        }
+      ],
+      "reference_controls": {
+        "passed": true,
+        "candidate_evidence": false,
+        "control_count": 3
+      },
+      "evidence_paths": [
+        "Final-Theory-Program/requirements/final_theory_gates.yaml",
+        "Final-Theory-Program/benchmarks/emergent_spin2/README.md",
+        "Final-Theory-Program/reports/emergent_symmetry_pre_gate.md",
+        "Final-Theory-Program/candidates/candidate_registry.json",
+        "src/universe_lab/final_theory/spin2.py",
+        "tests/final_theory/test_spin2.py"
+      ],
+      "claim_boundary": "SPIN2_NOT_FOUND means no qualifying candidate-derived evidence is present in the evaluated artifact. It is not a no-go theorem for the candidate family.",
+      "next_task": "After a continuum candidate is defined, specify and derive the candidate two-point response, then test pole, residue, Ward, helicity, ghost, coarse-graining, and held-out conditions."
+    },
+    {
+      "id": "universal_stress_tensor_coupling",
+      "required_gate": "universal_coupling",
+      "status": "UNDEFINED",
+      "classification": "NO_CANDIDATE_STRESS_TENSOR_OR_SOURCE_RESPONSE",
+      "required_evidence": [
+        {
+          "requirement": "conserved stress tensor",
+          "present": false
+        },
+        {
+          "requirement": "single coupling",
+          "present": false
+        },
+        {
+          "requirement": "self-energy included",
+          "present": false
+        }
+      ],
+      "dependency": {
+        "requires_continuum_local_observables": true,
+        "requires_candidate_derived_response": true
+      },
+      "evidence_paths": [
+        "Final-Theory-Program/requirements/final_theory_gates.yaml",
+        "Final-Theory-Program/models/causal_information_v1/model_spec.json",
+        "Final-Theory-Program/candidates/candidate_registry.json",
+        "Final-Theory-Program/reports/no_go_assumption_ledger.md",
+        "Final-Theory-Program/reports/dynamics_source_audit.md"
+      ],
+      "claim_boundary": "A conserved local stress tensor, a universal coupling, and self-energy inclusion are currently undefined; no Einstein or Deser coupling is imported as candidate evidence.",
+      "next_task": "Define the candidate source observable and its conservation law; only then compare one coupling across all source sectors, including self-energy, with an explicit field/observable map."
+    }
+  ],
+  "acceptance_criteria": {
+    "mission_scope": {
+      "id": "mission_declares_phase_b_physics_targets",
+      "passed": true,
+      "evidence": "Phase B target list is present in MISSION.md"
+    },
+    "gate_spec": {
+      "id": "gate_spec_is_structurally_valid",
+      "passed": true,
+      "evidence": []
+    },
+    "candidate_registry": {
+      "id": "candidate_registry_is_structurally_valid",
+      "passed": true,
+      "evidence": []
+    },
+    "continuum_boundary": {
+      "id": "continuum_gate_is_blocked_without_overclaim",
+      "passed": true,
+      "evidence": {
+        "status": "CONTINUUM_PHASE_RESOURCE_BLOCKED",
+        "exclusion_claim": false,
+        "candidate_dynamics_status": "ANSATZ_ONLY"
+      }
+    },
+    "candidate_reference_separation": {
+      "id": "candidate_and_reference_spin2_evidence_are_separated",
+      "passed": true,
+      "evidence": {
+        "reference_controls_passed": true,
+        "reference_controls_candidate_evidence": false,
+        "central_candidate_evidence": false
+      }
+    },
+    "coupling_boundary": {
+      "id": "stress_tensor_and_universal_coupling_are_not_invented",
+      "passed": true,
+      "evidence": "The existing ledger keeps the stress tensor and universal coupling undefined."
+    },
+    "phase_a_and_solver_boundary": {
+      "id": "phase_a_boundary_and_solver_gate_remain_closed",
+      "passed": true,
+      "evidence": {
+        "terminal_boundaries": {
+          "955": "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT",
+          "721": "FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT"
+        },
+        "solver_run_permitted": false,
+        "reopen_authorization": "NOT_AUTHORIZED"
+      }
+    },
+    "evidence_bindings": {
+      "id": "evidence_bindings_are_strict_utf8_lf",
+      "passed": true,
+      "evidence": {
+        "file_count": 13
+      }
+    }
+  },
+  "evidence_bindings": [
+    {
+      "path": "MISSION.md",
+      "raw_sha256": "d44d28431d1661f1f8e544db8ac78f5c5d7b7ad5d8ca529c35df3e82f04cf779",
+      "canonical_lf_sha256": "d44d28431d1661f1f8e544db8ac78f5c5d7b7ad5d8ca529c35df3e82f04cf779",
+      "size_bytes": 12123,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/requirements/final_theory_gates.yaml",
+      "raw_sha256": "8a10c947a9031e5dfe88ca1ad7e7a147ae2aab690f7fc29aa35150d09ec9bdb6",
+      "canonical_lf_sha256": "8a10c947a9031e5dfe88ca1ad7e7a147ae2aab690f7fc29aa35150d09ec9bdb6",
+      "size_bytes": 5188,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/models/causal_information_v1/model_spec.json",
+      "raw_sha256": "c15a22edab4919b357d4019577bc96ecda750bcd836ebe0c0e5191cd0b0b35ed",
+      "canonical_lf_sha256": "c15a22edab4919b357d4019577bc96ecda750bcd836ebe0c0e5191cd0b0b35ed",
+      "size_bytes": 5214,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/candidates/candidate_registry.json",
+      "raw_sha256": "732d7e1e8a0b285263c447f2a09630285fc08c8d5cadcbe5fd20769896917506",
+      "canonical_lf_sha256": "732d7e1e8a0b285263c447f2a09630285fc08c8d5cadcbe5fd20769896917506",
+      "size_bytes": 4463,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/benchmarks/continuum_phase/README.md",
+      "raw_sha256": "045a61d314c480432eecab8733f4847a90cddbf37be78917c8b040bb1380e62e",
+      "canonical_lf_sha256": "045a61d314c480432eecab8733f4847a90cddbf37be78917c8b040bb1380e62e",
+      "size_bytes": 457,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/benchmarks/emergent_spin2/README.md",
+      "raw_sha256": "0f07d9a6dc4d8a891856b9dd7e93444517ae0f97cb6c7388f09ae974b7ec47a0",
+      "canonical_lf_sha256": "0f07d9a6dc4d8a891856b9dd7e93444517ae0f97cb6c7388f09ae974b7ec47a0",
+      "size_bytes": 1476,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/reports/continuum_phase_analysis.md",
+      "raw_sha256": "3017e96561e3121741ef8267c5d20ce516e409d02e48ed3f6677991a4b22cb1e",
+      "canonical_lf_sha256": "3017e96561e3121741ef8267c5d20ce516e409d02e48ed3f6677991a4b22cb1e",
+      "size_bytes": 746,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/reports/emergent_symmetry_pre_gate.md",
+      "raw_sha256": "44e8bcaa00730c9ce530d59f5fc88b053efd45aac0bfd6677911a9d7810b4a60",
+      "canonical_lf_sha256": "44e8bcaa00730c9ce530d59f5fc88b053efd45aac0bfd6677911a9d7810b4a60",
+      "size_bytes": 661,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/reports/no_go_assumption_ledger.md",
+      "raw_sha256": "abdce28b11512c462a6788b478e413ea28d79da599c15c51c6e4b5af2b7b0878",
+      "canonical_lf_sha256": "abdce28b11512c462a6788b478e413ea28d79da599c15c51c6e4b5af2b7b0878",
+      "size_bytes": 1184,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/reports/dynamics_source_audit.md",
+      "raw_sha256": "3ee9192d418f04b94b35ea19400338b881a7a3f8afed71d4654cb13833dbbb28",
+      "canonical_lf_sha256": "3ee9192d418f04b94b35ea19400338b881a7a3f8afed71d4654cb13833dbbb28",
+      "size_bytes": 2389,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/spin2.py",
+      "raw_sha256": "d2f586a6bde649af7ab7fe583ac8b6dda3ba41643c7b8156e1ab9978e537a09e",
+      "canonical_lf_sha256": "d2f586a6bde649af7ab7fe583ac8b6dda3ba41643c7b8156e1ab9978e537a09e",
+      "size_bytes": 7404,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "tests/final_theory/test_spin2.py",
+      "raw_sha256": "d37171fcb9c9039286235a0153c7cfde3486a8bf3a7704a20a26f8047cba1bc0",
+      "canonical_lf_sha256": "d37171fcb9c9039286235a0153c7cfde3486a8bf3a7704a20a26f8047cba1bc0",
+      "size_bytes": 1142,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/gates.py",
+      "raw_sha256": "e97e1b41ed2b16a8e4ba6be7d469c39786a63c565d99a0b1a02b4a9131109afb",
+      "canonical_lf_sha256": "e97e1b41ed2b16a8e4ba6be7d469c39786a63c565d99a0b1a02b4a9131109afb",
+      "size_bytes": 6439,
+      "strict_utf8_lf": true
+    }
+  ],
+  "phase_a_boundary_preserved": {
+    "955": "REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT",
+    "721": "FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT",
+    "both_full_profiles_resolved": false,
+    "solver_run_permitted": false
+  },
+  "phase_b_transition": {
+    "started_by_this_inventory": true,
+    "inventory_gate_complete": true,
+    "next_gate": "PHASE_B_CONTINUUM_DIMENSION_DERIVATION_DESIGN"
+  },
+  "all_acceptance_checks_passed": true,
+  "semantic_digest_sha256": "6f3f083b14baeebaa9cd9bb5d9891d36fb5d80d0ec7a08412e99043e836803ac"
+}

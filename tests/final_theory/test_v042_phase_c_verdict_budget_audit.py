@@ -95,5 +95,6 @@ def test_current_state_points_to_next_phase_c_gate() -> None:
     assert audit["next_gate"] == NEXT_GATE
     assert phase_c["next_gate"] == "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW"
     assert state["affected_campaign"]["next_gate"] == (
-        "PHASE_B_REQUIRED_PHYSICS_DERIVATION_GAP_INVENTORY"
+        "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COST_PREFLIGHT_"
+        "BUDGET_APPROVAL"
     )

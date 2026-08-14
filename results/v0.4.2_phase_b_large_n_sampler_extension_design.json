@@ -1,0 +1,571 @@
+{
+  "schema_version": "final-theory-v042-phase-b-large-n-sampler-extension-design-v1",
+  "prepared": "2026-08-15",
+  "status": "PHASE_B_LARGE_N_SAMPLER_EXTENSION_DESIGN_FROZEN_IMPLEMENTATION_PREFLIGHT_BUDGET_REQUIRED",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "PHASE_B_CONTINUUM_DIMENSION_LARGE_N_SAMPLER_EXTENSION_DESIGN",
+  "next_gate": "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COST_PREFLIGHT_BUDGET_APPROVAL",
+  "scope": "Design-only replacement of factorial unlabeled-level sampling with a labeled down-set route. No new trajectories or production measurements are executed.",
+  "candidate": {
+    "global_central_baseline": "causal_information_v1",
+    "phase_b_active_candidate": "causal_information_v2_sparse_kraus",
+    "frozen_local_weights": {
+      "link_fugacity": [
+        2,
+        3
+      ],
+      "diamond_fugacity": [
+        3,
+        2
+      ],
+      "precursor_fugacity": [
+        4,
+        5
+      ],
+      "precursor_weight": "w(P)=(2/3)^Delta_links*(3/2)^Delta_diamonds*(4/5)^|P|"
+    }
+  },
+  "predecessor_artifacts": {
+    "continuum_design_digest": "50005f8a6e69406c563a1c5dec651214f4e6f646ed9252f5d747091298966bb8",
+    "bounded_preflight_digest": "c65558a5396d514bfd5e84ecd3643a142776bb8d67973dd349e18444d1c1a1de"
+  },
+  "primary_exact_labeled_sampler": {
+    "state_representation": "naturally birth-labeled transitive-closure bit rows; the new vertex is maximal",
+    "transition_domain": "all down-set precursors of the current labeled relation",
+    "selection_distribution": "exact probability proportional to w(P) over labeled down-sets",
+    "selection_arithmetic": "integer ticket over exact rational weights",
+    "branch_order": "ascending natural-label precursor bitmask",
+    "weight_integerization": "take the least common denominator of the enumerated exact rational weights, scale to positive integers, divide their common gcd, and use cumulative tickets in branch_order",
+    "portable_rng": {
+      "status": "FROZEN_DESIGN_NOT_IMPLEMENTED",
+      "primitive": "SHA-256 counter blocks",
+      "domain_separator_ascii_nul_terminated": "universe-lab/v0.4.2/phase-b-labeled-sampler",
+      "coordinate_encoding": "sampling_seed, trajectory_index, growth_step, ticket_index, rejection_attempt, and block_index are unsigned 64-bit big-endian integers appended in that order",
+      "digest_consumption": "concatenate blocks in ascending block_index and take the first k bytes as one big-endian integer",
+      "unbiased_ticket_rule": "for total integer weight M>0 set k=max(1,ceil(bit_length(M)/8)), R=256^k, cutoff=R-(R mod M); accept x<cutoff and return x mod M, otherwise increment rejection_attempt",
+      "overflow_rule": "any coordinate outside uint64 or any nonpositive M fails closed"
+    },
+    "unlabeled_quotient_argument": "automorphism-related down-sets have equal local weight; summing labeled choices over an orbit gives orbit_size*w(P), exactly the multiplicity factor in the frozen unlabeled instrument",
+    "forbidden_on_large_n_path": [
+      "enumerate every unlabeled poset at a level",
+      "factorial permutation canonicalization",
+      "full automorphism-group enumeration",
+      "silent floating-point branch selection"
+    ],
+    "worst_case_boundary": "the number of down-sets can be 2^n, so exact transition enumeration is not certified to reach n=60",
+    "overflow_behavior": "fail closed with DOWNSET_ENUMERATION_LIMIT; no approximate fallback"
+  },
+  "large_n_observable_extension": {
+    "current_height_bottleneck": "causal_sets.height enumerates all 2^n vertex subsets",
+    "height_replacement": "exact longest-path dynamic program on a topological order of the transitive relation, checked against the exhaustive oracle through n=5",
+    "height_target_complexity": "O(n^2) on relation bit rows",
+    "current_width_boundary": "causal_sets.width also enumerates all 2^n subsets and is forbidden on the large-N path; width is not a required continuum-dimension estimator",
+    "optional_width_promotion_rule": "if width is later reported, use a separately tested Dilworth bipartite-matching implementation and match the exhaustive oracle through n=5",
+    "relation_identity": "SHA-256 digest of a frozen natural-label transitive-row wire encoding; it is a labeled trajectory digest, not an unlabeled isomorphism identifier",
+    "forbidden_on_large_n_path": [
+      "causal_sets.height exhaustive subset enumeration",
+      "causal_sets.width exhaustive subset enumeration",
+      "causet_id factorial canonicalization",
+      "finite_causet_record automorphism enumeration"
+    ],
+    "spectral_cost_boundary": "the exact Fraction dense-matrix walk is a bounded arithmetic oracle only; the production numerical path, tolerance audit, cached Hasse adjacency, and cost must pass the implementation preflight"
+  },
+  "approximate_weighted_ideal_route": {
+    "status": "UNAUTHORIZED_RESEARCH_OPTION",
+    "candidate_method": "reversible weighted-ideal Markov chain or sequential importance sampler",
+    "missing_certificate": "no uniform mixing, bias, or effective-sample-size guarantee has been established for the frozen nonlocal diamond weight",
+    "promotion_rule": "must receive a separate design, validation artifact, and owner-approved budget before it can replace exact integer-ticket selection"
+  },
+  "independent_replay_design": {
+    "primary_implementation": "recursive predecessor-mask order-ideal generator",
+    "small_n_oracle": "existing brute-force masks and frozen unlabeled transition instrument through n=5",
+    "second_large_n_implementation": "frontier-antichain order-ideal iterator with no calls to the primary generator",
+    "shared_surface": "serialized relation rows, frozen fugacities, counter-stream seed, and artifact schema only; down-set generation, local-statistic deltas, normalization, and ticket selection are independently implemented",
+    "required_comparisons": [
+      "exact transition normalizers and branch probabilities through n=5",
+      "all relabelings through the bounded exact oracle domain",
+      "trajectory digests for every bounded implementation-preflight seed",
+      "relation and observable digests for preregistered large-N replay chunks before any production authorization"
+    ],
+    "failure_rule": "any discrepancy blocks artifact promotion; no retry with a replacement seed"
+  },
+  "positive_control_extension": {
+    "geometric_dimension_control": {
+      "id": "minkowski_4d_sprinkling_control",
+      "construction": "fixed-cardinality uniform sprinklings in a supplied four-dimensional Minkowski Alexandrov interval",
+      "purpose": "end-to-end recovery check for the dimension-measurement pipeline with dimension four supplied",
+      "target_dimension_is_input": true,
+      "candidate_evidence": false,
+      "current_status": "NOT_IMPLEMENTED"
+    },
+    "bdg_action_evaluation_control": {
+      "id": "bdg_action_evaluation_on_replayed_manifoldlike_causets",
+      "purpose": "evaluate supplied dimension-four BDG coefficients and nonlocality scale on independently replayed geometric controls",
+      "does_not_define_a_bdg_weighted_sampling_ensemble": true,
+      "current_status": "NOT_IMPLEMENTED"
+    },
+    "bdg_weighted_ensemble": {
+      "status": "UNDEFINED_BLOCKER",
+      "required_before_that_name_is_used": [
+        "real nonnegative sampling measure",
+        "dimension-four action coefficients and nonlocality scale",
+        "normalization or sampling-kernel definition",
+        "burn-in, convergence, and effective-sample-size protocol"
+      ]
+    },
+    "candidate_tuning_forbidden": true,
+    "ordering_fraction_anchor": "f(4)=0.1 must be rechecked independently",
+    "promotion_boundary": "the geometric control must replay independently before BDG action evaluation; neither control is candidate emergence evidence"
+  },
+  "spectral_protocol_extension": {
+    "bounded_preflight_window": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "production_window_status": "NOT_FROZEN",
+    "freeze_source": "positive and negative controls only, before candidate production measurements are opened",
+    "selection_algorithm_status": "MUST_BE_MACHINE_REGISTERED_BEFORE_CONTROL_EXECUTION",
+    "selection_algorithm_obligations": [
+      "use the registered lazy symmetrized Hasse walk and isolated-vertex convention",
+      "require at least four local-slope points and a minimum log-time span",
+      "exclude finite-size saturation using the component return floor",
+      "require positive local slopes and a preregistered plateau-dispersion bound",
+      "choose the longest eligible log-span and break ties by the earliest window",
+      "freeze all numerical thresholds on control training data only and validate without refit on control holdout data"
+    ],
+    "required_diagnostics": [
+      "annealed and quenched return curves",
+      "local log-log slopes",
+      "component-size distribution",
+      "finite-size saturation floor",
+      "window stability across held-out control seeds",
+      "undefined-estimator mass"
+    ],
+    "failure_rule": "no independently validated stable window means no spectral-dimension estimator; retain only an exploratory graph-diffusion diagnostic"
+  },
+  "statistical_protocol_extension": {
+    "production_status": "NOT_FROZEN",
+    "sampling_unit": "per-seed batch estimate; trajectories are never pooled across seeds",
+    "seed_namespaces": [
+      "sampling",
+      "bootstrap",
+      "independent replay"
+    ],
+    "seed_count_rule": "determine and freeze training and holdout seed counts by control-only precision and coverage simulation before candidate access",
+    "simultaneous_interval_method": "NOT_FROZEN",
+    "negative_control_rule_required": "use preregistered simultaneous interval separation from an equivalence band for at least two defined estimators; undefined estimators never count as separation",
+    "failure_rules": [
+      "a negative control satisfying the candidate pattern stops promotion",
+      "an interval touching the equivalence band is INCONCLUSIVE",
+      "excess undefined bootstrap mass stops promotion",
+      "control failure cannot be repaired by adding seeds or retuning thresholds after holdout inspection"
+    ]
+  },
+  "resource_supervision_design": {
+    "execution_model": "worker subprocess supervised by a parent process",
+    "required_hard_controls": [
+      "wall-clock termination",
+      "process-tree termination",
+      "peak resident-memory monitoring",
+      "disk-usage monitoring",
+      "checkpointed partial artifact",
+      "explicit RESOURCE_LIMIT_OPEN exit status"
+    ],
+    "platforms": [
+      "Windows",
+      "Linux CI"
+    ],
+    "default_budget_forbidden": true,
+    "budget_source": "a new owner-approved config/*_budget.json artifact",
+    "promotion_protocol": "write to a temporary directory and atomically promote only after schema, digest, and replay validation",
+    "retry_policy": "zero retries; timeout or OOM is not replaced by another seed"
+  },
+  "bounded_implementation_preflight": {
+    "new_trajectories_authorized": false,
+    "resource_budget_present": false,
+    "proposed_scope_without_values": [
+      "exact quotient-equivalence audit through n=5",
+      "bounded labeled-sampler cost probe above n=5",
+      "exact dynamic-programming height equivalence and full observable cost probe",
+      "portable RNG replay",
+      "hard-supervisor process-tree kill, memory-limit, and partial-artifact tests"
+    ],
+    "acceptance_requirements": [
+      "zero exact-transition discrepancies through n=5",
+      "zero label-equivariance discrepancies",
+      "large-N module does not call unlabeled-level enumeration or factorial canonicalization",
+      "large-N height does not call exhaustive subset enumeration and matches the n<=5 oracle",
+      "production spectral numerical path matches the bounded exact oracle within a preregistered tolerance",
+      "both replay implementations agree",
+      "resource limits are externally enforced",
+      "no scientific verdict or production authorization is added"
+    ]
+  },
+  "blocker_mapping": {
+    "large-N candidate and negative-control sampler": [
+      "primary_exact_labeled_sampler",
+      "large_n_observable_extension",
+      "approximate_weighted_ideal_route"
+    ],
+    "fixed production spectral plateau window": [
+      "spectral_protocol_extension"
+    ],
+    "executable BDG dimension-four ensemble": [
+      "positive_control_extension"
+    ],
+    "independent replay implementation": [
+      "independent_replay_design"
+    ],
+    "hard wall-time and memory supervision": [
+      "resource_supervision_design"
+    ],
+    "versioned production measurement budget": [
+      "resource_supervision_design",
+      "bounded_implementation_preflight"
+    ]
+  },
+  "stop_conditions": [
+    "exact down-set enumeration reaches its approved cap",
+    "any production observable reaches an unapproved exponential or dense-exact arithmetic path",
+    "portable RNG replay differs",
+    "small-n quotient equivalence fails",
+    "label equivariance fails",
+    "hard resource supervisor fails to terminate a fixture",
+    "positive control or spectral-window freeze remains unavailable",
+    "statistical interval method, seed count, or negative-control equivalence rule remains unfrozen",
+    "any candidate coefficient is changed or fitted"
+  ],
+  "claim_boundary": {
+    "maximum_future_finite_size_wording_after_all_later_gates_pass": "finite-size N=8...60 behavior is consistent with preregistered diagnostics and controls",
+    "forbidden_claims": [
+      "continuum limit established",
+      "manifoldlikeness established",
+      "Lorentz invariance established",
+      "stable 3+1 spacetime derived",
+      "Spin-2 sector derived",
+      "general relativity emerged"
+    ]
+  },
+  "authorization_boundary": {
+    "design_authorized": true,
+    "implementation_preflight_authorized": false,
+    "new_trajectories_authorized": false,
+    "production_sampling_authorized": false,
+    "approximate_sampler_authorized": false,
+    "solver_run_permitted": false,
+    "global_verdict": "FINAL_THEORY_OPEN"
+  },
+  "acceptance_checks": {
+    "predecessor_preflight_is_complete_but_not_production_validated": {
+      "passed": true,
+      "evidence": "c65558a5396d514bfd5e84ecd3643a142776bb8d67973dd349e18444d1c1a1de"
+    },
+    "frozen_candidate_weights_are_unchanged": {
+      "passed": true,
+      "evidence": {
+        "link_fugacity": [
+          2,
+          3
+        ],
+        "diamond_fugacity": [
+          3,
+          2
+        ],
+        "precursor_fugacity": [
+          4,
+          5
+        ]
+      }
+    },
+    "current_exact_kernel_bottleneck_is_recorded": {
+      "passed": true,
+      "evidence": {
+        "current_exact_max_n": 5,
+        "production_sampler_available": false
+      }
+    },
+    "labeled_quotient_route_preserves_frozen_semantics_by_design": {
+      "passed": true,
+      "evidence": {
+        "state_representation": "naturally birth-labeled transitive-closure bit rows; the new vertex is maximal",
+        "transition_domain": "all down-set precursors of the current labeled relation",
+        "selection_distribution": "exact probability proportional to w(P) over labeled down-sets",
+        "selection_arithmetic": "integer ticket over exact rational weights",
+        "branch_order": "ascending natural-label precursor bitmask",
+        "weight_integerization": "take the least common denominator of the enumerated exact rational weights, scale to positive integers, divide their common gcd, and use cumulative tickets in branch_order",
+        "portable_rng": {
+          "status": "FROZEN_DESIGN_NOT_IMPLEMENTED",
+          "primitive": "SHA-256 counter blocks",
+          "domain_separator_ascii_nul_terminated": "universe-lab/v0.4.2/phase-b-labeled-sampler",
+          "coordinate_encoding": "sampling_seed, trajectory_index, growth_step, ticket_index, rejection_attempt, and block_index are unsigned 64-bit big-endian integers appended in that order",
+          "digest_consumption": "concatenate blocks in ascending block_index and take the first k bytes as one big-endian integer",
+          "unbiased_ticket_rule": "for total integer weight M>0 set k=max(1,ceil(bit_length(M)/8)), R=256^k, cutoff=R-(R mod M); accept x<cutoff and return x mod M, otherwise increment rejection_attempt",
+          "overflow_rule": "any coordinate outside uint64 or any nonpositive M fails closed"
+        },
+        "unlabeled_quotient_argument": "automorphism-related down-sets have equal local weight; summing labeled choices over an orbit gives orbit_size*w(P), exactly the multiplicity factor in the frozen unlabeled instrument",
+        "forbidden_on_large_n_path": [
+          "enumerate every unlabeled poset at a level",
+          "factorial permutation canonicalization",
+          "full automorphism-group enumeration",
+          "silent floating-point branch selection"
+        ],
+        "worst_case_boundary": "the number of down-sets can be 2^n, so exact transition enumeration is not certified to reach n=60",
+        "overflow_behavior": "fail closed with DOWNSET_ENUMERATION_LIMIT; no approximate fallback"
+      }
+    },
+    "hidden_exponential_observable_path_is_recorded_and_replaced_by_design": {
+      "passed": true,
+      "evidence": {
+        "current_height_bottleneck": "causal_sets.height enumerates all 2^n vertex subsets",
+        "height_replacement": "exact longest-path dynamic program on a topological order of the transitive relation, checked against the exhaustive oracle through n=5",
+        "height_target_complexity": "O(n^2) on relation bit rows",
+        "current_width_boundary": "causal_sets.width also enumerates all 2^n subsets and is forbidden on the large-N path; width is not a required continuum-dimension estimator",
+        "optional_width_promotion_rule": "if width is later reported, use a separately tested Dilworth bipartite-matching implementation and match the exhaustive oracle through n=5",
+        "relation_identity": "SHA-256 digest of a frozen natural-label transitive-row wire encoding; it is a labeled trajectory digest, not an unlabeled isomorphism identifier",
+        "forbidden_on_large_n_path": [
+          "causal_sets.height exhaustive subset enumeration",
+          "causal_sets.width exhaustive subset enumeration",
+          "causet_id factorial canonicalization",
+          "finite_causet_record automorphism enumeration"
+        ],
+        "spectral_cost_boundary": "the exact Fraction dense-matrix walk is a bounded arithmetic oracle only; the production numerical path, tolerance audit, cached Hasse adjacency, and cost must pass the implementation preflight"
+      }
+    },
+    "approximate_route_cannot_silently_replace_exact_sampling": {
+      "passed": true,
+      "evidence": {
+        "status": "UNAUTHORIZED_RESEARCH_OPTION",
+        "candidate_method": "reversible weighted-ideal Markov chain or sequential importance sampler",
+        "missing_certificate": "no uniform mixing, bias, or effective-sample-size guarantee has been established for the frozen nonlocal diamond weight",
+        "promotion_rule": "must receive a separate design, validation artifact, and owner-approved budget before it can replace exact integer-ticket selection"
+      }
+    },
+    "every_preflight_blocker_has_a_design_owner": {
+      "passed": true,
+      "evidence": {
+        "large-N candidate and negative-control sampler": [
+          "primary_exact_labeled_sampler",
+          "large_n_observable_extension",
+          "approximate_weighted_ideal_route"
+        ],
+        "fixed production spectral plateau window": [
+          "spectral_protocol_extension"
+        ],
+        "executable BDG dimension-four ensemble": [
+          "positive_control_extension"
+        ],
+        "independent replay implementation": [
+          "independent_replay_design"
+        ],
+        "hard wall-time and memory supervision": [
+          "resource_supervision_design"
+        ],
+        "versioned production measurement budget": [
+          "resource_supervision_design",
+          "bounded_implementation_preflight"
+        ]
+      }
+    },
+    "independent_replay_and_control_leakage_are_fail_closed": {
+      "passed": true,
+      "evidence": {
+        "replay": {
+          "primary_implementation": "recursive predecessor-mask order-ideal generator",
+          "small_n_oracle": "existing brute-force masks and frozen unlabeled transition instrument through n=5",
+          "second_large_n_implementation": "frontier-antichain order-ideal iterator with no calls to the primary generator",
+          "shared_surface": "serialized relation rows, frozen fugacities, counter-stream seed, and artifact schema only; down-set generation, local-statistic deltas, normalization, and ticket selection are independently implemented",
+          "required_comparisons": [
+            "exact transition normalizers and branch probabilities through n=5",
+            "all relabelings through the bounded exact oracle domain",
+            "trajectory digests for every bounded implementation-preflight seed",
+            "relation and observable digests for preregistered large-N replay chunks before any production authorization"
+          ],
+          "failure_rule": "any discrepancy blocks artifact promotion; no retry with a replacement seed"
+        },
+        "positive_control": {
+          "geometric_dimension_control": {
+            "id": "minkowski_4d_sprinkling_control",
+            "construction": "fixed-cardinality uniform sprinklings in a supplied four-dimensional Minkowski Alexandrov interval",
+            "purpose": "end-to-end recovery check for the dimension-measurement pipeline with dimension four supplied",
+            "target_dimension_is_input": true,
+            "candidate_evidence": false,
+            "current_status": "NOT_IMPLEMENTED"
+          },
+          "bdg_action_evaluation_control": {
+            "id": "bdg_action_evaluation_on_replayed_manifoldlike_causets",
+            "purpose": "evaluate supplied dimension-four BDG coefficients and nonlocality scale on independently replayed geometric controls",
+            "does_not_define_a_bdg_weighted_sampling_ensemble": true,
+            "current_status": "NOT_IMPLEMENTED"
+          },
+          "bdg_weighted_ensemble": {
+            "status": "UNDEFINED_BLOCKER",
+            "required_before_that_name_is_used": [
+              "real nonnegative sampling measure",
+              "dimension-four action coefficients and nonlocality scale",
+              "normalization or sampling-kernel definition",
+              "burn-in, convergence, and effective-sample-size protocol"
+            ]
+          },
+          "candidate_tuning_forbidden": true,
+          "ordering_fraction_anchor": "f(4)=0.1 must be rechecked independently",
+          "promotion_boundary": "the geometric control must replay independently before BDG action evaluation; neither control is candidate emergence evidence"
+        }
+      }
+    },
+    "production_statistics_and_claims_remain_unfrozen_and_bounded": {
+      "passed": true,
+      "evidence": {
+        "statistics": {
+          "production_status": "NOT_FROZEN",
+          "sampling_unit": "per-seed batch estimate; trajectories are never pooled across seeds",
+          "seed_namespaces": [
+            "sampling",
+            "bootstrap",
+            "independent replay"
+          ],
+          "seed_count_rule": "determine and freeze training and holdout seed counts by control-only precision and coverage simulation before candidate access",
+          "simultaneous_interval_method": "NOT_FROZEN",
+          "negative_control_rule_required": "use preregistered simultaneous interval separation from an equivalence band for at least two defined estimators; undefined estimators never count as separation",
+          "failure_rules": [
+            "a negative control satisfying the candidate pattern stops promotion",
+            "an interval touching the equivalence band is INCONCLUSIVE",
+            "excess undefined bootstrap mass stops promotion",
+            "control failure cannot be repaired by adding seeds or retuning thresholds after holdout inspection"
+          ]
+        },
+        "claim_boundary": {
+          "maximum_future_finite_size_wording_after_all_later_gates_pass": "finite-size N=8...60 behavior is consistent with preregistered diagnostics and controls",
+          "forbidden_claims": [
+            "continuum limit established",
+            "manifoldlikeness established",
+            "Lorentz invariance established",
+            "stable 3+1 spacetime derived",
+            "Spin-2 sector derived",
+            "general relativity emerged"
+          ]
+        }
+      }
+    },
+    "implementation_requires_a_new_human_owned_budget": {
+      "passed": true,
+      "evidence": {
+        "execution_model": "worker subprocess supervised by a parent process",
+        "required_hard_controls": [
+          "wall-clock termination",
+          "process-tree termination",
+          "peak resident-memory monitoring",
+          "disk-usage monitoring",
+          "checkpointed partial artifact",
+          "explicit RESOURCE_LIMIT_OPEN exit status"
+        ],
+        "platforms": [
+          "Windows",
+          "Linux CI"
+        ],
+        "default_budget_forbidden": true,
+        "budget_source": "a new owner-approved config/*_budget.json artifact",
+        "promotion_protocol": "write to a temporary directory and atomically promote only after schema, digest, and replay validation",
+        "retry_policy": "zero retries; timeout or OOM is not replaced by another seed"
+      }
+    },
+    "no_sampling_solver_or_scientific_authorization_is_added": {
+      "passed": true,
+      "evidence": {
+        "design_authorized": true,
+        "implementation_preflight_authorized": false,
+        "new_trajectories_authorized": false,
+        "production_sampling_authorized": false,
+        "approximate_sampler_authorized": false,
+        "solver_run_permitted": false,
+        "global_verdict": "FINAL_THEORY_OPEN"
+      }
+    }
+  },
+  "all_acceptance_checks_passed": true,
+  "production_sampler_available": false,
+  "implementation_preflight_authorized": false,
+  "production_sampling_authorized": false,
+  "source_bindings": [
+    {
+      "path": "config/v0.4.2_phase_b_large_n_sampler_extension_design.json",
+      "raw_sha256": "2bafa616c2a6148175b872c245085e8bfcf86708a7fd63c4803c9aa1fd40ca19",
+      "canonical_lf_sha256": "2bafa616c2a6148175b872c245085e8bfcf86708a7fd63c4803c9aa1fd40ca19",
+      "size_bytes": 12539,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_continuum_dimension_preflight.json",
+      "raw_sha256": "a2b43475cb2fb7cb546043fa6c623b5a1d817ca24e1143f185d7a8b05f2bac21",
+      "canonical_lf_sha256": "a2b43475cb2fb7cb546043fa6c623b5a1d817ca24e1143f185d7a8b05f2bac21",
+      "size_bytes": 50189,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_continuum_dimension_design.json",
+      "raw_sha256": "99334d003fcec53e785a5de71b6555b6ba2e83efde604b7cb7334ca2772b2add",
+      "canonical_lf_sha256": "99334d003fcec53e785a5de71b6555b6ba2e83efde604b7cb7334ca2772b2add",
+      "size_bytes": 19790,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "config/v0.4.2_phase_b_continuum_dimension_capabilities.json",
+      "raw_sha256": "ef29b0ecbbbec401a484818d5b584a1645a62244190e6572846b12ad52e8c5dd",
+      "canonical_lf_sha256": "ef29b0ecbbbec401a484818d5b584a1645a62244190e6572846b12ad52e8c5dd",
+      "size_bytes": 987,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/dynamics_v02.py",
+      "raw_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "canonical_lf_sha256": "4db381d0a7813d85145f9c85cafc4c799437a26a2cbe9e8612daefe4da145654",
+      "size_bytes": 20648,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/causal_sets.py",
+      "raw_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+      "canonical_lf_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+      "size_bytes": 16560,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/phase_b_sampler_preflight_v042.py",
+      "raw_sha256": "2094052b8a04d8c32a75f5bcb21e9b5050c56ebc26908d5a4e3d4304937129f1",
+      "canonical_lf_sha256": "2094052b8a04d8c32a75f5bcb21e9b5050c56ebc26908d5a4e3d4304937129f1",
+      "size_bytes": 16365,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/models/causal_information_v2/model_spec.json",
+      "raw_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "canonical_lf_sha256": "8c34a48c5943ab5540fc1d30aa395882d7591c078e4846a38b7f0b0d3a0647f1",
+      "size_bytes": 1032,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "Final-Theory-Program/models/bdg_control/model_spec.json",
+      "raw_sha256": "f3f6989512f4143ca285c37ab2ac3cd2aa25fa1b7ca5bc5df5df11ef095565c3",
+      "canonical_lf_sha256": "f3f6989512f4143ca285c37ab2ac3cd2aa25fa1b7ca5bc5df5df11ef095565c3",
+      "size_bytes": 385,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "MISSION.md",
+      "raw_sha256": "d44d28431d1661f1f8e544db8ac78f5c5d7b7ad5d8ca529c35df3e82f04cf779",
+      "canonical_lf_sha256": "d44d28431d1661f1f8e544db8ac78f5c5d7b7ad5d8ca529c35df3e82f04cf779",
+      "size_bytes": 12123,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "HANDOFF.md",
+      "raw_sha256": "dbf54d14802d105a67b7e2c8c85420b3116a68af32156f76102774f9629fab79",
+      "canonical_lf_sha256": "dbf54d14802d105a67b7e2c8c85420b3116a68af32156f76102774f9629fab79",
+      "size_bytes": 27023,
+      "strict_utf8_lf": true
+    }
+  ],
+  "semantic_digest_sha256": "9aa245a4936251ff5b60fdfbafbe06c92e0a215a3a46bd23cb36ec0a2a8fa953"
+}

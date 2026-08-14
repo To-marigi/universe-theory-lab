@@ -27,9 +27,11 @@ def test_live_state_has_no_stale_phase_a_owner_fields() -> None:
     campaign = state["affected_campaign"]
     progress = campaign["721_source_native_progress"]
 
-    assert state["updated"] == "2026-08-14"
+    assert state["updated"] == "2026-08-15"
     assert campaign["status"] == (
-        "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_PHASE_B_READY_FINAL_THEORY_OPEN"
+        "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_"
+        "PHASE_B_LARGE_N_SAMPLER_EXTENSION_DESIGN_FROZEN_IMPLEMENTATION_"
+        "PREFLIGHT_BUDGET_REQUIRED_FINAL_THEORY_OPEN"
     )
     assert progress["955_freeze_decision_status"] == (
         "EXECUTED_OWNER_APPROVED_PHASE_A_FREEZE_2026-08-13_PHASE_C_COMPLETE"

@@ -64,12 +64,32 @@ def validate_candidate_registry(registry: dict[str, Any]) -> list[str]:
     """Return structural errors in the candidate registry."""
 
     errors: list[str] = []
+    schema_version = registry.get("schema_version")
+    if schema_version not in {"0.1", "0.2"}:
+        errors.append("schema_version must be 0.1 or 0.2")
     candidates = registry.get("candidates", [])
-    if len(candidates) < 3:
+    minimum_families = registry.get("candidate_policy", {}).get(
+        "minimum_families", 3
+    )
+    family_count = len(
+        {
+            candidate.get("family")
+            for candidate in candidates
+            if candidate.get("family")
+        }
+    )
+    if family_count < minimum_families:
         errors.append("at least three candidate families are required")
     identifiers = [candidate.get("id") for candidate in candidates]
     if len(identifiers) != len(set(identifiers)):
         errors.append("candidate ids must be unique")
+    if registry.get("central_candidate") not in identifiers:
+        errors.append("central_candidate must refer to a registered candidate")
+    active_candidates = registry.get("active_candidates", {})
+    if schema_version == "0.2":
+        phase_b_candidate = active_candidates.get("PHASE_B")
+        if phase_b_candidate not in identifiers:
+            errors.append("active_candidates.PHASE_B must refer to a registered candidate")
     required = {
         "id",
         "name",
@@ -90,10 +110,18 @@ def validate_candidate_registry(registry: dict[str, Any]) -> list[str]:
             )
         evidence = candidate.get("spin2_evidence", {})
         unknown = set(evidence) - set(SPIN2_EVIDENCE_FIELDS)
-        if unknown:
+        missing_evidence = set(SPIN2_EVIDENCE_FIELDS) - set(evidence)
+        if unknown or missing_evidence:
             errors.append(
-                f"{candidate.get('id', '<unknown>')}: unknown spin2 evidence "
-                f"{sorted(unknown)}"
+                f"{candidate.get('id', '<unknown>')}: spin2 evidence keys must "
+                f"match the frozen field set; unknown={sorted(unknown)}, "
+                f"missing={sorted(missing_evidence)}"
+            )
+        if schema_version == "0.2" and candidate.get("id") == active_candidates.get(
+            "PHASE_B"
+        ) and not candidate.get("candidate_version"):
+            errors.append(
+                f"{candidate.get('id', '<unknown>')}: active candidate_version is required"
             )
     return errors
 
