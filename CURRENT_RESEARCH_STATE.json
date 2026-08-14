@@ -129,8 +129,8 @@
     "v0.4.2_721_gc_tier_relation_reduced_all_eleven": "ALL_1529_GC_PAIRS_REDUCED_MODULO_DEFINING_RELATIONS_ZERO_NEWLY_ZERO_OPEN"
   },
   "affected_campaign": {
-    "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_ACTIVE_FINAL_THEORY_OPEN",
-    "next_gate": "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW",
+    "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_PHASE_B_READY_FINAL_THEORY_OPEN",
+    "next_gate": "PHASE_B_REQUIRED_PHYSICS_DERIVATION_GAP_INVENTORY",
     "phase_A_termination_packet": {
       "status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
       "report": "reports/v0.4.2_phase_a_termination_decision_packet.md",
@@ -153,7 +153,7 @@
       "phase_C_started": true
     },
     "phase_C": {
-      "status": "ACTIVE",
+      "status": "COMPLETE",
       "charter": "reports/v0.4.2_phase_c_methodology_charter.md",
       "artifact": "results/v0.4.2_phase_c_methodology_charter.json",
       "next_gate": "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW",
@@ -232,7 +232,27 @@
         "guard_module": "src/universe_lab/final_theory/solver_authorization_v042.py",
         "guarded_entrypoint": "src/universe_lab/final_theory/one_sided_elimination_v041.py",
         "reason": "Phase-A freeze is active; Phase-C methodology audits do not implicitly reopen 955 or 721."
+      },
+      "completion_review": {
+        "status": "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW_CERTIFIED",
+        "report": "reports/v0.4.2_phase_c_method_completion.md",
+        "artifact": "results/v0.4.2_phase_c_method_completion.json",
+        "module": "src/universe_lab/final_theory/phase_c_method_completion_v042.py",
+        "test": "tests/final_theory/test_v042_phase_c_method_completion.py",
+        "prepared": "2026-08-14",
+        "evidence_head": "e8c3d02",
+        "semantic_digest_sha256": "1bf10f8b127ae56791e304c09902db1df9849dd9c3d148fdd12c91f52d807dd8",
+        "acceptance_controls_satisfied": 4,
+        "scientific_verdict_added": false,
+        "global_verdict": "FINAL_THEORY_OPEN",
+        "next_gate": "PHASE_B_REQUIRED_PHYSICS_DERIVATION_GAP_INVENTORY"
       }
+    },
+    "phase_B": {
+      "status": "READY_NOT_STARTED",
+      "scope": "required physics derivation audit, not deeper computation of frozen 955/721 profiles",
+      "started": false,
+      "next_gate": "PHASE_B_REQUIRED_PHYSICS_DERIVATION_GAP_INVENTORY"
     },
     "solver_run_permitted": false,
     "solver_campaign_preconditions": [
@@ -314,10 +334,10 @@
       "solver_run": false,
       "full_955_profile_claimed": false
     },
-    "next_gate_description": "The unit-minor route to the localized row-module certificate does not close. The Dulmage-Mendelsohn decomposition of the 111-column unit matching has 60 components with a canonical largest irreducible block of size 15, and all 19 blocks of size at most three have non-unit determinants carrying ten new irreducible factors, none of them a source matrix diagonal entry, so source-determinant localization does not invert them. The route is not proved impossible -- every column has alternative unit rows -- but the size-15 block alone admits about 1.4e29 alternative matchings and no structural reason has emerged why a unit choice should exist. Phase A is now frozen at REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT under the owner-approved freeze record; Phase C is active. Reopening requires a new owner-approved tool/version and versioned budget. The global verdict remains FINAL_THEORY_OPEN and no complete finite ON semantics lattice is claimed.",
+    "next_gate_description": "The unit-minor route to the localized row-module certificate does not close. The Dulmage-Mendelsohn decomposition of the 111-column unit matching has 60 components with a canonical largest irreducible block of size 15, and all 19 blocks of size at most three have non-unit determinants carrying ten new irreducible factors, none of them a source matrix diagonal entry, so source-determinant localization does not invert them. The route is not proved impossible -- every column has alternative unit rows -- but the size-15 block alone admits about 1.4e29 alternative matchings and no structural reason has emerged why a unit choice should exist. Phase A remains frozen at REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT; Phase C is complete as a methods artifact. Reopening requires a new owner-approved tool/version and versioned budget. The next gate is the Phase-B required-physics derivation gap inventory. The global verdict remains FINAL_THEORY_OPEN and no complete finite ON semantics lattice is claimed.",
     "721_source_native_progress": {
       "started_as": "721_NATIVE_COMPILER_AFTER_955_TERMINAL_OR_AS_BUDGET_FALLBACK",
-      "955_freeze_decision_status": "EXECUTED_OWNER_APPROVED_PHASE_A_FREEZE_2026-08-13_PHASE_C_ACTIVE",
+      "955_freeze_decision_status": "EXECUTED_OWNER_APPROVED_PHASE_A_FREEZE_2026-08-13_PHASE_C_COMPLETE",
       "gates_compiled": [
         "v0.4.2_721_source_native_preflight",
         "v0.4.2_721_scalar_gate",
@@ -423,7 +443,7 @@
           "scripts/run_v042_721_groebner_preflight.py"
         ]
       },
-      "next_step": "Phase A is frozen for 721 at FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT. The exact defining-relation reduction is exhaustively closed out (0/1967 closed), and the corrected complete-residual-unit preflight remains a bounded warning rather than a proof of full-system or dedicated-CAS impossibility. Phase C is active; reopening 721 requires a new owner-approved dedicated CAS/toolchain and versioned budget.",
+      "next_step": "Phase A is frozen for 721 at FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT. The exact defining-relation reduction is exhaustively closed out (0/1967 closed), and the corrected complete-residual-unit preflight remains a bounded warning rather than a proof of full-system or dedicated-CAS impossibility. Phase C is complete as a methods artifact; reopening 721 requires a new owner-approved dedicated CAS/toolchain and versioned budget. Phase B is ready but not started.",
       "reports": [
         "reports/v0.4.2_721_source_native_preflight.md",
         "reports/v0.4.2_721_scalar_gate.md",

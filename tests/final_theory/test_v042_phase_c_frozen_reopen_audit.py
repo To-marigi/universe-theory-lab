@@ -94,7 +94,10 @@ def test_current_state_points_to_completion_review() -> None:
     assert audit["artifact"] == RESULT_PATH.as_posix()
     assert audit["report"] == REPORT_PATH.as_posix()
     assert phase_c["next_gate"] == NEXT_GATE
-    assert state["affected_campaign"]["next_gate"] == NEXT_GATE
+    assert audit["next_gate"] == NEXT_GATE
+    assert state["affected_campaign"]["next_gate"] == (
+        "PHASE_B_REQUIRED_PHYSICS_DERIVATION_GAP_INVENTORY"
+    )
     assert phase_c["reopen_authorization"]["status"] == "NOT_AUTHORIZED"
     assert phase_c["reopen_authorization"]["runtime_gate_blocks_current_state"] is True
 

@@ -51,4 +51,4 @@ def test_current_state_records_the_executed_transition() -> None:
     assert packet["execution_record"] == (
         "results/v0.4.2_phase_a_freeze_execution.json"
     )
-    assert state["affected_campaign"]["phase_C"]["status"] == "ACTIVE"
+    assert state["affected_campaign"]["phase_C"]["status"] == "COMPLETE"
