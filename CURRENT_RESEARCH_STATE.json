@@ -1,6 +1,6 @@
 {
   "schema_version": "cpobc-current-research-state-v1",
-  "updated": "2026-08-15",
+  "updated": "2026-08-16",
   "mutable_index_not_a_proof_certificate": true,
   "global_verdict": "FINAL_THEORY_OPEN",
   "public_baseline": {
@@ -22,6 +22,32 @@
       "reports/v0.4.2_paper1_zenodo_publication_readback_2026-08-09.md",
       "reports/v0.4.2_paper1_owner_decision_amendment_2026-08-09.md"
     ],
+    "post_publication_reproduction": {
+      "status": "VERIFIED_2026-08-16_NO_PUBLIC_RECORD_MUTATION",
+      "report": "reports/v0.4.2_paper1_post_publication_reproduction_2026-08-16.md",
+      "source_tree_base_commit": "0bd4ecf41c4653e3208793ed8b61b9a09f23d384",
+      "focused_paper1_regression_passed": 223,
+      "phase_b_runtime_audit_tests_passed": 15,
+      "docker_compose_config_passed": true,
+      "sage_image_repo_digest": "sha256:e068670ae5863b54b2550e72437ec637b0283acb0dc712c8584c124dbf44e667",
+      "bounded_scouts_reproduced": [
+        {
+          "name": "row185_normal_form",
+          "certificate_core_digest_sha256": "bd2d390ea996ea5149578bb569d6bba98fecbcb96b1b00d0fe8ff7b365f00deb",
+          "is_unit_ideal": false
+        },
+        {
+          "name": "candidate_minor_only",
+          "certificate_core_digest_sha256": "cb9252dbc9d1610d3d0410f0d8f111a862b341cee59a4ced20bb8527c66a1c87",
+          "is_unit_ideal": false
+        }
+      ],
+      "subset_check_passed": true,
+      "process_audit_passed": true,
+      "new_trajectories": 0,
+      "scientific_verdict_added": false,
+      "published_record_mutated": false
+    },
     "zenodo_tooling": "zenodo/paper1-v0.4.2/",
     "manuscript_source": "paper/v0.4.2_paper1_statewise_operator/main.tex",
     "later_scientific_or_file_change_requires": "a new Zenodo version; never mutate the published record",
@@ -385,6 +411,29 @@
         "all_acceptance_checks_passed": true,
         "scientific_verdict_added": false,
         "global_verdict": "FINAL_THEORY_OPEN"
+      },
+      "runtime_component_audit": {
+        "status": "PHASE_B_LARGE_N_RUNTIME_COMPONENT_AUDIT_COMPLETE_NON_PRODUCTION_PREFLIGHT_REQUIRED",
+        "artifact": "results/v0.4.2_phase_b_large_n_runtime_audit.json",
+        "report": "reports/v0.4.2_phase_b_large_n_runtime_audit.md",
+        "module": "src/universe_lab/final_theory/phase_b_large_n_runtime_v042.py",
+        "audit_module": "src/universe_lab/final_theory/phase_b_large_n_runtime_audit_v042.py",
+        "test": "tests/final_theory/test_v042_phase_b_large_n_runtime_audit.py",
+        "runtime_test": "tests/final_theory/test_v042_phase_b_large_n_runtime.py",
+        "semantic_digest_sha256": "0806d34234d23ea9e9ea9a74f6451a32f760e9a9bce8411e61c49f7893bde098",
+        "max_n": 5,
+        "height_oracle_checks": 88,
+        "downset_oracle_checks": 88,
+        "height_relabeling_checks": 7980,
+        "all_equivalence_checks_passed": true,
+        "all_fail_closed_checks_passed": true,
+        "new_trajectories": 0,
+        "resource_budget_present": false,
+        "implementation_preflight_authorized": false,
+        "independent_large_n_replay_available": false,
+        "production_sampler_available": false,
+        "production_sampling_authorized": false,
+        "scientific_verdict_added": false
       }
     },
     "solver_run_permitted": false,
@@ -2441,7 +2490,9 @@
     "tests/final_theory/test_sr2v_transverse_common_core_unit_minor_v042.py",
     "tests/final_theory/test_sr2v_transverse_common_core_schur_scout_v042.py",
     "tests/final_theory/test_sr2v_transverse_eq120_schur_chart_obligations_v042.py",
-    "tests/final_theory/test_sr2v_transverse_eq120_repair_pair_scout_v042.py"
+    "tests/final_theory/test_sr2v_transverse_eq120_repair_pair_scout_v042.py",
+    "tests/final_theory/test_v042_phase_b_large_n_runtime.py",
+    "tests/final_theory/test_v042_phase_b_large_n_runtime_audit.py"
   ],
   "publication_posture": "STATEWISE_VERSUS_OPERATOR_OBSERVABILITY_EXACT_SEPARATION_AND_MINIMAL_RECOVERY_WITH_SCOPED_SR3B_A_ONE_SIDED_CLOSURE_AS_UPGRADE_NO_BROAD_PRIORITY_OVER_XU_2607_26672"
 }

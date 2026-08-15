@@ -1,0 +1,90 @@
+{
+  "schema_version": "final-theory-v042-phase-b-large-n-runtime-audit-v1",
+  "prepared": "2026-08-15",
+  "status": "PHASE_B_LARGE_N_RUNTIME_COMPONENT_AUDIT_COMPLETE_NON_PRODUCTION_PREFLIGHT_REQUIRED",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COMPONENT_AUDIT",
+  "next_gate": "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COST_PREFLIGHT_BUDGET_APPROVAL",
+  "scope": "Deterministic runtime components only; no trajectories or production measurements.",
+  "bounded_domain": {
+    "max_n": 5,
+    "unlabeled_level_counts": [
+      1,
+      1,
+      2,
+      5,
+      16,
+      63
+    ],
+    "new_trajectories": 0,
+    "solver_calls": 0
+  },
+  "equivalence_audit": {
+    "height_checks": 88,
+    "height_failures": [],
+    "height_equivalence_passed": true,
+    "downset_checks": 88,
+    "downset_failures": [],
+    "downset_equivalence_passed": true,
+    "relabeling_checks": 7980,
+    "relabeling_failures": [],
+    "height_relabeling_passed": true
+  },
+  "fail_closed_audit": {
+    "downset_cap_failure_detected": true,
+    "float_weight_rejected": true,
+    "oversized_counter_rejected": true
+  },
+  "golden_vectors": {
+    "sha256_counter_stream_hex": "55e22f73ca4dd43619a6f37494aa7445d664c3c769a674c10a4dd34671d4f0f8a2401bfacc6d1007958614e4934ed32626a4546325199f58c113fc31280fb1f6e2",
+    "integer_ticket": 29,
+    "integer_ticket_rejection_attempt": 0
+  },
+  "checks": {
+    "bounded_exact_domain_is_unchanged": true,
+    "height_matches_exhaustive_oracle": true,
+    "height_is_label_invariant": true,
+    "downsets_match_exhaustive_oracle": true,
+    "portable_stream_golden_vector_matches": true,
+    "portable_ticket_golden_vector_matches": true,
+    "fail_closed_boundaries_are_active": true
+  },
+  "all_acceptance_checks_passed": true,
+  "implementation_preflight_authorized": false,
+  "production_sampler_available": false,
+  "production_sampling_authorized": false,
+  "independent_large_n_replay_available": false,
+  "resource_budget_present": false,
+  "source_bindings": [
+    {
+      "path": "src/universe_lab/final_theory/phase_b_large_n_runtime_v042.py",
+      "raw_sha256": "95a99bed84c9e657c16960e519a7a0348235466edbd8c5722916aef1e834597a",
+      "canonical_lf_sha256": "95a99bed84c9e657c16960e519a7a0348235466edbd8c5722916aef1e834597a",
+      "size_bytes": 9908,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "tests/final_theory/test_v042_phase_b_large_n_runtime.py",
+      "raw_sha256": "7cffc7cb258ae5436fcfe56d316edb40b0b894728632fe391dac0de72a5f242d",
+      "canonical_lf_sha256": "7cffc7cb258ae5436fcfe56d316edb40b0b894728632fe391dac0de72a5f242d",
+      "size_bytes": 5790,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/causal_sets.py",
+      "raw_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+      "canonical_lf_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+      "size_bytes": 16560,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/continuum_observables_v042.py",
+      "raw_sha256": "a76b038456cf41e521b3dd3c4830dbf830e53087a81cf4f59aa79d4a62bda963",
+      "canonical_lf_sha256": "a76b038456cf41e521b3dd3c4830dbf830e53087a81cf4f59aa79d4a62bda963",
+      "size_bytes": 12570,
+      "strict_utf8_lf": true
+    }
+  ],
+  "semantic_digest_sha256": "0806d34234d23ea9e9ea9a74f6451a32f760e9a9bce8411e61c49f7893bde098"
+}
