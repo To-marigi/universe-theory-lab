@@ -1,0 +1,220 @@
+{
+  "schema_version": "final-theory-v042-phase-b-hard-supervisor-preflight-v1",
+  "prepared": "2026-08-16",
+  "status": "PHASE_B_HARD_SUPERVISOR_PREFLIGHT_COMPLETE_NON_EVIDENTIARY",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "next_gate": "PHASE_B_INDEPENDENT_REPLAY_AND_PRODUCTION_BUDGET_REVIEW",
+  "scope": "Synthetic worker fixture only. This authorizes operational supervision checks and does not authorize trajectory sampling, production observables, solver calls, approximate sampling, or scientific claims.",
+  "certificate_core": {
+    "schema_version": "final-theory-v042-phase-b-hard-supervisor-preflight-v1",
+    "budget_config_sha256": "a01383c24d13205143ea6c6528a57d44ebdbc788ba7fd5f65c7d6fa5e7b8e980",
+    "fixture_modes": [
+      "success",
+      "invalid_certificate",
+      "tree_timeout",
+      "memory_limit",
+      "disk_limit"
+    ],
+    "expected_outcomes": [
+      {
+        "mode": "success",
+        "status": "COMPLETED",
+        "reason": "NONE",
+        "promoted": true,
+        "process_tree_terminated": true,
+        "attempt_count": 1
+      },
+      {
+        "mode": "invalid_certificate",
+        "status": "ERROR",
+        "reason": "INVALID_CERTIFICATE",
+        "promoted": false,
+        "process_tree_terminated": true,
+        "attempt_count": 1
+      },
+      {
+        "mode": "tree_timeout",
+        "status": "RESOURCE_LIMIT_OPEN",
+        "reason": "RESOURCE_LIMIT_OPEN_WALL_TIME",
+        "promoted": false,
+        "process_tree_terminated": true,
+        "attempt_count": 1
+      },
+      {
+        "mode": "memory_limit",
+        "status": "RESOURCE_LIMIT_OPEN",
+        "reason": "RESOURCE_LIMIT_OPEN_MEMORY",
+        "promoted": false,
+        "process_tree_terminated": true,
+        "attempt_count": 1
+      },
+      {
+        "mode": "disk_limit",
+        "status": "RESOURCE_LIMIT_OPEN",
+        "reason": "RESOURCE_LIMIT_OPEN_DISK",
+        "promoted": false,
+        "process_tree_terminated": true,
+        "attempt_count": 1
+      }
+    ],
+    "observed_outcomes": [
+      {
+        "mode": "success",
+        "status": "COMPLETED",
+        "reason": "NONE",
+        "promoted": true,
+        "process_tree_terminated": true,
+        "attempt_count": 1
+      },
+      {
+        "mode": "invalid_certificate",
+        "status": "ERROR",
+        "reason": "INVALID_CERTIFICATE",
+        "promoted": false,
+        "process_tree_terminated": true,
+        "attempt_count": 1
+      },
+      {
+        "mode": "tree_timeout",
+        "status": "RESOURCE_LIMIT_OPEN",
+        "reason": "RESOURCE_LIMIT_OPEN_WALL_TIME",
+        "promoted": false,
+        "process_tree_terminated": true,
+        "attempt_count": 1
+      },
+      {
+        "mode": "memory_limit",
+        "status": "RESOURCE_LIMIT_OPEN",
+        "reason": "RESOURCE_LIMIT_OPEN_MEMORY",
+        "promoted": false,
+        "process_tree_terminated": true,
+        "attempt_count": 1
+      },
+      {
+        "mode": "disk_limit",
+        "status": "RESOURCE_LIMIT_OPEN",
+        "reason": "RESOURCE_LIMIT_OPEN_DISK",
+        "promoted": false,
+        "process_tree_terminated": true,
+        "attempt_count": 1
+      }
+    ],
+    "checks": {
+      "outcomes_match_versioned_expectations": true,
+      "wall_time_cap_fails_closed": true,
+      "process_tree_is_reaped": true,
+      "memory_cap_fails_closed": true,
+      "disk_cap_fails_closed": true,
+      "atomic_promotion_requires_validated_digest": true,
+      "failed_fixtures_never_promote": true,
+      "exactly_one_attempt_and_no_retry": true,
+      "production_boundary_is_closed": true
+    },
+    "authorization_boundary": {
+      "hard_supervisor_preflight_authorized": true,
+      "production_sampling_authorized": false,
+      "new_trajectories_authorized": false,
+      "solver_run_permitted": false,
+      "scientific_verdict_added": false,
+      "global_verdict": "FINAL_THEORY_OPEN"
+    },
+    "source_bindings": [
+      {
+        "path": "config/v0.4.2_phase_b_hard_supervisor_preflight_budget_20260816.json",
+        "raw_sha256": "a01383c24d13205143ea6c6528a57d44ebdbc788ba7fd5f65c7d6fa5e7b8e980",
+        "canonical_lf_sha256": "a01383c24d13205143ea6c6528a57d44ebdbc788ba7fd5f65c7d6fa5e7b8e980",
+        "size_bytes": 2217,
+        "strict_utf8_lf": true
+      },
+      {
+        "path": "src/universe_lab/final_theory/phase_b_supervisor_v042.py",
+        "raw_sha256": "385dc1ddb661b37a224ec57c19bf1ff01a5540c78fe3bb1971f07ebb71580aa8",
+        "canonical_lf_sha256": "385dc1ddb661b37a224ec57c19bf1ff01a5540c78fe3bb1971f07ebb71580aa8",
+        "size_bytes": 26066,
+        "strict_utf8_lf": true
+      },
+      {
+        "path": "tests/final_theory/test_v042_phase_b_hard_supervisor.py",
+        "raw_sha256": "2921b9427106062d2bea2ad451e5f5b54c99fff55e874a59a3a423c00b50232a",
+        "canonical_lf_sha256": "2921b9427106062d2bea2ad451e5f5b54c99fff55e874a59a3a423c00b50232a",
+        "size_bytes": 4666,
+        "strict_utf8_lf": true
+      }
+    ]
+  },
+  "runtime_observation": {
+    "fixture_observations": [
+      {
+        "elapsed_seconds": 0.2837907900002392,
+        "peak_rss_bytes": 33955840,
+        "peak_disk_bytes": 268,
+        "exit_code": 0,
+        "observed_process_count": 1,
+        "child_pid": null,
+        "live_process_ids_after_cleanup": [],
+        "termination_requested": false,
+        "candidate_present_before_cleanup": true,
+        "final_exists_after_run": true
+      },
+      {
+        "elapsed_seconds": 0.2618823599996176,
+        "peak_rss_bytes": 33947648,
+        "peak_disk_bytes": 273,
+        "exit_code": 0,
+        "observed_process_count": 1,
+        "child_pid": null,
+        "live_process_ids_after_cleanup": [],
+        "termination_requested": false,
+        "candidate_present_before_cleanup": true,
+        "final_exists_after_run": false
+      },
+      {
+        "elapsed_seconds": 0.27367537899954186,
+        "peak_rss_bytes": 43487232,
+        "peak_disk_bytes": 17,
+        "exit_code": -15,
+        "observed_process_count": 2,
+        "child_pid": 101,
+        "live_process_ids_after_cleanup": [],
+        "termination_requested": true,
+        "candidate_present_before_cleanup": false,
+        "final_exists_after_run": false
+      },
+      {
+        "elapsed_seconds": 0.302186862999406,
+        "peak_rss_bytes": 94498816,
+        "peak_disk_bytes": 0,
+        "exit_code": -15,
+        "observed_process_count": 1,
+        "child_pid": null,
+        "live_process_ids_after_cleanup": [],
+        "termination_requested": true,
+        "candidate_present_before_cleanup": false,
+        "final_exists_after_run": false
+      },
+      {
+        "elapsed_seconds": 0.3412641060003807,
+        "peak_rss_bytes": 34144256,
+        "peak_disk_bytes": 1310720,
+        "exit_code": -15,
+        "observed_process_count": 1,
+        "child_pid": null,
+        "live_process_ids_after_cleanup": [],
+        "termination_requested": true,
+        "candidate_present_before_cleanup": false,
+        "final_exists_after_run": false
+      }
+    ],
+    "total_elapsed_seconds": 1.4627994979991854,
+    "within_versioned_total_wall_time": true,
+    "external_process_tree_supervisor_used": true,
+    "no_live_fixture_processes": true
+  },
+  "all_acceptance_checks_passed": true,
+  "new_trajectories": 0,
+  "solver_calls": 0,
+  "production_sampler_available": false,
+  "production_sampling_authorized": false,
+  "semantic_digest_sha256": "e09bfba4f43f1cdf9708ffbe89960b8375b83b69e12df8d8fa3e444987a7191f"
+}

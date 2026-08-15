@@ -1,0 +1,67 @@
+{
+  "schema_version": "final-theory-v042-phase-b-hard-supervisor-preflight-budget-v1",
+  "prepared": "2026-08-16",
+  "owner_instruction": "CONTINUE_PHASE_B_HARD_SUPERVISOR_PREFLIGHT_ONLY",
+  "owner_instruction_source": "current chat instruction: proceed with practical remaining work",
+  "owner_approval_present": true,
+  "authorization_scope": "Synthetic worker fixture only. This authorizes operational supervision checks and does not authorize trajectory sampling, production observables, solver calls, approximate sampling, or scientific claims.",
+  "production_sampling_authorized": false,
+  "limits": {
+    "max_total_wall_seconds": 30,
+    "max_retries": 0,
+    "poll_interval_seconds": 0.01,
+    "termination_grace_seconds": 0.5,
+    "new_sampled_trajectories": 0,
+    "solver_calls": 0
+  },
+  "fixtures": {
+    "success": {
+      "wall_time_seconds": 2.0,
+      "memory_mib": 256,
+      "disk_mib": 4,
+      "expected_status": "COMPLETED",
+      "expected_reason": "NONE",
+      "expected_promoted": true
+    },
+    "invalid_certificate": {
+      "wall_time_seconds": 2.0,
+      "memory_mib": 256,
+      "disk_mib": 4,
+      "expected_status": "ERROR",
+      "expected_reason": "INVALID_CERTIFICATE",
+      "expected_promoted": false
+    },
+    "tree_timeout": {
+      "wall_time_seconds": 0.25,
+      "memory_mib": 256,
+      "disk_mib": 4,
+      "expected_status": "RESOURCE_LIMIT_OPEN",
+      "expected_reason": "RESOURCE_LIMIT_OPEN_WALL_TIME",
+      "expected_promoted": false
+    },
+    "memory_limit": {
+      "wall_time_seconds": 3.0,
+      "memory_mib": 64,
+      "disk_mib": 4,
+      "expected_status": "RESOURCE_LIMIT_OPEN",
+      "expected_reason": "RESOURCE_LIMIT_OPEN_MEMORY",
+      "expected_promoted": false
+    },
+    "disk_limit": {
+      "wall_time_seconds": 3.0,
+      "memory_mib": 256,
+      "disk_mib": 1,
+      "expected_status": "RESOURCE_LIMIT_OPEN",
+      "expected_reason": "RESOURCE_LIMIT_OPEN_DISK",
+      "expected_promoted": false
+    }
+  },
+  "forbidden_operations": [
+    "start a production sampler",
+    "generate a new trajectory",
+    "enumerate unlabeled levels",
+    "run a solver",
+    "fit parameters or issue a scientific verdict",
+    "retry a failed worker"
+  ]
+}
