@@ -95,6 +95,18 @@ def test_frozen_bridge_has_exact_audited_scope_and_resolves() -> None:
     )
 
 
+def test_living_manifest_is_not_a_current_legacy_resolver_target() -> None:
+    ledger = load_line_ending_bridge(LEDGER_PATH)
+
+    assert "references/manifest.json" in {
+        target["path"] for target in ledger["targets"]
+    }
+    from universe_lab.artifact_migration_v038 import LegacyRawDigestResolver
+
+    resolver = LegacyRawDigestResolver(ROOT, ledger)
+    assert "references/manifest.json" not in resolver.virtual_crlf_targets
+
+
 def test_bridge_matches_deterministic_regeneration() -> None:
     builder = _builder_module()
     saved = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))

@@ -17,6 +17,7 @@ from universe_lab.artifact_migration_v038 import (
     EXPECTED_BINDING_COUNT,
     EXPECTED_CONSUMER_COUNT,
     EXPECTED_TARGET_COUNT,
+    LIVING_DOCUMENT_TARGET_EXCLUSIONS,
     LedgerValidationError,
     TextArtifactError,
     canonical_lf_bytes,
@@ -32,6 +33,29 @@ from universe_lab.artifact_migration_v038 import (
 
 RESULT_PATH = "results/v0.3.8_line_ending_bridge.json"
 _SHA256_VALUE_RE = re.compile(r"(?:(sha256):)?([0-9a-f]{64})")
+
+# references/manifest.json is a living ledger.  Keep its v0.3.8 target and
+# binding as explicit historical data, but never rediscover them from the
+# current growing file.  This preserves byte-for-byte regeneration of the
+# frozen bridge without treating the current manifest as immutable.
+_LIVING_DOCUMENT_LEGACY_TARGET = {
+    "current_raw_sha256": "80758632bdf49cb3dbf2988f7b630ded0768834db9d6da539be99fbd8b8becfb",
+    "current_raw_size_bytes": 69627,
+    "canonical_lf_sha256": "80758632bdf49cb3dbf2988f7b630ded0768834db9d6da539be99fbd8b8becfb",
+    "canonical_lf_size_bytes": 69627,
+    "virtual_crlf_sha256": "2d28c78da992c6f6e86c6572b762a01b90758b9f7dcc89665b08124101cfd028",
+    "virtual_crlf_size_bytes": 71062,
+    "lf_count": 1435,
+}
+_LIVING_DOCUMENT_LEGACY_BINDING = {
+    "consumer_path": "results/v0.3.7_release_manifest.json",
+    "json_pointer": "/files/85/sha256",
+    "recorded_value": "2d28c78da992c6f6e86c6572b762a01b90758b9f7dcc89665b08124101cfd028",
+    "legacy_raw_sha256": "2d28c78da992c6f6e86c6572b762a01b90758b9f7dcc89665b08124101cfd028",
+    "sha256_prefix_present": False,
+    "target_paths": ["references/manifest.json"],
+    "binding_kind": BINDING_KIND,
+}
 
 
 def _tracked_paths(root: Path) -> list[str]:
@@ -87,6 +111,8 @@ def build_ledger(root: Path) -> dict[str, Any]:
     }
     virtual_digest_to_paths: dict[str, list[str]] = defaultdict(list)
     for relative_path, canonical in text_inventory.items():
+        if relative_path in LIVING_DOCUMENT_TARGET_EXCLUSIONS:
+            continue
         if b"\n" not in canonical:
             continue
         virtual = virtual_crlf_bytes(canonical, source=relative_path)
@@ -135,6 +161,7 @@ def build_ledger(root: Path) -> dict[str, Any]:
             "raw-byte candidate(s) occurred in semantic/request fields and require review: "
             f"{forbidden_matches}"
         )
+    bindings.append(dict(_LIVING_DOCUMENT_LEGACY_BINDING))
     bindings.sort(
         key=lambda binding: (
             binding["consumer_path"],
@@ -150,7 +177,10 @@ def build_ledger(root: Path) -> dict[str, Any]:
     )
     targets: list[dict[str, Any]] = []
     for target_path in sorted(target_edge_counts):
-        hashes = line_ending_hashes(root / target_path, require_canonical_lf=True)
+        if target_path in LIVING_DOCUMENT_TARGET_EXCLUSIONS:
+            hashes = dict(_LIVING_DOCUMENT_LEGACY_TARGET)
+        else:
+            hashes = line_ending_hashes(root / target_path, require_canonical_lf=True)
         targets.append(
             {
                 "path": target_path,

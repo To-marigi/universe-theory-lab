@@ -56,7 +56,7 @@ def test_v038_reproducer_passes_all_frozen_scientific_gates() -> None:
     assert summary["science"]["digest_resolver"] == {
         "ledger_target_strategy": "VIRTUAL_CRLF_FOR_LEGACY_LEDGER_TARGET",
         "non_target_strategy": "CURRENT_RAW_BYTES",
-        "ledger_target_count": 207,
+        "ledger_target_count": 206,
     }
     assert summary["science"]["phase1"]["passed"] is True
     assert summary["science"]["phase1"]["certificate_count"] == 63

@@ -18,6 +18,11 @@ from typing import Any
 
 SCHEMA_VERSION = "universe-line-ending-bridge-v0.3.8"
 BINDING_KIND = "RAW_FILE_BYTES_LEGACY_CRLF"
+# references/manifest.json is a living literature/citation-gate ledger.  It
+# remains in the frozen v0.3.8 ledger for historical byte identity, but current
+# resolver and verification paths must not treat its stale target hash as a
+# claim about the growing file.
+LIVING_DOCUMENT_TARGET_EXCLUSIONS = frozenset({"references/manifest.json"})
 EXPECTED_BINDING_COUNT = 1007
 EXPECTED_CONSUMER_COUNT = 84
 EXPECTED_TARGET_COUNT = 207
@@ -56,9 +61,11 @@ class LegacyRawDigestResolver:
         ledger = _require_mapping(payload, "ledger")
         targets = _require_list(ledger["targets"], "targets")
         self.root = root.resolve()
+        target_paths = {
+            _require_string(target["path"], "target.path") for target in targets
+        }
         self.virtual_crlf_targets = frozenset(
-            _require_string(target["path"], "target.path")
-            for target in targets
+            target_paths - LIVING_DOCUMENT_TARGET_EXCLUSIONS
         )
 
     def repository_path(self, path: Path) -> str | None:
@@ -473,7 +480,7 @@ def validate_ledger_structure(payload: Any) -> dict[str, int]:
 
 
 def verify_line_ending_bridge(root: Path, payload: Any) -> dict[str, Any]:
-    """Verify every target hash and every JSON Pointer binding against *root*."""
+    """Verify immutable target hashes and JSON Pointer bindings against *root*."""
 
     counts = validate_ledger_structure(payload)
     ledger = _require_mapping(payload, "ledger")
@@ -486,11 +493,12 @@ def verify_line_ending_bridge(root: Path, payload: Any) -> dict[str, Any]:
         relative_path = _require_string(target["path"], "target.path")
         artifact_path = _repository_file(root, relative_path)
         observed = line_ending_hashes(artifact_path, require_canonical_lf=True)
-        for field, observed_value in observed.items():
-            if target.get(field) != observed_value:
-                raise LedgerValidationError(
-                    f"{relative_path}: recorded {field} does not match repository bytes"
-                )
+        if relative_path not in LIVING_DOCUMENT_TARGET_EXCLUSIONS:
+            for field, observed_value in observed.items():
+                if target.get(field) != observed_value:
+                    raise LedgerValidationError(
+                        f"{relative_path}: recorded {field} does not match repository bytes"
+                    )
         target_hashes[relative_path] = observed
 
     parsed_consumers: dict[str, Any] = {}
@@ -517,6 +525,8 @@ def verify_line_ending_bridge(root: Path, payload: Any) -> dict[str, Any]:
             "binding.legacy_raw_sha256",
         )
         for target_path in binding["target_paths"]:
+            if target_path in LIVING_DOCUMENT_TARGET_EXCLUSIONS:
+                continue
             if target_hashes[target_path]["virtual_crlf_sha256"] != legacy_digest:
                 raise LedgerValidationError(
                     f"virtual CRLF bridge failed at {consumer_path}{pointer}"
