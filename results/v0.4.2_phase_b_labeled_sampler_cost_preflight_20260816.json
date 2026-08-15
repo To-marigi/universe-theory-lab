@@ -1,0 +1,671 @@
+{
+  "schema_version": "final-theory-v042-phase-b-labeled-sampler-cost-preflight-v1",
+  "prepared": "2026-08-16",
+  "status": "PHASE_B_LABELED_SAMPLER_COST_PREFLIGHT_COMPLETE_NON_EVIDENTIARY",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "next_gate": "PHASE_B_INDEPENDENT_REPLAY_AND_HARD_SUPERVISOR_IMPLEMENTATION_PREFLIGHT",
+  "scope": "Deterministic cost-only fixture preflight. This does not authorize trajectory sampling, production observables, solver calls, approximate sampling, or scientific claims.",
+  "certificate_core": {
+    "schema_version": "final-theory-v042-phase-b-labeled-sampler-cost-preflight-v1",
+    "budget_config_sha256": "41bba11ca79162e332cf88bfb47871780c3b4b5b4ca0c6674ffb945ab9d2a6c5",
+    "candidate_profile_id": "causal_information_v2_sparse_kraus",
+    "limits": {
+      "max_fixture_n": 13,
+      "max_fixture_count": 7,
+      "max_downsets_per_relation": 4096,
+      "max_weighted_branches": 4096,
+      "max_spectral_steps": 5,
+      "max_runtime_seconds": 60,
+      "max_memory_mib": 512,
+      "max_disk_mib": 64,
+      "new_sampled_trajectories": 0,
+      "solver_calls": 0
+    },
+    "fixtures": [
+      {
+        "name": "n05_chain",
+        "n": 5,
+        "relation_rows": [
+          30,
+          28,
+          24,
+          16,
+          0
+        ],
+        "primary_status": "COMPLETE",
+        "independent_status": "COMPLETE",
+        "downset_count": 6,
+        "primary_independent_equivalent": true,
+        "observable": {
+          "height": 5,
+          "ordering_fraction": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "spectral_steps": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "spectral_curve_digest": "9546c9f99704b2a89eddda23406422841cc45f19170c93a5f9d2e32050373fd7",
+          "component_sizes": [
+            5
+          ],
+          "correlation_defined": true,
+          "graph_diameter": 4
+        },
+        "weight": {
+          "branch_count": 6,
+          "ticket_sum": 26183,
+          "ticket_digest": "298aea11c168557bb06a3bcc08c7260e49629b8dcd7455a8a3d195f1471ec1ab"
+        },
+        "oracle_height_checked": true,
+        "oracle_height_passed": true
+      },
+      {
+        "name": "n05_antichain",
+        "n": 5,
+        "relation_rows": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "primary_status": "COMPLETE",
+        "independent_status": "COMPLETE",
+        "downset_count": 32,
+        "primary_independent_equivalent": true,
+        "observable": {
+          "height": 1,
+          "ordering_fraction": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "spectral_steps": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "spectral_curve_digest": "9245ed9e801181343d8f9f65011e415fbb52bc73964ba156817dfcce84a7d1aa",
+          "component_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "correlation_defined": false,
+          "graph_diameter": 0
+        },
+        "weight": {
+          "branch_count": 32,
+          "ticket_sum": 6436343,
+          "ticket_digest": "4d0bd72b1d9d5eab5195705a0ccd06a27b65222021e43a53c4caf8c2420da2cc"
+        },
+        "oracle_height_checked": true,
+        "oracle_height_passed": true
+      },
+      {
+        "name": "n08_two_layer",
+        "n": 8,
+        "relation_rows": [
+          240,
+          240,
+          240,
+          240,
+          0,
+          0,
+          0,
+          0
+        ],
+        "primary_status": "COMPLETE",
+        "independent_status": "COMPLETE",
+        "downset_count": 31,
+        "primary_independent_equivalent": true,
+        "observable": {
+          "height": 2,
+          "ordering_fraction": {
+            "numerator": 4,
+            "denominator": 7
+          },
+          "spectral_steps": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "spectral_curve_digest": "99e9b176dc804d8c74d6385e5f6c616a821cb318467f3328f03dd4f4d8edc9d7",
+          "component_sizes": [
+            8
+          ],
+          "correlation_defined": true,
+          "graph_diameter": 2
+        },
+        "weight": {
+          "branch_count": 31,
+          "ticket_sum": 323435921,
+          "ticket_digest": "e151c974c9b31d0817b25f3bab14be81863f7b9566e41e9ba51c0d16273e93f4"
+        },
+        "oracle_height_checked": false,
+        "oracle_height_passed": true
+      },
+      {
+        "name": "n08_staircase",
+        "n": 8,
+        "relation_rows": [
+          254,
+          252,
+          248,
+          240,
+          224,
+          192,
+          128,
+          0
+        ],
+        "primary_status": "COMPLETE",
+        "independent_status": "COMPLETE",
+        "downset_count": 9,
+        "primary_independent_equivalent": true,
+        "observable": {
+          "height": 8,
+          "ordering_fraction": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "spectral_steps": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "spectral_curve_digest": "6f354d38c67a947a42f93656753c233fa6a0b76c9f86e670b495314839e96499",
+          "component_sizes": [
+            8
+          ],
+          "correlation_defined": true,
+          "graph_diameter": 7
+        },
+        "weight": {
+          "branch_count": 9,
+          "ticket_sum": 3772587,
+          "ticket_digest": "566708727f509fe001251fcb57a80f11eb5cc66314619dff2d4b283633468224"
+        },
+        "oracle_height_checked": false,
+        "oracle_height_passed": true
+      },
+      {
+        "name": "n12_antichain",
+        "n": 12,
+        "relation_rows": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "primary_status": "COMPLETE",
+        "independent_status": "COMPLETE",
+        "downset_count": 4096,
+        "primary_independent_equivalent": true,
+        "observable": {
+          "height": 1,
+          "ordering_fraction": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "spectral_steps": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "spectral_curve_digest": "9245ed9e801181343d8f9f65011e415fbb52bc73964ba156817dfcce84a7d1aa",
+          "component_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "correlation_defined": false,
+          "graph_diameter": 0
+        },
+        "weight": {
+          "branch_count": 4096,
+          "ticket_sum": 21914624432020321,
+          "ticket_digest": "2c595474bef631aeddebcf2e48fb34dbf64ebfd3e9c717a23f931e9fd1ec6a27"
+        },
+        "oracle_height_checked": false,
+        "oracle_height_passed": true
+      },
+      {
+        "name": "n12_two_layer",
+        "n": 12,
+        "relation_rows": [
+          4032,
+          4032,
+          4032,
+          4032,
+          4032,
+          4032,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "primary_status": "COMPLETE",
+        "independent_status": "COMPLETE",
+        "downset_count": 127,
+        "primary_independent_equivalent": true,
+        "observable": {
+          "height": 2,
+          "ordering_fraction": {
+            "numerator": 6,
+            "denominator": 11
+          },
+          "spectral_steps": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "spectral_curve_digest": "9c2079c44a97d9c57df388c9d345b95704eb7ff3919213a546a8283e66356303",
+          "component_sizes": [
+            12
+          ],
+          "correlation_defined": true,
+          "graph_diameter": 2
+        },
+        "weight": {
+          "branch_count": 127,
+          "ticket_sum": 4941175766969,
+          "ticket_digest": "3a1d7d189317518d7c5e229efefa1fe4828e6b9722b59c104100f6a96857360e"
+        },
+        "oracle_height_checked": false,
+        "oracle_height_passed": true
+      },
+      {
+        "name": "n13_antichain_cap",
+        "n": 13,
+        "relation_rows": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "primary_status": "DOWNSET_ENUMERATION_LIMIT",
+        "independent_status": "DOWNSET_ENUMERATION_LIMIT",
+        "downset_count": null,
+        "primary_independent_equivalent": false,
+        "observable": {
+          "height": 1,
+          "ordering_fraction": {
+            "numerator": 0,
+            "denominator": 1
+          },
+          "spectral_steps": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "spectral_curve_digest": "9245ed9e801181343d8f9f65011e415fbb52bc73964ba156817dfcce84a7d1aa",
+          "component_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "correlation_defined": false,
+          "graph_diameter": 0
+        },
+        "weight": {
+          "branch_count": null,
+          "ticket_sum": null,
+          "ticket_digest": null
+        },
+        "oracle_height_checked": false,
+        "oracle_height_passed": true
+      }
+    ],
+    "checks": {
+      "owner_scope_is_cost_only": true,
+      "primary_and_independent_complete_fixtures_match": true,
+      "cap_failure_is_detected_and_symmetric": true,
+      "exact_ticket_weights_are_positive_and_deterministic": true,
+      "height_matches_exhaustive_oracle_on_n_le_5": true,
+      "observable_path_is_bounded": true,
+      "large_n_forbidden_paths_are_absent": true,
+      "no_trajectory_or_solver_was_called": true
+    },
+    "authorization_boundary": {
+      "cost_preflight_authorized": true,
+      "new_trajectories_authorized": false,
+      "production_sampling_authorized": false,
+      "solver_run_permitted": false,
+      "scientific_verdict_added": false,
+      "global_verdict": "FINAL_THEORY_OPEN"
+    },
+    "source_bindings": [
+      {
+        "path": "config/v0.4.2_phase_b_labeled_sampler_cost_preflight_budget_20260816.json",
+        "raw_sha256": "41bba11ca79162e332cf88bfb47871780c3b4b5b4ca0c6674ffb945ab9d2a6c5",
+        "canonical_lf_sha256": "41bba11ca79162e332cf88bfb47871780c3b4b5b4ca0c6674ffb945ab9d2a6c5",
+        "size_bytes": 2398,
+        "strict_utf8_lf": true
+      },
+      {
+        "path": "src/universe_lab/final_theory/phase_b_labeled_sampler_cost_preflight_v042.py",
+        "raw_sha256": "273f1c32fd993e057cd5ee151ad7ef33de71ebf631c44ccacd9d065791e387b3",
+        "canonical_lf_sha256": "273f1c32fd993e057cd5ee151ad7ef33de71ebf631c44ccacd9d065791e387b3",
+        "size_bytes": 24228,
+        "strict_utf8_lf": true
+      },
+      {
+        "path": "src/universe_lab/final_theory/phase_b_large_n_runtime_v042.py",
+        "raw_sha256": "95a99bed84c9e657c16960e519a7a0348235466edbd8c5722916aef1e834597a",
+        "canonical_lf_sha256": "95a99bed84c9e657c16960e519a7a0348235466edbd8c5722916aef1e834597a",
+        "size_bytes": 9908,
+        "strict_utf8_lf": true
+      },
+      {
+        "path": "src/universe_lab/final_theory/causal_sets.py",
+        "raw_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+        "canonical_lf_sha256": "8f8d50adb1db626b1b842883ee1f9ee94db39c476b8037db46e7fca00010f7e1",
+        "size_bytes": 16560,
+        "strict_utf8_lf": true
+      },
+      {
+        "path": "src/universe_lab/final_theory/continuum_observables_v042.py",
+        "raw_sha256": "a76b038456cf41e521b3dd3c4830dbf830e53087a81cf4f59aa79d4a62bda963",
+        "canonical_lf_sha256": "a76b038456cf41e521b3dd3c4830dbf830e53087a81cf4f59aa79d4a62bda963",
+        "size_bytes": 12570,
+        "strict_utf8_lf": true
+      }
+    ]
+  },
+  "runtime_observation": {
+    "fixture_observations": [
+      {
+        "name": "n05_chain",
+        "primary_downset": {
+          "elapsed_seconds": 7.099995855242014e-05,
+          "peak_tracemalloc_bytes": 2824
+        },
+        "independent_downset": {
+          "elapsed_seconds": 5.050003528594971e-05,
+          "peak_tracemalloc_bytes": 1896
+        },
+        "weights": {
+          "elapsed_seconds": 0.0006258999928832054,
+          "peak_tracemalloc_bytes": 2879
+        },
+        "observables": {
+          "elapsed_seconds": 0.0022545999963767827,
+          "peak_tracemalloc_bytes": 11215
+        },
+        "observable_observation": {
+          "spectral_return_defined": true,
+          "correlation_defined": true,
+          "component_sizes": [
+            5
+          ],
+          "nontrivial_vertex_coverage": 1.0
+        },
+        "total_fixture_elapsed_seconds": 0.003001999983098358
+      },
+      {
+        "name": "n05_antichain",
+        "primary_downset": {
+          "elapsed_seconds": 7.270002970471978e-05,
+          "peak_tracemalloc_bytes": 3088
+        },
+        "independent_downset": {
+          "elapsed_seconds": 8.239998714998364e-05,
+          "peak_tracemalloc_bytes": 3976
+        },
+        "weights": {
+          "elapsed_seconds": 0.00134680001065135,
+          "peak_tracemalloc_bytes": 8600
+        },
+        "observables": {
+          "elapsed_seconds": 0.0016354999970644712,
+          "peak_tracemalloc_bytes": 8504
+        },
+        "observable_observation": {
+          "spectral_return_defined": true,
+          "correlation_defined": false,
+          "component_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "nontrivial_vertex_coverage": 0.0
+        },
+        "total_fixture_elapsed_seconds": 0.0031374000245705247
+      },
+      {
+        "name": "n08_two_layer",
+        "primary_downset": {
+          "elapsed_seconds": 9.960000170394778e-05,
+          "peak_tracemalloc_bytes": 3832
+        },
+        "independent_downset": {
+          "elapsed_seconds": 0.0001395999570377171,
+          "peak_tracemalloc_bytes": 4072
+        },
+        "weights": {
+          "elapsed_seconds": 0.0040840000146999955,
+          "peak_tracemalloc_bytes": 8400
+        },
+        "observables": {
+          "elapsed_seconds": 0.00713839998934418,
+          "peak_tracemalloc_bytes": 16288
+        },
+        "observable_observation": {
+          "spectral_return_defined": true,
+          "correlation_defined": true,
+          "component_sizes": [
+            8
+          ],
+          "nontrivial_vertex_coverage": 1.0
+        },
+        "total_fixture_elapsed_seconds": 0.01146159996278584
+      },
+      {
+        "name": "n08_staircase",
+        "primary_downset": {
+          "elapsed_seconds": 0.0001256999676115811,
+          "peak_tracemalloc_bytes": 3688
+        },
+        "independent_downset": {
+          "elapsed_seconds": 0.00014079996617510915,
+          "peak_tracemalloc_bytes": 1912
+        },
+        "weights": {
+          "elapsed_seconds": 0.0022385999909602106,
+          "peak_tracemalloc_bytes": 2896
+        },
+        "observables": {
+          "elapsed_seconds": 0.007346600003074855,
+          "peak_tracemalloc_bytes": 20232
+        },
+        "observable_observation": {
+          "spectral_return_defined": true,
+          "correlation_defined": true,
+          "component_sizes": [
+            8
+          ],
+          "nontrivial_vertex_coverage": 1.0
+        },
+        "total_fixture_elapsed_seconds": 0.009851699927821755
+      },
+      {
+        "name": "n12_antichain",
+        "primary_downset": {
+          "elapsed_seconds": 0.016220999998040497,
+          "peak_tracemalloc_bytes": 168528
+        },
+        "independent_downset": {
+          "elapsed_seconds": 0.046068400028161705,
+          "peak_tracemalloc_bytes": 362256
+        },
+        "weights": {
+          "elapsed_seconds": 0.6876549999578856,
+          "peak_tracemalloc_bytes": 892712
+        },
+        "observables": {
+          "elapsed_seconds": 0.017536399944219738,
+          "peak_tracemalloc_bytes": 33680
+        },
+        "observable_observation": {
+          "spectral_return_defined": true,
+          "correlation_defined": false,
+          "component_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "nontrivial_vertex_coverage": 0.0
+        },
+        "total_fixture_elapsed_seconds": 0.7674807999283075
+      },
+      {
+        "name": "n12_two_layer",
+        "primary_downset": {
+          "elapsed_seconds": 0.0006218000198714435,
+          "peak_tracemalloc_bytes": 6312
+        },
+        "independent_downset": {
+          "elapsed_seconds": 0.0012443999876268208,
+          "peak_tracemalloc_bytes": 14928
+        },
+        "weights": {
+          "elapsed_seconds": 0.07165970001369715,
+          "peak_tracemalloc_bytes": 27428
+        },
+        "observables": {
+          "elapsed_seconds": 0.020840000011958182,
+          "peak_tracemalloc_bytes": 33512
+        },
+        "observable_observation": {
+          "spectral_return_defined": true,
+          "correlation_defined": true,
+          "component_sizes": [
+            12
+          ],
+          "nontrivial_vertex_coverage": 1.0
+        },
+        "total_fixture_elapsed_seconds": 0.0943659000331536
+      },
+      {
+        "name": "n13_antichain_cap",
+        "primary_downset": {
+          "elapsed_seconds": 0.017645199957769364,
+          "peak_tracemalloc_bytes": 169981
+        },
+        "independent_downset": {
+          "elapsed_seconds": 0.044578999979421496,
+          "peak_tracemalloc_bytes": 291453
+        },
+        "weights": {
+          "elapsed_seconds": 0.0,
+          "peak_tracemalloc_bytes": 0
+        },
+        "observables": {
+          "elapsed_seconds": 0.023149300017394125,
+          "peak_tracemalloc_bytes": 38888
+        },
+        "observable_observation": {
+          "spectral_return_defined": true,
+          "correlation_defined": false,
+          "component_sizes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "nontrivial_vertex_coverage": 0.0
+        },
+        "total_fixture_elapsed_seconds": 0.08537349995458499
+      }
+    ],
+    "total_elapsed_seconds": 0.9766825000406243,
+    "max_peak_tracemalloc_bytes": 892712,
+    "within_versioned_wall_time": true,
+    "within_versioned_traced_memory": true,
+    "external_supervisor_used": false
+  },
+  "all_acceptance_checks_passed": true,
+  "cost_observation_within_versioned_budget": true,
+  "new_trajectories": 0,
+  "solver_calls": 0,
+  "production_sampler_available": false,
+  "production_sampling_authorized": false,
+  "semantic_digest_sha256": "074cfc3a8e05dd0b3cd48de08df7e94c875549562f835608fdd9f920f24d7172"
+}

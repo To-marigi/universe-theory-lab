@@ -1,0 +1,56 @@
+{
+  "schema_version": "final-theory-v042-phase-b-labeled-sampler-cost-preflight-budget-v1",
+  "prepared": "2026-08-16",
+  "owner_instruction": "CONTINUE_PHASE_B_COST_PREFLIGHT_ONLY",
+  "owner_instruction_source": "current chat instruction: 進めていって",
+  "owner_approval_present": true,
+  "authorization_scope": "Deterministic cost-only fixture preflight. This does not authorize trajectory sampling, production observables, solver calls, approximate sampling, or scientific claims.",
+  "limits": {
+    "max_fixture_n": 13,
+    "max_fixture_count": 7,
+    "max_downsets_per_relation": 4096,
+    "max_weighted_branches": 4096,
+    "max_spectral_steps": 5,
+    "max_runtime_seconds": 60,
+    "max_memory_mib": 512,
+    "max_disk_mib": 64,
+    "new_sampled_trajectories": 0,
+    "solver_calls": 0
+  },
+  "candidate_profile_id": "causal_information_v2_sparse_kraus",
+  "frozen_local_weights": {
+    "link_fugacity": [2, 3],
+    "diamond_fugacity": [3, 2],
+    "precursor_fugacity": [4, 5]
+  },
+  "fixture_policy": {
+    "families": [
+      "chain",
+      "antichain",
+      "two_layer",
+      "deterministic_staircase"
+    ],
+    "no_unlabeled_level_enumeration": true,
+    "no_factorial_canonicalization": true,
+    "no_trajectory_sampling": true,
+    "cap_behavior": "DOWNSET_ENUMERATION_LIMIT is an accepted bounded outcome; no approximate fallback is permitted"
+  },
+  "allowed_operations": [
+    "construct deterministic naturally labeled relation fixtures",
+    "enumerate exact down-sets under the owner-approved cap",
+    "compute exact frozen local weights and primitive integer tickets",
+    "compare primary and independent down-set iterators on complete fixtures",
+    "evaluate height, ordering fraction, bounded exact spectral return, and correlation structure on fixtures",
+    "record wall-clock and traced-allocation observations"
+  ],
+  "forbidden_operations": [
+    "sample candidate or control trajectories",
+    "enumerate unlabeled levels",
+    "factorial permutation canonicalization",
+    "automorphism enumeration",
+    "run production sizes 8 through 60 as a measurement campaign",
+    "run a solver",
+    "fit parameters or issue a scientific verdict"
+  ],
+  "external_supervision_boundary": "This in-process preflight records cost observations and enforces its own caps; production still requires an external wall-time, process-tree, memory, and disk supervisor."
+}
