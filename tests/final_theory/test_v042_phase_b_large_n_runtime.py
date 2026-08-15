@@ -153,6 +153,22 @@ def test_integer_ticket_draw_uses_rejection_cutoff() -> None:
     assert draw == TicketDraw(ticket=37, rejection_attempt=1)
 
 
+def test_integer_ticket_draw_rejects_oversized_ticket_before_range_allocation(
+    monkeypatch,
+) -> None:
+    from universe_lab.final_theory import phase_b_large_n_runtime_v042 as runtime
+
+    monkeypatch.setattr(runtime, "MAX_COUNTER_BYTES", 1)
+    with pytest.raises(CounterRngLimit, match="ticket byte count exceeds"):
+        draw_integer_ticket(
+            1 << 16,
+            sampling_seed=1,
+            trajectory_index=0,
+            growth_step=0,
+            ticket_index=0,
+        )
+
+
 def test_integer_ticket_draw_fails_closed_after_rejection_cap(monkeypatch) -> None:
     from universe_lab.final_theory import phase_b_large_n_runtime_v042 as runtime
 

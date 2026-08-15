@@ -44,9 +44,6 @@ SCHEMA_VERSION = "final-theory-v042-phase-b-labeled-sampler-cost-preflight-v1"
 PREPARED = "2026-08-16"
 STATUS = "PHASE_B_LABELED_SAMPLER_COST_PREFLIGHT_COMPLETE_NON_EVIDENTIARY"
 NEXT_GATE = "PHASE_B_INDEPENDENT_REPLAY_AND_HARD_SUPERVISOR_IMPLEMENTATION_PREFLIGHT"
-PINNED_CONTAINER_REPLAY_DIGEST = (
-    "bb61ab6e91a3cb6a41c597161fba5ba224f69c7dd7951ff7728aa9b6703804c9"
-)
 RESULT_PATH = Path(
     "results/v0.4.2_phase_b_labeled_sampler_cost_preflight_20260816.json"
 )
@@ -591,8 +588,9 @@ def render_report(payload: dict[str, Any]) -> str:
             "wall-time, process-tree, memory, and disk supervisor.",
             "",
             "The same certificate was independently replayed inside the",
-            "digest-pinned read-only Sage container. It produced semantic digest",
-            f"`{PINNED_CONTAINER_REPLAY_DIGEST}`, with",
+            "digest-pinned read-only Sage container. The replay produced the",
+            "same semantic digest as the host certificate:",
+            f"`{payload['semantic_digest_sha256']}`, with",
             "`all_acceptance_checks_passed=true`, `new_trajectories=0`,",
             "`solver_calls=0`, and `production_sampling_authorized=false`.",
             "",

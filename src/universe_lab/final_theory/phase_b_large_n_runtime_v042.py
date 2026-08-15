@@ -265,6 +265,11 @@ def draw_integer_ticket(
     if type(total_weight) is not int or total_weight <= 0:
         raise ValueError("total_weight must be a positive integer")
     byte_count = max(1, (total_weight.bit_length() + 7) // 8)
+    if byte_count > MAX_COUNTER_BYTES:
+        raise CounterRngLimit(
+            f"{CounterRngLimit.code}: ticket byte count exceeds "
+            f"{MAX_COUNTER_BYTES}"
+        )
     range_size = 256**byte_count
     cutoff = range_size - (range_size % total_weight)
     rejection_attempt = 0
