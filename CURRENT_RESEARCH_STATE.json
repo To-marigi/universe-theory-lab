@@ -304,6 +304,19 @@
       "next_gate": "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COST_PREFLIGHT_BUDGET_APPROVAL",
       "operational_next_gate": "PHASE_B_INDEPENDENT_REPLAY_AND_PRODUCTION_BUDGET_REVIEW",
       "operational_next_gate_basis": "bounded sampler cost, hard-supervisor, and runtime-guard audits are complete; production measurement budget and implementation-preflight authorization remain absent",
+      "implementation_preflight_budget_proposal": {
+        "status": "PROPOSAL_ONLY_OWNER_APPROVAL_REQUIRED",
+        "config": "config/v0.4.2_phase_b_implementation_preflight_budget_proposal_20260816.json",
+        "report": "reports/v0.4.2_phase_b_implementation_preflight_budget_proposal_2026-08-16.md",
+        "config_sha256": "43e134b9b691647a84f6e599213b1a437c4a21199b1776b4b3f7a23b4db709e0",
+        "report_sha256": "041b67467d6c648fce7c742ab3c600f95539fd6cb6c2f7f7500664e0efb1697e",
+        "owner_approval_present": false,
+        "implementation_preflight_authorized": false,
+        "new_trajectories": 0,
+        "solver_calls": 0,
+        "production_sampling_authorized": false,
+        "next_gate": "OWNER_APPROVAL_OF_PHASE_B_IMPLEMENTATION_PREFLIGHT_BUDGET"
+      },
       "active_candidate_manifest": {
         "status": "PHASE_B_ACTIVE_CANDIDATE_INPUT_MANIFEST_FROZEN",
         "artifact": "results/v0.4.2_phase_b_active_candidate_manifest.json",
@@ -432,7 +445,7 @@
         "audit_module": "src/universe_lab/final_theory/phase_b_large_n_runtime_audit_v042.py",
         "test": "tests/final_theory/test_v042_phase_b_large_n_runtime_audit.py",
         "runtime_test": "tests/final_theory/test_v042_phase_b_large_n_runtime.py",
-        "semantic_digest_sha256": "0806d34234d23ea9e9ea9a74f6451a32f760e9a9bce8411e61c49f7893bde098",
+        "semantic_digest_sha256": "3801df4a5fa4bcc6bbdc827c06a210333685c57d107d2b56201ed2aa4783a5a9",
         "max_n": 5,
         "height_oracle_checks": 88,
         "downset_oracle_checks": 88,
