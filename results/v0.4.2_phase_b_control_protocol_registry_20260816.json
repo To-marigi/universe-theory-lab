@@ -1,0 +1,569 @@
+{
+  "schema_version": "final-theory-v042-phase-b-control-protocol-registry-v1",
+  "prepared": "2026-08-16",
+  "status": "PHASE_B_CONTROL_PROTOCOL_REGISTERED_EXECUTION_BLOCKED",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "PHASE_B_CONTROL_FIRST_PROTOCOL_FREEZE",
+  "next_gate": "OWNER_APPROVAL_OF_PHASE_B_PRODUCTION_MEASUREMENT_BUDGET_AND_CONTROL_EXECUTION",
+  "scope": "Machine registration of the Phase-B control-first protocol. This packet copies frozen design rules and records blockers; it does not execute controls, candidate trajectories, production measurements, or solver calls.",
+  "predecessor_artifacts": {
+    "continuum_design": {
+      "path": "results/v0.4.2_phase_b_continuum_dimension_design.json",
+      "semantic_digest_sha256": "50005f8a6e69406c563a1c5dec651214f4e6f646ed9252f5d747091298966bb8"
+    },
+    "large_n_extension_design": {
+      "path": "results/v0.4.2_phase_b_large_n_sampler_extension_design.json",
+      "semantic_digest_sha256": "9aa245a4936251ff5b60fdfbafbe06c92e0a215a3a46bd23cb36ec0a2a8fa953"
+    },
+    "bounded_continuum_preflight": {
+      "path": "results/v0.4.2_phase_b_continuum_dimension_preflight.json",
+      "semantic_digest_sha256": "c65558a5396d514bfd5e84ecd3643a142776bb8d67973dd349e18444d1c1a1de"
+    },
+    "implementation_preflight": {
+      "path": "results/v0.4.2_phase_b_implementation_preflight_20260816.json",
+      "semantic_digest_sha256": "9525793d38c342aef63839c837f57ede7e95f16092a347c234f8926f103e7cdc"
+    }
+  },
+  "candidate_identity": {
+    "global_central_baseline": "causal_information_v1",
+    "phase_b_active_candidate": "causal_information_v2_sparse_kraus",
+    "active_candidate_manifest_digest": "7fadf17ff51a816df5a0d86b989e6984570b924660ad6849133fd0de80de81bb",
+    "candidate_identity_digest": "6816ded0df6cbea1e46c562c85a8c206d5b8c6312883831000902cc9b1fb4503",
+    "evidence_transfer_from_v1": false
+  },
+  "measurement_protocol": {
+    "dimension_estimators": [
+      {
+        "id": "ordering_fraction_inverse",
+        "role": "primary_relational_estimator",
+        "observable": "comparable_pairs / binomial(n, 2)",
+        "calibration": "f(d)=Gamma(d+1)*Gamma(d/2)/(2*Gamma(3*d/2))",
+        "calibration_anchor_values": {
+          "2": 0.5,
+          "4": 0.1
+        },
+        "calibration_source_note": "references/notes/v0.4.2_myrheim_meyer_calibration_audit_2026-08-15.md",
+        "inversion_interval": [
+          1.0,
+          6.0
+        ],
+        "numerical_tolerance": 1e-08,
+        "finite_boundary_rule": "undefined when the observed value is outside the open calibration interval",
+        "candidate_evidence": true
+      },
+      {
+        "id": "height_finite_size_scaling",
+        "role": "independent_scaling_estimator",
+        "observable": "maximum_chain_cardinality",
+        "fit": "log(H_n)=a+(1/d_H)*log(n)",
+        "fit_window": "all preregistered training sizes; no post-hoc window selection",
+        "candidate_evidence": true
+      },
+      {
+        "id": "spectral_return_plateau",
+        "role": "independent_graph_diffusion_estimator",
+        "observable": "return probability of the lazy random walk P=(I+D^-1*A)/2 on the symmetrized Hasse graph",
+        "fit": "d_s(s)=-2*d(log(P_return(s)))/d(log(s))",
+        "bounded_preflight_fit": {
+          "method": "ordinary least-squares slope of log(P_return) on log(step)",
+          "walk_time_steps": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "purpose": "arithmetic diagnostic only; not a production plateau claim"
+        },
+        "production_plateau_rule": "a contiguous walk-time window with at least four points must be frozen by the large-N extension design before production",
+        "production_plateau_window_frozen": false,
+        "ensemble_aggregation": "annealed probability-weighted return curve before fitting; quenched per-history summaries must also be reported in production",
+        "isolated_vertex_rule": "an isolated vertex is an absorbing one-vertex component",
+        "component_reporting": "connected-component sizes and finite-size saturation must be reported",
+        "candidate_evidence": true
+      }
+    ],
+    "correlation_length_observable": {
+      "graph": "undirected graph formed by symmetrized cover relations",
+      "walk": "lazy random walk P=(I+D^-1*A)/2",
+      "spectral_gap_proxy": "xi_gap,c^2=1/(1-lambda_2,c) for each nontrivial connected component",
+      "component_aggregation": "vertex-weighted root-mean-square over nontrivial components; isolated vertices have zero coverage weight",
+      "ensemble_aggregation": "conditional root-mean-square sqrt(E[xi^2 | xi defined])",
+      "ensemble_diameter_ratio": "conditional root-mean-square sqrt(E[(xi/diameter)^2 | xi defined and diameter>0])",
+      "minimum_defined_probability_mass_for_candidate_evidence": 0.95,
+      "minimum_mean_nontrivial_vertex_coverage_for_candidate_evidence": 0.95,
+      "intrinsic_linear_size": "finite-pair Hasse-graph diameter",
+      "validity_rule": "undefined only when no nontrivial connected component exists; nontrivial vertex coverage must be reported",
+      "candidate_evidence": true
+    },
+    "scaling_protocol": {
+      "planned_sizes": [
+        8,
+        12,
+        18,
+        27,
+        40,
+        60
+      ],
+      "minimum_distinct_sizes": 5,
+      "minimum_max_to_min_size_ratio": 4.0,
+      "minimum_adjacent_size_ratio": 1.25,
+      "training_sizes": [
+        8,
+        12,
+        18,
+        27
+      ],
+      "holdout_sizes": [
+        40,
+        60
+      ],
+      "candidate_fugacities_frozen": true,
+      "no_holdout_refit": true,
+      "planned_trajectories_per_seed": 4096,
+      "planned_training_seeds": [
+        101,
+        103,
+        107,
+        109,
+        113
+      ],
+      "planned_holdout_seeds": [
+        127,
+        131,
+        137
+      ],
+      "seed_aggregation": "retain per-seed estimates; report medians and simultaneous 95-percent bootstrap intervals without pooling trajectories across seeds",
+      "versioned_measurement_budget_required_before_execution": true
+    },
+    "acceptance_rules": {
+      "dimension_estimator_count_required": 2,
+      "dimension_estimator_ids": [
+        "ordering_fraction_inverse",
+        "height_finite_size_scaling",
+        "spectral_return_plateau"
+      ],
+      "dimension_estimator_selection_rule": "all defined estimators enter every pairwise check; fewer than two defined estimators is a stop; no post-hoc subset selection",
+      "dimension_last_window_size_count": 3,
+      "dimension_max_pairwise_difference": 0.5,
+      "dimension_max_absolute_log_size_slope": 0.25,
+      "correlation_length_minimum_increasing_adjacent_steps": 3,
+      "correlation_length_last_window_ratio_cv_max": 0.25,
+      "negative_control_rule": "stop if the negative control satisfies the candidate acceptance pattern, or if fewer than one defined dimension-estimator difference exceeds 0.5 with its simultaneous 95-percent interval excluding zero",
+      "threshold_ambiguity_rule": "any confidence interval crossing an acceptance threshold is inconclusive and stops promotion",
+      "control_and_holdout_must_be_reported": true,
+      "all_routes_must_replay_independently": true,
+      "no_scientific_verdict_from_pilot": true
+    },
+    "stop_conditions": [
+      "candidate sampler normalization or independent replay fails",
+      "target dimension or metric enters the candidate path",
+      "two required dimension estimators disagree beyond the preregistered tolerance",
+      "correlation length does not grow in the preregistered scaling window",
+      "negative control is indistinguishable under the preregistered comparison",
+      "holdout requires refitting or changes the frozen fugacities",
+      "measurement cost exceeds the separately approved versioned budget"
+    ]
+  },
+  "spectral_protocol": {
+    "bounded_preflight_window": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "production_window_status": "NOT_FROZEN",
+    "freeze_source": "positive and negative controls only, before candidate production measurements are opened",
+    "selection_algorithm_status": "MUST_BE_MACHINE_REGISTERED_BEFORE_CONTROL_EXECUTION",
+    "selection_algorithm_obligations": [
+      "use the registered lazy symmetrized Hasse walk and isolated-vertex convention",
+      "require at least four local-slope points and a minimum log-time span",
+      "exclude finite-size saturation using the component return floor",
+      "require positive local slopes and a preregistered plateau-dispersion bound",
+      "choose the longest eligible log-span and break ties by the earliest window",
+      "freeze all numerical thresholds on control training data only and validate without refit on control holdout data"
+    ],
+    "required_diagnostics": [
+      "annealed and quenched return curves",
+      "local log-log slopes",
+      "component-size distribution",
+      "finite-size saturation floor",
+      "window stability across held-out control seeds",
+      "undefined-estimator mass"
+    ],
+    "failure_rule": "no independently validated stable window means no spectral-dimension estimator; retain only an exploratory graph-diffusion diagnostic"
+  },
+  "statistical_protocol": {
+    "production_status": "NOT_FROZEN",
+    "sampling_unit": "per-seed batch estimate; trajectories are never pooled across seeds",
+    "seed_namespaces": [
+      "sampling",
+      "bootstrap",
+      "independent replay"
+    ],
+    "seed_count_rule": "determine and freeze training and holdout seed counts by control-only precision and coverage simulation before candidate access",
+    "simultaneous_interval_method": "NOT_FROZEN",
+    "negative_control_rule_required": "use preregistered simultaneous interval separation from an equivalence band for at least two defined estimators; undefined estimators never count as separation",
+    "failure_rules": [
+      "a negative control satisfying the candidate pattern stops promotion",
+      "an interval touching the equivalence band is INCONCLUSIVE",
+      "excess undefined bootstrap mass stops promotion",
+      "control failure cannot be repaired by adding seeds or retuning thresholds after holdout inspection"
+    ]
+  },
+  "control_protocol": {
+    "registered_controls": [
+      {
+        "id": "random_growth_negative_control",
+        "profile_id": "random_growth_control",
+        "purpose": "detect dimension-like behavior caused by generic growth combinatorics",
+        "candidate_evidence": false,
+        "implementation_status": "LARGE_N_SAMPLER_REQUIRED",
+        "execution_status": "DESIGN_REGISTERED_NOT_EXECUTED",
+        "bounded_exact_domain_status": "AVAILABLE_THROUGH_N5_ONLY",
+        "trajectories_recorded": 0,
+        "solver_calls": 0
+      },
+      {
+        "id": "bdg_dimension_four_positive_control",
+        "profile_id": "bdg_control",
+        "purpose": "verify that the measurement pipeline can recover a supplied control dimension",
+        "target_dimension_is_input": true,
+        "candidate_evidence": false,
+        "implementation_status": "NOT_IMPLEMENTED",
+        "execution_status": "DESIGN_REGISTERED_NOT_EXECUTED",
+        "underlying_control_id": "minkowski_4d_sprinkling_control",
+        "trajectories_recorded": 0,
+        "solver_calls": 0
+      },
+      {
+        "id": "label_permutation_control",
+        "purpose": "verify invariance under relabeling before any dimension comparison",
+        "candidate_evidence": false,
+        "implementation_status": "BOUNDED_EXACT_DOMAIN_AUDITED",
+        "execution_status": "NO_PRODUCTION_EXECUTION",
+        "bounded_relations_checked": 88,
+        "bounded_permutations_checked": 7980,
+        "trajectories_recorded": 0,
+        "solver_calls": 0
+      }
+    ],
+    "positive_control_extension": {
+      "geometric_dimension_control": {
+        "id": "minkowski_4d_sprinkling_control",
+        "construction": "fixed-cardinality uniform sprinklings in a supplied four-dimensional Minkowski Alexandrov interval",
+        "purpose": "end-to-end recovery check for the dimension-measurement pipeline with dimension four supplied",
+        "target_dimension_is_input": true,
+        "candidate_evidence": false,
+        "current_status": "NOT_IMPLEMENTED"
+      },
+      "bdg_action_evaluation_control": {
+        "id": "bdg_action_evaluation_on_replayed_manifoldlike_causets",
+        "purpose": "evaluate supplied dimension-four BDG coefficients and nonlocality scale on independently replayed geometric controls",
+        "does_not_define_a_bdg_weighted_sampling_ensemble": true,
+        "current_status": "NOT_IMPLEMENTED"
+      },
+      "bdg_weighted_ensemble": {
+        "status": "UNDEFINED_BLOCKER",
+        "required_before_that_name_is_used": [
+          "real nonnegative sampling measure",
+          "dimension-four action coefficients and nonlocality scale",
+          "normalization or sampling-kernel definition",
+          "burn-in, convergence, and effective-sample-size protocol"
+        ]
+      },
+      "candidate_tuning_forbidden": true,
+      "ordering_fraction_anchor": "f(4)=0.1 must be rechecked independently",
+      "promotion_boundary": "the geometric control must replay independently before BDG action evaluation; neither control is candidate emergence evidence"
+    },
+    "independent_replay_design": {
+      "primary_implementation": "recursive predecessor-mask order-ideal generator",
+      "small_n_oracle": "existing brute-force masks and frozen unlabeled transition instrument through n=5",
+      "second_large_n_implementation": "frontier-antichain order-ideal iterator with no calls to the primary generator",
+      "shared_surface": "serialized relation rows, frozen fugacities, counter-stream seed, and artifact schema only; down-set generation, local-statistic deltas, normalization, and ticket selection are independently implemented",
+      "required_comparisons": [
+        "exact transition normalizers and branch probabilities through n=5",
+        "all relabelings through the bounded exact oracle domain",
+        "trajectory digests for every bounded implementation-preflight seed",
+        "relation and observable digests for preregistered large-N replay chunks before any production authorization"
+      ],
+      "failure_rule": "any discrepancy blocks artifact promotion; no retry with a replacement seed"
+    },
+    "candidate_tuning_forbidden": true,
+    "execution_status": "NOT_EXECUTED",
+    "new_control_trajectories": 0,
+    "solver_calls": 0
+  },
+  "resource_and_promotion_protocol": {
+    "resource_supervision_design": {
+      "execution_model": "worker subprocess supervised by a parent process",
+      "required_hard_controls": [
+        "wall-clock termination",
+        "process-tree termination",
+        "peak resident-memory monitoring",
+        "disk-usage monitoring",
+        "checkpointed partial artifact",
+        "explicit RESOURCE_LIMIT_OPEN exit status"
+      ],
+      "platforms": [
+        "Windows",
+        "Linux CI"
+      ],
+      "default_budget_forbidden": true,
+      "budget_source": "a new owner-approved config/*_budget.json artifact",
+      "promotion_protocol": "write to a temporary directory and atomically promote only after schema, digest, and replay validation",
+      "retry_policy": "zero retries; timeout or OOM is not replaced by another seed"
+    },
+    "production_measurement_budget_present": false,
+    "separate_owner_approval_required": true,
+    "implementation_preflight_budget_is_not_a_production_budget": true
+  },
+  "acceptance_checks": {
+    "predecessor_result_digests_are_self_consistent": {
+      "passed": true,
+      "evidence": {
+        "continuum": "50005f8a6e69406c563a1c5dec651214f4e6f646ed9252f5d747091298966bb8",
+        "large_n": "9aa245a4936251ff5b60fdfbafbe06c92e0a215a3a46bd23cb36ec0a2a8fa953",
+        "bounded_preflight": "c65558a5396d514bfd5e84ecd3643a142776bb8d67973dd349e18444d1c1a1de",
+        "implementation_preflight": "9525793d38c342aef63839c837f57ede7e95f16092a347c234f8926f103e7cdc"
+      }
+    },
+    "active_candidate_identity_is_frozen": {
+      "passed": true,
+      "evidence": {
+        "manifest_candidate": "causal_information_v2_sparse_kraus",
+        "design_candidate": "causal_information_v2_sparse_kraus",
+        "manifest_digest": "7fadf17ff51a816df5a0d86b989e6984570b924660ad6849133fd0de80de81bb",
+        "identity_digest": "6816ded0df6cbea1e46c562c85a8c206d5b8c6312883831000902cc9b1fb4503"
+      }
+    },
+    "dimension_and_holdout_protocol_is_registered": {
+      "passed": true,
+      "evidence": {
+        "estimator_ids": [
+          "ordering_fraction_inverse",
+          "height_finite_size_scaling",
+          "spectral_return_plateau"
+        ],
+        "planned_sizes": [
+          8,
+          12,
+          18,
+          27,
+          40,
+          60
+        ],
+        "no_holdout_refit": true
+      }
+    },
+    "training_and_holdout_sizes_are_disjoint": {
+      "passed": true,
+      "evidence": {
+        "training_sizes": [
+          8,
+          12,
+          18,
+          27
+        ],
+        "holdout_sizes": [
+          40,
+          60
+        ],
+        "planned_sizes": [
+          8,
+          12,
+          18,
+          27,
+          40,
+          60
+        ]
+      }
+    },
+    "spectral_window_is_explicitly_unfrozen": {
+      "passed": true,
+      "evidence": {
+        "production_window_status": "NOT_FROZEN",
+        "selection_algorithm_status": "MUST_BE_MACHINE_REGISTERED_BEFORE_CONTROL_EXECUTION"
+      }
+    },
+    "statistical_interval_protocol_is_explicitly_unfrozen": {
+      "passed": true,
+      "evidence": {
+        "production_status": "NOT_FROZEN",
+        "simultaneous_interval_method": "NOT_FROZEN",
+        "sampling_unit": "per-seed batch estimate; trajectories are never pooled across seeds"
+      }
+    },
+    "all_registered_controls_are_non_evidentiary": {
+      "passed": true,
+      "evidence": [
+        {
+          "id": "random_growth_negative_control",
+          "profile_id": "random_growth_control",
+          "purpose": "detect dimension-like behavior caused by generic growth combinatorics",
+          "candidate_evidence": false,
+          "implementation_status": "LARGE_N_SAMPLER_REQUIRED",
+          "execution_status": "DESIGN_REGISTERED_NOT_EXECUTED",
+          "bounded_exact_domain_status": "AVAILABLE_THROUGH_N5_ONLY",
+          "trajectories_recorded": 0,
+          "solver_calls": 0
+        },
+        {
+          "id": "bdg_dimension_four_positive_control",
+          "profile_id": "bdg_control",
+          "purpose": "verify that the measurement pipeline can recover a supplied control dimension",
+          "target_dimension_is_input": true,
+          "candidate_evidence": false,
+          "implementation_status": "NOT_IMPLEMENTED",
+          "execution_status": "DESIGN_REGISTERED_NOT_EXECUTED",
+          "underlying_control_id": "minkowski_4d_sprinkling_control",
+          "trajectories_recorded": 0,
+          "solver_calls": 0
+        },
+        {
+          "id": "label_permutation_control",
+          "purpose": "verify invariance under relabeling before any dimension comparison",
+          "candidate_evidence": false,
+          "implementation_status": "BOUNDED_EXACT_DOMAIN_AUDITED",
+          "execution_status": "NO_PRODUCTION_EXECUTION",
+          "bounded_relations_checked": 88,
+          "bounded_permutations_checked": 7980,
+          "trajectories_recorded": 0,
+          "solver_calls": 0
+        }
+      ]
+    },
+    "control_execution_is_closed": {
+      "passed": true,
+      "evidence": {
+        "trajectories_recorded": 0,
+        "solver_calls": 0,
+        "candidate_tuning_forbidden": true,
+        "geometric_control_status": "NOT_IMPLEMENTED",
+        "bdg_ensemble_status": "UNDEFINED_BLOCKER"
+      }
+    },
+    "hard_supervision_and_replay_requirements_are_registered": {
+      "passed": true,
+      "evidence": {
+        "required_hard_controls": [
+          "wall-clock termination",
+          "process-tree termination",
+          "peak resident-memory monitoring",
+          "disk-usage monitoring",
+          "checkpointed partial artifact",
+          "explicit RESOURCE_LIMIT_OPEN exit status"
+        ],
+        "replay_failure_rule": "any discrepancy blocks artifact promotion; no retry with a replacement seed"
+      }
+    },
+    "production_budget_is_required_but_not_present": {
+      "passed": true,
+      "evidence": {
+        "design_requires_budget": true,
+        "preflight_budget_present": false,
+        "implementation_budget_is_not_production_budget": true
+      }
+    },
+    "authorization_and_claim_boundary_remain_closed": {
+      "passed": true,
+      "evidence": {
+        "production_sampling_authorized": false,
+        "solver_run_permitted": false,
+        "new_trajectories": 0,
+        "solver_calls": 0
+      }
+    }
+  },
+  "all_structural_checks_passed": true,
+  "execution_gate_open": false,
+  "production_sampling_authorized": false,
+  "solver_run_permitted": false,
+  "claim_boundary": {
+    "allowed": [
+      "protocol registration",
+      "bounded implementation and audit evidence already recorded"
+    ],
+    "forbidden": [
+      "control evidence as candidate evidence",
+      "continuum limit claim",
+      "dimension claim",
+      "BDG-weighted ensemble claim",
+      "Spin-2 response or universal coupling claim",
+      "complete finite ON semantics lattice claim"
+    ]
+  },
+  "source_bindings": [
+    {
+      "path": "config/v0.4.2_phase_b_continuum_dimension_design.json",
+      "raw_sha256": "244a677753476b48e26b08db5a20d381f870af32a6938c0e2e134f2b9269b019",
+      "canonical_lf_sha256": "244a677753476b48e26b08db5a20d381f870af32a6938c0e2e134f2b9269b019",
+      "size_bytes": 7240,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_continuum_dimension_design.json",
+      "raw_sha256": "99334d003fcec53e785a5de71b6555b6ba2e83efde604b7cb7334ca2772b2add",
+      "canonical_lf_sha256": "99334d003fcec53e785a5de71b6555b6ba2e83efde604b7cb7334ca2772b2add",
+      "size_bytes": 19790,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/phase_b_continuum_dimension_design_v042.py",
+      "raw_sha256": "d110a1c0486527b43d56587052a7a32d37962a08670ee8ed641afef99c89b220",
+      "canonical_lf_sha256": "d110a1c0486527b43d56587052a7a32d37962a08670ee8ed641afef99c89b220",
+      "size_bytes": 22659,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "config/v0.4.2_phase_b_large_n_sampler_extension_design.json",
+      "raw_sha256": "2bafa616c2a6148175b872c245085e8bfcf86708a7fd63c4803c9aa1fd40ca19",
+      "canonical_lf_sha256": "2bafa616c2a6148175b872c245085e8bfcf86708a7fd63c4803c9aa1fd40ca19",
+      "size_bytes": 12539,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_large_n_sampler_extension_design.json",
+      "raw_sha256": "1093563e7e262395cae064120acdcadd7bedd4e896be3b50582128ecee9382b8",
+      "canonical_lf_sha256": "1093563e7e262395cae064120acdcadd7bedd4e896be3b50582128ecee9382b8",
+      "size_bytes": 29932,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/phase_b_large_n_sampler_extension_design_v042.py",
+      "raw_sha256": "bece1850aa1ee12e0671813fe13412bf1e8c62b9a0b945af33ec03df31130d15",
+      "canonical_lf_sha256": "bece1850aa1ee12e0671813fe13412bf1e8c62b9a0b945af33ec03df31130d15",
+      "size_bytes": 19588,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_continuum_dimension_preflight.json",
+      "raw_sha256": "a2b43475cb2fb7cb546043fa6c623b5a1d817ca24e1143f185d7a8b05f2bac21",
+      "canonical_lf_sha256": "a2b43475cb2fb7cb546043fa6c623b5a1d817ca24e1143f185d7a8b05f2bac21",
+      "size_bytes": 50189,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_implementation_preflight_20260816.json",
+      "raw_sha256": "46391587b4870cd59d3ced60df0a9314d90eb57f0ba50d6f7a62c254b8c0269f",
+      "canonical_lf_sha256": "46391587b4870cd59d3ced60df0a9314d90eb57f0ba50d6f7a62c254b8c0269f",
+      "size_bytes": 5227,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_active_candidate_manifest.json",
+      "raw_sha256": "8439304f2a2243b6c1429e02a9bddd74b8a9cb2979fcf747071d9949425d7ca8",
+      "canonical_lf_sha256": "8439304f2a2243b6c1429e02a9bddd74b8a9cb2979fcf747071d9949425d7ca8",
+      "size_bytes": 4917,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_candidate_identity.json",
+      "raw_sha256": "a13c3d590de0a565b9c916115811982edc0065d75744f7b7978842fd83a1af14",
+      "canonical_lf_sha256": "a13c3d590de0a565b9c916115811982edc0065d75744f7b7978842fd83a1af14",
+      "size_bytes": 7478,
+      "strict_utf8_lf": true
+    }
+  ],
+  "semantic_digest_sha256": "29ab63fc80a9cb838216d3dc0a18e20f70547353f930934e8e4a6b84a25ff672"
+}

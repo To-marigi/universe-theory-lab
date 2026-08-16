@@ -11,6 +11,9 @@ from universe_lab.final_theory.phase_b_continuum_dimension_design_v042 import (
     build_design,
     render_report,
 )
+from universe_lab.final_theory.phase_b_control_protocol_registry_v042 import (
+    NEXT_GATE as CURRENT_PHASE_B_NEXT_GATE,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -116,13 +119,10 @@ def test_live_state_preserves_design_after_large_n_extension_design() -> None:
     phase_b = state["affected_campaign"]["phase_B"]
 
     assert phase_b["status"] == (
-        "LARGE_N_SAMPLER_EXTENSION_DESIGN_FROZEN_"
-        "IMPLEMENTATION_PREFLIGHT_BUDGET_REQUIRED"
+        "PHASE_B_CONTROL_PROTOCOL_REGISTERED_EXECUTION_BLOCKED"
     )
-    assert phase_b["next_gate"] == (
-        "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COST_PREFLIGHT_"
-        "BUDGET_APPROVAL"
-    )
+    assert phase_b["next_gate"] == CURRENT_PHASE_B_NEXT_GATE
+    assert phase_b["operational_next_gate"] == CURRENT_PHASE_B_NEXT_GATE
     assert phase_b["continuum_dimension_design"]["artifact"] == RESULT_PATH.as_posix()
     assert phase_b["continuum_dimension_design"]["semantic_digest_sha256"] == payload[
         "semantic_digest_sha256"

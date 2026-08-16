@@ -20,8 +20,8 @@ from universe_lab.final_theory.phase_b_continuum_dimension_preflight_v042 import
     build_preflight,
     render_report,
 )
-from universe_lab.final_theory.phase_b_large_n_sampler_extension_design_v042 import (
-    NEXT_GATE as LARGE_N_NEXT_GATE,
+from universe_lab.final_theory.phase_b_control_protocol_registry_v042 import (
+    NEXT_GATE as CURRENT_PHASE_B_NEXT_GATE,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -158,7 +158,7 @@ def test_live_state_preserves_preflight_after_large_n_design() -> None:
     phase_b = state["affected_campaign"]["phase_B"]
     preflight = phase_b["continuum_dimension_preflight"]
 
-    assert phase_b["next_gate"] == LARGE_N_NEXT_GATE
+    assert phase_b["next_gate"] == CURRENT_PHASE_B_NEXT_GATE
     assert preflight["artifact"] == RESULT_PATH.as_posix()
     assert preflight["report"] == REPORT_PATH.as_posix()
     assert preflight["semantic_digest_sha256"] == payload[

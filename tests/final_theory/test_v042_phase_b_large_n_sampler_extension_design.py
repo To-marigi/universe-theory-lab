@@ -4,6 +4,9 @@ import json
 from pathlib import Path
 
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
+from universe_lab.final_theory.phase_b_control_protocol_registry_v042 import (
+    NEXT_GATE as CURRENT_PHASE_B_NEXT_GATE,
+)
 from universe_lab.final_theory.phase_b_large_n_sampler_extension_design_v042 import (
     NEXT_GATE,
     REPORT_PATH,
@@ -159,8 +162,8 @@ def test_live_state_points_to_budget_approval_gate() -> None:
     phase_b = campaign["phase_B"]
     design = phase_b["large_n_sampler_extension_design"]
 
-    assert campaign["next_gate"] == NEXT_GATE
-    assert phase_b["next_gate"] == NEXT_GATE
+    assert campaign["next_gate"] == CURRENT_PHASE_B_NEXT_GATE
+    assert phase_b["next_gate"] == CURRENT_PHASE_B_NEXT_GATE
     assert design["artifact"] == RESULT_PATH.as_posix()
     assert design["report"] == REPORT_PATH.as_posix()
     assert design["semantic_digest_sha256"] == payload[
