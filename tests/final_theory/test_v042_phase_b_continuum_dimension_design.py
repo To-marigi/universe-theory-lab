@@ -11,7 +11,7 @@ from universe_lab.final_theory.phase_b_continuum_dimension_design_v042 import (
     build_design,
     render_report,
 )
-from universe_lab.final_theory.phase_b_control_protocol_registry_v042 import (
+from universe_lab.final_theory.phase_b_control_scaling_review_v042 import (
     NEXT_GATE as CURRENT_PHASE_B_NEXT_GATE,
 )
 
@@ -119,7 +119,7 @@ def test_live_state_preserves_design_after_large_n_extension_design() -> None:
     phase_b = state["affected_campaign"]["phase_B"]
 
     assert phase_b["status"] == (
-        "PHASE_B_CONTROL_PROTOCOL_REGISTERED_EXECUTION_BLOCKED"
+        "PHASE_B_CONTROL_SAMPLER_SCALING_REVIEW_COMPLETE_RESOURCE_LIMIT_OPEN"
     )
     assert phase_b["next_gate"] == CURRENT_PHASE_B_NEXT_GATE
     assert phase_b["operational_next_gate"] == CURRENT_PHASE_B_NEXT_GATE

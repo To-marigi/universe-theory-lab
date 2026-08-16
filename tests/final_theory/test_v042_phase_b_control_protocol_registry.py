@@ -11,6 +11,9 @@ from universe_lab.final_theory.phase_b_control_protocol_registry_v042 import (
     build_registry,
     render_report,
 )
+from universe_lab.final_theory.phase_b_control_scaling_review_v042 import (
+    NEXT_GATE as CURRENT_PHASE_B_NEXT_GATE,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -95,8 +98,8 @@ def test_live_state_points_to_the_closed_control_gate() -> None:
     phase_b = state["affected_campaign"]["phase_B"]
     record = phase_b["control_protocol_registry"]
 
-    assert phase_b["next_gate"] == NEXT_GATE
-    assert phase_b["operational_next_gate"] == NEXT_GATE
+    assert phase_b["next_gate"] == CURRENT_PHASE_B_NEXT_GATE
+    assert phase_b["operational_next_gate"] == CURRENT_PHASE_B_NEXT_GATE
     assert record["artifact"] == RESULT_PATH.as_posix()
     assert record["semantic_digest_sha256"] == payload[
         "semantic_digest_sha256"

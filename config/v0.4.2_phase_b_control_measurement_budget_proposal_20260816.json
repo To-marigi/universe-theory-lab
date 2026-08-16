@@ -1,0 +1,98 @@
+{
+  "schema_version": "final-theory-v042-phase-b-control-measurement-budget-proposal-v1",
+  "prepared": "2026-08-16",
+  "status": "PROPOSAL_ONLY_OWNER_APPROVAL_REQUIRED",
+  "owner_approval_present": false,
+  "authorizes_gate": "PHASE_B_CONTROL_ONLY_IMPLEMENTATION_AND_MEASUREMENT",
+  "authorization_scope": "Implement and measure preregistered controls only; candidate production access, solver calls, and scientific promotion remain forbidden.",
+  "source_design": "config/v0.4.2_phase_b_large_n_sampler_extension_design.json",
+  "source_continuum_design": "config/v0.4.2_phase_b_continuum_dimension_design.json",
+  "basis": {
+    "control_protocol_registry": "results/v0.4.2_phase_b_control_protocol_registry_20260816.json",
+    "implementation_preflight": "results/v0.4.2_phase_b_implementation_preflight_20260816.json",
+    "implementation_preflight_new_trajectories": 0,
+    "implementation_preflight_solver_calls": 0,
+    "recommended_policy": "control-first; no candidate access until positive, negative, replay, and statistical control gates pass"
+  },
+  "control_scope": {
+    "candidate_profile_id": "causal_information_v2_sparse_kraus",
+    "control_ids": [
+      "random_growth_negative_control",
+      "minkowski_4d_sprinkling_control",
+      "label_permutation_control"
+    ],
+    "candidate_evidence_for_controls": false,
+    "planned_sizes": [8, 12, 18, 27, 40, 60],
+    "training_sizes": [8, 12, 18, 27],
+    "holdout_sizes": [40, 60],
+    "training_seeds": [101, 103, 107, 109, 113],
+    "holdout_seeds": [127, 131, 137],
+    "trajectories_per_seed_and_size": 4096,
+    "label_permutation_new_trajectories": 0,
+    "authorized_control_trajectory_count": 212992,
+    "trajectory_count_formula": "2 controls * (4 training sizes * 5 training seeds + 2 holdout sizes * 3 holdout seeds) * 4096"
+  },
+  "limits": {
+    "max_n": 60,
+    "max_downsets_per_relation": 4096,
+    "max_weighted_branches": 4096,
+    "max_spectral_walk_steps": 32,
+    "max_bootstrap_replicates": 2000,
+    "max_total_wall_seconds": 1800,
+    "max_worker_wall_seconds": 300,
+    "max_memory_mib": 2048,
+    "max_disk_mib": 1024,
+    "max_active_workers": 1,
+    "checkpoint_every_trajectories": 256,
+    "max_retries": 0,
+    "candidate_trajectories": 0,
+    "solver_calls": 0
+  },
+  "required_preconditions": [
+    "sampler implementation and independent replay pass bounded exact n<=5 equivalence",
+    "large-N path contains no unlabeled-level enumeration, factorial canonicalization, or approximate fallback",
+    "Minkowski four-dimensional control implementation passes independent replay and ordering-fraction anchor audit",
+    "hard wall-time, process-tree, resident-memory, disk, checkpoint, and atomic-promotion controls are active",
+    "all control seeds and sizes are disjointly recorded as training or holdout",
+    "spectral-window and statistical thresholds are learned from control training data only and validated without holdout refit"
+  ],
+  "allowed_operations": [
+    "implement exact naturally birth-labeled candidate and random-control sampler paths",
+    "implement fixed-cardinality four-dimensional Minkowski sprinkling control",
+    "execute random-growth and geometric controls at the preregistered finite sizes",
+    "compute per-seed observables, control-training thresholds, and simultaneous intervals",
+    "validate control holdout data without refitting",
+    "write checkpointed temporary artifacts and atomically promote only validated results",
+    "record RESOURCE_LIMIT_OPEN when any hard limit or exactness condition fails"
+  ],
+  "forbidden_operations": [
+    "sample or inspect candidate production trajectories before control promotion",
+    "use target_dimension, fixed metric, or external physical time in the candidate path",
+    "tune candidate fugacities or thresholds using candidate or holdout data",
+    "pool trajectories across seeds",
+    "retry a failed seed with a replacement seed",
+    "use an approximate sampler or silently relax an exact down-set cap",
+    "run a solver",
+    "issue a continuum, dimension, Spin-2, universal-coupling, or complete-lattice verdict"
+  ],
+  "promotion_boundary": {
+    "control_training_may_freeze_thresholds": true,
+    "control_holdout_may_validate_only": true,
+    "candidate_access_after_controls": false,
+    "separate_candidate_measurement_budget_required": true,
+    "scientific_verdict_added": false,
+    "global_verdict": "FINAL_THEORY_OPEN"
+  },
+  "authorization_boundary": {
+    "design_authorized": true,
+    "control_implementation_authorized": true,
+    "control_measurement_authorized": true,
+    "new_control_trajectories_authorized": true,
+    "candidate_trajectories_authorized": false,
+    "production_sampling_authorized": false,
+    "approximate_sampler_authorized": false,
+    "solver_run_permitted": false,
+    "scientific_verdict_added": false,
+    "global_verdict": "FINAL_THEORY_OPEN"
+  }
+}

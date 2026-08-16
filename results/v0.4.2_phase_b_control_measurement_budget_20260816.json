@@ -1,0 +1,293 @@
+{
+  "schema_version": "final-theory-v042-phase-b-control-measurement-budget-certificate-v1",
+  "prepared": "2026-08-16",
+  "status": "PHASE_B_CONTROL_MEASUREMENT_BUDGET_CERTIFIED_CONTROL_ONLY",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "OWNER_APPROVAL_OF_PHASE_B_PRODUCTION_MEASUREMENT_BUDGET_AND_CONTROL_EXECUTION",
+  "next_gate": "PHASE_B_CONTROL_IMPLEMENTATION_AND_REPLAY_PREFLIGHT",
+  "scope": "Owner-approved control-only budget certificate. It authorizes the implementation and measurement of preregistered controls, but not candidate production, solver calls, or scientific promotion.",
+  "budget_path": "config/v0.4.2_phase_b_control_measurement_budget_20260816.json",
+  "budget_sha256": "a917ffcde9ee2e608205d65035695be8716713a6281e6ce12e3923b321aa6d6f",
+  "proposal_path": "config/v0.4.2_phase_b_control_measurement_budget_proposal_20260816.json",
+  "proposal_sha256": "2f589edfca3f7a6bc313a6bf7ccd5dba6d23a03d673cb7f6d6fc6054ec41a433",
+  "control_scope": {
+    "candidate_profile_id": "causal_information_v2_sparse_kraus",
+    "control_ids": [
+      "random_growth_negative_control",
+      "minkowski_4d_sprinkling_control",
+      "label_permutation_control"
+    ],
+    "candidate_evidence_for_controls": false,
+    "planned_sizes": [
+      8,
+      12,
+      18,
+      27,
+      40,
+      60
+    ],
+    "training_sizes": [
+      8,
+      12,
+      18,
+      27
+    ],
+    "holdout_sizes": [
+      40,
+      60
+    ],
+    "training_seeds": [
+      101,
+      103,
+      107,
+      109,
+      113
+    ],
+    "holdout_seeds": [
+      127,
+      131,
+      137
+    ],
+    "trajectories_per_seed_and_size": 4096,
+    "label_permutation_new_trajectories": 0,
+    "authorized_control_trajectory_count": 212992,
+    "trajectory_count_formula": "2 controls * (4 training sizes * 5 training seeds + 2 holdout sizes * 3 holdout seeds) * 4096"
+  },
+  "limits": {
+    "max_n": 60,
+    "max_downsets_per_relation": 4096,
+    "max_weighted_branches": 4096,
+    "max_spectral_walk_steps": 32,
+    "max_bootstrap_replicates": 2000,
+    "max_total_wall_seconds": 1800,
+    "max_worker_wall_seconds": 300,
+    "max_memory_mib": 2048,
+    "max_disk_mib": 1024,
+    "max_active_workers": 1,
+    "checkpoint_every_trajectories": 256,
+    "max_retries": 0,
+    "candidate_trajectories": 0,
+    "solver_calls": 0
+  },
+  "authorization_boundary": {
+    "design_authorized": true,
+    "control_implementation_authorized": true,
+    "control_measurement_authorized": true,
+    "new_control_trajectories_authorized": true,
+    "candidate_trajectories_authorized": false,
+    "production_sampling_authorized": false,
+    "approximate_sampler_authorized": false,
+    "solver_run_permitted": false,
+    "scientific_verdict_added": false,
+    "global_verdict": "FINAL_THEORY_OPEN"
+  },
+  "promotion_boundary": {
+    "control_training_may_freeze_thresholds": true,
+    "control_holdout_may_validate_only": true,
+    "candidate_access_after_controls": false,
+    "separate_candidate_measurement_budget_required": true,
+    "scientific_verdict_added": false,
+    "global_verdict": "FINAL_THEORY_OPEN"
+  },
+  "acceptance_checks": {
+    "proposal_hash_matches_approved_budget": {
+      "passed": true,
+      "evidence": {
+        "approved": "2f589edfca3f7a6bc313a6bf7ccd5dba6d23a03d673cb7f6d6fc6054ec41a433",
+        "computed": "2f589edfca3f7a6bc313a6bf7ccd5dba6d23a03d673cb7f6d6fc6054ec41a433"
+      }
+    },
+    "approved_budget_preserves_proposal_scope": {
+      "passed": true,
+      "evidence": [
+        "authorization_scope",
+        "source_design",
+        "source_continuum_design",
+        "basis",
+        "control_scope",
+        "limits",
+        "required_preconditions",
+        "allowed_operations",
+        "forbidden_operations",
+        "promotion_boundary",
+        "authorization_boundary"
+      ]
+    },
+    "owner_approval_and_gate_are_explicit": {
+      "passed": true,
+      "evidence": {
+        "owner_approval_present": true,
+        "authorizes_gate": "PHASE_B_CONTROL_ONLY_IMPLEMENTATION_AND_MEASUREMENT",
+        "owner_approved_at": "2026-08-16"
+      }
+    },
+    "size_seed_and_trajectory_plan_matches_frozen_design": {
+      "passed": true,
+      "evidence": {
+        "planned_sizes": [
+          8,
+          12,
+          18,
+          27,
+          40,
+          60
+        ],
+        "training_sizes": [
+          8,
+          12,
+          18,
+          27
+        ],
+        "holdout_sizes": [
+          40,
+          60
+        ],
+        "trajectories_per_seed_and_size": 4096
+      }
+    },
+    "training_and_holdout_namespaces_are_disjoint": {
+      "passed": true,
+      "evidence": {
+        "training_seeds": [
+          101,
+          103,
+          107,
+          109,
+          113
+        ],
+        "holdout_seeds": [
+          127,
+          131,
+          137
+        ]
+      }
+    },
+    "control_ids_and_candidate_evidence_boundary_are_correct": {
+      "passed": true,
+      "evidence": {
+        "registered_control_ids": [
+          "random_growth_negative_control",
+          "minkowski_4d_sprinkling_control",
+          "label_permutation_control"
+        ],
+        "geometric_control_id": "minkowski_4d_sprinkling_control",
+        "candidate_evidence_for_controls": false
+      }
+    },
+    "authorized_trajectory_count_is_exactly_derived": {
+      "passed": true,
+      "evidence": {
+        "declared": 212992,
+        "computed": 212992,
+        "formula": "2 controls * (4 training sizes * 5 training seeds + 2 holdout sizes * 3 holdout seeds) * 4096"
+      }
+    },
+    "hard_limits_are_positive_and_non_retrying": {
+      "passed": true,
+      "evidence": {
+        "max_n": 60,
+        "max_downsets_per_relation": 4096,
+        "max_weighted_branches": 4096,
+        "max_spectral_walk_steps": 32,
+        "max_bootstrap_replicates": 2000,
+        "max_total_wall_seconds": 1800,
+        "max_worker_wall_seconds": 300,
+        "max_memory_mib": 2048,
+        "max_disk_mib": 1024,
+        "max_active_workers": 1,
+        "checkpoint_every_trajectories": 256,
+        "max_retries": 0,
+        "candidate_trajectories": 0,
+        "solver_calls": 0
+      }
+    },
+    "registry_and_implementation_boundaries_remain_closed": {
+      "passed": true,
+      "evidence": {
+        "registry_digest": "29ab63fc80a9cb838216d3dc0a18e20f70547353f930934e8e4a6b84a25ff672",
+        "execution_gate_open": false,
+        "implementation_new_trajectories": 0,
+        "implementation_solver_calls": 0
+      }
+    },
+    "candidate_access_and_solver_are_forbidden": {
+      "passed": true,
+      "evidence": {
+        "design_authorized": true,
+        "control_implementation_authorized": true,
+        "control_measurement_authorized": true,
+        "new_control_trajectories_authorized": true,
+        "candidate_trajectories_authorized": false,
+        "production_sampling_authorized": false,
+        "approximate_sampler_authorized": false,
+        "solver_run_permitted": false,
+        "scientific_verdict_added": false,
+        "global_verdict": "FINAL_THEORY_OPEN"
+      }
+    },
+    "control_budget_is_not_a_scientific_verdict": {
+      "passed": true,
+      "evidence": {
+        "control_training_may_freeze_thresholds": true,
+        "control_holdout_may_validate_only": true,
+        "candidate_access_after_controls": false,
+        "separate_candidate_measurement_budget_required": true,
+        "scientific_verdict_added": false,
+        "global_verdict": "FINAL_THEORY_OPEN"
+      }
+    }
+  },
+  "all_acceptance_checks_passed": true,
+  "control_measurement_authorized": true,
+  "candidate_trajectories_authorized": false,
+  "production_sampling_authorized": false,
+  "solver_run_permitted": false,
+  "new_control_trajectories_executed_by_certificate": 0,
+  "solver_calls_executed_by_certificate": 0,
+  "source_bindings": [
+    {
+      "path": "config/v0.4.2_phase_b_control_measurement_budget_20260816.json",
+      "raw_sha256": "a917ffcde9ee2e608205d65035695be8716713a6281e6ce12e3923b321aa6d6f",
+      "canonical_lf_sha256": "a917ffcde9ee2e608205d65035695be8716713a6281e6ce12e3923b321aa6d6f",
+      "size_bytes": 5274,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "config/v0.4.2_phase_b_control_measurement_budget_proposal_20260816.json",
+      "raw_sha256": "2f589edfca3f7a6bc313a6bf7ccd5dba6d23a03d673cb7f6d6fc6054ec41a433",
+      "canonical_lf_sha256": "2f589edfca3f7a6bc313a6bf7ccd5dba6d23a03d673cb7f6d6fc6054ec41a433",
+      "size_bytes": 4899,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "config/v0.4.2_phase_b_continuum_dimension_design.json",
+      "raw_sha256": "244a677753476b48e26b08db5a20d381f870af32a6938c0e2e134f2b9269b019",
+      "canonical_lf_sha256": "244a677753476b48e26b08db5a20d381f870af32a6938c0e2e134f2b9269b019",
+      "size_bytes": 7240,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "config/v0.4.2_phase_b_large_n_sampler_extension_design.json",
+      "raw_sha256": "2bafa616c2a6148175b872c245085e8bfcf86708a7fd63c4803c9aa1fd40ca19",
+      "canonical_lf_sha256": "2bafa616c2a6148175b872c245085e8bfcf86708a7fd63c4803c9aa1fd40ca19",
+      "size_bytes": 12539,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_control_protocol_registry_20260816.json",
+      "raw_sha256": "dc6d170b9dfead67c79b80bb5e25991738560c6e59dda72efda52d57f8259aba",
+      "canonical_lf_sha256": "dc6d170b9dfead67c79b80bb5e25991738560c6e59dda72efda52d57f8259aba",
+      "size_bytes": 24871,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_implementation_preflight_20260816.json",
+      "raw_sha256": "46391587b4870cd59d3ced60df0a9314d90eb57f0ba50d6f7a62c254b8c0269f",
+      "canonical_lf_sha256": "46391587b4870cd59d3ced60df0a9314d90eb57f0ba50d6f7a62c254b8c0269f",
+      "size_bytes": 5227,
+      "strict_utf8_lf": true
+    }
+  ],
+  "semantic_digest_sha256": "acfb6970206c41bc3bff4ca0c68c311ee5f133fc29bf0ead4cdc5015dfb0e741"
+}

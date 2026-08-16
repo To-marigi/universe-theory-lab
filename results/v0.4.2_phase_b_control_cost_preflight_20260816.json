@@ -1,0 +1,114 @@
+{
+  "schema_version": "final-theory-v042-phase-b-control-cost-preflight-v1",
+  "prepared": "2026-08-16",
+  "status": "PHASE_B_CONTROL_COST_PREFLIGHT_COMPLETE_RESOURCE_LIMIT_OBSERVED",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "PHASE_B_CONTROL_TRAINING_EXECUTION",
+  "next_gate": "PHASE_B_CONTROL_SAMPLER_SCALING_REVIEW",
+  "scope": "A bounded cost probe for the two control paths. The N=60 exact negative-control cap failure is recorded as RESOURCE_LIMIT_OPEN; no approximate fallback or scientific evidence is added.",
+  "certificate_core": {
+    "schema_version": "final-theory-v042-phase-b-control-cost-preflight-v1",
+    "budget_semantic_digest_sha256": "acfb6970206c41bc3bff4ca0c68c311ee5f133fc29bf0ead4cdc5015dfb0e741",
+    "case_ids": [
+      "random_growth_control_n27",
+      "minkowski_4d_control_n27",
+      "random_growth_control_n60"
+    ],
+    "outcomes": [
+      {
+        "case_id": "random_growth_control_n27",
+        "status": "COMPLETED_COST_FIXTURE",
+        "target_n": 27,
+        "profile_id": "random_growth_control",
+        "trajectory_digest": "cfa0250508266a22ba674e3f154eda23e886d253a0d93f59609195936d2ea6e1",
+        "candidate_evidence": false,
+        "relation_digest": "8ab85283178ff0a996a8e91cf4c1406835a1b8e8d09a09dfdb92e5a65556ca69"
+      },
+      {
+        "case_id": "minkowski_4d_control_n27",
+        "status": "COMPLETED_COST_FIXTURE",
+        "target_n": 27,
+        "target_dimension": 4,
+        "candidate_evidence": false,
+        "relation_digest": "2758a317536b389e633015b909745b9b6e94be8e144c7cc597cd1e80d8b3cd0f"
+      },
+      {
+        "case_id": "random_growth_control_n60",
+        "status": "RESOURCE_LIMIT_OPEN",
+        "target_n": 60,
+        "profile_id": "random_growth_control",
+        "reason": "DOWNSET_ENUMERATION_LIMIT",
+        "limit": 4096,
+        "approximate_fallback_used": false,
+        "candidate_evidence": false
+      }
+    ],
+    "checks": {
+      "budget_certificate_is_accepted": true,
+      "n27_random_growth_cost_fixture_completed": true,
+      "n27_minkowski_cost_fixture_completed": true,
+      "n60_random_growth_fails_closed_at_exact_cap": true,
+      "no_approximate_fallback_or_candidate_evidence": true,
+      "no_solver_or_candidate_measurement": true
+    },
+    "authorization_boundary": {
+      "cost_probe_only": true,
+      "control_training_promoted": false,
+      "candidate_trajectories": 0,
+      "solver_calls": 0,
+      "scientific_verdict_added": false,
+      "global_verdict": "FINAL_THEORY_OPEN"
+    }
+  },
+  "runtime_observation": {
+    "cases": [
+      {
+        "case_id": "random_growth_control_n27",
+        "elapsed_seconds": 0.7954335000249557
+      },
+      {
+        "case_id": "minkowski_4d_control_n27",
+        "elapsed_seconds": 0.0004126999992877245
+      },
+      {
+        "case_id": "random_growth_control_n60",
+        "elapsed_seconds": 13.929577599978074
+      }
+    ],
+    "total_elapsed_seconds": 14.725423800002318
+  },
+  "all_acceptance_checks_passed": true,
+  "control_fixture_attempts": 3,
+  "completed_control_fixtures": 2,
+  "resource_limit_open_cases": 1,
+  "new_control_trajectories": 0,
+  "candidate_trajectories": 0,
+  "solver_calls": 0,
+  "control_training_promoted": false,
+  "production_sampling_authorized": false,
+  "semantic_digest_sha256": "6835931053fc2aed96a4baa2da77fb2b601da0b48b098e53ed2fbf0892a200ac",
+  "source_bindings": [
+    {
+      "path": "results/v0.4.2_phase_b_control_measurement_budget_20260816.json",
+      "raw_sha256": "8e0ff9a96e51c3cdd65aa62ce1a3de0eb25fcdb2d3013a270af41f7c9359efc0",
+      "canonical_lf_sha256": "8e0ff9a96e51c3cdd65aa62ce1a3de0eb25fcdb2d3013a270af41f7c9359efc0",
+      "size_bytes": 9933,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/phase_b_control_sampler_v042.py",
+      "raw_sha256": "4d1a544b1a203ecb6ec55b62b3224723c58a9b1f2e90064be93f08eb5dac9cf9",
+      "canonical_lf_sha256": "4d1a544b1a203ecb6ec55b62b3224723c58a9b1f2e90064be93f08eb5dac9cf9",
+      "size_bytes": 16164,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/phase_b_minkowski_control_v042.py",
+      "raw_sha256": "2db54f8dbd6bd0498f421f86bcc0f053eda2bc4e07bc5df747cb44d3228c235b",
+      "canonical_lf_sha256": "2db54f8dbd6bd0498f421f86bcc0f053eda2bc4e07bc5df747cb44d3228c235b",
+      "size_bytes": 9051,
+      "strict_utf8_lf": true
+    }
+  ]
+}

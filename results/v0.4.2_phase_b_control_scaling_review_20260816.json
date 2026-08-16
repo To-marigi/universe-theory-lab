@@ -1,0 +1,186 @@
+{
+  "schema_version": "final-theory-v042-phase-b-control-scaling-review-v1",
+  "prepared": "2026-08-16",
+  "status": "PHASE_B_CONTROL_SAMPLER_SCALING_REVIEW_COMPLETE_RESOURCE_LIMIT_OPEN",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "PHASE_B_CONTROL_SAMPLER_SCALING_REVIEW",
+  "next_gate": "PHASE_B_CONTROL_EXACT_SCALING_DESIGN",
+  "scope": "A bounded exact scaling review of one fixed random-growth control path. It identifies the first down-set cap boundary without relaxing exactness or promoting measurements.",
+  "certificate_core": {
+    "schema_version": "final-theory-v042-phase-b-control-scaling-review-v1",
+    "budget_semantic_digest_sha256": "acfb6970206c41bc3bff4ca0c68c311ee5f133fc29bf0ead4cdc5015dfb0e741",
+    "cost_preflight_semantic_digest_sha256": "6835931053fc2aed96a4baa2da77fb2b601da0b48b098e53ed2fbf0892a200ac",
+    "probe": {
+      "profile_id": "random_growth_control",
+      "target_n": 60,
+      "sampling_seed": 101,
+      "trajectory_index": 0,
+      "exact_downset_cap": 4096
+    },
+    "implementations": {
+      "primary": {
+        "implementation": "primary",
+        "completed_n": 38,
+        "completed_relation_digest": "d4125cb2eba6150785087011696699813325c4d73a46836a1930a77735b475eb",
+        "trajectory_digest_through_completed_n": "c4e86c07083f654e0d12f3511e7eff0e7c0da558f7f125b1cdd09772b6ae2bac",
+        "successful_growth_steps": 38,
+        "branch_count_trace_tail": [
+          {
+            "source_n": 30,
+            "exact_downset_count": 1138
+          },
+          {
+            "source_n": 31,
+            "exact_downset_count": 1144
+          },
+          {
+            "source_n": 32,
+            "exact_downset_count": 1158
+          },
+          {
+            "source_n": 33,
+            "exact_downset_count": 1200
+          },
+          {
+            "source_n": 34,
+            "exact_downset_count": 1270
+          },
+          {
+            "source_n": 35,
+            "exact_downset_count": 2067
+          },
+          {
+            "source_n": 36,
+            "exact_downset_count": 2191
+          },
+          {
+            "source_n": 37,
+            "exact_downset_count": 3791
+          }
+        ],
+        "last_successful_source_n": 37,
+        "last_successful_exact_downset_count": 3791,
+        "cap": {
+          "growth_step": 38,
+          "source_n": 38,
+          "code": "DOWNSET_ENUMERATION_LIMIT",
+          "limit": 4096,
+          "downset_count_lower_bound": 4097
+        },
+        "candidate_evidence": false
+      },
+      "independent": {
+        "implementation": "independent",
+        "completed_n": 38,
+        "completed_relation_digest": "d4125cb2eba6150785087011696699813325c4d73a46836a1930a77735b475eb",
+        "trajectory_digest_through_completed_n": "c4e86c07083f654e0d12f3511e7eff0e7c0da558f7f125b1cdd09772b6ae2bac",
+        "successful_growth_steps": 38,
+        "branch_count_trace_tail": [
+          {
+            "source_n": 30,
+            "exact_downset_count": 1138
+          },
+          {
+            "source_n": 31,
+            "exact_downset_count": 1144
+          },
+          {
+            "source_n": 32,
+            "exact_downset_count": 1158
+          },
+          {
+            "source_n": 33,
+            "exact_downset_count": 1200
+          },
+          {
+            "source_n": 34,
+            "exact_downset_count": 1270
+          },
+          {
+            "source_n": 35,
+            "exact_downset_count": 2067
+          },
+          {
+            "source_n": 36,
+            "exact_downset_count": 2191
+          },
+          {
+            "source_n": 37,
+            "exact_downset_count": 3791
+          }
+        ],
+        "last_successful_source_n": 37,
+        "last_successful_exact_downset_count": 3791,
+        "cap": {
+          "growth_step": 38,
+          "source_n": 38,
+          "code": "DOWNSET_ENUMERATION_LIMIT",
+          "limit": 4096,
+          "downset_count_lower_bound": 4097
+        },
+        "candidate_evidence": false
+      }
+    },
+    "checks": {
+      "budget_certificate_is_accepted": true,
+      "prior_cost_probe_recorded_the_same_n60_cap": true,
+      "primary_replay_cap_boundary_matches": true,
+      "primary_replay_trajectory_matches_through_boundary": true,
+      "cap_is_reached_at_source_n38": true,
+      "n37_exact_count_and_n38_lower_bound_are_recorded": true,
+      "no_cap_increase_or_approximate_fallback": true,
+      "no_candidate_evidence_or_solver": true
+    },
+    "authorization_boundary": {
+      "scaling_review_only": true,
+      "cap_increase_applied": false,
+      "approximate_fallback_used": false,
+      "control_training_promoted": false,
+      "candidate_trajectories": 0,
+      "solver_calls": 0,
+      "scientific_verdict_added": false,
+      "global_verdict": "FINAL_THEORY_OPEN"
+    }
+  },
+  "all_acceptance_checks_passed": true,
+  "control_fixture_attempts": 2,
+  "completed_control_fixtures": 2,
+  "resource_limit_open_cases": 2,
+  "new_control_trajectories": 0,
+  "candidate_trajectories": 0,
+  "solver_calls": 0,
+  "control_training_promoted": false,
+  "production_sampling_authorized": false,
+  "semantic_digest_sha256": "b90f4a59371ab3202d98befc811f6fbd5f4d137887d4c06e8426429a16b64abc",
+  "source_bindings": [
+    {
+      "path": "results/v0.4.2_phase_b_control_measurement_budget_20260816.json",
+      "raw_sha256": "8e0ff9a96e51c3cdd65aa62ce1a3de0eb25fcdb2d3013a270af41f7c9359efc0",
+      "canonical_lf_sha256": "8e0ff9a96e51c3cdd65aa62ce1a3de0eb25fcdb2d3013a270af41f7c9359efc0",
+      "size_bytes": 9933,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_control_cost_preflight_20260816.json",
+      "raw_sha256": "73348acaa12da011f9615fa4b51367cb60c4b231935929b0abb7d840cf90823b",
+      "canonical_lf_sha256": "73348acaa12da011f9615fa4b51367cb60c4b231935929b0abb7d840cf90823b",
+      "size_bytes": 4438,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/phase_b_control_sampler_v042.py",
+      "raw_sha256": "4d1a544b1a203ecb6ec55b62b3224723c58a9b1f2e90064be93f08eb5dac9cf9",
+      "canonical_lf_sha256": "4d1a544b1a203ecb6ec55b62b3224723c58a9b1f2e90064be93f08eb5dac9cf9",
+      "size_bytes": 16164,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/phase_b_large_n_runtime_v042.py",
+      "raw_sha256": "b4cb3612ab4e2b8e51fefe1e48c3850723a084a4d1638451c538d1a8803ca46d",
+      "canonical_lf_sha256": "b4cb3612ab4e2b8e51fefe1e48c3850723a084a4d1638451c538d1a8803ca46d",
+      "size_bytes": 10089,
+      "strict_utf8_lf": true
+    }
+  ]
+}

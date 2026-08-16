@@ -4,6 +4,9 @@ import json
 from pathlib import Path
 
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
+from universe_lab.final_theory.phase_b_control_scaling_review_v042 import (
+    NEXT_GATE as CURRENT_CAMPAIGN_NEXT_GATE,
+)
 from universe_lab.final_theory.phase_c_method_completion_v042 import (
     NEXT_GATE,
     REPORT_PATH,
@@ -68,21 +71,16 @@ def test_current_state_marks_phase_c_complete_and_phase_b_transition() -> None:
 
     assert campaign["status"] == (
         "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_"
-        "PHASE_B_LARGE_N_SAMPLER_EXTENSION_DESIGN_FROZEN_IMPLEMENTATION_"
-        "PREFLIGHT_BUDGET_REQUIRED_FINAL_THEORY_OPEN"
+        "PHASE_B_CONTROL_SCALING_REVIEW_RESOURCE_LIMIT_OPEN_FINAL_THEORY_OPEN"
     )
-    assert campaign["next_gate"] == (
-        "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COST_PREFLIGHT_"
-        "BUDGET_APPROVAL"
-    )
+    assert campaign["next_gate"] == CURRENT_CAMPAIGN_NEXT_GATE
     assert phase_c["status"] == "COMPLETE"
     assert phase_c["next_gate"] == START_GATE
     assert review["status"] == "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW_CERTIFIED"
     assert review["artifact"] == RESULT_PATH.as_posix()
     assert review["report"] == REPORT_PATH.as_posix()
     assert phase_b["status"] == (
-        "LARGE_N_SAMPLER_EXTENSION_DESIGN_FROZEN_"
-        "IMPLEMENTATION_PREFLIGHT_BUDGET_REQUIRED"
+        "PHASE_B_CONTROL_SAMPLER_SCALING_REVIEW_COMPLETE_RESOURCE_LIMIT_OPEN"
     )
     assert phase_b["global_central_candidate"] == "causal_information_v1"
     assert phase_b["active_candidate"] == "causal_information_v2_sparse_kraus"
@@ -96,10 +94,7 @@ def test_current_state_marks_phase_c_complete_and_phase_b_transition() -> None:
     )
     assert phase_b["all_acceptance_checks_passed"] is True
     assert phase_b["scientific_verdict_added"] is False
-    assert phase_b["next_gate"] == (
-        "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COST_PREFLIGHT_"
-        "BUDGET_APPROVAL"
-    )
+    assert phase_b["next_gate"] == CURRENT_CAMPAIGN_NEXT_GATE
     assert phase_b["continuum_dimension_design"]["all_acceptance_checks_passed"] is True
     assert phase_b["continuum_dimension_preflight"][
         "all_preflight_checks_passed"

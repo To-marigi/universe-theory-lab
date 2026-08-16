@@ -1,0 +1,196 @@
+{
+  "schema_version": "final-theory-v042-phase-b-control-implementation-preflight-v1",
+  "prepared": "2026-08-16",
+  "status": "PHASE_B_CONTROL_IMPLEMENTATION_PREFLIGHT_COMPLETE_NON_EVIDENTIARY",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "PHASE_B_CONTROL_EXECUTION_PRECONDITIONS_REVIEW",
+  "next_gate": "PHASE_B_CONTROL_TRAINING_EXECUTION",
+  "scope": "Bounded implementation and independent-replay preflight for the random-growth and four-dimensional Minkowski controls. No production control trajectories or candidate measurements are executed.",
+  "budget_certificate": {
+    "path": "results/v0.4.2_phase_b_control_measurement_budget_20260816.json",
+    "semantic_digest_sha256": "acfb6970206c41bc3bff4ca0c68c311ee5f133fc29bf0ead4cdc5015dfb0e741"
+  },
+  "sampler_preflight": {
+    "path": "results/v0.4.2_phase_b_control_sampler_preflight_20260816.json",
+    "semantic_digest_sha256": "33a12cb715f6da93038eb1f3eb9dabbecd8effae8a833aa1bd9b2cf6b9969169"
+  },
+  "minkowski_control": {
+    "target_dimension": 4,
+    "fixture_sizes": [
+      1,
+      4,
+      8,
+      13
+    ],
+    "fixture_seeds": [
+      101,
+      127
+    ],
+    "fixture_count": 8,
+    "candidate_evidence": false,
+    "anchor": {
+      "dimension": 4,
+      "expected_ordering_fraction": 0.1,
+      "computed_ordering_fraction": 0.1,
+      "absolute_error": 0.0,
+      "passed": true,
+      "candidate_evidence": false
+    },
+    "records": [
+      {
+        "target_n": 1,
+        "sampling_seed": 101,
+        "trajectory_index": 0,
+        "target_dimension": 4,
+        "primary_relation_digest": "ab75f3180ebc8d16fb2d308016bf4b1eb8adbe9ec63a7e5b20e84084e0050d2c",
+        "replay_relation_digest": "ab75f3180ebc8d16fb2d308016bf4b1eb8adbe9ec63a7e5b20e84084e0050d2c",
+        "relation_digest_match": true,
+        "points_match": true,
+        "primary_ordering_fraction": null,
+        "candidate_evidence": false
+      },
+      {
+        "target_n": 1,
+        "sampling_seed": 127,
+        "trajectory_index": 0,
+        "target_dimension": 4,
+        "primary_relation_digest": "ab75f3180ebc8d16fb2d308016bf4b1eb8adbe9ec63a7e5b20e84084e0050d2c",
+        "replay_relation_digest": "ab75f3180ebc8d16fb2d308016bf4b1eb8adbe9ec63a7e5b20e84084e0050d2c",
+        "relation_digest_match": true,
+        "points_match": true,
+        "primary_ordering_fraction": null,
+        "candidate_evidence": false
+      },
+      {
+        "target_n": 4,
+        "sampling_seed": 101,
+        "trajectory_index": 0,
+        "target_dimension": 4,
+        "primary_relation_digest": "7fe6634f76e0988a662405a48109b63bf1600c22363fb6bac4878f658ec5aeda",
+        "replay_relation_digest": "7fe6634f76e0988a662405a48109b63bf1600c22363fb6bac4878f658ec5aeda",
+        "relation_digest_match": true,
+        "points_match": true,
+        "primary_ordering_fraction": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "candidate_evidence": false
+      },
+      {
+        "target_n": 4,
+        "sampling_seed": 127,
+        "trajectory_index": 0,
+        "target_dimension": 4,
+        "primary_relation_digest": "7fe6634f76e0988a662405a48109b63bf1600c22363fb6bac4878f658ec5aeda",
+        "replay_relation_digest": "7fe6634f76e0988a662405a48109b63bf1600c22363fb6bac4878f658ec5aeda",
+        "relation_digest_match": true,
+        "points_match": true,
+        "primary_ordering_fraction": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "candidate_evidence": false
+      },
+      {
+        "target_n": 8,
+        "sampling_seed": 101,
+        "trajectory_index": 0,
+        "target_dimension": 4,
+        "primary_relation_digest": "625f5ff5367ea07de6ac7240df15bb898e42b25a6c9508c697a075ce84c25aaf",
+        "replay_relation_digest": "625f5ff5367ea07de6ac7240df15bb898e42b25a6c9508c697a075ce84c25aaf",
+        "relation_digest_match": true,
+        "points_match": true,
+        "primary_ordering_fraction": {
+          "numerator": 1,
+          "denominator": 28
+        },
+        "candidate_evidence": false
+      },
+      {
+        "target_n": 8,
+        "sampling_seed": 127,
+        "trajectory_index": 0,
+        "target_dimension": 4,
+        "primary_relation_digest": "253e5ece2154694cc087eb82c882cfdead058714db3175fa174e27b3f5220927",
+        "replay_relation_digest": "253e5ece2154694cc087eb82c882cfdead058714db3175fa174e27b3f5220927",
+        "relation_digest_match": true,
+        "points_match": true,
+        "primary_ordering_fraction": {
+          "numerator": 5,
+          "denominator": 28
+        },
+        "candidate_evidence": false
+      },
+      {
+        "target_n": 13,
+        "sampling_seed": 101,
+        "trajectory_index": 0,
+        "target_dimension": 4,
+        "primary_relation_digest": "6cad7ec592a164421bc0d9097d48239e58a8b23a83dfa8f3d416909438addd13",
+        "replay_relation_digest": "6cad7ec592a164421bc0d9097d48239e58a8b23a83dfa8f3d416909438addd13",
+        "relation_digest_match": true,
+        "points_match": true,
+        "primary_ordering_fraction": {
+          "numerator": 7,
+          "denominator": 78
+        },
+        "candidate_evidence": false
+      },
+      {
+        "target_n": 13,
+        "sampling_seed": 127,
+        "trajectory_index": 0,
+        "target_dimension": 4,
+        "primary_relation_digest": "f67dc6a452497b531ad11a803a04f77b84983edd684480d55b5c6f45be334bc2",
+        "replay_relation_digest": "f67dc6a452497b531ad11a803a04f77b84983edd684480d55b5c6f45be334bc2",
+        "relation_digest_match": true,
+        "points_match": true,
+        "primary_ordering_fraction": {
+          "numerator": 1,
+          "denominator": 6
+        },
+        "candidate_evidence": false
+      }
+    ]
+  },
+  "acceptance_checks": {
+    "budget_certificate_rebuilds_and_passes": true,
+    "sampler_preflight_rebuilds_and_passes": true,
+    "minkowski_primary_and_replay_match": true,
+    "minkowski_fixed_cardinality_is_preserved": true,
+    "independent_dimension_four_anchor_passes": true,
+    "controls_remain_non_evidentiary": true,
+    "no_production_or_solver_execution": true
+  },
+  "all_acceptance_checks_passed": true,
+  "new_control_trajectories": 0,
+  "candidate_trajectories": 0,
+  "solver_calls": 0,
+  "control_measurement_authorized": false,
+  "production_sampling_authorized": false,
+  "source_bindings": [
+    {
+      "path": "results/v0.4.2_phase_b_control_measurement_budget_20260816.json",
+      "raw_sha256": "8e0ff9a96e51c3cdd65aa62ce1a3de0eb25fcdb2d3013a270af41f7c9359efc0",
+      "canonical_lf_sha256": "8e0ff9a96e51c3cdd65aa62ce1a3de0eb25fcdb2d3013a270af41f7c9359efc0",
+      "size_bytes": 9933,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "results/v0.4.2_phase_b_control_sampler_preflight_20260816.json",
+      "raw_sha256": "64556d511f3073c751004c5dd75e341365b346cc043a11509e8cf430075b21d7",
+      "canonical_lf_sha256": "64556d511f3073c751004c5dd75e341365b346cc043a11509e8cf430075b21d7",
+      "size_bytes": 33010,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/phase_b_minkowski_control_v042.py",
+      "raw_sha256": "2db54f8dbd6bd0498f421f86bcc0f053eda2bc4e07bc5df747cb44d3228c235b",
+      "canonical_lf_sha256": "2db54f8dbd6bd0498f421f86bcc0f053eda2bc4e07bc5df747cb44d3228c235b",
+      "size_bytes": 9051,
+      "strict_utf8_lf": true
+    }
+  ],
+  "semantic_digest_sha256": "2069002e3e24e63f8f479d901f86424d59f98e89c52bd2c9072460b2dc2776d5"
+}
