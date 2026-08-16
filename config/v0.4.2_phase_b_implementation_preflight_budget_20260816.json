@@ -1,0 +1,66 @@
+{
+  "schema_version": "final-theory-v042-phase-b-implementation-preflight-budget-v1",
+  "prepared": "2026-08-16",
+  "status": "PHASE_B_IMPLEMENTATION_PREFLIGHT_BUDGET_OWNER_APPROVED",
+  "owner_approval_present": true,
+  "owner_approved_at": "2026-08-16",
+  "owner_instruction": "一旦これで進めよ",
+  "owner_instruction_source": "current chat instruction",
+  "approved_from_proposal": "config/v0.4.2_phase_b_implementation_preflight_budget_proposal_20260816.json",
+  "approved_from_proposal_sha256": "43e134b9b691647a84f6e599213b1a437c4a21199b1776b4b3f7a23b4db709e0",
+  "authorizes_gate": "PHASE_B_BOUNDED_IMPLEMENTATION_PREFLIGHT_ONLY",
+  "authorization_scope": "Deterministic fixture and independent-replay implementation checks only; no candidate or control trajectory is authorized.",
+  "source_design": "config/v0.4.2_phase_b_large_n_sampler_extension_design.json",
+  "limits": {
+    "max_fixture_count": 10,
+    "max_fixture_n": 13,
+    "max_downsets_per_relation": 4096,
+    "max_weighted_branches": 4096,
+    "max_spectral_steps": 5,
+    "max_total_wall_seconds": 120,
+    "max_worker_wall_seconds": 30,
+    "max_memory_mib": 1024,
+    "max_disk_mib": 128,
+    "max_retries": 0,
+    "new_sampled_trajectories": 0,
+    "solver_calls": 0
+  },
+  "allowed_operations": [
+    "construct deterministic naturally labeled fixtures",
+    "compare primary and independent down-set iterators on complete fixtures",
+    "verify exact quotient equivalence and relabeling through n<=5",
+    "verify portable RNG replay and golden vectors",
+    "compare exact and production-observable fixture paths within the bounded cap",
+    "exercise hard wall-time, process-tree, memory, disk, checkpoint, and atomic-promotion fixtures",
+    "record runtime observations and semantic digests"
+  ],
+  "forbidden_operations": [
+    "sample candidate trajectories",
+    "sample positive or negative production controls",
+    "run production sizes 8 through 60 as a measurement campaign",
+    "enumerate unlabeled levels on the large-N path",
+    "factorial canonicalization or full automorphism enumeration on the large-N path",
+    "use an approximate sampler",
+    "run a solver",
+    "fit parameters or issue a scientific verdict"
+  ],
+  "acceptance_requirements": [
+    "zero exact-transition discrepancies through n<=5",
+    "zero label-equivariance discrepancies",
+    "primary and independent replay digests agree",
+    "large-N path contains no forbidden unlabeled or factorial enumeration",
+    "height dynamic program matches the exhaustive oracle through n<=5",
+    "observable path matches the bounded exact oracle within a preregistered tolerance",
+    "resource supervisor fails closed and performs zero retries",
+    "failed or invalid artifacts are never atomically promoted",
+    "new_trajectories remains zero and solver_calls remains zero"
+  ],
+  "production_boundary": {
+    "separate_production_budget_required": true,
+    "spectral_window_must_be_frozen_from_controls": true,
+    "statistical_method_must_be_frozen_from_controls": true,
+    "production_sampling_authorized": false,
+    "solver_run_permitted": false,
+    "global_verdict": "FINAL_THEORY_OPEN"
+  }
+}

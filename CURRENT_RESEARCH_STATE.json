@@ -302,8 +302,8 @@
       "all_acceptance_checks_passed": true,
       "scientific_verdict_added": false,
       "next_gate": "PHASE_B_LABELED_SAMPLER_AND_OBSERVABLE_EQUIVALENCE_COST_PREFLIGHT_BUDGET_APPROVAL",
-      "operational_next_gate": "PHASE_B_INDEPENDENT_REPLAY_AND_PRODUCTION_BUDGET_REVIEW",
-      "operational_next_gate_basis": "bounded sampler cost, hard-supervisor, and runtime-guard audits are complete; production measurement budget and implementation-preflight authorization remain absent",
+      "operational_next_gate": "PHASE_B_CONTROL_FIRST_PROTOCOL_FREEZE",
+      "operational_next_gate_basis": "the owner-approved implementation-preflight certificate passed on host and digest-pinned read-only Sage Docker; production measurement budget, candidate/control trajectories, and solver authorization remain absent",
       "implementation_preflight_budget_proposal": {
         "status": "PROPOSAL_ONLY_OWNER_APPROVAL_REQUIRED",
         "config": "config/v0.4.2_phase_b_implementation_preflight_budget_proposal_20260816.json",
@@ -316,6 +316,20 @@
         "solver_calls": 0,
         "production_sampling_authorized": false,
         "next_gate": "OWNER_APPROVAL_OF_PHASE_B_IMPLEMENTATION_PREFLIGHT_BUDGET"
+      },
+      "implementation_preflight_budget": {
+        "status": "PHASE_B_IMPLEMENTATION_PREFLIGHT_BUDGET_OWNER_APPROVED",
+        "config": "config/v0.4.2_phase_b_implementation_preflight_budget_20260816.json",
+        "proposal": "config/v0.4.2_phase_b_implementation_preflight_budget_proposal_20260816.json",
+        "approved_from_proposal_sha256": "43e134b9b691647a84f6e599213b1a437c4a21199b1776b4b3f7a23b4db709e0",
+        "config_sha256": "6bc92919848753c06a487ddbad6d9610aca9412d0a034060b71c0e3842fd66cf",
+        "owner_approval_present": true,
+        "implementation_preflight_authorized": true,
+        "new_trajectories": 0,
+        "solver_calls": 0,
+        "production_sampling_authorized": false,
+        "production_measurement_budget_still_required": true,
+        "next_gate": "PHASE_B_CONTROL_FIRST_PROTOCOL_FREEZE"
       },
       "active_candidate_manifest": {
         "status": "PHASE_B_ACTIVE_CANDIDATE_INPUT_MANIFEST_FROZEN",
@@ -494,8 +508,8 @@
         "module": "src/universe_lab/final_theory/phase_b_supervisor_v042.py",
         "budget": "config/v0.4.2_phase_b_hard_supervisor_preflight_budget_20260816.json",
         "test": "tests/final_theory/test_v042_phase_b_hard_supervisor.py",
-        "semantic_digest_sha256": "e09bfba4f43f1cdf9708ffbe89960b8375b83b69e12df8d8fa3e444987a7191f",
-        "pinned_container_replay_semantic_digest_sha256": "e09bfba4f43f1cdf9708ffbe89960b8375b83b69e12df8d8fa3e444987a7191f",
+        "semantic_digest_sha256": "3b22a500fef88922f2b4502da4e5967b012bd78dcbed0a41f44476b4dd37f3a7",
+        "pinned_container_replay_semantic_digest_sha256": "3b22a500fef88922f2b4502da4e5967b012bd78dcbed0a41f44476b4dd37f3a7",
         "pinned_container_image": "sagemath/sagemath@sha256:e068670ae5863b54b2550e72437ec637b0283acb0dc712c8584c124dbf44e667",
         "host_replay_check_passed": true,
         "pinned_container_replay_check_passed": true,
@@ -530,7 +544,30 @@
         "production_sampling_authorized": false,
         "scientific_verdict_added": false,
         "production_measurement_budget_still_required": true,
-        "next_gate": "PHASE_B_INDEPENDENT_REPLAY_AND_PRODUCTION_BUDGET_REVIEW"
+        "next_gate": "PHASE_B_CONTROL_FIRST_PROTOCOL_FREEZE"
+      },
+      "implementation_preflight": {
+        "status": "PHASE_B_IMPLEMENTATION_PREFLIGHT_COMPLETE_NON_EVIDENTIARY",
+        "artifact": "results/v0.4.2_phase_b_implementation_preflight_20260816.json",
+        "report": "reports/v0.4.2_phase_b_implementation_preflight_2026-08-16.md",
+        "module": "src/universe_lab/final_theory/phase_b_implementation_preflight_v042.py",
+        "test": "tests/final_theory/test_v042_phase_b_implementation_preflight.py",
+        "budget": "config/v0.4.2_phase_b_implementation_preflight_budget_20260816.json",
+        "semantic_digest_sha256": "9525793d38c342aef63839c837f57ede7e95f16092a347c234f8926f103e7cdc",
+        "pinned_container_replay_semantic_digest_sha256": "9525793d38c342aef63839c837f57ede7e95f16092a347c234f8926f103e7cdc",
+        "pinned_container_image": "sagemath/sagemath@sha256:e068670ae5863b54b2550e72437ec637b0283acb0dc712c8584c124dbf44e667",
+        "host_replay_check_passed": true,
+        "pinned_container_replay_check_passed": true,
+        "all_acceptance_checks_passed": true,
+        "total_wall_seconds": 2.7842712000128813,
+        "max_child_tracemalloc_bytes": 892424,
+        "new_trajectories": 0,
+        "solver_calls": 0,
+        "implementation_preflight_authorized": true,
+        "production_sampling_authorized": false,
+        "production_measurement_budget_still_required": true,
+        "scientific_verdict_added": false,
+        "next_gate": "PHASE_B_CONTROL_FIRST_PROTOCOL_FREEZE"
       }
     },
     "solver_run_permitted": false,
@@ -722,7 +759,7 @@
           "scripts/run_v042_721_groebner_preflight.py"
         ]
       },
-      "next_step": "Phase A is frozen for 721 at FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT. The exact defining-relation reduction is exhaustively closed out (0/1967 closed), and the corrected complete-residual-unit preflight remains a bounded warning rather than a proof of full-system or dedicated-CAS impossibility. Phase C is complete as a methods artifact; reopening 721 requires a new owner-approved dedicated CAS/toolchain and versioned budget. Phase B bounded design, cost, hard-supervisor, and runtime-guard audits are complete without production authorization; the operational next step is owner review of a versioned production measurement budget.",
+      "next_step": "Phase A is frozen for 721 at FIXED_VECTOR_GC_STRONG_MSR_OPEN_RESOURCE_LIMIT. The exact defining-relation reduction is exhaustively closed out (0/1967 closed), and the corrected complete-residual-unit preflight remains a bounded warning rather than a proof of full-system or dedicated-CAS impossibility. Phase C is complete as a methods artifact; reopening 721 requires a new owner-approved dedicated CAS/toolchain and versioned budget. Phase B now has an owner-approved implementation-preflight budget; the next operational step is the bounded implementation preflight. Production measurement budget, candidate/control trajectories, and solver authorization remain absent.",
       "reports": [
         "reports/v0.4.2_721_source_native_preflight.md",
         "reports/v0.4.2_721_scalar_gate.md",

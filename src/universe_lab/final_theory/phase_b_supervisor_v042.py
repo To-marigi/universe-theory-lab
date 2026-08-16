@@ -494,9 +494,10 @@ def build_preflight(root: Path) -> dict[str, Any]:
         raise AssertionError("hard supervisor preflight must not retry workers")
 
     observations: list[dict[str, Any]] = []
-    with tempfile.TemporaryDirectory(
-        prefix="phase_b_supervisor_build_", dir=str(root / "results")
-    ) as output_dir_name:
+    # The build/check path must work with a read-only repository mount (for
+    # example, the pinned Docker replay).  Fixture output is temporary and is
+    # not a repository artifact, so keep it in the platform temp directory.
+    with tempfile.TemporaryDirectory(prefix="phase_b_supervisor_build_") as output_dir_name:
         output_dir = Path(output_dir_name)
         for mode in FIXTURE_MODES:
             fixture_limits = dict(config["fixtures"][mode])
