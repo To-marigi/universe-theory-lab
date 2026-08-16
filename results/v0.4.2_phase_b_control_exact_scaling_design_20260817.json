@@ -1,0 +1,88 @@
+{
+  "schema_version": "final-theory-v042-phase-b-control-exact-scaling-design-v1",
+  "prepared": "2026-08-17",
+  "status": "PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_OWNER_APPROVAL_REQUIRED",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "PHASE_B_CONTROL_EXACT_SCALING_DESIGN",
+  "next_gate": "OWNER_APPROVAL_OF_PHASE_B_CONTROL_EXACT_SCALING_PREFLIGHT_BUDGET",
+  "scope": "Exact scaling design only. The uniform negative-control route is specified as a possible ideal-count DP; the candidate weighted route remains blocked pending a factorisation theorem.",
+  "certificate_core": {
+    "schema_version": "final-theory-v042-phase-b-control-exact-scaling-design-v1",
+    "scaling_review_semantic_digest_sha256": "b90f4a59371ab3202d98befc811f6fbd5f4d137887d4c06e8426429a16b64abc",
+    "design": {
+      "random_control_route": {
+        "status": "EXACT_IDEAL_COUNT_DP_DESIGN_ONLY",
+        "recurrence": "I(S)=I(S\\{v})+I(S\\({v} union Pred_S(v))) for a maximal v",
+        "sampling": "draw one exact integer ticket in [0,I(S)); recurse on the exclude/include branch using exact integer counts",
+        "state_representation": "active vertex bitmask plus forced-in mask",
+        "required_oracle": "exhaustive down-set enumeration through n<=5",
+        "large_n_failure_rule": "state cap, wall time, memory, or replay discrepancy returns RESOURCE_LIMIT_OPEN; no approximate fallback"
+      },
+      "candidate_weighted_route": {
+        "status": "BLOCKED_DESIGN_ONLY_NO_FACTORIZATION_CERTIFICATE",
+        "reason": "the frozen link/diamond/precursor weight is a nonlocal set function; no exact reduced-state recurrence has been proved",
+        "allowed_action": "do not replace the candidate sampler by the uniform-control DP"
+      },
+      "independent_replay": {
+        "status": "REQUIRED_BEFORE_ANY_PROMOTION",
+        "requirements": [
+          "independent state-count implementation",
+          "same fixed-ticket wire format",
+          "count and selected-precursor agreement through n<=5",
+          "bounded n=38 cap-boundary replay"
+        ]
+      }
+    },
+    "checks": {
+      "scaling_boundary_is_verified": true,
+      "uniform_control_weight_is_exact": true,
+      "recurrence_is_explicit_and_fail_closed": true,
+      "candidate_weighted_route_has_no_factorisation_certificate": true,
+      "proposal_is_preflight_only": true,
+      "no_production_or_solver_authorization": true
+    },
+    "authorization_boundary": {
+      "design_only": true,
+      "owner_approval_present": false,
+      "implementation_preflight_authorized": false,
+      "new_control_trajectories": 0,
+      "candidate_trajectories": 0,
+      "production_sampling_authorized": false,
+      "approximate_sampler_authorized": false,
+      "solver_run_permitted": false,
+      "scientific_verdict_added": false,
+      "global_verdict": "FINAL_THEORY_OPEN"
+    }
+  },
+  "all_acceptance_checks_passed": true,
+  "new_control_trajectories": 0,
+  "candidate_trajectories": 0,
+  "solver_calls": 0,
+  "production_sampling_authorized": false,
+  "implementation_preflight_authorized": false,
+  "semantic_digest_sha256": "46e9a24f6e2ddd90b3eda79eeab16be1178eecf05b778c25110223467d458e5e",
+  "source_bindings": [
+    {
+      "path": "results/v0.4.2_phase_b_control_scaling_review_20260816.json",
+      "raw_sha256": "048076d7d8809ace64a7259cba23f6b9789b3a4e8985a0b4f3819a868830941c",
+      "canonical_lf_sha256": "048076d7d8809ace64a7259cba23f6b9789b3a4e8985a0b4f3819a868830941c",
+      "size_bytes": 6607,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "config/v0.4.2_phase_b_control_exact_scaling_preflight_budget_proposal_20260817.json",
+      "raw_sha256": "1e59d58314730d5938b8eb457fbc9234a790ebeddc124c9ab4808da4e9998eab",
+      "canonical_lf_sha256": "1e59d58314730d5938b8eb457fbc9234a790ebeddc124c9ab4808da4e9998eab",
+      "size_bytes": 1758,
+      "strict_utf8_lf": true
+    },
+    {
+      "path": "src/universe_lab/final_theory/phase_b_control_sampler_v042.py",
+      "raw_sha256": "4d1a544b1a203ecb6ec55b62b3224723c58a9b1f2e90064be93f08eb5dac9cf9",
+      "canonical_lf_sha256": "4d1a544b1a203ecb6ec55b62b3224723c58a9b1f2e90064be93f08eb5dac9cf9",
+      "size_bytes": 16164,
+      "strict_utf8_lf": true
+    }
+  ]
+}

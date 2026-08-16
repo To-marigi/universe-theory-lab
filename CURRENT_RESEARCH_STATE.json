@@ -165,8 +165,8 @@
     "v0.4.2_721_gc_tier_relation_reduced_all_eleven": "ALL_1529_GC_PAIRS_REDUCED_MODULO_DEFINING_RELATIONS_ZERO_NEWLY_ZERO_OPEN"
   },
   "affected_campaign": {
-    "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_PHASE_B_CONTROL_SCALING_REVIEW_RESOURCE_LIMIT_OPEN_FINAL_THEORY_OPEN",
-    "next_gate": "PHASE_B_CONTROL_EXACT_SCALING_DESIGN",
+    "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_OWNER_APPROVAL_REQUIRED_FINAL_THEORY_OPEN",
+    "next_gate": "OWNER_APPROVAL_OF_PHASE_B_CONTROL_EXACT_SCALING_PREFLIGHT_BUDGET",
     "phase_A_termination_packet": {
       "status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
       "report": "reports/v0.4.2_phase_a_termination_decision_packet.md",
@@ -277,7 +277,7 @@
         "test": "tests/final_theory/test_v042_phase_c_method_completion.py",
         "prepared": "2026-08-14",
         "evidence_head": "e8c3d02",
-        "semantic_digest_sha256": "65b25243e33d3942282442dbf88b6739cbc0e0023a1fb29e5420beda50d73b81",
+        "semantic_digest_sha256": "1ee1959f6aed98338791777ad8131b7477f55bce9f1948930216e2e5ff3048ec",
         "acceptance_controls_satisfied": 4,
         "scientific_verdict_added": false,
         "global_verdict": "FINAL_THEORY_OPEN",
@@ -285,7 +285,7 @@
       }
     },
     "phase_B": {
-      "status": "PHASE_B_CONTROL_SAMPLER_SCALING_REVIEW_COMPLETE_RESOURCE_LIMIT_OPEN",
+      "status": "PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_OWNER_APPROVAL_REQUIRED",
       "global_central_candidate": "causal_information_v1",
       "active_candidate": "causal_information_v2_sparse_kraus",
       "scope": "required physics derivation audit, not deeper computation of frozen 955/721 profiles",
@@ -301,9 +301,9 @@
       "semantic_digest_sha256": "6f3f083b14baeebaa9cd9bb5d9891d36fb5d80d0ec7a08412e99043e836803ac",
       "all_acceptance_checks_passed": true,
       "scientific_verdict_added": false,
-      "next_gate": "PHASE_B_CONTROL_EXACT_SCALING_DESIGN",
-      "operational_next_gate": "PHASE_B_CONTROL_EXACT_SCALING_DESIGN",
-      "operational_next_gate_basis": "the fixed random-growth control path reached the exact 4096 down-set cap at source n=38; n=37 had exactly 3791 down-sets and n=38 has at least 4097, while primary and independent replay matched through n=38; no cap increase or approximate fallback is authorized, and candidate trajectories, candidate production budget, and solver authorization remain absent",
+      "next_gate": "OWNER_APPROVAL_OF_PHASE_B_CONTROL_EXACT_SCALING_PREFLIGHT_BUDGET",
+      "operational_next_gate": "OWNER_APPROVAL_OF_PHASE_B_CONTROL_EXACT_SCALING_PREFLIGHT_BUDGET",
+      "operational_next_gate_basis": "the exact scaling design specifies a fail-closed ideal-count DP for the uniform random-growth control, but the frozen candidate weight has no certified reduced-state factorisation; the separate bounded preflight budget is proposal-only, so no implementation, trajectories, approximate fallback, candidate measurement, or solver authorization is open",
       "implementation_preflight_budget_proposal": {
         "status": "PROPOSAL_ONLY_OWNER_APPROVAL_REQUIRED",
         "config": "config/v0.4.2_phase_b_implementation_preflight_budget_proposal_20260816.json",
@@ -722,6 +722,28 @@
         "scientific_verdict_added": false,
         "global_verdict": "FINAL_THEORY_OPEN",
         "next_gate": "PHASE_B_CONTROL_EXACT_SCALING_DESIGN"
+      },
+      "control_exact_scaling_design": {
+        "status": "PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_OWNER_APPROVAL_REQUIRED",
+        "artifact": "results/v0.4.2_phase_b_control_exact_scaling_design_20260817.json",
+        "report": "reports/v0.4.2_phase_b_control_exact_scaling_design_2026-08-17.md",
+        "module": "src/universe_lab/final_theory/phase_b_control_exact_scaling_design_v042.py",
+        "test": "tests/final_theory/test_v042_phase_b_control_exact_scaling_design.py",
+        "budget_proposal": "config/v0.4.2_phase_b_control_exact_scaling_preflight_budget_proposal_20260817.json",
+        "semantic_digest_sha256": "46e9a24f6e2ddd90b3eda79eeab16be1178eecf05b778c25110223467d458e5e",
+        "random_control_route": "EXACT_IDEAL_COUNT_DP_DESIGN_ONLY",
+        "candidate_weighted_route": "BLOCKED_DESIGN_ONLY_NO_FACTORIZATION_CERTIFICATE",
+        "independent_replay": "REQUIRED_BEFORE_ANY_PROMOTION",
+        "owner_approval_present": false,
+        "implementation_preflight_authorized": false,
+        "new_control_trajectories": 0,
+        "candidate_trajectories": 0,
+        "solver_calls": 0,
+        "production_sampling_authorized": false,
+        "approximate_sampler_authorized": false,
+        "scientific_verdict_added": false,
+        "global_verdict": "FINAL_THEORY_OPEN",
+        "next_gate": "OWNER_APPROVAL_OF_PHASE_B_CONTROL_EXACT_SCALING_PREFLIGHT_BUDGET"
       }
     },
     "solver_run_permitted": false,

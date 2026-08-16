@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
-from universe_lab.final_theory.phase_b_control_scaling_review_v042 import (
+from universe_lab.final_theory.phase_b_control_exact_scaling_design_v042 import (
     NEXT_GATE as CURRENT_CAMPAIGN_NEXT_GATE,
 )
 from universe_lab.final_theory.phase_c_verdict_budget_audit_v042 import (

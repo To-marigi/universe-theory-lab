@@ -1,0 +1,37 @@
+{
+  "schema_version": "final-theory-v042-phase-b-control-exact-scaling-preflight-budget-proposal-v1",
+  "prepared": "2026-08-17",
+  "status": "PROPOSAL_ONLY_OWNER_APPROVAL_REQUIRED",
+  "owner_instruction_source": "current chat instruction: proceed with recommended practical work",
+  "authorizes_gate": "PHASE_B_CONTROL_EXACT_SCALING_PREFLIGHT_ONLY",
+  "scope": "Implement and independently validate an exact ideal-count dynamic-programming route for the uniform random-growth control only. Do not execute production trajectories, candidate trajectories, approximate sampling, or solver calls.",
+  "resource_limits": {
+    "max_target_n": 60,
+    "max_dp_states_per_relation": 100000,
+    "max_wall_seconds": 1800,
+    "max_worker_seconds": 300,
+    "max_memory_mib": 2048,
+    "max_disk_mib": 1024,
+    "max_workers": 1,
+    "checkpoint_interval_states": 1000,
+    "retries": 0
+  },
+  "required_checks": [
+    "exact ideal-count recurrence agrees with exhaustive n<=5 oracle",
+    "primary and independent DP implementations agree on counts and fixed-ticket choices",
+    "the n=38 cap-boundary fixture is reproduced without materializing all ideals",
+    "candidate weighted recurrence remains fail-closed unless an exact factorisation certificate is supplied",
+    "no approximate fallback, candidate trajectory, production measurement, or solver call"
+  ],
+  "authorization_boundary": {
+    "owner_approval_present": false,
+    "implementation_preflight_authorized": false,
+    "new_control_trajectories": 0,
+    "candidate_trajectories": 0,
+    "production_sampling_authorized": false,
+    "approximate_sampler_authorized": false,
+    "solver_run_permitted": false,
+    "scientific_verdict_added": false,
+    "global_verdict": "FINAL_THEORY_OPEN"
+  }
+}

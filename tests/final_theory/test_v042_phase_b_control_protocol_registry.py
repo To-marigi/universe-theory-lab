@@ -4,15 +4,15 @@ import json
 from pathlib import Path
 
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
+from universe_lab.final_theory.phase_b_control_exact_scaling_design_v042 import (
+    NEXT_GATE as CURRENT_PHASE_B_NEXT_GATE,
+)
 from universe_lab.final_theory.phase_b_control_protocol_registry_v042 import (
     NEXT_GATE,
     REPORT_PATH,
     RESULT_PATH,
     build_registry,
     render_report,
-)
-from universe_lab.final_theory.phase_b_control_scaling_review_v042 import (
-    NEXT_GATE as CURRENT_PHASE_B_NEXT_GATE,
 )
 
 ROOT = Path(__file__).resolve().parents[2]

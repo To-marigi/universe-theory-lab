@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
-from universe_lab.final_theory.phase_b_control_scaling_review_v042 import (
+from universe_lab.final_theory.phase_b_control_exact_scaling_design_v042 import (
     NEXT_GATE as CURRENT_CAMPAIGN_NEXT_GATE,
 )
 from universe_lab.final_theory.phase_c_method_completion_v042 import (
@@ -71,7 +71,8 @@ def test_current_state_marks_phase_c_complete_and_phase_b_transition() -> None:
 
     assert campaign["status"] == (
         "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_"
-        "PHASE_B_CONTROL_SCALING_REVIEW_RESOURCE_LIMIT_OPEN_FINAL_THEORY_OPEN"
+        "PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_"
+        "OWNER_APPROVAL_REQUIRED_FINAL_THEORY_OPEN"
     )
     assert campaign["next_gate"] == CURRENT_CAMPAIGN_NEXT_GATE
     assert phase_c["status"] == "COMPLETE"
@@ -80,7 +81,8 @@ def test_current_state_marks_phase_c_complete_and_phase_b_transition() -> None:
     assert review["artifact"] == RESULT_PATH.as_posix()
     assert review["report"] == REPORT_PATH.as_posix()
     assert phase_b["status"] == (
-        "PHASE_B_CONTROL_SAMPLER_SCALING_REVIEW_COMPLETE_RESOURCE_LIMIT_OPEN"
+        "PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_"
+        "OWNER_APPROVAL_REQUIRED"
     )
     assert phase_b["global_central_candidate"] == "causal_information_v1"
     assert phase_b["active_candidate"] == "causal_information_v2_sparse_kraus"
