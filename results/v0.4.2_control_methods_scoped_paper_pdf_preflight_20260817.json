@@ -1,0 +1,46 @@
+{
+  "schema_version": "final-theory-v042-control-methods-scoped-paper-pdf-preflight-v1",
+  "prepared": "2026-08-17",
+  "status": "SCOPED_MANUSCRIPT_DOCKER_PDF_PREFLIGHT_PASS",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "scope": "Read-only Docker build of the control-and-methods scoped manuscript draft; no publication or scientific promotion.",
+  "container": {
+    "image": "texlive/texlive:latest-medium@sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9",
+    "mount_mode": "repository_read_only_container_tmpfs",
+    "build_command": "latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error main.tex"
+  },
+  "source_bindings": [
+    {
+      "path": "paper/v0.4.2_control_methods_scoped/main.tex",
+      "sha256": "2e2ee0d51041302eeb675df66d7abd996b50cf47dfc2585ff76db69372822220"
+    },
+    {
+      "path": "paper/v0.4.2_control_methods_scoped/references.bib",
+      "sha256": "5dff422ce1547e519bc21a178f3234a4a1e68b30378aca0b07c598f8feb04e58"
+    },
+    {
+      "path": "paper/v0.4.2_control_methods_scoped/REPRODUCING.md",
+      "sha256": "4378d11ab67019c669df1bd5968caf9e5e334567522f2477b516618eaf780e9a"
+    }
+  ],
+  "build_result": {
+    "passed": true,
+    "pages": 5,
+    "pdf_bytes": 224701,
+    "blocking_latex_errors": 0,
+    "overfull_boxes": 0,
+    "underfull_boxes": 0,
+    "undefined_citations_or_references": 0,
+    "host_pdf_written": false,
+    "published": false
+  },
+  "execution_boundary": {
+    "new_control_trajectories": 0,
+    "candidate_trajectories": 0,
+    "solver_calls": 0,
+    "production_sampling_authorized": false,
+    "scientific_verdict_added": false
+  },
+  "semantic_digest_sha256": "1f81c14fd8837be77d06621ce98a21f37a42a0568eb00f24e93de7db95128ebd"
+}

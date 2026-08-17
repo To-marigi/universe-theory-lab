@@ -5,7 +5,13 @@ from pathlib import Path
 
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
 from universe_lab.final_theory.phase_b_control_exact_scaling_design_v042 import (
+    NEXT_GATE as HISTORICAL_CONTROL_SCALING_NEXT_GATE,
+)
+from universe_lab.final_theory.phase_b_control_methods_scope_closure_v042 import (
     NEXT_GATE as CURRENT_CAMPAIGN_NEXT_GATE,
+)
+from universe_lab.final_theory.phase_b_control_methods_scope_closure_v042 import (
+    STATUS as CURRENT_PHASE_B_STATUS,
 )
 from universe_lab.final_theory.phase_c_method_completion_v042 import (
     NEXT_GATE,
@@ -71,8 +77,7 @@ def test_current_state_marks_phase_c_complete_and_phase_b_transition() -> None:
 
     assert campaign["status"] == (
         "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_"
-        "PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_"
-        "OWNER_APPROVAL_REQUIRED_FINAL_THEORY_OPEN"
+        f"{CURRENT_PHASE_B_STATUS}_FINAL_THEORY_OPEN"
     )
     assert campaign["next_gate"] == CURRENT_CAMPAIGN_NEXT_GATE
     assert phase_c["status"] == "COMPLETE"
@@ -80,10 +85,7 @@ def test_current_state_marks_phase_c_complete_and_phase_b_transition() -> None:
     assert review["status"] == "PHASE_C_METHOD_ARTIFACT_COMPLETION_REVIEW_CERTIFIED"
     assert review["artifact"] == RESULT_PATH.as_posix()
     assert review["report"] == REPORT_PATH.as_posix()
-    assert phase_b["status"] == (
-        "PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_"
-        "OWNER_APPROVAL_REQUIRED"
-    )
+    assert phase_b["status"] == CURRENT_PHASE_B_STATUS
     assert phase_b["global_central_candidate"] == "causal_information_v1"
     assert phase_b["active_candidate"] == "causal_information_v2_sparse_kraus"
     assert phase_b["started"] is True
@@ -97,6 +99,12 @@ def test_current_state_marks_phase_c_complete_and_phase_b_transition() -> None:
     assert phase_b["all_acceptance_checks_passed"] is True
     assert phase_b["scientific_verdict_added"] is False
     assert phase_b["next_gate"] == CURRENT_CAMPAIGN_NEXT_GATE
+    assert phase_b["control_exact_scaling_design"]["next_gate"] == (
+        HISTORICAL_CONTROL_SCALING_NEXT_GATE
+    )
+    assert phase_b["control_methods_scope_closure"]["next_gate"] == (
+        CURRENT_CAMPAIGN_NEXT_GATE
+    )
     assert phase_b["continuum_dimension_design"]["all_acceptance_checks_passed"] is True
     assert phase_b["continuum_dimension_preflight"][
         "all_preflight_checks_passed"

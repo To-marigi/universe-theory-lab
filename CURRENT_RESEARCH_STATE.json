@@ -1,6 +1,6 @@
 {
   "schema_version": "cpobc-current-research-state-v1",
-  "updated": "2026-08-16",
+  "updated": "2026-08-17",
   "mutable_index_not_a_proof_certificate": true,
   "global_verdict": "FINAL_THEORY_OPEN",
   "public_baseline": {
@@ -165,8 +165,8 @@
     "v0.4.2_721_gc_tier_relation_reduced_all_eleven": "ALL_1529_GC_PAIRS_REDUCED_MODULO_DEFINING_RELATIONS_ZERO_NEWLY_ZERO_OPEN"
   },
   "affected_campaign": {
-    "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_OWNER_APPROVAL_REQUIRED_FINAL_THEORY_OPEN",
-    "next_gate": "OWNER_APPROVAL_OF_PHASE_B_CONTROL_EXACT_SCALING_PREFLIGHT_BUDGET",
+    "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_PHASE_B_CONTROL_METHODS_SCOPE_CLOSURE_RECORDED_NO_NEW_EXECUTION_FINAL_THEORY_OPEN",
+    "next_gate": "CONTROL_METHODS_SCOPED_MANUSCRIPT_ASSEMBLY",
     "phase_A_termination_packet": {
       "status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
       "report": "reports/v0.4.2_phase_a_termination_decision_packet.md",
@@ -277,7 +277,7 @@
         "test": "tests/final_theory/test_v042_phase_c_method_completion.py",
         "prepared": "2026-08-14",
         "evidence_head": "e8c3d02",
-        "semantic_digest_sha256": "1ee1959f6aed98338791777ad8131b7477f55bce9f1948930216e2e5ff3048ec",
+        "semantic_digest_sha256": "983b0ece5af13a4c3c28d71b7ebc5dd544cc510de423b66798909d99b537fc4f",
         "acceptance_controls_satisfied": 4,
         "scientific_verdict_added": false,
         "global_verdict": "FINAL_THEORY_OPEN",
@@ -285,7 +285,7 @@
       }
     },
     "phase_B": {
-      "status": "PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_OWNER_APPROVAL_REQUIRED",
+      "status": "PHASE_B_CONTROL_METHODS_SCOPE_CLOSURE_RECORDED_NO_NEW_EXECUTION",
       "global_central_candidate": "causal_information_v1",
       "active_candidate": "causal_information_v2_sparse_kraus",
       "scope": "required physics derivation audit, not deeper computation of frozen 955/721 profiles",
@@ -301,9 +301,9 @@
       "semantic_digest_sha256": "6f3f083b14baeebaa9cd9bb5d9891d36fb5d80d0ec7a08412e99043e836803ac",
       "all_acceptance_checks_passed": true,
       "scientific_verdict_added": false,
-      "next_gate": "OWNER_APPROVAL_OF_PHASE_B_CONTROL_EXACT_SCALING_PREFLIGHT_BUDGET",
-      "operational_next_gate": "OWNER_APPROVAL_OF_PHASE_B_CONTROL_EXACT_SCALING_PREFLIGHT_BUDGET",
-      "operational_next_gate_basis": "the exact scaling design specifies a fail-closed ideal-count DP for the uniform random-growth control, but the frozen candidate weight has no certified reduced-state factorisation; the separate bounded preflight budget is proposal-only, so no implementation, trajectories, approximate fallback, candidate measurement, or solver authorization is open",
+      "next_gate": "CONTROL_METHODS_SCOPED_MANUSCRIPT_ASSEMBLY",
+      "operational_next_gate": "CONTROL_METHODS_SCOPED_MANUSCRIPT_ASSEMBLY",
+      "operational_next_gate_basis": "the owner-selected scoped control/methods closure keeps exact scaling design-only, excludes the candidate route, and assembles a manuscript from existing bounded artifacts; any computational reopening requires a new owner-approved scope, versioned budget, and independent replay",
       "implementation_preflight_budget_proposal": {
         "status": "PROPOSAL_ONLY_OWNER_APPROVAL_REQUIRED",
         "config": "config/v0.4.2_phase_b_implementation_preflight_budget_proposal_20260816.json",
@@ -744,6 +744,33 @@
         "scientific_verdict_added": false,
         "global_verdict": "FINAL_THEORY_OPEN",
         "next_gate": "OWNER_APPROVAL_OF_PHASE_B_CONTROL_EXACT_SCALING_PREFLIGHT_BUDGET"
+      },
+      "control_methods_scope_closure": {
+        "status": "PHASE_B_CONTROL_METHODS_SCOPE_CLOSURE_RECORDED_NO_NEW_EXECUTION",
+        "artifact": "results/v0.4.2_phase_b_control_methods_scope_closure_20260817.json",
+        "report": "reports/v0.4.2_phase_b_control_methods_scope_closure_2026-08-17.md",
+        "outline": "reports/v0.4.2_control_methods_scoped_paper_outline_2026-08-17.md",
+        "module": "src/universe_lab/final_theory/phase_b_control_methods_scope_closure_v042.py",
+        "prepared": "2026-08-17",
+        "semantic_digest_sha256": "cb125ef92005da2b686d89651e5944aff58516a88fe74152fee66a9ae013a057",
+        "methods_scope": "CLOSED_FOR_MANUSCRIPT_ASSEMBLY",
+        "candidate_route": "EXCLUDED_NOT_EVALUATED",
+        "exact_scaling_extension": "DESIGN_ONLY_NOT_EXECUTED",
+        "manuscript_draft": "paper/v0.4.2_control_methods_scoped/main.tex",
+        "pdf_preflight": "results/v0.4.2_control_methods_scoped_paper_pdf_preflight_20260817.json",
+        "new_control_trajectories": 0,
+        "candidate_trajectories": 0,
+        "solver_calls": 0,
+        "production_sampling_authorized": false,
+        "scientific_verdict_added": false,
+        "global_verdict": "FINAL_THEORY_OPEN",
+        "next_gate": "CONTROL_METHODS_SCOPED_MANUSCRIPT_ASSEMBLY",
+        "reopen_requires": [
+          "NEW_OWNER_APPROVED_SCOPE",
+          "VERSIONED_BUDGET",
+          "INDEPENDENT_REPLAY",
+          "CANDIDATE_FACTORIZATION_CERTIFICATE_FOR_WEIGHTED_ACCESS"
+        ]
       }
     },
     "solver_run_permitted": false,

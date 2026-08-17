@@ -11,6 +11,9 @@ from universe_lab.final_theory.phase_b_control_exact_scaling_design_v042 import 
     build_design,
     render_report,
 )
+from universe_lab.final_theory.phase_b_control_methods_scope_closure_v042 import (
+    NEXT_GATE as CURRENT_SCOPE_NEXT_GATE,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -60,12 +63,13 @@ def test_live_state_points_to_owner_approval_gate() -> None:
     phase_b = campaign["phase_B"]
     record = phase_b["control_exact_scaling_design"]
 
-    assert campaign["next_gate"] == NEXT_GATE
-    assert phase_b["next_gate"] == NEXT_GATE
-    assert phase_b["operational_next_gate"] == NEXT_GATE
+    assert campaign["next_gate"] == CURRENT_SCOPE_NEXT_GATE
+    assert phase_b["next_gate"] == CURRENT_SCOPE_NEXT_GATE
+    assert phase_b["operational_next_gate"] == CURRENT_SCOPE_NEXT_GATE
     assert record["artifact"] == RESULT_PATH.as_posix()
     assert record["semantic_digest_sha256"] == _tracked()[
         "semantic_digest_sha256"
     ]
+    assert record["next_gate"] == NEXT_GATE
     assert record["owner_approval_present"] is False
     assert record["implementation_preflight_authorized"] is False

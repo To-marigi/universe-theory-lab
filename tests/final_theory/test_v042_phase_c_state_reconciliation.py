@@ -4,6 +4,12 @@ import json
 from pathlib import Path
 
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
+from universe_lab.final_theory.phase_b_control_methods_scope_closure_v042 import (
+    NEXT_GATE as CURRENT_SCOPE_NEXT_GATE,
+)
+from universe_lab.final_theory.phase_b_control_methods_scope_closure_v042 import (
+    STATUS as CURRENT_PHASE_B_STATUS,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 STATE = ROOT / "CURRENT_RESEARCH_STATE.json"
@@ -27,12 +33,12 @@ def test_live_state_has_no_stale_phase_a_owner_fields() -> None:
     campaign = state["affected_campaign"]
     progress = campaign["721_source_native_progress"]
 
-    assert state["updated"] == "2026-08-16"
+    assert state["updated"] == "2026-08-17"
     assert campaign["status"] == (
         "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_"
-        "PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_"
-        "OWNER_APPROVAL_REQUIRED_FINAL_THEORY_OPEN"
+        f"{CURRENT_PHASE_B_STATUS}_FINAL_THEORY_OPEN"
     )
+    assert campaign["next_gate"] == CURRENT_SCOPE_NEXT_GATE
     assert progress["955_freeze_decision_status"] == (
         "EXECUTED_OWNER_APPROVED_PHASE_A_FREEZE_2026-08-13_PHASE_C_COMPLETE"
     )

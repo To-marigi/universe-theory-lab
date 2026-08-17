@@ -12,7 +12,13 @@ from universe_lab.final_theory.phase_b_continuum_dimension_design_v042 import (
     render_report,
 )
 from universe_lab.final_theory.phase_b_control_exact_scaling_design_v042 import (
+    NEXT_GATE as HISTORICAL_PHASE_B_NEXT_GATE,
+)
+from universe_lab.final_theory.phase_b_control_methods_scope_closure_v042 import (
     NEXT_GATE as CURRENT_PHASE_B_NEXT_GATE,
+)
+from universe_lab.final_theory.phase_b_control_methods_scope_closure_v042 import (
+    STATUS as CURRENT_PHASE_B_STATUS,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -118,12 +124,12 @@ def test_live_state_preserves_design_after_large_n_extension_design() -> None:
     state = json.loads((ROOT / "CURRENT_RESEARCH_STATE.json").read_text(encoding="utf-8"))
     phase_b = state["affected_campaign"]["phase_B"]
 
-    assert phase_b["status"] == (
-        "PHASE_B_CONTROL_EXACT_SCALING_DESIGN_COMPLETE_PARTIAL_CONTROL_ROUTE_"
-        "OWNER_APPROVAL_REQUIRED"
-    )
+    assert phase_b["status"] == CURRENT_PHASE_B_STATUS
     assert phase_b["next_gate"] == CURRENT_PHASE_B_NEXT_GATE
     assert phase_b["operational_next_gate"] == CURRENT_PHASE_B_NEXT_GATE
+    assert phase_b["control_exact_scaling_design"]["next_gate"] == (
+        HISTORICAL_PHASE_B_NEXT_GATE
+    )
     assert phase_b["continuum_dimension_design"]["artifact"] == RESULT_PATH.as_posix()
     assert phase_b["continuum_dimension_design"]["semantic_digest_sha256"] == payload[
         "semantic_digest_sha256"
