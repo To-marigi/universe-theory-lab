@@ -20,7 +20,7 @@ from universe_lab.final_theory.phase_b_continuum_dimension_preflight_v042 import
     build_preflight,
     render_report,
 )
-from universe_lab.final_theory.phase_b_control_exact_scaling_design_v042 import (
+from universe_lab.final_theory.phase_b_control_methods_scope_closure_v042 import (
     NEXT_GATE as CURRENT_PHASE_B_NEXT_GATE,
 )
 

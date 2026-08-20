@@ -5,11 +5,14 @@ from pathlib import Path
 
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
 from universe_lab.final_theory.phase_b_continuum_dimension_design_v042 import (
+    CONTINUUM_REFERENCE_RECORD_DIGESTS,
+    CONTINUUM_SOURCES_LEDGER_FROZEN_BINDING,
     NEXT_GATE,
     REPORT_PATH,
     RESULT_PATH,
     build_design,
     render_report,
+    validate_continuum_reference_records,
 )
 from universe_lab.final_theory.phase_b_control_exact_scaling_design_v042 import (
     NEXT_GATE as HISTORICAL_PHASE_B_NEXT_GATE,
@@ -34,6 +37,25 @@ def test_continuum_dimension_design_rebuilds_exactly() -> None:
     assert (ROOT / REPORT_PATH).read_text(encoding="utf-8") == render_report(
         payload
     )
+
+
+def test_living_source_catalogue_does_not_move_the_frozen_design() -> None:
+    validate_continuum_reference_records(ROOT)
+    payload = _tracked()
+    source_binding = next(
+        binding
+        for binding in payload["source_bindings"]
+        if binding["path"] == "references/sources.json"
+    )
+
+    assert source_binding == CONTINUUM_SOURCES_LEDGER_FROZEN_BINDING
+    assert set(CONTINUUM_REFERENCE_RECORD_DIGESTS) == {
+        "arXiv:gr-qc/0003117v4",
+        "arXiv:gr-qc/0309009v1",
+    }
+    assert (ROOT / "references/sources.json").stat().st_size != source_binding[
+        "size_bytes"
+    ]
 
 
 def test_design_digest_and_acceptance_boundary() -> None:

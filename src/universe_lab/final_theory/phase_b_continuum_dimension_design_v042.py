@@ -65,6 +65,28 @@ CALIBRATION_NOTE_PATH = Path(
     "references/notes/v0.4.2_myrheim_meyer_calibration_audit_2026-08-15.md"
 )
 
+# ``references/sources.json`` is a living catalogue.  The v0.4.2 design was
+# frozen at commit 0bd4ecf, so reproducing that packet must not reinterpret
+# later catalogue additions as changes to its evidence.  The two records that
+# actually support the calibration remain independently checked below; this
+# historical whole-ledger binding is emitted only to reproduce the frozen v1
+# payload byte for byte.
+CONTINUUM_SOURCES_LEDGER_FROZEN_BINDING = {
+    "path": SOURCES_LEDGER_PATH.as_posix(),
+    "raw_sha256": "9da2bc51ba69a4f0cd32f3532e61b9fe312af34df517d79bba314c9e599300ff",
+    "canonical_lf_sha256": "9da2bc51ba69a4f0cd32f3532e61b9fe312af34df517d79bba314c9e599300ff",
+    "size_bytes": 150069,
+    "strict_utf8_lf": True,
+}
+CONTINUUM_REFERENCE_RECORD_DIGESTS = {
+    "arXiv:gr-qc/0003117v4": (
+        "399e7ee765ad862746b9fb4b843b6139c59830b14d38edb032d855ff6e8d7910"
+    ),
+    "arXiv:gr-qc/0309009v1": (
+        "51b8f15707f107cbc98484899c0466f5649c0596e6275f5fe49877d261e3d3c3"
+    ),
+}
+
 
 def _load_json(root: Path, relative: Path) -> dict[str, Any]:
     return json.loads((root / relative).read_text(encoding="utf-8"))
@@ -81,6 +103,26 @@ def _binding(root: Path, relative: Path) -> dict[str, Any]:
         "size_bytes": len(raw),
         "strict_utf8_lf": "\r" not in text,
     }
+
+
+def validate_continuum_reference_records(root: Path) -> None:
+    """Fail if either source record used by the frozen calibration moved."""
+
+    ledger = _load_json(root, SOURCES_LEDGER_PATH)
+    records = {record["id"]: record for record in ledger["sources"]}
+    missing = sorted(set(CONTINUUM_REFERENCE_RECORD_DIGESTS) - set(records))
+    if missing:
+        raise ValueError(f"continuum calibration source records are missing: {missing}")
+    moved = {
+        identifier: stable_hash(records[identifier])
+        for identifier, expected in CONTINUUM_REFERENCE_RECORD_DIGESTS.items()
+        if stable_hash(records[identifier]) != expected
+    }
+    if moved:
+        raise ValueError(
+            "continuum calibration source records differ from the frozen design: "
+            f"{moved}"
+        )
 
 
 def _fraction_record(value: Fraction) -> dict[str, int]:
@@ -371,6 +413,7 @@ def _design_checks(
 
 
 def build_design(root: Path) -> dict[str, Any]:
+    validate_continuum_reference_records(root)
     config = _load_json(root, CONFIG_PATH)
     registry = _load_json(root, REGISTRY_PATH)
     v2_spec = _load_json(root, V2_SPEC_PATH)
@@ -429,7 +472,7 @@ def build_design(root: Path) -> dict[str, Any]:
             _binding(root, MANIFEST_RESULT_PATH),
             _binding(root, IDENTITY_RESULT_PATH),
             _binding(root, OBSERVABLES_PATH),
-            _binding(root, SOURCES_LEDGER_PATH),
+            dict(CONTINUUM_SOURCES_LEDGER_FROZEN_BINDING),
             _binding(root, CALIBRATION_NOTE_PATH),
         ],
     }

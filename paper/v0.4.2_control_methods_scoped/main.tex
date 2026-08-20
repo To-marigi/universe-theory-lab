@@ -17,7 +17,7 @@
   linkcolor=blue!55!black,
   citecolor=blue!55!black,
   urlcolor=blue!55!black,
-  pdftitle={A fail-closed reproducibility framework for finite quantum sequential growth},
+  pdftitle={Fail-closed reproducibility for finite quantum sequential growth: exact controls, independent replay, and resource boundaries},
   pdfauthor={Kenichi Osaki}
 }
 
@@ -26,42 +26,73 @@
 \setlength{\parskip}{0.45em}
 \newcommand{\code}[1]{\texttt{#1}}
 
-\title{\textbf{A fail-closed reproducibility framework for finite quantum sequential growth:\\
-exact controls, independent replay, and scaling limits}}
+\title{\textbf{Fail-closed reproducibility for finite quantum sequential growth:\\
+exact controls, independent replay, and resource boundaries}}
 \author{Kenichi Osaki\\
 \small Independent researcher\\
 \small ORCID: \href{https://orcid.org/0009-0003-9256-7089}{0009-0003-9256-7089}}
-\date{Scoped methods manuscript draft v0.4.2}
+\date{Version 0.4.2, 20 August 2026}
 
 \begin{document}
 \maketitle
 
 \begin{center}
-\small\emph{Scope-locked draft.  This manuscript reports the control and
+\small\emph{Scope statement.  This manuscript reports the control and
 methodology layer only.  It does not claim candidate-model validity, a
-continuum limit, a complete finite ON semantics lattice, or a final theory.}
+continuum limit, a complete finite occurrence-ON semantics lattice, or a
+final theory.}
 \end{center}
 
 \begin{abstract}
-We describe a fail-closed reproducibility framework for finite quantum
+We report a fail-closed reproducibility framework for finite quantum
 sequential-growth calculations.  The framework separates candidate evidence
 from controls, binds claims to versioned machine-readable artifacts, requires
-independent replay before promotion, and treats wall-time, memory, and exact
-enumeration limits as explicit resource boundaries.  Within the bounded scope
-reported here, exact sampler fixtures, fixed-ticket replay, a four-dimensional
-Minkowski positive-control preflight, runtime guards, and hard-supervisor
-fixtures pass their declared checks.  An exact random-growth scaling review
-reproduces a down-set cap boundary at source size $n=38$: both primary and
-independent paths reach $n=37$ with 3,791 down-sets and reject the next step
-when the lower bound exceeds the cap of 4,096.  This is a resource-limit
+independent replay before promotion, and records wall-time, memory, disk, and
+exact-enumeration limits as open resource boundaries.  Existing bounded
+artifacts include a 5-seed, 1,024-trajectory-per-seed small-$n$ regression; 40
+deterministic fixture trajectories over two sampler profiles; eight
+four-dimensional Minkowski-control fixtures; and five synthetic supervisor
+modes.  These are implementation checks, not production measurements.  In a
+separate exact random-growth scaling review, primary and independent paths
+complete growth through cardinality 38 with identical trajectory and relation
+digests.  The last fully enumerated source, $n=37$, has 3,791 down-sets; an
+attempted step from source size $n=38$ detects at least 4,097 down-sets and
+fails closed at the declared cap of 4,096.  This is a resource-limit
 observation, not an impossibility theorem.  The active candidate uses a
 nonlocal link/diamond/precursor weight for which no exact reduced-state
-factorisation is certified; it is therefore excluded from candidate evidence.
+factorisation is certified, so no candidate production evidence is reported.
 The result is a reproducible methods record with explicit nonclaims, not a
 physical verdict on the candidate model.
 \end{abstract}
 
-\section{Scope and claim boundary}
+\section{Background and objective}
+
+Sequential-growth models construct a causal set one element at a time.  The
+classical framework combines covariance and a Bell-causality condition with a
+stochastic growth law\cite{RideoutSorkin2000}; complex and quantum variants
+introduce additional extension, consistency, or operator questions
+\cite{SuryaZalel2020,Gudder2012,SrivastavaSurya2026}.  Numerical causal-set
+studies also make clear that finite-size evidence and continuum claims require
+different controls\cite{GlaserOConnorSurya2018}.  The present work does not
+propose a new physical dynamics.  Its objective is narrower: to make the
+authorization boundary around finite computations explicit and reproducible.
+
+The contribution is a concrete workflow with four linked parts:
+
+\begin{enumerate}
+  \item exact arithmetic and deterministic ticket generation for bounded
+        sampler fixtures;
+  \item independent implementations that replay the same frozen wire format;
+  \item external resource supervision with atomic, digest-checked promotion;
+  \item a verdict grammar that prevents finite tests and resource exhaustion
+        from being promoted to physical or mathematical no-go claims.
+\end{enumerate}
+
+All numerical counts reported below are read from committed result artifacts.
+No new candidate trajectory or solver calculation is introduced by manuscript
+assembly.
+
+\section{Scope and threat model}
 
 Finite exact calculations can produce convincing numerical output while still
 leaving the semantic scope, sampling measure, replay independence, and
@@ -77,9 +108,18 @@ close that layer for manuscript assembly at the bounded evidence boundary
 described below.
 
 The global project verdict remains \code{FINAL\_THEORY\_OPEN}.  In particular,
-we do not claim a complete finite ON semantics lattice, a resolution of the
+we do not claim a complete finite occurrence-ON semantics lattice, a resolution of the
 full 955 or 721 profiles, candidate physical validity, a continuum limit,
 production spectral dimension, or a solver impossibility result.
+
+The workflow is designed against four recurrent failure modes.  First, a
+bounded fixture can be described as though it were a production sample.
+Second, two nominally independent checks can silently share the same
+implementation.  Third, a timeout or enumeration cap can be rewritten as a
+negative theorem.  Fourth, a valid temporary output can be promoted even
+though its certificate, source identity, or process cleanup failed.  Each
+failure mode is represented by a machine-readable authorization field or a
+supervisor fixture below.
 
 \section{Machine-readable authorization model}
 
@@ -108,14 +148,25 @@ scientific verdict and keeps the solver gate closed.
 
 \subsection{Finite sampler fixtures}
 
-The bounded sampler preflight checks two labelled profiles: the active candidate
-identity and a uniform random-growth control.  It covers 40 deterministic
-fixtures at sizes $1$ through $5$, with exact level counts
-\[1,\;1,\;2,\;5.\]
-Primary and independent replay digests agree, repeated primary fixtures are
-deterministic, and both paths fail closed at their exact down-set caps.  These
-fixtures validate implementation and provenance; they are not production
-measurements and do not establish candidate physics.
+Two distinct preflights are retained.  A small-$n$ sampler regression follows
+five fixed seeds, with 1,024 trajectories per seed, through cardinality three.
+Branch selection uses integer tickets over exact rational weights.  The five
+terminal distributions pass their declared diagnostic comparison with the
+exact distribution.  This comparison is a regression test; its six-sigma
+window is not a scientific acceptance threshold.
+
+A later deterministic replay preflight checks two labelled implementation
+profiles, two seeds, two trajectory indices, and target sizes $1$ through $5$,
+giving 40 fixture trajectories.  The finite catalogue reproduces the exact
+unlabelled level counts
+\[
+  1,\;1,\;2,\;5,\;16,\;63
+\]
+through cardinality five.  Primary and independent relation and trajectory
+digests agree, a repeated primary fixture is deterministic, and both paths fail
+closed at their exact down-set caps.  The presence of a candidate-labelled
+fixture validates only the frozen code path and identity boundary.  It is not
+candidate evidence and does not authorize candidate sampling.
 
 \subsection{Four-dimensional positive control}
 
@@ -130,6 +181,15 @@ The positive control is deliberately separated from the BDG action proposal.
 No BDG coefficient fit, nonlocal scale fit, action-weighted ensemble, or
 candidate-derived calibration is performed.
 
+\subsection{Bounded cost observations}
+
+A three-case cost preflight completes one $N=27$ random-growth fixture and one
+$N=27$ Minkowski fixture.  The planned $N=60$ random-growth case returns
+\code{RESOURCE\_LIMIT\_OPEN} at the exact down-set cap of 4,096 after a bounded
+attempt.  No cap increase or approximate fallback is applied.  Wall times are
+environment-specific observations and are therefore kept in the machine
+artifact rather than treated as portable performance claims.
+
 \section{Independent replay and runtime safety}
 
 The replay contract fixes the ticket wire format, branch ordering, relation
@@ -138,6 +198,11 @@ excessive rejection attempts, exact down-set cap violations, and cyclic height
 dynamic programs.  Hard-supervisor fixtures exercise wall-time limits,
 process-tree termination, memory and disk caps, invalid-digest rejection,
 atomic promotion, retry prohibition, and failed-artifact non-promotion.
+
+The supervisor test matrix has five modes: success, invalid certificate,
+process-tree timeout, memory limit, and disk limit.  Only the successful,
+digest-valid fixture is promoted.  Every failed or resource-limited fixture is
+left unpromoted, each process tree is reaped, and no automatic retry occurs.
 
 These checks establish the declared runtime contracts.  They do not imply that
 the production sampler has been connected to the supervisor or that a
@@ -157,10 +222,13 @@ This recurrence is recorded as a design only; it is not implemented in the
 present closure.
 
 The preceding exact scaling review uses the existing enumerating route under a
-cap of 4,096 down-sets.  The primary and independent paths agree through
-source size $n=37$, where the exact count is 3,791.  At $n=38$ the count has a
-lower bound of 4,097, so the cap is reached.  The same relation and trajectory
-digests are obtained on both paths.
+cap of 4,096 down-sets.  Both implementations complete 38 successful growth
+steps and produce the same cardinality-38 relation and trajectory digest.  The
+last source for which all down-sets are enumerated is $n=37$, with exact count
+3,791.  When the cardinality-38 relation is used as the next source, both
+implementations detect a lower bound of 4,097 down-sets and stop before drawing
+the next transition.  Thus the recorded boundary is an attempted step
+\emph{from} source size $n=38$, not a failure to construct the size-38 relation.
 
 This boundary supports the statement that the current exact enumerating path
 does not reach the planned $N=60$ production scale under its declared cap.  It
@@ -185,7 +253,10 @@ enumerating the relevant states.  The uniform-control recurrence is therefore
 not reused for the candidate.
 
 Candidate access is excluded from the scoped manuscript.  This is a protocol
-decision, not a candidate obstruction or a negative physical result.
+decision, not a candidate obstruction or a negative physical result.  The
+bounded candidate-labelled regression fixtures described above do not change
+this boundary: no candidate production observable, continuum estimate, or
+acceptance threshold is formed.
 
 \section{Evidence ledger and reproducibility}
 
@@ -194,13 +265,14 @@ The closure packet binds the manuscript to the following existing artifacts:
 \begin{table}[h]
 \centering
 \small
-\begin{tabularx}{\linewidth}{>{\ttfamily}l X}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.35\linewidth} X}
 \toprule
 Artifact & Role \\
 \midrule
 phase-C completion & claim boundaries, verdict grammar, budget separation \\
-sampler preflight & bounded exact fixtures and replay \\
-control implementation preflight & Minkowski positive-control fixtures \\
+small-$n$ sampler preflight & exact-distribution regression at five fixed seeds \\
+control sampler preflight & 40 deterministic profile/replay fixtures \\
+control implementation preflight & eight Minkowski positive-control fixtures \\
 control cost/scaling review & exact cap boundary and cost observation \\
 exact scaling design & uniform-DP proposal and candidate factorisation boundary \\
 hard-supervisor preflight & fail-closed runtime fixture contract \\
@@ -210,12 +282,26 @@ candidate identity audit & candidate/control identity separation \\
 \caption{Digest-bound evidence chain for the scoped manuscript.}
 \end{table}
 
-The repository contains the corresponding JSON results, reports, source module,
-and tests.  A clean reproduction uses the project virtual environment and runs
-the focused Phase-B/Phase-C test set, followed by the lint and type checks for
-the closure module.  The exact commands and current digests are recorded next
-to the manuscript draft; they are not a substitute for an external publication
-archive.
+The repository contains the corresponding JSON results, reports, source
+modules, and tests.  Each JSON artifact carries a semantic SHA-256 digest; the
+publication supplement additionally records raw SHA-256 hashes, byte counts,
+the source commit, and the standalone PDF hash.  The supplement is therefore
+an authenticated navigation and reproduction layer, not a replacement for the
+machine-readable ledgers.
+
+\subsection{Reproduction protocol}
+
+A clean reproduction has three levels.  First, verify the archived hashes and
+the source-commit binding without executing research code.  Second, run the
+focused Phase-B and Phase-C tests, followed by lint and static type checks.
+Third, if a fresh PDF is required, build the TeX source in the digest-pinned,
+network-disabled container recorded in the PDF build report.  Reproduction of
+existing fixtures does not reopen candidate or production authorization.
+
+The upload layout consists of one directly previewable PDF and one deterministic
+compressed supplement.  The PDF is not duplicated inside the supplement; the
+supplement binds it by SHA-256.  Raw third-party papers, extracted reference
+texts, credentials, caches, and unbounded solver outputs are excluded.
 
 \section{Unresolved work and reopening rule}
 
@@ -226,23 +312,34 @@ future reopening requires a new owner-approved scope, a versioned budget,
 independent replay, and (for candidate access) a certified weighted-state
 factorisation.  The existing Paper I Zenodo record must not be mutated.
 
+\clearpage
 \section{Conclusion}
 
 The project now has a finite, auditable methods boundary.  Bounded controls,
 replay, resource guards, and candidate exclusion are machine-recorded, while
-the exact scaling limit is reported as a resource boundary rather than a
+the exact scaling stop is reported as a resource boundary rather than a
 scientific no-go.  This supports a scoped control-and-methods manuscript.  It
 does not close the physical theory question, which remains
 \code{FINAL\_THEORY\_OPEN}.
 
 \section*{Data and code availability}
 
-The manuscript draft is accompanied by the repository artifacts named in the
-evidence ledger and the scoped closure packet
-\code{scope-closure JSON artifact}.
+This preprint is accompanied by a deterministic supplement containing its TeX
+source, bibliography, reproduction instructions, selected machine-readable
+artifacts, tests, release metadata, and source-commit manifest.  The repository
+is available at
+\url{https://github.com/To-marigi/universe-theory-lab}; the exact source commit
+for this version is recorded inside the supplement.
 Paper I v0.4.2 remains available at
 \url{https://zenodo.org/records/21861533}; that record is not modified by this
-draft.
+preprint.
+
+\section*{License}
+
+The manuscript and its original textual material are released under the
+Creative Commons Attribution 4.0 International license.  Software included in
+the supplement remains under the repository's MIT license.  Third-party works
+are not redistributed in the supplement.
 
 \section*{AI and human-author disclosure}
 

@@ -1,0 +1,90 @@
+{
+  "schema_version": "final-theory-v042-control-methods-scoped-pdf-final-v1",
+  "prepared": "2026-08-20",
+  "status": "FINAL_PDF_VISUAL_QA_PASS_UPLOAD_CANDIDATE",
+  "title": "Fail-closed reproducibility for finite quantum sequential growth: exact controls, independent replay, and resource boundaries",
+  "build": {
+    "script": "scripts/build_v042_control_methods_pdf.py",
+    "image_ref": "texlive/texlive:latest-medium@sha256:d79913b74afcf48a53ec2ad0d54b70ad3e36d65b4f1de13d811435883c2f1fd9",
+    "network_disabled": true,
+    "container_root_read_only": true,
+    "toolchain": {
+      "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+      "pdftex": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+      "bibtex": "BibTeX 0.99e (TeX Live 2026)"
+    },
+    "diagnostic_counts": {
+      "latex_or_package_error": 0,
+      "overfull_box": 0,
+      "underfull_box": 0,
+      "undefined_reference_or_citation": 0
+    }
+  },
+  "source_bindings": [
+    {
+      "path": "paper/v0.4.2_control_methods_scoped/main.tex",
+      "sha256": "4364faec9c749ff2dd03caf68a3135a4ca5ba701d726c50606bed7e79ae8b43b",
+      "bytes": 16962
+    },
+    {
+      "path": "paper/v0.4.2_control_methods_scoped/references.bib",
+      "sha256": "3e899985334ab922b9516d840c025cd49dfb409d2529a86cd2d75506063577e5",
+      "bytes": 2097
+    },
+    {
+      "path": "paper/v0.4.2_control_methods_scoped/REPRODUCING.md",
+      "sha256": "be10b5d1e6565a6fd87316983f56db12e0940cbc90b09b7e016b9398f968b3b6",
+      "bytes": 2053
+    }
+  ],
+  "pdf": {
+    "path": "output/pdf/finite_qsg_fail_closed_methods_v0.4.2.pdf",
+    "filename": "finite_qsg_fail_closed_methods_v0.4.2.pdf",
+    "sha256": "d2a280cd6bf250f018397bc66847039dbb9136a766f2e5f4e92711694288bba9",
+    "bytes": 233534,
+    "pages": 6,
+    "pdf_version": "1.7",
+    "encrypted": false,
+    "embedded_title_matches_release_title": true,
+    "embedded_author": "Kenichi Osaki",
+    "empty_pages": 0
+  },
+  "visual_qa": {
+    "status": "PASS_ALL_PAGES",
+    "renderer": "Poppler pdftoppm",
+    "render_dpi": 140,
+    "rendered_pages": 6,
+    "all_pages_inspected": true,
+    "clipped_or_overlapping_elements": 0,
+    "broken_tables_or_equations": 0,
+    "unreadable_text_or_glyphs": 0,
+    "orphaned_section_heading_fixed_before_final": true,
+    "metadata_only_rebuild_rasters_identical": true,
+    "page_raster_sha256": [
+      "98ce84bfad9c6aa4fca0dadd4e6b689d0e4b80c9319cbfb54b5ce6da2b90625d",
+      "1a8f7ac45134b6e51fe8053e933b9cb76fa83adf7097e1a17a1e6cc1ab03f047",
+      "a38ed99c804743f9d105826f855e34f7a95d50c0d306fe77508fc041089b356b",
+      "fd43c67bb15cd0b1c53a07c052b286fd5eb631be227b6d15607a1844b6177ae9",
+      "667facb0852da598c3843d681906883cbd5e277aeeafa1df0e2265e8e9b00a6f",
+      "a67929d4a493eb6212d8c0ae611f80c6fe899a7ed25ccd3c8de966d662c4f046"
+    ]
+  },
+  "claim_boundary_checks": {
+    "final_theory_open_present": true,
+    "resource_limit_not_impossibility_present": true,
+    "candidate_production_nonclaim_present": true,
+    "paper_i_immutable_reference_present": true,
+    "reserved_doi_placeholder_absent": true
+  },
+  "release_boundary": {
+    "upload_candidate": true,
+    "zenodo_draft_created": false,
+    "files_uploaded": false,
+    "doi_reserved": false,
+    "published": false,
+    "human_depositor_required": true,
+    "global_verdict": "FINAL_THEORY_OPEN",
+    "scientific_verdict_added": false
+  },
+  "semantic_digest_sha256": "8180711c3b74e44a579b421922353f29b358076b0a1b087954572cc49d23945e"
+}

@@ -13,16 +13,16 @@ from typing import Any
 
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
 
-SCHEMA_VERSION = "final-theory-v042-phase-b-control-methods-scope-closure-v1"
-PREPARED = "2026-08-17"
-STATUS = "PHASE_B_CONTROL_METHODS_SCOPE_CLOSURE_RECORDED_NO_NEW_EXECUTION"
-START_GATE = "PHASE_B_CONTROL_EXACT_SCALING_DESIGN"
-NEXT_GATE = "CONTROL_METHODS_SCOPED_MANUSCRIPT_ASSEMBLY"
+SCHEMA_VERSION = "final-theory-v042-phase-b-control-methods-scope-closure-v2"
+PREPARED = "2026-08-20"
+STATUS = "PHASE_B_CONTROL_METHODS_SCOPED_MANUSCRIPT_FINALIZED_UPLOAD_PACKAGING_ACTIVE"
+START_GATE = "CONTROL_METHODS_SCOPED_MANUSCRIPT_ASSEMBLY"
+NEXT_GATE = "ZENODO_UPLOAD_BUNDLE_BUILD_AND_STRICT_VERIFICATION"
 RESULT_PATH = Path(
-    "results/v0.4.2_phase_b_control_methods_scope_closure_20260817.json"
+    "results/v0.4.2_phase_b_control_methods_scope_closure_20260820.json"
 )
 REPORT_PATH = Path(
-    "reports/v0.4.2_phase_b_control_methods_scope_closure_2026-08-17.md"
+    "reports/v0.4.2_phase_b_control_methods_scope_closure_2026-08-20.md"
 )
 OUTLINE_PATH = Path(
     "reports/v0.4.2_control_methods_scoped_paper_outline_2026-08-17.md"
@@ -49,8 +49,8 @@ EVIDENCE_PATHS = (
         "results/v0.4.2_phase_b_control_exact_scaling_design_20260817.json",
     ),
     (
-        "scoped_paper_pdf_preflight",
-        "results/v0.4.2_control_methods_scoped_paper_pdf_preflight_20260817.json",
+        "scoped_paper_final_pdf",
+        "results/v0.4.2_control_methods_scoped_pdf_final_20260820.json",
     ),
     (
         "hard_supervisor_preflight",
@@ -109,9 +109,12 @@ def build_scope_closure(root: Path) -> dict[str, Any]:
         "candidate_route_has_no_access": (
             _load_json(root, EVIDENCE_PATHS[8][1])["sampling_authorized"] is False
         ),
-        "manuscript_draft_exists": (root / MANUSCRIPT_PATH).is_file(),
-        "scoped_pdf_preflight_passed": (
-            _load_json(root, EVIDENCE_PATHS[6][1])["build_result"]["passed"] is True
+        "manuscript_source_exists": (root / MANUSCRIPT_PATH).is_file(),
+        "scoped_final_pdf_passed_all_page_qa": (
+            _load_json(root, EVIDENCE_PATHS[6][1])["status"]
+            == "FINAL_PDF_VISUAL_QA_PASS_UPLOAD_CANDIDATE"
+            and _load_json(root, EVIDENCE_PATHS[6][1])["visual_qa"]["status"]
+            == "PASS_ALL_PAGES"
         ),
         "no_new_execution_is_recorded": True,
     }
@@ -131,14 +134,14 @@ def build_scope_closure(root: Path) -> dict[str, Any]:
             "theory."
         ),
         "decision": {
-            "methods_scope": "CLOSED_FOR_MANUSCRIPT_ASSEMBLY",
+            "methods_scope": "FINALIZED_FOR_UPLOAD_PACKAGING",
             "candidate_route": "EXCLUDED_NOT_EVALUATED",
             "exact_scaling_extension": "DESIGN_ONLY_NOT_EXECUTED",
             "production_measurement": "NOT_AUTHORIZED",
             "solver": "NOT_AUTHORIZED",
             "paper_i_publication": "PRESERVED_IMMUTABLE",
-            "manuscript_draft": MANUSCRIPT_PATH.as_posix(),
-            "pdf_preflight": "PASS_DRAFT_NOT_PUBLISHED",
+            "manuscript_source": MANUSCRIPT_PATH.as_posix(),
+            "pdf_preflight": "PASS_FINAL_UPLOAD_CANDIDATE_NOT_PUBLISHED",
         },
         "claims_supported": [
             "Phase-C claim-boundary and budget-separation controls are complete.",
@@ -162,7 +165,7 @@ def build_scope_closure(root: Path) -> dict[str, Any]:
             "N=60 production control completion",
             "production spectral-dimension or statistical acceptance",
             "BDG weighted-ensemble or action result",
-            "full 955/721 resolution or complete finite ON semantics lattice",
+            "full 955/721 resolution or complete finite occurrence-ON semantics lattice",
             "solver impossibility and FINAL_THEORY closure",
         ],
         "checks": checks,
@@ -223,8 +226,9 @@ def render_report(payload: dict[str, Any]) -> str:
             "created by this packet. Production sampling and approximate "
             "fallbacks remain unauthorized.",
             "",
-            "The manuscript draft also passes a read-only Docker PDF preflight; "
-            "the PDF is not written to the host or published by this packet.",
+            "The final manuscript PDF passes a digest-pinned, network-disabled "
+            "Docker build and all-page visual QA. It is written locally for "
+            "packaging but is not uploaded or published by this packet.",
             "",
             "## Reproducibility and reopening",
             "",
@@ -237,7 +241,7 @@ def render_report(payload: dict[str, Any]) -> str:
             f"Next gate: `{payload['next_gate']}`",
             "",
         ]
-    ) + "\n"
+    )
 
 
 def write_outputs(root: Path, payload: dict[str, Any]) -> None:

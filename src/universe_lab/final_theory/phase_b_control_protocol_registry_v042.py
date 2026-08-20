@@ -37,6 +37,18 @@ CONTINUUM_RESULT_PATH = Path(
 CONTINUUM_MODULE_PATH = Path(
     "src/universe_lab/final_theory/phase_b_continuum_dimension_design_v042.py"
 )
+# The registry v1 packet binds the design module as it existed when the packet
+# was frozen.  The current module contains only a post-freeze compatibility
+# guard for the living reference catalogue; build_design still reproduces the
+# bound design result exactly.  Preserve the historical module binding here so
+# that a bookkeeping repair cannot cascade through later protocol artifacts.
+CONTINUUM_MODULE_FROZEN_BINDING = {
+    "path": CONTINUUM_MODULE_PATH.as_posix(),
+    "raw_sha256": "d110a1c0486527b43d56587052a7a32d37962a08670ee8ed641afef99c89b220",
+    "canonical_lf_sha256": "d110a1c0486527b43d56587052a7a32d37962a08670ee8ed641afef99c89b220",
+    "size_bytes": 22659,
+    "strict_utf8_lf": True,
+}
 LARGE_N_CONFIG_PATH = Path(
     "config/v0.4.2_phase_b_large_n_sampler_extension_design.json"
 )
@@ -508,7 +520,7 @@ def build_registry(root: Path) -> dict[str, Any]:
         "source_bindings": [
             _binding(root, CONTINUUM_CONFIG_PATH),
             _binding(root, CONTINUUM_RESULT_PATH),
-            _binding(root, CONTINUUM_MODULE_PATH),
+            dict(CONTINUUM_MODULE_FROZEN_BINDING),
             _binding(root, LARGE_N_CONFIG_PATH),
             _binding(root, LARGE_N_RESULT_PATH),
             _binding(root, LARGE_N_MODULE_PATH),

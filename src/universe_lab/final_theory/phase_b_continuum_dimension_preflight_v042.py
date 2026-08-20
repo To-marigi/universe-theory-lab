@@ -46,13 +46,15 @@ from universe_lab.final_theory.dynamics_v02 import (
 )
 from universe_lab.final_theory.gc_semantics_v033 import stable_hash
 from universe_lab.final_theory.phase_b_continuum_dimension_design_v042 import (
+    CONTINUUM_SOURCES_LEDGER_FROZEN_BINDING,
+    build_design,
+    validate_continuum_reference_records,
+)
+from universe_lab.final_theory.phase_b_continuum_dimension_design_v042 import (
     RESULT_PATH as DESIGN_RESULT_PATH,
 )
 from universe_lab.final_theory.phase_b_continuum_dimension_design_v042 import (
     STATUS as DESIGN_STATUS,
-)
-from universe_lab.final_theory.phase_b_continuum_dimension_design_v042 import (
-    build_design,
 )
 
 SCHEMA_VERSION = "final-theory-v042-phase-b-continuum-dimension-preflight-v1"
@@ -137,13 +139,14 @@ def _ensemble_measurement(
     mean_ordering: Fraction | None = None
     ordering_dimension: float | None = None
     if n >= 2:
-        mean_ordering = sum(
-            (
-                probability * ordering_fraction(relation_by_id[identifier])
-                for identifier, probability in distribution.items()
-            ),
-            start=Fraction(0),
-        )
+        mean_ordering = Fraction(0)
+        for identifier, probability in distribution.items():
+            relation_ordering = ordering_fraction(relation_by_id[identifier])
+            if relation_ordering is None:
+                raise TypeError(
+                    "ordering fraction must be defined for n >= 2"
+                )
+            mean_ordering += probability * relation_ordering
         ordering_dimension = ordering_fraction_dimension(mean_ordering)
 
     spectral_returns: list[Fraction] = []
@@ -159,16 +162,17 @@ def _ensemble_measurement(
             for identifier, relation in relation_by_id.items()
         }
         for step_index in range(max_walk_steps):
-            spectral_returns.append(
-                sum(
-                    (
-                        probability
-                        * curves[identifier]["return_probabilities"][step_index]
-                        for identifier, probability in distribution.items()
-                    ),
-                    start=Fraction(0),
-                )
-            )
+            step_total = Fraction(0)
+            for identifier, probability in distribution.items():
+                return_probability = curves[identifier][
+                    "return_probabilities"
+                ][step_index]
+                if not isinstance(return_probability, Fraction):
+                    raise TypeError(
+                        "spectral return probability must be an exact Fraction"
+                    )
+                step_total += probability * return_probability
+            spectral_returns.append(step_total)
         if len(spectral_fit_steps) >= 4 and all(
             1 <= step <= max_walk_steps for step in spectral_fit_steps
         ):
@@ -462,6 +466,7 @@ def _capability_audit(manifest: dict[str, Any]) -> dict[str, Any]:
 
 def build_preflight(root: Path) -> dict[str, Any]:
     started = time.perf_counter()
+    validate_continuum_reference_records(root)
     budget = _load_json(root, BUDGET_PATH)
     config = _load_json(root, DESIGN_CONFIG_PATH)
     capabilities = _load_json(root, CAPABILITIES_PATH)
@@ -760,7 +765,7 @@ def build_preflight(root: Path) -> dict[str, Any]:
             _binding(root, DYNAMICS_PATH),
             _binding(root, V2_SPEC_PATH),
             _binding(root, CAPABILITIES_PATH),
-            _binding(root, SOURCES_LEDGER_PATH),
+            dict(CONTINUUM_SOURCES_LEDGER_FROZEN_BINDING),
             _binding(root, CALIBRATION_NOTE_PATH),
         ],
     }

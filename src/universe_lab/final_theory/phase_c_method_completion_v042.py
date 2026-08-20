@@ -93,7 +93,7 @@ def _artifact_record(
         raise ValueError(f"unexpected status in {artifact_path}")
     report = (root / report_path).read_text(encoding="utf-8")
     report_renderer_check_applied = renderer is not None
-    if report_renderer_check_applied and report != renderer(
+    if renderer is not None and report != renderer(
         {**payload, "semantic_digest_sha256": digest}
     ):
         raise ValueError(f"report is not generated from {artifact_path}")

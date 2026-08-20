@@ -1,0 +1,110 @@
+{
+  "schema_version": "final-theory-v042-phase-b-control-methods-scope-closure-v2",
+  "prepared": "2026-08-20",
+  "status": "PHASE_B_CONTROL_METHODS_SCOPED_MANUSCRIPT_FINALIZED_UPLOAD_PACKAGING_ACTIVE",
+  "global_verdict": "FINAL_THEORY_OPEN",
+  "scientific_verdict_added": false,
+  "starting_gate": "CONTROL_METHODS_SCOPED_MANUSCRIPT_ASSEMBLY",
+  "next_gate": "ZENODO_UPLOAD_BUNDLE_BUILD_AND_STRICT_VERIFICATION",
+  "scope": "A control-and-methods-scoped manuscript closure. The paper records bounded exact controls, replay, supervision, and scaling boundaries; it does not evaluate the candidate physical model or claim a final theory.",
+  "decision": {
+    "methods_scope": "FINALIZED_FOR_UPLOAD_PACKAGING",
+    "candidate_route": "EXCLUDED_NOT_EVALUATED",
+    "exact_scaling_extension": "DESIGN_ONLY_NOT_EXECUTED",
+    "production_measurement": "NOT_AUTHORIZED",
+    "solver": "NOT_AUTHORIZED",
+    "paper_i_publication": "PRESERVED_IMMUTABLE",
+    "manuscript_source": "paper/v0.4.2_control_methods_scoped/main.tex",
+    "pdf_preflight": "PASS_FINAL_UPLOAD_CANDIDATE_NOT_PUBLISHED"
+  },
+  "claims_supported": [
+    "Phase-C claim-boundary and budget-separation controls are complete.",
+    "Bounded exact sampler fixtures and independent replay are reproducible.",
+    "The Minkowski positive-control implementation preflight is bounded and non-evidentiary.",
+    "Runtime guards and hard-supervisor fixtures fail closed at their declared boundaries.",
+    "The random-growth scaling review reaches an exact n=38 down-set cap boundary with primary/independent agreement.",
+    "The candidate weighted route has no certified reduced-state factorisation and is excluded from this manuscript."
+  ],
+  "claims_excluded": [
+    "candidate physical validity or continuum-limit evidence",
+    "N=60 production control completion",
+    "production spectral-dimension or statistical acceptance",
+    "BDG weighted-ensemble or action result",
+    "full 955/721 resolution or complete finite occurrence-ON semantics lattice",
+    "solver impossibility and FINAL_THEORY closure"
+  ],
+  "checks": {
+    "phase_c_method_artifact_is_complete": true,
+    "bounded_control_replay_is_non_evidentiary": true,
+    "minkowski_control_is_preflight_only": true,
+    "scaling_boundary_has_primary_independent_match": true,
+    "candidate_route_has_no_access": true,
+    "manuscript_source_exists": true,
+    "scoped_final_pdf_passed_all_page_qa": true,
+    "no_new_execution_is_recorded": true
+  },
+  "evidence_chain": [
+    {
+      "id": "phase_c_completion",
+      "artifact": "results/v0.4.2_phase_c_method_completion.json",
+      "semantic_digest_sha256": "155fe4f15b1abb10d9fa52874fb88ae07bca2f82f668fb0b7f354b763c480949"
+    },
+    {
+      "id": "bounded_sampler_preflight",
+      "artifact": "results/v0.4.2_phase_b_sampler_preflight.json",
+      "semantic_digest_sha256": "d21197d34942b9783eae2184996bfaa123f28a6c03d335149af35cbdcd26ff12"
+    },
+    {
+      "id": "control_implementation_preflight",
+      "artifact": "results/v0.4.2_phase_b_control_implementation_preflight_20260816.json",
+      "semantic_digest_sha256": "2069002e3e24e63f8f479d901f86424d59f98e89c52bd2c9072460b2dc2776d5"
+    },
+    {
+      "id": "control_cost_preflight",
+      "artifact": "results/v0.4.2_phase_b_control_cost_preflight_20260816.json",
+      "semantic_digest_sha256": "6835931053fc2aed96a4baa2da77fb2b601da0b48b098e53ed2fbf0892a200ac"
+    },
+    {
+      "id": "control_scaling_review",
+      "artifact": "results/v0.4.2_phase_b_control_scaling_review_20260816.json",
+      "semantic_digest_sha256": "b90f4a59371ab3202d98befc811f6fbd5f4d137887d4c06e8426429a16b64abc"
+    },
+    {
+      "id": "exact_scaling_design",
+      "artifact": "results/v0.4.2_phase_b_control_exact_scaling_design_20260817.json",
+      "semantic_digest_sha256": "46e9a24f6e2ddd90b3eda79eeab16be1178eecf05b778c25110223467d458e5e"
+    },
+    {
+      "id": "scoped_paper_final_pdf",
+      "artifact": "results/v0.4.2_control_methods_scoped_pdf_final_20260820.json",
+      "semantic_digest_sha256": "8180711c3b74e44a579b421922353f29b358076b0a1b087954572cc49d23945e"
+    },
+    {
+      "id": "hard_supervisor_preflight",
+      "artifact": "results/v0.4.2_phase_b_hard_supervisor_preflight_20260816.json",
+      "semantic_digest_sha256": "3b22a500fef88922f2b4502da4e5967b012bd78dcbed0a41f44476b4dd37f3a7"
+    },
+    {
+      "id": "candidate_identity_audit",
+      "artifact": "results/v0.4.2_phase_b_candidate_identity.json",
+      "semantic_digest_sha256": "6816ded0df6cbea1e46c562c85a8c206d5b8c6312883831000902cc9b1fb4503"
+    }
+  ],
+  "execution_boundary": {
+    "new_control_trajectories": 0,
+    "candidate_trajectories": 0,
+    "solver_calls": 0,
+    "production_sampling_authorized": false,
+    "approximate_sampler_authorized": false,
+    "scientific_verdict_added": false
+  },
+  "reopen_policy": {
+    "requires_new_owner_scope": true,
+    "requires_versioned_budget": true,
+    "requires_independent_replay": true,
+    "candidate_route_requires_factorisation_certificate": true,
+    "existing_paper_i_record_must_not_be_mutated": true
+  },
+  "all_acceptance_checks_passed": true,
+  "semantic_digest_sha256": "bcde7cc5e0567c5509d8abb5708c2a4e9c239b0559bdf782efa277395a37f490"
+}
