@@ -1,10 +1,11 @@
 # CPOBC research knowledge base — v0.4 track
 
-Updated: 2026-08-02
+Updated: 2026-08-21
 
-This is the live scientific index after the public v0.3.9 release. Use the
-publication roadmap for ordering, this file for current facts and reusable
-methodology, and `HANDOFF_v0.4.1.md` for operational continuation. Historical
+This is the live scientific index after the public v0.3.9 release and the
+publication of the scoped v0.4.2 control/methods preprint. Use the publication
+roadmap for ordering, this file for current facts and reusable methodology,
+and `CURRENT_RESEARCH_STATE.json` for the compact mutable index. Historical
 release files and content-addressed artifacts remain unchanged even when a
 later scope audit supersedes their interpretation.
 
@@ -881,3 +882,124 @@ the SR3b-A theorem, title, or deposit status.
 
 Before repeating external research, search `references/sources.json`,
 `references/manifest.json`, `references/text/`, and `references/notes/`.
+
+## 12. v0.4.2 control/methods closure and public release
+
+Recorded 2026-08-21. This section is the current publication and scope
+addendum; it does not reopen either frozen one-sided profile.
+
+### 12.1 Final scientific scope
+
+Phase B is closed as a scoped control-and-methods manuscript. The release
+reports fail-closed controls, versioned artifact contracts, independent replay,
+digest-checked promotion, synthetic supervisor boundaries, and the exact
+random-growth enumeration boundary. The candidate weighted route is excluded
+because no certified reduced-state factorisation exists.
+
+The manuscript explicitly does not claim candidate production evidence,
+continuum-limit or N=60 completion, production spectral dimension, a BDG
+ensemble result, full 955/721 resolution, a complete finite occurrence-ON
+semantics lattice, solver impossibility, or closure of `FINAL_THEORY_OPEN`.
+The source-size-38 result is a resource-limit observation: an attempted next
+step detects at least 4,097 down-sets and fails closed at the declared cap of
+4,096. It is not an impossibility theorem.
+
+The governing scope decision is recorded in
+`reports/v0.4.2_phase_b_control_methods_scope_closure_2026-08-20.md` and the
+paper boundary remains `FINAL_THEORY_OPEN`.
+
+### 12.2 721 profile: method-specific closure failure
+
+The `fixed_vector_GC + strong_MSR` profile was exhaustively expanded over its
+declared finite generator set:
+
+- 783 CPOBC equations, 24 strong-MSR equations, and 1,529 GC pairs were
+  compiled without sampling.
+- 1,967 residuals were nonzero: 700 CPOBC, 21 MSR, and 1,246 GC.
+- Eight inverse-bearing 2x2 token types were given closed-form adjugates and
+  defining relations `D*det(A)-1=0`; all 64 inverse slots satisfied both
+  matrix identity checks.
+- Saturation alone and the convergent single-token reduction
+  `D*a*d -> 1 + D*b*c` produced zero newly vanishing residuals across the
+  complete residual set. The reduction was substantive (CPOBC maximum degree
+  fell from 21 to 18), not a no-op.
+- 1,961/1,967 nonzero residuals contained an inverse token, so inverse-token
+  incidence did not provide a cheap structural ceiling.
+
+The bounded Gröbner preflight was measured before any full-system launch: the
+most favorable 15-variable subsystem took 0.02 seconds for one residual, 7.75
+seconds for two residuals, and timed out at 90 seconds for three. The full
+system is approximately 1,967 residuals in about 104 variables. Therefore the
+plain Python/SymPy full Gröbner calculation was not launched and no solver
+impossibility claim is allowed. The exact conclusion is narrower:
+
+> Saturation plus single defining-relation reduction does not close 721;
+> 721 has no issued commutativity theorem, witness, or obstruction from this
+> method.
+
+### 12.3 955 profile: structural route frozen at a resource boundary
+
+The Gate 20--22 repair commit `90a7a37` fixed two defects before the structural
+investigation continued: CRLF recurrence in all three new modules and the
+missing `commutativity_proved_for_full_profile` payload key. The initial
+`98/111` triangularity report was corrected: strict peeling starts at zero;
+the earlier count came from a span-2 greedy selection and was not triangular.
+
+The subsequent structural results are:
+
+- The 107/119 unit-edge matching gap consists of slack columns; comparison with
+  the certified non-Q rank shows that only four additional pivot directions
+  are required, while eight terminal slack directions remain free.
+- The four required pivot coefficients factor through source diagonal
+  coordinates or timid/source-matrix diagonal factors. Unit-edge matching
+  reaches 111 distinct rows, exactly the required rank.
+- Dulmage--Mendelsohn decomposition gives 60 matching-independent components;
+  the largest irreducible block has size 15, followed by 7, with the rest at
+  most 3. The small-block determinants already contain non-source factors such
+  as `v52-v55` and `v199*v71-v367*v79`.
+- The 15-block row-selection space is about `1.4e29` choices. No structural
+  reason for a source-localized unit determinant was found, and no determinant
+  unit certificate was issued.
+
+Accordingly 955 remains frozen as
+`REACHABLE_VISIBILITY_OPEN_RESOURCE_LIMIT`; this is a stopping terminal, not
+a mathematical obstruction or a complete lattice result.
+
+### 12.4 Zenodo v0.4.2 publication
+
+The scoped preprint is now public as a new record, without modifying Paper I:
+
+| Field | Value |
+| --- | --- |
+| Title | Fail-closed reproducibility for finite quantum sequential growth: exact controls, independent replay, and resource boundaries |
+| Type | Publication / Preprint |
+| Version | 0.4.2 |
+| Publication date | 2026-08-21 |
+| Access | Open / Public |
+| DOI | `10.5281/zenodo.22032842` |
+| Related Paper I | `10.5281/zenodo.21861533` (`References`) |
+| Release commit | `c09f3b39c9652617a7d5875ec0ff26c8d017aa35` |
+
+The upload contains exactly two files. The local strict receipt reports
+`STRICT_VERIFICATION_PASS`, zero verifier errors, and byte-identical
+deterministic replay:
+
+| File | Bytes | SHA-256 | MD5 shown by Zenodo |
+| --- | ---: | --- | --- |
+| `finite_qsg_fail_closed_methods_v0.4.2.pdf` | 233,534 | `d2a280cd6bf250f018397bc66847039dbb9136a766f2e5f4e92711694288bba9` | `5e90b07a3b6b157f0898bfe30ffca866` |
+| `finite_qsg_fail_closed_methods_v0.4.2_supplement.tar.gz` | 140,197 | `492473566ec648c7482ca61cafea65789baaa3758a6d653a8b24bb28fd6754a6` | `af53e738336dd23c3c94ccf37e209fa7` |
+
+The PDF has six pages and passed all-page visual QA. The public record display
+shows both filenames, sizes, and the same MD5 values. Paper I remains the
+immutable record `10.5281/zenodo.21861533`; later changes require a new
+Zenodo version and must not mutate the published record.
+
+### 12.5 Post-publication operating rule
+
+The research/publication endpoint is complete. The only remaining archival
+task is the normal readback: preserve the DOI, record URL, displayed citation,
+publication timestamp, and a manual download/hash comparison if a complete
+post-publication receipt is desired. This administrative readback must not be
+used to reopen 955 or 721. Reopening either profile requires a new scope,
+owner approval, a versioned budget, and independent replay; an unbounded dense
+solver launch remains prohibited.

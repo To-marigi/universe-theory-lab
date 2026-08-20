@@ -1,6 +1,6 @@
 {
   "schema_version": "cpobc-current-research-state-v1",
-  "updated": "2026-08-20",
+  "updated": "2026-08-21",
   "mutable_index_not_a_proof_certificate": true,
   "global_verdict": "FINAL_THEORY_OPEN",
   "public_baseline": {
@@ -52,6 +52,43 @@
     "manuscript_source": "paper/v0.4.2_paper1_statewise_operator/main.tex",
     "later_scientific_or_file_change_requires": "a new Zenodo version; never mutate the published record",
     "does_not_authorize": "further deposit/publication actions beyond this recorded version without fresh owner approval in chat"
+  },
+  "control_methods_v042_publication": {
+    "title": "Fail-closed reproducibility for finite quantum sequential growth: exact controls, independent replay, and resource boundaries",
+    "status": "PUBLISHED_2026-08-21",
+    "record_url": "https://zenodo.org/records/22032842",
+    "version_doi": "10.5281/zenodo.22032842",
+    "version": "0.4.2",
+    "resource_type": "Publication / Preprint",
+    "access": "OPEN_PUBLIC",
+    "license": "CC BY 4.0",
+    "source_commit": "c09f3b39c9652617a7d5875ec0ff26c8d017aa35",
+    "paper_i_reference_doi": "10.5281/zenodo.21861533",
+    "upload_receipt": {
+      "status": "STRICT_VERIFICATION_PASS",
+      "strict_verifier_errors": 0,
+      "deterministic_replay": "PDF_AND_SUPPLEMENT_BYTE_IDENTICAL",
+      "pdf": {
+        "name": "finite_qsg_fail_closed_methods_v0.4.2.pdf",
+        "bytes": 233534,
+        "sha256": "d2a280cd6bf250f018397bc66847039dbb9136a766f2e5f4e92711694288bba9",
+        "pages": 6,
+        "zenodo_md5": "5e90b07a3b6b157f0898bfe30ffca866"
+      },
+      "supplement": {
+        "name": "finite_qsg_fail_closed_methods_v0.4.2_supplement.tar.gz",
+        "bytes": 140197,
+        "sha256": "492473566ec648c7482ca61cafea65789baaa3758a6d653a8b24bb28fd6754a6",
+        "zenodo_md5": "af53e738336dd23c3c94ccf37e209fa7"
+      }
+    },
+    "post_publication_readback": {
+      "zenodo_display_sizes_and_md5_match_local_receipt": true,
+      "manual_public_download_sha256": "PENDING",
+      "note": "Automated direct download was redirected to login; no public SHA-256 readback claim is recorded."
+    },
+    "published_record_mutation": false,
+    "scientific_verdict_added": false
   },
   "ci_release_boundary": {
     "status": "CURRENT_V04_AND_FROZEN_PUBLIC_V039_LANES_SEPARATED",
@@ -165,8 +202,8 @@
     "v0.4.2_721_gc_tier_relation_reduced_all_eleven": "ALL_1529_GC_PAIRS_REDUCED_MODULO_DEFINING_RELATIONS_ZERO_NEWLY_ZERO_OPEN"
   },
   "affected_campaign": {
-    "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_PHASE_B_CONTROL_METHODS_SCOPED_MANUSCRIPT_FINALIZED_UPLOAD_PACKAGING_ACTIVE_FINAL_THEORY_OPEN",
-    "next_gate": "ZENODO_UPLOAD_BUNDLE_BUILD_AND_STRICT_VERIFICATION",
+    "status": "PHASE_A_FROZEN_BOTH_PROFILES_OPEN_RESOURCE_LIMIT_PHASE_C_COMPLETE_PHASE_B_CONTROL_METHODS_SCOPED_PREPRINT_PUBLISHED_FINAL_THEORY_OPEN",
+    "next_gate": "POST_PUBLICATION_READBACK_AND_ARCHIVE",
     "phase_A_termination_packet": {
       "status": "OWNER_APPROVED_PHASE_A_FREEZE_EXECUTED_PHASE_C_ACTIVE",
       "report": "reports/v0.4.2_phase_a_termination_decision_packet.md",
@@ -285,7 +322,7 @@
       }
     },
     "phase_B": {
-      "status": "PHASE_B_CONTROL_METHODS_SCOPED_MANUSCRIPT_FINALIZED_UPLOAD_PACKAGING_ACTIVE",
+      "status": "PHASE_B_CONTROL_METHODS_SCOPED_PREPRINT_PUBLISHED",
       "global_central_candidate": "causal_information_v1",
       "active_candidate": "causal_information_v2_sparse_kraus",
       "scope": "required physics derivation audit, not deeper computation of frozen 955/721 profiles",
@@ -301,9 +338,9 @@
       "semantic_digest_sha256": "6f3f083b14baeebaa9cd9bb5d9891d36fb5d80d0ec7a08412e99043e836803ac",
       "all_acceptance_checks_passed": true,
       "scientific_verdict_added": false,
-      "next_gate": "ZENODO_UPLOAD_BUNDLE_BUILD_AND_STRICT_VERIFICATION",
-      "operational_next_gate": "ZENODO_UPLOAD_BUNDLE_BUILD_AND_STRICT_VERIFICATION",
-      "operational_next_gate_basis": "the scoped control/methods manuscript is finalized, its six-page PDF passes the pinned Docker build and all-page visual QA, exact scaling remains design-only, and the candidate production route remains excluded; the remaining local gate is a commit-bound two-file Zenodo bundle with strict verification",
+      "next_gate": "POST_PUBLICATION_READBACK_AND_ARCHIVE",
+      "operational_next_gate": "POST_PUBLICATION_READBACK_AND_ARCHIVE",
+      "operational_next_gate_basis": "the scoped control/methods preprint is published at 10.5281/zenodo.22032842; only administrative DOI/citation preservation and optional manual public-file SHA-256 readback remain, while exact scaling remains design-only and the candidate production route remains excluded",
       "implementation_preflight_budget_proposal": {
         "status": "PROPOSAL_ONLY_OWNER_APPROVAL_REQUIRED",
         "config": "config/v0.4.2_phase_b_implementation_preflight_budget_proposal_20260816.json",
