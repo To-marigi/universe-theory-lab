@@ -10,6 +10,7 @@ import json
 import re
 import sys
 import tarfile
+import zlib
 from collections.abc import Sequence
 from pathlib import Path, PurePosixPath
 from typing import Any
@@ -32,6 +33,17 @@ class VerificationError(RuntimeError):
     """Raised when the upload layout cannot be inspected safely."""
 
 
+_DIRECT_OBJECT_RE = re.compile(
+    rb"\d+\s+\d+\s+obj\s*(.*?)(?:stream\r?\n|endobj)", re.DOTALL
+)
+_OBJECT_STREAM_RE = re.compile(
+    rb"\d+\s+\d+\s+obj\s*<<(.*?)>>\s*stream\r?\n", re.DOTALL
+)
+_PAGE_TYPE_RE = re.compile(rb"/Type\s*/Page\b")
+_OBJECT_STREAM_TYPE_RE = re.compile(rb"/Type\s*/ObjStm\b")
+_MAX_DECOMPRESSED_OBJECT_STREAM_BYTES = 64 * 1024 * 1024
+
+
 def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -52,17 +64,67 @@ def stable_hash(value: Any) -> str:
     )
 
 
+def _required_pdf_integer(dictionary: bytes, name: bytes) -> int:
+    match = re.search(rb"/" + name + rb"\s+(\d+)\b", dictionary)
+    if match is None:
+        raise VerificationError(
+            f"PDF object stream lacks direct /{name.decode('ascii')} integer"
+        )
+    return int(match.group(1))
+
+
+def _pdf_page_count_from_syntax(data: bytes) -> int:
+    """Count direct and Flate-compressed page objects without third-party code."""
+
+    count = sum(
+        bool(_PAGE_TYPE_RE.search(match.group(1)))
+        for match in _DIRECT_OBJECT_RE.finditer(data)
+    )
+    for match in _OBJECT_STREAM_RE.finditer(data):
+        dictionary = match.group(1)
+        if _OBJECT_STREAM_TYPE_RE.search(dictionary) is None:
+            continue
+        if re.search(rb"/Filter\s*/FlateDecode\b", dictionary) is None:
+            raise VerificationError("unsupported PDF object-stream filter")
+        object_count = _required_pdf_integer(dictionary, b"N")
+        first = _required_pdf_integer(dictionary, b"First")
+        length = _required_pdf_integer(dictionary, b"Length")
+        compressed = data[match.end() : match.end() + length]
+        if len(compressed) != length:
+            raise VerificationError("truncated PDF object stream")
+        try:
+            decoded = zlib.decompress(compressed)
+        except zlib.error as exc:
+            raise VerificationError("invalid Flate-compressed PDF object stream") from exc
+        if len(decoded) > _MAX_DECOMPRESSED_OBJECT_STREAM_BYTES:
+            raise VerificationError("PDF object stream exceeds verification limit")
+        if not 0 <= first <= len(decoded):
+            raise VerificationError("invalid PDF object-stream /First offset")
+        header = decoded[:first].split()
+        if len(header) != 2 * object_count:
+            raise VerificationError("invalid PDF object-stream object index")
+        offsets = [int(header[index]) for index in range(1, len(header), 2)]
+        if offsets != sorted(offsets) or any(
+            not 0 <= offset <= len(decoded) - first for offset in offsets
+        ):
+            raise VerificationError("invalid PDF object-stream offsets")
+        body = decoded[first:]
+        for index, offset in enumerate(offsets):
+            end = offsets[index + 1] if index + 1 < len(offsets) else len(body)
+            if _PAGE_TYPE_RE.search(body[offset:end]):
+                count += 1
+    if count <= 0:
+        raise VerificationError("cannot determine PDF page count")
+    return count
+
+
 def pdf_page_count(path: Path) -> int:
-    """Return a parsed page count, with a dependency-free PDF syntax fallback."""
+    """Return a parsed page count, with an object-stream-aware fallback."""
 
     try:
         from pypdf import PdfReader
-    except ImportError as exc:
-        data = path.read_bytes()
-        count = len(re.findall(rb"/Type\s*/Page\b", data))
-        if count <= 0:
-            raise VerificationError("cannot determine PDF page count") from exc
-        return count
+    except ImportError:
+        return _pdf_page_count_from_syntax(path.read_bytes())
     return len(PdfReader(str(path)).pages)
 
 

@@ -157,6 +157,14 @@ def test_manifest_and_deterministic_archive_round_trip(
     assert archive.read_bytes()[4:8] == b"\x00\x00\x00\x00"
 
 
+def test_dependency_free_pdf_page_parser_handles_tex_object_streams(
+    verifier: ModuleType,
+) -> None:
+    pdf = ROOT / "output/pdf/finite_qsg_fail_closed_methods_v0.4.2.pdf"
+
+    assert verifier._pdf_page_count_from_syntax(pdf.read_bytes()) == 6
+
+
 def test_output_directory_must_be_external_and_empty(
     builder: ModuleType, tmp_path: Path
 ) -> None:
